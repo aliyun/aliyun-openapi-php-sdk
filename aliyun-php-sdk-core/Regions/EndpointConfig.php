@@ -32,7 +32,7 @@ $productDomains =array(
 	new ProductDomain("Risk", "risk-cn-hangzhou.aliyuncs.com"),
 	new ProductDomain("Drds", "drds.aliyuncs.com"),
 	new ProductDomain("M-kvstore", "m-kvstore.aliyuncs.com"),
-	new ProductDomain("Ram", "ram2.aliyuncs.com"),
+	new ProductDomain("Ram", "ram.aliyuncs.com"),
 	new ProductDomain("Cms", "metrics.aliyuncs.com"),
 	new ProductDomain("Crm", "crm-cn-hangzhou.aliyuncs.com"),
 	new ProductDomain("Ocs", "pop-ocs.aliyuncs.com"),
