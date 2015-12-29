@@ -17,19 +17,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-include_once 'Autoloader/Autoloader.php';
-include_once 'Regions/EndpointConfig.php';
 
-//config sdk auto load path.
-Autoloader::addAutoloadPath("aliyun-php-sdk-ecs");
-Autoloader::addAutoloadPath("aliyun-php-sdk-batchcompute");
-Autoloader::addAutoloadPath("aliyun-php-sdk-sts");
-Autoloader::addAutoloadPath("aliyun-php-sdk-push");
-Autoloader::addAutoloadPath("aliyun-php-sdk-ram");
-Autoloader::addAutoloadPath("aliyun-php-sdk-ubsms");
-Autoloader::addAutoloadPath("aliyun-php-sdk-ubsms-inner");
+include_once '../aliyun-php-sdk-core/Config.php';
+use \Push\Request\V20150827 as Push;
 
-//config http proxy	
-define('ENABLE_HTTP_PROXY', FALSE);
-define('HTTP_PROXY_IP', '127.0.0.1');
-define('HTTP_PROXY_PORT', '8888');
+// 设置你的AccessKeyId/AccessSecret/AppKey
+$accessKeyId = "";
+$accessSecret = "";
+$appKey = 123456;
+
+$iClientProfile = DefaultProfile::getProfile("cn-hangzhou", $accessKeyId, $accessSecret);
+$client = new DefaultAcsClient($iClientProfile);
+
+// 示例: 调用 PushNoticeToAndroidRequest API
+$request = new Push\PushNoticeToAndroidRequest();
+$request->setAppKey($appKey);
+$request->setTarget("all");
+$request->setTargetValue("all");
+$request->setTitle("Hello OpenAPI!");
+$request->setSummary("PushMessageToAndroid from OpenAPI by PHP SDK!");
+
+
+$response = $client->getAcsResponse($request);
+print_r("\r\n");
+print_r($response);
