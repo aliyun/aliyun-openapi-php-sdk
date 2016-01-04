@@ -32,15 +32,11 @@ class DescribeSQLLogReportsRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $clientToken;
-
 	private  $dBInstanceId;
 
 	private  $startTime;
 
 	private  $endTime;
-
-	private  $reportType;
 
 	private  $pageSize;
 
@@ -75,15 +71,6 @@ class DescribeSQLLogReportsRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getClientToken() {
-		return $this->clientToken;
-	}
-
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
-
 	public function getDBInstanceId() {
 		return $this->dBInstanceId;
 	}
@@ -109,15 +96,6 @@ class DescribeSQLLogReportsRequest extends \RpcAcsRequest
 	public function setEndTime($endTime) {
 		$this->endTime = $endTime;
 		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getReportType() {
-		return $this->reportType;
-	}
-
-	public function setReportType($reportType) {
-		$this->reportType = $reportType;
-		$this->queryParameters["ReportType"]=$reportType;
 	}
 
 	public function getPageSize() {

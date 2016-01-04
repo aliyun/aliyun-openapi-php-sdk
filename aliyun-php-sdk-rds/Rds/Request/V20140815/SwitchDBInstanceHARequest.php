@@ -19,11 +19,11 @@
  */
 namespace Rds\Request\V20140815;
 
-class ModifyBackupPolicyRequest extends \RpcAcsRequest
+class SwitchDBInstanceHARequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "ModifyBackupPolicy");
+		parent::__construct("Rds", "2014-08-15", "SwitchDBInstanceHA");
 	}
 
 	private  $ownerId;
@@ -33,14 +33,6 @@ class ModifyBackupPolicyRequest extends \RpcAcsRequest
 	private  $resourceOwnerId;
 
 	private  $dBInstanceId;
-
-	private  $preferredBackupTime;
-
-	private  $preferredBackupPeriod;
-
-	private  $backupRetentionPeriod;
-
-	private  $backupLog;
 
 	private  $ownerAccount;
 
@@ -78,42 +70,6 @@ class ModifyBackupPolicyRequest extends \RpcAcsRequest
 	public function setDBInstanceId($dBInstanceId) {
 		$this->dBInstanceId = $dBInstanceId;
 		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
-	}
-
-	public function getPreferredBackupTime() {
-		return $this->preferredBackupTime;
-	}
-
-	public function setPreferredBackupTime($preferredBackupTime) {
-		$this->preferredBackupTime = $preferredBackupTime;
-		$this->queryParameters["PreferredBackupTime"]=$preferredBackupTime;
-	}
-
-	public function getPreferredBackupPeriod() {
-		return $this->preferredBackupPeriod;
-	}
-
-	public function setPreferredBackupPeriod($preferredBackupPeriod) {
-		$this->preferredBackupPeriod = $preferredBackupPeriod;
-		$this->queryParameters["PreferredBackupPeriod"]=$preferredBackupPeriod;
-	}
-
-	public function getBackupRetentionPeriod() {
-		return $this->backupRetentionPeriod;
-	}
-
-	public function setBackupRetentionPeriod($backupRetentionPeriod) {
-		$this->backupRetentionPeriod = $backupRetentionPeriod;
-		$this->queryParameters["BackupRetentionPeriod"]=$backupRetentionPeriod;
-	}
-
-	public function getBackupLog() {
-		return $this->backupLog;
-	}
-
-	public function setBackupLog($backupLog) {
-		$this->backupLog = $backupLog;
-		$this->queryParameters["BackupLog"]=$backupLog;
 	}
 
 	public function getOwnerAccount() {

@@ -38,6 +38,10 @@ class ModifySecurityIpsRequest extends \RpcAcsRequest
 
 	private  $securityIps;
 
+	private  $dBInstanceIPArrayName;
+
+	private  $dBInstanceIPArrayAttribute;
+
 	private  $ownerAccount;
 
 	public function getOwnerId() {
@@ -92,6 +96,24 @@ class ModifySecurityIpsRequest extends \RpcAcsRequest
 	public function setSecurityIps($securityIps) {
 		$this->securityIps = $securityIps;
 		$this->queryParameters["SecurityIps"]=$securityIps;
+	}
+
+	public function getDBInstanceIPArrayName() {
+		return $this->dBInstanceIPArrayName;
+	}
+
+	public function setDBInstanceIPArrayName($dBInstanceIPArrayName) {
+		$this->dBInstanceIPArrayName = $dBInstanceIPArrayName;
+		$this->queryParameters["DBInstanceIPArrayName"]=$dBInstanceIPArrayName;
+	}
+
+	public function getDBInstanceIPArrayAttribute() {
+		return $this->dBInstanceIPArrayAttribute;
+	}
+
+	public function setDBInstanceIPArrayAttribute($dBInstanceIPArrayAttribute) {
+		$this->dBInstanceIPArrayAttribute = $dBInstanceIPArrayAttribute;
+		$this->queryParameters["DBInstanceIPArrayAttribute"]=$dBInstanceIPArrayAttribute;
 	}
 
 	public function getOwnerAccount() {

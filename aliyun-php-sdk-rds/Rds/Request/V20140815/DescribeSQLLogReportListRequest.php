@@ -19,11 +19,11 @@
  */
 namespace Rds\Request\V20140815;
 
-class ModifyBackupPolicyRequest extends \RpcAcsRequest
+class DescribeSQLLogReportListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "ModifyBackupPolicy");
+		parent::__construct("Rds", "2014-08-15", "DescribeSQLLogReportList");
 	}
 
 	private  $ownerId;
@@ -34,13 +34,13 @@ class ModifyBackupPolicyRequest extends \RpcAcsRequest
 
 	private  $dBInstanceId;
 
-	private  $preferredBackupTime;
+	private  $startTime;
 
-	private  $preferredBackupPeriod;
+	private  $endTime;
 
-	private  $backupRetentionPeriod;
+	private  $pageSize;
 
-	private  $backupLog;
+	private  $pageNumber;
 
 	private  $ownerAccount;
 
@@ -80,40 +80,40 @@ class ModifyBackupPolicyRequest extends \RpcAcsRequest
 		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
 	}
 
-	public function getPreferredBackupTime() {
-		return $this->preferredBackupTime;
+	public function getStartTime() {
+		return $this->startTime;
 	}
 
-	public function setPreferredBackupTime($preferredBackupTime) {
-		$this->preferredBackupTime = $preferredBackupTime;
-		$this->queryParameters["PreferredBackupTime"]=$preferredBackupTime;
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
 	}
 
-	public function getPreferredBackupPeriod() {
-		return $this->preferredBackupPeriod;
+	public function getEndTime() {
+		return $this->endTime;
 	}
 
-	public function setPreferredBackupPeriod($preferredBackupPeriod) {
-		$this->preferredBackupPeriod = $preferredBackupPeriod;
-		$this->queryParameters["PreferredBackupPeriod"]=$preferredBackupPeriod;
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
 	}
 
-	public function getBackupRetentionPeriod() {
-		return $this->backupRetentionPeriod;
+	public function getPageSize() {
+		return $this->pageSize;
 	}
 
-	public function setBackupRetentionPeriod($backupRetentionPeriod) {
-		$this->backupRetentionPeriod = $backupRetentionPeriod;
-		$this->queryParameters["BackupRetentionPeriod"]=$backupRetentionPeriod;
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
-	public function getBackupLog() {
-		return $this->backupLog;
+	public function getPageNumber() {
+		return $this->pageNumber;
 	}
 
-	public function setBackupLog($backupLog) {
-		$this->backupLog = $backupLog;
-		$this->queryParameters["BackupLog"]=$backupLog;
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 
 	public function getOwnerAccount() {

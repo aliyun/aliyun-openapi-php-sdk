@@ -40,6 +40,8 @@ class CreateAccountRequest extends \RpcAcsRequest
 
 	private  $accountDescription;
 
+	private  $accountType;
+
 	private  $ownerAccount;
 
 	public function getOwnerId() {
@@ -103,6 +105,15 @@ class CreateAccountRequest extends \RpcAcsRequest
 	public function setAccountDescription($accountDescription) {
 		$this->accountDescription = $accountDescription;
 		$this->queryParameters["AccountDescription"]=$accountDescription;
+	}
+
+	public function getAccountType() {
+		return $this->accountType;
+	}
+
+	public function setAccountType($accountType) {
+		$this->accountType = $accountType;
+		$this->queryParameters["AccountType"]=$accountType;
 	}
 
 	public function getOwnerAccount() {

@@ -42,6 +42,12 @@ class DescribeSQLLogRecordsRequest extends \RpcAcsRequest
 
 	private  $startTime;
 
+	private  $database;
+
+	private  $user;
+
+	private  $form;
+
 	private  $endTime;
 
 	private  $pageSize;
@@ -120,6 +126,33 @@ class DescribeSQLLogRecordsRequest extends \RpcAcsRequest
 	public function setStartTime($startTime) {
 		$this->startTime = $startTime;
 		$this->queryParameters["StartTime"]=$startTime;
+	}
+
+	public function getDatabase() {
+		return $this->database;
+	}
+
+	public function setDatabase($database) {
+		$this->database = $database;
+		$this->queryParameters["Database"]=$database;
+	}
+
+	public function getUser() {
+		return $this->user;
+	}
+
+	public function setUser($user) {
+		$this->user = $user;
+		$this->queryParameters["User"]=$user;
+	}
+
+	public function getForm() {
+		return $this->form;
+	}
+
+	public function setForm($form) {
+		$this->form = $form;
+		$this->queryParameters["Form"]=$form;
 	}
 
 	public function getEndTime() {
