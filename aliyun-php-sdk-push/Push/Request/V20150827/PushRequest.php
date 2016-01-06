@@ -66,6 +66,12 @@ class PushRequest extends \RpcAcsRequest
 
 	private  $iOSExtParameters;
 
+	private  $pushTime;
+
+	private  $apnsEnv;
+
+	private  $expireTime;
+
 	public function getAppKey() {
 		return $this->appKey;
 	}
@@ -244,6 +250,33 @@ class PushRequest extends \RpcAcsRequest
 	public function setiOSExtParameters($iOSExtParameters) {
 		$this->iOSExtParameters = $iOSExtParameters;
 		$this->queryParameters["iOSExtParameters"]=$iOSExtParameters;
+	}
+
+	public function getPushTime() {
+		return $this->pushTime;
+	}
+
+	public function setPushTime($pushTime) {
+		$this->pushTime = $pushTime;
+		$this->queryParameters["PushTime"]=$pushTime;
+	}
+
+	public function getApnsEnv() {
+		return $this->apnsEnv;
+	}
+
+	public function setApnsEnv($apnsEnv) {
+		$this->apnsEnv = $apnsEnv;
+		$this->queryParameters["ApnsEnv"]=$apnsEnv;
+	}
+
+	public function getExpireTime() {
+		return $this->expireTime;
+	}
+
+	public function setExpireTime($expireTime) {
+		$this->expireTime = $expireTime;
+		$this->queryParameters["ExpireTime"]=$expireTime;
 	}
 	
 }

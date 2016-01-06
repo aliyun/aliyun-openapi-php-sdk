@@ -36,6 +36,8 @@ class PushNoticeToAndroidRequest extends \RpcAcsRequest
 
 	private  $title;
 
+	private  $androidExtParameters;
+
 	public function getAppKey() {
 		return $this->appKey;
 	}
@@ -79,6 +81,15 @@ class PushNoticeToAndroidRequest extends \RpcAcsRequest
 	public function setTitle($title) {
 		$this->title = $title;
 		$this->queryParameters["Title"]=$title;
+	}
+
+	public function getAndroidExtParameters() {
+		return $this->androidExtParameters;
+	}
+
+	public function setAndroidExtParameters($androidExtParameters) {
+		$this->androidExtParameters = $androidExtParameters;
+		$this->queryParameters["AndroidExtParameters"]=$androidExtParameters;
 	}
 	
 }

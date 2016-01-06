@@ -38,6 +38,8 @@ class PushNoticeToiOSRequest extends \RpcAcsRequest
 
 	private  $summary;
 
+	private  $iOSExtParameters;
+
 	public function getAppKey() {
 		return $this->appKey;
 	}
@@ -90,6 +92,15 @@ class PushNoticeToiOSRequest extends \RpcAcsRequest
 	public function setSummary($summary) {
 		$this->summary = $summary;
 		$this->queryParameters["Summary"]=$summary;
+	}
+
+	public function getiOSExtParameters() {
+		return $this->iOSExtParameters;
+	}
+
+	public function setiOSExtParameters($iOSExtParameters) {
+		$this->iOSExtParameters = $iOSExtParameters;
+		$this->queryParameters["iOSExtParameters"]=$iOSExtParameters;
 	}
 	
 }
