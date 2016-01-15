@@ -17,20 +17,15 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-include_once 'Autoloader/Autoloader.php';
-include_once 'Regions/EndpointConfig.php';
+namespace Green\Request\V20151209;
 
-//config sdk auto load path.
-Autoloader::addAutoloadPath("aliyun-php-sdk-ecs");
-Autoloader::addAutoloadPath("aliyun-php-sdk-batchcompute");
-Autoloader::addAutoloadPath("aliyun-php-sdk-sts");
-Autoloader::addAutoloadPath("aliyun-php-sdk-push");
-Autoloader::addAutoloadPath("aliyun-php-sdk-ram");
-Autoloader::addAutoloadPath("aliyun-php-sdk-ubsms");
-Autoloader::addAutoloadPath("aliyun-php-sdk-ubsms-inner");
-Autoloader::addAutoloadPath("aliyun-php-sdk-green");
-
-//config http proxy	
-define('ENABLE_HTTP_PROXY', FALSE);
-define('HTTP_PROXY_IP', '127.0.0.1');
-define('HTTP_PROXY_PORT', '8888');
+class TextKeywordFilterRequest extends \RoaAcsRequest
+{
+	function  __construct()
+	{
+		parent::__construct("Green", "2015-12-09", "TextKeywordFilter");
+		$this->setUriPattern("/text/keyword_filter");
+		$this->setMethod("POST");
+	}
+	
+}

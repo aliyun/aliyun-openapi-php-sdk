@@ -26,6 +26,7 @@ abstract class AcsRequest
 	protected  $acceptFormat;
 	protected  $method;
 	protected  $protocolType = "http";
+	protected  $content;
 	
 	protected $queryParameters = array();
 	protected $headers = array();
@@ -118,5 +119,22 @@ abstract class AcsRequest
 	{
 		$this->regionId = $region;
 	}
+	
+	public function getContent()
+    {
+        return $this->content;
+    }
+
+    public function setContent($content)
+    {
+        $this->content = $content;
+    } 
+        
+        
+    public function addHeader($headerKey, $headerValue)
+    {
+        $this->headers[$headerKey] = $headerValue;
+    } 
+	
 		
 }

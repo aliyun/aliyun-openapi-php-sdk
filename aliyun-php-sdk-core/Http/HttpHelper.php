@@ -35,6 +35,8 @@ class HttpHelper
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_FAILONERROR, false);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, is_array($postFields) ? http_build_query($postFields) : $postFields);
+		
 		if (self::$readTimeout) {
 			curl_setopt($ch, CURLOPT_TIMEOUT, self::$readTimeout);
 		}

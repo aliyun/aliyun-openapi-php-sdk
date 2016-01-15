@@ -57,7 +57,10 @@ $productDomains =array(
 	new ProductDomain("Cdn", "cdn.aliyuncs.com"),
 	new ProductDomain("COS", "cos.aliyuncs.com"),
 	new ProductDomain("CF", "cf.aliyuncs.com"),
-	new ProductDomain("Ess", "ess.aliyuncs.com")
+	new ProductDomain("Ess", "ess.aliyuncs.com"),
+	new ProductDomain("Ubsms-inner", "ubsms-inner.aliyuncs.com"),
+    new ProductDomain("Green", "green.aliyuncs.com")
+
 	);
 $endpoint = new Endpoint("cn-hangzhou", $regionIds, $productDomains);
 $endpoints = array($endpoint);
