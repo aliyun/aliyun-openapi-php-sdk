@@ -20,6 +20,7 @@
 abstract class RpcAcsRequest extends AcsRequest
 {
 	private $dateTimeFormat = 'Y-m-d\TH:i:s\Z'; 
+	private $domainParameters = array();
 	
 	function  __construct($product, $version, $actionName)
 	{
@@ -77,6 +78,16 @@ abstract class RpcAcsRequest extends AcsRequest
 	    $res = preg_replace('/\*/', '%2A', $res);
 	    $res = preg_replace('/%7E/', '~', $res);
 	    return $res;
+	}
+	
+	public function getDomainParameter()	
+	{
+		return $this->domainParameters;
+	}
+	
+	public function putDomainParameters($name, $value)
+	{
+		$this->domainParameters[$name] = $value;
 	}
 	
 }
