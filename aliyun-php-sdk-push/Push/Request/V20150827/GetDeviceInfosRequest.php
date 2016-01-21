@@ -19,22 +19,25 @@
  */
 namespace Push\Request\V20150827;
 
-class PushMessageToiOSRequest extends \RpcAcsRequest
+class GetDeviceInfosRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Push", "2015-08-27", "PushMessageToiOS");
+		parent::__construct("Push", "2015-08-27", "GetDeviceInfos");
 	}
+
+	private  $devices;
 
 	private  $appKey;
 
-	private  $target;
+	public function getDevices() {
+		return $this->devices;
+	}
 
-	private  $targetValue;
-
-	private  $message;
-
-	private  $summary;
+	public function setDevices($devices) {
+		$this->devices = $devices;
+		$this->queryParameters["Devices"]=$devices;
+	}
 
 	public function getAppKey() {
 		return $this->appKey;
@@ -43,42 +46,6 @@ class PushMessageToiOSRequest extends \RpcAcsRequest
 	public function setAppKey($appKey) {
 		$this->appKey = $appKey;
 		$this->queryParameters["AppKey"]=$appKey;
-	}
-
-	public function getTarget() {
-		return $this->target;
-	}
-
-	public function setTarget($target) {
-		$this->target = $target;
-		$this->queryParameters["Target"]=$target;
-	}
-
-	public function getTargetValue() {
-		return $this->targetValue;
-	}
-
-	public function setTargetValue($targetValue) {
-		$this->targetValue = $targetValue;
-		$this->queryParameters["TargetValue"]=$targetValue;
-	}
-
-	public function getMessage() {
-		return $this->message;
-	}
-
-	public function setMessage($message) {
-		$this->message = $message;
-		$this->queryParameters["Message"]=$message;
-	}
-
-	public function getSummary() {
-		return $this->summary;
-	}
-
-	public function setSummary($summary) {
-		$this->summary = $summary;
-		$this->queryParameters["Summary"]=$summary;
 	}
 	
 }
