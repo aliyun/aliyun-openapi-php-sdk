@@ -17,21 +17,19 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-include_once 'Autoloader/Autoloader.php';
-include_once 'Regions/EndpointConfig.php';
 
-//config sdk auto load path.
-Autoloader::addAutoloadPath("aliyun-php-sdk-ecs");
-Autoloader::addAutoloadPath("aliyun-php-sdk-batchcompute");
-Autoloader::addAutoloadPath("aliyun-php-sdk-sts");
-Autoloader::addAutoloadPath("aliyun-php-sdk-push");
-Autoloader::addAutoloadPath("aliyun-php-sdk-ram");
-Autoloader::addAutoloadPath("aliyun-php-sdk-ubsms");
-Autoloader::addAutoloadPath("aliyun-php-sdk-ubsms-inner");
-Autoloader::addAutoloadPath("aliyun-php-sdk-green");
-Autoloader::addAutoloadPath("aliyun-php-sdk-iot");
+include_once '../aliyun-php-sdk-core/Config.php';
+use \Iot\Request\V20160104 as Iot;
+// 设置你的AccessKeyId/AccessSecret/AppKey
+$accessKeyId = "";
+$accessSecret = "";
+$iClientProfile = DefaultProfile::getProfile("cn-hangzhou", $accessKeyId, $accessSecret);
+$client = new DefaultAcsClient($iClientProfile);
 
-//config http proxy	
-define('ENABLE_HTTP_PROXY', FALSE);
-define('HTTP_PROXY_IP', '127.0.0.1');
-define('HTTP_PROXY_PORT', '8888');
+$request = new Iot\PushByteMessageRequest();
+$request->setAppKey(1231231);
+$request->setDeviceIds("111111,222222");
+$request->setPushContent("bytebase64String");
+$response = $client->getAcsResponse($request);
+print_r("\r\n");
+print_r($response);
