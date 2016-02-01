@@ -29,6 +29,7 @@ Autoloader::addAutoloadPath("aliyun-php-sdk-ram");
 Autoloader::addAutoloadPath("aliyun-php-sdk-ubsms");
 Autoloader::addAutoloadPath("aliyun-php-sdk-ubsms-inner");
 Autoloader::addAutoloadPath("aliyun-php-sdk-green");
+Autoloader::addAutoloadPath("aliyun-php-sdk-dm");
 
 //config http proxy	
 define('ENABLE_HTTP_PROXY', FALSE);
