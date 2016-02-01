@@ -17,24 +17,22 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Push\Request\V20150827;
+namespace Iot\Request\V20160104;
 
-class PushMessageToiOSRequest extends \RpcAcsRequest
+class DeviceGrantRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Push", "2015-08-27", "PushMessageToiOS");
+		parent::__construct("Iot", "2016-01-04", "DeviceGrant");
 	}
 
 	private  $appKey;
 
-	private  $target;
+	private  $topicFullName;
 
-	private  $targetValue;
+	private  $deviceId;
 
-	private  $message;
-
-	private  $summary;
+	private  $grantType;
 
 	public function getAppKey() {
 		return $this->appKey;
@@ -45,40 +43,31 @@ class PushMessageToiOSRequest extends \RpcAcsRequest
 		$this->queryParameters["AppKey"]=$appKey;
 	}
 
-	public function getTarget() {
-		return $this->target;
+	public function getTopicFullName() {
+		return $this->topicFullName;
 	}
 
-	public function setTarget($target) {
-		$this->target = $target;
-		$this->queryParameters["Target"]=$target;
+	public function setTopicFullName($topicFullName) {
+		$this->topicFullName = $topicFullName;
+		$this->queryParameters["TopicFullName"]=$topicFullName;
 	}
 
-	public function getTargetValue() {
-		return $this->targetValue;
+	public function getDeviceId() {
+		return $this->deviceId;
 	}
 
-	public function setTargetValue($targetValue) {
-		$this->targetValue = $targetValue;
-		$this->queryParameters["TargetValue"]=$targetValue;
+	public function setDeviceId($deviceId) {
+		$this->deviceId = $deviceId;
+		$this->queryParameters["DeviceId"]=$deviceId;
 	}
 
-	public function getMessage() {
-		return $this->message;
+	public function getGrantType() {
+		return $this->grantType;
 	}
 
-	public function setMessage($message) {
-		$this->message = $message;
-		$this->queryParameters["Message"]=$message;
-	}
-
-	public function getSummary() {
-		return $this->summary;
-	}
-
-	public function setSummary($summary) {
-		$this->summary = $summary;
-		$this->queryParameters["Summary"]=$summary;
+	public function setGrantType($grantType) {
+		$this->grantType = $grantType;
+		$this->queryParameters["GrantType"]=$grantType;
 	}
 	
 }

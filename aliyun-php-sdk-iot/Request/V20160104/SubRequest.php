@@ -17,24 +17,29 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Push\Request\V20150827;
+namespace Iot\Request\V20160104;
 
-class PushMessageToiOSRequest extends \RpcAcsRequest
+class SubRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Push", "2015-08-27", "PushMessageToiOS");
+		parent::__construct("Iot", "2016-01-04", "Sub");
 	}
+
+	private  $topic;
 
 	private  $appKey;
 
-	private  $target;
+	private  $subCallback;
 
-	private  $targetValue;
+	public function getTopic() {
+		return $this->topic;
+	}
 
-	private  $message;
-
-	private  $summary;
+	public function setTopic($topic) {
+		$this->topic = $topic;
+		$this->queryParameters["Topic"]=$topic;
+	}
 
 	public function getAppKey() {
 		return $this->appKey;
@@ -45,40 +50,13 @@ class PushMessageToiOSRequest extends \RpcAcsRequest
 		$this->queryParameters["AppKey"]=$appKey;
 	}
 
-	public function getTarget() {
-		return $this->target;
+	public function getSubCallback() {
+		return $this->subCallback;
 	}
 
-	public function setTarget($target) {
-		$this->target = $target;
-		$this->queryParameters["Target"]=$target;
-	}
-
-	public function getTargetValue() {
-		return $this->targetValue;
-	}
-
-	public function setTargetValue($targetValue) {
-		$this->targetValue = $targetValue;
-		$this->queryParameters["TargetValue"]=$targetValue;
-	}
-
-	public function getMessage() {
-		return $this->message;
-	}
-
-	public function setMessage($message) {
-		$this->message = $message;
-		$this->queryParameters["Message"]=$message;
-	}
-
-	public function getSummary() {
-		return $this->summary;
-	}
-
-	public function setSummary($summary) {
-		$this->summary = $summary;
-		$this->queryParameters["Summary"]=$summary;
+	public function setSubCallback($subCallback) {
+		$this->subCallback = $subCallback;
+		$this->queryParameters["SubCallback"]=$subCallback;
 	}
 	
 }

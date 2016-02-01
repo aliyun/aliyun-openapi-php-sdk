@@ -17,35 +17,19 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Push\Request\V20150827;
 
-class GenerateIotDevicesArrayRequest extends \RpcAcsRequest
-{
-	function  __construct()
-	{
-		parent::__construct("Push", "2015-08-27", "GenerateIotDevicesArray");
-	}
+include_once '../aliyun-php-sdk-core/Config.php';
+use \Iot\Request\V20160104 as Iot;
+// 设置你的AccessKeyId/AccessSecret/AppKey
+$accessKeyId = "";
+$accessSecret = "";
+$iClientProfile = DefaultProfile::getProfile("cn-hangzhou", $accessKeyId, $accessSecret);
+$client = new DefaultAcsClient($iClientProfile);
 
-	private  $isDev;
-
-	private  $number;
-
-	public function getisDev() {
-		return $this->isDev;
-	}
-
-	public function setisDev($isDev) {
-		$this->isDev = $isDev;
-		$this->queryParameters["isDev"]=$isDev;
-	}
-
-	public function getNumber() {
-		return $this->number;
-	}
-
-	public function setNumber($number) {
-		$this->number = $number;
-		$this->queryParameters["Number"]=$number;
-	}
-	
-}
+$request = new Iot\PushByteMessageRequest();
+$request->setAppKey(1231231);
+$request->setDeviceIds("111111,222222");
+$request->setPushContent("bytebase64String");
+$response = $client->getAcsResponse($request);
+print_r("\r\n");
+print_r($response);

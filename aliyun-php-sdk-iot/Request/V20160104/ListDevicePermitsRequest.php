@@ -17,24 +17,18 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Push\Request\V20150827;
+namespace Iot\Request\V20160104;
 
-class PushMessageToiOSRequest extends \RpcAcsRequest
+class ListDevicePermitsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Push", "2015-08-27", "PushMessageToiOS");
+		parent::__construct("Iot", "2016-01-04", "ListDevicePermits");
 	}
 
 	private  $appKey;
 
-	private  $target;
-
-	private  $targetValue;
-
-	private  $message;
-
-	private  $summary;
+	private  $deviceId;
 
 	public function getAppKey() {
 		return $this->appKey;
@@ -45,40 +39,13 @@ class PushMessageToiOSRequest extends \RpcAcsRequest
 		$this->queryParameters["AppKey"]=$appKey;
 	}
 
-	public function getTarget() {
-		return $this->target;
+	public function getDeviceId() {
+		return $this->deviceId;
 	}
 
-	public function setTarget($target) {
-		$this->target = $target;
-		$this->queryParameters["Target"]=$target;
-	}
-
-	public function getTargetValue() {
-		return $this->targetValue;
-	}
-
-	public function setTargetValue($targetValue) {
-		$this->targetValue = $targetValue;
-		$this->queryParameters["TargetValue"]=$targetValue;
-	}
-
-	public function getMessage() {
-		return $this->message;
-	}
-
-	public function setMessage($message) {
-		$this->message = $message;
-		$this->queryParameters["Message"]=$message;
-	}
-
-	public function getSummary() {
-		return $this->summary;
-	}
-
-	public function setSummary($summary) {
-		$this->summary = $summary;
-		$this->queryParameters["Summary"]=$summary;
+	public function setDeviceId($deviceId) {
+		$this->deviceId = $deviceId;
+		$this->queryParameters["DeviceId"]=$deviceId;
 	}
 	
 }
