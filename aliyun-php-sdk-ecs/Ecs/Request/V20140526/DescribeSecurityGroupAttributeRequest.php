@@ -38,6 +38,8 @@ class DescribeSecurityGroupAttributeRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
+	private  $direction;
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -90,6 +92,15 @@ class DescribeSecurityGroupAttributeRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getDirection() {
+		return $this->direction;
+	}
+
+	public function setDirection($direction) {
+		$this->direction = $direction;
+		$this->queryParameters["Direction"]=$direction;
 	}
 	
 }

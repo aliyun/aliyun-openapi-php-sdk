@@ -38,6 +38,8 @@ class AssociateEipAddressRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
+	private  $instanceType;
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -90,6 +92,15 @@ class AssociateEipAddressRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getInstanceType() {
+		return $this->instanceType;
+	}
+
+	public function setInstanceType($instanceType) {
+		$this->instanceType = $instanceType;
+		$this->queryParameters["InstanceType"]=$instanceType;
 	}
 	
 }

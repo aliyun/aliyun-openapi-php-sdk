@@ -60,6 +60,8 @@ class CreateInstanceRequest extends \RpcAcsRequest
 
 	private  $innerIpAddress;
 
+	private  $systemDiskSize;
+
 	private  $systemDiskCategory;
 
 	private  $systemDiskDiskName;
@@ -133,6 +135,32 @@ class CreateInstanceRequest extends \RpcAcsRequest
 	private  $ioOptimized;
 
 	private  $ownerAccount;
+
+	private  $useAdditionalService;
+
+	private  $instanceChargeType;
+
+	private  $period;
+
+	private  $tag1Key;
+
+	private  $tag2Key;
+
+	private  $tag3Key;
+
+	private  $tag4Key;
+
+	private  $tag5Key;
+
+	private  $tag1Value;
+
+	private  $tag2Value;
+
+	private  $tag3Value;
+
+	private  $tag4Value;
+
+	private  $tag5Value;
 
 	public function getOwnerId() {
 		return $this->ownerId;
@@ -285,6 +313,15 @@ class CreateInstanceRequest extends \RpcAcsRequest
 	public function setInnerIpAddress($innerIpAddress) {
 		$this->innerIpAddress = $innerIpAddress;
 		$this->queryParameters["InnerIpAddress"]=$innerIpAddress;
+	}
+
+	public function getSystemDiskSize() {
+		return $this->systemDiskSize;
+	}
+
+	public function setSystemDiskSize($systemDiskSize) {
+		$this->systemDiskSize = $systemDiskSize;
+		$this->queryParameters["SystemDiskSize"]=$systemDiskSize;
 	}
 
 	public function getSystemDiskCategory() {
@@ -618,6 +655,123 @@ class CreateInstanceRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getUseAdditionalService() {
+		return $this->useAdditionalService;
+	}
+
+	public function setUseAdditionalService($useAdditionalService) {
+		$this->useAdditionalService = $useAdditionalService;
+		$this->queryParameters["UseAdditionalService"]=$useAdditionalService;
+	}
+
+	public function getInstanceChargeType() {
+		return $this->instanceChargeType;
+	}
+
+	public function setInstanceChargeType($instanceChargeType) {
+		$this->instanceChargeType = $instanceChargeType;
+		$this->queryParameters["InstanceChargeType"]=$instanceChargeType;
+	}
+
+	public function getPeriod() {
+		return $this->period;
+	}
+
+	public function setPeriod($period) {
+		$this->period = $period;
+		$this->queryParameters["Period"]=$period;
+	}
+
+	public function getTag1Key() {
+		return $this->tag1Key;
+	}
+
+	public function setTag1Key($tag1Key) {
+		$this->tag1Key = $tag1Key;
+		$this->queryParameters["Tag1Key"]=$tag1Key;
+	}
+
+	public function getTag2Key() {
+		return $this->tag2Key;
+	}
+
+	public function setTag2Key($tag2Key) {
+		$this->tag2Key = $tag2Key;
+		$this->queryParameters["Tag2Key"]=$tag2Key;
+	}
+
+	public function getTag3Key() {
+		return $this->tag3Key;
+	}
+
+	public function setTag3Key($tag3Key) {
+		$this->tag3Key = $tag3Key;
+		$this->queryParameters["Tag3Key"]=$tag3Key;
+	}
+
+	public function getTag4Key() {
+		return $this->tag4Key;
+	}
+
+	public function setTag4Key($tag4Key) {
+		$this->tag4Key = $tag4Key;
+		$this->queryParameters["Tag4Key"]=$tag4Key;
+	}
+
+	public function getTag5Key() {
+		return $this->tag5Key;
+	}
+
+	public function setTag5Key($tag5Key) {
+		$this->tag5Key = $tag5Key;
+		$this->queryParameters["Tag5Key"]=$tag5Key;
+	}
+
+	public function getTag1Value() {
+		return $this->tag1Value;
+	}
+
+	public function setTag1Value($tag1Value) {
+		$this->tag1Value = $tag1Value;
+		$this->queryParameters["Tag1Value"]=$tag1Value;
+	}
+
+	public function getTag2Value() {
+		return $this->tag2Value;
+	}
+
+	public function setTag2Value($tag2Value) {
+		$this->tag2Value = $tag2Value;
+		$this->queryParameters["Tag2Value"]=$tag2Value;
+	}
+
+	public function getTag3Value() {
+		return $this->tag3Value;
+	}
+
+	public function setTag3Value($tag3Value) {
+		$this->tag3Value = $tag3Value;
+		$this->queryParameters["Tag3Value"]=$tag3Value;
+	}
+
+	public function getTag4Value() {
+		return $this->tag4Value;
+	}
+
+	public function setTag4Value($tag4Value) {
+		$this->tag4Value = $tag4Value;
+		$this->queryParameters["Tag4Value"]=$tag4Value;
+	}
+
+	public function getTag5Value() {
+		return $this->tag5Value;
+	}
+
+	public function setTag5Value($tag5Value) {
+		$this->tag5Value = $tag5Value;
+		$this->queryParameters["Tag5Value"]=$tag5Value;
 	}
 	
 }

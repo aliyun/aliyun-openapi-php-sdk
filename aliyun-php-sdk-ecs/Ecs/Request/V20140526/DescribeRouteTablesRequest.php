@@ -36,6 +36,10 @@ class DescribeRouteTablesRequest extends \RpcAcsRequest
 
 	private  $routeTableId;
 
+	private  $routerType;
+
+	private  $routerId;
+
 	private  $pageNumber;
 
 	private  $pageSize;
@@ -85,6 +89,24 @@ class DescribeRouteTablesRequest extends \RpcAcsRequest
 	public function setRouteTableId($routeTableId) {
 		$this->routeTableId = $routeTableId;
 		$this->queryParameters["RouteTableId"]=$routeTableId;
+	}
+
+	public function getRouterType() {
+		return $this->routerType;
+	}
+
+	public function setRouterType($routerType) {
+		$this->routerType = $routerType;
+		$this->queryParameters["RouterType"]=$routerType;
+	}
+
+	public function getRouterId() {
+		return $this->routerId;
+	}
+
+	public function setRouterId($routerId) {
+		$this->routerId = $routerId;
+		$this->queryParameters["RouterId"]=$routerId;
 	}
 
 	public function getPageNumber() {

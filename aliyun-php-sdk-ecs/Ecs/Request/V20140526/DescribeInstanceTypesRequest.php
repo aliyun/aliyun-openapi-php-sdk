@@ -34,6 +34,8 @@ class DescribeInstanceTypesRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
+	private  $instanceTypeFamily;
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -68,6 +70,15 @@ class DescribeInstanceTypesRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getInstanceTypeFamily() {
+		return $this->instanceTypeFamily;
+	}
+
+	public function setInstanceTypeFamily($instanceTypeFamily) {
+		$this->instanceTypeFamily = $instanceTypeFamily;
+		$this->queryParameters["InstanceTypeFamily"]=$instanceTypeFamily;
 	}
 	
 }

@@ -54,6 +54,10 @@ class DescribeEipAddressesRequest extends \RpcAcsRequest
 
 	private  $lockReason;
 
+	private  $associatedInstanceType;
+
+	private  $associatedInstanceId;
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -178,6 +182,24 @@ class DescribeEipAddressesRequest extends \RpcAcsRequest
 	public function setLockReason($lockReason) {
 		$this->lockReason = $lockReason;
 		$this->queryParameters["LockReason"]=$lockReason;
+	}
+
+	public function getAssociatedInstanceType() {
+		return $this->associatedInstanceType;
+	}
+
+	public function setAssociatedInstanceType($associatedInstanceType) {
+		$this->associatedInstanceType = $associatedInstanceType;
+		$this->queryParameters["AssociatedInstanceType"]=$associatedInstanceType;
+	}
+
+	public function getAssociatedInstanceId() {
+		return $this->associatedInstanceId;
+	}
+
+	public function setAssociatedInstanceId($associatedInstanceId) {
+		$this->associatedInstanceId = $associatedInstanceId;
+		$this->queryParameters["AssociatedInstanceId"]=$associatedInstanceId;
 	}
 	
 }

@@ -42,6 +42,12 @@ class ModifyInstanceSpecRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
+	private  $temporaryStartTime;
+
+	private  $temporaryEndTime;
+
+	private  $temporaryInternetMaxBandwidthOut;
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -112,6 +118,33 @@ class ModifyInstanceSpecRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getTemporaryStartTime() {
+		return $this->temporaryStartTime;
+	}
+
+	public function setTemporaryStartTime($temporaryStartTime) {
+		$this->temporaryStartTime = $temporaryStartTime;
+		$this->queryParameters["TemporaryStartTime"]=$temporaryStartTime;
+	}
+
+	public function getTemporaryEndTime() {
+		return $this->temporaryEndTime;
+	}
+
+	public function setTemporaryEndTime($temporaryEndTime) {
+		$this->temporaryEndTime = $temporaryEndTime;
+		$this->queryParameters["TemporaryEndTime"]=$temporaryEndTime;
+	}
+
+	public function getTemporaryInternetMaxBandwidthOut() {
+		return $this->temporaryInternetMaxBandwidthOut;
+	}
+
+	public function setTemporaryInternetMaxBandwidthOut($temporaryInternetMaxBandwidthOut) {
+		$this->temporaryInternetMaxBandwidthOut = $temporaryInternetMaxBandwidthOut;
+		$this->queryParameters["TemporaryInternetMaxBandwidthOut"]=$temporaryInternetMaxBandwidthOut;
 	}
 	
 }

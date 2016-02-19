@@ -26,6 +26,8 @@ class CreateRouteEntryRequest extends \RpcAcsRequest
 		parent::__construct("Ecs", "2014-05-26", "CreateRouteEntry");
 	}
 
+	private  $nextHopList;
+
 	private  $ownerId;
 
 	private  $resourceOwnerAccount;
@@ -43,6 +45,15 @@ class CreateRouteEntryRequest extends \RpcAcsRequest
 	private  $nextHopType;
 
 	private  $ownerAccount;
+
+	public function getNextHopList() {
+		return $this->nextHopList;
+	}
+
+	public function setNextHopList($nextHopList) {
+		$this->nextHopList = $nextHopList;
+		$this->queryParameters["NextHopList"]=$nextHopList;
+	}
 
 	public function getOwnerId() {
 		return $this->ownerId;

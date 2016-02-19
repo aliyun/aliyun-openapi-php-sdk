@@ -34,7 +34,7 @@ class DescribeTagsRequest extends \RpcAcsRequest
 
 	private  $pageSize;
 
-	private  $nextToken;
+	private  $pageNumber;
 
 	private  $resourceType;
 
@@ -96,13 +96,13 @@ class DescribeTagsRequest extends \RpcAcsRequest
 		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
-	public function getNextToken() {
-		return $this->nextToken;
+	public function getPageNumber() {
+		return $this->pageNumber;
 	}
 
-	public function setNextToken($nextToken) {
-		$this->nextToken = $nextToken;
-		$this->queryParameters["NextToken"]=$nextToken;
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 
 	public function getResourceType() {

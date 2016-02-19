@@ -26,6 +26,8 @@ class DeleteRouteEntryRequest extends \RpcAcsRequest
 		parent::__construct("Ecs", "2014-05-26", "DeleteRouteEntry");
 	}
 
+	private  $nextHopList;
+
 	private  $ownerId;
 
 	private  $resourceOwnerAccount;
@@ -39,6 +41,15 @@ class DeleteRouteEntryRequest extends \RpcAcsRequest
 	private  $nextHopId;
 
 	private  $ownerAccount;
+
+	public function getNextHopList() {
+		return $this->nextHopList;
+	}
+
+	public function setNextHopList($nextHopList) {
+		$this->nextHopList = $nextHopList;
+		$this->queryParameters["NextHopList"]=$nextHopList;
+	}
 
 	public function getOwnerId() {
 		return $this->ownerId;

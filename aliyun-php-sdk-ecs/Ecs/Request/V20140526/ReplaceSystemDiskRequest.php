@@ -36,9 +36,13 @@ class ReplaceSystemDiskRequest extends \RpcAcsRequest
 
 	private  $imageId;
 
+	private  $systemDiskSize;
+
 	private  $clientToken;
 
 	private  $ownerAccount;
+
+	private  $useAdditionalService;
 
 	public function getOwnerId() {
 		return $this->ownerId;
@@ -85,6 +89,15 @@ class ReplaceSystemDiskRequest extends \RpcAcsRequest
 		$this->queryParameters["ImageId"]=$imageId;
 	}
 
+	public function getSystemDiskSize() {
+		return $this->systemDiskSize;
+	}
+
+	public function setSystemDiskSize($systemDiskSize) {
+		$this->systemDiskSize = $systemDiskSize;
+		$this->queryParameters["SystemDiskSize"]=$systemDiskSize;
+	}
+
 	public function getClientToken() {
 		return $this->clientToken;
 	}
@@ -101,6 +114,15 @@ class ReplaceSystemDiskRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getUseAdditionalService() {
+		return $this->useAdditionalService;
+	}
+
+	public function setUseAdditionalService($useAdditionalService) {
+		$this->useAdditionalService = $useAdditionalService;
+		$this->queryParameters["UseAdditionalService"]=$useAdditionalService;
 	}
 	
 }

@@ -38,6 +38,8 @@ class DescribeVSwitchesRequest extends \RpcAcsRequest
 
 	private  $zoneId;
 
+	private  $isDefault;
+
 	private  $pageNumber;
 
 	private  $pageSize;
@@ -96,6 +98,15 @@ class DescribeVSwitchesRequest extends \RpcAcsRequest
 	public function setZoneId($zoneId) {
 		$this->zoneId = $zoneId;
 		$this->queryParameters["ZoneId"]=$zoneId;
+	}
+
+	public function getIsDefault() {
+		return $this->isDefault;
+	}
+
+	public function setIsDefault($isDefault) {
+		$this->isDefault = $isDefault;
+		$this->queryParameters["IsDefault"]=$isDefault;
 	}
 
 	public function getPageNumber() {

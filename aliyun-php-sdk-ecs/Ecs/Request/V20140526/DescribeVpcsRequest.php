@@ -34,6 +34,8 @@ class DescribeVpcsRequest extends \RpcAcsRequest
 
 	private  $vpcId;
 
+	private  $isDefault;
+
 	private  $pageNumber;
 
 	private  $pageSize;
@@ -74,6 +76,15 @@ class DescribeVpcsRequest extends \RpcAcsRequest
 	public function setVpcId($vpcId) {
 		$this->vpcId = $vpcId;
 		$this->queryParameters["VpcId"]=$vpcId;
+	}
+
+	public function getIsDefault() {
+		return $this->isDefault;
+	}
+
+	public function setIsDefault($isDefault) {
+		$this->isDefault = $isDefault;
+		$this->queryParameters["IsDefault"]=$isDefault;
 	}
 
 	public function getPageNumber() {
