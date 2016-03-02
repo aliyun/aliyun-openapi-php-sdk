@@ -59,12 +59,12 @@ $request->setAndroidExtParameters("{\"k1\":\"android\",\"k2\":\"v2\"}"); // 设�
 
 // 推送控制
 $pushTime = new DateTime();
-$pushTime->add(new DateInterval('PT30S')); // 30秒之间的时间点, 也可以设置成你指定固定时间
-$request->setPushTime($pushTime->format(DateTime::ISO8601)); // 延后推送。可选，如果不设置表示立即推送
+$pushTime->add(new DateInterval('PT30S')); // 30秒之后的时间点, 也可以设置成你指定固定时间
+// $request->setPushTime($pushTime->format(DateTime::ISO8601)); // 延后推送。可选，如果不设置表示立即推送
 $request->setStoreOffline("true"); // 离线消息是否保存,若保存, 在推送时候，用户即使不在线，下一次上线则会收到
 $expireTime = new DateTime();
 $expireTime->add(new DateInterval('P1D')); // 12小时后消息失效, 不会再发送
-$request->setExpireTime($expireTime->format(DateTime::ISO8601));
+// $request->setExpireTime($expireTime->format(DateTime::ISO8601));
 $request->setBatchNumber("100010"); // 批次编号,用于活动效果统计. 设置成业务可以记录的字符串
 
 
