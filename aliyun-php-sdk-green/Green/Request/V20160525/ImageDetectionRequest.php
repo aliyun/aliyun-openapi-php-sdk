@@ -17,26 +17,47 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Green\Request\V20160224;
+namespace Green\Request\V20160525;
 
-class ImageResultRequest extends \RoaAcsRequest
+class ImageDetectionRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Green", "2016-02-24", "ImageResult");
-		$this->setUriPattern("/image/result/[taskid]");
-		$this->setMethod("GET");
+		parent::__construct("Green", "2016-05-25", "ImageDetection");
+		$this->setMethod("POST");
 	}
 
-	private  $taskid;
+	private  $async;
 
-	public function gettaskid() {
-		return $this->taskid;
+	private  $imageUrl;
+
+	private  $scene;
+
+	public function getAsync() {
+		return $this->async;
 	}
 
-	public function settaskid($taskid) {
-		$this->taskid = $taskid;
-		$this->pathParameters["taskid"]=$taskid;
+	public function setAsync($async) {
+		$this->async = $async;
+		$this->queryParameters["Async"]=$async;
+	}
+
+	public function getImageUrl() {
+		return $this->imageUrl;
+	}
+
+	public function setImageUrl($imageUrl) {
+		$this->imageUrl = $imageUrl;
+		$this->queryParameters["ImageUrl"]=$imageUrl;
+	}
+
+	public function getScene() {
+		return $this->scene;
+	}
+
+	public function setScene($scene) {
+		$this->scene = $scene;
+		$this->queryParameters["Scene"]=$scene;
 	}
 	
 }

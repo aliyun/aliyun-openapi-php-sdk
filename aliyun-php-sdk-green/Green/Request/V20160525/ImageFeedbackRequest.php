@@ -17,13 +17,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Green\Request\V20160308;
+namespace Green\Request\V20160525;
 
-class ImageResultRequest extends \RpcAcsRequest
+class ImageFeedbackRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Green", "2016-03-08", "ImageResult");
+		parent::__construct("Green", "2016-05-25", "ImageFeedback");
+		$this->setMethod("POST");
 	}
 
 	private  $taskId;

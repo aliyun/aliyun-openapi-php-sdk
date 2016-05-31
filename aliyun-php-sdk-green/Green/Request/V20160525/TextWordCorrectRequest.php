@@ -17,26 +17,25 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Green\Request\V20151209;
+namespace Green\Request\V20160525;
 
-class ImageFeedbackRequest extends \RoaAcsRequest
+class TextWordCorrectRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Green", "2015-12-09", "ImageFeedback");
-		$this->setUriPattern("/image/feedback/[taskid]");
+		parent::__construct("Green", "2016-05-25", "TextWordCorrect");
 		$this->setMethod("POST");
 	}
 
-	private  $taskid;
+	private  $text;
 
-	public function gettaskid() {
-		return $this->taskid;
+	public function getText() {
+		return $this->text;
 	}
 
-	public function settaskid($taskid) {
-		$this->taskid = $taskid;
-		$this->pathParameters["taskid"]=$taskid;
+	public function setText($text) {
+		$this->text = $text;
+		$this->queryParameters["Text"]=$text;
 	}
 	
 }

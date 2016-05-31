@@ -17,47 +17,25 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Green\Request\V20160308;
+namespace Green\Request\V20160525;
 
-class ImageDetectionRequest extends \RpcAcsRequest
+class AntispamResultsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Green", "2016-03-08", "ImageDetection");
+		parent::__construct("Green", "2016-05-25", "AntispamResults");
 		$this->setMethod("POST");
 	}
 
-	private  $async;
+	private  $dataId;
 
-	private  $imageUrl;
-
-	private  $scene;
-
-	public function getAsync() {
-		return $this->async;
+	public function getDataId() {
+		return $this->dataId;
 	}
 
-	public function setAsync($async) {
-		$this->async = $async;
-		$this->queryParameters["Async"]=$async;
-	}
-
-	public function getImageUrl() {
-		return $this->imageUrl;
-	}
-
-	public function setImageUrl($imageUrl) {
-		$this->imageUrl = $imageUrl;
-		$this->queryParameters["ImageUrl"]=$imageUrl;
-	}
-
-	public function getScene() {
-		return $this->scene;
-	}
-
-	public function setScene($scene) {
-		$this->scene = $scene;
-		$this->queryParameters["Scene"]=$scene;
+	public function setDataId($dataId) {
+		$this->dataId = $dataId;
+		$this->queryParameters["DataId"]=$dataId;
 	}
 	
 }
