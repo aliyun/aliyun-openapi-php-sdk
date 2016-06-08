@@ -19,11 +19,11 @@
  */
 namespace Mts\Request\V20140618;
 
-class StartMediaWorkflowExecutionRequest extends \RpcAcsRequest
+class QuerySystemTemplateListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "StartMediaWorkflowExecution");
+		parent::__construct("Mts", "2014-06-18", "QuerySystemTemplateList");
 	}
 
 	private  $ownerId;
@@ -32,9 +32,7 @@ class StartMediaWorkflowExecutionRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $input;
-
-	private  $name;
+	private  $templateIds;
 
 	private  $ownerAccount;
 
@@ -65,22 +63,13 @@ class StartMediaWorkflowExecutionRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getInput() {
-		return $this->input;
+	public function getTemplateIds() {
+		return $this->templateIds;
 	}
 
-	public function setInput($input) {
-		$this->input = $input;
-		$this->queryParameters["Input"]=$input;
-	}
-
-	public function getName() {
-		return $this->name;
-	}
-
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
+	public function setTemplateIds($templateIds) {
+		$this->templateIds = $templateIds;
+		$this->queryParameters["TemplateIds"]=$templateIds;
 	}
 
 	public function getOwnerAccount() {

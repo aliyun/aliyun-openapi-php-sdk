@@ -19,11 +19,11 @@
  */
 namespace Mts\Request\V20140618;
 
-class StartMediaWorkflowExecutionRequest extends \RpcAcsRequest
+class ListJobRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "StartMediaWorkflowExecution");
+		parent::__construct("Mts", "2014-06-18", "ListJob");
 	}
 
 	private  $ownerId;
@@ -32,9 +32,17 @@ class StartMediaWorkflowExecutionRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $input;
+	private  $nextPageToken;
 
-	private  $name;
+	private  $maximumPageSize;
+
+	private  $state;
+
+	private  $startOfJobCreatedTimeRange;
+
+	private  $endOfJobCreatedTimeRange;
+
+	private  $pipelineId;
 
 	private  $ownerAccount;
 
@@ -65,22 +73,58 @@ class StartMediaWorkflowExecutionRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getInput() {
-		return $this->input;
+	public function getNextPageToken() {
+		return $this->nextPageToken;
 	}
 
-	public function setInput($input) {
-		$this->input = $input;
-		$this->queryParameters["Input"]=$input;
+	public function setNextPageToken($nextPageToken) {
+		$this->nextPageToken = $nextPageToken;
+		$this->queryParameters["NextPageToken"]=$nextPageToken;
 	}
 
-	public function getName() {
-		return $this->name;
+	public function getMaximumPageSize() {
+		return $this->maximumPageSize;
 	}
 
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
+	public function setMaximumPageSize($maximumPageSize) {
+		$this->maximumPageSize = $maximumPageSize;
+		$this->queryParameters["MaximumPageSize"]=$maximumPageSize;
+	}
+
+	public function getState() {
+		return $this->state;
+	}
+
+	public function setState($state) {
+		$this->state = $state;
+		$this->queryParameters["State"]=$state;
+	}
+
+	public function getStartOfJobCreatedTimeRange() {
+		return $this->startOfJobCreatedTimeRange;
+	}
+
+	public function setStartOfJobCreatedTimeRange($startOfJobCreatedTimeRange) {
+		$this->startOfJobCreatedTimeRange = $startOfJobCreatedTimeRange;
+		$this->queryParameters["StartOfJobCreatedTimeRange"]=$startOfJobCreatedTimeRange;
+	}
+
+	public function getEndOfJobCreatedTimeRange() {
+		return $this->endOfJobCreatedTimeRange;
+	}
+
+	public function setEndOfJobCreatedTimeRange($endOfJobCreatedTimeRange) {
+		$this->endOfJobCreatedTimeRange = $endOfJobCreatedTimeRange;
+		$this->queryParameters["EndOfJobCreatedTimeRange"]=$endOfJobCreatedTimeRange;
+	}
+
+	public function getPipelineId() {
+		return $this->pipelineId;
+	}
+
+	public function setPipelineId($pipelineId) {
+		$this->pipelineId = $pipelineId;
+		$this->queryParameters["PipelineId"]=$pipelineId;
 	}
 
 	public function getOwnerAccount() {

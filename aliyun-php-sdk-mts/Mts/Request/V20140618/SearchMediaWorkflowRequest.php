@@ -19,11 +19,11 @@
  */
 namespace Mts\Request\V20140618;
 
-class StartMediaWorkflowExecutionRequest extends \RpcAcsRequest
+class SearchMediaWorkflowRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "StartMediaWorkflowExecution");
+		parent::__construct("Mts", "2014-06-18", "SearchMediaWorkflow");
 	}
 
 	private  $ownerId;
@@ -32,9 +32,11 @@ class StartMediaWorkflowExecutionRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $input;
+	private  $pageSize;
 
-	private  $name;
+	private  $pageNumber;
+
+	private  $stateList;
 
 	private  $ownerAccount;
 
@@ -65,22 +67,31 @@ class StartMediaWorkflowExecutionRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getInput() {
-		return $this->input;
+	public function getPageSize() {
+		return $this->pageSize;
 	}
 
-	public function setInput($input) {
-		$this->input = $input;
-		$this->queryParameters["Input"]=$input;
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
-	public function getName() {
-		return $this->name;
+	public function getPageNumber() {
+		return $this->pageNumber;
 	}
 
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
+	}
+
+	public function getStateList() {
+		return $this->stateList;
+	}
+
+	public function setStateList($stateList) {
+		$this->stateList = $stateList;
+		$this->queryParameters["StateList"]=$stateList;
 	}
 
 	public function getOwnerAccount() {

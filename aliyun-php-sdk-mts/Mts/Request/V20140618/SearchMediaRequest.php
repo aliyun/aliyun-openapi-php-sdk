@@ -19,11 +19,11 @@
  */
 namespace Mts\Request\V20140618;
 
-class StartMediaWorkflowExecutionRequest extends \RpcAcsRequest
+class SearchMediaRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "StartMediaWorkflowExecution");
+		parent::__construct("Mts", "2014-06-18", "SearchMedia");
 	}
 
 	private  $ownerId;
@@ -32,9 +32,15 @@ class StartMediaWorkflowExecutionRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $input;
+	private  $fileURLs;
 
-	private  $name;
+	private  $pageSize;
+
+	private  $pageNumber;
+
+	private  $stateList;
+
+	private  $keyWords;
 
 	private  $ownerAccount;
 
@@ -65,22 +71,49 @@ class StartMediaWorkflowExecutionRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getInput() {
-		return $this->input;
+	public function getFileURLs() {
+		return $this->fileURLs;
 	}
 
-	public function setInput($input) {
-		$this->input = $input;
-		$this->queryParameters["Input"]=$input;
+	public function setFileURLs($fileURLs) {
+		$this->fileURLs = $fileURLs;
+		$this->queryParameters["FileURLs"]=$fileURLs;
 	}
 
-	public function getName() {
-		return $this->name;
+	public function getPageSize() {
+		return $this->pageSize;
 	}
 
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
+	public function getPageNumber() {
+		return $this->pageNumber;
+	}
+
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
+	}
+
+	public function getStateList() {
+		return $this->stateList;
+	}
+
+	public function setStateList($stateList) {
+		$this->stateList = $stateList;
+		$this->queryParameters["StateList"]=$stateList;
+	}
+
+	public function getKeyWords() {
+		return $this->keyWords;
+	}
+
+	public function setKeyWords($keyWords) {
+		$this->keyWords = $keyWords;
+		$this->queryParameters["KeyWords"]=$keyWords;
 	}
 
 	public function getOwnerAccount() {

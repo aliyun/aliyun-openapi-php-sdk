@@ -19,11 +19,11 @@
  */
 namespace Mts\Request\V20140618;
 
-class StartMediaWorkflowExecutionRequest extends \RpcAcsRequest
+class UpdateMediaWorkflowRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "StartMediaWorkflowExecution");
+		parent::__construct("Mts", "2014-06-18", "UpdateMediaWorkflow");
 	}
 
 	private  $ownerId;
@@ -32,9 +32,9 @@ class StartMediaWorkflowExecutionRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $input;
+	private  $mediaWorkflowId;
 
-	private  $name;
+	private  $topology;
 
 	private  $ownerAccount;
 
@@ -65,22 +65,22 @@ class StartMediaWorkflowExecutionRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getInput() {
-		return $this->input;
+	public function getMediaWorkflowId() {
+		return $this->mediaWorkflowId;
 	}
 
-	public function setInput($input) {
-		$this->input = $input;
-		$this->queryParameters["Input"]=$input;
+	public function setMediaWorkflowId($mediaWorkflowId) {
+		$this->mediaWorkflowId = $mediaWorkflowId;
+		$this->queryParameters["MediaWorkflowId"]=$mediaWorkflowId;
 	}
 
-	public function getName() {
-		return $this->name;
+	public function getTopology() {
+		return $this->topology;
 	}
 
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
+	public function setTopology($topology) {
+		$this->topology = $topology;
+		$this->queryParameters["Topology"]=$topology;
 	}
 
 	public function getOwnerAccount() {

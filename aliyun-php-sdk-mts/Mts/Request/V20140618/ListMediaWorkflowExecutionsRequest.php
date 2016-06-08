@@ -19,11 +19,11 @@
  */
 namespace Mts\Request\V20140618;
 
-class StartMediaWorkflowExecutionRequest extends \RpcAcsRequest
+class ListMediaWorkflowExecutionsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "StartMediaWorkflowExecution");
+		parent::__construct("Mts", "2014-06-18", "ListMediaWorkflowExecutions");
 	}
 
 	private  $ownerId;
@@ -32,9 +32,13 @@ class StartMediaWorkflowExecutionRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $input;
+	private  $mediaWorkflowName;
 
-	private  $name;
+	private  $inputFileURL;
+
+	private  $nextPageToken;
+
+	private  $maximumPageSize;
 
 	private  $ownerAccount;
 
@@ -65,22 +69,40 @@ class StartMediaWorkflowExecutionRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getInput() {
-		return $this->input;
+	public function getMediaWorkflowName() {
+		return $this->mediaWorkflowName;
 	}
 
-	public function setInput($input) {
-		$this->input = $input;
-		$this->queryParameters["Input"]=$input;
+	public function setMediaWorkflowName($mediaWorkflowName) {
+		$this->mediaWorkflowName = $mediaWorkflowName;
+		$this->queryParameters["MediaWorkflowName"]=$mediaWorkflowName;
 	}
 
-	public function getName() {
-		return $this->name;
+	public function getInputFileURL() {
+		return $this->inputFileURL;
 	}
 
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
+	public function setInputFileURL($inputFileURL) {
+		$this->inputFileURL = $inputFileURL;
+		$this->queryParameters["InputFileURL"]=$inputFileURL;
+	}
+
+	public function getNextPageToken() {
+		return $this->nextPageToken;
+	}
+
+	public function setNextPageToken($nextPageToken) {
+		$this->nextPageToken = $nextPageToken;
+		$this->queryParameters["NextPageToken"]=$nextPageToken;
+	}
+
+	public function getMaximumPageSize() {
+		return $this->maximumPageSize;
+	}
+
+	public function setMaximumPageSize($maximumPageSize) {
+		$this->maximumPageSize = $maximumPageSize;
+		$this->queryParameters["MaximumPageSize"]=$maximumPageSize;
 	}
 
 	public function getOwnerAccount() {

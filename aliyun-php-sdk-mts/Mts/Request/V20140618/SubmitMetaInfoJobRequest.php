@@ -19,11 +19,11 @@
  */
 namespace Mts\Request\V20140618;
 
-class StartMediaWorkflowExecutionRequest extends \RpcAcsRequest
+class SubmitMetaInfoJobRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "StartMediaWorkflowExecution");
+		parent::__construct("Mts", "2014-06-18", "SubmitMetaInfoJob");
 	}
 
 	private  $ownerId;
@@ -34,7 +34,9 @@ class StartMediaWorkflowExecutionRequest extends \RpcAcsRequest
 
 	private  $input;
 
-	private  $name;
+	private  $userData;
+
+	private  $pipelineId;
 
 	private  $ownerAccount;
 
@@ -74,13 +76,22 @@ class StartMediaWorkflowExecutionRequest extends \RpcAcsRequest
 		$this->queryParameters["Input"]=$input;
 	}
 
-	public function getName() {
-		return $this->name;
+	public function getUserData() {
+		return $this->userData;
 	}
 
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
+	public function setUserData($userData) {
+		$this->userData = $userData;
+		$this->queryParameters["UserData"]=$userData;
+	}
+
+	public function getPipelineId() {
+		return $this->pipelineId;
+	}
+
+	public function setPipelineId($pipelineId) {
+		$this->pipelineId = $pipelineId;
+		$this->queryParameters["PipelineId"]=$pipelineId;
 	}
 
 	public function getOwnerAccount() {

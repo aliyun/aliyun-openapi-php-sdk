@@ -19,11 +19,11 @@
  */
 namespace Mts\Request\V20140618;
 
-class StartMediaWorkflowExecutionRequest extends \RpcAcsRequest
+class QueryJobListByFileRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "StartMediaWorkflowExecution");
+		parent::__construct("Mts", "2014-06-18", "QueryJobListByFile");
 	}
 
 	private  $ownerId;
@@ -32,9 +32,11 @@ class StartMediaWorkflowExecutionRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $input;
+	private  $bucket;
 
-	private  $name;
+	private  $location;
+
+	private  $object;
 
 	private  $ownerAccount;
 
@@ -65,22 +67,31 @@ class StartMediaWorkflowExecutionRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getInput() {
-		return $this->input;
+	public function getBucket() {
+		return $this->bucket;
 	}
 
-	public function setInput($input) {
-		$this->input = $input;
-		$this->queryParameters["Input"]=$input;
+	public function setBucket($bucket) {
+		$this->bucket = $bucket;
+		$this->queryParameters["Bucket"]=$bucket;
 	}
 
-	public function getName() {
-		return $this->name;
+	public function getLocation() {
+		return $this->location;
 	}
 
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
+	public function setLocation($location) {
+		$this->location = $location;
+		$this->queryParameters["Location"]=$location;
+	}
+
+	public function getObject() {
+		return $this->object;
+	}
+
+	public function setObject($object) {
+		$this->object = $object;
+		$this->queryParameters["Object"]=$object;
 	}
 
 	public function getOwnerAccount() {
