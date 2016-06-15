@@ -32,6 +32,8 @@ class SubRequest extends \RpcAcsRequest
 
 	private  $subCallback;
 
+	private  $topicList;
+
 	public function getTopic() {
 		return $this->topic;
 	}
@@ -57,6 +59,15 @@ class SubRequest extends \RpcAcsRequest
 	public function setSubCallback($subCallback) {
 		$this->subCallback = $subCallback;
 		$this->queryParameters["SubCallback"]=$subCallback;
+	}
+
+	public function getTopicList() {
+		return $this->topicList;
+	}
+
+	public function setTopicList($topicList) {
+		$this->topicList = $topicList;
+		$this->queryParameters["TopicList"]=$topicList;
 	}
 	
 }

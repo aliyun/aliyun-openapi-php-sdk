@@ -30,6 +30,8 @@ class UnSubRequest extends \RpcAcsRequest
 
 	private  $appKey;
 
+	private  $topicList;
+
 	public function getTopic() {
 		return $this->topic;
 	}
@@ -46,6 +48,15 @@ class UnSubRequest extends \RpcAcsRequest
 	public function setAppKey($appKey) {
 		$this->appKey = $appKey;
 		$this->queryParameters["AppKey"]=$appKey;
+	}
+
+	public function getTopicList() {
+		return $this->topicList;
+	}
+
+	public function setTopicList($topicList) {
+		$this->topicList = $topicList;
+		$this->queryParameters["TopicList"]=$topicList;
 	}
 	
 }
