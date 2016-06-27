@@ -19,11 +19,11 @@
  */
 namespace Mts\Request\V20140618;
 
-class SubmitSnapshotJobRequest extends \RpcAcsRequest
+class UpdateInputBucketSyncStateRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "SubmitSnapshotJob");
+		parent::__construct("Mts", "2014-06-18", "UpdateInputBucketSyncState");
 	}
 
 	private  $ownerId;
@@ -32,13 +32,9 @@ class SubmitSnapshotJobRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $input;
+	private  $bucket;
 
-	private  $snapshotConfig;
-
-	private  $userData;
-
-	private  $pipelineId;
+	private  $sync;
 
 	private  $ownerAccount;
 
@@ -69,40 +65,22 @@ class SubmitSnapshotJobRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getInput() {
-		return $this->input;
+	public function getBucket() {
+		return $this->bucket;
 	}
 
-	public function setInput($input) {
-		$this->input = $input;
-		$this->queryParameters["Input"]=$input;
+	public function setBucket($bucket) {
+		$this->bucket = $bucket;
+		$this->queryParameters["Bucket"]=$bucket;
 	}
 
-	public function getSnapshotConfig() {
-		return $this->snapshotConfig;
+	public function getSync() {
+		return $this->sync;
 	}
 
-	public function setSnapshotConfig($snapshotConfig) {
-		$this->snapshotConfig = $snapshotConfig;
-		$this->queryParameters["SnapshotConfig"]=$snapshotConfig;
-	}
-
-	public function getUserData() {
-		return $this->userData;
-	}
-
-	public function setUserData($userData) {
-		$this->userData = $userData;
-		$this->queryParameters["UserData"]=$userData;
-	}
-
-	public function getPipelineId() {
-		return $this->pipelineId;
-	}
-
-	public function setPipelineId($pipelineId) {
-		$this->pipelineId = $pipelineId;
-		$this->queryParameters["PipelineId"]=$pipelineId;
+	public function setSync($sync) {
+		$this->sync = $sync;
+		$this->queryParameters["Sync"]=$sync;
 	}
 
 	public function getOwnerAccount() {

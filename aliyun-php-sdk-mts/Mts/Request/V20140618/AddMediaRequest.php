@@ -19,11 +19,11 @@
  */
 namespace Mts\Request\V20140618;
 
-class SubmitSnapshotJobRequest extends \RpcAcsRequest
+class AddMediaRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "SubmitSnapshotJob");
+		parent::__construct("Mts", "2014-06-18", "AddMedia");
 	}
 
 	private  $ownerId;
@@ -32,13 +32,17 @@ class SubmitSnapshotJobRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $input;
+	private  $fileURL;
 
-	private  $snapshotConfig;
+	private  $title;
 
-	private  $userData;
+	private  $description;
 
-	private  $pipelineId;
+	private  $coverURL;
+
+	private  $tags;
+
+	private  $cateId;
 
 	private  $ownerAccount;
 
@@ -69,40 +73,58 @@ class SubmitSnapshotJobRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getInput() {
-		return $this->input;
+	public function getFileURL() {
+		return $this->fileURL;
 	}
 
-	public function setInput($input) {
-		$this->input = $input;
-		$this->queryParameters["Input"]=$input;
+	public function setFileURL($fileURL) {
+		$this->fileURL = $fileURL;
+		$this->queryParameters["FileURL"]=$fileURL;
 	}
 
-	public function getSnapshotConfig() {
-		return $this->snapshotConfig;
+	public function getTitle() {
+		return $this->title;
 	}
 
-	public function setSnapshotConfig($snapshotConfig) {
-		$this->snapshotConfig = $snapshotConfig;
-		$this->queryParameters["SnapshotConfig"]=$snapshotConfig;
+	public function setTitle($title) {
+		$this->title = $title;
+		$this->queryParameters["Title"]=$title;
 	}
 
-	public function getUserData() {
-		return $this->userData;
+	public function getDescription() {
+		return $this->description;
 	}
 
-	public function setUserData($userData) {
-		$this->userData = $userData;
-		$this->queryParameters["UserData"]=$userData;
+	public function setDescription($description) {
+		$this->description = $description;
+		$this->queryParameters["Description"]=$description;
 	}
 
-	public function getPipelineId() {
-		return $this->pipelineId;
+	public function getCoverURL() {
+		return $this->coverURL;
 	}
 
-	public function setPipelineId($pipelineId) {
-		$this->pipelineId = $pipelineId;
-		$this->queryParameters["PipelineId"]=$pipelineId;
+	public function setCoverURL($coverURL) {
+		$this->coverURL = $coverURL;
+		$this->queryParameters["CoverURL"]=$coverURL;
+	}
+
+	public function getTags() {
+		return $this->tags;
+	}
+
+	public function setTags($tags) {
+		$this->tags = $tags;
+		$this->queryParameters["Tags"]=$tags;
+	}
+
+	public function getCateId() {
+		return $this->cateId;
+	}
+
+	public function setCateId($cateId) {
+		$this->cateId = $cateId;
+		$this->queryParameters["CateId"]=$cateId;
 	}
 
 	public function getOwnerAccount() {

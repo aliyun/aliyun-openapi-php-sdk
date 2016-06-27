@@ -19,11 +19,11 @@
  */
 namespace Mts\Request\V20140618;
 
-class SubmitSnapshotJobRequest extends \RpcAcsRequest
+class UpdateMediaCategoryRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "SubmitSnapshotJob");
+		parent::__construct("Mts", "2014-06-18", "UpdateMediaCategory");
 	}
 
 	private  $ownerId;
@@ -32,13 +32,9 @@ class SubmitSnapshotJobRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $input;
+	private  $mediaId;
 
-	private  $snapshotConfig;
-
-	private  $userData;
-
-	private  $pipelineId;
+	private  $cateId;
 
 	private  $ownerAccount;
 
@@ -69,40 +65,22 @@ class SubmitSnapshotJobRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getInput() {
-		return $this->input;
+	public function getMediaId() {
+		return $this->mediaId;
 	}
 
-	public function setInput($input) {
-		$this->input = $input;
-		$this->queryParameters["Input"]=$input;
+	public function setMediaId($mediaId) {
+		$this->mediaId = $mediaId;
+		$this->queryParameters["MediaId"]=$mediaId;
 	}
 
-	public function getSnapshotConfig() {
-		return $this->snapshotConfig;
+	public function getCateId() {
+		return $this->cateId;
 	}
 
-	public function setSnapshotConfig($snapshotConfig) {
-		$this->snapshotConfig = $snapshotConfig;
-		$this->queryParameters["SnapshotConfig"]=$snapshotConfig;
-	}
-
-	public function getUserData() {
-		return $this->userData;
-	}
-
-	public function setUserData($userData) {
-		$this->userData = $userData;
-		$this->queryParameters["UserData"]=$userData;
-	}
-
-	public function getPipelineId() {
-		return $this->pipelineId;
-	}
-
-	public function setPipelineId($pipelineId) {
-		$this->pipelineId = $pipelineId;
-		$this->queryParameters["PipelineId"]=$pipelineId;
+	public function setCateId($cateId) {
+		$this->cateId = $cateId;
+		$this->queryParameters["CateId"]=$cateId;
 	}
 
 	public function getOwnerAccount() {

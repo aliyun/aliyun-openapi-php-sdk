@@ -19,11 +19,11 @@
  */
 namespace Mts\Request\V20140618;
 
-class SubmitSnapshotJobRequest extends \RpcAcsRequest
+class QueryMediaListByURLRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "SubmitSnapshotJob");
+		parent::__construct("Mts", "2014-06-18", "QueryMediaListByURL");
 	}
 
 	private  $ownerId;
@@ -32,13 +32,13 @@ class SubmitSnapshotJobRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $input;
+	private  $fileURLs;
 
-	private  $snapshotConfig;
+	private  $includePlayList;
 
-	private  $userData;
+	private  $includeSnapshotList;
 
-	private  $pipelineId;
+	private  $includeMediaInfo;
 
 	private  $ownerAccount;
 
@@ -69,40 +69,40 @@ class SubmitSnapshotJobRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getInput() {
-		return $this->input;
+	public function getFileURLs() {
+		return $this->fileURLs;
 	}
 
-	public function setInput($input) {
-		$this->input = $input;
-		$this->queryParameters["Input"]=$input;
+	public function setFileURLs($fileURLs) {
+		$this->fileURLs = $fileURLs;
+		$this->queryParameters["FileURLs"]=$fileURLs;
 	}
 
-	public function getSnapshotConfig() {
-		return $this->snapshotConfig;
+	public function getIncludePlayList() {
+		return $this->includePlayList;
 	}
 
-	public function setSnapshotConfig($snapshotConfig) {
-		$this->snapshotConfig = $snapshotConfig;
-		$this->queryParameters["SnapshotConfig"]=$snapshotConfig;
+	public function setIncludePlayList($includePlayList) {
+		$this->includePlayList = $includePlayList;
+		$this->queryParameters["IncludePlayList"]=$includePlayList;
 	}
 
-	public function getUserData() {
-		return $this->userData;
+	public function getIncludeSnapshotList() {
+		return $this->includeSnapshotList;
 	}
 
-	public function setUserData($userData) {
-		$this->userData = $userData;
-		$this->queryParameters["UserData"]=$userData;
+	public function setIncludeSnapshotList($includeSnapshotList) {
+		$this->includeSnapshotList = $includeSnapshotList;
+		$this->queryParameters["IncludeSnapshotList"]=$includeSnapshotList;
 	}
 
-	public function getPipelineId() {
-		return $this->pipelineId;
+	public function getIncludeMediaInfo() {
+		return $this->includeMediaInfo;
 	}
 
-	public function setPipelineId($pipelineId) {
-		$this->pipelineId = $pipelineId;
-		$this->queryParameters["PipelineId"]=$pipelineId;
+	public function setIncludeMediaInfo($includeMediaInfo) {
+		$this->includeMediaInfo = $includeMediaInfo;
+		$this->queryParameters["IncludeMediaInfo"]=$includeMediaInfo;
 	}
 
 	public function getOwnerAccount() {

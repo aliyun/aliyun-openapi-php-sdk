@@ -34,6 +34,12 @@ class QueryMediaListRequest extends \RpcAcsRequest
 
 	private  $mediaIds;
 
+	private  $includePlayList;
+
+	private  $includeSnapshotList;
+
+	private  $includeMediaInfo;
+
 	private  $ownerAccount;
 
 	public function getOwnerId() {
@@ -70,6 +76,33 @@ class QueryMediaListRequest extends \RpcAcsRequest
 	public function setMediaIds($mediaIds) {
 		$this->mediaIds = $mediaIds;
 		$this->queryParameters["MediaIds"]=$mediaIds;
+	}
+
+	public function getIncludePlayList() {
+		return $this->includePlayList;
+	}
+
+	public function setIncludePlayList($includePlayList) {
+		$this->includePlayList = $includePlayList;
+		$this->queryParameters["IncludePlayList"]=$includePlayList;
+	}
+
+	public function getIncludeSnapshotList() {
+		return $this->includeSnapshotList;
+	}
+
+	public function setIncludeSnapshotList($includeSnapshotList) {
+		$this->includeSnapshotList = $includeSnapshotList;
+		$this->queryParameters["IncludeSnapshotList"]=$includeSnapshotList;
+	}
+
+	public function getIncludeMediaInfo() {
+		return $this->includeMediaInfo;
+	}
+
+	public function setIncludeMediaInfo($includeMediaInfo) {
+		$this->includeMediaInfo = $includeMediaInfo;
+		$this->queryParameters["IncludeMediaInfo"]=$includeMediaInfo;
 	}
 
 	public function getOwnerAccount() {

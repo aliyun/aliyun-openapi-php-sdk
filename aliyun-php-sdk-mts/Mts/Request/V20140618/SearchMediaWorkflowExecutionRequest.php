@@ -19,11 +19,11 @@
  */
 namespace Mts\Request\V20140618;
 
-class SubmitSnapshotJobRequest extends \RpcAcsRequest
+class SearchMediaWorkflowExecutionRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "SubmitSnapshotJob");
+		parent::__construct("Mts", "2014-06-18", "SearchMediaWorkflowExecution");
 	}
 
 	private  $ownerId;
@@ -32,13 +32,15 @@ class SubmitSnapshotJobRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $input;
+	private  $mediaWorkflowName;
 
-	private  $snapshotConfig;
+	private  $fileURLs;
 
-	private  $userData;
+	private  $pageSize;
 
-	private  $pipelineId;
+	private  $pageNumber;
+
+	private  $stateList;
 
 	private  $ownerAccount;
 
@@ -69,40 +71,49 @@ class SubmitSnapshotJobRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getInput() {
-		return $this->input;
+	public function getMediaWorkflowName() {
+		return $this->mediaWorkflowName;
 	}
 
-	public function setInput($input) {
-		$this->input = $input;
-		$this->queryParameters["Input"]=$input;
+	public function setMediaWorkflowName($mediaWorkflowName) {
+		$this->mediaWorkflowName = $mediaWorkflowName;
+		$this->queryParameters["MediaWorkflowName"]=$mediaWorkflowName;
 	}
 
-	public function getSnapshotConfig() {
-		return $this->snapshotConfig;
+	public function getFileURLs() {
+		return $this->fileURLs;
 	}
 
-	public function setSnapshotConfig($snapshotConfig) {
-		$this->snapshotConfig = $snapshotConfig;
-		$this->queryParameters["SnapshotConfig"]=$snapshotConfig;
+	public function setFileURLs($fileURLs) {
+		$this->fileURLs = $fileURLs;
+		$this->queryParameters["FileURLs"]=$fileURLs;
 	}
 
-	public function getUserData() {
-		return $this->userData;
+	public function getPageSize() {
+		return $this->pageSize;
 	}
 
-	public function setUserData($userData) {
-		$this->userData = $userData;
-		$this->queryParameters["UserData"]=$userData;
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
-	public function getPipelineId() {
-		return $this->pipelineId;
+	public function getPageNumber() {
+		return $this->pageNumber;
 	}
 
-	public function setPipelineId($pipelineId) {
-		$this->pipelineId = $pipelineId;
-		$this->queryParameters["PipelineId"]=$pipelineId;
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
+	}
+
+	public function getStateList() {
+		return $this->stateList;
+	}
+
+	public function setStateList($stateList) {
+		$this->stateList = $stateList;
+		$this->queryParameters["StateList"]=$stateList;
 	}
 
 	public function getOwnerAccount() {
