@@ -70,7 +70,15 @@ class CreateLoadBalancerHTTPListenerRequest extends \RpcAcsRequest
 
 	private  $healthCheckHttpCode;
 
+	private  $maxConnection;
+
 	private  $ownerAccount;
+
+	private  $access_key_id;
+
+	private  $vServerGroupId;
+
+	private  $tags;
 
 	public function getOwnerId() {
 		return $this->ownerId;
@@ -270,6 +278,15 @@ class CreateLoadBalancerHTTPListenerRequest extends \RpcAcsRequest
 		$this->queryParameters["HealthCheckHttpCode"]=$healthCheckHttpCode;
 	}
 
+	public function getMaxConnection() {
+		return $this->maxConnection;
+	}
+
+	public function setMaxConnection($maxConnection) {
+		$this->maxConnection = $maxConnection;
+		$this->queryParameters["MaxConnection"]=$maxConnection;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -277,6 +294,33 @@ class CreateLoadBalancerHTTPListenerRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getaccess_key_id() {
+		return $this->access_key_id;
+	}
+
+	public function setaccess_key_id($access_key_id) {
+		$this->access_key_id = $access_key_id;
+		$this->queryParameters["access_key_id"]=$access_key_id;
+	}
+
+	public function getVServerGroupId() {
+		return $this->vServerGroupId;
+	}
+
+	public function setVServerGroupId($vServerGroupId) {
+		$this->vServerGroupId = $vServerGroupId;
+		$this->queryParameters["VServerGroupId"]=$vServerGroupId;
+	}
+
+	public function getTags() {
+		return $this->tags;
+	}
+
+	public function setTags($tags) {
+		$this->tags = $tags;
+		$this->queryParameters["Tags"]=$tags;
 	}
 	
 }

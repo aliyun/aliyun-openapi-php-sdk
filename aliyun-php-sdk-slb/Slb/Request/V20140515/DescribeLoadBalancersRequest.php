@@ -48,7 +48,15 @@ class DescribeLoadBalancersRequest extends \RpcAcsRequest
 
 	private  $address;
 
+	private  $masterZoneId;
+
+	private  $slaveZoneId;
+
 	private  $ownerAccount;
+
+	private  $access_key_id;
+
+	private  $tags;
 
 	public function getOwnerId() {
 		return $this->ownerId;
@@ -149,6 +157,24 @@ class DescribeLoadBalancersRequest extends \RpcAcsRequest
 		$this->queryParameters["Address"]=$address;
 	}
 
+	public function getMasterZoneId() {
+		return $this->masterZoneId;
+	}
+
+	public function setMasterZoneId($masterZoneId) {
+		$this->masterZoneId = $masterZoneId;
+		$this->queryParameters["MasterZoneId"]=$masterZoneId;
+	}
+
+	public function getSlaveZoneId() {
+		return $this->slaveZoneId;
+	}
+
+	public function setSlaveZoneId($slaveZoneId) {
+		$this->slaveZoneId = $slaveZoneId;
+		$this->queryParameters["SlaveZoneId"]=$slaveZoneId;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -156,6 +182,24 @@ class DescribeLoadBalancersRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getaccess_key_id() {
+		return $this->access_key_id;
+	}
+
+	public function setaccess_key_id($access_key_id) {
+		$this->access_key_id = $access_key_id;
+		$this->queryParameters["access_key_id"]=$access_key_id;
+	}
+
+	public function getTags() {
+		return $this->tags;
+	}
+
+	public function setTags($tags) {
+		$this->tags = $tags;
+		$this->queryParameters["Tags"]=$tags;
 	}
 	
 }

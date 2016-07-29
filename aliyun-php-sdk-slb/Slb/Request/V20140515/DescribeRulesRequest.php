@@ -19,11 +19,11 @@
  */
 namespace Slb\Request\V20140515;
 
-class DescribeLoadBalancerHTTPListenerAttributeRequest extends \RpcAcsRequest
+class DescribeRulesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Slb", "2014-05-15", "DescribeLoadBalancerHTTPListenerAttribute");
+		parent::__construct("Slb", "2014-05-15", "DescribeRules");
 	}
 
 	private  $ownerId;
@@ -32,15 +32,15 @@ class DescribeLoadBalancerHTTPListenerAttributeRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $loadBalancerId;
-
-	private  $listenerPort;
-
 	private  $ownerAccount;
 
 	private  $access_key_id;
 
 	private  $tags;
+
+	private  $loadBalancerId;
+
+	private  $listenerPort;
 
 	public function getOwnerId() {
 		return $this->ownerId;
@@ -69,24 +69,6 @@ class DescribeLoadBalancerHTTPListenerAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getLoadBalancerId() {
-		return $this->loadBalancerId;
-	}
-
-	public function setLoadBalancerId($loadBalancerId) {
-		$this->loadBalancerId = $loadBalancerId;
-		$this->queryParameters["LoadBalancerId"]=$loadBalancerId;
-	}
-
-	public function getListenerPort() {
-		return $this->listenerPort;
-	}
-
-	public function setListenerPort($listenerPort) {
-		$this->listenerPort = $listenerPort;
-		$this->queryParameters["ListenerPort"]=$listenerPort;
-	}
-
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -112,6 +94,24 @@ class DescribeLoadBalancerHTTPListenerAttributeRequest extends \RpcAcsRequest
 	public function setTags($tags) {
 		$this->tags = $tags;
 		$this->queryParameters["Tags"]=$tags;
+	}
+
+	public function getLoadBalancerId() {
+		return $this->loadBalancerId;
+	}
+
+	public function setLoadBalancerId($loadBalancerId) {
+		$this->loadBalancerId = $loadBalancerId;
+		$this->queryParameters["LoadBalancerId"]=$loadBalancerId;
+	}
+
+	public function getListenerPort() {
+		return $this->listenerPort;
+	}
+
+	public function setListenerPort($listenerPort) {
+		$this->listenerPort = $listenerPort;
+		$this->queryParameters["ListenerPort"]=$listenerPort;
 	}
 	
 }

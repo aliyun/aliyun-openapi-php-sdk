@@ -19,11 +19,11 @@
  */
 namespace Slb\Request\V20140515;
 
-class DescribeLoadBalancerHTTPListenerAttributeRequest extends \RpcAcsRequest
+class SetVServerGroupAttributeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Slb", "2014-05-15", "DescribeLoadBalancerHTTPListenerAttribute");
+		parent::__construct("Slb", "2014-05-15", "SetVServerGroupAttribute");
 	}
 
 	private  $ownerId;
@@ -32,15 +32,17 @@ class DescribeLoadBalancerHTTPListenerAttributeRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $loadBalancerId;
-
-	private  $listenerPort;
-
 	private  $ownerAccount;
 
 	private  $access_key_id;
 
 	private  $tags;
+
+	private  $vServerGroupId;
+
+	private  $vServerGroupName;
+
+	private  $backendServers;
 
 	public function getOwnerId() {
 		return $this->ownerId;
@@ -69,24 +71,6 @@ class DescribeLoadBalancerHTTPListenerAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getLoadBalancerId() {
-		return $this->loadBalancerId;
-	}
-
-	public function setLoadBalancerId($loadBalancerId) {
-		$this->loadBalancerId = $loadBalancerId;
-		$this->queryParameters["LoadBalancerId"]=$loadBalancerId;
-	}
-
-	public function getListenerPort() {
-		return $this->listenerPort;
-	}
-
-	public function setListenerPort($listenerPort) {
-		$this->listenerPort = $listenerPort;
-		$this->queryParameters["ListenerPort"]=$listenerPort;
-	}
-
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -112,6 +96,33 @@ class DescribeLoadBalancerHTTPListenerAttributeRequest extends \RpcAcsRequest
 	public function setTags($tags) {
 		$this->tags = $tags;
 		$this->queryParameters["Tags"]=$tags;
+	}
+
+	public function getVServerGroupId() {
+		return $this->vServerGroupId;
+	}
+
+	public function setVServerGroupId($vServerGroupId) {
+		$this->vServerGroupId = $vServerGroupId;
+		$this->queryParameters["VServerGroupId"]=$vServerGroupId;
+	}
+
+	public function getVServerGroupName() {
+		return $this->vServerGroupName;
+	}
+
+	public function setVServerGroupName($vServerGroupName) {
+		$this->vServerGroupName = $vServerGroupName;
+		$this->queryParameters["VServerGroupName"]=$vServerGroupName;
+	}
+
+	public function getBackendServers() {
+		return $this->backendServers;
+	}
+
+	public function setBackendServers($backendServers) {
+		$this->backendServers = $backendServers;
+		$this->queryParameters["BackendServers"]=$backendServers;
 	}
 	
 }

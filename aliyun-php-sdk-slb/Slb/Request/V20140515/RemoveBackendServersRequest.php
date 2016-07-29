@@ -38,6 +38,10 @@ class RemoveBackendServersRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
+	private  $access_key_id;
+
+	private  $tags;
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -90,6 +94,24 @@ class RemoveBackendServersRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getaccess_key_id() {
+		return $this->access_key_id;
+	}
+
+	public function setaccess_key_id($access_key_id) {
+		$this->access_key_id = $access_key_id;
+		$this->queryParameters["access_key_id"]=$access_key_id;
+	}
+
+	public function getTags() {
+		return $this->tags;
+	}
+
+	public function setTags($tags) {
+		$this->tags = $tags;
+		$this->queryParameters["Tags"]=$tags;
 	}
 	
 }

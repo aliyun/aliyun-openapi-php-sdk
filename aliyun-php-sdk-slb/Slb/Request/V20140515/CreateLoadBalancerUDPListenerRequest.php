@@ -54,7 +54,19 @@ class CreateLoadBalancerUDPListenerRequest extends \RpcAcsRequest
 
 	private  $healthCheckInterval;
 
+	private  $healthCheckReq;
+
+	private  $healthCheckExp;
+
+	private  $maxConnection;
+
 	private  $ownerAccount;
+
+	private  $access_key_id;
+
+	private  $vServerGroupId;
+
+	private  $tags;
 
 	public function getOwnerId() {
 		return $this->ownerId;
@@ -182,6 +194,33 @@ class CreateLoadBalancerUDPListenerRequest extends \RpcAcsRequest
 		$this->queryParameters["healthCheckInterval"]=$healthCheckInterval;
 	}
 
+	public function gethealthCheckReq() {
+		return $this->healthCheckReq;
+	}
+
+	public function sethealthCheckReq($healthCheckReq) {
+		$this->healthCheckReq = $healthCheckReq;
+		$this->queryParameters["healthCheckReq"]=$healthCheckReq;
+	}
+
+	public function gethealthCheckExp() {
+		return $this->healthCheckExp;
+	}
+
+	public function sethealthCheckExp($healthCheckExp) {
+		$this->healthCheckExp = $healthCheckExp;
+		$this->queryParameters["healthCheckExp"]=$healthCheckExp;
+	}
+
+	public function getMaxConnection() {
+		return $this->maxConnection;
+	}
+
+	public function setMaxConnection($maxConnection) {
+		$this->maxConnection = $maxConnection;
+		$this->queryParameters["MaxConnection"]=$maxConnection;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -189,6 +228,33 @@ class CreateLoadBalancerUDPListenerRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getaccess_key_id() {
+		return $this->access_key_id;
+	}
+
+	public function setaccess_key_id($access_key_id) {
+		$this->access_key_id = $access_key_id;
+		$this->queryParameters["access_key_id"]=$access_key_id;
+	}
+
+	public function getVServerGroupId() {
+		return $this->vServerGroupId;
+	}
+
+	public function setVServerGroupId($vServerGroupId) {
+		$this->vServerGroupId = $vServerGroupId;
+		$this->queryParameters["VServerGroupId"]=$vServerGroupId;
+	}
+
+	public function getTags() {
+		return $this->tags;
+	}
+
+	public function setTags($tags) {
+		$this->tags = $tags;
+		$this->queryParameters["Tags"]=$tags;
 	}
 	
 }

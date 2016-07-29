@@ -19,11 +19,11 @@
  */
 namespace Slb\Request\V20140515;
 
-class DescribeLoadBalancerHTTPListenerAttributeRequest extends \RpcAcsRequest
+class EnableVpcVipFlowRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Slb", "2014-05-15", "DescribeLoadBalancerHTTPListenerAttribute");
+		parent::__construct("Slb", "2014-05-15", "EnableVpcVipFlow");
 	}
 
 	private  $ownerId;
@@ -33,8 +33,6 @@ class DescribeLoadBalancerHTTPListenerAttributeRequest extends \RpcAcsRequest
 	private  $resourceOwnerId;
 
 	private  $loadBalancerId;
-
-	private  $listenerPort;
 
 	private  $ownerAccount;
 
@@ -76,15 +74,6 @@ class DescribeLoadBalancerHTTPListenerAttributeRequest extends \RpcAcsRequest
 	public function setLoadBalancerId($loadBalancerId) {
 		$this->loadBalancerId = $loadBalancerId;
 		$this->queryParameters["LoadBalancerId"]=$loadBalancerId;
-	}
-
-	public function getListenerPort() {
-		return $this->listenerPort;
-	}
-
-	public function setListenerPort($listenerPort) {
-		$this->listenerPort = $listenerPort;
-		$this->queryParameters["ListenerPort"]=$listenerPort;
 	}
 
 	public function getOwnerAccount() {

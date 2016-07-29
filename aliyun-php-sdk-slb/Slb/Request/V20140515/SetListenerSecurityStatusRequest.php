@@ -19,11 +19,11 @@
  */
 namespace Slb\Request\V20140515;
 
-class DescribeLoadBalancerHTTPListenerAttributeRequest extends \RpcAcsRequest
+class SetListenerSecurityStatusRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Slb", "2014-05-15", "DescribeLoadBalancerHTTPListenerAttribute");
+		parent::__construct("Slb", "2014-05-15", "SetListenerSecurityStatus");
 	}
 
 	private  $ownerId;
@@ -35,6 +35,8 @@ class DescribeLoadBalancerHTTPListenerAttributeRequest extends \RpcAcsRequest
 	private  $loadBalancerId;
 
 	private  $listenerPort;
+
+	private  $securityStatus;
 
 	private  $ownerAccount;
 
@@ -85,6 +87,15 @@ class DescribeLoadBalancerHTTPListenerAttributeRequest extends \RpcAcsRequest
 	public function setListenerPort($listenerPort) {
 		$this->listenerPort = $listenerPort;
 		$this->queryParameters["ListenerPort"]=$listenerPort;
+	}
+
+	public function getSecurityStatus() {
+		return $this->securityStatus;
+	}
+
+	public function setSecurityStatus($securityStatus) {
+		$this->securityStatus = $securityStatus;
+		$this->queryParameters["SecurityStatus"]=$securityStatus;
 	}
 
 	public function getOwnerAccount() {

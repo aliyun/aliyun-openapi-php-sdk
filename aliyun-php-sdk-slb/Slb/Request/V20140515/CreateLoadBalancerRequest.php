@@ -48,6 +48,16 @@ class CreateLoadBalancerRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
+	private  $masterZoneId;
+
+	private  $slaveZoneId;
+
+	private  $access_key_id;
+
+	private  $tags;
+
+	private  $enableVpcVipFlow;
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -145,6 +155,51 @@ class CreateLoadBalancerRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getMasterZoneId() {
+		return $this->masterZoneId;
+	}
+
+	public function setMasterZoneId($masterZoneId) {
+		$this->masterZoneId = $masterZoneId;
+		$this->queryParameters["MasterZoneId"]=$masterZoneId;
+	}
+
+	public function getSlaveZoneId() {
+		return $this->slaveZoneId;
+	}
+
+	public function setSlaveZoneId($slaveZoneId) {
+		$this->slaveZoneId = $slaveZoneId;
+		$this->queryParameters["SlaveZoneId"]=$slaveZoneId;
+	}
+
+	public function getaccess_key_id() {
+		return $this->access_key_id;
+	}
+
+	public function setaccess_key_id($access_key_id) {
+		$this->access_key_id = $access_key_id;
+		$this->queryParameters["access_key_id"]=$access_key_id;
+	}
+
+	public function getTags() {
+		return $this->tags;
+	}
+
+	public function setTags($tags) {
+		$this->tags = $tags;
+		$this->queryParameters["Tags"]=$tags;
+	}
+
+	public function getEnableVpcVipFlow() {
+		return $this->enableVpcVipFlow;
+	}
+
+	public function setEnableVpcVipFlow($enableVpcVipFlow) {
+		$this->enableVpcVipFlow = $enableVpcVipFlow;
+		$this->queryParameters["EnableVpcVipFlow"]=$enableVpcVipFlow;
 	}
 	
 }

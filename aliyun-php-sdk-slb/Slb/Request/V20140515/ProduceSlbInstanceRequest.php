@@ -19,11 +19,11 @@
  */
 namespace Slb\Request\V20140515;
 
-class DescribeLoadBalancerHTTPListenerAttributeRequest extends \RpcAcsRequest
+class ProduceSlbInstanceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Slb", "2014-05-15", "DescribeLoadBalancerHTTPListenerAttribute");
+		parent::__construct("Slb", "2014-05-15", "ProduceSlbInstance");
 	}
 
 	private  $ownerId;
@@ -32,15 +32,11 @@ class DescribeLoadBalancerHTTPListenerAttributeRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $loadBalancerId;
-
-	private  $listenerPort;
+	private  $data;
 
 	private  $ownerAccount;
 
 	private  $access_key_id;
-
-	private  $tags;
 
 	public function getOwnerId() {
 		return $this->ownerId;
@@ -69,22 +65,13 @@ class DescribeLoadBalancerHTTPListenerAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getLoadBalancerId() {
-		return $this->loadBalancerId;
+	public function getdata() {
+		return $this->data;
 	}
 
-	public function setLoadBalancerId($loadBalancerId) {
-		$this->loadBalancerId = $loadBalancerId;
-		$this->queryParameters["LoadBalancerId"]=$loadBalancerId;
-	}
-
-	public function getListenerPort() {
-		return $this->listenerPort;
-	}
-
-	public function setListenerPort($listenerPort) {
-		$this->listenerPort = $listenerPort;
-		$this->queryParameters["ListenerPort"]=$listenerPort;
+	public function setdata($data) {
+		$this->data = $data;
+		$this->queryParameters["data"]=$data;
 	}
 
 	public function getOwnerAccount() {
@@ -103,15 +90,6 @@ class DescribeLoadBalancerHTTPListenerAttributeRequest extends \RpcAcsRequest
 	public function setaccess_key_id($access_key_id) {
 		$this->access_key_id = $access_key_id;
 		$this->queryParameters["access_key_id"]=$access_key_id;
-	}
-
-	public function getTags() {
-		return $this->tags;
-	}
-
-	public function setTags($tags) {
-		$this->tags = $tags;
-		$this->queryParameters["Tags"]=$tags;
 	}
 	
 }

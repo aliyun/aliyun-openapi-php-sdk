@@ -68,9 +68,21 @@ class SetLoadBalancerHTTPSListenerAttributeRequest extends \RpcAcsRequest
 
 	private  $healthCheckHttpCode;
 
-	private  $serverCertificateId;
+	private  $maxConnection;
 
 	private  $ownerAccount;
+
+	private  $access_key_id;
+
+	private  $serverCertificateId;
+
+	private  $cACertificateId;
+
+	private  $vServerGroup;
+
+	private  $vServerGroupId;
+
+	private  $tags;
 
 	public function getOwnerId() {
 		return $this->ownerId;
@@ -261,13 +273,13 @@ class SetLoadBalancerHTTPSListenerAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["HealthCheckHttpCode"]=$healthCheckHttpCode;
 	}
 
-	public function getServerCertificateId() {
-		return $this->serverCertificateId;
+	public function getMaxConnection() {
+		return $this->maxConnection;
 	}
 
-	public function setServerCertificateId($serverCertificateId) {
-		$this->serverCertificateId = $serverCertificateId;
-		$this->queryParameters["ServerCertificateId"]=$serverCertificateId;
+	public function setMaxConnection($maxConnection) {
+		$this->maxConnection = $maxConnection;
+		$this->queryParameters["MaxConnection"]=$maxConnection;
 	}
 
 	public function getOwnerAccount() {
@@ -277,6 +289,60 @@ class SetLoadBalancerHTTPSListenerAttributeRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getaccess_key_id() {
+		return $this->access_key_id;
+	}
+
+	public function setaccess_key_id($access_key_id) {
+		$this->access_key_id = $access_key_id;
+		$this->queryParameters["access_key_id"]=$access_key_id;
+	}
+
+	public function getServerCertificateId() {
+		return $this->serverCertificateId;
+	}
+
+	public function setServerCertificateId($serverCertificateId) {
+		$this->serverCertificateId = $serverCertificateId;
+		$this->queryParameters["ServerCertificateId"]=$serverCertificateId;
+	}
+
+	public function getCACertificateId() {
+		return $this->cACertificateId;
+	}
+
+	public function setCACertificateId($cACertificateId) {
+		$this->cACertificateId = $cACertificateId;
+		$this->queryParameters["CACertificateId"]=$cACertificateId;
+	}
+
+	public function getVServerGroup() {
+		return $this->vServerGroup;
+	}
+
+	public function setVServerGroup($vServerGroup) {
+		$this->vServerGroup = $vServerGroup;
+		$this->queryParameters["VServerGroup"]=$vServerGroup;
+	}
+
+	public function getVServerGroupId() {
+		return $this->vServerGroupId;
+	}
+
+	public function setVServerGroupId($vServerGroupId) {
+		$this->vServerGroupId = $vServerGroupId;
+		$this->queryParameters["VServerGroupId"]=$vServerGroupId;
+	}
+
+	public function getTags() {
+		return $this->tags;
+	}
+
+	public function setTags($tags) {
+		$this->tags = $tags;
+		$this->queryParameters["Tags"]=$tags;
 	}
 	
 }

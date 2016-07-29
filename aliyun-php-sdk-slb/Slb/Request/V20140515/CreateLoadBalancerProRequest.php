@@ -52,7 +52,21 @@ class CreateLoadBalancerProRequest extends \RpcAcsRequest
 
 	private  $suName;
 
+	private  $cidrType;
+
+	private  $tunnelType;
+
 	private  $ownerAccount;
+
+	private  $masterZoneId;
+
+	private  $slaveZoneId;
+
+	private  $access_key_id;
+
+	private  $tags;
+
+	private  $enableVpcVipFlow;
 
 	public function getOwnerId() {
 		return $this->ownerId;
@@ -171,6 +185,24 @@ class CreateLoadBalancerProRequest extends \RpcAcsRequest
 		$this->queryParameters["SuName"]=$suName;
 	}
 
+	public function getCidrType() {
+		return $this->cidrType;
+	}
+
+	public function setCidrType($cidrType) {
+		$this->cidrType = $cidrType;
+		$this->queryParameters["CidrType"]=$cidrType;
+	}
+
+	public function getTunnelType() {
+		return $this->tunnelType;
+	}
+
+	public function setTunnelType($tunnelType) {
+		$this->tunnelType = $tunnelType;
+		$this->queryParameters["TunnelType"]=$tunnelType;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -178,6 +210,51 @@ class CreateLoadBalancerProRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getMasterZoneId() {
+		return $this->masterZoneId;
+	}
+
+	public function setMasterZoneId($masterZoneId) {
+		$this->masterZoneId = $masterZoneId;
+		$this->queryParameters["MasterZoneId"]=$masterZoneId;
+	}
+
+	public function getSlaveZoneId() {
+		return $this->slaveZoneId;
+	}
+
+	public function setSlaveZoneId($slaveZoneId) {
+		$this->slaveZoneId = $slaveZoneId;
+		$this->queryParameters["SlaveZoneId"]=$slaveZoneId;
+	}
+
+	public function getaccess_key_id() {
+		return $this->access_key_id;
+	}
+
+	public function setaccess_key_id($access_key_id) {
+		$this->access_key_id = $access_key_id;
+		$this->queryParameters["access_key_id"]=$access_key_id;
+	}
+
+	public function getTags() {
+		return $this->tags;
+	}
+
+	public function setTags($tags) {
+		$this->tags = $tags;
+		$this->queryParameters["Tags"]=$tags;
+	}
+
+	public function getEnableVpcVipFlow() {
+		return $this->enableVpcVipFlow;
+	}
+
+	public function setEnableVpcVipFlow($enableVpcVipFlow) {
+		$this->enableVpcVipFlow = $enableVpcVipFlow;
+		$this->queryParameters["EnableVpcVipFlow"]=$enableVpcVipFlow;
 	}
 	
 }

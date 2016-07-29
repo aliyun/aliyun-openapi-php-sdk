@@ -19,11 +19,11 @@
  */
 namespace Slb\Request\V20140515;
 
-class DescribeLoadBalancerHTTPListenerAttributeRequest extends \RpcAcsRequest
+class SetCACertificateNameRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Slb", "2014-05-15", "DescribeLoadBalancerHTTPListenerAttribute");
+		parent::__construct("Slb", "2014-05-15", "SetCACertificateName");
 	}
 
 	private  $ownerId;
@@ -32,15 +32,13 @@ class DescribeLoadBalancerHTTPListenerAttributeRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $loadBalancerId;
-
-	private  $listenerPort;
-
 	private  $ownerAccount;
 
 	private  $access_key_id;
 
-	private  $tags;
+	private  $cACertificateId;
+
+	private  $cACertificateName;
 
 	public function getOwnerId() {
 		return $this->ownerId;
@@ -69,24 +67,6 @@ class DescribeLoadBalancerHTTPListenerAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getLoadBalancerId() {
-		return $this->loadBalancerId;
-	}
-
-	public function setLoadBalancerId($loadBalancerId) {
-		$this->loadBalancerId = $loadBalancerId;
-		$this->queryParameters["LoadBalancerId"]=$loadBalancerId;
-	}
-
-	public function getListenerPort() {
-		return $this->listenerPort;
-	}
-
-	public function setListenerPort($listenerPort) {
-		$this->listenerPort = $listenerPort;
-		$this->queryParameters["ListenerPort"]=$listenerPort;
-	}
-
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -105,13 +85,22 @@ class DescribeLoadBalancerHTTPListenerAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["access_key_id"]=$access_key_id;
 	}
 
-	public function getTags() {
-		return $this->tags;
+	public function getCACertificateId() {
+		return $this->cACertificateId;
 	}
 
-	public function setTags($tags) {
-		$this->tags = $tags;
-		$this->queryParameters["Tags"]=$tags;
+	public function setCACertificateId($cACertificateId) {
+		$this->cACertificateId = $cACertificateId;
+		$this->queryParameters["CACertificateId"]=$cACertificateId;
+	}
+
+	public function getCACertificateName() {
+		return $this->cACertificateName;
+	}
+
+	public function setCACertificateName($cACertificateName) {
+		$this->cACertificateName = $cACertificateName;
+		$this->queryParameters["CACertificateName"]=$cACertificateName;
 	}
 	
 }
