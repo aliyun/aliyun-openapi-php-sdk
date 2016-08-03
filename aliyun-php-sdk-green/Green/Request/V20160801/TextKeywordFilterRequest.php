@@ -17,47 +17,25 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Green\Request\V20160525;
+namespace Green\Request\V20160801;
 
-class ImageDetectionRequest extends \RpcAcsRequest
+class TextKeywordFilterRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Green", "2016-05-25", "ImageDetection");
+		parent::__construct("Green", "2016-08-01", "TextKeywordFilter");
 		$this->setMethod("POST");
 	}
 
-	private  $async;
+	private  $text;
 
-	private  $imageUrl;
-
-	private  $scene;
-
-	public function getAsync() {
-		return $this->async;
+	public function getText() {
+		return $this->text;
 	}
 
-	public function setAsync($async) {
-		$this->async = $async;
-		$this->queryParameters["Async"]=$async;
-	}
-
-	public function getImageUrl() {
-		return $this->imageUrl;
-	}
-
-	public function setImageUrl($imageUrl) {
-		$this->imageUrl = $imageUrl;
-		$this->queryParameters["ImageUrl"]=$imageUrl;
-	}
-
-	public function getScene() {
-		return $this->scene;
-	}
-
-	public function setScene($scene) {
-		$this->scene = $scene;
-		$this->queryParameters["Scene"]=$scene;
+	public function setText($text) {
+		$this->text = $text;
+		$this->queryParameters["Text"]=$text;
 	}
 	
 }

@@ -17,13 +17,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Green\Request\V20160525;
+namespace Green\Request\V20160801;
 
 class AntispamDetectionRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Green", "2016-05-25", "AntispamDetection");
+		parent::__construct("Green", "2016-08-01", "AntispamDetection");
 		$this->setMethod("POST");
 	}
 
