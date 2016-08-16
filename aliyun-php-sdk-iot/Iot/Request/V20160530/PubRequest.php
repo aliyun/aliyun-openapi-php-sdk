@@ -28,6 +28,8 @@ class PubRequest extends \RpcAcsRequest
 
 	private  $productKey;
 
+	private  $qos;
+
 	private  $topicFullName;
 
 	private  $messageContent;
@@ -39,6 +41,15 @@ class PubRequest extends \RpcAcsRequest
 	public function setProductKey($productKey) {
 		$this->productKey = $productKey;
 		$this->queryParameters["ProductKey"]=$productKey;
+	}
+
+	public function getQos() {
+		return $this->qos;
+	}
+
+	public function setQos($qos) {
+		$this->qos = $qos;
+		$this->queryParameters["Qos"]=$qos;
 	}
 
 	public function getTopicFullName() {
