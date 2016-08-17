@@ -50,6 +50,8 @@ class PushRequest extends \RpcAcsRequest
 
 	private  $androidActivity;
 
+	private  $xiaomiActivity;
+
 	private  $androidOpenUrl;
 
 	private  $androidExtParameters;
@@ -178,6 +180,15 @@ class PushRequest extends \RpcAcsRequest
 	public function setAndroidActivity($androidActivity) {
 		$this->androidActivity = $androidActivity;
 		$this->queryParameters["AndroidActivity"]=$androidActivity;
+	}
+
+	public function getXiaomiActivity() {
+		return $this->xiaomiActivity;
+	}
+
+	public function setXiaomiActivity($xiaomiActivity) {
+		$this->xiaomiActivity = $xiaomiActivity;
+		$this->queryParameters["XiaomiActivity"]=$xiaomiActivity;
 	}
 
 	public function getAndroidOpenUrl() {

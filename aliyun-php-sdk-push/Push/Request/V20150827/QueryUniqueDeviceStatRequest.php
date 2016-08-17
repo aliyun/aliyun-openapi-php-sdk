@@ -19,33 +19,44 @@
  */
 namespace Push\Request\V20150827;
 
-class BatchGetDevicesInfoRequest extends \RpcAcsRequest
+class QueryUniqueDeviceStatRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Push", "2015-08-27", "BatchGetDevicesInfo");
+		parent::__construct("Push", "2015-08-27", "QueryUniqueDeviceStat");
 	}
 
-	private  $devices;
+	private  $appKey;
 
-	private  $appId;
+	private  $startTime;
 
-	public function getDevices() {
-		return $this->devices;
+	private  $endTime;
+
+	public function getAppKey() {
+		return $this->appKey;
 	}
 
-	public function setDevices($devices) {
-		$this->devices = $devices;
-		$this->queryParameters["Devices"]=$devices;
+	public function setAppKey($appKey) {
+		$this->appKey = $appKey;
+		$this->queryParameters["AppKey"]=$appKey;
 	}
 
-	public function getAppId() {
-		return $this->appId;
+	public function getStartTime() {
+		return $this->startTime;
 	}
 
-	public function setAppId($appId) {
-		$this->appId = $appId;
-		$this->queryParameters["AppId"]=$appId;
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
+
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
 	}
 	
 }
