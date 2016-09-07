@@ -35,7 +35,7 @@ class HttpHelper
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_FAILONERROR, false);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($ch, CURLOPT_POSTFIELDS, is_array($postFields) ? http_build_query($postFields) : $postFields);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, is_array($postFields) ? self::getPostHttpBody($postFields) : $postFields);
 		
 		if (self::$readTimeout) {
 			curl_setopt($ch, CURLOPT_TIMEOUT, self::$readTimeout);
@@ -63,7 +63,14 @@ class HttpHelper
 		curl_close($ch);
 		return $httpResponse;
 	}
-	
+	static function getPostHttpBody($postFildes){		
+		$content = "";
+		foreach ($postFildes as $apiParamKey => $apiParamValue)
+		{			
+			$content .= "$apiParamKey=" . urlencode($apiParamValue) . "&";
+		}
+		return substr($content, 0, -1);
+	}
 	static function getHttpHearders($headers)
 	{
 		$httpHeader = array();

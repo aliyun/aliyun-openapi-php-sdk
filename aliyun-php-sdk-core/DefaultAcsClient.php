@@ -60,7 +60,7 @@ class DefaultAcsClient implements IAcsClient
 		}
 		$requestUrl = $request->composeUrl($iSigner, $credential, $domain);
 		if(count($request->getDomainParameter())>0){
-			$httpResponse = HttpHelper::curl($requestUrl, $request->getMethod(), json_encode($request->getDomainParameter()), $request->getHeaders());
+			$httpResponse = HttpHelper::curl($requestUrl, $request->getMethod(), $request->getDomainParameter(), $request->getHeaders());
 		} else {
 			$httpResponse = HttpHelper::curl($requestUrl, $request->getMethod(), null, $request->getHeaders());
 		}
@@ -70,7 +70,7 @@ class DefaultAcsClient implements IAcsClient
 			$requestUrl = $request->composeUrl($iSigner, $credential,$domain);
 			
 			if(count($request->getDomainParameter())>0){
-			    $httpResponse = HttpHelper::curl($requestUrl, json_encode($request->getDomainParameter()), $request->getHeaders());
+			    $httpResponse = HttpHelper::curl($requestUrl, $request->getDomainParameter(), $request->getHeaders());
 			} else {
 				$httpResponse = HttpHelper::curl($requestUrl, $request->getMethod(), null, $request->getHeaders());
 			}

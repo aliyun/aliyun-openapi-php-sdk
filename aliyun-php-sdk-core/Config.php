@@ -30,7 +30,6 @@ Autoloader::addAutoloadPath("aliyun-php-sdk-ubsms");
 Autoloader::addAutoloadPath("aliyun-php-sdk-ubsms-inner");
 Autoloader::addAutoloadPath("aliyun-php-sdk-green");
 Autoloader::addAutoloadPath("aliyun-php-sdk-dm");
-Autoloader::addAutoloadPath("aliyun-php-sdk-iot");
 
 //config http proxy	
 define('ENABLE_HTTP_PROXY', FALSE);

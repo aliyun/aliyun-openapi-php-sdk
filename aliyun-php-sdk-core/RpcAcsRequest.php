@@ -48,13 +48,24 @@ abstract class RpcAcsRequest extends AcsRequest
 		$apiParams["Action"] = $this->getActionName();
 		$apiParams["Version"] = $this->getVersion();
 		$apiParams["Signature"] = $this->computeSignature($apiParams, $credential->getAccessSecret(), $iSigner);
-		$requestUrl = $this->getProtocol()."://". $domain . "/?";
-
-		foreach ($apiParams as $apiParamKey => $apiParamValue)
-		{
-			$requestUrl .= "$apiParamKey=" . urlencode($apiParamValue) . "&";
+		if(parent::getMethod() == "POST") {
+			
+			$requestUrl = $this->getProtocol()."://". $domain . "/";			
+			foreach ($apiParams as $apiParamKey => $apiParamValue)
+			{
+				$this->putDomainParameters($apiParamKey,$apiParamValue);
+			}
+			return $requestUrl;			
 		}
-		return substr($requestUrl, 0, -1);
+		else {	
+			$requestUrl = $this->getProtocol()."://". $domain . "/?";
+
+			foreach ($apiParams as $apiParamKey => $apiParamValue)
+			{
+				$requestUrl .= "$apiParamKey=" . urlencode($apiParamValue) . "&";
+			}
+			return substr($requestUrl, 0, -1);
+		}
 	}
 	
 	private function computeSignature($parameters, $accessKeySecret, $iSigner)

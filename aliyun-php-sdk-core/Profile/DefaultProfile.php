@@ -87,7 +87,7 @@ class DefaultProfile implements IClientProfile
 		$endpoint = self::findEndpointByName($endpointName);
 		if(null == $endpoint)
 		{
-			self::addEndpoint_($regionId, $product, $domain, $endpoint);
+			self::addEndpoint_($endpointName, $regionId, $product, $domain);
 		}
 		else 
 		{

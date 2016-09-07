@@ -27,7 +27,7 @@ class BaseTest extends PHPUnit_Framework_TestCase
 		include_once 'Ecs/Rquest/DescribeRegionsRequest.php';
 		include_once 'BatchCompute/ListImagesRequest.php';
 
-		$iClientProfile = DefaultProfile::getProfile("cn-hangzhou", "5slyhuy4sv30bmppvgew0rps", "NGYL1I7hXC6SgSqkcE5DJdPgJM8=");
+		$iClientProfile = DefaultProfile::getProfile("cn-hangzhou", "AccessKey", "AccessSecret");
 		$this->client = new DefaultAcsClient($iClientProfile);
 	}
 	
@@ -35,7 +35,7 @@ class BaseTest extends PHPUnit_Framework_TestCase
 	{
 		$accessKey = "";
 		$accessSecret = "";
-		$iClientProfile = DefaultProfile::getProfile("cn-hangzhou", "5slyhuy4sv30bmppvgew0rps", "NGYL1I7hXC6SgSqkcE5DJdPgJM8=");
+		$iClientProfile = DefaultProfile::getProfile("cn-hangzhou", "AccessKey", "AccessSecret");
 		
 	
 	}
