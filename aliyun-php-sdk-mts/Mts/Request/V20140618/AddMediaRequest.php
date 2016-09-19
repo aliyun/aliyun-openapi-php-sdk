@@ -42,6 +42,10 @@ class AddMediaRequest extends \RpcAcsRequest
 
 	private  $tags;
 
+	private  $mediaWorkflowId;
+
+	private  $mediaWorkflowUserData;
+
 	private  $cateId;
 
 	private  $ownerAccount;
@@ -116,6 +120,24 @@ class AddMediaRequest extends \RpcAcsRequest
 	public function setTags($tags) {
 		$this->tags = $tags;
 		$this->queryParameters["Tags"]=$tags;
+	}
+
+	public function getMediaWorkflowId() {
+		return $this->mediaWorkflowId;
+	}
+
+	public function setMediaWorkflowId($mediaWorkflowId) {
+		$this->mediaWorkflowId = $mediaWorkflowId;
+		$this->queryParameters["MediaWorkflowId"]=$mediaWorkflowId;
+	}
+
+	public function getMediaWorkflowUserData() {
+		return $this->mediaWorkflowUserData;
+	}
+
+	public function setMediaWorkflowUserData($mediaWorkflowUserData) {
+		$this->mediaWorkflowUserData = $mediaWorkflowUserData;
+		$this->queryParameters["MediaWorkflowUserData"]=$mediaWorkflowUserData;
 	}
 
 	public function getCateId() {

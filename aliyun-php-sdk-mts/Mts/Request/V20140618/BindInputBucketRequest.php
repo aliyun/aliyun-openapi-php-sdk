@@ -34,8 +34,6 @@ class BindInputBucketRequest extends \RpcAcsRequest
 
 	private  $bucket;
 
-	private  $sync;
-
 	private  $ownerAccount;
 
 	public function getOwnerId() {
@@ -72,15 +70,6 @@ class BindInputBucketRequest extends \RpcAcsRequest
 	public function setBucket($bucket) {
 		$this->bucket = $bucket;
 		$this->queryParameters["Bucket"]=$bucket;
-	}
-
-	public function getSync() {
-		return $this->sync;
-	}
-
-	public function setSync($sync) {
-		$this->sync = $sync;
-		$this->queryParameters["Sync"]=$sync;
 	}
 
 	public function getOwnerAccount() {
