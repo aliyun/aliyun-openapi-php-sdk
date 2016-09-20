@@ -60,6 +60,7 @@ $productDomains =array(
 	new ProductDomain("Ess", "ess.aliyuncs.com"),
 	new ProductDomain("Ubsms-inner", "ubsms-inner.aliyuncs.com"),
     new ProductDomain("Green", "green.aliyuncs.com"),
+    new ProductDomain("Iot", "iot.aliyuncs.com"),
     new ProductDomain("Domain", "domain.aliyuncs.com"),
 	new ProductDomain("Alidns", "alidns.aliyuncs.com")
 	);
