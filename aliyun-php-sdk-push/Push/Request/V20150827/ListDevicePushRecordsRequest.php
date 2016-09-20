@@ -19,14 +19,20 @@
  */
 namespace Push\Request\V20150827;
 
-class ListTagsRequest extends \RpcAcsRequest
+class ListDevicePushRecordsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Push", "2015-08-27", "ListTags");
+		parent::__construct("Push", "2015-08-27", "ListDevicePushRecords");
 	}
 
 	private  $appKey;
+
+	private  $deviceId;
+
+	private  $page;
+
+	private  $pageSize;
 
 	public function getAppKey() {
 		return $this->appKey;
@@ -35,6 +41,33 @@ class ListTagsRequest extends \RpcAcsRequest
 	public function setAppKey($appKey) {
 		$this->appKey = $appKey;
 		$this->queryParameters["AppKey"]=$appKey;
+	}
+
+	public function getDeviceId() {
+		return $this->deviceId;
+	}
+
+	public function setDeviceId($deviceId) {
+		$this->deviceId = $deviceId;
+		$this->queryParameters["DeviceId"]=$deviceId;
+	}
+
+	public function getPage() {
+		return $this->page;
+	}
+
+	public function setPage($page) {
+		$this->page = $page;
+		$this->queryParameters["Page"]=$page;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 	
 }

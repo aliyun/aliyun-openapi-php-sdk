@@ -19,11 +19,11 @@
  */
 namespace Push\Request\V20150827;
 
-class ListTagsRequest extends \RpcAcsRequest
+class PopTestRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Push", "2015-08-27", "ListTags");
+		parent::__construct("Push", "2015-08-27", "PopTest");
 	}
 
 	private  $appKey;

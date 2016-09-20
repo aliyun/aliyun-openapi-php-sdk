@@ -19,14 +19,22 @@
  */
 namespace Push\Request\V20150827;
 
-class ListTagsRequest extends \RpcAcsRequest
+class TestRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Push", "2015-08-27", "ListTags");
+		parent::__construct("Push", "2015-08-27", "Test");
 	}
 
 	private  $appKey;
+
+	private  $target;
+
+	private  $targetValue;
+
+	private  $my_name;
+
+	private  $my_age;
 
 	public function getAppKey() {
 		return $this->appKey;
@@ -35,6 +43,42 @@ class ListTagsRequest extends \RpcAcsRequest
 	public function setAppKey($appKey) {
 		$this->appKey = $appKey;
 		$this->queryParameters["AppKey"]=$appKey;
+	}
+
+	public function getTarget() {
+		return $this->target;
+	}
+
+	public function setTarget($target) {
+		$this->target = $target;
+		$this->queryParameters["Target"]=$target;
+	}
+
+	public function getTargetValue() {
+		return $this->targetValue;
+	}
+
+	public function setTargetValue($targetValue) {
+		$this->targetValue = $targetValue;
+		$this->queryParameters["TargetValue"]=$targetValue;
+	}
+
+	public function getmy_name() {
+		return $this->my_name;
+	}
+
+	public function setmy_name($my_name) {
+		$this->my_name = $my_name;
+		$this->queryParameters["my_name"]=$my_name;
+	}
+
+	public function getmy_age() {
+		return $this->my_age;
+	}
+
+	public function setmy_age($my_age) {
+		$this->my_age = $my_age;
+		$this->queryParameters["my_age"]=$my_age;
 	}
 	
 }

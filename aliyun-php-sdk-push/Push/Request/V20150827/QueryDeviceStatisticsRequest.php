@@ -19,14 +19,22 @@
  */
 namespace Push\Request\V20150827;
 
-class ListTagsRequest extends \RpcAcsRequest
+class QueryDeviceStatisticsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Push", "2015-08-27", "ListTags");
+		parent::__construct("Push", "2015-08-27", "QueryDeviceStatistics");
 	}
 
 	private  $appKey;
+
+	private  $type;
+
+	private  $deviceType;
+
+	private  $startTime;
+
+	private  $endTime;
 
 	public function getAppKey() {
 		return $this->appKey;
@@ -35,6 +43,42 @@ class ListTagsRequest extends \RpcAcsRequest
 	public function setAppKey($appKey) {
 		$this->appKey = $appKey;
 		$this->queryParameters["AppKey"]=$appKey;
+	}
+
+	public function getType() {
+		return $this->type;
+	}
+
+	public function setType($type) {
+		$this->type = $type;
+		$this->queryParameters["Type"]=$type;
+	}
+
+	public function getDeviceType() {
+		return $this->deviceType;
+	}
+
+	public function setDeviceType($deviceType) {
+		$this->deviceType = $deviceType;
+		$this->queryParameters["DeviceType"]=$deviceType;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
+
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
 	}
 	
 }

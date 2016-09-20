@@ -19,14 +19,20 @@
  */
 namespace Push\Request\V20150827;
 
-class ListTagsRequest extends \RpcAcsRequest
+class QueryMessageCountRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Push", "2015-08-27", "ListTags");
+		parent::__construct("Push", "2015-08-27", "QueryMessageCount");
 	}
 
 	private  $appKey;
+
+	private  $start;
+
+	private  $end;
+
+	private  $level;
 
 	public function getAppKey() {
 		return $this->appKey;
@@ -35,6 +41,33 @@ class ListTagsRequest extends \RpcAcsRequest
 	public function setAppKey($appKey) {
 		$this->appKey = $appKey;
 		$this->queryParameters["AppKey"]=$appKey;
+	}
+
+	public function getstart() {
+		return $this->start;
+	}
+
+	public function setstart($start) {
+		$this->start = $start;
+		$this->queryParameters["start"]=$start;
+	}
+
+	public function getend() {
+		return $this->end;
+	}
+
+	public function setend($end) {
+		$this->end = $end;
+		$this->queryParameters["end"]=$end;
+	}
+
+	public function getlevel() {
+		return $this->level;
+	}
+
+	public function setlevel($level) {
+		$this->level = $level;
+		$this->queryParameters["level"]=$level;
 	}
 	
 }

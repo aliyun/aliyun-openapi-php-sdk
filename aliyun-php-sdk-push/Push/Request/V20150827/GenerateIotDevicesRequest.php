@@ -19,22 +19,33 @@
  */
 namespace Push\Request\V20150827;
 
-class ListTagsRequest extends \RpcAcsRequest
+class GenerateIotDevicesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Push", "2015-08-27", "ListTags");
+		parent::__construct("Push", "2015-08-27", "GenerateIotDevices");
 	}
 
-	private  $appKey;
+	private  $isDev;
 
-	public function getAppKey() {
-		return $this->appKey;
+	private  $number;
+
+	public function getisDev() {
+		return $this->isDev;
 	}
 
-	public function setAppKey($appKey) {
-		$this->appKey = $appKey;
-		$this->queryParameters["AppKey"]=$appKey;
+	public function setisDev($isDev) {
+		$this->isDev = $isDev;
+		$this->queryParameters["isDev"]=$isDev;
+	}
+
+	public function getNumber() {
+		return $this->number;
+	}
+
+	public function setNumber($number) {
+		$this->number = $number;
+		$this->queryParameters["Number"]=$number;
 	}
 	
 }
