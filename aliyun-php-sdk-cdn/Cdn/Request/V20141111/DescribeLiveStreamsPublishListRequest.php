@@ -32,17 +32,11 @@ class DescribeLiveStreamsPublishListRequest extends \RpcAcsRequest
 
 	private  $domainName;
 
-	private  $appName;
-
-	private  $streamName;
-
 	private  $startTime;
 
+	private  $appName;
+
 	private  $endTime;
-
-	private  $pageSize;
-
-	private  $pageNumber;
 
 	public function getOwnerId() {
 		return $this->ownerId;
@@ -71,24 +65,6 @@ class DescribeLiveStreamsPublishListRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getAppName() {
-		return $this->appName;
-	}
-
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
-	}
-
-	public function getStreamName() {
-		return $this->streamName;
-	}
-
-	public function setStreamName($streamName) {
-		$this->streamName = $streamName;
-		$this->queryParameters["StreamName"]=$streamName;
-	}
-
 	public function getStartTime() {
 		return $this->startTime;
 	}
@@ -98,6 +74,15 @@ class DescribeLiveStreamsPublishListRequest extends \RpcAcsRequest
 		$this->queryParameters["StartTime"]=$startTime;
 	}
 
+	public function getAppName() {
+		return $this->appName;
+	}
+
+	public function setAppName($appName) {
+		$this->appName = $appName;
+		$this->queryParameters["AppName"]=$appName;
+	}
+
 	public function getEndTime() {
 		return $this->endTime;
 	}
@@ -105,24 +90,6 @@ class DescribeLiveStreamsPublishListRequest extends \RpcAcsRequest
 	public function setEndTime($endTime) {
 		$this->endTime = $endTime;
 		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 	
 }
