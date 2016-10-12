@@ -36,6 +36,12 @@ class DescribeLiveStreamOnlineUserNumRequest extends \RpcAcsRequest
 
 	private  $streamName;
 
+	private  $startTime;
+
+	private  $endTime;
+
+	private  $hlsSwitch;
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -79,6 +85,33 @@ class DescribeLiveStreamOnlineUserNumRequest extends \RpcAcsRequest
 	public function setStreamName($streamName) {
 		$this->streamName = $streamName;
 		$this->queryParameters["StreamName"]=$streamName;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
+
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
+	}
+
+	public function getHlsSwitch() {
+		return $this->hlsSwitch;
+	}
+
+	public function setHlsSwitch($hlsSwitch) {
+		$this->hlsSwitch = $hlsSwitch;
+		$this->queryParameters["HlsSwitch"]=$hlsSwitch;
 	}
 	
 }
