@@ -22,6 +22,7 @@ $productDomains =array(
 	new ProductDomain("Mts", "mts.cn-hangzhou.aliyuncs.com"),
 	new ProductDomain("ROS", "ros.aliyuncs.com"),
 	new ProductDomain("Dm", "dm.aliyuncs.com"),
+	new ProductDomain("Sms", "sms.aliyuncs.com"),
 	new ProductDomain("Bss", "bss.aliyuncs.com"),
 	new ProductDomain("Ecs", "ecs.aliyuncs.com"),
 	new ProductDomain("Oms", "oms.aliyuncs.com"),
