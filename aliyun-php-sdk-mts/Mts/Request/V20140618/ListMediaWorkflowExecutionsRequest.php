@@ -32,6 +32,8 @@ class ListMediaWorkflowExecutionsRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
+	private  $mediaWorkflowId;
+
 	private  $mediaWorkflowName;
 
 	private  $inputFileURL;
@@ -67,6 +69,15 @@ class ListMediaWorkflowExecutionsRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getMediaWorkflowId() {
+		return $this->mediaWorkflowId;
+	}
+
+	public function setMediaWorkflowId($mediaWorkflowId) {
+		$this->mediaWorkflowId = $mediaWorkflowId;
+		$this->queryParameters["MediaWorkflowId"]=$mediaWorkflowId;
 	}
 
 	public function getMediaWorkflowName() {
