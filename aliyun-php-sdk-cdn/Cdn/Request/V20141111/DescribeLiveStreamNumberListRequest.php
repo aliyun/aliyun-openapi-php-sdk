@@ -19,11 +19,11 @@
  */
 namespace Cdn\Request\V20141111;
 
-class UpdateLiveAppSnapshotConfigRequest extends \RpcAcsRequest
+class DescribeLiveStreamNumberListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cdn", "2014-11-11", "UpdateLiveAppSnapshotConfig");
+		parent::__construct("Cdn", "2014-11-11", "DescribeLiveStreamNumberList");
 	}
 
 	private  $ownerId;
@@ -34,15 +34,9 @@ class UpdateLiveAppSnapshotConfigRequest extends \RpcAcsRequest
 
 	private  $appName;
 
-	private  $timeInterval;
+	private  $startTime;
 
-	private  $ossEndpoint;
-
-	private  $ossBucket;
-
-	private  $overwriteOssObject;
-
-	private  $sequenceOssObject;
+	private  $endTime;
 
 	public function getOwnerId() {
 		return $this->ownerId;
@@ -80,49 +74,22 @@ class UpdateLiveAppSnapshotConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["AppName"]=$appName;
 	}
 
-	public function getTimeInterval() {
-		return $this->timeInterval;
+	public function getStartTime() {
+		return $this->startTime;
 	}
 
-	public function setTimeInterval($timeInterval) {
-		$this->timeInterval = $timeInterval;
-		$this->queryParameters["TimeInterval"]=$timeInterval;
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
 	}
 
-	public function getOssEndpoint() {
-		return $this->ossEndpoint;
+	public function getEndTime() {
+		return $this->endTime;
 	}
 
-	public function setOssEndpoint($ossEndpoint) {
-		$this->ossEndpoint = $ossEndpoint;
-		$this->queryParameters["OssEndpoint"]=$ossEndpoint;
-	}
-
-	public function getOssBucket() {
-		return $this->ossBucket;
-	}
-
-	public function setOssBucket($ossBucket) {
-		$this->ossBucket = $ossBucket;
-		$this->queryParameters["OssBucket"]=$ossBucket;
-	}
-
-	public function getOverwriteOssObject() {
-		return $this->overwriteOssObject;
-	}
-
-	public function setOverwriteOssObject($overwriteOssObject) {
-		$this->overwriteOssObject = $overwriteOssObject;
-		$this->queryParameters["OverwriteOssObject"]=$overwriteOssObject;
-	}
-
-	public function getSequenceOssObject() {
-		return $this->sequenceOssObject;
-	}
-
-	public function setSequenceOssObject($sequenceOssObject) {
-		$this->sequenceOssObject = $sequenceOssObject;
-		$this->queryParameters["SequenceOssObject"]=$sequenceOssObject;
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
 	}
 	
 }
