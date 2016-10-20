@@ -34,19 +34,19 @@ class PushRequest extends \RpcAcsRequest
 
 	private  $type;
 
+	private  $deviceType;
+
 	private  $title;
+
+	private  $body;
+
+	private  $summary;
+
+	private  $timeOut;
 
 	private  $remind;
 
 	private  $storeOffline;
-
-	private  $body;
-
-	private  $deviceType;
-
-	private  $timeOut;
-
-	private  $summary;
 
 	private  $androidActivity;
 
@@ -65,6 +65,14 @@ class PushRequest extends \RpcAcsRequest
 	private  $iOSMusic;
 
 	private  $iOSBadge;
+
+	private  $iOSTitle;
+
+	private  $iOSSubtitle;
+
+	private  $iOSNotificationCategory;
+
+	private  $iOSMutableContent;
 
 	private  $iOSExtParameters;
 
@@ -110,6 +118,15 @@ class PushRequest extends \RpcAcsRequest
 		$this->queryParameters["Type"]=$type;
 	}
 
+	public function getDeviceType() {
+		return $this->deviceType;
+	}
+
+	public function setDeviceType($deviceType) {
+		$this->deviceType = $deviceType;
+		$this->queryParameters["DeviceType"]=$deviceType;
+	}
+
 	public function getTitle() {
 		return $this->title;
 	}
@@ -117,6 +134,33 @@ class PushRequest extends \RpcAcsRequest
 	public function setTitle($title) {
 		$this->title = $title;
 		$this->queryParameters["Title"]=$title;
+	}
+
+	public function getBody() {
+		return $this->body;
+	}
+
+	public function setBody($body) {
+		$this->body = $body;
+		$this->queryParameters["Body"]=$body;
+	}
+
+	public function getSummary() {
+		return $this->summary;
+	}
+
+	public function setSummary($summary) {
+		$this->summary = $summary;
+		$this->queryParameters["Summary"]=$summary;
+	}
+
+	public function getTimeOut() {
+		return $this->timeOut;
+	}
+
+	public function setTimeOut($timeOut) {
+		$this->timeOut = $timeOut;
+		$this->queryParameters["TimeOut"]=$timeOut;
 	}
 
 	public function getRemind() {
@@ -135,42 +179,6 @@ class PushRequest extends \RpcAcsRequest
 	public function setStoreOffline($storeOffline) {
 		$this->storeOffline = $storeOffline;
 		$this->queryParameters["StoreOffline"]=$storeOffline;
-	}
-
-	public function getBody() {
-		return $this->body;
-	}
-
-	public function setBody($body) {
-		$this->body = $body;
-		$this->queryParameters["Body"]=$body;
-	}
-
-	public function getDeviceType() {
-		return $this->deviceType;
-	}
-
-	public function setDeviceType($deviceType) {
-		$this->deviceType = $deviceType;
-		$this->queryParameters["DeviceType"]=$deviceType;
-	}
-
-	public function getTimeOut() {
-		return $this->timeOut;
-	}
-
-	public function setTimeOut($timeOut) {
-		$this->timeOut = $timeOut;
-		$this->queryParameters["TimeOut"]=$timeOut;
-	}
-
-	public function getSummary() {
-		return $this->summary;
-	}
-
-	public function setSummary($summary) {
-		$this->summary = $summary;
-		$this->queryParameters["Summary"]=$summary;
 	}
 
 	public function getAndroidActivity() {
@@ -252,6 +260,42 @@ class PushRequest extends \RpcAcsRequest
 	public function setiOSBadge($iOSBadge) {
 		$this->iOSBadge = $iOSBadge;
 		$this->queryParameters["iOSBadge"]=$iOSBadge;
+	}
+
+	public function getiOSTitle() {
+		return $this->iOSTitle;
+	}
+
+	public function setiOSTitle($iOSTitle) {
+		$this->iOSTitle = $iOSTitle;
+		$this->queryParameters["iOSTitle"]=$iOSTitle;
+	}
+
+	public function getiOSSubtitle() {
+		return $this->iOSSubtitle;
+	}
+
+	public function setiOSSubtitle($iOSSubtitle) {
+		$this->iOSSubtitle = $iOSSubtitle;
+		$this->queryParameters["iOSSubtitle"]=$iOSSubtitle;
+	}
+
+	public function getiOSNotificationCategory() {
+		return $this->iOSNotificationCategory;
+	}
+
+	public function setiOSNotificationCategory($iOSNotificationCategory) {
+		$this->iOSNotificationCategory = $iOSNotificationCategory;
+		$this->queryParameters["iOSNotificationCategory"]=$iOSNotificationCategory;
+	}
+
+	public function getiOSMutableContent() {
+		return $this->iOSMutableContent;
+	}
+
+	public function setiOSMutableContent($iOSMutableContent) {
+		$this->iOSMutableContent = $iOSMutableContent;
+		$this->queryParameters["iOSMutableContent"]=$iOSMutableContent;
 	}
 
 	public function getiOSExtParameters() {
