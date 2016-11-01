@@ -62,7 +62,7 @@ class DefaultAcsClient implements IAcsClient
 		if(count($request->getDomainParameter())>0){
 			$httpResponse = HttpHelper::curl($requestUrl, $request->getMethod(), $request->getDomainParameter(), $request->getHeaders());
 		} else {
-			$httpResponse = HttpHelper::curl($requestUrl, $request->getMethod(), null, $request->getHeaders());
+			$httpResponse = HttpHelper::curl($requestUrl, $request->getMethod(),$request->getContent(), $request->getHeaders());
 		}
 		
 		$retryTimes = 1;
@@ -72,7 +72,7 @@ class DefaultAcsClient implements IAcsClient
 			if(count($request->getDomainParameter())>0){
 			    $httpResponse = HttpHelper::curl($requestUrl, $request->getDomainParameter(), $request->getHeaders());
 			} else {
-				$httpResponse = HttpHelper::curl($requestUrl, $request->getMethod(), null, $request->getHeaders());
+				$httpResponse = HttpHelper::curl($requestUrl, $request->getMethod(), $request->getContent(), $request->getHeaders());
 			}
 			$retryTimes ++;
 		}

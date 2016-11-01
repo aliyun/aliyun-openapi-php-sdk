@@ -88,10 +88,12 @@ abstract class RoaAcsRequest extends AcsRequest
 		$this->headers["Accept"] = $this->formatToAccept($this->getAcceptFormat());
 		$this->headers["x-acs-signature-method"] = $iSigner->getSignatureMethod();
 		$this->headers["x-acs-signature-version"] = $iSigner->getSignatureVersion();
+		$this->headers["x-acs-region-id"] = $this->regionId;
 		$content = $this->getDomainParameter();
         if ($content != null) {
           $this->headers["Content-MD5"] = base64_encode(md5(json_encode($content),true));
-        }  
+        }
+		$this->headers["Content-Type"] = "application/octet-stream;charset=utf-8";
 	}
 	
 	private function replaceOccupiedParameters()
