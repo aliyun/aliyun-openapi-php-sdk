@@ -40,6 +40,8 @@ class AuthorizeSecurityGroupRequest extends \RpcAcsRequest
 
 	private  $sourceGroupId;
 
+	private  $sourceGroupOwnerId;
+
 	private  $sourceGroupOwnerAccount;
 
 	private  $sourceCidrIp;
@@ -115,6 +117,15 @@ class AuthorizeSecurityGroupRequest extends \RpcAcsRequest
 	public function setSourceGroupId($sourceGroupId) {
 		$this->sourceGroupId = $sourceGroupId;
 		$this->queryParameters["SourceGroupId"]=$sourceGroupId;
+	}
+
+	public function getSourceGroupOwnerId() {
+		return $this->sourceGroupOwnerId;
+	}
+
+	public function setSourceGroupOwnerId($sourceGroupOwnerId) {
+		$this->sourceGroupOwnerId = $sourceGroupOwnerId;
+		$this->queryParameters["SourceGroupOwnerId"]=$sourceGroupOwnerId;
 	}
 
 	public function getSourceGroupOwnerAccount() {

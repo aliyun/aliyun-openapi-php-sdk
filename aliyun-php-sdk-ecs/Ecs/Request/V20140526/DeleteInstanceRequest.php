@@ -36,6 +36,8 @@ class DeleteInstanceRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
+	private  $force;
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -79,6 +81,15 @@ class DeleteInstanceRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getForce() {
+		return $this->force;
+	}
+
+	public function setForce($force) {
+		$this->force = $force;
+		$this->queryParameters["Force"]=$force;
 	}
 	
 }

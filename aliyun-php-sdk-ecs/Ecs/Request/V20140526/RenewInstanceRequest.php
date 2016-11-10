@@ -150,7 +150,7 @@ class RenewInstanceRequest extends \RpcAcsRequest
 
 	public function setCovertDiskPortable1DiskId($covertDiskPortable1DiskId) {
 		$this->covertDiskPortable1DiskId = $covertDiskPortable1DiskId;
-		$this->queryParameters["CovertDiskPortable1DiskId"]=$covertDiskPortable1DiskId;
+		$this->queryParameters["CovertDiskPortable.1.DiskId"]=$covertDiskPortable1DiskId;
 	}
 
 	public function getCovertDiskPortable2DiskId() {
@@ -159,7 +159,7 @@ class RenewInstanceRequest extends \RpcAcsRequest
 
 	public function setCovertDiskPortable2DiskId($covertDiskPortable2DiskId) {
 		$this->covertDiskPortable2DiskId = $covertDiskPortable2DiskId;
-		$this->queryParameters["CovertDiskPortable2DiskId"]=$covertDiskPortable2DiskId;
+		$this->queryParameters["CovertDiskPortable.2.DiskId"]=$covertDiskPortable2DiskId;
 	}
 
 	public function getCovertDiskPortable3DiskId() {
@@ -168,7 +168,7 @@ class RenewInstanceRequest extends \RpcAcsRequest
 
 	public function setCovertDiskPortable3DiskId($covertDiskPortable3DiskId) {
 		$this->covertDiskPortable3DiskId = $covertDiskPortable3DiskId;
-		$this->queryParameters["CovertDiskPortable3DiskId"]=$covertDiskPortable3DiskId;
+		$this->queryParameters["CovertDiskPortable.3.DiskId"]=$covertDiskPortable3DiskId;
 	}
 
 	public function getCovertDiskPortable4DiskId() {
@@ -177,7 +177,7 @@ class RenewInstanceRequest extends \RpcAcsRequest
 
 	public function setCovertDiskPortable4DiskId($covertDiskPortable4DiskId) {
 		$this->covertDiskPortable4DiskId = $covertDiskPortable4DiskId;
-		$this->queryParameters["CovertDiskPortable4DiskId"]=$covertDiskPortable4DiskId;
+		$this->queryParameters["CovertDiskPortable.4.DiskId"]=$covertDiskPortable4DiskId;
 	}
 	
 }

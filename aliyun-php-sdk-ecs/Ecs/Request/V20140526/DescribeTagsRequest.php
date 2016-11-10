@@ -129,7 +129,7 @@ class DescribeTagsRequest extends \RpcAcsRequest
 
 	public function setTag1Key($tag1Key) {
 		$this->tag1Key = $tag1Key;
-		$this->queryParameters["Tag1Key"]=$tag1Key;
+		$this->queryParameters["Tag.1.Key"]=$tag1Key;
 	}
 
 	public function getTag2Key() {
@@ -138,7 +138,7 @@ class DescribeTagsRequest extends \RpcAcsRequest
 
 	public function setTag2Key($tag2Key) {
 		$this->tag2Key = $tag2Key;
-		$this->queryParameters["Tag2Key"]=$tag2Key;
+		$this->queryParameters["Tag.2.Key"]=$tag2Key;
 	}
 
 	public function getTag3Key() {
@@ -147,7 +147,7 @@ class DescribeTagsRequest extends \RpcAcsRequest
 
 	public function setTag3Key($tag3Key) {
 		$this->tag3Key = $tag3Key;
-		$this->queryParameters["Tag3Key"]=$tag3Key;
+		$this->queryParameters["Tag.3.Key"]=$tag3Key;
 	}
 
 	public function getTag4Key() {
@@ -156,7 +156,7 @@ class DescribeTagsRequest extends \RpcAcsRequest
 
 	public function setTag4Key($tag4Key) {
 		$this->tag4Key = $tag4Key;
-		$this->queryParameters["Tag4Key"]=$tag4Key;
+		$this->queryParameters["Tag.4.Key"]=$tag4Key;
 	}
 
 	public function getTag5Key() {
@@ -165,7 +165,7 @@ class DescribeTagsRequest extends \RpcAcsRequest
 
 	public function setTag5Key($tag5Key) {
 		$this->tag5Key = $tag5Key;
-		$this->queryParameters["Tag5Key"]=$tag5Key;
+		$this->queryParameters["Tag.5.Key"]=$tag5Key;
 	}
 
 	public function getTag1Value() {
@@ -174,7 +174,7 @@ class DescribeTagsRequest extends \RpcAcsRequest
 
 	public function setTag1Value($tag1Value) {
 		$this->tag1Value = $tag1Value;
-		$this->queryParameters["Tag1Value"]=$tag1Value;
+		$this->queryParameters["Tag.1.Value"]=$tag1Value;
 	}
 
 	public function getTag2Value() {
@@ -183,7 +183,7 @@ class DescribeTagsRequest extends \RpcAcsRequest
 
 	public function setTag2Value($tag2Value) {
 		$this->tag2Value = $tag2Value;
-		$this->queryParameters["Tag2Value"]=$tag2Value;
+		$this->queryParameters["Tag.2.Value"]=$tag2Value;
 	}
 
 	public function getTag3Value() {
@@ -192,7 +192,7 @@ class DescribeTagsRequest extends \RpcAcsRequest
 
 	public function setTag3Value($tag3Value) {
 		$this->tag3Value = $tag3Value;
-		$this->queryParameters["Tag3Value"]=$tag3Value;
+		$this->queryParameters["Tag.3.Value"]=$tag3Value;
 	}
 
 	public function getTag4Value() {
@@ -201,7 +201,7 @@ class DescribeTagsRequest extends \RpcAcsRequest
 
 	public function setTag4Value($tag4Value) {
 		$this->tag4Value = $tag4Value;
-		$this->queryParameters["Tag4Value"]=$tag4Value;
+		$this->queryParameters["Tag.4.Value"]=$tag4Value;
 	}
 
 	public function getTag5Value() {
@@ -210,7 +210,7 @@ class DescribeTagsRequest extends \RpcAcsRequest
 
 	public function setTag5Value($tag5Value) {
 		$this->tag5Value = $tag5Value;
-		$this->queryParameters["Tag5Value"]=$tag5Value;
+		$this->queryParameters["Tag.5.Value"]=$tag5Value;
 	}
 	
 }

@@ -44,6 +44,8 @@ class ReplaceSystemDiskRequest extends \RpcAcsRequest
 
 	private  $useAdditionalService;
 
+	private  $password;
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -95,7 +97,7 @@ class ReplaceSystemDiskRequest extends \RpcAcsRequest
 
 	public function setSystemDiskSize($systemDiskSize) {
 		$this->systemDiskSize = $systemDiskSize;
-		$this->queryParameters["SystemDiskSize"]=$systemDiskSize;
+		$this->queryParameters["SystemDisk.Size"]=$systemDiskSize;
 	}
 
 	public function getClientToken() {
@@ -123,6 +125,15 @@ class ReplaceSystemDiskRequest extends \RpcAcsRequest
 	public function setUseAdditionalService($useAdditionalService) {
 		$this->useAdditionalService = $useAdditionalService;
 		$this->queryParameters["UseAdditionalService"]=$useAdditionalService;
+	}
+
+	public function getPassword() {
+		return $this->password;
+	}
+
+	public function setPassword($password) {
+		$this->password = $password;
+		$this->queryParameters["Password"]=$password;
 	}
 	
 }

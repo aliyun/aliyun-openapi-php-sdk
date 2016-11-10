@@ -58,6 +58,8 @@ class DescribeEipAddressesRequest extends \RpcAcsRequest
 
 	private  $associatedInstanceId;
 
+	private  $chargeType;
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -145,7 +147,7 @@ class DescribeEipAddressesRequest extends \RpcAcsRequest
 
 	public function setFilter1Key($filter1Key) {
 		$this->filter1Key = $filter1Key;
-		$this->queryParameters["Filter1Key"]=$filter1Key;
+		$this->queryParameters["Filter.1.Key"]=$filter1Key;
 	}
 
 	public function getFilter2Key() {
@@ -154,7 +156,7 @@ class DescribeEipAddressesRequest extends \RpcAcsRequest
 
 	public function setFilter2Key($filter2Key) {
 		$this->filter2Key = $filter2Key;
-		$this->queryParameters["Filter2Key"]=$filter2Key;
+		$this->queryParameters["Filter.2.Key"]=$filter2Key;
 	}
 
 	public function getFilter1Value() {
@@ -163,7 +165,7 @@ class DescribeEipAddressesRequest extends \RpcAcsRequest
 
 	public function setFilter1Value($filter1Value) {
 		$this->filter1Value = $filter1Value;
-		$this->queryParameters["Filter1Value"]=$filter1Value;
+		$this->queryParameters["Filter.1.Value"]=$filter1Value;
 	}
 
 	public function getFilter2Value() {
@@ -172,7 +174,7 @@ class DescribeEipAddressesRequest extends \RpcAcsRequest
 
 	public function setFilter2Value($filter2Value) {
 		$this->filter2Value = $filter2Value;
-		$this->queryParameters["Filter2Value"]=$filter2Value;
+		$this->queryParameters["Filter.2.Value"]=$filter2Value;
 	}
 
 	public function getLockReason() {
@@ -200,6 +202,15 @@ class DescribeEipAddressesRequest extends \RpcAcsRequest
 	public function setAssociatedInstanceId($associatedInstanceId) {
 		$this->associatedInstanceId = $associatedInstanceId;
 		$this->queryParameters["AssociatedInstanceId"]=$associatedInstanceId;
+	}
+
+	public function getChargeType() {
+		return $this->chargeType;
+	}
+
+	public function setChargeType($chargeType) {
+		$this->chargeType = $chargeType;
+		$this->queryParameters["ChargeType"]=$chargeType;
 	}
 	
 }

@@ -40,6 +40,8 @@ class AuthorizeSecurityGroupEgressRequest extends \RpcAcsRequest
 
 	private  $destGroupId;
 
+	private  $destGroupOwnerId;
+
 	private  $destGroupOwnerAccount;
 
 	private  $destCidrIp;
@@ -115,6 +117,15 @@ class AuthorizeSecurityGroupEgressRequest extends \RpcAcsRequest
 	public function setDestGroupId($destGroupId) {
 		$this->destGroupId = $destGroupId;
 		$this->queryParameters["DestGroupId"]=$destGroupId;
+	}
+
+	public function getDestGroupOwnerId() {
+		return $this->destGroupOwnerId;
+	}
+
+	public function setDestGroupOwnerId($destGroupOwnerId) {
+		$this->destGroupOwnerId = $destGroupOwnerId;
+		$this->queryParameters["DestGroupOwnerId"]=$destGroupOwnerId;
 	}
 
 	public function getDestGroupOwnerAccount() {

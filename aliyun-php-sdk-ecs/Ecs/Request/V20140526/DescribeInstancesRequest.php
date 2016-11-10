@@ -307,7 +307,7 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 
 	public function setFilter1Key($filter1Key) {
 		$this->filter1Key = $filter1Key;
-		$this->queryParameters["Filter1Key"]=$filter1Key;
+		$this->queryParameters["Filter.1.Key"]=$filter1Key;
 	}
 
 	public function getFilter2Key() {
@@ -316,7 +316,7 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 
 	public function setFilter2Key($filter2Key) {
 		$this->filter2Key = $filter2Key;
-		$this->queryParameters["Filter2Key"]=$filter2Key;
+		$this->queryParameters["Filter.2.Key"]=$filter2Key;
 	}
 
 	public function getFilter3Key() {
@@ -325,7 +325,7 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 
 	public function setFilter3Key($filter3Key) {
 		$this->filter3Key = $filter3Key;
-		$this->queryParameters["Filter3Key"]=$filter3Key;
+		$this->queryParameters["Filter.3.Key"]=$filter3Key;
 	}
 
 	public function getFilter4Key() {
@@ -334,7 +334,7 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 
 	public function setFilter4Key($filter4Key) {
 		$this->filter4Key = $filter4Key;
-		$this->queryParameters["Filter4Key"]=$filter4Key;
+		$this->queryParameters["Filter.4.Key"]=$filter4Key;
 	}
 
 	public function getFilter1Value() {
@@ -343,7 +343,7 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 
 	public function setFilter1Value($filter1Value) {
 		$this->filter1Value = $filter1Value;
-		$this->queryParameters["Filter1Value"]=$filter1Value;
+		$this->queryParameters["Filter.1.Value"]=$filter1Value;
 	}
 
 	public function getFilter2Value() {
@@ -352,7 +352,7 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 
 	public function setFilter2Value($filter2Value) {
 		$this->filter2Value = $filter2Value;
-		$this->queryParameters["Filter2Value"]=$filter2Value;
+		$this->queryParameters["Filter.2.Value"]=$filter2Value;
 	}
 
 	public function getFilter3Value() {
@@ -361,7 +361,7 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 
 	public function setFilter3Value($filter3Value) {
 		$this->filter3Value = $filter3Value;
-		$this->queryParameters["Filter3Value"]=$filter3Value;
+		$this->queryParameters["Filter.3.Value"]=$filter3Value;
 	}
 
 	public function getFilter4Value() {
@@ -370,7 +370,7 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 
 	public function setFilter4Value($filter4Value) {
 		$this->filter4Value = $filter4Value;
-		$this->queryParameters["Filter4Value"]=$filter4Value;
+		$this->queryParameters["Filter.4.Value"]=$filter4Value;
 	}
 
 	public function getDeviceAvailable() {
@@ -397,7 +397,7 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 
 	public function setTag1Key($tag1Key) {
 		$this->tag1Key = $tag1Key;
-		$this->queryParameters["Tag1Key"]=$tag1Key;
+		$this->queryParameters["Tag.1.Key"]=$tag1Key;
 	}
 
 	public function getTag2Key() {
@@ -406,7 +406,7 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 
 	public function setTag2Key($tag2Key) {
 		$this->tag2Key = $tag2Key;
-		$this->queryParameters["Tag2Key"]=$tag2Key;
+		$this->queryParameters["Tag.2.Key"]=$tag2Key;
 	}
 
 	public function getTag3Key() {
@@ -415,7 +415,7 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 
 	public function setTag3Key($tag3Key) {
 		$this->tag3Key = $tag3Key;
-		$this->queryParameters["Tag3Key"]=$tag3Key;
+		$this->queryParameters["Tag.3.Key"]=$tag3Key;
 	}
 
 	public function getTag4Key() {
@@ -424,7 +424,7 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 
 	public function setTag4Key($tag4Key) {
 		$this->tag4Key = $tag4Key;
-		$this->queryParameters["Tag4Key"]=$tag4Key;
+		$this->queryParameters["Tag.4.Key"]=$tag4Key;
 	}
 
 	public function getTag5Key() {
@@ -433,7 +433,7 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 
 	public function setTag5Key($tag5Key) {
 		$this->tag5Key = $tag5Key;
-		$this->queryParameters["Tag5Key"]=$tag5Key;
+		$this->queryParameters["Tag.5.Key"]=$tag5Key;
 	}
 
 	public function getTag1Value() {
@@ -442,7 +442,7 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 
 	public function setTag1Value($tag1Value) {
 		$this->tag1Value = $tag1Value;
-		$this->queryParameters["Tag1Value"]=$tag1Value;
+		$this->queryParameters["Tag.1.Value"]=$tag1Value;
 	}
 
 	public function getTag2Value() {
@@ -451,7 +451,7 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 
 	public function setTag2Value($tag2Value) {
 		$this->tag2Value = $tag2Value;
-		$this->queryParameters["Tag2Value"]=$tag2Value;
+		$this->queryParameters["Tag.2.Value"]=$tag2Value;
 	}
 
 	public function getTag3Value() {
@@ -460,7 +460,7 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 
 	public function setTag3Value($tag3Value) {
 		$this->tag3Value = $tag3Value;
-		$this->queryParameters["Tag3Value"]=$tag3Value;
+		$this->queryParameters["Tag.3.Value"]=$tag3Value;
 	}
 
 	public function getTag4Value() {
@@ -469,7 +469,7 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 
 	public function setTag4Value($tag4Value) {
 		$this->tag4Value = $tag4Value;
-		$this->queryParameters["Tag4Value"]=$tag4Value;
+		$this->queryParameters["Tag.4.Value"]=$tag4Value;
 	}
 
 	public function getTag5Value() {
@@ -478,7 +478,7 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 
 	public function setTag5Value($tag5Value) {
 		$this->tag5Value = $tag5Value;
-		$this->queryParameters["Tag5Value"]=$tag5Value;
+		$this->queryParameters["Tag.5.Value"]=$tag5Value;
 	}
 
 	public function getInstanceType() {

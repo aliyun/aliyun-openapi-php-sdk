@@ -38,6 +38,8 @@ class AllocateEipAddressRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
+	private  $clientToken;
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -90,6 +92,15 @@ class AllocateEipAddressRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getClientToken() {
+		return $this->clientToken;
+	}
+
+	public function setClientToken($clientToken) {
+		$this->clientToken = $clientToken;
+		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 	
 }

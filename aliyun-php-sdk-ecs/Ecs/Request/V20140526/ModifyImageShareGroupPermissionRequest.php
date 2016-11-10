@@ -82,7 +82,7 @@ class ModifyImageShareGroupPermissionRequest extends \RpcAcsRequest
 
 	public function setAddGroup1($addGroup1) {
 		$this->addGroup1 = $addGroup1;
-		$this->queryParameters["AddGroup1"]=$addGroup1;
+		$this->queryParameters["AddGroup.1"]=$addGroup1;
 	}
 
 	public function getRemoveGroup1() {
@@ -91,7 +91,7 @@ class ModifyImageShareGroupPermissionRequest extends \RpcAcsRequest
 
 	public function setRemoveGroup1($removeGroup1) {
 		$this->removeGroup1 = $removeGroup1;
-		$this->queryParameters["RemoveGroup1"]=$removeGroup1;
+		$this->queryParameters["RemoveGroup.1"]=$removeGroup1;
 	}
 
 	public function getOwnerAccount() {

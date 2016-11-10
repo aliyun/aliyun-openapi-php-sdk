@@ -118,7 +118,7 @@ class ModifyImageSharePermissionRequest extends \RpcAcsRequest
 
 	public function setAddAccount1($addAccount1) {
 		$this->addAccount1 = $addAccount1;
-		$this->queryParameters["AddAccount1"]=$addAccount1;
+		$this->queryParameters["AddAccount.1"]=$addAccount1;
 	}
 
 	public function getAddAccount2() {
@@ -127,7 +127,7 @@ class ModifyImageSharePermissionRequest extends \RpcAcsRequest
 
 	public function setAddAccount2($addAccount2) {
 		$this->addAccount2 = $addAccount2;
-		$this->queryParameters["AddAccount2"]=$addAccount2;
+		$this->queryParameters["AddAccount.2"]=$addAccount2;
 	}
 
 	public function getAddAccount3() {
@@ -136,7 +136,7 @@ class ModifyImageSharePermissionRequest extends \RpcAcsRequest
 
 	public function setAddAccount3($addAccount3) {
 		$this->addAccount3 = $addAccount3;
-		$this->queryParameters["AddAccount3"]=$addAccount3;
+		$this->queryParameters["AddAccount.3"]=$addAccount3;
 	}
 
 	public function getAddAccount4() {
@@ -145,7 +145,7 @@ class ModifyImageSharePermissionRequest extends \RpcAcsRequest
 
 	public function setAddAccount4($addAccount4) {
 		$this->addAccount4 = $addAccount4;
-		$this->queryParameters["AddAccount4"]=$addAccount4;
+		$this->queryParameters["AddAccount.4"]=$addAccount4;
 	}
 
 	public function getAddAccount5() {
@@ -154,7 +154,7 @@ class ModifyImageSharePermissionRequest extends \RpcAcsRequest
 
 	public function setAddAccount5($addAccount5) {
 		$this->addAccount5 = $addAccount5;
-		$this->queryParameters["AddAccount5"]=$addAccount5;
+		$this->queryParameters["AddAccount.5"]=$addAccount5;
 	}
 
 	public function getAddAccount6() {
@@ -163,7 +163,7 @@ class ModifyImageSharePermissionRequest extends \RpcAcsRequest
 
 	public function setAddAccount6($addAccount6) {
 		$this->addAccount6 = $addAccount6;
-		$this->queryParameters["AddAccount6"]=$addAccount6;
+		$this->queryParameters["AddAccount.6"]=$addAccount6;
 	}
 
 	public function getAddAccount7() {
@@ -172,7 +172,7 @@ class ModifyImageSharePermissionRequest extends \RpcAcsRequest
 
 	public function setAddAccount7($addAccount7) {
 		$this->addAccount7 = $addAccount7;
-		$this->queryParameters["AddAccount7"]=$addAccount7;
+		$this->queryParameters["AddAccount.7"]=$addAccount7;
 	}
 
 	public function getAddAccount8() {
@@ -181,7 +181,7 @@ class ModifyImageSharePermissionRequest extends \RpcAcsRequest
 
 	public function setAddAccount8($addAccount8) {
 		$this->addAccount8 = $addAccount8;
-		$this->queryParameters["AddAccount8"]=$addAccount8;
+		$this->queryParameters["AddAccount.8"]=$addAccount8;
 	}
 
 	public function getAddAccount9() {
@@ -190,7 +190,7 @@ class ModifyImageSharePermissionRequest extends \RpcAcsRequest
 
 	public function setAddAccount9($addAccount9) {
 		$this->addAccount9 = $addAccount9;
-		$this->queryParameters["AddAccount9"]=$addAccount9;
+		$this->queryParameters["AddAccount.9"]=$addAccount9;
 	}
 
 	public function getAddAccount10() {
@@ -199,7 +199,7 @@ class ModifyImageSharePermissionRequest extends \RpcAcsRequest
 
 	public function setAddAccount10($addAccount10) {
 		$this->addAccount10 = $addAccount10;
-		$this->queryParameters["AddAccount10"]=$addAccount10;
+		$this->queryParameters["AddAccount.10"]=$addAccount10;
 	}
 
 	public function getRemoveAccount1() {
@@ -208,7 +208,7 @@ class ModifyImageSharePermissionRequest extends \RpcAcsRequest
 
 	public function setRemoveAccount1($removeAccount1) {
 		$this->removeAccount1 = $removeAccount1;
-		$this->queryParameters["RemoveAccount1"]=$removeAccount1;
+		$this->queryParameters["RemoveAccount.1"]=$removeAccount1;
 	}
 
 	public function getRemoveAccount2() {
@@ -217,7 +217,7 @@ class ModifyImageSharePermissionRequest extends \RpcAcsRequest
 
 	public function setRemoveAccount2($removeAccount2) {
 		$this->removeAccount2 = $removeAccount2;
-		$this->queryParameters["RemoveAccount2"]=$removeAccount2;
+		$this->queryParameters["RemoveAccount.2"]=$removeAccount2;
 	}
 
 	public function getRemoveAccount3() {
@@ -226,7 +226,7 @@ class ModifyImageSharePermissionRequest extends \RpcAcsRequest
 
 	public function setRemoveAccount3($removeAccount3) {
 		$this->removeAccount3 = $removeAccount3;
-		$this->queryParameters["RemoveAccount3"]=$removeAccount3;
+		$this->queryParameters["RemoveAccount.3"]=$removeAccount3;
 	}
 
 	public function getRemoveAccount4() {
@@ -235,7 +235,7 @@ class ModifyImageSharePermissionRequest extends \RpcAcsRequest
 
 	public function setRemoveAccount4($removeAccount4) {
 		$this->removeAccount4 = $removeAccount4;
-		$this->queryParameters["RemoveAccount4"]=$removeAccount4;
+		$this->queryParameters["RemoveAccount.4"]=$removeAccount4;
 	}
 
 	public function getRemoveAccount5() {
@@ -244,7 +244,7 @@ class ModifyImageSharePermissionRequest extends \RpcAcsRequest
 
 	public function setRemoveAccount5($removeAccount5) {
 		$this->removeAccount5 = $removeAccount5;
-		$this->queryParameters["RemoveAccount5"]=$removeAccount5;
+		$this->queryParameters["RemoveAccount.5"]=$removeAccount5;
 	}
 
 	public function getRemoveAccount6() {
@@ -253,7 +253,7 @@ class ModifyImageSharePermissionRequest extends \RpcAcsRequest
 
 	public function setRemoveAccount6($removeAccount6) {
 		$this->removeAccount6 = $removeAccount6;
-		$this->queryParameters["RemoveAccount6"]=$removeAccount6;
+		$this->queryParameters["RemoveAccount.6"]=$removeAccount6;
 	}
 
 	public function getRemoveAccount7() {
@@ -262,7 +262,7 @@ class ModifyImageSharePermissionRequest extends \RpcAcsRequest
 
 	public function setRemoveAccount7($removeAccount7) {
 		$this->removeAccount7 = $removeAccount7;
-		$this->queryParameters["RemoveAccount7"]=$removeAccount7;
+		$this->queryParameters["RemoveAccount.7"]=$removeAccount7;
 	}
 
 	public function getRemoveAccount8() {
@@ -271,7 +271,7 @@ class ModifyImageSharePermissionRequest extends \RpcAcsRequest
 
 	public function setRemoveAccount8($removeAccount8) {
 		$this->removeAccount8 = $removeAccount8;
-		$this->queryParameters["RemoveAccount8"]=$removeAccount8;
+		$this->queryParameters["RemoveAccount.8"]=$removeAccount8;
 	}
 
 	public function getRemoveAccount9() {
@@ -280,7 +280,7 @@ class ModifyImageSharePermissionRequest extends \RpcAcsRequest
 
 	public function setRemoveAccount9($removeAccount9) {
 		$this->removeAccount9 = $removeAccount9;
-		$this->queryParameters["RemoveAccount9"]=$removeAccount9;
+		$this->queryParameters["RemoveAccount.9"]=$removeAccount9;
 	}
 
 	public function getRemoveAccount10() {
@@ -289,7 +289,7 @@ class ModifyImageSharePermissionRequest extends \RpcAcsRequest
 
 	public function setRemoveAccount10($removeAccount10) {
 		$this->removeAccount10 = $removeAccount10;
-		$this->queryParameters["RemoveAccount10"]=$removeAccount10;
+		$this->queryParameters["RemoveAccount.10"]=$removeAccount10;
 	}
 
 	public function getOwnerAccount() {

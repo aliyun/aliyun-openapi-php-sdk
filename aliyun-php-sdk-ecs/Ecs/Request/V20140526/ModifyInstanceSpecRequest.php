@@ -48,6 +48,8 @@ class ModifyInstanceSpecRequest extends \RpcAcsRequest
 
 	private  $temporaryInternetMaxBandwidthOut;
 
+	private  $async;
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -126,7 +128,7 @@ class ModifyInstanceSpecRequest extends \RpcAcsRequest
 
 	public function setTemporaryStartTime($temporaryStartTime) {
 		$this->temporaryStartTime = $temporaryStartTime;
-		$this->queryParameters["TemporaryStartTime"]=$temporaryStartTime;
+		$this->queryParameters["Temporary.StartTime"]=$temporaryStartTime;
 	}
 
 	public function getTemporaryEndTime() {
@@ -135,7 +137,7 @@ class ModifyInstanceSpecRequest extends \RpcAcsRequest
 
 	public function setTemporaryEndTime($temporaryEndTime) {
 		$this->temporaryEndTime = $temporaryEndTime;
-		$this->queryParameters["TemporaryEndTime"]=$temporaryEndTime;
+		$this->queryParameters["Temporary.EndTime"]=$temporaryEndTime;
 	}
 
 	public function getTemporaryInternetMaxBandwidthOut() {
@@ -144,7 +146,16 @@ class ModifyInstanceSpecRequest extends \RpcAcsRequest
 
 	public function setTemporaryInternetMaxBandwidthOut($temporaryInternetMaxBandwidthOut) {
 		$this->temporaryInternetMaxBandwidthOut = $temporaryInternetMaxBandwidthOut;
-		$this->queryParameters["TemporaryInternetMaxBandwidthOut"]=$temporaryInternetMaxBandwidthOut;
+		$this->queryParameters["Temporary.InternetMaxBandwidthOut"]=$temporaryInternetMaxBandwidthOut;
+	}
+
+	public function getAsync() {
+		return $this->async;
+	}
+
+	public function setAsync($async) {
+		$this->async = $async;
+		$this->queryParameters["Async"]=$async;
 	}
 	
 }

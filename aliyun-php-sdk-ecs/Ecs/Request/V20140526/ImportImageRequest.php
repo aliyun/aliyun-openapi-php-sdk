@@ -26,6 +26,8 @@ class ImportImageRequest extends \RpcAcsRequest
 		parent::__construct("Ecs", "2014-05-26", "ImportImage");
 	}
 
+	private  $diskDeviceMapping;
+
 	private  $ownerId;
 
 	private  $resourceOwnerAccount;
@@ -42,17 +44,16 @@ class ImportImageRequest extends \RpcAcsRequest
 
 	private  $platform;
 
-	private  $diskDeviceMapping1Format;
-
-	private  $diskDeviceMapping1OSSBucket;
-
-	private  $diskDeviceMapping1OSSObject;
-
-	private  $diskDeviceMapping1DiskImSize;
-
-	private  $diskDeviceMapping1Device;
-
 	private  $roleName;
+
+	public function getDiskDeviceMapping() {
+		return $this->diskDeviceMapping;
+	}
+
+	public function setDiskDeviceMapping($diskDeviceMapping) {
+		$this->diskDeviceMapping = $diskDeviceMapping;
+		$this->queryParameters["DiskDeviceMapping"]=$diskDeviceMapping;
+	}
 
 	public function getOwnerId() {
 		return $this->ownerId;
@@ -124,51 +125,6 @@ class ImportImageRequest extends \RpcAcsRequest
 	public function setPlatform($platform) {
 		$this->platform = $platform;
 		$this->queryParameters["Platform"]=$platform;
-	}
-
-	public function getDiskDeviceMapping1Format() {
-		return $this->diskDeviceMapping1Format;
-	}
-
-	public function setDiskDeviceMapping1Format($diskDeviceMapping1Format) {
-		$this->diskDeviceMapping1Format = $diskDeviceMapping1Format;
-		$this->queryParameters["DiskDeviceMapping1Format"]=$diskDeviceMapping1Format;
-	}
-
-	public function getDiskDeviceMapping1OSSBucket() {
-		return $this->diskDeviceMapping1OSSBucket;
-	}
-
-	public function setDiskDeviceMapping1OSSBucket($diskDeviceMapping1OSSBucket) {
-		$this->diskDeviceMapping1OSSBucket = $diskDeviceMapping1OSSBucket;
-		$this->queryParameters["DiskDeviceMapping1OSSBucket"]=$diskDeviceMapping1OSSBucket;
-	}
-
-	public function getDiskDeviceMapping1OSSObject() {
-		return $this->diskDeviceMapping1OSSObject;
-	}
-
-	public function setDiskDeviceMapping1OSSObject($diskDeviceMapping1OSSObject) {
-		$this->diskDeviceMapping1OSSObject = $diskDeviceMapping1OSSObject;
-		$this->queryParameters["DiskDeviceMapping1OSSObject"]=$diskDeviceMapping1OSSObject;
-	}
-
-	public function getDiskDeviceMapping1DiskImSize() {
-		return $this->diskDeviceMapping1DiskImSize;
-	}
-
-	public function setDiskDeviceMapping1DiskImSize($diskDeviceMapping1DiskImSize) {
-		$this->diskDeviceMapping1DiskImSize = $diskDeviceMapping1DiskImSize;
-		$this->queryParameters["DiskDeviceMapping1DiskImSize"]=$diskDeviceMapping1DiskImSize;
-	}
-
-	public function getDiskDeviceMapping1Device() {
-		return $this->diskDeviceMapping1Device;
-	}
-
-	public function setDiskDeviceMapping1Device($diskDeviceMapping1Device) {
-		$this->diskDeviceMapping1Device = $diskDeviceMapping1Device;
-		$this->queryParameters["DiskDeviceMapping1Device"]=$diskDeviceMapping1Device;
 	}
 
 	public function getRoleName() {

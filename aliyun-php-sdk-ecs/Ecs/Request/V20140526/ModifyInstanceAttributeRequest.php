@@ -44,6 +44,8 @@ class ModifyInstanceAttributeRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
+	private  $userData;
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -123,6 +125,15 @@ class ModifyInstanceAttributeRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getUserData() {
+		return $this->userData;
+	}
+
+	public function setUserData($userData) {
+		$this->userData = $userData;
+		$this->queryParameters["UserData"]=$userData;
 	}
 	
 }

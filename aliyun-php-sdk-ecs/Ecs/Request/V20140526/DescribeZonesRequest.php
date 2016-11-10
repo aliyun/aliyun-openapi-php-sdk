@@ -34,6 +34,8 @@ class DescribeZonesRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
+	private  $verbose;
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -68,6 +70,15 @@ class DescribeZonesRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getVerbose() {
+		return $this->verbose;
+	}
+
+	public function setVerbose($verbose) {
+		$this->verbose = $verbose;
+		$this->queryParameters["Verbose"]=$verbose;
 	}
 	
 }

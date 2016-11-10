@@ -36,6 +36,8 @@ class ReInitDiskRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
+	private  $password;
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -79,6 +81,15 @@ class ReInitDiskRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getPassword() {
+		return $this->password;
+	}
+
+	public function setPassword($password) {
+		$this->password = $password;
+		$this->queryParameters["Password"]=$password;
 	}
 	
 }
