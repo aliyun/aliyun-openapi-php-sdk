@@ -32,6 +32,8 @@ class EncryptRequest extends \RpcAcsRequest
 
 	private  $sTSToken;
 
+	private  $encryptionContext;
+
 	public function getKeyId() {
 		return $this->keyId;
 	}
@@ -57,6 +59,15 @@ class EncryptRequest extends \RpcAcsRequest
 	public function setSTSToken($sTSToken) {
 		$this->sTSToken = $sTSToken;
 		$this->queryParameters["STSToken"]=$sTSToken;
+	}
+
+	public function getEncryptionContext() {
+		return $this->encryptionContext;
+	}
+
+	public function setEncryptionContext($encryptionContext) {
+		$this->encryptionContext = $encryptionContext;
+		$this->queryParameters["EncryptionContext"]=$encryptionContext;
 	}
 	
 }

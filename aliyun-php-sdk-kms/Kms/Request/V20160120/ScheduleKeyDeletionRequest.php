@@ -19,26 +19,35 @@
  */
 namespace Kms\Request\V20160120;
 
-class DecryptRequest extends \RpcAcsRequest
+class ScheduleKeyDeletionRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Kms", "2016-01-20", "Decrypt");
+		parent::__construct("Kms", "2016-01-20", "ScheduleKeyDeletion");
 	}
 
-	private  $ciphertextBlob;
+	private  $keyId;
+
+	private  $pendingWindowInDays;
 
 	private  $sTSToken;
 
-	private  $encryptionContext;
-
-	public function getCiphertextBlob() {
-		return $this->ciphertextBlob;
+	public function getKeyId() {
+		return $this->keyId;
 	}
 
-	public function setCiphertextBlob($ciphertextBlob) {
-		$this->ciphertextBlob = $ciphertextBlob;
-		$this->queryParameters["CiphertextBlob"]=$ciphertextBlob;
+	public function setKeyId($keyId) {
+		$this->keyId = $keyId;
+		$this->queryParameters["KeyId"]=$keyId;
+	}
+
+	public function getPendingWindowInDays() {
+		return $this->pendingWindowInDays;
+	}
+
+	public function setPendingWindowInDays($pendingWindowInDays) {
+		$this->pendingWindowInDays = $pendingWindowInDays;
+		$this->queryParameters["PendingWindowInDays"]=$pendingWindowInDays;
 	}
 
 	public function getSTSToken() {
@@ -48,15 +57,6 @@ class DecryptRequest extends \RpcAcsRequest
 	public function setSTSToken($sTSToken) {
 		$this->sTSToken = $sTSToken;
 		$this->queryParameters["STSToken"]=$sTSToken;
-	}
-
-	public function getEncryptionContext() {
-		return $this->encryptionContext;
-	}
-
-	public function setEncryptionContext($encryptionContext) {
-		$this->encryptionContext = $encryptionContext;
-		$this->queryParameters["EncryptionContext"]=$encryptionContext;
 	}
 	
 }
