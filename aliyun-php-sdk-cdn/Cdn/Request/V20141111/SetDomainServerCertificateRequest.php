@@ -32,11 +32,15 @@ class SetDomainServerCertificateRequest extends \RpcAcsRequest
 
 	private  $domainName;
 
+	private  $certName;
+
 	private  $serverCertificateStatus;
 
 	private  $serverCertificate;
 
 	private  $privateKey;
+
+	private  $region;
 
 	public function getOwnerId() {
 		return $this->ownerId;
@@ -65,6 +69,15 @@ class SetDomainServerCertificateRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
+	public function getCertName() {
+		return $this->certName;
+	}
+
+	public function setCertName($certName) {
+		$this->certName = $certName;
+		$this->queryParameters["CertName"]=$certName;
+	}
+
 	public function getServerCertificateStatus() {
 		return $this->serverCertificateStatus;
 	}
@@ -90,6 +103,15 @@ class SetDomainServerCertificateRequest extends \RpcAcsRequest
 	public function setPrivateKey($privateKey) {
 		$this->privateKey = $privateKey;
 		$this->queryParameters["PrivateKey"]=$privateKey;
+	}
+
+	public function getRegion() {
+		return $this->region;
+	}
+
+	public function setRegion($region) {
+		$this->region = $region;
+		$this->queryParameters["Region"]=$region;
 	}
 	
 }
