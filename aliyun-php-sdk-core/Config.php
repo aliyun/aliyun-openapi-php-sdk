@@ -33,6 +33,7 @@ Autoloader::addAutoloadPath("aliyun-php-sdk-dm");
 Autoloader::addAutoloadPath("aliyun-php-sdk-iot");
 Autoloader::addAutoloadPath("aliyun-php-sdk-jaq");
 Autoloader::addAutoloadPath("aliyun-php-sdk-cs");
+Autoloader::addAutoloadPath("aliyun-php-sdk-live");
 
 //config http proxy	
 define('ENABLE_HTTP_PROXY', FALSE);
