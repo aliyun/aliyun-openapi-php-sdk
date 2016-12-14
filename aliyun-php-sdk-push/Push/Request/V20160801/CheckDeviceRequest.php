@@ -19,20 +19,16 @@
  */
 namespace Push\Request\V20160801;
 
-class ModifyAppExtensionsRequest extends \RpcAcsRequest
+class CheckDeviceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Push", "2016-08-01", "ModifyAppExtensions");
+		parent::__construct("Push", "2016-08-01", "CheckDevice");
 	}
 
 	private  $appKey;
 
-	private  $xmAppSecretKey;
-
-	private  $hwAppKey;
-
-	private  $hwAppSecretKey;
+	private  $deviceId;
 
 	public function getAppKey() {
 		return $this->appKey;
@@ -43,31 +39,13 @@ class ModifyAppExtensionsRequest extends \RpcAcsRequest
 		$this->queryParameters["AppKey"]=$appKey;
 	}
 
-	public function getXmAppSecretKey() {
-		return $this->xmAppSecretKey;
+	public function getDeviceId() {
+		return $this->deviceId;
 	}
 
-	public function setXmAppSecretKey($xmAppSecretKey) {
-		$this->xmAppSecretKey = $xmAppSecretKey;
-		$this->queryParameters["XmAppSecretKey"]=$xmAppSecretKey;
-	}
-
-	public function getHwAppKey() {
-		return $this->hwAppKey;
-	}
-
-	public function setHwAppKey($hwAppKey) {
-		$this->hwAppKey = $hwAppKey;
-		$this->queryParameters["HwAppKey"]=$hwAppKey;
-	}
-
-	public function getHwAppSecretKey() {
-		return $this->hwAppSecretKey;
-	}
-
-	public function setHwAppSecretKey($hwAppSecretKey) {
-		$this->hwAppSecretKey = $hwAppSecretKey;
-		$this->queryParameters["HwAppSecretKey"]=$hwAppSecretKey;
+	public function setDeviceId($deviceId) {
+		$this->deviceId = $deviceId;
+		$this->queryParameters["DeviceId"]=$deviceId;
 	}
 	
 }
