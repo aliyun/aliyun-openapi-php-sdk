@@ -26,18 +26,31 @@ $endpoints = array();
 
 foreach ($json_array["Endpoint"] as $json_endpoint) {
     # pre-process RegionId & Product
-    $json_region_ids = $json_endpoint['RegionIds']['RegionId'];
-    if (!is_array($json_region_ids)) {
-        $region_ids = array($json_region_ids);
+    if (!array_key_exists("RegionId", $json_endpoint["RegionIds"])) {
+        $region_ids = array();
     } else {
-        $region_ids = $json_region_ids;
+        $json_region_ids = $json_endpoint['RegionIds']['RegionId'];
+        if (!is_array($json_region_ids)) {
+            $region_ids = array($json_region_ids);
+        } else {
+            $region_ids = $json_region_ids;
+        }
     }
 
-    $json_products = $json_endpoint["Products"]["Product"];
-    if (!is_array($json_products)) {
-        $products = array($json_products);
+    if (!array_key_exists("Product", $json_endpoint["Products"])) {
+        $products = array();
+
     } else {
-        $products = $json_products;
+        $json_products = $json_endpoint["Products"]["Product"];
+
+        if (array() === $json_products or !is_array($json_products)) {
+            $products = array();
+        } else if (array_keys($json_products) !== range(0, count($json_products) - 1)) {
+            # array is not sequential
+            $products = array($json_products);
+        } else {
+            $products = $json_products;
+        }
     }
 
     $product_domains = array();
