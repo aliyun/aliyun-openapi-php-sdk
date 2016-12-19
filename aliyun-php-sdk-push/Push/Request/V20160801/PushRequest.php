@@ -80,6 +80,8 @@ class PushRequest extends \RpcAcsRequest
 
 	private  $iOSBadge;
 
+	private  $iOSSilentNotification;
+
 	private  $iOSSubtitle;
 
 	private  $iOSNotificationCategory;
@@ -329,6 +331,15 @@ class PushRequest extends \RpcAcsRequest
 	public function setiOSBadge($iOSBadge) {
 		$this->iOSBadge = $iOSBadge;
 		$this->queryParameters["iOSBadge"]=$iOSBadge;
+	}
+
+	public function getiOSSilentNotification() {
+		return $this->iOSSilentNotification;
+	}
+
+	public function setiOSSilentNotification($iOSSilentNotification) {
+		$this->iOSSilentNotification = $iOSSilentNotification;
+		$this->queryParameters["iOSSilentNotification"]=$iOSSilentNotification;
 	}
 
 	public function getiOSSubtitle() {
