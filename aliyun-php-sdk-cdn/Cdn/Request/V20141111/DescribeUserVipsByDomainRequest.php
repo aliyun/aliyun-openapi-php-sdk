@@ -32,6 +32,8 @@ class DescribeUserVipsByDomainRequest extends \RpcAcsRequest
 
 	private  $domainName;
 
+	private  $available;
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -57,6 +59,15 @@ class DescribeUserVipsByDomainRequest extends \RpcAcsRequest
 	public function setDomainName($domainName) {
 		$this->domainName = $domainName;
 		$this->queryParameters["DomainName"]=$domainName;
+	}
+
+	public function getAvailable() {
+		return $this->available;
+	}
+
+	public function setAvailable($available) {
+		$this->available = $available;
+		$this->queryParameters["Available"]=$available;
 	}
 	
 }

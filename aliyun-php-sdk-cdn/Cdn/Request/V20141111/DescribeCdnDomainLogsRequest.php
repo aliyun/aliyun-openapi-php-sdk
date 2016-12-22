@@ -38,6 +38,10 @@ class DescribeCdnDomainLogsRequest extends \RpcAcsRequest
 
 	private  $pageNumber;
 
+	private  $startTime;
+
+	private  $endTime;
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -90,6 +94,24 @@ class DescribeCdnDomainLogsRequest extends \RpcAcsRequest
 	public function setPageNumber($pageNumber) {
 		$this->pageNumber = $pageNumber;
 		$this->queryParameters["PageNumber"]=$pageNumber;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
+
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
 	}
 	
 }
