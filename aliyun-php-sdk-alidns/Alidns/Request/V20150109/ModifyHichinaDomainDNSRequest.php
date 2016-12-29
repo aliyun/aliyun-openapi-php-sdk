@@ -26,7 +26,29 @@ class ModifyHichinaDomainDNSRequest extends \RpcAcsRequest
 		parent::__construct("Alidns", "2015-01-09", "ModifyHichinaDomainDNS");
 	}
 
+	private  $lang;
+
+	private  $userClientIp;
+
 	private  $domainName;
+
+	public function getLang() {
+		return $this->lang;
+	}
+
+	public function setLang($lang) {
+		$this->lang = $lang;
+		$this->queryParameters["Lang"]=$lang;
+	}
+
+	public function getUserClientIp() {
+		return $this->userClientIp;
+	}
+
+	public function setUserClientIp($userClientIp) {
+		$this->userClientIp = $userClientIp;
+		$this->queryParameters["UserClientIp"]=$userClientIp;
+	}
 
 	public function getDomainName() {
 		return $this->domainName;

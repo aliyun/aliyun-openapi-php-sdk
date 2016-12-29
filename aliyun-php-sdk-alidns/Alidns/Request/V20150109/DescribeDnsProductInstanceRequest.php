@@ -19,18 +19,18 @@
  */
 namespace Alidns\Request\V20150109;
 
-class DeleteBatchDomainsRequest extends \RpcAcsRequest
+class DescribeDnsProductInstanceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Alidns", "2015-01-09", "DeleteBatchDomains");
+		parent::__construct("Alidns", "2015-01-09", "DescribeDnsProductInstance");
 	}
 
 	private  $lang;
 
 	private  $userClientIp;
 
-	private  $domains;
+	private  $instanceId;
 
 	public function getLang() {
 		return $this->lang;
@@ -50,13 +50,13 @@ class DeleteBatchDomainsRequest extends \RpcAcsRequest
 		$this->queryParameters["UserClientIp"]=$userClientIp;
 	}
 
-	public function getDomains() {
-		return $this->domains;
+	public function getInstanceId() {
+		return $this->instanceId;
 	}
 
-	public function setDomains($domains) {
-		$this->domains = $domains;
-		$this->queryParameters["Domains"]=$domains;
+	public function setInstanceId($instanceId) {
+		$this->instanceId = $instanceId;
+		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 	
 }
