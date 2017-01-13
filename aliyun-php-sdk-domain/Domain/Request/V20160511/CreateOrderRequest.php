@@ -34,7 +34,10 @@ class CreateOrderRequest extends \RpcAcsRequest
 
 	public function setSubOrderParam($subOrderParam) {
 		$this->subOrderParam = $subOrderParam;
-		$this->queryParameters["SubOrderParam"]=$subOrderParam;
-	}
-	
+		for($i=1;$i<1+count($subOrderParam);$i++){
+			foreach($subOrderParam[$i-1] as $key => $value) {
+			$this->queryParameters["SubOrderParam.$i.$key"]=$value;
+		}
+	  }
+	}	
 }
