@@ -19,11 +19,11 @@
  */
 namespace Ecs\Request\V20140526;
 
-class StopInstanceRequest extends \RpcAcsRequest
+class DescribeSnapshotLinksRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "StopInstance");
+		parent::__construct("Ecs", "2014-05-26", "DescribeSnapshotLinks");
 	}
 
 	private  $ownerId;
@@ -32,13 +32,15 @@ class StopInstanceRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $instanceId;
-
-	private  $confirmStop;
-
-	private  $forceStop;
-
 	private  $ownerAccount;
+
+	private  $diskIds;
+
+	private  $snapshotLinkIds;
+
+	private  $pageNumber;
+
+	private  $pageSize;
 
 	public function getOwnerId() {
 		return $this->ownerId;
@@ -67,33 +69,6 @@ class StopInstanceRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
-
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
-
-	public function getConfirmStop() {
-		return $this->confirmStop;
-	}
-
-	public function setConfirmStop($confirmStop) {
-		$this->confirmStop = $confirmStop;
-		$this->queryParameters["ConfirmStop"]=$confirmStop;
-	}
-
-	public function getForceStop() {
-		return $this->forceStop;
-	}
-
-	public function setForceStop($forceStop) {
-		$this->forceStop = $forceStop;
-		$this->queryParameters["ForceStop"]=$forceStop;
-	}
-
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -101,6 +76,42 @@ class StopInstanceRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getDiskIds() {
+		return $this->diskIds;
+	}
+
+	public function setDiskIds($diskIds) {
+		$this->diskIds = $diskIds;
+		$this->queryParameters["DiskIds"]=$diskIds;
+	}
+
+	public function getSnapshotLinkIds() {
+		return $this->snapshotLinkIds;
+	}
+
+	public function setSnapshotLinkIds($snapshotLinkIds) {
+		$this->snapshotLinkIds = $snapshotLinkIds;
+		$this->queryParameters["SnapshotLinkIds"]=$snapshotLinkIds;
+	}
+
+	public function getPageNumber() {
+		return $this->pageNumber;
+	}
+
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 	
 }

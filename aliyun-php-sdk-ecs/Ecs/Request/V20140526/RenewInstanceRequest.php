@@ -36,23 +36,7 @@ class RenewInstanceRequest extends \RpcAcsRequest
 
 	private  $instanceId;
 
-	private  $instanceType;
-
-	private  $internetMaxBandwidthOut;
-
-	private  $internetChargeType;
-
 	private  $period;
-
-	private  $rebootTime;
-
-	private  $covertDiskPortable1DiskId;
-
-	private  $covertDiskPortable2DiskId;
-
-	private  $covertDiskPortable3DiskId;
-
-	private  $covertDiskPortable4DiskId;
 
 	public function getOwnerId() {
 		return $this->ownerId;
@@ -99,33 +83,6 @@ class RenewInstanceRequest extends \RpcAcsRequest
 		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 
-	public function getInstanceType() {
-		return $this->instanceType;
-	}
-
-	public function setInstanceType($instanceType) {
-		$this->instanceType = $instanceType;
-		$this->queryParameters["InstanceType"]=$instanceType;
-	}
-
-	public function getInternetMaxBandwidthOut() {
-		return $this->internetMaxBandwidthOut;
-	}
-
-	public function setInternetMaxBandwidthOut($internetMaxBandwidthOut) {
-		$this->internetMaxBandwidthOut = $internetMaxBandwidthOut;
-		$this->queryParameters["InternetMaxBandwidthOut"]=$internetMaxBandwidthOut;
-	}
-
-	public function getInternetChargeType() {
-		return $this->internetChargeType;
-	}
-
-	public function setInternetChargeType($internetChargeType) {
-		$this->internetChargeType = $internetChargeType;
-		$this->queryParameters["InternetChargeType"]=$internetChargeType;
-	}
-
 	public function getPeriod() {
 		return $this->period;
 	}
@@ -133,51 +90,6 @@ class RenewInstanceRequest extends \RpcAcsRequest
 	public function setPeriod($period) {
 		$this->period = $period;
 		$this->queryParameters["Period"]=$period;
-	}
-
-	public function getRebootTime() {
-		return $this->rebootTime;
-	}
-
-	public function setRebootTime($rebootTime) {
-		$this->rebootTime = $rebootTime;
-		$this->queryParameters["RebootTime"]=$rebootTime;
-	}
-
-	public function getCovertDiskPortable1DiskId() {
-		return $this->covertDiskPortable1DiskId;
-	}
-
-	public function setCovertDiskPortable1DiskId($covertDiskPortable1DiskId) {
-		$this->covertDiskPortable1DiskId = $covertDiskPortable1DiskId;
-		$this->queryParameters["CovertDiskPortable.1.DiskId"]=$covertDiskPortable1DiskId;
-	}
-
-	public function getCovertDiskPortable2DiskId() {
-		return $this->covertDiskPortable2DiskId;
-	}
-
-	public function setCovertDiskPortable2DiskId($covertDiskPortable2DiskId) {
-		$this->covertDiskPortable2DiskId = $covertDiskPortable2DiskId;
-		$this->queryParameters["CovertDiskPortable.2.DiskId"]=$covertDiskPortable2DiskId;
-	}
-
-	public function getCovertDiskPortable3DiskId() {
-		return $this->covertDiskPortable3DiskId;
-	}
-
-	public function setCovertDiskPortable3DiskId($covertDiskPortable3DiskId) {
-		$this->covertDiskPortable3DiskId = $covertDiskPortable3DiskId;
-		$this->queryParameters["CovertDiskPortable.3.DiskId"]=$covertDiskPortable3DiskId;
-	}
-
-	public function getCovertDiskPortable4DiskId() {
-		return $this->covertDiskPortable4DiskId;
-	}
-
-	public function setCovertDiskPortable4DiskId($covertDiskPortable4DiskId) {
-		$this->covertDiskPortable4DiskId = $covertDiskPortable4DiskId;
-		$this->queryParameters["CovertDiskPortable.4.DiskId"]=$covertDiskPortable4DiskId;
 	}
 	
 }

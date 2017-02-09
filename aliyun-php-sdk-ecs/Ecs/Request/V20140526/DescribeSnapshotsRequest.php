@@ -36,6 +36,8 @@ class DescribeSnapshotsRequest extends \RpcAcsRequest
 
 	private  $diskId;
 
+	private  $snapshotLinkId;
+
 	private  $snapshotIds;
 
 	private  $pageNumber;
@@ -125,6 +127,15 @@ class DescribeSnapshotsRequest extends \RpcAcsRequest
 	public function setDiskId($diskId) {
 		$this->diskId = $diskId;
 		$this->queryParameters["DiskId"]=$diskId;
+	}
+
+	public function getSnapshotLinkId() {
+		return $this->snapshotLinkId;
+	}
+
+	public function setSnapshotLinkId($snapshotLinkId) {
+		$this->snapshotLinkId = $snapshotLinkId;
+		$this->queryParameters["SnapshotLinkId"]=$snapshotLinkId;
 	}
 
 	public function getSnapshotIds() {

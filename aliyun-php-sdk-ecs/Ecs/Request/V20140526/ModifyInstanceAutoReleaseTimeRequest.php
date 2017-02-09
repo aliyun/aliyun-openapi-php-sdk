@@ -19,11 +19,11 @@
  */
 namespace Ecs\Request\V20140526;
 
-class StopInstanceRequest extends \RpcAcsRequest
+class ModifyInstanceAutoReleaseTimeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "StopInstance");
+		parent::__construct("Ecs", "2014-05-26", "ModifyInstanceAutoReleaseTime");
 	}
 
 	private  $ownerId;
@@ -34,9 +34,7 @@ class StopInstanceRequest extends \RpcAcsRequest
 
 	private  $instanceId;
 
-	private  $confirmStop;
-
-	private  $forceStop;
+	private  $autoReleaseTime;
 
 	private  $ownerAccount;
 
@@ -76,22 +74,13 @@ class StopInstanceRequest extends \RpcAcsRequest
 		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 
-	public function getConfirmStop() {
-		return $this->confirmStop;
+	public function getAutoReleaseTime() {
+		return $this->autoReleaseTime;
 	}
 
-	public function setConfirmStop($confirmStop) {
-		$this->confirmStop = $confirmStop;
-		$this->queryParameters["ConfirmStop"]=$confirmStop;
-	}
-
-	public function getForceStop() {
-		return $this->forceStop;
-	}
-
-	public function setForceStop($forceStop) {
-		$this->forceStop = $forceStop;
-		$this->queryParameters["ForceStop"]=$forceStop;
+	public function setAutoReleaseTime($autoReleaseTime) {
+		$this->autoReleaseTime = $autoReleaseTime;
+		$this->queryParameters["AutoReleaseTime"]=$autoReleaseTime;
 	}
 
 	public function getOwnerAccount() {

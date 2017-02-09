@@ -19,11 +19,11 @@
  */
 namespace Ecs\Request\V20140526;
 
-class StopInstanceRequest extends \RpcAcsRequest
+class ModifyInstanceAutoRenewAttributeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "StopInstance");
+		parent::__construct("Ecs", "2014-05-26", "ModifyInstanceAutoRenewAttribute");
 	}
 
 	private  $ownerId;
@@ -32,13 +32,13 @@ class StopInstanceRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
+	private  $ownerAccount;
+
 	private  $instanceId;
 
-	private  $confirmStop;
+	private  $duration;
 
-	private  $forceStop;
-
-	private  $ownerAccount;
+	private  $autoRenew;
 
 	public function getOwnerId() {
 		return $this->ownerId;
@@ -67,6 +67,15 @@ class StopInstanceRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
 	public function getInstanceId() {
 		return $this->instanceId;
 	}
@@ -76,31 +85,22 @@ class StopInstanceRequest extends \RpcAcsRequest
 		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 
-	public function getConfirmStop() {
-		return $this->confirmStop;
+	public function getDuration() {
+		return $this->duration;
 	}
 
-	public function setConfirmStop($confirmStop) {
-		$this->confirmStop = $confirmStop;
-		$this->queryParameters["ConfirmStop"]=$confirmStop;
+	public function setDuration($duration) {
+		$this->duration = $duration;
+		$this->queryParameters["Duration"]=$duration;
 	}
 
-	public function getForceStop() {
-		return $this->forceStop;
+	public function getAutoRenew() {
+		return $this->autoRenew;
 	}
 
-	public function setForceStop($forceStop) {
-		$this->forceStop = $forceStop;
-		$this->queryParameters["ForceStop"]=$forceStop;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setAutoRenew($autoRenew) {
+		$this->autoRenew = $autoRenew;
+		$this->queryParameters["AutoRenew"]=$autoRenew;
 	}
 	
 }

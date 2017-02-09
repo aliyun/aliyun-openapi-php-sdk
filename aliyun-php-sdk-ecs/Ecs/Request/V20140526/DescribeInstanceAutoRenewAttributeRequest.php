@@ -19,11 +19,11 @@
  */
 namespace Ecs\Request\V20140526;
 
-class StopInstanceRequest extends \RpcAcsRequest
+class DescribeInstanceAutoRenewAttributeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "StopInstance");
+		parent::__construct("Ecs", "2014-05-26", "DescribeInstanceAutoRenewAttribute");
 	}
 
 	private  $ownerId;
@@ -32,13 +32,9 @@ class StopInstanceRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $instanceId;
-
-	private  $confirmStop;
-
-	private  $forceStop;
-
 	private  $ownerAccount;
+
+	private  $instanceId;
 
 	public function getOwnerId() {
 		return $this->ownerId;
@@ -67,33 +63,6 @@ class StopInstanceRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
-
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
-
-	public function getConfirmStop() {
-		return $this->confirmStop;
-	}
-
-	public function setConfirmStop($confirmStop) {
-		$this->confirmStop = $confirmStop;
-		$this->queryParameters["ConfirmStop"]=$confirmStop;
-	}
-
-	public function getForceStop() {
-		return $this->forceStop;
-	}
-
-	public function setForceStop($forceStop) {
-		$this->forceStop = $forceStop;
-		$this->queryParameters["ForceStop"]=$forceStop;
-	}
-
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -101,6 +70,15 @@ class StopInstanceRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getInstanceId() {
+		return $this->instanceId;
+	}
+
+	public function setInstanceId($instanceId) {
+		$this->instanceId = $instanceId;
+		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 	
 }

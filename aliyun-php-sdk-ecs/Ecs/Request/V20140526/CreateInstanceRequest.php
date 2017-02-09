@@ -168,6 +168,8 @@ class CreateInstanceRequest extends \RpcAcsRequest
 
 	private  $userData;
 
+	private  $spotStrategy;
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -807,4 +809,13 @@ class CreateInstanceRequest extends \RpcAcsRequest
 		$this->queryParameters["UserData"]=$userData;
 	}
 
+	public function getSpotStrategy() {
+		return $this->spotStrategy;
+	}
+
+	public function setSpotStrategy($spotStrategy) {
+		$this->spotStrategy = $spotStrategy;
+		$this->queryParameters["SpotStrategy"]=$spotStrategy;
+	}
+	
 }
