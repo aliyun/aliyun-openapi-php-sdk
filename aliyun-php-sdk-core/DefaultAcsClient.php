@@ -20,10 +20,12 @@
 class DefaultAcsClient implements IAcsClient 
 {	
 	public $iClientProfile;
+    public $__urlTestFlag__;
 	
 	function  __construct($iClientProfile)
 	{
 	    $this->iClientProfile = $iClientProfile;
+        $this->__urlTestFlag__ = false;
 	}
 	
 	public function getAcsResponse($request, $iSigner = null, $credential = null, $autoRetry = true, $maxRetryNumber = 3)
@@ -59,6 +61,11 @@ class DefaultAcsClient implements IAcsClient
 			throw new ClientException("Can not find endpoint to access.", "SDK.InvalidRegionId");
 		}
 		$requestUrl = $request->composeUrl($iSigner, $credential, $domain);
+
+        if ($this->__urlTestFlag__) {
+            throw new ClientException($requestUrl, "URLTestFlagIsSet");
+        }
+
 		if(count($request->getDomainParameter())>0){
 			$httpResponse = HttpHelper::curl($requestUrl, $request->getMethod(), $request->getDomainParameter(), $request->getHeaders());
 		} else {

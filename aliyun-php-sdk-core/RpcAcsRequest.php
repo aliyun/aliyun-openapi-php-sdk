@@ -34,9 +34,26 @@ abstract class RpcAcsRequest extends AcsRequest
 		$this->setAcceptFormat("JSON");
 	}
 	
+
+    private function prepareValue($value)
+    {
+        if (is_bool($value)) {
+            if ($value) {
+                return "true";
+            } else {
+                return "false";
+            }
+        } else {
+            return $value;
+        }
+    }
+
 	public function composeUrl($iSigner, $credential, $domain)
 	{
 		$apiParams = parent::getQueryParameters();
+        foreach ($apiParams as $key => $value) {
+            $apiParams[$key] = $this->prepareValue($value);
+        }
 		$apiParams["RegionId"] = $this->getRegionId();
 		$apiParams["AccessKeyId"] = $credential->getAccessKeyId();
 		$apiParams["Format"] = $this->getAcceptFormat();
