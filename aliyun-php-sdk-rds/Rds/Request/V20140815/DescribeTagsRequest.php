@@ -19,28 +19,28 @@
  */
 namespace Rds\Request\V20140815;
 
-class DescribeDBInstancePerformanceRequest extends \RpcAcsRequest
+class DescribeTagsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeDBInstancePerformance");
+		parent::__construct("Rds", "2014-08-15", "DescribeTags");
 	}
 
 	private  $ownerId;
-
-	private  $ownerAccount;
 
 	private  $resourceOwnerAccount;
 
 	private  $resourceOwnerId;
 
+	private  $clientToken;
+
+	private  $proxyId;
+
 	private  $dBInstanceId;
 
-	private  $key;
+	private  $tags;
 
-	private  $startTime;
-
-	private  $endTime;
+	private  $ownerAccount;
 
 	public function getOwnerId() {
 		return $this->ownerId;
@@ -49,15 +49,6 @@ class DescribeDBInstancePerformanceRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -78,6 +69,24 @@ class DescribeDBInstancePerformanceRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getClientToken() {
+		return $this->clientToken;
+	}
+
+	public function setClientToken($clientToken) {
+		$this->clientToken = $clientToken;
+		$this->queryParameters["ClientToken"]=$clientToken;
+	}
+
+	public function getproxyId() {
+		return $this->proxyId;
+	}
+
+	public function setproxyId($proxyId) {
+		$this->proxyId = $proxyId;
+		$this->queryParameters["proxyId"]=$proxyId;
+	}
+
 	public function getDBInstanceId() {
 		return $this->dBInstanceId;
 	}
@@ -87,31 +96,22 @@ class DescribeDBInstancePerformanceRequest extends \RpcAcsRequest
 		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
 	}
 
-	public function getKey() {
-		return $this->key;
+	public function getTags() {
+		return $this->tags;
 	}
 
-	public function setKey($key) {
-		$this->key = $key;
-		$this->queryParameters["Key"]=$key;
+	public function setTags($tags) {
+		$this->tags = $tags;
+		$this->queryParameters["Tags"]=$tags;
 	}
 
-	public function getStartTime() {
-		return $this->startTime;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
-
-	public function getEndTime() {
-		return $this->endTime;
-	}
-
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 	
 }

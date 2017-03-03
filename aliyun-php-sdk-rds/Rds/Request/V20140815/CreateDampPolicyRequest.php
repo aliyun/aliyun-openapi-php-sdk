@@ -19,12 +19,14 @@
  */
 namespace Rds\Request\V20140815;
 
-class SwitchDBInstanceHARequest extends \RpcAcsRequest
+class CreateDampPolicyRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "SwitchDBInstanceHA");
+		parent::__construct("Rds", "2014-08-15", "CreateDampPolicy");
 	}
+
+	private  $securityToken;
 
 	private  $ownerId;
 
@@ -32,15 +34,30 @@ class SwitchDBInstanceHARequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
+	private  $ownerAccount;
+
 	private  $dBInstanceId;
 
-	private  $nodeId;
+	private  $policyName;
 
-	private  $operation;
+	private  $priority;
 
-	private  $force;
+	private  $handlers;
 
-	private  $ownerAccount;
+	private  $sourceRules;
+
+	private  $timeRules;
+
+	private  $actionRules;
+
+	public function getSecurityToken() {
+		return $this->securityToken;
+	}
+
+	public function setSecurityToken($securityToken) {
+		$this->securityToken = $securityToken;
+		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
 
 	public function getOwnerId() {
 		return $this->ownerId;
@@ -69,6 +86,15 @@ class SwitchDBInstanceHARequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
 	public function getDBInstanceId() {
 		return $this->dBInstanceId;
 	}
@@ -78,40 +104,58 @@ class SwitchDBInstanceHARequest extends \RpcAcsRequest
 		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
 	}
 
-	public function getNodeId() {
-		return $this->nodeId;
+	public function getPolicyName() {
+		return $this->policyName;
 	}
 
-	public function setNodeId($nodeId) {
-		$this->nodeId = $nodeId;
-		$this->queryParameters["NodeId"]=$nodeId;
+	public function setPolicyName($policyName) {
+		$this->policyName = $policyName;
+		$this->queryParameters["PolicyName"]=$policyName;
 	}
 
-	public function getOperation() {
-		return $this->operation;
+	public function getPriority() {
+		return $this->priority;
 	}
 
-	public function setOperation($operation) {
-		$this->operation = $operation;
-		$this->queryParameters["Operation"]=$operation;
+	public function setPriority($priority) {
+		$this->priority = $priority;
+		$this->queryParameters["Priority"]=$priority;
 	}
 
-	public function getForce() {
-		return $this->force;
+	public function getHandlers() {
+		return $this->handlers;
 	}
 
-	public function setForce($force) {
-		$this->force = $force;
-		$this->queryParameters["Force"]=$force;
+	public function setHandlers($handlers) {
+		$this->handlers = $handlers;
+		$this->queryParameters["Handlers"]=$handlers;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getSourceRules() {
+		return $this->sourceRules;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setSourceRules($sourceRules) {
+		$this->sourceRules = $sourceRules;
+		$this->queryParameters["SourceRules"]=$sourceRules;
+	}
+
+	public function getTimeRules() {
+		return $this->timeRules;
+	}
+
+	public function setTimeRules($timeRules) {
+		$this->timeRules = $timeRules;
+		$this->queryParameters["TimeRules"]=$timeRules;
+	}
+
+	public function getActionRules() {
+		return $this->actionRules;
+	}
+
+	public function setActionRules($actionRules) {
+		$this->actionRules = $actionRules;
+		$this->queryParameters["ActionRules"]=$actionRules;
 	}
 	
 }

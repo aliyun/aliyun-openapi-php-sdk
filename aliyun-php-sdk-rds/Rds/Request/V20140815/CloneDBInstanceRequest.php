@@ -19,11 +19,11 @@
  */
 namespace Rds\Request\V20140815;
 
-class CreateDBInstanceRequest extends \RpcAcsRequest
+class CloneDBInstanceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "CreateDBInstance");
+		parent::__construct("Rds", "2014-08-15", "CloneDBInstance");
 	}
 
 	private  $ownerId;
@@ -32,31 +32,23 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $engine;
-
-	private  $engineVersion;
+	private  $clientToken;
 
 	private  $dBInstanceClass;
 
 	private  $dBInstanceStorage;
 
-	private  $systemDBCharset;
-
-	private  $dBInstanceNetType;
-
 	private  $dBInstanceDescription;
-
-	private  $securityIPList;
-
-	private  $clientToken;
 
 	private  $payType;
 
-	private  $zoneId;
-
 	private  $instanceNetworkType;
 
-	private  $connectionMode;
+	private  $dBInstanceId;
+
+	private  $backupId;
+
+	private  $restoreTime;
 
 	private  $vPCId;
 
@@ -97,22 +89,13 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getEngine() {
-		return $this->engine;
+	public function getClientToken() {
+		return $this->clientToken;
 	}
 
-	public function setEngine($engine) {
-		$this->engine = $engine;
-		$this->queryParameters["Engine"]=$engine;
-	}
-
-	public function getEngineVersion() {
-		return $this->engineVersion;
-	}
-
-	public function setEngineVersion($engineVersion) {
-		$this->engineVersion = $engineVersion;
-		$this->queryParameters["EngineVersion"]=$engineVersion;
+	public function setClientToken($clientToken) {
+		$this->clientToken = $clientToken;
+		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
 	public function getDBInstanceClass() {
@@ -133,24 +116,6 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
 		$this->queryParameters["DBInstanceStorage"]=$dBInstanceStorage;
 	}
 
-	public function getSystemDBCharset() {
-		return $this->systemDBCharset;
-	}
-
-	public function setSystemDBCharset($systemDBCharset) {
-		$this->systemDBCharset = $systemDBCharset;
-		$this->queryParameters["SystemDBCharset"]=$systemDBCharset;
-	}
-
-	public function getDBInstanceNetType() {
-		return $this->dBInstanceNetType;
-	}
-
-	public function setDBInstanceNetType($dBInstanceNetType) {
-		$this->dBInstanceNetType = $dBInstanceNetType;
-		$this->queryParameters["DBInstanceNetType"]=$dBInstanceNetType;
-	}
-
 	public function getDBInstanceDescription() {
 		return $this->dBInstanceDescription;
 	}
@@ -158,24 +123,6 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
 	public function setDBInstanceDescription($dBInstanceDescription) {
 		$this->dBInstanceDescription = $dBInstanceDescription;
 		$this->queryParameters["DBInstanceDescription"]=$dBInstanceDescription;
-	}
-
-	public function getSecurityIPList() {
-		return $this->securityIPList;
-	}
-
-	public function setSecurityIPList($securityIPList) {
-		$this->securityIPList = $securityIPList;
-		$this->queryParameters["SecurityIPList"]=$securityIPList;
-	}
-
-	public function getClientToken() {
-		return $this->clientToken;
-	}
-
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
 	public function getPayType() {
@@ -187,15 +134,6 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
 		$this->queryParameters["PayType"]=$payType;
 	}
 
-	public function getZoneId() {
-		return $this->zoneId;
-	}
-
-	public function setZoneId($zoneId) {
-		$this->zoneId = $zoneId;
-		$this->queryParameters["ZoneId"]=$zoneId;
-	}
-
 	public function getInstanceNetworkType() {
 		return $this->instanceNetworkType;
 	}
@@ -205,13 +143,31 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
 		$this->queryParameters["InstanceNetworkType"]=$instanceNetworkType;
 	}
 
-	public function getConnectionMode() {
-		return $this->connectionMode;
+	public function getDBInstanceId() {
+		return $this->dBInstanceId;
 	}
 
-	public function setConnectionMode($connectionMode) {
-		$this->connectionMode = $connectionMode;
-		$this->queryParameters["ConnectionMode"]=$connectionMode;
+	public function setDBInstanceId($dBInstanceId) {
+		$this->dBInstanceId = $dBInstanceId;
+		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
+	}
+
+	public function getBackupId() {
+		return $this->backupId;
+	}
+
+	public function setBackupId($backupId) {
+		$this->backupId = $backupId;
+		$this->queryParameters["BackupId"]=$backupId;
+	}
+
+	public function getRestoreTime() {
+		return $this->restoreTime;
+	}
+
+	public function setRestoreTime($restoreTime) {
+		$this->restoreTime = $restoreTime;
+		$this->queryParameters["RestoreTime"]=$restoreTime;
 	}
 
 	public function getVPCId() {

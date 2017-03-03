@@ -42,6 +42,8 @@ class ModifyBackupPolicyRequest extends \RpcAcsRequest
 
 	private  $backupLog;
 
+	private  $logBackupRetentionPeriod;
+
 	private  $ownerAccount;
 
 	public function getOwnerId() {
@@ -114,6 +116,15 @@ class ModifyBackupPolicyRequest extends \RpcAcsRequest
 	public function setBackupLog($backupLog) {
 		$this->backupLog = $backupLog;
 		$this->queryParameters["BackupLog"]=$backupLog;
+	}
+
+	public function getLogBackupRetentionPeriod() {
+		return $this->logBackupRetentionPeriod;
+	}
+
+	public function setLogBackupRetentionPeriod($logBackupRetentionPeriod) {
+		$this->logBackupRetentionPeriod = $logBackupRetentionPeriod;
+		$this->queryParameters["LogBackupRetentionPeriod"]=$logBackupRetentionPeriod;
 	}
 
 	public function getOwnerAccount() {

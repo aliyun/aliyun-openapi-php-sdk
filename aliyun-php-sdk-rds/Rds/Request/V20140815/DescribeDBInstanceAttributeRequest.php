@@ -32,8 +32,6 @@ class DescribeDBInstanceAttributeRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $clientToken;
-
 	private  $dBInstanceId;
 
 	private  $ownerAccount;
@@ -63,15 +61,6 @@ class DescribeDBInstanceAttributeRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getClientToken() {
-		return $this->clientToken;
-	}
-
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
 	public function getDBInstanceId() {

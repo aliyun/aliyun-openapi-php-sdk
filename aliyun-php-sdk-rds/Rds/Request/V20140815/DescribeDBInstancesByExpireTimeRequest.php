@@ -42,6 +42,8 @@ class DescribeDBInstancesByExpireTimeRequest extends \RpcAcsRequest
 
 	private  $pageNumber;
 
+	private  $tags;
+
 	private  $ownerAccount;
 
 	public function getOwnerId() {
@@ -114,6 +116,15 @@ class DescribeDBInstancesByExpireTimeRequest extends \RpcAcsRequest
 	public function setPageNumber($pageNumber) {
 		$this->pageNumber = $pageNumber;
 		$this->queryParameters["PageNumber"]=$pageNumber;
+	}
+
+	public function getTags() {
+		return $this->tags;
+	}
+
+	public function setTags($tags) {
+		$this->tags = $tags;
+		$this->queryParameters["Tags"]=$tags;
 	}
 
 	public function getOwnerAccount() {

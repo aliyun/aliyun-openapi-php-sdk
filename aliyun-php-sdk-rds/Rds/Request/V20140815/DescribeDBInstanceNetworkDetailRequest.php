@@ -19,64 +19,22 @@
  */
 namespace Rds\Request\V20140815;
 
-class DescribeDBInstancePerformanceRequest extends \RpcAcsRequest
+class DescribeDBInstanceNetworkDetailRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeDBInstancePerformance");
+		parent::__construct("Rds", "2014-08-15", "DescribeDBInstanceNetworkDetail");
 	}
 
-	private  $ownerId;
-
-	private  $ownerAccount;
-
-	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
-
 	private  $dBInstanceId;
-
-	private  $key;
 
 	private  $startTime;
 
 	private  $endTime;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+	private  $startPoint;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+	private  $endPoint;
 
 	public function getDBInstanceId() {
 		return $this->dBInstanceId;
@@ -85,15 +43,6 @@ class DescribeDBInstancePerformanceRequest extends \RpcAcsRequest
 	public function setDBInstanceId($dBInstanceId) {
 		$this->dBInstanceId = $dBInstanceId;
 		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
-	}
-
-	public function getKey() {
-		return $this->key;
-	}
-
-	public function setKey($key) {
-		$this->key = $key;
-		$this->queryParameters["Key"]=$key;
 	}
 
 	public function getStartTime() {
@@ -112,6 +61,24 @@ class DescribeDBInstancePerformanceRequest extends \RpcAcsRequest
 	public function setEndTime($endTime) {
 		$this->endTime = $endTime;
 		$this->queryParameters["EndTime"]=$endTime;
+	}
+
+	public function getStartPoint() {
+		return $this->startPoint;
+	}
+
+	public function setStartPoint($startPoint) {
+		$this->startPoint = $startPoint;
+		$this->queryParameters["StartPoint"]=$startPoint;
+	}
+
+	public function getEndPoint() {
+		return $this->endPoint;
+	}
+
+	public function setEndPoint($endPoint) {
+		$this->endPoint = $endPoint;
+		$this->queryParameters["EndPoint"]=$endPoint;
 	}
 	
 }

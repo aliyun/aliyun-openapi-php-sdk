@@ -38,6 +38,8 @@ class RemoveTagsFromResourceRequest extends \RpcAcsRequest
 
 	private  $dBInstanceId;
 
+	private  $tags;
+
 	private  $tag1key;
 
 	private  $tag2key;
@@ -114,13 +116,22 @@ class RemoveTagsFromResourceRequest extends \RpcAcsRequest
 		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
 	}
 
+	public function getTags() {
+		return $this->tags;
+	}
+
+	public function setTags($tags) {
+		$this->tags = $tags;
+		$this->queryParameters["Tags"]=$tags;
+	}
+
 	public function getTag1key() {
 		return $this->tag1key;
 	}
 
 	public function setTag1key($tag1key) {
 		$this->tag1key = $tag1key;
-		$this->queryParameters["Tag1key"]=$tag1key;
+		$this->queryParameters["Tag.1.key"]=$tag1key;
 	}
 
 	public function getTag2key() {
@@ -129,7 +140,7 @@ class RemoveTagsFromResourceRequest extends \RpcAcsRequest
 
 	public function setTag2key($tag2key) {
 		$this->tag2key = $tag2key;
-		$this->queryParameters["Tag2key"]=$tag2key;
+		$this->queryParameters["Tag.2.key"]=$tag2key;
 	}
 
 	public function getTag3key() {
@@ -138,7 +149,7 @@ class RemoveTagsFromResourceRequest extends \RpcAcsRequest
 
 	public function setTag3key($tag3key) {
 		$this->tag3key = $tag3key;
-		$this->queryParameters["Tag3key"]=$tag3key;
+		$this->queryParameters["Tag.3.key"]=$tag3key;
 	}
 
 	public function getTag4key() {
@@ -147,7 +158,7 @@ class RemoveTagsFromResourceRequest extends \RpcAcsRequest
 
 	public function setTag4key($tag4key) {
 		$this->tag4key = $tag4key;
-		$this->queryParameters["Tag4key"]=$tag4key;
+		$this->queryParameters["Tag.4.key"]=$tag4key;
 	}
 
 	public function getTag5key() {
@@ -156,7 +167,7 @@ class RemoveTagsFromResourceRequest extends \RpcAcsRequest
 
 	public function setTag5key($tag5key) {
 		$this->tag5key = $tag5key;
-		$this->queryParameters["Tag5key"]=$tag5key;
+		$this->queryParameters["Tag.5.key"]=$tag5key;
 	}
 
 	public function getTag1value() {
@@ -165,7 +176,7 @@ class RemoveTagsFromResourceRequest extends \RpcAcsRequest
 
 	public function setTag1value($tag1value) {
 		$this->tag1value = $tag1value;
-		$this->queryParameters["Tag1value"]=$tag1value;
+		$this->queryParameters["Tag.1.value"]=$tag1value;
 	}
 
 	public function getTag2value() {
@@ -174,7 +185,7 @@ class RemoveTagsFromResourceRequest extends \RpcAcsRequest
 
 	public function setTag2value($tag2value) {
 		$this->tag2value = $tag2value;
-		$this->queryParameters["Tag2value"]=$tag2value;
+		$this->queryParameters["Tag.2.value"]=$tag2value;
 	}
 
 	public function getTag3value() {
@@ -183,7 +194,7 @@ class RemoveTagsFromResourceRequest extends \RpcAcsRequest
 
 	public function setTag3value($tag3value) {
 		$this->tag3value = $tag3value;
-		$this->queryParameters["Tag3value"]=$tag3value;
+		$this->queryParameters["Tag.3.value"]=$tag3value;
 	}
 
 	public function getTag4value() {
@@ -192,7 +203,7 @@ class RemoveTagsFromResourceRequest extends \RpcAcsRequest
 
 	public function setTag4value($tag4value) {
 		$this->tag4value = $tag4value;
-		$this->queryParameters["Tag4value"]=$tag4value;
+		$this->queryParameters["Tag.4.value"]=$tag4value;
 	}
 
 	public function getTag5value() {
@@ -201,7 +212,7 @@ class RemoveTagsFromResourceRequest extends \RpcAcsRequest
 
 	public function setTag5value($tag5value) {
 		$this->tag5value = $tag5value;
-		$this->queryParameters["Tag5value"]=$tag5value;
+		$this->queryParameters["Tag.5.value"]=$tag5value;
 	}
 
 	public function getOwnerAccount() {
