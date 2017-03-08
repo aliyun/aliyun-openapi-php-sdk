@@ -58,7 +58,7 @@ class HttpHelper
 		$httpResponse->setStatus(curl_getinfo($ch, CURLINFO_HTTP_CODE));
 		if (curl_errno($ch))
 		{
-			throw new ClientException("Speicified endpoint or uri is not valid.", "SDK.ServerUnreachable");
+			throw new ClientException("Server unreachable: Errno: " . curl_errno($ch) . " " . curl_error($ch), "SDK.ServerUnreachable");
 		}
 		curl_close($ch);
 		return $httpResponse;
