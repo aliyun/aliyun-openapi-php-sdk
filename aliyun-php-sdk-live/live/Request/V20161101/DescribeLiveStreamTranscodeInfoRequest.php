@@ -19,26 +19,18 @@
  */
 namespace live\Request\V20161101;
 
-class AddLiveAppRecordConfigRequest extends \RpcAcsRequest
+class DescribeLiveStreamTranscodeInfoRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "AddLiveAppRecordConfig");
+		parent::__construct("live", "2016-11-01", "DescribeLiveStreamTranscodeInfo");
 	}
 
 	private  $securityToken;
 
 	private  $ownerId;
 
-	private  $domainName;
-
-	private  $appName;
-
-	private  $ossEndpoint;
-
-	private  $ossBucket;
-
-	private  $recordFormat;
+	private  $domainTranscodeName;
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -58,49 +50,13 @@ class AddLiveAppRecordConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getDomainName() {
-		return $this->domainName;
+	public function getDomainTranscodeName() {
+		return $this->domainTranscodeName;
 	}
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
-
-	public function getAppName() {
-		return $this->appName;
-	}
-
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
-	}
-
-	public function getOssEndpoint() {
-		return $this->ossEndpoint;
-	}
-
-	public function setOssEndpoint($ossEndpoint) {
-		$this->ossEndpoint = $ossEndpoint;
-		$this->queryParameters["OssEndpoint"]=$ossEndpoint;
-	}
-
-	public function getOssBucket() {
-		return $this->ossBucket;
-	}
-
-	public function setOssBucket($ossBucket) {
-		$this->ossBucket = $ossBucket;
-		$this->queryParameters["OssBucket"]=$ossBucket;
-	}
-
-	public function getRecordFormat() {
-		return $this->recordFormat;
-	}
-
-	public function setRecordFormat($recordFormat) {
-		$this->recordFormat = $recordFormat;
-		$this->queryParameters["RecordFormat"]=$recordFormat;
+	public function setDomainTranscodeName($domainTranscodeName) {
+		$this->domainTranscodeName = $domainTranscodeName;
+		$this->queryParameters["DomainTranscodeName"]=$domainTranscodeName;
 	}
 	
 }

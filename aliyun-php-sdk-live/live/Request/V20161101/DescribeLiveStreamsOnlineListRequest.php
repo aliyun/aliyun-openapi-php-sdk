@@ -19,11 +19,11 @@
  */
 namespace live\Request\V20161101;
 
-class AddLiveAppRecordConfigRequest extends \RpcAcsRequest
+class DescribeLiveStreamsOnlineListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "AddLiveAppRecordConfig");
+		parent::__construct("live", "2016-11-01", "DescribeLiveStreamsOnlineList");
 	}
 
 	private  $securityToken;
@@ -33,12 +33,6 @@ class AddLiveAppRecordConfigRequest extends \RpcAcsRequest
 	private  $domainName;
 
 	private  $appName;
-
-	private  $ossEndpoint;
-
-	private  $ossBucket;
-
-	private  $recordFormat;
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -74,33 +68,6 @@ class AddLiveAppRecordConfigRequest extends \RpcAcsRequest
 	public function setAppName($appName) {
 		$this->appName = $appName;
 		$this->queryParameters["AppName"]=$appName;
-	}
-
-	public function getOssEndpoint() {
-		return $this->ossEndpoint;
-	}
-
-	public function setOssEndpoint($ossEndpoint) {
-		$this->ossEndpoint = $ossEndpoint;
-		$this->queryParameters["OssEndpoint"]=$ossEndpoint;
-	}
-
-	public function getOssBucket() {
-		return $this->ossBucket;
-	}
-
-	public function setOssBucket($ossBucket) {
-		$this->ossBucket = $ossBucket;
-		$this->queryParameters["OssBucket"]=$ossBucket;
-	}
-
-	public function getRecordFormat() {
-		return $this->recordFormat;
-	}
-
-	public function setRecordFormat($recordFormat) {
-		$this->recordFormat = $recordFormat;
-		$this->queryParameters["RecordFormat"]=$recordFormat;
 	}
 	
 }

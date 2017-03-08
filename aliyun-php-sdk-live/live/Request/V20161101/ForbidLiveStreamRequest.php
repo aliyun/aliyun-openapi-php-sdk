@@ -19,11 +19,11 @@
  */
 namespace live\Request\V20161101;
 
-class AddLiveAppRecordConfigRequest extends \RpcAcsRequest
+class ForbidLiveStreamRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "AddLiveAppRecordConfig");
+		parent::__construct("live", "2016-11-01", "ForbidLiveStream");
 	}
 
 	private  $securityToken;
@@ -32,13 +32,13 @@ class AddLiveAppRecordConfigRequest extends \RpcAcsRequest
 
 	private  $domainName;
 
+	private  $liveStreamType;
+
 	private  $appName;
 
-	private  $ossEndpoint;
+	private  $streamName;
 
-	private  $ossBucket;
-
-	private  $recordFormat;
+	private  $resumeTime;
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -67,6 +67,15 @@ class AddLiveAppRecordConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
+	public function getLiveStreamType() {
+		return $this->liveStreamType;
+	}
+
+	public function setLiveStreamType($liveStreamType) {
+		$this->liveStreamType = $liveStreamType;
+		$this->queryParameters["LiveStreamType"]=$liveStreamType;
+	}
+
 	public function getAppName() {
 		return $this->appName;
 	}
@@ -76,31 +85,22 @@ class AddLiveAppRecordConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["AppName"]=$appName;
 	}
 
-	public function getOssEndpoint() {
-		return $this->ossEndpoint;
+	public function getStreamName() {
+		return $this->streamName;
 	}
 
-	public function setOssEndpoint($ossEndpoint) {
-		$this->ossEndpoint = $ossEndpoint;
-		$this->queryParameters["OssEndpoint"]=$ossEndpoint;
+	public function setStreamName($streamName) {
+		$this->streamName = $streamName;
+		$this->queryParameters["StreamName"]=$streamName;
 	}
 
-	public function getOssBucket() {
-		return $this->ossBucket;
+	public function getResumeTime() {
+		return $this->resumeTime;
 	}
 
-	public function setOssBucket($ossBucket) {
-		$this->ossBucket = $ossBucket;
-		$this->queryParameters["OssBucket"]=$ossBucket;
-	}
-
-	public function getRecordFormat() {
-		return $this->recordFormat;
-	}
-
-	public function setRecordFormat($recordFormat) {
-		$this->recordFormat = $recordFormat;
-		$this->queryParameters["RecordFormat"]=$recordFormat;
+	public function setResumeTime($resumeTime) {
+		$this->resumeTime = $resumeTime;
+		$this->queryParameters["ResumeTime"]=$resumeTime;
 	}
 	
 }

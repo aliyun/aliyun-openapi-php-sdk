@@ -19,26 +19,22 @@
  */
 namespace live\Request\V20161101;
 
-class AddLiveAppRecordConfigRequest extends \RpcAcsRequest
+class AddLiveStreamTranscodeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "AddLiveAppRecordConfig");
+		parent::__construct("live", "2016-11-01", "AddLiveStreamTranscode");
 	}
 
 	private  $securityToken;
 
 	private  $ownerId;
 
-	private  $domainName;
+	private  $domain;
 
-	private  $appName;
+	private  $app;
 
-	private  $ossEndpoint;
-
-	private  $ossBucket;
-
-	private  $recordFormat;
+	private  $template;
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -58,49 +54,31 @@ class AddLiveAppRecordConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getDomainName() {
-		return $this->domainName;
+	public function getDomain() {
+		return $this->domain;
 	}
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
+	public function setDomain($domain) {
+		$this->domain = $domain;
+		$this->queryParameters["Domain"]=$domain;
 	}
 
-	public function getAppName() {
-		return $this->appName;
+	public function getApp() {
+		return $this->app;
 	}
 
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
+	public function setApp($app) {
+		$this->app = $app;
+		$this->queryParameters["App"]=$app;
 	}
 
-	public function getOssEndpoint() {
-		return $this->ossEndpoint;
+	public function getTemplate() {
+		return $this->template;
 	}
 
-	public function setOssEndpoint($ossEndpoint) {
-		$this->ossEndpoint = $ossEndpoint;
-		$this->queryParameters["OssEndpoint"]=$ossEndpoint;
-	}
-
-	public function getOssBucket() {
-		return $this->ossBucket;
-	}
-
-	public function setOssBucket($ossBucket) {
-		$this->ossBucket = $ossBucket;
-		$this->queryParameters["OssBucket"]=$ossBucket;
-	}
-
-	public function getRecordFormat() {
-		return $this->recordFormat;
-	}
-
-	public function setRecordFormat($recordFormat) {
-		$this->recordFormat = $recordFormat;
-		$this->queryParameters["RecordFormat"]=$recordFormat;
+	public function setTemplate($template) {
+		$this->template = $template;
+		$this->queryParameters["Template"]=$template;
 	}
 	
 }

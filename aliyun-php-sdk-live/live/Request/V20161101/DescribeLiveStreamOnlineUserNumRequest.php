@@ -19,11 +19,11 @@
  */
 namespace live\Request\V20161101;
 
-class AddLiveAppRecordConfigRequest extends \RpcAcsRequest
+class DescribeLiveStreamOnlineUserNumRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "AddLiveAppRecordConfig");
+		parent::__construct("live", "2016-11-01", "DescribeLiveStreamOnlineUserNum");
 	}
 
 	private  $securityToken;
@@ -34,11 +34,13 @@ class AddLiveAppRecordConfigRequest extends \RpcAcsRequest
 
 	private  $appName;
 
-	private  $ossEndpoint;
+	private  $streamName;
 
-	private  $ossBucket;
+	private  $startTime;
 
-	private  $recordFormat;
+	private  $endTime;
+
+	private  $hlsSwitch;
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -76,31 +78,40 @@ class AddLiveAppRecordConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["AppName"]=$appName;
 	}
 
-	public function getOssEndpoint() {
-		return $this->ossEndpoint;
+	public function getStreamName() {
+		return $this->streamName;
 	}
 
-	public function setOssEndpoint($ossEndpoint) {
-		$this->ossEndpoint = $ossEndpoint;
-		$this->queryParameters["OssEndpoint"]=$ossEndpoint;
+	public function setStreamName($streamName) {
+		$this->streamName = $streamName;
+		$this->queryParameters["StreamName"]=$streamName;
 	}
 
-	public function getOssBucket() {
-		return $this->ossBucket;
+	public function getStartTime() {
+		return $this->startTime;
 	}
 
-	public function setOssBucket($ossBucket) {
-		$this->ossBucket = $ossBucket;
-		$this->queryParameters["OssBucket"]=$ossBucket;
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
 	}
 
-	public function getRecordFormat() {
-		return $this->recordFormat;
+	public function getEndTime() {
+		return $this->endTime;
 	}
 
-	public function setRecordFormat($recordFormat) {
-		$this->recordFormat = $recordFormat;
-		$this->queryParameters["RecordFormat"]=$recordFormat;
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
+	}
+
+	public function getHlsSwitch() {
+		return $this->hlsSwitch;
+	}
+
+	public function setHlsSwitch($hlsSwitch) {
+		$this->hlsSwitch = $hlsSwitch;
+		$this->queryParameters["HlsSwitch"]=$hlsSwitch;
 	}
 	
 }
