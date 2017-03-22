@@ -19,11 +19,11 @@
  */
 namespace live\Request\V20161101;
 
-class AddLiveAppRecordConfigRequest extends \RpcAcsRequest
+class UpdateLiveRecordNotifyConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "AddLiveAppRecordConfig");
+		parent::__construct("live", "2016-11-01", "UpdateLiveRecordNotifyConfig");
 	}
 
 	private  $securityToken;
@@ -32,13 +32,9 @@ class AddLiveAppRecordConfigRequest extends \RpcAcsRequest
 
 	private  $domainName;
 
-	private  $appName;
+	private  $notifyUrl;
 
-	private  $ossEndpoint;
-
-	private  $ossBucket;
-
-	private  $RecordFormats;
+	private  $needStatusNotify;
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -67,45 +63,22 @@ class AddLiveAppRecordConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getAppName() {
-		return $this->appName;
+	public function getNotifyUrl() {
+		return $this->notifyUrl;
 	}
 
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
+	public function setNotifyUrl($notifyUrl) {
+		$this->notifyUrl = $notifyUrl;
+		$this->queryParameters["NotifyUrl"]=$notifyUrl;
 	}
 
-	public function getOssEndpoint() {
-		return $this->ossEndpoint;
+	public function getNeedStatusNotify() {
+		return $this->needStatusNotify;
 	}
 
-	public function setOssEndpoint($ossEndpoint) {
-		$this->ossEndpoint = $ossEndpoint;
-		$this->queryParameters["OssEndpoint"]=$ossEndpoint;
-	}
-
-	public function getOssBucket() {
-		return $this->ossBucket;
-	}
-
-	public function setOssBucket($ossBucket) {
-		$this->ossBucket = $ossBucket;
-		$this->queryParameters["OssBucket"]=$ossBucket;
-	}
-
-	public function getRecordFormats() {
-		return $this->RecordFormats;
-	}
-
-	public function setRecordFormats($RecordFormats) {
-		$this->RecordFormats = $RecordFormats;
-		for ($i = 0; $i < count($RecordFormats); $i ++) {	
-			$this->queryParameters['RecordFormat.' . ($i + 1) . '.Format'] = $RecordFormats[$i]['Format'];
-			$this->queryParameters['RecordFormat.' . ($i + 1) . '.OssObjectPrefix'] = $RecordFormats[$i]['OssObjectPrefix'];
-			$this->queryParameters['RecordFormat.' . ($i + 1) . '.SliceOssObjectPrefix'] = $RecordFormats[$i]['SliceOssObjectPrefix'];
-
-		}
+	public function setNeedStatusNotify($needStatusNotify) {
+		$this->needStatusNotify = $needStatusNotify;
+		$this->queryParameters["NeedStatusNotify"]=$needStatusNotify;
 	}
 	
 }
