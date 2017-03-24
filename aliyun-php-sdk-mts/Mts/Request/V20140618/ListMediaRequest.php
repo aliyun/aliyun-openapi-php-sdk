@@ -19,22 +19,28 @@
  */
 namespace Mts\Request\V20140618;
 
-class RefreshCdnDomainConfigsCacheRequest extends \RpcAcsRequest
+class ListMediaRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "RefreshCdnDomainConfigsCache");
+		parent::__construct("Mts", "2014-06-18", "ListMedia");
 	}
 
 	private  $ownerId;
 
-	private  $resourceOwnerId;
-
 	private  $resourceOwnerAccount;
 
-	private  $ownerAccount;
+	private  $resourceOwnerId;
 
-	private  $domains;
+	private  $nextPageToken;
+
+	private  $maximumPageSize;
+
+	private  $from;
+
+	private  $to;
+
+	private  $ownerAccount;
 
 	public function getOwnerId() {
 		return $this->ownerId;
@@ -43,15 +49,6 @@ class RefreshCdnDomainConfigsCacheRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -63,6 +60,51 @@ class RefreshCdnDomainConfigsCacheRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
+	}
+
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getNextPageToken() {
+		return $this->nextPageToken;
+	}
+
+	public function setNextPageToken($nextPageToken) {
+		$this->nextPageToken = $nextPageToken;
+		$this->queryParameters["NextPageToken"]=$nextPageToken;
+	}
+
+	public function getMaximumPageSize() {
+		return $this->maximumPageSize;
+	}
+
+	public function setMaximumPageSize($maximumPageSize) {
+		$this->maximumPageSize = $maximumPageSize;
+		$this->queryParameters["MaximumPageSize"]=$maximumPageSize;
+	}
+
+	public function getFrom() {
+		return $this->from;
+	}
+
+	public function setFrom($from) {
+		$this->from = $from;
+		$this->queryParameters["From"]=$from;
+	}
+
+	public function getTo() {
+		return $this->to;
+	}
+
+	public function setTo($to) {
+		$this->to = $to;
+		$this->queryParameters["To"]=$to;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -70,15 +112,6 @@ class RefreshCdnDomainConfigsCacheRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getDomains() {
-		return $this->domains;
-	}
-
-	public function setDomains($domains) {
-		$this->domains = $domains;
-		$this->queryParameters["Domains"]=$domains;
 	}
 	
 }
