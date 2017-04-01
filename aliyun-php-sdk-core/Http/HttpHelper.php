@@ -19,8 +19,8 @@
  */
 class HttpHelper
 {
-	public static $connectTimeout = 30000;//30 second
-	public static $readTimeout = 80000;//80 second
+	public static $connectTimeout = 30;//30 second
+	public static $readTimeout = 80;//80 second
 	
 	public static function curl($url, $httpMethod = "GET", $postFields = null,$headers = null)
 	{
