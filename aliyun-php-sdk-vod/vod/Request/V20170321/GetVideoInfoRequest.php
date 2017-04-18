@@ -19,11 +19,11 @@
  */
 namespace vod\Request\V20170321;
 
-class CreateUploadVideoRequest extends \RpcAcsRequest
+class GetVideoInfoRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "CreateUploadVideo");
+		parent::__construct("vod", "2017-03-21", "GetVideoInfo");
 	}
 
 	private  $ownerId;
@@ -32,17 +32,7 @@ class CreateUploadVideoRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $coverURL;
-
-	private  $description;
-
-	private  $fileName;
-
-	private  $fileSize;
-
-	private  $iP;
-
-	private  $title;
+	private  $videoId;
 
 	public function getOwnerId() {
 		return $this->ownerId;
@@ -71,58 +61,13 @@ class CreateUploadVideoRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getCoverURL() {
-		return $this->coverURL;
+	public function getVideoId() {
+		return $this->videoId;
 	}
 
-	public function setCoverURL($coverURL) {
-		$this->coverURL = $coverURL;
-		$this->queryParameters["CoverURL"]=$coverURL;
-	}
-
-	public function getDescription() {
-		return $this->description;
-	}
-
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
-	}
-
-	public function getFileName() {
-		return $this->fileName;
-	}
-
-	public function setFileName($fileName) {
-		$this->fileName = $fileName;
-		$this->queryParameters["FileName"]=$fileName;
-	}
-
-	public function getFileSize() {
-		return $this->fileSize;
-	}
-
-	public function setFileSize($fileSize) {
-		$this->fileSize = $fileSize;
-		$this->queryParameters["FileSize"]=$fileSize;
-	}
-
-	public function getIP() {
-		return $this->iP;
-	}
-
-	public function setIP($iP) {
-		$this->iP = $iP;
-		$this->queryParameters["IP"]=$iP;
-	}
-
-	public function getTitle() {
-		return $this->title;
-	}
-
-	public function setTitle($title) {
-		$this->title = $title;
-		$this->queryParameters["Title"]=$title;
+	public function setVideoId($videoId) {
+		$this->videoId = $videoId;
+		$this->queryParameters["VideoId"]=$videoId;
 	}
 	
 }

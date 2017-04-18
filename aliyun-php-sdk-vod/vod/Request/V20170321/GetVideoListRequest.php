@@ -19,11 +19,11 @@
  */
 namespace vod\Request\V20170321;
 
-class CreateUploadVideoRequest extends \RpcAcsRequest
+class GetVideoListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "CreateUploadVideo");
+		parent::__construct("vod", "2017-03-21", "GetVideoList");
 	}
 
 	private  $ownerId;
@@ -32,17 +32,15 @@ class CreateUploadVideoRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $coverURL;
+	private  $cateId;
 
-	private  $description;
+	private  $status;
 
-	private  $fileName;
+	private  $pageNo;
 
-	private  $fileSize;
+	private  $pageSize;
 
-	private  $iP;
-
-	private  $title;
+	private  $sortBy;
 
 	public function getOwnerId() {
 		return $this->ownerId;
@@ -71,58 +69,49 @@ class CreateUploadVideoRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getCoverURL() {
-		return $this->coverURL;
+	public function getCateId() {
+		return $this->cateId;
 	}
 
-	public function setCoverURL($coverURL) {
-		$this->coverURL = $coverURL;
-		$this->queryParameters["CoverURL"]=$coverURL;
+	public function setCateId($cateId) {
+		$this->cateId = $cateId;
+		$this->queryParameters["CateId"]=$cateId;
 	}
 
-	public function getDescription() {
-		return $this->description;
+	public function getStatus() {
+		return $this->status;
 	}
 
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
+	public function setStatus($status) {
+		$this->status = $status;
+		$this->queryParameters["Status"]=$status;
 	}
 
-	public function getFileName() {
-		return $this->fileName;
+	public function getPageNo() {
+		return $this->pageNo;
 	}
 
-	public function setFileName($fileName) {
-		$this->fileName = $fileName;
-		$this->queryParameters["FileName"]=$fileName;
+	public function setPageNo($pageNo) {
+		$this->pageNo = $pageNo;
+		$this->queryParameters["PageNo"]=$pageNo;
 	}
 
-	public function getFileSize() {
-		return $this->fileSize;
+	public function getPageSize() {
+		return $this->pageSize;
 	}
 
-	public function setFileSize($fileSize) {
-		$this->fileSize = $fileSize;
-		$this->queryParameters["FileSize"]=$fileSize;
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
-	public function getIP() {
-		return $this->iP;
+	public function getSortBy() {
+		return $this->sortBy;
 	}
 
-	public function setIP($iP) {
-		$this->iP = $iP;
-		$this->queryParameters["IP"]=$iP;
-	}
-
-	public function getTitle() {
-		return $this->title;
-	}
-
-	public function setTitle($title) {
-		$this->title = $title;
-		$this->queryParameters["Title"]=$title;
+	public function setSortBy($sortBy) {
+		$this->sortBy = $sortBy;
+		$this->queryParameters["SortBy"]=$sortBy;
 	}
 	
 }

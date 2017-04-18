@@ -19,11 +19,11 @@
  */
 namespace vod\Request\V20170321;
 
-class CreateUploadVideoRequest extends \RpcAcsRequest
+class UpdateVideoInfoRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "CreateUploadVideo");
+		parent::__construct("vod", "2017-03-21", "UpdateVideoInfo");
 	}
 
 	private  $ownerId;
@@ -32,17 +32,17 @@ class CreateUploadVideoRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $coverURL;
+	private  $videoId;
+
+	private  $title;
+
+	private  $tags;
 
 	private  $description;
 
-	private  $fileName;
+	private  $coverURL;
 
-	private  $fileSize;
-
-	private  $iP;
-
-	private  $title;
+	private  $cateId;
 
 	public function getOwnerId() {
 		return $this->ownerId;
@@ -71,13 +71,31 @@ class CreateUploadVideoRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getCoverURL() {
-		return $this->coverURL;
+	public function getVideoId() {
+		return $this->videoId;
 	}
 
-	public function setCoverURL($coverURL) {
-		$this->coverURL = $coverURL;
-		$this->queryParameters["CoverURL"]=$coverURL;
+	public function setVideoId($videoId) {
+		$this->videoId = $videoId;
+		$this->queryParameters["VideoId"]=$videoId;
+	}
+
+	public function getTitle() {
+		return $this->title;
+	}
+
+	public function setTitle($title) {
+		$this->title = $title;
+		$this->queryParameters["Title"]=$title;
+	}
+
+	public function getTags() {
+		return $this->tags;
+	}
+
+	public function setTags($tags) {
+		$this->tags = $tags;
+		$this->queryParameters["Tags"]=$tags;
 	}
 
 	public function getDescription() {
@@ -89,40 +107,22 @@ class CreateUploadVideoRequest extends \RpcAcsRequest
 		$this->queryParameters["Description"]=$description;
 	}
 
-	public function getFileName() {
-		return $this->fileName;
+	public function getCoverURL() {
+		return $this->coverURL;
 	}
 
-	public function setFileName($fileName) {
-		$this->fileName = $fileName;
-		$this->queryParameters["FileName"]=$fileName;
+	public function setCoverURL($coverURL) {
+		$this->coverURL = $coverURL;
+		$this->queryParameters["CoverURL"]=$coverURL;
 	}
 
-	public function getFileSize() {
-		return $this->fileSize;
+	public function getCateId() {
+		return $this->cateId;
 	}
 
-	public function setFileSize($fileSize) {
-		$this->fileSize = $fileSize;
-		$this->queryParameters["FileSize"]=$fileSize;
-	}
-
-	public function getIP() {
-		return $this->iP;
-	}
-
-	public function setIP($iP) {
-		$this->iP = $iP;
-		$this->queryParameters["IP"]=$iP;
-	}
-
-	public function getTitle() {
-		return $this->title;
-	}
-
-	public function setTitle($title) {
-		$this->title = $title;
-		$this->queryParameters["Title"]=$title;
+	public function setCateId($cateId) {
+		$this->cateId = $cateId;
+		$this->queryParameters["CateId"]=$cateId;
 	}
 	
 }
