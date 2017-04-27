@@ -26,18 +26,9 @@ class BatchGetDeviceStateRequest extends \RpcAcsRequest
 		parent::__construct("Iot", "2016-05-30", "BatchGetDeviceState");
 	}
 
-	private  $deviceName;
-
 	private  $productKey;
 
-	public function getDeviceName() {
-		return $this->deviceName;
-	}
-
-	public function setDeviceName($deviceName) {
-		$this->deviceName = $deviceName;
-		$this->queryParameters["DeviceName"]=$deviceName;
-	}
+	private  $DeviceNames;
 
 	public function getProductKey() {
 		return $this->productKey;
@@ -46,6 +37,17 @@ class BatchGetDeviceStateRequest extends \RpcAcsRequest
 	public function setProductKey($productKey) {
 		$this->productKey = $productKey;
 		$this->queryParameters["ProductKey"]=$productKey;
+	}
+
+	public function getDeviceNames() {
+		return $this->DeviceNames;
+	}
+
+	public function setDeviceNames($DeviceNames) {
+		$this->DeviceNames = $DeviceNames;
+		for ($i = 0; $i < count($DeviceNames); $i ++) {	
+			$this->queryParameters["DeviceName.".($i+1)] = $DeviceNames[$i];
+		}
 	}
 	
 }

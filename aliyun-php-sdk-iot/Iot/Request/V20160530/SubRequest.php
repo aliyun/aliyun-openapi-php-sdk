@@ -26,22 +26,13 @@ class SubRequest extends \RpcAcsRequest
 		parent::__construct("Iot", "2016-05-30", "Sub");
 	}
 
-	private  $topic;
-
 	private  $productKey;
 
 	private  $subCallback;
 
 	private  $topicList;
 
-	public function getTopic() {
-		return $this->topic;
-	}
-
-	public function setTopic($topic) {
-		$this->topic = $topic;
-		$this->queryParameters["Topic"]=$topic;
-	}
+	private  $Topics;
 
 	public function getProductKey() {
 		return $this->productKey;
@@ -68,6 +59,17 @@ class SubRequest extends \RpcAcsRequest
 	public function setTopicList($topicList) {
 		$this->topicList = $topicList;
 		$this->queryParameters["TopicList"]=$topicList;
+	}
+
+	public function getTopics() {
+		return $this->Topics;
+	}
+
+	public function setTopics($Topics) {
+		$this->Topics = $Topics;
+		for ($i = 0; $i < count($Topics); $i ++) {	
+			$this->queryParameters["Topic.".($i+1)] = $Topics[$i];
+		}
 	}
 	
 }

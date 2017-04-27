@@ -26,18 +26,9 @@ class RegistDeviceRequest extends \RpcAcsRequest
 		parent::__construct("Iot", "2016-05-30", "RegistDevice");
 	}
 
-	private  $productKey;
-
 	private  $deviceName;
 
-	public function getProductKey() {
-		return $this->productKey;
-	}
-
-	public function setProductKey($productKey) {
-		$this->productKey = $productKey;
-		$this->queryParameters["ProductKey"]=$productKey;
-	}
+	private  $productKey;
 
 	public function getDeviceName() {
 		return $this->deviceName;
@@ -46,6 +37,15 @@ class RegistDeviceRequest extends \RpcAcsRequest
 	public function setDeviceName($deviceName) {
 		$this->deviceName = $deviceName;
 		$this->queryParameters["DeviceName"]=$deviceName;
+	}
+
+	public function getProductKey() {
+		return $this->productKey;
+	}
+
+	public function setProductKey($productKey) {
+		$this->productKey = $productKey;
+		$this->queryParameters["ProductKey"]=$productKey;
 	}
 	
 }
