@@ -44,6 +44,8 @@ class DescribeUserDomainsRequest extends \RpcAcsRequest
 
 	private  $cdnType;
 
+	private  $checkDomainShow;
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -123,6 +125,15 @@ class DescribeUserDomainsRequest extends \RpcAcsRequest
 	public function setCdnType($cdnType) {
 		$this->cdnType = $cdnType;
 		$this->queryParameters["CdnType"]=$cdnType;
+	}
+
+	public function getCheckDomainShow() {
+		return $this->checkDomainShow;
+	}
+
+	public function setCheckDomainShow($checkDomainShow) {
+		$this->checkDomainShow = $checkDomainShow;
+		$this->queryParameters["CheckDomainShow"]=$checkDomainShow;
 	}
 	
 }

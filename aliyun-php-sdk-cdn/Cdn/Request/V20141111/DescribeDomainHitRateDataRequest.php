@@ -38,6 +38,12 @@ class DescribeDomainHitRateDataRequest extends \RpcAcsRequest
 
 	private  $timeMerge;
 
+	private  $locationNameEn;
+
+	private  $ispNameEn;
+
+	private  $interval;
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -90,6 +96,33 @@ class DescribeDomainHitRateDataRequest extends \RpcAcsRequest
 	public function setTimeMerge($timeMerge) {
 		$this->timeMerge = $timeMerge;
 		$this->queryParameters["TimeMerge"]=$timeMerge;
+	}
+
+	public function getLocationNameEn() {
+		return $this->locationNameEn;
+	}
+
+	public function setLocationNameEn($locationNameEn) {
+		$this->locationNameEn = $locationNameEn;
+		$this->queryParameters["LocationNameEn"]=$locationNameEn;
+	}
+
+	public function getIspNameEn() {
+		return $this->ispNameEn;
+	}
+
+	public function setIspNameEn($ispNameEn) {
+		$this->ispNameEn = $ispNameEn;
+		$this->queryParameters["IspNameEn"]=$ispNameEn;
+	}
+
+	public function getInterval() {
+		return $this->interval;
+	}
+
+	public function setInterval($interval) {
+		$this->interval = $interval;
+		$this->queryParameters["Interval"]=$interval;
 	}
 	
 }

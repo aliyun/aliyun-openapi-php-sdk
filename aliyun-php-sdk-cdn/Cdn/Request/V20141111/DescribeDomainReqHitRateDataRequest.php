@@ -36,6 +36,8 @@ class DescribeDomainReqHitRateDataRequest extends \RpcAcsRequest
 
 	private  $endTime;
 
+	private  $interval;
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -79,6 +81,15 @@ class DescribeDomainReqHitRateDataRequest extends \RpcAcsRequest
 	public function setEndTime($endTime) {
 		$this->endTime = $endTime;
 		$this->queryParameters["EndTime"]=$endTime;
+	}
+
+	public function getInterval() {
+		return $this->interval;
+	}
+
+	public function setInterval($interval) {
+		$this->interval = $interval;
+		$this->queryParameters["Interval"]=$interval;
 	}
 	
 }

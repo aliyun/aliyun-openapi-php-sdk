@@ -38,6 +38,8 @@ class DescribeDomainSrcFlowDataRequest extends \RpcAcsRequest
 
 	private  $timeMerge;
 
+	private  $interval;
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -90,6 +92,15 @@ class DescribeDomainSrcFlowDataRequest extends \RpcAcsRequest
 	public function setTimeMerge($timeMerge) {
 		$this->timeMerge = $timeMerge;
 		$this->queryParameters["TimeMerge"]=$timeMerge;
+	}
+
+	public function getInterval() {
+		return $this->interval;
+	}
+
+	public function setInterval($interval) {
+		$this->interval = $interval;
+		$this->queryParameters["Interval"]=$interval;
 	}
 	
 }

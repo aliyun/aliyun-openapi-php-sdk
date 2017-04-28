@@ -38,9 +38,13 @@ class DescribeDomainBpsDataRequest extends \RpcAcsRequest
 
 	private  $timeMerge;
 
+	private  $interval;
+
 	private  $locationNameEn;
 
 	private  $ispNameEn;
+
+	private  $domainType;
 
 	public function getOwnerId() {
 		return $this->ownerId;
@@ -96,6 +100,15 @@ class DescribeDomainBpsDataRequest extends \RpcAcsRequest
 		$this->queryParameters["TimeMerge"]=$timeMerge;
 	}
 
+	public function getInterval() {
+		return $this->interval;
+	}
+
+	public function setInterval($interval) {
+		$this->interval = $interval;
+		$this->queryParameters["Interval"]=$interval;
+	}
+
 	public function getLocationNameEn() {
 		return $this->locationNameEn;
 	}
@@ -112,6 +125,15 @@ class DescribeDomainBpsDataRequest extends \RpcAcsRequest
 	public function setIspNameEn($ispNameEn) {
 		$this->ispNameEn = $ispNameEn;
 		$this->queryParameters["IspNameEn"]=$ispNameEn;
+	}
+
+	public function getDomainType() {
+		return $this->domainType;
+	}
+
+	public function setDomainType($domainType) {
+		$this->domainType = $domainType;
+		$this->queryParameters["DomainType"]=$domainType;
 	}
 	
 }

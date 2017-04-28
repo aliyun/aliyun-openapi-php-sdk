@@ -42,9 +42,11 @@ class AddCdnDomainRequest extends \RpcAcsRequest
 
 	private  $sourcePort;
 
-	private  $serverCertificate;
+	private  $checkUrl;
 
-	private  $privateKey;
+	private  $region;
+
+	private  $scope;
 
 	public function getOwnerId() {
 		return $this->ownerId;
@@ -118,22 +120,31 @@ class AddCdnDomainRequest extends \RpcAcsRequest
 		$this->queryParameters["SourcePort"]=$sourcePort;
 	}
 
-	public function getServerCertificate() {
-		return $this->serverCertificate;
+	public function getCheckUrl() {
+		return $this->checkUrl;
 	}
 
-	public function setServerCertificate($serverCertificate) {
-		$this->serverCertificate = $serverCertificate;
-		$this->queryParameters["ServerCertificate"]=$serverCertificate;
+	public function setCheckUrl($checkUrl) {
+		$this->checkUrl = $checkUrl;
+		$this->queryParameters["CheckUrl"]=$checkUrl;
 	}
 
-	public function getPrivateKey() {
-		return $this->privateKey;
+	public function getRegion() {
+		return $this->region;
 	}
 
-	public function setPrivateKey($privateKey) {
-		$this->privateKey = $privateKey;
-		$this->queryParameters["PrivateKey"]=$privateKey;
+	public function setRegion($region) {
+		$this->region = $region;
+		$this->queryParameters["Region"]=$region;
+	}
+
+	public function getScope() {
+		return $this->scope;
+	}
+
+	public function setScope($scope) {
+		$this->scope = $scope;
+		$this->queryParameters["Scope"]=$scope;
 	}
 	
 }

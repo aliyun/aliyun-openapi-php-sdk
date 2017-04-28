@@ -30,13 +30,7 @@ class DescribeLiveStreamRelayPushErrorsRequest extends \RpcAcsRequest
 
 	private  $securityToken;
 
-	private  $domainName;
-
 	private  $relayDomain;
-
-	private  $appName;
-
-	private  $streamName;
 
 	private  $startTime;
 
@@ -60,15 +54,6 @@ class DescribeLiveStreamRelayPushErrorsRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getDomainName() {
-		return $this->domainName;
-	}
-
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
-
 	public function getRelayDomain() {
 		return $this->relayDomain;
 	}
@@ -76,24 +61,6 @@ class DescribeLiveStreamRelayPushErrorsRequest extends \RpcAcsRequest
 	public function setRelayDomain($relayDomain) {
 		$this->relayDomain = $relayDomain;
 		$this->queryParameters["RelayDomain"]=$relayDomain;
-	}
-
-	public function getAppName() {
-		return $this->appName;
-	}
-
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
-	}
-
-	public function getStreamName() {
-		return $this->streamName;
-	}
-
-	public function setStreamName($streamName) {
-		$this->streamName = $streamName;
-		$this->queryParameters["StreamName"]=$streamName;
 	}
 
 	public function getStartTime() {

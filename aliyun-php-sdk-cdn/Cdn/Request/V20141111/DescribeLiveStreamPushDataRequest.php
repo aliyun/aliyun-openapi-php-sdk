@@ -32,10 +32,6 @@ class DescribeLiveStreamPushDataRequest extends \RpcAcsRequest
 
 	private  $domainName;
 
-	private  $appName;
-
-	private  $streamName;
-
 	private  $startTime;
 
 	private  $endTime;
@@ -65,24 +61,6 @@ class DescribeLiveStreamPushDataRequest extends \RpcAcsRequest
 	public function setDomainName($domainName) {
 		$this->domainName = $domainName;
 		$this->queryParameters["DomainName"]=$domainName;
-	}
-
-	public function getAppName() {
-		return $this->appName;
-	}
-
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
-	}
-
-	public function getStreamName() {
-		return $this->streamName;
-	}
-
-	public function setStreamName($streamName) {
-		$this->streamName = $streamName;
-		$this->queryParameters["StreamName"]=$streamName;
 	}
 
 	public function getStartTime() {
