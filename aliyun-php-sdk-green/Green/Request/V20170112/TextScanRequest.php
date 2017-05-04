@@ -17,25 +17,26 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Green\Request\V20160923;
+namespace Green\Request\V20170112;
 
-class ImageFeedbackRequest extends \RpcAcsRequest
+class TextScanRequest extends \RoaAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Green", "2016-09-23", "ImageFeedback");
+		parent::__construct("Green", "2017-01-12", "TextScan");
+		$this->setUriPattern("/green/text/scan");
 		$this->setMethod("POST");
 	}
 
-	private  $taskId;
+	private  $clientInfo;
 
-	public function getTaskId() {
-		return $this->taskId;
+	public function getClientInfo() {
+		return $this->clientInfo;
 	}
 
-	public function setTaskId($taskId) {
-		$this->taskId = $taskId;
-		$this->queryParameters["TaskId"]=$taskId;
+	public function setClientInfo($clientInfo) {
+		$this->clientInfo = $clientInfo;
+		$this->queryParameters["ClientInfo"]=$clientInfo;
 	}
 	
 }

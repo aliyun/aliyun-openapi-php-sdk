@@ -17,47 +17,26 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Green\Request\V20161206;
+namespace Green\Request\V20170112;
 
-class PluginAntispamFeedbackRequest extends \RpcAcsRequest
+class VideoFeedbackRequest extends \RoaAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Green", "2016-12-06", "PluginAntispamFeedback");
+		parent::__construct("Green", "2017-01-12", "VideoFeedback");
+		$this->setUriPattern("/green/video/feedback");
 		$this->setMethod("POST");
 	}
 
-	private  $clientVersion;
+	private  $clientInfo;
 
-	private  $actionResult;
-
-	private  $ids;
-
-	public function getClientVersion() {
-		return $this->clientVersion;
+	public function getClientInfo() {
+		return $this->clientInfo;
 	}
 
-	public function setClientVersion($clientVersion) {
-		$this->clientVersion = $clientVersion;
-		$this->queryParameters["ClientVersion"]=$clientVersion;
-	}
-
-	public function getActionResult() {
-		return $this->actionResult;
-	}
-
-	public function setActionResult($actionResult) {
-		$this->actionResult = $actionResult;
-		$this->queryParameters["ActionResult"]=$actionResult;
-	}
-
-	public function getIds() {
-		return $this->ids;
-	}
-
-	public function setIds($ids) {
-		$this->ids = $ids;
-		$this->queryParameters["Ids"]=$ids;
+	public function setClientInfo($clientInfo) {
+		$this->clientInfo = $clientInfo;
+		$this->queryParameters["ClientInfo"]=$clientInfo;
 	}
 	
 }

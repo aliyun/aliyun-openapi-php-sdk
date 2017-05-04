@@ -17,36 +17,26 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Green\Request\V20161206;
+namespace Green\Request\V20170112;
 
-class TextAntispamDetectionRequest extends \RpcAcsRequest
+class VideoAsyncScanRequest extends \RoaAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Green", "2016-12-06", "TextAntispamDetection");
+		parent::__construct("Green", "2017-01-12", "VideoAsyncScan");
+		$this->setUriPattern("/green/video/asyncscan");
 		$this->setMethod("POST");
 	}
 
-	private  $dataItems;
+	private  $clientInfo;
 
-	private  $customDict;
-
-	public function getDataItems() {
-		return $this->dataItems;
+	public function getClientInfo() {
+		return $this->clientInfo;
 	}
 
-	public function setDataItems($dataItems) {
-		$this->dataItems = $dataItems;
-		$this->queryParameters["DataItems"]=$dataItems;
-	}
-
-	public function getCustomDict() {
-		return $this->customDict;
-	}
-
-	public function setCustomDict($customDict) {
-		$this->customDict = $customDict;
-		$this->queryParameters["CustomDict"]=$customDict;
+	public function setClientInfo($clientInfo) {
+		$this->clientInfo = $clientInfo;
+		$this->queryParameters["ClientInfo"]=$clientInfo;
 	}
 	
 }

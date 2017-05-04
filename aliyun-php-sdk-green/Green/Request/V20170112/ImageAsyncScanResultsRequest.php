@@ -17,25 +17,26 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Green\Request\V20161115;
+namespace Green\Request\V20170112;
 
-class TextWordCorrectRequest extends \RpcAcsRequest
+class ImageAsyncScanResultsRequest extends \RoaAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Green", "2016-11-15", "TextWordCorrect");
+		parent::__construct("Green", "2017-01-12", "ImageAsyncScanResults");
+		$this->setUriPattern("/green/image/results");
 		$this->setMethod("POST");
 	}
 
-	private  $text;
+	private  $clientInfo;
 
-	public function getText() {
-		return $this->text;
+	public function getClientInfo() {
+		return $this->clientInfo;
 	}
 
-	public function setText($text) {
-		$this->text = $text;
-		$this->queryParameters["Text"]=$text;
+	public function setClientInfo($clientInfo) {
+		$this->clientInfo = $clientInfo;
+		$this->queryParameters["ClientInfo"]=$clientInfo;
 	}
 	
 }

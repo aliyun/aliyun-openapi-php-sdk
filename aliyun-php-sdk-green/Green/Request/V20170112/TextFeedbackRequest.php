@@ -17,36 +17,26 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Green\Request\V20161216;
+namespace Green\Request\V20170112;
 
-class TextAntispamDetectionRequest extends \RpcAcsRequest
+class TextFeedbackRequest extends \RoaAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Green", "2016-12-16", "TextAntispamDetection");
+		parent::__construct("Green", "2017-01-12", "TextFeedback");
+		$this->setUriPattern("/green/text/feedback");
 		$this->setMethod("POST");
 	}
 
-	private  $customDict;
+	private  $clientInfo;
 
-	private  $dataItems;
-
-	public function getCustomDict() {
-		return $this->customDict;
+	public function getClientInfo() {
+		return $this->clientInfo;
 	}
 
-	public function setCustomDict($customDict) {
-		$this->customDict = $customDict;
-		$this->queryParameters["CustomDict"]=$customDict;
-	}
-
-	public function getDataItems() {
-		return $this->dataItems;
-	}
-
-	public function setDataItems($dataItems) {
-		$this->dataItems = $dataItems;
-		$this->queryParameters["DataItems"]=$dataItems;
+	public function setClientInfo($clientInfo) {
+		$this->clientInfo = $clientInfo;
+		$this->queryParameters["ClientInfo"]=$clientInfo;
 	}
 	
 }
