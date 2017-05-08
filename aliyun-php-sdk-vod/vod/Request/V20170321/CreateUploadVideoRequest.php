@@ -44,6 +44,10 @@ class CreateUploadVideoRequest extends \RpcAcsRequest
 
 	private  $title;
 
+	private  $cateId;
+
+	private  $tags;
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -123,6 +127,24 @@ class CreateUploadVideoRequest extends \RpcAcsRequest
 	public function setTitle($title) {
 		$this->title = $title;
 		$this->queryParameters["Title"]=$title;
+	}
+
+	public function getCateId() {
+		return $this->cateId;
+	}
+
+	public function setCateId($cateId) {
+		$this->cateId = $cateId;
+		$this->queryParameters["CateId"]=$cateId;
+	}
+
+	public function getTags() {
+		return $this->tags;
+	}
+
+	public function setTags($tags) {
+		$this->tags = $tags;
+		$this->queryParameters["Tags"]=$tags;
 	}
 	
 }
