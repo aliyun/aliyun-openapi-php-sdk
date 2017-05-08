@@ -112,6 +112,8 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 
 	private  $instanceTypeFamily;
 
+	private  $keyPairName;
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -497,6 +499,15 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 	public function setInstanceTypeFamily($instanceTypeFamily) {
 		$this->instanceTypeFamily = $instanceTypeFamily;
 		$this->queryParameters["InstanceTypeFamily"]=$instanceTypeFamily;
+	}
+
+	public function getKeyPairName() {
+		return $this->keyPairName;
+	}
+
+	public function setKeyPairName($keyPairName) {
+		$this->keyPairName = $keyPairName;
+		$this->queryParameters["KeyPairName"]=$keyPairName;
 	}
 	
 }

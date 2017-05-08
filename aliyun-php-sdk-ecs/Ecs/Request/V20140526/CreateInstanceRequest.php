@@ -54,6 +54,8 @@ class CreateInstanceRequest extends \RpcAcsRequest
 
 	private  $password;
 
+	private  $deploymentSetId;
+
 	private  $zoneId;
 
 	private  $clusterId;
@@ -169,6 +171,8 @@ class CreateInstanceRequest extends \RpcAcsRequest
 	private  $userData;
 
 	private  $spotStrategy;
+
+	private  $keyPairName;
 
 	public function getOwnerId() {
 		return $this->ownerId;
@@ -294,6 +298,15 @@ class CreateInstanceRequest extends \RpcAcsRequest
 	public function setPassword($password) {
 		$this->password = $password;
 		$this->queryParameters["Password"]=$password;
+	}
+
+	public function getDeploymentSetId() {
+		return $this->deploymentSetId;
+	}
+
+	public function setDeploymentSetId($deploymentSetId) {
+		$this->deploymentSetId = $deploymentSetId;
+		$this->queryParameters["DeploymentSetId"]=$deploymentSetId;
 	}
 
 	public function getZoneId() {
@@ -816,6 +829,15 @@ class CreateInstanceRequest extends \RpcAcsRequest
 	public function setSpotStrategy($spotStrategy) {
 		$this->spotStrategy = $spotStrategy;
 		$this->queryParameters["SpotStrategy"]=$spotStrategy;
+	}
+
+	public function getKeyPairName() {
+		return $this->keyPairName;
+	}
+
+	public function setKeyPairName($keyPairName) {
+		$this->keyPairName = $keyPairName;
+		$this->queryParameters["KeyPairName"]=$keyPairName;
 	}
 	
 }
