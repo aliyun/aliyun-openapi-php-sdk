@@ -19,39 +19,15 @@
  */
 namespace Kms\Request\V20160120;
 
-class EncryptRequest extends \RpcAcsRequest
+class DescribeRegionsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Kms", "2016-01-20", "Encrypt");
+		parent::__construct("Kms", "2016-01-20", "DescribeRegions");
 		$this->setProtocol("https");
 	}
 
-	private  $keyId;
-
-	private  $plaintext;
-
 	private  $sTSToken;
-
-	private  $encryptionContext;
-
-	public function getKeyId() {
-		return $this->keyId;
-	}
-
-	public function setKeyId($keyId) {
-		$this->keyId = $keyId;
-		$this->queryParameters["KeyId"]=$keyId;
-	}
-
-	public function getPlaintext() {
-		return $this->plaintext;
-	}
-
-	public function setPlaintext($plaintext) {
-		$this->plaintext = $plaintext;
-		$this->queryParameters["Plaintext"]=$plaintext;
-	}
 
 	public function getSTSToken() {
 		return $this->sTSToken;
@@ -60,15 +36,6 @@ class EncryptRequest extends \RpcAcsRequest
 	public function setSTSToken($sTSToken) {
 		$this->sTSToken = $sTSToken;
 		$this->queryParameters["STSToken"]=$sTSToken;
-	}
-
-	public function getEncryptionContext() {
-		return $this->encryptionContext;
-	}
-
-	public function setEncryptionContext($encryptionContext) {
-		$this->encryptionContext = $encryptionContext;
-		$this->queryParameters["EncryptionContext"]=$encryptionContext;
 	}
 	
 }

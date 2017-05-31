@@ -24,6 +24,7 @@ class ScheduleKeyDeletionRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Kms", "2016-01-20", "ScheduleKeyDeletion");
+		$this->setProtocol("https");
 	}
 
 	private  $keyId;

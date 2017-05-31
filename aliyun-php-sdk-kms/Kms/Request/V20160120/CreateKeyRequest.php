@@ -24,6 +24,7 @@ class CreateKeyRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Kms", "2016-01-20", "CreateKey");
+		$this->setProtocol("https");
 	}
 
 	private  $description;

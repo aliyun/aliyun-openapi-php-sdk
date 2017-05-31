@@ -24,6 +24,7 @@ class CancelKeyDeletionRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Kms", "2016-01-20", "CancelKeyDeletion");
+		$this->setProtocol("https");
 	}
 
 	private  $keyId;
