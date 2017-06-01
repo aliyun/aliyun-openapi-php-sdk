@@ -839,5 +839,13 @@ class CreateInstanceRequest extends \RpcAcsRequest
 		$this->keyPairName = $keyPairName;
 		$this->queryParameters["KeyPairName"]=$keyPairName;
 	}
-	
+	        
+	public function getRamRoleName() {
+                return $this->ramRoleName;
+        }
+
+        public function setRamRoleName($ramRoleName) {
+                $this->ramRoleName = $ramRoleName;
+                $this->queryParameters["RamRoleName"]=$ramRoleName;
+        }	
 }
