@@ -20,11 +20,10 @@
 include_once '../BaseTest.php';
 class HttpHelperTest extends BaseTest
 {
-	public function testCurl()
-	{
-		$httpResponse = HttpHelper::curl("ecs.aliyuncs.com");
-		$this->assertEquals(400,$httpResponse->getStatus());		
-		$this->assertNotNull($httpResponse->getBody());
-	}
-
+    public function testCurl()
+    {
+        $httpResponse = HttpHelper::curl("ecs.aliyuncs.com");
+        $this->assertEquals(400, $httpResponse->getStatus());
+        $this->assertNotNull($httpResponse->getBody());
+    }
 }

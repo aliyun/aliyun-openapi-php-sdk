@@ -20,7 +20,7 @@
 $endpoint_filename = dirname(__FILE__) . DIRECTORY_SEPARATOR . "endpoints.xml";
 $xml = simplexml_load_string(file_get_contents($endpoint_filename));
 $json = json_encode($xml);
-$json_array = json_decode($json, TRUE);
+$json_array = json_decode($json, true);
 
 $endpoints = array();
 
@@ -39,13 +39,12 @@ foreach ($json_array["Endpoint"] as $json_endpoint) {
 
     if (!array_key_exists("Product", $json_endpoint["Products"])) {
         $products = array();
-
     } else {
         $json_products = $json_endpoint["Products"]["Product"];
 
         if (array() === $json_products or !is_array($json_products)) {
             $products = array();
-        } else if (array_keys($json_products) !== range(0, count($json_products) - 1)) {
+        } elseif (array_keys($json_products) !== range(0, count($json_products) - 1)) {
             # array is not sequential
             $products = array($json_products);
         } else {
