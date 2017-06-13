@@ -40,6 +40,8 @@ class PushRequest extends \RpcAcsRequest
 
 	private  $body;
 
+	private  $jobKey;
+
 	private  $pushTime;
 
 	private  $expireTime;
@@ -61,6 +63,12 @@ class PushRequest extends \RpcAcsRequest
 	private  $androidXiaoMiNotifyTitle;
 
 	private  $androidXiaoMiNotifyBody;
+
+	private  $androidPopupActivity;
+
+	private  $androidPopupTitle;
+
+	private  $androidPopupBody;
 
 	private  $androidMusic;
 
@@ -151,6 +159,15 @@ class PushRequest extends \RpcAcsRequest
 	public function setBody($body) {
 		$this->body = $body;
 		$this->queryParameters["Body"]=$body;
+	}
+
+	public function getJobKey() {
+		return $this->jobKey;
+	}
+
+	public function setJobKey($jobKey) {
+		$this->jobKey = $jobKey;
+		$this->queryParameters["JobKey"]=$jobKey;
 	}
 
 	public function getPushTime() {
@@ -250,6 +267,33 @@ class PushRequest extends \RpcAcsRequest
 	public function setAndroidXiaoMiNotifyBody($androidXiaoMiNotifyBody) {
 		$this->androidXiaoMiNotifyBody = $androidXiaoMiNotifyBody;
 		$this->queryParameters["AndroidXiaoMiNotifyBody"]=$androidXiaoMiNotifyBody;
+	}
+
+	public function getAndroidPopupActivity() {
+		return $this->androidPopupActivity;
+	}
+
+	public function setAndroidPopupActivity($androidPopupActivity) {
+		$this->androidPopupActivity = $androidPopupActivity;
+		$this->queryParameters["AndroidPopupActivity"]=$androidPopupActivity;
+	}
+
+	public function getAndroidPopupTitle() {
+		return $this->androidPopupTitle;
+	}
+
+	public function setAndroidPopupTitle($androidPopupTitle) {
+		$this->androidPopupTitle = $androidPopupTitle;
+		$this->queryParameters["AndroidPopupTitle"]=$androidPopupTitle;
+	}
+
+	public function getAndroidPopupBody() {
+		return $this->androidPopupBody;
+	}
+
+	public function setAndroidPopupBody($androidPopupBody) {
+		$this->androidPopupBody = $androidPopupBody;
+		$this->queryParameters["AndroidPopupBody"]=$androidPopupBody;
 	}
 
 	public function getAndroidMusic() {
@@ -377,5 +421,5 @@ class PushRequest extends \RpcAcsRequest
 		$this->iOSExtParameters = $iOSExtParameters;
 		$this->queryParameters["iOSExtParameters"]=$iOSExtParameters;
 	}
-	
+
 }

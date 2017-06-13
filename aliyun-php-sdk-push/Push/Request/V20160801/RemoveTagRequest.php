@@ -19,16 +19,16 @@
  */
 namespace Push\Request\V20160801;
 
-class CheckDevicesRequest extends \RpcAcsRequest
+class RemoveTagRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Push", "2016-08-01", "CheckDevices");
+		parent::__construct("Push", "2016-08-01", "RemoveTag");
 	}
 
 	private  $appKey;
 
-	private  $deviceIds;
+	private  $tagName;
 
 	public function getAppKey() {
 		return $this->appKey;
@@ -39,13 +39,13 @@ class CheckDevicesRequest extends \RpcAcsRequest
 		$this->queryParameters["AppKey"]=$appKey;
 	}
 
-	public function getDeviceIds() {
-		return $this->deviceIds;
+	public function getTagName() {
+		return $this->tagName;
 	}
 
-	public function setDeviceIds($deviceIds) {
-		$this->deviceIds = $deviceIds;
-		$this->queryParameters["DeviceIds"]=$deviceIds;
+	public function setTagName($tagName) {
+		$this->tagName = $tagName;
+		$this->queryParameters["TagName"]=$tagName;
 	}
-	
+
 }
