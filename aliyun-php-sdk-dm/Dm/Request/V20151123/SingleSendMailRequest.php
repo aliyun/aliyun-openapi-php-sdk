@@ -50,6 +50,15 @@ class SingleSendMailRequest extends \RpcAcsRequest
 	private  $textBody;
 
 	private  $fromAlias;
+	private  $clickTrace;
+	public function getClickTrace() {
+		return $this->clickTrace;
+	}
+
+	public function setClickTrace($clickTrace) {
+		$this->clickTrace = $clickTrace;
+		$this->queryParameters["ClickTrace"]=$clickTrace;
+	}
 
 	public function getOwnerId() {
 		return $this->ownerId;
