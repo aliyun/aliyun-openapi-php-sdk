@@ -26,13 +26,22 @@ class SetLiveStreamsNotifyUrlConfigRequest extends \RpcAcsRequest
 		parent::__construct("live", "2016-11-01", "SetLiveStreamsNotifyUrlConfig");
 	}
 
+	private  $notifyUrl;
+
 	private  $securityToken;
 
 	private  $ownerId;
 
 	private  $domainName;
 
-	private  $notifyUrl;
+	public function getNotifyUrl() {
+		return $this->notifyUrl;
+	}
+
+	public function setNotifyUrl($notifyUrl) {
+		$this->notifyUrl = $notifyUrl;
+		$this->queryParameters["NotifyUrl"]=$notifyUrl;
+	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -59,15 +68,6 @@ class SetLiveStreamsNotifyUrlConfigRequest extends \RpcAcsRequest
 	public function setDomainName($domainName) {
 		$this->domainName = $domainName;
 		$this->queryParameters["DomainName"]=$domainName;
-	}
-
-	public function getNotifyUrl() {
-		return $this->notifyUrl;
-	}
-
-	public function setNotifyUrl($notifyUrl) {
-		$this->notifyUrl = $notifyUrl;
-		$this->queryParameters["NotifyUrl"]=$notifyUrl;
 	}
 	
 }

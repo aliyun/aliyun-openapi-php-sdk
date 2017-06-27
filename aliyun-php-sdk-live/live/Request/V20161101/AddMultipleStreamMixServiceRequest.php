@@ -26,6 +26,12 @@ class AddMultipleStreamMixServiceRequest extends \RpcAcsRequest
 		parent::__construct("live", "2016-11-01", "AddMultipleStreamMixService");
 	}
 
+	private  $mixDomainName;
+
+	private  $mixStreamName;
+
+	private  $streamName;
+
 	private  $securityToken;
 
 	private  $ownerId;
@@ -34,13 +40,34 @@ class AddMultipleStreamMixServiceRequest extends \RpcAcsRequest
 
 	private  $appName;
 
-	private  $streamName;
-
-	private  $mixDomainName;
-
 	private  $mixAppName;
 
-	private  $mixStreamName;
+	public function getMixDomainName() {
+		return $this->mixDomainName;
+	}
+
+	public function setMixDomainName($mixDomainName) {
+		$this->mixDomainName = $mixDomainName;
+		$this->queryParameters["MixDomainName"]=$mixDomainName;
+	}
+
+	public function getMixStreamName() {
+		return $this->mixStreamName;
+	}
+
+	public function setMixStreamName($mixStreamName) {
+		$this->mixStreamName = $mixStreamName;
+		$this->queryParameters["MixStreamName"]=$mixStreamName;
+	}
+
+	public function getStreamName() {
+		return $this->streamName;
+	}
+
+	public function setStreamName($streamName) {
+		$this->streamName = $streamName;
+		$this->queryParameters["StreamName"]=$streamName;
+	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -78,24 +105,6 @@ class AddMultipleStreamMixServiceRequest extends \RpcAcsRequest
 		$this->queryParameters["AppName"]=$appName;
 	}
 
-	public function getStreamName() {
-		return $this->streamName;
-	}
-
-	public function setStreamName($streamName) {
-		$this->streamName = $streamName;
-		$this->queryParameters["StreamName"]=$streamName;
-	}
-
-	public function getMixDomainName() {
-		return $this->mixDomainName;
-	}
-
-	public function setMixDomainName($mixDomainName) {
-		$this->mixDomainName = $mixDomainName;
-		$this->queryParameters["MixDomainName"]=$mixDomainName;
-	}
-
 	public function getMixAppName() {
 		return $this->mixAppName;
 	}
@@ -103,15 +112,6 @@ class AddMultipleStreamMixServiceRequest extends \RpcAcsRequest
 	public function setMixAppName($mixAppName) {
 		$this->mixAppName = $mixAppName;
 		$this->queryParameters["MixAppName"]=$mixAppName;
-	}
-
-	public function getMixStreamName() {
-		return $this->mixStreamName;
-	}
-
-	public function setMixStreamName($mixStreamName) {
-		$this->mixStreamName = $mixStreamName;
-		$this->queryParameters["MixStreamName"]=$mixStreamName;
 	}
 	
 }

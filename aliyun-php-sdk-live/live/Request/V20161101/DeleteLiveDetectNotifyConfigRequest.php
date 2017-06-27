@@ -19,57 +19,18 @@
  */
 namespace live\Request\V20161101;
 
-class DescribeLiveStreamsPublishListRequest extends \RpcAcsRequest
+class DeleteLiveDetectNotifyConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "DescribeLiveStreamsPublishList");
+		parent::__construct("live", "2016-11-01", "DeleteLiveDetectNotifyConfig");
 	}
-
-	private  $pageNumber;
-
-	private  $streamName;
-
-	private  $pageSize;
 
 	private  $securityToken;
 
 	private  $ownerId;
 
 	private  $domainName;
-
-	private  $appName;
-
-	private  $endTime;
-
-	private  $startTime;
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
-	public function getStreamName() {
-		return $this->streamName;
-	}
-
-	public function setStreamName($streamName) {
-		$this->streamName = $streamName;
-		$this->queryParameters["StreamName"]=$streamName;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -96,33 +57,6 @@ class DescribeLiveStreamsPublishListRequest extends \RpcAcsRequest
 	public function setDomainName($domainName) {
 		$this->domainName = $domainName;
 		$this->queryParameters["DomainName"]=$domainName;
-	}
-
-	public function getAppName() {
-		return $this->appName;
-	}
-
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
-	}
-
-	public function getEndTime() {
-		return $this->endTime;
-	}
-
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
 	}
 	
 }

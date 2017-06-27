@@ -26,33 +26,15 @@ class AddLiveStreamTranscodeRequest extends \RpcAcsRequest
 		parent::__construct("live", "2016-11-01", "AddLiveStreamTranscode");
 	}
 
-	private  $securityToken;
-
-	private  $ownerId;
-
 	private  $domain;
 
 	private  $app;
 
 	private  $template;
 
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
+	private  $securityToken;
 
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+	private  $ownerId;
 
 	public function getDomain() {
 		return $this->domain;
@@ -79,6 +61,24 @@ class AddLiveStreamTranscodeRequest extends \RpcAcsRequest
 	public function setTemplate($template) {
 		$this->template = $template;
 		$this->queryParameters["Template"]=$template;
+	}
+
+	public function getSecurityToken() {
+		return $this->securityToken;
+	}
+
+	public function setSecurityToken($securityToken) {
+		$this->securityToken = $securityToken;
+		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

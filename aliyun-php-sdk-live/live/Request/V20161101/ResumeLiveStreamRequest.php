@@ -26,17 +26,26 @@ class ResumeLiveStreamRequest extends \RpcAcsRequest
 		parent::__construct("live", "2016-11-01", "ResumeLiveStream");
 	}
 
+	private  $streamName;
+
 	private  $securityToken;
 
 	private  $ownerId;
 
-	private  $domainName;
-
 	private  $liveStreamType;
+
+	private  $domainName;
 
 	private  $appName;
 
-	private  $streamName;
+	public function getStreamName() {
+		return $this->streamName;
+	}
+
+	public function setStreamName($streamName) {
+		$this->streamName = $streamName;
+		$this->queryParameters["StreamName"]=$streamName;
+	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -56,15 +65,6 @@ class ResumeLiveStreamRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getDomainName() {
-		return $this->domainName;
-	}
-
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
-
 	public function getLiveStreamType() {
 		return $this->liveStreamType;
 	}
@@ -74,6 +74,15 @@ class ResumeLiveStreamRequest extends \RpcAcsRequest
 		$this->queryParameters["LiveStreamType"]=$liveStreamType;
 	}
 
+	public function getDomainName() {
+		return $this->domainName;
+	}
+
+	public function setDomainName($domainName) {
+		$this->domainName = $domainName;
+		$this->queryParameters["DomainName"]=$domainName;
+	}
+
 	public function getAppName() {
 		return $this->appName;
 	}
@@ -81,15 +90,6 @@ class ResumeLiveStreamRequest extends \RpcAcsRequest
 	public function setAppName($appName) {
 		$this->appName = $appName;
 		$this->queryParameters["AppName"]=$appName;
-	}
-
-	public function getStreamName() {
-		return $this->streamName;
-	}
-
-	public function setStreamName($streamName) {
-		$this->streamName = $streamName;
-		$this->queryParameters["StreamName"]=$streamName;
 	}
 	
 }

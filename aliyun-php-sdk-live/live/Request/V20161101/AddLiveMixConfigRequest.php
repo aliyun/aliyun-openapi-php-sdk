@@ -26,6 +26,8 @@ class AddLiveMixConfigRequest extends \RpcAcsRequest
 		parent::__construct("live", "2016-11-01", "AddLiveMixConfig");
 	}
 
+	private  $template;
+
 	private  $securityToken;
 
 	private  $ownerId;
@@ -34,7 +36,14 @@ class AddLiveMixConfigRequest extends \RpcAcsRequest
 
 	private  $appName;
 
-	private  $template;
+	public function getTemplate() {
+		return $this->template;
+	}
+
+	public function setTemplate($template) {
+		$this->template = $template;
+		$this->queryParameters["Template"]=$template;
+	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -70,15 +79,6 @@ class AddLiveMixConfigRequest extends \RpcAcsRequest
 	public function setAppName($appName) {
 		$this->appName = $appName;
 		$this->queryParameters["AppName"]=$appName;
-	}
-
-	public function getTemplate() {
-		return $this->template;
-	}
-
-	public function setTemplate($template) {
-		$this->template = $template;
-		$this->queryParameters["Template"]=$template;
 	}
 	
 }

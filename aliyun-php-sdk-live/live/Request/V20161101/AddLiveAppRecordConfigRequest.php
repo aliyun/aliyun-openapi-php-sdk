@@ -26,6 +26,8 @@ class AddLiveAppRecordConfigRequest extends \RpcAcsRequest
 		parent::__construct("live", "2016-11-01", "AddLiveAppRecordConfig");
 	}
 
+	private  $RecordFormats;
+
 	private  $securityToken;
 
 	private  $ownerId;
@@ -38,7 +40,20 @@ class AddLiveAppRecordConfigRequest extends \RpcAcsRequest
 
 	private  $ossBucket;
 
-	private  $RecordFormats;
+	public function getRecordFormats() {
+		return $this->RecordFormats;
+	}
+
+	public function setRecordFormats($RecordFormats) {
+		$this->RecordFormats = $RecordFormats;
+		for ($i = 0; $i < count($RecordFormats); $i ++) {	
+			$this->queryParameters['RecordFormat.' . ($i + 1) . '.Format'] = $RecordFormats[$i]['Format'];
+			$this->queryParameters['RecordFormat.' . ($i + 1) . '.OssObjectPrefix'] = $RecordFormats[$i]['OssObjectPrefix'];
+			$this->queryParameters['RecordFormat.' . ($i + 1) . '.SliceOssObjectPrefix'] = $RecordFormats[$i]['SliceOssObjectPrefix'];
+			$this->queryParameters['RecordFormat.' . ($i + 1) . '.CycleDuration'] = $RecordFormats[$i]['CycleDuration'];
+
+		}
+	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -92,21 +107,6 @@ class AddLiveAppRecordConfigRequest extends \RpcAcsRequest
 	public function setOssBucket($ossBucket) {
 		$this->ossBucket = $ossBucket;
 		$this->queryParameters["OssBucket"]=$ossBucket;
-	}
-
-	public function getRecordFormats() {
-		return $this->RecordFormats;
-	}
-
-	public function setRecordFormats($RecordFormats) {
-		$this->RecordFormats = $RecordFormats;
-		for ($i = 0; $i < count($RecordFormats); $i ++) {	
-			$this->queryParameters['RecordFormat.' . ($i + 1) . '.Format'] = $RecordFormats[$i]['Format'];
-			$this->queryParameters['RecordFormat.' . ($i + 1) . '.OssObjectPrefix'] = $RecordFormats[$i]['OssObjectPrefix'];
-			$this->queryParameters['RecordFormat.' . ($i + 1) . '.SliceOssObjectPrefix'] = $RecordFormats[$i]['SliceOssObjectPrefix'];
-			$this->queryParameters['RecordFormat.' . ($i + 1) . '.CycleDuration'] = $RecordFormats[$i]['CycleDuration'];
-
-		}
 	}
 	
 }

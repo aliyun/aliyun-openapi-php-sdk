@@ -26,6 +26,8 @@ class StartMultipleStreamMixServiceRequest extends \RpcAcsRequest
 		parent::__construct("live", "2016-11-01", "StartMultipleStreamMixService");
 	}
 
+	private  $streamName;
+
 	private  $securityToken;
 
 	private  $ownerId;
@@ -34,9 +36,16 @@ class StartMultipleStreamMixServiceRequest extends \RpcAcsRequest
 
 	private  $appName;
 
-	private  $streamName;
-
 	private  $mixTemplate;
+
+	public function getStreamName() {
+		return $this->streamName;
+	}
+
+	public function setStreamName($streamName) {
+		$this->streamName = $streamName;
+		$this->queryParameters["StreamName"]=$streamName;
+	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -72,15 +81,6 @@ class StartMultipleStreamMixServiceRequest extends \RpcAcsRequest
 	public function setAppName($appName) {
 		$this->appName = $appName;
 		$this->queryParameters["AppName"]=$appName;
-	}
-
-	public function getStreamName() {
-		return $this->streamName;
-	}
-
-	public function setStreamName($streamName) {
-		$this->streamName = $streamName;
-		$this->queryParameters["StreamName"]=$streamName;
 	}
 
 	public function getMixTemplate() {

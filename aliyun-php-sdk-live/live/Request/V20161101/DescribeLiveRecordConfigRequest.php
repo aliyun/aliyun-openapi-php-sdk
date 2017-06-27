@@ -26,9 +26,13 @@ class DescribeLiveRecordConfigRequest extends \RpcAcsRequest
 		parent::__construct("live", "2016-11-01", "DescribeLiveRecordConfig");
 	}
 
+	private  $pageSize;
+
 	private  $securityToken;
 
 	private  $ownerId;
+
+	private  $order;
 
 	private  $domainName;
 
@@ -36,9 +40,14 @@ class DescribeLiveRecordConfigRequest extends \RpcAcsRequest
 
 	private  $pageNum;
 
-	private  $pageSize;
+	public function getPageSize() {
+		return $this->pageSize;
+	}
 
-	private  $order;
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -56,6 +65,15 @@ class DescribeLiveRecordConfigRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getOrder() {
+		return $this->order;
+	}
+
+	public function setOrder($order) {
+		$this->order = $order;
+		$this->queryParameters["Order"]=$order;
 	}
 
 	public function getDomainName() {
@@ -83,24 +101,6 @@ class DescribeLiveRecordConfigRequest extends \RpcAcsRequest
 	public function setPageNum($pageNum) {
 		$this->pageNum = $pageNum;
 		$this->queryParameters["PageNum"]=$pageNum;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getOrder() {
-		return $this->order;
-	}
-
-	public function setOrder($order) {
-		$this->order = $order;
-		$this->queryParameters["Order"]=$order;
 	}
 	
 }

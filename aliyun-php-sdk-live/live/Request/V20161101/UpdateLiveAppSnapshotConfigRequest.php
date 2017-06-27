@@ -26,6 +26,10 @@ class UpdateLiveAppSnapshotConfigRequest extends \RpcAcsRequest
 		parent::__construct("live", "2016-11-01", "UpdateLiveAppSnapshotConfig");
 	}
 
+	private  $overwriteOssObject;
+
+	private  $sequenceOssObject;
+
 	private  $securityToken;
 
 	private  $ownerId;
@@ -34,15 +38,29 @@ class UpdateLiveAppSnapshotConfigRequest extends \RpcAcsRequest
 
 	private  $appName;
 
-	private  $timeInterval;
-
 	private  $ossEndpoint;
 
 	private  $ossBucket;
 
-	private  $overwriteOssObject;
+	private  $timeInterval;
 
-	private  $sequenceOssObject;
+	public function getOverwriteOssObject() {
+		return $this->overwriteOssObject;
+	}
+
+	public function setOverwriteOssObject($overwriteOssObject) {
+		$this->overwriteOssObject = $overwriteOssObject;
+		$this->queryParameters["OverwriteOssObject"]=$overwriteOssObject;
+	}
+
+	public function getSequenceOssObject() {
+		return $this->sequenceOssObject;
+	}
+
+	public function setSequenceOssObject($sequenceOssObject) {
+		$this->sequenceOssObject = $sequenceOssObject;
+		$this->queryParameters["SequenceOssObject"]=$sequenceOssObject;
+	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -80,15 +98,6 @@ class UpdateLiveAppSnapshotConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["AppName"]=$appName;
 	}
 
-	public function getTimeInterval() {
-		return $this->timeInterval;
-	}
-
-	public function setTimeInterval($timeInterval) {
-		$this->timeInterval = $timeInterval;
-		$this->queryParameters["TimeInterval"]=$timeInterval;
-	}
-
 	public function getOssEndpoint() {
 		return $this->ossEndpoint;
 	}
@@ -107,22 +116,13 @@ class UpdateLiveAppSnapshotConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["OssBucket"]=$ossBucket;
 	}
 
-	public function getOverwriteOssObject() {
-		return $this->overwriteOssObject;
+	public function getTimeInterval() {
+		return $this->timeInterval;
 	}
 
-	public function setOverwriteOssObject($overwriteOssObject) {
-		$this->overwriteOssObject = $overwriteOssObject;
-		$this->queryParameters["OverwriteOssObject"]=$overwriteOssObject;
-	}
-
-	public function getSequenceOssObject() {
-		return $this->sequenceOssObject;
-	}
-
-	public function setSequenceOssObject($sequenceOssObject) {
-		$this->sequenceOssObject = $sequenceOssObject;
-		$this->queryParameters["SequenceOssObject"]=$sequenceOssObject;
+	public function setTimeInterval($timeInterval) {
+		$this->timeInterval = $timeInterval;
+		$this->queryParameters["TimeInterval"]=$timeInterval;
 	}
 	
 }

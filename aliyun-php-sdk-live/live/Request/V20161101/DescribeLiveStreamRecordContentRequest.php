@@ -26,6 +26,8 @@ class DescribeLiveStreamRecordContentRequest extends \RpcAcsRequest
 		parent::__construct("live", "2016-11-01", "DescribeLiveStreamRecordContent");
 	}
 
+	private  $streamName;
+
 	private  $securityToken;
 
 	private  $ownerId;
@@ -34,11 +36,18 @@ class DescribeLiveStreamRecordContentRequest extends \RpcAcsRequest
 
 	private  $appName;
 
-	private  $streamName;
+	private  $endTime;
 
 	private  $startTime;
 
-	private  $endTime;
+	public function getStreamName() {
+		return $this->streamName;
+	}
+
+	public function setStreamName($streamName) {
+		$this->streamName = $streamName;
+		$this->queryParameters["StreamName"]=$streamName;
+	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -76,13 +85,13 @@ class DescribeLiveStreamRecordContentRequest extends \RpcAcsRequest
 		$this->queryParameters["AppName"]=$appName;
 	}
 
-	public function getStreamName() {
-		return $this->streamName;
+	public function getEndTime() {
+		return $this->endTime;
 	}
 
-	public function setStreamName($streamName) {
-		$this->streamName = $streamName;
-		$this->queryParameters["StreamName"]=$streamName;
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
 	}
 
 	public function getStartTime() {
@@ -92,15 +101,6 @@ class DescribeLiveStreamRecordContentRequest extends \RpcAcsRequest
 	public function setStartTime($startTime) {
 		$this->startTime = $startTime;
 		$this->queryParameters["StartTime"]=$startTime;
-	}
-
-	public function getEndTime() {
-		return $this->endTime;
-	}
-
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
 	}
 	
 }

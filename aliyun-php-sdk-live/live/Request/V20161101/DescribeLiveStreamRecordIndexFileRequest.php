@@ -26,6 +26,10 @@ class DescribeLiveStreamRecordIndexFileRequest extends \RpcAcsRequest
 		parent::__construct("live", "2016-11-01", "DescribeLiveStreamRecordIndexFile");
 	}
 
+	private  $recordId;
+
+	private  $streamName;
+
 	private  $securityToken;
 
 	private  $ownerId;
@@ -34,9 +38,23 @@ class DescribeLiveStreamRecordIndexFileRequest extends \RpcAcsRequest
 
 	private  $appName;
 
-	private  $streamName;
+	public function getRecordId() {
+		return $this->recordId;
+	}
 
-	private  $recordId;
+	public function setRecordId($recordId) {
+		$this->recordId = $recordId;
+		$this->queryParameters["RecordId"]=$recordId;
+	}
+
+	public function getStreamName() {
+		return $this->streamName;
+	}
+
+	public function setStreamName($streamName) {
+		$this->streamName = $streamName;
+		$this->queryParameters["StreamName"]=$streamName;
+	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -72,24 +90,6 @@ class DescribeLiveStreamRecordIndexFileRequest extends \RpcAcsRequest
 	public function setAppName($appName) {
 		$this->appName = $appName;
 		$this->queryParameters["AppName"]=$appName;
-	}
-
-	public function getStreamName() {
-		return $this->streamName;
-	}
-
-	public function setStreamName($streamName) {
-		$this->streamName = $streamName;
-		$this->queryParameters["StreamName"]=$streamName;
-	}
-
-	public function getRecordId() {
-		return $this->recordId;
-	}
-
-	public function setRecordId($recordId) {
-		$this->recordId = $recordId;
-		$this->queryParameters["RecordId"]=$recordId;
 	}
 	
 }

@@ -34,9 +34,9 @@ class DescribeLiveStreamsControlHistoryRequest extends \RpcAcsRequest
 
 	private  $appName;
 
-	private  $startTime;
-
 	private  $endTime;
+
+	private  $startTime;
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -74,15 +74,6 @@ class DescribeLiveStreamsControlHistoryRequest extends \RpcAcsRequest
 		$this->queryParameters["AppName"]=$appName;
 	}
 
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
-
 	public function getEndTime() {
 		return $this->endTime;
 	}
@@ -90,6 +81,15 @@ class DescribeLiveStreamsControlHistoryRequest extends \RpcAcsRequest
 	public function setEndTime($endTime) {
 		$this->endTime = $endTime;
 		$this->queryParameters["EndTime"]=$endTime;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
 	}
 	
 }

@@ -19,49 +19,45 @@
  */
 namespace live\Request\V20161101;
 
-class DescribeLiveStreamRecordIndexFilesRequest extends \RpcAcsRequest
+class UpdateLiveSnapshotDetectPornConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "DescribeLiveStreamRecordIndexFiles");
+		parent::__construct("live", "2016-11-01", "UpdateLiveSnapshotDetectPornConfig");
 	}
 
-	private  $streamName;
+	private  $ossObject;
 
-	private  $pageSize;
+	private  $interval;
 
 	private  $securityToken;
 
 	private  $ownerId;
 
-	private  $order;
-
 	private  $domainName;
 
 	private  $appName;
 
-	private  $endTime;
+	private  $ossEndpoint;
 
-	private  $startTime;
+	private  $ossBucket;
 
-	private  $pageNum;
-
-	public function getStreamName() {
-		return $this->streamName;
+	public function getOssObject() {
+		return $this->ossObject;
 	}
 
-	public function setStreamName($streamName) {
-		$this->streamName = $streamName;
-		$this->queryParameters["StreamName"]=$streamName;
+	public function setOssObject($ossObject) {
+		$this->ossObject = $ossObject;
+		$this->queryParameters["OssObject"]=$ossObject;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
+	public function getInterval() {
+		return $this->interval;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setInterval($interval) {
+		$this->interval = $interval;
+		$this->queryParameters["Interval"]=$interval;
 	}
 
 	public function getSecurityToken() {
@@ -82,15 +78,6 @@ class DescribeLiveStreamRecordIndexFilesRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getOrder() {
-		return $this->order;
-	}
-
-	public function setOrder($order) {
-		$this->order = $order;
-		$this->queryParameters["Order"]=$order;
-	}
-
 	public function getDomainName() {
 		return $this->domainName;
 	}
@@ -109,31 +96,22 @@ class DescribeLiveStreamRecordIndexFilesRequest extends \RpcAcsRequest
 		$this->queryParameters["AppName"]=$appName;
 	}
 
-	public function getEndTime() {
-		return $this->endTime;
+	public function getOssEndpoint() {
+		return $this->ossEndpoint;
 	}
 
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
+	public function setOssEndpoint($ossEndpoint) {
+		$this->ossEndpoint = $ossEndpoint;
+		$this->queryParameters["OssEndpoint"]=$ossEndpoint;
 	}
 
-	public function getStartTime() {
-		return $this->startTime;
+	public function getOssBucket() {
+		return $this->ossBucket;
 	}
 
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
-
-	public function getPageNum() {
-		return $this->pageNum;
-	}
-
-	public function setPageNum($pageNum) {
-		$this->pageNum = $pageNum;
-		$this->queryParameters["PageNum"]=$pageNum;
+	public function setOssBucket($ossBucket) {
+		$this->ossBucket = $ossBucket;
+		$this->queryParameters["OssBucket"]=$ossBucket;
 	}
 	
 }

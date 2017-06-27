@@ -26,11 +26,20 @@ class DescribeLiveStreamTranscodeInfoRequest extends \RpcAcsRequest
 		parent::__construct("live", "2016-11-01", "DescribeLiveStreamTranscodeInfo");
 	}
 
+	private  $domainTranscodeName;
+
 	private  $securityToken;
 
 	private  $ownerId;
 
-	private  $domainTranscodeName;
+	public function getDomainTranscodeName() {
+		return $this->domainTranscodeName;
+	}
+
+	public function setDomainTranscodeName($domainTranscodeName) {
+		$this->domainTranscodeName = $domainTranscodeName;
+		$this->queryParameters["DomainTranscodeName"]=$domainTranscodeName;
+	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -48,15 +57,6 @@ class DescribeLiveStreamTranscodeInfoRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getDomainTranscodeName() {
-		return $this->domainTranscodeName;
-	}
-
-	public function setDomainTranscodeName($domainTranscodeName) {
-		$this->domainTranscodeName = $domainTranscodeName;
-		$this->queryParameters["DomainTranscodeName"]=$domainTranscodeName;
 	}
 	
 }

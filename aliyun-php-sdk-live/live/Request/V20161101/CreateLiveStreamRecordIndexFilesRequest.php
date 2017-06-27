@@ -26,6 +26,10 @@ class CreateLiveStreamRecordIndexFilesRequest extends \RpcAcsRequest
 		parent::__construct("live", "2016-11-01", "CreateLiveStreamRecordIndexFiles");
 	}
 
+	private  $ossObject;
+
+	private  $streamName;
+
 	private  $securityToken;
 
 	private  $ownerId;
@@ -34,17 +38,31 @@ class CreateLiveStreamRecordIndexFilesRequest extends \RpcAcsRequest
 
 	private  $appName;
 
-	private  $streamName;
-
 	private  $ossEndpoint;
+
+	private  $endTime;
 
 	private  $ossBucket;
 
-	private  $ossObject;
-
 	private  $startTime;
 
-	private  $endTime;
+	public function getOssObject() {
+		return $this->ossObject;
+	}
+
+	public function setOssObject($ossObject) {
+		$this->ossObject = $ossObject;
+		$this->queryParameters["OssObject"]=$ossObject;
+	}
+
+	public function getStreamName() {
+		return $this->streamName;
+	}
+
+	public function setStreamName($streamName) {
+		$this->streamName = $streamName;
+		$this->queryParameters["StreamName"]=$streamName;
+	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -82,15 +100,6 @@ class CreateLiveStreamRecordIndexFilesRequest extends \RpcAcsRequest
 		$this->queryParameters["AppName"]=$appName;
 	}
 
-	public function getStreamName() {
-		return $this->streamName;
-	}
-
-	public function setStreamName($streamName) {
-		$this->streamName = $streamName;
-		$this->queryParameters["StreamName"]=$streamName;
-	}
-
 	public function getOssEndpoint() {
 		return $this->ossEndpoint;
 	}
@@ -98,6 +107,15 @@ class CreateLiveStreamRecordIndexFilesRequest extends \RpcAcsRequest
 	public function setOssEndpoint($ossEndpoint) {
 		$this->ossEndpoint = $ossEndpoint;
 		$this->queryParameters["OssEndpoint"]=$ossEndpoint;
+	}
+
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
 	}
 
 	public function getOssBucket() {
@@ -109,15 +127,6 @@ class CreateLiveStreamRecordIndexFilesRequest extends \RpcAcsRequest
 		$this->queryParameters["OssBucket"]=$ossBucket;
 	}
 
-	public function getOssObject() {
-		return $this->ossObject;
-	}
-
-	public function setOssObject($ossObject) {
-		$this->ossObject = $ossObject;
-		$this->queryParameters["OssObject"]=$ossObject;
-	}
-
 	public function getStartTime() {
 		return $this->startTime;
 	}
@@ -125,15 +134,6 @@ class CreateLiveStreamRecordIndexFilesRequest extends \RpcAcsRequest
 	public function setStartTime($startTime) {
 		$this->startTime = $startTime;
 		$this->queryParameters["StartTime"]=$startTime;
-	}
-
-	public function getEndTime() {
-		return $this->endTime;
-	}
-
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
 	}
 	
 }
