@@ -32,6 +32,8 @@ class UnbindAliasRequest extends \RpcAcsRequest
 
 	private  $deviceId;
 
+	private  $unbindAll;
+
 	public function getAppKey() {
 		return $this->appKey;
 	}
@@ -59,4 +61,12 @@ class UnbindAliasRequest extends \RpcAcsRequest
 		$this->queryParameters["DeviceId"]=$deviceId;
 	}
 	
+	public function getUnbindAll() {
+		return $this->unbindAll;
+	}
+
+	public function setUnbindAll($unbindAll) {
+		$this->unbindAll = $unbindAll;
+		$this->queryParameters["UnbindAll"]=$unbindAll;
+	}
 }
