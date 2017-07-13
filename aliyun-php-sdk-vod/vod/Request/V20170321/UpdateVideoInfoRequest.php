@@ -24,60 +24,43 @@ class UpdateVideoInfoRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("vod", "2017-03-21", "UpdateVideoInfo");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $tags;
 
-	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
-
-	private  $videoId;
+	private  $cateId;
 
 	private  $title;
 
-	private  $tags;
+	private  $resourceOwnerAccount;
 
 	private  $description;
 
 	private  $coverURL;
 
-	private  $cateId;
+	private  $resourceOwnerId;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $ownerId;
+
+	private  $videoId;
+
+	public function getTags() {
+		return $this->tags;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setTags($tags) {
+		$this->tags = $tags;
+		$this->queryParameters["Tags"]=$tags;
 	}
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
+	public function getCateId() {
+		return $this->cateId;
 	}
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getVideoId() {
-		return $this->videoId;
-	}
-
-	public function setVideoId($videoId) {
-		$this->videoId = $videoId;
-		$this->queryParameters["VideoId"]=$videoId;
+	public function setCateId($cateId) {
+		$this->cateId = $cateId;
+		$this->queryParameters["CateId"]=$cateId;
 	}
 
 	public function getTitle() {
@@ -89,13 +72,13 @@ class UpdateVideoInfoRequest extends \RpcAcsRequest
 		$this->queryParameters["Title"]=$title;
 	}
 
-	public function getTags() {
-		return $this->tags;
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
 	}
 
-	public function setTags($tags) {
-		$this->tags = $tags;
-		$this->queryParameters["Tags"]=$tags;
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
 	public function getDescription() {
@@ -116,13 +99,31 @@ class UpdateVideoInfoRequest extends \RpcAcsRequest
 		$this->queryParameters["CoverURL"]=$coverURL;
 	}
 
-	public function getCateId() {
-		return $this->cateId;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setCateId($cateId) {
-		$this->cateId = $cateId;
-		$this->queryParameters["CateId"]=$cateId;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getVideoId() {
+		return $this->videoId;
+	}
+
+	public function setVideoId($videoId) {
+		$this->videoId = $videoId;
+		$this->queryParameters["VideoId"]=$videoId;
 	}
 	
 }

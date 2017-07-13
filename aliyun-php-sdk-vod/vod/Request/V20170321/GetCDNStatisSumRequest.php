@@ -24,38 +24,30 @@ class GetCDNStatisSumRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("vod", "2017-03-21", "GetCDNStatisSum");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerId;
-
-	private  $resourceOwnerAccount;
-
-	private  $ownerAccount;
-
-	private  $startStatisTime;
-
-	private  $endStatisTime;
 
 	private  $level;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $resourceOwnerAccount;
+
+	private  $endStatisTime;
+
+	private  $startStatisTime;
+
+	private  $resourceOwnerId;
+
+	private  $ownerAccount;
+
+	private  $ownerId;
+
+	public function getLevel() {
+		return $this->level;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setLevel($level) {
+		$this->level = $level;
+		$this->queryParameters["Level"]=$level;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -67,13 +59,13 @@ class GetCDNStatisSumRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getEndStatisTime() {
+		return $this->endStatisTime;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setEndStatisTime($endStatisTime) {
+		$this->endStatisTime = $endStatisTime;
+		$this->queryParameters["EndStatisTime"]=$endStatisTime;
 	}
 
 	public function getStartStatisTime() {
@@ -85,22 +77,31 @@ class GetCDNStatisSumRequest extends \RpcAcsRequest
 		$this->queryParameters["StartStatisTime"]=$startStatisTime;
 	}
 
-	public function getEndStatisTime() {
-		return $this->endStatisTime;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setEndStatisTime($endStatisTime) {
-		$this->endStatisTime = $endStatisTime;
-		$this->queryParameters["EndStatisTime"]=$endStatisTime;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getLevel() {
-		return $this->level;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setLevel($level) {
-		$this->level = $level;
-		$this->queryParameters["Level"]=$level;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }
