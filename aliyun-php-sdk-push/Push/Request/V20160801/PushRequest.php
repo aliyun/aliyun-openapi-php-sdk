@@ -78,6 +78,8 @@ class PushRequest extends \RpcAcsRequest
 
 	private  $androidExtParameters;
 
+	private  $androidRemind;
+
 	private  $iOSApnsEnv;
 
 	private  $iOSRemind;
@@ -330,6 +332,15 @@ class PushRequest extends \RpcAcsRequest
 	public function setAndroidExtParameters($androidExtParameters) {
 		$this->androidExtParameters = $androidExtParameters;
 		$this->queryParameters["AndroidExtParameters"]=$androidExtParameters;
+	}
+
+	public function getAndroidRemind() {
+		return $this->androidRemind;
+	}
+
+	public function setAndroidRemind($androidRemind) {
+		$this->androidRemind = $androidRemind;
+		$this->queryParameters["AndroidRemind"]=$androidRemind;
 	}
 
 	public function getiOSApnsEnv() {
