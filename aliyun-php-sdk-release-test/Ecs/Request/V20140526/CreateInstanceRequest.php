@@ -41,6 +41,8 @@ class CreateInstanceRequest extends \RpcAcsRequest
 
 	private  $tag1Value;
 
+	private  $resourceGroupId;
+
 	private  $hostName;
 
 	private  $password;
@@ -186,6 +188,15 @@ class CreateInstanceRequest extends \RpcAcsRequest
 	public function setTag1Value($tag1Value) {
 		$this->tag1Value = $tag1Value;
 		$this->queryParameters["Tag.1.Value"]=$tag1Value;
+	}
+
+	public function getResourceGroupId() {
+		return $this->resourceGroupId;
+	}
+
+	public function setResourceGroupId($resourceGroupId) {
+		$this->resourceGroupId = $resourceGroupId;
+		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
 	}
 
 	public function getHostName() {

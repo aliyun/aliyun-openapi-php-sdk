@@ -49,6 +49,8 @@ class DescribeDisksRequest extends \RpcAcsRequest
 
 	private  $deleteAutoSnapshot;
 
+	private  $resourceGroupId;
+
 	private  $diskChargeType;
 
 	private  $lockReason;
@@ -196,6 +198,15 @@ class DescribeDisksRequest extends \RpcAcsRequest
 	public function setDeleteAutoSnapshot($deleteAutoSnapshot) {
 		$this->deleteAutoSnapshot = $deleteAutoSnapshot;
 		$this->queryParameters["DeleteAutoSnapshot"]=$deleteAutoSnapshot;
+	}
+
+	public function getResourceGroupId() {
+		return $this->resourceGroupId;
+	}
+
+	public function setResourceGroupId($resourceGroupId) {
+		$this->resourceGroupId = $resourceGroupId;
+		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
 	}
 
 	public function getDiskChargeType() {
