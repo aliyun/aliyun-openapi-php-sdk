@@ -21,10 +21,10 @@ abstract class RpcAcsRequest extends AcsRequest
 {
     private $dateTimeFormat = 'Y-m-d\TH:i:s\Z';
     private $domainParameters = array();
-    
-    public function __construct($product, $version, $actionName)
+
+    function  __construct($product, $version, $actionName, $locationServiceCode = null, $locationEndpointType = "openAPI")
     {
-        parent::__construct($product, $version, $actionName);
+        parent::__construct($product, $version, $actionName, $locationServiceCode, $locationEndpointType);
         $this->initialize();
     }
     
@@ -33,7 +33,6 @@ abstract class RpcAcsRequest extends AcsRequest
         $this->setMethod("GET");
         $this->setAcceptFormat("JSON");
     }
-    
 
     private function prepareValue($value)
     {

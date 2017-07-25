@@ -26,9 +26,9 @@ abstract class RoaAcsRequest extends AcsRequest
     private static $headerSeparator = "\n";
     private static $querySeprator = "&";
     
-    public function __construct($product, $version, $actionName)
+    function  __construct($product, $version, $actionName, $locationServiceCode = null, $locationEndpointType = "openAPI")
     {
-        parent::__construct($product, $version, $actionName);
+        parent::__construct($product, $version, $actionName, $locationServiceCode, $locationEndpointType);
         $this->setVersion($version);
         $this->initialize();
     }
