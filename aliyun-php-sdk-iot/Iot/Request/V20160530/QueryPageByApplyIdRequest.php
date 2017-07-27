@@ -24,21 +24,22 @@ class QueryPageByApplyIdRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Iot", "2016-05-30", "QueryPageByApplyId");
+		$this->setMethod("POST");
 	}
-
-	private  $currenPage;
-
-	private  $pageSize;
 
 	private  $applyId;
 
-	public function getCurrenPage() {
-		return $this->currenPage;
+	private  $pageSize;
+
+	private  $currenPage;
+
+	public function getApplyId() {
+		return $this->applyId;
 	}
 
-	public function setCurrenPage($currenPage) {
-		$this->currenPage = $currenPage;
-		$this->queryParameters["CurrenPage"]=$currenPage;
+	public function setApplyId($applyId) {
+		$this->applyId = $applyId;
+		$this->queryParameters["ApplyId"]=$applyId;
 	}
 
 	public function getPageSize() {
@@ -50,13 +51,13 @@ class QueryPageByApplyIdRequest extends \RpcAcsRequest
 		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
-	public function getApplyId() {
-		return $this->applyId;
+	public function getCurrenPage() {
+		return $this->currenPage;
 	}
 
-	public function setApplyId($applyId) {
-		$this->applyId = $applyId;
-		$this->queryParameters["ApplyId"]=$applyId;
+	public function setCurrenPage($currenPage) {
+		$this->currenPage = $currenPage;
+		$this->queryParameters["CurrenPage"]=$currenPage;
 	}
 	
 }

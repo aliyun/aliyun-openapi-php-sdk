@@ -24,6 +24,7 @@ class ServerOnlineRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Iot", "2016-05-30", "ServerOnline");
+		$this->setMethod("POST");
 	}
 
 	private  $productKey;

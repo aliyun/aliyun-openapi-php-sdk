@@ -24,13 +24,23 @@ class DeviceRevokeByIdRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Iot", "2016-05-30", "DeviceRevokeById");
+		$this->setMethod("POST");
 	}
+
+	private  $deviceName;
 
 	private  $productKey;
 
 	private  $ruleId;
 
-	private  $deviceName;
+	public function getDeviceName() {
+		return $this->deviceName;
+	}
+
+	public function setDeviceName($deviceName) {
+		$this->deviceName = $deviceName;
+		$this->queryParameters["DeviceName"]=$deviceName;
+	}
 
 	public function getProductKey() {
 		return $this->productKey;
@@ -48,15 +58,6 @@ class DeviceRevokeByIdRequest extends \RpcAcsRequest
 	public function setRuleId($ruleId) {
 		$this->ruleId = $ruleId;
 		$this->queryParameters["RuleId"]=$ruleId;
-	}
-
-	public function getDeviceName() {
-		return $this->deviceName;
-	}
-
-	public function setDeviceName($deviceName) {
-		$this->deviceName = $deviceName;
-		$this->queryParameters["DeviceName"]=$deviceName;
 	}
 	
 }

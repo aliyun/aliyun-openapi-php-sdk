@@ -17,25 +17,47 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Iot\Request\V20160530;
+namespace Iot\Request\V20170420;
 
-class GetCatsRequest extends \RpcAcsRequest
+class QueryPageByApplyIdRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Iot", "2016-05-30", "GetCats");
+		parent::__construct("Iot", "2017-04-20", "QueryPageByApplyId");
 		$this->setMethod("POST");
 	}
 
-	private  $rootId;
+	private  $applyId;
 
-	public function getRootId() {
-		return $this->rootId;
+	private  $pageSize;
+
+	private  $currentPage;
+
+	public function getApplyId() {
+		return $this->applyId;
 	}
 
-	public function setRootId($rootId) {
-		$this->rootId = $rootId;
-		$this->queryParameters["RootId"]=$rootId;
+	public function setApplyId($applyId) {
+		$this->applyId = $applyId;
+		$this->queryParameters["ApplyId"]=$applyId;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
+	public function getCurrentPage() {
+		return $this->currentPage;
+	}
+
+	public function setCurrentPage($currentPage) {
+		$this->currentPage = $currentPage;
+		$this->queryParameters["CurrentPage"]=$currentPage;
 	}
 	
 }

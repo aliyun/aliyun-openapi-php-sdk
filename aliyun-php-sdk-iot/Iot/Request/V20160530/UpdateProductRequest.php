@@ -24,17 +24,27 @@ class UpdateProductRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Iot", "2016-05-30", "UpdateProduct");
+		$this->setMethod("POST");
 	}
-
-	private  $productName;
-
-	private  $productDesc;
-
-	private  $extProps;
 
 	private  $catId;
 
+	private  $productName;
+
+	private  $extProps;
+
 	private  $productKey;
+
+	private  $productDesc;
+
+	public function getCatId() {
+		return $this->catId;
+	}
+
+	public function setCatId($catId) {
+		$this->catId = $catId;
+		$this->queryParameters["CatId"]=$catId;
+	}
 
 	public function getProductName() {
 		return $this->productName;
@@ -43,15 +53,6 @@ class UpdateProductRequest extends \RpcAcsRequest
 	public function setProductName($productName) {
 		$this->productName = $productName;
 		$this->queryParameters["ProductName"]=$productName;
-	}
-
-	public function getProductDesc() {
-		return $this->productDesc;
-	}
-
-	public function setProductDesc($productDesc) {
-		$this->productDesc = $productDesc;
-		$this->queryParameters["ProductDesc"]=$productDesc;
 	}
 
 	public function getExtProps() {
@@ -63,15 +64,6 @@ class UpdateProductRequest extends \RpcAcsRequest
 		$this->queryParameters["ExtProps"]=$extProps;
 	}
 
-	public function getCatId() {
-		return $this->catId;
-	}
-
-	public function setCatId($catId) {
-		$this->catId = $catId;
-		$this->queryParameters["CatId"]=$catId;
-	}
-
 	public function getProductKey() {
 		return $this->productKey;
 	}
@@ -79,6 +71,15 @@ class UpdateProductRequest extends \RpcAcsRequest
 	public function setProductKey($productKey) {
 		$this->productKey = $productKey;
 		$this->queryParameters["ProductKey"]=$productKey;
+	}
+
+	public function getProductDesc() {
+		return $this->productDesc;
+	}
+
+	public function setProductDesc($productDesc) {
+		$this->productDesc = $productDesc;
+		$this->queryParameters["ProductDesc"]=$productDesc;
 	}
 	
 }

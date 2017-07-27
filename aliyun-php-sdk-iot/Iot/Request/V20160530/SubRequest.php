@@ -24,15 +24,27 @@ class SubRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Iot", "2016-05-30", "Sub");
+		$this->setMethod("POST");
 	}
+
+	private  $Topics;
 
 	private  $productKey;
 
-	private  $subCallback;
-
 	private  $topicList;
 
-	private  $Topics;
+	private  $subCallback;
+
+	public function getTopics() {
+		return $this->Topics;
+	}
+
+	public function setTopics($Topics) {
+		$this->Topics = $Topics;
+		for ($i = 0; $i < count($Topics); $i ++) {	
+			$this->queryParameters["Topic.".($i+1)] = $Topics[$i];
+		}
+	}
 
 	public function getProductKey() {
 		return $this->productKey;
@@ -41,15 +53,6 @@ class SubRequest extends \RpcAcsRequest
 	public function setProductKey($productKey) {
 		$this->productKey = $productKey;
 		$this->queryParameters["ProductKey"]=$productKey;
-	}
-
-	public function getSubCallback() {
-		return $this->subCallback;
-	}
-
-	public function setSubCallback($subCallback) {
-		$this->subCallback = $subCallback;
-		$this->queryParameters["SubCallback"]=$subCallback;
 	}
 
 	public function getTopicList() {
@@ -61,15 +64,13 @@ class SubRequest extends \RpcAcsRequest
 		$this->queryParameters["TopicList"]=$topicList;
 	}
 
-	public function getTopics() {
-		return $this->Topics;
+	public function getSubCallback() {
+		return $this->subCallback;
 	}
 
-	public function setTopics($Topics) {
-		$this->Topics = $Topics;
-		for ($i = 0; $i < count($Topics); $i ++) {	
-			$this->queryParameters["Topic.".($i+1)] = $Topics[$i];
-		}
+	public function setSubCallback($subCallback) {
+		$this->subCallback = $subCallback;
+		$this->queryParameters["SubCallback"]=$subCallback;
 	}
 	
 }

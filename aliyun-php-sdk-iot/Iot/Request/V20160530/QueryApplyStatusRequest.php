@@ -24,6 +24,7 @@ class QueryApplyStatusRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Iot", "2016-05-30", "QueryApplyStatus");
+		$this->setMethod("POST");
 	}
 
 	private  $applyId;

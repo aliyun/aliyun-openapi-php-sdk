@@ -17,40 +17,51 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Iot\Request\V20160530;
+namespace Iot\Request\V20170420;
 
-class RevertRpcRequest extends \RpcAcsRequest
+class UpdateProductRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Iot", "2016-05-30", "RevertRpc");
+		parent::__construct("Iot", "2017-04-20", "UpdateProduct");
 		$this->setMethod("POST");
 	}
 
-	private  $rpcContent;
+	private  $catId;
 
-	private  $deviceName;
+	private  $productName;
+
+	private  $extProps;
 
 	private  $productKey;
 
-	private  $timeOut;
+	private  $productDesc;
 
-	public function getRpcContent() {
-		return $this->rpcContent;
+	public function getCatId() {
+		return $this->catId;
 	}
 
-	public function setRpcContent($rpcContent) {
-		$this->rpcContent = $rpcContent;
-		$this->queryParameters["RpcContent"]=$rpcContent;
+	public function setCatId($catId) {
+		$this->catId = $catId;
+		$this->queryParameters["CatId"]=$catId;
 	}
 
-	public function getDeviceName() {
-		return $this->deviceName;
+	public function getProductName() {
+		return $this->productName;
 	}
 
-	public function setDeviceName($deviceName) {
-		$this->deviceName = $deviceName;
-		$this->queryParameters["DeviceName"]=$deviceName;
+	public function setProductName($productName) {
+		$this->productName = $productName;
+		$this->queryParameters["ProductName"]=$productName;
+	}
+
+	public function getExtProps() {
+		return $this->extProps;
+	}
+
+	public function setExtProps($extProps) {
+		$this->extProps = $extProps;
+		$this->queryParameters["ExtProps"]=$extProps;
 	}
 
 	public function getProductKey() {
@@ -62,13 +73,13 @@ class RevertRpcRequest extends \RpcAcsRequest
 		$this->queryParameters["ProductKey"]=$productKey;
 	}
 
-	public function getTimeOut() {
-		return $this->timeOut;
+	public function getProductDesc() {
+		return $this->productDesc;
 	}
 
-	public function setTimeOut($timeOut) {
-		$this->timeOut = $timeOut;
-		$this->queryParameters["TimeOut"]=$timeOut;
+	public function setProductDesc($productDesc) {
+		$this->productDesc = $productDesc;
+		$this->queryParameters["ProductDesc"]=$productDesc;
 	}
 	
 }

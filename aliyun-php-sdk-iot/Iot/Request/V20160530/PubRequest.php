@@ -24,23 +24,24 @@ class PubRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Iot", "2016-05-30", "Pub");
+		$this->setMethod("POST");
 	}
-
-	private  $productKey;
-
-	private  $qos;
 
 	private  $topicFullName;
 
+	private  $qos;
+
 	private  $messageContent;
 
-	public function getProductKey() {
-		return $this->productKey;
+	private  $productKey;
+
+	public function getTopicFullName() {
+		return $this->topicFullName;
 	}
 
-	public function setProductKey($productKey) {
-		$this->productKey = $productKey;
-		$this->queryParameters["ProductKey"]=$productKey;
+	public function setTopicFullName($topicFullName) {
+		$this->topicFullName = $topicFullName;
+		$this->queryParameters["TopicFullName"]=$topicFullName;
 	}
 
 	public function getQos() {
@@ -52,15 +53,6 @@ class PubRequest extends \RpcAcsRequest
 		$this->queryParameters["Qos"]=$qos;
 	}
 
-	public function getTopicFullName() {
-		return $this->topicFullName;
-	}
-
-	public function setTopicFullName($topicFullName) {
-		$this->topicFullName = $topicFullName;
-		$this->queryParameters["TopicFullName"]=$topicFullName;
-	}
-
 	public function getMessageContent() {
 		return $this->messageContent;
 	}
@@ -68,6 +60,15 @@ class PubRequest extends \RpcAcsRequest
 	public function setMessageContent($messageContent) {
 		$this->messageContent = $messageContent;
 		$this->queryParameters["MessageContent"]=$messageContent;
+	}
+
+	public function getProductKey() {
+		return $this->productKey;
+	}
+
+	public function setProductKey($productKey) {
+		$this->productKey = $productKey;
+		$this->queryParameters["ProductKey"]=$productKey;
 	}
 	
 }

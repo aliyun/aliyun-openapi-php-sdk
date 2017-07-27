@@ -17,25 +17,25 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Iot\Request\V20160530;
+namespace Iot\Request\V20170420;
 
-class GetCatsRequest extends \RpcAcsRequest
+class QueryApplyStatusRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Iot", "2016-05-30", "GetCats");
+		parent::__construct("Iot", "2017-04-20", "QueryApplyStatus");
 		$this->setMethod("POST");
 	}
 
-	private  $rootId;
+	private  $applyId;
 
-	public function getRootId() {
-		return $this->rootId;
+	public function getApplyId() {
+		return $this->applyId;
 	}
 
-	public function setRootId($rootId) {
-		$this->rootId = $rootId;
-		$this->queryParameters["RootId"]=$rootId;
+	public function setApplyId($applyId) {
+		$this->applyId = $applyId;
+		$this->queryParameters["ApplyId"]=$applyId;
 	}
 	
 }

@@ -24,6 +24,7 @@ class RegistDeviceRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Iot", "2016-05-30", "RegistDevice");
+		$this->setMethod("POST");
 	}
 
 	private  $deviceName;

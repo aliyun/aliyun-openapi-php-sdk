@@ -24,6 +24,7 @@ class QueryDeviceByNameRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Iot", "2016-05-30", "QueryDeviceByName");
+		$this->setMethod("POST");
 	}
 
 	private  $deviceName;

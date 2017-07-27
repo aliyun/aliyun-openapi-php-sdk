@@ -24,13 +24,25 @@ class UnSubRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Iot", "2016-05-30", "UnSub");
+		$this->setMethod("POST");
 	}
+
+	private  $Topics;
 
 	private  $productKey;
 
 	private  $topicList;
 
-	private  $Topics;
+	public function getTopics() {
+		return $this->Topics;
+	}
+
+	public function setTopics($Topics) {
+		$this->Topics = $Topics;
+		for ($i = 0; $i < count($Topics); $i ++) {	
+			$this->queryParameters["Topic.".($i+1)] = $Topics[$i];
+		}
+	}
 
 	public function getProductKey() {
 		return $this->productKey;
@@ -48,17 +60,6 @@ class UnSubRequest extends \RpcAcsRequest
 	public function setTopicList($topicList) {
 		$this->topicList = $topicList;
 		$this->queryParameters["TopicList"]=$topicList;
-	}
-
-	public function getTopics() {
-		return $this->Topics;
-	}
-
-	public function setTopics($Topics) {
-		$this->Topics = $Topics;
-		for ($i = 0; $i < count($Topics); $i ++) {	
-			$this->queryParameters["Topic.".($i+1)] = $Topics[$i];
-		}
 	}
 	
 }

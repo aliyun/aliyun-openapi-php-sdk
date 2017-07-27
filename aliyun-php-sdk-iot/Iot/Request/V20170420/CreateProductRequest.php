@@ -17,13 +17,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Iot\Request\V20160530;
+namespace Iot\Request\V20170420;
 
 class CreateProductRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Iot", "2016-05-30", "CreateProduct");
+		parent::__construct("Iot", "2017-04-20", "CreateProduct");
 		$this->setMethod("POST");
 	}
 

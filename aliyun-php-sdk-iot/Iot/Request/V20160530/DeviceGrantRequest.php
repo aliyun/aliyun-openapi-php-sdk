@@ -24,24 +24,16 @@ class DeviceGrantRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Iot", "2016-05-30", "DeviceGrant");
+		$this->setMethod("POST");
 	}
-
-	private  $productKey;
 
 	private  $topicFullName;
 
 	private  $deviceName;
 
+	private  $productKey;
+
 	private  $grantType;
-
-	public function getProductKey() {
-		return $this->productKey;
-	}
-
-	public function setProductKey($productKey) {
-		$this->productKey = $productKey;
-		$this->queryParameters["ProductKey"]=$productKey;
-	}
 
 	public function getTopicFullName() {
 		return $this->topicFullName;
@@ -59,6 +51,15 @@ class DeviceGrantRequest extends \RpcAcsRequest
 	public function setDeviceName($deviceName) {
 		$this->deviceName = $deviceName;
 		$this->queryParameters["DeviceName"]=$deviceName;
+	}
+
+	public function getProductKey() {
+		return $this->productKey;
+	}
+
+	public function setProductKey($productKey) {
+		$this->productKey = $productKey;
+		$this->queryParameters["ProductKey"]=$productKey;
 	}
 
 	public function getGrantType() {

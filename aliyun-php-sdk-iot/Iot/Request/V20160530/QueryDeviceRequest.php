@@ -24,22 +24,14 @@ class QueryDeviceRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Iot", "2016-05-30", "QueryDevice");
+		$this->setMethod("POST");
 	}
-
-	private  $productKey;
 
 	private  $pageSize;
 
 	private  $currentPage;
 
-	public function getProductKey() {
-		return $this->productKey;
-	}
-
-	public function setProductKey($productKey) {
-		$this->productKey = $productKey;
-		$this->queryParameters["ProductKey"]=$productKey;
-	}
+	private  $productKey;
 
 	public function getPageSize() {
 		return $this->pageSize;
@@ -57,6 +49,15 @@ class QueryDeviceRequest extends \RpcAcsRequest
 	public function setCurrentPage($currentPage) {
 		$this->currentPage = $currentPage;
 		$this->queryParameters["CurrentPage"]=$currentPage;
+	}
+
+	public function getProductKey() {
+		return $this->productKey;
+	}
+
+	public function setProductKey($productKey) {
+		$this->productKey = $productKey;
+		$this->queryParameters["ProductKey"]=$productKey;
 	}
 	
 }

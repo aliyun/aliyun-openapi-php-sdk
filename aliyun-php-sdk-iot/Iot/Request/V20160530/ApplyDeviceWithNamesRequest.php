@@ -24,20 +24,12 @@ class ApplyDeviceWithNamesRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Iot", "2016-05-30", "ApplyDeviceWithNames");
+		$this->setMethod("POST");
 	}
-
-	private  $productKey;
 
 	private  $DeviceNames;
 
-	public function getProductKey() {
-		return $this->productKey;
-	}
-
-	public function setProductKey($productKey) {
-		$this->productKey = $productKey;
-		$this->queryParameters["ProductKey"]=$productKey;
-	}
+	private  $productKey;
 
 	public function getDeviceNames() {
 		return $this->DeviceNames;
@@ -48,6 +40,15 @@ class ApplyDeviceWithNamesRequest extends \RpcAcsRequest
 		for ($i = 0; $i < count($DeviceNames); $i ++) {	
 			$this->queryParameters["DeviceName.".($i+1)] = $DeviceNames[$i];
 		}
+	}
+
+	public function getProductKey() {
+		return $this->productKey;
+	}
+
+	public function setProductKey($productKey) {
+		$this->productKey = $productKey;
+		$this->queryParameters["ProductKey"]=$productKey;
 	}
 	
 }

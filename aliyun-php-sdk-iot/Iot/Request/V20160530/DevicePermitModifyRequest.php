@@ -24,17 +24,36 @@ class DevicePermitModifyRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Iot", "2016-05-30", "DevicePermitModify");
+		$this->setMethod("POST");
 	}
+
+	private  $topicFullName;
+
+	private  $deviceName;
 
 	private  $productKey;
 
 	private  $ruleId;
 
-	private  $deviceName;
-
-	private  $topicFullName;
-
 	private  $grantType;
+
+	public function getTopicFullName() {
+		return $this->topicFullName;
+	}
+
+	public function setTopicFullName($topicFullName) {
+		$this->topicFullName = $topicFullName;
+		$this->queryParameters["TopicFullName"]=$topicFullName;
+	}
+
+	public function getDeviceName() {
+		return $this->deviceName;
+	}
+
+	public function setDeviceName($deviceName) {
+		$this->deviceName = $deviceName;
+		$this->queryParameters["DeviceName"]=$deviceName;
+	}
 
 	public function getProductKey() {
 		return $this->productKey;
@@ -52,24 +71,6 @@ class DevicePermitModifyRequest extends \RpcAcsRequest
 	public function setRuleId($ruleId) {
 		$this->ruleId = $ruleId;
 		$this->queryParameters["RuleId"]=$ruleId;
-	}
-
-	public function getDeviceName() {
-		return $this->deviceName;
-	}
-
-	public function setDeviceName($deviceName) {
-		$this->deviceName = $deviceName;
-		$this->queryParameters["DeviceName"]=$deviceName;
-	}
-
-	public function getTopicFullName() {
-		return $this->topicFullName;
-	}
-
-	public function setTopicFullName($topicFullName) {
-		$this->topicFullName = $topicFullName;
-		$this->queryParameters["TopicFullName"]=$topicFullName;
 	}
 
 	public function getGrantType() {

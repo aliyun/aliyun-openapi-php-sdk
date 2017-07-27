@@ -17,31 +17,31 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Iot\Request\V20160530;
+namespace Iot\Request\V20170420;
 
-class RevertRpcRequest extends \RpcAcsRequest
+class RRpcRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Iot", "2016-05-30", "RevertRpc");
+		parent::__construct("Iot", "2017-04-20", "RRpc");
 		$this->setMethod("POST");
 	}
 
-	private  $rpcContent;
+	private  $requestBase64Byte;
 
 	private  $deviceName;
 
 	private  $productKey;
 
-	private  $timeOut;
+	private  $timeout;
 
-	public function getRpcContent() {
-		return $this->rpcContent;
+	public function getRequestBase64Byte() {
+		return $this->requestBase64Byte;
 	}
 
-	public function setRpcContent($rpcContent) {
-		$this->rpcContent = $rpcContent;
-		$this->queryParameters["RpcContent"]=$rpcContent;
+	public function setRequestBase64Byte($requestBase64Byte) {
+		$this->requestBase64Byte = $requestBase64Byte;
+		$this->queryParameters["RequestBase64Byte"]=$requestBase64Byte;
 	}
 
 	public function getDeviceName() {
@@ -62,13 +62,13 @@ class RevertRpcRequest extends \RpcAcsRequest
 		$this->queryParameters["ProductKey"]=$productKey;
 	}
 
-	public function getTimeOut() {
-		return $this->timeOut;
+	public function getTimeout() {
+		return $this->timeout;
 	}
 
-	public function setTimeOut($timeOut) {
-		$this->timeOut = $timeOut;
-		$this->queryParameters["TimeOut"]=$timeOut;
+	public function setTimeout($timeout) {
+		$this->timeout = $timeout;
+		$this->queryParameters["Timeout"]=$timeout;
 	}
 	
 }

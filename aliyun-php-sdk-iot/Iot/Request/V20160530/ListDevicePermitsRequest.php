@@ -24,20 +24,12 @@ class ListDevicePermitsRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Iot", "2016-05-30", "ListDevicePermits");
+		$this->setMethod("POST");
 	}
-
-	private  $productKey;
 
 	private  $deviceName;
 
-	public function getProductKey() {
-		return $this->productKey;
-	}
-
-	public function setProductKey($productKey) {
-		$this->productKey = $productKey;
-		$this->queryParameters["ProductKey"]=$productKey;
-	}
+	private  $productKey;
 
 	public function getDeviceName() {
 		return $this->deviceName;
@@ -46,6 +38,15 @@ class ListDevicePermitsRequest extends \RpcAcsRequest
 	public function setDeviceName($deviceName) {
 		$this->deviceName = $deviceName;
 		$this->queryParameters["DeviceName"]=$deviceName;
+	}
+
+	public function getProductKey() {
+		return $this->productKey;
+	}
+
+	public function setProductKey($productKey) {
+		$this->productKey = $productKey;
+		$this->queryParameters["ProductKey"]=$productKey;
 	}
 	
 }

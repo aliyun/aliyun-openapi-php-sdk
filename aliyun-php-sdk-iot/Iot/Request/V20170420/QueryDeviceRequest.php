@@ -17,40 +17,38 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Iot\Request\V20160530;
+namespace Iot\Request\V20170420;
 
-class RevertRpcRequest extends \RpcAcsRequest
+class QueryDeviceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Iot", "2016-05-30", "RevertRpc");
+		parent::__construct("Iot", "2017-04-20", "QueryDevice");
 		$this->setMethod("POST");
 	}
 
-	private  $rpcContent;
+	private  $pageSize;
 
-	private  $deviceName;
+	private  $currentPage;
 
 	private  $productKey;
 
-	private  $timeOut;
-
-	public function getRpcContent() {
-		return $this->rpcContent;
+	public function getPageSize() {
+		return $this->pageSize;
 	}
 
-	public function setRpcContent($rpcContent) {
-		$this->rpcContent = $rpcContent;
-		$this->queryParameters["RpcContent"]=$rpcContent;
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
-	public function getDeviceName() {
-		return $this->deviceName;
+	public function getCurrentPage() {
+		return $this->currentPage;
 	}
 
-	public function setDeviceName($deviceName) {
-		$this->deviceName = $deviceName;
-		$this->queryParameters["DeviceName"]=$deviceName;
+	public function setCurrentPage($currentPage) {
+		$this->currentPage = $currentPage;
+		$this->queryParameters["CurrentPage"]=$currentPage;
 	}
 
 	public function getProductKey() {
@@ -60,15 +58,6 @@ class RevertRpcRequest extends \RpcAcsRequest
 	public function setProductKey($productKey) {
 		$this->productKey = $productKey;
 		$this->queryParameters["ProductKey"]=$productKey;
-	}
-
-	public function getTimeOut() {
-		return $this->timeOut;
-	}
-
-	public function setTimeOut($timeOut) {
-		$this->timeOut = $timeOut;
-		$this->queryParameters["TimeOut"]=$timeOut;
 	}
 	
 }
