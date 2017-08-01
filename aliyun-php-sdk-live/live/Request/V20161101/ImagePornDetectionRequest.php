@@ -24,13 +24,14 @@ class ImagePornDetectionRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("live", "2016-11-01", "ImagePornDetection");
+		$this->setMethod("POST");
 	}
 
 	private  $securityToken;
 
-	private  $ownerId;
-
 	private  $imageUrl;
+
+	private  $ownerId;
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -41,15 +42,6 @@ class ImagePornDetectionRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
 	public function getImageUrl() {
 		return $this->imageUrl;
 	}
@@ -57,6 +49,15 @@ class ImagePornDetectionRequest extends \RpcAcsRequest
 	public function setImageUrl($imageUrl) {
 		$this->imageUrl = $imageUrl;
 		$this->queryParameters["ImageUrl"]=$imageUrl;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

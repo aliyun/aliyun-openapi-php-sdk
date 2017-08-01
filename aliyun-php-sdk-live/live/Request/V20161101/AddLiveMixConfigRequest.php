@@ -24,17 +24,18 @@ class AddLiveMixConfigRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("live", "2016-11-01", "AddLiveMixConfig");
+		$this->setMethod("POST");
 	}
 
 	private  $template;
 
-	private  $securityToken;
+	private  $appName;
 
-	private  $ownerId;
+	private  $securityToken;
 
 	private  $domainName;
 
-	private  $appName;
+	private  $ownerId;
 
 	public function getTemplate() {
 		return $this->template;
@@ -43,6 +44,15 @@ class AddLiveMixConfigRequest extends \RpcAcsRequest
 	public function setTemplate($template) {
 		$this->template = $template;
 		$this->queryParameters["Template"]=$template;
+	}
+
+	public function getAppName() {
+		return $this->appName;
+	}
+
+	public function setAppName($appName) {
+		$this->appName = $appName;
+		$this->queryParameters["AppName"]=$appName;
 	}
 
 	public function getSecurityToken() {
@@ -54,15 +64,6 @@ class AddLiveMixConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
 	public function getDomainName() {
 		return $this->domainName;
 	}
@@ -72,13 +73,13 @@ class AddLiveMixConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getAppName() {
-		return $this->appName;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

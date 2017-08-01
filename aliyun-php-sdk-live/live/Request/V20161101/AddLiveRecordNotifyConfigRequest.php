@@ -24,25 +24,35 @@ class AddLiveRecordNotifyConfigRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("live", "2016-11-01", "AddLiveRecordNotifyConfig");
+		$this->setMethod("POST");
 	}
-
-	private  $needStatusNotify;
-
-	private  $notifyUrl;
 
 	private  $securityToken;
 
-	private  $ownerId;
-
 	private  $domainName;
 
-	public function getNeedStatusNotify() {
-		return $this->needStatusNotify;
+	private  $notifyUrl;
+
+	private  $ownerId;
+
+	private  $needStatusNotify;
+
+	public function getSecurityToken() {
+		return $this->securityToken;
 	}
 
-	public function setNeedStatusNotify($needStatusNotify) {
-		$this->needStatusNotify = $needStatusNotify;
-		$this->queryParameters["NeedStatusNotify"]=$needStatusNotify;
+	public function setSecurityToken($securityToken) {
+		$this->securityToken = $securityToken;
+		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
+
+	public function getDomainName() {
+		return $this->domainName;
+	}
+
+	public function setDomainName($domainName) {
+		$this->domainName = $domainName;
+		$this->queryParameters["DomainName"]=$domainName;
 	}
 
 	public function getNotifyUrl() {
@@ -54,15 +64,6 @@ class AddLiveRecordNotifyConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["NotifyUrl"]=$notifyUrl;
 	}
 
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
-
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -72,13 +73,13 @@ class AddLiveRecordNotifyConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getDomainName() {
-		return $this->domainName;
+	public function getNeedStatusNotify() {
+		return $this->needStatusNotify;
 	}
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
+	public function setNeedStatusNotify($needStatusNotify) {
+		$this->needStatusNotify = $needStatusNotify;
+		$this->queryParameters["NeedStatusNotify"]=$needStatusNotify;
 	}
 	
 }

@@ -24,15 +24,25 @@ class DeleteLiveAppRecordConfigRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("live", "2016-11-01", "DeleteLiveAppRecordConfig");
+		$this->setMethod("POST");
 	}
+
+	private  $appName;
 
 	private  $securityToken;
 
-	private  $ownerId;
-
 	private  $domainName;
 
-	private  $appName;
+	private  $ownerId;
+
+	public function getAppName() {
+		return $this->appName;
+	}
+
+	public function setAppName($appName) {
+		$this->appName = $appName;
+		$this->queryParameters["AppName"]=$appName;
+	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -41,15 +51,6 @@ class DeleteLiveAppRecordConfigRequest extends \RpcAcsRequest
 	public function setSecurityToken($securityToken) {
 		$this->securityToken = $securityToken;
 		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getDomainName() {
@@ -61,13 +62,13 @@ class DeleteLiveAppRecordConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getAppName() {
-		return $this->appName;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

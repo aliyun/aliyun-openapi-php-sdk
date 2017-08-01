@@ -24,31 +24,32 @@ class DescribeLiveStreamSnapshotInfoRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("live", "2016-11-01", "DescribeLiveStreamSnapshotInfo");
+		$this->setMethod("POST");
 	}
 
-	private  $streamName;
+	private  $appName;
 
 	private  $securityToken;
 
-	private  $ownerId;
-
 	private  $domainName;
 
-	private  $appName;
+	private  $limit;
 
 	private  $endTime;
 
 	private  $startTime;
 
-	private  $limit;
+	private  $ownerId;
 
-	public function getStreamName() {
-		return $this->streamName;
+	private  $streamName;
+
+	public function getAppName() {
+		return $this->appName;
 	}
 
-	public function setStreamName($streamName) {
-		$this->streamName = $streamName;
-		$this->queryParameters["StreamName"]=$streamName;
+	public function setAppName($appName) {
+		$this->appName = $appName;
+		$this->queryParameters["AppName"]=$appName;
 	}
 
 	public function getSecurityToken() {
@@ -60,15 +61,6 @@ class DescribeLiveStreamSnapshotInfoRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
 	public function getDomainName() {
 		return $this->domainName;
 	}
@@ -78,13 +70,13 @@ class DescribeLiveStreamSnapshotInfoRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getAppName() {
-		return $this->appName;
+	public function getLimit() {
+		return $this->limit;
 	}
 
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
+	public function setLimit($limit) {
+		$this->limit = $limit;
+		$this->queryParameters["Limit"]=$limit;
 	}
 
 	public function getEndTime() {
@@ -105,13 +97,22 @@ class DescribeLiveStreamSnapshotInfoRequest extends \RpcAcsRequest
 		$this->queryParameters["StartTime"]=$startTime;
 	}
 
-	public function getLimit() {
-		return $this->limit;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setLimit($limit) {
-		$this->limit = $limit;
-		$this->queryParameters["Limit"]=$limit;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getStreamName() {
+		return $this->streamName;
+	}
+
+	public function setStreamName($streamName) {
+		$this->streamName = $streamName;
+		$this->queryParameters["StreamName"]=$streamName;
 	}
 	
 }

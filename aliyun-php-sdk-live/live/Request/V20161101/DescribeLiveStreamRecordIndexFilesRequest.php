@@ -24,44 +24,36 @@ class DescribeLiveStreamRecordIndexFilesRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("live", "2016-11-01", "DescribeLiveStreamRecordIndexFiles");
+		$this->setMethod("POST");
 	}
 
-	private  $streamName;
-
-	private  $pageSize;
+	private  $appName;
 
 	private  $securityToken;
 
-	private  $ownerId;
-
-	private  $order;
-
 	private  $domainName;
 
-	private  $appName;
+	private  $pageSize;
 
 	private  $endTime;
 
 	private  $startTime;
 
+	private  $ownerId;
+
 	private  $pageNum;
 
-	public function getStreamName() {
-		return $this->streamName;
+	private  $streamName;
+
+	private  $order;
+
+	public function getAppName() {
+		return $this->appName;
 	}
 
-	public function setStreamName($streamName) {
-		$this->streamName = $streamName;
-		$this->queryParameters["StreamName"]=$streamName;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setAppName($appName) {
+		$this->appName = $appName;
+		$this->queryParameters["AppName"]=$appName;
 	}
 
 	public function getSecurityToken() {
@@ -73,24 +65,6 @@ class DescribeLiveStreamRecordIndexFilesRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getOrder() {
-		return $this->order;
-	}
-
-	public function setOrder($order) {
-		$this->order = $order;
-		$this->queryParameters["Order"]=$order;
-	}
-
 	public function getDomainName() {
 		return $this->domainName;
 	}
@@ -100,13 +74,13 @@ class DescribeLiveStreamRecordIndexFilesRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getAppName() {
-		return $this->appName;
+	public function getPageSize() {
+		return $this->pageSize;
 	}
 
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
 	public function getEndTime() {
@@ -127,6 +101,15 @@ class DescribeLiveStreamRecordIndexFilesRequest extends \RpcAcsRequest
 		$this->queryParameters["StartTime"]=$startTime;
 	}
 
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
 	public function getPageNum() {
 		return $this->pageNum;
 	}
@@ -134,6 +117,24 @@ class DescribeLiveStreamRecordIndexFilesRequest extends \RpcAcsRequest
 	public function setPageNum($pageNum) {
 		$this->pageNum = $pageNum;
 		$this->queryParameters["PageNum"]=$pageNum;
+	}
+
+	public function getStreamName() {
+		return $this->streamName;
+	}
+
+	public function setStreamName($streamName) {
+		$this->streamName = $streamName;
+		$this->queryParameters["StreamName"]=$streamName;
+	}
+
+	public function getOrder() {
+		return $this->order;
+	}
+
+	public function setOrder($order) {
+		$this->order = $order;
+		$this->queryParameters["Order"]=$order;
 	}
 	
 }

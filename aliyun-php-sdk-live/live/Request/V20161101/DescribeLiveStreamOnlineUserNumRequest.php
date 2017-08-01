@@ -24,31 +24,32 @@ class DescribeLiveStreamOnlineUserNumRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("live", "2016-11-01", "DescribeLiveStreamOnlineUserNum");
+		$this->setMethod("POST");
 	}
 
-	private  $streamName;
+	private  $appName;
 
 	private  $securityToken;
 
-	private  $ownerId;
+	private  $hlsSwitch;
 
 	private  $domainName;
-
-	private  $appName;
 
 	private  $endTime;
 
 	private  $startTime;
 
-	private  $hlsSwitch;
+	private  $ownerId;
 
-	public function getStreamName() {
-		return $this->streamName;
+	private  $streamName;
+
+	public function getAppName() {
+		return $this->appName;
 	}
 
-	public function setStreamName($streamName) {
-		$this->streamName = $streamName;
-		$this->queryParameters["StreamName"]=$streamName;
+	public function setAppName($appName) {
+		$this->appName = $appName;
+		$this->queryParameters["AppName"]=$appName;
 	}
 
 	public function getSecurityToken() {
@@ -60,13 +61,13 @@ class DescribeLiveStreamOnlineUserNumRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getHlsSwitch() {
+		return $this->hlsSwitch;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setHlsSwitch($hlsSwitch) {
+		$this->hlsSwitch = $hlsSwitch;
+		$this->queryParameters["HlsSwitch"]=$hlsSwitch;
 	}
 
 	public function getDomainName() {
@@ -76,15 +77,6 @@ class DescribeLiveStreamOnlineUserNumRequest extends \RpcAcsRequest
 	public function setDomainName($domainName) {
 		$this->domainName = $domainName;
 		$this->queryParameters["DomainName"]=$domainName;
-	}
-
-	public function getAppName() {
-		return $this->appName;
-	}
-
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
 	}
 
 	public function getEndTime() {
@@ -105,13 +97,22 @@ class DescribeLiveStreamOnlineUserNumRequest extends \RpcAcsRequest
 		$this->queryParameters["StartTime"]=$startTime;
 	}
 
-	public function getHlsSwitch() {
-		return $this->hlsSwitch;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setHlsSwitch($hlsSwitch) {
-		$this->hlsSwitch = $hlsSwitch;
-		$this->queryParameters["HlsSwitch"]=$hlsSwitch;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getStreamName() {
+		return $this->streamName;
+	}
+
+	public function setStreamName($streamName) {
+		$this->streamName = $streamName;
+		$this->queryParameters["StreamName"]=$streamName;
 	}
 	
 }

@@ -24,25 +24,26 @@ class StopMultipleStreamMixServiceRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("live", "2016-11-01", "StopMultipleStreamMixService");
+		$this->setMethod("POST");
 	}
-
-	private  $streamName;
-
-	private  $securityToken;
-
-	private  $ownerId;
-
-	private  $domainName;
 
 	private  $appName;
 
-	public function getStreamName() {
-		return $this->streamName;
+	private  $securityToken;
+
+	private  $domainName;
+
+	private  $ownerId;
+
+	private  $streamName;
+
+	public function getAppName() {
+		return $this->appName;
 	}
 
-	public function setStreamName($streamName) {
-		$this->streamName = $streamName;
-		$this->queryParameters["StreamName"]=$streamName;
+	public function setAppName($appName) {
+		$this->appName = $appName;
+		$this->queryParameters["AppName"]=$appName;
 	}
 
 	public function getSecurityToken() {
@@ -54,15 +55,6 @@ class StopMultipleStreamMixServiceRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
 	public function getDomainName() {
 		return $this->domainName;
 	}
@@ -72,13 +64,22 @@ class StopMultipleStreamMixServiceRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getAppName() {
-		return $this->appName;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getStreamName() {
+		return $this->streamName;
+	}
+
+	public function setStreamName($streamName) {
+		$this->streamName = $streamName;
+		$this->queryParameters["StreamName"]=$streamName;
 	}
 	
 }

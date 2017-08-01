@@ -24,13 +24,14 @@ class DeleteLiveRecordNotifyConfigRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("live", "2016-11-01", "DeleteLiveRecordNotifyConfig");
+		$this->setMethod("POST");
 	}
 
 	private  $securityToken;
 
-	private  $ownerId;
-
 	private  $domainName;
+
+	private  $ownerId;
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -41,15 +42,6 @@ class DeleteLiveRecordNotifyConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
 	public function getDomainName() {
 		return $this->domainName;
 	}
@@ -57,6 +49,15 @@ class DeleteLiveRecordNotifyConfigRequest extends \RpcAcsRequest
 	public function setDomainName($domainName) {
 		$this->domainName = $domainName;
 		$this->queryParameters["DomainName"]=$domainName;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

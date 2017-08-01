@@ -24,29 +24,39 @@ class ForbidLiveStreamRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("live", "2016-11-01", "ForbidLiveStream");
+		$this->setMethod("POST");
 	}
-
-	private  $streamName;
-
-	private  $securityToken;
-
-	private  $ownerId;
-
-	private  $liveStreamType;
 
 	private  $resumeTime;
 
-	private  $domainName;
-
 	private  $appName;
 
-	public function getStreamName() {
-		return $this->streamName;
+	private  $securityToken;
+
+	private  $liveStreamType;
+
+	private  $domainName;
+
+	private  $ownerId;
+
+	private  $streamName;
+
+	public function getResumeTime() {
+		return $this->resumeTime;
 	}
 
-	public function setStreamName($streamName) {
-		$this->streamName = $streamName;
-		$this->queryParameters["StreamName"]=$streamName;
+	public function setResumeTime($resumeTime) {
+		$this->resumeTime = $resumeTime;
+		$this->queryParameters["ResumeTime"]=$resumeTime;
+	}
+
+	public function getAppName() {
+		return $this->appName;
+	}
+
+	public function setAppName($appName) {
+		$this->appName = $appName;
+		$this->queryParameters["AppName"]=$appName;
 	}
 
 	public function getSecurityToken() {
@@ -58,15 +68,6 @@ class ForbidLiveStreamRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
 	public function getLiveStreamType() {
 		return $this->liveStreamType;
 	}
@@ -74,15 +75,6 @@ class ForbidLiveStreamRequest extends \RpcAcsRequest
 	public function setLiveStreamType($liveStreamType) {
 		$this->liveStreamType = $liveStreamType;
 		$this->queryParameters["LiveStreamType"]=$liveStreamType;
-	}
-
-	public function getResumeTime() {
-		return $this->resumeTime;
-	}
-
-	public function setResumeTime($resumeTime) {
-		$this->resumeTime = $resumeTime;
-		$this->queryParameters["ResumeTime"]=$resumeTime;
 	}
 
 	public function getDomainName() {
@@ -94,13 +86,22 @@ class ForbidLiveStreamRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getAppName() {
-		return $this->appName;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getStreamName() {
+		return $this->streamName;
+	}
+
+	public function setStreamName($streamName) {
+		$this->streamName = $streamName;
+		$this->queryParameters["StreamName"]=$streamName;
 	}
 	
 }

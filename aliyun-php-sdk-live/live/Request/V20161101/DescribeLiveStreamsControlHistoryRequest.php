@@ -24,19 +24,29 @@ class DescribeLiveStreamsControlHistoryRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("live", "2016-11-01", "DescribeLiveStreamsControlHistory");
+		$this->setMethod("POST");
 	}
+
+	private  $appName;
 
 	private  $securityToken;
 
-	private  $ownerId;
-
 	private  $domainName;
-
-	private  $appName;
 
 	private  $endTime;
 
 	private  $startTime;
+
+	private  $ownerId;
+
+	public function getAppName() {
+		return $this->appName;
+	}
+
+	public function setAppName($appName) {
+		$this->appName = $appName;
+		$this->queryParameters["AppName"]=$appName;
+	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -47,15 +57,6 @@ class DescribeLiveStreamsControlHistoryRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
 	public function getDomainName() {
 		return $this->domainName;
 	}
@@ -63,15 +64,6 @@ class DescribeLiveStreamsControlHistoryRequest extends \RpcAcsRequest
 	public function setDomainName($domainName) {
 		$this->domainName = $domainName;
 		$this->queryParameters["DomainName"]=$domainName;
-	}
-
-	public function getAppName() {
-		return $this->appName;
-	}
-
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
 	}
 
 	public function getEndTime() {
@@ -90,6 +82,15 @@ class DescribeLiveStreamsControlHistoryRequest extends \RpcAcsRequest
 	public function setStartTime($startTime) {
 		$this->startTime = $startTime;
 		$this->queryParameters["StartTime"]=$startTime;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

@@ -24,29 +24,30 @@ class DescribeLiveSnapshotDetectPornConfigRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("live", "2016-11-01", "DescribeLiveSnapshotDetectPornConfig");
+		$this->setMethod("POST");
 	}
-
-	private  $pageSize;
-
-	private  $securityToken;
-
-	private  $ownerId;
-
-	private  $order;
-
-	private  $domainName;
 
 	private  $appName;
 
+	private  $securityToken;
+
+	private  $domainName;
+
+	private  $pageSize;
+
+	private  $ownerId;
+
 	private  $pageNum;
 
-	public function getPageSize() {
-		return $this->pageSize;
+	private  $order;
+
+	public function getAppName() {
+		return $this->appName;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setAppName($appName) {
+		$this->appName = $appName;
+		$this->queryParameters["AppName"]=$appName;
 	}
 
 	public function getSecurityToken() {
@@ -58,24 +59,6 @@ class DescribeLiveSnapshotDetectPornConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getOrder() {
-		return $this->order;
-	}
-
-	public function setOrder($order) {
-		$this->order = $order;
-		$this->queryParameters["Order"]=$order;
-	}
-
 	public function getDomainName() {
 		return $this->domainName;
 	}
@@ -85,13 +68,22 @@ class DescribeLiveSnapshotDetectPornConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getAppName() {
-		return $this->appName;
+	public function getPageSize() {
+		return $this->pageSize;
 	}
 
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getPageNum() {
@@ -101,6 +93,15 @@ class DescribeLiveSnapshotDetectPornConfigRequest extends \RpcAcsRequest
 	public function setPageNum($pageNum) {
 		$this->pageNum = $pageNum;
 		$this->queryParameters["PageNum"]=$pageNum;
+	}
+
+	public function getOrder() {
+		return $this->order;
+	}
+
+	public function setOrder($order) {
+		$this->order = $order;
+		$this->queryParameters["Order"]=$order;
 	}
 	
 }

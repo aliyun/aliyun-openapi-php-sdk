@@ -24,9 +24,8 @@ class AddLiveStreamTranscodeRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("live", "2016-11-01", "AddLiveStreamTranscode");
+		$this->setMethod("POST");
 	}
-
-	private  $domain;
 
 	private  $app;
 
@@ -34,16 +33,9 @@ class AddLiveStreamTranscodeRequest extends \RpcAcsRequest
 
 	private  $securityToken;
 
+	private  $domain;
+
 	private  $ownerId;
-
-	public function getDomain() {
-		return $this->domain;
-	}
-
-	public function setDomain($domain) {
-		$this->domain = $domain;
-		$this->queryParameters["Domain"]=$domain;
-	}
 
 	public function getApp() {
 		return $this->app;
@@ -70,6 +62,15 @@ class AddLiveStreamTranscodeRequest extends \RpcAcsRequest
 	public function setSecurityToken($securityToken) {
 		$this->securityToken = $securityToken;
 		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
+
+	public function getDomain() {
+		return $this->domain;
+	}
+
+	public function setDomain($domain) {
+		$this->domain = $domain;
+		$this->queryParameters["Domain"]=$domain;
 	}
 
 	public function getOwnerId() {

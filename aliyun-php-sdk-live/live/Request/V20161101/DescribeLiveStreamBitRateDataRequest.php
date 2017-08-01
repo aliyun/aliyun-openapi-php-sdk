@@ -19,11 +19,11 @@
  */
 namespace live\Request\V20161101;
 
-class DescribeLiveStreamsPublishListRequest extends \RpcAcsRequest
+class DescribeLiveStreamBitRateDataRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "DescribeLiveStreamsPublishList");
+		parent::__construct("live", "2016-11-01", "DescribeLiveStreamBitRateData");
 		$this->setMethod("POST");
 	}
 
@@ -33,8 +33,6 @@ class DescribeLiveStreamsPublishListRequest extends \RpcAcsRequest
 
 	private  $domainName;
 
-	private  $pageSize;
-
 	private  $endTime;
 
 	private  $startTime;
@@ -42,8 +40,6 @@ class DescribeLiveStreamsPublishListRequest extends \RpcAcsRequest
 	private  $ownerId;
 
 	private  $streamName;
-
-	private  $pageNumber;
 
 	public function getAppName() {
 		return $this->appName;
@@ -70,15 +66,6 @@ class DescribeLiveStreamsPublishListRequest extends \RpcAcsRequest
 	public function setDomainName($domainName) {
 		$this->domainName = $domainName;
 		$this->queryParameters["DomainName"]=$domainName;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
 	public function getEndTime() {
@@ -115,15 +102,6 @@ class DescribeLiveStreamsPublishListRequest extends \RpcAcsRequest
 	public function setStreamName($streamName) {
 		$this->streamName = $streamName;
 		$this->queryParameters["StreamName"]=$streamName;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 	
 }

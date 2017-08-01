@@ -24,67 +24,32 @@ class UpdateLiveSnapshotDetectPornConfigRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("live", "2016-11-01", "UpdateLiveSnapshotDetectPornConfig");
+		$this->setMethod("POST");
 	}
-
-	private  $ossObject;
-
-	private  $interval;
-
-	private  $securityToken;
-
-	private  $ownerId;
-
-	private  $domainName;
-
-	private  $appName;
-
-	private  $ossEndpoint;
 
 	private  $ossBucket;
 
-	public function getOssObject() {
-		return $this->ossObject;
+	private  $appName;
+
+	private  $securityToken;
+
+	private  $domainName;
+
+	private  $ossEndpoint;
+
+	private  $interval;
+
+	private  $ownerId;
+
+	private  $ossObject;
+
+	public function getOssBucket() {
+		return $this->ossBucket;
 	}
 
-	public function setOssObject($ossObject) {
-		$this->ossObject = $ossObject;
-		$this->queryParameters["OssObject"]=$ossObject;
-	}
-
-	public function getInterval() {
-		return $this->interval;
-	}
-
-	public function setInterval($interval) {
-		$this->interval = $interval;
-		$this->queryParameters["Interval"]=$interval;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getDomainName() {
-		return $this->domainName;
-	}
-
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
+	public function setOssBucket($ossBucket) {
+		$this->ossBucket = $ossBucket;
+		$this->queryParameters["OssBucket"]=$ossBucket;
 	}
 
 	public function getAppName() {
@@ -96,6 +61,24 @@ class UpdateLiveSnapshotDetectPornConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["AppName"]=$appName;
 	}
 
+	public function getSecurityToken() {
+		return $this->securityToken;
+	}
+
+	public function setSecurityToken($securityToken) {
+		$this->securityToken = $securityToken;
+		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
+
+	public function getDomainName() {
+		return $this->domainName;
+	}
+
+	public function setDomainName($domainName) {
+		$this->domainName = $domainName;
+		$this->queryParameters["DomainName"]=$domainName;
+	}
+
 	public function getOssEndpoint() {
 		return $this->ossEndpoint;
 	}
@@ -105,13 +88,31 @@ class UpdateLiveSnapshotDetectPornConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["OssEndpoint"]=$ossEndpoint;
 	}
 
-	public function getOssBucket() {
-		return $this->ossBucket;
+	public function getInterval() {
+		return $this->interval;
 	}
 
-	public function setOssBucket($ossBucket) {
-		$this->ossBucket = $ossBucket;
-		$this->queryParameters["OssBucket"]=$ossBucket;
+	public function setInterval($interval) {
+		$this->interval = $interval;
+		$this->queryParameters["Interval"]=$interval;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getOssObject() {
+		return $this->ossObject;
+	}
+
+	public function setOssObject($ossObject) {
+		$this->ossObject = $ossObject;
+		$this->queryParameters["OssObject"]=$ossObject;
 	}
 	
 }
