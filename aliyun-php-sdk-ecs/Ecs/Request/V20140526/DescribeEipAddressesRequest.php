@@ -24,76 +24,50 @@ class DescribeEipAddressesRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "DescribeEipAddresses");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
-
-	private  $status;
-
-	private  $eipAddress;
-
-	private  $allocationId;
-
-	private  $pageNumber;
 
 	private  $pageSize;
 
-	private  $ownerAccount;
+	private  $eipAddress;
 
-	private  $filter1Key;
+	private  $status;
+
+	private  $pageNumber;
 
 	private  $filter2Key;
 
-	private  $filter1Value;
+	private  $associatedInstanceType;
 
-	private  $filter2Value;
+	private  $ownerId;
+
+	private  $allocationId;
 
 	private  $lockReason;
 
-	private  $associatedInstanceType;
+	private  $filter2Value;
+
+	private  $resourceOwnerAccount;
 
 	private  $associatedInstanceId;
 
+	private  $filter1Value;
+
+	private  $filter1Key;
+
+	private  $resourceOwnerId;
+
 	private  $chargeType;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $ownerAccount;
+
+	public function getPageSize() {
+		return $this->pageSize;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getStatus() {
-		return $this->status;
-	}
-
-	public function setStatus($status) {
-		$this->status = $status;
-		$this->queryParameters["Status"]=$status;
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
 	public function getEipAddress() {
@@ -105,13 +79,13 @@ class DescribeEipAddressesRequest extends \RpcAcsRequest
 		$this->queryParameters["EipAddress"]=$eipAddress;
 	}
 
-	public function getAllocationId() {
-		return $this->allocationId;
+	public function getStatus() {
+		return $this->status;
 	}
 
-	public function setAllocationId($allocationId) {
-		$this->allocationId = $allocationId;
-		$this->queryParameters["AllocationId"]=$allocationId;
+	public function setStatus($status) {
+		$this->status = $status;
+		$this->queryParameters["Status"]=$status;
 	}
 
 	public function getPageNumber() {
@@ -123,33 +97,6 @@ class DescribeEipAddressesRequest extends \RpcAcsRequest
 		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getFilter1Key() {
-		return $this->filter1Key;
-	}
-
-	public function setFilter1Key($filter1Key) {
-		$this->filter1Key = $filter1Key;
-		$this->queryParameters["Filter.1.Key"]=$filter1Key;
-	}
-
 	public function getFilter2Key() {
 		return $this->filter2Key;
 	}
@@ -157,33 +104,6 @@ class DescribeEipAddressesRequest extends \RpcAcsRequest
 	public function setFilter2Key($filter2Key) {
 		$this->filter2Key = $filter2Key;
 		$this->queryParameters["Filter.2.Key"]=$filter2Key;
-	}
-
-	public function getFilter1Value() {
-		return $this->filter1Value;
-	}
-
-	public function setFilter1Value($filter1Value) {
-		$this->filter1Value = $filter1Value;
-		$this->queryParameters["Filter.1.Value"]=$filter1Value;
-	}
-
-	public function getFilter2Value() {
-		return $this->filter2Value;
-	}
-
-	public function setFilter2Value($filter2Value) {
-		$this->filter2Value = $filter2Value;
-		$this->queryParameters["Filter.2.Value"]=$filter2Value;
-	}
-
-	public function getLockReason() {
-		return $this->lockReason;
-	}
-
-	public function setLockReason($lockReason) {
-		$this->lockReason = $lockReason;
-		$this->queryParameters["LockReason"]=$lockReason;
 	}
 
 	public function getAssociatedInstanceType() {
@@ -195,6 +115,51 @@ class DescribeEipAddressesRequest extends \RpcAcsRequest
 		$this->queryParameters["AssociatedInstanceType"]=$associatedInstanceType;
 	}
 
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getAllocationId() {
+		return $this->allocationId;
+	}
+
+	public function setAllocationId($allocationId) {
+		$this->allocationId = $allocationId;
+		$this->queryParameters["AllocationId"]=$allocationId;
+	}
+
+	public function getLockReason() {
+		return $this->lockReason;
+	}
+
+	public function setLockReason($lockReason) {
+		$this->lockReason = $lockReason;
+		$this->queryParameters["LockReason"]=$lockReason;
+	}
+
+	public function getFilter2Value() {
+		return $this->filter2Value;
+	}
+
+	public function setFilter2Value($filter2Value) {
+		$this->filter2Value = $filter2Value;
+		$this->queryParameters["Filter.2.Value"]=$filter2Value;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
 	public function getAssociatedInstanceId() {
 		return $this->associatedInstanceId;
 	}
@@ -204,6 +169,33 @@ class DescribeEipAddressesRequest extends \RpcAcsRequest
 		$this->queryParameters["AssociatedInstanceId"]=$associatedInstanceId;
 	}
 
+	public function getFilter1Value() {
+		return $this->filter1Value;
+	}
+
+	public function setFilter1Value($filter1Value) {
+		$this->filter1Value = $filter1Value;
+		$this->queryParameters["Filter.1.Value"]=$filter1Value;
+	}
+
+	public function getFilter1Key() {
+		return $this->filter1Key;
+	}
+
+	public function setFilter1Key($filter1Key) {
+		$this->filter1Key = $filter1Key;
+		$this->queryParameters["Filter.1.Key"]=$filter1Key;
+	}
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
+	}
+
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
 	public function getChargeType() {
 		return $this->chargeType;
 	}
@@ -211,6 +203,15 @@ class DescribeEipAddressesRequest extends \RpcAcsRequest
 	public function setChargeType($chargeType) {
 		$this->chargeType = $chargeType;
 		$this->queryParameters["ChargeType"]=$chargeType;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 	
 }

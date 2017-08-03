@@ -24,28 +24,20 @@ class ModifyEipAddressAttributeRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "ModifyEipAddressAttribute");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
 
 	private  $resourceOwnerAccount;
 
 	private  $resourceOwnerId;
 
+	private  $ownerAccount;
+
+	private  $ownerId;
+
 	private  $allocationId;
 
 	private  $bandwidth;
-
-	private  $ownerAccount;
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
 
 	public function getResourceOwnerAccount() {
 		return $this->resourceOwnerAccount;
@@ -65,6 +57,24 @@ class ModifyEipAddressAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
 	public function getAllocationId() {
 		return $this->allocationId;
 	}
@@ -81,15 +91,6 @@ class ModifyEipAddressAttributeRequest extends \RpcAcsRequest
 	public function setBandwidth($bandwidth) {
 		$this->bandwidth = $bandwidth;
 		$this->queryParameters["Bandwidth"]=$bandwidth;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 	
 }

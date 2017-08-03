@@ -24,30 +24,22 @@ class DescribeSecurityGroupAttributeRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "DescribeSecurityGroupAttribute");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
 
 	private  $resourceOwnerAccount;
 
-	private  $resourceOwnerId;
-
 	private  $securityGroupId;
-
-	private  $nicType;
-
-	private  $ownerAccount;
 
 	private  $direction;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+	private  $nicType;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+	private  $resourceOwnerId;
+
+	private  $ownerAccount;
+
+	private  $ownerId;
 
 	public function getResourceOwnerAccount() {
 		return $this->resourceOwnerAccount;
@@ -56,15 +48,6 @@ class DescribeSecurityGroupAttributeRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getSecurityGroupId() {
@@ -76,6 +59,15 @@ class DescribeSecurityGroupAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityGroupId"]=$securityGroupId;
 	}
 
+	public function getDirection() {
+		return $this->direction;
+	}
+
+	public function setDirection($direction) {
+		$this->direction = $direction;
+		$this->queryParameters["Direction"]=$direction;
+	}
+
 	public function getNicType() {
 		return $this->nicType;
 	}
@@ -83,6 +75,15 @@ class DescribeSecurityGroupAttributeRequest extends \RpcAcsRequest
 	public function setNicType($nicType) {
 		$this->nicType = $nicType;
 		$this->queryParameters["NicType"]=$nicType;
+	}
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
+	}
+
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getOwnerAccount() {
@@ -94,13 +95,13 @@ class DescribeSecurityGroupAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getDirection() {
-		return $this->direction;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setDirection($direction) {
-		$this->direction = $direction;
-		$this->queryParameters["Direction"]=$direction;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

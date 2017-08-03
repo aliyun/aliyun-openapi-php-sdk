@@ -24,28 +24,22 @@ class RenewInstanceRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "RenewInstance");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
 
 	private  $resourceOwnerAccount;
 
+	private  $clientToken;
+
 	private  $resourceOwnerId;
-
-	private  $ownerAccount;
-
-	private  $instanceId;
 
 	private  $period;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+	private  $ownerAccount;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+	private  $ownerId;
+
+	private  $instanceId;
 
 	public function getResourceOwnerAccount() {
 		return $this->resourceOwnerAccount;
@@ -54,6 +48,15 @@ class RenewInstanceRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getClientToken() {
+		return $this->clientToken;
+	}
+
+	public function setClientToken($clientToken) {
+		$this->clientToken = $clientToken;
+		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
 	public function getResourceOwnerId() {
@@ -65,6 +68,15 @@ class RenewInstanceRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getPeriod() {
+		return $this->period;
+	}
+
+	public function setPeriod($period) {
+		$this->period = $period;
+		$this->queryParameters["Period"]=$period;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -74,6 +86,15 @@ class RenewInstanceRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
 	public function getInstanceId() {
 		return $this->instanceId;
 	}
@@ -81,15 +102,6 @@ class RenewInstanceRequest extends \RpcAcsRequest
 	public function setInstanceId($instanceId) {
 		$this->instanceId = $instanceId;
 		$this->queryParameters["InstanceId"]=$instanceId;
-	}
-
-	public function getPeriod() {
-		return $this->period;
-	}
-
-	public function setPeriod($period) {
-		$this->period = $period;
-		$this->queryParameters["Period"]=$period;
 	}
 	
 }

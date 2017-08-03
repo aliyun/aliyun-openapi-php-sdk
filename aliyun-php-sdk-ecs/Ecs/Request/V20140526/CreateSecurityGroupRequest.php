@@ -24,78 +24,52 @@ class CreateSecurityGroupRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "CreateSecurityGroup");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
-
-	private  $description;
-
-	private  $clientToken;
 
 	private  $securityGroupName;
 
-	private  $vpcId;
+	private  $clientToken;
 
-	private  $ownerAccount;
+	private  $ownerId;
+
+	private  $tag5Key;
+
+	private  $tag5Value;
+
+	private  $tag3Key;
+
+	private  $resourceOwnerAccount;
+
+	private  $description;
 
 	private  $tag1Key;
 
 	private  $tag2Key;
 
-	private  $tag3Key;
-
-	private  $tag4Key;
-
-	private  $tag5Key;
-
 	private  $tag1Value;
 
-	private  $tag2Value;
-
-	private  $tag3Value;
+	private  $resourceOwnerId;
 
 	private  $tag4Value;
 
-	private  $tag5Value;
+	private  $vpcId;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $ownerAccount;
+
+	private  $tag3Value;
+
+	private  $tag2Value;
+
+	private  $tag4Key;
+
+	public function getSecurityGroupName() {
+		return $this->securityGroupName;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getDescription() {
-		return $this->description;
-	}
-
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
+	public function setSecurityGroupName($securityGroupName) {
+		$this->securityGroupName = $securityGroupName;
+		$this->queryParameters["SecurityGroupName"]=$securityGroupName;
 	}
 
 	public function getClientToken() {
@@ -107,31 +81,58 @@ class CreateSecurityGroupRequest extends \RpcAcsRequest
 		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
-	public function getSecurityGroupName() {
-		return $this->securityGroupName;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setSecurityGroupName($securityGroupName) {
-		$this->securityGroupName = $securityGroupName;
-		$this->queryParameters["SecurityGroupName"]=$securityGroupName;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getVpcId() {
-		return $this->vpcId;
+	public function getTag5Key() {
+		return $this->tag5Key;
 	}
 
-	public function setVpcId($vpcId) {
-		$this->vpcId = $vpcId;
-		$this->queryParameters["VpcId"]=$vpcId;
+	public function setTag5Key($tag5Key) {
+		$this->tag5Key = $tag5Key;
+		$this->queryParameters["Tag.5.Key"]=$tag5Key;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getTag5Value() {
+		return $this->tag5Value;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setTag5Value($tag5Value) {
+		$this->tag5Value = $tag5Value;
+		$this->queryParameters["Tag.5.Value"]=$tag5Value;
+	}
+
+	public function getTag3Key() {
+		return $this->tag3Key;
+	}
+
+	public function setTag3Key($tag3Key) {
+		$this->tag3Key = $tag3Key;
+		$this->queryParameters["Tag.3.Key"]=$tag3Key;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getDescription() {
+		return $this->description;
+	}
+
+	public function setDescription($description) {
+		$this->description = $description;
+		$this->queryParameters["Description"]=$description;
 	}
 
 	public function getTag1Key() {
@@ -152,33 +153,6 @@ class CreateSecurityGroupRequest extends \RpcAcsRequest
 		$this->queryParameters["Tag.2.Key"]=$tag2Key;
 	}
 
-	public function getTag3Key() {
-		return $this->tag3Key;
-	}
-
-	public function setTag3Key($tag3Key) {
-		$this->tag3Key = $tag3Key;
-		$this->queryParameters["Tag.3.Key"]=$tag3Key;
-	}
-
-	public function getTag4Key() {
-		return $this->tag4Key;
-	}
-
-	public function setTag4Key($tag4Key) {
-		$this->tag4Key = $tag4Key;
-		$this->queryParameters["Tag.4.Key"]=$tag4Key;
-	}
-
-	public function getTag5Key() {
-		return $this->tag5Key;
-	}
-
-	public function setTag5Key($tag5Key) {
-		$this->tag5Key = $tag5Key;
-		$this->queryParameters["Tag.5.Key"]=$tag5Key;
-	}
-
 	public function getTag1Value() {
 		return $this->tag1Value;
 	}
@@ -188,22 +162,13 @@ class CreateSecurityGroupRequest extends \RpcAcsRequest
 		$this->queryParameters["Tag.1.Value"]=$tag1Value;
 	}
 
-	public function getTag2Value() {
-		return $this->tag2Value;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setTag2Value($tag2Value) {
-		$this->tag2Value = $tag2Value;
-		$this->queryParameters["Tag.2.Value"]=$tag2Value;
-	}
-
-	public function getTag3Value() {
-		return $this->tag3Value;
-	}
-
-	public function setTag3Value($tag3Value) {
-		$this->tag3Value = $tag3Value;
-		$this->queryParameters["Tag.3.Value"]=$tag3Value;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getTag4Value() {
@@ -215,13 +180,49 @@ class CreateSecurityGroupRequest extends \RpcAcsRequest
 		$this->queryParameters["Tag.4.Value"]=$tag4Value;
 	}
 
-	public function getTag5Value() {
-		return $this->tag5Value;
+	public function getVpcId() {
+		return $this->vpcId;
 	}
 
-	public function setTag5Value($tag5Value) {
-		$this->tag5Value = $tag5Value;
-		$this->queryParameters["Tag.5.Value"]=$tag5Value;
+	public function setVpcId($vpcId) {
+		$this->vpcId = $vpcId;
+		$this->queryParameters["VpcId"]=$vpcId;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getTag3Value() {
+		return $this->tag3Value;
+	}
+
+	public function setTag3Value($tag3Value) {
+		$this->tag3Value = $tag3Value;
+		$this->queryParameters["Tag.3.Value"]=$tag3Value;
+	}
+
+	public function getTag2Value() {
+		return $this->tag2Value;
+	}
+
+	public function setTag2Value($tag2Value) {
+		$this->tag2Value = $tag2Value;
+		$this->queryParameters["Tag.2.Value"]=$tag2Value;
+	}
+
+	public function getTag4Key() {
+		return $this->tag4Key;
+	}
+
+	public function setTag4Key($tag4Key) {
+		$this->tag4Key = $tag4Key;
+		$this->queryParameters["Tag.4.Key"]=$tag4Key;
 	}
 	
 }

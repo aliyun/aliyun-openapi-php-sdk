@@ -24,38 +24,30 @@ class DescribeHaVipsRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "DescribeHaVips");
+		$this->setMethod("POST");
 	}
 
-	private  $filter;
-
-	private  $ownerId;
+	private  $pageSize;
 
 	private  $resourceOwnerAccount;
+
+	private  $pageNumber;
 
 	private  $resourceOwnerId;
 
 	private  $ownerAccount;
 
-	private  $pageNumber;
+	private  $ownerId;
 
-	private  $pageSize;
+	private  $Filters;
 
-	public function getFilter() {
-		return $this->filter;
+	public function getPageSize() {
+		return $this->pageSize;
 	}
 
-	public function setFilter($filter) {
-		$this->filter = $filter;
-		$this->queryParameters["Filter"]=$filter;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -65,6 +57,15 @@ class DescribeHaVipsRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getPageNumber() {
+		return $this->pageNumber;
+	}
+
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 
 	public function getResourceOwnerId() {
@@ -85,22 +86,28 @@ class DescribeHaVipsRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getPageNumber() {
-		return $this->pageNumber;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
+	public function getFilters() {
+		return $this->Filters;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setFilters($Filters) {
+		$this->Filters = $Filters;
+		for ($i = 0; $i < count($Filters); $i ++) {	
+			$this->queryParameters['Filter.' . ($i + 1) . '.Key'] = $Filters[$i]['Key'];
+			for ($j = 0; $j < count($Filters[$i]['Values']); $j ++) {
+				$this->queryParameters['Filter.' . ($i + 1) . '.Value.' . ($j + 1)] = $Filters[$i]['Values'][$j];
+			}
+
+		}
 	}
 	
 }

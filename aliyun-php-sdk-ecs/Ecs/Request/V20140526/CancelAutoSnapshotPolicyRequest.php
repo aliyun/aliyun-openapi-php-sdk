@@ -24,23 +24,24 @@ class CancelAutoSnapshotPolicyRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "CancelAutoSnapshotPolicy");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $diskIds;
 
 	private  $resourceOwnerAccount;
 
 	private  $resourceOwnerId;
 
-	private  $diskIds;
+	private  $ownerId;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getdiskIds() {
+		return $this->diskIds;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setdiskIds($diskIds) {
+		$this->diskIds = $diskIds;
+		$this->queryParameters["diskIds"]=$diskIds;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -61,13 +62,13 @@ class CancelAutoSnapshotPolicyRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getdiskIds() {
-		return $this->diskIds;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setdiskIds($diskIds) {
-		$this->diskIds = $diskIds;
-		$this->queryParameters["diskIds"]=$diskIds;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

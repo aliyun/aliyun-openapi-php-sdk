@@ -24,43 +24,26 @@ class DescribePhysicalConnectionsRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "DescribePhysicalConnections");
+		$this->setMethod("POST");
 	}
-
-	private  $filter;
-
-	private  $pageNumber;
 
 	private  $pageSize;
 
-	private  $ownerId;
+	private  $clientToken;
 
 	private  $resourceOwnerAccount;
 
-	private  $resourceOwnerId;
-
-	private  $clientToken;
-
-	private  $ownerAccount;
+	private  $pageNumber;
 
 	private  $userCidr;
 
-	public function getFilter() {
-		return $this->filter;
-	}
+	private  $resourceOwnerId;
 
-	public function setFilter($filter) {
-		$this->filter = $filter;
-		$this->queryParameters["Filter"]=$filter;
-	}
+	private  $ownerAccount;
 
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
+	private  $ownerId;
 
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
+	private  $Filters;
 
 	public function getPageSize() {
 		return $this->pageSize;
@@ -69,33 +52,6 @@ class DescribePhysicalConnectionsRequest extends \RpcAcsRequest
 	public function setPageSize($pageSize) {
 		$this->pageSize = $pageSize;
 		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getClientToken() {
@@ -107,13 +63,22 @@ class DescribePhysicalConnectionsRequest extends \RpcAcsRequest
 		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getPageNumber() {
+		return $this->pageNumber;
+	}
+
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 
 	public function getUserCidr() {
@@ -123,6 +88,48 @@ class DescribePhysicalConnectionsRequest extends \RpcAcsRequest
 	public function setUserCidr($userCidr) {
 		$this->userCidr = $userCidr;
 		$this->queryParameters["UserCidr"]=$userCidr;
+	}
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
+	}
+
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getFilters() {
+		return $this->Filters;
+	}
+
+	public function setFilters($Filters) {
+		$this->Filters = $Filters;
+		for ($i = 0; $i < count($Filters); $i ++) {	
+			$this->queryParameters['Filter.' . ($i + 1) . '.Key'] = $Filters[$i]['Key'];
+			for ($j = 0; $j < count($Filters[$i]['Values']); $j ++) {
+				$this->queryParameters['Filter.' . ($i + 1) . '.Value.' . ($j + 1)] = $Filters[$i]['Values'][$j];
+			}
+
+		}
 	}
 	
 }

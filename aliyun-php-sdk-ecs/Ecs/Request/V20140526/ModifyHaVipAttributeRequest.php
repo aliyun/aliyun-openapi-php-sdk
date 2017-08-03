@@ -24,29 +24,30 @@ class ModifyHaVipAttributeRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "ModifyHaVipAttribute");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $clientToken;
 
 	private  $resourceOwnerAccount;
+
+	private  $description;
 
 	private  $resourceOwnerId;
 
 	private  $ownerAccount;
 
-	private  $clientToken;
+	private  $ownerId;
 
 	private  $haVipId;
 
-	private  $description;
-
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getClientToken() {
+		return $this->clientToken;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setClientToken($clientToken) {
+		$this->clientToken = $clientToken;
+		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -56,6 +57,15 @@ class ModifyHaVipAttributeRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getDescription() {
+		return $this->description;
+	}
+
+	public function setDescription($description) {
+		$this->description = $description;
+		$this->queryParameters["Description"]=$description;
 	}
 
 	public function getResourceOwnerId() {
@@ -76,13 +86,13 @@ class ModifyHaVipAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getClientToken() {
-		return $this->clientToken;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getHaVipId() {
@@ -92,15 +102,6 @@ class ModifyHaVipAttributeRequest extends \RpcAcsRequest
 	public function setHaVipId($haVipId) {
 		$this->haVipId = $haVipId;
 		$this->queryParameters["HaVipId"]=$haVipId;
-	}
-
-	public function getDescription() {
-		return $this->description;
-	}
-
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
 	}
 	
 }

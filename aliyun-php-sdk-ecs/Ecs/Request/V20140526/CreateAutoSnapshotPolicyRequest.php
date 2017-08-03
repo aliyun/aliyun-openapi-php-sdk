@@ -24,47 +24,30 @@ class CreateAutoSnapshotPolicyRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "CreateAutoSnapshotPolicy");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
-
-	private  $autoSnapshotPolicyName;
-
-	private  $timePoints;
 
 	private  $repeatWeekdays;
 
+	private  $autoSnapshotPolicyName;
+
+	private  $resourceOwnerAccount;
+
+	private  $timePoints;
+
 	private  $retentionDays;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $resourceOwnerId;
+
+	private  $ownerId;
+
+	public function getrepeatWeekdays() {
+		return $this->repeatWeekdays;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setrepeatWeekdays($repeatWeekdays) {
+		$this->repeatWeekdays = $repeatWeekdays;
+		$this->queryParameters["repeatWeekdays"]=$repeatWeekdays;
 	}
 
 	public function getautoSnapshotPolicyName() {
@@ -76,6 +59,15 @@ class CreateAutoSnapshotPolicyRequest extends \RpcAcsRequest
 		$this->queryParameters["autoSnapshotPolicyName"]=$autoSnapshotPolicyName;
 	}
 
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
 	public function gettimePoints() {
 		return $this->timePoints;
 	}
@@ -85,15 +77,6 @@ class CreateAutoSnapshotPolicyRequest extends \RpcAcsRequest
 		$this->queryParameters["timePoints"]=$timePoints;
 	}
 
-	public function getrepeatWeekdays() {
-		return $this->repeatWeekdays;
-	}
-
-	public function setrepeatWeekdays($repeatWeekdays) {
-		$this->repeatWeekdays = $repeatWeekdays;
-		$this->queryParameters["repeatWeekdays"]=$repeatWeekdays;
-	}
-
 	public function getretentionDays() {
 		return $this->retentionDays;
 	}
@@ -101,6 +84,24 @@ class CreateAutoSnapshotPolicyRequest extends \RpcAcsRequest
 	public function setretentionDays($retentionDays) {
 		$this->retentionDays = $retentionDays;
 		$this->queryParameters["retentionDays"]=$retentionDays;
+	}
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
+	}
+
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

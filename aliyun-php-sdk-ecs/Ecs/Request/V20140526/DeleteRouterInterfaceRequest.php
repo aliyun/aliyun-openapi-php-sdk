@@ -24,38 +24,30 @@ class DeleteRouterInterfaceRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "DeleteRouterInterface");
+		$this->setMethod("POST");
 	}
-
-	private  $routerInterfaceId;
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
 
 	private  $clientToken;
 
-	private  $ownerAccount;
+	private  $resourceOwnerAccount;
+
+	private  $routerInterfaceId;
 
 	private  $userCidr;
 
-	public function getRouterInterfaceId() {
-		return $this->routerInterfaceId;
+	private  $resourceOwnerId;
+
+	private  $ownerAccount;
+
+	private  $ownerId;
+
+	public function getClientToken() {
+		return $this->clientToken;
 	}
 
-	public function setRouterInterfaceId($routerInterfaceId) {
-		$this->routerInterfaceId = $routerInterfaceId;
-		$this->queryParameters["RouterInterfaceId"]=$routerInterfaceId;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setClientToken($clientToken) {
+		$this->clientToken = $clientToken;
+		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -67,6 +59,24 @@ class DeleteRouterInterfaceRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
+	public function getRouterInterfaceId() {
+		return $this->routerInterfaceId;
+	}
+
+	public function setRouterInterfaceId($routerInterfaceId) {
+		$this->routerInterfaceId = $routerInterfaceId;
+		$this->queryParameters["RouterInterfaceId"]=$routerInterfaceId;
+	}
+
+	public function getUserCidr() {
+		return $this->userCidr;
+	}
+
+	public function setUserCidr($userCidr) {
+		$this->userCidr = $userCidr;
+		$this->queryParameters["UserCidr"]=$userCidr;
+	}
+
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
 	}
@@ -74,15 +84,6 @@ class DeleteRouterInterfaceRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getClientToken() {
-		return $this->clientToken;
-	}
-
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
 	public function getOwnerAccount() {
@@ -94,13 +95,13 @@ class DeleteRouterInterfaceRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getUserCidr() {
-		return $this->userCidr;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setUserCidr($userCidr) {
-		$this->userCidr = $userCidr;
-		$this->queryParameters["UserCidr"]=$userCidr;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

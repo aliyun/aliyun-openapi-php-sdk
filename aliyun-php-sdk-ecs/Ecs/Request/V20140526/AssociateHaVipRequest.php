@@ -24,9 +24,10 @@ class AssociateHaVipRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "AssociateHaVip");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $clientToken;
 
 	private  $resourceOwnerAccount;
 
@@ -34,19 +35,19 @@ class AssociateHaVipRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
-	private  $clientToken;
-
-	private  $haVipId;
+	private  $ownerId;
 
 	private  $instanceId;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $haVipId;
+
+	public function getClientToken() {
+		return $this->clientToken;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setClientToken($clientToken) {
+		$this->clientToken = $clientToken;
+		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -76,22 +77,13 @@ class AssociateHaVipRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getClientToken() {
-		return $this->clientToken;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
-
-	public function getHaVipId() {
-		return $this->haVipId;
-	}
-
-	public function setHaVipId($haVipId) {
-		$this->haVipId = $haVipId;
-		$this->queryParameters["HaVipId"]=$haVipId;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getInstanceId() {
@@ -101,6 +93,15 @@ class AssociateHaVipRequest extends \RpcAcsRequest
 	public function setInstanceId($instanceId) {
 		$this->instanceId = $instanceId;
 		$this->queryParameters["InstanceId"]=$instanceId;
+	}
+
+	public function getHaVipId() {
+		return $this->haVipId;
+	}
+
+	public function setHaVipId($haVipId) {
+		$this->haVipId = $haVipId;
+		$this->queryParameters["HaVipId"]=$haVipId;
 	}
 	
 }

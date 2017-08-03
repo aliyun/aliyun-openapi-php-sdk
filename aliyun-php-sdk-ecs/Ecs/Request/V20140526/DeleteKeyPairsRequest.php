@@ -24,24 +24,16 @@ class DeleteKeyPairsRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "DeleteKeyPairs");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
 
 	private  $resourceOwnerAccount;
 
-	private  $resourceOwnerId;
-
 	private  $keyPairNames;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+	private  $resourceOwnerId;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+	private  $ownerId;
 
 	public function getResourceOwnerAccount() {
 		return $this->resourceOwnerAccount;
@@ -50,6 +42,15 @@ class DeleteKeyPairsRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getKeyPairNames() {
+		return $this->keyPairNames;
+	}
+
+	public function setKeyPairNames($keyPairNames) {
+		$this->keyPairNames = $keyPairNames;
+		$this->queryParameters["KeyPairNames"]=$keyPairNames;
 	}
 
 	public function getResourceOwnerId() {
@@ -61,13 +62,13 @@ class DeleteKeyPairsRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getKeyPairNames() {
-		return $this->keyPairNames;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setKeyPairNames($keyPairNames) {
-		$this->keyPairNames = $keyPairNames;
-		$this->queryParameters["KeyPairNames"]=$keyPairNames;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

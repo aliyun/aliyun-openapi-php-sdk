@@ -24,9 +24,10 @@ class CheckDiskEnableAutoSnapshotValidationRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "CheckDiskEnableAutoSnapshotValidation");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $diskIds;
 
 	private  $resourceOwnerAccount;
 
@@ -34,15 +35,15 @@ class CheckDiskEnableAutoSnapshotValidationRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
-	private  $diskIds;
+	private  $ownerId;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getDiskIds() {
+		return $this->diskIds;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setDiskIds($diskIds) {
+		$this->diskIds = $diskIds;
+		$this->queryParameters["DiskIds"]=$diskIds;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -72,13 +73,13 @@ class CheckDiskEnableAutoSnapshotValidationRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getDiskIds() {
-		return $this->diskIds;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setDiskIds($diskIds) {
-		$this->diskIds = $diskIds;
-		$this->queryParameters["DiskIds"]=$diskIds;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

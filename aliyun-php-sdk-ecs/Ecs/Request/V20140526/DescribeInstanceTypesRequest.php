@@ -24,9 +24,10 @@ class DescribeInstanceTypesRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "DescribeInstanceTypes");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $instanceTypeFamily;
 
 	private  $resourceOwnerAccount;
 
@@ -34,15 +35,15 @@ class DescribeInstanceTypesRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
-	private  $instanceTypeFamily;
+	private  $ownerId;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getInstanceTypeFamily() {
+		return $this->instanceTypeFamily;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setInstanceTypeFamily($instanceTypeFamily) {
+		$this->instanceTypeFamily = $instanceTypeFamily;
+		$this->queryParameters["InstanceTypeFamily"]=$instanceTypeFamily;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -72,13 +73,13 @@ class DescribeInstanceTypesRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getInstanceTypeFamily() {
-		return $this->instanceTypeFamily;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setInstanceTypeFamily($instanceTypeFamily) {
-		$this->instanceTypeFamily = $instanceTypeFamily;
-		$this->queryParameters["InstanceTypeFamily"]=$instanceTypeFamily;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

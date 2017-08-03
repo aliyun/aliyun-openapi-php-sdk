@@ -24,29 +24,30 @@ class AllocatePublicIpAddressRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "AllocatePublicIpAddress");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $vlanId;
 
 	private  $resourceOwnerAccount;
 
 	private  $resourceOwnerId;
 
-	private  $instanceId;
+	private  $ownerAccount;
 
 	private  $ipAddress;
 
-	private  $vlanId;
+	private  $ownerId;
 
-	private  $ownerAccount;
+	private  $instanceId;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getVlanId() {
+		return $this->vlanId;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setVlanId($vlanId) {
+		$this->vlanId = $vlanId;
+		$this->queryParameters["VlanId"]=$vlanId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -67,13 +68,13 @@ class AllocatePublicIpAddressRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getInstanceId() {
-		return $this->instanceId;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getIpAddress() {
@@ -85,22 +86,22 @@ class AllocatePublicIpAddressRequest extends \RpcAcsRequest
 		$this->queryParameters["IpAddress"]=$ipAddress;
 	}
 
-	public function getVlanId() {
-		return $this->vlanId;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setVlanId($vlanId) {
-		$this->vlanId = $vlanId;
-		$this->queryParameters["VlanId"]=$vlanId;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getInstanceId() {
+		return $this->instanceId;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setInstanceId($instanceId) {
+		$this->instanceId = $instanceId;
+		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 	
 }

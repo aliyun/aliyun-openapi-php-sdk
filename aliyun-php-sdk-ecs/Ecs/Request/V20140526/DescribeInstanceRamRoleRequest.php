@@ -24,24 +24,16 @@ class DescribeInstanceRamRoleRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "DescribeInstanceRamRole");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
 
 	private  $resourceOwnerAccount;
 
-	private  $resourceOwnerId;
-
 	private  $instanceIds;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+	private  $resourceOwnerId;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+	private  $ownerId;
 
 	public function getResourceOwnerAccount() {
 		return $this->resourceOwnerAccount;
@@ -50,6 +42,15 @@ class DescribeInstanceRamRoleRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getInstanceIds() {
+		return $this->instanceIds;
+	}
+
+	public function setInstanceIds($instanceIds) {
+		$this->instanceIds = $instanceIds;
+		$this->queryParameters["InstanceIds"]=$instanceIds;
 	}
 
 	public function getResourceOwnerId() {
@@ -61,13 +62,13 @@ class DescribeInstanceRamRoleRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getInstanceIds() {
-		return $this->instanceIds;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setInstanceIds($instanceIds) {
-		$this->instanceIds = $instanceIds;
-		$this->queryParameters["InstanceIds"]=$instanceIds;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

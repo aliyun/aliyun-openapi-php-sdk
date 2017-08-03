@@ -24,9 +24,10 @@ class DeleteHaVipRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "DeleteHaVip");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $clientToken;
 
 	private  $resourceOwnerAccount;
 
@@ -34,17 +35,17 @@ class DeleteHaVipRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
-	private  $clientToken;
+	private  $ownerId;
 
 	private  $haVipId;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getClientToken() {
+		return $this->clientToken;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setClientToken($clientToken) {
+		$this->clientToken = $clientToken;
+		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -74,13 +75,13 @@ class DeleteHaVipRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getClientToken() {
-		return $this->clientToken;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getHaVipId() {

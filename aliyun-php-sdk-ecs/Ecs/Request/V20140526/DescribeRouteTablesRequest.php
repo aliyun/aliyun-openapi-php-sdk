@@ -24,35 +24,36 @@ class DescribeRouteTablesRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "DescribeRouteTables");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
-
-	private  $vRouterId;
-
-	private  $routeTableId;
-
-	private  $routerType;
-
-	private  $routerId;
-
-	private  $pageNumber;
 
 	private  $pageSize;
 
+	private  $resourceOwnerAccount;
+
+	private  $pageNumber;
+
+	private  $vRouterId;
+
+	private  $routerId;
+
+	private  $routerType;
+
+	private  $routeTableId;
+
+	private  $resourceOwnerId;
+
 	private  $ownerAccount;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $ownerId;
+
+	public function getPageSize() {
+		return $this->pageSize;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -64,13 +65,13 @@ class DescribeRouteTablesRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getPageNumber() {
+		return $this->pageNumber;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 
 	public function getVRouterId() {
@@ -82,13 +83,13 @@ class DescribeRouteTablesRequest extends \RpcAcsRequest
 		$this->queryParameters["VRouterId"]=$vRouterId;
 	}
 
-	public function getRouteTableId() {
-		return $this->routeTableId;
+	public function getRouterId() {
+		return $this->routerId;
 	}
 
-	public function setRouteTableId($routeTableId) {
-		$this->routeTableId = $routeTableId;
-		$this->queryParameters["RouteTableId"]=$routeTableId;
+	public function setRouterId($routerId) {
+		$this->routerId = $routerId;
+		$this->queryParameters["RouterId"]=$routerId;
 	}
 
 	public function getRouterType() {
@@ -100,31 +101,22 @@ class DescribeRouteTablesRequest extends \RpcAcsRequest
 		$this->queryParameters["RouterType"]=$routerType;
 	}
 
-	public function getRouterId() {
-		return $this->routerId;
+	public function getRouteTableId() {
+		return $this->routeTableId;
 	}
 
-	public function setRouterId($routerId) {
-		$this->routerId = $routerId;
-		$this->queryParameters["RouterId"]=$routerId;
+	public function setRouteTableId($routeTableId) {
+		$this->routeTableId = $routeTableId;
+		$this->queryParameters["RouteTableId"]=$routeTableId;
 	}
 
-	public function getPageNumber() {
-		return $this->pageNumber;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getOwnerAccount() {
@@ -134,6 +126,15 @@ class DescribeRouteTablesRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

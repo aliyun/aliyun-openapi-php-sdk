@@ -24,36 +24,28 @@ class DescribeRouterInterfacesRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "DescribeRouterInterfaces");
+		$this->setMethod("POST");
 	}
-
-	private  $filter;
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
-
-	private  $pageNumber;
 
 	private  $pageSize;
 
-	public function getFilter() {
-		return $this->filter;
+	private  $resourceOwnerAccount;
+
+	private  $pageNumber;
+
+	private  $resourceOwnerId;
+
+	private  $ownerId;
+
+	private  $Filters;
+
+	public function getPageSize() {
+		return $this->pageSize;
 	}
 
-	public function setFilter($filter) {
-		$this->filter = $filter;
-		$this->queryParameters["Filter"]=$filter;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -65,15 +57,6 @@ class DescribeRouterInterfacesRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
 	public function getPageNumber() {
 		return $this->pageNumber;
 	}
@@ -83,13 +66,37 @@ class DescribeRouterInterfacesRequest extends \RpcAcsRequest
 		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getFilters() {
+		return $this->Filters;
+	}
+
+	public function setFilters($Filters) {
+		$this->Filters = $Filters;
+		for ($i = 0; $i < count($Filters); $i ++) {	
+			$this->queryParameters['Filter.' . ($i + 1) . '.Key'] = $Filters[$i]['Key'];
+			for ($j = 0; $j < count($Filters[$i]['Values']); $j ++) {
+				$this->queryParameters['Filter.' . ($i + 1) . '.Value.' . ($j + 1)] = $Filters[$i]['Values'][$j];
+			}
+
+		}
 	}
 	
 }

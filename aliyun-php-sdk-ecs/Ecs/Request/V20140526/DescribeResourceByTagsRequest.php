@@ -24,13 +24,8 @@ class DescribeResourceByTagsRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "DescribeResourceByTags");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
 
 	private  $pageSize;
 
@@ -38,52 +33,31 @@ class DescribeResourceByTagsRequest extends \RpcAcsRequest
 
 	private  $resourceType;
 
+	private  $ownerId;
+
+	private  $tag5Key;
+
+	private  $tag5Value;
+
+	private  $tag3Key;
+
+	private  $resourceOwnerAccount;
+
 	private  $tag1Key;
 
 	private  $tag2Key;
 
-	private  $tag3Key;
-
-	private  $tag4Key;
-
-	private  $tag5Key;
-
 	private  $tag1Value;
 
-	private  $tag2Value;
-
-	private  $tag3Value;
+	private  $resourceOwnerId;
 
 	private  $tag4Value;
 
-	private  $tag5Value;
+	private  $tag3Value;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+	private  $tag2Value;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+	private  $tag4Key;
 
 	public function getPageSize() {
 		return $this->pageSize;
@@ -112,6 +86,51 @@ class DescribeResourceByTagsRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceType"]=$resourceType;
 	}
 
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getTag5Key() {
+		return $this->tag5Key;
+	}
+
+	public function setTag5Key($tag5Key) {
+		$this->tag5Key = $tag5Key;
+		$this->queryParameters["Tag.5.Key"]=$tag5Key;
+	}
+
+	public function getTag5Value() {
+		return $this->tag5Value;
+	}
+
+	public function setTag5Value($tag5Value) {
+		$this->tag5Value = $tag5Value;
+		$this->queryParameters["Tag.5.Value"]=$tag5Value;
+	}
+
+	public function getTag3Key() {
+		return $this->tag3Key;
+	}
+
+	public function setTag3Key($tag3Key) {
+		$this->tag3Key = $tag3Key;
+		$this->queryParameters["Tag.3.Key"]=$tag3Key;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
 	public function getTag1Key() {
 		return $this->tag1Key;
 	}
@@ -130,33 +149,6 @@ class DescribeResourceByTagsRequest extends \RpcAcsRequest
 		$this->queryParameters["Tag.2.Key"]=$tag2Key;
 	}
 
-	public function getTag3Key() {
-		return $this->tag3Key;
-	}
-
-	public function setTag3Key($tag3Key) {
-		$this->tag3Key = $tag3Key;
-		$this->queryParameters["Tag.3.Key"]=$tag3Key;
-	}
-
-	public function getTag4Key() {
-		return $this->tag4Key;
-	}
-
-	public function setTag4Key($tag4Key) {
-		$this->tag4Key = $tag4Key;
-		$this->queryParameters["Tag.4.Key"]=$tag4Key;
-	}
-
-	public function getTag5Key() {
-		return $this->tag5Key;
-	}
-
-	public function setTag5Key($tag5Key) {
-		$this->tag5Key = $tag5Key;
-		$this->queryParameters["Tag.5.Key"]=$tag5Key;
-	}
-
 	public function getTag1Value() {
 		return $this->tag1Value;
 	}
@@ -166,22 +158,13 @@ class DescribeResourceByTagsRequest extends \RpcAcsRequest
 		$this->queryParameters["Tag.1.Value"]=$tag1Value;
 	}
 
-	public function getTag2Value() {
-		return $this->tag2Value;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setTag2Value($tag2Value) {
-		$this->tag2Value = $tag2Value;
-		$this->queryParameters["Tag.2.Value"]=$tag2Value;
-	}
-
-	public function getTag3Value() {
-		return $this->tag3Value;
-	}
-
-	public function setTag3Value($tag3Value) {
-		$this->tag3Value = $tag3Value;
-		$this->queryParameters["Tag.3.Value"]=$tag3Value;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getTag4Value() {
@@ -193,13 +176,31 @@ class DescribeResourceByTagsRequest extends \RpcAcsRequest
 		$this->queryParameters["Tag.4.Value"]=$tag4Value;
 	}
 
-	public function getTag5Value() {
-		return $this->tag5Value;
+	public function getTag3Value() {
+		return $this->tag3Value;
 	}
 
-	public function setTag5Value($tag5Value) {
-		$this->tag5Value = $tag5Value;
-		$this->queryParameters["Tag.5.Value"]=$tag5Value;
+	public function setTag3Value($tag3Value) {
+		$this->tag3Value = $tag3Value;
+		$this->queryParameters["Tag.3.Value"]=$tag3Value;
+	}
+
+	public function getTag2Value() {
+		return $this->tag2Value;
+	}
+
+	public function setTag2Value($tag2Value) {
+		$this->tag2Value = $tag2Value;
+		$this->queryParameters["Tag.2.Value"]=$tag2Value;
+	}
+
+	public function getTag4Key() {
+		return $this->tag4Key;
+	}
+
+	public function setTag4Key($tag4Key) {
+		$this->tag4Key = $tag4Key;
+		$this->queryParameters["Tag.4.Key"]=$tag4Key;
 	}
 	
 }

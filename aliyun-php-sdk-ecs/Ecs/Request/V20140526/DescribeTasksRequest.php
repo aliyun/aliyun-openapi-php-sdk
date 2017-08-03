@@ -24,64 +24,38 @@ class DescribeTasksRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "DescribeTasks");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
-
-	private  $pageNumber;
-
-	private  $pageSize;
-
-	private  $ownerAccount;
-
-	private  $taskIds;
-
-	private  $taskAction;
-
-	private  $taskStatus;
-
-	private  $startTime;
 
 	private  $endTime;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $pageSize;
+
+	private  $startTime;
+
+	private  $pageNumber;
+
+	private  $ownerId;
+
+	private  $taskAction;
+
+	private  $resourceOwnerAccount;
+
+	private  $taskIds;
+
+	private  $taskStatus;
+
+	private  $resourceOwnerId;
+
+	private  $ownerAccount;
+
+	public function getEndTime() {
+		return $this->endTime;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
 	}
 
 	public function getPageSize() {
@@ -93,22 +67,31 @@ class DescribeTasksRequest extends \RpcAcsRequest
 		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getStartTime() {
+		return $this->startTime;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
 	}
 
-	public function getTaskIds() {
-		return $this->taskIds;
+	public function getPageNumber() {
+		return $this->pageNumber;
 	}
 
-	public function setTaskIds($taskIds) {
-		$this->taskIds = $taskIds;
-		$this->queryParameters["TaskIds"]=$taskIds;
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getTaskAction() {
@@ -120,6 +103,24 @@ class DescribeTasksRequest extends \RpcAcsRequest
 		$this->queryParameters["TaskAction"]=$taskAction;
 	}
 
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getTaskIds() {
+		return $this->taskIds;
+	}
+
+	public function setTaskIds($taskIds) {
+		$this->taskIds = $taskIds;
+		$this->queryParameters["TaskIds"]=$taskIds;
+	}
+
 	public function getTaskStatus() {
 		return $this->taskStatus;
 	}
@@ -129,22 +130,22 @@ class DescribeTasksRequest extends \RpcAcsRequest
 		$this->queryParameters["TaskStatus"]=$taskStatus;
 	}
 
-	public function getStartTime() {
-		return $this->startTime;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getEndTime() {
-		return $this->endTime;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 	
 }

@@ -24,29 +24,30 @@ class DescribeTagKeysRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "DescribeTagKeys");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $pageSize;
 
 	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
-
-	private  $pageSize;
 
 	private  $pageNumber;
 
 	private  $resourceType;
 
+	private  $resourceOwnerId;
+
 	private  $resourceId;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $ownerId;
+
+	public function getPageSize() {
+		return $this->pageSize;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -56,24 +57,6 @@ class DescribeTagKeysRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
 	public function getPageNumber() {
@@ -94,6 +77,15 @@ class DescribeTagKeysRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceType"]=$resourceType;
 	}
 
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
+	}
+
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
 	public function getResourceId() {
 		return $this->resourceId;
 	}
@@ -101,6 +93,15 @@ class DescribeTagKeysRequest extends \RpcAcsRequest
 	public function setResourceId($resourceId) {
 		$this->resourceId = $resourceId;
 		$this->queryParameters["ResourceId"]=$resourceId;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

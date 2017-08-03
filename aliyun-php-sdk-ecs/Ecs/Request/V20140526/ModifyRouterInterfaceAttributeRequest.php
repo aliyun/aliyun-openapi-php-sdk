@@ -24,111 +24,40 @@ class ModifyRouterInterfaceAttributeRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "ModifyRouterInterfaceAttribute");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
-
-	private  $routerInterfaceId;
-
-	private  $name;
-
-	private  $description;
-
-	private  $oppositeInterfaceId;
-
-	private  $oppositeRouterId;
-
-	private  $oppositeRouterType;
-
-	private  $oppositeInterfaceOwnerId;
-
-	private  $healthCheckSourceIp;
 
 	private  $healthCheckTargetIp;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $oppositeInterfaceOwnerId;
+
+	private  $oppositeRouterId;
+
+	private  $ownerId;
+
+	private  $healthCheckSourceIp;
+
+	private  $oppositeRouterType;
+
+	private  $resourceOwnerAccount;
+
+	private  $description;
+
+	private  $name;
+
+	private  $routerInterfaceId;
+
+	private  $oppositeInterfaceId;
+
+	private  $resourceOwnerId;
+
+	public function getHealthCheckTargetIp() {
+		return $this->healthCheckTargetIp;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getRouterInterfaceId() {
-		return $this->routerInterfaceId;
-	}
-
-	public function setRouterInterfaceId($routerInterfaceId) {
-		$this->routerInterfaceId = $routerInterfaceId;
-		$this->queryParameters["RouterInterfaceId"]=$routerInterfaceId;
-	}
-
-	public function getName() {
-		return $this->name;
-	}
-
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
-	}
-
-	public function getDescription() {
-		return $this->description;
-	}
-
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
-	}
-
-	public function getOppositeInterfaceId() {
-		return $this->oppositeInterfaceId;
-	}
-
-	public function setOppositeInterfaceId($oppositeInterfaceId) {
-		$this->oppositeInterfaceId = $oppositeInterfaceId;
-		$this->queryParameters["OppositeInterfaceId"]=$oppositeInterfaceId;
-	}
-
-	public function getOppositeRouterId() {
-		return $this->oppositeRouterId;
-	}
-
-	public function setOppositeRouterId($oppositeRouterId) {
-		$this->oppositeRouterId = $oppositeRouterId;
-		$this->queryParameters["OppositeRouterId"]=$oppositeRouterId;
-	}
-
-	public function getOppositeRouterType() {
-		return $this->oppositeRouterType;
-	}
-
-	public function setOppositeRouterType($oppositeRouterType) {
-		$this->oppositeRouterType = $oppositeRouterType;
-		$this->queryParameters["OppositeRouterType"]=$oppositeRouterType;
+	public function setHealthCheckTargetIp($healthCheckTargetIp) {
+		$this->healthCheckTargetIp = $healthCheckTargetIp;
+		$this->queryParameters["HealthCheckTargetIp"]=$healthCheckTargetIp;
 	}
 
 	public function getOppositeInterfaceOwnerId() {
@@ -140,6 +69,24 @@ class ModifyRouterInterfaceAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["OppositeInterfaceOwnerId"]=$oppositeInterfaceOwnerId;
 	}
 
+	public function getOppositeRouterId() {
+		return $this->oppositeRouterId;
+	}
+
+	public function setOppositeRouterId($oppositeRouterId) {
+		$this->oppositeRouterId = $oppositeRouterId;
+		$this->queryParameters["OppositeRouterId"]=$oppositeRouterId;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
 	public function getHealthCheckSourceIp() {
 		return $this->healthCheckSourceIp;
 	}
@@ -149,13 +96,67 @@ class ModifyRouterInterfaceAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["HealthCheckSourceIp"]=$healthCheckSourceIp;
 	}
 
-	public function getHealthCheckTargetIp() {
-		return $this->healthCheckTargetIp;
+	public function getOppositeRouterType() {
+		return $this->oppositeRouterType;
 	}
 
-	public function setHealthCheckTargetIp($healthCheckTargetIp) {
-		$this->healthCheckTargetIp = $healthCheckTargetIp;
-		$this->queryParameters["HealthCheckTargetIp"]=$healthCheckTargetIp;
+	public function setOppositeRouterType($oppositeRouterType) {
+		$this->oppositeRouterType = $oppositeRouterType;
+		$this->queryParameters["OppositeRouterType"]=$oppositeRouterType;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getDescription() {
+		return $this->description;
+	}
+
+	public function setDescription($description) {
+		$this->description = $description;
+		$this->queryParameters["Description"]=$description;
+	}
+
+	public function getName() {
+		return $this->name;
+	}
+
+	public function setName($name) {
+		$this->name = $name;
+		$this->queryParameters["Name"]=$name;
+	}
+
+	public function getRouterInterfaceId() {
+		return $this->routerInterfaceId;
+	}
+
+	public function setRouterInterfaceId($routerInterfaceId) {
+		$this->routerInterfaceId = $routerInterfaceId;
+		$this->queryParameters["RouterInterfaceId"]=$routerInterfaceId;
+	}
+
+	public function getOppositeInterfaceId() {
+		return $this->oppositeInterfaceId;
+	}
+
+	public function setOppositeInterfaceId($oppositeInterfaceId) {
+		$this->oppositeInterfaceId = $oppositeInterfaceId;
+		$this->queryParameters["OppositeInterfaceId"]=$oppositeInterfaceId;
+	}
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
+	}
+
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 	
 }

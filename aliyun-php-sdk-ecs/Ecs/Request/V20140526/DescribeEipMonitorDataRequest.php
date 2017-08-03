@@ -24,31 +24,41 @@ class DescribeEipMonitorDataRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "DescribeEipMonitorData");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $endTime;
+
+	private  $startTime;
 
 	private  $resourceOwnerAccount;
 
 	private  $resourceOwnerId;
 
-	private  $allocationId;
-
-	private  $startTime;
-
-	private  $endTime;
+	private  $ownerAccount;
 
 	private  $period;
 
-	private  $ownerAccount;
+	private  $ownerId;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $allocationId;
+
+	public function getEndTime() {
+		return $this->endTime;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -69,31 +79,13 @@ class DescribeEipMonitorDataRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getAllocationId() {
-		return $this->allocationId;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setAllocationId($allocationId) {
-		$this->allocationId = $allocationId;
-		$this->queryParameters["AllocationId"]=$allocationId;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
-
-	public function getEndTime() {
-		return $this->endTime;
-	}
-
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getPeriod() {
@@ -105,13 +97,22 @@ class DescribeEipMonitorDataRequest extends \RpcAcsRequest
 		$this->queryParameters["Period"]=$period;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getAllocationId() {
+		return $this->allocationId;
+	}
+
+	public function setAllocationId($allocationId) {
+		$this->allocationId = $allocationId;
+		$this->queryParameters["AllocationId"]=$allocationId;
 	}
 	
 }

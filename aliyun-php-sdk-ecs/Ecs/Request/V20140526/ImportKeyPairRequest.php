@@ -24,26 +24,18 @@ class ImportKeyPairRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "ImportKeyPair");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
 
 	private  $resourceOwnerAccount;
 
-	private  $resourceOwnerId;
+	private  $publicKeyBody;
 
 	private  $keyPairName;
 
-	private  $publicKeyBody;
+	private  $resourceOwnerId;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+	private  $ownerId;
 
 	public function getResourceOwnerAccount() {
 		return $this->resourceOwnerAccount;
@@ -54,13 +46,13 @@ class ImportKeyPairRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getPublicKeyBody() {
+		return $this->publicKeyBody;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setPublicKeyBody($publicKeyBody) {
+		$this->publicKeyBody = $publicKeyBody;
+		$this->queryParameters["PublicKeyBody"]=$publicKeyBody;
 	}
 
 	public function getKeyPairName() {
@@ -72,13 +64,22 @@ class ImportKeyPairRequest extends \RpcAcsRequest
 		$this->queryParameters["KeyPairName"]=$keyPairName;
 	}
 
-	public function getPublicKeyBody() {
-		return $this->publicKeyBody;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setPublicKeyBody($publicKeyBody) {
-		$this->publicKeyBody = $publicKeyBody;
-		$this->queryParameters["PublicKeyBody"]=$publicKeyBody;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

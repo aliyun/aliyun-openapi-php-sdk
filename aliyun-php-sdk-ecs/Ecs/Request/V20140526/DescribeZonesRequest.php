@@ -24,26 +24,18 @@ class DescribeZonesRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "DescribeZones");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
-
 	private  $resourceOwnerAccount;
+
+	private  $verbose;
 
 	private  $resourceOwnerId;
 
 	private  $ownerAccount;
 
-	private  $verbose;
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+	private  $ownerId;
 
 	public function getResourceOwnerAccount() {
 		return $this->resourceOwnerAccount;
@@ -52,6 +44,15 @@ class DescribeZonesRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getVerbose() {
+		return $this->verbose;
+	}
+
+	public function setVerbose($verbose) {
+		$this->verbose = $verbose;
+		$this->queryParameters["Verbose"]=$verbose;
 	}
 
 	public function getResourceOwnerId() {
@@ -72,13 +73,13 @@ class DescribeZonesRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getVerbose() {
-		return $this->verbose;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setVerbose($verbose) {
-		$this->verbose = $verbose;
-		$this->queryParameters["Verbose"]=$verbose;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

@@ -24,30 +24,22 @@ class ModifySnapshotAttributeRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "ModifySnapshotAttribute");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
-
 	private  $resourceOwnerAccount;
+
+	private  $snapshotId;
+
+	private  $description;
+
+	private  $snapshotName;
 
 	private  $resourceOwnerId;
 
 	private  $ownerAccount;
 
-	private  $snapshotId;
-
-	private  $snapshotName;
-
-	private  $description;
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+	private  $ownerId;
 
 	public function getResourceOwnerAccount() {
 		return $this->resourceOwnerAccount;
@@ -56,6 +48,33 @@ class ModifySnapshotAttributeRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getSnapshotId() {
+		return $this->snapshotId;
+	}
+
+	public function setSnapshotId($snapshotId) {
+		$this->snapshotId = $snapshotId;
+		$this->queryParameters["SnapshotId"]=$snapshotId;
+	}
+
+	public function getDescription() {
+		return $this->description;
+	}
+
+	public function setDescription($description) {
+		$this->description = $description;
+		$this->queryParameters["Description"]=$description;
+	}
+
+	public function getSnapshotName() {
+		return $this->snapshotName;
+	}
+
+	public function setSnapshotName($snapshotName) {
+		$this->snapshotName = $snapshotName;
+		$this->queryParameters["SnapshotName"]=$snapshotName;
 	}
 
 	public function getResourceOwnerId() {
@@ -76,31 +95,13 @@ class ModifySnapshotAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getSnapshotId() {
-		return $this->snapshotId;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setSnapshotId($snapshotId) {
-		$this->snapshotId = $snapshotId;
-		$this->queryParameters["SnapshotId"]=$snapshotId;
-	}
-
-	public function getSnapshotName() {
-		return $this->snapshotName;
-	}
-
-	public function setSnapshotName($snapshotName) {
-		$this->snapshotName = $snapshotName;
-		$this->queryParameters["SnapshotName"]=$snapshotName;
-	}
-
-	public function getDescription() {
-		return $this->description;
-	}
-
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

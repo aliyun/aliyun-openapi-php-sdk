@@ -24,31 +24,32 @@ class UnassociateHaVipRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "UnassociateHaVip");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $clientToken;
 
 	private  $resourceOwnerAccount;
+
+	private  $force;
 
 	private  $resourceOwnerId;
 
 	private  $ownerAccount;
 
-	private  $clientToken;
-
-	private  $haVipId;
+	private  $ownerId;
 
 	private  $instanceId;
 
-	private  $force;
+	private  $haVipId;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getClientToken() {
+		return $this->clientToken;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setClientToken($clientToken) {
+		$this->clientToken = $clientToken;
+		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -58,6 +59,15 @@ class UnassociateHaVipRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getForce() {
+		return $this->force;
+	}
+
+	public function setForce($force) {
+		$this->force = $force;
+		$this->queryParameters["Force"]=$force;
 	}
 
 	public function getResourceOwnerId() {
@@ -78,22 +88,13 @@ class UnassociateHaVipRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getClientToken() {
-		return $this->clientToken;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
-
-	public function getHaVipId() {
-		return $this->haVipId;
-	}
-
-	public function setHaVipId($haVipId) {
-		$this->haVipId = $haVipId;
-		$this->queryParameters["HaVipId"]=$haVipId;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getInstanceId() {
@@ -105,13 +106,13 @@ class UnassociateHaVipRequest extends \RpcAcsRequest
 		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 
-	public function getForce() {
-		return $this->force;
+	public function getHaVipId() {
+		return $this->haVipId;
 	}
 
-	public function setForce($force) {
-		$this->force = $force;
-		$this->queryParameters["Force"]=$force;
+	public function setHaVipId($haVipId) {
+		$this->haVipId = $haVipId;
+		$this->queryParameters["HaVipId"]=$haVipId;
 	}
 	
 }

@@ -24,96 +24,36 @@ class RevokeSecurityGroupRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "RevokeSecurityGroup");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
-
-	private  $securityGroupId;
-
-	private  $ipProtocol;
-
-	private  $portRange;
-
-	private  $sourceGroupId;
 
 	private  $sourceGroupOwnerId;
 
 	private  $sourceGroupOwnerAccount;
 
-	private  $sourceCidrIp;
+	private  $securityGroupId;
 
-	private  $policy;
+	private  $portRange;
+
+	private  $ownerId;
+
+	private  $ipProtocol;
+
+	private  $resourceOwnerAccount;
+
+	private  $priority;
+
+	private  $sourceGroupId;
 
 	private  $nicType;
 
+	private  $policy;
+
+	private  $resourceOwnerId;
+
 	private  $ownerAccount;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getSecurityGroupId() {
-		return $this->securityGroupId;
-	}
-
-	public function setSecurityGroupId($securityGroupId) {
-		$this->securityGroupId = $securityGroupId;
-		$this->queryParameters["SecurityGroupId"]=$securityGroupId;
-	}
-
-	public function getIpProtocol() {
-		return $this->ipProtocol;
-	}
-
-	public function setIpProtocol($ipProtocol) {
-		$this->ipProtocol = $ipProtocol;
-		$this->queryParameters["IpProtocol"]=$ipProtocol;
-	}
-
-	public function getPortRange() {
-		return $this->portRange;
-	}
-
-	public function setPortRange($portRange) {
-		$this->portRange = $portRange;
-		$this->queryParameters["PortRange"]=$portRange;
-	}
-
-	public function getSourceGroupId() {
-		return $this->sourceGroupId;
-	}
-
-	public function setSourceGroupId($sourceGroupId) {
-		$this->sourceGroupId = $sourceGroupId;
-		$this->queryParameters["SourceGroupId"]=$sourceGroupId;
-	}
+	private  $sourceCidrIp;
 
 	public function getSourceGroupOwnerId() {
 		return $this->sourceGroupOwnerId;
@@ -133,22 +73,67 @@ class RevokeSecurityGroupRequest extends \RpcAcsRequest
 		$this->queryParameters["SourceGroupOwnerAccount"]=$sourceGroupOwnerAccount;
 	}
 
-	public function getSourceCidrIp() {
-		return $this->sourceCidrIp;
+	public function getSecurityGroupId() {
+		return $this->securityGroupId;
 	}
 
-	public function setSourceCidrIp($sourceCidrIp) {
-		$this->sourceCidrIp = $sourceCidrIp;
-		$this->queryParameters["SourceCidrIp"]=$sourceCidrIp;
+	public function setSecurityGroupId($securityGroupId) {
+		$this->securityGroupId = $securityGroupId;
+		$this->queryParameters["SecurityGroupId"]=$securityGroupId;
 	}
 
-	public function getPolicy() {
-		return $this->policy;
+	public function getPortRange() {
+		return $this->portRange;
 	}
 
-	public function setPolicy($policy) {
-		$this->policy = $policy;
-		$this->queryParameters["Policy"]=$policy;
+	public function setPortRange($portRange) {
+		$this->portRange = $portRange;
+		$this->queryParameters["PortRange"]=$portRange;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getIpProtocol() {
+		return $this->ipProtocol;
+	}
+
+	public function setIpProtocol($ipProtocol) {
+		$this->ipProtocol = $ipProtocol;
+		$this->queryParameters["IpProtocol"]=$ipProtocol;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getPriority() {
+		return $this->priority;
+	}
+
+	public function setPriority($priority) {
+		$this->priority = $priority;
+		$this->queryParameters["Priority"]=$priority;
+	}
+
+	public function getSourceGroupId() {
+		return $this->sourceGroupId;
+	}
+
+	public function setSourceGroupId($sourceGroupId) {
+		$this->sourceGroupId = $sourceGroupId;
+		$this->queryParameters["SourceGroupId"]=$sourceGroupId;
 	}
 
 	public function getNicType() {
@@ -160,6 +145,24 @@ class RevokeSecurityGroupRequest extends \RpcAcsRequest
 		$this->queryParameters["NicType"]=$nicType;
 	}
 
+	public function getPolicy() {
+		return $this->policy;
+	}
+
+	public function setPolicy($policy) {
+		$this->policy = $policy;
+		$this->queryParameters["Policy"]=$policy;
+	}
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
+	}
+
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -167,6 +170,15 @@ class RevokeSecurityGroupRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getSourceCidrIp() {
+		return $this->sourceCidrIp;
+	}
+
+	public function setSourceCidrIp($sourceCidrIp) {
+		$this->sourceCidrIp = $sourceCidrIp;
+		$this->queryParameters["SourceCidrIp"]=$sourceCidrIp;
 	}
 	
 }

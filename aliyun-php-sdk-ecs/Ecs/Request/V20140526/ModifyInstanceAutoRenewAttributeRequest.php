@@ -24,29 +24,30 @@ class ModifyInstanceAutoRenewAttributeRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "ModifyInstanceAutoRenewAttribute");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $duration;
 
 	private  $resourceOwnerAccount;
 
 	private  $resourceOwnerId;
 
+	private  $autoRenew;
+
 	private  $ownerAccount;
+
+	private  $ownerId;
 
 	private  $instanceId;
 
-	private  $duration;
-
-	private  $autoRenew;
-
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getDuration() {
+		return $this->duration;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setDuration($duration) {
+		$this->duration = $duration;
+		$this->queryParameters["Duration"]=$duration;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -67,6 +68,15 @@ class ModifyInstanceAutoRenewAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getAutoRenew() {
+		return $this->autoRenew;
+	}
+
+	public function setAutoRenew($autoRenew) {
+		$this->autoRenew = $autoRenew;
+		$this->queryParameters["AutoRenew"]=$autoRenew;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -76,6 +86,15 @@ class ModifyInstanceAutoRenewAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
 	public function getInstanceId() {
 		return $this->instanceId;
 	}
@@ -83,24 +102,6 @@ class ModifyInstanceAutoRenewAttributeRequest extends \RpcAcsRequest
 	public function setInstanceId($instanceId) {
 		$this->instanceId = $instanceId;
 		$this->queryParameters["InstanceId"]=$instanceId;
-	}
-
-	public function getDuration() {
-		return $this->duration;
-	}
-
-	public function setDuration($duration) {
-		$this->duration = $duration;
-		$this->queryParameters["Duration"]=$duration;
-	}
-
-	public function getAutoRenew() {
-		return $this->autoRenew;
-	}
-
-	public function setAutoRenew($autoRenew) {
-		$this->autoRenew = $autoRenew;
-		$this->queryParameters["AutoRenew"]=$autoRenew;
 	}
 	
 }

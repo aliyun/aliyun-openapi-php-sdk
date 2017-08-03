@@ -24,31 +24,43 @@ class DescribeSnapshotLinksRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "DescribeSnapshotLinks");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $pageSize;
+
+	private  $diskIds;
 
 	private  $resourceOwnerAccount;
+
+	private  $pageNumber;
+
+	private  $snapshotLinkIds;
 
 	private  $resourceOwnerId;
 
 	private  $ownerAccount;
 
-	private  $diskIds;
+	private  $ownerId;
 
-	private  $snapshotLinkIds;
+	private  $instanceId;
 
-	private  $pageNumber;
-
-	private  $pageSize;
-
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getPageSize() {
+		return $this->pageSize;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
+	public function getDiskIds() {
+		return $this->diskIds;
+	}
+
+	public function setDiskIds($diskIds) {
+		$this->diskIds = $diskIds;
+		$this->queryParameters["DiskIds"]=$diskIds;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -58,6 +70,24 @@ class DescribeSnapshotLinksRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getPageNumber() {
+		return $this->pageNumber;
+	}
+
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
+	}
+
+	public function getSnapshotLinkIds() {
+		return $this->snapshotLinkIds;
+	}
+
+	public function setSnapshotLinkIds($snapshotLinkIds) {
+		$this->snapshotLinkIds = $snapshotLinkIds;
+		$this->queryParameters["SnapshotLinkIds"]=$snapshotLinkIds;
 	}
 
 	public function getResourceOwnerId() {
@@ -78,40 +108,22 @@ class DescribeSnapshotLinksRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getDiskIds() {
-		return $this->diskIds;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setDiskIds($diskIds) {
-		$this->diskIds = $diskIds;
-		$this->queryParameters["DiskIds"]=$diskIds;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getSnapshotLinkIds() {
-		return $this->snapshotLinkIds;
+	public function getInstanceId() {
+		return $this->instanceId;
 	}
 
-	public function setSnapshotLinkIds($snapshotLinkIds) {
-		$this->snapshotLinkIds = $snapshotLinkIds;
-		$this->queryParameters["SnapshotLinkIds"]=$snapshotLinkIds;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setInstanceId($instanceId) {
+		$this->instanceId = $instanceId;
+		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 	
 }

@@ -24,137 +24,66 @@ class DescribeSnapshotsRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "DescribeSnapshots");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
-
-	private  $instanceId;
-
-	private  $diskId;
-
-	private  $snapshotLinkId;
-
-	private  $snapshotIds;
-
-	private  $pageNumber;
 
 	private  $pageSize;
 
-	private  $ownerAccount;
-
-	private  $snapshotName;
-
-	private  $status;
-
-	private  $snapshotType;
-
-	private  $filter1Key;
+	private  $sourceDiskType;
 
 	private  $filter2Key;
 
-	private  $filter1Value;
+	private  $tag5Value;
 
 	private  $filter2Value;
 
-	private  $usage;
+	private  $tag3Key;
 
-	private  $sourceDiskType;
+	private  $resourceOwnerAccount;
+
+	private  $filter1Value;
 
 	private  $tag1Key;
 
-	private  $tag2Key;
-
-	private  $tag3Key;
-
-	private  $tag4Key;
-
-	private  $tag5Key;
-
 	private  $tag1Value;
 
-	private  $tag2Value;
+	private  $snapshotType;
 
-	private  $tag3Value;
+	private  $resourceOwnerId;
 
 	private  $tag4Value;
 
-	private  $tag5Value;
+	private  $ownerAccount;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+	private  $pageNumber;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+	private  $snapshotIds;
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+	private  $status;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+	private  $snapshotName;
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+	private  $ownerId;
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+	private  $tag5Key;
 
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
+	private  $snapshotLinkId;
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
+	private  $filter1Key;
 
-	public function getDiskId() {
-		return $this->diskId;
-	}
+	private  $tag2Key;
 
-	public function setDiskId($diskId) {
-		$this->diskId = $diskId;
-		$this->queryParameters["DiskId"]=$diskId;
-	}
+	private  $diskId;
 
-	public function getSnapshotLinkId() {
-		return $this->snapshotLinkId;
-	}
+	private  $usage;
 
-	public function setSnapshotLinkId($snapshotLinkId) {
-		$this->snapshotLinkId = $snapshotLinkId;
-		$this->queryParameters["SnapshotLinkId"]=$snapshotLinkId;
-	}
+	private  $tag3Value;
 
-	public function getSnapshotIds() {
-		return $this->snapshotIds;
-	}
+	private  $instanceId;
 
-	public function setSnapshotIds($snapshotIds) {
-		$this->snapshotIds = $snapshotIds;
-		$this->queryParameters["SnapshotIds"]=$snapshotIds;
-	}
+	private  $tag2Value;
 
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
+	private  $tag4Key;
 
 	public function getPageSize() {
 		return $this->pageSize;
@@ -163,87 +92,6 @@ class DescribeSnapshotsRequest extends \RpcAcsRequest
 	public function setPageSize($pageSize) {
 		$this->pageSize = $pageSize;
 		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getSnapshotName() {
-		return $this->snapshotName;
-	}
-
-	public function setSnapshotName($snapshotName) {
-		$this->snapshotName = $snapshotName;
-		$this->queryParameters["SnapshotName"]=$snapshotName;
-	}
-
-	public function getStatus() {
-		return $this->status;
-	}
-
-	public function setStatus($status) {
-		$this->status = $status;
-		$this->queryParameters["Status"]=$status;
-	}
-
-	public function getSnapshotType() {
-		return $this->snapshotType;
-	}
-
-	public function setSnapshotType($snapshotType) {
-		$this->snapshotType = $snapshotType;
-		$this->queryParameters["SnapshotType"]=$snapshotType;
-	}
-
-	public function getFilter1Key() {
-		return $this->filter1Key;
-	}
-
-	public function setFilter1Key($filter1Key) {
-		$this->filter1Key = $filter1Key;
-		$this->queryParameters["Filter.1.Key"]=$filter1Key;
-	}
-
-	public function getFilter2Key() {
-		return $this->filter2Key;
-	}
-
-	public function setFilter2Key($filter2Key) {
-		$this->filter2Key = $filter2Key;
-		$this->queryParameters["Filter.2.Key"]=$filter2Key;
-	}
-
-	public function getFilter1Value() {
-		return $this->filter1Value;
-	}
-
-	public function setFilter1Value($filter1Value) {
-		$this->filter1Value = $filter1Value;
-		$this->queryParameters["Filter.1.Value"]=$filter1Value;
-	}
-
-	public function getFilter2Value() {
-		return $this->filter2Value;
-	}
-
-	public function setFilter2Value($filter2Value) {
-		$this->filter2Value = $filter2Value;
-		$this->queryParameters["Filter.2.Value"]=$filter2Value;
-	}
-
-	public function getUsage() {
-		return $this->usage;
-	}
-
-	public function setUsage($usage) {
-		$this->usage = $usage;
-		$this->queryParameters["Usage"]=$usage;
 	}
 
 	public function getSourceDiskType() {
@@ -255,22 +103,31 @@ class DescribeSnapshotsRequest extends \RpcAcsRequest
 		$this->queryParameters["SourceDiskType"]=$sourceDiskType;
 	}
 
-	public function getTag1Key() {
-		return $this->tag1Key;
+	public function getFilter2Key() {
+		return $this->filter2Key;
 	}
 
-	public function setTag1Key($tag1Key) {
-		$this->tag1Key = $tag1Key;
-		$this->queryParameters["Tag.1.Key"]=$tag1Key;
+	public function setFilter2Key($filter2Key) {
+		$this->filter2Key = $filter2Key;
+		$this->queryParameters["Filter.2.Key"]=$filter2Key;
 	}
 
-	public function getTag2Key() {
-		return $this->tag2Key;
+	public function getTag5Value() {
+		return $this->tag5Value;
 	}
 
-	public function setTag2Key($tag2Key) {
-		$this->tag2Key = $tag2Key;
-		$this->queryParameters["Tag.2.Key"]=$tag2Key;
+	public function setTag5Value($tag5Value) {
+		$this->tag5Value = $tag5Value;
+		$this->queryParameters["Tag.5.Value"]=$tag5Value;
+	}
+
+	public function getFilter2Value() {
+		return $this->filter2Value;
+	}
+
+	public function setFilter2Value($filter2Value) {
+		$this->filter2Value = $filter2Value;
+		$this->queryParameters["Filter.2.Value"]=$filter2Value;
 	}
 
 	public function getTag3Key() {
@@ -282,22 +139,31 @@ class DescribeSnapshotsRequest extends \RpcAcsRequest
 		$this->queryParameters["Tag.3.Key"]=$tag3Key;
 	}
 
-	public function getTag4Key() {
-		return $this->tag4Key;
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
 	}
 
-	public function setTag4Key($tag4Key) {
-		$this->tag4Key = $tag4Key;
-		$this->queryParameters["Tag.4.Key"]=$tag4Key;
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getTag5Key() {
-		return $this->tag5Key;
+	public function getFilter1Value() {
+		return $this->filter1Value;
 	}
 
-	public function setTag5Key($tag5Key) {
-		$this->tag5Key = $tag5Key;
-		$this->queryParameters["Tag.5.Key"]=$tag5Key;
+	public function setFilter1Value($filter1Value) {
+		$this->filter1Value = $filter1Value;
+		$this->queryParameters["Filter.1.Value"]=$filter1Value;
+	}
+
+	public function getTag1Key() {
+		return $this->tag1Key;
+	}
+
+	public function setTag1Key($tag1Key) {
+		$this->tag1Key = $tag1Key;
+		$this->queryParameters["Tag.1.Key"]=$tag1Key;
 	}
 
 	public function getTag1Value() {
@@ -309,22 +175,22 @@ class DescribeSnapshotsRequest extends \RpcAcsRequest
 		$this->queryParameters["Tag.1.Value"]=$tag1Value;
 	}
 
-	public function getTag2Value() {
-		return $this->tag2Value;
+	public function getSnapshotType() {
+		return $this->snapshotType;
 	}
 
-	public function setTag2Value($tag2Value) {
-		$this->tag2Value = $tag2Value;
-		$this->queryParameters["Tag.2.Value"]=$tag2Value;
+	public function setSnapshotType($snapshotType) {
+		$this->snapshotType = $snapshotType;
+		$this->queryParameters["SnapshotType"]=$snapshotType;
 	}
 
-	public function getTag3Value() {
-		return $this->tag3Value;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setTag3Value($tag3Value) {
-		$this->tag3Value = $tag3Value;
-		$this->queryParameters["Tag.3.Value"]=$tag3Value;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getTag4Value() {
@@ -336,13 +202,148 @@ class DescribeSnapshotsRequest extends \RpcAcsRequest
 		$this->queryParameters["Tag.4.Value"]=$tag4Value;
 	}
 
-	public function getTag5Value() {
-		return $this->tag5Value;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setTag5Value($tag5Value) {
-		$this->tag5Value = $tag5Value;
-		$this->queryParameters["Tag.5.Value"]=$tag5Value;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getPageNumber() {
+		return $this->pageNumber;
+	}
+
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
+	}
+
+	public function getSnapshotIds() {
+		return $this->snapshotIds;
+	}
+
+	public function setSnapshotIds($snapshotIds) {
+		$this->snapshotIds = $snapshotIds;
+		$this->queryParameters["SnapshotIds"]=$snapshotIds;
+	}
+
+	public function getStatus() {
+		return $this->status;
+	}
+
+	public function setStatus($status) {
+		$this->status = $status;
+		$this->queryParameters["Status"]=$status;
+	}
+
+	public function getSnapshotName() {
+		return $this->snapshotName;
+	}
+
+	public function setSnapshotName($snapshotName) {
+		$this->snapshotName = $snapshotName;
+		$this->queryParameters["SnapshotName"]=$snapshotName;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getTag5Key() {
+		return $this->tag5Key;
+	}
+
+	public function setTag5Key($tag5Key) {
+		$this->tag5Key = $tag5Key;
+		$this->queryParameters["Tag.5.Key"]=$tag5Key;
+	}
+
+	public function getSnapshotLinkId() {
+		return $this->snapshotLinkId;
+	}
+
+	public function setSnapshotLinkId($snapshotLinkId) {
+		$this->snapshotLinkId = $snapshotLinkId;
+		$this->queryParameters["SnapshotLinkId"]=$snapshotLinkId;
+	}
+
+	public function getFilter1Key() {
+		return $this->filter1Key;
+	}
+
+	public function setFilter1Key($filter1Key) {
+		$this->filter1Key = $filter1Key;
+		$this->queryParameters["Filter.1.Key"]=$filter1Key;
+	}
+
+	public function getTag2Key() {
+		return $this->tag2Key;
+	}
+
+	public function setTag2Key($tag2Key) {
+		$this->tag2Key = $tag2Key;
+		$this->queryParameters["Tag.2.Key"]=$tag2Key;
+	}
+
+	public function getDiskId() {
+		return $this->diskId;
+	}
+
+	public function setDiskId($diskId) {
+		$this->diskId = $diskId;
+		$this->queryParameters["DiskId"]=$diskId;
+	}
+
+	public function getUsage() {
+		return $this->usage;
+	}
+
+	public function setUsage($usage) {
+		$this->usage = $usage;
+		$this->queryParameters["Usage"]=$usage;
+	}
+
+	public function getTag3Value() {
+		return $this->tag3Value;
+	}
+
+	public function setTag3Value($tag3Value) {
+		$this->tag3Value = $tag3Value;
+		$this->queryParameters["Tag.3.Value"]=$tag3Value;
+	}
+
+	public function getInstanceId() {
+		return $this->instanceId;
+	}
+
+	public function setInstanceId($instanceId) {
+		$this->instanceId = $instanceId;
+		$this->queryParameters["InstanceId"]=$instanceId;
+	}
+
+	public function getTag2Value() {
+		return $this->tag2Value;
+	}
+
+	public function setTag2Value($tag2Value) {
+		$this->tag2Value = $tag2Value;
+		$this->queryParameters["Tag.2.Value"]=$tag2Value;
+	}
+
+	public function getTag4Key() {
+		return $this->tag4Key;
+	}
+
+	public function setTag4Key($tag4Key) {
+		$this->tag4Key = $tag4Key;
+		$this->queryParameters["Tag.4.Key"]=$tag4Key;
 	}
 	
 }

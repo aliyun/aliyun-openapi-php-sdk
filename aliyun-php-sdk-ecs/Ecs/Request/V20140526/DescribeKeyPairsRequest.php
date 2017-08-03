@@ -24,29 +24,30 @@ class DescribeKeyPairsRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "DescribeKeyPairs");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
-
-	private  $keyPairName;
-
-	private  $keyPairFingerPrint;
-
-	private  $pageNumber;
 
 	private  $pageSize;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $resourceOwnerAccount;
+
+	private  $pageNumber;
+
+	private  $keyPairFingerPrint;
+
+	private  $keyPairName;
+
+	private  $resourceOwnerId;
+
+	private  $ownerId;
+
+	public function getPageSize() {
+		return $this->pageSize;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -58,22 +59,13 @@ class DescribeKeyPairsRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getPageNumber() {
+		return $this->pageNumber;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getKeyPairName() {
-		return $this->keyPairName;
-	}
-
-	public function setKeyPairName($keyPairName) {
-		$this->keyPairName = $keyPairName;
-		$this->queryParameters["KeyPairName"]=$keyPairName;
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 
 	public function getKeyPairFingerPrint() {
@@ -85,22 +77,31 @@ class DescribeKeyPairsRequest extends \RpcAcsRequest
 		$this->queryParameters["KeyPairFingerPrint"]=$keyPairFingerPrint;
 	}
 
-	public function getPageNumber() {
-		return $this->pageNumber;
+	public function getKeyPairName() {
+		return $this->keyPairName;
 	}
 
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
+	public function setKeyPairName($keyPairName) {
+		$this->keyPairName = $keyPairName;
+		$this->queryParameters["KeyPairName"]=$keyPairName;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

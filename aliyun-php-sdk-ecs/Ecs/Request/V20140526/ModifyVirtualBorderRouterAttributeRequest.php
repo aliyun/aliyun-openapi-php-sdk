@@ -24,44 +24,36 @@ class ModifyVirtualBorderRouterAttributeRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "ModifyVirtualBorderRouterAttribute");
+		$this->setMethod("POST");
 	}
 
-	private  $vbrId;
-
 	private  $vlanId;
+
+	private  $clientToken;
+
+	private  $userCidr;
+
+	private  $ownerId;
 
 	private  $circuitCode;
 
 	private  $localGatewayIp;
 
-	private  $peerGatewayIp;
-
-	private  $peeringSubnetMask;
+	private  $resourceOwnerAccount;
 
 	private  $description;
 
+	private  $peerGatewayIp;
+
 	private  $name;
 
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
+	private  $peeringSubnetMask;
 
 	private  $resourceOwnerId;
 
-	private  $clientToken;
-
 	private  $ownerAccount;
 
-	private  $userCidr;
-
-	public function getVbrId() {
-		return $this->vbrId;
-	}
-
-	public function setVbrId($vbrId) {
-		$this->vbrId = $vbrId;
-		$this->queryParameters["VbrId"]=$vbrId;
-	}
+	private  $vbrId;
 
 	public function getVlanId() {
 		return $this->vlanId;
@@ -70,6 +62,33 @@ class ModifyVirtualBorderRouterAttributeRequest extends \RpcAcsRequest
 	public function setVlanId($vlanId) {
 		$this->vlanId = $vlanId;
 		$this->queryParameters["VlanId"]=$vlanId;
+	}
+
+	public function getClientToken() {
+		return $this->clientToken;
+	}
+
+	public function setClientToken($clientToken) {
+		$this->clientToken = $clientToken;
+		$this->queryParameters["ClientToken"]=$clientToken;
+	}
+
+	public function getUserCidr() {
+		return $this->userCidr;
+	}
+
+	public function setUserCidr($userCidr) {
+		$this->userCidr = $userCidr;
+		$this->queryParameters["UserCidr"]=$userCidr;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getCircuitCode() {
@@ -90,22 +109,13 @@ class ModifyVirtualBorderRouterAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["LocalGatewayIp"]=$localGatewayIp;
 	}
 
-	public function getPeerGatewayIp() {
-		return $this->peerGatewayIp;
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
 	}
 
-	public function setPeerGatewayIp($peerGatewayIp) {
-		$this->peerGatewayIp = $peerGatewayIp;
-		$this->queryParameters["PeerGatewayIp"]=$peerGatewayIp;
-	}
-
-	public function getPeeringSubnetMask() {
-		return $this->peeringSubnetMask;
-	}
-
-	public function setPeeringSubnetMask($peeringSubnetMask) {
-		$this->peeringSubnetMask = $peeringSubnetMask;
-		$this->queryParameters["PeeringSubnetMask"]=$peeringSubnetMask;
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
 	public function getDescription() {
@@ -117,6 +127,15 @@ class ModifyVirtualBorderRouterAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["Description"]=$description;
 	}
 
+	public function getPeerGatewayIp() {
+		return $this->peerGatewayIp;
+	}
+
+	public function setPeerGatewayIp($peerGatewayIp) {
+		$this->peerGatewayIp = $peerGatewayIp;
+		$this->queryParameters["PeerGatewayIp"]=$peerGatewayIp;
+	}
+
 	public function getName() {
 		return $this->name;
 	}
@@ -126,22 +145,13 @@ class ModifyVirtualBorderRouterAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["Name"]=$name;
 	}
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getPeeringSubnetMask() {
+		return $this->peeringSubnetMask;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setPeeringSubnetMask($peeringSubnetMask) {
+		$this->peeringSubnetMask = $peeringSubnetMask;
+		$this->queryParameters["PeeringSubnetMask"]=$peeringSubnetMask;
 	}
 
 	public function getResourceOwnerId() {
@@ -153,15 +163,6 @@ class ModifyVirtualBorderRouterAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getClientToken() {
-		return $this->clientToken;
-	}
-
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
-
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -171,13 +172,13 @@ class ModifyVirtualBorderRouterAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getUserCidr() {
-		return $this->userCidr;
+	public function getVbrId() {
+		return $this->vbrId;
 	}
 
-	public function setUserCidr($userCidr) {
-		$this->userCidr = $userCidr;
-		$this->queryParameters["UserCidr"]=$userCidr;
+	public function setVbrId($vbrId) {
+		$this->vbrId = $vbrId;
+		$this->queryParameters["VbrId"]=$vbrId;
 	}
 	
 }

@@ -24,76 +24,34 @@ class ModifyInstanceSpecRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Ecs", "2014-05-26", "ModifyInstanceSpec");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
-
-	private  $instanceId;
-
-	private  $instanceType;
 
 	private  $internetMaxBandwidthOut;
 
-	private  $internetMaxBandwidthIn;
-
-	private  $ownerAccount;
-
-	private  $temporaryStartTime;
+	private  $clientToken;
 
 	private  $temporaryEndTime;
 
-	private  $temporaryInternetMaxBandwidthOut;
+	private  $ownerId;
 
 	private  $async;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+	private  $instanceType;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+	private  $resourceOwnerAccount;
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+	private  $temporaryStartTime;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+	private  $internetMaxBandwidthIn;
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+	private  $resourceOwnerId;
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+	private  $ownerAccount;
 
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
+	private  $temporaryInternetMaxBandwidthOut;
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
-
-	public function getInstanceType() {
-		return $this->instanceType;
-	}
-
-	public function setInstanceType($instanceType) {
-		$this->instanceType = $instanceType;
-		$this->queryParameters["InstanceType"]=$instanceType;
-	}
+	private  $instanceId;
 
 	public function getInternetMaxBandwidthOut() {
 		return $this->internetMaxBandwidthOut;
@@ -104,31 +62,13 @@ class ModifyInstanceSpecRequest extends \RpcAcsRequest
 		$this->queryParameters["InternetMaxBandwidthOut"]=$internetMaxBandwidthOut;
 	}
 
-	public function getInternetMaxBandwidthIn() {
-		return $this->internetMaxBandwidthIn;
+	public function getClientToken() {
+		return $this->clientToken;
 	}
 
-	public function setInternetMaxBandwidthIn($internetMaxBandwidthIn) {
-		$this->internetMaxBandwidthIn = $internetMaxBandwidthIn;
-		$this->queryParameters["InternetMaxBandwidthIn"]=$internetMaxBandwidthIn;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getTemporaryStartTime() {
-		return $this->temporaryStartTime;
-	}
-
-	public function setTemporaryStartTime($temporaryStartTime) {
-		$this->temporaryStartTime = $temporaryStartTime;
-		$this->queryParameters["Temporary.StartTime"]=$temporaryStartTime;
+	public function setClientToken($clientToken) {
+		$this->clientToken = $clientToken;
+		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
 	public function getTemporaryEndTime() {
@@ -140,13 +80,13 @@ class ModifyInstanceSpecRequest extends \RpcAcsRequest
 		$this->queryParameters["Temporary.EndTime"]=$temporaryEndTime;
 	}
 
-	public function getTemporaryInternetMaxBandwidthOut() {
-		return $this->temporaryInternetMaxBandwidthOut;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setTemporaryInternetMaxBandwidthOut($temporaryInternetMaxBandwidthOut) {
-		$this->temporaryInternetMaxBandwidthOut = $temporaryInternetMaxBandwidthOut;
-		$this->queryParameters["Temporary.InternetMaxBandwidthOut"]=$temporaryInternetMaxBandwidthOut;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getAsync() {
@@ -156,6 +96,78 @@ class ModifyInstanceSpecRequest extends \RpcAcsRequest
 	public function setAsync($async) {
 		$this->async = $async;
 		$this->queryParameters["Async"]=$async;
+	}
+
+	public function getInstanceType() {
+		return $this->instanceType;
+	}
+
+	public function setInstanceType($instanceType) {
+		$this->instanceType = $instanceType;
+		$this->queryParameters["InstanceType"]=$instanceType;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getTemporaryStartTime() {
+		return $this->temporaryStartTime;
+	}
+
+	public function setTemporaryStartTime($temporaryStartTime) {
+		$this->temporaryStartTime = $temporaryStartTime;
+		$this->queryParameters["Temporary.StartTime"]=$temporaryStartTime;
+	}
+
+	public function getInternetMaxBandwidthIn() {
+		return $this->internetMaxBandwidthIn;
+	}
+
+	public function setInternetMaxBandwidthIn($internetMaxBandwidthIn) {
+		$this->internetMaxBandwidthIn = $internetMaxBandwidthIn;
+		$this->queryParameters["InternetMaxBandwidthIn"]=$internetMaxBandwidthIn;
+	}
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
+	}
+
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getTemporaryInternetMaxBandwidthOut() {
+		return $this->temporaryInternetMaxBandwidthOut;
+	}
+
+	public function setTemporaryInternetMaxBandwidthOut($temporaryInternetMaxBandwidthOut) {
+		$this->temporaryInternetMaxBandwidthOut = $temporaryInternetMaxBandwidthOut;
+		$this->queryParameters["Temporary.InternetMaxBandwidthOut"]=$temporaryInternetMaxBandwidthOut;
+	}
+
+	public function getInstanceId() {
+		return $this->instanceId;
+	}
+
+	public function setInstanceId($instanceId) {
+		$this->instanceId = $instanceId;
+		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 	
 }
