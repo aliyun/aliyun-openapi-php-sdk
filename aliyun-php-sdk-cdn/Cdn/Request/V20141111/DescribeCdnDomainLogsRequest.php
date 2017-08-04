@@ -24,32 +24,24 @@ class DescribeCdnDomainLogsRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "DescribeCdnDomainLogs");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
 
 	private  $securityToken;
 
 	private  $domainName;
 
-	private  $logDay;
-
 	private  $pageSize;
-
-	private  $pageNumber;
-
-	private  $startTime;
 
 	private  $endTime;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+	private  $startTime;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+	private  $ownerId;
+
+	private  $pageNumber;
+
+	private  $logDay;
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -69,15 +61,6 @@ class DescribeCdnDomainLogsRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getLogDay() {
-		return $this->logDay;
-	}
-
-	public function setLogDay($logDay) {
-		$this->logDay = $logDay;
-		$this->queryParameters["LogDay"]=$logDay;
-	}
-
 	public function getPageSize() {
 		return $this->pageSize;
 	}
@@ -87,13 +70,13 @@ class DescribeCdnDomainLogsRequest extends \RpcAcsRequest
 		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
-	public function getPageNumber() {
-		return $this->pageNumber;
+	public function getEndTime() {
+		return $this->endTime;
 	}
 
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
 	}
 
 	public function getStartTime() {
@@ -105,13 +88,31 @@ class DescribeCdnDomainLogsRequest extends \RpcAcsRequest
 		$this->queryParameters["StartTime"]=$startTime;
 	}
 
-	public function getEndTime() {
-		return $this->endTime;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getPageNumber() {
+		return $this->pageNumber;
+	}
+
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
+	}
+
+	public function getLogDay() {
+		return $this->logDay;
+	}
+
+	public function setLogDay($logDay) {
+		$this->logDay = $logDay;
+		$this->queryParameters["LogDay"]=$logDay;
 	}
 	
 }

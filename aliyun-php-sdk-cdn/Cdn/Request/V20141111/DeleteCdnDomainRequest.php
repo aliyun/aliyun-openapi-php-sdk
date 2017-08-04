@@ -24,21 +24,24 @@ class DeleteCdnDomainRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "DeleteCdnDomain");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $resourceGroupId;
 
 	private  $securityToken;
 
 	private  $domainName;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $ownerId;
+
+	public function getResourceGroupId() {
+		return $this->resourceGroupId;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setResourceGroupId($resourceGroupId) {
+		$this->resourceGroupId = $resourceGroupId;
+		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
 	}
 
 	public function getSecurityToken() {
@@ -57,6 +60,15 @@ class DeleteCdnDomainRequest extends \RpcAcsRequest
 	public function setDomainName($domainName) {
 		$this->domainName = $domainName;
 		$this->queryParameters["DomainName"]=$domainName;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

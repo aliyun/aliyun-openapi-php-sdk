@@ -24,26 +24,18 @@ class SetReqHeaderConfigRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "SetReqHeaderConfig");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
 
 	private  $securityToken;
 
 	private  $domainName;
 
-	private  $key;
+	private  $ownerId;
 
 	private  $value;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+	private  $key;
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -63,13 +55,13 @@ class SetReqHeaderConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getKey() {
-		return $this->key;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setKey($key) {
-		$this->key = $key;
-		$this->queryParameters["Key"]=$key;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getValue() {
@@ -79,6 +71,15 @@ class SetReqHeaderConfigRequest extends \RpcAcsRequest
 	public function setValue($value) {
 		$this->value = $value;
 		$this->queryParameters["Value"]=$value;
+	}
+
+	public function getKey() {
+		return $this->key;
+	}
+
+	public function setKey($key) {
+		$this->key = $key;
+		$this->queryParameters["Key"]=$key;
 	}
 	
 }

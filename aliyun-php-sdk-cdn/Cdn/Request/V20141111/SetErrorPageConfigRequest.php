@@ -24,25 +24,26 @@ class SetErrorPageConfigRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "SetErrorPageConfig");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $pageType;
 
 	private  $securityToken;
 
 	private  $domainName;
 
-	private  $pageType;
-
 	private  $customPageUrl;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $ownerId;
+
+	public function getPageType() {
+		return $this->pageType;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setPageType($pageType) {
+		$this->pageType = $pageType;
+		$this->queryParameters["PageType"]=$pageType;
 	}
 
 	public function getSecurityToken() {
@@ -63,15 +64,6 @@ class SetErrorPageConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getPageType() {
-		return $this->pageType;
-	}
-
-	public function setPageType($pageType) {
-		$this->pageType = $pageType;
-		$this->queryParameters["PageType"]=$pageType;
-	}
-
 	public function getCustomPageUrl() {
 		return $this->customPageUrl;
 	}
@@ -79,6 +71,15 @@ class SetErrorPageConfigRequest extends \RpcAcsRequest
 	public function setCustomPageUrl($customPageUrl) {
 		$this->customPageUrl = $customPageUrl;
 		$this->queryParameters["CustomPageUrl"]=$customPageUrl;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

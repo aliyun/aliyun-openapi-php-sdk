@@ -24,35 +24,36 @@ class StartMixStreamsServiceRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "StartMixStreamsService");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $mixType;
 
 	private  $securityToken;
 
 	private  $mainDomainName;
 
-	private  $mainAppName;
-
-	private  $mainStreamName;
-
-	private  $mixDomainName;
-
-	private  $mixAppName;
-
 	private  $mixStreamName;
 
 	private  $mixTemplate;
 
-	private  $mixType;
+	private  $mixDomainName;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $ownerId;
+
+	private  $mainAppName;
+
+	private  $mixAppName;
+
+	private  $mainStreamName;
+
+	public function getMixType() {
+		return $this->mixType;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setMixType($mixType) {
+		$this->mixType = $mixType;
+		$this->queryParameters["MixType"]=$mixType;
 	}
 
 	public function getSecurityToken() {
@@ -73,42 +74,6 @@ class StartMixStreamsServiceRequest extends \RpcAcsRequest
 		$this->queryParameters["MainDomainName"]=$mainDomainName;
 	}
 
-	public function getMainAppName() {
-		return $this->mainAppName;
-	}
-
-	public function setMainAppName($mainAppName) {
-		$this->mainAppName = $mainAppName;
-		$this->queryParameters["MainAppName"]=$mainAppName;
-	}
-
-	public function getMainStreamName() {
-		return $this->mainStreamName;
-	}
-
-	public function setMainStreamName($mainStreamName) {
-		$this->mainStreamName = $mainStreamName;
-		$this->queryParameters["MainStreamName"]=$mainStreamName;
-	}
-
-	public function getMixDomainName() {
-		return $this->mixDomainName;
-	}
-
-	public function setMixDomainName($mixDomainName) {
-		$this->mixDomainName = $mixDomainName;
-		$this->queryParameters["MixDomainName"]=$mixDomainName;
-	}
-
-	public function getMixAppName() {
-		return $this->mixAppName;
-	}
-
-	public function setMixAppName($mixAppName) {
-		$this->mixAppName = $mixAppName;
-		$this->queryParameters["MixAppName"]=$mixAppName;
-	}
-
 	public function getMixStreamName() {
 		return $this->mixStreamName;
 	}
@@ -127,13 +92,49 @@ class StartMixStreamsServiceRequest extends \RpcAcsRequest
 		$this->queryParameters["MixTemplate"]=$mixTemplate;
 	}
 
-	public function getMixType() {
-		return $this->mixType;
+	public function getMixDomainName() {
+		return $this->mixDomainName;
 	}
 
-	public function setMixType($mixType) {
-		$this->mixType = $mixType;
-		$this->queryParameters["MixType"]=$mixType;
+	public function setMixDomainName($mixDomainName) {
+		$this->mixDomainName = $mixDomainName;
+		$this->queryParameters["MixDomainName"]=$mixDomainName;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getMainAppName() {
+		return $this->mainAppName;
+	}
+
+	public function setMainAppName($mainAppName) {
+		$this->mainAppName = $mainAppName;
+		$this->queryParameters["MainAppName"]=$mainAppName;
+	}
+
+	public function getMixAppName() {
+		return $this->mixAppName;
+	}
+
+	public function setMixAppName($mixAppName) {
+		$this->mixAppName = $mixAppName;
+		$this->queryParameters["MixAppName"]=$mixAppName;
+	}
+
+	public function getMainStreamName() {
+		return $this->mainStreamName;
+	}
+
+	public function setMainStreamName($mainStreamName) {
+		$this->mainStreamName = $mainStreamName;
+		$this->queryParameters["MainStreamName"]=$mainStreamName;
 	}
 	
 }

@@ -24,9 +24,8 @@ class SetForceRedirectConfigRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "SetForceRedirectConfig");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
 
 	private  $securityToken;
 
@@ -34,14 +33,7 @@ class SetForceRedirectConfigRequest extends \RpcAcsRequest
 
 	private  $redirectType;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+	private  $ownerId;
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -68,6 +60,15 @@ class SetForceRedirectConfigRequest extends \RpcAcsRequest
 	public function setRedirectType($redirectType) {
 		$this->redirectType = $redirectType;
 		$this->queryParameters["RedirectType"]=$redirectType;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

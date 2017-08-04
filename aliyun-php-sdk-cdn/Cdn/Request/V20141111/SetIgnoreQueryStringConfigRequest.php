@@ -24,25 +24,37 @@ class SetIgnoreQueryStringConfigRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "SetIgnoreQueryStringConfig");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
-
-	private  $securityToken;
-
-	private  $domainName;
-
-	private  $enable;
+	private  $keepOssArgs;
 
 	private  $hashKeyArgs;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $securityToken;
+
+	private  $enable;
+
+	private  $domainName;
+
+	private  $ownerId;
+
+	public function getKeepOssArgs() {
+		return $this->keepOssArgs;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setKeepOssArgs($keepOssArgs) {
+		$this->keepOssArgs = $keepOssArgs;
+		$this->queryParameters["KeepOssArgs"]=$keepOssArgs;
+	}
+
+	public function getHashKeyArgs() {
+		return $this->hashKeyArgs;
+	}
+
+	public function setHashKeyArgs($hashKeyArgs) {
+		$this->hashKeyArgs = $hashKeyArgs;
+		$this->queryParameters["HashKeyArgs"]=$hashKeyArgs;
 	}
 
 	public function getSecurityToken() {
@@ -54,15 +66,6 @@ class SetIgnoreQueryStringConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getDomainName() {
-		return $this->domainName;
-	}
-
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
-
 	public function getEnable() {
 		return $this->enable;
 	}
@@ -72,13 +75,22 @@ class SetIgnoreQueryStringConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["Enable"]=$enable;
 	}
 
-	public function getHashKeyArgs() {
-		return $this->hashKeyArgs;
+	public function getDomainName() {
+		return $this->domainName;
 	}
 
-	public function setHashKeyArgs($hashKeyArgs) {
-		$this->hashKeyArgs = $hashKeyArgs;
-		$this->queryParameters["HashKeyArgs"]=$hashKeyArgs;
+	public function setDomainName($domainName) {
+		$this->domainName = $domainName;
+		$this->queryParameters["DomainName"]=$domainName;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

@@ -24,33 +24,52 @@ class AddLivePullStreamInfoRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "AddLivePullStreamInfo");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $securityToken;
-
-	private  $domainName;
-
-	private  $appName;
-
-	private  $streamName;
 
 	private  $sourceUrl;
 
 	private  $always;
 
-	private  $startTime;
+	private  $appName;
+
+	private  $securityToken;
+
+	private  $domainName;
 
 	private  $endTime;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $startTime;
+
+	private  $ownerId;
+
+	private  $streamName;
+
+	public function getSourceUrl() {
+		return $this->sourceUrl;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setSourceUrl($sourceUrl) {
+		$this->sourceUrl = $sourceUrl;
+		$this->queryParameters["SourceUrl"]=$sourceUrl;
+	}
+
+	public function getAlways() {
+		return $this->always;
+	}
+
+	public function setAlways($always) {
+		$this->always = $always;
+		$this->queryParameters["Always"]=$always;
+	}
+
+	public function getAppName() {
+		return $this->appName;
+	}
+
+	public function setAppName($appName) {
+		$this->appName = $appName;
+		$this->queryParameters["AppName"]=$appName;
 	}
 
 	public function getSecurityToken() {
@@ -71,40 +90,13 @@ class AddLivePullStreamInfoRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getAppName() {
-		return $this->appName;
+	public function getEndTime() {
+		return $this->endTime;
 	}
 
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
-	}
-
-	public function getStreamName() {
-		return $this->streamName;
-	}
-
-	public function setStreamName($streamName) {
-		$this->streamName = $streamName;
-		$this->queryParameters["StreamName"]=$streamName;
-	}
-
-	public function getSourceUrl() {
-		return $this->sourceUrl;
-	}
-
-	public function setSourceUrl($sourceUrl) {
-		$this->sourceUrl = $sourceUrl;
-		$this->queryParameters["SourceUrl"]=$sourceUrl;
-	}
-
-	public function getAlways() {
-		return $this->always;
-	}
-
-	public function setAlways($always) {
-		$this->always = $always;
-		$this->queryParameters["Always"]=$always;
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
 	}
 
 	public function getStartTime() {
@@ -116,13 +108,22 @@ class AddLivePullStreamInfoRequest extends \RpcAcsRequest
 		$this->queryParameters["StartTime"]=$startTime;
 	}
 
-	public function getEndTime() {
-		return $this->endTime;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getStreamName() {
+		return $this->streamName;
+	}
+
+	public function setStreamName($streamName) {
+		$this->streamName = $streamName;
+		$this->queryParameters["StreamName"]=$streamName;
 	}
 	
 }

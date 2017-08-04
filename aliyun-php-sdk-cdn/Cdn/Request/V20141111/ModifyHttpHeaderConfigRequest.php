@@ -24,27 +24,28 @@ class ModifyHttpHeaderConfigRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "ModifyHttpHeaderConfig");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $headerValue;
 
 	private  $securityToken;
+
+	private  $configID;
 
 	private  $domainName;
 
 	private  $headerKey;
 
-	private  $headerValue;
+	private  $ownerId;
 
-	private  $configID;
-
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getHeaderValue() {
+		return $this->headerValue;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setHeaderValue($headerValue) {
+		$this->headerValue = $headerValue;
+		$this->queryParameters["HeaderValue"]=$headerValue;
 	}
 
 	public function getSecurityToken() {
@@ -54,6 +55,15 @@ class ModifyHttpHeaderConfigRequest extends \RpcAcsRequest
 	public function setSecurityToken($securityToken) {
 		$this->securityToken = $securityToken;
 		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
+
+	public function getConfigID() {
+		return $this->configID;
+	}
+
+	public function setConfigID($configID) {
+		$this->configID = $configID;
+		$this->queryParameters["ConfigID"]=$configID;
 	}
 
 	public function getDomainName() {
@@ -74,22 +84,13 @@ class ModifyHttpHeaderConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["HeaderKey"]=$headerKey;
 	}
 
-	public function getHeaderValue() {
-		return $this->headerValue;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setHeaderValue($headerValue) {
-		$this->headerValue = $headerValue;
-		$this->queryParameters["HeaderValue"]=$headerValue;
-	}
-
-	public function getConfigID() {
-		return $this->configID;
-	}
-
-	public function setConfigID($configID) {
-		$this->configID = $configID;
-		$this->queryParameters["ConfigID"]=$configID;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

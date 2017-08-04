@@ -24,35 +24,36 @@ class DescribeDomainQpsDataRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "DescribeDomainQpsData");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $securityToken;
-
-	private  $domainName;
-
-	private  $startTime;
-
-	private  $endTime;
-
-	private  $timeMerge;
-
-	private  $locationNameEn;
-
-	private  $ispNameEn;
 
 	private  $domainType;
 
+	private  $securityToken;
+
+	private  $timeMerge;
+
+	private  $domainName;
+
+	private  $endTime;
+
+	private  $locationNameEn;
+
 	private  $interval;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $startTime;
+
+	private  $ispNameEn;
+
+	private  $ownerId;
+
+	public function getDomainType() {
+		return $this->domainType;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setDomainType($domainType) {
+		$this->domainType = $domainType;
+		$this->queryParameters["DomainType"]=$domainType;
 	}
 
 	public function getSecurityToken() {
@@ -64,6 +65,15 @@ class DescribeDomainQpsDataRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
+	public function getTimeMerge() {
+		return $this->timeMerge;
+	}
+
+	public function setTimeMerge($timeMerge) {
+		$this->timeMerge = $timeMerge;
+		$this->queryParameters["TimeMerge"]=$timeMerge;
+	}
+
 	public function getDomainName() {
 		return $this->domainName;
 	}
@@ -71,15 +81,6 @@ class DescribeDomainQpsDataRequest extends \RpcAcsRequest
 	public function setDomainName($domainName) {
 		$this->domainName = $domainName;
 		$this->queryParameters["DomainName"]=$domainName;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
 	}
 
 	public function getEndTime() {
@@ -91,15 +92,6 @@ class DescribeDomainQpsDataRequest extends \RpcAcsRequest
 		$this->queryParameters["EndTime"]=$endTime;
 	}
 
-	public function getTimeMerge() {
-		return $this->timeMerge;
-	}
-
-	public function setTimeMerge($timeMerge) {
-		$this->timeMerge = $timeMerge;
-		$this->queryParameters["TimeMerge"]=$timeMerge;
-	}
-
 	public function getLocationNameEn() {
 		return $this->locationNameEn;
 	}
@@ -107,6 +99,24 @@ class DescribeDomainQpsDataRequest extends \RpcAcsRequest
 	public function setLocationNameEn($locationNameEn) {
 		$this->locationNameEn = $locationNameEn;
 		$this->queryParameters["LocationNameEn"]=$locationNameEn;
+	}
+
+	public function getInterval() {
+		return $this->interval;
+	}
+
+	public function setInterval($interval) {
+		$this->interval = $interval;
+		$this->queryParameters["Interval"]=$interval;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
 	}
 
 	public function getIspNameEn() {
@@ -118,22 +128,13 @@ class DescribeDomainQpsDataRequest extends \RpcAcsRequest
 		$this->queryParameters["IspNameEn"]=$ispNameEn;
 	}
 
-	public function getDomainType() {
-		return $this->domainType;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setDomainType($domainType) {
-		$this->domainType = $domainType;
-		$this->queryParameters["DomainType"]=$domainType;
-	}
-
-	public function getInterval() {
-		return $this->interval;
-	}
-
-	public function setInterval($interval) {
-		$this->interval = $interval;
-		$this->queryParameters["Interval"]=$interval;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

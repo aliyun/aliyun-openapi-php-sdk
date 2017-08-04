@@ -24,9 +24,12 @@ class SetForwardSchemeConfigRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "SetForwardSchemeConfig");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $schemeOrigin;
+
+	private  $schemeOriginPort;
 
 	private  $securityToken;
 
@@ -34,17 +37,24 @@ class SetForwardSchemeConfigRequest extends \RpcAcsRequest
 
 	private  $domainName;
 
-	private  $schemeOrigin;
+	private  $ownerId;
 
-	private  $schemeOriginPort;
-
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getSchemeOrigin() {
+		return $this->schemeOrigin;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setSchemeOrigin($schemeOrigin) {
+		$this->schemeOrigin = $schemeOrigin;
+		$this->queryParameters["SchemeOrigin"]=$schemeOrigin;
+	}
+
+	public function getSchemeOriginPort() {
+		return $this->schemeOriginPort;
+	}
+
+	public function setSchemeOriginPort($schemeOriginPort) {
+		$this->schemeOriginPort = $schemeOriginPort;
+		$this->queryParameters["SchemeOriginPort"]=$schemeOriginPort;
 	}
 
 	public function getSecurityToken() {
@@ -74,22 +84,13 @@ class SetForwardSchemeConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getSchemeOrigin() {
-		return $this->schemeOrigin;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setSchemeOrigin($schemeOrigin) {
-		$this->schemeOrigin = $schemeOrigin;
-		$this->queryParameters["SchemeOrigin"]=$schemeOrigin;
-	}
-
-	public function getSchemeOriginPort() {
-		return $this->schemeOriginPort;
-	}
-
-	public function setSchemeOriginPort($schemeOriginPort) {
-		$this->schemeOriginPort = $schemeOriginPort;
-		$this->queryParameters["SchemeOriginPort"]=$schemeOriginPort;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

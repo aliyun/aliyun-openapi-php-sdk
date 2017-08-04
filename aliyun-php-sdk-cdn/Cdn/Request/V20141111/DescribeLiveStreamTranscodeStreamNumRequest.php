@@ -24,23 +24,24 @@ class DescribeLiveStreamTranscodeStreamNumRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "DescribeLiveStreamTranscodeStreamNum");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $securityToken;
 
 	private  $pullDomain;
 
+	private  $securityToken;
+
 	private  $pushDomain;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $ownerId;
+
+	public function getPullDomain() {
+		return $this->pullDomain;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setPullDomain($pullDomain) {
+		$this->pullDomain = $pullDomain;
+		$this->queryParameters["PullDomain"]=$pullDomain;
 	}
 
 	public function getSecurityToken() {
@@ -52,15 +53,6 @@ class DescribeLiveStreamTranscodeStreamNumRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getPullDomain() {
-		return $this->pullDomain;
-	}
-
-	public function setPullDomain($pullDomain) {
-		$this->pullDomain = $pullDomain;
-		$this->queryParameters["PullDomain"]=$pullDomain;
-	}
-
 	public function getPushDomain() {
 		return $this->pushDomain;
 	}
@@ -68,6 +60,15 @@ class DescribeLiveStreamTranscodeStreamNumRequest extends \RpcAcsRequest
 	public function setPushDomain($pushDomain) {
 		$this->pushDomain = $pushDomain;
 		$this->queryParameters["PushDomain"]=$pushDomain;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

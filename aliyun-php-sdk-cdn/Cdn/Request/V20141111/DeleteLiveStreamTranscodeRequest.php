@@ -24,55 +24,20 @@ class DeleteLiveStreamTranscodeRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "DeleteLiveStreamTranscode");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $ownerAccount;
-
-	private  $securityToken;
-
-	private  $domain;
 
 	private  $template;
 
 	private  $app;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+	private  $securityToken;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+	private  $ownerAccount;
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+	private  $domain;
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
-
-	public function getDomain() {
-		return $this->domain;
-	}
-
-	public function setDomain($domain) {
-		$this->domain = $domain;
-		$this->queryParameters["Domain"]=$domain;
-	}
+	private  $ownerId;
 
 	public function getTemplate() {
 		return $this->template;
@@ -90,6 +55,42 @@ class DeleteLiveStreamTranscodeRequest extends \RpcAcsRequest
 	public function setApp($app) {
 		$this->app = $app;
 		$this->queryParameters["App"]=$app;
+	}
+
+	public function getSecurityToken() {
+		return $this->securityToken;
+	}
+
+	public function setSecurityToken($securityToken) {
+		$this->securityToken = $securityToken;
+		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getDomain() {
+		return $this->domain;
+	}
+
+	public function setDomain($domain) {
+		$this->domain = $domain;
+		$this->queryParameters["Domain"]=$domain;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

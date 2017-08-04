@@ -24,21 +24,22 @@ class DescribeDomainsBySourceRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "DescribeDomainsBySource");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $securityToken;
 
 	private  $sources;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $securityToken;
+
+	private  $ownerId;
+
+	public function getSources() {
+		return $this->sources;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setSources($sources) {
+		$this->sources = $sources;
+		$this->queryParameters["Sources"]=$sources;
 	}
 
 	public function getSecurityToken() {
@@ -50,13 +51,13 @@ class DescribeDomainsBySourceRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getSources() {
-		return $this->sources;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setSources($sources) {
-		$this->sources = $sources;
-		$this->queryParameters["Sources"]=$sources;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

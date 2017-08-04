@@ -24,35 +24,36 @@ class DescribeDomainBpsDataRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "DescribeDomainBpsData");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $domainType;
 
 	private  $securityToken;
 
+	private  $timeMerge;
+
 	private  $domainName;
 
-	private  $startTime;
-
 	private  $endTime;
-
-	private  $timeMerge;
 
 	private  $interval;
 
 	private  $locationNameEn;
 
+	private  $startTime;
+
 	private  $ispNameEn;
 
-	private  $domainType;
+	private  $ownerId;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getDomainType() {
+		return $this->domainType;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setDomainType($domainType) {
+		$this->domainType = $domainType;
+		$this->queryParameters["DomainType"]=$domainType;
 	}
 
 	public function getSecurityToken() {
@@ -64,6 +65,15 @@ class DescribeDomainBpsDataRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
+	public function getTimeMerge() {
+		return $this->timeMerge;
+	}
+
+	public function setTimeMerge($timeMerge) {
+		$this->timeMerge = $timeMerge;
+		$this->queryParameters["TimeMerge"]=$timeMerge;
+	}
+
 	public function getDomainName() {
 		return $this->domainName;
 	}
@@ -73,15 +83,6 @@ class DescribeDomainBpsDataRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
-
 	public function getEndTime() {
 		return $this->endTime;
 	}
@@ -89,15 +90,6 @@ class DescribeDomainBpsDataRequest extends \RpcAcsRequest
 	public function setEndTime($endTime) {
 		$this->endTime = $endTime;
 		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getTimeMerge() {
-		return $this->timeMerge;
-	}
-
-	public function setTimeMerge($timeMerge) {
-		$this->timeMerge = $timeMerge;
-		$this->queryParameters["TimeMerge"]=$timeMerge;
 	}
 
 	public function getInterval() {
@@ -118,6 +110,15 @@ class DescribeDomainBpsDataRequest extends \RpcAcsRequest
 		$this->queryParameters["LocationNameEn"]=$locationNameEn;
 	}
 
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
+
 	public function getIspNameEn() {
 		return $this->ispNameEn;
 	}
@@ -127,13 +128,13 @@ class DescribeDomainBpsDataRequest extends \RpcAcsRequest
 		$this->queryParameters["IspNameEn"]=$ispNameEn;
 	}
 
-	public function getDomainType() {
-		return $this->domainType;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setDomainType($domainType) {
-		$this->domainType = $domainType;
-		$this->queryParameters["DomainType"]=$domainType;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

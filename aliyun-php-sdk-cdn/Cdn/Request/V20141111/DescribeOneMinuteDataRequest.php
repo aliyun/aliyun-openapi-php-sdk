@@ -24,25 +24,26 @@ class DescribeOneMinuteDataRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "DescribeOneMinuteData");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
 
 	private  $resourceOwnerId;
 
-	private  $domainName;
+	private  $resourceOwnerAccount;
 
 	private  $dataTime;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $domainName;
+
+	private  $ownerId;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -54,13 +55,13 @@ class DescribeOneMinuteDataRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getDataTime() {
+		return $this->dataTime;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setDataTime($dataTime) {
+		$this->dataTime = $dataTime;
+		$this->queryParameters["DataTime"]=$dataTime;
 	}
 
 	public function getDomainName() {
@@ -72,13 +73,13 @@ class DescribeOneMinuteDataRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getDataTime() {
-		return $this->dataTime;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setDataTime($dataTime) {
-		$this->dataTime = $dataTime;
-		$this->queryParameters["DataTime"]=$dataTime;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

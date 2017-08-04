@@ -24,24 +24,16 @@ class DeleteHttpHeaderConfigRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "DeleteHttpHeaderConfig");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
 
 	private  $securityToken;
 
-	private  $domainName;
-
 	private  $configID;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+	private  $domainName;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+	private  $ownerId;
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -50,6 +42,15 @@ class DeleteHttpHeaderConfigRequest extends \RpcAcsRequest
 	public function setSecurityToken($securityToken) {
 		$this->securityToken = $securityToken;
 		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
+
+	public function getConfigID() {
+		return $this->configID;
+	}
+
+	public function setConfigID($configID) {
+		$this->configID = $configID;
+		$this->queryParameters["ConfigID"]=$configID;
 	}
 
 	public function getDomainName() {
@@ -61,13 +62,13 @@ class DeleteHttpHeaderConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getConfigID() {
-		return $this->configID;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setConfigID($configID) {
-		$this->configID = $configID;
-		$this->queryParameters["ConfigID"]=$configID;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

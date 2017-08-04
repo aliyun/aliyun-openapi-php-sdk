@@ -24,82 +24,44 @@ class AddCdnDomainRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "AddCdnDomain");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
-
-	private  $ownerAccount;
-
-	private  $securityToken;
-
-	private  $domainName;
-
-	private  $cdnType;
-
-	private  $sourceType;
+	private  $topLevelDomain;
 
 	private  $sources;
 
+	private  $ownerAccount;
+
+	private  $domainName;
+
+	private  $ownerId;
+
+	private  $resourceGroupId;
+
 	private  $sourcePort;
+
+	private  $priorities;
+
+	private  $securityToken;
+
+	private  $cdnType;
+
+	private  $scope;
+
+	private  $sourceType;
 
 	private  $checkUrl;
 
 	private  $region;
 
-	private  $scope;
-
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getTopLevelDomain() {
+		return $this->topLevelDomain;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
-
-	public function getDomainName() {
-		return $this->domainName;
-	}
-
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
-
-	public function getCdnType() {
-		return $this->cdnType;
-	}
-
-	public function setCdnType($cdnType) {
-		$this->cdnType = $cdnType;
-		$this->queryParameters["CdnType"]=$cdnType;
-	}
-
-	public function getSourceType() {
-		return $this->sourceType;
-	}
-
-	public function setSourceType($sourceType) {
-		$this->sourceType = $sourceType;
-		$this->queryParameters["SourceType"]=$sourceType;
+	public function setTopLevelDomain($topLevelDomain) {
+		$this->topLevelDomain = $topLevelDomain;
+		$this->queryParameters["TopLevelDomain"]=$topLevelDomain;
 	}
 
 	public function getSources() {
@@ -111,6 +73,42 @@ class AddCdnDomainRequest extends \RpcAcsRequest
 		$this->queryParameters["Sources"]=$sources;
 	}
 
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getDomainName() {
+		return $this->domainName;
+	}
+
+	public function setDomainName($domainName) {
+		$this->domainName = $domainName;
+		$this->queryParameters["DomainName"]=$domainName;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getResourceGroupId() {
+		return $this->resourceGroupId;
+	}
+
+	public function setResourceGroupId($resourceGroupId) {
+		$this->resourceGroupId = $resourceGroupId;
+		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
+	}
+
 	public function getSourcePort() {
 		return $this->sourcePort;
 	}
@@ -118,6 +116,51 @@ class AddCdnDomainRequest extends \RpcAcsRequest
 	public function setSourcePort($sourcePort) {
 		$this->sourcePort = $sourcePort;
 		$this->queryParameters["SourcePort"]=$sourcePort;
+	}
+
+	public function getPriorities() {
+		return $this->priorities;
+	}
+
+	public function setPriorities($priorities) {
+		$this->priorities = $priorities;
+		$this->queryParameters["Priorities"]=$priorities;
+	}
+
+	public function getSecurityToken() {
+		return $this->securityToken;
+	}
+
+	public function setSecurityToken($securityToken) {
+		$this->securityToken = $securityToken;
+		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
+
+	public function getCdnType() {
+		return $this->cdnType;
+	}
+
+	public function setCdnType($cdnType) {
+		$this->cdnType = $cdnType;
+		$this->queryParameters["CdnType"]=$cdnType;
+	}
+
+	public function getScope() {
+		return $this->scope;
+	}
+
+	public function setScope($scope) {
+		$this->scope = $scope;
+		$this->queryParameters["Scope"]=$scope;
+	}
+
+	public function getSourceType() {
+		return $this->sourceType;
+	}
+
+	public function setSourceType($sourceType) {
+		$this->sourceType = $sourceType;
+		$this->queryParameters["SourceType"]=$sourceType;
 	}
 
 	public function getCheckUrl() {
@@ -136,15 +179,6 @@ class AddCdnDomainRequest extends \RpcAcsRequest
 	public function setRegion($region) {
 		$this->region = $region;
 		$this->queryParameters["Region"]=$region;
-	}
-
-	public function getScope() {
-		return $this->scope;
-	}
-
-	public function setScope($scope) {
-		$this->scope = $scope;
-		$this->queryParameters["Scope"]=$scope;
 	}
 	
 }

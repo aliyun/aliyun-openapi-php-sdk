@@ -24,9 +24,8 @@ class SetLocationAccessRestrictionRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "SetLocationAccessRestriction");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
 
 	private  $securityToken;
 
@@ -34,16 +33,9 @@ class SetLocationAccessRestrictionRequest extends \RpcAcsRequest
 
 	private  $location;
 
+	private  $ownerId;
+
 	private  $type;
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -70,6 +62,15 @@ class SetLocationAccessRestrictionRequest extends \RpcAcsRequest
 	public function setLocation($location) {
 		$this->location = $location;
 		$this->queryParameters["Location"]=$location;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getType() {

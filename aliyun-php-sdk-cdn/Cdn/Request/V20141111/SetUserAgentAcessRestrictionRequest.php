@@ -24,9 +24,8 @@ class SetUserAgentAcessRestrictionRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "SetUserAgentAcessRestriction");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
 
 	private  $securityToken;
 
@@ -34,16 +33,9 @@ class SetUserAgentAcessRestrictionRequest extends \RpcAcsRequest
 
 	private  $userAgent;
 
+	private  $ownerId;
+
 	private  $type;
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -70,6 +62,15 @@ class SetUserAgentAcessRestrictionRequest extends \RpcAcsRequest
 	public function setUserAgent($userAgent) {
 		$this->userAgent = $userAgent;
 		$this->queryParameters["UserAgent"]=$userAgent;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getType() {

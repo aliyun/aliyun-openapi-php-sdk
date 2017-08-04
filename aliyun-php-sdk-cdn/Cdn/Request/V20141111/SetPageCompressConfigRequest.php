@@ -24,24 +24,16 @@ class SetPageCompressConfigRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "SetPageCompressConfig");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
 
 	private  $securityToken;
 
-	private  $domainName;
-
 	private  $enable;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+	private  $domainName;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+	private  $ownerId;
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -50,6 +42,15 @@ class SetPageCompressConfigRequest extends \RpcAcsRequest
 	public function setSecurityToken($securityToken) {
 		$this->securityToken = $securityToken;
 		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
+
+	public function getEnable() {
+		return $this->enable;
+	}
+
+	public function setEnable($enable) {
+		$this->enable = $enable;
+		$this->queryParameters["Enable"]=$enable;
 	}
 
 	public function getDomainName() {
@@ -61,13 +62,13 @@ class SetPageCompressConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getEnable() {
-		return $this->enable;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setEnable($enable) {
-		$this->enable = $enable;
-		$this->queryParameters["Enable"]=$enable;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

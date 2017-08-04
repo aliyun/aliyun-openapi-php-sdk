@@ -24,50 +24,24 @@ class SetDynamicConfigRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "SetDynamicConfig");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $securityToken;
-
-	private  $domainName;
 
 	private  $dynamicOrigin;
 
 	private  $staticType;
 
+	private  $securityToken;
+
 	private  $staticUri;
+
+	private  $domainName;
 
 	private  $staticPath;
 
 	private  $dynamicCacheControl;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
-
-	public function getDomainName() {
-		return $this->domainName;
-	}
-
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
+	private  $ownerId;
 
 	public function getDynamicOrigin() {
 		return $this->dynamicOrigin;
@@ -87,6 +61,15 @@ class SetDynamicConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["StaticType"]=$staticType;
 	}
 
+	public function getSecurityToken() {
+		return $this->securityToken;
+	}
+
+	public function setSecurityToken($securityToken) {
+		$this->securityToken = $securityToken;
+		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
+
 	public function getStaticUri() {
 		return $this->staticUri;
 	}
@@ -94,6 +77,15 @@ class SetDynamicConfigRequest extends \RpcAcsRequest
 	public function setStaticUri($staticUri) {
 		$this->staticUri = $staticUri;
 		$this->queryParameters["StaticUri"]=$staticUri;
+	}
+
+	public function getDomainName() {
+		return $this->domainName;
+	}
+
+	public function setDomainName($domainName) {
+		$this->domainName = $domainName;
+		$this->queryParameters["DomainName"]=$domainName;
 	}
 
 	public function getStaticPath() {
@@ -112,6 +104,15 @@ class SetDynamicConfigRequest extends \RpcAcsRequest
 	public function setDynamicCacheControl($dynamicCacheControl) {
 		$this->dynamicCacheControl = $dynamicCacheControl;
 		$this->queryParameters["DynamicCacheControl"]=$dynamicCacheControl;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

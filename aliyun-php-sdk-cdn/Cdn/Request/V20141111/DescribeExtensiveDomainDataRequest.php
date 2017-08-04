@@ -24,30 +24,22 @@ class DescribeExtensiveDomainDataRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "DescribeExtensiveDomainData");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
 
 	private  $securityToken;
 
 	private  $extensiveDomain;
 
-	private  $startTime;
+	private  $pageSize;
 
 	private  $endTime;
 
+	private  $startTime;
+
+	private  $ownerId;
+
 	private  $pageNumber;
-
-	private  $pageSize;
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -67,13 +59,13 @@ class DescribeExtensiveDomainDataRequest extends \RpcAcsRequest
 		$this->queryParameters["ExtensiveDomain"]=$extensiveDomain;
 	}
 
-	public function getStartTime() {
-		return $this->startTime;
+	public function getPageSize() {
+		return $this->pageSize;
 	}
 
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
 	public function getEndTime() {
@@ -85,6 +77,24 @@ class DescribeExtensiveDomainDataRequest extends \RpcAcsRequest
 		$this->queryParameters["EndTime"]=$endTime;
 	}
 
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
 	public function getPageNumber() {
 		return $this->pageNumber;
 	}
@@ -92,15 +102,6 @@ class DescribeExtensiveDomainDataRequest extends \RpcAcsRequest
 	public function setPageNumber($pageNumber) {
 		$this->pageNumber = $pageNumber;
 		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
 	}
 	
 }

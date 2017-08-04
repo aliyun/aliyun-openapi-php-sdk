@@ -24,9 +24,10 @@ class SetHttpHeaderConfigRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "SetHttpHeaderConfig");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $headerValue;
 
 	private  $securityToken;
 
@@ -34,15 +35,15 @@ class SetHttpHeaderConfigRequest extends \RpcAcsRequest
 
 	private  $headerKey;
 
-	private  $headerValue;
+	private  $ownerId;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getHeaderValue() {
+		return $this->headerValue;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setHeaderValue($headerValue) {
+		$this->headerValue = $headerValue;
+		$this->queryParameters["HeaderValue"]=$headerValue;
 	}
 
 	public function getSecurityToken() {
@@ -72,13 +73,13 @@ class SetHttpHeaderConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["HeaderKey"]=$headerKey;
 	}
 
-	public function getHeaderValue() {
-		return $this->headerValue;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setHeaderValue($headerValue) {
-		$this->headerValue = $headerValue;
-		$this->queryParameters["HeaderValue"]=$headerValue;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

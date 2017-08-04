@@ -24,27 +24,37 @@ class DescribeLiveStreamRecordIndexFileRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "DescribeLiveStreamRecordIndexFile");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $recordId;
+
+	private  $appName;
 
 	private  $securityToken;
 
 	private  $domainName;
 
-	private  $appName;
+	private  $ownerId;
 
 	private  $streamName;
 
-	private  $recordId;
-
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getRecordId() {
+		return $this->recordId;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setRecordId($recordId) {
+		$this->recordId = $recordId;
+		$this->queryParameters["RecordId"]=$recordId;
+	}
+
+	public function getAppName() {
+		return $this->appName;
+	}
+
+	public function setAppName($appName) {
+		$this->appName = $appName;
+		$this->queryParameters["AppName"]=$appName;
 	}
 
 	public function getSecurityToken() {
@@ -65,13 +75,13 @@ class DescribeLiveStreamRecordIndexFileRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getAppName() {
-		return $this->appName;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getStreamName() {
@@ -81,15 +91,6 @@ class DescribeLiveStreamRecordIndexFileRequest extends \RpcAcsRequest
 	public function setStreamName($streamName) {
 		$this->streamName = $streamName;
 		$this->queryParameters["StreamName"]=$streamName;
-	}
-
-	public function getRecordId() {
-		return $this->recordId;
-	}
-
-	public function setRecordId($recordId) {
-		$this->recordId = $recordId;
-		$this->queryParameters["RecordId"]=$recordId;
 	}
 	
 }

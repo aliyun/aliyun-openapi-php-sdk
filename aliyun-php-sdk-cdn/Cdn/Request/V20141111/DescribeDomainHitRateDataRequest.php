@@ -24,34 +24,26 @@ class DescribeDomainHitRateDataRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "DescribeDomainHitRateData");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
 
 	private  $securityToken;
 
-	private  $domainName;
+	private  $timeMerge;
 
-	private  $startTime;
+	private  $domainName;
 
 	private  $endTime;
 
-	private  $timeMerge;
-
 	private  $locationNameEn;
-
-	private  $ispNameEn;
 
 	private  $interval;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+	private  $startTime;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+	private  $ispNameEn;
+
+	private  $ownerId;
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -60,33 +52,6 @@ class DescribeDomainHitRateDataRequest extends \RpcAcsRequest
 	public function setSecurityToken($securityToken) {
 		$this->securityToken = $securityToken;
 		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
-
-	public function getDomainName() {
-		return $this->domainName;
-	}
-
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
-
-	public function getEndTime() {
-		return $this->endTime;
-	}
-
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
 	}
 
 	public function getTimeMerge() {
@@ -98,6 +63,24 @@ class DescribeDomainHitRateDataRequest extends \RpcAcsRequest
 		$this->queryParameters["TimeMerge"]=$timeMerge;
 	}
 
+	public function getDomainName() {
+		return $this->domainName;
+	}
+
+	public function setDomainName($domainName) {
+		$this->domainName = $domainName;
+		$this->queryParameters["DomainName"]=$domainName;
+	}
+
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
+	}
+
 	public function getLocationNameEn() {
 		return $this->locationNameEn;
 	}
@@ -105,6 +88,24 @@ class DescribeDomainHitRateDataRequest extends \RpcAcsRequest
 	public function setLocationNameEn($locationNameEn) {
 		$this->locationNameEn = $locationNameEn;
 		$this->queryParameters["LocationNameEn"]=$locationNameEn;
+	}
+
+	public function getInterval() {
+		return $this->interval;
+	}
+
+	public function setInterval($interval) {
+		$this->interval = $interval;
+		$this->queryParameters["Interval"]=$interval;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
 	}
 
 	public function getIspNameEn() {
@@ -116,13 +117,13 @@ class DescribeDomainHitRateDataRequest extends \RpcAcsRequest
 		$this->queryParameters["IspNameEn"]=$ispNameEn;
 	}
 
-	public function getInterval() {
-		return $this->interval;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setInterval($interval) {
-		$this->interval = $interval;
-		$this->queryParameters["Interval"]=$interval;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

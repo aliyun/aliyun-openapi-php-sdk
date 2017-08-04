@@ -24,28 +24,20 @@ class DescribeDomainReqHitRateDataRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "DescribeDomainReqHitRateData");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
 
 	private  $securityToken;
 
 	private  $domainName;
 
-	private  $startTime;
-
 	private  $endTime;
 
 	private  $interval;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+	private  $startTime;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+	private  $ownerId;
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -65,15 +57,6 @@ class DescribeDomainReqHitRateDataRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
-
 	public function getEndTime() {
 		return $this->endTime;
 	}
@@ -90,6 +73,24 @@ class DescribeDomainReqHitRateDataRequest extends \RpcAcsRequest
 	public function setInterval($interval) {
 		$this->interval = $interval;
 		$this->queryParameters["Interval"]=$interval;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

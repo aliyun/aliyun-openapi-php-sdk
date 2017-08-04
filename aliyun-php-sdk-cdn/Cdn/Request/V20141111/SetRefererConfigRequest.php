@@ -24,9 +24,10 @@ class SetRefererConfigRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "SetRefererConfig");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $referList;
 
 	private  $securityToken;
 
@@ -34,17 +35,19 @@ class SetRefererConfigRequest extends \RpcAcsRequest
 
 	private  $referType;
 
-	private  $referList;
+	private  $disableAst;
+
+	private  $ownerId;
 
 	private  $allowEmpty;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getReferList() {
+		return $this->referList;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setReferList($referList) {
+		$this->referList = $referList;
+		$this->queryParameters["ReferList"]=$referList;
 	}
 
 	public function getSecurityToken() {
@@ -74,13 +77,22 @@ class SetRefererConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["ReferType"]=$referType;
 	}
 
-	public function getReferList() {
-		return $this->referList;
+	public function getDisableAst() {
+		return $this->disableAst;
 	}
 
-	public function setReferList($referList) {
-		$this->referList = $referList;
-		$this->queryParameters["ReferList"]=$referList;
+	public function setDisableAst($disableAst) {
+		$this->disableAst = $disableAst;
+		$this->queryParameters["DisableAst"]=$disableAst;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getAllowEmpty() {

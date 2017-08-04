@@ -24,25 +24,26 @@ class DescribeLiveStreamRelayPushErrorsRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "DescribeLiveStreamRelayPushErrors");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $securityToken;
 
 	private  $relayDomain;
 
-	private  $startTime;
+	private  $securityToken;
 
 	private  $endTime;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $startTime;
+
+	private  $ownerId;
+
+	public function getRelayDomain() {
+		return $this->relayDomain;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setRelayDomain($relayDomain) {
+		$this->relayDomain = $relayDomain;
+		$this->queryParameters["RelayDomain"]=$relayDomain;
 	}
 
 	public function getSecurityToken() {
@@ -54,13 +55,13 @@ class DescribeLiveStreamRelayPushErrorsRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getRelayDomain() {
-		return $this->relayDomain;
+	public function getEndTime() {
+		return $this->endTime;
 	}
 
-	public function setRelayDomain($relayDomain) {
-		$this->relayDomain = $relayDomain;
-		$this->queryParameters["RelayDomain"]=$relayDomain;
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
 	}
 
 	public function getStartTime() {
@@ -72,13 +73,13 @@ class DescribeLiveStreamRelayPushErrorsRequest extends \RpcAcsRequest
 		$this->queryParameters["StartTime"]=$startTime;
 	}
 
-	public function getEndTime() {
-		return $this->endTime;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

@@ -24,29 +24,39 @@ class SetReqAuthConfigRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "SetReqAuthConfig");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $securityToken;
-
-	private  $domainName;
-
-	private  $authType;
 
 	private  $key1;
 
 	private  $key2;
 
+	private  $securityToken;
+
+	private  $domainName;
+
+	private  $ownerId;
+
 	private  $timeOut;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $authType;
+
+	public function getKey1() {
+		return $this->key1;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setKey1($key1) {
+		$this->key1 = $key1;
+		$this->queryParameters["Key1"]=$key1;
+	}
+
+	public function getKey2() {
+		return $this->key2;
+	}
+
+	public function setKey2($key2) {
+		$this->key2 = $key2;
+		$this->queryParameters["Key2"]=$key2;
 	}
 
 	public function getSecurityToken() {
@@ -67,31 +77,13 @@ class SetReqAuthConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getAuthType() {
-		return $this->authType;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setAuthType($authType) {
-		$this->authType = $authType;
-		$this->queryParameters["AuthType"]=$authType;
-	}
-
-	public function getKey1() {
-		return $this->key1;
-	}
-
-	public function setKey1($key1) {
-		$this->key1 = $key1;
-		$this->queryParameters["Key1"]=$key1;
-	}
-
-	public function getKey2() {
-		return $this->key2;
-	}
-
-	public function setKey2($key2) {
-		$this->key2 = $key2;
-		$this->queryParameters["Key2"]=$key2;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getTimeOut() {
@@ -101,6 +93,15 @@ class SetReqAuthConfigRequest extends \RpcAcsRequest
 	public function setTimeOut($timeOut) {
 		$this->timeOut = $timeOut;
 		$this->queryParameters["TimeOut"]=$timeOut;
+	}
+
+	public function getAuthType() {
+		return $this->authType;
+	}
+
+	public function setAuthType($authType) {
+		$this->authType = $authType;
+		$this->queryParameters["AuthType"]=$authType;
 	}
 	
 }

@@ -24,9 +24,8 @@ class SetHttpErrorPageConfigRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "SetHttpErrorPageConfig");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
 
 	private  $securityToken;
 
@@ -34,16 +33,9 @@ class SetHttpErrorPageConfigRequest extends \RpcAcsRequest
 
 	private  $pageUrl;
 
+	private  $ownerId;
+
 	private  $errorCode;
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -70,6 +62,15 @@ class SetHttpErrorPageConfigRequest extends \RpcAcsRequest
 	public function setPageUrl($pageUrl) {
 		$this->pageUrl = $pageUrl;
 		$this->queryParameters["PageUrl"]=$pageUrl;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getErrorCode() {

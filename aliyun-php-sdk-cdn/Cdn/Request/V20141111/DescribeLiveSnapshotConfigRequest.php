@@ -24,31 +24,32 @@ class DescribeLiveSnapshotConfigRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "DescribeLiveSnapshotConfig");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $appName;
 
 	private  $securityToken;
 
 	private  $domainName;
 
-	private  $appName;
+	private  $pageSize;
 
-	private  $streamName;
+	private  $ownerId;
 
 	private  $pageNum;
 
-	private  $pageSize;
+	private  $streamName;
 
 	private  $order;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getAppName() {
+		return $this->appName;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setAppName($appName) {
+		$this->appName = $appName;
+		$this->queryParameters["AppName"]=$appName;
 	}
 
 	public function getSecurityToken() {
@@ -69,22 +70,22 @@ class DescribeLiveSnapshotConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getAppName() {
-		return $this->appName;
+	public function getPageSize() {
+		return $this->pageSize;
 	}
 
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
-	public function getStreamName() {
-		return $this->streamName;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setStreamName($streamName) {
-		$this->streamName = $streamName;
-		$this->queryParameters["StreamName"]=$streamName;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getPageNum() {
@@ -96,13 +97,13 @@ class DescribeLiveSnapshotConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["PageNum"]=$pageNum;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
+	public function getStreamName() {
+		return $this->streamName;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setStreamName($streamName) {
+		$this->streamName = $streamName;
+		$this->queryParameters["StreamName"]=$streamName;
 	}
 
 	public function getOrder() {

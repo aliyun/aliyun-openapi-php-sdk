@@ -24,31 +24,32 @@ class DescribeLiveStreamOnlineUserNumRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "DescribeLiveStreamOnlineUserNum");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $securityToken;
-
-	private  $domainName;
 
 	private  $appName;
 
-	private  $streamName;
-
-	private  $startTime;
-
-	private  $endTime;
+	private  $securityToken;
 
 	private  $hlsSwitch;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $domainName;
+
+	private  $endTime;
+
+	private  $startTime;
+
+	private  $ownerId;
+
+	private  $streamName;
+
+	public function getAppName() {
+		return $this->appName;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setAppName($appName) {
+		$this->appName = $appName;
+		$this->queryParameters["AppName"]=$appName;
 	}
 
 	public function getSecurityToken() {
@@ -60,6 +61,15 @@ class DescribeLiveStreamOnlineUserNumRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
+	public function getHlsSwitch() {
+		return $this->hlsSwitch;
+	}
+
+	public function setHlsSwitch($hlsSwitch) {
+		$this->hlsSwitch = $hlsSwitch;
+		$this->queryParameters["HlsSwitch"]=$hlsSwitch;
+	}
+
 	public function getDomainName() {
 		return $this->domainName;
 	}
@@ -67,33 +77,6 @@ class DescribeLiveStreamOnlineUserNumRequest extends \RpcAcsRequest
 	public function setDomainName($domainName) {
 		$this->domainName = $domainName;
 		$this->queryParameters["DomainName"]=$domainName;
-	}
-
-	public function getAppName() {
-		return $this->appName;
-	}
-
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
-	}
-
-	public function getStreamName() {
-		return $this->streamName;
-	}
-
-	public function setStreamName($streamName) {
-		$this->streamName = $streamName;
-		$this->queryParameters["StreamName"]=$streamName;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
 	}
 
 	public function getEndTime() {
@@ -105,13 +88,31 @@ class DescribeLiveStreamOnlineUserNumRequest extends \RpcAcsRequest
 		$this->queryParameters["EndTime"]=$endTime;
 	}
 
-	public function getHlsSwitch() {
-		return $this->hlsSwitch;
+	public function getStartTime() {
+		return $this->startTime;
 	}
 
-	public function setHlsSwitch($hlsSwitch) {
-		$this->hlsSwitch = $hlsSwitch;
-		$this->queryParameters["HlsSwitch"]=$hlsSwitch;
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getStreamName() {
+		return $this->streamName;
+	}
+
+	public function setStreamName($streamName) {
+		$this->streamName = $streamName;
+		$this->queryParameters["StreamName"]=$streamName;
 	}
 	
 }

@@ -24,9 +24,8 @@ class SetLiveStreamsNotifyUrlConfigRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "SetLiveStreamsNotifyUrlConfig");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
 
 	private  $securityToken;
 
@@ -34,14 +33,7 @@ class SetLiveStreamsNotifyUrlConfigRequest extends \RpcAcsRequest
 
 	private  $notifyUrl;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+	private  $ownerId;
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -68,6 +60,15 @@ class SetLiveStreamsNotifyUrlConfigRequest extends \RpcAcsRequest
 	public function setNotifyUrl($notifyUrl) {
 		$this->notifyUrl = $notifyUrl;
 		$this->queryParameters["NotifyUrl"]=$notifyUrl;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

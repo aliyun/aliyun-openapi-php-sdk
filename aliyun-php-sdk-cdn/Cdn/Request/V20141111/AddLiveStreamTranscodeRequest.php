@@ -24,40 +24,41 @@ class AddLiveStreamTranscodeRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "AddLiveStreamTranscode");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $ownerAccount;
-
-	private  $securityToken;
-
-	private  $domain;
 
 	private  $template;
 
+	private  $app;
+
+	private  $securityToken;
+
+	private  $ownerAccount;
+
+	private  $domain;
+
 	private  $record;
+
+	private  $ownerId;
 
 	private  $snapshot;
 
-	private  $app;
-
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getTemplate() {
+		return $this->template;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setTemplate($template) {
+		$this->template = $template;
+		$this->queryParameters["Template"]=$template;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getApp() {
+		return $this->app;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setApp($app) {
+		$this->app = $app;
+		$this->queryParameters["App"]=$app;
 	}
 
 	public function getSecurityToken() {
@@ -69,6 +70,15 @@ class AddLiveStreamTranscodeRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
 	public function getDomain() {
 		return $this->domain;
 	}
@@ -76,15 +86,6 @@ class AddLiveStreamTranscodeRequest extends \RpcAcsRequest
 	public function setDomain($domain) {
 		$this->domain = $domain;
 		$this->queryParameters["Domain"]=$domain;
-	}
-
-	public function getTemplate() {
-		return $this->template;
-	}
-
-	public function setTemplate($template) {
-		$this->template = $template;
-		$this->queryParameters["Template"]=$template;
 	}
 
 	public function getRecord() {
@@ -96,6 +97,15 @@ class AddLiveStreamTranscodeRequest extends \RpcAcsRequest
 		$this->queryParameters["Record"]=$record;
 	}
 
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
 	public function getSnapshot() {
 		return $this->snapshot;
 	}
@@ -103,15 +113,6 @@ class AddLiveStreamTranscodeRequest extends \RpcAcsRequest
 	public function setSnapshot($snapshot) {
 		$this->snapshot = $snapshot;
 		$this->queryParameters["Snapshot"]=$snapshot;
-	}
-
-	public function getApp() {
-		return $this->app;
-	}
-
-	public function setApp($app) {
-		$this->app = $app;
-		$this->queryParameters["App"]=$app;
 	}
 	
 }

@@ -24,27 +24,28 @@ class DescribeDomainBpsDataByTimeStampRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "DescribeDomainBpsDataByTimeStamp");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $securityToken;
-
-	private  $domainName;
-
-	private  $locationNames;
 
 	private  $ispNames;
 
+	private  $securityToken;
+
+	private  $locationNames;
+
+	private  $domainName;
+
+	private  $ownerId;
+
 	private  $timePoint;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getIspNames() {
+		return $this->ispNames;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setIspNames($ispNames) {
+		$this->ispNames = $ispNames;
+		$this->queryParameters["IspNames"]=$ispNames;
 	}
 
 	public function getSecurityToken() {
@@ -56,15 +57,6 @@ class DescribeDomainBpsDataByTimeStampRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getDomainName() {
-		return $this->domainName;
-	}
-
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
-
 	public function getLocationNames() {
 		return $this->locationNames;
 	}
@@ -74,13 +66,22 @@ class DescribeDomainBpsDataByTimeStampRequest extends \RpcAcsRequest
 		$this->queryParameters["LocationNames"]=$locationNames;
 	}
 
-	public function getIspNames() {
-		return $this->ispNames;
+	public function getDomainName() {
+		return $this->domainName;
 	}
 
-	public function setIspNames($ispNames) {
-		$this->ispNames = $ispNames;
-		$this->queryParameters["IspNames"]=$ispNames;
+	public function setDomainName($domainName) {
+		$this->domainName = $domainName;
+		$this->queryParameters["DomainName"]=$domainName;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getTimePoint() {

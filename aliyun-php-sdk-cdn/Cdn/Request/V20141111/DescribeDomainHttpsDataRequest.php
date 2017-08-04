@@ -24,31 +24,34 @@ class DescribeDomainHttpsDataRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "DescribeDomainHttpsData");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $securityToken;
-
-	private  $domainNames;
-
-	private  $startTime;
-
-	private  $endTime;
 
 	private  $domainType;
 
+	private  $securityToken;
+
 	private  $timeMerge;
+
+	private  $domainNames;
+
+	private  $endTime;
 
 	private  $interval;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $startTime;
+
+	private  $cls;
+
+	private  $ownerId;
+
+	public function getDomainType() {
+		return $this->domainType;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setDomainType($domainType) {
+		$this->domainType = $domainType;
+		$this->queryParameters["DomainType"]=$domainType;
 	}
 
 	public function getSecurityToken() {
@@ -60,6 +63,15 @@ class DescribeDomainHttpsDataRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
+	public function getTimeMerge() {
+		return $this->timeMerge;
+	}
+
+	public function setTimeMerge($timeMerge) {
+		$this->timeMerge = $timeMerge;
+		$this->queryParameters["TimeMerge"]=$timeMerge;
+	}
+
 	public function getDomainNames() {
 		return $this->domainNames;
 	}
@@ -67,15 +79,6 @@ class DescribeDomainHttpsDataRequest extends \RpcAcsRequest
 	public function setDomainNames($domainNames) {
 		$this->domainNames = $domainNames;
 		$this->queryParameters["DomainNames"]=$domainNames;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
 	}
 
 	public function getEndTime() {
@@ -87,24 +90,6 @@ class DescribeDomainHttpsDataRequest extends \RpcAcsRequest
 		$this->queryParameters["EndTime"]=$endTime;
 	}
 
-	public function getDomainType() {
-		return $this->domainType;
-	}
-
-	public function setDomainType($domainType) {
-		$this->domainType = $domainType;
-		$this->queryParameters["DomainType"]=$domainType;
-	}
-
-	public function getTimeMerge() {
-		return $this->timeMerge;
-	}
-
-	public function setTimeMerge($timeMerge) {
-		$this->timeMerge = $timeMerge;
-		$this->queryParameters["TimeMerge"]=$timeMerge;
-	}
-
 	public function getInterval() {
 		return $this->interval;
 	}
@@ -112,6 +97,33 @@ class DescribeDomainHttpsDataRequest extends \RpcAcsRequest
 	public function setInterval($interval) {
 		$this->interval = $interval;
 		$this->queryParameters["Interval"]=$interval;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
+
+	public function getCls() {
+		return $this->cls;
+	}
+
+	public function setCls($cls) {
+		$this->cls = $cls;
+		$this->queryParameters["Cls"]=$cls;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

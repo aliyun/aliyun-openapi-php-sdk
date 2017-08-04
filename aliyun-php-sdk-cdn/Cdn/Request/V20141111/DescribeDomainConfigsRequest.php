@@ -24,9 +24,8 @@ class DescribeDomainConfigsRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "DescribeDomainConfigs");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
 
 	private  $securityToken;
 
@@ -34,14 +33,7 @@ class DescribeDomainConfigsRequest extends \RpcAcsRequest
 
 	private  $configList;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+	private  $ownerId;
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -68,6 +60,15 @@ class DescribeDomainConfigsRequest extends \RpcAcsRequest
 	public function setConfigList($configList) {
 		$this->configList = $configList;
 		$this->queryParameters["ConfigList"]=$configList;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

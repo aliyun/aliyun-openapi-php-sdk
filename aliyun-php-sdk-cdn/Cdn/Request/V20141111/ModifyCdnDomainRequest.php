@@ -24,9 +24,16 @@ class ModifyCdnDomainRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "ModifyCdnDomain");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $sourcePort;
+
+	private  $resourceGroupId;
+
+	private  $priorities;
+
+	private  $sources;
 
 	private  $securityToken;
 
@@ -34,17 +41,42 @@ class ModifyCdnDomainRequest extends \RpcAcsRequest
 
 	private  $sourceType;
 
-	private  $sourcePort;
+	private  $ownerId;
 
-	private  $sources;
-
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getSourcePort() {
+		return $this->sourcePort;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setSourcePort($sourcePort) {
+		$this->sourcePort = $sourcePort;
+		$this->queryParameters["SourcePort"]=$sourcePort;
+	}
+
+	public function getResourceGroupId() {
+		return $this->resourceGroupId;
+	}
+
+	public function setResourceGroupId($resourceGroupId) {
+		$this->resourceGroupId = $resourceGroupId;
+		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
+	}
+
+	public function getPriorities() {
+		return $this->priorities;
+	}
+
+	public function setPriorities($priorities) {
+		$this->priorities = $priorities;
+		$this->queryParameters["Priorities"]=$priorities;
+	}
+
+	public function getSources() {
+		return $this->sources;
+	}
+
+	public function setSources($sources) {
+		$this->sources = $sources;
+		$this->queryParameters["Sources"]=$sources;
 	}
 
 	public function getSecurityToken() {
@@ -74,22 +106,13 @@ class ModifyCdnDomainRequest extends \RpcAcsRequest
 		$this->queryParameters["SourceType"]=$sourceType;
 	}
 
-	public function getSourcePort() {
-		return $this->sourcePort;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setSourcePort($sourcePort) {
-		$this->sourcePort = $sourcePort;
-		$this->queryParameters["SourcePort"]=$sourcePort;
-	}
-
-	public function getSources() {
-		return $this->sources;
-	}
-
-	public function setSources($sources) {
-		$this->sources = $sources;
-		$this->queryParameters["Sources"]=$sources;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

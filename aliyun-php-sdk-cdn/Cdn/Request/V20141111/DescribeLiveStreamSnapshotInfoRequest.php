@@ -24,31 +24,32 @@ class DescribeLiveStreamSnapshotInfoRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "DescribeLiveStreamSnapshotInfo");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $appName;
 
 	private  $securityToken;
 
 	private  $domainName;
 
-	private  $appName;
-
-	private  $streamName;
-
 	private  $limit;
-
-	private  $startTime;
 
 	private  $endTime;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $startTime;
+
+	private  $ownerId;
+
+	private  $streamName;
+
+	public function getAppName() {
+		return $this->appName;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setAppName($appName) {
+		$this->appName = $appName;
+		$this->queryParameters["AppName"]=$appName;
 	}
 
 	public function getSecurityToken() {
@@ -69,24 +70,6 @@ class DescribeLiveStreamSnapshotInfoRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getAppName() {
-		return $this->appName;
-	}
-
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
-	}
-
-	public function getStreamName() {
-		return $this->streamName;
-	}
-
-	public function setStreamName($streamName) {
-		$this->streamName = $streamName;
-		$this->queryParameters["StreamName"]=$streamName;
-	}
-
 	public function getLimit() {
 		return $this->limit;
 	}
@@ -94,6 +77,15 @@ class DescribeLiveStreamSnapshotInfoRequest extends \RpcAcsRequest
 	public function setLimit($limit) {
 		$this->limit = $limit;
 		$this->queryParameters["Limit"]=$limit;
+	}
+
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
 	}
 
 	public function getStartTime() {
@@ -105,13 +97,22 @@ class DescribeLiveStreamSnapshotInfoRequest extends \RpcAcsRequest
 		$this->queryParameters["StartTime"]=$startTime;
 	}
 
-	public function getEndTime() {
-		return $this->endTime;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getStreamName() {
+		return $this->streamName;
+	}
+
+	public function setStreamName($streamName) {
+		$this->streamName = $streamName;
+		$this->queryParameters["StreamName"]=$streamName;
 	}
 	
 }

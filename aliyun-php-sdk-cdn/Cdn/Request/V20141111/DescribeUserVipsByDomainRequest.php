@@ -24,9 +24,8 @@ class DescribeUserVipsByDomainRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "DescribeUserVipsByDomain");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
 
 	private  $securityToken;
 
@@ -34,14 +33,7 @@ class DescribeUserVipsByDomainRequest extends \RpcAcsRequest
 
 	private  $available;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+	private  $ownerId;
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -68,6 +60,15 @@ class DescribeUserVipsByDomainRequest extends \RpcAcsRequest
 	public function setAvailable($available) {
 		$this->available = $available;
 		$this->queryParameters["Available"]=$available;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

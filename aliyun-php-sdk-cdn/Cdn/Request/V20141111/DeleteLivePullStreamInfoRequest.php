@@ -24,25 +24,26 @@ class DeleteLivePullStreamInfoRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "DeleteLivePullStreamInfo");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $appName;
 
 	private  $securityToken;
 
 	private  $domainName;
 
-	private  $appName;
+	private  $ownerId;
 
 	private  $streamName;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getAppName() {
+		return $this->appName;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setAppName($appName) {
+		$this->appName = $appName;
+		$this->queryParameters["AppName"]=$appName;
 	}
 
 	public function getSecurityToken() {
@@ -63,13 +64,13 @@ class DeleteLivePullStreamInfoRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getAppName() {
-		return $this->appName;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getStreamName() {

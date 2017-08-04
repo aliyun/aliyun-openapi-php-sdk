@@ -24,23 +24,24 @@ class AddLiveDomainMappingRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "AddLiveDomainMapping");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $pullDomain;
 
 	private  $securityToken;
 
 	private  $pushDomain;
 
-	private  $pullDomain;
+	private  $ownerId;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getPullDomain() {
+		return $this->pullDomain;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setPullDomain($pullDomain) {
+		$this->pullDomain = $pullDomain;
+		$this->queryParameters["PullDomain"]=$pullDomain;
 	}
 
 	public function getSecurityToken() {
@@ -61,13 +62,13 @@ class AddLiveDomainMappingRequest extends \RpcAcsRequest
 		$this->queryParameters["PushDomain"]=$pushDomain;
 	}
 
-	public function getPullDomain() {
-		return $this->pullDomain;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setPullDomain($pullDomain) {
-		$this->pullDomain = $pullDomain;
-		$this->queryParameters["PullDomain"]=$pullDomain;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

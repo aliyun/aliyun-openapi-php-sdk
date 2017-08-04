@@ -24,33 +24,52 @@ class UpdateLiveAppSnapshotConfigRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "UpdateLiveAppSnapshotConfig");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $timeInterval;
+
+	private  $ossBucket;
+
+	private  $appName;
 
 	private  $securityToken;
 
 	private  $domainName;
 
-	private  $appName;
-
-	private  $timeInterval;
-
 	private  $ossEndpoint;
-
-	private  $ossBucket;
-
-	private  $overwriteOssObject;
 
 	private  $sequenceOssObject;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $overwriteOssObject;
+
+	private  $ownerId;
+
+	public function getTimeInterval() {
+		return $this->timeInterval;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setTimeInterval($timeInterval) {
+		$this->timeInterval = $timeInterval;
+		$this->queryParameters["TimeInterval"]=$timeInterval;
+	}
+
+	public function getOssBucket() {
+		return $this->ossBucket;
+	}
+
+	public function setOssBucket($ossBucket) {
+		$this->ossBucket = $ossBucket;
+		$this->queryParameters["OssBucket"]=$ossBucket;
+	}
+
+	public function getAppName() {
+		return $this->appName;
+	}
+
+	public function setAppName($appName) {
+		$this->appName = $appName;
+		$this->queryParameters["AppName"]=$appName;
 	}
 
 	public function getSecurityToken() {
@@ -71,24 +90,6 @@ class UpdateLiveAppSnapshotConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getAppName() {
-		return $this->appName;
-	}
-
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
-	}
-
-	public function getTimeInterval() {
-		return $this->timeInterval;
-	}
-
-	public function setTimeInterval($timeInterval) {
-		$this->timeInterval = $timeInterval;
-		$this->queryParameters["TimeInterval"]=$timeInterval;
-	}
-
 	public function getOssEndpoint() {
 		return $this->ossEndpoint;
 	}
@@ -98,13 +99,13 @@ class UpdateLiveAppSnapshotConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["OssEndpoint"]=$ossEndpoint;
 	}
 
-	public function getOssBucket() {
-		return $this->ossBucket;
+	public function getSequenceOssObject() {
+		return $this->sequenceOssObject;
 	}
 
-	public function setOssBucket($ossBucket) {
-		$this->ossBucket = $ossBucket;
-		$this->queryParameters["OssBucket"]=$ossBucket;
+	public function setSequenceOssObject($sequenceOssObject) {
+		$this->sequenceOssObject = $sequenceOssObject;
+		$this->queryParameters["SequenceOssObject"]=$sequenceOssObject;
 	}
 
 	public function getOverwriteOssObject() {
@@ -116,13 +117,13 @@ class UpdateLiveAppSnapshotConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["OverwriteOssObject"]=$overwriteOssObject;
 	}
 
-	public function getSequenceOssObject() {
-		return $this->sequenceOssObject;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setSequenceOssObject($sequenceOssObject) {
-		$this->sequenceOssObject = $sequenceOssObject;
-		$this->queryParameters["SequenceOssObject"]=$sequenceOssObject;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

@@ -24,26 +24,18 @@ class SetSourceHostConfigRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "SetSourceHostConfig");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
 
 	private  $securityToken;
 
-	private  $domainName;
-
 	private  $enable;
 
+	private  $domainName;
+
+	private  $ownerId;
+
 	private  $backSrcDomain;
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -52,6 +44,15 @@ class SetSourceHostConfigRequest extends \RpcAcsRequest
 	public function setSecurityToken($securityToken) {
 		$this->securityToken = $securityToken;
 		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
+
+	public function getEnable() {
+		return $this->enable;
+	}
+
+	public function setEnable($enable) {
+		$this->enable = $enable;
+		$this->queryParameters["Enable"]=$enable;
 	}
 
 	public function getDomainName() {
@@ -63,13 +64,13 @@ class SetSourceHostConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getEnable() {
-		return $this->enable;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setEnable($enable) {
-		$this->enable = $enable;
-		$this->queryParameters["Enable"]=$enable;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getBackSrcDomain() {

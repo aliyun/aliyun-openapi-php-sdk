@@ -24,24 +24,16 @@ class RefreshObjectCachesRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "RefreshObjectCaches");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
 
 	private  $securityToken;
 
 	private  $objectPath;
 
+	private  $ownerId;
+
 	private  $objectType;
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -59,6 +51,15 @@ class RefreshObjectCachesRequest extends \RpcAcsRequest
 	public function setObjectPath($objectPath) {
 		$this->objectPath = $objectPath;
 		$this->queryParameters["ObjectPath"]=$objectPath;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getObjectType() {

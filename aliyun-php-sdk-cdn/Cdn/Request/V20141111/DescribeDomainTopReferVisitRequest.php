@@ -24,24 +24,18 @@ class DescribeDomainTopReferVisitRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "DescribeDomainTopReferVisit");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
 
 	private  $securityToken;
 
 	private  $domainName;
 
+	private  $sortBy;
+
 	private  $startTime;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+	private  $ownerId;
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -61,6 +55,15 @@ class DescribeDomainTopReferVisitRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
+	public function getSortBy() {
+		return $this->sortBy;
+	}
+
+	public function setSortBy($sortBy) {
+		$this->sortBy = $sortBy;
+		$this->queryParameters["SortBy"]=$sortBy;
+	}
+
 	public function getStartTime() {
 		return $this->startTime;
 	}
@@ -68,6 +71,15 @@ class DescribeDomainTopReferVisitRequest extends \RpcAcsRequest
 	public function setStartTime($startTime) {
 		$this->startTime = $startTime;
 		$this->queryParameters["StartTime"]=$startTime;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

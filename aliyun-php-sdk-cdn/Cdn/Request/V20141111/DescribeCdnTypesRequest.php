@@ -24,21 +24,22 @@ class DescribeCdnTypesRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "DescribeCdnTypes");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $ownerAccount;
 
 	private  $securityToken;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $ownerAccount;
+
+	private  $ownerId;
+
+	public function getSecurityToken() {
+		return $this->securityToken;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setSecurityToken($securityToken) {
+		$this->securityToken = $securityToken;
+		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
 	public function getOwnerAccount() {
@@ -50,13 +51,13 @@ class DescribeCdnTypesRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getSecurityToken() {
-		return $this->securityToken;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

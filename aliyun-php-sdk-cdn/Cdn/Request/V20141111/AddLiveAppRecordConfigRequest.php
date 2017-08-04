@@ -24,29 +24,39 @@ class AddLiveAppRecordConfigRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "AddLiveAppRecordConfig");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $ossBucket;
+
+	private  $appName;
 
 	private  $securityToken;
 
 	private  $domainName;
 
-	private  $appName;
-
 	private  $ossEndpoint;
-
-	private  $ossBucket;
 
 	private  $ossObjectPrefix;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $ownerId;
+
+	public function getOssBucket() {
+		return $this->ossBucket;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setOssBucket($ossBucket) {
+		$this->ossBucket = $ossBucket;
+		$this->queryParameters["OssBucket"]=$ossBucket;
+	}
+
+	public function getAppName() {
+		return $this->appName;
+	}
+
+	public function setAppName($appName) {
+		$this->appName = $appName;
+		$this->queryParameters["AppName"]=$appName;
 	}
 
 	public function getSecurityToken() {
@@ -67,15 +77,6 @@ class AddLiveAppRecordConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getAppName() {
-		return $this->appName;
-	}
-
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
-	}
-
 	public function getOssEndpoint() {
 		return $this->ossEndpoint;
 	}
@@ -85,15 +86,6 @@ class AddLiveAppRecordConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["OssEndpoint"]=$ossEndpoint;
 	}
 
-	public function getOssBucket() {
-		return $this->ossBucket;
-	}
-
-	public function setOssBucket($ossBucket) {
-		$this->ossBucket = $ossBucket;
-		$this->queryParameters["OssBucket"]=$ossBucket;
-	}
-
 	public function getOssObjectPrefix() {
 		return $this->ossObjectPrefix;
 	}
@@ -101,6 +93,15 @@ class AddLiveAppRecordConfigRequest extends \RpcAcsRequest
 	public function setOssObjectPrefix($ossObjectPrefix) {
 		$this->ossObjectPrefix = $ossObjectPrefix;
 		$this->queryParameters["OssObjectPrefix"]=$ossObjectPrefix;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

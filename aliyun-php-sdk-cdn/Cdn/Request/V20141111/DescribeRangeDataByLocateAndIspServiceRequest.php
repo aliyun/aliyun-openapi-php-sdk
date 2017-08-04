@@ -24,9 +24,10 @@ class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "DescribeRangeDataByLocateAndIspService");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $ispNames;
 
 	private  $securityToken;
 
@@ -34,19 +35,19 @@ class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
 
 	private  $locationNames;
 
-	private  $ispNames;
+	private  $endTime;
 
 	private  $startTime;
 
-	private  $endTime;
+	private  $ownerId;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getIspNames() {
+		return $this->ispNames;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setIspNames($ispNames) {
+		$this->ispNames = $ispNames;
+		$this->queryParameters["IspNames"]=$ispNames;
 	}
 
 	public function getSecurityToken() {
@@ -76,13 +77,13 @@ class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
 		$this->queryParameters["LocationNames"]=$locationNames;
 	}
 
-	public function getIspNames() {
-		return $this->ispNames;
+	public function getEndTime() {
+		return $this->endTime;
 	}
 
-	public function setIspNames($ispNames) {
-		$this->ispNames = $ispNames;
-		$this->queryParameters["IspNames"]=$ispNames;
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
 	}
 
 	public function getstartTime() {
@@ -94,13 +95,13 @@ class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
 		$this->queryParameters["startTime"]=$startTime;
 	}
 
-	public function getEndTime() {
-		return $this->endTime;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

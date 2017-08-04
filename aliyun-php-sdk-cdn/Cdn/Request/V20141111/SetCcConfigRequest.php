@@ -24,27 +24,26 @@ class SetCcConfigRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cdn", "2014-11-11", "SetCcConfig");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $allowIps;
 
 	private  $securityToken;
 
 	private  $domainName;
 
-	private  $enable;
-
-	private  $allowIps;
+	private  $ownerId;
 
 	private  $blockIps;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getAllowIps() {
+		return $this->allowIps;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setAllowIps($allowIps) {
+		$this->allowIps = $allowIps;
+		$this->queryParameters["AllowIps"]=$allowIps;
 	}
 
 	public function getSecurityToken() {
@@ -65,22 +64,13 @@ class SetCcConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getEnable() {
-		return $this->enable;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setEnable($enable) {
-		$this->enable = $enable;
-		$this->queryParameters["Enable"]=$enable;
-	}
-
-	public function getAllowIps() {
-		return $this->allowIps;
-	}
-
-	public function setAllowIps($allowIps) {
-		$this->allowIps = $allowIps;
-		$this->queryParameters["AllowIps"]=$allowIps;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getBlockIps() {
