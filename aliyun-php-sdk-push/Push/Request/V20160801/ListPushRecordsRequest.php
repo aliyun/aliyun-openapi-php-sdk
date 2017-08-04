@@ -24,45 +24,28 @@ class ListPushRecordsRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Push", "2016-08-01", "ListPushRecords");
+		$this->setMethod("POST");
 	}
-
-	private  $appKey;
-
-	private  $pushType;
-
-	private  $startTime;
-
-	private  $endTime;
-
-	private  $page;
 
 	private  $pageSize;
 
-	public function getAppKey() {
-		return $this->appKey;
+	private  $endTime;
+
+	private  $appKey;
+
+	private  $startTime;
+
+	private  $page;
+
+	private  $pushType;
+
+	public function getPageSize() {
+		return $this->pageSize;
 	}
 
-	public function setAppKey($appKey) {
-		$this->appKey = $appKey;
-		$this->queryParameters["AppKey"]=$appKey;
-	}
-
-	public function getPushType() {
-		return $this->pushType;
-	}
-
-	public function setPushType($pushType) {
-		$this->pushType = $pushType;
-		$this->queryParameters["PushType"]=$pushType;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
 	public function getEndTime() {
@@ -74,6 +57,24 @@ class ListPushRecordsRequest extends \RpcAcsRequest
 		$this->queryParameters["EndTime"]=$endTime;
 	}
 
+	public function getAppKey() {
+		return $this->appKey;
+	}
+
+	public function setAppKey($appKey) {
+		$this->appKey = $appKey;
+		$this->queryParameters["AppKey"]=$appKey;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
+
 	public function getPage() {
 		return $this->page;
 	}
@@ -83,13 +84,13 @@ class ListPushRecordsRequest extends \RpcAcsRequest
 		$this->queryParameters["Page"]=$page;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
+	public function getPushType() {
+		return $this->pushType;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setPushType($pushType) {
+		$this->pushType = $pushType;
+		$this->queryParameters["PushType"]=$pushType;
 	}
 	
 }

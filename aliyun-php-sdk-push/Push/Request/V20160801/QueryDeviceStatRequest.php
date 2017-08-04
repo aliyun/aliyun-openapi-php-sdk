@@ -24,17 +24,27 @@ class QueryDeviceStatRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Push", "2016-08-01", "QueryDeviceStat");
+		$this->setMethod("POST");
 	}
+
+	private  $endTime;
 
 	private  $appKey;
 
 	private  $startTime;
 
-	private  $endTime;
-
 	private  $deviceType;
 
 	private  $queryType;
+
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
+	}
 
 	public function getAppKey() {
 		return $this->appKey;
@@ -52,15 +62,6 @@ class QueryDeviceStatRequest extends \RpcAcsRequest
 	public function setStartTime($startTime) {
 		$this->startTime = $startTime;
 		$this->queryParameters["StartTime"]=$startTime;
-	}
-
-	public function getEndTime() {
-		return $this->endTime;
-	}
-
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
 	}
 
 	public function getDeviceType() {

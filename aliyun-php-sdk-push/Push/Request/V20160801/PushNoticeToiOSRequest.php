@@ -24,21 +24,42 @@ class PushNoticeToiOSRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Push", "2016-08-01", "PushNoticeToiOS");
+		$this->setMethod("POST");
 	}
+
+	private  $extParameters;
+
+	private  $apnsEnv;
 
 	private  $appKey;
 
-	private  $target;
-
 	private  $targetValue;
-
-	private  $apnsEnv;
 
 	private  $title;
 
 	private  $body;
 
-	private  $extParameters;
+	private  $jobKey;
+
+	private  $target;
+
+	public function getExtParameters() {
+		return $this->extParameters;
+	}
+
+	public function setExtParameters($extParameters) {
+		$this->extParameters = $extParameters;
+		$this->queryParameters["ExtParameters"]=$extParameters;
+	}
+
+	public function getApnsEnv() {
+		return $this->apnsEnv;
+	}
+
+	public function setApnsEnv($apnsEnv) {
+		$this->apnsEnv = $apnsEnv;
+		$this->queryParameters["ApnsEnv"]=$apnsEnv;
+	}
 
 	public function getAppKey() {
 		return $this->appKey;
@@ -49,15 +70,6 @@ class PushNoticeToiOSRequest extends \RpcAcsRequest
 		$this->queryParameters["AppKey"]=$appKey;
 	}
 
-	public function getTarget() {
-		return $this->target;
-	}
-
-	public function setTarget($target) {
-		$this->target = $target;
-		$this->queryParameters["Target"]=$target;
-	}
-
 	public function getTargetValue() {
 		return $this->targetValue;
 	}
@@ -65,15 +77,6 @@ class PushNoticeToiOSRequest extends \RpcAcsRequest
 	public function setTargetValue($targetValue) {
 		$this->targetValue = $targetValue;
 		$this->queryParameters["TargetValue"]=$targetValue;
-	}
-
-	public function getApnsEnv() {
-		return $this->apnsEnv;
-	}
-
-	public function setApnsEnv($apnsEnv) {
-		$this->apnsEnv = $apnsEnv;
-		$this->queryParameters["ApnsEnv"]=$apnsEnv;
 	}
 
 	public function getTitle() {
@@ -94,13 +97,22 @@ class PushNoticeToiOSRequest extends \RpcAcsRequest
 		$this->queryParameters["Body"]=$body;
 	}
 
-	public function getExtParameters() {
-		return $this->extParameters;
+	public function getJobKey() {
+		return $this->jobKey;
 	}
 
-	public function setExtParameters($extParameters) {
-		$this->extParameters = $extParameters;
-		$this->queryParameters["ExtParameters"]=$extParameters;
+	public function setJobKey($jobKey) {
+		$this->jobKey = $jobKey;
+		$this->queryParameters["JobKey"]=$jobKey;
+	}
+
+	public function getTarget() {
+		return $this->target;
+	}
+
+	public function setTarget($target) {
+		$this->target = $target;
+		$this->queryParameters["Target"]=$target;
 	}
 	
 }

@@ -24,20 +24,12 @@ class RemoveTagRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Push", "2016-08-01", "RemoveTag");
+		$this->setMethod("POST");
 	}
-
-	private  $appKey;
 
 	private  $tagName;
 
-	public function getAppKey() {
-		return $this->appKey;
-	}
-
-	public function setAppKey($appKey) {
-		$this->appKey = $appKey;
-		$this->queryParameters["AppKey"]=$appKey;
-	}
+	private  $appKey;
 
 	public function getTagName() {
 		return $this->tagName;
@@ -48,4 +40,13 @@ class RemoveTagRequest extends \RpcAcsRequest
 		$this->queryParameters["TagName"]=$tagName;
 	}
 
+	public function getAppKey() {
+		return $this->appKey;
+	}
+
+	public function setAppKey($appKey) {
+		$this->appKey = $appKey;
+		$this->queryParameters["AppKey"]=$appKey;
+	}
+	
 }

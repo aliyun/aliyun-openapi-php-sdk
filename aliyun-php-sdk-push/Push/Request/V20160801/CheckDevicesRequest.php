@@ -24,20 +24,12 @@ class CheckDevicesRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Push", "2016-08-01", "CheckDevices");
+		$this->setMethod("POST");
 	}
-
-	private  $appKey;
 
 	private  $deviceIds;
 
-	public function getAppKey() {
-		return $this->appKey;
-	}
-
-	public function setAppKey($appKey) {
-		$this->appKey = $appKey;
-		$this->queryParameters["AppKey"]=$appKey;
-	}
+	private  $appKey;
 
 	public function getDeviceIds() {
 		return $this->deviceIds;
@@ -46,6 +38,15 @@ class CheckDevicesRequest extends \RpcAcsRequest
 	public function setDeviceIds($deviceIds) {
 		$this->deviceIds = $deviceIds;
 		$this->queryParameters["DeviceIds"]=$deviceIds;
+	}
+
+	public function getAppKey() {
+		return $this->appKey;
+	}
+
+	public function setAppKey($appKey) {
+		$this->appKey = $appKey;
+		$this->queryParameters["AppKey"]=$appKey;
 	}
 	
 }

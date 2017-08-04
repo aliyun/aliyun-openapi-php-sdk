@@ -24,23 +24,24 @@ class BindTagRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Push", "2016-08-01", "BindTag");
+		$this->setMethod("POST");
 	}
-
-	private  $appKey;
-
-	private  $clientKey;
-
-	private  $keyType;
 
 	private  $tagName;
 
-	public function getAppKey() {
-		return $this->appKey;
+	private  $clientKey;
+
+	private  $appKey;
+
+	private  $keyType;
+
+	public function getTagName() {
+		return $this->tagName;
 	}
 
-	public function setAppKey($appKey) {
-		$this->appKey = $appKey;
-		$this->queryParameters["AppKey"]=$appKey;
+	public function setTagName($tagName) {
+		$this->tagName = $tagName;
+		$this->queryParameters["TagName"]=$tagName;
 	}
 
 	public function getClientKey() {
@@ -52,6 +53,15 @@ class BindTagRequest extends \RpcAcsRequest
 		$this->queryParameters["ClientKey"]=$clientKey;
 	}
 
+	public function getAppKey() {
+		return $this->appKey;
+	}
+
+	public function setAppKey($appKey) {
+		$this->appKey = $appKey;
+		$this->queryParameters["AppKey"]=$appKey;
+	}
+
 	public function getKeyType() {
 		return $this->keyType;
 	}
@@ -59,15 +69,6 @@ class BindTagRequest extends \RpcAcsRequest
 	public function setKeyType($keyType) {
 		$this->keyType = $keyType;
 		$this->queryParameters["KeyType"]=$keyType;
-	}
-
-	public function getTagName() {
-		return $this->tagName;
-	}
-
-	public function setTagName($tagName) {
-		$this->tagName = $tagName;
-		$this->queryParameters["TagName"]=$tagName;
 	}
 	
 }

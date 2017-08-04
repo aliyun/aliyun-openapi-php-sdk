@@ -24,6 +24,7 @@ class ListTagsRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Push", "2016-08-01", "ListTags");
+		$this->setMethod("POST");
 	}
 
 	private  $appKey;

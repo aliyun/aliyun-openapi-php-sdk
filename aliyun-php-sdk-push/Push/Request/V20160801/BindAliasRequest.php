@@ -24,22 +24,14 @@ class BindAliasRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Push", "2016-08-01", "BindAlias");
+		$this->setMethod("POST");
 	}
-
-	private  $appKey;
 
 	private  $aliasName;
 
+	private  $appKey;
+
 	private  $deviceId;
-
-	public function getAppKey() {
-		return $this->appKey;
-	}
-
-	public function setAppKey($appKey) {
-		$this->appKey = $appKey;
-		$this->queryParameters["AppKey"]=$appKey;
-	}
 
 	public function getAliasName() {
 		return $this->aliasName;
@@ -48,6 +40,15 @@ class BindAliasRequest extends \RpcAcsRequest
 	public function setAliasName($aliasName) {
 		$this->aliasName = $aliasName;
 		$this->queryParameters["AliasName"]=$aliasName;
+	}
+
+	public function getAppKey() {
+		return $this->appKey;
+	}
+
+	public function setAppKey($appKey) {
+		$this->appKey = $appKey;
+		$this->queryParameters["AppKey"]=$appKey;
 	}
 
 	public function getDeviceId() {

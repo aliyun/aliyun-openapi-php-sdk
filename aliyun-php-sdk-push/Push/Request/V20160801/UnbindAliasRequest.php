@@ -24,24 +24,16 @@ class UnbindAliasRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Push", "2016-08-01", "UnbindAlias");
+		$this->setMethod("POST");
 	}
 
-	private  $appKey;
-
 	private  $aliasName;
+
+	private  $appKey;
 
 	private  $deviceId;
 
 	private  $unbindAll;
-
-	public function getAppKey() {
-		return $this->appKey;
-	}
-
-	public function setAppKey($appKey) {
-		$this->appKey = $appKey;
-		$this->queryParameters["AppKey"]=$appKey;
-	}
 
 	public function getAliasName() {
 		return $this->aliasName;
@@ -52,6 +44,15 @@ class UnbindAliasRequest extends \RpcAcsRequest
 		$this->queryParameters["AliasName"]=$aliasName;
 	}
 
+	public function getAppKey() {
+		return $this->appKey;
+	}
+
+	public function setAppKey($appKey) {
+		$this->appKey = $appKey;
+		$this->queryParameters["AppKey"]=$appKey;
+	}
+
 	public function getDeviceId() {
 		return $this->deviceId;
 	}
@@ -60,7 +61,7 @@ class UnbindAliasRequest extends \RpcAcsRequest
 		$this->deviceId = $deviceId;
 		$this->queryParameters["DeviceId"]=$deviceId;
 	}
-	
+
 	public function getUnbindAll() {
 		return $this->unbindAll;
 	}
@@ -69,4 +70,5 @@ class UnbindAliasRequest extends \RpcAcsRequest
 		$this->unbindAll = $unbindAll;
 		$this->queryParameters["UnbindAll"]=$unbindAll;
 	}
+	
 }

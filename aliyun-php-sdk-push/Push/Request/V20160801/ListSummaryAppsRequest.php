@@ -24,6 +24,7 @@ class ListSummaryAppsRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Push", "2016-08-01", "ListSummaryApps");
+		$this->setMethod("POST");
 	}
 	
 }

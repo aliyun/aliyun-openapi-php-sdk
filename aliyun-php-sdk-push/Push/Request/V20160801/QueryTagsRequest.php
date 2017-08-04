@@ -24,22 +24,14 @@ class QueryTagsRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Push", "2016-08-01", "QueryTags");
+		$this->setMethod("POST");
 	}
-
-	private  $appKey;
 
 	private  $clientKey;
 
+	private  $appKey;
+
 	private  $keyType;
-
-	public function getAppKey() {
-		return $this->appKey;
-	}
-
-	public function setAppKey($appKey) {
-		$this->appKey = $appKey;
-		$this->queryParameters["AppKey"]=$appKey;
-	}
 
 	public function getClientKey() {
 		return $this->clientKey;
@@ -48,6 +40,15 @@ class QueryTagsRequest extends \RpcAcsRequest
 	public function setClientKey($clientKey) {
 		$this->clientKey = $clientKey;
 		$this->queryParameters["ClientKey"]=$clientKey;
+	}
+
+	public function getAppKey() {
+		return $this->appKey;
+	}
+
+	public function setAppKey($appKey) {
+		$this->appKey = $appKey;
+		$this->queryParameters["AppKey"]=$appKey;
 	}
 
 	public function getKeyType() {

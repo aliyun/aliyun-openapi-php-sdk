@@ -24,20 +24,12 @@ class QueryPushDetailRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Push", "2016-08-01", "QueryPushDetail");
+		$this->setMethod("POST");
 	}
-
-	private  $appKey;
 
 	private  $messageId;
 
-	public function getAppKey() {
-		return $this->appKey;
-	}
-
-	public function setAppKey($appKey) {
-		$this->appKey = $appKey;
-		$this->queryParameters["AppKey"]=$appKey;
-	}
+	private  $appKey;
 
 	public function getMessageId() {
 		return $this->messageId;
@@ -46,6 +38,15 @@ class QueryPushDetailRequest extends \RpcAcsRequest
 	public function setMessageId($messageId) {
 		$this->messageId = $messageId;
 		$this->queryParameters["MessageId"]=$messageId;
+	}
+
+	public function getAppKey() {
+		return $this->appKey;
+	}
+
+	public function setAppKey($appKey) {
+		$this->appKey = $appKey;
+		$this->queryParameters["AppKey"]=$appKey;
 	}
 	
 }

@@ -24,6 +24,7 @@ class QueryDeviceInfoRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Push", "2016-08-01", "QueryDeviceInfo");
+		$this->setMethod("POST");
 	}
 
 	private  $appKey;

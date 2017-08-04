@@ -24,11 +24,12 @@ class PushNoticeToAndroidRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Push", "2016-08-01", "PushNoticeToAndroid");
+		$this->setMethod("POST");
 	}
 
-	private  $appKey;
+	private  $extParameters;
 
-	private  $target;
+	private  $appKey;
 
 	private  $targetValue;
 
@@ -36,7 +37,18 @@ class PushNoticeToAndroidRequest extends \RpcAcsRequest
 
 	private  $body;
 
-	private  $extParameters;
+	private  $jobKey;
+
+	private  $target;
+
+	public function getExtParameters() {
+		return $this->extParameters;
+	}
+
+	public function setExtParameters($extParameters) {
+		$this->extParameters = $extParameters;
+		$this->queryParameters["ExtParameters"]=$extParameters;
+	}
 
 	public function getAppKey() {
 		return $this->appKey;
@@ -45,15 +57,6 @@ class PushNoticeToAndroidRequest extends \RpcAcsRequest
 	public function setAppKey($appKey) {
 		$this->appKey = $appKey;
 		$this->queryParameters["AppKey"]=$appKey;
-	}
-
-	public function getTarget() {
-		return $this->target;
-	}
-
-	public function setTarget($target) {
-		$this->target = $target;
-		$this->queryParameters["Target"]=$target;
 	}
 
 	public function getTargetValue() {
@@ -83,13 +86,22 @@ class PushNoticeToAndroidRequest extends \RpcAcsRequest
 		$this->queryParameters["Body"]=$body;
 	}
 
-	public function getExtParameters() {
-		return $this->extParameters;
+	public function getJobKey() {
+		return $this->jobKey;
 	}
 
-	public function setExtParameters($extParameters) {
-		$this->extParameters = $extParameters;
-		$this->queryParameters["ExtParameters"]=$extParameters;
+	public function setJobKey($jobKey) {
+		$this->jobKey = $jobKey;
+		$this->queryParameters["JobKey"]=$jobKey;
+	}
+
+	public function getTarget() {
+		return $this->target;
+	}
+
+	public function setTarget($target) {
+		$this->target = $target;
+		$this->queryParameters["Target"]=$target;
 	}
 	
 }

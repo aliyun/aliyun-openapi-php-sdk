@@ -24,6 +24,7 @@ class QueryAliasesRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Push", "2016-08-01", "QueryAliases");
+		$this->setMethod("POST");
 	}
 
 	private  $appKey;
