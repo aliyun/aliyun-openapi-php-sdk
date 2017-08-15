@@ -23,43 +23,35 @@ class ModifyLoadBalancerInternetSpecRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Slb", "2014-05-15", "ModifyLoadBalancerInternetSpec");
+		parent::__construct("Slb", "2014-05-15", "ModifyLoadBalancerInternetSpec", "slb", "openAPI");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
+	private  $access_key_id;
 
 	private  $resourceOwnerId;
 
 	private  $loadBalancerId;
 
-	private  $internetChargeType;
+	private  $resourceOwnerAccount;
 
 	private  $bandwidth;
 
+	private  $internetChargeType;
+
 	private  $ownerAccount;
 
-	private  $access_key_id;
+	private  $ownerId;
 
 	private  $tags;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getaccess_key_id() {
+		return $this->access_key_id;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setaccess_key_id($access_key_id) {
+		$this->access_key_id = $access_key_id;
+		$this->queryParameters["access_key_id"]=$access_key_id;
 	}
 
 	public function getResourceOwnerId() {
@@ -80,13 +72,13 @@ class ModifyLoadBalancerInternetSpecRequest extends \RpcAcsRequest
 		$this->queryParameters["LoadBalancerId"]=$loadBalancerId;
 	}
 
-	public function getInternetChargeType() {
-		return $this->internetChargeType;
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
 	}
 
-	public function setInternetChargeType($internetChargeType) {
-		$this->internetChargeType = $internetChargeType;
-		$this->queryParameters["InternetChargeType"]=$internetChargeType;
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
 	public function getBandwidth() {
@@ -98,6 +90,15 @@ class ModifyLoadBalancerInternetSpecRequest extends \RpcAcsRequest
 		$this->queryParameters["Bandwidth"]=$bandwidth;
 	}
 
+	public function getInternetChargeType() {
+		return $this->internetChargeType;
+	}
+
+	public function setInternetChargeType($internetChargeType) {
+		$this->internetChargeType = $internetChargeType;
+		$this->queryParameters["InternetChargeType"]=$internetChargeType;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -107,13 +108,13 @@ class ModifyLoadBalancerInternetSpecRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getaccess_key_id() {
-		return $this->access_key_id;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setaccess_key_id($access_key_id) {
-		$this->access_key_id = $access_key_id;
-		$this->queryParameters["access_key_id"]=$access_key_id;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getTags() {

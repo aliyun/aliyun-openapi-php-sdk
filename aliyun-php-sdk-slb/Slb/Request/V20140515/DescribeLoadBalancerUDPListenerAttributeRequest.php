@@ -23,41 +23,33 @@ class DescribeLoadBalancerUDPListenerAttributeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Slb", "2014-05-15", "DescribeLoadBalancerUDPListenerAttribute");
+		parent::__construct("Slb", "2014-05-15", "DescribeLoadBalancerUDPListenerAttribute", "slb", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
-
-	private  $loadBalancerId;
-
-	private  $listenerPort;
-
-	private  $ownerAccount;
 
 	private  $access_key_id;
 
+	private  $resourceOwnerId;
+
+	private  $listenerPort;
+
+	private  $loadBalancerId;
+
+	private  $resourceOwnerAccount;
+
+	private  $ownerAccount;
+
+	private  $ownerId;
+
 	private  $tags;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getaccess_key_id() {
+		return $this->access_key_id;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setaccess_key_id($access_key_id) {
+		$this->access_key_id = $access_key_id;
+		$this->queryParameters["access_key_id"]=$access_key_id;
 	}
 
 	public function getResourceOwnerId() {
@@ -69,6 +61,15 @@ class DescribeLoadBalancerUDPListenerAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getListenerPort() {
+		return $this->listenerPort;
+	}
+
+	public function setListenerPort($listenerPort) {
+		$this->listenerPort = $listenerPort;
+		$this->queryParameters["ListenerPort"]=$listenerPort;
+	}
+
 	public function getLoadBalancerId() {
 		return $this->loadBalancerId;
 	}
@@ -78,13 +79,13 @@ class DescribeLoadBalancerUDPListenerAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["LoadBalancerId"]=$loadBalancerId;
 	}
 
-	public function getListenerPort() {
-		return $this->listenerPort;
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
 	}
 
-	public function setListenerPort($listenerPort) {
-		$this->listenerPort = $listenerPort;
-		$this->queryParameters["ListenerPort"]=$listenerPort;
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
 	public function getOwnerAccount() {
@@ -96,13 +97,13 @@ class DescribeLoadBalancerUDPListenerAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getaccess_key_id() {
-		return $this->access_key_id;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setaccess_key_id($access_key_id) {
-		$this->access_key_id = $access_key_id;
-		$this->queryParameters["access_key_id"]=$access_key_id;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getTags() {

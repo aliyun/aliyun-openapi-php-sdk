@@ -23,43 +23,35 @@ class AddListenerWhiteListItemRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Slb", "2014-05-15", "AddListenerWhiteListItem");
+		parent::__construct("Slb", "2014-05-15", "AddListenerWhiteListItem", "slb", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
-
-	private  $loadBalancerId;
-
-	private  $listenerPort;
-
-	private  $sourceItems;
-
-	private  $ownerAccount;
 
 	private  $access_key_id;
 
+	private  $resourceOwnerId;
+
+	private  $listenerPort;
+
+	private  $loadBalancerId;
+
+	private  $sourceItems;
+
+	private  $resourceOwnerAccount;
+
+	private  $ownerAccount;
+
+	private  $ownerId;
+
 	private  $tags;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getaccess_key_id() {
+		return $this->access_key_id;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setaccess_key_id($access_key_id) {
+		$this->access_key_id = $access_key_id;
+		$this->queryParameters["access_key_id"]=$access_key_id;
 	}
 
 	public function getResourceOwnerId() {
@@ -71,15 +63,6 @@ class AddListenerWhiteListItemRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getLoadBalancerId() {
-		return $this->loadBalancerId;
-	}
-
-	public function setLoadBalancerId($loadBalancerId) {
-		$this->loadBalancerId = $loadBalancerId;
-		$this->queryParameters["LoadBalancerId"]=$loadBalancerId;
-	}
-
 	public function getListenerPort() {
 		return $this->listenerPort;
 	}
@@ -87,6 +70,15 @@ class AddListenerWhiteListItemRequest extends \RpcAcsRequest
 	public function setListenerPort($listenerPort) {
 		$this->listenerPort = $listenerPort;
 		$this->queryParameters["ListenerPort"]=$listenerPort;
+	}
+
+	public function getLoadBalancerId() {
+		return $this->loadBalancerId;
+	}
+
+	public function setLoadBalancerId($loadBalancerId) {
+		$this->loadBalancerId = $loadBalancerId;
+		$this->queryParameters["LoadBalancerId"]=$loadBalancerId;
 	}
 
 	public function getSourceItems() {
@@ -98,6 +90,15 @@ class AddListenerWhiteListItemRequest extends \RpcAcsRequest
 		$this->queryParameters["SourceItems"]=$sourceItems;
 	}
 
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -107,13 +108,13 @@ class AddListenerWhiteListItemRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getaccess_key_id() {
-		return $this->access_key_id;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setaccess_key_id($access_key_id) {
-		$this->access_key_id = $access_key_id;
-		$this->queryParameters["access_key_id"]=$access_key_id;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getTags() {

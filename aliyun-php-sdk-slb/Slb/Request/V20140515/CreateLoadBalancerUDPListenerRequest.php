@@ -23,148 +23,61 @@ class CreateLoadBalancerUDPListenerRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Slb", "2014-05-15", "CreateLoadBalancerUDPListener");
+		parent::__construct("Slb", "2014-05-15", "CreateLoadBalancerUDPListener", "slb", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
-
-	private  $loadBalancerId;
-
-	private  $listenerPort;
-
-	private  $backendServerPort;
-
-	private  $bandwidth;
-
-	private  $scheduler;
-
-	private  $persistenceTimeout;
-
-	private  $healthyThreshold;
-
-	private  $unhealthyThreshold;
-
-	private  $healthCheckConnectTimeout;
-
-	private  $healthCheckConnectPort;
-
-	private  $healthCheckInterval;
-
-	private  $healthCheckReq;
-
-	private  $healthCheckExp;
-
-	private  $maxConnection;
-
-	private  $ownerAccount;
 
 	private  $access_key_id;
 
+	private  $healthCheckConnectTimeout;
+
+	private  $resourceOwnerId;
+
+	private  $unhealthyThreshold;
+
+	private  $healthyThreshold;
+
+	private  $scheduler;
+
+	private  $maxConnection;
+
+	private  $persistenceTimeout;
+
 	private  $vServerGroupId;
+
+	private  $listenerPort;
+
+	private  $resourceOwnerAccount;
+
+	private  $bandwidth;
+
+	private  $ownerAccount;
+
+	private  $ownerId;
 
 	private  $tags;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $loadBalancerId;
+
+	private  $masterSlaveServerGroupId;
+
+	private  $healthCheckReq;
+
+	private  $backendServerPort;
+
+	private  $healthCheckInterval;
+
+	private  $healthCheckExp;
+
+	private  $healthCheckConnectPort;
+
+	public function getaccess_key_id() {
+		return $this->access_key_id;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getLoadBalancerId() {
-		return $this->loadBalancerId;
-	}
-
-	public function setLoadBalancerId($loadBalancerId) {
-		$this->loadBalancerId = $loadBalancerId;
-		$this->queryParameters["LoadBalancerId"]=$loadBalancerId;
-	}
-
-	public function getListenerPort() {
-		return $this->listenerPort;
-	}
-
-	public function setListenerPort($listenerPort) {
-		$this->listenerPort = $listenerPort;
-		$this->queryParameters["ListenerPort"]=$listenerPort;
-	}
-
-	public function getBackendServerPort() {
-		return $this->backendServerPort;
-	}
-
-	public function setBackendServerPort($backendServerPort) {
-		$this->backendServerPort = $backendServerPort;
-		$this->queryParameters["BackendServerPort"]=$backendServerPort;
-	}
-
-	public function getBandwidth() {
-		return $this->bandwidth;
-	}
-
-	public function setBandwidth($bandwidth) {
-		$this->bandwidth = $bandwidth;
-		$this->queryParameters["Bandwidth"]=$bandwidth;
-	}
-
-	public function getScheduler() {
-		return $this->scheduler;
-	}
-
-	public function setScheduler($scheduler) {
-		$this->scheduler = $scheduler;
-		$this->queryParameters["Scheduler"]=$scheduler;
-	}
-
-	public function getPersistenceTimeout() {
-		return $this->persistenceTimeout;
-	}
-
-	public function setPersistenceTimeout($persistenceTimeout) {
-		$this->persistenceTimeout = $persistenceTimeout;
-		$this->queryParameters["PersistenceTimeout"]=$persistenceTimeout;
-	}
-
-	public function getHealthyThreshold() {
-		return $this->healthyThreshold;
-	}
-
-	public function setHealthyThreshold($healthyThreshold) {
-		$this->healthyThreshold = $healthyThreshold;
-		$this->queryParameters["HealthyThreshold"]=$healthyThreshold;
-	}
-
-	public function getUnhealthyThreshold() {
-		return $this->unhealthyThreshold;
-	}
-
-	public function setUnhealthyThreshold($unhealthyThreshold) {
-		$this->unhealthyThreshold = $unhealthyThreshold;
-		$this->queryParameters["UnhealthyThreshold"]=$unhealthyThreshold;
+	public function setaccess_key_id($access_key_id) {
+		$this->access_key_id = $access_key_id;
+		$this->queryParameters["access_key_id"]=$access_key_id;
 	}
 
 	public function getHealthCheckConnectTimeout() {
@@ -176,40 +89,40 @@ class CreateLoadBalancerUDPListenerRequest extends \RpcAcsRequest
 		$this->queryParameters["HealthCheckConnectTimeout"]=$healthCheckConnectTimeout;
 	}
 
-	public function getHealthCheckConnectPort() {
-		return $this->healthCheckConnectPort;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setHealthCheckConnectPort($healthCheckConnectPort) {
-		$this->healthCheckConnectPort = $healthCheckConnectPort;
-		$this->queryParameters["HealthCheckConnectPort"]=$healthCheckConnectPort;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function gethealthCheckInterval() {
-		return $this->healthCheckInterval;
+	public function getUnhealthyThreshold() {
+		return $this->unhealthyThreshold;
 	}
 
-	public function sethealthCheckInterval($healthCheckInterval) {
-		$this->healthCheckInterval = $healthCheckInterval;
-		$this->queryParameters["healthCheckInterval"]=$healthCheckInterval;
+	public function setUnhealthyThreshold($unhealthyThreshold) {
+		$this->unhealthyThreshold = $unhealthyThreshold;
+		$this->queryParameters["UnhealthyThreshold"]=$unhealthyThreshold;
 	}
 
-	public function gethealthCheckReq() {
-		return $this->healthCheckReq;
+	public function getHealthyThreshold() {
+		return $this->healthyThreshold;
 	}
 
-	public function sethealthCheckReq($healthCheckReq) {
-		$this->healthCheckReq = $healthCheckReq;
-		$this->queryParameters["healthCheckReq"]=$healthCheckReq;
+	public function setHealthyThreshold($healthyThreshold) {
+		$this->healthyThreshold = $healthyThreshold;
+		$this->queryParameters["HealthyThreshold"]=$healthyThreshold;
 	}
 
-	public function gethealthCheckExp() {
-		return $this->healthCheckExp;
+	public function getScheduler() {
+		return $this->scheduler;
 	}
 
-	public function sethealthCheckExp($healthCheckExp) {
-		$this->healthCheckExp = $healthCheckExp;
-		$this->queryParameters["healthCheckExp"]=$healthCheckExp;
+	public function setScheduler($scheduler) {
+		$this->scheduler = $scheduler;
+		$this->queryParameters["Scheduler"]=$scheduler;
 	}
 
 	public function getMaxConnection() {
@@ -221,22 +134,13 @@ class CreateLoadBalancerUDPListenerRequest extends \RpcAcsRequest
 		$this->queryParameters["MaxConnection"]=$maxConnection;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getPersistenceTimeout() {
+		return $this->persistenceTimeout;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getaccess_key_id() {
-		return $this->access_key_id;
-	}
-
-	public function setaccess_key_id($access_key_id) {
-		$this->access_key_id = $access_key_id;
-		$this->queryParameters["access_key_id"]=$access_key_id;
+	public function setPersistenceTimeout($persistenceTimeout) {
+		$this->persistenceTimeout = $persistenceTimeout;
+		$this->queryParameters["PersistenceTimeout"]=$persistenceTimeout;
 	}
 
 	public function getVServerGroupId() {
@@ -248,6 +152,51 @@ class CreateLoadBalancerUDPListenerRequest extends \RpcAcsRequest
 		$this->queryParameters["VServerGroupId"]=$vServerGroupId;
 	}
 
+	public function getListenerPort() {
+		return $this->listenerPort;
+	}
+
+	public function setListenerPort($listenerPort) {
+		$this->listenerPort = $listenerPort;
+		$this->queryParameters["ListenerPort"]=$listenerPort;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getBandwidth() {
+		return $this->bandwidth;
+	}
+
+	public function setBandwidth($bandwidth) {
+		$this->bandwidth = $bandwidth;
+		$this->queryParameters["Bandwidth"]=$bandwidth;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
 	public function getTags() {
 		return $this->tags;
 	}
@@ -255,6 +204,69 @@ class CreateLoadBalancerUDPListenerRequest extends \RpcAcsRequest
 	public function setTags($tags) {
 		$this->tags = $tags;
 		$this->queryParameters["Tags"]=$tags;
+	}
+
+	public function getLoadBalancerId() {
+		return $this->loadBalancerId;
+	}
+
+	public function setLoadBalancerId($loadBalancerId) {
+		$this->loadBalancerId = $loadBalancerId;
+		$this->queryParameters["LoadBalancerId"]=$loadBalancerId;
+	}
+
+	public function getMasterSlaveServerGroupId() {
+		return $this->masterSlaveServerGroupId;
+	}
+
+	public function setMasterSlaveServerGroupId($masterSlaveServerGroupId) {
+		$this->masterSlaveServerGroupId = $masterSlaveServerGroupId;
+		$this->queryParameters["MasterSlaveServerGroupId"]=$masterSlaveServerGroupId;
+	}
+
+	public function gethealthCheckReq() {
+		return $this->healthCheckReq;
+	}
+
+	public function sethealthCheckReq($healthCheckReq) {
+		$this->healthCheckReq = $healthCheckReq;
+		$this->queryParameters["healthCheckReq"]=$healthCheckReq;
+	}
+
+	public function getBackendServerPort() {
+		return $this->backendServerPort;
+	}
+
+	public function setBackendServerPort($backendServerPort) {
+		$this->backendServerPort = $backendServerPort;
+		$this->queryParameters["BackendServerPort"]=$backendServerPort;
+	}
+
+	public function gethealthCheckInterval() {
+		return $this->healthCheckInterval;
+	}
+
+	public function sethealthCheckInterval($healthCheckInterval) {
+		$this->healthCheckInterval = $healthCheckInterval;
+		$this->queryParameters["healthCheckInterval"]=$healthCheckInterval;
+	}
+
+	public function gethealthCheckExp() {
+		return $this->healthCheckExp;
+	}
+
+	public function sethealthCheckExp($healthCheckExp) {
+		$this->healthCheckExp = $healthCheckExp;
+		$this->queryParameters["healthCheckExp"]=$healthCheckExp;
+	}
+
+	public function getHealthCheckConnectPort() {
+		return $this->healthCheckConnectPort;
+	}
+
+	public function setHealthCheckConnectPort($healthCheckConnectPort) {
+		$this->healthCheckConnectPort = $healthCheckConnectPort;
+		$this->queryParameters["HealthCheckConnectPort"]=$healthCheckConnectPort;
 	}
 	
 }

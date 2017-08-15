@@ -23,32 +23,42 @@ class SetServerCertificateNameRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Slb", "2014-05-15", "SetServerCertificateName");
+		parent::__construct("Slb", "2014-05-15", "SetServerCertificateName", "slb", "openAPI");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $access_key_id;
+
+	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
-	private  $resourceOwnerId;
+	private  $ownerAccount;
+
+	private  $ownerId;
 
 	private  $serverCertificateId;
 
 	private  $serverCertificateName;
 
-	private  $ownerAccount;
-
-	private  $access_key_id;
-
 	private  $tags;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getaccess_key_id() {
+		return $this->access_key_id;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setaccess_key_id($access_key_id) {
+		$this->access_key_id = $access_key_id;
+		$this->queryParameters["access_key_id"]=$access_key_id;
+	}
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
+	}
+
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -60,13 +70,22 @@ class SetServerCertificateNameRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getServerCertificateId() {
@@ -85,24 +104,6 @@ class SetServerCertificateNameRequest extends \RpcAcsRequest
 	public function setServerCertificateName($serverCertificateName) {
 		$this->serverCertificateName = $serverCertificateName;
 		$this->queryParameters["ServerCertificateName"]=$serverCertificateName;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getaccess_key_id() {
-		return $this->access_key_id;
-	}
-
-	public function setaccess_key_id($access_key_id) {
-		$this->access_key_id = $access_key_id;
-		$this->queryParameters["access_key_id"]=$access_key_id;
 	}
 
 	public function getTags() {

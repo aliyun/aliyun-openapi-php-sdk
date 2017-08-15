@@ -23,41 +23,33 @@ class SetLoadBalancerStatusRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Slb", "2014-05-15", "SetLoadBalancerStatus");
+		parent::__construct("Slb", "2014-05-15", "SetLoadBalancerStatus", "slb", "openAPI");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
+	private  $access_key_id;
 
 	private  $resourceOwnerId;
 
 	private  $loadBalancerId;
 
-	private  $loadBalancerStatus;
+	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
-	private  $access_key_id;
+	private  $ownerId;
+
+	private  $loadBalancerStatus;
 
 	private  $tags;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getaccess_key_id() {
+		return $this->access_key_id;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setaccess_key_id($access_key_id) {
+		$this->access_key_id = $access_key_id;
+		$this->queryParameters["access_key_id"]=$access_key_id;
 	}
 
 	public function getResourceOwnerId() {
@@ -78,13 +70,13 @@ class SetLoadBalancerStatusRequest extends \RpcAcsRequest
 		$this->queryParameters["LoadBalancerId"]=$loadBalancerId;
 	}
 
-	public function getLoadBalancerStatus() {
-		return $this->loadBalancerStatus;
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
 	}
 
-	public function setLoadBalancerStatus($loadBalancerStatus) {
-		$this->loadBalancerStatus = $loadBalancerStatus;
-		$this->queryParameters["LoadBalancerStatus"]=$loadBalancerStatus;
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
 	public function getOwnerAccount() {
@@ -96,13 +88,22 @@ class SetLoadBalancerStatusRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getaccess_key_id() {
-		return $this->access_key_id;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setaccess_key_id($access_key_id) {
-		$this->access_key_id = $access_key_id;
-		$this->queryParameters["access_key_id"]=$access_key_id;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getLoadBalancerStatus() {
+		return $this->loadBalancerStatus;
+	}
+
+	public function setLoadBalancerStatus($loadBalancerStatus) {
+		$this->loadBalancerStatus = $loadBalancerStatus;
+		$this->queryParameters["LoadBalancerStatus"]=$loadBalancerStatus;
 	}
 
 	public function getTags() {

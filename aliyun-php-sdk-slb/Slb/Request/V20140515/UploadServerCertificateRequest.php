@@ -23,43 +23,41 @@ class UploadServerCertificateRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Slb", "2014-05-15", "UploadServerCertificate");
+		parent::__construct("Slb", "2014-05-15", "UploadServerCertificate", "slb", "openAPI");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
+	private  $access_key_id;
 
 	private  $resourceOwnerId;
 
 	private  $serverCertificate;
 
-	private  $privateKey;
-
-	private  $serverCertificateName;
+	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
-	private  $access_key_id;
+	private  $aliCloudCertificateName;
+
+	private  $aliCloudCertificateId;
+
+	private  $ownerId;
 
 	private  $tags;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $privateKey;
+
+	private  $resourceGroupId;
+
+	private  $serverCertificateName;
+
+	public function getaccess_key_id() {
+		return $this->access_key_id;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setaccess_key_id($access_key_id) {
+		$this->access_key_id = $access_key_id;
+		$this->queryParameters["access_key_id"]=$access_key_id;
 	}
 
 	public function getResourceOwnerId() {
@@ -80,22 +78,13 @@ class UploadServerCertificateRequest extends \RpcAcsRequest
 		$this->queryParameters["ServerCertificate"]=$serverCertificate;
 	}
 
-	public function getPrivateKey() {
-		return $this->privateKey;
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
 	}
 
-	public function setPrivateKey($privateKey) {
-		$this->privateKey = $privateKey;
-		$this->queryParameters["PrivateKey"]=$privateKey;
-	}
-
-	public function getServerCertificateName() {
-		return $this->serverCertificateName;
-	}
-
-	public function setServerCertificateName($serverCertificateName) {
-		$this->serverCertificateName = $serverCertificateName;
-		$this->queryParameters["ServerCertificateName"]=$serverCertificateName;
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
 	public function getOwnerAccount() {
@@ -107,13 +96,31 @@ class UploadServerCertificateRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getaccess_key_id() {
-		return $this->access_key_id;
+	public function getAliCloudCertificateName() {
+		return $this->aliCloudCertificateName;
 	}
 
-	public function setaccess_key_id($access_key_id) {
-		$this->access_key_id = $access_key_id;
-		$this->queryParameters["access_key_id"]=$access_key_id;
+	public function setAliCloudCertificateName($aliCloudCertificateName) {
+		$this->aliCloudCertificateName = $aliCloudCertificateName;
+		$this->queryParameters["AliCloudCertificateName"]=$aliCloudCertificateName;
+	}
+
+	public function getAliCloudCertificateId() {
+		return $this->aliCloudCertificateId;
+	}
+
+	public function setAliCloudCertificateId($aliCloudCertificateId) {
+		$this->aliCloudCertificateId = $aliCloudCertificateId;
+		$this->queryParameters["AliCloudCertificateId"]=$aliCloudCertificateId;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getTags() {
@@ -123,6 +130,33 @@ class UploadServerCertificateRequest extends \RpcAcsRequest
 	public function setTags($tags) {
 		$this->tags = $tags;
 		$this->queryParameters["Tags"]=$tags;
+	}
+
+	public function getPrivateKey() {
+		return $this->privateKey;
+	}
+
+	public function setPrivateKey($privateKey) {
+		$this->privateKey = $privateKey;
+		$this->queryParameters["PrivateKey"]=$privateKey;
+	}
+
+	public function getResourceGroupId() {
+		return $this->resourceGroupId;
+	}
+
+	public function setResourceGroupId($resourceGroupId) {
+		$this->resourceGroupId = $resourceGroupId;
+		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
+	}
+
+	public function getServerCertificateName() {
+		return $this->serverCertificateName;
+	}
+
+	public function setServerCertificateName($serverCertificateName) {
+		$this->serverCertificateName = $serverCertificateName;
+		$this->queryParameters["ServerCertificateName"]=$serverCertificateName;
 	}
 	
 }

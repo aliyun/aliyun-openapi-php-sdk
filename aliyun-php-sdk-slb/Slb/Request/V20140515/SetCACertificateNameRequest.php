@@ -23,39 +23,31 @@ class SetCACertificateNameRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Slb", "2014-05-15", "SetCACertificateName");
+		parent::__construct("Slb", "2014-05-15", "SetCACertificateName", "slb", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
-
-	private  $ownerAccount;
 
 	private  $access_key_id;
 
-	private  $cACertificateId;
+	private  $resourceOwnerId;
 
 	private  $cACertificateName;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $resourceOwnerAccount;
+
+	private  $ownerAccount;
+
+	private  $ownerId;
+
+	private  $cACertificateId;
+
+	public function getaccess_key_id() {
+		return $this->access_key_id;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setaccess_key_id($access_key_id) {
+		$this->access_key_id = $access_key_id;
+		$this->queryParameters["access_key_id"]=$access_key_id;
 	}
 
 	public function getResourceOwnerId() {
@@ -67,6 +59,24 @@ class SetCACertificateNameRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getCACertificateName() {
+		return $this->cACertificateName;
+	}
+
+	public function setCACertificateName($cACertificateName) {
+		$this->cACertificateName = $cACertificateName;
+		$this->queryParameters["CACertificateName"]=$cACertificateName;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -76,13 +86,13 @@ class SetCACertificateNameRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getaccess_key_id() {
-		return $this->access_key_id;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setaccess_key_id($access_key_id) {
-		$this->access_key_id = $access_key_id;
-		$this->queryParameters["access_key_id"]=$access_key_id;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getCACertificateId() {
@@ -92,15 +102,6 @@ class SetCACertificateNameRequest extends \RpcAcsRequest
 	public function setCACertificateId($cACertificateId) {
 		$this->cACertificateId = $cACertificateId;
 		$this->queryParameters["CACertificateId"]=$cACertificateId;
-	}
-
-	public function getCACertificateName() {
-		return $this->cACertificateName;
-	}
-
-	public function setCACertificateName($cACertificateName) {
-		$this->cACertificateName = $cACertificateName;
-		$this->queryParameters["CACertificateName"]=$cACertificateName;
 	}
 	
 }

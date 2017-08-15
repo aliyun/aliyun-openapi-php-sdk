@@ -23,79 +23,79 @@ class SetLoadBalancerHTTPListenerAttributeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Slb", "2014-05-15", "SetLoadBalancerHTTPListenerAttribute");
+		parent::__construct("Slb", "2014-05-15", "SetLoadBalancerHTTPListenerAttribute", "slb", "openAPI");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
+	private  $access_key_id;
 
 	private  $resourceOwnerId;
 
-	private  $loadBalancerId;
-
-	private  $listenerPort;
-
-	private  $bandwidth;
+	private  $healthCheckTimeout;
 
 	private  $xForwardedFor;
 
-	private  $scheduler;
-
-	private  $stickySession;
-
-	private  $stickySessionType;
-
-	private  $cookieTimeout;
-
-	private  $cookie;
-
-	private  $healthCheck;
-
-	private  $healthCheckDomain;
-
 	private  $healthCheckURI;
-
-	private  $healthyThreshold;
 
 	private  $unhealthyThreshold;
 
-	private  $healthCheckTimeout;
+	private  $healthyThreshold;
+
+	private  $scheduler;
+
+	private  $healthCheck;
+
+	private  $maxConnection;
+
+	private  $cookieTimeout;
+
+	private  $stickySessionType;
+
+	private  $vServerGroupId;
+
+	private  $listenerPort;
+
+	private  $cookie;
+
+	private  $resourceOwnerAccount;
+
+	private  $bandwidth;
+
+	private  $stickySession;
+
+	private  $healthCheckDomain;
+
+	private  $ownerAccount;
+
+	private  $gzip;
+
+	private  $ownerId;
+
+	private  $tags;
+
+	private  $loadBalancerId;
+
+	private  $xForwardedFor_SLBIP;
 
 	private  $healthCheckInterval;
+
+	private  $xForwardedFor_proto;
+
+	private  $xForwardedFor_SLBID;
 
 	private  $healthCheckConnectPort;
 
 	private  $healthCheckHttpCode;
 
-	private  $maxConnection;
-
-	private  $ownerAccount;
-
-	private  $access_key_id;
-
 	private  $vServerGroup;
 
-	private  $vServerGroupId;
-
-	private  $tags;
-
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getaccess_key_id() {
+		return $this->access_key_id;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setaccess_key_id($access_key_id) {
+		$this->access_key_id = $access_key_id;
+		$this->queryParameters["access_key_id"]=$access_key_id;
 	}
 
 	public function getResourceOwnerId() {
@@ -107,31 +107,13 @@ class SetLoadBalancerHTTPListenerAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getLoadBalancerId() {
-		return $this->loadBalancerId;
+	public function getHealthCheckTimeout() {
+		return $this->healthCheckTimeout;
 	}
 
-	public function setLoadBalancerId($loadBalancerId) {
-		$this->loadBalancerId = $loadBalancerId;
-		$this->queryParameters["LoadBalancerId"]=$loadBalancerId;
-	}
-
-	public function getListenerPort() {
-		return $this->listenerPort;
-	}
-
-	public function setListenerPort($listenerPort) {
-		$this->listenerPort = $listenerPort;
-		$this->queryParameters["ListenerPort"]=$listenerPort;
-	}
-
-	public function getBandwidth() {
-		return $this->bandwidth;
-	}
-
-	public function setBandwidth($bandwidth) {
-		$this->bandwidth = $bandwidth;
-		$this->queryParameters["Bandwidth"]=$bandwidth;
+	public function setHealthCheckTimeout($healthCheckTimeout) {
+		$this->healthCheckTimeout = $healthCheckTimeout;
+		$this->queryParameters["HealthCheckTimeout"]=$healthCheckTimeout;
 	}
 
 	public function getXForwardedFor() {
@@ -143,69 +125,6 @@ class SetLoadBalancerHTTPListenerAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["XForwardedFor"]=$xForwardedFor;
 	}
 
-	public function getScheduler() {
-		return $this->scheduler;
-	}
-
-	public function setScheduler($scheduler) {
-		$this->scheduler = $scheduler;
-		$this->queryParameters["Scheduler"]=$scheduler;
-	}
-
-	public function getStickySession() {
-		return $this->stickySession;
-	}
-
-	public function setStickySession($stickySession) {
-		$this->stickySession = $stickySession;
-		$this->queryParameters["StickySession"]=$stickySession;
-	}
-
-	public function getStickySessionType() {
-		return $this->stickySessionType;
-	}
-
-	public function setStickySessionType($stickySessionType) {
-		$this->stickySessionType = $stickySessionType;
-		$this->queryParameters["StickySessionType"]=$stickySessionType;
-	}
-
-	public function getCookieTimeout() {
-		return $this->cookieTimeout;
-	}
-
-	public function setCookieTimeout($cookieTimeout) {
-		$this->cookieTimeout = $cookieTimeout;
-		$this->queryParameters["CookieTimeout"]=$cookieTimeout;
-	}
-
-	public function getCookie() {
-		return $this->cookie;
-	}
-
-	public function setCookie($cookie) {
-		$this->cookie = $cookie;
-		$this->queryParameters["Cookie"]=$cookie;
-	}
-
-	public function getHealthCheck() {
-		return $this->healthCheck;
-	}
-
-	public function setHealthCheck($healthCheck) {
-		$this->healthCheck = $healthCheck;
-		$this->queryParameters["HealthCheck"]=$healthCheck;
-	}
-
-	public function getHealthCheckDomain() {
-		return $this->healthCheckDomain;
-	}
-
-	public function setHealthCheckDomain($healthCheckDomain) {
-		$this->healthCheckDomain = $healthCheckDomain;
-		$this->queryParameters["HealthCheckDomain"]=$healthCheckDomain;
-	}
-
 	public function getHealthCheckURI() {
 		return $this->healthCheckURI;
 	}
@@ -213,15 +132,6 @@ class SetLoadBalancerHTTPListenerAttributeRequest extends \RpcAcsRequest
 	public function setHealthCheckURI($healthCheckURI) {
 		$this->healthCheckURI = $healthCheckURI;
 		$this->queryParameters["HealthCheckURI"]=$healthCheckURI;
-	}
-
-	public function getHealthyThreshold() {
-		return $this->healthyThreshold;
-	}
-
-	public function setHealthyThreshold($healthyThreshold) {
-		$this->healthyThreshold = $healthyThreshold;
-		$this->queryParameters["HealthyThreshold"]=$healthyThreshold;
 	}
 
 	public function getUnhealthyThreshold() {
@@ -233,13 +143,175 @@ class SetLoadBalancerHTTPListenerAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["UnhealthyThreshold"]=$unhealthyThreshold;
 	}
 
-	public function getHealthCheckTimeout() {
-		return $this->healthCheckTimeout;
+	public function getHealthyThreshold() {
+		return $this->healthyThreshold;
 	}
 
-	public function setHealthCheckTimeout($healthCheckTimeout) {
-		$this->healthCheckTimeout = $healthCheckTimeout;
-		$this->queryParameters["HealthCheckTimeout"]=$healthCheckTimeout;
+	public function setHealthyThreshold($healthyThreshold) {
+		$this->healthyThreshold = $healthyThreshold;
+		$this->queryParameters["HealthyThreshold"]=$healthyThreshold;
+	}
+
+	public function getScheduler() {
+		return $this->scheduler;
+	}
+
+	public function setScheduler($scheduler) {
+		$this->scheduler = $scheduler;
+		$this->queryParameters["Scheduler"]=$scheduler;
+	}
+
+	public function getHealthCheck() {
+		return $this->healthCheck;
+	}
+
+	public function setHealthCheck($healthCheck) {
+		$this->healthCheck = $healthCheck;
+		$this->queryParameters["HealthCheck"]=$healthCheck;
+	}
+
+	public function getMaxConnection() {
+		return $this->maxConnection;
+	}
+
+	public function setMaxConnection($maxConnection) {
+		$this->maxConnection = $maxConnection;
+		$this->queryParameters["MaxConnection"]=$maxConnection;
+	}
+
+	public function getCookieTimeout() {
+		return $this->cookieTimeout;
+	}
+
+	public function setCookieTimeout($cookieTimeout) {
+		$this->cookieTimeout = $cookieTimeout;
+		$this->queryParameters["CookieTimeout"]=$cookieTimeout;
+	}
+
+	public function getStickySessionType() {
+		return $this->stickySessionType;
+	}
+
+	public function setStickySessionType($stickySessionType) {
+		$this->stickySessionType = $stickySessionType;
+		$this->queryParameters["StickySessionType"]=$stickySessionType;
+	}
+
+	public function getVServerGroupId() {
+		return $this->vServerGroupId;
+	}
+
+	public function setVServerGroupId($vServerGroupId) {
+		$this->vServerGroupId = $vServerGroupId;
+		$this->queryParameters["VServerGroupId"]=$vServerGroupId;
+	}
+
+	public function getListenerPort() {
+		return $this->listenerPort;
+	}
+
+	public function setListenerPort($listenerPort) {
+		$this->listenerPort = $listenerPort;
+		$this->queryParameters["ListenerPort"]=$listenerPort;
+	}
+
+	public function getCookie() {
+		return $this->cookie;
+	}
+
+	public function setCookie($cookie) {
+		$this->cookie = $cookie;
+		$this->queryParameters["Cookie"]=$cookie;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getBandwidth() {
+		return $this->bandwidth;
+	}
+
+	public function setBandwidth($bandwidth) {
+		$this->bandwidth = $bandwidth;
+		$this->queryParameters["Bandwidth"]=$bandwidth;
+	}
+
+	public function getStickySession() {
+		return $this->stickySession;
+	}
+
+	public function setStickySession($stickySession) {
+		$this->stickySession = $stickySession;
+		$this->queryParameters["StickySession"]=$stickySession;
+	}
+
+	public function getHealthCheckDomain() {
+		return $this->healthCheckDomain;
+	}
+
+	public function setHealthCheckDomain($healthCheckDomain) {
+		$this->healthCheckDomain = $healthCheckDomain;
+		$this->queryParameters["HealthCheckDomain"]=$healthCheckDomain;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getGzip() {
+		return $this->gzip;
+	}
+
+	public function setGzip($gzip) {
+		$this->gzip = $gzip;
+		$this->queryParameters["Gzip"]=$gzip;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getTags() {
+		return $this->tags;
+	}
+
+	public function setTags($tags) {
+		$this->tags = $tags;
+		$this->queryParameters["Tags"]=$tags;
+	}
+
+	public function getLoadBalancerId() {
+		return $this->loadBalancerId;
+	}
+
+	public function setLoadBalancerId($loadBalancerId) {
+		$this->loadBalancerId = $loadBalancerId;
+		$this->queryParameters["LoadBalancerId"]=$loadBalancerId;
+	}
+
+	public function getXForwardedFor_SLBIP() {
+		return $this->xForwardedFor_SLBIP;
+	}
+
+	public function setXForwardedFor_SLBIP($xForwardedFor_SLBIP) {
+		$this->xForwardedFor_SLBIP = $xForwardedFor_SLBIP;
+		$this->queryParameters["XForwardedFor_SLBIP"]=$xForwardedFor_SLBIP;
 	}
 
 	public function getHealthCheckInterval() {
@@ -249,6 +321,24 @@ class SetLoadBalancerHTTPListenerAttributeRequest extends \RpcAcsRequest
 	public function setHealthCheckInterval($healthCheckInterval) {
 		$this->healthCheckInterval = $healthCheckInterval;
 		$this->queryParameters["HealthCheckInterval"]=$healthCheckInterval;
+	}
+
+	public function getXForwardedFor_proto() {
+		return $this->xForwardedFor_proto;
+	}
+
+	public function setXForwardedFor_proto($xForwardedFor_proto) {
+		$this->xForwardedFor_proto = $xForwardedFor_proto;
+		$this->queryParameters["XForwardedFor_proto"]=$xForwardedFor_proto;
+	}
+
+	public function getXForwardedFor_SLBID() {
+		return $this->xForwardedFor_SLBID;
+	}
+
+	public function setXForwardedFor_SLBID($xForwardedFor_SLBID) {
+		$this->xForwardedFor_SLBID = $xForwardedFor_SLBID;
+		$this->queryParameters["XForwardedFor_SLBID"]=$xForwardedFor_SLBID;
 	}
 
 	public function getHealthCheckConnectPort() {
@@ -269,33 +359,6 @@ class SetLoadBalancerHTTPListenerAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["HealthCheckHttpCode"]=$healthCheckHttpCode;
 	}
 
-	public function getMaxConnection() {
-		return $this->maxConnection;
-	}
-
-	public function setMaxConnection($maxConnection) {
-		$this->maxConnection = $maxConnection;
-		$this->queryParameters["MaxConnection"]=$maxConnection;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getaccess_key_id() {
-		return $this->access_key_id;
-	}
-
-	public function setaccess_key_id($access_key_id) {
-		$this->access_key_id = $access_key_id;
-		$this->queryParameters["access_key_id"]=$access_key_id;
-	}
-
 	public function getVServerGroup() {
 		return $this->vServerGroup;
 	}
@@ -303,24 +366,6 @@ class SetLoadBalancerHTTPListenerAttributeRequest extends \RpcAcsRequest
 	public function setVServerGroup($vServerGroup) {
 		$this->vServerGroup = $vServerGroup;
 		$this->queryParameters["VServerGroup"]=$vServerGroup;
-	}
-
-	public function getVServerGroupId() {
-		return $this->vServerGroupId;
-	}
-
-	public function setVServerGroupId($vServerGroupId) {
-		$this->vServerGroupId = $vServerGroupId;
-		$this->queryParameters["VServerGroupId"]=$vServerGroupId;
-	}
-
-	public function getTags() {
-		return $this->tags;
-	}
-
-	public function setTags($tags) {
-		$this->tags = $tags;
-		$this->queryParameters["Tags"]=$tags;
 	}
 	
 }

@@ -23,45 +23,37 @@ class DescribeTagsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Slb", "2014-05-15", "DescribeTags");
+		parent::__construct("Slb", "2014-05-15", "DescribeTags", "slb", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
-
-	private  $ownerAccount;
 
 	private  $access_key_id;
 
-	private  $loadBalancerId;
+	private  $resourceOwnerId;
 
-	private  $tags;
+	private  $resourceOwnerAccount;
+
+	private  $ownerAccount;
 
 	private  $distinctKey;
 
-	private  $pageSize;
+	private  $ownerId;
 
 	private  $pageNumber;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $tags;
+
+	private  $loadBalancerId;
+
+	private  $pageSize;
+
+	public function getaccess_key_id() {
+		return $this->access_key_id;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setaccess_key_id($access_key_id) {
+		$this->access_key_id = $access_key_id;
+		$this->queryParameters["access_key_id"]=$access_key_id;
 	}
 
 	public function getResourceOwnerId() {
@@ -73,6 +65,15 @@ class DescribeTagsRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -80,33 +81,6 @@ class DescribeTagsRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getaccess_key_id() {
-		return $this->access_key_id;
-	}
-
-	public function setaccess_key_id($access_key_id) {
-		$this->access_key_id = $access_key_id;
-		$this->queryParameters["access_key_id"]=$access_key_id;
-	}
-
-	public function getLoadBalancerId() {
-		return $this->loadBalancerId;
-	}
-
-	public function setLoadBalancerId($loadBalancerId) {
-		$this->loadBalancerId = $loadBalancerId;
-		$this->queryParameters["LoadBalancerId"]=$loadBalancerId;
-	}
-
-	public function getTags() {
-		return $this->tags;
-	}
-
-	public function setTags($tags) {
-		$this->tags = $tags;
-		$this->queryParameters["Tags"]=$tags;
 	}
 
 	public function getDistinctKey() {
@@ -118,13 +92,13 @@ class DescribeTagsRequest extends \RpcAcsRequest
 		$this->queryParameters["DistinctKey"]=$distinctKey;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getPageNumber() {
@@ -134,6 +108,33 @@ class DescribeTagsRequest extends \RpcAcsRequest
 	public function setPageNumber($pageNumber) {
 		$this->pageNumber = $pageNumber;
 		$this->queryParameters["PageNumber"]=$pageNumber;
+	}
+
+	public function getTags() {
+		return $this->tags;
+	}
+
+	public function setTags($tags) {
+		$this->tags = $tags;
+		$this->queryParameters["Tags"]=$tags;
+	}
+
+	public function getLoadBalancerId() {
+		return $this->loadBalancerId;
+	}
+
+	public function setLoadBalancerId($loadBalancerId) {
+		$this->loadBalancerId = $loadBalancerId;
+		$this->queryParameters["LoadBalancerId"]=$loadBalancerId;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 	
 }

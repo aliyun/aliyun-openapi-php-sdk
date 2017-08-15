@@ -23,43 +23,35 @@ class CreateVServerGroupRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Slb", "2014-05-15", "CreateVServerGroup");
+		parent::__construct("Slb", "2014-05-15", "CreateVServerGroup", "slb", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
-
-	private  $ownerAccount;
 
 	private  $access_key_id;
 
-	private  $tags;
+	private  $resourceOwnerId;
 
 	private  $loadBalancerId;
 
-	private  $vServerGroupName;
+	private  $resourceOwnerAccount;
+
+	private  $ownerAccount;
+
+	private  $ownerId;
 
 	private  $backendServers;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $tags;
+
+	private  $vServerGroupName;
+
+	public function getaccess_key_id() {
+		return $this->access_key_id;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setaccess_key_id($access_key_id) {
+		$this->access_key_id = $access_key_id;
+		$this->queryParameters["access_key_id"]=$access_key_id;
 	}
 
 	public function getResourceOwnerId() {
@@ -71,6 +63,24 @@ class CreateVServerGroupRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getLoadBalancerId() {
+		return $this->loadBalancerId;
+	}
+
+	public function setLoadBalancerId($loadBalancerId) {
+		$this->loadBalancerId = $loadBalancerId;
+		$this->queryParameters["LoadBalancerId"]=$loadBalancerId;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -80,13 +90,22 @@ class CreateVServerGroupRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getaccess_key_id() {
-		return $this->access_key_id;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setaccess_key_id($access_key_id) {
-		$this->access_key_id = $access_key_id;
-		$this->queryParameters["access_key_id"]=$access_key_id;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getBackendServers() {
+		return $this->backendServers;
+	}
+
+	public function setBackendServers($backendServers) {
+		$this->backendServers = $backendServers;
+		$this->queryParameters["BackendServers"]=$backendServers;
 	}
 
 	public function getTags() {
@@ -98,15 +117,6 @@ class CreateVServerGroupRequest extends \RpcAcsRequest
 		$this->queryParameters["Tags"]=$tags;
 	}
 
-	public function getLoadBalancerId() {
-		return $this->loadBalancerId;
-	}
-
-	public function setLoadBalancerId($loadBalancerId) {
-		$this->loadBalancerId = $loadBalancerId;
-		$this->queryParameters["LoadBalancerId"]=$loadBalancerId;
-	}
-
 	public function getVServerGroupName() {
 		return $this->vServerGroupName;
 	}
@@ -114,15 +124,6 @@ class CreateVServerGroupRequest extends \RpcAcsRequest
 	public function setVServerGroupName($vServerGroupName) {
 		$this->vServerGroupName = $vServerGroupName;
 		$this->queryParameters["VServerGroupName"]=$vServerGroupName;
-	}
-
-	public function getBackendServers() {
-		return $this->backendServers;
-	}
-
-	public function setBackendServers($backendServers) {
-		$this->backendServers = $backendServers;
-		$this->queryParameters["BackendServers"]=$backendServers;
 	}
 	
 }

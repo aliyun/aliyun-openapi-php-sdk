@@ -23,41 +23,42 @@ class SetRuleRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Slb", "2014-05-15", "SetRule");
+		parent::__construct("Slb", "2014-05-15", "SetRule", "slb", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
-
-	private  $ownerAccount;
 
 	private  $access_key_id;
 
-	private  $tags;
+	private  $vServerGroupId;
+
+	private  $resourceOwnerId;
+
+	private  $resourceOwnerAccount;
+
+	private  $ownerAccount;
+
+	private  $ownerId;
 
 	private  $ruleId;
 
-	private  $vServerGroupId;
+	private  $tags;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getaccess_key_id() {
+		return $this->access_key_id;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setaccess_key_id($access_key_id) {
+		$this->access_key_id = $access_key_id;
+		$this->queryParameters["access_key_id"]=$access_key_id;
 	}
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
+	public function getVServerGroupId() {
+		return $this->vServerGroupId;
 	}
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setVServerGroupId($vServerGroupId) {
+		$this->vServerGroupId = $vServerGroupId;
+		$this->queryParameters["VServerGroupId"]=$vServerGroupId;
 	}
 
 	public function getResourceOwnerId() {
@@ -69,6 +70,15 @@ class SetRuleRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -78,22 +88,13 @@ class SetRuleRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getaccess_key_id() {
-		return $this->access_key_id;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setaccess_key_id($access_key_id) {
-		$this->access_key_id = $access_key_id;
-		$this->queryParameters["access_key_id"]=$access_key_id;
-	}
-
-	public function getTags() {
-		return $this->tags;
-	}
-
-	public function setTags($tags) {
-		$this->tags = $tags;
-		$this->queryParameters["Tags"]=$tags;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getRuleId() {
@@ -105,13 +106,13 @@ class SetRuleRequest extends \RpcAcsRequest
 		$this->queryParameters["RuleId"]=$ruleId;
 	}
 
-	public function getVServerGroupId() {
-		return $this->vServerGroupId;
+	public function getTags() {
+		return $this->tags;
 	}
 
-	public function setVServerGroupId($vServerGroupId) {
-		$this->vServerGroupId = $vServerGroupId;
-		$this->queryParameters["VServerGroupId"]=$vServerGroupId;
+	public function setTags($tags) {
+		$this->tags = $tags;
+		$this->queryParameters["Tags"]=$tags;
 	}
 	
 }

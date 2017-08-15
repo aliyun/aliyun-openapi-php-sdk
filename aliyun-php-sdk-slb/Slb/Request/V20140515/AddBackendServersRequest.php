@@ -23,41 +23,33 @@ class AddBackendServersRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Slb", "2014-05-15", "AddBackendServers");
+		parent::__construct("Slb", "2014-05-15", "AddBackendServers", "slb", "openAPI");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
+	private  $access_key_id;
 
 	private  $resourceOwnerId;
 
 	private  $loadBalancerId;
 
-	private  $backendServers;
+	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
-	private  $access_key_id;
+	private  $ownerId;
+
+	private  $backendServers;
 
 	private  $tags;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getaccess_key_id() {
+		return $this->access_key_id;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setaccess_key_id($access_key_id) {
+		$this->access_key_id = $access_key_id;
+		$this->queryParameters["access_key_id"]=$access_key_id;
 	}
 
 	public function getResourceOwnerId() {
@@ -78,13 +70,13 @@ class AddBackendServersRequest extends \RpcAcsRequest
 		$this->queryParameters["LoadBalancerId"]=$loadBalancerId;
 	}
 
-	public function getBackendServers() {
-		return $this->backendServers;
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
 	}
 
-	public function setBackendServers($backendServers) {
-		$this->backendServers = $backendServers;
-		$this->queryParameters["BackendServers"]=$backendServers;
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
 	public function getOwnerAccount() {
@@ -96,13 +88,22 @@ class AddBackendServersRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getaccess_key_id() {
-		return $this->access_key_id;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setaccess_key_id($access_key_id) {
-		$this->access_key_id = $access_key_id;
-		$this->queryParameters["access_key_id"]=$access_key_id;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getBackendServers() {
+		return $this->backendServers;
+	}
+
+	public function setBackendServers($backendServers) {
+		$this->backendServers = $backendServers;
+		$this->queryParameters["BackendServers"]=$backendServers;
 	}
 
 	public function getTags() {

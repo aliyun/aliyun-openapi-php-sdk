@@ -23,39 +23,31 @@ class DeleteRulesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Slb", "2014-05-15", "DeleteRules");
+		parent::__construct("Slb", "2014-05-15", "DeleteRules", "slb", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
-
-	private  $ownerAccount;
 
 	private  $access_key_id;
 
-	private  $tags;
+	private  $resourceOwnerId;
 
 	private  $ruleIds;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $resourceOwnerAccount;
+
+	private  $ownerAccount;
+
+	private  $ownerId;
+
+	private  $tags;
+
+	public function getaccess_key_id() {
+		return $this->access_key_id;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setaccess_key_id($access_key_id) {
+		$this->access_key_id = $access_key_id;
+		$this->queryParameters["access_key_id"]=$access_key_id;
 	}
 
 	public function getResourceOwnerId() {
@@ -67,6 +59,24 @@ class DeleteRulesRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getRuleIds() {
+		return $this->ruleIds;
+	}
+
+	public function setRuleIds($ruleIds) {
+		$this->ruleIds = $ruleIds;
+		$this->queryParameters["RuleIds"]=$ruleIds;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -76,13 +86,13 @@ class DeleteRulesRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getaccess_key_id() {
-		return $this->access_key_id;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setaccess_key_id($access_key_id) {
-		$this->access_key_id = $access_key_id;
-		$this->queryParameters["access_key_id"]=$access_key_id;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getTags() {
@@ -92,15 +102,6 @@ class DeleteRulesRequest extends \RpcAcsRequest
 	public function setTags($tags) {
 		$this->tags = $tags;
 		$this->queryParameters["Tags"]=$tags;
-	}
-
-	public function getRuleIds() {
-		return $this->ruleIds;
-	}
-
-	public function setRuleIds($ruleIds) {
-		$this->ruleIds = $ruleIds;
-		$this->queryParameters["RuleIds"]=$ruleIds;
 	}
 	
 }

@@ -23,57 +23,62 @@ class CreateLoadBalancerRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Slb", "2014-05-15", "CreateLoadBalancer");
+		parent::__construct("Slb", "2014-05-15", "CreateLoadBalancer", "slb", "openAPI");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $access_key_id;
 
-	private  $resourceOwnerAccount;
+	private  $loadBalancerSpec;
 
 	private  $resourceOwnerId;
 
-	private  $addressType;
-
-	private  $internetChargeType;
+	private  $resourceOwnerAccount;
 
 	private  $bandwidth;
 
 	private  $clientToken;
 
-	private  $loadBalancerName;
-
-	private  $vpcId;
-
-	private  $vSwitchId;
-
 	private  $ownerAccount;
+
+	private  $ownerId;
 
 	private  $masterZoneId;
 
-	private  $slaveZoneId;
-
-	private  $access_key_id;
-
 	private  $tags;
+
+	private  $vSwitchId;
+
+	private  $resourceGroupId;
+
+	private  $loadBalancerName;
 
 	private  $enableVpcVipFlow;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $internetChargeType;
+
+	private  $vpcId;
+
+	private  $addressType;
+
+	private  $slaveZoneId;
+
+	public function getaccess_key_id() {
+		return $this->access_key_id;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setaccess_key_id($access_key_id) {
+		$this->access_key_id = $access_key_id;
+		$this->queryParameters["access_key_id"]=$access_key_id;
 	}
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
+	public function getLoadBalancerSpec() {
+		return $this->loadBalancerSpec;
 	}
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setLoadBalancerSpec($loadBalancerSpec) {
+		$this->loadBalancerSpec = $loadBalancerSpec;
+		$this->queryParameters["LoadBalancerSpec"]=$loadBalancerSpec;
 	}
 
 	public function getResourceOwnerId() {
@@ -85,22 +90,13 @@ class CreateLoadBalancerRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getAddressType() {
-		return $this->addressType;
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
 	}
 
-	public function setAddressType($addressType) {
-		$this->addressType = $addressType;
-		$this->queryParameters["AddressType"]=$addressType;
-	}
-
-	public function getInternetChargeType() {
-		return $this->internetChargeType;
-	}
-
-	public function setInternetChargeType($internetChargeType) {
-		$this->internetChargeType = $internetChargeType;
-		$this->queryParameters["InternetChargeType"]=$internetChargeType;
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
 	public function getBandwidth() {
@@ -121,33 +117,6 @@ class CreateLoadBalancerRequest extends \RpcAcsRequest
 		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
-	public function getLoadBalancerName() {
-		return $this->loadBalancerName;
-	}
-
-	public function setLoadBalancerName($loadBalancerName) {
-		$this->loadBalancerName = $loadBalancerName;
-		$this->queryParameters["LoadBalancerName"]=$loadBalancerName;
-	}
-
-	public function getVpcId() {
-		return $this->vpcId;
-	}
-
-	public function setVpcId($vpcId) {
-		$this->vpcId = $vpcId;
-		$this->queryParameters["VpcId"]=$vpcId;
-	}
-
-	public function getVSwitchId() {
-		return $this->vSwitchId;
-	}
-
-	public function setVSwitchId($vSwitchId) {
-		$this->vSwitchId = $vSwitchId;
-		$this->queryParameters["VSwitchId"]=$vSwitchId;
-	}
-
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -155,6 +124,15 @@ class CreateLoadBalancerRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getMasterZoneId() {
@@ -166,24 +144,6 @@ class CreateLoadBalancerRequest extends \RpcAcsRequest
 		$this->queryParameters["MasterZoneId"]=$masterZoneId;
 	}
 
-	public function getSlaveZoneId() {
-		return $this->slaveZoneId;
-	}
-
-	public function setSlaveZoneId($slaveZoneId) {
-		$this->slaveZoneId = $slaveZoneId;
-		$this->queryParameters["SlaveZoneId"]=$slaveZoneId;
-	}
-
-	public function getaccess_key_id() {
-		return $this->access_key_id;
-	}
-
-	public function setaccess_key_id($access_key_id) {
-		$this->access_key_id = $access_key_id;
-		$this->queryParameters["access_key_id"]=$access_key_id;
-	}
-
 	public function getTags() {
 		return $this->tags;
 	}
@@ -193,6 +153,33 @@ class CreateLoadBalancerRequest extends \RpcAcsRequest
 		$this->queryParameters["Tags"]=$tags;
 	}
 
+	public function getVSwitchId() {
+		return $this->vSwitchId;
+	}
+
+	public function setVSwitchId($vSwitchId) {
+		$this->vSwitchId = $vSwitchId;
+		$this->queryParameters["VSwitchId"]=$vSwitchId;
+	}
+
+	public function getResourceGroupId() {
+		return $this->resourceGroupId;
+	}
+
+	public function setResourceGroupId($resourceGroupId) {
+		$this->resourceGroupId = $resourceGroupId;
+		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
+	}
+
+	public function getLoadBalancerName() {
+		return $this->loadBalancerName;
+	}
+
+	public function setLoadBalancerName($loadBalancerName) {
+		$this->loadBalancerName = $loadBalancerName;
+		$this->queryParameters["LoadBalancerName"]=$loadBalancerName;
+	}
+
 	public function getEnableVpcVipFlow() {
 		return $this->enableVpcVipFlow;
 	}
@@ -200,6 +187,42 @@ class CreateLoadBalancerRequest extends \RpcAcsRequest
 	public function setEnableVpcVipFlow($enableVpcVipFlow) {
 		$this->enableVpcVipFlow = $enableVpcVipFlow;
 		$this->queryParameters["EnableVpcVipFlow"]=$enableVpcVipFlow;
+	}
+
+	public function getInternetChargeType() {
+		return $this->internetChargeType;
+	}
+
+	public function setInternetChargeType($internetChargeType) {
+		$this->internetChargeType = $internetChargeType;
+		$this->queryParameters["InternetChargeType"]=$internetChargeType;
+	}
+
+	public function getVpcId() {
+		return $this->vpcId;
+	}
+
+	public function setVpcId($vpcId) {
+		$this->vpcId = $vpcId;
+		$this->queryParameters["VpcId"]=$vpcId;
+	}
+
+	public function getAddressType() {
+		return $this->addressType;
+	}
+
+	public function setAddressType($addressType) {
+		$this->addressType = $addressType;
+		$this->queryParameters["AddressType"]=$addressType;
+	}
+
+	public function getSlaveZoneId() {
+		return $this->slaveZoneId;
+	}
+
+	public function setSlaveZoneId($slaveZoneId) {
+		$this->slaveZoneId = $slaveZoneId;
+		$this->queryParameters["SlaveZoneId"]=$slaveZoneId;
 	}
 	
 }

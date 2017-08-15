@@ -23,62 +23,27 @@ class SetVServerGroupAttributeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Slb", "2014-05-15", "SetVServerGroupAttribute");
+		parent::__construct("Slb", "2014-05-15", "SetVServerGroupAttribute", "slb", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
-
-	private  $ownerAccount;
 
 	private  $access_key_id;
 
-	private  $tags;
-
 	private  $vServerGroupId;
 
-	private  $vServerGroupName;
+	private  $resourceOwnerId;
+
+	private  $resourceOwnerAccount;
+
+	private  $ownerAccount;
+
+	private  $ownerId;
 
 	private  $backendServers;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+	private  $tags;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
+	private  $vServerGroupName;
 
 	public function getaccess_key_id() {
 		return $this->access_key_id;
@@ -87,15 +52,6 @@ class SetVServerGroupAttributeRequest extends \RpcAcsRequest
 	public function setaccess_key_id($access_key_id) {
 		$this->access_key_id = $access_key_id;
 		$this->queryParameters["access_key_id"]=$access_key_id;
-	}
-
-	public function getTags() {
-		return $this->tags;
-	}
-
-	public function setTags($tags) {
-		$this->tags = $tags;
-		$this->queryParameters["Tags"]=$tags;
 	}
 
 	public function getVServerGroupId() {
@@ -107,13 +63,40 @@ class SetVServerGroupAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["VServerGroupId"]=$vServerGroupId;
 	}
 
-	public function getVServerGroupName() {
-		return $this->vServerGroupName;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setVServerGroupName($vServerGroupName) {
-		$this->vServerGroupName = $vServerGroupName;
-		$this->queryParameters["VServerGroupName"]=$vServerGroupName;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getBackendServers() {
@@ -123,6 +106,24 @@ class SetVServerGroupAttributeRequest extends \RpcAcsRequest
 	public function setBackendServers($backendServers) {
 		$this->backendServers = $backendServers;
 		$this->queryParameters["BackendServers"]=$backendServers;
+	}
+
+	public function getTags() {
+		return $this->tags;
+	}
+
+	public function setTags($tags) {
+		$this->tags = $tags;
+		$this->queryParameters["Tags"]=$tags;
+	}
+
+	public function getVServerGroupName() {
+		return $this->vServerGroupName;
+	}
+
+	public function setVServerGroupName($vServerGroupName) {
+		$this->vServerGroupName = $vServerGroupName;
+		$this->queryParameters["VServerGroupName"]=$vServerGroupName;
 	}
 	
 }
