@@ -24,6 +24,7 @@ class CheckDomainRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Domain", "2016-05-11", "CheckDomain");
+		$this->setMethod("POST");
 	}
 
 	private  $domainName;

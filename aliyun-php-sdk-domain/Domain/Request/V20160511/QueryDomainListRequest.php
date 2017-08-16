@@ -24,91 +24,59 @@ class QueryDomainListRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Domain", "2016-05-11", "QueryDomainList");
+		$this->setMethod("POST");
 	}
 
-	private  $userClientIp;
+	private  $productDomainType;
 
-	private  $lang;
-
-	private  $groupId;
-
-	private  $startDate;
-
-	private  $endDate;
-
-	private  $domainName;
-
-	private  $orderByType;
+	private  $regStartDate;
 
 	private  $orderKeyType;
 
-	private  $domainType;
+	private  $groupId;
+
+	private  $deadEndDate;
+
+	private  $domainName;
+
+	private  $startDate;
 
 	private  $pageNum;
 
+	private  $orderByType;
+
+	private  $regEndDate;
+
+	private  $endDate;
+
+	private  $domainType;
+
+	private  $deadStartDate;
+
+	private  $userClientIp;
+
 	private  $pageSize;
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
+	private  $lang;
+
+	private  $queryType;
+
+	public function getProductDomainType() {
+		return $this->productDomainType;
 	}
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
+	public function setProductDomainType($productDomainType) {
+		$this->productDomainType = $productDomainType;
+		$this->queryParameters["ProductDomainType"]=$productDomainType;
 	}
 
-	public function getLang() {
-		return $this->lang;
+	public function getRegStartDate() {
+		return $this->regStartDate;
 	}
 
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-
-	public function getGroupId() {
-		return $this->groupId;
-	}
-
-	public function setGroupId($groupId) {
-		$this->groupId = $groupId;
-		$this->queryParameters["GroupId"]=$groupId;
-	}
-
-	public function getStartDate() {
-		return $this->startDate;
-	}
-
-	public function setStartDate($startDate) {
-		$this->startDate = $startDate;
-		$this->queryParameters["StartDate"]=$startDate;
-	}
-
-	public function getEndDate() {
-		return $this->endDate;
-	}
-
-	public function setEndDate($endDate) {
-		$this->endDate = $endDate;
-		$this->queryParameters["EndDate"]=$endDate;
-	}
-
-	public function getDomainName() {
-		return $this->domainName;
-	}
-
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
-
-	public function getOrderByType() {
-		return $this->orderByType;
-	}
-
-	public function setOrderByType($orderByType) {
-		$this->orderByType = $orderByType;
-		$this->queryParameters["OrderByType"]=$orderByType;
+	public function setRegStartDate($regStartDate) {
+		$this->regStartDate = $regStartDate;
+		$this->queryParameters["RegStartDate"]=$regStartDate;
 	}
 
 	public function getOrderKeyType() {
@@ -120,13 +88,40 @@ class QueryDomainListRequest extends \RpcAcsRequest
 		$this->queryParameters["OrderKeyType"]=$orderKeyType;
 	}
 
-	public function getDomainType() {
-		return $this->domainType;
+	public function getGroupId() {
+		return $this->groupId;
 	}
 
-	public function setDomainType($domainType) {
-		$this->domainType = $domainType;
-		$this->queryParameters["DomainType"]=$domainType;
+	public function setGroupId($groupId) {
+		$this->groupId = $groupId;
+		$this->queryParameters["GroupId"]=$groupId;
+	}
+
+	public function getDeadEndDate() {
+		return $this->deadEndDate;
+	}
+
+	public function setDeadEndDate($deadEndDate) {
+		$this->deadEndDate = $deadEndDate;
+		$this->queryParameters["DeadEndDate"]=$deadEndDate;
+	}
+
+	public function getDomainName() {
+		return $this->domainName;
+	}
+
+	public function setDomainName($domainName) {
+		$this->domainName = $domainName;
+		$this->queryParameters["DomainName"]=$domainName;
+	}
+
+	public function getStartDate() {
+		return $this->startDate;
+	}
+
+	public function setStartDate($startDate) {
+		$this->startDate = $startDate;
+		$this->queryParameters["StartDate"]=$startDate;
 	}
 
 	public function getPageNum() {
@@ -138,6 +133,60 @@ class QueryDomainListRequest extends \RpcAcsRequest
 		$this->queryParameters["PageNum"]=$pageNum;
 	}
 
+	public function getOrderByType() {
+		return $this->orderByType;
+	}
+
+	public function setOrderByType($orderByType) {
+		$this->orderByType = $orderByType;
+		$this->queryParameters["OrderByType"]=$orderByType;
+	}
+
+	public function getRegEndDate() {
+		return $this->regEndDate;
+	}
+
+	public function setRegEndDate($regEndDate) {
+		$this->regEndDate = $regEndDate;
+		$this->queryParameters["RegEndDate"]=$regEndDate;
+	}
+
+	public function getEndDate() {
+		return $this->endDate;
+	}
+
+	public function setEndDate($endDate) {
+		$this->endDate = $endDate;
+		$this->queryParameters["EndDate"]=$endDate;
+	}
+
+	public function getDomainType() {
+		return $this->domainType;
+	}
+
+	public function setDomainType($domainType) {
+		$this->domainType = $domainType;
+		$this->queryParameters["DomainType"]=$domainType;
+	}
+
+	public function getDeadStartDate() {
+		return $this->deadStartDate;
+	}
+
+	public function setDeadStartDate($deadStartDate) {
+		$this->deadStartDate = $deadStartDate;
+		$this->queryParameters["DeadStartDate"]=$deadStartDate;
+	}
+
+	public function getUserClientIp() {
+		return $this->userClientIp;
+	}
+
+	public function setUserClientIp($userClientIp) {
+		$this->userClientIp = $userClientIp;
+		$this->queryParameters["UserClientIp"]=$userClientIp;
+	}
+
 	public function getPageSize() {
 		return $this->pageSize;
 	}
@@ -145,6 +194,24 @@ class QueryDomainListRequest extends \RpcAcsRequest
 	public function setPageSize($pageSize) {
 		$this->pageSize = $pageSize;
 		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
+	public function getLang() {
+		return $this->lang;
+	}
+
+	public function setLang($lang) {
+		$this->lang = $lang;
+		$this->queryParameters["Lang"]=$lang;
+	}
+
+	public function getQueryType() {
+		return $this->queryType;
+	}
+
+	public function setQueryType($queryType) {
+		$this->queryType = $queryType;
+		$this->queryParameters["QueryType"]=$queryType;
 	}
 	
 }

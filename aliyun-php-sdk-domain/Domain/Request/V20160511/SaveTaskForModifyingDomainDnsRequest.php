@@ -19,38 +19,25 @@
  */
 namespace Domain\Request\V20160511;
 
-class QueryBatchTaskDetailListRequest extends \RpcAcsRequest
+class SaveTaskForModifyingDomainDnsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Domain", "2016-05-11", "QueryBatchTaskDetailList");
+		parent::__construct("Domain", "2016-05-11", "SaveTaskForModifyingDomainDns");
 		$this->setMethod("POST");
 	}
-
-	private  $taskStatus;
 
 	private  $saleId;
 
 	private  $userClientIp;
 
-	private  $taskNo;
-
 	private  $domainName;
-
-	private  $pageSize;
 
 	private  $lang;
 
-	private  $pageNum;
+	private  $aliyunDns;
 
-	public function getTaskStatus() {
-		return $this->taskStatus;
-	}
-
-	public function setTaskStatus($taskStatus) {
-		$this->taskStatus = $taskStatus;
-		$this->queryParameters["TaskStatus"]=$taskStatus;
-	}
+	private  $DnsLists;
 
 	public function getSaleId() {
 		return $this->saleId;
@@ -70,15 +57,6 @@ class QueryBatchTaskDetailListRequest extends \RpcAcsRequest
 		$this->queryParameters["UserClientIp"]=$userClientIp;
 	}
 
-	public function getTaskNo() {
-		return $this->taskNo;
-	}
-
-	public function setTaskNo($taskNo) {
-		$this->taskNo = $taskNo;
-		$this->queryParameters["TaskNo"]=$taskNo;
-	}
-
 	public function getDomainName() {
 		return $this->domainName;
 	}
@@ -86,15 +64,6 @@ class QueryBatchTaskDetailListRequest extends \RpcAcsRequest
 	public function setDomainName($domainName) {
 		$this->domainName = $domainName;
 		$this->queryParameters["DomainName"]=$domainName;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
 	public function getLang() {
@@ -106,13 +75,24 @@ class QueryBatchTaskDetailListRequest extends \RpcAcsRequest
 		$this->queryParameters["Lang"]=$lang;
 	}
 
-	public function getPageNum() {
-		return $this->pageNum;
+	public function getAliyunDns() {
+		return $this->aliyunDns;
 	}
 
-	public function setPageNum($pageNum) {
-		$this->pageNum = $pageNum;
-		$this->queryParameters["PageNum"]=$pageNum;
+	public function setAliyunDns($aliyunDns) {
+		$this->aliyunDns = $aliyunDns;
+		$this->queryParameters["AliyunDns"]=$aliyunDns;
+	}
+
+	public function getDnsLists() {
+		return $this->DnsLists;
+	}
+
+	public function setDnsLists($DnsLists) {
+		$this->DnsLists = $DnsLists;
+		for ($i = 0; $i < count($DnsLists); $i ++) {	
+			$this->queryParameters["DnsList.".($i+1)] = $DnsLists[$i];
+		}
 	}
 	
 }

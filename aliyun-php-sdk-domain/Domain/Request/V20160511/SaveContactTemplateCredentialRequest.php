@@ -19,42 +19,40 @@
  */
 namespace Domain\Request\V20160511;
 
-class QueryBatchTaskListRequest extends \RpcAcsRequest
+class SaveContactTemplateCredentialRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Domain", "2016-05-11", "QueryBatchTaskList");
+		parent::__construct("Domain", "2016-05-11", "SaveContactTemplateCredential");
 		$this->setMethod("POST");
 	}
 
-	private  $beginCreateTime;
+	private  $credentialNo;
 
-	private  $endCreateTime;
+	private  $credential;
 
 	private  $userClientIp;
 
-	private  $pageSize;
-
 	private  $lang;
 
-	private  $pageNum;
+	private  $contactTemplateId;
 
-	public function getBeginCreateTime() {
-		return $this->beginCreateTime;
+	public function getCredentialNo() {
+		return $this->credentialNo;
 	}
 
-	public function setBeginCreateTime($beginCreateTime) {
-		$this->beginCreateTime = $beginCreateTime;
-		$this->queryParameters["BeginCreateTime"]=$beginCreateTime;
+	public function setCredentialNo($credentialNo) {
+		$this->credentialNo = $credentialNo;
+		$this->queryParameters["CredentialNo"]=$credentialNo;
 	}
 
-	public function getEndCreateTime() {
-		return $this->endCreateTime;
+	public function getCredential() {
+		return $this->credential;
 	}
 
-	public function setEndCreateTime($endCreateTime) {
-		$this->endCreateTime = $endCreateTime;
-		$this->queryParameters["EndCreateTime"]=$endCreateTime;
+	public function setCredential($credential) {
+		$this->credential = $credential;
+		$this->queryParameters["Credential"]=$credential;
 	}
 
 	public function getUserClientIp() {
@@ -66,15 +64,6 @@ class QueryBatchTaskListRequest extends \RpcAcsRequest
 		$this->queryParameters["UserClientIp"]=$userClientIp;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
 	public function getLang() {
 		return $this->lang;
 	}
@@ -84,13 +73,13 @@ class QueryBatchTaskListRequest extends \RpcAcsRequest
 		$this->queryParameters["Lang"]=$lang;
 	}
 
-	public function getPageNum() {
-		return $this->pageNum;
+	public function getContactTemplateId() {
+		return $this->contactTemplateId;
 	}
 
-	public function setPageNum($pageNum) {
-		$this->pageNum = $pageNum;
-		$this->queryParameters["PageNum"]=$pageNum;
+	public function setContactTemplateId($contactTemplateId) {
+		$this->contactTemplateId = $contactTemplateId;
+		$this->queryParameters["ContactTemplateId"]=$contactTemplateId;
 	}
 	
 }

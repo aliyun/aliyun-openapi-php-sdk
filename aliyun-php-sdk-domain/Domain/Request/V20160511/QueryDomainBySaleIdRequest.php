@@ -24,13 +24,23 @@ class QueryDomainBySaleIdRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Domain", "2016-05-11", "QueryDomainBySaleId");
+		$this->setMethod("POST");
 	}
+
+	private  $saleId;
 
 	private  $userClientIp;
 
 	private  $lang;
 
-	private  $saleId;
+	public function getSaleId() {
+		return $this->saleId;
+	}
+
+	public function setSaleId($saleId) {
+		$this->saleId = $saleId;
+		$this->queryParameters["SaleId"]=$saleId;
+	}
 
 	public function getUserClientIp() {
 		return $this->userClientIp;
@@ -48,15 +58,6 @@ class QueryDomainBySaleIdRequest extends \RpcAcsRequest
 	public function setLang($lang) {
 		$this->lang = $lang;
 		$this->queryParameters["Lang"]=$lang;
-	}
-
-	public function getSaleId() {
-		return $this->saleId;
-	}
-
-	public function setSaleId($saleId) {
-		$this->saleId = $saleId;
-		$this->queryParameters["SaleId"]=$saleId;
 	}
 	
 }

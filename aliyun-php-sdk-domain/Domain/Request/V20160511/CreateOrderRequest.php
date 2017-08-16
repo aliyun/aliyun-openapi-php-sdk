@@ -24,20 +24,25 @@ class CreateOrderRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Domain", "2016-05-11", "CreateOrder");
+		$this->setMethod("POST");
 	}
 
-	private  $subOrderParam;
+	private  $SubOrderParams;
 
-	public function getSubOrderParam() {
-		return $this->subOrderParam;
+	public function getSubOrderParams() {
+		return $this->SubOrderParams;
 	}
 
-	public function setSubOrderParam($subOrderParam) {
-		$this->subOrderParam = $subOrderParam;
-		for($i=1;$i<1+count($subOrderParam);$i++){
-			foreach($subOrderParam[$i-1] as $key => $value) {
-			$this->queryParameters["SubOrderParam.$i.$key"]=$value;
+	public function setSubOrderParams($SubOrderParams) {
+		$this->SubOrderParams = $SubOrderParams;
+		for ($i = 0; $i < count($SubOrderParams); $i ++) {	
+			$this->queryParameters['SubOrderParam.' . ($i + 1) . '.SaleID'] = $SubOrderParams[$i]['SaleID'];
+			$this->queryParameters['SubOrderParam.' . ($i + 1) . '.RelatedName'] = $SubOrderParams[$i]['RelatedName'];
+			$this->queryParameters['SubOrderParam.' . ($i + 1) . '.Action'] = $SubOrderParams[$i]['Action'];
+			$this->queryParameters['SubOrderParam.' . ($i + 1) . '.Period'] = $SubOrderParams[$i]['Period'];
+			$this->queryParameters['SubOrderParam.' . ($i + 1) . '.DomainTemplateID'] = $SubOrderParams[$i]['DomainTemplateID'];
+
 		}
-	  }
-	}	
+	}
+	
 }

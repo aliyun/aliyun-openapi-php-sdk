@@ -19,38 +19,27 @@
  */
 namespace Domain\Request\V20160511;
 
-class QueryBatchTaskDetailListRequest extends \RpcAcsRequest
+class SaveTaskForUpdatingContactByTemplateIdRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Domain", "2016-05-11", "QueryBatchTaskDetailList");
+		parent::__construct("Domain", "2016-05-11", "SaveTaskForUpdatingContactByTemplateId");
 		$this->setMethod("POST");
 	}
 
-	private  $taskStatus;
-
 	private  $saleId;
+
+	private  $contactType;
 
 	private  $userClientIp;
 
-	private  $taskNo;
-
 	private  $domainName;
 
-	private  $pageSize;
+	private  $addTransferLock;
 
 	private  $lang;
 
-	private  $pageNum;
-
-	public function getTaskStatus() {
-		return $this->taskStatus;
-	}
-
-	public function setTaskStatus($taskStatus) {
-		$this->taskStatus = $taskStatus;
-		$this->queryParameters["TaskStatus"]=$taskStatus;
-	}
+	private  $contactTemplateId;
 
 	public function getSaleId() {
 		return $this->saleId;
@@ -59,6 +48,15 @@ class QueryBatchTaskDetailListRequest extends \RpcAcsRequest
 	public function setSaleId($saleId) {
 		$this->saleId = $saleId;
 		$this->queryParameters["SaleId"]=$saleId;
+	}
+
+	public function getContactType() {
+		return $this->contactType;
+	}
+
+	public function setContactType($contactType) {
+		$this->contactType = $contactType;
+		$this->queryParameters["ContactType"]=$contactType;
 	}
 
 	public function getUserClientIp() {
@@ -70,15 +68,6 @@ class QueryBatchTaskDetailListRequest extends \RpcAcsRequest
 		$this->queryParameters["UserClientIp"]=$userClientIp;
 	}
 
-	public function getTaskNo() {
-		return $this->taskNo;
-	}
-
-	public function setTaskNo($taskNo) {
-		$this->taskNo = $taskNo;
-		$this->queryParameters["TaskNo"]=$taskNo;
-	}
-
 	public function getDomainName() {
 		return $this->domainName;
 	}
@@ -88,13 +77,13 @@ class QueryBatchTaskDetailListRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
+	public function getAddTransferLock() {
+		return $this->addTransferLock;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setAddTransferLock($addTransferLock) {
+		$this->addTransferLock = $addTransferLock;
+		$this->queryParameters["AddTransferLock"]=$addTransferLock;
 	}
 
 	public function getLang() {
@@ -106,13 +95,13 @@ class QueryBatchTaskDetailListRequest extends \RpcAcsRequest
 		$this->queryParameters["Lang"]=$lang;
 	}
 
-	public function getPageNum() {
-		return $this->pageNum;
+	public function getContactTemplateId() {
+		return $this->contactTemplateId;
 	}
 
-	public function setPageNum($pageNum) {
-		$this->pageNum = $pageNum;
-		$this->queryParameters["PageNum"]=$pageNum;
+	public function setContactTemplateId($contactTemplateId) {
+		$this->contactTemplateId = $contactTemplateId;
+		$this->queryParameters["ContactTemplateId"]=$contactTemplateId;
 	}
 	
 }

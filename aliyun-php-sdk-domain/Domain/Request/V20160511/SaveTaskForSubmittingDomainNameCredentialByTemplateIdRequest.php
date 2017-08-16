@@ -19,38 +19,23 @@
  */
 namespace Domain\Request\V20160511;
 
-class QueryBatchTaskDetailListRequest extends \RpcAcsRequest
+class SaveTaskForSubmittingDomainNameCredentialByTemplateIdRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Domain", "2016-05-11", "QueryBatchTaskDetailList");
+		parent::__construct("Domain", "2016-05-11", "SaveTaskForSubmittingDomainNameCredentialByTemplateId");
 		$this->setMethod("POST");
 	}
-
-	private  $taskStatus;
 
 	private  $saleId;
 
 	private  $userClientIp;
 
-	private  $taskNo;
-
 	private  $domainName;
-
-	private  $pageSize;
 
 	private  $lang;
 
-	private  $pageNum;
-
-	public function getTaskStatus() {
-		return $this->taskStatus;
-	}
-
-	public function setTaskStatus($taskStatus) {
-		$this->taskStatus = $taskStatus;
-		$this->queryParameters["TaskStatus"]=$taskStatus;
-	}
+	private  $contactTemplateId;
 
 	public function getSaleId() {
 		return $this->saleId;
@@ -70,15 +55,6 @@ class QueryBatchTaskDetailListRequest extends \RpcAcsRequest
 		$this->queryParameters["UserClientIp"]=$userClientIp;
 	}
 
-	public function getTaskNo() {
-		return $this->taskNo;
-	}
-
-	public function setTaskNo($taskNo) {
-		$this->taskNo = $taskNo;
-		$this->queryParameters["TaskNo"]=$taskNo;
-	}
-
 	public function getDomainName() {
 		return $this->domainName;
 	}
@@ -86,15 +62,6 @@ class QueryBatchTaskDetailListRequest extends \RpcAcsRequest
 	public function setDomainName($domainName) {
 		$this->domainName = $domainName;
 		$this->queryParameters["DomainName"]=$domainName;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
 	public function getLang() {
@@ -106,13 +73,13 @@ class QueryBatchTaskDetailListRequest extends \RpcAcsRequest
 		$this->queryParameters["Lang"]=$lang;
 	}
 
-	public function getPageNum() {
-		return $this->pageNum;
+	public function getContactTemplateId() {
+		return $this->contactTemplateId;
 	}
 
-	public function setPageNum($pageNum) {
-		$this->pageNum = $pageNum;
-		$this->queryParameters["PageNum"]=$pageNum;
+	public function setContactTemplateId($contactTemplateId) {
+		$this->contactTemplateId = $contactTemplateId;
+		$this->queryParameters["ContactTemplateId"]=$contactTemplateId;
 	}
 	
 }

@@ -24,6 +24,7 @@ class DeleteContactTemplateRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Domain", "2016-05-11", "DeleteContactTemplate");
+		$this->setMethod("POST");
 	}
 
 	private  $userClientIp;

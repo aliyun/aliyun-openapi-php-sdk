@@ -24,15 +24,64 @@ class QueryContactTemplateRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Domain", "2016-05-11", "QueryContactTemplate");
+		$this->setMethod("POST");
 	}
-
-	private  $userClientIp;
-
-	private  $lang;
 
 	private  $cCompany;
 
+	private  $auditStatus;
+
+	private  $defaultTemplate;
+
 	private  $eCompany;
+
+	private  $userClientIp;
+
+	private  $pageSize;
+
+	private  $lang;
+
+	private  $pageNum;
+
+	private  $contactTemplateId;
+
+	private  $regType;
+
+	public function getCCompany() {
+		return $this->cCompany;
+	}
+
+	public function setCCompany($cCompany) {
+		$this->cCompany = $cCompany;
+		$this->queryParameters["CCompany"]=$cCompany;
+	}
+
+	public function getAuditStatus() {
+		return $this->auditStatus;
+	}
+
+	public function setAuditStatus($auditStatus) {
+		$this->auditStatus = $auditStatus;
+		$this->queryParameters["AuditStatus"]=$auditStatus;
+	}
+
+	public function getDefaultTemplate() {
+		return $this->defaultTemplate;
+	}
+
+	public function setDefaultTemplate($defaultTemplate) {
+		$this->defaultTemplate = $defaultTemplate;
+		$this->queryParameters["DefaultTemplate"]=$defaultTemplate;
+	}
+
+	public function getECompany() {
+		return $this->eCompany;
+	}
+
+	public function setECompany($eCompany) {
+		$this->eCompany = $eCompany;
+		$this->queryParameters["ECompany"]=$eCompany;
+	}
 
 	public function getUserClientIp() {
 		return $this->userClientIp;
@@ -41,6 +90,15 @@ class QueryContactTemplateRequest extends \RpcAcsRequest
 	public function setUserClientIp($userClientIp) {
 		$this->userClientIp = $userClientIp;
 		$this->queryParameters["UserClientIp"]=$userClientIp;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
 	public function getLang() {
@@ -52,22 +110,31 @@ class QueryContactTemplateRequest extends \RpcAcsRequest
 		$this->queryParameters["Lang"]=$lang;
 	}
 
-	public function getCCompany() {
-		return $this->cCompany;
+	public function getPageNum() {
+		return $this->pageNum;
 	}
 
-	public function setCCompany($cCompany) {
-		$this->cCompany = $cCompany;
-		$this->queryParameters["CCompany"]=$cCompany;
+	public function setPageNum($pageNum) {
+		$this->pageNum = $pageNum;
+		$this->queryParameters["PageNum"]=$pageNum;
 	}
 
-	public function getECompany() {
-		return $this->eCompany;
+	public function getContactTemplateId() {
+		return $this->contactTemplateId;
 	}
 
-	public function setECompany($eCompany) {
-		$this->eCompany = $eCompany;
-		$this->queryParameters["ECompany"]=$eCompany;
+	public function setContactTemplateId($contactTemplateId) {
+		$this->contactTemplateId = $contactTemplateId;
+		$this->queryParameters["ContactTemplateId"]=$contactTemplateId;
+	}
+
+	public function getRegType() {
+		return $this->regType;
+	}
+
+	public function setRegType($regType) {
+		$this->regType = $regType;
+		$this->queryParameters["RegType"]=$regType;
 	}
 	
 }

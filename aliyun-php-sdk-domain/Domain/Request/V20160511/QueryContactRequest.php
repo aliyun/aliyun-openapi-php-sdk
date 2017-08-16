@@ -24,15 +24,25 @@ class QueryContactRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Domain", "2016-05-11", "QueryContact");
+		$this->setMethod("POST");
 	}
+
+	private  $contactType;
 
 	private  $userClientIp;
 
-	private  $lang;
-
 	private  $domainName;
 
-	private  $contactType;
+	private  $lang;
+
+	public function getContactType() {
+		return $this->contactType;
+	}
+
+	public function setContactType($contactType) {
+		$this->contactType = $contactType;
+		$this->queryParameters["ContactType"]=$contactType;
+	}
 
 	public function getUserClientIp() {
 		return $this->userClientIp;
@@ -41,15 +51,6 @@ class QueryContactRequest extends \RpcAcsRequest
 	public function setUserClientIp($userClientIp) {
 		$this->userClientIp = $userClientIp;
 		$this->queryParameters["UserClientIp"]=$userClientIp;
-	}
-
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
 	}
 
 	public function getDomainName() {
@@ -61,13 +62,13 @@ class QueryContactRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getContactType() {
-		return $this->contactType;
+	public function getLang() {
+		return $this->lang;
 	}
 
-	public function setContactType($contactType) {
-		$this->contactType = $contactType;
-		$this->queryParameters["ContactType"]=$contactType;
+	public function setLang($lang) {
+		$this->lang = $lang;
+		$this->queryParameters["Lang"]=$lang;
 	}
 	
 }

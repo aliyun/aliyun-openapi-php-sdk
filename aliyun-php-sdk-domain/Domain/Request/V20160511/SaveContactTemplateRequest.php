@@ -24,75 +24,58 @@ class SaveContactTemplateRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Domain", "2016-05-11", "SaveContactTemplate");
+		$this->setMethod("POST");
 	}
-
-	private  $userClientIp;
-
-	private  $lang;
-
-	private  $contactTemplateId;
-
-	private  $defaultTemplate;
-
-	private  $cCity;
 
 	private  $cCompany;
 
-	private  $cCountry;
+	private  $defaultTemplate;
+
+	private  $telArea;
+
+	private  $eCompany;
+
+	private  $telMain;
 
 	private  $cName;
 
 	private  $cProvince;
 
-	private  $cVenu;
-
 	private  $eCity;
 
-	private  $eCompany;
+	private  $cCity;
+
+	private  $regType;
 
 	private  $eName;
 
+	private  $telExt;
+
+	private  $cVenu;
+
 	private  $eProvince;
+
+	private  $postalCode;
+
+	private  $userClientIp;
+
+	private  $cCountry;
+
+	private  $lang;
 
 	private  $eVenu;
 
 	private  $email;
 
-	private  $postalCode;
+	private  $contactTemplateId;
 
-	private  $telArea;
-
-	private  $telMain;
-
-	private  $telExt;
-
-	private  $regType;
-
-	public function getUserClientIp() {
-		return $this->userClientIp;
+	public function getCCompany() {
+		return $this->cCompany;
 	}
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
-	}
-
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-
-	public function getContactTemplateId() {
-		return $this->contactTemplateId;
-	}
-
-	public function setContactTemplateId($contactTemplateId) {
-		$this->contactTemplateId = $contactTemplateId;
-		$this->queryParameters["ContactTemplateId"]=$contactTemplateId;
+	public function setCCompany($cCompany) {
+		$this->cCompany = $cCompany;
+		$this->queryParameters["CCompany"]=$cCompany;
 	}
 
 	public function getDefaultTemplate() {
@@ -104,31 +87,31 @@ class SaveContactTemplateRequest extends \RpcAcsRequest
 		$this->queryParameters["DefaultTemplate"]=$defaultTemplate;
 	}
 
-	public function getCCity() {
-		return $this->cCity;
+	public function getTelArea() {
+		return $this->telArea;
 	}
 
-	public function setCCity($cCity) {
-		$this->cCity = $cCity;
-		$this->queryParameters["CCity"]=$cCity;
+	public function setTelArea($telArea) {
+		$this->telArea = $telArea;
+		$this->queryParameters["TelArea"]=$telArea;
 	}
 
-	public function getCCompany() {
-		return $this->cCompany;
+	public function getECompany() {
+		return $this->eCompany;
 	}
 
-	public function setCCompany($cCompany) {
-		$this->cCompany = $cCompany;
-		$this->queryParameters["CCompany"]=$cCompany;
+	public function setECompany($eCompany) {
+		$this->eCompany = $eCompany;
+		$this->queryParameters["ECompany"]=$eCompany;
 	}
 
-	public function getCCountry() {
-		return $this->cCountry;
+	public function getTelMain() {
+		return $this->telMain;
 	}
 
-	public function setCCountry($cCountry) {
-		$this->cCountry = $cCountry;
-		$this->queryParameters["CCountry"]=$cCountry;
+	public function setTelMain($telMain) {
+		$this->telMain = $telMain;
+		$this->queryParameters["TelMain"]=$telMain;
 	}
 
 	public function getCName() {
@@ -149,15 +132,6 @@ class SaveContactTemplateRequest extends \RpcAcsRequest
 		$this->queryParameters["CProvince"]=$cProvince;
 	}
 
-	public function getCVenu() {
-		return $this->cVenu;
-	}
-
-	public function setCVenu($cVenu) {
-		$this->cVenu = $cVenu;
-		$this->queryParameters["CVenu"]=$cVenu;
-	}
-
 	public function getECity() {
 		return $this->eCity;
 	}
@@ -167,13 +141,22 @@ class SaveContactTemplateRequest extends \RpcAcsRequest
 		$this->queryParameters["ECity"]=$eCity;
 	}
 
-	public function getECompany() {
-		return $this->eCompany;
+	public function getCCity() {
+		return $this->cCity;
 	}
 
-	public function setECompany($eCompany) {
-		$this->eCompany = $eCompany;
-		$this->queryParameters["ECompany"]=$eCompany;
+	public function setCCity($cCity) {
+		$this->cCity = $cCity;
+		$this->queryParameters["CCity"]=$cCity;
+	}
+
+	public function getRegType() {
+		return $this->regType;
+	}
+
+	public function setRegType($regType) {
+		$this->regType = $regType;
+		$this->queryParameters["RegType"]=$regType;
 	}
 
 	public function getEName() {
@@ -185,6 +168,24 @@ class SaveContactTemplateRequest extends \RpcAcsRequest
 		$this->queryParameters["EName"]=$eName;
 	}
 
+	public function getTelExt() {
+		return $this->telExt;
+	}
+
+	public function setTelExt($telExt) {
+		$this->telExt = $telExt;
+		$this->queryParameters["TelExt"]=$telExt;
+	}
+
+	public function getCVenu() {
+		return $this->cVenu;
+	}
+
+	public function setCVenu($cVenu) {
+		$this->cVenu = $cVenu;
+		$this->queryParameters["CVenu"]=$cVenu;
+	}
+
 	public function getEProvince() {
 		return $this->eProvince;
 	}
@@ -192,6 +193,42 @@ class SaveContactTemplateRequest extends \RpcAcsRequest
 	public function setEProvince($eProvince) {
 		$this->eProvince = $eProvince;
 		$this->queryParameters["EProvince"]=$eProvince;
+	}
+
+	public function getPostalCode() {
+		return $this->postalCode;
+	}
+
+	public function setPostalCode($postalCode) {
+		$this->postalCode = $postalCode;
+		$this->queryParameters["PostalCode"]=$postalCode;
+	}
+
+	public function getUserClientIp() {
+		return $this->userClientIp;
+	}
+
+	public function setUserClientIp($userClientIp) {
+		$this->userClientIp = $userClientIp;
+		$this->queryParameters["UserClientIp"]=$userClientIp;
+	}
+
+	public function getCCountry() {
+		return $this->cCountry;
+	}
+
+	public function setCCountry($cCountry) {
+		$this->cCountry = $cCountry;
+		$this->queryParameters["CCountry"]=$cCountry;
+	}
+
+	public function getLang() {
+		return $this->lang;
+	}
+
+	public function setLang($lang) {
+		$this->lang = $lang;
+		$this->queryParameters["Lang"]=$lang;
 	}
 
 	public function getEVenu() {
@@ -212,49 +249,13 @@ class SaveContactTemplateRequest extends \RpcAcsRequest
 		$this->queryParameters["Email"]=$email;
 	}
 
-	public function getPostalCode() {
-		return $this->postalCode;
+	public function getContactTemplateId() {
+		return $this->contactTemplateId;
 	}
 
-	public function setPostalCode($postalCode) {
-		$this->postalCode = $postalCode;
-		$this->queryParameters["PostalCode"]=$postalCode;
-	}
-
-	public function getTelArea() {
-		return $this->telArea;
-	}
-
-	public function setTelArea($telArea) {
-		$this->telArea = $telArea;
-		$this->queryParameters["TelArea"]=$telArea;
-	}
-
-	public function getTelMain() {
-		return $this->telMain;
-	}
-
-	public function setTelMain($telMain) {
-		$this->telMain = $telMain;
-		$this->queryParameters["TelMain"]=$telMain;
-	}
-
-	public function getTelExt() {
-		return $this->telExt;
-	}
-
-	public function setTelExt($telExt) {
-		$this->telExt = $telExt;
-		$this->queryParameters["TelExt"]=$telExt;
-	}
-
-	public function getRegType() {
-		return $this->regType;
-	}
-
-	public function setRegType($regType) {
-		$this->regType = $regType;
-		$this->queryParameters["RegType"]=$regType;
+	public function setContactTemplateId($contactTemplateId) {
+		$this->contactTemplateId = $contactTemplateId;
+		$this->queryParameters["ContactTemplateId"]=$contactTemplateId;
 	}
 	
 }

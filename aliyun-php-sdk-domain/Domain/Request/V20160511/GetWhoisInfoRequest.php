@@ -24,6 +24,7 @@ class GetWhoisInfoRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Domain", "2016-05-11", "GetWhoisInfo");
+		$this->setMethod("POST");
 	}
 
 	private  $domainName;

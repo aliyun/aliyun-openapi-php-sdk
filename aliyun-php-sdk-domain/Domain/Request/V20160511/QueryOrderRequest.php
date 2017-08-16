@@ -24,6 +24,7 @@ class QueryOrderRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Domain", "2016-05-11", "QueryOrder");
+		$this->setMethod("POST");
 	}
 
 	private  $orderID;

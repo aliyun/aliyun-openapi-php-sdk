@@ -24,34 +24,26 @@ class WhoisProtectionRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Domain", "2016-05-11", "WhoisProtection");
+		$this->setMethod("POST");
 	}
-
-	private  $userClientIp;
-
-	private  $lang;
-
-	private  $dataSource;
-
-	private  $dataContent;
 
 	private  $whoisProtect;
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
+	private  $dataSource;
+
+	private  $userClientIp;
+
+	private  $dataContent;
+
+	private  $lang;
+
+	public function getWhoisProtect() {
+		return $this->whoisProtect;
 	}
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
-	}
-
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
+	public function setWhoisProtect($whoisProtect) {
+		$this->whoisProtect = $whoisProtect;
+		$this->queryParameters["WhoisProtect"]=$whoisProtect;
 	}
 
 	public function getDataSource() {
@@ -63,6 +55,15 @@ class WhoisProtectionRequest extends \RpcAcsRequest
 		$this->queryParameters["DataSource"]=$dataSource;
 	}
 
+	public function getUserClientIp() {
+		return $this->userClientIp;
+	}
+
+	public function setUserClientIp($userClientIp) {
+		$this->userClientIp = $userClientIp;
+		$this->queryParameters["UserClientIp"]=$userClientIp;
+	}
+
 	public function getDataContent() {
 		return $this->dataContent;
 	}
@@ -72,13 +73,13 @@ class WhoisProtectionRequest extends \RpcAcsRequest
 		$this->queryParameters["DataContent"]=$dataContent;
 	}
 
-	public function getWhoisProtect() {
-		return $this->whoisProtect;
+	public function getLang() {
+		return $this->lang;
 	}
 
-	public function setWhoisProtect($whoisProtect) {
-		$this->whoisProtect = $whoisProtect;
-		$this->queryParameters["WhoisProtect"]=$whoisProtect;
+	public function setLang($lang) {
+		$this->lang = $lang;
+		$this->queryParameters["Lang"]=$lang;
 	}
 	
 }
