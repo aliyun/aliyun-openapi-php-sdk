@@ -19,25 +19,27 @@
  */
 namespace Push\Request\V20160801;
 
-class QueryPushStatByMsgRequest extends \RpcAcsRequest
+class BindPhoneRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Push", "2016-08-01", "QueryPushStatByMsg");
+		parent::__construct("Push", "2016-08-01", "BindPhone");
 		$this->setMethod("POST");
 	}
 
-	private  $messageId;
+	private  $phoneNumber;
 
 	private  $appKey;
 
-	public function getMessageId() {
-		return $this->messageId;
+	private  $deviceId;
+
+	public function getPhoneNumber() {
+		return $this->phoneNumber;
 	}
 
-	public function setMessageId($messageId) {
-		$this->messageId = $messageId;
-		$this->queryParameters["MessageId"]=$messageId;
+	public function setPhoneNumber($phoneNumber) {
+		$this->phoneNumber = $phoneNumber;
+		$this->queryParameters["PhoneNumber"]=$phoneNumber;
 	}
 
 	public function getAppKey() {
@@ -47,6 +49,15 @@ class QueryPushStatByMsgRequest extends \RpcAcsRequest
 	public function setAppKey($appKey) {
 		$this->appKey = $appKey;
 		$this->queryParameters["AppKey"]=$appKey;
+	}
+
+	public function getDeviceId() {
+		return $this->deviceId;
+	}
+
+	public function setDeviceId($deviceId) {
+		$this->deviceId = $deviceId;
+		$this->queryParameters["DeviceId"]=$deviceId;
 	}
 	
 }
