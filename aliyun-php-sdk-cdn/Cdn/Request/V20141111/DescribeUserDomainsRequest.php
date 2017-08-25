@@ -27,11 +27,15 @@ class DescribeUserDomainsRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
+	private  $funcFilter;
+
 	private  $sources;
 
 	private  $domainName;
 
 	private  $ownerId;
+
+	private  $funcId;
 
 	private  $pageNumber;
 
@@ -48,6 +52,15 @@ class DescribeUserDomainsRequest extends \RpcAcsRequest
 	private  $cdnType;
 
 	private  $pageSize;
+
+	public function getFuncFilter() {
+		return $this->funcFilter;
+	}
+
+	public function setFuncFilter($funcFilter) {
+		$this->funcFilter = $funcFilter;
+		$this->queryParameters["FuncFilter"]=$funcFilter;
+	}
 
 	public function getSources() {
 		return $this->sources;
@@ -74,6 +87,15 @@ class DescribeUserDomainsRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getFuncId() {
+		return $this->funcId;
+	}
+
+	public function setFuncId($funcId) {
+		$this->funcId = $funcId;
+		$this->queryParameters["FuncId"]=$funcId;
 	}
 
 	public function getPageNumber() {

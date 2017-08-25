@@ -27,6 +27,8 @@ class DescribeDomainSrcFlowDataRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
+	private  $fixTimeGap;
+
 	private  $securityToken;
 
 	private  $timeMerge;
@@ -40,6 +42,15 @@ class DescribeDomainSrcFlowDataRequest extends \RpcAcsRequest
 	private  $startTime;
 
 	private  $ownerId;
+
+	public function getFixTimeGap() {
+		return $this->fixTimeGap;
+	}
+
+	public function setFixTimeGap($fixTimeGap) {
+		$this->fixTimeGap = $fixTimeGap;
+		$this->queryParameters["FixTimeGap"]=$fixTimeGap;
+	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;

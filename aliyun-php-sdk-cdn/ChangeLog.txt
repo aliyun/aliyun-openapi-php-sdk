@@ -1,3 +1,7 @@
+2017-08-25 Version: 2.5.0
+1, 新增接口DescribeDomainsUsageByDay。
+2, 新增接口DescribeTopDomainsByFlow。
+
 2017-08-04 Version: 2.4.0
 1, 增加了DescribeDomainAverageResponseTime接口。
 2, 增加了DescribeDomainMax95BpsData接口。

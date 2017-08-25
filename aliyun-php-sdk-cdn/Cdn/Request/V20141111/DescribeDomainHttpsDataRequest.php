@@ -29,6 +29,8 @@ class DescribeDomainHttpsDataRequest extends \RpcAcsRequest
 
 	private  $domainType;
 
+	private  $fixTimeGap;
+
 	private  $securityToken;
 
 	private  $timeMerge;
@@ -52,6 +54,15 @@ class DescribeDomainHttpsDataRequest extends \RpcAcsRequest
 	public function setDomainType($domainType) {
 		$this->domainType = $domainType;
 		$this->queryParameters["DomainType"]=$domainType;
+	}
+
+	public function getFixTimeGap() {
+		return $this->fixTimeGap;
+	}
+
+	public function setFixTimeGap($fixTimeGap) {
+		$this->fixTimeGap = $fixTimeGap;
+		$this->queryParameters["FixTimeGap"]=$fixTimeGap;
 	}
 
 	public function getSecurityToken() {

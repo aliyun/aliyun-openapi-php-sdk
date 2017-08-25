@@ -27,6 +27,8 @@ class ModifyCdnDomainRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
+	private  $topLevelDomain;
+
 	private  $sourcePort;
 
 	private  $resourceGroupId;
@@ -42,6 +44,15 @@ class ModifyCdnDomainRequest extends \RpcAcsRequest
 	private  $sourceType;
 
 	private  $ownerId;
+
+	public function getTopLevelDomain() {
+		return $this->topLevelDomain;
+	}
+
+	public function setTopLevelDomain($topLevelDomain) {
+		$this->topLevelDomain = $topLevelDomain;
+		$this->queryParameters["TopLevelDomain"]=$topLevelDomain;
+	}
 
 	public function getSourcePort() {
 		return $this->sourcePort;

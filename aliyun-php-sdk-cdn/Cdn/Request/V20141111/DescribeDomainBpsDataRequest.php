@@ -27,17 +27,13 @@ class DescribeDomainBpsDataRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $domainType;
-
-	private  $securityToken;
+	private  $fixTimeGap;
 
 	private  $timeMerge;
 
 	private  $domainName;
 
 	private  $endTime;
-
-	private  $interval;
 
 	private  $locationNameEn;
 
@@ -47,22 +43,19 @@ class DescribeDomainBpsDataRequest extends \RpcAcsRequest
 
 	private  $ownerId;
 
-	public function getDomainType() {
-		return $this->domainType;
+	private  $domainType;
+
+	private  $securityToken;
+
+	private  $interval;
+
+	public function getFixTimeGap() {
+		return $this->fixTimeGap;
 	}
 
-	public function setDomainType($domainType) {
-		$this->domainType = $domainType;
-		$this->queryParameters["DomainType"]=$domainType;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
+	public function setFixTimeGap($fixTimeGap) {
+		$this->fixTimeGap = $fixTimeGap;
+		$this->queryParameters["FixTimeGap"]=$fixTimeGap;
 	}
 
 	public function getTimeMerge() {
@@ -90,15 +83,6 @@ class DescribeDomainBpsDataRequest extends \RpcAcsRequest
 	public function setEndTime($endTime) {
 		$this->endTime = $endTime;
 		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getInterval() {
-		return $this->interval;
-	}
-
-	public function setInterval($interval) {
-		$this->interval = $interval;
-		$this->queryParameters["Interval"]=$interval;
 	}
 
 	public function getLocationNameEn() {
@@ -135,6 +119,33 @@ class DescribeDomainBpsDataRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getDomainType() {
+		return $this->domainType;
+	}
+
+	public function setDomainType($domainType) {
+		$this->domainType = $domainType;
+		$this->queryParameters["DomainType"]=$domainType;
+	}
+
+	public function getSecurityToken() {
+		return $this->securityToken;
+	}
+
+	public function setSecurityToken($securityToken) {
+		$this->securityToken = $securityToken;
+		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
+
+	public function getInterval() {
+		return $this->interval;
+	}
+
+	public function setInterval($interval) {
+		$this->interval = $interval;
+		$this->queryParameters["Interval"]=$interval;
 	}
 	
 }

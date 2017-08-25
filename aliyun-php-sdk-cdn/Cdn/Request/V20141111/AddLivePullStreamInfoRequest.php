@@ -29,8 +29,6 @@ class AddLivePullStreamInfoRequest extends \RpcAcsRequest
 
 	private  $sourceUrl;
 
-	private  $always;
-
 	private  $appName;
 
 	private  $securityToken;
@@ -52,15 +50,6 @@ class AddLivePullStreamInfoRequest extends \RpcAcsRequest
 	public function setSourceUrl($sourceUrl) {
 		$this->sourceUrl = $sourceUrl;
 		$this->queryParameters["SourceUrl"]=$sourceUrl;
-	}
-
-	public function getAlways() {
-		return $this->always;
-	}
-
-	public function setAlways($always) {
-		$this->always = $always;
-		$this->queryParameters["Always"]=$always;
 	}
 
 	public function getAppName() {

@@ -19,32 +19,23 @@
  */
 namespace Cdn\Request\V20141111;
 
-class DescribeLiveStreamRelayPushDataRequest extends \RpcAcsRequest
+class DescribeTopDomainsByFlowRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cdn", "2014-11-11", "DescribeLiveStreamRelayPushData");
+		parent::__construct("Cdn", "2014-11-11", "DescribeTopDomainsByFlow");
 		$this->setMethod("POST");
 	}
 
-	private  $relayDomain;
-
 	private  $securityToken;
+
+	private  $limit;
 
 	private  $endTime;
 
 	private  $startTime;
 
 	private  $ownerId;
-
-	public function getRelayDomain() {
-		return $this->relayDomain;
-	}
-
-	public function setRelayDomain($relayDomain) {
-		$this->relayDomain = $relayDomain;
-		$this->queryParameters["RelayDomain"]=$relayDomain;
-	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -53,6 +44,15 @@ class DescribeLiveStreamRelayPushDataRequest extends \RpcAcsRequest
 	public function setSecurityToken($securityToken) {
 		$this->securityToken = $securityToken;
 		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
+
+	public function getLimit() {
+		return $this->limit;
+	}
+
+	public function setLimit($limit) {
+		$this->limit = $limit;
+		$this->queryParameters["Limit"]=$limit;
 	}
 
 	public function getEndTime() {
