@@ -23,84 +23,43 @@ class CreateUploadVideoRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "CreateUploadVideo");
+		parent::__construct("vod", "2017-03-21", "CreateUploadVideo", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $tags;
-
-	private  $cateId;
-
-	private  $ownerId;
-
-	private  $iP;
-
-	private  $fileSize;
-
-	private  $title;
+	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
+	private  $transcodeMode;
+
+	private  $iP;
+
 	private  $description;
 
-	private  $fileName;
+	private  $fileSize;
+
+	private  $ownerId;
+
+	private  $title;
+
+	private  $tags;
 
 	private  $coverURL;
 
-	private  $resourceOwnerId;
+	private  $userData;
 
-	public function getTags() {
-		return $this->tags;
+	private  $fileName;
+
+	private  $cateId;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setTags($tags) {
-		$this->tags = $tags;
-		$this->queryParameters["Tags"]=$tags;
-	}
-
-	public function getCateId() {
-		return $this->cateId;
-	}
-
-	public function setCateId($cateId) {
-		$this->cateId = $cateId;
-		$this->queryParameters["CateId"]=$cateId;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getIP() {
-		return $this->iP;
-	}
-
-	public function setIP($iP) {
-		$this->iP = $iP;
-		$this->queryParameters["IP"]=$iP;
-	}
-
-	public function getFileSize() {
-		return $this->fileSize;
-	}
-
-	public function setFileSize($fileSize) {
-		$this->fileSize = $fileSize;
-		$this->queryParameters["FileSize"]=$fileSize;
-	}
-
-	public function getTitle() {
-		return $this->title;
-	}
-
-	public function setTitle($title) {
-		$this->title = $title;
-		$this->queryParameters["Title"]=$title;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -112,6 +71,24 @@ class CreateUploadVideoRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
+	public function getTranscodeMode() {
+		return $this->transcodeMode;
+	}
+
+	public function setTranscodeMode($transcodeMode) {
+		$this->transcodeMode = $transcodeMode;
+		$this->queryParameters["TranscodeMode"]=$transcodeMode;
+	}
+
+	public function getIP() {
+		return $this->iP;
+	}
+
+	public function setIP($iP) {
+		$this->iP = $iP;
+		$this->queryParameters["IP"]=$iP;
+	}
+
 	public function getDescription() {
 		return $this->description;
 	}
@@ -121,13 +98,40 @@ class CreateUploadVideoRequest extends \RpcAcsRequest
 		$this->queryParameters["Description"]=$description;
 	}
 
-	public function getFileName() {
-		return $this->fileName;
+	public function getFileSize() {
+		return $this->fileSize;
 	}
 
-	public function setFileName($fileName) {
-		$this->fileName = $fileName;
-		$this->queryParameters["FileName"]=$fileName;
+	public function setFileSize($fileSize) {
+		$this->fileSize = $fileSize;
+		$this->queryParameters["FileSize"]=$fileSize;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getTitle() {
+		return $this->title;
+	}
+
+	public function setTitle($title) {
+		$this->title = $title;
+		$this->queryParameters["Title"]=$title;
+	}
+
+	public function getTags() {
+		return $this->tags;
+	}
+
+	public function setTags($tags) {
+		$this->tags = $tags;
+		$this->queryParameters["Tags"]=$tags;
 	}
 
 	public function getCoverURL() {
@@ -139,13 +143,31 @@ class CreateUploadVideoRequest extends \RpcAcsRequest
 		$this->queryParameters["CoverURL"]=$coverURL;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getUserData() {
+		return $this->userData;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setUserData($userData) {
+		$this->userData = $userData;
+		$this->queryParameters["UserData"]=$userData;
+	}
+
+	public function getFileName() {
+		return $this->fileName;
+	}
+
+	public function setFileName($fileName) {
+		$this->fileName = $fileName;
+		$this->queryParameters["FileName"]=$fileName;
+	}
+
+	public function getCateId() {
+		return $this->cateId;
+	}
+
+	public function setCateId($cateId) {
+		$this->cateId = $cateId;
+		$this->queryParameters["CateId"]=$cateId;
 	}
 	
 }

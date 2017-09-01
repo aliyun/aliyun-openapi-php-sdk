@@ -23,29 +23,29 @@ class CreateUploadImageRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "CreateUploadImage");
+		parent::__construct("vod", "2017-03-21", "CreateUploadImage", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $resourceOwnerAccount;
+	private  $resourceOwnerId;
 
 	private  $imageType;
 
-	private  $resourceOwnerId;
+	private  $resourceOwnerAccount;
+
+	private  $imageExt;
 
 	private  $ownerAccount;
 
 	private  $ownerId;
 
-	private  $imageExt;
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getImageType() {
@@ -57,13 +57,22 @@ class CreateUploadImageRequest extends \RpcAcsRequest
 		$this->queryParameters["ImageType"]=$imageType;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getImageExt() {
+		return $this->imageExt;
+	}
+
+	public function setImageExt($imageExt) {
+		$this->imageExt = $imageExt;
+		$this->queryParameters["ImageExt"]=$imageExt;
 	}
 
 	public function getOwnerAccount() {
@@ -82,15 +91,6 @@ class CreateUploadImageRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getImageExt() {
-		return $this->imageExt;
-	}
-
-	public function setImageExt($imageExt) {
-		$this->imageExt = $imageExt;
-		$this->queryParameters["ImageExt"]=$imageExt;
 	}
 	
 }

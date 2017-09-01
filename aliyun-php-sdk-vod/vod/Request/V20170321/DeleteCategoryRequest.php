@@ -23,27 +23,27 @@ class DeleteCategoryRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "DeleteCategory");
+		parent::__construct("vod", "2017-03-21", "DeleteCategory", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $cateId;
+	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
-	private  $resourceOwnerId;
+	private  $cateId;
 
 	private  $ownerAccount;
 
 	private  $ownerId;
 
-	public function getCateId() {
-		return $this->cateId;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setCateId($cateId) {
-		$this->cateId = $cateId;
-		$this->queryParameters["CateId"]=$cateId;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -55,13 +55,13 @@ class DeleteCategoryRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getCateId() {
+		return $this->cateId;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setCateId($cateId) {
+		$this->cateId = $cateId;
+		$this->queryParameters["CateId"]=$cateId;
 	}
 
 	public function getOwnerAccount() {

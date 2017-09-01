@@ -23,36 +23,27 @@ class GetVideoPlayInfoRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "GetVideoPlayInfo");
+		parent::__construct("vod", "2017-03-21", "GetVideoPlayInfo", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $clientVersion;
-
 	private  $signVersion;
-
-	private  $resourceOwnerAccount;
-
-	private  $clientTS;
 
 	private  $resourceOwnerId;
 
-	private  $ownerId;
+	private  $clientVersion;
 
-	private  $videoId;
+	private  $resourceOwnerAccount;
 
 	private  $channel;
 
 	private  $playSign;
 
-	public function getClientVersion() {
-		return $this->clientVersion;
-	}
+	private  $videoId;
 
-	public function setClientVersion($clientVersion) {
-		$this->clientVersion = $clientVersion;
-		$this->queryParameters["ClientVersion"]=$clientVersion;
-	}
+	private  $ownerId;
+
+	private  $clientTS;
 
 	public function getSignVersion() {
 		return $this->signVersion;
@@ -61,24 +52,6 @@ class GetVideoPlayInfoRequest extends \RpcAcsRequest
 	public function setSignVersion($signVersion) {
 		$this->signVersion = $signVersion;
 		$this->queryParameters["SignVersion"]=$signVersion;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getClientTS() {
-		return $this->clientTS;
-	}
-
-	public function setClientTS($clientTS) {
-		$this->clientTS = $clientTS;
-		$this->queryParameters["ClientTS"]=$clientTS;
 	}
 
 	public function getResourceOwnerId() {
@@ -90,22 +63,22 @@ class GetVideoPlayInfoRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getClientVersion() {
+		return $this->clientVersion;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setClientVersion($clientVersion) {
+		$this->clientVersion = $clientVersion;
+		$this->queryParameters["ClientVersion"]=$clientVersion;
 	}
 
-	public function getVideoId() {
-		return $this->videoId;
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
 	}
 
-	public function setVideoId($videoId) {
-		$this->videoId = $videoId;
-		$this->queryParameters["VideoId"]=$videoId;
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
 	public function getChannel() {
@@ -124,6 +97,33 @@ class GetVideoPlayInfoRequest extends \RpcAcsRequest
 	public function setPlaySign($playSign) {
 		$this->playSign = $playSign;
 		$this->queryParameters["PlaySign"]=$playSign;
+	}
+
+	public function getVideoId() {
+		return $this->videoId;
+	}
+
+	public function setVideoId($videoId) {
+		$this->videoId = $videoId;
+		$this->queryParameters["VideoId"]=$videoId;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getClientTS() {
+		return $this->clientTS;
+	}
+
+	public function setClientTS($clientTS) {
+		$this->clientTS = $clientTS;
+		$this->queryParameters["ClientTS"]=$clientTS;
 	}
 	
 }

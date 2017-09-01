@@ -23,61 +23,25 @@ class SetMessageCallbackRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "SetMessageCallback");
+		parent::__construct("vod", "2017-03-21", "SetMessageCallback", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
-
-	private  $eventTypeList;
-
-	private  $resourceOwnerAccount;
-
-	private  $callbackURL;
-
-	private  $callbackSwitch;
 
 	private  $callbackType;
 
 	private  $resourceOwnerId;
 
+	private  $callbackSwitch;
+
+	private  $resourceOwnerAccount;
+
 	private  $ownerAccount;
 
+	private  $eventTypeList;
+
+	private  $callbackURL;
+
 	private  $ownerId;
-
-	public function getEventTypeList() {
-		return $this->eventTypeList;
-	}
-
-	public function setEventTypeList($eventTypeList) {
-		$this->eventTypeList = $eventTypeList;
-		$this->queryParameters["EventTypeList"]=$eventTypeList;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getCallbackURL() {
-		return $this->callbackURL;
-	}
-
-	public function setCallbackURL($callbackURL) {
-		$this->callbackURL = $callbackURL;
-		$this->queryParameters["CallbackURL"]=$callbackURL;
-	}
-
-	public function getCallbackSwitch() {
-		return $this->callbackSwitch;
-	}
-
-	public function setCallbackSwitch($callbackSwitch) {
-		$this->callbackSwitch = $callbackSwitch;
-		$this->queryParameters["CallbackSwitch"]=$callbackSwitch;
-	}
 
 	public function getCallbackType() {
 		return $this->callbackType;
@@ -97,6 +61,24 @@ class SetMessageCallbackRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getCallbackSwitch() {
+		return $this->callbackSwitch;
+	}
+
+	public function setCallbackSwitch($callbackSwitch) {
+		$this->callbackSwitch = $callbackSwitch;
+		$this->queryParameters["CallbackSwitch"]=$callbackSwitch;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -104,6 +86,24 @@ class SetMessageCallbackRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getEventTypeList() {
+		return $this->eventTypeList;
+	}
+
+	public function setEventTypeList($eventTypeList) {
+		$this->eventTypeList = $eventTypeList;
+		$this->queryParameters["EventTypeList"]=$eventTypeList;
+	}
+
+	public function getCallbackURL() {
+		return $this->callbackURL;
+	}
+
+	public function setCallbackURL($callbackURL) {
+		$this->callbackURL = $callbackURL;
+		$this->queryParameters["CallbackURL"]=$callbackURL;
 	}
 
 	public function getOwnerId() {

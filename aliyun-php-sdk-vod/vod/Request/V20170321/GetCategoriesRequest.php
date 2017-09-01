@@ -23,40 +23,31 @@ class GetCategoriesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "GetCategories");
+		parent::__construct("vod", "2017-03-21", "GetCategories", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $pageSize;
-
-	private  $cateId;
+	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
-	private  $resourceOwnerId;
+	private  $cateId;
 
 	private  $pageNo;
 
 	private  $ownerAccount;
 
+	private  $pageSize;
+
 	private  $ownerId;
 
-	public function getPageSize() {
-		return $this->pageSize;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getCateId() {
-		return $this->cateId;
-	}
-
-	public function setCateId($cateId) {
-		$this->cateId = $cateId;
-		$this->queryParameters["CateId"]=$cateId;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -68,13 +59,13 @@ class GetCategoriesRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getCateId() {
+		return $this->cateId;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setCateId($cateId) {
+		$this->cateId = $cateId;
+		$this->queryParameters["CateId"]=$cateId;
 	}
 
 	public function getPageNo() {
@@ -93,6 +84,15 @@ class GetCategoriesRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
 	public function getOwnerId() {

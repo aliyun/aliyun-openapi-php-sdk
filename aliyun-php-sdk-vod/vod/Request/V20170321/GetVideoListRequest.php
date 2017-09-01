@@ -23,37 +23,64 @@ class GetVideoListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "GetVideoList");
+		parent::__construct("vod", "2017-03-21", "GetVideoList", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $endTime;
+	private  $resourceOwnerId;
+
+	private  $resourceOwnerAccount;
+
+	private  $cateId;
+
+	private  $pageNo;
 
 	private  $pageSize;
 
-	private  $cateId;
+	private  $endTime;
 
 	private  $sortBy;
 
 	private  $startTime;
 
-	private  $resourceOwnerAccount;
+	private  $ownerId;
 
 	private  $status;
 
-	private  $resourceOwnerId;
-
-	private  $pageNo;
-
-	private  $ownerId;
-
-	public function getEndTime() {
-		return $this->endTime;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getCateId() {
+		return $this->cateId;
+	}
+
+	public function setCateId($cateId) {
+		$this->cateId = $cateId;
+		$this->queryParameters["CateId"]=$cateId;
+	}
+
+	public function getPageNo() {
+		return $this->pageNo;
+	}
+
+	public function setPageNo($pageNo) {
+		$this->pageNo = $pageNo;
+		$this->queryParameters["PageNo"]=$pageNo;
 	}
 
 	public function getPageSize() {
@@ -65,13 +92,13 @@ class GetVideoListRequest extends \RpcAcsRequest
 		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
-	public function getCateId() {
-		return $this->cateId;
+	public function getEndTime() {
+		return $this->endTime;
 	}
 
-	public function setCateId($cateId) {
-		$this->cateId = $cateId;
-		$this->queryParameters["CateId"]=$cateId;
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
 	}
 
 	public function getSortBy() {
@@ -92,13 +119,13 @@ class GetVideoListRequest extends \RpcAcsRequest
 		$this->queryParameters["StartTime"]=$startTime;
 	}
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getStatus() {
@@ -108,33 +135,6 @@ class GetVideoListRequest extends \RpcAcsRequest
 	public function setStatus($status) {
 		$this->status = $status;
 		$this->queryParameters["Status"]=$status;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getPageNo() {
-		return $this->pageNo;
-	}
-
-	public function setPageNo($pageNo) {
-		$this->pageNo = $pageNo;
-		$this->queryParameters["PageNo"]=$pageNo;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

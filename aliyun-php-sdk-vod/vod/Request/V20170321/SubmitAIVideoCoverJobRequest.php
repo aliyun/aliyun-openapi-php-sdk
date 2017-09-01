@@ -19,26 +19,34 @@
  */
 namespace vod\Request\V20170321;
 
-class GetPlayInfoRequest extends \RpcAcsRequest
+class SubmitAIVideoCoverJobRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "GetPlayInfo", "vod", "openAPI");
+		parent::__construct("vod", "2017-03-21", "SubmitAIVideoCoverJob", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $resourceOwnerId;
+	private  $input;
 
-	private  $formats;
+	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
-	private  $videoId;
+	private  $ownerAccount;
 
 	private  $ownerId;
 
-	private  $authTimeout;
+	private  $aIVideoCoverConfig;
 
+	public function getInput() {
+		return $this->input;
+	}
+
+	public function setInput($input) {
+		$this->input = $input;
+		$this->queryParameters["Input"]=$input;
+	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -47,15 +55,6 @@ class GetPlayInfoRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getFormats() {
-		return $this->formats;
-	}
-
-	public function setFormats($formats) {
-		$this->formats = $formats;
-		$this->queryParameters["Formats"]=$formats;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -67,13 +66,13 @@ class GetPlayInfoRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getVideoId() {
-		return $this->videoId;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setVideoId($videoId) {
-		$this->videoId = $videoId;
-		$this->queryParameters["VideoId"]=$videoId;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getOwnerId() {
@@ -85,13 +84,13 @@ class GetPlayInfoRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getAuthTimeout() {
-		return $this->authTimeout;
+	public function getAIVideoCoverConfig() {
+		return $this->aIVideoCoverConfig;
 	}
 
-	public function setAuthTimeout($authTimeout) {
-		$this->authTimeout = $authTimeout;
-		$this->queryParameters["AuthTimeout"]=$authTimeout;
+	public function setAIVideoCoverConfig($aIVideoCoverConfig) {
+		$this->aIVideoCoverConfig = $aIVideoCoverConfig;
+		$this->queryParameters["AIVideoCoverConfig"]=$aIVideoCoverConfig;
 	}
 	
 }
