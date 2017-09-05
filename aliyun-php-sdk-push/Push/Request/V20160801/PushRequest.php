@@ -35,6 +35,8 @@ class PushRequest extends \RpcAcsRequest
 
 	private  $iOSBadge;
 
+	private  $iOSBadgeAutoIncrement;
+
 	private  $androidOpenType;
 
 	private  $title;
@@ -145,6 +147,15 @@ class PushRequest extends \RpcAcsRequest
 	public function setiOSBadge($iOSBadge) {
 		$this->iOSBadge = $iOSBadge;
 		$this->queryParameters["iOSBadge"]=$iOSBadge;
+	}
+
+	public function getiOSBadgeAutoIncrement() {
+		return $this->iOSBadgeAutoIncrement;
+	}
+
+	public function setiOSBadgeAutoIncrement($iOSBadgeAutoIncrement) {
+		$this->iOSBadgeAutoIncrement = $iOSBadgeAutoIncrement;
+		$this->queryParameters["iOSBadgeAutoIncrement"]=$iOSBadgeAutoIncrement;
 	}
 
 	public function getAndroidOpenType() {
