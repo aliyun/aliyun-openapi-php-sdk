@@ -55,6 +55,7 @@ class DefaultAcsClient implements IAcsClient
         $request = $this->prepareRequest($request);
 
         // Get the domain from the Location Service by speicified `ServiceCode` and `RegionId`.
+        $domain = null;
         if (null != $request->getLocationServiceCode())
         {
             $domain = $this->locationService->findProductDomain($request->getRegionId(), $request->getLocationServiceCode(), $request->getLocationEndpointType(), $request->getProduct());
