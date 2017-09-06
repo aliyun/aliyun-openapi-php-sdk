@@ -1,3 +1,8 @@
+2017-09-06 Version: 2.7.0
+1, 增加拉流配置接口AddLivePullStreamInfoConfig。
+2, 增加删除拉流配置接口DeleteLivePullStreamInfoConfig。
+3, 增加查询拉流配置接口DescribeLivePullStreamConfig。
+
 2017-08-01 Version: 2.6.0
 1, 增加了DescribeLiveStreamBitRateData接口,提供流粒度帧率码率历史查询。
 

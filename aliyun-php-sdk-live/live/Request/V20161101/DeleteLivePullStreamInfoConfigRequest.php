@@ -19,21 +19,32 @@
  */
 namespace live\Request\V20161101;
 
-class UpdateLiveDetectNotifyConfigRequest extends \RpcAcsRequest
+class DeleteLivePullStreamInfoConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "UpdateLiveDetectNotifyConfig", "live", "openAPI");
+		parent::__construct("live", "2016-11-01", "DeleteLivePullStreamInfoConfig", "live", "openAPI");
 		$this->setMethod("POST");
 	}
+
+	private  $appName;
 
 	private  $securityToken;
 
 	private  $domainName;
 
-	private  $notifyUrl;
-
 	private  $ownerId;
+
+	private  $streamName;
+
+	public function getAppName() {
+		return $this->appName;
+	}
+
+	public function setAppName($appName) {
+		$this->appName = $appName;
+		$this->queryParameters["AppName"]=$appName;
+	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -53,15 +64,6 @@ class UpdateLiveDetectNotifyConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getNotifyUrl() {
-		return $this->notifyUrl;
-	}
-
-	public function setNotifyUrl($notifyUrl) {
-		$this->notifyUrl = $notifyUrl;
-		$this->queryParameters["NotifyUrl"]=$notifyUrl;
-	}
-
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -69,6 +71,15 @@ class UpdateLiveDetectNotifyConfigRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getStreamName() {
+		return $this->streamName;
+	}
+
+	public function setStreamName($streamName) {
+		$this->streamName = $streamName;
+		$this->queryParameters["StreamName"]=$streamName;
 	}
 	
 }
