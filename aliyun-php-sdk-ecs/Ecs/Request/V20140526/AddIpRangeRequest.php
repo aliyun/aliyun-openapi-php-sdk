@@ -27,34 +27,25 @@ class AddIpRangeRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $resourceOwnerAccount;
-
-	private  $zoneId;
+	private  $ipAddress;
 
 	private  $resourceOwnerId;
 
+	private  $resourceOwnerAccount;
+
 	private  $ownerAccount;
 
-	private  $ipAddress;
+	private  $zoneId;
 
 	private  $ownerId;
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
+	public function getIpAddress() {
+		return $this->ipAddress;
 	}
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getZoneId() {
-		return $this->zoneId;
-	}
-
-	public function setZoneId($zoneId) {
-		$this->zoneId = $zoneId;
-		$this->queryParameters["ZoneId"]=$zoneId;
+	public function setIpAddress($ipAddress) {
+		$this->ipAddress = $ipAddress;
+		$this->queryParameters["IpAddress"]=$ipAddress;
 	}
 
 	public function getResourceOwnerId() {
@@ -66,6 +57,15 @@ class AddIpRangeRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -75,13 +75,13 @@ class AddIpRangeRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getIpAddress() {
-		return $this->ipAddress;
+	public function getZoneId() {
+		return $this->zoneId;
 	}
 
-	public function setIpAddress($ipAddress) {
-		$this->ipAddress = $ipAddress;
-		$this->queryParameters["IpAddress"]=$ipAddress;
+	public function setZoneId($zoneId) {
+		$this->zoneId = $zoneId;
+		$this->queryParameters["ZoneId"]=$zoneId;
 	}
 
 	public function getOwnerId() {

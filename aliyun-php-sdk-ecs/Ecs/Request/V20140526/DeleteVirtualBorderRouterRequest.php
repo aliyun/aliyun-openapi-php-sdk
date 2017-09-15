@@ -27,27 +27,27 @@ class DeleteVirtualBorderRouterRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $clientToken;
+	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
-	private  $userCidr;
-
-	private  $resourceOwnerId;
+	private  $clientToken;
 
 	private  $ownerAccount;
 
-	private  $ownerId;
+	private  $userCidr;
 
 	private  $vbrId;
 
-	public function getClientToken() {
-		return $this->clientToken;
+	private  $ownerId;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -59,22 +59,13 @@ class DeleteVirtualBorderRouterRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getUserCidr() {
-		return $this->userCidr;
+	public function getClientToken() {
+		return $this->clientToken;
 	}
 
-	public function setUserCidr($userCidr) {
-		$this->userCidr = $userCidr;
-		$this->queryParameters["UserCidr"]=$userCidr;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setClientToken($clientToken) {
+		$this->clientToken = $clientToken;
+		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
 	public function getOwnerAccount() {
@@ -86,13 +77,13 @@ class DeleteVirtualBorderRouterRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getUserCidr() {
+		return $this->userCidr;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setUserCidr($userCidr) {
+		$this->userCidr = $userCidr;
+		$this->queryParameters["UserCidr"]=$userCidr;
 	}
 
 	public function getVbrId() {
@@ -102,6 +93,15 @@ class DeleteVirtualBorderRouterRequest extends \RpcAcsRequest
 	public function setVbrId($vbrId) {
 		$this->vbrId = $vbrId;
 		$this->queryParameters["VbrId"]=$vbrId;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

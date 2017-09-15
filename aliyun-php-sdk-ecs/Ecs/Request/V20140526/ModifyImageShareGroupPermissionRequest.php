@@ -27,36 +27,36 @@ class ModifyImageShareGroupPermissionRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $removeGroup1;
-
-	private  $resourceOwnerAccount;
-
-	private  $addGroup1;
-
 	private  $resourceOwnerId;
-
-	private  $ownerAccount;
-
-	private  $ownerId;
 
 	private  $imageId;
 
-	public function getRemoveGroup1() {
-		return $this->removeGroup1;
+	private  $addGroup1;
+
+	private  $resourceOwnerAccount;
+
+	private  $ownerAccount;
+
+	private  $removeGroup1;
+
+	private  $ownerId;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setRemoveGroup1($removeGroup1) {
-		$this->removeGroup1 = $removeGroup1;
-		$this->queryParameters["RemoveGroup.1"]=$removeGroup1;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
+	public function getImageId() {
+		return $this->imageId;
 	}
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setImageId($imageId) {
+		$this->imageId = $imageId;
+		$this->queryParameters["ImageId"]=$imageId;
 	}
 
 	public function getAddGroup1() {
@@ -68,13 +68,13 @@ class ModifyImageShareGroupPermissionRequest extends \RpcAcsRequest
 		$this->queryParameters["AddGroup.1"]=$addGroup1;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
 	public function getOwnerAccount() {
@@ -86,6 +86,15 @@ class ModifyImageShareGroupPermissionRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
+	public function getRemoveGroup1() {
+		return $this->removeGroup1;
+	}
+
+	public function setRemoveGroup1($removeGroup1) {
+		$this->removeGroup1 = $removeGroup1;
+		$this->queryParameters["RemoveGroup.1"]=$removeGroup1;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -93,15 +102,6 @@ class ModifyImageShareGroupPermissionRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getImageId() {
-		return $this->imageId;
-	}
-
-	public function setImageId($imageId) {
-		$this->imageId = $imageId;
-		$this->queryParameters["ImageId"]=$imageId;
 	}
 	
 }

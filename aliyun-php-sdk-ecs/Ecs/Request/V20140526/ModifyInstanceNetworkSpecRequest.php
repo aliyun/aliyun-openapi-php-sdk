@@ -27,27 +27,46 @@ class ModifyInstanceNetworkSpecRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $internetMaxBandwidthOut;
+	private  $resourceOwnerId;
+
+	private  $autoPay;
 
 	private  $resourceOwnerAccount;
 
-	private  $internetMaxBandwidthIn;
-
-	private  $resourceOwnerId;
+	private  $clientToken;
 
 	private  $ownerAccount;
+
+	private  $internetMaxBandwidthOut;
+
+	private  $endTime;
+
+	private  $startTime;
 
 	private  $ownerId;
 
 	private  $instanceId;
 
-	public function getInternetMaxBandwidthOut() {
-		return $this->internetMaxBandwidthOut;
+	private  $networkChargeType;
+
+	private  $internetMaxBandwidthIn;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setInternetMaxBandwidthOut($internetMaxBandwidthOut) {
-		$this->internetMaxBandwidthOut = $internetMaxBandwidthOut;
-		$this->queryParameters["InternetMaxBandwidthOut"]=$internetMaxBandwidthOut;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getAutoPay() {
+		return $this->autoPay;
+	}
+
+	public function setAutoPay($autoPay) {
+		$this->autoPay = $autoPay;
+		$this->queryParameters["AutoPay"]=$autoPay;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -59,22 +78,13 @@ class ModifyInstanceNetworkSpecRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getInternetMaxBandwidthIn() {
-		return $this->internetMaxBandwidthIn;
+	public function getClientToken() {
+		return $this->clientToken;
 	}
 
-	public function setInternetMaxBandwidthIn($internetMaxBandwidthIn) {
-		$this->internetMaxBandwidthIn = $internetMaxBandwidthIn;
-		$this->queryParameters["InternetMaxBandwidthIn"]=$internetMaxBandwidthIn;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setClientToken($clientToken) {
+		$this->clientToken = $clientToken;
+		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
 	public function getOwnerAccount() {
@@ -84,6 +94,33 @@ class ModifyInstanceNetworkSpecRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getInternetMaxBandwidthOut() {
+		return $this->internetMaxBandwidthOut;
+	}
+
+	public function setInternetMaxBandwidthOut($internetMaxBandwidthOut) {
+		$this->internetMaxBandwidthOut = $internetMaxBandwidthOut;
+		$this->queryParameters["InternetMaxBandwidthOut"]=$internetMaxBandwidthOut;
+	}
+
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
 	}
 
 	public function getOwnerId() {
@@ -102,6 +139,24 @@ class ModifyInstanceNetworkSpecRequest extends \RpcAcsRequest
 	public function setInstanceId($instanceId) {
 		$this->instanceId = $instanceId;
 		$this->queryParameters["InstanceId"]=$instanceId;
+	}
+
+	public function getNetworkChargeType() {
+		return $this->networkChargeType;
+	}
+
+	public function setNetworkChargeType($networkChargeType) {
+		$this->networkChargeType = $networkChargeType;
+		$this->queryParameters["NetworkChargeType"]=$networkChargeType;
+	}
+
+	public function getInternetMaxBandwidthIn() {
+		return $this->internetMaxBandwidthIn;
+	}
+
+	public function setInternetMaxBandwidthIn($internetMaxBandwidthIn) {
+		$this->internetMaxBandwidthIn = $internetMaxBandwidthIn;
+		$this->queryParameters["InternetMaxBandwidthIn"]=$internetMaxBandwidthIn;
 	}
 	
 }

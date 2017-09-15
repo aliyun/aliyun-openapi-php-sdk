@@ -27,36 +27,27 @@ class AllocatePublicIpAddressRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $vlanId;
-
-	private  $resourceOwnerAccount;
+	private  $ipAddress;
 
 	private  $resourceOwnerId;
 
-	private  $ownerAccount;
+	private  $instanceId;
 
-	private  $ipAddress;
+	private  $resourceOwnerAccount;
+
+	private  $vlanId;
+
+	private  $ownerAccount;
 
 	private  $ownerId;
 
-	private  $instanceId;
-
-	public function getVlanId() {
-		return $this->vlanId;
+	public function getIpAddress() {
+		return $this->ipAddress;
 	}
 
-	public function setVlanId($vlanId) {
-		$this->vlanId = $vlanId;
-		$this->queryParameters["VlanId"]=$vlanId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setIpAddress($ipAddress) {
+		$this->ipAddress = $ipAddress;
+		$this->queryParameters["IpAddress"]=$ipAddress;
 	}
 
 	public function getResourceOwnerId() {
@@ -68,6 +59,33 @@ class AllocatePublicIpAddressRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getInstanceId() {
+		return $this->instanceId;
+	}
+
+	public function setInstanceId($instanceId) {
+		$this->instanceId = $instanceId;
+		$this->queryParameters["InstanceId"]=$instanceId;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getVlanId() {
+		return $this->vlanId;
+	}
+
+	public function setVlanId($vlanId) {
+		$this->vlanId = $vlanId;
+		$this->queryParameters["VlanId"]=$vlanId;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -77,15 +95,6 @@ class AllocatePublicIpAddressRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getIpAddress() {
-		return $this->ipAddress;
-	}
-
-	public function setIpAddress($ipAddress) {
-		$this->ipAddress = $ipAddress;
-		$this->queryParameters["IpAddress"]=$ipAddress;
-	}
-
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -93,15 +102,6 @@ class AllocatePublicIpAddressRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
-
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 	
 }

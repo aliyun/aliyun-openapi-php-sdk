@@ -27,19 +27,37 @@ class ModifySnapshotAttributeRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $resourceOwnerAccount;
+	private  $resourceOwnerId;
 
 	private  $snapshotId;
+
+	private  $resourceOwnerAccount;
+
+	private  $ownerAccount;
 
 	private  $description;
 
 	private  $snapshotName;
 
-	private  $resourceOwnerId;
-
-	private  $ownerAccount;
-
 	private  $ownerId;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
+	}
+
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getSnapshotId() {
+		return $this->snapshotId;
+	}
+
+	public function setSnapshotId($snapshotId) {
+		$this->snapshotId = $snapshotId;
+		$this->queryParameters["SnapshotId"]=$snapshotId;
+	}
 
 	public function getResourceOwnerAccount() {
 		return $this->resourceOwnerAccount;
@@ -50,13 +68,13 @@ class ModifySnapshotAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getSnapshotId() {
-		return $this->snapshotId;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setSnapshotId($snapshotId) {
-		$this->snapshotId = $snapshotId;
-		$this->queryParameters["SnapshotId"]=$snapshotId;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getDescription() {
@@ -75,24 +93,6 @@ class ModifySnapshotAttributeRequest extends \RpcAcsRequest
 	public function setSnapshotName($snapshotName) {
 		$this->snapshotName = $snapshotName;
 		$this->queryParameters["SnapshotName"]=$snapshotName;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getOwnerId() {

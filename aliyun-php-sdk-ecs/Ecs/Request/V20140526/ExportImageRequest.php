@@ -27,9 +27,9 @@ class ExportImageRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $imageFormat;
+	private  $resourceOwnerId;
 
-	private  $roleName;
+	private  $imageId;
 
 	private  $oSSBucket;
 
@@ -37,28 +37,28 @@ class ExportImageRequest extends \RpcAcsRequest
 
 	private  $oSSPrefix;
 
-	private  $resourceOwnerId;
+	private  $roleName;
 
 	private  $ownerId;
 
-	private  $imageId;
+	private  $imageFormat;
 
-	public function getImageFormat() {
-		return $this->imageFormat;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setImageFormat($imageFormat) {
-		$this->imageFormat = $imageFormat;
-		$this->queryParameters["ImageFormat"]=$imageFormat;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getRoleName() {
-		return $this->roleName;
+	public function getImageId() {
+		return $this->imageId;
 	}
 
-	public function setRoleName($roleName) {
-		$this->roleName = $roleName;
-		$this->queryParameters["RoleName"]=$roleName;
+	public function setImageId($imageId) {
+		$this->imageId = $imageId;
+		$this->queryParameters["ImageId"]=$imageId;
 	}
 
 	public function getOSSBucket() {
@@ -88,13 +88,13 @@ class ExportImageRequest extends \RpcAcsRequest
 		$this->queryParameters["OSSPrefix"]=$oSSPrefix;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getRoleName() {
+		return $this->roleName;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setRoleName($roleName) {
+		$this->roleName = $roleName;
+		$this->queryParameters["RoleName"]=$roleName;
 	}
 
 	public function getOwnerId() {
@@ -106,13 +106,13 @@ class ExportImageRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getImageId() {
-		return $this->imageId;
+	public function getImageFormat() {
+		return $this->imageFormat;
 	}
 
-	public function setImageId($imageId) {
-		$this->imageId = $imageId;
-		$this->queryParameters["ImageId"]=$imageId;
+	public function setImageFormat($imageFormat) {
+		$this->imageFormat = $imageFormat;
+		$this->queryParameters["ImageFormat"]=$imageFormat;
 	}
 	
 }

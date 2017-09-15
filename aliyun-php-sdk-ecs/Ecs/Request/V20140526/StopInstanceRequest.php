@@ -27,27 +27,36 @@ class StopInstanceRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $confirmStop;
+	private  $resourceOwnerId;
+
+	private  $instanceId;
 
 	private  $resourceOwnerAccount;
 
-	private  $forceStop;
-
-	private  $resourceOwnerId;
+	private  $confirmStop;
 
 	private  $ownerAccount;
 
 	private  $ownerId;
 
-	private  $instanceId;
+	private  $forceStop;
 
-	public function getConfirmStop() {
-		return $this->confirmStop;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setConfirmStop($confirmStop) {
-		$this->confirmStop = $confirmStop;
-		$this->queryParameters["ConfirmStop"]=$confirmStop;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getInstanceId() {
+		return $this->instanceId;
+	}
+
+	public function setInstanceId($instanceId) {
+		$this->instanceId = $instanceId;
+		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -59,22 +68,13 @@ class StopInstanceRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getForceStop() {
-		return $this->forceStop;
+	public function getConfirmStop() {
+		return $this->confirmStop;
 	}
 
-	public function setForceStop($forceStop) {
-		$this->forceStop = $forceStop;
-		$this->queryParameters["ForceStop"]=$forceStop;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setConfirmStop($confirmStop) {
+		$this->confirmStop = $confirmStop;
+		$this->queryParameters["ConfirmStop"]=$confirmStop;
 	}
 
 	public function getOwnerAccount() {
@@ -95,13 +95,13 @@ class StopInstanceRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getInstanceId() {
-		return $this->instanceId;
+	public function getForceStop() {
+		return $this->forceStop;
 	}
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
+	public function setForceStop($forceStop) {
+		$this->forceStop = $forceStop;
+		$this->queryParameters["ForceStop"]=$forceStop;
 	}
 	
 }

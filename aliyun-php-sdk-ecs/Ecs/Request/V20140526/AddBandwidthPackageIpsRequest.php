@@ -27,27 +27,36 @@ class AddBandwidthPackageIpsRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $clientToken;
+	private  $resourceOwnerId;
+
+	private  $bandwidthPackageId;
 
 	private  $resourceOwnerAccount;
 
-	private  $ipCount;
-
-	private  $resourceOwnerId;
+	private  $clientToken;
 
 	private  $ownerAccount;
 
 	private  $ownerId;
 
-	private  $bandwidthPackageId;
+	private  $ipCount;
 
-	public function getClientToken() {
-		return $this->clientToken;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getBandwidthPackageId() {
+		return $this->bandwidthPackageId;
+	}
+
+	public function setBandwidthPackageId($bandwidthPackageId) {
+		$this->bandwidthPackageId = $bandwidthPackageId;
+		$this->queryParameters["BandwidthPackageId"]=$bandwidthPackageId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -59,22 +68,13 @@ class AddBandwidthPackageIpsRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getIpCount() {
-		return $this->ipCount;
+	public function getClientToken() {
+		return $this->clientToken;
 	}
 
-	public function setIpCount($ipCount) {
-		$this->ipCount = $ipCount;
-		$this->queryParameters["IpCount"]=$ipCount;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setClientToken($clientToken) {
+		$this->clientToken = $clientToken;
+		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
 	public function getOwnerAccount() {
@@ -95,13 +95,13 @@ class AddBandwidthPackageIpsRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getBandwidthPackageId() {
-		return $this->bandwidthPackageId;
+	public function getIpCount() {
+		return $this->ipCount;
 	}
 
-	public function setBandwidthPackageId($bandwidthPackageId) {
-		$this->bandwidthPackageId = $bandwidthPackageId;
-		$this->queryParameters["BandwidthPackageId"]=$bandwidthPackageId;
+	public function setIpCount($ipCount) {
+		$this->ipCount = $ipCount;
+		$this->queryParameters["IpCount"]=$ipCount;
 	}
 	
 }

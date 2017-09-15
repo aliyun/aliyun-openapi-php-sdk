@@ -27,33 +27,15 @@ class DeleteDiskRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $resourceOwnerAccount;
-
-	private  $diskId;
-
 	private  $resourceOwnerId;
+
+	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
+	private  $diskId;
+
 	private  $ownerId;
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getDiskId() {
-		return $this->diskId;
-	}
-
-	public function setDiskId($diskId) {
-		$this->diskId = $diskId;
-		$this->queryParameters["DiskId"]=$diskId;
-	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -64,6 +46,15 @@ class DeleteDiskRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -71,6 +62,15 @@ class DeleteDiskRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getDiskId() {
+		return $this->diskId;
+	}
+
+	public function setDiskId($diskId) {
+		$this->diskId = $diskId;
+		$this->queryParameters["DiskId"]=$diskId;
 	}
 
 	public function getOwnerId() {

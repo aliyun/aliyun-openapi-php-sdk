@@ -27,13 +27,22 @@ class DeleteKeyPairsRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
+	private  $resourceOwnerId;
+
 	private  $resourceOwnerAccount;
 
 	private  $keyPairNames;
 
-	private  $resourceOwnerId;
-
 	private  $ownerId;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
+	}
+
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
 
 	public function getResourceOwnerAccount() {
 		return $this->resourceOwnerAccount;
@@ -51,15 +60,6 @@ class DeleteKeyPairsRequest extends \RpcAcsRequest
 	public function setKeyPairNames($keyPairNames) {
 		$this->keyPairNames = $keyPairNames;
 		$this->queryParameters["KeyPairNames"]=$keyPairNames;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getOwnerId() {

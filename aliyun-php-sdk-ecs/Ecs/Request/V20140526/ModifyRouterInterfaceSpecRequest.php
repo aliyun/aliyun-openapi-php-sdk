@@ -27,38 +27,29 @@ class ModifyRouterInterfaceSpecRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $spec;
-
-	private  $clientToken;
+	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
-	private  $routerInterfaceId;
-
-	private  $userCidr;
-
-	private  $resourceOwnerId;
+	private  $clientToken;
 
 	private  $ownerAccount;
 
+	private  $userCidr;
+
+	private  $routerInterfaceId;
+
 	private  $ownerId;
 
-	public function getSpec() {
-		return $this->spec;
+	private  $spec;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setSpec($spec) {
-		$this->spec = $spec;
-		$this->queryParameters["Spec"]=$spec;
-	}
-
-	public function getClientToken() {
-		return $this->clientToken;
-	}
-
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -70,31 +61,13 @@ class ModifyRouterInterfaceSpecRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getRouterInterfaceId() {
-		return $this->routerInterfaceId;
+	public function getClientToken() {
+		return $this->clientToken;
 	}
 
-	public function setRouterInterfaceId($routerInterfaceId) {
-		$this->routerInterfaceId = $routerInterfaceId;
-		$this->queryParameters["RouterInterfaceId"]=$routerInterfaceId;
-	}
-
-	public function getUserCidr() {
-		return $this->userCidr;
-	}
-
-	public function setUserCidr($userCidr) {
-		$this->userCidr = $userCidr;
-		$this->queryParameters["UserCidr"]=$userCidr;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setClientToken($clientToken) {
+		$this->clientToken = $clientToken;
+		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
 	public function getOwnerAccount() {
@@ -106,6 +79,24 @@ class ModifyRouterInterfaceSpecRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
+	public function getUserCidr() {
+		return $this->userCidr;
+	}
+
+	public function setUserCidr($userCidr) {
+		$this->userCidr = $userCidr;
+		$this->queryParameters["UserCidr"]=$userCidr;
+	}
+
+	public function getRouterInterfaceId() {
+		return $this->routerInterfaceId;
+	}
+
+	public function setRouterInterfaceId($routerInterfaceId) {
+		$this->routerInterfaceId = $routerInterfaceId;
+		$this->queryParameters["RouterInterfaceId"]=$routerInterfaceId;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -113,6 +104,15 @@ class ModifyRouterInterfaceSpecRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getSpec() {
+		return $this->spec;
+	}
+
+	public function setSpec($spec) {
+		$this->spec = $spec;
+		$this->queryParameters["Spec"]=$spec;
 	}
 	
 }

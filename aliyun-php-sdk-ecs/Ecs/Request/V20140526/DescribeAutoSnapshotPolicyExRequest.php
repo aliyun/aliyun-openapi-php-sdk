@@ -27,27 +27,27 @@ class DescribeAutoSnapshotPolicyExRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $pageSize;
+	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
-	private  $pageNumber;
-
 	private  $autoSnapshotPolicyId;
-
-	private  $resourceOwnerId;
 
 	private  $ownerAccount;
 
+	private  $pageSize;
+
 	private  $ownerId;
 
-	public function getPageSize() {
-		return $this->pageSize;
+	private  $pageNumber;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -59,15 +59,6 @@ class DescribeAutoSnapshotPolicyExRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
 	public function getAutoSnapshotPolicyId() {
 		return $this->autoSnapshotPolicyId;
 	}
@@ -75,15 +66,6 @@ class DescribeAutoSnapshotPolicyExRequest extends \RpcAcsRequest
 	public function setAutoSnapshotPolicyId($autoSnapshotPolicyId) {
 		$this->autoSnapshotPolicyId = $autoSnapshotPolicyId;
 		$this->queryParameters["AutoSnapshotPolicyId"]=$autoSnapshotPolicyId;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getOwnerAccount() {
@@ -95,6 +77,15 @@ class DescribeAutoSnapshotPolicyExRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -102,6 +93,15 @@ class DescribeAutoSnapshotPolicyExRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getPageNumber() {
+		return $this->pageNumber;
+	}
+
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 	
 }

@@ -29,17 +29,17 @@ class ModifyInstanceAutoRenewAttributeRequest extends \RpcAcsRequest
 
 	private  $duration;
 
-	private  $resourceOwnerAccount;
-
 	private  $resourceOwnerId;
 
+	private  $instanceId;
+
 	private  $autoRenew;
+
+	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
 	private  $ownerId;
-
-	private  $instanceId;
 
 	public function getDuration() {
 		return $this->duration;
@@ -48,15 +48,6 @@ class ModifyInstanceAutoRenewAttributeRequest extends \RpcAcsRequest
 	public function setDuration($duration) {
 		$this->duration = $duration;
 		$this->queryParameters["Duration"]=$duration;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
 	public function getResourceOwnerId() {
@@ -68,6 +59,15 @@ class ModifyInstanceAutoRenewAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getInstanceId() {
+		return $this->instanceId;
+	}
+
+	public function setInstanceId($instanceId) {
+		$this->instanceId = $instanceId;
+		$this->queryParameters["InstanceId"]=$instanceId;
+	}
+
 	public function getAutoRenew() {
 		return $this->autoRenew;
 	}
@@ -75,6 +75,15 @@ class ModifyInstanceAutoRenewAttributeRequest extends \RpcAcsRequest
 	public function setAutoRenew($autoRenew) {
 		$this->autoRenew = $autoRenew;
 		$this->queryParameters["AutoRenew"]=$autoRenew;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
 	public function getOwnerAccount() {
@@ -93,15 +102,6 @@ class ModifyInstanceAutoRenewAttributeRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
-
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 	
 }

@@ -31,15 +31,15 @@ class ModifyInstanceVpcAttributeRequest extends \RpcAcsRequest
 
 	private  $privateIpAddress;
 
-	private  $resourceOwnerAccount;
-
 	private  $resourceOwnerId;
+
+	private  $instanceId;
+
+	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
 	private  $ownerId;
-
-	private  $instanceId;
 
 	public function getVSwitchId() {
 		return $this->vSwitchId;
@@ -59,15 +59,6 @@ class ModifyInstanceVpcAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["PrivateIpAddress"]=$privateIpAddress;
 	}
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
 	}
@@ -75,6 +66,24 @@ class ModifyInstanceVpcAttributeRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getInstanceId() {
+		return $this->instanceId;
+	}
+
+	public function setInstanceId($instanceId) {
+		$this->instanceId = $instanceId;
+		$this->queryParameters["InstanceId"]=$instanceId;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
 	public function getOwnerAccount() {
@@ -93,15 +102,6 @@ class ModifyInstanceVpcAttributeRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
-
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 	
 }

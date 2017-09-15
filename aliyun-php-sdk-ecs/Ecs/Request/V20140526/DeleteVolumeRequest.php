@@ -27,33 +27,15 @@ class DeleteVolumeRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $resourceOwnerAccount;
-
-	private  $volumeId;
-
 	private  $resourceOwnerId;
+
+	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
+	private  $volumeId;
+
 	private  $ownerId;
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getVolumeId() {
-		return $this->volumeId;
-	}
-
-	public function setVolumeId($volumeId) {
-		$this->volumeId = $volumeId;
-		$this->queryParameters["VolumeId"]=$volumeId;
-	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -64,6 +46,15 @@ class DeleteVolumeRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -71,6 +62,15 @@ class DeleteVolumeRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getVolumeId() {
+		return $this->volumeId;
+	}
+
+	public function setVolumeId($volumeId) {
+		$this->volumeId = $volumeId;
+		$this->queryParameters["VolumeId"]=$volumeId;
 	}
 
 	public function getOwnerId() {

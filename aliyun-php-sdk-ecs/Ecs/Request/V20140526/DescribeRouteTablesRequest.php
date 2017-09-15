@@ -27,70 +27,25 @@ class DescribeRouteTablesRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $pageSize;
-
-	private  $resourceOwnerAccount;
-
-	private  $pageNumber;
-
-	private  $vRouterId;
-
-	private  $routerId;
-
 	private  $routerType;
-
-	private  $routeTableId;
 
 	private  $resourceOwnerId;
 
+	private  $vRouterId;
+
+	private  $resourceOwnerAccount;
+
+	private  $routerId;
+
 	private  $ownerAccount;
+
+	private  $pageSize;
 
 	private  $ownerId;
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
+	private  $pageNumber;
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
-	public function getVRouterId() {
-		return $this->vRouterId;
-	}
-
-	public function setVRouterId($vRouterId) {
-		$this->vRouterId = $vRouterId;
-		$this->queryParameters["VRouterId"]=$vRouterId;
-	}
-
-	public function getRouterId() {
-		return $this->routerId;
-	}
-
-	public function setRouterId($routerId) {
-		$this->routerId = $routerId;
-		$this->queryParameters["RouterId"]=$routerId;
-	}
+	private  $routeTableId;
 
 	public function getRouterType() {
 		return $this->routerType;
@@ -99,15 +54,6 @@ class DescribeRouteTablesRequest extends \RpcAcsRequest
 	public function setRouterType($routerType) {
 		$this->routerType = $routerType;
 		$this->queryParameters["RouterType"]=$routerType;
-	}
-
-	public function getRouteTableId() {
-		return $this->routeTableId;
-	}
-
-	public function setRouteTableId($routeTableId) {
-		$this->routeTableId = $routeTableId;
-		$this->queryParameters["RouteTableId"]=$routeTableId;
 	}
 
 	public function getResourceOwnerId() {
@@ -119,6 +65,33 @@ class DescribeRouteTablesRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getVRouterId() {
+		return $this->vRouterId;
+	}
+
+	public function setVRouterId($vRouterId) {
+		$this->vRouterId = $vRouterId;
+		$this->queryParameters["VRouterId"]=$vRouterId;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getRouterId() {
+		return $this->routerId;
+	}
+
+	public function setRouterId($routerId) {
+		$this->routerId = $routerId;
+		$this->queryParameters["RouterId"]=$routerId;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -128,6 +101,15 @@ class DescribeRouteTablesRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -135,6 +117,24 @@ class DescribeRouteTablesRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getPageNumber() {
+		return $this->pageNumber;
+	}
+
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
+	}
+
+	public function getRouteTableId() {
+		return $this->routeTableId;
+	}
+
+	public function setRouteTableId($routeTableId) {
+		$this->routeTableId = $routeTableId;
+		$this->queryParameters["RouteTableId"]=$routeTableId;
 	}
 	
 }

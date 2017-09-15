@@ -27,21 +27,21 @@ class CancelAutoSnapshotPolicyRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $diskIds;
+	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
-	private  $resourceOwnerId;
+	private  $diskIds;
 
 	private  $ownerId;
 
-	public function getdiskIds() {
-		return $this->diskIds;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setdiskIds($diskIds) {
-		$this->diskIds = $diskIds;
-		$this->queryParameters["diskIds"]=$diskIds;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -53,13 +53,13 @@ class CancelAutoSnapshotPolicyRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getdiskIds() {
+		return $this->diskIds;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setdiskIds($diskIds) {
+		$this->diskIds = $diskIds;
+		$this->queryParameters["diskIds"]=$diskIds;
 	}
 
 	public function getOwnerId() {

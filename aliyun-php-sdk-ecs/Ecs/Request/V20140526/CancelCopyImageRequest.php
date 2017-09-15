@@ -27,24 +27,15 @@ class CancelCopyImageRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $resourceOwnerAccount;
-
 	private  $resourceOwnerId;
+
+	private  $imageId;
+
+	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
 	private  $ownerId;
-
-	private  $imageId;
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -53,6 +44,24 @@ class CancelCopyImageRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getImageId() {
+		return $this->imageId;
+	}
+
+	public function setImageId($imageId) {
+		$this->imageId = $imageId;
+		$this->queryParameters["ImageId"]=$imageId;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
 	public function getOwnerAccount() {
@@ -71,15 +80,6 @@ class CancelCopyImageRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getImageId() {
-		return $this->imageId;
-	}
-
-	public function setImageId($imageId) {
-		$this->imageId = $imageId;
-		$this->queryParameters["ImageId"]=$imageId;
 	}
 	
 }

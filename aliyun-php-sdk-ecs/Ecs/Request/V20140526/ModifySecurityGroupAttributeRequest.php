@@ -27,27 +27,27 @@ class ModifySecurityGroupAttributeRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $securityGroupName;
+	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
+
+	private  $ownerAccount;
 
 	private  $securityGroupId;
 
 	private  $description;
 
-	private  $resourceOwnerId;
-
-	private  $ownerAccount;
-
 	private  $ownerId;
 
-	public function getSecurityGroupName() {
-		return $this->securityGroupName;
+	private  $securityGroupName;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setSecurityGroupName($securityGroupName) {
-		$this->securityGroupName = $securityGroupName;
-		$this->queryParameters["SecurityGroupName"]=$securityGroupName;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -57,6 +57,15 @@ class ModifySecurityGroupAttributeRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getSecurityGroupId() {
@@ -77,24 +86,6 @@ class ModifySecurityGroupAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["Description"]=$description;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -102,6 +93,15 @@ class ModifySecurityGroupAttributeRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getSecurityGroupName() {
+		return $this->securityGroupName;
+	}
+
+	public function setSecurityGroupName($securityGroupName) {
+		$this->securityGroupName = $securityGroupName;
+		$this->queryParameters["SecurityGroupName"]=$securityGroupName;
 	}
 	
 }

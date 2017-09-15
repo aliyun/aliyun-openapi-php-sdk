@@ -27,27 +27,36 @@ class DescribeClassicLinkInstancesRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $pageSize;
-
-	private  $resourceOwnerAccount;
-
-	private  $pageNumber;
-
 	private  $resourceOwnerId;
-
-	private  $vpcId;
-
-	private  $ownerId;
 
 	private  $instanceId;
 
-	public function getPageSize() {
-		return $this->pageSize;
+	private  $resourceOwnerAccount;
+
+	private  $vpcId;
+
+	private  $pageSize;
+
+	private  $ownerId;
+
+	private  $pageNumber;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getInstanceId() {
+		return $this->instanceId;
+	}
+
+	public function setInstanceId($instanceId) {
+		$this->instanceId = $instanceId;
+		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -59,24 +68,6 @@ class DescribeClassicLinkInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
 	public function getVpcId() {
 		return $this->vpcId;
 	}
@@ -84,6 +75,15 @@ class DescribeClassicLinkInstancesRequest extends \RpcAcsRequest
 	public function setVpcId($vpcId) {
 		$this->vpcId = $vpcId;
 		$this->queryParameters["VpcId"]=$vpcId;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
 	public function getOwnerId() {
@@ -95,13 +95,13 @@ class DescribeClassicLinkInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getInstanceId() {
-		return $this->instanceId;
+	public function getPageNumber() {
+		return $this->pageNumber;
 	}
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 	
 }

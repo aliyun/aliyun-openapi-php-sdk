@@ -27,64 +27,64 @@ class DescribeDeploymentSetsRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $pageSize;
+	private  $resourceOwnerId;
 
-	private  $deploymentSetIds;
+	private  $resourceOwnerAccount;
 
-	private  $pageNumber;
+	private  $ownerAccount;
 
-	private  $strategy;
+	private  $networkType;
 
 	private  $deploymentSetName;
 
 	private  $ownerId;
 
-	private  $networkType;
+	private  $pageNumber;
 
-	private  $resourceOwnerAccount;
+	private  $deploymentSetIds;
 
 	private  $granularity;
 
 	private  $domain;
 
-	private  $resourceOwnerId;
+	private  $pageSize;
 
-	private  $ownerAccount;
+	private  $strategy;
 
-	public function getPageSize() {
-		return $this->pageSize;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getDeploymentSetIds() {
-		return $this->deploymentSetIds;
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
 	}
 
-	public function setDeploymentSetIds($deploymentSetIds) {
-		$this->deploymentSetIds = $deploymentSetIds;
-		$this->queryParameters["DeploymentSetIds"]=$deploymentSetIds;
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getPageNumber() {
-		return $this->pageNumber;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getStrategy() {
-		return $this->strategy;
+	public function getNetworkType() {
+		return $this->networkType;
 	}
 
-	public function setStrategy($strategy) {
-		$this->strategy = $strategy;
-		$this->queryParameters["Strategy"]=$strategy;
+	public function setNetworkType($networkType) {
+		$this->networkType = $networkType;
+		$this->queryParameters["NetworkType"]=$networkType;
 	}
 
 	public function getDeploymentSetName() {
@@ -105,22 +105,22 @@ class DescribeDeploymentSetsRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getNetworkType() {
-		return $this->networkType;
+	public function getPageNumber() {
+		return $this->pageNumber;
 	}
 
-	public function setNetworkType($networkType) {
-		$this->networkType = $networkType;
-		$this->queryParameters["NetworkType"]=$networkType;
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
+	public function getDeploymentSetIds() {
+		return $this->deploymentSetIds;
 	}
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setDeploymentSetIds($deploymentSetIds) {
+		$this->deploymentSetIds = $deploymentSetIds;
+		$this->queryParameters["DeploymentSetIds"]=$deploymentSetIds;
 	}
 
 	public function getGranularity() {
@@ -141,22 +141,22 @@ class DescribeDeploymentSetsRequest extends \RpcAcsRequest
 		$this->queryParameters["Domain"]=$domain;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getPageSize() {
+		return $this->pageSize;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getStrategy() {
+		return $this->strategy;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setStrategy($strategy) {
+		$this->strategy = $strategy;
+		$this->queryParameters["Strategy"]=$strategy;
 	}
 	
 }

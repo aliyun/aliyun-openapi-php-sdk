@@ -27,80 +27,35 @@ class DescribeTasksRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $endTime;
-
-	private  $pageSize;
-
-	private  $startTime;
-
-	private  $pageNumber;
-
-	private  $ownerId;
-
-	private  $taskAction;
+	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
+	private  $ownerAccount;
+
+	private  $endTime;
+
+	private  $startTime;
+
+	private  $ownerId;
+
 	private  $taskIds;
+
+	private  $pageNumber;
 
 	private  $taskStatus;
 
-	private  $resourceOwnerId;
+	private  $pageSize;
 
-	private  $ownerAccount;
+	private  $taskAction;
 
-	public function getEndTime() {
-		return $this->endTime;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getTaskAction() {
-		return $this->taskAction;
-	}
-
-	public function setTaskAction($taskAction) {
-		$this->taskAction = $taskAction;
-		$this->queryParameters["TaskAction"]=$taskAction;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -112,6 +67,42 @@ class DescribeTasksRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
 	public function getTaskIds() {
 		return $this->taskIds;
 	}
@@ -119,6 +110,15 @@ class DescribeTasksRequest extends \RpcAcsRequest
 	public function setTaskIds($taskIds) {
 		$this->taskIds = $taskIds;
 		$this->queryParameters["TaskIds"]=$taskIds;
+	}
+
+	public function getPageNumber() {
+		return $this->pageNumber;
+	}
+
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 
 	public function getTaskStatus() {
@@ -130,22 +130,22 @@ class DescribeTasksRequest extends \RpcAcsRequest
 		$this->queryParameters["TaskStatus"]=$taskStatus;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getPageSize() {
+		return $this->pageSize;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getTaskAction() {
+		return $this->taskAction;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setTaskAction($taskAction) {
+		$this->taskAction = $taskAction;
+		$this->queryParameters["TaskAction"]=$taskAction;
 	}
 	
 }

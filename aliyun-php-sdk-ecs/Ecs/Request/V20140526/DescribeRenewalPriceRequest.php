@@ -27,48 +27,21 @@ class DescribeRenewalPriceRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $resourceOwnerAccount;
-
-	private  $resourceType;
-
-	private  $priceUnit;
-
 	private  $resourceOwnerId;
-
-	private  $period;
 
 	private  $resourceId;
 
+	private  $period;
+
+	private  $resourceOwnerAccount;
+
 	private  $ownerAccount;
+
+	private  $priceUnit;
 
 	private  $ownerId;
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getResourceType() {
-		return $this->resourceType;
-	}
-
-	public function setResourceType($resourceType) {
-		$this->resourceType = $resourceType;
-		$this->queryParameters["ResourceType"]=$resourceType;
-	}
-
-	public function getPriceUnit() {
-		return $this->priceUnit;
-	}
-
-	public function setPriceUnit($priceUnit) {
-		$this->priceUnit = $priceUnit;
-		$this->queryParameters["PriceUnit"]=$priceUnit;
-	}
+	private  $resourceType;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -77,15 +50,6 @@ class DescribeRenewalPriceRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getPeriod() {
-		return $this->period;
-	}
-
-	public function setPeriod($period) {
-		$this->period = $period;
-		$this->queryParameters["Period"]=$period;
 	}
 
 	public function getResourceId() {
@@ -97,6 +61,24 @@ class DescribeRenewalPriceRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceId"]=$resourceId;
 	}
 
+	public function getPeriod() {
+		return $this->period;
+	}
+
+	public function setPeriod($period) {
+		$this->period = $period;
+		$this->queryParameters["Period"]=$period;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -106,6 +88,15 @@ class DescribeRenewalPriceRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
+	public function getPriceUnit() {
+		return $this->priceUnit;
+	}
+
+	public function setPriceUnit($priceUnit) {
+		$this->priceUnit = $priceUnit;
+		$this->queryParameters["PriceUnit"]=$priceUnit;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -113,6 +104,15 @@ class DescribeRenewalPriceRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getResourceType() {
+		return $this->resourceType;
+	}
+
+	public function setResourceType($resourceType) {
+		$this->resourceType = $resourceType;
+		$this->queryParameters["ResourceType"]=$resourceType;
 	}
 	
 }

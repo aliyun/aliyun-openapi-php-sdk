@@ -27,36 +27,27 @@ class EipNotifyPaidRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $clientToken;
-
-	private  $resourceOwnerAccount;
+	private  $resourceOwnerId;
 
 	private  $data;
 
-	private  $userCidr;
+	private  $resourceOwnerAccount;
 
-	private  $resourceOwnerId;
+	private  $clientToken;
 
 	private  $ownerAccount;
 
+	private  $userCidr;
+
 	private  $ownerId;
 
-	public function getClientToken() {
-		return $this->clientToken;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getdata() {
@@ -68,22 +59,22 @@ class EipNotifyPaidRequest extends \RpcAcsRequest
 		$this->queryParameters["data"]=$data;
 	}
 
-	public function getUserCidr() {
-		return $this->userCidr;
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
 	}
 
-	public function setUserCidr($userCidr) {
-		$this->userCidr = $userCidr;
-		$this->queryParameters["UserCidr"]=$userCidr;
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getClientToken() {
+		return $this->clientToken;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setClientToken($clientToken) {
+		$this->clientToken = $clientToken;
+		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
 	public function getOwnerAccount() {
@@ -93,6 +84,15 @@ class EipNotifyPaidRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getUserCidr() {
+		return $this->userCidr;
+	}
+
+	public function setUserCidr($userCidr) {
+		$this->userCidr = $userCidr;
+		$this->queryParameters["UserCidr"]=$userCidr;
 	}
 
 	public function getOwnerId() {

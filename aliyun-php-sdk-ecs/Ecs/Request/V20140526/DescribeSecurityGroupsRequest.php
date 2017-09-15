@@ -27,149 +27,59 @@ class DescribeSecurityGroupsRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $securityGroupName;
-
-	private  $pageSize;
-
-	private  $isQueryEcsCount;
-
-	private  $securityGroupIds;
-
-	private  $networkType;
-
-	private  $fuzzyQuery;
-
-	private  $tag3Key;
-
-	private  $tag5Value;
-
-	private  $resourceOwnerAccount;
-
-	private  $tag1Key;
-
-	private  $tag1Value;
+	private  $tag4Value;
 
 	private  $resourceOwnerId;
 
-	private  $ownerAccount;
+	private  $tag2Key;
 
-	private  $tag4Value;
-
-	private  $pageNumber;
+	private  $fuzzyQuery;
 
 	private  $securityGroupId;
 
-	private  $ownerId;
+	private  $tag3Key;
 
-	private  $tag5Key;
+	private  $isQueryEcsCount;
 
-	private  $tag2Key;
+	private  $networkType;
 
-	private  $vpcId;
+	private  $securityGroupName;
+
+	private  $pageNumber;
+
+	private  $tag1Value;
+
+	private  $pageSize;
 
 	private  $tag3Value;
 
-	private  $tag4Key;
+	private  $tag5Key;
+
+	private  $resourceOwnerAccount;
+
+	private  $ownerAccount;
+
+	private  $ownerId;
+
+	private  $securityGroupIds;
+
+	private  $tag5Value;
+
+	private  $tag1Key;
+
+	private  $vpcId;
 
 	private  $tag2Value;
 
-	public function getSecurityGroupName() {
-		return $this->securityGroupName;
+	private  $tag4Key;
+
+	public function getTag4Value() {
+		return $this->tag4Value;
 	}
 
-	public function setSecurityGroupName($securityGroupName) {
-		$this->securityGroupName = $securityGroupName;
-		$this->queryParameters["SecurityGroupName"]=$securityGroupName;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getIsQueryEcsCount() {
-		return $this->isQueryEcsCount;
-	}
-
-	public function setIsQueryEcsCount($isQueryEcsCount) {
-		$this->isQueryEcsCount = $isQueryEcsCount;
-		$this->queryParameters["IsQueryEcsCount"]=$isQueryEcsCount;
-	}
-
-	public function getSecurityGroupIds() {
-		return $this->securityGroupIds;
-	}
-
-	public function setSecurityGroupIds($securityGroupIds) {
-		$this->securityGroupIds = $securityGroupIds;
-		$this->queryParameters["SecurityGroupIds"]=$securityGroupIds;
-	}
-
-	public function getNetworkType() {
-		return $this->networkType;
-	}
-
-	public function setNetworkType($networkType) {
-		$this->networkType = $networkType;
-		$this->queryParameters["NetworkType"]=$networkType;
-	}
-
-	public function getFuzzyQuery() {
-		return $this->fuzzyQuery;
-	}
-
-	public function setFuzzyQuery($fuzzyQuery) {
-		$this->fuzzyQuery = $fuzzyQuery;
-		$this->queryParameters["FuzzyQuery"]=$fuzzyQuery;
-	}
-
-	public function getTag3Key() {
-		return $this->tag3Key;
-	}
-
-	public function setTag3Key($tag3Key) {
-		$this->tag3Key = $tag3Key;
-		$this->queryParameters["Tag.3.Key"]=$tag3Key;
-	}
-
-	public function getTag5Value() {
-		return $this->tag5Value;
-	}
-
-	public function setTag5Value($tag5Value) {
-		$this->tag5Value = $tag5Value;
-		$this->queryParameters["Tag.5.Value"]=$tag5Value;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getTag1Key() {
-		return $this->tag1Key;
-	}
-
-	public function setTag1Key($tag1Key) {
-		$this->tag1Key = $tag1Key;
-		$this->queryParameters["Tag.1.Key"]=$tag1Key;
-	}
-
-	public function getTag1Value() {
-		return $this->tag1Value;
-	}
-
-	public function setTag1Value($tag1Value) {
-		$this->tag1Value = $tag1Value;
-		$this->queryParameters["Tag.1.Value"]=$tag1Value;
+	public function setTag4Value($tag4Value) {
+		$this->tag4Value = $tag4Value;
+		$this->queryParameters["Tag.4.Value"]=$tag4Value;
 	}
 
 	public function getResourceOwnerId() {
@@ -181,31 +91,22 @@ class DescribeSecurityGroupsRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getTag2Key() {
+		return $this->tag2Key;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setTag2Key($tag2Key) {
+		$this->tag2Key = $tag2Key;
+		$this->queryParameters["Tag.2.Key"]=$tag2Key;
 	}
 
-	public function getTag4Value() {
-		return $this->tag4Value;
+	public function getFuzzyQuery() {
+		return $this->fuzzyQuery;
 	}
 
-	public function setTag4Value($tag4Value) {
-		$this->tag4Value = $tag4Value;
-		$this->queryParameters["Tag.4.Value"]=$tag4Value;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
+	public function setFuzzyQuery($fuzzyQuery) {
+		$this->fuzzyQuery = $fuzzyQuery;
+		$this->queryParameters["FuzzyQuery"]=$fuzzyQuery;
 	}
 
 	public function getSecurityGroupId() {
@@ -217,40 +118,67 @@ class DescribeSecurityGroupsRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityGroupId"]=$securityGroupId;
 	}
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getTag3Key() {
+		return $this->tag3Key;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setTag3Key($tag3Key) {
+		$this->tag3Key = $tag3Key;
+		$this->queryParameters["Tag.3.Key"]=$tag3Key;
 	}
 
-	public function getTag5Key() {
-		return $this->tag5Key;
+	public function getIsQueryEcsCount() {
+		return $this->isQueryEcsCount;
 	}
 
-	public function setTag5Key($tag5Key) {
-		$this->tag5Key = $tag5Key;
-		$this->queryParameters["Tag.5.Key"]=$tag5Key;
+	public function setIsQueryEcsCount($isQueryEcsCount) {
+		$this->isQueryEcsCount = $isQueryEcsCount;
+		$this->queryParameters["IsQueryEcsCount"]=$isQueryEcsCount;
 	}
 
-	public function getTag2Key() {
-		return $this->tag2Key;
+	public function getNetworkType() {
+		return $this->networkType;
 	}
 
-	public function setTag2Key($tag2Key) {
-		$this->tag2Key = $tag2Key;
-		$this->queryParameters["Tag.2.Key"]=$tag2Key;
+	public function setNetworkType($networkType) {
+		$this->networkType = $networkType;
+		$this->queryParameters["NetworkType"]=$networkType;
 	}
 
-	public function getVpcId() {
-		return $this->vpcId;
+	public function getSecurityGroupName() {
+		return $this->securityGroupName;
 	}
 
-	public function setVpcId($vpcId) {
-		$this->vpcId = $vpcId;
-		$this->queryParameters["VpcId"]=$vpcId;
+	public function setSecurityGroupName($securityGroupName) {
+		$this->securityGroupName = $securityGroupName;
+		$this->queryParameters["SecurityGroupName"]=$securityGroupName;
+	}
+
+	public function getPageNumber() {
+		return $this->pageNumber;
+	}
+
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
+	}
+
+	public function getTag1Value() {
+		return $this->tag1Value;
+	}
+
+	public function setTag1Value($tag1Value) {
+		$this->tag1Value = $tag1Value;
+		$this->queryParameters["Tag.1.Value"]=$tag1Value;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
 	public function getTag3Value() {
@@ -262,13 +190,76 @@ class DescribeSecurityGroupsRequest extends \RpcAcsRequest
 		$this->queryParameters["Tag.3.Value"]=$tag3Value;
 	}
 
-	public function getTag4Key() {
-		return $this->tag4Key;
+	public function getTag5Key() {
+		return $this->tag5Key;
 	}
 
-	public function setTag4Key($tag4Key) {
-		$this->tag4Key = $tag4Key;
-		$this->queryParameters["Tag.4.Key"]=$tag4Key;
+	public function setTag5Key($tag5Key) {
+		$this->tag5Key = $tag5Key;
+		$this->queryParameters["Tag.5.Key"]=$tag5Key;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getSecurityGroupIds() {
+		return $this->securityGroupIds;
+	}
+
+	public function setSecurityGroupIds($securityGroupIds) {
+		$this->securityGroupIds = $securityGroupIds;
+		$this->queryParameters["SecurityGroupIds"]=$securityGroupIds;
+	}
+
+	public function getTag5Value() {
+		return $this->tag5Value;
+	}
+
+	public function setTag5Value($tag5Value) {
+		$this->tag5Value = $tag5Value;
+		$this->queryParameters["Tag.5.Value"]=$tag5Value;
+	}
+
+	public function getTag1Key() {
+		return $this->tag1Key;
+	}
+
+	public function setTag1Key($tag1Key) {
+		$this->tag1Key = $tag1Key;
+		$this->queryParameters["Tag.1.Key"]=$tag1Key;
+	}
+
+	public function getVpcId() {
+		return $this->vpcId;
+	}
+
+	public function setVpcId($vpcId) {
+		$this->vpcId = $vpcId;
+		$this->queryParameters["VpcId"]=$vpcId;
 	}
 
 	public function getTag2Value() {
@@ -278,6 +269,15 @@ class DescribeSecurityGroupsRequest extends \RpcAcsRequest
 	public function setTag2Value($tag2Value) {
 		$this->tag2Value = $tag2Value;
 		$this->queryParameters["Tag.2.Value"]=$tag2Value;
+	}
+
+	public function getTag4Key() {
+		return $this->tag4Key;
+	}
+
+	public function setTag4Key($tag4Key) {
+		$this->tag4Key = $tag4Key;
+		$this->queryParameters["Tag.4.Key"]=$tag4Key;
 	}
 	
 }

@@ -27,17 +27,35 @@ class ModifyBandwidthPackageSpecRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
+	private  $resourceOwnerId;
+
+	private  $bandwidthPackageId;
+
 	private  $resourceOwnerAccount;
 
-	private  $resourceOwnerId;
+	private  $bandwidth;
 
 	private  $ownerAccount;
 
 	private  $ownerId;
 
-	private  $bandwidth;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
+	}
 
-	private  $bandwidthPackageId;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getBandwidthPackageId() {
+		return $this->bandwidthPackageId;
+	}
+
+	public function setBandwidthPackageId($bandwidthPackageId) {
+		$this->bandwidthPackageId = $bandwidthPackageId;
+		$this->queryParameters["BandwidthPackageId"]=$bandwidthPackageId;
+	}
 
 	public function getResourceOwnerAccount() {
 		return $this->resourceOwnerAccount;
@@ -48,13 +66,13 @@ class ModifyBandwidthPackageSpecRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getBandwidth() {
+		return $this->bandwidth;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setBandwidth($bandwidth) {
+		$this->bandwidth = $bandwidth;
+		$this->queryParameters["Bandwidth"]=$bandwidth;
 	}
 
 	public function getOwnerAccount() {
@@ -73,24 +91,6 @@ class ModifyBandwidthPackageSpecRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getBandwidth() {
-		return $this->bandwidth;
-	}
-
-	public function setBandwidth($bandwidth) {
-		$this->bandwidth = $bandwidth;
-		$this->queryParameters["Bandwidth"]=$bandwidth;
-	}
-
-	public function getBandwidthPackageId() {
-		return $this->bandwidthPackageId;
-	}
-
-	public function setBandwidthPackageId($bandwidthPackageId) {
-		$this->bandwidthPackageId = $bandwidthPackageId;
-		$this->queryParameters["BandwidthPackageId"]=$bandwidthPackageId;
 	}
 	
 }

@@ -27,27 +27,27 @@ class DescribeKeyPairsRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $pageSize;
+	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
-	private  $pageNumber;
-
 	private  $keyPairFingerPrint;
+
+	private  $pageSize;
 
 	private  $keyPairName;
 
-	private  $resourceOwnerId;
-
 	private  $ownerId;
 
-	public function getPageSize() {
-		return $this->pageSize;
+	private  $pageNumber;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -59,15 +59,6 @@ class DescribeKeyPairsRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
 	public function getKeyPairFingerPrint() {
 		return $this->keyPairFingerPrint;
 	}
@@ -75,6 +66,15 @@ class DescribeKeyPairsRequest extends \RpcAcsRequest
 	public function setKeyPairFingerPrint($keyPairFingerPrint) {
 		$this->keyPairFingerPrint = $keyPairFingerPrint;
 		$this->queryParameters["KeyPairFingerPrint"]=$keyPairFingerPrint;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
 	public function getKeyPairName() {
@@ -86,15 +86,6 @@ class DescribeKeyPairsRequest extends \RpcAcsRequest
 		$this->queryParameters["KeyPairName"]=$keyPairName;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -102,6 +93,15 @@ class DescribeKeyPairsRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getPageNumber() {
+		return $this->pageNumber;
+	}
+
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 	
 }

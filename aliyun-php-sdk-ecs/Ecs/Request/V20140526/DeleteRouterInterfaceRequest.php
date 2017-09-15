@@ -27,27 +27,27 @@ class DeleteRouterInterfaceRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $clientToken;
+	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
-	private  $routerInterfaceId;
-
-	private  $userCidr;
-
-	private  $resourceOwnerId;
+	private  $clientToken;
 
 	private  $ownerAccount;
 
+	private  $userCidr;
+
+	private  $routerInterfaceId;
+
 	private  $ownerId;
 
-	public function getClientToken() {
-		return $this->clientToken;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -59,13 +59,22 @@ class DeleteRouterInterfaceRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getRouterInterfaceId() {
-		return $this->routerInterfaceId;
+	public function getClientToken() {
+		return $this->clientToken;
 	}
 
-	public function setRouterInterfaceId($routerInterfaceId) {
-		$this->routerInterfaceId = $routerInterfaceId;
-		$this->queryParameters["RouterInterfaceId"]=$routerInterfaceId;
+	public function setClientToken($clientToken) {
+		$this->clientToken = $clientToken;
+		$this->queryParameters["ClientToken"]=$clientToken;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getUserCidr() {
@@ -77,22 +86,13 @@ class DeleteRouterInterfaceRequest extends \RpcAcsRequest
 		$this->queryParameters["UserCidr"]=$userCidr;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getRouterInterfaceId() {
+		return $this->routerInterfaceId;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setRouterInterfaceId($routerInterfaceId) {
+		$this->routerInterfaceId = $routerInterfaceId;
+		$this->queryParameters["RouterInterfaceId"]=$routerInterfaceId;
 	}
 
 	public function getOwnerId() {

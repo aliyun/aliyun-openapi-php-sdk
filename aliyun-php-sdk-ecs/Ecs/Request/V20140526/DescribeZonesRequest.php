@@ -27,32 +27,27 @@ class DescribeZonesRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $resourceOwnerAccount;
-
-	private  $verbose;
+	private  $spotStrategy;
 
 	private  $resourceOwnerId;
+
+	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
 	private  $ownerId;
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
+	private  $instanceChargeType;
+
+	private  $verbose;
+
+	public function getSpotStrategy() {
+		return $this->spotStrategy;
 	}
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getVerbose() {
-		return $this->verbose;
-	}
-
-	public function setVerbose($verbose) {
-		$this->verbose = $verbose;
-		$this->queryParameters["Verbose"]=$verbose;
+	public function setSpotStrategy($spotStrategy) {
+		$this->spotStrategy = $spotStrategy;
+		$this->queryParameters["SpotStrategy"]=$spotStrategy;
 	}
 
 	public function getResourceOwnerId() {
@@ -62,6 +57,15 @@ class DescribeZonesRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
 	public function getOwnerAccount() {
@@ -80,6 +84,24 @@ class DescribeZonesRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getInstanceChargeType() {
+		return $this->instanceChargeType;
+	}
+
+	public function setInstanceChargeType($instanceChargeType) {
+		$this->instanceChargeType = $instanceChargeType;
+		$this->queryParameters["InstanceChargeType"]=$instanceChargeType;
+	}
+
+	public function getVerbose() {
+		return $this->verbose;
+	}
+
+	public function setVerbose($verbose) {
+		$this->verbose = $verbose;
+		$this->queryParameters["Verbose"]=$verbose;
 	}
 	
 }

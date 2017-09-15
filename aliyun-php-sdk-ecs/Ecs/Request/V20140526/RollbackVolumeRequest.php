@@ -27,25 +27,25 @@ class RollbackVolumeRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $resourceOwnerAccount;
+	private  $resourceOwnerId;
 
 	private  $snapshotId;
 
-	private  $volumeId;
-
-	private  $resourceOwnerId;
+	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
+	private  $volumeId;
+
 	private  $ownerId;
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getSnapshotId() {
@@ -57,22 +57,13 @@ class RollbackVolumeRequest extends \RpcAcsRequest
 		$this->queryParameters["SnapshotId"]=$snapshotId;
 	}
 
-	public function getVolumeId() {
-		return $this->volumeId;
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
 	}
 
-	public function setVolumeId($volumeId) {
-		$this->volumeId = $volumeId;
-		$this->queryParameters["VolumeId"]=$volumeId;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
 	public function getOwnerAccount() {
@@ -82,6 +73,15 @@ class RollbackVolumeRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getVolumeId() {
+		return $this->volumeId;
+	}
+
+	public function setVolumeId($volumeId) {
+		$this->volumeId = $volumeId;
+		$this->queryParameters["VolumeId"]=$volumeId;
 	}
 
 	public function getOwnerId() {

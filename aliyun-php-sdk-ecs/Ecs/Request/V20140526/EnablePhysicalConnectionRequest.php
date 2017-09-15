@@ -27,27 +27,27 @@ class EnablePhysicalConnectionRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $clientToken;
+	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
-	private  $userCidr;
-
-	private  $resourceOwnerId;
-
-	private  $ownerAccount;
-
-	private  $ownerId;
+	private  $clientToken;
 
 	private  $physicalConnectionId;
 
-	public function getClientToken() {
-		return $this->clientToken;
+	private  $ownerAccount;
+
+	private  $userCidr;
+
+	private  $ownerId;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -59,22 +59,22 @@ class EnablePhysicalConnectionRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getUserCidr() {
-		return $this->userCidr;
+	public function getClientToken() {
+		return $this->clientToken;
 	}
 
-	public function setUserCidr($userCidr) {
-		$this->userCidr = $userCidr;
-		$this->queryParameters["UserCidr"]=$userCidr;
+	public function setClientToken($clientToken) {
+		$this->clientToken = $clientToken;
+		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getPhysicalConnectionId() {
+		return $this->physicalConnectionId;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setPhysicalConnectionId($physicalConnectionId) {
+		$this->physicalConnectionId = $physicalConnectionId;
+		$this->queryParameters["PhysicalConnectionId"]=$physicalConnectionId;
 	}
 
 	public function getOwnerAccount() {
@@ -86,6 +86,15 @@ class EnablePhysicalConnectionRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
+	public function getUserCidr() {
+		return $this->userCidr;
+	}
+
+	public function setUserCidr($userCidr) {
+		$this->userCidr = $userCidr;
+		$this->queryParameters["UserCidr"]=$userCidr;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -93,15 +102,6 @@ class EnablePhysicalConnectionRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getPhysicalConnectionId() {
-		return $this->physicalConnectionId;
-	}
-
-	public function setPhysicalConnectionId($physicalConnectionId) {
-		$this->physicalConnectionId = $physicalConnectionId;
-		$this->queryParameters["PhysicalConnectionId"]=$physicalConnectionId;
 	}
 	
 }

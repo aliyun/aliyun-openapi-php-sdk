@@ -27,28 +27,19 @@ class AssociateEipAddressRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $resourceOwnerAccount;
-
 	private  $resourceOwnerId;
-
-	private  $ownerAccount;
-
-	private  $ownerId;
-
-	private  $allocationId;
 
 	private  $instanceId;
 
+	private  $resourceOwnerAccount;
+
+	private  $ownerAccount;
+
 	private  $instanceType;
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+	private  $allocationId;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+	private  $ownerId;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -57,33 +48,6 @@ class AssociateEipAddressRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getAllocationId() {
-		return $this->allocationId;
-	}
-
-	public function setAllocationId($allocationId) {
-		$this->allocationId = $allocationId;
-		$this->queryParameters["AllocationId"]=$allocationId;
 	}
 
 	public function getInstanceId() {
@@ -95,6 +59,24 @@ class AssociateEipAddressRequest extends \RpcAcsRequest
 		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
 	public function getInstanceType() {
 		return $this->instanceType;
 	}
@@ -102,6 +84,24 @@ class AssociateEipAddressRequest extends \RpcAcsRequest
 	public function setInstanceType($instanceType) {
 		$this->instanceType = $instanceType;
 		$this->queryParameters["InstanceType"]=$instanceType;
+	}
+
+	public function getAllocationId() {
+		return $this->allocationId;
+	}
+
+	public function setAllocationId($allocationId) {
+		$this->allocationId = $allocationId;
+		$this->queryParameters["AllocationId"]=$allocationId;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

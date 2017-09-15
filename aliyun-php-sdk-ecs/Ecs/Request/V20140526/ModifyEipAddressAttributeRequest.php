@@ -27,17 +27,26 @@ class ModifyEipAddressAttributeRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
+	private  $resourceOwnerId;
+
 	private  $resourceOwnerAccount;
 
-	private  $resourceOwnerId;
+	private  $bandwidth;
 
 	private  $ownerAccount;
 
-	private  $ownerId;
-
 	private  $allocationId;
 
-	private  $bandwidth;
+	private  $ownerId;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
+	}
+
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
 
 	public function getResourceOwnerAccount() {
 		return $this->resourceOwnerAccount;
@@ -48,13 +57,13 @@ class ModifyEipAddressAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getBandwidth() {
+		return $this->bandwidth;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setBandwidth($bandwidth) {
+		$this->bandwidth = $bandwidth;
+		$this->queryParameters["Bandwidth"]=$bandwidth;
 	}
 
 	public function getOwnerAccount() {
@@ -66,15 +75,6 @@ class ModifyEipAddressAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
 	public function getAllocationId() {
 		return $this->allocationId;
 	}
@@ -84,13 +84,13 @@ class ModifyEipAddressAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["AllocationId"]=$allocationId;
 	}
 
-	public function getBandwidth() {
-		return $this->bandwidth;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setBandwidth($bandwidth) {
-		$this->bandwidth = $bandwidth;
-		$this->queryParameters["Bandwidth"]=$bandwidth;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

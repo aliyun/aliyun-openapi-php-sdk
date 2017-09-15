@@ -27,21 +27,30 @@ class DeleteRouteEntryRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
+	private  $resourceOwnerId;
+
 	private  $resourceOwnerAccount;
 
-	private  $NextHopLists;
-
-	private  $nextHopId;
-
-	private  $routeTableId;
-
-	private  $resourceOwnerId;
+	private  $destinationCidrBlock;
 
 	private  $ownerAccount;
 
+	private  $nextHopId;
+
 	private  $ownerId;
 
-	private  $destinationCidrBlock;
+	private  $NextHopLists;
+
+	private  $routeTableId;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
+	}
+
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
 
 	public function getResourceOwnerAccount() {
 		return $this->resourceOwnerAccount;
@@ -50,6 +59,42 @@ class DeleteRouteEntryRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getDestinationCidrBlock() {
+		return $this->destinationCidrBlock;
+	}
+
+	public function setDestinationCidrBlock($destinationCidrBlock) {
+		$this->destinationCidrBlock = $destinationCidrBlock;
+		$this->queryParameters["DestinationCidrBlock"]=$destinationCidrBlock;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getNextHopId() {
+		return $this->nextHopId;
+	}
+
+	public function setNextHopId($nextHopId) {
+		$this->nextHopId = $nextHopId;
+		$this->queryParameters["NextHopId"]=$nextHopId;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getNextHopLists() {
@@ -65,15 +110,6 @@ class DeleteRouteEntryRequest extends \RpcAcsRequest
 		}
 	}
 
-	public function getNextHopId() {
-		return $this->nextHopId;
-	}
-
-	public function setNextHopId($nextHopId) {
-		$this->nextHopId = $nextHopId;
-		$this->queryParameters["NextHopId"]=$nextHopId;
-	}
-
 	public function getRouteTableId() {
 		return $this->routeTableId;
 	}
@@ -81,42 +117,6 @@ class DeleteRouteEntryRequest extends \RpcAcsRequest
 	public function setRouteTableId($routeTableId) {
 		$this->routeTableId = $routeTableId;
 		$this->queryParameters["RouteTableId"]=$routeTableId;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getDestinationCidrBlock() {
-		return $this->destinationCidrBlock;
-	}
-
-	public function setDestinationCidrBlock($destinationCidrBlock) {
-		$this->destinationCidrBlock = $destinationCidrBlock;
-		$this->queryParameters["DestinationCidrBlock"]=$destinationCidrBlock;
 	}
 	
 }

@@ -27,25 +27,34 @@ class ModifyInstanceVncPasswdRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $vncPassword;
+	private  $resourceOwnerId;
+
+	private  $instanceId;
 
 	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
 
 	private  $ownerAccount;
 
 	private  $ownerId;
 
-	private  $instanceId;
+	private  $vncPassword;
 
-	public function getVncPassword() {
-		return $this->vncPassword;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setVncPassword($vncPassword) {
-		$this->vncPassword = $vncPassword;
-		$this->queryParameters["VncPassword"]=$vncPassword;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getInstanceId() {
+		return $this->instanceId;
+	}
+
+	public function setInstanceId($instanceId) {
+		$this->instanceId = $instanceId;
+		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -55,15 +64,6 @@ class ModifyInstanceVncPasswdRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getOwnerAccount() {
@@ -84,13 +84,13 @@ class ModifyInstanceVncPasswdRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getInstanceId() {
-		return $this->instanceId;
+	public function getVncPassword() {
+		return $this->vncPassword;
 	}
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
+	public function setVncPassword($vncPassword) {
+		$this->vncPassword = $vncPassword;
+		$this->queryParameters["VncPassword"]=$vncPassword;
 	}
 	
 }

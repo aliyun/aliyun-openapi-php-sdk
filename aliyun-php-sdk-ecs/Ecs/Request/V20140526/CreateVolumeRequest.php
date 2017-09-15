@@ -27,136 +27,66 @@ class CreateVolumeRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $volumeCategory;
+	private  $tag4Value;
 
-	private  $clientToken;
-
-	private  $zoneId;
-
-	private  $ownerId;
-
-	private  $volumeName;
-
-	private  $tag5Key;
-
-	private  $size;
-
-	private  $tag5Value;
-
-	private  $tag3Key;
-
-	private  $resourceOwnerAccount;
+	private  $resourceOwnerId;
 
 	private  $snapshotId;
 
+	private  $tag2Key;
+
+	private  $volumeName;
+
+	private  $volumeEncrypted;
+
+	private  $tag5Key;
+
+	private  $resourceOwnerAccount;
+
+	private  $clientToken;
+
+	private  $ownerAccount;
+
 	private  $description;
 
-	private  $tag2Key;
+	private  $tag3Key;
+
+	private  $ownerId;
+
+	private  $tag5Value;
 
 	private  $tag1Key;
 
 	private  $tag1Value;
 
-	private  $resourceOwnerId;
+	private  $volumeCategory;
 
-	private  $tag4Value;
-
-	private  $ownerAccount;
-
-	private  $tag3Value;
+	private  $size;
 
 	private  $tag2Value;
 
+	private  $zoneId;
+
 	private  $tag4Key;
 
-	public function getVolumeCategory() {
-		return $this->volumeCategory;
+	private  $tag3Value;
+
+	public function getTag4Value() {
+		return $this->tag4Value;
 	}
 
-	public function setVolumeCategory($volumeCategory) {
-		$this->volumeCategory = $volumeCategory;
-		$this->queryParameters["VolumeCategory"]=$volumeCategory;
+	public function setTag4Value($tag4Value) {
+		$this->tag4Value = $tag4Value;
+		$this->queryParameters["Tag.4.Value"]=$tag4Value;
 	}
 
-	public function getClientToken() {
-		return $this->clientToken;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
-
-	public function getZoneId() {
-		return $this->zoneId;
-	}
-
-	public function setZoneId($zoneId) {
-		$this->zoneId = $zoneId;
-		$this->queryParameters["ZoneId"]=$zoneId;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getVolumeName() {
-		return $this->volumeName;
-	}
-
-	public function setVolumeName($volumeName) {
-		$this->volumeName = $volumeName;
-		$this->queryParameters["VolumeName"]=$volumeName;
-	}
-
-	public function getTag5Key() {
-		return $this->tag5Key;
-	}
-
-	public function setTag5Key($tag5Key) {
-		$this->tag5Key = $tag5Key;
-		$this->queryParameters["Tag.5.Key"]=$tag5Key;
-	}
-
-	public function getSize() {
-		return $this->size;
-	}
-
-	public function setSize($size) {
-		$this->size = $size;
-		$this->queryParameters["Size"]=$size;
-	}
-
-	public function getTag5Value() {
-		return $this->tag5Value;
-	}
-
-	public function setTag5Value($tag5Value) {
-		$this->tag5Value = $tag5Value;
-		$this->queryParameters["Tag.5.Value"]=$tag5Value;
-	}
-
-	public function getTag3Key() {
-		return $this->tag3Key;
-	}
-
-	public function setTag3Key($tag3Key) {
-		$this->tag3Key = $tag3Key;
-		$this->queryParameters["Tag.3.Key"]=$tag3Key;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getSnapshotId() {
@@ -168,6 +98,69 @@ class CreateVolumeRequest extends \RpcAcsRequest
 		$this->queryParameters["SnapshotId"]=$snapshotId;
 	}
 
+	public function getTag2Key() {
+		return $this->tag2Key;
+	}
+
+	public function setTag2Key($tag2Key) {
+		$this->tag2Key = $tag2Key;
+		$this->queryParameters["Tag.2.Key"]=$tag2Key;
+	}
+
+	public function getVolumeName() {
+		return $this->volumeName;
+	}
+
+	public function setVolumeName($volumeName) {
+		$this->volumeName = $volumeName;
+		$this->queryParameters["VolumeName"]=$volumeName;
+	}
+
+	public function getVolumeEncrypted() {
+		return $this->volumeEncrypted;
+	}
+
+	public function setVolumeEncrypted($volumeEncrypted) {
+		$this->volumeEncrypted = $volumeEncrypted;
+		$this->queryParameters["VolumeEncrypted"]=$volumeEncrypted;
+	}
+
+	public function getTag5Key() {
+		return $this->tag5Key;
+	}
+
+	public function setTag5Key($tag5Key) {
+		$this->tag5Key = $tag5Key;
+		$this->queryParameters["Tag.5.Key"]=$tag5Key;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getClientToken() {
+		return $this->clientToken;
+	}
+
+	public function setClientToken($clientToken) {
+		$this->clientToken = $clientToken;
+		$this->queryParameters["ClientToken"]=$clientToken;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
 	public function getDescription() {
 		return $this->description;
 	}
@@ -177,13 +170,31 @@ class CreateVolumeRequest extends \RpcAcsRequest
 		$this->queryParameters["Description"]=$description;
 	}
 
-	public function getTag2Key() {
-		return $this->tag2Key;
+	public function getTag3Key() {
+		return $this->tag3Key;
 	}
 
-	public function setTag2Key($tag2Key) {
-		$this->tag2Key = $tag2Key;
-		$this->queryParameters["Tag.2.Key"]=$tag2Key;
+	public function setTag3Key($tag3Key) {
+		$this->tag3Key = $tag3Key;
+		$this->queryParameters["Tag.3.Key"]=$tag3Key;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getTag5Value() {
+		return $this->tag5Value;
+	}
+
+	public function setTag5Value($tag5Value) {
+		$this->tag5Value = $tag5Value;
+		$this->queryParameters["Tag.5.Value"]=$tag5Value;
 	}
 
 	public function getTag1Key() {
@@ -204,40 +215,22 @@ class CreateVolumeRequest extends \RpcAcsRequest
 		$this->queryParameters["Tag.1.Value"]=$tag1Value;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getVolumeCategory() {
+		return $this->volumeCategory;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setVolumeCategory($volumeCategory) {
+		$this->volumeCategory = $volumeCategory;
+		$this->queryParameters["VolumeCategory"]=$volumeCategory;
 	}
 
-	public function getTag4Value() {
-		return $this->tag4Value;
+	public function getSize() {
+		return $this->size;
 	}
 
-	public function setTag4Value($tag4Value) {
-		$this->tag4Value = $tag4Value;
-		$this->queryParameters["Tag.4.Value"]=$tag4Value;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getTag3Value() {
-		return $this->tag3Value;
-	}
-
-	public function setTag3Value($tag3Value) {
-		$this->tag3Value = $tag3Value;
-		$this->queryParameters["Tag.3.Value"]=$tag3Value;
+	public function setSize($size) {
+		$this->size = $size;
+		$this->queryParameters["Size"]=$size;
 	}
 
 	public function getTag2Value() {
@@ -249,6 +242,15 @@ class CreateVolumeRequest extends \RpcAcsRequest
 		$this->queryParameters["Tag.2.Value"]=$tag2Value;
 	}
 
+	public function getZoneId() {
+		return $this->zoneId;
+	}
+
+	public function setZoneId($zoneId) {
+		$this->zoneId = $zoneId;
+		$this->queryParameters["ZoneId"]=$zoneId;
+	}
+
 	public function getTag4Key() {
 		return $this->tag4Key;
 	}
@@ -256,6 +258,15 @@ class CreateVolumeRequest extends \RpcAcsRequest
 	public function setTag4Key($tag4Key) {
 		$this->tag4Key = $tag4Key;
 		$this->queryParameters["Tag.4.Key"]=$tag4Key;
+	}
+
+	public function getTag3Value() {
+		return $this->tag3Value;
+	}
+
+	public function setTag3Value($tag3Value) {
+		$this->tag3Value = $tag3Value;
+		$this->queryParameters["Tag.3.Value"]=$tag3Value;
 	}
 	
 }

@@ -27,23 +27,23 @@ class DescribeInstanceTypeFamiliesRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $resourceOwnerAccount;
+	private  $generation;
 
 	private  $resourceOwnerId;
+
+	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
 	private  $ownerId;
 
-	private  $generation;
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
+	public function getGeneration() {
+		return $this->generation;
 	}
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setGeneration($generation) {
+		$this->generation = $generation;
+		$this->queryParameters["Generation"]=$generation;
 	}
 
 	public function getResourceOwnerId() {
@@ -53,6 +53,15 @@ class DescribeInstanceTypeFamiliesRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
 	public function getOwnerAccount() {
@@ -71,15 +80,6 @@ class DescribeInstanceTypeFamiliesRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getGeneration() {
-		return $this->generation;
-	}
-
-	public function setGeneration($generation) {
-		$this->generation = $generation;
-		$this->queryParameters["Generation"]=$generation;
 	}
 	
 }

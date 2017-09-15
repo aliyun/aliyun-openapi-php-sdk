@@ -27,25 +27,34 @@ class DeleteHaVipRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $clientToken;
+	private  $haVipId;
+
+	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
-	private  $resourceOwnerId;
+	private  $clientToken;
 
 	private  $ownerAccount;
 
 	private  $ownerId;
 
-	private  $haVipId;
-
-	public function getClientToken() {
-		return $this->clientToken;
+	public function getHaVipId() {
+		return $this->haVipId;
 	}
 
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
+	public function setHaVipId($haVipId) {
+		$this->haVipId = $haVipId;
+		$this->queryParameters["HaVipId"]=$haVipId;
+	}
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
+	}
+
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -57,13 +66,13 @@ class DeleteHaVipRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getClientToken() {
+		return $this->clientToken;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setClientToken($clientToken) {
+		$this->clientToken = $clientToken;
+		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
 	public function getOwnerAccount() {
@@ -82,15 +91,6 @@ class DeleteHaVipRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getHaVipId() {
-		return $this->haVipId;
-	}
-
-	public function setHaVipId($haVipId) {
-		$this->haVipId = $haVipId;
-		$this->queryParameters["HaVipId"]=$haVipId;
 	}
 	
 }

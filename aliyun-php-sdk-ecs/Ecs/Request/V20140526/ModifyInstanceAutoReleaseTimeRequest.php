@@ -27,35 +27,17 @@ class ModifyInstanceAutoReleaseTimeRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $resourceOwnerAccount;
-
-	private  $autoReleaseTime;
-
 	private  $resourceOwnerId;
-
-	private  $ownerAccount;
-
-	private  $ownerId;
 
 	private  $instanceId;
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+	private  $resourceOwnerAccount;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+	private  $ownerAccount;
 
-	public function getAutoReleaseTime() {
-		return $this->autoReleaseTime;
-	}
+	private  $autoReleaseTime;
 
-	public function setAutoReleaseTime($autoReleaseTime) {
-		$this->autoReleaseTime = $autoReleaseTime;
-		$this->queryParameters["AutoReleaseTime"]=$autoReleaseTime;
-	}
+	private  $ownerId;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -64,6 +46,24 @@ class ModifyInstanceAutoReleaseTimeRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getInstanceId() {
+		return $this->instanceId;
+	}
+
+	public function setInstanceId($instanceId) {
+		$this->instanceId = $instanceId;
+		$this->queryParameters["InstanceId"]=$instanceId;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
 	public function getOwnerAccount() {
@@ -75,6 +75,15 @@ class ModifyInstanceAutoReleaseTimeRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
+	public function getAutoReleaseTime() {
+		return $this->autoReleaseTime;
+	}
+
+	public function setAutoReleaseTime($autoReleaseTime) {
+		$this->autoReleaseTime = $autoReleaseTime;
+		$this->queryParameters["AutoReleaseTime"]=$autoReleaseTime;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -82,15 +91,6 @@ class ModifyInstanceAutoReleaseTimeRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
-
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 	
 }

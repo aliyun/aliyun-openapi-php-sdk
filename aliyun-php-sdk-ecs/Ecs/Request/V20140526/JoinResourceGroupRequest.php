@@ -29,17 +29,17 @@ class JoinResourceGroupRequest extends \RpcAcsRequest
 
 	private  $resourceGroupId;
 
-	private  $resourceOwnerAccount;
-
-	private  $resourceType;
-
 	private  $resourceOwnerId;
 
 	private  $resourceId;
 
+	private  $resourceOwnerAccount;
+
 	private  $ownerAccount;
 
 	private  $ownerId;
+
+	private  $resourceType;
 
 	public function getResourceGroupId() {
 		return $this->resourceGroupId;
@@ -48,24 +48,6 @@ class JoinResourceGroupRequest extends \RpcAcsRequest
 	public function setResourceGroupId($resourceGroupId) {
 		$this->resourceGroupId = $resourceGroupId;
 		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getResourceType() {
-		return $this->resourceType;
-	}
-
-	public function setResourceType($resourceType) {
-		$this->resourceType = $resourceType;
-		$this->queryParameters["ResourceType"]=$resourceType;
 	}
 
 	public function getResourceOwnerId() {
@@ -86,6 +68,15 @@ class JoinResourceGroupRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceId"]=$resourceId;
 	}
 
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -102,6 +93,15 @@ class JoinResourceGroupRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getResourceType() {
+		return $this->resourceType;
+	}
+
+	public function setResourceType($resourceType) {
+		$this->resourceType = $resourceType;
+		$this->queryParameters["ResourceType"]=$resourceType;
 	}
 	
 }

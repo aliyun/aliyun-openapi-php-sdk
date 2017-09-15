@@ -27,37 +27,46 @@ class ModifyAutoSnapshotPolicyRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $dataDiskPolicyRetentionLastWeek;
+	private  $dataDiskPolicyEnabled;
+
+	private  $resourceOwnerId;
 
 	private  $dataDiskPolicyRetentionDays;
 
-	private  $dataDiskPolicyTimePeriod;
+	private  $resourceOwnerAccount;
 
 	private  $systemDiskPolicyRetentionLastWeek;
+
+	private  $ownerAccount;
 
 	private  $systemDiskPolicyTimePeriod;
 
 	private  $ownerId;
 
-	private  $resourceOwnerAccount;
-
-	private  $systemDiskPolicyEnabled;
-
-	private  $resourceOwnerId;
-
-	private  $ownerAccount;
+	private  $dataDiskPolicyRetentionLastWeek;
 
 	private  $systemDiskPolicyRetentionDays;
 
-	private  $dataDiskPolicyEnabled;
+	private  $dataDiskPolicyTimePeriod;
 
-	public function getDataDiskPolicyRetentionLastWeek() {
-		return $this->dataDiskPolicyRetentionLastWeek;
+	private  $systemDiskPolicyEnabled;
+
+	public function getDataDiskPolicyEnabled() {
+		return $this->dataDiskPolicyEnabled;
 	}
 
-	public function setDataDiskPolicyRetentionLastWeek($dataDiskPolicyRetentionLastWeek) {
-		$this->dataDiskPolicyRetentionLastWeek = $dataDiskPolicyRetentionLastWeek;
-		$this->queryParameters["DataDiskPolicyRetentionLastWeek"]=$dataDiskPolicyRetentionLastWeek;
+	public function setDataDiskPolicyEnabled($dataDiskPolicyEnabled) {
+		$this->dataDiskPolicyEnabled = $dataDiskPolicyEnabled;
+		$this->queryParameters["DataDiskPolicyEnabled"]=$dataDiskPolicyEnabled;
+	}
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
+	}
+
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getDataDiskPolicyRetentionDays() {
@@ -69,13 +78,13 @@ class ModifyAutoSnapshotPolicyRequest extends \RpcAcsRequest
 		$this->queryParameters["DataDiskPolicyRetentionDays"]=$dataDiskPolicyRetentionDays;
 	}
 
-	public function getDataDiskPolicyTimePeriod() {
-		return $this->dataDiskPolicyTimePeriod;
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
 	}
 
-	public function setDataDiskPolicyTimePeriod($dataDiskPolicyTimePeriod) {
-		$this->dataDiskPolicyTimePeriod = $dataDiskPolicyTimePeriod;
-		$this->queryParameters["DataDiskPolicyTimePeriod"]=$dataDiskPolicyTimePeriod;
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
 	public function getSystemDiskPolicyRetentionLastWeek() {
@@ -85,6 +94,15 @@ class ModifyAutoSnapshotPolicyRequest extends \RpcAcsRequest
 	public function setSystemDiskPolicyRetentionLastWeek($systemDiskPolicyRetentionLastWeek) {
 		$this->systemDiskPolicyRetentionLastWeek = $systemDiskPolicyRetentionLastWeek;
 		$this->queryParameters["SystemDiskPolicyRetentionLastWeek"]=$systemDiskPolicyRetentionLastWeek;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getSystemDiskPolicyTimePeriod() {
@@ -105,40 +123,13 @@ class ModifyAutoSnapshotPolicyRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
+	public function getDataDiskPolicyRetentionLastWeek() {
+		return $this->dataDiskPolicyRetentionLastWeek;
 	}
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getSystemDiskPolicyEnabled() {
-		return $this->systemDiskPolicyEnabled;
-	}
-
-	public function setSystemDiskPolicyEnabled($systemDiskPolicyEnabled) {
-		$this->systemDiskPolicyEnabled = $systemDiskPolicyEnabled;
-		$this->queryParameters["SystemDiskPolicyEnabled"]=$systemDiskPolicyEnabled;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setDataDiskPolicyRetentionLastWeek($dataDiskPolicyRetentionLastWeek) {
+		$this->dataDiskPolicyRetentionLastWeek = $dataDiskPolicyRetentionLastWeek;
+		$this->queryParameters["DataDiskPolicyRetentionLastWeek"]=$dataDiskPolicyRetentionLastWeek;
 	}
 
 	public function getSystemDiskPolicyRetentionDays() {
@@ -150,13 +141,22 @@ class ModifyAutoSnapshotPolicyRequest extends \RpcAcsRequest
 		$this->queryParameters["SystemDiskPolicyRetentionDays"]=$systemDiskPolicyRetentionDays;
 	}
 
-	public function getDataDiskPolicyEnabled() {
-		return $this->dataDiskPolicyEnabled;
+	public function getDataDiskPolicyTimePeriod() {
+		return $this->dataDiskPolicyTimePeriod;
 	}
 
-	public function setDataDiskPolicyEnabled($dataDiskPolicyEnabled) {
-		$this->dataDiskPolicyEnabled = $dataDiskPolicyEnabled;
-		$this->queryParameters["DataDiskPolicyEnabled"]=$dataDiskPolicyEnabled;
+	public function setDataDiskPolicyTimePeriod($dataDiskPolicyTimePeriod) {
+		$this->dataDiskPolicyTimePeriod = $dataDiskPolicyTimePeriod;
+		$this->queryParameters["DataDiskPolicyTimePeriod"]=$dataDiskPolicyTimePeriod;
+	}
+
+	public function getSystemDiskPolicyEnabled() {
+		return $this->systemDiskPolicyEnabled;
+	}
+
+	public function setSystemDiskPolicyEnabled($systemDiskPolicyEnabled) {
+		$this->systemDiskPolicyEnabled = $systemDiskPolicyEnabled;
+		$this->queryParameters["SystemDiskPolicyEnabled"]=$systemDiskPolicyEnabled;
 	}
 	
 }

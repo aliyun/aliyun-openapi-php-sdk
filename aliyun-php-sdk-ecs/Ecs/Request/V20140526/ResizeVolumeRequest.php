@@ -27,27 +27,27 @@ class ResizeVolumeRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $clientToken;
+	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
-	private  $newSize;
-
-	private  $volumeId;
-
-	private  $resourceOwnerId;
+	private  $clientToken;
 
 	private  $ownerAccount;
 
+	private  $volumeId;
+
+	private  $newSize;
+
 	private  $ownerId;
 
-	public function getClientToken() {
-		return $this->clientToken;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -59,13 +59,22 @@ class ResizeVolumeRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getNewSize() {
-		return $this->newSize;
+	public function getClientToken() {
+		return $this->clientToken;
 	}
 
-	public function setNewSize($newSize) {
-		$this->newSize = $newSize;
-		$this->queryParameters["NewSize"]=$newSize;
+	public function setClientToken($clientToken) {
+		$this->clientToken = $clientToken;
+		$this->queryParameters["ClientToken"]=$clientToken;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getVolumeId() {
@@ -77,22 +86,13 @@ class ResizeVolumeRequest extends \RpcAcsRequest
 		$this->queryParameters["VolumeId"]=$volumeId;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getNewSize() {
+		return $this->newSize;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setNewSize($newSize) {
+		$this->newSize = $newSize;
+		$this->queryParameters["NewSize"]=$newSize;
 	}
 
 	public function getOwnerId() {

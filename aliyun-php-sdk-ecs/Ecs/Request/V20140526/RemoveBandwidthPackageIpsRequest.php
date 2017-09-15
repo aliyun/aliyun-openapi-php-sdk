@@ -29,17 +29,17 @@ class RemoveBandwidthPackageIpsRequest extends \RpcAcsRequest
 
 	private  $RemovedIpAddressess;
 
-	private  $clientToken;
+	private  $resourceOwnerId;
+
+	private  $bandwidthPackageId;
 
 	private  $resourceOwnerAccount;
 
-	private  $resourceOwnerId;
+	private  $clientToken;
 
 	private  $ownerAccount;
 
 	private  $ownerId;
-
-	private  $bandwidthPackageId;
 
 	public function getRemovedIpAddressess() {
 		return $this->RemovedIpAddressess;
@@ -52,13 +52,22 @@ class RemoveBandwidthPackageIpsRequest extends \RpcAcsRequest
 		}
 	}
 
-	public function getClientToken() {
-		return $this->clientToken;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getBandwidthPackageId() {
+		return $this->bandwidthPackageId;
+	}
+
+	public function setBandwidthPackageId($bandwidthPackageId) {
+		$this->bandwidthPackageId = $bandwidthPackageId;
+		$this->queryParameters["BandwidthPackageId"]=$bandwidthPackageId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -70,13 +79,13 @@ class RemoveBandwidthPackageIpsRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getClientToken() {
+		return $this->clientToken;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setClientToken($clientToken) {
+		$this->clientToken = $clientToken;
+		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
 	public function getOwnerAccount() {
@@ -95,15 +104,6 @@ class RemoveBandwidthPackageIpsRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getBandwidthPackageId() {
-		return $this->bandwidthPackageId;
-	}
-
-	public function setBandwidthPackageId($bandwidthPackageId) {
-		$this->bandwidthPackageId = $bandwidthPackageId;
-		$this->queryParameters["BandwidthPackageId"]=$bandwidthPackageId;
 	}
 	
 }

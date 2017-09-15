@@ -27,7 +27,15 @@ class ReplaceSystemDiskRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
+	private  $resourceOwnerId;
+
+	private  $imageId;
+
+	private  $resourceOwnerAccount;
+
 	private  $clientToken;
+
+	private  $ownerAccount;
 
 	private  $securityEnhancementStrategy;
 
@@ -35,21 +43,40 @@ class ReplaceSystemDiskRequest extends \RpcAcsRequest
 
 	private  $ownerId;
 
-	private  $imageId;
-
 	private  $password;
 
-	private  $useAdditionalService;
-
-	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
-
-	private  $ownerAccount;
+	private  $instanceId;
 
 	private  $systemDiskSize;
 
-	private  $instanceId;
+	private  $useAdditionalService;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
+	}
+
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getImageId() {
+		return $this->imageId;
+	}
+
+	public function setImageId($imageId) {
+		$this->imageId = $imageId;
+		$this->queryParameters["ImageId"]=$imageId;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
 
 	public function getClientToken() {
 		return $this->clientToken;
@@ -58,6 +85,15 @@ class ReplaceSystemDiskRequest extends \RpcAcsRequest
 	public function setClientToken($clientToken) {
 		$this->clientToken = $clientToken;
 		$this->queryParameters["ClientToken"]=$clientToken;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getSecurityEnhancementStrategy() {
@@ -87,15 +123,6 @@ class ReplaceSystemDiskRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getImageId() {
-		return $this->imageId;
-	}
-
-	public function setImageId($imageId) {
-		$this->imageId = $imageId;
-		$this->queryParameters["ImageId"]=$imageId;
-	}
-
 	public function getPassword() {
 		return $this->password;
 	}
@@ -105,40 +132,13 @@ class ReplaceSystemDiskRequest extends \RpcAcsRequest
 		$this->queryParameters["Password"]=$password;
 	}
 
-	public function getUseAdditionalService() {
-		return $this->useAdditionalService;
+	public function getInstanceId() {
+		return $this->instanceId;
 	}
 
-	public function setUseAdditionalService($useAdditionalService) {
-		$this->useAdditionalService = $useAdditionalService;
-		$this->queryParameters["UseAdditionalService"]=$useAdditionalService;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setInstanceId($instanceId) {
+		$this->instanceId = $instanceId;
+		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 
 	public function getSystemDiskSize() {
@@ -150,13 +150,13 @@ class ReplaceSystemDiskRequest extends \RpcAcsRequest
 		$this->queryParameters["SystemDisk.Size"]=$systemDiskSize;
 	}
 
-	public function getInstanceId() {
-		return $this->instanceId;
+	public function getUseAdditionalService() {
+		return $this->useAdditionalService;
 	}
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
+	public function setUseAdditionalService($useAdditionalService) {
+		$this->useAdditionalService = $useAdditionalService;
+		$this->queryParameters["UseAdditionalService"]=$useAdditionalService;
 	}
 	
 }

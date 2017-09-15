@@ -27,11 +27,21 @@ class DescribePriceRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $systemDiskCategory;
-
 	private  $dataDisk3Size;
 
-	private  $resourceType;
+	private  $resourceOwnerId;
+
+	private  $imageId;
+
+	private  $dataDisk3Category;
+
+	private  $ioOptimized;
+
+	private  $internetMaxBandwidthOut;
+
+	private  $systemDiskCategory;
+
+	private  $dataDisk4Category;
 
 	private  $dataDisk4Size;
 
@@ -39,50 +49,31 @@ class DescribePriceRequest extends \RpcAcsRequest
 
 	private  $instanceType;
 
+	private  $dataDisk2Category;
+
+	private  $dataDisk1Size;
+
+	private  $period;
+
 	private  $amount;
 
 	private  $resourceOwnerAccount;
 
-	private  $dataDisk2Category;
-
-	private  $resourceOwnerId;
-
 	private  $ownerAccount;
-
-	private  $systemDiskSize;
 
 	private  $dataDisk2Size;
 
-	private  $internetMaxBandwidthOut;
-
-	private  $internetChargeType;
-
-	private  $dataDisk4Category;
-
 	private  $ownerId;
 
-	private  $period;
-
-	private  $imageId;
-
-	private  $ioOptimized;
+	private  $resourceType;
 
 	private  $dataDisk1Category;
 
-	private  $dataDisk1Size;
+	private  $systemDiskSize;
 
-	private  $dataDisk3Category;
+	private  $internetChargeType;
 
 	private  $instanceNetworkType;
-
-	public function getSystemDiskCategory() {
-		return $this->systemDiskCategory;
-	}
-
-	public function setSystemDiskCategory($systemDiskCategory) {
-		$this->systemDiskCategory = $systemDiskCategory;
-		$this->queryParameters["SystemDisk.Category"]=$systemDiskCategory;
-	}
 
 	public function getDataDisk3Size() {
 		return $this->dataDisk3Size;
@@ -93,13 +84,67 @@ class DescribePriceRequest extends \RpcAcsRequest
 		$this->queryParameters["DataDisk.3.Size"]=$dataDisk3Size;
 	}
 
-	public function getResourceType() {
-		return $this->resourceType;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setResourceType($resourceType) {
-		$this->resourceType = $resourceType;
-		$this->queryParameters["ResourceType"]=$resourceType;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getImageId() {
+		return $this->imageId;
+	}
+
+	public function setImageId($imageId) {
+		$this->imageId = $imageId;
+		$this->queryParameters["ImageId"]=$imageId;
+	}
+
+	public function getDataDisk3Category() {
+		return $this->dataDisk3Category;
+	}
+
+	public function setDataDisk3Category($dataDisk3Category) {
+		$this->dataDisk3Category = $dataDisk3Category;
+		$this->queryParameters["DataDisk.3.Category"]=$dataDisk3Category;
+	}
+
+	public function getIoOptimized() {
+		return $this->ioOptimized;
+	}
+
+	public function setIoOptimized($ioOptimized) {
+		$this->ioOptimized = $ioOptimized;
+		$this->queryParameters["IoOptimized"]=$ioOptimized;
+	}
+
+	public function getInternetMaxBandwidthOut() {
+		return $this->internetMaxBandwidthOut;
+	}
+
+	public function setInternetMaxBandwidthOut($internetMaxBandwidthOut) {
+		$this->internetMaxBandwidthOut = $internetMaxBandwidthOut;
+		$this->queryParameters["InternetMaxBandwidthOut"]=$internetMaxBandwidthOut;
+	}
+
+	public function getSystemDiskCategory() {
+		return $this->systemDiskCategory;
+	}
+
+	public function setSystemDiskCategory($systemDiskCategory) {
+		$this->systemDiskCategory = $systemDiskCategory;
+		$this->queryParameters["SystemDisk.Category"]=$systemDiskCategory;
+	}
+
+	public function getDataDisk4Category() {
+		return $this->dataDisk4Category;
+	}
+
+	public function setDataDisk4Category($dataDisk4Category) {
+		$this->dataDisk4Category = $dataDisk4Category;
+		$this->queryParameters["DataDisk.4.Category"]=$dataDisk4Category;
 	}
 
 	public function getDataDisk4Size() {
@@ -129,6 +174,33 @@ class DescribePriceRequest extends \RpcAcsRequest
 		$this->queryParameters["InstanceType"]=$instanceType;
 	}
 
+	public function getDataDisk2Category() {
+		return $this->dataDisk2Category;
+	}
+
+	public function setDataDisk2Category($dataDisk2Category) {
+		$this->dataDisk2Category = $dataDisk2Category;
+		$this->queryParameters["DataDisk.2.Category"]=$dataDisk2Category;
+	}
+
+	public function getDataDisk1Size() {
+		return $this->dataDisk1Size;
+	}
+
+	public function setDataDisk1Size($dataDisk1Size) {
+		$this->dataDisk1Size = $dataDisk1Size;
+		$this->queryParameters["DataDisk.1.Size"]=$dataDisk1Size;
+	}
+
+	public function getPeriod() {
+		return $this->period;
+	}
+
+	public function setPeriod($period) {
+		$this->period = $period;
+		$this->queryParameters["Period"]=$period;
+	}
+
 	public function getAmount() {
 		return $this->amount;
 	}
@@ -147,24 +219,6 @@ class DescribePriceRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getDataDisk2Category() {
-		return $this->dataDisk2Category;
-	}
-
-	public function setDataDisk2Category($dataDisk2Category) {
-		$this->dataDisk2Category = $dataDisk2Category;
-		$this->queryParameters["DataDisk.2.Category"]=$dataDisk2Category;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -172,15 +226,6 @@ class DescribePriceRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getSystemDiskSize() {
-		return $this->systemDiskSize;
-	}
-
-	public function setSystemDiskSize($systemDiskSize) {
-		$this->systemDiskSize = $systemDiskSize;
-		$this->queryParameters["SystemDisk.Size"]=$systemDiskSize;
 	}
 
 	public function getDataDisk2Size() {
@@ -192,33 +237,6 @@ class DescribePriceRequest extends \RpcAcsRequest
 		$this->queryParameters["DataDisk.2.Size"]=$dataDisk2Size;
 	}
 
-	public function getInternetMaxBandwidthOut() {
-		return $this->internetMaxBandwidthOut;
-	}
-
-	public function setInternetMaxBandwidthOut($internetMaxBandwidthOut) {
-		$this->internetMaxBandwidthOut = $internetMaxBandwidthOut;
-		$this->queryParameters["InternetMaxBandwidthOut"]=$internetMaxBandwidthOut;
-	}
-
-	public function getInternetChargeType() {
-		return $this->internetChargeType;
-	}
-
-	public function setInternetChargeType($internetChargeType) {
-		$this->internetChargeType = $internetChargeType;
-		$this->queryParameters["InternetChargeType"]=$internetChargeType;
-	}
-
-	public function getDataDisk4Category() {
-		return $this->dataDisk4Category;
-	}
-
-	public function setDataDisk4Category($dataDisk4Category) {
-		$this->dataDisk4Category = $dataDisk4Category;
-		$this->queryParameters["DataDisk.4.Category"]=$dataDisk4Category;
-	}
-
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -228,31 +246,13 @@ class DescribePriceRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getPeriod() {
-		return $this->period;
+	public function getResourceType() {
+		return $this->resourceType;
 	}
 
-	public function setPeriod($period) {
-		$this->period = $period;
-		$this->queryParameters["Period"]=$period;
-	}
-
-	public function getImageId() {
-		return $this->imageId;
-	}
-
-	public function setImageId($imageId) {
-		$this->imageId = $imageId;
-		$this->queryParameters["ImageId"]=$imageId;
-	}
-
-	public function getIoOptimized() {
-		return $this->ioOptimized;
-	}
-
-	public function setIoOptimized($ioOptimized) {
-		$this->ioOptimized = $ioOptimized;
-		$this->queryParameters["IoOptimized"]=$ioOptimized;
+	public function setResourceType($resourceType) {
+		$this->resourceType = $resourceType;
+		$this->queryParameters["ResourceType"]=$resourceType;
 	}
 
 	public function getDataDisk1Category() {
@@ -264,22 +264,22 @@ class DescribePriceRequest extends \RpcAcsRequest
 		$this->queryParameters["DataDisk.1.Category"]=$dataDisk1Category;
 	}
 
-	public function getDataDisk1Size() {
-		return $this->dataDisk1Size;
+	public function getSystemDiskSize() {
+		return $this->systemDiskSize;
 	}
 
-	public function setDataDisk1Size($dataDisk1Size) {
-		$this->dataDisk1Size = $dataDisk1Size;
-		$this->queryParameters["DataDisk.1.Size"]=$dataDisk1Size;
+	public function setSystemDiskSize($systemDiskSize) {
+		$this->systemDiskSize = $systemDiskSize;
+		$this->queryParameters["SystemDisk.Size"]=$systemDiskSize;
 	}
 
-	public function getDataDisk3Category() {
-		return $this->dataDisk3Category;
+	public function getInternetChargeType() {
+		return $this->internetChargeType;
 	}
 
-	public function setDataDisk3Category($dataDisk3Category) {
-		$this->dataDisk3Category = $dataDisk3Category;
-		$this->queryParameters["DataDisk.3.Category"]=$dataDisk3Category;
+	public function setInternetChargeType($internetChargeType) {
+		$this->internetChargeType = $internetChargeType;
+		$this->queryParameters["InternetChargeType"]=$internetChargeType;
 	}
 
 	public function getInstanceNetworkType() {

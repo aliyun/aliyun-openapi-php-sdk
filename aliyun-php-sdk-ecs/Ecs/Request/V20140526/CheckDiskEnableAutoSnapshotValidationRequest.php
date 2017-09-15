@@ -27,23 +27,23 @@ class CheckDiskEnableAutoSnapshotValidationRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $diskIds;
+	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
-	private  $resourceOwnerId;
-
 	private  $ownerAccount;
+
+	private  $diskIds;
 
 	private  $ownerId;
 
-	public function getDiskIds() {
-		return $this->diskIds;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setDiskIds($diskIds) {
-		$this->diskIds = $diskIds;
-		$this->queryParameters["DiskIds"]=$diskIds;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -55,15 +55,6 @@ class CheckDiskEnableAutoSnapshotValidationRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -71,6 +62,15 @@ class CheckDiskEnableAutoSnapshotValidationRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getDiskIds() {
+		return $this->diskIds;
+	}
+
+	public function setDiskIds($diskIds) {
+		$this->diskIds = $diskIds;
+		$this->queryParameters["DiskIds"]=$diskIds;
 	}
 
 	public function getOwnerId() {

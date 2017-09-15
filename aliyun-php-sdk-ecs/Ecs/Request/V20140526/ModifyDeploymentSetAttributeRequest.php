@@ -27,46 +27,19 @@ class ModifyDeploymentSetAttributeRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
+	private  $deploymentSetId;
+
+	private  $resourceOwnerId;
+
 	private  $resourceOwnerAccount;
+
+	private  $ownerAccount;
 
 	private  $description;
 
 	private  $deploymentSetName;
 
-	private  $deploymentSetId;
-
-	private  $resourceOwnerId;
-
-	private  $ownerAccount;
-
 	private  $ownerId;
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getDescription() {
-		return $this->description;
-	}
-
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
-	}
-
-	public function getDeploymentSetName() {
-		return $this->deploymentSetName;
-	}
-
-	public function setDeploymentSetName($deploymentSetName) {
-		$this->deploymentSetName = $deploymentSetName;
-		$this->queryParameters["DeploymentSetName"]=$deploymentSetName;
-	}
 
 	public function getDeploymentSetId() {
 		return $this->deploymentSetId;
@@ -86,6 +59,15 @@ class ModifyDeploymentSetAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -93,6 +75,24 @@ class ModifyDeploymentSetAttributeRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getDescription() {
+		return $this->description;
+	}
+
+	public function setDescription($description) {
+		$this->description = $description;
+		$this->queryParameters["Description"]=$description;
+	}
+
+	public function getDeploymentSetName() {
+		return $this->deploymentSetName;
+	}
+
+	public function setDeploymentSetName($deploymentSetName) {
+		$this->deploymentSetName = $deploymentSetName;
+		$this->queryParameters["DeploymentSetName"]=$deploymentSetName;
 	}
 
 	public function getOwnerId() {

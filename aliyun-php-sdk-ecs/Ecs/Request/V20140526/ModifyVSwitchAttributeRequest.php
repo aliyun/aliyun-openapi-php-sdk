@@ -27,28 +27,19 @@ class ModifyVSwitchAttributeRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $vSwitchName;
-
 	private  $vSwitchId;
-
-	private  $resourceOwnerAccount;
-
-	private  $description;
 
 	private  $resourceOwnerId;
 
+	private  $resourceOwnerAccount;
+
+	private  $vSwitchName;
+
 	private  $ownerAccount;
 
+	private  $description;
+
 	private  $ownerId;
-
-	public function getVSwitchName() {
-		return $this->vSwitchName;
-	}
-
-	public function setVSwitchName($vSwitchName) {
-		$this->vSwitchName = $vSwitchName;
-		$this->queryParameters["VSwitchName"]=$vSwitchName;
-	}
 
 	public function getVSwitchId() {
 		return $this->vSwitchId;
@@ -57,24 +48,6 @@ class ModifyVSwitchAttributeRequest extends \RpcAcsRequest
 	public function setVSwitchId($vSwitchId) {
 		$this->vSwitchId = $vSwitchId;
 		$this->queryParameters["VSwitchId"]=$vSwitchId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getDescription() {
-		return $this->description;
-	}
-
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
 	}
 
 	public function getResourceOwnerId() {
@@ -86,6 +59,24 @@ class ModifyVSwitchAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getVSwitchName() {
+		return $this->vSwitchName;
+	}
+
+	public function setVSwitchName($vSwitchName) {
+		$this->vSwitchName = $vSwitchName;
+		$this->queryParameters["VSwitchName"]=$vSwitchName;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -93,6 +84,15 @@ class ModifyVSwitchAttributeRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getDescription() {
+		return $this->description;
+	}
+
+	public function setDescription($description) {
+		$this->description = $description;
+		$this->queryParameters["Description"]=$description;
 	}
 
 	public function getOwnerId() {

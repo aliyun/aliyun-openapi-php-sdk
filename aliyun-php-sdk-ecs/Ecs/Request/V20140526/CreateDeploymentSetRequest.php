@@ -27,27 +27,45 @@ class CreateDeploymentSetRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
+	private  $resourceOwnerId;
+
+	private  $resourceOwnerAccount;
+
 	private  $clientToken;
 
-	private  $zoneId;
+	private  $ownerAccount;
 
-	private  $strategy;
+	private  $description;
 
 	private  $deploymentSetName;
 
 	private  $ownerId;
 
-	private  $resourceOwnerAccount;
-
-	private  $description;
-
 	private  $granularity;
 
 	private  $domain;
 
-	private  $resourceOwnerId;
+	private  $zoneId;
 
-	private  $ownerAccount;
+	private  $strategy;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
+	}
+
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
 
 	public function getClientToken() {
 		return $this->clientToken;
@@ -58,22 +76,22 @@ class CreateDeploymentSetRequest extends \RpcAcsRequest
 		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
-	public function getZoneId() {
-		return $this->zoneId;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setZoneId($zoneId) {
-		$this->zoneId = $zoneId;
-		$this->queryParameters["ZoneId"]=$zoneId;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getStrategy() {
-		return $this->strategy;
+	public function getDescription() {
+		return $this->description;
 	}
 
-	public function setStrategy($strategy) {
-		$this->strategy = $strategy;
-		$this->queryParameters["Strategy"]=$strategy;
+	public function setDescription($description) {
+		$this->description = $description;
+		$this->queryParameters["Description"]=$description;
 	}
 
 	public function getDeploymentSetName() {
@@ -94,24 +112,6 @@ class CreateDeploymentSetRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getDescription() {
-		return $this->description;
-	}
-
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
-	}
-
 	public function getGranularity() {
 		return $this->granularity;
 	}
@@ -130,22 +130,22 @@ class CreateDeploymentSetRequest extends \RpcAcsRequest
 		$this->queryParameters["Domain"]=$domain;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getZoneId() {
+		return $this->zoneId;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setZoneId($zoneId) {
+		$this->zoneId = $zoneId;
+		$this->queryParameters["ZoneId"]=$zoneId;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getStrategy() {
+		return $this->strategy;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setStrategy($strategy) {
+		$this->strategy = $strategy;
+		$this->queryParameters["Strategy"]=$strategy;
 	}
 	
 }

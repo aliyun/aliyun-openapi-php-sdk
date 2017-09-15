@@ -27,70 +27,25 @@ class ImportImageRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $platform;
-
-	private  $roleName;
-
-	private  $resourceOwnerAccount;
-
-	private  $oSType;
-
-	private  $description;
-
 	private  $DiskDeviceMappings;
-
-	private  $architecture;
 
 	private  $resourceOwnerId;
 
-	private  $ownerId;
+	private  $resourceOwnerAccount;
 
 	private  $imageName;
 
-	public function getPlatform() {
-		return $this->platform;
-	}
+	private  $roleName;
 
-	public function setPlatform($platform) {
-		$this->platform = $platform;
-		$this->queryParameters["Platform"]=$platform;
-	}
+	private  $description;
 
-	public function getRoleName() {
-		return $this->roleName;
-	}
+	private  $oSType;
 
-	public function setRoleName($roleName) {
-		$this->roleName = $roleName;
-		$this->queryParameters["RoleName"]=$roleName;
-	}
+	private  $ownerId;
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+	private  $platform;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getOSType() {
-		return $this->oSType;
-	}
-
-	public function setOSType($oSType) {
-		$this->oSType = $oSType;
-		$this->queryParameters["OSType"]=$oSType;
-	}
-
-	public function getDescription() {
-		return $this->description;
-	}
-
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
-	}
+	private  $architecture;
 
 	public function getDiskDeviceMappings() {
 		return $this->DiskDeviceMappings;
@@ -109,15 +64,6 @@ class ImportImageRequest extends \RpcAcsRequest
 		}
 	}
 
-	public function getArchitecture() {
-		return $this->architecture;
-	}
-
-	public function setArchitecture($architecture) {
-		$this->architecture = $architecture;
-		$this->queryParameters["Architecture"]=$architecture;
-	}
-
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
 	}
@@ -125,6 +71,51 @@ class ImportImageRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getImageName() {
+		return $this->imageName;
+	}
+
+	public function setImageName($imageName) {
+		$this->imageName = $imageName;
+		$this->queryParameters["ImageName"]=$imageName;
+	}
+
+	public function getRoleName() {
+		return $this->roleName;
+	}
+
+	public function setRoleName($roleName) {
+		$this->roleName = $roleName;
+		$this->queryParameters["RoleName"]=$roleName;
+	}
+
+	public function getDescription() {
+		return $this->description;
+	}
+
+	public function setDescription($description) {
+		$this->description = $description;
+		$this->queryParameters["Description"]=$description;
+	}
+
+	public function getOSType() {
+		return $this->oSType;
+	}
+
+	public function setOSType($oSType) {
+		$this->oSType = $oSType;
+		$this->queryParameters["OSType"]=$oSType;
 	}
 
 	public function getOwnerId() {
@@ -136,13 +127,22 @@ class ImportImageRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getImageName() {
-		return $this->imageName;
+	public function getPlatform() {
+		return $this->platform;
 	}
 
-	public function setImageName($imageName) {
-		$this->imageName = $imageName;
-		$this->queryParameters["ImageName"]=$imageName;
+	public function setPlatform($platform) {
+		$this->platform = $platform;
+		$this->queryParameters["Platform"]=$platform;
+	}
+
+	public function getArchitecture() {
+		return $this->architecture;
+	}
+
+	public function setArchitecture($architecture) {
+		$this->architecture = $architecture;
+		$this->queryParameters["Architecture"]=$architecture;
 	}
 	
 }

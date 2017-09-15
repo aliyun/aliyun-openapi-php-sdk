@@ -27,29 +27,29 @@ class DescribeNatGatewaysRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $pageSize;
+	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
-	private  $pageNumber;
-
-	private  $resourceOwnerId;
+	private  $ownerAccount;
 
 	private  $vpcId;
 
-	private  $ownerAccount;
-
-	private  $ownerId;
+	private  $pageSize;
 
 	private  $natGatewayId;
 
-	public function getPageSize() {
-		return $this->pageSize;
+	private  $ownerId;
+
+	private  $pageNumber;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -61,22 +61,13 @@ class DescribeNatGatewaysRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getPageNumber() {
-		return $this->pageNumber;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getVpcId() {
@@ -88,13 +79,22 @@ class DescribeNatGatewaysRequest extends \RpcAcsRequest
 		$this->queryParameters["VpcId"]=$vpcId;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getPageSize() {
+		return $this->pageSize;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
+	public function getNatGatewayId() {
+		return $this->natGatewayId;
+	}
+
+	public function setNatGatewayId($natGatewayId) {
+		$this->natGatewayId = $natGatewayId;
+		$this->queryParameters["NatGatewayId"]=$natGatewayId;
 	}
 
 	public function getOwnerId() {
@@ -106,13 +106,13 @@ class DescribeNatGatewaysRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getNatGatewayId() {
-		return $this->natGatewayId;
+	public function getPageNumber() {
+		return $this->pageNumber;
 	}
 
-	public function setNatGatewayId($natGatewayId) {
-		$this->natGatewayId = $natGatewayId;
-		$this->queryParameters["NatGatewayId"]=$natGatewayId;
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 	
 }

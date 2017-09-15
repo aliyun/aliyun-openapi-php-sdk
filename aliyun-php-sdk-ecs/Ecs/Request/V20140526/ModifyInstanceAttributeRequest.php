@@ -29,23 +29,23 @@ class ModifyInstanceAttributeRequest extends \RpcAcsRequest
 
 	private  $userData;
 
-	private  $resourceOwnerAccount;
-
-	private  $description;
-
-	private  $instanceName;
-
-	private  $hostName;
-
 	private  $resourceOwnerId;
-
-	private  $ownerAccount;
-
-	private  $ownerId;
 
 	private  $password;
 
+	private  $hostName;
+
 	private  $instanceId;
+
+	private  $instanceName;
+
+	private  $resourceOwnerAccount;
+
+	private  $ownerAccount;
+
+	private  $description;
+
+	private  $ownerId;
 
 	public function getUserData() {
 		return $this->userData;
@@ -54,42 +54,6 @@ class ModifyInstanceAttributeRequest extends \RpcAcsRequest
 	public function setUserData($userData) {
 		$this->userData = $userData;
 		$this->queryParameters["UserData"]=$userData;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getDescription() {
-		return $this->description;
-	}
-
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
-	}
-
-	public function getInstanceName() {
-		return $this->instanceName;
-	}
-
-	public function setInstanceName($instanceName) {
-		$this->instanceName = $instanceName;
-		$this->queryParameters["InstanceName"]=$instanceName;
-	}
-
-	public function getHostName() {
-		return $this->hostName;
-	}
-
-	public function setHostName($hostName) {
-		$this->hostName = $hostName;
-		$this->queryParameters["HostName"]=$hostName;
 	}
 
 	public function getResourceOwnerId() {
@@ -101,24 +65,6 @@ class ModifyInstanceAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
 	public function getPassword() {
 		return $this->password;
 	}
@@ -128,6 +74,15 @@ class ModifyInstanceAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["Password"]=$password;
 	}
 
+	public function getHostName() {
+		return $this->hostName;
+	}
+
+	public function setHostName($hostName) {
+		$this->hostName = $hostName;
+		$this->queryParameters["HostName"]=$hostName;
+	}
+
 	public function getInstanceId() {
 		return $this->instanceId;
 	}
@@ -135,6 +90,51 @@ class ModifyInstanceAttributeRequest extends \RpcAcsRequest
 	public function setInstanceId($instanceId) {
 		$this->instanceId = $instanceId;
 		$this->queryParameters["InstanceId"]=$instanceId;
+	}
+
+	public function getInstanceName() {
+		return $this->instanceName;
+	}
+
+	public function setInstanceName($instanceName) {
+		$this->instanceName = $instanceName;
+		$this->queryParameters["InstanceName"]=$instanceName;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getDescription() {
+		return $this->description;
+	}
+
+	public function setDescription($description) {
+		$this->description = $description;
+		$this->queryParameters["Description"]=$description;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

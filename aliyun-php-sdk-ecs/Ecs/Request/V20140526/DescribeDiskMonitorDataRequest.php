@@ -27,38 +27,38 @@ class DescribeDiskMonitorDataRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $endTime;
-
-	private  $startTime;
-
-	private  $resourceOwnerAccount;
-
-	private  $diskId;
-
 	private  $resourceOwnerId;
-
-	private  $ownerAccount;
 
 	private  $period;
 
+	private  $resourceOwnerAccount;
+
+	private  $ownerAccount;
+
+	private  $endTime;
+
+	private  $diskId;
+
+	private  $startTime;
+
 	private  $ownerId;
 
-	public function getEndTime() {
-		return $this->endTime;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getStartTime() {
-		return $this->startTime;
+	public function getPeriod() {
+		return $this->period;
 	}
 
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
+	public function setPeriod($period) {
+		$this->period = $period;
+		$this->queryParameters["Period"]=$period;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -70,24 +70,6 @@ class DescribeDiskMonitorDataRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getDiskId() {
-		return $this->diskId;
-	}
-
-	public function setDiskId($diskId) {
-		$this->diskId = $diskId;
-		$this->queryParameters["DiskId"]=$diskId;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -97,13 +79,31 @@ class DescribeDiskMonitorDataRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getPeriod() {
-		return $this->period;
+	public function getEndTime() {
+		return $this->endTime;
 	}
 
-	public function setPeriod($period) {
-		$this->period = $period;
-		$this->queryParameters["Period"]=$period;
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
+	}
+
+	public function getDiskId() {
+		return $this->diskId;
+	}
+
+	public function setDiskId($diskId) {
+		$this->diskId = $diskId;
+		$this->queryParameters["DiskId"]=$diskId;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
 	}
 
 	public function getOwnerId() {

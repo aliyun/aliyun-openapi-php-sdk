@@ -27,31 +27,40 @@ class CreateVpcRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $clientToken;
+	private  $vpcName;
+
+	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
-	private  $description;
-
-	private  $vpcName;
-
-	private  $userCidr;
-
-	private  $resourceOwnerId;
+	private  $clientToken;
 
 	private  $ownerAccount;
 
 	private  $cidrBlock;
 
+	private  $description;
+
+	private  $userCidr;
+
 	private  $ownerId;
 
-	public function getClientToken() {
-		return $this->clientToken;
+	public function getVpcName() {
+		return $this->vpcName;
 	}
 
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
+	public function setVpcName($vpcName) {
+		$this->vpcName = $vpcName;
+		$this->queryParameters["VpcName"]=$vpcName;
+	}
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
+	}
+
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -63,40 +72,13 @@ class CreateVpcRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getDescription() {
-		return $this->description;
+	public function getClientToken() {
+		return $this->clientToken;
 	}
 
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
-	}
-
-	public function getVpcName() {
-		return $this->vpcName;
-	}
-
-	public function setVpcName($vpcName) {
-		$this->vpcName = $vpcName;
-		$this->queryParameters["VpcName"]=$vpcName;
-	}
-
-	public function getUserCidr() {
-		return $this->userCidr;
-	}
-
-	public function setUserCidr($userCidr) {
-		$this->userCidr = $userCidr;
-		$this->queryParameters["UserCidr"]=$userCidr;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setClientToken($clientToken) {
+		$this->clientToken = $clientToken;
+		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
 	public function getOwnerAccount() {
@@ -115,6 +97,24 @@ class CreateVpcRequest extends \RpcAcsRequest
 	public function setCidrBlock($cidrBlock) {
 		$this->cidrBlock = $cidrBlock;
 		$this->queryParameters["CidrBlock"]=$cidrBlock;
+	}
+
+	public function getDescription() {
+		return $this->description;
+	}
+
+	public function setDescription($description) {
+		$this->description = $description;
+		$this->queryParameters["Description"]=$description;
+	}
+
+	public function getUserCidr() {
+		return $this->userCidr;
+	}
+
+	public function setUserCidr($userCidr) {
+		$this->userCidr = $userCidr;
+		$this->queryParameters["UserCidr"]=$userCidr;
 	}
 
 	public function getOwnerId() {

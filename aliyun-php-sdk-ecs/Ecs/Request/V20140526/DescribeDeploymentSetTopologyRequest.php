@@ -27,23 +27,41 @@ class DescribeDeploymentSetTopologyRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
+	private  $deploymentSetId;
+
+	private  $resourceOwnerId;
+
 	private  $resourceOwnerAccount;
 
 	private  $granularity;
 
 	private  $domain;
 
-	private  $strategy;
+	private  $networkType;
 
 	private  $deploymentSetName;
 
-	private  $deploymentSetId;
-
-	private  $resourceOwnerId;
-
-	private  $networkType;
-
 	private  $ownerId;
+
+	private  $strategy;
+
+	public function getDeploymentSetId() {
+		return $this->deploymentSetId;
+	}
+
+	public function setDeploymentSetId($deploymentSetId) {
+		$this->deploymentSetId = $deploymentSetId;
+		$this->queryParameters["DeploymentSetId"]=$deploymentSetId;
+	}
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
+	}
+
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
 
 	public function getResourceOwnerAccount() {
 		return $this->resourceOwnerAccount;
@@ -72,13 +90,13 @@ class DescribeDeploymentSetTopologyRequest extends \RpcAcsRequest
 		$this->queryParameters["Domain"]=$domain;
 	}
 
-	public function getStrategy() {
-		return $this->strategy;
+	public function getNetworkType() {
+		return $this->networkType;
 	}
 
-	public function setStrategy($strategy) {
-		$this->strategy = $strategy;
-		$this->queryParameters["Strategy"]=$strategy;
+	public function setNetworkType($networkType) {
+		$this->networkType = $networkType;
+		$this->queryParameters["NetworkType"]=$networkType;
 	}
 
 	public function getDeploymentSetName() {
@@ -90,33 +108,6 @@ class DescribeDeploymentSetTopologyRequest extends \RpcAcsRequest
 		$this->queryParameters["DeploymentSetName"]=$deploymentSetName;
 	}
 
-	public function getDeploymentSetId() {
-		return $this->deploymentSetId;
-	}
-
-	public function setDeploymentSetId($deploymentSetId) {
-		$this->deploymentSetId = $deploymentSetId;
-		$this->queryParameters["DeploymentSetId"]=$deploymentSetId;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getNetworkType() {
-		return $this->networkType;
-	}
-
-	public function setNetworkType($networkType) {
-		$this->networkType = $networkType;
-		$this->queryParameters["NetworkType"]=$networkType;
-	}
-
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -124,6 +115,15 @@ class DescribeDeploymentSetTopologyRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getStrategy() {
+		return $this->strategy;
+	}
+
+	public function setStrategy($strategy) {
+		$this->strategy = $strategy;
+		$this->queryParameters["Strategy"]=$strategy;
 	}
 	
 }

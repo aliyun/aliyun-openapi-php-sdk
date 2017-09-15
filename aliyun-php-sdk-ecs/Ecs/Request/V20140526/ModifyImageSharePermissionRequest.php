@@ -27,13 +27,33 @@ class ModifyImageSharePermissionRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $resourceOwnerAccount;
+	private  $addAccount1;
 
 	private  $resourceOwnerId;
 
-	private  $ownerAccount;
+	private  $imageId;
 
-	private  $addAccount1;
+	private  $addAccount9;
+
+	private  $addAccount8;
+
+	private  $addAccount7;
+
+	private  $addAccount6;
+
+	private  $addAccount5;
+
+	private  $addAccount10;
+
+	private  $addAccount4;
+
+	private  $addAccount3;
+
+	private  $addAccount2;
+
+	private  $resourceOwnerAccount;
+
+	private  $ownerAccount;
 
 	private  $removeAccount1;
 
@@ -45,45 +65,25 @@ class ModifyImageSharePermissionRequest extends \RpcAcsRequest
 
 	private  $ownerId;
 
-	private  $imageId;
-
 	private  $removeAccount9;
-
-	private  $removeAccount10;
-
-	private  $removeAccount6;
 
 	private  $removeAccount5;
 
-	private  $removeAccount8;
+	private  $removeAccount6;
 
 	private  $removeAccount7;
 
-	private  $addAccount4;
+	private  $removeAccount8;
 
-	private  $addAccount5;
+	private  $removeAccount10;
 
-	private  $addAccount2;
-
-	private  $addAccount3;
-
-	private  $addAccount8;
-
-	private  $addAccount9;
-
-	private  $addAccount6;
-
-	private  $addAccount10;
-
-	private  $addAccount7;
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
+	public function getAddAccount1() {
+		return $this->addAccount1;
 	}
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setAddAccount1($addAccount1) {
+		$this->addAccount1 = $addAccount1;
+		$this->queryParameters["AddAccount.1"]=$addAccount1;
 	}
 
 	public function getResourceOwnerId() {
@@ -95,6 +95,105 @@ class ModifyImageSharePermissionRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getImageId() {
+		return $this->imageId;
+	}
+
+	public function setImageId($imageId) {
+		$this->imageId = $imageId;
+		$this->queryParameters["ImageId"]=$imageId;
+	}
+
+	public function getAddAccount9() {
+		return $this->addAccount9;
+	}
+
+	public function setAddAccount9($addAccount9) {
+		$this->addAccount9 = $addAccount9;
+		$this->queryParameters["AddAccount.9"]=$addAccount9;
+	}
+
+	public function getAddAccount8() {
+		return $this->addAccount8;
+	}
+
+	public function setAddAccount8($addAccount8) {
+		$this->addAccount8 = $addAccount8;
+		$this->queryParameters["AddAccount.8"]=$addAccount8;
+	}
+
+	public function getAddAccount7() {
+		return $this->addAccount7;
+	}
+
+	public function setAddAccount7($addAccount7) {
+		$this->addAccount7 = $addAccount7;
+		$this->queryParameters["AddAccount.7"]=$addAccount7;
+	}
+
+	public function getAddAccount6() {
+		return $this->addAccount6;
+	}
+
+	public function setAddAccount6($addAccount6) {
+		$this->addAccount6 = $addAccount6;
+		$this->queryParameters["AddAccount.6"]=$addAccount6;
+	}
+
+	public function getAddAccount5() {
+		return $this->addAccount5;
+	}
+
+	public function setAddAccount5($addAccount5) {
+		$this->addAccount5 = $addAccount5;
+		$this->queryParameters["AddAccount.5"]=$addAccount5;
+	}
+
+	public function getAddAccount10() {
+		return $this->addAccount10;
+	}
+
+	public function setAddAccount10($addAccount10) {
+		$this->addAccount10 = $addAccount10;
+		$this->queryParameters["AddAccount.10"]=$addAccount10;
+	}
+
+	public function getAddAccount4() {
+		return $this->addAccount4;
+	}
+
+	public function setAddAccount4($addAccount4) {
+		$this->addAccount4 = $addAccount4;
+		$this->queryParameters["AddAccount.4"]=$addAccount4;
+	}
+
+	public function getAddAccount3() {
+		return $this->addAccount3;
+	}
+
+	public function setAddAccount3($addAccount3) {
+		$this->addAccount3 = $addAccount3;
+		$this->queryParameters["AddAccount.3"]=$addAccount3;
+	}
+
+	public function getAddAccount2() {
+		return $this->addAccount2;
+	}
+
+	public function setAddAccount2($addAccount2) {
+		$this->addAccount2 = $addAccount2;
+		$this->queryParameters["AddAccount.2"]=$addAccount2;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -102,15 +201,6 @@ class ModifyImageSharePermissionRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getAddAccount1() {
-		return $this->addAccount1;
-	}
-
-	public function setAddAccount1($addAccount1) {
-		$this->addAccount1 = $addAccount1;
-		$this->queryParameters["AddAccount.1"]=$addAccount1;
 	}
 
 	public function getRemoveAccount1() {
@@ -158,15 +248,6 @@ class ModifyImageSharePermissionRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getImageId() {
-		return $this->imageId;
-	}
-
-	public function setImageId($imageId) {
-		$this->imageId = $imageId;
-		$this->queryParameters["ImageId"]=$imageId;
-	}
-
 	public function getRemoveAccount9() {
 		return $this->removeAccount9;
 	}
@@ -174,24 +255,6 @@ class ModifyImageSharePermissionRequest extends \RpcAcsRequest
 	public function setRemoveAccount9($removeAccount9) {
 		$this->removeAccount9 = $removeAccount9;
 		$this->queryParameters["RemoveAccount.9"]=$removeAccount9;
-	}
-
-	public function getRemoveAccount10() {
-		return $this->removeAccount10;
-	}
-
-	public function setRemoveAccount10($removeAccount10) {
-		$this->removeAccount10 = $removeAccount10;
-		$this->queryParameters["RemoveAccount.10"]=$removeAccount10;
-	}
-
-	public function getRemoveAccount6() {
-		return $this->removeAccount6;
-	}
-
-	public function setRemoveAccount6($removeAccount6) {
-		$this->removeAccount6 = $removeAccount6;
-		$this->queryParameters["RemoveAccount.6"]=$removeAccount6;
 	}
 
 	public function getRemoveAccount5() {
@@ -203,13 +266,13 @@ class ModifyImageSharePermissionRequest extends \RpcAcsRequest
 		$this->queryParameters["RemoveAccount.5"]=$removeAccount5;
 	}
 
-	public function getRemoveAccount8() {
-		return $this->removeAccount8;
+	public function getRemoveAccount6() {
+		return $this->removeAccount6;
 	}
 
-	public function setRemoveAccount8($removeAccount8) {
-		$this->removeAccount8 = $removeAccount8;
-		$this->queryParameters["RemoveAccount.8"]=$removeAccount8;
+	public function setRemoveAccount6($removeAccount6) {
+		$this->removeAccount6 = $removeAccount6;
+		$this->queryParameters["RemoveAccount.6"]=$removeAccount6;
 	}
 
 	public function getRemoveAccount7() {
@@ -221,85 +284,22 @@ class ModifyImageSharePermissionRequest extends \RpcAcsRequest
 		$this->queryParameters["RemoveAccount.7"]=$removeAccount7;
 	}
 
-	public function getAddAccount4() {
-		return $this->addAccount4;
+	public function getRemoveAccount8() {
+		return $this->removeAccount8;
 	}
 
-	public function setAddAccount4($addAccount4) {
-		$this->addAccount4 = $addAccount4;
-		$this->queryParameters["AddAccount.4"]=$addAccount4;
+	public function setRemoveAccount8($removeAccount8) {
+		$this->removeAccount8 = $removeAccount8;
+		$this->queryParameters["RemoveAccount.8"]=$removeAccount8;
 	}
 
-	public function getAddAccount5() {
-		return $this->addAccount5;
+	public function getRemoveAccount10() {
+		return $this->removeAccount10;
 	}
 
-	public function setAddAccount5($addAccount5) {
-		$this->addAccount5 = $addAccount5;
-		$this->queryParameters["AddAccount.5"]=$addAccount5;
-	}
-
-	public function getAddAccount2() {
-		return $this->addAccount2;
-	}
-
-	public function setAddAccount2($addAccount2) {
-		$this->addAccount2 = $addAccount2;
-		$this->queryParameters["AddAccount.2"]=$addAccount2;
-	}
-
-	public function getAddAccount3() {
-		return $this->addAccount3;
-	}
-
-	public function setAddAccount3($addAccount3) {
-		$this->addAccount3 = $addAccount3;
-		$this->queryParameters["AddAccount.3"]=$addAccount3;
-	}
-
-	public function getAddAccount8() {
-		return $this->addAccount8;
-	}
-
-	public function setAddAccount8($addAccount8) {
-		$this->addAccount8 = $addAccount8;
-		$this->queryParameters["AddAccount.8"]=$addAccount8;
-	}
-
-	public function getAddAccount9() {
-		return $this->addAccount9;
-	}
-
-	public function setAddAccount9($addAccount9) {
-		$this->addAccount9 = $addAccount9;
-		$this->queryParameters["AddAccount.9"]=$addAccount9;
-	}
-
-	public function getAddAccount6() {
-		return $this->addAccount6;
-	}
-
-	public function setAddAccount6($addAccount6) {
-		$this->addAccount6 = $addAccount6;
-		$this->queryParameters["AddAccount.6"]=$addAccount6;
-	}
-
-	public function getAddAccount10() {
-		return $this->addAccount10;
-	}
-
-	public function setAddAccount10($addAccount10) {
-		$this->addAccount10 = $addAccount10;
-		$this->queryParameters["AddAccount.10"]=$addAccount10;
-	}
-
-	public function getAddAccount7() {
-		return $this->addAccount7;
-	}
-
-	public function setAddAccount7($addAccount7) {
-		$this->addAccount7 = $addAccount7;
-		$this->queryParameters["AddAccount.7"]=$addAccount7;
+	public function setRemoveAccount10($removeAccount10) {
+		$this->removeAccount10 = $removeAccount10;
+		$this->queryParameters["RemoveAccount.10"]=$removeAccount10;
 	}
 	
 }

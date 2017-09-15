@@ -27,33 +27,42 @@ class CreateVSwitchRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $vSwitchName;
+	private  $resourceOwnerId;
+
+	private  $resourceOwnerAccount;
 
 	private  $clientToken;
 
-	private  $resourceOwnerAccount;
+	private  $vpcId;
+
+	private  $vSwitchName;
+
+	private  $ownerAccount;
+
+	private  $cidrBlock;
 
 	private  $zoneId;
 
 	private  $description;
 
-	private  $resourceOwnerId;
-
-	private  $ownerAccount;
-
-	private  $vpcId;
-
-	private  $cidrBlock;
-
 	private  $ownerId;
 
-	public function getVSwitchName() {
-		return $this->vSwitchName;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setVSwitchName($vSwitchName) {
-		$this->vSwitchName = $vSwitchName;
-		$this->queryParameters["VSwitchName"]=$vSwitchName;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
 	public function getClientToken() {
@@ -65,13 +74,40 @@ class CreateVSwitchRequest extends \RpcAcsRequest
 		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
+	public function getVpcId() {
+		return $this->vpcId;
 	}
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setVpcId($vpcId) {
+		$this->vpcId = $vpcId;
+		$this->queryParameters["VpcId"]=$vpcId;
+	}
+
+	public function getVSwitchName() {
+		return $this->vSwitchName;
+	}
+
+	public function setVSwitchName($vSwitchName) {
+		$this->vSwitchName = $vSwitchName;
+		$this->queryParameters["VSwitchName"]=$vSwitchName;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getCidrBlock() {
+		return $this->cidrBlock;
+	}
+
+	public function setCidrBlock($cidrBlock) {
+		$this->cidrBlock = $cidrBlock;
+		$this->queryParameters["CidrBlock"]=$cidrBlock;
 	}
 
 	public function getZoneId() {
@@ -90,42 +126,6 @@ class CreateVSwitchRequest extends \RpcAcsRequest
 	public function setDescription($description) {
 		$this->description = $description;
 		$this->queryParameters["Description"]=$description;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getVpcId() {
-		return $this->vpcId;
-	}
-
-	public function setVpcId($vpcId) {
-		$this->vpcId = $vpcId;
-		$this->queryParameters["VpcId"]=$vpcId;
-	}
-
-	public function getCidrBlock() {
-		return $this->cidrBlock;
-	}
-
-	public function setCidrBlock($cidrBlock) {
-		$this->cidrBlock = $cidrBlock;
-		$this->queryParameters["CidrBlock"]=$cidrBlock;
 	}
 
 	public function getOwnerId() {

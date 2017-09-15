@@ -27,33 +27,42 @@ class CreateRouteEntryRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $nextHopType;
-
-	private  $clientToken;
+	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
-	private  $NextHopLists;
-
-	private  $nextHopId;
-
-	private  $routeTableId;
-
-	private  $resourceOwnerId;
-
-	private  $ownerAccount;
-
-	private  $ownerId;
+	private  $clientToken;
 
 	private  $destinationCidrBlock;
 
-	public function getNextHopType() {
-		return $this->nextHopType;
+	private  $ownerAccount;
+
+	private  $nextHopId;
+
+	private  $ownerId;
+
+	private  $nextHopType;
+
+	private  $NextHopLists;
+
+	private  $routeTableId;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setNextHopType($nextHopType) {
-		$this->nextHopType = $nextHopType;
-		$this->queryParameters["NextHopType"]=$nextHopType;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
 	public function getClientToken() {
@@ -65,13 +74,49 @@ class CreateRouteEntryRequest extends \RpcAcsRequest
 		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
+	public function getDestinationCidrBlock() {
+		return $this->destinationCidrBlock;
 	}
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setDestinationCidrBlock($destinationCidrBlock) {
+		$this->destinationCidrBlock = $destinationCidrBlock;
+		$this->queryParameters["DestinationCidrBlock"]=$destinationCidrBlock;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getNextHopId() {
+		return $this->nextHopId;
+	}
+
+	public function setNextHopId($nextHopId) {
+		$this->nextHopId = $nextHopId;
+		$this->queryParameters["NextHopId"]=$nextHopId;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getNextHopType() {
+		return $this->nextHopType;
+	}
+
+	public function setNextHopType($nextHopType) {
+		$this->nextHopType = $nextHopType;
+		$this->queryParameters["NextHopType"]=$nextHopType;
 	}
 
 	public function getNextHopLists() {
@@ -87,15 +132,6 @@ class CreateRouteEntryRequest extends \RpcAcsRequest
 		}
 	}
 
-	public function getNextHopId() {
-		return $this->nextHopId;
-	}
-
-	public function setNextHopId($nextHopId) {
-		$this->nextHopId = $nextHopId;
-		$this->queryParameters["NextHopId"]=$nextHopId;
-	}
-
 	public function getRouteTableId() {
 		return $this->routeTableId;
 	}
@@ -103,42 +139,6 @@ class CreateRouteEntryRequest extends \RpcAcsRequest
 	public function setRouteTableId($routeTableId) {
 		$this->routeTableId = $routeTableId;
 		$this->queryParameters["RouteTableId"]=$routeTableId;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getDestinationCidrBlock() {
-		return $this->destinationCidrBlock;
-	}
-
-	public function setDestinationCidrBlock($destinationCidrBlock) {
-		$this->destinationCidrBlock = $destinationCidrBlock;
-		$this->queryParameters["DestinationCidrBlock"]=$destinationCidrBlock;
 	}
 	
 }

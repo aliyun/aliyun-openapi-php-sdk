@@ -27,29 +27,38 @@ class DescribeBandwidthPackagesRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $pageSize;
-
-	private  $resourceOwnerAccount;
-
-	private  $pageNumber;
-
 	private  $resourceOwnerId;
-
-	private  $ownerAccount;
-
-	private  $ownerId;
-
-	private  $natGatewayId;
 
 	private  $bandwidthPackageId;
 
-	public function getPageSize() {
-		return $this->pageSize;
+	private  $resourceOwnerAccount;
+
+	private  $ownerAccount;
+
+	private  $pageSize;
+
+	private  $natGatewayId;
+
+	private  $ownerId;
+
+	private  $pageNumber;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getBandwidthPackageId() {
+		return $this->bandwidthPackageId;
+	}
+
+	public function setBandwidthPackageId($bandwidthPackageId) {
+		$this->bandwidthPackageId = $bandwidthPackageId;
+		$this->queryParameters["BandwidthPackageId"]=$bandwidthPackageId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -61,24 +70,6 @@ class DescribeBandwidthPackagesRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -88,13 +79,13 @@ class DescribeBandwidthPackagesRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getPageSize() {
+		return $this->pageSize;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
 	public function getNatGatewayId() {
@@ -106,13 +97,22 @@ class DescribeBandwidthPackagesRequest extends \RpcAcsRequest
 		$this->queryParameters["NatGatewayId"]=$natGatewayId;
 	}
 
-	public function getBandwidthPackageId() {
-		return $this->bandwidthPackageId;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setBandwidthPackageId($bandwidthPackageId) {
-		$this->bandwidthPackageId = $bandwidthPackageId;
-		$this->queryParameters["BandwidthPackageId"]=$bandwidthPackageId;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getPageNumber() {
+		return $this->pageNumber;
+	}
+
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 	
 }

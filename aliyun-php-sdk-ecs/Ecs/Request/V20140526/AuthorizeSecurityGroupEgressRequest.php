@@ -27,43 +27,71 @@ class AuthorizeSecurityGroupEgressRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $destGroupId;
+	private  $nicType;
+
+	private  $resourceOwnerId;
+
+	private  $sourcePortRange;
 
 	private  $clientToken;
 
 	private  $securityGroupId;
 
+	private  $description;
+
+	private  $callerUid;
+
+	private  $policy;
+
 	private  $portRange;
 
-	private  $ownerId;
-
-	private  $destCidrIp;
+	private  $resourceOwnerAccount;
 
 	private  $ipProtocol;
 
-	private  $resourceOwnerAccount;
+	private  $ownerAccount;
+
+	private  $sourceCidrIp;
+
+	private  $callerBid;
+
+	private  $destGroupId;
+
+	private  $ownerId;
 
 	private  $destGroupOwnerAccount;
 
 	private  $priority;
 
+	private  $destCidrIp;
+
 	private  $destGroupOwnerId;
 
-	private  $nicType;
-
-	private  $policy;
-
-	private  $resourceOwnerId;
-
-	private  $ownerAccount;
-
-	public function getDestGroupId() {
-		return $this->destGroupId;
+	public function getNicType() {
+		return $this->nicType;
 	}
 
-	public function setDestGroupId($destGroupId) {
-		$this->destGroupId = $destGroupId;
-		$this->queryParameters["DestGroupId"]=$destGroupId;
+	public function setNicType($nicType) {
+		$this->nicType = $nicType;
+		$this->queryParameters["NicType"]=$nicType;
+	}
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
+	}
+
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getSourcePortRange() {
+		return $this->sourcePortRange;
+	}
+
+	public function setSourcePortRange($sourcePortRange) {
+		$this->sourcePortRange = $sourcePortRange;
+		$this->queryParameters["SourcePortRange"]=$sourcePortRange;
 	}
 
 	public function getClientToken() {
@@ -84,6 +112,33 @@ class AuthorizeSecurityGroupEgressRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityGroupId"]=$securityGroupId;
 	}
 
+	public function getDescription() {
+		return $this->description;
+	}
+
+	public function setDescription($description) {
+		$this->description = $description;
+		$this->queryParameters["Description"]=$description;
+	}
+
+	public function getcallerUid() {
+		return $this->callerUid;
+	}
+
+	public function setcallerUid($callerUid) {
+		$this->callerUid = $callerUid;
+		$this->queryParameters["callerUid"]=$callerUid;
+	}
+
+	public function getPolicy() {
+		return $this->policy;
+	}
+
+	public function setPolicy($policy) {
+		$this->policy = $policy;
+		$this->queryParameters["Policy"]=$policy;
+	}
+
 	public function getPortRange() {
 		return $this->portRange;
 	}
@@ -93,22 +148,13 @@ class AuthorizeSecurityGroupEgressRequest extends \RpcAcsRequest
 		$this->queryParameters["PortRange"]=$portRange;
 	}
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getDestCidrIp() {
-		return $this->destCidrIp;
-	}
-
-	public function setDestCidrIp($destCidrIp) {
-		$this->destCidrIp = $destCidrIp;
-		$this->queryParameters["DestCidrIp"]=$destCidrIp;
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
 	public function getIpProtocol() {
@@ -120,13 +166,49 @@ class AuthorizeSecurityGroupEgressRequest extends \RpcAcsRequest
 		$this->queryParameters["IpProtocol"]=$ipProtocol;
 	}
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getSourceCidrIp() {
+		return $this->sourceCidrIp;
+	}
+
+	public function setSourceCidrIp($sourceCidrIp) {
+		$this->sourceCidrIp = $sourceCidrIp;
+		$this->queryParameters["SourceCidrIp"]=$sourceCidrIp;
+	}
+
+	public function getcallerBid() {
+		return $this->callerBid;
+	}
+
+	public function setcallerBid($callerBid) {
+		$this->callerBid = $callerBid;
+		$this->queryParameters["callerBid"]=$callerBid;
+	}
+
+	public function getDestGroupId() {
+		return $this->destGroupId;
+	}
+
+	public function setDestGroupId($destGroupId) {
+		$this->destGroupId = $destGroupId;
+		$this->queryParameters["DestGroupId"]=$destGroupId;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getDestGroupOwnerAccount() {
@@ -147,6 +229,15 @@ class AuthorizeSecurityGroupEgressRequest extends \RpcAcsRequest
 		$this->queryParameters["Priority"]=$priority;
 	}
 
+	public function getDestCidrIp() {
+		return $this->destCidrIp;
+	}
+
+	public function setDestCidrIp($destCidrIp) {
+		$this->destCidrIp = $destCidrIp;
+		$this->queryParameters["DestCidrIp"]=$destCidrIp;
+	}
+
 	public function getDestGroupOwnerId() {
 		return $this->destGroupOwnerId;
 	}
@@ -154,42 +245,6 @@ class AuthorizeSecurityGroupEgressRequest extends \RpcAcsRequest
 	public function setDestGroupOwnerId($destGroupOwnerId) {
 		$this->destGroupOwnerId = $destGroupOwnerId;
 		$this->queryParameters["DestGroupOwnerId"]=$destGroupOwnerId;
-	}
-
-	public function getNicType() {
-		return $this->nicType;
-	}
-
-	public function setNicType($nicType) {
-		$this->nicType = $nicType;
-		$this->queryParameters["NicType"]=$nicType;
-	}
-
-	public function getPolicy() {
-		return $this->policy;
-	}
-
-	public function setPolicy($policy) {
-		$this->policy = $policy;
-		$this->queryParameters["Policy"]=$policy;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 	
 }
