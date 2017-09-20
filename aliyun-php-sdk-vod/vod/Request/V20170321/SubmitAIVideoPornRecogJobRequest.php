@@ -35,11 +35,11 @@ class SubmitAIVideoPornRecogJobRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
-	private  $videoId;
-
 	private  $aIVideoPornRecogConfig;
 
 	private  $ownerId;
+
+	private  $mediaId;
 
 	public function getUserData() {
 		return $this->userData;
@@ -77,15 +77,6 @@ class SubmitAIVideoPornRecogJobRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getVideoId() {
-		return $this->videoId;
-	}
-
-	public function setVideoId($videoId) {
-		$this->videoId = $videoId;
-		$this->queryParameters["VideoId"]=$videoId;
-	}
-
 	public function getAIVideoPornRecogConfig() {
 		return $this->aIVideoPornRecogConfig;
 	}
@@ -102,6 +93,15 @@ class SubmitAIVideoPornRecogJobRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getMediaId() {
+		return $this->mediaId;
+	}
+
+	public function setMediaId($mediaId) {
+		$this->mediaId = $mediaId;
+		$this->queryParameters["MediaId"]=$mediaId;
 	}
 	
 }

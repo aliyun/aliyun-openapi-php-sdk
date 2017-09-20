@@ -19,17 +19,15 @@
  */
 namespace vod\Request\V20170321;
 
-class GetPlayInfoRequest extends \RpcAcsRequest
+class GetMezzanineInfoRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "GetPlayInfo", "vod", "openAPI");
+		parent::__construct("vod", "2017-03-21", "GetMezzanineInfo", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
-
-	private  $formats;
 
 	private  $resourceOwnerAccount;
 
@@ -39,7 +37,6 @@ class GetPlayInfoRequest extends \RpcAcsRequest
 
 	private  $authTimeout;
 
-
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
 	}
@@ -47,15 +44,6 @@ class GetPlayInfoRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getFormats() {
-		return $this->formats;
-	}
-
-	public function setFormats($formats) {
-		$this->formats = $formats;
-		$this->queryParameters["Formats"]=$formats;
 	}
 
 	public function getResourceOwnerAccount() {
