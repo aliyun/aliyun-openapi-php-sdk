@@ -28,11 +28,22 @@ class MergeFacesRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
+	private  $libraryId;
+
 	private  $targetFaceId;
 
 	private  $storeName;
 
 	private  $FaceIds;
+
+	public function getLibraryId() {
+		return $this->libraryId;
+	}
+
+	public function setLibraryId($libraryId) {
+		$this->libraryId = $libraryId;
+		$this->queryParameters["LibraryId"]=$libraryId;
+	}
 
 	public function getTargetFaceId() {
 		return $this->targetFaceId;

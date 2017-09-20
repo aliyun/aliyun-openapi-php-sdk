@@ -30,6 +30,8 @@ class CreateAlbumRequest extends \RpcAcsRequest
 
 	private  $albumName;
 
+	private  $libraryId;
+
 	private  $storeName;
 
 	private  $remark;
@@ -41,6 +43,15 @@ class CreateAlbumRequest extends \RpcAcsRequest
 	public function setAlbumName($albumName) {
 		$this->albumName = $albumName;
 		$this->queryParameters["AlbumName"]=$albumName;
+	}
+
+	public function getLibraryId() {
+		return $this->libraryId;
+	}
+
+	public function setLibraryId($libraryId) {
+		$this->libraryId = $libraryId;
+		$this->queryParameters["LibraryId"]=$libraryId;
 	}
 
 	public function getStoreName() {

@@ -28,9 +28,20 @@ class SetMeRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
+	private  $libraryId;
+
 	private  $storeName;
 
 	private  $faceId;
+
+	public function getLibraryId() {
+		return $this->libraryId;
+	}
+
+	public function setLibraryId($libraryId) {
+		$this->libraryId = $libraryId;
+		$this->queryParameters["LibraryId"]=$libraryId;
+	}
 
 	public function getStoreName() {
 		return $this->storeName;

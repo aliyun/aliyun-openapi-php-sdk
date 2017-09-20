@@ -28,9 +28,20 @@ class DeleteFacesRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
+	private  $libraryId;
+
 	private  $storeName;
 
 	private  $FaceIds;
+
+	public function getLibraryId() {
+		return $this->libraryId;
+	}
+
+	public function setLibraryId($libraryId) {
+		$this->libraryId = $libraryId;
+		$this->queryParameters["LibraryId"]=$libraryId;
+	}
 
 	public function getStoreName() {
 		return $this->storeName;

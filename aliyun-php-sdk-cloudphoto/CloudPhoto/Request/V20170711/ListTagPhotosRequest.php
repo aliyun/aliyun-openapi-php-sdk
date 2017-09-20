@@ -34,6 +34,8 @@ class ListTagPhotosRequest extends \RpcAcsRequest
 
 	private  $tagId;
 
+	private  $libraryId;
+
 	private  $storeName;
 
 	private  $state;
@@ -65,6 +67,15 @@ class ListTagPhotosRequest extends \RpcAcsRequest
 	public function setTagId($tagId) {
 		$this->tagId = $tagId;
 		$this->queryParameters["TagId"]=$tagId;
+	}
+
+	public function getLibraryId() {
+		return $this->libraryId;
+	}
+
+	public function setLibraryId($libraryId) {
+		$this->libraryId = $libraryId;
+		$this->queryParameters["LibraryId"]=$libraryId;
 	}
 
 	public function getStoreName() {

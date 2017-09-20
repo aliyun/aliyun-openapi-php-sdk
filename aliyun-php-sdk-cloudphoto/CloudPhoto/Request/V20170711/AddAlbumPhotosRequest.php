@@ -28,11 +28,22 @@ class AddAlbumPhotosRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
+	private  $libraryId;
+
 	private  $albumId;
 
 	private  $PhotoIds;
 
 	private  $storeName;
+
+	public function getLibraryId() {
+		return $this->libraryId;
+	}
+
+	public function setLibraryId($libraryId) {
+		$this->libraryId = $libraryId;
+		$this->queryParameters["LibraryId"]=$libraryId;
+	}
 
 	public function getAlbumId() {
 		return $this->albumId;

@@ -32,6 +32,8 @@ class ListMomentPhotosRequest extends \RpcAcsRequest
 
 	private  $size;
 
+	private  $libraryId;
+
 	private  $storeName;
 
 	private  $state;
@@ -56,6 +58,15 @@ class ListMomentPhotosRequest extends \RpcAcsRequest
 	public function setSize($size) {
 		$this->size = $size;
 		$this->queryParameters["Size"]=$size;
+	}
+
+	public function getLibraryId() {
+		return $this->libraryId;
+	}
+
+	public function setLibraryId($libraryId) {
+		$this->libraryId = $libraryId;
+		$this->queryParameters["LibraryId"]=$libraryId;
 	}
 
 	public function getStoreName() {

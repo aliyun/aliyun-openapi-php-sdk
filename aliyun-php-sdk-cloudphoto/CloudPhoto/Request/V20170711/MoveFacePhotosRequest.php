@@ -28,6 +28,8 @@ class MoveFacePhotosRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
+	private  $libraryId;
+
 	private  $targetFaceId;
 
 	private  $PhotoIds;
@@ -35,6 +37,15 @@ class MoveFacePhotosRequest extends \RpcAcsRequest
 	private  $storeName;
 
 	private  $sourceFaceId;
+
+	public function getLibraryId() {
+		return $this->libraryId;
+	}
+
+	public function setLibraryId($libraryId) {
+		$this->libraryId = $libraryId;
+		$this->queryParameters["LibraryId"]=$libraryId;
+	}
 
 	public function getTargetFaceId() {
 		return $this->targetFaceId;
