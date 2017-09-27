@@ -23,38 +23,39 @@ class CheckResourceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "CheckResource");
+		parent::__construct("Rds", "2014-08-15", "CheckResource", "rds", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
 
 	private  $resourceOwnerId;
 
-	private  $engine;
+	private  $resourceOwnerAccount;
 
-	private  $dBInstanceId;
+	private  $ownerAccount;
+
+	private  $specifyCount;
 
 	private  $engineVersion;
 
+	private  $ownerId;
+
 	private  $dBInstanceClass;
+
+	private  $engine;
 
 	private  $zoneId;
 
 	private  $dBInstanceUseType;
 
-	private  $specifyCount;
+	private  $dBInstanceId;
 
-	private  $ownerAccount;
-
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -66,31 +67,22 @@ class CheckResourceRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getEngine() {
-		return $this->engine;
+	public function getSpecifyCount() {
+		return $this->specifyCount;
 	}
 
-	public function setEngine($engine) {
-		$this->engine = $engine;
-		$this->queryParameters["Engine"]=$engine;
-	}
-
-	public function getDBInstanceId() {
-		return $this->dBInstanceId;
-	}
-
-	public function setDBInstanceId($dBInstanceId) {
-		$this->dBInstanceId = $dBInstanceId;
-		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
+	public function setSpecifyCount($specifyCount) {
+		$this->specifyCount = $specifyCount;
+		$this->queryParameters["SpecifyCount"]=$specifyCount;
 	}
 
 	public function getEngineVersion() {
@@ -102,6 +94,15 @@ class CheckResourceRequest extends \RpcAcsRequest
 		$this->queryParameters["EngineVersion"]=$engineVersion;
 	}
 
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
 	public function getDBInstanceClass() {
 		return $this->dBInstanceClass;
 	}
@@ -109,6 +110,15 @@ class CheckResourceRequest extends \RpcAcsRequest
 	public function setDBInstanceClass($dBInstanceClass) {
 		$this->dBInstanceClass = $dBInstanceClass;
 		$this->queryParameters["DBInstanceClass"]=$dBInstanceClass;
+	}
+
+	public function getEngine() {
+		return $this->engine;
+	}
+
+	public function setEngine($engine) {
+		$this->engine = $engine;
+		$this->queryParameters["Engine"]=$engine;
 	}
 
 	public function getZoneId() {
@@ -129,22 +139,13 @@ class CheckResourceRequest extends \RpcAcsRequest
 		$this->queryParameters["DBInstanceUseType"]=$dBInstanceUseType;
 	}
 
-	public function getSpecifyCount() {
-		return $this->specifyCount;
+	public function getDBInstanceId() {
+		return $this->dBInstanceId;
 	}
 
-	public function setSpecifyCount($specifyCount) {
-		$this->specifyCount = $specifyCount;
-		$this->queryParameters["SpecifyCount"]=$specifyCount;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setDBInstanceId($dBInstanceId) {
+		$this->dBInstanceId = $dBInstanceId;
+		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
 	}
 	
 }

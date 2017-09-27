@@ -23,41 +23,33 @@ class CreateBackupRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "CreateBackup");
+		parent::__construct("Rds", "2014-08-15", "CreateBackup", "rds", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
-
-	private  $dBInstanceId;
-
-	private  $dBName;
 
 	private  $backupMethod;
 
-	private  $backupType;
+	private  $resourceOwnerId;
+
+	private  $dBName;
+
+	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $dBInstanceId;
+
+	private  $ownerId;
+
+	private  $backupType;
+
+	public function getBackupMethod() {
+		return $this->backupMethod;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setBackupMethod($backupMethod) {
+		$this->backupMethod = $backupMethod;
+		$this->queryParameters["BackupMethod"]=$backupMethod;
 	}
 
 	public function getResourceOwnerId() {
@@ -69,15 +61,6 @@ class CreateBackupRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getDBInstanceId() {
-		return $this->dBInstanceId;
-	}
-
-	public function setDBInstanceId($dBInstanceId) {
-		$this->dBInstanceId = $dBInstanceId;
-		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
-	}
-
 	public function getDBName() {
 		return $this->dBName;
 	}
@@ -87,22 +70,13 @@ class CreateBackupRequest extends \RpcAcsRequest
 		$this->queryParameters["DBName"]=$dBName;
 	}
 
-	public function getBackupMethod() {
-		return $this->backupMethod;
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
 	}
 
-	public function setBackupMethod($backupMethod) {
-		$this->backupMethod = $backupMethod;
-		$this->queryParameters["BackupMethod"]=$backupMethod;
-	}
-
-	public function getBackupType() {
-		return $this->backupType;
-	}
-
-	public function setBackupType($backupType) {
-		$this->backupType = $backupType;
-		$this->queryParameters["BackupType"]=$backupType;
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
 	public function getOwnerAccount() {
@@ -112,6 +86,33 @@ class CreateBackupRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getDBInstanceId() {
+		return $this->dBInstanceId;
+	}
+
+	public function setDBInstanceId($dBInstanceId) {
+		$this->dBInstanceId = $dBInstanceId;
+		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getBackupType() {
+		return $this->backupType;
+	}
+
+	public function setBackupType($backupType) {
+		$this->backupType = $backupType;
+		$this->queryParameters["BackupType"]=$backupType;
 	}
 	
 }

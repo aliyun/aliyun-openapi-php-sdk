@@ -23,34 +23,35 @@ class DescribeSQLReportsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeSQLReports");
+		parent::__construct("Rds", "2014-08-15", "DescribeSQLReports", "rds", "openAPI");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
-	private  $resourceOwnerId;
+	private  $ownerAccount;
+
+	private  $pageSize;
+
+	private  $endTime;
 
 	private  $dBInstanceId;
 
 	private  $startTime;
 
-	private  $endTime;
-
-	private  $pageSize;
+	private  $ownerId;
 
 	private  $pageNumber;
 
-	private  $ownerAccount;
-
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -62,13 +63,31 @@ class DescribeSQLReportsRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
 	}
 
 	public function getDBInstanceId() {
@@ -89,22 +108,13 @@ class DescribeSQLReportsRequest extends \RpcAcsRequest
 		$this->queryParameters["StartTime"]=$startTime;
 	}
 
-	public function getEndTime() {
-		return $this->endTime;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getPageNumber() {
@@ -114,15 +124,6 @@ class DescribeSQLReportsRequest extends \RpcAcsRequest
 	public function setPageNumber($pageNumber) {
 		$this->pageNumber = $pageNumber;
 		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 	
 }

@@ -23,7 +23,8 @@ class DescribeDiagnosticReportListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeDiagnosticReportList");
+		parent::__construct("Rds", "2014-08-15", "DescribeDiagnosticReportList", "rds", "openAPI");
+		$this->setMethod("POST");
 	}
 
 	private  $dBInstanceId;

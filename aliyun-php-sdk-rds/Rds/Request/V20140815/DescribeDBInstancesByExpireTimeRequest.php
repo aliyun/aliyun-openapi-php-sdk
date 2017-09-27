@@ -23,36 +23,37 @@ class DescribeDBInstancesByExpireTimeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeDBInstancesByExpireTime");
+		parent::__construct("Rds", "2014-08-15", "DescribeDBInstancesByExpireTime", "rds", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
 
 	private  $resourceOwnerId;
 
-	private  $clientToken;
+	private  $resourceOwnerAccount;
 
-	private  $proxyId;
+	private  $ownerAccount;
 
-	private  $expirePeriod;
-
-	private  $pageSize;
+	private  $ownerId;
 
 	private  $pageNumber;
 
 	private  $tags;
 
-	private  $ownerAccount;
+	private  $expired;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $pageSize;
+
+	private  $expirePeriod;
+
+	private  $proxyId;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -64,49 +65,22 @@ class DescribeDBInstancesByExpireTimeRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getClientToken() {
-		return $this->clientToken;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
-
-	public function getproxyId() {
-		return $this->proxyId;
-	}
-
-	public function setproxyId($proxyId) {
-		$this->proxyId = $proxyId;
-		$this->queryParameters["proxyId"]=$proxyId;
-	}
-
-	public function getExpirePeriod() {
-		return $this->expirePeriod;
-	}
-
-	public function setExpirePeriod($expirePeriod) {
-		$this->expirePeriod = $expirePeriod;
-		$this->queryParameters["ExpirePeriod"]=$expirePeriod;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getPageNumber() {
@@ -127,13 +101,40 @@ class DescribeDBInstancesByExpireTimeRequest extends \RpcAcsRequest
 		$this->queryParameters["Tags"]=$tags;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getExpired() {
+		return $this->expired;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setExpired($expired) {
+		$this->expired = $expired;
+		$this->queryParameters["Expired"]=$expired;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
+	public function getExpirePeriod() {
+		return $this->expirePeriod;
+	}
+
+	public function setExpirePeriod($expirePeriod) {
+		$this->expirePeriod = $expirePeriod;
+		$this->queryParameters["ExpirePeriod"]=$expirePeriod;
+	}
+
+	public function getproxyId() {
+		return $this->proxyId;
+	}
+
+	public function setproxyId($proxyId) {
+		$this->proxyId = $proxyId;
+		$this->queryParameters["proxyId"]=$proxyId;
 	}
 	
 }

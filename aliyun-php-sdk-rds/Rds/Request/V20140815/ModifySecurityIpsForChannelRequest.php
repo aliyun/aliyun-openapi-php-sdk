@@ -23,45 +23,37 @@ class ModifySecurityIpsForChannelRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "ModifySecurityIpsForChannel");
+		parent::__construct("Rds", "2014-08-15", "ModifySecurityIpsForChannel", "rds", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
-
-	private  $clientToken;
-
-	private  $dBInstanceId;
-
-	private  $securityIps;
 
 	private  $dBInstanceIPArrayName;
 
-	private  $dBInstanceIPArrayAttribute;
+	private  $resourceOwnerId;
 
 	private  $modifyMode;
 
+	private  $resourceOwnerAccount;
+
+	private  $clientToken;
+
 	private  $ownerAccount;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $securityIps;
+
+	private  $dBInstanceIPArrayAttribute;
+
+	private  $dBInstanceId;
+
+	private  $ownerId;
+
+	public function getDBInstanceIPArrayName() {
+		return $this->dBInstanceIPArrayName;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setDBInstanceIPArrayName($dBInstanceIPArrayName) {
+		$this->dBInstanceIPArrayName = $dBInstanceIPArrayName;
+		$this->queryParameters["DBInstanceIPArrayName"]=$dBInstanceIPArrayName;
 	}
 
 	public function getResourceOwnerId() {
@@ -73,6 +65,24 @@ class ModifySecurityIpsForChannelRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getModifyMode() {
+		return $this->modifyMode;
+	}
+
+	public function setModifyMode($modifyMode) {
+		$this->modifyMode = $modifyMode;
+		$this->queryParameters["ModifyMode"]=$modifyMode;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
 	public function getClientToken() {
 		return $this->clientToken;
 	}
@@ -82,13 +92,13 @@ class ModifySecurityIpsForChannelRequest extends \RpcAcsRequest
 		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
-	public function getDBInstanceId() {
-		return $this->dBInstanceId;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setDBInstanceId($dBInstanceId) {
-		$this->dBInstanceId = $dBInstanceId;
-		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getSecurityIps() {
@@ -100,15 +110,6 @@ class ModifySecurityIpsForChannelRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityIps"]=$securityIps;
 	}
 
-	public function getDBInstanceIPArrayName() {
-		return $this->dBInstanceIPArrayName;
-	}
-
-	public function setDBInstanceIPArrayName($dBInstanceIPArrayName) {
-		$this->dBInstanceIPArrayName = $dBInstanceIPArrayName;
-		$this->queryParameters["DBInstanceIPArrayName"]=$dBInstanceIPArrayName;
-	}
-
 	public function getDBInstanceIPArrayAttribute() {
 		return $this->dBInstanceIPArrayAttribute;
 	}
@@ -118,22 +119,22 @@ class ModifySecurityIpsForChannelRequest extends \RpcAcsRequest
 		$this->queryParameters["DBInstanceIPArrayAttribute"]=$dBInstanceIPArrayAttribute;
 	}
 
-	public function getModifyMode() {
-		return $this->modifyMode;
+	public function getDBInstanceId() {
+		return $this->dBInstanceId;
 	}
 
-	public function setModifyMode($modifyMode) {
-		$this->modifyMode = $modifyMode;
-		$this->queryParameters["ModifyMode"]=$modifyMode;
+	public function setDBInstanceId($dBInstanceId) {
+		$this->dBInstanceId = $dBInstanceId;
+		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

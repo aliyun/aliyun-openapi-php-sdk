@@ -23,14 +23,24 @@ class CreateDiagnosticReportRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "CreateDiagnosticReport");
+		parent::__construct("Rds", "2014-08-15", "CreateDiagnosticReport", "rds", "openAPI");
+		$this->setMethod("POST");
 	}
+
+	private  $endTime;
 
 	private  $dBInstanceId;
 
 	private  $startTime;
 
-	private  $endTime;
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
+	}
 
 	public function getDBInstanceId() {
 		return $this->dBInstanceId;
@@ -48,15 +58,6 @@ class CreateDiagnosticReportRequest extends \RpcAcsRequest
 	public function setStartTime($startTime) {
 		$this->startTime = $startTime;
 		$this->queryParameters["StartTime"]=$startTime;
-	}
-
-	public function getEndTime() {
-		return $this->endTime;
-	}
-
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
 	}
 	
 }

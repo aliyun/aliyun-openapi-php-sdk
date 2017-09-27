@@ -23,28 +23,29 @@ class DescribeDBInstanceMonitorRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeDBInstanceMonitor");
+		parent::__construct("Rds", "2014-08-15", "DescribeDBInstanceMonitor", "rds", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
 
 	private  $resourceOwnerId;
 
-	private  $clientToken;
+	private  $resourceOwnerAccount;
 
-	private  $dBInstanceId;
+	private  $clientToken;
 
 	private  $ownerAccount;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $dBInstanceId;
+
+	private  $ownerId;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -56,15 +57,6 @@ class DescribeDBInstanceMonitorRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
 	public function getClientToken() {
 		return $this->clientToken;
 	}
@@ -72,6 +64,15 @@ class DescribeDBInstanceMonitorRequest extends \RpcAcsRequest
 	public function setClientToken($clientToken) {
 		$this->clientToken = $clientToken;
 		$this->queryParameters["ClientToken"]=$clientToken;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getDBInstanceId() {
@@ -83,13 +84,13 @@ class DescribeDBInstanceMonitorRequest extends \RpcAcsRequest
 		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

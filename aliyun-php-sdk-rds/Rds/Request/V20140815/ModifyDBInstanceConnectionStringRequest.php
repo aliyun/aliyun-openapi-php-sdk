@@ -23,42 +23,25 @@ class ModifyDBInstanceConnectionStringRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "ModifyDBInstanceConnectionString");
+		parent::__construct("Rds", "2014-08-15", "ModifyDBInstanceConnectionString", "rds", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
 
 	private  $resourceOwnerId;
 
-	private  $dBInstanceId;
-
-	private  $currentConnectionString;
-
 	private  $connectionStringPrefix;
+
+	private  $resourceOwnerAccount;
 
 	private  $port;
 
 	private  $ownerAccount;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+	private  $dBInstanceId;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+	private  $ownerId;
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+	private  $currentConnectionString;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -69,24 +52,6 @@ class ModifyDBInstanceConnectionStringRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getDBInstanceId() {
-		return $this->dBInstanceId;
-	}
-
-	public function setDBInstanceId($dBInstanceId) {
-		$this->dBInstanceId = $dBInstanceId;
-		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
-	}
-
-	public function getCurrentConnectionString() {
-		return $this->currentConnectionString;
-	}
-
-	public function setCurrentConnectionString($currentConnectionString) {
-		$this->currentConnectionString = $currentConnectionString;
-		$this->queryParameters["CurrentConnectionString"]=$currentConnectionString;
-	}
-
 	public function getConnectionStringPrefix() {
 		return $this->connectionStringPrefix;
 	}
@@ -94,6 +59,15 @@ class ModifyDBInstanceConnectionStringRequest extends \RpcAcsRequest
 	public function setConnectionStringPrefix($connectionStringPrefix) {
 		$this->connectionStringPrefix = $connectionStringPrefix;
 		$this->queryParameters["ConnectionStringPrefix"]=$connectionStringPrefix;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
 	public function getPort() {
@@ -112,6 +86,33 @@ class ModifyDBInstanceConnectionStringRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getDBInstanceId() {
+		return $this->dBInstanceId;
+	}
+
+	public function setDBInstanceId($dBInstanceId) {
+		$this->dBInstanceId = $dBInstanceId;
+		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getCurrentConnectionString() {
+		return $this->currentConnectionString;
+	}
+
+	public function setCurrentConnectionString($currentConnectionString) {
+		$this->currentConnectionString = $currentConnectionString;
+		$this->queryParameters["CurrentConnectionString"]=$currentConnectionString;
 	}
 	
 }

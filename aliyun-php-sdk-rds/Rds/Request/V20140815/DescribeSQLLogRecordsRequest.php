@@ -23,55 +23,47 @@ class DescribeSQLLogRecordsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeSQLLogRecords");
+		parent::__construct("Rds", "2014-08-15", "DescribeSQLLogRecords", "rds", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
-
-	private  $clientToken;
-
-	private  $dBInstanceId;
 
 	private  $sQLId;
 
-	private  $queryKeywords;
+	private  $resourceOwnerId;
 
-	private  $startTime;
+	private  $resourceOwnerAccount;
 
-	private  $database;
-
-	private  $user;
-
-	private  $form;
-
-	private  $endTime;
-
-	private  $pageSize;
-
-	private  $pageNumber;
+	private  $clientToken;
 
 	private  $ownerAccount;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $endTime;
+
+	private  $startTime;
+
+	private  $ownerId;
+
+	private  $queryKeywords;
+
+	private  $pageNumber;
+
+	private  $database;
+
+	private  $form;
+
+	private  $pageSize;
+
+	private  $dBInstanceId;
+
+	private  $user;
+
+	public function getSQLId() {
+		return $this->sQLId;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setSQLId($sQLId) {
+		$this->sQLId = $sQLId;
+		$this->queryParameters["SQLId"]=$sQLId;
 	}
 
 	public function getResourceOwnerId() {
@@ -83,6 +75,15 @@ class DescribeSQLLogRecordsRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
 	public function getClientToken() {
 		return $this->clientToken;
 	}
@@ -92,67 +93,13 @@ class DescribeSQLLogRecordsRequest extends \RpcAcsRequest
 		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
-	public function getDBInstanceId() {
-		return $this->dBInstanceId;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setDBInstanceId($dBInstanceId) {
-		$this->dBInstanceId = $dBInstanceId;
-		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
-	}
-
-	public function getSQLId() {
-		return $this->sQLId;
-	}
-
-	public function setSQLId($sQLId) {
-		$this->sQLId = $sQLId;
-		$this->queryParameters["SQLId"]=$sQLId;
-	}
-
-	public function getQueryKeywords() {
-		return $this->queryKeywords;
-	}
-
-	public function setQueryKeywords($queryKeywords) {
-		$this->queryKeywords = $queryKeywords;
-		$this->queryParameters["QueryKeywords"]=$queryKeywords;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
-
-	public function getDatabase() {
-		return $this->database;
-	}
-
-	public function setDatabase($database) {
-		$this->database = $database;
-		$this->queryParameters["Database"]=$database;
-	}
-
-	public function getUser() {
-		return $this->user;
-	}
-
-	public function setUser($user) {
-		$this->user = $user;
-		$this->queryParameters["User"]=$user;
-	}
-
-	public function getForm() {
-		return $this->form;
-	}
-
-	public function setForm($form) {
-		$this->form = $form;
-		$this->queryParameters["Form"]=$form;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getEndTime() {
@@ -164,13 +111,31 @@ class DescribeSQLLogRecordsRequest extends \RpcAcsRequest
 		$this->queryParameters["EndTime"]=$endTime;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
+	public function getStartTime() {
+		return $this->startTime;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getQueryKeywords() {
+		return $this->queryKeywords;
+	}
+
+	public function setQueryKeywords($queryKeywords) {
+		$this->queryKeywords = $queryKeywords;
+		$this->queryParameters["QueryKeywords"]=$queryKeywords;
 	}
 
 	public function getPageNumber() {
@@ -182,13 +147,49 @@ class DescribeSQLLogRecordsRequest extends \RpcAcsRequest
 		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getDatabase() {
+		return $this->database;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setDatabase($database) {
+		$this->database = $database;
+		$this->queryParameters["Database"]=$database;
+	}
+
+	public function getForm() {
+		return $this->form;
+	}
+
+	public function setForm($form) {
+		$this->form = $form;
+		$this->queryParameters["Form"]=$form;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
+	public function getDBInstanceId() {
+		return $this->dBInstanceId;
+	}
+
+	public function setDBInstanceId($dBInstanceId) {
+		$this->dBInstanceId = $dBInstanceId;
+		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
+	}
+
+	public function getUser() {
+		return $this->user;
+	}
+
+	public function setUser($user) {
+		$this->user = $user;
+		$this->queryParameters["User"]=$user;
 	}
 	
 }

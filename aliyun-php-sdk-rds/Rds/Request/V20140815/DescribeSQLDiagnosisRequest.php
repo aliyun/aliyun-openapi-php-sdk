@@ -23,21 +23,13 @@ class DescribeSQLDiagnosisRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeSQLDiagnosis");
+		parent::__construct("Rds", "2014-08-15", "DescribeSQLDiagnosis", "rds", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $dBInstanceId;
 
 	private  $sQLDiagId;
 
-	public function getDBInstanceId() {
-		return $this->dBInstanceId;
-	}
-
-	public function setDBInstanceId($dBInstanceId) {
-		$this->dBInstanceId = $dBInstanceId;
-		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
-	}
+	private  $dBInstanceId;
 
 	public function getSQLDiagId() {
 		return $this->sQLDiagId;
@@ -46,6 +38,15 @@ class DescribeSQLDiagnosisRequest extends \RpcAcsRequest
 	public function setSQLDiagId($sQLDiagId) {
 		$this->sQLDiagId = $sQLDiagId;
 		$this->queryParameters["SQLDiagId"]=$sQLDiagId;
+	}
+
+	public function getDBInstanceId() {
+		return $this->dBInstanceId;
+	}
+
+	public function setDBInstanceId($dBInstanceId) {
+		$this->dBInstanceId = $dBInstanceId;
+		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
 	}
 	
 }

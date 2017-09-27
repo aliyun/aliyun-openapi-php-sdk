@@ -23,39 +23,31 @@ class GrantOperatorPermissionRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "GrantOperatorPermission");
+		parent::__construct("Rds", "2014-08-15", "GrantOperatorPermission", "rds", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
-
-	private  $dBInstanceId;
-
-	private  $expiredTime;
 
 	private  $privileges;
 
+	private  $resourceOwnerId;
+
+	private  $resourceOwnerAccount;
+
 	private  $ownerAccount;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $expiredTime;
+
+	private  $dBInstanceId;
+
+	private  $ownerId;
+
+	public function getPrivileges() {
+		return $this->privileges;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setPrivileges($privileges) {
+		$this->privileges = $privileges;
+		$this->queryParameters["Privileges"]=$privileges;
 	}
 
 	public function getResourceOwnerId() {
@@ -67,13 +59,22 @@ class GrantOperatorPermissionRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getDBInstanceId() {
-		return $this->dBInstanceId;
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
 	}
 
-	public function setDBInstanceId($dBInstanceId) {
-		$this->dBInstanceId = $dBInstanceId;
-		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getExpiredTime() {
@@ -85,22 +86,22 @@ class GrantOperatorPermissionRequest extends \RpcAcsRequest
 		$this->queryParameters["ExpiredTime"]=$expiredTime;
 	}
 
-	public function getPrivileges() {
-		return $this->privileges;
+	public function getDBInstanceId() {
+		return $this->dBInstanceId;
 	}
 
-	public function setPrivileges($privileges) {
-		$this->privileges = $privileges;
-		$this->queryParameters["Privileges"]=$privileges;
+	public function setDBInstanceId($dBInstanceId) {
+		$this->dBInstanceId = $dBInstanceId;
+		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

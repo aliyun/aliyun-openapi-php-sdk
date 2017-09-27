@@ -23,30 +23,31 @@ class ModifyDBInstanceHAConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "ModifyDBInstanceHAConfig");
+		parent::__construct("Rds", "2014-08-15", "ModifyDBInstanceHAConfig", "rds", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
 
 	private  $resourceOwnerId;
 
-	private  $syncMode;
-
-	private  $hAMode;
-
-	private  $dbInstanceId;
+	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $syncMode;
+
+	private  $dbInstanceId;
+
+	private  $ownerId;
+
+	private  $hAMode;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -58,13 +59,13 @@ class ModifyDBInstanceHAConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getSyncMode() {
@@ -76,15 +77,6 @@ class ModifyDBInstanceHAConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["SyncMode"]=$syncMode;
 	}
 
-	public function getHAMode() {
-		return $this->hAMode;
-	}
-
-	public function setHAMode($hAMode) {
-		$this->hAMode = $hAMode;
-		$this->queryParameters["HAMode"]=$hAMode;
-	}
-
 	public function getDbInstanceId() {
 		return $this->dbInstanceId;
 	}
@@ -94,13 +86,22 @@ class ModifyDBInstanceHAConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["DbInstanceId"]=$dbInstanceId;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getHAMode() {
+		return $this->hAMode;
+	}
+
+	public function setHAMode($hAMode) {
+		$this->hAMode = $hAMode;
+		$this->queryParameters["HAMode"]=$hAMode;
 	}
 	
 }

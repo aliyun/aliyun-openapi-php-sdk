@@ -23,46 +23,29 @@ class DescribeImportsForSQLServerRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeImportsForSQLServer");
+		parent::__construct("Rds", "2014-08-15", "DescribeImportsForSQLServer", "rds", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
 
 	private  $resourceOwnerId;
 
-	private  $dBInstanceId;
-
 	private  $importId;
 
-	private  $startTime;
-
-	private  $endTime;
-
-	private  $pageSize;
-
-	private  $pageNumber;
+	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+	private  $pageSize;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+	private  $endTime;
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+	private  $dBInstanceId;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+	private  $startTime;
+
+	private  $ownerId;
+
+	private  $pageNumber;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -71,15 +54,6 @@ class DescribeImportsForSQLServerRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getDBInstanceId() {
-		return $this->dBInstanceId;
-	}
-
-	public function setDBInstanceId($dBInstanceId) {
-		$this->dBInstanceId = $dBInstanceId;
-		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
 	}
 
 	public function getImportId() {
@@ -91,22 +65,22 @@ class DescribeImportsForSQLServerRequest extends \RpcAcsRequest
 		$this->queryParameters["ImportId"]=$importId;
 	}
 
-	public function getStartTime() {
-		return $this->startTime;
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
 	}
 
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getEndTime() {
-		return $this->endTime;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getPageSize() {
@@ -118,6 +92,42 @@ class DescribeImportsForSQLServerRequest extends \RpcAcsRequest
 		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
+	}
+
+	public function getDBInstanceId() {
+		return $this->dBInstanceId;
+	}
+
+	public function setDBInstanceId($dBInstanceId) {
+		$this->dBInstanceId = $dBInstanceId;
+		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
 	public function getPageNumber() {
 		return $this->pageNumber;
 	}
@@ -125,15 +135,6 @@ class DescribeImportsForSQLServerRequest extends \RpcAcsRequest
 	public function setPageNumber($pageNumber) {
 		$this->pageNumber = $pageNumber;
 		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 	
 }

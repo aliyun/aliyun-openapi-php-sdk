@@ -23,30 +23,31 @@ class DescribeParameterTemplatesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeParameterTemplates");
+		parent::__construct("Rds", "2014-08-15", "DescribeParameterTemplates", "rds", "openAPI");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
 
 	private  $clientToken;
 
 	private  $engine;
 
-	private  $engineVersion;
-
 	private  $ownerAccount;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $engineVersion;
+
+	private  $ownerId;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -56,15 +57,6 @@ class DescribeParameterTemplatesRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getClientToken() {
@@ -85,6 +77,15 @@ class DescribeParameterTemplatesRequest extends \RpcAcsRequest
 		$this->queryParameters["Engine"]=$engine;
 	}
 
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
 	public function getEngineVersion() {
 		return $this->engineVersion;
 	}
@@ -94,13 +95,13 @@ class DescribeParameterTemplatesRequest extends \RpcAcsRequest
 		$this->queryParameters["EngineVersion"]=$engineVersion;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

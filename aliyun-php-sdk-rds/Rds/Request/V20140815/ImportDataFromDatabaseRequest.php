@@ -23,40 +23,50 @@ class ImportDataFromDatabaseRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "ImportDataFromDatabase");
+		parent::__construct("Rds", "2014-08-15", "ImportDataFromDatabase", "rds", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
 
 	private  $resourceOwnerId;
 
-	private  $dBInstanceId;
+	private  $importDataType;
+
+	private  $resourceOwnerAccount;
+
+	private  $isLockTable;
+
+	private  $ownerAccount;
+
+	private  $sourceDatabaseDBNames;
 
 	private  $sourceDatabaseIp;
+
+	private  $ownerId;
+
+	private  $sourceDatabasePassword;
 
 	private  $sourceDatabasePort;
 
 	private  $sourceDatabaseUserName;
 
-	private  $sourceDatabasePassword;
+	private  $dBInstanceId;
 
-	private  $importDataType;
-
-	private  $isLockTable;
-
-	private  $sourceDatabaseDBNames;
-
-	private  $ownerAccount;
-
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getImportDataType() {
+		return $this->importDataType;
+	}
+
+	public function setImportDataType($importDataType) {
+		$this->importDataType = $importDataType;
+		$this->queryParameters["ImportDataType"]=$importDataType;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -68,22 +78,31 @@ class ImportDataFromDatabaseRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getIsLockTable() {
+		return $this->isLockTable;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setIsLockTable($isLockTable) {
+		$this->isLockTable = $isLockTable;
+		$this->queryParameters["IsLockTable"]=$isLockTable;
 	}
 
-	public function getDBInstanceId() {
-		return $this->dBInstanceId;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setDBInstanceId($dBInstanceId) {
-		$this->dBInstanceId = $dBInstanceId;
-		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getSourceDatabaseDBNames() {
+		return $this->sourceDatabaseDBNames;
+	}
+
+	public function setSourceDatabaseDBNames($sourceDatabaseDBNames) {
+		$this->sourceDatabaseDBNames = $sourceDatabaseDBNames;
+		$this->queryParameters["SourceDatabaseDBNames"]=$sourceDatabaseDBNames;
 	}
 
 	public function getSourceDatabaseIp() {
@@ -93,6 +112,24 @@ class ImportDataFromDatabaseRequest extends \RpcAcsRequest
 	public function setSourceDatabaseIp($sourceDatabaseIp) {
 		$this->sourceDatabaseIp = $sourceDatabaseIp;
 		$this->queryParameters["SourceDatabaseIp"]=$sourceDatabaseIp;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getSourceDatabasePassword() {
+		return $this->sourceDatabasePassword;
+	}
+
+	public function setSourceDatabasePassword($sourceDatabasePassword) {
+		$this->sourceDatabasePassword = $sourceDatabasePassword;
+		$this->queryParameters["SourceDatabasePassword"]=$sourceDatabasePassword;
 	}
 
 	public function getSourceDatabasePort() {
@@ -113,49 +150,13 @@ class ImportDataFromDatabaseRequest extends \RpcAcsRequest
 		$this->queryParameters["SourceDatabaseUserName"]=$sourceDatabaseUserName;
 	}
 
-	public function getSourceDatabasePassword() {
-		return $this->sourceDatabasePassword;
+	public function getDBInstanceId() {
+		return $this->dBInstanceId;
 	}
 
-	public function setSourceDatabasePassword($sourceDatabasePassword) {
-		$this->sourceDatabasePassword = $sourceDatabasePassword;
-		$this->queryParameters["SourceDatabasePassword"]=$sourceDatabasePassword;
-	}
-
-	public function getImportDataType() {
-		return $this->importDataType;
-	}
-
-	public function setImportDataType($importDataType) {
-		$this->importDataType = $importDataType;
-		$this->queryParameters["ImportDataType"]=$importDataType;
-	}
-
-	public function getIsLockTable() {
-		return $this->isLockTable;
-	}
-
-	public function setIsLockTable($isLockTable) {
-		$this->isLockTable = $isLockTable;
-		$this->queryParameters["IsLockTable"]=$isLockTable;
-	}
-
-	public function getSourceDatabaseDBNames() {
-		return $this->sourceDatabaseDBNames;
-	}
-
-	public function setSourceDatabaseDBNames($sourceDatabaseDBNames) {
-		$this->sourceDatabaseDBNames = $sourceDatabaseDBNames;
-		$this->queryParameters["SourceDatabaseDBNames"]=$sourceDatabaseDBNames;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setDBInstanceId($dBInstanceId) {
+		$this->dBInstanceId = $dBInstanceId;
+		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
 	}
 	
 }

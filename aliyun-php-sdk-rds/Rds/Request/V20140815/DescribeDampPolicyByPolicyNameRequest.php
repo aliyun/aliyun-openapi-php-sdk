@@ -23,22 +23,32 @@ class DescribeDampPolicyByPolicyNameRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeDampPolicyByPolicyName");
+		parent::__construct("Rds", "2014-08-15", "DescribeDampPolicyByPolicyName", "rds", "openAPI");
+		$this->setMethod("POST");
 	}
+
+	private  $resourceOwnerId;
 
 	private  $securityToken;
 
-	private  $ownerId;
-
 	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
 
 	private  $ownerAccount;
 
 	private  $dBInstanceId;
 
 	private  $policyName;
+
+	private  $ownerId;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
+	}
+
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -49,15 +59,6 @@ class DescribeDampPolicyByPolicyNameRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
 	public function getResourceOwnerAccount() {
 		return $this->resourceOwnerAccount;
 	}
@@ -65,15 +66,6 @@ class DescribeDampPolicyByPolicyNameRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getOwnerAccount() {
@@ -101,6 +93,15 @@ class DescribeDampPolicyByPolicyNameRequest extends \RpcAcsRequest
 	public function setPolicyName($policyName) {
 		$this->policyName = $policyName;
 		$this->queryParameters["PolicyName"]=$policyName;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

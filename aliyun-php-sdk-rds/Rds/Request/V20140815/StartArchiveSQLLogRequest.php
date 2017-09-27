@@ -23,46 +23,29 @@ class StartArchiveSQLLogRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "StartArchiveSQLLog");
+		parent::__construct("Rds", "2014-08-15", "StartArchiveSQLLog", "rds", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
 
 	private  $resourceOwnerId;
 
-	private  $dBInstanceId;
-
-	private  $queryKeywords;
-
-	private  $startTime;
-
 	private  $database;
 
-	private  $user;
-
-	private  $endTime;
+	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+	private  $endTime;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+	private  $dBInstanceId;
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+	private  $startTime;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+	private  $ownerId;
+
+	private  $user;
+
+	private  $queryKeywords;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -71,33 +54,6 @@ class StartArchiveSQLLogRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getDBInstanceId() {
-		return $this->dBInstanceId;
-	}
-
-	public function setDBInstanceId($dBInstanceId) {
-		$this->dBInstanceId = $dBInstanceId;
-		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
-	}
-
-	public function getQueryKeywords() {
-		return $this->queryKeywords;
-	}
-
-	public function setQueryKeywords($queryKeywords) {
-		$this->queryKeywords = $queryKeywords;
-		$this->queryParameters["QueryKeywords"]=$queryKeywords;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
 	}
 
 	public function getDatabase() {
@@ -109,13 +65,22 @@ class StartArchiveSQLLogRequest extends \RpcAcsRequest
 		$this->queryParameters["Database"]=$database;
 	}
 
-	public function getUser() {
-		return $this->user;
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
 	}
 
-	public function setUser($user) {
-		$this->user = $user;
-		$this->queryParameters["User"]=$user;
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getEndTime() {
@@ -127,13 +92,49 @@ class StartArchiveSQLLogRequest extends \RpcAcsRequest
 		$this->queryParameters["EndTime"]=$endTime;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getDBInstanceId() {
+		return $this->dBInstanceId;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setDBInstanceId($dBInstanceId) {
+		$this->dBInstanceId = $dBInstanceId;
+		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getUser() {
+		return $this->user;
+	}
+
+	public function setUser($user) {
+		$this->user = $user;
+		$this->queryParameters["User"]=$user;
+	}
+
+	public function getQueryKeywords() {
+		return $this->queryKeywords;
+	}
+
+	public function setQueryKeywords($queryKeywords) {
+		$this->queryKeywords = $queryKeywords;
+		$this->queryParameters["QueryKeywords"]=$queryKeywords;
 	}
 	
 }

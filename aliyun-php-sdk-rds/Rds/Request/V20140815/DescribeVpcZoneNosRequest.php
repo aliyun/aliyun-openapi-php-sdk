@@ -23,30 +23,31 @@ class DescribeVpcZoneNosRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeVpcZoneNos");
+		parent::__construct("Rds", "2014-08-15", "DescribeVpcZoneNos", "rds", "openAPI");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
 
 	private  $clientToken;
 
 	private  $ownerAccount;
 
-	private  $region;
-
 	private  $zoneId;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $ownerId;
+
+	private  $region;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -56,15 +57,6 @@ class DescribeVpcZoneNosRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getClientToken() {
@@ -85,15 +77,6 @@ class DescribeVpcZoneNosRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getRegion() {
-		return $this->region;
-	}
-
-	public function setRegion($region) {
-		$this->region = $region;
-		$this->queryParameters["Region"]=$region;
-	}
-
 	public function getZoneId() {
 		return $this->zoneId;
 	}
@@ -101,6 +84,24 @@ class DescribeVpcZoneNosRequest extends \RpcAcsRequest
 	public function setZoneId($zoneId) {
 		$this->zoneId = $zoneId;
 		$this->queryParameters["ZoneId"]=$zoneId;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getRegion() {
+		return $this->region;
+	}
+
+	public function setRegion($region) {
+		$this->region = $region;
+		$this->queryParameters["Region"]=$region;
 	}
 	
 }

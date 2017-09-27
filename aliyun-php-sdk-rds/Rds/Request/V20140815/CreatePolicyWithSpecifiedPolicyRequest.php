@@ -23,22 +23,41 @@ class CreatePolicyWithSpecifiedPolicyRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "CreatePolicyWithSpecifiedPolicy");
+		parent::__construct("Rds", "2014-08-15", "CreatePolicyWithSpecifiedPolicy", "rds", "openAPI");
+		$this->setMethod("POST");
 	}
+
+	private  $resourceOwnerId;
+
+	private  $policyId;
 
 	private  $securityToken;
 
-	private  $ownerId;
-
 	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
 
 	private  $ownerAccount;
 
 	private  $dBInstanceId;
 
-	private  $policyId;
+	private  $ownerId;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
+	}
+
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getPolicyId() {
+		return $this->policyId;
+	}
+
+	public function setPolicyId($policyId) {
+		$this->policyId = $policyId;
+		$this->queryParameters["PolicyId"]=$policyId;
+	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -49,15 +68,6 @@ class CreatePolicyWithSpecifiedPolicyRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
 	public function getResourceOwnerAccount() {
 		return $this->resourceOwnerAccount;
 	}
@@ -65,15 +75,6 @@ class CreatePolicyWithSpecifiedPolicyRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getOwnerAccount() {
@@ -94,13 +95,13 @@ class CreatePolicyWithSpecifiedPolicyRequest extends \RpcAcsRequest
 		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
 	}
 
-	public function getPolicyId() {
-		return $this->policyId;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setPolicyId($policyId) {
-		$this->policyId = $policyId;
-		$this->queryParameters["PolicyId"]=$policyId;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

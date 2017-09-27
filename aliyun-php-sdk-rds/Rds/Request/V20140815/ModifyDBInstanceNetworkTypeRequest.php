@@ -23,34 +23,43 @@ class ModifyDBInstanceNetworkTypeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "ModifyDBInstanceNetworkType");
+		parent::__construct("Rds", "2014-08-15", "ModifyDBInstanceNetworkType", "rds", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
 
 	private  $resourceOwnerId;
 
-	private  $dBInstanceId;
+	private  $resourceOwnerAccount;
 
-	private  $instanceNetworkType;
+	private  $ownerAccount;
 
-	private  $vPCId;
+	private  $ownerId;
 
 	private  $vSwitchId;
 
 	private  $privateIpAddress;
 
-	private  $ownerAccount;
+	private  $retainClassic;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $classicExpiredDays;
+
+	private  $vPCId;
+
+	private  $dBInstanceId;
+
+	private  $readWriteSplittingPrivateIpAddress;
+
+	private  $instanceNetworkType;
+
+	private  $readWriteSplittingClassicExpiredDays;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -62,40 +71,22 @@ class ModifyDBInstanceNetworkTypeRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getDBInstanceId() {
-		return $this->dBInstanceId;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setDBInstanceId($dBInstanceId) {
-		$this->dBInstanceId = $dBInstanceId;
-		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
-	}
-
-	public function getInstanceNetworkType() {
-		return $this->instanceNetworkType;
-	}
-
-	public function setInstanceNetworkType($instanceNetworkType) {
-		$this->instanceNetworkType = $instanceNetworkType;
-		$this->queryParameters["InstanceNetworkType"]=$instanceNetworkType;
-	}
-
-	public function getVPCId() {
-		return $this->vPCId;
-	}
-
-	public function setVPCId($vPCId) {
-		$this->vPCId = $vPCId;
-		$this->queryParameters["VPCId"]=$vPCId;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getVSwitchId() {
@@ -116,13 +107,67 @@ class ModifyDBInstanceNetworkTypeRequest extends \RpcAcsRequest
 		$this->queryParameters["PrivateIpAddress"]=$privateIpAddress;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getRetainClassic() {
+		return $this->retainClassic;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setRetainClassic($retainClassic) {
+		$this->retainClassic = $retainClassic;
+		$this->queryParameters["RetainClassic"]=$retainClassic;
+	}
+
+	public function getClassicExpiredDays() {
+		return $this->classicExpiredDays;
+	}
+
+	public function setClassicExpiredDays($classicExpiredDays) {
+		$this->classicExpiredDays = $classicExpiredDays;
+		$this->queryParameters["ClassicExpiredDays"]=$classicExpiredDays;
+	}
+
+	public function getVPCId() {
+		return $this->vPCId;
+	}
+
+	public function setVPCId($vPCId) {
+		$this->vPCId = $vPCId;
+		$this->queryParameters["VPCId"]=$vPCId;
+	}
+
+	public function getDBInstanceId() {
+		return $this->dBInstanceId;
+	}
+
+	public function setDBInstanceId($dBInstanceId) {
+		$this->dBInstanceId = $dBInstanceId;
+		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
+	}
+
+	public function getReadWriteSplittingPrivateIpAddress() {
+		return $this->readWriteSplittingPrivateIpAddress;
+	}
+
+	public function setReadWriteSplittingPrivateIpAddress($readWriteSplittingPrivateIpAddress) {
+		$this->readWriteSplittingPrivateIpAddress = $readWriteSplittingPrivateIpAddress;
+		$this->queryParameters["ReadWriteSplittingPrivateIpAddress"]=$readWriteSplittingPrivateIpAddress;
+	}
+
+	public function getInstanceNetworkType() {
+		return $this->instanceNetworkType;
+	}
+
+	public function setInstanceNetworkType($instanceNetworkType) {
+		$this->instanceNetworkType = $instanceNetworkType;
+		$this->queryParameters["InstanceNetworkType"]=$instanceNetworkType;
+	}
+
+	public function getReadWriteSplittingClassicExpiredDays() {
+		return $this->readWriteSplittingClassicExpiredDays;
+	}
+
+	public function setReadWriteSplittingClassicExpiredDays($readWriteSplittingClassicExpiredDays) {
+		$this->readWriteSplittingClassicExpiredDays = $readWriteSplittingClassicExpiredDays;
+		$this->queryParameters["ReadWriteSplittingClassicExpiredDays"]=$readWriteSplittingClassicExpiredDays;
 	}
 	
 }

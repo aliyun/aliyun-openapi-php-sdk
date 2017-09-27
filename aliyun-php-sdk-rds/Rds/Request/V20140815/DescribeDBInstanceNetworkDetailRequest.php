@@ -23,18 +23,46 @@ class DescribeDBInstanceNetworkDetailRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeDBInstanceNetworkDetail");
+		parent::__construct("Rds", "2014-08-15", "DescribeDBInstanceNetworkDetail", "rds", "openAPI");
+		$this->setMethod("POST");
 	}
+
+	private  $endPoint;
+
+	private  $startPoint;
+
+	private  $endTime;
 
 	private  $dBInstanceId;
 
 	private  $startTime;
 
-	private  $endTime;
+	public function getEndPoint() {
+		return $this->endPoint;
+	}
 
-	private  $startPoint;
+	public function setEndPoint($endPoint) {
+		$this->endPoint = $endPoint;
+		$this->queryParameters["EndPoint"]=$endPoint;
+	}
 
-	private  $endPoint;
+	public function getStartPoint() {
+		return $this->startPoint;
+	}
+
+	public function setStartPoint($startPoint) {
+		$this->startPoint = $startPoint;
+		$this->queryParameters["StartPoint"]=$startPoint;
+	}
+
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
+	}
 
 	public function getDBInstanceId() {
 		return $this->dBInstanceId;
@@ -52,33 +80,6 @@ class DescribeDBInstanceNetworkDetailRequest extends \RpcAcsRequest
 	public function setStartTime($startTime) {
 		$this->startTime = $startTime;
 		$this->queryParameters["StartTime"]=$startTime;
-	}
-
-	public function getEndTime() {
-		return $this->endTime;
-	}
-
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getStartPoint() {
-		return $this->startPoint;
-	}
-
-	public function setStartPoint($startPoint) {
-		$this->startPoint = $startPoint;
-		$this->queryParameters["StartPoint"]=$startPoint;
-	}
-
-	public function getEndPoint() {
-		return $this->endPoint;
-	}
-
-	public function setEndPoint($endPoint) {
-		$this->endPoint = $endPoint;
-		$this->queryParameters["EndPoint"]=$endPoint;
 	}
 	
 }

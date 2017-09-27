@@ -23,14 +23,24 @@ class DescribeResourceDiagnosisRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeResourceDiagnosis");
+		parent::__construct("Rds", "2014-08-15", "DescribeResourceDiagnosis", "rds", "openAPI");
+		$this->setMethod("POST");
 	}
+
+	private  $endTime;
 
 	private  $dBInstanceId;
 
 	private  $startTime;
 
-	private  $endTime;
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
+	}
 
 	public function getDBInstanceId() {
 		return $this->dBInstanceId;
@@ -48,15 +58,6 @@ class DescribeResourceDiagnosisRequest extends \RpcAcsRequest
 	public function setStartTime($startTime) {
 		$this->startTime = $startTime;
 		$this->queryParameters["StartTime"]=$startTime;
-	}
-
-	public function getEndTime() {
-		return $this->endTime;
-	}
-
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
 	}
 	
 }

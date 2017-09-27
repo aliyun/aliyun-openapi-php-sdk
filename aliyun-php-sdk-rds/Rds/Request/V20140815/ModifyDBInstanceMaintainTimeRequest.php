@@ -23,39 +23,31 @@ class ModifyDBInstanceMaintainTimeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "ModifyDBInstanceMaintainTime");
+		parent::__construct("Rds", "2014-08-15", "ModifyDBInstanceMaintainTime", "rds", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
-
-	private  $clientToken;
-
-	private  $dBInstanceId;
 
 	private  $maintainTime;
 
+	private  $resourceOwnerId;
+
+	private  $resourceOwnerAccount;
+
+	private  $clientToken;
+
 	private  $ownerAccount;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $dBInstanceId;
+
+	private  $ownerId;
+
+	public function getMaintainTime() {
+		return $this->maintainTime;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setMaintainTime($maintainTime) {
+		$this->maintainTime = $maintainTime;
+		$this->queryParameters["MaintainTime"]=$maintainTime;
 	}
 
 	public function getResourceOwnerId() {
@@ -67,6 +59,15 @@ class ModifyDBInstanceMaintainTimeRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
 	public function getClientToken() {
 		return $this->clientToken;
 	}
@@ -74,6 +75,15 @@ class ModifyDBInstanceMaintainTimeRequest extends \RpcAcsRequest
 	public function setClientToken($clientToken) {
 		$this->clientToken = $clientToken;
 		$this->queryParameters["ClientToken"]=$clientToken;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getDBInstanceId() {
@@ -85,22 +95,13 @@ class ModifyDBInstanceMaintainTimeRequest extends \RpcAcsRequest
 		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
 	}
 
-	public function getMaintainTime() {
-		return $this->maintainTime;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setMaintainTime($maintainTime) {
-		$this->maintainTime = $maintainTime;
-		$this->queryParameters["MaintainTime"]=$maintainTime;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

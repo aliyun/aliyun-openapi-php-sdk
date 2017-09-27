@@ -23,40 +23,41 @@ class DescibeImportsFromDatabaseRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescibeImportsFromDatabase");
+		parent::__construct("Rds", "2014-08-15", "DescibeImportsFromDatabase", "rds", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
 
 	private  $resourceOwnerId;
 
+	private  $resourceOwnerAccount;
+
 	private  $clientToken;
-
-	private  $dBInstanceId;
-
-	private  $engine;
-
-	private  $importId;
-
-	private  $startTime;
-
-	private  $endTime;
-
-	private  $pageSize;
-
-	private  $pageNumber;
 
 	private  $ownerAccount;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $endTime;
+
+	private  $startTime;
+
+	private  $ownerId;
+
+	private  $pageNumber;
+
+	private  $importId;
+
+	private  $engine;
+
+	private  $pageSize;
+
+	private  $dBInstanceId;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -68,15 +69,6 @@ class DescibeImportsFromDatabaseRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
 	public function getClientToken() {
 		return $this->clientToken;
 	}
@@ -86,40 +78,13 @@ class DescibeImportsFromDatabaseRequest extends \RpcAcsRequest
 		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
-	public function getDBInstanceId() {
-		return $this->dBInstanceId;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setDBInstanceId($dBInstanceId) {
-		$this->dBInstanceId = $dBInstanceId;
-		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
-	}
-
-	public function getEngine() {
-		return $this->engine;
-	}
-
-	public function setEngine($engine) {
-		$this->engine = $engine;
-		$this->queryParameters["Engine"]=$engine;
-	}
-
-	public function getImportId() {
-		return $this->importId;
-	}
-
-	public function setImportId($importId) {
-		$this->importId = $importId;
-		$this->queryParameters["ImportId"]=$importId;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getEndTime() {
@@ -131,13 +96,22 @@ class DescibeImportsFromDatabaseRequest extends \RpcAcsRequest
 		$this->queryParameters["EndTime"]=$endTime;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
+	public function getStartTime() {
+		return $this->startTime;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getPageNumber() {
@@ -149,13 +123,40 @@ class DescibeImportsFromDatabaseRequest extends \RpcAcsRequest
 		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getImportId() {
+		return $this->importId;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setImportId($importId) {
+		$this->importId = $importId;
+		$this->queryParameters["ImportId"]=$importId;
+	}
+
+	public function getEngine() {
+		return $this->engine;
+	}
+
+	public function setEngine($engine) {
+		$this->engine = $engine;
+		$this->queryParameters["Engine"]=$engine;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
+	public function getDBInstanceId() {
+		return $this->dBInstanceId;
+	}
+
+	public function setDBInstanceId($dBInstanceId) {
+		$this->dBInstanceId = $dBInstanceId;
+		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
 	}
 	
 }

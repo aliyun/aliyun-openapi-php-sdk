@@ -23,38 +23,39 @@ class DescribeSlowLogsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeSlowLogs");
+		parent::__construct("Rds", "2014-08-15", "DescribeSlowLogs", "rds", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
 
 	private  $resourceOwnerId;
 
-	private  $dBInstanceId;
-
-	private  $startTime;
-
-	private  $endTime;
-
-	private  $dBName;
-
-	private  $sortKey;
-
-	private  $pageSize;
-
-	private  $pageNumber;
+	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $endTime;
+
+	private  $startTime;
+
+	private  $ownerId;
+
+	private  $pageNumber;
+
+	private  $sortKey;
+
+	private  $dBName;
+
+	private  $pageSize;
+
+	private  $dBInstanceId;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -66,31 +67,13 @@ class DescribeSlowLogsRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getDBInstanceId() {
-		return $this->dBInstanceId;
-	}
-
-	public function setDBInstanceId($dBInstanceId) {
-		$this->dBInstanceId = $dBInstanceId;
-		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getEndTime() {
@@ -102,31 +85,22 @@ class DescribeSlowLogsRequest extends \RpcAcsRequest
 		$this->queryParameters["EndTime"]=$endTime;
 	}
 
-	public function getDBName() {
-		return $this->dBName;
+	public function getStartTime() {
+		return $this->startTime;
 	}
 
-	public function setDBName($dBName) {
-		$this->dBName = $dBName;
-		$this->queryParameters["DBName"]=$dBName;
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
 	}
 
-	public function getSortKey() {
-		return $this->sortKey;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setSortKey($sortKey) {
-		$this->sortKey = $sortKey;
-		$this->queryParameters["SortKey"]=$sortKey;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getPageNumber() {
@@ -138,13 +112,40 @@ class DescribeSlowLogsRequest extends \RpcAcsRequest
 		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getSortKey() {
+		return $this->sortKey;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setSortKey($sortKey) {
+		$this->sortKey = $sortKey;
+		$this->queryParameters["SortKey"]=$sortKey;
+	}
+
+	public function getDBName() {
+		return $this->dBName;
+	}
+
+	public function setDBName($dBName) {
+		$this->dBName = $dBName;
+		$this->queryParameters["DBName"]=$dBName;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
+	public function getDBInstanceId() {
+		return $this->dBInstanceId;
+	}
+
+	public function setDBInstanceId($dBInstanceId) {
+		$this->dBInstanceId = $dBInstanceId;
+		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
 	}
 	
 }

@@ -23,32 +23,33 @@ class SwitchDBInstanceHARequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "SwitchDBInstanceHA");
+		parent::__construct("Rds", "2014-08-15", "SwitchDBInstanceHA", "rds", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
 
 	private  $resourceOwnerId;
 
+	private  $resourceOwnerAccount;
+
+	private  $ownerAccount;
+
 	private  $dBInstanceId;
+
+	private  $force;
+
+	private  $ownerId;
 
 	private  $nodeId;
 
 	private  $operation;
 
-	private  $force;
-
-	private  $ownerAccount;
-
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -60,13 +61,13 @@ class SwitchDBInstanceHARequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getDBInstanceId() {
@@ -76,6 +77,24 @@ class SwitchDBInstanceHARequest extends \RpcAcsRequest
 	public function setDBInstanceId($dBInstanceId) {
 		$this->dBInstanceId = $dBInstanceId;
 		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
+	}
+
+	public function getForce() {
+		return $this->force;
+	}
+
+	public function setForce($force) {
+		$this->force = $force;
+		$this->queryParameters["Force"]=$force;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getNodeId() {
@@ -94,24 +113,6 @@ class SwitchDBInstanceHARequest extends \RpcAcsRequest
 	public function setOperation($operation) {
 		$this->operation = $operation;
 		$this->queryParameters["Operation"]=$operation;
-	}
-
-	public function getForce() {
-		return $this->force;
-	}
-
-	public function setForce($force) {
-		$this->force = $force;
-		$this->queryParameters["Force"]=$force;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 	
 }

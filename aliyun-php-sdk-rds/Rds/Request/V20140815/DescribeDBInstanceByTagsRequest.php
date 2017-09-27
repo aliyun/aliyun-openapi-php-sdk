@@ -23,34 +23,35 @@ class DescribeDBInstanceByTagsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeDBInstanceByTags");
+		parent::__construct("Rds", "2014-08-15", "DescribeDBInstanceByTags", "rds", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
 
 	private  $resourceOwnerId;
 
+	private  $resourceOwnerAccount;
+
 	private  $clientToken;
-
-	private  $proxyId;
-
-	private  $dBInstanceId;
-
-	private  $pageSize;
-
-	private  $pageNumber;
 
 	private  $ownerAccount;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $pageSize;
+
+	private  $dBInstanceId;
+
+	private  $ownerId;
+
+	private  $pageNumber;
+
+	private  $proxyId;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -62,15 +63,6 @@ class DescribeDBInstanceByTagsRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
 	public function getClientToken() {
 		return $this->clientToken;
 	}
@@ -80,22 +72,13 @@ class DescribeDBInstanceByTagsRequest extends \RpcAcsRequest
 		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
-	public function getproxyId() {
-		return $this->proxyId;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setproxyId($proxyId) {
-		$this->proxyId = $proxyId;
-		$this->queryParameters["proxyId"]=$proxyId;
-	}
-
-	public function getDBInstanceId() {
-		return $this->dBInstanceId;
-	}
-
-	public function setDBInstanceId($dBInstanceId) {
-		$this->dBInstanceId = $dBInstanceId;
-		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getPageSize() {
@@ -107,6 +90,24 @@ class DescribeDBInstanceByTagsRequest extends \RpcAcsRequest
 		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
+	public function getDBInstanceId() {
+		return $this->dBInstanceId;
+	}
+
+	public function setDBInstanceId($dBInstanceId) {
+		$this->dBInstanceId = $dBInstanceId;
+		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
 	public function getPageNumber() {
 		return $this->pageNumber;
 	}
@@ -116,13 +117,13 @@ class DescribeDBInstanceByTagsRequest extends \RpcAcsRequest
 		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getproxyId() {
+		return $this->proxyId;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setproxyId($proxyId) {
+		$this->proxyId = $proxyId;
+		$this->queryParameters["proxyId"]=$proxyId;
 	}
 	
 }

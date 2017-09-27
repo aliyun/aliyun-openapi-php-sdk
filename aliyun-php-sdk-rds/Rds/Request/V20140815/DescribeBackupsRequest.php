@@ -23,42 +23,43 @@ class DescribeBackupsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeBackups");
+		parent::__construct("Rds", "2014-08-15", "DescribeBackups", "rds", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
 
 	private  $resourceOwnerId;
 
-	private  $dBInstanceId;
+	private  $resourceOwnerAccount;
 
 	private  $backupId;
 
-	private  $backupLocation;
-
-	private  $backupStatus;
-
-	private  $backupMode;
-
-	private  $startTime;
+	private  $ownerAccount;
 
 	private  $endTime;
 
-	private  $pageSize;
+	private  $startTime;
+
+	private  $ownerId;
 
 	private  $pageNumber;
 
-	private  $ownerAccount;
+	private  $backupStatus;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $backupLocation;
+
+	private  $pageSize;
+
+	private  $dBInstanceId;
+
+	private  $backupMode;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -70,24 +71,6 @@ class DescribeBackupsRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getDBInstanceId() {
-		return $this->dBInstanceId;
-	}
-
-	public function setDBInstanceId($dBInstanceId) {
-		$this->dBInstanceId = $dBInstanceId;
-		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
-	}
-
 	public function getBackupId() {
 		return $this->backupId;
 	}
@@ -97,40 +80,13 @@ class DescribeBackupsRequest extends \RpcAcsRequest
 		$this->queryParameters["BackupId"]=$backupId;
 	}
 
-	public function getBackupLocation() {
-		return $this->backupLocation;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setBackupLocation($backupLocation) {
-		$this->backupLocation = $backupLocation;
-		$this->queryParameters["BackupLocation"]=$backupLocation;
-	}
-
-	public function getBackupStatus() {
-		return $this->backupStatus;
-	}
-
-	public function setBackupStatus($backupStatus) {
-		$this->backupStatus = $backupStatus;
-		$this->queryParameters["BackupStatus"]=$backupStatus;
-	}
-
-	public function getBackupMode() {
-		return $this->backupMode;
-	}
-
-	public function setBackupMode($backupMode) {
-		$this->backupMode = $backupMode;
-		$this->queryParameters["BackupMode"]=$backupMode;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getEndTime() {
@@ -142,13 +98,22 @@ class DescribeBackupsRequest extends \RpcAcsRequest
 		$this->queryParameters["EndTime"]=$endTime;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
+	public function getStartTime() {
+		return $this->startTime;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getPageNumber() {
@@ -160,13 +125,49 @@ class DescribeBackupsRequest extends \RpcAcsRequest
 		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getBackupStatus() {
+		return $this->backupStatus;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setBackupStatus($backupStatus) {
+		$this->backupStatus = $backupStatus;
+		$this->queryParameters["BackupStatus"]=$backupStatus;
+	}
+
+	public function getBackupLocation() {
+		return $this->backupLocation;
+	}
+
+	public function setBackupLocation($backupLocation) {
+		$this->backupLocation = $backupLocation;
+		$this->queryParameters["BackupLocation"]=$backupLocation;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
+	public function getDBInstanceId() {
+		return $this->dBInstanceId;
+	}
+
+	public function setDBInstanceId($dBInstanceId) {
+		$this->dBInstanceId = $dBInstanceId;
+		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
+	}
+
+	public function getBackupMode() {
+		return $this->backupMode;
+	}
+
+	public function setBackupMode($backupMode) {
+		$this->backupMode = $backupMode;
+		$this->queryParameters["BackupMode"]=$backupMode;
 	}
 	
 }
