@@ -49,6 +49,8 @@ class PushRequest extends \RpcAcsRequest
 
 	private  $smsDelaySecs;
 
+	private  $sendSpeed;
+
 	private  $androidPopupActivity;
 
 	private  $iOSRemindBody;
@@ -210,6 +212,15 @@ class PushRequest extends \RpcAcsRequest
 	public function setSmsDelaySecs($smsDelaySecs) {
 		$this->smsDelaySecs = $smsDelaySecs;
 		$this->queryParameters["SmsDelaySecs"]=$smsDelaySecs;
+	}
+
+	public function getSendSpeed() {
+		return $this->sendSpeed;
+	}
+
+	public function setSendSpeed($sendSpeed) {
+		$this->sendSpeed = $sendSpeed;
+		$this->queryParameters["SendSpeed"]=$sendSpeed;
 	}
 
 	public function getAndroidPopupActivity() {
