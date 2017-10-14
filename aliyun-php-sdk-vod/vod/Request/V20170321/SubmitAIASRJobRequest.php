@@ -19,41 +19,35 @@
  */
 namespace vod\Request\V20170321;
 
-class GetPlayInfoRequest extends \RpcAcsRequest
+class SubmitAIASRJobRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "GetPlayInfo", "vod", "openAPI");
+		parent::__construct("vod", "2017-03-21", "SubmitAIASRJob", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $rand;
+	private  $userData;
 
 	private  $resourceOwnerId;
 
-	private  $formats;
-
 	private  $resourceOwnerAccount;
 
-	private  $channel;
+	private  $ownerAccount;
 
-	private  $videoId;
-
-	private  $playerVersion;
+	private  $aIASRConfig;
 
 	private  $ownerId;
 
-	private  $authTimeout;
+	private  $mediaId;
 
-	private  $authInfo;
-
-	public function getRand() {
-		return $this->rand;
+	public function getUserData() {
+		return $this->userData;
 	}
 
-	public function setRand($rand) {
-		$this->rand = $rand;
-		$this->queryParameters["Rand"]=$rand;
+	public function setUserData($userData) {
+		$this->userData = $userData;
+		$this->queryParameters["UserData"]=$userData;
 	}
 
 	public function getResourceOwnerId() {
@@ -65,15 +59,6 @@ class GetPlayInfoRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getFormats() {
-		return $this->formats;
-	}
-
-	public function setFormats($formats) {
-		$this->formats = $formats;
-		$this->queryParameters["Formats"]=$formats;
-	}
-
 	public function getResourceOwnerAccount() {
 		return $this->resourceOwnerAccount;
 	}
@@ -83,31 +68,22 @@ class GetPlayInfoRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getChannel() {
-		return $this->channel;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setChannel($channel) {
-		$this->channel = $channel;
-		$this->queryParameters["Channel"]=$channel;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getVideoId() {
-		return $this->videoId;
+	public function getAIASRConfig() {
+		return $this->aIASRConfig;
 	}
 
-	public function setVideoId($videoId) {
-		$this->videoId = $videoId;
-		$this->queryParameters["VideoId"]=$videoId;
-	}
-
-	public function getPlayerVersion() {
-		return $this->playerVersion;
-	}
-
-	public function setPlayerVersion($playerVersion) {
-		$this->playerVersion = $playerVersion;
-		$this->queryParameters["PlayerVersion"]=$playerVersion;
+	public function setAIASRConfig($aIASRConfig) {
+		$this->aIASRConfig = $aIASRConfig;
+		$this->queryParameters["AIASRConfig"]=$aIASRConfig;
 	}
 
 	public function getOwnerId() {
@@ -119,22 +95,13 @@ class GetPlayInfoRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getAuthTimeout() {
-		return $this->authTimeout;
+	public function getMediaId() {
+		return $this->mediaId;
 	}
 
-	public function setAuthTimeout($authTimeout) {
-		$this->authTimeout = $authTimeout;
-		$this->queryParameters["AuthTimeout"]=$authTimeout;
-	}
-
-	public function getAuthInfo() {
-		return $this->authInfo;
-	}
-
-	public function setAuthInfo($authInfo) {
-		$this->authInfo = $authInfo;
-		$this->queryParameters["AuthInfo"]=$authInfo;
+	public function setMediaId($mediaId) {
+		$this->mediaId = $mediaId;
+		$this->queryParameters["MediaId"]=$mediaId;
 	}
 	
 }

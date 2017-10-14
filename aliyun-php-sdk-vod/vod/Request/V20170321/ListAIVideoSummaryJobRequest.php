@@ -19,42 +19,23 @@
  */
 namespace vod\Request\V20170321;
 
-class GetPlayInfoRequest extends \RpcAcsRequest
+class ListAIVideoSummaryJobRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "GetPlayInfo", "vod", "openAPI");
+		parent::__construct("vod", "2017-03-21", "ListAIVideoSummaryJob", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $rand;
-
 	private  $resourceOwnerId;
-
-	private  $formats;
 
 	private  $resourceOwnerAccount;
 
-	private  $channel;
+	private  $aIVideoSummaryJobIds;
 
-	private  $videoId;
-
-	private  $playerVersion;
+	private  $ownerAccount;
 
 	private  $ownerId;
-
-	private  $authTimeout;
-
-	private  $authInfo;
-
-	public function getRand() {
-		return $this->rand;
-	}
-
-	public function setRand($rand) {
-		$this->rand = $rand;
-		$this->queryParameters["Rand"]=$rand;
-	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -63,15 +44,6 @@ class GetPlayInfoRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getFormats() {
-		return $this->formats;
-	}
-
-	public function setFormats($formats) {
-		$this->formats = $formats;
-		$this->queryParameters["Formats"]=$formats;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -83,31 +55,22 @@ class GetPlayInfoRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getChannel() {
-		return $this->channel;
+	public function getAIVideoSummaryJobIds() {
+		return $this->aIVideoSummaryJobIds;
 	}
 
-	public function setChannel($channel) {
-		$this->channel = $channel;
-		$this->queryParameters["Channel"]=$channel;
+	public function setAIVideoSummaryJobIds($aIVideoSummaryJobIds) {
+		$this->aIVideoSummaryJobIds = $aIVideoSummaryJobIds;
+		$this->queryParameters["AIVideoSummaryJobIds"]=$aIVideoSummaryJobIds;
 	}
 
-	public function getVideoId() {
-		return $this->videoId;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setVideoId($videoId) {
-		$this->videoId = $videoId;
-		$this->queryParameters["VideoId"]=$videoId;
-	}
-
-	public function getPlayerVersion() {
-		return $this->playerVersion;
-	}
-
-	public function setPlayerVersion($playerVersion) {
-		$this->playerVersion = $playerVersion;
-		$this->queryParameters["PlayerVersion"]=$playerVersion;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getOwnerId() {
@@ -117,24 +80,6 @@ class GetPlayInfoRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getAuthTimeout() {
-		return $this->authTimeout;
-	}
-
-	public function setAuthTimeout($authTimeout) {
-		$this->authTimeout = $authTimeout;
-		$this->queryParameters["AuthTimeout"]=$authTimeout;
-	}
-
-	public function getAuthInfo() {
-		return $this->authInfo;
-	}
-
-	public function setAuthInfo($authInfo) {
-		$this->authInfo = $authInfo;
-		$this->queryParameters["AuthInfo"]=$authInfo;
 	}
 	
 }
