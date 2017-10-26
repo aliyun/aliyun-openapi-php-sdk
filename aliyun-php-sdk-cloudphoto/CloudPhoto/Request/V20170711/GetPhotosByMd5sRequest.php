@@ -19,20 +19,14 @@
  */
 namespace CloudPhoto\Request\V20170711;
 
-class ListFacesRequest extends \RpcAcsRequest
+class GetPhotosByMd5sRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CloudPhoto", "2017-07-11", "ListFaces", "cloudphoto", "openAPI");
+		parent::__construct("CloudPhoto", "2017-07-11", "GetPhotosByMd5s", "cloudphoto", "openAPI");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
-
-	private  $cursor;
-
-	private  $hasFaceName;
-
-	private  $size;
 
 	private  $libraryId;
 
@@ -40,34 +34,7 @@ class ListFacesRequest extends \RpcAcsRequest
 
 	private  $state;
 
-	private  $direction;
-
-	public function getCursor() {
-		return $this->cursor;
-	}
-
-	public function setCursor($cursor) {
-		$this->cursor = $cursor;
-		$this->queryParameters["Cursor"]=$cursor;
-	}
-
-	public function getHasFaceName() {
-		return $this->hasFaceName;
-	}
-
-	public function setHasFaceName($hasFaceName) {
-		$this->hasFaceName = $hasFaceName;
-		$this->queryParameters["HasFaceName"]=$hasFaceName;
-	}
-
-	public function getSize() {
-		return $this->size;
-	}
-
-	public function setSize($size) {
-		$this->size = $size;
-		$this->queryParameters["Size"]=$size;
-	}
+	private  $Md5s;
 
 	public function getLibraryId() {
 		return $this->libraryId;
@@ -96,13 +63,15 @@ class ListFacesRequest extends \RpcAcsRequest
 		$this->queryParameters["State"]=$state;
 	}
 
-	public function getDirection() {
-		return $this->direction;
+	public function getMd5s() {
+		return $this->Md5s;
 	}
 
-	public function setDirection($direction) {
-		$this->direction = $direction;
-		$this->queryParameters["Direction"]=$direction;
+	public function setMd5s($Md5s) {
+		$this->Md5s = $Md5s;
+		for ($i = 0; $i < count($Md5s); $i ++) {	
+			$this->queryParameters["Md5.".($i+1)] = $Md5s[$i];
+		}
 	}
 	
 }

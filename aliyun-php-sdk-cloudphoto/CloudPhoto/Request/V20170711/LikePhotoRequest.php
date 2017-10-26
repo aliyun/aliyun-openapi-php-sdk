@@ -19,55 +19,20 @@
  */
 namespace CloudPhoto\Request\V20170711;
 
-class ListFacesRequest extends \RpcAcsRequest
+class LikePhotoRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CloudPhoto", "2017-07-11", "ListFaces", "cloudphoto", "openAPI");
+		parent::__construct("CloudPhoto", "2017-07-11", "LikePhoto", "cloudphoto", "openAPI");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
 
-	private  $cursor;
-
-	private  $hasFaceName;
-
-	private  $size;
-
 	private  $libraryId;
 
+	private  $photoId;
+
 	private  $storeName;
-
-	private  $state;
-
-	private  $direction;
-
-	public function getCursor() {
-		return $this->cursor;
-	}
-
-	public function setCursor($cursor) {
-		$this->cursor = $cursor;
-		$this->queryParameters["Cursor"]=$cursor;
-	}
-
-	public function getHasFaceName() {
-		return $this->hasFaceName;
-	}
-
-	public function setHasFaceName($hasFaceName) {
-		$this->hasFaceName = $hasFaceName;
-		$this->queryParameters["HasFaceName"]=$hasFaceName;
-	}
-
-	public function getSize() {
-		return $this->size;
-	}
-
-	public function setSize($size) {
-		$this->size = $size;
-		$this->queryParameters["Size"]=$size;
-	}
 
 	public function getLibraryId() {
 		return $this->libraryId;
@@ -78,6 +43,15 @@ class ListFacesRequest extends \RpcAcsRequest
 		$this->queryParameters["LibraryId"]=$libraryId;
 	}
 
+	public function getPhotoId() {
+		return $this->photoId;
+	}
+
+	public function setPhotoId($photoId) {
+		$this->photoId = $photoId;
+		$this->queryParameters["PhotoId"]=$photoId;
+	}
+
 	public function getStoreName() {
 		return $this->storeName;
 	}
@@ -85,24 +59,6 @@ class ListFacesRequest extends \RpcAcsRequest
 	public function setStoreName($storeName) {
 		$this->storeName = $storeName;
 		$this->queryParameters["StoreName"]=$storeName;
-	}
-
-	public function getState() {
-		return $this->state;
-	}
-
-	public function setState($state) {
-		$this->state = $state;
-		$this->queryParameters["State"]=$state;
-	}
-
-	public function getDirection() {
-		return $this->direction;
-	}
-
-	public function setDirection($direction) {
-		$this->direction = $direction;
-		$this->queryParameters["Direction"]=$direction;
 	}
 	
 }

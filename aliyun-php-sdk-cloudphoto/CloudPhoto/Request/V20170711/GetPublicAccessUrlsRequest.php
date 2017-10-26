@@ -19,54 +19,32 @@
  */
 namespace CloudPhoto\Request\V20170711;
 
-class ListFacesRequest extends \RpcAcsRequest
+class GetPublicAccessUrlsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CloudPhoto", "2017-07-11", "ListFaces", "cloudphoto", "openAPI");
+		parent::__construct("CloudPhoto", "2017-07-11", "GetPublicAccessUrls", "cloudphoto", "openAPI");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
 
-	private  $cursor;
-
-	private  $hasFaceName;
-
-	private  $size;
+	private  $domainType;
 
 	private  $libraryId;
 
+	private  $PhotoIds;
+
 	private  $storeName;
 
-	private  $state;
+	private  $zoomType;
 
-	private  $direction;
-
-	public function getCursor() {
-		return $this->cursor;
+	public function getDomainType() {
+		return $this->domainType;
 	}
 
-	public function setCursor($cursor) {
-		$this->cursor = $cursor;
-		$this->queryParameters["Cursor"]=$cursor;
-	}
-
-	public function getHasFaceName() {
-		return $this->hasFaceName;
-	}
-
-	public function setHasFaceName($hasFaceName) {
-		$this->hasFaceName = $hasFaceName;
-		$this->queryParameters["HasFaceName"]=$hasFaceName;
-	}
-
-	public function getSize() {
-		return $this->size;
-	}
-
-	public function setSize($size) {
-		$this->size = $size;
-		$this->queryParameters["Size"]=$size;
+	public function setDomainType($domainType) {
+		$this->domainType = $domainType;
+		$this->queryParameters["DomainType"]=$domainType;
 	}
 
 	public function getLibraryId() {
@@ -78,6 +56,17 @@ class ListFacesRequest extends \RpcAcsRequest
 		$this->queryParameters["LibraryId"]=$libraryId;
 	}
 
+	public function getPhotoIds() {
+		return $this->PhotoIds;
+	}
+
+	public function setPhotoIds($PhotoIds) {
+		$this->PhotoIds = $PhotoIds;
+		for ($i = 0; $i < count($PhotoIds); $i ++) {	
+			$this->queryParameters["PhotoId.".($i+1)] = $PhotoIds[$i];
+		}
+	}
+
 	public function getStoreName() {
 		return $this->storeName;
 	}
@@ -87,22 +76,13 @@ class ListFacesRequest extends \RpcAcsRequest
 		$this->queryParameters["StoreName"]=$storeName;
 	}
 
-	public function getState() {
-		return $this->state;
+	public function getZoomType() {
+		return $this->zoomType;
 	}
 
-	public function setState($state) {
-		$this->state = $state;
-		$this->queryParameters["State"]=$state;
-	}
-
-	public function getDirection() {
-		return $this->direction;
-	}
-
-	public function setDirection($direction) {
-		$this->direction = $direction;
-		$this->queryParameters["Direction"]=$direction;
+	public function setZoomType($zoomType) {
+		$this->zoomType = $zoomType;
+		$this->queryParameters["ZoomType"]=$zoomType;
 	}
 	
 }
