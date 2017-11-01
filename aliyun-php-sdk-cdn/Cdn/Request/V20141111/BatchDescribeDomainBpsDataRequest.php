@@ -19,64 +19,29 @@
  */
 namespace Cdn\Request\V20141111;
 
-class DescribeRefreshTasksRequest extends \RpcAcsRequest
+class BatchDescribeDomainBpsDataRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cdn", "2014-11-11", "DescribeRefreshTasks");
+		parent::__construct("Cdn", "2014-11-11", "BatchDescribeDomainBpsData");
 		$this->setMethod("POST");
 	}
 
-	private  $objectPath;
-
-	private  $domainName;
-
-	private  $endTime;
-
 	private  $startTime;
 
-	private  $ownerId;
-
 	private  $pageNumber;
-
-	private  $resourceGroupId;
 
 	private  $securityToken;
 
 	private  $pageSize;
 
-	private  $objectType;
+	private  $domainName;
 
-	private  $taskId;
+	private  $endTime;
 
-	private  $status;
+	private  $ownerId;
 
-	public function getObjectPath() {
-		return $this->objectPath;
-	}
-
-	public function setObjectPath($objectPath) {
-		$this->objectPath = $objectPath;
-		$this->queryParameters["ObjectPath"]=$objectPath;
-	}
-
-	public function getDomainName() {
-		return $this->domainName;
-	}
-
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
-
-	public function getEndTime() {
-		return $this->endTime;
-	}
-
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
+	private  $version;
 
 	public function getStartTime() {
 		return $this->startTime;
@@ -87,15 +52,6 @@ class DescribeRefreshTasksRequest extends \RpcAcsRequest
 		$this->queryParameters["StartTime"]=$startTime;
 	}
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
 	public function getPageNumber() {
 		return $this->pageNumber;
 	}
@@ -103,15 +59,6 @@ class DescribeRefreshTasksRequest extends \RpcAcsRequest
 	public function setPageNumber($pageNumber) {
 		$this->pageNumber = $pageNumber;
 		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
-	public function getResourceGroupId() {
-		return $this->resourceGroupId;
-	}
-
-	public function setResourceGroupId($resourceGroupId) {
-		$this->resourceGroupId = $resourceGroupId;
-		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
 	}
 
 	public function getSecurityToken() {
@@ -132,31 +79,40 @@ class DescribeRefreshTasksRequest extends \RpcAcsRequest
 		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
-	public function getObjectType() {
-		return $this->objectType;
+	public function getDomainName() {
+		return $this->domainName;
 	}
 
-	public function setObjectType($objectType) {
-		$this->objectType = $objectType;
-		$this->queryParameters["ObjectType"]=$objectType;
+	public function setDomainName($domainName) {
+		$this->domainName = $domainName;
+		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getTaskId() {
-		return $this->taskId;
+	public function getEndTime() {
+		return $this->endTime;
 	}
 
-	public function setTaskId($taskId) {
-		$this->taskId = $taskId;
-		$this->queryParameters["TaskId"]=$taskId;
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
 	}
 
-	public function getStatus() {
-		return $this->status;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setStatus($status) {
-		$this->status = $status;
-		$this->queryParameters["Status"]=$status;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getVersion() {
+		return $this->version;
+	}
+
+	public function setVersion($version) {
+		$this->version = $version;
+		$this->queryParameters["Version"]=$version;
 	}
 	
 }

@@ -19,12 +19,14 @@
  */
 namespace Cdn\Request\V20141111;
 
-class DescribeDomainPnoDataRequest extends \RpcAcsRequest
+class DescribeDomainQoSRtRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cdn", "2014-11-11", "DescribeDomainPnoData");
+		parent::__construct("Cdn", "2014-11-11", "DescribeDomainQoSRt");
 	}
+
+	private  $ip;
 
 	private  $domainName;
 
@@ -37,6 +39,15 @@ class DescribeDomainPnoDataRequest extends \RpcAcsRequest
 	private  $version;
 
 	private  $securityToken;
+
+	public function getIp() {
+		return $this->ip;
+	}
+
+	public function setIp($ip) {
+		$this->ip = $ip;
+		$this->queryParameters["Ip"]=$ip;
+	}
 
 	public function getDomainName() {
 		return $this->domainName;
