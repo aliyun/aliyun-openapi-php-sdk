@@ -23,7 +23,7 @@ class DescribeDeploymentSetsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeDeploymentSets");
+		parent::__construct("Ecs", "2014-05-26", "DescribeDeploymentSets", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class DeleteVirtualBorderRouterRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DeleteVirtualBorderRouter");
+		parent::__construct("Ecs", "2014-05-26", "DeleteVirtualBorderRouter", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

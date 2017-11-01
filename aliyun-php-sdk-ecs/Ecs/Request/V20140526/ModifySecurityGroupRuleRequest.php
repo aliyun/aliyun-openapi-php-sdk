@@ -23,7 +23,7 @@ class ModifySecurityGroupRuleRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "ModifySecurityGroupRule");
+		parent::__construct("Ecs", "2014-05-26", "ModifySecurityGroupRule", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -43,8 +43,6 @@ class ModifySecurityGroupRuleRequest extends \RpcAcsRequest
 
 	private  $sourceGroupOwnerAccount;
 
-	private  $callerUid;
-
 	private  $policy;
 
 	private  $portRange;
@@ -56,8 +54,6 @@ class ModifySecurityGroupRuleRequest extends \RpcAcsRequest
 	private  $ownerAccount;
 
 	private  $sourceCidrIp;
-
-	private  $callerBid;
 
 	private  $ownerId;
 
@@ -139,15 +135,6 @@ class ModifySecurityGroupRuleRequest extends \RpcAcsRequest
 		$this->queryParameters["SourceGroupOwnerAccount"]=$sourceGroupOwnerAccount;
 	}
 
-	public function getcallerUid() {
-		return $this->callerUid;
-	}
-
-	public function setcallerUid($callerUid) {
-		$this->callerUid = $callerUid;
-		$this->queryParameters["callerUid"]=$callerUid;
-	}
-
 	public function getPolicy() {
 		return $this->policy;
 	}
@@ -200,15 +187,6 @@ class ModifySecurityGroupRuleRequest extends \RpcAcsRequest
 	public function setSourceCidrIp($sourceCidrIp) {
 		$this->sourceCidrIp = $sourceCidrIp;
 		$this->queryParameters["SourceCidrIp"]=$sourceCidrIp;
-	}
-
-	public function getcallerBid() {
-		return $this->callerBid;
-	}
-
-	public function setcallerBid($callerBid) {
-		$this->callerBid = $callerBid;
-		$this->queryParameters["callerBid"]=$callerBid;
 	}
 
 	public function getOwnerId() {

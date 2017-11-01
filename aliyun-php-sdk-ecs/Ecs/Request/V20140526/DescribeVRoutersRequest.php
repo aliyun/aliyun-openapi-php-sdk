@@ -23,7 +23,7 @@ class DescribeVRoutersRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeVRouters");
+		parent::__construct("Ecs", "2014-05-26", "DescribeVRouters", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

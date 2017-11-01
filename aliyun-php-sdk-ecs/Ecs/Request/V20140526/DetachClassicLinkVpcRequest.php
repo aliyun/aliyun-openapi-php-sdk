@@ -23,7 +23,7 @@ class DetachClassicLinkVpcRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DetachClassicLinkVpc");
+		parent::__construct("Ecs", "2014-05-26", "DetachClassicLinkVpc", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

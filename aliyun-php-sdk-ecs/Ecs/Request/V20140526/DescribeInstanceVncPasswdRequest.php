@@ -23,7 +23,7 @@ class DescribeInstanceVncPasswdRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeInstanceVncPasswd");
+		parent::__construct("Ecs", "2014-05-26", "DescribeInstanceVncPasswd", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

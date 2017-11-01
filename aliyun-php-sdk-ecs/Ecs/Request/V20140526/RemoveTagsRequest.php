@@ -23,7 +23,7 @@ class RemoveTagsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "RemoveTags");
+		parent::__construct("Ecs", "2014-05-26", "RemoveTags", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

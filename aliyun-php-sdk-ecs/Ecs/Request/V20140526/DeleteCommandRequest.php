@@ -23,7 +23,7 @@ class DeleteCommandRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DeleteCommand");
+		parent::__construct("Ecs", "2014-05-26", "DeleteCommand", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -31,13 +31,9 @@ class DeleteCommandRequest extends \RpcAcsRequest
 
 	private  $commandId;
 
-	private  $callerUid;
-
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
-
-	private  $callerBid;
 
 	private  $ownerId;
 
@@ -59,15 +55,6 @@ class DeleteCommandRequest extends \RpcAcsRequest
 		$this->queryParameters["CommandId"]=$commandId;
 	}
 
-	public function getcallerUid() {
-		return $this->callerUid;
-	}
-
-	public function setcallerUid($callerUid) {
-		$this->callerUid = $callerUid;
-		$this->queryParameters["callerUid"]=$callerUid;
-	}
-
 	public function getResourceOwnerAccount() {
 		return $this->resourceOwnerAccount;
 	}
@@ -84,15 +71,6 @@ class DeleteCommandRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getcallerBid() {
-		return $this->callerBid;
-	}
-
-	public function setcallerBid($callerBid) {
-		$this->callerBid = $callerBid;
-		$this->queryParameters["callerBid"]=$callerBid;
 	}
 
 	public function getOwnerId() {

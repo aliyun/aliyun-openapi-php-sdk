@@ -23,7 +23,7 @@ class ModifyVSwitchAttributeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "ModifyVSwitchAttribute");
+		parent::__construct("Ecs", "2014-05-26", "ModifyVSwitchAttribute", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

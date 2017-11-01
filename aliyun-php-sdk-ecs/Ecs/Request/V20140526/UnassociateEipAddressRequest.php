@@ -23,7 +23,7 @@ class UnassociateEipAddressRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "UnassociateEipAddress");
+		parent::__construct("Ecs", "2014-05-26", "UnassociateEipAddress", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

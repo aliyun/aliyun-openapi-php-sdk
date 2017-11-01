@@ -23,7 +23,7 @@ class DescribeImageSupportInstanceTypesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeImageSupportInstanceTypes");
+		parent::__construct("Ecs", "2014-05-26", "DescribeImageSupportInstanceTypes", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

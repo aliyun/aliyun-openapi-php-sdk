@@ -23,7 +23,7 @@ class ModifyInstanceNetworkSpecRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "ModifyInstanceNetworkSpec");
+		parent::__construct("Ecs", "2014-05-26", "ModifyInstanceNetworkSpec", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -50,6 +50,8 @@ class ModifyInstanceNetworkSpecRequest extends \RpcAcsRequest
 	private  $networkChargeType;
 
 	private  $internetMaxBandwidthIn;
+
+	private  $allocatePublicIp;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -157,6 +159,15 @@ class ModifyInstanceNetworkSpecRequest extends \RpcAcsRequest
 	public function setInternetMaxBandwidthIn($internetMaxBandwidthIn) {
 		$this->internetMaxBandwidthIn = $internetMaxBandwidthIn;
 		$this->queryParameters["InternetMaxBandwidthIn"]=$internetMaxBandwidthIn;
+	}
+
+	public function getAllocatePublicIp() {
+		return $this->allocatePublicIp;
+	}
+
+	public function setAllocatePublicIp($allocatePublicIp) {
+		$this->allocatePublicIp = $allocatePublicIp;
+		$this->queryParameters["AllocatePublicIp"]=$allocatePublicIp;
 	}
 	
 }

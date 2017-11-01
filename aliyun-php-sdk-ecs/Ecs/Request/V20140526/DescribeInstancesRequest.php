@@ -23,7 +23,7 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeInstances");
+		parent::__construct("Ecs", "2014-05-26", "DescribeInstances", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -33,27 +33,17 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $imageId;
-
 	private  $tag2Key;
 
 	private  $privateIpAddresses;
 
+	private  $hpcClusterId;
+
 	private  $filter2Value;
-
-	private  $filter4Value;
-
-	private  $ioOptimized;
-
-	private  $securityGroupId;
 
 	private  $tag3Key;
 
 	private  $keyPairName;
-
-	private  $filter4Key;
-
-	private  $pageNumber;
 
 	private  $tag1Value;
 
@@ -65,6 +55,44 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 
 	private  $deviceAvailable;
 
+	private  $filter3Value;
+
+	private  $tag5Key;
+
+	private  $filter1Value;
+
+	private  $ownerId;
+
+	private  $vSwitchId;
+
+	private  $instanceName;
+
+	private  $instanceIds;
+
+	private  $internetChargeType;
+
+	private  $zoneId;
+
+	private  $tag4Key;
+
+	private  $instanceNetworkType;
+
+	private  $status;
+
+	private  $imageId;
+
+	private  $filter4Value;
+
+	private  $ioOptimized;
+
+	private  $securityGroupId;
+
+	private  $filter4Key;
+
+	private  $pageNumber;
+
+	private  $rdmaIpAddresses;
+
 	private  $pageSize;
 
 	private  $publicIpAddresses;
@@ -75,49 +103,25 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 
 	private  $tag3Value;
 
-	private  $filter3Value;
-
-	private  $tag5Key;
-
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
 	private  $instanceTypeFamily;
 
-	private  $filter1Value;
-
 	private  $filter2Key;
 
-	private  $ownerId;
-
 	private  $tag5Value;
-
-	private  $vSwitchId;
 
 	private  $tag1Key;
 
 	private  $eipAddresses;
 
-	private  $instanceName;
-
-	private  $instanceIds;
-
-	private  $internetChargeType;
-
 	private  $vpcId;
 
 	private  $tag2Value;
 
-	private  $zoneId;
-
-	private  $tag4Key;
-
 	private  $filter3Key;
-
-	private  $instanceNetworkType;
-
-	private  $status;
 
 	public function getTag4Value() {
 		return $this->tag4Value;
@@ -146,15 +150,6 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getImageId() {
-		return $this->imageId;
-	}
-
-	public function setImageId($imageId) {
-		$this->imageId = $imageId;
-		$this->queryParameters["ImageId"]=$imageId;
-	}
-
 	public function getTag2Key() {
 		return $this->tag2Key;
 	}
@@ -173,6 +168,15 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["PrivateIpAddresses"]=$privateIpAddresses;
 	}
 
+	public function getHpcClusterId() {
+		return $this->hpcClusterId;
+	}
+
+	public function setHpcClusterId($hpcClusterId) {
+		$this->hpcClusterId = $hpcClusterId;
+		$this->queryParameters["HpcClusterId"]=$hpcClusterId;
+	}
+
 	public function getFilter2Value() {
 		return $this->filter2Value;
 	}
@@ -180,33 +184,6 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 	public function setFilter2Value($filter2Value) {
 		$this->filter2Value = $filter2Value;
 		$this->queryParameters["Filter.2.Value"]=$filter2Value;
-	}
-
-	public function getFilter4Value() {
-		return $this->filter4Value;
-	}
-
-	public function setFilter4Value($filter4Value) {
-		$this->filter4Value = $filter4Value;
-		$this->queryParameters["Filter.4.Value"]=$filter4Value;
-	}
-
-	public function getIoOptimized() {
-		return $this->ioOptimized;
-	}
-
-	public function setIoOptimized($ioOptimized) {
-		$this->ioOptimized = $ioOptimized;
-		$this->queryParameters["IoOptimized"]=$ioOptimized;
-	}
-
-	public function getSecurityGroupId() {
-		return $this->securityGroupId;
-	}
-
-	public function setSecurityGroupId($securityGroupId) {
-		$this->securityGroupId = $securityGroupId;
-		$this->queryParameters["SecurityGroupId"]=$securityGroupId;
 	}
 
 	public function getTag3Key() {
@@ -225,24 +202,6 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 	public function setKeyPairName($keyPairName) {
 		$this->keyPairName = $keyPairName;
 		$this->queryParameters["KeyPairName"]=$keyPairName;
-	}
-
-	public function getFilter4Key() {
-		return $this->filter4Key;
-	}
-
-	public function setFilter4Key($filter4Key) {
-		$this->filter4Key = $filter4Key;
-		$this->queryParameters["Filter.4.Key"]=$filter4Key;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 
 	public function getTag1Value() {
@@ -290,6 +249,177 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["DeviceAvailable"]=$deviceAvailable;
 	}
 
+	public function getFilter3Value() {
+		return $this->filter3Value;
+	}
+
+	public function setFilter3Value($filter3Value) {
+		$this->filter3Value = $filter3Value;
+		$this->queryParameters["Filter.3.Value"]=$filter3Value;
+	}
+
+	public function getTag5Key() {
+		return $this->tag5Key;
+	}
+
+	public function setTag5Key($tag5Key) {
+		$this->tag5Key = $tag5Key;
+		$this->queryParameters["Tag.5.Key"]=$tag5Key;
+	}
+
+	public function getFilter1Value() {
+		return $this->filter1Value;
+	}
+
+	public function setFilter1Value($filter1Value) {
+		$this->filter1Value = $filter1Value;
+		$this->queryParameters["Filter.1.Value"]=$filter1Value;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getVSwitchId() {
+		return $this->vSwitchId;
+	}
+
+	public function setVSwitchId($vSwitchId) {
+		$this->vSwitchId = $vSwitchId;
+		$this->queryParameters["VSwitchId"]=$vSwitchId;
+	}
+
+	public function getInstanceName() {
+		return $this->instanceName;
+	}
+
+	public function setInstanceName($instanceName) {
+		$this->instanceName = $instanceName;
+		$this->queryParameters["InstanceName"]=$instanceName;
+	}
+
+	public function getInstanceIds() {
+		return $this->instanceIds;
+	}
+
+	public function setInstanceIds($instanceIds) {
+		$this->instanceIds = $instanceIds;
+		$this->queryParameters["InstanceIds"]=$instanceIds;
+	}
+
+	public function getInternetChargeType() {
+		return $this->internetChargeType;
+	}
+
+	public function setInternetChargeType($internetChargeType) {
+		$this->internetChargeType = $internetChargeType;
+		$this->queryParameters["InternetChargeType"]=$internetChargeType;
+	}
+
+	public function getZoneId() {
+		return $this->zoneId;
+	}
+
+	public function setZoneId($zoneId) {
+		$this->zoneId = $zoneId;
+		$this->queryParameters["ZoneId"]=$zoneId;
+	}
+
+	public function getTag4Key() {
+		return $this->tag4Key;
+	}
+
+	public function setTag4Key($tag4Key) {
+		$this->tag4Key = $tag4Key;
+		$this->queryParameters["Tag.4.Key"]=$tag4Key;
+	}
+
+	public function getInstanceNetworkType() {
+		return $this->instanceNetworkType;
+	}
+
+	public function setInstanceNetworkType($instanceNetworkType) {
+		$this->instanceNetworkType = $instanceNetworkType;
+		$this->queryParameters["InstanceNetworkType"]=$instanceNetworkType;
+	}
+
+	public function getStatus() {
+		return $this->status;
+	}
+
+	public function setStatus($status) {
+		$this->status = $status;
+		$this->queryParameters["Status"]=$status;
+	}
+
+	public function getImageId() {
+		return $this->imageId;
+	}
+
+	public function setImageId($imageId) {
+		$this->imageId = $imageId;
+		$this->queryParameters["ImageId"]=$imageId;
+	}
+
+	public function getFilter4Value() {
+		return $this->filter4Value;
+	}
+
+	public function setFilter4Value($filter4Value) {
+		$this->filter4Value = $filter4Value;
+		$this->queryParameters["Filter.4.Value"]=$filter4Value;
+	}
+
+	public function getIoOptimized() {
+		return $this->ioOptimized;
+	}
+
+	public function setIoOptimized($ioOptimized) {
+		$this->ioOptimized = $ioOptimized;
+		$this->queryParameters["IoOptimized"]=$ioOptimized;
+	}
+
+	public function getSecurityGroupId() {
+		return $this->securityGroupId;
+	}
+
+	public function setSecurityGroupId($securityGroupId) {
+		$this->securityGroupId = $securityGroupId;
+		$this->queryParameters["SecurityGroupId"]=$securityGroupId;
+	}
+
+	public function getFilter4Key() {
+		return $this->filter4Key;
+	}
+
+	public function setFilter4Key($filter4Key) {
+		$this->filter4Key = $filter4Key;
+		$this->queryParameters["Filter.4.Key"]=$filter4Key;
+	}
+
+	public function getPageNumber() {
+		return $this->pageNumber;
+	}
+
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
+	}
+
+	public function getRdmaIpAddresses() {
+		return $this->rdmaIpAddresses;
+	}
+
+	public function setRdmaIpAddresses($rdmaIpAddresses) {
+		$this->rdmaIpAddresses = $rdmaIpAddresses;
+		$this->queryParameters["RdmaIpAddresses"]=$rdmaIpAddresses;
+	}
+
 	public function getPageSize() {
 		return $this->pageSize;
 	}
@@ -335,24 +465,6 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["Tag.3.Value"]=$tag3Value;
 	}
 
-	public function getFilter3Value() {
-		return $this->filter3Value;
-	}
-
-	public function setFilter3Value($filter3Value) {
-		$this->filter3Value = $filter3Value;
-		$this->queryParameters["Filter.3.Value"]=$filter3Value;
-	}
-
-	public function getTag5Key() {
-		return $this->tag5Key;
-	}
-
-	public function setTag5Key($tag5Key) {
-		$this->tag5Key = $tag5Key;
-		$this->queryParameters["Tag.5.Key"]=$tag5Key;
-	}
-
 	public function getResourceOwnerAccount() {
 		return $this->resourceOwnerAccount;
 	}
@@ -380,15 +492,6 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["InstanceTypeFamily"]=$instanceTypeFamily;
 	}
 
-	public function getFilter1Value() {
-		return $this->filter1Value;
-	}
-
-	public function setFilter1Value($filter1Value) {
-		$this->filter1Value = $filter1Value;
-		$this->queryParameters["Filter.1.Value"]=$filter1Value;
-	}
-
 	public function getFilter2Key() {
 		return $this->filter2Key;
 	}
@@ -398,15 +501,6 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["Filter.2.Key"]=$filter2Key;
 	}
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
 	public function getTag5Value() {
 		return $this->tag5Value;
 	}
@@ -414,15 +508,6 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 	public function setTag5Value($tag5Value) {
 		$this->tag5Value = $tag5Value;
 		$this->queryParameters["Tag.5.Value"]=$tag5Value;
-	}
-
-	public function getVSwitchId() {
-		return $this->vSwitchId;
-	}
-
-	public function setVSwitchId($vSwitchId) {
-		$this->vSwitchId = $vSwitchId;
-		$this->queryParameters["VSwitchId"]=$vSwitchId;
 	}
 
 	public function getTag1Key() {
@@ -443,33 +528,6 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["EipAddresses"]=$eipAddresses;
 	}
 
-	public function getInstanceName() {
-		return $this->instanceName;
-	}
-
-	public function setInstanceName($instanceName) {
-		$this->instanceName = $instanceName;
-		$this->queryParameters["InstanceName"]=$instanceName;
-	}
-
-	public function getInstanceIds() {
-		return $this->instanceIds;
-	}
-
-	public function setInstanceIds($instanceIds) {
-		$this->instanceIds = $instanceIds;
-		$this->queryParameters["InstanceIds"]=$instanceIds;
-	}
-
-	public function getInternetChargeType() {
-		return $this->internetChargeType;
-	}
-
-	public function setInternetChargeType($internetChargeType) {
-		$this->internetChargeType = $internetChargeType;
-		$this->queryParameters["InternetChargeType"]=$internetChargeType;
-	}
-
 	public function getVpcId() {
 		return $this->vpcId;
 	}
@@ -488,24 +546,6 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["Tag.2.Value"]=$tag2Value;
 	}
 
-	public function getZoneId() {
-		return $this->zoneId;
-	}
-
-	public function setZoneId($zoneId) {
-		$this->zoneId = $zoneId;
-		$this->queryParameters["ZoneId"]=$zoneId;
-	}
-
-	public function getTag4Key() {
-		return $this->tag4Key;
-	}
-
-	public function setTag4Key($tag4Key) {
-		$this->tag4Key = $tag4Key;
-		$this->queryParameters["Tag.4.Key"]=$tag4Key;
-	}
-
 	public function getFilter3Key() {
 		return $this->filter3Key;
 	}
@@ -513,24 +553,6 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 	public function setFilter3Key($filter3Key) {
 		$this->filter3Key = $filter3Key;
 		$this->queryParameters["Filter.3.Key"]=$filter3Key;
-	}
-
-	public function getInstanceNetworkType() {
-		return $this->instanceNetworkType;
-	}
-
-	public function setInstanceNetworkType($instanceNetworkType) {
-		$this->instanceNetworkType = $instanceNetworkType;
-		$this->queryParameters["InstanceNetworkType"]=$instanceNetworkType;
-	}
-
-	public function getStatus() {
-		return $this->status;
-	}
-
-	public function setStatus($status) {
-		$this->status = $status;
-		$this->queryParameters["Status"]=$status;
 	}
 	
 }

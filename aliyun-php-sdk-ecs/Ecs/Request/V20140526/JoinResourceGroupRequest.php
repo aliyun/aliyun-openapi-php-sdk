@@ -23,7 +23,7 @@ class JoinResourceGroupRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "JoinResourceGroup");
+		parent::__construct("Ecs", "2014-05-26", "JoinResourceGroup", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

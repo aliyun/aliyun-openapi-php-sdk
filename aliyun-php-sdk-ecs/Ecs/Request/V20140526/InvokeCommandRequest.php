@@ -23,7 +23,7 @@ class InvokeCommandRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "InvokeCommand");
+		parent::__construct("Ecs", "2014-05-26", "InvokeCommand", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -33,15 +33,11 @@ class InvokeCommandRequest extends \RpcAcsRequest
 
 	private  $frequency;
 
-	private  $callerUid;
-
 	private  $timed;
 
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
-
-	private  $callerBid;
 
 	private  $ownerId;
 
@@ -74,15 +70,6 @@ class InvokeCommandRequest extends \RpcAcsRequest
 		$this->queryParameters["Frequency"]=$frequency;
 	}
 
-	public function getcallerUid() {
-		return $this->callerUid;
-	}
-
-	public function setcallerUid($callerUid) {
-		$this->callerUid = $callerUid;
-		$this->queryParameters["callerUid"]=$callerUid;
-	}
-
 	public function getTimed() {
 		return $this->timed;
 	}
@@ -108,15 +95,6 @@ class InvokeCommandRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getcallerBid() {
-		return $this->callerBid;
-	}
-
-	public function setcallerBid($callerBid) {
-		$this->callerBid = $callerBid;
-		$this->queryParameters["callerBid"]=$callerBid;
 	}
 
 	public function getOwnerId() {

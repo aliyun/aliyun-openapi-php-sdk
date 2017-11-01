@@ -23,21 +23,17 @@ class StopInvocationRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "StopInvocation");
+		parent::__construct("Ecs", "2014-05-26", "StopInvocation", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
-
-	private  $callerUid;
 
 	private  $invokeId;
 
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
-
-	private  $callerBid;
 
 	private  $ownerId;
 
@@ -50,15 +46,6 @@ class StopInvocationRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getcallerUid() {
-		return $this->callerUid;
-	}
-
-	public function setcallerUid($callerUid) {
-		$this->callerUid = $callerUid;
-		$this->queryParameters["callerUid"]=$callerUid;
 	}
 
 	public function getInvokeId() {
@@ -86,15 +73,6 @@ class StopInvocationRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getcallerBid() {
-		return $this->callerBid;
-	}
-
-	public function setcallerBid($callerBid) {
-		$this->callerBid = $callerBid;
-		$this->queryParameters["callerBid"]=$callerBid;
 	}
 
 	public function getOwnerId() {

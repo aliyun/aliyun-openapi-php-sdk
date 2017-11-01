@@ -23,7 +23,7 @@ class DescribePhysicalConnectionsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DescribePhysicalConnections");
+		parent::__construct("Ecs", "2014-05-26", "DescribePhysicalConnections", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

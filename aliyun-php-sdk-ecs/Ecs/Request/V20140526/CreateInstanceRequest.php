@@ -23,7 +23,7 @@ class CreateInstanceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "CreateInstance");
+		parent::__construct("Ecs", "2014-05-26", "CreateInstance", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -32,6 +32,8 @@ class CreateInstanceRequest extends \RpcAcsRequest
 	private  $resourceOwnerId;
 
 	private  $tag2Key;
+
+	private  $hpcClusterId;
 
 	private  $tag3Key;
 
@@ -154,6 +156,15 @@ class CreateInstanceRequest extends \RpcAcsRequest
 	public function setTag2Key($tag2Key) {
 		$this->tag2Key = $tag2Key;
 		$this->queryParameters["Tag.2.Key"]=$tag2Key;
+	}
+
+	public function getHpcClusterId() {
+		return $this->hpcClusterId;
+	}
+
+	public function setHpcClusterId($hpcClusterId) {
+		$this->hpcClusterId = $hpcClusterId;
+		$this->queryParameters["HpcClusterId"]=$hpcClusterId;
 	}
 
 	public function getTag3Key() {

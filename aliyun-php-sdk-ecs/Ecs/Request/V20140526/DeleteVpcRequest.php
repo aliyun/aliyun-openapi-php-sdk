@@ -23,7 +23,7 @@ class DeleteVpcRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DeleteVpc");
+		parent::__construct("Ecs", "2014-05-26", "DeleteVpc", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

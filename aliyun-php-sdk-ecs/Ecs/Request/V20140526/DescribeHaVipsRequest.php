@@ -23,7 +23,7 @@ class DescribeHaVipsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeHaVips");
+		parent::__construct("Ecs", "2014-05-26", "DescribeHaVips", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

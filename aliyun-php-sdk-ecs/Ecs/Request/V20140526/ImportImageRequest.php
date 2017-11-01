@@ -23,7 +23,7 @@ class ImportImageRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "ImportImage");
+		parent::__construct("Ecs", "2014-05-26", "ImportImage", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

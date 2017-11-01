@@ -23,7 +23,7 @@ class ModifyPhysicalConnectionAttributeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "ModifyPhysicalConnectionAttribute");
+		parent::__construct("Ecs", "2014-05-26", "ModifyPhysicalConnectionAttribute", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

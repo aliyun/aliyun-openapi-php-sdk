@@ -23,7 +23,7 @@ class ModifyDeploymentSetAttributeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "ModifyDeploymentSetAttribute");
+		parent::__construct("Ecs", "2014-05-26", "ModifyDeploymentSetAttribute", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

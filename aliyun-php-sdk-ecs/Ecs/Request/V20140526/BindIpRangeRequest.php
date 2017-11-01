@@ -23,7 +23,7 @@ class BindIpRangeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "BindIpRange");
+		parent::__construct("Ecs", "2014-05-26", "BindIpRange", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

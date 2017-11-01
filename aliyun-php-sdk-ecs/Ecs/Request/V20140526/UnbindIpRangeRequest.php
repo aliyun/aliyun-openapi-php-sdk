@@ -23,7 +23,7 @@ class UnbindIpRangeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "UnbindIpRange");
+		parent::__construct("Ecs", "2014-05-26", "UnbindIpRange", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

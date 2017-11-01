@@ -23,7 +23,7 @@ class AddBandwidthPackageIpsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "AddBandwidthPackageIps");
+		parent::__construct("Ecs", "2014-05-26", "AddBandwidthPackageIps", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

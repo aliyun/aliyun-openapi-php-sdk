@@ -23,7 +23,7 @@ class DescribeIntranetAttributeKbRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeIntranetAttributeKb");
+		parent::__construct("Ecs", "2014-05-26", "DescribeIntranetAttributeKb", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class ModifyInstanceVpcAttributeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "ModifyInstanceVpcAttribute");
+		parent::__construct("Ecs", "2014-05-26", "ModifyInstanceVpcAttribute", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

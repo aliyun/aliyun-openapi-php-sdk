@@ -23,7 +23,7 @@ class DescribeImagesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeImages");
+		parent::__construct("Ecs", "2014-05-26", "DescribeImages", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class DescribeSnapshotLinksRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeSnapshotLinks");
+		parent::__construct("Ecs", "2014-05-26", "DescribeSnapshotLinks", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

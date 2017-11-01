@@ -23,7 +23,7 @@ class RollbackVolumeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "RollbackVolume");
+		parent::__construct("Ecs", "2014-05-26", "RollbackVolume", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

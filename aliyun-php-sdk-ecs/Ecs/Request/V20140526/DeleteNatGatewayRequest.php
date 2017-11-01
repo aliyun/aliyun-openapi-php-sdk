@@ -23,7 +23,7 @@ class DeleteNatGatewayRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DeleteNatGateway");
+		parent::__construct("Ecs", "2014-05-26", "DeleteNatGateway", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

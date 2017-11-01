@@ -23,7 +23,7 @@ class CreateNetworkInterfaceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "CreateNetworkInterface");
+		parent::__construct("Ecs", "2014-05-26", "CreateNetworkInterface", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -37,13 +37,9 @@ class CreateNetworkInterfaceRequest extends \RpcAcsRequest
 
 	private  $networkInterfaceName;
 
-	private  $callerUid;
-
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
-
-	private  $callerBid;
 
 	private  $ownerId;
 
@@ -96,15 +92,6 @@ class CreateNetworkInterfaceRequest extends \RpcAcsRequest
 		$this->queryParameters["NetworkInterfaceName"]=$networkInterfaceName;
 	}
 
-	public function getcallerUid() {
-		return $this->callerUid;
-	}
-
-	public function setcallerUid($callerUid) {
-		$this->callerUid = $callerUid;
-		$this->queryParameters["callerUid"]=$callerUid;
-	}
-
 	public function getResourceOwnerAccount() {
 		return $this->resourceOwnerAccount;
 	}
@@ -121,15 +108,6 @@ class CreateNetworkInterfaceRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getcallerBid() {
-		return $this->callerBid;
-	}
-
-	public function setcallerBid($callerBid) {
-		$this->callerBid = $callerBid;
-		$this->queryParameters["callerBid"]=$callerBid;
 	}
 
 	public function getOwnerId() {

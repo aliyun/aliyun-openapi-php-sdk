@@ -23,7 +23,7 @@ class ModifyInstanceSpecRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "ModifyInstanceSpec");
+		parent::__construct("Ecs", "2014-05-26", "ModifyInstanceSpec", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -33,6 +33,8 @@ class ModifyInstanceSpecRequest extends \RpcAcsRequest
 
 	private  $clientToken;
 
+	private  $allowMigrateAcrossZone;
+
 	private  $ownerAccount;
 
 	private  $internetMaxBandwidthOut;
@@ -40,6 +42,8 @@ class ModifyInstanceSpecRequest extends \RpcAcsRequest
 	private  $ownerId;
 
 	private  $temporaryInternetMaxBandwidthOut;
+
+	private  $systemDiskCategory;
 
 	private  $temporaryStartTime;
 
@@ -80,6 +84,15 @@ class ModifyInstanceSpecRequest extends \RpcAcsRequest
 		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
+	public function getAllowMigrateAcrossZone() {
+		return $this->allowMigrateAcrossZone;
+	}
+
+	public function setAllowMigrateAcrossZone($allowMigrateAcrossZone) {
+		$this->allowMigrateAcrossZone = $allowMigrateAcrossZone;
+		$this->queryParameters["AllowMigrateAcrossZone"]=$allowMigrateAcrossZone;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -114,6 +127,15 @@ class ModifyInstanceSpecRequest extends \RpcAcsRequest
 	public function setTemporaryInternetMaxBandwidthOut($temporaryInternetMaxBandwidthOut) {
 		$this->temporaryInternetMaxBandwidthOut = $temporaryInternetMaxBandwidthOut;
 		$this->queryParameters["Temporary.InternetMaxBandwidthOut"]=$temporaryInternetMaxBandwidthOut;
+	}
+
+	public function getSystemDiskCategory() {
+		return $this->systemDiskCategory;
+	}
+
+	public function setSystemDiskCategory($systemDiskCategory) {
+		$this->systemDiskCategory = $systemDiskCategory;
+		$this->queryParameters["SystemDisk.Category"]=$systemDiskCategory;
 	}
 
 	public function getTemporaryStartTime() {

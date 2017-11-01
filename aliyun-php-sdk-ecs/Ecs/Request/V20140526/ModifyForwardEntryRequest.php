@@ -23,7 +23,7 @@ class ModifyForwardEntryRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "ModifyForwardEntry");
+		parent::__construct("Ecs", "2014-05-26", "ModifyForwardEntry", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

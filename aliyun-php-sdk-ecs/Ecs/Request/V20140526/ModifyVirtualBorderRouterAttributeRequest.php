@@ -23,7 +23,7 @@ class ModifyVirtualBorderRouterAttributeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "ModifyVirtualBorderRouterAttribute");
+		parent::__construct("Ecs", "2014-05-26", "ModifyVirtualBorderRouterAttribute", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

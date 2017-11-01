@@ -23,7 +23,7 @@ class DescribeUserDataRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeUserData");
+		parent::__construct("Ecs", "2014-05-26", "DescribeUserData", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class RevokeSecurityGroupEgressRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "RevokeSecurityGroupEgress");
+		parent::__construct("Ecs", "2014-05-26", "RevokeSecurityGroupEgress", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -39,8 +39,6 @@ class RevokeSecurityGroupEgressRequest extends \RpcAcsRequest
 
 	private  $description;
 
-	private  $callerUid;
-
 	private  $policy;
 
 	private  $portRange;
@@ -52,8 +50,6 @@ class RevokeSecurityGroupEgressRequest extends \RpcAcsRequest
 	private  $ownerAccount;
 
 	private  $sourceCidrIp;
-
-	private  $callerBid;
 
 	private  $destGroupId;
 
@@ -121,15 +117,6 @@ class RevokeSecurityGroupEgressRequest extends \RpcAcsRequest
 		$this->queryParameters["Description"]=$description;
 	}
 
-	public function getcallerUid() {
-		return $this->callerUid;
-	}
-
-	public function setcallerUid($callerUid) {
-		$this->callerUid = $callerUid;
-		$this->queryParameters["callerUid"]=$callerUid;
-	}
-
 	public function getPolicy() {
 		return $this->policy;
 	}
@@ -182,15 +169,6 @@ class RevokeSecurityGroupEgressRequest extends \RpcAcsRequest
 	public function setSourceCidrIp($sourceCidrIp) {
 		$this->sourceCidrIp = $sourceCidrIp;
 		$this->queryParameters["SourceCidrIp"]=$sourceCidrIp;
-	}
-
-	public function getcallerBid() {
-		return $this->callerBid;
-	}
-
-	public function setcallerBid($callerBid) {
-		$this->callerBid = $callerBid;
-		$this->queryParameters["callerBid"]=$callerBid;
 	}
 
 	public function getDestGroupId() {

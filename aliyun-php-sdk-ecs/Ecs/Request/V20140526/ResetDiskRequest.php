@@ -23,7 +23,7 @@ class ResetDiskRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "ResetDisk");
+		parent::__construct("Ecs", "2014-05-26", "ResetDisk", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

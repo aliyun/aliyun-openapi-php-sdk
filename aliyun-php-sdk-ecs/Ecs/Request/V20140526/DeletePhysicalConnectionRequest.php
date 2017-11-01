@@ -23,7 +23,7 @@ class DeletePhysicalConnectionRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DeletePhysicalConnection");
+		parent::__construct("Ecs", "2014-05-26", "DeletePhysicalConnection", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

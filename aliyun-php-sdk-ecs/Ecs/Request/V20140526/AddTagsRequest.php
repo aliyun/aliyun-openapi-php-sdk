@@ -23,7 +23,7 @@ class AddTagsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "AddTags");
+		parent::__construct("Ecs", "2014-05-26", "AddTags", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

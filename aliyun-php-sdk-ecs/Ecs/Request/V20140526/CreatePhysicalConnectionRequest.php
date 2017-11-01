@@ -23,7 +23,7 @@ class CreatePhysicalConnectionRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "CreatePhysicalConnection");
+		parent::__construct("Ecs", "2014-05-26", "CreatePhysicalConnection", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

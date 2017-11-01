@@ -23,7 +23,7 @@ class ModifyInstanceAttributeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "ModifyInstanceAttribute");
+		parent::__construct("Ecs", "2014-05-26", "ModifyInstanceAttribute", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -40,6 +40,8 @@ class ModifyInstanceAttributeRequest extends \RpcAcsRequest
 	private  $instanceName;
 
 	private  $resourceOwnerAccount;
+
+	private  $recyclable;
 
 	private  $ownerAccount;
 
@@ -108,6 +110,15 @@ class ModifyInstanceAttributeRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getRecyclable() {
+		return $this->recyclable;
+	}
+
+	public function setRecyclable($recyclable) {
+		$this->recyclable = $recyclable;
+		$this->queryParameters["Recyclable"]=$recyclable;
 	}
 
 	public function getOwnerAccount() {
