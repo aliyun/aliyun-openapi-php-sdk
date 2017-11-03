@@ -19,11 +19,11 @@
  */
 namespace vod\Request\V20170321;
 
-class GetVideoConfigRequest extends \RpcAcsRequest
+class DescribeCdnDomainLogsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "GetVideoConfig", "vod", "openAPI");
+		parent::__construct("vod", "2017-03-21", "DescribeCdnDomainLogs", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -31,11 +31,21 @@ class GetVideoConfigRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerAccount;
 
-	private  $videoId;
+	private  $pageNo;
+
+	private  $ownerAccount;
+
+	private  $domainName;
+
+	private  $pageSize;
+
+	private  $endTime;
+
+	private  $startTime;
 
 	private  $ownerId;
 
-	private  $authInfo;
+	private  $logDay;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -55,13 +65,58 @@ class GetVideoConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getVideoId() {
-		return $this->videoId;
+	public function getPageNo() {
+		return $this->pageNo;
 	}
 
-	public function setVideoId($videoId) {
-		$this->videoId = $videoId;
-		$this->queryParameters["VideoId"]=$videoId;
+	public function setPageNo($pageNo) {
+		$this->pageNo = $pageNo;
+		$this->queryParameters["PageNo"]=$pageNo;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getDomainName() {
+		return $this->domainName;
+	}
+
+	public function setDomainName($domainName) {
+		$this->domainName = $domainName;
+		$this->queryParameters["DomainName"]=$domainName;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
 	}
 
 	public function getOwnerId() {
@@ -73,13 +128,13 @@ class GetVideoConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getAuthInfo() {
-		return $this->authInfo;
+	public function getLogDay() {
+		return $this->logDay;
 	}
 
-	public function setAuthInfo($authInfo) {
-		$this->authInfo = $authInfo;
-		$this->queryParameters["AuthInfo"]=$authInfo;
+	public function setLogDay($logDay) {
+		$this->logDay = $logDay;
+		$this->queryParameters["LogDay"]=$logDay;
 	}
 	
 }

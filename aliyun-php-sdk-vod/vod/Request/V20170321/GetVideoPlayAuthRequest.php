@@ -31,6 +31,10 @@ class GetVideoPlayAuthRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerAccount;
 
+	private  $reAuthInfo;
+
+	private  $authInfoTimeout;
+
 	private  $videoId;
 
 	private  $ownerId;
@@ -51,6 +55,24 @@ class GetVideoPlayAuthRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getReAuthInfo() {
+		return $this->reAuthInfo;
+	}
+
+	public function setReAuthInfo($reAuthInfo) {
+		$this->reAuthInfo = $reAuthInfo;
+		$this->queryParameters["ReAuthInfo"]=$reAuthInfo;
+	}
+
+	public function getAuthInfoTimeout() {
+		return $this->authInfoTimeout;
+	}
+
+	public function setAuthInfoTimeout($authInfoTimeout) {
+		$this->authInfoTimeout = $authInfoTimeout;
+		$this->queryParameters["AuthInfoTimeout"]=$authInfoTimeout;
 	}
 
 	public function getVideoId() {

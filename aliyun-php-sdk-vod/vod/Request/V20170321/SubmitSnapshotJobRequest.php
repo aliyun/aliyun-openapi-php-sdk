@@ -19,37 +19,33 @@
  */
 namespace vod\Request\V20170321;
 
-class GetPlayInfoRequest extends \RpcAcsRequest
+class SubmitSnapshotJobRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "GetPlayInfo", "vod", "openAPI");
+		parent::__construct("vod", "2017-03-21", "SubmitSnapshotJob", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
-	private  $streamType;
-
-	private  $formats;
+	private  $specifiedOffsetTime;
 
 	private  $resourceOwnerAccount;
 
-	private  $channel;
+	private  $width;
+
+	private  $count;
 
 	private  $videoId;
 
-	private  $playerVersion;
+	private  $interval;
 
 	private  $ownerId;
 
-	private  $rand;
+	private  $spriteSnapshotConfig;
 
-	private  $reAuthInfo;
-
-	private  $authTimeout;
-
-	private  $authInfo;
+	private  $height;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -60,22 +56,13 @@ class GetPlayInfoRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getStreamType() {
-		return $this->streamType;
+	public function getSpecifiedOffsetTime() {
+		return $this->specifiedOffsetTime;
 	}
 
-	public function setStreamType($streamType) {
-		$this->streamType = $streamType;
-		$this->queryParameters["StreamType"]=$streamType;
-	}
-
-	public function getFormats() {
-		return $this->formats;
-	}
-
-	public function setFormats($formats) {
-		$this->formats = $formats;
-		$this->queryParameters["Formats"]=$formats;
+	public function setSpecifiedOffsetTime($specifiedOffsetTime) {
+		$this->specifiedOffsetTime = $specifiedOffsetTime;
+		$this->queryParameters["SpecifiedOffsetTime"]=$specifiedOffsetTime;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -87,13 +74,22 @@ class GetPlayInfoRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getChannel() {
-		return $this->channel;
+	public function getWidth() {
+		return $this->width;
 	}
 
-	public function setChannel($channel) {
-		$this->channel = $channel;
-		$this->queryParameters["Channel"]=$channel;
+	public function setWidth($width) {
+		$this->width = $width;
+		$this->queryParameters["Width"]=$width;
+	}
+
+	public function getCount() {
+		return $this->count;
+	}
+
+	public function setCount($count) {
+		$this->count = $count;
+		$this->queryParameters["Count"]=$count;
 	}
 
 	public function getVideoId() {
@@ -105,13 +101,13 @@ class GetPlayInfoRequest extends \RpcAcsRequest
 		$this->queryParameters["VideoId"]=$videoId;
 	}
 
-	public function getPlayerVersion() {
-		return $this->playerVersion;
+	public function getInterval() {
+		return $this->interval;
 	}
 
-	public function setPlayerVersion($playerVersion) {
-		$this->playerVersion = $playerVersion;
-		$this->queryParameters["PlayerVersion"]=$playerVersion;
+	public function setInterval($interval) {
+		$this->interval = $interval;
+		$this->queryParameters["Interval"]=$interval;
 	}
 
 	public function getOwnerId() {
@@ -123,40 +119,22 @@ class GetPlayInfoRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getRand() {
-		return $this->rand;
+	public function getSpriteSnapshotConfig() {
+		return $this->spriteSnapshotConfig;
 	}
 
-	public function setRand($rand) {
-		$this->rand = $rand;
-		$this->queryParameters["Rand"]=$rand;
+	public function setSpriteSnapshotConfig($spriteSnapshotConfig) {
+		$this->spriteSnapshotConfig = $spriteSnapshotConfig;
+		$this->queryParameters["SpriteSnapshotConfig"]=$spriteSnapshotConfig;
 	}
 
-	public function getReAuthInfo() {
-		return $this->reAuthInfo;
+	public function getHeight() {
+		return $this->height;
 	}
 
-	public function setReAuthInfo($reAuthInfo) {
-		$this->reAuthInfo = $reAuthInfo;
-		$this->queryParameters["ReAuthInfo"]=$reAuthInfo;
-	}
-
-	public function getAuthTimeout() {
-		return $this->authTimeout;
-	}
-
-	public function setAuthTimeout($authTimeout) {
-		$this->authTimeout = $authTimeout;
-		$this->queryParameters["AuthTimeout"]=$authTimeout;
-	}
-
-	public function getAuthInfo() {
-		return $this->authInfo;
-	}
-
-	public function setAuthInfo($authInfo) {
-		$this->authInfo = $authInfo;
-		$this->queryParameters["AuthInfo"]=$authInfo;
+	public function setHeight($height) {
+		$this->height = $height;
+		$this->queryParameters["Height"]=$height;
 	}
 	
 }

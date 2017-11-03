@@ -19,23 +19,38 @@
  */
 namespace vod\Request\V20170321;
 
-class GetVideoConfigRequest extends \RpcAcsRequest
+class AddEditingProjectRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "GetVideoConfig", "vod", "openAPI");
+		parent::__construct("vod", "2017-03-21", "AddEditingProject", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
+
+	private  $coverURL;
 
 	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
-	private  $videoId;
+	private  $ownerAccount;
+
+	private  $description;
+
+	private  $timeline;
 
 	private  $ownerId;
 
-	private  $authInfo;
+	private  $title;
+
+	public function getCoverURL() {
+		return $this->coverURL;
+	}
+
+	public function setCoverURL($coverURL) {
+		$this->coverURL = $coverURL;
+		$this->queryParameters["CoverURL"]=$coverURL;
+	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -55,13 +70,31 @@ class GetVideoConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getVideoId() {
-		return $this->videoId;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setVideoId($videoId) {
-		$this->videoId = $videoId;
-		$this->queryParameters["VideoId"]=$videoId;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getDescription() {
+		return $this->description;
+	}
+
+	public function setDescription($description) {
+		$this->description = $description;
+		$this->queryParameters["Description"]=$description;
+	}
+
+	public function getTimeline() {
+		return $this->timeline;
+	}
+
+	public function setTimeline($timeline) {
+		$this->timeline = $timeline;
+		$this->queryParameters["Timeline"]=$timeline;
 	}
 
 	public function getOwnerId() {
@@ -73,13 +106,13 @@ class GetVideoConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getAuthInfo() {
-		return $this->authInfo;
+	public function getTitle() {
+		return $this->title;
 	}
 
-	public function setAuthInfo($authInfo) {
-		$this->authInfo = $authInfo;
-		$this->queryParameters["AuthInfo"]=$authInfo;
+	public function setTitle($title) {
+		$this->title = $title;
+		$this->queryParameters["Title"]=$title;
 	}
 	
 }

@@ -19,23 +19,36 @@
  */
 namespace vod\Request\V20170321;
 
-class GetVideoConfigRequest extends \RpcAcsRequest
+class SubmitAIVideoTerrorismRecogJobRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "GetVideoConfig", "vod", "openAPI");
+		parent::__construct("vod", "2017-03-21", "SubmitAIVideoTerrorismRecogJob", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
+
+	private  $userData;
 
 	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
-	private  $videoId;
+	private  $ownerAccount;
+
+	private  $aIVideoTerrorismRecogConfig;
 
 	private  $ownerId;
 
-	private  $authInfo;
+	private  $mediaId;
+
+	public function getUserData() {
+		return $this->userData;
+	}
+
+	public function setUserData($userData) {
+		$this->userData = $userData;
+		$this->queryParameters["UserData"]=$userData;
+	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -55,13 +68,22 @@ class GetVideoConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getVideoId() {
-		return $this->videoId;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setVideoId($videoId) {
-		$this->videoId = $videoId;
-		$this->queryParameters["VideoId"]=$videoId;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getAIVideoTerrorismRecogConfig() {
+		return $this->aIVideoTerrorismRecogConfig;
+	}
+
+	public function setAIVideoTerrorismRecogConfig($aIVideoTerrorismRecogConfig) {
+		$this->aIVideoTerrorismRecogConfig = $aIVideoTerrorismRecogConfig;
+		$this->queryParameters["AIVideoTerrorismRecogConfig"]=$aIVideoTerrorismRecogConfig;
 	}
 
 	public function getOwnerId() {
@@ -73,13 +95,13 @@ class GetVideoConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getAuthInfo() {
-		return $this->authInfo;
+	public function getMediaId() {
+		return $this->mediaId;
 	}
 
-	public function setAuthInfo($authInfo) {
-		$this->authInfo = $authInfo;
-		$this->queryParameters["AuthInfo"]=$authInfo;
+	public function setMediaId($mediaId) {
+		$this->mediaId = $mediaId;
+		$this->queryParameters["MediaId"]=$mediaId;
 	}
 	
 }

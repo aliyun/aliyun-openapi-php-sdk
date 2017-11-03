@@ -19,23 +19,32 @@
  */
 namespace vod\Request\V20170321;
 
-class GetVideoConfigRequest extends \RpcAcsRequest
+class ListAIVideoCensorJobRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "GetVideoConfig", "vod", "openAPI");
+		parent::__construct("vod", "2017-03-21", "ListAIVideoCensorJob", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
+
+	private  $aIVideoCensorJobIds;
 
 	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
-	private  $videoId;
+	private  $ownerAccount;
 
 	private  $ownerId;
 
-	private  $authInfo;
+	public function getAIVideoCensorJobIds() {
+		return $this->aIVideoCensorJobIds;
+	}
+
+	public function setAIVideoCensorJobIds($aIVideoCensorJobIds) {
+		$this->aIVideoCensorJobIds = $aIVideoCensorJobIds;
+		$this->queryParameters["AIVideoCensorJobIds"]=$aIVideoCensorJobIds;
+	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -55,13 +64,13 @@ class GetVideoConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getVideoId() {
-		return $this->videoId;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setVideoId($videoId) {
-		$this->videoId = $videoId;
-		$this->queryParameters["VideoId"]=$videoId;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getOwnerId() {
@@ -71,15 +80,6 @@ class GetVideoConfigRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getAuthInfo() {
-		return $this->authInfo;
-	}
-
-	public function setAuthInfo($authInfo) {
-		$this->authInfo = $authInfo;
-		$this->queryParameters["AuthInfo"]=$authInfo;
 	}
 	
 }

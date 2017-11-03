@@ -19,11 +19,11 @@
  */
 namespace vod\Request\V20170321;
 
-class GetVideoConfigRequest extends \RpcAcsRequest
+class DeleteEditingProjectRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "GetVideoConfig", "vod", "openAPI");
+		parent::__construct("vod", "2017-03-21", "DeleteEditingProject", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -31,11 +31,11 @@ class GetVideoConfigRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerAccount;
 
-	private  $videoId;
+	private  $ownerAccount;
+
+	private  $projectIds;
 
 	private  $ownerId;
-
-	private  $authInfo;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -55,13 +55,22 @@ class GetVideoConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getVideoId() {
-		return $this->videoId;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setVideoId($videoId) {
-		$this->videoId = $videoId;
-		$this->queryParameters["VideoId"]=$videoId;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getProjectIds() {
+		return $this->projectIds;
+	}
+
+	public function setProjectIds($projectIds) {
+		$this->projectIds = $projectIds;
+		$this->queryParameters["ProjectIds"]=$projectIds;
 	}
 
 	public function getOwnerId() {
@@ -71,15 +80,6 @@ class GetVideoConfigRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getAuthInfo() {
-		return $this->authInfo;
-	}
-
-	public function setAuthInfo($authInfo) {
-		$this->authInfo = $authInfo;
-		$this->queryParameters["AuthInfo"]=$authInfo;
 	}
 	
 }
