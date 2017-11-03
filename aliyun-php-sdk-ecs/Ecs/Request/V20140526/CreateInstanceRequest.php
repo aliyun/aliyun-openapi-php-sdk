@@ -67,6 +67,8 @@ class CreateInstanceRequest extends \RpcAcsRequest
 
 	private  $spotStrategy;
 
+	private  $periodUnit;
+
 	private  $instanceName;
 
 	private  $autoRenew;
@@ -309,6 +311,15 @@ class CreateInstanceRequest extends \RpcAcsRequest
 	public function setSpotStrategy($spotStrategy) {
 		$this->spotStrategy = $spotStrategy;
 		$this->queryParameters["SpotStrategy"]=$spotStrategy;
+	}
+
+	public function getPeriodUnit() {
+		return $this->periodUnit;
+	}
+
+	public function setPeriodUnit($periodUnit) {
+		$this->periodUnit = $periodUnit;
+		$this->queryParameters["PeriodUnit"]=$periodUnit;
 	}
 
 	public function getInstanceName() {

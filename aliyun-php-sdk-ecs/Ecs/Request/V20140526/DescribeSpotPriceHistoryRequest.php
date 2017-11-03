@@ -45,6 +45,8 @@ class DescribeSpotPriceHistoryRequest extends \RpcAcsRequest
 
 	private  $endTime;
 
+	private  $oSType;
+
 	private  $ownerId;
 
 	private  $zoneId;
@@ -128,6 +130,15 @@ class DescribeSpotPriceHistoryRequest extends \RpcAcsRequest
 	public function setEndTime($endTime) {
 		$this->endTime = $endTime;
 		$this->queryParameters["EndTime"]=$endTime;
+	}
+
+	public function getOSType() {
+		return $this->oSType;
+	}
+
+	public function setOSType($oSType) {
+		$this->oSType = $oSType;
+		$this->queryParameters["OSType"]=$oSType;
 	}
 
 	public function getOwnerId() {
