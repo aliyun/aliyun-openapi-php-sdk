@@ -23,7 +23,7 @@ class UpdateLiveDetectNotifyConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "UpdateLiveDetectNotifyConfig", "live", "openAPI");
+		parent::__construct("live", "2016-11-01", "UpdateLiveDetectNotifyConfig");
 		$this->setMethod("POST");
 	}
 

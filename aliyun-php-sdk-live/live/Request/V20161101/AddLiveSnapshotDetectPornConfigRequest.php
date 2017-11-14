@@ -23,7 +23,7 @@ class AddLiveSnapshotDetectPornConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "AddLiveSnapshotDetectPornConfig", "live", "openAPI");
+		parent::__construct("live", "2016-11-01", "AddLiveSnapshotDetectPornConfig");
 		$this->setMethod("POST");
 	}
 
@@ -42,6 +42,8 @@ class AddLiveSnapshotDetectPornConfigRequest extends \RpcAcsRequest
 	private  $ownerId;
 
 	private  $ossObject;
+
+	private  $Scenes;
 
 	public function getOssBucket() {
 		return $this->ossBucket;
@@ -113,6 +115,17 @@ class AddLiveSnapshotDetectPornConfigRequest extends \RpcAcsRequest
 	public function setOssObject($ossObject) {
 		$this->ossObject = $ossObject;
 		$this->queryParameters["OssObject"]=$ossObject;
+	}
+
+	public function getScenes() {
+		return $this->Scenes;
+	}
+
+	public function setScenes($Scenes) {
+		$this->Scenes = $Scenes;
+		for ($i = 0; $i < count($Scenes); $i ++) {	
+			$this->queryParameters["Scene.".($i+1)] = $Scenes[$i];
+		}
 	}
 	
 }

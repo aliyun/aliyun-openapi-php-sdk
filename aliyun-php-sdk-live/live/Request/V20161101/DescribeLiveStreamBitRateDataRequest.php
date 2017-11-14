@@ -23,7 +23,7 @@ class DescribeLiveStreamBitRateDataRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "DescribeLiveStreamBitRateData", "live", "openAPI");
+		parent::__construct("live", "2016-11-01", "DescribeLiveStreamBitRateData");
 		$this->setMethod("POST");
 	}
 

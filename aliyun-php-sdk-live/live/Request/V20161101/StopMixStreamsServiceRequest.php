@@ -23,7 +23,7 @@ class StopMixStreamsServiceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "StopMixStreamsService", "live", "openAPI");
+		parent::__construct("live", "2016-11-01", "StopMixStreamsService");
 		$this->setMethod("POST");
 	}
 
