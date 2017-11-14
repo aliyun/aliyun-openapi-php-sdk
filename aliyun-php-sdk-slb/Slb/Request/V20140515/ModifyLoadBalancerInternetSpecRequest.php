@@ -31,19 +31,21 @@ class ModifyLoadBalancerInternetSpecRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $loadBalancerId;
+	private  $autoPay;
 
 	private  $resourceOwnerAccount;
 
 	private  $bandwidth;
-
-	private  $internetChargeType;
 
 	private  $ownerAccount;
 
 	private  $ownerId;
 
 	private  $tags;
+
+	private  $loadBalancerId;
+
+	private  $internetChargeType;
 
 	public function getaccess_key_id() {
 		return $this->access_key_id;
@@ -63,13 +65,13 @@ class ModifyLoadBalancerInternetSpecRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getLoadBalancerId() {
-		return $this->loadBalancerId;
+	public function getAutoPay() {
+		return $this->autoPay;
 	}
 
-	public function setLoadBalancerId($loadBalancerId) {
-		$this->loadBalancerId = $loadBalancerId;
-		$this->queryParameters["LoadBalancerId"]=$loadBalancerId;
+	public function setAutoPay($autoPay) {
+		$this->autoPay = $autoPay;
+		$this->queryParameters["AutoPay"]=$autoPay;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -88,15 +90,6 @@ class ModifyLoadBalancerInternetSpecRequest extends \RpcAcsRequest
 	public function setBandwidth($bandwidth) {
 		$this->bandwidth = $bandwidth;
 		$this->queryParameters["Bandwidth"]=$bandwidth;
-	}
-
-	public function getInternetChargeType() {
-		return $this->internetChargeType;
-	}
-
-	public function setInternetChargeType($internetChargeType) {
-		$this->internetChargeType = $internetChargeType;
-		$this->queryParameters["InternetChargeType"]=$internetChargeType;
 	}
 
 	public function getOwnerAccount() {
@@ -124,6 +117,24 @@ class ModifyLoadBalancerInternetSpecRequest extends \RpcAcsRequest
 	public function setTags($tags) {
 		$this->tags = $tags;
 		$this->queryParameters["Tags"]=$tags;
+	}
+
+	public function getLoadBalancerId() {
+		return $this->loadBalancerId;
+	}
+
+	public function setLoadBalancerId($loadBalancerId) {
+		$this->loadBalancerId = $loadBalancerId;
+		$this->queryParameters["LoadBalancerId"]=$loadBalancerId;
+	}
+
+	public function getInternetChargeType() {
+		return $this->internetChargeType;
+	}
+
+	public function setInternetChargeType($internetChargeType) {
+		$this->internetChargeType = $internetChargeType;
+		$this->queryParameters["InternetChargeType"]=$internetChargeType;
 	}
 	
 }

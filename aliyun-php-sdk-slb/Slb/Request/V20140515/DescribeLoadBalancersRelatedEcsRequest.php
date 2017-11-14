@@ -19,11 +19,11 @@
  */
 namespace Slb\Request\V20140515;
 
-class DescribeMasterSlaveVServerGroupsRequest extends \RpcAcsRequest
+class DescribeLoadBalancersRelatedEcsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Slb", "2014-05-15", "DescribeMasterSlaveVServerGroups", "slb", "openAPI");
+		parent::__construct("Slb", "2014-05-15", "DescribeLoadBalancersRelatedEcs", "slb", "openAPI");
 		$this->setMethod("POST");
 	}
 

@@ -31,6 +31,8 @@ class ModifyLoadBalancerPayTypeRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
+	private  $autoPay;
+
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
@@ -63,6 +65,15 @@ class ModifyLoadBalancerPayTypeRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getAutoPay() {
+		return $this->autoPay;
+	}
+
+	public function setAutoPay($autoPay) {
+		$this->autoPay = $autoPay;
+		$this->queryParameters["AutoPay"]=$autoPay;
 	}
 
 	public function getResourceOwnerAccount() {

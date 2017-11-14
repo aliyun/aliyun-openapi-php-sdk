@@ -29,29 +29,37 @@ class CreateLoadBalancerRequest extends \RpcAcsRequest
 
 	private  $access_key_id;
 
+	private  $resourceOwnerId;
+
+	private  $clientToken;
+
+	private  $masterZoneId;
+
+	private  $duration;
+
+	private  $resourceGroupId;
+
+	private  $loadBalancerName;
+
+	private  $addressType;
+
+	private  $slaveZoneId;
+
 	private  $loadBalancerSpec;
 
-	private  $resourceOwnerId;
+	private  $autoPay;
 
 	private  $resourceOwnerAccount;
 
 	private  $bandwidth;
 
-	private  $clientToken;
-
 	private  $ownerAccount;
 
 	private  $ownerId;
 
-	private  $masterZoneId;
-
 	private  $tags;
 
 	private  $vSwitchId;
-
-	private  $resourceGroupId;
-
-	private  $loadBalancerName;
 
 	private  $enableVpcVipFlow;
 
@@ -59,9 +67,9 @@ class CreateLoadBalancerRequest extends \RpcAcsRequest
 
 	private  $vpcId;
 
-	private  $addressType;
+	private  $payType;
 
-	private  $slaveZoneId;
+	private  $pricingCycle;
 
 	public function getaccess_key_id() {
 		return $this->access_key_id;
@@ -70,6 +78,78 @@ class CreateLoadBalancerRequest extends \RpcAcsRequest
 	public function setaccess_key_id($access_key_id) {
 		$this->access_key_id = $access_key_id;
 		$this->queryParameters["access_key_id"]=$access_key_id;
+	}
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
+	}
+
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getClientToken() {
+		return $this->clientToken;
+	}
+
+	public function setClientToken($clientToken) {
+		$this->clientToken = $clientToken;
+		$this->queryParameters["ClientToken"]=$clientToken;
+	}
+
+	public function getMasterZoneId() {
+		return $this->masterZoneId;
+	}
+
+	public function setMasterZoneId($masterZoneId) {
+		$this->masterZoneId = $masterZoneId;
+		$this->queryParameters["MasterZoneId"]=$masterZoneId;
+	}
+
+	public function getDuration() {
+		return $this->duration;
+	}
+
+	public function setDuration($duration) {
+		$this->duration = $duration;
+		$this->queryParameters["Duration"]=$duration;
+	}
+
+	public function getResourceGroupId() {
+		return $this->resourceGroupId;
+	}
+
+	public function setResourceGroupId($resourceGroupId) {
+		$this->resourceGroupId = $resourceGroupId;
+		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
+	}
+
+	public function getLoadBalancerName() {
+		return $this->loadBalancerName;
+	}
+
+	public function setLoadBalancerName($loadBalancerName) {
+		$this->loadBalancerName = $loadBalancerName;
+		$this->queryParameters["LoadBalancerName"]=$loadBalancerName;
+	}
+
+	public function getAddressType() {
+		return $this->addressType;
+	}
+
+	public function setAddressType($addressType) {
+		$this->addressType = $addressType;
+		$this->queryParameters["AddressType"]=$addressType;
+	}
+
+	public function getSlaveZoneId() {
+		return $this->slaveZoneId;
+	}
+
+	public function setSlaveZoneId($slaveZoneId) {
+		$this->slaveZoneId = $slaveZoneId;
+		$this->queryParameters["SlaveZoneId"]=$slaveZoneId;
 	}
 
 	public function getLoadBalancerSpec() {
@@ -81,13 +161,13 @@ class CreateLoadBalancerRequest extends \RpcAcsRequest
 		$this->queryParameters["LoadBalancerSpec"]=$loadBalancerSpec;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getAutoPay() {
+		return $this->autoPay;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setAutoPay($autoPay) {
+		$this->autoPay = $autoPay;
+		$this->queryParameters["AutoPay"]=$autoPay;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -108,15 +188,6 @@ class CreateLoadBalancerRequest extends \RpcAcsRequest
 		$this->queryParameters["Bandwidth"]=$bandwidth;
 	}
 
-	public function getClientToken() {
-		return $this->clientToken;
-	}
-
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
-
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -135,15 +206,6 @@ class CreateLoadBalancerRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getMasterZoneId() {
-		return $this->masterZoneId;
-	}
-
-	public function setMasterZoneId($masterZoneId) {
-		$this->masterZoneId = $masterZoneId;
-		$this->queryParameters["MasterZoneId"]=$masterZoneId;
-	}
-
 	public function getTags() {
 		return $this->tags;
 	}
@@ -160,24 +222,6 @@ class CreateLoadBalancerRequest extends \RpcAcsRequest
 	public function setVSwitchId($vSwitchId) {
 		$this->vSwitchId = $vSwitchId;
 		$this->queryParameters["VSwitchId"]=$vSwitchId;
-	}
-
-	public function getResourceGroupId() {
-		return $this->resourceGroupId;
-	}
-
-	public function setResourceGroupId($resourceGroupId) {
-		$this->resourceGroupId = $resourceGroupId;
-		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
-	}
-
-	public function getLoadBalancerName() {
-		return $this->loadBalancerName;
-	}
-
-	public function setLoadBalancerName($loadBalancerName) {
-		$this->loadBalancerName = $loadBalancerName;
-		$this->queryParameters["LoadBalancerName"]=$loadBalancerName;
 	}
 
 	public function getEnableVpcVipFlow() {
@@ -207,22 +251,22 @@ class CreateLoadBalancerRequest extends \RpcAcsRequest
 		$this->queryParameters["VpcId"]=$vpcId;
 	}
 
-	public function getAddressType() {
-		return $this->addressType;
+	public function getPayType() {
+		return $this->payType;
 	}
 
-	public function setAddressType($addressType) {
-		$this->addressType = $addressType;
-		$this->queryParameters["AddressType"]=$addressType;
+	public function setPayType($payType) {
+		$this->payType = $payType;
+		$this->queryParameters["PayType"]=$payType;
 	}
 
-	public function getSlaveZoneId() {
-		return $this->slaveZoneId;
+	public function getPricingCycle() {
+		return $this->pricingCycle;
 	}
 
-	public function setSlaveZoneId($slaveZoneId) {
-		$this->slaveZoneId = $slaveZoneId;
-		$this->queryParameters["SlaveZoneId"]=$slaveZoneId;
+	public function setPricingCycle($pricingCycle) {
+		$this->pricingCycle = $pricingCycle;
+		$this->queryParameters["PricingCycle"]=$pricingCycle;
 	}
 	
 }
