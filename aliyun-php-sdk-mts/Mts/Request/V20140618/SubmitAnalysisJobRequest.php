@@ -24,52 +24,26 @@ class SubmitAnalysisJobRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Mts", "2014-06-18", "SubmitAnalysisJob");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
 
 	private  $input;
 
-	private  $analysisConfig;
-
 	private  $userData;
 
-	private  $pipelineId;
+	private  $resourceOwnerId;
 
-	private  $priority;
+	private  $analysisConfig;
+
+	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+	private  $ownerId;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+	private  $priority;
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+	private  $pipelineId;
 
 	public function getInput() {
 		return $this->input;
@@ -78,15 +52,6 @@ class SubmitAnalysisJobRequest extends \RpcAcsRequest
 	public function setInput($input) {
 		$this->input = $input;
 		$this->queryParameters["Input"]=$input;
-	}
-
-	public function getAnalysisConfig() {
-		return $this->analysisConfig;
-	}
-
-	public function setAnalysisConfig($analysisConfig) {
-		$this->analysisConfig = $analysisConfig;
-		$this->queryParameters["AnalysisConfig"]=$analysisConfig;
 	}
 
 	public function getUserData() {
@@ -98,13 +63,49 @@ class SubmitAnalysisJobRequest extends \RpcAcsRequest
 		$this->queryParameters["UserData"]=$userData;
 	}
 
-	public function getPipelineId() {
-		return $this->pipelineId;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setPipelineId($pipelineId) {
-		$this->pipelineId = $pipelineId;
-		$this->queryParameters["PipelineId"]=$pipelineId;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getAnalysisConfig() {
+		return $this->analysisConfig;
+	}
+
+	public function setAnalysisConfig($analysisConfig) {
+		$this->analysisConfig = $analysisConfig;
+		$this->queryParameters["AnalysisConfig"]=$analysisConfig;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getPriority() {
@@ -116,13 +117,13 @@ class SubmitAnalysisJobRequest extends \RpcAcsRequest
 		$this->queryParameters["Priority"]=$priority;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getPipelineId() {
+		return $this->pipelineId;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setPipelineId($pipelineId) {
+		$this->pipelineId = $pipelineId;
+		$this->queryParameters["PipelineId"]=$pipelineId;
 	}
 	
 }

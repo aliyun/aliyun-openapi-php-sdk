@@ -24,29 +24,30 @@ class UpdateWaterMarkTemplateRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Mts", "2014-06-18", "UpdateWaterMarkTemplate");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
 
 	private  $resourceOwnerId;
 
-	private  $waterMarkTemplateId;
-
-	private  $name;
-
-	private  $config;
+	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $name;
+
+	private  $ownerId;
+
+	private  $waterMarkTemplateId;
+
+	private  $config;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -58,22 +59,13 @@ class UpdateWaterMarkTemplateRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getWaterMarkTemplateId() {
-		return $this->waterMarkTemplateId;
-	}
-
-	public function setWaterMarkTemplateId($waterMarkTemplateId) {
-		$this->waterMarkTemplateId = $waterMarkTemplateId;
-		$this->queryParameters["WaterMarkTemplateId"]=$waterMarkTemplateId;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getName() {
@@ -85,6 +77,24 @@ class UpdateWaterMarkTemplateRequest extends \RpcAcsRequest
 		$this->queryParameters["Name"]=$name;
 	}
 
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getWaterMarkTemplateId() {
+		return $this->waterMarkTemplateId;
+	}
+
+	public function setWaterMarkTemplateId($waterMarkTemplateId) {
+		$this->waterMarkTemplateId = $waterMarkTemplateId;
+		$this->queryParameters["WaterMarkTemplateId"]=$waterMarkTemplateId;
+	}
+
 	public function getConfig() {
 		return $this->config;
 	}
@@ -92,15 +102,6 @@ class UpdateWaterMarkTemplateRequest extends \RpcAcsRequest
 	public function setConfig($config) {
 		$this->config = $config;
 		$this->queryParameters["Config"]=$config;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 	
 }

@@ -24,43 +24,44 @@ class SearchMediaRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Mts", "2014-06-18", "SearchMedia");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
 
 	private  $resourceOwnerId;
 
-	private  $from;
-
-	private  $to;
-
-	private  $keyWord;
-
-	private  $title;
-
-	private  $description;
-
-	private  $tag;
-
-	private  $cateId;
-
-	private  $sortBy;
-
-	private  $pageSize;
-
-	private  $pageNumber;
+	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $description;
+
+	private  $ownerId;
+
+	private  $title;
+
+	private  $pageNumber;
+
+	private  $cateId;
+
+	private  $pageSize;
+
+	private  $from;
+
+	private  $sortBy;
+
+	private  $to;
+
+	private  $tag;
+
+	private  $keyWord;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -72,49 +73,13 @@ class SearchMediaRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getFrom() {
-		return $this->from;
-	}
-
-	public function setFrom($from) {
-		$this->from = $from;
-		$this->queryParameters["From"]=$from;
-	}
-
-	public function getTo() {
-		return $this->to;
-	}
-
-	public function setTo($to) {
-		$this->to = $to;
-		$this->queryParameters["To"]=$to;
-	}
-
-	public function getKeyWord() {
-		return $this->keyWord;
-	}
-
-	public function setKeyWord($keyWord) {
-		$this->keyWord = $keyWord;
-		$this->queryParameters["KeyWord"]=$keyWord;
-	}
-
-	public function getTitle() {
-		return $this->title;
-	}
-
-	public function setTitle($title) {
-		$this->title = $title;
-		$this->queryParameters["Title"]=$title;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getDescription() {
@@ -126,40 +91,22 @@ class SearchMediaRequest extends \RpcAcsRequest
 		$this->queryParameters["Description"]=$description;
 	}
 
-	public function getTag() {
-		return $this->tag;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setTag($tag) {
-		$this->tag = $tag;
-		$this->queryParameters["Tag"]=$tag;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getCateId() {
-		return $this->cateId;
+	public function getTitle() {
+		return $this->title;
 	}
 
-	public function setCateId($cateId) {
-		$this->cateId = $cateId;
-		$this->queryParameters["CateId"]=$cateId;
-	}
-
-	public function getSortBy() {
-		return $this->sortBy;
-	}
-
-	public function setSortBy($sortBy) {
-		$this->sortBy = $sortBy;
-		$this->queryParameters["SortBy"]=$sortBy;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setTitle($title) {
+		$this->title = $title;
+		$this->queryParameters["Title"]=$title;
 	}
 
 	public function getPageNumber() {
@@ -171,13 +118,67 @@ class SearchMediaRequest extends \RpcAcsRequest
 		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getCateId() {
+		return $this->cateId;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setCateId($cateId) {
+		$this->cateId = $cateId;
+		$this->queryParameters["CateId"]=$cateId;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
+	public function getFrom() {
+		return $this->from;
+	}
+
+	public function setFrom($from) {
+		$this->from = $from;
+		$this->queryParameters["From"]=$from;
+	}
+
+	public function getSortBy() {
+		return $this->sortBy;
+	}
+
+	public function setSortBy($sortBy) {
+		$this->sortBy = $sortBy;
+		$this->queryParameters["SortBy"]=$sortBy;
+	}
+
+	public function getTo() {
+		return $this->to;
+	}
+
+	public function setTo($to) {
+		$this->to = $to;
+		$this->queryParameters["To"]=$to;
+	}
+
+	public function getTag() {
+		return $this->tag;
+	}
+
+	public function setTag($tag) {
+		$this->tag = $tag;
+		$this->queryParameters["Tag"]=$tag;
+	}
+
+	public function getKeyWord() {
+		return $this->keyWord;
+	}
+
+	public function setKeyWord($keyWord) {
+		$this->keyWord = $keyWord;
+		$this->queryParameters["KeyWord"]=$keyWord;
 	}
 	
 }

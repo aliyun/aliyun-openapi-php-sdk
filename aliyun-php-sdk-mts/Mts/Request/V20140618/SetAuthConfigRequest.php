@@ -24,9 +24,12 @@ class SetAuthConfigRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Mts", "2014-06-18", "SetAuthConfig");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $key1;
+
+	private  $key2;
 
 	private  $resourceOwnerId;
 
@@ -34,17 +37,24 @@ class SetAuthConfigRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
-	private  $key1;
+	private  $ownerId;
 
-	private  $key2;
-
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getKey1() {
+		return $this->key1;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setKey1($key1) {
+		$this->key1 = $key1;
+		$this->queryParameters["Key1"]=$key1;
+	}
+
+	public function getKey2() {
+		return $this->key2;
+	}
+
+	public function setKey2($key2) {
+		$this->key2 = $key2;
+		$this->queryParameters["Key2"]=$key2;
 	}
 
 	public function getResourceOwnerId() {
@@ -74,22 +84,13 @@ class SetAuthConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getKey1() {
-		return $this->key1;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setKey1($key1) {
-		$this->key1 = $key1;
-		$this->queryParameters["Key1"]=$key1;
-	}
-
-	public function getKey2() {
-		return $this->key2;
-	}
-
-	public function setKey2($key2) {
-		$this->key2 = $key2;
-		$this->queryParameters["Key2"]=$key2;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

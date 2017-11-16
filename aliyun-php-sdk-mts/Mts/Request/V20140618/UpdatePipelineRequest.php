@@ -24,15 +24,16 @@ class UpdatePipelineRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Mts", "2014-06-18", "UpdatePipeline");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
 
 	private  $resourceOwnerId;
 
-	private  $pipelineId;
+	private  $role;
+
+	private  $resourceOwnerAccount;
+
+	private  $ownerAccount;
 
 	private  $name;
 
@@ -40,17 +41,26 @@ class UpdatePipelineRequest extends \RpcAcsRequest
 
 	private  $notifyConfig;
 
-	private  $role;
+	private  $ownerId;
 
-	private  $ownerAccount;
+	private  $pipelineId;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getRole() {
+		return $this->role;
+	}
+
+	public function setRole($role) {
+		$this->role = $role;
+		$this->queryParameters["Role"]=$role;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -62,22 +72,13 @@ class UpdatePipelineRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getPipelineId() {
-		return $this->pipelineId;
-	}
-
-	public function setPipelineId($pipelineId) {
-		$this->pipelineId = $pipelineId;
-		$this->queryParameters["PipelineId"]=$pipelineId;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getName() {
@@ -107,22 +108,22 @@ class UpdatePipelineRequest extends \RpcAcsRequest
 		$this->queryParameters["NotifyConfig"]=$notifyConfig;
 	}
 
-	public function getRole() {
-		return $this->role;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setRole($role) {
-		$this->role = $role;
-		$this->queryParameters["Role"]=$role;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getPipelineId() {
+		return $this->pipelineId;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setPipelineId($pipelineId) {
+		$this->pipelineId = $pipelineId;
+		$this->queryParameters["PipelineId"]=$pipelineId;
 	}
 	
 }

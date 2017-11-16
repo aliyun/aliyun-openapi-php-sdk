@@ -24,34 +24,28 @@ class BindInputBucketRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Mts", "2014-06-18", "BindInputBucket");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
 
 	private  $bucket;
 
+	private  $resourceOwnerId;
+
+	private  $resourceOwnerAccount;
+
+	private  $roleArn;
+
 	private  $ownerAccount;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $ownerId;
+
+	public function getBucket() {
+		return $this->bucket;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setBucket($bucket) {
+		$this->bucket = $bucket;
+		$this->queryParameters["Bucket"]=$bucket;
 	}
 
 	public function getResourceOwnerId() {
@@ -63,13 +57,22 @@ class BindInputBucketRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getBucket() {
-		return $this->bucket;
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
 	}
 
-	public function setBucket($bucket) {
-		$this->bucket = $bucket;
-		$this->queryParameters["Bucket"]=$bucket;
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getRoleArn() {
+		return $this->roleArn;
+	}
+
+	public function setRoleArn($roleArn) {
+		$this->roleArn = $roleArn;
+		$this->queryParameters["RoleArn"]=$roleArn;
 	}
 
 	public function getOwnerAccount() {
@@ -79,6 +82,15 @@ class BindInputBucketRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

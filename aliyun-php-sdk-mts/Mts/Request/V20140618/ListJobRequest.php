@@ -24,35 +24,36 @@ class ListJobRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Mts", "2014-06-18", "ListJob");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
 
 	private  $resourceOwnerId;
 
+	private  $resourceOwnerAccount;
+
 	private  $nextPageToken;
+
+	private  $startOfJobCreatedTimeRange;
+
+	private  $ownerAccount;
 
 	private  $maximumPageSize;
 
 	private  $state;
 
-	private  $startOfJobCreatedTimeRange;
+	private  $ownerId;
 
 	private  $endOfJobCreatedTimeRange;
 
 	private  $pipelineId;
 
-	private  $ownerAccount;
-
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -64,15 +65,6 @@ class ListJobRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
 	public function getNextPageToken() {
 		return $this->nextPageToken;
 	}
@@ -80,6 +72,24 @@ class ListJobRequest extends \RpcAcsRequest
 	public function setNextPageToken($nextPageToken) {
 		$this->nextPageToken = $nextPageToken;
 		$this->queryParameters["NextPageToken"]=$nextPageToken;
+	}
+
+	public function getStartOfJobCreatedTimeRange() {
+		return $this->startOfJobCreatedTimeRange;
+	}
+
+	public function setStartOfJobCreatedTimeRange($startOfJobCreatedTimeRange) {
+		$this->startOfJobCreatedTimeRange = $startOfJobCreatedTimeRange;
+		$this->queryParameters["StartOfJobCreatedTimeRange"]=$startOfJobCreatedTimeRange;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getMaximumPageSize() {
@@ -100,13 +110,13 @@ class ListJobRequest extends \RpcAcsRequest
 		$this->queryParameters["State"]=$state;
 	}
 
-	public function getStartOfJobCreatedTimeRange() {
-		return $this->startOfJobCreatedTimeRange;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setStartOfJobCreatedTimeRange($startOfJobCreatedTimeRange) {
-		$this->startOfJobCreatedTimeRange = $startOfJobCreatedTimeRange;
-		$this->queryParameters["StartOfJobCreatedTimeRange"]=$startOfJobCreatedTimeRange;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getEndOfJobCreatedTimeRange() {
@@ -125,15 +135,6 @@ class ListJobRequest extends \RpcAcsRequest
 	public function setPipelineId($pipelineId) {
 		$this->pipelineId = $pipelineId;
 		$this->queryParameters["PipelineId"]=$pipelineId;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 	
 }

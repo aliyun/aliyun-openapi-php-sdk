@@ -24,34 +24,26 @@ class QueryMediaWorkflowListRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Mts", "2014-06-18", "QueryMediaWorkflowList");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
-
-	private  $resourceOwnerId;
 
 	private  $mediaWorkflowIds;
 
+	private  $resourceOwnerId;
+
+	private  $resourceOwnerAccount;
+
 	private  $ownerAccount;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $ownerId;
+
+	public function getMediaWorkflowIds() {
+		return $this->mediaWorkflowIds;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setMediaWorkflowIds($mediaWorkflowIds) {
+		$this->mediaWorkflowIds = $mediaWorkflowIds;
+		$this->queryParameters["MediaWorkflowIds"]=$mediaWorkflowIds;
 	}
 
 	public function getResourceOwnerId() {
@@ -63,13 +55,13 @@ class QueryMediaWorkflowListRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getMediaWorkflowIds() {
-		return $this->mediaWorkflowIds;
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
 	}
 
-	public function setMediaWorkflowIds($mediaWorkflowIds) {
-		$this->mediaWorkflowIds = $mediaWorkflowIds;
-		$this->queryParameters["MediaWorkflowIds"]=$mediaWorkflowIds;
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
 	public function getOwnerAccount() {
@@ -79,6 +71,15 @@ class QueryMediaWorkflowListRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

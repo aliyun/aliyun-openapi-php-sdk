@@ -24,37 +24,47 @@ class UpdateTemplateRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Mts", "2014-06-18", "UpdateTemplate");
+		$this->setMethod("POST");
 	}
 
-	private  $ownerId;
+	private  $container;
+
+	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
-	private  $resourceOwnerId;
+	private  $ownerAccount;
+
+	private  $muxConfig;
+
+	private  $video;
+
+	private  $ownerId;
 
 	private  $templateId;
 
 	private  $name;
 
-	private  $container;
-
-	private  $video;
+	private  $transConfig;
 
 	private  $audio;
 
-	private  $muxConfig;
-
-	private  $transConfig;
-
-	private  $ownerAccount;
-
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getContainer() {
+		return $this->container;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setContainer($container) {
+		$this->container = $container;
+		$this->queryParameters["Container"]=$container;
+	}
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
+	}
+
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -66,13 +76,40 @@ class UpdateTemplateRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getMuxConfig() {
+		return $this->muxConfig;
+	}
+
+	public function setMuxConfig($muxConfig) {
+		$this->muxConfig = $muxConfig;
+		$this->queryParameters["MuxConfig"]=$muxConfig;
+	}
+
+	public function getVideo() {
+		return $this->video;
+	}
+
+	public function setVideo($video) {
+		$this->video = $video;
+		$this->queryParameters["Video"]=$video;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getTemplateId() {
@@ -93,42 +130,6 @@ class UpdateTemplateRequest extends \RpcAcsRequest
 		$this->queryParameters["Name"]=$name;
 	}
 
-	public function getContainer() {
-		return $this->container;
-	}
-
-	public function setContainer($container) {
-		$this->container = $container;
-		$this->queryParameters["Container"]=$container;
-	}
-
-	public function getVideo() {
-		return $this->video;
-	}
-
-	public function setVideo($video) {
-		$this->video = $video;
-		$this->queryParameters["Video"]=$video;
-	}
-
-	public function getAudio() {
-		return $this->audio;
-	}
-
-	public function setAudio($audio) {
-		$this->audio = $audio;
-		$this->queryParameters["Audio"]=$audio;
-	}
-
-	public function getMuxConfig() {
-		return $this->muxConfig;
-	}
-
-	public function setMuxConfig($muxConfig) {
-		$this->muxConfig = $muxConfig;
-		$this->queryParameters["MuxConfig"]=$muxConfig;
-	}
-
 	public function getTransConfig() {
 		return $this->transConfig;
 	}
@@ -138,13 +139,13 @@ class UpdateTemplateRequest extends \RpcAcsRequest
 		$this->queryParameters["TransConfig"]=$transConfig;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getAudio() {
+		return $this->audio;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setAudio($audio) {
+		$this->audio = $audio;
+		$this->queryParameters["Audio"]=$audio;
 	}
 	
 }

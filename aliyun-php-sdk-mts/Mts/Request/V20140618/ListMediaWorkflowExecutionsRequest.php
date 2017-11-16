@@ -24,43 +24,26 @@ class ListMediaWorkflowExecutionsRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Mts", "2014-06-18", "ListMediaWorkflowExecutions");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
 
 	private  $resourceOwnerId;
 
-	private  $mediaWorkflowId;
-
-	private  $mediaWorkflowName;
+	private  $resourceOwnerAccount;
 
 	private  $inputFileURL;
 
 	private  $nextPageToken;
 
-	private  $maximumPageSize;
-
 	private  $ownerAccount;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+	private  $maximumPageSize;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+	private  $mediaWorkflowId;
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+	private  $ownerId;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+	private  $mediaWorkflowName;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -71,22 +54,13 @@ class ListMediaWorkflowExecutionsRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getMediaWorkflowId() {
-		return $this->mediaWorkflowId;
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
 	}
 
-	public function setMediaWorkflowId($mediaWorkflowId) {
-		$this->mediaWorkflowId = $mediaWorkflowId;
-		$this->queryParameters["MediaWorkflowId"]=$mediaWorkflowId;
-	}
-
-	public function getMediaWorkflowName() {
-		return $this->mediaWorkflowName;
-	}
-
-	public function setMediaWorkflowName($mediaWorkflowName) {
-		$this->mediaWorkflowName = $mediaWorkflowName;
-		$this->queryParameters["MediaWorkflowName"]=$mediaWorkflowName;
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
 	public function getInputFileURL() {
@@ -107,6 +81,15 @@ class ListMediaWorkflowExecutionsRequest extends \RpcAcsRequest
 		$this->queryParameters["NextPageToken"]=$nextPageToken;
 	}
 
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
 	public function getMaximumPageSize() {
 		return $this->maximumPageSize;
 	}
@@ -116,13 +99,31 @@ class ListMediaWorkflowExecutionsRequest extends \RpcAcsRequest
 		$this->queryParameters["MaximumPageSize"]=$maximumPageSize;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getMediaWorkflowId() {
+		return $this->mediaWorkflowId;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setMediaWorkflowId($mediaWorkflowId) {
+		$this->mediaWorkflowId = $mediaWorkflowId;
+		$this->queryParameters["MediaWorkflowId"]=$mediaWorkflowId;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getMediaWorkflowName() {
+		return $this->mediaWorkflowName;
+	}
+
+	public function setMediaWorkflowName($mediaWorkflowName) {
+		$this->mediaWorkflowName = $mediaWorkflowName;
+		$this->queryParameters["MediaWorkflowName"]=$mediaWorkflowName;
 	}
 	
 }

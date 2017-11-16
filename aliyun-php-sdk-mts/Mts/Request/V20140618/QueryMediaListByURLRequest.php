@@ -24,31 +24,32 @@ class QueryMediaListByURLRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Mts", "2014-06-18", "QueryMediaListByURL");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
-
-	private  $resourceOwnerAccount;
 
 	private  $resourceOwnerId;
 
-	private  $fileURLs;
-
-	private  $includePlayList;
+	private  $resourceOwnerAccount;
 
 	private  $includeSnapshotList;
 
-	private  $includeMediaInfo;
+	private  $fileURLs;
 
 	private  $ownerAccount;
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	private  $ownerId;
+
+	private  $includePlayList;
+
+	private  $includeMediaInfo;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -60,13 +61,13 @@ class QueryMediaListByURLRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getIncludeSnapshotList() {
+		return $this->includeSnapshotList;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setIncludeSnapshotList($includeSnapshotList) {
+		$this->includeSnapshotList = $includeSnapshotList;
+		$this->queryParameters["IncludeSnapshotList"]=$includeSnapshotList;
 	}
 
 	public function getFileURLs() {
@@ -78,6 +79,24 @@ class QueryMediaListByURLRequest extends \RpcAcsRequest
 		$this->queryParameters["FileURLs"]=$fileURLs;
 	}
 
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
 	public function getIncludePlayList() {
 		return $this->includePlayList;
 	}
@@ -87,15 +106,6 @@ class QueryMediaListByURLRequest extends \RpcAcsRequest
 		$this->queryParameters["IncludePlayList"]=$includePlayList;
 	}
 
-	public function getIncludeSnapshotList() {
-		return $this->includeSnapshotList;
-	}
-
-	public function setIncludeSnapshotList($includeSnapshotList) {
-		$this->includeSnapshotList = $includeSnapshotList;
-		$this->queryParameters["IncludeSnapshotList"]=$includeSnapshotList;
-	}
-
 	public function getIncludeMediaInfo() {
 		return $this->includeMediaInfo;
 	}
@@ -103,15 +113,6 @@ class QueryMediaListByURLRequest extends \RpcAcsRequest
 	public function setIncludeMediaInfo($includeMediaInfo) {
 		$this->includeMediaInfo = $includeMediaInfo;
 		$this->queryParameters["IncludeMediaInfo"]=$includeMediaInfo;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 	
 }

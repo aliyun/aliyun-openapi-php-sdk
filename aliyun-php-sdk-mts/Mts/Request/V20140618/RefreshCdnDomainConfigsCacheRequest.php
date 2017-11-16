@@ -24,9 +24,8 @@ class RefreshCdnDomainConfigsCacheRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Mts", "2014-06-18", "RefreshCdnDomainConfigsCache");
+		$this->setMethod("POST");
 	}
-
-	private  $ownerId;
 
 	private  $resourceOwnerId;
 
@@ -36,14 +35,7 @@ class RefreshCdnDomainConfigsCacheRequest extends \RpcAcsRequest
 
 	private  $domains;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+	private  $ownerId;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -79,6 +71,15 @@ class RefreshCdnDomainConfigsCacheRequest extends \RpcAcsRequest
 	public function setDomains($domains) {
 		$this->domains = $domains;
 		$this->queryParameters["Domains"]=$domains;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }
