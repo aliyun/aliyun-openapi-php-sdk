@@ -19,17 +19,19 @@
  */
 namespace Vpc\Request\V20160428;
 
-class ModifyBandwidthPackageSpecRequest extends \RpcAcsRequest
+class ModifyCommonBandwidthPackagePayTypeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Vpc", "2016-04-28", "ModifyBandwidthPackageSpec", "vpc", "openAPI");
+		parent::__construct("Vpc", "2016-04-28", "ModifyCommonBandwidthPackagePayType", "vpc", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
 	private  $bandwidthPackageId;
+
+	private  $autoPay;
 
 	private  $resourceOwnerAccount;
 
@@ -38,6 +40,18 @@ class ModifyBandwidthPackageSpecRequest extends \RpcAcsRequest
 	private  $ownerAccount;
 
 	private  $ownerId;
+
+	private  $duration;
+
+	private  $kbpsBandwidth;
+
+	private  $resourceUid;
+
+	private  $resourceBid;
+
+	private  $payType;
+
+	private  $pricingCycle;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -55,6 +69,15 @@ class ModifyBandwidthPackageSpecRequest extends \RpcAcsRequest
 	public function setBandwidthPackageId($bandwidthPackageId) {
 		$this->bandwidthPackageId = $bandwidthPackageId;
 		$this->queryParameters["BandwidthPackageId"]=$bandwidthPackageId;
+	}
+
+	public function getAutoPay() {
+		return $this->autoPay;
+	}
+
+	public function setAutoPay($autoPay) {
+		$this->autoPay = $autoPay;
+		$this->queryParameters["AutoPay"]=$autoPay;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -91,6 +114,60 @@ class ModifyBandwidthPackageSpecRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getDuration() {
+		return $this->duration;
+	}
+
+	public function setDuration($duration) {
+		$this->duration = $duration;
+		$this->queryParameters["Duration"]=$duration;
+	}
+
+	public function getKbpsBandwidth() {
+		return $this->kbpsBandwidth;
+	}
+
+	public function setKbpsBandwidth($kbpsBandwidth) {
+		$this->kbpsBandwidth = $kbpsBandwidth;
+		$this->queryParameters["KbpsBandwidth"]=$kbpsBandwidth;
+	}
+
+	public function getResourceUid() {
+		return $this->resourceUid;
+	}
+
+	public function setResourceUid($resourceUid) {
+		$this->resourceUid = $resourceUid;
+		$this->queryParameters["ResourceUid"]=$resourceUid;
+	}
+
+	public function getResourceBid() {
+		return $this->resourceBid;
+	}
+
+	public function setResourceBid($resourceBid) {
+		$this->resourceBid = $resourceBid;
+		$this->queryParameters["ResourceBid"]=$resourceBid;
+	}
+
+	public function getPayType() {
+		return $this->payType;
+	}
+
+	public function setPayType($payType) {
+		$this->payType = $payType;
+		$this->queryParameters["PayType"]=$payType;
+	}
+
+	public function getPricingCycle() {
+		return $this->pricingCycle;
+	}
+
+	public function setPricingCycle($pricingCycle) {
+		$this->pricingCycle = $pricingCycle;
+		$this->queryParameters["PricingCycle"]=$pricingCycle;
 	}
 	
 }

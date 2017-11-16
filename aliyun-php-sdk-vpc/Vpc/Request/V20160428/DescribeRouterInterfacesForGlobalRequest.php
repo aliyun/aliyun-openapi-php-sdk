@@ -19,29 +19,27 @@
  */
 namespace Vpc\Request\V20160428;
 
-class DescribeBandwidthPackageMonitorDataRequest extends \RpcAcsRequest
+class DescribeRouterInterfacesForGlobalRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Vpc", "2016-04-28", "DescribeBandwidthPackageMonitorData", "vpc", "openAPI");
+		parent::__construct("Vpc", "2016-04-28", "DescribeRouterInterfacesForGlobal", "vpc", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
-	private  $period;
-
-	private  $bandwidthPackageId;
-
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
-	private  $endTime;
-
-	private  $startTime;
+	private  $pageSize;
 
 	private  $ownerId;
+
+	private  $pageNumber;
+
+	private  $status;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -50,24 +48,6 @@ class DescribeBandwidthPackageMonitorDataRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getPeriod() {
-		return $this->period;
-	}
-
-	public function setPeriod($period) {
-		$this->period = $period;
-		$this->queryParameters["Period"]=$period;
-	}
-
-	public function getBandwidthPackageId() {
-		return $this->bandwidthPackageId;
-	}
-
-	public function setBandwidthPackageId($bandwidthPackageId) {
-		$this->bandwidthPackageId = $bandwidthPackageId;
-		$this->queryParameters["BandwidthPackageId"]=$bandwidthPackageId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -88,22 +68,13 @@ class DescribeBandwidthPackageMonitorDataRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getEndTime() {
-		return $this->endTime;
+	public function getPageSize() {
+		return $this->pageSize;
 	}
 
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
 	public function getOwnerId() {
@@ -113,6 +84,24 @@ class DescribeBandwidthPackageMonitorDataRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getPageNumber() {
+		return $this->pageNumber;
+	}
+
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
+	}
+
+	public function getStatus() {
+		return $this->status;
+	}
+
+	public function setStatus($status) {
+		$this->status = $status;
+		$this->queryParameters["Status"]=$status;
 	}
 	
 }

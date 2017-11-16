@@ -19,44 +19,35 @@
  */
 namespace Vpc\Request\V20160428;
 
-class ModifyBgpGroupAttributeRequest extends \RpcAcsRequest
+class ModifyRouteTableAttributesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Vpc", "2016-04-28", "ModifyBgpGroupAttribute", "vpc", "openAPI");
+		parent::__construct("Vpc", "2016-04-28", "ModifyRouteTableAttributes", "vpc", "openAPI");
 		$this->setMethod("POST");
 	}
-
-	private  $authKey;
 
 	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
-	private  $clientToken;
+	private  $bandwidth;
 
 	private  $ownerAccount;
-
-	private  $bgpGroupId;
 
 	private  $description;
 
 	private  $ownerId;
 
-	private  $peerAsn;
+	private  $kbpsBandwidth;
 
-	private  $isFakeAsn;
+	private  $routeTableName;
 
-	private  $name;
+	private  $resourceUid;
 
-	public function getAuthKey() {
-		return $this->authKey;
-	}
+	private  $resourceBid;
 
-	public function setAuthKey($authKey) {
-		$this->authKey = $authKey;
-		$this->queryParameters["AuthKey"]=$authKey;
-	}
+	private  $routeTableId;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -76,13 +67,13 @@ class ModifyBgpGroupAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getClientToken() {
-		return $this->clientToken;
+	public function getBandwidth() {
+		return $this->bandwidth;
 	}
 
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
+	public function setBandwidth($bandwidth) {
+		$this->bandwidth = $bandwidth;
+		$this->queryParameters["Bandwidth"]=$bandwidth;
 	}
 
 	public function getOwnerAccount() {
@@ -92,15 +83,6 @@ class ModifyBgpGroupAttributeRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getBgpGroupId() {
-		return $this->bgpGroupId;
-	}
-
-	public function setBgpGroupId($bgpGroupId) {
-		$this->bgpGroupId = $bgpGroupId;
-		$this->queryParameters["BgpGroupId"]=$bgpGroupId;
 	}
 
 	public function getDescription() {
@@ -121,31 +103,49 @@ class ModifyBgpGroupAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getPeerAsn() {
-		return $this->peerAsn;
+	public function getKbpsBandwidth() {
+		return $this->kbpsBandwidth;
 	}
 
-	public function setPeerAsn($peerAsn) {
-		$this->peerAsn = $peerAsn;
-		$this->queryParameters["PeerAsn"]=$peerAsn;
+	public function setKbpsBandwidth($kbpsBandwidth) {
+		$this->kbpsBandwidth = $kbpsBandwidth;
+		$this->queryParameters["KbpsBandwidth"]=$kbpsBandwidth;
 	}
 
-	public function getIsFakeAsn() {
-		return $this->isFakeAsn;
+	public function getRouteTableName() {
+		return $this->routeTableName;
 	}
 
-	public function setIsFakeAsn($isFakeAsn) {
-		$this->isFakeAsn = $isFakeAsn;
-		$this->queryParameters["IsFakeAsn"]=$isFakeAsn;
+	public function setRouteTableName($routeTableName) {
+		$this->routeTableName = $routeTableName;
+		$this->queryParameters["RouteTableName"]=$routeTableName;
 	}
 
-	public function getName() {
-		return $this->name;
+	public function getResourceUid() {
+		return $this->resourceUid;
 	}
 
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
+	public function setResourceUid($resourceUid) {
+		$this->resourceUid = $resourceUid;
+		$this->queryParameters["ResourceUid"]=$resourceUid;
+	}
+
+	public function getResourceBid() {
+		return $this->resourceBid;
+	}
+
+	public function setResourceBid($resourceBid) {
+		$this->resourceBid = $resourceBid;
+		$this->queryParameters["ResourceBid"]=$resourceBid;
+	}
+
+	public function getRouteTableId() {
+		return $this->routeTableId;
+	}
+
+	public function setRouteTableId($routeTableId) {
+		$this->routeTableId = $routeTableId;
+		$this->queryParameters["RouteTableId"]=$routeTableId;
 	}
 	
 }

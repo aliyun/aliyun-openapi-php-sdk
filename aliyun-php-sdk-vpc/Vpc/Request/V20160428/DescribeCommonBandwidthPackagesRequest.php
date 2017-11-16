@@ -35,6 +35,8 @@ class DescribeCommonBandwidthPackagesRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
+	private  $name;
+
 	private  $pageSize;
 
 	private  $ownerId;
@@ -75,6 +77,15 @@ class DescribeCommonBandwidthPackagesRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getName() {
+		return $this->name;
+	}
+
+	public function setName($name) {
+		$this->name = $name;
+		$this->queryParameters["Name"]=$name;
 	}
 
 	public function getPageSize() {

@@ -19,11 +19,11 @@
  */
 namespace Vpc\Request\V20160428;
 
-class DescribeVSwitchesRequest extends \RpcAcsRequest
+class DescribeRouteTableListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Vpc", "2016-04-28", "DescribeVSwitches", "vpc", "openAPI");
+		parent::__construct("Vpc", "2016-04-28", "DescribeRouteTableList", "vpc", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -31,23 +31,31 @@ class DescribeVSwitchesRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerAccount;
 
+	private  $bandwidth;
+
 	private  $ownerAccount;
 
 	private  $ownerId;
 
 	private  $pageNumber;
 
-	private  $vSwitchId;
+	private  $routerType;
+
+	private  $kbpsBandwidth;
+
+	private  $routeTableName;
+
+	private  $routerId;
 
 	private  $vpcId;
 
-	private  $name;
+	private  $resourceUid;
 
 	private  $pageSize;
 
-	private  $zoneId;
+	private  $resourceBid;
 
-	private  $isDefault;
+	private  $routeTableId;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -65,6 +73,15 @@ class DescribeVSwitchesRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getBandwidth() {
+		return $this->bandwidth;
+	}
+
+	public function setBandwidth($bandwidth) {
+		$this->bandwidth = $bandwidth;
+		$this->queryParameters["Bandwidth"]=$bandwidth;
 	}
 
 	public function getOwnerAccount() {
@@ -94,13 +111,40 @@ class DescribeVSwitchesRequest extends \RpcAcsRequest
 		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 
-	public function getVSwitchId() {
-		return $this->vSwitchId;
+	public function getRouterType() {
+		return $this->routerType;
 	}
 
-	public function setVSwitchId($vSwitchId) {
-		$this->vSwitchId = $vSwitchId;
-		$this->queryParameters["VSwitchId"]=$vSwitchId;
+	public function setRouterType($routerType) {
+		$this->routerType = $routerType;
+		$this->queryParameters["RouterType"]=$routerType;
+	}
+
+	public function getKbpsBandwidth() {
+		return $this->kbpsBandwidth;
+	}
+
+	public function setKbpsBandwidth($kbpsBandwidth) {
+		$this->kbpsBandwidth = $kbpsBandwidth;
+		$this->queryParameters["KbpsBandwidth"]=$kbpsBandwidth;
+	}
+
+	public function getRouteTableName() {
+		return $this->routeTableName;
+	}
+
+	public function setRouteTableName($routeTableName) {
+		$this->routeTableName = $routeTableName;
+		$this->queryParameters["RouteTableName"]=$routeTableName;
+	}
+
+	public function getRouterId() {
+		return $this->routerId;
+	}
+
+	public function setRouterId($routerId) {
+		$this->routerId = $routerId;
+		$this->queryParameters["RouterId"]=$routerId;
 	}
 
 	public function getVpcId() {
@@ -112,13 +156,13 @@ class DescribeVSwitchesRequest extends \RpcAcsRequest
 		$this->queryParameters["VpcId"]=$vpcId;
 	}
 
-	public function getName() {
-		return $this->name;
+	public function getResourceUid() {
+		return $this->resourceUid;
 	}
 
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
+	public function setResourceUid($resourceUid) {
+		$this->resourceUid = $resourceUid;
+		$this->queryParameters["ResourceUid"]=$resourceUid;
 	}
 
 	public function getPageSize() {
@@ -130,22 +174,22 @@ class DescribeVSwitchesRequest extends \RpcAcsRequest
 		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
-	public function getZoneId() {
-		return $this->zoneId;
+	public function getResourceBid() {
+		return $this->resourceBid;
 	}
 
-	public function setZoneId($zoneId) {
-		$this->zoneId = $zoneId;
-		$this->queryParameters["ZoneId"]=$zoneId;
+	public function setResourceBid($resourceBid) {
+		$this->resourceBid = $resourceBid;
+		$this->queryParameters["ResourceBid"]=$resourceBid;
 	}
 
-	public function getIsDefault() {
-		return $this->isDefault;
+	public function getRouteTableId() {
+		return $this->routeTableId;
 	}
 
-	public function setIsDefault($isDefault) {
-		$this->isDefault = $isDefault;
-		$this->queryParameters["IsDefault"]=$isDefault;
+	public function setRouteTableId($routeTableId) {
+		$this->routeTableId = $routeTableId;
+		$this->queryParameters["RouteTableId"]=$routeTableId;
 	}
 	
 }
