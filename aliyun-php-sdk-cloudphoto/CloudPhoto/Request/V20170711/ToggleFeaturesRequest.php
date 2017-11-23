@@ -19,40 +19,29 @@
  */
 namespace CloudPhoto\Request\V20170711;
 
-class GetPrivateAccessUrlsRequest extends \RpcAcsRequest
+class ToggleFeaturesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CloudPhoto", "2017-07-11", "GetPrivateAccessUrls", "cloudphoto", "openAPI");
+		parent::__construct("CloudPhoto", "2017-07-11", "ToggleFeatures", "cloudphoto", "openAPI");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
 
-	private  $libraryId;
-
-	private  $PhotoIds;
+	private  $DisabledFeaturess;
 
 	private  $storeName;
 
-	private  $zoomType;
+	private  $EnabledFeaturess;
 
-	public function getLibraryId() {
-		return $this->libraryId;
+	public function getDisabledFeaturess() {
+		return $this->DisabledFeaturess;
 	}
 
-	public function setLibraryId($libraryId) {
-		$this->libraryId = $libraryId;
-		$this->queryParameters["LibraryId"]=$libraryId;
-	}
-
-	public function getPhotoIds() {
-		return $this->PhotoIds;
-	}
-
-	public function setPhotoIds($PhotoIds) {
-		$this->PhotoIds = $PhotoIds;
-		for ($i = 0; $i < count($PhotoIds); $i ++) {	
-			$this->queryParameters["PhotoId.".($i+1)] = $PhotoIds[$i];
+	public function setDisabledFeaturess($DisabledFeaturess) {
+		$this->DisabledFeaturess = $DisabledFeaturess;
+		for ($i = 0; $i < count($DisabledFeaturess); $i ++) {	
+			$this->queryParameters["DisabledFeatures.".($i+1)] = $DisabledFeaturess[$i];
 		}
 	}
 
@@ -65,13 +54,15 @@ class GetPrivateAccessUrlsRequest extends \RpcAcsRequest
 		$this->queryParameters["StoreName"]=$storeName;
 	}
 
-	public function getZoomType() {
-		return $this->zoomType;
+	public function getEnabledFeaturess() {
+		return $this->EnabledFeaturess;
 	}
 
-	public function setZoomType($zoomType) {
-		$this->zoomType = $zoomType;
-		$this->queryParameters["ZoomType"]=$zoomType;
+	public function setEnabledFeaturess($EnabledFeaturess) {
+		$this->EnabledFeaturess = $EnabledFeaturess;
+		for ($i = 0; $i < count($EnabledFeaturess); $i ++) {	
+			$this->queryParameters["EnabledFeatures.".($i+1)] = $EnabledFeaturess[$i];
+		}
 	}
 	
 }

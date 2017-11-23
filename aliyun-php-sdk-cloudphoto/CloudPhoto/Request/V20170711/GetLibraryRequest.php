@@ -19,22 +19,18 @@
  */
 namespace CloudPhoto\Request\V20170711;
 
-class GetPrivateAccessUrlsRequest extends \RpcAcsRequest
+class GetLibraryRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CloudPhoto", "2017-07-11", "GetPrivateAccessUrls", "cloudphoto", "openAPI");
+		parent::__construct("CloudPhoto", "2017-07-11", "GetLibrary", "cloudphoto", "openAPI");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
 
 	private  $libraryId;
 
-	private  $PhotoIds;
-
 	private  $storeName;
-
-	private  $zoomType;
 
 	public function getLibraryId() {
 		return $this->libraryId;
@@ -45,17 +41,6 @@ class GetPrivateAccessUrlsRequest extends \RpcAcsRequest
 		$this->queryParameters["LibraryId"]=$libraryId;
 	}
 
-	public function getPhotoIds() {
-		return $this->PhotoIds;
-	}
-
-	public function setPhotoIds($PhotoIds) {
-		$this->PhotoIds = $PhotoIds;
-		for ($i = 0; $i < count($PhotoIds); $i ++) {	
-			$this->queryParameters["PhotoId.".($i+1)] = $PhotoIds[$i];
-		}
-	}
-
 	public function getStoreName() {
 		return $this->storeName;
 	}
@@ -63,15 +48,6 @@ class GetPrivateAccessUrlsRequest extends \RpcAcsRequest
 	public function setStoreName($storeName) {
 		$this->storeName = $storeName;
 		$this->queryParameters["StoreName"]=$storeName;
-	}
-
-	public function getZoomType() {
-		return $this->zoomType;
-	}
-
-	public function setZoomType($zoomType) {
-		$this->zoomType = $zoomType;
-		$this->queryParameters["ZoomType"]=$zoomType;
 	}
 	
 }

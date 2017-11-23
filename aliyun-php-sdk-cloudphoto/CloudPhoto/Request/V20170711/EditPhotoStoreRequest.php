@@ -19,41 +19,32 @@
  */
 namespace CloudPhoto\Request\V20170711;
 
-class GetPrivateAccessUrlsRequest extends \RpcAcsRequest
+class EditPhotoStoreRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CloudPhoto", "2017-07-11", "GetPrivateAccessUrls", "cloudphoto", "openAPI");
+		parent::__construct("CloudPhoto", "2017-07-11", "EditPhotoStore", "cloudphoto", "openAPI");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
 
-	private  $libraryId;
-
-	private  $PhotoIds;
+	private  $autoCleanEnabled;
 
 	private  $storeName;
 
-	private  $zoomType;
+	private  $remark;
 
-	public function getLibraryId() {
-		return $this->libraryId;
+	private  $defaultQuota;
+
+	private  $autoCleanDays;
+
+	public function getAutoCleanEnabled() {
+		return $this->autoCleanEnabled;
 	}
 
-	public function setLibraryId($libraryId) {
-		$this->libraryId = $libraryId;
-		$this->queryParameters["LibraryId"]=$libraryId;
-	}
-
-	public function getPhotoIds() {
-		return $this->PhotoIds;
-	}
-
-	public function setPhotoIds($PhotoIds) {
-		$this->PhotoIds = $PhotoIds;
-		for ($i = 0; $i < count($PhotoIds); $i ++) {	
-			$this->queryParameters["PhotoId.".($i+1)] = $PhotoIds[$i];
-		}
+	public function setAutoCleanEnabled($autoCleanEnabled) {
+		$this->autoCleanEnabled = $autoCleanEnabled;
+		$this->queryParameters["AutoCleanEnabled"]=$autoCleanEnabled;
 	}
 
 	public function getStoreName() {
@@ -65,13 +56,31 @@ class GetPrivateAccessUrlsRequest extends \RpcAcsRequest
 		$this->queryParameters["StoreName"]=$storeName;
 	}
 
-	public function getZoomType() {
-		return $this->zoomType;
+	public function getRemark() {
+		return $this->remark;
 	}
 
-	public function setZoomType($zoomType) {
-		$this->zoomType = $zoomType;
-		$this->queryParameters["ZoomType"]=$zoomType;
+	public function setRemark($remark) {
+		$this->remark = $remark;
+		$this->queryParameters["Remark"]=$remark;
+	}
+
+	public function getDefaultQuota() {
+		return $this->defaultQuota;
+	}
+
+	public function setDefaultQuota($defaultQuota) {
+		$this->defaultQuota = $defaultQuota;
+		$this->queryParameters["DefaultQuota"]=$defaultQuota;
+	}
+
+	public function getAutoCleanDays() {
+		return $this->autoCleanDays;
+	}
+
+	public function setAutoCleanDays($autoCleanDays) {
+		$this->autoCleanDays = $autoCleanDays;
+		$this->queryParameters["AutoCleanDays"]=$autoCleanDays;
 	}
 	
 }
