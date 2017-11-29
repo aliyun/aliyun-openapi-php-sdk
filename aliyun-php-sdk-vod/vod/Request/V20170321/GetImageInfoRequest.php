@@ -19,29 +19,23 @@
  */
 namespace vod\Request\V20170321;
 
-class CreateUploadImageRequest extends \RpcAcsRequest
+class GetImageInfoRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "CreateUploadImage", "vod", "openAPI");
+		parent::__construct("vod", "2017-03-21", "GetImageInfo", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
-	private  $imageType;
-
-	private  $originalFileName;
+	private  $imageId;
 
 	private  $resourceOwnerAccount;
 
-	private  $imageExt;
-
 	private  $ownerId;
 
-	private  $title;
-
-	private  $tags;
+	private  $authTimeout;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -52,22 +46,13 @@ class CreateUploadImageRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getImageType() {
-		return $this->imageType;
+	public function getImageId() {
+		return $this->imageId;
 	}
 
-	public function setImageType($imageType) {
-		$this->imageType = $imageType;
-		$this->queryParameters["ImageType"]=$imageType;
-	}
-
-	public function getOriginalFileName() {
-		return $this->originalFileName;
-	}
-
-	public function setOriginalFileName($originalFileName) {
-		$this->originalFileName = $originalFileName;
-		$this->queryParameters["OriginalFileName"]=$originalFileName;
+	public function setImageId($imageId) {
+		$this->imageId = $imageId;
+		$this->queryParameters["ImageId"]=$imageId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -79,15 +64,6 @@ class CreateUploadImageRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getImageExt() {
-		return $this->imageExt;
-	}
-
-	public function setImageExt($imageExt) {
-		$this->imageExt = $imageExt;
-		$this->queryParameters["ImageExt"]=$imageExt;
-	}
-
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -97,22 +73,13 @@ class CreateUploadImageRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getTitle() {
-		return $this->title;
+	public function getAuthTimeout() {
+		return $this->authTimeout;
 	}
 
-	public function setTitle($title) {
-		$this->title = $title;
-		$this->queryParameters["Title"]=$title;
-	}
-
-	public function getTags() {
-		return $this->tags;
-	}
-
-	public function setTags($tags) {
-		$this->tags = $tags;
-		$this->queryParameters["Tags"]=$tags;
+	public function setAuthTimeout($authTimeout) {
+		$this->authTimeout = $authTimeout;
+		$this->queryParameters["AuthTimeout"]=$authTimeout;
 	}
 	
 }

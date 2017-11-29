@@ -33,6 +33,8 @@ class GetVideoInfoRequest extends \RpcAcsRequest
 
 	private  $videoId;
 
+	private  $resultTypes;
+
 	private  $ownerId;
 
 	public function getResourceOwnerId() {
@@ -60,6 +62,15 @@ class GetVideoInfoRequest extends \RpcAcsRequest
 	public function setVideoId($videoId) {
 		$this->videoId = $videoId;
 		$this->queryParameters["VideoId"]=$videoId;
+	}
+
+	public function getResultTypes() {
+		return $this->resultTypes;
+	}
+
+	public function setResultTypes($resultTypes) {
+		$this->resultTypes = $resultTypes;
+		$this->queryParameters["ResultTypes"]=$resultTypes;
 	}
 
 	public function getOwnerId() {

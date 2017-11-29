@@ -51,6 +51,8 @@ class CreateUploadVideoRequest extends \RpcAcsRequest
 
 	private  $fileName;
 
+	private  $templateGroupId;
+
 	private  $cateId;
 
 	public function getResourceOwnerId() {
@@ -159,6 +161,15 @@ class CreateUploadVideoRequest extends \RpcAcsRequest
 	public function setFileName($fileName) {
 		$this->fileName = $fileName;
 		$this->queryParameters["FileName"]=$fileName;
+	}
+
+	public function getTemplateGroupId() {
+		return $this->templateGroupId;
+	}
+
+	public function setTemplateGroupId($templateGroupId) {
+		$this->templateGroupId = $templateGroupId;
+		$this->queryParameters["TemplateGroupId"]=$templateGroupId;
 	}
 
 	public function getCateId() {

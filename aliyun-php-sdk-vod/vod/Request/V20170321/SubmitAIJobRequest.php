@@ -19,29 +19,38 @@
  */
 namespace vod\Request\V20170321;
 
-class CreateUploadImageRequest extends \RpcAcsRequest
+class SubmitAIJobRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "CreateUploadImage", "vod", "openAPI");
+		parent::__construct("vod", "2017-03-21", "SubmitAIJob", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 
+	private  $userData;
+
 	private  $resourceOwnerId;
 
-	private  $imageType;
-
-	private  $originalFileName;
+	private  $types;
 
 	private  $resourceOwnerAccount;
 
-	private  $imageExt;
+	private  $ownerAccount;
 
 	private  $ownerId;
 
-	private  $title;
+	private  $mediaId;
 
-	private  $tags;
+	private  $config;
+
+	public function getUserData() {
+		return $this->userData;
+	}
+
+	public function setUserData($userData) {
+		$this->userData = $userData;
+		$this->queryParameters["UserData"]=$userData;
+	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -52,22 +61,13 @@ class CreateUploadImageRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getImageType() {
-		return $this->imageType;
+	public function getTypes() {
+		return $this->types;
 	}
 
-	public function setImageType($imageType) {
-		$this->imageType = $imageType;
-		$this->queryParameters["ImageType"]=$imageType;
-	}
-
-	public function getOriginalFileName() {
-		return $this->originalFileName;
-	}
-
-	public function setOriginalFileName($originalFileName) {
-		$this->originalFileName = $originalFileName;
-		$this->queryParameters["OriginalFileName"]=$originalFileName;
+	public function setTypes($types) {
+		$this->types = $types;
+		$this->queryParameters["Types"]=$types;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -79,13 +79,13 @@ class CreateUploadImageRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getImageExt() {
-		return $this->imageExt;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setImageExt($imageExt) {
-		$this->imageExt = $imageExt;
-		$this->queryParameters["ImageExt"]=$imageExt;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getOwnerId() {
@@ -97,22 +97,22 @@ class CreateUploadImageRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getTitle() {
-		return $this->title;
+	public function getMediaId() {
+		return $this->mediaId;
 	}
 
-	public function setTitle($title) {
-		$this->title = $title;
-		$this->queryParameters["Title"]=$title;
+	public function setMediaId($mediaId) {
+		$this->mediaId = $mediaId;
+		$this->queryParameters["MediaId"]=$mediaId;
 	}
 
-	public function getTags() {
-		return $this->tags;
+	public function getConfig() {
+		return $this->config;
 	}
 
-	public function setTags($tags) {
-		$this->tags = $tags;
-		$this->queryParameters["Tags"]=$tags;
+	public function setConfig($config) {
+		$this->config = $config;
+		$this->queryParameters["Config"]=$config;
 	}
 	
 }
