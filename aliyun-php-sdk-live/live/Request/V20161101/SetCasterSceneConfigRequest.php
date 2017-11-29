@@ -27,6 +27,8 @@ class SetCasterSceneConfigRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
+	private  $ComponentIds;
+
 	private  $securityToken;
 
 	private  $casterId;
@@ -38,6 +40,17 @@ class SetCasterSceneConfigRequest extends \RpcAcsRequest
 	private  $version;
 
 	private  $layoutId;
+
+	public function getComponentIds() {
+		return $this->ComponentIds;
+	}
+
+	public function setComponentIds($ComponentIds) {
+		$this->ComponentIds = $ComponentIds;
+		for ($i = 0; $i < count($ComponentIds); $i ++) {	
+			$this->queryParameters["ComponentId.".($i+1)] = $ComponentIds[$i];
+		}
+	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;

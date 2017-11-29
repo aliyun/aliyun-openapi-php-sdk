@@ -19,37 +19,31 @@
  */
 namespace live\Request\V20161101;
 
-class UpdateCasterSceneConfigRequest extends \RpcAcsRequest
+class DeleteCasterComponentRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "UpdateCasterSceneConfig");
+		parent::__construct("live", "2016-11-01", "DeleteCasterComponent");
 		$this->setMethod("POST");
 	}
 
-	private  $ComponentIds;
+	private  $componentId;
 
 	private  $securityToken;
 
 	private  $casterId;
 
-	private  $sceneId;
-
 	private  $ownerId;
 
 	private  $version;
 
-	private  $layoutId;
-
-	public function getComponentIds() {
-		return $this->ComponentIds;
+	public function getComponentId() {
+		return $this->componentId;
 	}
 
-	public function setComponentIds($ComponentIds) {
-		$this->ComponentIds = $ComponentIds;
-		for ($i = 0; $i < count($ComponentIds); $i ++) {	
-			$this->queryParameters["ComponentId.".($i+1)] = $ComponentIds[$i];
-		}
+	public function setComponentId($componentId) {
+		$this->componentId = $componentId;
+		$this->queryParameters["ComponentId"]=$componentId;
 	}
 
 	public function getSecurityToken() {
@@ -70,15 +64,6 @@ class UpdateCasterSceneConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["CasterId"]=$casterId;
 	}
 
-	public function getSceneId() {
-		return $this->sceneId;
-	}
-
-	public function setSceneId($sceneId) {
-		$this->sceneId = $sceneId;
-		$this->queryParameters["SceneId"]=$sceneId;
-	}
-
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -95,15 +80,6 @@ class UpdateCasterSceneConfigRequest extends \RpcAcsRequest
 	public function setVersion($version) {
 		$this->version = $version;
 		$this->queryParameters["Version"]=$version;
-	}
-
-	public function getLayoutId() {
-		return $this->layoutId;
-	}
-
-	public function setLayoutId($layoutId) {
-		$this->layoutId = $layoutId;
-		$this->queryParameters["LayoutId"]=$layoutId;
 	}
 	
 }
