@@ -23,7 +23,7 @@ class DescribeImageSharePermissionRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeImageSharePermission", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "DescribeImageSharePermission");
 		$this->setMethod("POST");
 	}
 

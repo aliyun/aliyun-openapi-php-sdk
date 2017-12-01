@@ -23,7 +23,7 @@ class DeleteRecycleBinRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DeleteRecycleBin", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "DeleteRecycleBin");
 		$this->setMethod("POST");
 	}
 

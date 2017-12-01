@@ -23,7 +23,7 @@ class CreateKeyPairRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "CreateKeyPair", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "CreateKeyPair");
 		$this->setMethod("POST");
 	}
 

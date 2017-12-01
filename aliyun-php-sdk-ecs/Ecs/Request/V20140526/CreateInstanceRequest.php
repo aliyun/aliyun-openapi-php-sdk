@@ -23,7 +23,7 @@ class CreateInstanceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "CreateInstance", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "CreateInstance");
 		$this->setMethod("POST");
 	}
 

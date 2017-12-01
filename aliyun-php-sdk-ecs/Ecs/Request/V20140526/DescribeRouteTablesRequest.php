@@ -23,13 +23,15 @@ class DescribeRouteTablesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeRouteTables", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "DescribeRouteTables");
 		$this->setMethod("POST");
 	}
 
 	private  $routerType;
 
 	private  $resourceOwnerId;
+
+	private  $routeTableName;
 
 	private  $vRouterId;
 
@@ -63,6 +65,15 @@ class DescribeRouteTablesRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getRouteTableName() {
+		return $this->routeTableName;
+	}
+
+	public function setRouteTableName($routeTableName) {
+		$this->routeTableName = $routeTableName;
+		$this->queryParameters["RouteTableName"]=$routeTableName;
 	}
 
 	public function getVRouterId() {

@@ -23,7 +23,7 @@ class ModifyInstanceAutoReleaseTimeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "ModifyInstanceAutoReleaseTime", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "ModifyInstanceAutoReleaseTime");
 		$this->setMethod("POST");
 	}
 

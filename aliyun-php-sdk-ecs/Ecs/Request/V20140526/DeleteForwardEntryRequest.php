@@ -23,7 +23,7 @@ class DeleteForwardEntryRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DeleteForwardEntry", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "DeleteForwardEntry");
 		$this->setMethod("POST");
 	}
 

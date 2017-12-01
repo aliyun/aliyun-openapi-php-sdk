@@ -23,7 +23,7 @@ class DescribeInvocationsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeInvocations", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "DescribeInvocations");
 		$this->setMethod("POST");
 	}
 

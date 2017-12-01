@@ -23,7 +23,7 @@ class DescribeResourceByTagsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeResourceByTags", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "DescribeResourceByTags");
 		$this->setMethod("POST");
 	}
 

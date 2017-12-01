@@ -23,7 +23,7 @@ class CreateHaVipRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "CreateHaVip", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "CreateHaVip");
 		$this->setMethod("POST");
 	}
 

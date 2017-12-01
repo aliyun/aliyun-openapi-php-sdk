@@ -23,7 +23,7 @@ class CopyImageRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "CopyImage", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "CopyImage");
 		$this->setMethod("POST");
 	}
 
@@ -54,6 +54,8 @@ class CopyImageRequest extends \RpcAcsRequest
 	private  $tag1Key;
 
 	private  $tag1Value;
+
+	private  $encrypted;
 
 	private  $tag2Value;
 
@@ -187,6 +189,15 @@ class CopyImageRequest extends \RpcAcsRequest
 	public function setTag1Value($tag1Value) {
 		$this->tag1Value = $tag1Value;
 		$this->queryParameters["Tag.1.Value"]=$tag1Value;
+	}
+
+	public function getEncrypted() {
+		return $this->encrypted;
+	}
+
+	public function setEncrypted($encrypted) {
+		$this->encrypted = $encrypted;
+		$this->queryParameters["Encrypted"]=$encrypted;
 	}
 
 	public function getTag2Value() {

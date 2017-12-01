@@ -23,7 +23,7 @@ class DetachNetworkInterfaceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DetachNetworkInterface", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "DetachNetworkInterface");
 		$this->setMethod("POST");
 	}
 

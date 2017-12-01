@@ -23,7 +23,7 @@ class CancelAgreementRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "CancelAgreement", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "CancelAgreement");
 		$this->setMethod("POST");
 	}
 

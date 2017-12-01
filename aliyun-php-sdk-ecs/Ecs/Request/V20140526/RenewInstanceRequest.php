@@ -23,13 +23,15 @@ class RenewInstanceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "RenewInstance", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "RenewInstance");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
 	private  $period;
+
+	private  $periodUnit;
 
 	private  $instanceId;
 
@@ -57,6 +59,15 @@ class RenewInstanceRequest extends \RpcAcsRequest
 	public function setPeriod($period) {
 		$this->period = $period;
 		$this->queryParameters["Period"]=$period;
+	}
+
+	public function getPeriodUnit() {
+		return $this->periodUnit;
+	}
+
+	public function setPeriodUnit($periodUnit) {
+		$this->periodUnit = $periodUnit;
+		$this->queryParameters["PeriodUnit"]=$periodUnit;
 	}
 
 	public function getInstanceId() {

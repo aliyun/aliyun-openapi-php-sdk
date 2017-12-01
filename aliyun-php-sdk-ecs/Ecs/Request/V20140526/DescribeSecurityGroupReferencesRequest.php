@@ -23,7 +23,7 @@ class DescribeSecurityGroupReferencesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeSecurityGroupReferences", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "DescribeSecurityGroupReferences");
 		$this->setMethod("POST");
 	}
 

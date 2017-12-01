@@ -23,7 +23,7 @@ class DeleteImageRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DeleteImage", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "DeleteImage");
 		$this->setMethod("POST");
 	}
 

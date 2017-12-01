@@ -23,7 +23,7 @@ class ReleaseEipAddressRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "ReleaseEipAddress", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "ReleaseEipAddress");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class DeleteAutoSnapshotPolicyRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DeleteAutoSnapshotPolicy", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "DeleteAutoSnapshotPolicy");
 		$this->setMethod("POST");
 	}
 

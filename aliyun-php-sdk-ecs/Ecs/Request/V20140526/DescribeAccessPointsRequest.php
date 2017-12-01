@@ -23,7 +23,7 @@ class DescribeAccessPointsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeAccessPoints", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "DescribeAccessPoints");
 		$this->setMethod("POST");
 	}
 

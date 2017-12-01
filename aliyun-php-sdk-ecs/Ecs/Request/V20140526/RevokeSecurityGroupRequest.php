@@ -23,7 +23,7 @@ class RevokeSecurityGroupRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "RevokeSecurityGroup", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "RevokeSecurityGroup");
 		$this->setMethod("POST");
 	}
 

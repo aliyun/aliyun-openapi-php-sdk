@@ -23,7 +23,7 @@ class ModifyInstanceAutoRenewAttributeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "ModifyInstanceAutoRenewAttribute", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "ModifyInstanceAutoRenewAttribute");
 		$this->setMethod("POST");
 	}
 
@@ -38,6 +38,8 @@ class ModifyInstanceAutoRenewAttributeRequest extends \RpcAcsRequest
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
+
+	private  $renewalStatus;
 
 	private  $ownerId;
 
@@ -93,6 +95,15 @@ class ModifyInstanceAutoRenewAttributeRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getRenewalStatus() {
+		return $this->renewalStatus;
+	}
+
+	public function setRenewalStatus($renewalStatus) {
+		$this->renewalStatus = $renewalStatus;
+		$this->queryParameters["RenewalStatus"]=$renewalStatus;
 	}
 
 	public function getOwnerId() {

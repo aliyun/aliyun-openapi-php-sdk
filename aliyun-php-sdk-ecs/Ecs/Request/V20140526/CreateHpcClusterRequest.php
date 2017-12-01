@@ -23,7 +23,7 @@ class CreateHpcClusterRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "CreateHpcCluster", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "CreateHpcCluster");
 		$this->setMethod("POST");
 	}
 

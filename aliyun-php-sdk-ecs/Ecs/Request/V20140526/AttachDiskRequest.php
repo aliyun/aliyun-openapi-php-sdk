@@ -23,7 +23,7 @@ class AttachDiskRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "AttachDisk", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "AttachDisk");
 		$this->setMethod("POST");
 	}
 

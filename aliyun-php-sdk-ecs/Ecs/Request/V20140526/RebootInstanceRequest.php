@@ -23,7 +23,7 @@ class RebootInstanceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "RebootInstance", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "RebootInstance");
 		$this->setMethod("POST");
 	}
 

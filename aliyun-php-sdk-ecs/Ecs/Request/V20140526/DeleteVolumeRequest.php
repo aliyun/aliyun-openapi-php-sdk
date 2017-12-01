@@ -23,7 +23,7 @@ class DeleteVolumeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DeleteVolume", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "DeleteVolume");
 		$this->setMethod("POST");
 	}
 
