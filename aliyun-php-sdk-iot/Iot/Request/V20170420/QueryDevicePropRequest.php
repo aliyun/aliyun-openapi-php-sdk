@@ -19,36 +19,25 @@
  */
 namespace Iot\Request\V20170420;
 
-class QueryDeviceRequest extends \RpcAcsRequest
+class QueryDevicePropRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Iot", "2017-04-20", "QueryDevice");
+		parent::__construct("Iot", "2017-04-20", "QueryDeviceProp");
 		$this->setMethod("POST");
 	}
 
-	private  $pageSize;
-
-	private  $currentPage;
+	private  $deviceName;
 
 	private  $productKey;
 
-	public function getPageSize() {
-		return $this->pageSize;
+	public function getDeviceName() {
+		return $this->deviceName;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getCurrentPage() {
-		return $this->currentPage;
-	}
-
-	public function setCurrentPage($currentPage) {
-		$this->currentPage = $currentPage;
-		$this->queryParameters["CurrentPage"]=$currentPage;
+	public function setDeviceName($deviceName) {
+		$this->deviceName = $deviceName;
+		$this->queryParameters["DeviceName"]=$deviceName;
 	}
 
 	public function getProductKey() {
