@@ -23,33 +23,24 @@ class NodeListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cms", "2017-03-01", "NodeList");
+		parent::__construct("Cms", "2017-03-01", "NodeList", "cms", "openAPI");
 	}
-
-	private  $userId;
 
 	private  $hostName;
 
+	private  $instanceIds;
+
+	private  $pageSize;
+
 	private  $keyWord;
 
-	private  $instanceIds;
+	private  $userId;
 
 	private  $serialNumbers;
 
 	private  $pageNumber;
 
-	private  $pageSize;
-
 	private  $status;
-
-	public function getUserId() {
-		return $this->userId;
-	}
-
-	public function setUserId($userId) {
-		$this->userId = $userId;
-		$this->queryParameters["UserId"]=$userId;
-	}
 
 	public function getHostName() {
 		return $this->hostName;
@@ -58,6 +49,24 @@ class NodeListRequest extends \RpcAcsRequest
 	public function setHostName($hostName) {
 		$this->hostName = $hostName;
 		$this->queryParameters["HostName"]=$hostName;
+	}
+
+	public function getInstanceIds() {
+		return $this->instanceIds;
+	}
+
+	public function setInstanceIds($instanceIds) {
+		$this->instanceIds = $instanceIds;
+		$this->queryParameters["InstanceIds"]=$instanceIds;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
 	public function getKeyWord() {
@@ -69,13 +78,13 @@ class NodeListRequest extends \RpcAcsRequest
 		$this->queryParameters["KeyWord"]=$keyWord;
 	}
 
-	public function getInstanceIds() {
-		return $this->instanceIds;
+	public function getUserId() {
+		return $this->userId;
 	}
 
-	public function setInstanceIds($instanceIds) {
-		$this->instanceIds = $instanceIds;
-		$this->queryParameters["InstanceIds"]=$instanceIds;
+	public function setUserId($userId) {
+		$this->userId = $userId;
+		$this->queryParameters["UserId"]=$userId;
 	}
 
 	public function getSerialNumbers() {
@@ -94,15 +103,6 @@ class NodeListRequest extends \RpcAcsRequest
 	public function setPageNumber($pageNumber) {
 		$this->pageNumber = $pageNumber;
 		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
 	public function getStatus() {

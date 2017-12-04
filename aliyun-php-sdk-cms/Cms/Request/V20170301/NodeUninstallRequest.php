@@ -23,7 +23,7 @@ class NodeUninstallRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cms", "2017-03-01", "NodeUninstall");
+		parent::__construct("Cms", "2017-03-01", "NodeUninstall", "cms", "openAPI");
 	}
 
 	private  $instanceId;

@@ -19,25 +19,38 @@
  */
 namespace Cms\Request\V20170301;
 
-class DisableAlarmRequest extends \RpcAcsRequest
+class DeleteNotifyPolicyRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cms", "2017-03-01", "DisableAlarm", "cms", "openAPI");
+		parent::__construct("Cms", "2017-03-01", "DeleteNotifyPolicy", "cms", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $callby_cms_owner;
+	private  $policyType;
+
+	private  $alertName;
 
 	private  $id;
 
-	public function getcallby_cms_owner() {
-		return $this->callby_cms_owner;
+	private  $dimensions;
+
+	public function getPolicyType() {
+		return $this->policyType;
 	}
 
-	public function setcallby_cms_owner($callby_cms_owner) {
-		$this->callby_cms_owner = $callby_cms_owner;
-		$this->queryParameters["callby_cms_owner"]=$callby_cms_owner;
+	public function setPolicyType($policyType) {
+		$this->policyType = $policyType;
+		$this->queryParameters["PolicyType"]=$policyType;
+	}
+
+	public function getAlertName() {
+		return $this->alertName;
+	}
+
+	public function setAlertName($alertName) {
+		$this->alertName = $alertName;
+		$this->queryParameters["AlertName"]=$alertName;
 	}
 
 	public function getId() {
@@ -47,6 +60,15 @@ class DisableAlarmRequest extends \RpcAcsRequest
 	public function setId($id) {
 		$this->id = $id;
 		$this->queryParameters["Id"]=$id;
+	}
+
+	public function getDimensions() {
+		return $this->dimensions;
+	}
+
+	public function setDimensions($dimensions) {
+		$this->dimensions = $dimensions;
+		$this->queryParameters["Dimensions"]=$dimensions;
 	}
 	
 }

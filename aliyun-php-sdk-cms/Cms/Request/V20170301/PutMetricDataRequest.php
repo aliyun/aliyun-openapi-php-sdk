@@ -23,7 +23,8 @@ class PutMetricDataRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cms", "2017-03-01", "PutMetricData");
+		parent::__construct("Cms", "2017-03-01", "PutMetricData", "cms", "openAPI");
+		$this->setMethod("POST");
 	}
 
 	private  $callby_cms_owner;

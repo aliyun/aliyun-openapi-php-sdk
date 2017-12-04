@@ -23,23 +23,14 @@ class NodeInstallRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cms", "2017-03-01", "NodeInstall");
+		parent::__construct("Cms", "2017-03-01", "NodeInstall", "cms", "openAPI");
 	}
-
-	private  $userId;
 
 	private  $instanceId;
 
 	private  $force;
 
-	public function getUserId() {
-		return $this->userId;
-	}
-
-	public function setUserId($userId) {
-		$this->userId = $userId;
-		$this->queryParameters["UserId"]=$userId;
-	}
+	private  $userId;
 
 	public function getInstanceId() {
 		return $this->instanceId;
@@ -57,6 +48,15 @@ class NodeInstallRequest extends \RpcAcsRequest
 	public function setForce($force) {
 		$this->force = $force;
 		$this->queryParameters["Force"]=$force;
+	}
+
+	public function getUserId() {
+		return $this->userId;
+	}
+
+	public function setUserId($userId) {
+		$this->userId = $userId;
+		$this->queryParameters["UserId"]=$userId;
 	}
 	
 }

@@ -23,39 +23,39 @@ class CreateAlarmRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cms", "2017-03-01", "CreateAlarm");
+		parent::__construct("Cms", "2017-03-01", "CreateAlarm", "cms", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $callby_cms_owner;
 
+	private  $period;
+
+	private  $contactGroups;
+
+	private  $endTime;
+
+	private  $threshold;
+
+	private  $startTime;
+
 	private  $name;
 
 	private  $namespace;
 
-	private  $metricName;
-
-	private  $dimensions;
-
-	private  $period;
-
-	private  $statistics;
-
-	private  $comparisonOperator;
-
-	private  $threshold;
-
 	private  $evaluationCount;
-
-	private  $contactGroups;
-
-	private  $startTime;
-
-	private  $endTime;
 
 	private  $silenceTime;
 
+	private  $metricName;
+
 	private  $notifyType;
+
+	private  $comparisonOperator;
+
+	private  $dimensions;
+
+	private  $statistics;
 
 	public function getcallby_cms_owner() {
 		return $this->callby_cms_owner;
@@ -64,6 +64,51 @@ class CreateAlarmRequest extends \RpcAcsRequest
 	public function setcallby_cms_owner($callby_cms_owner) {
 		$this->callby_cms_owner = $callby_cms_owner;
 		$this->queryParameters["callby_cms_owner"]=$callby_cms_owner;
+	}
+
+	public function getPeriod() {
+		return $this->period;
+	}
+
+	public function setPeriod($period) {
+		$this->period = $period;
+		$this->queryParameters["Period"]=$period;
+	}
+
+	public function getContactGroups() {
+		return $this->contactGroups;
+	}
+
+	public function setContactGroups($contactGroups) {
+		$this->contactGroups = $contactGroups;
+		$this->queryParameters["ContactGroups"]=$contactGroups;
+	}
+
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
+	}
+
+	public function getThreshold() {
+		return $this->threshold;
+	}
+
+	public function setThreshold($threshold) {
+		$this->threshold = $threshold;
+		$this->queryParameters["Threshold"]=$threshold;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
 	}
 
 	public function getName() {
@@ -84,60 +129,6 @@ class CreateAlarmRequest extends \RpcAcsRequest
 		$this->queryParameters["Namespace"]=$namespace;
 	}
 
-	public function getMetricName() {
-		return $this->metricName;
-	}
-
-	public function setMetricName($metricName) {
-		$this->metricName = $metricName;
-		$this->queryParameters["MetricName"]=$metricName;
-	}
-
-	public function getDimensions() {
-		return $this->dimensions;
-	}
-
-	public function setDimensions($dimensions) {
-		$this->dimensions = $dimensions;
-		$this->queryParameters["Dimensions"]=$dimensions;
-	}
-
-	public function getPeriod() {
-		return $this->period;
-	}
-
-	public function setPeriod($period) {
-		$this->period = $period;
-		$this->queryParameters["Period"]=$period;
-	}
-
-	public function getStatistics() {
-		return $this->statistics;
-	}
-
-	public function setStatistics($statistics) {
-		$this->statistics = $statistics;
-		$this->queryParameters["Statistics"]=$statistics;
-	}
-
-	public function getComparisonOperator() {
-		return $this->comparisonOperator;
-	}
-
-	public function setComparisonOperator($comparisonOperator) {
-		$this->comparisonOperator = $comparisonOperator;
-		$this->queryParameters["ComparisonOperator"]=$comparisonOperator;
-	}
-
-	public function getThreshold() {
-		return $this->threshold;
-	}
-
-	public function setThreshold($threshold) {
-		$this->threshold = $threshold;
-		$this->queryParameters["Threshold"]=$threshold;
-	}
-
 	public function getEvaluationCount() {
 		return $this->evaluationCount;
 	}
@@ -145,33 +136,6 @@ class CreateAlarmRequest extends \RpcAcsRequest
 	public function setEvaluationCount($evaluationCount) {
 		$this->evaluationCount = $evaluationCount;
 		$this->queryParameters["EvaluationCount"]=$evaluationCount;
-	}
-
-	public function getContactGroups() {
-		return $this->contactGroups;
-	}
-
-	public function setContactGroups($contactGroups) {
-		$this->contactGroups = $contactGroups;
-		$this->queryParameters["ContactGroups"]=$contactGroups;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
-
-	public function getEndTime() {
-		return $this->endTime;
-	}
-
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
 	}
 
 	public function getSilenceTime() {
@@ -183,6 +147,15 @@ class CreateAlarmRequest extends \RpcAcsRequest
 		$this->queryParameters["SilenceTime"]=$silenceTime;
 	}
 
+	public function getMetricName() {
+		return $this->metricName;
+	}
+
+	public function setMetricName($metricName) {
+		$this->metricName = $metricName;
+		$this->queryParameters["MetricName"]=$metricName;
+	}
+
 	public function getNotifyType() {
 		return $this->notifyType;
 	}
@@ -190,6 +163,33 @@ class CreateAlarmRequest extends \RpcAcsRequest
 	public function setNotifyType($notifyType) {
 		$this->notifyType = $notifyType;
 		$this->queryParameters["NotifyType"]=$notifyType;
+	}
+
+	public function getComparisonOperator() {
+		return $this->comparisonOperator;
+	}
+
+	public function setComparisonOperator($comparisonOperator) {
+		$this->comparisonOperator = $comparisonOperator;
+		$this->queryParameters["ComparisonOperator"]=$comparisonOperator;
+	}
+
+	public function getDimensions() {
+		return $this->dimensions;
+	}
+
+	public function setDimensions($dimensions) {
+		$this->dimensions = $dimensions;
+		$this->queryParameters["Dimensions"]=$dimensions;
+	}
+
+	public function getStatistics() {
+		return $this->statistics;
+	}
+
+	public function setStatistics($statistics) {
+		$this->statistics = $statistics;
+		$this->queryParameters["Statistics"]=$statistics;
 	}
 	
 }

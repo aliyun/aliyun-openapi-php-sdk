@@ -23,26 +23,36 @@ class ListAlarmRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cms", "2017-03-01", "ListAlarm");
+		parent::__construct("Cms", "2017-03-01", "ListAlarm", "cms", "openAPI");
+		$this->setMethod("POST");
 	}
 
-	private  $callby_cms_owner;
+	private  $isEnable;
 
-	private  $id;
+	private  $callby_cms_owner;
 
 	private  $name;
 
 	private  $namespace;
 
-	private  $dimension;
+	private  $pageSize;
+
+	private  $id;
 
 	private  $state;
 
-	private  $isEnable;
+	private  $dimension;
 
 	private  $pageNumber;
 
-	private  $pageSize;
+	public function getIsEnable() {
+		return $this->isEnable;
+	}
+
+	public function setIsEnable($isEnable) {
+		$this->isEnable = $isEnable;
+		$this->queryParameters["IsEnable"]=$isEnable;
+	}
 
 	public function getcallby_cms_owner() {
 		return $this->callby_cms_owner;
@@ -51,15 +61,6 @@ class ListAlarmRequest extends \RpcAcsRequest
 	public function setcallby_cms_owner($callby_cms_owner) {
 		$this->callby_cms_owner = $callby_cms_owner;
 		$this->queryParameters["callby_cms_owner"]=$callby_cms_owner;
-	}
-
-	public function getId() {
-		return $this->id;
-	}
-
-	public function setId($id) {
-		$this->id = $id;
-		$this->queryParameters["Id"]=$id;
 	}
 
 	public function getName() {
@@ -80,13 +81,22 @@ class ListAlarmRequest extends \RpcAcsRequest
 		$this->queryParameters["Namespace"]=$namespace;
 	}
 
-	public function getDimension() {
-		return $this->dimension;
+	public function getPageSize() {
+		return $this->pageSize;
 	}
 
-	public function setDimension($dimension) {
-		$this->dimension = $dimension;
-		$this->queryParameters["Dimension"]=$dimension;
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
+	public function getId() {
+		return $this->id;
+	}
+
+	public function setId($id) {
+		$this->id = $id;
+		$this->queryParameters["Id"]=$id;
 	}
 
 	public function getState() {
@@ -98,13 +108,13 @@ class ListAlarmRequest extends \RpcAcsRequest
 		$this->queryParameters["State"]=$state;
 	}
 
-	public function getIsEnable() {
-		return $this->isEnable;
+	public function getDimension() {
+		return $this->dimension;
 	}
 
-	public function setIsEnable($isEnable) {
-		$this->isEnable = $isEnable;
-		$this->queryParameters["IsEnable"]=$isEnable;
+	public function setDimension($dimension) {
+		$this->dimension = $dimension;
+		$this->queryParameters["Dimension"]=$dimension;
 	}
 
 	public function getPageNumber() {
@@ -114,15 +124,6 @@ class ListAlarmRequest extends \RpcAcsRequest
 	public function setPageNumber($pageNumber) {
 		$this->pageNumber = $pageNumber;
 		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
 	}
 	
 }

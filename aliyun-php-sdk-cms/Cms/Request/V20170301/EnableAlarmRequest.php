@@ -23,7 +23,8 @@ class EnableAlarmRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cms", "2017-03-01", "EnableAlarm");
+		parent::__construct("Cms", "2017-03-01", "EnableAlarm", "cms", "openAPI");
+		$this->setMethod("POST");
 	}
 
 	private  $callby_cms_owner;

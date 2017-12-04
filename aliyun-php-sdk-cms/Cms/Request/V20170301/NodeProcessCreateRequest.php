@@ -23,14 +23,14 @@ class NodeProcessCreateRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cms", "2017-03-01", "NodeProcessCreate");
+		parent::__construct("Cms", "2017-03-01", "NodeProcessCreate", "cms", "openAPI");
 	}
 
 	private  $instanceId;
 
-	private  $name;
-
 	private  $processName;
+
+	private  $name;
 
 	private  $processUser;
 
@@ -45,15 +45,6 @@ class NodeProcessCreateRequest extends \RpcAcsRequest
 		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 
-	public function getName() {
-		return $this->name;
-	}
-
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
-	}
-
 	public function getProcessName() {
 		return $this->processName;
 	}
@@ -61,6 +52,15 @@ class NodeProcessCreateRequest extends \RpcAcsRequest
 	public function setProcessName($processName) {
 		$this->processName = $processName;
 		$this->queryParameters["ProcessName"]=$processName;
+	}
+
+	public function getName() {
+		return $this->name;
+	}
+
+	public function setName($name) {
+		$this->name = $name;
+		$this->queryParameters["Name"]=$name;
 	}
 
 	public function getProcessUser() {

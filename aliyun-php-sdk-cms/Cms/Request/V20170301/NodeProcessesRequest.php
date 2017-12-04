@@ -23,7 +23,7 @@ class NodeProcessesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cms", "2017-03-01", "NodeProcesses");
+		parent::__construct("Cms", "2017-03-01", "NodeProcesses", "cms", "openAPI");
 	}
 
 	private  $instanceId;

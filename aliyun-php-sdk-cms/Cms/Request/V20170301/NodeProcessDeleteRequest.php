@@ -23,7 +23,7 @@ class NodeProcessDeleteRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cms", "2017-03-01", "NodeProcessDelete");
+		parent::__construct("Cms", "2017-03-01", "NodeProcessDelete", "cms", "openAPI");
 	}
 
 	private  $instanceId;

@@ -23,40 +23,40 @@ class QueryMetricLastRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cms", "2017-03-01", "QueryMetricLast");
+		parent::__construct("Cms", "2017-03-01", "QueryMetricLast", "cms", "openAPI");
 	}
-
-	private  $resourceOwnerId;
-
-	private  $callby_cms_owner;
-
-	private  $project;
-
-	private  $metric;
-
-	private  $period;
-
-	private  $startTime;
-
-	private  $endTime;
-
-	private  $dimensions;
 
 	private  $cursor;
 
-	private  $page;
+	private  $callby_cms_owner;
+
+	private  $resourceOwnerId;
+
+	private  $period;
 
 	private  $length;
 
+	private  $project;
+
+	private  $endTime;
+
 	private  $express;
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	private  $startTime;
+
+	private  $metric;
+
+	private  $page;
+
+	private  $dimensions;
+
+	public function getCursor() {
+		return $this->cursor;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setCursor($cursor) {
+		$this->cursor = $cursor;
+		$this->queryParameters["Cursor"]=$cursor;
 	}
 
 	public function getcallby_cms_owner() {
@@ -68,22 +68,13 @@ class QueryMetricLastRequest extends \RpcAcsRequest
 		$this->queryParameters["callby_cms_owner"]=$callby_cms_owner;
 	}
 
-	public function getProject() {
-		return $this->project;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setProject($project) {
-		$this->project = $project;
-		$this->queryParameters["Project"]=$project;
-	}
-
-	public function getMetric() {
-		return $this->metric;
-	}
-
-	public function setMetric($metric) {
-		$this->metric = $metric;
-		$this->queryParameters["Metric"]=$metric;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getPeriod() {
@@ -95,13 +86,22 @@ class QueryMetricLastRequest extends \RpcAcsRequest
 		$this->queryParameters["Period"]=$period;
 	}
 
-	public function getStartTime() {
-		return $this->startTime;
+	public function getLength() {
+		return $this->length;
 	}
 
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
+	public function setLength($length) {
+		$this->length = $length;
+		$this->queryParameters["Length"]=$length;
+	}
+
+	public function getProject() {
+		return $this->project;
+	}
+
+	public function setProject($project) {
+		$this->project = $project;
+		$this->queryParameters["Project"]=$project;
 	}
 
 	public function getEndTime() {
@@ -113,22 +113,31 @@ class QueryMetricLastRequest extends \RpcAcsRequest
 		$this->queryParameters["EndTime"]=$endTime;
 	}
 
-	public function getDimensions() {
-		return $this->dimensions;
+	public function getExpress() {
+		return $this->express;
 	}
 
-	public function setDimensions($dimensions) {
-		$this->dimensions = $dimensions;
-		$this->queryParameters["Dimensions"]=$dimensions;
+	public function setExpress($express) {
+		$this->express = $express;
+		$this->queryParameters["Express"]=$express;
 	}
 
-	public function getCursor() {
-		return $this->cursor;
+	public function getStartTime() {
+		return $this->startTime;
 	}
 
-	public function setCursor($cursor) {
-		$this->cursor = $cursor;
-		$this->queryParameters["Cursor"]=$cursor;
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
+
+	public function getMetric() {
+		return $this->metric;
+	}
+
+	public function setMetric($metric) {
+		$this->metric = $metric;
+		$this->queryParameters["Metric"]=$metric;
 	}
 
 	public function getPage() {
@@ -140,22 +149,13 @@ class QueryMetricLastRequest extends \RpcAcsRequest
 		$this->queryParameters["Page"]=$page;
 	}
 
-	public function getLength() {
-		return $this->length;
+	public function getDimensions() {
+		return $this->dimensions;
 	}
 
-	public function setLength($length) {
-		$this->length = $length;
-		$this->queryParameters["Length"]=$length;
-	}
-
-	public function getExpress() {
-		return $this->express;
-	}
-
-	public function setExpress($express) {
-		$this->express = $express;
-		$this->queryParameters["Express"]=$express;
+	public function setDimensions($dimensions) {
+		$this->dimensions = $dimensions;
+		$this->queryParameters["Dimensions"]=$dimensions;
 	}
 	
 }

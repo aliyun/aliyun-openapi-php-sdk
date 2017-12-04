@@ -23,7 +23,7 @@ class NodeStatusRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cms", "2017-03-01", "NodeStatus");
+		parent::__construct("Cms", "2017-03-01", "NodeStatus", "cms", "openAPI");
 	}
 
 	private  $instanceId;

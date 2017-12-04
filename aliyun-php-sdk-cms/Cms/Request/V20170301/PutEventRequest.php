@@ -19,22 +19,22 @@
  */
 namespace Cms\Request\V20170301;
 
-class ProfileGetRequest extends \RpcAcsRequest
+class PutEventRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cms", "2017-03-01", "ProfileGet", "cms", "openAPI");
+		parent::__construct("Cms", "2017-03-01", "PutEvent", "cms", "openAPI");
 	}
 
-	private  $userId;
+	private  $eventInfo;
 
-	public function getUserId() {
-		return $this->userId;
+	public function getEventInfo() {
+		return $this->eventInfo;
 	}
 
-	public function setUserId($userId) {
-		$this->userId = $userId;
-		$this->queryParameters["UserId"]=$userId;
+	public function setEventInfo($eventInfo) {
+		$this->eventInfo = $eventInfo;
+		$this->queryParameters["EventInfo"]=$eventInfo;
 	}
 	
 }

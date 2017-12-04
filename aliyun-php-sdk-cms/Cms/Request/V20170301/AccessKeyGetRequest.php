@@ -23,7 +23,7 @@ class AccessKeyGetRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cms", "2017-03-01", "AccessKeyGet");
+		parent::__construct("Cms", "2017-03-01", "AccessKeyGet", "cms", "openAPI");
 	}
 
 	private  $userId;

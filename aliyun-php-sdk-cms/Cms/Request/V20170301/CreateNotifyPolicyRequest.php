@@ -19,51 +19,40 @@
  */
 namespace Cms\Request\V20170301;
 
-class ListAlarmHistoryRequest extends \RpcAcsRequest
+class CreateNotifyPolicyRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cms", "2017-03-01", "ListAlarmHistory", "cms", "openAPI");
+		parent::__construct("Cms", "2017-03-01", "CreateNotifyPolicy", "cms", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $cursor;
+	private  $policyType;
 
-	private  $callby_cms_owner;
-
-	private  $size;
+	private  $alertName;
 
 	private  $endTime;
 
-	private  $id;
-
 	private  $startTime;
 
-	public function getCursor() {
-		return $this->cursor;
+	private  $dimensions;
+
+	public function getPolicyType() {
+		return $this->policyType;
 	}
 
-	public function setCursor($cursor) {
-		$this->cursor = $cursor;
-		$this->queryParameters["Cursor"]=$cursor;
+	public function setPolicyType($policyType) {
+		$this->policyType = $policyType;
+		$this->queryParameters["PolicyType"]=$policyType;
 	}
 
-	public function getcallby_cms_owner() {
-		return $this->callby_cms_owner;
+	public function getAlertName() {
+		return $this->alertName;
 	}
 
-	public function setcallby_cms_owner($callby_cms_owner) {
-		$this->callby_cms_owner = $callby_cms_owner;
-		$this->queryParameters["callby_cms_owner"]=$callby_cms_owner;
-	}
-
-	public function getSize() {
-		return $this->size;
-	}
-
-	public function setSize($size) {
-		$this->size = $size;
-		$this->queryParameters["Size"]=$size;
+	public function setAlertName($alertName) {
+		$this->alertName = $alertName;
+		$this->queryParameters["AlertName"]=$alertName;
 	}
 
 	public function getEndTime() {
@@ -75,15 +64,6 @@ class ListAlarmHistoryRequest extends \RpcAcsRequest
 		$this->queryParameters["EndTime"]=$endTime;
 	}
 
-	public function getId() {
-		return $this->id;
-	}
-
-	public function setId($id) {
-		$this->id = $id;
-		$this->queryParameters["Id"]=$id;
-	}
-
 	public function getStartTime() {
 		return $this->startTime;
 	}
@@ -91,6 +71,15 @@ class ListAlarmHistoryRequest extends \RpcAcsRequest
 	public function setStartTime($startTime) {
 		$this->startTime = $startTime;
 		$this->queryParameters["StartTime"]=$startTime;
+	}
+
+	public function getDimensions() {
+		return $this->dimensions;
+	}
+
+	public function setDimensions($dimensions) {
+		$this->dimensions = $dimensions;
+		$this->queryParameters["Dimensions"]=$dimensions;
 	}
 	
 }

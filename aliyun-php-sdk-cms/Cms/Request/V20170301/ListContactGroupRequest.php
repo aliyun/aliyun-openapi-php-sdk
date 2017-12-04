@@ -23,14 +23,15 @@ class ListContactGroupRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cms", "2017-03-01", "ListContactGroup");
+		parent::__construct("Cms", "2017-03-01", "ListContactGroup", "cms", "openAPI");
+		$this->setMethod("POST");
 	}
 
 	private  $callby_cms_owner;
 
-	private  $pageNumber;
-
 	private  $pageSize;
+
+	private  $pageNumber;
 
 	public function getcallby_cms_owner() {
 		return $this->callby_cms_owner;
@@ -41,15 +42,6 @@ class ListContactGroupRequest extends \RpcAcsRequest
 		$this->queryParameters["callby_cms_owner"]=$callby_cms_owner;
 	}
 
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
 	public function getPageSize() {
 		return $this->pageSize;
 	}
@@ -57,6 +49,15 @@ class ListContactGroupRequest extends \RpcAcsRequest
 	public function setPageSize($pageSize) {
 		$this->pageSize = $pageSize;
 		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
+	public function getPageNumber() {
+		return $this->pageNumber;
+	}
+
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 	
 }

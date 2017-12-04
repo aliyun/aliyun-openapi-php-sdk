@@ -23,7 +23,8 @@ class DeleteAlarmRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cms", "2017-03-01", "DeleteAlarm");
+		parent::__construct("Cms", "2017-03-01", "DeleteAlarm", "cms", "openAPI");
+		$this->setMethod("POST");
 	}
 
 	private  $callby_cms_owner;

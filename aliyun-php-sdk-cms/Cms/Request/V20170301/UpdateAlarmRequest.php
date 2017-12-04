@@ -23,34 +23,35 @@ class UpdateAlarmRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cms", "2017-03-01", "UpdateAlarm");
+		parent::__construct("Cms", "2017-03-01", "UpdateAlarm", "cms", "openAPI");
+		$this->setMethod("POST");
 	}
 
 	private  $callby_cms_owner;
 
-	private  $id;
-
-	private  $name;
-
 	private  $period;
-
-	private  $statistics;
-
-	private  $comparisonOperator;
-
-	private  $threshold;
 
 	private  $contactGroups;
 
-	private  $startTime;
-
 	private  $endTime;
 
-	private  $silenceTime;
+	private  $threshold;
+
+	private  $startTime;
+
+	private  $name;
 
 	private  $evaluationCount;
 
+	private  $silenceTime;
+
+	private  $id;
+
 	private  $notifyType;
+
+	private  $comparisonOperator;
+
+	private  $statistics;
 
 	public function getcallby_cms_owner() {
 		return $this->callby_cms_owner;
@@ -59,24 +60,6 @@ class UpdateAlarmRequest extends \RpcAcsRequest
 	public function setcallby_cms_owner($callby_cms_owner) {
 		$this->callby_cms_owner = $callby_cms_owner;
 		$this->queryParameters["callby_cms_owner"]=$callby_cms_owner;
-	}
-
-	public function getId() {
-		return $this->id;
-	}
-
-	public function setId($id) {
-		$this->id = $id;
-		$this->queryParameters["Id"]=$id;
-	}
-
-	public function getName() {
-		return $this->name;
-	}
-
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
 	}
 
 	public function getPeriod() {
@@ -88,33 +71,6 @@ class UpdateAlarmRequest extends \RpcAcsRequest
 		$this->queryParameters["Period"]=$period;
 	}
 
-	public function getStatistics() {
-		return $this->statistics;
-	}
-
-	public function setStatistics($statistics) {
-		$this->statistics = $statistics;
-		$this->queryParameters["Statistics"]=$statistics;
-	}
-
-	public function getComparisonOperator() {
-		return $this->comparisonOperator;
-	}
-
-	public function setComparisonOperator($comparisonOperator) {
-		$this->comparisonOperator = $comparisonOperator;
-		$this->queryParameters["ComparisonOperator"]=$comparisonOperator;
-	}
-
-	public function getThreshold() {
-		return $this->threshold;
-	}
-
-	public function setThreshold($threshold) {
-		$this->threshold = $threshold;
-		$this->queryParameters["Threshold"]=$threshold;
-	}
-
 	public function getContactGroups() {
 		return $this->contactGroups;
 	}
@@ -122,15 +78,6 @@ class UpdateAlarmRequest extends \RpcAcsRequest
 	public function setContactGroups($contactGroups) {
 		$this->contactGroups = $contactGroups;
 		$this->queryParameters["ContactGroups"]=$contactGroups;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
 	}
 
 	public function getEndTime() {
@@ -142,13 +89,31 @@ class UpdateAlarmRequest extends \RpcAcsRequest
 		$this->queryParameters["EndTime"]=$endTime;
 	}
 
-	public function getSilenceTime() {
-		return $this->silenceTime;
+	public function getThreshold() {
+		return $this->threshold;
 	}
 
-	public function setSilenceTime($silenceTime) {
-		$this->silenceTime = $silenceTime;
-		$this->queryParameters["SilenceTime"]=$silenceTime;
+	public function setThreshold($threshold) {
+		$this->threshold = $threshold;
+		$this->queryParameters["Threshold"]=$threshold;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
+
+	public function getName() {
+		return $this->name;
+	}
+
+	public function setName($name) {
+		$this->name = $name;
+		$this->queryParameters["Name"]=$name;
 	}
 
 	public function getEvaluationCount() {
@@ -160,6 +125,24 @@ class UpdateAlarmRequest extends \RpcAcsRequest
 		$this->queryParameters["EvaluationCount"]=$evaluationCount;
 	}
 
+	public function getSilenceTime() {
+		return $this->silenceTime;
+	}
+
+	public function setSilenceTime($silenceTime) {
+		$this->silenceTime = $silenceTime;
+		$this->queryParameters["SilenceTime"]=$silenceTime;
+	}
+
+	public function getId() {
+		return $this->id;
+	}
+
+	public function setId($id) {
+		$this->id = $id;
+		$this->queryParameters["Id"]=$id;
+	}
+
 	public function getNotifyType() {
 		return $this->notifyType;
 	}
@@ -167,6 +150,24 @@ class UpdateAlarmRequest extends \RpcAcsRequest
 	public function setNotifyType($notifyType) {
 		$this->notifyType = $notifyType;
 		$this->queryParameters["NotifyType"]=$notifyType;
+	}
+
+	public function getComparisonOperator() {
+		return $this->comparisonOperator;
+	}
+
+	public function setComparisonOperator($comparisonOperator) {
+		$this->comparisonOperator = $comparisonOperator;
+		$this->queryParameters["ComparisonOperator"]=$comparisonOperator;
+	}
+
+	public function getStatistics() {
+		return $this->statistics;
+	}
+
+	public function setStatistics($statistics) {
+		$this->statistics = $statistics;
+		$this->queryParameters["Statistics"]=$statistics;
 	}
 	
 }

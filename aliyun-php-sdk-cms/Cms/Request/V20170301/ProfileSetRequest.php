@@ -23,21 +23,12 @@ class ProfileSetRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cms", "2017-03-01", "ProfileSet");
+		parent::__construct("Cms", "2017-03-01", "ProfileSet", "cms", "openAPI");
 	}
-
-	private  $userId;
 
 	private  $autoInstall;
 
-	public function getUserId() {
-		return $this->userId;
-	}
-
-	public function setUserId($userId) {
-		$this->userId = $userId;
-		$this->queryParameters["UserId"]=$userId;
-	}
+	private  $userId;
 
 	public function getAutoInstall() {
 		return $this->autoInstall;
@@ -46,6 +37,15 @@ class ProfileSetRequest extends \RpcAcsRequest
 	public function setAutoInstall($autoInstall) {
 		$this->autoInstall = $autoInstall;
 		$this->queryParameters["AutoInstall"]=$autoInstall;
+	}
+
+	public function getUserId() {
+		return $this->userId;
+	}
+
+	public function setUserId($userId) {
+		$this->userId = $userId;
+		$this->queryParameters["UserId"]=$userId;
 	}
 	
 }
