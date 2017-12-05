@@ -23,7 +23,7 @@ class ModifySecurityGroupRuleRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "ModifySecurityGroupRule");
+		parent::__construct("Ecs", "2014-05-26", "ModifySecurityGroupRule", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

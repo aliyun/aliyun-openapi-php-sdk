@@ -23,7 +23,7 @@ class DescribeInstanceMonitorDataRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeInstanceMonitorData");
+		parent::__construct("Ecs", "2014-05-26", "DescribeInstanceMonitorData", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

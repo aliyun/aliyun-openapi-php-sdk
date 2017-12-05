@@ -23,7 +23,7 @@ class CreateAutoSnapshotPolicyRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "CreateAutoSnapshotPolicy");
+		parent::__construct("Ecs", "2014-05-26", "CreateAutoSnapshotPolicy", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

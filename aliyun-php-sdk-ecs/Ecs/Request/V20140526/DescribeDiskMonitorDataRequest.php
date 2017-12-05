@@ -23,7 +23,7 @@ class DescribeDiskMonitorDataRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeDiskMonitorData");
+		parent::__construct("Ecs", "2014-05-26", "DescribeDiskMonitorData", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

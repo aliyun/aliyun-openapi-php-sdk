@@ -23,7 +23,7 @@ class DescribeHpcClustersRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeHpcClusters");
+		parent::__construct("Ecs", "2014-05-26", "DescribeHpcClusters", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

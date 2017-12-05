@@ -23,7 +23,7 @@ class DescribeInstanceRamRoleRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeInstanceRamRole");
+		parent::__construct("Ecs", "2014-05-26", "DescribeInstanceRamRole", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -33,7 +33,13 @@ class DescribeInstanceRamRoleRequest extends \RpcAcsRequest
 
 	private  $instanceIds;
 
+	private  $pageSize;
+
+	private  $ramRoleName;
+
 	private  $ownerId;
+
+	private  $pageNumber;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -62,6 +68,24 @@ class DescribeInstanceRamRoleRequest extends \RpcAcsRequest
 		$this->queryParameters["InstanceIds"]=$instanceIds;
 	}
 
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
+	public function getRamRoleName() {
+		return $this->ramRoleName;
+	}
+
+	public function setRamRoleName($ramRoleName) {
+		$this->ramRoleName = $ramRoleName;
+		$this->queryParameters["RamRoleName"]=$ramRoleName;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -69,6 +93,15 @@ class DescribeInstanceRamRoleRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getPageNumber() {
+		return $this->pageNumber;
+	}
+
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 	
 }

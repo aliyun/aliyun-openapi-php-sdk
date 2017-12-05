@@ -23,7 +23,7 @@ class ModifyNetworkInterfaceAttributeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "ModifyNetworkInterfaceAttribute");
+		parent::__construct("Ecs", "2014-05-26", "ModifyNetworkInterfaceAttribute", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

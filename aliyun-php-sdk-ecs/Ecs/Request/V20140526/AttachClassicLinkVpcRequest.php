@@ -23,7 +23,7 @@ class AttachClassicLinkVpcRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "AttachClassicLinkVpc");
+		parent::__construct("Ecs", "2014-05-26", "AttachClassicLinkVpc", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

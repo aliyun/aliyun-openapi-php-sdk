@@ -23,7 +23,7 @@ class ReplaceSystemDiskRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "ReplaceSystemDisk");
+		parent::__construct("Ecs", "2014-05-26", "ReplaceSystemDisk", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

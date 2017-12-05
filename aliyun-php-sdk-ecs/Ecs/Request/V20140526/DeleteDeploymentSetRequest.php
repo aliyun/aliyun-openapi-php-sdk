@@ -23,7 +23,7 @@ class DeleteDeploymentSetRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DeleteDeploymentSet");
+		parent::__construct("Ecs", "2014-05-26", "DeleteDeploymentSet", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

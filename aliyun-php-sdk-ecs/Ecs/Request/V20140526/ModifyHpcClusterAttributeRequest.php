@@ -23,7 +23,7 @@ class ModifyHpcClusterAttributeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "ModifyHpcClusterAttribute");
+		parent::__construct("Ecs", "2014-05-26", "ModifyHpcClusterAttribute", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

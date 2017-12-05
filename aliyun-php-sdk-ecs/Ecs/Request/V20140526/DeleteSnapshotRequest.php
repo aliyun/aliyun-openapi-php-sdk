@@ -23,7 +23,7 @@ class DeleteSnapshotRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DeleteSnapshot");
+		parent::__construct("Ecs", "2014-05-26", "DeleteSnapshot", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

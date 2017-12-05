@@ -23,7 +23,7 @@ class AuthorizeSecurityGroupEgressRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "AuthorizeSecurityGroupEgress");
+		parent::__construct("Ecs", "2014-05-26", "AuthorizeSecurityGroupEgress", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class TerminateVirtualBorderRouterRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "TerminateVirtualBorderRouter");
+		parent::__construct("Ecs", "2014-05-26", "TerminateVirtualBorderRouter", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

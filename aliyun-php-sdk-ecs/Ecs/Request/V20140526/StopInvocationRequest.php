@@ -23,7 +23,7 @@ class StopInvocationRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "StopInvocation");
+		parent::__construct("Ecs", "2014-05-26", "StopInvocation", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

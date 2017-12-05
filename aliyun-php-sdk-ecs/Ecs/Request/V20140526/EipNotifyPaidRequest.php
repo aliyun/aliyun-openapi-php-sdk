@@ -23,7 +23,7 @@ class EipNotifyPaidRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "EipNotifyPaid");
+		parent::__construct("Ecs", "2014-05-26", "EipNotifyPaid", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

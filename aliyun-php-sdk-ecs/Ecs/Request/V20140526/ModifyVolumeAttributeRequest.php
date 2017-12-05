@@ -23,7 +23,7 @@ class ModifyVolumeAttributeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "ModifyVolumeAttribute");
+		parent::__construct("Ecs", "2014-05-26", "ModifyVolumeAttribute", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

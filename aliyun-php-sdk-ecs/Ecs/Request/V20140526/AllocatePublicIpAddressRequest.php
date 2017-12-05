@@ -23,7 +23,7 @@ class AllocatePublicIpAddressRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "AllocatePublicIpAddress");
+		parent::__construct("Ecs", "2014-05-26", "AllocatePublicIpAddress", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

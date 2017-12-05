@@ -23,7 +23,7 @@ class DescribeVirtualBorderRoutersForPhysicalConnectionRequest extends \RpcAcsRe
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeVirtualBorderRoutersForPhysicalConnection");
+		parent::__construct("Ecs", "2014-05-26", "DescribeVirtualBorderRoutersForPhysicalConnection", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class AttachNetworkInterfaceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "AttachNetworkInterface");
+		parent::__construct("Ecs", "2014-05-26", "AttachNetworkInterface", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

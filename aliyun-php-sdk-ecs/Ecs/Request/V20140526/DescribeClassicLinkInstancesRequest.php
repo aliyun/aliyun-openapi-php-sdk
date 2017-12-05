@@ -23,7 +23,7 @@ class DescribeClassicLinkInstancesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeClassicLinkInstances");
+		parent::__construct("Ecs", "2014-05-26", "DescribeClassicLinkInstances", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

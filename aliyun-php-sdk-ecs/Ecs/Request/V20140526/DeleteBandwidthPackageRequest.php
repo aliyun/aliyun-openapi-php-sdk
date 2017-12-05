@@ -23,7 +23,7 @@ class DeleteBandwidthPackageRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DeleteBandwidthPackage");
+		parent::__construct("Ecs", "2014-05-26", "DeleteBandwidthPackage", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

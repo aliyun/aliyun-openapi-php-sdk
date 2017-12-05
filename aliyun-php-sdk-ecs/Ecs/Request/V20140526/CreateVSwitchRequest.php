@@ -23,7 +23,7 @@ class CreateVSwitchRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "CreateVSwitch");
+		parent::__construct("Ecs", "2014-05-26", "CreateVSwitch", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

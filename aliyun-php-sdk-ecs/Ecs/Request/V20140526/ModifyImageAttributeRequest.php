@@ -23,7 +23,7 @@ class ModifyImageAttributeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "ModifyImageAttribute");
+		parent::__construct("Ecs", "2014-05-26", "ModifyImageAttribute", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class DetachDiskRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DetachDisk");
+		parent::__construct("Ecs", "2014-05-26", "DetachDisk", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

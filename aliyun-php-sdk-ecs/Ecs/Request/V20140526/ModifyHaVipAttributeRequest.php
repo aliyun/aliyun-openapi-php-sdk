@@ -23,7 +23,7 @@ class ModifyHaVipAttributeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "ModifyHaVipAttribute");
+		parent::__construct("Ecs", "2014-05-26", "ModifyHaVipAttribute", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

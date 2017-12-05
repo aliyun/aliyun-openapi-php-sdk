@@ -23,7 +23,7 @@ class ReInitVolumeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "ReInitVolume");
+		parent::__construct("Ecs", "2014-05-26", "ReInitVolume", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

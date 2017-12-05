@@ -23,7 +23,7 @@ class AttachInstanceRamRoleRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "AttachInstanceRamRole");
+		parent::__construct("Ecs", "2014-05-26", "AttachInstanceRamRole", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 

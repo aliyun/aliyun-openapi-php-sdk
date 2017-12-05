@@ -23,7 +23,7 @@ class ResizeVolumeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "ResizeVolume");
+		parent::__construct("Ecs", "2014-05-26", "ResizeVolume", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
