@@ -23,7 +23,7 @@ class SubmitAIASRJobRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "SubmitAIASRJob", "vod", "openAPI");
+		parent::__construct("vod", "2017-03-21", "SubmitAIASRJob");
 		$this->setMethod("POST");
 	}
 

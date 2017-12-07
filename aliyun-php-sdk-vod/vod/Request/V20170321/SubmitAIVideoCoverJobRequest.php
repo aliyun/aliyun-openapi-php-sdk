@@ -23,7 +23,7 @@ class SubmitAIVideoCoverJobRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "SubmitAIVideoCoverJob", "vod", "openAPI");
+		parent::__construct("vod", "2017-03-21", "SubmitAIVideoCoverJob");
 		$this->setMethod("POST");
 	}
 

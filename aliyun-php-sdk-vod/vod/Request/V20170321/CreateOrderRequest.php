@@ -23,7 +23,7 @@ class CreateOrderRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "CreateOrder", "vod", "openAPI");
+		parent::__construct("vod", "2017-03-21", "CreateOrder");
 		$this->setMethod("POST");
 	}
 
