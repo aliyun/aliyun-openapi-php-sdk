@@ -31,6 +31,8 @@ class UpdateAlarmRequest extends \RpcAcsRequest
 
 	private  $period;
 
+	private  $webhook;
+
 	private  $contactGroups;
 
 	private  $endTime;
@@ -69,6 +71,15 @@ class UpdateAlarmRequest extends \RpcAcsRequest
 	public function setPeriod($period) {
 		$this->period = $period;
 		$this->queryParameters["Period"]=$period;
+	}
+
+	public function getWebhook() {
+		return $this->webhook;
+	}
+
+	public function setWebhook($webhook) {
+		$this->webhook = $webhook;
+		$this->queryParameters["Webhook"]=$webhook;
 	}
 
 	public function getContactGroups() {
