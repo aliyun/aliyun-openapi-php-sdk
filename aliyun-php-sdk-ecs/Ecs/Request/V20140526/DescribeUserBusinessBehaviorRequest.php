@@ -19,27 +19,23 @@
  */
 namespace Ecs\Request\V20140526;
 
-class DeleteInstanceRequest extends \RpcAcsRequest
+class DescribeUserBusinessBehaviorRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DeleteInstance", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "DescribeUserBusinessBehavior", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
-	private  $instanceId;
-
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
-	private  $terminateSubscription;
-
-	private  $force;
-
 	private  $ownerId;
+
+	private  $statusKey;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -48,15 +44,6 @@ class DeleteInstanceRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
-
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -77,24 +64,6 @@ class DeleteInstanceRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getTerminateSubscription() {
-		return $this->terminateSubscription;
-	}
-
-	public function setTerminateSubscription($terminateSubscription) {
-		$this->terminateSubscription = $terminateSubscription;
-		$this->queryParameters["TerminateSubscription"]=$terminateSubscription;
-	}
-
-	public function getForce() {
-		return $this->force;
-	}
-
-	public function setForce($force) {
-		$this->force = $force;
-		$this->queryParameters["Force"]=$force;
-	}
-
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -102,6 +71,15 @@ class DeleteInstanceRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getstatusKey() {
+		return $this->statusKey;
+	}
+
+	public function setstatusKey($statusKey) {
+		$this->statusKey = $statusKey;
+		$this->queryParameters["statusKey"]=$statusKey;
 	}
 	
 }

@@ -37,6 +37,8 @@ class StopInstanceRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
+	private  $stoppedMode;
+
 	private  $ownerId;
 
 	private  $forceStop;
@@ -84,6 +86,15 @@ class StopInstanceRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getStoppedMode() {
+		return $this->stoppedMode;
+	}
+
+	public function setStoppedMode($stoppedMode) {
+		$this->stoppedMode = $stoppedMode;
+		$this->queryParameters["StoppedMode"]=$stoppedMode;
 	}
 
 	public function getOwnerId() {

@@ -35,6 +35,10 @@ class DescribeRegionsRequest extends \RpcAcsRequest
 
 	private  $ownerId;
 
+	private  $instanceChargeType;
+
+	private  $resourceType;
+
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
 	}
@@ -69,6 +73,24 @@ class DescribeRegionsRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getInstanceChargeType() {
+		return $this->instanceChargeType;
+	}
+
+	public function setInstanceChargeType($instanceChargeType) {
+		$this->instanceChargeType = $instanceChargeType;
+		$this->queryParameters["InstanceChargeType"]=$instanceChargeType;
+	}
+
+	public function getResourceType() {
+		return $this->resourceType;
+	}
+
+	public function setResourceType($resourceType) {
+		$this->resourceType = $resourceType;
+		$this->queryParameters["ResourceType"]=$resourceType;
 	}
 	
 }
