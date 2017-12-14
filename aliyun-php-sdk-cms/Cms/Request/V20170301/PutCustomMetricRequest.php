@@ -19,22 +19,22 @@
  */
 namespace Cms\Request\V20170301;
 
-class ProfileGetRequest extends \RpcAcsRequest
+class PutCustomMetricRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cms", "2017-03-01", "ProfileGet", "cms", "openAPI");
+		parent::__construct("Cms", "2017-03-01", "PutCustomMetric", "cms", "openAPI");
 	}
 
-	private  $userId;
+	private  $metricList;
 
-	public function getUserId() {
-		return $this->userId;
+	public function getMetricList() {
+		return $this->metricList;
 	}
 
-	public function setUserId($userId) {
-		$this->userId = $userId;
-		$this->queryParameters["UserId"]=$userId;
+	public function setMetricList($metricList) {
+		$this->metricList = $metricList;
+		$this->queryParameters["MetricList"]=$metricList;
 	}
 	
 }

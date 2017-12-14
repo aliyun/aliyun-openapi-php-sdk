@@ -19,56 +19,56 @@
  */
 namespace Cms\Request\V20170301;
 
-class DeleteNotifyPolicyRequest extends \RpcAcsRequest
+class DeleteCustomMetricRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cms", "2017-03-01", "DeleteNotifyPolicy", "cms", "openAPI");
+		parent::__construct("Cms", "2017-03-01", "DeleteCustomMetric", "cms", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $policyType;
+	private  $groupId;
 
-	private  $alertName;
+	private  $metricName;
 
-	private  $id;
+	private  $uUID;
 
-	private  $dimensions;
+	private  $md5;
 
-	public function getPolicyType() {
-		return $this->policyType;
+	public function getGroupId() {
+		return $this->groupId;
 	}
 
-	public function setPolicyType($policyType) {
-		$this->policyType = $policyType;
-		$this->queryParameters["PolicyType"]=$policyType;
+	public function setGroupId($groupId) {
+		$this->groupId = $groupId;
+		$this->queryParameters["GroupId"]=$groupId;
 	}
 
-	public function getAlertName() {
-		return $this->alertName;
+	public function getMetricName() {
+		return $this->metricName;
 	}
 
-	public function setAlertName($alertName) {
-		$this->alertName = $alertName;
-		$this->queryParameters["AlertName"]=$alertName;
+	public function setMetricName($metricName) {
+		$this->metricName = $metricName;
+		$this->queryParameters["MetricName"]=$metricName;
 	}
 
-	public function getId() {
-		return $this->id;
+	public function getUUID() {
+		return $this->uUID;
 	}
 
-	public function setId($id) {
-		$this->id = $id;
-		$this->queryParameters["Id"]=$id;
+	public function setUUID($uUID) {
+		$this->uUID = $uUID;
+		$this->queryParameters["UUID"]=$uUID;
 	}
 
-	public function getDimensions() {
-		return $this->dimensions;
+	public function getMd5() {
+		return $this->md5;
 	}
 
-	public function setDimensions($dimensions) {
-		$this->dimensions = $dimensions;
-		$this->queryParameters["Dimensions"]=$dimensions;
+	public function setMd5($md5) {
+		$this->md5 = $md5;
+		$this->queryParameters["Md5"]=$md5;
 	}
 	
 }

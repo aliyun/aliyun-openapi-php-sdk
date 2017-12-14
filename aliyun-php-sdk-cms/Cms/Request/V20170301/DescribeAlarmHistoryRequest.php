@@ -27,8 +27,6 @@ class DescribeAlarmHistoryRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $callby_cms_owner;
-
 	private  $alertName;
 
 	private  $groupId;
@@ -47,26 +45,13 @@ class DescribeAlarmHistoryRequest extends \RpcAcsRequest
 
 	private  $pageSize;
 
-	private  $id;
-
 	private  $state;
 
 	private  $page;
 
 	private  $metricName;
 
-	private  $dimensions;
-
 	private  $status;
-
-	public function getcallby_cms_owner() {
-		return $this->callby_cms_owner;
-	}
-
-	public function setcallby_cms_owner($callby_cms_owner) {
-		$this->callby_cms_owner = $callby_cms_owner;
-		$this->queryParameters["callby_cms_owner"]=$callby_cms_owner;
-	}
 
 	public function getAlertName() {
 		return $this->alertName;
@@ -149,15 +134,6 @@ class DescribeAlarmHistoryRequest extends \RpcAcsRequest
 		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
-	public function getId() {
-		return $this->id;
-	}
-
-	public function setId($id) {
-		$this->id = $id;
-		$this->queryParameters["Id"]=$id;
-	}
-
 	public function getState() {
 		return $this->state;
 	}
@@ -167,13 +143,13 @@ class DescribeAlarmHistoryRequest extends \RpcAcsRequest
 		$this->queryParameters["State"]=$state;
 	}
 
-	public function getpage() {
+	public function getPage() {
 		return $this->page;
 	}
 
-	public function setpage($page) {
+	public function setPage($page) {
 		$this->page = $page;
-		$this->queryParameters["page"]=$page;
+		$this->queryParameters["Page"]=$page;
 	}
 
 	public function getMetricName() {
@@ -183,15 +159,6 @@ class DescribeAlarmHistoryRequest extends \RpcAcsRequest
 	public function setMetricName($metricName) {
 		$this->metricName = $metricName;
 		$this->queryParameters["MetricName"]=$metricName;
-	}
-
-	public function getDimensions() {
-		return $this->dimensions;
-	}
-
-	public function setDimensions($dimensions) {
-		$this->dimensions = $dimensions;
-		$this->queryParameters["Dimensions"]=$dimensions;
 	}
 
 	public function getStatus() {
