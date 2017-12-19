@@ -32,6 +32,8 @@ class GetProjectInfoRequest extends \RpcAcsRequest
 
 	private  $pageNum;
 
+	private  $status;
+
 	public function getPageSize() {
 		return $this->pageSize;
 	}
@@ -57,6 +59,15 @@ class GetProjectInfoRequest extends \RpcAcsRequest
 	public function setPageNum($pageNum) {
 		$this->pageNum = $pageNum;
 		$this->queryParameters["PageNum"]=$pageNum;
+	}
+
+	public function getStatus() {
+		return $this->status;
+	}
+
+	public function setStatus($status) {
+		$this->status = $status;
+		$this->queryParameters["Status"]=$status;
 	}
 	
 }

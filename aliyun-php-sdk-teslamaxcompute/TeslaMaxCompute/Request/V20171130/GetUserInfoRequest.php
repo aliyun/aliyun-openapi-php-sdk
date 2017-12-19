@@ -32,6 +32,8 @@ class GetUserInfoRequest extends \RpcAcsRequest
 
 	private  $user;
 
+	private  $status;
+
 	public function getPageSize() {
 		return $this->pageSize;
 	}
@@ -57,6 +59,15 @@ class GetUserInfoRequest extends \RpcAcsRequest
 	public function setUser($user) {
 		$this->user = $user;
 		$this->queryParameters["User"]=$user;
+	}
+
+	public function getStatus() {
+		return $this->status;
+	}
+
+	public function setStatus($status) {
+		$this->status = $status;
+		$this->queryParameters["Status"]=$status;
 	}
 	
 }
