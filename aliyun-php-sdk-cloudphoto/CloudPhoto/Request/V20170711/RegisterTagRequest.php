@@ -19,29 +19,22 @@
  */
 namespace CloudPhoto\Request\V20170711;
 
-class ListTagsRequest extends \RpcAcsRequest
+class RegisterTagRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CloudPhoto", "2017-07-11", "ListTags", "cloudphoto", "openAPI");
+		parent::__construct("CloudPhoto", "2017-07-11", "RegisterTag", "cloudphoto", "openAPI");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
 
-	private  $libraryId;
-
 	private  $storeName;
 
+	private  $text;
+
+	private  $tagKey;
+
 	private  $lang;
-
-	public function getLibraryId() {
-		return $this->libraryId;
-	}
-
-	public function setLibraryId($libraryId) {
-		$this->libraryId = $libraryId;
-		$this->queryParameters["LibraryId"]=$libraryId;
-	}
 
 	public function getStoreName() {
 		return $this->storeName;
@@ -50,6 +43,24 @@ class ListTagsRequest extends \RpcAcsRequest
 	public function setStoreName($storeName) {
 		$this->storeName = $storeName;
 		$this->queryParameters["StoreName"]=$storeName;
+	}
+
+	public function getText() {
+		return $this->text;
+	}
+
+	public function setText($text) {
+		$this->text = $text;
+		$this->queryParameters["Text"]=$text;
+	}
+
+	public function getTagKey() {
+		return $this->tagKey;
+	}
+
+	public function setTagKey($tagKey) {
+		$this->tagKey = $tagKey;
+		$this->queryParameters["TagKey"]=$tagKey;
 	}
 
 	public function getLang() {

@@ -19,42 +19,18 @@
  */
 namespace CloudPhoto\Request\V20170711;
 
-class InactivatePhotosRequest extends \RpcAcsRequest
+class ListRegisteredTagsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CloudPhoto", "2017-07-11", "InactivatePhotos", "cloudphoto", "openAPI");
+		parent::__construct("CloudPhoto", "2017-07-11", "ListRegisteredTags", "cloudphoto", "openAPI");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
 
-	private  $libraryId;
-
-	private  $PhotoIds;
-
 	private  $storeName;
 
-	private  $inactiveTime;
-
-	public function getLibraryId() {
-		return $this->libraryId;
-	}
-
-	public function setLibraryId($libraryId) {
-		$this->libraryId = $libraryId;
-		$this->queryParameters["LibraryId"]=$libraryId;
-	}
-
-	public function getPhotoIds() {
-		return $this->PhotoIds;
-	}
-
-	public function setPhotoIds($PhotoIds) {
-		$this->PhotoIds = $PhotoIds;
-		for ($i = 0; $i < count($PhotoIds); $i ++) {	
-			$this->queryParameters["PhotoId.".($i+1)] = $PhotoIds[$i];
-		}
-	}
+	private  $Langs;
 
 	public function getStoreName() {
 		return $this->storeName;
@@ -65,13 +41,15 @@ class InactivatePhotosRequest extends \RpcAcsRequest
 		$this->queryParameters["StoreName"]=$storeName;
 	}
 
-	public function getInactiveTime() {
-		return $this->inactiveTime;
+	public function getLangs() {
+		return $this->Langs;
 	}
 
-	public function setInactiveTime($inactiveTime) {
-		$this->inactiveTime = $inactiveTime;
-		$this->queryParameters["InactiveTime"]=$inactiveTime;
+	public function setLangs($Langs) {
+		$this->Langs = $Langs;
+		for ($i = 0; $i < count($Langs); $i ++) {	
+			$this->queryParameters["Lang.".($i+1)] = $Langs[$i];
+		}
 	}
 	
 }

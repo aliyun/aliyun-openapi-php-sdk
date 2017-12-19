@@ -19,22 +19,24 @@
  */
 namespace CloudPhoto\Request\V20170711;
 
-class InactivatePhotosRequest extends \RpcAcsRequest
+class TagPhotoRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CloudPhoto", "2017-07-11", "InactivatePhotos", "cloudphoto", "openAPI");
+		parent::__construct("CloudPhoto", "2017-07-11", "TagPhoto", "cloudphoto", "openAPI");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
 
 	private  $libraryId;
 
-	private  $PhotoIds;
+	private  $Confidences;
 
 	private  $storeName;
 
-	private  $inactiveTime;
+	private  $photoId;
+
+	private  $TagKeys;
 
 	public function getLibraryId() {
 		return $this->libraryId;
@@ -45,14 +47,14 @@ class InactivatePhotosRequest extends \RpcAcsRequest
 		$this->queryParameters["LibraryId"]=$libraryId;
 	}
 
-	public function getPhotoIds() {
-		return $this->PhotoIds;
+	public function getConfidences() {
+		return $this->Confidences;
 	}
 
-	public function setPhotoIds($PhotoIds) {
-		$this->PhotoIds = $PhotoIds;
-		for ($i = 0; $i < count($PhotoIds); $i ++) {	
-			$this->queryParameters["PhotoId.".($i+1)] = $PhotoIds[$i];
+	public function setConfidences($Confidences) {
+		$this->Confidences = $Confidences;
+		for ($i = 0; $i < count($Confidences); $i ++) {	
+			$this->queryParameters["Confidence.".($i+1)] = $Confidences[$i];
 		}
 	}
 
@@ -65,13 +67,24 @@ class InactivatePhotosRequest extends \RpcAcsRequest
 		$this->queryParameters["StoreName"]=$storeName;
 	}
 
-	public function getInactiveTime() {
-		return $this->inactiveTime;
+	public function getPhotoId() {
+		return $this->photoId;
 	}
 
-	public function setInactiveTime($inactiveTime) {
-		$this->inactiveTime = $inactiveTime;
-		$this->queryParameters["InactiveTime"]=$inactiveTime;
+	public function setPhotoId($photoId) {
+		$this->photoId = $photoId;
+		$this->queryParameters["PhotoId"]=$photoId;
+	}
+
+	public function getTagKeys() {
+		return $this->TagKeys;
+	}
+
+	public function setTagKeys($TagKeys) {
+		$this->TagKeys = $TagKeys;
+		for ($i = 0; $i < count($TagKeys); $i ++) {	
+			$this->queryParameters["TagKey.".($i+1)] = $TagKeys[$i];
+		}
 	}
 	
 }
