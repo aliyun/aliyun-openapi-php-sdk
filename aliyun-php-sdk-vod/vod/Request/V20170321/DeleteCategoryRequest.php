@@ -23,7 +23,7 @@ class DeleteCategoryRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "DeleteCategory");
+		parent::__construct("vod", "2017-03-21", "DeleteCategory", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -32,8 +32,6 @@ class DeleteCategoryRequest extends \RpcAcsRequest
 	private  $resourceOwnerAccount;
 
 	private  $cateId;
-
-	private  $ownerAccount;
 
 	private  $ownerId;
 
@@ -62,15 +60,6 @@ class DeleteCategoryRequest extends \RpcAcsRequest
 	public function setCateId($cateId) {
 		$this->cateId = $cateId;
 		$this->queryParameters["CateId"]=$cateId;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getOwnerId() {

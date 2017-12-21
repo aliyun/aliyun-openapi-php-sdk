@@ -23,7 +23,7 @@ class DescribeDomainBpsDataRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "DescribeDomainBpsData");
+		parent::__construct("vod", "2017-03-21", "DescribeDomainBpsData", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 

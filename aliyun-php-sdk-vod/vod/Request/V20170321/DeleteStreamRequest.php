@@ -23,7 +23,7 @@ class DeleteStreamRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "DeleteStream");
+		parent::__construct("vod", "2017-03-21", "DeleteStream", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class SetMessageCallbackRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "SetMessageCallback");
+		parent::__construct("vod", "2017-03-21", "SetMessageCallback", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 

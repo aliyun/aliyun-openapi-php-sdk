@@ -23,7 +23,7 @@ class GetEditingProjectMaterialsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "GetEditingProjectMaterials");
+		parent::__construct("vod", "2017-03-21", "GetEditingProjectMaterials", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 

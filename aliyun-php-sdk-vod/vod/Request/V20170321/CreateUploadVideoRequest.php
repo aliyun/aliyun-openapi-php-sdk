@@ -23,7 +23,7 @@ class CreateUploadVideoRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "CreateUploadVideo");
+		parent::__construct("vod", "2017-03-21", "CreateUploadVideo", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 

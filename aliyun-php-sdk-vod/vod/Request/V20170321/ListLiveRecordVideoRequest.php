@@ -19,11 +19,11 @@
  */
 namespace vod\Request\V20170321;
 
-class DescribeDomainFlowDataRequest extends \RpcAcsRequest
+class ListLiveRecordVideoRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "DescribeDomainFlowData", "vod", "openAPI");
+		parent::__construct("vod", "2017-03-21", "ListLiveRecordVideo", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -31,23 +31,25 @@ class DescribeDomainFlowDataRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerAccount;
 
-	private  $timeMerge;
-
-	private  $ownerAccount;
-
 	private  $domainName;
 
 	private  $endTime;
 
-	private  $locationNameEn;
-
 	private  $startTime;
-
-	private  $ispNameEn;
 
 	private  $ownerId;
 
-	private  $interval;
+	private  $appName;
+
+	private  $pageNo;
+
+	private  $pageSize;
+
+	private  $sortBy;
+
+	private  $streamName;
+
+	private  $queryType;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -65,24 +67,6 @@ class DescribeDomainFlowDataRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getTimeMerge() {
-		return $this->timeMerge;
-	}
-
-	public function setTimeMerge($timeMerge) {
-		$this->timeMerge = $timeMerge;
-		$this->queryParameters["TimeMerge"]=$timeMerge;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getDomainName() {
@@ -103,15 +87,6 @@ class DescribeDomainFlowDataRequest extends \RpcAcsRequest
 		$this->queryParameters["EndTime"]=$endTime;
 	}
 
-	public function getLocationNameEn() {
-		return $this->locationNameEn;
-	}
-
-	public function setLocationNameEn($locationNameEn) {
-		$this->locationNameEn = $locationNameEn;
-		$this->queryParameters["LocationNameEn"]=$locationNameEn;
-	}
-
 	public function getStartTime() {
 		return $this->startTime;
 	}
@@ -119,15 +94,6 @@ class DescribeDomainFlowDataRequest extends \RpcAcsRequest
 	public function setStartTime($startTime) {
 		$this->startTime = $startTime;
 		$this->queryParameters["StartTime"]=$startTime;
-	}
-
-	public function getIspNameEn() {
-		return $this->ispNameEn;
-	}
-
-	public function setIspNameEn($ispNameEn) {
-		$this->ispNameEn = $ispNameEn;
-		$this->queryParameters["IspNameEn"]=$ispNameEn;
 	}
 
 	public function getOwnerId() {
@@ -139,13 +105,58 @@ class DescribeDomainFlowDataRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getInterval() {
-		return $this->interval;
+	public function getAppName() {
+		return $this->appName;
 	}
 
-	public function setInterval($interval) {
-		$this->interval = $interval;
-		$this->queryParameters["Interval"]=$interval;
+	public function setAppName($appName) {
+		$this->appName = $appName;
+		$this->queryParameters["AppName"]=$appName;
+	}
+
+	public function getPageNo() {
+		return $this->pageNo;
+	}
+
+	public function setPageNo($pageNo) {
+		$this->pageNo = $pageNo;
+		$this->queryParameters["PageNo"]=$pageNo;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
+	public function getSortBy() {
+		return $this->sortBy;
+	}
+
+	public function setSortBy($sortBy) {
+		$this->sortBy = $sortBy;
+		$this->queryParameters["SortBy"]=$sortBy;
+	}
+
+	public function getStreamName() {
+		return $this->streamName;
+	}
+
+	public function setStreamName($streamName) {
+		$this->streamName = $streamName;
+		$this->queryParameters["StreamName"]=$streamName;
+	}
+
+	public function getQueryType() {
+		return $this->queryType;
+	}
+
+	public function setQueryType($queryType) {
+		$this->queryType = $queryType;
+		$this->queryParameters["QueryType"]=$queryType;
 	}
 	
 }

@@ -23,7 +23,7 @@ class GetVideoInfoRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "GetVideoInfo");
+		parent::__construct("vod", "2017-03-21", "GetVideoInfo", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 

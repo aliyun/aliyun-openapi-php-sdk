@@ -23,7 +23,7 @@ class ListAIVideoCensorJobRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "ListAIVideoCensorJob");
+		parent::__construct("vod", "2017-03-21", "ListAIVideoCensorJob", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 
