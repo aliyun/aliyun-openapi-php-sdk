@@ -34,9 +34,9 @@ class DefaultProfile implements IClientProfile
 	    self::$credential = $credential;
 	}
 	
-	public static function getProfile($regionId, $accessKeyId, $accessSecret)
+	public static function getProfile($regionId, $accessKeyId, $accessSecret, $securityToken = null)
 	{
-		$credential =new Credential($accessKeyId, $accessSecret);
+		$credential =new Credential($accessKeyId, $accessSecret, $securityToken);
 		self::$profile = new DefaultProfile($regionId, $credential);
 		return self::$profile;
 	}

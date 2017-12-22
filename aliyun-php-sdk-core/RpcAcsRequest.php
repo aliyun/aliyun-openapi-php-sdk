@@ -62,6 +62,9 @@ abstract class RpcAcsRequest extends AcsRequest
         $apiParams["Timestamp"] = gmdate($this->dateTimeFormat);
         $apiParams["Action"] = $this->getActionName();
         $apiParams["Version"] = $this->getVersion();
+        if ($credential->getSecurityToken() != null) {
+            $apiParams["SecurityToken"] = $credential->getSecurityToken();
+        }
         $apiParams["Signature"] = $this->computeSignature($apiParams, $credential->getAccessSecret(), $iSigner);
         if (parent::getMethod() == "POST") {
             $requestUrl = $this->getProtocol()."://". $domain . "/";

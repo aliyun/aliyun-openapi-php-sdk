@@ -40,6 +40,7 @@ Autoloader::addAutoloadPath("aliyun-php-sdk-kms");
 Autoloader::addAutoloadPath("aliyun-php-sdk-rds");
 Autoloader::addAutoloadPath("aliyun-php-sdk-slb");
 Autoloader::addAutoloadPath("aliyun-php-sdk-cms");
+Autoloader::addAutoloadPath("aliyun-php-sdk-idst");
 
 //config http proxy
 define('ENABLE_HTTP_PROXY', false);
