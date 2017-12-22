@@ -27,15 +27,7 @@ class SetCasterConfigRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $urgentMaterialId;
-
-	private  $transcodeConfig;
-
-	private  $delay;
-
-	private  $securityToken;
-
-	private  $casterName;
+	private  $sideOutputUrl;
 
 	private  $casterId;
 
@@ -46,6 +38,72 @@ class SetCasterConfigRequest extends \RpcAcsRequest
 	private  $version;
 
 	private  $recordConfig;
+
+	private  $urgentMaterialId;
+
+	private  $transcodeConfig;
+
+	private  $delay;
+
+	private  $securityToken;
+
+	private  $casterName;
+
+	private  $callbackUrl;
+
+	public function getSideOutputUrl() {
+		return $this->sideOutputUrl;
+	}
+
+	public function setSideOutputUrl($sideOutputUrl) {
+		$this->sideOutputUrl = $sideOutputUrl;
+		$this->queryParameters["SideOutputUrl"]=$sideOutputUrl;
+	}
+
+	public function getCasterId() {
+		return $this->casterId;
+	}
+
+	public function setCasterId($casterId) {
+		$this->casterId = $casterId;
+		$this->queryParameters["CasterId"]=$casterId;
+	}
+
+	public function getDomainName() {
+		return $this->domainName;
+	}
+
+	public function setDomainName($domainName) {
+		$this->domainName = $domainName;
+		$this->queryParameters["DomainName"]=$domainName;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getVersion() {
+		return $this->version;
+	}
+
+	public function setVersion($version) {
+		$this->version = $version;
+		$this->queryParameters["Version"]=$version;
+	}
+
+	public function getRecordConfig() {
+		return $this->recordConfig;
+	}
+
+	public function setRecordConfig($recordConfig) {
+		$this->recordConfig = $recordConfig;
+		$this->queryParameters["RecordConfig"]=$recordConfig;
+	}
 
 	public function getUrgentMaterialId() {
 		return $this->urgentMaterialId;
@@ -92,49 +150,13 @@ class SetCasterConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["CasterName"]=$casterName;
 	}
 
-	public function getCasterId() {
-		return $this->casterId;
+	public function getCallbackUrl() {
+		return $this->callbackUrl;
 	}
 
-	public function setCasterId($casterId) {
-		$this->casterId = $casterId;
-		$this->queryParameters["CasterId"]=$casterId;
-	}
-
-	public function getDomainName() {
-		return $this->domainName;
-	}
-
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getVersion() {
-		return $this->version;
-	}
-
-	public function setVersion($version) {
-		$this->version = $version;
-		$this->queryParameters["Version"]=$version;
-	}
-
-	public function getRecordConfig() {
-		return $this->recordConfig;
-	}
-
-	public function setRecordConfig($recordConfig) {
-		$this->recordConfig = $recordConfig;
-		$this->queryParameters["RecordConfig"]=$recordConfig;
+	public function setCallbackUrl($callbackUrl) {
+		$this->callbackUrl = $callbackUrl;
+		$this->queryParameters["CallbackUrl"]=$callbackUrl;
 	}
 	
 }
