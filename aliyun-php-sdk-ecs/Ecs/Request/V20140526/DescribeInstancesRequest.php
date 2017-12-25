@@ -57,6 +57,8 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 
 	private  $filter3Value;
 
+	private  $dryRun;
+
 	private  $tag5Key;
 
 	private  $filter1Value;
@@ -256,6 +258,15 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 	public function setFilter3Value($filter3Value) {
 		$this->filter3Value = $filter3Value;
 		$this->queryParameters["Filter.3.Value"]=$filter3Value;
+	}
+
+	public function getDryRun() {
+		return $this->dryRun;
+	}
+
+	public function setDryRun($dryRun) {
+		$this->dryRun = $dryRun;
+		$this->queryParameters["DryRun"]=$dryRun;
 	}
 
 	public function getTag5Key() {

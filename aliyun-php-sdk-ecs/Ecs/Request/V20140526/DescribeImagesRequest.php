@@ -65,6 +65,8 @@ class DescribeImagesRequest extends \RpcAcsRequest
 
 	private  $architecture;
 
+	private  $dryRun;
+
 	private  $tag5Key;
 
 	private  $resourceOwnerAccount;
@@ -260,6 +262,15 @@ class DescribeImagesRequest extends \RpcAcsRequest
 	public function setArchitecture($architecture) {
 		$this->architecture = $architecture;
 		$this->queryParameters["Architecture"]=$architecture;
+	}
+
+	public function getDryRun() {
+		return $this->dryRun;
+	}
+
+	public function setDryRun($dryRun) {
+		$this->dryRun = $dryRun;
+		$this->queryParameters["DryRun"]=$dryRun;
 	}
 
 	public function getTag5Key() {

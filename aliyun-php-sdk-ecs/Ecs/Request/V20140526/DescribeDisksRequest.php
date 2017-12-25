@@ -67,6 +67,8 @@ class DescribeDisksRequest extends \RpcAcsRequest
 
 	private  $enableAutoSnapshot;
 
+	private  $dryRun;
+
 	private  $tag5Key;
 
 	private  $resourceOwnerAccount;
@@ -285,6 +287,15 @@ class DescribeDisksRequest extends \RpcAcsRequest
 	public function setEnableAutoSnapshot($enableAutoSnapshot) {
 		$this->enableAutoSnapshot = $enableAutoSnapshot;
 		$this->queryParameters["EnableAutoSnapshot"]=$enableAutoSnapshot;
+	}
+
+	public function getDryRun() {
+		return $this->dryRun;
+	}
+
+	public function setDryRun($dryRun) {
+		$this->dryRun = $dryRun;
+		$this->queryParameters["DryRun"]=$dryRun;
 	}
 
 	public function getTag5Key() {

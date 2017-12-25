@@ -57,6 +57,8 @@ class DescribeSnapshotsRequest extends \RpcAcsRequest
 
 	private  $tag3Value;
 
+	private  $dryRun;
+
 	private  $tag5Key;
 
 	private  $resourceOwnerAccount;
@@ -220,6 +222,15 @@ class DescribeSnapshotsRequest extends \RpcAcsRequest
 	public function setTag3Value($tag3Value) {
 		$this->tag3Value = $tag3Value;
 		$this->queryParameters["Tag.3.Value"]=$tag3Value;
+	}
+
+	public function getDryRun() {
+		return $this->dryRun;
+	}
+
+	public function setDryRun($dryRun) {
+		$this->dryRun = $dryRun;
+		$this->queryParameters["DryRun"]=$dryRun;
 	}
 
 	public function getTag5Key() {
