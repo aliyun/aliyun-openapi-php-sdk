@@ -24,6 +24,7 @@ class UpdateServiceRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("CSB", "2017-11-18", "UpdateService", "CSB", "openAPI");
+		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
 

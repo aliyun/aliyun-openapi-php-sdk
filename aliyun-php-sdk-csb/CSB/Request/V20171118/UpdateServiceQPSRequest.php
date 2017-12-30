@@ -19,26 +19,26 @@
  */
 namespace CSB\Request\V20171118;
 
-class DeleteServiceRequest extends \RpcAcsRequest
+class UpdateServiceQPSRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CSB", "2017-11-18", "DeleteService", "CSB", "openAPI");
+		parent::__construct("CSB", "2017-11-18", "UpdateServiceQPS", "CSB", "openAPI");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
 
-	private  $serviceName;
+	private  $qps;
 
 	private  $serviceId;
 
-	public function getServiceName() {
-		return $this->serviceName;
+	public function getQps() {
+		return $this->qps;
 	}
 
-	public function setServiceName($serviceName) {
-		$this->serviceName = $serviceName;
-		$this->queryParameters["ServiceName"]=$serviceName;
+	public function setQps($qps) {
+		$this->qps = $qps;
+		$this->queryParameters["Qps"]=$qps;
 	}
 
 	public function getServiceId() {

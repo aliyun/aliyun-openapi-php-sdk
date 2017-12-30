@@ -19,35 +19,34 @@
  */
 namespace CSB\Request\V20171118;
 
-class DeleteServiceRequest extends \RpcAcsRequest
+class UpdateProjectListStatusRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CSB", "2017-11-18", "DeleteService", "CSB", "openAPI");
+		parent::__construct("CSB", "2017-11-18", "UpdateProjectListStatus", "CSB", "openAPI");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
 
-	private  $serviceName;
+	private  $data;
 
-	private  $serviceId;
+	private  $csbId;
 
-	public function getServiceName() {
-		return $this->serviceName;
+	public function getData() {
+		return $this->data;
 	}
 
-	public function setServiceName($serviceName) {
-		$this->serviceName = $serviceName;
-		$this->queryParameters["ServiceName"]=$serviceName;
+	public function setData($data) {
+		$this->data = $data;
+		}
+
+	public function getCsbId() {
+		return $this->csbId;
 	}
 
-	public function getServiceId() {
-		return $this->serviceId;
-	}
-
-	public function setServiceId($serviceId) {
-		$this->serviceId = $serviceId;
-		$this->queryParameters["ServiceId"]=$serviceId;
+	public function setCsbId($csbId) {
+		$this->csbId = $csbId;
+		$this->queryParameters["CsbId"]=$csbId;
 	}
 	
 }
