@@ -17,13 +17,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace TeslaMaxCompute\Request\V20171130;
+namespace TeslaMaxCompute\Request\V20180104;
 
 class GetClusterInstanceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("TeslaMaxCompute", "2017-11-30", "GetClusterInstance");
+		parent::__construct("TeslaMaxCompute", "2018-01-04", "GetClusterInstance");
 	}
 
 	private  $cluster;
@@ -31,6 +31,8 @@ class GetClusterInstanceRequest extends \RpcAcsRequest
 	private  $pageSize;
 
 	private  $pageNum;
+
+	private  $region;
 
 	private  $status;
 
@@ -59,6 +61,15 @@ class GetClusterInstanceRequest extends \RpcAcsRequest
 	public function setPageNum($pageNum) {
 		$this->pageNum = $pageNum;
 		$this->queryParameters["PageNum"]=$pageNum;
+	}
+
+	public function getRegion() {
+		return $this->region;
+	}
+
+	public function setRegion($region) {
+		$this->region = $region;
+		$this->queryParameters["Region"]=$region;
 	}
 
 	public function getStatus() {

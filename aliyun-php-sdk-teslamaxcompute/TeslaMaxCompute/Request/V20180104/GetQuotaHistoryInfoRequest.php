@@ -17,24 +17,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace TeslaMaxCompute\Request\V20171130;
+namespace TeslaMaxCompute\Request\V20180104;
 
-class GetQuotaInfoRequest extends \RpcAcsRequest
+class GetQuotaHistoryInfoRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("TeslaMaxCompute", "2017-11-30", "GetQuotaInfo");
+		parent::__construct("TeslaMaxCompute", "2018-01-04", "GetQuotaHistoryInfo");
 	}
 
 	private  $cluster;
 
-	private  $pageSize;
+	private  $endTime;
 
-	private  $quotaId;
+	private  $startTime;
 
-	private  $pageNum;
+	private  $region;
 
-	private  $status;
+	private  $quotaName;
 
 	public function getCluster() {
 		return $this->cluster;
@@ -45,40 +45,40 @@ class GetQuotaInfoRequest extends \RpcAcsRequest
 		$this->queryParameters["Cluster"]=$cluster;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
+	public function getEndTime() {
+		return $this->endTime;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
 	}
 
-	public function getQuotaId() {
-		return $this->quotaId;
+	public function getStartTime() {
+		return $this->startTime;
 	}
 
-	public function setQuotaId($quotaId) {
-		$this->quotaId = $quotaId;
-		$this->queryParameters["QuotaId"]=$quotaId;
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
 	}
 
-	public function getPageNum() {
-		return $this->pageNum;
+	public function getRegion() {
+		return $this->region;
 	}
 
-	public function setPageNum($pageNum) {
-		$this->pageNum = $pageNum;
-		$this->queryParameters["PageNum"]=$pageNum;
+	public function setRegion($region) {
+		$this->region = $region;
+		$this->queryParameters["Region"]=$region;
 	}
 
-	public function getStatus() {
-		return $this->status;
+	public function getQuotaName() {
+		return $this->quotaName;
 	}
 
-	public function setStatus($status) {
-		$this->status = $status;
-		$this->queryParameters["Status"]=$status;
+	public function setQuotaName($quotaName) {
+		$this->quotaName = $quotaName;
+		$this->queryParameters["QuotaName"]=$quotaName;
 	}
 	
 }

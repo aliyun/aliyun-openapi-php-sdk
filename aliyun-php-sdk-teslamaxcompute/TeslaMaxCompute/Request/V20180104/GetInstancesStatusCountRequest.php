@@ -17,24 +17,18 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace TeslaMaxCompute\Request\V20171130;
+namespace TeslaMaxCompute\Request\V20180104;
 
-class GetQuotaInstanceRequest extends \RpcAcsRequest
+class GetInstancesStatusCountRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("TeslaMaxCompute", "2017-11-30", "GetQuotaInstance");
+		parent::__construct("TeslaMaxCompute", "2018-01-04", "GetInstancesStatusCount");
 	}
 
 	private  $cluster;
 
-	private  $pageSize;
-
-	private  $quotaId;
-
-	private  $pageNum;
-
-	private  $status;
+	private  $region;
 
 	public function getCluster() {
 		return $this->cluster;
@@ -45,40 +39,13 @@ class GetQuotaInstanceRequest extends \RpcAcsRequest
 		$this->queryParameters["Cluster"]=$cluster;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
+	public function getRegion() {
+		return $this->region;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getQuotaId() {
-		return $this->quotaId;
-	}
-
-	public function setQuotaId($quotaId) {
-		$this->quotaId = $quotaId;
-		$this->queryParameters["QuotaId"]=$quotaId;
-	}
-
-	public function getPageNum() {
-		return $this->pageNum;
-	}
-
-	public function setPageNum($pageNum) {
-		$this->pageNum = $pageNum;
-		$this->queryParameters["PageNum"]=$pageNum;
-	}
-
-	public function getStatus() {
-		return $this->status;
-	}
-
-	public function setStatus($status) {
-		$this->status = $status;
-		$this->queryParameters["Status"]=$status;
+	public function setRegion($region) {
+		$this->region = $region;
+		$this->queryParameters["Region"]=$region;
 	}
 	
 }
