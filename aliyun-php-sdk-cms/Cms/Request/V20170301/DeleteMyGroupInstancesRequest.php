@@ -19,45 +19,34 @@
  */
 namespace Cms\Request\V20170301;
 
-class ProfileSetRequest extends \RpcAcsRequest
+class DeleteMyGroupInstancesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cms", "2017-03-01", "ProfileSet", "cms", "openAPI");
+		parent::__construct("Cms", "2017-03-01", "DeleteMyGroupInstances", "cms", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $enableInstallAgentNewECS;
+	private  $instanceIds;
 
-	private  $autoInstall;
+	private  $groupId;
 
-	private  $userId;
-
-	public function getEnableInstallAgentNewECS() {
-		return $this->enableInstallAgentNewECS;
+	public function getInstanceIds() {
+		return $this->instanceIds;
 	}
 
-	public function setEnableInstallAgentNewECS($enableInstallAgentNewECS) {
-		$this->enableInstallAgentNewECS = $enableInstallAgentNewECS;
-		$this->queryParameters["EnableInstallAgentNewECS"]=$enableInstallAgentNewECS;
+	public function setInstanceIds($instanceIds) {
+		$this->instanceIds = $instanceIds;
+		$this->queryParameters["InstanceIds"]=$instanceIds;
 	}
 
-	public function getAutoInstall() {
-		return $this->autoInstall;
+	public function getGroupId() {
+		return $this->groupId;
 	}
 
-	public function setAutoInstall($autoInstall) {
-		$this->autoInstall = $autoInstall;
-		$this->queryParameters["AutoInstall"]=$autoInstall;
-	}
-
-	public function getUserId() {
-		return $this->userId;
-	}
-
-	public function setUserId($userId) {
-		$this->userId = $userId;
-		$this->queryParameters["UserId"]=$userId;
+	public function setGroupId($groupId) {
+		$this->groupId = $groupId;
+		$this->queryParameters["GroupId"]=$groupId;
 	}
 	
 }
