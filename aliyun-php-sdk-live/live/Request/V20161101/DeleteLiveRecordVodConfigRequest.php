@@ -23,7 +23,7 @@ class DeleteLiveRecordVodConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "DeleteLiveRecordVodConfig");
+		parent::__construct("live", "2016-11-01", "DeleteLiveRecordVodConfig", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -36,6 +36,8 @@ class DeleteLiveRecordVodConfigRequest extends \RpcAcsRequest
 	private  $ownerId;
 
 	private  $version;
+
+	private  $streamName;
 
 	public function getAppName() {
 		return $this->appName;
@@ -80,6 +82,15 @@ class DeleteLiveRecordVodConfigRequest extends \RpcAcsRequest
 	public function setVersion($version) {
 		$this->version = $version;
 		$this->queryParameters["Version"]=$version;
+	}
+
+	public function getStreamName() {
+		return $this->streamName;
+	}
+
+	public function setStreamName($streamName) {
+		$this->streamName = $streamName;
+		$this->queryParameters["StreamName"]=$streamName;
 	}
 	
 }

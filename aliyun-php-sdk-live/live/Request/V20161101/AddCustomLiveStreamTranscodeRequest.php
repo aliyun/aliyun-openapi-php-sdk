@@ -19,11 +19,11 @@
  */
 namespace live\Request\V20161101;
 
-class DeleteLiveStreamTranscodeRequest extends \RpcAcsRequest
+class AddCustomLiveStreamTranscodeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "DeleteLiveStreamTranscode", "live", "openAPI");
+		parent::__construct("live", "2016-11-01", "AddCustomLiveStreamTranscode", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -31,11 +31,23 @@ class DeleteLiveStreamTranscodeRequest extends \RpcAcsRequest
 
 	private  $template;
 
+	private  $fPS;
+
+	private  $ownerId;
+
+	private  $version;
+
 	private  $securityToken;
+
+	private  $templateType;
 
 	private  $domain;
 
-	private  $ownerId;
+	private  $width;
+
+	private  $videoBitrate;
+
+	private  $height;
 
 	public function getApp() {
 		return $this->app;
@@ -55,6 +67,33 @@ class DeleteLiveStreamTranscodeRequest extends \RpcAcsRequest
 		$this->queryParameters["Template"]=$template;
 	}
 
+	public function getFPS() {
+		return $this->fPS;
+	}
+
+	public function setFPS($fPS) {
+		$this->fPS = $fPS;
+		$this->queryParameters["FPS"]=$fPS;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getVersion() {
+		return $this->version;
+	}
+
+	public function setVersion($version) {
+		$this->version = $version;
+		$this->queryParameters["Version"]=$version;
+	}
+
 	public function getSecurityToken() {
 		return $this->securityToken;
 	}
@@ -62,6 +101,15 @@ class DeleteLiveStreamTranscodeRequest extends \RpcAcsRequest
 	public function setSecurityToken($securityToken) {
 		$this->securityToken = $securityToken;
 		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
+
+	public function getTemplateType() {
+		return $this->templateType;
+	}
+
+	public function setTemplateType($templateType) {
+		$this->templateType = $templateType;
+		$this->queryParameters["TemplateType"]=$templateType;
 	}
 
 	public function getDomain() {
@@ -73,13 +121,31 @@ class DeleteLiveStreamTranscodeRequest extends \RpcAcsRequest
 		$this->queryParameters["Domain"]=$domain;
 	}
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getWidth() {
+		return $this->width;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setWidth($width) {
+		$this->width = $width;
+		$this->queryParameters["Width"]=$width;
+	}
+
+	public function getVideoBitrate() {
+		return $this->videoBitrate;
+	}
+
+	public function setVideoBitrate($videoBitrate) {
+		$this->videoBitrate = $videoBitrate;
+		$this->queryParameters["VideoBitrate"]=$videoBitrate;
+	}
+
+	public function getHeight() {
+		return $this->height;
+	}
+
+	public function setHeight($height) {
+		$this->height = $height;
+		$this->queryParameters["Height"]=$height;
 	}
 	
 }

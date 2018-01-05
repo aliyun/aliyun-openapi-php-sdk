@@ -23,7 +23,7 @@ class AddLiveRecordVodConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "AddLiveRecordVodConfig");
+		parent::__construct("live", "2016-11-01", "AddLiveRecordVodConfig", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -38,6 +38,8 @@ class AddLiveRecordVodConfigRequest extends \RpcAcsRequest
 	private  $ownerId;
 
 	private  $version;
+
+	private  $streamName;
 
 	private  $vodTranscodeGroupId;
 
@@ -93,6 +95,15 @@ class AddLiveRecordVodConfigRequest extends \RpcAcsRequest
 	public function setVersion($version) {
 		$this->version = $version;
 		$this->queryParameters["Version"]=$version;
+	}
+
+	public function getStreamName() {
+		return $this->streamName;
+	}
+
+	public function setStreamName($streamName) {
+		$this->streamName = $streamName;
+		$this->queryParameters["StreamName"]=$streamName;
 	}
 
 	public function getVodTranscodeGroupId() {

@@ -23,7 +23,7 @@ class CopyCasterSceneConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "CopyCasterSceneConfig");
+		parent::__construct("live", "2016-11-01", "CopyCasterSceneConfig", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 

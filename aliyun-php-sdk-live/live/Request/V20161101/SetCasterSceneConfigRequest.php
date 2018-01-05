@@ -23,7 +23,7 @@ class SetCasterSceneConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "SetCasterSceneConfig");
+		parent::__construct("live", "2016-11-01", "SetCasterSceneConfig", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 

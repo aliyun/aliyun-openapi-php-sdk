@@ -23,7 +23,7 @@ class DescribeLivePullStreamConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "DescribeLivePullStreamConfig");
+		parent::__construct("live", "2016-11-01", "DescribeLivePullStreamConfig", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 

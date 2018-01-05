@@ -19,21 +19,25 @@
  */
 namespace live\Request\V20161101;
 
-class UpdateLiveDetectNotifyConfigRequest extends \RpcAcsRequest
+class DeleteCasterSceneConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "UpdateLiveDetectNotifyConfig", "live", "openAPI");
+		parent::__construct("live", "2016-11-01", "DeleteCasterSceneConfig", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $securityToken;
 
-	private  $domainName;
+	private  $casterId;
 
-	private  $notifyUrl;
+	private  $sceneId;
 
 	private  $ownerId;
+
+	private  $type;
+
+	private  $version;
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -44,22 +48,22 @@ class UpdateLiveDetectNotifyConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getDomainName() {
-		return $this->domainName;
+	public function getCasterId() {
+		return $this->casterId;
 	}
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
+	public function setCasterId($casterId) {
+		$this->casterId = $casterId;
+		$this->queryParameters["CasterId"]=$casterId;
 	}
 
-	public function getNotifyUrl() {
-		return $this->notifyUrl;
+	public function getSceneId() {
+		return $this->sceneId;
 	}
 
-	public function setNotifyUrl($notifyUrl) {
-		$this->notifyUrl = $notifyUrl;
-		$this->queryParameters["NotifyUrl"]=$notifyUrl;
+	public function setSceneId($sceneId) {
+		$this->sceneId = $sceneId;
+		$this->queryParameters["SceneId"]=$sceneId;
 	}
 
 	public function getOwnerId() {
@@ -69,6 +73,24 @@ class UpdateLiveDetectNotifyConfigRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getType() {
+		return $this->type;
+	}
+
+	public function setType($type) {
+		$this->type = $type;
+		$this->queryParameters["Type"]=$type;
+	}
+
+	public function getVersion() {
+		return $this->version;
+	}
+
+	public function setVersion($version) {
+		$this->version = $version;
+		$this->queryParameters["Version"]=$version;
 	}
 	
 }

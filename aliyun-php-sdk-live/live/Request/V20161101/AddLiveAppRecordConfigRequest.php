@@ -23,7 +23,7 @@ class AddLiveAppRecordConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "AddLiveAppRecordConfig");
+		parent::__construct("live", "2016-11-01", "AddLiveAppRecordConfig", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 

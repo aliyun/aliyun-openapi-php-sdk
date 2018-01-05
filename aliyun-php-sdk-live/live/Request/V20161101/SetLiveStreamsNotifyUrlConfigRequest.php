@@ -23,7 +23,7 @@ class SetLiveStreamsNotifyUrlConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "SetLiveStreamsNotifyUrlConfig");
+		parent::__construct("live", "2016-11-01", "SetLiveStreamsNotifyUrlConfig", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 
