@@ -23,7 +23,7 @@ class DescribeLiveRecordVodConfigsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "DescribeLiveRecordVodConfigs", "live", "openAPI");
+		parent::__construct("live", "2016-11-01", "DescribeLiveRecordVodConfigs");
 		$this->setMethod("POST");
 	}
 

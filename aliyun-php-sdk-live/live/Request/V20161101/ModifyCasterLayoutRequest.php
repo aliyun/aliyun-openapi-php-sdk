@@ -23,7 +23,7 @@ class ModifyCasterLayoutRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "ModifyCasterLayout", "live", "openAPI");
+		parent::__construct("live", "2016-11-01", "ModifyCasterLayout");
 		$this->setMethod("POST");
 	}
 

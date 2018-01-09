@@ -23,7 +23,7 @@ class ResumeLiveStreamRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "ResumeLiveStream", "live", "openAPI");
+		parent::__construct("live", "2016-11-01", "ResumeLiveStream");
 		$this->setMethod("POST");
 	}
 

@@ -23,15 +23,15 @@ class CreateCasterRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "CreateCaster", "live", "openAPI");
+		parent::__construct("live", "2016-11-01", "CreateCaster");
 		$this->setMethod("POST");
 	}
 
 	private  $casterTemplate;
 
-	private  $normType;
+	private  $expireTime;
 
-	private  $period;
+	private  $normType;
 
 	private  $securityToken;
 
@@ -42,6 +42,8 @@ class CreateCasterRequest extends \RpcAcsRequest
 	private  $chargeType;
 
 	private  $ownerId;
+
+	private  $purchaseTime;
 
 	private  $version;
 
@@ -54,6 +56,15 @@ class CreateCasterRequest extends \RpcAcsRequest
 		$this->queryParameters["CasterTemplate"]=$casterTemplate;
 	}
 
+	public function getExpireTime() {
+		return $this->expireTime;
+	}
+
+	public function setExpireTime($expireTime) {
+		$this->expireTime = $expireTime;
+		$this->queryParameters["ExpireTime"]=$expireTime;
+	}
+
 	public function getNormType() {
 		return $this->normType;
 	}
@@ -61,15 +72,6 @@ class CreateCasterRequest extends \RpcAcsRequest
 	public function setNormType($normType) {
 		$this->normType = $normType;
 		$this->queryParameters["NormType"]=$normType;
-	}
-
-	public function getPeriod() {
-		return $this->period;
-	}
-
-	public function setPeriod($period) {
-		$this->period = $period;
-		$this->queryParameters["Period"]=$period;
 	}
 
 	public function getSecurityToken() {
@@ -115,6 +117,15 @@ class CreateCasterRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getPurchaseTime() {
+		return $this->purchaseTime;
+	}
+
+	public function setPurchaseTime($purchaseTime) {
+		$this->purchaseTime = $purchaseTime;
+		$this->queryParameters["PurchaseTime"]=$purchaseTime;
 	}
 
 	public function getVersion() {

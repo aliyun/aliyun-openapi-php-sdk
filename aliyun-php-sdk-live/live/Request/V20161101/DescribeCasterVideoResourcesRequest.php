@@ -23,7 +23,7 @@ class DescribeCasterVideoResourcesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "DescribeCasterVideoResources", "live", "openAPI");
+		parent::__construct("live", "2016-11-01", "DescribeCasterVideoResources");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class DescribeLiveMixNotifyConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "DescribeLiveMixNotifyConfig", "live", "openAPI");
+		parent::__construct("live", "2016-11-01", "DescribeLiveMixNotifyConfig");
 		$this->setMethod("POST");
 	}
 

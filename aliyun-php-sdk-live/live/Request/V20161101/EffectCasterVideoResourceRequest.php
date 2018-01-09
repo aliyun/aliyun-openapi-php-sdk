@@ -23,7 +23,7 @@ class EffectCasterVideoResourceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "EffectCasterVideoResource", "live", "openAPI");
+		parent::__construct("live", "2016-11-01", "EffectCasterVideoResource");
 		$this->setMethod("POST");
 	}
 

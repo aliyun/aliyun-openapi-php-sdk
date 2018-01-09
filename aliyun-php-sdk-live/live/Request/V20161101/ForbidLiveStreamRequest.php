@@ -23,7 +23,7 @@ class ForbidLiveStreamRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "ForbidLiveStream", "live", "openAPI");
+		parent::__construct("live", "2016-11-01", "ForbidLiveStream");
 		$this->setMethod("POST");
 	}
 

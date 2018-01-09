@@ -23,7 +23,7 @@ class DescribeLiveSnapshotDetectPornConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "DescribeLiveSnapshotDetectPornConfig", "live", "openAPI");
+		parent::__construct("live", "2016-11-01", "DescribeLiveSnapshotDetectPornConfig");
 		$this->setMethod("POST");
 	}
 

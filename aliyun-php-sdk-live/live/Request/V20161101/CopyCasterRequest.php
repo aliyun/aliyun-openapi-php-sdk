@@ -23,7 +23,7 @@ class CopyCasterRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "CopyCaster", "live", "openAPI");
+		parent::__construct("live", "2016-11-01", "CopyCaster");
 		$this->setMethod("POST");
 	}
 
