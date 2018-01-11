@@ -30,6 +30,8 @@ class EditPhotoStoreRequest extends \RpcAcsRequest
 
 	private  $autoCleanEnabled;
 
+	private  $defaultTrashQuota;
+
 	private  $storeName;
 
 	private  $remark;
@@ -45,6 +47,15 @@ class EditPhotoStoreRequest extends \RpcAcsRequest
 	public function setAutoCleanEnabled($autoCleanEnabled) {
 		$this->autoCleanEnabled = $autoCleanEnabled;
 		$this->queryParameters["AutoCleanEnabled"]=$autoCleanEnabled;
+	}
+
+	public function getDefaultTrashQuota() {
+		return $this->defaultTrashQuota;
+	}
+
+	public function setDefaultTrashQuota($defaultTrashQuota) {
+		$this->defaultTrashQuota = $defaultTrashQuota;
+		$this->queryParameters["DefaultTrashQuota"]=$defaultTrashQuota;
 	}
 
 	public function getStoreName() {
