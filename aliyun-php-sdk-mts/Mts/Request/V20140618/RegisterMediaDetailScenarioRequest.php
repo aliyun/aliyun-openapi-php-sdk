@@ -23,7 +23,7 @@ class RegisterMediaDetailScenarioRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "RegisterMediaDetailScenario");
+		parent::__construct("Mts", "2014-06-18", "RegisterMediaDetailScenario", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

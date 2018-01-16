@@ -23,7 +23,7 @@ class PlayerAuthRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "PlayerAuth");
+		parent::__construct("Mts", "2014-06-18", "PlayerAuth", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

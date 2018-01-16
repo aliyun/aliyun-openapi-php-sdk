@@ -19,47 +19,23 @@
  */
 namespace Mts\Request\V20140618;
 
-class SubmitSnapshotJobRequest extends \RpcAcsRequest
+class GetPackageRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "SubmitSnapshotJob", "mts", "openAPI");
+		parent::__construct("Mts", "2014-06-18", "GetPackage", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $input;
-
-	private  $userData;
-
 	private  $resourceOwnerId;
+
+	private  $data;
 
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
 	private  $ownerId;
-
-	private  $snapshotConfig;
-
-	private  $pipelineId;
-
-	public function getInput() {
-		return $this->input;
-	}
-
-	public function setInput($input) {
-		$this->input = $input;
-		$this->queryParameters["Input"]=$input;
-	}
-
-	public function getUserData() {
-		return $this->userData;
-	}
-
-	public function setUserData($userData) {
-		$this->userData = $userData;
-		$this->queryParameters["UserData"]=$userData;
-	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -68,6 +44,15 @@ class SubmitSnapshotJobRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getData() {
+		return $this->data;
+	}
+
+	public function setData($data) {
+		$this->data = $data;
+		$this->queryParameters["Data"]=$data;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -95,24 +80,6 @@ class SubmitSnapshotJobRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getSnapshotConfig() {
-		return $this->snapshotConfig;
-	}
-
-	public function setSnapshotConfig($snapshotConfig) {
-		$this->snapshotConfig = $snapshotConfig;
-		$this->queryParameters["SnapshotConfig"]=$snapshotConfig;
-	}
-
-	public function getPipelineId() {
-		return $this->pipelineId;
-	}
-
-	public function setPipelineId($pipelineId) {
-		$this->pipelineId = $pipelineId;
-		$this->queryParameters["PipelineId"]=$pipelineId;
 	}
 	
 }

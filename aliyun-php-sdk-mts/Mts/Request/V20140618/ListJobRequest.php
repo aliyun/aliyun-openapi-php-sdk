@@ -23,7 +23,7 @@ class ListJobRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "ListJob");
+		parent::__construct("Mts", "2014-06-18", "ListJob", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

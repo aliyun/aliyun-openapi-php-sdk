@@ -23,7 +23,7 @@ class SubmitVideoSummaryJobRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "SubmitVideoSummaryJob");
+		parent::__construct("Mts", "2014-06-18", "SubmitVideoSummaryJob", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

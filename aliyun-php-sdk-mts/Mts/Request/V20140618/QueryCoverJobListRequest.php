@@ -23,7 +23,7 @@ class QueryCoverJobListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "QueryCoverJobList");
+		parent::__construct("Mts", "2014-06-18", "QueryCoverJobList", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

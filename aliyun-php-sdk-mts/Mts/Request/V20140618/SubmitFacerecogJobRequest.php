@@ -23,7 +23,7 @@ class SubmitFacerecogJobRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "SubmitFacerecogJob");
+		parent::__construct("Mts", "2014-06-18", "SubmitFacerecogJob", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

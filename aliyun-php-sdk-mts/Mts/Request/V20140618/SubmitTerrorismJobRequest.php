@@ -23,7 +23,7 @@ class SubmitTerrorismJobRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "SubmitTerrorismJob");
+		parent::__construct("Mts", "2014-06-18", "SubmitTerrorismJob", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

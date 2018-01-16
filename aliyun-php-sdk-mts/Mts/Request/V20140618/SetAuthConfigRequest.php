@@ -23,7 +23,7 @@ class SetAuthConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "SetAuthConfig");
+		parent::__construct("Mts", "2014-06-18", "SetAuthConfig", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

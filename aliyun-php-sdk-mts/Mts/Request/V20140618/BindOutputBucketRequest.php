@@ -23,7 +23,7 @@ class BindOutputBucketRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "BindOutputBucket");
+		parent::__construct("Mts", "2014-06-18", "BindOutputBucket", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

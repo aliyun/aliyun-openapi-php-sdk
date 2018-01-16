@@ -23,7 +23,7 @@ class QueryFacerecogJobListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "QueryFacerecogJobList");
+		parent::__construct("Mts", "2014-06-18", "QueryFacerecogJobList", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

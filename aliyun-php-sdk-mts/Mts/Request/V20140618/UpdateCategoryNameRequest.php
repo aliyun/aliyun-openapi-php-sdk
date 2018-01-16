@@ -23,7 +23,7 @@ class UpdateCategoryNameRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "UpdateCategoryName");
+		parent::__construct("Mts", "2014-06-18", "UpdateCategoryName", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

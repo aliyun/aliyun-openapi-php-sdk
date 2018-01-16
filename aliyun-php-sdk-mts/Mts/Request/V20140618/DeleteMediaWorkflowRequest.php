@@ -23,7 +23,7 @@ class DeleteMediaWorkflowRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "DeleteMediaWorkflow");
+		parent::__construct("Mts", "2014-06-18", "DeleteMediaWorkflow", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

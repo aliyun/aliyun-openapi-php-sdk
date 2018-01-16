@@ -23,7 +23,7 @@ class RegisterMediaDetailPersonRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "RegisterMediaDetailPerson");
+		parent::__construct("Mts", "2014-06-18", "RegisterMediaDetailPerson", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

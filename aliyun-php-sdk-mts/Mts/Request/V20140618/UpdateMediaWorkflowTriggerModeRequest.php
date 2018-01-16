@@ -19,17 +19,13 @@
  */
 namespace Mts\Request\V20140618;
 
-class SubmitSnapshotJobRequest extends \RpcAcsRequest
+class UpdateMediaWorkflowTriggerModeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "SubmitSnapshotJob", "mts", "openAPI");
+		parent::__construct("Mts", "2014-06-18", "UpdateMediaWorkflowTriggerMode", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
-
-	private  $input;
-
-	private  $userData;
 
 	private  $resourceOwnerId;
 
@@ -37,29 +33,11 @@ class SubmitSnapshotJobRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
+	private  $mediaWorkflowId;
+
 	private  $ownerId;
 
-	private  $snapshotConfig;
-
-	private  $pipelineId;
-
-	public function getInput() {
-		return $this->input;
-	}
-
-	public function setInput($input) {
-		$this->input = $input;
-		$this->queryParameters["Input"]=$input;
-	}
-
-	public function getUserData() {
-		return $this->userData;
-	}
-
-	public function setUserData($userData) {
-		$this->userData = $userData;
-		$this->queryParameters["UserData"]=$userData;
-	}
+	private  $triggerMode;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -88,6 +66,15 @@ class SubmitSnapshotJobRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
+	public function getMediaWorkflowId() {
+		return $this->mediaWorkflowId;
+	}
+
+	public function setMediaWorkflowId($mediaWorkflowId) {
+		$this->mediaWorkflowId = $mediaWorkflowId;
+		$this->queryParameters["MediaWorkflowId"]=$mediaWorkflowId;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -97,22 +84,13 @@ class SubmitSnapshotJobRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getSnapshotConfig() {
-		return $this->snapshotConfig;
+	public function getTriggerMode() {
+		return $this->triggerMode;
 	}
 
-	public function setSnapshotConfig($snapshotConfig) {
-		$this->snapshotConfig = $snapshotConfig;
-		$this->queryParameters["SnapshotConfig"]=$snapshotConfig;
-	}
-
-	public function getPipelineId() {
-		return $this->pipelineId;
-	}
-
-	public function setPipelineId($pipelineId) {
-		$this->pipelineId = $pipelineId;
-		$this->queryParameters["PipelineId"]=$pipelineId;
+	public function setTriggerMode($triggerMode) {
+		$this->triggerMode = $triggerMode;
+		$this->queryParameters["TriggerMode"]=$triggerMode;
 	}
 	
 }

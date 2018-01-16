@@ -23,7 +23,7 @@ class ReportCensorJobResultRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "ReportCensorJobResult");
+		parent::__construct("Mts", "2014-06-18", "ReportCensorJobResult", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

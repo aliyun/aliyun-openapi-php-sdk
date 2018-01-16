@@ -23,7 +23,7 @@ class DecryptKeyRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "DecryptKey");
+		parent::__construct("Mts", "2014-06-18", "DecryptKey", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

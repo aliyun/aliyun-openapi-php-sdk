@@ -23,7 +23,7 @@ class CancelJobRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "CancelJob");
+		parent::__construct("Mts", "2014-06-18", "CancelJob", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

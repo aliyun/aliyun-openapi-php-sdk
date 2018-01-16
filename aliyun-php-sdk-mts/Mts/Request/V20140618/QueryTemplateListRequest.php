@@ -23,7 +23,7 @@ class QueryTemplateListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "QueryTemplateList");
+		parent::__construct("Mts", "2014-06-18", "QueryTemplateList", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

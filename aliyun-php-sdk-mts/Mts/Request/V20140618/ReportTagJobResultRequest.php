@@ -23,7 +23,7 @@ class ReportTagJobResultRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "ReportTagJobResult");
+		parent::__construct("Mts", "2014-06-18", "ReportTagJobResult", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

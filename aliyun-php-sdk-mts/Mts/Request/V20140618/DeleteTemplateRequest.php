@@ -23,7 +23,7 @@ class DeleteTemplateRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "DeleteTemplate");
+		parent::__construct("Mts", "2014-06-18", "DeleteTemplate", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

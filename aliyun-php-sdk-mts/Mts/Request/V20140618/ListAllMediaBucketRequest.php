@@ -23,7 +23,7 @@ class ListAllMediaBucketRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "ListAllMediaBucket");
+		parent::__construct("Mts", "2014-06-18", "ListAllMediaBucket", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

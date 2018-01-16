@@ -23,7 +23,7 @@ class SubmitFpShotJobRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "SubmitFpShotJob");
+		parent::__construct("Mts", "2014-06-18", "SubmitFpShotJob", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

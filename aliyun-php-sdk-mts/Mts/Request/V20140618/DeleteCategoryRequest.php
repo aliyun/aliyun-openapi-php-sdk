@@ -23,7 +23,7 @@ class DeleteCategoryRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "DeleteCategory");
+		parent::__construct("Mts", "2014-06-18", "DeleteCategory", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

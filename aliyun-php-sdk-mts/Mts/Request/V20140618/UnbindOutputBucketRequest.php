@@ -23,7 +23,7 @@ class UnbindOutputBucketRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "UnbindOutputBucket");
+		parent::__construct("Mts", "2014-06-18", "UnbindOutputBucket", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

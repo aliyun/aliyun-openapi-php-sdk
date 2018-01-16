@@ -23,7 +23,7 @@ class SearchTemplateRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "SearchTemplate");
+		parent::__construct("Mts", "2014-06-18", "SearchTemplate", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

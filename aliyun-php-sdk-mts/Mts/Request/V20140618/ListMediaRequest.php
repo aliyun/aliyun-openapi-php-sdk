@@ -23,7 +23,7 @@ class ListMediaRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "ListMedia");
+		parent::__construct("Mts", "2014-06-18", "ListMedia", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

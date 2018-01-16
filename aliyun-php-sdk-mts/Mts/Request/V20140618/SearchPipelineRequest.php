@@ -23,7 +23,7 @@ class SearchPipelineRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "SearchPipeline");
+		parent::__construct("Mts", "2014-06-18", "SearchPipeline", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

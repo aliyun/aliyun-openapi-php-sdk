@@ -23,7 +23,7 @@ class SubmitMediaDetailJobRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "SubmitMediaDetailJob");
+		parent::__construct("Mts", "2014-06-18", "SubmitMediaDetailJob", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

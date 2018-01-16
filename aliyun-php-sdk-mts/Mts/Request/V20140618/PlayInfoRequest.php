@@ -23,7 +23,7 @@ class PlayInfoRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "PlayInfo");
+		parent::__construct("Mts", "2014-06-18", "PlayInfo", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

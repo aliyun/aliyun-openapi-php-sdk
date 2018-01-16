@@ -23,7 +23,7 @@ class SubmitTagJobRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "SubmitTagJob");
+		parent::__construct("Mts", "2014-06-18", "SubmitTagJob", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

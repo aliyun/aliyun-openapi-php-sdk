@@ -23,7 +23,7 @@ class QueryMediaListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "QueryMediaList");
+		parent::__construct("Mts", "2014-06-18", "QueryMediaList", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

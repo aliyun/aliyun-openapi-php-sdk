@@ -23,7 +23,7 @@ class AddCategoryRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "AddCategory");
+		parent::__construct("Mts", "2014-06-18", "AddCategory", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

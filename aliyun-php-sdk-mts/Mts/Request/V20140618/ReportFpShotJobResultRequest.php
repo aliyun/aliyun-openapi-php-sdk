@@ -23,7 +23,7 @@ class ReportFpShotJobResultRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "ReportFpShotJobResult");
+		parent::__construct("Mts", "2014-06-18", "ReportFpShotJobResult", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

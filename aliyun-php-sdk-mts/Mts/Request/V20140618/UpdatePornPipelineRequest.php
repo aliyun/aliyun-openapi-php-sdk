@@ -23,7 +23,7 @@ class UpdatePornPipelineRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "UpdatePornPipeline");
+		parent::__construct("Mts", "2014-06-18", "UpdatePornPipeline", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class SubmitAnnotationJobRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "SubmitAnnotationJob");
+		parent::__construct("Mts", "2014-06-18", "SubmitAnnotationJob", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

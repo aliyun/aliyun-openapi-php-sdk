@@ -23,7 +23,7 @@ class QueryVideoSplitJobListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "QueryVideoSplitJobList");
+		parent::__construct("Mts", "2014-06-18", "QueryVideoSplitJobList", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

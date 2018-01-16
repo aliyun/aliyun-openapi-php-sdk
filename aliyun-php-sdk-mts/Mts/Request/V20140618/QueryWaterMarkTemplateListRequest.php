@@ -23,7 +23,7 @@ class QueryWaterMarkTemplateListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "QueryWaterMarkTemplateList");
+		parent::__construct("Mts", "2014-06-18", "QueryWaterMarkTemplateList", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class UpdateMediaPublishStateRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "UpdateMediaPublishState");
+		parent::__construct("Mts", "2014-06-18", "UpdateMediaPublishState", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class UpdateTemplateRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "UpdateTemplate");
+		parent::__construct("Mts", "2014-06-18", "UpdateTemplate", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

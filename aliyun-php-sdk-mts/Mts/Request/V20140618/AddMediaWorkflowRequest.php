@@ -23,7 +23,7 @@ class AddMediaWorkflowRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "AddMediaWorkflow");
+		parent::__construct("Mts", "2014-06-18", "AddMediaWorkflow", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -38,6 +38,8 @@ class AddMediaWorkflowRequest extends \RpcAcsRequest
 	private  $name;
 
 	private  $ownerId;
+
+	private  $triggerMode;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -91,6 +93,15 @@ class AddMediaWorkflowRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getTriggerMode() {
+		return $this->triggerMode;
+	}
+
+	public function setTriggerMode($triggerMode) {
+		$this->triggerMode = $triggerMode;
+		$this->queryParameters["TriggerMode"]=$triggerMode;
 	}
 	
 }

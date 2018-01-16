@@ -23,7 +23,7 @@ class ListAllCategoryRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "ListAllCategory");
+		parent::__construct("Mts", "2014-06-18", "ListAllCategory", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class SubmitCensorJobRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "SubmitCensorJob");
+		parent::__construct("Mts", "2014-06-18", "SubmitCensorJob", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

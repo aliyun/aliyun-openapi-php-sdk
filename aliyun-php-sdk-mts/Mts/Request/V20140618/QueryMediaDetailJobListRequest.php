@@ -23,7 +23,7 @@ class QueryMediaDetailJobListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "QueryMediaDetailJobList");
+		parent::__construct("Mts", "2014-06-18", "QueryMediaDetailJobList", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

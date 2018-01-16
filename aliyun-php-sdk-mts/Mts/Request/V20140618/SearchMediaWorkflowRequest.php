@@ -23,7 +23,7 @@ class SearchMediaWorkflowRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "SearchMediaWorkflow");
+		parent::__construct("Mts", "2014-06-18", "SearchMediaWorkflow", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

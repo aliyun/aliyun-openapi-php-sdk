@@ -23,7 +23,7 @@ class UpdateMediaWorkflowRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "UpdateMediaWorkflow");
+		parent::__construct("Mts", "2014-06-18", "UpdateMediaWorkflow", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class AddVideoSummaryPipelineRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "AddVideoSummaryPipeline");
+		parent::__construct("Mts", "2014-06-18", "AddVideoSummaryPipeline", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

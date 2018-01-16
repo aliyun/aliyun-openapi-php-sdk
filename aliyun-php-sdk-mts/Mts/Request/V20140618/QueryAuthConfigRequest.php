@@ -23,7 +23,7 @@ class QueryAuthConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "QueryAuthConfig");
+		parent::__construct("Mts", "2014-06-18", "QueryAuthConfig", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

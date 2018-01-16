@@ -23,7 +23,7 @@ class DeleteWaterMarkTemplateRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "DeleteWaterMarkTemplate");
+		parent::__construct("Mts", "2014-06-18", "DeleteWaterMarkTemplate", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

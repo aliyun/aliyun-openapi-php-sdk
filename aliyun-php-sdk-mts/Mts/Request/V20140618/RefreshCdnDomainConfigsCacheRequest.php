@@ -23,7 +23,7 @@ class RefreshCdnDomainConfigsCacheRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "RefreshCdnDomainConfigsCache");
+		parent::__construct("Mts", "2014-06-18", "RefreshCdnDomainConfigsCache", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class BindInputBucketRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "BindInputBucket");
+		parent::__construct("Mts", "2014-06-18", "BindInputBucket", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

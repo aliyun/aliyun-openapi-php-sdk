@@ -23,7 +23,7 @@ class QueryTerrorismJobListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "QueryTerrorismJobList");
+		parent::__construct("Mts", "2014-06-18", "QueryTerrorismJobList", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

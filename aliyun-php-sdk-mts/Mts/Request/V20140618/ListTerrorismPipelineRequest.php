@@ -23,7 +23,7 @@ class ListTerrorismPipelineRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "ListTerrorismPipeline");
+		parent::__construct("Mts", "2014-06-18", "ListTerrorismPipeline", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

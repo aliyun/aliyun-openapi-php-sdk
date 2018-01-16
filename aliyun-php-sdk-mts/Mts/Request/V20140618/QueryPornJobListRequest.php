@@ -23,7 +23,7 @@ class QueryPornJobListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "QueryPornJobList");
+		parent::__construct("Mts", "2014-06-18", "QueryPornJobList", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

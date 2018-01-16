@@ -23,7 +23,7 @@ class ReportVideoSplitJobResultRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "ReportVideoSplitJobResult");
+		parent::__construct("Mts", "2014-06-18", "ReportVideoSplitJobResult", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

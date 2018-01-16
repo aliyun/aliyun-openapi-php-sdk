@@ -23,7 +23,7 @@ class AddCensorPipelineRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "AddCensorPipeline");
+		parent::__construct("Mts", "2014-06-18", "AddCensorPipeline", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 

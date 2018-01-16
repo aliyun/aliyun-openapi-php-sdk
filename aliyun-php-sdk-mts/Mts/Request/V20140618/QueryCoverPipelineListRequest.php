@@ -23,7 +23,7 @@ class QueryCoverPipelineListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "QueryCoverPipelineList");
+		parent::__construct("Mts", "2014-06-18", "QueryCoverPipelineList", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 
