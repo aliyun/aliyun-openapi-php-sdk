@@ -39,8 +39,6 @@ class DescribeLiveRecordVodConfigsRequest extends \RpcAcsRequest
 
 	private  $pageNum;
 
-	private  $version;
-
 	private  $streamName;
 
 	public function getAppName() {
@@ -95,15 +93,6 @@ class DescribeLiveRecordVodConfigsRequest extends \RpcAcsRequest
 	public function setPageNum($pageNum) {
 		$this->pageNum = $pageNum;
 		$this->queryParameters["PageNum"]=$pageNum;
-	}
-
-	public function getVersion() {
-		return $this->version;
-	}
-
-	public function setVersion($version) {
-		$this->version = $version;
-		$this->queryParameters["Version"]=$version;
 	}
 
 	public function getStreamName() {
