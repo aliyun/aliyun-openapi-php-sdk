@@ -29,6 +29,8 @@ class DescribeInvocationResultsRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
+	private  $commandId;
+
 	private  $pageNumber;
 
 	private  $pageSize;
@@ -43,6 +45,8 @@ class DescribeInvocationResultsRequest extends \RpcAcsRequest
 
 	private  $instanceId;
 
+	private  $invokeRecordStatus;
+
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
 	}
@@ -50,6 +54,15 @@ class DescribeInvocationResultsRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getCommandId() {
+		return $this->commandId;
+	}
+
+	public function setCommandId($commandId) {
+		$this->commandId = $commandId;
+		$this->queryParameters["CommandId"]=$commandId;
 	}
 
 	public function getPageNumber() {
@@ -113,6 +126,15 @@ class DescribeInvocationResultsRequest extends \RpcAcsRequest
 	public function setInstanceId($instanceId) {
 		$this->instanceId = $instanceId;
 		$this->queryParameters["InstanceId"]=$instanceId;
+	}
+
+	public function getInvokeRecordStatus() {
+		return $this->invokeRecordStatus;
+	}
+
+	public function setInvokeRecordStatus($invokeRecordStatus) {
+		$this->invokeRecordStatus = $invokeRecordStatus;
+		$this->queryParameters["InvokeRecordStatus"]=$invokeRecordStatus;
 	}
 	
 }

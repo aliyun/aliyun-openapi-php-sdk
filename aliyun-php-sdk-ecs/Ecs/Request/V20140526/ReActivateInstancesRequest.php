@@ -19,47 +19,23 @@
  */
 namespace Ecs\Request\V20140526;
 
-class DescribeImageSupportInstanceTypesRequest extends \RpcAcsRequest
+class ReActivateInstancesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeImageSupportInstanceTypes", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "ReActivateInstances", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $actionType;
-
-	private  $Filters;
-
 	private  $resourceOwnerId;
 
-	private  $imageId;
+	private  $instanceId;
 
 	private  $resourceOwnerAccount;
 
+	private  $ownerAccount;
+
 	private  $ownerId;
-
-	public function getActionType() {
-		return $this->actionType;
-	}
-
-	public function setActionType($actionType) {
-		$this->actionType = $actionType;
-		$this->queryParameters["ActionType"]=$actionType;
-	}
-
-	public function getFilters() {
-		return $this->Filters;
-	}
-
-	public function setFilters($Filters) {
-		$this->Filters = $Filters;
-		for ($i = 0; $i < count($Filters); $i ++) {	
-			$this->queryParameters['Filter.' . ($i + 1) . '.Key'] = $Filters[$i]['Key'];
-			$this->queryParameters['Filter.' . ($i + 1) . '.Value'] = $Filters[$i]['Value'];
-
-		}
-	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -70,13 +46,13 @@ class DescribeImageSupportInstanceTypesRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getImageId() {
-		return $this->imageId;
+	public function getInstanceId() {
+		return $this->instanceId;
 	}
 
-	public function setImageId($imageId) {
-		$this->imageId = $imageId;
-		$this->queryParameters["ImageId"]=$imageId;
+	public function setInstanceId($instanceId) {
+		$this->instanceId = $instanceId;
+		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -86,6 +62,15 @@ class DescribeImageSupportInstanceTypesRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getOwnerId() {
