@@ -19,48 +19,15 @@
  */
 namespace Cms\Request\V20170301;
 
-class ProfileSetRequest extends \RpcAcsRequest
+class ListProductOfActiceAlertRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cms", "2017-03-01", "ProfileSet", "cms", "openAPI");
+		parent::__construct("Cms", "2017-03-01", "ListProductOfActiceAlert", "cms", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $enableInstallAgentNewECS;
-
-	private  $enableActiveAlert;
-
-	private  $autoInstall;
-
 	private  $userId;
-
-	public function getEnableInstallAgentNewECS() {
-		return $this->enableInstallAgentNewECS;
-	}
-
-	public function setEnableInstallAgentNewECS($enableInstallAgentNewECS) {
-		$this->enableInstallAgentNewECS = $enableInstallAgentNewECS;
-		$this->queryParameters["EnableInstallAgentNewECS"]=$enableInstallAgentNewECS;
-	}
-
-	public function getEnableActiveAlert() {
-		return $this->enableActiveAlert;
-	}
-
-	public function setEnableActiveAlert($enableActiveAlert) {
-		$this->enableActiveAlert = $enableActiveAlert;
-		$this->queryParameters["EnableActiveAlert"]=$enableActiveAlert;
-	}
-
-	public function getAutoInstall() {
-		return $this->autoInstall;
-	}
-
-	public function setAutoInstall($autoInstall) {
-		$this->autoInstall = $autoInstall;
-		$this->queryParameters["AutoInstall"]=$autoInstall;
-	}
 
 	public function getUserId() {
 		return $this->userId;

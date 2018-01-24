@@ -19,23 +19,22 @@
  */
 namespace Cms\Request\V20170301;
 
-class ProfileGetRequest extends \RpcAcsRequest
+class QuerySystemEventDetailRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cms", "2017-03-01", "ProfileGet", "cms", "openAPI");
-		$this->setMethod("POST");
+		parent::__construct("Cms", "2017-03-01", "QuerySystemEventDetail", "cms", "openAPI");
 	}
 
-	private  $userId;
+	private  $queryJson;
 
-	public function getUserId() {
-		return $this->userId;
+	public function getQueryJson() {
+		return $this->queryJson;
 	}
 
-	public function setUserId($userId) {
-		$this->userId = $userId;
-		$this->queryParameters["UserId"]=$userId;
+	public function setQueryJson($queryJson) {
+		$this->queryJson = $queryJson;
+		$this->queryParameters["QueryJson"]=$queryJson;
 	}
 	
 }
