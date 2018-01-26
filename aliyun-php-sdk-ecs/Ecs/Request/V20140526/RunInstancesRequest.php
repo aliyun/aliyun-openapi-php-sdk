@@ -41,6 +41,8 @@ class RunInstancesRequest extends \RpcAcsRequest
 
 	private  $Tags;
 
+	private  $dryRun;
+
 	private  $ownerId;
 
 	private  $vSwitchId;
@@ -158,6 +160,15 @@ class RunInstancesRequest extends \RpcAcsRequest
 			$this->queryParameters['Tag.' . ($i + 1) . '.Value'] = $Tags[$i]['Value'];
 
 		}
+	}
+
+	public function getDryRun() {
+		return $this->dryRun;
+	}
+
+	public function setDryRun($dryRun) {
+		$this->dryRun = $dryRun;
+		$this->queryParameters["DryRun"]=$dryRun;
 	}
 
 	public function getOwnerId() {

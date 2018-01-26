@@ -57,6 +57,8 @@ class CreateInstanceRequest extends \RpcAcsRequest
 
 	private  $period;
 
+	private  $dryRun;
+
 	private  $tag5Key;
 
 	private  $ownerId;
@@ -266,6 +268,15 @@ class CreateInstanceRequest extends \RpcAcsRequest
 	public function setPeriod($period) {
 		$this->period = $period;
 		$this->queryParameters["Period"]=$period;
+	}
+
+	public function getDryRun() {
+		return $this->dryRun;
+	}
+
+	public function setDryRun($dryRun) {
+		$this->dryRun = $dryRun;
+		$this->queryParameters["DryRun"]=$dryRun;
 	}
 
 	public function getTag5Key() {

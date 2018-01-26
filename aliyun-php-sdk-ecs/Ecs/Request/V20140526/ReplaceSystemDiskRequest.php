@@ -43,13 +43,19 @@ class ReplaceSystemDiskRequest extends \RpcAcsRequest
 
 	private  $ownerId;
 
+	private  $platform;
+
 	private  $password;
 
 	private  $instanceId;
 
 	private  $systemDiskSize;
 
+	private  $diskId;
+
 	private  $useAdditionalService;
+
+	private  $architecture;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -123,6 +129,15 @@ class ReplaceSystemDiskRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
+	public function getPlatform() {
+		return $this->platform;
+	}
+
+	public function setPlatform($platform) {
+		$this->platform = $platform;
+		$this->queryParameters["Platform"]=$platform;
+	}
+
 	public function getPassword() {
 		return $this->password;
 	}
@@ -150,6 +165,15 @@ class ReplaceSystemDiskRequest extends \RpcAcsRequest
 		$this->queryParameters["SystemDisk.Size"]=$systemDiskSize;
 	}
 
+	public function getDiskId() {
+		return $this->diskId;
+	}
+
+	public function setDiskId($diskId) {
+		$this->diskId = $diskId;
+		$this->queryParameters["DiskId"]=$diskId;
+	}
+
 	public function getUseAdditionalService() {
 		return $this->useAdditionalService;
 	}
@@ -157,6 +181,15 @@ class ReplaceSystemDiskRequest extends \RpcAcsRequest
 	public function setUseAdditionalService($useAdditionalService) {
 		$this->useAdditionalService = $useAdditionalService;
 		$this->queryParameters["UseAdditionalService"]=$useAdditionalService;
+	}
+
+	public function getArchitecture() {
+		return $this->architecture;
+	}
+
+	public function setArchitecture($architecture) {
+		$this->architecture = $architecture;
+		$this->queryParameters["Architecture"]=$architecture;
 	}
 	
 }
