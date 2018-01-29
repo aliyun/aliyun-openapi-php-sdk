@@ -91,6 +91,8 @@ class PushRequest extends \RpcAcsRequest
 
 	private  $androidOpenUrl;
 
+	private  $androidNotificationChannel;
+
 	private  $androidRemind;
 
 	private  $androidActivity;
@@ -401,6 +403,15 @@ class PushRequest extends \RpcAcsRequest
 	public function setAndroidOpenUrl($androidOpenUrl) {
 		$this->androidOpenUrl = $androidOpenUrl;
 		$this->queryParameters["AndroidOpenUrl"]=$androidOpenUrl;
+	}
+
+	public function getAndroidNotificationChannel() {
+		return $this->androidNotificationChannel;
+	}
+
+	public function setAndroidNotificationChannel($androidNotificationChannel) {
+		$this->androidNotificationChannel = $androidNotificationChannel;
+		$this->queryParameters["AndroidNotificationChannel"]=$androidNotificationChannel;
 	}
 
 	public function getAndroidRemind() {
