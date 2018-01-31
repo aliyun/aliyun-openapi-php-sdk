@@ -17,41 +17,31 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Domain\Request\V20160511;
+namespace Domain\Request\V20180129;
 
 class QueryDomainListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Domain", "2016-05-11", "QueryDomainList");
+		parent::__construct("Domain", "2018-01-29", "QueryDomainList");
 		$this->setMethod("POST");
 	}
 
-	private  $productDomainType;
+	private  $endExpirationDate;
 
-	private  $regStartDate;
+	private  $productDomainType;
 
 	private  $orderKeyType;
 
-	private  $groupId;
-
-	private  $deadEndDate;
-
 	private  $domainName;
 
-	private  $startDate;
+	private  $startExpirationDate;
 
 	private  $pageNum;
 
 	private  $orderByType;
 
-	private  $regEndDate;
-
-	private  $endDate;
-
-	private  $domainType;
-
-	private  $deadStartDate;
+	private  $endRegistrationDate;
 
 	private  $userClientIp;
 
@@ -61,6 +51,17 @@ class QueryDomainListRequest extends \RpcAcsRequest
 
 	private  $queryType;
 
+	private  $startRegistrationDate;
+
+	public function getEndExpirationDate() {
+		return $this->endExpirationDate;
+	}
+
+	public function setEndExpirationDate($endExpirationDate) {
+		$this->endExpirationDate = $endExpirationDate;
+		$this->queryParameters["EndExpirationDate"]=$endExpirationDate;
+	}
+
 	public function getProductDomainType() {
 		return $this->productDomainType;
 	}
@@ -68,15 +69,6 @@ class QueryDomainListRequest extends \RpcAcsRequest
 	public function setProductDomainType($productDomainType) {
 		$this->productDomainType = $productDomainType;
 		$this->queryParameters["ProductDomainType"]=$productDomainType;
-	}
-
-	public function getRegStartDate() {
-		return $this->regStartDate;
-	}
-
-	public function setRegStartDate($regStartDate) {
-		$this->regStartDate = $regStartDate;
-		$this->queryParameters["RegStartDate"]=$regStartDate;
 	}
 
 	public function getOrderKeyType() {
@@ -88,24 +80,6 @@ class QueryDomainListRequest extends \RpcAcsRequest
 		$this->queryParameters["OrderKeyType"]=$orderKeyType;
 	}
 
-	public function getGroupId() {
-		return $this->groupId;
-	}
-
-	public function setGroupId($groupId) {
-		$this->groupId = $groupId;
-		$this->queryParameters["GroupId"]=$groupId;
-	}
-
-	public function getDeadEndDate() {
-		return $this->deadEndDate;
-	}
-
-	public function setDeadEndDate($deadEndDate) {
-		$this->deadEndDate = $deadEndDate;
-		$this->queryParameters["DeadEndDate"]=$deadEndDate;
-	}
-
 	public function getDomainName() {
 		return $this->domainName;
 	}
@@ -115,13 +89,13 @@ class QueryDomainListRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getStartDate() {
-		return $this->startDate;
+	public function getStartExpirationDate() {
+		return $this->startExpirationDate;
 	}
 
-	public function setStartDate($startDate) {
-		$this->startDate = $startDate;
-		$this->queryParameters["StartDate"]=$startDate;
+	public function setStartExpirationDate($startExpirationDate) {
+		$this->startExpirationDate = $startExpirationDate;
+		$this->queryParameters["StartExpirationDate"]=$startExpirationDate;
 	}
 
 	public function getPageNum() {
@@ -142,40 +116,13 @@ class QueryDomainListRequest extends \RpcAcsRequest
 		$this->queryParameters["OrderByType"]=$orderByType;
 	}
 
-	public function getRegEndDate() {
-		return $this->regEndDate;
+	public function getEndRegistrationDate() {
+		return $this->endRegistrationDate;
 	}
 
-	public function setRegEndDate($regEndDate) {
-		$this->regEndDate = $regEndDate;
-		$this->queryParameters["RegEndDate"]=$regEndDate;
-	}
-
-	public function getEndDate() {
-		return $this->endDate;
-	}
-
-	public function setEndDate($endDate) {
-		$this->endDate = $endDate;
-		$this->queryParameters["EndDate"]=$endDate;
-	}
-
-	public function getDomainType() {
-		return $this->domainType;
-	}
-
-	public function setDomainType($domainType) {
-		$this->domainType = $domainType;
-		$this->queryParameters["DomainType"]=$domainType;
-	}
-
-	public function getDeadStartDate() {
-		return $this->deadStartDate;
-	}
-
-	public function setDeadStartDate($deadStartDate) {
-		$this->deadStartDate = $deadStartDate;
-		$this->queryParameters["DeadStartDate"]=$deadStartDate;
+	public function setEndRegistrationDate($endRegistrationDate) {
+		$this->endRegistrationDate = $endRegistrationDate;
+		$this->queryParameters["EndRegistrationDate"]=$endRegistrationDate;
 	}
 
 	public function getUserClientIp() {
@@ -212,6 +159,15 @@ class QueryDomainListRequest extends \RpcAcsRequest
 	public function setQueryType($queryType) {
 		$this->queryType = $queryType;
 		$this->queryParameters["QueryType"]=$queryType;
+	}
+
+	public function getStartRegistrationDate() {
+		return $this->startRegistrationDate;
+	}
+
+	public function setStartRegistrationDate($startRegistrationDate) {
+		$this->startRegistrationDate = $startRegistrationDate;
+		$this->queryParameters["StartRegistrationDate"]=$startRegistrationDate;
 	}
 	
 }

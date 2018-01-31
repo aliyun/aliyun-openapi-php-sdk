@@ -17,53 +17,33 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Domain\Request\V20160511;
+namespace Domain\Request\V20180129;
 
-class SaveTaskForSubmittingDomainNameCredentialRequest extends \RpcAcsRequest
+class SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Domain", "2016-05-11", "SaveTaskForSubmittingDomainNameCredential");
+		parent::__construct("Domain", "2018-01-29", "SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileID");
 		$this->setMethod("POST");
 	}
 
-	private  $credentialNo;
-
-	private  $saleId;
-
-	private  $credential;
+	private  $instanceId;
 
 	private  $userClientIp;
 
 	private  $domainName;
 
+	private  $registrantProfileId;
+
 	private  $lang;
 
-	public function getCredentialNo() {
-		return $this->credentialNo;
+	public function getInstanceId() {
+		return $this->instanceId;
 	}
 
-	public function setCredentialNo($credentialNo) {
-		$this->credentialNo = $credentialNo;
-		$this->queryParameters["CredentialNo"]=$credentialNo;
-	}
-
-	public function getSaleId() {
-		return $this->saleId;
-	}
-
-	public function setSaleId($saleId) {
-		$this->saleId = $saleId;
-		$this->queryParameters["SaleId"]=$saleId;
-	}
-
-	public function getCredential() {
-		return $this->credential;
-	}
-
-	public function setCredential($credential) {
-		$this->credential = $credential;
-		$this->queryParameters["Credential"]=$credential;
+	public function setInstanceId($instanceId) {
+		$this->instanceId = $instanceId;
+		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 
 	public function getUserClientIp() {
@@ -82,6 +62,15 @@ class SaveTaskForSubmittingDomainNameCredentialRequest extends \RpcAcsRequest
 	public function setDomainName($domainName) {
 		$this->domainName = $domainName;
 		$this->queryParameters["DomainName"]=$domainName;
+	}
+
+	public function getRegistrantProfileId() {
+		return $this->registrantProfileId;
+	}
+
+	public function setRegistrantProfileId($registrantProfileId) {
+		$this->registrantProfileId = $registrantProfileId;
+		$this->queryParameters["RegistrantProfileId"]=$registrantProfileId;
 	}
 
 	public function getLang() {

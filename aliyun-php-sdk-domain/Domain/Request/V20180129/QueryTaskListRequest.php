@@ -17,25 +17,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Domain\Request\V20160511;
+namespace Domain\Request\V20180129;
 
-class QueryBatchTaskDetailListRequest extends \RpcAcsRequest
+class QueryTaskListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Domain", "2016-05-11", "QueryBatchTaskDetailList");
+		parent::__construct("Domain", "2018-01-29", "QueryTaskList");
 		$this->setMethod("POST");
 	}
 
-	private  $taskStatus;
+	private  $beginCreateTime;
 
-	private  $saleId;
+	private  $endCreateTime;
 
 	private  $userClientIp;
-
-	private  $taskNo;
-
-	private  $domainName;
 
 	private  $pageSize;
 
@@ -43,22 +39,22 @@ class QueryBatchTaskDetailListRequest extends \RpcAcsRequest
 
 	private  $pageNum;
 
-	public function getTaskStatus() {
-		return $this->taskStatus;
+	public function getBeginCreateTime() {
+		return $this->beginCreateTime;
 	}
 
-	public function setTaskStatus($taskStatus) {
-		$this->taskStatus = $taskStatus;
-		$this->queryParameters["TaskStatus"]=$taskStatus;
+	public function setBeginCreateTime($beginCreateTime) {
+		$this->beginCreateTime = $beginCreateTime;
+		$this->queryParameters["BeginCreateTime"]=$beginCreateTime;
 	}
 
-	public function getSaleId() {
-		return $this->saleId;
+	public function getEndCreateTime() {
+		return $this->endCreateTime;
 	}
 
-	public function setSaleId($saleId) {
-		$this->saleId = $saleId;
-		$this->queryParameters["SaleId"]=$saleId;
+	public function setEndCreateTime($endCreateTime) {
+		$this->endCreateTime = $endCreateTime;
+		$this->queryParameters["EndCreateTime"]=$endCreateTime;
 	}
 
 	public function getUserClientIp() {
@@ -68,24 +64,6 @@ class QueryBatchTaskDetailListRequest extends \RpcAcsRequest
 	public function setUserClientIp($userClientIp) {
 		$this->userClientIp = $userClientIp;
 		$this->queryParameters["UserClientIp"]=$userClientIp;
-	}
-
-	public function getTaskNo() {
-		return $this->taskNo;
-	}
-
-	public function setTaskNo($taskNo) {
-		$this->taskNo = $taskNo;
-		$this->queryParameters["TaskNo"]=$taskNo;
-	}
-
-	public function getDomainName() {
-		return $this->domainName;
-	}
-
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
 	}
 
 	public function getPageSize() {

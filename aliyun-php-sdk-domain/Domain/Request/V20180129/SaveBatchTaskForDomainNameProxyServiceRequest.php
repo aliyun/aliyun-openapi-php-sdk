@@ -17,43 +17,23 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Domain\Request\V20160511;
+namespace Domain\Request\V20180129;
 
-class WhoisProtectionRequest extends \RpcAcsRequest
+class SaveBatchTaskForDomainNameProxyServiceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Domain", "2016-05-11", "WhoisProtection");
+		parent::__construct("Domain", "2018-01-29", "SaveBatchTaskForDomainNameProxyService");
 		$this->setMethod("POST");
 	}
 
-	private  $whoisProtect;
-
-	private  $dataSource;
-
 	private  $userClientIp;
 
-	private  $dataContent;
+	private  $DomainNames;
 
 	private  $lang;
 
-	public function getWhoisProtect() {
-		return $this->whoisProtect;
-	}
-
-	public function setWhoisProtect($whoisProtect) {
-		$this->whoisProtect = $whoisProtect;
-		$this->queryParameters["WhoisProtect"]=$whoisProtect;
-	}
-
-	public function getDataSource() {
-		return $this->dataSource;
-	}
-
-	public function setDataSource($dataSource) {
-		$this->dataSource = $dataSource;
-		$this->queryParameters["DataSource"]=$dataSource;
-	}
+	private  $status;
 
 	public function getUserClientIp() {
 		return $this->userClientIp;
@@ -64,13 +44,15 @@ class WhoisProtectionRequest extends \RpcAcsRequest
 		$this->queryParameters["UserClientIp"]=$userClientIp;
 	}
 
-	public function getDataContent() {
-		return $this->dataContent;
+	public function getDomainNames() {
+		return $this->DomainNames;
 	}
 
-	public function setDataContent($dataContent) {
-		$this->dataContent = $dataContent;
-		$this->queryParameters["DataContent"]=$dataContent;
+	public function setDomainNames($DomainNames) {
+		$this->DomainNames = $DomainNames;
+		for ($i = 0; $i < count($DomainNames); $i ++) {	
+			$this->queryParameters["DomainName.".($i+1)] = $DomainNames[$i];
+		}
 	}
 
 	public function getLang() {
@@ -80,6 +62,15 @@ class WhoisProtectionRequest extends \RpcAcsRequest
 	public function setLang($lang) {
 		$this->lang = $lang;
 		$this->queryParameters["Lang"]=$lang;
+	}
+
+	public function getStatus() {
+		return $this->status;
+	}
+
+	public function setStatus($status) {
+		$this->status = $status;
+		$this->queryParameters["Status"]=$status;
 	}
 	
 }

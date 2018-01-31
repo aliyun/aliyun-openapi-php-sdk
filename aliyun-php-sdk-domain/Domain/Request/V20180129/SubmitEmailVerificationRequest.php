@@ -17,33 +17,31 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Domain\Request\V20160511;
+namespace Domain\Request\V20180129;
 
-class QueryFailReasonListRequest extends \RpcAcsRequest
+class SubmitEmailVerificationRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Domain", "2016-05-11", "QueryFailReasonList");
+		parent::__construct("Domain", "2018-01-29", "SubmitEmailVerification");
 		$this->setMethod("POST");
 	}
 
-	private  $saleId;
+	private  $sendIfExist;
 
 	private  $userClientIp;
 
-	private  $domainName;
-
 	private  $lang;
 
-	private  $contactTemplateId;
+	private  $email;
 
-	public function getSaleId() {
-		return $this->saleId;
+	public function getSendIfExist() {
+		return $this->sendIfExist;
 	}
 
-	public function setSaleId($saleId) {
-		$this->saleId = $saleId;
-		$this->queryParameters["SaleId"]=$saleId;
+	public function setSendIfExist($sendIfExist) {
+		$this->sendIfExist = $sendIfExist;
+		$this->queryParameters["SendIfExist"]=$sendIfExist;
 	}
 
 	public function getUserClientIp() {
@@ -55,15 +53,6 @@ class QueryFailReasonListRequest extends \RpcAcsRequest
 		$this->queryParameters["UserClientIp"]=$userClientIp;
 	}
 
-	public function getDomainName() {
-		return $this->domainName;
-	}
-
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
-
 	public function getLang() {
 		return $this->lang;
 	}
@@ -73,13 +62,13 @@ class QueryFailReasonListRequest extends \RpcAcsRequest
 		$this->queryParameters["Lang"]=$lang;
 	}
 
-	public function getContactTemplateId() {
-		return $this->contactTemplateId;
+	public function getEmail() {
+		return $this->email;
 	}
 
-	public function setContactTemplateId($contactTemplateId) {
-		$this->contactTemplateId = $contactTemplateId;
-		$this->queryParameters["ContactTemplateId"]=$contactTemplateId;
+	public function setEmail($email) {
+		$this->email = $email;
+		$this->queryParameters["Email"]=$email;
 	}
 	
 }

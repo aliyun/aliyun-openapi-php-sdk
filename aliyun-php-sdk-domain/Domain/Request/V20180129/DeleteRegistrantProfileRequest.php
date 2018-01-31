@@ -17,21 +17,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Domain\Request\V20160511;
+namespace Domain\Request\V20180129;
 
-class DeleteContactTemplateRequest extends \RpcAcsRequest
+class DeleteRegistrantProfileRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Domain", "2016-05-11", "DeleteContactTemplate");
+		parent::__construct("Domain", "2018-01-29", "DeleteRegistrantProfile");
 		$this->setMethod("POST");
 	}
 
 	private  $userClientIp;
 
-	private  $lang;
+	private  $registrantProfileId;
 
-	private  $contactTemplateId;
+	private  $lang;
 
 	public function getUserClientIp() {
 		return $this->userClientIp;
@@ -42,6 +42,15 @@ class DeleteContactTemplateRequest extends \RpcAcsRequest
 		$this->queryParameters["UserClientIp"]=$userClientIp;
 	}
 
+	public function getRegistrantProfileId() {
+		return $this->registrantProfileId;
+	}
+
+	public function setRegistrantProfileId($registrantProfileId) {
+		$this->registrantProfileId = $registrantProfileId;
+		$this->queryParameters["RegistrantProfileId"]=$registrantProfileId;
+	}
+
 	public function getLang() {
 		return $this->lang;
 	}
@@ -49,15 +58,6 @@ class DeleteContactTemplateRequest extends \RpcAcsRequest
 	public function setLang($lang) {
 		$this->lang = $lang;
 		$this->queryParameters["Lang"]=$lang;
-	}
-
-	public function getContactTemplateId() {
-		return $this->contactTemplateId;
-	}
-
-	public function setContactTemplateId($contactTemplateId) {
-		$this->contactTemplateId = $contactTemplateId;
-		$this->queryParameters["ContactTemplateId"]=$contactTemplateId;
 	}
 	
 }

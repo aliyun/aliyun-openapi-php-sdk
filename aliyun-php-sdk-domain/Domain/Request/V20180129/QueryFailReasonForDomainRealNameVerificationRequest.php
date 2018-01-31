@@ -17,17 +17,41 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Domain\Request\V20160511;
+namespace Domain\Request\V20180129;
 
-class CheckDomainRequest extends \RpcAcsRequest
+class QueryFailReasonForDomainRealNameVerificationRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Domain", "2016-05-11", "CheckDomain");
+		parent::__construct("Domain", "2018-01-29", "QueryFailReasonForDomainRealNameVerification");
 		$this->setMethod("POST");
 	}
 
+	private  $realNameVerificationAction;
+
+	private  $userClientIp;
+
 	private  $domainName;
+
+	private  $lang;
+
+	public function getRealNameVerificationAction() {
+		return $this->realNameVerificationAction;
+	}
+
+	public function setRealNameVerificationAction($realNameVerificationAction) {
+		$this->realNameVerificationAction = $realNameVerificationAction;
+		$this->queryParameters["RealNameVerificationAction"]=$realNameVerificationAction;
+	}
+
+	public function getUserClientIp() {
+		return $this->userClientIp;
+	}
+
+	public function setUserClientIp($userClientIp) {
+		$this->userClientIp = $userClientIp;
+		$this->queryParameters["UserClientIp"]=$userClientIp;
+	}
 
 	public function getDomainName() {
 		return $this->domainName;
@@ -36,6 +60,15 @@ class CheckDomainRequest extends \RpcAcsRequest
 	public function setDomainName($domainName) {
 		$this->domainName = $domainName;
 		$this->queryParameters["DomainName"]=$domainName;
+	}
+
+	public function getLang() {
+		return $this->lang;
+	}
+
+	public function setLang($lang) {
+		$this->lang = $lang;
+		$this->queryParameters["Lang"]=$lang;
 	}
 	
 }

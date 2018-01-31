@@ -17,42 +17,40 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Domain\Request\V20160511;
+namespace Domain\Request\V20180129;
 
-class SaveTaskForSubmittingDomainNameCredentialByTemplateIdRequest extends \RpcAcsRequest
+class CheckDomainRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Domain", "2016-05-11", "SaveTaskForSubmittingDomainNameCredentialByTemplateId");
+		parent::__construct("Domain", "2018-01-29", "CheckDomain");
 		$this->setMethod("POST");
 	}
 
-	private  $saleId;
+	private  $feeCurrency;
 
-	private  $userClientIp;
+	private  $feePeriod;
 
 	private  $domainName;
 
-	private  $lang;
+	private  $feeCommand;
 
-	private  $contactTemplateId;
-
-	public function getSaleId() {
-		return $this->saleId;
+	public function getFeeCurrency() {
+		return $this->feeCurrency;
 	}
 
-	public function setSaleId($saleId) {
-		$this->saleId = $saleId;
-		$this->queryParameters["SaleId"]=$saleId;
+	public function setFeeCurrency($feeCurrency) {
+		$this->feeCurrency = $feeCurrency;
+		$this->queryParameters["FeeCurrency"]=$feeCurrency;
 	}
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
+	public function getFeePeriod() {
+		return $this->feePeriod;
 	}
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
+	public function setFeePeriod($feePeriod) {
+		$this->feePeriod = $feePeriod;
+		$this->queryParameters["FeePeriod"]=$feePeriod;
 	}
 
 	public function getDomainName() {
@@ -64,22 +62,13 @@ class SaveTaskForSubmittingDomainNameCredentialByTemplateIdRequest extends \RpcA
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getLang() {
-		return $this->lang;
+	public function getFeeCommand() {
+		return $this->feeCommand;
 	}
 
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-
-	public function getContactTemplateId() {
-		return $this->contactTemplateId;
-	}
-
-	public function setContactTemplateId($contactTemplateId) {
-		$this->contactTemplateId = $contactTemplateId;
-		$this->queryParameters["ContactTemplateId"]=$contactTemplateId;
+	public function setFeeCommand($feeCommand) {
+		$this->feeCommand = $feeCommand;
+		$this->queryParameters["FeeCommand"]=$feeCommand;
 	}
 	
 }

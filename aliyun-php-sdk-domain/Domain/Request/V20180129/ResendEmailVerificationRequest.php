@@ -17,25 +17,47 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Domain\Request\V20160511;
+namespace Domain\Request\V20180129;
 
-class GetWhoisInfoRequest extends \RpcAcsRequest
+class ResendEmailVerificationRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Domain", "2016-05-11", "GetWhoisInfo");
+		parent::__construct("Domain", "2018-01-29", "ResendEmailVerification");
 		$this->setMethod("POST");
 	}
 
-	private  $domainName;
+	private  $userClientIp;
 
-	public function getDomainName() {
-		return $this->domainName;
+	private  $lang;
+
+	private  $email;
+
+	public function getUserClientIp() {
+		return $this->userClientIp;
 	}
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
+	public function setUserClientIp($userClientIp) {
+		$this->userClientIp = $userClientIp;
+		$this->queryParameters["UserClientIp"]=$userClientIp;
+	}
+
+	public function getLang() {
+		return $this->lang;
+	}
+
+	public function setLang($lang) {
+		$this->lang = $lang;
+		$this->queryParameters["Lang"]=$lang;
+	}
+
+	public function getEmail() {
+		return $this->email;
+	}
+
+	public function setEmail($email) {
+		$this->email = $email;
+		$this->queryParameters["Email"]=$email;
 	}
 	
 }

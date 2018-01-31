@@ -17,43 +17,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Domain\Request\V20160511;
+namespace Domain\Request\V20180129;
 
-class SaveContactTemplateCredentialRequest extends \RpcAcsRequest
+class DeleteEmailVerificationRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Domain", "2016-05-11", "SaveContactTemplateCredential");
+		parent::__construct("Domain", "2018-01-29", "DeleteEmailVerification");
 		$this->setMethod("POST");
 	}
-
-	private  $credentialNo;
-
-	private  $credential;
 
 	private  $userClientIp;
 
 	private  $lang;
 
-	private  $contactTemplateId;
-
-	public function getCredentialNo() {
-		return $this->credentialNo;
-	}
-
-	public function setCredentialNo($credentialNo) {
-		$this->credentialNo = $credentialNo;
-		$this->queryParameters["CredentialNo"]=$credentialNo;
-	}
-
-	public function getCredential() {
-		return $this->credential;
-	}
-
-	public function setCredential($credential) {
-		$this->credential = $credential;
-		$this->queryParameters["Credential"]=$credential;
-	}
+	private  $email;
 
 	public function getUserClientIp() {
 		return $this->userClientIp;
@@ -73,13 +51,13 @@ class SaveContactTemplateCredentialRequest extends \RpcAcsRequest
 		$this->queryParameters["Lang"]=$lang;
 	}
 
-	public function getContactTemplateId() {
-		return $this->contactTemplateId;
+	public function getEmail() {
+		return $this->email;
 	}
 
-	public function setContactTemplateId($contactTemplateId) {
-		$this->contactTemplateId = $contactTemplateId;
-		$this->queryParameters["ContactTemplateId"]=$contactTemplateId;
+	public function setEmail($email) {
+		$this->email = $email;
+		$this->queryParameters["Email"]=$email;
 	}
 	
 }

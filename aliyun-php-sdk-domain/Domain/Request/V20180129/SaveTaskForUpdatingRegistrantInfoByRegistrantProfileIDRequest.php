@@ -17,32 +17,25 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Domain\Request\V20160511;
+namespace Domain\Request\V20180129;
 
-class QueryContactRequest extends \RpcAcsRequest
+class SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Domain", "2016-05-11", "QueryContact");
+		parent::__construct("Domain", "2018-01-29", "SaveTaskForUpdatingRegistrantInfoByRegistrantProfileID");
 		$this->setMethod("POST");
 	}
 
-	private  $contactType;
-
 	private  $userClientIp;
 
-	private  $domainName;
+	private  $registrantProfileId;
+
+	private  $DomainNames;
+
+	private  $transferOutProhibited;
 
 	private  $lang;
-
-	public function getContactType() {
-		return $this->contactType;
-	}
-
-	public function setContactType($contactType) {
-		$this->contactType = $contactType;
-		$this->queryParameters["ContactType"]=$contactType;
-	}
 
 	public function getUserClientIp() {
 		return $this->userClientIp;
@@ -53,13 +46,33 @@ class QueryContactRequest extends \RpcAcsRequest
 		$this->queryParameters["UserClientIp"]=$userClientIp;
 	}
 
-	public function getDomainName() {
-		return $this->domainName;
+	public function getRegistrantProfileId() {
+		return $this->registrantProfileId;
 	}
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
+	public function setRegistrantProfileId($registrantProfileId) {
+		$this->registrantProfileId = $registrantProfileId;
+		$this->queryParameters["RegistrantProfileId"]=$registrantProfileId;
+	}
+
+	public function getDomainNames() {
+		return $this->DomainNames;
+	}
+
+	public function setDomainNames($DomainNames) {
+		$this->DomainNames = $DomainNames;
+		for ($i = 0; $i < count($DomainNames); $i ++) {	
+			$this->queryParameters["DomainName.".($i+1)] = $DomainNames[$i];
+		}
+	}
+
+	public function getTransferOutProhibited() {
+		return $this->transferOutProhibited;
+	}
+
+	public function setTransferOutProhibited($transferOutProhibited) {
+		$this->transferOutProhibited = $transferOutProhibited;
+		$this->queryParameters["TransferOutProhibited"]=$transferOutProhibited;
 	}
 
 	public function getLang() {

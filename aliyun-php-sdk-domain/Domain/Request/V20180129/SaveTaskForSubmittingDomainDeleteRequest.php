@@ -17,25 +17,47 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Domain\Request\V20160511;
+namespace Domain\Request\V20180129;
 
-class QueryOrderRequest extends \RpcAcsRequest
+class SaveTaskForSubmittingDomainDeleteRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Domain", "2016-05-11", "QueryOrder");
+		parent::__construct("Domain", "2018-01-29", "SaveTaskForSubmittingDomainDelete");
 		$this->setMethod("POST");
 	}
 
-	private  $orderID;
+	private  $instanceId;
 
-	public function getOrderID() {
-		return $this->orderID;
+	private  $userClientIp;
+
+	private  $lang;
+
+	public function getInstanceId() {
+		return $this->instanceId;
 	}
 
-	public function setOrderID($orderID) {
-		$this->orderID = $orderID;
-		$this->queryParameters["OrderID"]=$orderID;
+	public function setInstanceId($instanceId) {
+		$this->instanceId = $instanceId;
+		$this->queryParameters["InstanceId"]=$instanceId;
+	}
+
+	public function getUserClientIp() {
+		return $this->userClientIp;
+	}
+
+	public function setUserClientIp($userClientIp) {
+		$this->userClientIp = $userClientIp;
+		$this->queryParameters["UserClientIp"]=$userClientIp;
+	}
+
+	public function getLang() {
+		return $this->lang;
+	}
+
+	public function setLang($lang) {
+		$this->lang = $lang;
+		$this->queryParameters["Lang"]=$lang;
 	}
 	
 }

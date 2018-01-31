@@ -17,30 +17,23 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Domain\Request\V20160511;
+namespace Domain\Request\V20180129;
 
-class QueryDomainBySaleIdRequest extends \RpcAcsRequest
+class SaveBatchTaskForTransferProhibitionLockRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Domain", "2016-05-11", "QueryDomainBySaleId");
+		parent::__construct("Domain", "2018-01-29", "SaveBatchTaskForTransferProhibitionLock");
 		$this->setMethod("POST");
 	}
 
-	private  $saleId;
-
 	private  $userClientIp;
+
+	private  $DomainNames;
 
 	private  $lang;
 
-	public function getSaleId() {
-		return $this->saleId;
-	}
-
-	public function setSaleId($saleId) {
-		$this->saleId = $saleId;
-		$this->queryParameters["SaleId"]=$saleId;
-	}
+	private  $status;
 
 	public function getUserClientIp() {
 		return $this->userClientIp;
@@ -51,6 +44,17 @@ class QueryDomainBySaleIdRequest extends \RpcAcsRequest
 		$this->queryParameters["UserClientIp"]=$userClientIp;
 	}
 
+	public function getDomainNames() {
+		return $this->DomainNames;
+	}
+
+	public function setDomainNames($DomainNames) {
+		$this->DomainNames = $DomainNames;
+		for ($i = 0; $i < count($DomainNames); $i ++) {	
+			$this->queryParameters["DomainName.".($i+1)] = $DomainNames[$i];
+		}
+	}
+
 	public function getLang() {
 		return $this->lang;
 	}
@@ -58,6 +62,15 @@ class QueryDomainBySaleIdRequest extends \RpcAcsRequest
 	public function setLang($lang) {
 		$this->lang = $lang;
 		$this->queryParameters["Lang"]=$lang;
+	}
+
+	public function getStatus() {
+		return $this->status;
+	}
+
+	public function setStatus($status) {
+		$this->status = $status;
+		$this->queryParameters["Status"]=$status;
 	}
 	
 }

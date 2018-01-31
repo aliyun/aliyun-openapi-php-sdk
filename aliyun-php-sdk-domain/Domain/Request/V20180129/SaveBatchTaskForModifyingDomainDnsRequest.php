@@ -17,36 +17,25 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Domain\Request\V20160511;
+namespace Domain\Request\V20180129;
 
-class SaveTaskForModifyingDomainDnsRequest extends \RpcAcsRequest
+class SaveBatchTaskForModifyingDomainDnsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Domain", "2016-05-11", "SaveTaskForModifyingDomainDns");
+		parent::__construct("Domain", "2018-01-29", "SaveBatchTaskForModifyingDomainDns");
 		$this->setMethod("POST");
 	}
 
-	private  $saleId;
-
 	private  $userClientIp;
 
-	private  $domainName;
+	private  $DomainNames;
+
+	private  $DomainNameServers;
 
 	private  $lang;
 
 	private  $aliyunDns;
-
-	private  $DnsLists;
-
-	public function getSaleId() {
-		return $this->saleId;
-	}
-
-	public function setSaleId($saleId) {
-		$this->saleId = $saleId;
-		$this->queryParameters["SaleId"]=$saleId;
-	}
 
 	public function getUserClientIp() {
 		return $this->userClientIp;
@@ -57,13 +46,26 @@ class SaveTaskForModifyingDomainDnsRequest extends \RpcAcsRequest
 		$this->queryParameters["UserClientIp"]=$userClientIp;
 	}
 
-	public function getDomainName() {
-		return $this->domainName;
+	public function getDomainNames() {
+		return $this->DomainNames;
 	}
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
+	public function setDomainNames($DomainNames) {
+		$this->DomainNames = $DomainNames;
+		for ($i = 0; $i < count($DomainNames); $i ++) {	
+			$this->queryParameters["DomainName.".($i+1)] = $DomainNames[$i];
+		}
+	}
+
+	public function getDomainNameServers() {
+		return $this->DomainNameServers;
+	}
+
+	public function setDomainNameServers($DomainNameServers) {
+		$this->DomainNameServers = $DomainNameServers;
+		for ($i = 0; $i < count($DomainNameServers); $i ++) {	
+			$this->queryParameters["DomainNameServer.".($i+1)] = $DomainNameServers[$i];
+		}
 	}
 
 	public function getLang() {
@@ -82,17 +84,6 @@ class SaveTaskForModifyingDomainDnsRequest extends \RpcAcsRequest
 	public function setAliyunDns($aliyunDns) {
 		$this->aliyunDns = $aliyunDns;
 		$this->queryParameters["AliyunDns"]=$aliyunDns;
-	}
-
-	public function getDnsLists() {
-		return $this->DnsLists;
-	}
-
-	public function setDnsLists($DnsLists) {
-		$this->DnsLists = $DnsLists;
-		for ($i = 0; $i < count($DnsLists); $i ++) {	
-			$this->queryParameters["DnsList.".($i+1)] = $DnsLists[$i];
-		}
 	}
 	
 }

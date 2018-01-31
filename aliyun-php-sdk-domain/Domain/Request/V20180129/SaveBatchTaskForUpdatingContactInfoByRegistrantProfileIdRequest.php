@@ -17,38 +17,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Domain\Request\V20160511;
+namespace Domain\Request\V20180129;
 
-class SaveTaskForUpdatingContactByTemplateIdRequest extends \RpcAcsRequest
+class SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Domain", "2016-05-11", "SaveTaskForUpdatingContactByTemplateId");
+		parent::__construct("Domain", "2018-01-29", "SaveBatchTaskForUpdatingContactInfoByRegistrantProfileId");
 		$this->setMethod("POST");
 	}
-
-	private  $saleId;
 
 	private  $contactType;
 
 	private  $userClientIp;
 
-	private  $domainName;
+	private  $registrantProfileId;
 
-	private  $addTransferLock;
+	private  $DomainNames;
+
+	private  $transferOutProhibited;
 
 	private  $lang;
-
-	private  $contactTemplateId;
-
-	public function getSaleId() {
-		return $this->saleId;
-	}
-
-	public function setSaleId($saleId) {
-		$this->saleId = $saleId;
-		$this->queryParameters["SaleId"]=$saleId;
-	}
 
 	public function getContactType() {
 		return $this->contactType;
@@ -68,22 +57,33 @@ class SaveTaskForUpdatingContactByTemplateIdRequest extends \RpcAcsRequest
 		$this->queryParameters["UserClientIp"]=$userClientIp;
 	}
 
-	public function getDomainName() {
-		return $this->domainName;
+	public function getRegistrantProfileId() {
+		return $this->registrantProfileId;
 	}
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
+	public function setRegistrantProfileId($registrantProfileId) {
+		$this->registrantProfileId = $registrantProfileId;
+		$this->queryParameters["RegistrantProfileId"]=$registrantProfileId;
 	}
 
-	public function getAddTransferLock() {
-		return $this->addTransferLock;
+	public function getDomainNames() {
+		return $this->DomainNames;
 	}
 
-	public function setAddTransferLock($addTransferLock) {
-		$this->addTransferLock = $addTransferLock;
-		$this->queryParameters["AddTransferLock"]=$addTransferLock;
+	public function setDomainNames($DomainNames) {
+		$this->DomainNames = $DomainNames;
+		for ($i = 0; $i < count($DomainNames); $i ++) {	
+			$this->queryParameters["DomainName.".($i+1)] = $DomainNames[$i];
+		}
+	}
+
+	public function getTransferOutProhibited() {
+		return $this->transferOutProhibited;
+	}
+
+	public function setTransferOutProhibited($transferOutProhibited) {
+		$this->transferOutProhibited = $transferOutProhibited;
+		$this->queryParameters["TransferOutProhibited"]=$transferOutProhibited;
 	}
 
 	public function getLang() {
@@ -93,15 +93,6 @@ class SaveTaskForUpdatingContactByTemplateIdRequest extends \RpcAcsRequest
 	public function setLang($lang) {
 		$this->lang = $lang;
 		$this->queryParameters["Lang"]=$lang;
-	}
-
-	public function getContactTemplateId() {
-		return $this->contactTemplateId;
-	}
-
-	public function setContactTemplateId($contactTemplateId) {
-		$this->contactTemplateId = $contactTemplateId;
-		$this->queryParameters["ContactTemplateId"]=$contactTemplateId;
 	}
 	
 }

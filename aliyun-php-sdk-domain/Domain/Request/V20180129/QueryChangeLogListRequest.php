@@ -17,25 +17,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Domain\Request\V20160511;
+namespace Domain\Request\V20180129;
 
-class QueryContactTemplateRequest extends \RpcAcsRequest
+class QueryChangeLogListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Domain", "2016-05-11", "QueryContactTemplate");
+		parent::__construct("Domain", "2018-01-29", "QueryChangeLogList");
 		$this->setMethod("POST");
 	}
 
-	private  $cCompany;
-
-	private  $auditStatus;
-
-	private  $defaultTemplate;
-
-	private  $eCompany;
+	private  $endDate;
 
 	private  $userClientIp;
+
+	private  $domainName;
 
 	private  $pageSize;
 
@@ -43,44 +39,15 @@ class QueryContactTemplateRequest extends \RpcAcsRequest
 
 	private  $pageNum;
 
-	private  $contactTemplateId;
+	private  $startDate;
 
-	private  $regType;
-
-	public function getCCompany() {
-		return $this->cCompany;
+	public function getEndDate() {
+		return $this->endDate;
 	}
 
-	public function setCCompany($cCompany) {
-		$this->cCompany = $cCompany;
-		$this->queryParameters["CCompany"]=$cCompany;
-	}
-
-	public function getAuditStatus() {
-		return $this->auditStatus;
-	}
-
-	public function setAuditStatus($auditStatus) {
-		$this->auditStatus = $auditStatus;
-		$this->queryParameters["AuditStatus"]=$auditStatus;
-	}
-
-	public function getDefaultTemplate() {
-		return $this->defaultTemplate;
-	}
-
-	public function setDefaultTemplate($defaultTemplate) {
-		$this->defaultTemplate = $defaultTemplate;
-		$this->queryParameters["DefaultTemplate"]=$defaultTemplate;
-	}
-
-	public function getECompany() {
-		return $this->eCompany;
-	}
-
-	public function setECompany($eCompany) {
-		$this->eCompany = $eCompany;
-		$this->queryParameters["ECompany"]=$eCompany;
+	public function setEndDate($endDate) {
+		$this->endDate = $endDate;
+		$this->queryParameters["EndDate"]=$endDate;
 	}
 
 	public function getUserClientIp() {
@@ -90,6 +57,15 @@ class QueryContactTemplateRequest extends \RpcAcsRequest
 	public function setUserClientIp($userClientIp) {
 		$this->userClientIp = $userClientIp;
 		$this->queryParameters["UserClientIp"]=$userClientIp;
+	}
+
+	public function getDomainName() {
+		return $this->domainName;
+	}
+
+	public function setDomainName($domainName) {
+		$this->domainName = $domainName;
+		$this->queryParameters["DomainName"]=$domainName;
 	}
 
 	public function getPageSize() {
@@ -119,22 +95,13 @@ class QueryContactTemplateRequest extends \RpcAcsRequest
 		$this->queryParameters["PageNum"]=$pageNum;
 	}
 
-	public function getContactTemplateId() {
-		return $this->contactTemplateId;
+	public function getStartDate() {
+		return $this->startDate;
 	}
 
-	public function setContactTemplateId($contactTemplateId) {
-		$this->contactTemplateId = $contactTemplateId;
-		$this->queryParameters["ContactTemplateId"]=$contactTemplateId;
-	}
-
-	public function getRegType() {
-		return $this->regType;
-	}
-
-	public function setRegType($regType) {
-		$this->regType = $regType;
-		$this->queryParameters["RegType"]=$regType;
+	public function setStartDate($startDate) {
+		$this->startDate = $startDate;
+		$this->queryParameters["StartDate"]=$startDate;
 	}
 	
 }

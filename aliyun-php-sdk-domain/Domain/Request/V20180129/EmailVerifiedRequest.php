@@ -17,45 +17,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Domain\Request\V20160511;
+namespace Domain\Request\V20180129;
 
-class QueryBatchTaskListRequest extends \RpcAcsRequest
+class EmailVerifiedRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Domain", "2016-05-11", "QueryBatchTaskList");
+		parent::__construct("Domain", "2018-01-29", "EmailVerified");
 		$this->setMethod("POST");
 	}
 
-	private  $beginCreateTime;
-
-	private  $endCreateTime;
-
 	private  $userClientIp;
-
-	private  $pageSize;
 
 	private  $lang;
 
-	private  $pageNum;
-
-	public function getBeginCreateTime() {
-		return $this->beginCreateTime;
-	}
-
-	public function setBeginCreateTime($beginCreateTime) {
-		$this->beginCreateTime = $beginCreateTime;
-		$this->queryParameters["BeginCreateTime"]=$beginCreateTime;
-	}
-
-	public function getEndCreateTime() {
-		return $this->endCreateTime;
-	}
-
-	public function setEndCreateTime($endCreateTime) {
-		$this->endCreateTime = $endCreateTime;
-		$this->queryParameters["EndCreateTime"]=$endCreateTime;
-	}
+	private  $email;
 
 	public function getUserClientIp() {
 		return $this->userClientIp;
@@ -64,15 +40,6 @@ class QueryBatchTaskListRequest extends \RpcAcsRequest
 	public function setUserClientIp($userClientIp) {
 		$this->userClientIp = $userClientIp;
 		$this->queryParameters["UserClientIp"]=$userClientIp;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
 	public function getLang() {
@@ -84,13 +51,13 @@ class QueryBatchTaskListRequest extends \RpcAcsRequest
 		$this->queryParameters["Lang"]=$lang;
 	}
 
-	public function getPageNum() {
-		return $this->pageNum;
+	public function getEmail() {
+		return $this->email;
 	}
 
-	public function setPageNum($pageNum) {
-		$this->pageNum = $pageNum;
-		$this->queryParameters["PageNum"]=$pageNum;
+	public function setEmail($email) {
+		$this->email = $email;
+		$this->queryParameters["Email"]=$email;
 	}
 	
 }
