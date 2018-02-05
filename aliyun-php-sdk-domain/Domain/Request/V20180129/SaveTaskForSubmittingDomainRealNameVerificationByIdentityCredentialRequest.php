@@ -63,8 +63,7 @@ class SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest
 
 	public function setIdentityCredential($identityCredential) {
 		$this->identityCredential = $identityCredential;
-		$this->queryParameters["IdentityCredential"]=$identityCredential;
-	}
+		}
 
 	public function getDomainNames() {
 		return $this->DomainNames;

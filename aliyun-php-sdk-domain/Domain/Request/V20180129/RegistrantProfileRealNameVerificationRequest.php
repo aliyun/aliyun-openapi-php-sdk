@@ -72,8 +72,7 @@ class RegistrantProfileRealNameVerificationRequest extends \RpcAcsRequest
 
 	public function setIdentityCredential($identityCredential) {
 		$this->identityCredential = $identityCredential;
-		$this->queryParameters["IdentityCredential"]=$identityCredential;
-	}
+		}
 
 	public function getLang() {
 		return $this->lang;

@@ -155,8 +155,7 @@ class SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest extends \RpcA
 
 	public function setIdentityCredential($identityCredential) {
 		$this->identityCredential = $identityCredential;
-		$this->queryParameters["IdentityCredential"]=$identityCredential;
-	}
+		}
 
 	public function getTelephone() {
 		return $this->telephone;
