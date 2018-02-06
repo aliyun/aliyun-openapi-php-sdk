@@ -49,6 +49,8 @@ class ModifyInstanceChargeTypeRequest extends \RpcAcsRequest
 
 	private  $instanceIds;
 
+	private  $instanceChargeType;
+
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
 	}
@@ -146,6 +148,15 @@ class ModifyInstanceChargeTypeRequest extends \RpcAcsRequest
 	public function setInstanceIds($instanceIds) {
 		$this->instanceIds = $instanceIds;
 		$this->queryParameters["InstanceIds"]=$instanceIds;
+	}
+
+	public function getInstanceChargeType() {
+		return $this->instanceChargeType;
+	}
+
+	public function setInstanceChargeType($instanceChargeType) {
+		$this->instanceChargeType = $instanceChargeType;
+		$this->queryParameters["InstanceChargeType"]=$instanceChargeType;
 	}
 	
 }

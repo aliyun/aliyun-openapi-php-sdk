@@ -19,31 +19,31 @@
  */
 namespace Ecs\Request\V20140526;
 
-class ModifyPrepayInstanceSpecRequest extends \RpcAcsRequest
+class DescribeResourcesModificationRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "ModifyPrepayInstanceSpec", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "DescribeResourcesModification", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
-	private  $instanceId;
-
-	private  $autoPay;
-
-	private  $resourceOwnerAccount;
-
-	private  $clientToken;
-
-	private  $ownerAccount;
+	private  $migrateAcrossZone;
 
 	private  $instanceType;
 
+	private  $resourceId;
+
+	private  $resourceOwnerAccount;
+
+	private  $ownerAccount;
+
+	private  $operationType;
+
 	private  $ownerId;
 
-	private  $operatorType;
+	private  $destinationResource;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -54,49 +54,13 @@ class ModifyPrepayInstanceSpecRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getInstanceId() {
-		return $this->instanceId;
+	public function getMigrateAcrossZone() {
+		return $this->migrateAcrossZone;
 	}
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
-
-	public function getAutoPay() {
-		return $this->autoPay;
-	}
-
-	public function setAutoPay($autoPay) {
-		$this->autoPay = $autoPay;
-		$this->queryParameters["AutoPay"]=$autoPay;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getClientToken() {
-		return $this->clientToken;
-	}
-
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setMigrateAcrossZone($migrateAcrossZone) {
+		$this->migrateAcrossZone = $migrateAcrossZone;
+		$this->queryParameters["MigrateAcrossZone"]=$migrateAcrossZone;
 	}
 
 	public function getInstanceType() {
@@ -108,6 +72,42 @@ class ModifyPrepayInstanceSpecRequest extends \RpcAcsRequest
 		$this->queryParameters["InstanceType"]=$instanceType;
 	}
 
+	public function getResourceId() {
+		return $this->resourceId;
+	}
+
+	public function setResourceId($resourceId) {
+		$this->resourceId = $resourceId;
+		$this->queryParameters["ResourceId"]=$resourceId;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getOperationType() {
+		return $this->operationType;
+	}
+
+	public function setOperationType($operationType) {
+		$this->operationType = $operationType;
+		$this->queryParameters["OperationType"]=$operationType;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -117,13 +117,13 @@ class ModifyPrepayInstanceSpecRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getOperatorType() {
-		return $this->operatorType;
+	public function getDestinationResource() {
+		return $this->destinationResource;
 	}
 
-	public function setOperatorType($operatorType) {
-		$this->operatorType = $operatorType;
-		$this->queryParameters["OperatorType"]=$operatorType;
+	public function setDestinationResource($destinationResource) {
+		$this->destinationResource = $destinationResource;
+		$this->queryParameters["DestinationResource"]=$destinationResource;
 	}
 	
 }
