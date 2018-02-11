@@ -23,7 +23,7 @@ class DescribeLiveStreamOnlineUserNumRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "DescribeLiveStreamOnlineUserNum");
+		parent::__construct("live", "2016-11-01", "DescribeLiveStreamOnlineUserNum", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 

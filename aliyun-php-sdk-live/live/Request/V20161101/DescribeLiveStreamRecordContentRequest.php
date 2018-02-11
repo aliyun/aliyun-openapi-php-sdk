@@ -23,7 +23,7 @@ class DescribeLiveStreamRecordContentRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "DescribeLiveStreamRecordContent");
+		parent::__construct("live", "2016-11-01", "DescribeLiveStreamRecordContent", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 

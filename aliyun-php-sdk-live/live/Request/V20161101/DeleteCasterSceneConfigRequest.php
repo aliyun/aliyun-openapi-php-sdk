@@ -23,7 +23,7 @@ class DeleteCasterSceneConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "DeleteCasterSceneConfig");
+		parent::__construct("live", "2016-11-01", "DeleteCasterSceneConfig", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 

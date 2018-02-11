@@ -23,7 +23,7 @@ class AddLiveMixConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "AddLiveMixConfig");
+		parent::__construct("live", "2016-11-01", "AddLiveMixConfig", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 

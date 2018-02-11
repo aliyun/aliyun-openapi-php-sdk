@@ -23,7 +23,7 @@ class DescribeLiveStreamsBlockListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "DescribeLiveStreamsBlockList");
+		parent::__construct("live", "2016-11-01", "DescribeLiveStreamsBlockList", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -31,7 +31,11 @@ class DescribeLiveStreamsBlockListRequest extends \RpcAcsRequest
 
 	private  $domainName;
 
+	private  $pageSize;
+
 	private  $ownerId;
+
+	private  $pageNum;
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -51,6 +55,15 @@ class DescribeLiveStreamsBlockListRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -58,6 +71,15 @@ class DescribeLiveStreamsBlockListRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getPageNum() {
+		return $this->pageNum;
+	}
+
+	public function setPageNum($pageNum) {
+		$this->pageNum = $pageNum;
+		$this->queryParameters["PageNum"]=$pageNum;
 	}
 	
 }

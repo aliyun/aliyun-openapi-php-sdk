@@ -23,7 +23,7 @@ class AddCasterComponentRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "AddCasterComponent");
+		parent::__construct("live", "2016-11-01", "AddCasterComponent", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 

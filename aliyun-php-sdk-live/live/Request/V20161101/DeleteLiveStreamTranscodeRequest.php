@@ -23,7 +23,7 @@ class DeleteLiveStreamTranscodeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "DeleteLiveStreamTranscode");
+		parent::__construct("live", "2016-11-01", "DeleteLiveStreamTranscode", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 

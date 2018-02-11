@@ -23,7 +23,7 @@ class DeleteLiveSnapshotDetectPornConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "DeleteLiveSnapshotDetectPornConfig");
+		parent::__construct("live", "2016-11-01", "DeleteLiveSnapshotDetectPornConfig", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 

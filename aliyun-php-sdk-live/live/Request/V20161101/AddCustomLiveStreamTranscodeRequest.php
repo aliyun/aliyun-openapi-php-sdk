@@ -23,7 +23,7 @@ class AddCustomLiveStreamTranscodeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "AddCustomLiveStreamTranscode");
+		parent::__construct("live", "2016-11-01", "AddCustomLiveStreamTranscode", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 

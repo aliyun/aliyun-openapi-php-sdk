@@ -23,7 +23,7 @@ class StartMultipleStreamMixServiceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "StartMultipleStreamMixService");
+		parent::__construct("live", "2016-11-01", "StartMultipleStreamMixService", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 

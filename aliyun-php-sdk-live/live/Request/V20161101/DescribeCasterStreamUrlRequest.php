@@ -23,7 +23,7 @@ class DescribeCasterStreamUrlRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "DescribeCasterStreamUrl");
+		parent::__construct("live", "2016-11-01", "DescribeCasterStreamUrl", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class RemoveMultipleStreamMixServiceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "RemoveMultipleStreamMixService");
+		parent::__construct("live", "2016-11-01", "RemoveMultipleStreamMixService", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 

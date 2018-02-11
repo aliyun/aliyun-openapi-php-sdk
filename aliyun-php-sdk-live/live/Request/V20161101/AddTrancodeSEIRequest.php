@@ -19,29 +19,55 @@
  */
 namespace live\Request\V20161101;
 
-class UpdateLiveDetectNotifyConfigRequest extends \RpcAcsRequest
+class AddTrancodeSEIRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "UpdateLiveDetectNotifyConfig", "live", "openAPI");
+		parent::__construct("live", "2016-11-01", "AddTrancodeSEI", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $securityToken;
+	private  $delay;
+
+	private  $appName;
+
+	private  $repeat;
 
 	private  $domainName;
 
-	private  $notifyUrl;
+	private  $pattern;
+
+	private  $text;
 
 	private  $ownerId;
 
-	public function getSecurityToken() {
-		return $this->securityToken;
+	private  $streamName;
+
+	public function getDelay() {
+		return $this->delay;
 	}
 
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
+	public function setDelay($delay) {
+		$this->delay = $delay;
+		$this->queryParameters["Delay"]=$delay;
+	}
+
+	public function getAppName() {
+		return $this->appName;
+	}
+
+	public function setAppName($appName) {
+		$this->appName = $appName;
+		$this->queryParameters["AppName"]=$appName;
+	}
+
+	public function getRepeat() {
+		return $this->repeat;
+	}
+
+	public function setRepeat($repeat) {
+		$this->repeat = $repeat;
+		$this->queryParameters["Repeat"]=$repeat;
 	}
 
 	public function getDomainName() {
@@ -53,13 +79,22 @@ class UpdateLiveDetectNotifyConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getNotifyUrl() {
-		return $this->notifyUrl;
+	public function getPattern() {
+		return $this->pattern;
 	}
 
-	public function setNotifyUrl($notifyUrl) {
-		$this->notifyUrl = $notifyUrl;
-		$this->queryParameters["NotifyUrl"]=$notifyUrl;
+	public function setPattern($pattern) {
+		$this->pattern = $pattern;
+		$this->queryParameters["Pattern"]=$pattern;
+	}
+
+	public function getText() {
+		return $this->text;
+	}
+
+	public function setText($text) {
+		$this->text = $text;
+		$this->queryParameters["Text"]=$text;
 	}
 
 	public function getOwnerId() {
@@ -69,6 +104,15 @@ class UpdateLiveDetectNotifyConfigRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getStreamName() {
+		return $this->streamName;
+	}
+
+	public function setStreamName($streamName) {
+		$this->streamName = $streamName;
+		$this->queryParameters["StreamName"]=$streamName;
 	}
 	
 }
