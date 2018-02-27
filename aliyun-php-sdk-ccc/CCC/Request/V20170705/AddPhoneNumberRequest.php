@@ -23,7 +23,7 @@ class AddPhoneNumberRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CCC", "2017-07-05", "AddPhoneNumber", "ccc", "openAPI");
+		parent::__construct("CCC", "2017-07-05", "AddPhoneNumber", "CCC", "openAPI");
 		$this->setMethod("POST");
 	}
 

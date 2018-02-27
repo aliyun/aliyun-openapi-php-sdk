@@ -23,7 +23,7 @@ class GetConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CCC", "2017-07-05", "GetConfig", "ccc", "openAPI");
+		parent::__construct("CCC", "2017-07-05", "GetConfig", "CCC", "openAPI");
 		$this->setMethod("POST");
 	}
 

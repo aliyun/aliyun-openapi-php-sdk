@@ -23,7 +23,7 @@ class GetServiceExtensionsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CCC", "2017-07-05", "GetServiceExtensions", "ccc", "openAPI");
+		parent::__construct("CCC", "2017-07-05", "GetServiceExtensions", "CCC", "openAPI");
 		$this->setMethod("POST");
 	}
 

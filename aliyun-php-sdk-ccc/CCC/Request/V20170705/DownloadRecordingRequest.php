@@ -23,7 +23,7 @@ class DownloadRecordingRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CCC", "2017-07-05", "DownloadRecording", "ccc", "openAPI");
+		parent::__construct("CCC", "2017-07-05", "DownloadRecording", "CCC", "openAPI");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class RefreshTokenRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CCC", "2017-07-05", "RefreshToken", "ccc", "openAPI");
+		parent::__construct("CCC", "2017-07-05", "RefreshToken", "CCC", "openAPI");
 		$this->setMethod("POST");
 	}
 

@@ -19,17 +19,17 @@
  */
 namespace CCC\Request\V20170705;
 
-class RemoveUsersRequest extends \RpcAcsRequest
+class ListRecordingsByContactIdRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CCC", "2017-07-05", "RemoveUsers", "ccc", "openAPI");
+		parent::__construct("CCC", "2017-07-05", "ListRecordingsByContactId", "CCC", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $instanceId;
 
-	private  $UserIds;
+	private  $contactId;
 
 	public function getInstanceId() {
 		return $this->instanceId;
@@ -40,15 +40,13 @@ class RemoveUsersRequest extends \RpcAcsRequest
 		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 
-	public function getUserIds() {
-		return $this->UserIds;
+	public function getContactId() {
+		return $this->contactId;
 	}
 
-	public function setUserIds($UserIds) {
-		$this->UserIds = $UserIds;
-		for ($i = 0; $i < count($UserIds); $i ++) {	
-			$this->queryParameters["UserId.".($i+1)] = $UserIds[$i];
-		}
+	public function setContactId($contactId) {
+		$this->contactId = $contactId;
+		$this->queryParameters["ContactId"]=$contactId;
 	}
 	
 }

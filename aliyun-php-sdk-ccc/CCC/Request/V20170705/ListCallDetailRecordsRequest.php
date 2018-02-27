@@ -23,11 +23,15 @@ class ListCallDetailRecordsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CCC", "2017-07-05", "ListCallDetailRecords", "ccc", "openAPI");
+		parent::__construct("CCC", "2017-07-05", "ListCallDetailRecords", "CCC", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $instanceId;
+
+	private  $contactDisposition;
+
+	private  $contactType;
 
 	private  $criteria;
 
@@ -41,6 +45,8 @@ class ListCallDetailRecordsRequest extends \RpcAcsRequest
 
 	private  $pageNumber;
 
+	private  $withRecording;
+
 	public function getInstanceId() {
 		return $this->instanceId;
 	}
@@ -48,6 +54,24 @@ class ListCallDetailRecordsRequest extends \RpcAcsRequest
 	public function setInstanceId($instanceId) {
 		$this->instanceId = $instanceId;
 		$this->queryParameters["InstanceId"]=$instanceId;
+	}
+
+	public function getContactDisposition() {
+		return $this->contactDisposition;
+	}
+
+	public function setContactDisposition($contactDisposition) {
+		$this->contactDisposition = $contactDisposition;
+		$this->queryParameters["ContactDisposition"]=$contactDisposition;
+	}
+
+	public function getContactType() {
+		return $this->contactType;
+	}
+
+	public function setContactType($contactType) {
+		$this->contactType = $contactType;
+		$this->queryParameters["ContactType"]=$contactType;
 	}
 
 	public function getCriteria() {
@@ -102,6 +126,15 @@ class ListCallDetailRecordsRequest extends \RpcAcsRequest
 	public function setPageNumber($pageNumber) {
 		$this->pageNumber = $pageNumber;
 		$this->queryParameters["PageNumber"]=$pageNumber;
+	}
+
+	public function getWithRecording() {
+		return $this->withRecording;
+	}
+
+	public function setWithRecording($withRecording) {
+		$this->withRecording = $withRecording;
+		$this->queryParameters["WithRecording"]=$withRecording;
 	}
 	
 }
