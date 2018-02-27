@@ -19,18 +19,49 @@
  */
 namespace CS\Request\V20151215;
 
-class GetTriggerHookRequest extends \RoaAcsRequest
+class DeleteClusterNodeRequest extends \RoaAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CS", "2015-12-15", "GetTriggerHook");
-		$this->setUriPattern("/hook/trigger/[ClusterId]/[ProjectId]");
-		$this->setMethod("GET");
+		parent::__construct("CS", "2015-12-15", "DeleteClusterNode");
+		$this->setUriPattern("/clusters/[ClusterId]/ip/[Ip]");
+		$this->setMethod("DELETE");
 	}
+
+	private  $releaseInstance;
+
+	private  $ip;
+
+	private  $force;
 
 	private  $clusterId;
 
-	private  $projectId;
+	public function getreleaseInstance() {
+		return $this->releaseInstance;
+	}
+
+	public function setreleaseInstance($releaseInstance) {
+		$this->releaseInstance = $releaseInstance;
+		$this->queryParameters["releaseInstance"]=$releaseInstance;
+	}
+
+	public function getIp() {
+		return $this->ip;
+	}
+
+	public function setIp($ip) {
+		$this->ip = $ip;
+		$this->pathParameters["Ip"]=$ip;
+	}
+
+	public function getforce() {
+		return $this->force;
+	}
+
+	public function setforce($force) {
+		$this->force = $force;
+		$this->queryParameters["force"]=$force;
+	}
 
 	public function getClusterId() {
 		return $this->clusterId;
@@ -39,15 +70,6 @@ class GetTriggerHookRequest extends \RoaAcsRequest
 	public function setClusterId($clusterId) {
 		$this->clusterId = $clusterId;
 		$this->pathParameters["ClusterId"]=$clusterId;
-	}
-
-	public function getProjectId() {
-		return $this->projectId;
-	}
-
-	public function setProjectId($projectId) {
-		$this->projectId = $projectId;
-		$this->pathParameters["ProjectId"]=$projectId;
 	}
 	
 }

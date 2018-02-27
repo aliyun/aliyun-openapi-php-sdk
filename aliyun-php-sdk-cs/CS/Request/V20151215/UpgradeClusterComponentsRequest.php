@@ -19,13 +19,35 @@
  */
 namespace CS\Request\V20151215;
 
-class ModifyClusterNameRequest extends \RoaAcsRequest
+class UpgradeClusterComponentsRequest extends \RoaAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CS", "2015-12-15", "ModifyClusterName");
-		$this->setUriPattern("/clusters/[ClusterId]/name/[ClusterName]");
+		parent::__construct("CS", "2015-12-15", "UpgradeClusterComponents");
+		$this->setUriPattern("/clusters/[ClusterId]/components/[ComponentId]/upgrade");
 		$this->setMethod("POST");
+	}
+
+	private  $componentId;
+
+	private  $clusterId;
+
+	public function getComponentId() {
+		return $this->componentId;
+	}
+
+	public function setComponentId($componentId) {
+		$this->componentId = $componentId;
+		$this->pathParameters["ComponentId"]=$componentId;
+	}
+
+	public function getClusterId() {
+		return $this->clusterId;
+	}
+
+	public function setClusterId($clusterId) {
+		$this->clusterId = $clusterId;
+		$this->pathParameters["ClusterId"]=$clusterId;
 	}
 	
 }

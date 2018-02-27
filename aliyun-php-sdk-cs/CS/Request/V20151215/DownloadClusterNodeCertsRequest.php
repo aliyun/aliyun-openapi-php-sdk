@@ -19,13 +19,35 @@
  */
 namespace CS\Request\V20151215;
 
-class ModifyClusterNameRequest extends \RoaAcsRequest
+class DownloadClusterNodeCertsRequest extends \RoaAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CS", "2015-12-15", "ModifyClusterName");
-		$this->setUriPattern("/clusters/[ClusterId]/name/[ClusterName]");
-		$this->setMethod("POST");
+		parent::__construct("CS", "2015-12-15", "DownloadClusterNodeCerts");
+		$this->setUriPattern("/token/[Token]/nodes/[NodeId]/certs");
+		$this->setMethod("GET");
+	}
+
+	private  $nodeId;
+
+	private  $token;
+
+	public function getNodeId() {
+		return $this->nodeId;
+	}
+
+	public function setNodeId($nodeId) {
+		$this->nodeId = $nodeId;
+		$this->pathParameters["NodeId"]=$nodeId;
+	}
+
+	public function getToken() {
+		return $this->token;
+	}
+
+	public function setToken($token) {
+		$this->token = $token;
+		$this->pathParameters["Token"]=$token;
 	}
 	
 }

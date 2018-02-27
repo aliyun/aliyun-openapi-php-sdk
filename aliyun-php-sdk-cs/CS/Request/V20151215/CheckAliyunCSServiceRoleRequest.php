@@ -19,13 +19,13 @@
  */
 namespace CS\Request\V20151215;
 
-class ModifyClusterNameRequest extends \RoaAcsRequest
+class CheckAliyunCSServiceRoleRequest extends \RoaAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CS", "2015-12-15", "ModifyClusterName");
-		$this->setUriPattern("/clusters/[ClusterId]/name/[ClusterName]");
-		$this->setMethod("POST");
+		parent::__construct("CS", "2015-12-15", "CheckAliyunCSServiceRole");
+		$this->setUriPattern("/aliyuncsrole/status");
+		$this->setMethod("GET");
 	}
 	
 }

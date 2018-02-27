@@ -19,13 +19,24 @@
  */
 namespace CS\Request\V20151215;
 
-class ModifyClusterNameRequest extends \RoaAcsRequest
+class CreateClusterTokenRequest extends \RoaAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CS", "2015-12-15", "ModifyClusterName");
-		$this->setUriPattern("/clusters/[ClusterId]/name/[ClusterName]");
+		parent::__construct("CS", "2015-12-15", "CreateClusterToken");
+		$this->setUriPattern("/clusters/[ClusterId]/token");
 		$this->setMethod("POST");
+	}
+
+	private  $clusterId;
+
+	public function getClusterId() {
+		return $this->clusterId;
+	}
+
+	public function setClusterId($clusterId) {
+		$this->clusterId = $clusterId;
+		$this->pathParameters["ClusterId"]=$clusterId;
 	}
 	
 }

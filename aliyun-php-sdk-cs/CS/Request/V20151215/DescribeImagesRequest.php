@@ -19,13 +19,35 @@
  */
 namespace CS\Request\V20151215;
 
-class ModifyClusterNameRequest extends \RoaAcsRequest
+class DescribeImagesRequest extends \RoaAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CS", "2015-12-15", "ModifyClusterName");
-		$this->setUriPattern("/clusters/[ClusterId]/name/[ClusterName]");
-		$this->setMethod("POST");
+		parent::__construct("CS", "2015-12-15", "DescribeImages");
+		$this->setUriPattern("/images");
+		$this->setMethod("GET");
+	}
+
+	private  $imageName;
+
+	private  $dockerVersion;
+
+	public function getImageName() {
+		return $this->imageName;
+	}
+
+	public function setImageName($imageName) {
+		$this->imageName = $imageName;
+		$this->queryParameters["ImageName"]=$imageName;
+	}
+
+	public function getDockerVersion() {
+		return $this->dockerVersion;
+	}
+
+	public function setDockerVersion($dockerVersion) {
+		$this->dockerVersion = $dockerVersion;
+		$this->queryParameters["DockerVersion"]=$dockerVersion;
 	}
 	
 }

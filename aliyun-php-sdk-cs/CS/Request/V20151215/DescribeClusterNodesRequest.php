@@ -19,18 +19,29 @@
  */
 namespace CS\Request\V20151215;
 
-class GetTriggerHookRequest extends \RoaAcsRequest
+class DescribeClusterNodesRequest extends \RoaAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CS", "2015-12-15", "GetTriggerHook");
-		$this->setUriPattern("/hook/trigger/[ClusterId]/[ProjectId]");
+		parent::__construct("CS", "2015-12-15", "DescribeClusterNodes");
+		$this->setUriPattern("/clusters/[ClusterId]/nodes");
 		$this->setMethod("GET");
 	}
 
+	private  $pageSize;
+
 	private  $clusterId;
 
-	private  $projectId;
+	private  $pageNumber;
+
+	public function getpageSize() {
+		return $this->pageSize;
+	}
+
+	public function setpageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["pageSize"]=$pageSize;
+	}
 
 	public function getClusterId() {
 		return $this->clusterId;
@@ -41,13 +52,13 @@ class GetTriggerHookRequest extends \RoaAcsRequest
 		$this->pathParameters["ClusterId"]=$clusterId;
 	}
 
-	public function getProjectId() {
-		return $this->projectId;
+	public function getpageNumber() {
+		return $this->pageNumber;
 	}
 
-	public function setProjectId($projectId) {
-		$this->projectId = $projectId;
-		$this->pathParameters["ProjectId"]=$projectId;
+	public function setpageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["pageNumber"]=$pageNumber;
 	}
 	
 }

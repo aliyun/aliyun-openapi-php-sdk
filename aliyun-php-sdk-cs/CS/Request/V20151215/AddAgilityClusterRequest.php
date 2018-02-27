@@ -19,12 +19,12 @@
  */
 namespace CS\Request\V20151215;
 
-class ModifyClusterNameRequest extends \RoaAcsRequest
+class AddAgilityClusterRequest extends \RoaAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CS", "2015-12-15", "ModifyClusterName");
-		$this->setUriPattern("/clusters/[ClusterId]/name/[ClusterName]");
+		parent::__construct("CS", "2015-12-15", "AddAgilityCluster");
+		$this->setUriPattern("/add_agility_cluster");
 		$this->setMethod("POST");
 	}
 	

@@ -19,13 +19,35 @@
  */
 namespace CS\Request\V20151215;
 
-class ModifyClusterNameRequest extends \RoaAcsRequest
+class CallbackClusterTokenRequest extends \RoaAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CS", "2015-12-15", "ModifyClusterName");
-		$this->setUriPattern("/clusters/[ClusterId]/name/[ClusterName]");
+		parent::__construct("CS", "2015-12-15", "CallbackClusterToken");
+		$this->setUriPattern("/token/[Token]/req_once/[ReqOnce]/callback");
 		$this->setMethod("POST");
+	}
+
+	private  $reqOnce;
+
+	private  $token;
+
+	public function getReqOnce() {
+		return $this->reqOnce;
+	}
+
+	public function setReqOnce($reqOnce) {
+		$this->reqOnce = $reqOnce;
+		$this->pathParameters["ReqOnce"]=$reqOnce;
+	}
+
+	public function getToken() {
+		return $this->token;
+	}
+
+	public function setToken($token) {
+		$this->token = $token;
+		$this->pathParameters["Token"]=$token;
 	}
 	
 }

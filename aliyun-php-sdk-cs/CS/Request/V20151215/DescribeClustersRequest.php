@@ -28,7 +28,18 @@ class DescribeClustersRequest extends \RoaAcsRequest
 		$this->setMethod("GET");
 	}
 
+	private  $clusterType;
+
 	private  $name;
+
+	public function getclusterType() {
+		return $this->clusterType;
+	}
+
+	public function setclusterType($clusterType) {
+		$this->clusterType = $clusterType;
+		$this->queryParameters["clusterType"]=$clusterType;
+	}
 
 	public function getName() {
 		return $this->name;
