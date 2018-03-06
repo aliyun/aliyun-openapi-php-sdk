@@ -19,20 +19,29 @@
  */
 namespace CloudPhoto\Request\V20170711;
 
-class DeletePhotosRequest extends \RpcAcsRequest
+class GetEventRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CloudPhoto", "2017-07-11", "DeletePhotos", "cloudphoto", "openAPI");
+		parent::__construct("CloudPhoto", "2017-07-11", "GetEvent", "cloudphoto", "openAPI");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
+
+	private  $eventId;
 
 	private  $libraryId;
 
 	private  $storeName;
 
-	private  $PhotoIds;
+	public function getEventId() {
+		return $this->eventId;
+	}
+
+	public function setEventId($eventId) {
+		$this->eventId = $eventId;
+		$this->queryParameters["EventId"]=$eventId;
+	}
 
 	public function getLibraryId() {
 		return $this->libraryId;
@@ -50,17 +59,6 @@ class DeletePhotosRequest extends \RpcAcsRequest
 	public function setStoreName($storeName) {
 		$this->storeName = $storeName;
 		$this->queryParameters["StoreName"]=$storeName;
-	}
-
-	public function getPhotoIds() {
-		return $this->PhotoIds;
-	}
-
-	public function setPhotoIds($PhotoIds) {
-		$this->PhotoIds = $PhotoIds;
-		for ($i = 0; $i < count($PhotoIds); $i ++) {	
-			$this->queryParameters["PhotoId.".($i+1)] = $PhotoIds[$i];
-		}
 	}
 	
 }

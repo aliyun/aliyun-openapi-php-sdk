@@ -19,28 +19,41 @@
  */
 namespace CloudPhoto\Request\V20170711;
 
-class DeletePhotosRequest extends \RpcAcsRequest
+class ListEventsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CloudPhoto", "2017-07-11", "DeletePhotos", "cloudphoto", "openAPI");
+		parent::__construct("CloudPhoto", "2017-07-11", "ListEvents", "cloudphoto", "openAPI");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
 
-	private  $libraryId;
+	private  $cursor;
+
+	private  $size;
 
 	private  $storeName;
 
-	private  $PhotoIds;
+	private  $state;
 
-	public function getLibraryId() {
-		return $this->libraryId;
+	private  $direction;
+
+	public function getCursor() {
+		return $this->cursor;
 	}
 
-	public function setLibraryId($libraryId) {
-		$this->libraryId = $libraryId;
-		$this->queryParameters["LibraryId"]=$libraryId;
+	public function setCursor($cursor) {
+		$this->cursor = $cursor;
+		$this->queryParameters["Cursor"]=$cursor;
+	}
+
+	public function getSize() {
+		return $this->size;
+	}
+
+	public function setSize($size) {
+		$this->size = $size;
+		$this->queryParameters["Size"]=$size;
 	}
 
 	public function getStoreName() {
@@ -52,15 +65,22 @@ class DeletePhotosRequest extends \RpcAcsRequest
 		$this->queryParameters["StoreName"]=$storeName;
 	}
 
-	public function getPhotoIds() {
-		return $this->PhotoIds;
+	public function getState() {
+		return $this->state;
 	}
 
-	public function setPhotoIds($PhotoIds) {
-		$this->PhotoIds = $PhotoIds;
-		for ($i = 0; $i < count($PhotoIds); $i ++) {	
-			$this->queryParameters["PhotoId.".($i+1)] = $PhotoIds[$i];
-		}
+	public function setState($state) {
+		$this->state = $state;
+		$this->queryParameters["State"]=$state;
+	}
+
+	public function getDirection() {
+		return $this->direction;
+	}
+
+	public function setDirection($direction) {
+		$this->direction = $direction;
+		$this->queryParameters["Direction"]=$direction;
 	}
 	
 }
