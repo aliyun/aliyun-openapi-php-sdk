@@ -34,6 +34,8 @@ class EditEventRequest extends \RpcAcsRequest
 
 	private  $watermarkPhotoId;
 
+	private  $identity;
+
 	private  $splashPhotoId;
 
 	private  $libraryId;
@@ -75,6 +77,15 @@ class EditEventRequest extends \RpcAcsRequest
 	public function setWatermarkPhotoId($watermarkPhotoId) {
 		$this->watermarkPhotoId = $watermarkPhotoId;
 		$this->queryParameters["WatermarkPhotoId"]=$watermarkPhotoId;
+	}
+
+	public function getIdentity() {
+		return $this->identity;
+	}
+
+	public function setIdentity($identity) {
+		$this->identity = $identity;
+		$this->queryParameters["Identity"]=$identity;
 	}
 
 	public function getSplashPhotoId() {
