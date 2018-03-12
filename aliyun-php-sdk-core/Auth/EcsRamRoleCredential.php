@@ -17,17 +17,36 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-interface IClientProfile
+class EcsRamRoleCredential extends AbstractCredential
 {
-    public function getSigner();
-    
-    public function getRegionId();
-    
-    public function getFormat();
-    
-    public function getCredential();
+    private $roleName;
 
-    public function isRamRoleArn();
+    public function __construct($roleName)
+    {
+        $this->roleName = $roleName;
+    }
 
-    public function isEcsRamRole();
+    public function getAccessKeyId()
+    {
+        return null;
+    }
+
+    public function getAccessSecret()
+    {
+        return null;
+    }
+
+    public function getRoleName()
+    {
+        return $this->roleName;
+    }
+
+    public function setRoleName($roleName)
+    {
+        $this->roleName = $roleName;
+    }
+
+    public function getSecurityToken() {
+        return null;
+    }
 }

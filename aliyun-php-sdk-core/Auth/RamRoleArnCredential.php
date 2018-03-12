@@ -17,78 +17,62 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-class Credential extends AbstractCredential
+class RamRoleArnCredential extends AbstractCredential
 {
-    private $dateTimeFormat = 'Y-m-d\TH:i:s\Z';
-    private $refreshDate;
-    private $expiredDate;
     private $accessKeyId;
     private $accessSecret;
-    private $securityToken;
-    
-    public function __construct($accessKeyId, $accessSecret, $securityToken)
+    private $roleArn;
+    private $roleSessionName;
+
+    public function __construct($accessKeyId, $accessSecret, $roleArn, $roleSessionName)
     {
         $this->accessKeyId = $accessKeyId;
         $this->accessSecret = $accessSecret;
-        $this->securityToken = $securityToken;
-        $this->refreshDate = date($this->dateTimeFormat);
+        $this->roleArn = $roleArn;
+        $this->roleSessionName = $roleSessionName;
     }
-    
-    public function isExpired()
-    {
-        if ($this->expiredDate == null) {
-            return false;
-        }
-        if (strtotime($this->expiredDate)>strtotime(date($this->dateTimeFormat))) {
-            return false;
-        }
-        return true;
-    }
-    
-    public function getRefreshDate()
-    {
-        return $this->refreshDate;
-    }
-    
-    public function getExpiredDate()
-    {
-        return $this->expiredDate;
-    }
-    
-    public function setExpiredDate($expiredHours)
-    {
-        if ($expiredHours>0) {
-            return $this->expiredDate = date($this->dateTimeFormat, strtotime("+".$expiredHours." hour"));
-        }
-    }
-    
+
     public function getAccessKeyId()
     {
         return $this->accessKeyId;
     }
-    
+
     public function setAccessKeyId($accessKeyId)
     {
         $this->accessKeyId = $accessKeyId;
     }
-    
+
     public function getAccessSecret()
     {
         return $this->accessSecret;
     }
-    
+
     public function setAccessSecret($accessSecret)
     {
         $this->accessSecret = $accessSecret;
     }
 
-    public function getSecurityToken()
+    public function getRoleArn()
     {
-        return $this->securityToken;
+        return $this->roleArn;
     }
 
-    public function setSecurityToken($securityToken)
+    public function setRoleArn($roleArn)
     {
-        $this->securityToken = $securityToken;
+        $this->roleArn = $roleArn;
+    }
+
+    public function getRoleSessionName()
+    {
+        return $this->roleSessionName;
+    }
+
+    public function setRoleSessionName($roleSessionName)
+    {
+        $this->roleSessionName = $roleSessionName;
+    }
+
+    public function getSecurityToken() {
+        return null;
     }
 }

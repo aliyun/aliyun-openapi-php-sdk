@@ -17,17 +17,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-interface IClientProfile
+abstract class AbstractCredential
 {
-    public function getSigner();
-    
-    public function getRegionId();
-    
-    public function getFormat();
-    
-    public function getCredential();
-
-    public function isRamRoleArn();
-
-    public function isEcsRamRole();
+    abstract public function getAccessKeyId();
+    abstract public function getAccessSecret();
+    abstract public function getSecurityToken();
 }
