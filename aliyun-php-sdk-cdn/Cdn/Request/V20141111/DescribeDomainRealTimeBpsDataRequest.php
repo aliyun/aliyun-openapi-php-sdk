@@ -19,42 +19,50 @@
  */
 namespace Cdn\Request\V20141111;
 
-class SetReqHeaderConfigRequest extends \RpcAcsRequest
+class DescribeDomainRealTimeBpsDataRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cdn", "2014-11-11", "SetReqHeaderConfig");
-		$this->setMethod("POST");
+		parent::__construct("Cdn", "2014-11-11", "DescribeDomainRealTimeBpsData");
 	}
 
-	private  $securityToken;
+	private  $locationNameEn;
 
-	private  $configId;
+	private  $ispNameEn;
+
+	private  $startTime;
 
 	private  $domainName;
 
+	private  $endTime;
+
 	private  $ownerId;
 
-	private  $value;
-
-	private  $key;
-
-	public function getSecurityToken() {
-		return $this->securityToken;
+	public function getLocationNameEn() {
+		return $this->locationNameEn;
 	}
 
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
+	public function setLocationNameEn($locationNameEn) {
+		$this->locationNameEn = $locationNameEn;
+		$this->queryParameters["LocationNameEn"]=$locationNameEn;
 	}
 
-	public function getConfigId() {
-		return $this->configId;
+	public function getIspNameEn() {
+		return $this->ispNameEn;
 	}
 
-	public function setConfigId($configId) {
-		$this->configId = $configId;
-		$this->queryParameters["ConfigId"]=$configId;
+	public function setIspNameEn($ispNameEn) {
+		$this->ispNameEn = $ispNameEn;
+		$this->queryParameters["IspNameEn"]=$ispNameEn;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
 	}
 
 	public function getDomainName() {
@@ -66,6 +74,15 @@ class SetReqHeaderConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -73,24 +90,6 @@ class SetReqHeaderConfigRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getValue() {
-		return $this->value;
-	}
-
-	public function setValue($value) {
-		$this->value = $value;
-		$this->queryParameters["Value"]=$value;
-	}
-
-	public function getKey() {
-		return $this->key;
-	}
-
-	public function setKey($key) {
-		$this->key = $key;
-		$this->queryParameters["Key"]=$key;
 	}
 	
 }

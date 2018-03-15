@@ -19,25 +19,18 @@
  */
 namespace Cdn\Request\V20141111;
 
-class SetReqHeaderConfigRequest extends \RpcAcsRequest
+class DescribeUserCustomLogConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cdn", "2014-11-11", "SetReqHeaderConfig");
-		$this->setMethod("POST");
+		parent::__construct("Cdn", "2014-11-11", "DescribeUserCustomLogConfig");
 	}
 
 	private  $securityToken;
 
-	private  $configId;
-
-	private  $domainName;
-
 	private  $ownerId;
 
-	private  $value;
-
-	private  $key;
+	private  $version;
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -46,24 +39,6 @@ class SetReqHeaderConfigRequest extends \RpcAcsRequest
 	public function setSecurityToken($securityToken) {
 		$this->securityToken = $securityToken;
 		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
-
-	public function getConfigId() {
-		return $this->configId;
-	}
-
-	public function setConfigId($configId) {
-		$this->configId = $configId;
-		$this->queryParameters["ConfigId"]=$configId;
-	}
-
-	public function getDomainName() {
-		return $this->domainName;
-	}
-
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
 	}
 
 	public function getOwnerId() {
@@ -75,22 +50,13 @@ class SetReqHeaderConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getValue() {
-		return $this->value;
+	public function getVersion() {
+		return $this->version;
 	}
 
-	public function setValue($value) {
-		$this->value = $value;
-		$this->queryParameters["Value"]=$value;
-	}
-
-	public function getKey() {
-		return $this->key;
-	}
-
-	public function setKey($key) {
-		$this->key = $key;
-		$this->queryParameters["Key"]=$key;
+	public function setVersion($version) {
+		$this->version = $version;
+		$this->queryParameters["Version"]=$version;
 	}
 	
 }

@@ -27,9 +27,9 @@ class DescribeDomainSrcFlowDataRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $fixTimeGap;
+	private  $startTime;
 
-	private  $securityToken;
+	private  $fixTimeGap;
 
 	private  $timeMerge;
 
@@ -37,11 +37,18 @@ class DescribeDomainSrcFlowDataRequest extends \RpcAcsRequest
 
 	private  $endTime;
 
+	private  $ownerId;
+
 	private  $interval;
 
-	private  $startTime;
+	public function getStartTime() {
+		return $this->startTime;
+	}
 
-	private  $ownerId;
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
 
 	public function getFixTimeGap() {
 		return $this->fixTimeGap;
@@ -50,15 +57,6 @@ class DescribeDomainSrcFlowDataRequest extends \RpcAcsRequest
 	public function setFixTimeGap($fixTimeGap) {
 		$this->fixTimeGap = $fixTimeGap;
 		$this->queryParameters["FixTimeGap"]=$fixTimeGap;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
 	public function getTimeMerge() {
@@ -88,24 +86,6 @@ class DescribeDomainSrcFlowDataRequest extends \RpcAcsRequest
 		$this->queryParameters["EndTime"]=$endTime;
 	}
 
-	public function getInterval() {
-		return $this->interval;
-	}
-
-	public function setInterval($interval) {
-		$this->interval = $interval;
-		$this->queryParameters["Interval"]=$interval;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
-
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -113,6 +93,15 @@ class DescribeDomainSrcFlowDataRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getInterval() {
+		return $this->interval;
+	}
+
+	public function setInterval($interval) {
+		$this->interval = $interval;
+		$this->queryParameters["Interval"]=$interval;
 	}
 	
 }

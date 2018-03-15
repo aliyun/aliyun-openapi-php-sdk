@@ -19,25 +19,27 @@
  */
 namespace Cdn\Request\V20141111;
 
-class SetReqHeaderConfigRequest extends \RpcAcsRequest
+class ModifyFileCacheExpiredConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cdn", "2014-11-11", "SetReqHeaderConfig");
+		parent::__construct("Cdn", "2014-11-11", "ModifyFileCacheExpiredConfig");
 		$this->setMethod("POST");
 	}
 
 	private  $securityToken;
 
-	private  $configId;
+	private  $configID;
 
 	private  $domainName;
 
+	private  $weight;
+
+	private  $cacheContent;
+
 	private  $ownerId;
 
-	private  $value;
-
-	private  $key;
+	private  $tTL;
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -48,13 +50,13 @@ class SetReqHeaderConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getConfigId() {
-		return $this->configId;
+	public function getConfigID() {
+		return $this->configID;
 	}
 
-	public function setConfigId($configId) {
-		$this->configId = $configId;
-		$this->queryParameters["ConfigId"]=$configId;
+	public function setConfigID($configID) {
+		$this->configID = $configID;
+		$this->queryParameters["ConfigID"]=$configID;
 	}
 
 	public function getDomainName() {
@@ -66,6 +68,24 @@ class SetReqHeaderConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
+	public function getWeight() {
+		return $this->weight;
+	}
+
+	public function setWeight($weight) {
+		$this->weight = $weight;
+		$this->queryParameters["Weight"]=$weight;
+	}
+
+	public function getCacheContent() {
+		return $this->cacheContent;
+	}
+
+	public function setCacheContent($cacheContent) {
+		$this->cacheContent = $cacheContent;
+		$this->queryParameters["CacheContent"]=$cacheContent;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -75,22 +95,13 @@ class SetReqHeaderConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getValue() {
-		return $this->value;
+	public function getTTL() {
+		return $this->tTL;
 	}
 
-	public function setValue($value) {
-		$this->value = $value;
-		$this->queryParameters["Value"]=$value;
-	}
-
-	public function getKey() {
-		return $this->key;
-	}
-
-	public function setKey($key) {
-		$this->key = $key;
-		$this->queryParameters["Key"]=$key;
+	public function setTTL($tTL) {
+		$this->tTL = $tTL;
+		$this->queryParameters["TTL"]=$tTL;
 	}
 	
 }

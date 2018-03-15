@@ -19,54 +19,20 @@
  */
 namespace Cdn\Request\V20141111;
 
-class DescribeDomainSrcBpsDataRequest extends \RpcAcsRequest
+class DescribeDomainRealTimeReqHitRateDataRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cdn", "2014-11-11", "DescribeDomainSrcBpsData");
-		$this->setMethod("POST");
+		parent::__construct("Cdn", "2014-11-11", "DescribeDomainRealTimeReqHitRateData");
 	}
-
-	private  $startTime;
-
-	private  $fixTimeGap;
-
-	private  $timeMerge;
 
 	private  $domainName;
 
 	private  $endTime;
 
+	private  $startTime;
+
 	private  $ownerId;
-
-	private  $interval;
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
-
-	public function getFixTimeGap() {
-		return $this->fixTimeGap;
-	}
-
-	public function setFixTimeGap($fixTimeGap) {
-		$this->fixTimeGap = $fixTimeGap;
-		$this->queryParameters["FixTimeGap"]=$fixTimeGap;
-	}
-
-	public function getTimeMerge() {
-		return $this->timeMerge;
-	}
-
-	public function setTimeMerge($timeMerge) {
-		$this->timeMerge = $timeMerge;
-		$this->queryParameters["TimeMerge"]=$timeMerge;
-	}
 
 	public function getDomainName() {
 		return $this->domainName;
@@ -86,6 +52,15 @@ class DescribeDomainSrcBpsDataRequest extends \RpcAcsRequest
 		$this->queryParameters["EndTime"]=$endTime;
 	}
 
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -93,15 +68,6 @@ class DescribeDomainSrcBpsDataRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getInterval() {
-		return $this->interval;
-	}
-
-	public function setInterval($interval) {
-		$this->interval = $interval;
-		$this->queryParameters["Interval"]=$interval;
 	}
 	
 }

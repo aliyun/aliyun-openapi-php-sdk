@@ -31,6 +31,8 @@ class SetReqAuthConfigRequest extends \RpcAcsRequest
 
 	private  $key2;
 
+	private  $authRemoteDesc;
+
 	private  $securityToken;
 
 	private  $domainName;
@@ -57,6 +59,15 @@ class SetReqAuthConfigRequest extends \RpcAcsRequest
 	public function setKey2($key2) {
 		$this->key2 = $key2;
 		$this->queryParameters["Key2"]=$key2;
+	}
+
+	public function getAuthRemoteDesc() {
+		return $this->authRemoteDesc;
+	}
+
+	public function setAuthRemoteDesc($authRemoteDesc) {
+		$this->authRemoteDesc = $authRemoteDesc;
+		$this->queryParameters["AuthRemoteDesc"]=$authRemoteDesc;
 	}
 
 	public function getSecurityToken() {

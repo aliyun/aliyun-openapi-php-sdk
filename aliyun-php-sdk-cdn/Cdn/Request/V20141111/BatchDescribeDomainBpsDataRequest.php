@@ -31,8 +31,6 @@ class BatchDescribeDomainBpsDataRequest extends \RpcAcsRequest
 
 	private  $pageNumber;
 
-	private  $securityToken;
-
 	private  $pageSize;
 
 	private  $domainName;
@@ -40,8 +38,6 @@ class BatchDescribeDomainBpsDataRequest extends \RpcAcsRequest
 	private  $endTime;
 
 	private  $ownerId;
-
-	private  $version;
 
 	public function getStartTime() {
 		return $this->startTime;
@@ -59,15 +55,6 @@ class BatchDescribeDomainBpsDataRequest extends \RpcAcsRequest
 	public function setPageNumber($pageNumber) {
 		$this->pageNumber = $pageNumber;
 		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
 	public function getPageSize() {
@@ -104,15 +91,6 @@ class BatchDescribeDomainBpsDataRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getVersion() {
-		return $this->version;
-	}
-
-	public function setVersion($version) {
-		$this->version = $version;
-		$this->queryParameters["Version"]=$version;
 	}
 	
 }

@@ -19,25 +19,32 @@
  */
 namespace Cdn\Request\V20141111;
 
-class SetReqHeaderConfigRequest extends \RpcAcsRequest
+class DeleteCacheExpiredConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cdn", "2014-11-11", "SetReqHeaderConfig");
+		parent::__construct("Cdn", "2014-11-11", "DeleteCacheExpiredConfig");
 		$this->setMethod("POST");
 	}
 
+	private  $cacheType;
+
 	private  $securityToken;
 
-	private  $configId;
+	private  $configID;
 
 	private  $domainName;
 
 	private  $ownerId;
 
-	private  $value;
+	public function getCacheType() {
+		return $this->cacheType;
+	}
 
-	private  $key;
+	public function setCacheType($cacheType) {
+		$this->cacheType = $cacheType;
+		$this->queryParameters["CacheType"]=$cacheType;
+	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -48,13 +55,13 @@ class SetReqHeaderConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getConfigId() {
-		return $this->configId;
+	public function getConfigID() {
+		return $this->configID;
 	}
 
-	public function setConfigId($configId) {
-		$this->configId = $configId;
-		$this->queryParameters["ConfigId"]=$configId;
+	public function setConfigID($configID) {
+		$this->configID = $configID;
+		$this->queryParameters["ConfigID"]=$configID;
 	}
 
 	public function getDomainName() {
@@ -73,24 +80,6 @@ class SetReqHeaderConfigRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getValue() {
-		return $this->value;
-	}
-
-	public function setValue($value) {
-		$this->value = $value;
-		$this->queryParameters["Value"]=$value;
-	}
-
-	public function getKey() {
-		return $this->key;
-	}
-
-	public function setKey($key) {
-		$this->key = $key;
-		$this->queryParameters["Key"]=$key;
 	}
 	
 }

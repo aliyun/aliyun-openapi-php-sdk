@@ -19,25 +19,41 @@
  */
 namespace Cdn\Request\V20141111;
 
-class SetReqHeaderConfigRequest extends \RpcAcsRequest
+class SetWaitingRoomConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cdn", "2014-11-11", "SetReqHeaderConfig");
-		$this->setMethod("POST");
+		parent::__construct("Cdn", "2014-11-11", "SetWaitingRoomConfig");
 	}
+
+	private  $waitUrl;
 
 	private  $securityToken;
 
-	private  $configId;
+	private  $waitUri;
+
+	private  $maxQps;
+
+	private  $maxTimeWait;
 
 	private  $domainName;
 
+	private  $allowPct;
+
+	private  $gapTime;
+
 	private  $ownerId;
 
-	private  $value;
+	private  $version;
 
-	private  $key;
+	public function getWaitUrl() {
+		return $this->waitUrl;
+	}
+
+	public function setWaitUrl($waitUrl) {
+		$this->waitUrl = $waitUrl;
+		$this->queryParameters["WaitUrl"]=$waitUrl;
+	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -48,13 +64,31 @@ class SetReqHeaderConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getConfigId() {
-		return $this->configId;
+	public function getWaitUri() {
+		return $this->waitUri;
 	}
 
-	public function setConfigId($configId) {
-		$this->configId = $configId;
-		$this->queryParameters["ConfigId"]=$configId;
+	public function setWaitUri($waitUri) {
+		$this->waitUri = $waitUri;
+		$this->queryParameters["WaitUri"]=$waitUri;
+	}
+
+	public function getMaxQps() {
+		return $this->maxQps;
+	}
+
+	public function setMaxQps($maxQps) {
+		$this->maxQps = $maxQps;
+		$this->queryParameters["MaxQps"]=$maxQps;
+	}
+
+	public function getMaxTimeWait() {
+		return $this->maxTimeWait;
+	}
+
+	public function setMaxTimeWait($maxTimeWait) {
+		$this->maxTimeWait = $maxTimeWait;
+		$this->queryParameters["MaxTimeWait"]=$maxTimeWait;
 	}
 
 	public function getDomainName() {
@@ -66,6 +100,24 @@ class SetReqHeaderConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
+	public function getAllowPct() {
+		return $this->allowPct;
+	}
+
+	public function setAllowPct($allowPct) {
+		$this->allowPct = $allowPct;
+		$this->queryParameters["AllowPct"]=$allowPct;
+	}
+
+	public function getGapTime() {
+		return $this->gapTime;
+	}
+
+	public function setGapTime($gapTime) {
+		$this->gapTime = $gapTime;
+		$this->queryParameters["GapTime"]=$gapTime;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -75,22 +127,13 @@ class SetReqHeaderConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getValue() {
-		return $this->value;
+	public function getVersion() {
+		return $this->version;
 	}
 
-	public function setValue($value) {
-		$this->value = $value;
-		$this->queryParameters["Value"]=$value;
-	}
-
-	public function getKey() {
-		return $this->key;
-	}
-
-	public function setKey($key) {
-		$this->key = $key;
-		$this->queryParameters["Key"]=$key;
+	public function setVersion($version) {
+		$this->version = $version;
+		$this->queryParameters["Version"]=$version;
 	}
 	
 }
