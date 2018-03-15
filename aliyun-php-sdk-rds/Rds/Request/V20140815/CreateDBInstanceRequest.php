@@ -67,6 +67,8 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
 
 	private  $vPCId;
 
+	private  $tunnelId;
+
 	private  $zoneId;
 
 	private  $payType;
@@ -251,6 +253,15 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
 	public function setVPCId($vPCId) {
 		$this->vPCId = $vPCId;
 		$this->queryParameters["VPCId"]=$vPCId;
+	}
+
+	public function getTunnelId() {
+		return $this->tunnelId;
+	}
+
+	public function setTunnelId($tunnelId) {
+		$this->tunnelId = $tunnelId;
+		$this->queryParameters["TunnelId"]=$tunnelId;
 	}
 
 	public function getZoneId() {

@@ -19,19 +19,56 @@
  */
 namespace Rds\Request\V20140815;
 
-class DescribeDBInstanceNetworkRequest extends \RpcAcsRequest
+class DescribeMigrateTasksForSQLServerRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeDBInstanceNetwork", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeMigrateTasksForSQLServer", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
+
+	private  $resourceOwnerId;
+
+	private  $resourceOwnerAccount;
+
+	private  $pageSize;
 
 	private  $endTime;
 
 	private  $dBInstanceId;
 
 	private  $startTime;
+
+	private  $ownerId;
+
+	private  $pageNumber;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
+	}
+
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
 
 	public function getEndTime() {
 		return $this->endTime;
@@ -58,6 +95,24 @@ class DescribeDBInstanceNetworkRequest extends \RpcAcsRequest
 	public function setStartTime($startTime) {
 		$this->startTime = $startTime;
 		$this->queryParameters["StartTime"]=$startTime;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getPageNumber() {
+		return $this->pageNumber;
+	}
+
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 	
 }

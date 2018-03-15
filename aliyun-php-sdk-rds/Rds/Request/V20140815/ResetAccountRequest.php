@@ -19,27 +19,25 @@
  */
 namespace Rds\Request\V20140815;
 
-class UpgradeDBInstanceEngineVersionRequest extends \RpcAcsRequest
+class ResetAccountRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "UpgradeDBInstanceEngineVersion", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "ResetAccount", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
+	private  $accountPassword;
+
+	private  $accountName;
+
 	private  $resourceOwnerAccount;
-
-	private  $clientToken;
-
-	private  $effectiveTime;
 
 	private  $ownerAccount;
 
 	private  $dBInstanceId;
-
-	private  $engineVersion;
 
 	private  $ownerId;
 
@@ -52,6 +50,24 @@ class UpgradeDBInstanceEngineVersionRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getAccountPassword() {
+		return $this->accountPassword;
+	}
+
+	public function setAccountPassword($accountPassword) {
+		$this->accountPassword = $accountPassword;
+		$this->queryParameters["AccountPassword"]=$accountPassword;
+	}
+
+	public function getAccountName() {
+		return $this->accountName;
+	}
+
+	public function setAccountName($accountName) {
+		$this->accountName = $accountName;
+		$this->queryParameters["AccountName"]=$accountName;
+	}
+
 	public function getResourceOwnerAccount() {
 		return $this->resourceOwnerAccount;
 	}
@@ -59,24 +75,6 @@ class UpgradeDBInstanceEngineVersionRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getClientToken() {
-		return $this->clientToken;
-	}
-
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
-
-	public function getEffectiveTime() {
-		return $this->effectiveTime;
-	}
-
-	public function setEffectiveTime($effectiveTime) {
-		$this->effectiveTime = $effectiveTime;
-		$this->queryParameters["EffectiveTime"]=$effectiveTime;
 	}
 
 	public function getOwnerAccount() {
@@ -95,15 +93,6 @@ class UpgradeDBInstanceEngineVersionRequest extends \RpcAcsRequest
 	public function setDBInstanceId($dBInstanceId) {
 		$this->dBInstanceId = $dBInstanceId;
 		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
-	}
-
-	public function getEngineVersion() {
-		return $this->engineVersion;
-	}
-
-	public function setEngineVersion($engineVersion) {
-		$this->engineVersion = $engineVersion;
-		$this->queryParameters["EngineVersion"]=$engineVersion;
 	}
 
 	public function getOwnerId() {

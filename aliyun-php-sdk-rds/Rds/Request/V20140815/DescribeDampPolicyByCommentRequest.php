@@ -19,27 +19,25 @@
  */
 namespace Rds\Request\V20140815;
 
-class UpgradeDBInstanceEngineVersionRequest extends \RpcAcsRequest
+class DescribeDampPolicyByCommentRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "UpgradeDBInstanceEngineVersion", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeDampPolicyByComment", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
+	private  $securityToken;
+
 	private  $resourceOwnerAccount;
-
-	private  $clientToken;
-
-	private  $effectiveTime;
 
 	private  $ownerAccount;
 
 	private  $dBInstanceId;
 
-	private  $engineVersion;
+	private  $policyName;
 
 	private  $ownerId;
 
@@ -52,6 +50,15 @@ class UpgradeDBInstanceEngineVersionRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getSecurityToken() {
+		return $this->securityToken;
+	}
+
+	public function setSecurityToken($securityToken) {
+		$this->securityToken = $securityToken;
+		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
+
 	public function getResourceOwnerAccount() {
 		return $this->resourceOwnerAccount;
 	}
@@ -59,24 +66,6 @@ class UpgradeDBInstanceEngineVersionRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getClientToken() {
-		return $this->clientToken;
-	}
-
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
-
-	public function getEffectiveTime() {
-		return $this->effectiveTime;
-	}
-
-	public function setEffectiveTime($effectiveTime) {
-		$this->effectiveTime = $effectiveTime;
-		$this->queryParameters["EffectiveTime"]=$effectiveTime;
 	}
 
 	public function getOwnerAccount() {
@@ -97,13 +86,13 @@ class UpgradeDBInstanceEngineVersionRequest extends \RpcAcsRequest
 		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
 	}
 
-	public function getEngineVersion() {
-		return $this->engineVersion;
+	public function getPolicyName() {
+		return $this->policyName;
 	}
 
-	public function setEngineVersion($engineVersion) {
-		$this->engineVersion = $engineVersion;
-		$this->queryParameters["EngineVersion"]=$engineVersion;
+	public function setPolicyName($policyName) {
+		$this->policyName = $policyName;
+		$this->queryParameters["PolicyName"]=$policyName;
 	}
 
 	public function getOwnerId() {

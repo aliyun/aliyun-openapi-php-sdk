@@ -19,27 +19,17 @@
  */
 namespace Rds\Request\V20140815;
 
-class UpgradeDBInstanceEngineVersionRequest extends \RpcAcsRequest
+class DescribeLogicDBInstanceTopologyRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "UpgradeDBInstanceEngineVersion", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeLogicDBInstanceTopology", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
-
-	private  $clientToken;
-
-	private  $effectiveTime;
-
-	private  $ownerAccount;
-
-	private  $dBInstanceId;
-
-	private  $engineVersion;
 
 	private  $ownerId;
 
@@ -59,51 +49,6 @@ class UpgradeDBInstanceEngineVersionRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getClientToken() {
-		return $this->clientToken;
-	}
-
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
-
-	public function getEffectiveTime() {
-		return $this->effectiveTime;
-	}
-
-	public function setEffectiveTime($effectiveTime) {
-		$this->effectiveTime = $effectiveTime;
-		$this->queryParameters["EffectiveTime"]=$effectiveTime;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getDBInstanceId() {
-		return $this->dBInstanceId;
-	}
-
-	public function setDBInstanceId($dBInstanceId) {
-		$this->dBInstanceId = $dBInstanceId;
-		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
-	}
-
-	public function getEngineVersion() {
-		return $this->engineVersion;
-	}
-
-	public function setEngineVersion($engineVersion) {
-		$this->engineVersion = $engineVersion;
-		$this->queryParameters["EngineVersion"]=$engineVersion;
 	}
 
 	public function getOwnerId() {

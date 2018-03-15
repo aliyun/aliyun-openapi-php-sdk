@@ -19,29 +19,29 @@
  */
 namespace Rds\Request\V20140815;
 
-class UpgradeDBInstanceEngineVersionRequest extends \RpcAcsRequest
+class CreateMigrateTaskRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "UpgradeDBInstanceEngineVersion", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "CreateMigrateTask", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
+	private  $dBName;
+
 	private  $resourceOwnerAccount;
 
-	private  $clientToken;
-
-	private  $effectiveTime;
-
-	private  $ownerAccount;
+	private  $isOnlineDB;
 
 	private  $dBInstanceId;
 
-	private  $engineVersion;
+	private  $backupMode;
 
 	private  $ownerId;
+
+	private  $oSSUrls;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -50,6 +50,15 @@ class UpgradeDBInstanceEngineVersionRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getDBName() {
+		return $this->dBName;
+	}
+
+	public function setDBName($dBName) {
+		$this->dBName = $dBName;
+		$this->queryParameters["DBName"]=$dBName;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -61,31 +70,13 @@ class UpgradeDBInstanceEngineVersionRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getClientToken() {
-		return $this->clientToken;
+	public function getIsOnlineDB() {
+		return $this->isOnlineDB;
 	}
 
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
-
-	public function getEffectiveTime() {
-		return $this->effectiveTime;
-	}
-
-	public function setEffectiveTime($effectiveTime) {
-		$this->effectiveTime = $effectiveTime;
-		$this->queryParameters["EffectiveTime"]=$effectiveTime;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setIsOnlineDB($isOnlineDB) {
+		$this->isOnlineDB = $isOnlineDB;
+		$this->queryParameters["IsOnlineDB"]=$isOnlineDB;
 	}
 
 	public function getDBInstanceId() {
@@ -97,13 +88,13 @@ class UpgradeDBInstanceEngineVersionRequest extends \RpcAcsRequest
 		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
 	}
 
-	public function getEngineVersion() {
-		return $this->engineVersion;
+	public function getBackupMode() {
+		return $this->backupMode;
 	}
 
-	public function setEngineVersion($engineVersion) {
-		$this->engineVersion = $engineVersion;
-		$this->queryParameters["EngineVersion"]=$engineVersion;
+	public function setBackupMode($backupMode) {
+		$this->backupMode = $backupMode;
+		$this->queryParameters["BackupMode"]=$backupMode;
 	}
 
 	public function getOwnerId() {
@@ -113,6 +104,15 @@ class UpgradeDBInstanceEngineVersionRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getOSSUrls() {
+		return $this->oSSUrls;
+	}
+
+	public function setOSSUrls($oSSUrls) {
+		$this->oSSUrls = $oSSUrls;
+		$this->queryParameters["OSSUrls"]=$oSSUrls;
 	}
 	
 }

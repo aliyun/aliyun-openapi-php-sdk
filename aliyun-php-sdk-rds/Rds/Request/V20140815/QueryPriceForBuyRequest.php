@@ -19,39 +19,47 @@
  */
 namespace Rds\Request\V20140815;
 
-class ModifyDBInstancePayTypeRequest extends \RpcAcsRequest
+class QueryPriceForBuyRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "ModifyDBInstancePayType", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "QueryPriceForBuy", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
-	private  $period;
+	private  $dBInstanceStorage;
 
-	private  $agentId;
-
-	private  $autoPay;
+	private  $quantity;
 
 	private  $resourceOwnerAccount;
 
 	private  $clientToken;
 
-	private  $resource;
-
 	private  $ownerAccount;
+
+	private  $commodityCode;
+
+	private  $engineVersion;
 
 	private  $ownerId;
 
 	private  $usedTime;
 
-	private  $dBInstanceId;
+	private  $dBInstanceClass;
+
+	private  $instanceUsedType;
+
+	private  $engine;
+
+	private  $zoneId;
+
+	private  $timeType;
 
 	private  $payType;
 
-	private  $businessInfo;
+	private  $orderType;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -62,31 +70,22 @@ class ModifyDBInstancePayTypeRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getPeriod() {
-		return $this->period;
+	public function getDBInstanceStorage() {
+		return $this->dBInstanceStorage;
 	}
 
-	public function setPeriod($period) {
-		$this->period = $period;
-		$this->queryParameters["Period"]=$period;
+	public function setDBInstanceStorage($dBInstanceStorage) {
+		$this->dBInstanceStorage = $dBInstanceStorage;
+		$this->queryParameters["DBInstanceStorage"]=$dBInstanceStorage;
 	}
 
-	public function getAgentId() {
-		return $this->agentId;
+	public function getQuantity() {
+		return $this->quantity;
 	}
 
-	public function setAgentId($agentId) {
-		$this->agentId = $agentId;
-		$this->queryParameters["AgentId"]=$agentId;
-	}
-
-	public function getAutoPay() {
-		return $this->autoPay;
-	}
-
-	public function setAutoPay($autoPay) {
-		$this->autoPay = $autoPay;
-		$this->queryParameters["AutoPay"]=$autoPay;
+	public function setQuantity($quantity) {
+		$this->quantity = $quantity;
+		$this->queryParameters["Quantity"]=$quantity;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -107,15 +106,6 @@ class ModifyDBInstancePayTypeRequest extends \RpcAcsRequest
 		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
-	public function getResource() {
-		return $this->resource;
-	}
-
-	public function setResource($resource) {
-		$this->resource = $resource;
-		$this->queryParameters["Resource"]=$resource;
-	}
-
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -123,6 +113,24 @@ class ModifyDBInstancePayTypeRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getCommodityCode() {
+		return $this->commodityCode;
+	}
+
+	public function setCommodityCode($commodityCode) {
+		$this->commodityCode = $commodityCode;
+		$this->queryParameters["CommodityCode"]=$commodityCode;
+	}
+
+	public function getEngineVersion() {
+		return $this->engineVersion;
+	}
+
+	public function setEngineVersion($engineVersion) {
+		$this->engineVersion = $engineVersion;
+		$this->queryParameters["EngineVersion"]=$engineVersion;
 	}
 
 	public function getOwnerId() {
@@ -143,13 +151,49 @@ class ModifyDBInstancePayTypeRequest extends \RpcAcsRequest
 		$this->queryParameters["UsedTime"]=$usedTime;
 	}
 
-	public function getDBInstanceId() {
-		return $this->dBInstanceId;
+	public function getDBInstanceClass() {
+		return $this->dBInstanceClass;
 	}
 
-	public function setDBInstanceId($dBInstanceId) {
-		$this->dBInstanceId = $dBInstanceId;
-		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
+	public function setDBInstanceClass($dBInstanceClass) {
+		$this->dBInstanceClass = $dBInstanceClass;
+		$this->queryParameters["DBInstanceClass"]=$dBInstanceClass;
+	}
+
+	public function getInstanceUsedType() {
+		return $this->instanceUsedType;
+	}
+
+	public function setInstanceUsedType($instanceUsedType) {
+		$this->instanceUsedType = $instanceUsedType;
+		$this->queryParameters["InstanceUsedType"]=$instanceUsedType;
+	}
+
+	public function getEngine() {
+		return $this->engine;
+	}
+
+	public function setEngine($engine) {
+		$this->engine = $engine;
+		$this->queryParameters["Engine"]=$engine;
+	}
+
+	public function getZoneId() {
+		return $this->zoneId;
+	}
+
+	public function setZoneId($zoneId) {
+		$this->zoneId = $zoneId;
+		$this->queryParameters["ZoneId"]=$zoneId;
+	}
+
+	public function getTimeType() {
+		return $this->timeType;
+	}
+
+	public function setTimeType($timeType) {
+		$this->timeType = $timeType;
+		$this->queryParameters["TimeType"]=$timeType;
 	}
 
 	public function getPayType() {
@@ -161,13 +205,13 @@ class ModifyDBInstancePayTypeRequest extends \RpcAcsRequest
 		$this->queryParameters["PayType"]=$payType;
 	}
 
-	public function getBusinessInfo() {
-		return $this->businessInfo;
+	public function getOrderType() {
+		return $this->orderType;
 	}
 
-	public function setBusinessInfo($businessInfo) {
-		$this->businessInfo = $businessInfo;
-		$this->queryParameters["BusinessInfo"]=$businessInfo;
+	public function setOrderType($orderType) {
+		$this->orderType = $orderType;
+		$this->queryParameters["OrderType"]=$orderType;
 	}
 	
 }

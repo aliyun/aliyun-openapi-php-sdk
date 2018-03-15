@@ -19,49 +19,49 @@
  */
 namespace Rds\Request\V20140815;
 
-class DescribeDBInstanceNetworkDetailRequest extends \RpcAcsRequest
+class ModifySecurityGroupConfigurationRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeDBInstanceNetworkDetail", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "ModifySecurityGroupConfiguration", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $endPoint;
+	private  $resourceOwnerId;
 
-	private  $startPoint;
+	private  $resourceOwnerAccount;
 
-	private  $endTime;
+	private  $securityGroupId;
 
 	private  $dBInstanceId;
 
-	private  $startTime;
+	private  $ownerId;
 
-	public function getEndPoint() {
-		return $this->endPoint;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setEndPoint($endPoint) {
-		$this->endPoint = $endPoint;
-		$this->queryParameters["EndPoint"]=$endPoint;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getStartPoint() {
-		return $this->startPoint;
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
 	}
 
-	public function setStartPoint($startPoint) {
-		$this->startPoint = $startPoint;
-		$this->queryParameters["StartPoint"]=$startPoint;
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getEndTime() {
-		return $this->endTime;
+	public function getSecurityGroupId() {
+		return $this->securityGroupId;
 	}
 
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
+	public function setSecurityGroupId($securityGroupId) {
+		$this->securityGroupId = $securityGroupId;
+		$this->queryParameters["SecurityGroupId"]=$securityGroupId;
 	}
 
 	public function getDBInstanceId() {
@@ -73,13 +73,13 @@ class DescribeDBInstanceNetworkDetailRequest extends \RpcAcsRequest
 		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
 	}
 
-	public function getStartTime() {
-		return $this->startTime;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

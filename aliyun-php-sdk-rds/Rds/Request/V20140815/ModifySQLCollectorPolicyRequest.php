@@ -29,6 +29,8 @@ class ModifySQLCollectorPolicyRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
+	private  $storagePeriod;
+
 	private  $resourceOwnerAccount;
 
 	private  $clientToken;
@@ -48,6 +50,15 @@ class ModifySQLCollectorPolicyRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getStoragePeriod() {
+		return $this->storagePeriod;
+	}
+
+	public function setStoragePeriod($storagePeriod) {
+		$this->storagePeriod = $storagePeriod;
+		$this->queryParameters["StoragePeriod"]=$storagePeriod;
 	}
 
 	public function getResourceOwnerAccount() {

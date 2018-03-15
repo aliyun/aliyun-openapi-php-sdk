@@ -19,11 +19,11 @@
  */
 namespace Rds\Request\V20140815;
 
-class SwitchDBInstanceChargeTypeRequest extends \RpcAcsRequest
+class DescribeMigrateTasksRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "SwitchDBInstanceChargeType", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeMigrateTasks", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -31,11 +31,17 @@ class SwitchDBInstanceChargeTypeRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerAccount;
 
-	private  $ownerAccount;
+	private  $pageSize;
+
+	private  $endTime;
 
 	private  $dBInstanceId;
 
+	private  $startTime;
+
 	private  $ownerId;
+
+	private  $pageNumber;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -55,13 +61,22 @@ class SwitchDBInstanceChargeTypeRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getPageSize() {
+		return $this->pageSize;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
 	}
 
 	public function getDBInstanceId() {
@@ -73,6 +88,15 @@ class SwitchDBInstanceChargeTypeRequest extends \RpcAcsRequest
 		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
 	}
 
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -80,6 +104,15 @@ class SwitchDBInstanceChargeTypeRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getPageNumber() {
+		return $this->pageNumber;
+	}
+
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 	
 }

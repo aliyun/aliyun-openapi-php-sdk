@@ -19,21 +19,17 @@
  */
 namespace Rds\Request\V20140815;
 
-class CloneDBInstanceForSecurityRequest extends \RpcAcsRequest
+class DescribeBackupsForSecurityRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "CloneDBInstanceForSecurity", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeBackupsForSecurity", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
-	private  $dBInstanceStorage;
-
 	private  $resourceOwnerAccount;
-
-	private  $clientToken;
 
 	private  $targetAliBid;
 
@@ -41,17 +37,25 @@ class CloneDBInstanceForSecurityRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
+	private  $endTime;
+
+	private  $startTime;
+
 	private  $ownerId;
 
-	private  $dBInstanceClass;
+	private  $pageNumber;
 
-	private  $resourceGroupId;
+	private  $backupStatus;
+
+	private  $backupLocation;
 
 	private  $targetAliUid;
 
+	private  $pageSize;
+
 	private  $dBInstanceId;
 
-	private  $payType;
+	private  $backupMode;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -62,15 +66,6 @@ class CloneDBInstanceForSecurityRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getDBInstanceStorage() {
-		return $this->dBInstanceStorage;
-	}
-
-	public function setDBInstanceStorage($dBInstanceStorage) {
-		$this->dBInstanceStorage = $dBInstanceStorage;
-		$this->queryParameters["DBInstanceStorage"]=$dBInstanceStorage;
-	}
-
 	public function getResourceOwnerAccount() {
 		return $this->resourceOwnerAccount;
 	}
@@ -78,15 +73,6 @@ class CloneDBInstanceForSecurityRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getClientToken() {
-		return $this->clientToken;
-	}
-
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
 	public function getTargetAliBid() {
@@ -116,6 +102,24 @@ class CloneDBInstanceForSecurityRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -125,22 +129,31 @@ class CloneDBInstanceForSecurityRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getDBInstanceClass() {
-		return $this->dBInstanceClass;
+	public function getPageNumber() {
+		return $this->pageNumber;
 	}
 
-	public function setDBInstanceClass($dBInstanceClass) {
-		$this->dBInstanceClass = $dBInstanceClass;
-		$this->queryParameters["DBInstanceClass"]=$dBInstanceClass;
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 
-	public function getResourceGroupId() {
-		return $this->resourceGroupId;
+	public function getBackupStatus() {
+		return $this->backupStatus;
 	}
 
-	public function setResourceGroupId($resourceGroupId) {
-		$this->resourceGroupId = $resourceGroupId;
-		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
+	public function setBackupStatus($backupStatus) {
+		$this->backupStatus = $backupStatus;
+		$this->queryParameters["BackupStatus"]=$backupStatus;
+	}
+
+	public function getBackupLocation() {
+		return $this->backupLocation;
+	}
+
+	public function setBackupLocation($backupLocation) {
+		$this->backupLocation = $backupLocation;
+		$this->queryParameters["BackupLocation"]=$backupLocation;
 	}
 
 	public function getTargetAliUid() {
@@ -152,6 +165,15 @@ class CloneDBInstanceForSecurityRequest extends \RpcAcsRequest
 		$this->queryParameters["TargetAliUid"]=$targetAliUid;
 	}
 
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
 	public function getDBInstanceId() {
 		return $this->dBInstanceId;
 	}
@@ -161,13 +183,13 @@ class CloneDBInstanceForSecurityRequest extends \RpcAcsRequest
 		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
 	}
 
-	public function getPayType() {
-		return $this->payType;
+	public function getBackupMode() {
+		return $this->backupMode;
 	}
 
-	public function setPayType($payType) {
-		$this->payType = $payType;
-		$this->queryParameters["PayType"]=$payType;
+	public function setBackupMode($backupMode) {
+		$this->backupMode = $backupMode;
+		$this->queryParameters["BackupMode"]=$backupMode;
 	}
 	
 }

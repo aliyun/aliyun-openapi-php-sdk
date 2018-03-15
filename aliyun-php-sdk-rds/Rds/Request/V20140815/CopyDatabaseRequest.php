@@ -19,23 +19,17 @@
  */
 namespace Rds\Request\V20140815;
 
-class CompensateInstanceForChannelRequest extends \RpcAcsRequest
+class CopyDatabaseRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "CompensateInstanceForChannel", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "CopyDatabase", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
-
-	private  $zoneId;
-
-	private  $subDomain;
-
-	private  $dBInstanceId;
 
 	private  $ownerId;
 
@@ -55,33 +49,6 @@ class CompensateInstanceForChannelRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getZoneId() {
-		return $this->zoneId;
-	}
-
-	public function setZoneId($zoneId) {
-		$this->zoneId = $zoneId;
-		$this->queryParameters["ZoneId"]=$zoneId;
-	}
-
-	public function getSubDomain() {
-		return $this->subDomain;
-	}
-
-	public function setSubDomain($subDomain) {
-		$this->subDomain = $subDomain;
-		$this->queryParameters["SubDomain"]=$subDomain;
-	}
-
-	public function getDBInstanceId() {
-		return $this->dBInstanceId;
-	}
-
-	public function setDBInstanceId($dBInstanceId) {
-		$this->dBInstanceId = $dBInstanceId;
-		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
 	}
 
 	public function getOwnerId() {

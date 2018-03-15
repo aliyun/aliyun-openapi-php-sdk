@@ -31,6 +31,8 @@ class SwitchDBInstanceHARequest extends \RpcAcsRequest
 
 	private  $resourceOwnerAccount;
 
+	private  $effectiveTime;
+
 	private  $ownerAccount;
 
 	private  $dBInstanceId;
@@ -59,6 +61,15 @@ class SwitchDBInstanceHARequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getEffectiveTime() {
+		return $this->effectiveTime;
+	}
+
+	public function setEffectiveTime($effectiveTime) {
+		$this->effectiveTime = $effectiveTime;
+		$this->queryParameters["EffectiveTime"]=$effectiveTime;
 	}
 
 	public function getOwnerAccount() {

@@ -27,9 +27,13 @@ class MigrateToOtherZoneRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
+	private  $vSwitchId;
+
 	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
+
+	private  $effectiveTime;
 
 	private  $ownerAccount;
 
@@ -38,6 +42,15 @@ class MigrateToOtherZoneRequest extends \RpcAcsRequest
 	private  $dBInstanceId;
 
 	private  $ownerId;
+
+	public function getVSwitchId() {
+		return $this->vSwitchId;
+	}
+
+	public function setVSwitchId($vSwitchId) {
+		$this->vSwitchId = $vSwitchId;
+		$this->queryParameters["VSwitchId"]=$vSwitchId;
+	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -55,6 +68,15 @@ class MigrateToOtherZoneRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getEffectiveTime() {
+		return $this->effectiveTime;
+	}
+
+	public function setEffectiveTime($effectiveTime) {
+		$this->effectiveTime = $effectiveTime;
+		$this->queryParameters["EffectiveTime"]=$effectiveTime;
 	}
 
 	public function getOwnerAccount() {

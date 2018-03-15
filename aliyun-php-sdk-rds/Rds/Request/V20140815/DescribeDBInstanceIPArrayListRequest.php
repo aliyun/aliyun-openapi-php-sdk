@@ -29,6 +29,8 @@ class DescribeDBInstanceIPArrayListRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
+	private  $whitelistNetworkType;
+
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
@@ -44,6 +46,15 @@ class DescribeDBInstanceIPArrayListRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getWhitelistNetworkType() {
+		return $this->whitelistNetworkType;
+	}
+
+	public function setWhitelistNetworkType($whitelistNetworkType) {
+		$this->whitelistNetworkType = $whitelistNetworkType;
+		$this->queryParameters["WhitelistNetworkType"]=$whitelistNetworkType;
 	}
 
 	public function getResourceOwnerAccount() {

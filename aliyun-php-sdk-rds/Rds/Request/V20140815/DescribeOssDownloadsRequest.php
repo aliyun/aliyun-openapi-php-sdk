@@ -19,38 +19,23 @@
  */
 namespace Rds\Request\V20140815;
 
-class ModifyInstanceAutoRenewAttributeRequest extends \RpcAcsRequest
+class DescribeOssDownloadsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "ModifyInstanceAutoRenewAttribute", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeOssDownloads", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $duration;
-
 	private  $resourceOwnerId;
 
-	private  $autoRenew;
+	private  $migrateTaskId;
 
 	private  $resourceOwnerAccount;
-
-	private  $clientToken;
-
-	private  $ownerAccount;
 
 	private  $dBInstanceId;
 
 	private  $ownerId;
-
-	public function getDuration() {
-		return $this->duration;
-	}
-
-	public function setDuration($duration) {
-		$this->duration = $duration;
-		$this->queryParameters["Duration"]=$duration;
-	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -61,13 +46,13 @@ class ModifyInstanceAutoRenewAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getAutoRenew() {
-		return $this->autoRenew;
+	public function getMigrateTaskId() {
+		return $this->migrateTaskId;
 	}
 
-	public function setAutoRenew($autoRenew) {
-		$this->autoRenew = $autoRenew;
-		$this->queryParameters["AutoRenew"]=$autoRenew;
+	public function setMigrateTaskId($migrateTaskId) {
+		$this->migrateTaskId = $migrateTaskId;
+		$this->queryParameters["MigrateTaskId"]=$migrateTaskId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -77,24 +62,6 @@ class ModifyInstanceAutoRenewAttributeRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getClientToken() {
-		return $this->clientToken;
-	}
-
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getDBInstanceId() {

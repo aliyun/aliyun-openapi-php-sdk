@@ -19,31 +19,39 @@
  */
 namespace Rds\Request\V20140815;
 
-class AddBuDBInstanceRelationRequest extends \RpcAcsRequest
+class ModifyReplicaModeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "AddBuDBInstanceRelation", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "ModifyReplicaMode", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $businessUnit;
+	private  $domainMode;
 
 	private  $resourceOwnerId;
 
+	private  $primaryInstanceId;
+
+	private  $replicaMode;
+
+	private  $securityToken;
+
 	private  $resourceOwnerAccount;
 
-	private  $dBInstanceId;
+	private  $ownerAccount;
+
+	private  $replicaId;
 
 	private  $ownerId;
 
-	public function getBusinessUnit() {
-		return $this->businessUnit;
+	public function getDomainMode() {
+		return $this->domainMode;
 	}
 
-	public function setBusinessUnit($businessUnit) {
-		$this->businessUnit = $businessUnit;
-		$this->queryParameters["BusinessUnit"]=$businessUnit;
+	public function setDomainMode($domainMode) {
+		$this->domainMode = $domainMode;
+		$this->queryParameters["DomainMode"]=$domainMode;
 	}
 
 	public function getResourceOwnerId() {
@@ -55,6 +63,33 @@ class AddBuDBInstanceRelationRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getPrimaryInstanceId() {
+		return $this->primaryInstanceId;
+	}
+
+	public function setPrimaryInstanceId($primaryInstanceId) {
+		$this->primaryInstanceId = $primaryInstanceId;
+		$this->queryParameters["PrimaryInstanceId"]=$primaryInstanceId;
+	}
+
+	public function getReplicaMode() {
+		return $this->replicaMode;
+	}
+
+	public function setReplicaMode($replicaMode) {
+		$this->replicaMode = $replicaMode;
+		$this->queryParameters["ReplicaMode"]=$replicaMode;
+	}
+
+	public function getSecurityToken() {
+		return $this->securityToken;
+	}
+
+	public function setSecurityToken($securityToken) {
+		$this->securityToken = $securityToken;
+		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
+
 	public function getResourceOwnerAccount() {
 		return $this->resourceOwnerAccount;
 	}
@@ -64,13 +99,22 @@ class AddBuDBInstanceRelationRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getDBInstanceId() {
-		return $this->dBInstanceId;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setDBInstanceId($dBInstanceId) {
-		$this->dBInstanceId = $dBInstanceId;
-		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getReplicaId() {
+		return $this->replicaId;
+	}
+
+	public function setReplicaId($replicaId) {
+		$this->replicaId = $replicaId;
+		$this->queryParameters["ReplicaId"]=$replicaId;
 	}
 
 	public function getOwnerId() {

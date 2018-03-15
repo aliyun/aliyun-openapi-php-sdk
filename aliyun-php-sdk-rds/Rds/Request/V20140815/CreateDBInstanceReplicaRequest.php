@@ -29,6 +29,8 @@ class CreateDBInstanceReplicaRequest extends \RpcAcsRequest
 
 	private  $connectionMode;
 
+	private  $domainMode;
+
 	private  $replicaDescription;
 
 	private  $resourceOwnerId;
@@ -67,6 +69,8 @@ class CreateDBInstanceReplicaRequest extends \RpcAcsRequest
 
 	private  $sourceDBInstanceId;
 
+	private  $replicaMode;
+
 	private  $vPCId;
 
 	private  $zoneId;
@@ -82,6 +86,15 @@ class CreateDBInstanceReplicaRequest extends \RpcAcsRequest
 	public function setConnectionMode($connectionMode) {
 		$this->connectionMode = $connectionMode;
 		$this->queryParameters["ConnectionMode"]=$connectionMode;
+	}
+
+	public function getDomainMode() {
+		return $this->domainMode;
+	}
+
+	public function setDomainMode($domainMode) {
+		$this->domainMode = $domainMode;
+		$this->queryParameters["DomainMode"]=$domainMode;
 	}
 
 	public function getReplicaDescription() {
@@ -253,6 +266,15 @@ class CreateDBInstanceReplicaRequest extends \RpcAcsRequest
 	public function setSourceDBInstanceId($sourceDBInstanceId) {
 		$this->sourceDBInstanceId = $sourceDBInstanceId;
 		$this->queryParameters["SourceDBInstanceId"]=$sourceDBInstanceId;
+	}
+
+	public function getReplicaMode() {
+		return $this->replicaMode;
+	}
+
+	public function setReplicaMode($replicaMode) {
+		$this->replicaMode = $replicaMode;
+		$this->queryParameters["ReplicaMode"]=$replicaMode;
 	}
 
 	public function getVPCId() {

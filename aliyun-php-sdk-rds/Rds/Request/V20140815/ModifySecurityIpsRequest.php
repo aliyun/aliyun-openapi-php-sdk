@@ -41,11 +41,15 @@ class ModifySecurityIpsRequest extends \RpcAcsRequest
 
 	private  $securityIps;
 
+	private  $securityGroupId;
+
+	private  $ownerId;
+
+	private  $whitelistNetworkType;
+
 	private  $dBInstanceIPArrayAttribute;
 
 	private  $dBInstanceId;
-
-	private  $ownerId;
 
 	public function getDBInstanceIPArrayName() {
 		return $this->dBInstanceIPArrayName;
@@ -110,6 +114,33 @@ class ModifySecurityIpsRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityIps"]=$securityIps;
 	}
 
+	public function getSecurityGroupId() {
+		return $this->securityGroupId;
+	}
+
+	public function setSecurityGroupId($securityGroupId) {
+		$this->securityGroupId = $securityGroupId;
+		$this->queryParameters["SecurityGroupId"]=$securityGroupId;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getWhitelistNetworkType() {
+		return $this->whitelistNetworkType;
+	}
+
+	public function setWhitelistNetworkType($whitelistNetworkType) {
+		$this->whitelistNetworkType = $whitelistNetworkType;
+		$this->queryParameters["WhitelistNetworkType"]=$whitelistNetworkType;
+	}
+
 	public function getDBInstanceIPArrayAttribute() {
 		return $this->dBInstanceIPArrayAttribute;
 	}
@@ -126,15 +157,6 @@ class ModifySecurityIpsRequest extends \RpcAcsRequest
 	public function setDBInstanceId($dBInstanceId) {
 		$this->dBInstanceId = $dBInstanceId;
 		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }
