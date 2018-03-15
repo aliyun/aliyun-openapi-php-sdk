@@ -31,9 +31,13 @@ class DescribeTagsRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
+	private  $loadBalancerId;
+
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
+
+	private  $pageSize;
 
 	private  $distinctKey;
 
@@ -42,10 +46,6 @@ class DescribeTagsRequest extends \RpcAcsRequest
 	private  $pageNumber;
 
 	private  $tags;
-
-	private  $loadBalancerId;
-
-	private  $pageSize;
 
 	public function getaccess_key_id() {
 		return $this->access_key_id;
@@ -65,6 +65,15 @@ class DescribeTagsRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getLoadBalancerId() {
+		return $this->loadBalancerId;
+	}
+
+	public function setLoadBalancerId($loadBalancerId) {
+		$this->loadBalancerId = $loadBalancerId;
+		$this->queryParameters["LoadBalancerId"]=$loadBalancerId;
+	}
+
 	public function getResourceOwnerAccount() {
 		return $this->resourceOwnerAccount;
 	}
@@ -81,6 +90,15 @@ class DescribeTagsRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
 	public function getDistinctKey() {
@@ -117,24 +135,6 @@ class DescribeTagsRequest extends \RpcAcsRequest
 	public function setTags($tags) {
 		$this->tags = $tags;
 		$this->queryParameters["Tags"]=$tags;
-	}
-
-	public function getLoadBalancerId() {
-		return $this->loadBalancerId;
-	}
-
-	public function setLoadBalancerId($loadBalancerId) {
-		$this->loadBalancerId = $loadBalancerId;
-		$this->queryParameters["LoadBalancerId"]=$loadBalancerId;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
 	}
 	
 }

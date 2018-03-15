@@ -31,31 +31,21 @@ class DescribeLoadBalancersRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $networkType;
-
-	private  $masterZoneId;
-
-	private  $pageNumber;
-
-	private  $resourceGroupId;
-
-	private  $loadBalancerName;
-
-	private  $pageSize;
-
-	private  $addressType;
-
-	private  $slaveZoneId;
-
 	private  $address;
 
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
+	private  $networkType;
+
 	private  $ownerId;
 
 	private  $serverId;
+
+	private  $masterZoneId;
+
+	private  $pageNumber;
 
 	private  $tags;
 
@@ -63,11 +53,21 @@ class DescribeLoadBalancersRequest extends \RpcAcsRequest
 
 	private  $vSwitchId;
 
+	private  $resourceGroupId;
+
+	private  $loadBalancerName;
+
 	private  $loadBalancerId;
 
 	private  $internetChargeType;
 
 	private  $vpcId;
+
+	private  $pageSize;
+
+	private  $addressType;
+
+	private  $slaveZoneId;
 
 	private  $payType;
 
@@ -87,78 +87,6 @@ class DescribeLoadBalancersRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getNetworkType() {
-		return $this->networkType;
-	}
-
-	public function setNetworkType($networkType) {
-		$this->networkType = $networkType;
-		$this->queryParameters["NetworkType"]=$networkType;
-	}
-
-	public function getMasterZoneId() {
-		return $this->masterZoneId;
-	}
-
-	public function setMasterZoneId($masterZoneId) {
-		$this->masterZoneId = $masterZoneId;
-		$this->queryParameters["MasterZoneId"]=$masterZoneId;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
-	public function getResourceGroupId() {
-		return $this->resourceGroupId;
-	}
-
-	public function setResourceGroupId($resourceGroupId) {
-		$this->resourceGroupId = $resourceGroupId;
-		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
-	}
-
-	public function getLoadBalancerName() {
-		return $this->loadBalancerName;
-	}
-
-	public function setLoadBalancerName($loadBalancerName) {
-		$this->loadBalancerName = $loadBalancerName;
-		$this->queryParameters["LoadBalancerName"]=$loadBalancerName;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getAddressType() {
-		return $this->addressType;
-	}
-
-	public function setAddressType($addressType) {
-		$this->addressType = $addressType;
-		$this->queryParameters["AddressType"]=$addressType;
-	}
-
-	public function getSlaveZoneId() {
-		return $this->slaveZoneId;
-	}
-
-	public function setSlaveZoneId($slaveZoneId) {
-		$this->slaveZoneId = $slaveZoneId;
-		$this->queryParameters["SlaveZoneId"]=$slaveZoneId;
 	}
 
 	public function getAddress() {
@@ -188,6 +116,15 @@ class DescribeLoadBalancersRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
+	public function getNetworkType() {
+		return $this->networkType;
+	}
+
+	public function setNetworkType($networkType) {
+		$this->networkType = $networkType;
+		$this->queryParameters["NetworkType"]=$networkType;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -204,6 +141,24 @@ class DescribeLoadBalancersRequest extends \RpcAcsRequest
 	public function setServerId($serverId) {
 		$this->serverId = $serverId;
 		$this->queryParameters["ServerId"]=$serverId;
+	}
+
+	public function getMasterZoneId() {
+		return $this->masterZoneId;
+	}
+
+	public function setMasterZoneId($masterZoneId) {
+		$this->masterZoneId = $masterZoneId;
+		$this->queryParameters["MasterZoneId"]=$masterZoneId;
+	}
+
+	public function getPageNumber() {
+		return $this->pageNumber;
+	}
+
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 
 	public function getTags() {
@@ -233,6 +188,24 @@ class DescribeLoadBalancersRequest extends \RpcAcsRequest
 		$this->queryParameters["VSwitchId"]=$vSwitchId;
 	}
 
+	public function getResourceGroupId() {
+		return $this->resourceGroupId;
+	}
+
+	public function setResourceGroupId($resourceGroupId) {
+		$this->resourceGroupId = $resourceGroupId;
+		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
+	}
+
+	public function getLoadBalancerName() {
+		return $this->loadBalancerName;
+	}
+
+	public function setLoadBalancerName($loadBalancerName) {
+		$this->loadBalancerName = $loadBalancerName;
+		$this->queryParameters["LoadBalancerName"]=$loadBalancerName;
+	}
+
 	public function getLoadBalancerId() {
 		return $this->loadBalancerId;
 	}
@@ -258,6 +231,33 @@ class DescribeLoadBalancersRequest extends \RpcAcsRequest
 	public function setVpcId($vpcId) {
 		$this->vpcId = $vpcId;
 		$this->queryParameters["VpcId"]=$vpcId;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
+	public function getAddressType() {
+		return $this->addressType;
+	}
+
+	public function setAddressType($addressType) {
+		$this->addressType = $addressType;
+		$this->queryParameters["AddressType"]=$addressType;
+	}
+
+	public function getSlaveZoneId() {
+		return $this->slaveZoneId;
+	}
+
+	public function setSlaveZoneId($slaveZoneId) {
+		$this->slaveZoneId = $slaveZoneId;
+		$this->queryParameters["SlaveZoneId"]=$slaveZoneId;
 	}
 
 	public function getPayType() {
