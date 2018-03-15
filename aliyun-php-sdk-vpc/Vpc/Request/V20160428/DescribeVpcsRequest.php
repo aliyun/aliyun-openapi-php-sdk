@@ -27,6 +27,10 @@ class DescribeVpcsRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
+	private  $vpcName;
+
+	private  $resourceGroupId;
+
 	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
@@ -35,8 +39,6 @@ class DescribeVpcsRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
-	private  $name;
-
 	private  $pageSize;
 
 	private  $isDefault;
@@ -44,6 +46,24 @@ class DescribeVpcsRequest extends \RpcAcsRequest
 	private  $ownerId;
 
 	private  $pageNumber;
+
+	public function getVpcName() {
+		return $this->vpcName;
+	}
+
+	public function setVpcName($vpcName) {
+		$this->vpcName = $vpcName;
+		$this->queryParameters["VpcName"]=$vpcName;
+	}
+
+	public function getResourceGroupId() {
+		return $this->resourceGroupId;
+	}
+
+	public function setResourceGroupId($resourceGroupId) {
+		$this->resourceGroupId = $resourceGroupId;
+		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
+	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -79,15 +99,6 @@ class DescribeVpcsRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getName() {
-		return $this->name;
-	}
-
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
 	}
 
 	public function getPageSize() {

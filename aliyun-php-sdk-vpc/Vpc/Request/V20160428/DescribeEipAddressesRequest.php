@@ -47,6 +47,8 @@ class DescribeEipAddressesRequest extends \RpcAcsRequest
 
 	private  $pageNumber;
 
+	private  $resourceGroupId;
+
 	private  $lockReason;
 
 	private  $filter1Key;
@@ -149,6 +151,15 @@ class DescribeEipAddressesRequest extends \RpcAcsRequest
 	public function setPageNumber($pageNumber) {
 		$this->pageNumber = $pageNumber;
 		$this->queryParameters["PageNumber"]=$pageNumber;
+	}
+
+	public function getResourceGroupId() {
+		return $this->resourceGroupId;
+	}
+
+	public function setResourceGroupId($resourceGroupId) {
+		$this->resourceGroupId = $resourceGroupId;
+		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
 	}
 
 	public function getLockReason() {

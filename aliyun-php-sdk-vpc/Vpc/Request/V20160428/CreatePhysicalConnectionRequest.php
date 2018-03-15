@@ -57,8 +57,6 @@ class CreatePhysicalConnectionRequest extends \RpcAcsRequest
 
 	private  $name;
 
-	private  $userCidr;
-
 	public function getAccessPointId() {
 		return $this->accessPointId;
 	}
@@ -192,15 +190,6 @@ class CreatePhysicalConnectionRequest extends \RpcAcsRequest
 	public function setName($name) {
 		$this->name = $name;
 		$this->queryParameters["Name"]=$name;
-	}
-
-	public function getUserCidr() {
-		return $this->userCidr;
-	}
-
-	public function setUserCidr($userCidr) {
-		$this->userCidr = $userCidr;
-		$this->queryParameters["UserCidr"]=$userCidr;
 	}
 	
 }

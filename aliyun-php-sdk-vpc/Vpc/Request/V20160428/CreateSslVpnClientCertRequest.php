@@ -19,17 +19,15 @@
  */
 namespace Vpc\Request\V20160428;
 
-class CreateVpcRequest extends \RpcAcsRequest
+class CreateSslVpnClientCertRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Vpc", "2016-04-28", "CreateVpc", "vpc", "openAPI");
+		parent::__construct("Vpc", "2016-04-28", "CreateSslVpnClientCert", "vpc", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $vpcName;
-
-	private  $resourceGroupId;
+	private  $sslVpnServerId;
 
 	private  $resourceOwnerId;
 
@@ -39,30 +37,17 @@ class CreateVpcRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
-	private  $cidrBlock;
-
-	private  $description;
-
-	private  $userCidr;
+	private  $name;
 
 	private  $ownerId;
 
-	public function getVpcName() {
-		return $this->vpcName;
+	public function getSslVpnServerId() {
+		return $this->sslVpnServerId;
 	}
 
-	public function setVpcName($vpcName) {
-		$this->vpcName = $vpcName;
-		$this->queryParameters["VpcName"]=$vpcName;
-	}
-
-	public function getResourceGroupId() {
-		return $this->resourceGroupId;
-	}
-
-	public function setResourceGroupId($resourceGroupId) {
-		$this->resourceGroupId = $resourceGroupId;
-		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
+	public function setSslVpnServerId($sslVpnServerId) {
+		$this->sslVpnServerId = $sslVpnServerId;
+		$this->queryParameters["SslVpnServerId"]=$sslVpnServerId;
 	}
 
 	public function getResourceOwnerId() {
@@ -101,31 +86,13 @@ class CreateVpcRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getCidrBlock() {
-		return $this->cidrBlock;
+	public function getName() {
+		return $this->name;
 	}
 
-	public function setCidrBlock($cidrBlock) {
-		$this->cidrBlock = $cidrBlock;
-		$this->queryParameters["CidrBlock"]=$cidrBlock;
-	}
-
-	public function getDescription() {
-		return $this->description;
-	}
-
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
-	}
-
-	public function getUserCidr() {
-		return $this->userCidr;
-	}
-
-	public function setUserCidr($userCidr) {
-		$this->userCidr = $userCidr;
-		$this->queryParameters["UserCidr"]=$userCidr;
+	public function setName($name) {
+		$this->name = $name;
+		$this->queryParameters["Name"]=$name;
 	}
 
 	public function getOwnerId() {

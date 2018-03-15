@@ -39,8 +39,6 @@ class ModifyVpcAttributeRequest extends \RpcAcsRequest
 
 	private  $description;
 
-	private  $userCidr;
-
 	private  $ownerId;
 
 	public function getVpcName() {
@@ -95,15 +93,6 @@ class ModifyVpcAttributeRequest extends \RpcAcsRequest
 	public function setDescription($description) {
 		$this->description = $description;
 		$this->queryParameters["Description"]=$description;
-	}
-
-	public function getUserCidr() {
-		return $this->userCidr;
-	}
-
-	public function setUserCidr($userCidr) {
-		$this->userCidr = $userCidr;
-		$this->queryParameters["UserCidr"]=$userCidr;
 	}
 
 	public function getOwnerId() {

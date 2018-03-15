@@ -33,6 +33,8 @@ class ModifyRouterInterfaceAttributeRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerAccount;
 
+	private  $deleteHealthCheckIp;
+
 	private  $description;
 
 	private  $healthCheckTargetIp;
@@ -76,6 +78,15 @@ class ModifyRouterInterfaceAttributeRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getDeleteHealthCheckIp() {
+		return $this->deleteHealthCheckIp;
+	}
+
+	public function setDeleteHealthCheckIp($deleteHealthCheckIp) {
+		$this->deleteHealthCheckIp = $deleteHealthCheckIp;
+		$this->queryParameters["DeleteHealthCheckIp"]=$deleteHealthCheckIp;
 	}
 
 	public function getDescription() {

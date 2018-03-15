@@ -27,19 +27,13 @@ class DescribeRouteTablesRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $routerType;
-
 	private  $resourceOwnerId;
 
 	private  $vRouterId;
 
 	private  $resourceOwnerAccount;
 
-	private  $routerId;
-
 	private  $ownerAccount;
-
-	private  $pageSize;
 
 	private  $ownerId;
 
@@ -47,16 +41,15 @@ class DescribeRouteTablesRequest extends \RpcAcsRequest
 
 	private  $pageNumber;
 
+	private  $routerType;
+
+	private  $routeTableName;
+
+	private  $routerId;
+
+	private  $pageSize;
+
 	private  $routeTableId;
-
-	public function getRouterType() {
-		return $this->routerType;
-	}
-
-	public function setRouterType($routerType) {
-		$this->routerType = $routerType;
-		$this->queryParameters["RouterType"]=$routerType;
-	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -85,15 +78,6 @@ class DescribeRouteTablesRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getRouterId() {
-		return $this->routerId;
-	}
-
-	public function setRouterId($routerId) {
-		$this->routerId = $routerId;
-		$this->queryParameters["RouterId"]=$routerId;
-	}
-
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -101,15 +85,6 @@ class DescribeRouteTablesRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
 	public function getOwnerId() {
@@ -137,6 +112,42 @@ class DescribeRouteTablesRequest extends \RpcAcsRequest
 	public function setPageNumber($pageNumber) {
 		$this->pageNumber = $pageNumber;
 		$this->queryParameters["PageNumber"]=$pageNumber;
+	}
+
+	public function getRouterType() {
+		return $this->routerType;
+	}
+
+	public function setRouterType($routerType) {
+		$this->routerType = $routerType;
+		$this->queryParameters["RouterType"]=$routerType;
+	}
+
+	public function getRouteTableName() {
+		return $this->routeTableName;
+	}
+
+	public function setRouteTableName($routeTableName) {
+		$this->routeTableName = $routeTableName;
+		$this->queryParameters["RouteTableName"]=$routeTableName;
+	}
+
+	public function getRouterId() {
+		return $this->routerId;
+	}
+
+	public function setRouterId($routerId) {
+		$this->routerId = $routerId;
+		$this->queryParameters["RouterId"]=$routerId;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
 	public function getRouteTableId() {

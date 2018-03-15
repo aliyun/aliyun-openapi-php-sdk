@@ -19,25 +19,27 @@
  */
 namespace Vpc\Request\V20160428;
 
-class TerminatePhysicalConnectionRequest extends \RpcAcsRequest
+class MoveResourceGroupRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Vpc", "2016-04-28", "TerminatePhysicalConnection", "vpc", "openAPI");
+		parent::__construct("Vpc", "2016-04-28", "MoveResourceGroup", "vpc", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
+	private  $resourceId;
+
+	private  $newResourceGroupId;
+
 	private  $resourceOwnerAccount;
-
-	private  $clientToken;
-
-	private  $physicalConnectionId;
 
 	private  $ownerAccount;
 
 	private  $ownerId;
+
+	private  $resourceType;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -48,6 +50,24 @@ class TerminatePhysicalConnectionRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getResourceId() {
+		return $this->resourceId;
+	}
+
+	public function setResourceId($resourceId) {
+		$this->resourceId = $resourceId;
+		$this->queryParameters["ResourceId"]=$resourceId;
+	}
+
+	public function getNewResourceGroupId() {
+		return $this->newResourceGroupId;
+	}
+
+	public function setNewResourceGroupId($newResourceGroupId) {
+		$this->newResourceGroupId = $newResourceGroupId;
+		$this->queryParameters["NewResourceGroupId"]=$newResourceGroupId;
+	}
+
 	public function getResourceOwnerAccount() {
 		return $this->resourceOwnerAccount;
 	}
@@ -55,24 +75,6 @@ class TerminatePhysicalConnectionRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getClientToken() {
-		return $this->clientToken;
-	}
-
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
-
-	public function getPhysicalConnectionId() {
-		return $this->physicalConnectionId;
-	}
-
-	public function setPhysicalConnectionId($physicalConnectionId) {
-		$this->physicalConnectionId = $physicalConnectionId;
-		$this->queryParameters["PhysicalConnectionId"]=$physicalConnectionId;
 	}
 
 	public function getOwnerAccount() {
@@ -91,6 +93,15 @@ class TerminatePhysicalConnectionRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getResourceType() {
+		return $this->resourceType;
+	}
+
+	public function setResourceType($resourceType) {
+		$this->resourceType = $resourceType;
+		$this->queryParameters["ResourceType"]=$resourceType;
 	}
 	
 }

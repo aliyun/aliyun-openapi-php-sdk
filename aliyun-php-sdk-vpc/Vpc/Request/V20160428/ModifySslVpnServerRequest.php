@@ -19,41 +19,48 @@
  */
 namespace Vpc\Request\V20160428;
 
-class AllocateEipAddressRequest extends \RpcAcsRequest
+class ModifySslVpnServerRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Vpc", "2016-04-28", "AllocateEipAddress", "vpc", "openAPI");
+		parent::__construct("Vpc", "2016-04-28", "ModifySslVpnServer", "vpc", "openAPI");
 		$this->setMethod("POST");
 	}
 
+	private  $cipher;
+
 	private  $resourceOwnerId;
 
-	private  $period;
-
-	private  $autoPay;
+	private  $clientIpPool;
 
 	private  $resourceOwnerAccount;
 
-	private  $bandwidth;
-
 	private  $clientToken;
 
-	private  $iSP;
+	private  $compress;
 
 	private  $ownerAccount;
 
 	private  $ownerId;
 
-	private  $resourceGroupId;
+	private  $sslVpnServerId;
 
-	private  $internetChargeType;
+	private  $localSubnet;
 
-	private  $netmode;
+	private  $port;
 
-	private  $pricingCycle;
+	private  $proto;
 
-	private  $instanceChargeType;
+	private  $name;
+
+	public function getCipher() {
+		return $this->cipher;
+	}
+
+	public function setCipher($cipher) {
+		$this->cipher = $cipher;
+		$this->queryParameters["Cipher"]=$cipher;
+	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -64,22 +71,13 @@ class AllocateEipAddressRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getPeriod() {
-		return $this->period;
+	public function getClientIpPool() {
+		return $this->clientIpPool;
 	}
 
-	public function setPeriod($period) {
-		$this->period = $period;
-		$this->queryParameters["Period"]=$period;
-	}
-
-	public function getAutoPay() {
-		return $this->autoPay;
-	}
-
-	public function setAutoPay($autoPay) {
-		$this->autoPay = $autoPay;
-		$this->queryParameters["AutoPay"]=$autoPay;
+	public function setClientIpPool($clientIpPool) {
+		$this->clientIpPool = $clientIpPool;
+		$this->queryParameters["ClientIpPool"]=$clientIpPool;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -91,15 +89,6 @@ class AllocateEipAddressRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getBandwidth() {
-		return $this->bandwidth;
-	}
-
-	public function setBandwidth($bandwidth) {
-		$this->bandwidth = $bandwidth;
-		$this->queryParameters["Bandwidth"]=$bandwidth;
-	}
-
 	public function getClientToken() {
 		return $this->clientToken;
 	}
@@ -109,13 +98,13 @@ class AllocateEipAddressRequest extends \RpcAcsRequest
 		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
-	public function getISP() {
-		return $this->iSP;
+	public function getCompress() {
+		return $this->compress;
 	}
 
-	public function setISP($iSP) {
-		$this->iSP = $iSP;
-		$this->queryParameters["ISP"]=$iSP;
+	public function setCompress($compress) {
+		$this->compress = $compress;
+		$this->queryParameters["Compress"]=$compress;
 	}
 
 	public function getOwnerAccount() {
@@ -136,49 +125,49 @@ class AllocateEipAddressRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getResourceGroupId() {
-		return $this->resourceGroupId;
+	public function getSslVpnServerId() {
+		return $this->sslVpnServerId;
 	}
 
-	public function setResourceGroupId($resourceGroupId) {
-		$this->resourceGroupId = $resourceGroupId;
-		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
+	public function setSslVpnServerId($sslVpnServerId) {
+		$this->sslVpnServerId = $sslVpnServerId;
+		$this->queryParameters["SslVpnServerId"]=$sslVpnServerId;
 	}
 
-	public function getInternetChargeType() {
-		return $this->internetChargeType;
+	public function getLocalSubnet() {
+		return $this->localSubnet;
 	}
 
-	public function setInternetChargeType($internetChargeType) {
-		$this->internetChargeType = $internetChargeType;
-		$this->queryParameters["InternetChargeType"]=$internetChargeType;
+	public function setLocalSubnet($localSubnet) {
+		$this->localSubnet = $localSubnet;
+		$this->queryParameters["LocalSubnet"]=$localSubnet;
 	}
 
-	public function getNetmode() {
-		return $this->netmode;
+	public function getPort() {
+		return $this->port;
 	}
 
-	public function setNetmode($netmode) {
-		$this->netmode = $netmode;
-		$this->queryParameters["Netmode"]=$netmode;
+	public function setPort($port) {
+		$this->port = $port;
+		$this->queryParameters["Port"]=$port;
 	}
 
-	public function getPricingCycle() {
-		return $this->pricingCycle;
+	public function getProto() {
+		return $this->proto;
 	}
 
-	public function setPricingCycle($pricingCycle) {
-		$this->pricingCycle = $pricingCycle;
-		$this->queryParameters["PricingCycle"]=$pricingCycle;
+	public function setProto($proto) {
+		$this->proto = $proto;
+		$this->queryParameters["Proto"]=$proto;
 	}
 
-	public function getInstanceChargeType() {
-		return $this->instanceChargeType;
+	public function getName() {
+		return $this->name;
 	}
 
-	public function setInstanceChargeType($instanceChargeType) {
-		$this->instanceChargeType = $instanceChargeType;
-		$this->queryParameters["InstanceChargeType"]=$instanceChargeType;
+	public function setName($name) {
+		$this->name = $name;
+		$this->queryParameters["Name"]=$name;
 	}
 	
 }

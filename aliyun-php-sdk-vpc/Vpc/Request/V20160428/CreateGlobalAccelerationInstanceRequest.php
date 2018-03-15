@@ -29,6 +29,8 @@ class CreateGlobalAccelerationInstanceRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
+	private  $bandwidthType;
+
 	private  $resourceOwnerAccount;
 
 	private  $serviceLocation;
@@ -37,15 +39,15 @@ class CreateGlobalAccelerationInstanceRequest extends \RpcAcsRequest
 
 	private  $clientToken;
 
-	private  $internetChargeType;
-
 	private  $ownerAccount;
-
-	private  $name;
 
 	private  $description;
 
 	private  $ownerId;
+
+	private  $internetChargeType;
+
+	private  $name;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -54,6 +56,15 @@ class CreateGlobalAccelerationInstanceRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getBandwidthType() {
+		return $this->bandwidthType;
+	}
+
+	public function setBandwidthType($bandwidthType) {
+		$this->bandwidthType = $bandwidthType;
+		$this->queryParameters["BandwidthType"]=$bandwidthType;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -92,15 +103,6 @@ class CreateGlobalAccelerationInstanceRequest extends \RpcAcsRequest
 		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
-	public function getInternetChargeType() {
-		return $this->internetChargeType;
-	}
-
-	public function setInternetChargeType($internetChargeType) {
-		$this->internetChargeType = $internetChargeType;
-		$this->queryParameters["InternetChargeType"]=$internetChargeType;
-	}
-
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -108,15 +110,6 @@ class CreateGlobalAccelerationInstanceRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getName() {
-		return $this->name;
-	}
-
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
 	}
 
 	public function getDescription() {
@@ -135,6 +128,24 @@ class CreateGlobalAccelerationInstanceRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getInternetChargeType() {
+		return $this->internetChargeType;
+	}
+
+	public function setInternetChargeType($internetChargeType) {
+		$this->internetChargeType = $internetChargeType;
+		$this->queryParameters["InternetChargeType"]=$internetChargeType;
+	}
+
+	public function getName() {
+		return $this->name;
+	}
+
+	public function setName($name) {
+		$this->name = $name;
+		$this->queryParameters["Name"]=$name;
 	}
 	
 }

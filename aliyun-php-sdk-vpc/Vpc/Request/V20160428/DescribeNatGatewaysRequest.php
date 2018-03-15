@@ -35,6 +35,8 @@ class DescribeNatGatewaysRequest extends \RpcAcsRequest
 
 	private  $vpcId;
 
+	private  $name;
+
 	private  $pageSize;
 
 	private  $natGatewayId;
@@ -77,6 +79,15 @@ class DescribeNatGatewaysRequest extends \RpcAcsRequest
 	public function setVpcId($vpcId) {
 		$this->vpcId = $vpcId;
 		$this->queryParameters["VpcId"]=$vpcId;
+	}
+
+	public function getName() {
+		return $this->name;
+	}
+
+	public function setName($name) {
+		$this->name = $name;
+		$this->queryParameters["Name"]=$name;
 	}
 
 	public function getPageSize() {

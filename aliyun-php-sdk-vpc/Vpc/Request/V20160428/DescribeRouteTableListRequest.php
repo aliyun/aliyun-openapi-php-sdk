@@ -31,8 +31,6 @@ class DescribeRouteTableListRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerAccount;
 
-	private  $bandwidth;
-
 	private  $ownerAccount;
 
 	private  $ownerId;
@@ -41,19 +39,13 @@ class DescribeRouteTableListRequest extends \RpcAcsRequest
 
 	private  $routerType;
 
-	private  $kbpsBandwidth;
-
 	private  $routeTableName;
 
 	private  $routerId;
 
 	private  $vpcId;
 
-	private  $resourceUid;
-
 	private  $pageSize;
-
-	private  $resourceBid;
 
 	private  $routeTableId;
 
@@ -73,15 +65,6 @@ class DescribeRouteTableListRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getBandwidth() {
-		return $this->bandwidth;
-	}
-
-	public function setBandwidth($bandwidth) {
-		$this->bandwidth = $bandwidth;
-		$this->queryParameters["Bandwidth"]=$bandwidth;
 	}
 
 	public function getOwnerAccount() {
@@ -120,15 +103,6 @@ class DescribeRouteTableListRequest extends \RpcAcsRequest
 		$this->queryParameters["RouterType"]=$routerType;
 	}
 
-	public function getKbpsBandwidth() {
-		return $this->kbpsBandwidth;
-	}
-
-	public function setKbpsBandwidth($kbpsBandwidth) {
-		$this->kbpsBandwidth = $kbpsBandwidth;
-		$this->queryParameters["KbpsBandwidth"]=$kbpsBandwidth;
-	}
-
 	public function getRouteTableName() {
 		return $this->routeTableName;
 	}
@@ -156,15 +130,6 @@ class DescribeRouteTableListRequest extends \RpcAcsRequest
 		$this->queryParameters["VpcId"]=$vpcId;
 	}
 
-	public function getResourceUid() {
-		return $this->resourceUid;
-	}
-
-	public function setResourceUid($resourceUid) {
-		$this->resourceUid = $resourceUid;
-		$this->queryParameters["ResourceUid"]=$resourceUid;
-	}
-
 	public function getPageSize() {
 		return $this->pageSize;
 	}
@@ -172,15 +137,6 @@ class DescribeRouteTableListRequest extends \RpcAcsRequest
 	public function setPageSize($pageSize) {
 		$this->pageSize = $pageSize;
 		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getResourceBid() {
-		return $this->resourceBid;
-	}
-
-	public function setResourceBid($resourceBid) {
-		$this->resourceBid = $resourceBid;
-		$this->queryParameters["ResourceBid"]=$resourceBid;
 	}
 
 	public function getRouteTableId() {

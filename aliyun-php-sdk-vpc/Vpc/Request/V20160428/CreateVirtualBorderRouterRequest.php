@@ -53,8 +53,6 @@ class CreateVirtualBorderRouterRequest extends \RpcAcsRequest
 
 	private  $localGatewayIp;
 
-	private  $userCidr;
-
 	private  $vbrOwnerId;
 
 	public function getResourceOwnerId() {
@@ -172,15 +170,6 @@ class CreateVirtualBorderRouterRequest extends \RpcAcsRequest
 	public function setLocalGatewayIp($localGatewayIp) {
 		$this->localGatewayIp = $localGatewayIp;
 		$this->queryParameters["LocalGatewayIp"]=$localGatewayIp;
-	}
-
-	public function getUserCidr() {
-		return $this->userCidr;
-	}
-
-	public function setUserCidr($userCidr) {
-		$this->userCidr = $userCidr;
-		$this->queryParameters["UserCidr"]=$userCidr;
 	}
 
 	public function getVbrOwnerId() {

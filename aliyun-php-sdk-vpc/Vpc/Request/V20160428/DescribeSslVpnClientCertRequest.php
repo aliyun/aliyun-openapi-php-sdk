@@ -19,51 +19,23 @@
  */
 namespace Vpc\Request\V20160428;
 
-class CreateVpcRequest extends \RpcAcsRequest
+class DescribeSslVpnClientCertRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Vpc", "2016-04-28", "CreateVpc", "vpc", "openAPI");
+		parent::__construct("Vpc", "2016-04-28", "DescribeSslVpnClientCert", "vpc", "openAPI");
 		$this->setMethod("POST");
 	}
-
-	private  $vpcName;
-
-	private  $resourceGroupId;
 
 	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
-	private  $clientToken;
-
 	private  $ownerAccount;
-
-	private  $cidrBlock;
-
-	private  $description;
-
-	private  $userCidr;
 
 	private  $ownerId;
 
-	public function getVpcName() {
-		return $this->vpcName;
-	}
-
-	public function setVpcName($vpcName) {
-		$this->vpcName = $vpcName;
-		$this->queryParameters["VpcName"]=$vpcName;
-	}
-
-	public function getResourceGroupId() {
-		return $this->resourceGroupId;
-	}
-
-	public function setResourceGroupId($resourceGroupId) {
-		$this->resourceGroupId = $resourceGroupId;
-		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
-	}
+	private  $sslVpnClientCertId;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -83,15 +55,6 @@ class CreateVpcRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getClientToken() {
-		return $this->clientToken;
-	}
-
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
-
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -101,33 +64,6 @@ class CreateVpcRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getCidrBlock() {
-		return $this->cidrBlock;
-	}
-
-	public function setCidrBlock($cidrBlock) {
-		$this->cidrBlock = $cidrBlock;
-		$this->queryParameters["CidrBlock"]=$cidrBlock;
-	}
-
-	public function getDescription() {
-		return $this->description;
-	}
-
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
-	}
-
-	public function getUserCidr() {
-		return $this->userCidr;
-	}
-
-	public function setUserCidr($userCidr) {
-		$this->userCidr = $userCidr;
-		$this->queryParameters["UserCidr"]=$userCidr;
-	}
-
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -135,6 +71,15 @@ class CreateVpcRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getSslVpnClientCertId() {
+		return $this->sslVpnClientCertId;
+	}
+
+	public function setSslVpnClientCertId($sslVpnClientCertId) {
+		$this->sslVpnClientCertId = $sslVpnClientCertId;
+		$this->queryParameters["SslVpnClientCertId"]=$sslVpnClientCertId;
 	}
 	
 }

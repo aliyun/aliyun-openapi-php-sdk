@@ -33,6 +33,8 @@ class AssociateEipAddressRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerAccount;
 
+	private  $instanceRegionId;
+
 	private  $ownerAccount;
 
 	private  $instanceType;
@@ -66,6 +68,15 @@ class AssociateEipAddressRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getInstanceRegionId() {
+		return $this->instanceRegionId;
+	}
+
+	public function setInstanceRegionId($instanceRegionId) {
+		$this->instanceRegionId = $instanceRegionId;
+		$this->queryParameters["InstanceRegionId"]=$instanceRegionId;
 	}
 
 	public function getOwnerAccount() {

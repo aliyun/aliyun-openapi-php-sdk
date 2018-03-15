@@ -41,7 +41,7 @@ class DescribeVSwitchesRequest extends \RpcAcsRequest
 
 	private  $vpcId;
 
-	private  $name;
+	private  $vSwitchName;
 
 	private  $pageSize;
 
@@ -112,13 +112,13 @@ class DescribeVSwitchesRequest extends \RpcAcsRequest
 		$this->queryParameters["VpcId"]=$vpcId;
 	}
 
-	public function getName() {
-		return $this->name;
+	public function getVSwitchName() {
+		return $this->vSwitchName;
 	}
 
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
+	public function setVSwitchName($vSwitchName) {
+		$this->vSwitchName = $vSwitchName;
+		$this->queryParameters["VSwitchName"]=$vSwitchName;
 	}
 
 	public function getPageSize() {

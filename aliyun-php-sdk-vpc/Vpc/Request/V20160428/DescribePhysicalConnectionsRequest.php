@@ -39,8 +39,6 @@ class DescribePhysicalConnectionsRequest extends \RpcAcsRequest
 
 	private  $pageSize;
 
-	private  $userCidr;
-
 	private  $ownerId;
 
 	private  $pageNumber;
@@ -103,15 +101,6 @@ class DescribePhysicalConnectionsRequest extends \RpcAcsRequest
 	public function setPageSize($pageSize) {
 		$this->pageSize = $pageSize;
 		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getUserCidr() {
-		return $this->userCidr;
-	}
-
-	public function setUserCidr($userCidr) {
-		$this->userCidr = $userCidr;
-		$this->queryParameters["UserCidr"]=$userCidr;
 	}
 
 	public function getOwnerId() {

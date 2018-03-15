@@ -19,51 +19,33 @@
  */
 namespace Vpc\Request\V20160428;
 
-class CreateVpcRequest extends \RpcAcsRequest
+class DescribeVpnConnectionLogsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Vpc", "2016-04-28", "CreateVpc", "vpc", "openAPI");
+		parent::__construct("Vpc", "2016-04-28", "DescribeVpnConnectionLogs", "vpc", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $vpcName;
-
-	private  $resourceGroupId;
-
 	private  $resourceOwnerId;
+
+	private  $minutePeriod;
 
 	private  $resourceOwnerAccount;
 
-	private  $clientToken;
+	private  $vpnConnectionId;
 
 	private  $ownerAccount;
 
-	private  $cidrBlock;
+	private  $pageSize;
 
-	private  $description;
+	private  $from;
 
-	private  $userCidr;
+	private  $to;
 
 	private  $ownerId;
 
-	public function getVpcName() {
-		return $this->vpcName;
-	}
-
-	public function setVpcName($vpcName) {
-		$this->vpcName = $vpcName;
-		$this->queryParameters["VpcName"]=$vpcName;
-	}
-
-	public function getResourceGroupId() {
-		return $this->resourceGroupId;
-	}
-
-	public function setResourceGroupId($resourceGroupId) {
-		$this->resourceGroupId = $resourceGroupId;
-		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
-	}
+	private  $pageNumber;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -72,6 +54,15 @@ class CreateVpcRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getMinutePeriod() {
+		return $this->minutePeriod;
+	}
+
+	public function setMinutePeriod($minutePeriod) {
+		$this->minutePeriod = $minutePeriod;
+		$this->queryParameters["MinutePeriod"]=$minutePeriod;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -83,13 +74,13 @@ class CreateVpcRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getClientToken() {
-		return $this->clientToken;
+	public function getVpnConnectionId() {
+		return $this->vpnConnectionId;
 	}
 
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
+	public function setVpnConnectionId($vpnConnectionId) {
+		$this->vpnConnectionId = $vpnConnectionId;
+		$this->queryParameters["VpnConnectionId"]=$vpnConnectionId;
 	}
 
 	public function getOwnerAccount() {
@@ -101,31 +92,31 @@ class CreateVpcRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getCidrBlock() {
-		return $this->cidrBlock;
+	public function getPageSize() {
+		return $this->pageSize;
 	}
 
-	public function setCidrBlock($cidrBlock) {
-		$this->cidrBlock = $cidrBlock;
-		$this->queryParameters["CidrBlock"]=$cidrBlock;
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
-	public function getDescription() {
-		return $this->description;
+	public function getFrom() {
+		return $this->from;
 	}
 
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
+	public function setFrom($from) {
+		$this->from = $from;
+		$this->queryParameters["From"]=$from;
 	}
 
-	public function getUserCidr() {
-		return $this->userCidr;
+	public function getTo() {
+		return $this->to;
 	}
 
-	public function setUserCidr($userCidr) {
-		$this->userCidr = $userCidr;
-		$this->queryParameters["UserCidr"]=$userCidr;
+	public function setTo($to) {
+		$this->to = $to;
+		$this->queryParameters["To"]=$to;
 	}
 
 	public function getOwnerId() {
@@ -135,6 +126,15 @@ class CreateVpcRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getPageNumber() {
+		return $this->pageNumber;
+	}
+
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 	
 }

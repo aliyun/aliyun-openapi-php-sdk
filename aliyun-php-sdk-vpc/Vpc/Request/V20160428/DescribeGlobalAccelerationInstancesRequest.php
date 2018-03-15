@@ -31,6 +31,8 @@ class DescribeGlobalAccelerationInstancesRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
+	private  $bandwidthType;
+
 	private  $resourceOwnerAccount;
 
 	private  $serviceLocation;
@@ -67,6 +69,15 @@ class DescribeGlobalAccelerationInstancesRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getBandwidthType() {
+		return $this->bandwidthType;
+	}
+
+	public function setBandwidthType($bandwidthType) {
+		$this->bandwidthType = $bandwidthType;
+		$this->queryParameters["BandwidthType"]=$bandwidthType;
 	}
 
 	public function getResourceOwnerAccount() {

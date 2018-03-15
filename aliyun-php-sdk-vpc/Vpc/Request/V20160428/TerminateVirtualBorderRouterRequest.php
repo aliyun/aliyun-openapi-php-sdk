@@ -35,8 +35,6 @@ class TerminateVirtualBorderRouterRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
-	private  $userCidr;
-
 	private  $vbrId;
 
 	private  $ownerId;
@@ -75,15 +73,6 @@ class TerminateVirtualBorderRouterRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getUserCidr() {
-		return $this->userCidr;
-	}
-
-	public function setUserCidr($userCidr) {
-		$this->userCidr = $userCidr;
-		$this->queryParameters["UserCidr"]=$userCidr;
 	}
 
 	public function getVbrId() {
