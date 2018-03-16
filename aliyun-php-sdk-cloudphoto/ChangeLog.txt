@@ -1,3 +1,6 @@
+2018-03-16 Version: 1.1.12
+1, ListAlbumPhotos return mtime
+
 2018-03-07 Version: 1.1.11
 1, add GetAlbumsByNames
 2, add ListEvent/CreateEvent/EditEvent/DeleteEvent/GetEvent
