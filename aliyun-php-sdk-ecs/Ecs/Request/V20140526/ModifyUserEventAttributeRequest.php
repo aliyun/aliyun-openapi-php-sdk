@@ -19,25 +19,36 @@
  */
 namespace Ecs\Request\V20140526;
 
-class ReInitVolumeRequest extends \RpcAcsRequest
+class ModifyUserEventAttributeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "ReInitVolume", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "ModifyUserEventAttribute", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
+	private  $eventId;
+
 	private  $resourceOwnerId;
 
-	private  $password;
+	private  $resourceId;
 
 	private  $resourceOwnerAccount;
 
-	private  $ownerAccount;
-
-	private  $volumeId;
+	private  $newPlanTime;
 
 	private  $ownerId;
+
+	private  $newExpireTime;
+
+	public function getEventId() {
+		return $this->eventId;
+	}
+
+	public function setEventId($eventId) {
+		$this->eventId = $eventId;
+		$this->queryParameters["EventId"]=$eventId;
+	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -48,13 +59,13 @@ class ReInitVolumeRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getPassword() {
-		return $this->password;
+	public function getResourceId() {
+		return $this->resourceId;
 	}
 
-	public function setPassword($password) {
-		$this->password = $password;
-		$this->queryParameters["Password"]=$password;
+	public function setResourceId($resourceId) {
+		$this->resourceId = $resourceId;
+		$this->queryParameters["ResourceId"]=$resourceId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -66,22 +77,13 @@ class ReInitVolumeRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getNewPlanTime() {
+		return $this->newPlanTime;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getVolumeId() {
-		return $this->volumeId;
-	}
-
-	public function setVolumeId($volumeId) {
-		$this->volumeId = $volumeId;
-		$this->queryParameters["VolumeId"]=$volumeId;
+	public function setNewPlanTime($newPlanTime) {
+		$this->newPlanTime = $newPlanTime;
+		$this->queryParameters["NewPlanTime"]=$newPlanTime;
 	}
 
 	public function getOwnerId() {
@@ -91,6 +93,15 @@ class ReInitVolumeRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getNewExpireTime() {
+		return $this->newExpireTime;
+	}
+
+	public function setNewExpireTime($newExpireTime) {
+		$this->newExpireTime = $newExpireTime;
+		$this->queryParameters["NewExpireTime"]=$newExpireTime;
 	}
 	
 }

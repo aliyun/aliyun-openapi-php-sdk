@@ -19,27 +19,30 @@
  */
 namespace Ecs\Request\V20140526;
 
-class ResizeVolumeRequest extends \RpcAcsRequest
+class DescribeEventDetailRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "ResizeVolume", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "DescribeEventDetail", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
+
+	private  $eventId;
 
 	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
-	private  $clientToken;
-
-	private  $ownerAccount;
-
-	private  $volumeId;
-
-	private  $newSize;
-
 	private  $ownerId;
+
+	public function getEventId() {
+		return $this->eventId;
+	}
+
+	public function setEventId($eventId) {
+		$this->eventId = $eventId;
+		$this->queryParameters["EventId"]=$eventId;
+	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -57,42 +60,6 @@ class ResizeVolumeRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getClientToken() {
-		return $this->clientToken;
-	}
-
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getVolumeId() {
-		return $this->volumeId;
-	}
-
-	public function setVolumeId($volumeId) {
-		$this->volumeId = $volumeId;
-		$this->queryParameters["VolumeId"]=$volumeId;
-	}
-
-	public function getNewSize() {
-		return $this->newSize;
-	}
-
-	public function setNewSize($newSize) {
-		$this->newSize = $newSize;
-		$this->queryParameters["NewSize"]=$newSize;
 	}
 
 	public function getOwnerId() {

@@ -19,23 +19,32 @@
  */
 namespace Ecs\Request\V20140526;
 
-class DeleteVolumeRequest extends \RpcAcsRequest
+class CancelUserEventRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DeleteVolume", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "CancelUserEvent", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
+	private  $eventId;
+
 	private  $resourceOwnerId;
+
+	private  $resourceId;
 
 	private  $resourceOwnerAccount;
 
-	private  $ownerAccount;
-
-	private  $volumeId;
-
 	private  $ownerId;
+
+	public function getEventId() {
+		return $this->eventId;
+	}
+
+	public function setEventId($eventId) {
+		$this->eventId = $eventId;
+		$this->queryParameters["EventId"]=$eventId;
+	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -46,6 +55,15 @@ class DeleteVolumeRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getResourceId() {
+		return $this->resourceId;
+	}
+
+	public function setResourceId($resourceId) {
+		$this->resourceId = $resourceId;
+		$this->queryParameters["ResourceId"]=$resourceId;
+	}
+
 	public function getResourceOwnerAccount() {
 		return $this->resourceOwnerAccount;
 	}
@@ -53,24 +71,6 @@ class DeleteVolumeRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getVolumeId() {
-		return $this->volumeId;
-	}
-
-	public function setVolumeId($volumeId) {
-		$this->volumeId = $volumeId;
-		$this->queryParameters["VolumeId"]=$volumeId;
 	}
 
 	public function getOwnerId() {
