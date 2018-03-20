@@ -28,6 +28,8 @@ class CreatePhotoRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
+	private  $takenAt;
+
 	private  $photoTitle;
 
 	private  $libraryId;
@@ -45,6 +47,15 @@ class CreatePhotoRequest extends \RpcAcsRequest
 	private  $staging;
 
 	private  $fileId;
+
+	public function getTakenAt() {
+		return $this->takenAt;
+	}
+
+	public function setTakenAt($takenAt) {
+		$this->takenAt = $takenAt;
+		$this->queryParameters["TakenAt"]=$takenAt;
+	}
 
 	public function getPhotoTitle() {
 		return $this->photoTitle;
