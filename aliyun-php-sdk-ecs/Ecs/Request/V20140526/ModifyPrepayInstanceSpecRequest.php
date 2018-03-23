@@ -29,8 +29,6 @@ class ModifyPrepayInstanceSpecRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $instanceId;
-
 	private  $autoPay;
 
 	private  $resourceOwnerAccount;
@@ -39,11 +37,17 @@ class ModifyPrepayInstanceSpecRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
-	private  $instanceType;
-
 	private  $ownerId;
 
 	private  $operatorType;
+
+	private  $systemDiskCategory;
+
+	private  $instanceId;
+
+	private  $migrateAcrossZone;
+
+	private  $instanceType;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -52,15 +56,6 @@ class ModifyPrepayInstanceSpecRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
-
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 
 	public function getAutoPay() {
@@ -99,15 +94,6 @@ class ModifyPrepayInstanceSpecRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getInstanceType() {
-		return $this->instanceType;
-	}
-
-	public function setInstanceType($instanceType) {
-		$this->instanceType = $instanceType;
-		$this->queryParameters["InstanceType"]=$instanceType;
-	}
-
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -124,6 +110,42 @@ class ModifyPrepayInstanceSpecRequest extends \RpcAcsRequest
 	public function setOperatorType($operatorType) {
 		$this->operatorType = $operatorType;
 		$this->queryParameters["OperatorType"]=$operatorType;
+	}
+
+	public function getSystemDiskCategory() {
+		return $this->systemDiskCategory;
+	}
+
+	public function setSystemDiskCategory($systemDiskCategory) {
+		$this->systemDiskCategory = $systemDiskCategory;
+		$this->queryParameters["SystemDisk.Category"]=$systemDiskCategory;
+	}
+
+	public function getInstanceId() {
+		return $this->instanceId;
+	}
+
+	public function setInstanceId($instanceId) {
+		$this->instanceId = $instanceId;
+		$this->queryParameters["InstanceId"]=$instanceId;
+	}
+
+	public function getMigrateAcrossZone() {
+		return $this->migrateAcrossZone;
+	}
+
+	public function setMigrateAcrossZone($migrateAcrossZone) {
+		$this->migrateAcrossZone = $migrateAcrossZone;
+		$this->queryParameters["MigrateAcrossZone"]=$migrateAcrossZone;
+	}
+
+	public function getInstanceType() {
+		return $this->instanceType;
+	}
+
+	public function setInstanceType($instanceType) {
+		$this->instanceType = $instanceType;
+		$this->queryParameters["InstanceType"]=$instanceType;
 	}
 	
 }

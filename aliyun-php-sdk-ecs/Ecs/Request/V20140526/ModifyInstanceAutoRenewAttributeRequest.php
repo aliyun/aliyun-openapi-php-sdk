@@ -31,6 +31,8 @@ class ModifyInstanceAutoRenewAttributeRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
+	private  $periodUnit;
+
 	private  $instanceId;
 
 	private  $autoRenew;
@@ -59,6 +61,15 @@ class ModifyInstanceAutoRenewAttributeRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getPeriodUnit() {
+		return $this->periodUnit;
+	}
+
+	public function setPeriodUnit($periodUnit) {
+		$this->periodUnit = $periodUnit;
+		$this->queryParameters["PeriodUnit"]=$periodUnit;
 	}
 
 	public function getInstanceId() {
