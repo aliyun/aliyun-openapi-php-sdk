@@ -39,19 +39,29 @@ class CreateRouterInterfaceRequest extends \RpcAcsRequest
 
 	private  $clientToken;
 
+	private  $healthCheckTargetIp;
+
+	private  $description;
+
+	private  $spec;
+
+	private  $userCidr;
+
+	private  $oppositeInterfaceId;
+
+	private  $instanceChargeType;
+
+	private  $period;
+
+	private  $autoPay;
+
 	private  $resourceOwnerAccount;
 
 	private  $oppositeRegionId;
 
 	private  $ownerAccount;
 
-	private  $healthCheckTargetIp;
-
-	private  $description;
-
 	private  $ownerId;
-
-	private  $spec;
 
 	private  $oppositeInterfaceOwnerId;
 
@@ -65,9 +75,7 @@ class CreateRouterInterfaceRequest extends \RpcAcsRequest
 
 	private  $name;
 
-	private  $userCidr;
-
-	private  $oppositeInterfaceId;
+	private  $pricingCycle;
 
 	public function getAccessPointId() {
 		return $this->accessPointId;
@@ -123,6 +131,78 @@ class CreateRouterInterfaceRequest extends \RpcAcsRequest
 		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
+	public function getHealthCheckTargetIp() {
+		return $this->healthCheckTargetIp;
+	}
+
+	public function setHealthCheckTargetIp($healthCheckTargetIp) {
+		$this->healthCheckTargetIp = $healthCheckTargetIp;
+		$this->queryParameters["HealthCheckTargetIp"]=$healthCheckTargetIp;
+	}
+
+	public function getDescription() {
+		return $this->description;
+	}
+
+	public function setDescription($description) {
+		$this->description = $description;
+		$this->queryParameters["Description"]=$description;
+	}
+
+	public function getSpec() {
+		return $this->spec;
+	}
+
+	public function setSpec($spec) {
+		$this->spec = $spec;
+		$this->queryParameters["Spec"]=$spec;
+	}
+
+	public function getUserCidr() {
+		return $this->userCidr;
+	}
+
+	public function setUserCidr($userCidr) {
+		$this->userCidr = $userCidr;
+		$this->queryParameters["UserCidr"]=$userCidr;
+	}
+
+	public function getOppositeInterfaceId() {
+		return $this->oppositeInterfaceId;
+	}
+
+	public function setOppositeInterfaceId($oppositeInterfaceId) {
+		$this->oppositeInterfaceId = $oppositeInterfaceId;
+		$this->queryParameters["OppositeInterfaceId"]=$oppositeInterfaceId;
+	}
+
+	public function getInstanceChargeType() {
+		return $this->instanceChargeType;
+	}
+
+	public function setInstanceChargeType($instanceChargeType) {
+		$this->instanceChargeType = $instanceChargeType;
+		$this->queryParameters["InstanceChargeType"]=$instanceChargeType;
+	}
+
+	public function getPeriod() {
+		return $this->period;
+	}
+
+	public function setPeriod($period) {
+		$this->period = $period;
+		$this->queryParameters["Period"]=$period;
+	}
+
+	public function getAutoPay() {
+		return $this->autoPay;
+	}
+
+	public function setAutoPay($autoPay) {
+		$this->autoPay = $autoPay;
+		$this->queryParameters["AutoPay"]=$autoPay;
+	}
+
 	public function getResourceOwnerAccount() {
 		return $this->resourceOwnerAccount;
 	}
@@ -150,24 +230,6 @@ class CreateRouterInterfaceRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getHealthCheckTargetIp() {
-		return $this->healthCheckTargetIp;
-	}
-
-	public function setHealthCheckTargetIp($healthCheckTargetIp) {
-		$this->healthCheckTargetIp = $healthCheckTargetIp;
-		$this->queryParameters["HealthCheckTargetIp"]=$healthCheckTargetIp;
-	}
-
-	public function getDescription() {
-		return $this->description;
-	}
-
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
-	}
-
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -175,15 +237,6 @@ class CreateRouterInterfaceRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getSpec() {
-		return $this->spec;
-	}
-
-	public function setSpec($spec) {
-		$this->spec = $spec;
-		$this->queryParameters["Spec"]=$spec;
 	}
 
 	public function getOppositeInterfaceOwnerId() {
@@ -240,22 +293,13 @@ class CreateRouterInterfaceRequest extends \RpcAcsRequest
 		$this->queryParameters["Name"]=$name;
 	}
 
-	public function getUserCidr() {
-		return $this->userCidr;
+	public function getPricingCycle() {
+		return $this->pricingCycle;
 	}
 
-	public function setUserCidr($userCidr) {
-		$this->userCidr = $userCidr;
-		$this->queryParameters["UserCidr"]=$userCidr;
-	}
-
-	public function getOppositeInterfaceId() {
-		return $this->oppositeInterfaceId;
-	}
-
-	public function setOppositeInterfaceId($oppositeInterfaceId) {
-		$this->oppositeInterfaceId = $oppositeInterfaceId;
-		$this->queryParameters["OppositeInterfaceId"]=$oppositeInterfaceId;
+	public function setPricingCycle($pricingCycle) {
+		$this->pricingCycle = $pricingCycle;
+		$this->queryParameters["PricingCycle"]=$pricingCycle;
 	}
 	
 }
