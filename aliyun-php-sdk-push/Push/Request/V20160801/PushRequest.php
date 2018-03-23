@@ -55,8 +55,6 @@ class PushRequest extends \RpcAcsRequest
 
 	private  $iOSRemindBody;
 
-	private  $batchNumber;
-
 	private  $iOSExtParameters;
 
 	private  $androidNotifyType;
@@ -241,15 +239,6 @@ class PushRequest extends \RpcAcsRequest
 	public function setiOSRemindBody($iOSRemindBody) {
 		$this->iOSRemindBody = $iOSRemindBody;
 		$this->queryParameters["iOSRemindBody"]=$iOSRemindBody;
-	}
-
-	public function getBatchNumber() {
-		return $this->batchNumber;
-	}
-
-	public function setBatchNumber($batchNumber) {
-		$this->batchNumber = $batchNumber;
-		$this->queryParameters["BatchNumber"]=$batchNumber;
 	}
 
 	public function getiOSExtParameters() {
