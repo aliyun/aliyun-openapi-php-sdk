@@ -29,13 +29,9 @@ class DeleteCasterComponentRequest extends \RpcAcsRequest
 
 	private  $componentId;
 
-	private  $securityToken;
-
 	private  $casterId;
 
 	private  $ownerId;
-
-	private  $version;
 
 	public function getComponentId() {
 		return $this->componentId;
@@ -44,15 +40,6 @@ class DeleteCasterComponentRequest extends \RpcAcsRequest
 	public function setComponentId($componentId) {
 		$this->componentId = $componentId;
 		$this->queryParameters["ComponentId"]=$componentId;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
 	public function getCasterId() {
@@ -71,15 +58,6 @@ class DeleteCasterComponentRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getVersion() {
-		return $this->version;
-	}
-
-	public function setVersion($version) {
-		$this->version = $version;
-		$this->queryParameters["Version"]=$version;
 	}
 	
 }

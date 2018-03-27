@@ -31,8 +31,6 @@ class ModifyCasterLayoutRequest extends \RpcAcsRequest
 
 	private  $AudioLayers;
 
-	private  $securityToken;
-
 	private  $VideoLayers;
 
 	private  $casterId;
@@ -40,8 +38,6 @@ class ModifyCasterLayoutRequest extends \RpcAcsRequest
 	private  $MixLists;
 
 	private  $ownerId;
-
-	private  $version;
 
 	private  $layoutId;
 
@@ -65,17 +61,9 @@ class ModifyCasterLayoutRequest extends \RpcAcsRequest
 		for ($i = 0; $i < count($AudioLayers); $i ++) {	
 			$this->queryParameters['AudioLayer.' . ($i + 1) . '.VolumeRate'] = $AudioLayers[$i]['VolumeRate'];
 			$this->queryParameters['AudioLayer.' . ($i + 1) . '.ValidChannel'] = $AudioLayers[$i]['ValidChannel'];
+			$this->queryParameters['AudioLayer.' . ($i + 1) . '.FixedDelayDuration'] = $AudioLayers[$i]['FixedDelayDuration'];
 
 		}
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
 	public function getVideoLayers() {
@@ -91,6 +79,7 @@ class ModifyCasterLayoutRequest extends \RpcAcsRequest
 			for ($j = 0; $j < count($VideoLayers[$i]['PositionNormalizeds']); $j ++) {
 				$this->queryParameters['VideoLayer.' . ($i + 1) . '.PositionNormalized.' . ($j + 1)] = $VideoLayers[$i]['PositionNormalizeds'][$j];
 			}
+			$this->queryParameters['VideoLayer.' . ($i + 1) . '.FixedDelayDuration'] = $VideoLayers[$i]['FixedDelayDuration'];
 
 		}
 	}
@@ -122,15 +111,6 @@ class ModifyCasterLayoutRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getVersion() {
-		return $this->version;
-	}
-
-	public function setVersion($version) {
-		$this->version = $version;
-		$this->queryParameters["Version"]=$version;
 	}
 
 	public function getLayoutId() {

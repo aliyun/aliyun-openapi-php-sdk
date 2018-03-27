@@ -19,11 +19,11 @@
  */
 namespace live\Request\V20161101;
 
-class DescribeCasterStreamUrlRequest extends \RpcAcsRequest
+class DeleteCasterProgramRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "DescribeCasterStreamUrl", "live", "openAPI");
+		parent::__construct("live", "2016-11-01", "DeleteCasterProgram", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 

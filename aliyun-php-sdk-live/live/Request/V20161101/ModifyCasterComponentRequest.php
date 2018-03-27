@@ -29,23 +29,21 @@ class ModifyCasterComponentRequest extends \RpcAcsRequest
 
 	private  $componentId;
 
+	private  $componentType;
+
 	private  $imageLayerContent;
 
 	private  $casterId;
 
+	private  $effect;
+
 	private  $componentLayer;
+
+	private  $captionLayerContent;
 
 	private  $componentName;
 
 	private  $ownerId;
-
-	private  $version;
-
-	private  $componentType;
-
-	private  $securityToken;
-
-	private  $effect;
 
 	private  $textLayerContent;
 
@@ -56,6 +54,15 @@ class ModifyCasterComponentRequest extends \RpcAcsRequest
 	public function setComponentId($componentId) {
 		$this->componentId = $componentId;
 		$this->queryParameters["ComponentId"]=$componentId;
+	}
+
+	public function getComponentType() {
+		return $this->componentType;
+	}
+
+	public function setComponentType($componentType) {
+		$this->componentType = $componentType;
+		$this->queryParameters["ComponentType"]=$componentType;
 	}
 
 	public function getImageLayerContent() {
@@ -76,6 +83,15 @@ class ModifyCasterComponentRequest extends \RpcAcsRequest
 		$this->queryParameters["CasterId"]=$casterId;
 	}
 
+	public function getEffect() {
+		return $this->effect;
+	}
+
+	public function setEffect($effect) {
+		$this->effect = $effect;
+		$this->queryParameters["Effect"]=$effect;
+	}
+
 	public function getComponentLayer() {
 		return $this->componentLayer;
 	}
@@ -83,6 +99,15 @@ class ModifyCasterComponentRequest extends \RpcAcsRequest
 	public function setComponentLayer($componentLayer) {
 		$this->componentLayer = $componentLayer;
 		$this->queryParameters["ComponentLayer"]=$componentLayer;
+	}
+
+	public function getCaptionLayerContent() {
+		return $this->captionLayerContent;
+	}
+
+	public function setCaptionLayerContent($captionLayerContent) {
+		$this->captionLayerContent = $captionLayerContent;
+		$this->queryParameters["CaptionLayerContent"]=$captionLayerContent;
 	}
 
 	public function getComponentName() {
@@ -101,42 +126,6 @@ class ModifyCasterComponentRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getVersion() {
-		return $this->version;
-	}
-
-	public function setVersion($version) {
-		$this->version = $version;
-		$this->queryParameters["Version"]=$version;
-	}
-
-	public function getComponentType() {
-		return $this->componentType;
-	}
-
-	public function setComponentType($componentType) {
-		$this->componentType = $componentType;
-		$this->queryParameters["ComponentType"]=$componentType;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
-
-	public function getEffect() {
-		return $this->effect;
-	}
-
-	public function setEffect($effect) {
-		$this->effect = $effect;
-		$this->queryParameters["Effect"]=$effect;
 	}
 
 	public function getTextLayerContent() {

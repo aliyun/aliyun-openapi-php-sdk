@@ -35,6 +35,8 @@ class DeleteLiveAppRecordConfigRequest extends \RpcAcsRequest
 
 	private  $ownerId;
 
+	private  $streamName;
+
 	public function getAppName() {
 		return $this->appName;
 	}
@@ -69,6 +71,15 @@ class DeleteLiveAppRecordConfigRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getStreamName() {
+		return $this->streamName;
+	}
+
+	public function setStreamName($streamName) {
+		$this->streamName = $streamName;
+		$this->queryParameters["StreamName"]=$streamName;
 	}
 	
 }

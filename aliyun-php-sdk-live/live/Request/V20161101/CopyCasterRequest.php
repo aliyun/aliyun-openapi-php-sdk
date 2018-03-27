@@ -29,15 +29,11 @@ class CopyCasterRequest extends \RpcAcsRequest
 
 	private  $srcCasterId;
 
-	private  $securityToken;
-
 	private  $casterName;
 
 	private  $clientToken;
 
 	private  $ownerId;
-
-	private  $version;
 
 	public function getSrcCasterId() {
 		return $this->srcCasterId;
@@ -46,15 +42,6 @@ class CopyCasterRequest extends \RpcAcsRequest
 	public function setSrcCasterId($srcCasterId) {
 		$this->srcCasterId = $srcCasterId;
 		$this->queryParameters["SrcCasterId"]=$srcCasterId;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
 	public function getCasterName() {
@@ -82,15 +69,6 @@ class CopyCasterRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getVersion() {
-		return $this->version;
-	}
-
-	public function setVersion($version) {
-		$this->version = $version;
-		$this->queryParameters["Version"]=$version;
 	}
 	
 }

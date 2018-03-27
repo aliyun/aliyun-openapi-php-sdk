@@ -19,55 +19,48 @@
  */
 namespace live\Request\V20161101;
 
-class DescribeLiveRecordConfigRequest extends \RpcAcsRequest
+class DescribeCasterProgramRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "DescribeLiveRecordConfig", "live", "openAPI");
+		parent::__construct("live", "2016-11-01", "DescribeCasterProgram", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $appName;
+	private  $casterId;
 
-	private  $securityToken;
-
-	private  $domainName;
+	private  $episodeType;
 
 	private  $pageSize;
 
+	private  $endTime;
+
+	private  $startTime;
+
 	private  $ownerId;
+
+	private  $episodeId;
 
 	private  $pageNum;
 
-	private  $streamName;
+	private  $status;
 
-	private  $order;
-
-	public function getAppName() {
-		return $this->appName;
+	public function getCasterId() {
+		return $this->casterId;
 	}
 
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
+	public function setCasterId($casterId) {
+		$this->casterId = $casterId;
+		$this->queryParameters["CasterId"]=$casterId;
 	}
 
-	public function getSecurityToken() {
-		return $this->securityToken;
+	public function getEpisodeType() {
+		return $this->episodeType;
 	}
 
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
-
-	public function getDomainName() {
-		return $this->domainName;
-	}
-
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
+	public function setEpisodeType($episodeType) {
+		$this->episodeType = $episodeType;
+		$this->queryParameters["EpisodeType"]=$episodeType;
 	}
 
 	public function getPageSize() {
@@ -79,6 +72,24 @@ class DescribeLiveRecordConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -86,6 +97,15 @@ class DescribeLiveRecordConfigRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getEpisodeId() {
+		return $this->episodeId;
+	}
+
+	public function setEpisodeId($episodeId) {
+		$this->episodeId = $episodeId;
+		$this->queryParameters["EpisodeId"]=$episodeId;
 	}
 
 	public function getPageNum() {
@@ -97,22 +117,13 @@ class DescribeLiveRecordConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["PageNum"]=$pageNum;
 	}
 
-	public function getStreamName() {
-		return $this->streamName;
+	public function getStatus() {
+		return $this->status;
 	}
 
-	public function setStreamName($streamName) {
-		$this->streamName = $streamName;
-		$this->queryParameters["StreamName"]=$streamName;
-	}
-
-	public function getOrder() {
-		return $this->order;
-	}
-
-	public function setOrder($order) {
-		$this->order = $order;
-		$this->queryParameters["Order"]=$order;
+	public function setStatus($status) {
+		$this->status = $status;
+		$this->queryParameters["Status"]=$status;
 	}
 	
 }

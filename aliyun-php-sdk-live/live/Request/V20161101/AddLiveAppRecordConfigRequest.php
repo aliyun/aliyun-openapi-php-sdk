@@ -29,17 +29,25 @@ class AddLiveAppRecordConfigRequest extends \RpcAcsRequest
 
 	private  $ossBucket;
 
+	private  $domainName;
+
+	private  $ossEndpoint;
+
+	private  $endTime;
+
+	private  $startTime;
+
+	private  $ownerId;
+
 	private  $appName;
 
 	private  $securityToken;
 
 	private  $RecordFormats;
 
-	private  $domainName;
+	private  $onDemand;
 
-	private  $ossEndpoint;
-
-	private  $ownerId;
+	private  $streamName;
 
 	public function getOssBucket() {
 		return $this->ossBucket;
@@ -48,6 +56,51 @@ class AddLiveAppRecordConfigRequest extends \RpcAcsRequest
 	public function setOssBucket($ossBucket) {
 		$this->ossBucket = $ossBucket;
 		$this->queryParameters["OssBucket"]=$ossBucket;
+	}
+
+	public function getDomainName() {
+		return $this->domainName;
+	}
+
+	public function setDomainName($domainName) {
+		$this->domainName = $domainName;
+		$this->queryParameters["DomainName"]=$domainName;
+	}
+
+	public function getOssEndpoint() {
+		return $this->ossEndpoint;
+	}
+
+	public function setOssEndpoint($ossEndpoint) {
+		$this->ossEndpoint = $ossEndpoint;
+		$this->queryParameters["OssEndpoint"]=$ossEndpoint;
+	}
+
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getAppName() {
@@ -83,31 +136,22 @@ class AddLiveAppRecordConfigRequest extends \RpcAcsRequest
 		}
 	}
 
-	public function getDomainName() {
-		return $this->domainName;
+	public function getOnDemand() {
+		return $this->onDemand;
 	}
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
+	public function setOnDemand($onDemand) {
+		$this->onDemand = $onDemand;
+		$this->queryParameters["OnDemand"]=$onDemand;
 	}
 
-	public function getOssEndpoint() {
-		return $this->ossEndpoint;
+	public function getStreamName() {
+		return $this->streamName;
 	}
 
-	public function setOssEndpoint($ossEndpoint) {
-		$this->ossEndpoint = $ossEndpoint;
-		$this->queryParameters["OssEndpoint"]=$ossEndpoint;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
+	public function setStreamName($streamName) {
+		$this->streamName = $streamName;
+		$this->queryParameters["StreamName"]=$streamName;
 	}
 	
 }

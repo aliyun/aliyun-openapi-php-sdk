@@ -29,8 +29,6 @@ class DescribeLiveRecordVodConfigsRequest extends \RpcAcsRequest
 
 	private  $appName;
 
-	private  $securityToken;
-
 	private  $domainName;
 
 	private  $pageSize;
@@ -48,15 +46,6 @@ class DescribeLiveRecordVodConfigsRequest extends \RpcAcsRequest
 	public function setAppName($appName) {
 		$this->appName = $appName;
 		$this->queryParameters["AppName"]=$appName;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
 	public function getDomainName() {

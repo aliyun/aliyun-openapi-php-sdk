@@ -29,13 +29,9 @@ class CopyCasterSceneConfigRequest extends \RpcAcsRequest
 
 	private  $fromSceneId;
 
-	private  $securityToken;
-
 	private  $casterId;
 
 	private  $ownerId;
-
-	private  $version;
 
 	private  $toSceneId;
 
@@ -46,15 +42,6 @@ class CopyCasterSceneConfigRequest extends \RpcAcsRequest
 	public function setFromSceneId($fromSceneId) {
 		$this->fromSceneId = $fromSceneId;
 		$this->queryParameters["FromSceneId"]=$fromSceneId;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
 	public function getCasterId() {
@@ -73,15 +60,6 @@ class CopyCasterSceneConfigRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getVersion() {
-		return $this->version;
-	}
-
-	public function setVersion($version) {
-		$this->version = $version;
-		$this->queryParameters["Version"]=$version;
 	}
 
 	public function getToSceneId() {

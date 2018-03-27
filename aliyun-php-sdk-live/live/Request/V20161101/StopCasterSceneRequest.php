@@ -27,24 +27,11 @@ class StopCasterSceneRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $securityToken;
-
 	private  $casterId;
 
 	private  $sceneId;
 
 	private  $ownerId;
-
-	private  $version;
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
 
 	public function getCasterId() {
 		return $this->casterId;
@@ -71,15 +58,6 @@ class StopCasterSceneRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getVersion() {
-		return $this->version;
-	}
-
-	public function setVersion($version) {
-		$this->version = $version;
-		$this->queryParameters["Version"]=$version;
 	}
 	
 }

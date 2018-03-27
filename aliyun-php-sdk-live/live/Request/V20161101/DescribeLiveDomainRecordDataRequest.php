@@ -19,42 +19,31 @@
  */
 namespace live\Request\V20161101;
 
-class UpdateLiveRecordNotifyConfigRequest extends \RpcAcsRequest
+class DescribeLiveDomainRecordDataRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "UpdateLiveRecordNotifyConfig", "live", "openAPI");
+		parent::__construct("live", "2016-11-01", "DescribeLiveDomainRecordData", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $onDemandUrl;
-
-	private  $securityToken;
+	private  $recordType;
 
 	private  $domainName;
 
-	private  $notifyUrl;
+	private  $endTime;
+
+	private  $startTime;
 
 	private  $ownerId;
 
-	private  $needStatusNotify;
-
-	public function getOnDemandUrl() {
-		return $this->onDemandUrl;
+	public function getRecordType() {
+		return $this->recordType;
 	}
 
-	public function setOnDemandUrl($onDemandUrl) {
-		$this->onDemandUrl = $onDemandUrl;
-		$this->queryParameters["OnDemandUrl"]=$onDemandUrl;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
+	public function setRecordType($recordType) {
+		$this->recordType = $recordType;
+		$this->queryParameters["RecordType"]=$recordType;
 	}
 
 	public function getDomainName() {
@@ -66,13 +55,22 @@ class UpdateLiveRecordNotifyConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getNotifyUrl() {
-		return $this->notifyUrl;
+	public function getEndTime() {
+		return $this->endTime;
 	}
 
-	public function setNotifyUrl($notifyUrl) {
-		$this->notifyUrl = $notifyUrl;
-		$this->queryParameters["NotifyUrl"]=$notifyUrl;
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
 	}
 
 	public function getOwnerId() {
@@ -82,15 +80,6 @@ class UpdateLiveRecordNotifyConfigRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getNeedStatusNotify() {
-		return $this->needStatusNotify;
-	}
-
-	public function setNeedStatusNotify($needStatusNotify) {
-		$this->needStatusNotify = $needStatusNotify;
-		$this->queryParameters["NeedStatusNotify"]=$needStatusNotify;
 	}
 	
 }

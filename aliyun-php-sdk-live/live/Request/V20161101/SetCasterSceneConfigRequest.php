@@ -29,15 +29,11 @@ class SetCasterSceneConfigRequest extends \RpcAcsRequest
 
 	private  $ComponentIds;
 
-	private  $securityToken;
-
 	private  $casterId;
 
 	private  $sceneId;
 
 	private  $ownerId;
-
-	private  $version;
 
 	private  $layoutId;
 
@@ -50,15 +46,6 @@ class SetCasterSceneConfigRequest extends \RpcAcsRequest
 		for ($i = 0; $i < count($ComponentIds); $i ++) {	
 			$this->queryParameters["ComponentId.".($i+1)] = $ComponentIds[$i];
 		}
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
 	public function getCasterId() {
@@ -86,15 +73,6 @@ class SetCasterSceneConfigRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getVersion() {
-		return $this->version;
-	}
-
-	public function setVersion($version) {
-		$this->version = $version;
-		$this->queryParameters["Version"]=$version;
 	}
 
 	public function getLayoutId() {

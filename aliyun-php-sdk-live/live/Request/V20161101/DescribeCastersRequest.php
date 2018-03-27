@@ -27,8 +27,6 @@ class DescribeCastersRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $securityToken;
-
 	private  $casterName;
 
 	private  $casterId;
@@ -43,18 +41,7 @@ class DescribeCastersRequest extends \RpcAcsRequest
 
 	private  $pageNum;
 
-	private  $version;
-
 	private  $status;
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
 
 	public function getCasterName() {
 		return $this->casterName;
@@ -117,15 +104,6 @@ class DescribeCastersRequest extends \RpcAcsRequest
 	public function setPageNum($pageNum) {
 		$this->pageNum = $pageNum;
 		$this->queryParameters["PageNum"]=$pageNum;
-	}
-
-	public function getVersion() {
-		return $this->version;
-	}
-
-	public function setVersion($version) {
-		$this->version = $version;
-		$this->queryParameters["Version"]=$version;
 	}
 
 	public function getStatus() {

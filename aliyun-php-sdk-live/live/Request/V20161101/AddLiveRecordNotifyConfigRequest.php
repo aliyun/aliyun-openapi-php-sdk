@@ -27,6 +27,8 @@ class AddLiveRecordNotifyConfigRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
+	private  $onDemandUrl;
+
 	private  $securityToken;
 
 	private  $domainName;
@@ -36,6 +38,15 @@ class AddLiveRecordNotifyConfigRequest extends \RpcAcsRequest
 	private  $ownerId;
 
 	private  $needStatusNotify;
+
+	public function getOnDemandUrl() {
+		return $this->onDemandUrl;
+	}
+
+	public function setOnDemandUrl($onDemandUrl) {
+		$this->onDemandUrl = $onDemandUrl;
+		$this->queryParameters["OnDemandUrl"]=$onDemandUrl;
+	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;

@@ -27,13 +27,17 @@ class AddCasterVideoResourceRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $liveStreamUrl;
+	private  $beginOffset;
 
-	private  $securityToken;
+	private  $vodUrl;
+
+	private  $liveStreamUrl;
 
 	private  $locationId;
 
 	private  $casterId;
+
+	private  $endOffset;
 
 	private  $resourceName;
 
@@ -43,7 +47,23 @@ class AddCasterVideoResourceRequest extends \RpcAcsRequest
 
 	private  $materialId;
 
-	private  $version;
+	public function getBeginOffset() {
+		return $this->beginOffset;
+	}
+
+	public function setBeginOffset($beginOffset) {
+		$this->beginOffset = $beginOffset;
+		$this->queryParameters["BeginOffset"]=$beginOffset;
+	}
+
+	public function getVodUrl() {
+		return $this->vodUrl;
+	}
+
+	public function setVodUrl($vodUrl) {
+		$this->vodUrl = $vodUrl;
+		$this->queryParameters["VodUrl"]=$vodUrl;
+	}
 
 	public function getLiveStreamUrl() {
 		return $this->liveStreamUrl;
@@ -52,15 +72,6 @@ class AddCasterVideoResourceRequest extends \RpcAcsRequest
 	public function setLiveStreamUrl($liveStreamUrl) {
 		$this->liveStreamUrl = $liveStreamUrl;
 		$this->queryParameters["LiveStreamUrl"]=$liveStreamUrl;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
 	public function getLocationId() {
@@ -79,6 +90,15 @@ class AddCasterVideoResourceRequest extends \RpcAcsRequest
 	public function setCasterId($casterId) {
 		$this->casterId = $casterId;
 		$this->queryParameters["CasterId"]=$casterId;
+	}
+
+	public function getEndOffset() {
+		return $this->endOffset;
+	}
+
+	public function setEndOffset($endOffset) {
+		$this->endOffset = $endOffset;
+		$this->queryParameters["EndOffset"]=$endOffset;
 	}
 
 	public function getResourceName() {
@@ -115,15 +135,6 @@ class AddCasterVideoResourceRequest extends \RpcAcsRequest
 	public function setMaterialId($materialId) {
 		$this->materialId = $materialId;
 		$this->queryParameters["MaterialId"]=$materialId;
-	}
-
-	public function getVersion() {
-		return $this->version;
-	}
-
-	public function setVersion($version) {
-		$this->version = $version;
-		$this->queryParameters["Version"]=$version;
 	}
 	
 }

@@ -19,23 +19,40 @@
  */
 namespace live\Request\V20161101;
 
-class UpdateCasterSceneConfigRequest extends \RpcAcsRequest
+class ModifyCasterEpisodeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "UpdateCasterSceneConfig", "live", "openAPI");
+		parent::__construct("live", "2016-11-01", "ModifyCasterEpisode", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 
+	private  $resourceId;
+
 	private  $ComponentIds;
+
+	private  $switchType;
 
 	private  $casterId;
 
-	private  $sceneId;
+	private  $episodeName;
+
+	private  $endTime;
+
+	private  $startTime;
 
 	private  $ownerId;
 
-	private  $layoutId;
+	private  $episodeId;
+
+	public function getResourceId() {
+		return $this->resourceId;
+	}
+
+	public function setResourceId($resourceId) {
+		$this->resourceId = $resourceId;
+		$this->queryParameters["ResourceId"]=$resourceId;
+	}
 
 	public function getComponentIds() {
 		return $this->ComponentIds;
@@ -48,6 +65,15 @@ class UpdateCasterSceneConfigRequest extends \RpcAcsRequest
 		}
 	}
 
+	public function getSwitchType() {
+		return $this->switchType;
+	}
+
+	public function setSwitchType($switchType) {
+		$this->switchType = $switchType;
+		$this->queryParameters["SwitchType"]=$switchType;
+	}
+
 	public function getCasterId() {
 		return $this->casterId;
 	}
@@ -57,13 +83,31 @@ class UpdateCasterSceneConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["CasterId"]=$casterId;
 	}
 
-	public function getSceneId() {
-		return $this->sceneId;
+	public function getEpisodeName() {
+		return $this->episodeName;
 	}
 
-	public function setSceneId($sceneId) {
-		$this->sceneId = $sceneId;
-		$this->queryParameters["SceneId"]=$sceneId;
+	public function setEpisodeName($episodeName) {
+		$this->episodeName = $episodeName;
+		$this->queryParameters["EpisodeName"]=$episodeName;
+	}
+
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
 	}
 
 	public function getOwnerId() {
@@ -75,13 +119,13 @@ class UpdateCasterSceneConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getLayoutId() {
-		return $this->layoutId;
+	public function getEpisodeId() {
+		return $this->episodeId;
 	}
 
-	public function setLayoutId($layoutId) {
-		$this->layoutId = $layoutId;
-		$this->queryParameters["LayoutId"]=$layoutId;
+	public function setEpisodeId($episodeId) {
+		$this->episodeId = $episodeId;
+		$this->queryParameters["EpisodeId"]=$episodeId;
 	}
 	
 }

@@ -29,11 +29,15 @@ class ModifyCasterVideoResourceRequest extends \RpcAcsRequest
 
 	private  $resourceId;
 
+	private  $beginOffset;
+
+	private  $vodUrl;
+
 	private  $liveStreamUrl;
 
-	private  $securityToken;
-
 	private  $casterId;
+
+	private  $endOffset;
 
 	private  $resourceName;
 
@@ -43,8 +47,6 @@ class ModifyCasterVideoResourceRequest extends \RpcAcsRequest
 
 	private  $materialId;
 
-	private  $version;
-
 	public function getResourceId() {
 		return $this->resourceId;
 	}
@@ -52,6 +54,24 @@ class ModifyCasterVideoResourceRequest extends \RpcAcsRequest
 	public function setResourceId($resourceId) {
 		$this->resourceId = $resourceId;
 		$this->queryParameters["ResourceId"]=$resourceId;
+	}
+
+	public function getBeginOffset() {
+		return $this->beginOffset;
+	}
+
+	public function setBeginOffset($beginOffset) {
+		$this->beginOffset = $beginOffset;
+		$this->queryParameters["BeginOffset"]=$beginOffset;
+	}
+
+	public function getVodUrl() {
+		return $this->vodUrl;
+	}
+
+	public function setVodUrl($vodUrl) {
+		$this->vodUrl = $vodUrl;
+		$this->queryParameters["VodUrl"]=$vodUrl;
 	}
 
 	public function getLiveStreamUrl() {
@@ -63,15 +83,6 @@ class ModifyCasterVideoResourceRequest extends \RpcAcsRequest
 		$this->queryParameters["LiveStreamUrl"]=$liveStreamUrl;
 	}
 
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
-
 	public function getCasterId() {
 		return $this->casterId;
 	}
@@ -79,6 +90,15 @@ class ModifyCasterVideoResourceRequest extends \RpcAcsRequest
 	public function setCasterId($casterId) {
 		$this->casterId = $casterId;
 		$this->queryParameters["CasterId"]=$casterId;
+	}
+
+	public function getEndOffset() {
+		return $this->endOffset;
+	}
+
+	public function setEndOffset($endOffset) {
+		$this->endOffset = $endOffset;
+		$this->queryParameters["EndOffset"]=$endOffset;
 	}
 
 	public function getResourceName() {
@@ -115,15 +135,6 @@ class ModifyCasterVideoResourceRequest extends \RpcAcsRequest
 	public function setMaterialId($materialId) {
 		$this->materialId = $materialId;
 		$this->queryParameters["MaterialId"]=$materialId;
-	}
-
-	public function getVersion() {
-		return $this->version;
-	}
-
-	public function setVersion($version) {
-		$this->version = $version;
-		$this->queryParameters["Version"]=$version;
 	}
 	
 }

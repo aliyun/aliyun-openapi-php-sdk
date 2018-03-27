@@ -29,13 +29,15 @@ class AddLiveRecordVodConfigRequest extends \RpcAcsRequest
 
 	private  $appName;
 
-	private  $securityToken;
+	private  $autoCompose;
 
 	private  $domainName;
 
 	private  $cycleDuration;
 
 	private  $ownerId;
+
+	private  $composeVodTranscodeGroupId;
 
 	private  $streamName;
 
@@ -50,13 +52,13 @@ class AddLiveRecordVodConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["AppName"]=$appName;
 	}
 
-	public function getSecurityToken() {
-		return $this->securityToken;
+	public function getAutoCompose() {
+		return $this->autoCompose;
 	}
 
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
+	public function setAutoCompose($autoCompose) {
+		$this->autoCompose = $autoCompose;
+		$this->queryParameters["AutoCompose"]=$autoCompose;
 	}
 
 	public function getDomainName() {
@@ -84,6 +86,15 @@ class AddLiveRecordVodConfigRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getComposeVodTranscodeGroupId() {
+		return $this->composeVodTranscodeGroupId;
+	}
+
+	public function setComposeVodTranscodeGroupId($composeVodTranscodeGroupId) {
+		$this->composeVodTranscodeGroupId = $composeVodTranscodeGroupId;
+		$this->queryParameters["ComposeVodTranscodeGroupId"]=$composeVodTranscodeGroupId;
 	}
 
 	public function getStreamName() {

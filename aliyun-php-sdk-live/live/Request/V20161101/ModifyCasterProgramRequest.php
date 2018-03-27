@@ -19,15 +19,17 @@
  */
 namespace live\Request\V20161101;
 
-class DescribeCasterStreamUrlRequest extends \RpcAcsRequest
+class ModifyCasterProgramRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "DescribeCasterStreamUrl", "live", "openAPI");
+		parent::__construct("live", "2016-11-01", "ModifyCasterProgram", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $casterId;
+
+	private  $Episodes;
 
 	private  $ownerId;
 
@@ -38,6 +40,27 @@ class DescribeCasterStreamUrlRequest extends \RpcAcsRequest
 	public function setCasterId($casterId) {
 		$this->casterId = $casterId;
 		$this->queryParameters["CasterId"]=$casterId;
+	}
+
+	public function getEpisodes() {
+		return $this->Episodes;
+	}
+
+	public function setEpisodes($Episodes) {
+		$this->Episodes = $Episodes;
+		for ($i = 0; $i < count($Episodes); $i ++) {	
+			$this->queryParameters['Episode.' . ($i + 1) . '.EpisodeId'] = $Episodes[$i]['EpisodeId'];
+			$this->queryParameters['Episode.' . ($i + 1) . '.EpisodeType'] = $Episodes[$i]['EpisodeType'];
+			$this->queryParameters['Episode.' . ($i + 1) . '.EpisodeName'] = $Episodes[$i]['EpisodeName'];
+			$this->queryParameters['Episode.' . ($i + 1) . '.ResourceId'] = $Episodes[$i]['ResourceId'];
+			for ($j = 0; $j < count($Episodes[$i]['ComponentIds']); $j ++) {
+				$this->queryParameters['Episode.' . ($i + 1) . '.ComponentId.' . ($j + 1)] = $Episodes[$i]['ComponentIds'][$j];
+			}
+			$this->queryParameters['Episode.' . ($i + 1) . '.StartTime'] = $Episodes[$i]['StartTime'];
+			$this->queryParameters['Episode.' . ($i + 1) . '.EndTime'] = $Episodes[$i]['EndTime'];
+			$this->queryParameters['Episode.' . ($i + 1) . '.SwitchType'] = $Episodes[$i]['SwitchType'];
+
+		}
 	}
 
 	public function getOwnerId() {

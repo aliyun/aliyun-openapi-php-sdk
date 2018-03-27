@@ -19,17 +19,19 @@
  */
 namespace live\Request\V20161101;
 
-class DescribeCasterStreamUrlRequest extends \RpcAcsRequest
+class DeleteCasterEpisodeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "DescribeCasterStreamUrl", "live", "openAPI");
+		parent::__construct("live", "2016-11-01", "DeleteCasterEpisode", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $casterId;
 
 	private  $ownerId;
+
+	private  $episodeId;
 
 	public function getCasterId() {
 		return $this->casterId;
@@ -47,6 +49,15 @@ class DescribeCasterStreamUrlRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getEpisodeId() {
+		return $this->episodeId;
+	}
+
+	public function setEpisodeId($episodeId) {
+		$this->episodeId = $episodeId;
+		$this->queryParameters["EpisodeId"]=$episodeId;
 	}
 	
 }

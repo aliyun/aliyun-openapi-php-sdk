@@ -19,42 +19,31 @@
  */
 namespace live\Request\V20161101;
 
-class UpdateLiveRecordNotifyConfigRequest extends \RpcAcsRequest
+class RealTimeRecordCommandRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "UpdateLiveRecordNotifyConfig", "live", "openAPI");
+		parent::__construct("live", "2016-11-01", "RealTimeRecordCommand", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $onDemandUrl;
-
-	private  $securityToken;
+	private  $appName;
 
 	private  $domainName;
 
-	private  $notifyUrl;
-
 	private  $ownerId;
 
-	private  $needStatusNotify;
+	private  $command;
 
-	public function getOnDemandUrl() {
-		return $this->onDemandUrl;
+	private  $streamName;
+
+	public function getAppName() {
+		return $this->appName;
 	}
 
-	public function setOnDemandUrl($onDemandUrl) {
-		$this->onDemandUrl = $onDemandUrl;
-		$this->queryParameters["OnDemandUrl"]=$onDemandUrl;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
+	public function setAppName($appName) {
+		$this->appName = $appName;
+		$this->queryParameters["AppName"]=$appName;
 	}
 
 	public function getDomainName() {
@@ -66,15 +55,6 @@ class UpdateLiveRecordNotifyConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getNotifyUrl() {
-		return $this->notifyUrl;
-	}
-
-	public function setNotifyUrl($notifyUrl) {
-		$this->notifyUrl = $notifyUrl;
-		$this->queryParameters["NotifyUrl"]=$notifyUrl;
-	}
-
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -84,13 +64,22 @@ class UpdateLiveRecordNotifyConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getNeedStatusNotify() {
-		return $this->needStatusNotify;
+	public function getCommand() {
+		return $this->command;
 	}
 
-	public function setNeedStatusNotify($needStatusNotify) {
-		$this->needStatusNotify = $needStatusNotify;
-		$this->queryParameters["NeedStatusNotify"]=$needStatusNotify;
+	public function setCommand($command) {
+		$this->command = $command;
+		$this->queryParameters["Command"]=$command;
+	}
+
+	public function getStreamName() {
+		return $this->streamName;
+	}
+
+	public function setStreamName($streamName) {
+		$this->streamName = $streamName;
+		$this->queryParameters["StreamName"]=$streamName;
 	}
 	
 }

@@ -29,15 +29,11 @@ class EffectCasterVideoResourceRequest extends \RpcAcsRequest
 
 	private  $resourceId;
 
-	private  $securityToken;
-
 	private  $casterId;
 
 	private  $sceneId;
 
 	private  $ownerId;
-
-	private  $version;
 
 	public function getResourceId() {
 		return $this->resourceId;
@@ -46,15 +42,6 @@ class EffectCasterVideoResourceRequest extends \RpcAcsRequest
 	public function setResourceId($resourceId) {
 		$this->resourceId = $resourceId;
 		$this->queryParameters["ResourceId"]=$resourceId;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
 	public function getCasterId() {
@@ -82,15 +69,6 @@ class EffectCasterVideoResourceRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getVersion() {
-		return $this->version;
-	}
-
-	public function setVersion($version) {
-		$this->version = $version;
-		$this->queryParameters["Version"]=$version;
 	}
 	
 }

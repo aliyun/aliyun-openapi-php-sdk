@@ -33,9 +33,11 @@ class SetCasterConfigRequest extends \RpcAcsRequest
 
 	private  $domainName;
 
-	private  $ownerId;
+	private  $programEffect;
 
-	private  $version;
+	private  $programName;
+
+	private  $ownerId;
 
 	private  $recordConfig;
 
@@ -44,8 +46,6 @@ class SetCasterConfigRequest extends \RpcAcsRequest
 	private  $transcodeConfig;
 
 	private  $delay;
-
-	private  $securityToken;
 
 	private  $casterName;
 
@@ -78,6 +78,24 @@ class SetCasterConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
+	public function getProgramEffect() {
+		return $this->programEffect;
+	}
+
+	public function setProgramEffect($programEffect) {
+		$this->programEffect = $programEffect;
+		$this->queryParameters["ProgramEffect"]=$programEffect;
+	}
+
+	public function getProgramName() {
+		return $this->programName;
+	}
+
+	public function setProgramName($programName) {
+		$this->programName = $programName;
+		$this->queryParameters["ProgramName"]=$programName;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -85,15 +103,6 @@ class SetCasterConfigRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getVersion() {
-		return $this->version;
-	}
-
-	public function setVersion($version) {
-		$this->version = $version;
-		$this->queryParameters["Version"]=$version;
 	}
 
 	public function getRecordConfig() {
@@ -130,15 +139,6 @@ class SetCasterConfigRequest extends \RpcAcsRequest
 	public function setDelay($delay) {
 		$this->delay = $delay;
 		$this->queryParameters["Delay"]=$delay;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
 	public function getCasterName() {
