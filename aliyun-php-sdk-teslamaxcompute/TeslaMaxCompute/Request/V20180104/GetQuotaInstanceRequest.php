@@ -34,6 +34,10 @@ class GetQuotaInstanceRequest extends \RpcAcsRequest
 
 	private  $pageNum;
 
+	private  $region;
+
+	private  $quotaName;
+
 	private  $status;
 
 	public function getCluster() {
@@ -70,6 +74,24 @@ class GetQuotaInstanceRequest extends \RpcAcsRequest
 	public function setPageNum($pageNum) {
 		$this->pageNum = $pageNum;
 		$this->queryParameters["PageNum"]=$pageNum;
+	}
+
+	public function getRegion() {
+		return $this->region;
+	}
+
+	public function setRegion($region) {
+		$this->region = $region;
+		$this->queryParameters["Region"]=$region;
+	}
+
+	public function getQuotaName() {
+		return $this->quotaName;
+	}
+
+	public function setQuotaName($quotaName) {
+		$this->quotaName = $quotaName;
+		$this->queryParameters["QuotaName"]=$quotaName;
 	}
 
 	public function getStatus() {
