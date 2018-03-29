@@ -23,24 +23,16 @@ class ListKeysRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Kms", "2016-01-20", "ListKeys");
+		parent::__construct("Kms", "2016-01-20", "ListKeys", "kms", "openAPI");
 		$this->setProtocol("https");
+		$this->setMethod("POST");
 	}
-
-	private  $pageNumber;
 
 	private  $pageSize;
 
 	private  $sTSToken;
 
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
+	private  $pageNumber;
 
 	public function getPageSize() {
 		return $this->pageSize;
@@ -58,6 +50,15 @@ class ListKeysRequest extends \RpcAcsRequest
 	public function setSTSToken($sTSToken) {
 		$this->sTSToken = $sTSToken;
 		$this->queryParameters["STSToken"]=$sTSToken;
+	}
+
+	public function getPageNumber() {
+		return $this->pageNumber;
+	}
+
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 	
 }

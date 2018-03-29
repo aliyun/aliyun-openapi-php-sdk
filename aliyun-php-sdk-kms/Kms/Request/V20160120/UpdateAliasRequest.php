@@ -19,28 +19,37 @@
  */
 namespace Kms\Request\V20160120;
 
-class DecryptRequest extends \RpcAcsRequest
+class UpdateAliasRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Kms", "2016-01-20", "Decrypt", "kms", "openAPI");
+		parent::__construct("Kms", "2016-01-20", "UpdateAlias", "kms", "openAPI");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
 
-	private  $encryptionContext;
+	private  $aliasName;
+
+	private  $keyId;
 
 	private  $sTSToken;
 
-	private  $ciphertextBlob;
-
-	public function getEncryptionContext() {
-		return $this->encryptionContext;
+	public function getAliasName() {
+		return $this->aliasName;
 	}
 
-	public function setEncryptionContext($encryptionContext) {
-		$this->encryptionContext = $encryptionContext;
-		$this->queryParameters["EncryptionContext"]=$encryptionContext;
+	public function setAliasName($aliasName) {
+		$this->aliasName = $aliasName;
+		$this->queryParameters["AliasName"]=$aliasName;
+	}
+
+	public function getKeyId() {
+		return $this->keyId;
+	}
+
+	public function setKeyId($keyId) {
+		$this->keyId = $keyId;
+		$this->queryParameters["KeyId"]=$keyId;
 	}
 
 	public function getSTSToken() {
@@ -50,15 +59,6 @@ class DecryptRequest extends \RpcAcsRequest
 	public function setSTSToken($sTSToken) {
 		$this->sTSToken = $sTSToken;
 		$this->queryParameters["STSToken"]=$sTSToken;
-	}
-
-	public function getCiphertextBlob() {
-		return $this->ciphertextBlob;
-	}
-
-	public function setCiphertextBlob($ciphertextBlob) {
-		$this->ciphertextBlob = $ciphertextBlob;
-		$this->queryParameters["CiphertextBlob"]=$ciphertextBlob;
 	}
 	
 }

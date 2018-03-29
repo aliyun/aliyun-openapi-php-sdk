@@ -23,19 +23,29 @@ class GenerateDataKeyRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Kms", "2016-01-20", "GenerateDataKey");
+		parent::__construct("Kms", "2016-01-20", "GenerateDataKey", "kms", "openAPI");
 		$this->setProtocol("https");
+		$this->setMethod("POST");
 	}
+
+	private  $encryptionContext;
 
 	private  $keyId;
 
 	private  $keySpec;
 
-	private  $numberOfBytes;
-
 	private  $sTSToken;
 
-	private  $encryptionContext;
+	private  $numberOfBytes;
+
+	public function getEncryptionContext() {
+		return $this->encryptionContext;
+	}
+
+	public function setEncryptionContext($encryptionContext) {
+		$this->encryptionContext = $encryptionContext;
+		$this->queryParameters["EncryptionContext"]=$encryptionContext;
+	}
 
 	public function getKeyId() {
 		return $this->keyId;
@@ -55,15 +65,6 @@ class GenerateDataKeyRequest extends \RpcAcsRequest
 		$this->queryParameters["KeySpec"]=$keySpec;
 	}
 
-	public function getNumberOfBytes() {
-		return $this->numberOfBytes;
-	}
-
-	public function setNumberOfBytes($numberOfBytes) {
-		$this->numberOfBytes = $numberOfBytes;
-		$this->queryParameters["NumberOfBytes"]=$numberOfBytes;
-	}
-
 	public function getSTSToken() {
 		return $this->sTSToken;
 	}
@@ -73,13 +74,13 @@ class GenerateDataKeyRequest extends \RpcAcsRequest
 		$this->queryParameters["STSToken"]=$sTSToken;
 	}
 
-	public function getEncryptionContext() {
-		return $this->encryptionContext;
+	public function getNumberOfBytes() {
+		return $this->numberOfBytes;
 	}
 
-	public function setEncryptionContext($encryptionContext) {
-		$this->encryptionContext = $encryptionContext;
-		$this->queryParameters["EncryptionContext"]=$encryptionContext;
+	public function setNumberOfBytes($numberOfBytes) {
+		$this->numberOfBytes = $numberOfBytes;
+		$this->queryParameters["NumberOfBytes"]=$numberOfBytes;
 	}
 	
 }

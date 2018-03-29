@@ -19,28 +19,30 @@
  */
 namespace Kms\Request\V20160120;
 
-class DecryptRequest extends \RpcAcsRequest
+class GetParametersForImportRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Kms", "2016-01-20", "Decrypt", "kms", "openAPI");
+		parent::__construct("Kms", "2016-01-20", "GetParametersForImport", "kms", "openAPI");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
 
-	private  $encryptionContext;
+	private  $keyId;
 
 	private  $sTSToken;
 
-	private  $ciphertextBlob;
+	private  $wrappingAlgorithm;
 
-	public function getEncryptionContext() {
-		return $this->encryptionContext;
+	private  $wrappingKeySpec;
+
+	public function getKeyId() {
+		return $this->keyId;
 	}
 
-	public function setEncryptionContext($encryptionContext) {
-		$this->encryptionContext = $encryptionContext;
-		$this->queryParameters["EncryptionContext"]=$encryptionContext;
+	public function setKeyId($keyId) {
+		$this->keyId = $keyId;
+		$this->queryParameters["KeyId"]=$keyId;
 	}
 
 	public function getSTSToken() {
@@ -52,13 +54,22 @@ class DecryptRequest extends \RpcAcsRequest
 		$this->queryParameters["STSToken"]=$sTSToken;
 	}
 
-	public function getCiphertextBlob() {
-		return $this->ciphertextBlob;
+	public function getWrappingAlgorithm() {
+		return $this->wrappingAlgorithm;
 	}
 
-	public function setCiphertextBlob($ciphertextBlob) {
-		$this->ciphertextBlob = $ciphertextBlob;
-		$this->queryParameters["CiphertextBlob"]=$ciphertextBlob;
+	public function setWrappingAlgorithm($wrappingAlgorithm) {
+		$this->wrappingAlgorithm = $wrappingAlgorithm;
+		$this->queryParameters["WrappingAlgorithm"]=$wrappingAlgorithm;
+	}
+
+	public function getWrappingKeySpec() {
+		return $this->wrappingKeySpec;
+	}
+
+	public function setWrappingKeySpec($wrappingKeySpec) {
+		$this->wrappingKeySpec = $wrappingKeySpec;
+		$this->queryParameters["WrappingKeySpec"]=$wrappingKeySpec;
 	}
 	
 }

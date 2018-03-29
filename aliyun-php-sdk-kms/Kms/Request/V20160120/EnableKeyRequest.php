@@ -23,8 +23,9 @@ class EnableKeyRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Kms", "2016-01-20", "EnableKey");
+		parent::__construct("Kms", "2016-01-20", "EnableKey", "kms", "openAPI");
 		$this->setProtocol("https");
+		$this->setMethod("POST");
 	}
 
 	private  $keyId;

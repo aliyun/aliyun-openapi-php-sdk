@@ -19,18 +19,51 @@
  */
 namespace Kms\Request\V20160120;
 
-class DescribeKeyRequest extends \RpcAcsRequest
+class ImportKeyMaterialRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Kms", "2016-01-20", "DescribeKey", "kms", "openAPI");
+		parent::__construct("Kms", "2016-01-20", "ImportKeyMaterial", "kms", "openAPI");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
 
+	private  $importToken;
+
+	private  $encryptedKeyMaterial;
+
+	private  $keyMaterialExpireUnix;
+
 	private  $keyId;
 
 	private  $sTSToken;
+
+	public function getImportToken() {
+		return $this->importToken;
+	}
+
+	public function setImportToken($importToken) {
+		$this->importToken = $importToken;
+		$this->queryParameters["ImportToken"]=$importToken;
+	}
+
+	public function getEncryptedKeyMaterial() {
+		return $this->encryptedKeyMaterial;
+	}
+
+	public function setEncryptedKeyMaterial($encryptedKeyMaterial) {
+		$this->encryptedKeyMaterial = $encryptedKeyMaterial;
+		$this->queryParameters["EncryptedKeyMaterial"]=$encryptedKeyMaterial;
+	}
+
+	public function getKeyMaterialExpireUnix() {
+		return $this->keyMaterialExpireUnix;
+	}
+
+	public function setKeyMaterialExpireUnix($keyMaterialExpireUnix) {
+		$this->keyMaterialExpireUnix = $keyMaterialExpireUnix;
+		$this->queryParameters["KeyMaterialExpireUnix"]=$keyMaterialExpireUnix;
+	}
 
 	public function getKeyId() {
 		return $this->keyId;

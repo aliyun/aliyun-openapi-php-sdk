@@ -23,17 +23,27 @@ class EncryptRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Kms", "2016-01-20", "Encrypt");
+		parent::__construct("Kms", "2016-01-20", "Encrypt", "kms", "openAPI");
 		$this->setProtocol("https");
+		$this->setMethod("POST");
 	}
+
+	private  $encryptionContext;
 
 	private  $keyId;
 
-	private  $plaintext;
-
 	private  $sTSToken;
 
-	private  $encryptionContext;
+	private  $plaintext;
+
+	public function getEncryptionContext() {
+		return $this->encryptionContext;
+	}
+
+	public function setEncryptionContext($encryptionContext) {
+		$this->encryptionContext = $encryptionContext;
+		$this->queryParameters["EncryptionContext"]=$encryptionContext;
+	}
 
 	public function getKeyId() {
 		return $this->keyId;
@@ -42,15 +52,6 @@ class EncryptRequest extends \RpcAcsRequest
 	public function setKeyId($keyId) {
 		$this->keyId = $keyId;
 		$this->queryParameters["KeyId"]=$keyId;
-	}
-
-	public function getPlaintext() {
-		return $this->plaintext;
-	}
-
-	public function setPlaintext($plaintext) {
-		$this->plaintext = $plaintext;
-		$this->queryParameters["Plaintext"]=$plaintext;
 	}
 
 	public function getSTSToken() {
@@ -62,13 +63,13 @@ class EncryptRequest extends \RpcAcsRequest
 		$this->queryParameters["STSToken"]=$sTSToken;
 	}
 
-	public function getEncryptionContext() {
-		return $this->encryptionContext;
+	public function getPlaintext() {
+		return $this->plaintext;
 	}
 
-	public function setEncryptionContext($encryptionContext) {
-		$this->encryptionContext = $encryptionContext;
-		$this->queryParameters["EncryptionContext"]=$encryptionContext;
+	public function setPlaintext($plaintext) {
+		$this->plaintext = $plaintext;
+		$this->queryParameters["Plaintext"]=$plaintext;
 	}
 	
 }

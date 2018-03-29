@@ -23,8 +23,9 @@ class DescribeRegionsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Kms", "2016-01-20", "DescribeRegions");
+		parent::__construct("Kms", "2016-01-20", "DescribeRegions", "kms", "openAPI");
 		$this->setProtocol("https");
+		$this->setMethod("POST");
 	}
 
 	private  $sTSToken;

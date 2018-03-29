@@ -19,28 +19,39 @@
  */
 namespace Kms\Request\V20160120;
 
-class DecryptRequest extends \RpcAcsRequest
+class ListAliasesByKeyIdRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Kms", "2016-01-20", "Decrypt", "kms", "openAPI");
+		parent::__construct("Kms", "2016-01-20", "ListAliasesByKeyId", "kms", "openAPI");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
 
-	private  $encryptionContext;
+	private  $pageSize;
+
+	private  $keyId;
 
 	private  $sTSToken;
 
-	private  $ciphertextBlob;
+	private  $pageNumber;
 
-	public function getEncryptionContext() {
-		return $this->encryptionContext;
+	public function getPageSize() {
+		return $this->pageSize;
 	}
 
-	public function setEncryptionContext($encryptionContext) {
-		$this->encryptionContext = $encryptionContext;
-		$this->queryParameters["EncryptionContext"]=$encryptionContext;
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
+	public function getKeyId() {
+		return $this->keyId;
+	}
+
+	public function setKeyId($keyId) {
+		$this->keyId = $keyId;
+		$this->queryParameters["KeyId"]=$keyId;
 	}
 
 	public function getSTSToken() {
@@ -52,13 +63,13 @@ class DecryptRequest extends \RpcAcsRequest
 		$this->queryParameters["STSToken"]=$sTSToken;
 	}
 
-	public function getCiphertextBlob() {
-		return $this->ciphertextBlob;
+	public function getPageNumber() {
+		return $this->pageNumber;
 	}
 
-	public function setCiphertextBlob($ciphertextBlob) {
-		$this->ciphertextBlob = $ciphertextBlob;
-		$this->queryParameters["CiphertextBlob"]=$ciphertextBlob;
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 	
 }

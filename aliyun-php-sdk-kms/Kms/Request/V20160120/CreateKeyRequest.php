@@ -23,24 +23,18 @@ class CreateKeyRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Kms", "2016-01-20", "CreateKey");
+		parent::__construct("Kms", "2016-01-20", "CreateKey", "kms", "openAPI");
 		$this->setProtocol("https");
+		$this->setMethod("POST");
 	}
-
-	private  $description;
 
 	private  $keyUsage;
 
+	private  $origin;
+
+	private  $description;
+
 	private  $sTSToken;
-
-	public function getDescription() {
-		return $this->description;
-	}
-
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
-	}
 
 	public function getKeyUsage() {
 		return $this->keyUsage;
@@ -49,6 +43,24 @@ class CreateKeyRequest extends \RpcAcsRequest
 	public function setKeyUsage($keyUsage) {
 		$this->keyUsage = $keyUsage;
 		$this->queryParameters["KeyUsage"]=$keyUsage;
+	}
+
+	public function getOrigin() {
+		return $this->origin;
+	}
+
+	public function setOrigin($origin) {
+		$this->origin = $origin;
+		$this->queryParameters["Origin"]=$origin;
+	}
+
+	public function getDescription() {
+		return $this->description;
+	}
+
+	public function setDescription($description) {
+		$this->description = $description;
+		$this->queryParameters["Description"]=$description;
 	}
 
 	public function getSTSToken() {

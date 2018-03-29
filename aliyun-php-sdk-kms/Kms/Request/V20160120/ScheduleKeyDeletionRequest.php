@@ -23,24 +23,16 @@ class ScheduleKeyDeletionRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Kms", "2016-01-20", "ScheduleKeyDeletion");
+		parent::__construct("Kms", "2016-01-20", "ScheduleKeyDeletion", "kms", "openAPI");
 		$this->setProtocol("https");
+		$this->setMethod("POST");
 	}
-
-	private  $keyId;
 
 	private  $pendingWindowInDays;
 
+	private  $keyId;
+
 	private  $sTSToken;
-
-	public function getKeyId() {
-		return $this->keyId;
-	}
-
-	public function setKeyId($keyId) {
-		$this->keyId = $keyId;
-		$this->queryParameters["KeyId"]=$keyId;
-	}
 
 	public function getPendingWindowInDays() {
 		return $this->pendingWindowInDays;
@@ -49,6 +41,15 @@ class ScheduleKeyDeletionRequest extends \RpcAcsRequest
 	public function setPendingWindowInDays($pendingWindowInDays) {
 		$this->pendingWindowInDays = $pendingWindowInDays;
 		$this->queryParameters["PendingWindowInDays"]=$pendingWindowInDays;
+	}
+
+	public function getKeyId() {
+		return $this->keyId;
+	}
+
+	public function setKeyId($keyId) {
+		$this->keyId = $keyId;
+		$this->queryParameters["KeyId"]=$keyId;
 	}
 
 	public function getSTSToken() {
