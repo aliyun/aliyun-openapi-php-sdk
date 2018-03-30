@@ -26,15 +26,15 @@ class QueryCustomerSaleInfoRequest extends \RpcAcsRequest
 		parent::__construct("TeslaMaxCompute", "2018-01-04", "QueryCustomerSaleInfo");
 	}
 
-	private  $region;
+	private  $regionName;
 
-	public function getRegion() {
-		return $this->region;
+	public function getRegionName() {
+		return $this->regionName;
 	}
 
-	public function setRegion($region) {
-		$this->region = $region;
-		$this->queryParameters["Region"]=$region;
+	public function setRegionName($regionName) {
+		$this->regionName = $regionName;
+		$this->queryParameters["RegionName"]=$regionName;
 	}
 	
 }
