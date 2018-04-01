@@ -19,11 +19,11 @@
  */
 namespace vod\Request\V20170321;
 
-class GetCategoriesRequest extends \RpcAcsRequest
+class PushObjectCacheRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "GetCategories", "vod", "openAPI");
+		parent::__construct("vod", "2017-03-21", "PushObjectCache", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -31,11 +31,9 @@ class GetCategoriesRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerAccount;
 
-	private  $cateId;
+	private  $ownerAccount;
 
-	private  $pageNo;
-
-	private  $pageSize;
+	private  $objectPath;
 
 	private  $ownerId;
 
@@ -57,31 +55,22 @@ class GetCategoriesRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getCateId() {
-		return $this->cateId;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setCateId($cateId) {
-		$this->cateId = $cateId;
-		$this->queryParameters["CateId"]=$cateId;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getPageNo() {
-		return $this->pageNo;
+	public function getObjectPath() {
+		return $this->objectPath;
 	}
 
-	public function setPageNo($pageNo) {
-		$this->pageNo = $pageNo;
-		$this->queryParameters["PageNo"]=$pageNo;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setObjectPath($objectPath) {
+		$this->objectPath = $objectPath;
+		$this->queryParameters["ObjectPath"]=$objectPath;
 	}
 
 	public function getOwnerId() {

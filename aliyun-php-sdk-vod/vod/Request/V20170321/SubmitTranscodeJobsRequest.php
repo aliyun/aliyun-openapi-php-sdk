@@ -19,42 +19,27 @@
  */
 namespace vod\Request\V20170321;
 
-class ProduceEditingProjectVideoRequest extends \RpcAcsRequest
+class SubmitTranscodeJobsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "ProduceEditingProjectVideo", "vod", "openAPI");
+		parent::__construct("vod", "2017-03-21", "SubmitTranscodeJobs", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $coverURL;
-
 	private  $resourceOwnerId;
 
-	private  $mediaMetadata;
+	private  $templateGroupId;
 
 	private  $resourceOwnerAccount;
 
-	private  $timeline;
-
-	private  $description;
-
-	private  $produceConfig;
+	private  $videoId;
 
 	private  $ownerId;
 
-	private  $title;
+	private  $encryptConfig;
 
-	private  $projectId;
-
-	public function getCoverURL() {
-		return $this->coverURL;
-	}
-
-	public function setCoverURL($coverURL) {
-		$this->coverURL = $coverURL;
-		$this->queryParameters["CoverURL"]=$coverURL;
-	}
+	private  $pipelineId;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -65,13 +50,13 @@ class ProduceEditingProjectVideoRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getMediaMetadata() {
-		return $this->mediaMetadata;
+	public function getTemplateGroupId() {
+		return $this->templateGroupId;
 	}
 
-	public function setMediaMetadata($mediaMetadata) {
-		$this->mediaMetadata = $mediaMetadata;
-		$this->queryParameters["MediaMetadata"]=$mediaMetadata;
+	public function setTemplateGroupId($templateGroupId) {
+		$this->templateGroupId = $templateGroupId;
+		$this->queryParameters["TemplateGroupId"]=$templateGroupId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -83,31 +68,13 @@ class ProduceEditingProjectVideoRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getTimeline() {
-		return $this->timeline;
+	public function getVideoId() {
+		return $this->videoId;
 	}
 
-	public function setTimeline($timeline) {
-		$this->timeline = $timeline;
-		$this->queryParameters["Timeline"]=$timeline;
-	}
-
-	public function getDescription() {
-		return $this->description;
-	}
-
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
-	}
-
-	public function getProduceConfig() {
-		return $this->produceConfig;
-	}
-
-	public function setProduceConfig($produceConfig) {
-		$this->produceConfig = $produceConfig;
-		$this->queryParameters["ProduceConfig"]=$produceConfig;
+	public function setVideoId($videoId) {
+		$this->videoId = $videoId;
+		$this->queryParameters["VideoId"]=$videoId;
 	}
 
 	public function getOwnerId() {
@@ -119,22 +86,22 @@ class ProduceEditingProjectVideoRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getTitle() {
-		return $this->title;
+	public function getEncryptConfig() {
+		return $this->encryptConfig;
 	}
 
-	public function setTitle($title) {
-		$this->title = $title;
-		$this->queryParameters["Title"]=$title;
+	public function setEncryptConfig($encryptConfig) {
+		$this->encryptConfig = $encryptConfig;
+		$this->queryParameters["EncryptConfig"]=$encryptConfig;
 	}
 
-	public function getProjectId() {
-		return $this->projectId;
+	public function getPipelineId() {
+		return $this->pipelineId;
 	}
 
-	public function setProjectId($projectId) {
-		$this->projectId = $projectId;
-		$this->queryParameters["ProjectId"]=$projectId;
+	public function setPipelineId($pipelineId) {
+		$this->pipelineId = $pipelineId;
+		$this->queryParameters["PipelineId"]=$pipelineId;
 	}
 	
 }

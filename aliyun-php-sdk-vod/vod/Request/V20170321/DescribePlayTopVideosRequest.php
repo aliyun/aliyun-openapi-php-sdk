@@ -19,19 +19,15 @@
  */
 namespace vod\Request\V20170321;
 
-class GetCategoriesRequest extends \RpcAcsRequest
+class DescribePlayTopVideosRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "GetCategories", "vod", "openAPI");
+		parent::__construct("vod", "2017-03-21", "DescribePlayTopVideos", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $resourceOwnerId;
-
-	private  $resourceOwnerAccount;
-
-	private  $cateId;
+	private  $bizDate;
 
 	private  $pageNo;
 
@@ -39,31 +35,13 @@ class GetCategoriesRequest extends \RpcAcsRequest
 
 	private  $ownerId;
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getBizDate() {
+		return $this->bizDate;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getCateId() {
-		return $this->cateId;
-	}
-
-	public function setCateId($cateId) {
-		$this->cateId = $cateId;
-		$this->queryParameters["CateId"]=$cateId;
+	public function setBizDate($bizDate) {
+		$this->bizDate = $bizDate;
+		$this->queryParameters["BizDate"]=$bizDate;
 	}
 
 	public function getPageNo() {

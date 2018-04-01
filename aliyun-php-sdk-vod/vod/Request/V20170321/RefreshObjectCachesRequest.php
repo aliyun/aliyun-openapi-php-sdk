@@ -19,42 +19,25 @@
  */
 namespace vod\Request\V20170321;
 
-class ProduceEditingProjectVideoRequest extends \RpcAcsRequest
+class RefreshObjectCachesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "ProduceEditingProjectVideo", "vod", "openAPI");
+		parent::__construct("vod", "2017-03-21", "RefreshObjectCaches", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $coverURL;
-
 	private  $resourceOwnerId;
-
-	private  $mediaMetadata;
 
 	private  $resourceOwnerAccount;
 
-	private  $timeline;
+	private  $ownerAccount;
 
-	private  $description;
-
-	private  $produceConfig;
+	private  $objectPath;
 
 	private  $ownerId;
 
-	private  $title;
-
-	private  $projectId;
-
-	public function getCoverURL() {
-		return $this->coverURL;
-	}
-
-	public function setCoverURL($coverURL) {
-		$this->coverURL = $coverURL;
-		$this->queryParameters["CoverURL"]=$coverURL;
-	}
+	private  $objectType;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -63,15 +46,6 @@ class ProduceEditingProjectVideoRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getMediaMetadata() {
-		return $this->mediaMetadata;
-	}
-
-	public function setMediaMetadata($mediaMetadata) {
-		$this->mediaMetadata = $mediaMetadata;
-		$this->queryParameters["MediaMetadata"]=$mediaMetadata;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -83,31 +57,22 @@ class ProduceEditingProjectVideoRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getTimeline() {
-		return $this->timeline;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setTimeline($timeline) {
-		$this->timeline = $timeline;
-		$this->queryParameters["Timeline"]=$timeline;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getDescription() {
-		return $this->description;
+	public function getObjectPath() {
+		return $this->objectPath;
 	}
 
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
-	}
-
-	public function getProduceConfig() {
-		return $this->produceConfig;
-	}
-
-	public function setProduceConfig($produceConfig) {
-		$this->produceConfig = $produceConfig;
-		$this->queryParameters["ProduceConfig"]=$produceConfig;
+	public function setObjectPath($objectPath) {
+		$this->objectPath = $objectPath;
+		$this->queryParameters["ObjectPath"]=$objectPath;
 	}
 
 	public function getOwnerId() {
@@ -119,22 +84,13 @@ class ProduceEditingProjectVideoRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getTitle() {
-		return $this->title;
+	public function getObjectType() {
+		return $this->objectType;
 	}
 
-	public function setTitle($title) {
-		$this->title = $title;
-		$this->queryParameters["Title"]=$title;
-	}
-
-	public function getProjectId() {
-		return $this->projectId;
-	}
-
-	public function setProjectId($projectId) {
-		$this->projectId = $projectId;
-		$this->queryParameters["ProjectId"]=$projectId;
+	public function setObjectType($objectType) {
+		$this->objectType = $objectType;
+		$this->queryParameters["ObjectType"]=$objectType;
 	}
 	
 }

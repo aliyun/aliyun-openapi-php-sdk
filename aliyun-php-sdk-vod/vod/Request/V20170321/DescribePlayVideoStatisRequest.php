@@ -19,42 +19,29 @@
  */
 namespace vod\Request\V20170321;
 
-class GetMezzanineInfoRequest extends \RpcAcsRequest
+class DescribePlayVideoStatisRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "GetMezzanineInfo", "vod", "openAPI");
+		parent::__construct("vod", "2017-03-21", "DescribePlayVideoStatis", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $resourceOwnerId;
-
-	private  $resourceOwnerAccount;
+	private  $endTime;
 
 	private  $videoId;
 
-	private  $previewSegment;
+	private  $startTime;
 
 	private  $ownerId;
 
-	private  $authTimeout;
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getEndTime() {
+		return $this->endTime;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
 	}
 
 	public function getVideoId() {
@@ -66,13 +53,13 @@ class GetMezzanineInfoRequest extends \RpcAcsRequest
 		$this->queryParameters["VideoId"]=$videoId;
 	}
 
-	public function getPreviewSegment() {
-		return $this->previewSegment;
+	public function getStartTime() {
+		return $this->startTime;
 	}
 
-	public function setPreviewSegment($previewSegment) {
-		$this->previewSegment = $previewSegment;
-		$this->queryParameters["PreviewSegment"]=$previewSegment;
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
 	}
 
 	public function getOwnerId() {
@@ -82,15 +69,6 @@ class GetMezzanineInfoRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getAuthTimeout() {
-		return $this->authTimeout;
-	}
-
-	public function setAuthTimeout($authTimeout) {
-		$this->authTimeout = $authTimeout;
-		$this->queryParameters["AuthTimeout"]=$authTimeout;
 	}
 	
 }
