@@ -75,9 +75,9 @@ class SaveSingleTaskForCreatingOrderActivateRequest extends \RpcAcsRequest
 
 	private  $registrantOrganization;
 
-	private  $userClientIp;
-
 	private  $enableDomainProxy;
+
+	private  $userClientIp;
 
 	private  $registrantName;
 
@@ -297,15 +297,6 @@ class SaveSingleTaskForCreatingOrderActivateRequest extends \RpcAcsRequest
 		$this->queryParameters["RegistrantOrganization"]=$registrantOrganization;
 	}
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
-	}
-
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
-	}
-
 	public function getEnableDomainProxy() {
 		return $this->enableDomainProxy;
 	}
@@ -313,6 +304,15 @@ class SaveSingleTaskForCreatingOrderActivateRequest extends \RpcAcsRequest
 	public function setEnableDomainProxy($enableDomainProxy) {
 		$this->enableDomainProxy = $enableDomainProxy;
 		$this->queryParameters["EnableDomainProxy"]=$enableDomainProxy;
+	}
+
+	public function getUserClientIp() {
+		return $this->userClientIp;
+	}
+
+	public function setUserClientIp($userClientIp) {
+		$this->userClientIp = $userClientIp;
+		$this->queryParameters["UserClientIp"]=$userClientIp;
 	}
 
 	public function getRegistrantName() {
