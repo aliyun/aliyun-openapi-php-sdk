@@ -19,37 +19,23 @@
  */
 namespace Domain_intl\Request\V20171218;
 
-class SaveSingleTaskForCreatingOrderActivateRequest extends \RpcAcsRequest
+class VerifyContactFieldRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Domain-intl", "2017-12-18", "SaveSingleTaskForCreatingOrderActivate", "domain", "openAPI");
+		parent::__construct("Domain-intl", "2017-12-18", "VerifyContactField", "domain", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $country;
 
-	private  $subscriptionDuration;
-
 	private  $address;
-
-	private  $permitPremiumActivation;
 
 	private  $telArea;
 
 	private  $city;
 
-	private  $dns2;
-
-	private  $dns1;
-
-	private  $domainName;
-
-	private  $registrantProfileId;
-
 	private  $telephone;
-
-	private  $aliyunDns;
 
 	private  $registrantOrganization;
 
@@ -60,8 +46,6 @@ class SaveSingleTaskForCreatingOrderActivateRequest extends \RpcAcsRequest
 	private  $postalCode;
 
 	private  $userClientIp;
-
-	private  $enableDomainProxy;
 
 	private  $lang;
 
@@ -78,15 +62,6 @@ class SaveSingleTaskForCreatingOrderActivateRequest extends \RpcAcsRequest
 		$this->queryParameters["Country"]=$country;
 	}
 
-	public function getSubscriptionDuration() {
-		return $this->subscriptionDuration;
-	}
-
-	public function setSubscriptionDuration($subscriptionDuration) {
-		$this->subscriptionDuration = $subscriptionDuration;
-		$this->queryParameters["SubscriptionDuration"]=$subscriptionDuration;
-	}
-
 	public function getAddress() {
 		return $this->address;
 	}
@@ -94,15 +69,6 @@ class SaveSingleTaskForCreatingOrderActivateRequest extends \RpcAcsRequest
 	public function setAddress($address) {
 		$this->address = $address;
 		$this->queryParameters["Address"]=$address;
-	}
-
-	public function getPermitPremiumActivation() {
-		return $this->permitPremiumActivation;
-	}
-
-	public function setPermitPremiumActivation($permitPremiumActivation) {
-		$this->permitPremiumActivation = $permitPremiumActivation;
-		$this->queryParameters["PermitPremiumActivation"]=$permitPremiumActivation;
 	}
 
 	public function getTelArea() {
@@ -123,42 +89,6 @@ class SaveSingleTaskForCreatingOrderActivateRequest extends \RpcAcsRequest
 		$this->queryParameters["City"]=$city;
 	}
 
-	public function getDns2() {
-		return $this->dns2;
-	}
-
-	public function setDns2($dns2) {
-		$this->dns2 = $dns2;
-		$this->queryParameters["Dns2"]=$dns2;
-	}
-
-	public function getDns1() {
-		return $this->dns1;
-	}
-
-	public function setDns1($dns1) {
-		$this->dns1 = $dns1;
-		$this->queryParameters["Dns1"]=$dns1;
-	}
-
-	public function getDomainName() {
-		return $this->domainName;
-	}
-
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
-
-	public function getRegistrantProfileId() {
-		return $this->registrantProfileId;
-	}
-
-	public function setRegistrantProfileId($registrantProfileId) {
-		$this->registrantProfileId = $registrantProfileId;
-		$this->queryParameters["RegistrantProfileId"]=$registrantProfileId;
-	}
-
 	public function getTelephone() {
 		return $this->telephone;
 	}
@@ -166,15 +96,6 @@ class SaveSingleTaskForCreatingOrderActivateRequest extends \RpcAcsRequest
 	public function setTelephone($telephone) {
 		$this->telephone = $telephone;
 		$this->queryParameters["Telephone"]=$telephone;
-	}
-
-	public function getAliyunDns() {
-		return $this->aliyunDns;
-	}
-
-	public function setAliyunDns($aliyunDns) {
-		$this->aliyunDns = $aliyunDns;
-		$this->queryParameters["AliyunDns"]=$aliyunDns;
 	}
 
 	public function getRegistrantOrganization() {
@@ -220,15 +141,6 @@ class SaveSingleTaskForCreatingOrderActivateRequest extends \RpcAcsRequest
 	public function setUserClientIp($userClientIp) {
 		$this->userClientIp = $userClientIp;
 		$this->queryParameters["UserClientIp"]=$userClientIp;
-	}
-
-	public function getEnableDomainProxy() {
-		return $this->enableDomainProxy;
-	}
-
-	public function setEnableDomainProxy($enableDomainProxy) {
-		$this->enableDomainProxy = $enableDomainProxy;
-		$this->queryParameters["EnableDomainProxy"]=$enableDomainProxy;
 	}
 
 	public function getLang() {

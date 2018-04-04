@@ -45,6 +45,20 @@ class SaveBatchTaskForCreatingOrderActivateRequest extends \RpcAcsRequest
 			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.RegistrantProfileId'] = $OrderActivateParams[$i]['RegistrantProfileId'];
 			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.EnableDomainProxy'] = $OrderActivateParams[$i]['EnableDomainProxy'];
 			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.PermitPremiumActivation'] = $OrderActivateParams[$i]['PermitPremiumActivation'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.AliyunDns'] = $OrderActivateParams[$i]['AliyunDns'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.Dns1'] = $OrderActivateParams[$i]['Dns1'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.Dns2'] = $OrderActivateParams[$i]['Dns2'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.Country'] = $OrderActivateParams[$i]['Country'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.City'] = $OrderActivateParams[$i]['City'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.RegistrantOrganization'] = $OrderActivateParams[$i]['RegistrantOrganization'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.RegistrantName'] = $OrderActivateParams[$i]['RegistrantName'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.Province'] = $OrderActivateParams[$i]['Province'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.Address'] = $OrderActivateParams[$i]['Address'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.Email'] = $OrderActivateParams[$i]['Email'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.PostalCode'] = $OrderActivateParams[$i]['PostalCode'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.TelArea'] = $OrderActivateParams[$i]['TelArea'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.Telephone'] = $OrderActivateParams[$i]['Telephone'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.TelExt'] = $OrderActivateParams[$i]['TelExt'];
 
 		}
 	}
