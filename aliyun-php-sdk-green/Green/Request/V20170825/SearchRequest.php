@@ -17,14 +17,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Green\Request\V20170112;
+namespace Green\Request\V20170825;
 
-class TextScanRequest extends \RoaAcsRequest
+class SearchRequest extends \RoaAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Green", "2017-01-12", "TextScan");
-		$this->setUriPattern("/green/text/scan");
+		parent::__construct("Green", "2017-08-25", "Search", "green", "openAPI");
+		$this->setUriPattern("/green/sface/search");
 		$this->setMethod("POST");
 	}
 
