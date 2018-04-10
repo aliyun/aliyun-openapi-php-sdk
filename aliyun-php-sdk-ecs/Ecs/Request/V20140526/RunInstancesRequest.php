@@ -29,6 +29,8 @@ class RunInstancesRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
+	private  $hpcClusterId;
+
 	private  $securityEnhancementStrategy;
 
 	private  $keyPairName;
@@ -58,6 +60,8 @@ class RunInstancesRequest extends \RpcAcsRequest
 	private  $internetMaxBandwidthIn;
 
 	private  $imageId;
+
+	private  $spotInterruptionBehavior;
 
 	private  $clientToken;
 
@@ -102,6 +106,15 @@ class RunInstancesRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getHpcClusterId() {
+		return $this->hpcClusterId;
+	}
+
+	public function setHpcClusterId($hpcClusterId) {
+		$this->hpcClusterId = $hpcClusterId;
+		$this->queryParameters["HpcClusterId"]=$hpcClusterId;
 	}
 
 	public function getSecurityEnhancementStrategy() {
@@ -241,6 +254,15 @@ class RunInstancesRequest extends \RpcAcsRequest
 	public function setImageId($imageId) {
 		$this->imageId = $imageId;
 		$this->queryParameters["ImageId"]=$imageId;
+	}
+
+	public function getSpotInterruptionBehavior() {
+		return $this->spotInterruptionBehavior;
+	}
+
+	public function setSpotInterruptionBehavior($spotInterruptionBehavior) {
+		$this->spotInterruptionBehavior = $spotInterruptionBehavior;
+		$this->queryParameters["SpotInterruptionBehavior"]=$spotInterruptionBehavior;
 	}
 
 	public function getClientToken() {

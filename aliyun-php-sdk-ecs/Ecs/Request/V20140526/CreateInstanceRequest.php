@@ -91,6 +91,8 @@ class CreateInstanceRequest extends \RpcAcsRequest
 
 	private  $vlanId;
 
+	private  $spotInterruptionBehavior;
+
 	private  $ioOptimized;
 
 	private  $securityGroupId;
@@ -421,6 +423,15 @@ class CreateInstanceRequest extends \RpcAcsRequest
 	public function setVlanId($vlanId) {
 		$this->vlanId = $vlanId;
 		$this->queryParameters["VlanId"]=$vlanId;
+	}
+
+	public function getSpotInterruptionBehavior() {
+		return $this->spotInterruptionBehavior;
+	}
+
+	public function setSpotInterruptionBehavior($spotInterruptionBehavior) {
+		$this->spotInterruptionBehavior = $spotInterruptionBehavior;
+		$this->queryParameters["SpotInterruptionBehavior"]=$spotInterruptionBehavior;
 	}
 
 	public function getIoOptimized() {
