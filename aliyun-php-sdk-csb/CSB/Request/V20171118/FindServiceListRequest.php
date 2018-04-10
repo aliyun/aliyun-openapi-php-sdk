@@ -29,9 +29,9 @@ class FindServiceListRequest extends \RpcAcsRequest
 
 	private  $projectName;
 
-	private  $showDelService;
-
 	private  $casShowType;
+
+	private  $showDelService;
 
 	private  $csbId;
 
@@ -50,15 +50,6 @@ class FindServiceListRequest extends \RpcAcsRequest
 		$this->queryParameters["ProjectName"]=$projectName;
 	}
 
-	public function getShowDelService() {
-		return $this->showDelService;
-	}
-
-	public function setShowDelService($showDelService) {
-		$this->showDelService = $showDelService;
-		$this->queryParameters["ShowDelService"]=$showDelService;
-	}
-
 	public function getCasShowType() {
 		return $this->casShowType;
 	}
@@ -66,6 +57,15 @@ class FindServiceListRequest extends \RpcAcsRequest
 	public function setCasShowType($casShowType) {
 		$this->casShowType = $casShowType;
 		$this->queryParameters["CasShowType"]=$casShowType;
+	}
+
+	public function getShowDelService() {
+		return $this->showDelService;
+	}
+
+	public function setShowDelService($showDelService) {
+		$this->showDelService = $showDelService;
+		$this->queryParameters["ShowDelService"]=$showDelService;
 	}
 
 	public function getCsbId() {

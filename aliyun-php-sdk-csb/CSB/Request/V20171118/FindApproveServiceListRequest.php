@@ -27,9 +27,9 @@ class FindApproveServiceListRequest extends \RpcAcsRequest
 		$this->setProtocol("https");
 	}
 
-	private  $projectName;
-
 	private  $approveLevel;
+
+	private  $projectName;
 
 	private  $showDelService;
 
@@ -39,15 +39,6 @@ class FindApproveServiceListRequest extends \RpcAcsRequest
 
 	private  $serviceName;
 
-	public function getprojectName() {
-		return $this->projectName;
-	}
-
-	public function setprojectName($projectName) {
-		$this->projectName = $projectName;
-		$this->queryParameters["projectName"]=$projectName;
-	}
-
 	public function getapproveLevel() {
 		return $this->approveLevel;
 	}
@@ -55,6 +46,15 @@ class FindApproveServiceListRequest extends \RpcAcsRequest
 	public function setapproveLevel($approveLevel) {
 		$this->approveLevel = $approveLevel;
 		$this->queryParameters["approveLevel"]=$approveLevel;
+	}
+
+	public function getprojectName() {
+		return $this->projectName;
+	}
+
+	public function setprojectName($projectName) {
+		$this->projectName = $projectName;
+		$this->queryParameters["projectName"]=$projectName;
 	}
 
 	public function getshowDelService() {

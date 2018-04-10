@@ -33,9 +33,9 @@ class FindApprovalOrderListRequest extends \RpcAcsRequest
 
 	private  $serviceName;
 
-	private  $pageNum;
-
 	private  $serviceId;
+
+	private  $pageNum;
 
 	private  $onlyPending;
 
@@ -66,15 +66,6 @@ class FindApprovalOrderListRequest extends \RpcAcsRequest
 		$this->queryParameters["ServiceName"]=$serviceName;
 	}
 
-	public function getPageNum() {
-		return $this->pageNum;
-	}
-
-	public function setPageNum($pageNum) {
-		$this->pageNum = $pageNum;
-		$this->queryParameters["PageNum"]=$pageNum;
-	}
-
 	public function getServiceId() {
 		return $this->serviceId;
 	}
@@ -82,6 +73,15 @@ class FindApprovalOrderListRequest extends \RpcAcsRequest
 	public function setServiceId($serviceId) {
 		$this->serviceId = $serviceId;
 		$this->queryParameters["ServiceId"]=$serviceId;
+	}
+
+	public function getPageNum() {
+		return $this->pageNum;
+	}
+
+	public function setPageNum($pageNum) {
+		$this->pageNum = $pageNum;
+		$this->queryParameters["PageNum"]=$pageNum;
 	}
 
 	public function getOnlyPending() {
