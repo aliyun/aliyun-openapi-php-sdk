@@ -28,6 +28,8 @@ class EditPhotosRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
+	private  $takenAt;
+
 	private  $libraryId;
 
 	private  $shareExpireTime;
@@ -39,6 +41,15 @@ class EditPhotosRequest extends \RpcAcsRequest
 	private  $remark;
 
 	private  $title;
+
+	public function getTakenAt() {
+		return $this->takenAt;
+	}
+
+	public function setTakenAt($takenAt) {
+		$this->takenAt = $takenAt;
+		$this->queryParameters["TakenAt"]=$takenAt;
+	}
 
 	public function getLibraryId() {
 		return $this->libraryId;
