@@ -29,11 +29,17 @@ class CreateProductRequest extends \RpcAcsRequest
 
 	private  $catId;
 
+	private  $nodeType;
+
+	private  $id2;
+
 	private  $name;
 
 	private  $extProps;
 
 	private  $securityPolicy;
+
+	private  $payType;
 
 	private  $desc;
 
@@ -44,6 +50,24 @@ class CreateProductRequest extends \RpcAcsRequest
 	public function setCatId($catId) {
 		$this->catId = $catId;
 		$this->queryParameters["CatId"]=$catId;
+	}
+
+	public function getNodeType() {
+		return $this->nodeType;
+	}
+
+	public function setNodeType($nodeType) {
+		$this->nodeType = $nodeType;
+		$this->queryParameters["NodeType"]=$nodeType;
+	}
+
+	public function getId2() {
+		return $this->id2;
+	}
+
+	public function setId2($id2) {
+		$this->id2 = $id2;
+		$this->queryParameters["Id2"]=$id2;
 	}
 
 	public function getName() {
@@ -71,6 +95,15 @@ class CreateProductRequest extends \RpcAcsRequest
 	public function setSecurityPolicy($securityPolicy) {
 		$this->securityPolicy = $securityPolicy;
 		$this->queryParameters["SecurityPolicy"]=$securityPolicy;
+	}
+
+	public function getPayType() {
+		return $this->payType;
+	}
+
+	public function setPayType($payType) {
+		$this->payType = $payType;
+		$this->queryParameters["PayType"]=$payType;
 	}
 
 	public function getDesc() {

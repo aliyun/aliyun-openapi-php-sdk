@@ -29,6 +29,8 @@ class UpdateProductRequest extends \RpcAcsRequest
 
 	private  $catId;
 
+	private  $nodeType;
+
 	private  $productName;
 
 	private  $extProps;
@@ -44,6 +46,15 @@ class UpdateProductRequest extends \RpcAcsRequest
 	public function setCatId($catId) {
 		$this->catId = $catId;
 		$this->queryParameters["CatId"]=$catId;
+	}
+
+	public function getNodeType() {
+		return $this->nodeType;
+	}
+
+	public function setNodeType($nodeType) {
+		$this->nodeType = $nodeType;
+		$this->queryParameters["NodeType"]=$nodeType;
 	}
 
 	public function getProductName() {
