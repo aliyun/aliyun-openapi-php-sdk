@@ -19,30 +19,17 @@
  */
 namespace CCC\Request\V20170705;
 
-class AddPhoneNumberRequest extends \RpcAcsRequest
+class RemoveUsersRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CCC", "2017-07-05", "AddPhoneNumber", "ccc", "openAPI");
+		parent::__construct("CCC", "2017-07-05", "RemoveUsers", "ccc", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $contactFlowId;
-
 	private  $instanceId;
 
-	private  $usage;
-
-	private  $phoneNumber;
-
-	public function getContactFlowId() {
-		return $this->contactFlowId;
-	}
-
-	public function setContactFlowId($contactFlowId) {
-		$this->contactFlowId = $contactFlowId;
-		$this->queryParameters["ContactFlowId"]=$contactFlowId;
-	}
+	private  $UserIds;
 
 	public function getInstanceId() {
 		return $this->instanceId;
@@ -53,22 +40,15 @@ class AddPhoneNumberRequest extends \RpcAcsRequest
 		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 
-	public function getUsage() {
-		return $this->usage;
+	public function getUserIds() {
+		return $this->UserIds;
 	}
 
-	public function setUsage($usage) {
-		$this->usage = $usage;
-		$this->queryParameters["Usage"]=$usage;
-	}
-
-	public function getPhoneNumber() {
-		return $this->phoneNumber;
-	}
-
-	public function setPhoneNumber($phoneNumber) {
-		$this->phoneNumber = $phoneNumber;
-		$this->queryParameters["PhoneNumber"]=$phoneNumber;
+	public function setUserIds($UserIds) {
+		$this->UserIds = $UserIds;
+		for ($i = 0; $i < count($UserIds); $i ++) {	
+			$this->queryParameters["UserId.".($i+1)] = $UserIds[$i];
+		}
 	}
 	
 }

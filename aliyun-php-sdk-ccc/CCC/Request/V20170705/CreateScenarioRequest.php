@@ -19,30 +19,23 @@
  */
 namespace CCC\Request\V20170705;
 
-class AddPhoneNumberRequest extends \RpcAcsRequest
+class CreateScenarioRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CCC", "2017-07-05", "AddPhoneNumber", "ccc", "openAPI");
+		parent::__construct("CCC", "2017-07-05", "CreateScenario", "ccc", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $contactFlowId;
-
 	private  $instanceId;
 
-	private  $usage;
+	private  $SurveysJsons;
 
-	private  $phoneNumber;
+	private  $strategyJson;
 
-	public function getContactFlowId() {
-		return $this->contactFlowId;
-	}
+	private  $name;
 
-	public function setContactFlowId($contactFlowId) {
-		$this->contactFlowId = $contactFlowId;
-		$this->queryParameters["ContactFlowId"]=$contactFlowId;
-	}
+	private  $description;
 
 	public function getInstanceId() {
 		return $this->instanceId;
@@ -53,22 +46,42 @@ class AddPhoneNumberRequest extends \RpcAcsRequest
 		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 
-	public function getUsage() {
-		return $this->usage;
+	public function getSurveysJsons() {
+		return $this->SurveysJsons;
 	}
 
-	public function setUsage($usage) {
-		$this->usage = $usage;
-		$this->queryParameters["Usage"]=$usage;
+	public function setSurveysJsons($SurveysJsons) {
+		$this->SurveysJsons = $SurveysJsons;
+		for ($i = 0; $i < count($SurveysJsons); $i ++) {	
+			$this->queryParameters["SurveysJson.".($i+1)] = $SurveysJsons[$i];
+		}
 	}
 
-	public function getPhoneNumber() {
-		return $this->phoneNumber;
+	public function getStrategyJson() {
+		return $this->strategyJson;
 	}
 
-	public function setPhoneNumber($phoneNumber) {
-		$this->phoneNumber = $phoneNumber;
-		$this->queryParameters["PhoneNumber"]=$phoneNumber;
+	public function setStrategyJson($strategyJson) {
+		$this->strategyJson = $strategyJson;
+		$this->queryParameters["StrategyJson"]=$strategyJson;
+	}
+
+	public function getName() {
+		return $this->name;
+	}
+
+	public function setName($name) {
+		$this->name = $name;
+		$this->queryParameters["Name"]=$name;
+	}
+
+	public function getDescription() {
+		return $this->description;
+	}
+
+	public function setDescription($description) {
+		$this->description = $description;
+		$this->queryParameters["Description"]=$description;
 	}
 	
 }

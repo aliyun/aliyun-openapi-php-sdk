@@ -23,7 +23,7 @@ class DeleteSkillGroupRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CCC", "2017-07-05", "DeleteSkillGroup", "CCC", "openAPI");
+		parent::__construct("CCC", "2017-07-05", "DeleteSkillGroup", "ccc", "openAPI");
 		$this->setMethod("POST");
 	}
 

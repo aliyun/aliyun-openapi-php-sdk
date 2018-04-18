@@ -19,30 +19,23 @@
  */
 namespace CCC\Request\V20170705;
 
-class AddPhoneNumberRequest extends \RpcAcsRequest
+class ListJobGroupsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CCC", "2017-07-05", "AddPhoneNumber", "ccc", "openAPI");
+		parent::__construct("CCC", "2017-07-05", "ListJobGroups", "ccc", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $contactFlowId;
-
 	private  $instanceId;
 
-	private  $usage;
+	private  $pageSize;
 
-	private  $phoneNumber;
+	private  $endTime;
 
-	public function getContactFlowId() {
-		return $this->contactFlowId;
-	}
+	private  $startTime;
 
-	public function setContactFlowId($contactFlowId) {
-		$this->contactFlowId = $contactFlowId;
-		$this->queryParameters["ContactFlowId"]=$contactFlowId;
-	}
+	private  $pageNumber;
 
 	public function getInstanceId() {
 		return $this->instanceId;
@@ -53,22 +46,40 @@ class AddPhoneNumberRequest extends \RpcAcsRequest
 		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 
-	public function getUsage() {
-		return $this->usage;
+	public function getPageSize() {
+		return $this->pageSize;
 	}
 
-	public function setUsage($usage) {
-		$this->usage = $usage;
-		$this->queryParameters["Usage"]=$usage;
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
-	public function getPhoneNumber() {
-		return $this->phoneNumber;
+	public function getEndTime() {
+		return $this->endTime;
 	}
 
-	public function setPhoneNumber($phoneNumber) {
-		$this->phoneNumber = $phoneNumber;
-		$this->queryParameters["PhoneNumber"]=$phoneNumber;
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
+
+	public function getPageNumber() {
+		return $this->pageNumber;
+	}
+
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 	
 }

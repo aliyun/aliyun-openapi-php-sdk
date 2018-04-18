@@ -19,35 +19,42 @@
  */
 namespace CCC\Request\V20170705;
 
-class ListCallDetailRecordsRequest extends \RpcAcsRequest
+class ListJobStatusRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CCC", "2017-07-05", "ListCallDetailRecords", "ccc", "openAPI");
+		parent::__construct("CCC", "2017-07-05", "ListJobStatus", "ccc", "openAPI");
 		$this->setMethod("POST");
 	}
 
+	private  $contactName;
+
 	private  $instanceId;
 
-	private  $contactDisposition;
+	private  $timeAlignment;
 
-	private  $contactType;
-
-	private  $criteria;
+	private  $groupId;
 
 	private  $phoneNumber;
 
 	private  $pageSize;
 
-	private  $orderBy;
+	private  $endTime;
 
 	private  $startTime;
 
-	private  $stopTime;
+	private  $scenarioId;
 
 	private  $pageNumber;
 
-	private  $withRecording;
+	public function getContactName() {
+		return $this->contactName;
+	}
+
+	public function setContactName($contactName) {
+		$this->contactName = $contactName;
+		$this->queryParameters["ContactName"]=$contactName;
+	}
 
 	public function getInstanceId() {
 		return $this->instanceId;
@@ -58,31 +65,22 @@ class ListCallDetailRecordsRequest extends \RpcAcsRequest
 		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 
-	public function getContactDisposition() {
-		return $this->contactDisposition;
+	public function getTimeAlignment() {
+		return $this->timeAlignment;
 	}
 
-	public function setContactDisposition($contactDisposition) {
-		$this->contactDisposition = $contactDisposition;
-		$this->queryParameters["ContactDisposition"]=$contactDisposition;
+	public function setTimeAlignment($timeAlignment) {
+		$this->timeAlignment = $timeAlignment;
+		$this->queryParameters["TimeAlignment"]=$timeAlignment;
 	}
 
-	public function getContactType() {
-		return $this->contactType;
+	public function getGroupId() {
+		return $this->groupId;
 	}
 
-	public function setContactType($contactType) {
-		$this->contactType = $contactType;
-		$this->queryParameters["ContactType"]=$contactType;
-	}
-
-	public function getCriteria() {
-		return $this->criteria;
-	}
-
-	public function setCriteria($criteria) {
-		$this->criteria = $criteria;
-		$this->queryParameters["Criteria"]=$criteria;
+	public function setGroupId($groupId) {
+		$this->groupId = $groupId;
+		$this->queryParameters["GroupId"]=$groupId;
 	}
 
 	public function getPhoneNumber() {
@@ -103,13 +101,13 @@ class ListCallDetailRecordsRequest extends \RpcAcsRequest
 		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
-	public function getOrderBy() {
-		return $this->orderBy;
+	public function getEndTime() {
+		return $this->endTime;
 	}
 
-	public function setOrderBy($orderBy) {
-		$this->orderBy = $orderBy;
-		$this->queryParameters["OrderBy"]=$orderBy;
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
 	}
 
 	public function getStartTime() {
@@ -121,13 +119,13 @@ class ListCallDetailRecordsRequest extends \RpcAcsRequest
 		$this->queryParameters["StartTime"]=$startTime;
 	}
 
-	public function getStopTime() {
-		return $this->stopTime;
+	public function getScenarioId() {
+		return $this->scenarioId;
 	}
 
-	public function setStopTime($stopTime) {
-		$this->stopTime = $stopTime;
-		$this->queryParameters["StopTime"]=$stopTime;
+	public function setScenarioId($scenarioId) {
+		$this->scenarioId = $scenarioId;
+		$this->queryParameters["ScenarioId"]=$scenarioId;
 	}
 
 	public function getPageNumber() {
@@ -137,15 +135,6 @@ class ListCallDetailRecordsRequest extends \RpcAcsRequest
 	public function setPageNumber($pageNumber) {
 		$this->pageNumber = $pageNumber;
 		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
-	public function getWithRecording() {
-		return $this->withRecording;
-	}
-
-	public function setWithRecording($withRecording) {
-		$this->withRecording = $withRecording;
-		$this->queryParameters["WithRecording"]=$withRecording;
 	}
 	
 }

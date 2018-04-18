@@ -23,7 +23,7 @@ class ListRecordingsByContactIdRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CCC", "2017-07-05", "ListRecordingsByContactId", "CCC", "openAPI");
+		parent::__construct("CCC", "2017-07-05", "ListRecordingsByContactId", "ccc", "openAPI");
 		$this->setMethod("POST");
 	}
 

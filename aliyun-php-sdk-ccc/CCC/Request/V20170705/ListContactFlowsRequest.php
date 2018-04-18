@@ -23,7 +23,7 @@ class ListContactFlowsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CCC", "2017-07-05", "ListContactFlows", "CCC", "openAPI");
+		parent::__construct("CCC", "2017-07-05", "ListContactFlows", "ccc", "openAPI");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class GetUserRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CCC", "2017-07-05", "GetUser", "CCC", "openAPI");
+		parent::__construct("CCC", "2017-07-05", "GetUser", "ccc", "openAPI");
 		$this->setMethod("POST");
 	}
 

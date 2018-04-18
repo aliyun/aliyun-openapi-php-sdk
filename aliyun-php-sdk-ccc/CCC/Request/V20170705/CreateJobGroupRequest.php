@@ -19,21 +19,36 @@
  */
 namespace CCC\Request\V20170705;
 
-class GetConfigRequest extends \RpcAcsRequest
+class CreateJobGroupRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CCC", "2017-07-05", "GetConfig", "ccc", "openAPI");
+		parent::__construct("CCC", "2017-07-05", "CreateJobGroup", "ccc", "openAPI");
 		$this->setMethod("POST");
 	}
 
+	private  $CallingNumbers;
+
 	private  $instanceId;
+
+	private  $strategyJson;
 
 	private  $name;
 
-	private  $objectType;
+	private  $description;
 
-	private  $objectId;
+	private  $scenarioId;
+
+	public function getCallingNumbers() {
+		return $this->CallingNumbers;
+	}
+
+	public function setCallingNumbers($CallingNumbers) {
+		$this->CallingNumbers = $CallingNumbers;
+		for ($i = 0; $i < count($CallingNumbers); $i ++) {	
+			$this->queryParameters["CallingNumber.".($i+1)] = $CallingNumbers[$i];
+		}
+	}
 
 	public function getInstanceId() {
 		return $this->instanceId;
@@ -42,6 +57,15 @@ class GetConfigRequest extends \RpcAcsRequest
 	public function setInstanceId($instanceId) {
 		$this->instanceId = $instanceId;
 		$this->queryParameters["InstanceId"]=$instanceId;
+	}
+
+	public function getStrategyJson() {
+		return $this->strategyJson;
+	}
+
+	public function setStrategyJson($strategyJson) {
+		$this->strategyJson = $strategyJson;
+		$this->queryParameters["StrategyJson"]=$strategyJson;
 	}
 
 	public function getName() {
@@ -53,22 +77,22 @@ class GetConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["Name"]=$name;
 	}
 
-	public function getObjectType() {
-		return $this->objectType;
+	public function getDescription() {
+		return $this->description;
 	}
 
-	public function setObjectType($objectType) {
-		$this->objectType = $objectType;
-		$this->queryParameters["ObjectType"]=$objectType;
+	public function setDescription($description) {
+		$this->description = $description;
+		$this->queryParameters["Description"]=$description;
 	}
 
-	public function getObjectId() {
-		return $this->objectId;
+	public function getScenarioId() {
+		return $this->scenarioId;
 	}
 
-	public function setObjectId($objectId) {
-		$this->objectId = $objectId;
-		$this->queryParameters["ObjectId"]=$objectId;
+	public function setScenarioId($scenarioId) {
+		$this->scenarioId = $scenarioId;
+		$this->queryParameters["ScenarioId"]=$scenarioId;
 	}
 	
 }

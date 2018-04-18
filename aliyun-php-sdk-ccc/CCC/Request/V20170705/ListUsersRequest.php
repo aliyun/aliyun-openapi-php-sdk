@@ -23,7 +23,7 @@ class ListUsersRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CCC", "2017-07-05", "ListUsers", "CCC", "openAPI");
+		parent::__construct("CCC", "2017-07-05", "ListUsers", "ccc", "openAPI");
 		$this->setMethod("POST");
 	}
 

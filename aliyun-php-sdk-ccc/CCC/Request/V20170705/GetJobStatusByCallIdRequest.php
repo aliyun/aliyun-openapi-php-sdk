@@ -19,29 +19,25 @@
  */
 namespace CCC\Request\V20170705;
 
-class AddPhoneNumberRequest extends \RpcAcsRequest
+class GetJobStatusByCallIdRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CCC", "2017-07-05", "AddPhoneNumber", "ccc", "openAPI");
+		parent::__construct("CCC", "2017-07-05", "GetJobStatusByCallId", "ccc", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $contactFlowId;
+	private  $callId;
 
 	private  $instanceId;
 
-	private  $usage;
-
-	private  $phoneNumber;
-
-	public function getContactFlowId() {
-		return $this->contactFlowId;
+	public function getCallId() {
+		return $this->callId;
 	}
 
-	public function setContactFlowId($contactFlowId) {
-		$this->contactFlowId = $contactFlowId;
-		$this->queryParameters["ContactFlowId"]=$contactFlowId;
+	public function setCallId($callId) {
+		$this->callId = $callId;
+		$this->queryParameters["CallId"]=$callId;
 	}
 
 	public function getInstanceId() {
@@ -51,24 +47,6 @@ class AddPhoneNumberRequest extends \RpcAcsRequest
 	public function setInstanceId($instanceId) {
 		$this->instanceId = $instanceId;
 		$this->queryParameters["InstanceId"]=$instanceId;
-	}
-
-	public function getUsage() {
-		return $this->usage;
-	}
-
-	public function setUsage($usage) {
-		$this->usage = $usage;
-		$this->queryParameters["Usage"]=$usage;
-	}
-
-	public function getPhoneNumber() {
-		return $this->phoneNumber;
-	}
-
-	public function setPhoneNumber($phoneNumber) {
-		$this->phoneNumber = $phoneNumber;
-		$this->queryParameters["PhoneNumber"]=$phoneNumber;
 	}
 	
 }

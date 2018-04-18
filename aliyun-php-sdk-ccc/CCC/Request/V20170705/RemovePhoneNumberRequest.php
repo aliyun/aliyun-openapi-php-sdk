@@ -23,7 +23,7 @@ class RemovePhoneNumberRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CCC", "2017-07-05", "RemovePhoneNumber", "CCC", "openAPI");
+		parent::__construct("CCC", "2017-07-05", "RemovePhoneNumber", "ccc", "openAPI");
 		$this->setMethod("POST");
 	}
 
