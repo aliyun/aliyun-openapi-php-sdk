@@ -77,6 +77,8 @@ class CreateLoadBalancerHTTPListenerRequest extends \RpcAcsRequest
 
 	private  $healthCheckDomain;
 
+	private  $requestTimeout;
+
 	private  $ownerAccount;
 
 	private  $gzip;
@@ -84,6 +86,8 @@ class CreateLoadBalancerHTTPListenerRequest extends \RpcAcsRequest
 	private  $ownerId;
 
 	private  $tags;
+
+	private  $idleTimeout;
 
 	private  $loadBalancerId;
 
@@ -326,6 +330,15 @@ class CreateLoadBalancerHTTPListenerRequest extends \RpcAcsRequest
 		$this->queryParameters["HealthCheckDomain"]=$healthCheckDomain;
 	}
 
+	public function getRequestTimeout() {
+		return $this->requestTimeout;
+	}
+
+	public function setRequestTimeout($requestTimeout) {
+		$this->requestTimeout = $requestTimeout;
+		$this->queryParameters["RequestTimeout"]=$requestTimeout;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -360,6 +373,15 @@ class CreateLoadBalancerHTTPListenerRequest extends \RpcAcsRequest
 	public function setTags($tags) {
 		$this->tags = $tags;
 		$this->queryParameters["Tags"]=$tags;
+	}
+
+	public function getIdleTimeout() {
+		return $this->idleTimeout;
+	}
+
+	public function setIdleTimeout($idleTimeout) {
+		$this->idleTimeout = $idleTimeout;
+		$this->queryParameters["IdleTimeout"]=$idleTimeout;
 	}
 
 	public function getLoadBalancerId() {
