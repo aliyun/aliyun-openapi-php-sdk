@@ -37,6 +37,8 @@ class DescribeInstancesFullStatusRequest extends \RpcAcsRequest
 
 	private  $eventPublishTimeEnd;
 
+	private  $InstanceEventTypes;
+
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
@@ -102,6 +104,17 @@ class DescribeInstancesFullStatusRequest extends \RpcAcsRequest
 	public function setEventPublishTimeEnd($eventPublishTimeEnd) {
 		$this->eventPublishTimeEnd = $eventPublishTimeEnd;
 		$this->queryParameters["EventPublishTime.End"]=$eventPublishTimeEnd;
+	}
+
+	public function getInstanceEventTypes() {
+		return $this->InstanceEventTypes;
+	}
+
+	public function setInstanceEventTypes($InstanceEventTypes) {
+		$this->InstanceEventTypes = $InstanceEventTypes;
+		for ($i = 0; $i < count($InstanceEventTypes); $i ++) {	
+			$this->queryParameters["InstanceEventType.".($i+1)] = $InstanceEventTypes[$i];
+		}
 	}
 
 	public function getResourceOwnerAccount() {

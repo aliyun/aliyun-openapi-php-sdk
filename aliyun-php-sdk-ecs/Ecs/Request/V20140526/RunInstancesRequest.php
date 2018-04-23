@@ -93,6 +93,8 @@ class RunInstancesRequest extends \RpcAcsRequest
 
 	private  $autoReleaseTime;
 
+	private  $dedicatedHostId;
+
 	private  $DataDisks;
 
 	private  $systemDiskSize;
@@ -405,6 +407,15 @@ class RunInstancesRequest extends \RpcAcsRequest
 	public function setAutoReleaseTime($autoReleaseTime) {
 		$this->autoReleaseTime = $autoReleaseTime;
 		$this->queryParameters["AutoReleaseTime"]=$autoReleaseTime;
+	}
+
+	public function getDedicatedHostId() {
+		return $this->dedicatedHostId;
+	}
+
+	public function setDedicatedHostId($dedicatedHostId) {
+		$this->dedicatedHostId = $dedicatedHostId;
+		$this->queryParameters["DedicatedHostId"]=$dedicatedHostId;
 	}
 
 	public function getDataDisks() {

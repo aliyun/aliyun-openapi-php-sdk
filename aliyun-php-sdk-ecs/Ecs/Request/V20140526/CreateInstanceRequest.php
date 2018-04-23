@@ -123,6 +123,8 @@ class CreateInstanceRequest extends \RpcAcsRequest
 
 	private  $ramRoleName;
 
+	private  $dedicatedHostId;
+
 	private  $clusterId;
 
 	private  $DataDisks;
@@ -567,6 +569,15 @@ class CreateInstanceRequest extends \RpcAcsRequest
 	public function setRamRoleName($ramRoleName) {
 		$this->ramRoleName = $ramRoleName;
 		$this->queryParameters["RamRoleName"]=$ramRoleName;
+	}
+
+	public function getDedicatedHostId() {
+		return $this->dedicatedHostId;
+	}
+
+	public function setDedicatedHostId($dedicatedHostId) {
+		$this->dedicatedHostId = $dedicatedHostId;
+		$this->queryParameters["DedicatedHostId"]=$dedicatedHostId;
 	}
 
 	public function getClusterId() {

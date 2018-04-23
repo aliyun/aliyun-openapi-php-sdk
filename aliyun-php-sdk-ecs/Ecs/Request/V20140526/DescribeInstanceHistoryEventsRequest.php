@@ -37,7 +37,11 @@ class DescribeInstanceHistoryEventsRequest extends \RpcAcsRequest
 
 	private  $pageSize;
 
+	private  $InstanceEventCycleStatuss;
+
 	private  $eventPublishTimeEnd;
+
+	private  $InstanceEventTypes;
 
 	private  $resourceOwnerAccount;
 
@@ -102,6 +106,17 @@ class DescribeInstanceHistoryEventsRequest extends \RpcAcsRequest
 		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
+	public function getInstanceEventCycleStatuss() {
+		return $this->InstanceEventCycleStatuss;
+	}
+
+	public function setInstanceEventCycleStatuss($InstanceEventCycleStatuss) {
+		$this->InstanceEventCycleStatuss = $InstanceEventCycleStatuss;
+		for ($i = 0; $i < count($InstanceEventCycleStatuss); $i ++) {	
+			$this->queryParameters["InstanceEventCycleStatus.".($i+1)] = $InstanceEventCycleStatuss[$i];
+		}
+	}
+
 	public function getEventPublishTimeEnd() {
 		return $this->eventPublishTimeEnd;
 	}
@@ -109,6 +124,17 @@ class DescribeInstanceHistoryEventsRequest extends \RpcAcsRequest
 	public function setEventPublishTimeEnd($eventPublishTimeEnd) {
 		$this->eventPublishTimeEnd = $eventPublishTimeEnd;
 		$this->queryParameters["EventPublishTime.End"]=$eventPublishTimeEnd;
+	}
+
+	public function getInstanceEventTypes() {
+		return $this->InstanceEventTypes;
+	}
+
+	public function setInstanceEventTypes($InstanceEventTypes) {
+		$this->InstanceEventTypes = $InstanceEventTypes;
+		for ($i = 0; $i < count($InstanceEventTypes); $i ++) {	
+			$this->queryParameters["InstanceEventType.".($i+1)] = $InstanceEventTypes[$i];
+		}
 	}
 
 	public function getResourceOwnerAccount() {

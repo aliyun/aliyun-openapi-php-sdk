@@ -45,6 +45,8 @@ class DescribeAvailableResourceRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
+	private  $dedicatedHostId;
+
 	private  $ownerId;
 
 	private  $spotStrategy;
@@ -132,6 +134,15 @@ class DescribeAvailableResourceRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getDedicatedHostId() {
+		return $this->dedicatedHostId;
+	}
+
+	public function setDedicatedHostId($dedicatedHostId) {
+		$this->dedicatedHostId = $dedicatedHostId;
+		$this->queryParameters["DedicatedHostId"]=$dedicatedHostId;
 	}
 
 	public function getOwnerId() {
