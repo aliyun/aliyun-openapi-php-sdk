@@ -35,6 +35,8 @@ class CreateScalingGroupRequest extends \RpcAcsRequest
 
 	private  $scalingGroupName;
 
+	private  $VSwitchIds;
+
 	private  $ownerAccount;
 
 	private  $minSize;
@@ -85,6 +87,17 @@ class CreateScalingGroupRequest extends \RpcAcsRequest
 	public function setScalingGroupName($scalingGroupName) {
 		$this->scalingGroupName = $scalingGroupName;
 		$this->queryParameters["ScalingGroupName"]=$scalingGroupName;
+	}
+
+	public function getVSwitchIds() {
+		return $this->VSwitchIds;
+	}
+
+	public function setVSwitchIds($VSwitchIds) {
+		$this->VSwitchIds = $VSwitchIds;
+		for ($i = 0; $i < count($VSwitchIds); $i ++) {	
+			$this->queryParameters["VSwitchIds.".($i+1)] = $VSwitchIds[$i];
+		}
 	}
 
 	public function getOwnerAccount() {

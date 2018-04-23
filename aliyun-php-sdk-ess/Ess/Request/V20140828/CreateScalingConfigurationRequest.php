@@ -41,6 +41,8 @@ class CreateScalingConfigurationRequest extends \RpcAcsRequest
 
 	private  $dataDisk2Device;
 
+	private  $InstanceTypes;
+
 	private  $ioOptimized;
 
 	private  $securityGroupId;
@@ -50,6 +52,8 @@ class CreateScalingConfigurationRequest extends \RpcAcsRequest
 	private  $securityEnhancementStrategy;
 
 	private  $keyPairName;
+
+	private  $SpotPriceLimits;
 
 	private  $systemDiskCategory;
 
@@ -85,11 +89,15 @@ class CreateScalingConfigurationRequest extends \RpcAcsRequest
 
 	private  $dataDisk2DeleteWithInstance;
 
+	private  $spotStrategy;
+
 	private  $dataDisk1Category;
 
 	private  $dataDisk3DeleteWithInstance;
 
 	private  $loadBalancerWeight;
+
+	private  $instanceName;
 
 	private  $systemDiskSize;
 
@@ -170,6 +178,17 @@ class CreateScalingConfigurationRequest extends \RpcAcsRequest
 		$this->queryParameters["DataDisk.2.Device"]=$dataDisk2Device;
 	}
 
+	public function getInstanceTypes() {
+		return $this->InstanceTypes;
+	}
+
+	public function setInstanceTypes($InstanceTypes) {
+		$this->InstanceTypes = $InstanceTypes;
+		for ($i = 0; $i < count($InstanceTypes); $i ++) {	
+			$this->queryParameters["InstanceTypes.".($i+1)] = $InstanceTypes[$i];
+		}
+	}
+
 	public function getIoOptimized() {
 		return $this->ioOptimized;
 	}
@@ -213,6 +232,17 @@ class CreateScalingConfigurationRequest extends \RpcAcsRequest
 	public function setKeyPairName($keyPairName) {
 		$this->keyPairName = $keyPairName;
 		$this->queryParameters["KeyPairName"]=$keyPairName;
+	}
+
+	public function getSpotPriceLimits() {
+		return $this->SpotPriceLimits;
+	}
+
+	public function setSpotPriceLimits($SpotPriceLimits) {
+		$this->SpotPriceLimits = $SpotPriceLimits;
+		for ($i = 0; $i < count($SpotPriceLimits); $i ++) {	
+			$this->queryParameters["SpotPriceLimit.".($i+1)] = $SpotPriceLimits[$i];
+		}
 	}
 
 	public function getSystemDiskCategory() {
@@ -368,6 +398,15 @@ class CreateScalingConfigurationRequest extends \RpcAcsRequest
 		$this->queryParameters["DataDisk.2.DeleteWithInstance"]=$dataDisk2DeleteWithInstance;
 	}
 
+	public function getSpotStrategy() {
+		return $this->spotStrategy;
+	}
+
+	public function setSpotStrategy($spotStrategy) {
+		$this->spotStrategy = $spotStrategy;
+		$this->queryParameters["SpotStrategy"]=$spotStrategy;
+	}
+
 	public function getDataDisk1Category() {
 		return $this->dataDisk1Category;
 	}
@@ -393,6 +432,15 @@ class CreateScalingConfigurationRequest extends \RpcAcsRequest
 	public function setLoadBalancerWeight($loadBalancerWeight) {
 		$this->loadBalancerWeight = $loadBalancerWeight;
 		$this->queryParameters["LoadBalancerWeight"]=$loadBalancerWeight;
+	}
+
+	public function getInstanceName() {
+		return $this->instanceName;
+	}
+
+	public function setInstanceName($instanceName) {
+		$this->instanceName = $instanceName;
+		$this->queryParameters["InstanceName"]=$instanceName;
 	}
 
 	public function getSystemDiskSize() {

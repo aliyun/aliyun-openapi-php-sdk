@@ -39,6 +39,8 @@ class DescribeScalingGroupsRequest extends \RpcAcsRequest
 
 	private  $scalingGroupId15;
 
+	private  $ownerId;
+
 	private  $pageNumber;
 
 	private  $pageSize;
@@ -57,9 +59,9 @@ class DescribeScalingGroupsRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerAccount;
 
-	private  $ownerAccount;
+	private  $scalingGroupName;
 
-	private  $ownerId;
+	private  $ownerAccount;
 
 	private  $scalingGroupName1;
 
@@ -171,6 +173,15 @@ class DescribeScalingGroupsRequest extends \RpcAcsRequest
 		$this->queryParameters["ScalingGroupId.15"]=$scalingGroupId15;
 	}
 
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
 	public function getPageNumber() {
 		return $this->pageNumber;
 	}
@@ -252,6 +263,15 @@ class DescribeScalingGroupsRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
+	public function getScalingGroupName() {
+		return $this->scalingGroupName;
+	}
+
+	public function setScalingGroupName($scalingGroupName) {
+		$this->scalingGroupName = $scalingGroupName;
+		$this->queryParameters["ScalingGroupName"]=$scalingGroupName;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -259,15 +279,6 @@ class DescribeScalingGroupsRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getScalingGroupName1() {
