@@ -41,9 +41,9 @@ class ListCallDetailRecordsRequest extends \RpcAcsRequest
 
 	private  $orderBy;
 
-	private  $startTime;
-
 	private  $stopTime;
+
+	private  $startTime;
 
 	private  $pageNumber;
 
@@ -112,15 +112,6 @@ class ListCallDetailRecordsRequest extends \RpcAcsRequest
 		$this->queryParameters["OrderBy"]=$orderBy;
 	}
 
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
-
 	public function getStopTime() {
 		return $this->stopTime;
 	}
@@ -128,6 +119,15 @@ class ListCallDetailRecordsRequest extends \RpcAcsRequest
 	public function setStopTime($stopTime) {
 		$this->stopTime = $stopTime;
 		$this->queryParameters["StopTime"]=$stopTime;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
 	}
 
 	public function getPageNumber() {
