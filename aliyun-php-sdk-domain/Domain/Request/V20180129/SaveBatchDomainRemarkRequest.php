@@ -19,38 +19,36 @@
  */
 namespace Domain\Request\V20180129;
 
-class QueryDomainGroupListRequest extends \RpcAcsRequest
+class SaveBatchDomainRemarkRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Domain", "2018-01-29", "QueryDomainGroupList");
+		parent::__construct("Domain", "2018-01-29", "SaveBatchDomainRemark");
 		$this->setMethod("POST");
 	}
 
-	private  $userClientIp;
+	private  $instanceIds;
 
-	private  $domainGroupName;
+	private  $remark;
 
 	private  $lang;
 
-	private  $showDeletingGroup;
-
-	public function getUserClientIp() {
-		return $this->userClientIp;
+	public function getInstanceIds() {
+		return $this->instanceIds;
 	}
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
+	public function setInstanceIds($instanceIds) {
+		$this->instanceIds = $instanceIds;
+		$this->queryParameters["InstanceIds"]=$instanceIds;
 	}
 
-	public function getDomainGroupName() {
-		return $this->domainGroupName;
+	public function getRemark() {
+		return $this->remark;
 	}
 
-	public function setDomainGroupName($domainGroupName) {
-		$this->domainGroupName = $domainGroupName;
-		$this->queryParameters["DomainGroupName"]=$domainGroupName;
+	public function setRemark($remark) {
+		$this->remark = $remark;
+		$this->queryParameters["Remark"]=$remark;
 	}
 
 	public function getLang() {
@@ -60,15 +58,6 @@ class QueryDomainGroupListRequest extends \RpcAcsRequest
 	public function setLang($lang) {
 		$this->lang = $lang;
 		$this->queryParameters["Lang"]=$lang;
-	}
-
-	public function getShowDeletingGroup() {
-		return $this->showDeletingGroup;
-	}
-
-	public function setShowDeletingGroup($showDeletingGroup) {
-		$this->showDeletingGroup = $showDeletingGroup;
-		$this->queryParameters["ShowDeletingGroup"]=$showDeletingGroup;
 	}
 	
 }

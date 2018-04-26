@@ -41,6 +41,8 @@ class QueryDomainListRequest extends \RpcAcsRequest
 
 	private  $orderByType;
 
+	private  $domainGroupId;
+
 	private  $endRegistrationDate;
 
 	private  $userClientIp;
@@ -114,6 +116,15 @@ class QueryDomainListRequest extends \RpcAcsRequest
 	public function setOrderByType($orderByType) {
 		$this->orderByType = $orderByType;
 		$this->queryParameters["OrderByType"]=$orderByType;
+	}
+
+	public function getDomainGroupId() {
+		return $this->domainGroupId;
+	}
+
+	public function setDomainGroupId($domainGroupId) {
+		$this->domainGroupId = $domainGroupId;
+		$this->queryParameters["DomainGroupId"]=$domainGroupId;
 	}
 
 	public function getEndRegistrationDate() {

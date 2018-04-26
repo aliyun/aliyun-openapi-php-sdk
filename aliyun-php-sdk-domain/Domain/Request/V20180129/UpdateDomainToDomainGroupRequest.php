@@ -19,21 +19,36 @@
  */
 namespace Domain\Request\V20180129;
 
-class QueryDomainGroupListRequest extends \RpcAcsRequest
+class UpdateDomainToDomainGroupRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Domain", "2018-01-29", "QueryDomainGroupList");
+		parent::__construct("Domain", "2018-01-29", "UpdateDomainToDomainGroup");
 		$this->setMethod("POST");
 	}
 
+	private  $dataSource;
+
 	private  $userClientIp;
 
-	private  $domainGroupName;
+	private  $fileToUpload;
+
+	private  $DomainNames;
+
+	private  $replace;
 
 	private  $lang;
 
-	private  $showDeletingGroup;
+	private  $domainGroupId;
+
+	public function getDataSource() {
+		return $this->dataSource;
+	}
+
+	public function setDataSource($dataSource) {
+		$this->dataSource = $dataSource;
+		$this->queryParameters["DataSource"]=$dataSource;
+	}
 
 	public function getUserClientIp() {
 		return $this->userClientIp;
@@ -44,13 +59,32 @@ class QueryDomainGroupListRequest extends \RpcAcsRequest
 		$this->queryParameters["UserClientIp"]=$userClientIp;
 	}
 
-	public function getDomainGroupName() {
-		return $this->domainGroupName;
+	public function getFileToUpload() {
+		return $this->fileToUpload;
 	}
 
-	public function setDomainGroupName($domainGroupName) {
-		$this->domainGroupName = $domainGroupName;
-		$this->queryParameters["DomainGroupName"]=$domainGroupName;
+	public function setFileToUpload($fileToUpload) {
+		$this->fileToUpload = $fileToUpload;
+		}
+
+	public function getDomainNames() {
+		return $this->DomainNames;
+	}
+
+	public function setDomainNames($DomainNames) {
+		$this->DomainNames = $DomainNames;
+		for ($i = 0; $i < count($DomainNames); $i ++) {	
+			$this->queryParameters["DomainName.".($i+1)] = $DomainNames[$i];
+		}
+	}
+
+	public function getReplace() {
+		return $this->replace;
+	}
+
+	public function setReplace($replace) {
+		$this->replace = $replace;
+		$this->queryParameters["Replace"]=$replace;
 	}
 
 	public function getLang() {
@@ -62,13 +96,13 @@ class QueryDomainGroupListRequest extends \RpcAcsRequest
 		$this->queryParameters["Lang"]=$lang;
 	}
 
-	public function getShowDeletingGroup() {
-		return $this->showDeletingGroup;
+	public function getDomainGroupId() {
+		return $this->domainGroupId;
 	}
 
-	public function setShowDeletingGroup($showDeletingGroup) {
-		$this->showDeletingGroup = $showDeletingGroup;
-		$this->queryParameters["ShowDeletingGroup"]=$showDeletingGroup;
+	public function setDomainGroupId($domainGroupId) {
+		$this->domainGroupId = $domainGroupId;
+		$this->queryParameters["DomainGroupId"]=$domainGroupId;
 	}
 	
 }

@@ -19,11 +19,11 @@
  */
 namespace Domain\Request\V20180129;
 
-class QueryDomainGroupListRequest extends \RpcAcsRequest
+class SaveDomainGroupRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Domain", "2018-01-29", "QueryDomainGroupList");
+		parent::__construct("Domain", "2018-01-29", "SaveDomainGroup");
 		$this->setMethod("POST");
 	}
 
@@ -33,7 +33,7 @@ class QueryDomainGroupListRequest extends \RpcAcsRequest
 
 	private  $lang;
 
-	private  $showDeletingGroup;
+	private  $domainGroupId;
 
 	public function getUserClientIp() {
 		return $this->userClientIp;
@@ -62,13 +62,13 @@ class QueryDomainGroupListRequest extends \RpcAcsRequest
 		$this->queryParameters["Lang"]=$lang;
 	}
 
-	public function getShowDeletingGroup() {
-		return $this->showDeletingGroup;
+	public function getDomainGroupId() {
+		return $this->domainGroupId;
 	}
 
-	public function setShowDeletingGroup($showDeletingGroup) {
-		$this->showDeletingGroup = $showDeletingGroup;
-		$this->queryParameters["ShowDeletingGroup"]=$showDeletingGroup;
+	public function setDomainGroupId($domainGroupId) {
+		$this->domainGroupId = $domainGroupId;
+		$this->queryParameters["DomainGroupId"]=$domainGroupId;
 	}
 	
 }
