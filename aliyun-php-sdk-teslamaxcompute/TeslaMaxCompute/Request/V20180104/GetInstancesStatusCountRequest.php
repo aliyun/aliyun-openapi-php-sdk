@@ -28,7 +28,11 @@ class GetInstancesStatusCountRequest extends \RpcAcsRequest
 
 	private  $cluster;
 
+	private  $quotaId;
+
 	private  $region;
+
+	private  $quotaName;
 
 	public function getCluster() {
 		return $this->cluster;
@@ -39,6 +43,15 @@ class GetInstancesStatusCountRequest extends \RpcAcsRequest
 		$this->queryParameters["Cluster"]=$cluster;
 	}
 
+	public function getQuotaId() {
+		return $this->quotaId;
+	}
+
+	public function setQuotaId($quotaId) {
+		$this->quotaId = $quotaId;
+		$this->queryParameters["QuotaId"]=$quotaId;
+	}
+
 	public function getRegion() {
 		return $this->region;
 	}
@@ -46,6 +59,15 @@ class GetInstancesStatusCountRequest extends \RpcAcsRequest
 	public function setRegion($region) {
 		$this->region = $region;
 		$this->queryParameters["Region"]=$region;
+	}
+
+	public function getQuotaName() {
+		return $this->quotaName;
+	}
+
+	public function setQuotaName($quotaName) {
+		$this->quotaName = $quotaName;
+		$this->queryParameters["QuotaName"]=$quotaName;
 	}
 	
 }
