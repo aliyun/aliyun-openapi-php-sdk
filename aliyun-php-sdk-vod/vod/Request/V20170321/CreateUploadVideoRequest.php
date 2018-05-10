@@ -45,6 +45,8 @@ class CreateUploadVideoRequest extends \RpcAcsRequest
 
 	private  $tags;
 
+	private  $storageLocation;
+
 	private  $coverURL;
 
 	private  $userData;
@@ -134,6 +136,15 @@ class CreateUploadVideoRequest extends \RpcAcsRequest
 	public function setTags($tags) {
 		$this->tags = $tags;
 		$this->queryParameters["Tags"]=$tags;
+	}
+
+	public function getStorageLocation() {
+		return $this->storageLocation;
+	}
+
+	public function setStorageLocation($storageLocation) {
+		$this->storageLocation = $storageLocation;
+		$this->queryParameters["StorageLocation"]=$storageLocation;
 	}
 
 	public function getCoverURL() {
