@@ -35,6 +35,8 @@ class SetDomainServerCertificateRequest extends \RpcAcsRequest
 
 	private  $securityToken;
 
+	private  $certType;
+
 	private  $certName;
 
 	private  $domainName;
@@ -77,6 +79,15 @@ class SetDomainServerCertificateRequest extends \RpcAcsRequest
 	public function setSecurityToken($securityToken) {
 		$this->securityToken = $securityToken;
 		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
+
+	public function getCertType() {
+		return $this->certType;
+	}
+
+	public function setCertType($certType) {
+		$this->certType = $certType;
+		$this->queryParameters["CertType"]=$certType;
 	}
 
 	public function getCertName() {

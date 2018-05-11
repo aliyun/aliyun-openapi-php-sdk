@@ -19,44 +19,29 @@
  */
 namespace Cdn\Request\V20141111;
 
-class DescribeLiveStreamsOnlineListRequest extends \RpcAcsRequest
+class DescribeCdnDomainConfigsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cdn", "2014-11-11", "DescribeLiveStreamsOnlineList");
+		parent::__construct("Cdn", "2014-11-11", "DescribeCdnDomainConfigs");
 		$this->setMethod("POST");
 	}
 
-	private  $streamType;
-
-	private  $appName;
+	private  $functionNames;
 
 	private  $securityToken;
 
 	private  $domainName;
 
-	private  $pageSize;
-
 	private  $ownerId;
 
-	private  $pageNum;
-
-	public function getStreamType() {
-		return $this->streamType;
+	public function getFunctionNames() {
+		return $this->functionNames;
 	}
 
-	public function setStreamType($streamType) {
-		$this->streamType = $streamType;
-		$this->queryParameters["StreamType"]=$streamType;
-	}
-
-	public function getAppName() {
-		return $this->appName;
-	}
-
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
+	public function setFunctionNames($functionNames) {
+		$this->functionNames = $functionNames;
+		$this->queryParameters["FunctionNames"]=$functionNames;
 	}
 
 	public function getSecurityToken() {
@@ -77,15 +62,6 @@ class DescribeLiveStreamsOnlineListRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -93,15 +69,6 @@ class DescribeLiveStreamsOnlineListRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getPageNum() {
-		return $this->pageNum;
-	}
-
-	public function setPageNum($pageNum) {
-		$this->pageNum = $pageNum;
-		$this->queryParameters["PageNum"]=$pageNum;
 	}
 	
 }

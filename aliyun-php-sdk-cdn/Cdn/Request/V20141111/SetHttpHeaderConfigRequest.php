@@ -31,6 +31,8 @@ class SetHttpHeaderConfigRequest extends \RpcAcsRequest
 
 	private  $securityToken;
 
+	private  $configId;
+
 	private  $domainName;
 
 	private  $headerKey;
@@ -53,6 +55,15 @@ class SetHttpHeaderConfigRequest extends \RpcAcsRequest
 	public function setSecurityToken($securityToken) {
 		$this->securityToken = $securityToken;
 		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
+
+	public function getConfigId() {
+		return $this->configId;
+	}
+
+	public function setConfigId($configId) {
+		$this->configId = $configId;
+		$this->queryParameters["ConfigId"]=$configId;
 	}
 
 	public function getDomainName() {
