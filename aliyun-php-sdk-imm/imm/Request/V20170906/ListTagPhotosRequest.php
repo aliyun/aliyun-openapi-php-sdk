@@ -19,21 +19,23 @@
  */
 namespace imm\Request\V20170906;
 
-class RemoveTagByNameRequest extends \RpcAcsRequest
+class ListTagPhotosRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("imm", "2017-09-06", "RemoveTagByName", "imm", "openAPI");
+		parent::__construct("imm", "2017-09-06", "ListTagPhotos", "imm", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $tagName;
 
+	private  $maxKeys;
+
+	private  $marker;
+
 	private  $project;
 
 	private  $setId;
-
-	private  $srcUri;
 
 	public function getTagName() {
 		return $this->tagName;
@@ -42,6 +44,24 @@ class RemoveTagByNameRequest extends \RpcAcsRequest
 	public function setTagName($tagName) {
 		$this->tagName = $tagName;
 		$this->queryParameters["TagName"]=$tagName;
+	}
+
+	public function getMaxKeys() {
+		return $this->maxKeys;
+	}
+
+	public function setMaxKeys($maxKeys) {
+		$this->maxKeys = $maxKeys;
+		$this->queryParameters["MaxKeys"]=$maxKeys;
+	}
+
+	public function getMarker() {
+		return $this->marker;
+	}
+
+	public function setMarker($marker) {
+		$this->marker = $marker;
+		$this->queryParameters["Marker"]=$marker;
 	}
 
 	public function getProject() {
@@ -60,15 +80,6 @@ class RemoveTagByNameRequest extends \RpcAcsRequest
 	public function setSetId($setId) {
 		$this->setId = $setId;
 		$this->queryParameters["SetId"]=$setId;
-	}
-
-	public function getSrcUri() {
-		return $this->srcUri;
-	}
-
-	public function setSrcUri($srcUri) {
-		$this->srcUri = $srcUri;
-		$this->queryParameters["SrcUri"]=$srcUri;
 	}
 	
 }

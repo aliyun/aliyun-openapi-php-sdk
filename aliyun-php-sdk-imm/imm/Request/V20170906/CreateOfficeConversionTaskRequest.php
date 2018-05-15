@@ -19,11 +19,11 @@
  */
 namespace imm\Request\V20170906;
 
-class ConvertOfficeFormatRequest extends \RpcAcsRequest
+class CreateOfficeConversionTaskRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("imm", "2017-09-06", "ConvertOfficeFormat", "imm", "openAPI");
+		parent::__construct("imm", "2017-09-06", "CreateOfficeConversionTask", "imm", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -46,6 +46,8 @@ class ConvertOfficeFormatRequest extends \RpcAcsRequest
 	private  $endPage;
 
 	private  $sheetOnePage;
+
+	private  $password;
 
 	private  $startPage;
 
@@ -147,6 +149,15 @@ class ConvertOfficeFormatRequest extends \RpcAcsRequest
 	public function setSheetOnePage($sheetOnePage) {
 		$this->sheetOnePage = $sheetOnePage;
 		$this->queryParameters["SheetOnePage"]=$sheetOnePage;
+	}
+
+	public function getPassword() {
+		return $this->password;
+	}
+
+	public function setPassword($password) {
+		$this->password = $password;
+		$this->queryParameters["Password"]=$password;
 	}
 
 	public function getStartPage() {

@@ -19,11 +19,11 @@
  */
 namespace imm\Request\V20170906;
 
-class RemoveTagByUrlRequest extends \RpcAcsRequest
+class DeleteFaceByUrlRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("imm", "2017-09-06", "RemoveTagByUrl", "imm", "openAPI");
+		parent::__construct("imm", "2017-09-06", "DeleteFaceByUrl", "imm", "openAPI");
 		$this->setMethod("POST");
 	}
 

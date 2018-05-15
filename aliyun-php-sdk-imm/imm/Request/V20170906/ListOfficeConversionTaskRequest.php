@@ -19,32 +19,19 @@
  */
 namespace imm\Request\V20170906;
 
-class GetTagPhotosRequest extends \RpcAcsRequest
+class ListOfficeConversionTaskRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("imm", "2017-09-06", "GetTagPhotos", "imm", "openAPI");
+		parent::__construct("imm", "2017-09-06", "ListOfficeConversionTask", "imm", "openAPI");
 		$this->setMethod("POST");
 	}
-
-	private  $tagName;
 
 	private  $maxKeys;
 
 	private  $marker;
 
 	private  $project;
-
-	private  $setId;
-
-	public function getTagName() {
-		return $this->tagName;
-	}
-
-	public function setTagName($tagName) {
-		$this->tagName = $tagName;
-		$this->queryParameters["TagName"]=$tagName;
-	}
 
 	public function getMaxKeys() {
 		return $this->maxKeys;
@@ -71,15 +58,6 @@ class GetTagPhotosRequest extends \RpcAcsRequest
 	public function setProject($project) {
 		$this->project = $project;
 		$this->queryParameters["Project"]=$project;
-	}
-
-	public function getSetId() {
-		return $this->setId;
-	}
-
-	public function setSetId($setId) {
-		$this->setId = $setId;
-		$this->queryParameters["SetId"]=$setId;
 	}
 	
 }

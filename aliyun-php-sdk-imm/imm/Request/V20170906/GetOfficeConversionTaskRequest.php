@@ -19,26 +19,17 @@
  */
 namespace imm\Request\V20170906;
 
-class DeleteFormatConvertJobRequest extends \RpcAcsRequest
+class GetOfficeConversionTaskRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("imm", "2017-09-06", "DeleteFormatConvertJob", "imm", "openAPI");
+		parent::__construct("imm", "2017-09-06", "GetOfficeConversionTask", "imm", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $jobId;
-
 	private  $project;
 
-	public function getJobId() {
-		return $this->jobId;
-	}
-
-	public function setJobId($jobId) {
-		$this->jobId = $jobId;
-		$this->queryParameters["JobId"]=$jobId;
-	}
+	private  $taskId;
 
 	public function getProject() {
 		return $this->project;
@@ -47,6 +38,15 @@ class DeleteFormatConvertJobRequest extends \RpcAcsRequest
 	public function setProject($project) {
 		$this->project = $project;
 		$this->queryParameters["Project"]=$project;
+	}
+
+	public function getTaskId() {
+		return $this->taskId;
+	}
+
+	public function setTaskId($taskId) {
+		$this->taskId = $taskId;
+		$this->queryParameters["TaskId"]=$taskId;
 	}
 	
 }

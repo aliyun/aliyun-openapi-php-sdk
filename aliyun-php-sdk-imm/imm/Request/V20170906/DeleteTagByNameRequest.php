@@ -19,15 +19,30 @@
  */
 namespace imm\Request\V20170906;
 
-class DelProjectRequest extends \RpcAcsRequest
+class DeleteTagByNameRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("imm", "2017-09-06", "DelProject", "imm", "openAPI");
+		parent::__construct("imm", "2017-09-06", "DeleteTagByName", "imm", "openAPI");
 		$this->setMethod("POST");
 	}
 
+	private  $tagName;
+
 	private  $project;
+
+	private  $setId;
+
+	private  $srcUri;
+
+	public function getTagName() {
+		return $this->tagName;
+	}
+
+	public function setTagName($tagName) {
+		$this->tagName = $tagName;
+		$this->queryParameters["TagName"]=$tagName;
+	}
 
 	public function getProject() {
 		return $this->project;
@@ -36,6 +51,24 @@ class DelProjectRequest extends \RpcAcsRequest
 	public function setProject($project) {
 		$this->project = $project;
 		$this->queryParameters["Project"]=$project;
+	}
+
+	public function getSetId() {
+		return $this->setId;
+	}
+
+	public function setSetId($setId) {
+		$this->setId = $setId;
+		$this->queryParameters["SetId"]=$setId;
+	}
+
+	public function getSrcUri() {
+		return $this->srcUri;
+	}
+
+	public function setSrcUri($srcUri) {
+		$this->srcUri = $srcUri;
+		$this->queryParameters["SrcUri"]=$srcUri;
 	}
 	
 }

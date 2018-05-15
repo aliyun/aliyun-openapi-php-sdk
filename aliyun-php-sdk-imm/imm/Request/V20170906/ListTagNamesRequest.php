@@ -19,37 +19,17 @@
  */
 namespace imm\Request\V20170906;
 
-class ListPhotoJobsRequest extends \RpcAcsRequest
+class ListTagNamesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("imm", "2017-09-06", "ListPhotoJobs", "imm", "openAPI");
+		parent::__construct("imm", "2017-09-06", "ListTagNames", "imm", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $maxKeys;
-
-	private  $marker;
-
 	private  $project;
 
-	public function getMaxKeys() {
-		return $this->maxKeys;
-	}
-
-	public function setMaxKeys($maxKeys) {
-		$this->maxKeys = $maxKeys;
-		$this->queryParameters["MaxKeys"]=$maxKeys;
-	}
-
-	public function getMarker() {
-		return $this->marker;
-	}
-
-	public function setMarker($marker) {
-		$this->marker = $marker;
-		$this->queryParameters["Marker"]=$marker;
-	}
+	private  $setId;
 
 	public function getProject() {
 		return $this->project;
@@ -58,6 +38,15 @@ class ListPhotoJobsRequest extends \RpcAcsRequest
 	public function setProject($project) {
 		$this->project = $project;
 		$this->queryParameters["Project"]=$project;
+	}
+
+	public function getSetId() {
+		return $this->setId;
+	}
+
+	public function setSetId($setId) {
+		$this->setId = $setId;
+		$this->queryParameters["SetId"]=$setId;
 	}
 	
 }

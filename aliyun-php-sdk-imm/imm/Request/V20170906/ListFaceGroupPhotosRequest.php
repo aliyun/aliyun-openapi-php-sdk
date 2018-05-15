@@ -19,25 +19,49 @@
  */
 namespace imm\Request\V20170906;
 
-class GetPhotoJobRequest extends \RpcAcsRequest
+class ListFaceGroupPhotosRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("imm", "2017-09-06", "GetPhotoJob", "imm", "openAPI");
+		parent::__construct("imm", "2017-09-06", "ListFaceGroupPhotos", "imm", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $jobId;
+	private  $maxKeys;
+
+	private  $marker;
+
+	private  $groupId;
 
 	private  $project;
 
-	public function getJobId() {
-		return $this->jobId;
+	private  $setId;
+
+	public function getMaxKeys() {
+		return $this->maxKeys;
 	}
 
-	public function setJobId($jobId) {
-		$this->jobId = $jobId;
-		$this->queryParameters["JobId"]=$jobId;
+	public function setMaxKeys($maxKeys) {
+		$this->maxKeys = $maxKeys;
+		$this->queryParameters["MaxKeys"]=$maxKeys;
+	}
+
+	public function getMarker() {
+		return $this->marker;
+	}
+
+	public function setMarker($marker) {
+		$this->marker = $marker;
+		$this->queryParameters["Marker"]=$marker;
+	}
+
+	public function getGroupId() {
+		return $this->groupId;
+	}
+
+	public function setGroupId($groupId) {
+		$this->groupId = $groupId;
+		$this->queryParameters["GroupId"]=$groupId;
 	}
 
 	public function getProject() {
@@ -47,6 +71,15 @@ class GetPhotoJobRequest extends \RpcAcsRequest
 	public function setProject($project) {
 		$this->project = $project;
 		$this->queryParameters["Project"]=$project;
+	}
+
+	public function getSetId() {
+		return $this->setId;
+	}
+
+	public function setSetId($setId) {
+		$this->setId = $setId;
+		$this->queryParameters["SetId"]=$setId;
 	}
 	
 }

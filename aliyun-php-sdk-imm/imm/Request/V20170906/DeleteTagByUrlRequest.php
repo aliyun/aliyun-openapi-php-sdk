@@ -19,23 +19,45 @@
  */
 namespace imm\Request\V20170906;
 
-class DetectRequest extends \RpcAcsRequest
+class DeleteTagByUrlRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("imm", "2017-09-06", "Detect", "imm", "openAPI");
+		parent::__construct("imm", "2017-09-06", "DeleteTagByUrl", "imm", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $url;
+	private  $project;
 
-	public function getUrl() {
-		return $this->url;
+	private  $setId;
+
+	private  $srcUri;
+
+	public function getProject() {
+		return $this->project;
 	}
 
-	public function setUrl($url) {
-		$this->url = $url;
-		$this->queryParameters["Url"]=$url;
+	public function setProject($project) {
+		$this->project = $project;
+		$this->queryParameters["Project"]=$project;
+	}
+
+	public function getSetId() {
+		return $this->setId;
+	}
+
+	public function setSetId($setId) {
+		$this->setId = $setId;
+		$this->queryParameters["SetId"]=$setId;
+	}
+
+	public function getSrcUri() {
+		return $this->srcUri;
+	}
+
+	public function setSrcUri($srcUri) {
+		$this->srcUri = $srcUri;
+		$this->queryParameters["SrcUri"]=$srcUri;
 	}
 	
 }

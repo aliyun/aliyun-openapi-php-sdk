@@ -19,37 +19,17 @@
  */
 namespace imm\Request\V20170906;
 
-class ListConvertOfficeFormatTasksRequest extends \RpcAcsRequest
+class DeleteOfficeConversionTaskRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("imm", "2017-09-06", "ListConvertOfficeFormatTasks", "imm", "openAPI");
+		parent::__construct("imm", "2017-09-06", "DeleteOfficeConversionTask", "imm", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $maxKeys;
-
-	private  $marker;
-
 	private  $project;
 
-	public function getMaxKeys() {
-		return $this->maxKeys;
-	}
-
-	public function setMaxKeys($maxKeys) {
-		$this->maxKeys = $maxKeys;
-		$this->queryParameters["MaxKeys"]=$maxKeys;
-	}
-
-	public function getMarker() {
-		return $this->marker;
-	}
-
-	public function setMarker($marker) {
-		$this->marker = $marker;
-		$this->queryParameters["Marker"]=$marker;
-	}
+	private  $taskId;
 
 	public function getProject() {
 		return $this->project;
@@ -58,6 +38,15 @@ class ListConvertOfficeFormatTasksRequest extends \RpcAcsRequest
 	public function setProject($project) {
 		$this->project = $project;
 		$this->queryParameters["Project"]=$project;
+	}
+
+	public function getTaskId() {
+		return $this->taskId;
+	}
+
+	public function setTaskId($taskId) {
+		$this->taskId = $taskId;
+		$this->queryParameters["TaskId"]=$taskId;
 	}
 	
 }
