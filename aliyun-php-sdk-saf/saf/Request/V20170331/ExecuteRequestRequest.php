@@ -23,7 +23,7 @@ class ExecuteRequestRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("saf", "2017-03-31", "ExecuteRequest", "saf", "openAPI");
+		parent::__construct("saf", "2017-03-31", "ExecuteRequest");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
