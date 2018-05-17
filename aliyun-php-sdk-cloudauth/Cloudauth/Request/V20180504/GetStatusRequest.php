@@ -17,13 +17,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Cloudauth\Request\V20171117;
+namespace Cloudauth\Request\V20180504;
 
 class GetStatusRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cloudauth", "2017-11-17", "GetStatus", "cloudauth", "openAPI");
+		parent::__construct("Cloudauth", "2018-05-04", "GetStatus", "cloudauth", "openAPI");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
@@ -31,6 +31,8 @@ class GetStatusRequest extends \RpcAcsRequest
 	private  $resourceOwnerId;
 
 	private  $biz;
+
+	private  $sourceIp;
 
 	private  $ticketId;
 
@@ -50,6 +52,15 @@ class GetStatusRequest extends \RpcAcsRequest
 	public function setBiz($biz) {
 		$this->biz = $biz;
 		$this->queryParameters["Biz"]=$biz;
+	}
+
+	public function getSourceIp() {
+		return $this->sourceIp;
+	}
+
+	public function setSourceIp($sourceIp) {
+		$this->sourceIp = $sourceIp;
+		$this->queryParameters["SourceIp"]=$sourceIp;
 	}
 
 	public function getTicketId() {

@@ -17,13 +17,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Cloudauth\Request\V20171117;
+namespace Cloudauth\Request\V20180504;
 
 class CompareFacesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cloudauth", "2017-11-17", "CompareFaces", "cloudauth", "openAPI");
+		parent::__construct("Cloudauth", "2018-05-04", "CompareFaces", "cloudauth", "openAPI");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
@@ -31,6 +31,8 @@ class CompareFacesRequest extends \RpcAcsRequest
 	private  $sourceImageType;
 
 	private  $resourceOwnerId;
+
+	private  $sourceIp;
 
 	private  $targetImageType;
 
@@ -54,6 +56,15 @@ class CompareFacesRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getSourceIp() {
+		return $this->sourceIp;
+	}
+
+	public function setSourceIp($sourceIp) {
+		$this->sourceIp = $sourceIp;
+		$this->queryParameters["SourceIp"]=$sourceIp;
 	}
 
 	public function getTargetImageType() {

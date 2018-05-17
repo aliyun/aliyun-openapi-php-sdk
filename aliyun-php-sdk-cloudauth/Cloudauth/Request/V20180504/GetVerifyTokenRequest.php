@@ -17,22 +17,37 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Cloudauth\Request\V20171117;
+namespace Cloudauth\Request\V20180504;
 
-class SubmitMaterialsRequest extends \RpcAcsRequest
+class GetVerifyTokenRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cloudauth", "2017-11-17", "SubmitMaterials", "cloudauth", "openAPI");
+		parent::__construct("Cloudauth", "2018-05-04", "GetVerifyToken", "cloudauth", "openAPI");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
 
+	private  $userData;
+
 	private  $resourceOwnerId;
 
-	private  $Materials;
+	private  $biz;
 
-	private  $verifyToken;
+	private  $sourceIp;
+
+	private  $binding;
+
+	private  $ticketId;
+
+	public function getUserData() {
+		return $this->userData;
+	}
+
+	public function setUserData($userData) {
+		$this->userData = $userData;
+		$this->queryParameters["UserData"]=$userData;
+	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -43,26 +58,40 @@ class SubmitMaterialsRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getMaterials() {
-		return $this->Materials;
+	public function getBiz() {
+		return $this->biz;
 	}
 
-	public function setMaterials($Materials) {
-		$this->Materials = $Materials;
-		for ($i = 0; $i < count($Materials); $i ++) {	
-			$this->queryParameters['Material.' . ($i + 1) . '.MaterialType'] = $Materials[$i]['MaterialType'];
-			$this->queryParameters['Material.' . ($i + 1) . '.Value'] = $Materials[$i]['Value'];
-
-		}
+	public function setBiz($biz) {
+		$this->biz = $biz;
+		$this->queryParameters["Biz"]=$biz;
 	}
 
-	public function getVerifyToken() {
-		return $this->verifyToken;
+	public function getSourceIp() {
+		return $this->sourceIp;
 	}
 
-	public function setVerifyToken($verifyToken) {
-		$this->verifyToken = $verifyToken;
-		$this->queryParameters["VerifyToken"]=$verifyToken;
+	public function setSourceIp($sourceIp) {
+		$this->sourceIp = $sourceIp;
+		$this->queryParameters["SourceIp"]=$sourceIp;
+	}
+
+	public function getBinding() {
+		return $this->binding;
+	}
+
+	public function setBinding($binding) {
+		$this->binding = $binding;
+		$this->queryParameters["Binding"]=$binding;
+	}
+
+	public function getTicketId() {
+		return $this->ticketId;
+	}
+
+	public function setTicketId($ticketId) {
+		$this->ticketId = $ticketId;
+		$this->queryParameters["TicketId"]=$ticketId;
 	}
 	
 }

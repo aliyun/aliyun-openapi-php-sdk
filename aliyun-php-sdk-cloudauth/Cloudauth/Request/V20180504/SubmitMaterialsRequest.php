@@ -17,22 +17,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Cloudauth\Request\V20171117;
+namespace Cloudauth\Request\V20180504;
 
-class GetMaterialsRequest extends \RpcAcsRequest
+class SubmitMaterialsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cloudauth", "2017-11-17", "GetMaterials", "cloudauth", "openAPI");
+		parent::__construct("Cloudauth", "2018-05-04", "SubmitMaterials", "cloudauth", "openAPI");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
-	private  $biz;
+	private  $sourceIp;
 
-	private  $ticketId;
+	private  $Materials;
+
+	private  $verifyToken;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -43,22 +45,35 @@ class GetMaterialsRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getBiz() {
-		return $this->biz;
+	public function getSourceIp() {
+		return $this->sourceIp;
 	}
 
-	public function setBiz($biz) {
-		$this->biz = $biz;
-		$this->queryParameters["Biz"]=$biz;
+	public function setSourceIp($sourceIp) {
+		$this->sourceIp = $sourceIp;
+		$this->queryParameters["SourceIp"]=$sourceIp;
 	}
 
-	public function getTicketId() {
-		return $this->ticketId;
+	public function getMaterials() {
+		return $this->Materials;
 	}
 
-	public function setTicketId($ticketId) {
-		$this->ticketId = $ticketId;
-		$this->queryParameters["TicketId"]=$ticketId;
+	public function setMaterials($Materials) {
+		$this->Materials = $Materials;
+		for ($i = 0; $i < count($Materials); $i ++) {	
+			$this->queryParameters['Material.' . ($i + 1) . '.MaterialType'] = $Materials[$i]['MaterialType'];
+			$this->queryParameters['Material.' . ($i + 1) . '.Value'] = $Materials[$i]['Value'];
+
+		}
+	}
+
+	public function getVerifyToken() {
+		return $this->verifyToken;
+	}
+
+	public function setVerifyToken($verifyToken) {
+		$this->verifyToken = $verifyToken;
+		$this->queryParameters["VerifyToken"]=$verifyToken;
 	}
 	
 }
