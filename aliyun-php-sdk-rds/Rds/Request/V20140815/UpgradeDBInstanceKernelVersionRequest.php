@@ -19,31 +19,34 @@
  */
 namespace Rds\Request\V20140815;
 
-class DescribeDatabasesRequest extends \RpcAcsRequest
+class UpgradeDBInstanceKernelVersionRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeDatabases", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "UpgradeDBInstanceKernelVersion", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $resourceOwnerId;
+	private  $switchTimeMode;
 
-	private  $dBName;
+	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
-	private  $dBStatus;
-
-	private  $ownerAccount;
-
-	private  $pageSize;
-
 	private  $dBInstanceId;
+
+	private  $switchTime;
 
 	private  $ownerId;
 
-	private  $pageNumber;
+	public function getSwitchTimeMode() {
+		return $this->switchTimeMode;
+	}
+
+	public function setSwitchTimeMode($switchTimeMode) {
+		$this->switchTimeMode = $switchTimeMode;
+		$this->queryParameters["SwitchTimeMode"]=$switchTimeMode;
+	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -52,15 +55,6 @@ class DescribeDatabasesRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getDBName() {
-		return $this->dBName;
-	}
-
-	public function setDBName($dBName) {
-		$this->dBName = $dBName;
-		$this->queryParameters["DBName"]=$dBName;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -72,33 +66,6 @@ class DescribeDatabasesRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getDBStatus() {
-		return $this->dBStatus;
-	}
-
-	public function setDBStatus($dBStatus) {
-		$this->dBStatus = $dBStatus;
-		$this->queryParameters["DBStatus"]=$dBStatus;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
 	public function getDBInstanceId() {
 		return $this->dBInstanceId;
 	}
@@ -108,6 +75,15 @@ class DescribeDatabasesRequest extends \RpcAcsRequest
 		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
 	}
 
+	public function getSwitchTime() {
+		return $this->switchTime;
+	}
+
+	public function setSwitchTime($switchTime) {
+		$this->switchTime = $switchTime;
+		$this->queryParameters["SwitchTime"]=$switchTime;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -115,15 +91,6 @@ class DescribeDatabasesRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 	
 }

@@ -19,31 +19,33 @@
  */
 namespace Rds\Request\V20140815;
 
-class DescribeDatabasesRequest extends \RpcAcsRequest
+class DescribeVerificationListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeDatabases", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeVerificationList", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
-	private  $dBName;
-
 	private  $resourceOwnerAccount;
-
-	private  $dBStatus;
 
 	private  $ownerAccount;
 
-	private  $pageSize;
+	private  $endTime;
 
-	private  $dBInstanceId;
+	private  $startTime;
 
 	private  $ownerId;
 
 	private  $pageNumber;
+
+	private  $securityToken;
+
+	private  $replicaId;
+
+	private  $pageSize;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -52,15 +54,6 @@ class DescribeDatabasesRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getDBName() {
-		return $this->dBName;
-	}
-
-	public function setDBName($dBName) {
-		$this->dBName = $dBName;
-		$this->queryParameters["DBName"]=$dBName;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -72,15 +65,6 @@ class DescribeDatabasesRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getDBStatus() {
-		return $this->dBStatus;
-	}
-
-	public function setDBStatus($dBStatus) {
-		$this->dBStatus = $dBStatus;
-		$this->queryParameters["DBStatus"]=$dBStatus;
-	}
-
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -90,22 +74,22 @@ class DescribeDatabasesRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
+	public function getEndTime() {
+		return $this->endTime;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
 	}
 
-	public function getDBInstanceId() {
-		return $this->dBInstanceId;
+	public function getStartTime() {
+		return $this->startTime;
 	}
 
-	public function setDBInstanceId($dBInstanceId) {
-		$this->dBInstanceId = $dBInstanceId;
-		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
 	}
 
 	public function getOwnerId() {
@@ -124,6 +108,33 @@ class DescribeDatabasesRequest extends \RpcAcsRequest
 	public function setPageNumber($pageNumber) {
 		$this->pageNumber = $pageNumber;
 		$this->queryParameters["PageNumber"]=$pageNumber;
+	}
+
+	public function getSecurityToken() {
+		return $this->securityToken;
+	}
+
+	public function setSecurityToken($securityToken) {
+		$this->securityToken = $securityToken;
+		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
+
+	public function getReplicaId() {
+		return $this->replicaId;
+	}
+
+	public function setReplicaId($replicaId) {
+		$this->replicaId = $replicaId;
+		$this->queryParameters["ReplicaId"]=$replicaId;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 	
 }

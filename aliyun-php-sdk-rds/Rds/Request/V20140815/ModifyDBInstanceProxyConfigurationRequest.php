@@ -19,31 +19,25 @@
  */
 namespace Rds\Request\V20140815;
 
-class DescribeDatabasesRequest extends \RpcAcsRequest
+class ModifyDBInstanceProxyConfigurationRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeDatabases", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "ModifyDBInstanceProxyConfiguration", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
-	private  $dBName;
-
 	private  $resourceOwnerAccount;
 
-	private  $dBStatus;
+	private  $proxyConfigurationKey;
 
-	private  $ownerAccount;
-
-	private  $pageSize;
+	private  $proxyConfigurationValue;
 
 	private  $dBInstanceId;
 
 	private  $ownerId;
-
-	private  $pageNumber;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -52,15 +46,6 @@ class DescribeDatabasesRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getDBName() {
-		return $this->dBName;
-	}
-
-	public function setDBName($dBName) {
-		$this->dBName = $dBName;
-		$this->queryParameters["DBName"]=$dBName;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -72,31 +57,22 @@ class DescribeDatabasesRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getDBStatus() {
-		return $this->dBStatus;
+	public function getProxyConfigurationKey() {
+		return $this->proxyConfigurationKey;
 	}
 
-	public function setDBStatus($dBStatus) {
-		$this->dBStatus = $dBStatus;
-		$this->queryParameters["DBStatus"]=$dBStatus;
+	public function setProxyConfigurationKey($proxyConfigurationKey) {
+		$this->proxyConfigurationKey = $proxyConfigurationKey;
+		$this->queryParameters["ProxyConfigurationKey"]=$proxyConfigurationKey;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getProxyConfigurationValue() {
+		return $this->proxyConfigurationValue;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setProxyConfigurationValue($proxyConfigurationValue) {
+		$this->proxyConfigurationValue = $proxyConfigurationValue;
+		$this->queryParameters["ProxyConfigurationValue"]=$proxyConfigurationValue;
 	}
 
 	public function getDBInstanceId() {
@@ -115,15 +91,6 @@ class DescribeDatabasesRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 	
 }

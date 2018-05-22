@@ -29,19 +29,25 @@ class CreateMigrateTaskRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $dBName;
+	private  $migrateTaskId;
 
 	private  $resourceOwnerAccount;
 
 	private  $isOnlineDB;
 
+	private  $ownerId;
+
+	private  $ossObjectPositions;
+
+	private  $oSSUrls;
+
+	private  $dBName;
+
 	private  $dBInstanceId;
 
 	private  $backupMode;
 
-	private  $ownerId;
-
-	private  $oSSUrls;
+	private  $checkDBMode;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -52,13 +58,13 @@ class CreateMigrateTaskRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getDBName() {
-		return $this->dBName;
+	public function getMigrateTaskId() {
+		return $this->migrateTaskId;
 	}
 
-	public function setDBName($dBName) {
-		$this->dBName = $dBName;
-		$this->queryParameters["DBName"]=$dBName;
+	public function setMigrateTaskId($migrateTaskId) {
+		$this->migrateTaskId = $migrateTaskId;
+		$this->queryParameters["MigrateTaskId"]=$migrateTaskId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -79,6 +85,42 @@ class CreateMigrateTaskRequest extends \RpcAcsRequest
 		$this->queryParameters["IsOnlineDB"]=$isOnlineDB;
 	}
 
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getOssObjectPositions() {
+		return $this->ossObjectPositions;
+	}
+
+	public function setOssObjectPositions($ossObjectPositions) {
+		$this->ossObjectPositions = $ossObjectPositions;
+		$this->queryParameters["OssObjectPositions"]=$ossObjectPositions;
+	}
+
+	public function getOSSUrls() {
+		return $this->oSSUrls;
+	}
+
+	public function setOSSUrls($oSSUrls) {
+		$this->oSSUrls = $oSSUrls;
+		$this->queryParameters["OSSUrls"]=$oSSUrls;
+	}
+
+	public function getDBName() {
+		return $this->dBName;
+	}
+
+	public function setDBName($dBName) {
+		$this->dBName = $dBName;
+		$this->queryParameters["DBName"]=$dBName;
+	}
+
 	public function getDBInstanceId() {
 		return $this->dBInstanceId;
 	}
@@ -97,22 +139,13 @@ class CreateMigrateTaskRequest extends \RpcAcsRequest
 		$this->queryParameters["BackupMode"]=$backupMode;
 	}
 
-	public function getOwnerId() {
-		return $this->ownerId;
+	public function getCheckDBMode() {
+		return $this->checkDBMode;
 	}
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getOSSUrls() {
-		return $this->oSSUrls;
-	}
-
-	public function setOSSUrls($oSSUrls) {
-		$this->oSSUrls = $oSSUrls;
-		$this->queryParameters["OSSUrls"]=$oSSUrls;
+	public function setCheckDBMode($checkDBMode) {
+		$this->checkDBMode = $checkDBMode;
+		$this->queryParameters["CheckDBMode"]=$checkDBMode;
 	}
 	
 }

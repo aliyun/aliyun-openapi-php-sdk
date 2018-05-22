@@ -19,11 +19,11 @@
  */
 namespace Rds\Request\V20140815;
 
-class DescribeFilesForSQLServerRequest extends \RpcAcsRequest
+class DescribeReplicaConflictInfoRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeFilesForSQLServer", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeReplicaConflictInfo", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -33,17 +33,19 @@ class DescribeFilesForSQLServerRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
-	private  $pageSize;
-
 	private  $endTime;
-
-	private  $dBInstanceId;
 
 	private  $startTime;
 
 	private  $ownerId;
 
 	private  $pageNumber;
+
+	private  $securityToken;
+
+	private  $replicaId;
+
+	private  $pageSize;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -72,15 +74,6 @@ class DescribeFilesForSQLServerRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
 	public function getEndTime() {
 		return $this->endTime;
 	}
@@ -88,15 +81,6 @@ class DescribeFilesForSQLServerRequest extends \RpcAcsRequest
 	public function setEndTime($endTime) {
 		$this->endTime = $endTime;
 		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getDBInstanceId() {
-		return $this->dBInstanceId;
-	}
-
-	public function setDBInstanceId($dBInstanceId) {
-		$this->dBInstanceId = $dBInstanceId;
-		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
 	}
 
 	public function getStartTime() {
@@ -124,6 +108,33 @@ class DescribeFilesForSQLServerRequest extends \RpcAcsRequest
 	public function setPageNumber($pageNumber) {
 		$this->pageNumber = $pageNumber;
 		$this->queryParameters["PageNumber"]=$pageNumber;
+	}
+
+	public function getSecurityToken() {
+		return $this->securityToken;
+	}
+
+	public function setSecurityToken($securityToken) {
+		$this->securityToken = $securityToken;
+		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
+
+	public function getReplicaId() {
+		return $this->replicaId;
+	}
+
+	public function setReplicaId($replicaId) {
+		$this->replicaId = $replicaId;
+		$this->queryParameters["ReplicaId"]=$replicaId;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 	
 }

@@ -45,6 +45,10 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
 
 	private  $dBInstanceDescription;
 
+	private  $dBInstanceStorageType;
+
+	private  $businessInfo;
+
 	private  $dBInstanceNetType;
 
 	private  $period;
@@ -154,6 +158,24 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
 	public function setDBInstanceDescription($dBInstanceDescription) {
 		$this->dBInstanceDescription = $dBInstanceDescription;
 		$this->queryParameters["DBInstanceDescription"]=$dBInstanceDescription;
+	}
+
+	public function getDBInstanceStorageType() {
+		return $this->dBInstanceStorageType;
+	}
+
+	public function setDBInstanceStorageType($dBInstanceStorageType) {
+		$this->dBInstanceStorageType = $dBInstanceStorageType;
+		$this->queryParameters["DBInstanceStorageType"]=$dBInstanceStorageType;
+	}
+
+	public function getBusinessInfo() {
+		return $this->businessInfo;
+	}
+
+	public function setBusinessInfo($businessInfo) {
+		$this->businessInfo = $businessInfo;
+		$this->queryParameters["BusinessInfo"]=$businessInfo;
 	}
 
 	public function getDBInstanceNetType() {

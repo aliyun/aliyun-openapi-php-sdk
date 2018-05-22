@@ -19,23 +19,27 @@
  */
 namespace Rds\Request\V20140815;
 
-class CreateUploadPathForSQLServerRequest extends \RpcAcsRequest
+class CreateStaticVerificationRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "CreateUploadPathForSQLServer", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "CreateStaticVerification", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
-	private  $dBName;
+	private  $securityToken;
 
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
-	private  $dBInstanceId;
+	private  $replicaId;
+
+	private  $destinationInstanceId;
+
+	private  $sourceInstanceId;
 
 	private  $ownerId;
 
@@ -48,13 +52,13 @@ class CreateUploadPathForSQLServerRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getDBName() {
-		return $this->dBName;
+	public function getSecurityToken() {
+		return $this->securityToken;
 	}
 
-	public function setDBName($dBName) {
-		$this->dBName = $dBName;
-		$this->queryParameters["DBName"]=$dBName;
+	public function setSecurityToken($securityToken) {
+		$this->securityToken = $securityToken;
+		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -75,13 +79,31 @@ class CreateUploadPathForSQLServerRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getDBInstanceId() {
-		return $this->dBInstanceId;
+	public function getReplicaId() {
+		return $this->replicaId;
 	}
 
-	public function setDBInstanceId($dBInstanceId) {
-		$this->dBInstanceId = $dBInstanceId;
-		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
+	public function setReplicaId($replicaId) {
+		$this->replicaId = $replicaId;
+		$this->queryParameters["ReplicaId"]=$replicaId;
+	}
+
+	public function getDestinationInstanceId() {
+		return $this->destinationInstanceId;
+	}
+
+	public function setDestinationInstanceId($destinationInstanceId) {
+		$this->destinationInstanceId = $destinationInstanceId;
+		$this->queryParameters["DestinationInstanceId"]=$destinationInstanceId;
+	}
+
+	public function getSourceInstanceId() {
+		return $this->sourceInstanceId;
+	}
+
+	public function setSourceInstanceId($sourceInstanceId) {
+		$this->sourceInstanceId = $sourceInstanceId;
+		$this->queryParameters["SourceInstanceId"]=$sourceInstanceId;
 	}
 
 	public function getOwnerId() {

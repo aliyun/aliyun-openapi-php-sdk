@@ -19,33 +19,31 @@
  */
 namespace Rds\Request\V20140815;
 
-class DescribeImportsForSQLServerRequest extends \RpcAcsRequest
+class CreateOnlineDatabaseTaskRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeImportsForSQLServer", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "CreateOnlineDatabaseTask", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
-	private  $importId;
+	private  $migrateTaskId;
+
+	private  $dBName;
 
 	private  $resourceOwnerAccount;
 
+	private  $clientToken;
+
 	private  $ownerAccount;
-
-	private  $pageSize;
-
-	private  $endTime;
 
 	private  $dBInstanceId;
 
-	private  $startTime;
+	private  $checkDBMode;
 
 	private  $ownerId;
-
-	private  $pageNumber;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -56,13 +54,22 @@ class DescribeImportsForSQLServerRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getImportId() {
-		return $this->importId;
+	public function getMigrateTaskId() {
+		return $this->migrateTaskId;
 	}
 
-	public function setImportId($importId) {
-		$this->importId = $importId;
-		$this->queryParameters["ImportId"]=$importId;
+	public function setMigrateTaskId($migrateTaskId) {
+		$this->migrateTaskId = $migrateTaskId;
+		$this->queryParameters["MigrateTaskId"]=$migrateTaskId;
+	}
+
+	public function getDBName() {
+		return $this->dBName;
+	}
+
+	public function setDBName($dBName) {
+		$this->dBName = $dBName;
+		$this->queryParameters["DBName"]=$dBName;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -74,6 +81,15 @@ class DescribeImportsForSQLServerRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
+	public function getClientToken() {
+		return $this->clientToken;
+	}
+
+	public function setClientToken($clientToken) {
+		$this->clientToken = $clientToken;
+		$this->queryParameters["ClientToken"]=$clientToken;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -81,24 +97,6 @@ class DescribeImportsForSQLServerRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getEndTime() {
-		return $this->endTime;
-	}
-
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
 	}
 
 	public function getDBInstanceId() {
@@ -110,13 +108,13 @@ class DescribeImportsForSQLServerRequest extends \RpcAcsRequest
 		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
 	}
 
-	public function getStartTime() {
-		return $this->startTime;
+	public function getCheckDBMode() {
+		return $this->checkDBMode;
 	}
 
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
+	public function setCheckDBMode($checkDBMode) {
+		$this->checkDBMode = $checkDBMode;
+		$this->queryParameters["CheckDBMode"]=$checkDBMode;
 	}
 
 	public function getOwnerId() {
@@ -126,15 +124,6 @@ class DescribeImportsForSQLServerRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 	
 }
