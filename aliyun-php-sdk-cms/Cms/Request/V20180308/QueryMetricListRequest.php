@@ -29,11 +29,11 @@ class QueryMetricListRequest extends \RpcAcsRequest
 
 	private  $cursor;
 
-	private  $callby_cms_owner;
-
 	private  $resourceOwnerId;
 
 	private  $period;
+
+	private  $metric;
 
 	private  $length;
 
@@ -45,10 +45,6 @@ class QueryMetricListRequest extends \RpcAcsRequest
 
 	private  $startTime;
 
-	private  $metric;
-
-	private  $page;
-
 	private  $dimensions;
 
 	public function getCursor() {
@@ -58,15 +54,6 @@ class QueryMetricListRequest extends \RpcAcsRequest
 	public function setCursor($cursor) {
 		$this->cursor = $cursor;
 		$this->queryParameters["Cursor"]=$cursor;
-	}
-
-	public function getcallby_cms_owner() {
-		return $this->callby_cms_owner;
-	}
-
-	public function setcallby_cms_owner($callby_cms_owner) {
-		$this->callby_cms_owner = $callby_cms_owner;
-		$this->queryParameters["callby_cms_owner"]=$callby_cms_owner;
 	}
 
 	public function getResourceOwnerId() {
@@ -85,6 +72,15 @@ class QueryMetricListRequest extends \RpcAcsRequest
 	public function setPeriod($period) {
 		$this->period = $period;
 		$this->queryParameters["Period"]=$period;
+	}
+
+	public function getMetric() {
+		return $this->metric;
+	}
+
+	public function setMetric($metric) {
+		$this->metric = $metric;
+		$this->queryParameters["Metric"]=$metric;
 	}
 
 	public function getLength() {
@@ -130,24 +126,6 @@ class QueryMetricListRequest extends \RpcAcsRequest
 	public function setStartTime($startTime) {
 		$this->startTime = $startTime;
 		$this->queryParameters["StartTime"]=$startTime;
-	}
-
-	public function getMetric() {
-		return $this->metric;
-	}
-
-	public function setMetric($metric) {
-		$this->metric = $metric;
-		$this->queryParameters["Metric"]=$metric;
-	}
-
-	public function getPage() {
-		return $this->page;
-	}
-
-	public function setPage($page) {
-		$this->page = $page;
-		$this->queryParameters["Page"]=$page;
 	}
 
 	public function getDimensions() {

@@ -29,11 +29,15 @@ class ListMyGroupInstancesDetailsRequest extends \RpcAcsRequest
 
 	private  $total;
 
+	private  $instanceIds;
+
 	private  $groupId;
 
 	private  $pageSize;
 
 	private  $category;
+
+	private  $keyword;
 
 	private  $pageNumber;
 
@@ -44,6 +48,15 @@ class ListMyGroupInstancesDetailsRequest extends \RpcAcsRequest
 	public function setTotal($total) {
 		$this->total = $total;
 		$this->queryParameters["Total"]=$total;
+	}
+
+	public function getInstanceIds() {
+		return $this->instanceIds;
+	}
+
+	public function setInstanceIds($instanceIds) {
+		$this->instanceIds = $instanceIds;
+		$this->queryParameters["InstanceIds"]=$instanceIds;
 	}
 
 	public function getGroupId() {
@@ -71,6 +84,15 @@ class ListMyGroupInstancesDetailsRequest extends \RpcAcsRequest
 	public function setCategory($category) {
 		$this->category = $category;
 		$this->queryParameters["Category"]=$category;
+	}
+
+	public function getKeyword() {
+		return $this->keyword;
+	}
+
+	public function setKeyword($keyword) {
+		$this->keyword = $keyword;
+		$this->queryParameters["Keyword"]=$keyword;
 	}
 
 	public function getPageNumber() {

@@ -29,8 +29,6 @@ class ListAlarmRequest extends \RpcAcsRequest
 
 	private  $isEnable;
 
-	private  $callby_cms_owner;
-
 	private  $name;
 
 	private  $namespace;
@@ -52,15 +50,6 @@ class ListAlarmRequest extends \RpcAcsRequest
 	public function setIsEnable($isEnable) {
 		$this->isEnable = $isEnable;
 		$this->queryParameters["IsEnable"]=$isEnable;
-	}
-
-	public function getcallby_cms_owner() {
-		return $this->callby_cms_owner;
-	}
-
-	public function setcallby_cms_owner($callby_cms_owner) {
-		$this->callby_cms_owner = $callby_cms_owner;
-		$this->queryParameters["callby_cms_owner"]=$callby_cms_owner;
 	}
 
 	public function getName() {

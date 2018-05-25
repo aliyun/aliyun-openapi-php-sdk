@@ -27,8 +27,6 @@ class CreateAlarmRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $callby_cms_owner;
-
 	private  $period;
 
 	private  $webhook;
@@ -41,9 +39,9 @@ class CreateAlarmRequest extends \RpcAcsRequest
 
 	private  $startTime;
 
-	private  $name;
-
 	private  $namespace;
+
+	private  $name;
 
 	private  $evaluationCount;
 
@@ -58,15 +56,6 @@ class CreateAlarmRequest extends \RpcAcsRequest
 	private  $dimensions;
 
 	private  $statistics;
-
-	public function getcallby_cms_owner() {
-		return $this->callby_cms_owner;
-	}
-
-	public function setcallby_cms_owner($callby_cms_owner) {
-		$this->callby_cms_owner = $callby_cms_owner;
-		$this->queryParameters["callby_cms_owner"]=$callby_cms_owner;
-	}
 
 	public function getPeriod() {
 		return $this->period;
@@ -122,15 +111,6 @@ class CreateAlarmRequest extends \RpcAcsRequest
 		$this->queryParameters["StartTime"]=$startTime;
 	}
 
-	public function getName() {
-		return $this->name;
-	}
-
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
-	}
-
 	public function getNamespace() {
 		return $this->namespace;
 	}
@@ -138,6 +118,15 @@ class CreateAlarmRequest extends \RpcAcsRequest
 	public function setNamespace($namespace) {
 		$this->namespace = $namespace;
 		$this->queryParameters["Namespace"]=$namespace;
+	}
+
+	public function getName() {
+		return $this->name;
+	}
+
+	public function setName($name) {
+		$this->name = $name;
+		$this->queryParameters["Name"]=$name;
 	}
 
 	public function getEvaluationCount() {

@@ -24,6 +24,7 @@ class QueryCustomEventHistogramRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cms", "2018-03-08", "QueryCustomEventHistogram", "cms", "openAPI");
+		$this->setMethod("POST");
 	}
 
 	private  $queryJson;

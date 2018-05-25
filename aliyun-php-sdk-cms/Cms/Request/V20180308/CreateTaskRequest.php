@@ -27,48 +27,19 @@ class CreateTaskRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $reportProject;
-
 	private  $taskType;
 
 	private  $address;
-
-	private  $alertName;
-
-	private  $ip;
-
-	private  $agentGroup;
-
-	private  $taskName;
-
-	private  $endTime;
-
-	private  $taskState;
-
-	private  $clientIds;
-
-	private  $alertInfo;
-
-	private  $agentType;
 
 	private  $ispCity;
 
 	private  $options;
 
+	private  $taskName;
+
 	private  $interval;
 
 	private  $alertRule;
-
-	private  $taskId;
-
-	public function getReportProject() {
-		return $this->reportProject;
-	}
-
-	public function setReportProject($reportProject) {
-		$this->reportProject = $reportProject;
-		$this->queryParameters["ReportProject"]=$reportProject;
-	}
 
 	public function getTaskType() {
 		return $this->taskType;
@@ -86,87 +57,6 @@ class CreateTaskRequest extends \RpcAcsRequest
 	public function setAddress($address) {
 		$this->address = $address;
 		$this->queryParameters["Address"]=$address;
-	}
-
-	public function getAlertName() {
-		return $this->alertName;
-	}
-
-	public function setAlertName($alertName) {
-		$this->alertName = $alertName;
-		$this->queryParameters["AlertName"]=$alertName;
-	}
-
-	public function getIp() {
-		return $this->ip;
-	}
-
-	public function setIp($ip) {
-		$this->ip = $ip;
-		$this->queryParameters["Ip"]=$ip;
-	}
-
-	public function getAgentGroup() {
-		return $this->agentGroup;
-	}
-
-	public function setAgentGroup($agentGroup) {
-		$this->agentGroup = $agentGroup;
-		$this->queryParameters["AgentGroup"]=$agentGroup;
-	}
-
-	public function getTaskName() {
-		return $this->taskName;
-	}
-
-	public function setTaskName($taskName) {
-		$this->taskName = $taskName;
-		$this->queryParameters["TaskName"]=$taskName;
-	}
-
-	public function getEndTime() {
-		return $this->endTime;
-	}
-
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getTaskState() {
-		return $this->taskState;
-	}
-
-	public function setTaskState($taskState) {
-		$this->taskState = $taskState;
-		$this->queryParameters["TaskState"]=$taskState;
-	}
-
-	public function getClientIds() {
-		return $this->clientIds;
-	}
-
-	public function setClientIds($clientIds) {
-		$this->clientIds = $clientIds;
-		$this->queryParameters["ClientIds"]=$clientIds;
-	}
-
-	public function getAlertInfo() {
-		return $this->alertInfo;
-	}
-
-	public function setAlertInfo($alertInfo) {
-		$this->alertInfo = $alertInfo;
-		$this->queryParameters["AlertInfo"]=$alertInfo;
-	}
-
-	public function getAgentType() {
-		return $this->agentType;
-	}
-
-	public function setAgentType($agentType) {
-		$this->agentType = $agentType;
-		$this->queryParameters["AgentType"]=$agentType;
 	}
 
 	public function getIspCity() {
@@ -187,6 +77,15 @@ class CreateTaskRequest extends \RpcAcsRequest
 		$this->queryParameters["Options"]=$options;
 	}
 
+	public function getTaskName() {
+		return $this->taskName;
+	}
+
+	public function setTaskName($taskName) {
+		$this->taskName = $taskName;
+		$this->queryParameters["TaskName"]=$taskName;
+	}
+
 	public function getInterval() {
 		return $this->interval;
 	}
@@ -203,15 +102,6 @@ class CreateTaskRequest extends \RpcAcsRequest
 	public function setAlertRule($alertRule) {
 		$this->alertRule = $alertRule;
 		$this->queryParameters["AlertRule"]=$alertRule;
-	}
-
-	public function getTaskId() {
-		return $this->taskId;
-	}
-
-	public function setTaskId($taskId) {
-		$this->taskId = $taskId;
-		$this->queryParameters["TaskId"]=$taskId;
 	}
 	
 }

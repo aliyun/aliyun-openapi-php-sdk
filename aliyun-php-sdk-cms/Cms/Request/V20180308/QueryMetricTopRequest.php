@@ -24,13 +24,14 @@ class QueryMetricTopRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cms", "2018-03-08", "QueryMetricTop", "cms", "openAPI");
+		$this->setMethod("POST");
 	}
 
-	private  $callby_cms_owner;
+	private  $resourceOwnerId;
 
 	private  $period;
 
-	private  $resourceOwnerId;
+	private  $metric;
 
 	private  $length;
 
@@ -44,19 +45,17 @@ class QueryMetricTopRequest extends \RpcAcsRequest
 
 	private  $startTime;
 
-	private  $orderDesc;
-
-	private  $metric;
-
 	private  $dimensions;
 
-	public function getcallby_cms_owner() {
-		return $this->callby_cms_owner;
+	private  $orderDesc;
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
 	}
 
-	public function setcallby_cms_owner($callby_cms_owner) {
-		$this->callby_cms_owner = $callby_cms_owner;
-		$this->queryParameters["callby_cms_owner"]=$callby_cms_owner;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getPeriod() {
@@ -68,13 +67,13 @@ class QueryMetricTopRequest extends \RpcAcsRequest
 		$this->queryParameters["Period"]=$period;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getMetric() {
+		return $this->metric;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	public function setMetric($metric) {
+		$this->metric = $metric;
+		$this->queryParameters["Metric"]=$metric;
 	}
 
 	public function getLength() {
@@ -131,24 +130,6 @@ class QueryMetricTopRequest extends \RpcAcsRequest
 		$this->queryParameters["StartTime"]=$startTime;
 	}
 
-	public function getOrderDesc() {
-		return $this->orderDesc;
-	}
-
-	public function setOrderDesc($orderDesc) {
-		$this->orderDesc = $orderDesc;
-		$this->queryParameters["OrderDesc"]=$orderDesc;
-	}
-
-	public function getMetric() {
-		return $this->metric;
-	}
-
-	public function setMetric($metric) {
-		$this->metric = $metric;
-		$this->queryParameters["Metric"]=$metric;
-	}
-
 	public function getDimensions() {
 		return $this->dimensions;
 	}
@@ -156,6 +137,15 @@ class QueryMetricTopRequest extends \RpcAcsRequest
 	public function setDimensions($dimensions) {
 		$this->dimensions = $dimensions;
 		$this->queryParameters["Dimensions"]=$dimensions;
+	}
+
+	public function getOrderDesc() {
+		return $this->orderDesc;
+	}
+
+	public function setOrderDesc($orderDesc) {
+		$this->orderDesc = $orderDesc;
+		$this->queryParameters["OrderDesc"]=$orderDesc;
 	}
 	
 }

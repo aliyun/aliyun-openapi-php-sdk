@@ -24,6 +24,29 @@ class DescribeISPAreaCityRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cms", "2018-03-08", "DescribeISPAreaCity", "cms", "openAPI");
+		$this->setMethod("POST");
+	}
+
+	private  $city;
+
+	private  $isp;
+
+	public function getCity() {
+		return $this->city;
+	}
+
+	public function setCity($city) {
+		$this->city = $city;
+		$this->queryParameters["City"]=$city;
+	}
+
+	public function getIsp() {
+		return $this->isp;
+	}
+
+	public function setIsp($isp) {
+		$this->isp = $isp;
+		$this->queryParameters["Isp"]=$isp;
 	}
 	
 }

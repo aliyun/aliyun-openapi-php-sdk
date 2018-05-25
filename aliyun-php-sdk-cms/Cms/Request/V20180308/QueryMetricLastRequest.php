@@ -24,15 +24,16 @@ class QueryMetricLastRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cms", "2018-03-08", "QueryMetricLast", "cms", "openAPI");
+		$this->setMethod("POST");
 	}
 
 	private  $cursor;
 
-	private  $callby_cms_owner;
-
 	private  $resourceOwnerId;
 
 	private  $period;
+
+	private  $metric;
 
 	private  $length;
 
@@ -43,8 +44,6 @@ class QueryMetricLastRequest extends \RpcAcsRequest
 	private  $express;
 
 	private  $startTime;
-
-	private  $metric;
 
 	private  $page;
 
@@ -57,15 +56,6 @@ class QueryMetricLastRequest extends \RpcAcsRequest
 	public function setCursor($cursor) {
 		$this->cursor = $cursor;
 		$this->queryParameters["Cursor"]=$cursor;
-	}
-
-	public function getcallby_cms_owner() {
-		return $this->callby_cms_owner;
-	}
-
-	public function setcallby_cms_owner($callby_cms_owner) {
-		$this->callby_cms_owner = $callby_cms_owner;
-		$this->queryParameters["callby_cms_owner"]=$callby_cms_owner;
 	}
 
 	public function getResourceOwnerId() {
@@ -84,6 +74,15 @@ class QueryMetricLastRequest extends \RpcAcsRequest
 	public function setPeriod($period) {
 		$this->period = $period;
 		$this->queryParameters["Period"]=$period;
+	}
+
+	public function getMetric() {
+		return $this->metric;
+	}
+
+	public function setMetric($metric) {
+		$this->metric = $metric;
+		$this->queryParameters["Metric"]=$metric;
 	}
 
 	public function getLength() {
@@ -129,15 +128,6 @@ class QueryMetricLastRequest extends \RpcAcsRequest
 	public function setStartTime($startTime) {
 		$this->startTime = $startTime;
 		$this->queryParameters["StartTime"]=$startTime;
-	}
-
-	public function getMetric() {
-		return $this->metric;
-	}
-
-	public function setMetric($metric) {
-		$this->metric = $metric;
-		$this->queryParameters["Metric"]=$metric;
 	}
 
 	public function getPage() {

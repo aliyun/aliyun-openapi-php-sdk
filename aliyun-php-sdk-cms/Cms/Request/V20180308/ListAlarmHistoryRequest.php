@@ -29,8 +29,6 @@ class ListAlarmHistoryRequest extends \RpcAcsRequest
 
 	private  $cursor;
 
-	private  $callby_cms_owner;
-
 	private  $size;
 
 	private  $endTime;
@@ -46,15 +44,6 @@ class ListAlarmHistoryRequest extends \RpcAcsRequest
 	public function setCursor($cursor) {
 		$this->cursor = $cursor;
 		$this->queryParameters["Cursor"]=$cursor;
-	}
-
-	public function getcallby_cms_owner() {
-		return $this->callby_cms_owner;
-	}
-
-	public function setcallby_cms_owner($callby_cms_owner) {
-		$this->callby_cms_owner = $callby_cms_owner;
-		$this->queryParameters["callby_cms_owner"]=$callby_cms_owner;
 	}
 
 	public function getSize() {

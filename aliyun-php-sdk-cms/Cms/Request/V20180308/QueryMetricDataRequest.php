@@ -24,9 +24,8 @@ class QueryMetricDataRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cms", "2018-03-08", "QueryMetricData", "cms", "openAPI");
+		$this->setMethod("POST");
 	}
-
-	private  $callby_cms_owner;
 
 	private  $resourceOwnerId;
 
@@ -45,15 +44,6 @@ class QueryMetricDataRequest extends \RpcAcsRequest
 	private  $startTime;
 
 	private  $dimensions;
-
-	public function getcallby_cms_owner() {
-		return $this->callby_cms_owner;
-	}
-
-	public function setcallby_cms_owner($callby_cms_owner) {
-		$this->callby_cms_owner = $callby_cms_owner;
-		$this->queryParameters["callby_cms_owner"]=$callby_cms_owner;
-	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;

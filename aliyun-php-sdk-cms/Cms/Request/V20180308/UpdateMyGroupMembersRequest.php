@@ -27,9 +27,20 @@ class UpdateMyGroupMembersRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
+	private  $readers;
+
 	private  $groupId;
 
 	private  $masters;
+
+	public function getReaders() {
+		return $this->readers;
+	}
+
+	public function setReaders($readers) {
+		$this->readers = $readers;
+		$this->queryParameters["Readers"]=$readers;
+	}
 
 	public function getGroupId() {
 		return $this->groupId;

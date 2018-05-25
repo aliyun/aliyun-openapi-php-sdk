@@ -27,18 +27,7 @@ class DeleteAlarmRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $callby_cms_owner;
-
 	private  $id;
-
-	public function getcallby_cms_owner() {
-		return $this->callby_cms_owner;
-	}
-
-	public function setcallby_cms_owner($callby_cms_owner) {
-		$this->callby_cms_owner = $callby_cms_owner;
-		$this->queryParameters["callby_cms_owner"]=$callby_cms_owner;
-	}
 
 	public function getId() {
 		return $this->id;

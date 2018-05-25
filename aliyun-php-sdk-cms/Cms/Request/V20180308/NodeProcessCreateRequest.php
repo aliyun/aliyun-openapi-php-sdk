@@ -24,6 +24,7 @@ class NodeProcessCreateRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cms", "2018-03-08", "NodeProcessCreate", "cms", "openAPI");
+		$this->setMethod("POST");
 	}
 
 	private  $instanceId;

@@ -24,6 +24,7 @@ class QueryCustomMetricListRequest extends \RpcAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Cms", "2018-03-08", "QueryCustomMetricList", "cms", "openAPI");
+		$this->setMethod("POST");
 	}
 
 	private  $size;
@@ -35,8 +36,6 @@ class QueryCustomMetricListRequest extends \RpcAcsRequest
 	private  $metricName;
 
 	private  $dimension;
-
-	private  $uUID;
 
 	private  $md5;
 
@@ -83,15 +82,6 @@ class QueryCustomMetricListRequest extends \RpcAcsRequest
 	public function setDimension($dimension) {
 		$this->dimension = $dimension;
 		$this->queryParameters["Dimension"]=$dimension;
-	}
-
-	public function getUUID() {
-		return $this->uUID;
-	}
-
-	public function setUUID($uUID) {
-		$this->uUID = $uUID;
-		$this->queryParameters["UUID"]=$uUID;
 	}
 
 	public function getMd5() {

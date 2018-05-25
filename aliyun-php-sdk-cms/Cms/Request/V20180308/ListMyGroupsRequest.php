@@ -33,9 +33,9 @@ class ListMyGroupsRequest extends \RpcAcsRequest
 
 	private  $pageSize;
 
-	private  $keyword;
-
 	private  $type;
+
+	private  $keyword;
 
 	private  $groupName;
 
@@ -70,15 +70,6 @@ class ListMyGroupsRequest extends \RpcAcsRequest
 		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
-	public function getKeyword() {
-		return $this->keyword;
-	}
-
-	public function setKeyword($keyword) {
-		$this->keyword = $keyword;
-		$this->queryParameters["Keyword"]=$keyword;
-	}
-
 	public function getType() {
 		return $this->type;
 	}
@@ -86,6 +77,15 @@ class ListMyGroupsRequest extends \RpcAcsRequest
 	public function setType($type) {
 		$this->type = $type;
 		$this->queryParameters["Type"]=$type;
+	}
+
+	public function getKeyword() {
+		return $this->keyword;
+	}
+
+	public function setKeyword($keyword) {
+		$this->keyword = $keyword;
+		$this->queryParameters["Keyword"]=$keyword;
 	}
 
 	public function getGroupName() {
