@@ -29,10 +29,6 @@ class CreateTempInstanceRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $snapshotId;
-
-	private  $instanceId;
-
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
@@ -46,24 +42,6 @@ class CreateTempInstanceRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getSnapshotId() {
-		return $this->snapshotId;
-	}
-
-	public function setSnapshotId($snapshotId) {
-		$this->snapshotId = $snapshotId;
-		$this->domainParameters["SnapshotId"]=$snapshotId;
-	}
-
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
-
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->domainParameters["InstanceId"]=$instanceId;
 	}
 
 	public function getResourceOwnerAccount() {

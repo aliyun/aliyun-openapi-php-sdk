@@ -29,25 +29,11 @@ class SetSnapshotSettingsRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $endHour;
-
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
-	private  $dayList;
-
 	private  $ownerId;
-
-	private  $instanceId;
-
-	private  $retentionDay;
-
-	private  $maxManualSnapshots;
-
-	private  $maxAutoSnapshots;
-
-	private  $beginHour;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -56,15 +42,6 @@ class SetSnapshotSettingsRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getEndHour() {
-		return $this->endHour;
-	}
-
-	public function setEndHour($endHour) {
-		$this->endHour = $endHour;
-		$this->domainParameters["EndHour"]=$endHour;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -85,15 +62,6 @@ class SetSnapshotSettingsRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getDayList() {
-		return $this->dayList;
-	}
-
-	public function setDayList($dayList) {
-		$this->dayList = $dayList;
-		$this->domainParameters["DayList"]=$dayList;
-	}
-
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -101,51 +69,6 @@ class SetSnapshotSettingsRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
-
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->domainParameters["InstanceId"]=$instanceId;
-	}
-
-	public function getRetentionDay() {
-		return $this->retentionDay;
-	}
-
-	public function setRetentionDay($retentionDay) {
-		$this->retentionDay = $retentionDay;
-		$this->domainParameters["RetentionDay"]=$retentionDay;
-	}
-
-	public function getMaxManualSnapshots() {
-		return $this->maxManualSnapshots;
-	}
-
-	public function setMaxManualSnapshots($maxManualSnapshots) {
-		$this->maxManualSnapshots = $maxManualSnapshots;
-		$this->domainParameters["MaxManualSnapshots"]=$maxManualSnapshots;
-	}
-
-	public function getMaxAutoSnapshots() {
-		return $this->maxAutoSnapshots;
-	}
-
-	public function setMaxAutoSnapshots($maxAutoSnapshots) {
-		$this->maxAutoSnapshots = $maxAutoSnapshots;
-		$this->domainParameters["MaxAutoSnapshots"]=$maxAutoSnapshots;
-	}
-
-	public function getBeginHour() {
-		return $this->beginHour;
-	}
-
-	public function setBeginHour($beginHour) {
-		$this->beginHour = $beginHour;
-		$this->domainParameters["BeginHour"]=$beginHour;
 	}
 	
 }

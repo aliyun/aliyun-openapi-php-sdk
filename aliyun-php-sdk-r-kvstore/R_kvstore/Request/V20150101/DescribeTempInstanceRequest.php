@@ -29,8 +29,6 @@ class DescribeTempInstanceRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $instanceId;
-
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
@@ -44,15 +42,6 @@ class DescribeTempInstanceRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
-
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->domainParameters["InstanceId"]=$instanceId;
 	}
 
 	public function getResourceOwnerAccount() {

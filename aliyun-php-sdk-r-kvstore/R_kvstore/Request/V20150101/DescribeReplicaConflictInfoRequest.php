@@ -19,11 +19,11 @@
  */
 namespace R_kvstore\Request\V20150101;
 
-class DeleteTempInstanceRequest extends \RpcAcsRequest
+class DescribeReplicaConflictInfoRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("R-kvstore", "2015-01-01", "DeleteTempInstance", "redisa", "openAPI");
+		parent::__construct("R-kvstore", "2015-01-01", "DescribeReplicaConflictInfo", "redisa", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -33,7 +33,19 @@ class DeleteTempInstanceRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
+	private  $endTime;
+
+	private  $startTime;
+
 	private  $ownerId;
+
+	private  $pageNumber;
+
+	private  $securityToken;
+
+	private  $replicaId;
+
+	private  $pageSize;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -62,6 +74,24 @@ class DeleteTempInstanceRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -69,6 +99,42 @@ class DeleteTempInstanceRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getPageNumber() {
+		return $this->pageNumber;
+	}
+
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
+	}
+
+	public function getSecurityToken() {
+		return $this->securityToken;
+	}
+
+	public function setSecurityToken($securityToken) {
+		$this->securityToken = $securityToken;
+		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
+
+	public function getReplicaId() {
+		return $this->replicaId;
+	}
+
+	public function setReplicaId($replicaId) {
+		$this->replicaId = $replicaId;
+		$this->queryParameters["ReplicaId"]=$replicaId;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 	
 }

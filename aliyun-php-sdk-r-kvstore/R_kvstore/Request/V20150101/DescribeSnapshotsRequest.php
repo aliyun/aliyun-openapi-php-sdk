@@ -29,13 +29,9 @@ class DescribeSnapshotsRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $instanceId;
-
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
-
-	private  $snapshotIds;
 
 	private  $endTime;
 
@@ -50,15 +46,6 @@ class DescribeSnapshotsRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
-
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->domainParameters["InstanceId"]=$instanceId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -77,15 +64,6 @@ class DescribeSnapshotsRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getSnapshotIds() {
-		return $this->snapshotIds;
-	}
-
-	public function setSnapshotIds($snapshotIds) {
-		$this->snapshotIds = $snapshotIds;
-		$this->domainParameters["SnapshotIds"]=$snapshotIds;
 	}
 
 	public function getEndTime() {

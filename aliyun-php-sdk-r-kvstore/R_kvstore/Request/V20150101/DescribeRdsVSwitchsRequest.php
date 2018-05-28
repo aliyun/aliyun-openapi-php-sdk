@@ -19,19 +19,25 @@
  */
 namespace R_kvstore\Request\V20150101;
 
-class DeleteTempInstanceRequest extends \RpcAcsRequest
+class DescribeRdsVSwitchsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("R-kvstore", "2015-01-01", "DeleteTempInstance", "redisa", "openAPI");
+		parent::__construct("R-kvstore", "2015-01-01", "DescribeRdsVSwitchs", "redisa", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
+	private  $securityToken;
+
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
+
+	private  $vpcId;
+
+	private  $zoneId;
 
 	private  $ownerId;
 
@@ -42,6 +48,15 @@ class DeleteTempInstanceRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getSecurityToken() {
+		return $this->securityToken;
+	}
+
+	public function setSecurityToken($securityToken) {
+		$this->securityToken = $securityToken;
+		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -60,6 +75,24 @@ class DeleteTempInstanceRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getVpcId() {
+		return $this->vpcId;
+	}
+
+	public function setVpcId($vpcId) {
+		$this->vpcId = $vpcId;
+		$this->queryParameters["VpcId"]=$vpcId;
+	}
+
+	public function getZoneId() {
+		return $this->zoneId;
+	}
+
+	public function setZoneId($zoneId) {
+		$this->zoneId = $zoneId;
+		$this->queryParameters["ZoneId"]=$zoneId;
 	}
 
 	public function getOwnerId() {

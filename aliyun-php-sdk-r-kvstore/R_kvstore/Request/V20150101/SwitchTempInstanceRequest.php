@@ -29,10 +29,6 @@ class SwitchTempInstanceRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $tempInstanceId;
-
-	private  $instanceId;
-
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
@@ -46,24 +42,6 @@ class SwitchTempInstanceRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getTempInstanceId() {
-		return $this->tempInstanceId;
-	}
-
-	public function setTempInstanceId($tempInstanceId) {
-		$this->tempInstanceId = $tempInstanceId;
-		$this->domainParameters["TempInstanceId"]=$tempInstanceId;
-	}
-
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
-
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->domainParameters["InstanceId"]=$instanceId;
 	}
 
 	public function getResourceOwnerAccount() {

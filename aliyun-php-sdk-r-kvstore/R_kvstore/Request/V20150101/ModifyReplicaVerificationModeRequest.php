@@ -19,19 +19,25 @@
  */
 namespace R_kvstore\Request\V20150101;
 
-class DeleteTempInstanceRequest extends \RpcAcsRequest
+class ModifyReplicaVerificationModeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("R-kvstore", "2015-01-01", "DeleteTempInstance", "redisa", "openAPI");
+		parent::__construct("R-kvstore", "2015-01-01", "ModifyReplicaVerificationMode", "redisa", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
+	private  $verificationMode;
+
+	private  $securityToken;
+
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
+
+	private  $replicaId;
 
 	private  $ownerId;
 
@@ -42,6 +48,24 @@ class DeleteTempInstanceRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getVerificationMode() {
+		return $this->verificationMode;
+	}
+
+	public function setVerificationMode($verificationMode) {
+		$this->verificationMode = $verificationMode;
+		$this->queryParameters["VerificationMode"]=$verificationMode;
+	}
+
+	public function getSecurityToken() {
+		return $this->securityToken;
+	}
+
+	public function setSecurityToken($securityToken) {
+		$this->securityToken = $securityToken;
+		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -60,6 +84,15 @@ class DeleteTempInstanceRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getReplicaId() {
+		return $this->replicaId;
+	}
+
+	public function setReplicaId($replicaId) {
+		$this->replicaId = $replicaId;
+		$this->queryParameters["ReplicaId"]=$replicaId;
 	}
 
 	public function getOwnerId() {

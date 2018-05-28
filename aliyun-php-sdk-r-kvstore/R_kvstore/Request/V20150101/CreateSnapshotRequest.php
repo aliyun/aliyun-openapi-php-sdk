@@ -29,13 +29,9 @@ class CreateSnapshotRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $instanceId;
-
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
-
-	private  $snapshotName;
 
 	private  $ownerId;
 
@@ -46,15 +42,6 @@ class CreateSnapshotRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
-
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->domainParameters["InstanceId"]=$instanceId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -73,15 +60,6 @@ class CreateSnapshotRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getSnapshotName() {
-		return $this->snapshotName;
-	}
-
-	public function setSnapshotName($snapshotName) {
-		$this->snapshotName = $snapshotName;
-		$this->domainParameters["SnapshotName"]=$snapshotName;
 	}
 
 	public function getOwnerId() {

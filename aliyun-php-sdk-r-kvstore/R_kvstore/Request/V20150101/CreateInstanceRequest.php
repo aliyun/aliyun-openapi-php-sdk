@@ -35,6 +35,8 @@ class CreateInstanceRequest extends \RpcAcsRequest
 
 	private  $networkType;
 
+	private  $engineVersion;
+
 	private  $instanceClass;
 
 	private  $capacity;
@@ -107,6 +109,15 @@ class CreateInstanceRequest extends \RpcAcsRequest
 	public function setNetworkType($networkType) {
 		$this->networkType = $networkType;
 		$this->queryParameters["NetworkType"]=$networkType;
+	}
+
+	public function getEngineVersion() {
+		return $this->engineVersion;
+	}
+
+	public function setEngineVersion($engineVersion) {
+		$this->engineVersion = $engineVersion;
+		$this->queryParameters["EngineVersion"]=$engineVersion;
 	}
 
 	public function getInstanceClass() {

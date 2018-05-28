@@ -19,19 +19,27 @@
  */
 namespace R_kvstore\Request\V20150101;
 
-class DeleteTempInstanceRequest extends \RpcAcsRequest
+class DescribeStaticVerificationListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("R-kvstore", "2015-01-01", "DeleteTempInstance", "redisa", "openAPI");
+		parent::__construct("R-kvstore", "2015-01-01", "DescribeStaticVerificationList", "redisa", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
+	private  $securityToken;
+
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
+
+	private  $replicaId;
+
+	private  $destinationInstanceId;
+
+	private  $sourceInstanceId;
 
 	private  $ownerId;
 
@@ -42,6 +50,15 @@ class DeleteTempInstanceRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getSecurityToken() {
+		return $this->securityToken;
+	}
+
+	public function setSecurityToken($securityToken) {
+		$this->securityToken = $securityToken;
+		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -60,6 +77,33 @@ class DeleteTempInstanceRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getReplicaId() {
+		return $this->replicaId;
+	}
+
+	public function setReplicaId($replicaId) {
+		$this->replicaId = $replicaId;
+		$this->queryParameters["ReplicaId"]=$replicaId;
+	}
+
+	public function getDestinationInstanceId() {
+		return $this->destinationInstanceId;
+	}
+
+	public function setDestinationInstanceId($destinationInstanceId) {
+		$this->destinationInstanceId = $destinationInstanceId;
+		$this->queryParameters["DestinationInstanceId"]=$destinationInstanceId;
+	}
+
+	public function getSourceInstanceId() {
+		return $this->sourceInstanceId;
+	}
+
+	public function setSourceInstanceId($sourceInstanceId) {
+		$this->sourceInstanceId = $sourceInstanceId;
+		$this->queryParameters["SourceInstanceId"]=$sourceInstanceId;
 	}
 
 	public function getOwnerId() {

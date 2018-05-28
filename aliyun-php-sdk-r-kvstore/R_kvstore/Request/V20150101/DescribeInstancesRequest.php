@@ -35,6 +35,8 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
+	private  $searchKey;
+
 	private  $networkType;
 
 	private  $ownerId;
@@ -89,6 +91,15 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getSearchKey() {
+		return $this->searchKey;
+	}
+
+	public function setSearchKey($searchKey) {
+		$this->searchKey = $searchKey;
+		$this->queryParameters["SearchKey"]=$searchKey;
 	}
 
 	public function getNetworkType() {

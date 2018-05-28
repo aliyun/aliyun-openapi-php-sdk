@@ -45,6 +45,8 @@ class DescribeHistoryMonitorValuesRequest extends \RpcAcsRequest
 
 	private  $intervalForHistory;
 
+	private  $nodeId;
+
 	private  $monitorKeys;
 
 	public function getResourceOwnerId() {
@@ -126,6 +128,15 @@ class DescribeHistoryMonitorValuesRequest extends \RpcAcsRequest
 	public function setIntervalForHistory($intervalForHistory) {
 		$this->intervalForHistory = $intervalForHistory;
 		$this->queryParameters["IntervalForHistory"]=$intervalForHistory;
+	}
+
+	public function getNodeId() {
+		return $this->nodeId;
+	}
+
+	public function setNodeId($nodeId) {
+		$this->nodeId = $nodeId;
+		$this->queryParameters["NodeId"]=$nodeId;
 	}
 
 	public function getMonitorKeys() {
