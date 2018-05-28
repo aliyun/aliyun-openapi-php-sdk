@@ -19,25 +19,46 @@
  */
 namespace Ecs\Request\V20140526;
 
-class AttachVolumeRequest extends \RpcAcsRequest
+class ValidateSecurityGroupRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "AttachVolume", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "ValidateSecurityGroup", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
+	private  $nicType;
+
 	private  $resourceOwnerId;
 
-	private  $instanceId;
+	private  $sourcePort;
+
+	private  $sourceIp;
+
+	private  $direction;
+
+	private  $destIp;
 
 	private  $resourceOwnerAccount;
 
+	private  $ipProtocol;
+
 	private  $ownerAccount;
 
-	private  $volumeId;
-
 	private  $ownerId;
+
+	private  $instanceId;
+
+	private  $destPort;
+
+	public function getNicType() {
+		return $this->nicType;
+	}
+
+	public function setNicType($nicType) {
+		$this->nicType = $nicType;
+		$this->queryParameters["NicType"]=$nicType;
+	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -48,13 +69,40 @@ class AttachVolumeRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getInstanceId() {
-		return $this->instanceId;
+	public function getSourcePort() {
+		return $this->sourcePort;
 	}
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
+	public function setSourcePort($sourcePort) {
+		$this->sourcePort = $sourcePort;
+		$this->queryParameters["SourcePort"]=$sourcePort;
+	}
+
+	public function getSourceIp() {
+		return $this->sourceIp;
+	}
+
+	public function setSourceIp($sourceIp) {
+		$this->sourceIp = $sourceIp;
+		$this->queryParameters["SourceIp"]=$sourceIp;
+	}
+
+	public function getDirection() {
+		return $this->direction;
+	}
+
+	public function setDirection($direction) {
+		$this->direction = $direction;
+		$this->queryParameters["Direction"]=$direction;
+	}
+
+	public function getDestIp() {
+		return $this->destIp;
+	}
+
+	public function setDestIp($destIp) {
+		$this->destIp = $destIp;
+		$this->queryParameters["DestIp"]=$destIp;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -66,6 +114,15 @@ class AttachVolumeRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
+	public function getIpProtocol() {
+		return $this->ipProtocol;
+	}
+
+	public function setIpProtocol($ipProtocol) {
+		$this->ipProtocol = $ipProtocol;
+		$this->queryParameters["IpProtocol"]=$ipProtocol;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -75,15 +132,6 @@ class AttachVolumeRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getVolumeId() {
-		return $this->volumeId;
-	}
-
-	public function setVolumeId($volumeId) {
-		$this->volumeId = $volumeId;
-		$this->queryParameters["VolumeId"]=$volumeId;
-	}
-
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -91,6 +139,24 @@ class AttachVolumeRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getInstanceId() {
+		return $this->instanceId;
+	}
+
+	public function setInstanceId($instanceId) {
+		$this->instanceId = $instanceId;
+		$this->queryParameters["InstanceId"]=$instanceId;
+	}
+
+	public function getDestPort() {
+		return $this->destPort;
+	}
+
+	public function setDestPort($destPort) {
+		$this->destPort = $destPort;
+		$this->queryParameters["DestPort"]=$destPort;
 	}
 	
 }

@@ -19,27 +19,36 @@
  */
 namespace Ecs\Request\V20140526;
 
-class CreateUserEventRequest extends \RpcAcsRequest
+class ModifyLaunchTemplateDefaultVersionRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "CreateUserEvent", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "ModifyLaunchTemplateDefaultVersion", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
+	private  $launchTemplateName;
+
 	private  $resourceOwnerId;
 
-	private  $planTime;
-
-	private  $expireTime;
-
-	private  $resourceId;
+	private  $launchTemplateId;
 
 	private  $resourceOwnerAccount;
 
+	private  $ownerAccount;
+
 	private  $ownerId;
 
-	private  $eventType;
+	private  $defaultVersionNumber;
+
+	public function getLaunchTemplateName() {
+		return $this->launchTemplateName;
+	}
+
+	public function setLaunchTemplateName($launchTemplateName) {
+		$this->launchTemplateName = $launchTemplateName;
+		$this->queryParameters["LaunchTemplateName"]=$launchTemplateName;
+	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -50,31 +59,13 @@ class CreateUserEventRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getPlanTime() {
-		return $this->planTime;
+	public function getLaunchTemplateId() {
+		return $this->launchTemplateId;
 	}
 
-	public function setPlanTime($planTime) {
-		$this->planTime = $planTime;
-		$this->queryParameters["PlanTime"]=$planTime;
-	}
-
-	public function getExpireTime() {
-		return $this->expireTime;
-	}
-
-	public function setExpireTime($expireTime) {
-		$this->expireTime = $expireTime;
-		$this->queryParameters["ExpireTime"]=$expireTime;
-	}
-
-	public function getResourceId() {
-		return $this->resourceId;
-	}
-
-	public function setResourceId($resourceId) {
-		$this->resourceId = $resourceId;
-		$this->queryParameters["ResourceId"]=$resourceId;
+	public function setLaunchTemplateId($launchTemplateId) {
+		$this->launchTemplateId = $launchTemplateId;
+		$this->queryParameters["LaunchTemplateId"]=$launchTemplateId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -86,6 +77,15 @@ class CreateUserEventRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -95,13 +95,13 @@ class CreateUserEventRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getEventType() {
-		return $this->eventType;
+	public function getDefaultVersionNumber() {
+		return $this->defaultVersionNumber;
 	}
 
-	public function setEventType($eventType) {
-		$this->eventType = $eventType;
-		$this->queryParameters["EventType"]=$eventType;
+	public function setDefaultVersionNumber($defaultVersionNumber) {
+		$this->defaultVersionNumber = $defaultVersionNumber;
+		$this->queryParameters["DefaultVersionNumber"]=$defaultVersionNumber;
 	}
 	
 }

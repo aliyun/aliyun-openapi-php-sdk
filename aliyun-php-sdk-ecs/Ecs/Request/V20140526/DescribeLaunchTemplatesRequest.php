@@ -19,31 +19,39 @@
  */
 namespace Ecs\Request\V20140526;
 
-class CancelUserEventRequest extends \RpcAcsRequest
+class DescribeLaunchTemplatesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "CancelUserEvent", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "DescribeLaunchTemplates", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $eventId;
+	private  $LaunchTemplateNames;
 
 	private  $resourceOwnerId;
 
-	private  $resourceId;
+	private  $pageNumber;
+
+	private  $pageSize;
+
+	private  $LaunchTemplateIds;
 
 	private  $resourceOwnerAccount;
 
+	private  $ownerAccount;
+
 	private  $ownerId;
 
-	public function getEventId() {
-		return $this->eventId;
+	public function getLaunchTemplateNames() {
+		return $this->LaunchTemplateNames;
 	}
 
-	public function setEventId($eventId) {
-		$this->eventId = $eventId;
-		$this->queryParameters["EventId"]=$eventId;
+	public function setLaunchTemplateNames($LaunchTemplateNames) {
+		$this->LaunchTemplateNames = $LaunchTemplateNames;
+		for ($i = 0; $i < count($LaunchTemplateNames); $i ++) {	
+			$this->queryParameters["LaunchTemplateName.".($i+1)] = $LaunchTemplateNames[$i];
+		}
 	}
 
 	public function getResourceOwnerId() {
@@ -55,13 +63,33 @@ class CancelUserEventRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getResourceId() {
-		return $this->resourceId;
+	public function getPageNumber() {
+		return $this->pageNumber;
 	}
 
-	public function setResourceId($resourceId) {
-		$this->resourceId = $resourceId;
-		$this->queryParameters["ResourceId"]=$resourceId;
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
+	public function getLaunchTemplateIds() {
+		return $this->LaunchTemplateIds;
+	}
+
+	public function setLaunchTemplateIds($LaunchTemplateIds) {
+		$this->LaunchTemplateIds = $LaunchTemplateIds;
+		for ($i = 0; $i < count($LaunchTemplateIds); $i ++) {	
+			$this->queryParameters["LaunchTemplateId.".($i+1)] = $LaunchTemplateIds[$i];
+		}
 	}
 
 	public function getResourceOwnerAccount() {
@@ -71,6 +99,15 @@ class CancelUserEventRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getOwnerId() {

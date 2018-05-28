@@ -19,11 +19,11 @@
  */
 namespace Ecs\Request\V20140526;
 
-class RunInstancesRequest extends \RpcAcsRequest
+class CreateLaunchTemplateRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "RunInstances", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "CreateLaunchTemplate", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -31,23 +31,25 @@ class RunInstancesRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $hpcClusterId;
-
 	private  $securityEnhancementStrategy;
+
+	private  $networkType;
 
 	private  $keyPairName;
 
 	private  $spotPriceLimit;
 
+	private  $imageOwnerAlias;
+
+	private  $resourceGroupId;
+
 	private  $hostName;
 
-	private  $password;
+	private  $systemDiskIops;
 
 	private  $Tags;
 
-	private  $dryRun;
-
-	private  $launchTemplateId;
+	private  $period;
 
 	private  $ownerId;
 
@@ -63,11 +65,9 @@ class RunInstancesRequest extends \RpcAcsRequest
 
 	private  $internetMaxBandwidthIn;
 
+	private  $versionDescription;
+
 	private  $imageId;
-
-	private  $spotInterruptionBehavior;
-
-	private  $clientToken;
 
 	private  $ioOptimized;
 
@@ -83,9 +83,11 @@ class RunInstancesRequest extends \RpcAcsRequest
 
 	private  $instanceType;
 
-	private  $NetworkInterfaces;
+	private  $instanceChargeType;
 
-	private  $amount;
+	private  $enableVmOsConfig;
+
+	private  $NetworkInterfaces;
 
 	private  $resourceOwnerAccount;
 
@@ -97,13 +99,13 @@ class RunInstancesRequest extends \RpcAcsRequest
 
 	private  $autoReleaseTime;
 
-	private  $dedicatedHostId;
+	private  $spotDuration;
 
 	private  $DataDisks;
 
-	private  $launchTemplateVersion;
-
 	private  $systemDiskSize;
+
+	private  $vpcId;
 
 	private  $systemDiskDescription;
 
@@ -125,15 +127,6 @@ class RunInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getHpcClusterId() {
-		return $this->hpcClusterId;
-	}
-
-	public function setHpcClusterId($hpcClusterId) {
-		$this->hpcClusterId = $hpcClusterId;
-		$this->queryParameters["HpcClusterId"]=$hpcClusterId;
-	}
-
 	public function getSecurityEnhancementStrategy() {
 		return $this->securityEnhancementStrategy;
 	}
@@ -141,6 +134,15 @@ class RunInstancesRequest extends \RpcAcsRequest
 	public function setSecurityEnhancementStrategy($securityEnhancementStrategy) {
 		$this->securityEnhancementStrategy = $securityEnhancementStrategy;
 		$this->queryParameters["SecurityEnhancementStrategy"]=$securityEnhancementStrategy;
+	}
+
+	public function getNetworkType() {
+		return $this->networkType;
+	}
+
+	public function setNetworkType($networkType) {
+		$this->networkType = $networkType;
+		$this->queryParameters["NetworkType"]=$networkType;
 	}
 
 	public function getKeyPairName() {
@@ -161,6 +163,24 @@ class RunInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["SpotPriceLimit"]=$spotPriceLimit;
 	}
 
+	public function getImageOwnerAlias() {
+		return $this->imageOwnerAlias;
+	}
+
+	public function setImageOwnerAlias($imageOwnerAlias) {
+		$this->imageOwnerAlias = $imageOwnerAlias;
+		$this->queryParameters["ImageOwnerAlias"]=$imageOwnerAlias;
+	}
+
+	public function getResourceGroupId() {
+		return $this->resourceGroupId;
+	}
+
+	public function setResourceGroupId($resourceGroupId) {
+		$this->resourceGroupId = $resourceGroupId;
+		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
+	}
+
 	public function getHostName() {
 		return $this->hostName;
 	}
@@ -170,13 +190,13 @@ class RunInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["HostName"]=$hostName;
 	}
 
-	public function getPassword() {
-		return $this->password;
+	public function getSystemDiskIops() {
+		return $this->systemDiskIops;
 	}
 
-	public function setPassword($password) {
-		$this->password = $password;
-		$this->queryParameters["Password"]=$password;
+	public function setSystemDiskIops($systemDiskIops) {
+		$this->systemDiskIops = $systemDiskIops;
+		$this->queryParameters["SystemDisk.Iops"]=$systemDiskIops;
 	}
 
 	public function getTags() {
@@ -192,22 +212,13 @@ class RunInstancesRequest extends \RpcAcsRequest
 		}
 	}
 
-	public function getDryRun() {
-		return $this->dryRun;
+	public function getPeriod() {
+		return $this->period;
 	}
 
-	public function setDryRun($dryRun) {
-		$this->dryRun = $dryRun;
-		$this->queryParameters["DryRun"]=$dryRun;
-	}
-
-	public function getLaunchTemplateId() {
-		return $this->launchTemplateId;
-	}
-
-	public function setLaunchTemplateId($launchTemplateId) {
-		$this->launchTemplateId = $launchTemplateId;
-		$this->queryParameters["LaunchTemplateId"]=$launchTemplateId;
+	public function setPeriod($period) {
+		$this->period = $period;
+		$this->queryParameters["Period"]=$period;
 	}
 
 	public function getOwnerId() {
@@ -273,6 +284,15 @@ class RunInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["InternetMaxBandwidthIn"]=$internetMaxBandwidthIn;
 	}
 
+	public function getVersionDescription() {
+		return $this->versionDescription;
+	}
+
+	public function setVersionDescription($versionDescription) {
+		$this->versionDescription = $versionDescription;
+		$this->queryParameters["VersionDescription"]=$versionDescription;
+	}
+
 	public function getImageId() {
 		return $this->imageId;
 	}
@@ -280,24 +300,6 @@ class RunInstancesRequest extends \RpcAcsRequest
 	public function setImageId($imageId) {
 		$this->imageId = $imageId;
 		$this->queryParameters["ImageId"]=$imageId;
-	}
-
-	public function getSpotInterruptionBehavior() {
-		return $this->spotInterruptionBehavior;
-	}
-
-	public function setSpotInterruptionBehavior($spotInterruptionBehavior) {
-		$this->spotInterruptionBehavior = $spotInterruptionBehavior;
-		$this->queryParameters["SpotInterruptionBehavior"]=$spotInterruptionBehavior;
-	}
-
-	public function getClientToken() {
-		return $this->clientToken;
-	}
-
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
 	public function getIoOptimized() {
@@ -363,6 +365,24 @@ class RunInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["InstanceType"]=$instanceType;
 	}
 
+	public function getInstanceChargeType() {
+		return $this->instanceChargeType;
+	}
+
+	public function setInstanceChargeType($instanceChargeType) {
+		$this->instanceChargeType = $instanceChargeType;
+		$this->queryParameters["InstanceChargeType"]=$instanceChargeType;
+	}
+
+	public function getEnableVmOsConfig() {
+		return $this->enableVmOsConfig;
+	}
+
+	public function setEnableVmOsConfig($enableVmOsConfig) {
+		$this->enableVmOsConfig = $enableVmOsConfig;
+		$this->queryParameters["EnableVmOsConfig"]=$enableVmOsConfig;
+	}
+
 	public function getNetworkInterfaces() {
 		return $this->NetworkInterfaces;
 	}
@@ -377,15 +397,6 @@ class RunInstancesRequest extends \RpcAcsRequest
 			$this->queryParameters['NetworkInterface.' . ($i + 1) . '.Description'] = $NetworkInterfaces[$i]['Description'];
 
 		}
-	}
-
-	public function getAmount() {
-		return $this->amount;
-	}
-
-	public function setAmount($amount) {
-		$this->amount = $amount;
-		$this->queryParameters["Amount"]=$amount;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -433,13 +444,13 @@ class RunInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["AutoReleaseTime"]=$autoReleaseTime;
 	}
 
-	public function getDedicatedHostId() {
-		return $this->dedicatedHostId;
+	public function getSpotDuration() {
+		return $this->spotDuration;
 	}
 
-	public function setDedicatedHostId($dedicatedHostId) {
-		$this->dedicatedHostId = $dedicatedHostId;
-		$this->queryParameters["DedicatedHostId"]=$dedicatedHostId;
+	public function setSpotDuration($spotDuration) {
+		$this->spotDuration = $spotDuration;
+		$this->queryParameters["SpotDuration"]=$spotDuration;
 	}
 
 	public function getDataDisks() {
@@ -455,19 +466,9 @@ class RunInstancesRequest extends \RpcAcsRequest
 			$this->queryParameters['DataDisk.' . ($i + 1) . '.Encrypted'] = $DataDisks[$i]['Encrypted'];
 			$this->queryParameters['DataDisk.' . ($i + 1) . '.DiskName'] = $DataDisks[$i]['DiskName'];
 			$this->queryParameters['DataDisk.' . ($i + 1) . '.Description'] = $DataDisks[$i]['Description'];
-			$this->queryParameters['DataDisk.' . ($i + 1) . '.Device'] = $DataDisks[$i]['Device'];
 			$this->queryParameters['DataDisk.' . ($i + 1) . '.DeleteWithInstance'] = $DataDisks[$i]['DeleteWithInstance'];
 
 		}
-	}
-
-	public function getLaunchTemplateVersion() {
-		return $this->launchTemplateVersion;
-	}
-
-	public function setLaunchTemplateVersion($launchTemplateVersion) {
-		$this->launchTemplateVersion = $launchTemplateVersion;
-		$this->queryParameters["LaunchTemplateVersion"]=$launchTemplateVersion;
 	}
 
 	public function getSystemDiskSize() {
@@ -477,6 +478,15 @@ class RunInstancesRequest extends \RpcAcsRequest
 	public function setSystemDiskSize($systemDiskSize) {
 		$this->systemDiskSize = $systemDiskSize;
 		$this->queryParameters["SystemDisk.Size"]=$systemDiskSize;
+	}
+
+	public function getVpcId() {
+		return $this->vpcId;
+	}
+
+	public function setVpcId($vpcId) {
+		$this->vpcId = $vpcId;
+		$this->queryParameters["VpcId"]=$vpcId;
 	}
 
 	public function getSystemDiskDescription() {

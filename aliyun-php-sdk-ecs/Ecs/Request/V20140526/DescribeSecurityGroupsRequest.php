@@ -49,6 +49,8 @@ class DescribeSecurityGroupsRequest extends \RpcAcsRequest
 
 	private  $tag1Value;
 
+	private  $resourceGroupId;
+
 	private  $pageSize;
 
 	private  $tag3Value;
@@ -172,6 +174,15 @@ class DescribeSecurityGroupsRequest extends \RpcAcsRequest
 	public function setTag1Value($tag1Value) {
 		$this->tag1Value = $tag1Value;
 		$this->queryParameters["Tag.1.Value"]=$tag1Value;
+	}
+
+	public function getResourceGroupId() {
+		return $this->resourceGroupId;
+	}
+
+	public function setResourceGroupId($resourceGroupId) {
+		$this->resourceGroupId = $resourceGroupId;
+		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
 	}
 
 	public function getPageSize() {
