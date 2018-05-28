@@ -17,14 +17,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Green\Request\V20170825;
+namespace Green\Request\V20180509;
 
-class DeleteFacesRequest extends \RoaAcsRequest
+class GetPersonRequest extends \RoaAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Green", "2017-08-25", "DeleteFaces", "green", "openAPI");
-		$this->setUriPattern("/green/sface/deleteFaces");
+		parent::__construct("Green", "2018-05-09", "GetPerson", "green", "openAPI");
+		$this->setUriPattern("/green/sface/person");
 		$this->setMethod("POST");
 	}
 

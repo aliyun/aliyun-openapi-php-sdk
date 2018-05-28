@@ -17,14 +17,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Green\Request\V20170825;
+namespace Green\Request\V20180509;
 
-class ImageAsyncScanRequest extends \RoaAcsRequest
+class DeleteGroupsRequest extends \RoaAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Green", "2017-08-25", "ImageAsyncScan", "green", "openAPI");
-		$this->setUriPattern("/green/image/asyncscan");
+		parent::__construct("Green", "2018-05-09", "DeleteGroups", "green", "openAPI");
+		$this->setUriPattern("/green/sface/person/groups/delete");
 		$this->setMethod("POST");
 	}
 

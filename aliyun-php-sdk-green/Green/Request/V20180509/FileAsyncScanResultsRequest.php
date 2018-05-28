@@ -17,14 +17,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Green\Request\V20170825;
+namespace Green\Request\V20180509;
 
-class GetFacesRequest extends \RoaAcsRequest
+class FileAsyncScanResultsRequest extends \RoaAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Green", "2017-08-25", "GetFaces", "green", "openAPI");
-		$this->setUriPattern("/green/sface/getFaces");
+		parent::__construct("Green", "2018-05-09", "FileAsyncScanResults", "green", "openAPI");
+		$this->setUriPattern("/green/file/results");
 		$this->setMethod("POST");
 	}
 

@@ -17,14 +17,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Green\Request\V20170825;
+namespace Green\Request\V20180509;
 
-class VoiceAsyncScanRequest extends \RoaAcsRequest
+class DeleteSimilarityImageRequest extends \RoaAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Green", "2017-08-25", "VoiceAsyncScan", "green", "openAPI");
-		$this->setUriPattern("/green/voice/asyncscan");
+		parent::__construct("Green", "2018-05-09", "DeleteSimilarityImage", "green", "openAPI");
+		$this->setUriPattern("/green/similarity/image/delete");
 		$this->setMethod("POST");
 	}
 

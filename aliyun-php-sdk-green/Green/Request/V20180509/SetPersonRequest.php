@@ -17,14 +17,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Green\Request\V20170825;
+namespace Green\Request\V20180509;
 
-class ImageAsyncScanResultsRequest extends \RoaAcsRequest
+class SetPersonRequest extends \RoaAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Green", "2017-08-25", "ImageAsyncScanResults", "green", "openAPI");
-		$this->setUriPattern("/green/image/results");
+		parent::__construct("Green", "2018-05-09", "SetPerson", "green", "openAPI");
+		$this->setUriPattern("/green/sface/person/update");
 		$this->setMethod("POST");
 	}
 
