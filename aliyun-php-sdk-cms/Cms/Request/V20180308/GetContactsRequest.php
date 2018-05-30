@@ -19,34 +19,23 @@
  */
 namespace Cms\Request\V20180308;
 
-class DeleteTasksRequest extends \RpcAcsRequest
+class GetContactsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cms", "2018-03-08", "DeleteTasks", "cms", "openAPI");
+		parent::__construct("Cms", "2018-03-08", "GetContacts", "cms", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $isDeleteAlarms;
+	private  $groupName;
 
-	private  $taskIds;
-
-	public function getIsDeleteAlarms() {
-		return $this->isDeleteAlarms;
+	public function getGroupName() {
+		return $this->groupName;
 	}
 
-	public function setIsDeleteAlarms($isDeleteAlarms) {
-		$this->isDeleteAlarms = $isDeleteAlarms;
-		$this->queryParameters["IsDeleteAlarms"]=$isDeleteAlarms;
-	}
-
-	public function getTaskIds() {
-		return $this->taskIds;
-	}
-
-	public function setTaskIds($taskIds) {
-		$this->taskIds = $taskIds;
-		$this->queryParameters["TaskIds"]=$taskIds;
+	public function setGroupName($groupName) {
+		$this->groupName = $groupName;
+		$this->queryParameters["GroupName"]=$groupName;
 	}
 	
 }
