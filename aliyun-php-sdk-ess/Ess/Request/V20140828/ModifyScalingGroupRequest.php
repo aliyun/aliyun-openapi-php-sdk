@@ -29,6 +29,8 @@ class ModifyScalingGroupRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
+	private  $healthCheckType;
+
 	private  $resourceOwnerAccount;
 
 	private  $scalingGroupName;
@@ -58,6 +60,15 @@ class ModifyScalingGroupRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getHealthCheckType() {
+		return $this->healthCheckType;
+	}
+
+	public function setHealthCheckType($healthCheckType) {
+		$this->healthCheckType = $healthCheckType;
+		$this->queryParameters["HealthCheckType"]=$healthCheckType;
 	}
 
 	public function getResourceOwnerAccount() {

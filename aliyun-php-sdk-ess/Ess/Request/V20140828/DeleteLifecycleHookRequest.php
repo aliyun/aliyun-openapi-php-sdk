@@ -19,19 +19,19 @@
  */
 namespace Ess\Request\V20140828;
 
-class DetachInstancesRequest extends \RpcAcsRequest
+class DeleteLifecycleHookRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "DetachInstances", "ess", "openAPI");
+		parent::__construct("Ess", "2014-08-28", "DeleteLifecycleHook", "ess", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $resourceOwnerId;
-
-	private  $InstanceIds;
+	private  $lifecycleHookName;
 
 	private  $resourceOwnerAccount;
+
+	private  $lifecycleHookId;
 
 	private  $scalingGroupId;
 
@@ -39,24 +39,13 @@ class DetachInstancesRequest extends \RpcAcsRequest
 
 	private  $ownerId;
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getLifecycleHookName() {
+		return $this->lifecycleHookName;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getInstanceIds() {
-		return $this->InstanceIds;
-	}
-
-	public function setInstanceIds($InstanceIds) {
-		$this->InstanceIds = $InstanceIds;
-		for ($i = 0; $i < count($InstanceIds); $i ++) {	
-			$this->queryParameters["InstanceId.".($i+1)] = $InstanceIds[$i];
-		}
+	public function setLifecycleHookName($lifecycleHookName) {
+		$this->lifecycleHookName = $lifecycleHookName;
+		$this->queryParameters["LifecycleHookName"]=$lifecycleHookName;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -66,6 +55,15 @@ class DetachInstancesRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getLifecycleHookId() {
+		return $this->lifecycleHookId;
+	}
+
+	public function setLifecycleHookId($lifecycleHookId) {
+		$this->lifecycleHookId = $lifecycleHookId;
+		$this->queryParameters["LifecycleHookId"]=$lifecycleHookId;
 	}
 
 	public function getScalingGroupId() {

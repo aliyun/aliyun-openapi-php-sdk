@@ -19,44 +19,33 @@
  */
 namespace Ess\Request\V20140828;
 
-class DetachInstancesRequest extends \RpcAcsRequest
+class RecordLifecycleActionHeartbeatRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "DetachInstances", "ess", "openAPI");
+		parent::__construct("Ess", "2014-08-28", "RecordLifecycleActionHeartbeat", "ess", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $resourceOwnerId;
-
-	private  $InstanceIds;
+	private  $lifecycleActionToken;
 
 	private  $resourceOwnerAccount;
 
-	private  $scalingGroupId;
+	private  $heartbeatTimeout;
+
+	private  $lifecycleHookId;
 
 	private  $ownerAccount;
 
 	private  $ownerId;
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	public function getlifecycleActionToken() {
+		return $this->lifecycleActionToken;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getInstanceIds() {
-		return $this->InstanceIds;
-	}
-
-	public function setInstanceIds($InstanceIds) {
-		$this->InstanceIds = $InstanceIds;
-		for ($i = 0; $i < count($InstanceIds); $i ++) {	
-			$this->queryParameters["InstanceId.".($i+1)] = $InstanceIds[$i];
-		}
+	public function setlifecycleActionToken($lifecycleActionToken) {
+		$this->lifecycleActionToken = $lifecycleActionToken;
+		$this->queryParameters["lifecycleActionToken"]=$lifecycleActionToken;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -68,13 +57,22 @@ class DetachInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getScalingGroupId() {
-		return $this->scalingGroupId;
+	public function getheartbeatTimeout() {
+		return $this->heartbeatTimeout;
 	}
 
-	public function setScalingGroupId($scalingGroupId) {
-		$this->scalingGroupId = $scalingGroupId;
-		$this->queryParameters["ScalingGroupId"]=$scalingGroupId;
+	public function setheartbeatTimeout($heartbeatTimeout) {
+		$this->heartbeatTimeout = $heartbeatTimeout;
+		$this->queryParameters["heartbeatTimeout"]=$heartbeatTimeout;
+	}
+
+	public function getlifecycleHookId() {
+		return $this->lifecycleHookId;
+	}
+
+	public function setlifecycleHookId($lifecycleHookId) {
+		$this->lifecycleHookId = $lifecycleHookId;
+		$this->queryParameters["lifecycleHookId"]=$lifecycleHookId;
 	}
 
 	public function getOwnerAccount() {

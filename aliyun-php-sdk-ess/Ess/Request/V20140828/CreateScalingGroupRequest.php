@@ -27,9 +27,13 @@ class CreateScalingGroupRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
+	private  $multiAZPolicy;
+
 	private  $dBInstanceIds;
 
 	private  $loadBalancerIds;
+
+	private  $healthCheckType;
 
 	private  $resourceOwnerAccount;
 
@@ -47,11 +51,22 @@ class CreateScalingGroupRequest extends \RpcAcsRequest
 
 	private  $maxSize;
 
+	private  $LifecycleHooks;
+
 	private  $defaultCooldown;
 
 	private  $removalPolicy1;
 
 	private  $removalPolicy2;
+
+	public function getMultiAZPolicy() {
+		return $this->multiAZPolicy;
+	}
+
+	public function setMultiAZPolicy($multiAZPolicy) {
+		$this->multiAZPolicy = $multiAZPolicy;
+		$this->queryParameters["MultiAZPolicy"]=$multiAZPolicy;
+	}
 
 	public function getDBInstanceIds() {
 		return $this->dBInstanceIds;
@@ -69,6 +84,15 @@ class CreateScalingGroupRequest extends \RpcAcsRequest
 	public function setLoadBalancerIds($loadBalancerIds) {
 		$this->loadBalancerIds = $loadBalancerIds;
 		$this->queryParameters["LoadBalancerIds"]=$loadBalancerIds;
+	}
+
+	public function getHealthCheckType() {
+		return $this->healthCheckType;
+	}
+
+	public function setHealthCheckType($healthCheckType) {
+		$this->healthCheckType = $healthCheckType;
+		$this->queryParameters["HealthCheckType"]=$healthCheckType;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -143,6 +167,23 @@ class CreateScalingGroupRequest extends \RpcAcsRequest
 	public function setMaxSize($maxSize) {
 		$this->maxSize = $maxSize;
 		$this->queryParameters["MaxSize"]=$maxSize;
+	}
+
+	public function getLifecycleHooks() {
+		return $this->LifecycleHooks;
+	}
+
+	public function setLifecycleHooks($LifecycleHooks) {
+		$this->LifecycleHooks = $LifecycleHooks;
+		for ($i = 0; $i < count($LifecycleHooks); $i ++) {	
+			$this->queryParameters['LifecycleHook.' . ($i + 1) . '.LifecycleHookName'] = $LifecycleHooks[$i]['LifecycleHookName'];
+			$this->queryParameters['LifecycleHook.' . ($i + 1) . '.LifecycleTransition'] = $LifecycleHooks[$i]['LifecycleTransition'];
+			$this->queryParameters['LifecycleHook.' . ($i + 1) . '.DefaultResult'] = $LifecycleHooks[$i]['DefaultResult'];
+			$this->queryParameters['LifecycleHook.' . ($i + 1) . '.HeartbeatTimeout'] = $LifecycleHooks[$i]['HeartbeatTimeout'];
+			$this->queryParameters['LifecycleHook.' . ($i + 1) . '.NotificationMetadata'] = $LifecycleHooks[$i]['NotificationMetadata'];
+			$this->queryParameters['LifecycleHook.' . ($i + 1) . '.NotificationArn'] = $LifecycleHooks[$i]['NotificationArn'];
+
+		}
 	}
 
 	public function getDefaultCooldown() {

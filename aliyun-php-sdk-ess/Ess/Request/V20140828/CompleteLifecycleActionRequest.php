@@ -19,44 +19,33 @@
  */
 namespace Ess\Request\V20140828;
 
-class DetachInstancesRequest extends \RpcAcsRequest
+class CompleteLifecycleActionRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "DetachInstances", "ess", "openAPI");
+		parent::__construct("Ess", "2014-08-28", "CompleteLifecycleAction", "ess", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $resourceOwnerId;
-
-	private  $InstanceIds;
+	private  $lifecycleActionToken;
 
 	private  $resourceOwnerAccount;
 
-	private  $scalingGroupId;
+	private  $lifecycleHookId;
 
 	private  $ownerAccount;
 
 	private  $ownerId;
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	private  $lifecycleActionResult;
+
+	public function getLifecycleActionToken() {
+		return $this->lifecycleActionToken;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getInstanceIds() {
-		return $this->InstanceIds;
-	}
-
-	public function setInstanceIds($InstanceIds) {
-		$this->InstanceIds = $InstanceIds;
-		for ($i = 0; $i < count($InstanceIds); $i ++) {	
-			$this->queryParameters["InstanceId.".($i+1)] = $InstanceIds[$i];
-		}
+	public function setLifecycleActionToken($lifecycleActionToken) {
+		$this->lifecycleActionToken = $lifecycleActionToken;
+		$this->queryParameters["LifecycleActionToken"]=$lifecycleActionToken;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -68,13 +57,13 @@ class DetachInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getScalingGroupId() {
-		return $this->scalingGroupId;
+	public function getLifecycleHookId() {
+		return $this->lifecycleHookId;
 	}
 
-	public function setScalingGroupId($scalingGroupId) {
-		$this->scalingGroupId = $scalingGroupId;
-		$this->queryParameters["ScalingGroupId"]=$scalingGroupId;
+	public function setLifecycleHookId($lifecycleHookId) {
+		$this->lifecycleHookId = $lifecycleHookId;
+		$this->queryParameters["LifecycleHookId"]=$lifecycleHookId;
 	}
 
 	public function getOwnerAccount() {
@@ -93,6 +82,15 @@ class DetachInstancesRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getLifecycleActionResult() {
+		return $this->lifecycleActionResult;
+	}
+
+	public function setLifecycleActionResult($lifecycleActionResult) {
+		$this->lifecycleActionResult = $lifecycleActionResult;
+		$this->queryParameters["LifecycleActionResult"]=$lifecycleActionResult;
 	}
 	
 }

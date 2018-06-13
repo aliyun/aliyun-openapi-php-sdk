@@ -19,17 +19,15 @@
  */
 namespace Ess\Request\V20140828;
 
-class DetachInstancesRequest extends \RpcAcsRequest
+class RebalanceInstancesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "DetachInstances", "ess", "openAPI");
+		parent::__construct("Ess", "2014-08-28", "RebalanceInstances", "ess", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
-
-	private  $InstanceIds;
 
 	private  $resourceOwnerAccount;
 
@@ -46,17 +44,6 @@ class DetachInstancesRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getInstanceIds() {
-		return $this->InstanceIds;
-	}
-
-	public function setInstanceIds($InstanceIds) {
-		$this->InstanceIds = $InstanceIds;
-		for ($i = 0; $i < count($InstanceIds); $i ++) {	
-			$this->queryParameters["InstanceId.".($i+1)] = $InstanceIds[$i];
-		}
 	}
 
 	public function getResourceOwnerAccount() {

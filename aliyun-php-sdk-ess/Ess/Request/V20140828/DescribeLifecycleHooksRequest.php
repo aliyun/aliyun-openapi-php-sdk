@@ -19,44 +19,37 @@
  */
 namespace Ess\Request\V20140828;
 
-class DetachInstancesRequest extends \RpcAcsRequest
+class DescribeLifecycleHooksRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "DetachInstances", "ess", "openAPI");
+		parent::__construct("Ess", "2014-08-28", "DescribeLifecycleHooks", "ess", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $resourceOwnerId;
-
-	private  $InstanceIds;
+	private  $lifecycleHookName;
 
 	private  $resourceOwnerAccount;
 
 	private  $scalingGroupId;
 
+	private  $LifecycleHookIds;
+
 	private  $ownerAccount;
+
+	private  $pageSize;
 
 	private  $ownerId;
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+	private  $pageNumber;
+
+	public function getLifecycleHookName() {
+		return $this->lifecycleHookName;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getInstanceIds() {
-		return $this->InstanceIds;
-	}
-
-	public function setInstanceIds($InstanceIds) {
-		$this->InstanceIds = $InstanceIds;
-		for ($i = 0; $i < count($InstanceIds); $i ++) {	
-			$this->queryParameters["InstanceId.".($i+1)] = $InstanceIds[$i];
-		}
+	public function setLifecycleHookName($lifecycleHookName) {
+		$this->lifecycleHookName = $lifecycleHookName;
+		$this->queryParameters["LifecycleHookName"]=$lifecycleHookName;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -77,6 +70,17 @@ class DetachInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["ScalingGroupId"]=$scalingGroupId;
 	}
 
+	public function getLifecycleHookIds() {
+		return $this->LifecycleHookIds;
+	}
+
+	public function setLifecycleHookIds($LifecycleHookIds) {
+		$this->LifecycleHookIds = $LifecycleHookIds;
+		for ($i = 0; $i < count($LifecycleHookIds); $i ++) {	
+			$this->queryParameters["LifecycleHookId.".($i+1)] = $LifecycleHookIds[$i];
+		}
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -86,6 +90,15 @@ class DetachInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -93,6 +106,15 @@ class DetachInstancesRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getPageNumber() {
+		return $this->pageNumber;
+	}
+
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 	
 }
