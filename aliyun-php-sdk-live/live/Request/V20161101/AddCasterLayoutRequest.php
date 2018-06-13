@@ -71,6 +71,7 @@ class AddCasterLayoutRequest extends \RpcAcsRequest
 	public function setVideoLayers($VideoLayers) {
 		$this->VideoLayers = $VideoLayers;
 		for ($i = 0; $i < count($VideoLayers); $i ++) {	
+			$this->queryParameters['VideoLayer.' . ($i + 1) . '.FillMode'] = $VideoLayers[$i]['FillMode'];
 			$this->queryParameters['VideoLayer.' . ($i + 1) . '.HeightNormalized'] = $VideoLayers[$i]['HeightNormalized'];
 			$this->queryParameters['VideoLayer.' . ($i + 1) . '.WidthNormalized'] = $VideoLayers[$i]['WidthNormalized'];
 			$this->queryParameters['VideoLayer.' . ($i + 1) . '.PositionRefer'] = $VideoLayers[$i]['PositionRefer'];

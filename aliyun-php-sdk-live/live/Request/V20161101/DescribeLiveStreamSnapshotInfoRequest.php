@@ -43,6 +43,8 @@ class DescribeLiveStreamSnapshotInfoRequest extends \RpcAcsRequest
 
 	private  $streamName;
 
+	private  $order;
+
 	public function getAppName() {
 		return $this->appName;
 	}
@@ -113,6 +115,15 @@ class DescribeLiveStreamSnapshotInfoRequest extends \RpcAcsRequest
 	public function setStreamName($streamName) {
 		$this->streamName = $streamName;
 		$this->queryParameters["StreamName"]=$streamName;
+	}
+
+	public function getOrder() {
+		return $this->order;
+	}
+
+	public function setOrder($order) {
+		$this->order = $order;
+		$this->queryParameters["Order"]=$order;
 	}
 	
 }

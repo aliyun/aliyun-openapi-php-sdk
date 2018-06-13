@@ -27,13 +27,9 @@ class DescribeLiveStreamsPublishListRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $appName;
-
-	private  $securityToken;
+	private  $streamType;
 
 	private  $domainName;
-
-	private  $pageSize;
 
 	private  $endTime;
 
@@ -41,26 +37,25 @@ class DescribeLiveStreamsPublishListRequest extends \RpcAcsRequest
 
 	private  $ownerId;
 
-	private  $streamName;
-
 	private  $pageNumber;
 
-	public function getAppName() {
-		return $this->appName;
+	private  $appName;
+
+	private  $securityToken;
+
+	private  $pageSize;
+
+	private  $streamName;
+
+	private  $queryType;
+
+	public function getStreamType() {
+		return $this->streamType;
 	}
 
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
+	public function setStreamType($streamType) {
+		$this->streamType = $streamType;
+		$this->queryParameters["StreamType"]=$streamType;
 	}
 
 	public function getDomainName() {
@@ -70,15 +65,6 @@ class DescribeLiveStreamsPublishListRequest extends \RpcAcsRequest
 	public function setDomainName($domainName) {
 		$this->domainName = $domainName;
 		$this->queryParameters["DomainName"]=$domainName;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
 	public function getEndTime() {
@@ -108,6 +94,42 @@ class DescribeLiveStreamsPublishListRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
+	public function getPageNumber() {
+		return $this->pageNumber;
+	}
+
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
+	}
+
+	public function getAppName() {
+		return $this->appName;
+	}
+
+	public function setAppName($appName) {
+		$this->appName = $appName;
+		$this->queryParameters["AppName"]=$appName;
+	}
+
+	public function getSecurityToken() {
+		return $this->securityToken;
+	}
+
+	public function setSecurityToken($securityToken) {
+		$this->securityToken = $securityToken;
+		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
 	public function getStreamName() {
 		return $this->streamName;
 	}
@@ -117,13 +139,13 @@ class DescribeLiveStreamsPublishListRequest extends \RpcAcsRequest
 		$this->queryParameters["StreamName"]=$streamName;
 	}
 
-	public function getPageNumber() {
-		return $this->pageNumber;
+	public function getQueryType() {
+		return $this->queryType;
 	}
 
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
+	public function setQueryType($queryType) {
+		$this->queryType = $queryType;
+		$this->queryParameters["QueryType"]=$queryType;
 	}
 	
 }

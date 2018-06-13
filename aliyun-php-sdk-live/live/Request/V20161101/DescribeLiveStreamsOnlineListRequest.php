@@ -37,9 +37,15 @@ class DescribeLiveStreamsOnlineListRequest extends \RpcAcsRequest
 
 	private  $pageSize;
 
+	private  $endTime;
+
+	private  $startTime;
+
 	private  $ownerId;
 
 	private  $pageNum;
+
+	private  $queryType;
 
 	public function getStreamType() {
 		return $this->streamType;
@@ -86,6 +92,24 @@ class DescribeLiveStreamsOnlineListRequest extends \RpcAcsRequest
 		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -102,6 +126,15 @@ class DescribeLiveStreamsOnlineListRequest extends \RpcAcsRequest
 	public function setPageNum($pageNum) {
 		$this->pageNum = $pageNum;
 		$this->queryParameters["PageNum"]=$pageNum;
+	}
+
+	public function getQueryType() {
+		return $this->queryType;
+	}
+
+	public function setQueryType($queryType) {
+		$this->queryType = $queryType;
+		$this->queryParameters["QueryType"]=$queryType;
 	}
 	
 }
