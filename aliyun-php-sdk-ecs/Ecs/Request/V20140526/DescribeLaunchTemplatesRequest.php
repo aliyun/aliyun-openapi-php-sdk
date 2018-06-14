@@ -27,13 +27,25 @@ class DescribeLaunchTemplatesRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
+	private  $templateTag1Value;
+
 	private  $LaunchTemplateNames;
 
 	private  $resourceOwnerId;
 
+	private  $templateTag4Key;
+
 	private  $pageNumber;
 
+	private  $templateTag3Key;
+
+	private  $templateTag5Value;
+
 	private  $pageSize;
+
+	private  $templateTag3Value;
+
+	private  $templateTag2Key;
 
 	private  $LaunchTemplateIds;
 
@@ -41,7 +53,26 @@ class DescribeLaunchTemplatesRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
+	private  $templateResourceGroupId;
+
+	private  $templateTag2Value;
+
 	private  $ownerId;
+
+	private  $templateTag4Value;
+
+	private  $templateTag5Key;
+
+	private  $templateTag1Key;
+
+	public function getTemplateTag1Value() {
+		return $this->templateTag1Value;
+	}
+
+	public function setTemplateTag1Value($templateTag1Value) {
+		$this->templateTag1Value = $templateTag1Value;
+		$this->queryParameters["TemplateTag.1.Value"]=$templateTag1Value;
+	}
 
 	public function getLaunchTemplateNames() {
 		return $this->LaunchTemplateNames;
@@ -63,6 +94,15 @@ class DescribeLaunchTemplatesRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getTemplateTag4Key() {
+		return $this->templateTag4Key;
+	}
+
+	public function setTemplateTag4Key($templateTag4Key) {
+		$this->templateTag4Key = $templateTag4Key;
+		$this->queryParameters["TemplateTag.4.Key"]=$templateTag4Key;
+	}
+
 	public function getPageNumber() {
 		return $this->pageNumber;
 	}
@@ -72,6 +112,24 @@ class DescribeLaunchTemplatesRequest extends \RpcAcsRequest
 		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 
+	public function getTemplateTag3Key() {
+		return $this->templateTag3Key;
+	}
+
+	public function setTemplateTag3Key($templateTag3Key) {
+		$this->templateTag3Key = $templateTag3Key;
+		$this->queryParameters["TemplateTag.3.Key"]=$templateTag3Key;
+	}
+
+	public function getTemplateTag5Value() {
+		return $this->templateTag5Value;
+	}
+
+	public function setTemplateTag5Value($templateTag5Value) {
+		$this->templateTag5Value = $templateTag5Value;
+		$this->queryParameters["TemplateTag.5.Value"]=$templateTag5Value;
+	}
+
 	public function getPageSize() {
 		return $this->pageSize;
 	}
@@ -79,6 +137,24 @@ class DescribeLaunchTemplatesRequest extends \RpcAcsRequest
 	public function setPageSize($pageSize) {
 		$this->pageSize = $pageSize;
 		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
+	public function getTemplateTag3Value() {
+		return $this->templateTag3Value;
+	}
+
+	public function setTemplateTag3Value($templateTag3Value) {
+		$this->templateTag3Value = $templateTag3Value;
+		$this->queryParameters["TemplateTag.3.Value"]=$templateTag3Value;
+	}
+
+	public function getTemplateTag2Key() {
+		return $this->templateTag2Key;
+	}
+
+	public function setTemplateTag2Key($templateTag2Key) {
+		$this->templateTag2Key = $templateTag2Key;
+		$this->queryParameters["TemplateTag.2.Key"]=$templateTag2Key;
 	}
 
 	public function getLaunchTemplateIds() {
@@ -110,6 +186,24 @@ class DescribeLaunchTemplatesRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
+	public function getTemplateResourceGroupId() {
+		return $this->templateResourceGroupId;
+	}
+
+	public function setTemplateResourceGroupId($templateResourceGroupId) {
+		$this->templateResourceGroupId = $templateResourceGroupId;
+		$this->queryParameters["TemplateResourceGroupId"]=$templateResourceGroupId;
+	}
+
+	public function getTemplateTag2Value() {
+		return $this->templateTag2Value;
+	}
+
+	public function setTemplateTag2Value($templateTag2Value) {
+		$this->templateTag2Value = $templateTag2Value;
+		$this->queryParameters["TemplateTag.2.Value"]=$templateTag2Value;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -117,6 +211,33 @@ class DescribeLaunchTemplatesRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getTemplateTag4Value() {
+		return $this->templateTag4Value;
+	}
+
+	public function setTemplateTag4Value($templateTag4Value) {
+		$this->templateTag4Value = $templateTag4Value;
+		$this->queryParameters["TemplateTag.4.Value"]=$templateTag4Value;
+	}
+
+	public function getTemplateTag5Key() {
+		return $this->templateTag5Key;
+	}
+
+	public function setTemplateTag5Key($templateTag5Key) {
+		$this->templateTag5Key = $templateTag5Key;
+		$this->queryParameters["TemplateTag.5.Key"]=$templateTag5Key;
+	}
+
+	public function getTemplateTag1Key() {
+		return $this->templateTag1Key;
+	}
+
+	public function setTemplateTag1Key($templateTag1Key) {
+		$this->templateTag1Key = $templateTag1Key;
+		$this->queryParameters["TemplateTag.1.Key"]=$templateTag1Key;
 	}
 	
 }

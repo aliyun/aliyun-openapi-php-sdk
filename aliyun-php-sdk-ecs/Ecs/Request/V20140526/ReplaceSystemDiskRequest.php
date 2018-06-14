@@ -49,6 +49,8 @@ class ReplaceSystemDiskRequest extends \RpcAcsRequest
 
 	private  $instanceId;
 
+	private  $passwordInherit;
+
 	private  $systemDiskSize;
 
 	private  $diskId;
@@ -154,6 +156,15 @@ class ReplaceSystemDiskRequest extends \RpcAcsRequest
 	public function setInstanceId($instanceId) {
 		$this->instanceId = $instanceId;
 		$this->queryParameters["InstanceId"]=$instanceId;
+	}
+
+	public function getPasswordInherit() {
+		return $this->passwordInherit;
+	}
+
+	public function setPasswordInherit($passwordInherit) {
+		$this->passwordInherit = $passwordInherit;
+		$this->queryParameters["PasswordInherit"]=$passwordInherit;
 	}
 
 	public function getSystemDiskSize() {

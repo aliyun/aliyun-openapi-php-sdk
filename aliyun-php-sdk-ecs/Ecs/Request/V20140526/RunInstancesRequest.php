@@ -39,6 +39,8 @@ class RunInstancesRequest extends \RpcAcsRequest
 
 	private  $spotPriceLimit;
 
+	private  $resourceGroupId;
+
 	private  $hostName;
 
 	private  $password;
@@ -80,6 +82,8 @@ class RunInstancesRequest extends \RpcAcsRequest
 	private  $systemDiskCategory;
 
 	private  $userData;
+
+	private  $passwordInherit;
 
 	private  $instanceType;
 
@@ -159,6 +163,15 @@ class RunInstancesRequest extends \RpcAcsRequest
 	public function setSpotPriceLimit($spotPriceLimit) {
 		$this->spotPriceLimit = $spotPriceLimit;
 		$this->queryParameters["SpotPriceLimit"]=$spotPriceLimit;
+	}
+
+	public function getResourceGroupId() {
+		return $this->resourceGroupId;
+	}
+
+	public function setResourceGroupId($resourceGroupId) {
+		$this->resourceGroupId = $resourceGroupId;
+		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
 	}
 
 	public function getHostName() {
@@ -352,6 +365,15 @@ class RunInstancesRequest extends \RpcAcsRequest
 	public function setUserData($userData) {
 		$this->userData = $userData;
 		$this->queryParameters["UserData"]=$userData;
+	}
+
+	public function getPasswordInherit() {
+		return $this->passwordInherit;
+	}
+
+	public function setPasswordInherit($passwordInherit) {
+		$this->passwordInherit = $passwordInherit;
+		$this->queryParameters["PasswordInherit"]=$passwordInherit;
 	}
 
 	public function getInstanceType() {

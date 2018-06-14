@@ -49,6 +49,8 @@ class DescribeImagesRequest extends \RpcAcsRequest
 
 	private  $tag1Value;
 
+	private  $resourceGroupId;
+
 	private  $isSupportIoOptimized;
 
 	private  $imageName;
@@ -186,6 +188,15 @@ class DescribeImagesRequest extends \RpcAcsRequest
 	public function setTag1Value($tag1Value) {
 		$this->tag1Value = $tag1Value;
 		$this->queryParameters["Tag.1.Value"]=$tag1Value;
+	}
+
+	public function getResourceGroupId() {
+		return $this->resourceGroupId;
+	}
+
+	public function setResourceGroupId($resourceGroupId) {
+		$this->resourceGroupId = $resourceGroupId;
+		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
 	}
 
 	public function getIsSupportIoOptimized() {

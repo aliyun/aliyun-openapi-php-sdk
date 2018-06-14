@@ -105,6 +105,8 @@ class CreateInstanceRequest extends \RpcAcsRequest
 
 	private  $userData;
 
+	private  $passwordInherit;
+
 	private  $instanceType;
 
 	private  $instanceChargeType;
@@ -488,6 +490,15 @@ class CreateInstanceRequest extends \RpcAcsRequest
 	public function setUserData($userData) {
 		$this->userData = $userData;
 		$this->queryParameters["UserData"]=$userData;
+	}
+
+	public function getPasswordInherit() {
+		return $this->passwordInherit;
+	}
+
+	public function setPasswordInherit($passwordInherit) {
+		$this->passwordInherit = $passwordInherit;
+		$this->queryParameters["PasswordInherit"]=$passwordInherit;
 	}
 
 	public function getInstanceType() {
