@@ -29,11 +29,15 @@ class PutProjectRequest extends \RpcAcsRequest
 
 	private  $indexers;
 
+	private  $cU;
+
 	private  $engines;
 
 	private  $serviceRole;
 
 	private  $project;
+
+	private  $type;
 
 	public function getIndexers() {
 		return $this->indexers;
@@ -42,6 +46,15 @@ class PutProjectRequest extends \RpcAcsRequest
 	public function setIndexers($indexers) {
 		$this->indexers = $indexers;
 		$this->queryParameters["Indexers"]=$indexers;
+	}
+
+	public function getCU() {
+		return $this->cU;
+	}
+
+	public function setCU($cU) {
+		$this->cU = $cU;
+		$this->queryParameters["CU"]=$cU;
 	}
 
 	public function getEngines() {
@@ -69,6 +82,15 @@ class PutProjectRequest extends \RpcAcsRequest
 	public function setProject($project) {
 		$this->project = $project;
 		$this->queryParameters["Project"]=$project;
+	}
+
+	public function getType() {
+		return $this->type;
+	}
+
+	public function setType($type) {
+		$this->type = $type;
+		$this->queryParameters["Type"]=$type;
 	}
 	
 }
