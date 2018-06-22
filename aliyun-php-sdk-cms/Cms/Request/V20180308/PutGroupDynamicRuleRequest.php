@@ -19,37 +19,17 @@
  */
 namespace Cms\Request\V20180308;
 
-class DeleteMyGroupInstancesRequest extends \RpcAcsRequest
+class PutGroupDynamicRuleRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cms", "2018-03-08", "DeleteMyGroupInstances", "cms", "openAPI");
+		parent::__construct("Cms", "2018-03-08", "PutGroupDynamicRule", "cms", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $instanceIds;
-
-	private  $instanceIdList;
-
 	private  $groupId;
 
-	public function getInstanceIds() {
-		return $this->instanceIds;
-	}
-
-	public function setInstanceIds($instanceIds) {
-		$this->instanceIds = $instanceIds;
-		$this->queryParameters["InstanceIds"]=$instanceIds;
-	}
-
-	public function getInstanceIdList() {
-		return $this->instanceIdList;
-	}
-
-	public function setInstanceIdList($instanceIdList) {
-		$this->instanceIdList = $instanceIdList;
-		$this->queryParameters["InstanceIdList"]=$instanceIdList;
-	}
+	private  $groupRuleArrayJson;
 
 	public function getGroupId() {
 		return $this->groupId;
@@ -58,6 +38,15 @@ class DeleteMyGroupInstancesRequest extends \RpcAcsRequest
 	public function setGroupId($groupId) {
 		$this->groupId = $groupId;
 		$this->queryParameters["GroupId"]=$groupId;
+	}
+
+	public function getGroupRuleArrayJson() {
+		return $this->groupRuleArrayJson;
+	}
+
+	public function setGroupRuleArrayJson($groupRuleArrayJson) {
+		$this->groupRuleArrayJson = $groupRuleArrayJson;
+		$this->queryParameters["GroupRuleArrayJson"]=$groupRuleArrayJson;
 	}
 	
 }

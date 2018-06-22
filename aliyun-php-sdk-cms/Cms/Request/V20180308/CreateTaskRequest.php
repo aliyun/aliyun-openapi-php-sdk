@@ -27,11 +27,13 @@ class CreateTaskRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $taskType;
-
 	private  $address;
 
+	private  $taskType;
+
 	private  $ispCity;
+
+	private  $alertIds;
 
 	private  $options;
 
@@ -40,15 +42,6 @@ class CreateTaskRequest extends \RpcAcsRequest
 	private  $interval;
 
 	private  $alertRule;
-
-	public function getTaskType() {
-		return $this->taskType;
-	}
-
-	public function setTaskType($taskType) {
-		$this->taskType = $taskType;
-		$this->queryParameters["TaskType"]=$taskType;
-	}
 
 	public function getAddress() {
 		return $this->address;
@@ -59,6 +52,15 @@ class CreateTaskRequest extends \RpcAcsRequest
 		$this->queryParameters["Address"]=$address;
 	}
 
+	public function getTaskType() {
+		return $this->taskType;
+	}
+
+	public function setTaskType($taskType) {
+		$this->taskType = $taskType;
+		$this->queryParameters["TaskType"]=$taskType;
+	}
+
 	public function getIspCity() {
 		return $this->ispCity;
 	}
@@ -66,6 +68,15 @@ class CreateTaskRequest extends \RpcAcsRequest
 	public function setIspCity($ispCity) {
 		$this->ispCity = $ispCity;
 		$this->queryParameters["IspCity"]=$ispCity;
+	}
+
+	public function getAlertIds() {
+		return $this->alertIds;
+	}
+
+	public function setAlertIds($alertIds) {
+		$this->alertIds = $alertIds;
+		$this->queryParameters["AlertIds"]=$alertIds;
 	}
 
 	public function getOptions() {

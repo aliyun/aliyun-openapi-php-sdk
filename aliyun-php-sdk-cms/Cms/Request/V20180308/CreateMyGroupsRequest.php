@@ -31,9 +31,9 @@ class CreateMyGroupsRequest extends \RpcAcsRequest
 
 	private  $options;
 
-	private  $serviceId;
-
 	private  $type;
+
+	private  $serviceId;
 
 	private  $groupName;
 
@@ -57,15 +57,6 @@ class CreateMyGroupsRequest extends \RpcAcsRequest
 		$this->queryParameters["Options"]=$options;
 	}
 
-	public function getServiceId() {
-		return $this->serviceId;
-	}
-
-	public function setServiceId($serviceId) {
-		$this->serviceId = $serviceId;
-		$this->queryParameters["ServiceId"]=$serviceId;
-	}
-
 	public function getType() {
 		return $this->type;
 	}
@@ -73,6 +64,15 @@ class CreateMyGroupsRequest extends \RpcAcsRequest
 	public function setType($type) {
 		$this->type = $type;
 		$this->queryParameters["Type"]=$type;
+	}
+
+	public function getServiceId() {
+		return $this->serviceId;
+	}
+
+	public function setServiceId($serviceId) {
+		$this->serviceId = $serviceId;
+		$this->queryParameters["ServiceId"]=$serviceId;
 	}
 
 	public function getGroupName() {

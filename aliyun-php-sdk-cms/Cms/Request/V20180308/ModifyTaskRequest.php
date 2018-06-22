@@ -31,6 +31,8 @@ class ModifyTaskRequest extends \RpcAcsRequest
 
 	private  $ispCity;
 
+	private  $alertIds;
+
 	private  $options;
 
 	private  $taskName;
@@ -57,6 +59,15 @@ class ModifyTaskRequest extends \RpcAcsRequest
 	public function setIspCity($ispCity) {
 		$this->ispCity = $ispCity;
 		$this->queryParameters["IspCity"]=$ispCity;
+	}
+
+	public function getAlertIds() {
+		return $this->alertIds;
+	}
+
+	public function setAlertIds($alertIds) {
+		$this->alertIds = $alertIds;
+		$this->queryParameters["AlertIds"]=$alertIds;
 	}
 
 	public function getOptions() {
