@@ -29,6 +29,8 @@ class ModifyDiskChargeTypeRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
+	private  $diskChargeType;
+
 	private  $instanceId;
 
 	private  $autoPay;
@@ -50,6 +52,15 @@ class ModifyDiskChargeTypeRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getDiskChargeType() {
+		return $this->diskChargeType;
+	}
+
+	public function setDiskChargeType($diskChargeType) {
+		$this->diskChargeType = $diskChargeType;
+		$this->queryParameters["DiskChargeType"]=$diskChargeType;
 	}
 
 	public function getInstanceId() {

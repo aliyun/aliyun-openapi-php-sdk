@@ -47,6 +47,10 @@ class RunInstancesRequest extends \RpcAcsRequest
 
 	private  $Tags;
 
+	private  $autoRenewPeriod;
+
+	private  $period;
+
 	private  $dryRun;
 
 	private  $launchTemplateId;
@@ -57,7 +61,11 @@ class RunInstancesRequest extends \RpcAcsRequest
 
 	private  $spotStrategy;
 
+	private  $periodUnit;
+
 	private  $instanceName;
+
+	private  $autoRenew;
 
 	private  $internetChargeType;
 
@@ -86,6 +94,8 @@ class RunInstancesRequest extends \RpcAcsRequest
 	private  $passwordInherit;
 
 	private  $instanceType;
+
+	private  $instanceChargeType;
 
 	private  $NetworkInterfaces;
 
@@ -205,6 +215,24 @@ class RunInstancesRequest extends \RpcAcsRequest
 		}
 	}
 
+	public function getAutoRenewPeriod() {
+		return $this->autoRenewPeriod;
+	}
+
+	public function setAutoRenewPeriod($autoRenewPeriod) {
+		$this->autoRenewPeriod = $autoRenewPeriod;
+		$this->queryParameters["AutoRenewPeriod"]=$autoRenewPeriod;
+	}
+
+	public function getPeriod() {
+		return $this->period;
+	}
+
+	public function setPeriod($period) {
+		$this->period = $period;
+		$this->queryParameters["Period"]=$period;
+	}
+
 	public function getDryRun() {
 		return $this->dryRun;
 	}
@@ -250,6 +278,15 @@ class RunInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["SpotStrategy"]=$spotStrategy;
 	}
 
+	public function getPeriodUnit() {
+		return $this->periodUnit;
+	}
+
+	public function setPeriodUnit($periodUnit) {
+		$this->periodUnit = $periodUnit;
+		$this->queryParameters["PeriodUnit"]=$periodUnit;
+	}
+
 	public function getInstanceName() {
 		return $this->instanceName;
 	}
@@ -257,6 +294,15 @@ class RunInstancesRequest extends \RpcAcsRequest
 	public function setInstanceName($instanceName) {
 		$this->instanceName = $instanceName;
 		$this->queryParameters["InstanceName"]=$instanceName;
+	}
+
+	public function getAutoRenew() {
+		return $this->autoRenew;
+	}
+
+	public function setAutoRenew($autoRenew) {
+		$this->autoRenew = $autoRenew;
+		$this->queryParameters["AutoRenew"]=$autoRenew;
 	}
 
 	public function getInternetChargeType() {
@@ -383,6 +429,15 @@ class RunInstancesRequest extends \RpcAcsRequest
 	public function setInstanceType($instanceType) {
 		$this->instanceType = $instanceType;
 		$this->queryParameters["InstanceType"]=$instanceType;
+	}
+
+	public function getInstanceChargeType() {
+		return $this->instanceChargeType;
+	}
+
+	public function setInstanceChargeType($instanceChargeType) {
+		$this->instanceChargeType = $instanceChargeType;
+		$this->queryParameters["InstanceChargeType"]=$instanceChargeType;
 	}
 
 	public function getNetworkInterfaces() {

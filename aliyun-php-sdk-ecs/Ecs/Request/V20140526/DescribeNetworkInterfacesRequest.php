@@ -69,6 +69,8 @@ class DescribeNetworkInterfacesRequest extends \RpcAcsRequest
 
 	private  $tag2Value;
 
+	private  $vpcId;
+
 	private  $tag4Key;
 
 	private  $primaryIpAddress;
@@ -262,6 +264,15 @@ class DescribeNetworkInterfacesRequest extends \RpcAcsRequest
 	public function setTag2Value($tag2Value) {
 		$this->tag2Value = $tag2Value;
 		$this->queryParameters["Tag.2.Value"]=$tag2Value;
+	}
+
+	public function getVpcId() {
+		return $this->vpcId;
+	}
+
+	public function setVpcId($vpcId) {
+		$this->vpcId = $vpcId;
+		$this->queryParameters["VpcId"]=$vpcId;
 	}
 
 	public function getTag4Key() {

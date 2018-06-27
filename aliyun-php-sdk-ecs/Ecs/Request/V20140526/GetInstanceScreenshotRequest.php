@@ -31,7 +31,7 @@ class GetInstanceScreenshotRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerAccount;
 
-	private  $wakeup;
+	private  $wakeUp;
 
 	private  $ownerAccount;
 
@@ -57,13 +57,13 @@ class GetInstanceScreenshotRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getWakeup() {
-		return $this->wakeup;
+	public function getWakeUp() {
+		return $this->wakeUp;
 	}
 
-	public function setWakeup($wakeup) {
-		$this->wakeup = $wakeup;
-		$this->queryParameters["Wakeup"]=$wakeup;
+	public function setWakeUp($wakeUp) {
+		$this->wakeUp = $wakeUp;
+		$this->queryParameters["WakeUp"]=$wakeUp;
 	}
 
 	public function getOwnerAccount() {
