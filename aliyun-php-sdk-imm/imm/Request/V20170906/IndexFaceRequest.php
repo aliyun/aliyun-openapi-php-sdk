@@ -27,6 +27,8 @@ class IndexFaceRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
+	private  $chain;
+
 	private  $srcUris;
 
 	private  $project;
@@ -34,6 +36,15 @@ class IndexFaceRequest extends \RpcAcsRequest
 	private  $setId;
 
 	private  $force;
+
+	public function getChain() {
+		return $this->chain;
+	}
+
+	public function setChain($chain) {
+		$this->chain = $chain;
+		$this->queryParameters["Chain"]=$chain;
+	}
 
 	public function getSrcUris() {
 		return $this->srcUris;
