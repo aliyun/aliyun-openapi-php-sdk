@@ -61,7 +61,11 @@ class CreateScalingConfigurationRequest extends \RpcAcsRequest
 
 	private  $dataDisk4Category;
 
+	private  $hostName;
+
 	private  $dataDisk2SnapshotId;
+
+	private  $passwordInherit;
 
 	private  $dataDisk4Size;
 
@@ -241,7 +245,9 @@ class CreateScalingConfigurationRequest extends \RpcAcsRequest
 	public function setSpotPriceLimits($SpotPriceLimits) {
 		$this->SpotPriceLimits = $SpotPriceLimits;
 		for ($i = 0; $i < count($SpotPriceLimits); $i ++) {	
-			$this->queryParameters["SpotPriceLimit.".($i+1)] = $SpotPriceLimits[$i];
+			$this->queryParameters['SpotPriceLimit.' . ($i + 1) . '.InstanceType'] = $SpotPriceLimits[$i]['InstanceType'];
+			$this->queryParameters['SpotPriceLimit.' . ($i + 1) . '.PriceLimit'] = $SpotPriceLimits[$i]['PriceLimit'];
+
 		}
 	}
 
@@ -272,6 +278,15 @@ class CreateScalingConfigurationRequest extends \RpcAcsRequest
 		$this->queryParameters["DataDisk.4.Category"]=$dataDisk4Category;
 	}
 
+	public function getHostName() {
+		return $this->hostName;
+	}
+
+	public function setHostName($hostName) {
+		$this->hostName = $hostName;
+		$this->queryParameters["HostName"]=$hostName;
+	}
+
 	public function getDataDisk2SnapshotId() {
 		return $this->dataDisk2SnapshotId;
 	}
@@ -279,6 +294,15 @@ class CreateScalingConfigurationRequest extends \RpcAcsRequest
 	public function setDataDisk2SnapshotId($dataDisk2SnapshotId) {
 		$this->dataDisk2SnapshotId = $dataDisk2SnapshotId;
 		$this->queryParameters["DataDisk.2.SnapshotId"]=$dataDisk2SnapshotId;
+	}
+
+	public function getPasswordInherit() {
+		return $this->passwordInherit;
+	}
+
+	public function setPasswordInherit($passwordInherit) {
+		$this->passwordInherit = $passwordInherit;
+		$this->queryParameters["PasswordInherit"]=$passwordInherit;
 	}
 
 	public function getDataDisk4Size() {
