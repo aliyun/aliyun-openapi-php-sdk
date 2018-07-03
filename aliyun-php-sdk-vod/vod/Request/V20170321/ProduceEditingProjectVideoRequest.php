@@ -27,34 +27,27 @@ class ProduceEditingProjectVideoRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $coverURL;
-
 	private  $resourceOwnerId;
 
 	private  $mediaMetadata;
 
 	private  $resourceOwnerAccount;
 
-	private  $timeline;
-
 	private  $description;
-
-	private  $produceConfig;
 
 	private  $ownerId;
 
 	private  $title;
 
+	private  $coverURL;
+
+	private  $userData;
+
+	private  $timeline;
+
+	private  $produceConfig;
+
 	private  $projectId;
-
-	public function getCoverURL() {
-		return $this->coverURL;
-	}
-
-	public function setCoverURL($coverURL) {
-		$this->coverURL = $coverURL;
-		$this->queryParameters["CoverURL"]=$coverURL;
-	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -83,15 +76,6 @@ class ProduceEditingProjectVideoRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getTimeline() {
-		return $this->timeline;
-	}
-
-	public function setTimeline($timeline) {
-		$this->timeline = $timeline;
-		$this->queryParameters["Timeline"]=$timeline;
-	}
-
 	public function getDescription() {
 		return $this->description;
 	}
@@ -99,15 +83,6 @@ class ProduceEditingProjectVideoRequest extends \RpcAcsRequest
 	public function setDescription($description) {
 		$this->description = $description;
 		$this->queryParameters["Description"]=$description;
-	}
-
-	public function getProduceConfig() {
-		return $this->produceConfig;
-	}
-
-	public function setProduceConfig($produceConfig) {
-		$this->produceConfig = $produceConfig;
-		$this->queryParameters["ProduceConfig"]=$produceConfig;
 	}
 
 	public function getOwnerId() {
@@ -126,6 +101,42 @@ class ProduceEditingProjectVideoRequest extends \RpcAcsRequest
 	public function setTitle($title) {
 		$this->title = $title;
 		$this->queryParameters["Title"]=$title;
+	}
+
+	public function getCoverURL() {
+		return $this->coverURL;
+	}
+
+	public function setCoverURL($coverURL) {
+		$this->coverURL = $coverURL;
+		$this->queryParameters["CoverURL"]=$coverURL;
+	}
+
+	public function getUserData() {
+		return $this->userData;
+	}
+
+	public function setUserData($userData) {
+		$this->userData = $userData;
+		$this->queryParameters["UserData"]=$userData;
+	}
+
+	public function getTimeline() {
+		return $this->timeline;
+	}
+
+	public function setTimeline($timeline) {
+		$this->timeline = $timeline;
+		$this->queryParameters["Timeline"]=$timeline;
+	}
+
+	public function getProduceConfig() {
+		return $this->produceConfig;
+	}
+
+	public function setProduceConfig($produceConfig) {
+		$this->produceConfig = $produceConfig;
+		$this->queryParameters["ProduceConfig"]=$produceConfig;
 	}
 
 	public function getProjectId() {
