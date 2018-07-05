@@ -35,6 +35,8 @@ class ChatRequest extends \RpcAcsRequest
 
 	private  $senderNick;
 
+	private  $Perspectives;
+
 	private  $sessionId;
 
 	private  $tag;
@@ -75,6 +77,17 @@ class ChatRequest extends \RpcAcsRequest
 	public function setSenderNick($senderNick) {
 		$this->senderNick = $senderNick;
 		$this->queryParameters["SenderNick"]=$senderNick;
+	}
+
+	public function getPerspectives() {
+		return $this->Perspectives;
+	}
+
+	public function setPerspectives($Perspectives) {
+		$this->Perspectives = $Perspectives;
+		for ($i = 0; $i < count($Perspectives); $i ++) {	
+			$this->queryParameters["Perspective.".($i+1)] = $Perspectives[$i];
+		}
 	}
 
 	public function getSessionId() {
