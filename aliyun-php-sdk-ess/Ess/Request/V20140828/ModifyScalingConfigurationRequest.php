@@ -23,7 +23,7 @@ class ModifyScalingConfigurationRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "ModifyScalingConfiguration", "ess", "openAPI");
+		parent::__construct("Ess", "2014-08-28", "ModifyScalingConfiguration", "ESS", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -33,7 +33,7 @@ class ModifyScalingConfigurationRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
-	private  $InstanceTypess;
+	private  $InstanceTypes;
 
 	private  $internetMaxBandwidthOut;
 
@@ -92,14 +92,14 @@ class ModifyScalingConfigurationRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getInstanceTypess() {
-		return $this->InstanceTypess;
+	public function getInstanceTypes() {
+		return $this->InstanceTypes;
 	}
 
-	public function setInstanceTypess($InstanceTypess) {
-		$this->InstanceTypess = $InstanceTypess;
-		for ($i = 0; $i < count($InstanceTypess); $i ++) {	
-			$this->queryParameters["InstanceTypes.".($i+1)] = $InstanceTypess[$i];
+	public function setInstanceTypes($InstanceTypes) {
+		$this->InstanceTypes = $InstanceTypes;
+		for ($i = 0; $i < count($InstanceTypes); $i ++) {	
+			$this->queryParameters["InstanceTypes.".($i+1)] = $InstanceTypes[$i];
 		}
 	}
 

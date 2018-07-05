@@ -23,7 +23,7 @@ class ExitStandbyRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "ExitStandby", "ess", "openAPI");
+		parent::__construct("Ess", "2014-08-28", "ExitStandby", "ESS", "openAPI");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class ExecuteScalingRuleRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "ExecuteScalingRule", "ess", "openAPI");
+		parent::__construct("Ess", "2014-08-28", "ExecuteScalingRule", "ESS", "openAPI");
 		$this->setMethod("POST");
 	}
 

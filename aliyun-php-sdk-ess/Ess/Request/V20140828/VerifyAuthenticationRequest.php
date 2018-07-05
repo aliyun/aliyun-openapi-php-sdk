@@ -23,7 +23,7 @@ class VerifyAuthenticationRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "VerifyAuthentication", "ess", "openAPI");
+		parent::__construct("Ess", "2014-08-28", "VerifyAuthentication", "ESS", "openAPI");
 		$this->setMethod("POST");
 	}
 

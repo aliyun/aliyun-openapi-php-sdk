@@ -23,7 +23,7 @@ class DescribeCapacityHistoryRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "DescribeCapacityHistory", "ess", "openAPI");
+		parent::__construct("Ess", "2014-08-28", "DescribeCapacityHistory", "ESS", "openAPI");
 		$this->setMethod("POST");
 	}
 

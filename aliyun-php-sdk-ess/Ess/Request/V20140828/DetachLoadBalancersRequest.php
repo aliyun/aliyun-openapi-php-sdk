@@ -19,33 +19,33 @@
  */
 namespace Ess\Request\V20140828;
 
-class CompleteLifecycleActionRequest extends \RpcAcsRequest
+class DetachLoadBalancersRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "CompleteLifecycleAction", "ESS", "openAPI");
+		parent::__construct("Ess", "2014-08-28", "DetachLoadBalancers", "ESS", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $lifecycleActionToken;
+	private  $LoadBalancers;
 
 	private  $resourceOwnerAccount;
 
-	private  $lifecycleHookId;
+	private  $scalingGroupId;
 
-	private  $ownerAccount;
+	private  $forceDetach;
 
 	private  $ownerId;
 
-	private  $lifecycleActionResult;
-
-	public function getLifecycleActionToken() {
-		return $this->lifecycleActionToken;
+	public function getLoadBalancers() {
+		return $this->LoadBalancers;
 	}
 
-	public function setLifecycleActionToken($lifecycleActionToken) {
-		$this->lifecycleActionToken = $lifecycleActionToken;
-		$this->queryParameters["LifecycleActionToken"]=$lifecycleActionToken;
+	public function setLoadBalancers($LoadBalancers) {
+		$this->LoadBalancers = $LoadBalancers;
+		for ($i = 0; $i < count($LoadBalancers); $i ++) {	
+			$this->queryParameters["LoadBalancer.".($i+1)] = $LoadBalancers[$i];
+		}
 	}
 
 	public function getResourceOwnerAccount() {
@@ -57,22 +57,22 @@ class CompleteLifecycleActionRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getLifecycleHookId() {
-		return $this->lifecycleHookId;
+	public function getScalingGroupId() {
+		return $this->scalingGroupId;
 	}
 
-	public function setLifecycleHookId($lifecycleHookId) {
-		$this->lifecycleHookId = $lifecycleHookId;
-		$this->queryParameters["LifecycleHookId"]=$lifecycleHookId;
+	public function setScalingGroupId($scalingGroupId) {
+		$this->scalingGroupId = $scalingGroupId;
+		$this->queryParameters["ScalingGroupId"]=$scalingGroupId;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getForceDetach() {
+		return $this->forceDetach;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setForceDetach($forceDetach) {
+		$this->forceDetach = $forceDetach;
+		$this->queryParameters["ForceDetach"]=$forceDetach;
 	}
 
 	public function getOwnerId() {
@@ -82,15 +82,6 @@ class CompleteLifecycleActionRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getLifecycleActionResult() {
-		return $this->lifecycleActionResult;
-	}
-
-	public function setLifecycleActionResult($lifecycleActionResult) {
-		$this->lifecycleActionResult = $lifecycleActionResult;
-		$this->queryParameters["LifecycleActionResult"]=$lifecycleActionResult;
 	}
 	
 }

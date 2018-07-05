@@ -23,7 +23,7 @@ class DescribeLimitationRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "DescribeLimitation", "ess", "openAPI");
+		parent::__construct("Ess", "2014-08-28", "DescribeLimitation", "ESS", "openAPI");
 		$this->setMethod("POST");
 	}
 

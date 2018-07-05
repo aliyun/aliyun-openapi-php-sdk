@@ -23,7 +23,7 @@ class ModifyNotificationConfigurationRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "ModifyNotificationConfiguration", "ess", "openAPI");
+		parent::__construct("Ess", "2014-08-28", "ModifyNotificationConfiguration", "ESS", "openAPI");
 		$this->setMethod("POST");
 	}
 

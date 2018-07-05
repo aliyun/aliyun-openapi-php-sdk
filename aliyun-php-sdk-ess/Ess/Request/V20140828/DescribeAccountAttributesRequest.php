@@ -23,7 +23,7 @@ class DescribeAccountAttributesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "DescribeAccountAttributes", "ess", "openAPI");
+		parent::__construct("Ess", "2014-08-28", "DescribeAccountAttributes", "ESS", "openAPI");
 		$this->setMethod("POST");
 	}
 
