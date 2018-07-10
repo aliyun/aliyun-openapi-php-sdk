@@ -26,6 +26,8 @@ class PutEventTargetsRequest extends \RpcAcsRequest
 		parent::__construct("Cms", "2018-03-08", "PutEventTargets", "cms", "openAPI");
 	}
 
+	private  $WebhookParameterss;
+
 	private  $ContactParameterss;
 
 	private  $FcParameterss;
@@ -33,6 +35,21 @@ class PutEventTargetsRequest extends \RpcAcsRequest
 	private  $ruleName;
 
 	private  $MnsParameterss;
+
+	public function getWebhookParameterss() {
+		return $this->WebhookParameterss;
+	}
+
+	public function setWebhookParameterss($WebhookParameterss) {
+		$this->WebhookParameterss = $WebhookParameterss;
+		for ($i = 0; $i < count($WebhookParameterss); $i ++) {	
+			$this->queryParameters['WebhookParameters.' . ($i + 1) . '.Id'] = $WebhookParameterss[$i]['Id'];
+			$this->queryParameters['WebhookParameters.' . ($i + 1) . '.Protocol'] = $WebhookParameterss[$i]['Protocol'];
+			$this->queryParameters['WebhookParameters.' . ($i + 1) . '.Url'] = $WebhookParameterss[$i]['Url'];
+			$this->queryParameters['WebhookParameters.' . ($i + 1) . '.Method'] = $WebhookParameterss[$i]['Method'];
+
+		}
+	}
 
 	public function getContactParameterss() {
 		return $this->ContactParameterss;
