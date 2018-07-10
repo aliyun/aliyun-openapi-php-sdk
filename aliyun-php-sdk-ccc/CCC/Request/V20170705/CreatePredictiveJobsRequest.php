@@ -19,25 +19,21 @@
  */
 namespace CCC\Request\V20170705;
 
-class CreateScenarioRequest extends \RpcAcsRequest
+class CreatePredictiveJobsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CCC", "2017-07-05", "CreateScenario", "ccc", "openAPI");
+		parent::__construct("CCC", "2017-07-05", "CreatePredictiveJobs", "ccc", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $instanceId;
 
-	private  $SurveysJsons;
+	private  $skillGroupId;
 
 	private  $strategyJson;
 
-	private  $name;
-
-	private  $description;
-
-	private  $type;
+	private  $JobsJsons;
 
 	public function getInstanceId() {
 		return $this->instanceId;
@@ -48,15 +44,13 @@ class CreateScenarioRequest extends \RpcAcsRequest
 		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 
-	public function getSurveysJsons() {
-		return $this->SurveysJsons;
+	public function getSkillGroupId() {
+		return $this->skillGroupId;
 	}
 
-	public function setSurveysJsons($SurveysJsons) {
-		$this->SurveysJsons = $SurveysJsons;
-		for ($i = 0; $i < count($SurveysJsons); $i ++) {	
-			$this->queryParameters["SurveysJson.".($i+1)] = $SurveysJsons[$i];
-		}
+	public function setSkillGroupId($skillGroupId) {
+		$this->skillGroupId = $skillGroupId;
+		$this->queryParameters["SkillGroupId"]=$skillGroupId;
 	}
 
 	public function getStrategyJson() {
@@ -68,31 +62,15 @@ class CreateScenarioRequest extends \RpcAcsRequest
 		$this->queryParameters["StrategyJson"]=$strategyJson;
 	}
 
-	public function getName() {
-		return $this->name;
+	public function getJobsJsons() {
+		return $this->JobsJsons;
 	}
 
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
-	}
-
-	public function getDescription() {
-		return $this->description;
-	}
-
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
-	}
-
-	public function getType() {
-		return $this->type;
-	}
-
-	public function setType($type) {
-		$this->type = $type;
-		$this->queryParameters["Type"]=$type;
+	public function setJobsJsons($JobsJsons) {
+		$this->JobsJsons = $JobsJsons;
+		for ($i = 0; $i < count($JobsJsons); $i ++) {	
+			$this->queryParameters["JobsJson.".($i+1)] = $JobsJsons[$i];
+		}
 	}
 	
 }
