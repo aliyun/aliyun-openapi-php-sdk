@@ -23,7 +23,7 @@ class DeactivateScalingConfigurationRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "DeactivateScalingConfiguration", "ESS", "openAPI");
+		parent::__construct("Ess", "2014-08-28", "DeactivateScalingConfiguration", "ess", "openAPI");
 		$this->setMethod("POST");
 	}
 

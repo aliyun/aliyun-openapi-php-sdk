@@ -23,7 +23,7 @@ class DeleteScalingGroupRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "DeleteScalingGroup", "ESS", "openAPI");
+		parent::__construct("Ess", "2014-08-28", "DeleteScalingGroup", "ess", "openAPI");
 		$this->setMethod("POST");
 	}
 

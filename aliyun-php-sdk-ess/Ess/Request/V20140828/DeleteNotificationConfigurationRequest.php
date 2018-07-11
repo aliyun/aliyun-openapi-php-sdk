@@ -23,7 +23,7 @@ class DeleteNotificationConfigurationRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "DeleteNotificationConfiguration", "ESS", "openAPI");
+		parent::__construct("Ess", "2014-08-28", "DeleteNotificationConfiguration", "ess", "openAPI");
 		$this->setMethod("POST");
 	}
 

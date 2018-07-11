@@ -23,7 +23,7 @@ class EnterStandbyRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "EnterStandby", "ESS", "openAPI");
+		parent::__construct("Ess", "2014-08-28", "EnterStandby", "ess", "openAPI");
 		$this->setMethod("POST");
 	}
 

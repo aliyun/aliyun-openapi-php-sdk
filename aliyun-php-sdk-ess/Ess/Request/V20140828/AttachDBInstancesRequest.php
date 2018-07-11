@@ -19,32 +19,23 @@
  */
 namespace Ess\Request\V20140828;
 
-class RebalanceInstancesRequest extends \RpcAcsRequest
+class AttachDBInstancesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "RebalanceInstances", "ess", "openAPI");
+		parent::__construct("Ess", "2014-08-28", "AttachDBInstances", "ess", "openAPI");
 		$this->setMethod("POST");
 	}
-
-	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
 	private  $scalingGroupId;
 
-	private  $ownerAccount;
+	private  $forceAttach;
+
+	private  $DBInstances;
 
 	private  $ownerId;
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
 
 	public function getResourceOwnerAccount() {
 		return $this->resourceOwnerAccount;
@@ -64,13 +55,24 @@ class RebalanceInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["ScalingGroupId"]=$scalingGroupId;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getForceAttach() {
+		return $this->forceAttach;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setForceAttach($forceAttach) {
+		$this->forceAttach = $forceAttach;
+		$this->queryParameters["ForceAttach"]=$forceAttach;
+	}
+
+	public function getDBInstances() {
+		return $this->DBInstances;
+	}
+
+	public function setDBInstances($DBInstances) {
+		$this->DBInstances = $DBInstances;
+		for ($i = 0; $i < count($DBInstances); $i ++) {	
+			$this->queryParameters["DBInstance.".($i+1)] = $DBInstances[$i];
+		}
 	}
 
 	public function getOwnerId() {
