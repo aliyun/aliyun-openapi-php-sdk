@@ -17,13 +17,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Cloudauth\Request\V20180504;
+namespace Cloudauth\Request\V20180703;
 
-class GetMaterialsRequest extends \RpcAcsRequest
+class GetStatusRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cloudauth", "2018-05-04", "GetMaterials", "cloudauth", "openAPI");
+		parent::__construct("Cloudauth", "2018-07-03", "GetStatus", "cloudauth", "openAPI");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}

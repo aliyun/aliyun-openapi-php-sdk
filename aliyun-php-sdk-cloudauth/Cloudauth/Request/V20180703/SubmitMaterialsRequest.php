@@ -17,24 +17,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Cloudauth\Request\V20180504;
+namespace Cloudauth\Request\V20180703;
 
-class GetStatusRequest extends \RpcAcsRequest
+class SubmitMaterialsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cloudauth", "2018-05-04", "GetStatus", "cloudauth", "openAPI");
+		parent::__construct("Cloudauth", "2018-07-03", "SubmitMaterials", "cloudauth", "openAPI");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
-	private  $biz;
-
 	private  $sourceIp;
 
-	private  $ticketId;
+	private  $Materials;
+
+	private  $verifyToken;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -43,15 +43,6 @@ class GetStatusRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getBiz() {
-		return $this->biz;
-	}
-
-	public function setBiz($biz) {
-		$this->biz = $biz;
-		$this->queryParameters["Biz"]=$biz;
 	}
 
 	public function getSourceIp() {
@@ -63,13 +54,26 @@ class GetStatusRequest extends \RpcAcsRequest
 		$this->queryParameters["SourceIp"]=$sourceIp;
 	}
 
-	public function getTicketId() {
-		return $this->ticketId;
+	public function getMaterials() {
+		return $this->Materials;
 	}
 
-	public function setTicketId($ticketId) {
-		$this->ticketId = $ticketId;
-		$this->queryParameters["TicketId"]=$ticketId;
+	public function setMaterials($Materials) {
+		$this->Materials = $Materials;
+		for ($i = 0; $i < count($Materials); $i ++) {	
+			$this->queryParameters['Material.' . ($i + 1) . '.MaterialType'] = $Materials[$i]['MaterialType'];
+			$this->queryParameters['Material.' . ($i + 1) . '.Value'] = $Materials[$i]['Value'];
+
+		}
+	}
+
+	public function getVerifyToken() {
+		return $this->verifyToken;
+	}
+
+	public function setVerifyToken($verifyToken) {
+		$this->verifyToken = $verifyToken;
+		$this->queryParameters["VerifyToken"]=$verifyToken;
 	}
 	
 }
