@@ -19,16 +19,43 @@
  */
 namespace EHPC\Request\V20180412;
 
-class AddUsersRequest extends \RpcAcsRequest
+class InvokeShellCommandRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("EHPC", "2018-04-12", "AddUsers", "ehs", "openAPI");
+		parent::__construct("EHPC", "2018-04-12", "InvokeShellCommand", "ehs", "openAPI");
 	}
+
+	private  $Instances;
+
+	private  $workingDir;
 
 	private  $clusterId;
 
-	private  $Users;
+	private  $command;
+
+	private  $timeout;
+
+	public function getInstances() {
+		return $this->Instances;
+	}
+
+	public function setInstances($Instances) {
+		$this->Instances = $Instances;
+		for ($i = 0; $i < count($Instances); $i ++) {	
+			$this->queryParameters['Instance.' . ($i + 1) . '.Id'] = $Instances[$i]['Id'];
+
+		}
+	}
+
+	public function getWorkingDir() {
+		return $this->workingDir;
+	}
+
+	public function setWorkingDir($workingDir) {
+		$this->workingDir = $workingDir;
+		$this->queryParameters["WorkingDir"]=$workingDir;
+	}
 
 	public function getClusterId() {
 		return $this->clusterId;
@@ -39,18 +66,22 @@ class AddUsersRequest extends \RpcAcsRequest
 		$this->queryParameters["ClusterId"]=$clusterId;
 	}
 
-	public function getUsers() {
-		return $this->Users;
+	public function getCommand() {
+		return $this->command;
 	}
 
-	public function setUsers($Users) {
-		$this->Users = $Users;
-		for ($i = 0; $i < count($Users); $i ++) {	
-			$this->queryParameters['User.' . ($i + 1) . '.Name'] = $Users[$i]['Name'];
-			$this->queryParameters['User.' . ($i + 1) . '.Group'] = $Users[$i]['Group'];
-			$this->queryParameters['User.' . ($i + 1) . '.Password'] = $Users[$i]['Password'];
+	public function setCommand($command) {
+		$this->command = $command;
+		$this->queryParameters["Command"]=$command;
+	}
 
-		}
+	public function getTimeout() {
+		return $this->timeout;
+	}
+
+	public function setTimeout($timeout) {
+		$this->timeout = $timeout;
+		$this->queryParameters["Timeout"]=$timeout;
 	}
 	
 }

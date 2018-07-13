@@ -32,6 +32,8 @@ class SubmitJobRequest extends \RpcAcsRequest
 
 	private  $runasUserPassword;
 
+	private  $postCmdLine;
+
 	private  $runasUser;
 
 	private  $clusterId;
@@ -44,11 +46,17 @@ class SubmitJobRequest extends \RpcAcsRequest
 
 	private  $arrayRequest;
 
+	private  $unzipCmd;
+
 	private  $packagePath;
+
+	private  $inputFileUrl;
 
 	private  $name;
 
 	private  $stdoutRedirectPath;
+
+	private  $containerId;
 
 	public function getStderrRedirectPath() {
 		return $this->stderrRedirectPath;
@@ -75,6 +83,15 @@ class SubmitJobRequest extends \RpcAcsRequest
 	public function setRunasUserPassword($runasUserPassword) {
 		$this->runasUserPassword = $runasUserPassword;
 		$this->queryParameters["RunasUserPassword"]=$runasUserPassword;
+	}
+
+	public function getPostCmdLine() {
+		return $this->postCmdLine;
+	}
+
+	public function setPostCmdLine($postCmdLine) {
+		$this->postCmdLine = $postCmdLine;
+		$this->queryParameters["PostCmdLine"]=$postCmdLine;
 	}
 
 	public function getRunasUser() {
@@ -131,6 +148,15 @@ class SubmitJobRequest extends \RpcAcsRequest
 		$this->queryParameters["ArrayRequest"]=$arrayRequest;
 	}
 
+	public function getUnzipCmd() {
+		return $this->unzipCmd;
+	}
+
+	public function setUnzipCmd($unzipCmd) {
+		$this->unzipCmd = $unzipCmd;
+		$this->queryParameters["UnzipCmd"]=$unzipCmd;
+	}
+
 	public function getPackagePath() {
 		return $this->packagePath;
 	}
@@ -138,6 +164,15 @@ class SubmitJobRequest extends \RpcAcsRequest
 	public function setPackagePath($packagePath) {
 		$this->packagePath = $packagePath;
 		$this->queryParameters["PackagePath"]=$packagePath;
+	}
+
+	public function getInputFileUrl() {
+		return $this->inputFileUrl;
+	}
+
+	public function setInputFileUrl($inputFileUrl) {
+		$this->inputFileUrl = $inputFileUrl;
+		$this->queryParameters["InputFileUrl"]=$inputFileUrl;
 	}
 
 	public function getName() {
@@ -156,6 +191,15 @@ class SubmitJobRequest extends \RpcAcsRequest
 	public function setStdoutRedirectPath($stdoutRedirectPath) {
 		$this->stdoutRedirectPath = $stdoutRedirectPath;
 		$this->queryParameters["StdoutRedirectPath"]=$stdoutRedirectPath;
+	}
+
+	public function getContainerId() {
+		return $this->containerId;
+	}
+
+	public function setContainerId($containerId) {
+		$this->containerId = $containerId;
+		$this->queryParameters["ContainerId"]=$containerId;
 	}
 	
 }

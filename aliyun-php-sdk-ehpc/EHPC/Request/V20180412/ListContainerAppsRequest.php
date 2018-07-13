@@ -19,38 +19,33 @@
  */
 namespace EHPC\Request\V20180412;
 
-class AddUsersRequest extends \RpcAcsRequest
+class ListContainerAppsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("EHPC", "2018-04-12", "AddUsers", "ehs", "openAPI");
+		parent::__construct("EHPC", "2018-04-12", "ListContainerApps", "ehs", "openAPI");
 	}
 
-	private  $clusterId;
+	private  $pageSize;
 
-	private  $Users;
+	private  $pageNumber;
 
-	public function getClusterId() {
-		return $this->clusterId;
+	public function getPageSize() {
+		return $this->pageSize;
 	}
 
-	public function setClusterId($clusterId) {
-		$this->clusterId = $clusterId;
-		$this->queryParameters["ClusterId"]=$clusterId;
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
-	public function getUsers() {
-		return $this->Users;
+	public function getPageNumber() {
+		return $this->pageNumber;
 	}
 
-	public function setUsers($Users) {
-		$this->Users = $Users;
-		for ($i = 0; $i < count($Users); $i ++) {	
-			$this->queryParameters['User.' . ($i + 1) . '.Name'] = $Users[$i]['Name'];
-			$this->queryParameters['User.' . ($i + 1) . '.Group'] = $Users[$i]['Group'];
-			$this->queryParameters['User.' . ($i + 1) . '.Password'] = $Users[$i]['Password'];
-
-		}
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 	
 }

@@ -19,16 +19,29 @@
  */
 namespace EHPC\Request\V20180412;
 
-class AddUsersRequest extends \RpcAcsRequest
+class PullImageRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("EHPC", "2018-04-12", "AddUsers", "ehs", "openAPI");
+		parent::__construct("EHPC", "2018-04-12", "PullImage", "ehs", "openAPI");
 	}
+
+	private  $containerType;
 
 	private  $clusterId;
 
-	private  $Users;
+	private  $repository;
+
+	private  $imageTag;
+
+	public function getContainerType() {
+		return $this->containerType;
+	}
+
+	public function setContainerType($containerType) {
+		$this->containerType = $containerType;
+		$this->queryParameters["ContainerType"]=$containerType;
+	}
 
 	public function getClusterId() {
 		return $this->clusterId;
@@ -39,18 +52,22 @@ class AddUsersRequest extends \RpcAcsRequest
 		$this->queryParameters["ClusterId"]=$clusterId;
 	}
 
-	public function getUsers() {
-		return $this->Users;
+	public function getRepository() {
+		return $this->repository;
 	}
 
-	public function setUsers($Users) {
-		$this->Users = $Users;
-		for ($i = 0; $i < count($Users); $i ++) {	
-			$this->queryParameters['User.' . ($i + 1) . '.Name'] = $Users[$i]['Name'];
-			$this->queryParameters['User.' . ($i + 1) . '.Group'] = $Users[$i]['Group'];
-			$this->queryParameters['User.' . ($i + 1) . '.Password'] = $Users[$i]['Password'];
+	public function setRepository($repository) {
+		$this->repository = $repository;
+		$this->queryParameters["Repository"]=$repository;
+	}
 
-		}
+	public function getImageTag() {
+		return $this->imageTag;
+	}
+
+	public function setImageTag($imageTag) {
+		$this->imageTag = $imageTag;
+		$this->queryParameters["ImageTag"]=$imageTag;
 	}
 	
 }

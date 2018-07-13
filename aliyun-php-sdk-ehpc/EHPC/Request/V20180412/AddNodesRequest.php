@@ -46,6 +46,8 @@ class AddNodesRequest extends \RpcAcsRequest
 
 	private  $ecsChargeType;
 
+	private  $instanceType;
+
 	private  $computeSpotPriceLimit;
 
 	public function getAutoRenewPeriod() {
@@ -136,6 +138,15 @@ class AddNodesRequest extends \RpcAcsRequest
 	public function setEcsChargeType($ecsChargeType) {
 		$this->ecsChargeType = $ecsChargeType;
 		$this->queryParameters["EcsChargeType"]=$ecsChargeType;
+	}
+
+	public function getInstanceType() {
+		return $this->instanceType;
+	}
+
+	public function setInstanceType($instanceType) {
+		$this->instanceType = $instanceType;
+		$this->queryParameters["InstanceType"]=$instanceType;
 	}
 
 	public function getComputeSpotPriceLimit() {
