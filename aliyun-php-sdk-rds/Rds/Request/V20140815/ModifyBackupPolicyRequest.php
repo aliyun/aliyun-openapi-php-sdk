@@ -27,34 +27,41 @@ class ModifyBackupPolicyRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $preferredBackupTime;
-
 	private  $preferredBackupPeriod;
-
-	private  $backupRetentionPeriod;
 
 	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
-	private  $ownerAccount;
+	private  $localLogRetentionHours;
 
-	private  $dBInstanceId;
+	private  $ownerAccount;
 
 	private  $backupLog;
 
+	private  $localLogRetentionSpace;
+
 	private  $ownerId;
+
+	private  $duplication;
+
+	private  $preferredBackupTime;
+
+	private  $backupRetentionPeriod;
+
+	private  $duplicationContent;
+
+	private  $highSpaceUsageProtection;
+
+	private  $dBInstanceId;
+
+	private  $duplicationLocation;
 
 	private  $logBackupRetentionPeriod;
 
-	public function getPreferredBackupTime() {
-		return $this->preferredBackupTime;
-	}
+	private  $enableBackupLog;
 
-	public function setPreferredBackupTime($preferredBackupTime) {
-		$this->preferredBackupTime = $preferredBackupTime;
-		$this->queryParameters["PreferredBackupTime"]=$preferredBackupTime;
-	}
+	private  $backupPolicyMode;
 
 	public function getPreferredBackupPeriod() {
 		return $this->preferredBackupPeriod;
@@ -63,15 +70,6 @@ class ModifyBackupPolicyRequest extends \RpcAcsRequest
 	public function setPreferredBackupPeriod($preferredBackupPeriod) {
 		$this->preferredBackupPeriod = $preferredBackupPeriod;
 		$this->queryParameters["PreferredBackupPeriod"]=$preferredBackupPeriod;
-	}
-
-	public function getBackupRetentionPeriod() {
-		return $this->backupRetentionPeriod;
-	}
-
-	public function setBackupRetentionPeriod($backupRetentionPeriod) {
-		$this->backupRetentionPeriod = $backupRetentionPeriod;
-		$this->queryParameters["BackupRetentionPeriod"]=$backupRetentionPeriod;
 	}
 
 	public function getResourceOwnerId() {
@@ -92,6 +90,15 @@ class ModifyBackupPolicyRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
+	public function getLocalLogRetentionHours() {
+		return $this->localLogRetentionHours;
+	}
+
+	public function setLocalLogRetentionHours($localLogRetentionHours) {
+		$this->localLogRetentionHours = $localLogRetentionHours;
+		$this->queryParameters["LocalLogRetentionHours"]=$localLogRetentionHours;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -99,15 +106,6 @@ class ModifyBackupPolicyRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getDBInstanceId() {
-		return $this->dBInstanceId;
-	}
-
-	public function setDBInstanceId($dBInstanceId) {
-		$this->dBInstanceId = $dBInstanceId;
-		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
 	}
 
 	public function getBackupLog() {
@@ -119,6 +117,15 @@ class ModifyBackupPolicyRequest extends \RpcAcsRequest
 		$this->queryParameters["BackupLog"]=$backupLog;
 	}
 
+	public function getLocalLogRetentionSpace() {
+		return $this->localLogRetentionSpace;
+	}
+
+	public function setLocalLogRetentionSpace($localLogRetentionSpace) {
+		$this->localLogRetentionSpace = $localLogRetentionSpace;
+		$this->queryParameters["LocalLogRetentionSpace"]=$localLogRetentionSpace;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -128,6 +135,69 @@ class ModifyBackupPolicyRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
+	public function getDuplication() {
+		return $this->duplication;
+	}
+
+	public function setDuplication($duplication) {
+		$this->duplication = $duplication;
+		$this->queryParameters["Duplication"]=$duplication;
+	}
+
+	public function getPreferredBackupTime() {
+		return $this->preferredBackupTime;
+	}
+
+	public function setPreferredBackupTime($preferredBackupTime) {
+		$this->preferredBackupTime = $preferredBackupTime;
+		$this->queryParameters["PreferredBackupTime"]=$preferredBackupTime;
+	}
+
+	public function getBackupRetentionPeriod() {
+		return $this->backupRetentionPeriod;
+	}
+
+	public function setBackupRetentionPeriod($backupRetentionPeriod) {
+		$this->backupRetentionPeriod = $backupRetentionPeriod;
+		$this->queryParameters["BackupRetentionPeriod"]=$backupRetentionPeriod;
+	}
+
+	public function getDuplicationContent() {
+		return $this->duplicationContent;
+	}
+
+	public function setDuplicationContent($duplicationContent) {
+		$this->duplicationContent = $duplicationContent;
+		$this->queryParameters["DuplicationContent"]=$duplicationContent;
+	}
+
+	public function getHighSpaceUsageProtection() {
+		return $this->highSpaceUsageProtection;
+	}
+
+	public function setHighSpaceUsageProtection($highSpaceUsageProtection) {
+		$this->highSpaceUsageProtection = $highSpaceUsageProtection;
+		$this->queryParameters["HighSpaceUsageProtection"]=$highSpaceUsageProtection;
+	}
+
+	public function getDBInstanceId() {
+		return $this->dBInstanceId;
+	}
+
+	public function setDBInstanceId($dBInstanceId) {
+		$this->dBInstanceId = $dBInstanceId;
+		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
+	}
+
+	public function getDuplicationLocation() {
+		return $this->duplicationLocation;
+	}
+
+	public function setDuplicationLocation($duplicationLocation) {
+		$this->duplicationLocation = $duplicationLocation;
+		$this->queryParameters["DuplicationLocation"]=$duplicationLocation;
+	}
+
 	public function getLogBackupRetentionPeriod() {
 		return $this->logBackupRetentionPeriod;
 	}
@@ -135,6 +205,24 @@ class ModifyBackupPolicyRequest extends \RpcAcsRequest
 	public function setLogBackupRetentionPeriod($logBackupRetentionPeriod) {
 		$this->logBackupRetentionPeriod = $logBackupRetentionPeriod;
 		$this->queryParameters["LogBackupRetentionPeriod"]=$logBackupRetentionPeriod;
+	}
+
+	public function getEnableBackupLog() {
+		return $this->enableBackupLog;
+	}
+
+	public function setEnableBackupLog($enableBackupLog) {
+		$this->enableBackupLog = $enableBackupLog;
+		$this->queryParameters["EnableBackupLog"]=$enableBackupLog;
+	}
+
+	public function getBackupPolicyMode() {
+		return $this->backupPolicyMode;
+	}
+
+	public function setBackupPolicyMode($backupPolicyMode) {
+		$this->backupPolicyMode = $backupPolicyMode;
+		$this->queryParameters["BackupPolicyMode"]=$backupPolicyMode;
 	}
 	
 }

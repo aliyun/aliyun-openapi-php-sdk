@@ -19,31 +19,33 @@
  */
 namespace Rds\Request\V20140815;
 
-class DescribeReplicasRequest extends \RpcAcsRequest
+class DescribeAvailableResourceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeReplicas", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeAvailableResource", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
-	private  $securityToken;
-
 	private  $resourceOwnerAccount;
-
-	private  $attachDbInstanceData;
 
 	private  $ownerAccount;
 
-	private  $replicaId;
-
-	private  $pageSize;
+	private  $engineVersion;
 
 	private  $ownerId;
 
-	private  $pageNumber;
+	private  $engine;
+
+	private  $zoneId;
+
+	private  $dBInstanceId;
+
+	private  $instanceChargeType;
+
+	private  $orderType;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -52,15 +54,6 @@ class DescribeReplicasRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -72,15 +65,6 @@ class DescribeReplicasRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getAttachDbInstanceData() {
-		return $this->attachDbInstanceData;
-	}
-
-	public function setAttachDbInstanceData($attachDbInstanceData) {
-		$this->attachDbInstanceData = $attachDbInstanceData;
-		$this->queryParameters["AttachDbInstanceData"]=$attachDbInstanceData;
-	}
-
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -90,22 +74,13 @@ class DescribeReplicasRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getReplicaId() {
-		return $this->replicaId;
+	public function getEngineVersion() {
+		return $this->engineVersion;
 	}
 
-	public function setReplicaId($replicaId) {
-		$this->replicaId = $replicaId;
-		$this->queryParameters["ReplicaId"]=$replicaId;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setEngineVersion($engineVersion) {
+		$this->engineVersion = $engineVersion;
+		$this->queryParameters["EngineVersion"]=$engineVersion;
 	}
 
 	public function getOwnerId() {
@@ -117,13 +92,49 @@ class DescribeReplicasRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getPageNumber() {
-		return $this->pageNumber;
+	public function getEngine() {
+		return $this->engine;
 	}
 
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
+	public function setEngine($engine) {
+		$this->engine = $engine;
+		$this->queryParameters["Engine"]=$engine;
+	}
+
+	public function getZoneId() {
+		return $this->zoneId;
+	}
+
+	public function setZoneId($zoneId) {
+		$this->zoneId = $zoneId;
+		$this->queryParameters["ZoneId"]=$zoneId;
+	}
+
+	public function getDBInstanceId() {
+		return $this->dBInstanceId;
+	}
+
+	public function setDBInstanceId($dBInstanceId) {
+		$this->dBInstanceId = $dBInstanceId;
+		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
+	}
+
+	public function getInstanceChargeType() {
+		return $this->instanceChargeType;
+	}
+
+	public function setInstanceChargeType($instanceChargeType) {
+		$this->instanceChargeType = $instanceChargeType;
+		$this->queryParameters["InstanceChargeType"]=$instanceChargeType;
+	}
+
+	public function getOrderType() {
+		return $this->orderType;
+	}
+
+	public function setOrderType($orderType) {
+		$this->orderType = $orderType;
+		$this->queryParameters["OrderType"]=$orderType;
 	}
 	
 }

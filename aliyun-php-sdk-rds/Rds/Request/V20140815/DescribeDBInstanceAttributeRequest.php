@@ -31,6 +31,8 @@ class DescribeDBInstanceAttributeRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
+	private  $expired;
+
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
@@ -55,6 +57,15 @@ class DescribeDBInstanceAttributeRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getExpired() {
+		return $this->expired;
+	}
+
+	public function setExpired($expired) {
+		$this->expired = $expired;
+		$this->queryParameters["Expired"]=$expired;
 	}
 
 	public function getResourceOwnerAccount() {

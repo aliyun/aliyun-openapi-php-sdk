@@ -19,11 +19,11 @@
  */
 namespace Rds\Request\V20140815;
 
-class CloneDBInstanceRequest extends \RpcAcsRequest
+class RecoveryDBInstanceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "CloneDBInstance", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "RecoveryDBInstance", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -57,9 +57,9 @@ class CloneDBInstanceRequest extends \RpcAcsRequest
 
 	private  $resourceGroupId;
 
-	private  $vPCId;
+	private  $targetDBInstanceId;
 
-	private  $zoneId;
+	private  $vPCId;
 
 	private  $dBInstanceDescription;
 
@@ -204,6 +204,15 @@ class CloneDBInstanceRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
 	}
 
+	public function getTargetDBInstanceId() {
+		return $this->targetDBInstanceId;
+	}
+
+	public function setTargetDBInstanceId($targetDBInstanceId) {
+		$this->targetDBInstanceId = $targetDBInstanceId;
+		$this->queryParameters["TargetDBInstanceId"]=$targetDBInstanceId;
+	}
+
 	public function getVPCId() {
 		return $this->vPCId;
 	}
@@ -211,15 +220,6 @@ class CloneDBInstanceRequest extends \RpcAcsRequest
 	public function setVPCId($vPCId) {
 		$this->vPCId = $vPCId;
 		$this->queryParameters["VPCId"]=$vPCId;
-	}
-
-	public function getZoneId() {
-		return $this->zoneId;
-	}
-
-	public function setZoneId($zoneId) {
-		$this->zoneId = $zoneId;
-		$this->queryParameters["ZoneId"]=$zoneId;
 	}
 
 	public function getDBInstanceDescription() {

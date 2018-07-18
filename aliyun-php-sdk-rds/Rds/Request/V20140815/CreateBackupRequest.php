@@ -31,6 +31,8 @@ class CreateBackupRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
+	private  $backupStrategy;
+
 	private  $dBName;
 
 	private  $resourceOwnerAccount;
@@ -59,6 +61,15 @@ class CreateBackupRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getBackupStrategy() {
+		return $this->backupStrategy;
+	}
+
+	public function setBackupStrategy($backupStrategy) {
+		$this->backupStrategy = $backupStrategy;
+		$this->queryParameters["BackupStrategy"]=$backupStrategy;
 	}
 
 	public function getDBName() {
