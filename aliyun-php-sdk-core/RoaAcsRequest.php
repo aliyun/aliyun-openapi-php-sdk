@@ -36,6 +36,7 @@ abstract class RoaAcsRequest extends AcsRequest
     private function initialize()
     {
         $this->setMethod("RAW");
+        $this->setAcceptFormat("JSON");
     }
     
     public function composeUrl($iSigner, $credential, $domain)
