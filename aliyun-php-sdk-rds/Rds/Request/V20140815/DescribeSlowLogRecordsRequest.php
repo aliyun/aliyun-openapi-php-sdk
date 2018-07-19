@@ -33,6 +33,8 @@ class DescribeSlowLogRecordsRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerAccount;
 
+	private  $queryTimeFormat;
+
 	private  $ownerAccount;
 
 	private  $endTime;
@@ -74,6 +76,15 @@ class DescribeSlowLogRecordsRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getQueryTimeFormat() {
+		return $this->queryTimeFormat;
+	}
+
+	public function setQueryTimeFormat($queryTimeFormat) {
+		$this->queryTimeFormat = $queryTimeFormat;
+		$this->queryParameters["QueryTimeFormat"]=$queryTimeFormat;
 	}
 
 	public function getOwnerAccount() {

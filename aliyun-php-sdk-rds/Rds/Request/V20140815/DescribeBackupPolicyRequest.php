@@ -37,6 +37,8 @@ class DescribeBackupPolicyRequest extends \RpcAcsRequest
 
 	private  $ownerId;
 
+	private  $backupPolicyMode;
+
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
 	}
@@ -80,6 +82,15 @@ class DescribeBackupPolicyRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getBackupPolicyMode() {
+		return $this->backupPolicyMode;
+	}
+
+	public function setBackupPolicyMode($backupPolicyMode) {
+		$this->backupPolicyMode = $backupPolicyMode;
+		$this->queryParameters["BackupPolicyMode"]=$backupPolicyMode;
 	}
 	
 }

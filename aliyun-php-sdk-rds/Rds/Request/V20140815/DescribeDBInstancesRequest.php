@@ -41,9 +41,13 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 
 	private  $tag3key;
 
+	private  $engineVersion;
+
 	private  $pageNumber;
 
 	private  $tag1value;
+
+	private  $expired;
 
 	private  $engine;
 
@@ -69,6 +73,8 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 
 	private  $dBInstanceType;
 
+	private  $dBInstanceClass;
+
 	private  $tags;
 
 	private  $vSwitchId;
@@ -79,7 +85,11 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 
 	private  $tag2value;
 
+	private  $zoneId;
+
 	private  $tag4key;
+
+	private  $payType;
 
 	private  $instanceNetworkType;
 
@@ -146,6 +156,15 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["Tag.3.key"]=$tag3key;
 	}
 
+	public function getEngineVersion() {
+		return $this->engineVersion;
+	}
+
+	public function setEngineVersion($engineVersion) {
+		$this->engineVersion = $engineVersion;
+		$this->queryParameters["EngineVersion"]=$engineVersion;
+	}
+
 	public function getPageNumber() {
 		return $this->pageNumber;
 	}
@@ -162,6 +181,15 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 	public function setTag1value($tag1value) {
 		$this->tag1value = $tag1value;
 		$this->queryParameters["Tag.1.value"]=$tag1value;
+	}
+
+	public function getExpired() {
+		return $this->expired;
+	}
+
+	public function setExpired($expired) {
+		$this->expired = $expired;
+		$this->queryParameters["Expired"]=$expired;
 	}
 
 	public function getEngine() {
@@ -272,6 +300,15 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["DBInstanceType"]=$dBInstanceType;
 	}
 
+	public function getDBInstanceClass() {
+		return $this->dBInstanceClass;
+	}
+
+	public function setDBInstanceClass($dBInstanceClass) {
+		$this->dBInstanceClass = $dBInstanceClass;
+		$this->queryParameters["DBInstanceClass"]=$dBInstanceClass;
+	}
+
 	public function getTags() {
 		return $this->tags;
 	}
@@ -317,6 +354,15 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["Tag.2.value"]=$tag2value;
 	}
 
+	public function getZoneId() {
+		return $this->zoneId;
+	}
+
+	public function setZoneId($zoneId) {
+		$this->zoneId = $zoneId;
+		$this->queryParameters["ZoneId"]=$zoneId;
+	}
+
 	public function getTag4key() {
 		return $this->tag4key;
 	}
@@ -324,6 +370,15 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 	public function setTag4key($tag4key) {
 		$this->tag4key = $tag4key;
 		$this->queryParameters["Tag.4.key"]=$tag4key;
+	}
+
+	public function getPayType() {
+		return $this->payType;
+	}
+
+	public function setPayType($payType) {
+		$this->payType = $payType;
+		$this->queryParameters["PayType"]=$payType;
 	}
 
 	public function getInstanceNetworkType() {

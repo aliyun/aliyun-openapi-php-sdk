@@ -19,16 +19,16 @@
  */
 namespace EHPC\Request\V20180412;
 
-class AddUsersRequest extends \RpcAcsRequest
+class ListInvocationStatusRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("EHPC", "2018-04-12", "AddUsers", "ehs", "openAPI");
+		parent::__construct("EHPC", "2018-04-12", "ListInvocationStatus", "ehs", "openAPI");
 	}
 
 	private  $clusterId;
 
-	private  $Users;
+	private  $commandId;
 
 	public function getClusterId() {
 		return $this->clusterId;
@@ -39,18 +39,13 @@ class AddUsersRequest extends \RpcAcsRequest
 		$this->queryParameters["ClusterId"]=$clusterId;
 	}
 
-	public function getUsers() {
-		return $this->Users;
+	public function getCommandId() {
+		return $this->commandId;
 	}
 
-	public function setUsers($Users) {
-		$this->Users = $Users;
-		for ($i = 0; $i < count($Users); $i ++) {	
-			$this->queryParameters['User.' . ($i + 1) . '.Name'] = $Users[$i]['Name'];
-			$this->queryParameters['User.' . ($i + 1) . '.Group'] = $Users[$i]['Group'];
-			$this->queryParameters['User.' . ($i + 1) . '.Password'] = $Users[$i]['Password'];
-
-		}
+	public function setCommandId($commandId) {
+		$this->commandId = $commandId;
+		$this->queryParameters["CommandId"]=$commandId;
 	}
 	
 }

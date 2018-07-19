@@ -28,23 +28,23 @@ class CreateJobTemplateRequest extends \RpcAcsRequest
 
 	private  $stderrRedirectPath;
 
+	private  $arrayRequest;
+
+	private  $packagePath;
+
 	private  $variables;
 
+	private  $name;
+
 	private  $runasUser;
+
+	private  $stdoutRedirectPath;
 
 	private  $reRunable;
 
 	private  $priority;
 
 	private  $commandLine;
-
-	private  $arrayRequest;
-
-	private  $packagePath;
-
-	private  $name;
-
-	private  $stdoutRedirectPath;
 
 	public function getStderrRedirectPath() {
 		return $this->stderrRedirectPath;
@@ -53,6 +53,24 @@ class CreateJobTemplateRequest extends \RpcAcsRequest
 	public function setStderrRedirectPath($stderrRedirectPath) {
 		$this->stderrRedirectPath = $stderrRedirectPath;
 		$this->queryParameters["StderrRedirectPath"]=$stderrRedirectPath;
+	}
+
+	public function getArrayRequest() {
+		return $this->arrayRequest;
+	}
+
+	public function setArrayRequest($arrayRequest) {
+		$this->arrayRequest = $arrayRequest;
+		$this->queryParameters["ArrayRequest"]=$arrayRequest;
+	}
+
+	public function getPackagePath() {
+		return $this->packagePath;
+	}
+
+	public function setPackagePath($packagePath) {
+		$this->packagePath = $packagePath;
+		$this->queryParameters["PackagePath"]=$packagePath;
 	}
 
 	public function getVariables() {
@@ -64,6 +82,15 @@ class CreateJobTemplateRequest extends \RpcAcsRequest
 		$this->queryParameters["Variables"]=$variables;
 	}
 
+	public function getName() {
+		return $this->name;
+	}
+
+	public function setName($name) {
+		$this->name = $name;
+		$this->queryParameters["Name"]=$name;
+	}
+
 	public function getRunasUser() {
 		return $this->runasUser;
 	}
@@ -71,6 +98,15 @@ class CreateJobTemplateRequest extends \RpcAcsRequest
 	public function setRunasUser($runasUser) {
 		$this->runasUser = $runasUser;
 		$this->queryParameters["RunasUser"]=$runasUser;
+	}
+
+	public function getStdoutRedirectPath() {
+		return $this->stdoutRedirectPath;
+	}
+
+	public function setStdoutRedirectPath($stdoutRedirectPath) {
+		$this->stdoutRedirectPath = $stdoutRedirectPath;
+		$this->queryParameters["StdoutRedirectPath"]=$stdoutRedirectPath;
 	}
 
 	public function getReRunable() {
@@ -98,42 +134,6 @@ class CreateJobTemplateRequest extends \RpcAcsRequest
 	public function setCommandLine($commandLine) {
 		$this->commandLine = $commandLine;
 		$this->queryParameters["CommandLine"]=$commandLine;
-	}
-
-	public function getArrayRequest() {
-		return $this->arrayRequest;
-	}
-
-	public function setArrayRequest($arrayRequest) {
-		$this->arrayRequest = $arrayRequest;
-		$this->queryParameters["ArrayRequest"]=$arrayRequest;
-	}
-
-	public function getPackagePath() {
-		return $this->packagePath;
-	}
-
-	public function setPackagePath($packagePath) {
-		$this->packagePath = $packagePath;
-		$this->queryParameters["PackagePath"]=$packagePath;
-	}
-
-	public function getName() {
-		return $this->name;
-	}
-
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
-	}
-
-	public function getStdoutRedirectPath() {
-		return $this->stdoutRedirectPath;
-	}
-
-	public function setStdoutRedirectPath($stdoutRedirectPath) {
-		$this->stdoutRedirectPath = $stdoutRedirectPath;
-		$this->queryParameters["StdoutRedirectPath"]=$stdoutRedirectPath;
 	}
 	
 }
