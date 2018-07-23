@@ -45,6 +45,8 @@ class CreateOfficeConversionTaskRequest extends \RpcAcsRequest
 
 	private  $endPage;
 
+	private  $tgtFileSuffix;
+
 	private  $sheetOnePage;
 
 	private  $password;
@@ -56,6 +58,8 @@ class CreateOfficeConversionTaskRequest extends \RpcAcsRequest
 	private  $tgtType;
 
 	private  $notifyEndpoint;
+
+	private  $tgtFilePrefix;
 
 	private  $srcUri;
 
@@ -142,6 +146,15 @@ class CreateOfficeConversionTaskRequest extends \RpcAcsRequest
 		$this->queryParameters["EndPage"]=$endPage;
 	}
 
+	public function getTgtFileSuffix() {
+		return $this->tgtFileSuffix;
+	}
+
+	public function setTgtFileSuffix($tgtFileSuffix) {
+		$this->tgtFileSuffix = $tgtFileSuffix;
+		$this->queryParameters["TgtFileSuffix"]=$tgtFileSuffix;
+	}
+
 	public function getSheetOnePage() {
 		return $this->sheetOnePage;
 	}
@@ -194,6 +207,15 @@ class CreateOfficeConversionTaskRequest extends \RpcAcsRequest
 	public function setNotifyEndpoint($notifyEndpoint) {
 		$this->notifyEndpoint = $notifyEndpoint;
 		$this->queryParameters["NotifyEndpoint"]=$notifyEndpoint;
+	}
+
+	public function getTgtFilePrefix() {
+		return $this->tgtFilePrefix;
+	}
+
+	public function setTgtFilePrefix($tgtFilePrefix) {
+		$this->tgtFilePrefix = $tgtFilePrefix;
+		$this->queryParameters["TgtFilePrefix"]=$tgtFilePrefix;
 	}
 
 	public function getSrcUri() {
