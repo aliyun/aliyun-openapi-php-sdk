@@ -19,21 +19,30 @@
  */
 namespace Cms\Request\V20180308;
 
-class ListEventRulesRequest extends \RpcAcsRequest
+class SendDryRunSystemEventRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cms", "2018-03-08", "ListEventRules", "cms", "openAPI");
+		parent::__construct("Cms", "2018-03-08", "SendDryRunSystemEvent", "cms", "openAPI");
 		$this->setMethod("POST");
 	}
 
+	private  $product;
+
 	private  $groupId;
 
-	private  $pageSize;
+	private  $eventName;
 
-	private  $namePrefix;
+	private  $eventContent;
 
-	private  $page;
+	public function getProduct() {
+		return $this->product;
+	}
+
+	public function setProduct($product) {
+		$this->product = $product;
+		$this->queryParameters["Product"]=$product;
+	}
 
 	public function getGroupId() {
 		return $this->groupId;
@@ -44,31 +53,22 @@ class ListEventRulesRequest extends \RpcAcsRequest
 		$this->queryParameters["GroupId"]=$groupId;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
+	public function getEventName() {
+		return $this->eventName;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setEventName($eventName) {
+		$this->eventName = $eventName;
+		$this->queryParameters["EventName"]=$eventName;
 	}
 
-	public function getNamePrefix() {
-		return $this->namePrefix;
+	public function getEventContent() {
+		return $this->eventContent;
 	}
 
-	public function setNamePrefix($namePrefix) {
-		$this->namePrefix = $namePrefix;
-		$this->queryParameters["NamePrefix"]=$namePrefix;
-	}
-
-	public function getPage() {
-		return $this->page;
-	}
-
-	public function setPage($page) {
-		$this->page = $page;
-		$this->queryParameters["Page"]=$page;
+	public function setEventContent($eventContent) {
+		$this->eventContent = $eventContent;
+		$this->queryParameters["EventContent"]=$eventContent;
 	}
 	
 }

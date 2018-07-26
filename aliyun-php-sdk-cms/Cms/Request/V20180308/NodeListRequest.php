@@ -39,9 +39,9 @@ class NodeListRequest extends \RpcAcsRequest
 
 	private  $userId;
 
-	private  $pageNumber;
-
 	private  $serialNumbers;
+
+	private  $pageNumber;
 
 	private  $status;
 
@@ -99,15 +99,6 @@ class NodeListRequest extends \RpcAcsRequest
 		$this->queryParameters["UserId"]=$userId;
 	}
 
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
 	public function getSerialNumbers() {
 		return $this->serialNumbers;
 	}
@@ -115,6 +106,15 @@ class NodeListRequest extends \RpcAcsRequest
 	public function setSerialNumbers($serialNumbers) {
 		$this->serialNumbers = $serialNumbers;
 		$this->queryParameters["SerialNumbers"]=$serialNumbers;
+	}
+
+	public function getPageNumber() {
+		return $this->pageNumber;
+	}
+
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 
 	public function getStatus() {

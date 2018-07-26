@@ -27,9 +27,9 @@ class QueryMetricTopRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $resourceOwnerId;
-
 	private  $period;
+
+	private  $resourceOwnerId;
 
 	private  $metric;
 
@@ -49,15 +49,6 @@ class QueryMetricTopRequest extends \RpcAcsRequest
 
 	private  $orderDesc;
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
 	public function getPeriod() {
 		return $this->period;
 	}
@@ -65,6 +56,15 @@ class QueryMetricTopRequest extends \RpcAcsRequest
 	public function setPeriod($period) {
 		$this->period = $period;
 		$this->queryParameters["Period"]=$period;
+	}
+
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
+	}
+
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
 	public function getMetric() {

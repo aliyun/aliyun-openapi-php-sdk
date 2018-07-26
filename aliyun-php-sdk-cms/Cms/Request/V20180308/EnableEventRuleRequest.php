@@ -27,7 +27,20 @@ class EnableEventRuleRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
+	private  $RuleNamess;
+
 	private  $ruleName;
+
+	public function getRuleNamess() {
+		return $this->RuleNamess;
+	}
+
+	public function setRuleNamess($RuleNamess) {
+		$this->RuleNamess = $RuleNamess;
+		for ($i = 0; $i < count($RuleNamess); $i ++) {	
+			$this->queryParameters["RuleNames.".($i+1)] = $RuleNamess[$i];
+		}
+	}
 
 	public function getRuleName() {
 		return $this->ruleName;
