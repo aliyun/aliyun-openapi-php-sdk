@@ -35,7 +35,13 @@ class DescribeInstanceAutoRenewAttributeRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
+	private  $renewalStatus;
+
+	private  $pageSize;
+
 	private  $ownerId;
+
+	private  $pageNumber;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -73,6 +79,24 @@ class DescribeInstanceAutoRenewAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
+	public function getRenewalStatus() {
+		return $this->renewalStatus;
+	}
+
+	public function setRenewalStatus($renewalStatus) {
+		$this->renewalStatus = $renewalStatus;
+		$this->queryParameters["RenewalStatus"]=$renewalStatus;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -80,6 +104,15 @@ class DescribeInstanceAutoRenewAttributeRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getPageNumber() {
+		return $this->pageNumber;
+	}
+
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 	
 }

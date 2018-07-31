@@ -29,6 +29,10 @@ class DescribeResourcesModificationRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
+	private  $memory;
+
+	private  $cores;
+
 	private  $migrateAcrossZone;
 
 	private  $instanceType;
@@ -52,6 +56,24 @@ class DescribeResourcesModificationRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getMemory() {
+		return $this->memory;
+	}
+
+	public function setMemory($memory) {
+		$this->memory = $memory;
+		$this->queryParameters["Memory"]=$memory;
+	}
+
+	public function getCores() {
+		return $this->cores;
+	}
+
+	public function setCores($cores) {
+		$this->cores = $cores;
+		$this->queryParameters["Cores"]=$cores;
 	}
 
 	public function getMigrateAcrossZone() {

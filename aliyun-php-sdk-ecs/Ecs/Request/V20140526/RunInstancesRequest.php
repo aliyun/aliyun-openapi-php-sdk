@@ -31,6 +31,8 @@ class RunInstancesRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
+	private  $uniqueSuffix;
+
 	private  $hpcClusterId;
 
 	private  $securityEnhancementStrategy;
@@ -137,6 +139,15 @@ class RunInstancesRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getUniqueSuffix() {
+		return $this->uniqueSuffix;
+	}
+
+	public function setUniqueSuffix($uniqueSuffix) {
+		$this->uniqueSuffix = $uniqueSuffix;
+		$this->queryParameters["UniqueSuffix"]=$uniqueSuffix;
 	}
 
 	public function getHpcClusterId() {

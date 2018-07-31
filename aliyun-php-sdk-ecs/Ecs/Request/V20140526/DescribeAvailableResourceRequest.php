@@ -29,9 +29,13 @@ class DescribeAvailableResourceRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
+	private  $memory;
+
 	private  $ioOptimized;
 
 	private  $dataDiskCategory;
+
+	private  $cores;
 
 	private  $systemDiskCategory;
 
@@ -64,6 +68,15 @@ class DescribeAvailableResourceRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getMemory() {
+		return $this->memory;
+	}
+
+	public function setMemory($memory) {
+		$this->memory = $memory;
+		$this->queryParameters["Memory"]=$memory;
+	}
+
 	public function getIoOptimized() {
 		return $this->ioOptimized;
 	}
@@ -80,6 +93,15 @@ class DescribeAvailableResourceRequest extends \RpcAcsRequest
 	public function setDataDiskCategory($dataDiskCategory) {
 		$this->dataDiskCategory = $dataDiskCategory;
 		$this->queryParameters["DataDiskCategory"]=$dataDiskCategory;
+	}
+
+	public function getCores() {
+		return $this->cores;
+	}
+
+	public function setCores($cores) {
+		$this->cores = $cores;
+		$this->queryParameters["Cores"]=$cores;
 	}
 
 	public function getSystemDiskCategory() {
