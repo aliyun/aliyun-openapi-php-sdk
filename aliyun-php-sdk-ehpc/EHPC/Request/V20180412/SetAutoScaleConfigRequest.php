@@ -34,7 +34,11 @@ class SetAutoScaleConfigRequest extends \RpcAcsRequest
 
 	private  $enableAutoGrow;
 
+	private  $spotPriceLimit;
+
 	private  $enableAutoShrink;
+
+	private  $spotStrategy;
 
 	private  $maxNodesInCluster;
 
@@ -84,6 +88,15 @@ class SetAutoScaleConfigRequest extends \RpcAcsRequest
 		$this->queryParameters["EnableAutoGrow"]=$enableAutoGrow;
 	}
 
+	public function getSpotPriceLimit() {
+		return $this->spotPriceLimit;
+	}
+
+	public function setSpotPriceLimit($spotPriceLimit) {
+		$this->spotPriceLimit = $spotPriceLimit;
+		$this->queryParameters["SpotPriceLimit"]=$spotPriceLimit;
+	}
+
 	public function getEnableAutoShrink() {
 		return $this->enableAutoShrink;
 	}
@@ -91,6 +104,15 @@ class SetAutoScaleConfigRequest extends \RpcAcsRequest
 	public function setEnableAutoShrink($enableAutoShrink) {
 		$this->enableAutoShrink = $enableAutoShrink;
 		$this->queryParameters["EnableAutoShrink"]=$enableAutoShrink;
+	}
+
+	public function getSpotStrategy() {
+		return $this->spotStrategy;
+	}
+
+	public function setSpotStrategy($spotStrategy) {
+		$this->spotStrategy = $spotStrategy;
+		$this->queryParameters["SpotStrategy"]=$spotStrategy;
 	}
 
 	public function getMaxNodesInCluster() {

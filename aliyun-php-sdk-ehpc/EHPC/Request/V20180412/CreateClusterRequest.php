@@ -86,6 +86,8 @@ class CreateClusterRequest extends \RpcAcsRequest
 
 	private  $ecsChargeType;
 
+	private  $inputFileUrl;
+
 	private  $vpcId;
 
 	private  $haEnable;
@@ -377,6 +379,15 @@ class CreateClusterRequest extends \RpcAcsRequest
 	public function setEcsChargeType($ecsChargeType) {
 		$this->ecsChargeType = $ecsChargeType;
 		$this->queryParameters["EcsChargeType"]=$ecsChargeType;
+	}
+
+	public function getInputFileUrl() {
+		return $this->inputFileUrl;
+	}
+
+	public function setInputFileUrl($inputFileUrl) {
+		$this->inputFileUrl = $inputFileUrl;
+		$this->queryParameters["InputFileUrl"]=$inputFileUrl;
 	}
 
 	public function getVpcId() {

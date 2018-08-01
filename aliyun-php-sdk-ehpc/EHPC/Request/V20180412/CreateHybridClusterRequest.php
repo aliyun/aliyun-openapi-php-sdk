@@ -26,12 +26,6 @@ class CreateHybridClusterRequest extends \RpcAcsRequest
 		parent::__construct("EHPC", "2018-04-12", "CreateHybridCluster", "ehs", "openAPI");
 	}
 
-	private  $volumeProtocol;
-
-	private  $osTag;
-
-	private  $remoteDirectory;
-
 	private  $ehpcVersion;
 
 	private  $securityGroupId;
@@ -44,11 +38,25 @@ class CreateHybridClusterRequest extends \RpcAcsRequest
 
 	private  $ecsOrderComputeInstanceType;
 
-	private  $vSwitchId;
+	private  $onPremiseVolumeRemotePath;
 
 	private  $volumeType;
 
 	private  $password;
+
+	private  $onPremiseVolumeMountPoint;
+
+	private  $onPremiseVolumeProtocol;
+
+	private  $volumeProtocol;
+
+	private  $onPremiseVolumeLocalPath;
+
+	private  $osTag;
+
+	private  $remoteDirectory;
+
+	private  $vSwitchId;
 
 	private  $nodes;
 
@@ -67,33 +75,6 @@ class CreateHybridClusterRequest extends \RpcAcsRequest
 	private  $zoneId;
 
 	private  $location;
-
-	public function getVolumeProtocol() {
-		return $this->volumeProtocol;
-	}
-
-	public function setVolumeProtocol($volumeProtocol) {
-		$this->volumeProtocol = $volumeProtocol;
-		$this->queryParameters["VolumeProtocol"]=$volumeProtocol;
-	}
-
-	public function getOsTag() {
-		return $this->osTag;
-	}
-
-	public function setOsTag($osTag) {
-		$this->osTag = $osTag;
-		$this->queryParameters["OsTag"]=$osTag;
-	}
-
-	public function getRemoteDirectory() {
-		return $this->remoteDirectory;
-	}
-
-	public function setRemoteDirectory($remoteDirectory) {
-		$this->remoteDirectory = $remoteDirectory;
-		$this->queryParameters["RemoteDirectory"]=$remoteDirectory;
-	}
 
 	public function getEhpcVersion() {
 		return $this->ehpcVersion;
@@ -149,13 +130,13 @@ class CreateHybridClusterRequest extends \RpcAcsRequest
 		$this->queryParameters["EcsOrder.Compute.InstanceType"]=$ecsOrderComputeInstanceType;
 	}
 
-	public function getVSwitchId() {
-		return $this->vSwitchId;
+	public function getOnPremiseVolumeRemotePath() {
+		return $this->onPremiseVolumeRemotePath;
 	}
 
-	public function setVSwitchId($vSwitchId) {
-		$this->vSwitchId = $vSwitchId;
-		$this->queryParameters["VSwitchId"]=$vSwitchId;
+	public function setOnPremiseVolumeRemotePath($onPremiseVolumeRemotePath) {
+		$this->onPremiseVolumeRemotePath = $onPremiseVolumeRemotePath;
+		$this->queryParameters["OnPremiseVolumeRemotePath"]=$onPremiseVolumeRemotePath;
 	}
 
 	public function getVolumeType() {
@@ -174,6 +155,69 @@ class CreateHybridClusterRequest extends \RpcAcsRequest
 	public function setPassword($password) {
 		$this->password = $password;
 		$this->queryParameters["Password"]=$password;
+	}
+
+	public function getOnPremiseVolumeMountPoint() {
+		return $this->onPremiseVolumeMountPoint;
+	}
+
+	public function setOnPremiseVolumeMountPoint($onPremiseVolumeMountPoint) {
+		$this->onPremiseVolumeMountPoint = $onPremiseVolumeMountPoint;
+		$this->queryParameters["OnPremiseVolumeMountPoint"]=$onPremiseVolumeMountPoint;
+	}
+
+	public function getOnPremiseVolumeProtocol() {
+		return $this->onPremiseVolumeProtocol;
+	}
+
+	public function setOnPremiseVolumeProtocol($onPremiseVolumeProtocol) {
+		$this->onPremiseVolumeProtocol = $onPremiseVolumeProtocol;
+		$this->queryParameters["OnPremiseVolumeProtocol"]=$onPremiseVolumeProtocol;
+	}
+
+	public function getVolumeProtocol() {
+		return $this->volumeProtocol;
+	}
+
+	public function setVolumeProtocol($volumeProtocol) {
+		$this->volumeProtocol = $volumeProtocol;
+		$this->queryParameters["VolumeProtocol"]=$volumeProtocol;
+	}
+
+	public function getOnPremiseVolumeLocalPath() {
+		return $this->onPremiseVolumeLocalPath;
+	}
+
+	public function setOnPremiseVolumeLocalPath($onPremiseVolumeLocalPath) {
+		$this->onPremiseVolumeLocalPath = $onPremiseVolumeLocalPath;
+		$this->queryParameters["OnPremiseVolumeLocalPath"]=$onPremiseVolumeLocalPath;
+	}
+
+	public function getOsTag() {
+		return $this->osTag;
+	}
+
+	public function setOsTag($osTag) {
+		$this->osTag = $osTag;
+		$this->queryParameters["OsTag"]=$osTag;
+	}
+
+	public function getRemoteDirectory() {
+		return $this->remoteDirectory;
+	}
+
+	public function setRemoteDirectory($remoteDirectory) {
+		$this->remoteDirectory = $remoteDirectory;
+		$this->queryParameters["RemoteDirectory"]=$remoteDirectory;
+	}
+
+	public function getVSwitchId() {
+		return $this->vSwitchId;
+	}
+
+	public function setVSwitchId($vSwitchId) {
+		$this->vSwitchId = $vSwitchId;
+		$this->queryParameters["VSwitchId"]=$vSwitchId;
 	}
 
 	public function getNodes() {
