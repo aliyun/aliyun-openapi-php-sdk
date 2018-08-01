@@ -31,6 +31,8 @@ class ListNotifyPolicyRequest extends \RpcAcsRequest
 
 	private  $alertName;
 
+	private  $groupId;
+
 	private  $pageSize;
 
 	private  $id;
@@ -53,6 +55,15 @@ class ListNotifyPolicyRequest extends \RpcAcsRequest
 	public function setAlertName($alertName) {
 		$this->alertName = $alertName;
 		$this->queryParameters["AlertName"]=$alertName;
+	}
+
+	public function getGroupId() {
+		return $this->groupId;
+	}
+
+	public function setGroupId($groupId) {
+		$this->groupId = $groupId;
+		$this->queryParameters["GroupId"]=$groupId;
 	}
 
 	public function getPageSize() {
