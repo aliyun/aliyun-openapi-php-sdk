@@ -31,6 +31,8 @@ class UpdateAlarmRequest extends \RpcAcsRequest
 
 	private  $webhook;
 
+	private  $dryRun;
+
 	private  $contactGroups;
 
 	private  $endTime;
@@ -69,6 +71,15 @@ class UpdateAlarmRequest extends \RpcAcsRequest
 	public function setWebhook($webhook) {
 		$this->webhook = $webhook;
 		$this->queryParameters["Webhook"]=$webhook;
+	}
+
+	public function getDryRun() {
+		return $this->dryRun;
+	}
+
+	public function setDryRun($dryRun) {
+		$this->dryRun = $dryRun;
+		$this->queryParameters["DryRun"]=$dryRun;
 	}
 
 	public function getContactGroups() {

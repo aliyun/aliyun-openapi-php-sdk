@@ -31,6 +31,8 @@ class CreateAlarmRequest extends \RpcAcsRequest
 
 	private  $webhook;
 
+	private  $dryRun;
+
 	private  $contactGroups;
 
 	private  $endTime;
@@ -39,9 +41,9 @@ class CreateAlarmRequest extends \RpcAcsRequest
 
 	private  $startTime;
 
-	private  $namespace;
-
 	private  $name;
+
+	private  $namespace;
 
 	private  $evaluationCount;
 
@@ -73,6 +75,15 @@ class CreateAlarmRequest extends \RpcAcsRequest
 	public function setWebhook($webhook) {
 		$this->webhook = $webhook;
 		$this->queryParameters["Webhook"]=$webhook;
+	}
+
+	public function getDryRun() {
+		return $this->dryRun;
+	}
+
+	public function setDryRun($dryRun) {
+		$this->dryRun = $dryRun;
+		$this->queryParameters["DryRun"]=$dryRun;
 	}
 
 	public function getContactGroups() {
@@ -111,15 +122,6 @@ class CreateAlarmRequest extends \RpcAcsRequest
 		$this->queryParameters["StartTime"]=$startTime;
 	}
 
-	public function getNamespace() {
-		return $this->namespace;
-	}
-
-	public function setNamespace($namespace) {
-		$this->namespace = $namespace;
-		$this->queryParameters["Namespace"]=$namespace;
-	}
-
 	public function getName() {
 		return $this->name;
 	}
@@ -127,6 +129,15 @@ class CreateAlarmRequest extends \RpcAcsRequest
 	public function setName($name) {
 		$this->name = $name;
 		$this->queryParameters["Name"]=$name;
+	}
+
+	public function getNamespace() {
+		return $this->namespace;
+	}
+
+	public function setNamespace($namespace) {
+		$this->namespace = $namespace;
+		$this->queryParameters["Namespace"]=$namespace;
 	}
 
 	public function getEvaluationCount() {
