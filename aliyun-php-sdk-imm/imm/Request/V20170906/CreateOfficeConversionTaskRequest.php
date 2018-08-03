@@ -63,6 +63,8 @@ class CreateOfficeConversionTaskRequest extends \RpcAcsRequest
 
 	private  $srcUri;
 
+	private  $tgtFilePages;
+
 	private  $tgtUri;
 
 	public function getImageSpec() {
@@ -225,6 +227,15 @@ class CreateOfficeConversionTaskRequest extends \RpcAcsRequest
 	public function setSrcUri($srcUri) {
 		$this->srcUri = $srcUri;
 		$this->queryParameters["SrcUri"]=$srcUri;
+	}
+
+	public function getTgtFilePages() {
+		return $this->tgtFilePages;
+	}
+
+	public function setTgtFilePages($tgtFilePages) {
+		$this->tgtFilePages = $tgtFilePages;
+		$this->queryParameters["TgtFilePages"]=$tgtFilePages;
 	}
 
 	public function getTgtUri() {
