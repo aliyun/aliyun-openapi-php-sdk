@@ -19,24 +19,24 @@
  */
 namespace EHPC\Request\V20180412;
 
-class GetHybridClusterConfigRequest extends \RpcAcsRequest
+class AddLocalNodesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("EHPC", "2018-04-12", "GetHybridClusterConfig", "ehs", "openAPI");
+		parent::__construct("EHPC", "2018-04-12", "AddLocalNodes", "ehs", "openAPI");
 	}
 
-	private  $node;
+	private  $nodes;
 
 	private  $clusterId;
 
-	public function getNode() {
-		return $this->node;
+	public function getNodes() {
+		return $this->nodes;
 	}
 
-	public function setNode($node) {
-		$this->node = $node;
-		$this->queryParameters["Node"]=$node;
+	public function setNodes($nodes) {
+		$this->nodes = $nodes;
+		$this->queryParameters["Nodes"]=$nodes;
 	}
 
 	public function getClusterId() {

@@ -19,24 +19,28 @@
  */
 namespace EHPC\Request\V20180412;
 
-class GetHybridClusterConfigRequest extends \RpcAcsRequest
+class DeleteImageRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("EHPC", "2018-04-12", "GetHybridClusterConfig", "ehs", "openAPI");
+		parent::__construct("EHPC", "2018-04-12", "DeleteImage", "ehs", "openAPI");
 	}
 
-	private  $node;
+	private  $containerType;
 
 	private  $clusterId;
 
-	public function getNode() {
-		return $this->node;
+	private  $repository;
+
+	private  $imageTag;
+
+	public function getContainerType() {
+		return $this->containerType;
 	}
 
-	public function setNode($node) {
-		$this->node = $node;
-		$this->queryParameters["Node"]=$node;
+	public function setContainerType($containerType) {
+		$this->containerType = $containerType;
+		$this->queryParameters["ContainerType"]=$containerType;
 	}
 
 	public function getClusterId() {
@@ -46,6 +50,24 @@ class GetHybridClusterConfigRequest extends \RpcAcsRequest
 	public function setClusterId($clusterId) {
 		$this->clusterId = $clusterId;
 		$this->queryParameters["ClusterId"]=$clusterId;
+	}
+
+	public function getRepository() {
+		return $this->repository;
+	}
+
+	public function setRepository($repository) {
+		$this->repository = $repository;
+		$this->queryParameters["Repository"]=$repository;
+	}
+
+	public function getImageTag() {
+		return $this->imageTag;
+	}
+
+	public function setImageTag($imageTag) {
+		$this->imageTag = $imageTag;
+		$this->queryParameters["ImageTag"]=$imageTag;
 	}
 	
 }
