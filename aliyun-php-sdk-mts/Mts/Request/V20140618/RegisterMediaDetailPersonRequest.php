@@ -35,6 +35,8 @@ class RegisterMediaDetailPersonRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
+	private  $personLib;
+
 	private  $ownerId;
 
 	private  $category;
@@ -75,6 +77,15 @@ class RegisterMediaDetailPersonRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getPersonLib() {
+		return $this->personLib;
+	}
+
+	public function setPersonLib($personLib) {
+		$this->personLib = $personLib;
+		$this->queryParameters["PersonLib"]=$personLib;
 	}
 
 	public function getOwnerId() {

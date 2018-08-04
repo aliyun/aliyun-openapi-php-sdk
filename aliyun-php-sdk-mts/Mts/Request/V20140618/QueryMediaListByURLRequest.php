@@ -29,6 +29,8 @@ class QueryMediaListByURLRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
+	private  $includeSummaryList;
+
 	private  $resourceOwnerAccount;
 
 	private  $includeSnapshotList;
@@ -50,6 +52,15 @@ class QueryMediaListByURLRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getIncludeSummaryList() {
+		return $this->includeSummaryList;
+	}
+
+	public function setIncludeSummaryList($includeSummaryList) {
+		$this->includeSummaryList = $includeSummaryList;
+		$this->queryParameters["IncludeSummaryList"]=$includeSummaryList;
 	}
 
 	public function getResourceOwnerAccount() {

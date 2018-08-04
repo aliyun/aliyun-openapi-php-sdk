@@ -19,27 +19,35 @@
  */
 namespace Mts\Request\V20140618;
 
-class AddVideoSummaryPipelineRequest extends \RpcAcsRequest
+class SubmitComplexJobRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "AddVideoSummaryPipeline", "mts", "openAPI");
+		parent::__construct("Mts", "2014-06-18", "SubmitComplexJob", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
+	private  $transcodeOutput;
+
 	private  $resourceOwnerAccount;
+
+	private  $inputs;
 
 	private  $ownerAccount;
 
-	private  $name;
-
-	private  $notifyConfig;
+	private  $outputLocation;
 
 	private  $ownerId;
 
-	private  $priority;
+	private  $pipelineId;
+
+	private  $outputBucket;
+
+	private  $userData;
+
+	private  $complexConfigs;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -48,6 +56,15 @@ class AddVideoSummaryPipelineRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getTranscodeOutput() {
+		return $this->transcodeOutput;
+	}
+
+	public function setTranscodeOutput($transcodeOutput) {
+		$this->transcodeOutput = $transcodeOutput;
+		$this->queryParameters["TranscodeOutput"]=$transcodeOutput;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -59,6 +76,15 @@ class AddVideoSummaryPipelineRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
+	public function getInputs() {
+		return $this->inputs;
+	}
+
+	public function setInputs($inputs) {
+		$this->inputs = $inputs;
+		$this->queryParameters["Inputs"]=$inputs;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -68,22 +94,13 @@ class AddVideoSummaryPipelineRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getName() {
-		return $this->name;
+	public function getOutputLocation() {
+		return $this->outputLocation;
 	}
 
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
-	}
-
-	public function getNotifyConfig() {
-		return $this->notifyConfig;
-	}
-
-	public function setNotifyConfig($notifyConfig) {
-		$this->notifyConfig = $notifyConfig;
-		$this->queryParameters["NotifyConfig"]=$notifyConfig;
+	public function setOutputLocation($outputLocation) {
+		$this->outputLocation = $outputLocation;
+		$this->queryParameters["OutputLocation"]=$outputLocation;
 	}
 
 	public function getOwnerId() {
@@ -95,13 +112,40 @@ class AddVideoSummaryPipelineRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getPriority() {
-		return $this->priority;
+	public function getPipelineId() {
+		return $this->pipelineId;
 	}
 
-	public function setPriority($priority) {
-		$this->priority = $priority;
-		$this->queryParameters["Priority"]=$priority;
+	public function setPipelineId($pipelineId) {
+		$this->pipelineId = $pipelineId;
+		$this->queryParameters["PipelineId"]=$pipelineId;
+	}
+
+	public function getOutputBucket() {
+		return $this->outputBucket;
+	}
+
+	public function setOutputBucket($outputBucket) {
+		$this->outputBucket = $outputBucket;
+		$this->queryParameters["OutputBucket"]=$outputBucket;
+	}
+
+	public function getUserData() {
+		return $this->userData;
+	}
+
+	public function setUserData($userData) {
+		$this->userData = $userData;
+		$this->queryParameters["UserData"]=$userData;
+	}
+
+	public function getComplexConfigs() {
+		return $this->complexConfigs;
+	}
+
+	public function setComplexConfigs($complexConfigs) {
+		$this->complexConfigs = $complexConfigs;
+		$this->queryParameters["ComplexConfigs"]=$complexConfigs;
 	}
 	
 }

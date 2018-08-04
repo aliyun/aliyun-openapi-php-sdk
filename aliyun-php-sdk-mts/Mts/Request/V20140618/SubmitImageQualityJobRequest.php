@@ -19,13 +19,17 @@
  */
 namespace Mts\Request\V20140618;
 
-class ListVideoSummaryPipelineRequest extends \RpcAcsRequest
+class SubmitImageQualityJobRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "ListVideoSummaryPipeline", "mts", "openAPI");
+		parent::__construct("Mts", "2014-06-18", "SubmitImageQualityJob", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
+
+	private  $input;
+
+	private  $userData;
 
 	private  $resourceOwnerId;
 
@@ -33,13 +37,27 @@ class ListVideoSummaryPipelineRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
-	private  $pageSize;
-
-	private  $state;
-
 	private  $ownerId;
 
-	private  $pageNumber;
+	private  $pipelineId;
+
+	public function getInput() {
+		return $this->input;
+	}
+
+	public function setInput($input) {
+		$this->input = $input;
+		$this->queryParameters["Input"]=$input;
+	}
+
+	public function getUserData() {
+		return $this->userData;
+	}
+
+	public function setUserData($userData) {
+		$this->userData = $userData;
+		$this->queryParameters["UserData"]=$userData;
+	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -68,24 +86,6 @@ class ListVideoSummaryPipelineRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getState() {
-		return $this->state;
-	}
-
-	public function setState($state) {
-		$this->state = $state;
-		$this->queryParameters["State"]=$state;
-	}
-
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -95,13 +95,13 @@ class ListVideoSummaryPipelineRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getPageNumber() {
-		return $this->pageNumber;
+	public function getPipelineId() {
+		return $this->pipelineId;
 	}
 
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
+	public function setPipelineId($pipelineId) {
+		$this->pipelineId = $pipelineId;
+		$this->queryParameters["PipelineId"]=$pipelineId;
 	}
 	
 }

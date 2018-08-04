@@ -39,6 +39,8 @@ class CreateSessionRequest extends \RpcAcsRequest
 
 	private  $ownerId;
 
+	private  $mediaId;
+
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
 	}
@@ -91,6 +93,15 @@ class CreateSessionRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getMediaId() {
+		return $this->mediaId;
+	}
+
+	public function setMediaId($mediaId) {
+		$this->mediaId = $mediaId;
+		$this->queryParameters["MediaId"]=$mediaId;
 	}
 	
 }

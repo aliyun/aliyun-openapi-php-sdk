@@ -39,6 +39,8 @@ class PlayInfoRequest extends \RpcAcsRequest
 
 	private  $hlsUriToken;
 
+	private  $terminal;
+
 	private  $ownerId;
 
 	private  $mediaId;
@@ -101,6 +103,15 @@ class PlayInfoRequest extends \RpcAcsRequest
 	public function setHlsUriToken($hlsUriToken) {
 		$this->hlsUriToken = $hlsUriToken;
 		$this->queryParameters["HlsUriToken"]=$hlsUriToken;
+	}
+
+	public function getTerminal() {
+		return $this->terminal;
+	}
+
+	public function setTerminal($terminal) {
+		$this->terminal = $terminal;
+		$this->queryParameters["Terminal"]=$terminal;
 	}
 
 	public function getOwnerId() {

@@ -19,31 +19,23 @@
  */
 namespace Mts\Request\V20140618;
 
-class GetLicenseRequest extends \RpcAcsRequest
+class QueryVideoGifJobListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "GetLicense", "mts", "openAPI");
+		parent::__construct("Mts", "2014-06-18", "QueryVideoGifJobList", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
-	private  $data;
-
 	private  $resourceOwnerAccount;
+
+	private  $jobIds;
 
 	private  $ownerAccount;
 
-	private  $header;
-
 	private  $ownerId;
-
-	private  $mediaId;
-
-	private  $type;
-
-	private  $licenseUrl;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -52,15 +44,6 @@ class GetLicenseRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getData() {
-		return $this->data;
-	}
-
-	public function setData($data) {
-		$this->data = $data;
-		$this->queryParameters["Data"]=$data;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -72,6 +55,15 @@ class GetLicenseRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
+	public function getJobIds() {
+		return $this->jobIds;
+	}
+
+	public function setJobIds($jobIds) {
+		$this->jobIds = $jobIds;
+		$this->queryParameters["JobIds"]=$jobIds;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -81,15 +73,6 @@ class GetLicenseRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getHeader() {
-		return $this->header;
-	}
-
-	public function setHeader($header) {
-		$this->header = $header;
-		$this->queryParameters["Header"]=$header;
-	}
-
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -97,33 +80,6 @@ class GetLicenseRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getMediaId() {
-		return $this->mediaId;
-	}
-
-	public function setMediaId($mediaId) {
-		$this->mediaId = $mediaId;
-		$this->queryParameters["MediaId"]=$mediaId;
-	}
-
-	public function getType() {
-		return $this->type;
-	}
-
-	public function setType($type) {
-		$this->type = $type;
-		$this->queryParameters["Type"]=$type;
-	}
-
-	public function getLicenseUrl() {
-		return $this->licenseUrl;
-	}
-
-	public function setLicenseUrl($licenseUrl) {
-		$this->licenseUrl = $licenseUrl;
-		$this->queryParameters["LicenseUrl"]=$licenseUrl;
 	}
 	
 }

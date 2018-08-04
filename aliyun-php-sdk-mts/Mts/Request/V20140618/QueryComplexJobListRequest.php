@@ -19,11 +19,11 @@
  */
 namespace Mts\Request\V20140618;
 
-class UpdateVideoSummaryPipelineRequest extends \RpcAcsRequest
+class QueryComplexJobListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Mts", "2014-06-18", "UpdateVideoSummaryPipeline", "mts", "openAPI");
+		parent::__construct("Mts", "2014-06-18", "QueryComplexJobList", "mts", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -31,19 +31,11 @@ class UpdateVideoSummaryPipelineRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerAccount;
 
+	private  $jobIds;
+
 	private  $ownerAccount;
 
-	private  $name;
-
-	private  $state;
-
-	private  $notifyConfig;
-
 	private  $ownerId;
-
-	private  $priority;
-
-	private  $pipelineId;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -63,6 +55,15 @@ class UpdateVideoSummaryPipelineRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
+	public function getJobIds() {
+		return $this->jobIds;
+	}
+
+	public function setJobIds($jobIds) {
+		$this->jobIds = $jobIds;
+		$this->queryParameters["JobIds"]=$jobIds;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -72,33 +73,6 @@ class UpdateVideoSummaryPipelineRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getName() {
-		return $this->name;
-	}
-
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
-	}
-
-	public function getState() {
-		return $this->state;
-	}
-
-	public function setState($state) {
-		$this->state = $state;
-		$this->queryParameters["State"]=$state;
-	}
-
-	public function getNotifyConfig() {
-		return $this->notifyConfig;
-	}
-
-	public function setNotifyConfig($notifyConfig) {
-		$this->notifyConfig = $notifyConfig;
-		$this->queryParameters["NotifyConfig"]=$notifyConfig;
-	}
-
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -106,24 +80,6 @@ class UpdateVideoSummaryPipelineRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getPriority() {
-		return $this->priority;
-	}
-
-	public function setPriority($priority) {
-		$this->priority = $priority;
-		$this->queryParameters["Priority"]=$priority;
-	}
-
-	public function getPipelineId() {
-		return $this->pipelineId;
-	}
-
-	public function setPipelineId($pipelineId) {
-		$this->pipelineId = $pipelineId;
-		$this->queryParameters["PipelineId"]=$pipelineId;
 	}
 	
 }

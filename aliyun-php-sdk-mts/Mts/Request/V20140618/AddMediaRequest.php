@@ -35,9 +35,13 @@ class AddMediaRequest extends \RpcAcsRequest
 
 	private  $description;
 
+	private  $overrideParams;
+
 	private  $ownerId;
 
 	private  $title;
+
+	private  $inputUnbind;
 
 	private  $tags;
 
@@ -87,6 +91,15 @@ class AddMediaRequest extends \RpcAcsRequest
 		$this->queryParameters["Description"]=$description;
 	}
 
+	public function getOverrideParams() {
+		return $this->overrideParams;
+	}
+
+	public function setOverrideParams($overrideParams) {
+		$this->overrideParams = $overrideParams;
+		$this->queryParameters["OverrideParams"]=$overrideParams;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -103,6 +116,15 @@ class AddMediaRequest extends \RpcAcsRequest
 	public function setTitle($title) {
 		$this->title = $title;
 		$this->queryParameters["Title"]=$title;
+	}
+
+	public function getInputUnbind() {
+		return $this->inputUnbind;
+	}
+
+	public function setInputUnbind($inputUnbind) {
+		$this->inputUnbind = $inputUnbind;
+		$this->queryParameters["InputUnbind"]=$inputUnbind;
 	}
 
 	public function getTags() {

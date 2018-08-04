@@ -31,6 +31,8 @@ class SubmitMediaInfoJobRequest extends \RpcAcsRequest
 
 	private  $userData;
 
+	private  $async;
+
 	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
@@ -57,6 +59,15 @@ class SubmitMediaInfoJobRequest extends \RpcAcsRequest
 	public function setUserData($userData) {
 		$this->userData = $userData;
 		$this->queryParameters["UserData"]=$userData;
+	}
+
+	public function getAsync() {
+		return $this->async;
+	}
+
+	public function setAsync($async) {
+		$this->async = $async;
+		$this->queryParameters["Async"]=$async;
 	}
 
 	public function getResourceOwnerId() {
