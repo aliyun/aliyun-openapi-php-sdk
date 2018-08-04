@@ -33,6 +33,8 @@ class SearchMediaRequest extends \RpcAcsRequest
 
 	private  $pageNo;
 
+	private  $searchType;
+
 	private  $match;
 
 	private  $pageSize;
@@ -42,8 +44,6 @@ class SearchMediaRequest extends \RpcAcsRequest
 	private  $ownerId;
 
 	private  $fields;
-
-	private  $mediaType;
 
 	private  $scrollToken;
 
@@ -72,6 +72,15 @@ class SearchMediaRequest extends \RpcAcsRequest
 	public function setPageNo($pageNo) {
 		$this->pageNo = $pageNo;
 		$this->queryParameters["PageNo"]=$pageNo;
+	}
+
+	public function getSearchType() {
+		return $this->searchType;
+	}
+
+	public function setSearchType($searchType) {
+		$this->searchType = $searchType;
+		$this->queryParameters["SearchType"]=$searchType;
 	}
 
 	public function getMatch() {
@@ -117,15 +126,6 @@ class SearchMediaRequest extends \RpcAcsRequest
 	public function setFields($fields) {
 		$this->fields = $fields;
 		$this->queryParameters["Fields"]=$fields;
-	}
-
-	public function getMediaType() {
-		return $this->mediaType;
-	}
-
-	public function setMediaType($mediaType) {
-		$this->mediaType = $mediaType;
-		$this->queryParameters["MediaType"]=$mediaType;
 	}
 
 	public function getScrollToken() {

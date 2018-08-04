@@ -29,6 +29,8 @@ class SetMessageCallbackRequest extends \RpcAcsRequest
 
 	private  $callbackType;
 
+	private  $authKey;
+
 	private  $resourceOwnerId;
 
 	private  $callbackSwitch;
@@ -38,6 +40,8 @@ class SetMessageCallbackRequest extends \RpcAcsRequest
 	private  $ownerAccount;
 
 	private  $eventTypeList;
+
+	private  $authSwitch;
 
 	private  $callbackURL;
 
@@ -50,6 +54,15 @@ class SetMessageCallbackRequest extends \RpcAcsRequest
 	public function setCallbackType($callbackType) {
 		$this->callbackType = $callbackType;
 		$this->queryParameters["CallbackType"]=$callbackType;
+	}
+
+	public function getAuthKey() {
+		return $this->authKey;
+	}
+
+	public function setAuthKey($authKey) {
+		$this->authKey = $authKey;
+		$this->queryParameters["AuthKey"]=$authKey;
 	}
 
 	public function getResourceOwnerId() {
@@ -95,6 +108,15 @@ class SetMessageCallbackRequest extends \RpcAcsRequest
 	public function setEventTypeList($eventTypeList) {
 		$this->eventTypeList = $eventTypeList;
 		$this->queryParameters["EventTypeList"]=$eventTypeList;
+	}
+
+	public function getAuthSwitch() {
+		return $this->authSwitch;
+	}
+
+	public function setAuthSwitch($authSwitch) {
+		$this->authSwitch = $authSwitch;
+		$this->queryParameters["AuthSwitch"]=$authSwitch;
 	}
 
 	public function getCallbackURL() {

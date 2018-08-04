@@ -37,6 +37,8 @@ class GetCategoriesRequest extends \RpcAcsRequest
 
 	private  $pageSize;
 
+	private  $sortBy;
+
 	private  $ownerId;
 
 	public function getResourceOwnerId() {
@@ -82,6 +84,15 @@ class GetCategoriesRequest extends \RpcAcsRequest
 	public function setPageSize($pageSize) {
 		$this->pageSize = $pageSize;
 		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
+	public function getSortBy() {
+		return $this->sortBy;
+	}
+
+	public function setSortBy($sortBy) {
+		$this->sortBy = $sortBy;
+		$this->queryParameters["SortBy"]=$sortBy;
 	}
 
 	public function getOwnerId() {

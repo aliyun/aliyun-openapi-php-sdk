@@ -19,29 +19,29 @@
  */
 namespace vod\Request\V20170321;
 
-class CreateUploadImageRequest extends \RpcAcsRequest
+class UploadMediaByURLRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "CreateUploadImage", "vod", "openAPI");
+		parent::__construct("vod", "2017-03-21", "UploadMediaByURL", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
-	private  $imageType;
+	private  $templateGroupId;
 
-	private  $originalFileName;
+	private  $uploadMetadatas;
 
 	private  $resourceOwnerAccount;
 
-	private  $imageExt;
+	private  $uploadURLs;
+
+	private  $messageCallback;
 
 	private  $ownerId;
 
-	private  $title;
-
-	private  $tags;
+	private  $priority;
 
 	private  $storageLocation;
 
@@ -54,22 +54,22 @@ class CreateUploadImageRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getImageType() {
-		return $this->imageType;
+	public function getTemplateGroupId() {
+		return $this->templateGroupId;
 	}
 
-	public function setImageType($imageType) {
-		$this->imageType = $imageType;
-		$this->queryParameters["ImageType"]=$imageType;
+	public function setTemplateGroupId($templateGroupId) {
+		$this->templateGroupId = $templateGroupId;
+		$this->queryParameters["TemplateGroupId"]=$templateGroupId;
 	}
 
-	public function getOriginalFileName() {
-		return $this->originalFileName;
+	public function getUploadMetadatas() {
+		return $this->uploadMetadatas;
 	}
 
-	public function setOriginalFileName($originalFileName) {
-		$this->originalFileName = $originalFileName;
-		$this->queryParameters["OriginalFileName"]=$originalFileName;
+	public function setUploadMetadatas($uploadMetadatas) {
+		$this->uploadMetadatas = $uploadMetadatas;
+		$this->queryParameters["UploadMetadatas"]=$uploadMetadatas;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -81,13 +81,22 @@ class CreateUploadImageRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getImageExt() {
-		return $this->imageExt;
+	public function getUploadURLs() {
+		return $this->uploadURLs;
 	}
 
-	public function setImageExt($imageExt) {
-		$this->imageExt = $imageExt;
-		$this->queryParameters["ImageExt"]=$imageExt;
+	public function setUploadURLs($uploadURLs) {
+		$this->uploadURLs = $uploadURLs;
+		$this->queryParameters["UploadURLs"]=$uploadURLs;
+	}
+
+	public function getMessageCallback() {
+		return $this->messageCallback;
+	}
+
+	public function setMessageCallback($messageCallback) {
+		$this->messageCallback = $messageCallback;
+		$this->queryParameters["MessageCallback"]=$messageCallback;
 	}
 
 	public function getOwnerId() {
@@ -99,22 +108,13 @@ class CreateUploadImageRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getTitle() {
-		return $this->title;
+	public function getPriority() {
+		return $this->priority;
 	}
 
-	public function setTitle($title) {
-		$this->title = $title;
-		$this->queryParameters["Title"]=$title;
-	}
-
-	public function getTags() {
-		return $this->tags;
-	}
-
-	public function setTags($tags) {
-		$this->tags = $tags;
-		$this->queryParameters["Tags"]=$tags;
+	public function setPriority($priority) {
+		$this->priority = $priority;
+		$this->queryParameters["Priority"]=$priority;
 	}
 
 	public function getStorageLocation() {
