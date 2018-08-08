@@ -47,8 +47,7 @@ class AddFCTriggerRequest extends \RpcAcsRequest
 
 	public function setNotes($notes) {
 		$this->notes = $notes;
-		$this->queryParameters["Notes"]=$notes;
-	}
+		}
 
 	public function getEventMetaVersion() {
 		return $this->eventMetaVersion;
@@ -56,8 +55,7 @@ class AddFCTriggerRequest extends \RpcAcsRequest
 
 	public function setEventMetaVersion($eventMetaVersion) {
 		$this->eventMetaVersion = $eventMetaVersion;
-		$this->queryParameters["EventMetaVersion"]=$eventMetaVersion;
-	}
+		}
 
 	public function getTriggerARN() {
 		return $this->triggerARN;
@@ -74,8 +72,7 @@ class AddFCTriggerRequest extends \RpcAcsRequest
 
 	public function setSourceARN($sourceARN) {
 		$this->sourceARN = $sourceARN;
-		$this->queryParameters["SourceARN"]=$sourceARN;
-	}
+		}
 
 	public function getOwnerId() {
 		return $this->ownerId;
@@ -92,8 +89,7 @@ class AddFCTriggerRequest extends \RpcAcsRequest
 
 	public function setRoleARN($roleARN) {
 		$this->roleARN = $roleARN;
-		$this->queryParameters["RoleARN"]=$roleARN;
-	}
+		}
 
 	public function getEventMetaName() {
 		return $this->eventMetaName;
@@ -101,7 +97,6 @@ class AddFCTriggerRequest extends \RpcAcsRequest
 
 	public function setEventMetaName($eventMetaName) {
 		$this->eventMetaName = $eventMetaName;
-		$this->queryParameters["EventMetaName"]=$eventMetaName;
-	}
+		}
 	
 }

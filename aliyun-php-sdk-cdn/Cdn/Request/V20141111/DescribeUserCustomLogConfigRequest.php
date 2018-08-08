@@ -26,20 +26,7 @@ class DescribeUserCustomLogConfigRequest extends \RpcAcsRequest
 		parent::__construct("Cdn", "2014-11-11", "DescribeUserCustomLogConfig");
 	}
 
-	private  $securityToken;
-
 	private  $ownerId;
-
-	private  $version;
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
 
 	public function getOwnerId() {
 		return $this->ownerId;
@@ -48,15 +35,6 @@ class DescribeUserCustomLogConfigRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getVersion() {
-		return $this->version;
-	}
-
-	public function setVersion($version) {
-		$this->version = $version;
-		$this->queryParameters["Version"]=$version;
 	}
 	
 }

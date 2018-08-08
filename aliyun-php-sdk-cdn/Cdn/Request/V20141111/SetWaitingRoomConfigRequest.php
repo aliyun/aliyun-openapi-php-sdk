@@ -28,8 +28,6 @@ class SetWaitingRoomConfigRequest extends \RpcAcsRequest
 
 	private  $waitUrl;
 
-	private  $securityToken;
-
 	private  $waitUri;
 
 	private  $maxQps;
@@ -44,8 +42,6 @@ class SetWaitingRoomConfigRequest extends \RpcAcsRequest
 
 	private  $ownerId;
 
-	private  $version;
-
 	public function getWaitUrl() {
 		return $this->waitUrl;
 	}
@@ -53,15 +49,6 @@ class SetWaitingRoomConfigRequest extends \RpcAcsRequest
 	public function setWaitUrl($waitUrl) {
 		$this->waitUrl = $waitUrl;
 		$this->queryParameters["WaitUrl"]=$waitUrl;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
 	public function getWaitUri() {
@@ -125,15 +112,6 @@ class SetWaitingRoomConfigRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getVersion() {
-		return $this->version;
-	}
-
-	public function setVersion($version) {
-		$this->version = $version;
-		$this->queryParameters["Version"]=$version;
 	}
 	
 }

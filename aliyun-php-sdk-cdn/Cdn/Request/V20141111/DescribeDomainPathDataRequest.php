@@ -32,8 +32,6 @@ class DescribeDomainPathDataRequest extends \RpcAcsRequest
 
 	private  $path;
 
-	private  $securityToken;
-
 	private  $pageSize;
 
 	private  $domainName;
@@ -41,8 +39,6 @@ class DescribeDomainPathDataRequest extends \RpcAcsRequest
 	private  $endTime;
 
 	private  $ownerId;
-
-	private  $version;
 
 	public function getStartTime() {
 		return $this->startTime;
@@ -69,15 +65,6 @@ class DescribeDomainPathDataRequest extends \RpcAcsRequest
 	public function setPath($path) {
 		$this->path = $path;
 		$this->queryParameters["Path"]=$path;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
 	public function getPageSize() {
@@ -114,15 +101,6 @@ class DescribeDomainPathDataRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getVersion() {
-		return $this->version;
-	}
-
-	public function setVersion($version) {
-		$this->version = $version;
-		$this->queryParameters["Version"]=$version;
 	}
 	
 }

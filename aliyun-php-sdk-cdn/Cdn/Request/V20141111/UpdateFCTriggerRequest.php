@@ -43,8 +43,7 @@ class UpdateFCTriggerRequest extends \RpcAcsRequest
 
 	public function setNotes($notes) {
 		$this->notes = $notes;
-		$this->queryParameters["Notes"]=$notes;
-	}
+		}
 
 	public function getTriggerARN() {
 		return $this->triggerARN;
@@ -61,8 +60,7 @@ class UpdateFCTriggerRequest extends \RpcAcsRequest
 
 	public function setSourceARN($sourceARN) {
 		$this->sourceARN = $sourceARN;
-		$this->queryParameters["SourceARN"]=$sourceARN;
-	}
+		}
 
 	public function getOwnerId() {
 		return $this->ownerId;
@@ -79,7 +77,6 @@ class UpdateFCTriggerRequest extends \RpcAcsRequest
 
 	public function setRoleARN($roleARN) {
 		$this->roleARN = $roleARN;
-		$this->queryParameters["RoleARN"]=$roleARN;
-	}
+		}
 	
 }
