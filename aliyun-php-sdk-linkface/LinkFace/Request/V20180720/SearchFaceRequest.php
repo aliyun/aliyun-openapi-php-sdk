@@ -19,20 +19,18 @@
  */
 namespace LinkFace\Request\V20180720;
 
-class UpdateFaceRequest extends \RpcAcsRequest
+class SearchFaceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("LinkFace", "2018-07-20", "UpdateFace");
+		parent::__construct("LinkFace", "2018-07-20", "SearchFace");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
 
 	private  $image;
 
-	private  $userId;
-
-	private  $userInfo;
+	private  $groupId;
 
 	public function getImage() {
 		return $this->image;
@@ -42,20 +40,12 @@ class UpdateFaceRequest extends \RpcAcsRequest
 		$this->image = $image;
 		}
 
-	public function getUserId() {
-		return $this->userId;
+	public function getGroupId() {
+		return $this->groupId;
 	}
 
-	public function setUserId($userId) {
-		$this->userId = $userId;
-		}
-
-	public function getUserInfo() {
-		return $this->userInfo;
-	}
-
-	public function setUserInfo($userInfo) {
-		$this->userInfo = $userInfo;
+	public function setGroupId($groupId) {
+		$this->groupId = $groupId;
 		}
 	
 }

@@ -34,6 +34,8 @@ class RegisterFaceRequest extends \RpcAcsRequest
 
 	private  $userId;
 
+	private  $userInfo;
+
 	public function getImage() {
 		return $this->image;
 	}
@@ -56,6 +58,14 @@ class RegisterFaceRequest extends \RpcAcsRequest
 
 	public function setUserId($userId) {
 		$this->userId = $userId;
+		}
+
+	public function getUserInfo() {
+		return $this->userInfo;
+	}
+
+	public function setUserInfo($userInfo) {
+		$this->userInfo = $userInfo;
 		}
 	
 }
