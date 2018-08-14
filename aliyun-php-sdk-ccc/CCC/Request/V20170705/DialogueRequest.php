@@ -35,6 +35,8 @@ class DialogueRequest extends \RpcAcsRequest
 
 	private  $calledNumber;
 
+	private  $actionKey;
+
 	private  $actionParams;
 
 	private  $callType;
@@ -79,6 +81,15 @@ class DialogueRequest extends \RpcAcsRequest
 	public function setCalledNumber($calledNumber) {
 		$this->calledNumber = $calledNumber;
 		$this->queryParameters["CalledNumber"]=$calledNumber;
+	}
+
+	public function getActionKey() {
+		return $this->actionKey;
+	}
+
+	public function setActionKey($actionKey) {
+		$this->actionKey = $actionKey;
+		$this->queryParameters["ActionKey"]=$actionKey;
 	}
 
 	public function getActionParams() {
