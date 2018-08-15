@@ -17,13 +17,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Cloudauth\Request\V20180703;
+namespace Cloudauth\Request\V20180807;
 
 class GetVerifyTokenRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cloudauth", "2018-07-03", "GetVerifyToken", "cloudauth", "openAPI");
+		parent::__construct("Cloudauth", "2018-08-07", "GetVerifyToken", "cloudauth", "openAPI");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
@@ -37,6 +37,8 @@ class GetVerifyTokenRequest extends \RpcAcsRequest
 	private  $sourceIp;
 
 	private  $binding;
+
+	private  $verifyConfigs;
 
 	private  $ticketId;
 
@@ -83,6 +85,15 @@ class GetVerifyTokenRequest extends \RpcAcsRequest
 	public function setBinding($binding) {
 		$this->binding = $binding;
 		$this->queryParameters["Binding"]=$binding;
+	}
+
+	public function getVerifyConfigs() {
+		return $this->verifyConfigs;
+	}
+
+	public function setVerifyConfigs($verifyConfigs) {
+		$this->verifyConfigs = $verifyConfigs;
+		$this->queryParameters["VerifyConfigs"]=$verifyConfigs;
 	}
 
 	public function getTicketId() {

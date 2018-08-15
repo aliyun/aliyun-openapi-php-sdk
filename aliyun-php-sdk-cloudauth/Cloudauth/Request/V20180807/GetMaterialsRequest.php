@@ -17,37 +17,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Cloudauth\Request\V20180703;
+namespace Cloudauth\Request\V20180807;
 
-class CompareFacesRequest extends \RpcAcsRequest
+class GetMaterialsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cloudauth", "2018-07-03", "CompareFaces", "cloudauth", "openAPI");
+		parent::__construct("Cloudauth", "2018-08-07", "GetMaterials", "cloudauth", "openAPI");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
 
-	private  $sourceImageType;
-
 	private  $resourceOwnerId;
+
+	private  $biz;
 
 	private  $sourceIp;
 
-	private  $targetImageType;
-
-	private  $sourceImageValue;
-
-	private  $targetImageValue;
-
-	public function getSourceImageType() {
-		return $this->sourceImageType;
-	}
-
-	public function setSourceImageType($sourceImageType) {
-		$this->sourceImageType = $sourceImageType;
-		$this->queryParameters["SourceImageType"]=$sourceImageType;
-	}
+	private  $ticketId;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -56,6 +43,15 @@ class CompareFacesRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getBiz() {
+		return $this->biz;
+	}
+
+	public function setBiz($biz) {
+		$this->biz = $biz;
+		$this->queryParameters["Biz"]=$biz;
 	}
 
 	public function getSourceIp() {
@@ -67,31 +63,13 @@ class CompareFacesRequest extends \RpcAcsRequest
 		$this->queryParameters["SourceIp"]=$sourceIp;
 	}
 
-	public function getTargetImageType() {
-		return $this->targetImageType;
+	public function getTicketId() {
+		return $this->ticketId;
 	}
 
-	public function setTargetImageType($targetImageType) {
-		$this->targetImageType = $targetImageType;
-		$this->queryParameters["TargetImageType"]=$targetImageType;
-	}
-
-	public function getSourceImageValue() {
-		return $this->sourceImageValue;
-	}
-
-	public function setSourceImageValue($sourceImageValue) {
-		$this->sourceImageValue = $sourceImageValue;
-		$this->queryParameters["SourceImageValue"]=$sourceImageValue;
-	}
-
-	public function getTargetImageValue() {
-		return $this->targetImageValue;
-	}
-
-	public function setTargetImageValue($targetImageValue) {
-		$this->targetImageValue = $targetImageValue;
-		$this->queryParameters["TargetImageValue"]=$targetImageValue;
+	public function setTicketId($ticketId) {
+		$this->ticketId = $ticketId;
+		$this->queryParameters["TicketId"]=$ticketId;
 	}
 	
 }

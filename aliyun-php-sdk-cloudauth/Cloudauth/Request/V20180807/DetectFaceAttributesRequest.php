@@ -17,13 +17,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Cloudauth\Request\V20180703;
+namespace Cloudauth\Request\V20180807;
 
 class DetectFaceAttributesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cloudauth", "2018-07-03", "DetectFaceAttributes", "cloudauth", "openAPI");
+		parent::__construct("Cloudauth", "2018-08-07", "DetectFaceAttributes", "cloudauth", "openAPI");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
