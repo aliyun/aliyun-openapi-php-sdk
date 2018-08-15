@@ -37,6 +37,8 @@ class ModifyVpcAttributeRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
+	private  $cidrBlock;
+
 	private  $description;
 
 	private  $userCidr;
@@ -86,6 +88,15 @@ class ModifyVpcAttributeRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getCidrBlock() {
+		return $this->cidrBlock;
+	}
+
+	public function setCidrBlock($cidrBlock) {
+		$this->cidrBlock = $cidrBlock;
+		$this->queryParameters["CidrBlock"]=$cidrBlock;
 	}
 
 	public function getDescription() {

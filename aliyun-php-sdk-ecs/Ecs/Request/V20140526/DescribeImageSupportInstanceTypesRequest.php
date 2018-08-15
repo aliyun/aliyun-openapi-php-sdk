@@ -55,8 +55,8 @@ class DescribeImageSupportInstanceTypesRequest extends \RpcAcsRequest
 	public function setFilters($Filters) {
 		$this->Filters = $Filters;
 		for ($i = 0; $i < count($Filters); $i ++) {	
-			$this->queryParameters['Filter.' . ($i + 1) . '.Key'] = $Filters[$i]['Key'];
 			$this->queryParameters['Filter.' . ($i + 1) . '.Value'] = $Filters[$i]['Value'];
+			$this->queryParameters['Filter.' . ($i + 1) . '.Key'] = $Filters[$i]['Key'];
 
 		}
 	}

@@ -124,9 +124,9 @@ class CreateNatGatewayRequest extends \RpcAcsRequest
 	public function setBandwidthPackages($BandwidthPackages) {
 		$this->BandwidthPackages = $BandwidthPackages;
 		for ($i = 0; $i < count($BandwidthPackages); $i ++) {	
-			$this->queryParameters['BandwidthPackage.' . ($i + 1) . '.IpCount'] = $BandwidthPackages[$i]['IpCount'];
 			$this->queryParameters['BandwidthPackage.' . ($i + 1) . '.Bandwidth'] = $BandwidthPackages[$i]['Bandwidth'];
 			$this->queryParameters['BandwidthPackage.' . ($i + 1) . '.Zone'] = $BandwidthPackages[$i]['Zone'];
+			$this->queryParameters['BandwidthPackage.' . ($i + 1) . '.IpCount'] = $BandwidthPackages[$i]['IpCount'];
 
 		}
 	}

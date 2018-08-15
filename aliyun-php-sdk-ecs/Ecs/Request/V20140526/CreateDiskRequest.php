@@ -27,60 +27,33 @@ class CreateDiskRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $tag4Value;
-
 	private  $resourceOwnerId;
 
 	private  $snapshotId;
 
-	private  $tag2Key;
+	private  $resourceOwnerAccount;
 
 	private  $clientToken;
 
-	private  $description;
-
-	private  $tag3Key;
-
-	private  $diskName;
-
-	private  $tag1Value;
-
-	private  $resourceGroupId;
-
-	private  $diskCategory;
-
-	private  $tag3Value;
-
-	private  $tag5Key;
-
-	private  $resourceOwnerAccount;
-
 	private  $ownerAccount;
+
+	private  $description;
 
 	private  $ownerId;
 
-	private  $tag5Value;
+	private  $diskName;
 
-	private  $tag1Key;
+	private  $resourceGroupId;
 
 	private  $size;
 
 	private  $encrypted;
 
-	private  $tag2Value;
+	private  $diskCategory;
 
 	private  $zoneId;
 
-	private  $tag4Key;
-
-	public function getTag4Value() {
-		return $this->tag4Value;
-	}
-
-	public function setTag4Value($tag4Value) {
-		$this->tag4Value = $tag4Value;
-		$this->queryParameters["Tag.4.Value"]=$tag4Value;
-	}
+	private  $Tags;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -100,13 +73,13 @@ class CreateDiskRequest extends \RpcAcsRequest
 		$this->queryParameters["SnapshotId"]=$snapshotId;
 	}
 
-	public function getTag2Key() {
-		return $this->tag2Key;
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
 	}
 
-	public function setTag2Key($tag2Key) {
-		$this->tag2Key = $tag2Key;
-		$this->queryParameters["Tag.2.Key"]=$tag2Key;
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
 	public function getClientToken() {
@@ -118,87 +91,6 @@ class CreateDiskRequest extends \RpcAcsRequest
 		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
-	public function getDescription() {
-		return $this->description;
-	}
-
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
-	}
-
-	public function getTag3Key() {
-		return $this->tag3Key;
-	}
-
-	public function setTag3Key($tag3Key) {
-		$this->tag3Key = $tag3Key;
-		$this->queryParameters["Tag.3.Key"]=$tag3Key;
-	}
-
-	public function getDiskName() {
-		return $this->diskName;
-	}
-
-	public function setDiskName($diskName) {
-		$this->diskName = $diskName;
-		$this->queryParameters["DiskName"]=$diskName;
-	}
-
-	public function getTag1Value() {
-		return $this->tag1Value;
-	}
-
-	public function setTag1Value($tag1Value) {
-		$this->tag1Value = $tag1Value;
-		$this->queryParameters["Tag.1.Value"]=$tag1Value;
-	}
-
-	public function getResourceGroupId() {
-		return $this->resourceGroupId;
-	}
-
-	public function setResourceGroupId($resourceGroupId) {
-		$this->resourceGroupId = $resourceGroupId;
-		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
-	}
-
-	public function getDiskCategory() {
-		return $this->diskCategory;
-	}
-
-	public function setDiskCategory($diskCategory) {
-		$this->diskCategory = $diskCategory;
-		$this->queryParameters["DiskCategory"]=$diskCategory;
-	}
-
-	public function getTag3Value() {
-		return $this->tag3Value;
-	}
-
-	public function setTag3Value($tag3Value) {
-		$this->tag3Value = $tag3Value;
-		$this->queryParameters["Tag.3.Value"]=$tag3Value;
-	}
-
-	public function getTag5Key() {
-		return $this->tag5Key;
-	}
-
-	public function setTag5Key($tag5Key) {
-		$this->tag5Key = $tag5Key;
-		$this->queryParameters["Tag.5.Key"]=$tag5Key;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -206,6 +98,15 @@ class CreateDiskRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getDescription() {
+		return $this->description;
+	}
+
+	public function setDescription($description) {
+		$this->description = $description;
+		$this->queryParameters["Description"]=$description;
 	}
 
 	public function getOwnerId() {
@@ -217,22 +118,22 @@ class CreateDiskRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getTag5Value() {
-		return $this->tag5Value;
+	public function getDiskName() {
+		return $this->diskName;
 	}
 
-	public function setTag5Value($tag5Value) {
-		$this->tag5Value = $tag5Value;
-		$this->queryParameters["Tag.5.Value"]=$tag5Value;
+	public function setDiskName($diskName) {
+		$this->diskName = $diskName;
+		$this->queryParameters["DiskName"]=$diskName;
 	}
 
-	public function getTag1Key() {
-		return $this->tag1Key;
+	public function getResourceGroupId() {
+		return $this->resourceGroupId;
 	}
 
-	public function setTag1Key($tag1Key) {
-		$this->tag1Key = $tag1Key;
-		$this->queryParameters["Tag.1.Key"]=$tag1Key;
+	public function setResourceGroupId($resourceGroupId) {
+		$this->resourceGroupId = $resourceGroupId;
+		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
 	}
 
 	public function getSize() {
@@ -253,13 +154,13 @@ class CreateDiskRequest extends \RpcAcsRequest
 		$this->queryParameters["Encrypted"]=$encrypted;
 	}
 
-	public function getTag2Value() {
-		return $this->tag2Value;
+	public function getDiskCategory() {
+		return $this->diskCategory;
 	}
 
-	public function setTag2Value($tag2Value) {
-		$this->tag2Value = $tag2Value;
-		$this->queryParameters["Tag.2.Value"]=$tag2Value;
+	public function setDiskCategory($diskCategory) {
+		$this->diskCategory = $diskCategory;
+		$this->queryParameters["DiskCategory"]=$diskCategory;
 	}
 
 	public function getZoneId() {
@@ -271,13 +172,17 @@ class CreateDiskRequest extends \RpcAcsRequest
 		$this->queryParameters["ZoneId"]=$zoneId;
 	}
 
-	public function getTag4Key() {
-		return $this->tag4Key;
+	public function getTags() {
+		return $this->Tags;
 	}
 
-	public function setTag4Key($tag4Key) {
-		$this->tag4Key = $tag4Key;
-		$this->queryParameters["Tag.4.Key"]=$tag4Key;
+	public function setTags($Tags) {
+		$this->Tags = $Tags;
+		for ($i = 0; $i < count($Tags); $i ++) {	
+			$this->queryParameters['Tag.' . ($i + 1) . '.Value'] = $Tags[$i]['Value'];
+			$this->queryParameters['Tag.' . ($i + 1) . '.Key'] = $Tags[$i]['Key'];
+
+		}
 	}
 	
 }

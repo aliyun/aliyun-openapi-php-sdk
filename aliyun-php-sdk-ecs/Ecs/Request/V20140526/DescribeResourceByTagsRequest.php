@@ -27,46 +27,19 @@ class DescribeResourceByTagsRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $tag4Value;
-
 	private  $resourceOwnerId;
-
-	private  $tag2Key;
-
-	private  $tag5Key;
 
 	private  $resourceOwnerAccount;
 
-	private  $tag3Key;
+	private  $pageSize;
+
+	private  $Tags;
 
 	private  $ownerId;
 
 	private  $resourceType;
 
-	private  $tag5Value;
-
 	private  $pageNumber;
-
-	private  $tag1Key;
-
-	private  $tag1Value;
-
-	private  $tag2Value;
-
-	private  $pageSize;
-
-	private  $tag4Key;
-
-	private  $tag3Value;
-
-	public function getTag4Value() {
-		return $this->tag4Value;
-	}
-
-	public function setTag4Value($tag4Value) {
-		$this->tag4Value = $tag4Value;
-		$this->queryParameters["Tag.4.Value"]=$tag4Value;
-	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -75,24 +48,6 @@ class DescribeResourceByTagsRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getTag2Key() {
-		return $this->tag2Key;
-	}
-
-	public function setTag2Key($tag2Key) {
-		$this->tag2Key = $tag2Key;
-		$this->queryParameters["Tag.2.Key"]=$tag2Key;
-	}
-
-	public function getTag5Key() {
-		return $this->tag5Key;
-	}
-
-	public function setTag5Key($tag5Key) {
-		$this->tag5Key = $tag5Key;
-		$this->queryParameters["Tag.5.Key"]=$tag5Key;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -104,13 +59,26 @@ class DescribeResourceByTagsRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getTag3Key() {
-		return $this->tag3Key;
+	public function getPageSize() {
+		return $this->pageSize;
 	}
 
-	public function setTag3Key($tag3Key) {
-		$this->tag3Key = $tag3Key;
-		$this->queryParameters["Tag.3.Key"]=$tag3Key;
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
+	public function getTags() {
+		return $this->Tags;
+	}
+
+	public function setTags($Tags) {
+		$this->Tags = $Tags;
+		for ($i = 0; $i < count($Tags); $i ++) {	
+			$this->queryParameters['Tag.' . ($i + 1) . '.Value'] = $Tags[$i]['Value'];
+			$this->queryParameters['Tag.' . ($i + 1) . '.Key'] = $Tags[$i]['Key'];
+
+		}
 	}
 
 	public function getOwnerId() {
@@ -131,15 +99,6 @@ class DescribeResourceByTagsRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceType"]=$resourceType;
 	}
 
-	public function getTag5Value() {
-		return $this->tag5Value;
-	}
-
-	public function setTag5Value($tag5Value) {
-		$this->tag5Value = $tag5Value;
-		$this->queryParameters["Tag.5.Value"]=$tag5Value;
-	}
-
 	public function getPageNumber() {
 		return $this->pageNumber;
 	}
@@ -147,60 +106,6 @@ class DescribeResourceByTagsRequest extends \RpcAcsRequest
 	public function setPageNumber($pageNumber) {
 		$this->pageNumber = $pageNumber;
 		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
-	public function getTag1Key() {
-		return $this->tag1Key;
-	}
-
-	public function setTag1Key($tag1Key) {
-		$this->tag1Key = $tag1Key;
-		$this->queryParameters["Tag.1.Key"]=$tag1Key;
-	}
-
-	public function getTag1Value() {
-		return $this->tag1Value;
-	}
-
-	public function setTag1Value($tag1Value) {
-		$this->tag1Value = $tag1Value;
-		$this->queryParameters["Tag.1.Value"]=$tag1Value;
-	}
-
-	public function getTag2Value() {
-		return $this->tag2Value;
-	}
-
-	public function setTag2Value($tag2Value) {
-		$this->tag2Value = $tag2Value;
-		$this->queryParameters["Tag.2.Value"]=$tag2Value;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getTag4Key() {
-		return $this->tag4Key;
-	}
-
-	public function setTag4Key($tag4Key) {
-		$this->tag4Key = $tag4Key;
-		$this->queryParameters["Tag.4.Key"]=$tag4Key;
-	}
-
-	public function getTag3Value() {
-		return $this->tag3Value;
-	}
-
-	public function setTag3Value($tag3Value) {
-		$this->tag3Value = $tag3Value;
-		$this->queryParameters["Tag.3.Value"]=$tag3Value;
 	}
 	
 }

@@ -19,42 +19,23 @@
  */
 namespace Ecs\Request\V20140526;
 
-class DescribeAccessPointsRequest extends \RpcAcsRequest
+class DescribeAccountAttributesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeAccessPoints", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "DescribeAccountAttributes", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $Filters;
-
 	private  $resourceOwnerId;
+
+	private  $AttributeNames;
 
 	private  $resourceOwnerAccount;
 
-	private  $pageSize;
-
 	private  $ownerId;
 
-	private  $type;
-
-	private  $pageNumber;
-
-	public function getFilters() {
-		return $this->Filters;
-	}
-
-	public function setFilters($Filters) {
-		$this->Filters = $Filters;
-		for ($i = 0; $i < count($Filters); $i ++) {	
-			for ($j = 0; $j < count($Filters[$i]['Values']); $j ++) {
-				$this->queryParameters['Filter.' . ($i + 1) . '.Value.' . ($j + 1)] = $Filters[$i]['Values'][$j];
-			}
-			$this->queryParameters['Filter.' . ($i + 1) . '.Key'] = $Filters[$i]['Key'];
-
-		}
-	}
+	private  $zoneId;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -63,6 +44,17 @@ class DescribeAccessPointsRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getAttributeNames() {
+		return $this->AttributeNames;
+	}
+
+	public function setAttributeNames($AttributeNames) {
+		$this->AttributeNames = $AttributeNames;
+		for ($i = 0; $i < count($AttributeNames); $i ++) {	
+			$this->queryParameters["AttributeName.".($i+1)] = $AttributeNames[$i];
+		}
 	}
 
 	public function getResourceOwnerAccount() {
@@ -74,15 +66,6 @@ class DescribeAccessPointsRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -92,22 +75,13 @@ class DescribeAccessPointsRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getType() {
-		return $this->type;
+	public function getZoneId() {
+		return $this->zoneId;
 	}
 
-	public function setType($type) {
-		$this->type = $type;
-		$this->queryParameters["Type"]=$type;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
+	public function setZoneId($zoneId) {
+		$this->zoneId = $zoneId;
+		$this->queryParameters["ZoneId"]=$zoneId;
 	}
 	
 }

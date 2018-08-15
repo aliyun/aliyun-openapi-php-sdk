@@ -27,13 +27,7 @@ class CreateSnapshotRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $tag4Value;
-
 	private  $resourceOwnerId;
-
-	private  $tag2Key;
-
-	private  $tag5Key;
 
 	private  $resourceOwnerAccount;
 
@@ -43,34 +37,13 @@ class CreateSnapshotRequest extends \RpcAcsRequest
 
 	private  $description;
 
-	private  $snapshotName;
-
-	private  $tag3Key;
-
-	private  $ownerId;
-
-	private  $tag5Value;
-
-	private  $tag1Key;
-
-	private  $tag1Value;
-
-	private  $tag2Value;
-
-	private  $tag4Key;
-
 	private  $diskId;
 
-	private  $tag3Value;
+	private  $snapshotName;
 
-	public function getTag4Value() {
-		return $this->tag4Value;
-	}
+	private  $Tags;
 
-	public function setTag4Value($tag4Value) {
-		$this->tag4Value = $tag4Value;
-		$this->queryParameters["Tag.4.Value"]=$tag4Value;
-	}
+	private  $ownerId;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -79,24 +52,6 @@ class CreateSnapshotRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getTag2Key() {
-		return $this->tag2Key;
-	}
-
-	public function setTag2Key($tag2Key) {
-		$this->tag2Key = $tag2Key;
-		$this->queryParameters["Tag.2.Key"]=$tag2Key;
-	}
-
-	public function getTag5Key() {
-		return $this->tag5Key;
-	}
-
-	public function setTag5Key($tag5Key) {
-		$this->tag5Key = $tag5Key;
-		$this->queryParameters["Tag.5.Key"]=$tag5Key;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -135,78 +90,6 @@ class CreateSnapshotRequest extends \RpcAcsRequest
 		$this->queryParameters["Description"]=$description;
 	}
 
-	public function getSnapshotName() {
-		return $this->snapshotName;
-	}
-
-	public function setSnapshotName($snapshotName) {
-		$this->snapshotName = $snapshotName;
-		$this->queryParameters["SnapshotName"]=$snapshotName;
-	}
-
-	public function getTag3Key() {
-		return $this->tag3Key;
-	}
-
-	public function setTag3Key($tag3Key) {
-		$this->tag3Key = $tag3Key;
-		$this->queryParameters["Tag.3.Key"]=$tag3Key;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getTag5Value() {
-		return $this->tag5Value;
-	}
-
-	public function setTag5Value($tag5Value) {
-		$this->tag5Value = $tag5Value;
-		$this->queryParameters["Tag.5.Value"]=$tag5Value;
-	}
-
-	public function getTag1Key() {
-		return $this->tag1Key;
-	}
-
-	public function setTag1Key($tag1Key) {
-		$this->tag1Key = $tag1Key;
-		$this->queryParameters["Tag.1.Key"]=$tag1Key;
-	}
-
-	public function getTag1Value() {
-		return $this->tag1Value;
-	}
-
-	public function setTag1Value($tag1Value) {
-		$this->tag1Value = $tag1Value;
-		$this->queryParameters["Tag.1.Value"]=$tag1Value;
-	}
-
-	public function getTag2Value() {
-		return $this->tag2Value;
-	}
-
-	public function setTag2Value($tag2Value) {
-		$this->tag2Value = $tag2Value;
-		$this->queryParameters["Tag.2.Value"]=$tag2Value;
-	}
-
-	public function getTag4Key() {
-		return $this->tag4Key;
-	}
-
-	public function setTag4Key($tag4Key) {
-		$this->tag4Key = $tag4Key;
-		$this->queryParameters["Tag.4.Key"]=$tag4Key;
-	}
-
 	public function getDiskId() {
 		return $this->diskId;
 	}
@@ -216,13 +99,35 @@ class CreateSnapshotRequest extends \RpcAcsRequest
 		$this->queryParameters["DiskId"]=$diskId;
 	}
 
-	public function getTag3Value() {
-		return $this->tag3Value;
+	public function getSnapshotName() {
+		return $this->snapshotName;
 	}
 
-	public function setTag3Value($tag3Value) {
-		$this->tag3Value = $tag3Value;
-		$this->queryParameters["Tag.3.Value"]=$tag3Value;
+	public function setSnapshotName($snapshotName) {
+		$this->snapshotName = $snapshotName;
+		$this->queryParameters["SnapshotName"]=$snapshotName;
+	}
+
+	public function getTags() {
+		return $this->Tags;
+	}
+
+	public function setTags($Tags) {
+		$this->Tags = $Tags;
+		for ($i = 0; $i < count($Tags); $i ++) {	
+			$this->queryParameters['Tag.' . ($i + 1) . '.Value'] = $Tags[$i]['Value'];
+			$this->queryParameters['Tag.' . ($i + 1) . '.Key'] = $Tags[$i]['Key'];
+
+		}
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

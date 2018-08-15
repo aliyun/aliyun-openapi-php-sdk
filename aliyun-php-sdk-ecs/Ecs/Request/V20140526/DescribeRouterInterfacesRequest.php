@@ -46,10 +46,10 @@ class DescribeRouterInterfacesRequest extends \RpcAcsRequest
 	public function setFilters($Filters) {
 		$this->Filters = $Filters;
 		for ($i = 0; $i < count($Filters); $i ++) {	
-			$this->queryParameters['Filter.' . ($i + 1) . '.Key'] = $Filters[$i]['Key'];
 			for ($j = 0; $j < count($Filters[$i]['Values']); $j ++) {
 				$this->queryParameters['Filter.' . ($i + 1) . '.Value.' . ($j + 1)] = $Filters[$i]['Values'][$j];
 			}
+			$this->queryParameters['Filter.' . ($i + 1) . '.Key'] = $Filters[$i]['Key'];
 
 		}
 	}

@@ -54,12 +54,12 @@ class ImportImageRequest extends \RpcAcsRequest
 	public function setDiskDeviceMappings($DiskDeviceMappings) {
 		$this->DiskDeviceMappings = $DiskDeviceMappings;
 		for ($i = 0; $i < count($DiskDeviceMappings); $i ++) {	
-			$this->queryParameters['DiskDeviceMapping.' . ($i + 1) . '.Format'] = $DiskDeviceMappings[$i]['Format'];
 			$this->queryParameters['DiskDeviceMapping.' . ($i + 1) . '.OSSBucket'] = $DiskDeviceMappings[$i]['OSSBucket'];
-			$this->queryParameters['DiskDeviceMapping.' . ($i + 1) . '.OSSObject'] = $DiskDeviceMappings[$i]['OSSObject'];
 			$this->queryParameters['DiskDeviceMapping.' . ($i + 1) . '.DiskImSize'] = $DiskDeviceMappings[$i]['DiskImSize'];
-			$this->queryParameters['DiskDeviceMapping.' . ($i + 1) . '.DiskImageSize'] = $DiskDeviceMappings[$i]['DiskImageSize'];
+			$this->queryParameters['DiskDeviceMapping.' . ($i + 1) . '.Format'] = $DiskDeviceMappings[$i]['Format'];
 			$this->queryParameters['DiskDeviceMapping.' . ($i + 1) . '.Device'] = $DiskDeviceMappings[$i]['Device'];
+			$this->queryParameters['DiskDeviceMapping.' . ($i + 1) . '.OSSObject'] = $DiskDeviceMappings[$i]['OSSObject'];
+			$this->queryParameters['DiskDeviceMapping.' . ($i + 1) . '.DiskImageSize'] = $DiskDeviceMappings[$i]['DiskImageSize'];
 
 		}
 	}

@@ -53,6 +53,8 @@ class DescribeAvailableResourceRequest extends \RpcAcsRequest
 
 	private  $ownerId;
 
+	private  $resourceType;
+
 	private  $spotStrategy;
 
 	private  $destinationResource;
@@ -174,6 +176,15 @@ class DescribeAvailableResourceRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getResourceType() {
+		return $this->resourceType;
+	}
+
+	public function setResourceType($resourceType) {
+		$this->resourceType = $resourceType;
+		$this->queryParameters["ResourceType"]=$resourceType;
 	}
 
 	public function getSpotStrategy() {

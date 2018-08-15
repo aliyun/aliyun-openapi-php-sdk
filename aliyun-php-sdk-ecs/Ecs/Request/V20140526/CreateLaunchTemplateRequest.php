@@ -31,8 +31,6 @@ class CreateLaunchTemplateRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $templateTag4Key;
-
 	private  $securityEnhancementStrategy;
 
 	private  $networkType;
@@ -45,21 +43,17 @@ class CreateLaunchTemplateRequest extends \RpcAcsRequest
 
 	private  $resourceGroupId;
 
-	private  $templateTag3Key;
-
 	private  $hostName;
 
 	private  $systemDiskIops;
 
-	private  $templateTag3Value;
+	private  $TemplateTags;
 
 	private  $Tags;
 
 	private  $period;
 
 	private  $templateResourceGroupId;
-
-	private  $templateTag2Value;
 
 	private  $ownerId;
 
@@ -71,15 +65,11 @@ class CreateLaunchTemplateRequest extends \RpcAcsRequest
 
 	private  $internetChargeType;
 
-	private  $templateTag5Key;
-
 	private  $zoneId;
 
 	private  $internetMaxBandwidthIn;
 
 	private  $versionDescription;
-
-	private  $templateTag1Value;
 
 	private  $imageId;
 
@@ -95,8 +85,6 @@ class CreateLaunchTemplateRequest extends \RpcAcsRequest
 
 	private  $userData;
 
-	private  $templateTag5Value;
-
 	private  $instanceType;
 
 	private  $instanceChargeType;
@@ -104,8 +92,6 @@ class CreateLaunchTemplateRequest extends \RpcAcsRequest
 	private  $enableVmOsConfig;
 
 	private  $NetworkInterfaces;
-
-	private  $templateTag2Key;
 
 	private  $resourceOwnerAccount;
 
@@ -121,13 +107,9 @@ class CreateLaunchTemplateRequest extends \RpcAcsRequest
 
 	private  $DataDisks;
 
-	private  $templateTag4Value;
-
 	private  $systemDiskSize;
 
 	private  $vpcId;
-
-	private  $templateTag1Key;
 
 	private  $systemDiskDescription;
 
@@ -147,15 +129,6 @@ class CreateLaunchTemplateRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getTemplateTag4Key() {
-		return $this->templateTag4Key;
-	}
-
-	public function setTemplateTag4Key($templateTag4Key) {
-		$this->templateTag4Key = $templateTag4Key;
-		$this->queryParameters["TemplateTag.4.Key"]=$templateTag4Key;
 	}
 
 	public function getSecurityEnhancementStrategy() {
@@ -212,15 +185,6 @@ class CreateLaunchTemplateRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
 	}
 
-	public function getTemplateTag3Key() {
-		return $this->templateTag3Key;
-	}
-
-	public function setTemplateTag3Key($templateTag3Key) {
-		$this->templateTag3Key = $templateTag3Key;
-		$this->queryParameters["TemplateTag.3.Key"]=$templateTag3Key;
-	}
-
 	public function getHostName() {
 		return $this->hostName;
 	}
@@ -239,13 +203,17 @@ class CreateLaunchTemplateRequest extends \RpcAcsRequest
 		$this->queryParameters["SystemDisk.Iops"]=$systemDiskIops;
 	}
 
-	public function getTemplateTag3Value() {
-		return $this->templateTag3Value;
+	public function getTemplateTags() {
+		return $this->TemplateTags;
 	}
 
-	public function setTemplateTag3Value($templateTag3Value) {
-		$this->templateTag3Value = $templateTag3Value;
-		$this->queryParameters["TemplateTag.3.Value"]=$templateTag3Value;
+	public function setTemplateTags($TemplateTags) {
+		$this->TemplateTags = $TemplateTags;
+		for ($i = 0; $i < count($TemplateTags); $i ++) {	
+			$this->queryParameters['TemplateTag.' . ($i + 1) . '.Key'] = $TemplateTags[$i]['Key'];
+			$this->queryParameters['TemplateTag.' . ($i + 1) . '.Value'] = $TemplateTags[$i]['Value'];
+
+		}
 	}
 
 	public function getTags() {
@@ -277,15 +245,6 @@ class CreateLaunchTemplateRequest extends \RpcAcsRequest
 	public function setTemplateResourceGroupId($templateResourceGroupId) {
 		$this->templateResourceGroupId = $templateResourceGroupId;
 		$this->queryParameters["TemplateResourceGroupId"]=$templateResourceGroupId;
-	}
-
-	public function getTemplateTag2Value() {
-		return $this->templateTag2Value;
-	}
-
-	public function setTemplateTag2Value($templateTag2Value) {
-		$this->templateTag2Value = $templateTag2Value;
-		$this->queryParameters["TemplateTag.2.Value"]=$templateTag2Value;
 	}
 
 	public function getOwnerId() {
@@ -333,15 +292,6 @@ class CreateLaunchTemplateRequest extends \RpcAcsRequest
 		$this->queryParameters["InternetChargeType"]=$internetChargeType;
 	}
 
-	public function getTemplateTag5Key() {
-		return $this->templateTag5Key;
-	}
-
-	public function setTemplateTag5Key($templateTag5Key) {
-		$this->templateTag5Key = $templateTag5Key;
-		$this->queryParameters["TemplateTag.5.Key"]=$templateTag5Key;
-	}
-
 	public function getZoneId() {
 		return $this->zoneId;
 	}
@@ -367,15 +317,6 @@ class CreateLaunchTemplateRequest extends \RpcAcsRequest
 	public function setVersionDescription($versionDescription) {
 		$this->versionDescription = $versionDescription;
 		$this->queryParameters["VersionDescription"]=$versionDescription;
-	}
-
-	public function getTemplateTag1Value() {
-		return $this->templateTag1Value;
-	}
-
-	public function setTemplateTag1Value($templateTag1Value) {
-		$this->templateTag1Value = $templateTag1Value;
-		$this->queryParameters["TemplateTag.1.Value"]=$templateTag1Value;
 	}
 
 	public function getImageId() {
@@ -441,15 +382,6 @@ class CreateLaunchTemplateRequest extends \RpcAcsRequest
 		$this->queryParameters["UserData"]=$userData;
 	}
 
-	public function getTemplateTag5Value() {
-		return $this->templateTag5Value;
-	}
-
-	public function setTemplateTag5Value($templateTag5Value) {
-		$this->templateTag5Value = $templateTag5Value;
-		$this->queryParameters["TemplateTag.5.Value"]=$templateTag5Value;
-	}
-
 	public function getInstanceType() {
 		return $this->instanceType;
 	}
@@ -491,15 +423,6 @@ class CreateLaunchTemplateRequest extends \RpcAcsRequest
 			$this->queryParameters['NetworkInterface.' . ($i + 1) . '.Description'] = $NetworkInterfaces[$i]['Description'];
 
 		}
-	}
-
-	public function getTemplateTag2Key() {
-		return $this->templateTag2Key;
-	}
-
-	public function setTemplateTag2Key($templateTag2Key) {
-		$this->templateTag2Key = $templateTag2Key;
-		$this->queryParameters["TemplateTag.2.Key"]=$templateTag2Key;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -574,15 +497,6 @@ class CreateLaunchTemplateRequest extends \RpcAcsRequest
 		}
 	}
 
-	public function getTemplateTag4Value() {
-		return $this->templateTag4Value;
-	}
-
-	public function setTemplateTag4Value($templateTag4Value) {
-		$this->templateTag4Value = $templateTag4Value;
-		$this->queryParameters["TemplateTag.4.Value"]=$templateTag4Value;
-	}
-
 	public function getSystemDiskSize() {
 		return $this->systemDiskSize;
 	}
@@ -599,15 +513,6 @@ class CreateLaunchTemplateRequest extends \RpcAcsRequest
 	public function setVpcId($vpcId) {
 		$this->vpcId = $vpcId;
 		$this->queryParameters["VpcId"]=$vpcId;
-	}
-
-	public function getTemplateTag1Key() {
-		return $this->templateTag1Key;
-	}
-
-	public function setTemplateTag1Key($templateTag1Key) {
-		$this->templateTag1Key = $templateTag1Key;
-		$this->queryParameters["TemplateTag.1.Key"]=$templateTag1Key;
 	}
 
 	public function getSystemDiskDescription() {

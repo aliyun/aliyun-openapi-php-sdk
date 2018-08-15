@@ -19,42 +19,31 @@
  */
 namespace Ecs\Request\V20140526;
 
-class DescribeAccessPointsRequest extends \RpcAcsRequest
+class DescribeEniMonitorDataRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeAccessPoints", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "DescribeEniMonitorData", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $Filters;
-
 	private  $resourceOwnerId;
+
+	private  $startTime;
+
+	private  $period;
 
 	private  $resourceOwnerAccount;
 
-	private  $pageSize;
+	private  $ownerAccount;
+
+	private  $endTime;
 
 	private  $ownerId;
 
-	private  $type;
+	private  $instanceId;
 
-	private  $pageNumber;
-
-	public function getFilters() {
-		return $this->Filters;
-	}
-
-	public function setFilters($Filters) {
-		$this->Filters = $Filters;
-		for ($i = 0; $i < count($Filters); $i ++) {	
-			for ($j = 0; $j < count($Filters[$i]['Values']); $j ++) {
-				$this->queryParameters['Filter.' . ($i + 1) . '.Value.' . ($j + 1)] = $Filters[$i]['Values'][$j];
-			}
-			$this->queryParameters['Filter.' . ($i + 1) . '.Key'] = $Filters[$i]['Key'];
-
-		}
-	}
+	private  $eniId;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -63,6 +52,24 @@ class DescribeAccessPointsRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
+
+	public function getPeriod() {
+		return $this->period;
+	}
+
+	public function setPeriod($period) {
+		$this->period = $period;
+		$this->queryParameters["Period"]=$period;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -74,13 +81,22 @@ class DescribeAccessPointsRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
 	}
 
 	public function getOwnerId() {
@@ -92,22 +108,22 @@ class DescribeAccessPointsRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getType() {
-		return $this->type;
+	public function getInstanceId() {
+		return $this->instanceId;
 	}
 
-	public function setType($type) {
-		$this->type = $type;
-		$this->queryParameters["Type"]=$type;
+	public function setInstanceId($instanceId) {
+		$this->instanceId = $instanceId;
+		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 
-	public function getPageNumber() {
-		return $this->pageNumber;
+	public function getEniId() {
+		return $this->eniId;
 	}
 
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
+	public function setEniId($eniId) {
+		$this->eniId = $eniId;
+		$this->queryParameters["EniId"]=$eniId;
 	}
 	
 }

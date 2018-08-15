@@ -27,15 +27,9 @@ class CreateInstanceRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $tag4Value;
-
 	private  $resourceOwnerId;
 
-	private  $tag2Key;
-
 	private  $hpcClusterId;
-
-	private  $tag3Key;
 
 	private  $securityEnhancementStrategy;
 
@@ -43,13 +37,13 @@ class CreateInstanceRequest extends \RpcAcsRequest
 
 	private  $spotPriceLimit;
 
-	private  $tag1Value;
-
 	private  $resourceGroupId;
 
 	private  $hostName;
 
 	private  $password;
+
+	private  $Tags;
 
 	private  $autoRenewPeriod;
 
@@ -58,8 +52,6 @@ class CreateInstanceRequest extends \RpcAcsRequest
 	private  $period;
 
 	private  $dryRun;
-
-	private  $tag5Key;
 
 	private  $ownerId;
 
@@ -78,8 +70,6 @@ class CreateInstanceRequest extends \RpcAcsRequest
 	private  $internetChargeType;
 
 	private  $zoneId;
-
-	private  $tag4Key;
 
 	private  $internetMaxBandwidthIn;
 
@@ -111,8 +101,6 @@ class CreateInstanceRequest extends \RpcAcsRequest
 
 	private  $instanceChargeType;
 
-	private  $tag3Value;
-
 	private  $deploymentSetId;
 
 	private  $innerIpAddress;
@@ -131,24 +119,9 @@ class CreateInstanceRequest extends \RpcAcsRequest
 
 	private  $DataDisks;
 
-	private  $tag5Value;
-
-	private  $tag1Key;
-
 	private  $systemDiskSize;
 
-	private  $tag2Value;
-
 	private  $systemDiskDescription;
-
-	public function getTag4Value() {
-		return $this->tag4Value;
-	}
-
-	public function setTag4Value($tag4Value) {
-		$this->tag4Value = $tag4Value;
-		$this->queryParameters["Tag.4.Value"]=$tag4Value;
-	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -159,15 +132,6 @@ class CreateInstanceRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getTag2Key() {
-		return $this->tag2Key;
-	}
-
-	public function setTag2Key($tag2Key) {
-		$this->tag2Key = $tag2Key;
-		$this->queryParameters["Tag.2.Key"]=$tag2Key;
-	}
-
 	public function getHpcClusterId() {
 		return $this->hpcClusterId;
 	}
@@ -175,15 +139,6 @@ class CreateInstanceRequest extends \RpcAcsRequest
 	public function setHpcClusterId($hpcClusterId) {
 		$this->hpcClusterId = $hpcClusterId;
 		$this->queryParameters["HpcClusterId"]=$hpcClusterId;
-	}
-
-	public function getTag3Key() {
-		return $this->tag3Key;
-	}
-
-	public function setTag3Key($tag3Key) {
-		$this->tag3Key = $tag3Key;
-		$this->queryParameters["Tag.3.Key"]=$tag3Key;
 	}
 
 	public function getSecurityEnhancementStrategy() {
@@ -213,15 +168,6 @@ class CreateInstanceRequest extends \RpcAcsRequest
 		$this->queryParameters["SpotPriceLimit"]=$spotPriceLimit;
 	}
 
-	public function getTag1Value() {
-		return $this->tag1Value;
-	}
-
-	public function setTag1Value($tag1Value) {
-		$this->tag1Value = $tag1Value;
-		$this->queryParameters["Tag.1.Value"]=$tag1Value;
-	}
-
 	public function getResourceGroupId() {
 		return $this->resourceGroupId;
 	}
@@ -247,6 +193,19 @@ class CreateInstanceRequest extends \RpcAcsRequest
 	public function setPassword($password) {
 		$this->password = $password;
 		$this->queryParameters["Password"]=$password;
+	}
+
+	public function getTags() {
+		return $this->Tags;
+	}
+
+	public function setTags($Tags) {
+		$this->Tags = $Tags;
+		for ($i = 0; $i < count($Tags); $i ++) {	
+			$this->queryParameters['Tag.' . ($i + 1) . '.Value'] = $Tags[$i]['Value'];
+			$this->queryParameters['Tag.' . ($i + 1) . '.Key'] = $Tags[$i]['Key'];
+
+		}
 	}
 
 	public function getAutoRenewPeriod() {
@@ -283,15 +242,6 @@ class CreateInstanceRequest extends \RpcAcsRequest
 	public function setDryRun($dryRun) {
 		$this->dryRun = $dryRun;
 		$this->queryParameters["DryRun"]=$dryRun;
-	}
-
-	public function getTag5Key() {
-		return $this->tag5Key;
-	}
-
-	public function setTag5Key($tag5Key) {
-		$this->tag5Key = $tag5Key;
-		$this->queryParameters["Tag.5.Key"]=$tag5Key;
 	}
 
 	public function getOwnerId() {
@@ -373,15 +323,6 @@ class CreateInstanceRequest extends \RpcAcsRequest
 	public function setZoneId($zoneId) {
 		$this->zoneId = $zoneId;
 		$this->queryParameters["ZoneId"]=$zoneId;
-	}
-
-	public function getTag4Key() {
-		return $this->tag4Key;
-	}
-
-	public function setTag4Key($tag4Key) {
-		$this->tag4Key = $tag4Key;
-		$this->queryParameters["Tag.4.Key"]=$tag4Key;
 	}
 
 	public function getInternetMaxBandwidthIn() {
@@ -519,15 +460,6 @@ class CreateInstanceRequest extends \RpcAcsRequest
 		$this->queryParameters["InstanceChargeType"]=$instanceChargeType;
 	}
 
-	public function getTag3Value() {
-		return $this->tag3Value;
-	}
-
-	public function setTag3Value($tag3Value) {
-		$this->tag3Value = $tag3Value;
-		$this->queryParameters["Tag.3.Value"]=$tag3Value;
-	}
-
 	public function getDeploymentSetId() {
 		return $this->deploymentSetId;
 	}
@@ -607,34 +539,16 @@ class CreateInstanceRequest extends \RpcAcsRequest
 	public function setDataDisks($DataDisks) {
 		$this->DataDisks = $DataDisks;
 		for ($i = 0; $i < count($DataDisks); $i ++) {	
-			$this->queryParameters['DataDisk.' . ($i + 1) . '.Size'] = $DataDisks[$i]['Size'];
-			$this->queryParameters['DataDisk.' . ($i + 1) . '.SnapshotId'] = $DataDisks[$i]['SnapshotId'];
-			$this->queryParameters['DataDisk.' . ($i + 1) . '.Category'] = $DataDisks[$i]['Category'];
 			$this->queryParameters['DataDisk.' . ($i + 1) . '.DiskName'] = $DataDisks[$i]['DiskName'];
+			$this->queryParameters['DataDisk.' . ($i + 1) . '.SnapshotId'] = $DataDisks[$i]['SnapshotId'];
+			$this->queryParameters['DataDisk.' . ($i + 1) . '.Size'] = $DataDisks[$i]['Size'];
+			$this->queryParameters['DataDisk.' . ($i + 1) . '.Encrypted'] = $DataDisks[$i]['Encrypted'];
 			$this->queryParameters['DataDisk.' . ($i + 1) . '.Description'] = $DataDisks[$i]['Description'];
+			$this->queryParameters['DataDisk.' . ($i + 1) . '.Category'] = $DataDisks[$i]['Category'];
 			$this->queryParameters['DataDisk.' . ($i + 1) . '.Device'] = $DataDisks[$i]['Device'];
 			$this->queryParameters['DataDisk.' . ($i + 1) . '.DeleteWithInstance'] = $DataDisks[$i]['DeleteWithInstance'];
-			$this->queryParameters['DataDisk.' . ($i + 1) . '.Encrypted'] = $DataDisks[$i]['Encrypted'];
 
 		}
-	}
-
-	public function getTag5Value() {
-		return $this->tag5Value;
-	}
-
-	public function setTag5Value($tag5Value) {
-		$this->tag5Value = $tag5Value;
-		$this->queryParameters["Tag.5.Value"]=$tag5Value;
-	}
-
-	public function getTag1Key() {
-		return $this->tag1Key;
-	}
-
-	public function setTag1Key($tag1Key) {
-		$this->tag1Key = $tag1Key;
-		$this->queryParameters["Tag.1.Key"]=$tag1Key;
 	}
 
 	public function getSystemDiskSize() {
@@ -644,15 +558,6 @@ class CreateInstanceRequest extends \RpcAcsRequest
 	public function setSystemDiskSize($systemDiskSize) {
 		$this->systemDiskSize = $systemDiskSize;
 		$this->queryParameters["SystemDisk.Size"]=$systemDiskSize;
-	}
-
-	public function getTag2Value() {
-		return $this->tag2Value;
-	}
-
-	public function setTag2Value($tag2Value) {
-		$this->tag2Value = $tag2Value;
-		$this->queryParameters["Tag.2.Value"]=$tag2Value;
 	}
 
 	public function getSystemDiskDescription() {

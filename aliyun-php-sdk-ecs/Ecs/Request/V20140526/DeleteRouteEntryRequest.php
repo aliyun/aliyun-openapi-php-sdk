@@ -104,8 +104,8 @@ class DeleteRouteEntryRequest extends \RpcAcsRequest
 	public function setNextHopLists($NextHopLists) {
 		$this->NextHopLists = $NextHopLists;
 		for ($i = 0; $i < count($NextHopLists); $i ++) {	
-			$this->queryParameters['NextHopList.' . ($i + 1) . '.NextHopType'] = $NextHopLists[$i]['NextHopType'];
 			$this->queryParameters['NextHopList.' . ($i + 1) . '.NextHopId'] = $NextHopLists[$i]['NextHopId'];
+			$this->queryParameters['NextHopList.' . ($i + 1) . '.NextHopType'] = $NextHopLists[$i]['NextHopType'];
 
 		}
 	}
