@@ -31,15 +31,17 @@ class AddCustomLiveStreamTranscodeRequest extends \RpcAcsRequest
 
 	private  $template;
 
+	private  $profile;
+
 	private  $fPS;
+
+	private  $gop;
 
 	private  $ownerId;
 
-	private  $version;
-
-	private  $securityToken;
-
 	private  $templateType;
+
+	private  $audioBitrate;
 
 	private  $domain;
 
@@ -67,6 +69,15 @@ class AddCustomLiveStreamTranscodeRequest extends \RpcAcsRequest
 		$this->queryParameters["Template"]=$template;
 	}
 
+	public function getProfile() {
+		return $this->profile;
+	}
+
+	public function setProfile($profile) {
+		$this->profile = $profile;
+		$this->queryParameters["Profile"]=$profile;
+	}
+
 	public function getFPS() {
 		return $this->fPS;
 	}
@@ -74,6 +85,15 @@ class AddCustomLiveStreamTranscodeRequest extends \RpcAcsRequest
 	public function setFPS($fPS) {
 		$this->fPS = $fPS;
 		$this->queryParameters["FPS"]=$fPS;
+	}
+
+	public function getGop() {
+		return $this->gop;
+	}
+
+	public function setGop($gop) {
+		$this->gop = $gop;
+		$this->queryParameters["Gop"]=$gop;
 	}
 
 	public function getOwnerId() {
@@ -85,24 +105,6 @@ class AddCustomLiveStreamTranscodeRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getVersion() {
-		return $this->version;
-	}
-
-	public function setVersion($version) {
-		$this->version = $version;
-		$this->queryParameters["Version"]=$version;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
-
 	public function getTemplateType() {
 		return $this->templateType;
 	}
@@ -110,6 +112,15 @@ class AddCustomLiveStreamTranscodeRequest extends \RpcAcsRequest
 	public function setTemplateType($templateType) {
 		$this->templateType = $templateType;
 		$this->queryParameters["TemplateType"]=$templateType;
+	}
+
+	public function getAudioBitrate() {
+		return $this->audioBitrate;
+	}
+
+	public function setAudioBitrate($audioBitrate) {
+		$this->audioBitrate = $audioBitrate;
+		$this->queryParameters["AudioBitrate"]=$audioBitrate;
 	}
 
 	public function getDomain() {

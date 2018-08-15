@@ -128,9 +128,9 @@ class AddLiveAppRecordConfigRequest extends \RpcAcsRequest
 	public function setRecordFormats($RecordFormats) {
 		$this->RecordFormats = $RecordFormats;
 		for ($i = 0; $i < count($RecordFormats); $i ++) {	
+			$this->queryParameters['RecordFormat.' . ($i + 1) . '.SliceOssObjectPrefix'] = $RecordFormats[$i]['SliceOssObjectPrefix'];
 			$this->queryParameters['RecordFormat.' . ($i + 1) . '.Format'] = $RecordFormats[$i]['Format'];
 			$this->queryParameters['RecordFormat.' . ($i + 1) . '.OssObjectPrefix'] = $RecordFormats[$i]['OssObjectPrefix'];
-			$this->queryParameters['RecordFormat.' . ($i + 1) . '.SliceOssObjectPrefix'] = $RecordFormats[$i]['SliceOssObjectPrefix'];
 			$this->queryParameters['RecordFormat.' . ($i + 1) . '.CycleDuration'] = $RecordFormats[$i]['CycleDuration'];
 
 		}

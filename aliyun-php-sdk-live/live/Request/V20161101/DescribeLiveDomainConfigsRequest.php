@@ -19,19 +19,30 @@
  */
 namespace live\Request\V20161101;
 
-class ImagePornDetectionRequest extends \RpcAcsRequest
+class DescribeLiveDomainConfigsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "ImagePornDetection", "live", "openAPI");
+		parent::__construct("live", "2016-11-01", "DescribeLiveDomainConfigs", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 
+	private  $functionNames;
+
 	private  $securityToken;
 
-	private  $imageUrl;
+	private  $domainName;
 
 	private  $ownerId;
+
+	public function getFunctionNames() {
+		return $this->functionNames;
+	}
+
+	public function setFunctionNames($functionNames) {
+		$this->functionNames = $functionNames;
+		$this->queryParameters["FunctionNames"]=$functionNames;
+	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -42,13 +53,13 @@ class ImagePornDetectionRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getImageUrl() {
-		return $this->imageUrl;
+	public function getDomainName() {
+		return $this->domainName;
 	}
 
-	public function setImageUrl($imageUrl) {
-		$this->imageUrl = $imageUrl;
-		$this->queryParameters["ImageUrl"]=$imageUrl;
+	public function setDomainName($domainName) {
+		$this->domainName = $domainName;
+		$this->queryParameters["DomainName"]=$domainName;
 	}
 
 	public function getOwnerId() {

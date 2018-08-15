@@ -59,9 +59,9 @@ class ModifyCasterLayoutRequest extends \RpcAcsRequest
 	public function setAudioLayers($AudioLayers) {
 		$this->AudioLayers = $AudioLayers;
 		for ($i = 0; $i < count($AudioLayers); $i ++) {	
+			$this->queryParameters['AudioLayer.' . ($i + 1) . '.FixedDelayDuration'] = $AudioLayers[$i]['FixedDelayDuration'];
 			$this->queryParameters['AudioLayer.' . ($i + 1) . '.VolumeRate'] = $AudioLayers[$i]['VolumeRate'];
 			$this->queryParameters['AudioLayer.' . ($i + 1) . '.ValidChannel'] = $AudioLayers[$i]['ValidChannel'];
-			$this->queryParameters['AudioLayer.' . ($i + 1) . '.FixedDelayDuration'] = $AudioLayers[$i]['FixedDelayDuration'];
 
 		}
 	}
@@ -74,13 +74,13 @@ class ModifyCasterLayoutRequest extends \RpcAcsRequest
 		$this->VideoLayers = $VideoLayers;
 		for ($i = 0; $i < count($VideoLayers); $i ++) {	
 			$this->queryParameters['VideoLayer.' . ($i + 1) . '.FillMode'] = $VideoLayers[$i]['FillMode'];
-			$this->queryParameters['VideoLayer.' . ($i + 1) . '.HeightNormalized'] = $VideoLayers[$i]['HeightNormalized'];
 			$this->queryParameters['VideoLayer.' . ($i + 1) . '.WidthNormalized'] = $VideoLayers[$i]['WidthNormalized'];
+			$this->queryParameters['VideoLayer.' . ($i + 1) . '.FixedDelayDuration'] = $VideoLayers[$i]['FixedDelayDuration'];
 			$this->queryParameters['VideoLayer.' . ($i + 1) . '.PositionRefer'] = $VideoLayers[$i]['PositionRefer'];
 			for ($j = 0; $j < count($VideoLayers[$i]['PositionNormalizeds']); $j ++) {
 				$this->queryParameters['VideoLayer.' . ($i + 1) . '.PositionNormalized.' . ($j + 1)] = $VideoLayers[$i]['PositionNormalizeds'][$j];
 			}
-			$this->queryParameters['VideoLayer.' . ($i + 1) . '.FixedDelayDuration'] = $VideoLayers[$i]['FixedDelayDuration'];
+			$this->queryParameters['VideoLayer.' . ($i + 1) . '.HeightNormalized'] = $VideoLayers[$i]['HeightNormalized'];
 
 		}
 	}

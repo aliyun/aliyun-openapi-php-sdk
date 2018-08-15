@@ -49,15 +49,15 @@ class AddCasterProgramRequest extends \RpcAcsRequest
 	public function setEpisodes($Episodes) {
 		$this->Episodes = $Episodes;
 		for ($i = 0; $i < count($Episodes); $i ++) {	
-			$this->queryParameters['Episode.' . ($i + 1) . '.EpisodeType'] = $Episodes[$i]['EpisodeType'];
-			$this->queryParameters['Episode.' . ($i + 1) . '.EpisodeName'] = $Episodes[$i]['EpisodeName'];
 			$this->queryParameters['Episode.' . ($i + 1) . '.ResourceId'] = $Episodes[$i]['ResourceId'];
 			for ($j = 0; $j < count($Episodes[$i]['ComponentIds']); $j ++) {
 				$this->queryParameters['Episode.' . ($i + 1) . '.ComponentId.' . ($j + 1)] = $Episodes[$i]['ComponentIds'][$j];
 			}
-			$this->queryParameters['Episode.' . ($i + 1) . '.StartTime'] = $Episodes[$i]['StartTime'];
-			$this->queryParameters['Episode.' . ($i + 1) . '.EndTime'] = $Episodes[$i]['EndTime'];
 			$this->queryParameters['Episode.' . ($i + 1) . '.SwitchType'] = $Episodes[$i]['SwitchType'];
+			$this->queryParameters['Episode.' . ($i + 1) . '.EpisodeType'] = $Episodes[$i]['EpisodeType'];
+			$this->queryParameters['Episode.' . ($i + 1) . '.EpisodeName'] = $Episodes[$i]['EpisodeName'];
+			$this->queryParameters['Episode.' . ($i + 1) . '.EndTime'] = $Episodes[$i]['EndTime'];
+			$this->queryParameters['Episode.' . ($i + 1) . '.StartTime'] = $Episodes[$i]['StartTime'];
 
 		}
 	}

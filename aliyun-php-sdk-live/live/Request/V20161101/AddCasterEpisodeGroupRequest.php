@@ -59,8 +59,8 @@ class AddCasterEpisodeGroupRequest extends \RpcAcsRequest
 	public function setItems($Items) {
 		$this->Items = $Items;
 		for ($i = 0; $i < count($Items); $i ++) {	
-			$this->queryParameters['Item.' . ($i + 1) . '.ItemName'] = $Items[$i]['ItemName'];
 			$this->queryParameters['Item.' . ($i + 1) . '.VodUrl'] = $Items[$i]['VodUrl'];
+			$this->queryParameters['Item.' . ($i + 1) . '.ItemName'] = $Items[$i]['ItemName'];
 
 		}
 	}
