@@ -23,27 +23,41 @@ class ModifyScalingConfigurationRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "ModifyScalingConfiguration", "ESS", "openAPI");
+		parent::__construct("Ess", "2014-08-28", "ModifyScalingConfiguration", "ess", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $imageId;
 
-	private  $resourceOwnerAccount;
-
-	private  $ownerAccount;
+	private  $ioOptimized;
 
 	private  $InstanceTypes;
 
 	private  $internetMaxBandwidthOut;
 
-	private  $ramRoleName;
-
 	private  $keyPairName;
+
+	private  $SpotPriceLimits;
+
+	private  $systemDiskCategory;
+
+	private  $userData;
+
+	private  $hostName;
+
+	private  $passwordInherit;
+
+	private  $imageName;
+
+	private  $resourceOwnerAccount;
+
+	private  $ownerAccount;
+
+	private  $ramRoleName;
 
 	private  $ownerId;
 
-	private  $systemDiskCategory;
+	private  $DataDisks;
 
 	private  $scalingConfigurationName;
 
@@ -51,15 +65,11 @@ class ModifyScalingConfigurationRequest extends \RpcAcsRequest
 
 	private  $scalingConfigurationId;
 
-	private  $userData;
-
-	private  $hostName;
+	private  $spotStrategy;
 
 	private  $instanceName;
 
 	private  $loadBalancerWeight;
-
-	private  $passwordInherit;
 
 	private  $systemDiskSize;
 
@@ -72,6 +82,102 @@ class ModifyScalingConfigurationRequest extends \RpcAcsRequest
 	public function setImageId($imageId) {
 		$this->imageId = $imageId;
 		$this->queryParameters["ImageId"]=$imageId;
+	}
+
+	public function getIoOptimized() {
+		return $this->ioOptimized;
+	}
+
+	public function setIoOptimized($ioOptimized) {
+		$this->ioOptimized = $ioOptimized;
+		$this->queryParameters["IoOptimized"]=$ioOptimized;
+	}
+
+	public function getInstanceTypes() {
+		return $this->InstanceTypes;
+	}
+
+	public function setInstanceTypes($InstanceTypes) {
+		$this->InstanceTypes = $InstanceTypes;
+		for ($i = 0; $i < count($InstanceTypes); $i ++) {
+			$this->queryParameters["InstanceTypes.".($i+1)] = $InstanceTypes[$i];
+		}
+	}
+
+	public function getInternetMaxBandwidthOut() {
+		return $this->internetMaxBandwidthOut;
+	}
+
+	public function setInternetMaxBandwidthOut($internetMaxBandwidthOut) {
+		$this->internetMaxBandwidthOut = $internetMaxBandwidthOut;
+		$this->queryParameters["InternetMaxBandwidthOut"]=$internetMaxBandwidthOut;
+	}
+
+	public function getKeyPairName() {
+		return $this->keyPairName;
+	}
+
+	public function setKeyPairName($keyPairName) {
+		$this->keyPairName = $keyPairName;
+		$this->queryParameters["KeyPairName"]=$keyPairName;
+	}
+
+	public function getSpotPriceLimits() {
+		return $this->SpotPriceLimits;
+	}
+
+	public function setSpotPriceLimits($SpotPriceLimits) {
+		$this->SpotPriceLimits = $SpotPriceLimits;
+		for ($i = 0; $i < count($SpotPriceLimits); $i ++) {	
+			$this->queryParameters['SpotPriceLimit.' . ($i + 1) . '.InstanceType'] = $SpotPriceLimits[$i]['InstanceType'];
+			$this->queryParameters['SpotPriceLimit.' . ($i + 1) . '.PriceLimit'] = $SpotPriceLimits[$i]['PriceLimit'];
+
+		}
+	}
+
+	public function getSystemDiskCategory() {
+		return $this->systemDiskCategory;
+	}
+
+	public function setSystemDiskCategory($systemDiskCategory) {
+		$this->systemDiskCategory = $systemDiskCategory;
+		$this->queryParameters["SystemDisk.Category"]=$systemDiskCategory;
+	}
+
+	public function getUserData() {
+		return $this->userData;
+	}
+
+	public function setUserData($userData) {
+		$this->userData = $userData;
+		$this->queryParameters["UserData"]=$userData;
+	}
+
+	public function getHostName() {
+		return $this->hostName;
+	}
+
+	public function setHostName($hostName) {
+		$this->hostName = $hostName;
+		$this->queryParameters["HostName"]=$hostName;
+	}
+
+	public function getPasswordInherit() {
+		return $this->passwordInherit;
+	}
+
+	public function setPasswordInherit($passwordInherit) {
+		$this->passwordInherit = $passwordInherit;
+		$this->queryParameters["PasswordInherit"]=$passwordInherit;
+	}
+
+	public function getImageName() {
+		return $this->imageName;
+	}
+
+	public function setImageName($imageName) {
+		$this->imageName = $imageName;
+		$this->queryParameters["ImageName"]=$imageName;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -92,26 +198,6 @@ class ModifyScalingConfigurationRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getInstanceTypes() {
-		return $this->InstanceTypes;
-	}
-
-	public function setInstanceTypes($InstanceTypes) {
-		$this->InstanceTypes = $InstanceTypes;
-		for ($i = 0; $i < count($InstanceTypes); $i ++) {	
-			$this->queryParameters["InstanceTypes.".($i+1)] = $InstanceTypes[$i];
-		}
-	}
-
-	public function getInternetMaxBandwidthOut() {
-		return $this->internetMaxBandwidthOut;
-	}
-
-	public function setInternetMaxBandwidthOut($internetMaxBandwidthOut) {
-		$this->internetMaxBandwidthOut = $internetMaxBandwidthOut;
-		$this->queryParameters["InternetMaxBandwidthOut"]=$internetMaxBandwidthOut;
-	}
-
 	public function getRamRoleName() {
 		return $this->ramRoleName;
 	}
@@ -119,15 +205,6 @@ class ModifyScalingConfigurationRequest extends \RpcAcsRequest
 	public function setRamRoleName($ramRoleName) {
 		$this->ramRoleName = $ramRoleName;
 		$this->queryParameters["RamRoleName"]=$ramRoleName;
-	}
-
-	public function getKeyPairName() {
-		return $this->keyPairName;
-	}
-
-	public function setKeyPairName($keyPairName) {
-		$this->keyPairName = $keyPairName;
-		$this->queryParameters["KeyPairName"]=$keyPairName;
 	}
 
 	public function getOwnerId() {
@@ -139,13 +216,20 @@ class ModifyScalingConfigurationRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getSystemDiskCategory() {
-		return $this->systemDiskCategory;
+	public function getDataDisks() {
+		return $this->DataDisks;
 	}
 
-	public function setSystemDiskCategory($systemDiskCategory) {
-		$this->systemDiskCategory = $systemDiskCategory;
-		$this->queryParameters["SystemDisk.Category"]=$systemDiskCategory;
+	public function setDataDisks($DataDisks) {
+		$this->DataDisks = $DataDisks;
+		for ($i = 0; $i < count($DataDisks); $i ++) {	
+			$this->queryParameters['DataDisk.' . ($i + 1) . '.SnapshotId'] = $DataDisks[$i]['SnapshotId'];
+			$this->queryParameters['DataDisk.' . ($i + 1) . '.Size'] = $DataDisks[$i]['Size'];
+			$this->queryParameters['DataDisk.' . ($i + 1) . '.Category'] = $DataDisks[$i]['Category'];
+			$this->queryParameters['DataDisk.' . ($i + 1) . '.Device'] = $DataDisks[$i]['Device'];
+			$this->queryParameters['DataDisk.' . ($i + 1) . '.DeleteWithInstance'] = $DataDisks[$i]['DeleteWithInstance'];
+
+		}
 	}
 
 	public function getScalingConfigurationName() {
@@ -175,22 +259,13 @@ class ModifyScalingConfigurationRequest extends \RpcAcsRequest
 		$this->queryParameters["ScalingConfigurationId"]=$scalingConfigurationId;
 	}
 
-	public function getUserData() {
-		return $this->userData;
+	public function getSpotStrategy() {
+		return $this->spotStrategy;
 	}
 
-	public function setUserData($userData) {
-		$this->userData = $userData;
-		$this->queryParameters["UserData"]=$userData;
-	}
-
-	public function getHostName() {
-		return $this->hostName;
-	}
-
-	public function setHostName($hostName) {
-		$this->hostName = $hostName;
-		$this->queryParameters["HostName"]=$hostName;
+	public function setSpotStrategy($spotStrategy) {
+		$this->spotStrategy = $spotStrategy;
+		$this->queryParameters["SpotStrategy"]=$spotStrategy;
 	}
 
 	public function getInstanceName() {
@@ -209,15 +284,6 @@ class ModifyScalingConfigurationRequest extends \RpcAcsRequest
 	public function setLoadBalancerWeight($loadBalancerWeight) {
 		$this->loadBalancerWeight = $loadBalancerWeight;
 		$this->queryParameters["LoadBalancerWeight"]=$loadBalancerWeight;
-	}
-
-	public function getPasswordInherit() {
-		return $this->passwordInherit;
-	}
-
-	public function setPasswordInherit($passwordInherit) {
-		$this->passwordInherit = $passwordInherit;
-		$this->queryParameters["PasswordInherit"]=$passwordInherit;
 	}
 
 	public function getSystemDiskSize() {

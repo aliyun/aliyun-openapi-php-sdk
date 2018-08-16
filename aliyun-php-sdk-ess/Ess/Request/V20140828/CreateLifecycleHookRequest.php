@@ -146,12 +146,12 @@ class CreateLifecycleHookRequest extends \RpcAcsRequest
 	public function setLifecycleHooks($LifecycleHooks) {
 		$this->LifecycleHooks = $LifecycleHooks;
 		for ($i = 0; $i < count($LifecycleHooks); $i ++) {	
-			$this->queryParameters['LifecycleHook.' . ($i + 1) . '.LifecycleHookName'] = $LifecycleHooks[$i]['LifecycleHookName'];
-			$this->queryParameters['LifecycleHook.' . ($i + 1) . '.LifecycleTransition'] = $LifecycleHooks[$i]['LifecycleTransition'];
 			$this->queryParameters['LifecycleHook.' . ($i + 1) . '.DefaultResult'] = $LifecycleHooks[$i]['DefaultResult'];
+			$this->queryParameters['LifecycleHook.' . ($i + 1) . '.LifecycleHookName'] = $LifecycleHooks[$i]['LifecycleHookName'];
 			$this->queryParameters['LifecycleHook.' . ($i + 1) . '.HeartbeatTimeout'] = $LifecycleHooks[$i]['HeartbeatTimeout'];
-			$this->queryParameters['LifecycleHook.' . ($i + 1) . '.NotificationMetadata'] = $LifecycleHooks[$i]['NotificationMetadata'];
 			$this->queryParameters['LifecycleHook.' . ($i + 1) . '.NotificationArn'] = $LifecycleHooks[$i]['NotificationArn'];
+			$this->queryParameters['LifecycleHook.' . ($i + 1) . '.NotificationMetadata'] = $LifecycleHooks[$i]['NotificationMetadata'];
+			$this->queryParameters['LifecycleHook.' . ($i + 1) . '.LifecycleTransition'] = $LifecycleHooks[$i]['LifecycleTransition'];
 
 		}
 	}
