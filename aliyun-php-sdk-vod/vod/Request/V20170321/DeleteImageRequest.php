@@ -19,29 +19,29 @@
  */
 namespace vod\Request\V20170321;
 
-class GetMezzanineInfoRequest extends \RpcAcsRequest
+class DeleteImageRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "GetMezzanineInfo", "vod", "openAPI");
+		parent::__construct("vod", "2017-03-21", "DeleteImage", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
+	private  $imageType;
+
 	private  $resourceOwnerAccount;
+
+	private  $imageURLs;
 
 	private  $videoId;
 
-	private  $previewSegment;
-
-	private  $outputType;
-
-	private  $additionType;
-
 	private  $ownerId;
 
-	private  $authTimeout;
+	private  $deleteImageType;
+
+	private  $imageIds;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -50,6 +50,15 @@ class GetMezzanineInfoRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getImageType() {
+		return $this->imageType;
+	}
+
+	public function setImageType($imageType) {
+		$this->imageType = $imageType;
+		$this->queryParameters["ImageType"]=$imageType;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -61,6 +70,15 @@ class GetMezzanineInfoRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
+	public function getImageURLs() {
+		return $this->imageURLs;
+	}
+
+	public function setImageURLs($imageURLs) {
+		$this->imageURLs = $imageURLs;
+		$this->queryParameters["ImageURLs"]=$imageURLs;
+	}
+
 	public function getVideoId() {
 		return $this->videoId;
 	}
@@ -68,33 +86,6 @@ class GetMezzanineInfoRequest extends \RpcAcsRequest
 	public function setVideoId($videoId) {
 		$this->videoId = $videoId;
 		$this->queryParameters["VideoId"]=$videoId;
-	}
-
-	public function getPreviewSegment() {
-		return $this->previewSegment;
-	}
-
-	public function setPreviewSegment($previewSegment) {
-		$this->previewSegment = $previewSegment;
-		$this->queryParameters["PreviewSegment"]=$previewSegment;
-	}
-
-	public function getOutputType() {
-		return $this->outputType;
-	}
-
-	public function setOutputType($outputType) {
-		$this->outputType = $outputType;
-		$this->queryParameters["OutputType"]=$outputType;
-	}
-
-	public function getAdditionType() {
-		return $this->additionType;
-	}
-
-	public function setAdditionType($additionType) {
-		$this->additionType = $additionType;
-		$this->queryParameters["AdditionType"]=$additionType;
 	}
 
 	public function getOwnerId() {
@@ -106,13 +97,22 @@ class GetMezzanineInfoRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getAuthTimeout() {
-		return $this->authTimeout;
+	public function getDeleteImageType() {
+		return $this->deleteImageType;
 	}
 
-	public function setAuthTimeout($authTimeout) {
-		$this->authTimeout = $authTimeout;
-		$this->queryParameters["AuthTimeout"]=$authTimeout;
+	public function setDeleteImageType($deleteImageType) {
+		$this->deleteImageType = $deleteImageType;
+		$this->queryParameters["DeleteImageType"]=$deleteImageType;
+	}
+
+	public function getImageIds() {
+		return $this->imageIds;
+	}
+
+	public function setImageIds($imageIds) {
+		$this->imageIds = $imageIds;
+		$this->queryParameters["ImageIds"]=$imageIds;
 	}
 	
 }
