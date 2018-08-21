@@ -19,40 +19,36 @@
  */
 namespace imm\Request\V20170906;
 
-class IndexTagRequest extends \RpcAcsRequest
+class CompareFaceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("imm", "2017-09-06", "IndexTag", "imm", "openAPI");
+		parent::__construct("imm", "2017-09-06", "CompareFace", "imm", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $srcUris;
+	private  $srcUriB;
 
-	private  $modelId;
+	private  $srcUriA;
 
 	private  $project;
 
-	private  $setId;
-
-	private  $force;
-
-	public function getSrcUris() {
-		return $this->srcUris;
+	public function getSrcUriB() {
+		return $this->srcUriB;
 	}
 
-	public function setSrcUris($srcUris) {
-		$this->srcUris = $srcUris;
-		$this->queryParameters["SrcUris"]=$srcUris;
+	public function setSrcUriB($srcUriB) {
+		$this->srcUriB = $srcUriB;
+		$this->queryParameters["SrcUriB"]=$srcUriB;
 	}
 
-	public function getModelId() {
-		return $this->modelId;
+	public function getSrcUriA() {
+		return $this->srcUriA;
 	}
 
-	public function setModelId($modelId) {
-		$this->modelId = $modelId;
-		$this->queryParameters["ModelId"]=$modelId;
+	public function setSrcUriA($srcUriA) {
+		$this->srcUriA = $srcUriA;
+		$this->queryParameters["SrcUriA"]=$srcUriA;
 	}
 
 	public function getProject() {
@@ -62,24 +58,6 @@ class IndexTagRequest extends \RpcAcsRequest
 	public function setProject($project) {
 		$this->project = $project;
 		$this->queryParameters["Project"]=$project;
-	}
-
-	public function getSetId() {
-		return $this->setId;
-	}
-
-	public function setSetId($setId) {
-		$this->setId = $setId;
-		$this->queryParameters["SetId"]=$setId;
-	}
-
-	public function getForce() {
-		return $this->force;
-	}
-
-	public function setForce($force) {
-		$this->force = $force;
-		$this->queryParameters["Force"]=$force;
 	}
 	
 }

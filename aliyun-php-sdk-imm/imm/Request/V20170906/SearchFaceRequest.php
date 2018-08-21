@@ -19,31 +19,33 @@
  */
 namespace imm\Request\V20170906;
 
-class DeleteFaceSearchImageByIdRequest extends \RpcAcsRequest
+class SearchFaceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("imm", "2017-09-06", "DeleteFaceSearchImageById", "imm", "openAPI");
+		parent::__construct("imm", "2017-09-06", "SearchFace", "imm", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $imageId;
+	private  $resultNum;
 
 	private  $project;
 
+	private  $searchThresholdLevel;
+
 	private  $srcUri;
+
+	private  $isThreshold;
 
 	private  $groupName;
 
-	private  $user;
-
-	public function getImageId() {
-		return $this->imageId;
+	public function getResultNum() {
+		return $this->resultNum;
 	}
 
-	public function setImageId($imageId) {
-		$this->imageId = $imageId;
-		$this->queryParameters["ImageId"]=$imageId;
+	public function setResultNum($resultNum) {
+		$this->resultNum = $resultNum;
+		$this->queryParameters["ResultNum"]=$resultNum;
 	}
 
 	public function getProject() {
@@ -55,6 +57,15 @@ class DeleteFaceSearchImageByIdRequest extends \RpcAcsRequest
 		$this->queryParameters["Project"]=$project;
 	}
 
+	public function getSearchThresholdLevel() {
+		return $this->searchThresholdLevel;
+	}
+
+	public function setSearchThresholdLevel($searchThresholdLevel) {
+		$this->searchThresholdLevel = $searchThresholdLevel;
+		$this->queryParameters["SearchThresholdLevel"]=$searchThresholdLevel;
+	}
+
 	public function getSrcUri() {
 		return $this->srcUri;
 	}
@@ -64,6 +75,15 @@ class DeleteFaceSearchImageByIdRequest extends \RpcAcsRequest
 		$this->queryParameters["SrcUri"]=$srcUri;
 	}
 
+	public function getIsThreshold() {
+		return $this->isThreshold;
+	}
+
+	public function setIsThreshold($isThreshold) {
+		$this->isThreshold = $isThreshold;
+		$this->queryParameters["IsThreshold"]=$isThreshold;
+	}
+
 	public function getGroupName() {
 		return $this->groupName;
 	}
@@ -71,15 +91,6 @@ class DeleteFaceSearchImageByIdRequest extends \RpcAcsRequest
 	public function setGroupName($groupName) {
 		$this->groupName = $groupName;
 		$this->queryParameters["GroupName"]=$groupName;
-	}
-
-	public function getUser() {
-		return $this->user;
-	}
-
-	public function setUser($user) {
-		$this->user = $user;
-		$this->queryParameters["User"]=$user;
 	}
 	
 }

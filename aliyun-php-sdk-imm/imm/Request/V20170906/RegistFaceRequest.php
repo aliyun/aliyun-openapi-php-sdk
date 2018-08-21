@@ -19,31 +19,44 @@
  */
 namespace imm\Request\V20170906;
 
-class DeleteFaceSearchImageByIdRequest extends \RpcAcsRequest
+class RegistFaceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("imm", "2017-09-06", "DeleteFaceSearchImageById", "imm", "openAPI");
+		parent::__construct("imm", "2017-09-06", "RegistFace", "imm", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $imageId;
+	private  $chooseBiggestFace;
+
+	private  $isQualityLimit;
 
 	private  $project;
 
 	private  $srcUri;
 
+	private  $registerCheckLevel;
+
 	private  $groupName;
 
 	private  $user;
 
-	public function getImageId() {
-		return $this->imageId;
+	public function getChooseBiggestFace() {
+		return $this->chooseBiggestFace;
 	}
 
-	public function setImageId($imageId) {
-		$this->imageId = $imageId;
-		$this->queryParameters["ImageId"]=$imageId;
+	public function setChooseBiggestFace($chooseBiggestFace) {
+		$this->chooseBiggestFace = $chooseBiggestFace;
+		$this->queryParameters["ChooseBiggestFace"]=$chooseBiggestFace;
+	}
+
+	public function getIsQualityLimit() {
+		return $this->isQualityLimit;
+	}
+
+	public function setIsQualityLimit($isQualityLimit) {
+		$this->isQualityLimit = $isQualityLimit;
+		$this->queryParameters["IsQualityLimit"]=$isQualityLimit;
 	}
 
 	public function getProject() {
@@ -62,6 +75,15 @@ class DeleteFaceSearchImageByIdRequest extends \RpcAcsRequest
 	public function setSrcUri($srcUri) {
 		$this->srcUri = $srcUri;
 		$this->queryParameters["SrcUri"]=$srcUri;
+	}
+
+	public function getRegisterCheckLevel() {
+		return $this->registerCheckLevel;
+	}
+
+	public function setRegisterCheckLevel($registerCheckLevel) {
+		$this->registerCheckLevel = $registerCheckLevel;
+		$this->queryParameters["RegisterCheckLevel"]=$registerCheckLevel;
 	}
 
 	public function getGroupName() {

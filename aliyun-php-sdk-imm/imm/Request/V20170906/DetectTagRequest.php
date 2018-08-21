@@ -29,6 +29,8 @@ class DetectTagRequest extends \RpcAcsRequest
 
 	private  $srcUris;
 
+	private  $modelId;
+
 	private  $project;
 
 	public function getSrcUris() {
@@ -38,6 +40,15 @@ class DetectTagRequest extends \RpcAcsRequest
 	public function setSrcUris($srcUris) {
 		$this->srcUris = $srcUris;
 		$this->queryParameters["SrcUris"]=$srcUris;
+	}
+
+	public function getModelId() {
+		return $this->modelId;
+	}
+
+	public function setModelId($modelId) {
+		$this->modelId = $modelId;
+		$this->queryParameters["ModelId"]=$modelId;
 	}
 
 	public function getProject() {
