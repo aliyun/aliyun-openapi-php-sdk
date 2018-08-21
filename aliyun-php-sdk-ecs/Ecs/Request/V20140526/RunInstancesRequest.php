@@ -115,6 +115,8 @@ class RunInstancesRequest extends \RpcAcsRequest
 
 	private  $dedicatedHostId;
 
+	private  $creditSpecification;
+
 	private  $DataDisks;
 
 	private  $launchTemplateVersion;
@@ -528,6 +530,15 @@ class RunInstancesRequest extends \RpcAcsRequest
 	public function setDedicatedHostId($dedicatedHostId) {
 		$this->dedicatedHostId = $dedicatedHostId;
 		$this->queryParameters["DedicatedHostId"]=$dedicatedHostId;
+	}
+
+	public function getCreditSpecification() {
+		return $this->creditSpecification;
+	}
+
+	public function setCreditSpecification($creditSpecification) {
+		$this->creditSpecification = $creditSpecification;
+		$this->queryParameters["CreditSpecification"]=$creditSpecification;
 	}
 
 	public function getDataDisks() {

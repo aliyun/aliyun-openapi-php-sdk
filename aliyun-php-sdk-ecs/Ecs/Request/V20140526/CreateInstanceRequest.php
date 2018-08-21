@@ -117,6 +117,8 @@ class CreateInstanceRequest extends \RpcAcsRequest
 
 	private  $clusterId;
 
+	private  $creditSpecification;
+
 	private  $DataDisks;
 
 	private  $systemDiskSize;
@@ -530,6 +532,15 @@ class CreateInstanceRequest extends \RpcAcsRequest
 	public function setClusterId($clusterId) {
 		$this->clusterId = $clusterId;
 		$this->queryParameters["ClusterId"]=$clusterId;
+	}
+
+	public function getCreditSpecification() {
+		return $this->creditSpecification;
+	}
+
+	public function setCreditSpecification($creditSpecification) {
+		$this->creditSpecification = $creditSpecification;
+		$this->queryParameters["CreditSpecification"]=$creditSpecification;
 	}
 
 	public function getDataDisks() {

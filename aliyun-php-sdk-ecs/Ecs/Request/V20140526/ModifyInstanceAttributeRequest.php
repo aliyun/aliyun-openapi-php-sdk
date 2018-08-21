@@ -27,17 +27,7 @@ class ModifyInstanceAttributeRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $userData;
-
 	private  $resourceOwnerId;
-
-	private  $password;
-
-	private  $hostName;
-
-	private  $instanceId;
-
-	private  $instanceName;
 
 	private  $resourceOwnerAccount;
 
@@ -47,16 +37,19 @@ class ModifyInstanceAttributeRequest extends \RpcAcsRequest
 
 	private  $description;
 
+	private  $creditSpecification;
+
 	private  $ownerId;
 
-	public function getUserData() {
-		return $this->userData;
-	}
+	private  $userData;
 
-	public function setUserData($userData) {
-		$this->userData = $userData;
-		$this->queryParameters["UserData"]=$userData;
-	}
+	private  $password;
+
+	private  $hostName;
+
+	private  $instanceId;
+
+	private  $instanceName;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -65,42 +58,6 @@ class ModifyInstanceAttributeRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getPassword() {
-		return $this->password;
-	}
-
-	public function setPassword($password) {
-		$this->password = $password;
-		$this->queryParameters["Password"]=$password;
-	}
-
-	public function getHostName() {
-		return $this->hostName;
-	}
-
-	public function setHostName($hostName) {
-		$this->hostName = $hostName;
-		$this->queryParameters["HostName"]=$hostName;
-	}
-
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
-
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
-
-	public function getInstanceName() {
-		return $this->instanceName;
-	}
-
-	public function setInstanceName($instanceName) {
-		$this->instanceName = $instanceName;
-		$this->queryParameters["InstanceName"]=$instanceName;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -139,6 +96,15 @@ class ModifyInstanceAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["Description"]=$description;
 	}
 
+	public function getCreditSpecification() {
+		return $this->creditSpecification;
+	}
+
+	public function setCreditSpecification($creditSpecification) {
+		$this->creditSpecification = $creditSpecification;
+		$this->queryParameters["CreditSpecification"]=$creditSpecification;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -146,6 +112,51 @@ class ModifyInstanceAttributeRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getUserData() {
+		return $this->userData;
+	}
+
+	public function setUserData($userData) {
+		$this->userData = $userData;
+		$this->queryParameters["UserData"]=$userData;
+	}
+
+	public function getPassword() {
+		return $this->password;
+	}
+
+	public function setPassword($password) {
+		$this->password = $password;
+		$this->queryParameters["Password"]=$password;
+	}
+
+	public function getHostName() {
+		return $this->hostName;
+	}
+
+	public function setHostName($hostName) {
+		$this->hostName = $hostName;
+		$this->queryParameters["HostName"]=$hostName;
+	}
+
+	public function getInstanceId() {
+		return $this->instanceId;
+	}
+
+	public function setInstanceId($instanceId) {
+		$this->instanceId = $instanceId;
+		$this->queryParameters["InstanceId"]=$instanceId;
+	}
+
+	public function getInstanceName() {
+		return $this->instanceName;
+	}
+
+	public function setInstanceName($instanceName) {
+		$this->instanceName = $instanceName;
+		$this->queryParameters["InstanceName"]=$instanceName;
 	}
 	
 }
