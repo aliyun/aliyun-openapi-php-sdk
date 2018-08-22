@@ -43,6 +43,8 @@ class ModifyNodeSpecRequest extends \RpcAcsRequest
 
 	private  $securityToken;
 
+	private  $effectiveTime;
+
 	private  $dBInstanceId;
 
 	private  $nodeId;
@@ -117,6 +119,15 @@ class ModifyNodeSpecRequest extends \RpcAcsRequest
 	public function setSecurityToken($securityToken) {
 		$this->securityToken = $securityToken;
 		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
+
+	public function getEffectiveTime() {
+		return $this->effectiveTime;
+	}
+
+	public function setEffectiveTime($effectiveTime) {
+		$this->effectiveTime = $effectiveTime;
+		$this->queryParameters["EffectiveTime"]=$effectiveTime;
 	}
 
 	public function getDBInstanceId() {

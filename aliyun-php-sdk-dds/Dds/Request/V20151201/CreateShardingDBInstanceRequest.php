@@ -67,6 +67,8 @@ class CreateShardingDBInstanceRequest extends \RpcAcsRequest
 
 	private  $accountPassword;
 
+	private  $autoRenew;
+
 	private  $vpcId;
 
 	private  $zoneId;
@@ -116,8 +118,8 @@ class CreateShardingDBInstanceRequest extends \RpcAcsRequest
 	public function setReplicaSets($ReplicaSets) {
 		$this->ReplicaSets = $ReplicaSets;
 		for ($i = 0; $i < count($ReplicaSets); $i ++) {	
-			$this->queryParameters['ReplicaSet.' . ($i + 1) . '.Class'] = $ReplicaSets[$i]['Class'];
 			$this->queryParameters['ReplicaSet.' . ($i + 1) . '.Storage'] = $ReplicaSets[$i]['Storage'];
+			$this->queryParameters['ReplicaSet.' . ($i + 1) . '.Class'] = $ReplicaSets[$i]['Class'];
 
 		}
 	}
@@ -210,8 +212,8 @@ class CreateShardingDBInstanceRequest extends \RpcAcsRequest
 	public function setConfigServers($ConfigServers) {
 		$this->ConfigServers = $ConfigServers;
 		for ($i = 0; $i < count($ConfigServers); $i ++) {	
-			$this->queryParameters['ConfigServer.' . ($i + 1) . '.Class'] = $ConfigServers[$i]['Class'];
 			$this->queryParameters['ConfigServer.' . ($i + 1) . '.Storage'] = $ConfigServers[$i]['Storage'];
+			$this->queryParameters['ConfigServer.' . ($i + 1) . '.Class'] = $ConfigServers[$i]['Class'];
 
 		}
 	}
@@ -262,6 +264,15 @@ class CreateShardingDBInstanceRequest extends \RpcAcsRequest
 	public function setAccountPassword($accountPassword) {
 		$this->accountPassword = $accountPassword;
 		$this->queryParameters["AccountPassword"]=$accountPassword;
+	}
+
+	public function getAutoRenew() {
+		return $this->autoRenew;
+	}
+
+	public function setAutoRenew($autoRenew) {
+		$this->autoRenew = $autoRenew;
+		$this->queryParameters["AutoRenew"]=$autoRenew;
 	}
 
 	public function getVpcId() {

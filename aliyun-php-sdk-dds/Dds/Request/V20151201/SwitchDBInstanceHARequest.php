@@ -19,17 +19,15 @@
  */
 namespace Dds\Request\V20151201;
 
-class DescribeDBInstancesRequest extends \RpcAcsRequest
+class SwitchDBInstanceHARequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Dds", "2015-12-01", "DescribeDBInstances", "dds", "openAPI");
+		parent::__construct("Dds", "2015-12-01", "SwitchDBInstanceHA", "dds", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
-
-	private  $dBInstanceIds;
 
 	private  $resourceOwnerAccount;
 
@@ -37,19 +35,17 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 
 	private  $ownerId;
 
-	private  $pageNumber;
-
-	private  $replicationFactor;
-
-	private  $dBInstanceType;
-
-	private  $expired;
+	private  $targetInstanceId;
 
 	private  $securityToken;
 
-	private  $engine;
+	private  $switchType;
 
-	private  $pageSize;
+	private  $dBInstanceId;
+
+	private  $sourceInstanceId;
+
+	private  $nodeId;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -58,15 +54,6 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getDBInstanceIds() {
-		return $this->dBInstanceIds;
-	}
-
-	public function setDBInstanceIds($dBInstanceIds) {
-		$this->dBInstanceIds = $dBInstanceIds;
-		$this->queryParameters["DBInstanceIds"]=$dBInstanceIds;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -96,40 +83,13 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getPageNumber() {
-		return $this->pageNumber;
+	public function getTargetInstanceId() {
+		return $this->targetInstanceId;
 	}
 
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
-	public function getReplicationFactor() {
-		return $this->replicationFactor;
-	}
-
-	public function setReplicationFactor($replicationFactor) {
-		$this->replicationFactor = $replicationFactor;
-		$this->queryParameters["ReplicationFactor"]=$replicationFactor;
-	}
-
-	public function getDBInstanceType() {
-		return $this->dBInstanceType;
-	}
-
-	public function setDBInstanceType($dBInstanceType) {
-		$this->dBInstanceType = $dBInstanceType;
-		$this->queryParameters["DBInstanceType"]=$dBInstanceType;
-	}
-
-	public function getExpired() {
-		return $this->expired;
-	}
-
-	public function setExpired($expired) {
-		$this->expired = $expired;
-		$this->queryParameters["Expired"]=$expired;
+	public function setTargetInstanceId($targetInstanceId) {
+		$this->targetInstanceId = $targetInstanceId;
+		$this->queryParameters["TargetInstanceId"]=$targetInstanceId;
 	}
 
 	public function getSecurityToken() {
@@ -141,22 +101,40 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getEngine() {
-		return $this->engine;
+	public function getSwitchType() {
+		return $this->switchType;
 	}
 
-	public function setEngine($engine) {
-		$this->engine = $engine;
-		$this->queryParameters["Engine"]=$engine;
+	public function setSwitchType($switchType) {
+		$this->switchType = $switchType;
+		$this->queryParameters["SwitchType"]=$switchType;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
+	public function getDBInstanceId() {
+		return $this->dBInstanceId;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setDBInstanceId($dBInstanceId) {
+		$this->dBInstanceId = $dBInstanceId;
+		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
+	}
+
+	public function getSourceInstanceId() {
+		return $this->sourceInstanceId;
+	}
+
+	public function setSourceInstanceId($sourceInstanceId) {
+		$this->sourceInstanceId = $sourceInstanceId;
+		$this->queryParameters["SourceInstanceId"]=$sourceInstanceId;
+	}
+
+	public function getNodeId() {
+		return $this->nodeId;
+	}
+
+	public function setNodeId($nodeId) {
+		$this->nodeId = $nodeId;
+		$this->queryParameters["NodeId"]=$nodeId;
 	}
 	
 }

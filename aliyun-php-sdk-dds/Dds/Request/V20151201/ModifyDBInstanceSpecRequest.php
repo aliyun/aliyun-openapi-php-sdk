@@ -47,6 +47,8 @@ class ModifyDBInstanceSpecRequest extends \RpcAcsRequest
 
 	private  $securityToken;
 
+	private  $effectiveTime;
+
 	private  $dBInstanceId;
 
 	private  $businessInfo;
@@ -141,6 +143,15 @@ class ModifyDBInstanceSpecRequest extends \RpcAcsRequest
 	public function setSecurityToken($securityToken) {
 		$this->securityToken = $securityToken;
 		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
+
+	public function getEffectiveTime() {
+		return $this->effectiveTime;
+	}
+
+	public function setEffectiveTime($effectiveTime) {
+		$this->effectiveTime = $effectiveTime;
+		$this->queryParameters["EffectiveTime"]=$effectiveTime;
 	}
 
 	public function getDBInstanceId() {

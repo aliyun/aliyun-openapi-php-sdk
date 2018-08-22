@@ -19,37 +19,43 @@
  */
 namespace Dds\Request\V20151201;
 
-class DescribeDBInstancesRequest extends \RpcAcsRequest
+class DescribeIndexRecommendationRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Dds", "2015-12-01", "DescribeDBInstances", "dds", "openAPI");
+		parent::__construct("Dds", "2015-12-01", "DescribeIndexRecommendation", "dds", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
-	private  $dBInstanceIds;
-
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
+
+	private  $endTime;
+
+	private  $collection;
+
+	private  $startTime;
+
+	private  $operationType;
 
 	private  $ownerId;
 
 	private  $pageNumber;
 
-	private  $replicationFactor;
+	private  $database;
 
-	private  $dBInstanceType;
-
-	private  $expired;
+	private  $instanceId;
 
 	private  $securityToken;
 
-	private  $engine;
-
 	private  $pageSize;
+
+	private  $nodeId;
+
+	private  $taskId;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -58,15 +64,6 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getDBInstanceIds() {
-		return $this->dBInstanceIds;
-	}
-
-	public function setDBInstanceIds($dBInstanceIds) {
-		$this->dBInstanceIds = $dBInstanceIds;
-		$this->queryParameters["DBInstanceIds"]=$dBInstanceIds;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -87,6 +84,42 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
+	}
+
+	public function getCollection() {
+		return $this->collection;
+	}
+
+	public function setCollection($collection) {
+		$this->collection = $collection;
+		$this->queryParameters["Collection"]=$collection;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
+
+	public function getOperationType() {
+		return $this->operationType;
+	}
+
+	public function setOperationType($operationType) {
+		$this->operationType = $operationType;
+		$this->queryParameters["OperationType"]=$operationType;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -105,31 +138,22 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 
-	public function getReplicationFactor() {
-		return $this->replicationFactor;
+	public function getDatabase() {
+		return $this->database;
 	}
 
-	public function setReplicationFactor($replicationFactor) {
-		$this->replicationFactor = $replicationFactor;
-		$this->queryParameters["ReplicationFactor"]=$replicationFactor;
+	public function setDatabase($database) {
+		$this->database = $database;
+		$this->queryParameters["Database"]=$database;
 	}
 
-	public function getDBInstanceType() {
-		return $this->dBInstanceType;
+	public function getInstanceId() {
+		return $this->instanceId;
 	}
 
-	public function setDBInstanceType($dBInstanceType) {
-		$this->dBInstanceType = $dBInstanceType;
-		$this->queryParameters["DBInstanceType"]=$dBInstanceType;
-	}
-
-	public function getExpired() {
-		return $this->expired;
-	}
-
-	public function setExpired($expired) {
-		$this->expired = $expired;
-		$this->queryParameters["Expired"]=$expired;
+	public function setInstanceId($instanceId) {
+		$this->instanceId = $instanceId;
+		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 
 	public function getSecurityToken() {
@@ -141,15 +165,6 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getEngine() {
-		return $this->engine;
-	}
-
-	public function setEngine($engine) {
-		$this->engine = $engine;
-		$this->queryParameters["Engine"]=$engine;
-	}
-
 	public function getPageSize() {
 		return $this->pageSize;
 	}
@@ -157,6 +172,24 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 	public function setPageSize($pageSize) {
 		$this->pageSize = $pageSize;
 		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
+	public function getNodeId() {
+		return $this->nodeId;
+	}
+
+	public function setNodeId($nodeId) {
+		$this->nodeId = $nodeId;
+		$this->queryParameters["NodeId"]=$nodeId;
+	}
+
+	public function getTaskId() {
+		return $this->taskId;
+	}
+
+	public function setTaskId($taskId) {
+		$this->taskId = $taskId;
+		$this->queryParameters["TaskId"]=$taskId;
 	}
 	
 }

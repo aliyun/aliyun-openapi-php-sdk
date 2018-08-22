@@ -19,11 +19,11 @@
  */
 namespace Dds\Request\V20151201;
 
-class DescribeReplicasRequest extends \RpcAcsRequest
+class DescribeKernelReleaseNotesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Dds", "2015-12-01", "DescribeReplicas", "dds", "openAPI");
+		parent::__construct("Dds", "2015-12-01", "DescribeKernelReleaseNotes", "dds", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -33,17 +33,11 @@ class DescribeReplicasRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerAccount;
 
-	private  $attachDbInstanceData;
-
 	private  $ownerAccount;
-
-	private  $replicaId;
-
-	private  $pageSize;
 
 	private  $ownerId;
 
-	private  $pageNumber;
+	private  $kernelVersion;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -72,15 +66,6 @@ class DescribeReplicasRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getAttachDbInstanceData() {
-		return $this->attachDbInstanceData;
-	}
-
-	public function setAttachDbInstanceData($attachDbInstanceData) {
-		$this->attachDbInstanceData = $attachDbInstanceData;
-		$this->queryParameters["AttachDbInstanceData"]=$attachDbInstanceData;
-	}
-
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -88,24 +73,6 @@ class DescribeReplicasRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getReplicaId() {
-		return $this->replicaId;
-	}
-
-	public function setReplicaId($replicaId) {
-		$this->replicaId = $replicaId;
-		$this->queryParameters["ReplicaId"]=$replicaId;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
 	public function getOwnerId() {
@@ -117,13 +84,13 @@ class DescribeReplicasRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getPageNumber() {
-		return $this->pageNumber;
+	public function getKernelVersion() {
+		return $this->kernelVersion;
 	}
 
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
+	public function setKernelVersion($kernelVersion) {
+		$this->kernelVersion = $kernelVersion;
+		$this->queryParameters["KernelVersion"]=$kernelVersion;
 	}
 	
 }

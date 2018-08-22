@@ -19,37 +19,37 @@
  */
 namespace Dds\Request\V20151201;
 
-class DescribeDBInstancesRequest extends \RpcAcsRequest
+class TransformToPrePaidRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Dds", "2015-12-01", "DescribeDBInstances", "dds", "openAPI");
+		parent::__construct("Dds", "2015-12-01", "TransformToPrePaid", "dds", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
-	private  $dBInstanceIds;
+	private  $period;
+
+	private  $autoPay;
+
+	private  $fromApp;
 
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
+	private  $couponNo;
+
 	private  $ownerId;
 
-	private  $pageNumber;
+	private  $instanceId;
 
-	private  $replicationFactor;
-
-	private  $dBInstanceType;
-
-	private  $expired;
+	private  $autoRenew;
 
 	private  $securityToken;
 
-	private  $engine;
-
-	private  $pageSize;
+	private  $businessInfo;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -60,13 +60,31 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getDBInstanceIds() {
-		return $this->dBInstanceIds;
+	public function getPeriod() {
+		return $this->period;
 	}
 
-	public function setDBInstanceIds($dBInstanceIds) {
-		$this->dBInstanceIds = $dBInstanceIds;
-		$this->queryParameters["DBInstanceIds"]=$dBInstanceIds;
+	public function setPeriod($period) {
+		$this->period = $period;
+		$this->queryParameters["Period"]=$period;
+	}
+
+	public function getAutoPay() {
+		return $this->autoPay;
+	}
+
+	public function setAutoPay($autoPay) {
+		$this->autoPay = $autoPay;
+		$this->queryParameters["AutoPay"]=$autoPay;
+	}
+
+	public function getFromApp() {
+		return $this->fromApp;
+	}
+
+	public function setFromApp($fromApp) {
+		$this->fromApp = $fromApp;
+		$this->queryParameters["FromApp"]=$fromApp;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -87,6 +105,15 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
+	public function getCouponNo() {
+		return $this->couponNo;
+	}
+
+	public function setCouponNo($couponNo) {
+		$this->couponNo = $couponNo;
+		$this->queryParameters["CouponNo"]=$couponNo;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -96,40 +123,22 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getPageNumber() {
-		return $this->pageNumber;
+	public function getInstanceId() {
+		return $this->instanceId;
 	}
 
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
+	public function setInstanceId($instanceId) {
+		$this->instanceId = $instanceId;
+		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 
-	public function getReplicationFactor() {
-		return $this->replicationFactor;
+	public function getAutoRenew() {
+		return $this->autoRenew;
 	}
 
-	public function setReplicationFactor($replicationFactor) {
-		$this->replicationFactor = $replicationFactor;
-		$this->queryParameters["ReplicationFactor"]=$replicationFactor;
-	}
-
-	public function getDBInstanceType() {
-		return $this->dBInstanceType;
-	}
-
-	public function setDBInstanceType($dBInstanceType) {
-		$this->dBInstanceType = $dBInstanceType;
-		$this->queryParameters["DBInstanceType"]=$dBInstanceType;
-	}
-
-	public function getExpired() {
-		return $this->expired;
-	}
-
-	public function setExpired($expired) {
-		$this->expired = $expired;
-		$this->queryParameters["Expired"]=$expired;
+	public function setAutoRenew($autoRenew) {
+		$this->autoRenew = $autoRenew;
+		$this->queryParameters["AutoRenew"]=$autoRenew;
 	}
 
 	public function getSecurityToken() {
@@ -141,22 +150,13 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getEngine() {
-		return $this->engine;
+	public function getBusinessInfo() {
+		return $this->businessInfo;
 	}
 
-	public function setEngine($engine) {
-		$this->engine = $engine;
-		$this->queryParameters["Engine"]=$engine;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setBusinessInfo($businessInfo) {
+		$this->businessInfo = $businessInfo;
+		$this->queryParameters["BusinessInfo"]=$businessInfo;
 	}
 	
 }

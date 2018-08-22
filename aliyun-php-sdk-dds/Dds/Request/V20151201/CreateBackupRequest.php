@@ -27,6 +27,8 @@ class CreateBackupRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
+	private  $backupMethod;
+
 	private  $resourceOwnerId;
 
 	private  $securityToken;
@@ -38,6 +40,15 @@ class CreateBackupRequest extends \RpcAcsRequest
 	private  $dBInstanceId;
 
 	private  $ownerId;
+
+	public function getBackupMethod() {
+		return $this->backupMethod;
+	}
+
+	public function setBackupMethod($backupMethod) {
+		$this->backupMethod = $backupMethod;
+		$this->queryParameters["BackupMethod"]=$backupMethod;
+	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;

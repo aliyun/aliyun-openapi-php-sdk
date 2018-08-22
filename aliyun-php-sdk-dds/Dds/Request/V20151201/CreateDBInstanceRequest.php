@@ -39,6 +39,8 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
 
 	private  $networkType;
 
+	private  $replicationFactor;
+
 	private  $storageEngine;
 
 	private  $securityToken;
@@ -70,6 +72,8 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
 	private  $vSwitchId;
 
 	private  $accountPassword;
+
+	private  $autoRenew;
 
 	private  $vpcId;
 
@@ -129,6 +133,15 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
 	public function setNetworkType($networkType) {
 		$this->networkType = $networkType;
 		$this->queryParameters["NetworkType"]=$networkType;
+	}
+
+	public function getReplicationFactor() {
+		return $this->replicationFactor;
+	}
+
+	public function setReplicationFactor($replicationFactor) {
+		$this->replicationFactor = $replicationFactor;
+		$this->queryParameters["ReplicationFactor"]=$replicationFactor;
 	}
 
 	public function getStorageEngine() {
@@ -273,6 +286,15 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
 	public function setAccountPassword($accountPassword) {
 		$this->accountPassword = $accountPassword;
 		$this->queryParameters["AccountPassword"]=$accountPassword;
+	}
+
+	public function getAutoRenew() {
+		return $this->autoRenew;
+	}
+
+	public function setAutoRenew($autoRenew) {
+		$this->autoRenew = $autoRenew;
+		$this->queryParameters["AutoRenew"]=$autoRenew;
 	}
 
 	public function getVpcId() {
