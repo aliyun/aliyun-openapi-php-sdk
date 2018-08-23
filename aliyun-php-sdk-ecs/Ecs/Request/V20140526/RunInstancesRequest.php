@@ -63,6 +63,8 @@ class RunInstancesRequest extends \RpcAcsRequest
 
 	private  $spotStrategy;
 
+	private  $privateIpAddress;
+
 	private  $periodUnit;
 
 	private  $instanceName;
@@ -289,6 +291,15 @@ class RunInstancesRequest extends \RpcAcsRequest
 	public function setSpotStrategy($spotStrategy) {
 		$this->spotStrategy = $spotStrategy;
 		$this->queryParameters["SpotStrategy"]=$spotStrategy;
+	}
+
+	public function getPrivateIpAddress() {
+		return $this->privateIpAddress;
+	}
+
+	public function setPrivateIpAddress($privateIpAddress) {
+		$this->privateIpAddress = $privateIpAddress;
+		$this->queryParameters["PrivateIpAddress"]=$privateIpAddress;
 	}
 
 	public function getPeriodUnit() {
