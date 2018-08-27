@@ -45,6 +45,8 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 
 	private  $vSwitchId;
 
+	private  $expired;
+
 	private  $securityToken;
 
 	private  $instanceIds;
@@ -136,6 +138,15 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 	public function setVSwitchId($vSwitchId) {
 		$this->vSwitchId = $vSwitchId;
 		$this->queryParameters["VSwitchId"]=$vSwitchId;
+	}
+
+	public function getExpired() {
+		return $this->expired;
+	}
+
+	public function setExpired($expired) {
+		$this->expired = $expired;
+		$this->queryParameters["Expired"]=$expired;
 	}
 
 	public function getSecurityToken() {

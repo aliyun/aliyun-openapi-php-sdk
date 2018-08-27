@@ -19,38 +19,25 @@
  */
 namespace R_kvstore\Request\V20150101;
 
-class ModifyInstanceMinorVersionRequest extends \RpcAcsRequest
+class EvaluateFailOverSwitchRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("R-kvstore", "2015-01-01", "ModifyInstanceMinorVersion", "redisa", "openAPI");
+		parent::__construct("R-kvstore", "2015-01-01", "EvaluateFailOverSwitch", "redisa", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $executeMode;
-
 	private  $resourceOwnerId;
-
-	private  $instanceId;
 
 	private  $securityToken;
 
 	private  $resourceOwnerAccount;
 
-	private  $minorversion;
-
 	private  $ownerAccount;
 
+	private  $replicaId;
+
 	private  $ownerId;
-
-	public function getExecuteMode() {
-		return $this->executeMode;
-	}
-
-	public function setExecuteMode($executeMode) {
-		$this->executeMode = $executeMode;
-		$this->queryParameters["ExecuteMode"]=$executeMode;
-	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -59,15 +46,6 @@ class ModifyInstanceMinorVersionRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
-
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 
 	public function getSecurityToken() {
@@ -88,15 +66,6 @@ class ModifyInstanceMinorVersionRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getMinorversion() {
-		return $this->minorversion;
-	}
-
-	public function setMinorversion($minorversion) {
-		$this->minorversion = $minorversion;
-		$this->queryParameters["Minorversion"]=$minorversion;
-	}
-
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -104,6 +73,15 @@ class ModifyInstanceMinorVersionRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getReplicaId() {
+		return $this->replicaId;
+	}
+
+	public function setReplicaId($replicaId) {
+		$this->replicaId = $replicaId;
+		$this->queryParameters["ReplicaId"]=$replicaId;
 	}
 
 	public function getOwnerId() {

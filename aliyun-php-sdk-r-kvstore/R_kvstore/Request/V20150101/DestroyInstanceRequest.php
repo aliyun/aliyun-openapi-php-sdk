@@ -19,15 +19,13 @@
  */
 namespace R_kvstore\Request\V20150101;
 
-class ModifyInstanceMinorVersionRequest extends \RpcAcsRequest
+class DestroyInstanceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("R-kvstore", "2015-01-01", "ModifyInstanceMinorVersion", "redisa", "openAPI");
+		parent::__construct("R-kvstore", "2015-01-01", "DestroyInstance", "redisa", "openAPI");
 		$this->setMethod("POST");
 	}
-
-	private  $executeMode;
 
 	private  $resourceOwnerId;
 
@@ -37,20 +35,9 @@ class ModifyInstanceMinorVersionRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerAccount;
 
-	private  $minorversion;
-
 	private  $ownerAccount;
 
 	private  $ownerId;
-
-	public function getExecuteMode() {
-		return $this->executeMode;
-	}
-
-	public function setExecuteMode($executeMode) {
-		$this->executeMode = $executeMode;
-		$this->queryParameters["ExecuteMode"]=$executeMode;
-	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -86,15 +73,6 @@ class ModifyInstanceMinorVersionRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getMinorversion() {
-		return $this->minorversion;
-	}
-
-	public function setMinorversion($minorversion) {
-		$this->minorversion = $minorversion;
-		$this->queryParameters["Minorversion"]=$minorversion;
 	}
 
 	public function getOwnerAccount() {

@@ -19,38 +19,33 @@
  */
 namespace R_kvstore\Request\V20150101;
 
-class ModifyInstanceMinorVersionRequest extends \RpcAcsRequest
+class CreateAccountRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("R-kvstore", "2015-01-01", "ModifyInstanceMinorVersion", "redisa", "openAPI");
+		parent::__construct("R-kvstore", "2015-01-01", "CreateAccount", "redisa", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $executeMode;
-
 	private  $resourceOwnerId;
-
-	private  $instanceId;
-
-	private  $securityToken;
 
 	private  $resourceOwnerAccount;
 
-	private  $minorversion;
-
 	private  $ownerAccount;
+
+	private  $accountType;
 
 	private  $ownerId;
 
-	public function getExecuteMode() {
-		return $this->executeMode;
-	}
+	private  $accountDescription;
 
-	public function setExecuteMode($executeMode) {
-		$this->executeMode = $executeMode;
-		$this->queryParameters["ExecuteMode"]=$executeMode;
-	}
+	private  $accountPassword;
+
+	private  $instanceId;
+
+	private  $accountName;
+
+	private  $securityToken;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -59,24 +54,6 @@ class ModifyInstanceMinorVersionRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
-
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -88,15 +65,6 @@ class ModifyInstanceMinorVersionRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getMinorversion() {
-		return $this->minorversion;
-	}
-
-	public function setMinorversion($minorversion) {
-		$this->minorversion = $minorversion;
-		$this->queryParameters["Minorversion"]=$minorversion;
-	}
-
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -106,6 +74,15 @@ class ModifyInstanceMinorVersionRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
+	public function getAccountType() {
+		return $this->accountType;
+	}
+
+	public function setAccountType($accountType) {
+		$this->accountType = $accountType;
+		$this->queryParameters["AccountType"]=$accountType;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -113,6 +90,51 @@ class ModifyInstanceMinorVersionRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getAccountDescription() {
+		return $this->accountDescription;
+	}
+
+	public function setAccountDescription($accountDescription) {
+		$this->accountDescription = $accountDescription;
+		$this->queryParameters["AccountDescription"]=$accountDescription;
+	}
+
+	public function getAccountPassword() {
+		return $this->accountPassword;
+	}
+
+	public function setAccountPassword($accountPassword) {
+		$this->accountPassword = $accountPassword;
+		$this->queryParameters["AccountPassword"]=$accountPassword;
+	}
+
+	public function getInstanceId() {
+		return $this->instanceId;
+	}
+
+	public function setInstanceId($instanceId) {
+		$this->instanceId = $instanceId;
+		$this->queryParameters["InstanceId"]=$instanceId;
+	}
+
+	public function getAccountName() {
+		return $this->accountName;
+	}
+
+	public function setAccountName($accountName) {
+		$this->accountName = $accountName;
+		$this->queryParameters["AccountName"]=$accountName;
+	}
+
+	public function getSecurityToken() {
+		return $this->securityToken;
+	}
+
+	public function setSecurityToken($securityToken) {
+		$this->securityToken = $securityToken;
+		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 	
 }

@@ -33,6 +33,8 @@ class DescribeReplicasRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerAccount;
 
+	private  $attachDbInstanceData;
+
 	private  $ownerAccount;
 
 	private  $replicaId;
@@ -68,6 +70,15 @@ class DescribeReplicasRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getAttachDbInstanceData() {
+		return $this->attachDbInstanceData;
+	}
+
+	public function setAttachDbInstanceData($attachDbInstanceData) {
+		$this->attachDbInstanceData = $attachDbInstanceData;
+		$this->queryParameters["AttachDbInstanceData"]=$attachDbInstanceData;
 	}
 
 	public function getOwnerAccount() {

@@ -29,6 +29,8 @@ class ModifyInstanceSpecRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
+	private  $autoPay;
+
 	private  $fromApp;
 
 	private  $resourceOwnerAccount;
@@ -45,6 +47,8 @@ class ModifyInstanceSpecRequest extends \RpcAcsRequest
 
 	private  $securityToken;
 
+	private  $effectiveTime;
+
 	private  $forceUpgrade;
 
 	private  $businessInfo;
@@ -56,6 +60,15 @@ class ModifyInstanceSpecRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getAutoPay() {
+		return $this->autoPay;
+	}
+
+	public function setAutoPay($autoPay) {
+		$this->autoPay = $autoPay;
+		$this->queryParameters["AutoPay"]=$autoPay;
 	}
 
 	public function getFromApp() {
@@ -128,6 +141,15 @@ class ModifyInstanceSpecRequest extends \RpcAcsRequest
 	public function setSecurityToken($securityToken) {
 		$this->securityToken = $securityToken;
 		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
+
+	public function getEffectiveTime() {
+		return $this->effectiveTime;
+	}
+
+	public function setEffectiveTime($effectiveTime) {
+		$this->effectiveTime = $effectiveTime;
+		$this->queryParameters["EffectiveTime"]=$effectiveTime;
 	}
 
 	public function getForceUpgrade() {

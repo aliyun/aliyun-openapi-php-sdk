@@ -19,38 +19,31 @@
  */
 namespace R_kvstore\Request\V20150101;
 
-class ModifyInstanceMinorVersionRequest extends \RpcAcsRequest
+class DescribeParameterModificationHistoryRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("R-kvstore", "2015-01-01", "ModifyInstanceMinorVersion", "redisa", "openAPI");
+		parent::__construct("R-kvstore", "2015-01-01", "DescribeParameterModificationHistory", "redisa", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $executeMode;
-
 	private  $resourceOwnerId;
-
-	private  $instanceId;
 
 	private  $securityToken;
 
 	private  $resourceOwnerAccount;
 
-	private  $minorversion;
-
 	private  $ownerAccount;
+
+	private  $endTime;
+
+	private  $dBInstanceId;
+
+	private  $startTime;
 
 	private  $ownerId;
 
-	public function getExecuteMode() {
-		return $this->executeMode;
-	}
-
-	public function setExecuteMode($executeMode) {
-		$this->executeMode = $executeMode;
-		$this->queryParameters["ExecuteMode"]=$executeMode;
-	}
+	private  $nodeId;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -59,15 +52,6 @@ class ModifyInstanceMinorVersionRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
-
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 
 	public function getSecurityToken() {
@@ -88,15 +72,6 @@ class ModifyInstanceMinorVersionRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getMinorversion() {
-		return $this->minorversion;
-	}
-
-	public function setMinorversion($minorversion) {
-		$this->minorversion = $minorversion;
-		$this->queryParameters["Minorversion"]=$minorversion;
-	}
-
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -106,6 +81,33 @@ class ModifyInstanceMinorVersionRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
+	}
+
+	public function getDBInstanceId() {
+		return $this->dBInstanceId;
+	}
+
+	public function setDBInstanceId($dBInstanceId) {
+		$this->dBInstanceId = $dBInstanceId;
+		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -113,6 +115,15 @@ class ModifyInstanceMinorVersionRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getNodeId() {
+		return $this->nodeId;
+	}
+
+	public function setNodeId($nodeId) {
+		$this->nodeId = $nodeId;
+		$this->queryParameters["NodeId"]=$nodeId;
 	}
 	
 }
