@@ -45,13 +45,13 @@ class CreateAlarmRequest extends \RpcAcsRequest
 
 	private  $ownerId;
 
-	private  $comparisionOperator;
-
 	private  $name;
 
 	private  $evaluationCount;
 
 	private  $metricName;
+
+	private  $comparisonOperator;
 
 	private  $Dimensions;
 
@@ -140,15 +140,6 @@ class CreateAlarmRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getComparisionOperator() {
-		return $this->comparisionOperator;
-	}
-
-	public function setComparisionOperator($comparisionOperator) {
-		$this->comparisionOperator = $comparisionOperator;
-		$this->queryParameters["ComparisionOperator"]=$comparisionOperator;
-	}
-
 	public function getName() {
 		return $this->name;
 	}
@@ -174,6 +165,15 @@ class CreateAlarmRequest extends \RpcAcsRequest
 	public function setMetricName($metricName) {
 		$this->metricName = $metricName;
 		$this->queryParameters["MetricName"]=$metricName;
+	}
+
+	public function getComparisonOperator() {
+		return $this->comparisonOperator;
+	}
+
+	public function setComparisonOperator($comparisonOperator) {
+		$this->comparisonOperator = $comparisonOperator;
+		$this->queryParameters["ComparisonOperator"]=$comparisonOperator;
 	}
 
 	public function getDimensions() {
