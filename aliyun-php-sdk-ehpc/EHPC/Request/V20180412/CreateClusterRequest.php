@@ -66,6 +66,8 @@ class CreateClusterRequest extends \RpcAcsRequest
 
 	private  $volumeProtocol;
 
+	private  $clientVersion;
+
 	private  $osTag;
 
 	private  $remoteDirectory;
@@ -284,6 +286,15 @@ class CreateClusterRequest extends \RpcAcsRequest
 		$this->queryParameters["VolumeProtocol"]=$volumeProtocol;
 	}
 
+	public function getClientVersion() {
+		return $this->clientVersion;
+	}
+
+	public function setClientVersion($clientVersion) {
+		$this->clientVersion = $clientVersion;
+		$this->queryParameters["ClientVersion"]=$clientVersion;
+	}
+
 	public function getOsTag() {
 		return $this->osTag;
 	}
@@ -327,8 +338,8 @@ class CreateClusterRequest extends \RpcAcsRequest
 	public function setPostInstallScripts($PostInstallScripts) {
 		$this->PostInstallScripts = $PostInstallScripts;
 		for ($i = 0; $i < count($PostInstallScripts); $i ++) {	
-			$this->queryParameters['PostInstallScript.' . ($i + 1) . '.Url'] = $PostInstallScripts[$i]['Url'];
 			$this->queryParameters['PostInstallScript.' . ($i + 1) . '.Args'] = $PostInstallScripts[$i]['Args'];
+			$this->queryParameters['PostInstallScript.' . ($i + 1) . '.Url'] = $PostInstallScripts[$i]['Url'];
 
 		}
 	}

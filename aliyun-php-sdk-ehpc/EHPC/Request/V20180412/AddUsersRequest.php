@@ -46,9 +46,9 @@ class AddUsersRequest extends \RpcAcsRequest
 	public function setUsers($Users) {
 		$this->Users = $Users;
 		for ($i = 0; $i < count($Users); $i ++) {	
+			$this->queryParameters['User.' . ($i + 1) . '.Password'] = $Users[$i]['Password'];
 			$this->queryParameters['User.' . ($i + 1) . '.Name'] = $Users[$i]['Name'];
 			$this->queryParameters['User.' . ($i + 1) . '.Group'] = $Users[$i]['Group'];
-			$this->queryParameters['User.' . ($i + 1) . '.Password'] = $Users[$i]['Password'];
 
 		}
 	}

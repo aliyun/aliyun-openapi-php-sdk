@@ -19,16 +19,25 @@
  */
 namespace EHPC\Request\V20180412;
 
-class ModifyUserPasswordsRequest extends \RpcAcsRequest
+class GetCloudMetricProfilingRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("EHPC", "2018-04-12", "ModifyUserPasswords", "ehs", "openAPI");
+		parent::__construct("EHPC", "2018-04-12", "GetCloudMetricProfiling", "ehs", "openAPI");
 	}
+
+	private  $profilingId;
 
 	private  $clusterId;
 
-	private  $Users;
+	public function getProfilingId() {
+		return $this->profilingId;
+	}
+
+	public function setProfilingId($profilingId) {
+		$this->profilingId = $profilingId;
+		$this->queryParameters["ProfilingId"]=$profilingId;
+	}
 
 	public function getClusterId() {
 		return $this->clusterId;
@@ -37,19 +46,6 @@ class ModifyUserPasswordsRequest extends \RpcAcsRequest
 	public function setClusterId($clusterId) {
 		$this->clusterId = $clusterId;
 		$this->queryParameters["ClusterId"]=$clusterId;
-	}
-
-	public function getUsers() {
-		return $this->Users;
-	}
-
-	public function setUsers($Users) {
-		$this->Users = $Users;
-		for ($i = 0; $i < count($Users); $i ++) {	
-			$this->queryParameters['User.' . ($i + 1) . '.Password'] = $Users[$i]['Password'];
-			$this->queryParameters['User.' . ($i + 1) . '.Name'] = $Users[$i]['Name'];
-
-		}
 	}
 	
 }

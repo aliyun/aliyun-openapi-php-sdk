@@ -52,6 +52,8 @@ class CreateHybridClusterRequest extends \RpcAcsRequest
 
 	private  $onPremiseVolumeLocalPath;
 
+	private  $clientVersion;
+
 	private  $osTag;
 
 	private  $remoteDirectory;
@@ -191,6 +193,15 @@ class CreateHybridClusterRequest extends \RpcAcsRequest
 	public function setOnPremiseVolumeLocalPath($onPremiseVolumeLocalPath) {
 		$this->onPremiseVolumeLocalPath = $onPremiseVolumeLocalPath;
 		$this->queryParameters["OnPremiseVolumeLocalPath"]=$onPremiseVolumeLocalPath;
+	}
+
+	public function getClientVersion() {
+		return $this->clientVersion;
+	}
+
+	public function setClientVersion($clientVersion) {
+		$this->clientVersion = $clientVersion;
+		$this->queryParameters["ClientVersion"]=$clientVersion;
 	}
 
 	public function getOsTag() {

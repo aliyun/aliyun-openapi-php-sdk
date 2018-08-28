@@ -19,16 +19,27 @@
  */
 namespace EHPC\Request\V20180412;
 
-class ModifyUserPasswordsRequest extends \RpcAcsRequest
+class ListCloudMetricProfilingsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("EHPC", "2018-04-12", "ModifyUserPasswords", "ehs", "openAPI");
+		parent::__construct("EHPC", "2018-04-12", "ListCloudMetricProfilings", "ehs", "openAPI");
 	}
+
+	private  $pageSize;
 
 	private  $clusterId;
 
-	private  $Users;
+	private  $pageNumber;
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
 
 	public function getClusterId() {
 		return $this->clusterId;
@@ -39,17 +50,13 @@ class ModifyUserPasswordsRequest extends \RpcAcsRequest
 		$this->queryParameters["ClusterId"]=$clusterId;
 	}
 
-	public function getUsers() {
-		return $this->Users;
+	public function getPageNumber() {
+		return $this->pageNumber;
 	}
 
-	public function setUsers($Users) {
-		$this->Users = $Users;
-		for ($i = 0; $i < count($Users); $i ++) {	
-			$this->queryParameters['User.' . ($i + 1) . '.Password'] = $Users[$i]['Password'];
-			$this->queryParameters['User.' . ($i + 1) . '.Name'] = $Users[$i]['Name'];
-
-		}
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 	
 }

@@ -69,8 +69,8 @@ class ModifyImageGatewayConfigRequest extends \RpcAcsRequest
 	public function setRepos($Repos) {
 		$this->Repos = $Repos;
 		for ($i = 0; $i < count($Repos); $i ++) {	
-			$this->queryParameters['Repo.' . ($i + 1) . '.Location'] = $Repos[$i]['Location'];
 			$this->queryParameters['Repo.' . ($i + 1) . '.Auth'] = $Repos[$i]['Auth'];
+			$this->queryParameters['Repo.' . ($i + 1) . '.Location'] = $Repos[$i]['Location'];
 			$this->queryParameters['Repo.' . ($i + 1) . '.URL'] = $Repos[$i]['URL'];
 
 		}

@@ -32,8 +32,6 @@ class GetCloudMetricLogsRequest extends \RpcAcsRequest
 
 	private  $metricCategories;
 
-	private  $line;
-
 	private  $metricScope;
 
 	private  $from;
@@ -71,15 +69,6 @@ class GetCloudMetricLogsRequest extends \RpcAcsRequest
 	public function setMetricCategories($metricCategories) {
 		$this->metricCategories = $metricCategories;
 		$this->queryParameters["MetricCategories"]=$metricCategories;
-	}
-
-	public function getLine() {
-		return $this->line;
-	}
-
-	public function setLine($line) {
-		$this->line = $line;
-		$this->queryParameters["Line"]=$line;
 	}
 
 	public function getMetricScope() {
