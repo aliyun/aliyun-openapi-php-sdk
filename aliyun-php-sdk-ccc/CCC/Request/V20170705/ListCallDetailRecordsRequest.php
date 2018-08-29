@@ -27,45 +27,29 @@ class ListCallDetailRecordsRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $instanceId;
-
-	private  $contactDisposition;
-
 	private  $contactType;
+
+	private  $contactId;
 
 	private  $criteria;
 
 	private  $phoneNumber;
 
-	private  $pageSize;
-
 	private  $orderBy;
-
-	private  $stopTime;
 
 	private  $startTime;
 
+	private  $stopTime;
+
 	private  $pageNumber;
 
+	private  $instanceId;
+
+	private  $contactDisposition;
+
+	private  $pageSize;
+
 	private  $withRecording;
-
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
-
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
-
-	public function getContactDisposition() {
-		return $this->contactDisposition;
-	}
-
-	public function setContactDisposition($contactDisposition) {
-		$this->contactDisposition = $contactDisposition;
-		$this->queryParameters["ContactDisposition"]=$contactDisposition;
-	}
 
 	public function getContactType() {
 		return $this->contactType;
@@ -74,6 +58,15 @@ class ListCallDetailRecordsRequest extends \RpcAcsRequest
 	public function setContactType($contactType) {
 		$this->contactType = $contactType;
 		$this->queryParameters["ContactType"]=$contactType;
+	}
+
+	public function getContactId() {
+		return $this->contactId;
+	}
+
+	public function setContactId($contactId) {
+		$this->contactId = $contactId;
+		$this->queryParameters["ContactId"]=$contactId;
 	}
 
 	public function getCriteria() {
@@ -94,15 +87,6 @@ class ListCallDetailRecordsRequest extends \RpcAcsRequest
 		$this->queryParameters["PhoneNumber"]=$phoneNumber;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
 	public function getOrderBy() {
 		return $this->orderBy;
 	}
@@ -110,15 +94,6 @@ class ListCallDetailRecordsRequest extends \RpcAcsRequest
 	public function setOrderBy($orderBy) {
 		$this->orderBy = $orderBy;
 		$this->queryParameters["OrderBy"]=$orderBy;
-	}
-
-	public function getStopTime() {
-		return $this->stopTime;
-	}
-
-	public function setStopTime($stopTime) {
-		$this->stopTime = $stopTime;
-		$this->queryParameters["StopTime"]=$stopTime;
 	}
 
 	public function getStartTime() {
@@ -130,6 +105,15 @@ class ListCallDetailRecordsRequest extends \RpcAcsRequest
 		$this->queryParameters["StartTime"]=$startTime;
 	}
 
+	public function getStopTime() {
+		return $this->stopTime;
+	}
+
+	public function setStopTime($stopTime) {
+		$this->stopTime = $stopTime;
+		$this->queryParameters["StopTime"]=$stopTime;
+	}
+
 	public function getPageNumber() {
 		return $this->pageNumber;
 	}
@@ -137,6 +121,33 @@ class ListCallDetailRecordsRequest extends \RpcAcsRequest
 	public function setPageNumber($pageNumber) {
 		$this->pageNumber = $pageNumber;
 		$this->queryParameters["PageNumber"]=$pageNumber;
+	}
+
+	public function getInstanceId() {
+		return $this->instanceId;
+	}
+
+	public function setInstanceId($instanceId) {
+		$this->instanceId = $instanceId;
+		$this->queryParameters["InstanceId"]=$instanceId;
+	}
+
+	public function getContactDisposition() {
+		return $this->contactDisposition;
+	}
+
+	public function setContactDisposition($contactDisposition) {
+		$this->contactDisposition = $contactDisposition;
+		$this->queryParameters["ContactDisposition"]=$contactDisposition;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
 	public function getWithRecording() {

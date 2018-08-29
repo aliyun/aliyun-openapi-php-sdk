@@ -1,3 +1,7 @@
+2018-08-29 Version: 1.0.9
+1, Add new interface.
+
+
 2018-08-14 Version: 1.0.8
 1, Change parameter name of Dialogue
 
