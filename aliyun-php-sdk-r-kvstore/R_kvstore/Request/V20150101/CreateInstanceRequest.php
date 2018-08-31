@@ -65,6 +65,8 @@ class CreateInstanceRequest extends \RpcAcsRequest
 
 	private  $vSwitchId;
 
+	private  $privateIpAddress;
+
 	private  $instanceName;
 
 	private  $vpcId;
@@ -244,6 +246,15 @@ class CreateInstanceRequest extends \RpcAcsRequest
 	public function setVSwitchId($vSwitchId) {
 		$this->vSwitchId = $vSwitchId;
 		$this->queryParameters["VSwitchId"]=$vSwitchId;
+	}
+
+	public function getPrivateIpAddress() {
+		return $this->privateIpAddress;
+	}
+
+	public function setPrivateIpAddress($privateIpAddress) {
+		$this->privateIpAddress = $privateIpAddress;
+		$this->queryParameters["PrivateIpAddress"]=$privateIpAddress;
 	}
 
 	public function getInstanceName() {

@@ -35,6 +35,8 @@ class DescribeRegionsRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
+	private  $acceptLanguage;
+
 	private  $ownerId;
 
 	public function getResourceOwnerId() {
@@ -71,6 +73,15 @@ class DescribeRegionsRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getAcceptLanguage() {
+		return $this->acceptLanguage;
+	}
+
+	public function setAcceptLanguage($acceptLanguage) {
+		$this->acceptLanguage = $acceptLanguage;
+		$this->queryParameters["AcceptLanguage"]=$acceptLanguage;
 	}
 
 	public function getOwnerId() {
