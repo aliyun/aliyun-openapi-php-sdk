@@ -23,7 +23,7 @@ class FindCredentialsListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CSB", "2017-11-18", "FindCredentialsList", "CSB", "openAPI");
+		parent::__construct("CSB", "2017-11-18", "FindCredentialsList");
 		$this->setProtocol("https");
 	}
 

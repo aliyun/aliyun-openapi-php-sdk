@@ -23,7 +23,7 @@ class FindApprovalOrderListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CSB", "2017-11-18", "FindApprovalOrderList", "CSB", "openAPI");
+		parent::__construct("CSB", "2017-11-18", "FindApprovalOrderList");
 		$this->setProtocol("https");
 	}
 
@@ -33,9 +33,9 @@ class FindApprovalOrderListRequest extends \RpcAcsRequest
 
 	private  $serviceName;
 
-	private  $serviceId;
-
 	private  $pageNum;
+
+	private  $serviceId;
 
 	private  $onlyPending;
 
@@ -66,15 +66,6 @@ class FindApprovalOrderListRequest extends \RpcAcsRequest
 		$this->queryParameters["ServiceName"]=$serviceName;
 	}
 
-	public function getServiceId() {
-		return $this->serviceId;
-	}
-
-	public function setServiceId($serviceId) {
-		$this->serviceId = $serviceId;
-		$this->queryParameters["ServiceId"]=$serviceId;
-	}
-
 	public function getPageNum() {
 		return $this->pageNum;
 	}
@@ -82,6 +73,15 @@ class FindApprovalOrderListRequest extends \RpcAcsRequest
 	public function setPageNum($pageNum) {
 		$this->pageNum = $pageNum;
 		$this->queryParameters["PageNum"]=$pageNum;
+	}
+
+	public function getServiceId() {
+		return $this->serviceId;
+	}
+
+	public function setServiceId($serviceId) {
+		$this->serviceId = $serviceId;
+		$this->queryParameters["ServiceId"]=$serviceId;
 	}
 
 	public function getOnlyPending() {

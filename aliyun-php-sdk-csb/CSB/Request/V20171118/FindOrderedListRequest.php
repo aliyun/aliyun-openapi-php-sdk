@@ -23,7 +23,7 @@ class FindOrderedListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CSB", "2017-11-18", "FindOrderedList", "CSB", "openAPI");
+		parent::__construct("CSB", "2017-11-18", "FindOrderedList");
 		$this->setProtocol("https");
 	}
 

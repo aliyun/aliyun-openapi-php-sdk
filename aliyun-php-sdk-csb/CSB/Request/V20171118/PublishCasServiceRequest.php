@@ -23,7 +23,7 @@ class PublishCasServiceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CSB", "2017-11-18", "PublishCasService", "CSB", "openAPI");
+		parent::__construct("CSB", "2017-11-18", "PublishCasService");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}

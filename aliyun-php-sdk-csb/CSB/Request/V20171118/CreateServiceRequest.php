@@ -23,7 +23,7 @@ class CreateServiceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CSB", "2017-11-18", "CreateService", "CSB", "openAPI");
+		parent::__construct("CSB", "2017-11-18", "CreateService");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}

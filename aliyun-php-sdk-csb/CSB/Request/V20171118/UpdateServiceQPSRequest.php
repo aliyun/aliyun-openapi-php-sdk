@@ -23,7 +23,7 @@ class UpdateServiceQPSRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CSB", "2017-11-18", "UpdateServiceQPS", "CSB", "openAPI");
+		parent::__construct("CSB", "2017-11-18", "UpdateServiceQPS");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}

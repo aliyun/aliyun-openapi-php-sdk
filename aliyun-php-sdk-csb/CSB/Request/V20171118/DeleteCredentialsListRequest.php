@@ -23,7 +23,7 @@ class DeleteCredentialsListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CSB", "2017-11-18", "DeleteCredentialsList", "CSB", "openAPI");
+		parent::__construct("CSB", "2017-11-18", "DeleteCredentialsList");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}

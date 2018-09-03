@@ -23,7 +23,7 @@ class UpdateProjectRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CSB", "2017-11-18", "UpdateProject", "CSB", "openAPI");
+		parent::__construct("CSB", "2017-11-18", "UpdateProject");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}

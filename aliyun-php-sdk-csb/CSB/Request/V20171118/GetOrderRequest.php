@@ -23,7 +23,7 @@ class GetOrderRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CSB", "2017-11-18", "GetOrder", "CSB", "openAPI");
+		parent::__construct("CSB", "2017-11-18", "GetOrder");
 		$this->setProtocol("https");
 	}
 

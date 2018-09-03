@@ -23,7 +23,7 @@ class FindProjectListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CSB", "2017-11-18", "FindProjectList", "CSB", "openAPI");
+		parent::__construct("CSB", "2017-11-18", "FindProjectList");
 		$this->setProtocol("https");
 	}
 

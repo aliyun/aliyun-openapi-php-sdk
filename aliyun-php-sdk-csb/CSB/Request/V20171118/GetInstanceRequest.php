@@ -23,7 +23,7 @@ class GetInstanceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CSB", "2017-11-18", "GetInstance", "CSB", "openAPI");
+		parent::__construct("CSB", "2017-11-18", "GetInstance");
 	}
 
 	private  $csbId;

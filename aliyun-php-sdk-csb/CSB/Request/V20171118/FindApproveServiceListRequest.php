@@ -23,13 +23,13 @@ class FindApproveServiceListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CSB", "2017-11-18", "FindApproveServiceList", "CSB", "openAPI");
+		parent::__construct("CSB", "2017-11-18", "FindApproveServiceList");
 		$this->setProtocol("https");
 	}
 
-	private  $approveLevel;
-
 	private  $projectName;
+
+	private  $approveLevel;
 
 	private  $showDelService;
 
@@ -39,58 +39,58 @@ class FindApproveServiceListRequest extends \RpcAcsRequest
 
 	private  $serviceName;
 
-	public function getapproveLevel() {
-		return $this->approveLevel;
-	}
-
-	public function setapproveLevel($approveLevel) {
-		$this->approveLevel = $approveLevel;
-		$this->queryParameters["approveLevel"]=$approveLevel;
-	}
-
-	public function getprojectName() {
+	public function getProjectName() {
 		return $this->projectName;
 	}
 
-	public function setprojectName($projectName) {
+	public function setProjectName($projectName) {
 		$this->projectName = $projectName;
-		$this->queryParameters["projectName"]=$projectName;
+		$this->queryParameters["ProjectName"]=$projectName;
 	}
 
-	public function getshowDelService() {
+	public function getApproveLevel() {
+		return $this->approveLevel;
+	}
+
+	public function setApproveLevel($approveLevel) {
+		$this->approveLevel = $approveLevel;
+		$this->queryParameters["ApproveLevel"]=$approveLevel;
+	}
+
+	public function getShowDelService() {
 		return $this->showDelService;
 	}
 
-	public function setshowDelService($showDelService) {
+	public function setShowDelService($showDelService) {
 		$this->showDelService = $showDelService;
-		$this->queryParameters["showDelService"]=$showDelService;
+		$this->queryParameters["ShowDelService"]=$showDelService;
 	}
 
-	public function getcsbId() {
+	public function getCsbId() {
 		return $this->csbId;
 	}
 
-	public function setcsbId($csbId) {
+	public function setCsbId($csbId) {
 		$this->csbId = $csbId;
-		$this->queryParameters["csbId"]=$csbId;
+		$this->queryParameters["CsbId"]=$csbId;
 	}
 
-	public function getalias() {
+	public function getAlias() {
 		return $this->alias;
 	}
 
-	public function setalias($alias) {
+	public function setAlias($alias) {
 		$this->alias = $alias;
-		$this->queryParameters["alias"]=$alias;
+		$this->queryParameters["Alias"]=$alias;
 	}
 
-	public function getserviceName() {
+	public function getServiceName() {
 		return $this->serviceName;
 	}
 
-	public function setserviceName($serviceName) {
+	public function setServiceName($serviceName) {
 		$this->serviceName = $serviceName;
-		$this->queryParameters["serviceName"]=$serviceName;
+		$this->queryParameters["ServiceName"]=$serviceName;
 	}
 	
 }

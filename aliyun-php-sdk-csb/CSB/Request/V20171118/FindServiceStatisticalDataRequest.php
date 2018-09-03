@@ -19,26 +19,21 @@
  */
 namespace CSB\Request\V20171118;
 
-class UpdateServiceListStatusRequest extends \RpcAcsRequest
+class FindServiceStatisticalDataRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CSB", "2017-11-18", "UpdateServiceListStatus");
+		parent::__construct("CSB", "2017-11-18", "FindServiceStatisticalData");
 		$this->setProtocol("https");
-		$this->setMethod("POST");
 	}
-
-	private  $data;
 
 	private  $csbId;
 
-	public function getData() {
-		return $this->data;
-	}
+	private  $endTime;
 
-	public function setData($data) {
-		$this->data = $data;
-		}
+	private  $serviceName;
+
+	private  $startTime;
 
 	public function getCsbId() {
 		return $this->csbId;
@@ -47,6 +42,33 @@ class UpdateServiceListStatusRequest extends \RpcAcsRequest
 	public function setCsbId($csbId) {
 		$this->csbId = $csbId;
 		$this->queryParameters["CsbId"]=$csbId;
+	}
+
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
+	}
+
+	public function getServiceName() {
+		return $this->serviceName;
+	}
+
+	public function setServiceName($serviceName) {
+		$this->serviceName = $serviceName;
+		$this->queryParameters["ServiceName"]=$serviceName;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
 	}
 	
 }

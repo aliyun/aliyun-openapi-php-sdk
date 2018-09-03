@@ -23,7 +23,7 @@ class FindInstanceListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CSB", "2017-11-18", "FindInstanceList", "CSB", "openAPI");
+		parent::__construct("CSB", "2017-11-18", "FindInstanceList");
 	}
 
 	private  $searchTxt;

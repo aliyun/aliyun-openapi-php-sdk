@@ -23,7 +23,7 @@ class DeleteCasServiceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CSB", "2017-11-18", "DeleteCasService", "CSB", "openAPI");
+		parent::__construct("CSB", "2017-11-18", "DeleteCasService");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}

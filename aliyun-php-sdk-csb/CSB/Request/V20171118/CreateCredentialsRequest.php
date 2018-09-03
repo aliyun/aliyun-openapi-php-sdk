@@ -23,7 +23,7 @@ class CreateCredentialsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CSB", "2017-11-18", "CreateCredentials", "CSB", "openAPI");
+		parent::__construct("CSB", "2017-11-18", "CreateCredentials");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}

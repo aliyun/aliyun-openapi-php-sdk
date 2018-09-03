@@ -23,15 +23,15 @@ class FindServiceListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CSB", "2017-11-18", "FindServiceList", "CSB", "openAPI");
+		parent::__construct("CSB", "2017-11-18", "FindServiceList");
 		$this->setProtocol("https");
 	}
 
 	private  $projectName;
 
-	private  $casShowType;
-
 	private  $showDelService;
+
+	private  $casShowType;
 
 	private  $csbId;
 
@@ -50,15 +50,6 @@ class FindServiceListRequest extends \RpcAcsRequest
 		$this->queryParameters["ProjectName"]=$projectName;
 	}
 
-	public function getCasShowType() {
-		return $this->casShowType;
-	}
-
-	public function setCasShowType($casShowType) {
-		$this->casShowType = $casShowType;
-		$this->queryParameters["CasShowType"]=$casShowType;
-	}
-
 	public function getShowDelService() {
 		return $this->showDelService;
 	}
@@ -66,6 +57,15 @@ class FindServiceListRequest extends \RpcAcsRequest
 	public function setShowDelService($showDelService) {
 		$this->showDelService = $showDelService;
 		$this->queryParameters["ShowDelService"]=$showDelService;
+	}
+
+	public function getCasShowType() {
+		return $this->casShowType;
+	}
+
+	public function setCasShowType($casShowType) {
+		$this->casShowType = $casShowType;
+		$this->queryParameters["CasShowType"]=$casShowType;
 	}
 
 	public function getCsbId() {

@@ -23,7 +23,7 @@ class UpdateOrderListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CSB", "2017-11-18", "UpdateOrderList", "CSB", "openAPI");
+		parent::__construct("CSB", "2017-11-18", "UpdateOrderList");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}

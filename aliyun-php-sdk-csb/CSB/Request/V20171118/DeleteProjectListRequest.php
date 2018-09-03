@@ -23,7 +23,7 @@ class DeleteProjectListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("CSB", "2017-11-18", "DeleteProjectList", "CSB", "openAPI");
+		parent::__construct("CSB", "2017-11-18", "DeleteProjectList");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
