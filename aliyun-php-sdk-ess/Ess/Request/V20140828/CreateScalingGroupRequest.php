@@ -31,6 +31,8 @@ class CreateScalingGroupRequest extends \RpcAcsRequest
 
 	private  $dBInstanceIds;
 
+	private  $launchTemplateId;
+
 	private  $loadBalancerIds;
 
 	private  $healthCheckType;
@@ -46,6 +48,8 @@ class CreateScalingGroupRequest extends \RpcAcsRequest
 	private  $minSize;
 
 	private  $ownerId;
+
+	private  $launchTemplateVersion;
 
 	private  $vSwitchId;
 
@@ -75,6 +79,15 @@ class CreateScalingGroupRequest extends \RpcAcsRequest
 	public function setDBInstanceIds($dBInstanceIds) {
 		$this->dBInstanceIds = $dBInstanceIds;
 		$this->queryParameters["DBInstanceIds"]=$dBInstanceIds;
+	}
+
+	public function getLaunchTemplateId() {
+		return $this->launchTemplateId;
+	}
+
+	public function setLaunchTemplateId($launchTemplateId) {
+		$this->launchTemplateId = $launchTemplateId;
+		$this->queryParameters["LaunchTemplateId"]=$launchTemplateId;
 	}
 
 	public function getLoadBalancerIds() {
@@ -113,12 +126,12 @@ class CreateScalingGroupRequest extends \RpcAcsRequest
 		$this->queryParameters["ScalingGroupName"]=$scalingGroupName;
 	}
 
-	public function getVSwitchIds() {
-		return $this->VSwitchIds;
+	public function getVSwitchIdss() {
+		return $this->VSwitchIdss;
 	}
 
-	public function setVSwitchIds($VSwitchIds) {
-		$this->VSwitchIds = $VSwitchIds;
+	public function setVSwitchIdss($VSwitchIds) {
+		$this->VSwitchIdss = $VSwitchIds;
 		for ($i = 0; $i < count($VSwitchIds); $i ++) {
 			$this->queryParameters["VSwitchIds.".($i+1)] = $VSwitchIds[$i];
 		}
@@ -149,6 +162,15 @@ class CreateScalingGroupRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getLaunchTemplateVersion() {
+		return $this->launchTemplateVersion;
+	}
+
+	public function setLaunchTemplateVersion($launchTemplateVersion) {
+		$this->launchTemplateVersion = $launchTemplateVersion;
+		$this->queryParameters["LaunchTemplateVersion"]=$launchTemplateVersion;
 	}
 
 	public function getVSwitchId() {

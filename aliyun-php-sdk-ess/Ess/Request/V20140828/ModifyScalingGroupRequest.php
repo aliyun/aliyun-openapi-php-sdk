@@ -31,6 +31,8 @@ class ModifyScalingGroupRequest extends \RpcAcsRequest
 
 	private  $healthCheckType;
 
+	private  $launchTemplateId;
+
 	private  $resourceOwnerAccount;
 
 	private  $scalingGroupName;
@@ -44,6 +46,8 @@ class ModifyScalingGroupRequest extends \RpcAcsRequest
 	private  $minSize;
 
 	private  $ownerId;
+
+	private  $launchTemplateVersion;
 
 	private  $maxSize;
 
@@ -69,6 +73,15 @@ class ModifyScalingGroupRequest extends \RpcAcsRequest
 	public function setHealthCheckType($healthCheckType) {
 		$this->healthCheckType = $healthCheckType;
 		$this->queryParameters["HealthCheckType"]=$healthCheckType;
+	}
+
+	public function getLaunchTemplateId() {
+		return $this->launchTemplateId;
+	}
+
+	public function setLaunchTemplateId($launchTemplateId) {
+		$this->launchTemplateId = $launchTemplateId;
+		$this->queryParameters["LaunchTemplateId"]=$launchTemplateId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -132,6 +145,15 @@ class ModifyScalingGroupRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getLaunchTemplateVersion() {
+		return $this->launchTemplateVersion;
+	}
+
+	public function setLaunchTemplateVersion($launchTemplateVersion) {
+		$this->launchTemplateVersion = $launchTemplateVersion;
+		$this->queryParameters["LaunchTemplateVersion"]=$launchTemplateVersion;
 	}
 
 	public function getMaxSize() {

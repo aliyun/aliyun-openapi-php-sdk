@@ -27,8 +27,6 @@ class EnableScalingGroupRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $instanceId10;
-
 	private  $loadBalancerWeight6;
 
 	private  $loadBalancerWeight11;
@@ -39,11 +37,7 @@ class EnableScalingGroupRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $instanceId12;
-
 	private  $loadBalancerWeight8;
-
-	private  $instanceId11;
 
 	private  $loadBalancerWeight9;
 
@@ -57,8 +51,6 @@ class EnableScalingGroupRequest extends \RpcAcsRequest
 
 	private  $loadBalancerWeight16;
 
-	private  $scalingGroupId;
-
 	private  $loadBalancerWeight4;
 
 	private  $loadBalancerWeight13;
@@ -71,23 +63,19 @@ class EnableScalingGroupRequest extends \RpcAcsRequest
 
 	private  $loadBalancerWeight1;
 
-	private  $instanceId20;
-
 	private  $instanceId1;
 
 	private  $loadBalancerWeight20;
 
 	private  $instanceId3;
 
-	private  $resourceOwnerAccount;
+	private  $launchTemplateId;
 
 	private  $instanceId2;
 
 	private  $instanceId5;
 
 	private  $instanceId4;
-
-	private  $ownerAccount;
 
 	private  $instanceId7;
 
@@ -99,17 +87,33 @@ class EnableScalingGroupRequest extends \RpcAcsRequest
 
 	private  $ownerId;
 
-	private  $instanceId18;
-
 	private  $loadBalancerWeight19;
-
-	private  $instanceId17;
 
 	private  $loadBalancerWeight17;
 
-	private  $instanceId19;
-
 	private  $loadBalancerWeight18;
+
+	private  $instanceId10;
+
+	private  $instanceId12;
+
+	private  $instanceId11;
+
+	private  $scalingGroupId;
+
+	private  $instanceId20;
+
+	private  $resourceOwnerAccount;
+
+	private  $ownerAccount;
+
+	private  $launchTemplateVersion;
+
+	private  $instanceId18;
+
+	private  $instanceId17;
+
+	private  $instanceId19;
 
 	private  $instanceId14;
 
@@ -118,15 +122,6 @@ class EnableScalingGroupRequest extends \RpcAcsRequest
 	private  $instanceId16;
 
 	private  $instanceId15;
-
-	public function getInstanceId10() {
-		return $this->instanceId10;
-	}
-
-	public function setInstanceId10($instanceId10) {
-		$this->instanceId10 = $instanceId10;
-		$this->queryParameters["InstanceId.10"]=$instanceId10;
-	}
 
 	public function getLoadBalancerWeight6() {
 		return $this->loadBalancerWeight6;
@@ -173,15 +168,6 @@ class EnableScalingGroupRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getInstanceId12() {
-		return $this->instanceId12;
-	}
-
-	public function setInstanceId12($instanceId12) {
-		$this->instanceId12 = $instanceId12;
-		$this->queryParameters["InstanceId.12"]=$instanceId12;
-	}
-
 	public function getLoadBalancerWeight8() {
 		return $this->loadBalancerWeight8;
 	}
@@ -189,15 +175,6 @@ class EnableScalingGroupRequest extends \RpcAcsRequest
 	public function setLoadBalancerWeight8($loadBalancerWeight8) {
 		$this->loadBalancerWeight8 = $loadBalancerWeight8;
 		$this->queryParameters["LoadBalancerWeight.8"]=$loadBalancerWeight8;
-	}
-
-	public function getInstanceId11() {
-		return $this->instanceId11;
-	}
-
-	public function setInstanceId11($instanceId11) {
-		$this->instanceId11 = $instanceId11;
-		$this->queryParameters["InstanceId.11"]=$instanceId11;
 	}
 
 	public function getLoadBalancerWeight9() {
@@ -254,15 +231,6 @@ class EnableScalingGroupRequest extends \RpcAcsRequest
 		$this->queryParameters["LoadBalancerWeight.16"]=$loadBalancerWeight16;
 	}
 
-	public function getScalingGroupId() {
-		return $this->scalingGroupId;
-	}
-
-	public function setScalingGroupId($scalingGroupId) {
-		$this->scalingGroupId = $scalingGroupId;
-		$this->queryParameters["ScalingGroupId"]=$scalingGroupId;
-	}
-
 	public function getLoadBalancerWeight4() {
 		return $this->loadBalancerWeight4;
 	}
@@ -317,15 +285,6 @@ class EnableScalingGroupRequest extends \RpcAcsRequest
 		$this->queryParameters["LoadBalancerWeight.1"]=$loadBalancerWeight1;
 	}
 
-	public function getInstanceId20() {
-		return $this->instanceId20;
-	}
-
-	public function setInstanceId20($instanceId20) {
-		$this->instanceId20 = $instanceId20;
-		$this->queryParameters["InstanceId.20"]=$instanceId20;
-	}
-
 	public function getInstanceId1() {
 		return $this->instanceId1;
 	}
@@ -353,13 +312,13 @@ class EnableScalingGroupRequest extends \RpcAcsRequest
 		$this->queryParameters["InstanceId.3"]=$instanceId3;
 	}
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
+	public function getLaunchTemplateId() {
+		return $this->launchTemplateId;
 	}
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	public function setLaunchTemplateId($launchTemplateId) {
+		$this->launchTemplateId = $launchTemplateId;
+		$this->queryParameters["LaunchTemplateId"]=$launchTemplateId;
 	}
 
 	public function getInstanceId2() {
@@ -387,15 +346,6 @@ class EnableScalingGroupRequest extends \RpcAcsRequest
 	public function setInstanceId4($instanceId4) {
 		$this->instanceId4 = $instanceId4;
 		$this->queryParameters["InstanceId.4"]=$instanceId4;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getInstanceId7() {
@@ -443,15 +393,6 @@ class EnableScalingGroupRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getInstanceId18() {
-		return $this->instanceId18;
-	}
-
-	public function setInstanceId18($instanceId18) {
-		$this->instanceId18 = $instanceId18;
-		$this->queryParameters["InstanceId.18"]=$instanceId18;
-	}
-
 	public function getLoadBalancerWeight19() {
 		return $this->loadBalancerWeight19;
 	}
@@ -459,15 +400,6 @@ class EnableScalingGroupRequest extends \RpcAcsRequest
 	public function setLoadBalancerWeight19($loadBalancerWeight19) {
 		$this->loadBalancerWeight19 = $loadBalancerWeight19;
 		$this->queryParameters["LoadBalancerWeight.19"]=$loadBalancerWeight19;
-	}
-
-	public function getInstanceId17() {
-		return $this->instanceId17;
-	}
-
-	public function setInstanceId17($instanceId17) {
-		$this->instanceId17 = $instanceId17;
-		$this->queryParameters["InstanceId.17"]=$instanceId17;
 	}
 
 	public function getLoadBalancerWeight17() {
@@ -479,15 +411,6 @@ class EnableScalingGroupRequest extends \RpcAcsRequest
 		$this->queryParameters["LoadBalancerWeight.17"]=$loadBalancerWeight17;
 	}
 
-	public function getInstanceId19() {
-		return $this->instanceId19;
-	}
-
-	public function setInstanceId19($instanceId19) {
-		$this->instanceId19 = $instanceId19;
-		$this->queryParameters["InstanceId.19"]=$instanceId19;
-	}
-
 	public function getLoadBalancerWeight18() {
 		return $this->loadBalancerWeight18;
 	}
@@ -495,6 +418,105 @@ class EnableScalingGroupRequest extends \RpcAcsRequest
 	public function setLoadBalancerWeight18($loadBalancerWeight18) {
 		$this->loadBalancerWeight18 = $loadBalancerWeight18;
 		$this->queryParameters["LoadBalancerWeight.18"]=$loadBalancerWeight18;
+	}
+
+	public function getInstanceId10() {
+		return $this->instanceId10;
+	}
+
+	public function setInstanceId10($instanceId10) {
+		$this->instanceId10 = $instanceId10;
+		$this->queryParameters["InstanceId.10"]=$instanceId10;
+	}
+
+	public function getInstanceId12() {
+		return $this->instanceId12;
+	}
+
+	public function setInstanceId12($instanceId12) {
+		$this->instanceId12 = $instanceId12;
+		$this->queryParameters["InstanceId.12"]=$instanceId12;
+	}
+
+	public function getInstanceId11() {
+		return $this->instanceId11;
+	}
+
+	public function setInstanceId11($instanceId11) {
+		$this->instanceId11 = $instanceId11;
+		$this->queryParameters["InstanceId.11"]=$instanceId11;
+	}
+
+	public function getScalingGroupId() {
+		return $this->scalingGroupId;
+	}
+
+	public function setScalingGroupId($scalingGroupId) {
+		$this->scalingGroupId = $scalingGroupId;
+		$this->queryParameters["ScalingGroupId"]=$scalingGroupId;
+	}
+
+	public function getInstanceId20() {
+		return $this->instanceId20;
+	}
+
+	public function setInstanceId20($instanceId20) {
+		$this->instanceId20 = $instanceId20;
+		$this->queryParameters["InstanceId.20"]=$instanceId20;
+	}
+
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
+	}
+
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getLaunchTemplateVersion() {
+		return $this->launchTemplateVersion;
+	}
+
+	public function setLaunchTemplateVersion($launchTemplateVersion) {
+		$this->launchTemplateVersion = $launchTemplateVersion;
+		$this->queryParameters["LaunchTemplateVersion"]=$launchTemplateVersion;
+	}
+
+	public function getInstanceId18() {
+		return $this->instanceId18;
+	}
+
+	public function setInstanceId18($instanceId18) {
+		$this->instanceId18 = $instanceId18;
+		$this->queryParameters["InstanceId.18"]=$instanceId18;
+	}
+
+	public function getInstanceId17() {
+		return $this->instanceId17;
+	}
+
+	public function setInstanceId17($instanceId17) {
+		$this->instanceId17 = $instanceId17;
+		$this->queryParameters["InstanceId.17"]=$instanceId17;
+	}
+
+	public function getInstanceId19() {
+		return $this->instanceId19;
+	}
+
+	public function setInstanceId19($instanceId19) {
+		$this->instanceId19 = $instanceId19;
+		$this->queryParameters["InstanceId.19"]=$instanceId19;
 	}
 
 	public function getInstanceId14() {
