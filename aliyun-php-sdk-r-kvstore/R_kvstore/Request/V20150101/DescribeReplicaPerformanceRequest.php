@@ -29,6 +29,8 @@ class DescribeReplicaPerformanceRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
+	private  $destinationDBInstanceId;
+
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
@@ -54,6 +56,15 @@ class DescribeReplicaPerformanceRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getDestinationDBInstanceId() {
+		return $this->destinationDBInstanceId;
+	}
+
+	public function setDestinationDBInstanceId($destinationDBInstanceId) {
+		$this->destinationDBInstanceId = $destinationDBInstanceId;
+		$this->queryParameters["DestinationDBInstanceId"]=$destinationDBInstanceId;
 	}
 
 	public function getResourceOwnerAccount() {
