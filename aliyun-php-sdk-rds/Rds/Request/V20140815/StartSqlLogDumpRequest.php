@@ -19,25 +19,40 @@
  */
 namespace Rds\Request\V20140815;
 
-class UpgradeDBInstanceKernelVersionRequest extends \RpcAcsRequest
+class StartSqlLogDumpRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "UpgradeDBInstanceKernelVersion", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "StartSqlLogDump", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 
+	private  $bucket;
+
 	private  $resourceOwnerId;
+
+	private  $endpoint;
+
+	private  $securityToken;
 
 	private  $resourceOwnerAccount;
 
-	private  $upgradeTime;
+	private  $ownerAccount;
+
+	private  $configValue;
 
 	private  $dBInstanceId;
 
-	private  $switchTime;
-
 	private  $ownerId;
+
+	public function getBucket() {
+		return $this->bucket;
+	}
+
+	public function setBucket($bucket) {
+		$this->bucket = $bucket;
+		$this->queryParameters["Bucket"]=$bucket;
+	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -46,6 +61,24 @@ class UpgradeDBInstanceKernelVersionRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getEndpoint() {
+		return $this->endpoint;
+	}
+
+	public function setEndpoint($endpoint) {
+		$this->endpoint = $endpoint;
+		$this->queryParameters["Endpoint"]=$endpoint;
+	}
+
+	public function getSecurityToken() {
+		return $this->securityToken;
+	}
+
+	public function setSecurityToken($securityToken) {
+		$this->securityToken = $securityToken;
+		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -57,13 +90,22 @@ class UpgradeDBInstanceKernelVersionRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getUpgradeTime() {
-		return $this->upgradeTime;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setUpgradeTime($upgradeTime) {
-		$this->upgradeTime = $upgradeTime;
-		$this->queryParameters["UpgradeTime"]=$upgradeTime;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getConfigValue() {
+		return $this->configValue;
+	}
+
+	public function setConfigValue($configValue) {
+		$this->configValue = $configValue;
+		$this->queryParameters["ConfigValue"]=$configValue;
 	}
 
 	public function getDBInstanceId() {
@@ -73,15 +115,6 @@ class UpgradeDBInstanceKernelVersionRequest extends \RpcAcsRequest
 	public function setDBInstanceId($dBInstanceId) {
 		$this->dBInstanceId = $dBInstanceId;
 		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
-	}
-
-	public function getSwitchTime() {
-		return $this->switchTime;
-	}
-
-	public function setSwitchTime($switchTime) {
-		$this->switchTime = $switchTime;
-		$this->queryParameters["SwitchTime"]=$switchTime;
 	}
 
 	public function getOwnerId() {

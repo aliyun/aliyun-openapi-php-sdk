@@ -19,39 +19,37 @@
  */
 namespace Rds\Request\V20140815;
 
-class CopyDatabaseBetweenInstancesRequest extends \RpcAcsRequest
+class EvaluateResourceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "CopyDatabaseBetweenInstances", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "EvaluateResource", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
-	private  $restoreTime;
+	private  $dBInstanceStorage;
 
 	private  $resourceOwnerAccount;
 
-	private  $clientToken;
-
-	private  $backupId;
-
 	private  $ownerAccount;
+
+	private  $engineVersion;
 
 	private  $ownerId;
 
-	private  $syncUserPrivilege;
+	private  $shardsInfo;
 
-	private  $dbNames;
+	private  $dBInstanceClass;
 
-	private  $resourceGroupId;
+	private  $securityToken;
 
-	private  $targetDBInstanceId;
+	private  $engine;
+
+	private  $zoneId;
 
 	private  $dBInstanceId;
-
-	private  $payType;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -62,13 +60,13 @@ class CopyDatabaseBetweenInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getRestoreTime() {
-		return $this->restoreTime;
+	public function getDBInstanceStorage() {
+		return $this->dBInstanceStorage;
 	}
 
-	public function setRestoreTime($restoreTime) {
-		$this->restoreTime = $restoreTime;
-		$this->queryParameters["RestoreTime"]=$restoreTime;
+	public function setDBInstanceStorage($dBInstanceStorage) {
+		$this->dBInstanceStorage = $dBInstanceStorage;
+		$this->queryParameters["DBInstanceStorage"]=$dBInstanceStorage;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -80,24 +78,6 @@ class CopyDatabaseBetweenInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getClientToken() {
-		return $this->clientToken;
-	}
-
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
-
-	public function getBackupId() {
-		return $this->backupId;
-	}
-
-	public function setBackupId($backupId) {
-		$this->backupId = $backupId;
-		$this->queryParameters["BackupId"]=$backupId;
-	}
-
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -105,6 +85,15 @@ class CopyDatabaseBetweenInstancesRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getEngineVersion() {
+		return $this->engineVersion;
+	}
+
+	public function setEngineVersion($engineVersion) {
+		$this->engineVersion = $engineVersion;
+		$this->queryParameters["EngineVersion"]=$engineVersion;
 	}
 
 	public function getOwnerId() {
@@ -116,40 +105,49 @@ class CopyDatabaseBetweenInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getSyncUserPrivilege() {
-		return $this->syncUserPrivilege;
+	public function getShardsInfo() {
+		return $this->shardsInfo;
 	}
 
-	public function setSyncUserPrivilege($syncUserPrivilege) {
-		$this->syncUserPrivilege = $syncUserPrivilege;
-		$this->queryParameters["SyncUserPrivilege"]=$syncUserPrivilege;
+	public function setShardsInfo($shardsInfo) {
+		$this->shardsInfo = $shardsInfo;
+		$this->queryParameters["ShardsInfo"]=$shardsInfo;
 	}
 
-	public function getDbNames() {
-		return $this->dbNames;
+	public function getDBInstanceClass() {
+		return $this->dBInstanceClass;
 	}
 
-	public function setDbNames($dbNames) {
-		$this->dbNames = $dbNames;
-		$this->queryParameters["DbNames"]=$dbNames;
+	public function setDBInstanceClass($dBInstanceClass) {
+		$this->dBInstanceClass = $dBInstanceClass;
+		$this->queryParameters["DBInstanceClass"]=$dBInstanceClass;
 	}
 
-	public function getResourceGroupId() {
-		return $this->resourceGroupId;
+	public function getSecurityToken() {
+		return $this->securityToken;
 	}
 
-	public function setResourceGroupId($resourceGroupId) {
-		$this->resourceGroupId = $resourceGroupId;
-		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
+	public function setSecurityToken($securityToken) {
+		$this->securityToken = $securityToken;
+		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getTargetDBInstanceId() {
-		return $this->targetDBInstanceId;
+	public function getEngine() {
+		return $this->engine;
 	}
 
-	public function setTargetDBInstanceId($targetDBInstanceId) {
-		$this->targetDBInstanceId = $targetDBInstanceId;
-		$this->queryParameters["TargetDBInstanceId"]=$targetDBInstanceId;
+	public function setEngine($engine) {
+		$this->engine = $engine;
+		$this->queryParameters["Engine"]=$engine;
+	}
+
+	public function getZoneId() {
+		return $this->zoneId;
+	}
+
+	public function setZoneId($zoneId) {
+		$this->zoneId = $zoneId;
+		$this->queryParameters["ZoneId"]=$zoneId;
 	}
 
 	public function getDBInstanceId() {
@@ -159,15 +157,6 @@ class CopyDatabaseBetweenInstancesRequest extends \RpcAcsRequest
 	public function setDBInstanceId($dBInstanceId) {
 		$this->dBInstanceId = $dBInstanceId;
 		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
-	}
-
-	public function getPayType() {
-		return $this->payType;
-	}
-
-	public function setPayType($payType) {
-		$this->payType = $payType;
-		$this->queryParameters["PayType"]=$payType;
 	}
 	
 }

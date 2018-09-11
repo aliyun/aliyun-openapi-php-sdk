@@ -19,25 +19,47 @@
  */
 namespace Rds\Request\V20140815;
 
-class UpgradeDBInstanceKernelVersionRequest extends \RpcAcsRequest
+class SwitchDBInstanceVpcRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "UpgradeDBInstanceKernelVersion", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "SwitchDBInstanceVpc", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
+
+	private  $vSwitchId;
+
+	private  $privateIpAddress;
 
 	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
-	private  $upgradeTime;
+	private  $vPCId;
+
+	private  $ownerAccount;
 
 	private  $dBInstanceId;
 
-	private  $switchTime;
-
 	private  $ownerId;
+
+	public function getVSwitchId() {
+		return $this->vSwitchId;
+	}
+
+	public function setVSwitchId($vSwitchId) {
+		$this->vSwitchId = $vSwitchId;
+		$this->queryParameters["VSwitchId"]=$vSwitchId;
+	}
+
+	public function getPrivateIpAddress() {
+		return $this->privateIpAddress;
+	}
+
+	public function setPrivateIpAddress($privateIpAddress) {
+		$this->privateIpAddress = $privateIpAddress;
+		$this->queryParameters["PrivateIpAddress"]=$privateIpAddress;
+	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -57,13 +79,22 @@ class UpgradeDBInstanceKernelVersionRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getUpgradeTime() {
-		return $this->upgradeTime;
+	public function getVPCId() {
+		return $this->vPCId;
 	}
 
-	public function setUpgradeTime($upgradeTime) {
-		$this->upgradeTime = $upgradeTime;
-		$this->queryParameters["UpgradeTime"]=$upgradeTime;
+	public function setVPCId($vPCId) {
+		$this->vPCId = $vPCId;
+		$this->queryParameters["VPCId"]=$vPCId;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getDBInstanceId() {
@@ -73,15 +104,6 @@ class UpgradeDBInstanceKernelVersionRequest extends \RpcAcsRequest
 	public function setDBInstanceId($dBInstanceId) {
 		$this->dBInstanceId = $dBInstanceId;
 		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
-	}
-
-	public function getSwitchTime() {
-		return $this->switchTime;
-	}
-
-	public function setSwitchTime($switchTime) {
-		$this->switchTime = $switchTime;
-		$this->queryParameters["SwitchTime"]=$switchTime;
 	}
 
 	public function getOwnerId() {

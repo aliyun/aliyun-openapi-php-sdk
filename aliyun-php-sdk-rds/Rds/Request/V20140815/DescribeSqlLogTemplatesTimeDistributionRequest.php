@@ -19,17 +19,15 @@
  */
 namespace Rds\Request\V20140815;
 
-class DescribeReplicaPerformanceRequest extends \RpcAcsRequest
+class DescribeSqlLogTemplatesTimeDistributionRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeReplicaPerformance", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeSqlLogTemplatesTimeDistribution", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
-
-	private  $destinationDBInstanceId;
 
 	private  $resourceOwnerAccount;
 
@@ -41,13 +39,13 @@ class DescribeReplicaPerformanceRequest extends \RpcAcsRequest
 
 	private  $ownerId;
 
-	private  $sourceDBInstanceId;
+	private  $templateHash;
 
 	private  $securityToken;
 
-	private  $replicaId;
+	private  $timeLevel;
 
-	private  $key;
+	private  $dBInstanceId;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -56,15 +54,6 @@ class DescribeReplicaPerformanceRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getDestinationDBInstanceId() {
-		return $this->destinationDBInstanceId;
-	}
-
-	public function setDestinationDBInstanceId($destinationDBInstanceId) {
-		$this->destinationDBInstanceId = $destinationDBInstanceId;
-		$this->queryParameters["DestinationDBInstanceId"]=$destinationDBInstanceId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -112,13 +101,13 @@ class DescribeReplicaPerformanceRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getSourceDBInstanceId() {
-		return $this->sourceDBInstanceId;
+	public function getTemplateHash() {
+		return $this->templateHash;
 	}
 
-	public function setSourceDBInstanceId($sourceDBInstanceId) {
-		$this->sourceDBInstanceId = $sourceDBInstanceId;
-		$this->queryParameters["SourceDBInstanceId"]=$sourceDBInstanceId;
+	public function setTemplateHash($templateHash) {
+		$this->templateHash = $templateHash;
+		$this->queryParameters["TemplateHash"]=$templateHash;
 	}
 
 	public function getSecurityToken() {
@@ -130,22 +119,22 @@ class DescribeReplicaPerformanceRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getReplicaId() {
-		return $this->replicaId;
+	public function getTimeLevel() {
+		return $this->timeLevel;
 	}
 
-	public function setReplicaId($replicaId) {
-		$this->replicaId = $replicaId;
-		$this->queryParameters["ReplicaId"]=$replicaId;
+	public function setTimeLevel($timeLevel) {
+		$this->timeLevel = $timeLevel;
+		$this->queryParameters["TimeLevel"]=$timeLevel;
 	}
 
-	public function getKey() {
-		return $this->key;
+	public function getDBInstanceId() {
+		return $this->dBInstanceId;
 	}
 
-	public function setKey($key) {
-		$this->key = $key;
-		$this->queryParameters["Key"]=$key;
+	public function setDBInstanceId($dBInstanceId) {
+		$this->dBInstanceId = $dBInstanceId;
+		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
 	}
 	
 }

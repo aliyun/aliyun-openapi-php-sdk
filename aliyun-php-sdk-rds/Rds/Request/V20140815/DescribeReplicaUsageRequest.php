@@ -31,6 +31,8 @@ class DescribeReplicaUsageRequest extends \RpcAcsRequest
 
 	private  $sourceDBInstanceId;
 
+	private  $destinationDBInstanceId;
+
 	private  $securityToken;
 
 	private  $resourceOwnerAccount;
@@ -57,6 +59,15 @@ class DescribeReplicaUsageRequest extends \RpcAcsRequest
 	public function setSourceDBInstanceId($sourceDBInstanceId) {
 		$this->sourceDBInstanceId = $sourceDBInstanceId;
 		$this->queryParameters["SourceDBInstanceId"]=$sourceDBInstanceId;
+	}
+
+	public function getDestinationDBInstanceId() {
+		return $this->destinationDBInstanceId;
+	}
+
+	public function setDestinationDBInstanceId($destinationDBInstanceId) {
+		$this->destinationDBInstanceId = $destinationDBInstanceId;
+		$this->queryParameters["DestinationDBInstanceId"]=$destinationDBInstanceId;
 	}
 
 	public function getSecurityToken() {

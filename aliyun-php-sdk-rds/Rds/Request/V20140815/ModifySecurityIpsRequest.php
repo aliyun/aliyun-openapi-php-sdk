@@ -45,7 +45,7 @@ class ModifySecurityIpsRequest extends \RpcAcsRequest
 
 	private  $ownerId;
 
-	private  $whitelistNetType;
+	private  $whitelistNetworkType;
 
 	private  $dBInstanceIPArrayAttribute;
 
@@ -134,13 +134,13 @@ class ModifySecurityIpsRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getWhitelistNetType() {
-		return $this->whitelistNetType;
+	public function getWhitelistNetworkType() {
+		return $this->whitelistNetworkType;
 	}
 
-	public function setWhitelistNetType($whitelistNetType) {
-		$this->whitelistNetType = $whitelistNetType;
-		$this->queryParameters["WhitelistNetType"]=$whitelistNetType;
+	public function setWhitelistNetworkType($whitelistNetworkType) {
+		$this->whitelistNetworkType = $whitelistNetworkType;
+		$this->queryParameters["WhitelistNetworkType"]=$whitelistNetworkType;
 	}
 
 	public function getDBInstanceIPArrayAttribute() {

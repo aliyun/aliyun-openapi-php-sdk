@@ -19,23 +19,17 @@
  */
 namespace Rds\Request\V20140815;
 
-class UpgradeDBInstanceKernelVersionRequest extends \RpcAcsRequest
+class DescribeCollationTimeZonesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "UpgradeDBInstanceKernelVersion", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeCollationTimeZones", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
-
-	private  $upgradeTime;
-
-	private  $dBInstanceId;
-
-	private  $switchTime;
 
 	private  $ownerId;
 
@@ -55,33 +49,6 @@ class UpgradeDBInstanceKernelVersionRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getUpgradeTime() {
-		return $this->upgradeTime;
-	}
-
-	public function setUpgradeTime($upgradeTime) {
-		$this->upgradeTime = $upgradeTime;
-		$this->queryParameters["UpgradeTime"]=$upgradeTime;
-	}
-
-	public function getDBInstanceId() {
-		return $this->dBInstanceId;
-	}
-
-	public function setDBInstanceId($dBInstanceId) {
-		$this->dBInstanceId = $dBInstanceId;
-		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
-	}
-
-	public function getSwitchTime() {
-		return $this->switchTime;
-	}
-
-	public function setSwitchTime($switchTime) {
-		$this->switchTime = $switchTime;
-		$this->queryParameters["SwitchTime"]=$switchTime;
 	}
 
 	public function getOwnerId() {

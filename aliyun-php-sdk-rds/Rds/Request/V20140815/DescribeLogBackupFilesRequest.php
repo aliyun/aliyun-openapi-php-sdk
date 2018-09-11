@@ -19,11 +19,11 @@
  */
 namespace Rds\Request\V20140815;
 
-class UpgradeDBInstanceKernelVersionRequest extends \RpcAcsRequest
+class DescribeLogBackupFilesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "UpgradeDBInstanceKernelVersion", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeLogBackupFiles", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -31,13 +31,19 @@ class UpgradeDBInstanceKernelVersionRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerAccount;
 
-	private  $upgradeTime;
+	private  $ownerAccount;
+
+	private  $pageSize;
+
+	private  $endTime;
 
 	private  $dBInstanceId;
 
-	private  $switchTime;
+	private  $startTime;
 
 	private  $ownerId;
+
+	private  $pageNumber;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -57,13 +63,31 @@ class UpgradeDBInstanceKernelVersionRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getUpgradeTime() {
-		return $this->upgradeTime;
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
 	}
 
-	public function setUpgradeTime($upgradeTime) {
-		$this->upgradeTime = $upgradeTime;
-		$this->queryParameters["UpgradeTime"]=$upgradeTime;
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
 	}
 
 	public function getDBInstanceId() {
@@ -75,13 +99,13 @@ class UpgradeDBInstanceKernelVersionRequest extends \RpcAcsRequest
 		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
 	}
 
-	public function getSwitchTime() {
-		return $this->switchTime;
+	public function getStartTime() {
+		return $this->startTime;
 	}
 
-	public function setSwitchTime($switchTime) {
-		$this->switchTime = $switchTime;
-		$this->queryParameters["SwitchTime"]=$switchTime;
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
 	}
 
 	public function getOwnerId() {
@@ -91,6 +115,15 @@ class UpgradeDBInstanceKernelVersionRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getPageNumber() {
+		return $this->pageNumber;
+	}
+
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 	
 }

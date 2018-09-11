@@ -19,11 +19,11 @@
  */
 namespace Rds\Request\V20140815;
 
-class UpgradeDBInstanceKernelVersionRequest extends \RpcAcsRequest
+class MigrateSecurityIPModeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "UpgradeDBInstanceKernelVersion", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "MigrateSecurityIPMode", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -31,11 +31,7 @@ class UpgradeDBInstanceKernelVersionRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerAccount;
 
-	private  $upgradeTime;
-
 	private  $dBInstanceId;
-
-	private  $switchTime;
 
 	private  $ownerId;
 
@@ -57,15 +53,6 @@ class UpgradeDBInstanceKernelVersionRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getUpgradeTime() {
-		return $this->upgradeTime;
-	}
-
-	public function setUpgradeTime($upgradeTime) {
-		$this->upgradeTime = $upgradeTime;
-		$this->queryParameters["UpgradeTime"]=$upgradeTime;
-	}
-
 	public function getDBInstanceId() {
 		return $this->dBInstanceId;
 	}
@@ -73,15 +60,6 @@ class UpgradeDBInstanceKernelVersionRequest extends \RpcAcsRequest
 	public function setDBInstanceId($dBInstanceId) {
 		$this->dBInstanceId = $dBInstanceId;
 		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
-	}
-
-	public function getSwitchTime() {
-		return $this->switchTime;
-	}
-
-	public function setSwitchTime($switchTime) {
-		$this->switchTime = $switchTime;
-		$this->queryParameters["SwitchTime"]=$switchTime;
 	}
 
 	public function getOwnerId() {

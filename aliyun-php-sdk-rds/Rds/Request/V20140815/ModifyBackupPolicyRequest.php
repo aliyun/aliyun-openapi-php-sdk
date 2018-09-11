@@ -37,6 +37,8 @@ class ModifyBackupPolicyRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
+	private  $logBackupFrequency;
+
 	private  $backupLog;
 
 	private  $localLogRetentionSpace;
@@ -106,6 +108,15 @@ class ModifyBackupPolicyRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getLogBackupFrequency() {
+		return $this->logBackupFrequency;
+	}
+
+	public function setLogBackupFrequency($logBackupFrequency) {
+		$this->logBackupFrequency = $logBackupFrequency;
+		$this->queryParameters["LogBackupFrequency"]=$logBackupFrequency;
 	}
 
 	public function getBackupLog() {
