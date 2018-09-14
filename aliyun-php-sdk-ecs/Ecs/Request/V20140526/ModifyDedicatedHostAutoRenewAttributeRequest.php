@@ -19,29 +19,49 @@
  */
 namespace Ecs\Request\V20140526;
 
-class DescribeDiskMonitorDataRequest extends \RpcAcsRequest
+class ModifyDedicatedHostAutoRenewAttributeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeDiskMonitorData", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "ModifyDedicatedHostAutoRenewAttribute", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
+	private  $duration;
+
+	private  $dedicatedHostIds;
+
 	private  $resourceOwnerId;
 
-	private  $startTime;
+	private  $periodUnit;
 
-	private  $diskId;
-
-	private  $period;
+	private  $autoRenew;
 
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
-	private  $endTime;
+	private  $renewalStatus;
 
 	private  $ownerId;
+
+	public function getDuration() {
+		return $this->duration;
+	}
+
+	public function setDuration($duration) {
+		$this->duration = $duration;
+		$this->queryParameters["Duration"]=$duration;
+	}
+
+	public function getDedicatedHostIds() {
+		return $this->dedicatedHostIds;
+	}
+
+	public function setDedicatedHostIds($dedicatedHostIds) {
+		$this->dedicatedHostIds = $dedicatedHostIds;
+		$this->queryParameters["DedicatedHostIds"]=$dedicatedHostIds;
+	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -52,31 +72,22 @@ class DescribeDiskMonitorDataRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getStartTime() {
-		return $this->startTime;
+	public function getPeriodUnit() {
+		return $this->periodUnit;
 	}
 
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
+	public function setPeriodUnit($periodUnit) {
+		$this->periodUnit = $periodUnit;
+		$this->queryParameters["PeriodUnit"]=$periodUnit;
 	}
 
-	public function getDiskId() {
-		return $this->diskId;
+	public function getAutoRenew() {
+		return $this->autoRenew;
 	}
 
-	public function setDiskId($diskId) {
-		$this->diskId = $diskId;
-		$this->queryParameters["DiskId"]=$diskId;
-	}
-
-	public function getPeriod() {
-		return $this->period;
-	}
-
-	public function setPeriod($period) {
-		$this->period = $period;
-		$this->queryParameters["Period"]=$period;
+	public function setAutoRenew($autoRenew) {
+		$this->autoRenew = $autoRenew;
+		$this->queryParameters["AutoRenew"]=$autoRenew;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -97,13 +108,13 @@ class DescribeDiskMonitorDataRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getEndTime() {
-		return $this->endTime;
+	public function getRenewalStatus() {
+		return $this->renewalStatus;
 	}
 
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
+	public function setRenewalStatus($renewalStatus) {
+		$this->renewalStatus = $renewalStatus;
+		$this->queryParameters["RenewalStatus"]=$renewalStatus;
 	}
 
 	public function getOwnerId() {

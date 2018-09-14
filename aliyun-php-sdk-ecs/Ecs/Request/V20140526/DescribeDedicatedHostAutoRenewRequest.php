@@ -19,29 +19,32 @@
  */
 namespace Ecs\Request\V20140526;
 
-class DescribeDiskMonitorDataRequest extends \RpcAcsRequest
+class DescribeDedicatedHostAutoRenewRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeDiskMonitorData", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "DescribeDedicatedHostAutoRenew", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
+	private  $dedicatedHostIds;
+
 	private  $resourceOwnerId;
-
-	private  $startTime;
-
-	private  $diskId;
-
-	private  $period;
 
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
-	private  $endTime;
-
 	private  $ownerId;
+
+	public function getDedicatedHostIds() {
+		return $this->dedicatedHostIds;
+	}
+
+	public function setDedicatedHostIds($dedicatedHostIds) {
+		$this->dedicatedHostIds = $dedicatedHostIds;
+		$this->queryParameters["DedicatedHostIds"]=$dedicatedHostIds;
+	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -50,33 +53,6 @@ class DescribeDiskMonitorDataRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
-
-	public function getDiskId() {
-		return $this->diskId;
-	}
-
-	public function setDiskId($diskId) {
-		$this->diskId = $diskId;
-		$this->queryParameters["DiskId"]=$diskId;
-	}
-
-	public function getPeriod() {
-		return $this->period;
-	}
-
-	public function setPeriod($period) {
-		$this->period = $period;
-		$this->queryParameters["Period"]=$period;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -95,15 +71,6 @@ class DescribeDiskMonitorDataRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getEndTime() {
-		return $this->endTime;
-	}
-
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
 	}
 
 	public function getOwnerId() {

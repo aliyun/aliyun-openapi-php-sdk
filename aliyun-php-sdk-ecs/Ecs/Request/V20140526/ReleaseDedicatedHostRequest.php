@@ -19,27 +19,21 @@
  */
 namespace Ecs\Request\V20140526;
 
-class DescribeDiskMonitorDataRequest extends \RpcAcsRequest
+class ReleaseDedicatedHostRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeDiskMonitorData", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "ReleaseDedicatedHost", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
-	private  $startTime;
-
-	private  $diskId;
-
-	private  $period;
-
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
-	private  $endTime;
+	private  $dedicatedHostId;
 
 	private  $ownerId;
 
@@ -50,33 +44,6 @@ class DescribeDiskMonitorDataRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
-
-	public function getDiskId() {
-		return $this->diskId;
-	}
-
-	public function setDiskId($diskId) {
-		$this->diskId = $diskId;
-		$this->queryParameters["DiskId"]=$diskId;
-	}
-
-	public function getPeriod() {
-		return $this->period;
-	}
-
-	public function setPeriod($period) {
-		$this->period = $period;
-		$this->queryParameters["Period"]=$period;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -97,13 +64,13 @@ class DescribeDiskMonitorDataRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getEndTime() {
-		return $this->endTime;
+	public function getDedicatedHostId() {
+		return $this->dedicatedHostId;
 	}
 
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
+	public function setDedicatedHostId($dedicatedHostId) {
+		$this->dedicatedHostId = $dedicatedHostId;
+		$this->queryParameters["DedicatedHostId"]=$dedicatedHostId;
 	}
 
 	public function getOwnerId() {

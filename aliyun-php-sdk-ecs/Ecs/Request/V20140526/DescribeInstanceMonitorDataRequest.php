@@ -29,9 +29,9 @@ class DescribeInstanceMonitorDataRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
-	private  $period;
+	private  $startTime;
 
-	private  $instanceId;
+	private  $period;
 
 	private  $resourceOwnerAccount;
 
@@ -39,9 +39,9 @@ class DescribeInstanceMonitorDataRequest extends \RpcAcsRequest
 
 	private  $endTime;
 
-	private  $startTime;
-
 	private  $ownerId;
+
+	private  $instanceId;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -52,6 +52,15 @@ class DescribeInstanceMonitorDataRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
+
 	public function getPeriod() {
 		return $this->period;
 	}
@@ -59,15 +68,6 @@ class DescribeInstanceMonitorDataRequest extends \RpcAcsRequest
 	public function setPeriod($period) {
 		$this->period = $period;
 		$this->queryParameters["Period"]=$period;
-	}
-
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
-
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -97,15 +97,6 @@ class DescribeInstanceMonitorDataRequest extends \RpcAcsRequest
 		$this->queryParameters["EndTime"]=$endTime;
 	}
 
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
-
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -113,6 +104,15 @@ class DescribeInstanceMonitorDataRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getInstanceId() {
+		return $this->instanceId;
+	}
+
+	public function setInstanceId($instanceId) {
+		$this->instanceId = $instanceId;
+		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 	
 }
