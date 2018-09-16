@@ -19,11 +19,11 @@
  */
 namespace Rds\Request\V20140815;
 
-class CheckDBInstancesRequest extends \RpcAcsRequest
+class CheckInstanceExsitRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "CheckDBInstances", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "CheckInstanceExsit", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 
