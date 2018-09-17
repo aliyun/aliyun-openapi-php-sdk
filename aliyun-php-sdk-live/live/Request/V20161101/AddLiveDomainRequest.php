@@ -27,6 +27,8 @@ class AddLiveDomainRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
+	private  $topLevelDomain;
+
 	private  $securityToken;
 
 	private  $ownerAccount;
@@ -42,6 +44,15 @@ class AddLiveDomainRequest extends \RpcAcsRequest
 	private  $checkUrl;
 
 	private  $liveDomainType;
+
+	public function getTopLevelDomain() {
+		return $this->topLevelDomain;
+	}
+
+	public function setTopLevelDomain($topLevelDomain) {
+		$this->topLevelDomain = $topLevelDomain;
+		$this->queryParameters["TopLevelDomain"]=$topLevelDomain;
+	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;

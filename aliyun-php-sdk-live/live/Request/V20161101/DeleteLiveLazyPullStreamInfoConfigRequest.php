@@ -19,17 +19,19 @@
  */
 namespace live\Request\V20161101;
 
-class DeleteLiveStreamsNotifyUrlConfigRequest extends \RpcAcsRequest
+class DeleteLiveLazyPullStreamInfoConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "DeleteLiveStreamsNotifyUrlConfig", "live", "openAPI");
+		parent::__construct("live", "2016-11-01", "DeleteLiveLazyPullStreamInfoConfig", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $domainName;
 
 	private  $ownerId;
+
+	private  $appName;
 
 	public function getDomainName() {
 		return $this->domainName;
@@ -47,6 +49,15 @@ class DeleteLiveStreamsNotifyUrlConfigRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getAppName() {
+		return $this->appName;
+	}
+
+	public function setAppName($appName) {
+		$this->appName = $appName;
+		$this->queryParameters["AppName"]=$appName;
 	}
 	
 }

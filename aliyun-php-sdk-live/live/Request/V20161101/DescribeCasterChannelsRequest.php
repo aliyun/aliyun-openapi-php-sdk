@@ -19,25 +19,25 @@
  */
 namespace live\Request\V20161101;
 
-class DeleteLiveStreamsNotifyUrlConfigRequest extends \RpcAcsRequest
+class DescribeCasterChannelsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "DeleteLiveStreamsNotifyUrlConfig", "live", "openAPI");
+		parent::__construct("live", "2016-11-01", "DescribeCasterChannels", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $domainName;
+	private  $casterId;
 
 	private  $ownerId;
 
-	public function getDomainName() {
-		return $this->domainName;
+	public function getCasterId() {
+		return $this->casterId;
 	}
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
+	public function setCasterId($casterId) {
+		$this->casterId = $casterId;
+		$this->queryParameters["CasterId"]=$casterId;
 	}
 
 	public function getOwnerId() {

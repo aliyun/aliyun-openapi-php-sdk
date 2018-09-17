@@ -27,20 +27,9 @@ class DescribeLiveStreamsNotifyUrlConfigRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $securityToken;
-
 	private  $domainName;
 
 	private  $ownerId;
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
 
 	public function getDomainName() {
 		return $this->domainName;

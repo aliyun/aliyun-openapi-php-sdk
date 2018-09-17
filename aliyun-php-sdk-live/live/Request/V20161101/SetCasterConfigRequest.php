@@ -31,6 +31,8 @@ class SetCasterConfigRequest extends \RpcAcsRequest
 
 	private  $casterId;
 
+	private  $channelEnable;
+
 	private  $domainName;
 
 	private  $programEffect;
@@ -67,6 +69,15 @@ class SetCasterConfigRequest extends \RpcAcsRequest
 	public function setCasterId($casterId) {
 		$this->casterId = $casterId;
 		$this->queryParameters["CasterId"]=$casterId;
+	}
+
+	public function getChannelEnable() {
+		return $this->channelEnable;
+	}
+
+	public function setChannelEnable($channelEnable) {
+		$this->channelEnable = $channelEnable;
+		$this->queryParameters["ChannelEnable"]=$channelEnable;
 	}
 
 	public function getDomainName() {

@@ -19,25 +19,40 @@
  */
 namespace live\Request\V20161101;
 
-class DeleteLiveStreamsNotifyUrlConfigRequest extends \RpcAcsRequest
+class ForbidPushStreamRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "DeleteLiveStreamsNotifyUrlConfig", "live", "openAPI");
+		parent::__construct("live", "2016-11-01", "ForbidPushStream", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $domainName;
+	private  $userData;
+
+	private  $endTime;
 
 	private  $ownerId;
 
-	public function getDomainName() {
-		return $this->domainName;
+	private  $roomId;
+
+	private  $appId;
+
+	public function getUserData() {
+		return $this->userData;
 	}
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
+	public function setUserData($userData) {
+		$this->userData = $userData;
+		$this->queryParameters["UserData"]=$userData;
+	}
+
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
 	}
 
 	public function getOwnerId() {
@@ -47,6 +62,24 @@ class DeleteLiveStreamsNotifyUrlConfigRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getRoomId() {
+		return $this->roomId;
+	}
+
+	public function setRoomId($roomId) {
+		$this->roomId = $roomId;
+		$this->queryParameters["RoomId"]=$roomId;
+	}
+
+	public function getAppId() {
+		return $this->appId;
+	}
+
+	public function setAppId($appId) {
+		$this->appId = $appId;
+		$this->queryParameters["AppId"]=$appId;
 	}
 	
 }

@@ -19,29 +19,29 @@
  */
 namespace live\Request\V20161101;
 
-class ForbidLiveStreamRequest extends \RpcAcsRequest
+class SetLiveLazyPullStreamInfoConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "ForbidLiveStream", "live", "openAPI");
+		parent::__construct("live", "2016-11-01", "SetLiveLazyPullStreamInfoConfig", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $appName;
 
-	private  $streamName;
+	private  $pullAuthKey;
 
-	private  $controlStreamAction;
-
-	private  $resumeTime;
-
-	private  $liveStreamType;
+	private  $pullAuthType;
 
 	private  $domainName;
 
+	private  $pullDomainName;
+
 	private  $ownerId;
 
-	private  $oneshot;
+	private  $pullAppName;
+
+	private  $pullProtocol;
 
 	public function getAppName() {
 		return $this->appName;
@@ -52,40 +52,22 @@ class ForbidLiveStreamRequest extends \RpcAcsRequest
 		$this->queryParameters["AppName"]=$appName;
 	}
 
-	public function getStreamName() {
-		return $this->streamName;
+	public function getPullAuthKey() {
+		return $this->pullAuthKey;
 	}
 
-	public function setStreamName($streamName) {
-		$this->streamName = $streamName;
-		$this->queryParameters["StreamName"]=$streamName;
+	public function setPullAuthKey($pullAuthKey) {
+		$this->pullAuthKey = $pullAuthKey;
+		$this->queryParameters["PullAuthKey"]=$pullAuthKey;
 	}
 
-	public function getControlStreamAction() {
-		return $this->controlStreamAction;
+	public function getPullAuthType() {
+		return $this->pullAuthType;
 	}
 
-	public function setControlStreamAction($controlStreamAction) {
-		$this->controlStreamAction = $controlStreamAction;
-		$this->queryParameters["ControlStreamAction"]=$controlStreamAction;
-	}
-
-	public function getResumeTime() {
-		return $this->resumeTime;
-	}
-
-	public function setResumeTime($resumeTime) {
-		$this->resumeTime = $resumeTime;
-		$this->queryParameters["ResumeTime"]=$resumeTime;
-	}
-
-	public function getLiveStreamType() {
-		return $this->liveStreamType;
-	}
-
-	public function setLiveStreamType($liveStreamType) {
-		$this->liveStreamType = $liveStreamType;
-		$this->queryParameters["LiveStreamType"]=$liveStreamType;
+	public function setPullAuthType($pullAuthType) {
+		$this->pullAuthType = $pullAuthType;
+		$this->queryParameters["PullAuthType"]=$pullAuthType;
 	}
 
 	public function getDomainName() {
@@ -97,6 +79,15 @@ class ForbidLiveStreamRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
+	public function getPullDomainName() {
+		return $this->pullDomainName;
+	}
+
+	public function setPullDomainName($pullDomainName) {
+		$this->pullDomainName = $pullDomainName;
+		$this->queryParameters["PullDomainName"]=$pullDomainName;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -106,13 +97,22 @@ class ForbidLiveStreamRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getOneshot() {
-		return $this->oneshot;
+	public function getPullAppName() {
+		return $this->pullAppName;
 	}
 
-	public function setOneshot($oneshot) {
-		$this->oneshot = $oneshot;
-		$this->queryParameters["Oneshot"]=$oneshot;
+	public function setPullAppName($pullAppName) {
+		$this->pullAppName = $pullAppName;
+		$this->queryParameters["PullAppName"]=$pullAppName;
+	}
+
+	public function getPullProtocol() {
+		return $this->pullProtocol;
+	}
+
+	public function setPullProtocol($pullProtocol) {
+		$this->pullProtocol = $pullProtocol;
+		$this->queryParameters["PullProtocol"]=$pullProtocol;
 	}
 	
 }

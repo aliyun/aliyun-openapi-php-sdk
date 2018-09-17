@@ -33,6 +33,8 @@ class DescribeLiveStreamsPublishListRequest extends \RpcAcsRequest
 
 	private  $endTime;
 
+	private  $orderBy;
+
 	private  $startTime;
 
 	private  $ownerId;
@@ -40,8 +42,6 @@ class DescribeLiveStreamsPublishListRequest extends \RpcAcsRequest
 	private  $pageNumber;
 
 	private  $appName;
-
-	private  $securityToken;
 
 	private  $pageSize;
 
@@ -74,6 +74,15 @@ class DescribeLiveStreamsPublishListRequest extends \RpcAcsRequest
 	public function setEndTime($endTime) {
 		$this->endTime = $endTime;
 		$this->queryParameters["EndTime"]=$endTime;
+	}
+
+	public function getOrderBy() {
+		return $this->orderBy;
+	}
+
+	public function setOrderBy($orderBy) {
+		$this->orderBy = $orderBy;
+		$this->queryParameters["OrderBy"]=$orderBy;
 	}
 
 	public function getStartTime() {
@@ -110,15 +119,6 @@ class DescribeLiveStreamsPublishListRequest extends \RpcAcsRequest
 	public function setAppName($appName) {
 		$this->appName = $appName;
 		$this->queryParameters["AppName"]=$appName;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
 	public function getPageSize() {

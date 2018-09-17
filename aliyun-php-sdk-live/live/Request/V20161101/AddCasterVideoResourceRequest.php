@@ -27,34 +27,27 @@ class AddCasterVideoResourceRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $beginOffset;
-
 	private  $vodUrl;
-
-	private  $liveStreamUrl;
-
-	private  $locationId;
 
 	private  $casterId;
 
 	private  $endOffset;
 
-	private  $resourceName;
-
-	private  $repeatNum;
-
 	private  $ownerId;
 
 	private  $materialId;
 
-	public function getBeginOffset() {
-		return $this->beginOffset;
-	}
+	private  $beginOffset;
 
-	public function setBeginOffset($beginOffset) {
-		$this->beginOffset = $beginOffset;
-		$this->queryParameters["BeginOffset"]=$beginOffset;
-	}
+	private  $liveStreamUrl;
+
+	private  $locationId;
+
+	private  $ptsCallbackInterval;
+
+	private  $resourceName;
+
+	private  $repeatNum;
 
 	public function getVodUrl() {
 		return $this->vodUrl;
@@ -63,24 +56,6 @@ class AddCasterVideoResourceRequest extends \RpcAcsRequest
 	public function setVodUrl($vodUrl) {
 		$this->vodUrl = $vodUrl;
 		$this->queryParameters["VodUrl"]=$vodUrl;
-	}
-
-	public function getLiveStreamUrl() {
-		return $this->liveStreamUrl;
-	}
-
-	public function setLiveStreamUrl($liveStreamUrl) {
-		$this->liveStreamUrl = $liveStreamUrl;
-		$this->queryParameters["LiveStreamUrl"]=$liveStreamUrl;
-	}
-
-	public function getLocationId() {
-		return $this->locationId;
-	}
-
-	public function setLocationId($locationId) {
-		$this->locationId = $locationId;
-		$this->queryParameters["LocationId"]=$locationId;
 	}
 
 	public function getCasterId() {
@@ -101,24 +76,6 @@ class AddCasterVideoResourceRequest extends \RpcAcsRequest
 		$this->queryParameters["EndOffset"]=$endOffset;
 	}
 
-	public function getResourceName() {
-		return $this->resourceName;
-	}
-
-	public function setResourceName($resourceName) {
-		$this->resourceName = $resourceName;
-		$this->queryParameters["ResourceName"]=$resourceName;
-	}
-
-	public function getRepeatNum() {
-		return $this->repeatNum;
-	}
-
-	public function setRepeatNum($repeatNum) {
-		$this->repeatNum = $repeatNum;
-		$this->queryParameters["RepeatNum"]=$repeatNum;
-	}
-
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -135,6 +92,60 @@ class AddCasterVideoResourceRequest extends \RpcAcsRequest
 	public function setMaterialId($materialId) {
 		$this->materialId = $materialId;
 		$this->queryParameters["MaterialId"]=$materialId;
+	}
+
+	public function getBeginOffset() {
+		return $this->beginOffset;
+	}
+
+	public function setBeginOffset($beginOffset) {
+		$this->beginOffset = $beginOffset;
+		$this->queryParameters["BeginOffset"]=$beginOffset;
+	}
+
+	public function getLiveStreamUrl() {
+		return $this->liveStreamUrl;
+	}
+
+	public function setLiveStreamUrl($liveStreamUrl) {
+		$this->liveStreamUrl = $liveStreamUrl;
+		$this->queryParameters["LiveStreamUrl"]=$liveStreamUrl;
+	}
+
+	public function getLocationId() {
+		return $this->locationId;
+	}
+
+	public function setLocationId($locationId) {
+		$this->locationId = $locationId;
+		$this->queryParameters["LocationId"]=$locationId;
+	}
+
+	public function getPtsCallbackInterval() {
+		return $this->ptsCallbackInterval;
+	}
+
+	public function setPtsCallbackInterval($ptsCallbackInterval) {
+		$this->ptsCallbackInterval = $ptsCallbackInterval;
+		$this->queryParameters["PtsCallbackInterval"]=$ptsCallbackInterval;
+	}
+
+	public function getResourceName() {
+		return $this->resourceName;
+	}
+
+	public function setResourceName($resourceName) {
+		$this->resourceName = $resourceName;
+		$this->queryParameters["ResourceName"]=$resourceName;
+	}
+
+	public function getRepeatNum() {
+		return $this->repeatNum;
+	}
+
+	public function setRepeatNum($repeatNum) {
+		$this->repeatNum = $repeatNum;
+		$this->queryParameters["RepeatNum"]=$repeatNum;
 	}
 	
 }

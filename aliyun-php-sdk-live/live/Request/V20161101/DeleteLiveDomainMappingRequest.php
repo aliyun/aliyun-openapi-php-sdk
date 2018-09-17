@@ -19,25 +19,47 @@
  */
 namespace live\Request\V20161101;
 
-class DeleteLiveStreamsNotifyUrlConfigRequest extends \RpcAcsRequest
+class DeleteLiveDomainMappingRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "DeleteLiveStreamsNotifyUrlConfig", "live", "openAPI");
+		parent::__construct("live", "2016-11-01", "DeleteLiveDomainMapping", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $domainName;
+	private  $pullDomain;
+
+	private  $securityToken;
+
+	private  $pushDomain;
 
 	private  $ownerId;
 
-	public function getDomainName() {
-		return $this->domainName;
+	public function getPullDomain() {
+		return $this->pullDomain;
 	}
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
+	public function setPullDomain($pullDomain) {
+		$this->pullDomain = $pullDomain;
+		$this->queryParameters["PullDomain"]=$pullDomain;
+	}
+
+	public function getSecurityToken() {
+		return $this->securityToken;
+	}
+
+	public function setSecurityToken($securityToken) {
+		$this->securityToken = $securityToken;
+		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
+
+	public function getPushDomain() {
+		return $this->pushDomain;
+	}
+
+	public function setPushDomain($pushDomain) {
+		$this->pushDomain = $pushDomain;
+		$this->queryParameters["PushDomain"]=$pushDomain;
 	}
 
 	public function getOwnerId() {

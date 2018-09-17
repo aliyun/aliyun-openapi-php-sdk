@@ -19,17 +19,41 @@
  */
 namespace live\Request\V20161101;
 
-class DeleteLiveStreamsNotifyUrlConfigRequest extends \RpcAcsRequest
+class DescribeDomainUsageDataRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "DeleteLiveStreamsNotifyUrlConfig", "live", "openAPI");
+		parent::__construct("live", "2016-11-01", "DescribeDomainUsageData", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 
+	private  $startTime;
+
+	private  $area;
+
 	private  $domainName;
 
+	private  $endTime;
+
 	private  $ownerId;
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
+
+	public function getArea() {
+		return $this->area;
+	}
+
+	public function setArea($area) {
+		$this->area = $area;
+		$this->queryParameters["Area"]=$area;
+	}
 
 	public function getDomainName() {
 		return $this->domainName;
@@ -38,6 +62,15 @@ class DeleteLiveStreamsNotifyUrlConfigRequest extends \RpcAcsRequest
 	public function setDomainName($domainName) {
 		$this->domainName = $domainName;
 		$this->queryParameters["DomainName"]=$domainName;
+	}
+
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
 	}
 
 	public function getOwnerId() {
