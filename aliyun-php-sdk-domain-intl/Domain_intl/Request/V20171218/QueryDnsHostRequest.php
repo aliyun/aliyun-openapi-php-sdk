@@ -29,6 +29,8 @@ class QueryDnsHostRequest extends \RpcAcsRequest
 
 	private  $instanceId;
 
+	private  $userClientIp;
+
 	private  $lang;
 
 	public function getInstanceId() {
@@ -38,6 +40,15 @@ class QueryDnsHostRequest extends \RpcAcsRequest
 	public function setInstanceId($instanceId) {
 		$this->instanceId = $instanceId;
 		$this->queryParameters["InstanceId"]=$instanceId;
+	}
+
+	public function getUserClientIp() {
+		return $this->userClientIp;
+	}
+
+	public function setUserClientIp($userClientIp) {
+		$this->userClientIp = $userClientIp;
+		$this->queryParameters["UserClientIp"]=$userClientIp;
 	}
 
 	public function getLang() {

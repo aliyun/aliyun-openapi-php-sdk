@@ -19,52 +19,19 @@
  */
 namespace Domain_intl\Request\V20171218;
 
-class SaveSingleTaskForModifyingDnsHostRequest extends \RpcAcsRequest
+class QueryEnsAssociationRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Domain-intl", "2017-12-18", "SaveSingleTaskForModifyingDnsHost", "domain", "openAPI");
+		parent::__construct("Domain-intl", "2017-12-18", "QueryEnsAssociation", "domain", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $instanceId;
-
-	private  $Ips;
-
-	private  $dnsName;
-
 	private  $userClientIp;
 
+	private  $domainName;
+
 	private  $lang;
-
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
-
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
-
-	public function getIps() {
-		return $this->Ips;
-	}
-
-	public function setIps($Ips) {
-		$this->Ips = $Ips;
-		for ($i = 0; $i < count($Ips); $i ++) {	
-			$this->queryParameters["Ip.".($i+1)] = $Ips[$i];
-		}
-	}
-
-	public function getDnsName() {
-		return $this->dnsName;
-	}
-
-	public function setDnsName($dnsName) {
-		$this->dnsName = $dnsName;
-		$this->queryParameters["DnsName"]=$dnsName;
-	}
 
 	public function getUserClientIp() {
 		return $this->userClientIp;
@@ -73,6 +40,15 @@ class SaveSingleTaskForModifyingDnsHostRequest extends \RpcAcsRequest
 	public function setUserClientIp($userClientIp) {
 		$this->userClientIp = $userClientIp;
 		$this->queryParameters["UserClientIp"]=$userClientIp;
+	}
+
+	public function getDomainName() {
+		return $this->domainName;
+	}
+
+	public function setDomainName($domainName) {
+		$this->domainName = $domainName;
+		$this->queryParameters["DomainName"]=$domainName;
 	}
 
 	public function getLang() {

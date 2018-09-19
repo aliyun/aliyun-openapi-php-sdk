@@ -29,6 +29,10 @@ class CheckDomainRequest extends \RpcAcsRequest
 
 	private  $domainName;
 
+	private  $userClientIp;
+
+	private  $lang;
+
 	public function getDomainName() {
 		return $this->domainName;
 	}
@@ -36,6 +40,24 @@ class CheckDomainRequest extends \RpcAcsRequest
 	public function setDomainName($domainName) {
 		$this->domainName = $domainName;
 		$this->queryParameters["DomainName"]=$domainName;
+	}
+
+	public function getUserClientIp() {
+		return $this->userClientIp;
+	}
+
+	public function setUserClientIp($userClientIp) {
+		$this->userClientIp = $userClientIp;
+		$this->queryParameters["UserClientIp"]=$userClientIp;
+	}
+
+	public function getLang() {
+		return $this->lang;
+	}
+
+	public function setLang($lang) {
+		$this->lang = $lang;
+		$this->queryParameters["Lang"]=$lang;
 	}
 	
 }

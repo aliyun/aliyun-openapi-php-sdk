@@ -40,8 +40,8 @@ class SaveBatchTaskForCreatingOrderRedeemRequest extends \RpcAcsRequest
 	public function setOrderRedeemParams($OrderRedeemParams) {
 		$this->OrderRedeemParams = $OrderRedeemParams;
 		for ($i = 0; $i < count($OrderRedeemParams); $i ++) {	
-			$this->queryParameters['OrderRedeemParam.' . ($i + 1) . '.DomainName'] = $OrderRedeemParams[$i]['DomainName'];
 			$this->queryParameters['OrderRedeemParam.' . ($i + 1) . '.CurrentExpirationDate'] = $OrderRedeemParams[$i]['CurrentExpirationDate'];
+			$this->queryParameters['OrderRedeemParam.' . ($i + 1) . '.DomainName'] = $OrderRedeemParams[$i]['DomainName'];
 
 		}
 	}

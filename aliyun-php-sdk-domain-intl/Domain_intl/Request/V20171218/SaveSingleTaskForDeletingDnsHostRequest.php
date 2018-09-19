@@ -19,11 +19,11 @@
  */
 namespace Domain_intl\Request\V20171218;
 
-class SaveSingleTaskForModifyingDnsHostRequest extends \RpcAcsRequest
+class SaveSingleTaskForDeletingDnsHostRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Domain-intl", "2017-12-18", "SaveSingleTaskForModifyingDnsHost", "domain", "openAPI");
+		parent::__construct("Domain-intl", "2017-12-18", "SaveSingleTaskForDeletingDnsHost", "domain", "openAPI");
 		$this->setMethod("POST");
 	}
 
