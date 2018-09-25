@@ -17,18 +17,16 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Cloudauth\Request\V20180807;
+namespace Cloudauth\Request\V20180916;
 
-class GetVerifyTokenRequest extends \RpcAcsRequest
+class GetStatusRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cloudauth", "2018-08-07", "GetVerifyToken", "cloudauth", "openAPI");
+		parent::__construct("Cloudauth", "2018-09-16", "GetStatus", "cloudauth", "openAPI");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
-
-	private  $userData;
 
 	private  $resourceOwnerId;
 
@@ -36,20 +34,7 @@ class GetVerifyTokenRequest extends \RpcAcsRequest
 
 	private  $sourceIp;
 
-	private  $binding;
-
-	private  $verifyConfigs;
-
 	private  $ticketId;
-
-	public function getUserData() {
-		return $this->userData;
-	}
-
-	public function setUserData($userData) {
-		$this->userData = $userData;
-		$this->queryParameters["UserData"]=$userData;
-	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -76,24 +61,6 @@ class GetVerifyTokenRequest extends \RpcAcsRequest
 	public function setSourceIp($sourceIp) {
 		$this->sourceIp = $sourceIp;
 		$this->queryParameters["SourceIp"]=$sourceIp;
-	}
-
-	public function getBinding() {
-		return $this->binding;
-	}
-
-	public function setBinding($binding) {
-		$this->binding = $binding;
-		$this->queryParameters["Binding"]=$binding;
-	}
-
-	public function getVerifyConfigs() {
-		return $this->verifyConfigs;
-	}
-
-	public function setVerifyConfigs($verifyConfigs) {
-		$this->verifyConfigs = $verifyConfigs;
-		$this->queryParameters["VerifyConfigs"]=$verifyConfigs;
 	}
 
 	public function getTicketId() {

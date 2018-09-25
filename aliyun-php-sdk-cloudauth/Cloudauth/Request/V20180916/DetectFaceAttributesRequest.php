@@ -17,24 +17,48 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Cloudauth\Request\V20180807;
+namespace Cloudauth\Request\V20180916;
 
-class SubmitMaterialsRequest extends \RpcAcsRequest
+class DetectFaceAttributesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cloudauth", "2018-08-07", "SubmitMaterials", "cloudauth", "openAPI");
+		parent::__construct("Cloudauth", "2018-09-16", "DetectFaceAttributes", "cloudauth", "openAPI");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
+
+	private  $maxNumPhotosPerCategory;
+
+	private  $maxFaceNum;
 
 	private  $resourceOwnerId;
 
 	private  $sourceIp;
 
-	private  $Materials;
+	private  $retAttributes;
 
-	private  $verifyToken;
+	private  $materialValue;
+
+	private  $dontSaveDB;
+
+	private  $clientTag;
+
+	public function getMaxNumPhotosPerCategory() {
+		return $this->maxNumPhotosPerCategory;
+	}
+
+	public function setMaxNumPhotosPerCategory($maxNumPhotosPerCategory) {
+		$this->maxNumPhotosPerCategory = $maxNumPhotosPerCategory;
+		}
+
+	public function getMaxFaceNum() {
+		return $this->maxFaceNum;
+	}
+
+	public function setMaxFaceNum($maxFaceNum) {
+		$this->maxFaceNum = $maxFaceNum;
+		}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -54,26 +78,36 @@ class SubmitMaterialsRequest extends \RpcAcsRequest
 		$this->queryParameters["SourceIp"]=$sourceIp;
 	}
 
-	public function getMaterials() {
-		return $this->Materials;
+	public function getRetAttributes() {
+		return $this->retAttributes;
 	}
 
-	public function setMaterials($Materials) {
-		$this->Materials = $Materials;
-		for ($i = 0; $i < count($Materials); $i ++) {	
-			$this->queryParameters['Material.' . ($i + 1) . '.MaterialType'] = $Materials[$i]['MaterialType'];
-			$this->queryParameters['Material.' . ($i + 1) . '.Value'] = $Materials[$i]['Value'];
-
+	public function setRetAttributes($retAttributes) {
+		$this->retAttributes = $retAttributes;
 		}
+
+	public function getMaterialValue() {
+		return $this->materialValue;
 	}
 
-	public function getVerifyToken() {
-		return $this->verifyToken;
+	public function setMaterialValue($materialValue) {
+		$this->materialValue = $materialValue;
+		}
+
+	public function getDontSaveDB() {
+		return $this->dontSaveDB;
 	}
 
-	public function setVerifyToken($verifyToken) {
-		$this->verifyToken = $verifyToken;
-		$this->queryParameters["VerifyToken"]=$verifyToken;
+	public function setDontSaveDB($dontSaveDB) {
+		$this->dontSaveDB = $dontSaveDB;
+		}
+
+	public function getClientTag() {
+		return $this->clientTag;
 	}
+
+	public function setClientTag($clientTag) {
+		$this->clientTag = $clientTag;
+		}
 	
 }

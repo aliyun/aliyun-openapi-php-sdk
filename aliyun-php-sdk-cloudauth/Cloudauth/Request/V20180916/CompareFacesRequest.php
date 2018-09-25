@@ -17,24 +17,36 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Cloudauth\Request\V20180807;
+namespace Cloudauth\Request\V20180916;
 
-class GetStatusRequest extends \RpcAcsRequest
+class CompareFacesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cloudauth", "2018-08-07", "GetStatus", "cloudauth", "openAPI");
+		parent::__construct("Cloudauth", "2018-09-16", "CompareFaces", "cloudauth", "openAPI");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
 
-	private  $resourceOwnerId;
+	private  $sourceImageType;
 
-	private  $biz;
+	private  $resourceOwnerId;
 
 	private  $sourceIp;
 
-	private  $ticketId;
+	private  $targetImageType;
+
+	private  $sourceImageValue;
+
+	private  $targetImageValue;
+
+	public function getSourceImageType() {
+		return $this->sourceImageType;
+	}
+
+	public function setSourceImageType($sourceImageType) {
+		$this->sourceImageType = $sourceImageType;
+		}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -43,15 +55,6 @@ class GetStatusRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getBiz() {
-		return $this->biz;
-	}
-
-	public function setBiz($biz) {
-		$this->biz = $biz;
-		$this->queryParameters["Biz"]=$biz;
 	}
 
 	public function getSourceIp() {
@@ -63,13 +66,28 @@ class GetStatusRequest extends \RpcAcsRequest
 		$this->queryParameters["SourceIp"]=$sourceIp;
 	}
 
-	public function getTicketId() {
-		return $this->ticketId;
+	public function getTargetImageType() {
+		return $this->targetImageType;
 	}
 
-	public function setTicketId($ticketId) {
-		$this->ticketId = $ticketId;
-		$this->queryParameters["TicketId"]=$ticketId;
+	public function setTargetImageType($targetImageType) {
+		$this->targetImageType = $targetImageType;
+		}
+
+	public function getSourceImageValue() {
+		return $this->sourceImageValue;
 	}
+
+	public function setSourceImageValue($sourceImageValue) {
+		$this->sourceImageValue = $sourceImageValue;
+		}
+
+	public function getTargetImageValue() {
+		return $this->targetImageValue;
+	}
+
+	public function setTargetImageValue($targetImageValue) {
+		$this->targetImageValue = $targetImageValue;
+		}
 	
 }

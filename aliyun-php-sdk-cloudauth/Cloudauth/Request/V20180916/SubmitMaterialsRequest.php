@@ -17,24 +17,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Cloudauth\Request\V20180807;
+namespace Cloudauth\Request\V20180916;
 
-class GetMaterialsRequest extends \RpcAcsRequest
+class SubmitMaterialsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cloudauth", "2018-08-07", "GetMaterials", "cloudauth", "openAPI");
+		parent::__construct("Cloudauth", "2018-09-16", "SubmitMaterials", "cloudauth", "openAPI");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
-	private  $biz;
-
 	private  $sourceIp;
 
-	private  $ticketId;
+	private  $Materials;
+
+	private  $verifyToken;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -43,15 +43,6 @@ class GetMaterialsRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getBiz() {
-		return $this->biz;
-	}
-
-	public function setBiz($biz) {
-		$this->biz = $biz;
-		$this->queryParameters["Biz"]=$biz;
 	}
 
 	public function getSourceIp() {
@@ -63,13 +54,21 @@ class GetMaterialsRequest extends \RpcAcsRequest
 		$this->queryParameters["SourceIp"]=$sourceIp;
 	}
 
-	public function getTicketId() {
-		return $this->ticketId;
+	public function getMaterials() {
+		return $this->Materials;
 	}
 
-	public function setTicketId($ticketId) {
-		$this->ticketId = $ticketId;
-		$this->queryParameters["TicketId"]=$ticketId;
+	public function setMaterials($Materials) {
+		$this->Materials = $Materials;
+
 	}
+
+	public function getVerifyToken() {
+		return $this->verifyToken;
+	}
+
+	public function setVerifyToken($verifyToken) {
+		$this->verifyToken = $verifyToken;
+		}
 	
 }
