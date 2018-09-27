@@ -46,6 +46,8 @@ class SetAutoScaleConfigRequest extends \RpcAcsRequest
 
 	private  $shrinkIntervalInMinutes;
 
+	private  $Queuess;
+
 	private  $extraNodesGrowRatio;
 
 	private  $growIntervalInMinutes;
@@ -140,6 +142,21 @@ class SetAutoScaleConfigRequest extends \RpcAcsRequest
 	public function setShrinkIntervalInMinutes($shrinkIntervalInMinutes) {
 		$this->shrinkIntervalInMinutes = $shrinkIntervalInMinutes;
 		$this->queryParameters["ShrinkIntervalInMinutes"]=$shrinkIntervalInMinutes;
+	}
+
+	public function getQueuess() {
+		return $this->Queuess;
+	}
+
+	public function setQueuess($Queuess) {
+		$this->Queuess = $Queuess;
+		for ($i = 0; $i < count($Queuess); $i ++) {	
+			$this->queryParameters['Queues.' . ($i + 1) . '.SpotStrategy'] = $Queuess[$i]['SpotStrategy'];
+			$this->queryParameters['Queues.' . ($i + 1) . '.QueueName'] = $Queuess[$i]['QueueName'];
+			$this->queryParameters['Queues.' . ($i + 1) . '.InstanceType'] = $Queuess[$i]['InstanceType'];
+			$this->queryParameters['Queues.' . ($i + 1) . '.SpotPriceLimit'] = $Queuess[$i]['SpotPriceLimit'];
+
+		}
 	}
 
 	public function getExtraNodesGrowRatio() {

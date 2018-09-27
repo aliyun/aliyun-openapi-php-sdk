@@ -44,6 +44,8 @@ class SubmitJobRequest extends \RpcAcsRequest
 
 	private  $commandLine;
 
+	private  $jobQueue;
+
 	private  $arrayRequest;
 
 	private  $unzipCmd;
@@ -137,6 +139,15 @@ class SubmitJobRequest extends \RpcAcsRequest
 	public function setCommandLine($commandLine) {
 		$this->commandLine = $commandLine;
 		$this->queryParameters["CommandLine"]=$commandLine;
+	}
+
+	public function getJobQueue() {
+		return $this->jobQueue;
+	}
+
+	public function setJobQueue($jobQueue) {
+		$this->jobQueue = $jobQueue;
+		$this->queryParameters["JobQueue"]=$jobQueue;
 	}
 
 	public function getArrayRequest() {

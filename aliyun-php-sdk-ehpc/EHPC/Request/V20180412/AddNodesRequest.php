@@ -38,6 +38,8 @@ class AddNodesRequest extends \RpcAcsRequest
 
 	private  $computeSpotStrategy;
 
+	private  $jobQueue;
+
 	private  $imageOwnerAlias;
 
 	private  $periodUnit;
@@ -102,6 +104,15 @@ class AddNodesRequest extends \RpcAcsRequest
 	public function setComputeSpotStrategy($computeSpotStrategy) {
 		$this->computeSpotStrategy = $computeSpotStrategy;
 		$this->queryParameters["ComputeSpotStrategy"]=$computeSpotStrategy;
+	}
+
+	public function getJobQueue() {
+		return $this->jobQueue;
+	}
+
+	public function setJobQueue($jobQueue) {
+		$this->jobQueue = $jobQueue;
+		$this->queryParameters["JobQueue"]=$jobQueue;
 	}
 
 	public function getImageOwnerAlias() {

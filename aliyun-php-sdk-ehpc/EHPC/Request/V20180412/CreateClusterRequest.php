@@ -46,6 +46,8 @@ class CreateClusterRequest extends \RpcAcsRequest
 
 	private  $ecsOrderComputeInstanceType;
 
+	private  $jobQueue;
+
 	private  $imageOwnerAlias;
 
 	private  $volumeType;
@@ -194,6 +196,15 @@ class CreateClusterRequest extends \RpcAcsRequest
 	public function setEcsOrderComputeInstanceType($ecsOrderComputeInstanceType) {
 		$this->ecsOrderComputeInstanceType = $ecsOrderComputeInstanceType;
 		$this->queryParameters["EcsOrder.Compute.InstanceType"]=$ecsOrderComputeInstanceType;
+	}
+
+	public function getJobQueue() {
+		return $this->jobQueue;
+	}
+
+	public function setJobQueue($jobQueue) {
+		$this->jobQueue = $jobQueue;
+		$this->queryParameters["JobQueue"]=$jobQueue;
 	}
 
 	public function getImageOwnerAlias() {
