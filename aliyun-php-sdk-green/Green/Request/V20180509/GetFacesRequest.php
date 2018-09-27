@@ -24,7 +24,7 @@ class GetFacesRequest extends \RoaAcsRequest
 	function  __construct()
 	{
 		parent::__construct("Green", "2018-05-09", "GetFaces", "green", "openAPI");
-		$this->setUriPattern("/green/sface/getFaces");
+		$this->setUriPattern("/green/sface/faces");
 		$this->setMethod("POST");
 	}
 
