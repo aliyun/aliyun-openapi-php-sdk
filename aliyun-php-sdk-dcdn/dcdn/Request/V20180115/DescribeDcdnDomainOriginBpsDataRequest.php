@@ -23,7 +23,7 @@ class DescribeDcdnDomainOriginBpsDataRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("dcdn", "2018-01-15", "DescribeDcdnDomainOriginBpsData", "dcdn", "openAPI");
+		parent::__construct("dcdn", "2018-01-15", "DescribeDcdnDomainOriginBpsData");
 		$this->setMethod("POST");
 	}
 

@@ -23,15 +23,26 @@ class PreloadDcdnObjectCachesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("dcdn", "2018-01-15", "PreloadDcdnObjectCaches", "dcdn", "openAPI");
+		parent::__construct("dcdn", "2018-01-15", "PreloadDcdnObjectCaches");
 		$this->setMethod("POST");
 	}
+
+	private  $area;
 
 	private  $securityToken;
 
 	private  $objectPath;
 
 	private  $ownerId;
+
+	public function getArea() {
+		return $this->area;
+	}
+
+	public function setArea($area) {
+		$this->area = $area;
+		$this->queryParameters["Area"]=$area;
+	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;

@@ -19,17 +19,15 @@
  */
 namespace dcdn\Request\V20180115;
 
-class DescribeDcdnCertificateDetailRequest extends \RpcAcsRequest
+class DescribeDcdnUserQuotaRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("dcdn", "2018-01-15", "DescribeDcdnCertificateDetail");
+		parent::__construct("dcdn", "2018-01-15", "DescribeDcdnUserQuota");
 		$this->setMethod("POST");
 	}
 
 	private  $securityToken;
-
-	private  $certName;
 
 	private  $ownerId;
 
@@ -40,15 +38,6 @@ class DescribeDcdnCertificateDetailRequest extends \RpcAcsRequest
 	public function setSecurityToken($securityToken) {
 		$this->securityToken = $securityToken;
 		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
-
-	public function getCertName() {
-		return $this->certName;
-	}
-
-	public function setCertName($certName) {
-		$this->certName = $certName;
-		$this->queryParameters["CertName"]=$certName;
 	}
 
 	public function getOwnerId() {

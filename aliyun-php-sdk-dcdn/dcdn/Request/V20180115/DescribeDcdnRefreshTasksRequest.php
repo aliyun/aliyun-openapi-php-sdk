@@ -23,7 +23,7 @@ class DescribeDcdnRefreshTasksRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("dcdn", "2018-01-15", "DescribeDcdnRefreshTasks", "dcdn", "openAPI");
+		parent::__construct("dcdn", "2018-01-15", "DescribeDcdnRefreshTasks");
 		$this->setMethod("POST");
 	}
 

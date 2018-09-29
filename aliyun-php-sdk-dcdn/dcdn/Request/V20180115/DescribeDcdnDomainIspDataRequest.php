@@ -19,36 +19,47 @@
  */
 namespace dcdn\Request\V20180115;
 
-class DescribeDcdnCertificateDetailRequest extends \RpcAcsRequest
+class DescribeDcdnDomainIspDataRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("dcdn", "2018-01-15", "DescribeDcdnCertificateDetail");
+		parent::__construct("dcdn", "2018-01-15", "DescribeDcdnDomainIspData");
 		$this->setMethod("POST");
 	}
 
-	private  $securityToken;
+	private  $startTime;
 
-	private  $certName;
+	private  $domainName;
+
+	private  $endTime;
 
 	private  $ownerId;
 
-	public function getSecurityToken() {
-		return $this->securityToken;
+	public function getStartTime() {
+		return $this->startTime;
 	}
 
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
 	}
 
-	public function getCertName() {
-		return $this->certName;
+	public function getDomainName() {
+		return $this->domainName;
 	}
 
-	public function setCertName($certName) {
-		$this->certName = $certName;
-		$this->queryParameters["CertName"]=$certName;
+	public function setDomainName($domainName) {
+		$this->domainName = $domainName;
+		$this->queryParameters["DomainName"]=$domainName;
+	}
+
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
 	}
 
 	public function getOwnerId() {

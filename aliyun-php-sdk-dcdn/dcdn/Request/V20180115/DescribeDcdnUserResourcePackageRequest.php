@@ -23,7 +23,7 @@ class DescribeDcdnUserResourcePackageRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("dcdn", "2018-01-15", "DescribeDcdnUserResourcePackage", "dcdn", "openAPI");
+		parent::__construct("dcdn", "2018-01-15", "DescribeDcdnUserResourcePackage");
 		$this->setMethod("POST");
 	}
 
