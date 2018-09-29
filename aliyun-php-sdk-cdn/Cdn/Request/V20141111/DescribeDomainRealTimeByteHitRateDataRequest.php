@@ -26,13 +26,22 @@ class DescribeDomainRealTimeByteHitRateDataRequest extends \RpcAcsRequest
 		parent::__construct("Cdn", "2014-11-11", "DescribeDomainRealTimeByteHitRateData");
 	}
 
+	private  $startTime;
+
 	private  $domainName;
 
 	private  $endTime;
 
-	private  $startTime;
-
 	private  $ownerId;
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
 
 	public function getDomainName() {
 		return $this->domainName;
@@ -50,15 +59,6 @@ class DescribeDomainRealTimeByteHitRateDataRequest extends \RpcAcsRequest
 	public function setEndTime($endTime) {
 		$this->endTime = $endTime;
 		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
 	}
 
 	public function getOwnerId() {

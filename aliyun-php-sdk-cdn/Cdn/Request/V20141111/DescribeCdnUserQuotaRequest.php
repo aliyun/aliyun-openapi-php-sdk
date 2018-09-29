@@ -19,19 +19,15 @@
  */
 namespace Cdn\Request\V20141111;
 
-class DescribeUserVipsByDomainRequest extends \RpcAcsRequest
+class DescribeCdnUserQuotaRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cdn", "2014-11-11", "DescribeUserVipsByDomain");
+		parent::__construct("Cdn", "2014-11-11", "DescribeCdnUserQuota");
 		$this->setMethod("POST");
 	}
 
 	private  $securityToken;
-
-	private  $domainName;
-
-	private  $available;
 
 	private  $ownerId;
 
@@ -42,24 +38,6 @@ class DescribeUserVipsByDomainRequest extends \RpcAcsRequest
 	public function setSecurityToken($securityToken) {
 		$this->securityToken = $securityToken;
 		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
-
-	public function getDomainName() {
-		return $this->domainName;
-	}
-
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
-
-	public function getAvailable() {
-		return $this->available;
-	}
-
-	public function setAvailable($available) {
-		$this->available = $available;
-		$this->queryParameters["Available"]=$available;
 	}
 
 	public function getOwnerId() {

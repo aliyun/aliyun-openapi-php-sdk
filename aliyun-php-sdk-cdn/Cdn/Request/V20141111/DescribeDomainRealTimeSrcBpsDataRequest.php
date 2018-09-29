@@ -19,55 +19,29 @@
  */
 namespace Cdn\Request\V20141111;
 
-class AddLivePullStreamInfoRequest extends \RpcAcsRequest
+class DescribeDomainRealTimeSrcBpsDataRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cdn", "2014-11-11", "AddLivePullStreamInfo");
+		parent::__construct("Cdn", "2014-11-11", "DescribeDomainRealTimeSrcBpsData");
 		$this->setMethod("POST");
 	}
 
-	private  $sourceUrl;
-
-	private  $appName;
-
-	private  $securityToken;
+	private  $startTime;
 
 	private  $domainName;
 
 	private  $endTime;
 
-	private  $startTime;
-
 	private  $ownerId;
 
-	private  $streamName;
-
-	public function getSourceUrl() {
-		return $this->sourceUrl;
+	public function getStartTime() {
+		return $this->startTime;
 	}
 
-	public function setSourceUrl($sourceUrl) {
-		$this->sourceUrl = $sourceUrl;
-		$this->queryParameters["SourceUrl"]=$sourceUrl;
-	}
-
-	public function getAppName() {
-		return $this->appName;
-	}
-
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
 	}
 
 	public function getDomainName() {
@@ -88,15 +62,6 @@ class AddLivePullStreamInfoRequest extends \RpcAcsRequest
 		$this->queryParameters["EndTime"]=$endTime;
 	}
 
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
-
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -104,15 +69,6 @@ class AddLivePullStreamInfoRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getStreamName() {
-		return $this->streamName;
-	}
-
-	public function setStreamName($streamName) {
-		$this->streamName = $streamName;
-		$this->queryParameters["StreamName"]=$streamName;
 	}
 	
 }

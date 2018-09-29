@@ -30,10 +30,6 @@ class DescribeDomainCustomLogConfigRequest extends \RpcAcsRequest
 
 	private  $ownerId;
 
-	private  $version;
-
-	private  $securityToken;
-
 	public function getDomainName() {
 		return $this->domainName;
 	}
@@ -50,24 +46,6 @@ class DescribeDomainCustomLogConfigRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getVersion() {
-		return $this->version;
-	}
-
-	public function setVersion($version) {
-		$this->version = $version;
-		$this->queryParameters["Version"]=$version;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 	
 }

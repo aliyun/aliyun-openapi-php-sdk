@@ -19,40 +19,38 @@
  */
 namespace Cdn\Request\V20141111;
 
-class DescribeLiveStreamRelayPushDataRequest extends \RpcAcsRequest
+class DescribeDomainRealTimeSrcTrafficDataRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cdn", "2014-11-11", "DescribeLiveStreamRelayPushData");
+		parent::__construct("Cdn", "2014-11-11", "DescribeDomainRealTimeSrcTrafficData");
 		$this->setMethod("POST");
 	}
 
-	private  $relayDomain;
+	private  $startTime;
 
-	private  $securityToken;
+	private  $domainName;
 
 	private  $endTime;
 
-	private  $startTime;
-
 	private  $ownerId;
 
-	public function getRelayDomain() {
-		return $this->relayDomain;
+	public function getStartTime() {
+		return $this->startTime;
 	}
 
-	public function setRelayDomain($relayDomain) {
-		$this->relayDomain = $relayDomain;
-		$this->queryParameters["RelayDomain"]=$relayDomain;
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
 	}
 
-	public function getSecurityToken() {
-		return $this->securityToken;
+	public function getDomainName() {
+		return $this->domainName;
 	}
 
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
+	public function setDomainName($domainName) {
+		$this->domainName = $domainName;
+		$this->queryParameters["DomainName"]=$domainName;
 	}
 
 	public function getEndTime() {
@@ -62,15 +60,6 @@ class DescribeLiveStreamRelayPushDataRequest extends \RpcAcsRequest
 	public function setEndTime($endTime) {
 		$this->endTime = $endTime;
 		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
 	}
 
 	public function getOwnerId() {

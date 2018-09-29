@@ -19,40 +19,26 @@
  */
 namespace Cdn\Request\V20141111;
 
-class DeleteLivePullStreamInfoRequest extends \RpcAcsRequest
+class SetDomainGreenManagerConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cdn", "2014-11-11", "DeleteLivePullStreamInfo");
-		$this->setMethod("POST");
+		parent::__construct("Cdn", "2014-11-11", "SetDomainGreenManagerConfig");
 	}
 
-	private  $appName;
-
-	private  $securityToken;
+	private  $enable;
 
 	private  $domainName;
 
 	private  $ownerId;
 
-	private  $streamName;
-
-	public function getAppName() {
-		return $this->appName;
+	public function getEnable() {
+		return $this->enable;
 	}
 
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
+	public function setEnable($enable) {
+		$this->enable = $enable;
+		$this->queryParameters["Enable"]=$enable;
 	}
 
 	public function getDomainName() {
@@ -71,15 +57,6 @@ class DeleteLivePullStreamInfoRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getStreamName() {
-		return $this->streamName;
-	}
-
-	public function setStreamName($streamName) {
-		$this->streamName = $streamName;
-		$this->queryParameters["StreamName"]=$streamName;
 	}
 	
 }
