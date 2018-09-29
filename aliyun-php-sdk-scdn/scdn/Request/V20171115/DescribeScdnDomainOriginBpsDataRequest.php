@@ -29,15 +29,11 @@ class DescribeScdnDomainOriginBpsDataRequest extends \RpcAcsRequest
 
 	private  $startTime;
 
-	private  $securityToken;
-
 	private  $domainName;
 
 	private  $endTime;
 
 	private  $ownerId;
-
-	private  $version;
 
 	private  $interval;
 
@@ -48,15 +44,6 @@ class DescribeScdnDomainOriginBpsDataRequest extends \RpcAcsRequest
 	public function setStartTime($startTime) {
 		$this->startTime = $startTime;
 		$this->queryParameters["StartTime"]=$startTime;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
 	public function getDomainName() {
@@ -84,15 +71,6 @@ class DescribeScdnDomainOriginBpsDataRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getVersion() {
-		return $this->version;
-	}
-
-	public function setVersion($version) {
-		$this->version = $version;
-		$this->queryParameters["Version"]=$version;
 	}
 
 	public function getInterval() {

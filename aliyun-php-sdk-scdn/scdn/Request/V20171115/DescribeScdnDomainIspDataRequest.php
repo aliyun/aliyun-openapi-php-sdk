@@ -19,11 +19,11 @@
  */
 namespace scdn\Request\V20171115;
 
-class DescribeScdnDomainOriginTrafficDataRequest extends \RpcAcsRequest
+class DescribeScdnDomainIspDataRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("scdn", "2017-11-15", "DescribeScdnDomainOriginTrafficData");
+		parent::__construct("scdn", "2017-11-15", "DescribeScdnDomainIspData");
 		$this->setMethod("POST");
 	}
 
@@ -34,8 +34,6 @@ class DescribeScdnDomainOriginTrafficDataRequest extends \RpcAcsRequest
 	private  $endTime;
 
 	private  $ownerId;
-
-	private  $interval;
 
 	public function getStartTime() {
 		return $this->startTime;
@@ -71,15 +69,6 @@ class DescribeScdnDomainOriginTrafficDataRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getInterval() {
-		return $this->interval;
-	}
-
-	public function setInterval($interval) {
-		$this->interval = $interval;
-		$this->queryParameters["Interval"]=$interval;
 	}
 	
 }

@@ -33,15 +33,11 @@ class DescribeScdnDomainTrafficDataRequest extends \RpcAcsRequest
 
 	private  $ispNameEn;
 
-	private  $securityToken;
-
 	private  $domainName;
 
 	private  $endTime;
 
 	private  $ownerId;
-
-	private  $version;
 
 	private  $interval;
 
@@ -72,15 +68,6 @@ class DescribeScdnDomainTrafficDataRequest extends \RpcAcsRequest
 		$this->queryParameters["IspNameEn"]=$ispNameEn;
 	}
 
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
-
 	public function getDomainName() {
 		return $this->domainName;
 	}
@@ -106,15 +93,6 @@ class DescribeScdnDomainTrafficDataRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getVersion() {
-		return $this->version;
-	}
-
-	public function setVersion($version) {
-		$this->version = $version;
-		$this->queryParameters["Version"]=$version;
 	}
 
 	public function getInterval() {
