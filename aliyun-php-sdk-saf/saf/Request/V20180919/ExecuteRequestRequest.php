@@ -17,13 +17,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace saf\Request\V20170331;
+namespace saf\Request\V20180919;
 
 class ExecuteRequestRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("saf", "2017-03-31", "ExecuteRequest");
+		parent::__construct("saf", "2018-09-19", "ExecuteRequest", "saf", "openAPI");
 		$this->setProtocol("https");
 		$this->setMethod("POST");
 	}
