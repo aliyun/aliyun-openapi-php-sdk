@@ -27,8 +27,6 @@ class CreateOfficeConversionTaskRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $imageSpec;
-
 	private  $srcType;
 
 	private  $notifyTopicName;
@@ -36,8 +34,6 @@ class CreateOfficeConversionTaskRequest extends \RpcAcsRequest
 	private  $modelId;
 
 	private  $project;
-
-	private  $externalID;
 
 	private  $maxSheetRow;
 
@@ -59,22 +55,17 @@ class CreateOfficeConversionTaskRequest extends \RpcAcsRequest
 
 	private  $notifyEndpoint;
 
+	private  $fitToPagesWide;
+
 	private  $tgtFilePrefix;
+
+	private  $fitToPagesTall;
 
 	private  $srcUri;
 
 	private  $tgtFilePages;
 
 	private  $tgtUri;
-
-	public function getImageSpec() {
-		return $this->imageSpec;
-	}
-
-	public function setImageSpec($imageSpec) {
-		$this->imageSpec = $imageSpec;
-		$this->queryParameters["ImageSpec"]=$imageSpec;
-	}
 
 	public function getSrcType() {
 		return $this->srcType;
@@ -110,15 +101,6 @@ class CreateOfficeConversionTaskRequest extends \RpcAcsRequest
 	public function setProject($project) {
 		$this->project = $project;
 		$this->queryParameters["Project"]=$project;
-	}
-
-	public function getExternalID() {
-		return $this->externalID;
-	}
-
-	public function setExternalID($externalID) {
-		$this->externalID = $externalID;
-		$this->queryParameters["ExternalID"]=$externalID;
 	}
 
 	public function getMaxSheetRow() {
@@ -211,6 +193,15 @@ class CreateOfficeConversionTaskRequest extends \RpcAcsRequest
 		$this->queryParameters["NotifyEndpoint"]=$notifyEndpoint;
 	}
 
+	public function getFitToPagesWide() {
+		return $this->fitToPagesWide;
+	}
+
+	public function setFitToPagesWide($fitToPagesWide) {
+		$this->fitToPagesWide = $fitToPagesWide;
+		$this->queryParameters["FitToPagesWide"]=$fitToPagesWide;
+	}
+
 	public function getTgtFilePrefix() {
 		return $this->tgtFilePrefix;
 	}
@@ -218,6 +209,15 @@ class CreateOfficeConversionTaskRequest extends \RpcAcsRequest
 	public function setTgtFilePrefix($tgtFilePrefix) {
 		$this->tgtFilePrefix = $tgtFilePrefix;
 		$this->queryParameters["TgtFilePrefix"]=$tgtFilePrefix;
+	}
+
+	public function getFitToPagesTall() {
+		return $this->fitToPagesTall;
+	}
+
+	public function setFitToPagesTall($fitToPagesTall) {
+		$this->fitToPagesTall = $fitToPagesTall;
+		$this->queryParameters["FitToPagesTall"]=$fitToPagesTall;
 	}
 
 	public function getSrcUri() {
