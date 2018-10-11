@@ -49,6 +49,8 @@ class GetPlayInfoRequest extends \RpcAcsRequest
 
 	private  $reAuthInfo;
 
+	private  $playConfig;
+
 	private  $outputType;
 
 	private  $definition;
@@ -154,6 +156,15 @@ class GetPlayInfoRequest extends \RpcAcsRequest
 	public function setReAuthInfo($reAuthInfo) {
 		$this->reAuthInfo = $reAuthInfo;
 		$this->queryParameters["ReAuthInfo"]=$reAuthInfo;
+	}
+
+	public function getPlayConfig() {
+		return $this->playConfig;
+	}
+
+	public function setPlayConfig($playConfig) {
+		$this->playConfig = $playConfig;
+		$this->queryParameters["PlayConfig"]=$playConfig;
 	}
 
 	public function getOutputType() {

@@ -33,6 +33,8 @@ class GetVideoPlayAuthRequest extends \RpcAcsRequest
 
 	private  $reAuthInfo;
 
+	private  $playConfig;
+
 	private  $authInfoTimeout;
 
 	private  $videoId;
@@ -64,6 +66,15 @@ class GetVideoPlayAuthRequest extends \RpcAcsRequest
 	public function setReAuthInfo($reAuthInfo) {
 		$this->reAuthInfo = $reAuthInfo;
 		$this->queryParameters["ReAuthInfo"]=$reAuthInfo;
+	}
+
+	public function getPlayConfig() {
+		return $this->playConfig;
+	}
+
+	public function setPlayConfig($playConfig) {
+		$this->playConfig = $playConfig;
+		$this->queryParameters["PlayConfig"]=$playConfig;
 	}
 
 	public function getAuthInfoTimeout() {

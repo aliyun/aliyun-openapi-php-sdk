@@ -19,25 +19,23 @@
  */
 namespace vod\Request\V20170321;
 
-class GetAuditResultRequest extends \RpcAcsRequest
+class UpdateImageInfosRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "GetAuditResult", "vod", "openAPI");
+		parent::__construct("vod", "2017-03-21", "UpdateImageInfos", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
+	private  $updateContent;
+
 	private  $resourceOwnerAccount;
 
-	private  $ownerAccount;
-
-	private  $videoId;
+	private  $resourceRealOwnerId;
 
 	private  $ownerId;
-
-	private  $mediaId;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -46,6 +44,15 @@ class GetAuditResultRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getUpdateContent() {
+		return $this->updateContent;
+	}
+
+	public function setUpdateContent($updateContent) {
+		$this->updateContent = $updateContent;
+		$this->queryParameters["UpdateContent"]=$updateContent;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -57,22 +64,13 @@ class GetAuditResultRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getResourceRealOwnerId() {
+		return $this->resourceRealOwnerId;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getVideoId() {
-		return $this->videoId;
-	}
-
-	public function setVideoId($videoId) {
-		$this->videoId = $videoId;
-		$this->queryParameters["VideoId"]=$videoId;
+	public function setResourceRealOwnerId($resourceRealOwnerId) {
+		$this->resourceRealOwnerId = $resourceRealOwnerId;
+		$this->queryParameters["ResourceRealOwnerId"]=$resourceRealOwnerId;
 	}
 
 	public function getOwnerId() {
@@ -82,15 +80,6 @@ class GetAuditResultRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getMediaId() {
-		return $this->mediaId;
-	}
-
-	public function setMediaId($mediaId) {
-		$this->mediaId = $mediaId;
-		$this->queryParameters["MediaId"]=$mediaId;
 	}
 	
 }

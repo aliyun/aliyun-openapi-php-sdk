@@ -19,11 +19,11 @@
  */
 namespace vod\Request\V20170321;
 
-class GetAuditResultRequest extends \RpcAcsRequest
+class DeleteMezzaninesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "GetAuditResult", "vod", "openAPI");
+		parent::__construct("vod", "2017-03-21", "DeleteMezzanines", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -31,13 +31,11 @@ class GetAuditResultRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerAccount;
 
-	private  $ownerAccount;
-
-	private  $videoId;
+	private  $force;
 
 	private  $ownerId;
 
-	private  $mediaId;
+	private  $videoIds;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -57,22 +55,13 @@ class GetAuditResultRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getForce() {
+		return $this->force;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getVideoId() {
-		return $this->videoId;
-	}
-
-	public function setVideoId($videoId) {
-		$this->videoId = $videoId;
-		$this->queryParameters["VideoId"]=$videoId;
+	public function setForce($force) {
+		$this->force = $force;
+		$this->queryParameters["Force"]=$force;
 	}
 
 	public function getOwnerId() {
@@ -84,13 +73,13 @@ class GetAuditResultRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getMediaId() {
-		return $this->mediaId;
+	public function getVideoIds() {
+		return $this->videoIds;
 	}
 
-	public function setMediaId($mediaId) {
-		$this->mediaId = $mediaId;
-		$this->queryParameters["MediaId"]=$mediaId;
+	public function setVideoIds($videoIds) {
+		$this->videoIds = $videoIds;
+		$this->queryParameters["VideoIds"]=$videoIds;
 	}
 	
 }
