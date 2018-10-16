@@ -29,6 +29,8 @@ class ModifyInstanceDeploymentRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
+	private  $deploymentSetId;
+
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
@@ -39,6 +41,8 @@ class ModifyInstanceDeploymentRequest extends \RpcAcsRequest
 
 	private  $instanceId;
 
+	private  $force;
+
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
 	}
@@ -46,6 +50,15 @@ class ModifyInstanceDeploymentRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getDeploymentSetId() {
+		return $this->deploymentSetId;
+	}
+
+	public function setDeploymentSetId($deploymentSetId) {
+		$this->deploymentSetId = $deploymentSetId;
+		$this->queryParameters["DeploymentSetId"]=$deploymentSetId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -91,6 +104,15 @@ class ModifyInstanceDeploymentRequest extends \RpcAcsRequest
 	public function setInstanceId($instanceId) {
 		$this->instanceId = $instanceId;
 		$this->queryParameters["InstanceId"]=$instanceId;
+	}
+
+	public function getForce() {
+		return $this->force;
+	}
+
+	public function setForce($force) {
+		$this->force = $force;
+		$this->queryParameters["Force"]=$force;
 	}
 	
 }

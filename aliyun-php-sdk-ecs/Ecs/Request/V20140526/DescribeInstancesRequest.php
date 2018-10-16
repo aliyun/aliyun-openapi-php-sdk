@@ -83,6 +83,8 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 
 	private  $filter1Value;
 
+	private  $needSaleCycle;
+
 	private  $filter2Key;
 
 	private  $ownerId;
@@ -361,6 +363,15 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 	public function setFilter1Value($filter1Value) {
 		$this->filter1Value = $filter1Value;
 		$this->queryParameters["Filter.1.Value"]=$filter1Value;
+	}
+
+	public function getNeedSaleCycle() {
+		return $this->needSaleCycle;
+	}
+
+	public function setNeedSaleCycle($needSaleCycle) {
+		$this->needSaleCycle = $needSaleCycle;
+		$this->queryParameters["NeedSaleCycle"]=$needSaleCycle;
 	}
 
 	public function getFilter2Key() {

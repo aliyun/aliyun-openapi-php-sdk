@@ -41,6 +41,8 @@ class ResizeDiskRequest extends \RpcAcsRequest
 
 	private  $ownerId;
 
+	private  $type;
+
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
 	}
@@ -102,6 +104,15 @@ class ResizeDiskRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getType() {
+		return $this->type;
+	}
+
+	public function setType($type) {
+		$this->type = $type;
+		$this->queryParameters["Type"]=$type;
 	}
 	
 }

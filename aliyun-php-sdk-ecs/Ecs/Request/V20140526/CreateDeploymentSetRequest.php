@@ -41,11 +41,11 @@ class CreateDeploymentSetRequest extends \RpcAcsRequest
 
 	private  $ownerId;
 
+	private  $onUnableToRedeployFailedInstance;
+
 	private  $granularity;
 
 	private  $domain;
-
-	private  $zoneId;
 
 	private  $strategy;
 
@@ -112,6 +112,15 @@ class CreateDeploymentSetRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
+	public function getOnUnableToRedeployFailedInstance() {
+		return $this->onUnableToRedeployFailedInstance;
+	}
+
+	public function setOnUnableToRedeployFailedInstance($onUnableToRedeployFailedInstance) {
+		$this->onUnableToRedeployFailedInstance = $onUnableToRedeployFailedInstance;
+		$this->queryParameters["OnUnableToRedeployFailedInstance"]=$onUnableToRedeployFailedInstance;
+	}
+
 	public function getGranularity() {
 		return $this->granularity;
 	}
@@ -128,15 +137,6 @@ class CreateDeploymentSetRequest extends \RpcAcsRequest
 	public function setDomain($domain) {
 		$this->domain = $domain;
 		$this->queryParameters["Domain"]=$domain;
-	}
-
-	public function getZoneId() {
-		return $this->zoneId;
-	}
-
-	public function setZoneId($zoneId) {
-		$this->zoneId = $zoneId;
-		$this->queryParameters["ZoneId"]=$zoneId;
 	}
 
 	public function getStrategy() {

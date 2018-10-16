@@ -103,6 +103,8 @@ class RunInstancesRequest extends \RpcAcsRequest
 
 	private  $NetworkInterfaces;
 
+	private  $deploymentSetId;
+
 	private  $amount;
 
 	private  $resourceOwnerAccount;
@@ -478,6 +480,15 @@ class RunInstancesRequest extends \RpcAcsRequest
 			$this->queryParameters['NetworkInterface.' . ($i + 1) . '.Description'] = $NetworkInterfaces[$i]['Description'];
 
 		}
+	}
+
+	public function getDeploymentSetId() {
+		return $this->deploymentSetId;
+	}
+
+	public function setDeploymentSetId($deploymentSetId) {
+		$this->deploymentSetId = $deploymentSetId;
+		$this->queryParameters["DeploymentSetId"]=$deploymentSetId;
 	}
 
 	public function getAmount() {

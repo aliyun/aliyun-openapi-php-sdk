@@ -19,38 +19,21 @@
  */
 namespace Ecs\Request\V20140526;
 
-class DescribeIpRangesRequest extends \RpcAcsRequest
+class DescribeInstanceTopologyRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeIpRanges", "ecs", "openAPI");
+		parent::__construct("Ecs", "2014-05-26", "DescribeInstanceTopology", "ecs", "openAPI");
 		$this->setMethod("POST");
 	}
-
-	private  $nicType;
 
 	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
-	private  $ownerAccount;
-
-	private  $pageSize;
-
-	private  $clusterId;
+	private  $instanceIds;
 
 	private  $ownerId;
-
-	private  $pageNumber;
-
-	public function getNicType() {
-		return $this->nicType;
-	}
-
-	public function setNicType($nicType) {
-		$this->nicType = $nicType;
-		$this->queryParameters["NicType"]=$nicType;
-	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -70,31 +53,13 @@ class DescribeIpRangesRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getInstanceIds() {
+		return $this->instanceIds;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getClusterId() {
-		return $this->clusterId;
-	}
-
-	public function setClusterId($clusterId) {
-		$this->clusterId = $clusterId;
-		$this->queryParameters["ClusterId"]=$clusterId;
+	public function setInstanceIds($instanceIds) {
+		$this->instanceIds = $instanceIds;
+		$this->queryParameters["InstanceIds"]=$instanceIds;
 	}
 
 	public function getOwnerId() {
@@ -104,15 +69,6 @@ class DescribeIpRangesRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 	
 }
