@@ -17,13 +17,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace ARMS\Request\V20161125;
+namespace ARMS\Request\V20181015;
 
-class WhereInDimQueryRequest extends \RpcAcsRequest
+class ARMSQueryDataSetRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("ARMS", "2016-11-25", "WhereInDimQuery");
+		parent::__construct("ARMS", "2018-10-15", "ARMSQueryDataSet");
 		$this->setMethod("POST");
 	}
 
@@ -35,7 +35,7 @@ class WhereInDimQueryRequest extends \RpcAcsRequest
 
 	private  $maxTime;
 
-	private  $whereInKey;
+	private  $OptionalDimss;
 
 	private  $Measuress;
 
@@ -43,13 +43,17 @@ class WhereInDimQueryRequest extends \RpcAcsRequest
 
 	private  $isDrillDown;
 
+	private  $hungryMode;
+
+	private  $securityToken;
+
 	private  $orderByKey;
 
 	private  $limit;
 
-	private  $datasetId;
+	private  $RequiredDimss;
 
-	private  $WhereInValuess;
+	private  $datasetId;
 
 	private  $Dimensionss;
 
@@ -89,13 +93,18 @@ class WhereInDimQueryRequest extends \RpcAcsRequest
 		$this->queryParameters["MaxTime"]=$maxTime;
 	}
 
-	public function getWhereInKey() {
-		return $this->whereInKey;
+	public function getOptionalDimss() {
+		return $this->OptionalDimss;
 	}
 
-	public function setWhereInKey($whereInKey) {
-		$this->whereInKey = $whereInKey;
-		$this->queryParameters["WhereInKey"]=$whereInKey;
+	public function setOptionalDimss($OptionalDimss) {
+		$this->OptionalDimss = $OptionalDimss;
+		for ($i = 0; $i < count($OptionalDimss); $i ++) {	
+			$this->queryParameters['OptionalDims.' . ($i + 1) . '.Type'] = $OptionalDimss[$i]['Type'];
+			$this->queryParameters['OptionalDims.' . ($i + 1) . '.Value'] = $OptionalDimss[$i]['Value'];
+			$this->queryParameters['OptionalDims.' . ($i + 1) . '.Key'] = $OptionalDimss[$i]['Key'];
+
+		}
 	}
 
 	public function getMeasuress() {
@@ -127,6 +136,24 @@ class WhereInDimQueryRequest extends \RpcAcsRequest
 		$this->queryParameters["IsDrillDown"]=$isDrillDown;
 	}
 
+	public function getHungryMode() {
+		return $this->hungryMode;
+	}
+
+	public function setHungryMode($hungryMode) {
+		$this->hungryMode = $hungryMode;
+		$this->queryParameters["HungryMode"]=$hungryMode;
+	}
+
+	public function getSecurityToken() {
+		return $this->securityToken;
+	}
+
+	public function setSecurityToken($securityToken) {
+		$this->securityToken = $securityToken;
+		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
+
 	public function getOrderByKey() {
 		return $this->orderByKey;
 	}
@@ -145,6 +172,20 @@ class WhereInDimQueryRequest extends \RpcAcsRequest
 		$this->queryParameters["Limit"]=$limit;
 	}
 
+	public function getRequiredDimss() {
+		return $this->RequiredDimss;
+	}
+
+	public function setRequiredDimss($RequiredDimss) {
+		$this->RequiredDimss = $RequiredDimss;
+		for ($i = 0; $i < count($RequiredDimss); $i ++) {	
+			$this->queryParameters['RequiredDims.' . ($i + 1) . '.Type'] = $RequiredDimss[$i]['Type'];
+			$this->queryParameters['RequiredDims.' . ($i + 1) . '.Value'] = $RequiredDimss[$i]['Value'];
+			$this->queryParameters['RequiredDims.' . ($i + 1) . '.Key'] = $RequiredDimss[$i]['Key'];
+
+		}
+	}
+
 	public function getDatasetId() {
 		return $this->datasetId;
 	}
@@ -154,17 +195,6 @@ class WhereInDimQueryRequest extends \RpcAcsRequest
 		$this->queryParameters["DatasetId"]=$datasetId;
 	}
 
-	public function getWhereInValuess() {
-		return $this->WhereInValuess;
-	}
-
-	public function setWhereInValuess($WhereInValuess) {
-		$this->WhereInValuess = $WhereInValuess;
-		for ($i = 0; $i < count($WhereInValuess); $i ++) {	
-			$this->queryParameters["WhereInValues.".($i+1)] = $WhereInValuess[$i];
-		}
-	}
-
 	public function getDimensionss() {
 		return $this->Dimensionss;
 	}
@@ -172,9 +202,9 @@ class WhereInDimQueryRequest extends \RpcAcsRequest
 	public function setDimensionss($Dimensionss) {
 		$this->Dimensionss = $Dimensionss;
 		for ($i = 0; $i < count($Dimensionss); $i ++) {	
-			$this->queryParameters['Dimensions.' . ($i + 1) . '.Key'] = $Dimensionss[$i]['Key'];
-			$this->queryParameters['Dimensions.' . ($i + 1) . '.Value'] = $Dimensionss[$i]['Value'];
 			$this->queryParameters['Dimensions.' . ($i + 1) . '.Type'] = $Dimensionss[$i]['Type'];
+			$this->queryParameters['Dimensions.' . ($i + 1) . '.Value'] = $Dimensionss[$i]['Value'];
+			$this->queryParameters['Dimensions.' . ($i + 1) . '.Key'] = $Dimensionss[$i]['Key'];
 
 		}
 	}
