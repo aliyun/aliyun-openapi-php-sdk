@@ -1,0 +1,4 @@
+2018-10-18 Version: 1.0.0
+1, First version of aliyun speech to text SDK for php. 
+
+
