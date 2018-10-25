@@ -33,7 +33,11 @@ class CheckDomainRequest extends \RpcAcsRequest
 
 	private  $domainName;
 
+	private  $userClientIp;
+
 	private  $feeCommand;
+
+	private  $lang;
 
 	public function getFeeCurrency() {
 		return $this->feeCurrency;
@@ -62,6 +66,15 @@ class CheckDomainRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
+	public function getUserClientIp() {
+		return $this->userClientIp;
+	}
+
+	public function setUserClientIp($userClientIp) {
+		$this->userClientIp = $userClientIp;
+		$this->queryParameters["UserClientIp"]=$userClientIp;
+	}
+
 	public function getFeeCommand() {
 		return $this->feeCommand;
 	}
@@ -69,6 +82,15 @@ class CheckDomainRequest extends \RpcAcsRequest
 	public function setFeeCommand($feeCommand) {
 		$this->feeCommand = $feeCommand;
 		$this->queryParameters["FeeCommand"]=$feeCommand;
+	}
+
+	public function getLang() {
+		return $this->lang;
+	}
+
+	public function setLang($lang) {
+		$this->lang = $lang;
+		$this->queryParameters["Lang"]=$lang;
 	}
 	
 }

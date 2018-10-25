@@ -19,23 +19,21 @@
  */
 namespace Domain\Request\V20180129;
 
-class SaveSingleTaskForCreatingDnsHostRequest extends \RpcAcsRequest
+class QueryQualificationDetailRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Domain", "2018-01-29", "SaveSingleTaskForCreatingDnsHost");
+		parent::__construct("Domain", "2018-01-29", "QueryQualificationDetail");
 		$this->setMethod("POST");
 	}
 
 	private  $instanceId;
 
-	private  $Ips;
-
-	private  $dnsName;
-
 	private  $userClientIp;
 
 	private  $lang;
+
+	private  $qualificationType;
 
 	public function getInstanceId() {
 		return $this->instanceId;
@@ -44,26 +42,6 @@ class SaveSingleTaskForCreatingDnsHostRequest extends \RpcAcsRequest
 	public function setInstanceId($instanceId) {
 		$this->instanceId = $instanceId;
 		$this->queryParameters["InstanceId"]=$instanceId;
-	}
-
-	public function getIps() {
-		return $this->Ips;
-	}
-
-	public function setIps($Ips) {
-		$this->Ips = $Ips;
-		for ($i = 0; $i < count($Ips); $i ++) {	
-			$this->queryParameters["Ip.".($i+1)] = $Ips[$i];
-		}
-	}
-
-	public function getDnsName() {
-		return $this->dnsName;
-	}
-
-	public function setDnsName($dnsName) {
-		$this->dnsName = $dnsName;
-		$this->queryParameters["DnsName"]=$dnsName;
 	}
 
 	public function getUserClientIp() {
@@ -82,6 +60,15 @@ class SaveSingleTaskForCreatingDnsHostRequest extends \RpcAcsRequest
 	public function setLang($lang) {
 		$this->lang = $lang;
 		$this->queryParameters["Lang"]=$lang;
+	}
+
+	public function getQualificationType() {
+		return $this->qualificationType;
+	}
+
+	public function setQualificationType($qualificationType) {
+		$this->qualificationType = $qualificationType;
+		$this->queryParameters["QualificationType"]=$qualificationType;
 	}
 	
 }

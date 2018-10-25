@@ -31,6 +31,8 @@ class SaveSingleTaskForDeletingDnsHostRequest extends \RpcAcsRequest
 
 	private  $dnsName;
 
+	private  $userClientIp;
+
 	private  $lang;
 
 	public function getInstanceId() {
@@ -49,6 +51,15 @@ class SaveSingleTaskForDeletingDnsHostRequest extends \RpcAcsRequest
 	public function setDnsName($dnsName) {
 		$this->dnsName = $dnsName;
 		$this->queryParameters["DnsName"]=$dnsName;
+	}
+
+	public function getUserClientIp() {
+		return $this->userClientIp;
+	}
+
+	public function setUserClientIp($userClientIp) {
+		$this->userClientIp = $userClientIp;
+		$this->queryParameters["UserClientIp"]=$userClientIp;
 	}
 
 	public function getLang() {

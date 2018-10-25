@@ -19,51 +19,29 @@
  */
 namespace Domain\Request\V20180129;
 
-class SaveSingleTaskForCreatingDnsHostRequest extends \RpcAcsRequest
+class CheckMaxYearOfServerLockRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Domain", "2018-01-29", "SaveSingleTaskForCreatingDnsHost");
+		parent::__construct("Domain", "2018-01-29", "CheckMaxYearOfServerLock");
 		$this->setMethod("POST");
 	}
 
-	private  $instanceId;
-
-	private  $Ips;
-
-	private  $dnsName;
+	private  $domainName;
 
 	private  $userClientIp;
 
+	private  $checkAction;
+
 	private  $lang;
 
-	public function getInstanceId() {
-		return $this->instanceId;
+	public function getDomainName() {
+		return $this->domainName;
 	}
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
-
-	public function getIps() {
-		return $this->Ips;
-	}
-
-	public function setIps($Ips) {
-		$this->Ips = $Ips;
-		for ($i = 0; $i < count($Ips); $i ++) {	
-			$this->queryParameters["Ip.".($i+1)] = $Ips[$i];
-		}
-	}
-
-	public function getDnsName() {
-		return $this->dnsName;
-	}
-
-	public function setDnsName($dnsName) {
-		$this->dnsName = $dnsName;
-		$this->queryParameters["DnsName"]=$dnsName;
+	public function setDomainName($domainName) {
+		$this->domainName = $domainName;
+		$this->queryParameters["DomainName"]=$domainName;
 	}
 
 	public function getUserClientIp() {
@@ -73,6 +51,15 @@ class SaveSingleTaskForCreatingDnsHostRequest extends \RpcAcsRequest
 	public function setUserClientIp($userClientIp) {
 		$this->userClientIp = $userClientIp;
 		$this->queryParameters["UserClientIp"]=$userClientIp;
+	}
+
+	public function getCheckAction() {
+		return $this->checkAction;
+	}
+
+	public function setCheckAction($checkAction) {
+		$this->checkAction = $checkAction;
+		$this->queryParameters["CheckAction"]=$checkAction;
 	}
 
 	public function getLang() {

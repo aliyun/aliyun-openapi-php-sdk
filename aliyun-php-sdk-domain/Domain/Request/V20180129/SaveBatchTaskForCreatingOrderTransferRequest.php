@@ -40,10 +40,10 @@ class SaveBatchTaskForCreatingOrderTransferRequest extends \RpcAcsRequest
 	public function setOrderTransferParams($OrderTransferParams) {
 		$this->OrderTransferParams = $OrderTransferParams;
 		for ($i = 0; $i < count($OrderTransferParams); $i ++) {	
-			$this->queryParameters['OrderTransferParam.' . ($i + 1) . '.DomainName'] = $OrderTransferParams[$i]['DomainName'];
-			$this->queryParameters['OrderTransferParam.' . ($i + 1) . '.AuthorizationCode'] = $OrderTransferParams[$i]['AuthorizationCode'];
-			$this->queryParameters['OrderTransferParam.' . ($i + 1) . '.RegistrantProfileId'] = $OrderTransferParams[$i]['RegistrantProfileId'];
 			$this->queryParameters['OrderTransferParam.' . ($i + 1) . '.PermitPremiumTransfer'] = $OrderTransferParams[$i]['PermitPremiumTransfer'];
+			$this->queryParameters['OrderTransferParam.' . ($i + 1) . '.AuthorizationCode'] = $OrderTransferParams[$i]['AuthorizationCode'];
+			$this->queryParameters['OrderTransferParam.' . ($i + 1) . '.DomainName'] = $OrderTransferParams[$i]['DomainName'];
+			$this->queryParameters['OrderTransferParam.' . ($i + 1) . '.RegistrantProfileId'] = $OrderTransferParams[$i]['RegistrantProfileId'];
 
 		}
 	}

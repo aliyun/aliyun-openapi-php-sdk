@@ -71,6 +71,8 @@ class SaveSingleTaskForCreatingOrderActivateRequest extends \RpcAcsRequest
 
 	private  $telephone;
 
+	private  $trademarkDomainActivation;
+
 	private  $zhProvince;
 
 	private  $registrantOrganization;
@@ -277,6 +279,15 @@ class SaveSingleTaskForCreatingOrderActivateRequest extends \RpcAcsRequest
 	public function setTelephone($telephone) {
 		$this->telephone = $telephone;
 		$this->queryParameters["Telephone"]=$telephone;
+	}
+
+	public function getTrademarkDomainActivation() {
+		return $this->trademarkDomainActivation;
+	}
+
+	public function setTrademarkDomainActivation($trademarkDomainActivation) {
+		$this->trademarkDomainActivation = $trademarkDomainActivation;
+		$this->queryParameters["TrademarkDomainActivation"]=$trademarkDomainActivation;
 	}
 
 	public function getZhProvince() {

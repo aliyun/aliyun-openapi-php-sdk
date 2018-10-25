@@ -49,9 +49,9 @@ class SaveBatchTaskForCreatingOrderRenewRequest extends \RpcAcsRequest
 	public function setOrderRenewParams($OrderRenewParams) {
 		$this->OrderRenewParams = $OrderRenewParams;
 		for ($i = 0; $i < count($OrderRenewParams); $i ++) {	
-			$this->queryParameters['OrderRenewParam.' . ($i + 1) . '.DomainName'] = $OrderRenewParams[$i]['DomainName'];
-			$this->queryParameters['OrderRenewParam.' . ($i + 1) . '.CurrentExpirationDate'] = $OrderRenewParams[$i]['CurrentExpirationDate'];
 			$this->queryParameters['OrderRenewParam.' . ($i + 1) . '.SubscriptionDuration'] = $OrderRenewParams[$i]['SubscriptionDuration'];
+			$this->queryParameters['OrderRenewParam.' . ($i + 1) . '.CurrentExpirationDate'] = $OrderRenewParams[$i]['CurrentExpirationDate'];
+			$this->queryParameters['OrderRenewParam.' . ($i + 1) . '.DomainName'] = $OrderRenewParams[$i]['DomainName'];
 
 		}
 	}

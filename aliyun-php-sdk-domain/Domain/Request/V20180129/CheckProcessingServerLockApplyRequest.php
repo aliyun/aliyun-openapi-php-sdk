@@ -19,51 +19,38 @@
  */
 namespace Domain\Request\V20180129;
 
-class SaveSingleTaskForCreatingDnsHostRequest extends \RpcAcsRequest
+class CheckProcessingServerLockApplyRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Domain", "2018-01-29", "SaveSingleTaskForCreatingDnsHost");
+		parent::__construct("Domain", "2018-01-29", "CheckProcessingServerLockApply");
 		$this->setMethod("POST");
 	}
 
-	private  $instanceId;
+	private  $feePeriod;
 
-	private  $Ips;
-
-	private  $dnsName;
+	private  $domainName;
 
 	private  $userClientIp;
 
 	private  $lang;
 
-	public function getInstanceId() {
-		return $this->instanceId;
+	public function getFeePeriod() {
+		return $this->feePeriod;
 	}
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
+	public function setFeePeriod($feePeriod) {
+		$this->feePeriod = $feePeriod;
+		$this->queryParameters["FeePeriod"]=$feePeriod;
 	}
 
-	public function getIps() {
-		return $this->Ips;
+	public function getDomainName() {
+		return $this->domainName;
 	}
 
-	public function setIps($Ips) {
-		$this->Ips = $Ips;
-		for ($i = 0; $i < count($Ips); $i ++) {	
-			$this->queryParameters["Ip.".($i+1)] = $Ips[$i];
-		}
-	}
-
-	public function getDnsName() {
-		return $this->dnsName;
-	}
-
-	public function setDnsName($dnsName) {
-		$this->dnsName = $dnsName;
-		$this->queryParameters["DnsName"]=$dnsName;
+	public function setDomainName($domainName) {
+		$this->domainName = $domainName;
+		$this->queryParameters["DomainName"]=$domainName;
 	}
 
 	public function getUserClientIp() {

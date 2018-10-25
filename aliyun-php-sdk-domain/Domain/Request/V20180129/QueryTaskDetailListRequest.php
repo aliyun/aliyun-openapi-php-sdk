@@ -31,11 +31,11 @@ class QueryTaskDetailListRequest extends \RpcAcsRequest
 
 	private  $instanceId;
 
-	private  $userClientIp;
-
 	private  $taskNo;
 
 	private  $domainName;
+
+	private  $userClientIp;
 
 	private  $pageSize;
 
@@ -61,15 +61,6 @@ class QueryTaskDetailListRequest extends \RpcAcsRequest
 		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
-	}
-
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
-	}
-
 	public function getTaskNo() {
 		return $this->taskNo;
 	}
@@ -86,6 +77,15 @@ class QueryTaskDetailListRequest extends \RpcAcsRequest
 	public function setDomainName($domainName) {
 		$this->domainName = $domainName;
 		$this->queryParameters["DomainName"]=$domainName;
+	}
+
+	public function getUserClientIp() {
+		return $this->userClientIp;
+	}
+
+	public function setUserClientIp($userClientIp) {
+		$this->userClientIp = $userClientIp;
+		$this->queryParameters["UserClientIp"]=$userClientIp;
 	}
 
 	public function getPageSize() {

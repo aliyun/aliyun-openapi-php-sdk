@@ -33,6 +33,8 @@ class ListEmailVerificationRequest extends \RpcAcsRequest
 
 	private  $pageSize;
 
+	private  $userClientIp;
+
 	private  $lang;
 
 	private  $pageNum;
@@ -66,6 +68,15 @@ class ListEmailVerificationRequest extends \RpcAcsRequest
 	public function setPageSize($pageSize) {
 		$this->pageSize = $pageSize;
 		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
+	public function getUserClientIp() {
+		return $this->userClientIp;
+	}
+
+	public function setUserClientIp($userClientIp) {
+		$this->userClientIp = $userClientIp;
+		$this->queryParameters["UserClientIp"]=$userClientIp;
 	}
 
 	public function getLang() {

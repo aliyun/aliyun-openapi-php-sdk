@@ -27,9 +27,20 @@ class QueryEmailVerificationRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
+	private  $userClientIp;
+
 	private  $lang;
 
 	private  $email;
+
+	public function getUserClientIp() {
+		return $this->userClientIp;
+	}
+
+	public function setUserClientIp($userClientIp) {
+		$this->userClientIp = $userClientIp;
+		$this->queryParameters["UserClientIp"]=$userClientIp;
+	}
 
 	public function getLang() {
 		return $this->lang;

@@ -40,31 +40,32 @@ class SaveBatchTaskForCreatingOrderActivateRequest extends \RpcAcsRequest
 	public function setOrderActivateParams($OrderActivateParams) {
 		$this->OrderActivateParams = $OrderActivateParams;
 		for ($i = 0; $i < count($OrderActivateParams); $i ++) {	
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.DomainName'] = $OrderActivateParams[$i]['DomainName'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.SubscriptionDuration'] = $OrderActivateParams[$i]['SubscriptionDuration'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.RegistrantProfileId'] = $OrderActivateParams[$i]['RegistrantProfileId'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.EnableDomainProxy'] = $OrderActivateParams[$i]['EnableDomainProxy'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.PermitPremiumActivation'] = $OrderActivateParams[$i]['PermitPremiumActivation'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.AliyunDns'] = $OrderActivateParams[$i]['AliyunDns'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.Dns1'] = $OrderActivateParams[$i]['Dns1'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.Dns2'] = $OrderActivateParams[$i]['Dns2'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.ZhCity'] = $OrderActivateParams[$i]['ZhCity'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.ZhRegistrantOrganization'] = $OrderActivateParams[$i]['ZhRegistrantOrganization'];
 			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.Country'] = $OrderActivateParams[$i]['Country'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.ZhRegistrantName'] = $OrderActivateParams[$i]['ZhRegistrantName'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.ZhProvince'] = $OrderActivateParams[$i]['ZhProvince'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.ZhAddress'] = $OrderActivateParams[$i]['ZhAddress'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.SubscriptionDuration'] = $OrderActivateParams[$i]['SubscriptionDuration'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.PermitPremiumActivation'] = $OrderActivateParams[$i]['PermitPremiumActivation'];
 			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.City'] = $OrderActivateParams[$i]['City'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.RegistrantOrganization'] = $OrderActivateParams[$i]['RegistrantOrganization'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.RegistrantName'] = $OrderActivateParams[$i]['RegistrantName'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.Province'] = $OrderActivateParams[$i]['Province'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.Address'] = $OrderActivateParams[$i]['Address'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.Email'] = $OrderActivateParams[$i]['Email'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.PostalCode'] = $OrderActivateParams[$i]['PostalCode'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.TelArea'] = $OrderActivateParams[$i]['TelArea'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.Telephone'] = $OrderActivateParams[$i]['Telephone'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.Dns2'] = $OrderActivateParams[$i]['Dns2'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.Dns1'] = $OrderActivateParams[$i]['Dns1'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.RegistrantProfileId'] = $OrderActivateParams[$i]['RegistrantProfileId'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.AliyunDns'] = $OrderActivateParams[$i]['AliyunDns'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.ZhCity'] = $OrderActivateParams[$i]['ZhCity'];
 			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.TelExt'] = $OrderActivateParams[$i]['TelExt'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.ZhRegistrantName'] = $OrderActivateParams[$i]['ZhRegistrantName'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.Province'] = $OrderActivateParams[$i]['Province'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.PostalCode'] = $OrderActivateParams[$i]['PostalCode'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.Email'] = $OrderActivateParams[$i]['Email'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.ZhRegistrantOrganization'] = $OrderActivateParams[$i]['ZhRegistrantOrganization'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.Address'] = $OrderActivateParams[$i]['Address'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.TelArea'] = $OrderActivateParams[$i]['TelArea'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.DomainName'] = $OrderActivateParams[$i]['DomainName'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.ZhAddress'] = $OrderActivateParams[$i]['ZhAddress'];
 			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.RegistrantType'] = $OrderActivateParams[$i]['RegistrantType'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.Telephone'] = $OrderActivateParams[$i]['Telephone'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.TrademarkDomainActivation'] = $OrderActivateParams[$i]['TrademarkDomainActivation'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.ZhProvince'] = $OrderActivateParams[$i]['ZhProvince'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.RegistrantOrganization'] = $OrderActivateParams[$i]['RegistrantOrganization'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.EnableDomainProxy'] = $OrderActivateParams[$i]['EnableDomainProxy'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.RegistrantName'] = $OrderActivateParams[$i]['RegistrantName'];
 
 		}
 	}

@@ -29,6 +29,8 @@ class SaveBatchDomainRemarkRequest extends \RpcAcsRequest
 
 	private  $instanceIds;
 
+	private  $userClientIp;
+
 	private  $remark;
 
 	private  $lang;
@@ -40,6 +42,15 @@ class SaveBatchDomainRemarkRequest extends \RpcAcsRequest
 	public function setInstanceIds($instanceIds) {
 		$this->instanceIds = $instanceIds;
 		$this->queryParameters["InstanceIds"]=$instanceIds;
+	}
+
+	public function getUserClientIp() {
+		return $this->userClientIp;
+	}
+
+	public function setUserClientIp($userClientIp) {
+		$this->userClientIp = $userClientIp;
+		$this->queryParameters["UserClientIp"]=$userClientIp;
 	}
 
 	public function getRemark() {
