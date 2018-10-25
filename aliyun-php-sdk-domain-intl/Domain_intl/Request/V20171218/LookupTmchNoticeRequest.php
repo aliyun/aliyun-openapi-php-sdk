@@ -19,51 +19,27 @@
  */
 namespace Domain_intl\Request\V20171218;
 
-class CheckDomainRequest extends \RpcAcsRequest
+class LookupTmchNoticeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Domain-intl", "2017-12-18", "CheckDomain", "domain", "openAPI");
+		parent::__construct("Domain-intl", "2017-12-18", "LookupTmchNotice", "domain", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $feeCurrency;
-
-	private  $feePeriod;
-
-	private  $domainName;
+	private  $claimKey;
 
 	private  $userClientIp;
 
-	private  $feeCommand;
-
 	private  $lang;
 
-	public function getFeeCurrency() {
-		return $this->feeCurrency;
+	public function getClaimKey() {
+		return $this->claimKey;
 	}
 
-	public function setFeeCurrency($feeCurrency) {
-		$this->feeCurrency = $feeCurrency;
-		$this->queryParameters["FeeCurrency"]=$feeCurrency;
-	}
-
-	public function getFeePeriod() {
-		return $this->feePeriod;
-	}
-
-	public function setFeePeriod($feePeriod) {
-		$this->feePeriod = $feePeriod;
-		$this->queryParameters["FeePeriod"]=$feePeriod;
-	}
-
-	public function getDomainName() {
-		return $this->domainName;
-	}
-
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
+	public function setClaimKey($claimKey) {
+		$this->claimKey = $claimKey;
+		$this->queryParameters["ClaimKey"]=$claimKey;
 	}
 
 	public function getUserClientIp() {
@@ -73,15 +49,6 @@ class CheckDomainRequest extends \RpcAcsRequest
 	public function setUserClientIp($userClientIp) {
 		$this->userClientIp = $userClientIp;
 		$this->queryParameters["UserClientIp"]=$userClientIp;
-	}
-
-	public function getFeeCommand() {
-		return $this->feeCommand;
-	}
-
-	public function setFeeCommand($feeCommand) {
-		$this->feeCommand = $feeCommand;
-		$this->queryParameters["FeeCommand"]=$feeCommand;
 	}
 
 	public function getLang() {

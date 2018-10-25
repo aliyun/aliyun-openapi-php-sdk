@@ -51,6 +51,7 @@ class SaveBatchTaskForCreatingOrderActivateRequest extends \RpcAcsRequest
 			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.DomainName'] = $OrderActivateParams[$i]['DomainName'];
 			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.RegistrantProfileId'] = $OrderActivateParams[$i]['RegistrantProfileId'];
 			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.Telephone'] = $OrderActivateParams[$i]['Telephone'];
+			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.TrademarkDomainActivation'] = $OrderActivateParams[$i]['TrademarkDomainActivation'];
 			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.AliyunDns'] = $OrderActivateParams[$i]['AliyunDns'];
 			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.RegistrantOrganization'] = $OrderActivateParams[$i]['RegistrantOrganization'];
 			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.TelExt'] = $OrderActivateParams[$i]['TelExt'];
