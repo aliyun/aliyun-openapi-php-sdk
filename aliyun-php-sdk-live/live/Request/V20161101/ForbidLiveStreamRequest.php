@@ -27,13 +27,9 @@ class ForbidLiveStreamRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $appName;
-
-	private  $streamName;
-
-	private  $controlStreamAction;
-
 	private  $resumeTime;
+
+	private  $appName;
 
 	private  $liveStreamType;
 
@@ -43,32 +39,9 @@ class ForbidLiveStreamRequest extends \RpcAcsRequest
 
 	private  $oneshot;
 
-	public function getAppName() {
-		return $this->appName;
-	}
+	private  $streamName;
 
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
-	}
-
-	public function getStreamName() {
-		return $this->streamName;
-	}
-
-	public function setStreamName($streamName) {
-		$this->streamName = $streamName;
-		$this->queryParameters["StreamName"]=$streamName;
-	}
-
-	public function getControlStreamAction() {
-		return $this->controlStreamAction;
-	}
-
-	public function setControlStreamAction($controlStreamAction) {
-		$this->controlStreamAction = $controlStreamAction;
-		$this->queryParameters["ControlStreamAction"]=$controlStreamAction;
-	}
+	private  $controlStreamAction;
 
 	public function getResumeTime() {
 		return $this->resumeTime;
@@ -77,6 +50,15 @@ class ForbidLiveStreamRequest extends \RpcAcsRequest
 	public function setResumeTime($resumeTime) {
 		$this->resumeTime = $resumeTime;
 		$this->queryParameters["ResumeTime"]=$resumeTime;
+	}
+
+	public function getAppName() {
+		return $this->appName;
+	}
+
+	public function setAppName($appName) {
+		$this->appName = $appName;
+		$this->queryParameters["AppName"]=$appName;
 	}
 
 	public function getLiveStreamType() {
@@ -113,6 +95,24 @@ class ForbidLiveStreamRequest extends \RpcAcsRequest
 	public function setOneshot($oneshot) {
 		$this->oneshot = $oneshot;
 		$this->queryParameters["Oneshot"]=$oneshot;
+	}
+
+	public function getStreamName() {
+		return $this->streamName;
+	}
+
+	public function setStreamName($streamName) {
+		$this->streamName = $streamName;
+		$this->queryParameters["StreamName"]=$streamName;
+	}
+
+	public function getControlStreamAction() {
+		return $this->controlStreamAction;
+	}
+
+	public function setControlStreamAction($controlStreamAction) {
+		$this->controlStreamAction = $controlStreamAction;
+		$this->queryParameters["ControlStreamAction"]=$controlStreamAction;
 	}
 	
 }

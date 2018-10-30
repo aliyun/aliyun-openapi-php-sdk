@@ -19,43 +19,27 @@
  */
 namespace live\Request\V20161101;
 
-class DescribeDomainUsageDataRequest extends \RpcAcsRequest
+class DescribeLiveDomainBpsDataRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "DescribeDomainUsageData", "live", "openAPI");
+		parent::__construct("live", "2016-11-01", "DescribeLiveDomainBpsData", "live", "openAPI");
 		$this->setMethod("POST");
 	}
-
-	private  $startTime;
-
-	private  $area;
 
 	private  $domainName;
 
 	private  $endTime;
 
-	private  $ownerId;
-
 	private  $interval;
 
-	public function getStartTime() {
-		return $this->startTime;
-	}
+	private  $locationNameEn;
 
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
+	private  $startTime;
 
-	public function getArea() {
-		return $this->area;
-	}
+	private  $ispNameEn;
 
-	public function setArea($area) {
-		$this->area = $area;
-		$this->queryParameters["Area"]=$area;
-	}
+	private  $ownerId;
 
 	public function getDomainName() {
 		return $this->domainName;
@@ -75,15 +59,6 @@ class DescribeDomainUsageDataRequest extends \RpcAcsRequest
 		$this->queryParameters["EndTime"]=$endTime;
 	}
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
 	public function getInterval() {
 		return $this->interval;
 	}
@@ -91,6 +66,42 @@ class DescribeDomainUsageDataRequest extends \RpcAcsRequest
 	public function setInterval($interval) {
 		$this->interval = $interval;
 		$this->queryParameters["Interval"]=$interval;
+	}
+
+	public function getLocationNameEn() {
+		return $this->locationNameEn;
+	}
+
+	public function setLocationNameEn($locationNameEn) {
+		$this->locationNameEn = $locationNameEn;
+		$this->queryParameters["LocationNameEn"]=$locationNameEn;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
+
+	public function getIspNameEn() {
+		return $this->ispNameEn;
+	}
+
+	public function setIspNameEn($ispNameEn) {
+		$this->ispNameEn = $ispNameEn;
+		$this->queryParameters["IspNameEn"]=$ispNameEn;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

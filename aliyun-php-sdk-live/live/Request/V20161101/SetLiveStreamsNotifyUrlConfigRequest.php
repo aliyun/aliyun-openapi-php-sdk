@@ -27,7 +27,7 @@ class SetLiveStreamsNotifyUrlConfigRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $securityToken;
+	private  $authKey;
 
 	private  $domainName;
 
@@ -35,13 +35,15 @@ class SetLiveStreamsNotifyUrlConfigRequest extends \RpcAcsRequest
 
 	private  $ownerId;
 
-	public function getSecurityToken() {
-		return $this->securityToken;
+	private  $authType;
+
+	public function getAuthKey() {
+		return $this->authKey;
 	}
 
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
+	public function setAuthKey($authKey) {
+		$this->authKey = $authKey;
+		$this->queryParameters["AuthKey"]=$authKey;
 	}
 
 	public function getDomainName() {
@@ -69,6 +71,15 @@ class SetLiveStreamsNotifyUrlConfigRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getAuthType() {
+		return $this->authType;
+	}
+
+	public function setAuthType($authType) {
+		$this->authType = $authType;
+		$this->queryParameters["AuthType"]=$authType;
 	}
 	
 }

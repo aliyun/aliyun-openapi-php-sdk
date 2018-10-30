@@ -27,6 +27,10 @@ class DescribeRoomListRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
+	private  $startTime;
+
+	private  $anchorId;
+
 	private  $pageNum;
 
 	private  $roomStatus;
@@ -35,9 +39,31 @@ class DescribeRoomListRequest extends \RpcAcsRequest
 
 	private  $order;
 
+	private  $endTime;
+
 	private  $ownerId;
 
+	private  $roomId;
+
 	private  $appId;
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
+
+	public function getAnchorId() {
+		return $this->anchorId;
+	}
+
+	public function setAnchorId($anchorId) {
+		$this->anchorId = $anchorId;
+		$this->queryParameters["AnchorId"]=$anchorId;
+	}
 
 	public function getPageNum() {
 		return $this->pageNum;
@@ -75,6 +101,15 @@ class DescribeRoomListRequest extends \RpcAcsRequest
 		$this->queryParameters["Order"]=$order;
 	}
 
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -82,6 +117,15 @@ class DescribeRoomListRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getRoomId() {
+		return $this->roomId;
+	}
+
+	public function setRoomId($roomId) {
+		$this->roomId = $roomId;
+		$this->queryParameters["RoomId"]=$roomId;
 	}
 
 	public function getAppId() {
