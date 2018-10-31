@@ -43,6 +43,8 @@ class ModifyDBInstanceSpecRequest extends \RpcAcsRequest
 
 	private  $ownerId;
 
+	private  $replicationFactor;
+
 	private  $dBInstanceClass;
 
 	private  $securityToken;
@@ -125,6 +127,15 @@ class ModifyDBInstanceSpecRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getReplicationFactor() {
+		return $this->replicationFactor;
+	}
+
+	public function setReplicationFactor($replicationFactor) {
+		$this->replicationFactor = $replicationFactor;
+		$this->queryParameters["ReplicationFactor"]=$replicationFactor;
 	}
 
 	public function getDBInstanceClass() {

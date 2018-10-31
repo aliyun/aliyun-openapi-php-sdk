@@ -19,27 +19,25 @@
  */
 namespace Dds\Request\V20151201;
 
-class DescribeReplicaUsageRequest extends \RpcAcsRequest
+class DescribeActiveOperationTaskRegionRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Dds", "2015-12-01", "DescribeReplicaUsage", "dds", "openAPI");
+		parent::__construct("Dds", "2015-12-01", "DescribeActiveOperationTaskRegion", "dds", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
-	private  $sourceDBInstanceId;
+	private  $isHistory;
 
-	private  $destinationDBInstanceId;
+	private  $taskType;
 
 	private  $securityToken;
 
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
-
-	private  $replicaId;
 
 	private  $ownerId;
 
@@ -52,22 +50,22 @@ class DescribeReplicaUsageRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getSourceDBInstanceId() {
-		return $this->sourceDBInstanceId;
+	public function getIsHistory() {
+		return $this->isHistory;
 	}
 
-	public function setSourceDBInstanceId($sourceDBInstanceId) {
-		$this->sourceDBInstanceId = $sourceDBInstanceId;
-		$this->queryParameters["SourceDBInstanceId"]=$sourceDBInstanceId;
+	public function setIsHistory($isHistory) {
+		$this->isHistory = $isHistory;
+		$this->queryParameters["IsHistory"]=$isHistory;
 	}
 
-	public function getDestinationDBInstanceId() {
-		return $this->destinationDBInstanceId;
+	public function getTaskType() {
+		return $this->taskType;
 	}
 
-	public function setDestinationDBInstanceId($destinationDBInstanceId) {
-		$this->destinationDBInstanceId = $destinationDBInstanceId;
-		$this->queryParameters["DestinationDBInstanceId"]=$destinationDBInstanceId;
+	public function setTaskType($taskType) {
+		$this->taskType = $taskType;
+		$this->queryParameters["TaskType"]=$taskType;
 	}
 
 	public function getSecurityToken() {
@@ -95,15 +93,6 @@ class DescribeReplicaUsageRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getReplicaId() {
-		return $this->replicaId;
-	}
-
-	public function setReplicaId($replicaId) {
-		$this->replicaId = $replicaId;
-		$this->queryParameters["ReplicaId"]=$replicaId;
 	}
 
 	public function getOwnerId() {

@@ -27,9 +27,9 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $resourceOwnerId;
+	private  $expireTime;
 
-	private  $dBInstanceIds;
+	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
@@ -43,13 +43,30 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 
 	private  $dBInstanceType;
 
+	private  $dBInstanceClass;
+
 	private  $expired;
 
 	private  $securityToken;
 
-	private  $engine;
-
 	private  $pageSize;
+
+	private  $zoneId;
+
+	private  $dBInstanceId;
+
+	private  $dBInstanceDescription;
+
+	private  $dBInstanceStatus;
+
+	public function getExpireTime() {
+		return $this->expireTime;
+	}
+
+	public function setExpireTime($expireTime) {
+		$this->expireTime = $expireTime;
+		$this->queryParameters["ExpireTime"]=$expireTime;
+	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -58,15 +75,6 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getDBInstanceIds() {
-		return $this->dBInstanceIds;
-	}
-
-	public function setDBInstanceIds($dBInstanceIds) {
-		$this->dBInstanceIds = $dBInstanceIds;
-		$this->queryParameters["DBInstanceIds"]=$dBInstanceIds;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -123,6 +131,15 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["DBInstanceType"]=$dBInstanceType;
 	}
 
+	public function getDBInstanceClass() {
+		return $this->dBInstanceClass;
+	}
+
+	public function setDBInstanceClass($dBInstanceClass) {
+		$this->dBInstanceClass = $dBInstanceClass;
+		$this->queryParameters["DBInstanceClass"]=$dBInstanceClass;
+	}
+
 	public function getExpired() {
 		return $this->expired;
 	}
@@ -141,15 +158,6 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getEngine() {
-		return $this->engine;
-	}
-
-	public function setEngine($engine) {
-		$this->engine = $engine;
-		$this->queryParameters["Engine"]=$engine;
-	}
-
 	public function getPageSize() {
 		return $this->pageSize;
 	}
@@ -157,6 +165,42 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 	public function setPageSize($pageSize) {
 		$this->pageSize = $pageSize;
 		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
+	public function getZoneId() {
+		return $this->zoneId;
+	}
+
+	public function setZoneId($zoneId) {
+		$this->zoneId = $zoneId;
+		$this->queryParameters["ZoneId"]=$zoneId;
+	}
+
+	public function getDBInstanceId() {
+		return $this->dBInstanceId;
+	}
+
+	public function setDBInstanceId($dBInstanceId) {
+		$this->dBInstanceId = $dBInstanceId;
+		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
+	}
+
+	public function getDBInstanceDescription() {
+		return $this->dBInstanceDescription;
+	}
+
+	public function setDBInstanceDescription($dBInstanceDescription) {
+		$this->dBInstanceDescription = $dBInstanceDescription;
+		$this->queryParameters["DBInstanceDescription"]=$dBInstanceDescription;
+	}
+
+	public function getDBInstanceStatus() {
+		return $this->dBInstanceStatus;
+	}
+
+	public function setDBInstanceStatus($dBInstanceStatus) {
+		$this->dBInstanceStatus = $dBInstanceStatus;
+		$this->queryParameters["DBInstanceStatus"]=$dBInstanceStatus;
 	}
 	
 }

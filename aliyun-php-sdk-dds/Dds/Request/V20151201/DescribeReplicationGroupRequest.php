@@ -19,35 +19,38 @@
  */
 namespace Dds\Request\V20151201;
 
-class DescribeReplicaPerformanceRequest extends \RpcAcsRequest
+class DescribeReplicationGroupRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Dds", "2015-12-01", "DescribeReplicaPerformance", "dds", "openAPI");
+		parent::__construct("Dds", "2015-12-01", "DescribeReplicationGroup", "dds", "openAPI");
 		$this->setMethod("POST");
 	}
 
+	private  $destinationInstanceIds;
+
 	private  $resourceOwnerId;
-
-	private  $destinationDBInstanceId;
-
-	private  $resourceOwnerAccount;
-
-	private  $ownerAccount;
-
-	private  $endTime;
-
-	private  $startTime;
-
-	private  $ownerId;
-
-	private  $sourceDBInstanceId;
 
 	private  $securityToken;
 
-	private  $replicaId;
+	private  $resourceOwnerAccount;
 
-	private  $key;
+	private  $replicationGroupId;
+
+	private  $ownerAccount;
+
+	private  $sourceInstanceId;
+
+	private  $ownerId;
+
+	public function getDestinationInstanceIds() {
+		return $this->destinationInstanceIds;
+	}
+
+	public function setDestinationInstanceIds($destinationInstanceIds) {
+		$this->destinationInstanceIds = $destinationInstanceIds;
+		$this->queryParameters["DestinationInstanceIds"]=$destinationInstanceIds;
+	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -56,69 +59,6 @@ class DescribeReplicaPerformanceRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getDestinationDBInstanceId() {
-		return $this->destinationDBInstanceId;
-	}
-
-	public function setDestinationDBInstanceId($destinationDBInstanceId) {
-		$this->destinationDBInstanceId = $destinationDBInstanceId;
-		$this->queryParameters["DestinationDBInstanceId"]=$destinationDBInstanceId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getEndTime() {
-		return $this->endTime;
-	}
-
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getSourceDBInstanceId() {
-		return $this->sourceDBInstanceId;
-	}
-
-	public function setSourceDBInstanceId($sourceDBInstanceId) {
-		$this->sourceDBInstanceId = $sourceDBInstanceId;
-		$this->queryParameters["SourceDBInstanceId"]=$sourceDBInstanceId;
 	}
 
 	public function getSecurityToken() {
@@ -130,22 +70,49 @@ class DescribeReplicaPerformanceRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getReplicaId() {
-		return $this->replicaId;
+	public function getResourceOwnerAccount() {
+		return $this->resourceOwnerAccount;
 	}
 
-	public function setReplicaId($replicaId) {
-		$this->replicaId = $replicaId;
-		$this->queryParameters["ReplicaId"]=$replicaId;
+	public function setResourceOwnerAccount($resourceOwnerAccount) {
+		$this->resourceOwnerAccount = $resourceOwnerAccount;
+		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getKey() {
-		return $this->key;
+	public function getReplicationGroupId() {
+		return $this->replicationGroupId;
 	}
 
-	public function setKey($key) {
-		$this->key = $key;
-		$this->queryParameters["Key"]=$key;
+	public function setReplicationGroupId($replicationGroupId) {
+		$this->replicationGroupId = $replicationGroupId;
+		$this->queryParameters["ReplicationGroupId"]=$replicationGroupId;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getSourceInstanceId() {
+		return $this->sourceInstanceId;
+	}
+
+	public function setSourceInstanceId($sourceInstanceId) {
+		$this->sourceInstanceId = $sourceInstanceId;
+		$this->queryParameters["SourceInstanceId"]=$sourceInstanceId;
+	}
+
+	public function getOwnerId() {
+		return $this->ownerId;
+	}
+
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

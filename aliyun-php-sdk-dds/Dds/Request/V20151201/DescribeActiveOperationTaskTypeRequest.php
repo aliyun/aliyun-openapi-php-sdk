@@ -19,35 +19,25 @@
  */
 namespace Dds\Request\V20151201;
 
-class DescribeReplicaPerformanceRequest extends \RpcAcsRequest
+class DescribeActiveOperationTaskTypeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Dds", "2015-12-01", "DescribeReplicaPerformance", "dds", "openAPI");
+		parent::__construct("Dds", "2015-12-01", "DescribeActiveOperationTaskType", "dds", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
-	private  $destinationDBInstanceId;
+	private  $isHistory;
+
+	private  $securityToken;
 
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
-	private  $endTime;
-
-	private  $startTime;
-
 	private  $ownerId;
-
-	private  $sourceDBInstanceId;
-
-	private  $securityToken;
-
-	private  $replicaId;
-
-	private  $key;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -58,13 +48,22 @@ class DescribeReplicaPerformanceRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getDestinationDBInstanceId() {
-		return $this->destinationDBInstanceId;
+	public function getIsHistory() {
+		return $this->isHistory;
 	}
 
-	public function setDestinationDBInstanceId($destinationDBInstanceId) {
-		$this->destinationDBInstanceId = $destinationDBInstanceId;
-		$this->queryParameters["DestinationDBInstanceId"]=$destinationDBInstanceId;
+	public function setIsHistory($isHistory) {
+		$this->isHistory = $isHistory;
+		$this->queryParameters["IsHistory"]=$isHistory;
+	}
+
+	public function getSecurityToken() {
+		return $this->securityToken;
+	}
+
+	public function setSecurityToken($securityToken) {
+		$this->securityToken = $securityToken;
+		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -85,24 +84,6 @@ class DescribeReplicaPerformanceRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getEndTime() {
-		return $this->endTime;
-	}
-
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
-
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -110,42 +91,6 @@ class DescribeReplicaPerformanceRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getSourceDBInstanceId() {
-		return $this->sourceDBInstanceId;
-	}
-
-	public function setSourceDBInstanceId($sourceDBInstanceId) {
-		$this->sourceDBInstanceId = $sourceDBInstanceId;
-		$this->queryParameters["SourceDBInstanceId"]=$sourceDBInstanceId;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
-
-	public function getReplicaId() {
-		return $this->replicaId;
-	}
-
-	public function setReplicaId($replicaId) {
-		$this->replicaId = $replicaId;
-		$this->queryParameters["ReplicaId"]=$replicaId;
-	}
-
-	public function getKey() {
-		return $this->key;
-	}
-
-	public function setKey($key) {
-		$this->key = $key;
-		$this->queryParameters["Key"]=$key;
 	}
 	
 }

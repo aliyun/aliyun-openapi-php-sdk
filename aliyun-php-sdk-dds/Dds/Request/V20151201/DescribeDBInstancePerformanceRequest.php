@@ -31,6 +31,8 @@ class DescribeDBInstancePerformanceRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerAccount;
 
+	private  $roleId;
+
 	private  $ownerAccount;
 
 	private  $endTime;
@@ -65,6 +67,15 @@ class DescribeDBInstancePerformanceRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getRoleId() {
+		return $this->roleId;
+	}
+
+	public function setRoleId($roleId) {
+		$this->roleId = $roleId;
+		$this->queryParameters["RoleId"]=$roleId;
 	}
 
 	public function getOwnerAccount() {

@@ -19,17 +19,17 @@
  */
 namespace Dds\Request\V20151201;
 
-class DescribeReplicaPerformanceRequest extends \RpcAcsRequest
+class DescribeErrorLogRecordsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Dds", "2015-12-01", "DescribeReplicaPerformance", "dds", "openAPI");
+		parent::__construct("Dds", "2015-12-01", "DescribeErrorLogRecords", "dds", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $resourceOwnerId;
+	private  $sQLId;
 
-	private  $destinationDBInstanceId;
+	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
@@ -41,13 +41,28 @@ class DescribeReplicaPerformanceRequest extends \RpcAcsRequest
 
 	private  $ownerId;
 
-	private  $sourceDBInstanceId;
+	private  $pageNumber;
+
+	private  $dBName;
 
 	private  $securityToken;
 
-	private  $replicaId;
+	private  $pageSize;
 
-	private  $key;
+	private  $dBInstanceId;
+
+	private  $roleType;
+
+	private  $nodeId;
+
+	public function getSQLId() {
+		return $this->sQLId;
+	}
+
+	public function setSQLId($sQLId) {
+		$this->sQLId = $sQLId;
+		$this->queryParameters["SQLId"]=$sQLId;
+	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -56,15 +71,6 @@ class DescribeReplicaPerformanceRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getDestinationDBInstanceId() {
-		return $this->destinationDBInstanceId;
-	}
-
-	public function setDestinationDBInstanceId($destinationDBInstanceId) {
-		$this->destinationDBInstanceId = $destinationDBInstanceId;
-		$this->queryParameters["DestinationDBInstanceId"]=$destinationDBInstanceId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -112,13 +118,22 @@ class DescribeReplicaPerformanceRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getSourceDBInstanceId() {
-		return $this->sourceDBInstanceId;
+	public function getPageNumber() {
+		return $this->pageNumber;
 	}
 
-	public function setSourceDBInstanceId($sourceDBInstanceId) {
-		$this->sourceDBInstanceId = $sourceDBInstanceId;
-		$this->queryParameters["SourceDBInstanceId"]=$sourceDBInstanceId;
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
+	}
+
+	public function getDBName() {
+		return $this->dBName;
+	}
+
+	public function setDBName($dBName) {
+		$this->dBName = $dBName;
+		$this->queryParameters["DBName"]=$dBName;
 	}
 
 	public function getSecurityToken() {
@@ -130,22 +145,40 @@ class DescribeReplicaPerformanceRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getReplicaId() {
-		return $this->replicaId;
+	public function getPageSize() {
+		return $this->pageSize;
 	}
 
-	public function setReplicaId($replicaId) {
-		$this->replicaId = $replicaId;
-		$this->queryParameters["ReplicaId"]=$replicaId;
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
-	public function getKey() {
-		return $this->key;
+	public function getDBInstanceId() {
+		return $this->dBInstanceId;
 	}
 
-	public function setKey($key) {
-		$this->key = $key;
-		$this->queryParameters["Key"]=$key;
+	public function setDBInstanceId($dBInstanceId) {
+		$this->dBInstanceId = $dBInstanceId;
+		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
+	}
+
+	public function getRoleType() {
+		return $this->roleType;
+	}
+
+	public function setRoleType($roleType) {
+		$this->roleType = $roleType;
+		$this->queryParameters["RoleType"]=$roleType;
+	}
+
+	public function getNodeId() {
+		return $this->nodeId;
+	}
+
+	public function setNodeId($nodeId) {
+		$this->nodeId = $nodeId;
+		$this->queryParameters["NodeId"]=$nodeId;
 	}
 	
 }
