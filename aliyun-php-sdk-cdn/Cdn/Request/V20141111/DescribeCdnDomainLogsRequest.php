@@ -17,23 +17,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Cdn\Request\V20180510;
+namespace Cdn\Request\V20141111;
 
-class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
+class DescribeCdnDomainLogsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cdn", "2018-05-10", "DescribeRangeDataByLocateAndIspService");
+		parent::__construct("Cdn", "2014-11-11", "DescribeCdnDomainLogs");
 		$this->setMethod("POST");
 	}
 
-	private  $ispNames;
-
 	private  $securityToken;
 
-	private  $domainNames;
+	private  $domainName;
 
-	private  $locationNames;
+	private  $pageSize;
 
 	private  $endTime;
 
@@ -41,14 +39,9 @@ class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
 
 	private  $ownerId;
 
-	public function getIspNames() {
-		return $this->ispNames;
-	}
+	private  $pageNumber;
 
-	public function setIspNames($ispNames) {
-		$this->ispNames = $ispNames;
-		$this->queryParameters["IspNames"]=$ispNames;
-	}
+	private  $logDay;
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -59,22 +52,22 @@ class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getDomainNames() {
-		return $this->domainNames;
+	public function getDomainName() {
+		return $this->domainName;
 	}
 
-	public function setDomainNames($domainNames) {
-		$this->domainNames = $domainNames;
-		$this->queryParameters["DomainNames"]=$domainNames;
+	public function setDomainName($domainName) {
+		$this->domainName = $domainName;
+		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getLocationNames() {
-		return $this->locationNames;
+	public function getPageSize() {
+		return $this->pageSize;
 	}
 
-	public function setLocationNames($locationNames) {
-		$this->locationNames = $locationNames;
-		$this->queryParameters["LocationNames"]=$locationNames;
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
 	public function getEndTime() {
@@ -102,6 +95,24 @@ class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getPageNumber() {
+		return $this->pageNumber;
+	}
+
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
+	}
+
+	public function getLogDay() {
+		return $this->logDay;
+	}
+
+	public function setLogDay($logDay) {
+		$this->logDay = $logDay;
+		$this->queryParameters["LogDay"]=$logDay;
 	}
 	
 }

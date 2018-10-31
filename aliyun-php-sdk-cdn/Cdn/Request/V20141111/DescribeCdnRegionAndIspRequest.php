@@ -17,16 +17,28 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Cdn\Request\V20180510;
+namespace Cdn\Request\V20141111;
 
-class DescribeUserCustomLogConfigRequest extends \RpcAcsRequest
+class DescribeCdnRegionAndIspRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cdn", "2018-05-10", "DescribeUserCustomLogConfig");
+		parent::__construct("Cdn", "2014-11-11", "DescribeCdnRegionAndIsp");
+		$this->setMethod("POST");
 	}
 
+	private  $securityToken;
+
 	private  $ownerId;
+
+	public function getSecurityToken() {
+		return $this->securityToken;
+	}
+
+	public function setSecurityToken($securityToken) {
+		$this->securityToken = $securityToken;
+		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
 
 	public function getOwnerId() {
 		return $this->ownerId;

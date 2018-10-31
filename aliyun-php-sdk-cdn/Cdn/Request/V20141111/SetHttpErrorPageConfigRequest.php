@@ -17,38 +17,25 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Cdn\Request\V20180510;
+namespace Cdn\Request\V20141111;
 
-class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
+class SetHttpErrorPageConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cdn", "2018-05-10", "DescribeRangeDataByLocateAndIspService");
+		parent::__construct("Cdn", "2014-11-11", "SetHttpErrorPageConfig");
 		$this->setMethod("POST");
 	}
 
-	private  $ispNames;
-
 	private  $securityToken;
 
-	private  $domainNames;
+	private  $domainName;
 
-	private  $locationNames;
-
-	private  $endTime;
-
-	private  $startTime;
+	private  $pageUrl;
 
 	private  $ownerId;
 
-	public function getIspNames() {
-		return $this->ispNames;
-	}
-
-	public function setIspNames($ispNames) {
-		$this->ispNames = $ispNames;
-		$this->queryParameters["IspNames"]=$ispNames;
-	}
+	private  $errorCode;
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -59,40 +46,22 @@ class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getDomainNames() {
-		return $this->domainNames;
+	public function getDomainName() {
+		return $this->domainName;
 	}
 
-	public function setDomainNames($domainNames) {
-		$this->domainNames = $domainNames;
-		$this->queryParameters["DomainNames"]=$domainNames;
+	public function setDomainName($domainName) {
+		$this->domainName = $domainName;
+		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getLocationNames() {
-		return $this->locationNames;
+	public function getPageUrl() {
+		return $this->pageUrl;
 	}
 
-	public function setLocationNames($locationNames) {
-		$this->locationNames = $locationNames;
-		$this->queryParameters["LocationNames"]=$locationNames;
-	}
-
-	public function getEndTime() {
-		return $this->endTime;
-	}
-
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
+	public function setPageUrl($pageUrl) {
+		$this->pageUrl = $pageUrl;
+		$this->queryParameters["PageUrl"]=$pageUrl;
 	}
 
 	public function getOwnerId() {
@@ -102,6 +71,15 @@ class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getErrorCode() {
+		return $this->errorCode;
+	}
+
+	public function setErrorCode($errorCode) {
+		$this->errorCode = $errorCode;
+		$this->queryParameters["ErrorCode"]=$errorCode;
 	}
 	
 }

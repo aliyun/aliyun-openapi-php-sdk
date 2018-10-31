@@ -17,38 +17,29 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Cdn\Request\V20180510;
+namespace Cdn\Request\V20141111;
 
-class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
+class DescribeDomainAverageResponseTimeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cdn", "2018-05-10", "DescribeRangeDataByLocateAndIspService");
+		parent::__construct("Cdn", "2014-11-11", "DescribeDomainAverageResponseTime");
 		$this->setMethod("POST");
 	}
 
-	private  $ispNames;
-
 	private  $securityToken;
 
-	private  $domainNames;
+	private  $timeMerge;
 
-	private  $locationNames;
+	private  $domainName;
 
 	private  $endTime;
+
+	private  $interval;
 
 	private  $startTime;
 
 	private  $ownerId;
-
-	public function getIspNames() {
-		return $this->ispNames;
-	}
-
-	public function setIspNames($ispNames) {
-		$this->ispNames = $ispNames;
-		$this->queryParameters["IspNames"]=$ispNames;
-	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -59,22 +50,22 @@ class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getDomainNames() {
-		return $this->domainNames;
+	public function getTimeMerge() {
+		return $this->timeMerge;
 	}
 
-	public function setDomainNames($domainNames) {
-		$this->domainNames = $domainNames;
-		$this->queryParameters["DomainNames"]=$domainNames;
+	public function setTimeMerge($timeMerge) {
+		$this->timeMerge = $timeMerge;
+		$this->queryParameters["TimeMerge"]=$timeMerge;
 	}
 
-	public function getLocationNames() {
-		return $this->locationNames;
+	public function getDomainName() {
+		return $this->domainName;
 	}
 
-	public function setLocationNames($locationNames) {
-		$this->locationNames = $locationNames;
-		$this->queryParameters["LocationNames"]=$locationNames;
+	public function setDomainName($domainName) {
+		$this->domainName = $domainName;
+		$this->queryParameters["DomainName"]=$domainName;
 	}
 
 	public function getEndTime() {
@@ -84,6 +75,15 @@ class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
 	public function setEndTime($endTime) {
 		$this->endTime = $endTime;
 		$this->queryParameters["EndTime"]=$endTime;
+	}
+
+	public function getInterval() {
+		return $this->interval;
+	}
+
+	public function setInterval($interval) {
+		$this->interval = $interval;
+		$this->queryParameters["Interval"]=$interval;
 	}
 
 	public function getStartTime() {

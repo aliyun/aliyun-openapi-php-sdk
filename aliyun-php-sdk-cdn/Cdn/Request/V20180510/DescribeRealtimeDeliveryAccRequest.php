@@ -19,71 +19,33 @@
  */
 namespace Cdn\Request\V20180510;
 
-class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
+class DescribeRealtimeDeliveryAccRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cdn", "2018-05-10", "DescribeRangeDataByLocateAndIspService");
+		parent::__construct("Cdn", "2018-05-10", "DescribeRealtimeDeliveryAcc");
 		$this->setMethod("POST");
 	}
 
-	private  $ispNames;
-
-	private  $securityToken;
-
-	private  $domainNames;
-
-	private  $locationNames;
-
-	private  $endTime;
+	private  $project;
 
 	private  $startTime;
 
+	private  $endTime;
+
 	private  $ownerId;
 
-	public function getIspNames() {
-		return $this->ispNames;
+	private  $interval;
+
+	private  $logStore;
+
+	public function getProject() {
+		return $this->project;
 	}
 
-	public function setIspNames($ispNames) {
-		$this->ispNames = $ispNames;
-		$this->queryParameters["IspNames"]=$ispNames;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
-
-	public function getDomainNames() {
-		return $this->domainNames;
-	}
-
-	public function setDomainNames($domainNames) {
-		$this->domainNames = $domainNames;
-		$this->queryParameters["DomainNames"]=$domainNames;
-	}
-
-	public function getLocationNames() {
-		return $this->locationNames;
-	}
-
-	public function setLocationNames($locationNames) {
-		$this->locationNames = $locationNames;
-		$this->queryParameters["LocationNames"]=$locationNames;
-	}
-
-	public function getEndTime() {
-		return $this->endTime;
-	}
-
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
+	public function setProject($project) {
+		$this->project = $project;
+		$this->queryParameters["Project"]=$project;
 	}
 
 	public function getStartTime() {
@@ -95,6 +57,15 @@ class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
 		$this->queryParameters["StartTime"]=$startTime;
 	}
 
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -102,6 +73,24 @@ class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getInterval() {
+		return $this->interval;
+	}
+
+	public function setInterval($interval) {
+		$this->interval = $interval;
+		$this->queryParameters["Interval"]=$interval;
+	}
+
+	public function getLogStore() {
+		return $this->logStore;
+	}
+
+	public function setLogStore($logStore) {
+		$this->logStore = $logStore;
+		$this->queryParameters["LogStore"]=$logStore;
 	}
 	
 }

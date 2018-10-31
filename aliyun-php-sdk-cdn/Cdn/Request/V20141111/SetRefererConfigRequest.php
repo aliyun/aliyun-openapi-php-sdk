@@ -17,37 +17,37 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Cdn\Request\V20180510;
+namespace Cdn\Request\V20141111;
 
-class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
+class SetRefererConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cdn", "2018-05-10", "DescribeRangeDataByLocateAndIspService");
+		parent::__construct("Cdn", "2014-11-11", "SetRefererConfig");
 		$this->setMethod("POST");
 	}
 
-	private  $ispNames;
+	private  $referList;
 
 	private  $securityToken;
 
-	private  $domainNames;
+	private  $domainName;
 
-	private  $locationNames;
+	private  $referType;
 
-	private  $endTime;
-
-	private  $startTime;
+	private  $disableAst;
 
 	private  $ownerId;
 
-	public function getIspNames() {
-		return $this->ispNames;
+	private  $allowEmpty;
+
+	public function getReferList() {
+		return $this->referList;
 	}
 
-	public function setIspNames($ispNames) {
-		$this->ispNames = $ispNames;
-		$this->queryParameters["IspNames"]=$ispNames;
+	public function setReferList($referList) {
+		$this->referList = $referList;
+		$this->queryParameters["ReferList"]=$referList;
 	}
 
 	public function getSecurityToken() {
@@ -59,40 +59,31 @@ class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getDomainNames() {
-		return $this->domainNames;
+	public function getDomainName() {
+		return $this->domainName;
 	}
 
-	public function setDomainNames($domainNames) {
-		$this->domainNames = $domainNames;
-		$this->queryParameters["DomainNames"]=$domainNames;
+	public function setDomainName($domainName) {
+		$this->domainName = $domainName;
+		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getLocationNames() {
-		return $this->locationNames;
+	public function getReferType() {
+		return $this->referType;
 	}
 
-	public function setLocationNames($locationNames) {
-		$this->locationNames = $locationNames;
-		$this->queryParameters["LocationNames"]=$locationNames;
+	public function setReferType($referType) {
+		$this->referType = $referType;
+		$this->queryParameters["ReferType"]=$referType;
 	}
 
-	public function getEndTime() {
-		return $this->endTime;
+	public function getDisableAst() {
+		return $this->disableAst;
 	}
 
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
+	public function setDisableAst($disableAst) {
+		$this->disableAst = $disableAst;
+		$this->queryParameters["DisableAst"]=$disableAst;
 	}
 
 	public function getOwnerId() {
@@ -102,6 +93,15 @@ class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getAllowEmpty() {
+		return $this->allowEmpty;
+	}
+
+	public function setAllowEmpty($allowEmpty) {
+		$this->allowEmpty = $allowEmpty;
+		$this->queryParameters["AllowEmpty"]=$allowEmpty;
 	}
 	
 }

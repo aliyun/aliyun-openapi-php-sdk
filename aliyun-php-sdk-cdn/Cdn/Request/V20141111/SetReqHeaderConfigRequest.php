@@ -17,52 +17,44 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Cdn\Request\V20180510;
+namespace Cdn\Request\V20141111;
 
-class DescribeDomainSlowRatioRequest extends \RpcAcsRequest
+class SetReqHeaderConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cdn", "2018-05-10", "DescribeDomainSlowRatio");
+		parent::__construct("Cdn", "2014-11-11", "SetReqHeaderConfig");
+		$this->setMethod("POST");
 	}
 
-	private  $startTime;
+	private  $securityToken;
 
-	private  $pageNumber;
-
-	private  $pageSize;
+	private  $configId;
 
 	private  $domainName;
 
-	private  $endTime;
-
 	private  $ownerId;
 
-	public function getStartTime() {
-		return $this->startTime;
+	private  $value;
+
+	private  $key;
+
+	public function getSecurityToken() {
+		return $this->securityToken;
 	}
 
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
+	public function setSecurityToken($securityToken) {
+		$this->securityToken = $securityToken;
+		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getPageNumber() {
-		return $this->pageNumber;
+	public function getConfigId() {
+		return $this->configId;
 	}
 
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setConfigId($configId) {
+		$this->configId = $configId;
+		$this->queryParameters["ConfigId"]=$configId;
 	}
 
 	public function getDomainName() {
@@ -74,15 +66,6 @@ class DescribeDomainSlowRatioRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getEndTime() {
-		return $this->endTime;
-	}
-
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
-
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -90,6 +73,24 @@ class DescribeDomainSlowRatioRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getValue() {
+		return $this->value;
+	}
+
+	public function setValue($value) {
+		$this->value = $value;
+		$this->queryParameters["Value"]=$value;
+	}
+
+	public function getKey() {
+		return $this->key;
+	}
+
+	public function setKey($key) {
+		$this->key = $key;
+		$this->queryParameters["Key"]=$key;
 	}
 	
 }

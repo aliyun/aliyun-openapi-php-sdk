@@ -17,38 +17,25 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Cdn\Request\V20180510;
+namespace Cdn\Request\V20141111;
 
-class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
+class DescribeDomainTopReferVisitRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cdn", "2018-05-10", "DescribeRangeDataByLocateAndIspService");
+		parent::__construct("Cdn", "2014-11-11", "DescribeDomainTopReferVisit");
 		$this->setMethod("POST");
 	}
 
-	private  $ispNames;
-
 	private  $securityToken;
 
-	private  $domainNames;
+	private  $domainName;
 
-	private  $locationNames;
-
-	private  $endTime;
+	private  $sortBy;
 
 	private  $startTime;
 
 	private  $ownerId;
-
-	public function getIspNames() {
-		return $this->ispNames;
-	}
-
-	public function setIspNames($ispNames) {
-		$this->ispNames = $ispNames;
-		$this->queryParameters["IspNames"]=$ispNames;
-	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -59,31 +46,22 @@ class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getDomainNames() {
-		return $this->domainNames;
+	public function getDomainName() {
+		return $this->domainName;
 	}
 
-	public function setDomainNames($domainNames) {
-		$this->domainNames = $domainNames;
-		$this->queryParameters["DomainNames"]=$domainNames;
+	public function setDomainName($domainName) {
+		$this->domainName = $domainName;
+		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getLocationNames() {
-		return $this->locationNames;
+	public function getSortBy() {
+		return $this->sortBy;
 	}
 
-	public function setLocationNames($locationNames) {
-		$this->locationNames = $locationNames;
-		$this->queryParameters["LocationNames"]=$locationNames;
-	}
-
-	public function getEndTime() {
-		return $this->endTime;
-	}
-
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
+	public function setSortBy($sortBy) {
+		$this->sortBy = $sortBy;
+		$this->queryParameters["SortBy"]=$sortBy;
 	}
 
 	public function getStartTime() {

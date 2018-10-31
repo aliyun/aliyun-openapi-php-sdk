@@ -17,38 +17,25 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Cdn\Request\V20180510;
+namespace Cdn\Request\V20141111;
 
-class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
+class DescribeTopDomainsByFlowRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cdn", "2018-05-10", "DescribeRangeDataByLocateAndIspService");
+		parent::__construct("Cdn", "2014-11-11", "DescribeTopDomainsByFlow");
 		$this->setMethod("POST");
 	}
 
-	private  $ispNames;
-
 	private  $securityToken;
 
-	private  $domainNames;
-
-	private  $locationNames;
+	private  $limit;
 
 	private  $endTime;
 
 	private  $startTime;
 
 	private  $ownerId;
-
-	public function getIspNames() {
-		return $this->ispNames;
-	}
-
-	public function setIspNames($ispNames) {
-		$this->ispNames = $ispNames;
-		$this->queryParameters["IspNames"]=$ispNames;
-	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;
@@ -59,22 +46,13 @@ class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getDomainNames() {
-		return $this->domainNames;
+	public function getLimit() {
+		return $this->limit;
 	}
 
-	public function setDomainNames($domainNames) {
-		$this->domainNames = $domainNames;
-		$this->queryParameters["DomainNames"]=$domainNames;
-	}
-
-	public function getLocationNames() {
-		return $this->locationNames;
-	}
-
-	public function setLocationNames($locationNames) {
-		$this->locationNames = $locationNames;
-		$this->queryParameters["LocationNames"]=$locationNames;
+	public function setLimit($limit) {
+		$this->limit = $limit;
+		$this->queryParameters["Limit"]=$limit;
 	}
 
 	public function getEndTime() {

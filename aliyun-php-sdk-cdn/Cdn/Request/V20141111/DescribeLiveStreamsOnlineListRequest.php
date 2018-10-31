@@ -17,37 +17,46 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Cdn\Request\V20180510;
+namespace Cdn\Request\V20141111;
 
-class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
+class DescribeLiveStreamsOnlineListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cdn", "2018-05-10", "DescribeRangeDataByLocateAndIspService");
+		parent::__construct("Cdn", "2014-11-11", "DescribeLiveStreamsOnlineList");
 		$this->setMethod("POST");
 	}
 
-	private  $ispNames;
+	private  $streamType;
+
+	private  $appName;
 
 	private  $securityToken;
 
-	private  $domainNames;
+	private  $domainName;
 
-	private  $locationNames;
-
-	private  $endTime;
-
-	private  $startTime;
+	private  $pageSize;
 
 	private  $ownerId;
 
-	public function getIspNames() {
-		return $this->ispNames;
+	private  $pageNum;
+
+	public function getStreamType() {
+		return $this->streamType;
 	}
 
-	public function setIspNames($ispNames) {
-		$this->ispNames = $ispNames;
-		$this->queryParameters["IspNames"]=$ispNames;
+	public function setStreamType($streamType) {
+		$this->streamType = $streamType;
+		$this->queryParameters["StreamType"]=$streamType;
+	}
+
+	public function getAppName() {
+		return $this->appName;
+	}
+
+	public function setAppName($appName) {
+		$this->appName = $appName;
+		$this->queryParameters["AppName"]=$appName;
 	}
 
 	public function getSecurityToken() {
@@ -59,40 +68,22 @@ class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getDomainNames() {
-		return $this->domainNames;
+	public function getDomainName() {
+		return $this->domainName;
 	}
 
-	public function setDomainNames($domainNames) {
-		$this->domainNames = $domainNames;
-		$this->queryParameters["DomainNames"]=$domainNames;
+	public function setDomainName($domainName) {
+		$this->domainName = $domainName;
+		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getLocationNames() {
-		return $this->locationNames;
+	public function getPageSize() {
+		return $this->pageSize;
 	}
 
-	public function setLocationNames($locationNames) {
-		$this->locationNames = $locationNames;
-		$this->queryParameters["LocationNames"]=$locationNames;
-	}
-
-	public function getEndTime() {
-		return $this->endTime;
-	}
-
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
 	}
 
 	public function getOwnerId() {
@@ -102,6 +93,15 @@ class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getPageNum() {
+		return $this->pageNum;
+	}
+
+	public function setPageNum($pageNum) {
+		$this->pageNum = $pageNum;
+		$this->queryParameters["PageNum"]=$pageNum;
 	}
 	
 }

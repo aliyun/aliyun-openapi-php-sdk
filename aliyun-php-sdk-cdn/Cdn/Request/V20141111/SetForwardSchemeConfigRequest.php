@@ -17,37 +17,44 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Cdn\Request\V20180510;
+namespace Cdn\Request\V20141111;
 
-class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
+class SetForwardSchemeConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cdn", "2018-05-10", "DescribeRangeDataByLocateAndIspService");
+		parent::__construct("Cdn", "2014-11-11", "SetForwardSchemeConfig");
 		$this->setMethod("POST");
 	}
 
-	private  $ispNames;
+	private  $schemeOrigin;
+
+	private  $schemeOriginPort;
 
 	private  $securityToken;
 
-	private  $domainNames;
+	private  $enable;
 
-	private  $locationNames;
-
-	private  $endTime;
-
-	private  $startTime;
+	private  $domainName;
 
 	private  $ownerId;
 
-	public function getIspNames() {
-		return $this->ispNames;
+	public function getSchemeOrigin() {
+		return $this->schemeOrigin;
 	}
 
-	public function setIspNames($ispNames) {
-		$this->ispNames = $ispNames;
-		$this->queryParameters["IspNames"]=$ispNames;
+	public function setSchemeOrigin($schemeOrigin) {
+		$this->schemeOrigin = $schemeOrigin;
+		$this->queryParameters["SchemeOrigin"]=$schemeOrigin;
+	}
+
+	public function getSchemeOriginPort() {
+		return $this->schemeOriginPort;
+	}
+
+	public function setSchemeOriginPort($schemeOriginPort) {
+		$this->schemeOriginPort = $schemeOriginPort;
+		$this->queryParameters["SchemeOriginPort"]=$schemeOriginPort;
 	}
 
 	public function getSecurityToken() {
@@ -59,40 +66,22 @@ class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getDomainNames() {
-		return $this->domainNames;
+	public function getEnable() {
+		return $this->enable;
 	}
 
-	public function setDomainNames($domainNames) {
-		$this->domainNames = $domainNames;
-		$this->queryParameters["DomainNames"]=$domainNames;
+	public function setEnable($enable) {
+		$this->enable = $enable;
+		$this->queryParameters["Enable"]=$enable;
 	}
 
-	public function getLocationNames() {
-		return $this->locationNames;
+	public function getDomainName() {
+		return $this->domainName;
 	}
 
-	public function setLocationNames($locationNames) {
-		$this->locationNames = $locationNames;
-		$this->queryParameters["LocationNames"]=$locationNames;
-	}
-
-	public function getEndTime() {
-		return $this->endTime;
-	}
-
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
+	public function setDomainName($domainName) {
+		$this->domainName = $domainName;
+		$this->queryParameters["DomainName"]=$domainName;
 	}
 
 	public function getOwnerId() {

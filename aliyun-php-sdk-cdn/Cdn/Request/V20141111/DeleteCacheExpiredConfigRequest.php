@@ -17,37 +17,33 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Cdn\Request\V20180510;
+namespace Cdn\Request\V20141111;
 
-class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
+class DeleteCacheExpiredConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cdn", "2018-05-10", "DescribeRangeDataByLocateAndIspService");
+		parent::__construct("Cdn", "2014-11-11", "DeleteCacheExpiredConfig");
 		$this->setMethod("POST");
 	}
 
-	private  $ispNames;
+	private  $cacheType;
 
 	private  $securityToken;
 
-	private  $domainNames;
+	private  $configID;
 
-	private  $locationNames;
-
-	private  $endTime;
-
-	private  $startTime;
+	private  $domainName;
 
 	private  $ownerId;
 
-	public function getIspNames() {
-		return $this->ispNames;
+	public function getCacheType() {
+		return $this->cacheType;
 	}
 
-	public function setIspNames($ispNames) {
-		$this->ispNames = $ispNames;
-		$this->queryParameters["IspNames"]=$ispNames;
+	public function setCacheType($cacheType) {
+		$this->cacheType = $cacheType;
+		$this->queryParameters["CacheType"]=$cacheType;
 	}
 
 	public function getSecurityToken() {
@@ -59,40 +55,22 @@ class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getDomainNames() {
-		return $this->domainNames;
+	public function getConfigID() {
+		return $this->configID;
 	}
 
-	public function setDomainNames($domainNames) {
-		$this->domainNames = $domainNames;
-		$this->queryParameters["DomainNames"]=$domainNames;
+	public function setConfigID($configID) {
+		$this->configID = $configID;
+		$this->queryParameters["ConfigID"]=$configID;
 	}
 
-	public function getLocationNames() {
-		return $this->locationNames;
+	public function getDomainName() {
+		return $this->domainName;
 	}
 
-	public function setLocationNames($locationNames) {
-		$this->locationNames = $locationNames;
-		$this->queryParameters["LocationNames"]=$locationNames;
-	}
-
-	public function getEndTime() {
-		return $this->endTime;
-	}
-
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
+	public function setDomainName($domainName) {
+		$this->domainName = $domainName;
+		$this->queryParameters["DomainName"]=$domainName;
 	}
 
 	public function getOwnerId() {

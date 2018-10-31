@@ -17,13 +17,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Cdn\Request\V20180510;
+namespace Cdn\Request\V20141111;
 
 class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cdn", "2018-05-10", "DescribeRangeDataByLocateAndIspService");
+		parent::__construct("Cdn", "2014-11-11", "DescribeRangeDataByLocateAndIspService");
 		$this->setMethod("POST");
 	}
 
@@ -86,13 +86,13 @@ class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
 		$this->queryParameters["EndTime"]=$endTime;
 	}
 
-	public function getStartTime() {
+	public function getstartTime() {
 		return $this->startTime;
 	}
 
-	public function setStartTime($startTime) {
+	public function setstartTime($startTime) {
 		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
+		$this->queryParameters["startTime"]=$startTime;
 	}
 
 	public function getOwnerId() {

@@ -17,37 +17,31 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Cdn\Request\V20180510;
+namespace Cdn\Request\V20141111;
 
-class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
+class PushObjectCacheRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cdn", "2018-05-10", "DescribeRangeDataByLocateAndIspService");
+		parent::__construct("Cdn", "2014-11-11", "PushObjectCache");
 		$this->setMethod("POST");
 	}
 
-	private  $ispNames;
+	private  $area;
 
 	private  $securityToken;
 
-	private  $domainNames;
-
-	private  $locationNames;
-
-	private  $endTime;
-
-	private  $startTime;
+	private  $objectPath;
 
 	private  $ownerId;
 
-	public function getIspNames() {
-		return $this->ispNames;
+	public function getArea() {
+		return $this->area;
 	}
 
-	public function setIspNames($ispNames) {
-		$this->ispNames = $ispNames;
-		$this->queryParameters["IspNames"]=$ispNames;
+	public function setArea($area) {
+		$this->area = $area;
+		$this->queryParameters["Area"]=$area;
 	}
 
 	public function getSecurityToken() {
@@ -59,40 +53,13 @@ class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getDomainNames() {
-		return $this->domainNames;
+	public function getObjectPath() {
+		return $this->objectPath;
 	}
 
-	public function setDomainNames($domainNames) {
-		$this->domainNames = $domainNames;
-		$this->queryParameters["DomainNames"]=$domainNames;
-	}
-
-	public function getLocationNames() {
-		return $this->locationNames;
-	}
-
-	public function setLocationNames($locationNames) {
-		$this->locationNames = $locationNames;
-		$this->queryParameters["LocationNames"]=$locationNames;
-	}
-
-	public function getEndTime() {
-		return $this->endTime;
-	}
-
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
+	public function setObjectPath($objectPath) {
+		$this->objectPath = $objectPath;
+		$this->queryParameters["ObjectPath"]=$objectPath;
 	}
 
 	public function getOwnerId() {

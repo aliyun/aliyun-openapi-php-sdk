@@ -17,23 +17,25 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Cdn\Request\V20180510;
+namespace Cdn\Request\V20141111;
 
-class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
+class CreateLiveStreamRecordIndexFilesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cdn", "2018-05-10", "DescribeRangeDataByLocateAndIspService");
+		parent::__construct("Cdn", "2014-11-11", "CreateLiveStreamRecordIndexFiles");
 		$this->setMethod("POST");
 	}
 
-	private  $ispNames;
+	private  $ossBucket;
+
+	private  $appName;
 
 	private  $securityToken;
 
-	private  $domainNames;
+	private  $domainName;
 
-	private  $locationNames;
+	private  $ossEndpoint;
 
 	private  $endTime;
 
@@ -41,13 +43,26 @@ class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
 
 	private  $ownerId;
 
-	public function getIspNames() {
-		return $this->ispNames;
+	private  $streamName;
+
+	private  $ossObject;
+
+	public function getOssBucket() {
+		return $this->ossBucket;
 	}
 
-	public function setIspNames($ispNames) {
-		$this->ispNames = $ispNames;
-		$this->queryParameters["IspNames"]=$ispNames;
+	public function setOssBucket($ossBucket) {
+		$this->ossBucket = $ossBucket;
+		$this->queryParameters["OssBucket"]=$ossBucket;
+	}
+
+	public function getAppName() {
+		return $this->appName;
+	}
+
+	public function setAppName($appName) {
+		$this->appName = $appName;
+		$this->queryParameters["AppName"]=$appName;
 	}
 
 	public function getSecurityToken() {
@@ -59,22 +74,22 @@ class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getDomainNames() {
-		return $this->domainNames;
+	public function getDomainName() {
+		return $this->domainName;
 	}
 
-	public function setDomainNames($domainNames) {
-		$this->domainNames = $domainNames;
-		$this->queryParameters["DomainNames"]=$domainNames;
+	public function setDomainName($domainName) {
+		$this->domainName = $domainName;
+		$this->queryParameters["DomainName"]=$domainName;
 	}
 
-	public function getLocationNames() {
-		return $this->locationNames;
+	public function getOssEndpoint() {
+		return $this->ossEndpoint;
 	}
 
-	public function setLocationNames($locationNames) {
-		$this->locationNames = $locationNames;
-		$this->queryParameters["LocationNames"]=$locationNames;
+	public function setOssEndpoint($ossEndpoint) {
+		$this->ossEndpoint = $ossEndpoint;
+		$this->queryParameters["OssEndpoint"]=$ossEndpoint;
 	}
 
 	public function getEndTime() {
@@ -102,6 +117,24 @@ class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getStreamName() {
+		return $this->streamName;
+	}
+
+	public function setStreamName($streamName) {
+		$this->streamName = $streamName;
+		$this->queryParameters["StreamName"]=$streamName;
+	}
+
+	public function getOssObject() {
+		return $this->ossObject;
+	}
+
+	public function setOssObject($ossObject) {
+		$this->ossObject = $ossObject;
+		$this->queryParameters["OssObject"]=$ossObject;
 	}
 	
 }
