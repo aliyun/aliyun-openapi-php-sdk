@@ -32,6 +32,10 @@ class SyncFacePicturesRequest extends \RpcAcsRequest
 
 	private  $groupId;
 
+	private  $deviceName;
+
+	private  $productKey;
+
 	public function getIotId() {
 		return $this->iotId;
 	}
@@ -46,6 +50,22 @@ class SyncFacePicturesRequest extends \RpcAcsRequest
 
 	public function setGroupId($groupId) {
 		$this->groupId = $groupId;
+		}
+
+	public function getDeviceName() {
+		return $this->deviceName;
+	}
+
+	public function setDeviceName($deviceName) {
+		$this->deviceName = $deviceName;
+		}
+
+	public function getProductKey() {
+		return $this->productKey;
+	}
+
+	public function setProductKey($productKey) {
+		$this->productKey = $productKey;
 		}
 	
 }

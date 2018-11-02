@@ -36,6 +36,10 @@ class QueryAuthenticationRequest extends \RpcAcsRequest
 
 	private  $currentPage;
 
+	private  $deviceName;
+
+	private  $productKey;
+
 	public function getLicenseType() {
 		return $this->licenseType;
 	}
@@ -66,6 +70,22 @@ class QueryAuthenticationRequest extends \RpcAcsRequest
 
 	public function setCurrentPage($currentPage) {
 		$this->currentPage = $currentPage;
+		}
+
+	public function getDeviceName() {
+		return $this->deviceName;
+	}
+
+	public function setDeviceName($deviceName) {
+		$this->deviceName = $deviceName;
+		}
+
+	public function getProductKey() {
+		return $this->productKey;
+	}
+
+	public function setProductKey($productKey) {
+		$this->productKey = $productKey;
 		}
 	
 }

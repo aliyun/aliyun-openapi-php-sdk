@@ -30,12 +30,32 @@ class QuerySyncPicScheduleRequest extends \RpcAcsRequest
 
 	private  $iotId;
 
+	private  $deviceName;
+
+	private  $productKey;
+
 	public function getIotId() {
 		return $this->iotId;
 	}
 
 	public function setIotId($iotId) {
 		$this->iotId = $iotId;
+		}
+
+	public function getDeviceName() {
+		return $this->deviceName;
+	}
+
+	public function setDeviceName($deviceName) {
+		$this->deviceName = $deviceName;
+		}
+
+	public function getProductKey() {
+		return $this->productKey;
+	}
+
+	public function setProductKey($productKey) {
+		$this->productKey = $productKey;
 		}
 	
 }
