@@ -17,16 +17,16 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-class ShaHmac256Signer implements ISigner
+class BearTokenSigner implements ISigner
 {
     public function signString($source, $accessSecret)
     {
-        return    base64_encode(hash_hmac('sha256', $source, $accessSecret, true));
+        return null;
     }
-    
+
     public function getSignatureMethod()
     {
-        return "HMAC-SHA256";
+        return null;
     }
 
     public function getSignatureVersion()
@@ -36,6 +36,6 @@ class ShaHmac256Signer implements ISigner
 
     public function getSignatureType()
     {
-        return null;
+        return "BEARERTOKEN";
     }
 }
