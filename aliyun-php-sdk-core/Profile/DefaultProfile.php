@@ -70,7 +70,7 @@ class DefaultProfile implements IClientProfile
         self::$profile = new DefaultProfile($regionId, $credential, AUTH_TYPE_BEARER_TOKEN, new BearTokenSigner());
         return self::$profile;
     }
-	
+
 	public function getSigner()
 	{
 		if(null == self::$isigner)

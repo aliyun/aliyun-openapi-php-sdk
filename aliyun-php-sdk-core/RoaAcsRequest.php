@@ -36,6 +36,7 @@ abstract class RoaAcsRequest extends AcsRequest
     private function initialize()
     {
         $this->setMethod("RAW");
+        $this->setAcceptFormat("JSON");
     }
     
     public function composeUrl($iSigner, $credential, $domain)
@@ -71,6 +72,27 @@ abstract class RoaAcsRequest extends AcsRequest
                 .$iSigner->signString($signString, $credential->getAccessSecret());
         $requestUrl = $this->getProtocol()."://".$domain.$queryString;
         return $requestUrl;
+    }
+
+    private function concatQueryString() {
+        $sortMap  = $this->queryParameters;
+        if(null == $sortMap || count($sortMap) == 0){
+            return "";
+        }
+        $queryString ="";
+        ksort($sortMap);
+        foreach ($sortMap as $sortMapKey => $sortMapValue) {
+            $queryString = $queryString.$sortMapKey;
+            if (isset($sortMapValue)) {
+                $queryString = $queryString."=".urlencode($sortMapValue);
+            }
+            $queryString .= self::$querySeprator;
+        }
+
+        if (count($sortMap) > 0) {
+            $queryString = substr($queryString, 0, strlen($queryString)-1);
+        }
+        return '?'.$queryString;
     }
     
     private function prepareHeader($iSigner, $credential)
