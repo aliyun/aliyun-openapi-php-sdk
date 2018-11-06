@@ -18,14 +18,14 @@ echo "\n";
 $client = new DefaultAcsClient($clientProfile);
 # 创建 API 请求并设置参数
 $request = new TestRpcApiRequest();
-$request->setQueryParam("test");
+$request->setQueryParam("conan");
 # 发起请求并处理返回
 $response = $client->getAcsResponse($request);
 print_r($response);
 
 # 创建 API 请求并设置参数
 $request = new TestRoaApiRequest();
-$request->setQueryParam("test");
+$request->setQueryParam("conan");
 # 发起请求并处理返回
 $response = $client->getAcsResponse($request);
 print_r($response);
@@ -46,19 +46,20 @@ $roleArnClient = new DefaultAcsClient($ramRoleArnProfile);
 
 # 创建 API 请求并设置参数
 $request = new TestRpcApiRequest();
-$request->setQueryParam("test");
+$request->setQueryParam("conan");
 # 发起请求并处理返回
 $response = $roleArnClient->getAcsResponse($request);
 print_r($response);
 
 # 创建 API 请求并设置参数
 $request = new TestRoaApiRequest();
-$request->setQueryParam("test");
+$request->setQueryParam("conan");
 # 发起请求并处理返回
 $response = $roleArnClient->getAcsResponse($request);
 print_r($response);
 
-
+//EcsRole
+//mock接口打开之前不要跑
 echo "\n";
 print_r("3.开始测试EcsArn: ");
 echo "\n";
@@ -71,38 +72,14 @@ $ecsRamRoleClient = new DefaultAcsClient($ecsRamRoleProfile);
 
 # 创建 API 请求并设置参数
 $request = new TestRpcApiRequest();
-$request->setQueryParam("test");
+$request->setQueryParam("conan");
 # 发起请求并处理返回
 $response = $ecsRamRoleClient->getAcsResponse($request);
 print_r($response);
 
 # 创建 API 请求并设置参数
 $request = new TestRoaApiRequest();
-$request->setQueryParam("test");
+$request->setQueryParam("conan");
 # 发起请求并处理返回
 $response = $ecsRamRoleClient->getAcsResponse($request);
-print_r($response);
-
-echo "\n";
-print_r("4.开始测试BearerToken: ");
-echo "\n";
-$bearerTokenProfile = DefaultProfile::getBearerTokenProfile(
-    "cn-hangzhou",
-    "<Your Bearer Token>"
-);
-
-$bearerTokenClient = new DefaultAcsClient($bearerTokenProfile);
-
-# 创建 API 请求并设置参数
-$request = new TestRpcApiRequest();
-$request->setQueryParam("test");
-# 发起请求并处理返回
-$response = $bearerTokenClient->getAcsResponse($request);
-print_r($response);
-
-# 创建 API 请求并设置参数
-$request = new TestRoaApiRequest();
-$request->setQueryParam("test");
-# 发起请求并处理返回
-$response = $bearerTokenClient->getAcsResponse($request);
 print_r($response);

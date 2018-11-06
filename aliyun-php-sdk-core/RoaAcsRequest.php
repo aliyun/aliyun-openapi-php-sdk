@@ -41,7 +41,7 @@ abstract class RoaAcsRequest extends AcsRequest
     
     public function composeUrl($iSigner, $credential, $domain)
     {
-        $this->prepareHeader($iSigner, $credential);
+        $this->prepareHeader($iSigner);
 
         $signString = $this->getMethod().self::$headerSeparator;
         if (isset($this->headers["Accept"])) {
@@ -70,7 +70,7 @@ abstract class RoaAcsRequest extends AcsRequest
         $signString .= $queryString;
         $this->headers["Authorization"] = "acs ".$credential->getAccessKeyId().":"
                 .$iSigner->signString($signString, $credential->getAccessSecret());
-        $requestUrl = $this->getProtocol()."://".$domain.$queryString;
+        $requestUrl = $this->getProtocol()."://".$domain.$uri.$this->concatQueryString();
         return $requestUrl;
     }
 
@@ -95,7 +95,7 @@ abstract class RoaAcsRequest extends AcsRequest
         return '?'.$queryString;
     }
     
-    private function prepareHeader($iSigner, $credential)
+    private function prepareHeader($iSigner)
     {
         $this->headers["Date"] = gmdate($this->dateTimeFormat);
         if (null == $this->acceptFormat) {
@@ -104,21 +104,13 @@ abstract class RoaAcsRequest extends AcsRequest
         $this->headers["Accept"] = $this->formatToAccept($this->getAcceptFormat());
         $this->headers["x-acs-signature-method"] = $iSigner->getSignatureMethod();
         $this->headers["x-acs-signature-version"] = $iSigner->getSignatureVersion();
-        if ($iSigner->getSignatureType() != null) {
-            $this->headers["x-acs-signature-type"] = $iSigner->getSignatureType();
-        }
         $this->headers["x-acs-region-id"] = $this->regionId;
-        $content = $this->getDomainParameter();
+        $content = $this->getContent();
         if ($content != null) {
-            $this->headers["Content-MD5"] = base64_encode(md5(json_encode($content), true));
+            $this->headers["Content-MD5"] = base64_encode(md5($content, true));
         }
-        $this->headers["Content-Type"] = "application/octet-stream;charset=utf-8";
-        if ($credential->getSecurityToken() != null) {
-            $this->headers["x-acs-security-token"] = $credential->getSecurityToken();
-        }
-        if ($credential instanceof BearerTokenCredential) {
-            $this->headers["x-acs-bearer-token"] = $credential->getBearerToken();
-        }
+
+        $this->headers["Content-Type"] = "application/json;charset=utf-8";
     }
     
     private function replaceOccupiedParameters()
@@ -169,7 +161,7 @@ abstract class RoaAcsRequest extends AcsRequest
             $sortMap[$uriParts[1]] = null;
         }
         $queryString = $uriParts[0];
-        if (count($uriParts)) {
+        if (count($sortMap) > 0) {
             $queryString = $queryString."?";
         }
         ksort($sortMap);
@@ -180,7 +172,7 @@ abstract class RoaAcsRequest extends AcsRequest
             }
             $queryString = $queryString.self::$querySeprator;
         }
-        if (0 < count($sortMap)) {
+        if (count($sortMap) > 0) {
             $queryString = substr($queryString, 0, strlen($queryString)-1);
         }
         return $queryString;
