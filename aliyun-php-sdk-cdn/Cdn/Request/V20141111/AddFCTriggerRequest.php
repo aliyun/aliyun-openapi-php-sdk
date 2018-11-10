@@ -41,6 +41,8 @@ class AddFCTriggerRequest extends \RpcAcsRequest
 
 	private  $eventMetaName;
 
+	private  $functionARN;
+
 	public function getNotes() {
 		return $this->notes;
 	}
@@ -97,6 +99,14 @@ class AddFCTriggerRequest extends \RpcAcsRequest
 
 	public function setEventMetaName($eventMetaName) {
 		$this->eventMetaName = $eventMetaName;
+		}
+
+	public function getFunctionARN() {
+		return $this->functionARN;
+	}
+
+	public function setFunctionARN($functionARN) {
+		$this->functionARN = $functionARN;
 		}
 	
 }

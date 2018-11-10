@@ -37,6 +37,8 @@ class UpdateFCTriggerRequest extends \RpcAcsRequest
 
 	private  $roleARN;
 
+	private  $functionARN;
+
 	public function getNotes() {
 		return $this->notes;
 	}
@@ -77,6 +79,14 @@ class UpdateFCTriggerRequest extends \RpcAcsRequest
 
 	public function setRoleARN($roleARN) {
 		$this->roleARN = $roleARN;
+		}
+
+	public function getFunctionARN() {
+		return $this->functionARN;
+	}
+
+	public function setFunctionARN($functionARN) {
+		$this->functionARN = $functionARN;
 		}
 	
 }
