@@ -40,6 +40,8 @@ class CreateHybridClusterRequest extends \RpcAcsRequest
 
 	private  $onPremiseVolumeRemotePath;
 
+	private  $jobQueue;
+
 	private  $volumeType;
 
 	private  $password;
@@ -57,6 +59,8 @@ class CreateHybridClusterRequest extends \RpcAcsRequest
 	private  $osTag;
 
 	private  $remoteDirectory;
+
+	private  $PostInstallScripts;
 
 	private  $vSwitchId;
 
@@ -141,6 +145,15 @@ class CreateHybridClusterRequest extends \RpcAcsRequest
 		$this->queryParameters["OnPremiseVolumeRemotePath"]=$onPremiseVolumeRemotePath;
 	}
 
+	public function getJobQueue() {
+		return $this->jobQueue;
+	}
+
+	public function setJobQueue($jobQueue) {
+		$this->jobQueue = $jobQueue;
+		$this->queryParameters["JobQueue"]=$jobQueue;
+	}
+
 	public function getVolumeType() {
 		return $this->volumeType;
 	}
@@ -220,6 +233,19 @@ class CreateHybridClusterRequest extends \RpcAcsRequest
 	public function setRemoteDirectory($remoteDirectory) {
 		$this->remoteDirectory = $remoteDirectory;
 		$this->queryParameters["RemoteDirectory"]=$remoteDirectory;
+	}
+
+	public function getPostInstallScripts() {
+		return $this->PostInstallScripts;
+	}
+
+	public function setPostInstallScripts($PostInstallScripts) {
+		$this->PostInstallScripts = $PostInstallScripts;
+		for ($i = 0; $i < count($PostInstallScripts); $i ++) {	
+			$this->queryParameters['PostInstallScript.' . ($i + 1) . '.Args'] = $PostInstallScripts[$i]['Args'];
+			$this->queryParameters['PostInstallScript.' . ($i + 1) . '.Url'] = $PostInstallScripts[$i]['Url'];
+
+		}
 	}
 
 	public function getVSwitchId() {

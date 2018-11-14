@@ -154,7 +154,9 @@ class SetAutoScaleConfigRequest extends \RpcAcsRequest
 			$this->queryParameters['Queues.' . ($i + 1) . '.SpotStrategy'] = $Queuess[$i]['SpotStrategy'];
 			$this->queryParameters['Queues.' . ($i + 1) . '.QueueName'] = $Queuess[$i]['QueueName'];
 			$this->queryParameters['Queues.' . ($i + 1) . '.InstanceType'] = $Queuess[$i]['InstanceType'];
+			$this->queryParameters['Queues.' . ($i + 1) . '.EnableAutoGrow'] = $Queuess[$i]['EnableAutoGrow'];
 			$this->queryParameters['Queues.' . ($i + 1) . '.SpotPriceLimit'] = $Queuess[$i]['SpotPriceLimit'];
+			$this->queryParameters['Queues.' . ($i + 1) . '.EnableAutoShrink'] = $Queuess[$i]['EnableAutoShrink'];
 
 		}
 	}

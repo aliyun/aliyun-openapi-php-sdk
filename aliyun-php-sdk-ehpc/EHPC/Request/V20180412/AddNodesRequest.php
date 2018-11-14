@@ -48,6 +48,8 @@ class AddNodesRequest extends \RpcAcsRequest
 
 	private  $ecsChargeType;
 
+	private  $createMode;
+
 	private  $instanceType;
 
 	private  $computeSpotPriceLimit;
@@ -149,6 +151,15 @@ class AddNodesRequest extends \RpcAcsRequest
 	public function setEcsChargeType($ecsChargeType) {
 		$this->ecsChargeType = $ecsChargeType;
 		$this->queryParameters["EcsChargeType"]=$ecsChargeType;
+	}
+
+	public function getCreateMode() {
+		return $this->createMode;
+	}
+
+	public function setCreateMode($createMode) {
+		$this->createMode = $createMode;
+		$this->queryParameters["CreateMode"]=$createMode;
 	}
 
 	public function getInstanceType() {
