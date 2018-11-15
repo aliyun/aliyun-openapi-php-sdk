@@ -39,6 +39,10 @@ class AuthorizeSecurityGroupEgressRequest extends \RpcAcsRequest
 
 	private  $description;
 
+	private  $ipv6DestCidrIp;
+
+	private  $ipv6SourceCidrIp;
+
 	private  $policy;
 
 	private  $portRange;
@@ -115,6 +119,24 @@ class AuthorizeSecurityGroupEgressRequest extends \RpcAcsRequest
 	public function setDescription($description) {
 		$this->description = $description;
 		$this->queryParameters["Description"]=$description;
+	}
+
+	public function getIpv6DestCidrIp() {
+		return $this->ipv6DestCidrIp;
+	}
+
+	public function setIpv6DestCidrIp($ipv6DestCidrIp) {
+		$this->ipv6DestCidrIp = $ipv6DestCidrIp;
+		$this->queryParameters["Ipv6DestCidrIp"]=$ipv6DestCidrIp;
+	}
+
+	public function getIpv6SourceCidrIp() {
+		return $this->ipv6SourceCidrIp;
+	}
+
+	public function setIpv6SourceCidrIp($ipv6SourceCidrIp) {
+		$this->ipv6SourceCidrIp = $ipv6SourceCidrIp;
+		$this->queryParameters["Ipv6SourceCidrIp"]=$ipv6SourceCidrIp;
 	}
 
 	public function getPolicy() {

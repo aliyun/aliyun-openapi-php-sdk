@@ -43,6 +43,10 @@ class AuthorizeSecurityGroupRequest extends \RpcAcsRequest
 
 	private  $sourceGroupOwnerAccount;
 
+	private  $ipv6SourceCidrIp;
+
+	private  $ipv6DestCidrIp;
+
 	private  $policy;
 
 	private  $portRange;
@@ -133,6 +137,24 @@ class AuthorizeSecurityGroupRequest extends \RpcAcsRequest
 	public function setSourceGroupOwnerAccount($sourceGroupOwnerAccount) {
 		$this->sourceGroupOwnerAccount = $sourceGroupOwnerAccount;
 		$this->queryParameters["SourceGroupOwnerAccount"]=$sourceGroupOwnerAccount;
+	}
+
+	public function getIpv6SourceCidrIp() {
+		return $this->ipv6SourceCidrIp;
+	}
+
+	public function setIpv6SourceCidrIp($ipv6SourceCidrIp) {
+		$this->ipv6SourceCidrIp = $ipv6SourceCidrIp;
+		$this->queryParameters["Ipv6SourceCidrIp"]=$ipv6SourceCidrIp;
+	}
+
+	public function getIpv6DestCidrIp() {
+		return $this->ipv6DestCidrIp;
+	}
+
+	public function setIpv6DestCidrIp($ipv6DestCidrIp) {
+		$this->ipv6DestCidrIp = $ipv6DestCidrIp;
+		$this->queryParameters["Ipv6DestCidrIp"]=$ipv6DestCidrIp;
 	}
 
 	public function getPolicy() {

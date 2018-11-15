@@ -57,6 +57,8 @@ class RunInstancesRequest extends \RpcAcsRequest
 
 	private  $launchTemplateId;
 
+	private  $ipv6AddressCount;
+
 	private  $ownerId;
 
 	private  $vSwitchId;
@@ -74,6 +76,8 @@ class RunInstancesRequest extends \RpcAcsRequest
 	private  $internetChargeType;
 
 	private  $zoneId;
+
+	private  $Ipv6Addresss;
 
 	private  $internetMaxBandwidthIn;
 
@@ -268,6 +272,15 @@ class RunInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["LaunchTemplateId"]=$launchTemplateId;
 	}
 
+	public function getIpv6AddressCount() {
+		return $this->ipv6AddressCount;
+	}
+
+	public function setIpv6AddressCount($ipv6AddressCount) {
+		$this->ipv6AddressCount = $ipv6AddressCount;
+		$this->queryParameters["Ipv6AddressCount"]=$ipv6AddressCount;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -347,6 +360,17 @@ class RunInstancesRequest extends \RpcAcsRequest
 	public function setZoneId($zoneId) {
 		$this->zoneId = $zoneId;
 		$this->queryParameters["ZoneId"]=$zoneId;
+	}
+
+	public function getIpv6Addresss() {
+		return $this->Ipv6Addresss;
+	}
+
+	public function setIpv6Addresss($Ipv6Addresss) {
+		$this->Ipv6Addresss = $Ipv6Addresss;
+		for ($i = 0; $i < count($Ipv6Addresss); $i ++) {	
+			$this->queryParameters["Ipv6Address.".($i+1)] = $Ipv6Addresss[$i];
+		}
 	}
 
 	public function getInternetMaxBandwidthIn() {
