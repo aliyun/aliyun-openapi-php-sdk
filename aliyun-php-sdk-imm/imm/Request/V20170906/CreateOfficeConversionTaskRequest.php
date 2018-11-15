@@ -41,6 +41,8 @@ class CreateOfficeConversionTaskRequest extends \RpcAcsRequest
 
 	private  $endPage;
 
+	private  $idempotentToken;
+
 	private  $tgtFileSuffix;
 
 	private  $sheetOnePage;
@@ -128,6 +130,15 @@ class CreateOfficeConversionTaskRequest extends \RpcAcsRequest
 	public function setEndPage($endPage) {
 		$this->endPage = $endPage;
 		$this->queryParameters["EndPage"]=$endPage;
+	}
+
+	public function getIdempotentToken() {
+		return $this->idempotentToken;
+	}
+
+	public function setIdempotentToken($idempotentToken) {
+		$this->idempotentToken = $idempotentToken;
+		$this->queryParameters["IdempotentToken"]=$idempotentToken;
 	}
 
 	public function getTgtFileSuffix() {

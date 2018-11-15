@@ -19,36 +19,25 @@
  */
 namespace imm\Request\V20170906;
 
-class FaceCompareRequest extends \RpcAcsRequest
+class DetectLogoRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("imm", "2017-09-06", "FaceCompare", "imm", "openAPI");
+		parent::__construct("imm", "2017-09-06", "DetectLogo", "imm", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $srcUriB;
-
-	private  $srcUriA;
+	private  $srcUris;
 
 	private  $project;
 
-	public function getSrcUriB() {
-		return $this->srcUriB;
+	public function getSrcUris() {
+		return $this->srcUris;
 	}
 
-	public function setSrcUriB($srcUriB) {
-		$this->srcUriB = $srcUriB;
-		$this->queryParameters["SrcUriB"]=$srcUriB;
-	}
-
-	public function getSrcUriA() {
-		return $this->srcUriA;
-	}
-
-	public function setSrcUriA($srcUriA) {
-		$this->srcUriA = $srcUriA;
-		$this->queryParameters["SrcUriA"]=$srcUriA;
+	public function setSrcUris($srcUris) {
+		$this->srcUris = $srcUris;
+		$this->queryParameters["SrcUris"]=$srcUris;
 	}
 
 	public function getProject() {
