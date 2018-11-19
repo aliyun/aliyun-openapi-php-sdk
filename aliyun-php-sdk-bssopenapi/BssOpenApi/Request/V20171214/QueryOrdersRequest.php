@@ -41,11 +41,11 @@ class QueryOrdersRequest extends \RpcAcsRequest
 
 	private  $ownerId;
 
+	private  $createTimeEnd;
+
 	private  $productType;
 
 	private  $orderType;
-
-	private  $createTimeEnd;
 
 	public function getProductCode() {
 		return $this->productCode;
@@ -110,6 +110,15 @@ class QueryOrdersRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
+	public function getCreateTimeEnd() {
+		return $this->createTimeEnd;
+	}
+
+	public function setCreateTimeEnd($createTimeEnd) {
+		$this->createTimeEnd = $createTimeEnd;
+		$this->queryParameters["CreateTimeEnd"]=$createTimeEnd;
+	}
+
 	public function getProductType() {
 		return $this->productType;
 	}
@@ -126,15 +135,6 @@ class QueryOrdersRequest extends \RpcAcsRequest
 	public function setOrderType($orderType) {
 		$this->orderType = $orderType;
 		$this->queryParameters["OrderType"]=$orderType;
-	}
-
-	public function getCreateTimeEnd() {
-		return $this->createTimeEnd;
-	}
-
-	public function setCreateTimeEnd($createTimeEnd) {
-		$this->createTimeEnd = $createTimeEnd;
-		$this->queryParameters["CreateTimeEnd"]=$createTimeEnd;
 	}
 	
 }

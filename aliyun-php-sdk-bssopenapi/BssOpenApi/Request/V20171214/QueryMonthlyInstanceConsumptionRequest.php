@@ -35,9 +35,9 @@ class QueryMonthlyInstanceConsumptionRequest extends \RpcAcsRequest
 
 	private  $billingCycle;
 
-	private  $pageNum;
-
 	private  $ownerId;
+
+	private  $pageNum;
 
 	private  $productType;
 
@@ -77,15 +77,6 @@ class QueryMonthlyInstanceConsumptionRequest extends \RpcAcsRequest
 		$this->queryParameters["BillingCycle"]=$billingCycle;
 	}
 
-	public function getPageNum() {
-		return $this->pageNum;
-	}
-
-	public function setPageNum($pageNum) {
-		$this->pageNum = $pageNum;
-		$this->queryParameters["PageNum"]=$pageNum;
-	}
-
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -93,6 +84,15 @@ class QueryMonthlyInstanceConsumptionRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getPageNum() {
+		return $this->pageNum;
+	}
+
+	public function setPageNum($pageNum) {
+		$this->pageNum = $pageNum;
+		$this->queryParameters["PageNum"]=$pageNum;
 	}
 
 	public function getProductType() {

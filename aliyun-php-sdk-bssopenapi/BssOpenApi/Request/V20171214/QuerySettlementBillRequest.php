@@ -29,6 +29,8 @@ class QuerySettlementBillRequest extends \RpcAcsRequest
 
 	private  $productCode;
 
+	private  $isHideZeroCharge;
+
 	private  $subscriptionType;
 
 	private  $pageSize;
@@ -54,6 +56,15 @@ class QuerySettlementBillRequest extends \RpcAcsRequest
 	public function setProductCode($productCode) {
 		$this->productCode = $productCode;
 		$this->queryParameters["ProductCode"]=$productCode;
+	}
+
+	public function getIsHideZeroCharge() {
+		return $this->isHideZeroCharge;
+	}
+
+	public function setIsHideZeroCharge($isHideZeroCharge) {
+		$this->isHideZeroCharge = $isHideZeroCharge;
+		$this->queryParameters["IsHideZeroCharge"]=$isHideZeroCharge;
 	}
 
 	public function getSubscriptionType() {

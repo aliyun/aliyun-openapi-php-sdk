@@ -35,9 +35,9 @@ class CreateInstanceRequest extends \RpcAcsRequest
 
 	private  $renewPeriod;
 
-	private  $renewalStatus;
-
 	private  $Parameters;
+
+	private  $renewalStatus;
 
 	private  $ownerId;
 
@@ -79,15 +79,6 @@ class CreateInstanceRequest extends \RpcAcsRequest
 		$this->queryParameters["RenewPeriod"]=$renewPeriod;
 	}
 
-	public function getRenewalStatus() {
-		return $this->renewalStatus;
-	}
-
-	public function setRenewalStatus($renewalStatus) {
-		$this->renewalStatus = $renewalStatus;
-		$this->queryParameters["RenewalStatus"]=$renewalStatus;
-	}
-
 	public function getParameters() {
 		return $this->Parameters;
 	}
@@ -99,6 +90,15 @@ class CreateInstanceRequest extends \RpcAcsRequest
 			$this->queryParameters['Parameter.' . ($i + 1) . '.Value'] = $Parameters[$i]['Value'];
 
 		}
+	}
+
+	public function getRenewalStatus() {
+		return $this->renewalStatus;
+	}
+
+	public function setRenewalStatus($renewalStatus) {
+		$this->renewalStatus = $renewalStatus;
+		$this->queryParameters["RenewalStatus"]=$renewalStatus;
 	}
 
 	public function getOwnerId() {
