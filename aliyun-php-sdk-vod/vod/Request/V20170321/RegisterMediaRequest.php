@@ -19,13 +19,15 @@
  */
 namespace vod\Request\V20170321;
 
-class SubmitTranscodeJobsRequest extends \RpcAcsRequest
+class RegisterMediaRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "SubmitTranscodeJobs", "vod", "openAPI");
+		parent::__construct("vod", "2017-03-21", "RegisterMedia", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
+
+	private  $userData;
 
 	private  $resourceOwnerId;
 
@@ -33,15 +35,20 @@ class SubmitTranscodeJobsRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerAccount;
 
-	private  $videoId;
-
-	private  $overrideParams;
-
 	private  $ownerId;
 
-	private  $encryptConfig;
+	private  $registerMetadatas;
 
-	private  $pipelineId;
+	private  $workFlowId;
+
+	public function getUserData() {
+		return $this->userData;
+	}
+
+	public function setUserData($userData) {
+		$this->userData = $userData;
+		$this->queryParameters["UserData"]=$userData;
+	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -70,24 +77,6 @@ class SubmitTranscodeJobsRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getVideoId() {
-		return $this->videoId;
-	}
-
-	public function setVideoId($videoId) {
-		$this->videoId = $videoId;
-		$this->queryParameters["VideoId"]=$videoId;
-	}
-
-	public function getOverrideParams() {
-		return $this->overrideParams;
-	}
-
-	public function setOverrideParams($overrideParams) {
-		$this->overrideParams = $overrideParams;
-		$this->queryParameters["OverrideParams"]=$overrideParams;
-	}
-
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -97,22 +86,22 @@ class SubmitTranscodeJobsRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getEncryptConfig() {
-		return $this->encryptConfig;
+	public function getRegisterMetadatas() {
+		return $this->registerMetadatas;
 	}
 
-	public function setEncryptConfig($encryptConfig) {
-		$this->encryptConfig = $encryptConfig;
-		$this->queryParameters["EncryptConfig"]=$encryptConfig;
+	public function setRegisterMetadatas($registerMetadatas) {
+		$this->registerMetadatas = $registerMetadatas;
+		$this->queryParameters["RegisterMetadatas"]=$registerMetadatas;
 	}
 
-	public function getPipelineId() {
-		return $this->pipelineId;
+	public function getWorkFlowId() {
+		return $this->workFlowId;
 	}
 
-	public function setPipelineId($pipelineId) {
-		$this->pipelineId = $pipelineId;
-		$this->queryParameters["PipelineId"]=$pipelineId;
+	public function setWorkFlowId($workFlowId) {
+		$this->workFlowId = $workFlowId;
+		$this->queryParameters["WorkFlowId"]=$workFlowId;
 	}
 	
 }

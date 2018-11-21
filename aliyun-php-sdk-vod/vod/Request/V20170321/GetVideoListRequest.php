@@ -47,6 +47,8 @@ class GetVideoListRequest extends \RpcAcsRequest
 
 	private  $status;
 
+	private  $storageLocation;
+
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
 	}
@@ -135,6 +137,15 @@ class GetVideoListRequest extends \RpcAcsRequest
 	public function setStatus($status) {
 		$this->status = $status;
 		$this->queryParameters["Status"]=$status;
+	}
+
+	public function getStorageLocation() {
+		return $this->storageLocation;
+	}
+
+	public function setStorageLocation($storageLocation) {
+		$this->storageLocation = $storageLocation;
+		$this->queryParameters["StorageLocation"]=$storageLocation;
 	}
 	
 }

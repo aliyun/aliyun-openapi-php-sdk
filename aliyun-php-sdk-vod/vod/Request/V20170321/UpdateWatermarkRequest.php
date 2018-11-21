@@ -19,29 +19,34 @@
  */
 namespace vod\Request\V20170321;
 
-class SubmitTranscodeJobsRequest extends \RpcAcsRequest
+class UpdateWatermarkRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "SubmitTranscodeJobs", "vod", "openAPI");
+		parent::__construct("vod", "2017-03-21", "UpdateWatermark", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $resourceOwnerId;
+	private  $watermarkId;
 
-	private  $templateGroupId;
+	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
-	private  $videoId;
-
-	private  $overrideParams;
+	private  $name;
 
 	private  $ownerId;
 
-	private  $encryptConfig;
+	private  $watermarkConfig;
 
-	private  $pipelineId;
+	public function getWatermarkId() {
+		return $this->watermarkId;
+	}
+
+	public function setWatermarkId($watermarkId) {
+		$this->watermarkId = $watermarkId;
+		$this->queryParameters["WatermarkId"]=$watermarkId;
+	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -50,15 +55,6 @@ class SubmitTranscodeJobsRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getTemplateGroupId() {
-		return $this->templateGroupId;
-	}
-
-	public function setTemplateGroupId($templateGroupId) {
-		$this->templateGroupId = $templateGroupId;
-		$this->queryParameters["TemplateGroupId"]=$templateGroupId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -70,22 +66,13 @@ class SubmitTranscodeJobsRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getVideoId() {
-		return $this->videoId;
+	public function getName() {
+		return $this->name;
 	}
 
-	public function setVideoId($videoId) {
-		$this->videoId = $videoId;
-		$this->queryParameters["VideoId"]=$videoId;
-	}
-
-	public function getOverrideParams() {
-		return $this->overrideParams;
-	}
-
-	public function setOverrideParams($overrideParams) {
-		$this->overrideParams = $overrideParams;
-		$this->queryParameters["OverrideParams"]=$overrideParams;
+	public function setName($name) {
+		$this->name = $name;
+		$this->queryParameters["Name"]=$name;
 	}
 
 	public function getOwnerId() {
@@ -97,22 +84,13 @@ class SubmitTranscodeJobsRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getEncryptConfig() {
-		return $this->encryptConfig;
+	public function getWatermarkConfig() {
+		return $this->watermarkConfig;
 	}
 
-	public function setEncryptConfig($encryptConfig) {
-		$this->encryptConfig = $encryptConfig;
-		$this->queryParameters["EncryptConfig"]=$encryptConfig;
-	}
-
-	public function getPipelineId() {
-		return $this->pipelineId;
-	}
-
-	public function setPipelineId($pipelineId) {
-		$this->pipelineId = $pipelineId;
-		$this->queryParameters["PipelineId"]=$pipelineId;
+	public function setWatermarkConfig($watermarkConfig) {
+		$this->watermarkConfig = $watermarkConfig;
+		$this->queryParameters["WatermarkConfig"]=$watermarkConfig;
 	}
 	
 }
