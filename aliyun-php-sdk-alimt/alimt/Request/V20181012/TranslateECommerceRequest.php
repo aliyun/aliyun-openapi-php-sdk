@@ -35,6 +35,8 @@ class TranslateECommerceRequest extends \RpcAcsRequest
 
 	private  $targetLanguage;
 
+	private  $scene;
+
 	public function getSourceLanguage() {
 		return $this->sourceLanguage;
 	}
@@ -65,6 +67,14 @@ class TranslateECommerceRequest extends \RpcAcsRequest
 
 	public function setTargetLanguage($targetLanguage) {
 		$this->targetLanguage = $targetLanguage;
+		}
+
+	public function getScene() {
+		return $this->scene;
+	}
+
+	public function setScene($scene) {
+		$this->scene = $scene;
 		}
 	
 }
