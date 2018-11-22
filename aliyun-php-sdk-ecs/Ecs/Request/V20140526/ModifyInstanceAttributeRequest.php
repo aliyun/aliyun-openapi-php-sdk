@@ -41,6 +41,8 @@ class ModifyInstanceAttributeRequest extends \RpcAcsRequest
 
 	private  $ownerId;
 
+	private  $deletionProtection;
+
 	private  $userData;
 
 	private  $password;
@@ -112,6 +114,15 @@ class ModifyInstanceAttributeRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getDeletionProtection() {
+		return $this->deletionProtection;
+	}
+
+	public function setDeletionProtection($deletionProtection) {
+		$this->deletionProtection = $deletionProtection;
+		$this->queryParameters["DeletionProtection"]=$deletionProtection;
 	}
 
 	public function getUserData() {

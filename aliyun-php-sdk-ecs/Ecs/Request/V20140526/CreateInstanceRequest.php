@@ -37,6 +37,8 @@ class CreateInstanceRequest extends \RpcAcsRequest
 
 	private  $spotPriceLimit;
 
+	private  $deletionProtection;
+
 	private  $resourceGroupId;
 
 	private  $hostName;
@@ -168,6 +170,15 @@ class CreateInstanceRequest extends \RpcAcsRequest
 	public function setSpotPriceLimit($spotPriceLimit) {
 		$this->spotPriceLimit = $spotPriceLimit;
 		$this->queryParameters["SpotPriceLimit"]=$spotPriceLimit;
+	}
+
+	public function getDeletionProtection() {
+		return $this->deletionProtection;
+	}
+
+	public function setDeletionProtection($deletionProtection) {
+		$this->deletionProtection = $deletionProtection;
+		$this->queryParameters["DeletionProtection"]=$deletionProtection;
 	}
 
 	public function getResourceGroupId() {
