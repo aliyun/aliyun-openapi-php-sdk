@@ -65,7 +65,9 @@ class ClientUploader
         fclose($file);//关闭
 
         try {
-            return $this->uploadFile($tmpFileName);
+            $result = $this->uploadFile($tmpFileName);
+            unlink($tmpFileName);
+            return $result;
         } catch (Exception $e) {
             unlink($tmpFileName);
             throw $e;

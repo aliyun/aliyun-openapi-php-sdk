@@ -1,3 +1,6 @@
+2018-11-22 Version: 3.4.1
+1, bugfix for delete client upload tmp file
+
 2018-11-22 Version: 3.4.0
 1, api for custom keyword lib、similartext lib、voice keyword lib
 2, api for custom image lib
