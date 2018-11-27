@@ -33,6 +33,8 @@ class CreateRuleActionRequest extends \RpcAcsRequest
 
 	private  $type;
 
+	private  $errorActionFlag;
+
 	public function getConfiguration() {
 		return $this->configuration;
 	}
@@ -58,6 +60,15 @@ class CreateRuleActionRequest extends \RpcAcsRequest
 	public function setType($type) {
 		$this->type = $type;
 		$this->queryParameters["Type"]=$type;
+	}
+
+	public function getErrorActionFlag() {
+		return $this->errorActionFlag;
+	}
+
+	public function setErrorActionFlag($errorActionFlag) {
+		$this->errorActionFlag = $errorActionFlag;
+		$this->queryParameters["ErrorActionFlag"]=$errorActionFlag;
 	}
 	
 }

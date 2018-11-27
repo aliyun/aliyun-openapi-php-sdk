@@ -33,6 +33,8 @@ class CreateProductRequest extends \RpcAcsRequest
 
 	private  $id2;
 
+	private  $netType;
+
 	private  $productName;
 
 	private  $description;
@@ -68,6 +70,15 @@ class CreateProductRequest extends \RpcAcsRequest
 	public function setId2($id2) {
 		$this->id2 = $id2;
 		$this->queryParameters["Id2"]=$id2;
+	}
+
+	public function getNetType() {
+		return $this->netType;
+	}
+
+	public function setNetType($netType) {
+		$this->netType = $netType;
+		$this->queryParameters["NetType"]=$netType;
 	}
 
 	public function getProductName() {
