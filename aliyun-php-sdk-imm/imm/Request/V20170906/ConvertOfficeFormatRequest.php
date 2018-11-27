@@ -27,21 +27,19 @@ class ConvertOfficeFormatRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $imageSpec;
-
 	private  $srcType;
 
 	private  $modelId;
 
 	private  $project;
 
-	private  $externalID;
-
 	private  $maxSheetRow;
 
 	private  $maxSheetCount;
 
 	private  $endPage;
+
+	private  $tgtFileSuffix;
 
 	private  $sheetOnePage;
 
@@ -53,18 +51,17 @@ class ConvertOfficeFormatRequest extends \RpcAcsRequest
 
 	private  $tgtType;
 
+	private  $fitToPagesWide;
+
+	private  $tgtFilePrefix;
+
+	private  $fitToPagesTall;
+
 	private  $srcUri;
 
+	private  $tgtFilePages;
+
 	private  $tgtUri;
-
-	public function getImageSpec() {
-		return $this->imageSpec;
-	}
-
-	public function setImageSpec($imageSpec) {
-		$this->imageSpec = $imageSpec;
-		$this->queryParameters["ImageSpec"]=$imageSpec;
-	}
 
 	public function getSrcType() {
 		return $this->srcType;
@@ -93,15 +90,6 @@ class ConvertOfficeFormatRequest extends \RpcAcsRequest
 		$this->queryParameters["Project"]=$project;
 	}
 
-	public function getExternalID() {
-		return $this->externalID;
-	}
-
-	public function setExternalID($externalID) {
-		$this->externalID = $externalID;
-		$this->queryParameters["ExternalID"]=$externalID;
-	}
-
 	public function getMaxSheetRow() {
 		return $this->maxSheetRow;
 	}
@@ -127,6 +115,15 @@ class ConvertOfficeFormatRequest extends \RpcAcsRequest
 	public function setEndPage($endPage) {
 		$this->endPage = $endPage;
 		$this->queryParameters["EndPage"]=$endPage;
+	}
+
+	public function getTgtFileSuffix() {
+		return $this->tgtFileSuffix;
+	}
+
+	public function setTgtFileSuffix($tgtFileSuffix) {
+		$this->tgtFileSuffix = $tgtFileSuffix;
+		$this->queryParameters["TgtFileSuffix"]=$tgtFileSuffix;
 	}
 
 	public function getSheetOnePage() {
@@ -174,6 +171,33 @@ class ConvertOfficeFormatRequest extends \RpcAcsRequest
 		$this->queryParameters["TgtType"]=$tgtType;
 	}
 
+	public function getFitToPagesWide() {
+		return $this->fitToPagesWide;
+	}
+
+	public function setFitToPagesWide($fitToPagesWide) {
+		$this->fitToPagesWide = $fitToPagesWide;
+		$this->queryParameters["FitToPagesWide"]=$fitToPagesWide;
+	}
+
+	public function getTgtFilePrefix() {
+		return $this->tgtFilePrefix;
+	}
+
+	public function setTgtFilePrefix($tgtFilePrefix) {
+		$this->tgtFilePrefix = $tgtFilePrefix;
+		$this->queryParameters["TgtFilePrefix"]=$tgtFilePrefix;
+	}
+
+	public function getFitToPagesTall() {
+		return $this->fitToPagesTall;
+	}
+
+	public function setFitToPagesTall($fitToPagesTall) {
+		$this->fitToPagesTall = $fitToPagesTall;
+		$this->queryParameters["FitToPagesTall"]=$fitToPagesTall;
+	}
+
 	public function getSrcUri() {
 		return $this->srcUri;
 	}
@@ -181,6 +205,15 @@ class ConvertOfficeFormatRequest extends \RpcAcsRequest
 	public function setSrcUri($srcUri) {
 		$this->srcUri = $srcUri;
 		$this->queryParameters["SrcUri"]=$srcUri;
+	}
+
+	public function getTgtFilePages() {
+		return $this->tgtFilePages;
+	}
+
+	public function setTgtFilePages($tgtFilePages) {
+		$this->tgtFilePages = $tgtFilePages;
+		$this->queryParameters["TgtFilePages"]=$tgtFilePages;
 	}
 
 	public function getTgtUri() {
