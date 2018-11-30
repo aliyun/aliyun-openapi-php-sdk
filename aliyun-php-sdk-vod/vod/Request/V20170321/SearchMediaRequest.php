@@ -23,7 +23,7 @@ class SearchMediaRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "SearchMedia", "vod", "openAPI");
+		parent::__construct("vod", "2017-03-21", "SearchMedia");
 		$this->setMethod("POST");
 	}
 

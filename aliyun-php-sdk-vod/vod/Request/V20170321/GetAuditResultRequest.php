@@ -23,7 +23,7 @@ class GetAuditResultRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "GetAuditResult", "vod", "openAPI");
+		parent::__construct("vod", "2017-03-21", "GetAuditResult");
 		$this->setMethod("POST");
 	}
 

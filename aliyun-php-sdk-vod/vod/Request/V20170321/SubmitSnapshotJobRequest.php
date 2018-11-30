@@ -23,27 +23,29 @@ class SubmitSnapshotJobRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "SubmitSnapshotJob", "vod", "openAPI");
+		parent::__construct("vod", "2017-03-21", "SubmitSnapshotJob");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
-	private  $specifiedOffsetTime;
-
 	private  $resourceOwnerAccount;
-
-	private  $width;
 
 	private  $count;
 
 	private  $videoId;
 
-	private  $interval;
-
 	private  $ownerId;
 
+	private  $specifiedOffsetTime;
+
+	private  $width;
+
+	private  $interval;
+
 	private  $spriteSnapshotConfig;
+
+	private  $snapshotTemplateId;
 
 	private  $height;
 
@@ -56,15 +58,6 @@ class SubmitSnapshotJobRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getSpecifiedOffsetTime() {
-		return $this->specifiedOffsetTime;
-	}
-
-	public function setSpecifiedOffsetTime($specifiedOffsetTime) {
-		$this->specifiedOffsetTime = $specifiedOffsetTime;
-		$this->queryParameters["SpecifiedOffsetTime"]=$specifiedOffsetTime;
-	}
-
 	public function getResourceOwnerAccount() {
 		return $this->resourceOwnerAccount;
 	}
@@ -72,15 +65,6 @@ class SubmitSnapshotJobRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getWidth() {
-		return $this->width;
-	}
-
-	public function setWidth($width) {
-		$this->width = $width;
-		$this->queryParameters["Width"]=$width;
 	}
 
 	public function getCount() {
@@ -101,15 +85,6 @@ class SubmitSnapshotJobRequest extends \RpcAcsRequest
 		$this->queryParameters["VideoId"]=$videoId;
 	}
 
-	public function getInterval() {
-		return $this->interval;
-	}
-
-	public function setInterval($interval) {
-		$this->interval = $interval;
-		$this->queryParameters["Interval"]=$interval;
-	}
-
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -119,6 +94,33 @@ class SubmitSnapshotJobRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
+	public function getSpecifiedOffsetTime() {
+		return $this->specifiedOffsetTime;
+	}
+
+	public function setSpecifiedOffsetTime($specifiedOffsetTime) {
+		$this->specifiedOffsetTime = $specifiedOffsetTime;
+		$this->queryParameters["SpecifiedOffsetTime"]=$specifiedOffsetTime;
+	}
+
+	public function getWidth() {
+		return $this->width;
+	}
+
+	public function setWidth($width) {
+		$this->width = $width;
+		$this->queryParameters["Width"]=$width;
+	}
+
+	public function getInterval() {
+		return $this->interval;
+	}
+
+	public function setInterval($interval) {
+		$this->interval = $interval;
+		$this->queryParameters["Interval"]=$interval;
+	}
+
 	public function getSpriteSnapshotConfig() {
 		return $this->spriteSnapshotConfig;
 	}
@@ -126,6 +128,15 @@ class SubmitSnapshotJobRequest extends \RpcAcsRequest
 	public function setSpriteSnapshotConfig($spriteSnapshotConfig) {
 		$this->spriteSnapshotConfig = $spriteSnapshotConfig;
 		$this->queryParameters["SpriteSnapshotConfig"]=$spriteSnapshotConfig;
+	}
+
+	public function getSnapshotTemplateId() {
+		return $this->snapshotTemplateId;
+	}
+
+	public function setSnapshotTemplateId($snapshotTemplateId) {
+		$this->snapshotTemplateId = $snapshotTemplateId;
+		$this->queryParameters["SnapshotTemplateId"]=$snapshotTemplateId;
 	}
 
 	public function getHeight() {

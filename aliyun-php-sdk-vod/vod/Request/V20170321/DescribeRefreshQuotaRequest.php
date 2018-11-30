@@ -23,7 +23,7 @@ class DescribeRefreshQuotaRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "DescribeRefreshQuota", "vod", "openAPI");
+		parent::__construct("vod", "2017-03-21", "DescribeRefreshQuota");
 		$this->setMethod("POST");
 	}
 

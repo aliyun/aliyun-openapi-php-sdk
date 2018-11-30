@@ -23,7 +23,7 @@ class CreateUploadImageRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "CreateUploadImage", "vod", "openAPI");
+		parent::__construct("vod", "2017-03-21", "CreateUploadImage");
 		$this->setMethod("POST");
 	}
 
@@ -36,6 +36,8 @@ class CreateUploadImageRequest extends \RpcAcsRequest
 	private  $resourceOwnerAccount;
 
 	private  $imageExt;
+
+	private  $cateId;
 
 	private  $ownerId;
 
@@ -88,6 +90,15 @@ class CreateUploadImageRequest extends \RpcAcsRequest
 	public function setImageExt($imageExt) {
 		$this->imageExt = $imageExt;
 		$this->queryParameters["ImageExt"]=$imageExt;
+	}
+
+	public function getCateId() {
+		return $this->cateId;
+	}
+
+	public function setCateId($cateId) {
+		$this->cateId = $cateId;
+		$this->queryParameters["CateId"]=$cateId;
 	}
 
 	public function getOwnerId() {

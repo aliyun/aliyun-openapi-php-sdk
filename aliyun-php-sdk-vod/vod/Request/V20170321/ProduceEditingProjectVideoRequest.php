@@ -23,7 +23,7 @@ class ProduceEditingProjectVideoRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "ProduceEditingProjectVideo", "vod", "openAPI");
+		parent::__construct("vod", "2017-03-21", "ProduceEditingProjectVideo");
 		$this->setMethod("POST");
 	}
 
