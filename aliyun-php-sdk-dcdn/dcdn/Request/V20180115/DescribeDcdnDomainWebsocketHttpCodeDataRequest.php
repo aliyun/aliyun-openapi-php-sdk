@@ -19,23 +19,36 @@
  */
 namespace dcdn\Request\V20180115;
 
-class DescribeDcdnTopDomainsByFlowRequest extends \RpcAcsRequest
+class DescribeDcdnDomainWebsocketHttpCodeDataRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("dcdn", "2018-01-15", "DescribeDcdnTopDomainsByFlow");
+		parent::__construct("dcdn", "2018-01-15", "DescribeDcdnDomainWebsocketHttpCodeData");
 		$this->setMethod("POST");
 	}
 
+	private  $locationNameEn;
+
 	private  $startTime;
 
-	private  $limit;
+	private  $ispNameEn;
 
-	private  $product;
+	private  $domainName;
 
 	private  $endTime;
 
 	private  $ownerId;
+
+	private  $interval;
+
+	public function getLocationNameEn() {
+		return $this->locationNameEn;
+	}
+
+	public function setLocationNameEn($locationNameEn) {
+		$this->locationNameEn = $locationNameEn;
+		$this->queryParameters["LocationNameEn"]=$locationNameEn;
+	}
 
 	public function getStartTime() {
 		return $this->startTime;
@@ -46,22 +59,22 @@ class DescribeDcdnTopDomainsByFlowRequest extends \RpcAcsRequest
 		$this->queryParameters["StartTime"]=$startTime;
 	}
 
-	public function getLimit() {
-		return $this->limit;
+	public function getIspNameEn() {
+		return $this->ispNameEn;
 	}
 
-	public function setLimit($limit) {
-		$this->limit = $limit;
-		$this->queryParameters["Limit"]=$limit;
+	public function setIspNameEn($ispNameEn) {
+		$this->ispNameEn = $ispNameEn;
+		$this->queryParameters["IspNameEn"]=$ispNameEn;
 	}
 
-	public function getProduct() {
-		return $this->product;
+	public function getDomainName() {
+		return $this->domainName;
 	}
 
-	public function setProduct($product) {
-		$this->product = $product;
-		$this->queryParameters["Product"]=$product;
+	public function setDomainName($domainName) {
+		$this->domainName = $domainName;
+		$this->queryParameters["DomainName"]=$domainName;
 	}
 
 	public function getEndTime() {
@@ -80,6 +93,15 @@ class DescribeDcdnTopDomainsByFlowRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getInterval() {
+		return $this->interval;
+	}
+
+	public function setInterval($interval) {
+		$this->interval = $interval;
+		$this->queryParameters["Interval"]=$interval;
 	}
 	
 }

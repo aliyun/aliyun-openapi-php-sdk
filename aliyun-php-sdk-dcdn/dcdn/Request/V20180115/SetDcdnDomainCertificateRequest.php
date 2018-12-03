@@ -27,6 +27,8 @@ class SetDcdnDomainCertificateRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
+	private  $forceSet;
+
 	private  $securityToken;
 
 	private  $certType;
@@ -44,6 +46,15 @@ class SetDcdnDomainCertificateRequest extends \RpcAcsRequest
 	private  $region;
 
 	private  $sSLPri;
+
+	public function getForceSet() {
+		return $this->forceSet;
+	}
+
+	public function setForceSet($forceSet) {
+		$this->forceSet = $forceSet;
+		$this->queryParameters["ForceSet"]=$forceSet;
+	}
 
 	public function getSecurityToken() {
 		return $this->securityToken;
