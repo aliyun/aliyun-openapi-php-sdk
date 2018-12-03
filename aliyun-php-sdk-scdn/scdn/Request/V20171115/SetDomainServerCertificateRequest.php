@@ -19,19 +19,15 @@
  */
 namespace scdn\Request\V20171115;
 
-class SetScdnDomainCertificateRequest extends \RpcAcsRequest
+class SetDomainServerCertificateRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("scdn", "2017-11-15", "SetScdnDomainCertificate");
+		parent::__construct("scdn", "2017-11-15", "SetDomainServerCertificate");
 		$this->setMethod("POST");
 	}
 
-	private  $forceSet;
-
 	private  $securityToken;
-
-	private  $certType;
 
 	private  $sSLPub;
 
@@ -47,15 +43,6 @@ class SetScdnDomainCertificateRequest extends \RpcAcsRequest
 
 	private  $sSLPri;
 
-	public function getForceSet() {
-		return $this->forceSet;
-	}
-
-	public function setForceSet($forceSet) {
-		$this->forceSet = $forceSet;
-		$this->queryParameters["ForceSet"]=$forceSet;
-	}
-
 	public function getSecurityToken() {
 		return $this->securityToken;
 	}
@@ -63,15 +50,6 @@ class SetScdnDomainCertificateRequest extends \RpcAcsRequest
 	public function setSecurityToken($securityToken) {
 		$this->securityToken = $securityToken;
 		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
-
-	public function getCertType() {
-		return $this->certType;
-	}
-
-	public function setCertType($certType) {
-		$this->certType = $certType;
-		$this->queryParameters["CertType"]=$certType;
 	}
 
 	public function getSSLPub() {
