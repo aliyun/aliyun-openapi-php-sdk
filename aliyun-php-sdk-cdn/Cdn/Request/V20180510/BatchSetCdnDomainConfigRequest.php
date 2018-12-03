@@ -17,51 +17,60 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace Cdn\Request\V20141111;
+namespace Cdn\Request\V20180510;
 
-class DescribeDomainReqHitRateDataRequest extends \RpcAcsRequest
+class BatchSetCdnDomainConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Cdn", "2014-11-11", "DescribeDomainReqHitRateData");
+		parent::__construct("Cdn", "2018-05-10", "BatchSetCdnDomainConfig");
 		$this->setMethod("POST");
 	}
 
-	private  $startTime;
+	private  $functions;
 
-	private  $domainName;
+	private  $securityToken;
 
-	private  $endTime;
+	private  $domainNames;
+
+	private  $ownerAccount;
 
 	private  $ownerId;
 
-	private  $interval;
-
-	public function getStartTime() {
-		return $this->startTime;
+	public function getFunctions() {
+		return $this->functions;
 	}
 
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
+	public function setFunctions($functions) {
+		$this->functions = $functions;
+		$this->queryParameters["Functions"]=$functions;
 	}
 
-	public function getDomainName() {
-		return $this->domainName;
+	public function getSecurityToken() {
+		return $this->securityToken;
 	}
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
+	public function setSecurityToken($securityToken) {
+		$this->securityToken = $securityToken;
+		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getEndTime() {
-		return $this->endTime;
+	public function getDomainNames() {
+		return $this->domainNames;
 	}
 
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
+	public function setDomainNames($domainNames) {
+		$this->domainNames = $domainNames;
+		$this->queryParameters["DomainNames"]=$domainNames;
+	}
+
+	public function getOwnerAccount() {
+		return $this->ownerAccount;
+	}
+
+	public function setOwnerAccount($ownerAccount) {
+		$this->ownerAccount = $ownerAccount;
+		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
 	public function getOwnerId() {
@@ -71,15 +80,6 @@ class DescribeDomainReqHitRateDataRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getInterval() {
-		return $this->interval;
-	}
-
-	public function setInterval($interval) {
-		$this->interval = $interval;
-		$this->queryParameters["Interval"]=$interval;
 	}
 	
 }

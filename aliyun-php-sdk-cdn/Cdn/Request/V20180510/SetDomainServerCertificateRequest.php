@@ -29,6 +29,8 @@ class SetDomainServerCertificateRequest extends \RpcAcsRequest
 
 	private  $privateKey;
 
+	private  $forceSet;
+
 	private  $serverCertificateStatus;
 
 	private  $serverCertificate;
@@ -52,6 +54,15 @@ class SetDomainServerCertificateRequest extends \RpcAcsRequest
 	public function setPrivateKey($privateKey) {
 		$this->privateKey = $privateKey;
 		$this->queryParameters["PrivateKey"]=$privateKey;
+	}
+
+	public function getForceSet() {
+		return $this->forceSet;
+	}
+
+	public function setForceSet($forceSet) {
+		$this->forceSet = $forceSet;
+		$this->queryParameters["ForceSet"]=$forceSet;
 	}
 
 	public function getServerCertificateStatus() {

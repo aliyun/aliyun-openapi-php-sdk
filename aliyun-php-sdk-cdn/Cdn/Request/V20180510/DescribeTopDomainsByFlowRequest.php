@@ -31,6 +31,8 @@ class DescribeTopDomainsByFlowRequest extends \RpcAcsRequest
 
 	private  $limit;
 
+	private  $product;
+
 	private  $endTime;
 
 	private  $ownerId;
@@ -51,6 +53,15 @@ class DescribeTopDomainsByFlowRequest extends \RpcAcsRequest
 	public function setLimit($limit) {
 		$this->limit = $limit;
 		$this->queryParameters["Limit"]=$limit;
+	}
+
+	public function getProduct() {
+		return $this->product;
+	}
+
+	public function setProduct($product) {
+		$this->product = $product;
+		$this->queryParameters["Product"]=$product;
 	}
 
 	public function getEndTime() {

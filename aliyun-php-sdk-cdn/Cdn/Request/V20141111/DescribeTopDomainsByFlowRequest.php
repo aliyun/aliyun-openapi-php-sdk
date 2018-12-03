@@ -27,23 +27,23 @@ class DescribeTopDomainsByFlowRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $securityToken;
+	private  $startTime;
 
 	private  $limit;
 
-	private  $endTime;
+	private  $product;
 
-	private  $startTime;
+	private  $endTime;
 
 	private  $ownerId;
 
-	public function getSecurityToken() {
-		return $this->securityToken;
+	public function getStartTime() {
+		return $this->startTime;
 	}
 
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
 	}
 
 	public function getLimit() {
@@ -55,6 +55,15 @@ class DescribeTopDomainsByFlowRequest extends \RpcAcsRequest
 		$this->queryParameters["Limit"]=$limit;
 	}
 
+	public function getProduct() {
+		return $this->product;
+	}
+
+	public function setProduct($product) {
+		$this->product = $product;
+		$this->queryParameters["Product"]=$product;
+	}
+
 	public function getEndTime() {
 		return $this->endTime;
 	}
@@ -62,15 +71,6 @@ class DescribeTopDomainsByFlowRequest extends \RpcAcsRequest
 	public function setEndTime($endTime) {
 		$this->endTime = $endTime;
 		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
 	}
 
 	public function getOwnerId() {

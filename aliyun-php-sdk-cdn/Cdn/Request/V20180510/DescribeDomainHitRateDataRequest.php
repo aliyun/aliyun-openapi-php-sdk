@@ -27,11 +27,7 @@ class DescribeDomainHitRateDataRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $locationNameEn;
-
 	private  $startTime;
-
-	private  $ispNameEn;
 
 	private  $domainName;
 
@@ -41,15 +37,6 @@ class DescribeDomainHitRateDataRequest extends \RpcAcsRequest
 
 	private  $interval;
 
-	public function getLocationNameEn() {
-		return $this->locationNameEn;
-	}
-
-	public function setLocationNameEn($locationNameEn) {
-		$this->locationNameEn = $locationNameEn;
-		$this->queryParameters["LocationNameEn"]=$locationNameEn;
-	}
-
 	public function getStartTime() {
 		return $this->startTime;
 	}
@@ -57,15 +44,6 @@ class DescribeDomainHitRateDataRequest extends \RpcAcsRequest
 	public function setStartTime($startTime) {
 		$this->startTime = $startTime;
 		$this->queryParameters["StartTime"]=$startTime;
-	}
-
-	public function getIspNameEn() {
-		return $this->ispNameEn;
-	}
-
-	public function setIspNameEn($ispNameEn) {
-		$this->ispNameEn = $ispNameEn;
-		$this->queryParameters["IspNameEn"]=$ispNameEn;
 	}
 
 	public function getDomainName() {

@@ -27,7 +27,15 @@ class DescribeDomainAverageResponseTimeRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $securityToken;
+	private  $locationNameEn;
+
+	private  $startTime;
+
+	private  $ispNameEn;
+
+	private  $domainType;
+
+	private  $outString;
 
 	private  $timeMerge;
 
@@ -35,19 +43,53 @@ class DescribeDomainAverageResponseTimeRequest extends \RpcAcsRequest
 
 	private  $endTime;
 
-	private  $interval;
-
-	private  $startTime;
-
 	private  $ownerId;
 
-	public function getSecurityToken() {
-		return $this->securityToken;
+	private  $interval;
+
+	public function getLocationNameEn() {
+		return $this->locationNameEn;
 	}
 
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
+	public function setLocationNameEn($locationNameEn) {
+		$this->locationNameEn = $locationNameEn;
+		$this->queryParameters["LocationNameEn"]=$locationNameEn;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
+
+	public function getIspNameEn() {
+		return $this->ispNameEn;
+	}
+
+	public function setIspNameEn($ispNameEn) {
+		$this->ispNameEn = $ispNameEn;
+		$this->queryParameters["IspNameEn"]=$ispNameEn;
+	}
+
+	public function getDomainType() {
+		return $this->domainType;
+	}
+
+	public function setDomainType($domainType) {
+		$this->domainType = $domainType;
+		$this->queryParameters["DomainType"]=$domainType;
+	}
+
+	public function getOutString() {
+		return $this->outString;
+	}
+
+	public function setOutString($outString) {
+		$this->outString = $outString;
+		$this->queryParameters["OutString"]=$outString;
 	}
 
 	public function getTimeMerge() {
@@ -77,24 +119,6 @@ class DescribeDomainAverageResponseTimeRequest extends \RpcAcsRequest
 		$this->queryParameters["EndTime"]=$endTime;
 	}
 
-	public function getInterval() {
-		return $this->interval;
-	}
-
-	public function setInterval($interval) {
-		$this->interval = $interval;
-		$this->queryParameters["Interval"]=$interval;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
-
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -102,6 +126,15 @@ class DescribeDomainAverageResponseTimeRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getInterval() {
+		return $this->interval;
+	}
+
+	public function setInterval($interval) {
+		$this->interval = $interval;
+		$this->queryParameters["Interval"]=$interval;
 	}
 	
 }

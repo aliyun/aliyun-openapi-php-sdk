@@ -27,7 +27,11 @@ class DescribeDomainHttpCodeDataRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $securityToken;
+	private  $locationNameEn;
+
+	private  $startTime;
+
+	private  $ispNameEn;
 
 	private  $timeMerge;
 
@@ -35,23 +39,35 @@ class DescribeDomainHttpCodeDataRequest extends \RpcAcsRequest
 
 	private  $endTime;
 
-	private  $locationNameEn;
+	private  $ownerId;
 
 	private  $interval;
 
-	private  $startTime;
-
-	private  $ispNameEn;
-
-	private  $ownerId;
-
-	public function getSecurityToken() {
-		return $this->securityToken;
+	public function getLocationNameEn() {
+		return $this->locationNameEn;
 	}
 
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
+	public function setLocationNameEn($locationNameEn) {
+		$this->locationNameEn = $locationNameEn;
+		$this->queryParameters["LocationNameEn"]=$locationNameEn;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
+
+	public function getIspNameEn() {
+		return $this->ispNameEn;
+	}
+
+	public function setIspNameEn($ispNameEn) {
+		$this->ispNameEn = $ispNameEn;
+		$this->queryParameters["IspNameEn"]=$ispNameEn;
 	}
 
 	public function getTimeMerge() {
@@ -81,13 +97,13 @@ class DescribeDomainHttpCodeDataRequest extends \RpcAcsRequest
 		$this->queryParameters["EndTime"]=$endTime;
 	}
 
-	public function getLocationNameEn() {
-		return $this->locationNameEn;
+	public function getOwnerId() {
+		return $this->ownerId;
 	}
 
-	public function setLocationNameEn($locationNameEn) {
-		$this->locationNameEn = $locationNameEn;
-		$this->queryParameters["LocationNameEn"]=$locationNameEn;
+	public function setOwnerId($ownerId) {
+		$this->ownerId = $ownerId;
+		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
 	public function getInterval() {
@@ -97,33 +113,6 @@ class DescribeDomainHttpCodeDataRequest extends \RpcAcsRequest
 	public function setInterval($interval) {
 		$this->interval = $interval;
 		$this->queryParameters["Interval"]=$interval;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
-
-	public function getIspNameEn() {
-		return $this->ispNameEn;
-	}
-
-	public function setIspNameEn($ispNameEn) {
-		$this->ispNameEn = $ispNameEn;
-		$this->queryParameters["IspNameEn"]=$ispNameEn;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 	
 }

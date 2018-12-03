@@ -27,23 +27,21 @@ class DescribeDomainRegionDataRequest extends \RpcAcsRequest
 		$this->setMethod("POST");
 	}
 
-	private  $securityToken;
+	private  $startTime;
 
 	private  $domainName;
 
 	private  $endTime;
 
-	private  $startTime;
-
 	private  $ownerId;
 
-	public function getSecurityToken() {
-		return $this->securityToken;
+	public function getStartTime() {
+		return $this->startTime;
 	}
 
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
 	}
 
 	public function getDomainName() {
@@ -62,15 +60,6 @@ class DescribeDomainRegionDataRequest extends \RpcAcsRequest
 	public function setEndTime($endTime) {
 		$this->endTime = $endTime;
 		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
 	}
 
 	public function getOwnerId() {
