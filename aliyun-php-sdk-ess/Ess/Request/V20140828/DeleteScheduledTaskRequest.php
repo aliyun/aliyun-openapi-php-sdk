@@ -23,7 +23,7 @@ class DeleteScheduledTaskRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "DeleteScheduledTask", "ess", "openAPI");
+		parent::__construct("Ess", "2014-08-28", "DeleteScheduledTask");
 		$this->setMethod("POST");
 	}
 

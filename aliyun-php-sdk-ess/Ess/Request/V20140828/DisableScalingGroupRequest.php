@@ -23,7 +23,7 @@ class DisableScalingGroupRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "DisableScalingGroup", "ess", "openAPI");
+		parent::__construct("Ess", "2014-08-28", "DisableScalingGroup");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class RemoveInstancesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "RemoveInstances", "ess", "openAPI");
+		parent::__construct("Ess", "2014-08-28", "RemoveInstances");
 		$this->setMethod("POST");
 	}
 
@@ -40,6 +40,8 @@ class RemoveInstancesRequest extends \RpcAcsRequest
 	private  $instanceId20;
 
 	private  $instanceId1;
+
+	private  $removePolicy;
 
 	private  $instanceId3;
 
@@ -138,6 +140,15 @@ class RemoveInstancesRequest extends \RpcAcsRequest
 	public function setInstanceId1($instanceId1) {
 		$this->instanceId1 = $instanceId1;
 		$this->queryParameters["InstanceId.1"]=$instanceId1;
+	}
+
+	public function getRemovePolicy() {
+		return $this->removePolicy;
+	}
+
+	public function setRemovePolicy($removePolicy) {
+		$this->removePolicy = $removePolicy;
+		$this->queryParameters["RemovePolicy"]=$removePolicy;
 	}
 
 	public function getInstanceId3() {

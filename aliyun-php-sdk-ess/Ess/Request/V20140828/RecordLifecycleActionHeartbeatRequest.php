@@ -23,7 +23,7 @@ class RecordLifecycleActionHeartbeatRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "RecordLifecycleActionHeartbeat", "ess", "openAPI");
+		parent::__construct("Ess", "2014-08-28", "RecordLifecycleActionHeartbeat");
 		$this->setMethod("POST");
 	}
 

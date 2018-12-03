@@ -23,7 +23,7 @@ class CompleteLifecycleActionRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "CompleteLifecycleAction", "ess", "openAPI");
+		parent::__construct("Ess", "2014-08-28", "CompleteLifecycleAction");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class SetInstancesProtectionRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "SetInstancesProtection", "ess", "openAPI");
+		parent::__construct("Ess", "2014-08-28", "SetInstancesProtection");
 		$this->setMethod("POST");
 	}
 

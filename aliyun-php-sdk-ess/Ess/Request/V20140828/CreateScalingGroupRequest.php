@@ -23,7 +23,7 @@ class CreateScalingGroupRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "CreateScalingGroup", "ess", "openAPI");
+		parent::__construct("Ess", "2014-08-28", "CreateScalingGroup");
 		$this->setMethod("POST");
 	}
 
@@ -50,6 +50,8 @@ class CreateScalingGroupRequest extends \RpcAcsRequest
 	private  $ownerId;
 
 	private  $launchTemplateVersion;
+
+	private  $scalingPolicy;
 
 	private  $vSwitchId;
 
@@ -126,13 +128,13 @@ class CreateScalingGroupRequest extends \RpcAcsRequest
 		$this->queryParameters["ScalingGroupName"]=$scalingGroupName;
 	}
 
-	public function getVSwitchIdss() {
-		return $this->VSwitchIdss;
+	public function getVSwitchIds() {
+		return $this->VSwitchIds;
 	}
 
-	public function setVSwitchIdss($VSwitchIds) {
-		$this->VSwitchIdss = $VSwitchIds;
-		for ($i = 0; $i < count($VSwitchIds); $i ++) {
+	public function setVSwitchIds($VSwitchIds) {
+		$this->VSwitchIds = $VSwitchIds;
+		for ($i = 0; $i < count($VSwitchIds); $i ++) {	
 			$this->queryParameters["VSwitchIds.".($i+1)] = $VSwitchIds[$i];
 		}
 	}
@@ -171,6 +173,15 @@ class CreateScalingGroupRequest extends \RpcAcsRequest
 	public function setLaunchTemplateVersion($launchTemplateVersion) {
 		$this->launchTemplateVersion = $launchTemplateVersion;
 		$this->queryParameters["LaunchTemplateVersion"]=$launchTemplateVersion;
+	}
+
+	public function getScalingPolicy() {
+		return $this->scalingPolicy;
+	}
+
+	public function setScalingPolicy($scalingPolicy) {
+		$this->scalingPolicy = $scalingPolicy;
+		$this->queryParameters["ScalingPolicy"]=$scalingPolicy;
 	}
 
 	public function getVSwitchId() {

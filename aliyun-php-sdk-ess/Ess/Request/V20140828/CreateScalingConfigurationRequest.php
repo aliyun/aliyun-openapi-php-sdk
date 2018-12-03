@@ -23,11 +23,13 @@ class CreateScalingConfigurationRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "CreateScalingConfiguration", "ess", "openAPI");
+		parent::__construct("Ess", "2014-08-28", "CreateScalingConfiguration");
 		$this->setMethod("POST");
 	}
 
 	private  $imageId;
+
+	private  $memory;
 
 	private  $scalingGroupId;
 
@@ -51,15 +53,21 @@ class CreateScalingConfigurationRequest extends \RpcAcsRequest
 
 	private  $hostName;
 
+	private  $password;
+
 	private  $passwordInherit;
 
 	private  $imageName;
 
 	private  $instanceType;
 
+	private  $deploymentSetId;
+
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
+
+	private  $cpu;
 
 	private  $ramRoleName;
 
@@ -92,6 +100,15 @@ class CreateScalingConfigurationRequest extends \RpcAcsRequest
 		$this->queryParameters["ImageId"]=$imageId;
 	}
 
+	public function getMemory() {
+		return $this->memory;
+	}
+
+	public function setMemory($memory) {
+		$this->memory = $memory;
+		$this->queryParameters["Memory"]=$memory;
+	}
+
 	public function getScalingGroupId() {
 		return $this->scalingGroupId;
 	}
@@ -107,7 +124,7 @@ class CreateScalingConfigurationRequest extends \RpcAcsRequest
 
 	public function setInstanceTypes($InstanceTypes) {
 		$this->InstanceTypes = $InstanceTypes;
-		for ($i = 0; $i < count($InstanceTypes); $i ++) {
+		for ($i = 0; $i < count($InstanceTypes); $i ++) {	
 			$this->queryParameters["InstanceTypes.".($i+1)] = $InstanceTypes[$i];
 		}
 	}
@@ -197,6 +214,15 @@ class CreateScalingConfigurationRequest extends \RpcAcsRequest
 		$this->queryParameters["HostName"]=$hostName;
 	}
 
+	public function getPassword() {
+		return $this->password;
+	}
+
+	public function setPassword($password) {
+		$this->password = $password;
+		$this->queryParameters["Password"]=$password;
+	}
+
 	public function getPasswordInherit() {
 		return $this->passwordInherit;
 	}
@@ -224,6 +250,15 @@ class CreateScalingConfigurationRequest extends \RpcAcsRequest
 		$this->queryParameters["InstanceType"]=$instanceType;
 	}
 
+	public function getDeploymentSetId() {
+		return $this->deploymentSetId;
+	}
+
+	public function setDeploymentSetId($deploymentSetId) {
+		$this->deploymentSetId = $deploymentSetId;
+		$this->queryParameters["DeploymentSetId"]=$deploymentSetId;
+	}
+
 	public function getResourceOwnerAccount() {
 		return $this->resourceOwnerAccount;
 	}
@@ -240,6 +275,15 @@ class CreateScalingConfigurationRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getCpu() {
+		return $this->cpu;
+	}
+
+	public function setCpu($cpu) {
+		$this->cpu = $cpu;
+		$this->queryParameters["Cpu"]=$cpu;
 	}
 
 	public function getRamRoleName() {

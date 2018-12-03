@@ -23,17 +23,21 @@ class ModifyScalingConfigurationRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "ModifyScalingConfiguration", "ess", "openAPI");
+		parent::__construct("Ess", "2014-08-28", "ModifyScalingConfiguration");
 		$this->setMethod("POST");
 	}
 
 	private  $imageId;
+
+	private  $memory;
 
 	private  $ioOptimized;
 
 	private  $InstanceTypes;
 
 	private  $internetMaxBandwidthOut;
+
+	private  $securityGroupId;
 
 	private  $keyPairName;
 
@@ -49,9 +53,15 @@ class ModifyScalingConfigurationRequest extends \RpcAcsRequest
 
 	private  $imageName;
 
+	private  $override;
+
+	private  $deploymentSetId;
+
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
+
+	private  $cpu;
 
 	private  $ramRoleName;
 
@@ -84,6 +94,15 @@ class ModifyScalingConfigurationRequest extends \RpcAcsRequest
 		$this->queryParameters["ImageId"]=$imageId;
 	}
 
+	public function getMemory() {
+		return $this->memory;
+	}
+
+	public function setMemory($memory) {
+		$this->memory = $memory;
+		$this->queryParameters["Memory"]=$memory;
+	}
+
 	public function getIoOptimized() {
 		return $this->ioOptimized;
 	}
@@ -99,7 +118,7 @@ class ModifyScalingConfigurationRequest extends \RpcAcsRequest
 
 	public function setInstanceTypes($InstanceTypes) {
 		$this->InstanceTypes = $InstanceTypes;
-		for ($i = 0; $i < count($InstanceTypes); $i ++) {
+		for ($i = 0; $i < count($InstanceTypes); $i ++) {	
 			$this->queryParameters["InstanceTypes.".($i+1)] = $InstanceTypes[$i];
 		}
 	}
@@ -111,6 +130,15 @@ class ModifyScalingConfigurationRequest extends \RpcAcsRequest
 	public function setInternetMaxBandwidthOut($internetMaxBandwidthOut) {
 		$this->internetMaxBandwidthOut = $internetMaxBandwidthOut;
 		$this->queryParameters["InternetMaxBandwidthOut"]=$internetMaxBandwidthOut;
+	}
+
+	public function getSecurityGroupId() {
+		return $this->securityGroupId;
+	}
+
+	public function setSecurityGroupId($securityGroupId) {
+		$this->securityGroupId = $securityGroupId;
+		$this->queryParameters["SecurityGroupId"]=$securityGroupId;
 	}
 
 	public function getKeyPairName() {
@@ -180,6 +208,24 @@ class ModifyScalingConfigurationRequest extends \RpcAcsRequest
 		$this->queryParameters["ImageName"]=$imageName;
 	}
 
+	public function getOverride() {
+		return $this->override;
+	}
+
+	public function setOverride($override) {
+		$this->override = $override;
+		$this->queryParameters["Override"]=$override;
+	}
+
+	public function getDeploymentSetId() {
+		return $this->deploymentSetId;
+	}
+
+	public function setDeploymentSetId($deploymentSetId) {
+		$this->deploymentSetId = $deploymentSetId;
+		$this->queryParameters["DeploymentSetId"]=$deploymentSetId;
+	}
+
 	public function getResourceOwnerAccount() {
 		return $this->resourceOwnerAccount;
 	}
@@ -196,6 +242,15 @@ class ModifyScalingConfigurationRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getCpu() {
+		return $this->cpu;
+	}
+
+	public function setCpu($cpu) {
+		$this->cpu = $cpu;
+		$this->queryParameters["Cpu"]=$cpu;
 	}
 
 	public function getRamRoleName() {

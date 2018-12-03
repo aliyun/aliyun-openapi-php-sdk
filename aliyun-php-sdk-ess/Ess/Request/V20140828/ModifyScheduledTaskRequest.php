@@ -23,7 +23,7 @@ class ModifyScheduledTaskRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "ModifyScheduledTask", "ess", "openAPI");
+		parent::__construct("Ess", "2014-08-28", "ModifyScheduledTask");
 		$this->setMethod("POST");
 	}
 

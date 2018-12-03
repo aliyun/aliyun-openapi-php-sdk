@@ -23,7 +23,7 @@ class VerifyUserRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "VerifyUser", "ess", "openAPI");
+		parent::__construct("Ess", "2014-08-28", "VerifyUser");
 		$this->setMethod("POST");
 	}
 

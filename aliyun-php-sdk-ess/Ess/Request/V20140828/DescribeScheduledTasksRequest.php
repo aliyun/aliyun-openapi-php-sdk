@@ -23,7 +23,7 @@ class DescribeScheduledTasksRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "DescribeScheduledTasks", "ess", "openAPI");
+		parent::__construct("Ess", "2014-08-28", "DescribeScheduledTasks");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class AttachDBInstancesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "AttachDBInstances", "ess", "openAPI");
+		parent::__construct("Ess", "2014-08-28", "AttachDBInstances");
 		$this->setMethod("POST");
 	}
 
