@@ -23,7 +23,7 @@ class DescribeScalingInstancesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "DescribeScalingInstances");
+		parent::__construct("Ess", "2014-08-28", "DescribeScalingInstances", "ess", "openAPI");
 		$this->setMethod("POST");
 	}
 

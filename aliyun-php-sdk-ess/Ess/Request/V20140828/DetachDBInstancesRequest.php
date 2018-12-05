@@ -23,7 +23,7 @@ class DetachDBInstancesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "DetachDBInstances");
+		parent::__construct("Ess", "2014-08-28", "DetachDBInstances", "ess", "openAPI");
 		$this->setMethod("POST");
 	}
 

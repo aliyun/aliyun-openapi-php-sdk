@@ -23,7 +23,7 @@ class DescribeRegionsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "DescribeRegions");
+		parent::__construct("Ess", "2014-08-28", "DescribeRegions", "ess", "openAPI");
 		$this->setMethod("POST");
 	}
 

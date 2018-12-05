@@ -23,7 +23,7 @@ class DeleteScalingRuleRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "DeleteScalingRule");
+		parent::__construct("Ess", "2014-08-28", "DeleteScalingRule", "ess", "openAPI");
 		$this->setMethod("POST");
 	}
 

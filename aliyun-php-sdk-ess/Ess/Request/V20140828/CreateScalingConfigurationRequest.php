@@ -23,7 +23,7 @@ class CreateScalingConfigurationRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "CreateScalingConfiguration");
+		parent::__construct("Ess", "2014-08-28", "CreateScalingConfiguration", "ess", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -124,7 +124,7 @@ class CreateScalingConfigurationRequest extends \RpcAcsRequest
 
 	public function setInstanceTypes($InstanceTypes) {
 		$this->InstanceTypes = $InstanceTypes;
-		for ($i = 0; $i < count($InstanceTypes); $i ++) {	
+		for ($i = 0; $i < count($InstanceTypes); $i ++) {
 			$this->queryParameters["InstanceTypes.".($i+1)] = $InstanceTypes[$i];
 		}
 	}

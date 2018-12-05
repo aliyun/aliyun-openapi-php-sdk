@@ -23,7 +23,7 @@ class CreateScalingGroupRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "CreateScalingGroup");
+		parent::__construct("Ess", "2014-08-28", "CreateScalingGroup", "ess", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -62,6 +62,8 @@ class CreateScalingGroupRequest extends \RpcAcsRequest
 	private  $defaultCooldown;
 
 	private  $removalPolicy1;
+
+	private  $VServerGroups;
 
 	private  $removalPolicy2;
 
@@ -134,7 +136,7 @@ class CreateScalingGroupRequest extends \RpcAcsRequest
 
 	public function setVSwitchIds($VSwitchIds) {
 		$this->VSwitchIds = $VSwitchIds;
-		for ($i = 0; $i < count($VSwitchIds); $i ++) {	
+		for ($i = 0; $i < count($VSwitchIds); $i ++) {
 			$this->queryParameters["VSwitchIds.".($i+1)] = $VSwitchIds[$i];
 		}
 	}
@@ -235,6 +237,21 @@ class CreateScalingGroupRequest extends \RpcAcsRequest
 	public function setRemovalPolicy1($removalPolicy1) {
 		$this->removalPolicy1 = $removalPolicy1;
 		$this->queryParameters["RemovalPolicy.1"]=$removalPolicy1;
+	}
+
+	public function getVServerGroups() {
+		return $this->VServerGroups;
+	}
+
+	public function setVServerGroups($VServerGroups) {
+		$this->VServerGroups = $VServerGroups;
+		for ($i = 0; $i < count($VServerGroups); $i ++) {	
+			$this->queryParameters['VServerGroup.' . ($i + 1) . '.LoadBalancerId'] = $VServerGroups[$i]['LoadBalancerId'];
+			for ($j = 0; $j < count($VServerGroups[$i]['VServerGroupAttributes']); $j ++) {
+				$this->queryParameters['VServerGroup.' . ($i + 1) . '.VServerGroupAttribute.' . ($j + 1)] = $VServerGroups[$i]['VServerGroupAttributes'][$j];
+			}
+
+		}
 	}
 
 	public function getRemovalPolicy2() {

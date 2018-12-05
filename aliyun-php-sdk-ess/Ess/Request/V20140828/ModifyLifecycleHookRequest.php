@@ -23,7 +23,7 @@ class ModifyLifecycleHookRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "ModifyLifecycleHook");
+		parent::__construct("Ess", "2014-08-28", "ModifyLifecycleHook", "ess", "openAPI");
 		$this->setMethod("POST");
 	}
 

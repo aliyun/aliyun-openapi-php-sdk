@@ -23,7 +23,7 @@ class DetachLoadBalancersRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "DetachLoadBalancers");
+		parent::__construct("Ess", "2014-08-28", "DetachLoadBalancers", "ess", "openAPI");
 		$this->setMethod("POST");
 	}
 

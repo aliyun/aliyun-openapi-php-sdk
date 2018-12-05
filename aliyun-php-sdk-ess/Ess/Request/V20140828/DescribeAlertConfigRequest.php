@@ -23,7 +23,7 @@ class DescribeAlertConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "DescribeAlertConfig");
+		parent::__construct("Ess", "2014-08-28", "DescribeAlertConfig", "ess", "openAPI");
 		$this->setMethod("POST");
 	}
 

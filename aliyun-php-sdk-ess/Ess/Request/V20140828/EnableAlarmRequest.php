@@ -23,7 +23,7 @@ class EnableAlarmRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "EnableAlarm");
+		parent::__construct("Ess", "2014-08-28", "EnableAlarm", "ess", "openAPI");
 		$this->setMethod("POST");
 	}
 

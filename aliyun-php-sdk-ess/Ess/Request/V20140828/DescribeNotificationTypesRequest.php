@@ -23,7 +23,7 @@ class DescribeNotificationTypesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "DescribeNotificationTypes");
+		parent::__construct("Ess", "2014-08-28", "DescribeNotificationTypes", "ess", "openAPI");
 		$this->setMethod("POST");
 	}
 

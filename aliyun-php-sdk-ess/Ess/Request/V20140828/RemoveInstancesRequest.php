@@ -23,7 +23,7 @@ class RemoveInstancesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "RemoveInstances");
+		parent::__construct("Ess", "2014-08-28", "RemoveInstances", "ess", "openAPI");
 		$this->setMethod("POST");
 	}
 

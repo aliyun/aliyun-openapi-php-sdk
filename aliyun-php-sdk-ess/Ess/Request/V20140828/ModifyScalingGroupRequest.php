@@ -23,7 +23,7 @@ class ModifyScalingGroupRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "ModifyScalingGroup");
+		parent::__construct("Ess", "2014-08-28", "ModifyScalingGroup", "ess", "openAPI");
 		$this->setMethod("POST");
 	}
 

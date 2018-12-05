@@ -19,32 +19,23 @@
  */
 namespace Ess\Request\V20140828;
 
-class RebalanceInstancesRequest extends \RpcAcsRequest
+class DetachVServerGroupsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "RebalanceInstances", "ess", "openAPI");
+		parent::__construct("Ess", "2014-08-28", "DetachVServerGroups", "ess", "openAPI");
 		$this->setMethod("POST");
 	}
-
-	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
 
 	private  $scalingGroupId;
 
-	private  $ownerAccount;
+	private  $forceDetach;
 
 	private  $ownerId;
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+	private  $VServerGroups;
 
 	public function getResourceOwnerAccount() {
 		return $this->resourceOwnerAccount;
@@ -64,13 +55,13 @@ class RebalanceInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["ScalingGroupId"]=$scalingGroupId;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getForceDetach() {
+		return $this->forceDetach;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setForceDetach($forceDetach) {
+		$this->forceDetach = $forceDetach;
+		$this->queryParameters["ForceDetach"]=$forceDetach;
 	}
 
 	public function getOwnerId() {
@@ -80,6 +71,21 @@ class RebalanceInstancesRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getVServerGroups() {
+		return $this->VServerGroups;
+	}
+
+	public function setVServerGroups($VServerGroups) {
+		$this->VServerGroups = $VServerGroups;
+		for ($i = 0; $i < count($VServerGroups); $i ++) {	
+			$this->queryParameters['VServerGroup.' . ($i + 1) . '.LoadBalancerId'] = $VServerGroups[$i]['LoadBalancerId'];
+			for ($j = 0; $j < count($VServerGroups[$i]['VServerGroupAttributes']); $j ++) {
+				$this->queryParameters['VServerGroup.' . ($i + 1) . '.VServerGroupAttribute.' . ($j + 1)] = $VServerGroups[$i]['VServerGroupAttributes'][$j];
+			}
+
+		}
 	}
 	
 }

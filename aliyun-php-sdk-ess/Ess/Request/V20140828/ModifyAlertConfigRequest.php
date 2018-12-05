@@ -23,7 +23,7 @@ class ModifyAlertConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "ModifyAlertConfig");
+		parent::__construct("Ess", "2014-08-28", "ModifyAlertConfig", "ess", "openAPI");
 		$this->setMethod("POST");
 	}
 

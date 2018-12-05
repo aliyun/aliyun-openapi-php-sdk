@@ -23,7 +23,7 @@ class DeleteLifecycleHookRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Ess", "2014-08-28", "DeleteLifecycleHook");
+		parent::__construct("Ess", "2014-08-28", "DeleteLifecycleHook", "ess", "openAPI");
 		$this->setMethod("POST");
 	}
 
