@@ -41,6 +41,8 @@ class ConvertOfficeFormatRequest extends \RpcAcsRequest
 
 	private  $tgtFileSuffix;
 
+	private  $pdfVector;
+
 	private  $sheetOnePage;
 
 	private  $password;
@@ -124,6 +126,15 @@ class ConvertOfficeFormatRequest extends \RpcAcsRequest
 	public function setTgtFileSuffix($tgtFileSuffix) {
 		$this->tgtFileSuffix = $tgtFileSuffix;
 		$this->queryParameters["TgtFileSuffix"]=$tgtFileSuffix;
+	}
+
+	public function getPdfVector() {
+		return $this->pdfVector;
+	}
+
+	public function setPdfVector($pdfVector) {
+		$this->pdfVector = $pdfVector;
+		$this->queryParameters["PdfVector"]=$pdfVector;
 	}
 
 	public function getSheetOnePage() {

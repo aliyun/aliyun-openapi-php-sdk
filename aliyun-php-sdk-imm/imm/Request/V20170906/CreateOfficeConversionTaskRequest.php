@@ -29,11 +29,25 @@ class CreateOfficeConversionTaskRequest extends \RpcAcsRequest
 
 	private  $srcType;
 
+	private  $project;
+
+	private  $idempotentToken;
+
+	private  $pdfVector;
+
+	private  $password;
+
+	private  $startPage;
+
+	private  $notifyEndpoint;
+
+	private  $fitToPagesWide;
+
+	private  $tgtFilePrefix;
+
 	private  $notifyTopicName;
 
 	private  $modelId;
-
-	private  $project;
 
 	private  $maxSheetRow;
 
@@ -41,25 +55,13 @@ class CreateOfficeConversionTaskRequest extends \RpcAcsRequest
 
 	private  $endPage;
 
-	private  $idempotentToken;
-
 	private  $tgtFileSuffix;
 
 	private  $sheetOnePage;
 
-	private  $password;
-
-	private  $startPage;
-
 	private  $maxSheetCol;
 
 	private  $tgtType;
-
-	private  $notifyEndpoint;
-
-	private  $fitToPagesWide;
-
-	private  $tgtFilePrefix;
 
 	private  $fitToPagesTall;
 
@@ -78,6 +80,78 @@ class CreateOfficeConversionTaskRequest extends \RpcAcsRequest
 		$this->queryParameters["SrcType"]=$srcType;
 	}
 
+	public function getProject() {
+		return $this->project;
+	}
+
+	public function setProject($project) {
+		$this->project = $project;
+		$this->queryParameters["Project"]=$project;
+	}
+
+	public function getIdempotentToken() {
+		return $this->idempotentToken;
+	}
+
+	public function setIdempotentToken($idempotentToken) {
+		$this->idempotentToken = $idempotentToken;
+		$this->queryParameters["IdempotentToken"]=$idempotentToken;
+	}
+
+	public function getPdfVector() {
+		return $this->pdfVector;
+	}
+
+	public function setPdfVector($pdfVector) {
+		$this->pdfVector = $pdfVector;
+		$this->queryParameters["PdfVector"]=$pdfVector;
+	}
+
+	public function getPassword() {
+		return $this->password;
+	}
+
+	public function setPassword($password) {
+		$this->password = $password;
+		$this->queryParameters["Password"]=$password;
+	}
+
+	public function getStartPage() {
+		return $this->startPage;
+	}
+
+	public function setStartPage($startPage) {
+		$this->startPage = $startPage;
+		$this->queryParameters["StartPage"]=$startPage;
+	}
+
+	public function getNotifyEndpoint() {
+		return $this->notifyEndpoint;
+	}
+
+	public function setNotifyEndpoint($notifyEndpoint) {
+		$this->notifyEndpoint = $notifyEndpoint;
+		$this->queryParameters["NotifyEndpoint"]=$notifyEndpoint;
+	}
+
+	public function getFitToPagesWide() {
+		return $this->fitToPagesWide;
+	}
+
+	public function setFitToPagesWide($fitToPagesWide) {
+		$this->fitToPagesWide = $fitToPagesWide;
+		$this->queryParameters["FitToPagesWide"]=$fitToPagesWide;
+	}
+
+	public function getTgtFilePrefix() {
+		return $this->tgtFilePrefix;
+	}
+
+	public function setTgtFilePrefix($tgtFilePrefix) {
+		$this->tgtFilePrefix = $tgtFilePrefix;
+		$this->queryParameters["TgtFilePrefix"]=$tgtFilePrefix;
+	}
+
 	public function getNotifyTopicName() {
 		return $this->notifyTopicName;
 	}
@@ -94,15 +168,6 @@ class CreateOfficeConversionTaskRequest extends \RpcAcsRequest
 	public function setModelId($modelId) {
 		$this->modelId = $modelId;
 		$this->queryParameters["ModelId"]=$modelId;
-	}
-
-	public function getProject() {
-		return $this->project;
-	}
-
-	public function setProject($project) {
-		$this->project = $project;
-		$this->queryParameters["Project"]=$project;
 	}
 
 	public function getMaxSheetRow() {
@@ -132,15 +197,6 @@ class CreateOfficeConversionTaskRequest extends \RpcAcsRequest
 		$this->queryParameters["EndPage"]=$endPage;
 	}
 
-	public function getIdempotentToken() {
-		return $this->idempotentToken;
-	}
-
-	public function setIdempotentToken($idempotentToken) {
-		$this->idempotentToken = $idempotentToken;
-		$this->queryParameters["IdempotentToken"]=$idempotentToken;
-	}
-
 	public function getTgtFileSuffix() {
 		return $this->tgtFileSuffix;
 	}
@@ -159,24 +215,6 @@ class CreateOfficeConversionTaskRequest extends \RpcAcsRequest
 		$this->queryParameters["SheetOnePage"]=$sheetOnePage;
 	}
 
-	public function getPassword() {
-		return $this->password;
-	}
-
-	public function setPassword($password) {
-		$this->password = $password;
-		$this->queryParameters["Password"]=$password;
-	}
-
-	public function getStartPage() {
-		return $this->startPage;
-	}
-
-	public function setStartPage($startPage) {
-		$this->startPage = $startPage;
-		$this->queryParameters["StartPage"]=$startPage;
-	}
-
 	public function getMaxSheetCol() {
 		return $this->maxSheetCol;
 	}
@@ -193,33 +231,6 @@ class CreateOfficeConversionTaskRequest extends \RpcAcsRequest
 	public function setTgtType($tgtType) {
 		$this->tgtType = $tgtType;
 		$this->queryParameters["TgtType"]=$tgtType;
-	}
-
-	public function getNotifyEndpoint() {
-		return $this->notifyEndpoint;
-	}
-
-	public function setNotifyEndpoint($notifyEndpoint) {
-		$this->notifyEndpoint = $notifyEndpoint;
-		$this->queryParameters["NotifyEndpoint"]=$notifyEndpoint;
-	}
-
-	public function getFitToPagesWide() {
-		return $this->fitToPagesWide;
-	}
-
-	public function setFitToPagesWide($fitToPagesWide) {
-		$this->fitToPagesWide = $fitToPagesWide;
-		$this->queryParameters["FitToPagesWide"]=$fitToPagesWide;
-	}
-
-	public function getTgtFilePrefix() {
-		return $this->tgtFilePrefix;
-	}
-
-	public function setTgtFilePrefix($tgtFilePrefix) {
-		$this->tgtFilePrefix = $tgtFilePrefix;
-		$this->queryParameters["TgtFilePrefix"]=$tgtFilePrefix;
 	}
 
 	public function getFitToPagesTall() {
