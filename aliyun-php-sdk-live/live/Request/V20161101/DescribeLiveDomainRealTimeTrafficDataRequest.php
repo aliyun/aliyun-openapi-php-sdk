@@ -19,17 +19,19 @@
  */
 namespace live\Request\V20161101;
 
-class DescribeDomainUsageDataRequest extends \RpcAcsRequest
+class DescribeLiveDomainRealTimeTrafficDataRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("live", "2016-11-01", "DescribeDomainUsageData", "live", "openAPI");
+		parent::__construct("live", "2016-11-01", "DescribeLiveDomainRealTimeTrafficData", "live", "openAPI");
 		$this->setMethod("POST");
 	}
 
+	private  $locationNameEn;
+
 	private  $startTime;
 
-	private  $area;
+	private  $ispNameEn;
 
 	private  $domainName;
 
@@ -37,7 +39,14 @@ class DescribeDomainUsageDataRequest extends \RpcAcsRequest
 
 	private  $ownerId;
 
-	private  $interval;
+	public function getLocationNameEn() {
+		return $this->locationNameEn;
+	}
+
+	public function setLocationNameEn($locationNameEn) {
+		$this->locationNameEn = $locationNameEn;
+		$this->queryParameters["LocationNameEn"]=$locationNameEn;
+	}
 
 	public function getStartTime() {
 		return $this->startTime;
@@ -48,13 +57,13 @@ class DescribeDomainUsageDataRequest extends \RpcAcsRequest
 		$this->queryParameters["StartTime"]=$startTime;
 	}
 
-	public function getArea() {
-		return $this->area;
+	public function getIspNameEn() {
+		return $this->ispNameEn;
 	}
 
-	public function setArea($area) {
-		$this->area = $area;
-		$this->queryParameters["Area"]=$area;
+	public function setIspNameEn($ispNameEn) {
+		$this->ispNameEn = $ispNameEn;
+		$this->queryParameters["IspNameEn"]=$ispNameEn;
 	}
 
 	public function getDomainName() {
@@ -82,15 +91,6 @@ class DescribeDomainUsageDataRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getInterval() {
-		return $this->interval;
-	}
-
-	public function setInterval($interval) {
-		$this->interval = $interval;
-		$this->queryParameters["Interval"]=$interval;
 	}
 	
 }
