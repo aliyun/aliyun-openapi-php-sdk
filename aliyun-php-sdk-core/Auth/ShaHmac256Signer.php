@@ -33,4 +33,9 @@ class ShaHmac256Signer implements ISigner
     {
         return "1.0";
     }
+
+    public function getSignatureType()
+    {
+        return null;
+    }
 }

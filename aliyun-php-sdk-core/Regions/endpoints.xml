@@ -721,6 +721,13 @@
             <Product><ProductName>Ons</ProductName><DomainName>ons.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Oss</ProductName><DomainName>oss-cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>YundunDdos</ProductName><DomainName>inner-yundun-ddos.cn-hangzhou.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Dyvmsapi</ProductName><DomainName>dyvmsapi.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Dysmsapi</ProductName><DomainName>dysmsapi.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Dycdpapi</ProductName><DomainName>dycdpapi.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Dyiotapi</ProductName><DomainName>dyiotapi.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Dyplsapi</ProductName><DomainName>dyplsapi.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Dypnsapi</ProductName><DomainName>dypnsapi.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Snsuapi</ProductName><DomainName>snsuapi.aliyuncs.com</DomainName></Product>
         </Products>
     </Endpoint>
     <Endpoint name="cn-beijing-inner">
@@ -1318,6 +1325,7 @@
             <Product><ProductName>OssAdmin</ProductName><DomainName>oss-admin.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Ons</ProductName><DomainName>ons.aliyuncs.com</DomainName></Product>
             <Product><ProductName>Oss</ProductName><DomainName>oss-ap-southeast-1.aliyuncs.com</DomainName></Product>
+            <Product><ProductName>Dysmsapi</ProductName><DomainName>dysmsapi.ap-southeast-1.aliyuncs.com</DomainName></Product>
         </Products>
     </Endpoint>
     <Endpoint name="cn-shenzhen-st4-d01">

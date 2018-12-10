@@ -58,12 +58,18 @@ abstract class RpcAcsRequest extends AcsRequest
         $apiParams["Format"] = $this->getAcceptFormat();
         $apiParams["SignatureMethod"] = $iSigner->getSignatureMethod();
         $apiParams["SignatureVersion"] = $iSigner->getSignatureVersion();
+        if ($iSigner->getSignatureType() != null) {
+            $apiParams["SignatureType"] = $iSigner->getSignatureType();
+        }
         $apiParams["SignatureNonce"] = md5(uniqid(mt_rand(), true));
         $apiParams["Timestamp"] = gmdate($this->dateTimeFormat);
         $apiParams["Action"] = $this->getActionName();
         $apiParams["Version"] = $this->getVersion();
         if ($credential->getSecurityToken() != null) {
             $apiParams["SecurityToken"] = $credential->getSecurityToken();
+        }
+        if ($credential instanceof BearerTokenCredential) {
+            $apiParams["BearerToken"] = $credential->getBearerToken();
         }
         $apiParams["Signature"] = $this->computeSignature($apiParams, $credential->getAccessSecret(), $iSigner);
         if (parent::getMethod() == "POST") {
