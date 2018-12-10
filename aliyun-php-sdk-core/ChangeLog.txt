@@ -1,3 +1,15 @@
+2018-12-11 Version: 1.2.1
+1, Add endpoint data for DYSMS
+
+2018-11-06 Version: 1.2.1
+1, fix Notice for LocationService::checkCacheIsExpire
+
+2018-11-06 Version: 1.2.1
+1, fix Notice for LocationService::checkCacheIsExpire
+
+2018-11-06 Version: 1.2.1
+1, fix Notice for LocationService::checkCacheIsExpire
+
 2018-03-13 Version: 1.1.4
 1, Three scene completion StsToken
 

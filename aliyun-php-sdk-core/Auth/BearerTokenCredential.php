@@ -17,25 +17,36 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-class ShaHmac256Signer implements ISigner
+class BearerTokenCredential extends AbstractCredential
 {
-    public function signString($source, $accessSecret)
+    private $bearerToken;
+
+    public function __construct($bearerToken)
     {
-        return    base64_encode(hash_hmac('sha256', $source, $accessSecret, true));
-    }
-    
-    public function getSignatureMethod()
-    {
-        return "HMAC-SHA256";
+        $this->bearerToken = $bearerToken;
     }
 
-    public function getSignatureVersion()
+    public function getAccessKeyId()
     {
-        return "1.0";
+        return null;
     }
 
-    public function getSignatureType()
+    public function getAccessSecret()
     {
+        return null;
+    }
+
+    public function getBearerToken()
+    {
+        return $this->bearerToken;
+    }
+
+    public function setBearerToken($bearerToken)
+    {
+        $this->bearerToken = $bearerToken;
+    }
+
+    public function getSecurityToken() {
         return null;
     }
 }
