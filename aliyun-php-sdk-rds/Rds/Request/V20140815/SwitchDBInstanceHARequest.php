@@ -23,7 +23,7 @@ class SwitchDBInstanceHARequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "SwitchDBInstanceHA", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "SwitchDBInstanceHA", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

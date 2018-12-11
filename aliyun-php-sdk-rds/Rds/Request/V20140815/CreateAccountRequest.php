@@ -23,7 +23,7 @@ class CreateAccountRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "CreateAccount", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "CreateAccount", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

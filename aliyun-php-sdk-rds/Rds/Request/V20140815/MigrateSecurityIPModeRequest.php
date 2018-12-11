@@ -23,7 +23,7 @@ class MigrateSecurityIPModeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "MigrateSecurityIPMode", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "MigrateSecurityIPMode", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

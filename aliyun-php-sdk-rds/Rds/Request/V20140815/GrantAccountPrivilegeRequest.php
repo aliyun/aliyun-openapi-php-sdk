@@ -23,7 +23,7 @@ class GrantAccountPrivilegeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "GrantAccountPrivilege", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "GrantAccountPrivilege", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

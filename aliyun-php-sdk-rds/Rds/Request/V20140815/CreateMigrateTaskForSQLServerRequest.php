@@ -23,7 +23,7 @@ class CreateMigrateTaskForSQLServerRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "CreateMigrateTaskForSQLServer", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "CreateMigrateTaskForSQLServer", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class DescibeImportsFromDatabaseRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescibeImportsFromDatabase", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescibeImportsFromDatabase", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

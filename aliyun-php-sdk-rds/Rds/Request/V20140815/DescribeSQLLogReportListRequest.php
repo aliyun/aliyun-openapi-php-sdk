@@ -23,7 +23,7 @@ class DescribeSQLLogReportListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeSQLLogReportList", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeSQLLogReportList", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

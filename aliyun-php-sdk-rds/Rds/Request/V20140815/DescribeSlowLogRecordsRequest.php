@@ -23,7 +23,7 @@ class DescribeSlowLogRecordsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeSlowLogRecords", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeSlowLogRecords", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -32,8 +32,6 @@ class DescribeSlowLogRecordsRequest extends \RpcAcsRequest
 	private  $resourceOwnerId;
 
 	private  $resourceOwnerAccount;
-
-	private  $queryTimeFormat;
 
 	private  $ownerAccount;
 
@@ -76,15 +74,6 @@ class DescribeSlowLogRecordsRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getQueryTimeFormat() {
-		return $this->queryTimeFormat;
-	}
-
-	public function setQueryTimeFormat($queryTimeFormat) {
-		$this->queryTimeFormat = $queryTimeFormat;
-		$this->queryParameters["QueryTimeFormat"]=$queryTimeFormat;
 	}
 
 	public function getOwnerAccount() {

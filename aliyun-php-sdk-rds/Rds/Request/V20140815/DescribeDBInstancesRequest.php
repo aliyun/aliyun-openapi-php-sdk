@@ -23,7 +23,7 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeDBInstances", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeDBInstances", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -46,6 +46,8 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 	private  $pageNumber;
 
 	private  $tag1value;
+
+	private  $resourceGroupId;
 
 	private  $expired;
 
@@ -181,6 +183,15 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 	public function setTag1value($tag1value) {
 		$this->tag1value = $tag1value;
 		$this->queryParameters["Tag.1.value"]=$tag1value;
+	}
+
+	public function getResourceGroupId() {
+		return $this->resourceGroupId;
+	}
+
+	public function setResourceGroupId($resourceGroupId) {
+		$this->resourceGroupId = $resourceGroupId;
+		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
 	}
 
 	public function getExpired() {

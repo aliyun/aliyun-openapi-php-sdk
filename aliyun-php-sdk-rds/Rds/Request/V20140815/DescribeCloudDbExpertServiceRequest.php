@@ -19,13 +19,15 @@
  */
 namespace Rds\Request\V20140815;
 
-class DeleteDampPolicyRequest extends \RpcAcsRequest
+class DescribeCloudDbExpertServiceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DeleteDampPolicy", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeCloudDbExpertService", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
+
+	private  $serviceRequestParam;
 
 	private  $resourceOwnerId;
 
@@ -37,9 +39,18 @@ class DeleteDampPolicyRequest extends \RpcAcsRequest
 
 	private  $dBInstanceId;
 
-	private  $policyName;
-
 	private  $ownerId;
+
+	private  $serviceRequestType;
+
+	public function getServiceRequestParam() {
+		return $this->serviceRequestParam;
+	}
+
+	public function setServiceRequestParam($serviceRequestParam) {
+		$this->serviceRequestParam = $serviceRequestParam;
+		$this->queryParameters["ServiceRequestParam"]=$serviceRequestParam;
+	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -86,15 +97,6 @@ class DeleteDampPolicyRequest extends \RpcAcsRequest
 		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
 	}
 
-	public function getPolicyName() {
-		return $this->policyName;
-	}
-
-	public function setPolicyName($policyName) {
-		$this->policyName = $policyName;
-		$this->queryParameters["PolicyName"]=$policyName;
-	}
-
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -102,6 +104,15 @@ class DeleteDampPolicyRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getServiceRequestType() {
+		return $this->serviceRequestType;
+	}
+
+	public function setServiceRequestType($serviceRequestType) {
+		$this->serviceRequestType = $serviceRequestType;
+		$this->queryParameters["ServiceRequestType"]=$serviceRequestType;
 	}
 	
 }

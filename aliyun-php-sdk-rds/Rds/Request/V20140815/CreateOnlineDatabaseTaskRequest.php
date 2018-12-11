@@ -23,7 +23,7 @@ class CreateOnlineDatabaseTaskRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "CreateOnlineDatabaseTask", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "CreateOnlineDatabaseTask", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

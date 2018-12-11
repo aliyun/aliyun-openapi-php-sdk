@@ -23,7 +23,7 @@ class SwitchDBInstanceVpcRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "SwitchDBInstanceVpc", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "SwitchDBInstanceVpc", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class ModifyDBInstanceTDERequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "ModifyDBInstanceTDE", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "ModifyDBInstanceTDE", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

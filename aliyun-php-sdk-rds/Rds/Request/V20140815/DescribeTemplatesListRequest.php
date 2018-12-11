@@ -19,11 +19,11 @@
  */
 namespace Rds\Request\V20140815;
 
-class DescribeSqlLogTemplatesTimeDistributionRequest extends \RpcAcsRequest
+class DescribeTemplatesListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeSqlLogTemplatesTimeDistribution", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeTemplatesList", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -31,7 +31,11 @@ class DescribeSqlLogTemplatesTimeDistributionRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerAccount;
 
+	private  $minAvgConsume;
+
 	private  $ownerAccount;
+
+	private  $maxRecordsPerPage;
 
 	private  $endTime;
 
@@ -39,13 +43,25 @@ class DescribeSqlLogTemplatesTimeDistributionRequest extends \RpcAcsRequest
 
 	private  $ownerId;
 
-	private  $templateHash;
+	private  $maxAvgConsume;
+
+	private  $sortKey;
+
+	private  $minAvgScanRows;
+
+	private  $sqType;
 
 	private  $securityToken;
 
-	private  $timeLevel;
+	private  $sortMethod;
+
+	private  $pageNumbers;
+
+	private  $pagingId;
 
 	private  $dBInstanceId;
+
+	private  $maxAvgScanRows;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -65,6 +81,15 @@ class DescribeSqlLogTemplatesTimeDistributionRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
+	public function getMinAvgConsume() {
+		return $this->minAvgConsume;
+	}
+
+	public function setMinAvgConsume($minAvgConsume) {
+		$this->minAvgConsume = $minAvgConsume;
+		$this->queryParameters["MinAvgConsume"]=$minAvgConsume;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -72,6 +97,15 @@ class DescribeSqlLogTemplatesTimeDistributionRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getMaxRecordsPerPage() {
+		return $this->maxRecordsPerPage;
+	}
+
+	public function setMaxRecordsPerPage($maxRecordsPerPage) {
+		$this->maxRecordsPerPage = $maxRecordsPerPage;
+		$this->queryParameters["MaxRecordsPerPage"]=$maxRecordsPerPage;
 	}
 
 	public function getEndTime() {
@@ -101,13 +135,40 @@ class DescribeSqlLogTemplatesTimeDistributionRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getTemplateHash() {
-		return $this->templateHash;
+	public function getMaxAvgConsume() {
+		return $this->maxAvgConsume;
 	}
 
-	public function setTemplateHash($templateHash) {
-		$this->templateHash = $templateHash;
-		$this->queryParameters["TemplateHash"]=$templateHash;
+	public function setMaxAvgConsume($maxAvgConsume) {
+		$this->maxAvgConsume = $maxAvgConsume;
+		$this->queryParameters["MaxAvgConsume"]=$maxAvgConsume;
+	}
+
+	public function getSortKey() {
+		return $this->sortKey;
+	}
+
+	public function setSortKey($sortKey) {
+		$this->sortKey = $sortKey;
+		$this->queryParameters["SortKey"]=$sortKey;
+	}
+
+	public function getMinAvgScanRows() {
+		return $this->minAvgScanRows;
+	}
+
+	public function setMinAvgScanRows($minAvgScanRows) {
+		$this->minAvgScanRows = $minAvgScanRows;
+		$this->queryParameters["MinAvgScanRows"]=$minAvgScanRows;
+	}
+
+	public function getSqType() {
+		return $this->sqType;
+	}
+
+	public function setSqType($sqType) {
+		$this->sqType = $sqType;
+		$this->queryParameters["SqType"]=$sqType;
 	}
 
 	public function getSecurityToken() {
@@ -119,13 +180,31 @@ class DescribeSqlLogTemplatesTimeDistributionRequest extends \RpcAcsRequest
 		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
-	public function getTimeLevel() {
-		return $this->timeLevel;
+	public function getSortMethod() {
+		return $this->sortMethod;
 	}
 
-	public function setTimeLevel($timeLevel) {
-		$this->timeLevel = $timeLevel;
-		$this->queryParameters["TimeLevel"]=$timeLevel;
+	public function setSortMethod($sortMethod) {
+		$this->sortMethod = $sortMethod;
+		$this->queryParameters["SortMethod"]=$sortMethod;
+	}
+
+	public function getPageNumbers() {
+		return $this->pageNumbers;
+	}
+
+	public function setPageNumbers($pageNumbers) {
+		$this->pageNumbers = $pageNumbers;
+		$this->queryParameters["PageNumbers"]=$pageNumbers;
+	}
+
+	public function getPagingId() {
+		return $this->pagingId;
+	}
+
+	public function setPagingId($pagingId) {
+		$this->pagingId = $pagingId;
+		$this->queryParameters["PagingId"]=$pagingId;
 	}
 
 	public function getDBInstanceId() {
@@ -135,6 +214,15 @@ class DescribeSqlLogTemplatesTimeDistributionRequest extends \RpcAcsRequest
 	public function setDBInstanceId($dBInstanceId) {
 		$this->dBInstanceId = $dBInstanceId;
 		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
+	}
+
+	public function getMaxAvgScanRows() {
+		return $this->maxAvgScanRows;
+	}
+
+	public function setMaxAvgScanRows($maxAvgScanRows) {
+		$this->maxAvgScanRows = $maxAvgScanRows;
+		$this->queryParameters["MaxAvgScanRows"]=$maxAvgScanRows;
 	}
 	
 }

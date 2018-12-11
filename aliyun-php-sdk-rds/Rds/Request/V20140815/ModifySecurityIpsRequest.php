@@ -23,7 +23,7 @@ class ModifySecurityIpsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "ModifySecurityIps", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "ModifySecurityIps", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class DescribeMigrateTasksRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeMigrateTasks", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeMigrateTasks", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

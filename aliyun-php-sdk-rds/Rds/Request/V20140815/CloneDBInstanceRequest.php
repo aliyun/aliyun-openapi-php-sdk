@@ -23,7 +23,7 @@ class CloneDBInstanceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "CloneDBInstance", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "CloneDBInstance", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

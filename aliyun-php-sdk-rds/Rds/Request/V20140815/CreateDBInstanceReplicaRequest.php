@@ -23,7 +23,7 @@ class CreateDBInstanceReplicaRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "CreateDBInstanceReplica", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "CreateDBInstanceReplica", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

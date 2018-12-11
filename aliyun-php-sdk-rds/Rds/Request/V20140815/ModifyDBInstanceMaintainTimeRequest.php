@@ -23,7 +23,7 @@ class ModifyDBInstanceMaintainTimeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "ModifyDBInstanceMaintainTime", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "ModifyDBInstanceMaintainTime", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

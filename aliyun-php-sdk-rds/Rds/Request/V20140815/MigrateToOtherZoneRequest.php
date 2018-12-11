@@ -23,7 +23,7 @@ class MigrateToOtherZoneRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "MigrateToOtherZone", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "MigrateToOtherZone", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

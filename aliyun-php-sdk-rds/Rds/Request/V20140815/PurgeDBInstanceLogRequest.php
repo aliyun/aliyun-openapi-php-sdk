@@ -23,7 +23,7 @@ class PurgeDBInstanceLogRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "PurgeDBInstanceLog", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "PurgeDBInstanceLog", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

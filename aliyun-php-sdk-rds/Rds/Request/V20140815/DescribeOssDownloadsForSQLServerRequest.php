@@ -23,7 +23,7 @@ class DescribeOssDownloadsForSQLServerRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeOssDownloadsForSQLServer", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeOssDownloadsForSQLServer", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class ModifyDBInstanceSpecRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "ModifyDBInstanceSpec", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "ModifyDBInstanceSpec", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -35,17 +35,19 @@ class ModifyDBInstanceSpecRequest extends \RpcAcsRequest
 
 	private  $clientToken;
 
-	private  $effectiveTime;
-
 	private  $ownerAccount;
 
-	private  $dBInstanceId;
+	private  $engineVersion;
 
 	private  $ownerId;
 
-	private  $payType;
-
 	private  $dBInstanceClass;
+
+	private  $effectiveTime;
+
+	private  $dBInstanceId;
+
+	private  $payType;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -83,15 +85,6 @@ class ModifyDBInstanceSpecRequest extends \RpcAcsRequest
 		$this->queryParameters["ClientToken"]=$clientToken;
 	}
 
-	public function getEffectiveTime() {
-		return $this->effectiveTime;
-	}
-
-	public function setEffectiveTime($effectiveTime) {
-		$this->effectiveTime = $effectiveTime;
-		$this->queryParameters["EffectiveTime"]=$effectiveTime;
-	}
-
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -101,13 +94,13 @@ class ModifyDBInstanceSpecRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getDBInstanceId() {
-		return $this->dBInstanceId;
+	public function getEngineVersion() {
+		return $this->engineVersion;
 	}
 
-	public function setDBInstanceId($dBInstanceId) {
-		$this->dBInstanceId = $dBInstanceId;
-		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
+	public function setEngineVersion($engineVersion) {
+		$this->engineVersion = $engineVersion;
+		$this->queryParameters["EngineVersion"]=$engineVersion;
 	}
 
 	public function getOwnerId() {
@@ -119,15 +112,6 @@ class ModifyDBInstanceSpecRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getPayType() {
-		return $this->payType;
-	}
-
-	public function setPayType($payType) {
-		$this->payType = $payType;
-		$this->queryParameters["PayType"]=$payType;
-	}
-
 	public function getDBInstanceClass() {
 		return $this->dBInstanceClass;
 	}
@@ -135,6 +119,33 @@ class ModifyDBInstanceSpecRequest extends \RpcAcsRequest
 	public function setDBInstanceClass($dBInstanceClass) {
 		$this->dBInstanceClass = $dBInstanceClass;
 		$this->queryParameters["DBInstanceClass"]=$dBInstanceClass;
+	}
+
+	public function getEffectiveTime() {
+		return $this->effectiveTime;
+	}
+
+	public function setEffectiveTime($effectiveTime) {
+		$this->effectiveTime = $effectiveTime;
+		$this->queryParameters["EffectiveTime"]=$effectiveTime;
+	}
+
+	public function getDBInstanceId() {
+		return $this->dBInstanceId;
+	}
+
+	public function setDBInstanceId($dBInstanceId) {
+		$this->dBInstanceId = $dBInstanceId;
+		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
+	}
+
+	public function getPayType() {
+		return $this->payType;
+	}
+
+	public function setPayType($payType) {
+		$this->payType = $payType;
+		$this->queryParameters["PayType"]=$payType;
 	}
 	
 }

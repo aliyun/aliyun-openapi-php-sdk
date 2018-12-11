@@ -23,7 +23,7 @@ class DescribeDBInstanceByTagsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeDBInstanceByTags", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeDBInstanceByTags", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

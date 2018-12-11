@@ -19,40 +19,23 @@
  */
 namespace Rds\Request\V20140815;
 
-class ModifyReplicaModeRequest extends \RpcAcsRequest
+class ModifyMySQLDBInstanceDelayRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "ModifyReplicaMode", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "ModifyMySQLDBInstanceDelay", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $domainMode;
-
 	private  $resourceOwnerId;
-
-	private  $primaryInstanceId;
-
-	private  $replicaMode;
-
-	private  $securityToken;
 
 	private  $resourceOwnerAccount;
 
-	private  $ownerAccount;
+	private  $sqlDelay;
 
-	private  $replicaId;
+	private  $dBInstanceId;
 
 	private  $ownerId;
-
-	public function getDomainMode() {
-		return $this->domainMode;
-	}
-
-	public function setDomainMode($domainMode) {
-		$this->domainMode = $domainMode;
-		$this->queryParameters["DomainMode"]=$domainMode;
-	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -61,33 +44,6 @@ class ModifyReplicaModeRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getPrimaryInstanceId() {
-		return $this->primaryInstanceId;
-	}
-
-	public function setPrimaryInstanceId($primaryInstanceId) {
-		$this->primaryInstanceId = $primaryInstanceId;
-		$this->queryParameters["PrimaryInstanceId"]=$primaryInstanceId;
-	}
-
-	public function getReplicaMode() {
-		return $this->replicaMode;
-	}
-
-	public function setReplicaMode($replicaMode) {
-		$this->replicaMode = $replicaMode;
-		$this->queryParameters["ReplicaMode"]=$replicaMode;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -99,22 +55,22 @@ class ModifyReplicaModeRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
+	public function getSqlDelay() {
+		return $this->sqlDelay;
 	}
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	public function setSqlDelay($sqlDelay) {
+		$this->sqlDelay = $sqlDelay;
+		$this->queryParameters["SqlDelay"]=$sqlDelay;
 	}
 
-	public function getReplicaId() {
-		return $this->replicaId;
+	public function getDBInstanceId() {
+		return $this->dBInstanceId;
 	}
 
-	public function setReplicaId($replicaId) {
-		$this->replicaId = $replicaId;
-		$this->queryParameters["ReplicaId"]=$replicaId;
+	public function setDBInstanceId($dBInstanceId) {
+		$this->dBInstanceId = $dBInstanceId;
+		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
 	}
 
 	public function getOwnerId() {

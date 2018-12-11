@@ -23,7 +23,7 @@ class RevokeAccountPrivilegeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "RevokeAccountPrivilege", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "RevokeAccountPrivilege", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class UpgradeDBInstanceKernelVersionRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "UpgradeDBInstanceKernelVersion", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "UpgradeDBInstanceKernelVersion", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

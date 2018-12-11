@@ -23,7 +23,7 @@ class CopyDatabaseRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "CopyDatabase", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "CopyDatabase", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

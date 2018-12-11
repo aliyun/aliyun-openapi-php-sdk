@@ -23,7 +23,7 @@ class CopyDatabaseBetweenInstancesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "CopyDatabaseBetweenInstances", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "CopyDatabaseBetweenInstances", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

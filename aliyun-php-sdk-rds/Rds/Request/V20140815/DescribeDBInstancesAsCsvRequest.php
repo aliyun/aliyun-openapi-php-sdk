@@ -23,7 +23,7 @@ class DescribeDBInstancesAsCsvRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeDBInstancesAsCsv", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeDBInstancesAsCsv", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

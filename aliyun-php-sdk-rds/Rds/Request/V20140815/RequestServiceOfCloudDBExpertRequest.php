@@ -19,27 +19,27 @@
  */
 namespace Rds\Request\V20140815;
 
-class CreateDiagnosticReportRequest extends \RpcAcsRequest
+class RequestServiceOfCloudDBExpertRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "CreateDiagnosticReport", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "RequestServiceOfCloudDBExpert", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $endTime;
+	private  $serviceRequestParam;
 
 	private  $dBInstanceId;
 
-	private  $startTime;
+	private  $serviceRequestType;
 
-	public function getEndTime() {
-		return $this->endTime;
+	public function getServiceRequestParam() {
+		return $this->serviceRequestParam;
 	}
 
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
+	public function setServiceRequestParam($serviceRequestParam) {
+		$this->serviceRequestParam = $serviceRequestParam;
+		$this->queryParameters["ServiceRequestParam"]=$serviceRequestParam;
 	}
 
 	public function getDBInstanceId() {
@@ -51,13 +51,13 @@ class CreateDiagnosticReportRequest extends \RpcAcsRequest
 		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
 	}
 
-	public function getStartTime() {
-		return $this->startTime;
+	public function getServiceRequestType() {
+		return $this->serviceRequestType;
 	}
 
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
+	public function setServiceRequestType($serviceRequestType) {
+		$this->serviceRequestType = $serviceRequestType;
+		$this->queryParameters["ServiceRequestType"]=$serviceRequestType;
 	}
 	
 }

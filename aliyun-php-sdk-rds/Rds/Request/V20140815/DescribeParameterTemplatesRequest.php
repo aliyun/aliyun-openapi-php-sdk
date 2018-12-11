@@ -23,7 +23,7 @@ class DescribeParameterTemplatesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeParameterTemplates", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeParameterTemplates", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -40,6 +40,8 @@ class DescribeParameterTemplatesRequest extends \RpcAcsRequest
 	private  $engineVersion;
 
 	private  $ownerId;
+
+	private  $category;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -102,6 +104,15 @@ class DescribeParameterTemplatesRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getCategory() {
+		return $this->category;
+	}
+
+	public function setCategory($category) {
+		$this->category = $category;
+		$this->queryParameters["Category"]=$category;
 	}
 	
 }

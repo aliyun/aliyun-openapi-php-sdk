@@ -23,7 +23,7 @@ class DescribePriceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribePrice", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribePrice", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

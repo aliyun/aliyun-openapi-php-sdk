@@ -23,7 +23,7 @@ class CreateTempDBInstanceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "CreateTempDBInstance", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "CreateTempDBInstance", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

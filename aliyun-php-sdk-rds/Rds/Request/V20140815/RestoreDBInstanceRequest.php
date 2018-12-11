@@ -23,7 +23,7 @@ class RestoreDBInstanceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "RestoreDBInstance", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "RestoreDBInstance", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class ResetAccountForPGRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "ResetAccountForPG", "rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "ResetAccountForPG", "Rds", "openAPI");
 		$this->setMethod("POST");
 	}
 
