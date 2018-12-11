@@ -23,7 +23,7 @@ class StartDcdnDomainRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("dcdn", "2018-01-15", "StartDcdnDomain");
+		parent::__construct("dcdn", "2018-01-15", "StartDcdnDomain", "dcdn", "openAPI");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class DescribeDcdnRefreshQuotaRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("dcdn", "2018-01-15", "DescribeDcdnRefreshQuota");
+		parent::__construct("dcdn", "2018-01-15", "DescribeDcdnRefreshQuota", "dcdn", "openAPI");
 		$this->setMethod("POST");
 	}
 

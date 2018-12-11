@@ -23,7 +23,7 @@ class DescribeDcdnDomainCertificateInfoRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("dcdn", "2018-01-15", "DescribeDcdnDomainCertificateInfo");
+		parent::__construct("dcdn", "2018-01-15", "DescribeDcdnDomainCertificateInfo", "dcdn", "openAPI");
 		$this->setMethod("POST");
 	}
 

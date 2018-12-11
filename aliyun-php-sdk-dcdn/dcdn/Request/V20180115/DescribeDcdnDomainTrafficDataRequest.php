@@ -23,7 +23,7 @@ class DescribeDcdnDomainTrafficDataRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("dcdn", "2018-01-15", "DescribeDcdnDomainTrafficData");
+		parent::__construct("dcdn", "2018-01-15", "DescribeDcdnDomainTrafficData", "dcdn", "openAPI");
 		$this->setMethod("POST");
 	}
 

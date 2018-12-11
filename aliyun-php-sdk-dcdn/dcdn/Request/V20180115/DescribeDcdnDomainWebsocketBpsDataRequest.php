@@ -23,7 +23,7 @@ class DescribeDcdnDomainWebsocketBpsDataRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("dcdn", "2018-01-15", "DescribeDcdnDomainWebsocketBpsData");
+		parent::__construct("dcdn", "2018-01-15", "DescribeDcdnDomainWebsocketBpsData", "dcdn", "openAPI");
 		$this->setMethod("POST");
 	}
 

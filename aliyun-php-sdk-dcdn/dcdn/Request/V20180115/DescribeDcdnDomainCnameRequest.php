@@ -23,7 +23,7 @@ class DescribeDcdnDomainCnameRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("dcdn", "2018-01-15", "DescribeDcdnDomainCname");
+		parent::__construct("dcdn", "2018-01-15", "DescribeDcdnDomainCname", "dcdn", "openAPI");
 	}
 
 	private  $domainName;

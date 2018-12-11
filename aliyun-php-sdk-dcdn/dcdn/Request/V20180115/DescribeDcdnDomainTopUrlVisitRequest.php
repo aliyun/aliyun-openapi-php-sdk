@@ -23,7 +23,7 @@ class DescribeDcdnDomainTopUrlVisitRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("dcdn", "2018-01-15", "DescribeDcdnDomainTopUrlVisit");
+		parent::__construct("dcdn", "2018-01-15", "DescribeDcdnDomainTopUrlVisit", "dcdn", "openAPI");
 		$this->setMethod("POST");
 	}
 
