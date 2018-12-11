@@ -19,19 +19,17 @@
  */
 namespace R_kvstore\Request\V20150101;
 
-class DeleteAccountRequest extends \RpcAcsRequest
+class DescribeActiveOperationTaskTypeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("R-kvstore", "2015-01-01", "DeleteAccount", "redisa", "openAPI");
+		parent::__construct("R-kvstore", "2015-01-01", "DescribeActiveOperationTaskType", "redisa", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
-	private  $instanceId;
-
-	private  $accountName;
+	private  $isHistory;
 
 	private  $securityToken;
 
@@ -50,22 +48,13 @@ class DeleteAccountRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getInstanceId() {
-		return $this->instanceId;
+	public function getIsHistory() {
+		return $this->isHistory;
 	}
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
-
-	public function getAccountName() {
-		return $this->accountName;
-	}
-
-	public function setAccountName($accountName) {
-		$this->accountName = $accountName;
-		$this->queryParameters["AccountName"]=$accountName;
+	public function setIsHistory($isHistory) {
+		$this->isHistory = $isHistory;
+		$this->queryParameters["IsHistory"]=$isHistory;
 	}
 
 	public function getSecurityToken() {

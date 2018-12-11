@@ -19,27 +19,33 @@
  */
 namespace R_kvstore\Request\V20150101;
 
-class DeleteAccountRequest extends \RpcAcsRequest
+class DescribeActiveOperationTaskRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("R-kvstore", "2015-01-01", "DeleteAccount", "redisa", "openAPI");
+		parent::__construct("R-kvstore", "2015-01-01", "DescribeActiveOperationTask", "redisa", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
-	private  $instanceId;
-
-	private  $accountName;
-
-	private  $securityToken;
+	private  $taskType;
 
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
 	private  $ownerId;
+
+	private  $pageNumber;
+
+	private  $isHistory;
+
+	private  $securityToken;
+
+	private  $pageSize;
+
+	private  $region;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -50,31 +56,13 @@ class DeleteAccountRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getInstanceId() {
-		return $this->instanceId;
+	public function getTaskType() {
+		return $this->taskType;
 	}
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
-
-	public function getAccountName() {
-		return $this->accountName;
-	}
-
-	public function setAccountName($accountName) {
-		$this->accountName = $accountName;
-		$this->queryParameters["AccountName"]=$accountName;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
+	public function setTaskType($taskType) {
+		$this->taskType = $taskType;
+		$this->queryParameters["TaskType"]=$taskType;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -102,6 +90,51 @@ class DeleteAccountRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getPageNumber() {
+		return $this->pageNumber;
+	}
+
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
+	}
+
+	public function getIsHistory() {
+		return $this->isHistory;
+	}
+
+	public function setIsHistory($isHistory) {
+		$this->isHistory = $isHistory;
+		$this->queryParameters["IsHistory"]=$isHistory;
+	}
+
+	public function getSecurityToken() {
+		return $this->securityToken;
+	}
+
+	public function setSecurityToken($securityToken) {
+		$this->securityToken = $securityToken;
+		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
+	public function getRegion() {
+		return $this->region;
+	}
+
+	public function setRegion($region) {
+		$this->region = $region;
+		$this->queryParameters["Region"]=$region;
 	}
 	
 }

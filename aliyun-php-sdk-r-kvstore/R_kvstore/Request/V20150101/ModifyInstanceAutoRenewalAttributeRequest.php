@@ -19,27 +19,38 @@
  */
 namespace R_kvstore\Request\V20150101;
 
-class DeleteAccountRequest extends \RpcAcsRequest
+class ModifyInstanceAutoRenewalAttributeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("R-kvstore", "2015-01-01", "DeleteAccount", "redisa", "openAPI");
+		parent::__construct("R-kvstore", "2015-01-01", "ModifyInstanceAutoRenewalAttribute", "redisa", "openAPI");
 		$this->setMethod("POST");
 	}
 
+	private  $duration;
+
 	private  $resourceOwnerId;
 
-	private  $instanceId;
-
-	private  $accountName;
-
-	private  $securityToken;
+	private  $autoRenew;
 
 	private  $resourceOwnerAccount;
 
+	private  $clientToken;
+
 	private  $ownerAccount;
 
+	private  $dBInstanceId;
+
 	private  $ownerId;
+
+	public function getDuration() {
+		return $this->duration;
+	}
+
+	public function setDuration($duration) {
+		$this->duration = $duration;
+		$this->queryParameters["Duration"]=$duration;
+	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -50,31 +61,13 @@ class DeleteAccountRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getInstanceId() {
-		return $this->instanceId;
+	public function getAutoRenew() {
+		return $this->autoRenew;
 	}
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
-
-	public function getAccountName() {
-		return $this->accountName;
-	}
-
-	public function setAccountName($accountName) {
-		$this->accountName = $accountName;
-		$this->queryParameters["AccountName"]=$accountName;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
+	public function setAutoRenew($autoRenew) {
+		$this->autoRenew = $autoRenew;
+		$this->queryParameters["AutoRenew"]=$autoRenew;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -86,6 +79,15 @@ class DeleteAccountRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
+	public function getClientToken() {
+		return $this->clientToken;
+	}
+
+	public function setClientToken($clientToken) {
+		$this->clientToken = $clientToken;
+		$this->queryParameters["ClientToken"]=$clientToken;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -93,6 +95,15 @@ class DeleteAccountRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getDBInstanceId() {
+		return $this->dBInstanceId;
+	}
+
+	public function setDBInstanceId($dBInstanceId) {
+		$this->dBInstanceId = $dBInstanceId;
+		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
 	}
 
 	public function getOwnerId() {

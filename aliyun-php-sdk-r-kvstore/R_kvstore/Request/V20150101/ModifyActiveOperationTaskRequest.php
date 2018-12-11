@@ -19,25 +19,25 @@
  */
 namespace R_kvstore\Request\V20150101;
 
-class DeleteAccountRequest extends \RpcAcsRequest
+class ModifyActiveOperationTaskRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("R-kvstore", "2015-01-01", "DeleteAccount", "redisa", "openAPI");
+		parent::__construct("R-kvstore", "2015-01-01", "ModifyActiveOperationTask", "redisa", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
-
-	private  $instanceId;
-
-	private  $accountName;
 
 	private  $securityToken;
 
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
+
+	private  $ids;
+
+	private  $switchTime;
 
 	private  $ownerId;
 
@@ -48,24 +48,6 @@ class DeleteAccountRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
-
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
-
-	public function getAccountName() {
-		return $this->accountName;
-	}
-
-	public function setAccountName($accountName) {
-		$this->accountName = $accountName;
-		$this->queryParameters["AccountName"]=$accountName;
 	}
 
 	public function getSecurityToken() {
@@ -93,6 +75,24 @@ class DeleteAccountRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getIds() {
+		return $this->ids;
+	}
+
+	public function setIds($ids) {
+		$this->ids = $ids;
+		$this->queryParameters["Ids"]=$ids;
+	}
+
+	public function getSwitchTime() {
+		return $this->switchTime;
+	}
+
+	public function setSwitchTime($switchTime) {
+		$this->switchTime = $switchTime;
+		$this->queryParameters["SwitchTime"]=$switchTime;
 	}
 
 	public function getOwnerId() {

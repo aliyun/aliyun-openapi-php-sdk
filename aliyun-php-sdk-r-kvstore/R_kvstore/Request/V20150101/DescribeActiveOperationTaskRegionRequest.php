@@ -19,19 +19,19 @@
  */
 namespace R_kvstore\Request\V20150101;
 
-class DeleteAccountRequest extends \RpcAcsRequest
+class DescribeActiveOperationTaskRegionRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("R-kvstore", "2015-01-01", "DeleteAccount", "redisa", "openAPI");
+		parent::__construct("R-kvstore", "2015-01-01", "DescribeActiveOperationTaskRegion", "redisa", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
-	private  $instanceId;
+	private  $isHistory;
 
-	private  $accountName;
+	private  $taskType;
 
 	private  $securityToken;
 
@@ -50,22 +50,22 @@ class DeleteAccountRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getInstanceId() {
-		return $this->instanceId;
+	public function getIsHistory() {
+		return $this->isHistory;
 	}
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
+	public function setIsHistory($isHistory) {
+		$this->isHistory = $isHistory;
+		$this->queryParameters["IsHistory"]=$isHistory;
 	}
 
-	public function getAccountName() {
-		return $this->accountName;
+	public function getTaskType() {
+		return $this->taskType;
 	}
 
-	public function setAccountName($accountName) {
-		$this->accountName = $accountName;
-		$this->queryParameters["AccountName"]=$accountName;
+	public function setTaskType($taskType) {
+		$this->taskType = $taskType;
+		$this->queryParameters["TaskType"]=$taskType;
 	}
 
 	public function getSecurityToken() {

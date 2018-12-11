@@ -19,11 +19,11 @@
  */
 namespace R_kvstore\Request\V20150101;
 
-class CreateAccountRequest extends \RpcAcsRequest
+class DescribeAuditRecordsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("R-kvstore", "2015-01-01", "CreateAccount", "redisa", "openAPI");
+		parent::__construct("R-kvstore", "2015-01-01", "DescribeAuditRecords", "redisa", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -33,21 +33,29 @@ class CreateAccountRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
-	private  $accountType;
+	private  $endTime;
+
+	private  $startTime;
 
 	private  $ownerId;
 
-	private  $accountDescription;
+	private  $queryKeywords;
 
-	private  $accountPrivilege;
+	private  $pageNumber;
 
-	private  $accountPassword;
+	private  $hostAddress;
 
 	private  $instanceId;
 
 	private  $accountName;
 
 	private  $securityToken;
+
+	private  $databaseName;
+
+	private  $pageSize;
+
+	private  $nodeId;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -76,13 +84,22 @@ class CreateAccountRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getAccountType() {
-		return $this->accountType;
+	public function getEndTime() {
+		return $this->endTime;
 	}
 
-	public function setAccountType($accountType) {
-		$this->accountType = $accountType;
-		$this->queryParameters["AccountType"]=$accountType;
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
 	}
 
 	public function getOwnerId() {
@@ -94,31 +111,31 @@ class CreateAccountRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getAccountDescription() {
-		return $this->accountDescription;
+	public function getQueryKeywords() {
+		return $this->queryKeywords;
 	}
 
-	public function setAccountDescription($accountDescription) {
-		$this->accountDescription = $accountDescription;
-		$this->queryParameters["AccountDescription"]=$accountDescription;
+	public function setQueryKeywords($queryKeywords) {
+		$this->queryKeywords = $queryKeywords;
+		$this->queryParameters["QueryKeywords"]=$queryKeywords;
 	}
 
-	public function getAccountPrivilege() {
-		return $this->accountPrivilege;
+	public function getPageNumber() {
+		return $this->pageNumber;
 	}
 
-	public function setAccountPrivilege($accountPrivilege) {
-		$this->accountPrivilege = $accountPrivilege;
-		$this->queryParameters["AccountPrivilege"]=$accountPrivilege;
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 
-	public function getAccountPassword() {
-		return $this->accountPassword;
+	public function getHostAddress() {
+		return $this->hostAddress;
 	}
 
-	public function setAccountPassword($accountPassword) {
-		$this->accountPassword = $accountPassword;
-		$this->queryParameters["AccountPassword"]=$accountPassword;
+	public function setHostAddress($hostAddress) {
+		$this->hostAddress = $hostAddress;
+		$this->queryParameters["HostAddress"]=$hostAddress;
 	}
 
 	public function getInstanceId() {
@@ -146,6 +163,33 @@ class CreateAccountRequest extends \RpcAcsRequest
 	public function setSecurityToken($securityToken) {
 		$this->securityToken = $securityToken;
 		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
+
+	public function getDatabaseName() {
+		return $this->databaseName;
+	}
+
+	public function setDatabaseName($databaseName) {
+		$this->databaseName = $databaseName;
+		$this->queryParameters["DatabaseName"]=$databaseName;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
+	public function getNodeId() {
+		return $this->nodeId;
+	}
+
+	public function setNodeId($nodeId) {
+		$this->nodeId = $nodeId;
+		$this->queryParameters["NodeId"]=$nodeId;
 	}
 	
 }

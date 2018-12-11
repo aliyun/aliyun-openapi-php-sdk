@@ -19,13 +19,15 @@
  */
 namespace R_kvstore\Request\V20150101;
 
-class CreateAccountRequest extends \RpcAcsRequest
+class DescribeRunningLogRecordsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("R-kvstore", "2015-01-01", "CreateAccount", "redisa", "openAPI");
+		parent::__construct("R-kvstore", "2015-01-01", "DescribeRunningLogRecords", "redisa", "openAPI");
 		$this->setMethod("POST");
 	}
+
+	private  $sQLId;
 
 	private  $resourceOwnerId;
 
@@ -33,21 +35,34 @@ class CreateAccountRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
-	private  $accountType;
+	private  $endTime;
+
+	private  $startTime;
 
 	private  $ownerId;
 
-	private  $accountDescription;
-
-	private  $accountPrivilege;
-
-	private  $accountPassword;
+	private  $pageNumber;
 
 	private  $instanceId;
 
-	private  $accountName;
+	private  $dBName;
 
 	private  $securityToken;
+
+	private  $pageSize;
+
+	private  $roleType;
+
+	private  $nodeId;
+
+	public function getSQLId() {
+		return $this->sQLId;
+	}
+
+	public function setSQLId($sQLId) {
+		$this->sQLId = $sQLId;
+		$this->queryParameters["SQLId"]=$sQLId;
+	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -76,13 +91,22 @@ class CreateAccountRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getAccountType() {
-		return $this->accountType;
+	public function getEndTime() {
+		return $this->endTime;
 	}
 
-	public function setAccountType($accountType) {
-		$this->accountType = $accountType;
-		$this->queryParameters["AccountType"]=$accountType;
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
 	}
 
 	public function getOwnerId() {
@@ -94,31 +118,13 @@ class CreateAccountRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getAccountDescription() {
-		return $this->accountDescription;
+	public function getPageNumber() {
+		return $this->pageNumber;
 	}
 
-	public function setAccountDescription($accountDescription) {
-		$this->accountDescription = $accountDescription;
-		$this->queryParameters["AccountDescription"]=$accountDescription;
-	}
-
-	public function getAccountPrivilege() {
-		return $this->accountPrivilege;
-	}
-
-	public function setAccountPrivilege($accountPrivilege) {
-		$this->accountPrivilege = $accountPrivilege;
-		$this->queryParameters["AccountPrivilege"]=$accountPrivilege;
-	}
-
-	public function getAccountPassword() {
-		return $this->accountPassword;
-	}
-
-	public function setAccountPassword($accountPassword) {
-		$this->accountPassword = $accountPassword;
-		$this->queryParameters["AccountPassword"]=$accountPassword;
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 
 	public function getInstanceId() {
@@ -130,13 +136,13 @@ class CreateAccountRequest extends \RpcAcsRequest
 		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 
-	public function getAccountName() {
-		return $this->accountName;
+	public function getDBName() {
+		return $this->dBName;
 	}
 
-	public function setAccountName($accountName) {
-		$this->accountName = $accountName;
-		$this->queryParameters["AccountName"]=$accountName;
+	public function setDBName($dBName) {
+		$this->dBName = $dBName;
+		$this->queryParameters["DBName"]=$dBName;
 	}
 
 	public function getSecurityToken() {
@@ -146,6 +152,33 @@ class CreateAccountRequest extends \RpcAcsRequest
 	public function setSecurityToken($securityToken) {
 		$this->securityToken = $securityToken;
 		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
+	public function getRoleType() {
+		return $this->roleType;
+	}
+
+	public function setRoleType($roleType) {
+		$this->roleType = $roleType;
+		$this->queryParameters["RoleType"]=$roleType;
+	}
+
+	public function getNodeId() {
+		return $this->nodeId;
+	}
+
+	public function setNodeId($nodeId) {
+		$this->nodeId = $nodeId;
+		$this->queryParameters["NodeId"]=$nodeId;
 	}
 	
 }

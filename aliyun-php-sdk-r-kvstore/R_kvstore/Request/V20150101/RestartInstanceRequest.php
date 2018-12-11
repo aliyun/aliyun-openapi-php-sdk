@@ -19,11 +19,11 @@
  */
 namespace R_kvstore\Request\V20150101;
 
-class DeleteAccountRequest extends \RpcAcsRequest
+class RestartInstanceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("R-kvstore", "2015-01-01", "DeleteAccount", "redisa", "openAPI");
+		parent::__construct("R-kvstore", "2015-01-01", "RestartInstance", "redisa", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -31,11 +31,11 @@ class DeleteAccountRequest extends \RpcAcsRequest
 
 	private  $instanceId;
 
-	private  $accountName;
-
 	private  $securityToken;
 
 	private  $resourceOwnerAccount;
+
+	private  $effectiveTime;
 
 	private  $ownerAccount;
 
@@ -59,15 +59,6 @@ class DeleteAccountRequest extends \RpcAcsRequest
 		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 
-	public function getAccountName() {
-		return $this->accountName;
-	}
-
-	public function setAccountName($accountName) {
-		$this->accountName = $accountName;
-		$this->queryParameters["AccountName"]=$accountName;
-	}
-
 	public function getSecurityToken() {
 		return $this->securityToken;
 	}
@@ -84,6 +75,15 @@ class DeleteAccountRequest extends \RpcAcsRequest
 	public function setResourceOwnerAccount($resourceOwnerAccount) {
 		$this->resourceOwnerAccount = $resourceOwnerAccount;
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
+	}
+
+	public function getEffectiveTime() {
+		return $this->effectiveTime;
+	}
+
+	public function setEffectiveTime($effectiveTime) {
+		$this->effectiveTime = $effectiveTime;
+		$this->queryParameters["EffectiveTime"]=$effectiveTime;
 	}
 
 	public function getOwnerAccount() {

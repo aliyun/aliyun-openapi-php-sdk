@@ -19,11 +19,11 @@
  */
 namespace R_kvstore\Request\V20150101;
 
-class DeleteAccountRequest extends \RpcAcsRequest
+class ModifyInstanceMajorVersionRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("R-kvstore", "2015-01-01", "DeleteAccount", "redisa", "openAPI");
+		parent::__construct("R-kvstore", "2015-01-01", "ModifyInstanceMajorVersion", "redisa", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -31,7 +31,7 @@ class DeleteAccountRequest extends \RpcAcsRequest
 
 	private  $instanceId;
 
-	private  $accountName;
+	private  $majorVersion;
 
 	private  $securityToken;
 
@@ -40,6 +40,8 @@ class DeleteAccountRequest extends \RpcAcsRequest
 	private  $ownerAccount;
 
 	private  $ownerId;
+
+	private  $effectTime;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -59,13 +61,13 @@ class DeleteAccountRequest extends \RpcAcsRequest
 		$this->queryParameters["InstanceId"]=$instanceId;
 	}
 
-	public function getAccountName() {
-		return $this->accountName;
+	public function getMajorVersion() {
+		return $this->majorVersion;
 	}
 
-	public function setAccountName($accountName) {
-		$this->accountName = $accountName;
-		$this->queryParameters["AccountName"]=$accountName;
+	public function setMajorVersion($majorVersion) {
+		$this->majorVersion = $majorVersion;
+		$this->queryParameters["MajorVersion"]=$majorVersion;
 	}
 
 	public function getSecurityToken() {
@@ -102,6 +104,15 @@ class DeleteAccountRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getEffectTime() {
+		return $this->effectTime;
+	}
+
+	public function setEffectTime($effectTime) {
+		$this->effectTime = $effectTime;
+		$this->queryParameters["EffectTime"]=$effectTime;
 	}
 	
 }

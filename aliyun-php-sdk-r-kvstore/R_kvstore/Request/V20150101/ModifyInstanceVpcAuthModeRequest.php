@@ -19,11 +19,11 @@
  */
 namespace R_kvstore\Request\V20150101;
 
-class DeleteAccountRequest extends \RpcAcsRequest
+class ModifyInstanceVpcAuthModeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("R-kvstore", "2015-01-01", "DeleteAccount", "redisa", "openAPI");
+		parent::__construct("R-kvstore", "2015-01-01", "ModifyInstanceVpcAuthMode", "redisa", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -31,13 +31,13 @@ class DeleteAccountRequest extends \RpcAcsRequest
 
 	private  $instanceId;
 
-	private  $accountName;
-
 	private  $securityToken;
 
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
+
+	private  $vpcAuthMode;
 
 	private  $ownerId;
 
@@ -57,15 +57,6 @@ class DeleteAccountRequest extends \RpcAcsRequest
 	public function setInstanceId($instanceId) {
 		$this->instanceId = $instanceId;
 		$this->queryParameters["InstanceId"]=$instanceId;
-	}
-
-	public function getAccountName() {
-		return $this->accountName;
-	}
-
-	public function setAccountName($accountName) {
-		$this->accountName = $accountName;
-		$this->queryParameters["AccountName"]=$accountName;
 	}
 
 	public function getSecurityToken() {
@@ -93,6 +84,15 @@ class DeleteAccountRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getVpcAuthMode() {
+		return $this->vpcAuthMode;
+	}
+
+	public function setVpcAuthMode($vpcAuthMode) {
+		$this->vpcAuthMode = $vpcAuthMode;
+		$this->queryParameters["VpcAuthMode"]=$vpcAuthMode;
 	}
 
 	public function getOwnerId() {

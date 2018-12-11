@@ -39,7 +39,11 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 
 	private  $networkType;
 
+	private  $engineVersion;
+
 	private  $ownerId;
+
+	private  $instanceClass;
 
 	private  $pageNumber;
 
@@ -51,11 +55,15 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 
 	private  $instanceIds;
 
+	private  $architectureType;
+
 	private  $vpcId;
 
 	private  $pageSize;
 
 	private  $instanceType;
+
+	private  $zoneId;
 
 	private  $chargeType;
 
@@ -113,6 +121,15 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["NetworkType"]=$networkType;
 	}
 
+	public function getEngineVersion() {
+		return $this->engineVersion;
+	}
+
+	public function setEngineVersion($engineVersion) {
+		$this->engineVersion = $engineVersion;
+		$this->queryParameters["EngineVersion"]=$engineVersion;
+	}
+
 	public function getOwnerId() {
 		return $this->ownerId;
 	}
@@ -120,6 +137,15 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
+	}
+
+	public function getInstanceClass() {
+		return $this->instanceClass;
+	}
+
+	public function setInstanceClass($instanceClass) {
+		$this->instanceClass = $instanceClass;
+		$this->queryParameters["InstanceClass"]=$instanceClass;
 	}
 
 	public function getPageNumber() {
@@ -167,6 +193,15 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["InstanceIds"]=$instanceIds;
 	}
 
+	public function getArchitectureType() {
+		return $this->architectureType;
+	}
+
+	public function setArchitectureType($architectureType) {
+		$this->architectureType = $architectureType;
+		$this->queryParameters["ArchitectureType"]=$architectureType;
+	}
+
 	public function getVpcId() {
 		return $this->vpcId;
 	}
@@ -192,6 +227,15 @@ class DescribeInstancesRequest extends \RpcAcsRequest
 	public function setInstanceType($instanceType) {
 		$this->instanceType = $instanceType;
 		$this->queryParameters["InstanceType"]=$instanceType;
+	}
+
+	public function getZoneId() {
+		return $this->zoneId;
+	}
+
+	public function setZoneId($zoneId) {
+		$this->zoneId = $zoneId;
+		$this->queryParameters["ZoneId"]=$zoneId;
 	}
 
 	public function getChargeType() {
