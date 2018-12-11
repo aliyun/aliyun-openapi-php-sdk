@@ -23,7 +23,7 @@ class CheckScdnServiceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("scdn", "2017-11-15", "CheckScdnService");
+		parent::__construct("scdn", "2017-11-15", "CheckScdnService", "scdn", "openAPI");
 		$this->setMethod("POST");
 	}
 

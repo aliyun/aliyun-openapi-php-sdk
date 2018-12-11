@@ -23,7 +23,7 @@ class DescribeScdnDomainRealTimeBpsDataRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("scdn", "2017-11-15", "DescribeScdnDomainRealTimeBpsData");
+		parent::__construct("scdn", "2017-11-15", "DescribeScdnDomainRealTimeBpsData", "scdn", "openAPI");
 	}
 
 	private  $locationNameEn;

@@ -23,7 +23,7 @@ class DescribeScdnDomainRealTimeByteHitRateDataRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("scdn", "2017-11-15", "DescribeScdnDomainRealTimeByteHitRateData");
+		parent::__construct("scdn", "2017-11-15", "DescribeScdnDomainRealTimeByteHitRateData", "scdn", "openAPI");
 	}
 
 	private  $startTime;

@@ -23,7 +23,7 @@ class DescribeScdnDomainLogRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("scdn", "2017-11-15", "DescribeScdnDomainLog");
+		parent::__construct("scdn", "2017-11-15", "DescribeScdnDomainLog", "scdn", "openAPI");
 		$this->setMethod("POST");
 	}
 

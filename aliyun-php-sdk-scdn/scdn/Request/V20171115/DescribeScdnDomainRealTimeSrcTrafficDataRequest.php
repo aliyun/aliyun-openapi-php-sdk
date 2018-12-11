@@ -23,7 +23,7 @@ class DescribeScdnDomainRealTimeSrcTrafficDataRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("scdn", "2017-11-15", "DescribeScdnDomainRealTimeSrcTrafficData");
+		parent::__construct("scdn", "2017-11-15", "DescribeScdnDomainRealTimeSrcTrafficData", "scdn", "openAPI");
 		$this->setMethod("POST");
 	}
 

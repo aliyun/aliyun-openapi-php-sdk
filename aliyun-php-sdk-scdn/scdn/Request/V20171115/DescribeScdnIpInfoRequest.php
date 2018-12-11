@@ -23,7 +23,7 @@ class DescribeScdnIpInfoRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("scdn", "2017-11-15", "DescribeScdnIpInfo");
+		parent::__construct("scdn", "2017-11-15", "DescribeScdnIpInfo", "scdn", "openAPI");
 		$this->setMethod("POST");
 	}
 

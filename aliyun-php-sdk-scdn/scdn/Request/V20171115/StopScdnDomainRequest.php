@@ -23,7 +23,7 @@ class StopScdnDomainRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("scdn", "2017-11-15", "StopScdnDomain");
+		parent::__construct("scdn", "2017-11-15", "StopScdnDomain", "scdn", "openAPI");
 		$this->setMethod("POST");
 	}
 

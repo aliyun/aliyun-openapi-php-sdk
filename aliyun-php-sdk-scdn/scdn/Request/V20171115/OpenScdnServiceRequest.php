@@ -23,7 +23,7 @@ class OpenScdnServiceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("scdn", "2017-11-15", "OpenScdnService");
+		parent::__construct("scdn", "2017-11-15", "OpenScdnService", "scdn", "openAPI");
 		$this->setMethod("POST");
 	}
 

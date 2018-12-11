@@ -23,7 +23,7 @@ class RefreshScdnObjectCachesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("scdn", "2017-11-15", "RefreshScdnObjectCaches");
+		parent::__construct("scdn", "2017-11-15", "RefreshScdnObjectCaches", "scdn", "openAPI");
 		$this->setMethod("POST");
 	}
 

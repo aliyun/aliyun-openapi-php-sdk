@@ -23,7 +23,7 @@ class DescribeScdnCertificateDetailRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("scdn", "2017-11-15", "DescribeScdnCertificateDetail");
+		parent::__construct("scdn", "2017-11-15", "DescribeScdnCertificateDetail", "scdn", "openAPI");
 		$this->setMethod("POST");
 	}
 

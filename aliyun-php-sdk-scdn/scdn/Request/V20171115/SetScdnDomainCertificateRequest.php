@@ -23,7 +23,7 @@ class SetScdnDomainCertificateRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("scdn", "2017-11-15", "SetScdnDomainCertificate");
+		parent::__construct("scdn", "2017-11-15", "SetScdnDomainCertificate", "scdn", "openAPI");
 		$this->setMethod("POST");
 	}
 

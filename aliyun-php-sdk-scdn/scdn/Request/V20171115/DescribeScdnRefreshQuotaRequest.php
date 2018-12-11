@@ -23,7 +23,7 @@ class DescribeScdnRefreshQuotaRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("scdn", "2017-11-15", "DescribeScdnRefreshQuota");
+		parent::__construct("scdn", "2017-11-15", "DescribeScdnRefreshQuota", "scdn", "openAPI");
 		$this->setMethod("POST");
 	}
 

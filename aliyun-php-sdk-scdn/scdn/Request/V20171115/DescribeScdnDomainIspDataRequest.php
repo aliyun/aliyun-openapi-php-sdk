@@ -23,7 +23,7 @@ class DescribeScdnDomainIspDataRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("scdn", "2017-11-15", "DescribeScdnDomainIspData");
+		parent::__construct("scdn", "2017-11-15", "DescribeScdnDomainIspData", "scdn", "openAPI");
 		$this->setMethod("POST");
 	}
 
