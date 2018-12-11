@@ -35,6 +35,10 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
+	private  $engineVersion;
+
+	private  $networkType;
+
 	private  $ownerId;
 
 	private  $pageNumber;
@@ -45,9 +49,13 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 
 	private  $dBInstanceClass;
 
-	private  $expired;
+	private  $vSwitchId;
 
 	private  $securityToken;
+
+	private  $engine;
+
+	private  $vpcId;
 
 	private  $pageSize;
 
@@ -58,6 +66,8 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 	private  $dBInstanceDescription;
 
 	private  $dBInstanceStatus;
+
+	private  $chargeType;
 
 	public function getExpireTime() {
 		return $this->expireTime;
@@ -93,6 +103,24 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getEngineVersion() {
+		return $this->engineVersion;
+	}
+
+	public function setEngineVersion($engineVersion) {
+		$this->engineVersion = $engineVersion;
+		$this->queryParameters["EngineVersion"]=$engineVersion;
+	}
+
+	public function getNetworkType() {
+		return $this->networkType;
+	}
+
+	public function setNetworkType($networkType) {
+		$this->networkType = $networkType;
+		$this->queryParameters["NetworkType"]=$networkType;
 	}
 
 	public function getOwnerId() {
@@ -140,13 +168,13 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 		$this->queryParameters["DBInstanceClass"]=$dBInstanceClass;
 	}
 
-	public function getExpired() {
-		return $this->expired;
+	public function getVSwitchId() {
+		return $this->vSwitchId;
 	}
 
-	public function setExpired($expired) {
-		$this->expired = $expired;
-		$this->queryParameters["Expired"]=$expired;
+	public function setVSwitchId($vSwitchId) {
+		$this->vSwitchId = $vSwitchId;
+		$this->queryParameters["VSwitchId"]=$vSwitchId;
 	}
 
 	public function getSecurityToken() {
@@ -156,6 +184,24 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 	public function setSecurityToken($securityToken) {
 		$this->securityToken = $securityToken;
 		$this->queryParameters["SecurityToken"]=$securityToken;
+	}
+
+	public function getEngine() {
+		return $this->engine;
+	}
+
+	public function setEngine($engine) {
+		$this->engine = $engine;
+		$this->queryParameters["Engine"]=$engine;
+	}
+
+	public function getVpcId() {
+		return $this->vpcId;
+	}
+
+	public function setVpcId($vpcId) {
+		$this->vpcId = $vpcId;
+		$this->queryParameters["VpcId"]=$vpcId;
 	}
 
 	public function getPageSize() {
@@ -201,6 +247,15 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
 	public function setDBInstanceStatus($dBInstanceStatus) {
 		$this->dBInstanceStatus = $dBInstanceStatus;
 		$this->queryParameters["DBInstanceStatus"]=$dBInstanceStatus;
+	}
+
+	public function getChargeType() {
+		return $this->chargeType;
+	}
+
+	public function setChargeType($chargeType) {
+		$this->chargeType = $chargeType;
+		$this->queryParameters["ChargeType"]=$chargeType;
 	}
 	
 }
