@@ -29,21 +29,23 @@ class DescribeSmartAccessGatewaysRequest extends \RpcAcsRequest
 
 	private  $resourceOwnerId;
 
+	private  $serialNumber;
+
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
+
+	private  $associatedCcnId;
+
+	private  $ownerId;
+
+	private  $pageNumber;
 
 	private  $name;
 
 	private  $pageSize;
 
-	private  $associatedCcnId;
-
 	private  $smartAGId;
-
-	private  $ownerId;
-
-	private  $pageNumber;
 
 	private  $status;
 
@@ -54,6 +56,15 @@ class DescribeSmartAccessGatewaysRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getSerialNumber() {
+		return $this->serialNumber;
+	}
+
+	public function setSerialNumber($serialNumber) {
+		$this->serialNumber = $serialNumber;
+		$this->queryParameters["SerialNumber"]=$serialNumber;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -74,24 +85,6 @@ class DescribeSmartAccessGatewaysRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getName() {
-		return $this->name;
-	}
-
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
 	public function getAssociatedCcnId() {
 		return $this->associatedCcnId;
 	}
@@ -99,15 +92,6 @@ class DescribeSmartAccessGatewaysRequest extends \RpcAcsRequest
 	public function setAssociatedCcnId($associatedCcnId) {
 		$this->associatedCcnId = $associatedCcnId;
 		$this->queryParameters["AssociatedCcnId"]=$associatedCcnId;
-	}
-
-	public function getSmartAGId() {
-		return $this->smartAGId;
-	}
-
-	public function setSmartAGId($smartAGId) {
-		$this->smartAGId = $smartAGId;
-		$this->queryParameters["SmartAGId"]=$smartAGId;
 	}
 
 	public function getOwnerId() {
@@ -126,6 +110,33 @@ class DescribeSmartAccessGatewaysRequest extends \RpcAcsRequest
 	public function setPageNumber($pageNumber) {
 		$this->pageNumber = $pageNumber;
 		$this->queryParameters["PageNumber"]=$pageNumber;
+	}
+
+	public function getName() {
+		return $this->name;
+	}
+
+	public function setName($name) {
+		$this->name = $name;
+		$this->queryParameters["Name"]=$name;
+	}
+
+	public function getPageSize() {
+		return $this->pageSize;
+	}
+
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
+	public function getSmartAGId() {
+		return $this->smartAGId;
+	}
+
+	public function setSmartAGId($smartAGId) {
+		$this->smartAGId = $smartAGId;
+		$this->queryParameters["SmartAGId"]=$smartAGId;
 	}
 
 	public function getStatus() {

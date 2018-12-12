@@ -19,27 +19,23 @@
  */
 namespace Smartag\Request\V20180313;
 
-class UpdateSmartAccessGatewayVersionRequest extends \RpcAcsRequest
+class UnicomSignConfirmRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Smartag", "2018-03-13", "UpdateSmartAccessGatewayVersion", "smartag", "openAPI");
+		parent::__construct("Smartag", "2018-03-13", "UnicomSignConfirm", "smartag", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
-	private  $serialNumber;
-
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
-	private  $smartAGId;
+	private  $TmsOrders;
 
 	private  $ownerId;
-
-	private  $versionCode;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -48,15 +44,6 @@ class UpdateSmartAccessGatewayVersionRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getSerialNumber() {
-		return $this->serialNumber;
-	}
-
-	public function setSerialNumber($serialNumber) {
-		$this->serialNumber = $serialNumber;
-		$this->queryParameters["SerialNumber"]=$serialNumber;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -77,13 +64,19 @@ class UpdateSmartAccessGatewayVersionRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getSmartAGId() {
-		return $this->smartAGId;
+	public function getTmsOrders() {
+		return $this->TmsOrders;
 	}
 
-	public function setSmartAGId($smartAGId) {
-		$this->smartAGId = $smartAGId;
-		$this->queryParameters["SmartAGId"]=$smartAGId;
+	public function setTmsOrders($TmsOrders) {
+		$this->TmsOrders = $TmsOrders;
+		for ($i = 0; $i < count($TmsOrders); $i ++) {	
+			$this->queryParameters['TmsOrder.' . ($i + 1) . '.TmsCode'] = $TmsOrders[$i]['TmsCode'];
+			$this->queryParameters['TmsOrder.' . ($i + 1) . '.SigningTime'] = $TmsOrders[$i]['SigningTime'];
+			$this->queryParameters['TmsOrder.' . ($i + 1) . '.TmsOrderCode'] = $TmsOrders[$i]['TmsOrderCode'];
+			$this->queryParameters['TmsOrder.' . ($i + 1) . '.TradeId'] = $TmsOrders[$i]['TradeId'];
+
+		}
 	}
 
 	public function getOwnerId() {
@@ -93,15 +86,6 @@ class UpdateSmartAccessGatewayVersionRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getVersionCode() {
-		return $this->versionCode;
-	}
-
-	public function setVersionCode($versionCode) {
-		$this->versionCode = $versionCode;
-		$this->queryParameters["VersionCode"]=$versionCode;
 	}
 	
 }

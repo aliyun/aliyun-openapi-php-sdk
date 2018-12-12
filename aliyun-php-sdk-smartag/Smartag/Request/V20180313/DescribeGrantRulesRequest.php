@@ -19,27 +19,27 @@
  */
 namespace Smartag\Request\V20180313;
 
-class UpdateSmartAccessGatewayVersionRequest extends \RpcAcsRequest
+class DescribeGrantRulesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Smartag", "2018-03-13", "UpdateSmartAccessGatewayVersion", "smartag", "openAPI");
+		parent::__construct("Smartag", "2018-03-13", "DescribeGrantRules", "smartag", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
-	private  $serialNumber;
-
 	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
-	private  $smartAGId;
+	private  $pageSize;
+
+	private  $associatedCcnId;
 
 	private  $ownerId;
 
-	private  $versionCode;
+	private  $pageNumber;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -48,15 +48,6 @@ class UpdateSmartAccessGatewayVersionRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getSerialNumber() {
-		return $this->serialNumber;
-	}
-
-	public function setSerialNumber($serialNumber) {
-		$this->serialNumber = $serialNumber;
-		$this->queryParameters["SerialNumber"]=$serialNumber;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -77,13 +68,22 @@ class UpdateSmartAccessGatewayVersionRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getSmartAGId() {
-		return $this->smartAGId;
+	public function getPageSize() {
+		return $this->pageSize;
 	}
 
-	public function setSmartAGId($smartAGId) {
-		$this->smartAGId = $smartAGId;
-		$this->queryParameters["SmartAGId"]=$smartAGId;
+	public function setPageSize($pageSize) {
+		$this->pageSize = $pageSize;
+		$this->queryParameters["PageSize"]=$pageSize;
+	}
+
+	public function getAssociatedCcnId() {
+		return $this->associatedCcnId;
+	}
+
+	public function setAssociatedCcnId($associatedCcnId) {
+		$this->associatedCcnId = $associatedCcnId;
+		$this->queryParameters["AssociatedCcnId"]=$associatedCcnId;
 	}
 
 	public function getOwnerId() {
@@ -95,13 +95,13 @@ class UpdateSmartAccessGatewayVersionRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getVersionCode() {
-		return $this->versionCode;
+	public function getPageNumber() {
+		return $this->pageNumber;
 	}
 
-	public function setVersionCode($versionCode) {
-		$this->versionCode = $versionCode;
-		$this->queryParameters["VersionCode"]=$versionCode;
+	public function setPageNumber($pageNumber) {
+		$this->pageNumber = $pageNumber;
+		$this->queryParameters["PageNumber"]=$pageNumber;
 	}
 	
 }

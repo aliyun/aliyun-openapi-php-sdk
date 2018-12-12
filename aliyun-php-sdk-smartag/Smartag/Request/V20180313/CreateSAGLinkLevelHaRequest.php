@@ -19,27 +19,33 @@
  */
 namespace Smartag\Request\V20180313;
 
-class UpdateSmartAccessGatewayVersionRequest extends \RpcAcsRequest
+class CreateSAGLinkLevelHaRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Smartag", "2018-03-13", "UpdateSmartAccessGatewayVersion", "smartag", "openAPI");
+		parent::__construct("Smartag", "2018-03-13", "CreateSAGLinkLevelHa", "smartag", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
-	private  $serialNumber;
+	private  $backupLinkId;
 
 	private  $resourceOwnerAccount;
 
+	private  $haType;
+
 	private  $ownerAccount;
+
+	private  $mainLinkRegionId;
 
 	private  $smartAGId;
 
 	private  $ownerId;
 
-	private  $versionCode;
+	private  $mainLinkId;
+
+	private  $backupLinkRegionId;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -50,13 +56,13 @@ class UpdateSmartAccessGatewayVersionRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getSerialNumber() {
-		return $this->serialNumber;
+	public function getBackupLinkId() {
+		return $this->backupLinkId;
 	}
 
-	public function setSerialNumber($serialNumber) {
-		$this->serialNumber = $serialNumber;
-		$this->queryParameters["SerialNumber"]=$serialNumber;
+	public function setBackupLinkId($backupLinkId) {
+		$this->backupLinkId = $backupLinkId;
+		$this->queryParameters["BackupLinkId"]=$backupLinkId;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -68,6 +74,15 @@ class UpdateSmartAccessGatewayVersionRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
+	public function getHaType() {
+		return $this->haType;
+	}
+
+	public function setHaType($haType) {
+		$this->haType = $haType;
+		$this->queryParameters["HaType"]=$haType;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -75,6 +90,15 @@ class UpdateSmartAccessGatewayVersionRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getMainLinkRegionId() {
+		return $this->mainLinkRegionId;
+	}
+
+	public function setMainLinkRegionId($mainLinkRegionId) {
+		$this->mainLinkRegionId = $mainLinkRegionId;
+		$this->queryParameters["MainLinkRegionId"]=$mainLinkRegionId;
 	}
 
 	public function getSmartAGId() {
@@ -95,13 +119,22 @@ class UpdateSmartAccessGatewayVersionRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getVersionCode() {
-		return $this->versionCode;
+	public function getMainLinkId() {
+		return $this->mainLinkId;
 	}
 
-	public function setVersionCode($versionCode) {
-		$this->versionCode = $versionCode;
-		$this->queryParameters["VersionCode"]=$versionCode;
+	public function setMainLinkId($mainLinkId) {
+		$this->mainLinkId = $mainLinkId;
+		$this->queryParameters["MainLinkId"]=$mainLinkId;
+	}
+
+	public function getBackupLinkRegionId() {
+		return $this->backupLinkRegionId;
+	}
+
+	public function setBackupLinkRegionId($backupLinkRegionId) {
+		$this->backupLinkRegionId = $backupLinkRegionId;
+		$this->queryParameters["BackupLinkRegionId"]=$backupLinkRegionId;
 	}
 	
 }

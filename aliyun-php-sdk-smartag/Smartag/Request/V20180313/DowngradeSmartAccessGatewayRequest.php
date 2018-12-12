@@ -19,17 +19,19 @@
  */
 namespace Smartag\Request\V20180313;
 
-class UpdateSmartAccessGatewayVersionRequest extends \RpcAcsRequest
+class DowngradeSmartAccessGatewayRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Smartag", "2018-03-13", "UpdateSmartAccessGatewayVersion", "smartag", "openAPI");
+		parent::__construct("Smartag", "2018-03-13", "DowngradeSmartAccessGateway", "smartag", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
-	private  $serialNumber;
+	private  $autoPay;
+
+	private  $bandWidthSpec;
 
 	private  $resourceOwnerAccount;
 
@@ -38,8 +40,6 @@ class UpdateSmartAccessGatewayVersionRequest extends \RpcAcsRequest
 	private  $smartAGId;
 
 	private  $ownerId;
-
-	private  $versionCode;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -50,13 +50,22 @@ class UpdateSmartAccessGatewayVersionRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
 	}
 
-	public function getSerialNumber() {
-		return $this->serialNumber;
+	public function getAutoPay() {
+		return $this->autoPay;
 	}
 
-	public function setSerialNumber($serialNumber) {
-		$this->serialNumber = $serialNumber;
-		$this->queryParameters["SerialNumber"]=$serialNumber;
+	public function setAutoPay($autoPay) {
+		$this->autoPay = $autoPay;
+		$this->queryParameters["AutoPay"]=$autoPay;
+	}
+
+	public function getBandWidthSpec() {
+		return $this->bandWidthSpec;
+	}
+
+	public function setBandWidthSpec($bandWidthSpec) {
+		$this->bandWidthSpec = $bandWidthSpec;
+		$this->queryParameters["BandWidthSpec"]=$bandWidthSpec;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -93,15 +102,6 @@ class UpdateSmartAccessGatewayVersionRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getVersionCode() {
-		return $this->versionCode;
-	}
-
-	public function setVersionCode($versionCode) {
-		$this->versionCode = $versionCode;
-		$this->queryParameters["VersionCode"]=$versionCode;
 	}
 	
 }

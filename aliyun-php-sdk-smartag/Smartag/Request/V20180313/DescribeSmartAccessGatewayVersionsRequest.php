@@ -33,6 +33,8 @@ class DescribeSmartAccessGatewayVersionsRequest extends \RpcAcsRequest
 
 	private  $ownerAccount;
 
+	private  $smartAGId;
+
 	private  $ownerId;
 
 	public function getResourceOwnerId() {
@@ -60,6 +62,15 @@ class DescribeSmartAccessGatewayVersionsRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getSmartAGId() {
+		return $this->smartAGId;
+	}
+
+	public function setSmartAGId($smartAGId) {
+		$this->smartAGId = $smartAGId;
+		$this->queryParameters["SmartAGId"]=$smartAGId;
 	}
 
 	public function getOwnerId() {

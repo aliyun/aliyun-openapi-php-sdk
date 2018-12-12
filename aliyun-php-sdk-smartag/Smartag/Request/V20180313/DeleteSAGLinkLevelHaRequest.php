@@ -19,17 +19,15 @@
  */
 namespace Smartag\Request\V20180313;
 
-class UpdateSmartAccessGatewayVersionRequest extends \RpcAcsRequest
+class DeleteSAGLinkLevelHaRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Smartag", "2018-03-13", "UpdateSmartAccessGatewayVersion", "smartag", "openAPI");
+		parent::__construct("Smartag", "2018-03-13", "DeleteSAGLinkLevelHa", "smartag", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
-
-	private  $serialNumber;
 
 	private  $resourceOwnerAccount;
 
@@ -39,8 +37,6 @@ class UpdateSmartAccessGatewayVersionRequest extends \RpcAcsRequest
 
 	private  $ownerId;
 
-	private  $versionCode;
-
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
 	}
@@ -48,15 +44,6 @@ class UpdateSmartAccessGatewayVersionRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getSerialNumber() {
-		return $this->serialNumber;
-	}
-
-	public function setSerialNumber($serialNumber) {
-		$this->serialNumber = $serialNumber;
-		$this->queryParameters["SerialNumber"]=$serialNumber;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -93,15 +80,6 @@ class UpdateSmartAccessGatewayVersionRequest extends \RpcAcsRequest
 	public function setOwnerId($ownerId) {
 		$this->ownerId = $ownerId;
 		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getVersionCode() {
-		return $this->versionCode;
-	}
-
-	public function setVersionCode($versionCode) {
-		$this->versionCode = $versionCode;
-		$this->queryParameters["VersionCode"]=$versionCode;
 	}
 	
 }
