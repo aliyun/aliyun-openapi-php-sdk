@@ -60,6 +60,8 @@ class CreateClusterRequest extends \RpcAcsRequest
 
 	private  $ecsOrderLoginCount;
 
+	private  $systemDiskSize;
+
 	private  $computeSpotPriceLimit;
 
 	private  $autoRenewPeriod;
@@ -259,6 +261,15 @@ class CreateClusterRequest extends \RpcAcsRequest
 	public function setEcsOrderLoginCount($ecsOrderLoginCount) {
 		$this->ecsOrderLoginCount = $ecsOrderLoginCount;
 		$this->queryParameters["EcsOrder.Login.Count"]=$ecsOrderLoginCount;
+	}
+
+	public function getSystemDiskSize() {
+		return $this->systemDiskSize;
+	}
+
+	public function setSystemDiskSize($systemDiskSize) {
+		$this->systemDiskSize = $systemDiskSize;
+		$this->queryParameters["SystemDiskSize"]=$systemDiskSize;
 	}
 
 	public function getComputeSpotPriceLimit() {

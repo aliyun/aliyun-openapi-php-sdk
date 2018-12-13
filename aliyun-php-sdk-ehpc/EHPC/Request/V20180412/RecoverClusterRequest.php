@@ -26,7 +26,53 @@ class RecoverClusterRequest extends \RpcAcsRequest
 		parent::__construct("EHPC", "2018-04-12", "RecoverCluster", "ehs", "openAPI");
 	}
 
+	private  $imageId;
+
+	private  $osTag;
+
+	private  $accountType;
+
+	private  $schedulerType;
+
 	private  $clusterId;
+
+	private  $imageOwnerAlias;
+
+	public function getImageId() {
+		return $this->imageId;
+	}
+
+	public function setImageId($imageId) {
+		$this->imageId = $imageId;
+		$this->queryParameters["ImageId"]=$imageId;
+	}
+
+	public function getOsTag() {
+		return $this->osTag;
+	}
+
+	public function setOsTag($osTag) {
+		$this->osTag = $osTag;
+		$this->queryParameters["OsTag"]=$osTag;
+	}
+
+	public function getAccountType() {
+		return $this->accountType;
+	}
+
+	public function setAccountType($accountType) {
+		$this->accountType = $accountType;
+		$this->queryParameters["AccountType"]=$accountType;
+	}
+
+	public function getSchedulerType() {
+		return $this->schedulerType;
+	}
+
+	public function setSchedulerType($schedulerType) {
+		$this->schedulerType = $schedulerType;
+		$this->queryParameters["SchedulerType"]=$schedulerType;
+	}
 
 	public function getClusterId() {
 		return $this->clusterId;
@@ -35,6 +81,15 @@ class RecoverClusterRequest extends \RpcAcsRequest
 	public function setClusterId($clusterId) {
 		$this->clusterId = $clusterId;
 		$this->queryParameters["ClusterId"]=$clusterId;
+	}
+
+	public function getImageOwnerAlias() {
+		return $this->imageOwnerAlias;
+	}
+
+	public function setImageOwnerAlias($imageOwnerAlias) {
+		$this->imageOwnerAlias = $imageOwnerAlias;
+		$this->queryParameters["ImageOwnerAlias"]=$imageOwnerAlias;
 	}
 	
 }

@@ -50,6 +50,8 @@ class AddNodesRequest extends \RpcAcsRequest
 
 	private  $createMode;
 
+	private  $systemDiskSize;
+
 	private  $instanceType;
 
 	private  $computeSpotPriceLimit;
@@ -160,6 +162,15 @@ class AddNodesRequest extends \RpcAcsRequest
 	public function setCreateMode($createMode) {
 		$this->createMode = $createMode;
 		$this->queryParameters["CreateMode"]=$createMode;
+	}
+
+	public function getSystemDiskSize() {
+		return $this->systemDiskSize;
+	}
+
+	public function setSystemDiskSize($systemDiskSize) {
+		$this->systemDiskSize = $systemDiskSize;
+		$this->queryParameters["SystemDiskSize"]=$systemDiskSize;
 	}
 
 	public function getInstanceType() {
