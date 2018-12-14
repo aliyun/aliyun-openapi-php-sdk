@@ -23,7 +23,7 @@ class CancelImportRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "CancelImport", "Rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "CancelImport", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

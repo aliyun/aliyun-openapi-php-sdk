@@ -23,7 +23,7 @@ class DescribeDBInstanceProxyConfigurationRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeDBInstanceProxyConfiguration", "Rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeDBInstanceProxyConfiguration", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

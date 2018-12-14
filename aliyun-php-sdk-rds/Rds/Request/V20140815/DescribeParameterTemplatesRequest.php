@@ -23,7 +23,7 @@ class DescribeParameterTemplatesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeParameterTemplates", "Rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeParameterTemplates", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

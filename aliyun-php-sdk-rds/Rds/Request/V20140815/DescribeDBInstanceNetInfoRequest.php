@@ -23,7 +23,7 @@ class DescribeDBInstanceNetInfoRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeDBInstanceNetInfo", "Rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeDBInstanceNetInfo", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

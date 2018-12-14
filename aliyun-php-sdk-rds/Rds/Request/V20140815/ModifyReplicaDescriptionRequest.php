@@ -23,7 +23,7 @@ class ModifyReplicaDescriptionRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "ModifyReplicaDescription", "Rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "ModifyReplicaDescription", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

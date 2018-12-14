@@ -23,7 +23,7 @@ class ModifyBackupPolicyRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "ModifyBackupPolicy", "Rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "ModifyBackupPolicy", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

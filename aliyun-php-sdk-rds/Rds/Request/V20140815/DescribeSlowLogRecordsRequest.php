@@ -23,7 +23,7 @@ class DescribeSlowLogRecordsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeSlowLogRecords", "Rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeSlowLogRecords", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

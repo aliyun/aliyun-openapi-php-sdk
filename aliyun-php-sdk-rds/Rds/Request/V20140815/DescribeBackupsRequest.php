@@ -23,7 +23,7 @@ class DescribeBackupsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeBackups", "Rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeBackups", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

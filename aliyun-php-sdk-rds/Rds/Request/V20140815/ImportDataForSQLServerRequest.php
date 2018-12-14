@@ -23,7 +23,7 @@ class ImportDataForSQLServerRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "ImportDataForSQLServer", "Rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "ImportDataForSQLServer", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class ModifyReadWriteSplittingConnectionRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "ModifyReadWriteSplittingConnection", "Rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "ModifyReadWriteSplittingConnection", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class ModifyDBInstanceDescriptionRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "ModifyDBInstanceDescription", "Rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "ModifyDBInstanceDescription", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

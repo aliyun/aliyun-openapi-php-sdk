@@ -23,7 +23,7 @@ class DescribeLogBackupFilesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeLogBackupFiles", "Rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeLogBackupFiles", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

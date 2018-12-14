@@ -23,7 +23,7 @@ class GrantOperatorPermissionRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "GrantOperatorPermission", "Rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "GrantOperatorPermission", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class DescribeModifyParameterLogRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeModifyParameterLog", "Rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeModifyParameterLog", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

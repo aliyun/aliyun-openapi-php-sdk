@@ -23,7 +23,7 @@ class DescribeDBInstancesByPerformanceRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeDBInstancesByPerformance", "Rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeDBInstancesByPerformance", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

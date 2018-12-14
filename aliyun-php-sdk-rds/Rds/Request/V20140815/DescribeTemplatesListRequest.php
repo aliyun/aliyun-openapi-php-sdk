@@ -23,7 +23,7 @@ class DescribeTemplatesListRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeTemplatesList", "Rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeTemplatesList", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

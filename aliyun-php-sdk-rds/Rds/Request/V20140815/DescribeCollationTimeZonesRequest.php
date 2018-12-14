@@ -23,7 +23,7 @@ class DescribeCollationTimeZonesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeCollationTimeZones", "Rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeCollationTimeZones", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

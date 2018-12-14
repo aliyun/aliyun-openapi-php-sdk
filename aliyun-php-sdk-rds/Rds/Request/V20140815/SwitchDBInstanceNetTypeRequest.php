@@ -23,7 +23,7 @@ class SwitchDBInstanceNetTypeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "SwitchDBInstanceNetType", "Rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "SwitchDBInstanceNetType", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class ModifyDBInstanceConnectionStringRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "ModifyDBInstanceConnectionString", "Rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "ModifyDBInstanceConnectionString", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

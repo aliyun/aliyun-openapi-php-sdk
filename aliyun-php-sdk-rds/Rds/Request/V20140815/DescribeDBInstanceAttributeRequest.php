@@ -23,7 +23,7 @@ class DescribeDBInstanceAttributeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeDBInstanceAttribute", "Rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeDBInstanceAttribute", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

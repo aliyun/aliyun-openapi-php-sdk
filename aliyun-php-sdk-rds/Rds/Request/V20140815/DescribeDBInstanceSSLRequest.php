@@ -23,7 +23,7 @@ class DescribeDBInstanceSSLRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeDBInstanceSSL", "Rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeDBInstanceSSL", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

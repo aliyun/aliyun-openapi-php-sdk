@@ -23,7 +23,7 @@ class ModifyDBInstanceNetworkExpireTimeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "ModifyDBInstanceNetworkExpireTime", "Rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "ModifyDBInstanceNetworkExpireTime", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

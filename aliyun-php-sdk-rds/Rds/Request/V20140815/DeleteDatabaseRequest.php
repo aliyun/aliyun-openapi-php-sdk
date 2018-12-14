@@ -23,7 +23,7 @@ class DeleteDatabaseRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DeleteDatabase", "Rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DeleteDatabase", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

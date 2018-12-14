@@ -23,7 +23,7 @@ class ModifyMySQLDBInstanceDelayRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "ModifyMySQLDBInstanceDelay", "Rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "ModifyMySQLDBInstanceDelay", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

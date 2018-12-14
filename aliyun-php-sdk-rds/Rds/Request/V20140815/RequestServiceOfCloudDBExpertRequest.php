@@ -23,7 +23,7 @@ class RequestServiceOfCloudDBExpertRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "RequestServiceOfCloudDBExpert", "Rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "RequestServiceOfCloudDBExpert", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

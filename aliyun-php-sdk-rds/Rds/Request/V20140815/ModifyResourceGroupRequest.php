@@ -23,7 +23,7 @@ class ModifyResourceGroupRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "ModifyResourceGroup", "Rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "ModifyResourceGroup", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

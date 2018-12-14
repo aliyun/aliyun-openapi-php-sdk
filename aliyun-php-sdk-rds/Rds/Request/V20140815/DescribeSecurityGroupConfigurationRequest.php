@@ -23,7 +23,7 @@ class DescribeSecurityGroupConfigurationRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeSecurityGroupConfiguration", "Rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeSecurityGroupConfiguration", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

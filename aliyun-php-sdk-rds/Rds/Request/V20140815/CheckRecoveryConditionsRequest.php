@@ -23,7 +23,7 @@ class CheckRecoveryConditionsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "CheckRecoveryConditions", "Rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "CheckRecoveryConditions", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

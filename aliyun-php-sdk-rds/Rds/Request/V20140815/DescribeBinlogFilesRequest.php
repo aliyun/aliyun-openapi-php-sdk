@@ -23,7 +23,7 @@ class DescribeBinlogFilesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeBinlogFiles", "Rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeBinlogFiles", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

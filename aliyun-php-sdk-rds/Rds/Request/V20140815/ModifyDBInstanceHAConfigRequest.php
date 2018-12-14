@@ -23,7 +23,7 @@ class ModifyDBInstanceHAConfigRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "ModifyDBInstanceHAConfig", "Rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "ModifyDBInstanceHAConfig", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

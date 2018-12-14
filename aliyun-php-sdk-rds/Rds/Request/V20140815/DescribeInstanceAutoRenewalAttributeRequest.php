@@ -23,7 +23,7 @@ class DescribeInstanceAutoRenewalAttributeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeInstanceAutoRenewalAttribute", "Rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeInstanceAutoRenewalAttribute", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

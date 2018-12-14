@@ -23,7 +23,7 @@ class DescribeDBInstancesByExpireTimeRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeDBInstancesByExpireTime", "Rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeDBInstancesByExpireTime", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class ModifySQLCollectorPolicyRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "ModifySQLCollectorPolicy", "Rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "ModifySQLCollectorPolicy", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

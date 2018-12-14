@@ -23,7 +23,7 @@ class DescribeDBInstanceMonitorRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "DescribeDBInstanceMonitor", "Rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "DescribeDBInstanceMonitor", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 

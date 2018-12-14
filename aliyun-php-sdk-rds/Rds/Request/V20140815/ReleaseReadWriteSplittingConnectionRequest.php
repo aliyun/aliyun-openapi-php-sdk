@@ -23,7 +23,7 @@ class ReleaseReadWriteSplittingConnectionRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("Rds", "2014-08-15", "ReleaseReadWriteSplittingConnection", "Rds", "openAPI");
+		parent::__construct("Rds", "2014-08-15", "ReleaseReadWriteSplittingConnection", "rds", "openAPI");
 		$this->setMethod("POST");
 	}
 
