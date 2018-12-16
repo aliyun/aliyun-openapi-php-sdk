@@ -23,7 +23,7 @@ class UploadMediaByURLRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "UploadMediaByURL");
+		parent::__construct("vod", "2017-03-21", "UploadMediaByURL", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 

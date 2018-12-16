@@ -23,7 +23,7 @@ class GetWorkFlowRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "GetWorkFlow");
+		parent::__construct("vod", "2017-03-21", "GetWorkFlow", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 

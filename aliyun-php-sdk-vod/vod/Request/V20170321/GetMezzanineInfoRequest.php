@@ -23,7 +23,7 @@ class GetMezzanineInfoRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "GetMezzanineInfo");
+		parent::__construct("vod", "2017-03-21", "GetMezzanineInfo", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 

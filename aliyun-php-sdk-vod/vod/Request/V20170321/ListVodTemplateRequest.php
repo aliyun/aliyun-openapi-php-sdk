@@ -23,7 +23,7 @@ class ListVodTemplateRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "ListVodTemplate");
+		parent::__construct("vod", "2017-03-21", "ListVodTemplate", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 

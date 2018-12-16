@@ -23,7 +23,7 @@ class RefreshObjectCachesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "RefreshObjectCaches");
+		parent::__construct("vod", "2017-03-21", "RefreshObjectCaches", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 

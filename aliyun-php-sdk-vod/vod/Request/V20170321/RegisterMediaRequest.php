@@ -23,7 +23,7 @@ class RegisterMediaRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "RegisterMedia");
+		parent::__construct("vod", "2017-03-21", "RegisterMedia", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 

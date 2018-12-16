@@ -23,7 +23,7 @@ class SetDefaultVodTemplateRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "SetDefaultVodTemplate");
+		parent::__construct("vod", "2017-03-21", "SetDefaultVodTemplate", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 

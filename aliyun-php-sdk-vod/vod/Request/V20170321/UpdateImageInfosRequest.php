@@ -23,7 +23,7 @@ class UpdateImageInfosRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "UpdateImageInfos");
+		parent::__construct("vod", "2017-03-21", "UpdateImageInfos", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 

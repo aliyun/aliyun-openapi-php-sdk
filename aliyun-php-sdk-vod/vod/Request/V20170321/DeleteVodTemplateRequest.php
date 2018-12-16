@@ -23,7 +23,7 @@ class DeleteVodTemplateRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "DeleteVodTemplate");
+		parent::__construct("vod", "2017-03-21", "DeleteVodTemplate", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 

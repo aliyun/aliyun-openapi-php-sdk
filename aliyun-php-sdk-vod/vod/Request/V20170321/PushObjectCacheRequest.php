@@ -23,7 +23,7 @@ class PushObjectCacheRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "PushObjectCache");
+		parent::__construct("vod", "2017-03-21", "PushObjectCache", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 

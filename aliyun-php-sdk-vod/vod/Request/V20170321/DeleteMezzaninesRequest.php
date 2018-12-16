@@ -23,7 +23,7 @@ class DeleteMezzaninesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "DeleteMezzanines");
+		parent::__construct("vod", "2017-03-21", "DeleteMezzanines", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 

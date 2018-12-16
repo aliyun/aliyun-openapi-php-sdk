@@ -23,7 +23,7 @@ class GetMediaDNAResultRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "GetMediaDNAResult");
+		parent::__construct("vod", "2017-03-21", "GetMediaDNAResult", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 

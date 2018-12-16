@@ -23,7 +23,7 @@ class DescribePlayUserAvgRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "DescribePlayUserAvg");
+		parent::__construct("vod", "2017-03-21", "DescribePlayUserAvg", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 

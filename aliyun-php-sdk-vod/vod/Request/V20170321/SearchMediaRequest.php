@@ -23,7 +23,7 @@ class SearchMediaRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "SearchMedia");
+		parent::__construct("vod", "2017-03-21", "SearchMedia", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 
@@ -40,6 +40,8 @@ class SearchMediaRequest extends \RpcAcsRequest
 	private  $pageSize;
 
 	private  $sortBy;
+
+	private  $sessionId;
 
 	private  $ownerId;
 
@@ -108,6 +110,15 @@ class SearchMediaRequest extends \RpcAcsRequest
 	public function setSortBy($sortBy) {
 		$this->sortBy = $sortBy;
 		$this->queryParameters["SortBy"]=$sortBy;
+	}
+
+	public function getSessionId() {
+		return $this->sessionId;
+	}
+
+	public function setSessionId($sessionId) {
+		$this->sessionId = $sessionId;
+		$this->queryParameters["SessionId"]=$sessionId;
 	}
 
 	public function getOwnerId() {

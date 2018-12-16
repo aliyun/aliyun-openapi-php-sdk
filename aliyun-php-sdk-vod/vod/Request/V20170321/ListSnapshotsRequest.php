@@ -23,7 +23,7 @@ class ListSnapshotsRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "ListSnapshots");
+		parent::__construct("vod", "2017-03-21", "ListSnapshots", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 

@@ -23,7 +23,7 @@ class DescribeRefreshTasksRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "DescribeRefreshTasks");
+		parent::__construct("vod", "2017-03-21", "DescribeRefreshTasks", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 

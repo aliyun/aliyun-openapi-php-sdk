@@ -23,7 +23,7 @@ class ListWatermarkRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "ListWatermark");
+		parent::__construct("vod", "2017-03-21", "ListWatermark", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 

@@ -19,35 +19,29 @@
  */
 namespace vod\Request\V20170321;
 
-class DescribeDomainFlowDataRequest extends \RpcAcsRequest
+class AddMediaSequencesRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "DescribeDomainFlowData", "vod", "openAPI");
+		parent::__construct("vod", "2017-03-21", "AddMediaSequences", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 
 	private  $resourceOwnerId;
 
-	private  $resourceOwnerAccount;
+	private  $mediaURL;
 
-	private  $timeMerge;
+	private  $resourceOwnerAccount;
 
 	private  $ownerAccount;
 
-	private  $domainName;
-
-	private  $endTime;
-
-	private  $locationNameEn;
-
-	private  $startTime;
-
-	private  $ispNameEn;
+	private  $mediaSequences;
 
 	private  $ownerId;
 
-	private  $interval;
+	private  $mediaId;
+
+	private  $mediaType;
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -56,6 +50,15 @@ class DescribeDomainFlowDataRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
+
+	public function getMediaURL() {
+		return $this->mediaURL;
+	}
+
+	public function setMediaURL($mediaURL) {
+		$this->mediaURL = $mediaURL;
+		$this->queryParameters["MediaURL"]=$mediaURL;
 	}
 
 	public function getResourceOwnerAccount() {
@@ -67,15 +70,6 @@ class DescribeDomainFlowDataRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
-	public function getTimeMerge() {
-		return $this->timeMerge;
-	}
-
-	public function setTimeMerge($timeMerge) {
-		$this->timeMerge = $timeMerge;
-		$this->queryParameters["TimeMerge"]=$timeMerge;
-	}
-
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -85,49 +79,13 @@ class DescribeDomainFlowDataRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
 	}
 
-	public function getDomainName() {
-		return $this->domainName;
+	public function getMediaSequences() {
+		return $this->mediaSequences;
 	}
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
-
-	public function getEndTime() {
-		return $this->endTime;
-	}
-
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getLocationNameEn() {
-		return $this->locationNameEn;
-	}
-
-	public function setLocationNameEn($locationNameEn) {
-		$this->locationNameEn = $locationNameEn;
-		$this->queryParameters["LocationNameEn"]=$locationNameEn;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
-
-	public function getIspNameEn() {
-		return $this->ispNameEn;
-	}
-
-	public function setIspNameEn($ispNameEn) {
-		$this->ispNameEn = $ispNameEn;
-		$this->queryParameters["IspNameEn"]=$ispNameEn;
+	public function setMediaSequences($mediaSequences) {
+		$this->mediaSequences = $mediaSequences;
+		$this->queryParameters["MediaSequences"]=$mediaSequences;
 	}
 
 	public function getOwnerId() {
@@ -139,13 +97,22 @@ class DescribeDomainFlowDataRequest extends \RpcAcsRequest
 		$this->queryParameters["OwnerId"]=$ownerId;
 	}
 
-	public function getInterval() {
-		return $this->interval;
+	public function getMediaId() {
+		return $this->mediaId;
 	}
 
-	public function setInterval($interval) {
-		$this->interval = $interval;
-		$this->queryParameters["Interval"]=$interval;
+	public function setMediaId($mediaId) {
+		$this->mediaId = $mediaId;
+		$this->queryParameters["MediaId"]=$mediaId;
+	}
+
+	public function getMediaType() {
+		return $this->mediaType;
+	}
+
+	public function setMediaType($mediaType) {
+		$this->mediaType = $mediaType;
+		$this->queryParameters["MediaType"]=$mediaType;
 	}
 	
 }

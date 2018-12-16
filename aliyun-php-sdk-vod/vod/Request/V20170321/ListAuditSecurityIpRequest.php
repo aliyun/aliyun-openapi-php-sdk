@@ -23,7 +23,7 @@ class ListAuditSecurityIpRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("vod", "2017-03-21", "ListAuditSecurityIp");
+		parent::__construct("vod", "2017-03-21", "ListAuditSecurityIp", "vod", "openAPI");
 		$this->setMethod("POST");
 	}
 
