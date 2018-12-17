@@ -19,23 +19,22 @@
  */
 namespace linkedmall\Request\V20180116;
 
-class QueryBizItemsRequest extends \RpcAcsRequest
+class CreateMovieTicketOrderRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("linkedmall", "2018-01-16", "QueryBizItems", "linkedmall", "openAPI");
-		$this->setMethod("POST");
+		parent::__construct("linkedmall", "2018-01-16", "CreateMovieTicketOrder", "linkedmall", "openAPI");
 	}
 
 	private  $bizId;
 
-	private  $subBizId;
+	private  $bizUid;
 
-	private  $pageSize;
+	private  $outTradeId;
 
-	private  $pageNumber;
+	private  $lockSeatAppKey;
 
-	private  $userId;
+	private  $extJson;
 
 	public function getBizId() {
 		return $this->bizId;
@@ -46,40 +45,40 @@ class QueryBizItemsRequest extends \RpcAcsRequest
 		$this->queryParameters["BizId"]=$bizId;
 	}
 
-	public function getSubBizId() {
-		return $this->subBizId;
+	public function getBizUid() {
+		return $this->bizUid;
 	}
 
-	public function setSubBizId($subBizId) {
-		$this->subBizId = $subBizId;
-		$this->queryParameters["SubBizId"]=$subBizId;
+	public function setBizUid($bizUid) {
+		$this->bizUid = $bizUid;
+		$this->queryParameters["BizUid"]=$bizUid;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
+	public function getOutTradeId() {
+		return $this->outTradeId;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+	public function setOutTradeId($outTradeId) {
+		$this->outTradeId = $outTradeId;
+		$this->queryParameters["OutTradeId"]=$outTradeId;
 	}
 
-	public function getPageNumber() {
-		return $this->pageNumber;
+	public function getLockSeatAppKey() {
+		return $this->lockSeatAppKey;
 	}
 
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
+	public function setLockSeatAppKey($lockSeatAppKey) {
+		$this->lockSeatAppKey = $lockSeatAppKey;
+		$this->queryParameters["LockSeatAppKey"]=$lockSeatAppKey;
 	}
 
-	public function getUserId() {
-		return $this->userId;
+	public function getExtJson() {
+		return $this->extJson;
 	}
 
-	public function setUserId($userId) {
-		$this->userId = $userId;
-		$this->queryParameters["UserId"]=$userId;
+	public function setExtJson($extJson) {
+		$this->extJson = $extJson;
+		$this->queryParameters["ExtJson"]=$extJson;
 	}
 	
 }
