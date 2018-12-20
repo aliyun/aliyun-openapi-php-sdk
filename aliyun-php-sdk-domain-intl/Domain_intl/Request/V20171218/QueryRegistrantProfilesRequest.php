@@ -41,6 +41,8 @@ class QueryRegistrantProfilesRequest extends \RpcAcsRequest
 
 	private  $defaultRegistrantProfile;
 
+	private  $email;
+
 	public function getRegistrantOrganization() {
 		return $this->registrantOrganization;
 	}
@@ -102,6 +104,15 @@ class QueryRegistrantProfilesRequest extends \RpcAcsRequest
 	public function setDefaultRegistrantProfile($defaultRegistrantProfile) {
 		$this->defaultRegistrantProfile = $defaultRegistrantProfile;
 		$this->queryParameters["DefaultRegistrantProfile"]=$defaultRegistrantProfile;
+	}
+
+	public function getEmail() {
+		return $this->email;
+	}
+
+	public function setEmail($email) {
+		$this->email = $email;
+		$this->queryParameters["Email"]=$email;
 	}
 	
 }

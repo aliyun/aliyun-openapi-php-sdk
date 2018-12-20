@@ -29,6 +29,8 @@ class SaveSingleTaskForCreatingOrderTransferRequest extends \RpcAcsRequest
 
 	private  $permitPremiumTransfer;
 
+	private  $promotionNo;
+
 	private  $authorizationCode;
 
 	private  $userClientIp;
@@ -37,7 +39,13 @@ class SaveSingleTaskForCreatingOrderTransferRequest extends \RpcAcsRequest
 
 	private  $registrantProfileId;
 
+	private  $couponNo;
+
+	private  $useCoupon;
+
 	private  $lang;
+
+	private  $usePromotion;
 
 	public function getPermitPremiumTransfer() {
 		return $this->permitPremiumTransfer;
@@ -46,6 +54,15 @@ class SaveSingleTaskForCreatingOrderTransferRequest extends \RpcAcsRequest
 	public function setPermitPremiumTransfer($permitPremiumTransfer) {
 		$this->permitPremiumTransfer = $permitPremiumTransfer;
 		$this->queryParameters["PermitPremiumTransfer"]=$permitPremiumTransfer;
+	}
+
+	public function getPromotionNo() {
+		return $this->promotionNo;
+	}
+
+	public function setPromotionNo($promotionNo) {
+		$this->promotionNo = $promotionNo;
+		$this->queryParameters["PromotionNo"]=$promotionNo;
 	}
 
 	public function getAuthorizationCode() {
@@ -84,6 +101,24 @@ class SaveSingleTaskForCreatingOrderTransferRequest extends \RpcAcsRequest
 		$this->queryParameters["RegistrantProfileId"]=$registrantProfileId;
 	}
 
+	public function getCouponNo() {
+		return $this->couponNo;
+	}
+
+	public function setCouponNo($couponNo) {
+		$this->couponNo = $couponNo;
+		$this->queryParameters["CouponNo"]=$couponNo;
+	}
+
+	public function getUseCoupon() {
+		return $this->useCoupon;
+	}
+
+	public function setUseCoupon($useCoupon) {
+		$this->useCoupon = $useCoupon;
+		$this->queryParameters["UseCoupon"]=$useCoupon;
+	}
+
 	public function getLang() {
 		return $this->lang;
 	}
@@ -91,6 +126,15 @@ class SaveSingleTaskForCreatingOrderTransferRequest extends \RpcAcsRequest
 	public function setLang($lang) {
 		$this->lang = $lang;
 		$this->queryParameters["Lang"]=$lang;
+	}
+
+	public function getUsePromotion() {
+		return $this->usePromotion;
+	}
+
+	public function setUsePromotion($usePromotion) {
+		$this->usePromotion = $usePromotion;
+		$this->queryParameters["UsePromotion"]=$usePromotion;
 	}
 	
 }
