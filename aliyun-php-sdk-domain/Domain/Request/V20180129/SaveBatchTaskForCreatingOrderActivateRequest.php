@@ -29,9 +29,17 @@ class SaveBatchTaskForCreatingOrderActivateRequest extends \RpcAcsRequest
 
 	private  $OrderActivateParams;
 
+	private  $promotionNo;
+
 	private  $userClientIp;
 
+	private  $couponNo;
+
+	private  $useCoupon;
+
 	private  $lang;
+
+	private  $usePromotion;
 
 	public function getOrderActivateParams() {
 		return $this->OrderActivateParams;
@@ -70,6 +78,15 @@ class SaveBatchTaskForCreatingOrderActivateRequest extends \RpcAcsRequest
 		}
 	}
 
+	public function getPromotionNo() {
+		return $this->promotionNo;
+	}
+
+	public function setPromotionNo($promotionNo) {
+		$this->promotionNo = $promotionNo;
+		$this->queryParameters["PromotionNo"]=$promotionNo;
+	}
+
 	public function getUserClientIp() {
 		return $this->userClientIp;
 	}
@@ -79,6 +96,24 @@ class SaveBatchTaskForCreatingOrderActivateRequest extends \RpcAcsRequest
 		$this->queryParameters["UserClientIp"]=$userClientIp;
 	}
 
+	public function getCouponNo() {
+		return $this->couponNo;
+	}
+
+	public function setCouponNo($couponNo) {
+		$this->couponNo = $couponNo;
+		$this->queryParameters["CouponNo"]=$couponNo;
+	}
+
+	public function getUseCoupon() {
+		return $this->useCoupon;
+	}
+
+	public function setUseCoupon($useCoupon) {
+		$this->useCoupon = $useCoupon;
+		$this->queryParameters["UseCoupon"]=$useCoupon;
+	}
+
 	public function getLang() {
 		return $this->lang;
 	}
@@ -86,6 +121,15 @@ class SaveBatchTaskForCreatingOrderActivateRequest extends \RpcAcsRequest
 	public function setLang($lang) {
 		$this->lang = $lang;
 		$this->queryParameters["Lang"]=$lang;
+	}
+
+	public function getUsePromotion() {
+		return $this->usePromotion;
+	}
+
+	public function setUsePromotion($usePromotion) {
+		$this->usePromotion = $usePromotion;
+		$this->queryParameters["UsePromotion"]=$usePromotion;
 	}
 	
 }

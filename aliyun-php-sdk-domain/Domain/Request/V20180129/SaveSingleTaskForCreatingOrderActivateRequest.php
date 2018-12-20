@@ -41,6 +41,8 @@ class SaveSingleTaskForCreatingOrderActivateRequest extends \RpcAcsRequest
 
 	private  $registrantProfileId;
 
+	private  $couponNo;
+
 	private  $aliyunDns;
 
 	private  $zhCity;
@@ -73,15 +75,21 @@ class SaveSingleTaskForCreatingOrderActivateRequest extends \RpcAcsRequest
 
 	private  $trademarkDomainActivation;
 
+	private  $useCoupon;
+
 	private  $zhProvince;
 
 	private  $registrantOrganization;
+
+	private  $promotionNo;
 
 	private  $enableDomainProxy;
 
 	private  $userClientIp;
 
 	private  $registrantName;
+
+	private  $usePromotion;
 
 	public function getCountry() {
 		return $this->country;
@@ -144,6 +152,15 @@ class SaveSingleTaskForCreatingOrderActivateRequest extends \RpcAcsRequest
 	public function setRegistrantProfileId($registrantProfileId) {
 		$this->registrantProfileId = $registrantProfileId;
 		$this->queryParameters["RegistrantProfileId"]=$registrantProfileId;
+	}
+
+	public function getCouponNo() {
+		return $this->couponNo;
+	}
+
+	public function setCouponNo($couponNo) {
+		$this->couponNo = $couponNo;
+		$this->queryParameters["CouponNo"]=$couponNo;
 	}
 
 	public function getAliyunDns() {
@@ -290,6 +307,15 @@ class SaveSingleTaskForCreatingOrderActivateRequest extends \RpcAcsRequest
 		$this->queryParameters["TrademarkDomainActivation"]=$trademarkDomainActivation;
 	}
 
+	public function getUseCoupon() {
+		return $this->useCoupon;
+	}
+
+	public function setUseCoupon($useCoupon) {
+		$this->useCoupon = $useCoupon;
+		$this->queryParameters["UseCoupon"]=$useCoupon;
+	}
+
 	public function getZhProvince() {
 		return $this->zhProvince;
 	}
@@ -306,6 +332,15 @@ class SaveSingleTaskForCreatingOrderActivateRequest extends \RpcAcsRequest
 	public function setRegistrantOrganization($registrantOrganization) {
 		$this->registrantOrganization = $registrantOrganization;
 		$this->queryParameters["RegistrantOrganization"]=$registrantOrganization;
+	}
+
+	public function getPromotionNo() {
+		return $this->promotionNo;
+	}
+
+	public function setPromotionNo($promotionNo) {
+		$this->promotionNo = $promotionNo;
+		$this->queryParameters["PromotionNo"]=$promotionNo;
 	}
 
 	public function getEnableDomainProxy() {
@@ -333,6 +368,15 @@ class SaveSingleTaskForCreatingOrderActivateRequest extends \RpcAcsRequest
 	public function setRegistrantName($registrantName) {
 		$this->registrantName = $registrantName;
 		$this->queryParameters["RegistrantName"]=$registrantName;
+	}
+
+	public function getUsePromotion() {
+		return $this->usePromotion;
+	}
+
+	public function setUsePromotion($usePromotion) {
+		$this->usePromotion = $usePromotion;
+		$this->queryParameters["UsePromotion"]=$usePromotion;
 	}
 	
 }

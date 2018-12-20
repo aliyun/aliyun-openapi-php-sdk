@@ -29,13 +29,21 @@ class SaveSingleTaskForCreatingOrderRenewRequest extends \RpcAcsRequest
 
 	private  $subscriptionDuration;
 
+	private  $promotionNo;
+
 	private  $currentExpirationDate;
 
 	private  $userClientIp;
 
 	private  $domainName;
 
+	private  $couponNo;
+
+	private  $useCoupon;
+
 	private  $lang;
+
+	private  $usePromotion;
 
 	public function getSubscriptionDuration() {
 		return $this->subscriptionDuration;
@@ -44,6 +52,15 @@ class SaveSingleTaskForCreatingOrderRenewRequest extends \RpcAcsRequest
 	public function setSubscriptionDuration($subscriptionDuration) {
 		$this->subscriptionDuration = $subscriptionDuration;
 		$this->queryParameters["SubscriptionDuration"]=$subscriptionDuration;
+	}
+
+	public function getPromotionNo() {
+		return $this->promotionNo;
+	}
+
+	public function setPromotionNo($promotionNo) {
+		$this->promotionNo = $promotionNo;
+		$this->queryParameters["PromotionNo"]=$promotionNo;
 	}
 
 	public function getCurrentExpirationDate() {
@@ -73,6 +90,24 @@ class SaveSingleTaskForCreatingOrderRenewRequest extends \RpcAcsRequest
 		$this->queryParameters["DomainName"]=$domainName;
 	}
 
+	public function getCouponNo() {
+		return $this->couponNo;
+	}
+
+	public function setCouponNo($couponNo) {
+		$this->couponNo = $couponNo;
+		$this->queryParameters["CouponNo"]=$couponNo;
+	}
+
+	public function getUseCoupon() {
+		return $this->useCoupon;
+	}
+
+	public function setUseCoupon($useCoupon) {
+		$this->useCoupon = $useCoupon;
+		$this->queryParameters["UseCoupon"]=$useCoupon;
+	}
+
 	public function getLang() {
 		return $this->lang;
 	}
@@ -80,6 +115,15 @@ class SaveSingleTaskForCreatingOrderRenewRequest extends \RpcAcsRequest
 	public function setLang($lang) {
 		$this->lang = $lang;
 		$this->queryParameters["Lang"]=$lang;
+	}
+
+	public function getUsePromotion() {
+		return $this->usePromotion;
+	}
+
+	public function setUsePromotion($usePromotion) {
+		$this->usePromotion = $usePromotion;
+		$this->queryParameters["UsePromotion"]=$usePromotion;
 	}
 	
 }
