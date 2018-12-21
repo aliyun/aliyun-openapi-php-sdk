@@ -17,13 +17,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace ARMS\Request\V20181015;
+namespace ARMS\Request\V20181219;
 
 class ARMSQueryDataSetRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("ARMS", "2018-10-15", "ARMSQueryDataSet");
+		parent::__construct("ARMS", "2018-12-19", "ARMSQueryDataSet", "arms", "openAPI");
 		$this->setMethod("POST");
 	}
 

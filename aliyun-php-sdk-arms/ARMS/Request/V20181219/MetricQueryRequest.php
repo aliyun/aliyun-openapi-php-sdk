@@ -17,15 +17,23 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-namespace ARMS\Request\V20181015;
+namespace ARMS\Request\V20181219;
 
 class MetricQueryRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("ARMS", "2018-10-15", "MetricQuery");
+		parent::__construct("ARMS", "2018-12-19", "MetricQuery", "arms", "openAPI");
 		$this->setMethod("POST");
 	}
+
+	private  $endTime;
+
+	private  $orderBy;
+
+	private  $Filterss;
+
+	private  $startTime;
 
 	private  $iintervalInSec;
 
@@ -37,17 +45,49 @@ class MetricQueryRequest extends \RpcAcsRequest
 
 	private  $limit;
 
-	private  $endTime;
-
-	private  $orderBy;
-
-	private  $startTime;
-
-	private  $Filterss;
-
 	private  $Dimensionss;
 
 	private  $order;
+
+	public function getEndTime() {
+		return $this->endTime;
+	}
+
+	public function setEndTime($endTime) {
+		$this->endTime = $endTime;
+		$this->queryParameters["EndTime"]=$endTime;
+	}
+
+	public function getOrderBy() {
+		return $this->orderBy;
+	}
+
+	public function setOrderBy($orderBy) {
+		$this->orderBy = $orderBy;
+		$this->queryParameters["OrderBy"]=$orderBy;
+	}
+
+	public function getFilterss() {
+		return $this->Filterss;
+	}
+
+	public function setFilterss($Filterss) {
+		$this->Filterss = $Filterss;
+		for ($i = 0; $i < count($Filterss); $i ++) {	
+			$this->queryParameters['Filters.' . ($i + 1) . '.Value'] = $Filterss[$i]['Value'];
+			$this->queryParameters['Filters.' . ($i + 1) . '.Key'] = $Filterss[$i]['Key'];
+
+		}
+	}
+
+	public function getStartTime() {
+		return $this->startTime;
+	}
+
+	public function setStartTime($startTime) {
+		$this->startTime = $startTime;
+		$this->queryParameters["StartTime"]=$startTime;
+	}
 
 	public function getIintervalInSec() {
 		return $this->iintervalInSec;
@@ -94,46 +134,6 @@ class MetricQueryRequest extends \RpcAcsRequest
 	public function setLimit($limit) {
 		$this->limit = $limit;
 		$this->queryParameters["Limit"]=$limit;
-	}
-
-	public function getEndTime() {
-		return $this->endTime;
-	}
-
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getOrderBy() {
-		return $this->orderBy;
-	}
-
-	public function setOrderBy($orderBy) {
-		$this->orderBy = $orderBy;
-		$this->queryParameters["OrderBy"]=$orderBy;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
-
-	public function getFilterss() {
-		return $this->Filterss;
-	}
-
-	public function setFilterss($Filterss) {
-		$this->Filterss = $Filterss;
-		for ($i = 0; $i < count($Filterss); $i ++) {	
-			$this->queryParameters['Filters.' . ($i + 1) . '.Value'] = $Filterss[$i]['Value'];
-			$this->queryParameters['Filters.' . ($i + 1) . '.Key'] = $Filterss[$i]['Key'];
-
-		}
 	}
 
 	public function getDimensionss() {
