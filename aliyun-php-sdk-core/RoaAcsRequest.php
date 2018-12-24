@@ -67,6 +67,9 @@ abstract class RoaAcsRequest extends AcsRequest
         $uri = $this->replaceOccupiedParameters();
         $signString = $signString.$this->buildCanonicalHeaders();
         $queryString = $this->buildQueryString($uri);
+        if (substr($queryString, -1) === '?') {
+            $queryString = substr($queryString, 0, -1);
+        }
         $signString .= $queryString;
         $this->headers["Authorization"] = "acs ".$credential->getAccessKeyId().":"
                 .$iSigner->signString($signString, $credential->getAccessSecret());
@@ -112,7 +115,11 @@ abstract class RoaAcsRequest extends AcsRequest
         if ($content != null) {
             $this->headers["Content-MD5"] = base64_encode(md5(json_encode($content), true));
         }
-        $this->headers["Content-Type"] = "application/octet-stream;charset=utf-8";
+        if ($this->acceptFormat === 'JSON') {
+            $this->headers['Content-Type'] = 'application/json;charset=utf-8';
+        } else {
+            $this->headers['Content-Type'] = 'application/octet-stream;charset=utf-8';
+        }
         if ($credential->getSecurityToken() != null) {
             $this->headers["x-acs-security-token"] = $credential->getSecurityToken();
         }

@@ -131,11 +131,40 @@ class DefaultAcsClient implements IAcsClient
         }
         return $request;
     }
-    
-    
+
+    /**
+     * @param object $respObject
+     * @param int    $httpStatus
+     *
+     * @throws ServerException
+     */
     private function buildApiException($respObject, $httpStatus)
     {
-        throw new ServerException($respObject->Message, $respObject->Code, $httpStatus, $respObject->RequestId);
+        // Compatible with different results
+        if (isset($respObject->Message, $respObject->Code, $respObject->RequestId)) {
+            throw new ServerException(
+                $respObject->Message, $respObject->Code, $httpStatus, $respObject->RequestId
+            );
+        }
+
+        if (isset($respObject->message, $respObject->code, $respObject->requestId)) {
+            throw new ServerException(
+                $respObject->message, $respObject->code, $httpStatus, $respObject->requestId
+            );
+        }
+
+        if (isset($respObject->errorMsg, $respObject->errorCode)) {
+            throw new ServerException(
+                $respObject->errorMsg, $respObject->errorCode, $httpStatus, 'None'
+            );
+        }
+
+        throw new ServerException(
+            'The server returned an error without a detailed message. ',
+            'UnknownServerError',
+            $httpStatus,
+            'None'
+        );
     }
     
     private function parseAcsResponse($body, $format)

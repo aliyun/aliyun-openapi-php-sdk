@@ -1,3 +1,9 @@
+2018-12-24 Version: 1.2.2
+1, Fixed ROA sign
+2, ROA support JSON Format
+3, Response Field identification
+
+
 2018-12-11 Version: 1.2.1
 1, Add endpoint data for DYSMS
 
