@@ -25,7 +25,7 @@ abstract class AcsRequest
 	protected  $regionId;
 	protected  $acceptFormat;
 	protected  $method;
-	protected  $protocolType = "http";
+	protected  $requestScheme = 'http';
 	protected  $content;
 	
 	protected $queryParameters = array();
@@ -33,16 +33,15 @@ abstract class AcsRequest
 	
 	protected $locationServiceCode;
 	protected $locationEndpointType;
-	
-	public function  __construct($product, $version, $actionName, $locationServiceCode = null, $locationEndpointType = "openAPI")
+
+	public function  __construct($product, $version, $actionName, $locationServiceCode = null, $locationEndpointType = 'openAPI')
 	{
-	    $this->headers["x-sdk-client"] = "php/2.0.0";
-	    $this->product = $product;
-	    $this->version = $version;
-	    $this->actionName = $actionName;
-	    
-	    $this->locationServiceCode = $locationServiceCode;
-	    $this->locationEndpointType = $locationEndpointType;
+        $this->headers['x-sdk-client'] = 'php/2.0.0';
+        $this->product                 = $product;
+        $this->version                 = $version;
+        $this->actionName              = $actionName;
+        $this->locationServiceCode     = $locationServiceCode;
+        $this->locationEndpointType    = $locationEndpointType;
 	}
 	
 	abstract public function composeUrl($iSigner, $credential, $domain);
@@ -109,12 +108,12 @@ abstract class AcsRequest
 	
 	public function getProtocol()
 	{
-		return $this->protocolType;
+		return $this->requestScheme;
 	}
 	
 	public function setProtocol($protocol)
 	{
-		$this->protocolType = $protocol;
+		$this->requestScheme = $protocol;
 	}
 	
 	public function getRegionId()
