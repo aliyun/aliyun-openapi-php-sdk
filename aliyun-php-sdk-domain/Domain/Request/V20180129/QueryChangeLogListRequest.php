@@ -21,11 +21,11 @@ namespace Domain\Request\V20180129;
 
 class QueryChangeLogListRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain", "2018-01-29", "QueryChangeLogList");
+    public function  __construct()
+    {
+        parent::__construct("Domain", "2018-01-29", "QueryChangeLogList");
 		$this->setMethod("POST");
-	}
+    }
 
 	private  $endDate;
 
@@ -41,67 +41,67 @@ class QueryChangeLogListRequest extends \RpcAcsRequest
 
 	private  $startDate;
 
-	public function getEndDate() {
-		return $this->endDate;
+    public function getEndDate() {
+	    return $this->endDate;
+    }
+
+    public function setEndDate($endDate) {
+    	$this->endDate = $endDate;
+    	$this->queryParameters['EndDate'] = $endDate;
 	}
 
-	public function setEndDate($endDate) {
-		$this->endDate = $endDate;
-		$this->queryParameters["EndDate"]=$endDate;
+    public function getUserClientIp() {
+	    return $this->userClientIp;
+    }
+
+    public function setUserClientIp($userClientIp) {
+    	$this->userClientIp = $userClientIp;
+    	$this->queryParameters['UserClientIp'] = $userClientIp;
 	}
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
+    public function getDomainName() {
+	    return $this->domainName;
+    }
+
+    public function setDomainName($domainName) {
+    	$this->domainName = $domainName;
+    	$this->queryParameters['DomainName'] = $domainName;
 	}
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
+    public function getPageSize() {
+	    return $this->pageSize;
+    }
+
+    public function setPageSize($pageSize) {
+    	$this->pageSize = $pageSize;
+    	$this->queryParameters['PageSize'] = $pageSize;
 	}
 
-	public function getDomainName() {
-		return $this->domainName;
+    public function getLang() {
+	    return $this->lang;
+    }
+
+    public function setLang($lang) {
+    	$this->lang = $lang;
+    	$this->queryParameters['Lang'] = $lang;
 	}
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
+    public function getPageNum() {
+	    return $this->pageNum;
+    }
+
+    public function setPageNum($pageNum) {
+    	$this->pageNum = $pageNum;
+    	$this->queryParameters['PageNum'] = $pageNum;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
+    public function getStartDate() {
+	    return $this->startDate;
+    }
+
+    public function setStartDate($startDate) {
+    	$this->startDate = $startDate;
+    	$this->queryParameters['StartDate'] = $startDate;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-
-	public function getPageNum() {
-		return $this->pageNum;
-	}
-
-	public function setPageNum($pageNum) {
-		$this->pageNum = $pageNum;
-		$this->queryParameters["PageNum"]=$pageNum;
-	}
-
-	public function getStartDate() {
-		return $this->startDate;
-	}
-
-	public function setStartDate($startDate) {
-		$this->startDate = $startDate;
-		$this->queryParameters["StartDate"]=$startDate;
-	}
-	
 }

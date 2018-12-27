@@ -21,11 +21,11 @@ namespace Domain\Request\V20180129;
 
 class ConfirmTransferInEmailRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain", "2018-01-29", "ConfirmTransferInEmail");
+    public function  __construct()
+    {
+        parent::__construct("Domain", "2018-01-29", "ConfirmTransferInEmail");
 		$this->setMethod("POST");
-	}
+    }
 
 	private  $userClientIp;
 
@@ -35,13 +35,13 @@ class ConfirmTransferInEmailRequest extends \RpcAcsRequest
 
 	private  $email;
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
-	}
+    public function getUserClientIp() {
+	    return $this->userClientIp;
+    }
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
+    public function setUserClientIp($userClientIp) {
+    	$this->userClientIp = $userClientIp;
+    	$this->queryParameters['UserClientIp'] = $userClientIp;
 	}
 
 	public function getDomainNames() {
@@ -55,22 +55,22 @@ class ConfirmTransferInEmailRequest extends \RpcAcsRequest
 		}
 	}
 
-	public function getLang() {
-		return $this->lang;
+    public function getLang() {
+	    return $this->lang;
+    }
+
+    public function setLang($lang) {
+    	$this->lang = $lang;
+    	$this->queryParameters['Lang'] = $lang;
 	}
 
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
+    public function getEmail() {
+	    return $this->email;
+    }
+
+    public function setEmail($email) {
+    	$this->email = $email;
+    	$this->queryParameters['Email'] = $email;
 	}
 
-	public function getEmail() {
-		return $this->email;
-	}
-
-	public function setEmail($email) {
-		$this->email = $email;
-		$this->queryParameters["Email"]=$email;
-	}
-	
 }

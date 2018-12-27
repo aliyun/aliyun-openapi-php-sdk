@@ -21,11 +21,11 @@ namespace Domain\Request\V20180129;
 
 class QueryTaskDetailHistoryRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain", "2018-01-29", "QueryTaskDetailHistory");
+    public function  __construct()
+    {
+        parent::__construct("Domain", "2018-01-29", "QueryTaskDetailHistory");
 		$this->setMethod("POST");
-	}
+    }
 
 	private  $taskStatus;
 
@@ -43,76 +43,76 @@ class QueryTaskDetailHistoryRequest extends \RpcAcsRequest
 
 	private  $domainNameCursor;
 
-	public function getTaskStatus() {
-		return $this->taskStatus;
+    public function getTaskStatus() {
+	    return $this->taskStatus;
+    }
+
+    public function setTaskStatus($taskStatus) {
+    	$this->taskStatus = $taskStatus;
+    	$this->queryParameters['TaskStatus'] = $taskStatus;
 	}
 
-	public function setTaskStatus($taskStatus) {
-		$this->taskStatus = $taskStatus;
-		$this->queryParameters["TaskStatus"]=$taskStatus;
+    public function getUserClientIp() {
+	    return $this->userClientIp;
+    }
+
+    public function setUserClientIp($userClientIp) {
+    	$this->userClientIp = $userClientIp;
+    	$this->queryParameters['UserClientIp'] = $userClientIp;
 	}
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
+    public function getTaskNo() {
+	    return $this->taskNo;
+    }
+
+    public function setTaskNo($taskNo) {
+    	$this->taskNo = $taskNo;
+    	$this->queryParameters['TaskNo'] = $taskNo;
 	}
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
+    public function getDomainName() {
+	    return $this->domainName;
+    }
+
+    public function setDomainName($domainName) {
+    	$this->domainName = $domainName;
+    	$this->queryParameters['DomainName'] = $domainName;
 	}
 
-	public function getTaskNo() {
-		return $this->taskNo;
+    public function getPageSize() {
+	    return $this->pageSize;
+    }
+
+    public function setPageSize($pageSize) {
+    	$this->pageSize = $pageSize;
+    	$this->queryParameters['PageSize'] = $pageSize;
 	}
 
-	public function setTaskNo($taskNo) {
-		$this->taskNo = $taskNo;
-		$this->queryParameters["TaskNo"]=$taskNo;
+    public function getTaskDetailNoCursor() {
+	    return $this->taskDetailNoCursor;
+    }
+
+    public function setTaskDetailNoCursor($taskDetailNoCursor) {
+    	$this->taskDetailNoCursor = $taskDetailNoCursor;
+    	$this->queryParameters['TaskDetailNoCursor'] = $taskDetailNoCursor;
 	}
 
-	public function getDomainName() {
-		return $this->domainName;
+    public function getLang() {
+	    return $this->lang;
+    }
+
+    public function setLang($lang) {
+    	$this->lang = $lang;
+    	$this->queryParameters['Lang'] = $lang;
 	}
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
+    public function getDomainNameCursor() {
+	    return $this->domainNameCursor;
+    }
+
+    public function setDomainNameCursor($domainNameCursor) {
+    	$this->domainNameCursor = $domainNameCursor;
+    	$this->queryParameters['DomainNameCursor'] = $domainNameCursor;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getTaskDetailNoCursor() {
-		return $this->taskDetailNoCursor;
-	}
-
-	public function setTaskDetailNoCursor($taskDetailNoCursor) {
-		$this->taskDetailNoCursor = $taskDetailNoCursor;
-		$this->queryParameters["TaskDetailNoCursor"]=$taskDetailNoCursor;
-	}
-
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-
-	public function getDomainNameCursor() {
-		return $this->domainNameCursor;
-	}
-
-	public function setDomainNameCursor($domainNameCursor) {
-		$this->domainNameCursor = $domainNameCursor;
-		$this->queryParameters["DomainNameCursor"]=$domainNameCursor;
-	}
-	
 }

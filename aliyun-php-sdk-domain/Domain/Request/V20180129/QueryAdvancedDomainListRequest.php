@@ -21,11 +21,11 @@ namespace Domain\Request\V20180129;
 
 class QueryAdvancedDomainListRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain", "2018-01-29", "QueryAdvancedDomainList");
+    public function  __construct()
+    {
+        parent::__construct("Domain", "2018-01-29", "QueryAdvancedDomainList");
 		$this->setMethod("POST");
-	}
+    }
 
 	private  $productDomainType;
 
@@ -79,238 +79,238 @@ class QueryAdvancedDomainListRequest extends \RpcAcsRequest
 
 	private  $endLength;
 
-	public function getProductDomainType() {
-		return $this->productDomainType;
+    public function getProductDomainType() {
+	    return $this->productDomainType;
+    }
+
+    public function setProductDomainType($productDomainType) {
+    	$this->productDomainType = $productDomainType;
+    	$this->queryParameters['ProductDomainType'] = $productDomainType;
 	}
 
-	public function setProductDomainType($productDomainType) {
-		$this->productDomainType = $productDomainType;
-		$this->queryParameters["ProductDomainType"]=$productDomainType;
+    public function getPageNum() {
+	    return $this->pageNum;
+    }
+
+    public function setPageNum($pageNum) {
+    	$this->pageNum = $pageNum;
+    	$this->queryParameters['PageNum'] = $pageNum;
 	}
 
-	public function getPageNum() {
-		return $this->pageNum;
+    public function getExcluded() {
+	    return $this->excluded;
+    }
+
+    public function setExcluded($excluded) {
+    	$this->excluded = $excluded;
+    	$this->queryParameters['Excluded'] = $excluded;
 	}
 
-	public function setPageNum($pageNum) {
-		$this->pageNum = $pageNum;
-		$this->queryParameters["PageNum"]=$pageNum;
+    public function getStartLength() {
+	    return $this->startLength;
+    }
+
+    public function setStartLength($startLength) {
+    	$this->startLength = $startLength;
+    	$this->queryParameters['StartLength'] = $startLength;
 	}
 
-	public function getExcluded() {
-		return $this->excluded;
+    public function getExcludedSuffix() {
+	    return $this->excludedSuffix;
+    }
+
+    public function setExcludedSuffix($excludedSuffix) {
+    	$this->excludedSuffix = $excludedSuffix;
+    	$this->queryParameters['ExcludedSuffix'] = $excludedSuffix;
 	}
 
-	public function setExcluded($excluded) {
-		$this->excluded = $excluded;
-		$this->queryParameters["Excluded"]=$excluded;
+    public function getPageSize() {
+	    return $this->pageSize;
+    }
+
+    public function setPageSize($pageSize) {
+    	$this->pageSize = $pageSize;
+    	$this->queryParameters['PageSize'] = $pageSize;
 	}
 
-	public function getStartLength() {
-		return $this->startLength;
+    public function getLang() {
+	    return $this->lang;
+    }
+
+    public function setLang($lang) {
+    	$this->lang = $lang;
+    	$this->queryParameters['Lang'] = $lang;
 	}
 
-	public function setStartLength($startLength) {
-		$this->startLength = $startLength;
-		$this->queryParameters["StartLength"]=$startLength;
+    public function getExcludedPrefix() {
+	    return $this->excludedPrefix;
+    }
+
+    public function setExcludedPrefix($excludedPrefix) {
+    	$this->excludedPrefix = $excludedPrefix;
+    	$this->queryParameters['ExcludedPrefix'] = $excludedPrefix;
 	}
 
-	public function getExcludedSuffix() {
-		return $this->excludedSuffix;
+    public function getKeyWord() {
+	    return $this->keyWord;
+    }
+
+    public function setKeyWord($keyWord) {
+    	$this->keyWord = $keyWord;
+    	$this->queryParameters['KeyWord'] = $keyWord;
 	}
 
-	public function setExcludedSuffix($excludedSuffix) {
-		$this->excludedSuffix = $excludedSuffix;
-		$this->queryParameters["ExcludedSuffix"]=$excludedSuffix;
+    public function getProductDomainTypeSort() {
+	    return $this->productDomainTypeSort;
+    }
+
+    public function setProductDomainTypeSort($productDomainTypeSort) {
+    	$this->productDomainTypeSort = $productDomainTypeSort;
+    	$this->queryParameters['ProductDomainTypeSort'] = $productDomainTypeSort;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
+    public function getEndExpirationDate() {
+	    return $this->endExpirationDate;
+    }
+
+    public function setEndExpirationDate($endExpirationDate) {
+    	$this->endExpirationDate = $endExpirationDate;
+    	$this->queryParameters['EndExpirationDate'] = $endExpirationDate;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+    public function getSuffixs() {
+	    return $this->suffixs;
+    }
+
+    public function setSuffixs($suffixs) {
+    	$this->suffixs = $suffixs;
+    	$this->queryParameters['Suffixs'] = $suffixs;
 	}
 
-	public function getLang() {
-		return $this->lang;
+    public function getDomainNameSort() {
+	    return $this->domainNameSort;
+    }
+
+    public function setDomainNameSort($domainNameSort) {
+    	$this->domainNameSort = $domainNameSort;
+    	$this->queryParameters['DomainNameSort'] = $domainNameSort;
 	}
 
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
+    public function getExpirationDateSort() {
+	    return $this->expirationDateSort;
+    }
+
+    public function setExpirationDateSort($expirationDateSort) {
+    	$this->expirationDateSort = $expirationDateSort;
+    	$this->queryParameters['ExpirationDateSort'] = $expirationDateSort;
 	}
 
-	public function getExcludedPrefix() {
-		return $this->excludedPrefix;
+    public function getStartExpirationDate() {
+	    return $this->startExpirationDate;
+    }
+
+    public function setStartExpirationDate($startExpirationDate) {
+    	$this->startExpirationDate = $startExpirationDate;
+    	$this->queryParameters['StartExpirationDate'] = $startExpirationDate;
 	}
 
-	public function setExcludedPrefix($excludedPrefix) {
-		$this->excludedPrefix = $excludedPrefix;
-		$this->queryParameters["ExcludedPrefix"]=$excludedPrefix;
+    public function getDomainStatus() {
+	    return $this->domainStatus;
+    }
+
+    public function setDomainStatus($domainStatus) {
+    	$this->domainStatus = $domainStatus;
+    	$this->queryParameters['DomainStatus'] = $domainStatus;
 	}
 
-	public function getKeyWord() {
-		return $this->keyWord;
+    public function getDomainGroupId() {
+	    return $this->domainGroupId;
+    }
+
+    public function setDomainGroupId($domainGroupId) {
+    	$this->domainGroupId = $domainGroupId;
+    	$this->queryParameters['DomainGroupId'] = $domainGroupId;
 	}
 
-	public function setKeyWord($keyWord) {
-		$this->keyWord = $keyWord;
-		$this->queryParameters["KeyWord"]=$keyWord;
+    public function getKeyWordSuffix() {
+	    return $this->keyWordSuffix;
+    }
+
+    public function setKeyWordSuffix($keyWordSuffix) {
+    	$this->keyWordSuffix = $keyWordSuffix;
+    	$this->queryParameters['KeyWordSuffix'] = $keyWordSuffix;
 	}
 
-	public function getProductDomainTypeSort() {
-		return $this->productDomainTypeSort;
+    public function getKeyWordPrefix() {
+	    return $this->keyWordPrefix;
+    }
+
+    public function setKeyWordPrefix($keyWordPrefix) {
+    	$this->keyWordPrefix = $keyWordPrefix;
+    	$this->queryParameters['KeyWordPrefix'] = $keyWordPrefix;
 	}
 
-	public function setProductDomainTypeSort($productDomainTypeSort) {
-		$this->productDomainTypeSort = $productDomainTypeSort;
-		$this->queryParameters["ProductDomainTypeSort"]=$productDomainTypeSort;
+    public function getTradeType() {
+	    return $this->tradeType;
+    }
+
+    public function setTradeType($tradeType) {
+    	$this->tradeType = $tradeType;
+    	$this->queryParameters['TradeType'] = $tradeType;
 	}
 
-	public function getEndExpirationDate() {
-		return $this->endExpirationDate;
+    public function getEndRegistrationDate() {
+	    return $this->endRegistrationDate;
+    }
+
+    public function setEndRegistrationDate($endRegistrationDate) {
+    	$this->endRegistrationDate = $endRegistrationDate;
+    	$this->queryParameters['EndRegistrationDate'] = $endRegistrationDate;
 	}
 
-	public function setEndExpirationDate($endExpirationDate) {
-		$this->endExpirationDate = $endExpirationDate;
-		$this->queryParameters["EndExpirationDate"]=$endExpirationDate;
+    public function getForm() {
+	    return $this->form;
+    }
+
+    public function setForm($form) {
+    	$this->form = $form;
+    	$this->queryParameters['Form'] = $form;
 	}
 
-	public function getSuffixs() {
-		return $this->suffixs;
+    public function getUserClientIp() {
+	    return $this->userClientIp;
+    }
+
+    public function setUserClientIp($userClientIp) {
+    	$this->userClientIp = $userClientIp;
+    	$this->queryParameters['UserClientIp'] = $userClientIp;
 	}
 
-	public function setSuffixs($suffixs) {
-		$this->suffixs = $suffixs;
-		$this->queryParameters["Suffixs"]=$suffixs;
+    public function getRegistrationDateSort() {
+	    return $this->registrationDateSort;
+    }
+
+    public function setRegistrationDateSort($registrationDateSort) {
+    	$this->registrationDateSort = $registrationDateSort;
+    	$this->queryParameters['RegistrationDateSort'] = $registrationDateSort;
 	}
 
-	public function getDomainNameSort() {
-		return $this->domainNameSort;
+    public function getStartRegistrationDate() {
+	    return $this->startRegistrationDate;
+    }
+
+    public function setStartRegistrationDate($startRegistrationDate) {
+    	$this->startRegistrationDate = $startRegistrationDate;
+    	$this->queryParameters['StartRegistrationDate'] = $startRegistrationDate;
 	}
 
-	public function setDomainNameSort($domainNameSort) {
-		$this->domainNameSort = $domainNameSort;
-		$this->queryParameters["DomainNameSort"]=$domainNameSort;
+    public function getEndLength() {
+	    return $this->endLength;
+    }
+
+    public function setEndLength($endLength) {
+    	$this->endLength = $endLength;
+    	$this->queryParameters['EndLength'] = $endLength;
 	}
 
-	public function getExpirationDateSort() {
-		return $this->expirationDateSort;
-	}
-
-	public function setExpirationDateSort($expirationDateSort) {
-		$this->expirationDateSort = $expirationDateSort;
-		$this->queryParameters["ExpirationDateSort"]=$expirationDateSort;
-	}
-
-	public function getStartExpirationDate() {
-		return $this->startExpirationDate;
-	}
-
-	public function setStartExpirationDate($startExpirationDate) {
-		$this->startExpirationDate = $startExpirationDate;
-		$this->queryParameters["StartExpirationDate"]=$startExpirationDate;
-	}
-
-	public function getDomainStatus() {
-		return $this->domainStatus;
-	}
-
-	public function setDomainStatus($domainStatus) {
-		$this->domainStatus = $domainStatus;
-		$this->queryParameters["DomainStatus"]=$domainStatus;
-	}
-
-	public function getDomainGroupId() {
-		return $this->domainGroupId;
-	}
-
-	public function setDomainGroupId($domainGroupId) {
-		$this->domainGroupId = $domainGroupId;
-		$this->queryParameters["DomainGroupId"]=$domainGroupId;
-	}
-
-	public function getKeyWordSuffix() {
-		return $this->keyWordSuffix;
-	}
-
-	public function setKeyWordSuffix($keyWordSuffix) {
-		$this->keyWordSuffix = $keyWordSuffix;
-		$this->queryParameters["KeyWordSuffix"]=$keyWordSuffix;
-	}
-
-	public function getKeyWordPrefix() {
-		return $this->keyWordPrefix;
-	}
-
-	public function setKeyWordPrefix($keyWordPrefix) {
-		$this->keyWordPrefix = $keyWordPrefix;
-		$this->queryParameters["KeyWordPrefix"]=$keyWordPrefix;
-	}
-
-	public function getTradeType() {
-		return $this->tradeType;
-	}
-
-	public function setTradeType($tradeType) {
-		$this->tradeType = $tradeType;
-		$this->queryParameters["TradeType"]=$tradeType;
-	}
-
-	public function getEndRegistrationDate() {
-		return $this->endRegistrationDate;
-	}
-
-	public function setEndRegistrationDate($endRegistrationDate) {
-		$this->endRegistrationDate = $endRegistrationDate;
-		$this->queryParameters["EndRegistrationDate"]=$endRegistrationDate;
-	}
-
-	public function getForm() {
-		return $this->form;
-	}
-
-	public function setForm($form) {
-		$this->form = $form;
-		$this->queryParameters["Form"]=$form;
-	}
-
-	public function getUserClientIp() {
-		return $this->userClientIp;
-	}
-
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
-	}
-
-	public function getRegistrationDateSort() {
-		return $this->registrationDateSort;
-	}
-
-	public function setRegistrationDateSort($registrationDateSort) {
-		$this->registrationDateSort = $registrationDateSort;
-		$this->queryParameters["RegistrationDateSort"]=$registrationDateSort;
-	}
-
-	public function getStartRegistrationDate() {
-		return $this->startRegistrationDate;
-	}
-
-	public function setStartRegistrationDate($startRegistrationDate) {
-		$this->startRegistrationDate = $startRegistrationDate;
-		$this->queryParameters["StartRegistrationDate"]=$startRegistrationDate;
-	}
-
-	public function getEndLength() {
-		return $this->endLength;
-	}
-
-	public function setEndLength($endLength) {
-		$this->endLength = $endLength;
-		$this->queryParameters["EndLength"]=$endLength;
-	}
-	
 }

@@ -21,11 +21,11 @@ namespace Domain\Request\V20180129;
 
 class ListEmailVerificationRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain", "2018-01-29", "ListEmailVerification");
+    public function  __construct()
+    {
+        parent::__construct("Domain", "2018-01-29", "ListEmailVerification");
 		$this->setMethod("POST");
-	}
+    }
 
 	private  $beginCreateTime;
 
@@ -43,76 +43,76 @@ class ListEmailVerificationRequest extends \RpcAcsRequest
 
 	private  $verificationStatus;
 
-	public function getBeginCreateTime() {
-		return $this->beginCreateTime;
+    public function getBeginCreateTime() {
+	    return $this->beginCreateTime;
+    }
+
+    public function setBeginCreateTime($beginCreateTime) {
+    	$this->beginCreateTime = $beginCreateTime;
+    	$this->queryParameters['BeginCreateTime'] = $beginCreateTime;
 	}
 
-	public function setBeginCreateTime($beginCreateTime) {
-		$this->beginCreateTime = $beginCreateTime;
-		$this->queryParameters["BeginCreateTime"]=$beginCreateTime;
+    public function getEndCreateTime() {
+	    return $this->endCreateTime;
+    }
+
+    public function setEndCreateTime($endCreateTime) {
+    	$this->endCreateTime = $endCreateTime;
+    	$this->queryParameters['EndCreateTime'] = $endCreateTime;
 	}
 
-	public function getEndCreateTime() {
-		return $this->endCreateTime;
+    public function getPageSize() {
+	    return $this->pageSize;
+    }
+
+    public function setPageSize($pageSize) {
+    	$this->pageSize = $pageSize;
+    	$this->queryParameters['PageSize'] = $pageSize;
 	}
 
-	public function setEndCreateTime($endCreateTime) {
-		$this->endCreateTime = $endCreateTime;
-		$this->queryParameters["EndCreateTime"]=$endCreateTime;
+    public function getUserClientIp() {
+	    return $this->userClientIp;
+    }
+
+    public function setUserClientIp($userClientIp) {
+    	$this->userClientIp = $userClientIp;
+    	$this->queryParameters['UserClientIp'] = $userClientIp;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
+    public function getLang() {
+	    return $this->lang;
+    }
+
+    public function setLang($lang) {
+    	$this->lang = $lang;
+    	$this->queryParameters['Lang'] = $lang;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+    public function getPageNum() {
+	    return $this->pageNum;
+    }
+
+    public function setPageNum($pageNum) {
+    	$this->pageNum = $pageNum;
+    	$this->queryParameters['PageNum'] = $pageNum;
 	}
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
+    public function getEmail() {
+	    return $this->email;
+    }
+
+    public function setEmail($email) {
+    	$this->email = $email;
+    	$this->queryParameters['Email'] = $email;
 	}
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
+    public function getVerificationStatus() {
+	    return $this->verificationStatus;
+    }
+
+    public function setVerificationStatus($verificationStatus) {
+    	$this->verificationStatus = $verificationStatus;
+    	$this->queryParameters['VerificationStatus'] = $verificationStatus;
 	}
 
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-
-	public function getPageNum() {
-		return $this->pageNum;
-	}
-
-	public function setPageNum($pageNum) {
-		$this->pageNum = $pageNum;
-		$this->queryParameters["PageNum"]=$pageNum;
-	}
-
-	public function getEmail() {
-		return $this->email;
-	}
-
-	public function setEmail($email) {
-		$this->email = $email;
-		$this->queryParameters["Email"]=$email;
-	}
-
-	public function getVerificationStatus() {
-		return $this->verificationStatus;
-	}
-
-	public function setVerificationStatus($verificationStatus) {
-		$this->verificationStatus = $verificationStatus;
-		$this->queryParameters["VerificationStatus"]=$verificationStatus;
-	}
-	
 }

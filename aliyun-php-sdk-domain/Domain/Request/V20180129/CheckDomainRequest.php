@@ -21,11 +21,11 @@ namespace Domain\Request\V20180129;
 
 class CheckDomainRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain", "2018-01-29", "CheckDomain");
+    public function  __construct()
+    {
+        parent::__construct("Domain", "2018-01-29", "CheckDomain");
 		$this->setMethod("POST");
-	}
+    }
 
 	private  $feeCurrency;
 
@@ -33,64 +33,53 @@ class CheckDomainRequest extends \RpcAcsRequest
 
 	private  $domainName;
 
-	private  $userClientIp;
-
 	private  $feeCommand;
 
 	private  $lang;
 
-	public function getFeeCurrency() {
-		return $this->feeCurrency;
+    public function getFeeCurrency() {
+	    return $this->feeCurrency;
+    }
+
+    public function setFeeCurrency($feeCurrency) {
+    	$this->feeCurrency = $feeCurrency;
+    	$this->queryParameters['FeeCurrency'] = $feeCurrency;
 	}
 
-	public function setFeeCurrency($feeCurrency) {
-		$this->feeCurrency = $feeCurrency;
-		$this->queryParameters["FeeCurrency"]=$feeCurrency;
+    public function getFeePeriod() {
+	    return $this->feePeriod;
+    }
+
+    public function setFeePeriod($feePeriod) {
+    	$this->feePeriod = $feePeriod;
+    	$this->queryParameters['FeePeriod'] = $feePeriod;
 	}
 
-	public function getFeePeriod() {
-		return $this->feePeriod;
+    public function getDomainName() {
+	    return $this->domainName;
+    }
+
+    public function setDomainName($domainName) {
+    	$this->domainName = $domainName;
+    	$this->queryParameters['DomainName'] = $domainName;
 	}
 
-	public function setFeePeriod($feePeriod) {
-		$this->feePeriod = $feePeriod;
-		$this->queryParameters["FeePeriod"]=$feePeriod;
+    public function getFeeCommand() {
+	    return $this->feeCommand;
+    }
+
+    public function setFeeCommand($feeCommand) {
+    	$this->feeCommand = $feeCommand;
+    	$this->queryParameters['FeeCommand'] = $feeCommand;
 	}
 
-	public function getDomainName() {
-		return $this->domainName;
+    public function getLang() {
+	    return $this->lang;
+    }
+
+    public function setLang($lang) {
+    	$this->lang = $lang;
+    	$this->queryParameters['Lang'] = $lang;
 	}
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
-
-	public function getUserClientIp() {
-		return $this->userClientIp;
-	}
-
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
-	}
-
-	public function getFeeCommand() {
-		return $this->feeCommand;
-	}
-
-	public function setFeeCommand($feeCommand) {
-		$this->feeCommand = $feeCommand;
-		$this->queryParameters["FeeCommand"]=$feeCommand;
-	}
-
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-	
 }

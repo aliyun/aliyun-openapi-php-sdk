@@ -21,11 +21,11 @@ namespace Domain\Request\V20180129;
 
 class QueryTransferInListRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain", "2018-01-29", "QueryTransferInList");
+    public function  __construct()
+    {
+        parent::__construct("Domain", "2018-01-29", "QueryTransferInList");
 		$this->setMethod("POST");
-	}
+    }
 
 	private  $submissionStartDate;
 
@@ -43,76 +43,76 @@ class QueryTransferInListRequest extends \RpcAcsRequest
 
 	private  $pageNum;
 
-	public function getSubmissionStartDate() {
-		return $this->submissionStartDate;
+    public function getSubmissionStartDate() {
+	    return $this->submissionStartDate;
+    }
+
+    public function setSubmissionStartDate($submissionStartDate) {
+    	$this->submissionStartDate = $submissionStartDate;
+    	$this->queryParameters['SubmissionStartDate'] = $submissionStartDate;
 	}
 
-	public function setSubmissionStartDate($submissionStartDate) {
-		$this->submissionStartDate = $submissionStartDate;
-		$this->queryParameters["SubmissionStartDate"]=$submissionStartDate;
+    public function getUserClientIp() {
+	    return $this->userClientIp;
+    }
+
+    public function setUserClientIp($userClientIp) {
+    	$this->userClientIp = $userClientIp;
+    	$this->queryParameters['UserClientIp'] = $userClientIp;
 	}
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
+    public function getSubmissionEndDate() {
+	    return $this->submissionEndDate;
+    }
+
+    public function setSubmissionEndDate($submissionEndDate) {
+    	$this->submissionEndDate = $submissionEndDate;
+    	$this->queryParameters['SubmissionEndDate'] = $submissionEndDate;
 	}
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
+    public function getDomainName() {
+	    return $this->domainName;
+    }
+
+    public function setDomainName($domainName) {
+    	$this->domainName = $domainName;
+    	$this->queryParameters['DomainName'] = $domainName;
 	}
 
-	public function getSubmissionEndDate() {
-		return $this->submissionEndDate;
+    public function getSimpleTransferInStatus() {
+	    return $this->simpleTransferInStatus;
+    }
+
+    public function setSimpleTransferInStatus($simpleTransferInStatus) {
+    	$this->simpleTransferInStatus = $simpleTransferInStatus;
+    	$this->queryParameters['SimpleTransferInStatus'] = $simpleTransferInStatus;
 	}
 
-	public function setSubmissionEndDate($submissionEndDate) {
-		$this->submissionEndDate = $submissionEndDate;
-		$this->queryParameters["SubmissionEndDate"]=$submissionEndDate;
+    public function getPageSize() {
+	    return $this->pageSize;
+    }
+
+    public function setPageSize($pageSize) {
+    	$this->pageSize = $pageSize;
+    	$this->queryParameters['PageSize'] = $pageSize;
 	}
 
-	public function getDomainName() {
-		return $this->domainName;
+    public function getLang() {
+	    return $this->lang;
+    }
+
+    public function setLang($lang) {
+    	$this->lang = $lang;
+    	$this->queryParameters['Lang'] = $lang;
 	}
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
+    public function getPageNum() {
+	    return $this->pageNum;
+    }
+
+    public function setPageNum($pageNum) {
+    	$this->pageNum = $pageNum;
+    	$this->queryParameters['PageNum'] = $pageNum;
 	}
 
-	public function getSimpleTransferInStatus() {
-		return $this->simpleTransferInStatus;
-	}
-
-	public function setSimpleTransferInStatus($simpleTransferInStatus) {
-		$this->simpleTransferInStatus = $simpleTransferInStatus;
-		$this->queryParameters["SimpleTransferInStatus"]=$simpleTransferInStatus;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-
-	public function getPageNum() {
-		return $this->pageNum;
-	}
-
-	public function setPageNum($pageNum) {
-		$this->pageNum = $pageNum;
-		$this->queryParameters["PageNum"]=$pageNum;
-	}
-	
 }

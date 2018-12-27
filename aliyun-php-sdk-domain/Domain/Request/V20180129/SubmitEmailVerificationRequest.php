@@ -21,11 +21,11 @@ namespace Domain\Request\V20180129;
 
 class SubmitEmailVerificationRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain", "2018-01-29", "SubmitEmailVerification");
+    public function  __construct()
+    {
+        parent::__construct("Domain", "2018-01-29", "SubmitEmailVerification");
 		$this->setMethod("POST");
-	}
+    }
 
 	private  $sendIfExist;
 
@@ -35,40 +35,40 @@ class SubmitEmailVerificationRequest extends \RpcAcsRequest
 
 	private  $email;
 
-	public function getSendIfExist() {
-		return $this->sendIfExist;
+    public function getSendIfExist() {
+	    return $this->sendIfExist;
+    }
+
+    public function setSendIfExist($sendIfExist) {
+    	$this->sendIfExist = $sendIfExist;
+    	$this->queryParameters['SendIfExist'] = $sendIfExist;
 	}
 
-	public function setSendIfExist($sendIfExist) {
-		$this->sendIfExist = $sendIfExist;
-		$this->queryParameters["SendIfExist"]=$sendIfExist;
+    public function getUserClientIp() {
+	    return $this->userClientIp;
+    }
+
+    public function setUserClientIp($userClientIp) {
+    	$this->userClientIp = $userClientIp;
+    	$this->queryParameters['UserClientIp'] = $userClientIp;
 	}
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
+    public function getLang() {
+	    return $this->lang;
+    }
+
+    public function setLang($lang) {
+    	$this->lang = $lang;
+    	$this->queryParameters['Lang'] = $lang;
 	}
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
+    public function getEmail() {
+	    return $this->email;
+    }
+
+    public function setEmail($email) {
+    	$this->email = $email;
+    	$this->queryParameters['Email'] = $email;
 	}
 
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-
-	public function getEmail() {
-		return $this->email;
-	}
-
-	public function setEmail($email) {
-		$this->email = $email;
-		$this->queryParameters["Email"]=$email;
-	}
-	
 }

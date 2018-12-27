@@ -21,11 +21,11 @@ namespace Domain\Request\V20180129;
 
 class AcknowledgeTaskResultRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain", "2018-01-29", "AcknowledgeTaskResult");
+    public function  __construct()
+    {
+        parent::__construct("Domain", "2018-01-29", "AcknowledgeTaskResult");
 		$this->setMethod("POST");
-	}
+    }
 
 	private  $TaskDetailNos;
 
@@ -44,22 +44,22 @@ class AcknowledgeTaskResultRequest extends \RpcAcsRequest
 		}
 	}
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
+    public function getUserClientIp() {
+	    return $this->userClientIp;
+    }
+
+    public function setUserClientIp($userClientIp) {
+    	$this->userClientIp = $userClientIp;
+    	$this->queryParameters['UserClientIp'] = $userClientIp;
 	}
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
+    public function getLang() {
+	    return $this->lang;
+    }
+
+    public function setLang($lang) {
+    	$this->lang = $lang;
+    	$this->queryParameters['Lang'] = $lang;
 	}
 
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-	
 }

@@ -21,11 +21,11 @@ namespace Domain\Request\V20180129;
 
 class QueryRegistrantProfileRealNameVerificationInfoRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain", "2018-01-29", "QueryRegistrantProfileRealNameVerificationInfo");
+    public function  __construct()
+    {
+        parent::__construct("Domain", "2018-01-29", "QueryRegistrantProfileRealNameVerificationInfo");
 		$this->setMethod("POST");
-	}
+    }
 
 	private  $fetchImage;
 
@@ -35,40 +35,40 @@ class QueryRegistrantProfileRealNameVerificationInfoRequest extends \RpcAcsReque
 
 	private  $lang;
 
-	public function getFetchImage() {
-		return $this->fetchImage;
+    public function getFetchImage() {
+	    return $this->fetchImage;
+    }
+
+    public function setFetchImage($fetchImage) {
+    	$this->fetchImage = $fetchImage;
+    	$this->queryParameters['FetchImage'] = $fetchImage;
 	}
 
-	public function setFetchImage($fetchImage) {
-		$this->fetchImage = $fetchImage;
-		$this->queryParameters["FetchImage"]=$fetchImage;
+    public function getUserClientIp() {
+	    return $this->userClientIp;
+    }
+
+    public function setUserClientIp($userClientIp) {
+    	$this->userClientIp = $userClientIp;
+    	$this->queryParameters['UserClientIp'] = $userClientIp;
 	}
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
+    public function getRegistrantProfileId() {
+	    return $this->registrantProfileId;
+    }
+
+    public function setRegistrantProfileId($registrantProfileId) {
+    	$this->registrantProfileId = $registrantProfileId;
+    	$this->queryParameters['RegistrantProfileId'] = $registrantProfileId;
 	}
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
+    public function getLang() {
+	    return $this->lang;
+    }
+
+    public function setLang($lang) {
+    	$this->lang = $lang;
+    	$this->queryParameters['Lang'] = $lang;
 	}
 
-	public function getRegistrantProfileId() {
-		return $this->registrantProfileId;
-	}
-
-	public function setRegistrantProfileId($registrantProfileId) {
-		$this->registrantProfileId = $registrantProfileId;
-		$this->queryParameters["RegistrantProfileId"]=$registrantProfileId;
-	}
-
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-	
 }

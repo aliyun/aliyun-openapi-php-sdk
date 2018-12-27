@@ -21,11 +21,11 @@ namespace Domain\Request\V20180129;
 
 class RegistrantProfileRealNameVerificationRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain", "2018-01-29", "RegistrantProfileRealNameVerification");
+    public function  __construct()
+    {
+        parent::__construct("Domain", "2018-01-29", "RegistrantProfileRealNameVerification");
 		$this->setMethod("POST");
-	}
+    }
 
 	private  $identityCredentialType;
 
@@ -39,57 +39,58 @@ class RegistrantProfileRealNameVerificationRequest extends \RpcAcsRequest
 
 	private  $identityCredentialNo;
 
-	public function getIdentityCredentialType() {
-		return $this->identityCredentialType;
+    public function getIdentityCredentialType() {
+	    return $this->identityCredentialType;
+    }
+
+    public function setIdentityCredentialType($identityCredentialType) {
+    	$this->identityCredentialType = $identityCredentialType;
+    	$this->queryParameters['IdentityCredentialType'] = $identityCredentialType;
 	}
 
-	public function setIdentityCredentialType($identityCredentialType) {
-		$this->identityCredentialType = $identityCredentialType;
-		$this->queryParameters["IdentityCredentialType"]=$identityCredentialType;
+    public function getUserClientIp() {
+	    return $this->userClientIp;
+    }
+
+    public function setUserClientIp($userClientIp) {
+    	$this->userClientIp = $userClientIp;
+    	$this->queryParameters['UserClientIp'] = $userClientIp;
 	}
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
+    public function getRegistrantProfileID() {
+	    return $this->registrantProfileID;
+    }
+
+    public function setRegistrantProfileID($registrantProfileID) {
+    	$this->registrantProfileID = $registrantProfileID;
+    	$this->queryParameters['RegistrantProfileID'] = $registrantProfileID;
 	}
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
+    public function getIdentityCredential() {
+	    return $this->identityCredential;
+    }
+
+    public function setIdentityCredential($identityCredential) {
+    	$this->identityCredential = $identityCredential;
+    	$this->queryParameters['IdentityCredential'] = $identityCredential;
 	}
 
-	public function getRegistrantProfileID() {
-		return $this->registrantProfileID;
+    public function getLang() {
+	    return $this->lang;
+    }
+
+    public function setLang($lang) {
+    	$this->lang = $lang;
+    	$this->queryParameters['Lang'] = $lang;
 	}
 
-	public function setRegistrantProfileID($registrantProfileID) {
-		$this->registrantProfileID = $registrantProfileID;
-		$this->queryParameters["RegistrantProfileID"]=$registrantProfileID;
+    public function getIdentityCredentialNo() {
+	    return $this->identityCredentialNo;
+    }
+
+    public function setIdentityCredentialNo($identityCredentialNo) {
+    	$this->identityCredentialNo = $identityCredentialNo;
+    	$this->queryParameters['IdentityCredentialNo'] = $identityCredentialNo;
 	}
 
-	public function getIdentityCredential() {
-		return $this->identityCredential;
-	}
-
-	public function setIdentityCredential($identityCredential) {
-		$this->identityCredential = $identityCredential;
-		}
-
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-
-	public function getIdentityCredentialNo() {
-		return $this->identityCredentialNo;
-	}
-
-	public function setIdentityCredentialNo($identityCredentialNo) {
-		$this->identityCredentialNo = $identityCredentialNo;
-		$this->queryParameters["IdentityCredentialNo"]=$identityCredentialNo;
-	}
-	
 }

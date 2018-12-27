@@ -21,11 +21,11 @@ namespace Domain\Request\V20180129;
 
 class SaveBatchTaskForTransferProhibitionLockRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain", "2018-01-29", "SaveBatchTaskForTransferProhibitionLock");
+    public function  __construct()
+    {
+        parent::__construct("Domain", "2018-01-29", "SaveBatchTaskForTransferProhibitionLock");
 		$this->setMethod("POST");
-	}
+    }
 
 	private  $userClientIp;
 
@@ -35,13 +35,13 @@ class SaveBatchTaskForTransferProhibitionLockRequest extends \RpcAcsRequest
 
 	private  $status;
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
-	}
+    public function getUserClientIp() {
+	    return $this->userClientIp;
+    }
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
+    public function setUserClientIp($userClientIp) {
+    	$this->userClientIp = $userClientIp;
+    	$this->queryParameters['UserClientIp'] = $userClientIp;
 	}
 
 	public function getDomainNames() {
@@ -55,22 +55,22 @@ class SaveBatchTaskForTransferProhibitionLockRequest extends \RpcAcsRequest
 		}
 	}
 
-	public function getLang() {
-		return $this->lang;
+    public function getLang() {
+	    return $this->lang;
+    }
+
+    public function setLang($lang) {
+    	$this->lang = $lang;
+    	$this->queryParameters['Lang'] = $lang;
 	}
 
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
+    public function getStatus() {
+	    return $this->status;
+    }
+
+    public function setStatus($status) {
+    	$this->status = $status;
+    	$this->queryParameters['Status'] = $status;
 	}
 
-	public function getStatus() {
-		return $this->status;
-	}
-
-	public function setStatus($status) {
-		$this->status = $status;
-		$this->queryParameters["Status"]=$status;
-	}
-	
 }

@@ -21,11 +21,11 @@ namespace Domain\Request\V20180129;
 
 class CheckMaxYearOfServerLockRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain", "2018-01-29", "CheckMaxYearOfServerLock");
+    public function  __construct()
+    {
+        parent::__construct("Domain", "2018-01-29", "CheckMaxYearOfServerLock");
 		$this->setMethod("POST");
-	}
+    }
 
 	private  $domainName;
 
@@ -35,40 +35,40 @@ class CheckMaxYearOfServerLockRequest extends \RpcAcsRequest
 
 	private  $lang;
 
-	public function getDomainName() {
-		return $this->domainName;
+    public function getDomainName() {
+	    return $this->domainName;
+    }
+
+    public function setDomainName($domainName) {
+    	$this->domainName = $domainName;
+    	$this->queryParameters['DomainName'] = $domainName;
 	}
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
+    public function getUserClientIp() {
+	    return $this->userClientIp;
+    }
+
+    public function setUserClientIp($userClientIp) {
+    	$this->userClientIp = $userClientIp;
+    	$this->queryParameters['UserClientIp'] = $userClientIp;
 	}
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
+    public function getCheckAction() {
+	    return $this->checkAction;
+    }
+
+    public function setCheckAction($checkAction) {
+    	$this->checkAction = $checkAction;
+    	$this->queryParameters['CheckAction'] = $checkAction;
 	}
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
+    public function getLang() {
+	    return $this->lang;
+    }
+
+    public function setLang($lang) {
+    	$this->lang = $lang;
+    	$this->queryParameters['Lang'] = $lang;
 	}
 
-	public function getCheckAction() {
-		return $this->checkAction;
-	}
-
-	public function setCheckAction($checkAction) {
-		$this->checkAction = $checkAction;
-		$this->queryParameters["CheckAction"]=$checkAction;
-	}
-
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-	
 }

@@ -21,11 +21,11 @@ namespace Domain\Request\V20180129;
 
 class ListServerLockRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain", "2018-01-29", "ListServerLock");
+    public function  __construct()
+    {
+        parent::__construct("Domain", "2018-01-29", "ListServerLock");
 		$this->setMethod("POST");
-	}
+    }
 
 	private  $lockProductId;
 
@@ -49,103 +49,103 @@ class ListServerLockRequest extends \RpcAcsRequest
 
 	private  $beginStartDate;
 
-	public function getLockProductId() {
-		return $this->lockProductId;
+    public function getLockProductId() {
+	    return $this->lockProductId;
+    }
+
+    public function setLockProductId($lockProductId) {
+    	$this->lockProductId = $lockProductId;
+    	$this->queryParameters['LockProductId'] = $lockProductId;
 	}
 
-	public function setLockProductId($lockProductId) {
-		$this->lockProductId = $lockProductId;
-		$this->queryParameters["LockProductId"]=$lockProductId;
+    public function getEndStartDate() {
+	    return $this->endStartDate;
+    }
+
+    public function setEndStartDate($endStartDate) {
+    	$this->endStartDate = $endStartDate;
+    	$this->queryParameters['EndStartDate'] = $endStartDate;
 	}
 
-	public function getEndStartDate() {
-		return $this->endStartDate;
+    public function getServerLockStatus() {
+	    return $this->serverLockStatus;
+    }
+
+    public function setServerLockStatus($serverLockStatus) {
+    	$this->serverLockStatus = $serverLockStatus;
+    	$this->queryParameters['ServerLockStatus'] = $serverLockStatus;
 	}
 
-	public function setEndStartDate($endStartDate) {
-		$this->endStartDate = $endStartDate;
-		$this->queryParameters["EndStartDate"]=$endStartDate;
+    public function getStartExpireDate() {
+	    return $this->startExpireDate;
+    }
+
+    public function setStartExpireDate($startExpireDate) {
+    	$this->startExpireDate = $startExpireDate;
+    	$this->queryParameters['StartExpireDate'] = $startExpireDate;
 	}
 
-	public function getServerLockStatus() {
-		return $this->serverLockStatus;
+    public function getDomainName() {
+	    return $this->domainName;
+    }
+
+    public function setDomainName($domainName) {
+    	$this->domainName = $domainName;
+    	$this->queryParameters['DomainName'] = $domainName;
 	}
 
-	public function setServerLockStatus($serverLockStatus) {
-		$this->serverLockStatus = $serverLockStatus;
-		$this->queryParameters["ServerLockStatus"]=$serverLockStatus;
+    public function getPageSize() {
+	    return $this->pageSize;
+    }
+
+    public function setPageSize($pageSize) {
+    	$this->pageSize = $pageSize;
+    	$this->queryParameters['PageSize'] = $pageSize;
 	}
 
-	public function getStartExpireDate() {
-		return $this->startExpireDate;
+    public function getUserClientIp() {
+	    return $this->userClientIp;
+    }
+
+    public function setUserClientIp($userClientIp) {
+    	$this->userClientIp = $userClientIp;
+    	$this->queryParameters['UserClientIp'] = $userClientIp;
 	}
 
-	public function setStartExpireDate($startExpireDate) {
-		$this->startExpireDate = $startExpireDate;
-		$this->queryParameters["StartExpireDate"]=$startExpireDate;
+    public function getEndExpireDate() {
+	    return $this->endExpireDate;
+    }
+
+    public function setEndExpireDate($endExpireDate) {
+    	$this->endExpireDate = $endExpireDate;
+    	$this->queryParameters['EndExpireDate'] = $endExpireDate;
 	}
 
-	public function getDomainName() {
-		return $this->domainName;
+    public function getPageNum() {
+	    return $this->pageNum;
+    }
+
+    public function setPageNum($pageNum) {
+    	$this->pageNum = $pageNum;
+    	$this->queryParameters['PageNum'] = $pageNum;
 	}
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
+    public function getLang() {
+	    return $this->lang;
+    }
+
+    public function setLang($lang) {
+    	$this->lang = $lang;
+    	$this->queryParameters['Lang'] = $lang;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
+    public function getBeginStartDate() {
+	    return $this->beginStartDate;
+    }
+
+    public function setBeginStartDate($beginStartDate) {
+    	$this->beginStartDate = $beginStartDate;
+    	$this->queryParameters['BeginStartDate'] = $beginStartDate;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getUserClientIp() {
-		return $this->userClientIp;
-	}
-
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
-	}
-
-	public function getEndExpireDate() {
-		return $this->endExpireDate;
-	}
-
-	public function setEndExpireDate($endExpireDate) {
-		$this->endExpireDate = $endExpireDate;
-		$this->queryParameters["EndExpireDate"]=$endExpireDate;
-	}
-
-	public function getPageNum() {
-		return $this->pageNum;
-	}
-
-	public function setPageNum($pageNum) {
-		$this->pageNum = $pageNum;
-		$this->queryParameters["PageNum"]=$pageNum;
-	}
-
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-
-	public function getBeginStartDate() {
-		return $this->beginStartDate;
-	}
-
-	public function setBeginStartDate($beginStartDate) {
-		$this->beginStartDate = $beginStartDate;
-		$this->queryParameters["BeginStartDate"]=$beginStartDate;
-	}
-	
 }

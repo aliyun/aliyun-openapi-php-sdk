@@ -21,11 +21,11 @@ namespace Domain\Request\V20180129;
 
 class QueryServerLockRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain", "2018-01-29", "QueryServerLock");
+    public function  __construct()
+    {
+        parent::__construct("Domain", "2018-01-29", "QueryServerLock");
 		$this->setMethod("POST");
-	}
+    }
 
 	private  $instanceId;
 
@@ -33,31 +33,31 @@ class QueryServerLockRequest extends \RpcAcsRequest
 
 	private  $lang;
 
-	public function getInstanceId() {
-		return $this->instanceId;
+    public function getInstanceId() {
+	    return $this->instanceId;
+    }
+
+    public function setInstanceId($instanceId) {
+    	$this->instanceId = $instanceId;
+    	$this->queryParameters['InstanceId'] = $instanceId;
 	}
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
+    public function getUserClientIp() {
+	    return $this->userClientIp;
+    }
+
+    public function setUserClientIp($userClientIp) {
+    	$this->userClientIp = $userClientIp;
+    	$this->queryParameters['UserClientIp'] = $userClientIp;
 	}
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
+    public function getLang() {
+	    return $this->lang;
+    }
+
+    public function setLang($lang) {
+    	$this->lang = $lang;
+    	$this->queryParameters['Lang'] = $lang;
 	}
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
-	}
-
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-	
 }

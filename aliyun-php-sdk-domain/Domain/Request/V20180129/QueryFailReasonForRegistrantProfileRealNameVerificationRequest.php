@@ -21,11 +21,11 @@ namespace Domain\Request\V20180129;
 
 class QueryFailReasonForRegistrantProfileRealNameVerificationRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain", "2018-01-29", "QueryFailReasonForRegistrantProfileRealNameVerification");
+    public function  __construct()
+    {
+        parent::__construct("Domain", "2018-01-29", "QueryFailReasonForRegistrantProfileRealNameVerification");
 		$this->setMethod("POST");
-	}
+    }
 
 	private  $userClientIp;
 
@@ -33,31 +33,31 @@ class QueryFailReasonForRegistrantProfileRealNameVerificationRequest extends \Rp
 
 	private  $lang;
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
+    public function getUserClientIp() {
+	    return $this->userClientIp;
+    }
+
+    public function setUserClientIp($userClientIp) {
+    	$this->userClientIp = $userClientIp;
+    	$this->queryParameters['UserClientIp'] = $userClientIp;
 	}
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
+    public function getRegistrantProfileID() {
+	    return $this->registrantProfileID;
+    }
+
+    public function setRegistrantProfileID($registrantProfileID) {
+    	$this->registrantProfileID = $registrantProfileID;
+    	$this->queryParameters['RegistrantProfileID'] = $registrantProfileID;
 	}
 
-	public function getRegistrantProfileID() {
-		return $this->registrantProfileID;
+    public function getLang() {
+	    return $this->lang;
+    }
+
+    public function setLang($lang) {
+    	$this->lang = $lang;
+    	$this->queryParameters['Lang'] = $lang;
 	}
 
-	public function setRegistrantProfileID($registrantProfileID) {
-		$this->registrantProfileID = $registrantProfileID;
-		$this->queryParameters["RegistrantProfileID"]=$registrantProfileID;
-	}
-
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-	
 }

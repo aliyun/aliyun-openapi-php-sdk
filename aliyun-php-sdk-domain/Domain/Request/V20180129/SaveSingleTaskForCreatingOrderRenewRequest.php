@@ -21,11 +21,11 @@ namespace Domain\Request\V20180129;
 
 class SaveSingleTaskForCreatingOrderRenewRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain", "2018-01-29", "SaveSingleTaskForCreatingOrderRenew");
+    public function  __construct()
+    {
+        parent::__construct("Domain", "2018-01-29", "SaveSingleTaskForCreatingOrderRenew");
 		$this->setMethod("POST");
-	}
+    }
 
 	private  $subscriptionDuration;
 
@@ -45,85 +45,85 @@ class SaveSingleTaskForCreatingOrderRenewRequest extends \RpcAcsRequest
 
 	private  $usePromotion;
 
-	public function getSubscriptionDuration() {
-		return $this->subscriptionDuration;
+    public function getSubscriptionDuration() {
+	    return $this->subscriptionDuration;
+    }
+
+    public function setSubscriptionDuration($subscriptionDuration) {
+    	$this->subscriptionDuration = $subscriptionDuration;
+    	$this->queryParameters['SubscriptionDuration'] = $subscriptionDuration;
 	}
 
-	public function setSubscriptionDuration($subscriptionDuration) {
-		$this->subscriptionDuration = $subscriptionDuration;
-		$this->queryParameters["SubscriptionDuration"]=$subscriptionDuration;
+    public function getPromotionNo() {
+	    return $this->promotionNo;
+    }
+
+    public function setPromotionNo($promotionNo) {
+    	$this->promotionNo = $promotionNo;
+    	$this->queryParameters['PromotionNo'] = $promotionNo;
 	}
 
-	public function getPromotionNo() {
-		return $this->promotionNo;
+    public function getCurrentExpirationDate() {
+	    return $this->currentExpirationDate;
+    }
+
+    public function setCurrentExpirationDate($currentExpirationDate) {
+    	$this->currentExpirationDate = $currentExpirationDate;
+    	$this->queryParameters['CurrentExpirationDate'] = $currentExpirationDate;
 	}
 
-	public function setPromotionNo($promotionNo) {
-		$this->promotionNo = $promotionNo;
-		$this->queryParameters["PromotionNo"]=$promotionNo;
+    public function getUserClientIp() {
+	    return $this->userClientIp;
+    }
+
+    public function setUserClientIp($userClientIp) {
+    	$this->userClientIp = $userClientIp;
+    	$this->queryParameters['UserClientIp'] = $userClientIp;
 	}
 
-	public function getCurrentExpirationDate() {
-		return $this->currentExpirationDate;
+    public function getDomainName() {
+	    return $this->domainName;
+    }
+
+    public function setDomainName($domainName) {
+    	$this->domainName = $domainName;
+    	$this->queryParameters['DomainName'] = $domainName;
 	}
 
-	public function setCurrentExpirationDate($currentExpirationDate) {
-		$this->currentExpirationDate = $currentExpirationDate;
-		$this->queryParameters["CurrentExpirationDate"]=$currentExpirationDate;
+    public function getCouponNo() {
+	    return $this->couponNo;
+    }
+
+    public function setCouponNo($couponNo) {
+    	$this->couponNo = $couponNo;
+    	$this->queryParameters['CouponNo'] = $couponNo;
 	}
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
+    public function getUseCoupon() {
+	    return $this->useCoupon;
+    }
+
+    public function setUseCoupon($useCoupon) {
+    	$this->useCoupon = $useCoupon;
+    	$this->queryParameters['UseCoupon'] = $useCoupon;
 	}
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
+    public function getLang() {
+	    return $this->lang;
+    }
+
+    public function setLang($lang) {
+    	$this->lang = $lang;
+    	$this->queryParameters['Lang'] = $lang;
 	}
 
-	public function getDomainName() {
-		return $this->domainName;
+    public function getUsePromotion() {
+	    return $this->usePromotion;
+    }
+
+    public function setUsePromotion($usePromotion) {
+    	$this->usePromotion = $usePromotion;
+    	$this->queryParameters['UsePromotion'] = $usePromotion;
 	}
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
-
-	public function getCouponNo() {
-		return $this->couponNo;
-	}
-
-	public function setCouponNo($couponNo) {
-		$this->couponNo = $couponNo;
-		$this->queryParameters["CouponNo"]=$couponNo;
-	}
-
-	public function getUseCoupon() {
-		return $this->useCoupon;
-	}
-
-	public function setUseCoupon($useCoupon) {
-		$this->useCoupon = $useCoupon;
-		$this->queryParameters["UseCoupon"]=$useCoupon;
-	}
-
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-
-	public function getUsePromotion() {
-		return $this->usePromotion;
-	}
-
-	public function setUsePromotion($usePromotion) {
-		$this->usePromotion = $usePromotion;
-		$this->queryParameters["UsePromotion"]=$usePromotion;
-	}
-	
 }

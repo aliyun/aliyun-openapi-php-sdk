@@ -21,11 +21,11 @@ namespace Domain\Request\V20180129;
 
 class SaveSingleTaskForAddingDSRecordRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain", "2018-01-29", "SaveSingleTaskForAddingDSRecord");
+    public function  __construct()
+    {
+        parent::__construct("Domain", "2018-01-29", "SaveSingleTaskForAddingDSRecord");
 		$this->setMethod("POST");
-	}
+    }
 
 	private  $keyTag;
 
@@ -41,67 +41,67 @@ class SaveSingleTaskForAddingDSRecordRequest extends \RpcAcsRequest
 
 	private  $algorithm;
 
-	public function getKeyTag() {
-		return $this->keyTag;
+    public function getKeyTag() {
+	    return $this->keyTag;
+    }
+
+    public function setKeyTag($keyTag) {
+    	$this->keyTag = $keyTag;
+    	$this->queryParameters['KeyTag'] = $keyTag;
 	}
 
-	public function setKeyTag($keyTag) {
-		$this->keyTag = $keyTag;
-		$this->queryParameters["KeyTag"]=$keyTag;
+    public function getDomainName() {
+	    return $this->domainName;
+    }
+
+    public function setDomainName($domainName) {
+    	$this->domainName = $domainName;
+    	$this->queryParameters['DomainName'] = $domainName;
 	}
 
-	public function getDomainName() {
-		return $this->domainName;
+    public function getUserClientIp() {
+	    return $this->userClientIp;
+    }
+
+    public function setUserClientIp($userClientIp) {
+    	$this->userClientIp = $userClientIp;
+    	$this->queryParameters['UserClientIp'] = $userClientIp;
 	}
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
+    public function getDigestType() {
+	    return $this->digestType;
+    }
+
+    public function setDigestType($digestType) {
+    	$this->digestType = $digestType;
+    	$this->queryParameters['DigestType'] = $digestType;
 	}
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
+    public function getDigest() {
+	    return $this->digest;
+    }
+
+    public function setDigest($digest) {
+    	$this->digest = $digest;
+    	$this->queryParameters['Digest'] = $digest;
 	}
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
+    public function getLang() {
+	    return $this->lang;
+    }
+
+    public function setLang($lang) {
+    	$this->lang = $lang;
+    	$this->queryParameters['Lang'] = $lang;
 	}
 
-	public function getDigestType() {
-		return $this->digestType;
+    public function getAlgorithm() {
+	    return $this->algorithm;
+    }
+
+    public function setAlgorithm($algorithm) {
+    	$this->algorithm = $algorithm;
+    	$this->queryParameters['Algorithm'] = $algorithm;
 	}
 
-	public function setDigestType($digestType) {
-		$this->digestType = $digestType;
-		$this->queryParameters["DigestType"]=$digestType;
-	}
-
-	public function getDigest() {
-		return $this->digest;
-	}
-
-	public function setDigest($digest) {
-		$this->digest = $digest;
-		$this->queryParameters["Digest"]=$digest;
-	}
-
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-
-	public function getAlgorithm() {
-		return $this->algorithm;
-	}
-
-	public function setAlgorithm($algorithm) {
-		$this->algorithm = $algorithm;
-		$this->queryParameters["Algorithm"]=$algorithm;
-	}
-	
 }

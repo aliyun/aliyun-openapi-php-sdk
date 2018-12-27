@@ -21,11 +21,11 @@ namespace Domain\Request\V20180129;
 
 class SaveRegistrantProfileRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain", "2018-01-29", "SaveRegistrantProfile");
+    public function  __construct()
+    {
+        parent::__construct("Domain", "2018-01-29", "SaveRegistrantProfile");
 		$this->setMethod("POST");
-	}
+    }
 
 	private  $country;
 
@@ -69,193 +69,193 @@ class SaveRegistrantProfileRequest extends \RpcAcsRequest
 
 	private  $zhRegistrantOrganization;
 
-	public function getCountry() {
-		return $this->country;
+    public function getCountry() {
+	    return $this->country;
+    }
+
+    public function setCountry($country) {
+    	$this->country = $country;
+    	$this->queryParameters['Country'] = $country;
 	}
 
-	public function setCountry($country) {
-		$this->country = $country;
-		$this->queryParameters["Country"]=$country;
+    public function getAddress() {
+	    return $this->address;
+    }
+
+    public function setAddress($address) {
+    	$this->address = $address;
+    	$this->queryParameters['Address'] = $address;
 	}
 
-	public function getAddress() {
-		return $this->address;
+    public function getTelArea() {
+	    return $this->telArea;
+    }
+
+    public function setTelArea($telArea) {
+    	$this->telArea = $telArea;
+    	$this->queryParameters['TelArea'] = $telArea;
 	}
 
-	public function setAddress($address) {
-		$this->address = $address;
-		$this->queryParameters["Address"]=$address;
+    public function getCity() {
+	    return $this->city;
+    }
+
+    public function setCity($city) {
+    	$this->city = $city;
+    	$this->queryParameters['City'] = $city;
 	}
 
-	public function getTelArea() {
-		return $this->telArea;
+    public function getRegistrantProfileId() {
+	    return $this->registrantProfileId;
+    }
+
+    public function setRegistrantProfileId($registrantProfileId) {
+    	$this->registrantProfileId = $registrantProfileId;
+    	$this->queryParameters['RegistrantProfileId'] = $registrantProfileId;
 	}
 
-	public function setTelArea($telArea) {
-		$this->telArea = $telArea;
-		$this->queryParameters["TelArea"]=$telArea;
+    public function getZhAddress() {
+	    return $this->zhAddress;
+    }
+
+    public function setZhAddress($zhAddress) {
+    	$this->zhAddress = $zhAddress;
+    	$this->queryParameters['ZhAddress'] = $zhAddress;
 	}
 
-	public function getCity() {
-		return $this->city;
+    public function getRegistrantType() {
+	    return $this->registrantType;
+    }
+
+    public function setRegistrantType($registrantType) {
+    	$this->registrantType = $registrantType;
+    	$this->queryParameters['RegistrantType'] = $registrantType;
 	}
 
-	public function setCity($city) {
-		$this->city = $city;
-		$this->queryParameters["City"]=$city;
+    public function getTelephone() {
+	    return $this->telephone;
+    }
+
+    public function setTelephone($telephone) {
+    	$this->telephone = $telephone;
+    	$this->queryParameters['Telephone'] = $telephone;
 	}
 
-	public function getRegistrantProfileId() {
-		return $this->registrantProfileId;
+    public function getDefaultRegistrantProfile() {
+	    return $this->defaultRegistrantProfile;
+    }
+
+    public function setDefaultRegistrantProfile($defaultRegistrantProfile) {
+    	$this->defaultRegistrantProfile = $defaultRegistrantProfile;
+    	$this->queryParameters['DefaultRegistrantProfile'] = $defaultRegistrantProfile;
 	}
 
-	public function setRegistrantProfileId($registrantProfileId) {
-		$this->registrantProfileId = $registrantProfileId;
-		$this->queryParameters["RegistrantProfileId"]=$registrantProfileId;
+    public function getZhCity() {
+	    return $this->zhCity;
+    }
+
+    public function setZhCity($zhCity) {
+    	$this->zhCity = $zhCity;
+    	$this->queryParameters['ZhCity'] = $zhCity;
 	}
 
-	public function getZhAddress() {
-		return $this->zhAddress;
+    public function getZhProvince() {
+	    return $this->zhProvince;
+    }
+
+    public function setZhProvince($zhProvince) {
+    	$this->zhProvince = $zhProvince;
+    	$this->queryParameters['ZhProvince'] = $zhProvince;
 	}
 
-	public function setZhAddress($zhAddress) {
-		$this->zhAddress = $zhAddress;
-		$this->queryParameters["ZhAddress"]=$zhAddress;
+    public function getRegistrantOrganization() {
+	    return $this->registrantOrganization;
+    }
+
+    public function setRegistrantOrganization($registrantOrganization) {
+    	$this->registrantOrganization = $registrantOrganization;
+    	$this->queryParameters['RegistrantOrganization'] = $registrantOrganization;
 	}
 
-	public function getRegistrantType() {
-		return $this->registrantType;
+    public function getTelExt() {
+	    return $this->telExt;
+    }
+
+    public function setTelExt($telExt) {
+    	$this->telExt = $telExt;
+    	$this->queryParameters['TelExt'] = $telExt;
 	}
 
-	public function setRegistrantType($registrantType) {
-		$this->registrantType = $registrantType;
-		$this->queryParameters["RegistrantType"]=$registrantType;
+    public function getProvince() {
+	    return $this->province;
+    }
+
+    public function setProvince($province) {
+    	$this->province = $province;
+    	$this->queryParameters['Province'] = $province;
 	}
 
-	public function getTelephone() {
-		return $this->telephone;
+    public function getZhRegistrantName() {
+	    return $this->zhRegistrantName;
+    }
+
+    public function setZhRegistrantName($zhRegistrantName) {
+    	$this->zhRegistrantName = $zhRegistrantName;
+    	$this->queryParameters['ZhRegistrantName'] = $zhRegistrantName;
 	}
 
-	public function setTelephone($telephone) {
-		$this->telephone = $telephone;
-		$this->queryParameters["Telephone"]=$telephone;
+    public function getPostalCode() {
+	    return $this->postalCode;
+    }
+
+    public function setPostalCode($postalCode) {
+    	$this->postalCode = $postalCode;
+    	$this->queryParameters['PostalCode'] = $postalCode;
 	}
 
-	public function getDefaultRegistrantProfile() {
-		return $this->defaultRegistrantProfile;
+    public function getUserClientIp() {
+	    return $this->userClientIp;
+    }
+
+    public function setUserClientIp($userClientIp) {
+    	$this->userClientIp = $userClientIp;
+    	$this->queryParameters['UserClientIp'] = $userClientIp;
 	}
 
-	public function setDefaultRegistrantProfile($defaultRegistrantProfile) {
-		$this->defaultRegistrantProfile = $defaultRegistrantProfile;
-		$this->queryParameters["DefaultRegistrantProfile"]=$defaultRegistrantProfile;
+    public function getLang() {
+	    return $this->lang;
+    }
+
+    public function setLang($lang) {
+    	$this->lang = $lang;
+    	$this->queryParameters['Lang'] = $lang;
 	}
 
-	public function getZhCity() {
-		return $this->zhCity;
+    public function getEmail() {
+	    return $this->email;
+    }
+
+    public function setEmail($email) {
+    	$this->email = $email;
+    	$this->queryParameters['Email'] = $email;
 	}
 
-	public function setZhCity($zhCity) {
-		$this->zhCity = $zhCity;
-		$this->queryParameters["ZhCity"]=$zhCity;
+    public function getRegistrantName() {
+	    return $this->registrantName;
+    }
+
+    public function setRegistrantName($registrantName) {
+    	$this->registrantName = $registrantName;
+    	$this->queryParameters['RegistrantName'] = $registrantName;
 	}
 
-	public function getZhProvince() {
-		return $this->zhProvince;
+    public function getZhRegistrantOrganization() {
+	    return $this->zhRegistrantOrganization;
+    }
+
+    public function setZhRegistrantOrganization($zhRegistrantOrganization) {
+    	$this->zhRegistrantOrganization = $zhRegistrantOrganization;
+    	$this->queryParameters['ZhRegistrantOrganization'] = $zhRegistrantOrganization;
 	}
 
-	public function setZhProvince($zhProvince) {
-		$this->zhProvince = $zhProvince;
-		$this->queryParameters["ZhProvince"]=$zhProvince;
-	}
-
-	public function getRegistrantOrganization() {
-		return $this->registrantOrganization;
-	}
-
-	public function setRegistrantOrganization($registrantOrganization) {
-		$this->registrantOrganization = $registrantOrganization;
-		$this->queryParameters["RegistrantOrganization"]=$registrantOrganization;
-	}
-
-	public function getTelExt() {
-		return $this->telExt;
-	}
-
-	public function setTelExt($telExt) {
-		$this->telExt = $telExt;
-		$this->queryParameters["TelExt"]=$telExt;
-	}
-
-	public function getProvince() {
-		return $this->province;
-	}
-
-	public function setProvince($province) {
-		$this->province = $province;
-		$this->queryParameters["Province"]=$province;
-	}
-
-	public function getZhRegistrantName() {
-		return $this->zhRegistrantName;
-	}
-
-	public function setZhRegistrantName($zhRegistrantName) {
-		$this->zhRegistrantName = $zhRegistrantName;
-		$this->queryParameters["ZhRegistrantName"]=$zhRegistrantName;
-	}
-
-	public function getPostalCode() {
-		return $this->postalCode;
-	}
-
-	public function setPostalCode($postalCode) {
-		$this->postalCode = $postalCode;
-		$this->queryParameters["PostalCode"]=$postalCode;
-	}
-
-	public function getUserClientIp() {
-		return $this->userClientIp;
-	}
-
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
-	}
-
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-
-	public function getEmail() {
-		return $this->email;
-	}
-
-	public function setEmail($email) {
-		$this->email = $email;
-		$this->queryParameters["Email"]=$email;
-	}
-
-	public function getRegistrantName() {
-		return $this->registrantName;
-	}
-
-	public function setRegistrantName($registrantName) {
-		$this->registrantName = $registrantName;
-		$this->queryParameters["RegistrantName"]=$registrantName;
-	}
-
-	public function getZhRegistrantOrganization() {
-		return $this->zhRegistrantOrganization;
-	}
-
-	public function setZhRegistrantOrganization($zhRegistrantOrganization) {
-		$this->zhRegistrantOrganization = $zhRegistrantOrganization;
-		$this->queryParameters["ZhRegistrantOrganization"]=$zhRegistrantOrganization;
-	}
-	
 }

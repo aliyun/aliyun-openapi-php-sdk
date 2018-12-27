@@ -21,11 +21,11 @@ namespace Domain\Request\V20180129;
 
 class CheckProcessingServerLockApplyRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain", "2018-01-29", "CheckProcessingServerLockApply");
+    public function  __construct()
+    {
+        parent::__construct("Domain", "2018-01-29", "CheckProcessingServerLockApply");
 		$this->setMethod("POST");
-	}
+    }
 
 	private  $feePeriod;
 
@@ -35,40 +35,40 @@ class CheckProcessingServerLockApplyRequest extends \RpcAcsRequest
 
 	private  $lang;
 
-	public function getFeePeriod() {
-		return $this->feePeriod;
+    public function getFeePeriod() {
+	    return $this->feePeriod;
+    }
+
+    public function setFeePeriod($feePeriod) {
+    	$this->feePeriod = $feePeriod;
+    	$this->queryParameters['FeePeriod'] = $feePeriod;
 	}
 
-	public function setFeePeriod($feePeriod) {
-		$this->feePeriod = $feePeriod;
-		$this->queryParameters["FeePeriod"]=$feePeriod;
+    public function getDomainName() {
+	    return $this->domainName;
+    }
+
+    public function setDomainName($domainName) {
+    	$this->domainName = $domainName;
+    	$this->queryParameters['DomainName'] = $domainName;
 	}
 
-	public function getDomainName() {
-		return $this->domainName;
+    public function getUserClientIp() {
+	    return $this->userClientIp;
+    }
+
+    public function setUserClientIp($userClientIp) {
+    	$this->userClientIp = $userClientIp;
+    	$this->queryParameters['UserClientIp'] = $userClientIp;
 	}
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
+    public function getLang() {
+	    return $this->lang;
+    }
+
+    public function setLang($lang) {
+    	$this->lang = $lang;
+    	$this->queryParameters['Lang'] = $lang;
 	}
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
-	}
-
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
-	}
-
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-	
 }

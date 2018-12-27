@@ -21,11 +21,11 @@ namespace Domain\Request\V20180129;
 
 class BatchFuzzyMatchDomainSensitiveWordRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain", "2018-01-29", "BatchFuzzyMatchDomainSensitiveWord");
+    public function  __construct()
+    {
+        parent::__construct("Domain", "2018-01-29", "BatchFuzzyMatchDomainSensitiveWord");
 		$this->setMethod("POST");
-	}
+    }
 
 	private  $userClientIp;
 
@@ -33,31 +33,31 @@ class BatchFuzzyMatchDomainSensitiveWordRequest extends \RpcAcsRequest
 
 	private  $lang;
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
+    public function getUserClientIp() {
+	    return $this->userClientIp;
+    }
+
+    public function setUserClientIp($userClientIp) {
+    	$this->userClientIp = $userClientIp;
+    	$this->queryParameters['UserClientIp'] = $userClientIp;
 	}
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
+    public function getKeyword() {
+	    return $this->keyword;
+    }
+
+    public function setKeyword($keyword) {
+    	$this->keyword = $keyword;
+    	$this->queryParameters['Keyword'] = $keyword;
 	}
 
-	public function getKeyword() {
-		return $this->keyword;
+    public function getLang() {
+	    return $this->lang;
+    }
+
+    public function setLang($lang) {
+    	$this->lang = $lang;
+    	$this->queryParameters['Lang'] = $lang;
 	}
 
-	public function setKeyword($keyword) {
-		$this->keyword = $keyword;
-		$this->queryParameters["Keyword"]=$keyword;
-	}
-
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-	
 }

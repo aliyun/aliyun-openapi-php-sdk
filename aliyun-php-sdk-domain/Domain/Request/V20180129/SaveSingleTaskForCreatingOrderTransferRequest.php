@@ -21,11 +21,11 @@ namespace Domain\Request\V20180129;
 
 class SaveSingleTaskForCreatingOrderTransferRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain", "2018-01-29", "SaveSingleTaskForCreatingOrderTransfer");
+    public function  __construct()
+    {
+        parent::__construct("Domain", "2018-01-29", "SaveSingleTaskForCreatingOrderTransfer");
 		$this->setMethod("POST");
-	}
+    }
 
 	private  $permitPremiumTransfer;
 
@@ -47,94 +47,94 @@ class SaveSingleTaskForCreatingOrderTransferRequest extends \RpcAcsRequest
 
 	private  $usePromotion;
 
-	public function getPermitPremiumTransfer() {
-		return $this->permitPremiumTransfer;
+    public function getPermitPremiumTransfer() {
+	    return $this->permitPremiumTransfer;
+    }
+
+    public function setPermitPremiumTransfer($permitPremiumTransfer) {
+    	$this->permitPremiumTransfer = $permitPremiumTransfer;
+    	$this->queryParameters['PermitPremiumTransfer'] = $permitPremiumTransfer;
 	}
 
-	public function setPermitPremiumTransfer($permitPremiumTransfer) {
-		$this->permitPremiumTransfer = $permitPremiumTransfer;
-		$this->queryParameters["PermitPremiumTransfer"]=$permitPremiumTransfer;
+    public function getPromotionNo() {
+	    return $this->promotionNo;
+    }
+
+    public function setPromotionNo($promotionNo) {
+    	$this->promotionNo = $promotionNo;
+    	$this->queryParameters['PromotionNo'] = $promotionNo;
 	}
 
-	public function getPromotionNo() {
-		return $this->promotionNo;
+    public function getAuthorizationCode() {
+	    return $this->authorizationCode;
+    }
+
+    public function setAuthorizationCode($authorizationCode) {
+    	$this->authorizationCode = $authorizationCode;
+    	$this->queryParameters['AuthorizationCode'] = $authorizationCode;
 	}
 
-	public function setPromotionNo($promotionNo) {
-		$this->promotionNo = $promotionNo;
-		$this->queryParameters["PromotionNo"]=$promotionNo;
+    public function getUserClientIp() {
+	    return $this->userClientIp;
+    }
+
+    public function setUserClientIp($userClientIp) {
+    	$this->userClientIp = $userClientIp;
+    	$this->queryParameters['UserClientIp'] = $userClientIp;
 	}
 
-	public function getAuthorizationCode() {
-		return $this->authorizationCode;
+    public function getDomainName() {
+	    return $this->domainName;
+    }
+
+    public function setDomainName($domainName) {
+    	$this->domainName = $domainName;
+    	$this->queryParameters['DomainName'] = $domainName;
 	}
 
-	public function setAuthorizationCode($authorizationCode) {
-		$this->authorizationCode = $authorizationCode;
-		$this->queryParameters["AuthorizationCode"]=$authorizationCode;
+    public function getRegistrantProfileId() {
+	    return $this->registrantProfileId;
+    }
+
+    public function setRegistrantProfileId($registrantProfileId) {
+    	$this->registrantProfileId = $registrantProfileId;
+    	$this->queryParameters['RegistrantProfileId'] = $registrantProfileId;
 	}
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
+    public function getCouponNo() {
+	    return $this->couponNo;
+    }
+
+    public function setCouponNo($couponNo) {
+    	$this->couponNo = $couponNo;
+    	$this->queryParameters['CouponNo'] = $couponNo;
 	}
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
+    public function getUseCoupon() {
+	    return $this->useCoupon;
+    }
+
+    public function setUseCoupon($useCoupon) {
+    	$this->useCoupon = $useCoupon;
+    	$this->queryParameters['UseCoupon'] = $useCoupon;
 	}
 
-	public function getDomainName() {
-		return $this->domainName;
+    public function getLang() {
+	    return $this->lang;
+    }
+
+    public function setLang($lang) {
+    	$this->lang = $lang;
+    	$this->queryParameters['Lang'] = $lang;
 	}
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
+    public function getUsePromotion() {
+	    return $this->usePromotion;
+    }
+
+    public function setUsePromotion($usePromotion) {
+    	$this->usePromotion = $usePromotion;
+    	$this->queryParameters['UsePromotion'] = $usePromotion;
 	}
 
-	public function getRegistrantProfileId() {
-		return $this->registrantProfileId;
-	}
-
-	public function setRegistrantProfileId($registrantProfileId) {
-		$this->registrantProfileId = $registrantProfileId;
-		$this->queryParameters["RegistrantProfileId"]=$registrantProfileId;
-	}
-
-	public function getCouponNo() {
-		return $this->couponNo;
-	}
-
-	public function setCouponNo($couponNo) {
-		$this->couponNo = $couponNo;
-		$this->queryParameters["CouponNo"]=$couponNo;
-	}
-
-	public function getUseCoupon() {
-		return $this->useCoupon;
-	}
-
-	public function setUseCoupon($useCoupon) {
-		$this->useCoupon = $useCoupon;
-		$this->queryParameters["UseCoupon"]=$useCoupon;
-	}
-
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-
-	public function getUsePromotion() {
-		return $this->usePromotion;
-	}
-
-	public function setUsePromotion($usePromotion) {
-		$this->usePromotion = $usePromotion;
-		$this->queryParameters["UsePromotion"]=$usePromotion;
-	}
-	
 }

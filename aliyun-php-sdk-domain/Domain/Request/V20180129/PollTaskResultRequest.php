@@ -21,11 +21,11 @@ namespace Domain\Request\V20180129;
 
 class PollTaskResultRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain", "2018-01-29", "PollTaskResult");
+    public function  __construct()
+    {
+        parent::__construct("Domain", "2018-01-29", "PollTaskResult");
 		$this->setMethod("POST");
-	}
+    }
 
 	private  $instanceId;
 
@@ -43,76 +43,76 @@ class PollTaskResultRequest extends \RpcAcsRequest
 
 	private  $taskResultStatus;
 
-	public function getInstanceId() {
-		return $this->instanceId;
+    public function getInstanceId() {
+	    return $this->instanceId;
+    }
+
+    public function setInstanceId($instanceId) {
+    	$this->instanceId = $instanceId;
+    	$this->queryParameters['InstanceId'] = $instanceId;
 	}
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
+    public function getUserClientIp() {
+	    return $this->userClientIp;
+    }
+
+    public function setUserClientIp($userClientIp) {
+    	$this->userClientIp = $userClientIp;
+    	$this->queryParameters['UserClientIp'] = $userClientIp;
 	}
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
+    public function getTaskNo() {
+	    return $this->taskNo;
+    }
+
+    public function setTaskNo($taskNo) {
+    	$this->taskNo = $taskNo;
+    	$this->queryParameters['TaskNo'] = $taskNo;
 	}
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
+    public function getDomainName() {
+	    return $this->domainName;
+    }
+
+    public function setDomainName($domainName) {
+    	$this->domainName = $domainName;
+    	$this->queryParameters['DomainName'] = $domainName;
 	}
 
-	public function getTaskNo() {
-		return $this->taskNo;
+    public function getPageSize() {
+	    return $this->pageSize;
+    }
+
+    public function setPageSize($pageSize) {
+    	$this->pageSize = $pageSize;
+    	$this->queryParameters['PageSize'] = $pageSize;
 	}
 
-	public function setTaskNo($taskNo) {
-		$this->taskNo = $taskNo;
-		$this->queryParameters["TaskNo"]=$taskNo;
+    public function getLang() {
+	    return $this->lang;
+    }
+
+    public function setLang($lang) {
+    	$this->lang = $lang;
+    	$this->queryParameters['Lang'] = $lang;
 	}
 
-	public function getDomainName() {
-		return $this->domainName;
+    public function getPageNum() {
+	    return $this->pageNum;
+    }
+
+    public function setPageNum($pageNum) {
+    	$this->pageNum = $pageNum;
+    	$this->queryParameters['PageNum'] = $pageNum;
 	}
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
+    public function getTaskResultStatus() {
+	    return $this->taskResultStatus;
+    }
+
+    public function setTaskResultStatus($taskResultStatus) {
+    	$this->taskResultStatus = $taskResultStatus;
+    	$this->queryParameters['TaskResultStatus'] = $taskResultStatus;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-
-	public function getPageNum() {
-		return $this->pageNum;
-	}
-
-	public function setPageNum($pageNum) {
-		$this->pageNum = $pageNum;
-		$this->queryParameters["PageNum"]=$pageNum;
-	}
-
-	public function getTaskResultStatus() {
-		return $this->taskResultStatus;
-	}
-
-	public function setTaskResultStatus($taskResultStatus) {
-		$this->taskResultStatus = $taskResultStatus;
-		$this->queryParameters["TaskResultStatus"]=$taskResultStatus;
-	}
-	
 }

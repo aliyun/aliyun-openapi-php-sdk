@@ -21,11 +21,11 @@ namespace Domain\Request\V20180129;
 
 class UpdateDomainToDomainGroupRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain", "2018-01-29", "UpdateDomainToDomainGroup");
+    public function  __construct()
+    {
+        parent::__construct("Domain", "2018-01-29", "UpdateDomainToDomainGroup");
 		$this->setMethod("POST");
-	}
+    }
 
 	private  $dataSource;
 
@@ -41,31 +41,32 @@ class UpdateDomainToDomainGroupRequest extends \RpcAcsRequest
 
 	private  $domainGroupId;
 
-	public function getDataSource() {
-		return $this->dataSource;
+    public function getDataSource() {
+	    return $this->dataSource;
+    }
+
+    public function setDataSource($dataSource) {
+    	$this->dataSource = $dataSource;
+    	$this->queryParameters['DataSource'] = $dataSource;
 	}
 
-	public function setDataSource($dataSource) {
-		$this->dataSource = $dataSource;
-		$this->queryParameters["DataSource"]=$dataSource;
+    public function getUserClientIp() {
+	    return $this->userClientIp;
+    }
+
+    public function setUserClientIp($userClientIp) {
+    	$this->userClientIp = $userClientIp;
+    	$this->queryParameters['UserClientIp'] = $userClientIp;
 	}
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
-	}
+    public function getFileToUpload() {
+	    return $this->fileToUpload;
+    }
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
+    public function setFileToUpload($fileToUpload) {
+    	$this->fileToUpload = $fileToUpload;
+    	$this->queryParameters['FileToUpload'] = $fileToUpload;
 	}
-
-	public function getFileToUpload() {
-		return $this->fileToUpload;
-	}
-
-	public function setFileToUpload($fileToUpload) {
-		$this->fileToUpload = $fileToUpload;
-		}
 
 	public function getDomainNames() {
 		return $this->DomainNames;
@@ -78,31 +79,31 @@ class UpdateDomainToDomainGroupRequest extends \RpcAcsRequest
 		}
 	}
 
-	public function getReplace() {
-		return $this->replace;
+    public function getReplace() {
+	    return $this->replace;
+    }
+
+    public function setReplace($replace) {
+    	$this->replace = $replace;
+    	$this->queryParameters['Replace'] = $replace;
 	}
 
-	public function setReplace($replace) {
-		$this->replace = $replace;
-		$this->queryParameters["Replace"]=$replace;
+    public function getLang() {
+	    return $this->lang;
+    }
+
+    public function setLang($lang) {
+    	$this->lang = $lang;
+    	$this->queryParameters['Lang'] = $lang;
 	}
 
-	public function getLang() {
-		return $this->lang;
+    public function getDomainGroupId() {
+	    return $this->domainGroupId;
+    }
+
+    public function setDomainGroupId($domainGroupId) {
+    	$this->domainGroupId = $domainGroupId;
+    	$this->queryParameters['DomainGroupId'] = $domainGroupId;
 	}
 
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-
-	public function getDomainGroupId() {
-		return $this->domainGroupId;
-	}
-
-	public function setDomainGroupId($domainGroupId) {
-		$this->domainGroupId = $domainGroupId;
-		$this->queryParameters["DomainGroupId"]=$domainGroupId;
-	}
-	
 }

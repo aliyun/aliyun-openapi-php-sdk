@@ -21,11 +21,11 @@ namespace Domain\Request\V20180129;
 
 class SaveBatchDomainRemarkRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain", "2018-01-29", "SaveBatchDomainRemark");
+    public function  __construct()
+    {
+        parent::__construct("Domain", "2018-01-29", "SaveBatchDomainRemark");
 		$this->setMethod("POST");
-	}
+    }
 
 	private  $instanceIds;
 
@@ -35,40 +35,40 @@ class SaveBatchDomainRemarkRequest extends \RpcAcsRequest
 
 	private  $lang;
 
-	public function getInstanceIds() {
-		return $this->instanceIds;
+    public function getInstanceIds() {
+	    return $this->instanceIds;
+    }
+
+    public function setInstanceIds($instanceIds) {
+    	$this->instanceIds = $instanceIds;
+    	$this->queryParameters['InstanceIds'] = $instanceIds;
 	}
 
-	public function setInstanceIds($instanceIds) {
-		$this->instanceIds = $instanceIds;
-		$this->queryParameters["InstanceIds"]=$instanceIds;
+    public function getUserClientIp() {
+	    return $this->userClientIp;
+    }
+
+    public function setUserClientIp($userClientIp) {
+    	$this->userClientIp = $userClientIp;
+    	$this->queryParameters['UserClientIp'] = $userClientIp;
 	}
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
+    public function getRemark() {
+	    return $this->remark;
+    }
+
+    public function setRemark($remark) {
+    	$this->remark = $remark;
+    	$this->queryParameters['Remark'] = $remark;
 	}
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
+    public function getLang() {
+	    return $this->lang;
+    }
+
+    public function setLang($lang) {
+    	$this->lang = $lang;
+    	$this->queryParameters['Lang'] = $lang;
 	}
 
-	public function getRemark() {
-		return $this->remark;
-	}
-
-	public function setRemark($remark) {
-		$this->remark = $remark;
-		$this->queryParameters["Remark"]=$remark;
-	}
-
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-	
 }

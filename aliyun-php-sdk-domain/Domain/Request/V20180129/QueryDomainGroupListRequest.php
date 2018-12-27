@@ -21,11 +21,11 @@ namespace Domain\Request\V20180129;
 
 class QueryDomainGroupListRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain", "2018-01-29", "QueryDomainGroupList");
+    public function  __construct()
+    {
+        parent::__construct("Domain", "2018-01-29", "QueryDomainGroupList");
 		$this->setMethod("POST");
-	}
+    }
 
 	private  $userClientIp;
 
@@ -35,40 +35,40 @@ class QueryDomainGroupListRequest extends \RpcAcsRequest
 
 	private  $showDeletingGroup;
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
+    public function getUserClientIp() {
+	    return $this->userClientIp;
+    }
+
+    public function setUserClientIp($userClientIp) {
+    	$this->userClientIp = $userClientIp;
+    	$this->queryParameters['UserClientIp'] = $userClientIp;
 	}
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
+    public function getDomainGroupName() {
+	    return $this->domainGroupName;
+    }
+
+    public function setDomainGroupName($domainGroupName) {
+    	$this->domainGroupName = $domainGroupName;
+    	$this->queryParameters['DomainGroupName'] = $domainGroupName;
 	}
 
-	public function getDomainGroupName() {
-		return $this->domainGroupName;
+    public function getLang() {
+	    return $this->lang;
+    }
+
+    public function setLang($lang) {
+    	$this->lang = $lang;
+    	$this->queryParameters['Lang'] = $lang;
 	}
 
-	public function setDomainGroupName($domainGroupName) {
-		$this->domainGroupName = $domainGroupName;
-		$this->queryParameters["DomainGroupName"]=$domainGroupName;
+    public function getShowDeletingGroup() {
+	    return $this->showDeletingGroup;
+    }
+
+    public function setShowDeletingGroup($showDeletingGroup) {
+    	$this->showDeletingGroup = $showDeletingGroup;
+    	$this->queryParameters['ShowDeletingGroup'] = $showDeletingGroup;
 	}
 
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-
-	public function getShowDeletingGroup() {
-		return $this->showDeletingGroup;
-	}
-
-	public function setShowDeletingGroup($showDeletingGroup) {
-		$this->showDeletingGroup = $showDeletingGroup;
-		$this->queryParameters["ShowDeletingGroup"]=$showDeletingGroup;
-	}
-	
 }

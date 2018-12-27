@@ -21,11 +21,11 @@ namespace Domain\Request\V20180129;
 
 class QueryTaskListRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain", "2018-01-29", "QueryTaskList");
+    public function  __construct()
+    {
+        parent::__construct("Domain", "2018-01-29", "QueryTaskList");
 		$this->setMethod("POST");
-	}
+    }
 
 	private  $beginCreateTime;
 
@@ -39,58 +39,58 @@ class QueryTaskListRequest extends \RpcAcsRequest
 
 	private  $pageNum;
 
-	public function getBeginCreateTime() {
-		return $this->beginCreateTime;
+    public function getBeginCreateTime() {
+	    return $this->beginCreateTime;
+    }
+
+    public function setBeginCreateTime($beginCreateTime) {
+    	$this->beginCreateTime = $beginCreateTime;
+    	$this->queryParameters['BeginCreateTime'] = $beginCreateTime;
 	}
 
-	public function setBeginCreateTime($beginCreateTime) {
-		$this->beginCreateTime = $beginCreateTime;
-		$this->queryParameters["BeginCreateTime"]=$beginCreateTime;
+    public function getEndCreateTime() {
+	    return $this->endCreateTime;
+    }
+
+    public function setEndCreateTime($endCreateTime) {
+    	$this->endCreateTime = $endCreateTime;
+    	$this->queryParameters['EndCreateTime'] = $endCreateTime;
 	}
 
-	public function getEndCreateTime() {
-		return $this->endCreateTime;
+    public function getUserClientIp() {
+	    return $this->userClientIp;
+    }
+
+    public function setUserClientIp($userClientIp) {
+    	$this->userClientIp = $userClientIp;
+    	$this->queryParameters['UserClientIp'] = $userClientIp;
 	}
 
-	public function setEndCreateTime($endCreateTime) {
-		$this->endCreateTime = $endCreateTime;
-		$this->queryParameters["EndCreateTime"]=$endCreateTime;
+    public function getPageSize() {
+	    return $this->pageSize;
+    }
+
+    public function setPageSize($pageSize) {
+    	$this->pageSize = $pageSize;
+    	$this->queryParameters['PageSize'] = $pageSize;
 	}
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
+    public function getLang() {
+	    return $this->lang;
+    }
+
+    public function setLang($lang) {
+    	$this->lang = $lang;
+    	$this->queryParameters['Lang'] = $lang;
 	}
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
+    public function getPageNum() {
+	    return $this->pageNum;
+    }
+
+    public function setPageNum($pageNum) {
+    	$this->pageNum = $pageNum;
+    	$this->queryParameters['PageNum'] = $pageNum;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-
-	public function getPageNum() {
-		return $this->pageNum;
-	}
-
-	public function setPageNum($pageNum) {
-		$this->pageNum = $pageNum;
-		$this->queryParameters["PageNum"]=$pageNum;
-	}
-	
 }

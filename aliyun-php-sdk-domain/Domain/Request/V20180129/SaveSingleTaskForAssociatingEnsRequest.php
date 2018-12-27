@@ -21,11 +21,11 @@ namespace Domain\Request\V20180129;
 
 class SaveSingleTaskForAssociatingEnsRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain", "2018-01-29", "SaveSingleTaskForAssociatingEns");
+    public function  __construct()
+    {
+        parent::__construct("Domain", "2018-01-29", "SaveSingleTaskForAssociatingEns");
 		$this->setMethod("POST");
-	}
+    }
 
 	private  $address;
 
@@ -35,40 +35,40 @@ class SaveSingleTaskForAssociatingEnsRequest extends \RpcAcsRequest
 
 	private  $lang;
 
-	public function getAddress() {
-		return $this->address;
+    public function getAddress() {
+	    return $this->address;
+    }
+
+    public function setAddress($address) {
+    	$this->address = $address;
+    	$this->queryParameters['Address'] = $address;
 	}
 
-	public function setAddress($address) {
-		$this->address = $address;
-		$this->queryParameters["Address"]=$address;
+    public function getUserClientIp() {
+	    return $this->userClientIp;
+    }
+
+    public function setUserClientIp($userClientIp) {
+    	$this->userClientIp = $userClientIp;
+    	$this->queryParameters['UserClientIp'] = $userClientIp;
 	}
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
+    public function getDomainName() {
+	    return $this->domainName;
+    }
+
+    public function setDomainName($domainName) {
+    	$this->domainName = $domainName;
+    	$this->queryParameters['DomainName'] = $domainName;
 	}
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
+    public function getLang() {
+	    return $this->lang;
+    }
+
+    public function setLang($lang) {
+    	$this->lang = $lang;
+    	$this->queryParameters['Lang'] = $lang;
 	}
 
-	public function getDomainName() {
-		return $this->domainName;
-	}
-
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
-
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-	
 }
