@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -17,137 +18,256 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 abstract class AcsRequest
 {
-	protected  $version;
-	protected  $product;
-	protected  $actionName;
-	protected  $regionId;
-	protected  $acceptFormat;
-	protected  $method;
-	protected  $requestScheme = 'http';
-	protected  $content;
-	
-	protected $queryParameters = array();
-	protected $headers = array();
-	
-	protected $locationServiceCode;
-	protected $locationEndpointType;
+    /**
+     * @var string
+     */
+    protected $version;
+    /**
+     * @var string
+     */
+    protected $product;
+    /**
+     * @var string
+     */
+    protected $actionName;
+    /**
+     * @var string
+     */
+    protected $regionId;
+    /**
+     * @var string
+     */
+    protected $acceptFormat;
+    /**
+     * @var string
+     */
+    protected $method;
+    /**
+     * @var string
+     */
+    protected $requestScheme = 'http';
+    /**
+     * @var string
+     */
+    protected $content;
+    /**
+     * @var array
+     */
+    protected $queryParameters = array();
+    /**
+     * @var array
+     */
+    protected $headers = array();
+    /**
+     * @var null|string
+     */
+    protected $locationServiceCode;
+    /**
+     * @var null|string
+     */
+    protected $locationEndpointType;
 
-	public function  __construct($product, $version, $actionName, $locationServiceCode = null, $locationEndpointType = 'openAPI')
-	{
+    /**
+     * AcsRequest constructor.
+     *
+     * @param string      $product
+     * @param string      $version
+     * @param string      $actionName
+     * @param string|null $locationServiceCode
+     * @param string      $locationEndpointType
+     */
+    public function __construct($product,
+                                $version,
+                                $actionName,
+                                $locationServiceCode = null,
+                                $locationEndpointType = 'openAPI')
+    {
         $this->headers['x-sdk-client'] = 'php/2.0.0';
         $this->product                 = $product;
         $this->version                 = $version;
         $this->actionName              = $actionName;
         $this->locationServiceCode     = $locationServiceCode;
         $this->locationEndpointType    = $locationEndpointType;
-	}
-	
-	abstract public function composeUrl($iSigner, $credential, $domain);
-	
-	public function getVersion()
-	{
-		return $this->version;
-	}
-	
-	public function setVersion($version)
-	{
-		$this->version = $version;
-	}
-	
-	public function getProduct()
-	{
-		return $this->product;
-	}
-	
-	public function setProduct($product)
-	{
-		$this->product = $product;
-	}
-	
-	public function getActionName()
-	{
-		return $this->actionName;
-	}
-	
-	public function setActionName($actionName)
-	{
-		$this->actionName = $actionName;
-	}
-	
-	public function getAcceptFormat()
-	{
-		return	$this->acceptFormat;
-	}
-	
-	public function setAcceptFormat($acceptFormat)
-	{
-		$this->acceptFormat = $acceptFormat;
-	}
-	
-	public function getQueryParameters()
-	{
-		return $this->queryParameters;
-	}
-	
-	public function getHeaders()
-	{
-		return $this->headers;
-	}
-	
-	public function getMethod()
-	{
-		return $this->method;
-	}
-	
-	public function setMethod($method)
-	{
-		$this->method = $method;
-	}
-	
-	public function getProtocol()
-	{
-		return $this->requestScheme;
-	}
-	
-	public function setProtocol($protocol)
-	{
-		$this->requestScheme = $protocol;
-	}
-	
-	public function getRegionId()
-	{
-		return $this->regionId;
-	}
-	public function setRegionId($region)
-	{
-		$this->regionId = $region;
-	}
-	
-	public function getContent()
+    }
+
+    /**
+     * @param $iSigner
+     * @param $credential
+     * @param $domain
+     *
+     * @return mixed
+     */
+    abstract public function composeUrl($iSigner, $credential, $domain);
+
+    /**
+     * @return string
+     */
+    public function getVersion()
+    {
+        return $this->version;
+    }
+
+    /**
+     * @param $version
+     */
+    public function setVersion($version)
+    {
+        $this->version = $version;
+    }
+
+    /**
+     * @return string
+     */
+    public function getProduct()
+    {
+        return $this->product;
+    }
+
+    /**
+     * @param string $product
+     */
+    public function setProduct($product)
+    {
+        $this->product = $product;
+    }
+
+    /**
+     * @return string
+     */
+    public function getActionName()
+    {
+        return $this->actionName;
+    }
+
+    /**
+     * @param string $actionName
+     */
+    public function setActionName($actionName)
+    {
+        $this->actionName = $actionName;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAcceptFormat()
+    {
+        return $this->acceptFormat;
+    }
+
+    /**
+     * @param string $acceptFormat
+     */
+    public function setAcceptFormat($acceptFormat)
+    {
+        $this->acceptFormat = $acceptFormat;
+    }
+
+    /**
+     * @return array
+     */
+    public function getQueryParameters()
+    {
+        return $this->queryParameters;
+    }
+
+    /**
+     * @return array
+     */
+    public function getHeaders()
+    {
+        return $this->headers;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMethod()
+    {
+        return $this->method;
+    }
+
+    /**
+     * @param string $method
+     */
+    public function setMethod($method)
+    {
+        $this->method = $method;
+    }
+
+    /**
+     * @return string
+     */
+    public function getProtocol()
+    {
+        return $this->requestScheme;
+    }
+
+    /**
+     * @param string $protocol
+     */
+    public function setProtocol($protocol)
+    {
+        $this->requestScheme = $protocol;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRegionId()
+    {
+        return $this->regionId;
+    }
+
+    /**
+     * @param string $region
+     */
+    public function setRegionId($region)
+    {
+        $this->regionId = $region;
+    }
+
+    /**
+     * @return string
+     */
+    public function getContent()
     {
         return $this->content;
     }
 
+    /**
+     * @param string $content
+     */
     public function setContent($content)
     {
         $this->content = $content;
     }
-        
-        
+
+    /**
+     * @param string $headerKey
+     * @param mixed  $headerValue
+     */
     public function addHeader($headerKey, $headerValue)
     {
         $this->headers[$headerKey] = $headerValue;
-    } 
-	
-	public function getLocationServiceCode()
-	{
-		return $this->locationServiceCode;
-	}
+    }
 
-	public function getLocationEndpointType()
-	{
-		return $this->locationEndpointType;
-	}
+    /**
+     * @return null|string
+     */
+    public function getLocationServiceCode()
+    {
+        return $this->locationServiceCode;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getLocationEndpointType()
+    {
+        return $this->locationEndpointType;
+    }
 }

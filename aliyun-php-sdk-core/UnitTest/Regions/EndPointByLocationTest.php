@@ -12,8 +12,14 @@ use PHPUnit\Framework\TestCase;
 
 class EndPointByLocationTest extends TestCase
 {
+    /**
+     * @var
+     */
     private $locationService;
 
+    /**
+     * @var
+     */
     private $clientProfile;
 
     private function initClient()

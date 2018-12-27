@@ -18,24 +18,25 @@
  * under the License.
  */
 include_once 'BaseTest.php';
-use UnitTest\Ecs\Request as Ecs;
+
 use UnitTest\BatchCompute\Request as BC;
+use UnitTest\Ecs\Request as Ecs;
 
 class DefaultAcsClientTest extends BaseTest
 {
     public function testDoActionRPC()
     {
-        $request = new Ecs\DescribeRegionsRequest();
+        $request  = new Ecs\DescribeRegionsRequest();
         $response = $this->client->doAction($request);
-        
+
         $this->assertNotNull($response->RequestId);
         $this->assertNotNull($response->Regions->Region[0]->LocalName);
         $this->assertNotNull($response->Regions->Region[0]->RegionId);
     }
-    
+
     public function testDoActionROA()
     {
-        $request = new BC\ListImagesRequest();
+        $request  = new BC\ListImagesRequest();
         $response = $this->client->doAction($request);
         $this->assertNotNull($response);
     }

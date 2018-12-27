@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -17,36 +18,61 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 class BearerTokenCredential extends AbstractCredential
 {
+    /**
+     * @var string
+     */
     private $bearerToken;
 
+    /**
+     * BearerTokenCredential constructor.
+     *
+     * @param $bearerToken
+     */
     public function __construct($bearerToken)
     {
         $this->bearerToken = $bearerToken;
     }
 
+    /**
+     * @return null
+     */
     public function getAccessKeyId()
     {
         return null;
     }
 
+    /**
+     * @return null
+     */
     public function getAccessSecret()
     {
         return null;
     }
 
+    /**
+     * @return string
+     */
     public function getBearerToken()
     {
         return $this->bearerToken;
     }
 
+    /**
+     * @param $bearerToken
+     */
     public function setBearerToken($bearerToken)
     {
         $this->bearerToken = $bearerToken;
     }
 
-    public function getSecurityToken() {
+    /**
+     * @return null
+     */
+    public function getSecurityToken()
+    {
         return null;
     }
 }

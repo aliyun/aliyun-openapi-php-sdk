@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -17,36 +18,61 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 class EcsRamRoleCredential extends AbstractCredential
 {
+    /**
+     * @var string
+     */
     private $roleName;
 
+    /**
+     * EcsRamRoleCredential constructor.
+     *
+     * @param $roleName
+     */
     public function __construct($roleName)
     {
         $this->roleName = $roleName;
     }
 
+    /**
+     * @return null
+     */
     public function getAccessKeyId()
     {
         return null;
     }
 
+    /**
+     * @return null
+     */
     public function getAccessSecret()
     {
         return null;
     }
 
+    /**
+     * @return string
+     */
     public function getRoleName()
     {
         return $this->roleName;
     }
 
+    /**
+     * @param $roleName
+     */
     public function setRoleName($roleName)
     {
         $this->roleName = $roleName;
     }
 
-    public function getSecurityToken() {
+    /**
+     * @return null
+     */
+    public function getSecurityToken()
+    {
         return null;
     }
 }

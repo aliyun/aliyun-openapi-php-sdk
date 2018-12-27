@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -17,24 +18,32 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 class BaseTest extends PHPUnit_Framework_TestCase
 {
+    /**
+     * @var null
+     */
     public $client = null;
+
     public function setUp()
     {
         $path = substr(__DIR__, 0, strripos(__DIR__, DIRECTORY_SEPARATOR)) . DIRECTORY_SEPARATOR;
-        include_once $path.'Config.php';
+        include_once $path . 'Config.php';
         include_once 'Ecs/Rquest/DescribeRegionsRequest.php';
         include_once 'BatchCompute/ListImagesRequest.php';
 
         $iClientProfile = DefaultProfile::getProfile("cn-hangzhou", "AccessKey", "AccessSecret");
-        $this->client = new DefaultAcsClient($iClientProfile);
+        $this->client   = new DefaultAcsClient($iClientProfile);
     }
-    
+
+    /**
+     * @param $propertyKey
+     */
     public function getProperty($propertyKey)
     {
-        $accessKey = "";
-        $accessSecret = "";
+        $accessKey      = "";
+        $accessSecret   = "";
         $iClientProfile = DefaultProfile::getProfile("cn-hangzhou", "AccessKey", "AccessSecret");
     }
 }

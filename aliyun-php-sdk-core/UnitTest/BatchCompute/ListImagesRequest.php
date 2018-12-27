@@ -17,6 +17,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 namespace UnitTest\BatchCompute\Request;
 
 class ListImagesRequest extends \RoaAcsRequest

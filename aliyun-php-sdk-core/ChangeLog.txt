@@ -1,3 +1,6 @@
+2018-12-28 Version: 1.2.8
+1, Format core code.
+
 2018-12-27 Version: 1.2.7
 1, Fixed protocolType conflict.
 

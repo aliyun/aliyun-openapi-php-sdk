@@ -1,8 +1,8 @@
 <?php
 require_once '../../Config.php';
 
-use UnitTest\Ft\TestRpcApiRequest;
 use UnitTest\Ft\TestRoaApiRequest;
+use UnitTest\Ft\TestRpcApiRequest;
 
 $clientProfile = DefaultProfile::getProfile(
     "cn-hangzhou",
@@ -57,7 +57,6 @@ $request->setQueryParam("test");
 # 发起请求并处理返回
 $response = $roleArnClient->getAcsResponse($request);
 print_r($response);
-
 
 echo "\n";
 print_r("3.开始测试EcsArn: ");
