@@ -27,7 +27,7 @@ class EcsRamRoleService
     private $lastClearTime = null;
     private $sessionCredential = null;
 
-    function __construct($clientProfile) {
+    public function __construct($clientProfile) {
         $this->clientProfile = $clientProfile;
     }
 

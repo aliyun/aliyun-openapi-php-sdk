@@ -22,7 +22,7 @@ class HttpHelper
     public static $connectTimeout = 30;//30 second
     public static $readTimeout = 80;//80 second
     
-    public static function curl($url, $httpMethod = "GET", $postFields = null, $headers = null)
+    public static function curl($url, $httpMethod = 'GET', $postFields = null, $headers = null)
     {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $httpMethod);
@@ -44,7 +44,7 @@ class HttpHelper
             curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, self::$connectTimeout);
         }
         //https request
-        if (strlen($url) > 5 && strtolower(substr($url, 0, 5)) == "https") {
+        if (strlen($url) > 5 && strtolower(substr($url, 0, 5)) === 'https') {
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
         }
@@ -73,7 +73,7 @@ class HttpHelper
     {
         $httpHeader = array();
         foreach ($headers as $key => $value) {
-            array_push($httpHeader, $key.":".$value);
+            $httpHeader[] = $key . ":" . $value;
         }
         return $httpHeader;
     }

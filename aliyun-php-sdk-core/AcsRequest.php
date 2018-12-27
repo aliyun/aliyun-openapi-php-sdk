@@ -34,7 +34,7 @@ abstract class AcsRequest
 	protected $locationServiceCode;
 	protected $locationEndpointType;
 	
-	function  __construct($product, $version, $actionName, $locationServiceCode = null, $locationEndpointType = "openAPI")
+	public function  __construct($product, $version, $actionName, $locationServiceCode = null, $locationEndpointType = "openAPI")
 	{
 	    $this->headers["x-sdk-client"] = "php/2.0.0";
 	    $this->product = $product;
@@ -45,7 +45,7 @@ abstract class AcsRequest
 	    $this->locationEndpointType = $locationEndpointType;
 	}
 	
-	public abstract function composeUrl($iSigner, $credential, $domain);
+	abstract public function composeUrl($iSigner, $credential, $domain);
 	
 	public function getVersion()
 	{

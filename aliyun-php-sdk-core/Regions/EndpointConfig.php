@@ -17,7 +17,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-$endpoint_filename = dirname(__FILE__) . DIRECTORY_SEPARATOR . "endpoints.xml";
+$endpoint_filename = __DIR__ . DIRECTORY_SEPARATOR . 'endpoints.xml';
 $xml = simplexml_load_string(file_get_contents($endpoint_filename));
 $json = json_encode($xml);
 $json_array = json_decode($json, true);
@@ -54,8 +54,8 @@ foreach ($json_array["Endpoint"] as $json_endpoint) {
 
     $product_domains = array();
     foreach ($products as $product) {
-        $product_domain = new ProductDomain($product['ProductName'], $product['DomainName']);
-        array_push($product_domains, $product_domain);
+        $product_domain    = new ProductDomain($product['ProductName'], $product['DomainName']);
+        $product_domains[] = $product_domain;
     }
 
     $endpoint = new Endpoint($region_ids[0], $region_ids, $product_domains);

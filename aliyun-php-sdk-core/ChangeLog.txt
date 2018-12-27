@@ -1,3 +1,6 @@
+2018-12-27 Version: 1.2.4
+1, Fixed isset domain in LocationService
+
 2018-12-27 Version: 1.2.3
 1, Add the aliyun dns class load path.
 2, Fixed PHP Notice in LocationService.php.

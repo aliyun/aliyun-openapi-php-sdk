@@ -22,7 +22,7 @@ class BaseTest extends PHPUnit_Framework_TestCase
     public $client = null;
     public function setUp()
     {
-        $path = substr(dirname(__FILE__), 0, strripos(dirname(__FILE__), DIRECTORY_SEPARATOR)).DIRECTORY_SEPARATOR;
+        $path = substr(__DIR__, 0, strripos(__DIR__, DIRECTORY_SEPARATOR)) . DIRECTORY_SEPARATOR;
         include_once $path.'Config.php';
         include_once 'Ecs/Rquest/DescribeRegionsRequest.php';
         include_once 'BatchCompute/ListImagesRequest.php';

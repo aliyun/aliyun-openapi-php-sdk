@@ -22,7 +22,7 @@ abstract class RpcAcsRequest extends AcsRequest
     private $dateTimeFormat = 'Y-m-d\TH:i:s\Z';
     private $domainParameters = array();
 
-    function  __construct($product, $version, $actionName, $locationServiceCode = null, $locationEndpointType = "openAPI")
+    public function  __construct($product, $version, $actionName, $locationServiceCode = null, $locationEndpointType = 'openAPI')
     {
         parent::__construct($product, $version, $actionName, $locationServiceCode, $locationEndpointType);
         $this->initialize();

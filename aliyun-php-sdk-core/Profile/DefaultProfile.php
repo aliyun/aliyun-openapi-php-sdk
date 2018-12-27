@@ -101,11 +101,7 @@ class DefaultProfile implements IClientProfile
 
     public function isRamRoleArn()
     {
-        if(self::$authType == AUTH_TYPE_RAM_ROLE_ARN)
-        {
-            return true;
-        }
-        return false;
+        return self::$authType == AUTH_TYPE_RAM_ROLE_ARN;
     }
 
     public function isEcsRamRole()
@@ -158,10 +154,10 @@ class DefaultProfile implements IClientProfile
 	
 	private static function addEndpoint_($endpointName,$regionId, $product, $domain)
 	{
-		$regionIds = array($regionId);
-		$productsDomains = array(new ProductDomain($product, $domain));
-		$endpoint = new Endpoint($endpointName, $regionIds, $productsDomains);
-		array_push(self::$endpoints, $endpoint);
+		$regionIds         = array($regionId);
+		$productsDomains   = array(new ProductDomain($product, $domain));
+		$endpoint          = new Endpoint($endpointName, $regionIds, $productsDomains);
+        self::$endpoints[] = $endpoint;
 	}
 	
 	private static function updateEndpoint($regionId, $product, $domain, $endpoint)
@@ -169,7 +165,7 @@ class DefaultProfile implements IClientProfile
 		$regionIds = $endpoint->getRegionIds();
 		if(!in_array($regionId,$regionIds))
 		{
-			array_push($regionIds, $regionId);
+            $regionIds[] = $regionId;
 			$endpoint->setRegionIds($regionIds);
 		}
 

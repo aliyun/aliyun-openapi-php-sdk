@@ -26,7 +26,7 @@ abstract class RoaAcsRequest extends AcsRequest
     private static $headerSeparator = "\n";
     private static $querySeprator = "&";
     
-    function  __construct($product, $version, $actionName, $locationServiceCode = null, $locationEndpointType = "openAPI")
+    public function  __construct($product, $version, $actionName, $locationServiceCode = null, $locationEndpointType = "openAPI")
     {
         parent::__construct($product, $version, $actionName, $locationServiceCode, $locationEndpointType);
         $this->setVersion($version);
@@ -160,7 +160,7 @@ abstract class RoaAcsRequest extends AcsRequest
         $queIndex = strpos($uri, "?");
         $uriParts = array();
         if (null != $queIndex) {
-            array_push($uriParts, substr($uri, 0, $queIndex));
+            $uriParts[] = substr($uri, 0, $queIndex);
             array_push($uriParts, substr($uri, $queIndex+1));
         } else {
             array_push($uriParts, $uri);
@@ -192,15 +192,23 @@ abstract class RoaAcsRequest extends AcsRequest
         }
         return $queryString;
     }
-    
+
+    /**
+     * @param $acceptFormat
+     *
+     * @return string
+     */
     private function formatToAccept($acceptFormat)
     {
-        if ($acceptFormat == "JSON") {
-            return "application/json";
-        } elseif ($acceptFormat == "XML") {
-            return "application/xml";
+        if ($acceptFormat === 'JSON') {
+            return 'application/json';
         }
-        return "application/octet-stream";
+
+        if ($acceptFormat === 'XML') {
+            return 'application/xml';
+        }
+
+        return 'application/octet-stream';
     }
     
     public function getPathParameters()
@@ -232,10 +240,13 @@ abstract class RoaAcsRequest extends AcsRequest
     {
         return $this->uriPattern = $uriPattern;
     }
-    
+
+    /**
+     * @param $version
+     */
     public function setVersion($version)
     {
-        $this->version = $version;
-        $this->headers["x-acs-version"] = $version;
+        $this->version                  = $version;
+        $this->headers['x-acs-version'] = $version;
     }
 }

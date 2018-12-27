@@ -24,7 +24,7 @@ class ClientException extends Exception
         parent::__construct($errorMessage);
         $this->errorMessage = $errorMessage;
         $this->errorCode = $errorCode;
-        $this->setErrorType("Client");
+        $this->setErrorType('Client');
     }
     
     private $errorCode;

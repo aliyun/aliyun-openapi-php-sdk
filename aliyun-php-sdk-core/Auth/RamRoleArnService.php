@@ -27,7 +27,7 @@ define("ROLE_ARN_EXPIRE_TIME", 3600);
 
 class AssumeRoleRequest extends RpcAcsRequest
 {
-    function __construct($roleArn, $roleSessionName) {
+    public function __construct($roleArn, $roleSessionName) {
         parent::__construct(STS_PRODUCT_NAME, STS_VERSION, STS_ACTION);
 
         $this->queryParameters["RoleArn"] = $roleArn;
@@ -47,7 +47,7 @@ class RamRoleArnService
     private $sessionCredential = null;
     public static $serviceDomain = STS_DOMAIN;
 
-    function __construct($clientProfile) {
+    public function __construct($clientProfile) {
         $this->clientProfile = $clientProfile;
     }
 

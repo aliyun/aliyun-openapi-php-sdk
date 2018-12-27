@@ -21,12 +21,12 @@ spl_autoload_register("Autoloader::autoload");
 class Autoloader
 {
     private static $autoloadPathArray = array(
-        "aliyun-php-sdk-core",
-        "aliyun-php-sdk-core/Auth",
-        "aliyun-php-sdk-core/Http",
-        "aliyun-php-sdk-core/Profile",
-        "aliyun-php-sdk-core/Regions",
-        "aliyun-php-sdk-core/Exception"
+        'aliyun-php-sdk-core',
+        'aliyun-php-sdk-core/Auth',
+        'aliyun-php-sdk-core/Http',
+        'aliyun-php-sdk-core/Profile',
+        'aliyun-php-sdk-core/Regions',
+        'aliyun-php-sdk-core/Exception'
     );
     
     public static function autoload($className)
@@ -43,6 +43,6 @@ class Autoloader
     
     public static function addAutoloadPath($path)
     {
-        array_push(self::$autoloadPathArray, $path);
+        self::$autoloadPathArray[] = $path;
     }
 }
