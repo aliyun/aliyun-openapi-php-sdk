@@ -21,21 +21,21 @@ namespace Cms\Request\V20180308;
 
 class EnableAlarmRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "EnableAlarm", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "EnableAlarm");
 		$this->setMethod("POST");
+    }
+
+    protected $id;
+
+    public function getId() {
+	    return $this->id;
+    }
+
+    public function setId($id) {
+    	$this->id = $id;
+    	$this->queryParameters['Id'] = $id;
 	}
 
-	private  $id;
-
-	public function getId() {
-		return $this->id;
-	}
-
-	public function setId($id) {
-		$this->id = $id;
-		$this->queryParameters["Id"]=$id;
-	}
-	
 }

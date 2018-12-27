@@ -21,164 +21,164 @@ namespace Cms\Request\V20180308;
 
 class UpdateAlarmRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "UpdateAlarm", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "UpdateAlarm");
 		$this->setMethod("POST");
+    }
+
+    protected $period;
+
+    protected $webhook;
+
+    protected $dryRun;
+
+    protected $contactGroups;
+
+    protected $endTime;
+
+    protected $threshold;
+
+    protected $startTime;
+
+    protected $name;
+
+    protected $evaluationCount;
+
+    protected $silenceTime;
+
+    protected $id;
+
+    protected $notifyType;
+
+    protected $comparisonOperator;
+
+    protected $statistics;
+
+    public function getPeriod() {
+	    return $this->period;
+    }
+
+    public function setPeriod($period) {
+    	$this->period = $period;
+    	$this->queryParameters['Period'] = $period;
 	}
 
-	private  $period;
+    public function getWebhook() {
+	    return $this->webhook;
+    }
 
-	private  $webhook;
-
-	private  $dryRun;
-
-	private  $contactGroups;
-
-	private  $endTime;
-
-	private  $threshold;
-
-	private  $startTime;
-
-	private  $name;
-
-	private  $evaluationCount;
-
-	private  $silenceTime;
-
-	private  $id;
-
-	private  $notifyType;
-
-	private  $comparisonOperator;
-
-	private  $statistics;
-
-	public function getPeriod() {
-		return $this->period;
+    public function setWebhook($webhook) {
+    	$this->webhook = $webhook;
+    	$this->queryParameters['Webhook'] = $webhook;
 	}
 
-	public function setPeriod($period) {
-		$this->period = $period;
-		$this->queryParameters["Period"]=$period;
+    public function getDryRun() {
+	    return $this->dryRun;
+    }
+
+    public function setDryRun($dryRun) {
+    	$this->dryRun = $dryRun;
+    	$this->queryParameters['DryRun'] = $dryRun;
 	}
 
-	public function getWebhook() {
-		return $this->webhook;
+    public function getContactGroups() {
+	    return $this->contactGroups;
+    }
+
+    public function setContactGroups($contactGroups) {
+    	$this->contactGroups = $contactGroups;
+    	$this->queryParameters['ContactGroups'] = $contactGroups;
 	}
 
-	public function setWebhook($webhook) {
-		$this->webhook = $webhook;
-		$this->queryParameters["Webhook"]=$webhook;
+    public function getEndTime() {
+	    return $this->endTime;
+    }
+
+    public function setEndTime($endTime) {
+    	$this->endTime = $endTime;
+    	$this->queryParameters['EndTime'] = $endTime;
 	}
 
-	public function getDryRun() {
-		return $this->dryRun;
+    public function getThreshold() {
+	    return $this->threshold;
+    }
+
+    public function setThreshold($threshold) {
+    	$this->threshold = $threshold;
+    	$this->queryParameters['Threshold'] = $threshold;
 	}
 
-	public function setDryRun($dryRun) {
-		$this->dryRun = $dryRun;
-		$this->queryParameters["DryRun"]=$dryRun;
+    public function getStartTime() {
+	    return $this->startTime;
+    }
+
+    public function setStartTime($startTime) {
+    	$this->startTime = $startTime;
+    	$this->queryParameters['StartTime'] = $startTime;
 	}
 
-	public function getContactGroups() {
-		return $this->contactGroups;
+    public function getName() {
+	    return $this->name;
+    }
+
+    public function setName($name) {
+    	$this->name = $name;
+    	$this->queryParameters['Name'] = $name;
 	}
 
-	public function setContactGroups($contactGroups) {
-		$this->contactGroups = $contactGroups;
-		$this->queryParameters["ContactGroups"]=$contactGroups;
+    public function getEvaluationCount() {
+	    return $this->evaluationCount;
+    }
+
+    public function setEvaluationCount($evaluationCount) {
+    	$this->evaluationCount = $evaluationCount;
+    	$this->queryParameters['EvaluationCount'] = $evaluationCount;
 	}
 
-	public function getEndTime() {
-		return $this->endTime;
+    public function getSilenceTime() {
+	    return $this->silenceTime;
+    }
+
+    public function setSilenceTime($silenceTime) {
+    	$this->silenceTime = $silenceTime;
+    	$this->queryParameters['SilenceTime'] = $silenceTime;
 	}
 
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
+    public function getId() {
+	    return $this->id;
+    }
+
+    public function setId($id) {
+    	$this->id = $id;
+    	$this->queryParameters['Id'] = $id;
 	}
 
-	public function getThreshold() {
-		return $this->threshold;
+    public function getNotifyType() {
+	    return $this->notifyType;
+    }
+
+    public function setNotifyType($notifyType) {
+    	$this->notifyType = $notifyType;
+    	$this->queryParameters['NotifyType'] = $notifyType;
 	}
 
-	public function setThreshold($threshold) {
-		$this->threshold = $threshold;
-		$this->queryParameters["Threshold"]=$threshold;
+    public function getComparisonOperator() {
+	    return $this->comparisonOperator;
+    }
+
+    public function setComparisonOperator($comparisonOperator) {
+    	$this->comparisonOperator = $comparisonOperator;
+    	$this->queryParameters['ComparisonOperator'] = $comparisonOperator;
 	}
 
-	public function getStartTime() {
-		return $this->startTime;
+    public function getStatistics() {
+	    return $this->statistics;
+    }
+
+    public function setStatistics($statistics) {
+    	$this->statistics = $statistics;
+    	$this->queryParameters['Statistics'] = $statistics;
 	}
 
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
-
-	public function getName() {
-		return $this->name;
-	}
-
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
-	}
-
-	public function getEvaluationCount() {
-		return $this->evaluationCount;
-	}
-
-	public function setEvaluationCount($evaluationCount) {
-		$this->evaluationCount = $evaluationCount;
-		$this->queryParameters["EvaluationCount"]=$evaluationCount;
-	}
-
-	public function getSilenceTime() {
-		return $this->silenceTime;
-	}
-
-	public function setSilenceTime($silenceTime) {
-		$this->silenceTime = $silenceTime;
-		$this->queryParameters["SilenceTime"]=$silenceTime;
-	}
-
-	public function getId() {
-		return $this->id;
-	}
-
-	public function setId($id) {
-		$this->id = $id;
-		$this->queryParameters["Id"]=$id;
-	}
-
-	public function getNotifyType() {
-		return $this->notifyType;
-	}
-
-	public function setNotifyType($notifyType) {
-		$this->notifyType = $notifyType;
-		$this->queryParameters["NotifyType"]=$notifyType;
-	}
-
-	public function getComparisonOperator() {
-		return $this->comparisonOperator;
-	}
-
-	public function setComparisonOperator($comparisonOperator) {
-		$this->comparisonOperator = $comparisonOperator;
-		$this->queryParameters["ComparisonOperator"]=$comparisonOperator;
-	}
-
-	public function getStatistics() {
-		return $this->statistics;
-	}
-
-	public function setStatistics($statistics) {
-		$this->statistics = $statistics;
-		$this->queryParameters["Statistics"]=$statistics;
-	}
-	
 }

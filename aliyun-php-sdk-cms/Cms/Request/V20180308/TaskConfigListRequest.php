@@ -21,65 +21,65 @@ namespace Cms\Request\V20180308;
 
 class TaskConfigListRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "TaskConfigList", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "TaskConfigList");
 		$this->setMethod("POST");
+    }
+
+    protected $groupId;
+
+    protected $pageSize;
+
+    protected $taskName;
+
+    protected $id;
+
+    protected $pageNumber;
+
+    public function getGroupId() {
+	    return $this->groupId;
+    }
+
+    public function setGroupId($groupId) {
+    	$this->groupId = $groupId;
+    	$this->queryParameters['GroupId'] = $groupId;
 	}
 
-	private  $groupId;
+    public function getPageSize() {
+	    return $this->pageSize;
+    }
 
-	private  $pageSize;
-
-	private  $taskName;
-
-	private  $id;
-
-	private  $pageNumber;
-
-	public function getGroupId() {
-		return $this->groupId;
+    public function setPageSize($pageSize) {
+    	$this->pageSize = $pageSize;
+    	$this->queryParameters['PageSize'] = $pageSize;
 	}
 
-	public function setGroupId($groupId) {
-		$this->groupId = $groupId;
-		$this->queryParameters["GroupId"]=$groupId;
+    public function getTaskName() {
+	    return $this->taskName;
+    }
+
+    public function setTaskName($taskName) {
+    	$this->taskName = $taskName;
+    	$this->queryParameters['TaskName'] = $taskName;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
+    public function getId() {
+	    return $this->id;
+    }
+
+    public function setId($id) {
+    	$this->id = $id;
+    	$this->queryParameters['Id'] = $id;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+    public function getPageNumber() {
+	    return $this->pageNumber;
+    }
+
+    public function setPageNumber($pageNumber) {
+    	$this->pageNumber = $pageNumber;
+    	$this->queryParameters['PageNumber'] = $pageNumber;
 	}
 
-	public function getTaskName() {
-		return $this->taskName;
-	}
-
-	public function setTaskName($taskName) {
-		$this->taskName = $taskName;
-		$this->queryParameters["TaskName"]=$taskName;
-	}
-
-	public function getId() {
-		return $this->id;
-	}
-
-	public function setId($id) {
-		$this->id = $id;
-		$this->queryParameters["Id"]=$id;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-	
 }

@@ -21,21 +21,21 @@ namespace Cms\Request\V20180308;
 
 class ListMyGroupCategoriesRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "ListMyGroupCategories", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "ListMyGroupCategories");
 		$this->setMethod("POST");
+    }
+
+    protected $groupId;
+
+    public function getGroupId() {
+	    return $this->groupId;
+    }
+
+    public function setGroupId($groupId) {
+    	$this->groupId = $groupId;
+    	$this->queryParameters['GroupId'] = $groupId;
 	}
 
-	private  $groupId;
-
-	public function getGroupId() {
-		return $this->groupId;
-	}
-
-	public function setGroupId($groupId) {
-		$this->groupId = $groupId;
-		$this->queryParameters["GroupId"]=$groupId;
-	}
-	
 }

@@ -21,43 +21,43 @@ namespace Cms\Request\V20180308;
 
 class UpdateMyGroupMembersRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "UpdateMyGroupMembers", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "UpdateMyGroupMembers");
 		$this->setMethod("POST");
+    }
+
+    protected $readers;
+
+    protected $groupId;
+
+    protected $masters;
+
+    public function getReaders() {
+	    return $this->readers;
+    }
+
+    public function setReaders($readers) {
+    	$this->readers = $readers;
+    	$this->queryParameters['Readers'] = $readers;
 	}
 
-	private  $readers;
+    public function getGroupId() {
+	    return $this->groupId;
+    }
 
-	private  $groupId;
-
-	private  $masters;
-
-	public function getReaders() {
-		return $this->readers;
+    public function setGroupId($groupId) {
+    	$this->groupId = $groupId;
+    	$this->queryParameters['GroupId'] = $groupId;
 	}
 
-	public function setReaders($readers) {
-		$this->readers = $readers;
-		$this->queryParameters["Readers"]=$readers;
+    public function getMasters() {
+	    return $this->masters;
+    }
+
+    public function setMasters($masters) {
+    	$this->masters = $masters;
+    	$this->queryParameters['Masters'] = $masters;
 	}
 
-	public function getGroupId() {
-		return $this->groupId;
-	}
-
-	public function setGroupId($groupId) {
-		$this->groupId = $groupId;
-		$this->queryParameters["GroupId"]=$groupId;
-	}
-
-	public function getMasters() {
-		return $this->masters;
-	}
-
-	public function setMasters($masters) {
-		$this->masters = $masters;
-		$this->queryParameters["Masters"]=$masters;
-	}
-	
 }

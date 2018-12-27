@@ -21,153 +21,153 @@ namespace Cms\Request\V20180308;
 
 class DescribeAlarmHistoryRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "DescribeAlarmHistory", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "DescribeAlarmHistory");
 		$this->setMethod("POST");
+    }
+
+    protected $alertName;
+
+    protected $groupId;
+
+    protected $endTime;
+
+    protected $ruleName;
+
+    protected $startTime;
+
+    protected $ascending;
+
+    protected $onlyCount;
+
+    protected $namespace;
+
+    protected $pageSize;
+
+    protected $state;
+
+    protected $page;
+
+    protected $metricName;
+
+    protected $status;
+
+    public function getAlertName() {
+	    return $this->alertName;
+    }
+
+    public function setAlertName($alertName) {
+    	$this->alertName = $alertName;
+    	$this->queryParameters['AlertName'] = $alertName;
 	}
 
-	private  $alertName;
+    public function getGroupId() {
+	    return $this->groupId;
+    }
 
-	private  $groupId;
-
-	private  $endTime;
-
-	private  $ruleName;
-
-	private  $startTime;
-
-	private  $ascending;
-
-	private  $onlyCount;
-
-	private  $namespace;
-
-	private  $pageSize;
-
-	private  $state;
-
-	private  $page;
-
-	private  $metricName;
-
-	private  $status;
-
-	public function getAlertName() {
-		return $this->alertName;
+    public function setGroupId($groupId) {
+    	$this->groupId = $groupId;
+    	$this->queryParameters['GroupId'] = $groupId;
 	}
 
-	public function setAlertName($alertName) {
-		$this->alertName = $alertName;
-		$this->queryParameters["AlertName"]=$alertName;
+    public function getEndTime() {
+	    return $this->endTime;
+    }
+
+    public function setEndTime($endTime) {
+    	$this->endTime = $endTime;
+    	$this->queryParameters['EndTime'] = $endTime;
 	}
 
-	public function getGroupId() {
-		return $this->groupId;
+    public function getRuleName() {
+	    return $this->ruleName;
+    }
+
+    public function setRuleName($ruleName) {
+    	$this->ruleName = $ruleName;
+    	$this->queryParameters['RuleName'] = $ruleName;
 	}
 
-	public function setGroupId($groupId) {
-		$this->groupId = $groupId;
-		$this->queryParameters["GroupId"]=$groupId;
+    public function getStartTime() {
+	    return $this->startTime;
+    }
+
+    public function setStartTime($startTime) {
+    	$this->startTime = $startTime;
+    	$this->queryParameters['StartTime'] = $startTime;
 	}
 
-	public function getEndTime() {
-		return $this->endTime;
+    public function getAscending() {
+	    return $this->ascending;
+    }
+
+    public function setAscending($ascending) {
+    	$this->ascending = $ascending;
+    	$this->queryParameters['Ascending'] = $ascending;
 	}
 
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
+    public function getOnlyCount() {
+	    return $this->onlyCount;
+    }
+
+    public function setOnlyCount($onlyCount) {
+    	$this->onlyCount = $onlyCount;
+    	$this->queryParameters['OnlyCount'] = $onlyCount;
 	}
 
-	public function getRuleName() {
-		return $this->ruleName;
+    public function getNamespace() {
+	    return $this->namespace;
+    }
+
+    public function setNamespace($namespace) {
+    	$this->namespace = $namespace;
+    	$this->queryParameters['Namespace'] = $namespace;
 	}
 
-	public function setRuleName($ruleName) {
-		$this->ruleName = $ruleName;
-		$this->queryParameters["RuleName"]=$ruleName;
+    public function getPageSize() {
+	    return $this->pageSize;
+    }
+
+    public function setPageSize($pageSize) {
+    	$this->pageSize = $pageSize;
+    	$this->queryParameters['PageSize'] = $pageSize;
 	}
 
-	public function getStartTime() {
-		return $this->startTime;
+    public function getState() {
+	    return $this->state;
+    }
+
+    public function setState($state) {
+    	$this->state = $state;
+    	$this->queryParameters['State'] = $state;
 	}
 
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
+    public function getPage() {
+	    return $this->page;
+    }
+
+    public function setPage($page) {
+    	$this->page = $page;
+    	$this->queryParameters['Page'] = $page;
 	}
 
-	public function getAscending() {
-		return $this->ascending;
+    public function getMetricName() {
+	    return $this->metricName;
+    }
+
+    public function setMetricName($metricName) {
+    	$this->metricName = $metricName;
+    	$this->queryParameters['MetricName'] = $metricName;
 	}
 
-	public function setAscending($ascending) {
-		$this->ascending = $ascending;
-		$this->queryParameters["Ascending"]=$ascending;
+    public function getStatus() {
+	    return $this->status;
+    }
+
+    public function setStatus($status) {
+    	$this->status = $status;
+    	$this->queryParameters['Status'] = $status;
 	}
 
-	public function getOnlyCount() {
-		return $this->onlyCount;
-	}
-
-	public function setOnlyCount($onlyCount) {
-		$this->onlyCount = $onlyCount;
-		$this->queryParameters["OnlyCount"]=$onlyCount;
-	}
-
-	public function getNamespace() {
-		return $this->namespace;
-	}
-
-	public function setNamespace($namespace) {
-		$this->namespace = $namespace;
-		$this->queryParameters["Namespace"]=$namespace;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getState() {
-		return $this->state;
-	}
-
-	public function setState($state) {
-		$this->state = $state;
-		$this->queryParameters["State"]=$state;
-	}
-
-	public function getPage() {
-		return $this->page;
-	}
-
-	public function setPage($page) {
-		$this->page = $page;
-		$this->queryParameters["Page"]=$page;
-	}
-
-	public function getMetricName() {
-		return $this->metricName;
-	}
-
-	public function setMetricName($metricName) {
-		$this->metricName = $metricName;
-		$this->queryParameters["MetricName"]=$metricName;
-	}
-
-	public function getStatus() {
-		return $this->status;
-	}
-
-	public function setStatus($status) {
-		$this->status = $status;
-		$this->queryParameters["Status"]=$status;
-	}
-	
 }

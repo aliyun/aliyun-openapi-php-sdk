@@ -21,32 +21,32 @@ namespace Cms\Request\V20180308;
 
 class PutGroupDynamicRuleRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "PutGroupDynamicRule", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "PutGroupDynamicRule");
 		$this->setMethod("POST");
+    }
+
+    protected $groupId;
+
+    protected $groupRuleArrayJson;
+
+    public function getGroupId() {
+	    return $this->groupId;
+    }
+
+    public function setGroupId($groupId) {
+    	$this->groupId = $groupId;
+    	$this->queryParameters['GroupId'] = $groupId;
 	}
 
-	private  $groupId;
+    public function getGroupRuleArrayJson() {
+	    return $this->groupRuleArrayJson;
+    }
 
-	private  $groupRuleArrayJson;
-
-	public function getGroupId() {
-		return $this->groupId;
+    public function setGroupRuleArrayJson($groupRuleArrayJson) {
+    	$this->groupRuleArrayJson = $groupRuleArrayJson;
+    	$this->queryParameters['GroupRuleArrayJson'] = $groupRuleArrayJson;
 	}
 
-	public function setGroupId($groupId) {
-		$this->groupId = $groupId;
-		$this->queryParameters["GroupId"]=$groupId;
-	}
-
-	public function getGroupRuleArrayJson() {
-		return $this->groupRuleArrayJson;
-	}
-
-	public function setGroupRuleArrayJson($groupRuleArrayJson) {
-		$this->groupRuleArrayJson = $groupRuleArrayJson;
-		$this->queryParameters["GroupRuleArrayJson"]=$groupRuleArrayJson;
-	}
-	
 }

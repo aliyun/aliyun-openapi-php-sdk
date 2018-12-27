@@ -21,21 +21,21 @@ namespace Cms\Request\V20180308;
 
 class QuerySystemEventHistogramRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "QuerySystemEventHistogram", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "QuerySystemEventHistogram");
 		$this->setMethod("POST");
+    }
+
+    protected $queryJson;
+
+    public function getQueryJson() {
+	    return $this->queryJson;
+    }
+
+    public function setQueryJson($queryJson) {
+    	$this->queryJson = $queryJson;
+    	$this->queryParameters['QueryJson'] = $queryJson;
 	}
 
-	private  $queryJson;
-
-	public function getQueryJson() {
-		return $this->queryJson;
-	}
-
-	public function setQueryJson($queryJson) {
-		$this->queryJson = $queryJson;
-		$this->queryParameters["QueryJson"]=$queryJson;
-	}
-	
 }

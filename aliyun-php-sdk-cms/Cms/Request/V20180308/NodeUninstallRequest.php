@@ -21,21 +21,21 @@ namespace Cms\Request\V20180308;
 
 class NodeUninstallRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "NodeUninstall", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "NodeUninstall");
 		$this->setMethod("POST");
+    }
+
+    protected $instanceId;
+
+    public function getInstanceId() {
+	    return $this->instanceId;
+    }
+
+    public function setInstanceId($instanceId) {
+    	$this->instanceId = $instanceId;
+    	$this->queryParameters['InstanceId'] = $instanceId;
 	}
 
-	private  $instanceId;
-
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
-
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
-	
 }

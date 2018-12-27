@@ -21,43 +21,54 @@ namespace Cms\Request\V20180308;
 
 class DeleteMyGroupInstancesRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "DeleteMyGroupInstances", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "DeleteMyGroupInstances");
 		$this->setMethod("POST");
+    }
+
+    protected $instanceIds;
+
+    protected $instanceIdList;
+
+    protected $groupId;
+
+    protected $category;
+
+    public function getInstanceIds() {
+	    return $this->instanceIds;
+    }
+
+    public function setInstanceIds($instanceIds) {
+    	$this->instanceIds = $instanceIds;
+    	$this->queryParameters['InstanceIds'] = $instanceIds;
 	}
 
-	private  $instanceIds;
+    public function getInstanceIdList() {
+	    return $this->instanceIdList;
+    }
 
-	private  $instanceIdList;
-
-	private  $groupId;
-
-	public function getInstanceIds() {
-		return $this->instanceIds;
+    public function setInstanceIdList($instanceIdList) {
+    	$this->instanceIdList = $instanceIdList;
+    	$this->queryParameters['InstanceIdList'] = $instanceIdList;
 	}
 
-	public function setInstanceIds($instanceIds) {
-		$this->instanceIds = $instanceIds;
-		$this->queryParameters["InstanceIds"]=$instanceIds;
+    public function getGroupId() {
+	    return $this->groupId;
+    }
+
+    public function setGroupId($groupId) {
+    	$this->groupId = $groupId;
+    	$this->queryParameters['GroupId'] = $groupId;
 	}
 
-	public function getInstanceIdList() {
-		return $this->instanceIdList;
+    public function getCategory() {
+	    return $this->category;
+    }
+
+    public function setCategory($category) {
+    	$this->category = $category;
+    	$this->queryParameters['Category'] = $category;
 	}
 
-	public function setInstanceIdList($instanceIdList) {
-		$this->instanceIdList = $instanceIdList;
-		$this->queryParameters["InstanceIdList"]=$instanceIdList;
-	}
-
-	public function getGroupId() {
-		return $this->groupId;
-	}
-
-	public function setGroupId($groupId) {
-		$this->groupId = $groupId;
-		$this->queryParameters["GroupId"]=$groupId;
-	}
-	
 }

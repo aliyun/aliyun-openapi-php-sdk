@@ -21,32 +21,32 @@ namespace Cms\Request\V20180308;
 
 class EnableActiveAlertRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "EnableActiveAlert", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "EnableActiveAlert");
 		$this->setMethod("POST");
+    }
+
+    protected $product;
+
+    protected $userId;
+
+    public function getProduct() {
+	    return $this->product;
+    }
+
+    public function setProduct($product) {
+    	$this->product = $product;
+    	$this->queryParameters['Product'] = $product;
 	}
 
-	private  $product;
+    public function getUserId() {
+	    return $this->userId;
+    }
 
-	private  $userId;
-
-	public function getProduct() {
-		return $this->product;
+    public function setUserId($userId) {
+    	$this->userId = $userId;
+    	$this->queryParameters['UserId'] = $userId;
 	}
 
-	public function setProduct($product) {
-		$this->product = $product;
-		$this->queryParameters["Product"]=$product;
-	}
-
-	public function getUserId() {
-		return $this->userId;
-	}
-
-	public function setUserId($userId) {
-		$this->userId = $userId;
-		$this->queryParameters["UserId"]=$userId;
-	}
-	
 }

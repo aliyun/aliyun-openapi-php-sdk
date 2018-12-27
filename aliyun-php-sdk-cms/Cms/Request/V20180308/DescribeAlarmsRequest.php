@@ -21,131 +21,131 @@ namespace Cms\Request\V20180308;
 
 class DescribeAlarmsRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "DescribeAlarms", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "DescribeAlarms");
 		$this->setMethod("POST");
+    }
+
+    protected $enableState;
+
+    protected $names;
+
+    protected $displayName;
+
+    protected $groupId;
+
+    protected $namespace;
+
+    protected $pageSize;
+
+    protected $alertState;
+
+    protected $nameKeyword;
+
+    protected $groupBy;
+
+    protected $page;
+
+    protected $metricName;
+
+    public function getEnableState() {
+	    return $this->enableState;
+    }
+
+    public function setEnableState($enableState) {
+    	$this->enableState = $enableState;
+    	$this->queryParameters['EnableState'] = $enableState;
 	}
 
-	private  $enableState;
+    public function getNames() {
+	    return $this->names;
+    }
 
-	private  $names;
-
-	private  $displayName;
-
-	private  $groupId;
-
-	private  $namespace;
-
-	private  $pageSize;
-
-	private  $alertState;
-
-	private  $nameKeyword;
-
-	private  $groupBy;
-
-	private  $page;
-
-	private  $metricName;
-
-	public function getEnableState() {
-		return $this->enableState;
+    public function setNames($names) {
+    	$this->names = $names;
+    	$this->queryParameters['Names'] = $names;
 	}
 
-	public function setEnableState($enableState) {
-		$this->enableState = $enableState;
-		$this->queryParameters["EnableState"]=$enableState;
+    public function getDisplayName() {
+	    return $this->displayName;
+    }
+
+    public function setDisplayName($displayName) {
+    	$this->displayName = $displayName;
+    	$this->queryParameters['DisplayName'] = $displayName;
 	}
 
-	public function getNames() {
-		return $this->names;
+    public function getGroupId() {
+	    return $this->groupId;
+    }
+
+    public function setGroupId($groupId) {
+    	$this->groupId = $groupId;
+    	$this->queryParameters['GroupId'] = $groupId;
 	}
 
-	public function setNames($names) {
-		$this->names = $names;
-		$this->queryParameters["Names"]=$names;
+    public function getNamespace() {
+	    return $this->namespace;
+    }
+
+    public function setNamespace($namespace) {
+    	$this->namespace = $namespace;
+    	$this->queryParameters['Namespace'] = $namespace;
 	}
 
-	public function getDisplayName() {
-		return $this->displayName;
+    public function getPageSize() {
+	    return $this->pageSize;
+    }
+
+    public function setPageSize($pageSize) {
+    	$this->pageSize = $pageSize;
+    	$this->queryParameters['PageSize'] = $pageSize;
 	}
 
-	public function setDisplayName($displayName) {
-		$this->displayName = $displayName;
-		$this->queryParameters["DisplayName"]=$displayName;
+    public function getAlertState() {
+	    return $this->alertState;
+    }
+
+    public function setAlertState($alertState) {
+    	$this->alertState = $alertState;
+    	$this->queryParameters['AlertState'] = $alertState;
 	}
 
-	public function getGroupId() {
-		return $this->groupId;
+    public function getNameKeyword() {
+	    return $this->nameKeyword;
+    }
+
+    public function setNameKeyword($nameKeyword) {
+    	$this->nameKeyword = $nameKeyword;
+    	$this->queryParameters['NameKeyword'] = $nameKeyword;
 	}
 
-	public function setGroupId($groupId) {
-		$this->groupId = $groupId;
-		$this->queryParameters["GroupId"]=$groupId;
+    public function getGroupBy() {
+	    return $this->groupBy;
+    }
+
+    public function setGroupBy($groupBy) {
+    	$this->groupBy = $groupBy;
+    	$this->queryParameters['GroupBy'] = $groupBy;
 	}
 
-	public function getNamespace() {
-		return $this->namespace;
+    public function getPage() {
+	    return $this->page;
+    }
+
+    public function setPage($page) {
+    	$this->page = $page;
+    	$this->queryParameters['Page'] = $page;
 	}
 
-	public function setNamespace($namespace) {
-		$this->namespace = $namespace;
-		$this->queryParameters["Namespace"]=$namespace;
+    public function getMetricName() {
+	    return $this->metricName;
+    }
+
+    public function setMetricName($metricName) {
+    	$this->metricName = $metricName;
+    	$this->queryParameters['MetricName'] = $metricName;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getAlertState() {
-		return $this->alertState;
-	}
-
-	public function setAlertState($alertState) {
-		$this->alertState = $alertState;
-		$this->queryParameters["AlertState"]=$alertState;
-	}
-
-	public function getNameKeyword() {
-		return $this->nameKeyword;
-	}
-
-	public function setNameKeyword($nameKeyword) {
-		$this->nameKeyword = $nameKeyword;
-		$this->queryParameters["NameKeyword"]=$nameKeyword;
-	}
-
-	public function getGroupBy() {
-		return $this->groupBy;
-	}
-
-	public function setGroupBy($groupBy) {
-		$this->groupBy = $groupBy;
-		$this->queryParameters["GroupBy"]=$groupBy;
-	}
-
-	public function getPage() {
-		return $this->page;
-	}
-
-	public function setPage($page) {
-		$this->page = $page;
-		$this->queryParameters["Page"]=$page;
-	}
-
-	public function getMetricName() {
-		return $this->metricName;
-	}
-
-	public function setMetricName($metricName) {
-		$this->metricName = $metricName;
-		$this->queryParameters["MetricName"]=$metricName;
-	}
-	
 }

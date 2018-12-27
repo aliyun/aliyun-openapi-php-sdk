@@ -21,32 +21,32 @@ namespace Cms\Request\V20180308;
 
 class QuerySystemEventDemoRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "QuerySystemEventDemo", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "QuerySystemEventDemo");
 		$this->setMethod("POST");
+    }
+
+    protected $product;
+
+    protected $eventName;
+
+    public function getProduct() {
+	    return $this->product;
+    }
+
+    public function setProduct($product) {
+    	$this->product = $product;
+    	$this->queryParameters['Product'] = $product;
 	}
 
-	private  $product;
+    public function getEventName() {
+	    return $this->eventName;
+    }
 
-	private  $eventName;
-
-	public function getProduct() {
-		return $this->product;
+    public function setEventName($eventName) {
+    	$this->eventName = $eventName;
+    	$this->queryParameters['EventName'] = $eventName;
 	}
 
-	public function setProduct($product) {
-		$this->product = $product;
-		$this->queryParameters["Product"]=$product;
-	}
-
-	public function getEventName() {
-		return $this->eventName;
-	}
-
-	public function setEventName($eventName) {
-		$this->eventName = $eventName;
-		$this->queryParameters["EventName"]=$eventName;
-	}
-	
 }

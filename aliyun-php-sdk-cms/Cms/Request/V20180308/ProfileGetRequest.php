@@ -21,21 +21,21 @@ namespace Cms\Request\V20180308;
 
 class ProfileGetRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "ProfileGet", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "ProfileGet");
 		$this->setMethod("POST");
+    }
+
+    protected $userId;
+
+    public function getUserId() {
+	    return $this->userId;
+    }
+
+    public function setUserId($userId) {
+    	$this->userId = $userId;
+    	$this->queryParameters['UserId'] = $userId;
 	}
 
-	private  $userId;
-
-	public function getUserId() {
-		return $this->userId;
-	}
-
-	public function setUserId($userId) {
-		$this->userId = $userId;
-		$this->queryParameters["UserId"]=$userId;
-	}
-	
 }

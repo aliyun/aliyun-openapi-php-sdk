@@ -21,34 +21,33 @@ namespace Cms\Request\V20180308;
 
 class DeleteEventTargetsRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "DeleteEventTargets", "cms", "openAPI");
-		$this->setMethod("POST");
-	}
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "DeleteEventTargets");
+    }
 
-	private  $Idss;
+    protected $Idss;
 
-	private  $ruleName;
+    protected $ruleName;
 
-	public function getIdss() {
-		return $this->Idss;
-	}
+    public function getIdss() {
+	    return $this->Idss;
+    }
 
-	public function setIdss($Idss) {
-		$this->Idss = $Idss;
+    public function setIdss($Idss) {
+    	$this->Idss = $Idss;
 		for ($i = 0; $i < count($Idss); $i ++) {	
 			$this->queryParameters["Ids.".($i+1)] = $Idss[$i];
 		}
 	}
 
-	public function getRuleName() {
-		return $this->ruleName;
+    public function getRuleName() {
+	    return $this->ruleName;
+    }
+
+    public function setRuleName($ruleName) {
+    	$this->ruleName = $ruleName;
+    	$this->queryParameters['RuleName'] = $ruleName;
 	}
 
-	public function setRuleName($ruleName) {
-		$this->ruleName = $ruleName;
-		$this->queryParameters["RuleName"]=$ruleName;
-	}
-	
 }

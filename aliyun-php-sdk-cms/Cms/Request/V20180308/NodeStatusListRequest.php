@@ -21,21 +21,21 @@ namespace Cms\Request\V20180308;
 
 class NodeStatusListRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "NodeStatusList", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "NodeStatusList");
 		$this->setMethod("POST");
+    }
+
+    protected $instanceIds;
+
+    public function getInstanceIds() {
+	    return $this->instanceIds;
+    }
+
+    public function setInstanceIds($instanceIds) {
+    	$this->instanceIds = $instanceIds;
+    	$this->queryParameters['InstanceIds'] = $instanceIds;
 	}
 
-	private  $instanceIds;
-
-	public function getInstanceIds() {
-		return $this->instanceIds;
-	}
-
-	public function setInstanceIds($instanceIds) {
-		$this->instanceIds = $instanceIds;
-		$this->queryParameters["InstanceIds"]=$instanceIds;
-	}
-	
 }

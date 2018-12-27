@@ -21,109 +21,109 @@ namespace Cms\Request\V20180308;
 
 class NodeListRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "NodeList", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "NodeList");
 		$this->setMethod("POST");
+    }
+
+    protected $hostName;
+
+    protected $instanceIds;
+
+    protected $instanceRegionId;
+
+    protected $pageSize;
+
+    protected $keyWord;
+
+    protected $userId;
+
+    protected $serialNumbers;
+
+    protected $pageNumber;
+
+    protected $status;
+
+    public function getHostName() {
+	    return $this->hostName;
+    }
+
+    public function setHostName($hostName) {
+    	$this->hostName = $hostName;
+    	$this->queryParameters['HostName'] = $hostName;
 	}
 
-	private  $hostName;
+    public function getInstanceIds() {
+	    return $this->instanceIds;
+    }
 
-	private  $instanceIds;
-
-	private  $instanceRegionId;
-
-	private  $pageSize;
-
-	private  $keyWord;
-
-	private  $userId;
-
-	private  $serialNumbers;
-
-	private  $pageNumber;
-
-	private  $status;
-
-	public function getHostName() {
-		return $this->hostName;
+    public function setInstanceIds($instanceIds) {
+    	$this->instanceIds = $instanceIds;
+    	$this->queryParameters['InstanceIds'] = $instanceIds;
 	}
 
-	public function setHostName($hostName) {
-		$this->hostName = $hostName;
-		$this->queryParameters["HostName"]=$hostName;
+    public function getInstanceRegionId() {
+	    return $this->instanceRegionId;
+    }
+
+    public function setInstanceRegionId($instanceRegionId) {
+    	$this->instanceRegionId = $instanceRegionId;
+    	$this->queryParameters['InstanceRegionId'] = $instanceRegionId;
 	}
 
-	public function getInstanceIds() {
-		return $this->instanceIds;
+    public function getPageSize() {
+	    return $this->pageSize;
+    }
+
+    public function setPageSize($pageSize) {
+    	$this->pageSize = $pageSize;
+    	$this->queryParameters['PageSize'] = $pageSize;
 	}
 
-	public function setInstanceIds($instanceIds) {
-		$this->instanceIds = $instanceIds;
-		$this->queryParameters["InstanceIds"]=$instanceIds;
+    public function getKeyWord() {
+	    return $this->keyWord;
+    }
+
+    public function setKeyWord($keyWord) {
+    	$this->keyWord = $keyWord;
+    	$this->queryParameters['KeyWord'] = $keyWord;
 	}
 
-	public function getInstanceRegionId() {
-		return $this->instanceRegionId;
+    public function getUserId() {
+	    return $this->userId;
+    }
+
+    public function setUserId($userId) {
+    	$this->userId = $userId;
+    	$this->queryParameters['UserId'] = $userId;
 	}
 
-	public function setInstanceRegionId($instanceRegionId) {
-		$this->instanceRegionId = $instanceRegionId;
-		$this->queryParameters["InstanceRegionId"]=$instanceRegionId;
+    public function getSerialNumbers() {
+	    return $this->serialNumbers;
+    }
+
+    public function setSerialNumbers($serialNumbers) {
+    	$this->serialNumbers = $serialNumbers;
+    	$this->queryParameters['SerialNumbers'] = $serialNumbers;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
+    public function getPageNumber() {
+	    return $this->pageNumber;
+    }
+
+    public function setPageNumber($pageNumber) {
+    	$this->pageNumber = $pageNumber;
+    	$this->queryParameters['PageNumber'] = $pageNumber;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+    public function getStatus() {
+	    return $this->status;
+    }
+
+    public function setStatus($status) {
+    	$this->status = $status;
+    	$this->queryParameters['Status'] = $status;
 	}
 
-	public function getKeyWord() {
-		return $this->keyWord;
-	}
-
-	public function setKeyWord($keyWord) {
-		$this->keyWord = $keyWord;
-		$this->queryParameters["KeyWord"]=$keyWord;
-	}
-
-	public function getUserId() {
-		return $this->userId;
-	}
-
-	public function setUserId($userId) {
-		$this->userId = $userId;
-		$this->queryParameters["UserId"]=$userId;
-	}
-
-	public function getSerialNumbers() {
-		return $this->serialNumbers;
-	}
-
-	public function setSerialNumbers($serialNumbers) {
-		$this->serialNumbers = $serialNumbers;
-		$this->queryParameters["SerialNumbers"]=$serialNumbers;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
-	public function getStatus() {
-		return $this->status;
-	}
-
-	public function setStatus($status) {
-		$this->status = $status;
-		$this->queryParameters["Status"]=$status;
-	}
-	
 }

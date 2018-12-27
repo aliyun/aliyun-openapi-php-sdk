@@ -21,87 +21,87 @@ namespace Cms\Request\V20180308;
 
 class ListMyGroupInstancesDetailsRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "ListMyGroupInstancesDetails", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "ListMyGroupInstancesDetails");
 		$this->setMethod("POST");
+    }
+
+    protected $total;
+
+    protected $instanceIds;
+
+    protected $groupId;
+
+    protected $pageSize;
+
+    protected $category;
+
+    protected $keyword;
+
+    protected $pageNumber;
+
+    public function getTotal() {
+	    return $this->total;
+    }
+
+    public function setTotal($total) {
+    	$this->total = $total;
+    	$this->queryParameters['Total'] = $total;
 	}
 
-	private  $total;
+    public function getInstanceIds() {
+	    return $this->instanceIds;
+    }
 
-	private  $instanceIds;
-
-	private  $groupId;
-
-	private  $pageSize;
-
-	private  $category;
-
-	private  $keyword;
-
-	private  $pageNumber;
-
-	public function getTotal() {
-		return $this->total;
+    public function setInstanceIds($instanceIds) {
+    	$this->instanceIds = $instanceIds;
+    	$this->queryParameters['InstanceIds'] = $instanceIds;
 	}
 
-	public function setTotal($total) {
-		$this->total = $total;
-		$this->queryParameters["Total"]=$total;
+    public function getGroupId() {
+	    return $this->groupId;
+    }
+
+    public function setGroupId($groupId) {
+    	$this->groupId = $groupId;
+    	$this->queryParameters['GroupId'] = $groupId;
 	}
 
-	public function getInstanceIds() {
-		return $this->instanceIds;
+    public function getPageSize() {
+	    return $this->pageSize;
+    }
+
+    public function setPageSize($pageSize) {
+    	$this->pageSize = $pageSize;
+    	$this->queryParameters['PageSize'] = $pageSize;
 	}
 
-	public function setInstanceIds($instanceIds) {
-		$this->instanceIds = $instanceIds;
-		$this->queryParameters["InstanceIds"]=$instanceIds;
+    public function getCategory() {
+	    return $this->category;
+    }
+
+    public function setCategory($category) {
+    	$this->category = $category;
+    	$this->queryParameters['Category'] = $category;
 	}
 
-	public function getGroupId() {
-		return $this->groupId;
+    public function getKeyword() {
+	    return $this->keyword;
+    }
+
+    public function setKeyword($keyword) {
+    	$this->keyword = $keyword;
+    	$this->queryParameters['Keyword'] = $keyword;
 	}
 
-	public function setGroupId($groupId) {
-		$this->groupId = $groupId;
-		$this->queryParameters["GroupId"]=$groupId;
+    public function getPageNumber() {
+	    return $this->pageNumber;
+    }
+
+    public function setPageNumber($pageNumber) {
+    	$this->pageNumber = $pageNumber;
+    	$this->queryParameters['PageNumber'] = $pageNumber;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getCategory() {
-		return $this->category;
-	}
-
-	public function setCategory($category) {
-		$this->category = $category;
-		$this->queryParameters["Category"]=$category;
-	}
-
-	public function getKeyword() {
-		return $this->keyword;
-	}
-
-	public function setKeyword($keyword) {
-		$this->keyword = $keyword;
-		$this->queryParameters["Keyword"]=$keyword;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-	
 }

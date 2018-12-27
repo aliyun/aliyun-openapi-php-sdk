@@ -21,43 +21,43 @@ namespace Cms\Request\V20180308;
 
 class NodeInstallRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "NodeInstall", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "NodeInstall");
 		$this->setMethod("POST");
+    }
+
+    protected $instanceId;
+
+    protected $force;
+
+    protected $userId;
+
+    public function getInstanceId() {
+	    return $this->instanceId;
+    }
+
+    public function setInstanceId($instanceId) {
+    	$this->instanceId = $instanceId;
+    	$this->queryParameters['InstanceId'] = $instanceId;
 	}
 
-	private  $instanceId;
+    public function getForce() {
+	    return $this->force;
+    }
 
-	private  $force;
-
-	private  $userId;
-
-	public function getInstanceId() {
-		return $this->instanceId;
+    public function setForce($force) {
+    	$this->force = $force;
+    	$this->queryParameters['Force'] = $force;
 	}
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
+    public function getUserId() {
+	    return $this->userId;
+    }
+
+    public function setUserId($userId) {
+    	$this->userId = $userId;
+    	$this->queryParameters['UserId'] = $userId;
 	}
 
-	public function getForce() {
-		return $this->force;
-	}
-
-	public function setForce($force) {
-		$this->force = $force;
-		$this->queryParameters["Force"]=$force;
-	}
-
-	public function getUserId() {
-		return $this->userId;
-	}
-
-	public function setUserId($userId) {
-		$this->userId = $userId;
-		$this->queryParameters["UserId"]=$userId;
-	}
-	
 }

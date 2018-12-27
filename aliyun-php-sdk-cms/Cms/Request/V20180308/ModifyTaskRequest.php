@@ -21,98 +21,109 @@ namespace Cms\Request\V20180308;
 
 class ModifyTaskRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "ModifyTask", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "ModifyTask");
 		$this->setMethod("POST");
+    }
+
+    protected $caller;
+
+    protected $address;
+
+    protected $ispCity;
+
+    protected $alertIds;
+
+    protected $options;
+
+    protected $taskName;
+
+    protected $interval;
+
+    protected $alertRule;
+
+    protected $taskId;
+
+    public function getcaller() {
+	    return $this->caller;
+    }
+
+    public function setcaller($caller) {
+    	$this->caller = $caller;
+    	$this->queryParameters['caller'] = $caller;
 	}
 
-	private  $address;
+    public function getAddress() {
+	    return $this->address;
+    }
 
-	private  $ispCity;
-
-	private  $alertIds;
-
-	private  $options;
-
-	private  $taskName;
-
-	private  $interval;
-
-	private  $alertRule;
-
-	private  $taskId;
-
-	public function getAddress() {
-		return $this->address;
+    public function setAddress($address) {
+    	$this->address = $address;
+    	$this->queryParameters['Address'] = $address;
 	}
 
-	public function setAddress($address) {
-		$this->address = $address;
-		$this->queryParameters["Address"]=$address;
+    public function getIspCity() {
+	    return $this->ispCity;
+    }
+
+    public function setIspCity($ispCity) {
+    	$this->ispCity = $ispCity;
+    	$this->queryParameters['IspCity'] = $ispCity;
 	}
 
-	public function getIspCity() {
-		return $this->ispCity;
+    public function getAlertIds() {
+	    return $this->alertIds;
+    }
+
+    public function setAlertIds($alertIds) {
+    	$this->alertIds = $alertIds;
+    	$this->queryParameters['AlertIds'] = $alertIds;
 	}
 
-	public function setIspCity($ispCity) {
-		$this->ispCity = $ispCity;
-		$this->queryParameters["IspCity"]=$ispCity;
+    public function getOptions() {
+	    return $this->options;
+    }
+
+    public function setOptions($options) {
+    	$this->options = $options;
+    	$this->queryParameters['Options'] = $options;
 	}
 
-	public function getAlertIds() {
-		return $this->alertIds;
+    public function getTaskName() {
+	    return $this->taskName;
+    }
+
+    public function setTaskName($taskName) {
+    	$this->taskName = $taskName;
+    	$this->queryParameters['TaskName'] = $taskName;
 	}
 
-	public function setAlertIds($alertIds) {
-		$this->alertIds = $alertIds;
-		$this->queryParameters["AlertIds"]=$alertIds;
+    public function getInterval() {
+	    return $this->interval;
+    }
+
+    public function setInterval($interval) {
+    	$this->interval = $interval;
+    	$this->queryParameters['Interval'] = $interval;
 	}
 
-	public function getOptions() {
-		return $this->options;
+    public function getAlertRule() {
+	    return $this->alertRule;
+    }
+
+    public function setAlertRule($alertRule) {
+    	$this->alertRule = $alertRule;
+    	$this->queryParameters['AlertRule'] = $alertRule;
 	}
 
-	public function setOptions($options) {
-		$this->options = $options;
-		$this->queryParameters["Options"]=$options;
+    public function getTaskId() {
+	    return $this->taskId;
+    }
+
+    public function setTaskId($taskId) {
+    	$this->taskId = $taskId;
+    	$this->queryParameters['TaskId'] = $taskId;
 	}
 
-	public function getTaskName() {
-		return $this->taskName;
-	}
-
-	public function setTaskName($taskName) {
-		$this->taskName = $taskName;
-		$this->queryParameters["TaskName"]=$taskName;
-	}
-
-	public function getInterval() {
-		return $this->interval;
-	}
-
-	public function setInterval($interval) {
-		$this->interval = $interval;
-		$this->queryParameters["Interval"]=$interval;
-	}
-
-	public function getAlertRule() {
-		return $this->alertRule;
-	}
-
-	public function setAlertRule($alertRule) {
-		$this->alertRule = $alertRule;
-		$this->queryParameters["AlertRule"]=$alertRule;
-	}
-
-	public function getTaskId() {
-		return $this->taskId;
-	}
-
-	public function setTaskId($taskId) {
-		$this->taskId = $taskId;
-		$this->queryParameters["TaskId"]=$taskId;
-	}
-	
 }

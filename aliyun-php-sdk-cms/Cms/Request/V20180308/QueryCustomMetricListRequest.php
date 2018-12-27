@@ -21,76 +21,76 @@ namespace Cms\Request\V20180308;
 
 class QueryCustomMetricListRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "QueryCustomMetricList", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "QueryCustomMetricList");
 		$this->setMethod("POST");
+    }
+
+    protected $size;
+
+    protected $groupId;
+
+    protected $page;
+
+    protected $metricName;
+
+    protected $dimension;
+
+    protected $md5;
+
+    public function getSize() {
+	    return $this->size;
+    }
+
+    public function setSize($size) {
+    	$this->size = $size;
+    	$this->queryParameters['Size'] = $size;
 	}
 
-	private  $size;
+    public function getGroupId() {
+	    return $this->groupId;
+    }
 
-	private  $groupId;
-
-	private  $page;
-
-	private  $metricName;
-
-	private  $dimension;
-
-	private  $md5;
-
-	public function getSize() {
-		return $this->size;
+    public function setGroupId($groupId) {
+    	$this->groupId = $groupId;
+    	$this->queryParameters['GroupId'] = $groupId;
 	}
 
-	public function setSize($size) {
-		$this->size = $size;
-		$this->queryParameters["Size"]=$size;
+    public function getPage() {
+	    return $this->page;
+    }
+
+    public function setPage($page) {
+    	$this->page = $page;
+    	$this->queryParameters['Page'] = $page;
 	}
 
-	public function getGroupId() {
-		return $this->groupId;
+    public function getMetricName() {
+	    return $this->metricName;
+    }
+
+    public function setMetricName($metricName) {
+    	$this->metricName = $metricName;
+    	$this->queryParameters['MetricName'] = $metricName;
 	}
 
-	public function setGroupId($groupId) {
-		$this->groupId = $groupId;
-		$this->queryParameters["GroupId"]=$groupId;
+    public function getDimension() {
+	    return $this->dimension;
+    }
+
+    public function setDimension($dimension) {
+    	$this->dimension = $dimension;
+    	$this->queryParameters['Dimension'] = $dimension;
 	}
 
-	public function getPage() {
-		return $this->page;
+    public function getMd5() {
+	    return $this->md5;
+    }
+
+    public function setMd5($md5) {
+    	$this->md5 = $md5;
+    	$this->queryParameters['Md5'] = $md5;
 	}
 
-	public function setPage($page) {
-		$this->page = $page;
-		$this->queryParameters["Page"]=$page;
-	}
-
-	public function getMetricName() {
-		return $this->metricName;
-	}
-
-	public function setMetricName($metricName) {
-		$this->metricName = $metricName;
-		$this->queryParameters["MetricName"]=$metricName;
-	}
-
-	public function getDimension() {
-		return $this->dimension;
-	}
-
-	public function setDimension($dimension) {
-		$this->dimension = $dimension;
-		$this->queryParameters["Dimension"]=$dimension;
-	}
-
-	public function getMd5() {
-		return $this->md5;
-	}
-
-	public function setMd5($md5) {
-		$this->md5 = $md5;
-		$this->queryParameters["Md5"]=$md5;
-	}
-	
 }

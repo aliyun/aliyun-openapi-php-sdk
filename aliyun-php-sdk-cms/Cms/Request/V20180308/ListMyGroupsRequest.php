@@ -21,98 +21,98 @@ namespace Cms\Request\V20180308;
 
 class ListMyGroupsRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "ListMyGroups", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "ListMyGroups");
 		$this->setMethod("POST");
+    }
+
+    protected $selectContactGroups;
+
+    protected $instanceId;
+
+    protected $pageSize;
+
+    protected $type;
+
+    protected $keyword;
+
+    protected $groupName;
+
+    protected $pageNumber;
+
+    protected $bindUrls;
+
+    public function getSelectContactGroups() {
+	    return $this->selectContactGroups;
+    }
+
+    public function setSelectContactGroups($selectContactGroups) {
+    	$this->selectContactGroups = $selectContactGroups;
+    	$this->queryParameters['SelectContactGroups'] = $selectContactGroups;
 	}
 
-	private  $selectContactGroups;
+    public function getInstanceId() {
+	    return $this->instanceId;
+    }
 
-	private  $instanceId;
-
-	private  $pageSize;
-
-	private  $keyword;
-
-	private  $type;
-
-	private  $groupName;
-
-	private  $pageNumber;
-
-	private  $bindUrls;
-
-	public function getSelectContactGroups() {
-		return $this->selectContactGroups;
+    public function setInstanceId($instanceId) {
+    	$this->instanceId = $instanceId;
+    	$this->queryParameters['InstanceId'] = $instanceId;
 	}
 
-	public function setSelectContactGroups($selectContactGroups) {
-		$this->selectContactGroups = $selectContactGroups;
-		$this->queryParameters["SelectContactGroups"]=$selectContactGroups;
+    public function getPageSize() {
+	    return $this->pageSize;
+    }
+
+    public function setPageSize($pageSize) {
+    	$this->pageSize = $pageSize;
+    	$this->queryParameters['PageSize'] = $pageSize;
 	}
 
-	public function getInstanceId() {
-		return $this->instanceId;
+    public function getType() {
+	    return $this->type;
+    }
+
+    public function setType($type) {
+    	$this->type = $type;
+    	$this->queryParameters['Type'] = $type;
 	}
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
+    public function getKeyword() {
+	    return $this->keyword;
+    }
+
+    public function setKeyword($keyword) {
+    	$this->keyword = $keyword;
+    	$this->queryParameters['Keyword'] = $keyword;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
+    public function getGroupName() {
+	    return $this->groupName;
+    }
+
+    public function setGroupName($groupName) {
+    	$this->groupName = $groupName;
+    	$this->queryParameters['GroupName'] = $groupName;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+    public function getPageNumber() {
+	    return $this->pageNumber;
+    }
+
+    public function setPageNumber($pageNumber) {
+    	$this->pageNumber = $pageNumber;
+    	$this->queryParameters['PageNumber'] = $pageNumber;
 	}
 
-	public function getKeyword() {
-		return $this->keyword;
+    public function getBindUrls() {
+	    return $this->bindUrls;
+    }
+
+    public function setBindUrls($bindUrls) {
+    	$this->bindUrls = $bindUrls;
+    	$this->queryParameters['BindUrls'] = $bindUrls;
 	}
 
-	public function setKeyword($keyword) {
-		$this->keyword = $keyword;
-		$this->queryParameters["Keyword"]=$keyword;
-	}
-
-	public function getType() {
-		return $this->type;
-	}
-
-	public function setType($type) {
-		$this->type = $type;
-		$this->queryParameters["Type"]=$type;
-	}
-
-	public function getGroupName() {
-		return $this->groupName;
-	}
-
-	public function setGroupName($groupName) {
-		$this->groupName = $groupName;
-		$this->queryParameters["GroupName"]=$groupName;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
-	public function getBindUrls() {
-		return $this->bindUrls;
-	}
-
-	public function setBindUrls($bindUrls) {
-		$this->bindUrls = $bindUrls;
-		$this->queryParameters["BindUrls"]=$bindUrls;
-	}
-	
 }

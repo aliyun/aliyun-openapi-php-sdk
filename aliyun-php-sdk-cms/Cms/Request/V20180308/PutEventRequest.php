@@ -21,21 +21,21 @@ namespace Cms\Request\V20180308;
 
 class PutEventRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "PutEvent", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "PutEvent");
 		$this->setMethod("POST");
+    }
+
+    protected $eventInfo;
+
+    public function getEventInfo() {
+	    return $this->eventInfo;
+    }
+
+    public function setEventInfo($eventInfo) {
+    	$this->eventInfo = $eventInfo;
+    	$this->queryParameters['EventInfo'] = $eventInfo;
 	}
 
-	private  $eventInfo;
-
-	public function getEventInfo() {
-		return $this->eventInfo;
-	}
-
-	public function setEventInfo($eventInfo) {
-		$this->eventInfo = $eventInfo;
-		$this->queryParameters["EventInfo"]=$eventInfo;
-	}
-	
 }

@@ -21,23 +21,23 @@ namespace Cms\Request\V20180308;
 
 class TaskConfigUnhealthyRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "TaskConfigUnhealthy", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "TaskConfigUnhealthy");
 		$this->setMethod("POST");
-	}
+    }
 
-	private  $TaskIdLists;
+    protected $TaskIdLists;
 
-	public function getTaskIdLists() {
-		return $this->TaskIdLists;
-	}
+    public function getTaskIdLists() {
+	    return $this->TaskIdLists;
+    }
 
-	public function setTaskIdLists($TaskIdLists) {
-		$this->TaskIdLists = $TaskIdLists;
+    public function setTaskIdLists($TaskIdLists) {
+    	$this->TaskIdLists = $TaskIdLists;
 		for ($i = 0; $i < count($TaskIdLists); $i ++) {	
 			$this->queryParameters["TaskIdList.".($i+1)] = $TaskIdLists[$i];
 		}
 	}
-	
+
 }

@@ -21,80 +21,80 @@ namespace Cms\Request\V20180308;
 
 class PutEventTargetsRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "PutEventTargets", "cms", "openAPI");
-	}
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "PutEventTargets");
+    }
 
-	private  $WebhookParameterss;
+    protected $WebhookParameterss;
 
-	private  $ContactParameterss;
+    protected $ContactParameterss;
 
-	private  $FcParameterss;
+    protected $FcParameterss;
 
-	private  $ruleName;
+    protected $ruleName;
 
-	private  $MnsParameterss;
+    protected $MnsParameterss;
 
-	public function getWebhookParameterss() {
-		return $this->WebhookParameterss;
-	}
+    public function getWebhookParameterss() {
+	    return $this->WebhookParameterss;
+    }
 
-	public function setWebhookParameterss($WebhookParameterss) {
-		$this->WebhookParameterss = $WebhookParameterss;
+    public function setWebhookParameterss($WebhookParameterss) {
+    	$this->WebhookParameterss = $WebhookParameterss;
 		for ($i = 0; $i < count($WebhookParameterss); $i ++) {	
-			$this->queryParameters['WebhookParameters.' . ($i + 1) . '.Id'] = $WebhookParameterss[$i]['Id'];
 			$this->queryParameters['WebhookParameters.' . ($i + 1) . '.Protocol'] = $WebhookParameterss[$i]['Protocol'];
-			$this->queryParameters['WebhookParameters.' . ($i + 1) . '.Url'] = $WebhookParameterss[$i]['Url'];
 			$this->queryParameters['WebhookParameters.' . ($i + 1) . '.Method'] = $WebhookParameterss[$i]['Method'];
+			$this->queryParameters['WebhookParameters.' . ($i + 1) . '.Id'] = $WebhookParameterss[$i]['Id'];
+			$this->queryParameters['WebhookParameters.' . ($i + 1) . '.Url'] = $WebhookParameterss[$i]['Url'];
 
 		}
 	}
 
-	public function getContactParameterss() {
-		return $this->ContactParameterss;
-	}
+    public function getContactParameterss() {
+	    return $this->ContactParameterss;
+    }
 
-	public function setContactParameterss($ContactParameterss) {
-		$this->ContactParameterss = $ContactParameterss;
+    public function setContactParameterss($ContactParameterss) {
+    	$this->ContactParameterss = $ContactParameterss;
 		for ($i = 0; $i < count($ContactParameterss); $i ++) {	
+			$this->queryParameters['ContactParameters.' . ($i + 1) . '.Level'] = $ContactParameterss[$i]['Level'];
 			$this->queryParameters['ContactParameters.' . ($i + 1) . '.Id'] = $ContactParameterss[$i]['Id'];
 			$this->queryParameters['ContactParameters.' . ($i + 1) . '.ContactGroupName'] = $ContactParameterss[$i]['ContactGroupName'];
-			$this->queryParameters['ContactParameters.' . ($i + 1) . '.Level'] = $ContactParameterss[$i]['Level'];
 
 		}
 	}
 
-	public function getFcParameterss() {
-		return $this->FcParameterss;
-	}
+    public function getFcParameterss() {
+	    return $this->FcParameterss;
+    }
 
-	public function setFcParameterss($FcParameterss) {
-		$this->FcParameterss = $FcParameterss;
+    public function setFcParameterss($FcParameterss) {
+    	$this->FcParameterss = $FcParameterss;
 		for ($i = 0; $i < count($FcParameterss); $i ++) {	
+			$this->queryParameters['FcParameters.' . ($i + 1) . '.FunctionName'] = $FcParameterss[$i]['FunctionName'];
+			$this->queryParameters['FcParameters.' . ($i + 1) . '.ServiceName'] = $FcParameterss[$i]['ServiceName'];
 			$this->queryParameters['FcParameters.' . ($i + 1) . '.Id'] = $FcParameterss[$i]['Id'];
 			$this->queryParameters['FcParameters.' . ($i + 1) . '.Region'] = $FcParameterss[$i]['Region'];
-			$this->queryParameters['FcParameters.' . ($i + 1) . '.ServiceName'] = $FcParameterss[$i]['ServiceName'];
-			$this->queryParameters['FcParameters.' . ($i + 1) . '.FunctionName'] = $FcParameterss[$i]['FunctionName'];
 
 		}
 	}
 
-	public function getRuleName() {
-		return $this->ruleName;
+    public function getRuleName() {
+	    return $this->ruleName;
+    }
+
+    public function setRuleName($ruleName) {
+    	$this->ruleName = $ruleName;
+    	$this->queryParameters['RuleName'] = $ruleName;
 	}
 
-	public function setRuleName($ruleName) {
-		$this->ruleName = $ruleName;
-		$this->queryParameters["RuleName"]=$ruleName;
-	}
+    public function getMnsParameterss() {
+	    return $this->MnsParameterss;
+    }
 
-	public function getMnsParameterss() {
-		return $this->MnsParameterss;
-	}
-
-	public function setMnsParameterss($MnsParameterss) {
-		$this->MnsParameterss = $MnsParameterss;
+    public function setMnsParameterss($MnsParameterss) {
+    	$this->MnsParameterss = $MnsParameterss;
 		for ($i = 0; $i < count($MnsParameterss); $i ++) {	
 			$this->queryParameters['MnsParameters.' . ($i + 1) . '.Id'] = $MnsParameterss[$i]['Id'];
 			$this->queryParameters['MnsParameters.' . ($i + 1) . '.Region'] = $MnsParameterss[$i]['Region'];
@@ -102,5 +102,5 @@ class PutEventTargetsRequest extends \RpcAcsRequest
 
 		}
 	}
-	
+
 }

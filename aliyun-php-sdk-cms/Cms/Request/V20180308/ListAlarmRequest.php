@@ -21,98 +21,98 @@ namespace Cms\Request\V20180308;
 
 class ListAlarmRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "ListAlarm", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "ListAlarm");
 		$this->setMethod("POST");
+    }
+
+    protected $isEnable;
+
+    protected $name;
+
+    protected $namespace;
+
+    protected $pageSize;
+
+    protected $id;
+
+    protected $state;
+
+    protected $dimension;
+
+    protected $pageNumber;
+
+    public function getIsEnable() {
+	    return $this->isEnable;
+    }
+
+    public function setIsEnable($isEnable) {
+    	$this->isEnable = $isEnable;
+    	$this->queryParameters['IsEnable'] = $isEnable;
 	}
 
-	private  $isEnable;
+    public function getName() {
+	    return $this->name;
+    }
 
-	private  $name;
-
-	private  $namespace;
-
-	private  $pageSize;
-
-	private  $id;
-
-	private  $state;
-
-	private  $dimension;
-
-	private  $pageNumber;
-
-	public function getIsEnable() {
-		return $this->isEnable;
+    public function setName($name) {
+    	$this->name = $name;
+    	$this->queryParameters['Name'] = $name;
 	}
 
-	public function setIsEnable($isEnable) {
-		$this->isEnable = $isEnable;
-		$this->queryParameters["IsEnable"]=$isEnable;
+    public function getNamespace() {
+	    return $this->namespace;
+    }
+
+    public function setNamespace($namespace) {
+    	$this->namespace = $namespace;
+    	$this->queryParameters['Namespace'] = $namespace;
 	}
 
-	public function getName() {
-		return $this->name;
+    public function getPageSize() {
+	    return $this->pageSize;
+    }
+
+    public function setPageSize($pageSize) {
+    	$this->pageSize = $pageSize;
+    	$this->queryParameters['PageSize'] = $pageSize;
 	}
 
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
+    public function getId() {
+	    return $this->id;
+    }
+
+    public function setId($id) {
+    	$this->id = $id;
+    	$this->queryParameters['Id'] = $id;
 	}
 
-	public function getNamespace() {
-		return $this->namespace;
+    public function getState() {
+	    return $this->state;
+    }
+
+    public function setState($state) {
+    	$this->state = $state;
+    	$this->queryParameters['State'] = $state;
 	}
 
-	public function setNamespace($namespace) {
-		$this->namespace = $namespace;
-		$this->queryParameters["Namespace"]=$namespace;
+    public function getDimension() {
+	    return $this->dimension;
+    }
+
+    public function setDimension($dimension) {
+    	$this->dimension = $dimension;
+    	$this->queryParameters['Dimension'] = $dimension;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
+    public function getPageNumber() {
+	    return $this->pageNumber;
+    }
+
+    public function setPageNumber($pageNumber) {
+    	$this->pageNumber = $pageNumber;
+    	$this->queryParameters['PageNumber'] = $pageNumber;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getId() {
-		return $this->id;
-	}
-
-	public function setId($id) {
-		$this->id = $id;
-		$this->queryParameters["Id"]=$id;
-	}
-
-	public function getState() {
-		return $this->state;
-	}
-
-	public function setState($state) {
-		$this->state = $state;
-		$this->queryParameters["State"]=$state;
-	}
-
-	public function getDimension() {
-		return $this->dimension;
-	}
-
-	public function setDimension($dimension) {
-		$this->dimension = $dimension;
-		$this->queryParameters["Dimension"]=$dimension;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-	
 }

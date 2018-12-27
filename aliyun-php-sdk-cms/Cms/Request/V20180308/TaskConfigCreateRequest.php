@@ -21,100 +21,100 @@ namespace Cms\Request\V20180308;
 
 class TaskConfigCreateRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "TaskConfigCreate", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "TaskConfigCreate");
 		$this->setMethod("POST");
-	}
+    }
 
-	private  $InstanceLists;
+    protected $InstanceLists;
 
-	private  $jsonData;
+    protected $jsonData;
 
-	private  $taskType;
+    protected $taskType;
 
-	private  $taskScope;
+    protected $taskScope;
 
-	private  $alertConfig;
+    protected $alertConfig;
 
-	private  $groupId;
+    protected $groupId;
 
-	private  $taskName;
+    protected $taskName;
 
-	private  $groupName;
+    protected $groupName;
 
-	public function getInstanceLists() {
-		return $this->InstanceLists;
-	}
+    public function getInstanceLists() {
+	    return $this->InstanceLists;
+    }
 
-	public function setInstanceLists($InstanceLists) {
-		$this->InstanceLists = $InstanceLists;
+    public function setInstanceLists($InstanceLists) {
+    	$this->InstanceLists = $InstanceLists;
 		for ($i = 0; $i < count($InstanceLists); $i ++) {	
 			$this->queryParameters["InstanceList.".($i+1)] = $InstanceLists[$i];
 		}
 	}
 
-	public function getJsonData() {
-		return $this->jsonData;
+    public function getJsonData() {
+	    return $this->jsonData;
+    }
+
+    public function setJsonData($jsonData) {
+    	$this->jsonData = $jsonData;
+    	$this->queryParameters['JsonData'] = $jsonData;
 	}
 
-	public function setJsonData($jsonData) {
-		$this->jsonData = $jsonData;
-		$this->queryParameters["JsonData"]=$jsonData;
+    public function getTaskType() {
+	    return $this->taskType;
+    }
+
+    public function setTaskType($taskType) {
+    	$this->taskType = $taskType;
+    	$this->queryParameters['TaskType'] = $taskType;
 	}
 
-	public function getTaskType() {
-		return $this->taskType;
+    public function getTaskScope() {
+	    return $this->taskScope;
+    }
+
+    public function setTaskScope($taskScope) {
+    	$this->taskScope = $taskScope;
+    	$this->queryParameters['TaskScope'] = $taskScope;
 	}
 
-	public function setTaskType($taskType) {
-		$this->taskType = $taskType;
-		$this->queryParameters["TaskType"]=$taskType;
+    public function getAlertConfig() {
+	    return $this->alertConfig;
+    }
+
+    public function setAlertConfig($alertConfig) {
+    	$this->alertConfig = $alertConfig;
+    	$this->queryParameters['AlertConfig'] = $alertConfig;
 	}
 
-	public function getTaskScope() {
-		return $this->taskScope;
+    public function getGroupId() {
+	    return $this->groupId;
+    }
+
+    public function setGroupId($groupId) {
+    	$this->groupId = $groupId;
+    	$this->queryParameters['GroupId'] = $groupId;
 	}
 
-	public function setTaskScope($taskScope) {
-		$this->taskScope = $taskScope;
-		$this->queryParameters["TaskScope"]=$taskScope;
+    public function getTaskName() {
+	    return $this->taskName;
+    }
+
+    public function setTaskName($taskName) {
+    	$this->taskName = $taskName;
+    	$this->queryParameters['TaskName'] = $taskName;
 	}
 
-	public function getAlertConfig() {
-		return $this->alertConfig;
+    public function getGroupName() {
+	    return $this->groupName;
+    }
+
+    public function setGroupName($groupName) {
+    	$this->groupName = $groupName;
+    	$this->queryParameters['GroupName'] = $groupName;
 	}
 
-	public function setAlertConfig($alertConfig) {
-		$this->alertConfig = $alertConfig;
-		$this->queryParameters["AlertConfig"]=$alertConfig;
-	}
-
-	public function getGroupId() {
-		return $this->groupId;
-	}
-
-	public function setGroupId($groupId) {
-		$this->groupId = $groupId;
-		$this->queryParameters["GroupId"]=$groupId;
-	}
-
-	public function getTaskName() {
-		return $this->taskName;
-	}
-
-	public function setTaskName($taskName) {
-		$this->taskName = $taskName;
-		$this->queryParameters["TaskName"]=$taskName;
-	}
-
-	public function getGroupName() {
-		return $this->groupName;
-	}
-
-	public function setGroupName($groupName) {
-		$this->groupName = $groupName;
-		$this->queryParameters["GroupName"]=$groupName;
-	}
-	
 }

@@ -21,34 +21,34 @@ namespace Cms\Request\V20180308;
 
 class TaskConfigEnableRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "TaskConfigEnable", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "TaskConfigEnable");
 		$this->setMethod("POST");
-	}
+    }
 
-	private  $IdLists;
+    protected $IdLists;
 
-	private  $enabled;
+    protected $enabled;
 
-	public function getIdLists() {
-		return $this->IdLists;
-	}
+    public function getIdLists() {
+	    return $this->IdLists;
+    }
 
-	public function setIdLists($IdLists) {
-		$this->IdLists = $IdLists;
+    public function setIdLists($IdLists) {
+    	$this->IdLists = $IdLists;
 		for ($i = 0; $i < count($IdLists); $i ++) {	
 			$this->queryParameters["IdList.".($i+1)] = $IdLists[$i];
 		}
 	}
 
-	public function getEnabled() {
-		return $this->enabled;
+    public function getEnabled() {
+	    return $this->enabled;
+    }
+
+    public function setEnabled($enabled) {
+    	$this->enabled = $enabled;
+    	$this->queryParameters['Enabled'] = $enabled;
 	}
 
-	public function setEnabled($enabled) {
-		$this->enabled = $enabled;
-		$this->queryParameters["Enabled"]=$enabled;
-	}
-	
 }

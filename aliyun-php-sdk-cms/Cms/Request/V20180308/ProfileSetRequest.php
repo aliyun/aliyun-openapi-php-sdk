@@ -21,54 +21,54 @@ namespace Cms\Request\V20180308;
 
 class ProfileSetRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "ProfileSet", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "ProfileSet");
 		$this->setMethod("POST");
+    }
+
+    protected $enableInstallAgentNewECS;
+
+    protected $enableActiveAlert;
+
+    protected $autoInstall;
+
+    protected $userId;
+
+    public function getEnableInstallAgentNewECS() {
+	    return $this->enableInstallAgentNewECS;
+    }
+
+    public function setEnableInstallAgentNewECS($enableInstallAgentNewECS) {
+    	$this->enableInstallAgentNewECS = $enableInstallAgentNewECS;
+    	$this->queryParameters['EnableInstallAgentNewECS'] = $enableInstallAgentNewECS;
 	}
 
-	private  $enableInstallAgentNewECS;
+    public function getEnableActiveAlert() {
+	    return $this->enableActiveAlert;
+    }
 
-	private  $enableActiveAlert;
-
-	private  $autoInstall;
-
-	private  $userId;
-
-	public function getEnableInstallAgentNewECS() {
-		return $this->enableInstallAgentNewECS;
+    public function setEnableActiveAlert($enableActiveAlert) {
+    	$this->enableActiveAlert = $enableActiveAlert;
+    	$this->queryParameters['EnableActiveAlert'] = $enableActiveAlert;
 	}
 
-	public function setEnableInstallAgentNewECS($enableInstallAgentNewECS) {
-		$this->enableInstallAgentNewECS = $enableInstallAgentNewECS;
-		$this->queryParameters["EnableInstallAgentNewECS"]=$enableInstallAgentNewECS;
+    public function getAutoInstall() {
+	    return $this->autoInstall;
+    }
+
+    public function setAutoInstall($autoInstall) {
+    	$this->autoInstall = $autoInstall;
+    	$this->queryParameters['AutoInstall'] = $autoInstall;
 	}
 
-	public function getEnableActiveAlert() {
-		return $this->enableActiveAlert;
+    public function getUserId() {
+	    return $this->userId;
+    }
+
+    public function setUserId($userId) {
+    	$this->userId = $userId;
+    	$this->queryParameters['UserId'] = $userId;
 	}
 
-	public function setEnableActiveAlert($enableActiveAlert) {
-		$this->enableActiveAlert = $enableActiveAlert;
-		$this->queryParameters["EnableActiveAlert"]=$enableActiveAlert;
-	}
-
-	public function getAutoInstall() {
-		return $this->autoInstall;
-	}
-
-	public function setAutoInstall($autoInstall) {
-		$this->autoInstall = $autoInstall;
-		$this->queryParameters["AutoInstall"]=$autoInstall;
-	}
-
-	public function getUserId() {
-		return $this->userId;
-	}
-
-	public function setUserId($userId) {
-		$this->userId = $userId;
-		$this->queryParameters["UserId"]=$userId;
-	}
-	
 }

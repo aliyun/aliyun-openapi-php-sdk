@@ -21,76 +21,76 @@ namespace Cms\Request\V20180308;
 
 class CreateNotifyPolicyRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "CreateNotifyPolicy", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "CreateNotifyPolicy");
 		$this->setMethod("POST");
+    }
+
+    protected $policyType;
+
+    protected $alertName;
+
+    protected $groupId;
+
+    protected $endTime;
+
+    protected $startTime;
+
+    protected $dimensions;
+
+    public function getPolicyType() {
+	    return $this->policyType;
+    }
+
+    public function setPolicyType($policyType) {
+    	$this->policyType = $policyType;
+    	$this->queryParameters['PolicyType'] = $policyType;
 	}
 
-	private  $policyType;
+    public function getAlertName() {
+	    return $this->alertName;
+    }
 
-	private  $alertName;
-
-	private  $groupId;
-
-	private  $endTime;
-
-	private  $startTime;
-
-	private  $dimensions;
-
-	public function getPolicyType() {
-		return $this->policyType;
+    public function setAlertName($alertName) {
+    	$this->alertName = $alertName;
+    	$this->queryParameters['AlertName'] = $alertName;
 	}
 
-	public function setPolicyType($policyType) {
-		$this->policyType = $policyType;
-		$this->queryParameters["PolicyType"]=$policyType;
+    public function getGroupId() {
+	    return $this->groupId;
+    }
+
+    public function setGroupId($groupId) {
+    	$this->groupId = $groupId;
+    	$this->queryParameters['GroupId'] = $groupId;
 	}
 
-	public function getAlertName() {
-		return $this->alertName;
+    public function getEndTime() {
+	    return $this->endTime;
+    }
+
+    public function setEndTime($endTime) {
+    	$this->endTime = $endTime;
+    	$this->queryParameters['EndTime'] = $endTime;
 	}
 
-	public function setAlertName($alertName) {
-		$this->alertName = $alertName;
-		$this->queryParameters["AlertName"]=$alertName;
+    public function getStartTime() {
+	    return $this->startTime;
+    }
+
+    public function setStartTime($startTime) {
+    	$this->startTime = $startTime;
+    	$this->queryParameters['StartTime'] = $startTime;
 	}
 
-	public function getGroupId() {
-		return $this->groupId;
+    public function getDimensions() {
+	    return $this->dimensions;
+    }
+
+    public function setDimensions($dimensions) {
+    	$this->dimensions = $dimensions;
+    	$this->queryParameters['Dimensions'] = $dimensions;
 	}
 
-	public function setGroupId($groupId) {
-		$this->groupId = $groupId;
-		$this->queryParameters["GroupId"]=$groupId;
-	}
-
-	public function getEndTime() {
-		return $this->endTime;
-	}
-
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
-
-	public function getDimensions() {
-		return $this->dimensions;
-	}
-
-	public function setDimensions($dimensions) {
-		$this->dimensions = $dimensions;
-		$this->queryParameters["Dimensions"]=$dimensions;
-	}
-	
 }

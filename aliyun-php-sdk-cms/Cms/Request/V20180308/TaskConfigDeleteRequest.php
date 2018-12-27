@@ -21,23 +21,23 @@ namespace Cms\Request\V20180308;
 
 class TaskConfigDeleteRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "TaskConfigDelete", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "TaskConfigDelete");
 		$this->setMethod("POST");
-	}
+    }
 
-	private  $IdLists;
+    protected $IdLists;
 
-	public function getIdLists() {
-		return $this->IdLists;
-	}
+    public function getIdLists() {
+	    return $this->IdLists;
+    }
 
-	public function setIdLists($IdLists) {
-		$this->IdLists = $IdLists;
+    public function setIdLists($IdLists) {
+    	$this->IdLists = $IdLists;
 		for ($i = 0; $i < count($IdLists); $i ++) {	
 			$this->queryParameters["IdList.".($i+1)] = $IdLists[$i];
 		}
 	}
-	
+
 }

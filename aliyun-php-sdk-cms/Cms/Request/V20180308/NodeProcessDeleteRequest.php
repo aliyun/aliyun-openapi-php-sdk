@@ -21,43 +21,43 @@ namespace Cms\Request\V20180308;
 
 class NodeProcessDeleteRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "NodeProcessDelete", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "NodeProcessDelete");
 		$this->setMethod("POST");
+    }
+
+    protected $instanceId;
+
+    protected $name;
+
+    protected $id;
+
+    public function getInstanceId() {
+	    return $this->instanceId;
+    }
+
+    public function setInstanceId($instanceId) {
+    	$this->instanceId = $instanceId;
+    	$this->queryParameters['InstanceId'] = $instanceId;
 	}
 
-	private  $instanceId;
+    public function getName() {
+	    return $this->name;
+    }
 
-	private  $name;
-
-	private  $id;
-
-	public function getInstanceId() {
-		return $this->instanceId;
+    public function setName($name) {
+    	$this->name = $name;
+    	$this->queryParameters['Name'] = $name;
 	}
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
+    public function getId() {
+	    return $this->id;
+    }
+
+    public function setId($id) {
+    	$this->id = $id;
+    	$this->queryParameters['Id'] = $id;
 	}
 
-	public function getName() {
-		return $this->name;
-	}
-
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
-	}
-
-	public function getId() {
-		return $this->id;
-	}
-
-	public function setId($id) {
-		$this->id = $id;
-		$this->queryParameters["Id"]=$id;
-	}
-	
 }

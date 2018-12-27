@@ -21,21 +21,21 @@ namespace Cms\Request\V20180308;
 
 class DescribeContactRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "DescribeContact", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "DescribeContact");
 		$this->setMethod("POST");
+    }
+
+    protected $contactName;
+
+    public function getContactName() {
+	    return $this->contactName;
+    }
+
+    public function setContactName($contactName) {
+    	$this->contactName = $contactName;
+    	$this->queryParameters['ContactName'] = $contactName;
 	}
 
-	private  $contactName;
-
-	public function getContactName() {
-		return $this->contactName;
-	}
-
-	public function setContactName($contactName) {
-		$this->contactName = $contactName;
-		$this->queryParameters["ContactName"]=$contactName;
-	}
-	
 }

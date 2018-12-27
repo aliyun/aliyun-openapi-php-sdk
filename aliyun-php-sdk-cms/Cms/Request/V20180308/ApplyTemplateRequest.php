@@ -21,87 +21,87 @@ namespace Cms\Request\V20180308;
 
 class ApplyTemplateRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "ApplyTemplate", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "ApplyTemplate");
 		$this->setMethod("POST");
+    }
+
+    protected $enableStartTime;
+
+    protected $applyMode;
+
+    protected $templateIds;
+
+    protected $enableEndTime;
+
+    protected $groupId;
+
+    protected $notifyLevel;
+
+    protected $silenceTime;
+
+    public function getEnableStartTime() {
+	    return $this->enableStartTime;
+    }
+
+    public function setEnableStartTime($enableStartTime) {
+    	$this->enableStartTime = $enableStartTime;
+    	$this->queryParameters['EnableStartTime'] = $enableStartTime;
 	}
 
-	private  $enableStartTime;
+    public function getApplyMode() {
+	    return $this->applyMode;
+    }
 
-	private  $applyMode;
-
-	private  $templateIds;
-
-	private  $enableEndTime;
-
-	private  $groupId;
-
-	private  $notifyLevel;
-
-	private  $silenceTime;
-
-	public function getEnableStartTime() {
-		return $this->enableStartTime;
+    public function setApplyMode($applyMode) {
+    	$this->applyMode = $applyMode;
+    	$this->queryParameters['ApplyMode'] = $applyMode;
 	}
 
-	public function setEnableStartTime($enableStartTime) {
-		$this->enableStartTime = $enableStartTime;
-		$this->queryParameters["EnableStartTime"]=$enableStartTime;
+    public function getTemplateIds() {
+	    return $this->templateIds;
+    }
+
+    public function setTemplateIds($templateIds) {
+    	$this->templateIds = $templateIds;
+    	$this->queryParameters['TemplateIds'] = $templateIds;
 	}
 
-	public function getApplyMode() {
-		return $this->applyMode;
+    public function getEnableEndTime() {
+	    return $this->enableEndTime;
+    }
+
+    public function setEnableEndTime($enableEndTime) {
+    	$this->enableEndTime = $enableEndTime;
+    	$this->queryParameters['EnableEndTime'] = $enableEndTime;
 	}
 
-	public function setApplyMode($applyMode) {
-		$this->applyMode = $applyMode;
-		$this->queryParameters["ApplyMode"]=$applyMode;
+    public function getGroupId() {
+	    return $this->groupId;
+    }
+
+    public function setGroupId($groupId) {
+    	$this->groupId = $groupId;
+    	$this->queryParameters['GroupId'] = $groupId;
 	}
 
-	public function getTemplateIds() {
-		return $this->templateIds;
+    public function getNotifyLevel() {
+	    return $this->notifyLevel;
+    }
+
+    public function setNotifyLevel($notifyLevel) {
+    	$this->notifyLevel = $notifyLevel;
+    	$this->queryParameters['NotifyLevel'] = $notifyLevel;
 	}
 
-	public function setTemplateIds($templateIds) {
-		$this->templateIds = $templateIds;
-		$this->queryParameters["TemplateIds"]=$templateIds;
+    public function getSilenceTime() {
+	    return $this->silenceTime;
+    }
+
+    public function setSilenceTime($silenceTime) {
+    	$this->silenceTime = $silenceTime;
+    	$this->queryParameters['SilenceTime'] = $silenceTime;
 	}
 
-	public function getEnableEndTime() {
-		return $this->enableEndTime;
-	}
-
-	public function setEnableEndTime($enableEndTime) {
-		$this->enableEndTime = $enableEndTime;
-		$this->queryParameters["EnableEndTime"]=$enableEndTime;
-	}
-
-	public function getGroupId() {
-		return $this->groupId;
-	}
-
-	public function setGroupId($groupId) {
-		$this->groupId = $groupId;
-		$this->queryParameters["GroupId"]=$groupId;
-	}
-
-	public function getNotifyLevel() {
-		return $this->notifyLevel;
-	}
-
-	public function setNotifyLevel($notifyLevel) {
-		$this->notifyLevel = $notifyLevel;
-		$this->queryParameters["NotifyLevel"]=$notifyLevel;
-	}
-
-	public function getSilenceTime() {
-		return $this->silenceTime;
-	}
-
-	public function setSilenceTime($silenceTime) {
-		$this->silenceTime = $silenceTime;
-		$this->queryParameters["SilenceTime"]=$silenceTime;
-	}
-	
 }

@@ -21,98 +21,98 @@ namespace Cms\Request\V20180308;
 
 class DescribeAlarmsForResourcesRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "DescribeAlarmsForResources", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "DescribeAlarmsForResources");
 		$this->setMethod("POST");
+    }
+
+    protected $enableState;
+
+    protected $groupId;
+
+    protected $namespace;
+
+    protected $pageSize;
+
+    protected $alertState;
+
+    protected $page;
+
+    protected $metricName;
+
+    protected $dimensions;
+
+    public function getEnableState() {
+	    return $this->enableState;
+    }
+
+    public function setEnableState($enableState) {
+    	$this->enableState = $enableState;
+    	$this->queryParameters['EnableState'] = $enableState;
 	}
 
-	private  $enableState;
+    public function getGroupId() {
+	    return $this->groupId;
+    }
 
-	private  $groupId;
-
-	private  $namespace;
-
-	private  $pageSize;
-
-	private  $alertState;
-
-	private  $page;
-
-	private  $metricName;
-
-	private  $dimensions;
-
-	public function getEnableState() {
-		return $this->enableState;
+    public function setGroupId($groupId) {
+    	$this->groupId = $groupId;
+    	$this->queryParameters['GroupId'] = $groupId;
 	}
 
-	public function setEnableState($enableState) {
-		$this->enableState = $enableState;
-		$this->queryParameters["EnableState"]=$enableState;
+    public function getNamespace() {
+	    return $this->namespace;
+    }
+
+    public function setNamespace($namespace) {
+    	$this->namespace = $namespace;
+    	$this->queryParameters['Namespace'] = $namespace;
 	}
 
-	public function getGroupId() {
-		return $this->groupId;
+    public function getPageSize() {
+	    return $this->pageSize;
+    }
+
+    public function setPageSize($pageSize) {
+    	$this->pageSize = $pageSize;
+    	$this->queryParameters['PageSize'] = $pageSize;
 	}
 
-	public function setGroupId($groupId) {
-		$this->groupId = $groupId;
-		$this->queryParameters["GroupId"]=$groupId;
+    public function getAlertState() {
+	    return $this->alertState;
+    }
+
+    public function setAlertState($alertState) {
+    	$this->alertState = $alertState;
+    	$this->queryParameters['AlertState'] = $alertState;
 	}
 
-	public function getNamespace() {
-		return $this->namespace;
+    public function getPage() {
+	    return $this->page;
+    }
+
+    public function setPage($page) {
+    	$this->page = $page;
+    	$this->queryParameters['Page'] = $page;
 	}
 
-	public function setNamespace($namespace) {
-		$this->namespace = $namespace;
-		$this->queryParameters["Namespace"]=$namespace;
+    public function getMetricName() {
+	    return $this->metricName;
+    }
+
+    public function setMetricName($metricName) {
+    	$this->metricName = $metricName;
+    	$this->queryParameters['MetricName'] = $metricName;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
+    public function getDimensions() {
+	    return $this->dimensions;
+    }
+
+    public function setDimensions($dimensions) {
+    	$this->dimensions = $dimensions;
+    	$this->queryParameters['Dimensions'] = $dimensions;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getAlertState() {
-		return $this->alertState;
-	}
-
-	public function setAlertState($alertState) {
-		$this->alertState = $alertState;
-		$this->queryParameters["AlertState"]=$alertState;
-	}
-
-	public function getPage() {
-		return $this->page;
-	}
-
-	public function setPage($page) {
-		$this->page = $page;
-		$this->queryParameters["Page"]=$page;
-	}
-
-	public function getMetricName() {
-		return $this->metricName;
-	}
-
-	public function setMetricName($metricName) {
-		$this->metricName = $metricName;
-		$this->queryParameters["MetricName"]=$metricName;
-	}
-
-	public function getDimensions() {
-		return $this->dimensions;
-	}
-
-	public function setDimensions($dimensions) {
-		$this->dimensions = $dimensions;
-		$this->queryParameters["Dimensions"]=$dimensions;
-	}
-	
 }

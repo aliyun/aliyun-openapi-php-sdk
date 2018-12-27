@@ -21,65 +21,65 @@ namespace Cms\Request\V20180308;
 
 class DescribeTasksRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "DescribeTasks", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "DescribeTasks");
 		$this->setMethod("POST");
+    }
+
+    protected $taskType;
+
+    protected $pageSize;
+
+    protected $page;
+
+    protected $keyword;
+
+    protected $taskId;
+
+    public function getTaskType() {
+	    return $this->taskType;
+    }
+
+    public function setTaskType($taskType) {
+    	$this->taskType = $taskType;
+    	$this->queryParameters['TaskType'] = $taskType;
 	}
 
-	private  $taskType;
+    public function getPageSize() {
+	    return $this->pageSize;
+    }
 
-	private  $pageSize;
-
-	private  $page;
-
-	private  $keyword;
-
-	private  $taskId;
-
-	public function getTaskType() {
-		return $this->taskType;
+    public function setPageSize($pageSize) {
+    	$this->pageSize = $pageSize;
+    	$this->queryParameters['PageSize'] = $pageSize;
 	}
 
-	public function setTaskType($taskType) {
-		$this->taskType = $taskType;
-		$this->queryParameters["TaskType"]=$taskType;
+    public function getPage() {
+	    return $this->page;
+    }
+
+    public function setPage($page) {
+    	$this->page = $page;
+    	$this->queryParameters['Page'] = $page;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
+    public function getKeyword() {
+	    return $this->keyword;
+    }
+
+    public function setKeyword($keyword) {
+    	$this->keyword = $keyword;
+    	$this->queryParameters['Keyword'] = $keyword;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+    public function getTaskId() {
+	    return $this->taskId;
+    }
+
+    public function setTaskId($taskId) {
+    	$this->taskId = $taskId;
+    	$this->queryParameters['TaskId'] = $taskId;
 	}
 
-	public function getPage() {
-		return $this->page;
-	}
-
-	public function setPage($page) {
-		$this->page = $page;
-		$this->queryParameters["Page"]=$page;
-	}
-
-	public function getKeyword() {
-		return $this->keyword;
-	}
-
-	public function setKeyword($keyword) {
-		$this->keyword = $keyword;
-		$this->queryParameters["Keyword"]=$keyword;
-	}
-
-	public function getTaskId() {
-		return $this->taskId;
-	}
-
-	public function setTaskId($taskId) {
-		$this->taskId = $taskId;
-		$this->queryParameters["TaskId"]=$taskId;
-	}
-	
 }

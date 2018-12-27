@@ -21,21 +21,21 @@ namespace Cms\Request\V20180308;
 
 class DescribeTaskDetailRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "DescribeTaskDetail", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "DescribeTaskDetail");
 		$this->setMethod("POST");
+    }
+
+    protected $taskId;
+
+    public function getTaskId() {
+	    return $this->taskId;
+    }
+
+    public function setTaskId($taskId) {
+    	$this->taskId = $taskId;
+    	$this->queryParameters['TaskId'] = $taskId;
 	}
 
-	private  $taskId;
-
-	public function getTaskId() {
-		return $this->taskId;
-	}
-
-	public function setTaskId($taskId) {
-		$this->taskId = $taskId;
-		$this->queryParameters["TaskId"]=$taskId;
-	}
-	
 }

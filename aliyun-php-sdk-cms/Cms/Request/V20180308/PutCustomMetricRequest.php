@@ -21,21 +21,21 @@ namespace Cms\Request\V20180308;
 
 class PutCustomMetricRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "PutCustomMetric", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "PutCustomMetric");
 		$this->setMethod("POST");
+    }
+
+    protected $metricList;
+
+    public function getMetricList() {
+	    return $this->metricList;
+    }
+
+    public function setMetricList($metricList) {
+    	$this->metricList = $metricList;
+    	$this->queryParameters['MetricList'] = $metricList;
 	}
 
-	private  $metricList;
-
-	public function getMetricList() {
-		return $this->metricList;
-	}
-
-	public function setMetricList($metricList) {
-		$this->metricList = $metricList;
-		$this->queryParameters["MetricList"]=$metricList;
-	}
-	
 }

@@ -21,32 +21,32 @@ namespace Cms\Request\V20180308;
 
 class DeleteGroupDynamicRuleRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "DeleteGroupDynamicRule", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "DeleteGroupDynamicRule");
 		$this->setMethod("POST");
+    }
+
+    protected $groupId;
+
+    protected $category;
+
+    public function getGroupId() {
+	    return $this->groupId;
+    }
+
+    public function setGroupId($groupId) {
+    	$this->groupId = $groupId;
+    	$this->queryParameters['GroupId'] = $groupId;
 	}
 
-	private  $groupId;
+    public function getCategory() {
+	    return $this->category;
+    }
 
-	private  $category;
-
-	public function getGroupId() {
-		return $this->groupId;
+    public function setCategory($category) {
+    	$this->category = $category;
+    	$this->queryParameters['Category'] = $category;
 	}
 
-	public function setGroupId($groupId) {
-		$this->groupId = $groupId;
-		$this->queryParameters["GroupId"]=$groupId;
-	}
-
-	public function getCategory() {
-		return $this->category;
-	}
-
-	public function setCategory($category) {
-		$this->category = $category;
-		$this->queryParameters["Category"]=$category;
-	}
-	
 }

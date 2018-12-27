@@ -21,54 +21,54 @@ namespace Cms\Request\V20180308;
 
 class SendDryRunSystemEventRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "SendDryRunSystemEvent", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "SendDryRunSystemEvent");
 		$this->setMethod("POST");
+    }
+
+    protected $product;
+
+    protected $groupId;
+
+    protected $eventName;
+
+    protected $eventContent;
+
+    public function getProduct() {
+	    return $this->product;
+    }
+
+    public function setProduct($product) {
+    	$this->product = $product;
+    	$this->queryParameters['Product'] = $product;
 	}
 
-	private  $product;
+    public function getGroupId() {
+	    return $this->groupId;
+    }
 
-	private  $groupId;
-
-	private  $eventName;
-
-	private  $eventContent;
-
-	public function getProduct() {
-		return $this->product;
+    public function setGroupId($groupId) {
+    	$this->groupId = $groupId;
+    	$this->queryParameters['GroupId'] = $groupId;
 	}
 
-	public function setProduct($product) {
-		$this->product = $product;
-		$this->queryParameters["Product"]=$product;
+    public function getEventName() {
+	    return $this->eventName;
+    }
+
+    public function setEventName($eventName) {
+    	$this->eventName = $eventName;
+    	$this->queryParameters['EventName'] = $eventName;
 	}
 
-	public function getGroupId() {
-		return $this->groupId;
+    public function getEventContent() {
+	    return $this->eventContent;
+    }
+
+    public function setEventContent($eventContent) {
+    	$this->eventContent = $eventContent;
+    	$this->queryParameters['EventContent'] = $eventContent;
 	}
 
-	public function setGroupId($groupId) {
-		$this->groupId = $groupId;
-		$this->queryParameters["GroupId"]=$groupId;
-	}
-
-	public function getEventName() {
-		return $this->eventName;
-	}
-
-	public function setEventName($eventName) {
-		$this->eventName = $eventName;
-		$this->queryParameters["EventName"]=$eventName;
-	}
-
-	public function getEventContent() {
-		return $this->eventContent;
-	}
-
-	public function setEventContent($eventContent) {
-		$this->eventContent = $eventContent;
-		$this->queryParameters["EventContent"]=$eventContent;
-	}
-	
 }

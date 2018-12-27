@@ -21,21 +21,21 @@ namespace Cms\Request\V20180308;
 
 class DescribeEventRuleRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "DescribeEventRule", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "DescribeEventRule");
 		$this->setMethod("POST");
+    }
+
+    protected $ruleName;
+
+    public function getRuleName() {
+	    return $this->ruleName;
+    }
+
+    public function setRuleName($ruleName) {
+    	$this->ruleName = $ruleName;
+    	$this->queryParameters['RuleName'] = $ruleName;
 	}
 
-	private  $ruleName;
-
-	public function getRuleName() {
-		return $this->ruleName;
-	}
-
-	public function setRuleName($ruleName) {
-		$this->ruleName = $ruleName;
-		$this->queryParameters["RuleName"]=$ruleName;
-	}
-	
 }

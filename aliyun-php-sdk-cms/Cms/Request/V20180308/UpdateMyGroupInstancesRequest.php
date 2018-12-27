@@ -21,32 +21,32 @@ namespace Cms\Request\V20180308;
 
 class UpdateMyGroupInstancesRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "UpdateMyGroupInstances", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "UpdateMyGroupInstances");
 		$this->setMethod("POST");
+    }
+
+    protected $instances;
+
+    protected $groupId;
+
+    public function getInstances() {
+	    return $this->instances;
+    }
+
+    public function setInstances($instances) {
+    	$this->instances = $instances;
+    	$this->queryParameters['Instances'] = $instances;
 	}
 
-	private  $instances;
+    public function getGroupId() {
+	    return $this->groupId;
+    }
 
-	private  $groupId;
-
-	public function getInstances() {
-		return $this->instances;
+    public function setGroupId($groupId) {
+    	$this->groupId = $groupId;
+    	$this->queryParameters['GroupId'] = $groupId;
 	}
 
-	public function setInstances($instances) {
-		$this->instances = $instances;
-		$this->queryParameters["Instances"]=$instances;
-	}
-
-	public function getGroupId() {
-		return $this->groupId;
-	}
-
-	public function setGroupId($groupId) {
-		$this->groupId = $groupId;
-		$this->queryParameters["GroupId"]=$groupId;
-	}
-	
 }

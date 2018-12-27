@@ -21,87 +21,90 @@ namespace Cms\Request\V20180308;
 
 class PutEventRuleRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "PutEventRule", "cms", "openAPI");
-	}
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "PutEventRule");
+    }
 
-	private  $EventPatterns;
+    protected $EventPatterns;
 
-	private  $groupId;
+    protected $groupId;
 
-	private  $name;
+    protected $name;
 
-	private  $description;
+    protected $description;
 
-	private  $eventType;
+    protected $eventType;
 
-	private  $state;
+    protected $state;
 
-	public function getEventPatterns() {
-		return $this->EventPatterns;
-	}
+    public function getEventPatterns() {
+	    return $this->EventPatterns;
+    }
 
-	public function setEventPatterns($EventPatterns) {
-		$this->EventPatterns = $EventPatterns;
+    public function setEventPatterns($EventPatterns) {
+    	$this->EventPatterns = $EventPatterns;
 		for ($i = 0; $i < count($EventPatterns); $i ++) {	
-			$this->queryParameters['EventPattern.' . ($i + 1) . '.Product'] = $EventPatterns[$i]['Product'];
-			for ($j = 0; $j < count($EventPatterns[$i]['NameLists']); $j ++) {
-				$this->queryParameters['EventPattern.' . ($i + 1) . '.NameList.' . ($j + 1)] = $EventPatterns[$i]['NameLists'][$j];
+			for ($j = 0; $j < count($EventPatterns[$i]['LevelLists']); $j ++) {
+				$this->queryParameters['EventPattern.' . ($i + 1) . '.LevelList.' . ($j + 1)] = $EventPatterns[$i]['LevelLists'][$j];
 			}
+			$this->queryParameters['EventPattern.' . ($i + 1) . '.Product'] = $EventPatterns[$i]['Product'];
 			for ($j = 0; $j < count($EventPatterns[$i]['StatusLists']); $j ++) {
 				$this->queryParameters['EventPattern.' . ($i + 1) . '.StatusList.' . ($j + 1)] = $EventPatterns[$i]['StatusLists'][$j];
 			}
-			for ($j = 0; $j < count($EventPatterns[$i]['LevelLists']); $j ++) {
-				$this->queryParameters['EventPattern.' . ($i + 1) . '.LevelList.' . ($j + 1)] = $EventPatterns[$i]['LevelLists'][$j];
+			for ($j = 0; $j < count($EventPatterns[$i]['NameLists']); $j ++) {
+				$this->queryParameters['EventPattern.' . ($i + 1) . '.NameList.' . ($j + 1)] = $EventPatterns[$i]['NameLists'][$j];
+			}
+			for ($j = 0; $j < count($EventPatterns[$i]['EventTypeLists']); $j ++) {
+				$this->queryParameters['EventPattern.' . ($i + 1) . '.EventTypeList.' . ($j + 1)] = $EventPatterns[$i]['EventTypeLists'][$j];
 			}
 
 		}
 	}
 
-	public function getGroupId() {
-		return $this->groupId;
+    public function getGroupId() {
+	    return $this->groupId;
+    }
+
+    public function setGroupId($groupId) {
+    	$this->groupId = $groupId;
+    	$this->queryParameters['GroupId'] = $groupId;
 	}
 
-	public function setGroupId($groupId) {
-		$this->groupId = $groupId;
-		$this->queryParameters["GroupId"]=$groupId;
+    public function getName() {
+	    return $this->name;
+    }
+
+    public function setName($name) {
+    	$this->name = $name;
+    	$this->queryParameters['Name'] = $name;
 	}
 
-	public function getName() {
-		return $this->name;
+    public function getDescription() {
+	    return $this->description;
+    }
+
+    public function setDescription($description) {
+    	$this->description = $description;
+    	$this->queryParameters['Description'] = $description;
 	}
 
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
+    public function getEventType() {
+	    return $this->eventType;
+    }
+
+    public function setEventType($eventType) {
+    	$this->eventType = $eventType;
+    	$this->queryParameters['EventType'] = $eventType;
 	}
 
-	public function getDescription() {
-		return $this->description;
+    public function getState() {
+	    return $this->state;
+    }
+
+    public function setState($state) {
+    	$this->state = $state;
+    	$this->queryParameters['State'] = $state;
 	}
 
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
-	}
-
-	public function getEventType() {
-		return $this->eventType;
-	}
-
-	public function setEventType($eventType) {
-		$this->eventType = $eventType;
-		$this->queryParameters["EventType"]=$eventType;
-	}
-
-	public function getState() {
-		return $this->state;
-	}
-
-	public function setState($state) {
-		$this->state = $state;
-		$this->queryParameters["State"]=$state;
-	}
-	
 }

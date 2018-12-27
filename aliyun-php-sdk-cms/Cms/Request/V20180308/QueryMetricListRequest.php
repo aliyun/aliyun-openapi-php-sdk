@@ -21,120 +21,120 @@ namespace Cms\Request\V20180308;
 
 class QueryMetricListRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "QueryMetricList", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "QueryMetricList");
 		$this->setMethod("POST");
+    }
+
+    protected $cursor;
+
+    protected $resourceOwnerId;
+
+    protected $period;
+
+    protected $metric;
+
+    protected $length;
+
+    protected $project;
+
+    protected $endTime;
+
+    protected $express;
+
+    protected $startTime;
+
+    protected $dimensions;
+
+    public function getCursor() {
+	    return $this->cursor;
+    }
+
+    public function setCursor($cursor) {
+    	$this->cursor = $cursor;
+    	$this->queryParameters['Cursor'] = $cursor;
 	}
 
-	private  $cursor;
+    public function getResourceOwnerId() {
+	    return $this->resourceOwnerId;
+    }
 
-	private  $resourceOwnerId;
-
-	private  $period;
-
-	private  $metric;
-
-	private  $length;
-
-	private  $project;
-
-	private  $endTime;
-
-	private  $express;
-
-	private  $startTime;
-
-	private  $dimensions;
-
-	public function getCursor() {
-		return $this->cursor;
+    public function setResourceOwnerId($resourceOwnerId) {
+    	$this->resourceOwnerId = $resourceOwnerId;
+    	$this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 	}
 
-	public function setCursor($cursor) {
-		$this->cursor = $cursor;
-		$this->queryParameters["Cursor"]=$cursor;
+    public function getPeriod() {
+	    return $this->period;
+    }
+
+    public function setPeriod($period) {
+    	$this->period = $period;
+    	$this->queryParameters['Period'] = $period;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+    public function getMetric() {
+	    return $this->metric;
+    }
+
+    public function setMetric($metric) {
+    	$this->metric = $metric;
+    	$this->queryParameters['Metric'] = $metric;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+    public function getLength() {
+	    return $this->length;
+    }
+
+    public function setLength($length) {
+    	$this->length = $length;
+    	$this->queryParameters['Length'] = $length;
 	}
 
-	public function getPeriod() {
-		return $this->period;
+    public function getProject() {
+	    return $this->project;
+    }
+
+    public function setProject($project) {
+    	$this->project = $project;
+    	$this->queryParameters['Project'] = $project;
 	}
 
-	public function setPeriod($period) {
-		$this->period = $period;
-		$this->queryParameters["Period"]=$period;
+    public function getEndTime() {
+	    return $this->endTime;
+    }
+
+    public function setEndTime($endTime) {
+    	$this->endTime = $endTime;
+    	$this->queryParameters['EndTime'] = $endTime;
 	}
 
-	public function getMetric() {
-		return $this->metric;
+    public function getExpress() {
+	    return $this->express;
+    }
+
+    public function setExpress($express) {
+    	$this->express = $express;
+    	$this->queryParameters['Express'] = $express;
 	}
 
-	public function setMetric($metric) {
-		$this->metric = $metric;
-		$this->queryParameters["Metric"]=$metric;
+    public function getStartTime() {
+	    return $this->startTime;
+    }
+
+    public function setStartTime($startTime) {
+    	$this->startTime = $startTime;
+    	$this->queryParameters['StartTime'] = $startTime;
 	}
 
-	public function getLength() {
-		return $this->length;
+    public function getDimensions() {
+	    return $this->dimensions;
+    }
+
+    public function setDimensions($dimensions) {
+    	$this->dimensions = $dimensions;
+    	$this->queryParameters['Dimensions'] = $dimensions;
 	}
 
-	public function setLength($length) {
-		$this->length = $length;
-		$this->queryParameters["Length"]=$length;
-	}
-
-	public function getProject() {
-		return $this->project;
-	}
-
-	public function setProject($project) {
-		$this->project = $project;
-		$this->queryParameters["Project"]=$project;
-	}
-
-	public function getEndTime() {
-		return $this->endTime;
-	}
-
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getExpress() {
-		return $this->express;
-	}
-
-	public function setExpress($express) {
-		$this->express = $express;
-		$this->queryParameters["Express"]=$express;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
-
-	public function getDimensions() {
-		return $this->dimensions;
-	}
-
-	public function setDimensions($dimensions) {
-		$this->dimensions = $dimensions;
-		$this->queryParameters["Dimensions"]=$dimensions;
-	}
-	
 }

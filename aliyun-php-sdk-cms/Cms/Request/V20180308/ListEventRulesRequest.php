@@ -21,54 +21,54 @@ namespace Cms\Request\V20180308;
 
 class ListEventRulesRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "ListEventRules", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "ListEventRules");
 		$this->setMethod("POST");
+    }
+
+    protected $groupId;
+
+    protected $pageSize;
+
+    protected $namePrefix;
+
+    protected $page;
+
+    public function getGroupId() {
+	    return $this->groupId;
+    }
+
+    public function setGroupId($groupId) {
+    	$this->groupId = $groupId;
+    	$this->queryParameters['GroupId'] = $groupId;
 	}
 
-	private  $groupId;
+    public function getPageSize() {
+	    return $this->pageSize;
+    }
 
-	private  $pageSize;
-
-	private  $namePrefix;
-
-	private  $page;
-
-	public function getGroupId() {
-		return $this->groupId;
+    public function setPageSize($pageSize) {
+    	$this->pageSize = $pageSize;
+    	$this->queryParameters['PageSize'] = $pageSize;
 	}
 
-	public function setGroupId($groupId) {
-		$this->groupId = $groupId;
-		$this->queryParameters["GroupId"]=$groupId;
+    public function getNamePrefix() {
+	    return $this->namePrefix;
+    }
+
+    public function setNamePrefix($namePrefix) {
+    	$this->namePrefix = $namePrefix;
+    	$this->queryParameters['NamePrefix'] = $namePrefix;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
+    public function getPage() {
+	    return $this->page;
+    }
+
+    public function setPage($page) {
+    	$this->page = $page;
+    	$this->queryParameters['Page'] = $page;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getNamePrefix() {
-		return $this->namePrefix;
-	}
-
-	public function setNamePrefix($namePrefix) {
-		$this->namePrefix = $namePrefix;
-		$this->queryParameters["NamePrefix"]=$namePrefix;
-	}
-
-	public function getPage() {
-		return $this->page;
-	}
-
-	public function setPage($page) {
-		$this->page = $page;
-		$this->queryParameters["Page"]=$page;
-	}
-	
 }

@@ -21,65 +21,65 @@ namespace Cms\Request\V20180308;
 
 class ListAlarmHistoryRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "ListAlarmHistory", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "ListAlarmHistory");
 		$this->setMethod("POST");
+    }
+
+    protected $cursor;
+
+    protected $size;
+
+    protected $endTime;
+
+    protected $id;
+
+    protected $startTime;
+
+    public function getCursor() {
+	    return $this->cursor;
+    }
+
+    public function setCursor($cursor) {
+    	$this->cursor = $cursor;
+    	$this->queryParameters['Cursor'] = $cursor;
 	}
 
-	private  $cursor;
+    public function getSize() {
+	    return $this->size;
+    }
 
-	private  $size;
-
-	private  $endTime;
-
-	private  $id;
-
-	private  $startTime;
-
-	public function getCursor() {
-		return $this->cursor;
+    public function setSize($size) {
+    	$this->size = $size;
+    	$this->queryParameters['Size'] = $size;
 	}
 
-	public function setCursor($cursor) {
-		$this->cursor = $cursor;
-		$this->queryParameters["Cursor"]=$cursor;
+    public function getEndTime() {
+	    return $this->endTime;
+    }
+
+    public function setEndTime($endTime) {
+    	$this->endTime = $endTime;
+    	$this->queryParameters['EndTime'] = $endTime;
 	}
 
-	public function getSize() {
-		return $this->size;
+    public function getId() {
+	    return $this->id;
+    }
+
+    public function setId($id) {
+    	$this->id = $id;
+    	$this->queryParameters['Id'] = $id;
 	}
 
-	public function setSize($size) {
-		$this->size = $size;
-		$this->queryParameters["Size"]=$size;
+    public function getStartTime() {
+	    return $this->startTime;
+    }
+
+    public function setStartTime($startTime) {
+    	$this->startTime = $startTime;
+    	$this->queryParameters['StartTime'] = $startTime;
 	}
 
-	public function getEndTime() {
-		return $this->endTime;
-	}
-
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getId() {
-		return $this->id;
-	}
-
-	public function setId($id) {
-		$this->id = $id;
-		$this->queryParameters["Id"]=$id;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
-	
 }

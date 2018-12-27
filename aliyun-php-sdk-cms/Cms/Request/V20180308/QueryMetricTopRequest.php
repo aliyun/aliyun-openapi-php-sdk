@@ -21,131 +21,131 @@ namespace Cms\Request\V20180308;
 
 class QueryMetricTopRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "QueryMetricTop", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "QueryMetricTop");
 		$this->setMethod("POST");
+    }
+
+    protected $period;
+
+    protected $resourceOwnerId;
+
+    protected $metric;
+
+    protected $length;
+
+    protected $project;
+
+    protected $endTime;
+
+    protected $orderby;
+
+    protected $express;
+
+    protected $startTime;
+
+    protected $dimensions;
+
+    protected $orderDesc;
+
+    public function getPeriod() {
+	    return $this->period;
+    }
+
+    public function setPeriod($period) {
+    	$this->period = $period;
+    	$this->queryParameters['Period'] = $period;
 	}
 
-	private  $period;
+    public function getResourceOwnerId() {
+	    return $this->resourceOwnerId;
+    }
 
-	private  $resourceOwnerId;
-
-	private  $metric;
-
-	private  $length;
-
-	private  $project;
-
-	private  $endTime;
-
-	private  $orderby;
-
-	private  $express;
-
-	private  $startTime;
-
-	private  $dimensions;
-
-	private  $orderDesc;
-
-	public function getPeriod() {
-		return $this->period;
+    public function setResourceOwnerId($resourceOwnerId) {
+    	$this->resourceOwnerId = $resourceOwnerId;
+    	$this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 	}
 
-	public function setPeriod($period) {
-		$this->period = $period;
-		$this->queryParameters["Period"]=$period;
+    public function getMetric() {
+	    return $this->metric;
+    }
+
+    public function setMetric($metric) {
+    	$this->metric = $metric;
+    	$this->queryParameters['Metric'] = $metric;
 	}
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
+    public function getLength() {
+	    return $this->length;
+    }
+
+    public function setLength($length) {
+    	$this->length = $length;
+    	$this->queryParameters['Length'] = $length;
 	}
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+    public function getProject() {
+	    return $this->project;
+    }
+
+    public function setProject($project) {
+    	$this->project = $project;
+    	$this->queryParameters['Project'] = $project;
 	}
 
-	public function getMetric() {
-		return $this->metric;
+    public function getEndTime() {
+	    return $this->endTime;
+    }
+
+    public function setEndTime($endTime) {
+    	$this->endTime = $endTime;
+    	$this->queryParameters['EndTime'] = $endTime;
 	}
 
-	public function setMetric($metric) {
-		$this->metric = $metric;
-		$this->queryParameters["Metric"]=$metric;
+    public function getOrderby() {
+	    return $this->orderby;
+    }
+
+    public function setOrderby($orderby) {
+    	$this->orderby = $orderby;
+    	$this->queryParameters['Orderby'] = $orderby;
 	}
 
-	public function getLength() {
-		return $this->length;
+    public function getExpress() {
+	    return $this->express;
+    }
+
+    public function setExpress($express) {
+    	$this->express = $express;
+    	$this->queryParameters['Express'] = $express;
 	}
 
-	public function setLength($length) {
-		$this->length = $length;
-		$this->queryParameters["Length"]=$length;
+    public function getStartTime() {
+	    return $this->startTime;
+    }
+
+    public function setStartTime($startTime) {
+    	$this->startTime = $startTime;
+    	$this->queryParameters['StartTime'] = $startTime;
 	}
 
-	public function getProject() {
-		return $this->project;
+    public function getDimensions() {
+	    return $this->dimensions;
+    }
+
+    public function setDimensions($dimensions) {
+    	$this->dimensions = $dimensions;
+    	$this->queryParameters['Dimensions'] = $dimensions;
 	}
 
-	public function setProject($project) {
-		$this->project = $project;
-		$this->queryParameters["Project"]=$project;
+    public function getOrderDesc() {
+	    return $this->orderDesc;
+    }
+
+    public function setOrderDesc($orderDesc) {
+    	$this->orderDesc = $orderDesc;
+    	$this->queryParameters['OrderDesc'] = $orderDesc;
 	}
 
-	public function getEndTime() {
-		return $this->endTime;
-	}
-
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getOrderby() {
-		return $this->orderby;
-	}
-
-	public function setOrderby($orderby) {
-		$this->orderby = $orderby;
-		$this->queryParameters["Orderby"]=$orderby;
-	}
-
-	public function getExpress() {
-		return $this->express;
-	}
-
-	public function setExpress($express) {
-		$this->express = $express;
-		$this->queryParameters["Express"]=$express;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
-
-	public function getDimensions() {
-		return $this->dimensions;
-	}
-
-	public function setDimensions($dimensions) {
-		$this->dimensions = $dimensions;
-		$this->queryParameters["Dimensions"]=$dimensions;
-	}
-
-	public function getOrderDesc() {
-		return $this->orderDesc;
-	}
-
-	public function setOrderDesc($orderDesc) {
-		$this->orderDesc = $orderDesc;
-		$this->queryParameters["OrderDesc"]=$orderDesc;
-	}
-	
 }

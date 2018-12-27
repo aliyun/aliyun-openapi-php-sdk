@@ -21,76 +21,76 @@ namespace Cms\Request\V20180308;
 
 class GetMyGroupsRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "GetMyGroups", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "GetMyGroups");
 		$this->setMethod("POST");
+    }
+
+    protected $selectContactGroups;
+
+    protected $instanceId;
+
+    protected $groupId;
+
+    protected $type;
+
+    protected $groupName;
+
+    protected $bindUrl;
+
+    public function getSelectContactGroups() {
+	    return $this->selectContactGroups;
+    }
+
+    public function setSelectContactGroups($selectContactGroups) {
+    	$this->selectContactGroups = $selectContactGroups;
+    	$this->queryParameters['SelectContactGroups'] = $selectContactGroups;
 	}
 
-	private  $selectContactGroups;
+    public function getInstanceId() {
+	    return $this->instanceId;
+    }
 
-	private  $instanceId;
-
-	private  $groupId;
-
-	private  $type;
-
-	private  $groupName;
-
-	private  $bindUrl;
-
-	public function getSelectContactGroups() {
-		return $this->selectContactGroups;
+    public function setInstanceId($instanceId) {
+    	$this->instanceId = $instanceId;
+    	$this->queryParameters['InstanceId'] = $instanceId;
 	}
 
-	public function setSelectContactGroups($selectContactGroups) {
-		$this->selectContactGroups = $selectContactGroups;
-		$this->queryParameters["SelectContactGroups"]=$selectContactGroups;
+    public function getGroupId() {
+	    return $this->groupId;
+    }
+
+    public function setGroupId($groupId) {
+    	$this->groupId = $groupId;
+    	$this->queryParameters['GroupId'] = $groupId;
 	}
 
-	public function getInstanceId() {
-		return $this->instanceId;
+    public function getType() {
+	    return $this->type;
+    }
+
+    public function setType($type) {
+    	$this->type = $type;
+    	$this->queryParameters['Type'] = $type;
 	}
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
+    public function getGroupName() {
+	    return $this->groupName;
+    }
+
+    public function setGroupName($groupName) {
+    	$this->groupName = $groupName;
+    	$this->queryParameters['GroupName'] = $groupName;
 	}
 
-	public function getGroupId() {
-		return $this->groupId;
+    public function getBindUrl() {
+	    return $this->bindUrl;
+    }
+
+    public function setBindUrl($bindUrl) {
+    	$this->bindUrl = $bindUrl;
+    	$this->queryParameters['BindUrl'] = $bindUrl;
 	}
 
-	public function setGroupId($groupId) {
-		$this->groupId = $groupId;
-		$this->queryParameters["GroupId"]=$groupId;
-	}
-
-	public function getType() {
-		return $this->type;
-	}
-
-	public function setType($type) {
-		$this->type = $type;
-		$this->queryParameters["Type"]=$type;
-	}
-
-	public function getGroupName() {
-		return $this->groupName;
-	}
-
-	public function setGroupName($groupName) {
-		$this->groupName = $groupName;
-		$this->queryParameters["GroupName"]=$groupName;
-	}
-
-	public function getBindUrl() {
-		return $this->bindUrl;
-	}
-
-	public function setBindUrl($bindUrl) {
-		$this->bindUrl = $bindUrl;
-		$this->queryParameters["BindUrl"]=$bindUrl;
-	}
-	
 }

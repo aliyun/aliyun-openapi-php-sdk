@@ -21,54 +21,54 @@ namespace Cms\Request\V20180308;
 
 class DeleteCustomMetricRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "DeleteCustomMetric", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "DeleteCustomMetric");
 		$this->setMethod("POST");
+    }
+
+    protected $groupId;
+
+    protected $metricName;
+
+    protected $uUID;
+
+    protected $md5;
+
+    public function getGroupId() {
+	    return $this->groupId;
+    }
+
+    public function setGroupId($groupId) {
+    	$this->groupId = $groupId;
+    	$this->queryParameters['GroupId'] = $groupId;
 	}
 
-	private  $groupId;
+    public function getMetricName() {
+	    return $this->metricName;
+    }
 
-	private  $metricName;
-
-	private  $uUID;
-
-	private  $md5;
-
-	public function getGroupId() {
-		return $this->groupId;
+    public function setMetricName($metricName) {
+    	$this->metricName = $metricName;
+    	$this->queryParameters['MetricName'] = $metricName;
 	}
 
-	public function setGroupId($groupId) {
-		$this->groupId = $groupId;
-		$this->queryParameters["GroupId"]=$groupId;
+    public function getUUID() {
+	    return $this->uUID;
+    }
+
+    public function setUUID($uUID) {
+    	$this->uUID = $uUID;
+    	$this->queryParameters['UUID'] = $uUID;
 	}
 
-	public function getMetricName() {
-		return $this->metricName;
+    public function getMd5() {
+	    return $this->md5;
+    }
+
+    public function setMd5($md5) {
+    	$this->md5 = $md5;
+    	$this->queryParameters['Md5'] = $md5;
 	}
 
-	public function setMetricName($metricName) {
-		$this->metricName = $metricName;
-		$this->queryParameters["MetricName"]=$metricName;
-	}
-
-	public function getUUID() {
-		return $this->uUID;
-	}
-
-	public function setUUID($uUID) {
-		$this->uUID = $uUID;
-		$this->queryParameters["UUID"]=$uUID;
-	}
-
-	public function getMd5() {
-		return $this->md5;
-	}
-
-	public function setMd5($md5) {
-		$this->md5 = $md5;
-		$this->queryParameters["Md5"]=$md5;
-	}
-	
 }

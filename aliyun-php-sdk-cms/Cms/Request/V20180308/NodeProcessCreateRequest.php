@@ -21,65 +21,65 @@ namespace Cms\Request\V20180308;
 
 class NodeProcessCreateRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "NodeProcessCreate", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "NodeProcessCreate");
 		$this->setMethod("POST");
+    }
+
+    protected $instanceId;
+
+    protected $processName;
+
+    protected $name;
+
+    protected $processUser;
+
+    protected $command;
+
+    public function getInstanceId() {
+	    return $this->instanceId;
+    }
+
+    public function setInstanceId($instanceId) {
+    	$this->instanceId = $instanceId;
+    	$this->queryParameters['InstanceId'] = $instanceId;
 	}
 
-	private  $instanceId;
+    public function getProcessName() {
+	    return $this->processName;
+    }
 
-	private  $processName;
-
-	private  $name;
-
-	private  $processUser;
-
-	private  $command;
-
-	public function getInstanceId() {
-		return $this->instanceId;
+    public function setProcessName($processName) {
+    	$this->processName = $processName;
+    	$this->queryParameters['ProcessName'] = $processName;
 	}
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
+    public function getName() {
+	    return $this->name;
+    }
+
+    public function setName($name) {
+    	$this->name = $name;
+    	$this->queryParameters['Name'] = $name;
 	}
 
-	public function getProcessName() {
-		return $this->processName;
+    public function getProcessUser() {
+	    return $this->processUser;
+    }
+
+    public function setProcessUser($processUser) {
+    	$this->processUser = $processUser;
+    	$this->queryParameters['ProcessUser'] = $processUser;
 	}
 
-	public function setProcessName($processName) {
-		$this->processName = $processName;
-		$this->queryParameters["ProcessName"]=$processName;
+    public function getCommand() {
+	    return $this->command;
+    }
+
+    public function setCommand($command) {
+    	$this->command = $command;
+    	$this->queryParameters['Command'] = $command;
 	}
 
-	public function getName() {
-		return $this->name;
-	}
-
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
-	}
-
-	public function getProcessUser() {
-		return $this->processUser;
-	}
-
-	public function setProcessUser($processUser) {
-		$this->processUser = $processUser;
-		$this->queryParameters["ProcessUser"]=$processUser;
-	}
-
-	public function getCommand() {
-		return $this->command;
-	}
-
-	public function setCommand($command) {
-		$this->command = $command;
-		$this->queryParameters["Command"]=$command;
-	}
-	
 }

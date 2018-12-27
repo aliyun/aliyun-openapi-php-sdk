@@ -21,21 +21,21 @@ namespace Cms\Request\V20180308;
 
 class StopTasksRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "StopTasks", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "StopTasks");
 		$this->setMethod("POST");
+    }
+
+    protected $taskIds;
+
+    public function getTaskIds() {
+	    return $this->taskIds;
+    }
+
+    public function setTaskIds($taskIds) {
+    	$this->taskIds = $taskIds;
+    	$this->queryParameters['TaskIds'] = $taskIds;
 	}
 
-	private  $taskIds;
-
-	public function getTaskIds() {
-		return $this->taskIds;
-	}
-
-	public function setTaskIds($taskIds) {
-		$this->taskIds = $taskIds;
-		$this->queryParameters["TaskIds"]=$taskIds;
-	}
-	
 }

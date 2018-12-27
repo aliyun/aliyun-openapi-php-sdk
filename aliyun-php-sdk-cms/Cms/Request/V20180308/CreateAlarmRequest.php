@@ -21,186 +21,186 @@ namespace Cms\Request\V20180308;
 
 class CreateAlarmRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "CreateAlarm", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "CreateAlarm");
 		$this->setMethod("POST");
+    }
+
+    protected $period;
+
+    protected $webhook;
+
+    protected $dryRun;
+
+    protected $contactGroups;
+
+    protected $endTime;
+
+    protected $threshold;
+
+    protected $startTime;
+
+    protected $name;
+
+    protected $namespace;
+
+    protected $evaluationCount;
+
+    protected $silenceTime;
+
+    protected $metricName;
+
+    protected $notifyType;
+
+    protected $comparisonOperator;
+
+    protected $dimensions;
+
+    protected $statistics;
+
+    public function getPeriod() {
+	    return $this->period;
+    }
+
+    public function setPeriod($period) {
+    	$this->period = $period;
+    	$this->queryParameters['Period'] = $period;
 	}
 
-	private  $period;
+    public function getWebhook() {
+	    return $this->webhook;
+    }
 
-	private  $webhook;
-
-	private  $dryRun;
-
-	private  $contactGroups;
-
-	private  $endTime;
-
-	private  $threshold;
-
-	private  $startTime;
-
-	private  $name;
-
-	private  $namespace;
-
-	private  $evaluationCount;
-
-	private  $silenceTime;
-
-	private  $metricName;
-
-	private  $notifyType;
-
-	private  $comparisonOperator;
-
-	private  $dimensions;
-
-	private  $statistics;
-
-	public function getPeriod() {
-		return $this->period;
+    public function setWebhook($webhook) {
+    	$this->webhook = $webhook;
+    	$this->queryParameters['Webhook'] = $webhook;
 	}
 
-	public function setPeriod($period) {
-		$this->period = $period;
-		$this->queryParameters["Period"]=$period;
+    public function getDryRun() {
+	    return $this->dryRun;
+    }
+
+    public function setDryRun($dryRun) {
+    	$this->dryRun = $dryRun;
+    	$this->queryParameters['DryRun'] = $dryRun;
 	}
 
-	public function getWebhook() {
-		return $this->webhook;
+    public function getContactGroups() {
+	    return $this->contactGroups;
+    }
+
+    public function setContactGroups($contactGroups) {
+    	$this->contactGroups = $contactGroups;
+    	$this->queryParameters['ContactGroups'] = $contactGroups;
 	}
 
-	public function setWebhook($webhook) {
-		$this->webhook = $webhook;
-		$this->queryParameters["Webhook"]=$webhook;
+    public function getEndTime() {
+	    return $this->endTime;
+    }
+
+    public function setEndTime($endTime) {
+    	$this->endTime = $endTime;
+    	$this->queryParameters['EndTime'] = $endTime;
 	}
 
-	public function getDryRun() {
-		return $this->dryRun;
+    public function getThreshold() {
+	    return $this->threshold;
+    }
+
+    public function setThreshold($threshold) {
+    	$this->threshold = $threshold;
+    	$this->queryParameters['Threshold'] = $threshold;
 	}
 
-	public function setDryRun($dryRun) {
-		$this->dryRun = $dryRun;
-		$this->queryParameters["DryRun"]=$dryRun;
+    public function getStartTime() {
+	    return $this->startTime;
+    }
+
+    public function setStartTime($startTime) {
+    	$this->startTime = $startTime;
+    	$this->queryParameters['StartTime'] = $startTime;
 	}
 
-	public function getContactGroups() {
-		return $this->contactGroups;
+    public function getName() {
+	    return $this->name;
+    }
+
+    public function setName($name) {
+    	$this->name = $name;
+    	$this->queryParameters['Name'] = $name;
 	}
 
-	public function setContactGroups($contactGroups) {
-		$this->contactGroups = $contactGroups;
-		$this->queryParameters["ContactGroups"]=$contactGroups;
+    public function getNamespace() {
+	    return $this->namespace;
+    }
+
+    public function setNamespace($namespace) {
+    	$this->namespace = $namespace;
+    	$this->queryParameters['Namespace'] = $namespace;
 	}
 
-	public function getEndTime() {
-		return $this->endTime;
+    public function getEvaluationCount() {
+	    return $this->evaluationCount;
+    }
+
+    public function setEvaluationCount($evaluationCount) {
+    	$this->evaluationCount = $evaluationCount;
+    	$this->queryParameters['EvaluationCount'] = $evaluationCount;
 	}
 
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
+    public function getSilenceTime() {
+	    return $this->silenceTime;
+    }
+
+    public function setSilenceTime($silenceTime) {
+    	$this->silenceTime = $silenceTime;
+    	$this->queryParameters['SilenceTime'] = $silenceTime;
 	}
 
-	public function getThreshold() {
-		return $this->threshold;
+    public function getMetricName() {
+	    return $this->metricName;
+    }
+
+    public function setMetricName($metricName) {
+    	$this->metricName = $metricName;
+    	$this->queryParameters['MetricName'] = $metricName;
 	}
 
-	public function setThreshold($threshold) {
-		$this->threshold = $threshold;
-		$this->queryParameters["Threshold"]=$threshold;
+    public function getNotifyType() {
+	    return $this->notifyType;
+    }
+
+    public function setNotifyType($notifyType) {
+    	$this->notifyType = $notifyType;
+    	$this->queryParameters['NotifyType'] = $notifyType;
 	}
 
-	public function getStartTime() {
-		return $this->startTime;
+    public function getComparisonOperator() {
+	    return $this->comparisonOperator;
+    }
+
+    public function setComparisonOperator($comparisonOperator) {
+    	$this->comparisonOperator = $comparisonOperator;
+    	$this->queryParameters['ComparisonOperator'] = $comparisonOperator;
 	}
 
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
+    public function getDimensions() {
+	    return $this->dimensions;
+    }
+
+    public function setDimensions($dimensions) {
+    	$this->dimensions = $dimensions;
+    	$this->queryParameters['Dimensions'] = $dimensions;
 	}
 
-	public function getName() {
-		return $this->name;
+    public function getStatistics() {
+	    return $this->statistics;
+    }
+
+    public function setStatistics($statistics) {
+    	$this->statistics = $statistics;
+    	$this->queryParameters['Statistics'] = $statistics;
 	}
 
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
-	}
-
-	public function getNamespace() {
-		return $this->namespace;
-	}
-
-	public function setNamespace($namespace) {
-		$this->namespace = $namespace;
-		$this->queryParameters["Namespace"]=$namespace;
-	}
-
-	public function getEvaluationCount() {
-		return $this->evaluationCount;
-	}
-
-	public function setEvaluationCount($evaluationCount) {
-		$this->evaluationCount = $evaluationCount;
-		$this->queryParameters["EvaluationCount"]=$evaluationCount;
-	}
-
-	public function getSilenceTime() {
-		return $this->silenceTime;
-	}
-
-	public function setSilenceTime($silenceTime) {
-		$this->silenceTime = $silenceTime;
-		$this->queryParameters["SilenceTime"]=$silenceTime;
-	}
-
-	public function getMetricName() {
-		return $this->metricName;
-	}
-
-	public function setMetricName($metricName) {
-		$this->metricName = $metricName;
-		$this->queryParameters["MetricName"]=$metricName;
-	}
-
-	public function getNotifyType() {
-		return $this->notifyType;
-	}
-
-	public function setNotifyType($notifyType) {
-		$this->notifyType = $notifyType;
-		$this->queryParameters["NotifyType"]=$notifyType;
-	}
-
-	public function getComparisonOperator() {
-		return $this->comparisonOperator;
-	}
-
-	public function setComparisonOperator($comparisonOperator) {
-		$this->comparisonOperator = $comparisonOperator;
-		$this->queryParameters["ComparisonOperator"]=$comparisonOperator;
-	}
-
-	public function getDimensions() {
-		return $this->dimensions;
-	}
-
-	public function setDimensions($dimensions) {
-		$this->dimensions = $dimensions;
-		$this->queryParameters["Dimensions"]=$dimensions;
-	}
-
-	public function getStatistics() {
-		return $this->statistics;
-	}
-
-	public function setStatistics($statistics) {
-		$this->statistics = $statistics;
-		$this->queryParameters["Statistics"]=$statistics;
-	}
-	
 }

@@ -21,76 +21,76 @@ namespace Cms\Request\V20180308;
 
 class UpdateMyGroupsRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cms", "2018-03-08", "UpdateMyGroups", "cms", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("Cms", "2018-03-08", "UpdateMyGroups");
 		$this->setMethod("POST");
+    }
+
+    protected $contactGroups;
+
+    protected $groupId;
+
+    protected $serviceId;
+
+    protected $type;
+
+    protected $groupName;
+
+    protected $bindUrls;
+
+    public function getContactGroups() {
+	    return $this->contactGroups;
+    }
+
+    public function setContactGroups($contactGroups) {
+    	$this->contactGroups = $contactGroups;
+    	$this->queryParameters['ContactGroups'] = $contactGroups;
 	}
 
-	private  $contactGroups;
+    public function getGroupId() {
+	    return $this->groupId;
+    }
 
-	private  $groupId;
-
-	private  $serviceId;
-
-	private  $type;
-
-	private  $groupName;
-
-	private  $bindUrls;
-
-	public function getContactGroups() {
-		return $this->contactGroups;
+    public function setGroupId($groupId) {
+    	$this->groupId = $groupId;
+    	$this->queryParameters['GroupId'] = $groupId;
 	}
 
-	public function setContactGroups($contactGroups) {
-		$this->contactGroups = $contactGroups;
-		$this->queryParameters["ContactGroups"]=$contactGroups;
+    public function getServiceId() {
+	    return $this->serviceId;
+    }
+
+    public function setServiceId($serviceId) {
+    	$this->serviceId = $serviceId;
+    	$this->queryParameters['ServiceId'] = $serviceId;
 	}
 
-	public function getGroupId() {
-		return $this->groupId;
+    public function getType() {
+	    return $this->type;
+    }
+
+    public function setType($type) {
+    	$this->type = $type;
+    	$this->queryParameters['Type'] = $type;
 	}
 
-	public function setGroupId($groupId) {
-		$this->groupId = $groupId;
-		$this->queryParameters["GroupId"]=$groupId;
+    public function getGroupName() {
+	    return $this->groupName;
+    }
+
+    public function setGroupName($groupName) {
+    	$this->groupName = $groupName;
+    	$this->queryParameters['GroupName'] = $groupName;
 	}
 
-	public function getServiceId() {
-		return $this->serviceId;
+    public function getBindUrls() {
+	    return $this->bindUrls;
+    }
+
+    public function setBindUrls($bindUrls) {
+    	$this->bindUrls = $bindUrls;
+    	$this->queryParameters['BindUrls'] = $bindUrls;
 	}
 
-	public function setServiceId($serviceId) {
-		$this->serviceId = $serviceId;
-		$this->queryParameters["ServiceId"]=$serviceId;
-	}
-
-	public function getType() {
-		return $this->type;
-	}
-
-	public function setType($type) {
-		$this->type = $type;
-		$this->queryParameters["Type"]=$type;
-	}
-
-	public function getGroupName() {
-		return $this->groupName;
-	}
-
-	public function setGroupName($groupName) {
-		$this->groupName = $groupName;
-		$this->queryParameters["GroupName"]=$groupName;
-	}
-
-	public function getBindUrls() {
-		return $this->bindUrls;
-	}
-
-	public function setBindUrls($bindUrls) {
-		$this->bindUrls = $bindUrls;
-		$this->queryParameters["BindUrls"]=$bindUrls;
-	}
-	
 }
