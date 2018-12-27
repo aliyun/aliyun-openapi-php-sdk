@@ -45,6 +45,8 @@ Autoloader::addAutoloadPath('aliyun-php-sdk-saf');
 Autoloader::addAutoloadPath('aliyun-php-sdk-imm');
 Autoloader::addAutoloadPath('aliyun-php-sdk-mts');
 Autoloader::addAutoloadPath('aliyun-php-sdk-alidns');
+Autoloader::addAutoloadPath('aliyun-php-sdk-afs');
+
 //config http proxy
 define('ENABLE_HTTP_PROXY', false);
 define('HTTP_PROXY_IP', '127.0.0.1');

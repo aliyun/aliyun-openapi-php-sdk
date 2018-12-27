@@ -644,6 +644,7 @@
     <Endpoint name="cn-hangzhou">
         <RegionIds><RegionId>cn-hangzhou</RegionId></RegionIds>
         <Products>
+            <Product><ProductName>afs</ProductName><DomainName>afs.aliyuncs.com</DomainName></Product>
             <Product><ProductName>ARMS</ProductName><DomainName>arms.cn-hangzhou.aliyuncs.com</DomainName></Product>
             <Product><ProductName>CS</ProductName><DomainName>cs.aliyuncs.com</DomainName></Product>
             <Product><ProductName>COS</ProductName><DomainName>cos.aliyuncs.com</DomainName></Product>
