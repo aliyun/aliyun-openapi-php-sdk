@@ -1,3 +1,7 @@
+2018-12-27 Version: 1.2.3
+1, Add the aliyun dns class load path.
+2, Fixed PHP Notice in LocationService.php.
+
 2018-12-24 Version: 1.2.2
 1, Fixed ROA sign
 2, ROA support JSON Format
