@@ -19,19 +19,15 @@
  */
 namespace R_kvstore\Request\V20150101;
 
-class ModifyInstanceAutoRenewalAttributeRequest extends \RpcAcsRequest
+class ModifyDBInstanceMonitorRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("R-kvstore", "2015-01-01", "ModifyInstanceAutoRenewalAttribute", "redisa", "openAPI");
+		parent::__construct("R-kvstore", "2015-01-01", "ModifyDBInstanceMonitor", "redisa", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $duration;
-
 	private  $resourceOwnerId;
-
-	private  $autoRenew;
 
 	private  $securityToken;
 
@@ -41,16 +37,9 @@ class ModifyInstanceAutoRenewalAttributeRequest extends \RpcAcsRequest
 
 	private  $dBInstanceId;
 
+	private  $interval;
+
 	private  $ownerId;
-
-	public function getDuration() {
-		return $this->duration;
-	}
-
-	public function setDuration($duration) {
-		$this->duration = $duration;
-		$this->queryParameters["Duration"]=$duration;
-	}
 
 	public function getResourceOwnerId() {
 		return $this->resourceOwnerId;
@@ -59,15 +48,6 @@ class ModifyInstanceAutoRenewalAttributeRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getAutoRenew() {
-		return $this->autoRenew;
-	}
-
-	public function setAutoRenew($autoRenew) {
-		$this->autoRenew = $autoRenew;
-		$this->queryParameters["AutoRenew"]=$autoRenew;
 	}
 
 	public function getSecurityToken() {
@@ -104,6 +84,15 @@ class ModifyInstanceAutoRenewalAttributeRequest extends \RpcAcsRequest
 	public function setDBInstanceId($dBInstanceId) {
 		$this->dBInstanceId = $dBInstanceId;
 		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
+	}
+
+	public function getInterval() {
+		return $this->interval;
+	}
+
+	public function setInterval($interval) {
+		$this->interval = $interval;
+		$this->queryParameters["Interval"]=$interval;
 	}
 
 	public function getOwnerId() {

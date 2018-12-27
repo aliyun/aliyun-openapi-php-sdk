@@ -19,37 +19,39 @@
  */
 namespace R_kvstore\Request\V20150101;
 
-class ModifyInstanceAutoRenewalAttributeRequest extends \RpcAcsRequest
+class MigrateToOtherZoneRequest extends \RpcAcsRequest
 {
 	function  __construct()
 	{
-		parent::__construct("R-kvstore", "2015-01-01", "ModifyInstanceAutoRenewalAttribute", "redisa", "openAPI");
+		parent::__construct("R-kvstore", "2015-01-01", "MigrateToOtherZone", "redisa", "openAPI");
 		$this->setMethod("POST");
 	}
 
-	private  $duration;
+	private  $vSwitchId;
 
 	private  $resourceOwnerId;
-
-	private  $autoRenew;
 
 	private  $securityToken;
 
 	private  $resourceOwnerAccount;
 
+	private  $effectiveTime;
+
 	private  $ownerAccount;
+
+	private  $zoneId;
 
 	private  $dBInstanceId;
 
 	private  $ownerId;
 
-	public function getDuration() {
-		return $this->duration;
+	public function getVSwitchId() {
+		return $this->vSwitchId;
 	}
 
-	public function setDuration($duration) {
-		$this->duration = $duration;
-		$this->queryParameters["Duration"]=$duration;
+	public function setVSwitchId($vSwitchId) {
+		$this->vSwitchId = $vSwitchId;
+		$this->queryParameters["VSwitchId"]=$vSwitchId;
 	}
 
 	public function getResourceOwnerId() {
@@ -59,15 +61,6 @@ class ModifyInstanceAutoRenewalAttributeRequest extends \RpcAcsRequest
 	public function setResourceOwnerId($resourceOwnerId) {
 		$this->resourceOwnerId = $resourceOwnerId;
 		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getAutoRenew() {
-		return $this->autoRenew;
-	}
-
-	public function setAutoRenew($autoRenew) {
-		$this->autoRenew = $autoRenew;
-		$this->queryParameters["AutoRenew"]=$autoRenew;
 	}
 
 	public function getSecurityToken() {
@@ -88,6 +81,15 @@ class ModifyInstanceAutoRenewalAttributeRequest extends \RpcAcsRequest
 		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
 	}
 
+	public function getEffectiveTime() {
+		return $this->effectiveTime;
+	}
+
+	public function setEffectiveTime($effectiveTime) {
+		$this->effectiveTime = $effectiveTime;
+		$this->queryParameters["EffectiveTime"]=$effectiveTime;
+	}
+
 	public function getOwnerAccount() {
 		return $this->ownerAccount;
 	}
@@ -95,6 +97,15 @@ class ModifyInstanceAutoRenewalAttributeRequest extends \RpcAcsRequest
 	public function setOwnerAccount($ownerAccount) {
 		$this->ownerAccount = $ownerAccount;
 		$this->queryParameters["OwnerAccount"]=$ownerAccount;
+	}
+
+	public function getZoneId() {
+		return $this->zoneId;
+	}
+
+	public function setZoneId($zoneId) {
+		$this->zoneId = $zoneId;
+		$this->queryParameters["ZoneId"]=$zoneId;
 	}
 
 	public function getDBInstanceId() {
