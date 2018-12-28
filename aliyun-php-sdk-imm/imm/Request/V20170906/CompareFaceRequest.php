@@ -21,43 +21,43 @@ namespace imm\Request\V20170906;
 
 class CompareFaceRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("imm", "2017-09-06", "CompareFace", "imm", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("imm", "2017-09-06", "CompareFace", "imm", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $srcUriB;
+
+    protected $srcUriA;
+
+    protected $project;
+
+    public function getSrcUriB() {
+	    return $this->srcUriB;
+    }
+
+    public function setSrcUriB($srcUriB) {
+    	$this->srcUriB = $srcUriB;
+    	$this->queryParameters['SrcUriB'] = $srcUriB;
 	}
 
-	private  $srcUriB;
+    public function getSrcUriA() {
+	    return $this->srcUriA;
+    }
 
-	private  $srcUriA;
-
-	private  $project;
-
-	public function getSrcUriB() {
-		return $this->srcUriB;
+    public function setSrcUriA($srcUriA) {
+    	$this->srcUriA = $srcUriA;
+    	$this->queryParameters['SrcUriA'] = $srcUriA;
 	}
 
-	public function setSrcUriB($srcUriB) {
-		$this->srcUriB = $srcUriB;
-		$this->queryParameters["SrcUriB"]=$srcUriB;
+    public function getProject() {
+	    return $this->project;
+    }
+
+    public function setProject($project) {
+    	$this->project = $project;
+    	$this->queryParameters['Project'] = $project;
 	}
 
-	public function getSrcUriA() {
-		return $this->srcUriA;
-	}
-
-	public function setSrcUriA($srcUriA) {
-		$this->srcUriA = $srcUriA;
-		$this->queryParameters["SrcUriA"]=$srcUriA;
-	}
-
-	public function getProject() {
-		return $this->project;
-	}
-
-	public function setProject($project) {
-		$this->project = $project;
-		$this->queryParameters["Project"]=$project;
-	}
-	
 }

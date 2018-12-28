@@ -21,32 +21,32 @@ namespace imm\Request\V20170906;
 
 class GetOfficeConversionTaskRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("imm", "2017-09-06", "GetOfficeConversionTask", "imm", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("imm", "2017-09-06", "GetOfficeConversionTask", "imm", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $project;
+
+    protected $taskId;
+
+    public function getProject() {
+	    return $this->project;
+    }
+
+    public function setProject($project) {
+    	$this->project = $project;
+    	$this->queryParameters['Project'] = $project;
 	}
 
-	private  $project;
+    public function getTaskId() {
+	    return $this->taskId;
+    }
 
-	private  $taskId;
-
-	public function getProject() {
-		return $this->project;
+    public function setTaskId($taskId) {
+    	$this->taskId = $taskId;
+    	$this->queryParameters['TaskId'] = $taskId;
 	}
 
-	public function setProject($project) {
-		$this->project = $project;
-		$this->queryParameters["Project"]=$project;
-	}
-
-	public function getTaskId() {
-		return $this->taskId;
-	}
-
-	public function setTaskId($taskId) {
-		$this->taskId = $taskId;
-		$this->queryParameters["TaskId"]=$taskId;
-	}
-	
 }

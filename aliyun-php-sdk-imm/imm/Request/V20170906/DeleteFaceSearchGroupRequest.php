@@ -21,32 +21,32 @@ namespace imm\Request\V20170906;
 
 class DeleteFaceSearchGroupRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("imm", "2017-09-06", "DeleteFaceSearchGroup", "imm", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("imm", "2017-09-06", "DeleteFaceSearchGroup", "imm", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $project;
+
+    protected $groupName;
+
+    public function getProject() {
+	    return $this->project;
+    }
+
+    public function setProject($project) {
+    	$this->project = $project;
+    	$this->queryParameters['Project'] = $project;
 	}
 
-	private  $project;
+    public function getGroupName() {
+	    return $this->groupName;
+    }
 
-	private  $groupName;
-
-	public function getProject() {
-		return $this->project;
+    public function setGroupName($groupName) {
+    	$this->groupName = $groupName;
+    	$this->queryParameters['GroupName'] = $groupName;
 	}
 
-	public function setProject($project) {
-		$this->project = $project;
-		$this->queryParameters["Project"]=$project;
-	}
-
-	public function getGroupName() {
-		return $this->groupName;
-	}
-
-	public function setGroupName($groupName) {
-		$this->groupName = $groupName;
-		$this->queryParameters["GroupName"]=$groupName;
-	}
-	
 }

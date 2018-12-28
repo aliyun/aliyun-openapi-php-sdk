@@ -21,32 +21,32 @@ namespace imm\Request\V20170906;
 
 class CreateFaceJobRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("imm", "2017-09-06", "CreateFaceJob", "imm", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("imm", "2017-09-06", "CreateFaceJob", "imm", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $project;
+
+    protected $srcUri;
+
+    public function getProject() {
+	    return $this->project;
+    }
+
+    public function setProject($project) {
+    	$this->project = $project;
+    	$this->queryParameters['Project'] = $project;
 	}
 
-	private  $project;
+    public function getSrcUri() {
+	    return $this->srcUri;
+    }
 
-	private  $srcUri;
-
-	public function getProject() {
-		return $this->project;
+    public function setSrcUri($srcUri) {
+    	$this->srcUri = $srcUri;
+    	$this->queryParameters['SrcUri'] = $srcUri;
 	}
 
-	public function setProject($project) {
-		$this->project = $project;
-		$this->queryParameters["Project"]=$project;
-	}
-
-	public function getSrcUri() {
-		return $this->srcUri;
-	}
-
-	public function setSrcUri($srcUri) {
-		$this->srcUri = $srcUri;
-		$this->queryParameters["SrcUri"]=$srcUri;
-	}
-	
 }

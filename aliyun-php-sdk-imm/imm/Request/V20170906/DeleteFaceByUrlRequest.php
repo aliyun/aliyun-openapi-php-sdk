@@ -21,43 +21,43 @@ namespace imm\Request\V20170906;
 
 class DeleteFaceByUrlRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("imm", "2017-09-06", "DeleteFaceByUrl", "imm", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("imm", "2017-09-06", "DeleteFaceByUrl", "imm", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $project;
+
+    protected $setId;
+
+    protected $srcUri;
+
+    public function getProject() {
+	    return $this->project;
+    }
+
+    public function setProject($project) {
+    	$this->project = $project;
+    	$this->queryParameters['Project'] = $project;
 	}
 
-	private  $project;
+    public function getSetId() {
+	    return $this->setId;
+    }
 
-	private  $setId;
-
-	private  $srcUri;
-
-	public function getProject() {
-		return $this->project;
+    public function setSetId($setId) {
+    	$this->setId = $setId;
+    	$this->queryParameters['SetId'] = $setId;
 	}
 
-	public function setProject($project) {
-		$this->project = $project;
-		$this->queryParameters["Project"]=$project;
+    public function getSrcUri() {
+	    return $this->srcUri;
+    }
+
+    public function setSrcUri($srcUri) {
+    	$this->srcUri = $srcUri;
+    	$this->queryParameters['SrcUri'] = $srcUri;
 	}
 
-	public function getSetId() {
-		return $this->setId;
-	}
-
-	public function setSetId($setId) {
-		$this->setId = $setId;
-		$this->queryParameters["SetId"]=$setId;
-	}
-
-	public function getSrcUri() {
-		return $this->srcUri;
-	}
-
-	public function setSrcUri($srcUri) {
-		$this->srcUri = $srcUri;
-		$this->queryParameters["SrcUri"]=$srcUri;
-	}
-	
 }

@@ -21,65 +21,65 @@ namespace imm\Request\V20170906;
 
 class CreateTagJobRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("imm", "2017-09-06", "CreateTagJob", "imm", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("imm", "2017-09-06", "CreateTagJob", "imm", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $notifyTopicName;
+
+    protected $notifyEndpoint;
+
+    protected $project;
+
+    protected $externalID;
+
+    protected $srcUri;
+
+    public function getNotifyTopicName() {
+	    return $this->notifyTopicName;
+    }
+
+    public function setNotifyTopicName($notifyTopicName) {
+    	$this->notifyTopicName = $notifyTopicName;
+    	$this->queryParameters['NotifyTopicName'] = $notifyTopicName;
 	}
 
-	private  $notifyTopicName;
+    public function getNotifyEndpoint() {
+	    return $this->notifyEndpoint;
+    }
 
-	private  $notifyEndpoint;
-
-	private  $project;
-
-	private  $externalID;
-
-	private  $srcUri;
-
-	public function getNotifyTopicName() {
-		return $this->notifyTopicName;
+    public function setNotifyEndpoint($notifyEndpoint) {
+    	$this->notifyEndpoint = $notifyEndpoint;
+    	$this->queryParameters['NotifyEndpoint'] = $notifyEndpoint;
 	}
 
-	public function setNotifyTopicName($notifyTopicName) {
-		$this->notifyTopicName = $notifyTopicName;
-		$this->queryParameters["NotifyTopicName"]=$notifyTopicName;
+    public function getProject() {
+	    return $this->project;
+    }
+
+    public function setProject($project) {
+    	$this->project = $project;
+    	$this->queryParameters['Project'] = $project;
 	}
 
-	public function getNotifyEndpoint() {
-		return $this->notifyEndpoint;
+    public function getExternalID() {
+	    return $this->externalID;
+    }
+
+    public function setExternalID($externalID) {
+    	$this->externalID = $externalID;
+    	$this->queryParameters['ExternalID'] = $externalID;
 	}
 
-	public function setNotifyEndpoint($notifyEndpoint) {
-		$this->notifyEndpoint = $notifyEndpoint;
-		$this->queryParameters["NotifyEndpoint"]=$notifyEndpoint;
+    public function getSrcUri() {
+	    return $this->srcUri;
+    }
+
+    public function setSrcUri($srcUri) {
+    	$this->srcUri = $srcUri;
+    	$this->queryParameters['SrcUri'] = $srcUri;
 	}
 
-	public function getProject() {
-		return $this->project;
-	}
-
-	public function setProject($project) {
-		$this->project = $project;
-		$this->queryParameters["Project"]=$project;
-	}
-
-	public function getExternalID() {
-		return $this->externalID;
-	}
-
-	public function setExternalID($externalID) {
-		$this->externalID = $externalID;
-		$this->queryParameters["ExternalID"]=$externalID;
-	}
-
-	public function getSrcUri() {
-		return $this->srcUri;
-	}
-
-	public function setSrcUri($srcUri) {
-		$this->srcUri = $srcUri;
-		$this->queryParameters["SrcUri"]=$srcUri;
-	}
-	
 }

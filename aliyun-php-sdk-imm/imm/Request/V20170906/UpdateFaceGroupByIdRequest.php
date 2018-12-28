@@ -21,54 +21,54 @@ namespace imm\Request\V20170906;
 
 class UpdateFaceGroupByIdRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("imm", "2017-09-06", "UpdateFaceGroupById", "imm", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("imm", "2017-09-06", "UpdateFaceGroupById", "imm", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $project;
+
+    protected $setId;
+
+    protected $newGroupId;
+
+    protected $faceIds;
+
+    public function getProject() {
+	    return $this->project;
+    }
+
+    public function setProject($project) {
+    	$this->project = $project;
+    	$this->queryParameters['Project'] = $project;
 	}
 
-	private  $project;
+    public function getSetId() {
+	    return $this->setId;
+    }
 
-	private  $setId;
-
-	private  $newGroupId;
-
-	private  $faceIds;
-
-	public function getProject() {
-		return $this->project;
+    public function setSetId($setId) {
+    	$this->setId = $setId;
+    	$this->queryParameters['SetId'] = $setId;
 	}
 
-	public function setProject($project) {
-		$this->project = $project;
-		$this->queryParameters["Project"]=$project;
+    public function getNewGroupId() {
+	    return $this->newGroupId;
+    }
+
+    public function setNewGroupId($newGroupId) {
+    	$this->newGroupId = $newGroupId;
+    	$this->queryParameters['NewGroupId'] = $newGroupId;
 	}
 
-	public function getSetId() {
-		return $this->setId;
+    public function getFaceIds() {
+	    return $this->faceIds;
+    }
+
+    public function setFaceIds($faceIds) {
+    	$this->faceIds = $faceIds;
+    	$this->queryParameters['FaceIds'] = $faceIds;
 	}
 
-	public function setSetId($setId) {
-		$this->setId = $setId;
-		$this->queryParameters["SetId"]=$setId;
-	}
-
-	public function getNewGroupId() {
-		return $this->newGroupId;
-	}
-
-	public function setNewGroupId($newGroupId) {
-		$this->newGroupId = $newGroupId;
-		$this->queryParameters["NewGroupId"]=$newGroupId;
-	}
-
-	public function getFaceIds() {
-		return $this->faceIds;
-	}
-
-	public function setFaceIds($faceIds) {
-		$this->faceIds = $faceIds;
-		$this->queryParameters["FaceIds"]=$faceIds;
-	}
-	
 }

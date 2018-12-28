@@ -21,65 +21,65 @@ namespace imm\Request\V20170906;
 
 class CreateDeleteFaceSetJobRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("imm", "2017-09-06", "CreateDeleteFaceSetJob", "imm", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("imm", "2017-09-06", "CreateDeleteFaceSetJob", "imm", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $notifyTopicName;
+
+    protected $notifyEndpoint;
+
+    protected $project;
+
+    protected $setId;
+
+    protected $checkEmpty;
+
+    public function getNotifyTopicName() {
+	    return $this->notifyTopicName;
+    }
+
+    public function setNotifyTopicName($notifyTopicName) {
+    	$this->notifyTopicName = $notifyTopicName;
+    	$this->queryParameters['NotifyTopicName'] = $notifyTopicName;
 	}
 
-	private  $notifyTopicName;
+    public function getNotifyEndpoint() {
+	    return $this->notifyEndpoint;
+    }
 
-	private  $notifyEndpoint;
-
-	private  $project;
-
-	private  $setId;
-
-	private  $checkEmpty;
-
-	public function getNotifyTopicName() {
-		return $this->notifyTopicName;
+    public function setNotifyEndpoint($notifyEndpoint) {
+    	$this->notifyEndpoint = $notifyEndpoint;
+    	$this->queryParameters['NotifyEndpoint'] = $notifyEndpoint;
 	}
 
-	public function setNotifyTopicName($notifyTopicName) {
-		$this->notifyTopicName = $notifyTopicName;
-		$this->queryParameters["NotifyTopicName"]=$notifyTopicName;
+    public function getProject() {
+	    return $this->project;
+    }
+
+    public function setProject($project) {
+    	$this->project = $project;
+    	$this->queryParameters['Project'] = $project;
 	}
 
-	public function getNotifyEndpoint() {
-		return $this->notifyEndpoint;
+    public function getSetId() {
+	    return $this->setId;
+    }
+
+    public function setSetId($setId) {
+    	$this->setId = $setId;
+    	$this->queryParameters['SetId'] = $setId;
 	}
 
-	public function setNotifyEndpoint($notifyEndpoint) {
-		$this->notifyEndpoint = $notifyEndpoint;
-		$this->queryParameters["NotifyEndpoint"]=$notifyEndpoint;
+    public function getCheckEmpty() {
+	    return $this->checkEmpty;
+    }
+
+    public function setCheckEmpty($checkEmpty) {
+    	$this->checkEmpty = $checkEmpty;
+    	$this->queryParameters['CheckEmpty'] = $checkEmpty;
 	}
 
-	public function getProject() {
-		return $this->project;
-	}
-
-	public function setProject($project) {
-		$this->project = $project;
-		$this->queryParameters["Project"]=$project;
-	}
-
-	public function getSetId() {
-		return $this->setId;
-	}
-
-	public function setSetId($setId) {
-		$this->setId = $setId;
-		$this->queryParameters["SetId"]=$setId;
-	}
-
-	public function getCheckEmpty() {
-		return $this->checkEmpty;
-	}
-
-	public function setCheckEmpty($checkEmpty) {
-		$this->checkEmpty = $checkEmpty;
-		$this->queryParameters["CheckEmpty"]=$checkEmpty;
-	}
-	
 }

@@ -21,32 +21,32 @@ namespace imm\Request\V20170906;
 
 class DetectFaceRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("imm", "2017-09-06", "DetectFace", "imm", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("imm", "2017-09-06", "DetectFace", "imm", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $srcUris;
+
+    protected $project;
+
+    public function getSrcUris() {
+	    return $this->srcUris;
+    }
+
+    public function setSrcUris($srcUris) {
+    	$this->srcUris = $srcUris;
+    	$this->queryParameters['SrcUris'] = $srcUris;
 	}
 
-	private  $srcUris;
+    public function getProject() {
+	    return $this->project;
+    }
 
-	private  $project;
-
-	public function getSrcUris() {
-		return $this->srcUris;
+    public function setProject($project) {
+    	$this->project = $project;
+    	$this->queryParameters['Project'] = $project;
 	}
 
-	public function setSrcUris($srcUris) {
-		$this->srcUris = $srcUris;
-		$this->queryParameters["SrcUris"]=$srcUris;
-	}
-
-	public function getProject() {
-		return $this->project;
-	}
-
-	public function setProject($project) {
-		$this->project = $project;
-		$this->queryParameters["Project"]=$project;
-	}
-	
 }

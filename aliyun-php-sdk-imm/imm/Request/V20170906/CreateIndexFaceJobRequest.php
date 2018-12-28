@@ -21,87 +21,87 @@ namespace imm\Request\V20170906;
 
 class CreateIndexFaceJobRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("imm", "2017-09-06", "CreateIndexFaceJob", "imm", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("imm", "2017-09-06", "CreateIndexFaceJob", "imm", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $chain;
+
+    protected $srcUris;
+
+    protected $notifyTopicName;
+
+    protected $notifyEndpoint;
+
+    protected $project;
+
+    protected $setId;
+
+    protected $force;
+
+    public function getChain() {
+	    return $this->chain;
+    }
+
+    public function setChain($chain) {
+    	$this->chain = $chain;
+    	$this->queryParameters['Chain'] = $chain;
 	}
 
-	private  $chain;
+    public function getSrcUris() {
+	    return $this->srcUris;
+    }
 
-	private  $srcUris;
-
-	private  $notifyTopicName;
-
-	private  $notifyEndpoint;
-
-	private  $project;
-
-	private  $setId;
-
-	private  $force;
-
-	public function getChain() {
-		return $this->chain;
+    public function setSrcUris($srcUris) {
+    	$this->srcUris = $srcUris;
+    	$this->queryParameters['SrcUris'] = $srcUris;
 	}
 
-	public function setChain($chain) {
-		$this->chain = $chain;
-		$this->queryParameters["Chain"]=$chain;
+    public function getNotifyTopicName() {
+	    return $this->notifyTopicName;
+    }
+
+    public function setNotifyTopicName($notifyTopicName) {
+    	$this->notifyTopicName = $notifyTopicName;
+    	$this->queryParameters['NotifyTopicName'] = $notifyTopicName;
 	}
 
-	public function getSrcUris() {
-		return $this->srcUris;
+    public function getNotifyEndpoint() {
+	    return $this->notifyEndpoint;
+    }
+
+    public function setNotifyEndpoint($notifyEndpoint) {
+    	$this->notifyEndpoint = $notifyEndpoint;
+    	$this->queryParameters['NotifyEndpoint'] = $notifyEndpoint;
 	}
 
-	public function setSrcUris($srcUris) {
-		$this->srcUris = $srcUris;
-		$this->queryParameters["SrcUris"]=$srcUris;
+    public function getProject() {
+	    return $this->project;
+    }
+
+    public function setProject($project) {
+    	$this->project = $project;
+    	$this->queryParameters['Project'] = $project;
 	}
 
-	public function getNotifyTopicName() {
-		return $this->notifyTopicName;
+    public function getSetId() {
+	    return $this->setId;
+    }
+
+    public function setSetId($setId) {
+    	$this->setId = $setId;
+    	$this->queryParameters['SetId'] = $setId;
 	}
 
-	public function setNotifyTopicName($notifyTopicName) {
-		$this->notifyTopicName = $notifyTopicName;
-		$this->queryParameters["NotifyTopicName"]=$notifyTopicName;
+    public function getForce() {
+	    return $this->force;
+    }
+
+    public function setForce($force) {
+    	$this->force = $force;
+    	$this->queryParameters['Force'] = $force;
 	}
 
-	public function getNotifyEndpoint() {
-		return $this->notifyEndpoint;
-	}
-
-	public function setNotifyEndpoint($notifyEndpoint) {
-		$this->notifyEndpoint = $notifyEndpoint;
-		$this->queryParameters["NotifyEndpoint"]=$notifyEndpoint;
-	}
-
-	public function getProject() {
-		return $this->project;
-	}
-
-	public function setProject($project) {
-		$this->project = $project;
-		$this->queryParameters["Project"]=$project;
-	}
-
-	public function getSetId() {
-		return $this->setId;
-	}
-
-	public function setSetId($setId) {
-		$this->setId = $setId;
-		$this->queryParameters["SetId"]=$setId;
-	}
-
-	public function getForce() {
-		return $this->force;
-	}
-
-	public function setForce($force) {
-		$this->force = $force;
-		$this->queryParameters["Force"]=$force;
-	}
-	
 }

@@ -21,65 +21,65 @@ namespace imm\Request\V20170906;
 
 class CreateGroupFacesJobRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("imm", "2017-09-06", "CreateGroupFacesJob", "imm", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("imm", "2017-09-06", "CreateGroupFacesJob", "imm", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $notifyTopicName;
+
+    protected $notifyEndpoint;
+
+    protected $project;
+
+    protected $setId;
+
+    protected $operation;
+
+    public function getNotifyTopicName() {
+	    return $this->notifyTopicName;
+    }
+
+    public function setNotifyTopicName($notifyTopicName) {
+    	$this->notifyTopicName = $notifyTopicName;
+    	$this->queryParameters['NotifyTopicName'] = $notifyTopicName;
 	}
 
-	private  $notifyTopicName;
+    public function getNotifyEndpoint() {
+	    return $this->notifyEndpoint;
+    }
 
-	private  $notifyEndpoint;
-
-	private  $project;
-
-	private  $setId;
-
-	private  $operation;
-
-	public function getNotifyTopicName() {
-		return $this->notifyTopicName;
+    public function setNotifyEndpoint($notifyEndpoint) {
+    	$this->notifyEndpoint = $notifyEndpoint;
+    	$this->queryParameters['NotifyEndpoint'] = $notifyEndpoint;
 	}
 
-	public function setNotifyTopicName($notifyTopicName) {
-		$this->notifyTopicName = $notifyTopicName;
-		$this->queryParameters["NotifyTopicName"]=$notifyTopicName;
+    public function getProject() {
+	    return $this->project;
+    }
+
+    public function setProject($project) {
+    	$this->project = $project;
+    	$this->queryParameters['Project'] = $project;
 	}
 
-	public function getNotifyEndpoint() {
-		return $this->notifyEndpoint;
+    public function getSetId() {
+	    return $this->setId;
+    }
+
+    public function setSetId($setId) {
+    	$this->setId = $setId;
+    	$this->queryParameters['SetId'] = $setId;
 	}
 
-	public function setNotifyEndpoint($notifyEndpoint) {
-		$this->notifyEndpoint = $notifyEndpoint;
-		$this->queryParameters["NotifyEndpoint"]=$notifyEndpoint;
+    public function getOperation() {
+	    return $this->operation;
+    }
+
+    public function setOperation($operation) {
+    	$this->operation = $operation;
+    	$this->queryParameters['Operation'] = $operation;
 	}
 
-	public function getProject() {
-		return $this->project;
-	}
-
-	public function setProject($project) {
-		$this->project = $project;
-		$this->queryParameters["Project"]=$project;
-	}
-
-	public function getSetId() {
-		return $this->setId;
-	}
-
-	public function setSetId($setId) {
-		$this->setId = $setId;
-		$this->queryParameters["SetId"]=$setId;
-	}
-
-	public function getOperation() {
-		return $this->operation;
-	}
-
-	public function setOperation($operation) {
-		$this->operation = $operation;
-		$this->queryParameters["Operation"]=$operation;
-	}
-	
 }

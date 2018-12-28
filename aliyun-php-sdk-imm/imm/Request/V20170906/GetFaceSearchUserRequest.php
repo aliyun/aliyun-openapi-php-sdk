@@ -21,43 +21,43 @@ namespace imm\Request\V20170906;
 
 class GetFaceSearchUserRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("imm", "2017-09-06", "GetFaceSearchUser", "imm", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("imm", "2017-09-06", "GetFaceSearchUser", "imm", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $project;
+
+    protected $groupName;
+
+    protected $user;
+
+    public function getProject() {
+	    return $this->project;
+    }
+
+    public function setProject($project) {
+    	$this->project = $project;
+    	$this->queryParameters['Project'] = $project;
 	}
 
-	private  $project;
+    public function getGroupName() {
+	    return $this->groupName;
+    }
 
-	private  $groupName;
-
-	private  $user;
-
-	public function getProject() {
-		return $this->project;
+    public function setGroupName($groupName) {
+    	$this->groupName = $groupName;
+    	$this->queryParameters['GroupName'] = $groupName;
 	}
 
-	public function setProject($project) {
-		$this->project = $project;
-		$this->queryParameters["Project"]=$project;
+    public function getUser() {
+	    return $this->user;
+    }
+
+    public function setUser($user) {
+    	$this->user = $user;
+    	$this->queryParameters['User'] = $user;
 	}
 
-	public function getGroupName() {
-		return $this->groupName;
-	}
-
-	public function setGroupName($groupName) {
-		$this->groupName = $groupName;
-		$this->queryParameters["GroupName"]=$groupName;
-	}
-
-	public function getUser() {
-		return $this->user;
-	}
-
-	public function setUser($user) {
-		$this->user = $user;
-		$this->queryParameters["User"]=$user;
-	}
-	
 }

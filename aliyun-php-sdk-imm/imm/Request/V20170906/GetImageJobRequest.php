@@ -21,43 +21,43 @@ namespace imm\Request\V20170906;
 
 class GetImageJobRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("imm", "2017-09-06", "GetImageJob", "imm", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("imm", "2017-09-06", "GetImageJob", "imm", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $jobId;
+
+    protected $project;
+
+    protected $jobType;
+
+    public function getJobId() {
+	    return $this->jobId;
+    }
+
+    public function setJobId($jobId) {
+    	$this->jobId = $jobId;
+    	$this->queryParameters['JobId'] = $jobId;
 	}
 
-	private  $jobId;
+    public function getProject() {
+	    return $this->project;
+    }
 
-	private  $project;
-
-	private  $jobType;
-
-	public function getJobId() {
-		return $this->jobId;
+    public function setProject($project) {
+    	$this->project = $project;
+    	$this->queryParameters['Project'] = $project;
 	}
 
-	public function setJobId($jobId) {
-		$this->jobId = $jobId;
-		$this->queryParameters["JobId"]=$jobId;
+    public function getJobType() {
+	    return $this->jobType;
+    }
+
+    public function setJobType($jobType) {
+    	$this->jobType = $jobType;
+    	$this->queryParameters['JobType'] = $jobType;
 	}
 
-	public function getProject() {
-		return $this->project;
-	}
-
-	public function setProject($project) {
-		$this->project = $project;
-		$this->queryParameters["Project"]=$project;
-	}
-
-	public function getJobType() {
-		return $this->jobType;
-	}
-
-	public function setJobType($jobType) {
-		$this->jobType = $jobType;
-		$this->queryParameters["JobType"]=$jobType;
-	}
-	
 }

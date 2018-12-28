@@ -21,43 +21,43 @@ namespace imm\Request\V20170906;
 
 class GetFaceDetailRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("imm", "2017-09-06", "GetFaceDetail", "imm", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("imm", "2017-09-06", "GetFaceDetail", "imm", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $project;
+
+    protected $setId;
+
+    protected $faceId;
+
+    public function getProject() {
+	    return $this->project;
+    }
+
+    public function setProject($project) {
+    	$this->project = $project;
+    	$this->queryParameters['Project'] = $project;
 	}
 
-	private  $project;
+    public function getSetId() {
+	    return $this->setId;
+    }
 
-	private  $setId;
-
-	private  $faceId;
-
-	public function getProject() {
-		return $this->project;
+    public function setSetId($setId) {
+    	$this->setId = $setId;
+    	$this->queryParameters['SetId'] = $setId;
 	}
 
-	public function setProject($project) {
-		$this->project = $project;
-		$this->queryParameters["Project"]=$project;
+    public function getFaceId() {
+	    return $this->faceId;
+    }
+
+    public function setFaceId($faceId) {
+    	$this->faceId = $faceId;
+    	$this->queryParameters['FaceId'] = $faceId;
 	}
 
-	public function getSetId() {
-		return $this->setId;
-	}
-
-	public function setSetId($setId) {
-		$this->setId = $setId;
-		$this->queryParameters["SetId"]=$setId;
-	}
-
-	public function getFaceId() {
-		return $this->faceId;
-	}
-
-	public function setFaceId($faceId) {
-		$this->faceId = $faceId;
-		$this->queryParameters["FaceId"]=$faceId;
-	}
-	
 }

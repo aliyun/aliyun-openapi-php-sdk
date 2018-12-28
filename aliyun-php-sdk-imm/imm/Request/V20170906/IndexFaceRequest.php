@@ -21,65 +21,65 @@ namespace imm\Request\V20170906;
 
 class IndexFaceRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("imm", "2017-09-06", "IndexFace", "imm", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("imm", "2017-09-06", "IndexFace", "imm", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $chain;
+
+    protected $srcUris;
+
+    protected $project;
+
+    protected $setId;
+
+    protected $force;
+
+    public function getChain() {
+	    return $this->chain;
+    }
+
+    public function setChain($chain) {
+    	$this->chain = $chain;
+    	$this->queryParameters['Chain'] = $chain;
 	}
 
-	private  $chain;
+    public function getSrcUris() {
+	    return $this->srcUris;
+    }
 
-	private  $srcUris;
-
-	private  $project;
-
-	private  $setId;
-
-	private  $force;
-
-	public function getChain() {
-		return $this->chain;
+    public function setSrcUris($srcUris) {
+    	$this->srcUris = $srcUris;
+    	$this->queryParameters['SrcUris'] = $srcUris;
 	}
 
-	public function setChain($chain) {
-		$this->chain = $chain;
-		$this->queryParameters["Chain"]=$chain;
+    public function getProject() {
+	    return $this->project;
+    }
+
+    public function setProject($project) {
+    	$this->project = $project;
+    	$this->queryParameters['Project'] = $project;
 	}
 
-	public function getSrcUris() {
-		return $this->srcUris;
+    public function getSetId() {
+	    return $this->setId;
+    }
+
+    public function setSetId($setId) {
+    	$this->setId = $setId;
+    	$this->queryParameters['SetId'] = $setId;
 	}
 
-	public function setSrcUris($srcUris) {
-		$this->srcUris = $srcUris;
-		$this->queryParameters["SrcUris"]=$srcUris;
+    public function getForce() {
+	    return $this->force;
+    }
+
+    public function setForce($force) {
+    	$this->force = $force;
+    	$this->queryParameters['Force'] = $force;
 	}
 
-	public function getProject() {
-		return $this->project;
-	}
-
-	public function setProject($project) {
-		$this->project = $project;
-		$this->queryParameters["Project"]=$project;
-	}
-
-	public function getSetId() {
-		return $this->setId;
-	}
-
-	public function setSetId($setId) {
-		$this->setId = $setId;
-		$this->queryParameters["SetId"]=$setId;
-	}
-
-	public function getForce() {
-		return $this->force;
-	}
-
-	public function setForce($force) {
-		$this->force = $force;
-		$this->queryParameters["Force"]=$force;
-	}
-	
 }

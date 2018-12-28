@@ -21,43 +21,43 @@ namespace imm\Request\V20170906;
 
 class GroupFacesRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("imm", "2017-09-06", "GroupFaces", "imm", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("imm", "2017-09-06", "GroupFaces", "imm", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $project;
+
+    protected $setId;
+
+    protected $operation;
+
+    public function getProject() {
+	    return $this->project;
+    }
+
+    public function setProject($project) {
+    	$this->project = $project;
+    	$this->queryParameters['Project'] = $project;
 	}
 
-	private  $project;
+    public function getSetId() {
+	    return $this->setId;
+    }
 
-	private  $setId;
-
-	private  $operation;
-
-	public function getProject() {
-		return $this->project;
+    public function setSetId($setId) {
+    	$this->setId = $setId;
+    	$this->queryParameters['SetId'] = $setId;
 	}
 
-	public function setProject($project) {
-		$this->project = $project;
-		$this->queryParameters["Project"]=$project;
+    public function getOperation() {
+	    return $this->operation;
+    }
+
+    public function setOperation($operation) {
+    	$this->operation = $operation;
+    	$this->queryParameters['Operation'] = $operation;
 	}
 
-	public function getSetId() {
-		return $this->setId;
-	}
-
-	public function setSetId($setId) {
-		$this->setId = $setId;
-		$this->queryParameters["SetId"]=$setId;
-	}
-
-	public function getOperation() {
-		return $this->operation;
-	}
-
-	public function setOperation($operation) {
-		$this->operation = $operation;
-		$this->queryParameters["Operation"]=$operation;
-	}
-	
 }

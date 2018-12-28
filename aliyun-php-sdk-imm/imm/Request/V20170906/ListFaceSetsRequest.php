@@ -21,32 +21,32 @@ namespace imm\Request\V20170906;
 
 class ListFaceSetsRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("imm", "2017-09-06", "ListFaceSets", "imm", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("imm", "2017-09-06", "ListFaceSets", "imm", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $marker;
+
+    protected $project;
+
+    public function getMarker() {
+	    return $this->marker;
+    }
+
+    public function setMarker($marker) {
+    	$this->marker = $marker;
+    	$this->queryParameters['Marker'] = $marker;
 	}
 
-	private  $marker;
+    public function getProject() {
+	    return $this->project;
+    }
 
-	private  $project;
-
-	public function getMarker() {
-		return $this->marker;
+    public function setProject($project) {
+    	$this->project = $project;
+    	$this->queryParameters['Project'] = $project;
 	}
 
-	public function setMarker($marker) {
-		$this->marker = $marker;
-		$this->queryParameters["Marker"]=$marker;
-	}
-
-	public function getProject() {
-		return $this->project;
-	}
-
-	public function setProject($project) {
-		$this->project = $project;
-		$this->queryParameters["Project"]=$project;
-	}
-	
 }

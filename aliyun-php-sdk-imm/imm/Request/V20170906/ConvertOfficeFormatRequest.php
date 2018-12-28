@@ -21,219 +21,219 @@ namespace imm\Request\V20170906;
 
 class ConvertOfficeFormatRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("imm", "2017-09-06", "ConvertOfficeFormat", "imm", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("imm", "2017-09-06", "ConvertOfficeFormat", "imm", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $srcType;
+
+    protected $modelId;
+
+    protected $project;
+
+    protected $maxSheetRow;
+
+    protected $maxSheetCount;
+
+    protected $endPage;
+
+    protected $tgtFileSuffix;
+
+    protected $pdfVector;
+
+    protected $sheetOnePage;
+
+    protected $password;
+
+    protected $startPage;
+
+    protected $maxSheetCol;
+
+    protected $tgtType;
+
+    protected $fitToPagesWide;
+
+    protected $tgtFilePrefix;
+
+    protected $fitToPagesTall;
+
+    protected $srcUri;
+
+    protected $tgtFilePages;
+
+    protected $tgtUri;
+
+    public function getSrcType() {
+	    return $this->srcType;
+    }
+
+    public function setSrcType($srcType) {
+    	$this->srcType = $srcType;
+    	$this->queryParameters['SrcType'] = $srcType;
 	}
 
-	private  $srcType;
+    public function getModelId() {
+	    return $this->modelId;
+    }
 
-	private  $modelId;
-
-	private  $project;
-
-	private  $maxSheetRow;
-
-	private  $maxSheetCount;
-
-	private  $endPage;
-
-	private  $tgtFileSuffix;
-
-	private  $pdfVector;
-
-	private  $sheetOnePage;
-
-	private  $password;
-
-	private  $startPage;
-
-	private  $maxSheetCol;
-
-	private  $tgtType;
-
-	private  $fitToPagesWide;
-
-	private  $tgtFilePrefix;
-
-	private  $fitToPagesTall;
-
-	private  $srcUri;
-
-	private  $tgtFilePages;
-
-	private  $tgtUri;
-
-	public function getSrcType() {
-		return $this->srcType;
+    public function setModelId($modelId) {
+    	$this->modelId = $modelId;
+    	$this->queryParameters['ModelId'] = $modelId;
 	}
 
-	public function setSrcType($srcType) {
-		$this->srcType = $srcType;
-		$this->queryParameters["SrcType"]=$srcType;
+    public function getProject() {
+	    return $this->project;
+    }
+
+    public function setProject($project) {
+    	$this->project = $project;
+    	$this->queryParameters['Project'] = $project;
 	}
 
-	public function getModelId() {
-		return $this->modelId;
+    public function getMaxSheetRow() {
+	    return $this->maxSheetRow;
+    }
+
+    public function setMaxSheetRow($maxSheetRow) {
+    	$this->maxSheetRow = $maxSheetRow;
+    	$this->queryParameters['MaxSheetRow'] = $maxSheetRow;
 	}
 
-	public function setModelId($modelId) {
-		$this->modelId = $modelId;
-		$this->queryParameters["ModelId"]=$modelId;
+    public function getMaxSheetCount() {
+	    return $this->maxSheetCount;
+    }
+
+    public function setMaxSheetCount($maxSheetCount) {
+    	$this->maxSheetCount = $maxSheetCount;
+    	$this->queryParameters['MaxSheetCount'] = $maxSheetCount;
 	}
 
-	public function getProject() {
-		return $this->project;
+    public function getEndPage() {
+	    return $this->endPage;
+    }
+
+    public function setEndPage($endPage) {
+    	$this->endPage = $endPage;
+    	$this->queryParameters['EndPage'] = $endPage;
 	}
 
-	public function setProject($project) {
-		$this->project = $project;
-		$this->queryParameters["Project"]=$project;
+    public function getTgtFileSuffix() {
+	    return $this->tgtFileSuffix;
+    }
+
+    public function setTgtFileSuffix($tgtFileSuffix) {
+    	$this->tgtFileSuffix = $tgtFileSuffix;
+    	$this->queryParameters['TgtFileSuffix'] = $tgtFileSuffix;
 	}
 
-	public function getMaxSheetRow() {
-		return $this->maxSheetRow;
+    public function getPdfVector() {
+	    return $this->pdfVector;
+    }
+
+    public function setPdfVector($pdfVector) {
+    	$this->pdfVector = $pdfVector;
+    	$this->queryParameters['PdfVector'] = $pdfVector;
 	}
 
-	public function setMaxSheetRow($maxSheetRow) {
-		$this->maxSheetRow = $maxSheetRow;
-		$this->queryParameters["MaxSheetRow"]=$maxSheetRow;
+    public function getSheetOnePage() {
+	    return $this->sheetOnePage;
+    }
+
+    public function setSheetOnePage($sheetOnePage) {
+    	$this->sheetOnePage = $sheetOnePage;
+    	$this->queryParameters['SheetOnePage'] = $sheetOnePage;
 	}
 
-	public function getMaxSheetCount() {
-		return $this->maxSheetCount;
+    public function getPassword() {
+	    return $this->password;
+    }
+
+    public function setPassword($password) {
+    	$this->password = $password;
+    	$this->queryParameters['Password'] = $password;
 	}
 
-	public function setMaxSheetCount($maxSheetCount) {
-		$this->maxSheetCount = $maxSheetCount;
-		$this->queryParameters["MaxSheetCount"]=$maxSheetCount;
+    public function getStartPage() {
+	    return $this->startPage;
+    }
+
+    public function setStartPage($startPage) {
+    	$this->startPage = $startPage;
+    	$this->queryParameters['StartPage'] = $startPage;
 	}
 
-	public function getEndPage() {
-		return $this->endPage;
+    public function getMaxSheetCol() {
+	    return $this->maxSheetCol;
+    }
+
+    public function setMaxSheetCol($maxSheetCol) {
+    	$this->maxSheetCol = $maxSheetCol;
+    	$this->queryParameters['MaxSheetCol'] = $maxSheetCol;
 	}
 
-	public function setEndPage($endPage) {
-		$this->endPage = $endPage;
-		$this->queryParameters["EndPage"]=$endPage;
+    public function getTgtType() {
+	    return $this->tgtType;
+    }
+
+    public function setTgtType($tgtType) {
+    	$this->tgtType = $tgtType;
+    	$this->queryParameters['TgtType'] = $tgtType;
 	}
 
-	public function getTgtFileSuffix() {
-		return $this->tgtFileSuffix;
+    public function getFitToPagesWide() {
+	    return $this->fitToPagesWide;
+    }
+
+    public function setFitToPagesWide($fitToPagesWide) {
+    	$this->fitToPagesWide = $fitToPagesWide;
+    	$this->queryParameters['FitToPagesWide'] = $fitToPagesWide;
 	}
 
-	public function setTgtFileSuffix($tgtFileSuffix) {
-		$this->tgtFileSuffix = $tgtFileSuffix;
-		$this->queryParameters["TgtFileSuffix"]=$tgtFileSuffix;
+    public function getTgtFilePrefix() {
+	    return $this->tgtFilePrefix;
+    }
+
+    public function setTgtFilePrefix($tgtFilePrefix) {
+    	$this->tgtFilePrefix = $tgtFilePrefix;
+    	$this->queryParameters['TgtFilePrefix'] = $tgtFilePrefix;
 	}
 
-	public function getPdfVector() {
-		return $this->pdfVector;
+    public function getFitToPagesTall() {
+	    return $this->fitToPagesTall;
+    }
+
+    public function setFitToPagesTall($fitToPagesTall) {
+    	$this->fitToPagesTall = $fitToPagesTall;
+    	$this->queryParameters['FitToPagesTall'] = $fitToPagesTall;
 	}
 
-	public function setPdfVector($pdfVector) {
-		$this->pdfVector = $pdfVector;
-		$this->queryParameters["PdfVector"]=$pdfVector;
+    public function getSrcUri() {
+	    return $this->srcUri;
+    }
+
+    public function setSrcUri($srcUri) {
+    	$this->srcUri = $srcUri;
+    	$this->queryParameters['SrcUri'] = $srcUri;
 	}
 
-	public function getSheetOnePage() {
-		return $this->sheetOnePage;
+    public function getTgtFilePages() {
+	    return $this->tgtFilePages;
+    }
+
+    public function setTgtFilePages($tgtFilePages) {
+    	$this->tgtFilePages = $tgtFilePages;
+    	$this->queryParameters['TgtFilePages'] = $tgtFilePages;
 	}
 
-	public function setSheetOnePage($sheetOnePage) {
-		$this->sheetOnePage = $sheetOnePage;
-		$this->queryParameters["SheetOnePage"]=$sheetOnePage;
+    public function getTgtUri() {
+	    return $this->tgtUri;
+    }
+
+    public function setTgtUri($tgtUri) {
+    	$this->tgtUri = $tgtUri;
+    	$this->queryParameters['TgtUri'] = $tgtUri;
 	}
 
-	public function getPassword() {
-		return $this->password;
-	}
-
-	public function setPassword($password) {
-		$this->password = $password;
-		$this->queryParameters["Password"]=$password;
-	}
-
-	public function getStartPage() {
-		return $this->startPage;
-	}
-
-	public function setStartPage($startPage) {
-		$this->startPage = $startPage;
-		$this->queryParameters["StartPage"]=$startPage;
-	}
-
-	public function getMaxSheetCol() {
-		return $this->maxSheetCol;
-	}
-
-	public function setMaxSheetCol($maxSheetCol) {
-		$this->maxSheetCol = $maxSheetCol;
-		$this->queryParameters["MaxSheetCol"]=$maxSheetCol;
-	}
-
-	public function getTgtType() {
-		return $this->tgtType;
-	}
-
-	public function setTgtType($tgtType) {
-		$this->tgtType = $tgtType;
-		$this->queryParameters["TgtType"]=$tgtType;
-	}
-
-	public function getFitToPagesWide() {
-		return $this->fitToPagesWide;
-	}
-
-	public function setFitToPagesWide($fitToPagesWide) {
-		$this->fitToPagesWide = $fitToPagesWide;
-		$this->queryParameters["FitToPagesWide"]=$fitToPagesWide;
-	}
-
-	public function getTgtFilePrefix() {
-		return $this->tgtFilePrefix;
-	}
-
-	public function setTgtFilePrefix($tgtFilePrefix) {
-		$this->tgtFilePrefix = $tgtFilePrefix;
-		$this->queryParameters["TgtFilePrefix"]=$tgtFilePrefix;
-	}
-
-	public function getFitToPagesTall() {
-		return $this->fitToPagesTall;
-	}
-
-	public function setFitToPagesTall($fitToPagesTall) {
-		$this->fitToPagesTall = $fitToPagesTall;
-		$this->queryParameters["FitToPagesTall"]=$fitToPagesTall;
-	}
-
-	public function getSrcUri() {
-		return $this->srcUri;
-	}
-
-	public function setSrcUri($srcUri) {
-		$this->srcUri = $srcUri;
-		$this->queryParameters["SrcUri"]=$srcUri;
-	}
-
-	public function getTgtFilePages() {
-		return $this->tgtFilePages;
-	}
-
-	public function setTgtFilePages($tgtFilePages) {
-		$this->tgtFilePages = $tgtFilePages;
-		$this->queryParameters["TgtFilePages"]=$tgtFilePages;
-	}
-
-	public function getTgtUri() {
-		return $this->tgtUri;
-	}
-
-	public function setTgtUri($tgtUri) {
-		$this->tgtUri = $tgtUri;
-		$this->queryParameters["TgtUri"]=$tgtUri;
-	}
-	
 }

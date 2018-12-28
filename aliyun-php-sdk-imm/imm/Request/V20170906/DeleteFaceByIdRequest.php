@@ -21,54 +21,54 @@ namespace imm\Request\V20170906;
 
 class DeleteFaceByIdRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("imm", "2017-09-06", "DeleteFaceById", "imm", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("imm", "2017-09-06", "DeleteFaceById", "imm", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $project;
+
+    protected $setId;
+
+    protected $srcUri;
+
+    protected $faceIds;
+
+    public function getProject() {
+	    return $this->project;
+    }
+
+    public function setProject($project) {
+    	$this->project = $project;
+    	$this->queryParameters['Project'] = $project;
 	}
 
-	private  $project;
+    public function getSetId() {
+	    return $this->setId;
+    }
 
-	private  $setId;
-
-	private  $srcUri;
-
-	private  $faceIds;
-
-	public function getProject() {
-		return $this->project;
+    public function setSetId($setId) {
+    	$this->setId = $setId;
+    	$this->queryParameters['SetId'] = $setId;
 	}
 
-	public function setProject($project) {
-		$this->project = $project;
-		$this->queryParameters["Project"]=$project;
+    public function getSrcUri() {
+	    return $this->srcUri;
+    }
+
+    public function setSrcUri($srcUri) {
+    	$this->srcUri = $srcUri;
+    	$this->queryParameters['SrcUri'] = $srcUri;
 	}
 
-	public function getSetId() {
-		return $this->setId;
+    public function getFaceIds() {
+	    return $this->faceIds;
+    }
+
+    public function setFaceIds($faceIds) {
+    	$this->faceIds = $faceIds;
+    	$this->queryParameters['FaceIds'] = $faceIds;
 	}
 
-	public function setSetId($setId) {
-		$this->setId = $setId;
-		$this->queryParameters["SetId"]=$setId;
-	}
-
-	public function getSrcUri() {
-		return $this->srcUri;
-	}
-
-	public function setSrcUri($srcUri) {
-		$this->srcUri = $srcUri;
-		$this->queryParameters["SrcUri"]=$srcUri;
-	}
-
-	public function getFaceIds() {
-		return $this->faceIds;
-	}
-
-	public function setFaceIds($faceIds) {
-		$this->faceIds = $faceIds;
-		$this->queryParameters["FaceIds"]=$faceIds;
-	}
-	
 }

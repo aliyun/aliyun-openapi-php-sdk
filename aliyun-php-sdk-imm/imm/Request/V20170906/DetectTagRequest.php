@@ -21,43 +21,43 @@ namespace imm\Request\V20170906;
 
 class DetectTagRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("imm", "2017-09-06", "DetectTag", "imm", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("imm", "2017-09-06", "DetectTag", "imm", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $srcUris;
+
+    protected $modelId;
+
+    protected $project;
+
+    public function getSrcUris() {
+	    return $this->srcUris;
+    }
+
+    public function setSrcUris($srcUris) {
+    	$this->srcUris = $srcUris;
+    	$this->queryParameters['SrcUris'] = $srcUris;
 	}
 
-	private  $srcUris;
+    public function getModelId() {
+	    return $this->modelId;
+    }
 
-	private  $modelId;
-
-	private  $project;
-
-	public function getSrcUris() {
-		return $this->srcUris;
+    public function setModelId($modelId) {
+    	$this->modelId = $modelId;
+    	$this->queryParameters['ModelId'] = $modelId;
 	}
 
-	public function setSrcUris($srcUris) {
-		$this->srcUris = $srcUris;
-		$this->queryParameters["SrcUris"]=$srcUris;
+    public function getProject() {
+	    return $this->project;
+    }
+
+    public function setProject($project) {
+    	$this->project = $project;
+    	$this->queryParameters['Project'] = $project;
 	}
 
-	public function getModelId() {
-		return $this->modelId;
-	}
-
-	public function setModelId($modelId) {
-		$this->modelId = $modelId;
-		$this->queryParameters["ModelId"]=$modelId;
-	}
-
-	public function getProject() {
-		return $this->project;
-	}
-
-	public function setProject($project) {
-		$this->project = $project;
-		$this->queryParameters["Project"]=$project;
-	}
-	
 }

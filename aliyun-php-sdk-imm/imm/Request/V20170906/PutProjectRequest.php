@@ -21,65 +21,65 @@ namespace imm\Request\V20170906;
 
 class PutProjectRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("imm", "2017-09-06", "PutProject", "imm", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("imm", "2017-09-06", "PutProject", "imm", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $cU;
+
+    protected $serviceRole;
+
+    protected $project;
+
+    protected $billingType;
+
+    protected $type;
+
+    public function getCU() {
+	    return $this->cU;
+    }
+
+    public function setCU($cU) {
+    	$this->cU = $cU;
+    	$this->queryParameters['CU'] = $cU;
 	}
 
-	private  $cU;
+    public function getServiceRole() {
+	    return $this->serviceRole;
+    }
 
-	private  $serviceRole;
-
-	private  $project;
-
-	private  $billingType;
-
-	private  $type;
-
-	public function getCU() {
-		return $this->cU;
+    public function setServiceRole($serviceRole) {
+    	$this->serviceRole = $serviceRole;
+    	$this->queryParameters['ServiceRole'] = $serviceRole;
 	}
 
-	public function setCU($cU) {
-		$this->cU = $cU;
-		$this->queryParameters["CU"]=$cU;
+    public function getProject() {
+	    return $this->project;
+    }
+
+    public function setProject($project) {
+    	$this->project = $project;
+    	$this->queryParameters['Project'] = $project;
 	}
 
-	public function getServiceRole() {
-		return $this->serviceRole;
+    public function getBillingType() {
+	    return $this->billingType;
+    }
+
+    public function setBillingType($billingType) {
+    	$this->billingType = $billingType;
+    	$this->queryParameters['BillingType'] = $billingType;
 	}
 
-	public function setServiceRole($serviceRole) {
-		$this->serviceRole = $serviceRole;
-		$this->queryParameters["ServiceRole"]=$serviceRole;
+    public function getType() {
+	    return $this->type;
+    }
+
+    public function setType($type) {
+    	$this->type = $type;
+    	$this->queryParameters['Type'] = $type;
 	}
 
-	public function getProject() {
-		return $this->project;
-	}
-
-	public function setProject($project) {
-		$this->project = $project;
-		$this->queryParameters["Project"]=$project;
-	}
-
-	public function getBillingType() {
-		return $this->billingType;
-	}
-
-	public function setBillingType($billingType) {
-		$this->billingType = $billingType;
-		$this->queryParameters["BillingType"]=$billingType;
-	}
-
-	public function getType() {
-		return $this->type;
-	}
-
-	public function setType($type) {
-		$this->type = $type;
-		$this->queryParameters["Type"]=$type;
-	}
-	
 }

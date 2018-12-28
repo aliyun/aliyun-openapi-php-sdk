@@ -21,43 +21,43 @@ namespace imm\Request\V20170906;
 
 class DeleteTagJobRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("imm", "2017-09-06", "DeleteTagJob", "imm", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("imm", "2017-09-06", "DeleteTagJob", "imm", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $jobId;
+
+    protected $project;
+
+    protected $clearIndexData;
+
+    public function getJobId() {
+	    return $this->jobId;
+    }
+
+    public function setJobId($jobId) {
+    	$this->jobId = $jobId;
+    	$this->queryParameters['JobId'] = $jobId;
 	}
 
-	private  $jobId;
+    public function getProject() {
+	    return $this->project;
+    }
 
-	private  $project;
-
-	private  $clearIndexData;
-
-	public function getJobId() {
-		return $this->jobId;
+    public function setProject($project) {
+    	$this->project = $project;
+    	$this->queryParameters['Project'] = $project;
 	}
 
-	public function setJobId($jobId) {
-		$this->jobId = $jobId;
-		$this->queryParameters["JobId"]=$jobId;
+    public function getClearIndexData() {
+	    return $this->clearIndexData;
+    }
+
+    public function setClearIndexData($clearIndexData) {
+    	$this->clearIndexData = $clearIndexData;
+    	$this->queryParameters['ClearIndexData'] = $clearIndexData;
 	}
 
-	public function getProject() {
-		return $this->project;
-	}
-
-	public function setProject($project) {
-		$this->project = $project;
-		$this->queryParameters["Project"]=$project;
-	}
-
-	public function getClearIndexData() {
-		return $this->clearIndexData;
-	}
-
-	public function setClearIndexData($clearIndexData) {
-		$this->clearIndexData = $clearIndexData;
-		$this->queryParameters["ClearIndexData"]=$clearIndexData;
-	}
-	
 }

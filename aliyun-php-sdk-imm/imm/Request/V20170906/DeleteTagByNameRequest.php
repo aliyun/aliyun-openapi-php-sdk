@@ -21,54 +21,54 @@ namespace imm\Request\V20170906;
 
 class DeleteTagByNameRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("imm", "2017-09-06", "DeleteTagByName", "imm", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("imm", "2017-09-06", "DeleteTagByName", "imm", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $tagName;
+
+    protected $project;
+
+    protected $setId;
+
+    protected $srcUri;
+
+    public function getTagName() {
+	    return $this->tagName;
+    }
+
+    public function setTagName($tagName) {
+    	$this->tagName = $tagName;
+    	$this->queryParameters['TagName'] = $tagName;
 	}
 
-	private  $tagName;
+    public function getProject() {
+	    return $this->project;
+    }
 
-	private  $project;
-
-	private  $setId;
-
-	private  $srcUri;
-
-	public function getTagName() {
-		return $this->tagName;
+    public function setProject($project) {
+    	$this->project = $project;
+    	$this->queryParameters['Project'] = $project;
 	}
 
-	public function setTagName($tagName) {
-		$this->tagName = $tagName;
-		$this->queryParameters["TagName"]=$tagName;
+    public function getSetId() {
+	    return $this->setId;
+    }
+
+    public function setSetId($setId) {
+    	$this->setId = $setId;
+    	$this->queryParameters['SetId'] = $setId;
 	}
 
-	public function getProject() {
-		return $this->project;
+    public function getSrcUri() {
+	    return $this->srcUri;
+    }
+
+    public function setSrcUri($srcUri) {
+    	$this->srcUri = $srcUri;
+    	$this->queryParameters['SrcUri'] = $srcUri;
 	}
 
-	public function setProject($project) {
-		$this->project = $project;
-		$this->queryParameters["Project"]=$project;
-	}
-
-	public function getSetId() {
-		return $this->setId;
-	}
-
-	public function setSetId($setId) {
-		$this->setId = $setId;
-		$this->queryParameters["SetId"]=$setId;
-	}
-
-	public function getSrcUri() {
-		return $this->srcUri;
-	}
-
-	public function setSrcUri($srcUri) {
-		$this->srcUri = $srcUri;
-		$this->queryParameters["SrcUri"]=$srcUri;
-	}
-	
 }

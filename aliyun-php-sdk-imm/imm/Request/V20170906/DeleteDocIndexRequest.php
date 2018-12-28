@@ -21,43 +21,43 @@ namespace imm\Request\V20170906;
 
 class DeleteDocIndexRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("imm", "2017-09-06", "DeleteDocIndex", "imm", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("imm", "2017-09-06", "DeleteDocIndex", "imm", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $set;
+
+    protected $project;
+
+    protected $uniqueId;
+
+    public function getSet() {
+	    return $this->set;
+    }
+
+    public function setSet($set) {
+    	$this->set = $set;
+    	$this->queryParameters['Set'] = $set;
 	}
 
-	private  $set;
+    public function getProject() {
+	    return $this->project;
+    }
 
-	private  $project;
-
-	private  $uniqueId;
-
-	public function getSet() {
-		return $this->set;
+    public function setProject($project) {
+    	$this->project = $project;
+    	$this->queryParameters['Project'] = $project;
 	}
 
-	public function setSet($set) {
-		$this->set = $set;
-		$this->queryParameters["Set"]=$set;
+    public function getUniqueId() {
+	    return $this->uniqueId;
+    }
+
+    public function setUniqueId($uniqueId) {
+    	$this->uniqueId = $uniqueId;
+    	$this->queryParameters['UniqueId'] = $uniqueId;
 	}
 
-	public function getProject() {
-		return $this->project;
-	}
-
-	public function setProject($project) {
-		$this->project = $project;
-		$this->queryParameters["Project"]=$project;
-	}
-
-	public function getUniqueId() {
-		return $this->uniqueId;
-	}
-
-	public function setUniqueId($uniqueId) {
-		$this->uniqueId = $uniqueId;
-		$this->queryParameters["UniqueId"]=$uniqueId;
-	}
-	
 }

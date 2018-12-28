@@ -21,65 +21,65 @@ namespace imm\Request\V20170906;
 
 class ListTagPhotosRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("imm", "2017-09-06", "ListTagPhotos", "imm", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("imm", "2017-09-06", "ListTagPhotos", "imm", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $tagName;
+
+    protected $maxKeys;
+
+    protected $marker;
+
+    protected $project;
+
+    protected $setId;
+
+    public function getTagName() {
+	    return $this->tagName;
+    }
+
+    public function setTagName($tagName) {
+    	$this->tagName = $tagName;
+    	$this->queryParameters['TagName'] = $tagName;
 	}
 
-	private  $tagName;
+    public function getMaxKeys() {
+	    return $this->maxKeys;
+    }
 
-	private  $maxKeys;
-
-	private  $marker;
-
-	private  $project;
-
-	private  $setId;
-
-	public function getTagName() {
-		return $this->tagName;
+    public function setMaxKeys($maxKeys) {
+    	$this->maxKeys = $maxKeys;
+    	$this->queryParameters['MaxKeys'] = $maxKeys;
 	}
 
-	public function setTagName($tagName) {
-		$this->tagName = $tagName;
-		$this->queryParameters["TagName"]=$tagName;
+    public function getMarker() {
+	    return $this->marker;
+    }
+
+    public function setMarker($marker) {
+    	$this->marker = $marker;
+    	$this->queryParameters['Marker'] = $marker;
 	}
 
-	public function getMaxKeys() {
-		return $this->maxKeys;
+    public function getProject() {
+	    return $this->project;
+    }
+
+    public function setProject($project) {
+    	$this->project = $project;
+    	$this->queryParameters['Project'] = $project;
 	}
 
-	public function setMaxKeys($maxKeys) {
-		$this->maxKeys = $maxKeys;
-		$this->queryParameters["MaxKeys"]=$maxKeys;
+    public function getSetId() {
+	    return $this->setId;
+    }
+
+    public function setSetId($setId) {
+    	$this->setId = $setId;
+    	$this->queryParameters['SetId'] = $setId;
 	}
 
-	public function getMarker() {
-		return $this->marker;
-	}
-
-	public function setMarker($marker) {
-		$this->marker = $marker;
-		$this->queryParameters["Marker"]=$marker;
-	}
-
-	public function getProject() {
-		return $this->project;
-	}
-
-	public function setProject($project) {
-		$this->project = $project;
-		$this->queryParameters["Project"]=$project;
-	}
-
-	public function getSetId() {
-		return $this->setId;
-	}
-
-	public function setSetId($setId) {
-		$this->setId = $setId;
-		$this->queryParameters["SetId"]=$setId;
-	}
-	
 }

@@ -21,54 +21,54 @@ namespace imm\Request\V20170906;
 
 class ListImageJobsRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("imm", "2017-09-06", "ListImageJobs", "imm", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("imm", "2017-09-06", "ListImageJobs", "imm", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $maxKeys;
+
+    protected $marker;
+
+    protected $project;
+
+    protected $jobType;
+
+    public function getMaxKeys() {
+	    return $this->maxKeys;
+    }
+
+    public function setMaxKeys($maxKeys) {
+    	$this->maxKeys = $maxKeys;
+    	$this->queryParameters['MaxKeys'] = $maxKeys;
 	}
 
-	private  $maxKeys;
+    public function getMarker() {
+	    return $this->marker;
+    }
 
-	private  $marker;
-
-	private  $project;
-
-	private  $jobType;
-
-	public function getMaxKeys() {
-		return $this->maxKeys;
+    public function setMarker($marker) {
+    	$this->marker = $marker;
+    	$this->queryParameters['Marker'] = $marker;
 	}
 
-	public function setMaxKeys($maxKeys) {
-		$this->maxKeys = $maxKeys;
-		$this->queryParameters["MaxKeys"]=$maxKeys;
+    public function getProject() {
+	    return $this->project;
+    }
+
+    public function setProject($project) {
+    	$this->project = $project;
+    	$this->queryParameters['Project'] = $project;
 	}
 
-	public function getMarker() {
-		return $this->marker;
+    public function getJobType() {
+	    return $this->jobType;
+    }
+
+    public function setJobType($jobType) {
+    	$this->jobType = $jobType;
+    	$this->queryParameters['JobType'] = $jobType;
 	}
 
-	public function setMarker($marker) {
-		$this->marker = $marker;
-		$this->queryParameters["Marker"]=$marker;
-	}
-
-	public function getProject() {
-		return $this->project;
-	}
-
-	public function setProject($project) {
-		$this->project = $project;
-		$this->queryParameters["Project"]=$project;
-	}
-
-	public function getJobType() {
-		return $this->jobType;
-	}
-
-	public function setJobType($jobType) {
-		$this->jobType = $jobType;
-		$this->queryParameters["JobType"]=$jobType;
-	}
-	
 }

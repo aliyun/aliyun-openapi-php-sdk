@@ -21,87 +21,87 @@ namespace imm\Request\V20170906;
 
 class RegistFaceRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("imm", "2017-09-06", "RegistFace", "imm", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("imm", "2017-09-06", "RegistFace", "imm", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $chooseBiggestFace;
+
+    protected $isQualityLimit;
+
+    protected $project;
+
+    protected $srcUri;
+
+    protected $registerCheckLevel;
+
+    protected $groupName;
+
+    protected $user;
+
+    public function getChooseBiggestFace() {
+	    return $this->chooseBiggestFace;
+    }
+
+    public function setChooseBiggestFace($chooseBiggestFace) {
+    	$this->chooseBiggestFace = $chooseBiggestFace;
+    	$this->queryParameters['ChooseBiggestFace'] = $chooseBiggestFace;
 	}
 
-	private  $chooseBiggestFace;
+    public function getIsQualityLimit() {
+	    return $this->isQualityLimit;
+    }
 
-	private  $isQualityLimit;
-
-	private  $project;
-
-	private  $srcUri;
-
-	private  $registerCheckLevel;
-
-	private  $groupName;
-
-	private  $user;
-
-	public function getChooseBiggestFace() {
-		return $this->chooseBiggestFace;
+    public function setIsQualityLimit($isQualityLimit) {
+    	$this->isQualityLimit = $isQualityLimit;
+    	$this->queryParameters['IsQualityLimit'] = $isQualityLimit;
 	}
 
-	public function setChooseBiggestFace($chooseBiggestFace) {
-		$this->chooseBiggestFace = $chooseBiggestFace;
-		$this->queryParameters["ChooseBiggestFace"]=$chooseBiggestFace;
+    public function getProject() {
+	    return $this->project;
+    }
+
+    public function setProject($project) {
+    	$this->project = $project;
+    	$this->queryParameters['Project'] = $project;
 	}
 
-	public function getIsQualityLimit() {
-		return $this->isQualityLimit;
+    public function getSrcUri() {
+	    return $this->srcUri;
+    }
+
+    public function setSrcUri($srcUri) {
+    	$this->srcUri = $srcUri;
+    	$this->queryParameters['SrcUri'] = $srcUri;
 	}
 
-	public function setIsQualityLimit($isQualityLimit) {
-		$this->isQualityLimit = $isQualityLimit;
-		$this->queryParameters["IsQualityLimit"]=$isQualityLimit;
+    public function getRegisterCheckLevel() {
+	    return $this->registerCheckLevel;
+    }
+
+    public function setRegisterCheckLevel($registerCheckLevel) {
+    	$this->registerCheckLevel = $registerCheckLevel;
+    	$this->queryParameters['RegisterCheckLevel'] = $registerCheckLevel;
 	}
 
-	public function getProject() {
-		return $this->project;
+    public function getGroupName() {
+	    return $this->groupName;
+    }
+
+    public function setGroupName($groupName) {
+    	$this->groupName = $groupName;
+    	$this->queryParameters['GroupName'] = $groupName;
 	}
 
-	public function setProject($project) {
-		$this->project = $project;
-		$this->queryParameters["Project"]=$project;
+    public function getUser() {
+	    return $this->user;
+    }
+
+    public function setUser($user) {
+    	$this->user = $user;
+    	$this->queryParameters['User'] = $user;
 	}
 
-	public function getSrcUri() {
-		return $this->srcUri;
-	}
-
-	public function setSrcUri($srcUri) {
-		$this->srcUri = $srcUri;
-		$this->queryParameters["SrcUri"]=$srcUri;
-	}
-
-	public function getRegisterCheckLevel() {
-		return $this->registerCheckLevel;
-	}
-
-	public function setRegisterCheckLevel($registerCheckLevel) {
-		$this->registerCheckLevel = $registerCheckLevel;
-		$this->queryParameters["RegisterCheckLevel"]=$registerCheckLevel;
-	}
-
-	public function getGroupName() {
-		return $this->groupName;
-	}
-
-	public function setGroupName($groupName) {
-		$this->groupName = $groupName;
-		$this->queryParameters["GroupName"]=$groupName;
-	}
-
-	public function getUser() {
-		return $this->user;
-	}
-
-	public function setUser($user) {
-		$this->user = $user;
-		$this->queryParameters["User"]=$user;
-	}
-	
 }

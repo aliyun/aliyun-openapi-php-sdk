@@ -21,54 +21,54 @@ namespace imm\Request\V20170906;
 
 class GetFaceSetDetailRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("imm", "2017-09-06", "GetFaceSetDetail", "imm", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("imm", "2017-09-06", "GetFaceSetDetail", "imm", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $marker;
+
+    protected $project;
+
+    protected $setId;
+
+    protected $returnAttribute;
+
+    public function getMarker() {
+	    return $this->marker;
+    }
+
+    public function setMarker($marker) {
+    	$this->marker = $marker;
+    	$this->queryParameters['Marker'] = $marker;
 	}
 
-	private  $marker;
+    public function getProject() {
+	    return $this->project;
+    }
 
-	private  $project;
-
-	private  $setId;
-
-	private  $returnAttribute;
-
-	public function getMarker() {
-		return $this->marker;
+    public function setProject($project) {
+    	$this->project = $project;
+    	$this->queryParameters['Project'] = $project;
 	}
 
-	public function setMarker($marker) {
-		$this->marker = $marker;
-		$this->queryParameters["Marker"]=$marker;
+    public function getSetId() {
+	    return $this->setId;
+    }
+
+    public function setSetId($setId) {
+    	$this->setId = $setId;
+    	$this->queryParameters['SetId'] = $setId;
 	}
 
-	public function getProject() {
-		return $this->project;
+    public function getReturnAttribute() {
+	    return $this->returnAttribute;
+    }
+
+    public function setReturnAttribute($returnAttribute) {
+    	$this->returnAttribute = $returnAttribute;
+    	$this->queryParameters['ReturnAttribute'] = $returnAttribute;
 	}
 
-	public function setProject($project) {
-		$this->project = $project;
-		$this->queryParameters["Project"]=$project;
-	}
-
-	public function getSetId() {
-		return $this->setId;
-	}
-
-	public function setSetId($setId) {
-		$this->setId = $setId;
-		$this->queryParameters["SetId"]=$setId;
-	}
-
-	public function getReturnAttribute() {
-		return $this->returnAttribute;
-	}
-
-	public function setReturnAttribute($returnAttribute) {
-		$this->returnAttribute = $returnAttribute;
-		$this->queryParameters["ReturnAttribute"]=$returnAttribute;
-	}
-	
 }

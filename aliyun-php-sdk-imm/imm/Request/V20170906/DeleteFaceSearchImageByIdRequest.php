@@ -21,65 +21,65 @@ namespace imm\Request\V20170906;
 
 class DeleteFaceSearchImageByIdRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("imm", "2017-09-06", "DeleteFaceSearchImageById", "imm", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("imm", "2017-09-06", "DeleteFaceSearchImageById", "imm", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $imageId;
+
+    protected $project;
+
+    protected $srcUri;
+
+    protected $groupName;
+
+    protected $user;
+
+    public function getImageId() {
+	    return $this->imageId;
+    }
+
+    public function setImageId($imageId) {
+    	$this->imageId = $imageId;
+    	$this->queryParameters['ImageId'] = $imageId;
 	}
 
-	private  $imageId;
+    public function getProject() {
+	    return $this->project;
+    }
 
-	private  $project;
-
-	private  $srcUri;
-
-	private  $groupName;
-
-	private  $user;
-
-	public function getImageId() {
-		return $this->imageId;
+    public function setProject($project) {
+    	$this->project = $project;
+    	$this->queryParameters['Project'] = $project;
 	}
 
-	public function setImageId($imageId) {
-		$this->imageId = $imageId;
-		$this->queryParameters["ImageId"]=$imageId;
+    public function getSrcUri() {
+	    return $this->srcUri;
+    }
+
+    public function setSrcUri($srcUri) {
+    	$this->srcUri = $srcUri;
+    	$this->queryParameters['SrcUri'] = $srcUri;
 	}
 
-	public function getProject() {
-		return $this->project;
+    public function getGroupName() {
+	    return $this->groupName;
+    }
+
+    public function setGroupName($groupName) {
+    	$this->groupName = $groupName;
+    	$this->queryParameters['GroupName'] = $groupName;
 	}
 
-	public function setProject($project) {
-		$this->project = $project;
-		$this->queryParameters["Project"]=$project;
+    public function getUser() {
+	    return $this->user;
+    }
+
+    public function setUser($user) {
+    	$this->user = $user;
+    	$this->queryParameters['User'] = $user;
 	}
 
-	public function getSrcUri() {
-		return $this->srcUri;
-	}
-
-	public function setSrcUri($srcUri) {
-		$this->srcUri = $srcUri;
-		$this->queryParameters["SrcUri"]=$srcUri;
-	}
-
-	public function getGroupName() {
-		return $this->groupName;
-	}
-
-	public function setGroupName($groupName) {
-		$this->groupName = $groupName;
-		$this->queryParameters["GroupName"]=$groupName;
-	}
-
-	public function getUser() {
-		return $this->user;
-	}
-
-	public function setUser($user) {
-		$this->user = $user;
-		$this->queryParameters["User"]=$user;
-	}
-	
 }

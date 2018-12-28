@@ -21,43 +21,43 @@ namespace imm\Request\V20170906;
 
 class UpdateProjectRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("imm", "2017-09-06", "UpdateProject", "imm", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("imm", "2017-09-06", "UpdateProject", "imm", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $newServiceRole;
+
+    protected $project;
+
+    protected $newCU;
+
+    public function getNewServiceRole() {
+	    return $this->newServiceRole;
+    }
+
+    public function setNewServiceRole($newServiceRole) {
+    	$this->newServiceRole = $newServiceRole;
+    	$this->queryParameters['NewServiceRole'] = $newServiceRole;
 	}
 
-	private  $newServiceRole;
+    public function getProject() {
+	    return $this->project;
+    }
 
-	private  $project;
-
-	private  $newCU;
-
-	public function getNewServiceRole() {
-		return $this->newServiceRole;
+    public function setProject($project) {
+    	$this->project = $project;
+    	$this->queryParameters['Project'] = $project;
 	}
 
-	public function setNewServiceRole($newServiceRole) {
-		$this->newServiceRole = $newServiceRole;
-		$this->queryParameters["NewServiceRole"]=$newServiceRole;
+    public function getNewCU() {
+	    return $this->newCU;
+    }
+
+    public function setNewCU($newCU) {
+    	$this->newCU = $newCU;
+    	$this->queryParameters['NewCU'] = $newCU;
 	}
 
-	public function getProject() {
-		return $this->project;
-	}
-
-	public function setProject($project) {
-		$this->project = $project;
-		$this->queryParameters["Project"]=$project;
-	}
-
-	public function getNewCU() {
-		return $this->newCU;
-	}
-
-	public function setNewCU($newCU) {
-		$this->newCU = $newCU;
-		$this->queryParameters["NewCU"]=$newCU;
-	}
-	
 }
