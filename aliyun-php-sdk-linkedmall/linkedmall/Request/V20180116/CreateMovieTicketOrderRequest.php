@@ -21,64 +21,64 @@ namespace linkedmall\Request\V20180116;
 
 class CreateMovieTicketOrderRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("linkedmall", "2018-01-16", "CreateMovieTicketOrder", "linkedmall", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("linkedmall", "2018-01-16", "CreateMovieTicketOrder", "linkedmall", "openAPI");
+    }
+
+    protected $bizId;
+
+    protected $bizUid;
+
+    protected $outTradeId;
+
+    protected $lockSeatAppKey;
+
+    protected $extJson;
+
+    public function getBizId() {
+	    return $this->bizId;
+    }
+
+    public function setBizId($bizId) {
+    	$this->bizId = $bizId;
+    	$this->queryParameters['BizId'] = $bizId;
 	}
 
-	private  $bizId;
+    public function getBizUid() {
+	    return $this->bizUid;
+    }
 
-	private  $bizUid;
-
-	private  $outTradeId;
-
-	private  $lockSeatAppKey;
-
-	private  $extJson;
-
-	public function getBizId() {
-		return $this->bizId;
+    public function setBizUid($bizUid) {
+    	$this->bizUid = $bizUid;
+    	$this->queryParameters['BizUid'] = $bizUid;
 	}
 
-	public function setBizId($bizId) {
-		$this->bizId = $bizId;
-		$this->queryParameters["BizId"]=$bizId;
+    public function getOutTradeId() {
+	    return $this->outTradeId;
+    }
+
+    public function setOutTradeId($outTradeId) {
+    	$this->outTradeId = $outTradeId;
+    	$this->queryParameters['OutTradeId'] = $outTradeId;
 	}
 
-	public function getBizUid() {
-		return $this->bizUid;
+    public function getLockSeatAppKey() {
+	    return $this->lockSeatAppKey;
+    }
+
+    public function setLockSeatAppKey($lockSeatAppKey) {
+    	$this->lockSeatAppKey = $lockSeatAppKey;
+    	$this->queryParameters['LockSeatAppKey'] = $lockSeatAppKey;
 	}
 
-	public function setBizUid($bizUid) {
-		$this->bizUid = $bizUid;
-		$this->queryParameters["BizUid"]=$bizUid;
+    public function getExtJson() {
+	    return $this->extJson;
+    }
+
+    public function setExtJson($extJson) {
+    	$this->extJson = $extJson;
+    	$this->queryParameters['ExtJson'] = $extJson;
 	}
 
-	public function getOutTradeId() {
-		return $this->outTradeId;
-	}
-
-	public function setOutTradeId($outTradeId) {
-		$this->outTradeId = $outTradeId;
-		$this->queryParameters["OutTradeId"]=$outTradeId;
-	}
-
-	public function getLockSeatAppKey() {
-		return $this->lockSeatAppKey;
-	}
-
-	public function setLockSeatAppKey($lockSeatAppKey) {
-		$this->lockSeatAppKey = $lockSeatAppKey;
-		$this->queryParameters["LockSeatAppKey"]=$lockSeatAppKey;
-	}
-
-	public function getExtJson() {
-		return $this->extJson;
-	}
-
-	public function setExtJson($extJson) {
-		$this->extJson = $extJson;
-		$this->queryParameters["ExtJson"]=$extJson;
-	}
-	
 }

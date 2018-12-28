@@ -21,65 +21,65 @@ namespace linkedmall\Request\V20180116;
 
 class QueryBizItemsRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("linkedmall", "2018-01-16", "QueryBizItems", "linkedmall", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("linkedmall", "2018-01-16", "QueryBizItems", "linkedmall", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $bizId;
+
+    protected $subBizId;
+
+    protected $pageSize;
+
+    protected $pageNumber;
+
+    protected $userId;
+
+    public function getBizId() {
+	    return $this->bizId;
+    }
+
+    public function setBizId($bizId) {
+    	$this->bizId = $bizId;
+    	$this->queryParameters['BizId'] = $bizId;
 	}
 
-	private  $bizId;
+    public function getSubBizId() {
+	    return $this->subBizId;
+    }
 
-	private  $subBizId;
-
-	private  $pageSize;
-
-	private  $pageNumber;
-
-	private  $userId;
-
-	public function getBizId() {
-		return $this->bizId;
+    public function setSubBizId($subBizId) {
+    	$this->subBizId = $subBizId;
+    	$this->queryParameters['SubBizId'] = $subBizId;
 	}
 
-	public function setBizId($bizId) {
-		$this->bizId = $bizId;
-		$this->queryParameters["BizId"]=$bizId;
+    public function getPageSize() {
+	    return $this->pageSize;
+    }
+
+    public function setPageSize($pageSize) {
+    	$this->pageSize = $pageSize;
+    	$this->queryParameters['PageSize'] = $pageSize;
 	}
 
-	public function getSubBizId() {
-		return $this->subBizId;
+    public function getPageNumber() {
+	    return $this->pageNumber;
+    }
+
+    public function setPageNumber($pageNumber) {
+    	$this->pageNumber = $pageNumber;
+    	$this->queryParameters['PageNumber'] = $pageNumber;
 	}
 
-	public function setSubBizId($subBizId) {
-		$this->subBizId = $subBizId;
-		$this->queryParameters["SubBizId"]=$subBizId;
+    public function getUserId() {
+	    return $this->userId;
+    }
+
+    public function setUserId($userId) {
+    	$this->userId = $userId;
+    	$this->queryParameters['UserId'] = $userId;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
-	public function getUserId() {
-		return $this->userId;
-	}
-
-	public function setUserId($userId) {
-		$this->userId = $userId;
-		$this->queryParameters["UserId"]=$userId;
-	}
-	
 }

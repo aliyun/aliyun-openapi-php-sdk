@@ -21,65 +21,65 @@ namespace linkedmall\Request\V20180116;
 
 class NotifyPayOrderStatusRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("linkedmall", "2018-01-16", "NotifyPayOrderStatus", "linkedmall", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("linkedmall", "2018-01-16", "NotifyPayOrderStatus", "linkedmall", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $amount;
+
+    protected $payTypes;
+
+    protected $requestId;
+
+    protected $operationDate;
+
+    protected $channelId;
+
+    public function getAmount() {
+	    return $this->amount;
+    }
+
+    public function setAmount($amount) {
+    	$this->amount = $amount;
+    	$this->queryParameters['Amount'] = $amount;
 	}
 
-	private  $amount;
+    public function getPayTypes() {
+	    return $this->payTypes;
+    }
 
-	private  $payTypes;
-
-	private  $requestId;
-
-	private  $operationDate;
-
-	private  $channelId;
-
-	public function getAmount() {
-		return $this->amount;
+    public function setPayTypes($payTypes) {
+    	$this->payTypes = $payTypes;
+    	$this->queryParameters['PayTypes'] = $payTypes;
 	}
 
-	public function setAmount($amount) {
-		$this->amount = $amount;
-		$this->queryParameters["Amount"]=$amount;
+    public function getRequestId() {
+	    return $this->requestId;
+    }
+
+    public function setRequestId($requestId) {
+    	$this->requestId = $requestId;
+    	$this->queryParameters['RequestId'] = $requestId;
 	}
 
-	public function getPayTypes() {
-		return $this->payTypes;
+    public function getOperationDate() {
+	    return $this->operationDate;
+    }
+
+    public function setOperationDate($operationDate) {
+    	$this->operationDate = $operationDate;
+    	$this->queryParameters['OperationDate'] = $operationDate;
 	}
 
-	public function setPayTypes($payTypes) {
-		$this->payTypes = $payTypes;
-		$this->queryParameters["PayTypes"]=$payTypes;
+    public function getChannelId() {
+	    return $this->channelId;
+    }
+
+    public function setChannelId($channelId) {
+    	$this->channelId = $channelId;
+    	$this->queryParameters['ChannelId'] = $channelId;
 	}
 
-	public function getRequestId() {
-		return $this->requestId;
-	}
-
-	public function setRequestId($requestId) {
-		$this->requestId = $requestId;
-		$this->queryParameters["RequestId"]=$requestId;
-	}
-
-	public function getOperationDate() {
-		return $this->operationDate;
-	}
-
-	public function setOperationDate($operationDate) {
-		$this->operationDate = $operationDate;
-		$this->queryParameters["OperationDate"]=$operationDate;
-	}
-
-	public function getChannelId() {
-		return $this->channelId;
-	}
-
-	public function setChannelId($channelId) {
-		$this->channelId = $channelId;
-		$this->queryParameters["ChannelId"]=$channelId;
-	}
-	
 }

@@ -21,54 +21,54 @@ namespace linkedmall\Request\V20180116;
 
 class QueryMovieCommentsRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("linkedmall", "2018-01-16", "QueryMovieComments", "linkedmall", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("linkedmall", "2018-01-16", "QueryMovieComments", "linkedmall", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $bizId;
+
+    protected $movieId;
+
+    protected $pageNumber;
+
+    protected $extJson;
+
+    public function getBizId() {
+	    return $this->bizId;
+    }
+
+    public function setBizId($bizId) {
+    	$this->bizId = $bizId;
+    	$this->queryParameters['BizId'] = $bizId;
 	}
 
-	private  $bizId;
+    public function getMovieId() {
+	    return $this->movieId;
+    }
 
-	private  $movieId;
-
-	private  $pageNumber;
-
-	private  $extJson;
-
-	public function getBizId() {
-		return $this->bizId;
+    public function setMovieId($movieId) {
+    	$this->movieId = $movieId;
+    	$this->queryParameters['MovieId'] = $movieId;
 	}
 
-	public function setBizId($bizId) {
-		$this->bizId = $bizId;
-		$this->queryParameters["BizId"]=$bizId;
+    public function getPageNumber() {
+	    return $this->pageNumber;
+    }
+
+    public function setPageNumber($pageNumber) {
+    	$this->pageNumber = $pageNumber;
+    	$this->queryParameters['PageNumber'] = $pageNumber;
 	}
 
-	public function getMovieId() {
-		return $this->movieId;
+    public function getExtJson() {
+	    return $this->extJson;
+    }
+
+    public function setExtJson($extJson) {
+    	$this->extJson = $extJson;
+    	$this->queryParameters['ExtJson'] = $extJson;
 	}
 
-	public function setMovieId($movieId) {
-		$this->movieId = $movieId;
-		$this->queryParameters["MovieId"]=$movieId;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
-	public function getExtJson() {
-		return $this->extJson;
-	}
-
-	public function setExtJson($extJson) {
-		$this->extJson = $extJson;
-		$this->queryParameters["ExtJson"]=$extJson;
-	}
-	
 }

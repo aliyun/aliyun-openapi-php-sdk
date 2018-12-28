@@ -21,43 +21,43 @@ namespace linkedmall\Request\V20180116;
 
 class QueryMovieSchedulesRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("linkedmall", "2018-01-16", "QueryMovieSchedules", "linkedmall", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("linkedmall", "2018-01-16", "QueryMovieSchedules", "linkedmall", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $bizId;
+
+    protected $cinemaId;
+
+    protected $extJson;
+
+    public function getBizId() {
+	    return $this->bizId;
+    }
+
+    public function setBizId($bizId) {
+    	$this->bizId = $bizId;
+    	$this->queryParameters['BizId'] = $bizId;
 	}
 
-	private  $bizId;
+    public function getCinemaId() {
+	    return $this->cinemaId;
+    }
 
-	private  $cinemaId;
-
-	private  $extJson;
-
-	public function getBizId() {
-		return $this->bizId;
+    public function setCinemaId($cinemaId) {
+    	$this->cinemaId = $cinemaId;
+    	$this->queryParameters['CinemaId'] = $cinemaId;
 	}
 
-	public function setBizId($bizId) {
-		$this->bizId = $bizId;
-		$this->queryParameters["BizId"]=$bizId;
+    public function getExtJson() {
+	    return $this->extJson;
+    }
+
+    public function setExtJson($extJson) {
+    	$this->extJson = $extJson;
+    	$this->queryParameters['ExtJson'] = $extJson;
 	}
 
-	public function getCinemaId() {
-		return $this->cinemaId;
-	}
-
-	public function setCinemaId($cinemaId) {
-		$this->cinemaId = $cinemaId;
-		$this->queryParameters["CinemaId"]=$cinemaId;
-	}
-
-	public function getExtJson() {
-		return $this->extJson;
-	}
-
-	public function setExtJson($extJson) {
-		$this->extJson = $extJson;
-		$this->queryParameters["ExtJson"]=$extJson;
-	}
-	
 }

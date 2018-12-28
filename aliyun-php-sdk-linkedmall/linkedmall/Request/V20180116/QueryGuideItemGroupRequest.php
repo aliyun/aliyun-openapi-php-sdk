@@ -21,54 +21,54 @@ namespace linkedmall\Request\V20180116;
 
 class QueryGuideItemGroupRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("linkedmall", "2018-01-16", "QueryGuideItemGroup", "linkedmall", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("linkedmall", "2018-01-16", "QueryGuideItemGroup", "linkedmall", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $bizId;
+
+    protected $groupId;
+
+    protected $pageNumber;
+
+    protected $pageSize;
+
+    public function getBizId() {
+	    return $this->bizId;
+    }
+
+    public function setBizId($bizId) {
+    	$this->bizId = $bizId;
+    	$this->queryParameters['BizId'] = $bizId;
 	}
 
-	private  $bizId;
+    public function getGroupId() {
+	    return $this->groupId;
+    }
 
-	private  $groupId;
-
-	private  $pageNumber;
-
-	private  $pageSize;
-
-	public function getBizId() {
-		return $this->bizId;
+    public function setGroupId($groupId) {
+    	$this->groupId = $groupId;
+    	$this->queryParameters['GroupId'] = $groupId;
 	}
 
-	public function setBizId($bizId) {
-		$this->bizId = $bizId;
-		$this->queryParameters["BizId"]=$bizId;
+    public function getPageNumber() {
+	    return $this->pageNumber;
+    }
+
+    public function setPageNumber($pageNumber) {
+    	$this->pageNumber = $pageNumber;
+    	$this->queryParameters['PageNumber'] = $pageNumber;
 	}
 
-	public function getGroupId() {
-		return $this->groupId;
+    public function getPageSize() {
+	    return $this->pageSize;
+    }
+
+    public function setPageSize($pageSize) {
+    	$this->pageSize = $pageSize;
+    	$this->queryParameters['PageSize'] = $pageSize;
 	}
 
-	public function setGroupId($groupId) {
-		$this->groupId = $groupId;
-		$this->queryParameters["GroupId"]=$groupId;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-	
 }

@@ -21,43 +21,43 @@ namespace linkedmall\Request\V20180116;
 
 class QueryMessagesRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("linkedmall", "2018-01-16", "QueryMessages", "linkedmall", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("linkedmall", "2018-01-16", "QueryMessages", "linkedmall", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $bizId;
+
+    protected $topic;
+
+    protected $extJson;
+
+    public function getBizId() {
+	    return $this->bizId;
+    }
+
+    public function setBizId($bizId) {
+    	$this->bizId = $bizId;
+    	$this->queryParameters['BizId'] = $bizId;
 	}
 
-	private  $bizId;
+    public function getTopic() {
+	    return $this->topic;
+    }
 
-	private  $topic;
-
-	private  $extJson;
-
-	public function getBizId() {
-		return $this->bizId;
+    public function setTopic($topic) {
+    	$this->topic = $topic;
+    	$this->queryParameters['Topic'] = $topic;
 	}
 
-	public function setBizId($bizId) {
-		$this->bizId = $bizId;
-		$this->queryParameters["BizId"]=$bizId;
+    public function getExtJson() {
+	    return $this->extJson;
+    }
+
+    public function setExtJson($extJson) {
+    	$this->extJson = $extJson;
+    	$this->queryParameters['ExtJson'] = $extJson;
 	}
 
-	public function getTopic() {
-		return $this->topic;
-	}
-
-	public function setTopic($topic) {
-		$this->topic = $topic;
-		$this->queryParameters["Topic"]=$topic;
-	}
-
-	public function getExtJson() {
-		return $this->extJson;
-	}
-
-	public function setExtJson($extJson) {
-		$this->extJson = $extJson;
-		$this->queryParameters["ExtJson"]=$extJson;
-	}
-	
 }

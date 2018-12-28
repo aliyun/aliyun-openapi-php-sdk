@@ -21,87 +21,87 @@ namespace linkedmall\Request\V20180116;
 
 class ReserveMovieSeatRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("linkedmall", "2018-01-16", "ReserveMovieSeat", "linkedmall", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("linkedmall", "2018-01-16", "ReserveMovieSeat", "linkedmall", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $bizId;
+
+    protected $scheduleId;
+
+    protected $seatIds;
+
+    protected $seatNames;
+
+    protected $bizUid;
+
+    protected $mobile;
+
+    protected $extJson;
+
+    public function getBizId() {
+	    return $this->bizId;
+    }
+
+    public function setBizId($bizId) {
+    	$this->bizId = $bizId;
+    	$this->queryParameters['BizId'] = $bizId;
 	}
 
-	private  $bizId;
+    public function getScheduleId() {
+	    return $this->scheduleId;
+    }
 
-	private  $scheduleId;
-
-	private  $seatIds;
-
-	private  $seatNames;
-
-	private  $bizUid;
-
-	private  $mobile;
-
-	private  $extJson;
-
-	public function getBizId() {
-		return $this->bizId;
+    public function setScheduleId($scheduleId) {
+    	$this->scheduleId = $scheduleId;
+    	$this->queryParameters['ScheduleId'] = $scheduleId;
 	}
 
-	public function setBizId($bizId) {
-		$this->bizId = $bizId;
-		$this->queryParameters["BizId"]=$bizId;
+    public function getSeatIds() {
+	    return $this->seatIds;
+    }
+
+    public function setSeatIds($seatIds) {
+    	$this->seatIds = $seatIds;
+    	$this->queryParameters['SeatIds'] = $seatIds;
 	}
 
-	public function getScheduleId() {
-		return $this->scheduleId;
+    public function getSeatNames() {
+	    return $this->seatNames;
+    }
+
+    public function setSeatNames($seatNames) {
+    	$this->seatNames = $seatNames;
+    	$this->queryParameters['SeatNames'] = $seatNames;
 	}
 
-	public function setScheduleId($scheduleId) {
-		$this->scheduleId = $scheduleId;
-		$this->queryParameters["ScheduleId"]=$scheduleId;
+    public function getBizUid() {
+	    return $this->bizUid;
+    }
+
+    public function setBizUid($bizUid) {
+    	$this->bizUid = $bizUid;
+    	$this->queryParameters['BizUid'] = $bizUid;
 	}
 
-	public function getSeatIds() {
-		return $this->seatIds;
+    public function getMobile() {
+	    return $this->mobile;
+    }
+
+    public function setMobile($mobile) {
+    	$this->mobile = $mobile;
+    	$this->queryParameters['Mobile'] = $mobile;
 	}
 
-	public function setSeatIds($seatIds) {
-		$this->seatIds = $seatIds;
-		$this->queryParameters["SeatIds"]=$seatIds;
+    public function getExtJson() {
+	    return $this->extJson;
+    }
+
+    public function setExtJson($extJson) {
+    	$this->extJson = $extJson;
+    	$this->queryParameters['ExtJson'] = $extJson;
 	}
 
-	public function getSeatNames() {
-		return $this->seatNames;
-	}
-
-	public function setSeatNames($seatNames) {
-		$this->seatNames = $seatNames;
-		$this->queryParameters["SeatNames"]=$seatNames;
-	}
-
-	public function getBizUid() {
-		return $this->bizUid;
-	}
-
-	public function setBizUid($bizUid) {
-		$this->bizUid = $bizUid;
-		$this->queryParameters["BizUid"]=$bizUid;
-	}
-
-	public function getMobile() {
-		return $this->mobile;
-	}
-
-	public function setMobile($mobile) {
-		$this->mobile = $mobile;
-		$this->queryParameters["Mobile"]=$mobile;
-	}
-
-	public function getExtJson() {
-		return $this->extJson;
-	}
-
-	public function setExtJson($extJson) {
-		$this->extJson = $extJson;
-		$this->queryParameters["ExtJson"]=$extJson;
-	}
-	
 }

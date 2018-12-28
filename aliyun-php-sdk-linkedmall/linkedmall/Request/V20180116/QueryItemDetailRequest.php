@@ -21,32 +21,32 @@ namespace linkedmall\Request\V20180116;
 
 class QueryItemDetailRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("linkedmall", "2018-01-16", "QueryItemDetail", "linkedmall", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("linkedmall", "2018-01-16", "QueryItemDetail", "linkedmall", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $bizId;
+
+    protected $itemId;
+
+    public function getBizId() {
+	    return $this->bizId;
+    }
+
+    public function setBizId($bizId) {
+    	$this->bizId = $bizId;
+    	$this->queryParameters['BizId'] = $bizId;
 	}
 
-	private  $bizId;
+    public function getItemId() {
+	    return $this->itemId;
+    }
 
-	private  $itemId;
-
-	public function getBizId() {
-		return $this->bizId;
+    public function setItemId($itemId) {
+    	$this->itemId = $itemId;
+    	$this->queryParameters['ItemId'] = $itemId;
 	}
 
-	public function setBizId($bizId) {
-		$this->bizId = $bizId;
-		$this->queryParameters["BizId"]=$bizId;
-	}
-
-	public function getItemId() {
-		return $this->itemId;
-	}
-
-	public function setItemId($itemId) {
-		$this->itemId = $itemId;
-		$this->queryParameters["ItemId"]=$itemId;
-	}
-	
 }

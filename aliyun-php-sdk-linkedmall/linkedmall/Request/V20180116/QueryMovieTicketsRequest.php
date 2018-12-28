@@ -21,53 +21,53 @@ namespace linkedmall\Request\V20180116;
 
 class QueryMovieTicketsRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("linkedmall", "2018-01-16", "QueryMovieTickets", "linkedmall", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("linkedmall", "2018-01-16", "QueryMovieTickets", "linkedmall", "openAPI");
+    }
+
+    protected $bizId;
+
+    protected $bizUid;
+
+    protected $orderId;
+
+    protected $extJson;
+
+    public function getBizId() {
+	    return $this->bizId;
+    }
+
+    public function setBizId($bizId) {
+    	$this->bizId = $bizId;
+    	$this->queryParameters['BizId'] = $bizId;
 	}
 
-	private  $bizId;
+    public function getBizUid() {
+	    return $this->bizUid;
+    }
 
-	private  $bizUid;
-
-	private  $orderId;
-
-	private  $extJson;
-
-	public function getBizId() {
-		return $this->bizId;
+    public function setBizUid($bizUid) {
+    	$this->bizUid = $bizUid;
+    	$this->queryParameters['BizUid'] = $bizUid;
 	}
 
-	public function setBizId($bizId) {
-		$this->bizId = $bizId;
-		$this->queryParameters["BizId"]=$bizId;
+    public function getOrderId() {
+	    return $this->orderId;
+    }
+
+    public function setOrderId($orderId) {
+    	$this->orderId = $orderId;
+    	$this->queryParameters['OrderId'] = $orderId;
 	}
 
-	public function getBizUid() {
-		return $this->bizUid;
+    public function getExtJson() {
+	    return $this->extJson;
+    }
+
+    public function setExtJson($extJson) {
+    	$this->extJson = $extJson;
+    	$this->queryParameters['ExtJson'] = $extJson;
 	}
 
-	public function setBizUid($bizUid) {
-		$this->bizUid = $bizUid;
-		$this->queryParameters["BizUid"]=$bizUid;
-	}
-
-	public function getOrderId() {
-		return $this->orderId;
-	}
-
-	public function setOrderId($orderId) {
-		$this->orderId = $orderId;
-		$this->queryParameters["OrderId"]=$orderId;
-	}
-
-	public function getExtJson() {
-		return $this->extJson;
-	}
-
-	public function setExtJson($extJson) {
-		$this->extJson = $extJson;
-		$this->queryParameters["ExtJson"]=$extJson;
-	}
-	
 }

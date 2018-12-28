@@ -21,43 +21,43 @@ namespace linkedmall\Request\V20180116;
 
 class RemoveMessagesRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("linkedmall", "2018-01-16", "RemoveMessages", "linkedmall", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("linkedmall", "2018-01-16", "RemoveMessages", "linkedmall", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $bizId;
+
+    protected $messageIds;
+
+    protected $extJson;
+
+    public function getBizId() {
+	    return $this->bizId;
+    }
+
+    public function setBizId($bizId) {
+    	$this->bizId = $bizId;
+    	$this->queryParameters['BizId'] = $bizId;
 	}
 
-	private  $bizId;
+    public function getMessageIds() {
+	    return $this->messageIds;
+    }
 
-	private  $messageIds;
-
-	private  $extJson;
-
-	public function getBizId() {
-		return $this->bizId;
+    public function setMessageIds($messageIds) {
+    	$this->messageIds = $messageIds;
+    	$this->queryParameters['MessageIds'] = $messageIds;
 	}
 
-	public function setBizId($bizId) {
-		$this->bizId = $bizId;
-		$this->queryParameters["BizId"]=$bizId;
+    public function getExtJson() {
+	    return $this->extJson;
+    }
+
+    public function setExtJson($extJson) {
+    	$this->extJson = $extJson;
+    	$this->queryParameters['ExtJson'] = $extJson;
 	}
 
-	public function getMessageIds() {
-		return $this->messageIds;
-	}
-
-	public function setMessageIds($messageIds) {
-		$this->messageIds = $messageIds;
-		$this->queryParameters["MessageIds"]=$messageIds;
-	}
-
-	public function getExtJson() {
-		return $this->extJson;
-	}
-
-	public function setExtJson($extJson) {
-		$this->extJson = $extJson;
-		$this->queryParameters["ExtJson"]=$extJson;
-	}
-	
 }

@@ -21,43 +21,43 @@ namespace linkedmall\Request\V20180116;
 
 class QueryUpcomingMoviesRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("linkedmall", "2018-01-16", "QueryUpcomingMovies", "linkedmall", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("linkedmall", "2018-01-16", "QueryUpcomingMovies", "linkedmall", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $bizId;
+
+    protected $cityCode;
+
+    protected $extJson;
+
+    public function getBizId() {
+	    return $this->bizId;
+    }
+
+    public function setBizId($bizId) {
+    	$this->bizId = $bizId;
+    	$this->queryParameters['BizId'] = $bizId;
 	}
 
-	private  $bizId;
+    public function getCityCode() {
+	    return $this->cityCode;
+    }
 
-	private  $cityCode;
-
-	private  $extJson;
-
-	public function getBizId() {
-		return $this->bizId;
+    public function setCityCode($cityCode) {
+    	$this->cityCode = $cityCode;
+    	$this->queryParameters['CityCode'] = $cityCode;
 	}
 
-	public function setBizId($bizId) {
-		$this->bizId = $bizId;
-		$this->queryParameters["BizId"]=$bizId;
+    public function getExtJson() {
+	    return $this->extJson;
+    }
+
+    public function setExtJson($extJson) {
+    	$this->extJson = $extJson;
+    	$this->queryParameters['ExtJson'] = $extJson;
 	}
 
-	public function getCityCode() {
-		return $this->cityCode;
-	}
-
-	public function setCityCode($cityCode) {
-		$this->cityCode = $cityCode;
-		$this->queryParameters["CityCode"]=$cityCode;
-	}
-
-	public function getExtJson() {
-		return $this->extJson;
-	}
-
-	public function setExtJson($extJson) {
-		$this->extJson = $extJson;
-		$this->queryParameters["ExtJson"]=$extJson;
-	}
-	
 }

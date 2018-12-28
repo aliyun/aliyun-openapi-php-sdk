@@ -21,43 +21,43 @@ namespace linkedmall\Request\V20180116;
 
 class QueryMovieSeatsRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("linkedmall", "2018-01-16", "QueryMovieSeats", "linkedmall", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("linkedmall", "2018-01-16", "QueryMovieSeats", "linkedmall", "openAPI");
 		$this->setMethod("POST");
+    }
+
+    protected $bizId;
+
+    protected $scheduleId;
+
+    protected $extJson;
+
+    public function getBizId() {
+	    return $this->bizId;
+    }
+
+    public function setBizId($bizId) {
+    	$this->bizId = $bizId;
+    	$this->queryParameters['BizId'] = $bizId;
 	}
 
-	private  $bizId;
+    public function getScheduleId() {
+	    return $this->scheduleId;
+    }
 
-	private  $scheduleId;
-
-	private  $extJson;
-
-	public function getBizId() {
-		return $this->bizId;
+    public function setScheduleId($scheduleId) {
+    	$this->scheduleId = $scheduleId;
+    	$this->queryParameters['ScheduleId'] = $scheduleId;
 	}
 
-	public function setBizId($bizId) {
-		$this->bizId = $bizId;
-		$this->queryParameters["BizId"]=$bizId;
+    public function getExtJson() {
+	    return $this->extJson;
+    }
+
+    public function setExtJson($extJson) {
+    	$this->extJson = $extJson;
+    	$this->queryParameters['ExtJson'] = $extJson;
 	}
 
-	public function getScheduleId() {
-		return $this->scheduleId;
-	}
-
-	public function setScheduleId($scheduleId) {
-		$this->scheduleId = $scheduleId;
-		$this->queryParameters["ScheduleId"]=$scheduleId;
-	}
-
-	public function getExtJson() {
-		return $this->extJson;
-	}
-
-	public function setExtJson($extJson) {
-		$this->extJson = $extJson;
-		$this->queryParameters["ExtJson"]=$extJson;
-	}
-	
 }
