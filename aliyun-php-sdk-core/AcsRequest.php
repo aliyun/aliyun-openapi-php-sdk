@@ -69,6 +69,10 @@ abstract class AcsRequest
      * @var null|string
      */
     protected $locationEndpointType;
+    /**
+     * @var array The original parameters of the request object.
+     */
+    protected $requestParameters = array();
 
     /**
      * AcsRequest constructor.
@@ -269,5 +273,34 @@ abstract class AcsRequest
     public function getLocationEndpointType()
     {
         return $this->locationEndpointType;
+    }
+
+    /**
+     * Magic method for get parameters.
+     *
+     * @param string $name
+     * @param mixed  $arguments
+     *
+     * @return $this
+     */
+    public function __call($name, $arguments)
+    {
+        if (\strpos($name, 'get', 0) !== false) {
+            $parameterName = $this->propertyNameByMethodName($name);
+            return isset($this->requestParameters[$parameterName])
+                ? $this->requestParameters[$parameterName]
+                : null;
+        }
+        return $this;
+    }
+
+    /**
+     * @param string $methodName
+     *
+     * @return string
+     */
+    protected function propertyNameByMethodName($methodName)
+    {
+        return \mb_strcut($methodName, 3);
     }
 }
