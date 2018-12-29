@@ -21,75 +21,75 @@ namespace dms_enterprise\Request\V20181101;
 
 class GetOpLogRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("dms-enterprise", "2018-11-01", "GetOpLog", "dmsenterprise", "openAPI");
+    public function  __construct()
+    {
+        parent::__construct("dms-enterprise", "2018-11-01", "GetOpLog", "dmsenterprise", "openAPI");
+    }
+
+    protected $module;
+
+    protected $pageSize;
+
+    protected $endTime;
+
+    protected $startTime;
+
+    protected $tid;
+
+    protected $pageNumber;
+
+    public function getModule() {
+	    return $this->module;
+    }
+
+    public function setModule($module) {
+    	$this->module = $module;
+    	$this->queryParameters['Module'] = $module;
 	}
 
-	private  $module;
+    public function getPageSize() {
+	    return $this->pageSize;
+    }
 
-	private  $pageSize;
-
-	private  $endTime;
-
-	private  $startTime;
-
-	private  $tid;
-
-	private  $pageNumber;
-
-	public function getModule() {
-		return $this->module;
+    public function setPageSize($pageSize) {
+    	$this->pageSize = $pageSize;
+    	$this->queryParameters['PageSize'] = $pageSize;
 	}
 
-	public function setModule($module) {
-		$this->module = $module;
-		$this->queryParameters["Module"]=$module;
+    public function getEndTime() {
+	    return $this->endTime;
+    }
+
+    public function setEndTime($endTime) {
+    	$this->endTime = $endTime;
+    	$this->queryParameters['EndTime'] = $endTime;
 	}
 
-	public function getPageSize() {
-		return $this->pageSize;
+    public function getStartTime() {
+	    return $this->startTime;
+    }
+
+    public function setStartTime($startTime) {
+    	$this->startTime = $startTime;
+    	$this->queryParameters['StartTime'] = $startTime;
 	}
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
+    public function getTid() {
+	    return $this->tid;
+    }
+
+    public function setTid($tid) {
+    	$this->tid = $tid;
+    	$this->queryParameters['Tid'] = $tid;
 	}
 
-	public function getEndTime() {
-		return $this->endTime;
+    public function getPageNumber() {
+	    return $this->pageNumber;
+    }
+
+    public function setPageNumber($pageNumber) {
+    	$this->pageNumber = $pageNumber;
+    	$this->queryParameters['PageNumber'] = $pageNumber;
 	}
 
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
-
-	public function getTid() {
-		return $this->tid;
-	}
-
-	public function setTid($tid) {
-		$this->tid = $tid;
-		$this->queryParameters["Tid"]=$tid;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-	
 }

@@ -19,30 +19,17 @@
  */
 namespace dms_enterprise\Request\V20181101;
 
-class RegisterUserRequest extends \RpcAcsRequest
+class EnableUserRequest extends \RpcAcsRequest
 {
     public function  __construct()
     {
-        parent::__construct("dms-enterprise", "2018-11-01", "RegisterUser", "dmsenterprise", "openAPI");
+        parent::__construct("dms-enterprise", "2018-11-01", "EnableUser", "dmsenterprise", "openAPI");
 		$this->setMethod("POST");
     }
 
-    protected $roleNames;
-
     protected $uid;
 
-    protected $userNick;
-
     protected $tid;
-
-    public function getRoleNames() {
-	    return $this->roleNames;
-    }
-
-    public function setRoleNames($roleNames) {
-    	$this->roleNames = $roleNames;
-    	$this->queryParameters['RoleNames'] = $roleNames;
-	}
 
     public function getUid() {
 	    return $this->uid;
@@ -51,15 +38,6 @@ class RegisterUserRequest extends \RpcAcsRequest
     public function setUid($uid) {
     	$this->uid = $uid;
     	$this->queryParameters['Uid'] = $uid;
-	}
-
-    public function getUserNick() {
-	    return $this->userNick;
-    }
-
-    public function setUserNick($userNick) {
-    	$this->userNick = $userNick;
-    	$this->queryParameters['UserNick'] = $userNick;
 	}
 
     public function getTid() {
