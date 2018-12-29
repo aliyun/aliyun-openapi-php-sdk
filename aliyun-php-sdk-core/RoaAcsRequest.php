@@ -40,32 +40,19 @@ abstract class RoaAcsRequest extends AcsRequest
     /**
      * @var string
      */
-    private static $headerSeparator = "\n";
+    private static $headerSeparator = PHP_EOL;
     /**
      * @var string
      */
-    private static $querySeprator = '&';
-
+    private static $querySeparator = '&';
     /**
-     * RoaAcsRequest constructor.
-     *
-     * @param string      $product
-     * @param string      $version
-     * @param string      $actionName
-     * @param string|null $locationServiceCode
-     * @param string      $locationEndpointType
+     * @var string
      */
-    public function __construct($product,
-                                $version,
-                                $actionName,
-                                $locationServiceCode = null,
-                                $locationEndpointType = 'openAPI')
-    {
-        parent::__construct($product, $version, $actionName, $locationServiceCode, $locationEndpointType);
-        $this->setVersion($version);
-        $this->setMethod('RAW');
-        $this->setAcceptFormat('JSON');
-    }
+    protected $method = 'RAW';
+    /**
+     * @var string
+     */
+    protected $acceptFormat = 'JSON';
 
     /**
      * @param $iSigner
@@ -76,6 +63,8 @@ abstract class RoaAcsRequest extends AcsRequest
      */
     public function composeUrl($iSigner, $credential, $domain)
     {
+        $this->headers['x-acs-version'] = &$this->version;
+
         $this->prepareHeader($iSigner, $credential);
 
         $signString = $this->getMethod() . self::$headerSeparator;
@@ -128,7 +117,7 @@ abstract class RoaAcsRequest extends AcsRequest
             if (isset($sortMapValue)) {
                 $queryString = $queryString . '=' . urlencode($sortMapValue);
             }
-            $queryString .= self::$querySeprator;
+            $queryString .= self::$querySeparator;
         }
 
         if (count($sortMap) > 0) {
@@ -244,7 +233,7 @@ abstract class RoaAcsRequest extends AcsRequest
             if (isset($sortMapValue)) {
                 $queryString = $queryString . '=' . $sortMapValue;
             }
-            $queryString .= self::$querySeprator;
+            $queryString .= self::$querySeparator;
         }
         if (0 < count($sortMap)) {
             $queryString = substr($queryString, 0, -1);
@@ -322,12 +311,4 @@ abstract class RoaAcsRequest extends AcsRequest
         return $this->uriPattern = $uriPattern;
     }
 
-    /**
-     * @param $version
-     */
-    public function setVersion($version)
-    {
-        $this->version                  = $version;
-        $this->headers['x-acs-version'] = $version;
-    }
 }

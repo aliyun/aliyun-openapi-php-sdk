@@ -29,26 +29,14 @@ abstract class RpcAcsRequest extends AcsRequest
      * @var array
      */
     private $domainParameters = array();
-
     /**
-     * RpcAcsRequest constructor.
-     *
-     * @param string      $product
-     * @param string      $version
-     * @param string      $actionName
-     * @param string|null $locationServiceCode
-     * @param string      $locationEndpointType
+     * @var string
      */
-    public function __construct($product,
-                                $version,
-                                $actionName,
-                                $locationServiceCode = null,
-                                $locationEndpointType = 'openAPI')
-    {
-        parent::__construct($product, $version, $actionName, $locationServiceCode, $locationEndpointType);
-        $this->setMethod('GET');
-        $this->setAcceptFormat('JSON');
-    }
+    protected $method = 'GET';
+    /**
+     * @var string
+     */
+    protected $acceptFormat = 'JSON';
 
     /**
      * @param string|bool $value
