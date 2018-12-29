@@ -38,6 +38,13 @@ class Autoloader
      */
     public static function autoload($className)
     {
+        $directories = dirname(dirname(__DIR__));
+        foreach (glob($directories . '/*') as $directory) {
+            if (is_dir($directory)) {
+                self::$autoloadPathArray[] = basename($directory);
+            }
+        }
+
         foreach (self::$autoloadPathArray as $path) {
             $file = dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . $path . DIRECTORY_SEPARATOR . $className . '.php';
             $file = str_replace('\\', DIRECTORY_SEPARATOR, $file);
