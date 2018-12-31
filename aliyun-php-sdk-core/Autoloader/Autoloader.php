@@ -34,19 +34,15 @@ class Autoloader
     );
 
     /**
-     * @param $className
+     * Automatically find the class and load it.
+     *
+     * @param string $className
      */
     public static function autoload($className)
     {
         $directories = dirname(dirname(__DIR__));
-        foreach (glob($directories . '/*') as $directory) {
-            if (is_dir($directory)) {
-                self::$autoloadPathArray[] = basename($directory);
-            }
-        }
-
         foreach (self::$autoloadPathArray as $path) {
-            $file = dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . $path . DIRECTORY_SEPARATOR . $className . '.php';
+            $file = $directories . DIRECTORY_SEPARATOR . $path . DIRECTORY_SEPARATOR . $className . '.php';
             $file = str_replace('\\', DIRECTORY_SEPARATOR, $file);
             if (is_file($file)) {
                 include_once $file;
@@ -56,7 +52,22 @@ class Autoloader
     }
 
     /**
-     * @param $path
+     * Load all product folders.
+     *
+     * @return void
+     */
+    public static function loadDirectories()
+    {
+        $directories = dirname(dirname(__DIR__));
+        foreach (glob($directories . '/*') as $directory) {
+            if (is_dir($directory) && basename($directory) !== 'aliyun-php-sdk-core') {
+                self::$autoloadPathArray[] = basename($directory);
+            }
+        }
+    }
+
+    /**
+     * @param string $path
      */
     public static function addAutoloadPath($path)
     {

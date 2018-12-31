@@ -20,7 +20,7 @@
 include_once 'Autoloader/Autoloader.php';
 include_once 'Regions/EndpointConfig.php';
 include_once 'Regions/LocationService.php';
-
+Autoloader::loadDirectories();
 //config http proxy
 /**
  *
