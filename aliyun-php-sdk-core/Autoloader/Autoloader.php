@@ -59,7 +59,7 @@ class Autoloader
     public static function loadDirectories()
     {
         $directories = dirname(dirname(__DIR__));
-        foreach (glob($directories . '/*') as $directory) {
+        foreach (glob($directories . DIRECTORY_SEPARATOR . '*') as $directory) {
             if (is_dir($directory) && basename($directory) !== 'aliyun-php-sdk-core') {
                 self::$autoloadPathArray[] = basename($directory);
             }
