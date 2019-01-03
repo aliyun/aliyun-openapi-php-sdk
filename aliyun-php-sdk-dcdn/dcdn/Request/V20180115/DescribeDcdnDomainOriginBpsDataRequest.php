@@ -1,107 +1,127 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace dcdn\Request\V20180115;
 
+/**
+ * Request of DescribeDcdnDomainOriginBpsData
+ *
+ * @method string getStartTime()
+ * @method string getFixTimeGap()
+ * @method string getTimeMerge()
+ * @method string getDomainName()
+ * @method string getEndTime()
+ * @method string getOwnerId()
+ * @method string getInterval()
+ */
 class DescribeDcdnDomainOriginBpsDataRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("dcdn", "2018-01-15", "DescribeDcdnDomainOriginBpsData", "dcdn", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $startTime;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $fixTimeGap;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'dcdn',
+            '2018-01-15',
+            'DescribeDcdnDomainOriginBpsData',
+            'dcdn'
+        );
+    }
 
-	private  $timeMerge;
+    /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
 
-	private  $domainName;
+        return $this;
+    }
 
-	private  $endTime;
+    /**
+     * @param string $fixTimeGap
+     *
+     * @return $this
+     */
+    public function setFixTimeGap($fixTimeGap)
+    {
+        $this->requestParameters['FixTimeGap'] = $fixTimeGap;
+        $this->queryParameters['FixTimeGap'] = $fixTimeGap;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	private  $interval;
+    /**
+     * @param string $timeMerge
+     *
+     * @return $this
+     */
+    public function setTimeMerge($timeMerge)
+    {
+        $this->requestParameters['TimeMerge'] = $timeMerge;
+        $this->queryParameters['TimeMerge'] = $timeMerge;
 
-	public function getStartTime() {
-		return $this->startTime;
-	}
+        return $this;
+    }
 
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
 
-	public function getFixTimeGap() {
-		return $this->fixTimeGap;
-	}
+        return $this;
+    }
 
-	public function setFixTimeGap($fixTimeGap) {
-		$this->fixTimeGap = $fixTimeGap;
-		$this->queryParameters["FixTimeGap"]=$fixTimeGap;
-	}
+    /**
+     * @param string $endTime
+     *
+     * @return $this
+     */
+    public function setEndTime($endTime)
+    {
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
 
-	public function getTimeMerge() {
-		return $this->timeMerge;
-	}
+        return $this;
+    }
 
-	public function setTimeMerge($timeMerge) {
-		$this->timeMerge = $timeMerge;
-		$this->queryParameters["TimeMerge"]=$timeMerge;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function getDomainName() {
-		return $this->domainName;
-	}
+        return $this;
+    }
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
+    /**
+     * @param string $interval
+     *
+     * @return $this
+     */
+    public function setInterval($interval)
+    {
+        $this->requestParameters['Interval'] = $interval;
+        $this->queryParameters['Interval'] = $interval;
 
-	public function getEndTime() {
-		return $this->endTime;
-	}
-
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getInterval() {
-		return $this->interval;
-	}
-
-	public function setInterval($interval) {
-		$this->interval = $interval;
-		$this->queryParameters["Interval"]=$interval;
-	}
-	
+        return $this;
+    }
 }

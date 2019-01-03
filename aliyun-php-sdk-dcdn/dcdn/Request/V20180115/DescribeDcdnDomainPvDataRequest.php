@@ -3,13 +3,15 @@
 namespace dcdn\Request\V20180115;
 
 /**
- * Request of StartDcdnDomain
+ * Request of DescribeDcdnDomainPvData
  *
  * @method string getSecurityToken()
  * @method string getDomainName()
+ * @method string getEndTime()
+ * @method string getStartTime()
  * @method string getOwnerId()
  */
-class StartDcdnDomainRequest extends \RpcAcsRequest
+class DescribeDcdnDomainPvDataRequest extends \RpcAcsRequest
 {
 
     /**
@@ -25,7 +27,7 @@ class StartDcdnDomainRequest extends \RpcAcsRequest
         parent::__construct(
             'dcdn',
             '2018-01-15',
-            'StartDcdnDomain',
+            'DescribeDcdnDomainPvData',
             'dcdn'
         );
     }
@@ -52,6 +54,32 @@ class StartDcdnDomainRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DomainName'] = $domainName;
         $this->queryParameters['DomainName'] = $domainName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $endTime
+     *
+     * @return $this
+     */
+    public function setEndTime($endTime)
+    {
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
 
         return $this;
     }

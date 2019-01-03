@@ -1,162 +1,197 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace dcdn\Request\V20180115;
 
+/**
+ * Request of DescribeDcdnRefreshTasks
+ *
+ * @method string getObjectPath()
+ * @method string getDomainName()
+ * @method string getEndTime()
+ * @method string getStartTime()
+ * @method string getOwnerId()
+ * @method string getPageNumber()
+ * @method string getResourceGroupId()
+ * @method string getSecurityToken()
+ * @method string getPageSize()
+ * @method string getObjectType()
+ * @method string getTaskId()
+ * @method string getStatus()
+ */
 class DescribeDcdnRefreshTasksRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("dcdn", "2018-01-15", "DescribeDcdnRefreshTasks", "dcdn", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $objectPath;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $domainName;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'dcdn',
+            '2018-01-15',
+            'DescribeDcdnRefreshTasks',
+            'dcdn'
+        );
+    }
 
-	private  $endTime;
+    /**
+     * @param string $objectPath
+     *
+     * @return $this
+     */
+    public function setObjectPath($objectPath)
+    {
+        $this->requestParameters['ObjectPath'] = $objectPath;
+        $this->queryParameters['ObjectPath'] = $objectPath;
 
-	private  $startTime;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
 
-	private  $pageNumber;
+        return $this;
+    }
 
-	private  $resourceGroupId;
+    /**
+     * @param string $endTime
+     *
+     * @return $this
+     */
+    public function setEndTime($endTime)
+    {
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
 
-	private  $securityToken;
+        return $this;
+    }
 
-	private  $pageSize;
+    /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
 
-	private  $objectType;
+        return $this;
+    }
 
-	private  $taskId;
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	private  $status;
+        return $this;
+    }
 
-	public function getObjectPath() {
-		return $this->objectPath;
-	}
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
-	public function setObjectPath($objectPath) {
-		$this->objectPath = $objectPath;
-		$this->queryParameters["ObjectPath"]=$objectPath;
-	}
+        return $this;
+    }
 
-	public function getDomainName() {
-		return $this->domainName;
-	}
+    /**
+     * @param string $resourceGroupId
+     *
+     * @return $this
+     */
+    public function setResourceGroupId($resourceGroupId)
+    {
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
+        return $this;
+    }
 
-	public function getEndTime() {
-		return $this->endTime;
-	}
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
+        return $this;
+    }
 
-	public function getStartTime() {
-		return $this->startTime;
-	}
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
+        return $this;
+    }
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+    /**
+     * @param string $objectType
+     *
+     * @return $this
+     */
+    public function setObjectType($objectType)
+    {
+        $this->requestParameters['ObjectType'] = $objectType;
+        $this->queryParameters['ObjectType'] = $objectType;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+        return $this;
+    }
 
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
+    /**
+     * @param string $taskId
+     *
+     * @return $this
+     */
+    public function setTaskId($taskId)
+    {
+        $this->requestParameters['TaskId'] = $taskId;
+        $this->queryParameters['TaskId'] = $taskId;
 
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
+        return $this;
+    }
 
-	public function getResourceGroupId() {
-		return $this->resourceGroupId;
-	}
+    /**
+     * @param string $status
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->requestParameters['Status'] = $status;
+        $this->queryParameters['Status'] = $status;
 
-	public function setResourceGroupId($resourceGroupId) {
-		$this->resourceGroupId = $resourceGroupId;
-		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getObjectType() {
-		return $this->objectType;
-	}
-
-	public function setObjectType($objectType) {
-		$this->objectType = $objectType;
-		$this->queryParameters["ObjectType"]=$objectType;
-	}
-
-	public function getTaskId() {
-		return $this->taskId;
-	}
-
-	public function setTaskId($taskId) {
-		$this->taskId = $taskId;
-		$this->queryParameters["TaskId"]=$taskId;
-	}
-
-	public function getStatus() {
-		return $this->status;
-	}
-
-	public function setStatus($status) {
-		$this->status = $status;
-		$this->queryParameters["Status"]=$status;
-	}
-	
+        return $this;
+    }
 }
