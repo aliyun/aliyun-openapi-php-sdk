@@ -1,74 +1,85 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace live\Request\V20161101;
 
+/**
+ * Request of CopyCasterSceneConfig
+ *
+ * @method string getFromSceneId()
+ * @method string getCasterId()
+ * @method string getOwnerId()
+ * @method string getToSceneId()
+ */
 class CopyCasterSceneConfigRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("live", "2016-11-01", "CopyCasterSceneConfig", "live", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $fromSceneId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $casterId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'live',
+            '2016-11-01',
+            'CopyCasterSceneConfig',
+            'live'
+        );
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $fromSceneId
+     *
+     * @return $this
+     */
+    public function setFromSceneId($fromSceneId)
+    {
+        $this->requestParameters['FromSceneId'] = $fromSceneId;
+        $this->queryParameters['FromSceneId'] = $fromSceneId;
 
-	private  $toSceneId;
+        return $this;
+    }
 
-	public function getFromSceneId() {
-		return $this->fromSceneId;
-	}
+    /**
+     * @param string $casterId
+     *
+     * @return $this
+     */
+    public function setCasterId($casterId)
+    {
+        $this->requestParameters['CasterId'] = $casterId;
+        $this->queryParameters['CasterId'] = $casterId;
 
-	public function setFromSceneId($fromSceneId) {
-		$this->fromSceneId = $fromSceneId;
-		$this->queryParameters["FromSceneId"]=$fromSceneId;
-	}
+        return $this;
+    }
 
-	public function getCasterId() {
-		return $this->casterId;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setCasterId($casterId) {
-		$this->casterId = $casterId;
-		$this->queryParameters["CasterId"]=$casterId;
-	}
+        return $this;
+    }
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+    /**
+     * @param string $toSceneId
+     *
+     * @return $this
+     */
+    public function setToSceneId($toSceneId)
+    {
+        $this->requestParameters['ToSceneId'] = $toSceneId;
+        $this->queryParameters['ToSceneId'] = $toSceneId;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getToSceneId() {
-		return $this->toSceneId;
-	}
-
-	public function setToSceneId($toSceneId) {
-		$this->toSceneId = $toSceneId;
-		$this->queryParameters["ToSceneId"]=$toSceneId;
-	}
-	
+        return $this;
+    }
 }

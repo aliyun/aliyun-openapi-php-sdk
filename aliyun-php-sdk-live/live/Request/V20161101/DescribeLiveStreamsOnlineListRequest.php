@@ -1,151 +1,183 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace live\Request\V20161101;
 
+/**
+ * Request of DescribeLiveStreamsOnlineList
+ *
+ * @method string getStreamType()
+ * @method string getDomainName()
+ * @method string getEndTime()
+ * @method string getOrderBy()
+ * @method string getStartTime()
+ * @method string getOwnerId()
+ * @method string getPageNum()
+ * @method string getAppName()
+ * @method string getPageSize()
+ * @method string getStreamName()
+ * @method string getQueryType()
+ */
 class DescribeLiveStreamsOnlineListRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("live", "2016-11-01", "DescribeLiveStreamsOnlineList", "live", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $streamType;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $domainName;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'live',
+            '2016-11-01',
+            'DescribeLiveStreamsOnlineList',
+            'live'
+        );
+    }
 
-	private  $endTime;
+    /**
+     * @param string $streamType
+     *
+     * @return $this
+     */
+    public function setStreamType($streamType)
+    {
+        $this->requestParameters['StreamType'] = $streamType;
+        $this->queryParameters['StreamType'] = $streamType;
 
-	private  $orderBy;
+        return $this;
+    }
 
-	private  $startTime;
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	private  $pageNum;
+    /**
+     * @param string $endTime
+     *
+     * @return $this
+     */
+    public function setEndTime($endTime)
+    {
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
 
-	private  $appName;
+        return $this;
+    }
 
-	private  $pageSize;
+    /**
+     * @param string $orderBy
+     *
+     * @return $this
+     */
+    public function setOrderBy($orderBy)
+    {
+        $this->requestParameters['OrderBy'] = $orderBy;
+        $this->queryParameters['OrderBy'] = $orderBy;
 
-	private  $streamName;
+        return $this;
+    }
 
-	private  $queryType;
+    /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
 
-	public function getStreamType() {
-		return $this->streamType;
-	}
+        return $this;
+    }
 
-	public function setStreamType($streamType) {
-		$this->streamType = $streamType;
-		$this->queryParameters["StreamType"]=$streamType;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function getDomainName() {
-		return $this->domainName;
-	}
+        return $this;
+    }
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
+    /**
+     * @param string $pageNum
+     *
+     * @return $this
+     */
+    public function setPageNum($pageNum)
+    {
+        $this->requestParameters['PageNum'] = $pageNum;
+        $this->queryParameters['PageNum'] = $pageNum;
 
-	public function getEndTime() {
-		return $this->endTime;
-	}
+        return $this;
+    }
 
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
+    /**
+     * @param string $appName
+     *
+     * @return $this
+     */
+    public function setAppName($appName)
+    {
+        $this->requestParameters['AppName'] = $appName;
+        $this->queryParameters['AppName'] = $appName;
 
-	public function getOrderBy() {
-		return $this->orderBy;
-	}
+        return $this;
+    }
 
-	public function setOrderBy($orderBy) {
-		$this->orderBy = $orderBy;
-		$this->queryParameters["OrderBy"]=$orderBy;
-	}
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	public function getStartTime() {
-		return $this->startTime;
-	}
+        return $this;
+    }
 
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
+    /**
+     * @param string $streamName
+     *
+     * @return $this
+     */
+    public function setStreamName($streamName)
+    {
+        $this->requestParameters['StreamName'] = $streamName;
+        $this->queryParameters['StreamName'] = $streamName;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+        return $this;
+    }
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+    /**
+     * @param string $queryType
+     *
+     * @return $this
+     */
+    public function setQueryType($queryType)
+    {
+        $this->requestParameters['QueryType'] = $queryType;
+        $this->queryParameters['QueryType'] = $queryType;
 
-	public function getPageNum() {
-		return $this->pageNum;
-	}
-
-	public function setPageNum($pageNum) {
-		$this->pageNum = $pageNum;
-		$this->queryParameters["PageNum"]=$pageNum;
-	}
-
-	public function getAppName() {
-		return $this->appName;
-	}
-
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getStreamName() {
-		return $this->streamName;
-	}
-
-	public function setStreamName($streamName) {
-		$this->streamName = $streamName;
-		$this->queryParameters["StreamName"]=$streamName;
-	}
-
-	public function getQueryType() {
-		return $this->queryType;
-	}
-
-	public function setQueryType($queryType) {
-		$this->queryType = $queryType;
-		$this->queryParameters["QueryType"]=$queryType;
-	}
-	
+        return $this;
+    }
 }

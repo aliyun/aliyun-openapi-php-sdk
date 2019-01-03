@@ -1,118 +1,141 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace live\Request\V20161101;
 
+/**
+ * Request of AddLiveRecordVodConfig
+ *
+ * @method string getAppName()
+ * @method string getAutoCompose()
+ * @method string getDomainName()
+ * @method string getCycleDuration()
+ * @method string getOwnerId()
+ * @method string getComposeVodTranscodeGroupId()
+ * @method string getStreamName()
+ * @method string getVodTranscodeGroupId()
+ */
 class AddLiveRecordVodConfigRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("live", "2016-11-01", "AddLiveRecordVodConfig", "live", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $appName;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $autoCompose;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'live',
+            '2016-11-01',
+            'AddLiveRecordVodConfig',
+            'live'
+        );
+    }
 
-	private  $domainName;
+    /**
+     * @param string $appName
+     *
+     * @return $this
+     */
+    public function setAppName($appName)
+    {
+        $this->requestParameters['AppName'] = $appName;
+        $this->queryParameters['AppName'] = $appName;
 
-	private  $cycleDuration;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $autoCompose
+     *
+     * @return $this
+     */
+    public function setAutoCompose($autoCompose)
+    {
+        $this->requestParameters['AutoCompose'] = $autoCompose;
+        $this->queryParameters['AutoCompose'] = $autoCompose;
 
-	private  $composeVodTranscodeGroupId;
+        return $this;
+    }
 
-	private  $streamName;
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
 
-	private  $vodTranscodeGroupId;
+        return $this;
+    }
 
-	public function getAppName() {
-		return $this->appName;
-	}
+    /**
+     * @param string $cycleDuration
+     *
+     * @return $this
+     */
+    public function setCycleDuration($cycleDuration)
+    {
+        $this->requestParameters['CycleDuration'] = $cycleDuration;
+        $this->queryParameters['CycleDuration'] = $cycleDuration;
 
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
-	}
+        return $this;
+    }
 
-	public function getAutoCompose() {
-		return $this->autoCompose;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setAutoCompose($autoCompose) {
-		$this->autoCompose = $autoCompose;
-		$this->queryParameters["AutoCompose"]=$autoCompose;
-	}
+        return $this;
+    }
 
-	public function getDomainName() {
-		return $this->domainName;
-	}
+    /**
+     * @param string $composeVodTranscodeGroupId
+     *
+     * @return $this
+     */
+    public function setComposeVodTranscodeGroupId($composeVodTranscodeGroupId)
+    {
+        $this->requestParameters['ComposeVodTranscodeGroupId'] = $composeVodTranscodeGroupId;
+        $this->queryParameters['ComposeVodTranscodeGroupId'] = $composeVodTranscodeGroupId;
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
+        return $this;
+    }
 
-	public function getCycleDuration() {
-		return $this->cycleDuration;
-	}
+    /**
+     * @param string $streamName
+     *
+     * @return $this
+     */
+    public function setStreamName($streamName)
+    {
+        $this->requestParameters['StreamName'] = $streamName;
+        $this->queryParameters['StreamName'] = $streamName;
 
-	public function setCycleDuration($cycleDuration) {
-		$this->cycleDuration = $cycleDuration;
-		$this->queryParameters["CycleDuration"]=$cycleDuration;
-	}
+        return $this;
+    }
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+    /**
+     * @param string $vodTranscodeGroupId
+     *
+     * @return $this
+     */
+    public function setVodTranscodeGroupId($vodTranscodeGroupId)
+    {
+        $this->requestParameters['VodTranscodeGroupId'] = $vodTranscodeGroupId;
+        $this->queryParameters['VodTranscodeGroupId'] = $vodTranscodeGroupId;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getComposeVodTranscodeGroupId() {
-		return $this->composeVodTranscodeGroupId;
-	}
-
-	public function setComposeVodTranscodeGroupId($composeVodTranscodeGroupId) {
-		$this->composeVodTranscodeGroupId = $composeVodTranscodeGroupId;
-		$this->queryParameters["ComposeVodTranscodeGroupId"]=$composeVodTranscodeGroupId;
-	}
-
-	public function getStreamName() {
-		return $this->streamName;
-	}
-
-	public function setStreamName($streamName) {
-		$this->streamName = $streamName;
-		$this->queryParameters["StreamName"]=$streamName;
-	}
-
-	public function getVodTranscodeGroupId() {
-		return $this->vodTranscodeGroupId;
-	}
-
-	public function setVodTranscodeGroupId($vodTranscodeGroupId) {
-		$this->vodTranscodeGroupId = $vodTranscodeGroupId;
-		$this->queryParameters["VodTranscodeGroupId"]=$vodTranscodeGroupId;
-	}
-	
+        return $this;
+    }
 }

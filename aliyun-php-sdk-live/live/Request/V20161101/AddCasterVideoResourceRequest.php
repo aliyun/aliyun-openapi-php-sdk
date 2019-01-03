@@ -1,151 +1,183 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace live\Request\V20161101;
 
+/**
+ * Request of AddCasterVideoResource
+ *
+ * @method string getVodUrl()
+ * @method string getCasterId()
+ * @method string getEndOffset()
+ * @method string getOwnerId()
+ * @method string getMaterialId()
+ * @method string getBeginOffset()
+ * @method string getLiveStreamUrl()
+ * @method string getLocationId()
+ * @method string getPtsCallbackInterval()
+ * @method string getResourceName()
+ * @method string getRepeatNum()
+ */
 class AddCasterVideoResourceRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("live", "2016-11-01", "AddCasterVideoResource", "live", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $vodUrl;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $casterId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'live',
+            '2016-11-01',
+            'AddCasterVideoResource',
+            'live'
+        );
+    }
 
-	private  $endOffset;
+    /**
+     * @param string $vodUrl
+     *
+     * @return $this
+     */
+    public function setVodUrl($vodUrl)
+    {
+        $this->requestParameters['VodUrl'] = $vodUrl;
+        $this->queryParameters['VodUrl'] = $vodUrl;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	private  $materialId;
+    /**
+     * @param string $casterId
+     *
+     * @return $this
+     */
+    public function setCasterId($casterId)
+    {
+        $this->requestParameters['CasterId'] = $casterId;
+        $this->queryParameters['CasterId'] = $casterId;
 
-	private  $beginOffset;
+        return $this;
+    }
 
-	private  $liveStreamUrl;
+    /**
+     * @param string $endOffset
+     *
+     * @return $this
+     */
+    public function setEndOffset($endOffset)
+    {
+        $this->requestParameters['EndOffset'] = $endOffset;
+        $this->queryParameters['EndOffset'] = $endOffset;
 
-	private  $locationId;
+        return $this;
+    }
 
-	private  $ptsCallbackInterval;
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	private  $resourceName;
+        return $this;
+    }
 
-	private  $repeatNum;
+    /**
+     * @param string $materialId
+     *
+     * @return $this
+     */
+    public function setMaterialId($materialId)
+    {
+        $this->requestParameters['MaterialId'] = $materialId;
+        $this->queryParameters['MaterialId'] = $materialId;
 
-	public function getVodUrl() {
-		return $this->vodUrl;
-	}
+        return $this;
+    }
 
-	public function setVodUrl($vodUrl) {
-		$this->vodUrl = $vodUrl;
-		$this->queryParameters["VodUrl"]=$vodUrl;
-	}
+    /**
+     * @param string $beginOffset
+     *
+     * @return $this
+     */
+    public function setBeginOffset($beginOffset)
+    {
+        $this->requestParameters['BeginOffset'] = $beginOffset;
+        $this->queryParameters['BeginOffset'] = $beginOffset;
 
-	public function getCasterId() {
-		return $this->casterId;
-	}
+        return $this;
+    }
 
-	public function setCasterId($casterId) {
-		$this->casterId = $casterId;
-		$this->queryParameters["CasterId"]=$casterId;
-	}
+    /**
+     * @param string $liveStreamUrl
+     *
+     * @return $this
+     */
+    public function setLiveStreamUrl($liveStreamUrl)
+    {
+        $this->requestParameters['LiveStreamUrl'] = $liveStreamUrl;
+        $this->queryParameters['LiveStreamUrl'] = $liveStreamUrl;
 
-	public function getEndOffset() {
-		return $this->endOffset;
-	}
+        return $this;
+    }
 
-	public function setEndOffset($endOffset) {
-		$this->endOffset = $endOffset;
-		$this->queryParameters["EndOffset"]=$endOffset;
-	}
+    /**
+     * @param string $locationId
+     *
+     * @return $this
+     */
+    public function setLocationId($locationId)
+    {
+        $this->requestParameters['LocationId'] = $locationId;
+        $this->queryParameters['LocationId'] = $locationId;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+        return $this;
+    }
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+    /**
+     * @param string $ptsCallbackInterval
+     *
+     * @return $this
+     */
+    public function setPtsCallbackInterval($ptsCallbackInterval)
+    {
+        $this->requestParameters['PtsCallbackInterval'] = $ptsCallbackInterval;
+        $this->queryParameters['PtsCallbackInterval'] = $ptsCallbackInterval;
 
-	public function getMaterialId() {
-		return $this->materialId;
-	}
+        return $this;
+    }
 
-	public function setMaterialId($materialId) {
-		$this->materialId = $materialId;
-		$this->queryParameters["MaterialId"]=$materialId;
-	}
+    /**
+     * @param string $resourceName
+     *
+     * @return $this
+     */
+    public function setResourceName($resourceName)
+    {
+        $this->requestParameters['ResourceName'] = $resourceName;
+        $this->queryParameters['ResourceName'] = $resourceName;
 
-	public function getBeginOffset() {
-		return $this->beginOffset;
-	}
+        return $this;
+    }
 
-	public function setBeginOffset($beginOffset) {
-		$this->beginOffset = $beginOffset;
-		$this->queryParameters["BeginOffset"]=$beginOffset;
-	}
+    /**
+     * @param string $repeatNum
+     *
+     * @return $this
+     */
+    public function setRepeatNum($repeatNum)
+    {
+        $this->requestParameters['RepeatNum'] = $repeatNum;
+        $this->queryParameters['RepeatNum'] = $repeatNum;
 
-	public function getLiveStreamUrl() {
-		return $this->liveStreamUrl;
-	}
-
-	public function setLiveStreamUrl($liveStreamUrl) {
-		$this->liveStreamUrl = $liveStreamUrl;
-		$this->queryParameters["LiveStreamUrl"]=$liveStreamUrl;
-	}
-
-	public function getLocationId() {
-		return $this->locationId;
-	}
-
-	public function setLocationId($locationId) {
-		$this->locationId = $locationId;
-		$this->queryParameters["LocationId"]=$locationId;
-	}
-
-	public function getPtsCallbackInterval() {
-		return $this->ptsCallbackInterval;
-	}
-
-	public function setPtsCallbackInterval($ptsCallbackInterval) {
-		$this->ptsCallbackInterval = $ptsCallbackInterval;
-		$this->queryParameters["PtsCallbackInterval"]=$ptsCallbackInterval;
-	}
-
-	public function getResourceName() {
-		return $this->resourceName;
-	}
-
-	public function setResourceName($resourceName) {
-		$this->resourceName = $resourceName;
-		$this->queryParameters["ResourceName"]=$resourceName;
-	}
-
-	public function getRepeatNum() {
-		return $this->repeatNum;
-	}
-
-	public function setRepeatNum($repeatNum) {
-		$this->repeatNum = $repeatNum;
-		$this->queryParameters["RepeatNum"]=$repeatNum;
-	}
-	
+        return $this;
+    }
 }

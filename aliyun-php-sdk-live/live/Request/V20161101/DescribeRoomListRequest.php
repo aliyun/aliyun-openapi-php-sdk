@@ -1,140 +1,169 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace live\Request\V20161101;
 
+/**
+ * Request of DescribeRoomList
+ *
+ * @method string getStartTime()
+ * @method string getAnchorId()
+ * @method string getPageNum()
+ * @method string getRoomStatus()
+ * @method string getPageSize()
+ * @method string getOrder()
+ * @method string getEndTime()
+ * @method string getOwnerId()
+ * @method string getRoomId()
+ * @method string getAppId()
+ */
 class DescribeRoomListRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("live", "2016-11-01", "DescribeRoomList", "live", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $startTime;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $anchorId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'live',
+            '2016-11-01',
+            'DescribeRoomList',
+            'live'
+        );
+    }
 
-	private  $pageNum;
+    /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
 
-	private  $roomStatus;
+        return $this;
+    }
 
-	private  $pageSize;
+    /**
+     * @param string $anchorId
+     *
+     * @return $this
+     */
+    public function setAnchorId($anchorId)
+    {
+        $this->requestParameters['AnchorId'] = $anchorId;
+        $this->queryParameters['AnchorId'] = $anchorId;
 
-	private  $order;
+        return $this;
+    }
 
-	private  $endTime;
+    /**
+     * @param string $pageNum
+     *
+     * @return $this
+     */
+    public function setPageNum($pageNum)
+    {
+        $this->requestParameters['PageNum'] = $pageNum;
+        $this->queryParameters['PageNum'] = $pageNum;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	private  $roomId;
+    /**
+     * @param string $roomStatus
+     *
+     * @return $this
+     */
+    public function setRoomStatus($roomStatus)
+    {
+        $this->requestParameters['RoomStatus'] = $roomStatus;
+        $this->queryParameters['RoomStatus'] = $roomStatus;
 
-	private  $appId;
+        return $this;
+    }
 
-	public function getStartTime() {
-		return $this->startTime;
-	}
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
+        return $this;
+    }
 
-	public function getAnchorId() {
-		return $this->anchorId;
-	}
+    /**
+     * @param string $order
+     *
+     * @return $this
+     */
+    public function setOrder($order)
+    {
+        $this->requestParameters['Order'] = $order;
+        $this->queryParameters['Order'] = $order;
 
-	public function setAnchorId($anchorId) {
-		$this->anchorId = $anchorId;
-		$this->queryParameters["AnchorId"]=$anchorId;
-	}
+        return $this;
+    }
 
-	public function getPageNum() {
-		return $this->pageNum;
-	}
+    /**
+     * @param string $endTime
+     *
+     * @return $this
+     */
+    public function setEndTime($endTime)
+    {
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
 
-	public function setPageNum($pageNum) {
-		$this->pageNum = $pageNum;
-		$this->queryParameters["PageNum"]=$pageNum;
-	}
+        return $this;
+    }
 
-	public function getRoomStatus() {
-		return $this->roomStatus;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setRoomStatus($roomStatus) {
-		$this->roomStatus = $roomStatus;
-		$this->queryParameters["RoomStatus"]=$roomStatus;
-	}
+        return $this;
+    }
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
+    /**
+     * @param string $roomId
+     *
+     * @return $this
+     */
+    public function setRoomId($roomId)
+    {
+        $this->requestParameters['RoomId'] = $roomId;
+        $this->queryParameters['RoomId'] = $roomId;
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
+        return $this;
+    }
 
-	public function getOrder() {
-		return $this->order;
-	}
+    /**
+     * @param string $appId
+     *
+     * @return $this
+     */
+    public function setAppId($appId)
+    {
+        $this->requestParameters['AppId'] = $appId;
+        $this->queryParameters['AppId'] = $appId;
 
-	public function setOrder($order) {
-		$this->order = $order;
-		$this->queryParameters["Order"]=$order;
-	}
-
-	public function getEndTime() {
-		return $this->endTime;
-	}
-
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getRoomId() {
-		return $this->roomId;
-	}
-
-	public function setRoomId($roomId) {
-		$this->roomId = $roomId;
-		$this->queryParameters["RoomId"]=$roomId;
-	}
-
-	public function getAppId() {
-		return $this->appId;
-	}
-
-	public function setAppId($appId) {
-		$this->appId = $appId;
-		$this->queryParameters["AppId"]=$appId;
-	}
-	
+        return $this;
+    }
 }

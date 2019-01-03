@@ -1,162 +1,197 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace live\Request\V20161101;
 
+/**
+ * Request of AddCustomLiveStreamTranscode
+ *
+ * @method string getApp()
+ * @method string getTemplate()
+ * @method string getProfile()
+ * @method string getFPS()
+ * @method string getGop()
+ * @method string getOwnerId()
+ * @method string getTemplateType()
+ * @method string getAudioBitrate()
+ * @method string getDomain()
+ * @method string getWidth()
+ * @method string getVideoBitrate()
+ * @method string getHeight()
+ */
 class AddCustomLiveStreamTranscodeRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("live", "2016-11-01", "AddCustomLiveStreamTranscode", "live", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $app;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $template;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'live',
+            '2016-11-01',
+            'AddCustomLiveStreamTranscode',
+            'live'
+        );
+    }
 
-	private  $profile;
+    /**
+     * @param string $app
+     *
+     * @return $this
+     */
+    public function setApp($app)
+    {
+        $this->requestParameters['App'] = $app;
+        $this->queryParameters['App'] = $app;
 
-	private  $fPS;
+        return $this;
+    }
 
-	private  $gop;
+    /**
+     * @param string $template
+     *
+     * @return $this
+     */
+    public function setTemplate($template)
+    {
+        $this->requestParameters['Template'] = $template;
+        $this->queryParameters['Template'] = $template;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	private  $templateType;
+    /**
+     * @param string $profile
+     *
+     * @return $this
+     */
+    public function setProfile($profile)
+    {
+        $this->requestParameters['Profile'] = $profile;
+        $this->queryParameters['Profile'] = $profile;
 
-	private  $audioBitrate;
+        return $this;
+    }
 
-	private  $domain;
+    /**
+     * @param string $fPS
+     *
+     * @return $this
+     */
+    public function setFPS($fPS)
+    {
+        $this->requestParameters['FPS'] = $fPS;
+        $this->queryParameters['FPS'] = $fPS;
 
-	private  $width;
+        return $this;
+    }
 
-	private  $videoBitrate;
+    /**
+     * @param string $gop
+     *
+     * @return $this
+     */
+    public function setGop($gop)
+    {
+        $this->requestParameters['Gop'] = $gop;
+        $this->queryParameters['Gop'] = $gop;
 
-	private  $height;
+        return $this;
+    }
 
-	public function getApp() {
-		return $this->app;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setApp($app) {
-		$this->app = $app;
-		$this->queryParameters["App"]=$app;
-	}
+        return $this;
+    }
 
-	public function getTemplate() {
-		return $this->template;
-	}
+    /**
+     * @param string $templateType
+     *
+     * @return $this
+     */
+    public function setTemplateType($templateType)
+    {
+        $this->requestParameters['TemplateType'] = $templateType;
+        $this->queryParameters['TemplateType'] = $templateType;
 
-	public function setTemplate($template) {
-		$this->template = $template;
-		$this->queryParameters["Template"]=$template;
-	}
+        return $this;
+    }
 
-	public function getProfile() {
-		return $this->profile;
-	}
+    /**
+     * @param string $audioBitrate
+     *
+     * @return $this
+     */
+    public function setAudioBitrate($audioBitrate)
+    {
+        $this->requestParameters['AudioBitrate'] = $audioBitrate;
+        $this->queryParameters['AudioBitrate'] = $audioBitrate;
 
-	public function setProfile($profile) {
-		$this->profile = $profile;
-		$this->queryParameters["Profile"]=$profile;
-	}
+        return $this;
+    }
 
-	public function getFPS() {
-		return $this->fPS;
-	}
+    /**
+     * @param string $domain
+     *
+     * @return $this
+     */
+    public function setDomain($domain)
+    {
+        $this->requestParameters['Domain'] = $domain;
+        $this->queryParameters['Domain'] = $domain;
 
-	public function setFPS($fPS) {
-		$this->fPS = $fPS;
-		$this->queryParameters["FPS"]=$fPS;
-	}
+        return $this;
+    }
 
-	public function getGop() {
-		return $this->gop;
-	}
+    /**
+     * @param string $width
+     *
+     * @return $this
+     */
+    public function setWidth($width)
+    {
+        $this->requestParameters['Width'] = $width;
+        $this->queryParameters['Width'] = $width;
 
-	public function setGop($gop) {
-		$this->gop = $gop;
-		$this->queryParameters["Gop"]=$gop;
-	}
+        return $this;
+    }
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+    /**
+     * @param string $videoBitrate
+     *
+     * @return $this
+     */
+    public function setVideoBitrate($videoBitrate)
+    {
+        $this->requestParameters['VideoBitrate'] = $videoBitrate;
+        $this->queryParameters['VideoBitrate'] = $videoBitrate;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+        return $this;
+    }
 
-	public function getTemplateType() {
-		return $this->templateType;
-	}
+    /**
+     * @param string $height
+     *
+     * @return $this
+     */
+    public function setHeight($height)
+    {
+        $this->requestParameters['Height'] = $height;
+        $this->queryParameters['Height'] = $height;
 
-	public function setTemplateType($templateType) {
-		$this->templateType = $templateType;
-		$this->queryParameters["TemplateType"]=$templateType;
-	}
-
-	public function getAudioBitrate() {
-		return $this->audioBitrate;
-	}
-
-	public function setAudioBitrate($audioBitrate) {
-		$this->audioBitrate = $audioBitrate;
-		$this->queryParameters["AudioBitrate"]=$audioBitrate;
-	}
-
-	public function getDomain() {
-		return $this->domain;
-	}
-
-	public function setDomain($domain) {
-		$this->domain = $domain;
-		$this->queryParameters["Domain"]=$domain;
-	}
-
-	public function getWidth() {
-		return $this->width;
-	}
-
-	public function setWidth($width) {
-		$this->width = $width;
-		$this->queryParameters["Width"]=$width;
-	}
-
-	public function getVideoBitrate() {
-		return $this->videoBitrate;
-	}
-
-	public function setVideoBitrate($videoBitrate) {
-		$this->videoBitrate = $videoBitrate;
-		$this->queryParameters["VideoBitrate"]=$videoBitrate;
-	}
-
-	public function getHeight() {
-		return $this->height;
-	}
-
-	public function setHeight($height) {
-		$this->height = $height;
-		$this->queryParameters["Height"]=$height;
-	}
-	
+        return $this;
+    }
 }

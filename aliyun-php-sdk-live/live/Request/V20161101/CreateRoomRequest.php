@@ -1,74 +1,113 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace live\Request\V20161101;
 
+/**
+ * Request of CreateRoom
+ *
+ * @method string getTemplateIds()
+ * @method string getAnchorId()
+ * @method string getUseAppTranscode()
+ * @method string getOwnerId()
+ * @method string getRoomId()
+ * @method string getAppId()
+ */
 class CreateRoomRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("live", "2016-11-01", "CreateRoom", "live", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $anchorId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $ownerId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'live',
+            '2016-11-01',
+            'CreateRoom',
+            'live'
+        );
+    }
 
-	private  $roomId;
+    /**
+     * @param string $templateIds
+     *
+     * @return $this
+     */
+    public function setTemplateIds($templateIds)
+    {
+        $this->requestParameters['TemplateIds'] = $templateIds;
+        $this->queryParameters['TemplateIds'] = $templateIds;
 
-	private  $appId;
+        return $this;
+    }
 
-	public function getAnchorId() {
-		return $this->anchorId;
-	}
+    /**
+     * @param string $anchorId
+     *
+     * @return $this
+     */
+    public function setAnchorId($anchorId)
+    {
+        $this->requestParameters['AnchorId'] = $anchorId;
+        $this->queryParameters['AnchorId'] = $anchorId;
 
-	public function setAnchorId($anchorId) {
-		$this->anchorId = $anchorId;
-		$this->queryParameters["AnchorId"]=$anchorId;
-	}
+        return $this;
+    }
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+    /**
+     * @param string $useAppTranscode
+     *
+     * @return $this
+     */
+    public function setUseAppTranscode($useAppTranscode)
+    {
+        $this->requestParameters['UseAppTranscode'] = $useAppTranscode;
+        $this->queryParameters['UseAppTranscode'] = $useAppTranscode;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+        return $this;
+    }
 
-	public function getRoomId() {
-		return $this->roomId;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setRoomId($roomId) {
-		$this->roomId = $roomId;
-		$this->queryParameters["RoomId"]=$roomId;
-	}
+        return $this;
+    }
 
-	public function getAppId() {
-		return $this->appId;
-	}
+    /**
+     * @param string $roomId
+     *
+     * @return $this
+     */
+    public function setRoomId($roomId)
+    {
+        $this->requestParameters['RoomId'] = $roomId;
+        $this->queryParameters['RoomId'] = $roomId;
 
-	public function setAppId($appId) {
-		$this->appId = $appId;
-		$this->queryParameters["AppId"]=$appId;
-	}
-	
+        return $this;
+    }
+
+    /**
+     * @param string $appId
+     *
+     * @return $this
+     */
+    public function setAppId($appId)
+    {
+        $this->requestParameters['AppId'] = $appId;
+        $this->queryParameters['AppId'] = $appId;
+
+        return $this;
+    }
 }

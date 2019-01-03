@@ -1,115 +1,130 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace live\Request\V20161101;
 
+/**
+ * Request of AddCasterLayout
+ *
+ * @method array getBlendLists()
+ * @method array getAudioLayers()
+ * @method array getVideoLayers()
+ * @method string getCasterId()
+ * @method array getMixLists()
+ * @method string getOwnerId()
+ */
 class AddCasterLayoutRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("live", "2016-11-01", "AddCasterLayout", "live", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $BlendLists;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $AudioLayers;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'live',
+            '2016-11-01',
+            'AddCasterLayout',
+            'live'
+        );
+    }
 
-	private  $VideoLayers;
+    /**
+     * @param array $blendLists
+     *
+     * @return $this
+     */
+    public function setBlendLists(array $blendLists)
+    {
+        $this->requestParameters['BlendLists'] = $blendLists;
+        foreach ($blendLists as $i => $iValue) {
+            $this->queryParameters['BlendList.' . ($i + 1)] = $iValue;
+        }
 
-	private  $casterId;
+        return $this;
+    }
 
-	private  $MixLists;
+    /**
+     * @param array $audioLayers
+     *
+     * @return $this
+     */
+    public function setAudioLayers(array $audioLayers)
+    {
+        $this->requestParameters['AudioLayers'] = $audioLayers;
+        foreach ($audioLayers as $i => $iValue) {
+            $this->queryParameters['AudioLayer.' . ($i + 1) . '.FixedDelayDuration'] = $audioLayers[$i]['FixedDelayDuration'];
+            $this->queryParameters['AudioLayer.' . ($i + 1) . '.VolumeRate'] = $audioLayers[$i]['VolumeRate'];
+            $this->queryParameters['AudioLayer.' . ($i + 1) . '.ValidChannel'] = $audioLayers[$i]['ValidChannel'];
+        }
 
-	private  $ownerId;
+        return $this;
+    }
 
-	public function getBlendLists() {
-		return $this->BlendLists;
-	}
+    /**
+     * @param array $videoLayers
+     *
+     * @return $this
+     */
+    public function setVideoLayers(array $videoLayers)
+    {
+        $this->requestParameters['VideoLayers'] = $videoLayers;
+        foreach ($videoLayers as $i => $iValue) {
+            $this->queryParameters['VideoLayer.' . ($i + 1) . '.FillMode'] = $videoLayers[$i]['FillMode'];
+            $this->queryParameters['VideoLayer.' . ($i + 1) . '.WidthNormalized'] = $videoLayers[$i]['WidthNormalized'];
+            $this->queryParameters['VideoLayer.' . ($i + 1) . '.FixedDelayDuration'] = $videoLayers[$i]['FixedDelayDuration'];
+            $this->queryParameters['VideoLayer.' . ($i + 1) . '.PositionRefer'] = $videoLayers[$i]['PositionRefer'];
+            foreach ($videoLayers[$i]['PositionNormalizeds'] as $j => $jValue) {
+                $this->queryParameters['VideoLayer.' . ($i + 1) . '.PositionNormalized.' . ($j + 1)] = $jValue;
+            }
+            $this->queryParameters['VideoLayer.' . ($i + 1) . '.HeightNormalized'] = $videoLayers[$i]['HeightNormalized'];
+        }
 
-	public function setBlendLists($BlendLists) {
-		$this->BlendLists = $BlendLists;
-		for ($i = 0; $i < count($BlendLists); $i ++) {	
-			$this->queryParameters["BlendList.".($i+1)] = $BlendLists[$i];
-		}
-	}
+        return $this;
+    }
 
-	public function getAudioLayers() {
-		return $this->AudioLayers;
-	}
+    /**
+     * @param string $casterId
+     *
+     * @return $this
+     */
+    public function setCasterId($casterId)
+    {
+        $this->requestParameters['CasterId'] = $casterId;
+        $this->queryParameters['CasterId'] = $casterId;
 
-	public function setAudioLayers($AudioLayers) {
-		$this->AudioLayers = $AudioLayers;
-		for ($i = 0; $i < count($AudioLayers); $i ++) {	
-			$this->queryParameters['AudioLayer.' . ($i + 1) . '.FixedDelayDuration'] = $AudioLayers[$i]['FixedDelayDuration'];
-			$this->queryParameters['AudioLayer.' . ($i + 1) . '.VolumeRate'] = $AudioLayers[$i]['VolumeRate'];
-			$this->queryParameters['AudioLayer.' . ($i + 1) . '.ValidChannel'] = $AudioLayers[$i]['ValidChannel'];
+        return $this;
+    }
 
-		}
-	}
+    /**
+     * @param array $mixLists
+     *
+     * @return $this
+     */
+    public function setMixLists(array $mixLists)
+    {
+        $this->requestParameters['MixLists'] = $mixLists;
+        foreach ($mixLists as $i => $iValue) {
+            $this->queryParameters['MixList.' . ($i + 1)] = $iValue;
+        }
 
-	public function getVideoLayers() {
-		return $this->VideoLayers;
-	}
+        return $this;
+    }
 
-	public function setVideoLayers($VideoLayers) {
-		$this->VideoLayers = $VideoLayers;
-		for ($i = 0; $i < count($VideoLayers); $i ++) {	
-			$this->queryParameters['VideoLayer.' . ($i + 1) . '.FillMode'] = $VideoLayers[$i]['FillMode'];
-			$this->queryParameters['VideoLayer.' . ($i + 1) . '.WidthNormalized'] = $VideoLayers[$i]['WidthNormalized'];
-			$this->queryParameters['VideoLayer.' . ($i + 1) . '.FixedDelayDuration'] = $VideoLayers[$i]['FixedDelayDuration'];
-			$this->queryParameters['VideoLayer.' . ($i + 1) . '.PositionRefer'] = $VideoLayers[$i]['PositionRefer'];
-			for ($j = 0; $j < count($VideoLayers[$i]['PositionNormalizeds']); $j ++) {
-				$this->queryParameters['VideoLayer.' . ($i + 1) . '.PositionNormalized.' . ($j + 1)] = $VideoLayers[$i]['PositionNormalizeds'][$j];
-			}
-			$this->queryParameters['VideoLayer.' . ($i + 1) . '.HeightNormalized'] = $VideoLayers[$i]['HeightNormalized'];
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-		}
-	}
-
-	public function getCasterId() {
-		return $this->casterId;
-	}
-
-	public function setCasterId($casterId) {
-		$this->casterId = $casterId;
-		$this->queryParameters["CasterId"]=$casterId;
-	}
-
-	public function getMixLists() {
-		return $this->MixLists;
-	}
-
-	public function setMixLists($MixLists) {
-		$this->MixLists = $MixLists;
-		for ($i = 0; $i < count($MixLists); $i ++) {	
-			$this->queryParameters["MixList.".($i+1)] = $MixLists[$i];
-		}
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-	
+        return $this;
+    }
 }

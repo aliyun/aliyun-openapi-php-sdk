@@ -1,129 +1,155 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace live\Request\V20161101;
 
+/**
+ * Request of DescribeLiveUserDomains
+ *
+ * @method string getSecurityToken()
+ * @method string getPageSize()
+ * @method string getDomainName()
+ * @method string getRegionName()
+ * @method string getOwnerId()
+ * @method string getPageNumber()
+ * @method string getDomainStatus()
+ * @method string getLiveDomainType()
+ * @method string getDomainSearchType()
+ */
 class DescribeLiveUserDomainsRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("live", "2016-11-01", "DescribeLiveUserDomains", "live", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $securityToken;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $pageSize;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'live',
+            '2016-11-01',
+            'DescribeLiveUserDomains',
+            'live'
+        );
+    }
 
-	private  $domainName;
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
-	private  $regionName;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	private  $pageNumber;
+        return $this;
+    }
 
-	private  $domainStatus;
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
 
-	private  $liveDomainType;
+        return $this;
+    }
 
-	private  $domainSearchType;
+    /**
+     * @param string $regionName
+     *
+     * @return $this
+     */
+    public function setRegionName($regionName)
+    {
+        $this->requestParameters['RegionName'] = $regionName;
+        $this->queryParameters['RegionName'] = $regionName;
 
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
+        return $this;
+    }
 
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
+        return $this;
+    }
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
-	public function getDomainName() {
-		return $this->domainName;
-	}
+        return $this;
+    }
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
+    /**
+     * @param string $domainStatus
+     *
+     * @return $this
+     */
+    public function setDomainStatus($domainStatus)
+    {
+        $this->requestParameters['DomainStatus'] = $domainStatus;
+        $this->queryParameters['DomainStatus'] = $domainStatus;
 
-	public function getRegionName() {
-		return $this->regionName;
-	}
+        return $this;
+    }
 
-	public function setRegionName($regionName) {
-		$this->regionName = $regionName;
-		$this->queryParameters["RegionName"]=$regionName;
-	}
+    /**
+     * @param string $liveDomainType
+     *
+     * @return $this
+     */
+    public function setLiveDomainType($liveDomainType)
+    {
+        $this->requestParameters['LiveDomainType'] = $liveDomainType;
+        $this->queryParameters['LiveDomainType'] = $liveDomainType;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+        return $this;
+    }
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+    /**
+     * @param string $domainSearchType
+     *
+     * @return $this
+     */
+    public function setDomainSearchType($domainSearchType)
+    {
+        $this->requestParameters['DomainSearchType'] = $domainSearchType;
+        $this->queryParameters['DomainSearchType'] = $domainSearchType;
 
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
-	public function getDomainStatus() {
-		return $this->domainStatus;
-	}
-
-	public function setDomainStatus($domainStatus) {
-		$this->domainStatus = $domainStatus;
-		$this->queryParameters["DomainStatus"]=$domainStatus;
-	}
-
-	public function getLiveDomainType() {
-		return $this->liveDomainType;
-	}
-
-	public function setLiveDomainType($liveDomainType) {
-		$this->liveDomainType = $liveDomainType;
-		$this->queryParameters["LiveDomainType"]=$liveDomainType;
-	}
-
-	public function getDomainSearchType() {
-		return $this->domainSearchType;
-	}
-
-	public function setDomainSearchType($domainSearchType) {
-		$this->domainSearchType = $domainSearchType;
-		$this->queryParameters["DomainSearchType"]=$domainSearchType;
-	}
-	
+        return $this;
+    }
 }

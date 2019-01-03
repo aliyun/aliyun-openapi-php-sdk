@@ -3,16 +3,15 @@
 namespace live\Request\V20161101;
 
 /**
- * Request of DescribeLiveStreamRecordIndexFile
+ * Request of StopLiveIndex
  *
- * @method string getRecordId()
  * @method string getAppName()
- * @method string getSecurityToken()
  * @method string getDomainName()
  * @method string getOwnerId()
  * @method string getStreamName()
+ * @method string getTaskId()
  */
-class DescribeLiveStreamRecordIndexFileRequest extends \RpcAcsRequest
+class StopLiveIndexRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,22 +27,9 @@ class DescribeLiveStreamRecordIndexFileRequest extends \RpcAcsRequest
         parent::__construct(
             'live',
             '2016-11-01',
-            'DescribeLiveStreamRecordIndexFile',
+            'StopLiveIndex',
             'live'
         );
-    }
-
-    /**
-     * @param string $recordId
-     *
-     * @return $this
-     */
-    public function setRecordId($recordId)
-    {
-        $this->requestParameters['RecordId'] = $recordId;
-        $this->queryParameters['RecordId'] = $recordId;
-
-        return $this;
     }
 
     /**
@@ -55,19 +41,6 @@ class DescribeLiveStreamRecordIndexFileRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AppName'] = $appName;
         $this->queryParameters['AppName'] = $appName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }
@@ -107,6 +80,19 @@ class DescribeLiveStreamRecordIndexFileRequest extends \RpcAcsRequest
     {
         $this->requestParameters['StreamName'] = $streamName;
         $this->queryParameters['StreamName'] = $streamName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $taskId
+     *
+     * @return $this
+     */
+    public function setTaskId($taskId)
+    {
+        $this->requestParameters['TaskId'] = $taskId;
+        $this->queryParameters['TaskId'] = $taskId;
 
         return $this;
     }

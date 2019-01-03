@@ -1,173 +1,211 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace live\Request\V20161101;
 
+/**
+ * Request of SetCasterConfig
+ *
+ * @method string getSideOutputUrl()
+ * @method string getCasterId()
+ * @method string getChannelEnable()
+ * @method string getDomainName()
+ * @method string getProgramEffect()
+ * @method string getProgramName()
+ * @method string getOwnerId()
+ * @method string getRecordConfig()
+ * @method string getUrgentMaterialId()
+ * @method string getTranscodeConfig()
+ * @method string getDelay()
+ * @method string getCasterName()
+ * @method string getCallbackUrl()
+ */
 class SetCasterConfigRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("live", "2016-11-01", "SetCasterConfig", "live", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $sideOutputUrl;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $casterId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'live',
+            '2016-11-01',
+            'SetCasterConfig',
+            'live'
+        );
+    }
 
-	private  $channelEnable;
+    /**
+     * @param string $sideOutputUrl
+     *
+     * @return $this
+     */
+    public function setSideOutputUrl($sideOutputUrl)
+    {
+        $this->requestParameters['SideOutputUrl'] = $sideOutputUrl;
+        $this->queryParameters['SideOutputUrl'] = $sideOutputUrl;
 
-	private  $domainName;
+        return $this;
+    }
 
-	private  $programEffect;
+    /**
+     * @param string $casterId
+     *
+     * @return $this
+     */
+    public function setCasterId($casterId)
+    {
+        $this->requestParameters['CasterId'] = $casterId;
+        $this->queryParameters['CasterId'] = $casterId;
 
-	private  $programName;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $channelEnable
+     *
+     * @return $this
+     */
+    public function setChannelEnable($channelEnable)
+    {
+        $this->requestParameters['ChannelEnable'] = $channelEnable;
+        $this->queryParameters['ChannelEnable'] = $channelEnable;
 
-	private  $recordConfig;
+        return $this;
+    }
 
-	private  $urgentMaterialId;
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
 
-	private  $transcodeConfig;
+        return $this;
+    }
 
-	private  $delay;
+    /**
+     * @param string $programEffect
+     *
+     * @return $this
+     */
+    public function setProgramEffect($programEffect)
+    {
+        $this->requestParameters['ProgramEffect'] = $programEffect;
+        $this->queryParameters['ProgramEffect'] = $programEffect;
 
-	private  $casterName;
+        return $this;
+    }
 
-	private  $callbackUrl;
+    /**
+     * @param string $programName
+     *
+     * @return $this
+     */
+    public function setProgramName($programName)
+    {
+        $this->requestParameters['ProgramName'] = $programName;
+        $this->queryParameters['ProgramName'] = $programName;
 
-	public function getSideOutputUrl() {
-		return $this->sideOutputUrl;
-	}
+        return $this;
+    }
 
-	public function setSideOutputUrl($sideOutputUrl) {
-		$this->sideOutputUrl = $sideOutputUrl;
-		$this->queryParameters["SideOutputUrl"]=$sideOutputUrl;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function getCasterId() {
-		return $this->casterId;
-	}
+        return $this;
+    }
 
-	public function setCasterId($casterId) {
-		$this->casterId = $casterId;
-		$this->queryParameters["CasterId"]=$casterId;
-	}
+    /**
+     * @param string $recordConfig
+     *
+     * @return $this
+     */
+    public function setRecordConfig($recordConfig)
+    {
+        $this->requestParameters['RecordConfig'] = $recordConfig;
+        $this->queryParameters['RecordConfig'] = $recordConfig;
 
-	public function getChannelEnable() {
-		return $this->channelEnable;
-	}
+        return $this;
+    }
 
-	public function setChannelEnable($channelEnable) {
-		$this->channelEnable = $channelEnable;
-		$this->queryParameters["ChannelEnable"]=$channelEnable;
-	}
+    /**
+     * @param string $urgentMaterialId
+     *
+     * @return $this
+     */
+    public function setUrgentMaterialId($urgentMaterialId)
+    {
+        $this->requestParameters['UrgentMaterialId'] = $urgentMaterialId;
+        $this->queryParameters['UrgentMaterialId'] = $urgentMaterialId;
 
-	public function getDomainName() {
-		return $this->domainName;
-	}
+        return $this;
+    }
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
+    /**
+     * @param string $transcodeConfig
+     *
+     * @return $this
+     */
+    public function setTranscodeConfig($transcodeConfig)
+    {
+        $this->requestParameters['TranscodeConfig'] = $transcodeConfig;
+        $this->queryParameters['TranscodeConfig'] = $transcodeConfig;
 
-	public function getProgramEffect() {
-		return $this->programEffect;
-	}
+        return $this;
+    }
 
-	public function setProgramEffect($programEffect) {
-		$this->programEffect = $programEffect;
-		$this->queryParameters["ProgramEffect"]=$programEffect;
-	}
+    /**
+     * @param string $delay
+     *
+     * @return $this
+     */
+    public function setDelay($delay)
+    {
+        $this->requestParameters['Delay'] = $delay;
+        $this->queryParameters['Delay'] = $delay;
 
-	public function getProgramName() {
-		return $this->programName;
-	}
+        return $this;
+    }
 
-	public function setProgramName($programName) {
-		$this->programName = $programName;
-		$this->queryParameters["ProgramName"]=$programName;
-	}
+    /**
+     * @param string $casterName
+     *
+     * @return $this
+     */
+    public function setCasterName($casterName)
+    {
+        $this->requestParameters['CasterName'] = $casterName;
+        $this->queryParameters['CasterName'] = $casterName;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+        return $this;
+    }
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+    /**
+     * @param string $callbackUrl
+     *
+     * @return $this
+     */
+    public function setCallbackUrl($callbackUrl)
+    {
+        $this->requestParameters['CallbackUrl'] = $callbackUrl;
+        $this->queryParameters['CallbackUrl'] = $callbackUrl;
 
-	public function getRecordConfig() {
-		return $this->recordConfig;
-	}
-
-	public function setRecordConfig($recordConfig) {
-		$this->recordConfig = $recordConfig;
-		$this->queryParameters["RecordConfig"]=$recordConfig;
-	}
-
-	public function getUrgentMaterialId() {
-		return $this->urgentMaterialId;
-	}
-
-	public function setUrgentMaterialId($urgentMaterialId) {
-		$this->urgentMaterialId = $urgentMaterialId;
-		$this->queryParameters["UrgentMaterialId"]=$urgentMaterialId;
-	}
-
-	public function getTranscodeConfig() {
-		return $this->transcodeConfig;
-	}
-
-	public function setTranscodeConfig($transcodeConfig) {
-		$this->transcodeConfig = $transcodeConfig;
-		$this->queryParameters["TranscodeConfig"]=$transcodeConfig;
-	}
-
-	public function getDelay() {
-		return $this->delay;
-	}
-
-	public function setDelay($delay) {
-		$this->delay = $delay;
-		$this->queryParameters["Delay"]=$delay;
-	}
-
-	public function getCasterName() {
-		return $this->casterName;
-	}
-
-	public function setCasterName($casterName) {
-		$this->casterName = $casterName;
-		$this->queryParameters["CasterName"]=$casterName;
-	}
-
-	public function getCallbackUrl() {
-		return $this->callbackUrl;
-	}
-
-	public function setCallbackUrl($callbackUrl) {
-		$this->callbackUrl = $callbackUrl;
-		$this->queryParameters["CallbackUrl"]=$callbackUrl;
-	}
-	
+        return $this;
+    }
 }

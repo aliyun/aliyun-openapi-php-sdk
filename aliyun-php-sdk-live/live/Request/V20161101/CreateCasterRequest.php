@@ -1,118 +1,141 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace live\Request\V20161101;
 
+/**
+ * Request of CreateCaster
+ *
+ * @method string getCasterTemplate()
+ * @method string getExpireTime()
+ * @method string getNormType()
+ * @method string getCasterName()
+ * @method string getClientToken()
+ * @method string getChargeType()
+ * @method string getOwnerId()
+ * @method string getPurchaseTime()
+ */
 class CreateCasterRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("live", "2016-11-01", "CreateCaster", "live", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $casterTemplate;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $expireTime;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'live',
+            '2016-11-01',
+            'CreateCaster',
+            'live'
+        );
+    }
 
-	private  $normType;
+    /**
+     * @param string $casterTemplate
+     *
+     * @return $this
+     */
+    public function setCasterTemplate($casterTemplate)
+    {
+        $this->requestParameters['CasterTemplate'] = $casterTemplate;
+        $this->queryParameters['CasterTemplate'] = $casterTemplate;
 
-	private  $casterName;
+        return $this;
+    }
 
-	private  $clientToken;
+    /**
+     * @param string $expireTime
+     *
+     * @return $this
+     */
+    public function setExpireTime($expireTime)
+    {
+        $this->requestParameters['ExpireTime'] = $expireTime;
+        $this->queryParameters['ExpireTime'] = $expireTime;
 
-	private  $chargeType;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $normType
+     *
+     * @return $this
+     */
+    public function setNormType($normType)
+    {
+        $this->requestParameters['NormType'] = $normType;
+        $this->queryParameters['NormType'] = $normType;
 
-	private  $purchaseTime;
+        return $this;
+    }
 
-	public function getCasterTemplate() {
-		return $this->casterTemplate;
-	}
+    /**
+     * @param string $casterName
+     *
+     * @return $this
+     */
+    public function setCasterName($casterName)
+    {
+        $this->requestParameters['CasterName'] = $casterName;
+        $this->queryParameters['CasterName'] = $casterName;
 
-	public function setCasterTemplate($casterTemplate) {
-		$this->casterTemplate = $casterTemplate;
-		$this->queryParameters["CasterTemplate"]=$casterTemplate;
-	}
+        return $this;
+    }
 
-	public function getExpireTime() {
-		return $this->expireTime;
-	}
+    /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
 
-	public function setExpireTime($expireTime) {
-		$this->expireTime = $expireTime;
-		$this->queryParameters["ExpireTime"]=$expireTime;
-	}
+        return $this;
+    }
 
-	public function getNormType() {
-		return $this->normType;
-	}
+    /**
+     * @param string $chargeType
+     *
+     * @return $this
+     */
+    public function setChargeType($chargeType)
+    {
+        $this->requestParameters['ChargeType'] = $chargeType;
+        $this->queryParameters['ChargeType'] = $chargeType;
 
-	public function setNormType($normType) {
-		$this->normType = $normType;
-		$this->queryParameters["NormType"]=$normType;
-	}
+        return $this;
+    }
 
-	public function getCasterName() {
-		return $this->casterName;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setCasterName($casterName) {
-		$this->casterName = $casterName;
-		$this->queryParameters["CasterName"]=$casterName;
-	}
+        return $this;
+    }
 
-	public function getClientToken() {
-		return $this->clientToken;
-	}
+    /**
+     * @param string $purchaseTime
+     *
+     * @return $this
+     */
+    public function setPurchaseTime($purchaseTime)
+    {
+        $this->requestParameters['PurchaseTime'] = $purchaseTime;
+        $this->queryParameters['PurchaseTime'] = $purchaseTime;
 
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
-
-	public function getChargeType() {
-		return $this->chargeType;
-	}
-
-	public function setChargeType($chargeType) {
-		$this->chargeType = $chargeType;
-		$this->queryParameters["ChargeType"]=$chargeType;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getPurchaseTime() {
-		return $this->purchaseTime;
-	}
-
-	public function setPurchaseTime($purchaseTime) {
-		$this->purchaseTime = $purchaseTime;
-		$this->queryParameters["PurchaseTime"]=$purchaseTime;
-	}
-	
+        return $this;
+    }
 }

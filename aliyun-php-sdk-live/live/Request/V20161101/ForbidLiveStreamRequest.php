@@ -1,118 +1,141 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace live\Request\V20161101;
 
+/**
+ * Request of ForbidLiveStream
+ *
+ * @method string getResumeTime()
+ * @method string getAppName()
+ * @method string getLiveStreamType()
+ * @method string getDomainName()
+ * @method string getOwnerId()
+ * @method string getOneshot()
+ * @method string getStreamName()
+ * @method string getControlStreamAction()
+ */
 class ForbidLiveStreamRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("live", "2016-11-01", "ForbidLiveStream", "live", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resumeTime;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $appName;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'live',
+            '2016-11-01',
+            'ForbidLiveStream',
+            'live'
+        );
+    }
 
-	private  $liveStreamType;
+    /**
+     * @param string $resumeTime
+     *
+     * @return $this
+     */
+    public function setResumeTime($resumeTime)
+    {
+        $this->requestParameters['ResumeTime'] = $resumeTime;
+        $this->queryParameters['ResumeTime'] = $resumeTime;
 
-	private  $domainName;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $appName
+     *
+     * @return $this
+     */
+    public function setAppName($appName)
+    {
+        $this->requestParameters['AppName'] = $appName;
+        $this->queryParameters['AppName'] = $appName;
 
-	private  $oneshot;
+        return $this;
+    }
 
-	private  $streamName;
+    /**
+     * @param string $liveStreamType
+     *
+     * @return $this
+     */
+    public function setLiveStreamType($liveStreamType)
+    {
+        $this->requestParameters['LiveStreamType'] = $liveStreamType;
+        $this->queryParameters['LiveStreamType'] = $liveStreamType;
 
-	private  $controlStreamAction;
+        return $this;
+    }
 
-	public function getResumeTime() {
-		return $this->resumeTime;
-	}
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
 
-	public function setResumeTime($resumeTime) {
-		$this->resumeTime = $resumeTime;
-		$this->queryParameters["ResumeTime"]=$resumeTime;
-	}
+        return $this;
+    }
 
-	public function getAppName() {
-		return $this->appName;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
-	}
+        return $this;
+    }
 
-	public function getLiveStreamType() {
-		return $this->liveStreamType;
-	}
+    /**
+     * @param string $oneshot
+     *
+     * @return $this
+     */
+    public function setOneshot($oneshot)
+    {
+        $this->requestParameters['Oneshot'] = $oneshot;
+        $this->queryParameters['Oneshot'] = $oneshot;
 
-	public function setLiveStreamType($liveStreamType) {
-		$this->liveStreamType = $liveStreamType;
-		$this->queryParameters["LiveStreamType"]=$liveStreamType;
-	}
+        return $this;
+    }
 
-	public function getDomainName() {
-		return $this->domainName;
-	}
+    /**
+     * @param string $streamName
+     *
+     * @return $this
+     */
+    public function setStreamName($streamName)
+    {
+        $this->requestParameters['StreamName'] = $streamName;
+        $this->queryParameters['StreamName'] = $streamName;
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
+        return $this;
+    }
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+    /**
+     * @param string $controlStreamAction
+     *
+     * @return $this
+     */
+    public function setControlStreamAction($controlStreamAction)
+    {
+        $this->requestParameters['ControlStreamAction'] = $controlStreamAction;
+        $this->queryParameters['ControlStreamAction'] = $controlStreamAction;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getOneshot() {
-		return $this->oneshot;
-	}
-
-	public function setOneshot($oneshot) {
-		$this->oneshot = $oneshot;
-		$this->queryParameters["Oneshot"]=$oneshot;
-	}
-
-	public function getStreamName() {
-		return $this->streamName;
-	}
-
-	public function setStreamName($streamName) {
-		$this->streamName = $streamName;
-		$this->queryParameters["StreamName"]=$streamName;
-	}
-
-	public function getControlStreamAction() {
-		return $this->controlStreamAction;
-	}
-
-	public function setControlStreamAction($controlStreamAction) {
-		$this->controlStreamAction = $controlStreamAction;
-		$this->queryParameters["ControlStreamAction"]=$controlStreamAction;
-	}
-	
+        return $this;
+    }
 }

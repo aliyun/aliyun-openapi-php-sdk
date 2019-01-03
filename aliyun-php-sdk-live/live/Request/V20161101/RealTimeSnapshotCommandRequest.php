@@ -3,19 +3,17 @@
 namespace live\Request\V20161101;
 
 /**
- * Request of UpdateLiveSnapshotDetectPornConfig
+ * Request of RealTimeSnapshotCommand
  *
- * @method string getOssBucket()
+ * @method string getMode()
  * @method string getAppName()
- * @method string getSecurityToken()
  * @method string getDomainName()
- * @method string getOssEndpoint()
  * @method string getInterval()
  * @method string getOwnerId()
- * @method string getOssObject()
- * @method array getScenes()
+ * @method string getCommand()
+ * @method string getStreamName()
  */
-class UpdateLiveSnapshotDetectPornConfigRequest extends \RpcAcsRequest
+class RealTimeSnapshotCommandRequest extends \RpcAcsRequest
 {
 
     /**
@@ -31,20 +29,20 @@ class UpdateLiveSnapshotDetectPornConfigRequest extends \RpcAcsRequest
         parent::__construct(
             'live',
             '2016-11-01',
-            'UpdateLiveSnapshotDetectPornConfig',
+            'RealTimeSnapshotCommand',
             'live'
         );
     }
 
     /**
-     * @param string $ossBucket
+     * @param string $mode
      *
      * @return $this
      */
-    public function setOssBucket($ossBucket)
+    public function setMode($mode)
     {
-        $this->requestParameters['OssBucket'] = $ossBucket;
-        $this->queryParameters['OssBucket'] = $ossBucket;
+        $this->requestParameters['Mode'] = $mode;
+        $this->queryParameters['Mode'] = $mode;
 
         return $this;
     }
@@ -63,19 +61,6 @@ class UpdateLiveSnapshotDetectPornConfigRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $domainName
      *
      * @return $this
@@ -84,19 +69,6 @@ class UpdateLiveSnapshotDetectPornConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DomainName'] = $domainName;
         $this->queryParameters['DomainName'] = $domainName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ossEndpoint
-     *
-     * @return $this
-     */
-    public function setOssEndpoint($ossEndpoint)
-    {
-        $this->requestParameters['OssEndpoint'] = $ossEndpoint;
-        $this->queryParameters['OssEndpoint'] = $ossEndpoint;
 
         return $this;
     }
@@ -128,29 +100,27 @@ class UpdateLiveSnapshotDetectPornConfigRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ossObject
+     * @param string $command
      *
      * @return $this
      */
-    public function setOssObject($ossObject)
+    public function setCommand($command)
     {
-        $this->requestParameters['OssObject'] = $ossObject;
-        $this->queryParameters['OssObject'] = $ossObject;
+        $this->requestParameters['Command'] = $command;
+        $this->queryParameters['Command'] = $command;
 
         return $this;
     }
 
     /**
-     * @param array $scenes
+     * @param string $streamName
      *
      * @return $this
      */
-    public function setScenes(array $scenes)
+    public function setStreamName($streamName)
     {
-        $this->requestParameters['Scenes'] = $scenes;
-        foreach ($scenes as $i => $iValue) {
-            $this->queryParameters['Scene.' . ($i + 1)] = $iValue;
-        }
+        $this->requestParameters['StreamName'] = $streamName;
+        $this->queryParameters['StreamName'] = $streamName;
 
         return $this;
     }

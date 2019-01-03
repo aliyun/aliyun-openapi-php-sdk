@@ -1,129 +1,155 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace live\Request\V20161101;
 
+/**
+ * Request of AddLiveDomain
+ *
+ * @method string getTopLevelDomain()
+ * @method string getSecurityToken()
+ * @method string getOwnerAccount()
+ * @method string getScope()
+ * @method string getDomainName()
+ * @method string getOwnerId()
+ * @method string getRegion()
+ * @method string getCheckUrl()
+ * @method string getLiveDomainType()
+ */
 class AddLiveDomainRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("live", "2016-11-01", "AddLiveDomain", "live", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $topLevelDomain;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $securityToken;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'live',
+            '2016-11-01',
+            'AddLiveDomain',
+            'live'
+        );
+    }
 
-	private  $ownerAccount;
+    /**
+     * @param string $topLevelDomain
+     *
+     * @return $this
+     */
+    public function setTopLevelDomain($topLevelDomain)
+    {
+        $this->requestParameters['TopLevelDomain'] = $topLevelDomain;
+        $this->queryParameters['TopLevelDomain'] = $topLevelDomain;
 
-	private  $scope;
+        return $this;
+    }
 
-	private  $domainName;
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	private  $region;
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	private  $checkUrl;
+        return $this;
+    }
 
-	private  $liveDomainType;
+    /**
+     * @param string $scope
+     *
+     * @return $this
+     */
+    public function setScope($scope)
+    {
+        $this->requestParameters['Scope'] = $scope;
+        $this->queryParameters['Scope'] = $scope;
 
-	public function getTopLevelDomain() {
-		return $this->topLevelDomain;
-	}
+        return $this;
+    }
 
-	public function setTopLevelDomain($topLevelDomain) {
-		$this->topLevelDomain = $topLevelDomain;
-		$this->queryParameters["TopLevelDomain"]=$topLevelDomain;
-	}
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
 
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
+        return $this;
+    }
 
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+        return $this;
+    }
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
+    /**
+     * @param string $region
+     *
+     * @return $this
+     */
+    public function setRegion($region)
+    {
+        $this->requestParameters['Region'] = $region;
+        $this->queryParameters['Region'] = $region;
 
-	public function getScope() {
-		return $this->scope;
-	}
+        return $this;
+    }
 
-	public function setScope($scope) {
-		$this->scope = $scope;
-		$this->queryParameters["Scope"]=$scope;
-	}
+    /**
+     * @param string $checkUrl
+     *
+     * @return $this
+     */
+    public function setCheckUrl($checkUrl)
+    {
+        $this->requestParameters['CheckUrl'] = $checkUrl;
+        $this->queryParameters['CheckUrl'] = $checkUrl;
 
-	public function getDomainName() {
-		return $this->domainName;
-	}
+        return $this;
+    }
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
+    /**
+     * @param string $liveDomainType
+     *
+     * @return $this
+     */
+    public function setLiveDomainType($liveDomainType)
+    {
+        $this->requestParameters['LiveDomainType'] = $liveDomainType;
+        $this->queryParameters['LiveDomainType'] = $liveDomainType;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getRegion() {
-		return $this->region;
-	}
-
-	public function setRegion($region) {
-		$this->region = $region;
-		$this->queryParameters["Region"]=$region;
-	}
-
-	public function getCheckUrl() {
-		return $this->checkUrl;
-	}
-
-	public function setCheckUrl($checkUrl) {
-		$this->checkUrl = $checkUrl;
-		$this->queryParameters["CheckUrl"]=$checkUrl;
-	}
-
-	public function getLiveDomainType() {
-		return $this->liveDomainType;
-	}
-
-	public function setLiveDomainType($liveDomainType) {
-		$this->liveDomainType = $liveDomainType;
-		$this->queryParameters["LiveDomainType"]=$liveDomainType;
-	}
-	
+        return $this;
+    }
 }

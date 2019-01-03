@@ -1,118 +1,141 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace live\Request\V20161101;
 
+/**
+ * Request of SetLiveLazyPullStreamInfoConfig
+ *
+ * @method string getAppName()
+ * @method string getPullAuthKey()
+ * @method string getPullAuthType()
+ * @method string getDomainName()
+ * @method string getPullDomainName()
+ * @method string getOwnerId()
+ * @method string getPullAppName()
+ * @method string getPullProtocol()
+ */
 class SetLiveLazyPullStreamInfoConfigRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("live", "2016-11-01", "SetLiveLazyPullStreamInfoConfig", "live", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $appName;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $pullAuthKey;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'live',
+            '2016-11-01',
+            'SetLiveLazyPullStreamInfoConfig',
+            'live'
+        );
+    }
 
-	private  $pullAuthType;
+    /**
+     * @param string $appName
+     *
+     * @return $this
+     */
+    public function setAppName($appName)
+    {
+        $this->requestParameters['AppName'] = $appName;
+        $this->queryParameters['AppName'] = $appName;
 
-	private  $domainName;
+        return $this;
+    }
 
-	private  $pullDomainName;
+    /**
+     * @param string $pullAuthKey
+     *
+     * @return $this
+     */
+    public function setPullAuthKey($pullAuthKey)
+    {
+        $this->requestParameters['PullAuthKey'] = $pullAuthKey;
+        $this->queryParameters['PullAuthKey'] = $pullAuthKey;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	private  $pullAppName;
+    /**
+     * @param string $pullAuthType
+     *
+     * @return $this
+     */
+    public function setPullAuthType($pullAuthType)
+    {
+        $this->requestParameters['PullAuthType'] = $pullAuthType;
+        $this->queryParameters['PullAuthType'] = $pullAuthType;
 
-	private  $pullProtocol;
+        return $this;
+    }
 
-	public function getAppName() {
-		return $this->appName;
-	}
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
 
-	public function setAppName($appName) {
-		$this->appName = $appName;
-		$this->queryParameters["AppName"]=$appName;
-	}
+        return $this;
+    }
 
-	public function getPullAuthKey() {
-		return $this->pullAuthKey;
-	}
+    /**
+     * @param string $pullDomainName
+     *
+     * @return $this
+     */
+    public function setPullDomainName($pullDomainName)
+    {
+        $this->requestParameters['PullDomainName'] = $pullDomainName;
+        $this->queryParameters['PullDomainName'] = $pullDomainName;
 
-	public function setPullAuthKey($pullAuthKey) {
-		$this->pullAuthKey = $pullAuthKey;
-		$this->queryParameters["PullAuthKey"]=$pullAuthKey;
-	}
+        return $this;
+    }
 
-	public function getPullAuthType() {
-		return $this->pullAuthType;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setPullAuthType($pullAuthType) {
-		$this->pullAuthType = $pullAuthType;
-		$this->queryParameters["PullAuthType"]=$pullAuthType;
-	}
+        return $this;
+    }
 
-	public function getDomainName() {
-		return $this->domainName;
-	}
+    /**
+     * @param string $pullAppName
+     *
+     * @return $this
+     */
+    public function setPullAppName($pullAppName)
+    {
+        $this->requestParameters['PullAppName'] = $pullAppName;
+        $this->queryParameters['PullAppName'] = $pullAppName;
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
+        return $this;
+    }
 
-	public function getPullDomainName() {
-		return $this->pullDomainName;
-	}
+    /**
+     * @param string $pullProtocol
+     *
+     * @return $this
+     */
+    public function setPullProtocol($pullProtocol)
+    {
+        $this->requestParameters['PullProtocol'] = $pullProtocol;
+        $this->queryParameters['PullProtocol'] = $pullProtocol;
 
-	public function setPullDomainName($pullDomainName) {
-		$this->pullDomainName = $pullDomainName;
-		$this->queryParameters["PullDomainName"]=$pullDomainName;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getPullAppName() {
-		return $this->pullAppName;
-	}
-
-	public function setPullAppName($pullAppName) {
-		$this->pullAppName = $pullAppName;
-		$this->queryParameters["PullAppName"]=$pullAppName;
-	}
-
-	public function getPullProtocol() {
-		return $this->pullProtocol;
-	}
-
-	public function setPullProtocol($pullProtocol) {
-		$this->pullProtocol = $pullProtocol;
-		$this->queryParameters["PullProtocol"]=$pullProtocol;
-	}
-	
+        return $this;
+    }
 }

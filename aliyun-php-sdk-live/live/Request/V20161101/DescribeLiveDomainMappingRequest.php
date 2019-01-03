@@ -3,19 +3,13 @@
 namespace live\Request\V20161101;
 
 /**
- * Request of StartLiveDomain
+ * Request of DescribeLiveDomainMapping
  *
- * @method string getSecurityToken()
  * @method string getDomainName()
  * @method string getOwnerId()
  */
-class StartLiveDomainRequest extends \RpcAcsRequest
+class DescribeLiveDomainMappingRequest extends \RpcAcsRequest
 {
-
-    /**
-     * @var string
-     */
-    protected $method = 'POST';
 
     /**
      * Class constructor.
@@ -25,22 +19,9 @@ class StartLiveDomainRequest extends \RpcAcsRequest
         parent::__construct(
             'live',
             '2016-11-01',
-            'StartLiveDomain',
+            'DescribeLiveDomainMapping',
             'live'
         );
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
     }
 
     /**

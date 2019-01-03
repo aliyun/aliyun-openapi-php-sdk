@@ -1,131 +1,157 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace live\Request\V20161101;
 
+/**
+ * Request of ModifyCasterEpisode
+ *
+ * @method string getResourceId()
+ * @method array getComponentIds()
+ * @method string getSwitchType()
+ * @method string getCasterId()
+ * @method string getEpisodeName()
+ * @method string getEndTime()
+ * @method string getStartTime()
+ * @method string getOwnerId()
+ * @method string getEpisodeId()
+ */
 class ModifyCasterEpisodeRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("live", "2016-11-01", "ModifyCasterEpisode", "live", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $ComponentIds;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'live',
+            '2016-11-01',
+            'ModifyCasterEpisode',
+            'live'
+        );
+    }
 
-	private  $switchType;
+    /**
+     * @param string $resourceId
+     *
+     * @return $this
+     */
+    public function setResourceId($resourceId)
+    {
+        $this->requestParameters['ResourceId'] = $resourceId;
+        $this->queryParameters['ResourceId'] = $resourceId;
 
-	private  $casterId;
+        return $this;
+    }
 
-	private  $episodeName;
+    /**
+     * @param array $componentIds
+     *
+     * @return $this
+     */
+    public function setComponentIds(array $componentIds)
+    {
+        $this->requestParameters['ComponentIds'] = $componentIds;
+        foreach ($componentIds as $i => $iValue) {
+            $this->queryParameters['ComponentId.' . ($i + 1)] = $iValue;
+        }
 
-	private  $endTime;
+        return $this;
+    }
 
-	private  $startTime;
+    /**
+     * @param string $switchType
+     *
+     * @return $this
+     */
+    public function setSwitchType($switchType)
+    {
+        $this->requestParameters['SwitchType'] = $switchType;
+        $this->queryParameters['SwitchType'] = $switchType;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	private  $episodeId;
+    /**
+     * @param string $casterId
+     *
+     * @return $this
+     */
+    public function setCasterId($casterId)
+    {
+        $this->requestParameters['CasterId'] = $casterId;
+        $this->queryParameters['CasterId'] = $casterId;
 
-	public function getResourceId() {
-		return $this->resourceId;
-	}
+        return $this;
+    }
 
-	public function setResourceId($resourceId) {
-		$this->resourceId = $resourceId;
-		$this->queryParameters["ResourceId"]=$resourceId;
-	}
+    /**
+     * @param string $episodeName
+     *
+     * @return $this
+     */
+    public function setEpisodeName($episodeName)
+    {
+        $this->requestParameters['EpisodeName'] = $episodeName;
+        $this->queryParameters['EpisodeName'] = $episodeName;
 
-	public function getComponentIds() {
-		return $this->ComponentIds;
-	}
+        return $this;
+    }
 
-	public function setComponentIds($ComponentIds) {
-		$this->ComponentIds = $ComponentIds;
-		for ($i = 0; $i < count($ComponentIds); $i ++) {	
-			$this->queryParameters["ComponentId.".($i+1)] = $ComponentIds[$i];
-		}
-	}
+    /**
+     * @param string $endTime
+     *
+     * @return $this
+     */
+    public function setEndTime($endTime)
+    {
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
 
-	public function getSwitchType() {
-		return $this->switchType;
-	}
+        return $this;
+    }
 
-	public function setSwitchType($switchType) {
-		$this->switchType = $switchType;
-		$this->queryParameters["SwitchType"]=$switchType;
-	}
+    /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
 
-	public function getCasterId() {
-		return $this->casterId;
-	}
+        return $this;
+    }
 
-	public function setCasterId($casterId) {
-		$this->casterId = $casterId;
-		$this->queryParameters["CasterId"]=$casterId;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function getEpisodeName() {
-		return $this->episodeName;
-	}
+        return $this;
+    }
 
-	public function setEpisodeName($episodeName) {
-		$this->episodeName = $episodeName;
-		$this->queryParameters["EpisodeName"]=$episodeName;
-	}
+    /**
+     * @param string $episodeId
+     *
+     * @return $this
+     */
+    public function setEpisodeId($episodeId)
+    {
+        $this->requestParameters['EpisodeId'] = $episodeId;
+        $this->queryParameters['EpisodeId'] = $episodeId;
 
-	public function getEndTime() {
-		return $this->endTime;
-	}
-
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getEpisodeId() {
-		return $this->episodeId;
-	}
-
-	public function setEpisodeId($episodeId) {
-		$this->episodeId = $episodeId;
-		$this->queryParameters["EpisodeId"]=$episodeId;
-	}
-	
+        return $this;
+    }
 }

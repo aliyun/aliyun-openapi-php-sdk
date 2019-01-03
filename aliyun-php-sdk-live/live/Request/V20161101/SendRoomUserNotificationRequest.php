@@ -1,107 +1,127 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace live\Request\V20161101;
 
+/**
+ * Request of SendRoomUserNotification
+ *
+ * @method string getData()
+ * @method string getToAppUid()
+ * @method string getAppUid()
+ * @method string getOwnerId()
+ * @method string getPriority()
+ * @method string getRoomId()
+ * @method string getAppId()
+ */
 class SendRoomUserNotificationRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("live", "2016-11-01", "SendRoomUserNotification", "live", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $data;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $toAppUid;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'live',
+            '2016-11-01',
+            'SendRoomUserNotification',
+            'live'
+        );
+    }
 
-	private  $appUid;
+    /**
+     * @param string $data
+     *
+     * @return $this
+     */
+    public function setData($data)
+    {
+        $this->requestParameters['Data'] = $data;
+        $this->queryParameters['Data'] = $data;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	private  $priority;
+    /**
+     * @param string $toAppUid
+     *
+     * @return $this
+     */
+    public function setToAppUid($toAppUid)
+    {
+        $this->requestParameters['ToAppUid'] = $toAppUid;
+        $this->queryParameters['ToAppUid'] = $toAppUid;
 
-	private  $roomId;
+        return $this;
+    }
 
-	private  $appId;
+    /**
+     * @param string $appUid
+     *
+     * @return $this
+     */
+    public function setAppUid($appUid)
+    {
+        $this->requestParameters['AppUid'] = $appUid;
+        $this->queryParameters['AppUid'] = $appUid;
 
-	public function getData() {
-		return $this->data;
-	}
+        return $this;
+    }
 
-	public function setData($data) {
-		$this->data = $data;
-		$this->queryParameters["Data"]=$data;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function getToAppUid() {
-		return $this->toAppUid;
-	}
+        return $this;
+    }
 
-	public function setToAppUid($toAppUid) {
-		$this->toAppUid = $toAppUid;
-		$this->queryParameters["ToAppUid"]=$toAppUid;
-	}
+    /**
+     * @param string $priority
+     *
+     * @return $this
+     */
+    public function setPriority($priority)
+    {
+        $this->requestParameters['Priority'] = $priority;
+        $this->queryParameters['Priority'] = $priority;
 
-	public function getAppUid() {
-		return $this->appUid;
-	}
+        return $this;
+    }
 
-	public function setAppUid($appUid) {
-		$this->appUid = $appUid;
-		$this->queryParameters["AppUid"]=$appUid;
-	}
+    /**
+     * @param string $roomId
+     *
+     * @return $this
+     */
+    public function setRoomId($roomId)
+    {
+        $this->requestParameters['RoomId'] = $roomId;
+        $this->queryParameters['RoomId'] = $roomId;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+        return $this;
+    }
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+    /**
+     * @param string $appId
+     *
+     * @return $this
+     */
+    public function setAppId($appId)
+    {
+        $this->requestParameters['AppId'] = $appId;
+        $this->queryParameters['AppId'] = $appId;
 
-	public function getPriority() {
-		return $this->priority;
-	}
-
-	public function setPriority($priority) {
-		$this->priority = $priority;
-		$this->queryParameters["Priority"]=$priority;
-	}
-
-	public function getRoomId() {
-		return $this->roomId;
-	}
-
-	public function setRoomId($roomId) {
-		$this->roomId = $roomId;
-		$this->queryParameters["RoomId"]=$roomId;
-	}
-
-	public function getAppId() {
-		return $this->appId;
-	}
-
-	public function setAppId($appId) {
-		$this->appId = $appId;
-		$this->queryParameters["AppId"]=$appId;
-	}
-	
+        return $this;
+    }
 }
