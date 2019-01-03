@@ -1,85 +1,99 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace aegis\Request\V20161111;
 
+/**
+ * Request of UpgradeInstance
+ *
+ * @method string getInstanceId()
+ * @method string getClientToken()
+ * @method string getVmNumber()
+ * @method string getOwnerId()
+ * @method string getVersionCode()
+ */
 class UpgradeInstanceRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("aegis", "2016-11-11", "UpgradeInstance", "vipaegis", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $instanceId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $clientToken;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'aegis',
+            '2016-11-11',
+            'UpgradeInstance',
+            'vipaegis'
+        );
+    }
 
-	private  $vmNumber;
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	private  $versionCode;
+    /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
 
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
+        return $this;
+    }
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
+    /**
+     * @param string $vmNumber
+     *
+     * @return $this
+     */
+    public function setVmNumber($vmNumber)
+    {
+        $this->requestParameters['VmNumber'] = $vmNumber;
+        $this->queryParameters['VmNumber'] = $vmNumber;
 
-	public function getClientToken() {
-		return $this->clientToken;
-	}
+        return $this;
+    }
 
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function getVmNumber() {
-		return $this->vmNumber;
-	}
+        return $this;
+    }
 
-	public function setVmNumber($vmNumber) {
-		$this->vmNumber = $vmNumber;
-		$this->queryParameters["VmNumber"]=$vmNumber;
-	}
+    /**
+     * @param string $versionCode
+     *
+     * @return $this
+     */
+    public function setVersionCode($versionCode)
+    {
+        $this->requestParameters['VersionCode'] = $versionCode;
+        $this->queryParameters['VersionCode'] = $versionCode;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getVersionCode() {
-		return $this->versionCode;
-	}
-
-	public function setVersionCode($versionCode) {
-		$this->versionCode = $versionCode;
-		$this->queryParameters["VersionCode"]=$versionCode;
-	}
-	
+        return $this;
+    }
 }

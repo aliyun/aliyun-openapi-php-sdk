@@ -1,96 +1,113 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace aegis\Request\V20161111;
 
+/**
+ * Request of RenewInstance
+ *
+ * @method string getDuration()
+ * @method string getInstanceId()
+ * @method string getClientToken()
+ * @method string getVmNumber()
+ * @method string getOwnerId()
+ * @method string getPricingCycle()
+ */
 class RenewInstanceRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("aegis", "2016-11-11", "RenewInstance", "vipaegis", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $duration;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $instanceId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'aegis',
+            '2016-11-11',
+            'RenewInstance',
+            'vipaegis'
+        );
+    }
 
-	private  $clientToken;
+    /**
+     * @param string $duration
+     *
+     * @return $this
+     */
+    public function setDuration($duration)
+    {
+        $this->requestParameters['Duration'] = $duration;
+        $this->queryParameters['Duration'] = $duration;
 
-	private  $vmNumber;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
-	private  $pricingCycle;
+        return $this;
+    }
 
-	public function getDuration() {
-		return $this->duration;
-	}
+    /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
 
-	public function setDuration($duration) {
-		$this->duration = $duration;
-		$this->queryParameters["Duration"]=$duration;
-	}
+        return $this;
+    }
 
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
+    /**
+     * @param string $vmNumber
+     *
+     * @return $this
+     */
+    public function setVmNumber($vmNumber)
+    {
+        $this->requestParameters['VmNumber'] = $vmNumber;
+        $this->queryParameters['VmNumber'] = $vmNumber;
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
+        return $this;
+    }
 
-	public function getClientToken() {
-		return $this->clientToken;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
+        return $this;
+    }
 
-	public function getVmNumber() {
-		return $this->vmNumber;
-	}
+    /**
+     * @param string $pricingCycle
+     *
+     * @return $this
+     */
+    public function setPricingCycle($pricingCycle)
+    {
+        $this->requestParameters['PricingCycle'] = $pricingCycle;
+        $this->queryParameters['PricingCycle'] = $pricingCycle;
 
-	public function setVmNumber($vmNumber) {
-		$this->vmNumber = $vmNumber;
-		$this->queryParameters["VmNumber"]=$vmNumber;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getPricingCycle() {
-		return $this->pricingCycle;
-	}
-
-	public function setPricingCycle($pricingCycle) {
-		$this->pricingCycle = $pricingCycle;
-		$this->queryParameters["PricingCycle"]=$pricingCycle;
-	}
-	
+        return $this;
+    }
 }

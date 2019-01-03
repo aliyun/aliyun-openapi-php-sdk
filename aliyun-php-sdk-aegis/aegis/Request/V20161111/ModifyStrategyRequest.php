@@ -1,107 +1,113 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace aegis\Request\V20161111;
 
+/**
+ * Request of ModifyStrategy
+ *
+ * @method string getRiskSubTypeName()
+ * @method string getSourceIp()
+ * @method string getCycleStartTime()
+ * @method string getName()
+ * @method string getCycleDays()
+ * @method string getId()
+ */
 class ModifyStrategyRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("aegis", "2016-11-11", "ModifyStrategy", "vipaegis", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $riskSubTypeName;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'aegis',
+            '2016-11-11',
+            'ModifyStrategy',
+            'vipaegis'
+        );
+    }
 
-	private  $sourceIp;
+    /**
+     * @param string $riskSubTypeName
+     *
+     * @return $this
+     */
+    public function setRiskSubTypeName($riskSubTypeName)
+    {
+        $this->requestParameters['RiskSubTypeName'] = $riskSubTypeName;
+        $this->queryParameters['RiskSubTypeName'] = $riskSubTypeName;
 
-	private  $cycleStartTime;
+        return $this;
+    }
 
-	private  $name;
+    /**
+     * @param string $sourceIp
+     *
+     * @return $this
+     */
+    public function setSourceIp($sourceIp)
+    {
+        $this->requestParameters['SourceIp'] = $sourceIp;
+        $this->queryParameters['SourceIp'] = $sourceIp;
 
-	private  $cycleDays;
+        return $this;
+    }
 
-	private  $id;
+    /**
+     * @param string $cycleStartTime
+     *
+     * @return $this
+     */
+    public function setCycleStartTime($cycleStartTime)
+    {
+        $this->requestParameters['CycleStartTime'] = $cycleStartTime;
+        $this->queryParameters['CycleStartTime'] = $cycleStartTime;
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
-	public function getRiskSubTypeName() {
-		return $this->riskSubTypeName;
-	}
+        return $this;
+    }
 
-	public function setRiskSubTypeName($riskSubTypeName) {
-		$this->riskSubTypeName = $riskSubTypeName;
-		$this->queryParameters["RiskSubTypeName"]=$riskSubTypeName;
-	}
+    /**
+     * @param string $cycleDays
+     *
+     * @return $this
+     */
+    public function setCycleDays($cycleDays)
+    {
+        $this->requestParameters['CycleDays'] = $cycleDays;
+        $this->queryParameters['CycleDays'] = $cycleDays;
 
-	public function getSourceIp() {
-		return $this->sourceIp;
-	}
+        return $this;
+    }
 
-	public function setSourceIp($sourceIp) {
-		$this->sourceIp = $sourceIp;
-		$this->queryParameters["SourceIp"]=$sourceIp;
-	}
+    /**
+     * @param string $id
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->requestParameters['Id'] = $id;
+        $this->queryParameters['Id'] = $id;
 
-	public function getCycleStartTime() {
-		return $this->cycleStartTime;
-	}
-
-	public function setCycleStartTime($cycleStartTime) {
-		$this->cycleStartTime = $cycleStartTime;
-		$this->queryParameters["CycleStartTime"]=$cycleStartTime;
-	}
-
-	public function getName() {
-		return $this->name;
-	}
-
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
-	}
-
-	public function getCycleDays() {
-		return $this->cycleDays;
-	}
-
-	public function setCycleDays($cycleDays) {
-		$this->cycleDays = $cycleDays;
-		$this->queryParameters["CycleDays"]=$cycleDays;
-	}
-
-	public function getId() {
-		return $this->id;
-	}
-
-	public function setId($id) {
-		$this->id = $id;
-		$this->queryParameters["Id"]=$id;
-	}
-	
+        return $this;
+    }
 }

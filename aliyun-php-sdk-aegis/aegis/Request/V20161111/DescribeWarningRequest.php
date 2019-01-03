@@ -1,151 +1,183 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace aegis\Request\V20161111;
 
+/**
+ * Request of DescribeWarning
+ *
+ * @method string getTypeNames()
+ * @method string getRiskName()
+ * @method string getStatusList()
+ * @method string getSourceIp()
+ * @method string getRiskLevels()
+ * @method string getPageSize()
+ * @method string getStrategyId()
+ * @method string getCurrentPage()
+ * @method string getDealed()
+ * @method string getSubTypeNames()
+ * @method string getUuids()
+ */
 class DescribeWarningRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("aegis", "2016-11-11", "DescribeWarning", "vipaegis", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $typeNames;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $resourceOwnerId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'aegis',
+            '2016-11-11',
+            'DescribeWarning',
+            'vipaegis'
+        );
+    }
 
-	private  $riskName;
+    /**
+     * @param string $typeNames
+     *
+     * @return $this
+     */
+    public function setTypeNames($typeNames)
+    {
+        $this->requestParameters['TypeNames'] = $typeNames;
+        $this->queryParameters['TypeNames'] = $typeNames;
 
-	private  $statusList;
+        return $this;
+    }
 
-	private  $sourceIp;
+    /**
+     * @param string $riskName
+     *
+     * @return $this
+     */
+    public function setRiskName($riskName)
+    {
+        $this->requestParameters['RiskName'] = $riskName;
+        $this->queryParameters['RiskName'] = $riskName;
 
-	private  $riskLevels;
+        return $this;
+    }
 
-	private  $pageSize;
+    /**
+     * @param string $statusList
+     *
+     * @return $this
+     */
+    public function setStatusList($statusList)
+    {
+        $this->requestParameters['StatusList'] = $statusList;
+        $this->queryParameters['StatusList'] = $statusList;
 
-	private  $currentPage;
+        return $this;
+    }
 
-	private  $dealed;
+    /**
+     * @param string $sourceIp
+     *
+     * @return $this
+     */
+    public function setSourceIp($sourceIp)
+    {
+        $this->requestParameters['SourceIp'] = $sourceIp;
+        $this->queryParameters['SourceIp'] = $sourceIp;
 
-	private  $subTypeNames;
+        return $this;
+    }
 
-	private  $uuids;
+    /**
+     * @param string $riskLevels
+     *
+     * @return $this
+     */
+    public function setRiskLevels($riskLevels)
+    {
+        $this->requestParameters['RiskLevels'] = $riskLevels;
+        $this->queryParameters['RiskLevels'] = $riskLevels;
 
-	public function getTypeNames() {
-		return $this->typeNames;
-	}
+        return $this;
+    }
 
-	public function setTypeNames($typeNames) {
-		$this->typeNames = $typeNames;
-		$this->queryParameters["TypeNames"]=$typeNames;
-	}
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+    /**
+     * @param string $strategyId
+     *
+     * @return $this
+     */
+    public function setStrategyId($strategyId)
+    {
+        $this->requestParameters['StrategyId'] = $strategyId;
+        $this->queryParameters['StrategyId'] = $strategyId;
 
-	public function getRiskName() {
-		return $this->riskName;
-	}
+        return $this;
+    }
 
-	public function setRiskName($riskName) {
-		$this->riskName = $riskName;
-		$this->queryParameters["RiskName"]=$riskName;
-	}
+    /**
+     * @param string $currentPage
+     *
+     * @return $this
+     */
+    public function setCurrentPage($currentPage)
+    {
+        $this->requestParameters['CurrentPage'] = $currentPage;
+        $this->queryParameters['CurrentPage'] = $currentPage;
 
-	public function getStatusList() {
-		return $this->statusList;
-	}
+        return $this;
+    }
 
-	public function setStatusList($statusList) {
-		$this->statusList = $statusList;
-		$this->queryParameters["StatusList"]=$statusList;
-	}
+    /**
+     * @param string $dealed
+     *
+     * @return $this
+     */
+    public function setDealed($dealed)
+    {
+        $this->requestParameters['Dealed'] = $dealed;
+        $this->queryParameters['Dealed'] = $dealed;
 
-	public function getSourceIp() {
-		return $this->sourceIp;
-	}
+        return $this;
+    }
 
-	public function setSourceIp($sourceIp) {
-		$this->sourceIp = $sourceIp;
-		$this->queryParameters["SourceIp"]=$sourceIp;
-	}
+    /**
+     * @param string $subTypeNames
+     *
+     * @return $this
+     */
+    public function setSubTypeNames($subTypeNames)
+    {
+        $this->requestParameters['SubTypeNames'] = $subTypeNames;
+        $this->queryParameters['SubTypeNames'] = $subTypeNames;
 
-	public function getRiskLevels() {
-		return $this->riskLevels;
-	}
+        return $this;
+    }
 
-	public function setRiskLevels($riskLevels) {
-		$this->riskLevels = $riskLevels;
-		$this->queryParameters["RiskLevels"]=$riskLevels;
-	}
+    /**
+     * @param string $uuids
+     *
+     * @return $this
+     */
+    public function setUuids($uuids)
+    {
+        $this->requestParameters['Uuids'] = $uuids;
+        $this->queryParameters['Uuids'] = $uuids;
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getCurrentPage() {
-		return $this->currentPage;
-	}
-
-	public function setCurrentPage($currentPage) {
-		$this->currentPage = $currentPage;
-		$this->queryParameters["CurrentPage"]=$currentPage;
-	}
-
-	public function getDealed() {
-		return $this->dealed;
-	}
-
-	public function setDealed($dealed) {
-		$this->dealed = $dealed;
-		$this->queryParameters["Dealed"]=$dealed;
-	}
-
-	public function getSubTypeNames() {
-		return $this->subTypeNames;
-	}
-
-	public function setSubTypeNames($subTypeNames) {
-		$this->subTypeNames = $subTypeNames;
-		$this->queryParameters["SubTypeNames"]=$subTypeNames;
-	}
-
-	public function getUuids() {
-		return $this->uuids;
-	}
-
-	public function setUuids($uuids) {
-		$this->uuids = $uuids;
-		$this->queryParameters["Uuids"]=$uuids;
-	}
-	
+        return $this;
+    }
 }
