@@ -1,140 +1,169 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace scdn\Request\V20171115;
 
+/**
+ * Request of OpenScdnService
+ *
+ * @method string getEndDate()
+ * @method string getSecurityToken()
+ * @method string getBandwidth()
+ * @method string getDomainCount()
+ * @method string getOwnerId()
+ * @method string getProtectType()
+ * @method string getStartDate()
+ * @method string getElasticProtection()
+ * @method string getDDoSBasic()
+ * @method string getCcProtection()
+ */
 class OpenScdnServiceRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("scdn", "2017-11-15", "OpenScdnService", "scdn", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $endDate;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $securityToken;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'scdn',
+            '2017-11-15',
+            'OpenScdnService',
+            'scdn'
+        );
+    }
 
-	private  $bandwidth;
+    /**
+     * @param string $endDate
+     *
+     * @return $this
+     */
+    public function setEndDate($endDate)
+    {
+        $this->requestParameters['EndDate'] = $endDate;
+        $this->queryParameters['EndDate'] = $endDate;
 
-	private  $domainCount;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
-	private  $protectType;
+        return $this;
+    }
 
-	private  $startDate;
+    /**
+     * @param string $bandwidth
+     *
+     * @return $this
+     */
+    public function setBandwidth($bandwidth)
+    {
+        $this->requestParameters['Bandwidth'] = $bandwidth;
+        $this->queryParameters['Bandwidth'] = $bandwidth;
 
-	private  $elasticProtection;
+        return $this;
+    }
 
-	private  $dDoSBasic;
+    /**
+     * @param string $domainCount
+     *
+     * @return $this
+     */
+    public function setDomainCount($domainCount)
+    {
+        $this->requestParameters['DomainCount'] = $domainCount;
+        $this->queryParameters['DomainCount'] = $domainCount;
 
-	private  $ccProtection;
+        return $this;
+    }
 
-	public function getEndDate() {
-		return $this->endDate;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setEndDate($endDate) {
-		$this->endDate = $endDate;
-		$this->queryParameters["EndDate"]=$endDate;
-	}
+        return $this;
+    }
 
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
+    /**
+     * @param string $protectType
+     *
+     * @return $this
+     */
+    public function setProtectType($protectType)
+    {
+        $this->requestParameters['ProtectType'] = $protectType;
+        $this->queryParameters['ProtectType'] = $protectType;
 
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
+        return $this;
+    }
 
-	public function getBandwidth() {
-		return $this->bandwidth;
-	}
+    /**
+     * @param string $startDate
+     *
+     * @return $this
+     */
+    public function setStartDate($startDate)
+    {
+        $this->requestParameters['StartDate'] = $startDate;
+        $this->queryParameters['StartDate'] = $startDate;
 
-	public function setBandwidth($bandwidth) {
-		$this->bandwidth = $bandwidth;
-		$this->queryParameters["Bandwidth"]=$bandwidth;
-	}
+        return $this;
+    }
 
-	public function getDomainCount() {
-		return $this->domainCount;
-	}
+    /**
+     * @param string $elasticProtection
+     *
+     * @return $this
+     */
+    public function setElasticProtection($elasticProtection)
+    {
+        $this->requestParameters['ElasticProtection'] = $elasticProtection;
+        $this->queryParameters['ElasticProtection'] = $elasticProtection;
 
-	public function setDomainCount($domainCount) {
-		$this->domainCount = $domainCount;
-		$this->queryParameters["DomainCount"]=$domainCount;
-	}
+        return $this;
+    }
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+    /**
+     * @param string $dDoSBasic
+     *
+     * @return $this
+     */
+    public function setDDoSBasic($dDoSBasic)
+    {
+        $this->requestParameters['DDoSBasic'] = $dDoSBasic;
+        $this->queryParameters['DDoSBasic'] = $dDoSBasic;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+        return $this;
+    }
 
-	public function getProtectType() {
-		return $this->protectType;
-	}
+    /**
+     * @param string $ccProtection
+     *
+     * @return $this
+     */
+    public function setCcProtection($ccProtection)
+    {
+        $this->requestParameters['CcProtection'] = $ccProtection;
+        $this->queryParameters['CcProtection'] = $ccProtection;
 
-	public function setProtectType($protectType) {
-		$this->protectType = $protectType;
-		$this->queryParameters["ProtectType"]=$protectType;
-	}
-
-	public function getStartDate() {
-		return $this->startDate;
-	}
-
-	public function setStartDate($startDate) {
-		$this->startDate = $startDate;
-		$this->queryParameters["StartDate"]=$startDate;
-	}
-
-	public function getElasticProtection() {
-		return $this->elasticProtection;
-	}
-
-	public function setElasticProtection($elasticProtection) {
-		$this->elasticProtection = $elasticProtection;
-		$this->queryParameters["ElasticProtection"]=$elasticProtection;
-	}
-
-	public function getDDoSBasic() {
-		return $this->dDoSBasic;
-	}
-
-	public function setDDoSBasic($dDoSBasic) {
-		$this->dDoSBasic = $dDoSBasic;
-		$this->queryParameters["DDoSBasic"]=$dDoSBasic;
-	}
-
-	public function getCcProtection() {
-		return $this->ccProtection;
-	}
-
-	public function setCcProtection($ccProtection) {
-		$this->ccProtection = $ccProtection;
-		$this->queryParameters["CcProtection"]=$ccProtection;
-	}
-	
+        return $this;
+    }
 }

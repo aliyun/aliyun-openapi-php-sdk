@@ -3,15 +3,15 @@
 namespace scdn\Request\V20171115;
 
 /**
- * Request of BatchDeleteScdnDomainConfigs
+ * Request of BatchSetScdnDomainConfigs
  *
- * @method string getFunctionNames()
+ * @method string getFunctions()
  * @method string getSecurityToken()
  * @method string getDomainNames()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
  */
-class BatchDeleteScdnDomainConfigsRequest extends \RpcAcsRequest
+class BatchSetScdnDomainConfigsRequest extends \RpcAcsRequest
 {
 
     /**
@@ -27,20 +27,20 @@ class BatchDeleteScdnDomainConfigsRequest extends \RpcAcsRequest
         parent::__construct(
             'scdn',
             '2017-11-15',
-            'BatchDeleteScdnDomainConfigs',
+            'BatchSetScdnDomainConfigs',
             'scdn'
         );
     }
 
     /**
-     * @param string $functionNames
+     * @param string $functions
      *
      * @return $this
      */
-    public function setFunctionNames($functionNames)
+    public function setFunctions($functions)
     {
-        $this->requestParameters['FunctionNames'] = $functionNames;
-        $this->queryParameters['FunctionNames'] = $functionNames;
+        $this->requestParameters['Functions'] = $functions;
+        $this->queryParameters['Functions'] = $functions;
 
         return $this;
     }
