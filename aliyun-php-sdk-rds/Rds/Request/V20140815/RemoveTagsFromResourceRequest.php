@@ -1,228 +1,281 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Rds\Request\V20140815;
 
+/**
+ * Request of RemoveTagsFromResource
+ *
+ * @method string getTag4value()
+ * @method string getResourceOwnerId()
+ * @method string getTag2key()
+ * @method string getTag5key()
+ * @method string getResourceOwnerAccount()
+ * @method string getClientToken()
+ * @method string getOwnerAccount()
+ * @method string getTag3key()
+ * @method string getOwnerId()
+ * @method string getTag5value()
+ * @method string getTags()
+ * @method string getTag1key()
+ * @method string getTag1value()
+ * @method string getTag2value()
+ * @method string getTag4key()
+ * @method string getDBInstanceId()
+ * @method string getTag3value()
+ * @method string getproxyId()
+ */
 class RemoveTagsFromResourceRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Rds", "2014-08-15", "RemoveTagsFromResource", "rds", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $tag4value;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $resourceOwnerId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Rds',
+            '2014-08-15',
+            'RemoveTagsFromResource',
+            'rds'
+        );
+    }
 
-	private  $tag2key;
+    /**
+     * @param string $tag4value
+     *
+     * @return $this
+     */
+    public function setTag4value($tag4value)
+    {
+        $this->requestParameters['Tag4value'] = $tag4value;
+        $this->queryParameters['Tag.4.value'] = $tag4value;
 
-	private  $tag5key;
+        return $this;
+    }
 
-	private  $resourceOwnerAccount;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $clientToken;
+        return $this;
+    }
 
-	private  $ownerAccount;
+    /**
+     * @param string $tag2key
+     *
+     * @return $this
+     */
+    public function setTag2key($tag2key)
+    {
+        $this->requestParameters['Tag2key'] = $tag2key;
+        $this->queryParameters['Tag.2.key'] = $tag2key;
 
-	private  $tag3key;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $tag5key
+     *
+     * @return $this
+     */
+    public function setTag5key($tag5key)
+    {
+        $this->requestParameters['Tag5key'] = $tag5key;
+        $this->queryParameters['Tag.5.key'] = $tag5key;
 
-	private  $tag5value;
+        return $this;
+    }
 
-	private  $tags;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $tag1key;
+        return $this;
+    }
 
-	private  $tag1value;
+    /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
 
-	private  $tag2value;
+        return $this;
+    }
 
-	private  $tag4key;
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	private  $dBInstanceId;
+        return $this;
+    }
 
-	private  $tag3value;
+    /**
+     * @param string $tag3key
+     *
+     * @return $this
+     */
+    public function setTag3key($tag3key)
+    {
+        $this->requestParameters['Tag3key'] = $tag3key;
+        $this->queryParameters['Tag.3.key'] = $tag3key;
 
-	private  $proxyId;
+        return $this;
+    }
 
-	public function getTag4value() {
-		return $this->tag4value;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setTag4value($tag4value) {
-		$this->tag4value = $tag4value;
-		$this->queryParameters["Tag.4.value"]=$tag4value;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+    /**
+     * @param string $tag5value
+     *
+     * @return $this
+     */
+    public function setTag5value($tag5value)
+    {
+        $this->requestParameters['Tag5value'] = $tag5value;
+        $this->queryParameters['Tag.5.value'] = $tag5value;
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getTag2key() {
-		return $this->tag2key;
-	}
+    /**
+     * @param string $tags
+     *
+     * @return $this
+     */
+    public function setTags($tags)
+    {
+        $this->requestParameters['Tags'] = $tags;
+        $this->queryParameters['Tags'] = $tags;
 
-	public function setTag2key($tag2key) {
-		$this->tag2key = $tag2key;
-		$this->queryParameters["Tag.2.key"]=$tag2key;
-	}
+        return $this;
+    }
 
-	public function getTag5key() {
-		return $this->tag5key;
-	}
+    /**
+     * @param string $tag1key
+     *
+     * @return $this
+     */
+    public function setTag1key($tag1key)
+    {
+        $this->requestParameters['Tag1key'] = $tag1key;
+        $this->queryParameters['Tag.1.key'] = $tag1key;
 
-	public function setTag5key($tag5key) {
-		$this->tag5key = $tag5key;
-		$this->queryParameters["Tag.5.key"]=$tag5key;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param string $tag1value
+     *
+     * @return $this
+     */
+    public function setTag1value($tag1value)
+    {
+        $this->requestParameters['Tag1value'] = $tag1value;
+        $this->queryParameters['Tag.1.value'] = $tag1value;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function getClientToken() {
-		return $this->clientToken;
-	}
+    /**
+     * @param string $tag2value
+     *
+     * @return $this
+     */
+    public function setTag2value($tag2value)
+    {
+        $this->requestParameters['Tag2value'] = $tag2value;
+        $this->queryParameters['Tag.2.value'] = $tag2value;
 
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
+        return $this;
+    }
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+    /**
+     * @param string $tag4key
+     *
+     * @return $this
+     */
+    public function setTag4key($tag4key)
+    {
+        $this->requestParameters['Tag4key'] = $tag4key;
+        $this->queryParameters['Tag.4.key'] = $tag4key;
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
+        return $this;
+    }
 
-	public function getTag3key() {
-		return $this->tag3key;
-	}
+    /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
 
-	public function setTag3key($tag3key) {
-		$this->tag3key = $tag3key;
-		$this->queryParameters["Tag.3.key"]=$tag3key;
-	}
+        return $this;
+    }
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+    /**
+     * @param string $tag3value
+     *
+     * @return $this
+     */
+    public function setTag3value($tag3value)
+    {
+        $this->requestParameters['Tag3value'] = $tag3value;
+        $this->queryParameters['Tag.3.value'] = $tag3value;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+        return $this;
+    }
 
-	public function getTag5value() {
-		return $this->tag5value;
-	}
+    /**
+     * @param string $proxyId
+     *
+     * @return $this
+     */
+    public function setproxyId($proxyId)
+    {
+        $this->requestParameters['proxyId'] = $proxyId;
+        $this->queryParameters['proxyId'] = $proxyId;
 
-	public function setTag5value($tag5value) {
-		$this->tag5value = $tag5value;
-		$this->queryParameters["Tag.5.value"]=$tag5value;
-	}
-
-	public function getTags() {
-		return $this->tags;
-	}
-
-	public function setTags($tags) {
-		$this->tags = $tags;
-		$this->queryParameters["Tags"]=$tags;
-	}
-
-	public function getTag1key() {
-		return $this->tag1key;
-	}
-
-	public function setTag1key($tag1key) {
-		$this->tag1key = $tag1key;
-		$this->queryParameters["Tag.1.key"]=$tag1key;
-	}
-
-	public function getTag1value() {
-		return $this->tag1value;
-	}
-
-	public function setTag1value($tag1value) {
-		$this->tag1value = $tag1value;
-		$this->queryParameters["Tag.1.value"]=$tag1value;
-	}
-
-	public function getTag2value() {
-		return $this->tag2value;
-	}
-
-	public function setTag2value($tag2value) {
-		$this->tag2value = $tag2value;
-		$this->queryParameters["Tag.2.value"]=$tag2value;
-	}
-
-	public function getTag4key() {
-		return $this->tag4key;
-	}
-
-	public function setTag4key($tag4key) {
-		$this->tag4key = $tag4key;
-		$this->queryParameters["Tag.4.key"]=$tag4key;
-	}
-
-	public function getDBInstanceId() {
-		return $this->dBInstanceId;
-	}
-
-	public function setDBInstanceId($dBInstanceId) {
-		$this->dBInstanceId = $dBInstanceId;
-		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
-	}
-
-	public function getTag3value() {
-		return $this->tag3value;
-	}
-
-	public function setTag3value($tag3value) {
-		$this->tag3value = $tag3value;
-		$this->queryParameters["Tag.3.value"]=$tag3value;
-	}
-
-	public function getproxyId() {
-		return $this->proxyId;
-	}
-
-	public function setproxyId($proxyId) {
-		$this->proxyId = $proxyId;
-		$this->queryParameters["proxyId"]=$proxyId;
-	}
-	
+        return $this;
+    }
 }

@@ -1,217 +1,267 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Rds\Request\V20140815;
 
+/**
+ * Request of DescribePrice
+ *
+ * @method string getResourceOwnerId()
+ * @method string getDBInstanceStorage()
+ * @method string getQuantity()
+ * @method string getResourceOwnerAccount()
+ * @method string getClientToken()
+ * @method string getOwnerAccount()
+ * @method string getCommodityCode()
+ * @method string getEngineVersion()
+ * @method string getOwnerId()
+ * @method string getUsedTime()
+ * @method string getDBInstanceClass()
+ * @method string getInstanceUsedType()
+ * @method string getEngine()
+ * @method string getZoneId()
+ * @method string getTimeType()
+ * @method string getPayType()
+ * @method string getOrderType()
+ */
 class DescribePriceRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Rds", "2014-08-15", "DescribePrice", "rds", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $dBInstanceStorage;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Rds',
+            '2014-08-15',
+            'DescribePrice',
+            'rds'
+        );
+    }
 
-	private  $quantity;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $resourceOwnerAccount;
+        return $this;
+    }
 
-	private  $clientToken;
+    /**
+     * @param string $dBInstanceStorage
+     *
+     * @return $this
+     */
+    public function setDBInstanceStorage($dBInstanceStorage)
+    {
+        $this->requestParameters['DBInstanceStorage'] = $dBInstanceStorage;
+        $this->queryParameters['DBInstanceStorage'] = $dBInstanceStorage;
 
-	private  $ownerAccount;
+        return $this;
+    }
 
-	private  $commodityCode;
+    /**
+     * @param string $quantity
+     *
+     * @return $this
+     */
+    public function setQuantity($quantity)
+    {
+        $this->requestParameters['Quantity'] = $quantity;
+        $this->queryParameters['Quantity'] = $quantity;
 
-	private  $engineVersion;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $usedTime;
+        return $this;
+    }
 
-	private  $dBInstanceClass;
+    /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
 
-	private  $instanceUsedType;
+        return $this;
+    }
 
-	private  $engine;
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	private  $zoneId;
+        return $this;
+    }
 
-	private  $timeType;
+    /**
+     * @param string $commodityCode
+     *
+     * @return $this
+     */
+    public function setCommodityCode($commodityCode)
+    {
+        $this->requestParameters['CommodityCode'] = $commodityCode;
+        $this->queryParameters['CommodityCode'] = $commodityCode;
 
-	private  $payType;
+        return $this;
+    }
 
-	private  $orderType;
+    /**
+     * @param string $engineVersion
+     *
+     * @return $this
+     */
+    public function setEngineVersion($engineVersion)
+    {
+        $this->requestParameters['EngineVersion'] = $engineVersion;
+        $this->queryParameters['EngineVersion'] = $engineVersion;
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function getDBInstanceStorage() {
-		return $this->dBInstanceStorage;
-	}
+        return $this;
+    }
 
-	public function setDBInstanceStorage($dBInstanceStorage) {
-		$this->dBInstanceStorage = $dBInstanceStorage;
-		$this->queryParameters["DBInstanceStorage"]=$dBInstanceStorage;
-	}
+    /**
+     * @param string $usedTime
+     *
+     * @return $this
+     */
+    public function setUsedTime($usedTime)
+    {
+        $this->requestParameters['UsedTime'] = $usedTime;
+        $this->queryParameters['UsedTime'] = $usedTime;
 
-	public function getQuantity() {
-		return $this->quantity;
-	}
+        return $this;
+    }
 
-	public function setQuantity($quantity) {
-		$this->quantity = $quantity;
-		$this->queryParameters["Quantity"]=$quantity;
-	}
+    /**
+     * @param string $dBInstanceClass
+     *
+     * @return $this
+     */
+    public function setDBInstanceClass($dBInstanceClass)
+    {
+        $this->requestParameters['DBInstanceClass'] = $dBInstanceClass;
+        $this->queryParameters['DBInstanceClass'] = $dBInstanceClass;
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+    /**
+     * @param string $instanceUsedType
+     *
+     * @return $this
+     */
+    public function setInstanceUsedType($instanceUsedType)
+    {
+        $this->requestParameters['InstanceUsedType'] = $instanceUsedType;
+        $this->queryParameters['InstanceUsedType'] = $instanceUsedType;
 
-	public function getClientToken() {
-		return $this->clientToken;
-	}
+        return $this;
+    }
 
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
+    /**
+     * @param string $engine
+     *
+     * @return $this
+     */
+    public function setEngine($engine)
+    {
+        $this->requestParameters['Engine'] = $engine;
+        $this->queryParameters['Engine'] = $engine;
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+        return $this;
+    }
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
+    /**
+     * @param string $zoneId
+     *
+     * @return $this
+     */
+    public function setZoneId($zoneId)
+    {
+        $this->requestParameters['ZoneId'] = $zoneId;
+        $this->queryParameters['ZoneId'] = $zoneId;
 
-	public function getCommodityCode() {
-		return $this->commodityCode;
-	}
+        return $this;
+    }
 
-	public function setCommodityCode($commodityCode) {
-		$this->commodityCode = $commodityCode;
-		$this->queryParameters["CommodityCode"]=$commodityCode;
-	}
+    /**
+     * @param string $timeType
+     *
+     * @return $this
+     */
+    public function setTimeType($timeType)
+    {
+        $this->requestParameters['TimeType'] = $timeType;
+        $this->queryParameters['TimeType'] = $timeType;
 
-	public function getEngineVersion() {
-		return $this->engineVersion;
-	}
+        return $this;
+    }
 
-	public function setEngineVersion($engineVersion) {
-		$this->engineVersion = $engineVersion;
-		$this->queryParameters["EngineVersion"]=$engineVersion;
-	}
+    /**
+     * @param string $payType
+     *
+     * @return $this
+     */
+    public function setPayType($payType)
+    {
+        $this->requestParameters['PayType'] = $payType;
+        $this->queryParameters['PayType'] = $payType;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+        return $this;
+    }
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+    /**
+     * @param string $orderType
+     *
+     * @return $this
+     */
+    public function setOrderType($orderType)
+    {
+        $this->requestParameters['OrderType'] = $orderType;
+        $this->queryParameters['OrderType'] = $orderType;
 
-	public function getUsedTime() {
-		return $this->usedTime;
-	}
-
-	public function setUsedTime($usedTime) {
-		$this->usedTime = $usedTime;
-		$this->queryParameters["UsedTime"]=$usedTime;
-	}
-
-	public function getDBInstanceClass() {
-		return $this->dBInstanceClass;
-	}
-
-	public function setDBInstanceClass($dBInstanceClass) {
-		$this->dBInstanceClass = $dBInstanceClass;
-		$this->queryParameters["DBInstanceClass"]=$dBInstanceClass;
-	}
-
-	public function getInstanceUsedType() {
-		return $this->instanceUsedType;
-	}
-
-	public function setInstanceUsedType($instanceUsedType) {
-		$this->instanceUsedType = $instanceUsedType;
-		$this->queryParameters["InstanceUsedType"]=$instanceUsedType;
-	}
-
-	public function getEngine() {
-		return $this->engine;
-	}
-
-	public function setEngine($engine) {
-		$this->engine = $engine;
-		$this->queryParameters["Engine"]=$engine;
-	}
-
-	public function getZoneId() {
-		return $this->zoneId;
-	}
-
-	public function setZoneId($zoneId) {
-		$this->zoneId = $zoneId;
-		$this->queryParameters["ZoneId"]=$zoneId;
-	}
-
-	public function getTimeType() {
-		return $this->timeType;
-	}
-
-	public function setTimeType($timeType) {
-		$this->timeType = $timeType;
-		$this->queryParameters["TimeType"]=$timeType;
-	}
-
-	public function getPayType() {
-		return $this->payType;
-	}
-
-	public function setPayType($payType) {
-		$this->payType = $payType;
-		$this->queryParameters["PayType"]=$payType;
-	}
-
-	public function getOrderType() {
-		return $this->orderType;
-	}
-
-	public function setOrderType($orderType) {
-		$this->orderType = $orderType;
-		$this->queryParameters["OrderType"]=$orderType;
-	}
-	
+        return $this;
+    }
 }

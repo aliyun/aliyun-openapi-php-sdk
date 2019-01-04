@@ -3,21 +3,22 @@
 namespace Rds\Request\V20140815;
 
 /**
- * Request of AllocateReadWriteSplittingConnection
+ * Request of DescribeMetaList
  *
  * @method string getResourceOwnerId()
- * @method string getConnectionStringPrefix()
+ * @method string getRestoreTime()
  * @method string getResourceOwnerAccount()
- * @method string getOwnerAccount()
- * @method string getWeight()
+ * @method string getClientToken()
+ * @method string getPattern()
+ * @method string getBackupSetID()
  * @method string getOwnerId()
- * @method string getPort()
- * @method string getDistributionType()
- * @method string getNetType()
+ * @method string getGetDbName()
+ * @method string getRestoreType()
+ * @method string getPageSize()
  * @method string getDBInstanceId()
- * @method string getMaxDelayTime()
+ * @method string getPageIndex()
  */
-class AllocateReadWriteSplittingConnectionRequest extends \RpcAcsRequest
+class DescribeMetaListRequest extends \RpcAcsRequest
 {
 
     /**
@@ -33,7 +34,7 @@ class AllocateReadWriteSplittingConnectionRequest extends \RpcAcsRequest
         parent::__construct(
             'Rds',
             '2014-08-15',
-            'AllocateReadWriteSplittingConnection',
+            'DescribeMetaList',
             'rds'
         );
     }
@@ -52,14 +53,14 @@ class AllocateReadWriteSplittingConnectionRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $connectionStringPrefix
+     * @param string $restoreTime
      *
      * @return $this
      */
-    public function setConnectionStringPrefix($connectionStringPrefix)
+    public function setRestoreTime($restoreTime)
     {
-        $this->requestParameters['ConnectionStringPrefix'] = $connectionStringPrefix;
-        $this->queryParameters['ConnectionStringPrefix'] = $connectionStringPrefix;
+        $this->requestParameters['RestoreTime'] = $restoreTime;
+        $this->queryParameters['RestoreTime'] = $restoreTime;
 
         return $this;
     }
@@ -78,27 +79,40 @@ class AllocateReadWriteSplittingConnectionRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerAccount
+     * @param string $clientToken
      *
      * @return $this
      */
-    public function setOwnerAccount($ownerAccount)
+    public function setClientToken($clientToken)
     {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
 
         return $this;
     }
 
     /**
-     * @param string $weight
+     * @param string $pattern
      *
      * @return $this
      */
-    public function setWeight($weight)
+    public function setPattern($pattern)
     {
-        $this->requestParameters['Weight'] = $weight;
-        $this->queryParameters['Weight'] = $weight;
+        $this->requestParameters['Pattern'] = $pattern;
+        $this->queryParameters['Pattern'] = $pattern;
+
+        return $this;
+    }
+
+    /**
+     * @param string $backupSetID
+     *
+     * @return $this
+     */
+    public function setBackupSetID($backupSetID)
+    {
+        $this->requestParameters['BackupSetID'] = $backupSetID;
+        $this->queryParameters['BackupSetID'] = $backupSetID;
 
         return $this;
     }
@@ -117,40 +131,40 @@ class AllocateReadWriteSplittingConnectionRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $port
+     * @param string $getDbName
      *
      * @return $this
      */
-    public function setPort($port)
+    public function setGetDbName($getDbName)
     {
-        $this->requestParameters['Port'] = $port;
-        $this->queryParameters['Port'] = $port;
+        $this->requestParameters['GetDbName'] = $getDbName;
+        $this->queryParameters['GetDbName'] = $getDbName;
 
         return $this;
     }
 
     /**
-     * @param string $distributionType
+     * @param string $restoreType
      *
      * @return $this
      */
-    public function setDistributionType($distributionType)
+    public function setRestoreType($restoreType)
     {
-        $this->requestParameters['DistributionType'] = $distributionType;
-        $this->queryParameters['DistributionType'] = $distributionType;
+        $this->requestParameters['RestoreType'] = $restoreType;
+        $this->queryParameters['RestoreType'] = $restoreType;
 
         return $this;
     }
 
     /**
-     * @param string $netType
+     * @param string $pageSize
      *
      * @return $this
      */
-    public function setNetType($netType)
+    public function setPageSize($pageSize)
     {
-        $this->requestParameters['NetType'] = $netType;
-        $this->queryParameters['NetType'] = $netType;
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }
@@ -169,14 +183,14 @@ class AllocateReadWriteSplittingConnectionRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $maxDelayTime
+     * @param string $pageIndex
      *
      * @return $this
      */
-    public function setMaxDelayTime($maxDelayTime)
+    public function setPageIndex($pageIndex)
     {
-        $this->requestParameters['MaxDelayTime'] = $maxDelayTime;
-        $this->queryParameters['MaxDelayTime'] = $maxDelayTime;
+        $this->requestParameters['PageIndex'] = $pageIndex;
+        $this->queryParameters['PageIndex'] = $pageIndex;
 
         return $this;
     }

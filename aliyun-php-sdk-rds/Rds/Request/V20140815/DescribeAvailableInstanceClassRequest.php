@@ -3,19 +3,20 @@
 namespace Rds\Request\V20140815;
 
 /**
- * Request of DescribeBinlogFiles
+ * Request of DescribeAvailableInstanceClass
  *
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getPageSize()
- * @method string getEndTime()
- * @method string getDBInstanceId()
- * @method string getStartTime()
+ * @method string getEngineVersion()
  * @method string getOwnerId()
- * @method string getPageNumber()
+ * @method string getEngine()
+ * @method string getZoneId()
+ * @method string getDBInstanceId()
+ * @method string getInstanceChargeType()
+ * @method string getOrderType()
  */
-class DescribeBinlogFilesRequest extends \RpcAcsRequest
+class DescribeAvailableInstanceClassRequest extends \RpcAcsRequest
 {
 
     /**
@@ -31,7 +32,7 @@ class DescribeBinlogFilesRequest extends \RpcAcsRequest
         parent::__construct(
             'Rds',
             '2014-08-15',
-            'DescribeBinlogFiles',
+            'DescribeAvailableInstanceClass',
             'rds'
         );
     }
@@ -76,53 +77,14 @@ class DescribeBinlogFilesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageSize
+     * @param string $engineVersion
      *
      * @return $this
      */
-    public function setPageSize($pageSize)
+    public function setEngineVersion($engineVersion)
     {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param string $endTime
-     *
-     * @return $this
-     */
-    public function setEndTime($endTime)
-    {
-        $this->requestParameters['EndTime'] = $endTime;
-        $this->queryParameters['EndTime'] = $endTime;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $startTime
-     *
-     * @return $this
-     */
-    public function setStartTime($startTime)
-    {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
+        $this->requestParameters['EngineVersion'] = $engineVersion;
+        $this->queryParameters['EngineVersion'] = $engineVersion;
 
         return $this;
     }
@@ -141,14 +103,66 @@ class DescribeBinlogFilesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageNumber
+     * @param string $engine
      *
      * @return $this
      */
-    public function setPageNumber($pageNumber)
+    public function setEngine($engine)
     {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
+        $this->requestParameters['Engine'] = $engine;
+        $this->queryParameters['Engine'] = $engine;
+
+        return $this;
+    }
+
+    /**
+     * @param string $zoneId
+     *
+     * @return $this
+     */
+    public function setZoneId($zoneId)
+    {
+        $this->requestParameters['ZoneId'] = $zoneId;
+        $this->queryParameters['ZoneId'] = $zoneId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceChargeType
+     *
+     * @return $this
+     */
+    public function setInstanceChargeType($instanceChargeType)
+    {
+        $this->requestParameters['InstanceChargeType'] = $instanceChargeType;
+        $this->queryParameters['InstanceChargeType'] = $instanceChargeType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $orderType
+     *
+     * @return $this
+     */
+    public function setOrderType($orderType)
+    {
+        $this->requestParameters['OrderType'] = $orderType;
+        $this->queryParameters['OrderType'] = $orderType;
 
         return $this;
     }

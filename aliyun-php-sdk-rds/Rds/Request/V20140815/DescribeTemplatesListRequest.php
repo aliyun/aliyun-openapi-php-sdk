@@ -1,228 +1,281 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Rds\Request\V20140815;
 
+/**
+ * Request of DescribeTemplatesList
+ *
+ * @method string getResourceOwnerId()
+ * @method string getResourceOwnerAccount()
+ * @method string getMinAvgConsume()
+ * @method string getOwnerAccount()
+ * @method string getMaxRecordsPerPage()
+ * @method string getEndTime()
+ * @method string getStartTime()
+ * @method string getOwnerId()
+ * @method string getMaxAvgConsume()
+ * @method string getSortKey()
+ * @method string getMinAvgScanRows()
+ * @method string getSqType()
+ * @method string getSecurityToken()
+ * @method string getSortMethod()
+ * @method string getPageNumbers()
+ * @method string getPagingId()
+ * @method string getDBInstanceId()
+ * @method string getMaxAvgScanRows()
+ */
 class DescribeTemplatesListRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Rds", "2014-08-15", "DescribeTemplatesList", "rds", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $resourceOwnerAccount;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Rds',
+            '2014-08-15',
+            'DescribeTemplatesList',
+            'rds'
+        );
+    }
 
-	private  $minAvgConsume;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $ownerAccount;
+        return $this;
+    }
 
-	private  $maxRecordsPerPage;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $endTime;
+        return $this;
+    }
 
-	private  $startTime;
+    /**
+     * @param string $minAvgConsume
+     *
+     * @return $this
+     */
+    public function setMinAvgConsume($minAvgConsume)
+    {
+        $this->requestParameters['MinAvgConsume'] = $minAvgConsume;
+        $this->queryParameters['MinAvgConsume'] = $minAvgConsume;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	private  $maxAvgConsume;
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	private  $sortKey;
+        return $this;
+    }
 
-	private  $minAvgScanRows;
+    /**
+     * @param string $maxRecordsPerPage
+     *
+     * @return $this
+     */
+    public function setMaxRecordsPerPage($maxRecordsPerPage)
+    {
+        $this->requestParameters['MaxRecordsPerPage'] = $maxRecordsPerPage;
+        $this->queryParameters['MaxRecordsPerPage'] = $maxRecordsPerPage;
 
-	private  $sqType;
+        return $this;
+    }
 
-	private  $securityToken;
+    /**
+     * @param string $endTime
+     *
+     * @return $this
+     */
+    public function setEndTime($endTime)
+    {
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
 
-	private  $sortMethod;
+        return $this;
+    }
 
-	private  $pageNumbers;
+    /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
 
-	private  $pagingId;
+        return $this;
+    }
 
-	private  $dBInstanceId;
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	private  $maxAvgScanRows;
+        return $this;
+    }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+    /**
+     * @param string $maxAvgConsume
+     *
+     * @return $this
+     */
+    public function setMaxAvgConsume($maxAvgConsume)
+    {
+        $this->requestParameters['MaxAvgConsume'] = $maxAvgConsume;
+        $this->queryParameters['MaxAvgConsume'] = $maxAvgConsume;
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param string $sortKey
+     *
+     * @return $this
+     */
+    public function setSortKey($sortKey)
+    {
+        $this->requestParameters['SortKey'] = $sortKey;
+        $this->queryParameters['SortKey'] = $sortKey;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function getMinAvgConsume() {
-		return $this->minAvgConsume;
-	}
+    /**
+     * @param string $minAvgScanRows
+     *
+     * @return $this
+     */
+    public function setMinAvgScanRows($minAvgScanRows)
+    {
+        $this->requestParameters['MinAvgScanRows'] = $minAvgScanRows;
+        $this->queryParameters['MinAvgScanRows'] = $minAvgScanRows;
 
-	public function setMinAvgConsume($minAvgConsume) {
-		$this->minAvgConsume = $minAvgConsume;
-		$this->queryParameters["MinAvgConsume"]=$minAvgConsume;
-	}
+        return $this;
+    }
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+    /**
+     * @param string $sqType
+     *
+     * @return $this
+     */
+    public function setSqType($sqType)
+    {
+        $this->requestParameters['SqType'] = $sqType;
+        $this->queryParameters['SqType'] = $sqType;
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
+        return $this;
+    }
 
-	public function getMaxRecordsPerPage() {
-		return $this->maxRecordsPerPage;
-	}
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
-	public function setMaxRecordsPerPage($maxRecordsPerPage) {
-		$this->maxRecordsPerPage = $maxRecordsPerPage;
-		$this->queryParameters["MaxRecordsPerPage"]=$maxRecordsPerPage;
-	}
+        return $this;
+    }
 
-	public function getEndTime() {
-		return $this->endTime;
-	}
+    /**
+     * @param string $sortMethod
+     *
+     * @return $this
+     */
+    public function setSortMethod($sortMethod)
+    {
+        $this->requestParameters['SortMethod'] = $sortMethod;
+        $this->queryParameters['SortMethod'] = $sortMethod;
 
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
+        return $this;
+    }
 
-	public function getStartTime() {
-		return $this->startTime;
-	}
+    /**
+     * @param string $pageNumbers
+     *
+     * @return $this
+     */
+    public function setPageNumbers($pageNumbers)
+    {
+        $this->requestParameters['PageNumbers'] = $pageNumbers;
+        $this->queryParameters['PageNumbers'] = $pageNumbers;
 
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
+        return $this;
+    }
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+    /**
+     * @param string $pagingId
+     *
+     * @return $this
+     */
+    public function setPagingId($pagingId)
+    {
+        $this->requestParameters['PagingId'] = $pagingId;
+        $this->queryParameters['PagingId'] = $pagingId;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+        return $this;
+    }
 
-	public function getMaxAvgConsume() {
-		return $this->maxAvgConsume;
-	}
+    /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
 
-	public function setMaxAvgConsume($maxAvgConsume) {
-		$this->maxAvgConsume = $maxAvgConsume;
-		$this->queryParameters["MaxAvgConsume"]=$maxAvgConsume;
-	}
+        return $this;
+    }
 
-	public function getSortKey() {
-		return $this->sortKey;
-	}
+    /**
+     * @param string $maxAvgScanRows
+     *
+     * @return $this
+     */
+    public function setMaxAvgScanRows($maxAvgScanRows)
+    {
+        $this->requestParameters['MaxAvgScanRows'] = $maxAvgScanRows;
+        $this->queryParameters['MaxAvgScanRows'] = $maxAvgScanRows;
 
-	public function setSortKey($sortKey) {
-		$this->sortKey = $sortKey;
-		$this->queryParameters["SortKey"]=$sortKey;
-	}
-
-	public function getMinAvgScanRows() {
-		return $this->minAvgScanRows;
-	}
-
-	public function setMinAvgScanRows($minAvgScanRows) {
-		$this->minAvgScanRows = $minAvgScanRows;
-		$this->queryParameters["MinAvgScanRows"]=$minAvgScanRows;
-	}
-
-	public function getSqType() {
-		return $this->sqType;
-	}
-
-	public function setSqType($sqType) {
-		$this->sqType = $sqType;
-		$this->queryParameters["SqType"]=$sqType;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
-
-	public function getSortMethod() {
-		return $this->sortMethod;
-	}
-
-	public function setSortMethod($sortMethod) {
-		$this->sortMethod = $sortMethod;
-		$this->queryParameters["SortMethod"]=$sortMethod;
-	}
-
-	public function getPageNumbers() {
-		return $this->pageNumbers;
-	}
-
-	public function setPageNumbers($pageNumbers) {
-		$this->pageNumbers = $pageNumbers;
-		$this->queryParameters["PageNumbers"]=$pageNumbers;
-	}
-
-	public function getPagingId() {
-		return $this->pagingId;
-	}
-
-	public function setPagingId($pagingId) {
-		$this->pagingId = $pagingId;
-		$this->queryParameters["PagingId"]=$pagingId;
-	}
-
-	public function getDBInstanceId() {
-		return $this->dBInstanceId;
-	}
-
-	public function setDBInstanceId($dBInstanceId) {
-		$this->dBInstanceId = $dBInstanceId;
-		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
-	}
-
-	public function getMaxAvgScanRows() {
-		return $this->maxAvgScanRows;
-	}
-
-	public function setMaxAvgScanRows($maxAvgScanRows) {
-		$this->maxAvgScanRows = $maxAvgScanRows;
-		$this->queryParameters["MaxAvgScanRows"]=$maxAvgScanRows;
-	}
-	
+        return $this;
+    }
 }

@@ -1,151 +1,183 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Rds\Request\V20140815;
 
+/**
+ * Request of CreateMigrateTask
+ *
+ * @method string getResourceOwnerId()
+ * @method string getMigrateTaskId()
+ * @method string getResourceOwnerAccount()
+ * @method string getIsOnlineDB()
+ * @method string getOwnerId()
+ * @method string getOssObjectPositions()
+ * @method string getOSSUrls()
+ * @method string getDBName()
+ * @method string getDBInstanceId()
+ * @method string getBackupMode()
+ * @method string getCheckDBMode()
+ */
 class CreateMigrateTaskRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Rds", "2014-08-15", "CreateMigrateTask", "rds", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $migrateTaskId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Rds',
+            '2014-08-15',
+            'CreateMigrateTask',
+            'rds'
+        );
+    }
 
-	private  $resourceOwnerAccount;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $isOnlineDB;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $migrateTaskId
+     *
+     * @return $this
+     */
+    public function setMigrateTaskId($migrateTaskId)
+    {
+        $this->requestParameters['MigrateTaskId'] = $migrateTaskId;
+        $this->queryParameters['MigrateTaskId'] = $migrateTaskId;
 
-	private  $ossObjectPositions;
+        return $this;
+    }
 
-	private  $oSSUrls;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $dBName;
+        return $this;
+    }
 
-	private  $dBInstanceId;
+    /**
+     * @param string $isOnlineDB
+     *
+     * @return $this
+     */
+    public function setIsOnlineDB($isOnlineDB)
+    {
+        $this->requestParameters['IsOnlineDB'] = $isOnlineDB;
+        $this->queryParameters['IsOnlineDB'] = $isOnlineDB;
 
-	private  $backupMode;
+        return $this;
+    }
 
-	private  $checkDBMode;
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+    /**
+     * @param string $ossObjectPositions
+     *
+     * @return $this
+     */
+    public function setOssObjectPositions($ossObjectPositions)
+    {
+        $this->requestParameters['OssObjectPositions'] = $ossObjectPositions;
+        $this->queryParameters['OssObjectPositions'] = $ossObjectPositions;
 
-	public function getMigrateTaskId() {
-		return $this->migrateTaskId;
-	}
+        return $this;
+    }
 
-	public function setMigrateTaskId($migrateTaskId) {
-		$this->migrateTaskId = $migrateTaskId;
-		$this->queryParameters["MigrateTaskId"]=$migrateTaskId;
-	}
+    /**
+     * @param string $oSSUrls
+     *
+     * @return $this
+     */
+    public function setOSSUrls($oSSUrls)
+    {
+        $this->requestParameters['OSSUrls'] = $oSSUrls;
+        $this->queryParameters['OSSUrls'] = $oSSUrls;
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+    /**
+     * @param string $dBName
+     *
+     * @return $this
+     */
+    public function setDBName($dBName)
+    {
+        $this->requestParameters['DBName'] = $dBName;
+        $this->queryParameters['DBName'] = $dBName;
 
-	public function getIsOnlineDB() {
-		return $this->isOnlineDB;
-	}
+        return $this;
+    }
 
-	public function setIsOnlineDB($isOnlineDB) {
-		$this->isOnlineDB = $isOnlineDB;
-		$this->queryParameters["IsOnlineDB"]=$isOnlineDB;
-	}
+    /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+        return $this;
+    }
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+    /**
+     * @param string $backupMode
+     *
+     * @return $this
+     */
+    public function setBackupMode($backupMode)
+    {
+        $this->requestParameters['BackupMode'] = $backupMode;
+        $this->queryParameters['BackupMode'] = $backupMode;
 
-	public function getOssObjectPositions() {
-		return $this->ossObjectPositions;
-	}
+        return $this;
+    }
 
-	public function setOssObjectPositions($ossObjectPositions) {
-		$this->ossObjectPositions = $ossObjectPositions;
-		$this->queryParameters["OssObjectPositions"]=$ossObjectPositions;
-	}
+    /**
+     * @param string $checkDBMode
+     *
+     * @return $this
+     */
+    public function setCheckDBMode($checkDBMode)
+    {
+        $this->requestParameters['CheckDBMode'] = $checkDBMode;
+        $this->queryParameters['CheckDBMode'] = $checkDBMode;
 
-	public function getOSSUrls() {
-		return $this->oSSUrls;
-	}
-
-	public function setOSSUrls($oSSUrls) {
-		$this->oSSUrls = $oSSUrls;
-		$this->queryParameters["OSSUrls"]=$oSSUrls;
-	}
-
-	public function getDBName() {
-		return $this->dBName;
-	}
-
-	public function setDBName($dBName) {
-		$this->dBName = $dBName;
-		$this->queryParameters["DBName"]=$dBName;
-	}
-
-	public function getDBInstanceId() {
-		return $this->dBInstanceId;
-	}
-
-	public function setDBInstanceId($dBInstanceId) {
-		$this->dBInstanceId = $dBInstanceId;
-		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
-	}
-
-	public function getBackupMode() {
-		return $this->backupMode;
-	}
-
-	public function setBackupMode($backupMode) {
-		$this->backupMode = $backupMode;
-		$this->queryParameters["BackupMode"]=$backupMode;
-	}
-
-	public function getCheckDBMode() {
-		return $this->checkDBMode;
-	}
-
-	public function setCheckDBMode($checkDBMode) {
-		$this->checkDBMode = $checkDBMode;
-		$this->queryParameters["CheckDBMode"]=$checkDBMode;
-	}
-	
+        return $this;
+    }
 }

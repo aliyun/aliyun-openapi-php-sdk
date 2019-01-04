@@ -3,15 +3,16 @@
 namespace Rds\Request\V20140815;
 
 /**
- * Request of CalculateDBInstanceWeight
+ * Request of DescribeProxyFunctionSupport
  *
  * @method string getResourceOwnerId()
+ * @method string getSecurityToken()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getDBInstanceId()
  * @method string getOwnerId()
  */
-class CalculateDBInstanceWeightRequest extends \RpcAcsRequest
+class DescribeProxyFunctionSupportRequest extends \RpcAcsRequest
 {
 
     /**
@@ -27,7 +28,7 @@ class CalculateDBInstanceWeightRequest extends \RpcAcsRequest
         parent::__construct(
             'Rds',
             '2014-08-15',
-            'CalculateDBInstanceWeight',
+            'DescribeProxyFunctionSupport',
             'rds'
         );
     }
@@ -41,6 +42,19 @@ class CalculateDBInstanceWeightRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

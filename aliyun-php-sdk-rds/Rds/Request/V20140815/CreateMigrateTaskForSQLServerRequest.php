@@ -1,118 +1,141 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Rds\Request\V20140815;
 
+/**
+ * Request of CreateMigrateTaskForSQLServer
+ *
+ * @method string getResourceOwnerId()
+ * @method string getTaskType()
+ * @method string getDBName()
+ * @method string getResourceOwnerAccount()
+ * @method string getIsOnlineDB()
+ * @method string getDBInstanceId()
+ * @method string getOwnerId()
+ * @method string getOSSUrls()
+ */
 class CreateMigrateTaskForSQLServerRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Rds", "2014-08-15", "CreateMigrateTaskForSQLServer", "rds", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $taskType;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Rds',
+            '2014-08-15',
+            'CreateMigrateTaskForSQLServer',
+            'rds'
+        );
+    }
 
-	private  $dBName;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $resourceOwnerAccount;
+        return $this;
+    }
 
-	private  $isOnlineDB;
+    /**
+     * @param string $taskType
+     *
+     * @return $this
+     */
+    public function setTaskType($taskType)
+    {
+        $this->requestParameters['TaskType'] = $taskType;
+        $this->queryParameters['TaskType'] = $taskType;
 
-	private  $dBInstanceId;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $dBName
+     *
+     * @return $this
+     */
+    public function setDBName($dBName)
+    {
+        $this->requestParameters['DBName'] = $dBName;
+        $this->queryParameters['DBName'] = $dBName;
 
-	private  $oSSUrls;
+        return $this;
+    }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getTaskType() {
-		return $this->taskType;
-	}
+    /**
+     * @param string $isOnlineDB
+     *
+     * @return $this
+     */
+    public function setIsOnlineDB($isOnlineDB)
+    {
+        $this->requestParameters['IsOnlineDB'] = $isOnlineDB;
+        $this->queryParameters['IsOnlineDB'] = $isOnlineDB;
 
-	public function setTaskType($taskType) {
-		$this->taskType = $taskType;
-		$this->queryParameters["TaskType"]=$taskType;
-	}
+        return $this;
+    }
 
-	public function getDBName() {
-		return $this->dBName;
-	}
+    /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
 
-	public function setDBName($dBName) {
-		$this->dBName = $dBName;
-		$this->queryParameters["DBName"]=$dBName;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function getIsOnlineDB() {
-		return $this->isOnlineDB;
-	}
+    /**
+     * @param string $oSSUrls
+     *
+     * @return $this
+     */
+    public function setOSSUrls($oSSUrls)
+    {
+        $this->requestParameters['OSSUrls'] = $oSSUrls;
+        $this->queryParameters['OSSUrls'] = $oSSUrls;
 
-	public function setIsOnlineDB($isOnlineDB) {
-		$this->isOnlineDB = $isOnlineDB;
-		$this->queryParameters["IsOnlineDB"]=$isOnlineDB;
-	}
-
-	public function getDBInstanceId() {
-		return $this->dBInstanceId;
-	}
-
-	public function setDBInstanceId($dBInstanceId) {
-		$this->dBInstanceId = $dBInstanceId;
-		$this->queryParameters["DBInstanceId"]=$dBInstanceId;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getOSSUrls() {
-		return $this->oSSUrls;
-	}
-
-	public function setOSSUrls($oSSUrls) {
-		$this->oSSUrls = $oSSUrls;
-		$this->queryParameters["OSSUrls"]=$oSSUrls;
-	}
-	
+        return $this;
+    }
 }
