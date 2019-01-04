@@ -4,3 +4,4 @@
 .idea*
 
 aliyun-php-sdk-test/
+/aliyun-openapi-php-sdk.iml

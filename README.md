@@ -1,5 +1,9 @@
 # Open API SDK for php developers
 
+## Composer
+
+We have released a new SDK that supports Composer and gradually stop maintenance this version. Welcome to the new SDK: [**Alibaba Cloud SDK for PHP**](https://github.com/aliyun/openapi-sdk-php)
+
 ## Requirements
 
 - PHP 5.3+
