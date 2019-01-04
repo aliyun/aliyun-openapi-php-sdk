@@ -1,85 +1,99 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace NAS\Request\V20170626;
 
+/**
+ * Request of CreateAccessRule
+ *
+ * @method string getRWAccessType()
+ * @method string getSourceCidrIp()
+ * @method string getUserAccessType()
+ * @method string getPriority()
+ * @method string getAccessGroupName()
+ */
 class CreateAccessRuleRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("NAS", "2017-06-26", "CreateAccessRule", "nas", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $rWAccessType;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $sourceCidrIp;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'NAS',
+            '2017-06-26',
+            'CreateAccessRule',
+            'nas'
+        );
+    }
 
-	private  $userAccessType;
+    /**
+     * @param string $rWAccessType
+     *
+     * @return $this
+     */
+    public function setRWAccessType($rWAccessType)
+    {
+        $this->requestParameters['RWAccessType'] = $rWAccessType;
+        $this->queryParameters['RWAccessType'] = $rWAccessType;
 
-	private  $priority;
+        return $this;
+    }
 
-	private  $accessGroupName;
+    /**
+     * @param string $sourceCidrIp
+     *
+     * @return $this
+     */
+    public function setSourceCidrIp($sourceCidrIp)
+    {
+        $this->requestParameters['SourceCidrIp'] = $sourceCidrIp;
+        $this->queryParameters['SourceCidrIp'] = $sourceCidrIp;
 
-	public function getRWAccessType() {
-		return $this->rWAccessType;
-	}
+        return $this;
+    }
 
-	public function setRWAccessType($rWAccessType) {
-		$this->rWAccessType = $rWAccessType;
-		$this->queryParameters["RWAccessType"]=$rWAccessType;
-	}
+    /**
+     * @param string $userAccessType
+     *
+     * @return $this
+     */
+    public function setUserAccessType($userAccessType)
+    {
+        $this->requestParameters['UserAccessType'] = $userAccessType;
+        $this->queryParameters['UserAccessType'] = $userAccessType;
 
-	public function getSourceCidrIp() {
-		return $this->sourceCidrIp;
-	}
+        return $this;
+    }
 
-	public function setSourceCidrIp($sourceCidrIp) {
-		$this->sourceCidrIp = $sourceCidrIp;
-		$this->queryParameters["SourceCidrIp"]=$sourceCidrIp;
-	}
+    /**
+     * @param string $priority
+     *
+     * @return $this
+     */
+    public function setPriority($priority)
+    {
+        $this->requestParameters['Priority'] = $priority;
+        $this->queryParameters['Priority'] = $priority;
 
-	public function getUserAccessType() {
-		return $this->userAccessType;
-	}
+        return $this;
+    }
 
-	public function setUserAccessType($userAccessType) {
-		$this->userAccessType = $userAccessType;
-		$this->queryParameters["UserAccessType"]=$userAccessType;
-	}
+    /**
+     * @param string $accessGroupName
+     *
+     * @return $this
+     */
+    public function setAccessGroupName($accessGroupName)
+    {
+        $this->requestParameters['AccessGroupName'] = $accessGroupName;
+        $this->queryParameters['AccessGroupName'] = $accessGroupName;
 
-	public function getPriority() {
-		return $this->priority;
-	}
-
-	public function setPriority($priority) {
-		$this->priority = $priority;
-		$this->queryParameters["Priority"]=$priority;
-	}
-
-	public function getAccessGroupName() {
-		return $this->accessGroupName;
-	}
-
-	public function setAccessGroupName($accessGroupName) {
-		$this->accessGroupName = $accessGroupName;
-		$this->queryParameters["AccessGroupName"]=$accessGroupName;
-	}
-	
+        return $this;
+    }
 }

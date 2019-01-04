@@ -1,74 +1,85 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace NAS\Request\V20170626;
 
+/**
+ * Request of DescribeAccessRules
+ *
+ * @method string getPageSize()
+ * @method string getAccessGroupName()
+ * @method string getAccessRuleId()
+ * @method string getPageNumber()
+ */
 class DescribeAccessRulesRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("NAS", "2017-06-26", "DescribeAccessRules", "nas", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $pageSize;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $accessGroupName;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'NAS',
+            '2017-06-26',
+            'DescribeAccessRules',
+            'nas'
+        );
+    }
 
-	private  $accessRuleId;
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	private  $pageNumber;
+        return $this;
+    }
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
+    /**
+     * @param string $accessGroupName
+     *
+     * @return $this
+     */
+    public function setAccessGroupName($accessGroupName)
+    {
+        $this->requestParameters['AccessGroupName'] = $accessGroupName;
+        $this->queryParameters['AccessGroupName'] = $accessGroupName;
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
+        return $this;
+    }
 
-	public function getAccessGroupName() {
-		return $this->accessGroupName;
-	}
+    /**
+     * @param string $accessRuleId
+     *
+     * @return $this
+     */
+    public function setAccessRuleId($accessRuleId)
+    {
+        $this->requestParameters['AccessRuleId'] = $accessRuleId;
+        $this->queryParameters['AccessRuleId'] = $accessRuleId;
 
-	public function setAccessGroupName($accessGroupName) {
-		$this->accessGroupName = $accessGroupName;
-		$this->queryParameters["AccessGroupName"]=$accessGroupName;
-	}
+        return $this;
+    }
 
-	public function getAccessRuleId() {
-		return $this->accessRuleId;
-	}
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
-	public function setAccessRuleId($accessRuleId) {
-		$this->accessRuleId = $accessRuleId;
-		$this->queryParameters["AccessRuleId"]=$accessRuleId;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-	
+        return $this;
+    }
 }

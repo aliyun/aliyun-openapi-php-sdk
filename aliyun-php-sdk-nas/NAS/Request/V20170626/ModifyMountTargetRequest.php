@@ -1,74 +1,85 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace NAS\Request\V20170626;
 
+/**
+ * Request of ModifyMountTarget
+ *
+ * @method string getMountTargetDomain()
+ * @method string getAccessGroupName()
+ * @method string getFileSystemId()
+ * @method string getStatus()
+ */
 class ModifyMountTargetRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("NAS", "2017-06-26", "ModifyMountTarget", "nas", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $mountTargetDomain;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $accessGroupName;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'NAS',
+            '2017-06-26',
+            'ModifyMountTarget',
+            'nas'
+        );
+    }
 
-	private  $fileSystemId;
+    /**
+     * @param string $mountTargetDomain
+     *
+     * @return $this
+     */
+    public function setMountTargetDomain($mountTargetDomain)
+    {
+        $this->requestParameters['MountTargetDomain'] = $mountTargetDomain;
+        $this->queryParameters['MountTargetDomain'] = $mountTargetDomain;
 
-	private  $status;
+        return $this;
+    }
 
-	public function getMountTargetDomain() {
-		return $this->mountTargetDomain;
-	}
+    /**
+     * @param string $accessGroupName
+     *
+     * @return $this
+     */
+    public function setAccessGroupName($accessGroupName)
+    {
+        $this->requestParameters['AccessGroupName'] = $accessGroupName;
+        $this->queryParameters['AccessGroupName'] = $accessGroupName;
 
-	public function setMountTargetDomain($mountTargetDomain) {
-		$this->mountTargetDomain = $mountTargetDomain;
-		$this->queryParameters["MountTargetDomain"]=$mountTargetDomain;
-	}
+        return $this;
+    }
 
-	public function getAccessGroupName() {
-		return $this->accessGroupName;
-	}
+    /**
+     * @param string $fileSystemId
+     *
+     * @return $this
+     */
+    public function setFileSystemId($fileSystemId)
+    {
+        $this->requestParameters['FileSystemId'] = $fileSystemId;
+        $this->queryParameters['FileSystemId'] = $fileSystemId;
 
-	public function setAccessGroupName($accessGroupName) {
-		$this->accessGroupName = $accessGroupName;
-		$this->queryParameters["AccessGroupName"]=$accessGroupName;
-	}
+        return $this;
+    }
 
-	public function getFileSystemId() {
-		return $this->fileSystemId;
-	}
+    /**
+     * @param string $status
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->requestParameters['Status'] = $status;
+        $this->queryParameters['Status'] = $status;
 
-	public function setFileSystemId($fileSystemId) {
-		$this->fileSystemId = $fileSystemId;
-		$this->queryParameters["FileSystemId"]=$fileSystemId;
-	}
-
-	public function getStatus() {
-		return $this->status;
-	}
-
-	public function setStatus($status) {
-		$this->status = $status;
-		$this->queryParameters["Status"]=$status;
-	}
-	
+        return $this;
+    }
 }

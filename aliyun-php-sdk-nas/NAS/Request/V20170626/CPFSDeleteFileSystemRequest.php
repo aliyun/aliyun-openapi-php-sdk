@@ -3,11 +3,11 @@
 namespace NAS\Request\V20170626;
 
 /**
- * Request of DeleteAccessGroup
+ * Request of CPFSDeleteFileSystem
  *
- * @method string getAccessGroupName()
+ * @method string getFsId()
  */
-class DeleteAccessGroupRequest extends \RpcAcsRequest
+class CPFSDeleteFileSystemRequest extends \RpcAcsRequest
 {
 
     /**
@@ -23,20 +23,20 @@ class DeleteAccessGroupRequest extends \RpcAcsRequest
         parent::__construct(
             'NAS',
             '2017-06-26',
-            'DeleteAccessGroup',
+            'CPFSDeleteFileSystem',
             'nas'
         );
     }
 
     /**
-     * @param string $accessGroupName
+     * @param string $fsId
      *
      * @return $this
      */
-    public function setAccessGroupName($accessGroupName)
+    public function setFsId($fsId)
     {
-        $this->requestParameters['AccessGroupName'] = $accessGroupName;
-        $this->queryParameters['AccessGroupName'] = $accessGroupName;
+        $this->requestParameters['FsId'] = $fsId;
+        $this->queryParameters['FsId'] = $fsId;
 
         return $this;
     }

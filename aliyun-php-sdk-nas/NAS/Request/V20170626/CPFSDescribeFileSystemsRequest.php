@@ -3,12 +3,13 @@
 namespace NAS\Request\V20170626;
 
 /**
- * Request of DescribeRegions
+ * Request of CPFSDescribeFileSystems
  *
+ * @method string getFsId()
  * @method string getPageSize()
  * @method string getPageNumber()
  */
-class DescribeRegionsRequest extends \RpcAcsRequest
+class CPFSDescribeFileSystemsRequest extends \RpcAcsRequest
 {
 
     /**
@@ -24,9 +25,22 @@ class DescribeRegionsRequest extends \RpcAcsRequest
         parent::__construct(
             'NAS',
             '2017-06-26',
-            'DescribeRegions',
+            'CPFSDescribeFileSystems',
             'nas'
         );
+    }
+
+    /**
+     * @param string $fsId
+     *
+     * @return $this
+     */
+    public function setFsId($fsId)
+    {
+        $this->requestParameters['FsId'] = $fsId;
+        $this->queryParameters['FsId'] = $fsId;
+
+        return $this;
     }
 
     /**

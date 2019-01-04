@@ -1,96 +1,113 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace NAS\Request\V20170626;
 
+/**
+ * Request of ModifyAccessRule
+ *
+ * @method string getRWAccessType()
+ * @method string getSourceCidrIp()
+ * @method string getUserAccessType()
+ * @method string getPriority()
+ * @method string getAccessGroupName()
+ * @method string getAccessRuleId()
+ */
 class ModifyAccessRuleRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("NAS", "2017-06-26", "ModifyAccessRule", "nas", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $rWAccessType;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $sourceCidrIp;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'NAS',
+            '2017-06-26',
+            'ModifyAccessRule',
+            'nas'
+        );
+    }
 
-	private  $userAccessType;
+    /**
+     * @param string $rWAccessType
+     *
+     * @return $this
+     */
+    public function setRWAccessType($rWAccessType)
+    {
+        $this->requestParameters['RWAccessType'] = $rWAccessType;
+        $this->queryParameters['RWAccessType'] = $rWAccessType;
 
-	private  $priority;
+        return $this;
+    }
 
-	private  $accessGroupName;
+    /**
+     * @param string $sourceCidrIp
+     *
+     * @return $this
+     */
+    public function setSourceCidrIp($sourceCidrIp)
+    {
+        $this->requestParameters['SourceCidrIp'] = $sourceCidrIp;
+        $this->queryParameters['SourceCidrIp'] = $sourceCidrIp;
 
-	private  $accessRuleId;
+        return $this;
+    }
 
-	public function getRWAccessType() {
-		return $this->rWAccessType;
-	}
+    /**
+     * @param string $userAccessType
+     *
+     * @return $this
+     */
+    public function setUserAccessType($userAccessType)
+    {
+        $this->requestParameters['UserAccessType'] = $userAccessType;
+        $this->queryParameters['UserAccessType'] = $userAccessType;
 
-	public function setRWAccessType($rWAccessType) {
-		$this->rWAccessType = $rWAccessType;
-		$this->queryParameters["RWAccessType"]=$rWAccessType;
-	}
+        return $this;
+    }
 
-	public function getSourceCidrIp() {
-		return $this->sourceCidrIp;
-	}
+    /**
+     * @param string $priority
+     *
+     * @return $this
+     */
+    public function setPriority($priority)
+    {
+        $this->requestParameters['Priority'] = $priority;
+        $this->queryParameters['Priority'] = $priority;
 
-	public function setSourceCidrIp($sourceCidrIp) {
-		$this->sourceCidrIp = $sourceCidrIp;
-		$this->queryParameters["SourceCidrIp"]=$sourceCidrIp;
-	}
+        return $this;
+    }
 
-	public function getUserAccessType() {
-		return $this->userAccessType;
-	}
+    /**
+     * @param string $accessGroupName
+     *
+     * @return $this
+     */
+    public function setAccessGroupName($accessGroupName)
+    {
+        $this->requestParameters['AccessGroupName'] = $accessGroupName;
+        $this->queryParameters['AccessGroupName'] = $accessGroupName;
 
-	public function setUserAccessType($userAccessType) {
-		$this->userAccessType = $userAccessType;
-		$this->queryParameters["UserAccessType"]=$userAccessType;
-	}
+        return $this;
+    }
 
-	public function getPriority() {
-		return $this->priority;
-	}
+    /**
+     * @param string $accessRuleId
+     *
+     * @return $this
+     */
+    public function setAccessRuleId($accessRuleId)
+    {
+        $this->requestParameters['AccessRuleId'] = $accessRuleId;
+        $this->queryParameters['AccessRuleId'] = $accessRuleId;
 
-	public function setPriority($priority) {
-		$this->priority = $priority;
-		$this->queryParameters["Priority"]=$priority;
-	}
-
-	public function getAccessGroupName() {
-		return $this->accessGroupName;
-	}
-
-	public function setAccessGroupName($accessGroupName) {
-		$this->accessGroupName = $accessGroupName;
-		$this->queryParameters["AccessGroupName"]=$accessGroupName;
-	}
-
-	public function getAccessRuleId() {
-		return $this->accessRuleId;
-	}
-
-	public function setAccessRuleId($accessRuleId) {
-		$this->accessRuleId = $accessRuleId;
-		$this->queryParameters["AccessRuleId"]=$accessRuleId;
-	}
-	
+        return $this;
+    }
 }
