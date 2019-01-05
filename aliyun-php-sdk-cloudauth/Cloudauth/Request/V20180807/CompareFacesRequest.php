@@ -1,118 +1,97 @@
 <?php
-
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
 namespace Cloudauth\Request\V20180807;
 
-/**
- * Request of CompareFaces
- *
- * @method string getSourceImageType()
- * @method string getResourceOwnerId()
- * @method string getSourceIp()
- * @method string getTargetImageType()
- * @method string getSourceImageValue()
- * @method string getTargetImageValue()
- */
 class CompareFacesRequest extends \RpcAcsRequest
 {
+	function  __construct()
+	{
+		parent::__construct("Cloudauth", "2018-08-07", "CompareFaces", "cloudauth", "openAPI");
+		$this->setProtocol("https");
+		$this->setMethod("POST");
+	}
 
-    /**
-     * @var string
-     */
-    protected $requestScheme = 'https';
+	private  $sourceImageType;
 
-    /**
-     * @var string
-     */
-    protected $method = 'POST';
+	private  $resourceOwnerId;
 
-    /**
-     * Class constructor.
-     */
-    public function __construct()
-    {
-        parent::__construct(
-            'Cloudauth',
-            '2018-08-07',
-            'CompareFaces',
-            'cloudauth'
-        );
-    }
+	private  $sourceIp;
 
-    /**
-     * @param string $sourceImageType
-     *
-     * @return $this
-     */
-    public function setSourceImageType($sourceImageType)
-    {
-        $this->requestParameters['SourceImageType'] = $sourceImageType;
-        $this->queryParameters['SourceImageType'] = $sourceImageType;
+	private  $targetImageType;
 
-        return $this;
-    }
+	private  $sourceImageValue;
 
-    /**
-     * @param string $resourceOwnerId
-     *
-     * @return $this
-     */
-    public function setResourceOwnerId($resourceOwnerId)
-    {
-        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
-        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+	private  $targetImageValue;
 
-        return $this;
-    }
+	public function getSourceImageType() {
+		return $this->sourceImageType;
+	}
 
-    /**
-     * @param string $sourceIp
-     *
-     * @return $this
-     */
-    public function setSourceIp($sourceIp)
-    {
-        $this->requestParameters['SourceIp'] = $sourceIp;
-        $this->queryParameters['SourceIp'] = $sourceIp;
+	public function setSourceImageType($sourceImageType) {
+		$this->sourceImageType = $sourceImageType;
+		$this->queryParameters["SourceImageType"]=$sourceImageType;
+	}
 
-        return $this;
-    }
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
+	}
 
-    /**
-     * @param string $targetImageType
-     *
-     * @return $this
-     */
-    public function setTargetImageType($targetImageType)
-    {
-        $this->requestParameters['TargetImageType'] = $targetImageType;
-        $this->queryParameters['TargetImageType'] = $targetImageType;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
 
-        return $this;
-    }
+	public function getSourceIp() {
+		return $this->sourceIp;
+	}
 
-    /**
-     * @param string $sourceImageValue
-     *
-     * @return $this
-     */
-    public function setSourceImageValue($sourceImageValue)
-    {
-        $this->requestParameters['SourceImageValue'] = $sourceImageValue;
-        $this->queryParameters['SourceImageValue'] = $sourceImageValue;
+	public function setSourceIp($sourceIp) {
+		$this->sourceIp = $sourceIp;
+		$this->queryParameters["SourceIp"]=$sourceIp;
+	}
 
-        return $this;
-    }
+	public function getTargetImageType() {
+		return $this->targetImageType;
+	}
 
-    /**
-     * @param string $targetImageValue
-     *
-     * @return $this
-     */
-    public function setTargetImageValue($targetImageValue)
-    {
-        $this->requestParameters['TargetImageValue'] = $targetImageValue;
-        $this->queryParameters['TargetImageValue'] = $targetImageValue;
+	public function setTargetImageType($targetImageType) {
+		$this->targetImageType = $targetImageType;
+		$this->queryParameters["TargetImageType"]=$targetImageType;
+	}
 
-        return $this;
-    }
+	public function getSourceImageValue() {
+		return $this->sourceImageValue;
+	}
+
+	public function setSourceImageValue($sourceImageValue) {
+		$this->sourceImageValue = $sourceImageValue;
+		$this->queryParameters["SourceImageValue"]=$sourceImageValue;
+	}
+
+	public function getTargetImageValue() {
+		return $this->targetImageValue;
+	}
+
+	public function setTargetImageValue($targetImageValue) {
+		$this->targetImageValue = $targetImageValue;
+		$this->queryParameters["TargetImageValue"]=$targetImageValue;
+	}
+	
 }

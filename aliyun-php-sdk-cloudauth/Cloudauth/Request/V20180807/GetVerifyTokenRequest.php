@@ -1,132 +1,108 @@
 <?php
-
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
 namespace Cloudauth\Request\V20180807;
 
-/**
- * Request of GetVerifyToken
- *
- * @method string getUserData()
- * @method string getResourceOwnerId()
- * @method string getBiz()
- * @method string getSourceIp()
- * @method string getBinding()
- * @method string getVerifyConfigs()
- * @method string getTicketId()
- */
 class GetVerifyTokenRequest extends \RpcAcsRequest
 {
+	function  __construct()
+	{
+		parent::__construct("Cloudauth", "2018-08-07", "GetVerifyToken", "cloudauth", "openAPI");
+		$this->setProtocol("https");
+		$this->setMethod("POST");
+	}
 
-    /**
-     * @var string
-     */
-    protected $requestScheme = 'https';
+	private  $userData;
 
-    /**
-     * @var string
-     */
-    protected $method = 'POST';
+	private  $resourceOwnerId;
 
-    /**
-     * Class constructor.
-     */
-    public function __construct()
-    {
-        parent::__construct(
-            'Cloudauth',
-            '2018-08-07',
-            'GetVerifyToken',
-            'cloudauth'
-        );
-    }
+	private  $biz;
 
-    /**
-     * @param string $userData
-     *
-     * @return $this
-     */
-    public function setUserData($userData)
-    {
-        $this->requestParameters['UserData'] = $userData;
-        $this->queryParameters['UserData'] = $userData;
+	private  $sourceIp;
 
-        return $this;
-    }
+	private  $binding;
 
-    /**
-     * @param string $resourceOwnerId
-     *
-     * @return $this
-     */
-    public function setResourceOwnerId($resourceOwnerId)
-    {
-        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
-        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+	private  $verifyConfigs;
 
-        return $this;
-    }
+	private  $ticketId;
 
-    /**
-     * @param string $biz
-     *
-     * @return $this
-     */
-    public function setBiz($biz)
-    {
-        $this->requestParameters['Biz'] = $biz;
-        $this->queryParameters['Biz'] = $biz;
+	public function getUserData() {
+		return $this->userData;
+	}
 
-        return $this;
-    }
+	public function setUserData($userData) {
+		$this->userData = $userData;
+		$this->queryParameters["UserData"]=$userData;
+	}
 
-    /**
-     * @param string $sourceIp
-     *
-     * @return $this
-     */
-    public function setSourceIp($sourceIp)
-    {
-        $this->requestParameters['SourceIp'] = $sourceIp;
-        $this->queryParameters['SourceIp'] = $sourceIp;
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
+	}
 
-        return $this;
-    }
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
 
-    /**
-     * @param string $binding
-     *
-     * @return $this
-     */
-    public function setBinding($binding)
-    {
-        $this->requestParameters['Binding'] = $binding;
-        $this->queryParameters['Binding'] = $binding;
+	public function getBiz() {
+		return $this->biz;
+	}
 
-        return $this;
-    }
+	public function setBiz($biz) {
+		$this->biz = $biz;
+		$this->queryParameters["Biz"]=$biz;
+	}
 
-    /**
-     * @param string $verifyConfigs
-     *
-     * @return $this
-     */
-    public function setVerifyConfigs($verifyConfigs)
-    {
-        $this->requestParameters['VerifyConfigs'] = $verifyConfigs;
-        $this->queryParameters['VerifyConfigs'] = $verifyConfigs;
+	public function getSourceIp() {
+		return $this->sourceIp;
+	}
 
-        return $this;
-    }
+	public function setSourceIp($sourceIp) {
+		$this->sourceIp = $sourceIp;
+		$this->queryParameters["SourceIp"]=$sourceIp;
+	}
 
-    /**
-     * @param string $ticketId
-     *
-     * @return $this
-     */
-    public function setTicketId($ticketId)
-    {
-        $this->requestParameters['TicketId'] = $ticketId;
-        $this->queryParameters['TicketId'] = $ticketId;
+	public function getBinding() {
+		return $this->binding;
+	}
 
-        return $this;
-    }
+	public function setBinding($binding) {
+		$this->binding = $binding;
+		$this->queryParameters["Binding"]=$binding;
+	}
+
+	public function getVerifyConfigs() {
+		return $this->verifyConfigs;
+	}
+
+	public function setVerifyConfigs($verifyConfigs) {
+		$this->verifyConfigs = $verifyConfigs;
+		$this->queryParameters["VerifyConfigs"]=$verifyConfigs;
+	}
+
+	public function getTicketId() {
+		return $this->ticketId;
+	}
+
+	public function setTicketId($ticketId) {
+		$this->ticketId = $ticketId;
+		$this->queryParameters["TicketId"]=$ticketId;
+	}
+	
 }

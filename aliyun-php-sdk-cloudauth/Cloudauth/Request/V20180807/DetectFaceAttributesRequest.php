@@ -1,146 +1,119 @@
 <?php
-
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
 namespace Cloudauth\Request\V20180807;
 
-/**
- * Request of DetectFaceAttributes
- *
- * @method string getMaxNumPhotosPerCategory()
- * @method string getMaxFaceNum()
- * @method string getResourceOwnerId()
- * @method string getSourceIp()
- * @method string getRetAttributes()
- * @method string getMaterialValue()
- * @method string getDontSaveDB()
- * @method string getClientTag()
- */
 class DetectFaceAttributesRequest extends \RpcAcsRequest
 {
+	function  __construct()
+	{
+		parent::__construct("Cloudauth", "2018-08-07", "DetectFaceAttributes", "cloudauth", "openAPI");
+		$this->setProtocol("https");
+		$this->setMethod("POST");
+	}
 
-    /**
-     * @var string
-     */
-    protected $requestScheme = 'https';
+	private  $maxNumPhotosPerCategory;
 
-    /**
-     * @var string
-     */
-    protected $method = 'POST';
+	private  $maxFaceNum;
 
-    /**
-     * Class constructor.
-     */
-    public function __construct()
-    {
-        parent::__construct(
-            'Cloudauth',
-            '2018-08-07',
-            'DetectFaceAttributes',
-            'cloudauth'
-        );
-    }
+	private  $resourceOwnerId;
 
-    /**
-     * @param string $maxNumPhotosPerCategory
-     *
-     * @return $this
-     */
-    public function setMaxNumPhotosPerCategory($maxNumPhotosPerCategory)
-    {
-        $this->requestParameters['MaxNumPhotosPerCategory'] = $maxNumPhotosPerCategory;
-        $this->queryParameters['MaxNumPhotosPerCategory'] = $maxNumPhotosPerCategory;
+	private  $sourceIp;
 
-        return $this;
-    }
+	private  $retAttributes;
 
-    /**
-     * @param string $maxFaceNum
-     *
-     * @return $this
-     */
-    public function setMaxFaceNum($maxFaceNum)
-    {
-        $this->requestParameters['MaxFaceNum'] = $maxFaceNum;
-        $this->queryParameters['MaxFaceNum'] = $maxFaceNum;
+	private  $materialValue;
 
-        return $this;
-    }
+	private  $dontSaveDB;
 
-    /**
-     * @param string $resourceOwnerId
-     *
-     * @return $this
-     */
-    public function setResourceOwnerId($resourceOwnerId)
-    {
-        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
-        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+	private  $clientTag;
 
-        return $this;
-    }
+	public function getMaxNumPhotosPerCategory() {
+		return $this->maxNumPhotosPerCategory;
+	}
 
-    /**
-     * @param string $sourceIp
-     *
-     * @return $this
-     */
-    public function setSourceIp($sourceIp)
-    {
-        $this->requestParameters['SourceIp'] = $sourceIp;
-        $this->queryParameters['SourceIp'] = $sourceIp;
+	public function setMaxNumPhotosPerCategory($maxNumPhotosPerCategory) {
+		$this->maxNumPhotosPerCategory = $maxNumPhotosPerCategory;
+		$this->queryParameters["MaxNumPhotosPerCategory"]=$maxNumPhotosPerCategory;
+	}
 
-        return $this;
-    }
+	public function getMaxFaceNum() {
+		return $this->maxFaceNum;
+	}
 
-    /**
-     * @param string $retAttributes
-     *
-     * @return $this
-     */
-    public function setRetAttributes($retAttributes)
-    {
-        $this->requestParameters['RetAttributes'] = $retAttributes;
-        $this->queryParameters['RetAttributes'] = $retAttributes;
+	public function setMaxFaceNum($maxFaceNum) {
+		$this->maxFaceNum = $maxFaceNum;
+		$this->queryParameters["MaxFaceNum"]=$maxFaceNum;
+	}
 
-        return $this;
-    }
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
+	}
 
-    /**
-     * @param string $materialValue
-     *
-     * @return $this
-     */
-    public function setMaterialValue($materialValue)
-    {
-        $this->requestParameters['MaterialValue'] = $materialValue;
-        $this->queryParameters['MaterialValue'] = $materialValue;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
 
-        return $this;
-    }
+	public function getSourceIp() {
+		return $this->sourceIp;
+	}
 
-    /**
-     * @param string $dontSaveDB
-     *
-     * @return $this
-     */
-    public function setDontSaveDB($dontSaveDB)
-    {
-        $this->requestParameters['DontSaveDB'] = $dontSaveDB;
-        $this->queryParameters['DontSaveDB'] = $dontSaveDB;
+	public function setSourceIp($sourceIp) {
+		$this->sourceIp = $sourceIp;
+		$this->queryParameters["SourceIp"]=$sourceIp;
+	}
 
-        return $this;
-    }
+	public function getRetAttributes() {
+		return $this->retAttributes;
+	}
 
-    /**
-     * @param string $clientTag
-     *
-     * @return $this
-     */
-    public function setClientTag($clientTag)
-    {
-        $this->requestParameters['ClientTag'] = $clientTag;
-        $this->queryParameters['ClientTag'] = $clientTag;
+	public function setRetAttributes($retAttributes) {
+		$this->retAttributes = $retAttributes;
+		$this->queryParameters["RetAttributes"]=$retAttributes;
+	}
 
-        return $this;
-    }
+	public function getMaterialValue() {
+		return $this->materialValue;
+	}
+
+	public function setMaterialValue($materialValue) {
+		$this->materialValue = $materialValue;
+		$this->queryParameters["MaterialValue"]=$materialValue;
+	}
+
+	public function getDontSaveDB() {
+		return $this->dontSaveDB;
+	}
+
+	public function setDontSaveDB($dontSaveDB) {
+		$this->dontSaveDB = $dontSaveDB;
+		$this->queryParameters["DontSaveDB"]=$dontSaveDB;
+	}
+
+	public function getClientTag() {
+		return $this->clientTag;
+	}
+
+	public function setClientTag($clientTag) {
+		$this->clientTag = $clientTag;
+		$this->queryParameters["ClientTag"]=$clientTag;
+	}
+	
 }

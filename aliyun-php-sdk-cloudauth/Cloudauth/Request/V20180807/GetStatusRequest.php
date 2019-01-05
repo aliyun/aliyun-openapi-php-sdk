@@ -1,90 +1,75 @@
 <?php
-
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
 namespace Cloudauth\Request\V20180807;
 
-/**
- * Request of GetStatus
- *
- * @method string getResourceOwnerId()
- * @method string getBiz()
- * @method string getSourceIp()
- * @method string getTicketId()
- */
 class GetStatusRequest extends \RpcAcsRequest
 {
+	function  __construct()
+	{
+		parent::__construct("Cloudauth", "2018-08-07", "GetStatus", "cloudauth", "openAPI");
+		$this->setProtocol("https");
+		$this->setMethod("POST");
+	}
 
-    /**
-     * @var string
-     */
-    protected $requestScheme = 'https';
+	private  $resourceOwnerId;
 
-    /**
-     * @var string
-     */
-    protected $method = 'POST';
+	private  $biz;
 
-    /**
-     * Class constructor.
-     */
-    public function __construct()
-    {
-        parent::__construct(
-            'Cloudauth',
-            '2018-08-07',
-            'GetStatus',
-            'cloudauth'
-        );
-    }
+	private  $sourceIp;
 
-    /**
-     * @param string $resourceOwnerId
-     *
-     * @return $this
-     */
-    public function setResourceOwnerId($resourceOwnerId)
-    {
-        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
-        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+	private  $ticketId;
 
-        return $this;
-    }
+	public function getResourceOwnerId() {
+		return $this->resourceOwnerId;
+	}
 
-    /**
-     * @param string $biz
-     *
-     * @return $this
-     */
-    public function setBiz($biz)
-    {
-        $this->requestParameters['Biz'] = $biz;
-        $this->queryParameters['Biz'] = $biz;
+	public function setResourceOwnerId($resourceOwnerId) {
+		$this->resourceOwnerId = $resourceOwnerId;
+		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
+	}
 
-        return $this;
-    }
+	public function getBiz() {
+		return $this->biz;
+	}
 
-    /**
-     * @param string $sourceIp
-     *
-     * @return $this
-     */
-    public function setSourceIp($sourceIp)
-    {
-        $this->requestParameters['SourceIp'] = $sourceIp;
-        $this->queryParameters['SourceIp'] = $sourceIp;
+	public function setBiz($biz) {
+		$this->biz = $biz;
+		$this->queryParameters["Biz"]=$biz;
+	}
 
-        return $this;
-    }
+	public function getSourceIp() {
+		return $this->sourceIp;
+	}
 
-    /**
-     * @param string $ticketId
-     *
-     * @return $this
-     */
-    public function setTicketId($ticketId)
-    {
-        $this->requestParameters['TicketId'] = $ticketId;
-        $this->queryParameters['TicketId'] = $ticketId;
+	public function setSourceIp($sourceIp) {
+		$this->sourceIp = $sourceIp;
+		$this->queryParameters["SourceIp"]=$sourceIp;
+	}
 
-        return $this;
-    }
+	public function getTicketId() {
+		return $this->ticketId;
+	}
+
+	public function setTicketId($ticketId) {
+		$this->ticketId = $ticketId;
+		$this->queryParameters["TicketId"]=$ticketId;
+	}
+	
 }
