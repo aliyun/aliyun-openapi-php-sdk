@@ -25,7 +25,7 @@ class ListProjectsRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'ListProjects',
-            '2017-09-06'
+            'imm'
         );
     }
 

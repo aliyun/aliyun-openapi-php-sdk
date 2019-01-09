@@ -28,7 +28,7 @@ class FindSimilarFacesRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'FindSimilarFaces',
-            '2017-09-06'
+            'imm'
         );
     }
 

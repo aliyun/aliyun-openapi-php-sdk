@@ -25,7 +25,7 @@ class DeleteFaceSearchGroupRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'DeleteFaceSearchGroup',
-            '2017-09-06'
+            'imm'
         );
     }
 

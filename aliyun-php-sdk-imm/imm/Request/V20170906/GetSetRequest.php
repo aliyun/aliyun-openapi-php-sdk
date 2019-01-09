@@ -25,7 +25,7 @@ class GetSetRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'GetSet',
-            '2017-09-06'
+            'imm'
         );
     }
 

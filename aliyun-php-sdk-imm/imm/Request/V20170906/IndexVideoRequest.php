@@ -34,7 +34,7 @@ class IndexVideoRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'IndexVideo',
-            '2017-09-06'
+            'imm'
         );
     }
 

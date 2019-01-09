@@ -26,7 +26,7 @@ class GetVideoRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'GetVideo',
-            '2017-09-06'
+            'imm'
         );
     }
 

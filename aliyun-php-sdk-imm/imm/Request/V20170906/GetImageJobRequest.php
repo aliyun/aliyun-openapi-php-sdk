@@ -26,7 +26,7 @@ class GetImageJobRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'GetImageJob',
-            '2017-09-06'
+            'imm'
         );
     }
 

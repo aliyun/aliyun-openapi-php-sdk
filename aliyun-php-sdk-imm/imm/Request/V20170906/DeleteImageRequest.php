@@ -26,7 +26,7 @@ class DeleteImageRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'DeleteImage',
-            '2017-09-06'
+            'imm'
         );
     }
 

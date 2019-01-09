@@ -27,7 +27,7 @@ class ListFaceSearchGroupUsersRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'ListFaceSearchGroupUsers',
-            '2017-09-06'
+            'imm'
         );
     }
 

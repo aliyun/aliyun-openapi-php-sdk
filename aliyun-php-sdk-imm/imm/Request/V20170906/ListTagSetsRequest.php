@@ -26,7 +26,7 @@ class ListTagSetsRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'ListTagSets',
-            '2017-09-06'
+            'imm'
         );
     }
 

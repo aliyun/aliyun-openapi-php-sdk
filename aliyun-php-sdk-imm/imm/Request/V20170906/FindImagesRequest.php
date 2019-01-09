@@ -42,7 +42,7 @@ class FindImagesRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'FindImages',
-            '2017-09-06'
+            'imm'
         );
     }
 

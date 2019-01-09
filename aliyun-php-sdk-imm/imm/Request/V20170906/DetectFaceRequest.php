@@ -25,7 +25,7 @@ class DetectFaceRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'DetectFace',
-            '2017-09-06'
+            'imm'
         );
     }
 

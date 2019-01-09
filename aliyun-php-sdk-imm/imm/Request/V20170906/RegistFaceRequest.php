@@ -30,7 +30,7 @@ class RegistFaceRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'RegistFace',
-            '2017-09-06'
+            'imm'
         );
     }
 

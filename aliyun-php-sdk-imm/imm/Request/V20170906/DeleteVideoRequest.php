@@ -27,7 +27,7 @@ class DeleteVideoRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'DeleteVideo',
-            '2017-09-06'
+            'imm'
         );
     }
 

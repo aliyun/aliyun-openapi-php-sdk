@@ -27,7 +27,7 @@ class ListVideoAudiosRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'ListVideoAudios',
-            '2017-09-06'
+            'imm'
         );
     }
 

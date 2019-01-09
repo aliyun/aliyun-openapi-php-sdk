@@ -27,7 +27,7 @@ class DeleteTagByNameRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'DeleteTagByName',
-            '2017-09-06'
+            'imm'
         );
     }
 

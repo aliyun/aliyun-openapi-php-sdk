@@ -42,7 +42,7 @@ class SearchDocIndexRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'SearchDocIndex',
-            '2017-09-06'
+            'imm'
         );
     }
 

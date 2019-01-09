@@ -25,7 +25,7 @@ class GetPhotoProcessTaskRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'GetPhotoProcessTask',
-            '2017-09-06'
+            'imm'
         );
     }
 

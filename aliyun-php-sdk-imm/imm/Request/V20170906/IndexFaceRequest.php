@@ -28,7 +28,7 @@ class IndexFaceRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'IndexFace',
-            '2017-09-06'
+            'imm'
         );
     }
 

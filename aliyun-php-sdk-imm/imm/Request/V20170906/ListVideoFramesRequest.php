@@ -27,7 +27,7 @@ class ListVideoFramesRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'ListVideoFrames',
-            '2017-09-06'
+            'imm'
         );
     }
 

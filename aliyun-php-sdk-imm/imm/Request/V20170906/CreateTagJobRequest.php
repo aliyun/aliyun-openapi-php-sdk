@@ -28,7 +28,7 @@ class CreateTagJobRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'CreateTagJob',
-            '2017-09-06'
+            'imm'
         );
     }
 

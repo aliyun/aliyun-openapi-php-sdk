@@ -25,7 +25,7 @@ class DeleteSetRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'DeleteSet',
-            '2017-09-06'
+            'imm'
         );
     }
 

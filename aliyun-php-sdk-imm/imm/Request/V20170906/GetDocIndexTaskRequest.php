@@ -25,7 +25,7 @@ class GetDocIndexTaskRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'GetDocIndexTask',
-            '2017-09-06'
+            'imm'
         );
     }
 

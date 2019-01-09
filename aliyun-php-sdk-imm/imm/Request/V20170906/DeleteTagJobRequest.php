@@ -26,7 +26,7 @@ class DeleteTagJobRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'DeleteTagJob',
-            '2017-09-06'
+            'imm'
         );
     }
 

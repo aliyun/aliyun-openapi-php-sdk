@@ -25,7 +25,7 @@ class DetectQRCodesRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'DetectQRCodes',
-            '2017-09-06'
+            'imm'
         );
     }
 

@@ -25,7 +25,7 @@ class CreateFaceJobRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'CreateFaceJob',
-            '2017-09-06'
+            'imm'
         );
     }
 

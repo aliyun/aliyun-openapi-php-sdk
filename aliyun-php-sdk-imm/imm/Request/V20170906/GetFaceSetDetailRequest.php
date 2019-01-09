@@ -27,7 +27,7 @@ class GetFaceSetDetailRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'GetFaceSetDetail',
-            '2017-09-06'
+            'imm'
         );
     }
 

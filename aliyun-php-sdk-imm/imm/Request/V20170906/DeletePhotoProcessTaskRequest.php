@@ -25,7 +25,7 @@ class DeletePhotoProcessTaskRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'DeletePhotoProcessTask',
-            '2017-09-06'
+            'imm'
         );
     }
 

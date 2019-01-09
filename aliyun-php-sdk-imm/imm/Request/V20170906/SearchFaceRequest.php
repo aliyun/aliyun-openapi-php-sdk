@@ -29,7 +29,7 @@ class SearchFaceRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'SearchFace',
-            '2017-09-06'
+            'imm'
         );
     }
 

@@ -29,7 +29,7 @@ class CompareImageFacesRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'CompareImageFaces',
-            '2017-09-06'
+            'imm'
         );
     }
 

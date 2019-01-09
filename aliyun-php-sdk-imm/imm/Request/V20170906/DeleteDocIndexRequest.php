@@ -26,7 +26,7 @@ class DeleteDocIndexRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'DeleteDocIndex',
-            '2017-09-06'
+            'imm'
         );
     }
 

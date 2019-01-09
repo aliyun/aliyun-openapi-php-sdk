@@ -25,7 +25,7 @@ class DetectClothesRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'DetectClothes',
-            '2017-09-06'
+            'imm'
         );
     }
 

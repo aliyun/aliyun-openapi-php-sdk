@@ -26,7 +26,7 @@ class ListPornBatchDetectJobsRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'ListPornBatchDetectJobs',
-            '2017-09-06'
+            'imm'
         );
     }
 

@@ -25,7 +25,7 @@ class DetectImageTagsRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'DetectImageTags',
-            '2017-09-06'
+            'imm'
         );
     }
 

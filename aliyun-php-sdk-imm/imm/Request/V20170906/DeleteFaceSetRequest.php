@@ -27,7 +27,7 @@ class DeleteFaceSetRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'DeleteFaceSet',
-            '2017-09-06'
+            'imm'
         );
     }
 

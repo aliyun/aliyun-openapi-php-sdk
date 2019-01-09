@@ -26,7 +26,7 @@ class DetectTagRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'DetectTag',
-            '2017-09-06'
+            'imm'
         );
     }
 

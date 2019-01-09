@@ -27,7 +27,7 @@ class FindImagesByTagNamesRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'FindImagesByTagNames',
-            '2017-09-06'
+            'imm'
         );
     }
 

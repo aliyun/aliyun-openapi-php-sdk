@@ -26,7 +26,7 @@ class DetectImageCelebrityRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'DetectImageCelebrity',
-            '2017-09-06'
+            'imm'
         );
     }
 

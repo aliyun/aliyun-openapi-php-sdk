@@ -28,7 +28,7 @@ class ListTagPhotosRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'ListTagPhotos',
-            '2017-09-06'
+            'imm'
         );
     }
 

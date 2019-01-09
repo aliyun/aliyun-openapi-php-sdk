@@ -35,7 +35,7 @@ class CreateDocIndexTaskRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'CreateDocIndexTask',
-            '2017-09-06'
+            'imm'
         );
     }
 

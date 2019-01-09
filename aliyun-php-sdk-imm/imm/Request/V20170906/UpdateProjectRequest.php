@@ -26,7 +26,7 @@ class UpdateProjectRequest extends \RpcAcsRequest
             'imm',
             '2017-09-06',
             'UpdateProject',
-            '2017-09-06'
+            'imm'
         );
     }
 
