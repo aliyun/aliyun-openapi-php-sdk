@@ -1,107 +1,127 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace imm\Request\V20170906;
 
+/**
+ * Request of RegistFace
+ *
+ * @method string getChooseBiggestFace()
+ * @method string getIsQualityLimit()
+ * @method string getProject()
+ * @method string getSrcUri()
+ * @method string getRegisterCheckLevel()
+ * @method string getGroupName()
+ * @method string getUser()
+ */
 class RegistFaceRequest extends \RpcAcsRequest
 {
-    public function  __construct()
+
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
+
+    /**
+     * Class constructor.
+     */
+    public function __construct()
     {
-        parent::__construct("imm", "2017-09-06", "RegistFace", "imm", "openAPI");
-		$this->setMethod("POST");
+        parent::__construct(
+            'imm',
+            '2017-09-06',
+            'RegistFace',
+            '2017-09-06'
+        );
     }
 
-    protected $chooseBiggestFace;
+    /**
+     * @param string $chooseBiggestFace
+     *
+     * @return $this
+     */
+    public function setChooseBiggestFace($chooseBiggestFace)
+    {
+        $this->requestParameters['ChooseBiggestFace'] = $chooseBiggestFace;
+        $this->queryParameters['ChooseBiggestFace'] = $chooseBiggestFace;
 
-    protected $isQualityLimit;
-
-    protected $project;
-
-    protected $srcUri;
-
-    protected $registerCheckLevel;
-
-    protected $groupName;
-
-    protected $user;
-
-    public function getChooseBiggestFace() {
-	    return $this->chooseBiggestFace;
+        return $this;
     }
 
-    public function setChooseBiggestFace($chooseBiggestFace) {
-    	$this->chooseBiggestFace = $chooseBiggestFace;
-    	$this->queryParameters['ChooseBiggestFace'] = $chooseBiggestFace;
-	}
+    /**
+     * @param string $isQualityLimit
+     *
+     * @return $this
+     */
+    public function setIsQualityLimit($isQualityLimit)
+    {
+        $this->requestParameters['IsQualityLimit'] = $isQualityLimit;
+        $this->queryParameters['IsQualityLimit'] = $isQualityLimit;
 
-    public function getIsQualityLimit() {
-	    return $this->isQualityLimit;
+        return $this;
     }
 
-    public function setIsQualityLimit($isQualityLimit) {
-    	$this->isQualityLimit = $isQualityLimit;
-    	$this->queryParameters['IsQualityLimit'] = $isQualityLimit;
-	}
+    /**
+     * @param string $project
+     *
+     * @return $this
+     */
+    public function setProject($project)
+    {
+        $this->requestParameters['Project'] = $project;
+        $this->queryParameters['Project'] = $project;
 
-    public function getProject() {
-	    return $this->project;
+        return $this;
     }
 
-    public function setProject($project) {
-    	$this->project = $project;
-    	$this->queryParameters['Project'] = $project;
-	}
+    /**
+     * @param string $srcUri
+     *
+     * @return $this
+     */
+    public function setSrcUri($srcUri)
+    {
+        $this->requestParameters['SrcUri'] = $srcUri;
+        $this->queryParameters['SrcUri'] = $srcUri;
 
-    public function getSrcUri() {
-	    return $this->srcUri;
+        return $this;
     }
 
-    public function setSrcUri($srcUri) {
-    	$this->srcUri = $srcUri;
-    	$this->queryParameters['SrcUri'] = $srcUri;
-	}
+    /**
+     * @param string $registerCheckLevel
+     *
+     * @return $this
+     */
+    public function setRegisterCheckLevel($registerCheckLevel)
+    {
+        $this->requestParameters['RegisterCheckLevel'] = $registerCheckLevel;
+        $this->queryParameters['RegisterCheckLevel'] = $registerCheckLevel;
 
-    public function getRegisterCheckLevel() {
-	    return $this->registerCheckLevel;
+        return $this;
     }
 
-    public function setRegisterCheckLevel($registerCheckLevel) {
-    	$this->registerCheckLevel = $registerCheckLevel;
-    	$this->queryParameters['RegisterCheckLevel'] = $registerCheckLevel;
-	}
+    /**
+     * @param string $groupName
+     *
+     * @return $this
+     */
+    public function setGroupName($groupName)
+    {
+        $this->requestParameters['GroupName'] = $groupName;
+        $this->queryParameters['GroupName'] = $groupName;
 
-    public function getGroupName() {
-	    return $this->groupName;
+        return $this;
     }
 
-    public function setGroupName($groupName) {
-    	$this->groupName = $groupName;
-    	$this->queryParameters['GroupName'] = $groupName;
-	}
+    /**
+     * @param string $user
+     *
+     * @return $this
+     */
+    public function setUser($user)
+    {
+        $this->requestParameters['User'] = $user;
+        $this->queryParameters['User'] = $user;
 
-    public function getUser() {
-	    return $this->user;
+        return $this;
     }
-
-    public function setUser($user) {
-    	$this->user = $user;
-    	$this->queryParameters['User'] = $user;
-	}
-
 }

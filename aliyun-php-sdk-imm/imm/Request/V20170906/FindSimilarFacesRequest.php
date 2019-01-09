@@ -3,13 +3,15 @@
 namespace imm\Request\V20170906;
 
 /**
- * Request of DetectImageCelebrity
+ * Request of FindSimilarFaces
  *
  * @method string getImageUri()
- * @method string getLibrary()
+ * @method string getLimit()
  * @method string getProject()
+ * @method string getSetId()
+ * @method string getFaceId()
  */
-class DetectImageCelebrityRequest extends \RpcAcsRequest
+class FindSimilarFacesRequest extends \RpcAcsRequest
 {
 
     /**
@@ -25,7 +27,7 @@ class DetectImageCelebrityRequest extends \RpcAcsRequest
         parent::__construct(
             'imm',
             '2017-09-06',
-            'DetectImageCelebrity',
+            'FindSimilarFaces',
             '2017-09-06'
         );
     }
@@ -44,14 +46,14 @@ class DetectImageCelebrityRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $library
+     * @param string $limit
      *
      * @return $this
      */
-    public function setLibrary($library)
+    public function setLimit($limit)
     {
-        $this->requestParameters['Library'] = $library;
-        $this->queryParameters['Library'] = $library;
+        $this->requestParameters['Limit'] = $limit;
+        $this->queryParameters['Limit'] = $limit;
 
         return $this;
     }
@@ -65,6 +67,32 @@ class DetectImageCelebrityRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Project'] = $project;
         $this->queryParameters['Project'] = $project;
+
+        return $this;
+    }
+
+    /**
+     * @param string $setId
+     *
+     * @return $this
+     */
+    public function setSetId($setId)
+    {
+        $this->requestParameters['SetId'] = $setId;
+        $this->queryParameters['SetId'] = $setId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $faceId
+     *
+     * @return $this
+     */
+    public function setFaceId($faceId)
+    {
+        $this->requestParameters['FaceId'] = $faceId;
+        $this->queryParameters['FaceId'] = $faceId;
 
         return $this;
     }

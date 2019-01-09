@@ -1,63 +1,71 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace imm\Request\V20170906;
 
+/**
+ * Request of DetectTag
+ *
+ * @method string getSrcUris()
+ * @method string getModelId()
+ * @method string getProject()
+ */
 class DetectTagRequest extends \RpcAcsRequest
 {
-    public function  __construct()
+
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
+
+    /**
+     * Class constructor.
+     */
+    public function __construct()
     {
-        parent::__construct("imm", "2017-09-06", "DetectTag", "imm", "openAPI");
-		$this->setMethod("POST");
+        parent::__construct(
+            'imm',
+            '2017-09-06',
+            'DetectTag',
+            '2017-09-06'
+        );
     }
 
-    protected $srcUris;
+    /**
+     * @param string $srcUris
+     *
+     * @return $this
+     */
+    public function setSrcUris($srcUris)
+    {
+        $this->requestParameters['SrcUris'] = $srcUris;
+        $this->queryParameters['SrcUris'] = $srcUris;
 
-    protected $modelId;
-
-    protected $project;
-
-    public function getSrcUris() {
-	    return $this->srcUris;
+        return $this;
     }
 
-    public function setSrcUris($srcUris) {
-    	$this->srcUris = $srcUris;
-    	$this->queryParameters['SrcUris'] = $srcUris;
-	}
+    /**
+     * @param string $modelId
+     *
+     * @return $this
+     */
+    public function setModelId($modelId)
+    {
+        $this->requestParameters['ModelId'] = $modelId;
+        $this->queryParameters['ModelId'] = $modelId;
 
-    public function getModelId() {
-	    return $this->modelId;
+        return $this;
     }
 
-    public function setModelId($modelId) {
-    	$this->modelId = $modelId;
-    	$this->queryParameters['ModelId'] = $modelId;
-	}
+    /**
+     * @param string $project
+     *
+     * @return $this
+     */
+    public function setProject($project)
+    {
+        $this->requestParameters['Project'] = $project;
+        $this->queryParameters['Project'] = $project;
 
-    public function getProject() {
-	    return $this->project;
+        return $this;
     }
-
-    public function setProject($project) {
-    	$this->project = $project;
-    	$this->queryParameters['Project'] = $project;
-	}
-
 }

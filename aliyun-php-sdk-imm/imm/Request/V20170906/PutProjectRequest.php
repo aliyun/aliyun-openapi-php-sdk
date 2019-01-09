@@ -1,85 +1,99 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace imm\Request\V20170906;
 
+/**
+ * Request of PutProject
+ *
+ * @method string getCU()
+ * @method string getServiceRole()
+ * @method string getProject()
+ * @method string getBillingType()
+ * @method string getType()
+ */
 class PutProjectRequest extends \RpcAcsRequest
 {
-    public function  __construct()
+
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
+
+    /**
+     * Class constructor.
+     */
+    public function __construct()
     {
-        parent::__construct("imm", "2017-09-06", "PutProject", "imm", "openAPI");
-		$this->setMethod("POST");
+        parent::__construct(
+            'imm',
+            '2017-09-06',
+            'PutProject',
+            '2017-09-06'
+        );
     }
 
-    protected $cU;
+    /**
+     * @param string $cU
+     *
+     * @return $this
+     */
+    public function setCU($cU)
+    {
+        $this->requestParameters['CU'] = $cU;
+        $this->queryParameters['CU'] = $cU;
 
-    protected $serviceRole;
-
-    protected $project;
-
-    protected $billingType;
-
-    protected $type;
-
-    public function getCU() {
-	    return $this->cU;
+        return $this;
     }
 
-    public function setCU($cU) {
-    	$this->cU = $cU;
-    	$this->queryParameters['CU'] = $cU;
-	}
+    /**
+     * @param string $serviceRole
+     *
+     * @return $this
+     */
+    public function setServiceRole($serviceRole)
+    {
+        $this->requestParameters['ServiceRole'] = $serviceRole;
+        $this->queryParameters['ServiceRole'] = $serviceRole;
 
-    public function getServiceRole() {
-	    return $this->serviceRole;
+        return $this;
     }
 
-    public function setServiceRole($serviceRole) {
-    	$this->serviceRole = $serviceRole;
-    	$this->queryParameters['ServiceRole'] = $serviceRole;
-	}
+    /**
+     * @param string $project
+     *
+     * @return $this
+     */
+    public function setProject($project)
+    {
+        $this->requestParameters['Project'] = $project;
+        $this->queryParameters['Project'] = $project;
 
-    public function getProject() {
-	    return $this->project;
+        return $this;
     }
 
-    public function setProject($project) {
-    	$this->project = $project;
-    	$this->queryParameters['Project'] = $project;
-	}
+    /**
+     * @param string $billingType
+     *
+     * @return $this
+     */
+    public function setBillingType($billingType)
+    {
+        $this->requestParameters['BillingType'] = $billingType;
+        $this->queryParameters['BillingType'] = $billingType;
 
-    public function getBillingType() {
-	    return $this->billingType;
+        return $this;
     }
 
-    public function setBillingType($billingType) {
-    	$this->billingType = $billingType;
-    	$this->queryParameters['BillingType'] = $billingType;
-	}
+    /**
+     * @param string $type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->requestParameters['Type'] = $type;
+        $this->queryParameters['Type'] = $type;
 
-    public function getType() {
-	    return $this->type;
+        return $this;
     }
-
-    public function setType($type) {
-    	$this->type = $type;
-    	$this->queryParameters['Type'] = $type;
-	}
-
 }

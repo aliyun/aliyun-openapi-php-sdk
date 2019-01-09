@@ -1,85 +1,99 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace imm\Request\V20170906;
 
+/**
+ * Request of DeleteFaceSearchImageById
+ *
+ * @method string getImageId()
+ * @method string getProject()
+ * @method string getSrcUri()
+ * @method string getGroupName()
+ * @method string getUser()
+ */
 class DeleteFaceSearchImageByIdRequest extends \RpcAcsRequest
 {
-    public function  __construct()
+
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
+
+    /**
+     * Class constructor.
+     */
+    public function __construct()
     {
-        parent::__construct("imm", "2017-09-06", "DeleteFaceSearchImageById", "imm", "openAPI");
-		$this->setMethod("POST");
+        parent::__construct(
+            'imm',
+            '2017-09-06',
+            'DeleteFaceSearchImageById',
+            '2017-09-06'
+        );
     }
 
-    protected $imageId;
+    /**
+     * @param string $imageId
+     *
+     * @return $this
+     */
+    public function setImageId($imageId)
+    {
+        $this->requestParameters['ImageId'] = $imageId;
+        $this->queryParameters['ImageId'] = $imageId;
 
-    protected $project;
-
-    protected $srcUri;
-
-    protected $groupName;
-
-    protected $user;
-
-    public function getImageId() {
-	    return $this->imageId;
+        return $this;
     }
 
-    public function setImageId($imageId) {
-    	$this->imageId = $imageId;
-    	$this->queryParameters['ImageId'] = $imageId;
-	}
+    /**
+     * @param string $project
+     *
+     * @return $this
+     */
+    public function setProject($project)
+    {
+        $this->requestParameters['Project'] = $project;
+        $this->queryParameters['Project'] = $project;
 
-    public function getProject() {
-	    return $this->project;
+        return $this;
     }
 
-    public function setProject($project) {
-    	$this->project = $project;
-    	$this->queryParameters['Project'] = $project;
-	}
+    /**
+     * @param string $srcUri
+     *
+     * @return $this
+     */
+    public function setSrcUri($srcUri)
+    {
+        $this->requestParameters['SrcUri'] = $srcUri;
+        $this->queryParameters['SrcUri'] = $srcUri;
 
-    public function getSrcUri() {
-	    return $this->srcUri;
+        return $this;
     }
 
-    public function setSrcUri($srcUri) {
-    	$this->srcUri = $srcUri;
-    	$this->queryParameters['SrcUri'] = $srcUri;
-	}
+    /**
+     * @param string $groupName
+     *
+     * @return $this
+     */
+    public function setGroupName($groupName)
+    {
+        $this->requestParameters['GroupName'] = $groupName;
+        $this->queryParameters['GroupName'] = $groupName;
 
-    public function getGroupName() {
-	    return $this->groupName;
+        return $this;
     }
 
-    public function setGroupName($groupName) {
-    	$this->groupName = $groupName;
-    	$this->queryParameters['GroupName'] = $groupName;
-	}
+    /**
+     * @param string $user
+     *
+     * @return $this
+     */
+    public function setUser($user)
+    {
+        $this->requestParameters['User'] = $user;
+        $this->queryParameters['User'] = $user;
 
-    public function getUser() {
-	    return $this->user;
+        return $this;
     }
-
-    public function setUser($user) {
-    	$this->user = $user;
-    	$this->queryParameters['User'] = $user;
-	}
-
 }

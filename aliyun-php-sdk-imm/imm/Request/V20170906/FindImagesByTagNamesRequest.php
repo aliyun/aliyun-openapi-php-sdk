@@ -3,13 +3,14 @@
 namespace imm\Request\V20170906;
 
 /**
- * Request of DeleteImage
+ * Request of FindImagesByTagNames
  *
- * @method string getImageUri()
+ * @method string getMarker()
  * @method string getProject()
  * @method string getSetId()
+ * @method string getTagNames()
  */
-class DeleteImageRequest extends \RpcAcsRequest
+class FindImagesByTagNamesRequest extends \RpcAcsRequest
 {
 
     /**
@@ -25,20 +26,20 @@ class DeleteImageRequest extends \RpcAcsRequest
         parent::__construct(
             'imm',
             '2017-09-06',
-            'DeleteImage',
+            'FindImagesByTagNames',
             '2017-09-06'
         );
     }
 
     /**
-     * @param string $imageUri
+     * @param string $marker
      *
      * @return $this
      */
-    public function setImageUri($imageUri)
+    public function setMarker($marker)
     {
-        $this->requestParameters['ImageUri'] = $imageUri;
-        $this->queryParameters['ImageUri'] = $imageUri;
+        $this->requestParameters['Marker'] = $marker;
+        $this->queryParameters['Marker'] = $marker;
 
         return $this;
     }
@@ -65,6 +66,19 @@ class DeleteImageRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SetId'] = $setId;
         $this->queryParameters['SetId'] = $setId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $tagNames
+     *
+     * @return $this
+     */
+    public function setTagNames($tagNames)
+    {
+        $this->requestParameters['TagNames'] = $tagNames;
+        $this->queryParameters['TagNames'] = $tagNames;
 
         return $this;
     }

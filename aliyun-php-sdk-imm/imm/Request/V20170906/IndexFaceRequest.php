@@ -1,85 +1,99 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace imm\Request\V20170906;
 
+/**
+ * Request of IndexFace
+ *
+ * @method string getChain()
+ * @method string getSrcUris()
+ * @method string getProject()
+ * @method string getSetId()
+ * @method string getForce()
+ */
 class IndexFaceRequest extends \RpcAcsRequest
 {
-    public function  __construct()
+
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
+
+    /**
+     * Class constructor.
+     */
+    public function __construct()
     {
-        parent::__construct("imm", "2017-09-06", "IndexFace", "imm", "openAPI");
-		$this->setMethod("POST");
+        parent::__construct(
+            'imm',
+            '2017-09-06',
+            'IndexFace',
+            '2017-09-06'
+        );
     }
 
-    protected $chain;
+    /**
+     * @param string $chain
+     *
+     * @return $this
+     */
+    public function setChain($chain)
+    {
+        $this->requestParameters['Chain'] = $chain;
+        $this->queryParameters['Chain'] = $chain;
 
-    protected $srcUris;
-
-    protected $project;
-
-    protected $setId;
-
-    protected $force;
-
-    public function getChain() {
-	    return $this->chain;
+        return $this;
     }
 
-    public function setChain($chain) {
-    	$this->chain = $chain;
-    	$this->queryParameters['Chain'] = $chain;
-	}
+    /**
+     * @param string $srcUris
+     *
+     * @return $this
+     */
+    public function setSrcUris($srcUris)
+    {
+        $this->requestParameters['SrcUris'] = $srcUris;
+        $this->queryParameters['SrcUris'] = $srcUris;
 
-    public function getSrcUris() {
-	    return $this->srcUris;
+        return $this;
     }
 
-    public function setSrcUris($srcUris) {
-    	$this->srcUris = $srcUris;
-    	$this->queryParameters['SrcUris'] = $srcUris;
-	}
+    /**
+     * @param string $project
+     *
+     * @return $this
+     */
+    public function setProject($project)
+    {
+        $this->requestParameters['Project'] = $project;
+        $this->queryParameters['Project'] = $project;
 
-    public function getProject() {
-	    return $this->project;
+        return $this;
     }
 
-    public function setProject($project) {
-    	$this->project = $project;
-    	$this->queryParameters['Project'] = $project;
-	}
+    /**
+     * @param string $setId
+     *
+     * @return $this
+     */
+    public function setSetId($setId)
+    {
+        $this->requestParameters['SetId'] = $setId;
+        $this->queryParameters['SetId'] = $setId;
 
-    public function getSetId() {
-	    return $this->setId;
+        return $this;
     }
 
-    public function setSetId($setId) {
-    	$this->setId = $setId;
-    	$this->queryParameters['SetId'] = $setId;
-	}
+    /**
+     * @param string $force
+     *
+     * @return $this
+     */
+    public function setForce($force)
+    {
+        $this->requestParameters['Force'] = $force;
+        $this->queryParameters['Force'] = $force;
 
-    public function getForce() {
-	    return $this->force;
+        return $this;
     }
-
-    public function setForce($force) {
-    	$this->force = $force;
-    	$this->queryParameters['Force'] = $force;
-	}
-
 }

@@ -3,7 +3,7 @@
 namespace imm\Request\V20170906;
 
 /**
- * Request of SearchImages
+ * Request of FindImages
  *
  * @method string getGender()
  * @method string getRemarksAPrefix()
@@ -25,7 +25,7 @@ namespace imm\Request\V20170906;
  * @method string getAgeRange()
  * @method string getOrder()
  */
-class SearchImagesRequest extends \RpcAcsRequest
+class FindImagesRequest extends \RpcAcsRequest
 {
 
     /**
@@ -41,7 +41,7 @@ class SearchImagesRequest extends \RpcAcsRequest
         parent::__construct(
             'imm',
             '2017-09-06',
-            'SearchImages',
+            'FindImages',
             '2017-09-06'
         );
     }

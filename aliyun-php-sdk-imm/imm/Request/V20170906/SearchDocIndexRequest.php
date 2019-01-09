@@ -1,239 +1,295 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace imm\Request\V20170906;
 
+/**
+ * Request of SearchDocIndex
+ *
+ * @method string getModifiedTimeEnd()
+ * @method string getCustomKey1()
+ * @method string getSet()
+ * @method string getSizeLimitEnd()
+ * @method string getCustomKey5()
+ * @method string getOffset()
+ * @method string getCustomKey4()
+ * @method string getCustomKey3()
+ * @method string getCustomKey2()
+ * @method string getProject()
+ * @method string getModifiedTimeStart()
+ * @method string getPageNumLimitStart()
+ * @method string getCustomKey6()
+ * @method string getContent()
+ * @method string getPageNumLimitEnd()
+ * @method string getContentType()
+ * @method string getSizeLimitStart()
+ * @method string getName()
+ * @method string getLimit()
+ */
 class SearchDocIndexRequest extends \RpcAcsRequest
 {
-    public function  __construct()
+
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
+
+    /**
+     * Class constructor.
+     */
+    public function __construct()
     {
-        parent::__construct("imm", "2017-09-06", "SearchDocIndex", "imm", "openAPI");
-		$this->setMethod("POST");
+        parent::__construct(
+            'imm',
+            '2017-09-06',
+            'SearchDocIndex',
+            '2017-09-06'
+        );
     }
 
-    protected $modifiedTimeEnd;
+    /**
+     * @param string $modifiedTimeEnd
+     *
+     * @return $this
+     */
+    public function setModifiedTimeEnd($modifiedTimeEnd)
+    {
+        $this->requestParameters['ModifiedTimeEnd'] = $modifiedTimeEnd;
+        $this->queryParameters['ModifiedTimeEnd'] = $modifiedTimeEnd;
 
-    protected $customKey1;
-
-    protected $set;
-
-    protected $sizeLimitEnd;
-
-    protected $customKey5;
-
-    protected $offset;
-
-    protected $customKey4;
-
-    protected $customKey3;
-
-    protected $customKey2;
-
-    protected $project;
-
-    protected $modifiedTimeStart;
-
-    protected $pageNumLimitStart;
-
-    protected $customKey6;
-
-    protected $content;
-
-    protected $pageNumLimitEnd;
-
-    protected $contentType;
-
-    protected $sizeLimitStart;
-
-    protected $name;
-
-    protected $limit;
-
-    public function getModifiedTimeEnd() {
-	    return $this->modifiedTimeEnd;
+        return $this;
     }
 
-    public function setModifiedTimeEnd($modifiedTimeEnd) {
-    	$this->modifiedTimeEnd = $modifiedTimeEnd;
-    	$this->queryParameters['ModifiedTimeEnd'] = $modifiedTimeEnd;
-	}
+    /**
+     * @param string $customKey1
+     *
+     * @return $this
+     */
+    public function setCustomKey1($customKey1)
+    {
+        $this->requestParameters['CustomKey1'] = $customKey1;
+        $this->queryParameters['CustomKey1'] = $customKey1;
 
-    public function getCustomKey1() {
-	    return $this->customKey1;
+        return $this;
     }
 
-    public function setCustomKey1($customKey1) {
-    	$this->customKey1 = $customKey1;
-    	$this->queryParameters['CustomKey1'] = $customKey1;
-	}
+    /**
+     * @param string $set
+     *
+     * @return $this
+     */
+    public function setSet($set)
+    {
+        $this->requestParameters['Set'] = $set;
+        $this->queryParameters['Set'] = $set;
 
-    public function getSet() {
-	    return $this->set;
+        return $this;
     }
 
-    public function setSet($set) {
-    	$this->set = $set;
-    	$this->queryParameters['Set'] = $set;
-	}
+    /**
+     * @param string $sizeLimitEnd
+     *
+     * @return $this
+     */
+    public function setSizeLimitEnd($sizeLimitEnd)
+    {
+        $this->requestParameters['SizeLimitEnd'] = $sizeLimitEnd;
+        $this->queryParameters['SizeLimitEnd'] = $sizeLimitEnd;
 
-    public function getSizeLimitEnd() {
-	    return $this->sizeLimitEnd;
+        return $this;
     }
 
-    public function setSizeLimitEnd($sizeLimitEnd) {
-    	$this->sizeLimitEnd = $sizeLimitEnd;
-    	$this->queryParameters['SizeLimitEnd'] = $sizeLimitEnd;
-	}
+    /**
+     * @param string $customKey5
+     *
+     * @return $this
+     */
+    public function setCustomKey5($customKey5)
+    {
+        $this->requestParameters['CustomKey5'] = $customKey5;
+        $this->queryParameters['CustomKey5'] = $customKey5;
 
-    public function getCustomKey5() {
-	    return $this->customKey5;
+        return $this;
     }
 
-    public function setCustomKey5($customKey5) {
-    	$this->customKey5 = $customKey5;
-    	$this->queryParameters['CustomKey5'] = $customKey5;
-	}
+    /**
+     * @param string $offset
+     *
+     * @return $this
+     */
+    public function setOffset($offset)
+    {
+        $this->requestParameters['Offset'] = $offset;
+        $this->queryParameters['Offset'] = $offset;
 
-    public function getOffset() {
-	    return $this->offset;
+        return $this;
     }
 
-    public function setOffset($offset) {
-    	$this->offset = $offset;
-    	$this->queryParameters['Offset'] = $offset;
-	}
+    /**
+     * @param string $customKey4
+     *
+     * @return $this
+     */
+    public function setCustomKey4($customKey4)
+    {
+        $this->requestParameters['CustomKey4'] = $customKey4;
+        $this->queryParameters['CustomKey4'] = $customKey4;
 
-    public function getCustomKey4() {
-	    return $this->customKey4;
+        return $this;
     }
 
-    public function setCustomKey4($customKey4) {
-    	$this->customKey4 = $customKey4;
-    	$this->queryParameters['CustomKey4'] = $customKey4;
-	}
+    /**
+     * @param string $customKey3
+     *
+     * @return $this
+     */
+    public function setCustomKey3($customKey3)
+    {
+        $this->requestParameters['CustomKey3'] = $customKey3;
+        $this->queryParameters['CustomKey3'] = $customKey3;
 
-    public function getCustomKey3() {
-	    return $this->customKey3;
+        return $this;
     }
 
-    public function setCustomKey3($customKey3) {
-    	$this->customKey3 = $customKey3;
-    	$this->queryParameters['CustomKey3'] = $customKey3;
-	}
+    /**
+     * @param string $customKey2
+     *
+     * @return $this
+     */
+    public function setCustomKey2($customKey2)
+    {
+        $this->requestParameters['CustomKey2'] = $customKey2;
+        $this->queryParameters['CustomKey2'] = $customKey2;
 
-    public function getCustomKey2() {
-	    return $this->customKey2;
+        return $this;
     }
 
-    public function setCustomKey2($customKey2) {
-    	$this->customKey2 = $customKey2;
-    	$this->queryParameters['CustomKey2'] = $customKey2;
-	}
+    /**
+     * @param string $project
+     *
+     * @return $this
+     */
+    public function setProject($project)
+    {
+        $this->requestParameters['Project'] = $project;
+        $this->queryParameters['Project'] = $project;
 
-    public function getProject() {
-	    return $this->project;
+        return $this;
     }
 
-    public function setProject($project) {
-    	$this->project = $project;
-    	$this->queryParameters['Project'] = $project;
-	}
+    /**
+     * @param string $modifiedTimeStart
+     *
+     * @return $this
+     */
+    public function setModifiedTimeStart($modifiedTimeStart)
+    {
+        $this->requestParameters['ModifiedTimeStart'] = $modifiedTimeStart;
+        $this->queryParameters['ModifiedTimeStart'] = $modifiedTimeStart;
 
-    public function getModifiedTimeStart() {
-	    return $this->modifiedTimeStart;
+        return $this;
     }
 
-    public function setModifiedTimeStart($modifiedTimeStart) {
-    	$this->modifiedTimeStart = $modifiedTimeStart;
-    	$this->queryParameters['ModifiedTimeStart'] = $modifiedTimeStart;
-	}
+    /**
+     * @param string $pageNumLimitStart
+     *
+     * @return $this
+     */
+    public function setPageNumLimitStart($pageNumLimitStart)
+    {
+        $this->requestParameters['PageNumLimitStart'] = $pageNumLimitStart;
+        $this->queryParameters['PageNumLimitStart'] = $pageNumLimitStart;
 
-    public function getPageNumLimitStart() {
-	    return $this->pageNumLimitStart;
+        return $this;
     }
 
-    public function setPageNumLimitStart($pageNumLimitStart) {
-    	$this->pageNumLimitStart = $pageNumLimitStart;
-    	$this->queryParameters['PageNumLimitStart'] = $pageNumLimitStart;
-	}
+    /**
+     * @param string $customKey6
+     *
+     * @return $this
+     */
+    public function setCustomKey6($customKey6)
+    {
+        $this->requestParameters['CustomKey6'] = $customKey6;
+        $this->queryParameters['CustomKey6'] = $customKey6;
 
-    public function getCustomKey6() {
-	    return $this->customKey6;
+        return $this;
     }
 
-    public function setCustomKey6($customKey6) {
-    	$this->customKey6 = $customKey6;
-    	$this->queryParameters['CustomKey6'] = $customKey6;
-	}
+    /**
+     * @param string $content
+     *
+     * @return $this
+     */
+    public function setContent($content)
+    {
+        $this->requestParameters['Content'] = $content;
+        $this->queryParameters['Content'] = $content;
 
-    public function getContent() {
-	    return $this->content;
+        return $this;
     }
 
-    public function setContent($content) {
-    	$this->content = $content;
-    	$this->queryParameters['Content'] = $content;
-	}
+    /**
+     * @param string $pageNumLimitEnd
+     *
+     * @return $this
+     */
+    public function setPageNumLimitEnd($pageNumLimitEnd)
+    {
+        $this->requestParameters['PageNumLimitEnd'] = $pageNumLimitEnd;
+        $this->queryParameters['PageNumLimitEnd'] = $pageNumLimitEnd;
 
-    public function getPageNumLimitEnd() {
-	    return $this->pageNumLimitEnd;
+        return $this;
     }
 
-    public function setPageNumLimitEnd($pageNumLimitEnd) {
-    	$this->pageNumLimitEnd = $pageNumLimitEnd;
-    	$this->queryParameters['PageNumLimitEnd'] = $pageNumLimitEnd;
-	}
+    /**
+     * @param string $contentType
+     *
+     * @return $this
+     */
+    public function setContentType($contentType)
+    {
+        $this->requestParameters['ContentType'] = $contentType;
+        $this->queryParameters['ContentType'] = $contentType;
 
-    public function getContentType() {
-	    return $this->contentType;
+        return $this;
     }
 
-    public function setContentType($contentType) {
-    	$this->contentType = $contentType;
-    	$this->queryParameters['ContentType'] = $contentType;
-	}
+    /**
+     * @param string $sizeLimitStart
+     *
+     * @return $this
+     */
+    public function setSizeLimitStart($sizeLimitStart)
+    {
+        $this->requestParameters['SizeLimitStart'] = $sizeLimitStart;
+        $this->queryParameters['SizeLimitStart'] = $sizeLimitStart;
 
-    public function getSizeLimitStart() {
-	    return $this->sizeLimitStart;
+        return $this;
     }
 
-    public function setSizeLimitStart($sizeLimitStart) {
-    	$this->sizeLimitStart = $sizeLimitStart;
-    	$this->queryParameters['SizeLimitStart'] = $sizeLimitStart;
-	}
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
-    public function getName() {
-	    return $this->name;
+        return $this;
     }
 
-    public function setName($name) {
-    	$this->name = $name;
-    	$this->queryParameters['Name'] = $name;
-	}
+    /**
+     * @param string $limit
+     *
+     * @return $this
+     */
+    public function setLimit($limit)
+    {
+        $this->requestParameters['Limit'] = $limit;
+        $this->queryParameters['Limit'] = $limit;
 
-    public function getLimit() {
-	    return $this->limit;
+        return $this;
     }
-
-    public function setLimit($limit) {
-    	$this->limit = $limit;
-    	$this->queryParameters['Limit'] = $limit;
-	}
-
 }

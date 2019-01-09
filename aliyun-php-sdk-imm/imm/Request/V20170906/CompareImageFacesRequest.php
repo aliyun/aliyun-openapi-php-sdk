@@ -1,96 +1,113 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace imm\Request\V20170906;
 
+/**
+ * Request of CompareImageFaces
+ *
+ * @method string getImageUriB()
+ * @method string getImageUriA()
+ * @method string getProject()
+ * @method string getSetId()
+ * @method string getFaceIdA()
+ * @method string getFaceIdB()
+ */
 class CompareImageFacesRequest extends \RpcAcsRequest
 {
-    public function  __construct()
+
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
+
+    /**
+     * Class constructor.
+     */
+    public function __construct()
     {
-        parent::__construct("imm", "2017-09-06", "CompareImageFaces", "imm", "openAPI");
-		$this->setMethod("POST");
+        parent::__construct(
+            'imm',
+            '2017-09-06',
+            'CompareImageFaces',
+            '2017-09-06'
+        );
     }
 
-    protected $imageUriB;
+    /**
+     * @param string $imageUriB
+     *
+     * @return $this
+     */
+    public function setImageUriB($imageUriB)
+    {
+        $this->requestParameters['ImageUriB'] = $imageUriB;
+        $this->queryParameters['ImageUriB'] = $imageUriB;
 
-    protected $imageUriA;
-
-    protected $project;
-
-    protected $setId;
-
-    protected $faceIdA;
-
-    protected $faceIdB;
-
-    public function getImageUriB() {
-	    return $this->imageUriB;
+        return $this;
     }
 
-    public function setImageUriB($imageUriB) {
-    	$this->imageUriB = $imageUriB;
-    	$this->queryParameters['ImageUriB'] = $imageUriB;
-	}
+    /**
+     * @param string $imageUriA
+     *
+     * @return $this
+     */
+    public function setImageUriA($imageUriA)
+    {
+        $this->requestParameters['ImageUriA'] = $imageUriA;
+        $this->queryParameters['ImageUriA'] = $imageUriA;
 
-    public function getImageUriA() {
-	    return $this->imageUriA;
+        return $this;
     }
 
-    public function setImageUriA($imageUriA) {
-    	$this->imageUriA = $imageUriA;
-    	$this->queryParameters['ImageUriA'] = $imageUriA;
-	}
+    /**
+     * @param string $project
+     *
+     * @return $this
+     */
+    public function setProject($project)
+    {
+        $this->requestParameters['Project'] = $project;
+        $this->queryParameters['Project'] = $project;
 
-    public function getProject() {
-	    return $this->project;
+        return $this;
     }
 
-    public function setProject($project) {
-    	$this->project = $project;
-    	$this->queryParameters['Project'] = $project;
-	}
+    /**
+     * @param string $setId
+     *
+     * @return $this
+     */
+    public function setSetId($setId)
+    {
+        $this->requestParameters['SetId'] = $setId;
+        $this->queryParameters['SetId'] = $setId;
 
-    public function getSetId() {
-	    return $this->setId;
+        return $this;
     }
 
-    public function setSetId($setId) {
-    	$this->setId = $setId;
-    	$this->queryParameters['SetId'] = $setId;
-	}
+    /**
+     * @param string $faceIdA
+     *
+     * @return $this
+     */
+    public function setFaceIdA($faceIdA)
+    {
+        $this->requestParameters['FaceIdA'] = $faceIdA;
+        $this->queryParameters['FaceIdA'] = $faceIdA;
 
-    public function getFaceIdA() {
-	    return $this->faceIdA;
+        return $this;
     }
 
-    public function setFaceIdA($faceIdA) {
-    	$this->faceIdA = $faceIdA;
-    	$this->queryParameters['FaceIdA'] = $faceIdA;
-	}
+    /**
+     * @param string $faceIdB
+     *
+     * @return $this
+     */
+    public function setFaceIdB($faceIdB)
+    {
+        $this->requestParameters['FaceIdB'] = $faceIdB;
+        $this->queryParameters['FaceIdB'] = $faceIdB;
 
-    public function getFaceIdB() {
-	    return $this->faceIdB;
+        return $this;
     }
-
-    public function setFaceIdB($faceIdB) {
-    	$this->faceIdB = $faceIdB;
-    	$this->queryParameters['FaceIdB'] = $faceIdB;
-	}
-
 }

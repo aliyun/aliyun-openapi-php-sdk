@@ -1,272 +1,337 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace imm\Request\V20170906;
 
+/**
+ * Request of CreateOfficeConversionTask
+ *
+ * @method string getSrcType()
+ * @method string getProject()
+ * @method string getIdempotentToken()
+ * @method string getPdfVector()
+ * @method string getPassword()
+ * @method string getStartPage()
+ * @method string getNotifyEndpoint()
+ * @method string getFitToPagesWide()
+ * @method string getTgtFilePrefix()
+ * @method string getNotifyTopicName()
+ * @method string getModelId()
+ * @method string getMaxSheetRow()
+ * @method string getMaxSheetCount()
+ * @method string getEndPage()
+ * @method string getTgtFileSuffix()
+ * @method string getSheetOnePage()
+ * @method string getMaxSheetCol()
+ * @method string getTgtType()
+ * @method string getFitToPagesTall()
+ * @method string getSrcUri()
+ * @method string getTgtFilePages()
+ * @method string getTgtUri()
+ */
 class CreateOfficeConversionTaskRequest extends \RpcAcsRequest
 {
-    public function  __construct()
+
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
+
+    /**
+     * Class constructor.
+     */
+    public function __construct()
     {
-        parent::__construct("imm", "2017-09-06", "CreateOfficeConversionTask", "imm", "openAPI");
-		$this->setMethod("POST");
+        parent::__construct(
+            'imm',
+            '2017-09-06',
+            'CreateOfficeConversionTask',
+            '2017-09-06'
+        );
     }
 
-    protected $srcType;
+    /**
+     * @param string $srcType
+     *
+     * @return $this
+     */
+    public function setSrcType($srcType)
+    {
+        $this->requestParameters['SrcType'] = $srcType;
+        $this->queryParameters['SrcType'] = $srcType;
 
-    protected $project;
-
-    protected $idempotentToken;
-
-    protected $pdfVector;
-
-    protected $password;
-
-    protected $startPage;
-
-    protected $notifyEndpoint;
-
-    protected $fitToPagesWide;
-
-    protected $tgtFilePrefix;
-
-    protected $notifyTopicName;
-
-    protected $modelId;
-
-    protected $maxSheetRow;
-
-    protected $maxSheetCount;
-
-    protected $endPage;
-
-    protected $tgtFileSuffix;
-
-    protected $sheetOnePage;
-
-    protected $maxSheetCol;
-
-    protected $tgtType;
-
-    protected $fitToPagesTall;
-
-    protected $srcUri;
-
-    protected $tgtFilePages;
-
-    protected $tgtUri;
-
-    public function getSrcType() {
-	    return $this->srcType;
+        return $this;
     }
 
-    public function setSrcType($srcType) {
-    	$this->srcType = $srcType;
-    	$this->queryParameters['SrcType'] = $srcType;
-	}
+    /**
+     * @param string $project
+     *
+     * @return $this
+     */
+    public function setProject($project)
+    {
+        $this->requestParameters['Project'] = $project;
+        $this->queryParameters['Project'] = $project;
 
-    public function getProject() {
-	    return $this->project;
+        return $this;
     }
 
-    public function setProject($project) {
-    	$this->project = $project;
-    	$this->queryParameters['Project'] = $project;
-	}
+    /**
+     * @param string $idempotentToken
+     *
+     * @return $this
+     */
+    public function setIdempotentToken($idempotentToken)
+    {
+        $this->requestParameters['IdempotentToken'] = $idempotentToken;
+        $this->queryParameters['IdempotentToken'] = $idempotentToken;
 
-    public function getIdempotentToken() {
-	    return $this->idempotentToken;
+        return $this;
     }
 
-    public function setIdempotentToken($idempotentToken) {
-    	$this->idempotentToken = $idempotentToken;
-    	$this->queryParameters['IdempotentToken'] = $idempotentToken;
-	}
+    /**
+     * @param string $pdfVector
+     *
+     * @return $this
+     */
+    public function setPdfVector($pdfVector)
+    {
+        $this->requestParameters['PdfVector'] = $pdfVector;
+        $this->queryParameters['PdfVector'] = $pdfVector;
 
-    public function getPdfVector() {
-	    return $this->pdfVector;
+        return $this;
     }
 
-    public function setPdfVector($pdfVector) {
-    	$this->pdfVector = $pdfVector;
-    	$this->queryParameters['PdfVector'] = $pdfVector;
-	}
+    /**
+     * @param string $password
+     *
+     * @return $this
+     */
+    public function setPassword($password)
+    {
+        $this->requestParameters['Password'] = $password;
+        $this->queryParameters['Password'] = $password;
 
-    public function getPassword() {
-	    return $this->password;
+        return $this;
     }
 
-    public function setPassword($password) {
-    	$this->password = $password;
-    	$this->queryParameters['Password'] = $password;
-	}
+    /**
+     * @param string $startPage
+     *
+     * @return $this
+     */
+    public function setStartPage($startPage)
+    {
+        $this->requestParameters['StartPage'] = $startPage;
+        $this->queryParameters['StartPage'] = $startPage;
 
-    public function getStartPage() {
-	    return $this->startPage;
+        return $this;
     }
 
-    public function setStartPage($startPage) {
-    	$this->startPage = $startPage;
-    	$this->queryParameters['StartPage'] = $startPage;
-	}
+    /**
+     * @param string $notifyEndpoint
+     *
+     * @return $this
+     */
+    public function setNotifyEndpoint($notifyEndpoint)
+    {
+        $this->requestParameters['NotifyEndpoint'] = $notifyEndpoint;
+        $this->queryParameters['NotifyEndpoint'] = $notifyEndpoint;
 
-    public function getNotifyEndpoint() {
-	    return $this->notifyEndpoint;
+        return $this;
     }
 
-    public function setNotifyEndpoint($notifyEndpoint) {
-    	$this->notifyEndpoint = $notifyEndpoint;
-    	$this->queryParameters['NotifyEndpoint'] = $notifyEndpoint;
-	}
+    /**
+     * @param string $fitToPagesWide
+     *
+     * @return $this
+     */
+    public function setFitToPagesWide($fitToPagesWide)
+    {
+        $this->requestParameters['FitToPagesWide'] = $fitToPagesWide;
+        $this->queryParameters['FitToPagesWide'] = $fitToPagesWide;
 
-    public function getFitToPagesWide() {
-	    return $this->fitToPagesWide;
+        return $this;
     }
 
-    public function setFitToPagesWide($fitToPagesWide) {
-    	$this->fitToPagesWide = $fitToPagesWide;
-    	$this->queryParameters['FitToPagesWide'] = $fitToPagesWide;
-	}
+    /**
+     * @param string $tgtFilePrefix
+     *
+     * @return $this
+     */
+    public function setTgtFilePrefix($tgtFilePrefix)
+    {
+        $this->requestParameters['TgtFilePrefix'] = $tgtFilePrefix;
+        $this->queryParameters['TgtFilePrefix'] = $tgtFilePrefix;
 
-    public function getTgtFilePrefix() {
-	    return $this->tgtFilePrefix;
+        return $this;
     }
 
-    public function setTgtFilePrefix($tgtFilePrefix) {
-    	$this->tgtFilePrefix = $tgtFilePrefix;
-    	$this->queryParameters['TgtFilePrefix'] = $tgtFilePrefix;
-	}
+    /**
+     * @param string $notifyTopicName
+     *
+     * @return $this
+     */
+    public function setNotifyTopicName($notifyTopicName)
+    {
+        $this->requestParameters['NotifyTopicName'] = $notifyTopicName;
+        $this->queryParameters['NotifyTopicName'] = $notifyTopicName;
 
-    public function getNotifyTopicName() {
-	    return $this->notifyTopicName;
+        return $this;
     }
 
-    public function setNotifyTopicName($notifyTopicName) {
-    	$this->notifyTopicName = $notifyTopicName;
-    	$this->queryParameters['NotifyTopicName'] = $notifyTopicName;
-	}
+    /**
+     * @param string $modelId
+     *
+     * @return $this
+     */
+    public function setModelId($modelId)
+    {
+        $this->requestParameters['ModelId'] = $modelId;
+        $this->queryParameters['ModelId'] = $modelId;
 
-    public function getModelId() {
-	    return $this->modelId;
+        return $this;
     }
 
-    public function setModelId($modelId) {
-    	$this->modelId = $modelId;
-    	$this->queryParameters['ModelId'] = $modelId;
-	}
+    /**
+     * @param string $maxSheetRow
+     *
+     * @return $this
+     */
+    public function setMaxSheetRow($maxSheetRow)
+    {
+        $this->requestParameters['MaxSheetRow'] = $maxSheetRow;
+        $this->queryParameters['MaxSheetRow'] = $maxSheetRow;
 
-    public function getMaxSheetRow() {
-	    return $this->maxSheetRow;
+        return $this;
     }
 
-    public function setMaxSheetRow($maxSheetRow) {
-    	$this->maxSheetRow = $maxSheetRow;
-    	$this->queryParameters['MaxSheetRow'] = $maxSheetRow;
-	}
+    /**
+     * @param string $maxSheetCount
+     *
+     * @return $this
+     */
+    public function setMaxSheetCount($maxSheetCount)
+    {
+        $this->requestParameters['MaxSheetCount'] = $maxSheetCount;
+        $this->queryParameters['MaxSheetCount'] = $maxSheetCount;
 
-    public function getMaxSheetCount() {
-	    return $this->maxSheetCount;
+        return $this;
     }
 
-    public function setMaxSheetCount($maxSheetCount) {
-    	$this->maxSheetCount = $maxSheetCount;
-    	$this->queryParameters['MaxSheetCount'] = $maxSheetCount;
-	}
+    /**
+     * @param string $endPage
+     *
+     * @return $this
+     */
+    public function setEndPage($endPage)
+    {
+        $this->requestParameters['EndPage'] = $endPage;
+        $this->queryParameters['EndPage'] = $endPage;
 
-    public function getEndPage() {
-	    return $this->endPage;
+        return $this;
     }
 
-    public function setEndPage($endPage) {
-    	$this->endPage = $endPage;
-    	$this->queryParameters['EndPage'] = $endPage;
-	}
+    /**
+     * @param string $tgtFileSuffix
+     *
+     * @return $this
+     */
+    public function setTgtFileSuffix($tgtFileSuffix)
+    {
+        $this->requestParameters['TgtFileSuffix'] = $tgtFileSuffix;
+        $this->queryParameters['TgtFileSuffix'] = $tgtFileSuffix;
 
-    public function getTgtFileSuffix() {
-	    return $this->tgtFileSuffix;
+        return $this;
     }
 
-    public function setTgtFileSuffix($tgtFileSuffix) {
-    	$this->tgtFileSuffix = $tgtFileSuffix;
-    	$this->queryParameters['TgtFileSuffix'] = $tgtFileSuffix;
-	}
+    /**
+     * @param string $sheetOnePage
+     *
+     * @return $this
+     */
+    public function setSheetOnePage($sheetOnePage)
+    {
+        $this->requestParameters['SheetOnePage'] = $sheetOnePage;
+        $this->queryParameters['SheetOnePage'] = $sheetOnePage;
 
-    public function getSheetOnePage() {
-	    return $this->sheetOnePage;
+        return $this;
     }
 
-    public function setSheetOnePage($sheetOnePage) {
-    	$this->sheetOnePage = $sheetOnePage;
-    	$this->queryParameters['SheetOnePage'] = $sheetOnePage;
-	}
+    /**
+     * @param string $maxSheetCol
+     *
+     * @return $this
+     */
+    public function setMaxSheetCol($maxSheetCol)
+    {
+        $this->requestParameters['MaxSheetCol'] = $maxSheetCol;
+        $this->queryParameters['MaxSheetCol'] = $maxSheetCol;
 
-    public function getMaxSheetCol() {
-	    return $this->maxSheetCol;
+        return $this;
     }
 
-    public function setMaxSheetCol($maxSheetCol) {
-    	$this->maxSheetCol = $maxSheetCol;
-    	$this->queryParameters['MaxSheetCol'] = $maxSheetCol;
-	}
+    /**
+     * @param string $tgtType
+     *
+     * @return $this
+     */
+    public function setTgtType($tgtType)
+    {
+        $this->requestParameters['TgtType'] = $tgtType;
+        $this->queryParameters['TgtType'] = $tgtType;
 
-    public function getTgtType() {
-	    return $this->tgtType;
+        return $this;
     }
 
-    public function setTgtType($tgtType) {
-    	$this->tgtType = $tgtType;
-    	$this->queryParameters['TgtType'] = $tgtType;
-	}
+    /**
+     * @param string $fitToPagesTall
+     *
+     * @return $this
+     */
+    public function setFitToPagesTall($fitToPagesTall)
+    {
+        $this->requestParameters['FitToPagesTall'] = $fitToPagesTall;
+        $this->queryParameters['FitToPagesTall'] = $fitToPagesTall;
 
-    public function getFitToPagesTall() {
-	    return $this->fitToPagesTall;
+        return $this;
     }
 
-    public function setFitToPagesTall($fitToPagesTall) {
-    	$this->fitToPagesTall = $fitToPagesTall;
-    	$this->queryParameters['FitToPagesTall'] = $fitToPagesTall;
-	}
+    /**
+     * @param string $srcUri
+     *
+     * @return $this
+     */
+    public function setSrcUri($srcUri)
+    {
+        $this->requestParameters['SrcUri'] = $srcUri;
+        $this->queryParameters['SrcUri'] = $srcUri;
 
-    public function getSrcUri() {
-	    return $this->srcUri;
+        return $this;
     }
 
-    public function setSrcUri($srcUri) {
-    	$this->srcUri = $srcUri;
-    	$this->queryParameters['SrcUri'] = $srcUri;
-	}
+    /**
+     * @param string $tgtFilePages
+     *
+     * @return $this
+     */
+    public function setTgtFilePages($tgtFilePages)
+    {
+        $this->requestParameters['TgtFilePages'] = $tgtFilePages;
+        $this->queryParameters['TgtFilePages'] = $tgtFilePages;
 
-    public function getTgtFilePages() {
-	    return $this->tgtFilePages;
+        return $this;
     }
 
-    public function setTgtFilePages($tgtFilePages) {
-    	$this->tgtFilePages = $tgtFilePages;
-    	$this->queryParameters['TgtFilePages'] = $tgtFilePages;
-	}
+    /**
+     * @param string $tgtUri
+     *
+     * @return $this
+     */
+    public function setTgtUri($tgtUri)
+    {
+        $this->requestParameters['TgtUri'] = $tgtUri;
+        $this->queryParameters['TgtUri'] = $tgtUri;
 
-    public function getTgtUri() {
-	    return $this->tgtUri;
+        return $this;
     }
-
-    public function setTgtUri($tgtUri) {
-    	$this->tgtUri = $tgtUri;
-    	$this->queryParameters['TgtUri'] = $tgtUri;
-	}
-
 }

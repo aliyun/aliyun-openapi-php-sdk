@@ -1,74 +1,85 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace imm\Request\V20170906;
 
+/**
+ * Request of ListTagJobs
+ *
+ * @method string getCondition()
+ * @method string getMaxKeys()
+ * @method string getMarker()
+ * @method string getProject()
+ */
 class ListTagJobsRequest extends \RpcAcsRequest
 {
-    public function  __construct()
+
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
+
+    /**
+     * Class constructor.
+     */
+    public function __construct()
     {
-        parent::__construct("imm", "2017-09-06", "ListTagJobs", "imm", "openAPI");
-		$this->setMethod("POST");
+        parent::__construct(
+            'imm',
+            '2017-09-06',
+            'ListTagJobs',
+            '2017-09-06'
+        );
     }
 
-    protected $condition;
+    /**
+     * @param string $condition
+     *
+     * @return $this
+     */
+    public function setCondition($condition)
+    {
+        $this->requestParameters['Condition'] = $condition;
+        $this->queryParameters['Condition'] = $condition;
 
-    protected $maxKeys;
-
-    protected $marker;
-
-    protected $project;
-
-    public function getCondition() {
-	    return $this->condition;
+        return $this;
     }
 
-    public function setCondition($condition) {
-    	$this->condition = $condition;
-    	$this->queryParameters['Condition'] = $condition;
-	}
+    /**
+     * @param string $maxKeys
+     *
+     * @return $this
+     */
+    public function setMaxKeys($maxKeys)
+    {
+        $this->requestParameters['MaxKeys'] = $maxKeys;
+        $this->queryParameters['MaxKeys'] = $maxKeys;
 
-    public function getMaxKeys() {
-	    return $this->maxKeys;
+        return $this;
     }
 
-    public function setMaxKeys($maxKeys) {
-    	$this->maxKeys = $maxKeys;
-    	$this->queryParameters['MaxKeys'] = $maxKeys;
-	}
+    /**
+     * @param string $marker
+     *
+     * @return $this
+     */
+    public function setMarker($marker)
+    {
+        $this->requestParameters['Marker'] = $marker;
+        $this->queryParameters['Marker'] = $marker;
 
-    public function getMarker() {
-	    return $this->marker;
+        return $this;
     }
 
-    public function setMarker($marker) {
-    	$this->marker = $marker;
-    	$this->queryParameters['Marker'] = $marker;
-	}
+    /**
+     * @param string $project
+     *
+     * @return $this
+     */
+    public function setProject($project)
+    {
+        $this->requestParameters['Project'] = $project;
+        $this->queryParameters['Project'] = $project;
 
-    public function getProject() {
-	    return $this->project;
+        return $this;
     }
-
-    public function setProject($project) {
-    	$this->project = $project;
-    	$this->queryParameters['Project'] = $project;
-	}
-
 }
