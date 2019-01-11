@@ -40,7 +40,7 @@ abstract class RoaAcsRequest extends AcsRequest
     /**
      * @var string
      */
-    private static $headerSeparator = PHP_EOL;
+    private static $headerSeparator = "\n";
     /**
      * @var string
      */
