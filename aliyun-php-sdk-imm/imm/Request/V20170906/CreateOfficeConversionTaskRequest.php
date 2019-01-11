@@ -23,6 +23,7 @@ namespace imm\Request\V20170906;
  * @method string getSheetOnePage()
  * @method string getMaxSheetCol()
  * @method string getTgtType()
+ * @method string getHidecomments()
  * @method string getFitToPagesTall()
  * @method string getSrcUri()
  * @method string getTgtFilePages()
@@ -279,6 +280,19 @@ class CreateOfficeConversionTaskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TgtType'] = $tgtType;
         $this->queryParameters['TgtType'] = $tgtType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $hidecomments
+     *
+     * @return $this
+     */
+    public function setHidecomments($hidecomments)
+    {
+        $this->requestParameters['Hidecomments'] = $hidecomments;
+        $this->queryParameters['Hidecomments'] = $hidecomments;
 
         return $this;
     }
