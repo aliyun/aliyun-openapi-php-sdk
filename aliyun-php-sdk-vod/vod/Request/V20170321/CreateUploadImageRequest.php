@@ -1,140 +1,197 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace vod\Request\V20170321;
 
+/**
+ * Request of CreateUploadImage
+ *
+ * @method string getResourceOwnerId()
+ * @method string getImageType()
+ * @method string getResourceOwnerAccount()
+ * @method string getImageExt()
+ * @method string getDescription()
+ * @method string getOwnerId()
+ * @method string getTitle()
+ * @method string getTags()
+ * @method string getStorageLocation()
+ * @method string getUserData()
+ * @method string getOriginalFileName()
+ * @method string getCateId()
+ */
 class CreateUploadImageRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("vod", "2017-03-21", "CreateUploadImage", "vod", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $imageType;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'vod',
+            '2017-03-21',
+            'CreateUploadImage',
+            'vod'
+        );
+    }
 
-	private  $originalFileName;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $resourceOwnerAccount;
+        return $this;
+    }
 
-	private  $imageExt;
+    /**
+     * @param string $imageType
+     *
+     * @return $this
+     */
+    public function setImageType($imageType)
+    {
+        $this->requestParameters['ImageType'] = $imageType;
+        $this->queryParameters['ImageType'] = $imageType;
 
-	private  $cateId;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $title;
+        return $this;
+    }
 
-	private  $tags;
+    /**
+     * @param string $imageExt
+     *
+     * @return $this
+     */
+    public function setImageExt($imageExt)
+    {
+        $this->requestParameters['ImageExt'] = $imageExt;
+        $this->queryParameters['ImageExt'] = $imageExt;
 
-	private  $storageLocation;
+        return $this;
+    }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+    /**
+     * @param string $description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getImageType() {
-		return $this->imageType;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setImageType($imageType) {
-		$this->imageType = $imageType;
-		$this->queryParameters["ImageType"]=$imageType;
-	}
+        return $this;
+    }
 
-	public function getOriginalFileName() {
-		return $this->originalFileName;
-	}
+    /**
+     * @param string $title
+     *
+     * @return $this
+     */
+    public function setTitle($title)
+    {
+        $this->requestParameters['Title'] = $title;
+        $this->queryParameters['Title'] = $title;
 
-	public function setOriginalFileName($originalFileName) {
-		$this->originalFileName = $originalFileName;
-		$this->queryParameters["OriginalFileName"]=$originalFileName;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param string $tags
+     *
+     * @return $this
+     */
+    public function setTags($tags)
+    {
+        $this->requestParameters['Tags'] = $tags;
+        $this->queryParameters['Tags'] = $tags;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function getImageExt() {
-		return $this->imageExt;
-	}
+    /**
+     * @param string $storageLocation
+     *
+     * @return $this
+     */
+    public function setStorageLocation($storageLocation)
+    {
+        $this->requestParameters['StorageLocation'] = $storageLocation;
+        $this->queryParameters['StorageLocation'] = $storageLocation;
 
-	public function setImageExt($imageExt) {
-		$this->imageExt = $imageExt;
-		$this->queryParameters["ImageExt"]=$imageExt;
-	}
+        return $this;
+    }
 
-	public function getCateId() {
-		return $this->cateId;
-	}
+    /**
+     * @param string $userData
+     *
+     * @return $this
+     */
+    public function setUserData($userData)
+    {
+        $this->requestParameters['UserData'] = $userData;
+        $this->queryParameters['UserData'] = $userData;
 
-	public function setCateId($cateId) {
-		$this->cateId = $cateId;
-		$this->queryParameters["CateId"]=$cateId;
-	}
+        return $this;
+    }
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+    /**
+     * @param string $originalFileName
+     *
+     * @return $this
+     */
+    public function setOriginalFileName($originalFileName)
+    {
+        $this->requestParameters['OriginalFileName'] = $originalFileName;
+        $this->queryParameters['OriginalFileName'] = $originalFileName;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+        return $this;
+    }
 
-	public function getTitle() {
-		return $this->title;
-	}
+    /**
+     * @param string $cateId
+     *
+     * @return $this
+     */
+    public function setCateId($cateId)
+    {
+        $this->requestParameters['CateId'] = $cateId;
+        $this->queryParameters['CateId'] = $cateId;
 
-	public function setTitle($title) {
-		$this->title = $title;
-		$this->queryParameters["Title"]=$title;
-	}
-
-	public function getTags() {
-		return $this->tags;
-	}
-
-	public function setTags($tags) {
-		$this->tags = $tags;
-		$this->queryParameters["Tags"]=$tags;
-	}
-
-	public function getStorageLocation() {
-		return $this->storageLocation;
-	}
-
-	public function setStorageLocation($storageLocation) {
-		$this->storageLocation = $storageLocation;
-		$this->queryParameters["StorageLocation"]=$storageLocation;
-	}
-	
+        return $this;
+    }
 }

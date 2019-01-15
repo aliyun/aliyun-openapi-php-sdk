@@ -1,118 +1,141 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace vod\Request\V20170321;
 
+/**
+ * Request of AddMediaSequences
+ *
+ * @method string getResourceOwnerId()
+ * @method string getMediaURL()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getMediaSequences()
+ * @method string getOwnerId()
+ * @method string getMediaId()
+ * @method string getMediaType()
+ */
 class AddMediaSequencesRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("vod", "2017-03-21", "AddMediaSequences", "vod", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $mediaURL;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'vod',
+            '2017-03-21',
+            'AddMediaSequences',
+            'vod'
+        );
+    }
 
-	private  $resourceOwnerAccount;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $ownerAccount;
+        return $this;
+    }
 
-	private  $mediaSequences;
+    /**
+     * @param string $mediaURL
+     *
+     * @return $this
+     */
+    public function setMediaURL($mediaURL)
+    {
+        $this->requestParameters['MediaURL'] = $mediaURL;
+        $this->queryParameters['MediaURL'] = $mediaURL;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	private  $mediaId;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $mediaType;
+        return $this;
+    }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getMediaURL() {
-		return $this->mediaURL;
-	}
+    /**
+     * @param string $mediaSequences
+     *
+     * @return $this
+     */
+    public function setMediaSequences($mediaSequences)
+    {
+        $this->requestParameters['MediaSequences'] = $mediaSequences;
+        $this->queryParameters['MediaSequences'] = $mediaSequences;
 
-	public function setMediaURL($mediaURL) {
-		$this->mediaURL = $mediaURL;
-		$this->queryParameters["MediaURL"]=$mediaURL;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+    /**
+     * @param string $mediaId
+     *
+     * @return $this
+     */
+    public function setMediaId($mediaId)
+    {
+        $this->requestParameters['MediaId'] = $mediaId;
+        $this->queryParameters['MediaId'] = $mediaId;
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
+        return $this;
+    }
 
-	public function getMediaSequences() {
-		return $this->mediaSequences;
-	}
+    /**
+     * @param string $mediaType
+     *
+     * @return $this
+     */
+    public function setMediaType($mediaType)
+    {
+        $this->requestParameters['MediaType'] = $mediaType;
+        $this->queryParameters['MediaType'] = $mediaType;
 
-	public function setMediaSequences($mediaSequences) {
-		$this->mediaSequences = $mediaSequences;
-		$this->queryParameters["MediaSequences"]=$mediaSequences;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getMediaId() {
-		return $this->mediaId;
-	}
-
-	public function setMediaId($mediaId) {
-		$this->mediaId = $mediaId;
-		$this->queryParameters["MediaId"]=$mediaId;
-	}
-
-	public function getMediaType() {
-		return $this->mediaType;
-	}
-
-	public function setMediaType($mediaType) {
-		$this->mediaType = $mediaType;
-		$this->queryParameters["MediaType"]=$mediaType;
-	}
-	
+        return $this;
+    }
 }

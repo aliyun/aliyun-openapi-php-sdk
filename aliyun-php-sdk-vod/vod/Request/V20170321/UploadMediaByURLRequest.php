@@ -1,129 +1,169 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace vod\Request\V20170321;
 
+/**
+ * Request of UploadMediaByURL
+ *
+ * @method string getUserData()
+ * @method string getResourceOwnerId()
+ * @method string getTemplateGroupId()
+ * @method string getUploadMetadatas()
+ * @method string getResourceOwnerAccount()
+ * @method string getUploadURLs()
+ * @method string getMessageCallback()
+ * @method string getOwnerId()
+ * @method string getPriority()
+ * @method string getStorageLocation()
+ */
 class UploadMediaByURLRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("vod", "2017-03-21", "UploadMediaByURL", "vod", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $templateGroupId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'vod',
+            '2017-03-21',
+            'UploadMediaByURL',
+            'vod'
+        );
+    }
 
-	private  $uploadMetadatas;
+    /**
+     * @param string $userData
+     *
+     * @return $this
+     */
+    public function setUserData($userData)
+    {
+        $this->requestParameters['UserData'] = $userData;
+        $this->queryParameters['UserData'] = $userData;
 
-	private  $resourceOwnerAccount;
+        return $this;
+    }
 
-	private  $uploadURLs;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $messageCallback;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $templateGroupId
+     *
+     * @return $this
+     */
+    public function setTemplateGroupId($templateGroupId)
+    {
+        $this->requestParameters['TemplateGroupId'] = $templateGroupId;
+        $this->queryParameters['TemplateGroupId'] = $templateGroupId;
 
-	private  $priority;
+        return $this;
+    }
 
-	private  $storageLocation;
+    /**
+     * @param string $uploadMetadatas
+     *
+     * @return $this
+     */
+    public function setUploadMetadatas($uploadMetadatas)
+    {
+        $this->requestParameters['UploadMetadatas'] = $uploadMetadatas;
+        $this->queryParameters['UploadMetadatas'] = $uploadMetadatas;
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	public function getTemplateGroupId() {
-		return $this->templateGroupId;
-	}
+        return $this;
+    }
 
-	public function setTemplateGroupId($templateGroupId) {
-		$this->templateGroupId = $templateGroupId;
-		$this->queryParameters["TemplateGroupId"]=$templateGroupId;
-	}
+    /**
+     * @param string $uploadURLs
+     *
+     * @return $this
+     */
+    public function setUploadURLs($uploadURLs)
+    {
+        $this->requestParameters['UploadURLs'] = $uploadURLs;
+        $this->queryParameters['UploadURLs'] = $uploadURLs;
 
-	public function getUploadMetadatas() {
-		return $this->uploadMetadatas;
-	}
+        return $this;
+    }
 
-	public function setUploadMetadatas($uploadMetadatas) {
-		$this->uploadMetadatas = $uploadMetadatas;
-		$this->queryParameters["UploadMetadatas"]=$uploadMetadatas;
-	}
+    /**
+     * @param string $messageCallback
+     *
+     * @return $this
+     */
+    public function setMessageCallback($messageCallback)
+    {
+        $this->requestParameters['MessageCallback'] = $messageCallback;
+        $this->queryParameters['MessageCallback'] = $messageCallback;
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function getUploadURLs() {
-		return $this->uploadURLs;
-	}
+        return $this;
+    }
 
-	public function setUploadURLs($uploadURLs) {
-		$this->uploadURLs = $uploadURLs;
-		$this->queryParameters["UploadURLs"]=$uploadURLs;
-	}
+    /**
+     * @param string $priority
+     *
+     * @return $this
+     */
+    public function setPriority($priority)
+    {
+        $this->requestParameters['Priority'] = $priority;
+        $this->queryParameters['Priority'] = $priority;
 
-	public function getMessageCallback() {
-		return $this->messageCallback;
-	}
+        return $this;
+    }
 
-	public function setMessageCallback($messageCallback) {
-		$this->messageCallback = $messageCallback;
-		$this->queryParameters["MessageCallback"]=$messageCallback;
-	}
+    /**
+     * @param string $storageLocation
+     *
+     * @return $this
+     */
+    public function setStorageLocation($storageLocation)
+    {
+        $this->requestParameters['StorageLocation'] = $storageLocation;
+        $this->queryParameters['StorageLocation'] = $storageLocation;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getPriority() {
-		return $this->priority;
-	}
-
-	public function setPriority($priority) {
-		$this->priority = $priority;
-		$this->queryParameters["Priority"]=$priority;
-	}
-
-	public function getStorageLocation() {
-		return $this->storageLocation;
-	}
-
-	public function setStorageLocation($storageLocation) {
-		$this->storageLocation = $storageLocation;
-		$this->queryParameters["StorageLocation"]=$storageLocation;
-	}
-	
+        return $this;
+    }
 }
