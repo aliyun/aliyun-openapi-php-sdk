@@ -1,120 +1,142 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Iot\Request\V20180120;
 
+/**
+ * Request of QueryDevicePropertiesData
+ *
+ * @method string getAsc()
+ * @method array getIdentifiers()
+ * @method string getIotId()
+ * @method string getPageSize()
+ * @method string getEndTime()
+ * @method string getDeviceName()
+ * @method string getStartTime()
+ * @method string getProductKey()
+ */
 class QueryDevicePropertiesDataRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Iot", "2018-01-20", "QueryDevicePropertiesData");
-		$this->setMethod("POST");
-	}
 
-	private  $asc;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $Identifiers;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Iot',
+            '2018-01-20',
+            'QueryDevicePropertiesData'
+        );
+    }
 
-	private  $iotId;
+    /**
+     * @param string $asc
+     *
+     * @return $this
+     */
+    public function setAsc($asc)
+    {
+        $this->requestParameters['Asc'] = $asc;
+        $this->queryParameters['Asc'] = $asc;
 
-	private  $pageSize;
+        return $this;
+    }
 
-	private  $endTime;
+    /**
+     * @param array $identifiers
+     *
+     * @return $this
+     */
+    public function setIdentifiers(array $identifiers)
+    {
+        $this->requestParameters['Identifiers'] = $identifiers;
+        foreach ($identifiers as $i => $iValue) {
+            $this->queryParameters['Identifier.' . ($i + 1)] = $iValue;
+        }
 
-	private  $deviceName;
+        return $this;
+    }
 
-	private  $startTime;
+    /**
+     * @param string $iotId
+     *
+     * @return $this
+     */
+    public function setIotId($iotId)
+    {
+        $this->requestParameters['IotId'] = $iotId;
+        $this->queryParameters['IotId'] = $iotId;
 
-	private  $productKey;
+        return $this;
+    }
 
-	public function getAsc() {
-		return $this->asc;
-	}
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	public function setAsc($asc) {
-		$this->asc = $asc;
-		$this->queryParameters["Asc"]=$asc;
-	}
+        return $this;
+    }
 
-	public function getIdentifiers() {
-		return $this->Identifiers;
-	}
+    /**
+     * @param string $endTime
+     *
+     * @return $this
+     */
+    public function setEndTime($endTime)
+    {
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
 
-	public function setIdentifiers($Identifiers) {
-		$this->Identifiers = $Identifiers;
-		for ($i = 0; $i < count($Identifiers); $i ++) {	
-			$this->queryParameters["Identifier.".($i+1)] = $Identifiers[$i];
-		}
-	}
+        return $this;
+    }
 
-	public function getIotId() {
-		return $this->iotId;
-	}
+    /**
+     * @param string $deviceName
+     *
+     * @return $this
+     */
+    public function setDeviceName($deviceName)
+    {
+        $this->requestParameters['DeviceName'] = $deviceName;
+        $this->queryParameters['DeviceName'] = $deviceName;
 
-	public function setIotId($iotId) {
-		$this->iotId = $iotId;
-		$this->queryParameters["IotId"]=$iotId;
-	}
+        return $this;
+    }
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
+    /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
+        return $this;
+    }
 
-	public function getEndTime() {
-		return $this->endTime;
-	}
+    /**
+     * @param string $productKey
+     *
+     * @return $this
+     */
+    public function setProductKey($productKey)
+    {
+        $this->requestParameters['ProductKey'] = $productKey;
+        $this->queryParameters['ProductKey'] = $productKey;
 
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getDeviceName() {
-		return $this->deviceName;
-	}
-
-	public function setDeviceName($deviceName) {
-		$this->deviceName = $deviceName;
-		$this->queryParameters["DeviceName"]=$deviceName;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
-
-	public function getProductKey() {
-		return $this->productKey;
-	}
-
-	public function setProductKey($productKey) {
-		$this->productKey = $productKey;
-		$this->queryParameters["ProductKey"]=$productKey;
-	}
-	
+        return $this;
+    }
 }

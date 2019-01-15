@@ -1,74 +1,84 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Iot\Request\V20180120;
 
+/**
+ * Request of Pub
+ *
+ * @method string getTopicFullName()
+ * @method string getQos()
+ * @method string getMessageContent()
+ * @method string getProductKey()
+ */
 class PubRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Iot", "2018-01-20", "Pub");
-		$this->setMethod("POST");
-	}
 
-	private  $topicFullName;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $qos;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Iot',
+            '2018-01-20',
+            'Pub'
+        );
+    }
 
-	private  $messageContent;
+    /**
+     * @param string $topicFullName
+     *
+     * @return $this
+     */
+    public function setTopicFullName($topicFullName)
+    {
+        $this->requestParameters['TopicFullName'] = $topicFullName;
+        $this->queryParameters['TopicFullName'] = $topicFullName;
 
-	private  $productKey;
+        return $this;
+    }
 
-	public function getTopicFullName() {
-		return $this->topicFullName;
-	}
+    /**
+     * @param string $qos
+     *
+     * @return $this
+     */
+    public function setQos($qos)
+    {
+        $this->requestParameters['Qos'] = $qos;
+        $this->queryParameters['Qos'] = $qos;
 
-	public function setTopicFullName($topicFullName) {
-		$this->topicFullName = $topicFullName;
-		$this->queryParameters["TopicFullName"]=$topicFullName;
-	}
+        return $this;
+    }
 
-	public function getQos() {
-		return $this->qos;
-	}
+    /**
+     * @param string $messageContent
+     *
+     * @return $this
+     */
+    public function setMessageContent($messageContent)
+    {
+        $this->requestParameters['MessageContent'] = $messageContent;
+        $this->queryParameters['MessageContent'] = $messageContent;
 
-	public function setQos($qos) {
-		$this->qos = $qos;
-		$this->queryParameters["Qos"]=$qos;
-	}
+        return $this;
+    }
 
-	public function getMessageContent() {
-		return $this->messageContent;
-	}
+    /**
+     * @param string $productKey
+     *
+     * @return $this
+     */
+    public function setProductKey($productKey)
+    {
+        $this->requestParameters['ProductKey'] = $productKey;
+        $this->queryParameters['ProductKey'] = $productKey;
 
-	public function setMessageContent($messageContent) {
-		$this->messageContent = $messageContent;
-		$this->queryParameters["MessageContent"]=$messageContent;
-	}
-
-	public function getProductKey() {
-		return $this->productKey;
-	}
-
-	public function setProductKey($productKey) {
-		$this->productKey = $productKey;
-		$this->queryParameters["ProductKey"]=$productKey;
-	}
-	
+        return $this;
+    }
 }

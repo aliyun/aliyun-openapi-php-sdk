@@ -3,12 +3,13 @@
 namespace Iot\Request\V20180120;
 
 /**
- * Request of ListRule
+ * Request of ListProductByTags
  *
+ * @method array getProductTags()
  * @method string getPageSize()
  * @method string getCurrentPage()
  */
-class ListRuleRequest extends \RpcAcsRequest
+class ListProductByTagsRequest extends \RpcAcsRequest
 {
 
     /**
@@ -24,8 +25,24 @@ class ListRuleRequest extends \RpcAcsRequest
         parent::__construct(
             'Iot',
             '2018-01-20',
-            'ListRule'
+            'ListProductByTags'
         );
+    }
+
+    /**
+     * @param array $productTags
+     *
+     * @return $this
+     */
+    public function setProductTags(array $productTags)
+    {
+        $this->requestParameters['ProductTags'] = $productTags;
+        foreach ($productTags as $i => $iValue) {
+            $this->queryParameters['ProductTag.' . ($i + 1) . '.TagValue'] = $productTags[$i]['TagValue'];
+            $this->queryParameters['ProductTag.' . ($i + 1) . '.TagKey'] = $productTags[$i]['TagKey'];
+        }
+
+        return $this;
     }
 
     /**

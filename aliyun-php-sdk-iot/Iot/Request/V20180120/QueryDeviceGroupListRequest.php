@@ -1,74 +1,84 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Iot\Request\V20180120;
 
+/**
+ * Request of QueryDeviceGroupList
+ *
+ * @method string getSuperGroupId()
+ * @method string getPageSize()
+ * @method string getCurrentPage()
+ * @method string getGroupName()
+ */
 class QueryDeviceGroupListRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Iot", "2018-01-20", "QueryDeviceGroupList");
-		$this->setMethod("POST");
-	}
 
-	private  $superGroupId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $pageSize;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Iot',
+            '2018-01-20',
+            'QueryDeviceGroupList'
+        );
+    }
 
-	private  $currentPage;
+    /**
+     * @param string $superGroupId
+     *
+     * @return $this
+     */
+    public function setSuperGroupId($superGroupId)
+    {
+        $this->requestParameters['SuperGroupId'] = $superGroupId;
+        $this->queryParameters['SuperGroupId'] = $superGroupId;
 
-	private  $groupName;
+        return $this;
+    }
 
-	public function getSuperGroupId() {
-		return $this->superGroupId;
-	}
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	public function setSuperGroupId($superGroupId) {
-		$this->superGroupId = $superGroupId;
-		$this->queryParameters["SuperGroupId"]=$superGroupId;
-	}
+        return $this;
+    }
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
+    /**
+     * @param string $currentPage
+     *
+     * @return $this
+     */
+    public function setCurrentPage($currentPage)
+    {
+        $this->requestParameters['CurrentPage'] = $currentPage;
+        $this->queryParameters['CurrentPage'] = $currentPage;
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
+        return $this;
+    }
 
-	public function getCurrentPage() {
-		return $this->currentPage;
-	}
+    /**
+     * @param string $groupName
+     *
+     * @return $this
+     */
+    public function setGroupName($groupName)
+    {
+        $this->requestParameters['GroupName'] = $groupName;
+        $this->queryParameters['GroupName'] = $groupName;
 
-	public function setCurrentPage($currentPage) {
-		$this->currentPage = $currentPage;
-		$this->queryParameters["CurrentPage"]=$currentPage;
-	}
-
-	public function getGroupName() {
-		return $this->groupName;
-	}
-
-	public function setGroupName($groupName) {
-		$this->groupName = $groupName;
-		$this->queryParameters["GroupName"]=$groupName;
-	}
-	
+        return $this;
+    }
 }

@@ -1,118 +1,140 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Iot\Request\V20180120;
 
+/**
+ * Request of CreateRule
+ *
+ * @method string getSelect()
+ * @method string getRuleDesc()
+ * @method string getDataType()
+ * @method string getName()
+ * @method string getWhere()
+ * @method string getProductKey()
+ * @method string getTopicType()
+ * @method string getShortTopic()
+ */
 class CreateRuleRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Iot", "2018-01-20", "CreateRule");
-		$this->setMethod("POST");
-	}
 
-	private  $select;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $ruleDesc;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Iot',
+            '2018-01-20',
+            'CreateRule'
+        );
+    }
 
-	private  $dataType;
+    /**
+     * @param string $select
+     *
+     * @return $this
+     */
+    public function setSelect($select)
+    {
+        $this->requestParameters['Select'] = $select;
+        $this->queryParameters['Select'] = $select;
 
-	private  $name;
+        return $this;
+    }
 
-	private  $where;
+    /**
+     * @param string $ruleDesc
+     *
+     * @return $this
+     */
+    public function setRuleDesc($ruleDesc)
+    {
+        $this->requestParameters['RuleDesc'] = $ruleDesc;
+        $this->queryParameters['RuleDesc'] = $ruleDesc;
 
-	private  $productKey;
+        return $this;
+    }
 
-	private  $topicType;
+    /**
+     * @param string $dataType
+     *
+     * @return $this
+     */
+    public function setDataType($dataType)
+    {
+        $this->requestParameters['DataType'] = $dataType;
+        $this->queryParameters['DataType'] = $dataType;
 
-	private  $shortTopic;
+        return $this;
+    }
 
-	public function getSelect() {
-		return $this->select;
-	}
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
-	public function setSelect($select) {
-		$this->select = $select;
-		$this->queryParameters["Select"]=$select;
-	}
+        return $this;
+    }
 
-	public function getRuleDesc() {
-		return $this->ruleDesc;
-	}
+    /**
+     * @param string $where
+     *
+     * @return $this
+     */
+    public function setWhere($where)
+    {
+        $this->requestParameters['Where'] = $where;
+        $this->queryParameters['Where'] = $where;
 
-	public function setRuleDesc($ruleDesc) {
-		$this->ruleDesc = $ruleDesc;
-		$this->queryParameters["RuleDesc"]=$ruleDesc;
-	}
+        return $this;
+    }
 
-	public function getDataType() {
-		return $this->dataType;
-	}
+    /**
+     * @param string $productKey
+     *
+     * @return $this
+     */
+    public function setProductKey($productKey)
+    {
+        $this->requestParameters['ProductKey'] = $productKey;
+        $this->queryParameters['ProductKey'] = $productKey;
 
-	public function setDataType($dataType) {
-		$this->dataType = $dataType;
-		$this->queryParameters["DataType"]=$dataType;
-	}
+        return $this;
+    }
 
-	public function getName() {
-		return $this->name;
-	}
+    /**
+     * @param string $topicType
+     *
+     * @return $this
+     */
+    public function setTopicType($topicType)
+    {
+        $this->requestParameters['TopicType'] = $topicType;
+        $this->queryParameters['TopicType'] = $topicType;
 
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
-	}
+        return $this;
+    }
 
-	public function getWhere() {
-		return $this->where;
-	}
+    /**
+     * @param string $shortTopic
+     *
+     * @return $this
+     */
+    public function setShortTopic($shortTopic)
+    {
+        $this->requestParameters['ShortTopic'] = $shortTopic;
+        $this->queryParameters['ShortTopic'] = $shortTopic;
 
-	public function setWhere($where) {
-		$this->where = $where;
-		$this->queryParameters["Where"]=$where;
-	}
-
-	public function getProductKey() {
-		return $this->productKey;
-	}
-
-	public function setProductKey($productKey) {
-		$this->productKey = $productKey;
-		$this->queryParameters["ProductKey"]=$productKey;
-	}
-
-	public function getTopicType() {
-		return $this->topicType;
-	}
-
-	public function setTopicType($topicType) {
-		$this->topicType = $topicType;
-		$this->queryParameters["TopicType"]=$topicType;
-	}
-
-	public function getShortTopic() {
-		return $this->shortTopic;
-	}
-
-	public function setShortTopic($shortTopic) {
-		$this->shortTopic = $shortTopic;
-		$this->queryParameters["ShortTopic"]=$shortTopic;
-	}
-	
+        return $this;
+    }
 }

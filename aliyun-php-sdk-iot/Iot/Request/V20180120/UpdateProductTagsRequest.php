@@ -3,13 +3,12 @@
 namespace Iot\Request\V20180120;
 
 /**
- * Request of UpdateProduct
+ * Request of UpdateProductTags
  *
- * @method string getProductName()
- * @method string getDescription()
+ * @method array getProductTags()
  * @method string getProductKey()
  */
-class UpdateProductRequest extends \RpcAcsRequest
+class UpdateProductTagsRequest extends \RpcAcsRequest
 {
 
     /**
@@ -25,32 +24,22 @@ class UpdateProductRequest extends \RpcAcsRequest
         parent::__construct(
             'Iot',
             '2018-01-20',
-            'UpdateProduct'
+            'UpdateProductTags'
         );
     }
 
     /**
-     * @param string $productName
+     * @param array $productTags
      *
      * @return $this
      */
-    public function setProductName($productName)
+    public function setProductTags(array $productTags)
     {
-        $this->requestParameters['ProductName'] = $productName;
-        $this->queryParameters['ProductName'] = $productName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $description
-     *
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->requestParameters['Description'] = $description;
-        $this->queryParameters['Description'] = $description;
+        $this->requestParameters['ProductTags'] = $productTags;
+        foreach ($productTags as $i => $iValue) {
+            $this->queryParameters['ProductTag.' . ($i + 1) . '.TagValue'] = $productTags[$i]['TagValue'];
+            $this->queryParameters['ProductTag.' . ($i + 1) . '.TagKey'] = $productTags[$i]['TagKey'];
+        }
 
         return $this;
     }

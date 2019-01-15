@@ -1,76 +1,86 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Iot\Request\V20180120;
 
+/**
+ * Request of InvokeThingsService
+ *
+ * @method string getArgs()
+ * @method string getIdentifier()
+ * @method array getDeviceNames()
+ * @method string getProductKey()
+ */
 class InvokeThingsServiceRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Iot", "2018-01-20", "InvokeThingsService");
-		$this->setMethod("POST");
-	}
 
-	private  $args;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $identifier;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Iot',
+            '2018-01-20',
+            'InvokeThingsService'
+        );
+    }
 
-	private  $DeviceNames;
+    /**
+     * @param string $args
+     *
+     * @return $this
+     */
+    public function setArgs($args)
+    {
+        $this->requestParameters['Args'] = $args;
+        $this->queryParameters['Args'] = $args;
 
-	private  $productKey;
+        return $this;
+    }
 
-	public function getArgs() {
-		return $this->args;
-	}
+    /**
+     * @param string $identifier
+     *
+     * @return $this
+     */
+    public function setIdentifier($identifier)
+    {
+        $this->requestParameters['Identifier'] = $identifier;
+        $this->queryParameters['Identifier'] = $identifier;
 
-	public function setArgs($args) {
-		$this->args = $args;
-		$this->queryParameters["Args"]=$args;
-	}
+        return $this;
+    }
 
-	public function getIdentifier() {
-		return $this->identifier;
-	}
+    /**
+     * @param array $deviceNames
+     *
+     * @return $this
+     */
+    public function setDeviceNames(array $deviceNames)
+    {
+        $this->requestParameters['DeviceNames'] = $deviceNames;
+        foreach ($deviceNames as $i => $iValue) {
+            $this->queryParameters['DeviceName.' . ($i + 1)] = $iValue;
+        }
 
-	public function setIdentifier($identifier) {
-		$this->identifier = $identifier;
-		$this->queryParameters["Identifier"]=$identifier;
-	}
+        return $this;
+    }
 
-	public function getDeviceNames() {
-		return $this->DeviceNames;
-	}
+    /**
+     * @param string $productKey
+     *
+     * @return $this
+     */
+    public function setProductKey($productKey)
+    {
+        $this->requestParameters['ProductKey'] = $productKey;
+        $this->queryParameters['ProductKey'] = $productKey;
 
-	public function setDeviceNames($DeviceNames) {
-		$this->DeviceNames = $DeviceNames;
-		for ($i = 0; $i < count($DeviceNames); $i ++) {	
-			$this->queryParameters["DeviceName.".($i+1)] = $DeviceNames[$i];
-		}
-	}
-
-	public function getProductKey() {
-		return $this->productKey;
-	}
-
-	public function setProductKey($productKey) {
-		$this->productKey = $productKey;
-		$this->queryParameters["ProductKey"]=$productKey;
-	}
-	
+        return $this;
+    }
 }

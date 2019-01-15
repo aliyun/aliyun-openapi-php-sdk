@@ -1,63 +1,70 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Iot\Request\V20180120;
 
+/**
+ * Request of DeleteDeviceProp
+ *
+ * @method string getDeviceName()
+ * @method string getProductKey()
+ * @method string getPropKey()
+ */
 class DeleteDevicePropRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Iot", "2018-01-20", "DeleteDeviceProp");
-		$this->setMethod("POST");
-	}
 
-	private  $deviceName;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $productKey;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Iot',
+            '2018-01-20',
+            'DeleteDeviceProp'
+        );
+    }
 
-	private  $propKey;
+    /**
+     * @param string $deviceName
+     *
+     * @return $this
+     */
+    public function setDeviceName($deviceName)
+    {
+        $this->requestParameters['DeviceName'] = $deviceName;
+        $this->queryParameters['DeviceName'] = $deviceName;
 
-	public function getDeviceName() {
-		return $this->deviceName;
-	}
+        return $this;
+    }
 
-	public function setDeviceName($deviceName) {
-		$this->deviceName = $deviceName;
-		$this->queryParameters["DeviceName"]=$deviceName;
-	}
+    /**
+     * @param string $productKey
+     *
+     * @return $this
+     */
+    public function setProductKey($productKey)
+    {
+        $this->requestParameters['ProductKey'] = $productKey;
+        $this->queryParameters['ProductKey'] = $productKey;
 
-	public function getProductKey() {
-		return $this->productKey;
-	}
+        return $this;
+    }
 
-	public function setProductKey($productKey) {
-		$this->productKey = $productKey;
-		$this->queryParameters["ProductKey"]=$productKey;
-	}
+    /**
+     * @param string $propKey
+     *
+     * @return $this
+     */
+    public function setPropKey($propKey)
+    {
+        $this->requestParameters['PropKey'] = $propKey;
+        $this->queryParameters['PropKey'] = $propKey;
 
-	public function getPropKey() {
-		return $this->propKey;
-	}
-
-	public function setPropKey($propKey) {
-		$this->propKey = $propKey;
-		$this->queryParameters["PropKey"]=$propKey;
-	}
-	
+        return $this;
+    }
 }

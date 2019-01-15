@@ -1,74 +1,84 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Iot\Request\V20180120;
 
+/**
+ * Request of CreateProductTopic
+ *
+ * @method string getProductKey()
+ * @method string getTopicShortName()
+ * @method string getOperation()
+ * @method string getDesc()
+ */
 class CreateProductTopicRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Iot", "2018-01-20", "CreateProductTopic");
-		$this->setMethod("POST");
-	}
 
-	private  $productKey;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $topicShortName;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Iot',
+            '2018-01-20',
+            'CreateProductTopic'
+        );
+    }
 
-	private  $operation;
+    /**
+     * @param string $productKey
+     *
+     * @return $this
+     */
+    public function setProductKey($productKey)
+    {
+        $this->requestParameters['ProductKey'] = $productKey;
+        $this->queryParameters['ProductKey'] = $productKey;
 
-	private  $desc;
+        return $this;
+    }
 
-	public function getProductKey() {
-		return $this->productKey;
-	}
+    /**
+     * @param string $topicShortName
+     *
+     * @return $this
+     */
+    public function setTopicShortName($topicShortName)
+    {
+        $this->requestParameters['TopicShortName'] = $topicShortName;
+        $this->queryParameters['TopicShortName'] = $topicShortName;
 
-	public function setProductKey($productKey) {
-		$this->productKey = $productKey;
-		$this->queryParameters["ProductKey"]=$productKey;
-	}
+        return $this;
+    }
 
-	public function getTopicShortName() {
-		return $this->topicShortName;
-	}
+    /**
+     * @param string $operation
+     *
+     * @return $this
+     */
+    public function setOperation($operation)
+    {
+        $this->requestParameters['Operation'] = $operation;
+        $this->queryParameters['Operation'] = $operation;
 
-	public function setTopicShortName($topicShortName) {
-		$this->topicShortName = $topicShortName;
-		$this->queryParameters["TopicShortName"]=$topicShortName;
-	}
+        return $this;
+    }
 
-	public function getOperation() {
-		return $this->operation;
-	}
+    /**
+     * @param string $desc
+     *
+     * @return $this
+     */
+    public function setDesc($desc)
+    {
+        $this->requestParameters['Desc'] = $desc;
+        $this->queryParameters['Desc'] = $desc;
 
-	public function setOperation($operation) {
-		$this->operation = $operation;
-		$this->queryParameters["Operation"]=$operation;
-	}
-
-	public function getDesc() {
-		return $this->desc;
-	}
-
-	public function setDesc($desc) {
-		$this->desc = $desc;
-		$this->queryParameters["Desc"]=$desc;
-	}
-	
+        return $this;
+    }
 }

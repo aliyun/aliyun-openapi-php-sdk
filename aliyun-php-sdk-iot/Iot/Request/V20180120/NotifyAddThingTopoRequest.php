@@ -1,74 +1,84 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Iot\Request\V20180120;
 
+/**
+ * Request of NotifyAddThingTopo
+ *
+ * @method string getGwProductKey()
+ * @method string getGwDeviceName()
+ * @method string getGwIotId()
+ * @method string getDeviceListStr()
+ */
 class NotifyAddThingTopoRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Iot", "2018-01-20", "NotifyAddThingTopo");
-		$this->setMethod("POST");
-	}
 
-	private  $gwProductKey;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $gwDeviceName;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Iot',
+            '2018-01-20',
+            'NotifyAddThingTopo'
+        );
+    }
 
-	private  $gwIotId;
+    /**
+     * @param string $gwProductKey
+     *
+     * @return $this
+     */
+    public function setGwProductKey($gwProductKey)
+    {
+        $this->requestParameters['GwProductKey'] = $gwProductKey;
+        $this->queryParameters['GwProductKey'] = $gwProductKey;
 
-	private  $deviceListStr;
+        return $this;
+    }
 
-	public function getGwProductKey() {
-		return $this->gwProductKey;
-	}
+    /**
+     * @param string $gwDeviceName
+     *
+     * @return $this
+     */
+    public function setGwDeviceName($gwDeviceName)
+    {
+        $this->requestParameters['GwDeviceName'] = $gwDeviceName;
+        $this->queryParameters['GwDeviceName'] = $gwDeviceName;
 
-	public function setGwProductKey($gwProductKey) {
-		$this->gwProductKey = $gwProductKey;
-		$this->queryParameters["GwProductKey"]=$gwProductKey;
-	}
+        return $this;
+    }
 
-	public function getGwDeviceName() {
-		return $this->gwDeviceName;
-	}
+    /**
+     * @param string $gwIotId
+     *
+     * @return $this
+     */
+    public function setGwIotId($gwIotId)
+    {
+        $this->requestParameters['GwIotId'] = $gwIotId;
+        $this->queryParameters['GwIotId'] = $gwIotId;
 
-	public function setGwDeviceName($gwDeviceName) {
-		$this->gwDeviceName = $gwDeviceName;
-		$this->queryParameters["GwDeviceName"]=$gwDeviceName;
-	}
+        return $this;
+    }
 
-	public function getGwIotId() {
-		return $this->gwIotId;
-	}
+    /**
+     * @param string $deviceListStr
+     *
+     * @return $this
+     */
+    public function setDeviceListStr($deviceListStr)
+    {
+        $this->requestParameters['DeviceListStr'] = $deviceListStr;
+        $this->queryParameters['DeviceListStr'] = $deviceListStr;
 
-	public function setGwIotId($gwIotId) {
-		$this->gwIotId = $gwIotId;
-		$this->queryParameters["GwIotId"]=$gwIotId;
-	}
-
-	public function getDeviceListStr() {
-		return $this->deviceListStr;
-	}
-
-	public function setDeviceListStr($deviceListStr) {
-		$this->deviceListStr = $deviceListStr;
-		$this->queryParameters["DeviceListStr"]=$deviceListStr;
-	}
-	
+        return $this;
+    }
 }

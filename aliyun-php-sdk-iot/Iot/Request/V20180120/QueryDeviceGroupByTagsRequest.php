@@ -3,13 +3,13 @@
 namespace Iot\Request\V20180120;
 
 /**
- * Request of QueryProductList
+ * Request of QueryDeviceGroupByTags
  *
  * @method string getPageSize()
  * @method string getCurrentPage()
- * @method string getAliyunCommodityCode()
+ * @method array getTags()
  */
-class QueryProductListRequest extends \RpcAcsRequest
+class QueryDeviceGroupByTagsRequest extends \RpcAcsRequest
 {
 
     /**
@@ -25,7 +25,7 @@ class QueryProductListRequest extends \RpcAcsRequest
         parent::__construct(
             'Iot',
             '2018-01-20',
-            'QueryProductList'
+            'QueryDeviceGroupByTags'
         );
     }
 
@@ -56,14 +56,17 @@ class QueryProductListRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $aliyunCommodityCode
+     * @param array $tags
      *
      * @return $this
      */
-    public function setAliyunCommodityCode($aliyunCommodityCode)
+    public function setTags(array $tags)
     {
-        $this->requestParameters['AliyunCommodityCode'] = $aliyunCommodityCode;
-        $this->queryParameters['AliyunCommodityCode'] = $aliyunCommodityCode;
+        $this->requestParameters['Tags'] = $tags;
+        foreach ($tags as $i => $iValue) {
+            $this->queryParameters['Tag.' . ($i + 1) . '.TagValue'] = $tags[$i]['TagValue'];
+            $this->queryParameters['Tag.' . ($i + 1) . '.TagKey'] = $tags[$i]['TagKey'];
+        }
 
         return $this;
     }
