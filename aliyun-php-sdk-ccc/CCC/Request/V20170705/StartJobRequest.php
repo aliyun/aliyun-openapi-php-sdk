@@ -1,98 +1,114 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace CCC\Request\V20170705;
 
+/**
+ * Request of StartJob
+ *
+ * @method string getJobJson()
+ * @method array getCallingNumbers()
+ * @method string getInstanceId()
+ * @method string getGroupId()
+ * @method string getSelfHostedCallCenter()
+ * @method string getScenarioId()
+ */
 class StartJobRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("CCC", "2017-07-05", "StartJob", "ccc", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $jobJson;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $CallingNumbers;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'CCC',
+            '2017-07-05',
+            'StartJob'
+        );
+    }
 
-	private  $instanceId;
+    /**
+     * @param string $jobJson
+     *
+     * @return $this
+     */
+    public function setJobJson($jobJson)
+    {
+        $this->requestParameters['JobJson'] = $jobJson;
+        $this->queryParameters['JobJson'] = $jobJson;
 
-	private  $groupId;
+        return $this;
+    }
 
-	private  $selfHostedCallCenter;
+    /**
+     * @param array $callingNumbers
+     *
+     * @return $this
+     */
+    public function setCallingNumbers(array $callingNumbers)
+    {
+        $this->requestParameters['CallingNumbers'] = $callingNumbers;
+        foreach ($callingNumbers as $i => $iValue) {
+            $this->queryParameters['CallingNumber.' . ($i + 1)] = $iValue;
+        }
 
-	private  $scenarioId;
+        return $this;
+    }
 
-	public function getJobJson() {
-		return $this->jobJson;
-	}
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
-	public function setJobJson($jobJson) {
-		$this->jobJson = $jobJson;
-		$this->queryParameters["JobJson"]=$jobJson;
-	}
+        return $this;
+    }
 
-	public function getCallingNumbers() {
-		return $this->CallingNumbers;
-	}
+    /**
+     * @param string $groupId
+     *
+     * @return $this
+     */
+    public function setGroupId($groupId)
+    {
+        $this->requestParameters['GroupId'] = $groupId;
+        $this->queryParameters['GroupId'] = $groupId;
 
-	public function setCallingNumbers($CallingNumbers) {
-		$this->CallingNumbers = $CallingNumbers;
-		for ($i = 0; $i < count($CallingNumbers); $i ++) {	
-			$this->queryParameters["CallingNumber.".($i+1)] = $CallingNumbers[$i];
-		}
-	}
+        return $this;
+    }
 
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
+    /**
+     * @param string $selfHostedCallCenter
+     *
+     * @return $this
+     */
+    public function setSelfHostedCallCenter($selfHostedCallCenter)
+    {
+        $this->requestParameters['SelfHostedCallCenter'] = $selfHostedCallCenter;
+        $this->queryParameters['SelfHostedCallCenter'] = $selfHostedCallCenter;
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
+        return $this;
+    }
 
-	public function getGroupId() {
-		return $this->groupId;
-	}
+    /**
+     * @param string $scenarioId
+     *
+     * @return $this
+     */
+    public function setScenarioId($scenarioId)
+    {
+        $this->requestParameters['ScenarioId'] = $scenarioId;
+        $this->queryParameters['ScenarioId'] = $scenarioId;
 
-	public function setGroupId($groupId) {
-		$this->groupId = $groupId;
-		$this->queryParameters["GroupId"]=$groupId;
-	}
-
-	public function getSelfHostedCallCenter() {
-		return $this->selfHostedCallCenter;
-	}
-
-	public function setSelfHostedCallCenter($selfHostedCallCenter) {
-		$this->selfHostedCallCenter = $selfHostedCallCenter;
-		$this->queryParameters["SelfHostedCallCenter"]=$selfHostedCallCenter;
-	}
-
-	public function getScenarioId() {
-		return $this->scenarioId;
-	}
-
-	public function setScenarioId($scenarioId) {
-		$this->scenarioId = $scenarioId;
-		$this->queryParameters["ScenarioId"]=$scenarioId;
-	}
-	
+        return $this;
+    }
 }

@@ -1,85 +1,98 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace CCC\Request\V20170705;
 
+/**
+ * Request of ModifyScenario
+ *
+ * @method string getVariables()
+ * @method string getInstanceId()
+ * @method string getName()
+ * @method string getDescription()
+ * @method string getScenarioId()
+ */
 class ModifyScenarioRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("CCC", "2017-07-05", "ModifyScenario", "ccc", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $variables;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $instanceId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'CCC',
+            '2017-07-05',
+            'ModifyScenario'
+        );
+    }
 
-	private  $name;
+    /**
+     * @param string $variables
+     *
+     * @return $this
+     */
+    public function setVariables($variables)
+    {
+        $this->requestParameters['Variables'] = $variables;
+        $this->queryParameters['Variables'] = $variables;
 
-	private  $description;
+        return $this;
+    }
 
-	private  $scenarioId;
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
-	public function getVariables() {
-		return $this->variables;
-	}
+        return $this;
+    }
 
-	public function setVariables($variables) {
-		$this->variables = $variables;
-		$this->queryParameters["Variables"]=$variables;
-	}
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
+        return $this;
+    }
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
+    /**
+     * @param string $description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
 
-	public function getName() {
-		return $this->name;
-	}
+        return $this;
+    }
 
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
-	}
+    /**
+     * @param string $scenarioId
+     *
+     * @return $this
+     */
+    public function setScenarioId($scenarioId)
+    {
+        $this->requestParameters['ScenarioId'] = $scenarioId;
+        $this->queryParameters['ScenarioId'] = $scenarioId;
 
-	public function getDescription() {
-		return $this->description;
-	}
-
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
-	}
-
-	public function getScenarioId() {
-		return $this->scenarioId;
-	}
-
-	public function setScenarioId($scenarioId) {
-		$this->scenarioId = $scenarioId;
-		$this->queryParameters["ScenarioId"]=$scenarioId;
-	}
-	
+        return $this;
+    }
 }

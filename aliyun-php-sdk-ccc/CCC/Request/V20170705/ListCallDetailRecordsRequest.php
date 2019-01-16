@@ -1,162 +1,196 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace CCC\Request\V20170705;
 
+/**
+ * Request of ListCallDetailRecords
+ *
+ * @method string getContactType()
+ * @method string getContactId()
+ * @method string getCriteria()
+ * @method string getPhoneNumber()
+ * @method string getOrderBy()
+ * @method string getStartTime()
+ * @method string getStopTime()
+ * @method string getPageNumber()
+ * @method string getInstanceId()
+ * @method string getContactDisposition()
+ * @method string getPageSize()
+ * @method string getWithRecording()
+ */
 class ListCallDetailRecordsRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("CCC", "2017-07-05", "ListCallDetailRecords", "ccc", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $contactType;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $contactId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'CCC',
+            '2017-07-05',
+            'ListCallDetailRecords'
+        );
+    }
 
-	private  $criteria;
+    /**
+     * @param string $contactType
+     *
+     * @return $this
+     */
+    public function setContactType($contactType)
+    {
+        $this->requestParameters['ContactType'] = $contactType;
+        $this->queryParameters['ContactType'] = $contactType;
 
-	private  $phoneNumber;
+        return $this;
+    }
 
-	private  $orderBy;
+    /**
+     * @param string $contactId
+     *
+     * @return $this
+     */
+    public function setContactId($contactId)
+    {
+        $this->requestParameters['ContactId'] = $contactId;
+        $this->queryParameters['ContactId'] = $contactId;
 
-	private  $startTime;
+        return $this;
+    }
 
-	private  $stopTime;
+    /**
+     * @param string $criteria
+     *
+     * @return $this
+     */
+    public function setCriteria($criteria)
+    {
+        $this->requestParameters['Criteria'] = $criteria;
+        $this->queryParameters['Criteria'] = $criteria;
 
-	private  $pageNumber;
+        return $this;
+    }
 
-	private  $instanceId;
+    /**
+     * @param string $phoneNumber
+     *
+     * @return $this
+     */
+    public function setPhoneNumber($phoneNumber)
+    {
+        $this->requestParameters['PhoneNumber'] = $phoneNumber;
+        $this->queryParameters['PhoneNumber'] = $phoneNumber;
 
-	private  $contactDisposition;
+        return $this;
+    }
 
-	private  $pageSize;
+    /**
+     * @param string $orderBy
+     *
+     * @return $this
+     */
+    public function setOrderBy($orderBy)
+    {
+        $this->requestParameters['OrderBy'] = $orderBy;
+        $this->queryParameters['OrderBy'] = $orderBy;
 
-	private  $withRecording;
+        return $this;
+    }
 
-	public function getContactType() {
-		return $this->contactType;
-	}
+    /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
 
-	public function setContactType($contactType) {
-		$this->contactType = $contactType;
-		$this->queryParameters["ContactType"]=$contactType;
-	}
+        return $this;
+    }
 
-	public function getContactId() {
-		return $this->contactId;
-	}
+    /**
+     * @param string $stopTime
+     *
+     * @return $this
+     */
+    public function setStopTime($stopTime)
+    {
+        $this->requestParameters['StopTime'] = $stopTime;
+        $this->queryParameters['StopTime'] = $stopTime;
 
-	public function setContactId($contactId) {
-		$this->contactId = $contactId;
-		$this->queryParameters["ContactId"]=$contactId;
-	}
+        return $this;
+    }
 
-	public function getCriteria() {
-		return $this->criteria;
-	}
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
-	public function setCriteria($criteria) {
-		$this->criteria = $criteria;
-		$this->queryParameters["Criteria"]=$criteria;
-	}
+        return $this;
+    }
 
-	public function getPhoneNumber() {
-		return $this->phoneNumber;
-	}
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
-	public function setPhoneNumber($phoneNumber) {
-		$this->phoneNumber = $phoneNumber;
-		$this->queryParameters["PhoneNumber"]=$phoneNumber;
-	}
+        return $this;
+    }
 
-	public function getOrderBy() {
-		return $this->orderBy;
-	}
+    /**
+     * @param string $contactDisposition
+     *
+     * @return $this
+     */
+    public function setContactDisposition($contactDisposition)
+    {
+        $this->requestParameters['ContactDisposition'] = $contactDisposition;
+        $this->queryParameters['ContactDisposition'] = $contactDisposition;
 
-	public function setOrderBy($orderBy) {
-		$this->orderBy = $orderBy;
-		$this->queryParameters["OrderBy"]=$orderBy;
-	}
+        return $this;
+    }
 
-	public function getStartTime() {
-		return $this->startTime;
-	}
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
+        return $this;
+    }
 
-	public function getStopTime() {
-		return $this->stopTime;
-	}
+    /**
+     * @param string $withRecording
+     *
+     * @return $this
+     */
+    public function setWithRecording($withRecording)
+    {
+        $this->requestParameters['WithRecording'] = $withRecording;
+        $this->queryParameters['WithRecording'] = $withRecording;
 
-	public function setStopTime($stopTime) {
-		$this->stopTime = $stopTime;
-		$this->queryParameters["StopTime"]=$stopTime;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
-
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
-
-	public function getContactDisposition() {
-		return $this->contactDisposition;
-	}
-
-	public function setContactDisposition($contactDisposition) {
-		$this->contactDisposition = $contactDisposition;
-		$this->queryParameters["ContactDisposition"]=$contactDisposition;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getWithRecording() {
-		return $this->withRecording;
-	}
-
-	public function setWithRecording($withRecording) {
-		$this->withRecording = $withRecording;
-		$this->queryParameters["WithRecording"]=$withRecording;
-	}
-	
+        return $this;
+    }
 }

@@ -1,162 +1,196 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace CCC\Request\V20170705;
 
+/**
+ * Request of ModifySurvey
+ *
+ * @method string getSurveyId()
+ * @method string getInstanceId()
+ * @method string getRole()
+ * @method string getRound()
+ * @method string getFlowJson()
+ * @method string getName()
+ * @method string getGlobalQuestions()
+ * @method string getDescription()
+ * @method string getCorpora()
+ * @method string getSpeechOptimizationParam()
+ * @method string getScenarioId()
+ * @method string getFlowId()
+ */
 class ModifySurveyRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("CCC", "2017-07-05", "ModifySurvey", "ccc", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $surveyId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $instanceId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'CCC',
+            '2017-07-05',
+            'ModifySurvey'
+        );
+    }
 
-	private  $role;
+    /**
+     * @param string $surveyId
+     *
+     * @return $this
+     */
+    public function setSurveyId($surveyId)
+    {
+        $this->requestParameters['SurveyId'] = $surveyId;
+        $this->queryParameters['SurveyId'] = $surveyId;
 
-	private  $round;
+        return $this;
+    }
 
-	private  $flowJson;
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
-	private  $name;
+        return $this;
+    }
 
-	private  $globalQuestions;
+    /**
+     * @param string $role
+     *
+     * @return $this
+     */
+    public function setRole($role)
+    {
+        $this->requestParameters['Role'] = $role;
+        $this->queryParameters['Role'] = $role;
 
-	private  $description;
+        return $this;
+    }
 
-	private  $corpora;
+    /**
+     * @param string $round
+     *
+     * @return $this
+     */
+    public function setRound($round)
+    {
+        $this->requestParameters['Round'] = $round;
+        $this->queryParameters['Round'] = $round;
 
-	private  $speechOptimizationParam;
+        return $this;
+    }
 
-	private  $scenarioId;
+    /**
+     * @param string $flowJson
+     *
+     * @return $this
+     */
+    public function setFlowJson($flowJson)
+    {
+        $this->requestParameters['FlowJson'] = $flowJson;
+        $this->queryParameters['FlowJson'] = $flowJson;
 
-	private  $flowId;
+        return $this;
+    }
 
-	public function getSurveyId() {
-		return $this->surveyId;
-	}
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
-	public function setSurveyId($surveyId) {
-		$this->surveyId = $surveyId;
-		$this->queryParameters["SurveyId"]=$surveyId;
-	}
+        return $this;
+    }
 
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
+    /**
+     * @param string $globalQuestions
+     *
+     * @return $this
+     */
+    public function setGlobalQuestions($globalQuestions)
+    {
+        $this->requestParameters['GlobalQuestions'] = $globalQuestions;
+        $this->queryParameters['GlobalQuestions'] = $globalQuestions;
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
+        return $this;
+    }
 
-	public function getRole() {
-		return $this->role;
-	}
+    /**
+     * @param string $description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
 
-	public function setRole($role) {
-		$this->role = $role;
-		$this->queryParameters["Role"]=$role;
-	}
+        return $this;
+    }
 
-	public function getRound() {
-		return $this->round;
-	}
+    /**
+     * @param string $corpora
+     *
+     * @return $this
+     */
+    public function setCorpora($corpora)
+    {
+        $this->requestParameters['Corpora'] = $corpora;
+        $this->queryParameters['Corpora'] = $corpora;
 
-	public function setRound($round) {
-		$this->round = $round;
-		$this->queryParameters["Round"]=$round;
-	}
+        return $this;
+    }
 
-	public function getFlowJson() {
-		return $this->flowJson;
-	}
+    /**
+     * @param string $speechOptimizationParam
+     *
+     * @return $this
+     */
+    public function setSpeechOptimizationParam($speechOptimizationParam)
+    {
+        $this->requestParameters['SpeechOptimizationParam'] = $speechOptimizationParam;
+        $this->queryParameters['SpeechOptimizationParam'] = $speechOptimizationParam;
 
-	public function setFlowJson($flowJson) {
-		$this->flowJson = $flowJson;
-		$this->queryParameters["FlowJson"]=$flowJson;
-	}
+        return $this;
+    }
 
-	public function getName() {
-		return $this->name;
-	}
+    /**
+     * @param string $scenarioId
+     *
+     * @return $this
+     */
+    public function setScenarioId($scenarioId)
+    {
+        $this->requestParameters['ScenarioId'] = $scenarioId;
+        $this->queryParameters['ScenarioId'] = $scenarioId;
 
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
-	}
+        return $this;
+    }
 
-	public function getGlobalQuestions() {
-		return $this->globalQuestions;
-	}
+    /**
+     * @param string $flowId
+     *
+     * @return $this
+     */
+    public function setFlowId($flowId)
+    {
+        $this->requestParameters['FlowId'] = $flowId;
+        $this->queryParameters['FlowId'] = $flowId;
 
-	public function setGlobalQuestions($globalQuestions) {
-		$this->globalQuestions = $globalQuestions;
-		$this->queryParameters["GlobalQuestions"]=$globalQuestions;
-	}
-
-	public function getDescription() {
-		return $this->description;
-	}
-
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
-	}
-
-	public function getCorpora() {
-		return $this->corpora;
-	}
-
-	public function setCorpora($corpora) {
-		$this->corpora = $corpora;
-		$this->queryParameters["Corpora"]=$corpora;
-	}
-
-	public function getSpeechOptimizationParam() {
-		return $this->speechOptimizationParam;
-	}
-
-	public function setSpeechOptimizationParam($speechOptimizationParam) {
-		$this->speechOptimizationParam = $speechOptimizationParam;
-		$this->queryParameters["SpeechOptimizationParam"]=$speechOptimizationParam;
-	}
-
-	public function getScenarioId() {
-		return $this->scenarioId;
-	}
-
-	public function setScenarioId($scenarioId) {
-		$this->scenarioId = $scenarioId;
-		$this->queryParameters["ScenarioId"]=$scenarioId;
-	}
-
-	public function getFlowId() {
-		return $this->flowId;
-	}
-
-	public function setFlowId($flowId) {
-		$this->flowId = $flowId;
-		$this->queryParameters["FlowId"]=$flowId;
-	}
-	
+        return $this;
+    }
 }

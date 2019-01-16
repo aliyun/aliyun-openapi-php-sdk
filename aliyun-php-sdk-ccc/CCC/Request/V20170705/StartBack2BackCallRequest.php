@@ -1,85 +1,98 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace CCC\Request\V20170705;
 
+/**
+ * Request of StartBack2BackCall
+ *
+ * @method string getCaller()
+ * @method string getInstanceId()
+ * @method string getCallCenterNumber()
+ * @method string getCallee()
+ * @method string getWorkflowId()
+ */
 class StartBack2BackCallRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("CCC", "2017-07-05", "StartBack2BackCall", "ccc", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $caller;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $instanceId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'CCC',
+            '2017-07-05',
+            'StartBack2BackCall'
+        );
+    }
 
-	private  $callCenterNumber;
+    /**
+     * @param string $caller
+     *
+     * @return $this
+     */
+    public function setCaller($caller)
+    {
+        $this->requestParameters['Caller'] = $caller;
+        $this->queryParameters['Caller'] = $caller;
 
-	private  $callee;
+        return $this;
+    }
 
-	private  $workflowId;
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
-	public function getCaller() {
-		return $this->caller;
-	}
+        return $this;
+    }
 
-	public function setCaller($caller) {
-		$this->caller = $caller;
-		$this->queryParameters["Caller"]=$caller;
-	}
+    /**
+     * @param string $callCenterNumber
+     *
+     * @return $this
+     */
+    public function setCallCenterNumber($callCenterNumber)
+    {
+        $this->requestParameters['CallCenterNumber'] = $callCenterNumber;
+        $this->queryParameters['CallCenterNumber'] = $callCenterNumber;
 
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
+        return $this;
+    }
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
+    /**
+     * @param string $callee
+     *
+     * @return $this
+     */
+    public function setCallee($callee)
+    {
+        $this->requestParameters['Callee'] = $callee;
+        $this->queryParameters['Callee'] = $callee;
 
-	public function getCallCenterNumber() {
-		return $this->callCenterNumber;
-	}
+        return $this;
+    }
 
-	public function setCallCenterNumber($callCenterNumber) {
-		$this->callCenterNumber = $callCenterNumber;
-		$this->queryParameters["CallCenterNumber"]=$callCenterNumber;
-	}
+    /**
+     * @param string $workflowId
+     *
+     * @return $this
+     */
+    public function setWorkflowId($workflowId)
+    {
+        $this->requestParameters['WorkflowId'] = $workflowId;
+        $this->queryParameters['WorkflowId'] = $workflowId;
 
-	public function getCallee() {
-		return $this->callee;
-	}
-
-	public function setCallee($callee) {
-		$this->callee = $callee;
-		$this->queryParameters["Callee"]=$callee;
-	}
-
-	public function getWorkflowId() {
-		return $this->workflowId;
-	}
-
-	public function setWorkflowId($workflowId) {
-		$this->workflowId = $workflowId;
-		$this->queryParameters["WorkflowId"]=$workflowId;
-	}
-	
+        return $this;
+    }
 }

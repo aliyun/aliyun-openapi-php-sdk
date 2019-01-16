@@ -1,140 +1,168 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace CCC\Request\V20170705;
 
+/**
+ * Request of ListJobStatus
+ *
+ * @method string getContactName()
+ * @method string getInstanceId()
+ * @method string getTimeAlignment()
+ * @method string getGroupId()
+ * @method string getPhoneNumber()
+ * @method string getPageSize()
+ * @method string getEndTime()
+ * @method string getStartTime()
+ * @method string getScenarioId()
+ * @method string getPageNumber()
+ */
 class ListJobStatusRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("CCC", "2017-07-05", "ListJobStatus", "ccc", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $contactName;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $instanceId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'CCC',
+            '2017-07-05',
+            'ListJobStatus'
+        );
+    }
 
-	private  $timeAlignment;
+    /**
+     * @param string $contactName
+     *
+     * @return $this
+     */
+    public function setContactName($contactName)
+    {
+        $this->requestParameters['ContactName'] = $contactName;
+        $this->queryParameters['ContactName'] = $contactName;
 
-	private  $groupId;
+        return $this;
+    }
 
-	private  $phoneNumber;
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
-	private  $pageSize;
+        return $this;
+    }
 
-	private  $endTime;
+    /**
+     * @param string $timeAlignment
+     *
+     * @return $this
+     */
+    public function setTimeAlignment($timeAlignment)
+    {
+        $this->requestParameters['TimeAlignment'] = $timeAlignment;
+        $this->queryParameters['TimeAlignment'] = $timeAlignment;
 
-	private  $startTime;
+        return $this;
+    }
 
-	private  $scenarioId;
+    /**
+     * @param string $groupId
+     *
+     * @return $this
+     */
+    public function setGroupId($groupId)
+    {
+        $this->requestParameters['GroupId'] = $groupId;
+        $this->queryParameters['GroupId'] = $groupId;
 
-	private  $pageNumber;
+        return $this;
+    }
 
-	public function getContactName() {
-		return $this->contactName;
-	}
+    /**
+     * @param string $phoneNumber
+     *
+     * @return $this
+     */
+    public function setPhoneNumber($phoneNumber)
+    {
+        $this->requestParameters['PhoneNumber'] = $phoneNumber;
+        $this->queryParameters['PhoneNumber'] = $phoneNumber;
 
-	public function setContactName($contactName) {
-		$this->contactName = $contactName;
-		$this->queryParameters["ContactName"]=$contactName;
-	}
+        return $this;
+    }
 
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
+        return $this;
+    }
 
-	public function getTimeAlignment() {
-		return $this->timeAlignment;
-	}
+    /**
+     * @param string $endTime
+     *
+     * @return $this
+     */
+    public function setEndTime($endTime)
+    {
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
 
-	public function setTimeAlignment($timeAlignment) {
-		$this->timeAlignment = $timeAlignment;
-		$this->queryParameters["TimeAlignment"]=$timeAlignment;
-	}
+        return $this;
+    }
 
-	public function getGroupId() {
-		return $this->groupId;
-	}
+    /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
 
-	public function setGroupId($groupId) {
-		$this->groupId = $groupId;
-		$this->queryParameters["GroupId"]=$groupId;
-	}
+        return $this;
+    }
 
-	public function getPhoneNumber() {
-		return $this->phoneNumber;
-	}
+    /**
+     * @param string $scenarioId
+     *
+     * @return $this
+     */
+    public function setScenarioId($scenarioId)
+    {
+        $this->requestParameters['ScenarioId'] = $scenarioId;
+        $this->queryParameters['ScenarioId'] = $scenarioId;
 
-	public function setPhoneNumber($phoneNumber) {
-		$this->phoneNumber = $phoneNumber;
-		$this->queryParameters["PhoneNumber"]=$phoneNumber;
-	}
+        return $this;
+    }
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getEndTime() {
-		return $this->endTime;
-	}
-
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
-
-	public function getScenarioId() {
-		return $this->scenarioId;
-	}
-
-	public function setScenarioId($scenarioId) {
-		$this->scenarioId = $scenarioId;
-		$this->queryParameters["ScenarioId"]=$scenarioId;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-	
+        return $this;
+    }
 }

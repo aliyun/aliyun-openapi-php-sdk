@@ -1,96 +1,112 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace CCC\Request\V20170705;
 
+/**
+ * Request of ListJobsByGroup
+ *
+ * @method string getInstanceId()
+ * @method string getJobFailureReason()
+ * @method string getJobStatus()
+ * @method string getJobGroupId()
+ * @method string getPageSize()
+ * @method string getPageNumber()
+ */
 class ListJobsByGroupRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("CCC", "2017-07-05", "ListJobsByGroup", "ccc", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $instanceId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $jobFailureReason;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'CCC',
+            '2017-07-05',
+            'ListJobsByGroup'
+        );
+    }
 
-	private  $jobStatus;
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
-	private  $jobGroupId;
+        return $this;
+    }
 
-	private  $pageSize;
+    /**
+     * @param string $jobFailureReason
+     *
+     * @return $this
+     */
+    public function setJobFailureReason($jobFailureReason)
+    {
+        $this->requestParameters['JobFailureReason'] = $jobFailureReason;
+        $this->queryParameters['JobFailureReason'] = $jobFailureReason;
 
-	private  $pageNumber;
+        return $this;
+    }
 
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
+    /**
+     * @param string $jobStatus
+     *
+     * @return $this
+     */
+    public function setJobStatus($jobStatus)
+    {
+        $this->requestParameters['JobStatus'] = $jobStatus;
+        $this->queryParameters['JobStatus'] = $jobStatus;
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
+        return $this;
+    }
 
-	public function getJobFailureReason() {
-		return $this->jobFailureReason;
-	}
+    /**
+     * @param string $jobGroupId
+     *
+     * @return $this
+     */
+    public function setJobGroupId($jobGroupId)
+    {
+        $this->requestParameters['JobGroupId'] = $jobGroupId;
+        $this->queryParameters['JobGroupId'] = $jobGroupId;
 
-	public function setJobFailureReason($jobFailureReason) {
-		$this->jobFailureReason = $jobFailureReason;
-		$this->queryParameters["JobFailureReason"]=$jobFailureReason;
-	}
+        return $this;
+    }
 
-	public function getJobStatus() {
-		return $this->jobStatus;
-	}
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	public function setJobStatus($jobStatus) {
-		$this->jobStatus = $jobStatus;
-		$this->queryParameters["JobStatus"]=$jobStatus;
-	}
+        return $this;
+    }
 
-	public function getJobGroupId() {
-		return $this->jobGroupId;
-	}
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
-	public function setJobGroupId($jobGroupId) {
-		$this->jobGroupId = $jobGroupId;
-		$this->queryParameters["JobGroupId"]=$jobGroupId;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-	
+        return $this;
+    }
 }

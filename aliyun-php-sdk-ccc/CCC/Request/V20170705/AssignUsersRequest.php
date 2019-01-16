@@ -1,93 +1,106 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace CCC\Request\V20170705;
 
+/**
+ * Request of AssignUsers
+ *
+ * @method array getUserRamIds()
+ * @method array getSkillLevels()
+ * @method string getInstanceId()
+ * @method array getRoleIds()
+ * @method array getSkillGroupIds()
+ */
 class AssignUsersRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("CCC", "2017-07-05", "AssignUsers", "ccc", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $UserRamIds;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $SkillLevels;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'CCC',
+            '2017-07-05',
+            'AssignUsers'
+        );
+    }
 
-	private  $instanceId;
+    /**
+     * @param array $userRamIds
+     *
+     * @return $this
+     */
+    public function setUserRamIds(array $userRamIds)
+    {
+        $this->requestParameters['UserRamIds'] = $userRamIds;
+        foreach ($userRamIds as $i => $iValue) {
+            $this->queryParameters['UserRamId.' . ($i + 1)] = $iValue;
+        }
 
-	private  $RoleIds;
+        return $this;
+    }
 
-	private  $SkillGroupIds;
+    /**
+     * @param array $skillLevels
+     *
+     * @return $this
+     */
+    public function setSkillLevels(array $skillLevels)
+    {
+        $this->requestParameters['SkillLevels'] = $skillLevels;
+        foreach ($skillLevels as $i => $iValue) {
+            $this->queryParameters['SkillLevel.' . ($i + 1)] = $iValue;
+        }
 
-	public function getUserRamIds() {
-		return $this->UserRamIds;
-	}
+        return $this;
+    }
 
-	public function setUserRamIds($UserRamIds) {
-		$this->UserRamIds = $UserRamIds;
-		for ($i = 0; $i < count($UserRamIds); $i ++) {	
-			$this->queryParameters["UserRamId.".($i+1)] = $UserRamIds[$i];
-		}
-	}
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
-	public function getSkillLevels() {
-		return $this->SkillLevels;
-	}
+        return $this;
+    }
 
-	public function setSkillLevels($SkillLevels) {
-		$this->SkillLevels = $SkillLevels;
-		for ($i = 0; $i < count($SkillLevels); $i ++) {	
-			$this->queryParameters["SkillLevel.".($i+1)] = $SkillLevels[$i];
-		}
-	}
+    /**
+     * @param array $roleIds
+     *
+     * @return $this
+     */
+    public function setRoleIds(array $roleIds)
+    {
+        $this->requestParameters['RoleIds'] = $roleIds;
+        foreach ($roleIds as $i => $iValue) {
+            $this->queryParameters['RoleId.' . ($i + 1)] = $iValue;
+        }
 
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
+        return $this;
+    }
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
+    /**
+     * @param array $skillGroupIds
+     *
+     * @return $this
+     */
+    public function setSkillGroupIds(array $skillGroupIds)
+    {
+        $this->requestParameters['SkillGroupIds'] = $skillGroupIds;
+        foreach ($skillGroupIds as $i => $iValue) {
+            $this->queryParameters['SkillGroupId.' . ($i + 1)] = $iValue;
+        }
 
-	public function getRoleIds() {
-		return $this->RoleIds;
-	}
-
-	public function setRoleIds($RoleIds) {
-		$this->RoleIds = $RoleIds;
-		for ($i = 0; $i < count($RoleIds); $i ++) {	
-			$this->queryParameters["RoleId.".($i+1)] = $RoleIds[$i];
-		}
-	}
-
-	public function getSkillGroupIds() {
-		return $this->SkillGroupIds;
-	}
-
-	public function setSkillGroupIds($SkillGroupIds) {
-		$this->SkillGroupIds = $SkillGroupIds;
-		for ($i = 0; $i < count($SkillGroupIds); $i ++) {	
-			$this->queryParameters["SkillGroupId.".($i+1)] = $SkillGroupIds[$i];
-		}
-	}
-	
+        return $this;
+    }
 }

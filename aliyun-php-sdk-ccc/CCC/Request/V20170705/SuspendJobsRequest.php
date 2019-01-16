@@ -1,100 +1,116 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace CCC\Request\V20170705;
 
+/**
+ * Request of SuspendJobs
+ *
+ * @method string getAll()
+ * @method array getJobIds()
+ * @method string getInstanceId()
+ * @method array getJobReferenceIds()
+ * @method string getGroupId()
+ * @method string getScenarioId()
+ */
 class SuspendJobsRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("CCC", "2017-07-05", "SuspendJobs", "ccc", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $all;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $JobIds;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'CCC',
+            '2017-07-05',
+            'SuspendJobs'
+        );
+    }
 
-	private  $instanceId;
+    /**
+     * @param string $all
+     *
+     * @return $this
+     */
+    public function setAll($all)
+    {
+        $this->requestParameters['All'] = $all;
+        $this->queryParameters['All'] = $all;
 
-	private  $JobReferenceIds;
+        return $this;
+    }
 
-	private  $groupId;
+    /**
+     * @param array $jobIds
+     *
+     * @return $this
+     */
+    public function setJobIds(array $jobIds)
+    {
+        $this->requestParameters['JobIds'] = $jobIds;
+        foreach ($jobIds as $i => $iValue) {
+            $this->queryParameters['JobId.' . ($i + 1)] = $iValue;
+        }
 
-	private  $scenarioId;
+        return $this;
+    }
 
-	public function getAll() {
-		return $this->all;
-	}
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
-	public function setAll($all) {
-		$this->all = $all;
-		$this->queryParameters["All"]=$all;
-	}
+        return $this;
+    }
 
-	public function getJobIds() {
-		return $this->JobIds;
-	}
+    /**
+     * @param array $jobReferenceIds
+     *
+     * @return $this
+     */
+    public function setJobReferenceIds(array $jobReferenceIds)
+    {
+        $this->requestParameters['JobReferenceIds'] = $jobReferenceIds;
+        foreach ($jobReferenceIds as $i => $iValue) {
+            $this->queryParameters['JobReferenceId.' . ($i + 1)] = $iValue;
+        }
 
-	public function setJobIds($JobIds) {
-		$this->JobIds = $JobIds;
-		for ($i = 0; $i < count($JobIds); $i ++) {	
-			$this->queryParameters["JobId.".($i+1)] = $JobIds[$i];
-		}
-	}
+        return $this;
+    }
 
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
+    /**
+     * @param string $groupId
+     *
+     * @return $this
+     */
+    public function setGroupId($groupId)
+    {
+        $this->requestParameters['GroupId'] = $groupId;
+        $this->queryParameters['GroupId'] = $groupId;
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
+        return $this;
+    }
 
-	public function getJobReferenceIds() {
-		return $this->JobReferenceIds;
-	}
+    /**
+     * @param string $scenarioId
+     *
+     * @return $this
+     */
+    public function setScenarioId($scenarioId)
+    {
+        $this->requestParameters['ScenarioId'] = $scenarioId;
+        $this->queryParameters['ScenarioId'] = $scenarioId;
 
-	public function setJobReferenceIds($JobReferenceIds) {
-		$this->JobReferenceIds = $JobReferenceIds;
-		for ($i = 0; $i < count($JobReferenceIds); $i ++) {	
-			$this->queryParameters["JobReferenceId.".($i+1)] = $JobReferenceIds[$i];
-		}
-	}
-
-	public function getGroupId() {
-		return $this->groupId;
-	}
-
-	public function setGroupId($groupId) {
-		$this->groupId = $groupId;
-		$this->queryParameters["GroupId"]=$groupId;
-	}
-
-	public function getScenarioId() {
-		return $this->scenarioId;
-	}
-
-	public function setScenarioId($scenarioId) {
-		$this->scenarioId = $scenarioId;
-		$this->queryParameters["ScenarioId"]=$scenarioId;
-	}
-	
+        return $this;
+    }
 }

@@ -1,74 +1,84 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace CCC\Request\V20170705;
 
+/**
+ * Request of AddPhoneNumber
+ *
+ * @method string getContactFlowId()
+ * @method string getInstanceId()
+ * @method string getUsage()
+ * @method string getPhoneNumber()
+ */
 class AddPhoneNumberRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("CCC", "2017-07-05", "AddPhoneNumber", "ccc", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $contactFlowId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $instanceId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'CCC',
+            '2017-07-05',
+            'AddPhoneNumber'
+        );
+    }
 
-	private  $usage;
+    /**
+     * @param string $contactFlowId
+     *
+     * @return $this
+     */
+    public function setContactFlowId($contactFlowId)
+    {
+        $this->requestParameters['ContactFlowId'] = $contactFlowId;
+        $this->queryParameters['ContactFlowId'] = $contactFlowId;
 
-	private  $phoneNumber;
+        return $this;
+    }
 
-	public function getContactFlowId() {
-		return $this->contactFlowId;
-	}
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
-	public function setContactFlowId($contactFlowId) {
-		$this->contactFlowId = $contactFlowId;
-		$this->queryParameters["ContactFlowId"]=$contactFlowId;
-	}
+        return $this;
+    }
 
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
+    /**
+     * @param string $usage
+     *
+     * @return $this
+     */
+    public function setUsage($usage)
+    {
+        $this->requestParameters['Usage'] = $usage;
+        $this->queryParameters['Usage'] = $usage;
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
+        return $this;
+    }
 
-	public function getUsage() {
-		return $this->usage;
-	}
+    /**
+     * @param string $phoneNumber
+     *
+     * @return $this
+     */
+    public function setPhoneNumber($phoneNumber)
+    {
+        $this->requestParameters['PhoneNumber'] = $phoneNumber;
+        $this->queryParameters['PhoneNumber'] = $phoneNumber;
 
-	public function setUsage($usage) {
-		$this->usage = $usage;
-		$this->queryParameters["Usage"]=$usage;
-	}
-
-	public function getPhoneNumber() {
-		return $this->phoneNumber;
-	}
-
-	public function setPhoneNumber($phoneNumber) {
-		$this->phoneNumber = $phoneNumber;
-		$this->queryParameters["PhoneNumber"]=$phoneNumber;
-	}
-	
+        return $this;
+    }
 }

@@ -1,118 +1,140 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace CCC\Request\V20170705;
 
+/**
+ * Request of ListRecordings
+ *
+ * @method string getAgentId()
+ * @method string getInstanceId()
+ * @method string getCriteria()
+ * @method string getPhoneNumber()
+ * @method string getPageSize()
+ * @method string getStopTime()
+ * @method string getStartTime()
+ * @method string getPageNumber()
+ */
 class ListRecordingsRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("CCC", "2017-07-05", "ListRecordings", "ccc", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $agentId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $instanceId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'CCC',
+            '2017-07-05',
+            'ListRecordings'
+        );
+    }
 
-	private  $criteria;
+    /**
+     * @param string $agentId
+     *
+     * @return $this
+     */
+    public function setAgentId($agentId)
+    {
+        $this->requestParameters['AgentId'] = $agentId;
+        $this->queryParameters['AgentId'] = $agentId;
 
-	private  $phoneNumber;
+        return $this;
+    }
 
-	private  $pageSize;
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
-	private  $stopTime;
+        return $this;
+    }
 
-	private  $startTime;
+    /**
+     * @param string $criteria
+     *
+     * @return $this
+     */
+    public function setCriteria($criteria)
+    {
+        $this->requestParameters['Criteria'] = $criteria;
+        $this->queryParameters['Criteria'] = $criteria;
 
-	private  $pageNumber;
+        return $this;
+    }
 
-	public function getAgentId() {
-		return $this->agentId;
-	}
+    /**
+     * @param string $phoneNumber
+     *
+     * @return $this
+     */
+    public function setPhoneNumber($phoneNumber)
+    {
+        $this->requestParameters['PhoneNumber'] = $phoneNumber;
+        $this->queryParameters['PhoneNumber'] = $phoneNumber;
 
-	public function setAgentId($agentId) {
-		$this->agentId = $agentId;
-		$this->queryParameters["AgentId"]=$agentId;
-	}
+        return $this;
+    }
 
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
+        return $this;
+    }
 
-	public function getCriteria() {
-		return $this->criteria;
-	}
+    /**
+     * @param string $stopTime
+     *
+     * @return $this
+     */
+    public function setStopTime($stopTime)
+    {
+        $this->requestParameters['StopTime'] = $stopTime;
+        $this->queryParameters['StopTime'] = $stopTime;
 
-	public function setCriteria($criteria) {
-		$this->criteria = $criteria;
-		$this->queryParameters["Criteria"]=$criteria;
-	}
+        return $this;
+    }
 
-	public function getPhoneNumber() {
-		return $this->phoneNumber;
-	}
+    /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
 
-	public function setPhoneNumber($phoneNumber) {
-		$this->phoneNumber = $phoneNumber;
-		$this->queryParameters["PhoneNumber"]=$phoneNumber;
-	}
+        return $this;
+    }
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getStopTime() {
-		return $this->stopTime;
-	}
-
-	public function setStopTime($stopTime) {
-		$this->stopTime = $stopTime;
-		$this->queryParameters["StopTime"]=$stopTime;
-	}
-
-	public function getStartTime() {
-		return $this->startTime;
-	}
-
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-	
+        return $this;
+    }
 }

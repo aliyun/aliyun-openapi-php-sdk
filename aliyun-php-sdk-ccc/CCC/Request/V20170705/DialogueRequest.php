@@ -1,140 +1,168 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace CCC\Request\V20170705;
 
+/**
+ * Request of Dialogue
+ *
+ * @method string getCallId()
+ * @method string getCallingNumber()
+ * @method string getInstanceId()
+ * @method string getCalledNumber()
+ * @method string getActionKey()
+ * @method string getActionParams()
+ * @method string getCallType()
+ * @method string getScenarioId()
+ * @method string getTaskId()
+ * @method string getUtterance()
+ */
 class DialogueRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("CCC", "2017-07-05", "Dialogue", "ccc", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $callId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $callingNumber;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'CCC',
+            '2017-07-05',
+            'Dialogue'
+        );
+    }
 
-	private  $instanceId;
+    /**
+     * @param string $callId
+     *
+     * @return $this
+     */
+    public function setCallId($callId)
+    {
+        $this->requestParameters['CallId'] = $callId;
+        $this->queryParameters['CallId'] = $callId;
 
-	private  $calledNumber;
+        return $this;
+    }
 
-	private  $actionKey;
+    /**
+     * @param string $callingNumber
+     *
+     * @return $this
+     */
+    public function setCallingNumber($callingNumber)
+    {
+        $this->requestParameters['CallingNumber'] = $callingNumber;
+        $this->queryParameters['CallingNumber'] = $callingNumber;
 
-	private  $actionParams;
+        return $this;
+    }
 
-	private  $callType;
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
-	private  $scenarioId;
+        return $this;
+    }
 
-	private  $taskId;
+    /**
+     * @param string $calledNumber
+     *
+     * @return $this
+     */
+    public function setCalledNumber($calledNumber)
+    {
+        $this->requestParameters['CalledNumber'] = $calledNumber;
+        $this->queryParameters['CalledNumber'] = $calledNumber;
 
-	private  $utterance;
+        return $this;
+    }
 
-	public function getCallId() {
-		return $this->callId;
-	}
+    /**
+     * @param string $actionKey
+     *
+     * @return $this
+     */
+    public function setActionKey($actionKey)
+    {
+        $this->requestParameters['ActionKey'] = $actionKey;
+        $this->queryParameters['ActionKey'] = $actionKey;
 
-	public function setCallId($callId) {
-		$this->callId = $callId;
-		$this->queryParameters["CallId"]=$callId;
-	}
+        return $this;
+    }
 
-	public function getCallingNumber() {
-		return $this->callingNumber;
-	}
+    /**
+     * @param string $actionParams
+     *
+     * @return $this
+     */
+    public function setActionParams($actionParams)
+    {
+        $this->requestParameters['ActionParams'] = $actionParams;
+        $this->queryParameters['ActionParams'] = $actionParams;
 
-	public function setCallingNumber($callingNumber) {
-		$this->callingNumber = $callingNumber;
-		$this->queryParameters["CallingNumber"]=$callingNumber;
-	}
+        return $this;
+    }
 
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
+    /**
+     * @param string $callType
+     *
+     * @return $this
+     */
+    public function setCallType($callType)
+    {
+        $this->requestParameters['CallType'] = $callType;
+        $this->queryParameters['CallType'] = $callType;
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
+        return $this;
+    }
 
-	public function getCalledNumber() {
-		return $this->calledNumber;
-	}
+    /**
+     * @param string $scenarioId
+     *
+     * @return $this
+     */
+    public function setScenarioId($scenarioId)
+    {
+        $this->requestParameters['ScenarioId'] = $scenarioId;
+        $this->queryParameters['ScenarioId'] = $scenarioId;
 
-	public function setCalledNumber($calledNumber) {
-		$this->calledNumber = $calledNumber;
-		$this->queryParameters["CalledNumber"]=$calledNumber;
-	}
+        return $this;
+    }
 
-	public function getActionKey() {
-		return $this->actionKey;
-	}
+    /**
+     * @param string $taskId
+     *
+     * @return $this
+     */
+    public function setTaskId($taskId)
+    {
+        $this->requestParameters['TaskId'] = $taskId;
+        $this->queryParameters['TaskId'] = $taskId;
 
-	public function setActionKey($actionKey) {
-		$this->actionKey = $actionKey;
-		$this->queryParameters["ActionKey"]=$actionKey;
-	}
+        return $this;
+    }
 
-	public function getActionParams() {
-		return $this->actionParams;
-	}
+    /**
+     * @param string $utterance
+     *
+     * @return $this
+     */
+    public function setUtterance($utterance)
+    {
+        $this->requestParameters['Utterance'] = $utterance;
+        $this->queryParameters['Utterance'] = $utterance;
 
-	public function setActionParams($actionParams) {
-		$this->actionParams = $actionParams;
-		$this->queryParameters["ActionParams"]=$actionParams;
-	}
-
-	public function getCallType() {
-		return $this->callType;
-	}
-
-	public function setCallType($callType) {
-		$this->callType = $callType;
-		$this->queryParameters["CallType"]=$callType;
-	}
-
-	public function getScenarioId() {
-		return $this->scenarioId;
-	}
-
-	public function setScenarioId($scenarioId) {
-		$this->scenarioId = $scenarioId;
-		$this->queryParameters["ScenarioId"]=$scenarioId;
-	}
-
-	public function getTaskId() {
-		return $this->taskId;
-	}
-
-	public function setTaskId($taskId) {
-		$this->taskId = $taskId;
-		$this->queryParameters["TaskId"]=$taskId;
-	}
-
-	public function getUtterance() {
-		return $this->utterance;
-	}
-
-	public function setUtterance($utterance) {
-		$this->utterance = $utterance;
-		$this->queryParameters["Utterance"]=$utterance;
-	}
-	
+        return $this;
+    }
 }

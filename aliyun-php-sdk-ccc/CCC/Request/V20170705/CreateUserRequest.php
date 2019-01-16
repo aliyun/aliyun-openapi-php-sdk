@@ -1,124 +1,160 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace CCC\Request\V20170705;
 
+/**
+ * Request of CreateUser
+ *
+ * @method string getPrivateOutboundNumberId()
+ * @method array getSkillLevels()
+ * @method string getInstanceId()
+ * @method string getLoginName()
+ * @method string getPhone()
+ * @method array getRoleIds()
+ * @method string getDisplayName()
+ * @method array getSkillGroupIds()
+ * @method string getEmail()
+ */
 class CreateUserRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("CCC", "2017-07-05", "CreateUser", "ccc", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $SkillLevels;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $instanceId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'CCC',
+            '2017-07-05',
+            'CreateUser'
+        );
+    }
 
-	private  $loginName;
+    /**
+     * @param string $privateOutboundNumberId
+     *
+     * @return $this
+     */
+    public function setPrivateOutboundNumberId($privateOutboundNumberId)
+    {
+        $this->requestParameters['PrivateOutboundNumberId'] = $privateOutboundNumberId;
+        $this->queryParameters['PrivateOutboundNumberId'] = $privateOutboundNumberId;
 
-	private  $phone;
+        return $this;
+    }
 
-	private  $RoleIds;
+    /**
+     * @param array $skillLevels
+     *
+     * @return $this
+     */
+    public function setSkillLevels(array $skillLevels)
+    {
+        $this->requestParameters['SkillLevels'] = $skillLevels;
+        foreach ($skillLevels as $i => $iValue) {
+            $this->queryParameters['SkillLevel.' . ($i + 1)] = $iValue;
+        }
 
-	private  $displayName;
+        return $this;
+    }
 
-	private  $SkillGroupIds;
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
-	private  $email;
+        return $this;
+    }
 
-	public function getSkillLevels() {
-		return $this->SkillLevels;
-	}
+    /**
+     * @param string $loginName
+     *
+     * @return $this
+     */
+    public function setLoginName($loginName)
+    {
+        $this->requestParameters['LoginName'] = $loginName;
+        $this->queryParameters['LoginName'] = $loginName;
 
-	public function setSkillLevels($SkillLevels) {
-		$this->SkillLevels = $SkillLevels;
-		for ($i = 0; $i < count($SkillLevels); $i ++) {	
-			$this->queryParameters["SkillLevel.".($i+1)] = $SkillLevels[$i];
-		}
-	}
+        return $this;
+    }
 
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
+    /**
+     * @param string $phone
+     *
+     * @return $this
+     */
+    public function setPhone($phone)
+    {
+        $this->requestParameters['Phone'] = $phone;
+        $this->queryParameters['Phone'] = $phone;
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
+        return $this;
+    }
 
-	public function getLoginName() {
-		return $this->loginName;
-	}
+    /**
+     * @param array $roleIds
+     *
+     * @return $this
+     */
+    public function setRoleIds(array $roleIds)
+    {
+        $this->requestParameters['RoleIds'] = $roleIds;
+        foreach ($roleIds as $i => $iValue) {
+            $this->queryParameters['RoleId.' . ($i + 1)] = $iValue;
+        }
 
-	public function setLoginName($loginName) {
-		$this->loginName = $loginName;
-		$this->queryParameters["LoginName"]=$loginName;
-	}
+        return $this;
+    }
 
-	public function getPhone() {
-		return $this->phone;
-	}
+    /**
+     * @param string $displayName
+     *
+     * @return $this
+     */
+    public function setDisplayName($displayName)
+    {
+        $this->requestParameters['DisplayName'] = $displayName;
+        $this->queryParameters['DisplayName'] = $displayName;
 
-	public function setPhone($phone) {
-		$this->phone = $phone;
-		$this->queryParameters["Phone"]=$phone;
-	}
+        return $this;
+    }
 
-	public function getRoleIds() {
-		return $this->RoleIds;
-	}
+    /**
+     * @param array $skillGroupIds
+     *
+     * @return $this
+     */
+    public function setSkillGroupIds(array $skillGroupIds)
+    {
+        $this->requestParameters['SkillGroupIds'] = $skillGroupIds;
+        foreach ($skillGroupIds as $i => $iValue) {
+            $this->queryParameters['SkillGroupId.' . ($i + 1)] = $iValue;
+        }
 
-	public function setRoleIds($RoleIds) {
-		$this->RoleIds = $RoleIds;
-		for ($i = 0; $i < count($RoleIds); $i ++) {	
-			$this->queryParameters["RoleId.".($i+1)] = $RoleIds[$i];
-		}
-	}
+        return $this;
+    }
 
-	public function getDisplayName() {
-		return $this->displayName;
-	}
+    /**
+     * @param string $email
+     *
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->requestParameters['Email'] = $email;
+        $this->queryParameters['Email'] = $email;
 
-	public function setDisplayName($displayName) {
-		$this->displayName = $displayName;
-		$this->queryParameters["DisplayName"]=$displayName;
-	}
-
-	public function getSkillGroupIds() {
-		return $this->SkillGroupIds;
-	}
-
-	public function setSkillGroupIds($SkillGroupIds) {
-		$this->SkillGroupIds = $SkillGroupIds;
-		for ($i = 0; $i < count($SkillGroupIds); $i ++) {	
-			$this->queryParameters["SkillGroupId.".($i+1)] = $SkillGroupIds[$i];
-		}
-	}
-
-	public function getEmail() {
-		return $this->email;
-	}
-
-	public function setEmail($email) {
-		$this->email = $email;
-		$this->queryParameters["Email"]=$email;
-	}
-	
+        return $this;
+    }
 }

@@ -1,63 +1,70 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace CCC\Request\V20170705;
 
+/**
+ * Request of GetSurvey
+ *
+ * @method string getSurveyId()
+ * @method string getInstanceId()
+ * @method string getScenarioId()
+ */
 class GetSurveyRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("CCC", "2017-07-05", "GetSurvey", "ccc", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $surveyId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $instanceId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'CCC',
+            '2017-07-05',
+            'GetSurvey'
+        );
+    }
 
-	private  $scenarioId;
+    /**
+     * @param string $surveyId
+     *
+     * @return $this
+     */
+    public function setSurveyId($surveyId)
+    {
+        $this->requestParameters['SurveyId'] = $surveyId;
+        $this->queryParameters['SurveyId'] = $surveyId;
 
-	public function getSurveyId() {
-		return $this->surveyId;
-	}
+        return $this;
+    }
 
-	public function setSurveyId($surveyId) {
-		$this->surveyId = $surveyId;
-		$this->queryParameters["SurveyId"]=$surveyId;
-	}
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
+        return $this;
+    }
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
+    /**
+     * @param string $scenarioId
+     *
+     * @return $this
+     */
+    public function setScenarioId($scenarioId)
+    {
+        $this->requestParameters['ScenarioId'] = $scenarioId;
+        $this->queryParameters['ScenarioId'] = $scenarioId;
 
-	public function getScenarioId() {
-		return $this->scenarioId;
-	}
-
-	public function setScenarioId($scenarioId) {
-		$this->scenarioId = $scenarioId;
-		$this->queryParameters["ScenarioId"]=$scenarioId;
-	}
-	
+        return $this;
+    }
 }

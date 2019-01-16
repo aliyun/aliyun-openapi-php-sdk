@@ -1,98 +1,114 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace CCC\Request\V20170705;
 
+/**
+ * Request of CreateScenario
+ *
+ * @method string getInstanceId()
+ * @method array getSurveysJsons()
+ * @method string getStrategyJson()
+ * @method string getName()
+ * @method string getDescription()
+ * @method string getType()
+ */
 class CreateScenarioRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("CCC", "2017-07-05", "CreateScenario", "ccc", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $instanceId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $SurveysJsons;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'CCC',
+            '2017-07-05',
+            'CreateScenario'
+        );
+    }
 
-	private  $strategyJson;
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
-	private  $name;
+        return $this;
+    }
 
-	private  $description;
+    /**
+     * @param array $surveysJsons
+     *
+     * @return $this
+     */
+    public function setSurveysJsons(array $surveysJsons)
+    {
+        $this->requestParameters['SurveysJsons'] = $surveysJsons;
+        foreach ($surveysJsons as $i => $iValue) {
+            $this->queryParameters['SurveysJson.' . ($i + 1)] = $iValue;
+        }
 
-	private  $type;
+        return $this;
+    }
 
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
+    /**
+     * @param string $strategyJson
+     *
+     * @return $this
+     */
+    public function setStrategyJson($strategyJson)
+    {
+        $this->requestParameters['StrategyJson'] = $strategyJson;
+        $this->queryParameters['StrategyJson'] = $strategyJson;
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
+        return $this;
+    }
 
-	public function getSurveysJsons() {
-		return $this->SurveysJsons;
-	}
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
-	public function setSurveysJsons($SurveysJsons) {
-		$this->SurveysJsons = $SurveysJsons;
-		for ($i = 0; $i < count($SurveysJsons); $i ++) {	
-			$this->queryParameters["SurveysJson.".($i+1)] = $SurveysJsons[$i];
-		}
-	}
+        return $this;
+    }
 
-	public function getStrategyJson() {
-		return $this->strategyJson;
-	}
+    /**
+     * @param string $description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
 
-	public function setStrategyJson($strategyJson) {
-		$this->strategyJson = $strategyJson;
-		$this->queryParameters["StrategyJson"]=$strategyJson;
-	}
+        return $this;
+    }
 
-	public function getName() {
-		return $this->name;
-	}
+    /**
+     * @param string $type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->requestParameters['Type'] = $type;
+        $this->queryParameters['Type'] = $type;
 
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
-	}
-
-	public function getDescription() {
-		return $this->description;
-	}
-
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
-	}
-
-	public function getType() {
-		return $this->type;
-	}
-
-	public function setType($type) {
-		$this->type = $type;
-		$this->queryParameters["Type"]=$type;
-	}
-	
+        return $this;
+    }
 }
