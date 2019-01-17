@@ -1,151 +1,183 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Vpc\Request\V20160428;
 
+/**
+ * Request of CreateBgpGroup
+ *
+ * @method string getAuthKey()
+ * @method string getResourceOwnerId()
+ * @method string getResourceOwnerAccount()
+ * @method string getClientToken()
+ * @method string getOwnerAccount()
+ * @method string getDescription()
+ * @method string getOwnerId()
+ * @method string getPeerAsn()
+ * @method string getIsFakeAsn()
+ * @method string getRouterId()
+ * @method string getName()
+ */
 class CreateBgpGroupRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Vpc", "2016-04-28", "CreateBgpGroup", "vpc", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $authKey;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $resourceOwnerId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Vpc',
+            '2016-04-28',
+            'CreateBgpGroup',
+            'vpc'
+        );
+    }
 
-	private  $resourceOwnerAccount;
+    /**
+     * @param string $authKey
+     *
+     * @return $this
+     */
+    public function setAuthKey($authKey)
+    {
+        $this->requestParameters['AuthKey'] = $authKey;
+        $this->queryParameters['AuthKey'] = $authKey;
 
-	private  $clientToken;
+        return $this;
+    }
 
-	private  $ownerAccount;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $description;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $peerAsn;
+        return $this;
+    }
 
-	private  $isFakeAsn;
+    /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
 
-	private  $routerId;
+        return $this;
+    }
 
-	private  $name;
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	public function getAuthKey() {
-		return $this->authKey;
-	}
+        return $this;
+    }
 
-	public function setAuthKey($authKey) {
-		$this->authKey = $authKey;
-		$this->queryParameters["AuthKey"]=$authKey;
-	}
+    /**
+     * @param string $description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+    /**
+     * @param string $peerAsn
+     *
+     * @return $this
+     */
+    public function setPeerAsn($peerAsn)
+    {
+        $this->requestParameters['PeerAsn'] = $peerAsn;
+        $this->queryParameters['PeerAsn'] = $peerAsn;
 
-	public function getClientToken() {
-		return $this->clientToken;
-	}
+        return $this;
+    }
 
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
+    /**
+     * @param string $isFakeAsn
+     *
+     * @return $this
+     */
+    public function setIsFakeAsn($isFakeAsn)
+    {
+        $this->requestParameters['IsFakeAsn'] = $isFakeAsn;
+        $this->queryParameters['IsFakeAsn'] = $isFakeAsn;
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+        return $this;
+    }
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
+    /**
+     * @param string $routerId
+     *
+     * @return $this
+     */
+    public function setRouterId($routerId)
+    {
+        $this->requestParameters['RouterId'] = $routerId;
+        $this->queryParameters['RouterId'] = $routerId;
 
-	public function getDescription() {
-		return $this->description;
-	}
+        return $this;
+    }
 
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
-	}
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getPeerAsn() {
-		return $this->peerAsn;
-	}
-
-	public function setPeerAsn($peerAsn) {
-		$this->peerAsn = $peerAsn;
-		$this->queryParameters["PeerAsn"]=$peerAsn;
-	}
-
-	public function getIsFakeAsn() {
-		return $this->isFakeAsn;
-	}
-
-	public function setIsFakeAsn($isFakeAsn) {
-		$this->isFakeAsn = $isFakeAsn;
-		$this->queryParameters["IsFakeAsn"]=$isFakeAsn;
-	}
-
-	public function getRouterId() {
-		return $this->routerId;
-	}
-
-	public function setRouterId($routerId) {
-		$this->routerId = $routerId;
-		$this->queryParameters["RouterId"]=$routerId;
-	}
-
-	public function getName() {
-		return $this->name;
-	}
-
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
-	}
-	
+        return $this;
+    }
 }

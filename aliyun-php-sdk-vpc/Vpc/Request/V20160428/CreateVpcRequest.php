@@ -1,140 +1,197 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Vpc\Request\V20160428;
 
+/**
+ * Request of CreateVpc
+ *
+ * @method string getResourceOwnerId()
+ * @method string getResourceOwnerAccount()
+ * @method string getClientToken()
+ * @method string getOwnerAccount()
+ * @method string getEnableIpv6()
+ * @method string getDescription()
+ * @method string getOwnerId()
+ * @method string getIpv6CidrBlock()
+ * @method string getVpcName()
+ * @method string getResourceGroupId()
+ * @method string getCidrBlock()
+ * @method string getUserCidr()
+ */
 class CreateVpcRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Vpc", "2016-04-28", "CreateVpc", "vpc", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $vpcName;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $resourceGroupId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Vpc',
+            '2016-04-28',
+            'CreateVpc',
+            'vpc'
+        );
+    }
 
-	private  $resourceOwnerId;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $resourceOwnerAccount;
+        return $this;
+    }
 
-	private  $clientToken;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $ownerAccount;
+        return $this;
+    }
 
-	private  $cidrBlock;
+    /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
 
-	private  $description;
+        return $this;
+    }
 
-	private  $userCidr;
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	public function getVpcName() {
-		return $this->vpcName;
-	}
+    /**
+     * @param string $enableIpv6
+     *
+     * @return $this
+     */
+    public function setEnableIpv6($enableIpv6)
+    {
+        $this->requestParameters['EnableIpv6'] = $enableIpv6;
+        $this->queryParameters['EnableIpv6'] = $enableIpv6;
 
-	public function setVpcName($vpcName) {
-		$this->vpcName = $vpcName;
-		$this->queryParameters["VpcName"]=$vpcName;
-	}
+        return $this;
+    }
 
-	public function getResourceGroupId() {
-		return $this->resourceGroupId;
-	}
+    /**
+     * @param string $description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
 
-	public function setResourceGroupId($resourceGroupId) {
-		$this->resourceGroupId = $resourceGroupId;
-		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param string $ipv6CidrBlock
+     *
+     * @return $this
+     */
+    public function setIpv6CidrBlock($ipv6CidrBlock)
+    {
+        $this->requestParameters['Ipv6CidrBlock'] = $ipv6CidrBlock;
+        $this->queryParameters['Ipv6CidrBlock'] = $ipv6CidrBlock;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function getClientToken() {
-		return $this->clientToken;
-	}
+    /**
+     * @param string $vpcName
+     *
+     * @return $this
+     */
+    public function setVpcName($vpcName)
+    {
+        $this->requestParameters['VpcName'] = $vpcName;
+        $this->queryParameters['VpcName'] = $vpcName;
 
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
+        return $this;
+    }
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+    /**
+     * @param string $resourceGroupId
+     *
+     * @return $this
+     */
+    public function setResourceGroupId($resourceGroupId)
+    {
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
+        return $this;
+    }
 
-	public function getCidrBlock() {
-		return $this->cidrBlock;
-	}
+    /**
+     * @param string $cidrBlock
+     *
+     * @return $this
+     */
+    public function setCidrBlock($cidrBlock)
+    {
+        $this->requestParameters['CidrBlock'] = $cidrBlock;
+        $this->queryParameters['CidrBlock'] = $cidrBlock;
 
-	public function setCidrBlock($cidrBlock) {
-		$this->cidrBlock = $cidrBlock;
-		$this->queryParameters["CidrBlock"]=$cidrBlock;
-	}
+        return $this;
+    }
 
-	public function getDescription() {
-		return $this->description;
-	}
+    /**
+     * @param string $userCidr
+     *
+     * @return $this
+     */
+    public function setUserCidr($userCidr)
+    {
+        $this->requestParameters['UserCidr'] = $userCidr;
+        $this->queryParameters['UserCidr'] = $userCidr;
 
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
-	}
-
-	public function getUserCidr() {
-		return $this->userCidr;
-	}
-
-	public function setUserCidr($userCidr) {
-		$this->userCidr = $userCidr;
-		$this->queryParameters["UserCidr"]=$userCidr;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-	
+        return $this;
+    }
 }

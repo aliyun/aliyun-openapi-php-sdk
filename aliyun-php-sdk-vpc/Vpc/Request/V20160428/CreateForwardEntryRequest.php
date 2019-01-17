@@ -1,140 +1,169 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Vpc\Request\V20160428;
 
+/**
+ * Request of CreateForwardEntry
+ *
+ * @method string getResourceOwnerId()
+ * @method string getResourceOwnerAccount()
+ * @method string getIpProtocol()
+ * @method string getInternalPort()
+ * @method string getOwnerAccount()
+ * @method string getForwardTableId()
+ * @method string getOwnerId()
+ * @method string getExternalIp()
+ * @method string getExternalPort()
+ * @method string getInternalIp()
+ */
 class CreateForwardEntryRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Vpc", "2016-04-28", "CreateForwardEntry", "vpc", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $resourceOwnerAccount;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Vpc',
+            '2016-04-28',
+            'CreateForwardEntry',
+            'vpc'
+        );
+    }
 
-	private  $ipProtocol;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $internalPort;
+        return $this;
+    }
 
-	private  $ownerAccount;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $forwardTableId;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $ipProtocol
+     *
+     * @return $this
+     */
+    public function setIpProtocol($ipProtocol)
+    {
+        $this->requestParameters['IpProtocol'] = $ipProtocol;
+        $this->queryParameters['IpProtocol'] = $ipProtocol;
 
-	private  $externalIp;
+        return $this;
+    }
 
-	private  $externalPort;
+    /**
+     * @param string $internalPort
+     *
+     * @return $this
+     */
+    public function setInternalPort($internalPort)
+    {
+        $this->requestParameters['InternalPort'] = $internalPort;
+        $this->queryParameters['InternalPort'] = $internalPort;
 
-	private  $internalIp;
+        return $this;
+    }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param string $forwardTableId
+     *
+     * @return $this
+     */
+    public function setForwardTableId($forwardTableId)
+    {
+        $this->requestParameters['ForwardTableId'] = $forwardTableId;
+        $this->queryParameters['ForwardTableId'] = $forwardTableId;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function getIpProtocol() {
-		return $this->ipProtocol;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setIpProtocol($ipProtocol) {
-		$this->ipProtocol = $ipProtocol;
-		$this->queryParameters["IpProtocol"]=$ipProtocol;
-	}
+        return $this;
+    }
 
-	public function getInternalPort() {
-		return $this->internalPort;
-	}
+    /**
+     * @param string $externalIp
+     *
+     * @return $this
+     */
+    public function setExternalIp($externalIp)
+    {
+        $this->requestParameters['ExternalIp'] = $externalIp;
+        $this->queryParameters['ExternalIp'] = $externalIp;
 
-	public function setInternalPort($internalPort) {
-		$this->internalPort = $internalPort;
-		$this->queryParameters["InternalPort"]=$internalPort;
-	}
+        return $this;
+    }
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+    /**
+     * @param string $externalPort
+     *
+     * @return $this
+     */
+    public function setExternalPort($externalPort)
+    {
+        $this->requestParameters['ExternalPort'] = $externalPort;
+        $this->queryParameters['ExternalPort'] = $externalPort;
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
+        return $this;
+    }
 
-	public function getForwardTableId() {
-		return $this->forwardTableId;
-	}
+    /**
+     * @param string $internalIp
+     *
+     * @return $this
+     */
+    public function setInternalIp($internalIp)
+    {
+        $this->requestParameters['InternalIp'] = $internalIp;
+        $this->queryParameters['InternalIp'] = $internalIp;
 
-	public function setForwardTableId($forwardTableId) {
-		$this->forwardTableId = $forwardTableId;
-		$this->queryParameters["ForwardTableId"]=$forwardTableId;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getExternalIp() {
-		return $this->externalIp;
-	}
-
-	public function setExternalIp($externalIp) {
-		$this->externalIp = $externalIp;
-		$this->queryParameters["ExternalIp"]=$externalIp;
-	}
-
-	public function getExternalPort() {
-		return $this->externalPort;
-	}
-
-	public function setExternalPort($externalPort) {
-		$this->externalPort = $externalPort;
-		$this->queryParameters["ExternalPort"]=$externalPort;
-	}
-
-	public function getInternalIp() {
-		return $this->internalIp;
-	}
-
-	public function setInternalIp($internalIp) {
-		$this->internalIp = $internalIp;
-		$this->queryParameters["InternalIp"]=$internalIp;
-	}
-	
+        return $this;
+    }
 }

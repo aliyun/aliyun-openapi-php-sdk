@@ -1,147 +1,175 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Vpc\Request\V20160428;
 
+/**
+ * Request of CreateNatGateway
+ *
+ * @method string getResourceOwnerId()
+ * @method string getResourceOwnerAccount()
+ * @method string getClientToken()
+ * @method string getOwnerAccount()
+ * @method string getVpcId()
+ * @method string getName()
+ * @method string getDescription()
+ * @method string getOwnerId()
+ * @method array getBandwidthPackages()
+ * @method string getSpec()
+ */
 class CreateNatGatewayRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Vpc", "2016-04-28", "CreateNatGateway", "vpc", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $resourceOwnerAccount;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Vpc',
+            '2016-04-28',
+            'CreateNatGateway',
+            'vpc'
+        );
+    }
 
-	private  $clientToken;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $ownerAccount;
+        return $this;
+    }
 
-	private  $vpcId;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $name;
+        return $this;
+    }
 
-	private  $description;
+    /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	private  $BandwidthPackages;
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	private  $spec;
+        return $this;
+    }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+    /**
+     * @param string $vpcId
+     *
+     * @return $this
+     */
+    public function setVpcId($vpcId)
+    {
+        $this->requestParameters['VpcId'] = $vpcId;
+        $this->queryParameters['VpcId'] = $vpcId;
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function getClientToken() {
-		return $this->clientToken;
-	}
+    /**
+     * @param string $description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
 
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
+        return $this;
+    }
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
+        return $this;
+    }
 
-	public function getVpcId() {
-		return $this->vpcId;
-	}
+    /**
+     * @param array $bandwidthPackages
+     *
+     * @return $this
+     */
+    public function setBandwidthPackages(array $bandwidthPackages)
+    {
+        $this->requestParameters['BandwidthPackages'] = $bandwidthPackages;
+        foreach ($bandwidthPackages as $i => $iValue) {
+            $this->queryParameters['BandwidthPackage.' . ($i + 1) . '.Bandwidth'] = $bandwidthPackages[$i]['Bandwidth'];
+            $this->queryParameters['BandwidthPackage.' . ($i + 1) . '.Zone'] = $bandwidthPackages[$i]['Zone'];
+            $this->queryParameters['BandwidthPackage.' . ($i + 1) . '.InternetChargeType'] = $bandwidthPackages[$i]['InternetChargeType'];
+            $this->queryParameters['BandwidthPackage.' . ($i + 1) . '.ISP'] = $bandwidthPackages[$i]['ISP'];
+            $this->queryParameters['BandwidthPackage.' . ($i + 1) . '.IpCount'] = $bandwidthPackages[$i]['IpCount'];
+        }
 
-	public function setVpcId($vpcId) {
-		$this->vpcId = $vpcId;
-		$this->queryParameters["VpcId"]=$vpcId;
-	}
+        return $this;
+    }
 
-	public function getName() {
-		return $this->name;
-	}
+    /**
+     * @param string $spec
+     *
+     * @return $this
+     */
+    public function setSpec($spec)
+    {
+        $this->requestParameters['Spec'] = $spec;
+        $this->queryParameters['Spec'] = $spec;
 
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
-	}
-
-	public function getDescription() {
-		return $this->description;
-	}
-
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getBandwidthPackages() {
-		return $this->BandwidthPackages;
-	}
-
-	public function setBandwidthPackages($BandwidthPackages) {
-		$this->BandwidthPackages = $BandwidthPackages;
-		for ($i = 0; $i < count($BandwidthPackages); $i ++) {	
-			$this->queryParameters['BandwidthPackage.' . ($i + 1) . '.IpCount'] = $BandwidthPackages[$i]['IpCount'];
-			$this->queryParameters['BandwidthPackage.' . ($i + 1) . '.Bandwidth'] = $BandwidthPackages[$i]['Bandwidth'];
-			$this->queryParameters['BandwidthPackage.' . ($i + 1) . '.Zone'] = $BandwidthPackages[$i]['Zone'];
-			$this->queryParameters['BandwidthPackage.' . ($i + 1) . '.ISP'] = $BandwidthPackages[$i]['ISP'];
-			$this->queryParameters['BandwidthPackage.' . ($i + 1) . '.InternetChargeType'] = $BandwidthPackages[$i]['InternetChargeType'];
-
-		}
-	}
-
-	public function getSpec() {
-		return $this->spec;
-	}
-
-	public function setSpec($spec) {
-		$this->spec = $spec;
-		$this->queryParameters["Spec"]=$spec;
-	}
-	
+        return $this;
+    }
 }

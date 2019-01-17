@@ -1,228 +1,326 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Vpc\Request\V20160428;
 
+/**
+ * Request of DescribeEipAddresses
+ *
+ * @method string getResourceOwnerId()
+ * @method string getResourceOwnerAccount()
+ * @method string getFilter2Value()
+ * @method string getISP()
+ * @method string getOwnerAccount()
+ * @method string getAllocationId()
+ * @method string getFilter1Value()
+ * @method string getFilter2Key()
+ * @method string getOwnerId()
+ * @method string getIncludeReservationData()
+ * @method string getEipAddress()
+ * @method string getPageNumber()
+ * @method string getResourceGroupId()
+ * @method string getLockReason()
+ * @method string getFilter1Key()
+ * @method string getAssociatedInstanceType()
+ * @method string getPageSize()
+ * @method array getTags()
+ * @method string getChargeType()
+ * @method string getAssociatedInstanceId()
+ * @method string getStatus()
+ */
 class DescribeEipAddressesRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Vpc", "2016-04-28", "DescribeEipAddresses", "vpc", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $resourceOwnerAccount;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Vpc',
+            '2016-04-28',
+            'DescribeEipAddresses',
+            'vpc'
+        );
+    }
 
-	private  $filter2Value;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $ownerAccount;
+        return $this;
+    }
 
-	private  $allocationId;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $filter1Value;
+        return $this;
+    }
 
-	private  $filter2Key;
+    /**
+     * @param string $filter2Value
+     *
+     * @return $this
+     */
+    public function setFilter2Value($filter2Value)
+    {
+        $this->requestParameters['Filter2Value'] = $filter2Value;
+        $this->queryParameters['Filter.2.Value'] = $filter2Value;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	private  $eipAddress;
+    /**
+     * @param string $iSP
+     *
+     * @return $this
+     */
+    public function setISP($iSP)
+    {
+        $this->requestParameters['ISP'] = $iSP;
+        $this->queryParameters['ISP'] = $iSP;
 
-	private  $pageNumber;
+        return $this;
+    }
 
-	private  $resourceGroupId;
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	private  $lockReason;
+        return $this;
+    }
 
-	private  $filter1Key;
+    /**
+     * @param string $allocationId
+     *
+     * @return $this
+     */
+    public function setAllocationId($allocationId)
+    {
+        $this->requestParameters['AllocationId'] = $allocationId;
+        $this->queryParameters['AllocationId'] = $allocationId;
 
-	private  $associatedInstanceType;
+        return $this;
+    }
 
-	private  $pageSize;
+    /**
+     * @param string $filter1Value
+     *
+     * @return $this
+     */
+    public function setFilter1Value($filter1Value)
+    {
+        $this->requestParameters['Filter1Value'] = $filter1Value;
+        $this->queryParameters['Filter.1.Value'] = $filter1Value;
 
-	private  $chargeType;
+        return $this;
+    }
 
-	private  $associatedInstanceId;
+    /**
+     * @param string $filter2Key
+     *
+     * @return $this
+     */
+    public function setFilter2Key($filter2Key)
+    {
+        $this->requestParameters['Filter2Key'] = $filter2Key;
+        $this->queryParameters['Filter.2.Key'] = $filter2Key;
 
-	private  $status;
+        return $this;
+    }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param string $includeReservationData
+     *
+     * @return $this
+     */
+    public function setIncludeReservationData($includeReservationData)
+    {
+        $this->requestParameters['IncludeReservationData'] = $includeReservationData;
+        $this->queryParameters['IncludeReservationData'] = $includeReservationData;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function getFilter2Value() {
-		return $this->filter2Value;
-	}
+    /**
+     * @param string $eipAddress
+     *
+     * @return $this
+     */
+    public function setEipAddress($eipAddress)
+    {
+        $this->requestParameters['EipAddress'] = $eipAddress;
+        $this->queryParameters['EipAddress'] = $eipAddress;
 
-	public function setFilter2Value($filter2Value) {
-		$this->filter2Value = $filter2Value;
-		$this->queryParameters["Filter.2.Value"]=$filter2Value;
-	}
+        return $this;
+    }
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
+        return $this;
+    }
 
-	public function getAllocationId() {
-		return $this->allocationId;
-	}
+    /**
+     * @param string $resourceGroupId
+     *
+     * @return $this
+     */
+    public function setResourceGroupId($resourceGroupId)
+    {
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
 
-	public function setAllocationId($allocationId) {
-		$this->allocationId = $allocationId;
-		$this->queryParameters["AllocationId"]=$allocationId;
-	}
+        return $this;
+    }
 
-	public function getFilter1Value() {
-		return $this->filter1Value;
-	}
+    /**
+     * @param string $lockReason
+     *
+     * @return $this
+     */
+    public function setLockReason($lockReason)
+    {
+        $this->requestParameters['LockReason'] = $lockReason;
+        $this->queryParameters['LockReason'] = $lockReason;
 
-	public function setFilter1Value($filter1Value) {
-		$this->filter1Value = $filter1Value;
-		$this->queryParameters["Filter.1.Value"]=$filter1Value;
-	}
+        return $this;
+    }
 
-	public function getFilter2Key() {
-		return $this->filter2Key;
-	}
+    /**
+     * @param string $filter1Key
+     *
+     * @return $this
+     */
+    public function setFilter1Key($filter1Key)
+    {
+        $this->requestParameters['Filter1Key'] = $filter1Key;
+        $this->queryParameters['Filter.1.Key'] = $filter1Key;
 
-	public function setFilter2Key($filter2Key) {
-		$this->filter2Key = $filter2Key;
-		$this->queryParameters["Filter.2.Key"]=$filter2Key;
-	}
+        return $this;
+    }
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+    /**
+     * @param string $associatedInstanceType
+     *
+     * @return $this
+     */
+    public function setAssociatedInstanceType($associatedInstanceType)
+    {
+        $this->requestParameters['AssociatedInstanceType'] = $associatedInstanceType;
+        $this->queryParameters['AssociatedInstanceType'] = $associatedInstanceType;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+        return $this;
+    }
 
-	public function getEipAddress() {
-		return $this->eipAddress;
-	}
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	public function setEipAddress($eipAddress) {
-		$this->eipAddress = $eipAddress;
-		$this->queryParameters["EipAddress"]=$eipAddress;
-	}
+        return $this;
+    }
 
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
+    /**
+     * @param array $tags
+     *
+     * @return $this
+     */
+    public function setTags(array $tags)
+    {
+        $this->requestParameters['Tags'] = $tags;
+        foreach ($tags as $i => $iValue) {
+            $this->queryParameters['Tag.' . ($i + 1) . '.Value'] = $tags[$i]['Value'];
+            $this->queryParameters['Tag.' . ($i + 1) . '.Key'] = $tags[$i]['Key'];
+        }
 
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
+        return $this;
+    }
 
-	public function getResourceGroupId() {
-		return $this->resourceGroupId;
-	}
+    /**
+     * @param string $chargeType
+     *
+     * @return $this
+     */
+    public function setChargeType($chargeType)
+    {
+        $this->requestParameters['ChargeType'] = $chargeType;
+        $this->queryParameters['ChargeType'] = $chargeType;
 
-	public function setResourceGroupId($resourceGroupId) {
-		$this->resourceGroupId = $resourceGroupId;
-		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
-	}
+        return $this;
+    }
 
-	public function getLockReason() {
-		return $this->lockReason;
-	}
+    /**
+     * @param string $associatedInstanceId
+     *
+     * @return $this
+     */
+    public function setAssociatedInstanceId($associatedInstanceId)
+    {
+        $this->requestParameters['AssociatedInstanceId'] = $associatedInstanceId;
+        $this->queryParameters['AssociatedInstanceId'] = $associatedInstanceId;
 
-	public function setLockReason($lockReason) {
-		$this->lockReason = $lockReason;
-		$this->queryParameters["LockReason"]=$lockReason;
-	}
+        return $this;
+    }
 
-	public function getFilter1Key() {
-		return $this->filter1Key;
-	}
+    /**
+     * @param string $status
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->requestParameters['Status'] = $status;
+        $this->queryParameters['Status'] = $status;
 
-	public function setFilter1Key($filter1Key) {
-		$this->filter1Key = $filter1Key;
-		$this->queryParameters["Filter.1.Key"]=$filter1Key;
-	}
-
-	public function getAssociatedInstanceType() {
-		return $this->associatedInstanceType;
-	}
-
-	public function setAssociatedInstanceType($associatedInstanceType) {
-		$this->associatedInstanceType = $associatedInstanceType;
-		$this->queryParameters["AssociatedInstanceType"]=$associatedInstanceType;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getChargeType() {
-		return $this->chargeType;
-	}
-
-	public function setChargeType($chargeType) {
-		$this->chargeType = $chargeType;
-		$this->queryParameters["ChargeType"]=$chargeType;
-	}
-
-	public function getAssociatedInstanceId() {
-		return $this->associatedInstanceId;
-	}
-
-	public function setAssociatedInstanceId($associatedInstanceId) {
-		$this->associatedInstanceId = $associatedInstanceId;
-		$this->queryParameters["AssociatedInstanceId"]=$associatedInstanceId;
-	}
-
-	public function getStatus() {
-		return $this->status;
-	}
-
-	public function setStatus($status) {
-		$this->status = $status;
-		$this->queryParameters["Status"]=$status;
-	}
-	
+        return $this;
+    }
 }

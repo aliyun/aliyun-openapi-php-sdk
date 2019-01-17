@@ -1,250 +1,365 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Vpc\Request\V20160428;
 
+/**
+ * Request of CreateRouterInterface
+ *
+ * @method string getAccessPointId()
+ * @method string getOppositeRouterId()
+ * @method string getOppositeAccessPointId()
+ * @method string getResourceOwnerId()
+ * @method string getRole()
+ * @method string getClientToken()
+ * @method string getHealthCheckTargetIp()
+ * @method string getDescription()
+ * @method string getSpec()
+ * @method string getOppositeInterfaceId()
+ * @method string getInstanceChargeType()
+ * @method string getPeriod()
+ * @method string getAutoPay()
+ * @method string getResourceOwnerAccount()
+ * @method string getOppositeRegionId()
+ * @method string getOwnerAccount()
+ * @method string getOwnerId()
+ * @method string getOppositeInterfaceOwnerId()
+ * @method string getRouterType()
+ * @method string getHealthCheckSourceIp()
+ * @method string getRouterId()
+ * @method string getOppositeRouterType()
+ * @method string getName()
+ * @method string getPricingCycle()
+ */
 class CreateRouterInterfaceRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Vpc", "2016-04-28", "CreateRouterInterface", "vpc", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $accessPointId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $oppositeRouterId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Vpc',
+            '2016-04-28',
+            'CreateRouterInterface',
+            'vpc'
+        );
+    }
 
-	private  $oppositeAccessPointId;
+    /**
+     * @param string $accessPointId
+     *
+     * @return $this
+     */
+    public function setAccessPointId($accessPointId)
+    {
+        $this->requestParameters['AccessPointId'] = $accessPointId;
+        $this->queryParameters['AccessPointId'] = $accessPointId;
 
-	private  $resourceOwnerId;
+        return $this;
+    }
 
-	private  $role;
+    /**
+     * @param string $oppositeRouterId
+     *
+     * @return $this
+     */
+    public function setOppositeRouterId($oppositeRouterId)
+    {
+        $this->requestParameters['OppositeRouterId'] = $oppositeRouterId;
+        $this->queryParameters['OppositeRouterId'] = $oppositeRouterId;
 
-	private  $clientToken;
+        return $this;
+    }
 
-	private  $resourceOwnerAccount;
+    /**
+     * @param string $oppositeAccessPointId
+     *
+     * @return $this
+     */
+    public function setOppositeAccessPointId($oppositeAccessPointId)
+    {
+        $this->requestParameters['OppositeAccessPointId'] = $oppositeAccessPointId;
+        $this->queryParameters['OppositeAccessPointId'] = $oppositeAccessPointId;
 
-	private  $oppositeRegionId;
+        return $this;
+    }
 
-	private  $ownerAccount;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $healthCheckTargetIp;
+        return $this;
+    }
 
-	private  $description;
+    /**
+     * @param string $role
+     *
+     * @return $this
+     */
+    public function setRole($role)
+    {
+        $this->requestParameters['Role'] = $role;
+        $this->queryParameters['Role'] = $role;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	private  $spec;
+    /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
 
-	private  $oppositeInterfaceOwnerId;
+        return $this;
+    }
 
-	private  $routerType;
+    /**
+     * @param string $healthCheckTargetIp
+     *
+     * @return $this
+     */
+    public function setHealthCheckTargetIp($healthCheckTargetIp)
+    {
+        $this->requestParameters['HealthCheckTargetIp'] = $healthCheckTargetIp;
+        $this->queryParameters['HealthCheckTargetIp'] = $healthCheckTargetIp;
 
-	private  $healthCheckSourceIp;
+        return $this;
+    }
 
-	private  $routerId;
+    /**
+     * @param string $description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
 
-	private  $oppositeRouterType;
+        return $this;
+    }
 
-	private  $name;
+    /**
+     * @param string $spec
+     *
+     * @return $this
+     */
+    public function setSpec($spec)
+    {
+        $this->requestParameters['Spec'] = $spec;
+        $this->queryParameters['Spec'] = $spec;
 
-	private  $oppositeInterfaceId;
+        return $this;
+    }
 
-	public function getAccessPointId() {
-		return $this->accessPointId;
-	}
+    /**
+     * @param string $oppositeInterfaceId
+     *
+     * @return $this
+     */
+    public function setOppositeInterfaceId($oppositeInterfaceId)
+    {
+        $this->requestParameters['OppositeInterfaceId'] = $oppositeInterfaceId;
+        $this->queryParameters['OppositeInterfaceId'] = $oppositeInterfaceId;
 
-	public function setAccessPointId($accessPointId) {
-		$this->accessPointId = $accessPointId;
-		$this->queryParameters["AccessPointId"]=$accessPointId;
-	}
+        return $this;
+    }
 
-	public function getOppositeRouterId() {
-		return $this->oppositeRouterId;
-	}
+    /**
+     * @param string $instanceChargeType
+     *
+     * @return $this
+     */
+    public function setInstanceChargeType($instanceChargeType)
+    {
+        $this->requestParameters['InstanceChargeType'] = $instanceChargeType;
+        $this->queryParameters['InstanceChargeType'] = $instanceChargeType;
 
-	public function setOppositeRouterId($oppositeRouterId) {
-		$this->oppositeRouterId = $oppositeRouterId;
-		$this->queryParameters["OppositeRouterId"]=$oppositeRouterId;
-	}
+        return $this;
+    }
 
-	public function getOppositeAccessPointId() {
-		return $this->oppositeAccessPointId;
-	}
+    /**
+     * @param string $period
+     *
+     * @return $this
+     */
+    public function setPeriod($period)
+    {
+        $this->requestParameters['Period'] = $period;
+        $this->queryParameters['Period'] = $period;
 
-	public function setOppositeAccessPointId($oppositeAccessPointId) {
-		$this->oppositeAccessPointId = $oppositeAccessPointId;
-		$this->queryParameters["OppositeAccessPointId"]=$oppositeAccessPointId;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+    /**
+     * @param string $autoPay
+     *
+     * @return $this
+     */
+    public function setAutoPay($autoPay)
+    {
+        $this->requestParameters['AutoPay'] = $autoPay;
+        $this->queryParameters['AutoPay'] = $autoPay;
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getRole() {
-		return $this->role;
-	}
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	public function setRole($role) {
-		$this->role = $role;
-		$this->queryParameters["Role"]=$role;
-	}
+        return $this;
+    }
 
-	public function getClientToken() {
-		return $this->clientToken;
-	}
+    /**
+     * @param string $oppositeRegionId
+     *
+     * @return $this
+     */
+    public function setOppositeRegionId($oppositeRegionId)
+    {
+        $this->requestParameters['OppositeRegionId'] = $oppositeRegionId;
+        $this->queryParameters['OppositeRegionId'] = $oppositeRegionId;
 
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function getOppositeRegionId() {
-		return $this->oppositeRegionId;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setOppositeRegionId($oppositeRegionId) {
-		$this->oppositeRegionId = $oppositeRegionId;
-		$this->queryParameters["OppositeRegionId"]=$oppositeRegionId;
-	}
+        return $this;
+    }
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+    /**
+     * @param string $oppositeInterfaceOwnerId
+     *
+     * @return $this
+     */
+    public function setOppositeInterfaceOwnerId($oppositeInterfaceOwnerId)
+    {
+        $this->requestParameters['OppositeInterfaceOwnerId'] = $oppositeInterfaceOwnerId;
+        $this->queryParameters['OppositeInterfaceOwnerId'] = $oppositeInterfaceOwnerId;
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
+        return $this;
+    }
 
-	public function getHealthCheckTargetIp() {
-		return $this->healthCheckTargetIp;
-	}
+    /**
+     * @param string $routerType
+     *
+     * @return $this
+     */
+    public function setRouterType($routerType)
+    {
+        $this->requestParameters['RouterType'] = $routerType;
+        $this->queryParameters['RouterType'] = $routerType;
 
-	public function setHealthCheckTargetIp($healthCheckTargetIp) {
-		$this->healthCheckTargetIp = $healthCheckTargetIp;
-		$this->queryParameters["HealthCheckTargetIp"]=$healthCheckTargetIp;
-	}
+        return $this;
+    }
 
-	public function getDescription() {
-		return $this->description;
-	}
+    /**
+     * @param string $healthCheckSourceIp
+     *
+     * @return $this
+     */
+    public function setHealthCheckSourceIp($healthCheckSourceIp)
+    {
+        $this->requestParameters['HealthCheckSourceIp'] = $healthCheckSourceIp;
+        $this->queryParameters['HealthCheckSourceIp'] = $healthCheckSourceIp;
 
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
-	}
+        return $this;
+    }
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+    /**
+     * @param string $routerId
+     *
+     * @return $this
+     */
+    public function setRouterId($routerId)
+    {
+        $this->requestParameters['RouterId'] = $routerId;
+        $this->queryParameters['RouterId'] = $routerId;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+        return $this;
+    }
 
-	public function getSpec() {
-		return $this->spec;
-	}
+    /**
+     * @param string $oppositeRouterType
+     *
+     * @return $this
+     */
+    public function setOppositeRouterType($oppositeRouterType)
+    {
+        $this->requestParameters['OppositeRouterType'] = $oppositeRouterType;
+        $this->queryParameters['OppositeRouterType'] = $oppositeRouterType;
 
-	public function setSpec($spec) {
-		$this->spec = $spec;
-		$this->queryParameters["Spec"]=$spec;
-	}
+        return $this;
+    }
 
-	public function getOppositeInterfaceOwnerId() {
-		return $this->oppositeInterfaceOwnerId;
-	}
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
-	public function setOppositeInterfaceOwnerId($oppositeInterfaceOwnerId) {
-		$this->oppositeInterfaceOwnerId = $oppositeInterfaceOwnerId;
-		$this->queryParameters["OppositeInterfaceOwnerId"]=$oppositeInterfaceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getRouterType() {
-		return $this->routerType;
-	}
+    /**
+     * @param string $pricingCycle
+     *
+     * @return $this
+     */
+    public function setPricingCycle($pricingCycle)
+    {
+        $this->requestParameters['PricingCycle'] = $pricingCycle;
+        $this->queryParameters['PricingCycle'] = $pricingCycle;
 
-	public function setRouterType($routerType) {
-		$this->routerType = $routerType;
-		$this->queryParameters["RouterType"]=$routerType;
-	}
-
-	public function getHealthCheckSourceIp() {
-		return $this->healthCheckSourceIp;
-	}
-
-	public function setHealthCheckSourceIp($healthCheckSourceIp) {
-		$this->healthCheckSourceIp = $healthCheckSourceIp;
-		$this->queryParameters["HealthCheckSourceIp"]=$healthCheckSourceIp;
-	}
-
-	public function getRouterId() {
-		return $this->routerId;
-	}
-
-	public function setRouterId($routerId) {
-		$this->routerId = $routerId;
-		$this->queryParameters["RouterId"]=$routerId;
-	}
-
-	public function getOppositeRouterType() {
-		return $this->oppositeRouterType;
-	}
-
-	public function setOppositeRouterType($oppositeRouterType) {
-		$this->oppositeRouterType = $oppositeRouterType;
-		$this->queryParameters["OppositeRouterType"]=$oppositeRouterType;
-	}
-
-	public function getName() {
-		return $this->name;
-	}
-
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
-	}
-
-	public function getOppositeInterfaceId() {
-		return $this->oppositeInterfaceId;
-	}
-
-	public function setOppositeInterfaceId($oppositeInterfaceId) {
-		$this->oppositeInterfaceId = $oppositeInterfaceId;
-		$this->queryParameters["OppositeInterfaceId"]=$oppositeInterfaceId;
-	}
-	
+        return $this;
+    }
 }

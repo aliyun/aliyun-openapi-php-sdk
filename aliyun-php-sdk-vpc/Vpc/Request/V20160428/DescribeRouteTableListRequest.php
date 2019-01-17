@@ -1,151 +1,214 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Vpc\Request\V20160428;
 
+/**
+ * Request of DescribeRouteTableList
+ *
+ * @method string getResourceOwnerId()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getOwnerId()
+ * @method string getPageNumber()
+ * @method string getRouterType()
+ * @method string getResourceGroupId()
+ * @method string getRouteTableName()
+ * @method string getRouterId()
+ * @method string getVpcId()
+ * @method string getPageSize()
+ * @method array getTags()
+ * @method string getRouteTableId()
+ */
 class DescribeRouteTableListRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Vpc", "2016-04-28", "DescribeRouteTableList", "vpc", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $resourceOwnerAccount;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Vpc',
+            '2016-04-28',
+            'DescribeRouteTableList',
+            'vpc'
+        );
+    }
 
-	private  $ownerAccount;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	private  $pageNumber;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $routerType;
+        return $this;
+    }
 
-	private  $routeTableName;
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	private  $routerId;
+        return $this;
+    }
 
-	private  $vpcId;
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	private  $pageSize;
+        return $this;
+    }
 
-	private  $routeTableId;
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+    /**
+     * @param string $routerType
+     *
+     * @return $this
+     */
+    public function setRouterType($routerType)
+    {
+        $this->requestParameters['RouterType'] = $routerType;
+        $this->queryParameters['RouterType'] = $routerType;
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+    /**
+     * @param string $resourceGroupId
+     *
+     * @return $this
+     */
+    public function setResourceGroupId($resourceGroupId)
+    {
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+        return $this;
+    }
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
+    /**
+     * @param string $routeTableName
+     *
+     * @return $this
+     */
+    public function setRouteTableName($routeTableName)
+    {
+        $this->requestParameters['RouteTableName'] = $routeTableName;
+        $this->queryParameters['RouteTableName'] = $routeTableName;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+        return $this;
+    }
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+    /**
+     * @param string $routerId
+     *
+     * @return $this
+     */
+    public function setRouterId($routerId)
+    {
+        $this->requestParameters['RouterId'] = $routerId;
+        $this->queryParameters['RouterId'] = $routerId;
 
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
+        return $this;
+    }
 
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
+    /**
+     * @param string $vpcId
+     *
+     * @return $this
+     */
+    public function setVpcId($vpcId)
+    {
+        $this->requestParameters['VpcId'] = $vpcId;
+        $this->queryParameters['VpcId'] = $vpcId;
 
-	public function getRouterType() {
-		return $this->routerType;
-	}
+        return $this;
+    }
 
-	public function setRouterType($routerType) {
-		$this->routerType = $routerType;
-		$this->queryParameters["RouterType"]=$routerType;
-	}
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	public function getRouteTableName() {
-		return $this->routeTableName;
-	}
+        return $this;
+    }
 
-	public function setRouteTableName($routeTableName) {
-		$this->routeTableName = $routeTableName;
-		$this->queryParameters["RouteTableName"]=$routeTableName;
-	}
+    /**
+     * @param array $tags
+     *
+     * @return $this
+     */
+    public function setTags(array $tags)
+    {
+        $this->requestParameters['Tags'] = $tags;
+        foreach ($tags as $i => $iValue) {
+            $this->queryParameters['Tag.' . ($i + 1) . '.Value'] = $tags[$i]['Value'];
+            $this->queryParameters['Tag.' . ($i + 1) . '.Key'] = $tags[$i]['Key'];
+        }
 
-	public function getRouterId() {
-		return $this->routerId;
-	}
+        return $this;
+    }
 
-	public function setRouterId($routerId) {
-		$this->routerId = $routerId;
-		$this->queryParameters["RouterId"]=$routerId;
-	}
+    /**
+     * @param string $routeTableId
+     *
+     * @return $this
+     */
+    public function setRouteTableId($routeTableId)
+    {
+        $this->requestParameters['RouteTableId'] = $routeTableId;
+        $this->queryParameters['RouteTableId'] = $routeTableId;
 
-	public function getVpcId() {
-		return $this->vpcId;
-	}
-
-	public function setVpcId($vpcId) {
-		$this->vpcId = $vpcId;
-		$this->queryParameters["VpcId"]=$vpcId;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getRouteTableId() {
-		return $this->routeTableId;
-	}
-
-	public function setRouteTableId($routeTableId) {
-		$this->routeTableId = $routeTableId;
-		$this->queryParameters["RouteTableId"]=$routeTableId;
-	}
-	
+        return $this;
+    }
 }

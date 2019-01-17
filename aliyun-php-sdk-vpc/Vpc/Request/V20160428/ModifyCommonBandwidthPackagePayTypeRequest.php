@@ -1,173 +1,211 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Vpc\Request\V20160428;
 
+/**
+ * Request of ModifyCommonBandwidthPackagePayType
+ *
+ * @method string getResourceOwnerId()
+ * @method string getBandwidthPackageId()
+ * @method string getAutoPay()
+ * @method string getResourceOwnerAccount()
+ * @method string getBandwidth()
+ * @method string getOwnerAccount()
+ * @method string getOwnerId()
+ * @method string getDuration()
+ * @method string getKbpsBandwidth()
+ * @method string getResourceUid()
+ * @method string getResourceBid()
+ * @method string getPayType()
+ * @method string getPricingCycle()
+ */
 class ModifyCommonBandwidthPackagePayTypeRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Vpc", "2016-04-28", "ModifyCommonBandwidthPackagePayType", "vpc", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $bandwidthPackageId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Vpc',
+            '2016-04-28',
+            'ModifyCommonBandwidthPackagePayType',
+            'vpc'
+        );
+    }
 
-	private  $autoPay;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $resourceOwnerAccount;
+        return $this;
+    }
 
-	private  $bandwidth;
+    /**
+     * @param string $bandwidthPackageId
+     *
+     * @return $this
+     */
+    public function setBandwidthPackageId($bandwidthPackageId)
+    {
+        $this->requestParameters['BandwidthPackageId'] = $bandwidthPackageId;
+        $this->queryParameters['BandwidthPackageId'] = $bandwidthPackageId;
 
-	private  $ownerAccount;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $autoPay
+     *
+     * @return $this
+     */
+    public function setAutoPay($autoPay)
+    {
+        $this->requestParameters['AutoPay'] = $autoPay;
+        $this->queryParameters['AutoPay'] = $autoPay;
 
-	private  $duration;
+        return $this;
+    }
 
-	private  $kbpsBandwidth;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $resourceUid;
+        return $this;
+    }
 
-	private  $resourceBid;
+    /**
+     * @param string $bandwidth
+     *
+     * @return $this
+     */
+    public function setBandwidth($bandwidth)
+    {
+        $this->requestParameters['Bandwidth'] = $bandwidth;
+        $this->queryParameters['Bandwidth'] = $bandwidth;
 
-	private  $payType;
+        return $this;
+    }
 
-	private  $pricingCycle;
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function getBandwidthPackageId() {
-		return $this->bandwidthPackageId;
-	}
+        return $this;
+    }
 
-	public function setBandwidthPackageId($bandwidthPackageId) {
-		$this->bandwidthPackageId = $bandwidthPackageId;
-		$this->queryParameters["BandwidthPackageId"]=$bandwidthPackageId;
-	}
+    /**
+     * @param string $duration
+     *
+     * @return $this
+     */
+    public function setDuration($duration)
+    {
+        $this->requestParameters['Duration'] = $duration;
+        $this->queryParameters['Duration'] = $duration;
 
-	public function getAutoPay() {
-		return $this->autoPay;
-	}
+        return $this;
+    }
 
-	public function setAutoPay($autoPay) {
-		$this->autoPay = $autoPay;
-		$this->queryParameters["AutoPay"]=$autoPay;
-	}
+    /**
+     * @param string $kbpsBandwidth
+     *
+     * @return $this
+     */
+    public function setKbpsBandwidth($kbpsBandwidth)
+    {
+        $this->requestParameters['KbpsBandwidth'] = $kbpsBandwidth;
+        $this->queryParameters['KbpsBandwidth'] = $kbpsBandwidth;
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+    /**
+     * @param string $resourceUid
+     *
+     * @return $this
+     */
+    public function setResourceUid($resourceUid)
+    {
+        $this->requestParameters['ResourceUid'] = $resourceUid;
+        $this->queryParameters['ResourceUid'] = $resourceUid;
 
-	public function getBandwidth() {
-		return $this->bandwidth;
-	}
+        return $this;
+    }
 
-	public function setBandwidth($bandwidth) {
-		$this->bandwidth = $bandwidth;
-		$this->queryParameters["Bandwidth"]=$bandwidth;
-	}
+    /**
+     * @param string $resourceBid
+     *
+     * @return $this
+     */
+    public function setResourceBid($resourceBid)
+    {
+        $this->requestParameters['ResourceBid'] = $resourceBid;
+        $this->queryParameters['ResourceBid'] = $resourceBid;
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+        return $this;
+    }
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
+    /**
+     * @param string $payType
+     *
+     * @return $this
+     */
+    public function setPayType($payType)
+    {
+        $this->requestParameters['PayType'] = $payType;
+        $this->queryParameters['PayType'] = $payType;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+        return $this;
+    }
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+    /**
+     * @param string $pricingCycle
+     *
+     * @return $this
+     */
+    public function setPricingCycle($pricingCycle)
+    {
+        $this->requestParameters['PricingCycle'] = $pricingCycle;
+        $this->queryParameters['PricingCycle'] = $pricingCycle;
 
-	public function getDuration() {
-		return $this->duration;
-	}
-
-	public function setDuration($duration) {
-		$this->duration = $duration;
-		$this->queryParameters["Duration"]=$duration;
-	}
-
-	public function getKbpsBandwidth() {
-		return $this->kbpsBandwidth;
-	}
-
-	public function setKbpsBandwidth($kbpsBandwidth) {
-		$this->kbpsBandwidth = $kbpsBandwidth;
-		$this->queryParameters["KbpsBandwidth"]=$kbpsBandwidth;
-	}
-
-	public function getResourceUid() {
-		return $this->resourceUid;
-	}
-
-	public function setResourceUid($resourceUid) {
-		$this->resourceUid = $resourceUid;
-		$this->queryParameters["ResourceUid"]=$resourceUid;
-	}
-
-	public function getResourceBid() {
-		return $this->resourceBid;
-	}
-
-	public function setResourceBid($resourceBid) {
-		$this->resourceBid = $resourceBid;
-		$this->queryParameters["ResourceBid"]=$resourceBid;
-	}
-
-	public function getPayType() {
-		return $this->payType;
-	}
-
-	public function setPayType($payType) {
-		$this->payType = $payType;
-		$this->queryParameters["PayType"]=$payType;
-	}
-
-	public function getPricingCycle() {
-		return $this->pricingCycle;
-	}
-
-	public function setPricingCycle($pricingCycle) {
-		$this->pricingCycle = $pricingCycle;
-		$this->queryParameters["PricingCycle"]=$pricingCycle;
-	}
-	
+        return $this;
+    }
 }

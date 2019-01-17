@@ -1,162 +1,197 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Vpc\Request\V20160428;
 
+/**
+ * Request of ModifyVpnConnectionAttribute
+ *
+ * @method string getIkeConfig()
+ * @method string getResourceOwnerId()
+ * @method string getRemoteSubnet()
+ * @method string getEffectImmediately()
+ * @method string getResourceOwnerAccount()
+ * @method string getClientToken()
+ * @method string getOwnerAccount()
+ * @method string getIpsecConfig()
+ * @method string getOwnerId()
+ * @method string getLocalSubnet()
+ * @method string getVpnConnectionId()
+ * @method string getName()
+ */
 class ModifyVpnConnectionAttributeRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Vpc", "2016-04-28", "ModifyVpnConnectionAttribute", "vpc", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $ikeConfig;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $resourceOwnerId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Vpc',
+            '2016-04-28',
+            'ModifyVpnConnectionAttribute',
+            'vpc'
+        );
+    }
 
-	private  $remoteSubnet;
+    /**
+     * @param string $ikeConfig
+     *
+     * @return $this
+     */
+    public function setIkeConfig($ikeConfig)
+    {
+        $this->requestParameters['IkeConfig'] = $ikeConfig;
+        $this->queryParameters['IkeConfig'] = $ikeConfig;
 
-	private  $effectImmediately;
+        return $this;
+    }
 
-	private  $resourceOwnerAccount;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $clientToken;
+        return $this;
+    }
 
-	private  $ownerAccount;
+    /**
+     * @param string $remoteSubnet
+     *
+     * @return $this
+     */
+    public function setRemoteSubnet($remoteSubnet)
+    {
+        $this->requestParameters['RemoteSubnet'] = $remoteSubnet;
+        $this->queryParameters['RemoteSubnet'] = $remoteSubnet;
 
-	private  $ipsecConfig;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $effectImmediately
+     *
+     * @return $this
+     */
+    public function setEffectImmediately($effectImmediately)
+    {
+        $this->requestParameters['EffectImmediately'] = $effectImmediately;
+        $this->queryParameters['EffectImmediately'] = $effectImmediately;
 
-	private  $localSubnet;
+        return $this;
+    }
 
-	private  $vpnConnectionId;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $name;
+        return $this;
+    }
 
-	public function getIkeConfig() {
-		return $this->ikeConfig;
-	}
+    /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
 
-	public function setIkeConfig($ikeConfig) {
-		$this->ikeConfig = $ikeConfig;
-		$this->queryParameters["IkeConfig"]=$ikeConfig;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getRemoteSubnet() {
-		return $this->remoteSubnet;
-	}
+    /**
+     * @param string $ipsecConfig
+     *
+     * @return $this
+     */
+    public function setIpsecConfig($ipsecConfig)
+    {
+        $this->requestParameters['IpsecConfig'] = $ipsecConfig;
+        $this->queryParameters['IpsecConfig'] = $ipsecConfig;
 
-	public function setRemoteSubnet($remoteSubnet) {
-		$this->remoteSubnet = $remoteSubnet;
-		$this->queryParameters["RemoteSubnet"]=$remoteSubnet;
-	}
+        return $this;
+    }
 
-	public function getEffectImmediately() {
-		return $this->effectImmediately;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setEffectImmediately($effectImmediately) {
-		$this->effectImmediately = $effectImmediately;
-		$this->queryParameters["EffectImmediately"]=$effectImmediately;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param string $localSubnet
+     *
+     * @return $this
+     */
+    public function setLocalSubnet($localSubnet)
+    {
+        $this->requestParameters['LocalSubnet'] = $localSubnet;
+        $this->queryParameters['LocalSubnet'] = $localSubnet;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function getClientToken() {
-		return $this->clientToken;
-	}
+    /**
+     * @param string $vpnConnectionId
+     *
+     * @return $this
+     */
+    public function setVpnConnectionId($vpnConnectionId)
+    {
+        $this->requestParameters['VpnConnectionId'] = $vpnConnectionId;
+        $this->queryParameters['VpnConnectionId'] = $vpnConnectionId;
 
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
+        return $this;
+    }
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getIpsecConfig() {
-		return $this->ipsecConfig;
-	}
-
-	public function setIpsecConfig($ipsecConfig) {
-		$this->ipsecConfig = $ipsecConfig;
-		$this->queryParameters["IpsecConfig"]=$ipsecConfig;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getLocalSubnet() {
-		return $this->localSubnet;
-	}
-
-	public function setLocalSubnet($localSubnet) {
-		$this->localSubnet = $localSubnet;
-		$this->queryParameters["LocalSubnet"]=$localSubnet;
-	}
-
-	public function getVpnConnectionId() {
-		return $this->vpnConnectionId;
-	}
-
-	public function setVpnConnectionId($vpnConnectionId) {
-		$this->vpnConnectionId = $vpnConnectionId;
-		$this->queryParameters["VpnConnectionId"]=$vpnConnectionId;
-	}
-
-	public function getName() {
-		return $this->name;
-	}
-
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
-	}
-	
+        return $this;
+    }
 }

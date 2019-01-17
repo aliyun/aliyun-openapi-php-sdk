@@ -1,173 +1,225 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Vpc\Request\V20160428;
 
+/**
+ * Request of DescribeGlobalAccelerationInstances
+ *
+ * @method string getIpAddress()
+ * @method string getResourceOwnerId()
+ * @method string getBandwidthType()
+ * @method string getResourceOwnerAccount()
+ * @method string getServiceLocation()
+ * @method string getOwnerAccount()
+ * @method string getOwnerId()
+ * @method string getIncludeReservationData()
+ * @method string getGlobalAccelerationInstanceId()
+ * @method string getServerId()
+ * @method string getPageNumber()
+ * @method string getName()
+ * @method string getPageSize()
+ * @method string getStatus()
+ */
 class DescribeGlobalAccelerationInstancesRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Vpc", "2016-04-28", "DescribeGlobalAccelerationInstances", "vpc", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $ipAddress;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $resourceOwnerId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Vpc',
+            '2016-04-28',
+            'DescribeGlobalAccelerationInstances',
+            'vpc'
+        );
+    }
 
-	private  $bandwidthType;
+    /**
+     * @param string $ipAddress
+     *
+     * @return $this
+     */
+    public function setIpAddress($ipAddress)
+    {
+        $this->requestParameters['IpAddress'] = $ipAddress;
+        $this->queryParameters['IpAddress'] = $ipAddress;
 
-	private  $resourceOwnerAccount;
+        return $this;
+    }
 
-	private  $serviceLocation;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $ownerAccount;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $bandwidthType
+     *
+     * @return $this
+     */
+    public function setBandwidthType($bandwidthType)
+    {
+        $this->requestParameters['BandwidthType'] = $bandwidthType;
+        $this->queryParameters['BandwidthType'] = $bandwidthType;
 
-	private  $globalAccelerationInstanceId;
+        return $this;
+    }
 
-	private  $serverId;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $pageNumber;
+        return $this;
+    }
 
-	private  $name;
+    /**
+     * @param string $serviceLocation
+     *
+     * @return $this
+     */
+    public function setServiceLocation($serviceLocation)
+    {
+        $this->requestParameters['ServiceLocation'] = $serviceLocation;
+        $this->queryParameters['ServiceLocation'] = $serviceLocation;
 
-	private  $pageSize;
+        return $this;
+    }
 
-	private  $status;
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	public function getIpAddress() {
-		return $this->ipAddress;
-	}
+        return $this;
+    }
 
-	public function setIpAddress($ipAddress) {
-		$this->ipAddress = $ipAddress;
-		$this->queryParameters["IpAddress"]=$ipAddress;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+    /**
+     * @param string $includeReservationData
+     *
+     * @return $this
+     */
+    public function setIncludeReservationData($includeReservationData)
+    {
+        $this->requestParameters['IncludeReservationData'] = $includeReservationData;
+        $this->queryParameters['IncludeReservationData'] = $includeReservationData;
 
-	public function getBandwidthType() {
-		return $this->bandwidthType;
-	}
+        return $this;
+    }
 
-	public function setBandwidthType($bandwidthType) {
-		$this->bandwidthType = $bandwidthType;
-		$this->queryParameters["BandwidthType"]=$bandwidthType;
-	}
+    /**
+     * @param string $globalAccelerationInstanceId
+     *
+     * @return $this
+     */
+    public function setGlobalAccelerationInstanceId($globalAccelerationInstanceId)
+    {
+        $this->requestParameters['GlobalAccelerationInstanceId'] = $globalAccelerationInstanceId;
+        $this->queryParameters['GlobalAccelerationInstanceId'] = $globalAccelerationInstanceId;
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+    /**
+     * @param string $serverId
+     *
+     * @return $this
+     */
+    public function setServerId($serverId)
+    {
+        $this->requestParameters['ServerId'] = $serverId;
+        $this->queryParameters['ServerId'] = $serverId;
 
-	public function getServiceLocation() {
-		return $this->serviceLocation;
-	}
+        return $this;
+    }
 
-	public function setServiceLocation($serviceLocation) {
-		$this->serviceLocation = $serviceLocation;
-		$this->queryParameters["ServiceLocation"]=$serviceLocation;
-	}
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+        return $this;
+    }
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+        return $this;
+    }
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	public function getGlobalAccelerationInstanceId() {
-		return $this->globalAccelerationInstanceId;
-	}
+        return $this;
+    }
 
-	public function setGlobalAccelerationInstanceId($globalAccelerationInstanceId) {
-		$this->globalAccelerationInstanceId = $globalAccelerationInstanceId;
-		$this->queryParameters["GlobalAccelerationInstanceId"]=$globalAccelerationInstanceId;
-	}
+    /**
+     * @param string $status
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->requestParameters['Status'] = $status;
+        $this->queryParameters['Status'] = $status;
 
-	public function getServerId() {
-		return $this->serverId;
-	}
-
-	public function setServerId($serverId) {
-		$this->serverId = $serverId;
-		$this->queryParameters["ServerId"]=$serverId;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
-	public function getName() {
-		return $this->name;
-	}
-
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getStatus() {
-		return $this->status;
-	}
-
-	public function setStatus($status) {
-		$this->status = $status;
-		$this->queryParameters["Status"]=$status;
-	}
-	
+        return $this;
+    }
 }

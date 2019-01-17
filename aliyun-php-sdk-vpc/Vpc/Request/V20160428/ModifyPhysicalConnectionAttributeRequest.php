@@ -1,184 +1,225 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Vpc\Request\V20160428;
 
+/**
+ * Request of ModifyPhysicalConnectionAttribute
+ *
+ * @method string getRedundantPhysicalConnectionId()
+ * @method string getPeerLocation()
+ * @method string getResourceOwnerId()
+ * @method string getPortType()
+ * @method string getCircuitCode()
+ * @method string getbandwidth()
+ * @method string getClientToken()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getDescription()
+ * @method string getOwnerId()
+ * @method string getLineOperator()
+ * @method string getPhysicalConnectionId()
+ * @method string getName()
+ */
 class ModifyPhysicalConnectionAttributeRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Vpc", "2016-04-28", "ModifyPhysicalConnectionAttribute", "vpc", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $redundantPhysicalConnectionId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $peerLocation;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Vpc',
+            '2016-04-28',
+            'ModifyPhysicalConnectionAttribute',
+            'vpc'
+        );
+    }
 
-	private  $resourceOwnerId;
+    /**
+     * @param string $redundantPhysicalConnectionId
+     *
+     * @return $this
+     */
+    public function setRedundantPhysicalConnectionId($redundantPhysicalConnectionId)
+    {
+        $this->requestParameters['RedundantPhysicalConnectionId'] = $redundantPhysicalConnectionId;
+        $this->queryParameters['RedundantPhysicalConnectionId'] = $redundantPhysicalConnectionId;
 
-	private  $portType;
+        return $this;
+    }
 
-	private  $circuitCode;
+    /**
+     * @param string $peerLocation
+     *
+     * @return $this
+     */
+    public function setPeerLocation($peerLocation)
+    {
+        $this->requestParameters['PeerLocation'] = $peerLocation;
+        $this->queryParameters['PeerLocation'] = $peerLocation;
 
-	private  $bandwidth;
+        return $this;
+    }
 
-	private  $clientToken;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $resourceOwnerAccount;
+        return $this;
+    }
 
-	private  $ownerAccount;
+    /**
+     * @param string $portType
+     *
+     * @return $this
+     */
+    public function setPortType($portType)
+    {
+        $this->requestParameters['PortType'] = $portType;
+        $this->queryParameters['PortType'] = $portType;
 
-	private  $description;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $circuitCode
+     *
+     * @return $this
+     */
+    public function setCircuitCode($circuitCode)
+    {
+        $this->requestParameters['CircuitCode'] = $circuitCode;
+        $this->queryParameters['CircuitCode'] = $circuitCode;
 
-	private  $lineOperator;
+        return $this;
+    }
 
-	private  $physicalConnectionId;
+    /**
+     * @param string $bandwidth
+     *
+     * @return $this
+     */
+    public function setbandwidth($bandwidth)
+    {
+        $this->requestParameters['bandwidth'] = $bandwidth;
+        $this->queryParameters['bandwidth'] = $bandwidth;
 
-	private  $name;
+        return $this;
+    }
 
-	public function getRedundantPhysicalConnectionId() {
-		return $this->redundantPhysicalConnectionId;
-	}
+    /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
 
-	public function setRedundantPhysicalConnectionId($redundantPhysicalConnectionId) {
-		$this->redundantPhysicalConnectionId = $redundantPhysicalConnectionId;
-		$this->queryParameters["RedundantPhysicalConnectionId"]=$redundantPhysicalConnectionId;
-	}
+        return $this;
+    }
 
-	public function getPeerLocation() {
-		return $this->peerLocation;
-	}
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	public function setPeerLocation($peerLocation) {
-		$this->peerLocation = $peerLocation;
-		$this->queryParameters["PeerLocation"]=$peerLocation;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getPortType() {
-		return $this->portType;
-	}
+    /**
+     * @param string $description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
 
-	public function setPortType($portType) {
-		$this->portType = $portType;
-		$this->queryParameters["PortType"]=$portType;
-	}
+        return $this;
+    }
 
-	public function getCircuitCode() {
-		return $this->circuitCode;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setCircuitCode($circuitCode) {
-		$this->circuitCode = $circuitCode;
-		$this->queryParameters["CircuitCode"]=$circuitCode;
-	}
+        return $this;
+    }
 
-	public function getbandwidth() {
-		return $this->bandwidth;
-	}
+    /**
+     * @param string $lineOperator
+     *
+     * @return $this
+     */
+    public function setLineOperator($lineOperator)
+    {
+        $this->requestParameters['LineOperator'] = $lineOperator;
+        $this->queryParameters['LineOperator'] = $lineOperator;
 
-	public function setbandwidth($bandwidth) {
-		$this->bandwidth = $bandwidth;
-		$this->queryParameters["bandwidth"]=$bandwidth;
-	}
+        return $this;
+    }
 
-	public function getClientToken() {
-		return $this->clientToken;
-	}
+    /**
+     * @param string $physicalConnectionId
+     *
+     * @return $this
+     */
+    public function setPhysicalConnectionId($physicalConnectionId)
+    {
+        $this->requestParameters['PhysicalConnectionId'] = $physicalConnectionId;
+        $this->queryParameters['PhysicalConnectionId'] = $physicalConnectionId;
 
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getDescription() {
-		return $this->description;
-	}
-
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getLineOperator() {
-		return $this->lineOperator;
-	}
-
-	public function setLineOperator($lineOperator) {
-		$this->lineOperator = $lineOperator;
-		$this->queryParameters["LineOperator"]=$lineOperator;
-	}
-
-	public function getPhysicalConnectionId() {
-		return $this->physicalConnectionId;
-	}
-
-	public function setPhysicalConnectionId($physicalConnectionId) {
-		$this->physicalConnectionId = $physicalConnectionId;
-		$this->queryParameters["PhysicalConnectionId"]=$physicalConnectionId;
-	}
-
-	public function getName() {
-		return $this->name;
-	}
-
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
-	}
-	
+        return $this;
+    }
 }

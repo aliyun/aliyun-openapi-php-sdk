@@ -1,184 +1,225 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Vpc\Request\V20160428;
 
+/**
+ * Request of AllocateEipAddress
+ *
+ * @method string getResourceOwnerId()
+ * @method string getPeriod()
+ * @method string getAutoPay()
+ * @method string getResourceOwnerAccount()
+ * @method string getBandwidth()
+ * @method string getClientToken()
+ * @method string getISP()
+ * @method string getOwnerAccount()
+ * @method string getOwnerId()
+ * @method string getResourceGroupId()
+ * @method string getInternetChargeType()
+ * @method string getNetmode()
+ * @method string getPricingCycle()
+ * @method string getInstanceChargeType()
+ */
 class AllocateEipAddressRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Vpc", "2016-04-28", "AllocateEipAddress", "vpc", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $period;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Vpc',
+            '2016-04-28',
+            'AllocateEipAddress',
+            'vpc'
+        );
+    }
 
-	private  $autoPay;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $resourceOwnerAccount;
+        return $this;
+    }
 
-	private  $bandwidth;
+    /**
+     * @param string $period
+     *
+     * @return $this
+     */
+    public function setPeriod($period)
+    {
+        $this->requestParameters['Period'] = $period;
+        $this->queryParameters['Period'] = $period;
 
-	private  $clientToken;
+        return $this;
+    }
 
-	private  $iSP;
+    /**
+     * @param string $autoPay
+     *
+     * @return $this
+     */
+    public function setAutoPay($autoPay)
+    {
+        $this->requestParameters['AutoPay'] = $autoPay;
+        $this->queryParameters['AutoPay'] = $autoPay;
 
-	private  $ownerAccount;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $resourceGroupId;
+        return $this;
+    }
 
-	private  $internetChargeType;
+    /**
+     * @param string $bandwidth
+     *
+     * @return $this
+     */
+    public function setBandwidth($bandwidth)
+    {
+        $this->requestParameters['Bandwidth'] = $bandwidth;
+        $this->queryParameters['Bandwidth'] = $bandwidth;
 
-	private  $netmode;
+        return $this;
+    }
 
-	private  $pricingCycle;
+    /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
 
-	private  $instanceChargeType;
+        return $this;
+    }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+    /**
+     * @param string $iSP
+     *
+     * @return $this
+     */
+    public function setISP($iSP)
+    {
+        $this->requestParameters['ISP'] = $iSP;
+        $this->queryParameters['ISP'] = $iSP;
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getPeriod() {
-		return $this->period;
-	}
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	public function setPeriod($period) {
-		$this->period = $period;
-		$this->queryParameters["Period"]=$period;
-	}
+        return $this;
+    }
 
-	public function getAutoPay() {
-		return $this->autoPay;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setAutoPay($autoPay) {
-		$this->autoPay = $autoPay;
-		$this->queryParameters["AutoPay"]=$autoPay;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param string $resourceGroupId
+     *
+     * @return $this
+     */
+    public function setResourceGroupId($resourceGroupId)
+    {
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function getBandwidth() {
-		return $this->bandwidth;
-	}
+    /**
+     * @param string $internetChargeType
+     *
+     * @return $this
+     */
+    public function setInternetChargeType($internetChargeType)
+    {
+        $this->requestParameters['InternetChargeType'] = $internetChargeType;
+        $this->queryParameters['InternetChargeType'] = $internetChargeType;
 
-	public function setBandwidth($bandwidth) {
-		$this->bandwidth = $bandwidth;
-		$this->queryParameters["Bandwidth"]=$bandwidth;
-	}
+        return $this;
+    }
 
-	public function getClientToken() {
-		return $this->clientToken;
-	}
+    /**
+     * @param string $netmode
+     *
+     * @return $this
+     */
+    public function setNetmode($netmode)
+    {
+        $this->requestParameters['Netmode'] = $netmode;
+        $this->queryParameters['Netmode'] = $netmode;
 
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
+        return $this;
+    }
 
-	public function getISP() {
-		return $this->iSP;
-	}
+    /**
+     * @param string $pricingCycle
+     *
+     * @return $this
+     */
+    public function setPricingCycle($pricingCycle)
+    {
+        $this->requestParameters['PricingCycle'] = $pricingCycle;
+        $this->queryParameters['PricingCycle'] = $pricingCycle;
 
-	public function setISP($iSP) {
-		$this->iSP = $iSP;
-		$this->queryParameters["ISP"]=$iSP;
-	}
+        return $this;
+    }
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+    /**
+     * @param string $instanceChargeType
+     *
+     * @return $this
+     */
+    public function setInstanceChargeType($instanceChargeType)
+    {
+        $this->requestParameters['InstanceChargeType'] = $instanceChargeType;
+        $this->queryParameters['InstanceChargeType'] = $instanceChargeType;
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getResourceGroupId() {
-		return $this->resourceGroupId;
-	}
-
-	public function setResourceGroupId($resourceGroupId) {
-		$this->resourceGroupId = $resourceGroupId;
-		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
-	}
-
-	public function getInternetChargeType() {
-		return $this->internetChargeType;
-	}
-
-	public function setInternetChargeType($internetChargeType) {
-		$this->internetChargeType = $internetChargeType;
-		$this->queryParameters["InternetChargeType"]=$internetChargeType;
-	}
-
-	public function getNetmode() {
-		return $this->netmode;
-	}
-
-	public function setNetmode($netmode) {
-		$this->netmode = $netmode;
-		$this->queryParameters["Netmode"]=$netmode;
-	}
-
-	public function getPricingCycle() {
-		return $this->pricingCycle;
-	}
-
-	public function setPricingCycle($pricingCycle) {
-		$this->pricingCycle = $pricingCycle;
-		$this->queryParameters["PricingCycle"]=$pricingCycle;
-	}
-
-	public function getInstanceChargeType() {
-		return $this->instanceChargeType;
-	}
-
-	public function setInstanceChargeType($instanceChargeType) {
-		$this->instanceChargeType = $instanceChargeType;
-		$this->queryParameters["InstanceChargeType"]=$instanceChargeType;
-	}
-	
+        return $this;
+    }
 }
