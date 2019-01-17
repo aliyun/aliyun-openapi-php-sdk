@@ -1,120 +1,143 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ecs\Request\V20140526;
 
+/**
+ * Request of ModifyNetworkInterfaceAttribute
+ *
+ * @method string getResourceOwnerId()
+ * @method array getSecurityGroupIds()
+ * @method string getDescription()
+ * @method string getNetworkInterfaceName()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getOwnerId()
+ * @method string getNetworkInterfaceId()
+ */
 class ModifyNetworkInterfaceAttributeRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ecs", "2014-05-26", "ModifyNetworkInterfaceAttribute", "ecs", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $SecurityGroupIds;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ecs',
+            '2014-05-26',
+            'ModifyNetworkInterfaceAttribute',
+            'ecs'
+        );
+    }
 
-	private  $description;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $networkInterfaceName;
+        return $this;
+    }
 
-	private  $resourceOwnerAccount;
+    /**
+     * @param array $securityGroupIds
+     *
+     * @return $this
+     */
+    public function setSecurityGroupIds(array $securityGroupIds)
+    {
+        $this->requestParameters['SecurityGroupIds'] = $securityGroupIds;
+        foreach ($securityGroupIds as $i => $iValue) {
+            $this->queryParameters['SecurityGroupId.' . ($i + 1)] = $iValue;
+        }
 
-	private  $ownerAccount;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
 
-	private  $networkInterfaceId;
+        return $this;
+    }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+    /**
+     * @param string $networkInterfaceName
+     *
+     * @return $this
+     */
+    public function setNetworkInterfaceName($networkInterfaceName)
+    {
+        $this->requestParameters['NetworkInterfaceName'] = $networkInterfaceName;
+        $this->queryParameters['NetworkInterfaceName'] = $networkInterfaceName;
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getSecurityGroupIds() {
-		return $this->SecurityGroupIds;
-	}
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	public function setSecurityGroupIds($SecurityGroupIds) {
-		$this->SecurityGroupIds = $SecurityGroupIds;
-		for ($i = 0; $i < count($SecurityGroupIds); $i ++) {	
-			$this->queryParameters["SecurityGroupId.".($i+1)] = $SecurityGroupIds[$i];
-		}
-	}
+        return $this;
+    }
 
-	public function getDescription() {
-		return $this->description;
-	}
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
-	}
+        return $this;
+    }
 
-	public function getNetworkInterfaceName() {
-		return $this->networkInterfaceName;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setNetworkInterfaceName($networkInterfaceName) {
-		$this->networkInterfaceName = $networkInterfaceName;
-		$this->queryParameters["NetworkInterfaceName"]=$networkInterfaceName;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param string $networkInterfaceId
+     *
+     * @return $this
+     */
+    public function setNetworkInterfaceId($networkInterfaceId)
+    {
+        $this->requestParameters['NetworkInterfaceId'] = $networkInterfaceId;
+        $this->queryParameters['NetworkInterfaceId'] = $networkInterfaceId;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getNetworkInterfaceId() {
-		return $this->networkInterfaceId;
-	}
-
-	public function setNetworkInterfaceId($networkInterfaceId) {
-		$this->networkInterfaceId = $networkInterfaceId;
-		$this->queryParameters["NetworkInterfaceId"]=$networkInterfaceId;
-	}
-	
+        return $this;
+    }
 }

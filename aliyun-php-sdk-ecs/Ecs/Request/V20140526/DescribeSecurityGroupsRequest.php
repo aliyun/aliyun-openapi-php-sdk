@@ -1,210 +1,256 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ecs\Request\V20140526;
 
+/**
+ * Request of DescribeSecurityGroups
+ *
+ * @method string getResourceOwnerId()
+ * @method string getDryRun()
+ * @method string getFuzzyQuery()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getSecurityGroupId()
+ * @method string getIsQueryEcsCount()
+ * @method string getNetworkType()
+ * @method string getOwnerId()
+ * @method string getSecurityGroupIds()
+ * @method string getSecurityGroupName()
+ * @method string getPageNumber()
+ * @method string getResourceGroupId()
+ * @method string getVpcId()
+ * @method string getPageSize()
+ * @method array getTags()
+ */
 class DescribeSecurityGroupsRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeSecurityGroups", "ecs", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $dryRun;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ecs',
+            '2014-05-26',
+            'DescribeSecurityGroups',
+            'ecs'
+        );
+    }
 
-	private  $fuzzyQuery;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $resourceOwnerAccount;
+        return $this;
+    }
 
-	private  $ownerAccount;
+    /**
+     * @param string $dryRun
+     *
+     * @return $this
+     */
+    public function setDryRun($dryRun)
+    {
+        $this->requestParameters['DryRun'] = $dryRun;
+        $this->queryParameters['DryRun'] = $dryRun;
 
-	private  $securityGroupId;
+        return $this;
+    }
 
-	private  $isQueryEcsCount;
+    /**
+     * @param string $fuzzyQuery
+     *
+     * @return $this
+     */
+    public function setFuzzyQuery($fuzzyQuery)
+    {
+        $this->requestParameters['FuzzyQuery'] = $fuzzyQuery;
+        $this->queryParameters['FuzzyQuery'] = $fuzzyQuery;
 
-	private  $networkType;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $securityGroupIds;
+        return $this;
+    }
 
-	private  $securityGroupName;
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	private  $pageNumber;
+        return $this;
+    }
 
-	private  $resourceGroupId;
+    /**
+     * @param string $securityGroupId
+     *
+     * @return $this
+     */
+    public function setSecurityGroupId($securityGroupId)
+    {
+        $this->requestParameters['SecurityGroupId'] = $securityGroupId;
+        $this->queryParameters['SecurityGroupId'] = $securityGroupId;
 
-	private  $vpcId;
+        return $this;
+    }
 
-	private  $pageSize;
+    /**
+     * @param string $isQueryEcsCount
+     *
+     * @return $this
+     */
+    public function setIsQueryEcsCount($isQueryEcsCount)
+    {
+        $this->requestParameters['IsQueryEcsCount'] = $isQueryEcsCount;
+        $this->queryParameters['IsQueryEcsCount'] = $isQueryEcsCount;
 
-	private  $Tags;
+        return $this;
+    }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+    /**
+     * @param string $networkType
+     *
+     * @return $this
+     */
+    public function setNetworkType($networkType)
+    {
+        $this->requestParameters['NetworkType'] = $networkType;
+        $this->queryParameters['NetworkType'] = $networkType;
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getDryRun() {
-		return $this->dryRun;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setDryRun($dryRun) {
-		$this->dryRun = $dryRun;
-		$this->queryParameters["DryRun"]=$dryRun;
-	}
+        return $this;
+    }
 
-	public function getFuzzyQuery() {
-		return $this->fuzzyQuery;
-	}
+    /**
+     * @param string $securityGroupIds
+     *
+     * @return $this
+     */
+    public function setSecurityGroupIds($securityGroupIds)
+    {
+        $this->requestParameters['SecurityGroupIds'] = $securityGroupIds;
+        $this->queryParameters['SecurityGroupIds'] = $securityGroupIds;
 
-	public function setFuzzyQuery($fuzzyQuery) {
-		$this->fuzzyQuery = $fuzzyQuery;
-		$this->queryParameters["FuzzyQuery"]=$fuzzyQuery;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param string $securityGroupName
+     *
+     * @return $this
+     */
+    public function setSecurityGroupName($securityGroupName)
+    {
+        $this->requestParameters['SecurityGroupName'] = $securityGroupName;
+        $this->queryParameters['SecurityGroupName'] = $securityGroupName;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
+        return $this;
+    }
 
-	public function getSecurityGroupId() {
-		return $this->securityGroupId;
-	}
+    /**
+     * @param string $resourceGroupId
+     *
+     * @return $this
+     */
+    public function setResourceGroupId($resourceGroupId)
+    {
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
 
-	public function setSecurityGroupId($securityGroupId) {
-		$this->securityGroupId = $securityGroupId;
-		$this->queryParameters["SecurityGroupId"]=$securityGroupId;
-	}
+        return $this;
+    }
 
-	public function getIsQueryEcsCount() {
-		return $this->isQueryEcsCount;
-	}
+    /**
+     * @param string $vpcId
+     *
+     * @return $this
+     */
+    public function setVpcId($vpcId)
+    {
+        $this->requestParameters['VpcId'] = $vpcId;
+        $this->queryParameters['VpcId'] = $vpcId;
 
-	public function setIsQueryEcsCount($isQueryEcsCount) {
-		$this->isQueryEcsCount = $isQueryEcsCount;
-		$this->queryParameters["IsQueryEcsCount"]=$isQueryEcsCount;
-	}
+        return $this;
+    }
 
-	public function getNetworkType() {
-		return $this->networkType;
-	}
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	public function setNetworkType($networkType) {
-		$this->networkType = $networkType;
-		$this->queryParameters["NetworkType"]=$networkType;
-	}
+        return $this;
+    }
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+    /**
+     * @param array $tags
+     *
+     * @return $this
+     */
+    public function setTags(array $tags)
+    {
+        $this->requestParameters['Tags'] = $tags;
+        foreach ($tags as $i => $iValue) {
+            $this->queryParameters['Tag.' . ($i + 1) . '.Value'] = $tags[$i]['Value'];
+            $this->queryParameters['Tag.' . ($i + 1) . '.Key'] = $tags[$i]['Key'];
+        }
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getSecurityGroupIds() {
-		return $this->securityGroupIds;
-	}
-
-	public function setSecurityGroupIds($securityGroupIds) {
-		$this->securityGroupIds = $securityGroupIds;
-		$this->queryParameters["SecurityGroupIds"]=$securityGroupIds;
-	}
-
-	public function getSecurityGroupName() {
-		return $this->securityGroupName;
-	}
-
-	public function setSecurityGroupName($securityGroupName) {
-		$this->securityGroupName = $securityGroupName;
-		$this->queryParameters["SecurityGroupName"]=$securityGroupName;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
-	public function getResourceGroupId() {
-		return $this->resourceGroupId;
-	}
-
-	public function setResourceGroupId($resourceGroupId) {
-		$this->resourceGroupId = $resourceGroupId;
-		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
-	}
-
-	public function getVpcId() {
-		return $this->vpcId;
-	}
-
-	public function setVpcId($vpcId) {
-		$this->vpcId = $vpcId;
-		$this->queryParameters["VpcId"]=$vpcId;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getTags() {
-		return $this->Tags;
-	}
-
-	public function setTags($Tags) {
-		$this->Tags = $Tags;
-		for ($i = 0; $i < count($Tags); $i ++) {	
-			$this->queryParameters['Tag.' . ($i + 1) . '.Value'] = $Tags[$i]['Value'];
-			$this->queryParameters['Tag.' . ($i + 1) . '.Key'] = $Tags[$i]['Key'];
-
-		}
-	}
-	
+        return $this;
+    }
 }

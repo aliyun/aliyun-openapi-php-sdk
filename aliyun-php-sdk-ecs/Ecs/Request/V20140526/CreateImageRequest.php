@@ -1,205 +1,247 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ecs\Request\V20140526;
 
+/**
+ * Request of CreateImage
+ *
+ * @method array getDiskDeviceMappings()
+ * @method string getResourceOwnerId()
+ * @method string getSnapshotId()
+ * @method string getResourceOwnerAccount()
+ * @method string getClientToken()
+ * @method string getOwnerAccount()
+ * @method string getDescription()
+ * @method string getOwnerId()
+ * @method string getPlatform()
+ * @method string getResourceGroupId()
+ * @method string getInstanceId()
+ * @method string getImageName()
+ * @method string getImageVersion()
+ * @method array getTags()
+ * @method string getArchitecture()
+ */
 class CreateImageRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ecs", "2014-05-26", "CreateImage", "ecs", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $DiskDeviceMappings;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $resourceOwnerId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ecs',
+            '2014-05-26',
+            'CreateImage',
+            'ecs'
+        );
+    }
 
-	private  $snapshotId;
+    /**
+     * @param array $diskDeviceMappings
+     *
+     * @return $this
+     */
+    public function setDiskDeviceMappings(array $diskDeviceMappings)
+    {
+        $this->requestParameters['DiskDeviceMappings'] = $diskDeviceMappings;
+        foreach ($diskDeviceMappings as $i => $iValue) {
+            $this->queryParameters['DiskDeviceMapping.' . ($i + 1) . '.SnapshotId'] = $diskDeviceMappings[$i]['SnapshotId'];
+            $this->queryParameters['DiskDeviceMapping.' . ($i + 1) . '.Size'] = $diskDeviceMappings[$i]['Size'];
+            $this->queryParameters['DiskDeviceMapping.' . ($i + 1) . '.DiskType'] = $diskDeviceMappings[$i]['DiskType'];
+            $this->queryParameters['DiskDeviceMapping.' . ($i + 1) . '.Device'] = $diskDeviceMappings[$i]['Device'];
+        }
 
-	private  $resourceOwnerAccount;
+        return $this;
+    }
 
-	private  $clientToken;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $ownerAccount;
+        return $this;
+    }
 
-	private  $description;
+    /**
+     * @param string $snapshotId
+     *
+     * @return $this
+     */
+    public function setSnapshotId($snapshotId)
+    {
+        $this->requestParameters['SnapshotId'] = $snapshotId;
+        $this->queryParameters['SnapshotId'] = $snapshotId;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	private  $platform;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $resourceGroupId;
+        return $this;
+    }
 
-	private  $instanceId;
+    /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
 
-	private  $imageName;
+        return $this;
+    }
 
-	private  $imageVersion;
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	private  $Tags;
+        return $this;
+    }
 
-	private  $architecture;
+    /**
+     * @param string $description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
 
-	public function getDiskDeviceMappings() {
-		return $this->DiskDeviceMappings;
-	}
+        return $this;
+    }
 
-	public function setDiskDeviceMappings($DiskDeviceMappings) {
-		$this->DiskDeviceMappings = $DiskDeviceMappings;
-		for ($i = 0; $i < count($DiskDeviceMappings); $i ++) {	
-			$this->queryParameters['DiskDeviceMapping.' . ($i + 1) . '.SnapshotId'] = $DiskDeviceMappings[$i]['SnapshotId'];
-			$this->queryParameters['DiskDeviceMapping.' . ($i + 1) . '.Size'] = $DiskDeviceMappings[$i]['Size'];
-			$this->queryParameters['DiskDeviceMapping.' . ($i + 1) . '.DiskType'] = $DiskDeviceMappings[$i]['DiskType'];
-			$this->queryParameters['DiskDeviceMapping.' . ($i + 1) . '.Device'] = $DiskDeviceMappings[$i]['Device'];
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-		}
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+    /**
+     * @param string $platform
+     *
+     * @return $this
+     */
+    public function setPlatform($platform)
+    {
+        $this->requestParameters['Platform'] = $platform;
+        $this->queryParameters['Platform'] = $platform;
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getSnapshotId() {
-		return $this->snapshotId;
-	}
+    /**
+     * @param string $resourceGroupId
+     *
+     * @return $this
+     */
+    public function setResourceGroupId($resourceGroupId)
+    {
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
 
-	public function setSnapshotId($snapshotId) {
-		$this->snapshotId = $snapshotId;
-		$this->queryParameters["SnapshotId"]=$snapshotId;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function getClientToken() {
-		return $this->clientToken;
-	}
+    /**
+     * @param string $imageName
+     *
+     * @return $this
+     */
+    public function setImageName($imageName)
+    {
+        $this->requestParameters['ImageName'] = $imageName;
+        $this->queryParameters['ImageName'] = $imageName;
 
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
+        return $this;
+    }
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+    /**
+     * @param string $imageVersion
+     *
+     * @return $this
+     */
+    public function setImageVersion($imageVersion)
+    {
+        $this->requestParameters['ImageVersion'] = $imageVersion;
+        $this->queryParameters['ImageVersion'] = $imageVersion;
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
+        return $this;
+    }
 
-	public function getDescription() {
-		return $this->description;
-	}
+    /**
+     * @param array $tags
+     *
+     * @return $this
+     */
+    public function setTags(array $tags)
+    {
+        $this->requestParameters['Tags'] = $tags;
+        foreach ($tags as $i => $iValue) {
+            $this->queryParameters['Tag.' . ($i + 1) . '.Value'] = $tags[$i]['Value'];
+            $this->queryParameters['Tag.' . ($i + 1) . '.Key'] = $tags[$i]['Key'];
+        }
 
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
-	}
+        return $this;
+    }
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+    /**
+     * @param string $architecture
+     *
+     * @return $this
+     */
+    public function setArchitecture($architecture)
+    {
+        $this->requestParameters['Architecture'] = $architecture;
+        $this->queryParameters['Architecture'] = $architecture;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getPlatform() {
-		return $this->platform;
-	}
-
-	public function setPlatform($platform) {
-		$this->platform = $platform;
-		$this->queryParameters["Platform"]=$platform;
-	}
-
-	public function getResourceGroupId() {
-		return $this->resourceGroupId;
-	}
-
-	public function setResourceGroupId($resourceGroupId) {
-		$this->resourceGroupId = $resourceGroupId;
-		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
-	}
-
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
-
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
-
-	public function getImageName() {
-		return $this->imageName;
-	}
-
-	public function setImageName($imageName) {
-		$this->imageName = $imageName;
-		$this->queryParameters["ImageName"]=$imageName;
-	}
-
-	public function getImageVersion() {
-		return $this->imageVersion;
-	}
-
-	public function setImageVersion($imageVersion) {
-		$this->imageVersion = $imageVersion;
-		$this->queryParameters["ImageVersion"]=$imageVersion;
-	}
-
-	public function getTags() {
-		return $this->Tags;
-	}
-
-	public function setTags($Tags) {
-		$this->Tags = $Tags;
-		for ($i = 0; $i < count($Tags); $i ++) {	
-			$this->queryParameters['Tag.' . ($i + 1) . '.Value'] = $Tags[$i]['Value'];
-			$this->queryParameters['Tag.' . ($i + 1) . '.Key'] = $Tags[$i]['Key'];
-
-		}
-	}
-
-	public function getArchitecture() {
-		return $this->architecture;
-	}
-
-	public function setArchitecture($architecture) {
-		$this->architecture = $architecture;
-		$this->queryParameters["Architecture"]=$architecture;
-	}
-	
+        return $this;
+    }
 }

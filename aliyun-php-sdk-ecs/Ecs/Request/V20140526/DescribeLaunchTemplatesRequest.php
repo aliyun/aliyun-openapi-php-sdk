@@ -1,148 +1,176 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ecs\Request\V20140526;
 
+/**
+ * Request of DescribeLaunchTemplates
+ *
+ * @method array getLaunchTemplateNames()
+ * @method string getResourceOwnerId()
+ * @method string getPageNumber()
+ * @method string getPageSize()
+ * @method array getTemplateTags()
+ * @method array getLaunchTemplateIds()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getTemplateResourceGroupId()
+ * @method string getOwnerId()
+ */
 class DescribeLaunchTemplatesRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeLaunchTemplates", "ecs", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $LaunchTemplateNames;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $resourceOwnerId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ecs',
+            '2014-05-26',
+            'DescribeLaunchTemplates',
+            'ecs'
+        );
+    }
 
-	private  $pageNumber;
+    /**
+     * @param array $launchTemplateNames
+     *
+     * @return $this
+     */
+    public function setLaunchTemplateNames(array $launchTemplateNames)
+    {
+        $this->requestParameters['LaunchTemplateNames'] = $launchTemplateNames;
+        foreach ($launchTemplateNames as $i => $iValue) {
+            $this->queryParameters['LaunchTemplateName.' . ($i + 1)] = $iValue;
+        }
 
-	private  $pageSize;
+        return $this;
+    }
 
-	private  $TemplateTags;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $LaunchTemplateIds;
+        return $this;
+    }
 
-	private  $resourceOwnerAccount;
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
-	private  $ownerAccount;
+        return $this;
+    }
 
-	private  $templateResourceGroupId;
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	public function getLaunchTemplateNames() {
-		return $this->LaunchTemplateNames;
-	}
+    /**
+     * @param array $templateTags
+     *
+     * @return $this
+     */
+    public function setTemplateTags(array $templateTags)
+    {
+        $this->requestParameters['TemplateTags'] = $templateTags;
+        foreach ($templateTags as $i => $iValue) {
+            $this->queryParameters['TemplateTag.' . ($i + 1) . '.Key'] = $templateTags[$i]['Key'];
+            $this->queryParameters['TemplateTag.' . ($i + 1) . '.Value'] = $templateTags[$i]['Value'];
+        }
 
-	public function setLaunchTemplateNames($LaunchTemplateNames) {
-		$this->LaunchTemplateNames = $LaunchTemplateNames;
-		for ($i = 0; $i < count($LaunchTemplateNames); $i ++) {	
-			$this->queryParameters["LaunchTemplateName.".($i+1)] = $LaunchTemplateNames[$i];
-		}
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+    /**
+     * @param array $launchTemplateIds
+     *
+     * @return $this
+     */
+    public function setLaunchTemplateIds(array $launchTemplateIds)
+    {
+        $this->requestParameters['LaunchTemplateIds'] = $launchTemplateIds;
+        foreach ($launchTemplateIds as $i => $iValue) {
+            $this->queryParameters['LaunchTemplateId.' . ($i + 1)] = $iValue;
+        }
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
+        return $this;
+    }
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
+        return $this;
+    }
 
-	public function getTemplateTags() {
-		return $this->TemplateTags;
-	}
+    /**
+     * @param string $templateResourceGroupId
+     *
+     * @return $this
+     */
+    public function setTemplateResourceGroupId($templateResourceGroupId)
+    {
+        $this->requestParameters['TemplateResourceGroupId'] = $templateResourceGroupId;
+        $this->queryParameters['TemplateResourceGroupId'] = $templateResourceGroupId;
 
-	public function setTemplateTags($TemplateTags) {
-		$this->TemplateTags = $TemplateTags;
-		for ($i = 0; $i < count($TemplateTags); $i ++) {	
-			$this->queryParameters['TemplateTag.' . ($i + 1) . '.Key'] = $TemplateTags[$i]['Key'];
-			$this->queryParameters['TemplateTag.' . ($i + 1) . '.Value'] = $TemplateTags[$i]['Value'];
+        return $this;
+    }
 
-		}
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function getLaunchTemplateIds() {
-		return $this->LaunchTemplateIds;
-	}
-
-	public function setLaunchTemplateIds($LaunchTemplateIds) {
-		$this->LaunchTemplateIds = $LaunchTemplateIds;
-		for ($i = 0; $i < count($LaunchTemplateIds); $i ++) {	
-			$this->queryParameters["LaunchTemplateId.".($i+1)] = $LaunchTemplateIds[$i];
-		}
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getTemplateResourceGroupId() {
-		return $this->templateResourceGroupId;
-	}
-
-	public function setTemplateResourceGroupId($templateResourceGroupId) {
-		$this->templateResourceGroupId = $templateResourceGroupId;
-		$this->queryParameters["TemplateResourceGroupId"]=$templateResourceGroupId;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-	
+        return $this;
+    }
 }

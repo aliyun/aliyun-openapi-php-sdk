@@ -1,206 +1,253 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ecs\Request\V20140526;
 
+/**
+ * Request of CreatePhysicalConnection
+ *
+ * @method string getAccessPointId()
+ * @method string getRedundantPhysicalConnectionId()
+ * @method string getPeerLocation()
+ * @method string getResourceOwnerId()
+ * @method string getPortType()
+ * @method string getCircuitCode()
+ * @method string getbandwidth()
+ * @method string getClientToken()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getDescription()
+ * @method string getType()
+ * @method string getOwnerId()
+ * @method string getLineOperator()
+ * @method string getName()
+ * @method string getUserCidr()
+ */
 class CreatePhysicalConnectionRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ecs", "2014-05-26", "CreatePhysicalConnection", "ecs", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $accessPointId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $redundantPhysicalConnectionId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ecs',
+            '2014-05-26',
+            'CreatePhysicalConnection',
+            'ecs'
+        );
+    }
 
-	private  $peerLocation;
+    /**
+     * @param string $accessPointId
+     *
+     * @return $this
+     */
+    public function setAccessPointId($accessPointId)
+    {
+        $this->requestParameters['AccessPointId'] = $accessPointId;
+        $this->queryParameters['AccessPointId'] = $accessPointId;
 
-	private  $resourceOwnerId;
+        return $this;
+    }
 
-	private  $portType;
+    /**
+     * @param string $redundantPhysicalConnectionId
+     *
+     * @return $this
+     */
+    public function setRedundantPhysicalConnectionId($redundantPhysicalConnectionId)
+    {
+        $this->requestParameters['RedundantPhysicalConnectionId'] = $redundantPhysicalConnectionId;
+        $this->queryParameters['RedundantPhysicalConnectionId'] = $redundantPhysicalConnectionId;
 
-	private  $circuitCode;
+        return $this;
+    }
 
-	private  $bandwidth;
+    /**
+     * @param string $peerLocation
+     *
+     * @return $this
+     */
+    public function setPeerLocation($peerLocation)
+    {
+        $this->requestParameters['PeerLocation'] = $peerLocation;
+        $this->queryParameters['PeerLocation'] = $peerLocation;
 
-	private  $clientToken;
+        return $this;
+    }
 
-	private  $resourceOwnerAccount;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $ownerAccount;
+        return $this;
+    }
 
-	private  $description;
+    /**
+     * @param string $portType
+     *
+     * @return $this
+     */
+    public function setPortType($portType)
+    {
+        $this->requestParameters['PortType'] = $portType;
+        $this->queryParameters['PortType'] = $portType;
 
-	private  $type;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $circuitCode
+     *
+     * @return $this
+     */
+    public function setCircuitCode($circuitCode)
+    {
+        $this->requestParameters['CircuitCode'] = $circuitCode;
+        $this->queryParameters['CircuitCode'] = $circuitCode;
 
-	private  $lineOperator;
+        return $this;
+    }
 
-	private  $name;
+    /**
+     * @param string $bandwidth
+     *
+     * @return $this
+     */
+    public function setbandwidth($bandwidth)
+    {
+        $this->requestParameters['bandwidth'] = $bandwidth;
+        $this->queryParameters['bandwidth'] = $bandwidth;
 
-	private  $userCidr;
+        return $this;
+    }
 
-	public function getAccessPointId() {
-		return $this->accessPointId;
-	}
+    /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
 
-	public function setAccessPointId($accessPointId) {
-		$this->accessPointId = $accessPointId;
-		$this->queryParameters["AccessPointId"]=$accessPointId;
-	}
+        return $this;
+    }
 
-	public function getRedundantPhysicalConnectionId() {
-		return $this->redundantPhysicalConnectionId;
-	}
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	public function setRedundantPhysicalConnectionId($redundantPhysicalConnectionId) {
-		$this->redundantPhysicalConnectionId = $redundantPhysicalConnectionId;
-		$this->queryParameters["RedundantPhysicalConnectionId"]=$redundantPhysicalConnectionId;
-	}
+        return $this;
+    }
 
-	public function getPeerLocation() {
-		return $this->peerLocation;
-	}
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	public function setPeerLocation($peerLocation) {
-		$this->peerLocation = $peerLocation;
-		$this->queryParameters["PeerLocation"]=$peerLocation;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+    /**
+     * @param string $description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getPortType() {
-		return $this->portType;
-	}
+    /**
+     * @param string $type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->requestParameters['Type'] = $type;
+        $this->queryParameters['Type'] = $type;
 
-	public function setPortType($portType) {
-		$this->portType = $portType;
-		$this->queryParameters["PortType"]=$portType;
-	}
+        return $this;
+    }
 
-	public function getCircuitCode() {
-		return $this->circuitCode;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setCircuitCode($circuitCode) {
-		$this->circuitCode = $circuitCode;
-		$this->queryParameters["CircuitCode"]=$circuitCode;
-	}
+        return $this;
+    }
 
-	public function getbandwidth() {
-		return $this->bandwidth;
-	}
+    /**
+     * @param string $lineOperator
+     *
+     * @return $this
+     */
+    public function setLineOperator($lineOperator)
+    {
+        $this->requestParameters['LineOperator'] = $lineOperator;
+        $this->queryParameters['LineOperator'] = $lineOperator;
 
-	public function setbandwidth($bandwidth) {
-		$this->bandwidth = $bandwidth;
-		$this->queryParameters["bandwidth"]=$bandwidth;
-	}
+        return $this;
+    }
 
-	public function getClientToken() {
-		return $this->clientToken;
-	}
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param string $userCidr
+     *
+     * @return $this
+     */
+    public function setUserCidr($userCidr)
+    {
+        $this->requestParameters['UserCidr'] = $userCidr;
+        $this->queryParameters['UserCidr'] = $userCidr;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getDescription() {
-		return $this->description;
-	}
-
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
-	}
-
-	public function getType() {
-		return $this->type;
-	}
-
-	public function setType($type) {
-		$this->type = $type;
-		$this->queryParameters["Type"]=$type;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getLineOperator() {
-		return $this->lineOperator;
-	}
-
-	public function setLineOperator($lineOperator) {
-		$this->lineOperator = $lineOperator;
-		$this->queryParameters["LineOperator"]=$lineOperator;
-	}
-
-	public function getName() {
-		return $this->name;
-	}
-
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
-	}
-
-	public function getUserCidr() {
-		return $this->userCidr;
-	}
-
-	public function setUserCidr($userCidr) {
-		$this->userCidr = $userCidr;
-		$this->queryParameters["UserCidr"]=$userCidr;
-	}
-	
+        return $this;
+    }
 }

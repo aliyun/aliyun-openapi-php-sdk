@@ -3,18 +3,15 @@
 namespace Ecs\Request\V20140526;
 
 /**
- * Request of DescribeEipMonitorData
+ * Request of AcceptInquiredSystemEvent
  *
+ * @method string getEventId()
  * @method string getResourceOwnerId()
- * @method string getPeriod()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getEndTime()
- * @method string getAllocationId()
- * @method string getStartTime()
  * @method string getOwnerId()
  */
-class DescribeEipMonitorDataRequest extends \RpcAcsRequest
+class AcceptInquiredSystemEventRequest extends \RpcAcsRequest
 {
 
     /**
@@ -30,9 +27,22 @@ class DescribeEipMonitorDataRequest extends \RpcAcsRequest
         parent::__construct(
             'Ecs',
             '2014-05-26',
-            'DescribeEipMonitorData',
+            'AcceptInquiredSystemEvent',
             'ecs'
         );
+    }
+
+    /**
+     * @param string $eventId
+     *
+     * @return $this
+     */
+    public function setEventId($eventId)
+    {
+        $this->requestParameters['EventId'] = $eventId;
+        $this->queryParameters['EventId'] = $eventId;
+
+        return $this;
     }
 
     /**
@@ -44,19 +54,6 @@ class DescribeEipMonitorDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $period
-     *
-     * @return $this
-     */
-    public function setPeriod($period)
-    {
-        $this->requestParameters['Period'] = $period;
-        $this->queryParameters['Period'] = $period;
 
         return $this;
     }
@@ -83,45 +80,6 @@ class DescribeEipMonitorDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $endTime
-     *
-     * @return $this
-     */
-    public function setEndTime($endTime)
-    {
-        $this->requestParameters['EndTime'] = $endTime;
-        $this->queryParameters['EndTime'] = $endTime;
-
-        return $this;
-    }
-
-    /**
-     * @param string $allocationId
-     *
-     * @return $this
-     */
-    public function setAllocationId($allocationId)
-    {
-        $this->requestParameters['AllocationId'] = $allocationId;
-        $this->queryParameters['AllocationId'] = $allocationId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $startTime
-     *
-     * @return $this
-     */
-    public function setStartTime($startTime)
-    {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
 
         return $this;
     }

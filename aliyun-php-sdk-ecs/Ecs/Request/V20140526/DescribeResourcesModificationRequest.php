@@ -1,151 +1,183 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ecs\Request\V20140526;
 
+/**
+ * Request of DescribeResourcesModification
+ *
+ * @method string getResourceOwnerId()
+ * @method string getMemory()
+ * @method string getCores()
+ * @method string getMigrateAcrossZone()
+ * @method string getInstanceType()
+ * @method string getResourceId()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getOperationType()
+ * @method string getOwnerId()
+ * @method string getDestinationResource()
+ */
 class DescribeResourcesModificationRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeResourcesModification", "ecs", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $memory;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ecs',
+            '2014-05-26',
+            'DescribeResourcesModification',
+            'ecs'
+        );
+    }
 
-	private  $cores;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $migrateAcrossZone;
+        return $this;
+    }
 
-	private  $instanceType;
+    /**
+     * @param string $memory
+     *
+     * @return $this
+     */
+    public function setMemory($memory)
+    {
+        $this->requestParameters['Memory'] = $memory;
+        $this->queryParameters['Memory'] = $memory;
 
-	private  $resourceId;
+        return $this;
+    }
 
-	private  $resourceOwnerAccount;
+    /**
+     * @param string $cores
+     *
+     * @return $this
+     */
+    public function setCores($cores)
+    {
+        $this->requestParameters['Cores'] = $cores;
+        $this->queryParameters['Cores'] = $cores;
 
-	private  $ownerAccount;
+        return $this;
+    }
 
-	private  $operationType;
+    /**
+     * @param string $migrateAcrossZone
+     *
+     * @return $this
+     */
+    public function setMigrateAcrossZone($migrateAcrossZone)
+    {
+        $this->requestParameters['MigrateAcrossZone'] = $migrateAcrossZone;
+        $this->queryParameters['MigrateAcrossZone'] = $migrateAcrossZone;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	private  $destinationResource;
+    /**
+     * @param string $instanceType
+     *
+     * @return $this
+     */
+    public function setInstanceType($instanceType)
+    {
+        $this->requestParameters['InstanceType'] = $instanceType;
+        $this->queryParameters['InstanceType'] = $instanceType;
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+    /**
+     * @param string $resourceId
+     *
+     * @return $this
+     */
+    public function setResourceId($resourceId)
+    {
+        $this->requestParameters['ResourceId'] = $resourceId;
+        $this->queryParameters['ResourceId'] = $resourceId;
 
-	public function getMemory() {
-		return $this->memory;
-	}
+        return $this;
+    }
 
-	public function setMemory($memory) {
-		$this->memory = $memory;
-		$this->queryParameters["Memory"]=$memory;
-	}
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	public function getCores() {
-		return $this->cores;
-	}
+        return $this;
+    }
 
-	public function setCores($cores) {
-		$this->cores = $cores;
-		$this->queryParameters["Cores"]=$cores;
-	}
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	public function getMigrateAcrossZone() {
-		return $this->migrateAcrossZone;
-	}
+        return $this;
+    }
 
-	public function setMigrateAcrossZone($migrateAcrossZone) {
-		$this->migrateAcrossZone = $migrateAcrossZone;
-		$this->queryParameters["MigrateAcrossZone"]=$migrateAcrossZone;
-	}
+    /**
+     * @param string $operationType
+     *
+     * @return $this
+     */
+    public function setOperationType($operationType)
+    {
+        $this->requestParameters['OperationType'] = $operationType;
+        $this->queryParameters['OperationType'] = $operationType;
 
-	public function getInstanceType() {
-		return $this->instanceType;
-	}
+        return $this;
+    }
 
-	public function setInstanceType($instanceType) {
-		$this->instanceType = $instanceType;
-		$this->queryParameters["InstanceType"]=$instanceType;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function getResourceId() {
-		return $this->resourceId;
-	}
+        return $this;
+    }
 
-	public function setResourceId($resourceId) {
-		$this->resourceId = $resourceId;
-		$this->queryParameters["ResourceId"]=$resourceId;
-	}
+    /**
+     * @param string $destinationResource
+     *
+     * @return $this
+     */
+    public function setDestinationResource($destinationResource)
+    {
+        $this->requestParameters['DestinationResource'] = $destinationResource;
+        $this->queryParameters['DestinationResource'] = $destinationResource;
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getOperationType() {
-		return $this->operationType;
-	}
-
-	public function setOperationType($operationType) {
-		$this->operationType = $operationType;
-		$this->queryParameters["OperationType"]=$operationType;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getDestinationResource() {
-		return $this->destinationResource;
-	}
-
-	public function setDestinationResource($destinationResource) {
-		$this->destinationResource = $destinationResource;
-		$this->queryParameters["DestinationResource"]=$destinationResource;
-	}
-	
+        return $this;
+    }
 }

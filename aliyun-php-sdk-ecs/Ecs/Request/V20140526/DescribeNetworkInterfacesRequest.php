@@ -1,212 +1,258 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ecs\Request\V20140526;
 
+/**
+ * Request of DescribeNetworkInterfaces
+ *
+ * @method string getResourceOwnerId()
+ * @method string getSecurityGroupId()
+ * @method string getType()
+ * @method string getPageNumber()
+ * @method string getResourceGroupId()
+ * @method string getPageSize()
+ * @method array getTags()
+ * @method string getNetworkInterfaceName()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getOwnerId()
+ * @method string getVSwitchId()
+ * @method string getInstanceId()
+ * @method string getVpcId()
+ * @method string getPrimaryIpAddress()
+ * @method array getNetworkInterfaceIds()
+ */
 class DescribeNetworkInterfacesRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeNetworkInterfaces", "ecs", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $securityGroupId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ecs',
+            '2014-05-26',
+            'DescribeNetworkInterfaces',
+            'ecs'
+        );
+    }
 
-	private  $type;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $pageNumber;
+        return $this;
+    }
 
-	private  $resourceGroupId;
+    /**
+     * @param string $securityGroupId
+     *
+     * @return $this
+     */
+    public function setSecurityGroupId($securityGroupId)
+    {
+        $this->requestParameters['SecurityGroupId'] = $securityGroupId;
+        $this->queryParameters['SecurityGroupId'] = $securityGroupId;
 
-	private  $pageSize;
+        return $this;
+    }
 
-	private  $Tags;
+    /**
+     * @param string $type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->requestParameters['Type'] = $type;
+        $this->queryParameters['Type'] = $type;
 
-	private  $networkInterfaceName;
+        return $this;
+    }
 
-	private  $resourceOwnerAccount;
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
-	private  $ownerAccount;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $resourceGroupId
+     *
+     * @return $this
+     */
+    public function setResourceGroupId($resourceGroupId)
+    {
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
 
-	private  $vSwitchId;
+        return $this;
+    }
 
-	private  $instanceId;
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	private  $vpcId;
+        return $this;
+    }
 
-	private  $primaryIpAddress;
+    /**
+     * @param array $tags
+     *
+     * @return $this
+     */
+    public function setTags(array $tags)
+    {
+        $this->requestParameters['Tags'] = $tags;
+        foreach ($tags as $i => $iValue) {
+            $this->queryParameters['Tag.' . ($i + 1) . '.Key'] = $tags[$i]['Key'];
+            $this->queryParameters['Tag.' . ($i + 1) . '.Value'] = $tags[$i]['Value'];
+        }
 
-	private  $NetworkInterfaceIds;
+        return $this;
+    }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+    /**
+     * @param string $networkInterfaceName
+     *
+     * @return $this
+     */
+    public function setNetworkInterfaceName($networkInterfaceName)
+    {
+        $this->requestParameters['NetworkInterfaceName'] = $networkInterfaceName;
+        $this->queryParameters['NetworkInterfaceName'] = $networkInterfaceName;
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getSecurityGroupId() {
-		return $this->securityGroupId;
-	}
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	public function setSecurityGroupId($securityGroupId) {
-		$this->securityGroupId = $securityGroupId;
-		$this->queryParameters["SecurityGroupId"]=$securityGroupId;
-	}
+        return $this;
+    }
 
-	public function getType() {
-		return $this->type;
-	}
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	public function setType($type) {
-		$this->type = $type;
-		$this->queryParameters["Type"]=$type;
-	}
+        return $this;
+    }
 
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
+        return $this;
+    }
 
-	public function getResourceGroupId() {
-		return $this->resourceGroupId;
-	}
+    /**
+     * @param string $vSwitchId
+     *
+     * @return $this
+     */
+    public function setVSwitchId($vSwitchId)
+    {
+        $this->requestParameters['VSwitchId'] = $vSwitchId;
+        $this->queryParameters['VSwitchId'] = $vSwitchId;
 
-	public function setResourceGroupId($resourceGroupId) {
-		$this->resourceGroupId = $resourceGroupId;
-		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
-	}
+        return $this;
+    }
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
+        return $this;
+    }
 
-	public function getTags() {
-		return $this->Tags;
-	}
+    /**
+     * @param string $vpcId
+     *
+     * @return $this
+     */
+    public function setVpcId($vpcId)
+    {
+        $this->requestParameters['VpcId'] = $vpcId;
+        $this->queryParameters['VpcId'] = $vpcId;
 
-	public function setTags($Tags) {
-		$this->Tags = $Tags;
-		for ($i = 0; $i < count($Tags); $i ++) {	
-			$this->queryParameters['Tag.' . ($i + 1) . '.Key'] = $Tags[$i]['Key'];
-			$this->queryParameters['Tag.' . ($i + 1) . '.Value'] = $Tags[$i]['Value'];
+        return $this;
+    }
 
-		}
-	}
+    /**
+     * @param string $primaryIpAddress
+     *
+     * @return $this
+     */
+    public function setPrimaryIpAddress($primaryIpAddress)
+    {
+        $this->requestParameters['PrimaryIpAddress'] = $primaryIpAddress;
+        $this->queryParameters['PrimaryIpAddress'] = $primaryIpAddress;
 
-	public function getNetworkInterfaceName() {
-		return $this->networkInterfaceName;
-	}
+        return $this;
+    }
 
-	public function setNetworkInterfaceName($networkInterfaceName) {
-		$this->networkInterfaceName = $networkInterfaceName;
-		$this->queryParameters["NetworkInterfaceName"]=$networkInterfaceName;
-	}
+    /**
+     * @param array $networkInterfaceIds
+     *
+     * @return $this
+     */
+    public function setNetworkInterfaceIds(array $networkInterfaceIds)
+    {
+        $this->requestParameters['NetworkInterfaceIds'] = $networkInterfaceIds;
+        foreach ($networkInterfaceIds as $i => $iValue) {
+            $this->queryParameters['NetworkInterfaceId.' . ($i + 1)] = $iValue;
+        }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getVSwitchId() {
-		return $this->vSwitchId;
-	}
-
-	public function setVSwitchId($vSwitchId) {
-		$this->vSwitchId = $vSwitchId;
-		$this->queryParameters["VSwitchId"]=$vSwitchId;
-	}
-
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
-
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
-
-	public function getVpcId() {
-		return $this->vpcId;
-	}
-
-	public function setVpcId($vpcId) {
-		$this->vpcId = $vpcId;
-		$this->queryParameters["VpcId"]=$vpcId;
-	}
-
-	public function getPrimaryIpAddress() {
-		return $this->primaryIpAddress;
-	}
-
-	public function setPrimaryIpAddress($primaryIpAddress) {
-		$this->primaryIpAddress = $primaryIpAddress;
-		$this->queryParameters["PrimaryIpAddress"]=$primaryIpAddress;
-	}
-
-	public function getNetworkInterfaceIds() {
-		return $this->NetworkInterfaceIds;
-	}
-
-	public function setNetworkInterfaceIds($NetworkInterfaceIds) {
-		$this->NetworkInterfaceIds = $NetworkInterfaceIds;
-		for ($i = 0; $i < count($NetworkInterfaceIds); $i ++) {	
-			$this->queryParameters["NetworkInterfaceId.".($i+1)] = $NetworkInterfaceIds[$i];
-		}
-	}
-	
+        return $this;
+    }
 }

@@ -1,144 +1,172 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ecs\Request\V20140526;
 
+/**
+ * Request of CopyImage
+ *
+ * @method string getResourceOwnerId()
+ * @method string getImageId()
+ * @method string getEncrypted()
+ * @method string getResourceOwnerAccount()
+ * @method string getDestinationImageName()
+ * @method string getDestinationRegionId()
+ * @method string getOwnerAccount()
+ * @method array getTags()
+ * @method string getOwnerId()
+ * @method string getDestinationDescription()
+ */
 class CopyImageRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ecs", "2014-05-26", "CopyImage", "ecs", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $imageId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ecs',
+            '2014-05-26',
+            'CopyImage',
+            'ecs'
+        );
+    }
 
-	private  $encrypted;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $resourceOwnerAccount;
+        return $this;
+    }
 
-	private  $destinationImageName;
+    /**
+     * @param string $imageId
+     *
+     * @return $this
+     */
+    public function setImageId($imageId)
+    {
+        $this->requestParameters['ImageId'] = $imageId;
+        $this->queryParameters['ImageId'] = $imageId;
 
-	private  $destinationRegionId;
+        return $this;
+    }
 
-	private  $ownerAccount;
+    /**
+     * @param string $encrypted
+     *
+     * @return $this
+     */
+    public function setEncrypted($encrypted)
+    {
+        $this->requestParameters['Encrypted'] = $encrypted;
+        $this->queryParameters['Encrypted'] = $encrypted;
 
-	private  $Tags;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $destinationDescription;
+        return $this;
+    }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+    /**
+     * @param string $destinationImageName
+     *
+     * @return $this
+     */
+    public function setDestinationImageName($destinationImageName)
+    {
+        $this->requestParameters['DestinationImageName'] = $destinationImageName;
+        $this->queryParameters['DestinationImageName'] = $destinationImageName;
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getImageId() {
-		return $this->imageId;
-	}
+    /**
+     * @param string $destinationRegionId
+     *
+     * @return $this
+     */
+    public function setDestinationRegionId($destinationRegionId)
+    {
+        $this->requestParameters['DestinationRegionId'] = $destinationRegionId;
+        $this->queryParameters['DestinationRegionId'] = $destinationRegionId;
 
-	public function setImageId($imageId) {
-		$this->imageId = $imageId;
-		$this->queryParameters["ImageId"]=$imageId;
-	}
+        return $this;
+    }
 
-	public function getEncrypted() {
-		return $this->encrypted;
-	}
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	public function setEncrypted($encrypted) {
-		$this->encrypted = $encrypted;
-		$this->queryParameters["Encrypted"]=$encrypted;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param array $tags
+     *
+     * @return $this
+     */
+    public function setTags(array $tags)
+    {
+        $this->requestParameters['Tags'] = $tags;
+        foreach ($tags as $i => $iValue) {
+            $this->queryParameters['Tag.' . ($i + 1) . '.Value'] = $tags[$i]['Value'];
+            $this->queryParameters['Tag.' . ($i + 1) . '.Key'] = $tags[$i]['Key'];
+        }
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function getDestinationImageName() {
-		return $this->destinationImageName;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setDestinationImageName($destinationImageName) {
-		$this->destinationImageName = $destinationImageName;
-		$this->queryParameters["DestinationImageName"]=$destinationImageName;
-	}
+        return $this;
+    }
 
-	public function getDestinationRegionId() {
-		return $this->destinationRegionId;
-	}
+    /**
+     * @param string $destinationDescription
+     *
+     * @return $this
+     */
+    public function setDestinationDescription($destinationDescription)
+    {
+        $this->requestParameters['DestinationDescription'] = $destinationDescription;
+        $this->queryParameters['DestinationDescription'] = $destinationDescription;
 
-	public function setDestinationRegionId($destinationRegionId) {
-		$this->destinationRegionId = $destinationRegionId;
-		$this->queryParameters["DestinationRegionId"]=$destinationRegionId;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getTags() {
-		return $this->Tags;
-	}
-
-	public function setTags($Tags) {
-		$this->Tags = $Tags;
-		for ($i = 0; $i < count($Tags); $i ++) {	
-			$this->queryParameters['Tag.' . ($i + 1) . '.Value'] = $Tags[$i]['Value'];
-			$this->queryParameters['Tag.' . ($i + 1) . '.Key'] = $Tags[$i]['Key'];
-
-		}
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getDestinationDescription() {
-		return $this->destinationDescription;
-	}
-
-	public function setDestinationDescription($destinationDescription) {
-		$this->destinationDescription = $destinationDescription;
-		$this->queryParameters["DestinationDescription"]=$destinationDescription;
-	}
-	
+        return $this;
+    }
 }

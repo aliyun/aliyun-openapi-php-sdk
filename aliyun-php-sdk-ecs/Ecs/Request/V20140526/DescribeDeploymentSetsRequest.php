@@ -1,162 +1,197 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ecs\Request\V20140526;
 
+/**
+ * Request of DescribeDeploymentSets
+ *
+ * @method string getResourceOwnerId()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getNetworkType()
+ * @method string getDeploymentSetName()
+ * @method string getOwnerId()
+ * @method string getPageNumber()
+ * @method string getDeploymentSetIds()
+ * @method string getGranularity()
+ * @method string getDomain()
+ * @method string getPageSize()
+ * @method string getStrategy()
+ */
 class DescribeDeploymentSetsRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeDeploymentSets", "ecs", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $resourceOwnerAccount;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ecs',
+            '2014-05-26',
+            'DescribeDeploymentSets',
+            'ecs'
+        );
+    }
 
-	private  $ownerAccount;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $networkType;
+        return $this;
+    }
 
-	private  $deploymentSetName;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	private  $pageNumber;
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	private  $deploymentSetIds;
+        return $this;
+    }
 
-	private  $granularity;
+    /**
+     * @param string $networkType
+     *
+     * @return $this
+     */
+    public function setNetworkType($networkType)
+    {
+        $this->requestParameters['NetworkType'] = $networkType;
+        $this->queryParameters['NetworkType'] = $networkType;
 
-	private  $domain;
+        return $this;
+    }
 
-	private  $pageSize;
+    /**
+     * @param string $deploymentSetName
+     *
+     * @return $this
+     */
+    public function setDeploymentSetName($deploymentSetName)
+    {
+        $this->requestParameters['DeploymentSetName'] = $deploymentSetName;
+        $this->queryParameters['DeploymentSetName'] = $deploymentSetName;
 
-	private  $strategy;
+        return $this;
+    }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+    /**
+     * @param string $deploymentSetIds
+     *
+     * @return $this
+     */
+    public function setDeploymentSetIds($deploymentSetIds)
+    {
+        $this->requestParameters['DeploymentSetIds'] = $deploymentSetIds;
+        $this->queryParameters['DeploymentSetIds'] = $deploymentSetIds;
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
+        return $this;
+    }
 
-	public function getNetworkType() {
-		return $this->networkType;
-	}
+    /**
+     * @param string $granularity
+     *
+     * @return $this
+     */
+    public function setGranularity($granularity)
+    {
+        $this->requestParameters['Granularity'] = $granularity;
+        $this->queryParameters['Granularity'] = $granularity;
 
-	public function setNetworkType($networkType) {
-		$this->networkType = $networkType;
-		$this->queryParameters["NetworkType"]=$networkType;
-	}
+        return $this;
+    }
 
-	public function getDeploymentSetName() {
-		return $this->deploymentSetName;
-	}
+    /**
+     * @param string $domain
+     *
+     * @return $this
+     */
+    public function setDomain($domain)
+    {
+        $this->requestParameters['Domain'] = $domain;
+        $this->queryParameters['Domain'] = $domain;
 
-	public function setDeploymentSetName($deploymentSetName) {
-		$this->deploymentSetName = $deploymentSetName;
-		$this->queryParameters["DeploymentSetName"]=$deploymentSetName;
-	}
+        return $this;
+    }
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+        return $this;
+    }
 
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
+    /**
+     * @param string $strategy
+     *
+     * @return $this
+     */
+    public function setStrategy($strategy)
+    {
+        $this->requestParameters['Strategy'] = $strategy;
+        $this->queryParameters['Strategy'] = $strategy;
 
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
-	public function getDeploymentSetIds() {
-		return $this->deploymentSetIds;
-	}
-
-	public function setDeploymentSetIds($deploymentSetIds) {
-		$this->deploymentSetIds = $deploymentSetIds;
-		$this->queryParameters["DeploymentSetIds"]=$deploymentSetIds;
-	}
-
-	public function getGranularity() {
-		return $this->granularity;
-	}
-
-	public function setGranularity($granularity) {
-		$this->granularity = $granularity;
-		$this->queryParameters["Granularity"]=$granularity;
-	}
-
-	public function getDomain() {
-		return $this->domain;
-	}
-
-	public function setDomain($domain) {
-		$this->domain = $domain;
-		$this->queryParameters["Domain"]=$domain;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getStrategy() {
-		return $this->strategy;
-	}
-
-	public function setStrategy($strategy) {
-		$this->strategy = $strategy;
-		$this->queryParameters["Strategy"]=$strategy;
-	}
-	
+        return $this;
+    }
 }

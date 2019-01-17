@@ -1,177 +1,215 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ecs\Request\V20140526;
 
+/**
+ * Request of DescribeDisksFullStatus
+ *
+ * @method array getEventIds()
+ * @method string getResourceOwnerId()
+ * @method string getPageNumber()
+ * @method string getEventTimeStart()
+ * @method string getPageSize()
+ * @method array getDiskIds()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getOwnerId()
+ * @method string getEventTimeEnd()
+ * @method string getHealthStatus()
+ * @method string getEventType()
+ * @method string getStatus()
+ */
 class DescribeDisksFullStatusRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeDisksFullStatus", "ecs", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $EventIds;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $resourceOwnerId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ecs',
+            '2014-05-26',
+            'DescribeDisksFullStatus',
+            'ecs'
+        );
+    }
 
-	private  $pageNumber;
+    /**
+     * @param array $eventIds
+     *
+     * @return $this
+     */
+    public function setEventIds(array $eventIds)
+    {
+        $this->requestParameters['EventIds'] = $eventIds;
+        foreach ($eventIds as $i => $iValue) {
+            $this->queryParameters['EventId.' . ($i + 1)] = $iValue;
+        }
 
-	private  $eventTimeStart;
+        return $this;
+    }
 
-	private  $pageSize;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $DiskIds;
+        return $this;
+    }
 
-	private  $resourceOwnerAccount;
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
-	private  $ownerAccount;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $eventTimeStart
+     *
+     * @return $this
+     */
+    public function setEventTimeStart($eventTimeStart)
+    {
+        $this->requestParameters['EventTimeStart'] = $eventTimeStart;
+        $this->queryParameters['EventTime.Start'] = $eventTimeStart;
 
-	private  $eventTimeEnd;
+        return $this;
+    }
 
-	private  $healthStatus;
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	private  $eventType;
+        return $this;
+    }
 
-	private  $status;
+    /**
+     * @param array $diskIds
+     *
+     * @return $this
+     */
+    public function setDiskIds(array $diskIds)
+    {
+        $this->requestParameters['DiskIds'] = $diskIds;
+        foreach ($diskIds as $i => $iValue) {
+            $this->queryParameters['DiskId.' . ($i + 1)] = $iValue;
+        }
 
-	public function getEventIds() {
-		return $this->EventIds;
-	}
+        return $this;
+    }
 
-	public function setEventIds($EventIds) {
-		$this->EventIds = $EventIds;
-		for ($i = 0; $i < count($EventIds); $i ++) {	
-			$this->queryParameters["EventId.".($i+1)] = $EventIds[$i];
-		}
-	}
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
+        return $this;
+    }
 
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function getEventTimeStart() {
-		return $this->eventTimeStart;
-	}
+        return $this;
+    }
 
-	public function setEventTimeStart($eventTimeStart) {
-		$this->eventTimeStart = $eventTimeStart;
-		$this->queryParameters["EventTime.Start"]=$eventTimeStart;
-	}
+    /**
+     * @param string $eventTimeEnd
+     *
+     * @return $this
+     */
+    public function setEventTimeEnd($eventTimeEnd)
+    {
+        $this->requestParameters['EventTimeEnd'] = $eventTimeEnd;
+        $this->queryParameters['EventTime.End'] = $eventTimeEnd;
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
+        return $this;
+    }
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
+    /**
+     * @param string $healthStatus
+     *
+     * @return $this
+     */
+    public function setHealthStatus($healthStatus)
+    {
+        $this->requestParameters['HealthStatus'] = $healthStatus;
+        $this->queryParameters['HealthStatus'] = $healthStatus;
 
-	public function getDiskIds() {
-		return $this->DiskIds;
-	}
+        return $this;
+    }
 
-	public function setDiskIds($DiskIds) {
-		$this->DiskIds = $DiskIds;
-		for ($i = 0; $i < count($DiskIds); $i ++) {	
-			$this->queryParameters["DiskId.".($i+1)] = $DiskIds[$i];
-		}
-	}
+    /**
+     * @param string $eventType
+     *
+     * @return $this
+     */
+    public function setEventType($eventType)
+    {
+        $this->requestParameters['EventType'] = $eventType;
+        $this->queryParameters['EventType'] = $eventType;
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+    /**
+     * @param string $status
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->requestParameters['Status'] = $status;
+        $this->queryParameters['Status'] = $status;
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getEventTimeEnd() {
-		return $this->eventTimeEnd;
-	}
-
-	public function setEventTimeEnd($eventTimeEnd) {
-		$this->eventTimeEnd = $eventTimeEnd;
-		$this->queryParameters["EventTime.End"]=$eventTimeEnd;
-	}
-
-	public function getHealthStatus() {
-		return $this->healthStatus;
-	}
-
-	public function setHealthStatus($healthStatus) {
-		$this->healthStatus = $healthStatus;
-		$this->queryParameters["HealthStatus"]=$healthStatus;
-	}
-
-	public function getEventType() {
-		return $this->eventType;
-	}
-
-	public function setEventType($eventType) {
-		$this->eventType = $eventType;
-		$this->queryParameters["EventType"]=$eventType;
-	}
-
-	public function getStatus() {
-		return $this->status;
-	}
-
-	public function setStatus($status) {
-		$this->status = $status;
-		$this->queryParameters["Status"]=$status;
-	}
-	
+        return $this;
+    }
 }

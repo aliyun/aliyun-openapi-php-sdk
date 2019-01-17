@@ -1,217 +1,281 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ecs\Request\V20140526;
 
+/**
+ * Request of DescribeAvailableResource
+ *
+ * @method string getResourceOwnerId()
+ * @method string getMemory()
+ * @method string getIoOptimized()
+ * @method string getDataDiskCategory()
+ * @method string getCores()
+ * @method string getSystemDiskCategory()
+ * @method string getScope()
+ * @method string getInstanceType()
+ * @method string getNetworkCategory()
+ * @method string getInstanceChargeType()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getDedicatedHostId()
+ * @method string getOwnerId()
+ * @method string getResourceType()
+ * @method string getSpotStrategy()
+ * @method string getDestinationResource()
+ * @method string getZoneId()
+ */
 class DescribeAvailableResourceRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeAvailableResource", "ecs", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $memory;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ecs',
+            '2014-05-26',
+            'DescribeAvailableResource',
+            'ecs'
+        );
+    }
 
-	private  $ioOptimized;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $dataDiskCategory;
+        return $this;
+    }
 
-	private  $cores;
+    /**
+     * @param string $memory
+     *
+     * @return $this
+     */
+    public function setMemory($memory)
+    {
+        $this->requestParameters['Memory'] = $memory;
+        $this->queryParameters['Memory'] = $memory;
 
-	private  $systemDiskCategory;
+        return $this;
+    }
 
-	private  $instanceType;
+    /**
+     * @param string $ioOptimized
+     *
+     * @return $this
+     */
+    public function setIoOptimized($ioOptimized)
+    {
+        $this->requestParameters['IoOptimized'] = $ioOptimized;
+        $this->queryParameters['IoOptimized'] = $ioOptimized;
 
-	private  $networkCategory;
+        return $this;
+    }
 
-	private  $instanceChargeType;
+    /**
+     * @param string $dataDiskCategory
+     *
+     * @return $this
+     */
+    public function setDataDiskCategory($dataDiskCategory)
+    {
+        $this->requestParameters['DataDiskCategory'] = $dataDiskCategory;
+        $this->queryParameters['DataDiskCategory'] = $dataDiskCategory;
 
-	private  $resourceOwnerAccount;
+        return $this;
+    }
 
-	private  $ownerAccount;
+    /**
+     * @param string $cores
+     *
+     * @return $this
+     */
+    public function setCores($cores)
+    {
+        $this->requestParameters['Cores'] = $cores;
+        $this->queryParameters['Cores'] = $cores;
 
-	private  $dedicatedHostId;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $systemDiskCategory
+     *
+     * @return $this
+     */
+    public function setSystemDiskCategory($systemDiskCategory)
+    {
+        $this->requestParameters['SystemDiskCategory'] = $systemDiskCategory;
+        $this->queryParameters['SystemDiskCategory'] = $systemDiskCategory;
 
-	private  $resourceType;
+        return $this;
+    }
 
-	private  $spotStrategy;
+    /**
+     * @param string $scope
+     *
+     * @return $this
+     */
+    public function setScope($scope)
+    {
+        $this->requestParameters['Scope'] = $scope;
+        $this->queryParameters['Scope'] = $scope;
 
-	private  $destinationResource;
+        return $this;
+    }
 
-	private  $zoneId;
+    /**
+     * @param string $instanceType
+     *
+     * @return $this
+     */
+    public function setInstanceType($instanceType)
+    {
+        $this->requestParameters['InstanceType'] = $instanceType;
+        $this->queryParameters['InstanceType'] = $instanceType;
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+    /**
+     * @param string $networkCategory
+     *
+     * @return $this
+     */
+    public function setNetworkCategory($networkCategory)
+    {
+        $this->requestParameters['NetworkCategory'] = $networkCategory;
+        $this->queryParameters['NetworkCategory'] = $networkCategory;
 
-	public function getMemory() {
-		return $this->memory;
-	}
+        return $this;
+    }
 
-	public function setMemory($memory) {
-		$this->memory = $memory;
-		$this->queryParameters["Memory"]=$memory;
-	}
+    /**
+     * @param string $instanceChargeType
+     *
+     * @return $this
+     */
+    public function setInstanceChargeType($instanceChargeType)
+    {
+        $this->requestParameters['InstanceChargeType'] = $instanceChargeType;
+        $this->queryParameters['InstanceChargeType'] = $instanceChargeType;
 
-	public function getIoOptimized() {
-		return $this->ioOptimized;
-	}
+        return $this;
+    }
 
-	public function setIoOptimized($ioOptimized) {
-		$this->ioOptimized = $ioOptimized;
-		$this->queryParameters["IoOptimized"]=$ioOptimized;
-	}
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	public function getDataDiskCategory() {
-		return $this->dataDiskCategory;
-	}
+        return $this;
+    }
 
-	public function setDataDiskCategory($dataDiskCategory) {
-		$this->dataDiskCategory = $dataDiskCategory;
-		$this->queryParameters["DataDiskCategory"]=$dataDiskCategory;
-	}
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	public function getCores() {
-		return $this->cores;
-	}
+        return $this;
+    }
 
-	public function setCores($cores) {
-		$this->cores = $cores;
-		$this->queryParameters["Cores"]=$cores;
-	}
+    /**
+     * @param string $dedicatedHostId
+     *
+     * @return $this
+     */
+    public function setDedicatedHostId($dedicatedHostId)
+    {
+        $this->requestParameters['DedicatedHostId'] = $dedicatedHostId;
+        $this->queryParameters['DedicatedHostId'] = $dedicatedHostId;
 
-	public function getSystemDiskCategory() {
-		return $this->systemDiskCategory;
-	}
+        return $this;
+    }
 
-	public function setSystemDiskCategory($systemDiskCategory) {
-		$this->systemDiskCategory = $systemDiskCategory;
-		$this->queryParameters["SystemDiskCategory"]=$systemDiskCategory;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function getInstanceType() {
-		return $this->instanceType;
-	}
+        return $this;
+    }
 
-	public function setInstanceType($instanceType) {
-		$this->instanceType = $instanceType;
-		$this->queryParameters["InstanceType"]=$instanceType;
-	}
+    /**
+     * @param string $resourceType
+     *
+     * @return $this
+     */
+    public function setResourceType($resourceType)
+    {
+        $this->requestParameters['ResourceType'] = $resourceType;
+        $this->queryParameters['ResourceType'] = $resourceType;
 
-	public function getNetworkCategory() {
-		return $this->networkCategory;
-	}
+        return $this;
+    }
 
-	public function setNetworkCategory($networkCategory) {
-		$this->networkCategory = $networkCategory;
-		$this->queryParameters["NetworkCategory"]=$networkCategory;
-	}
+    /**
+     * @param string $spotStrategy
+     *
+     * @return $this
+     */
+    public function setSpotStrategy($spotStrategy)
+    {
+        $this->requestParameters['SpotStrategy'] = $spotStrategy;
+        $this->queryParameters['SpotStrategy'] = $spotStrategy;
 
-	public function getInstanceChargeType() {
-		return $this->instanceChargeType;
-	}
+        return $this;
+    }
 
-	public function setInstanceChargeType($instanceChargeType) {
-		$this->instanceChargeType = $instanceChargeType;
-		$this->queryParameters["InstanceChargeType"]=$instanceChargeType;
-	}
+    /**
+     * @param string $destinationResource
+     *
+     * @return $this
+     */
+    public function setDestinationResource($destinationResource)
+    {
+        $this->requestParameters['DestinationResource'] = $destinationResource;
+        $this->queryParameters['DestinationResource'] = $destinationResource;
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+    /**
+     * @param string $zoneId
+     *
+     * @return $this
+     */
+    public function setZoneId($zoneId)
+    {
+        $this->requestParameters['ZoneId'] = $zoneId;
+        $this->queryParameters['ZoneId'] = $zoneId;
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getDedicatedHostId() {
-		return $this->dedicatedHostId;
-	}
-
-	public function setDedicatedHostId($dedicatedHostId) {
-		$this->dedicatedHostId = $dedicatedHostId;
-		$this->queryParameters["DedicatedHostId"]=$dedicatedHostId;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getResourceType() {
-		return $this->resourceType;
-	}
-
-	public function setResourceType($resourceType) {
-		$this->resourceType = $resourceType;
-		$this->queryParameters["ResourceType"]=$resourceType;
-	}
-
-	public function getSpotStrategy() {
-		return $this->spotStrategy;
-	}
-
-	public function setSpotStrategy($spotStrategy) {
-		$this->spotStrategy = $spotStrategy;
-		$this->queryParameters["SpotStrategy"]=$spotStrategy;
-	}
-
-	public function getDestinationResource() {
-		return $this->destinationResource;
-	}
-
-	public function setDestinationResource($destinationResource) {
-		$this->destinationResource = $destinationResource;
-		$this->queryParameters["DestinationResource"]=$destinationResource;
-	}
-
-	public function getZoneId() {
-		return $this->zoneId;
-	}
-
-	public function setZoneId($zoneId) {
-		$this->zoneId = $zoneId;
-		$this->queryParameters["ZoneId"]=$zoneId;
-	}
-	
+        return $this;
+    }
 }

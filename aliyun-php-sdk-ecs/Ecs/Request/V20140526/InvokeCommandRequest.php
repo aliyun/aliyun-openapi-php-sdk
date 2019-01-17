@@ -1,120 +1,143 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ecs\Request\V20140526;
 
+/**
+ * Request of InvokeCommand
+ *
+ * @method string getResourceOwnerId()
+ * @method string getCommandId()
+ * @method string getFrequency()
+ * @method string getTimed()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getOwnerId()
+ * @method array getInstanceIds()
+ */
 class InvokeCommandRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ecs", "2014-05-26", "InvokeCommand", "ecs", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $commandId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ecs',
+            '2014-05-26',
+            'InvokeCommand',
+            'ecs'
+        );
+    }
 
-	private  $frequency;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $timed;
+        return $this;
+    }
 
-	private  $resourceOwnerAccount;
+    /**
+     * @param string $commandId
+     *
+     * @return $this
+     */
+    public function setCommandId($commandId)
+    {
+        $this->requestParameters['CommandId'] = $commandId;
+        $this->queryParameters['CommandId'] = $commandId;
 
-	private  $ownerAccount;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $frequency
+     *
+     * @return $this
+     */
+    public function setFrequency($frequency)
+    {
+        $this->requestParameters['Frequency'] = $frequency;
+        $this->queryParameters['Frequency'] = $frequency;
 
-	private  $InstanceIds;
+        return $this;
+    }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+    /**
+     * @param string $timed
+     *
+     * @return $this
+     */
+    public function setTimed($timed)
+    {
+        $this->requestParameters['Timed'] = $timed;
+        $this->queryParameters['Timed'] = $timed;
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getCommandId() {
-		return $this->commandId;
-	}
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	public function setCommandId($commandId) {
-		$this->commandId = $commandId;
-		$this->queryParameters["CommandId"]=$commandId;
-	}
+        return $this;
+    }
 
-	public function getFrequency() {
-		return $this->frequency;
-	}
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	public function setFrequency($frequency) {
-		$this->frequency = $frequency;
-		$this->queryParameters["Frequency"]=$frequency;
-	}
+        return $this;
+    }
 
-	public function getTimed() {
-		return $this->timed;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setTimed($timed) {
-		$this->timed = $timed;
-		$this->queryParameters["Timed"]=$timed;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param array $instanceIds
+     *
+     * @return $this
+     */
+    public function setInstanceIds(array $instanceIds)
+    {
+        $this->requestParameters['InstanceIds'] = $instanceIds;
+        foreach ($instanceIds as $i => $iValue) {
+            $this->queryParameters['InstanceId.' . ($i + 1)] = $iValue;
+        }
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getInstanceIds() {
-		return $this->InstanceIds;
-	}
-
-	public function setInstanceIds($InstanceIds) {
-		$this->InstanceIds = $InstanceIds;
-		for ($i = 0; $i < count($InstanceIds); $i ++) {	
-			$this->queryParameters["InstanceId.".($i+1)] = $InstanceIds[$i];
-		}
-	}
-	
+        return $this;
+    }
 }

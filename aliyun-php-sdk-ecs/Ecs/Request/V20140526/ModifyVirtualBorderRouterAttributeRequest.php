@@ -1,184 +1,225 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ecs\Request\V20140526;
 
+/**
+ * Request of ModifyVirtualBorderRouterAttribute
+ *
+ * @method string getResourceOwnerId()
+ * @method string getCircuitCode()
+ * @method string getVlanId()
+ * @method string getResourceOwnerAccount()
+ * @method string getClientToken()
+ * @method string getOwnerAccount()
+ * @method string getDescription()
+ * @method string getVbrId()
+ * @method string getOwnerId()
+ * @method string getPeerGatewayIp()
+ * @method string getPeeringSubnetMask()
+ * @method string getName()
+ * @method string getLocalGatewayIp()
+ * @method string getUserCidr()
+ */
 class ModifyVirtualBorderRouterAttributeRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ecs", "2014-05-26", "ModifyVirtualBorderRouterAttribute", "ecs", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $circuitCode;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ecs',
+            '2014-05-26',
+            'ModifyVirtualBorderRouterAttribute',
+            'ecs'
+        );
+    }
 
-	private  $vlanId;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $resourceOwnerAccount;
+        return $this;
+    }
 
-	private  $clientToken;
+    /**
+     * @param string $circuitCode
+     *
+     * @return $this
+     */
+    public function setCircuitCode($circuitCode)
+    {
+        $this->requestParameters['CircuitCode'] = $circuitCode;
+        $this->queryParameters['CircuitCode'] = $circuitCode;
 
-	private  $ownerAccount;
+        return $this;
+    }
 
-	private  $description;
+    /**
+     * @param string $vlanId
+     *
+     * @return $this
+     */
+    public function setVlanId($vlanId)
+    {
+        $this->requestParameters['VlanId'] = $vlanId;
+        $this->queryParameters['VlanId'] = $vlanId;
 
-	private  $vbrId;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $peerGatewayIp;
+        return $this;
+    }
 
-	private  $peeringSubnetMask;
+    /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
 
-	private  $name;
+        return $this;
+    }
 
-	private  $localGatewayIp;
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	private  $userCidr;
+        return $this;
+    }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+    /**
+     * @param string $description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getCircuitCode() {
-		return $this->circuitCode;
-	}
+    /**
+     * @param string $vbrId
+     *
+     * @return $this
+     */
+    public function setVbrId($vbrId)
+    {
+        $this->requestParameters['VbrId'] = $vbrId;
+        $this->queryParameters['VbrId'] = $vbrId;
 
-	public function setCircuitCode($circuitCode) {
-		$this->circuitCode = $circuitCode;
-		$this->queryParameters["CircuitCode"]=$circuitCode;
-	}
+        return $this;
+    }
 
-	public function getVlanId() {
-		return $this->vlanId;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setVlanId($vlanId) {
-		$this->vlanId = $vlanId;
-		$this->queryParameters["VlanId"]=$vlanId;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param string $peerGatewayIp
+     *
+     * @return $this
+     */
+    public function setPeerGatewayIp($peerGatewayIp)
+    {
+        $this->requestParameters['PeerGatewayIp'] = $peerGatewayIp;
+        $this->queryParameters['PeerGatewayIp'] = $peerGatewayIp;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function getClientToken() {
-		return $this->clientToken;
-	}
+    /**
+     * @param string $peeringSubnetMask
+     *
+     * @return $this
+     */
+    public function setPeeringSubnetMask($peeringSubnetMask)
+    {
+        $this->requestParameters['PeeringSubnetMask'] = $peeringSubnetMask;
+        $this->queryParameters['PeeringSubnetMask'] = $peeringSubnetMask;
 
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
+        return $this;
+    }
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
+        return $this;
+    }
 
-	public function getDescription() {
-		return $this->description;
-	}
+    /**
+     * @param string $localGatewayIp
+     *
+     * @return $this
+     */
+    public function setLocalGatewayIp($localGatewayIp)
+    {
+        $this->requestParameters['LocalGatewayIp'] = $localGatewayIp;
+        $this->queryParameters['LocalGatewayIp'] = $localGatewayIp;
 
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
-	}
+        return $this;
+    }
 
-	public function getVbrId() {
-		return $this->vbrId;
-	}
+    /**
+     * @param string $userCidr
+     *
+     * @return $this
+     */
+    public function setUserCidr($userCidr)
+    {
+        $this->requestParameters['UserCidr'] = $userCidr;
+        $this->queryParameters['UserCidr'] = $userCidr;
 
-	public function setVbrId($vbrId) {
-		$this->vbrId = $vbrId;
-		$this->queryParameters["VbrId"]=$vbrId;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getPeerGatewayIp() {
-		return $this->peerGatewayIp;
-	}
-
-	public function setPeerGatewayIp($peerGatewayIp) {
-		$this->peerGatewayIp = $peerGatewayIp;
-		$this->queryParameters["PeerGatewayIp"]=$peerGatewayIp;
-	}
-
-	public function getPeeringSubnetMask() {
-		return $this->peeringSubnetMask;
-	}
-
-	public function setPeeringSubnetMask($peeringSubnetMask) {
-		$this->peeringSubnetMask = $peeringSubnetMask;
-		$this->queryParameters["PeeringSubnetMask"]=$peeringSubnetMask;
-	}
-
-	public function getName() {
-		return $this->name;
-	}
-
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
-	}
-
-	public function getLocalGatewayIp() {
-		return $this->localGatewayIp;
-	}
-
-	public function setLocalGatewayIp($localGatewayIp) {
-		$this->localGatewayIp = $localGatewayIp;
-		$this->queryParameters["LocalGatewayIp"]=$localGatewayIp;
-	}
-
-	public function getUserCidr() {
-		return $this->userCidr;
-	}
-
-	public function setUserCidr($userCidr) {
-		$this->userCidr = $userCidr;
-		$this->queryParameters["UserCidr"]=$userCidr;
-	}
-	
+        return $this;
+    }
 }

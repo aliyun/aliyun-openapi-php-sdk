@@ -1,212 +1,259 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ecs\Request\V20140526;
 
+/**
+ * Request of DescribeInstanceHistoryEvents
+ *
+ * @method array getEventIds()
+ * @method string getResourceOwnerId()
+ * @method string getEventCycleStatus()
+ * @method string getPageNumber()
+ * @method string getPageSize()
+ * @method array getInstanceEventCycleStatuss()
+ * @method string getEventPublishTimeEnd()
+ * @method array getInstanceEventTypes()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getNotBeforeStart()
+ * @method string getOwnerId()
+ * @method string getEventPublishTimeStart()
+ * @method string getInstanceId()
+ * @method string getNotBeforeEnd()
+ * @method string getEventType()
+ */
 class DescribeInstanceHistoryEventsRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ecs", "2014-05-26", "DescribeInstanceHistoryEvents", "ecs", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $EventIds;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $resourceOwnerId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ecs',
+            '2014-05-26',
+            'DescribeInstanceHistoryEvents',
+            'ecs'
+        );
+    }
 
-	private  $eventCycleStatus;
+    /**
+     * @param array $eventIds
+     *
+     * @return $this
+     */
+    public function setEventIds(array $eventIds)
+    {
+        $this->requestParameters['EventIds'] = $eventIds;
+        foreach ($eventIds as $i => $iValue) {
+            $this->queryParameters['EventId.' . ($i + 1)] = $iValue;
+        }
 
-	private  $pageNumber;
+        return $this;
+    }
 
-	private  $pageSize;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $InstanceEventCycleStatuss;
+        return $this;
+    }
 
-	private  $eventPublishTimeEnd;
+    /**
+     * @param string $eventCycleStatus
+     *
+     * @return $this
+     */
+    public function setEventCycleStatus($eventCycleStatus)
+    {
+        $this->requestParameters['EventCycleStatus'] = $eventCycleStatus;
+        $this->queryParameters['EventCycleStatus'] = $eventCycleStatus;
 
-	private  $InstanceEventTypes;
+        return $this;
+    }
 
-	private  $resourceOwnerAccount;
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
-	private  $ownerAccount;
+        return $this;
+    }
 
-	private  $notBeforeStart;
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	private  $eventPublishTimeStart;
+    /**
+     * @param array $instanceEventCycleStatuss
+     *
+     * @return $this
+     */
+    public function setInstanceEventCycleStatuss(array $instanceEventCycleStatuss)
+    {
+        $this->requestParameters['InstanceEventCycleStatuss'] = $instanceEventCycleStatuss;
+        foreach ($instanceEventCycleStatuss as $i => $iValue) {
+            $this->queryParameters['InstanceEventCycleStatus.' . ($i + 1)] = $iValue;
+        }
 
-	private  $instanceId;
+        return $this;
+    }
 
-	private  $notBeforeEnd;
+    /**
+     * @param string $eventPublishTimeEnd
+     *
+     * @return $this
+     */
+    public function setEventPublishTimeEnd($eventPublishTimeEnd)
+    {
+        $this->requestParameters['EventPublishTimeEnd'] = $eventPublishTimeEnd;
+        $this->queryParameters['EventPublishTime.End'] = $eventPublishTimeEnd;
 
-	private  $eventType;
+        return $this;
+    }
 
-	public function getEventIds() {
-		return $this->EventIds;
-	}
+    /**
+     * @param array $instanceEventTypes
+     *
+     * @return $this
+     */
+    public function setInstanceEventTypes(array $instanceEventTypes)
+    {
+        $this->requestParameters['InstanceEventTypes'] = $instanceEventTypes;
+        foreach ($instanceEventTypes as $i => $iValue) {
+            $this->queryParameters['InstanceEventType.' . ($i + 1)] = $iValue;
+        }
 
-	public function setEventIds($EventIds) {
-		$this->EventIds = $EventIds;
-		for ($i = 0; $i < count($EventIds); $i ++) {	
-			$this->queryParameters["EventId.".($i+1)] = $EventIds[$i];
-		}
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getEventCycleStatus() {
-		return $this->eventCycleStatus;
-	}
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	public function setEventCycleStatus($eventCycleStatus) {
-		$this->eventCycleStatus = $eventCycleStatus;
-		$this->queryParameters["EventCycleStatus"]=$eventCycleStatus;
-	}
+        return $this;
+    }
 
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
+    /**
+     * @param string $notBeforeStart
+     *
+     * @return $this
+     */
+    public function setNotBeforeStart($notBeforeStart)
+    {
+        $this->requestParameters['NotBeforeStart'] = $notBeforeStart;
+        $this->queryParameters['NotBefore.Start'] = $notBeforeStart;
 
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
+        return $this;
+    }
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
+        return $this;
+    }
 
-	public function getInstanceEventCycleStatuss() {
-		return $this->InstanceEventCycleStatuss;
-	}
+    /**
+     * @param string $eventPublishTimeStart
+     *
+     * @return $this
+     */
+    public function setEventPublishTimeStart($eventPublishTimeStart)
+    {
+        $this->requestParameters['EventPublishTimeStart'] = $eventPublishTimeStart;
+        $this->queryParameters['EventPublishTime.Start'] = $eventPublishTimeStart;
 
-	public function setInstanceEventCycleStatuss($InstanceEventCycleStatuss) {
-		$this->InstanceEventCycleStatuss = $InstanceEventCycleStatuss;
-		for ($i = 0; $i < count($InstanceEventCycleStatuss); $i ++) {	
-			$this->queryParameters["InstanceEventCycleStatus.".($i+1)] = $InstanceEventCycleStatuss[$i];
-		}
-	}
+        return $this;
+    }
 
-	public function getEventPublishTimeEnd() {
-		return $this->eventPublishTimeEnd;
-	}
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
-	public function setEventPublishTimeEnd($eventPublishTimeEnd) {
-		$this->eventPublishTimeEnd = $eventPublishTimeEnd;
-		$this->queryParameters["EventPublishTime.End"]=$eventPublishTimeEnd;
-	}
+        return $this;
+    }
 
-	public function getInstanceEventTypes() {
-		return $this->InstanceEventTypes;
-	}
+    /**
+     * @param string $notBeforeEnd
+     *
+     * @return $this
+     */
+    public function setNotBeforeEnd($notBeforeEnd)
+    {
+        $this->requestParameters['NotBeforeEnd'] = $notBeforeEnd;
+        $this->queryParameters['NotBefore.End'] = $notBeforeEnd;
 
-	public function setInstanceEventTypes($InstanceEventTypes) {
-		$this->InstanceEventTypes = $InstanceEventTypes;
-		for ($i = 0; $i < count($InstanceEventTypes); $i ++) {	
-			$this->queryParameters["InstanceEventType.".($i+1)] = $InstanceEventTypes[$i];
-		}
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param string $eventType
+     *
+     * @return $this
+     */
+    public function setEventType($eventType)
+    {
+        $this->requestParameters['EventType'] = $eventType;
+        $this->queryParameters['EventType'] = $eventType;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getNotBeforeStart() {
-		return $this->notBeforeStart;
-	}
-
-	public function setNotBeforeStart($notBeforeStart) {
-		$this->notBeforeStart = $notBeforeStart;
-		$this->queryParameters["NotBefore.Start"]=$notBeforeStart;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getEventPublishTimeStart() {
-		return $this->eventPublishTimeStart;
-	}
-
-	public function setEventPublishTimeStart($eventPublishTimeStart) {
-		$this->eventPublishTimeStart = $eventPublishTimeStart;
-		$this->queryParameters["EventPublishTime.Start"]=$eventPublishTimeStart;
-	}
-
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
-
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
-
-	public function getNotBeforeEnd() {
-		return $this->notBeforeEnd;
-	}
-
-	public function setNotBeforeEnd($notBeforeEnd) {
-		$this->notBeforeEnd = $notBeforeEnd;
-		$this->queryParameters["NotBefore.End"]=$notBeforeEnd;
-	}
-
-	public function getEventType() {
-		return $this->eventType;
-	}
-
-	public function setEventType($eventType) {
-		$this->eventType = $eventType;
-		$this->queryParameters["EventType"]=$eventType;
-	}
-	
+        return $this;
+    }
 }

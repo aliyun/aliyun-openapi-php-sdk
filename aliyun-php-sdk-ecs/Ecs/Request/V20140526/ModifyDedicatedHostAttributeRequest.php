@@ -1,140 +1,169 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ecs\Request\V20140526;
 
+/**
+ * Request of ModifyDedicatedHostAttribute
+ *
+ * @method string getResourceOwnerId()
+ * @method string getDescription()
+ * @method string getActionOnMaintenance()
+ * @method string getDedicatedHostName()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getDedicatedHostId()
+ * @method string getOwnerId()
+ * @method string getNetworkAttributesSlbUdpTimeout()
+ * @method string getNetworkAttributesUdpTimeout()
+ */
 class ModifyDedicatedHostAttributeRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ecs", "2014-05-26", "ModifyDedicatedHostAttribute", "ecs", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $description;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ecs',
+            '2014-05-26',
+            'ModifyDedicatedHostAttribute',
+            'ecs'
+        );
+    }
 
-	private  $actionOnMaintenance;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $dedicatedHostName;
+        return $this;
+    }
 
-	private  $resourceOwnerAccount;
+    /**
+     * @param string $description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
 
-	private  $ownerAccount;
+        return $this;
+    }
 
-	private  $dedicatedHostId;
+    /**
+     * @param string $actionOnMaintenance
+     *
+     * @return $this
+     */
+    public function setActionOnMaintenance($actionOnMaintenance)
+    {
+        $this->requestParameters['ActionOnMaintenance'] = $actionOnMaintenance;
+        $this->queryParameters['ActionOnMaintenance'] = $actionOnMaintenance;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	private  $networkAttributesSlbUdpTimeout;
+    /**
+     * @param string $dedicatedHostName
+     *
+     * @return $this
+     */
+    public function setDedicatedHostName($dedicatedHostName)
+    {
+        $this->requestParameters['DedicatedHostName'] = $dedicatedHostName;
+        $this->queryParameters['DedicatedHostName'] = $dedicatedHostName;
 
-	private  $networkAttributesUdpTimeout;
+        return $this;
+    }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getDescription() {
-		return $this->description;
-	}
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
-	}
+        return $this;
+    }
 
-	public function getActionOnMaintenance() {
-		return $this->actionOnMaintenance;
-	}
+    /**
+     * @param string $dedicatedHostId
+     *
+     * @return $this
+     */
+    public function setDedicatedHostId($dedicatedHostId)
+    {
+        $this->requestParameters['DedicatedHostId'] = $dedicatedHostId;
+        $this->queryParameters['DedicatedHostId'] = $dedicatedHostId;
 
-	public function setActionOnMaintenance($actionOnMaintenance) {
-		$this->actionOnMaintenance = $actionOnMaintenance;
-		$this->queryParameters["ActionOnMaintenance"]=$actionOnMaintenance;
-	}
+        return $this;
+    }
 
-	public function getDedicatedHostName() {
-		return $this->dedicatedHostName;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setDedicatedHostName($dedicatedHostName) {
-		$this->dedicatedHostName = $dedicatedHostName;
-		$this->queryParameters["DedicatedHostName"]=$dedicatedHostName;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param string $networkAttributesSlbUdpTimeout
+     *
+     * @return $this
+     */
+    public function setNetworkAttributesSlbUdpTimeout($networkAttributesSlbUdpTimeout)
+    {
+        $this->requestParameters['NetworkAttributesSlbUdpTimeout'] = $networkAttributesSlbUdpTimeout;
+        $this->queryParameters['NetworkAttributes.SlbUdpTimeout'] = $networkAttributesSlbUdpTimeout;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+    /**
+     * @param string $networkAttributesUdpTimeout
+     *
+     * @return $this
+     */
+    public function setNetworkAttributesUdpTimeout($networkAttributesUdpTimeout)
+    {
+        $this->requestParameters['NetworkAttributesUdpTimeout'] = $networkAttributesUdpTimeout;
+        $this->queryParameters['NetworkAttributes.UdpTimeout'] = $networkAttributesUdpTimeout;
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getDedicatedHostId() {
-		return $this->dedicatedHostId;
-	}
-
-	public function setDedicatedHostId($dedicatedHostId) {
-		$this->dedicatedHostId = $dedicatedHostId;
-		$this->queryParameters["DedicatedHostId"]=$dedicatedHostId;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getNetworkAttributesSlbUdpTimeout() {
-		return $this->networkAttributesSlbUdpTimeout;
-	}
-
-	public function setNetworkAttributesSlbUdpTimeout($networkAttributesSlbUdpTimeout) {
-		$this->networkAttributesSlbUdpTimeout = $networkAttributesSlbUdpTimeout;
-		$this->queryParameters["NetworkAttributes.SlbUdpTimeout"]=$networkAttributesSlbUdpTimeout;
-	}
-
-	public function getNetworkAttributesUdpTimeout() {
-		return $this->networkAttributesUdpTimeout;
-	}
-
-	public function setNetworkAttributesUdpTimeout($networkAttributesUdpTimeout) {
-		$this->networkAttributesUdpTimeout = $networkAttributesUdpTimeout;
-		$this->queryParameters["NetworkAttributes.UdpTimeout"]=$networkAttributesUdpTimeout;
-	}
-	
+        return $this;
+    }
 }

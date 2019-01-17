@@ -1,118 +1,141 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ecs\Request\V20140526;
 
+/**
+ * Request of ExportImage
+ *
+ * @method string getResourceOwnerId()
+ * @method string getImageId()
+ * @method string getOSSBucket()
+ * @method string getResourceOwnerAccount()
+ * @method string getOSSPrefix()
+ * @method string getRoleName()
+ * @method string getOwnerId()
+ * @method string getImageFormat()
+ */
 class ExportImageRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ecs", "2014-05-26", "ExportImage", "ecs", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $imageId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ecs',
+            '2014-05-26',
+            'ExportImage',
+            'ecs'
+        );
+    }
 
-	private  $oSSBucket;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $resourceOwnerAccount;
+        return $this;
+    }
 
-	private  $oSSPrefix;
+    /**
+     * @param string $imageId
+     *
+     * @return $this
+     */
+    public function setImageId($imageId)
+    {
+        $this->requestParameters['ImageId'] = $imageId;
+        $this->queryParameters['ImageId'] = $imageId;
 
-	private  $roleName;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $oSSBucket
+     *
+     * @return $this
+     */
+    public function setOSSBucket($oSSBucket)
+    {
+        $this->requestParameters['OSSBucket'] = $oSSBucket;
+        $this->queryParameters['OSSBucket'] = $oSSBucket;
 
-	private  $imageFormat;
+        return $this;
+    }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getImageId() {
-		return $this->imageId;
-	}
+    /**
+     * @param string $oSSPrefix
+     *
+     * @return $this
+     */
+    public function setOSSPrefix($oSSPrefix)
+    {
+        $this->requestParameters['OSSPrefix'] = $oSSPrefix;
+        $this->queryParameters['OSSPrefix'] = $oSSPrefix;
 
-	public function setImageId($imageId) {
-		$this->imageId = $imageId;
-		$this->queryParameters["ImageId"]=$imageId;
-	}
+        return $this;
+    }
 
-	public function getOSSBucket() {
-		return $this->oSSBucket;
-	}
+    /**
+     * @param string $roleName
+     *
+     * @return $this
+     */
+    public function setRoleName($roleName)
+    {
+        $this->requestParameters['RoleName'] = $roleName;
+        $this->queryParameters['RoleName'] = $roleName;
 
-	public function setOSSBucket($oSSBucket) {
-		$this->oSSBucket = $oSSBucket;
-		$this->queryParameters["OSSBucket"]=$oSSBucket;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function getOSSPrefix() {
-		return $this->oSSPrefix;
-	}
+    /**
+     * @param string $imageFormat
+     *
+     * @return $this
+     */
+    public function setImageFormat($imageFormat)
+    {
+        $this->requestParameters['ImageFormat'] = $imageFormat;
+        $this->queryParameters['ImageFormat'] = $imageFormat;
 
-	public function setOSSPrefix($oSSPrefix) {
-		$this->oSSPrefix = $oSSPrefix;
-		$this->queryParameters["OSSPrefix"]=$oSSPrefix;
-	}
-
-	public function getRoleName() {
-		return $this->roleName;
-	}
-
-	public function setRoleName($roleName) {
-		$this->roleName = $roleName;
-		$this->queryParameters["RoleName"]=$roleName;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getImageFormat() {
-		return $this->imageFormat;
-	}
-
-	public function setImageFormat($imageFormat) {
-		$this->imageFormat = $imageFormat;
-		$this->queryParameters["ImageFormat"]=$imageFormat;
-	}
-	
+        return $this;
+    }
 }

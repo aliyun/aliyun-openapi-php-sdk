@@ -1,151 +1,183 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ecs\Request\V20140526;
 
+/**
+ * Request of CreateDeploymentSet
+ *
+ * @method string getResourceOwnerId()
+ * @method string getResourceOwnerAccount()
+ * @method string getClientToken()
+ * @method string getOwnerAccount()
+ * @method string getDescription()
+ * @method string getDeploymentSetName()
+ * @method string getOwnerId()
+ * @method string getOnUnableToRedeployFailedInstance()
+ * @method string getGranularity()
+ * @method string getDomain()
+ * @method string getStrategy()
+ */
 class CreateDeploymentSetRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ecs", "2014-05-26", "CreateDeploymentSet", "ecs", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $resourceOwnerAccount;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ecs',
+            '2014-05-26',
+            'CreateDeploymentSet',
+            'ecs'
+        );
+    }
 
-	private  $clientToken;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $ownerAccount;
+        return $this;
+    }
 
-	private  $description;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $deploymentSetName;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
 
-	private  $onUnableToRedeployFailedInstance;
+        return $this;
+    }
 
-	private  $granularity;
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	private  $domain;
+        return $this;
+    }
 
-	private  $strategy;
+    /**
+     * @param string $description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+    /**
+     * @param string $deploymentSetName
+     *
+     * @return $this
+     */
+    public function setDeploymentSetName($deploymentSetName)
+    {
+        $this->requestParameters['DeploymentSetName'] = $deploymentSetName;
+        $this->queryParameters['DeploymentSetName'] = $deploymentSetName;
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function getClientToken() {
-		return $this->clientToken;
-	}
+        return $this;
+    }
 
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
+    /**
+     * @param string $onUnableToRedeployFailedInstance
+     *
+     * @return $this
+     */
+    public function setOnUnableToRedeployFailedInstance($onUnableToRedeployFailedInstance)
+    {
+        $this->requestParameters['OnUnableToRedeployFailedInstance'] = $onUnableToRedeployFailedInstance;
+        $this->queryParameters['OnUnableToRedeployFailedInstance'] = $onUnableToRedeployFailedInstance;
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+        return $this;
+    }
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
+    /**
+     * @param string $granularity
+     *
+     * @return $this
+     */
+    public function setGranularity($granularity)
+    {
+        $this->requestParameters['Granularity'] = $granularity;
+        $this->queryParameters['Granularity'] = $granularity;
 
-	public function getDescription() {
-		return $this->description;
-	}
+        return $this;
+    }
 
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
-	}
+    /**
+     * @param string $domain
+     *
+     * @return $this
+     */
+    public function setDomain($domain)
+    {
+        $this->requestParameters['Domain'] = $domain;
+        $this->queryParameters['Domain'] = $domain;
 
-	public function getDeploymentSetName() {
-		return $this->deploymentSetName;
-	}
+        return $this;
+    }
 
-	public function setDeploymentSetName($deploymentSetName) {
-		$this->deploymentSetName = $deploymentSetName;
-		$this->queryParameters["DeploymentSetName"]=$deploymentSetName;
-	}
+    /**
+     * @param string $strategy
+     *
+     * @return $this
+     */
+    public function setStrategy($strategy)
+    {
+        $this->requestParameters['Strategy'] = $strategy;
+        $this->queryParameters['Strategy'] = $strategy;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getOnUnableToRedeployFailedInstance() {
-		return $this->onUnableToRedeployFailedInstance;
-	}
-
-	public function setOnUnableToRedeployFailedInstance($onUnableToRedeployFailedInstance) {
-		$this->onUnableToRedeployFailedInstance = $onUnableToRedeployFailedInstance;
-		$this->queryParameters["OnUnableToRedeployFailedInstance"]=$onUnableToRedeployFailedInstance;
-	}
-
-	public function getGranularity() {
-		return $this->granularity;
-	}
-
-	public function setGranularity($granularity) {
-		$this->granularity = $granularity;
-		$this->queryParameters["Granularity"]=$granularity;
-	}
-
-	public function getDomain() {
-		return $this->domain;
-	}
-
-	public function setDomain($domain) {
-		$this->domain = $domain;
-		$this->queryParameters["Domain"]=$domain;
-	}
-
-	public function getStrategy() {
-		return $this->strategy;
-	}
-
-	public function setStrategy($strategy) {
-		$this->strategy = $strategy;
-		$this->queryParameters["Strategy"]=$strategy;
-	}
-	
+        return $this;
+    }
 }
