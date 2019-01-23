@@ -24,8 +24,7 @@ class DeleteAllTrafficSpecialControlRequest extends \RpcAcsRequest
         parent::__construct(
             'CloudAPI',
             '2016-07-14',
-            'DeleteAllTrafficSpecialControl',
-            'apigateway'
+            'DeleteAllTrafficSpecialControl'
         );
     }
 

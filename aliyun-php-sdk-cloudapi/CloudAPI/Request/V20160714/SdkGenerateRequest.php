@@ -26,8 +26,7 @@ class SdkGenerateRequest extends \RpcAcsRequest
         parent::__construct(
             'CloudAPI',
             '2016-07-14',
-            'SdkGenerate',
-            'apigateway'
+            'SdkGenerate'
         );
     }
 

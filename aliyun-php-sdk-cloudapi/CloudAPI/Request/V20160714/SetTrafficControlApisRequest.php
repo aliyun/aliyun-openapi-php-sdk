@@ -27,8 +27,7 @@ class SetTrafficControlApisRequest extends \RpcAcsRequest
         parent::__construct(
             'CloudAPI',
             '2016-07-14',
-            'SetTrafficControlApis',
-            'apigateway'
+            'SetTrafficControlApis'
         );
     }
 

@@ -28,8 +28,7 @@ class DescribeApiSignaturesRequest extends \RpcAcsRequest
         parent::__construct(
             'CloudAPI',
             '2016-07-14',
-            'DescribeApiSignatures',
-            'apigateway'
+            'DescribeApiSignatures'
         );
     }
 

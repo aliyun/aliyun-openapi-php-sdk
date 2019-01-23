@@ -27,8 +27,7 @@ class CreateIpControlRequest extends \RpcAcsRequest
         parent::__construct(
             'CloudAPI',
             '2016-07-14',
-            'CreateIpControl',
-            'apigateway'
+            'CreateIpControl'
         );
     }
 

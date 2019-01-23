@@ -26,8 +26,7 @@ class DescribeApisByAppRequest extends \RpcAcsRequest
         parent::__construct(
             'CloudAPI',
             '2016-07-14',
-            'DescribeApisByApp',
-            'apigateway'
+            'DescribeApisByApp'
         );
     }
 

@@ -25,8 +25,7 @@ class DescribePurchasedApiGroupsRequest extends \RpcAcsRequest
         parent::__construct(
             'CloudAPI',
             '2016-07-14',
-            'DescribePurchasedApiGroups',
-            'apigateway'
+            'DescribePurchasedApiGroups'
         );
     }
 

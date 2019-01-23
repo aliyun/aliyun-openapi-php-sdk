@@ -28,8 +28,7 @@ class SwitchApiRequest extends \RpcAcsRequest
         parent::__construct(
             'CloudAPI',
             '2016-07-14',
-            'SwitchApi',
-            'apigateway'
+            'SwitchApi'
         );
     }
 

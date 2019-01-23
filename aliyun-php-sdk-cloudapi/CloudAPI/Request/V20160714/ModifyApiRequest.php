@@ -45,8 +45,7 @@ class ModifyApiRequest extends \RpcAcsRequest
         parent::__construct(
             'CloudAPI',
             '2016-07-14',
-            'ModifyApi',
-            'apigateway'
+            'ModifyApi'
         );
     }
 

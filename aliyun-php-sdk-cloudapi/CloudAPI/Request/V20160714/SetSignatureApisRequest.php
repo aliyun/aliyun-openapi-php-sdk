@@ -27,8 +27,7 @@ class SetSignatureApisRequest extends \RpcAcsRequest
         parent::__construct(
             'CloudAPI',
             '2016-07-14',
-            'SetSignatureApis',
-            'apigateway'
+            'SetSignatureApis'
         );
     }
 

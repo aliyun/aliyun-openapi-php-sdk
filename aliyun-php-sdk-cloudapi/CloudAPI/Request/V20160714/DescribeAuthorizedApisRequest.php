@@ -26,8 +26,7 @@ class DescribeAuthorizedApisRequest extends \RpcAcsRequest
         parent::__construct(
             'CloudAPI',
             '2016-07-14',
-            'DescribeAuthorizedApis',
-            'apigateway'
+            'DescribeAuthorizedApis'
         );
     }
 

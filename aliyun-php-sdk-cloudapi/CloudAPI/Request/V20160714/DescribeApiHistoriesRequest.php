@@ -29,8 +29,7 @@ class DescribeApiHistoriesRequest extends \RpcAcsRequest
         parent::__construct(
             'CloudAPI',
             '2016-07-14',
-            'DescribeApiHistories',
-            'apigateway'
+            'DescribeApiHistories'
         );
     }
 

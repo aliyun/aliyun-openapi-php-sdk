@@ -26,8 +26,7 @@ class DeleteApiStageVariableRequest extends \RpcAcsRequest
         parent::__construct(
             'CloudAPI',
             '2016-07-14',
-            'DeleteApiStageVariable',
-            'apigateway'
+            'DeleteApiStageVariable'
         );
     }
 
