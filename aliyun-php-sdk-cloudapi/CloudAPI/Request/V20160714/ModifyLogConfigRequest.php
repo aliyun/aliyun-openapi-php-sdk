@@ -26,7 +26,8 @@ class ModifyLogConfigRequest extends \RpcAcsRequest
         parent::__construct(
             'CloudAPI',
             '2016-07-14',
-            'ModifyLogConfig'
+            'ModifyLogConfig',
+            'apigateway'
         );
     }
 

@@ -30,7 +30,8 @@ class ModifyTrafficControlRequest extends \RpcAcsRequest
         parent::__construct(
             'CloudAPI',
             '2016-07-14',
-            'ModifyTrafficControl'
+            'ModifyTrafficControl',
+            'apigateway'
         );
     }
 

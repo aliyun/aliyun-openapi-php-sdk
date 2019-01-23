@@ -26,7 +26,8 @@ class DescribeApisByTrafficControlRequest extends \RpcAcsRequest
         parent::__construct(
             'CloudAPI',
             '2016-07-14',
-            'DescribeApisByTrafficControl'
+            'DescribeApisByTrafficControl',
+            'apigateway'
         );
     }
 
