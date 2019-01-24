@@ -12,12 +12,13 @@ Please fill in as much of the template below as you can.
 Product and API: the product and API you are working on when bug occurs
 Parameters: API request parameters
 
-If possible, please provide code that demonstrates the problem, keeping it as simple and free of external dependencies as you can.
+How to Reproduce: If possible, please provide code that demonstrates the problem, 
+keeping it as simple and free of external dependencies as you can.
 
 -->
 
 * **Product and API**:
 * **Platform**:
-* **Minimum Code**
+* **How to Reproduce**
 
 <!-- Please provide more details below this comment. -->
