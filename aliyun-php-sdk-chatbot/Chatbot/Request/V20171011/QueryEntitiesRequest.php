@@ -1,74 +1,85 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Chatbot\Request\V20171011;
 
+/**
+ * Request of QueryEntities
+ *
+ * @method string getEntityName()
+ * @method string getPageSize()
+ * @method string getDialogId()
+ * @method string getPageNumber()
+ */
 class QueryEntitiesRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Chatbot", "2017-10-11", "QueryEntities", "beebot", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $entityName;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $pageSize;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Chatbot',
+            '2017-10-11',
+            'QueryEntities',
+            'beebot'
+        );
+    }
 
-	private  $dialogId;
+    /**
+     * @param string $entityName
+     *
+     * @return $this
+     */
+    public function setEntityName($entityName)
+    {
+        $this->requestParameters['EntityName'] = $entityName;
+        $this->queryParameters['EntityName'] = $entityName;
 
-	private  $pageNumber;
+        return $this;
+    }
 
-	public function getEntityName() {
-		return $this->entityName;
-	}
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	public function setEntityName($entityName) {
-		$this->entityName = $entityName;
-		$this->queryParameters["EntityName"]=$entityName;
-	}
+        return $this;
+    }
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
+    /**
+     * @param string $dialogId
+     *
+     * @return $this
+     */
+    public function setDialogId($dialogId)
+    {
+        $this->requestParameters['DialogId'] = $dialogId;
+        $this->queryParameters['DialogId'] = $dialogId;
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
+        return $this;
+    }
 
-	public function getDialogId() {
-		return $this->dialogId;
-	}
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
-	public function setDialogId($dialogId) {
-		$this->dialogId = $dialogId;
-		$this->queryParameters["DialogId"]=$dialogId;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-	
+        return $this;
+    }
 }

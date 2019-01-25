@@ -1,52 +1,57 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Chatbot\Request\V20171011;
 
+/**
+ * Request of QueryCategories
+ *
+ * @method string getShowChildrens()
+ * @method string getParentCategoryId()
+ */
 class QueryCategoriesRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Chatbot", "2017-10-11", "QueryCategories", "beebot", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $showChildrens;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $parentCategoryId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Chatbot',
+            '2017-10-11',
+            'QueryCategories',
+            'beebot'
+        );
+    }
 
-	public function getShowChildrens() {
-		return $this->showChildrens;
-	}
+    /**
+     * @param string $showChildrens
+     *
+     * @return $this
+     */
+    public function setShowChildrens($showChildrens)
+    {
+        $this->requestParameters['ShowChildrens'] = $showChildrens;
+        $this->queryParameters['ShowChildrens'] = $showChildrens;
 
-	public function setShowChildrens($showChildrens) {
-		$this->showChildrens = $showChildrens;
-		$this->queryParameters["ShowChildrens"]=$showChildrens;
-	}
+        return $this;
+    }
 
-	public function getParentCategoryId() {
-		return $this->parentCategoryId;
-	}
+    /**
+     * @param string $parentCategoryId
+     *
+     * @return $this
+     */
+    public function setParentCategoryId($parentCategoryId)
+    {
+        $this->requestParameters['ParentCategoryId'] = $parentCategoryId;
+        $this->queryParameters['ParentCategoryId'] = $parentCategoryId;
 
-	public function setParentCategoryId($parentCategoryId) {
-		$this->parentCategoryId = $parentCategoryId;
-		$this->queryParameters["ParentCategoryId"]=$parentCategoryId;
-	}
-	
+        return $this;
+    }
 }
