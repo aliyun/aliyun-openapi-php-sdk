@@ -5,7 +5,6 @@ namespace Rds\Request\V20140815;
 /**
  * Request of DescribeSlowLogRecords
  *
- * @method string getSQLId()
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
@@ -37,19 +36,6 @@ class DescribeSlowLogRecordsRequest extends \RpcAcsRequest
             'DescribeSlowLogRecords',
             'rds'
         );
-    }
-
-    /**
-     * @param string $sQLId
-     *
-     * @return $this
-     */
-    public function setSQLId($sQLId)
-    {
-        $this->requestParameters['SQLId'] = $sQLId;
-        $this->queryParameters['SQLId'] = $sQLId;
-
-        return $this;
     }
 
     /**
