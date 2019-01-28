@@ -1,157 +1,187 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace BssOpenApi\Request\V20171214;
 
+/**
+ * Request of GetSubscriptionPrice
+ *
+ * @method string getServicePeriodQuantity()
+ * @method string getProductCode()
+ * @method string getInstanceId()
+ * @method string getQuantity()
+ * @method string getServicePeriodUnit()
+ * @method string getSubscriptionType()
+ * @method array getModuleLists()
+ * @method string getOwnerId()
+ * @method string getRegion()
+ * @method string getOrderType()
+ * @method string getProductType()
+ */
 class GetSubscriptionPriceRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("BssOpenApi", "2017-12-14", "GetSubscriptionPrice");
-		$this->setMethod("POST");
-	}
 
-	private  $servicePeriodQuantity;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $productCode;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'BssOpenApi',
+            '2017-12-14',
+            'GetSubscriptionPrice'
+        );
+    }
 
-	private  $instanceId;
+    /**
+     * @param string $servicePeriodQuantity
+     *
+     * @return $this
+     */
+    public function setServicePeriodQuantity($servicePeriodQuantity)
+    {
+        $this->requestParameters['ServicePeriodQuantity'] = $servicePeriodQuantity;
+        $this->queryParameters['ServicePeriodQuantity'] = $servicePeriodQuantity;
 
-	private  $quantity;
+        return $this;
+    }
 
-	private  $servicePeriodUnit;
+    /**
+     * @param string $productCode
+     *
+     * @return $this
+     */
+    public function setProductCode($productCode)
+    {
+        $this->requestParameters['ProductCode'] = $productCode;
+        $this->queryParameters['ProductCode'] = $productCode;
 
-	private  $subscriptionType;
+        return $this;
+    }
 
-	private  $ModuleLists;
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	private  $region;
+    /**
+     * @param string $quantity
+     *
+     * @return $this
+     */
+    public function setQuantity($quantity)
+    {
+        $this->requestParameters['Quantity'] = $quantity;
+        $this->queryParameters['Quantity'] = $quantity;
 
-	private  $orderType;
+        return $this;
+    }
 
-	private  $productType;
+    /**
+     * @param string $servicePeriodUnit
+     *
+     * @return $this
+     */
+    public function setServicePeriodUnit($servicePeriodUnit)
+    {
+        $this->requestParameters['ServicePeriodUnit'] = $servicePeriodUnit;
+        $this->queryParameters['ServicePeriodUnit'] = $servicePeriodUnit;
 
-	public function getServicePeriodQuantity() {
-		return $this->servicePeriodQuantity;
-	}
+        return $this;
+    }
 
-	public function setServicePeriodQuantity($servicePeriodQuantity) {
-		$this->servicePeriodQuantity = $servicePeriodQuantity;
-		$this->queryParameters["ServicePeriodQuantity"]=$servicePeriodQuantity;
-	}
+    /**
+     * @param string $subscriptionType
+     *
+     * @return $this
+     */
+    public function setSubscriptionType($subscriptionType)
+    {
+        $this->requestParameters['SubscriptionType'] = $subscriptionType;
+        $this->queryParameters['SubscriptionType'] = $subscriptionType;
 
-	public function getProductCode() {
-		return $this->productCode;
-	}
+        return $this;
+    }
 
-	public function setProductCode($productCode) {
-		$this->productCode = $productCode;
-		$this->queryParameters["ProductCode"]=$productCode;
-	}
+    /**
+     * @param array $moduleLists
+     *
+     * @return $this
+     */
+    public function setModuleLists(array $moduleLists)
+    {
+        $this->requestParameters['ModuleLists'] = $moduleLists;
+        foreach ($moduleLists as $i => $iValue) {
+            $this->queryParameters['ModuleList.' . ($i + 1) . '.ModuleCode'] = $moduleLists[$i]['ModuleCode'];
+            $this->queryParameters['ModuleList.' . ($i + 1) . '.ModuleStatus'] = $moduleLists[$i]['ModuleStatus'];
+            $this->queryParameters['ModuleList.' . ($i + 1) . '.Tag'] = $moduleLists[$i]['Tag'];
+            $this->queryParameters['ModuleList.' . ($i + 1) . '.Config'] = $moduleLists[$i]['Config'];
+        }
 
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
+        return $this;
+    }
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function getQuantity() {
-		return $this->quantity;
-	}
+        return $this;
+    }
 
-	public function setQuantity($quantity) {
-		$this->quantity = $quantity;
-		$this->queryParameters["Quantity"]=$quantity;
-	}
+    /**
+     * @param string $region
+     *
+     * @return $this
+     */
+    public function setRegion($region)
+    {
+        $this->requestParameters['Region'] = $region;
+        $this->queryParameters['Region'] = $region;
 
-	public function getServicePeriodUnit() {
-		return $this->servicePeriodUnit;
-	}
+        return $this;
+    }
 
-	public function setServicePeriodUnit($servicePeriodUnit) {
-		$this->servicePeriodUnit = $servicePeriodUnit;
-		$this->queryParameters["ServicePeriodUnit"]=$servicePeriodUnit;
-	}
+    /**
+     * @param string $orderType
+     *
+     * @return $this
+     */
+    public function setOrderType($orderType)
+    {
+        $this->requestParameters['OrderType'] = $orderType;
+        $this->queryParameters['OrderType'] = $orderType;
 
-	public function getSubscriptionType() {
-		return $this->subscriptionType;
-	}
+        return $this;
+    }
 
-	public function setSubscriptionType($subscriptionType) {
-		$this->subscriptionType = $subscriptionType;
-		$this->queryParameters["SubscriptionType"]=$subscriptionType;
-	}
+    /**
+     * @param string $productType
+     *
+     * @return $this
+     */
+    public function setProductType($productType)
+    {
+        $this->requestParameters['ProductType'] = $productType;
+        $this->queryParameters['ProductType'] = $productType;
 
-	public function getModuleLists() {
-		return $this->ModuleLists;
-	}
-
-	public function setModuleLists($ModuleLists) {
-		$this->ModuleLists = $ModuleLists;
-		for ($i = 0; $i < count($ModuleLists); $i ++) {	
-			$this->queryParameters['ModuleList.' . ($i + 1) . '.ModuleCode'] = $ModuleLists[$i]['ModuleCode'];
-			$this->queryParameters['ModuleList.' . ($i + 1) . '.ModuleStatus'] = $ModuleLists[$i]['ModuleStatus'];
-			$this->queryParameters['ModuleList.' . ($i + 1) . '.Tag'] = $ModuleLists[$i]['Tag'];
-			$this->queryParameters['ModuleList.' . ($i + 1) . '.Config'] = $ModuleLists[$i]['Config'];
-
-		}
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getRegion() {
-		return $this->region;
-	}
-
-	public function setRegion($region) {
-		$this->region = $region;
-		$this->queryParameters["Region"]=$region;
-	}
-
-	public function getOrderType() {
-		return $this->orderType;
-	}
-
-	public function setOrderType($orderType) {
-		$this->orderType = $orderType;
-		$this->queryParameters["OrderType"]=$orderType;
-	}
-
-	public function getProductType() {
-		return $this->productType;
-	}
-
-	public function setProductType($productType) {
-		$this->productType = $productType;
-		$this->queryParameters["ProductType"]=$productType;
-	}
-	
+        return $this;
+    }
 }

@@ -3,16 +3,20 @@
 namespace BssOpenApi\Request\V20171214;
 
 /**
- * Request of QueryInstanceGaapCost
+ * Request of QueryBill
  *
  * @method string getProductCode()
+ * @method string getIsHideZeroCharge()
+ * @method string getIsDisplayLocalCurrency()
  * @method string getSubscriptionType()
  * @method string getPageSize()
  * @method string getBillingCycle()
+ * @method string getType()
+ * @method string getOwnerId()
  * @method string getPageNum()
  * @method string getProductType()
  */
-class QueryInstanceGaapCostRequest extends \RpcAcsRequest
+class QueryBillRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,7 +32,7 @@ class QueryInstanceGaapCostRequest extends \RpcAcsRequest
         parent::__construct(
             'BssOpenApi',
             '2017-12-14',
-            'QueryInstanceGaapCost'
+            'QueryBill'
         );
     }
 
@@ -41,6 +45,32 @@ class QueryInstanceGaapCostRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ProductCode'] = $productCode;
         $this->queryParameters['ProductCode'] = $productCode;
+
+        return $this;
+    }
+
+    /**
+     * @param string $isHideZeroCharge
+     *
+     * @return $this
+     */
+    public function setIsHideZeroCharge($isHideZeroCharge)
+    {
+        $this->requestParameters['IsHideZeroCharge'] = $isHideZeroCharge;
+        $this->queryParameters['IsHideZeroCharge'] = $isHideZeroCharge;
+
+        return $this;
+    }
+
+    /**
+     * @param string $isDisplayLocalCurrency
+     *
+     * @return $this
+     */
+    public function setIsDisplayLocalCurrency($isDisplayLocalCurrency)
+    {
+        $this->requestParameters['IsDisplayLocalCurrency'] = $isDisplayLocalCurrency;
+        $this->queryParameters['IsDisplayLocalCurrency'] = $isDisplayLocalCurrency;
 
         return $this;
     }
@@ -80,6 +110,32 @@ class QueryInstanceGaapCostRequest extends \RpcAcsRequest
     {
         $this->requestParameters['BillingCycle'] = $billingCycle;
         $this->queryParameters['BillingCycle'] = $billingCycle;
+
+        return $this;
+    }
+
+    /**
+     * @param string $type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->requestParameters['Type'] = $type;
+        $this->queryParameters['Type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

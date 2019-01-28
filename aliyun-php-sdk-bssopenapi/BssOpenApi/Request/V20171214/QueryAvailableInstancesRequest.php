@@ -1,173 +1,210 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace BssOpenApi\Request\V20171214;
 
+/**
+ * Request of QueryAvailableInstances
+ *
+ * @method string getProductCode()
+ * @method string getSubscriptionType()
+ * @method string getOwnerId()
+ * @method string getPageNum()
+ * @method string getEndTimeStart()
+ * @method string getProductType()
+ * @method string getCreateTimeEnd()
+ * @method string getInstanceIDs()
+ * @method string getEndTimeEnd()
+ * @method string getPageSize()
+ * @method string getCreateTimeStart()
+ * @method string getRegion()
+ * @method string getRenewStatus()
+ */
 class QueryAvailableInstancesRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("BssOpenApi", "2017-12-14", "QueryAvailableInstances");
-		$this->setMethod("POST");
-	}
 
-	private  $productCode;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $subscriptionType;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'BssOpenApi',
+            '2017-12-14',
+            'QueryAvailableInstances'
+        );
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $productCode
+     *
+     * @return $this
+     */
+    public function setProductCode($productCode)
+    {
+        $this->requestParameters['ProductCode'] = $productCode;
+        $this->queryParameters['ProductCode'] = $productCode;
 
-	private  $pageNum;
+        return $this;
+    }
 
-	private  $endTimeStart;
+    /**
+     * @param string $subscriptionType
+     *
+     * @return $this
+     */
+    public function setSubscriptionType($subscriptionType)
+    {
+        $this->requestParameters['SubscriptionType'] = $subscriptionType;
+        $this->queryParameters['SubscriptionType'] = $subscriptionType;
 
-	private  $productType;
+        return $this;
+    }
 
-	private  $createTimeEnd;
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	private  $instanceIDs;
+        return $this;
+    }
 
-	private  $endTimeEnd;
+    /**
+     * @param string $pageNum
+     *
+     * @return $this
+     */
+    public function setPageNum($pageNum)
+    {
+        $this->requestParameters['PageNum'] = $pageNum;
+        $this->queryParameters['PageNum'] = $pageNum;
 
-	private  $pageSize;
+        return $this;
+    }
 
-	private  $createTimeStart;
+    /**
+     * @param string $endTimeStart
+     *
+     * @return $this
+     */
+    public function setEndTimeStart($endTimeStart)
+    {
+        $this->requestParameters['EndTimeStart'] = $endTimeStart;
+        $this->queryParameters['EndTimeStart'] = $endTimeStart;
 
-	private  $region;
+        return $this;
+    }
 
-	private  $renewStatus;
+    /**
+     * @param string $productType
+     *
+     * @return $this
+     */
+    public function setProductType($productType)
+    {
+        $this->requestParameters['ProductType'] = $productType;
+        $this->queryParameters['ProductType'] = $productType;
 
-	public function getProductCode() {
-		return $this->productCode;
-	}
+        return $this;
+    }
 
-	public function setProductCode($productCode) {
-		$this->productCode = $productCode;
-		$this->queryParameters["ProductCode"]=$productCode;
-	}
+    /**
+     * @param string $createTimeEnd
+     *
+     * @return $this
+     */
+    public function setCreateTimeEnd($createTimeEnd)
+    {
+        $this->requestParameters['CreateTimeEnd'] = $createTimeEnd;
+        $this->queryParameters['CreateTimeEnd'] = $createTimeEnd;
 
-	public function getSubscriptionType() {
-		return $this->subscriptionType;
-	}
+        return $this;
+    }
 
-	public function setSubscriptionType($subscriptionType) {
-		$this->subscriptionType = $subscriptionType;
-		$this->queryParameters["SubscriptionType"]=$subscriptionType;
-	}
+    /**
+     * @param string $instanceIDs
+     *
+     * @return $this
+     */
+    public function setInstanceIDs($instanceIDs)
+    {
+        $this->requestParameters['InstanceIDs'] = $instanceIDs;
+        $this->queryParameters['InstanceIDs'] = $instanceIDs;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+        return $this;
+    }
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+    /**
+     * @param string $endTimeEnd
+     *
+     * @return $this
+     */
+    public function setEndTimeEnd($endTimeEnd)
+    {
+        $this->requestParameters['EndTimeEnd'] = $endTimeEnd;
+        $this->queryParameters['EndTimeEnd'] = $endTimeEnd;
 
-	public function getPageNum() {
-		return $this->pageNum;
-	}
+        return $this;
+    }
 
-	public function setPageNum($pageNum) {
-		$this->pageNum = $pageNum;
-		$this->queryParameters["PageNum"]=$pageNum;
-	}
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	public function getEndTimeStart() {
-		return $this->endTimeStart;
-	}
+        return $this;
+    }
 
-	public function setEndTimeStart($endTimeStart) {
-		$this->endTimeStart = $endTimeStart;
-		$this->queryParameters["EndTimeStart"]=$endTimeStart;
-	}
+    /**
+     * @param string $createTimeStart
+     *
+     * @return $this
+     */
+    public function setCreateTimeStart($createTimeStart)
+    {
+        $this->requestParameters['CreateTimeStart'] = $createTimeStart;
+        $this->queryParameters['CreateTimeStart'] = $createTimeStart;
 
-	public function getProductType() {
-		return $this->productType;
-	}
+        return $this;
+    }
 
-	public function setProductType($productType) {
-		$this->productType = $productType;
-		$this->queryParameters["ProductType"]=$productType;
-	}
+    /**
+     * @param string $region
+     *
+     * @return $this
+     */
+    public function setRegion($region)
+    {
+        $this->requestParameters['Region'] = $region;
+        $this->queryParameters['Region'] = $region;
 
-	public function getCreateTimeEnd() {
-		return $this->createTimeEnd;
-	}
+        return $this;
+    }
 
-	public function setCreateTimeEnd($createTimeEnd) {
-		$this->createTimeEnd = $createTimeEnd;
-		$this->queryParameters["CreateTimeEnd"]=$createTimeEnd;
-	}
+    /**
+     * @param string $renewStatus
+     *
+     * @return $this
+     */
+    public function setRenewStatus($renewStatus)
+    {
+        $this->requestParameters['RenewStatus'] = $renewStatus;
+        $this->queryParameters['RenewStatus'] = $renewStatus;
 
-	public function getInstanceIDs() {
-		return $this->instanceIDs;
-	}
-
-	public function setInstanceIDs($instanceIDs) {
-		$this->instanceIDs = $instanceIDs;
-		$this->queryParameters["InstanceIDs"]=$instanceIDs;
-	}
-
-	public function getEndTimeEnd() {
-		return $this->endTimeEnd;
-	}
-
-	public function setEndTimeEnd($endTimeEnd) {
-		$this->endTimeEnd = $endTimeEnd;
-		$this->queryParameters["EndTimeEnd"]=$endTimeEnd;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getCreateTimeStart() {
-		return $this->createTimeStart;
-	}
-
-	public function setCreateTimeStart($createTimeStart) {
-		$this->createTimeStart = $createTimeStart;
-		$this->queryParameters["CreateTimeStart"]=$createTimeStart;
-	}
-
-	public function getRegion() {
-		return $this->region;
-	}
-
-	public function setRegion($region) {
-		$this->region = $region;
-		$this->queryParameters["Region"]=$region;
-	}
-
-	public function getRenewStatus() {
-		return $this->renewStatus;
-	}
-
-	public function setRenewStatus($renewStatus) {
-		$this->renewStatus = $renewStatus;
-		$this->queryParameters["RenewStatus"]=$renewStatus;
-	}
-	
+        return $this;
+    }
 }

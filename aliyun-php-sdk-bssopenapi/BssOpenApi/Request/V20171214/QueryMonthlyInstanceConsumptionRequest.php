@@ -1,107 +1,126 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace BssOpenApi\Request\V20171214;
 
+/**
+ * Request of QueryMonthlyInstanceConsumption
+ *
+ * @method string getProductCode()
+ * @method string getSubscriptionType()
+ * @method string getPageSize()
+ * @method string getBillingCycle()
+ * @method string getOwnerId()
+ * @method string getPageNum()
+ * @method string getProductType()
+ */
 class QueryMonthlyInstanceConsumptionRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("BssOpenApi", "2017-12-14", "QueryMonthlyInstanceConsumption");
-		$this->setMethod("POST");
-	}
 
-	private  $productCode;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $subscriptionType;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'BssOpenApi',
+            '2017-12-14',
+            'QueryMonthlyInstanceConsumption'
+        );
+    }
 
-	private  $pageSize;
+    /**
+     * @param string $productCode
+     *
+     * @return $this
+     */
+    public function setProductCode($productCode)
+    {
+        $this->requestParameters['ProductCode'] = $productCode;
+        $this->queryParameters['ProductCode'] = $productCode;
 
-	private  $billingCycle;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $subscriptionType
+     *
+     * @return $this
+     */
+    public function setSubscriptionType($subscriptionType)
+    {
+        $this->requestParameters['SubscriptionType'] = $subscriptionType;
+        $this->queryParameters['SubscriptionType'] = $subscriptionType;
 
-	private  $pageNum;
+        return $this;
+    }
 
-	private  $productType;
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	public function getProductCode() {
-		return $this->productCode;
-	}
+        return $this;
+    }
 
-	public function setProductCode($productCode) {
-		$this->productCode = $productCode;
-		$this->queryParameters["ProductCode"]=$productCode;
-	}
+    /**
+     * @param string $billingCycle
+     *
+     * @return $this
+     */
+    public function setBillingCycle($billingCycle)
+    {
+        $this->requestParameters['BillingCycle'] = $billingCycle;
+        $this->queryParameters['BillingCycle'] = $billingCycle;
 
-	public function getSubscriptionType() {
-		return $this->subscriptionType;
-	}
+        return $this;
+    }
 
-	public function setSubscriptionType($subscriptionType) {
-		$this->subscriptionType = $subscriptionType;
-		$this->queryParameters["SubscriptionType"]=$subscriptionType;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
+        return $this;
+    }
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
+    /**
+     * @param string $pageNum
+     *
+     * @return $this
+     */
+    public function setPageNum($pageNum)
+    {
+        $this->requestParameters['PageNum'] = $pageNum;
+        $this->queryParameters['PageNum'] = $pageNum;
 
-	public function getBillingCycle() {
-		return $this->billingCycle;
-	}
+        return $this;
+    }
 
-	public function setBillingCycle($billingCycle) {
-		$this->billingCycle = $billingCycle;
-		$this->queryParameters["BillingCycle"]=$billingCycle;
-	}
+    /**
+     * @param string $productType
+     *
+     * @return $this
+     */
+    public function setProductType($productType)
+    {
+        $this->requestParameters['ProductType'] = $productType;
+        $this->queryParameters['ProductType'] = $productType;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getPageNum() {
-		return $this->pageNum;
-	}
-
-	public function setPageNum($pageNum) {
-		$this->pageNum = $pageNum;
-		$this->queryParameters["PageNum"]=$pageNum;
-	}
-
-	public function getProductType() {
-		return $this->productType;
-	}
-
-	public function setProductType($productType) {
-		$this->productType = $productType;
-		$this->queryParameters["ProductType"]=$productType;
-	}
-	
+        return $this;
+    }
 }

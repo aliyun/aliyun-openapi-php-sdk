@@ -1,96 +1,112 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace BssOpenApi\Request\V20171214;
 
+/**
+ * Request of QueryResourcePackageInstances
+ *
+ * @method string getExpiryTimeEnd()
+ * @method string getProductCode()
+ * @method string getPageSize()
+ * @method string getOwnerId()
+ * @method string getExpiryTimeStart()
+ * @method string getPageNum()
+ */
 class QueryResourcePackageInstancesRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("BssOpenApi", "2017-12-14", "QueryResourcePackageInstances");
-		$this->setMethod("POST");
-	}
 
-	private  $expiryTimeEnd;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $productCode;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'BssOpenApi',
+            '2017-12-14',
+            'QueryResourcePackageInstances'
+        );
+    }
 
-	private  $pageSize;
+    /**
+     * @param string $expiryTimeEnd
+     *
+     * @return $this
+     */
+    public function setExpiryTimeEnd($expiryTimeEnd)
+    {
+        $this->requestParameters['ExpiryTimeEnd'] = $expiryTimeEnd;
+        $this->queryParameters['ExpiryTimeEnd'] = $expiryTimeEnd;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	private  $expiryTimeStart;
+    /**
+     * @param string $productCode
+     *
+     * @return $this
+     */
+    public function setProductCode($productCode)
+    {
+        $this->requestParameters['ProductCode'] = $productCode;
+        $this->queryParameters['ProductCode'] = $productCode;
 
-	private  $pageNum;
+        return $this;
+    }
 
-	public function getExpiryTimeEnd() {
-		return $this->expiryTimeEnd;
-	}
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	public function setExpiryTimeEnd($expiryTimeEnd) {
-		$this->expiryTimeEnd = $expiryTimeEnd;
-		$this->queryParameters["ExpiryTimeEnd"]=$expiryTimeEnd;
-	}
+        return $this;
+    }
 
-	public function getProductCode() {
-		return $this->productCode;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setProductCode($productCode) {
-		$this->productCode = $productCode;
-		$this->queryParameters["ProductCode"]=$productCode;
-	}
+        return $this;
+    }
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
+    /**
+     * @param string $expiryTimeStart
+     *
+     * @return $this
+     */
+    public function setExpiryTimeStart($expiryTimeStart)
+    {
+        $this->requestParameters['ExpiryTimeStart'] = $expiryTimeStart;
+        $this->queryParameters['ExpiryTimeStart'] = $expiryTimeStart;
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
+        return $this;
+    }
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+    /**
+     * @param string $pageNum
+     *
+     * @return $this
+     */
+    public function setPageNum($pageNum)
+    {
+        $this->requestParameters['PageNum'] = $pageNum;
+        $this->queryParameters['PageNum'] = $pageNum;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getExpiryTimeStart() {
-		return $this->expiryTimeStart;
-	}
-
-	public function setExpiryTimeStart($expiryTimeStart) {
-		$this->expiryTimeStart = $expiryTimeStart;
-		$this->queryParameters["ExpiryTimeStart"]=$expiryTimeStart;
-	}
-
-	public function getPageNum() {
-		return $this->pageNum;
-	}
-
-	public function setPageNum($pageNum) {
-		$this->pageNum = $pageNum;
-		$this->queryParameters["PageNum"]=$pageNum;
-	}
-	
+        return $this;
+    }
 }

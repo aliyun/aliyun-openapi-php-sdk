@@ -1,140 +1,168 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace BssOpenApi\Request\V20171214;
 
+/**
+ * Request of QueryOrders
+ *
+ * @method string getProductCode()
+ * @method string getSubscriptionType()
+ * @method string getPageSize()
+ * @method string getPaymentStatus()
+ * @method string getCreateTimeStart()
+ * @method string getPageNum()
+ * @method string getOwnerId()
+ * @method string getCreateTimeEnd()
+ * @method string getProductType()
+ * @method string getOrderType()
+ */
 class QueryOrdersRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("BssOpenApi", "2017-12-14", "QueryOrders");
-		$this->setMethod("POST");
-	}
 
-	private  $productCode;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $subscriptionType;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'BssOpenApi',
+            '2017-12-14',
+            'QueryOrders'
+        );
+    }
 
-	private  $pageSize;
+    /**
+     * @param string $productCode
+     *
+     * @return $this
+     */
+    public function setProductCode($productCode)
+    {
+        $this->requestParameters['ProductCode'] = $productCode;
+        $this->queryParameters['ProductCode'] = $productCode;
 
-	private  $paymentStatus;
+        return $this;
+    }
 
-	private  $createTimeStart;
+    /**
+     * @param string $subscriptionType
+     *
+     * @return $this
+     */
+    public function setSubscriptionType($subscriptionType)
+    {
+        $this->requestParameters['SubscriptionType'] = $subscriptionType;
+        $this->queryParameters['SubscriptionType'] = $subscriptionType;
 
-	private  $pageNum;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	private  $createTimeEnd;
+        return $this;
+    }
 
-	private  $productType;
+    /**
+     * @param string $paymentStatus
+     *
+     * @return $this
+     */
+    public function setPaymentStatus($paymentStatus)
+    {
+        $this->requestParameters['PaymentStatus'] = $paymentStatus;
+        $this->queryParameters['PaymentStatus'] = $paymentStatus;
 
-	private  $orderType;
+        return $this;
+    }
 
-	public function getProductCode() {
-		return $this->productCode;
-	}
+    /**
+     * @param string $createTimeStart
+     *
+     * @return $this
+     */
+    public function setCreateTimeStart($createTimeStart)
+    {
+        $this->requestParameters['CreateTimeStart'] = $createTimeStart;
+        $this->queryParameters['CreateTimeStart'] = $createTimeStart;
 
-	public function setProductCode($productCode) {
-		$this->productCode = $productCode;
-		$this->queryParameters["ProductCode"]=$productCode;
-	}
+        return $this;
+    }
 
-	public function getSubscriptionType() {
-		return $this->subscriptionType;
-	}
+    /**
+     * @param string $pageNum
+     *
+     * @return $this
+     */
+    public function setPageNum($pageNum)
+    {
+        $this->requestParameters['PageNum'] = $pageNum;
+        $this->queryParameters['PageNum'] = $pageNum;
 
-	public function setSubscriptionType($subscriptionType) {
-		$this->subscriptionType = $subscriptionType;
-		$this->queryParameters["SubscriptionType"]=$subscriptionType;
-	}
+        return $this;
+    }
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
+        return $this;
+    }
 
-	public function getPaymentStatus() {
-		return $this->paymentStatus;
-	}
+    /**
+     * @param string $createTimeEnd
+     *
+     * @return $this
+     */
+    public function setCreateTimeEnd($createTimeEnd)
+    {
+        $this->requestParameters['CreateTimeEnd'] = $createTimeEnd;
+        $this->queryParameters['CreateTimeEnd'] = $createTimeEnd;
 
-	public function setPaymentStatus($paymentStatus) {
-		$this->paymentStatus = $paymentStatus;
-		$this->queryParameters["PaymentStatus"]=$paymentStatus;
-	}
+        return $this;
+    }
 
-	public function getCreateTimeStart() {
-		return $this->createTimeStart;
-	}
+    /**
+     * @param string $productType
+     *
+     * @return $this
+     */
+    public function setProductType($productType)
+    {
+        $this->requestParameters['ProductType'] = $productType;
+        $this->queryParameters['ProductType'] = $productType;
 
-	public function setCreateTimeStart($createTimeStart) {
-		$this->createTimeStart = $createTimeStart;
-		$this->queryParameters["CreateTimeStart"]=$createTimeStart;
-	}
+        return $this;
+    }
 
-	public function getPageNum() {
-		return $this->pageNum;
-	}
+    /**
+     * @param string $orderType
+     *
+     * @return $this
+     */
+    public function setOrderType($orderType)
+    {
+        $this->requestParameters['OrderType'] = $orderType;
+        $this->queryParameters['OrderType'] = $orderType;
 
-	public function setPageNum($pageNum) {
-		$this->pageNum = $pageNum;
-		$this->queryParameters["PageNum"]=$pageNum;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getCreateTimeEnd() {
-		return $this->createTimeEnd;
-	}
-
-	public function setCreateTimeEnd($createTimeEnd) {
-		$this->createTimeEnd = $createTimeEnd;
-		$this->queryParameters["CreateTimeEnd"]=$createTimeEnd;
-	}
-
-	public function getProductType() {
-		return $this->productType;
-	}
-
-	public function setProductType($productType) {
-		$this->productType = $productType;
-		$this->queryParameters["ProductType"]=$productType;
-	}
-
-	public function getOrderType() {
-		return $this->orderType;
-	}
-
-	public function setOrderType($orderType) {
-		$this->orderType = $orderType;
-		$this->queryParameters["OrderType"]=$orderType;
-	}
-	
+        return $this;
+    }
 }
