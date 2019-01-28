@@ -1,96 +1,113 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ess\Request\V20140828;
 
+/**
+ * Request of CompleteLifecycleAction
+ *
+ * @method string getLifecycleActionToken()
+ * @method string getResourceOwnerAccount()
+ * @method string getLifecycleHookId()
+ * @method string getOwnerAccount()
+ * @method string getOwnerId()
+ * @method string getLifecycleActionResult()
+ */
 class CompleteLifecycleActionRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ess", "2014-08-28", "CompleteLifecycleAction", "ess", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $lifecycleActionToken;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $resourceOwnerAccount;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ess',
+            '2014-08-28',
+            'CompleteLifecycleAction',
+            'ess'
+        );
+    }
 
-	private  $lifecycleHookId;
+    /**
+     * @param string $lifecycleActionToken
+     *
+     * @return $this
+     */
+    public function setLifecycleActionToken($lifecycleActionToken)
+    {
+        $this->requestParameters['LifecycleActionToken'] = $lifecycleActionToken;
+        $this->queryParameters['LifecycleActionToken'] = $lifecycleActionToken;
 
-	private  $ownerAccount;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $lifecycleActionResult;
+        return $this;
+    }
 
-	public function getLifecycleActionToken() {
-		return $this->lifecycleActionToken;
-	}
+    /**
+     * @param string $lifecycleHookId
+     *
+     * @return $this
+     */
+    public function setLifecycleHookId($lifecycleHookId)
+    {
+        $this->requestParameters['LifecycleHookId'] = $lifecycleHookId;
+        $this->queryParameters['LifecycleHookId'] = $lifecycleHookId;
 
-	public function setLifecycleActionToken($lifecycleActionToken) {
-		$this->lifecycleActionToken = $lifecycleActionToken;
-		$this->queryParameters["LifecycleActionToken"]=$lifecycleActionToken;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function getLifecycleHookId() {
-		return $this->lifecycleHookId;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setLifecycleHookId($lifecycleHookId) {
-		$this->lifecycleHookId = $lifecycleHookId;
-		$this->queryParameters["LifecycleHookId"]=$lifecycleHookId;
-	}
+        return $this;
+    }
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+    /**
+     * @param string $lifecycleActionResult
+     *
+     * @return $this
+     */
+    public function setLifecycleActionResult($lifecycleActionResult)
+    {
+        $this->requestParameters['LifecycleActionResult'] = $lifecycleActionResult;
+        $this->queryParameters['LifecycleActionResult'] = $lifecycleActionResult;
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getLifecycleActionResult() {
-		return $this->lifecycleActionResult;
-	}
-
-	public function setLifecycleActionResult($lifecycleActionResult) {
-		$this->lifecycleActionResult = $lifecycleActionResult;
-		$this->queryParameters["LifecycleActionResult"]=$lifecycleActionResult;
-	}
-	
+        return $this;
+    }
 }

@@ -1,98 +1,244 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ess\Request\V20140828;
 
+/**
+ * Request of ModifyAlarm
+ *
+ * @method string getMetricType()
+ * @method string getPeriod()
+ * @method string getResourceOwnerAccount()
+ * @method string getGroupId()
+ * @method string getDescription()
+ * @method array getAlarmActions()
+ * @method string getThreshold()
+ * @method string getOwnerId()
+ * @method string getAlarmTaskId()
+ * @method string getName()
+ * @method string getEvaluationCount()
+ * @method string getMetricName()
+ * @method string getComparisonOperator()
+ * @method array getDimensions()
+ * @method string getStatistics()
+ */
 class ModifyAlarmRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ess", "2014-08-28", "ModifyAlarm", "ess", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerAccount;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $name;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ess',
+            '2014-08-28',
+            'ModifyAlarm',
+            'ess'
+        );
+    }
 
-	private  $description;
+    /**
+     * @param string $metricType
+     *
+     * @return $this
+     */
+    public function setMetricType($metricType)
+    {
+        $this->requestParameters['MetricType'] = $metricType;
+        $this->queryParameters['MetricType'] = $metricType;
 
-	private  $AlarmActions;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $period
+     *
+     * @return $this
+     */
+    public function setPeriod($period)
+    {
+        $this->requestParameters['Period'] = $period;
+        $this->queryParameters['Period'] = $period;
 
-	private  $alarmTaskId;
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function getName() {
-		return $this->name;
-	}
+    /**
+     * @param string $groupId
+     *
+     * @return $this
+     */
+    public function setGroupId($groupId)
+    {
+        $this->requestParameters['GroupId'] = $groupId;
+        $this->queryParameters['GroupId'] = $groupId;
 
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
-	}
+        return $this;
+    }
 
-	public function getDescription() {
-		return $this->description;
-	}
+    /**
+     * @param string $description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
 
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
-	}
+        return $this;
+    }
 
-	public function getAlarmActions() {
-		return $this->AlarmActions;
-	}
+    /**
+     * @param array $alarmActions
+     *
+     * @return $this
+     */
+    public function setAlarmActions(array $alarmActions)
+    {
+        $this->requestParameters['AlarmActions'] = $alarmActions;
+        foreach ($alarmActions as $i => $iValue) {
+            $this->queryParameters['AlarmAction.' . ($i + 1)] = $iValue;
+        }
 
-	public function setAlarmActions($AlarmActions) {
-		$this->AlarmActions = $AlarmActions;
-		for ($i = 0; $i < count($AlarmActions); $i ++) {	
-			$this->queryParameters["AlarmAction.".($i+1)] = $AlarmActions[$i];
-		}
-	}
+        return $this;
+    }
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+    /**
+     * @param string $threshold
+     *
+     * @return $this
+     */
+    public function setThreshold($threshold)
+    {
+        $this->requestParameters['Threshold'] = $threshold;
+        $this->queryParameters['Threshold'] = $threshold;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+        return $this;
+    }
 
-	public function getAlarmTaskId() {
-		return $this->alarmTaskId;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setAlarmTaskId($alarmTaskId) {
-		$this->alarmTaskId = $alarmTaskId;
-		$this->queryParameters["AlarmTaskId"]=$alarmTaskId;
-	}
-	
+        return $this;
+    }
+
+    /**
+     * @param string $alarmTaskId
+     *
+     * @return $this
+     */
+    public function setAlarmTaskId($alarmTaskId)
+    {
+        $this->requestParameters['AlarmTaskId'] = $alarmTaskId;
+        $this->queryParameters['AlarmTaskId'] = $alarmTaskId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * @param string $evaluationCount
+     *
+     * @return $this
+     */
+    public function setEvaluationCount($evaluationCount)
+    {
+        $this->requestParameters['EvaluationCount'] = $evaluationCount;
+        $this->queryParameters['EvaluationCount'] = $evaluationCount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $metricName
+     *
+     * @return $this
+     */
+    public function setMetricName($metricName)
+    {
+        $this->requestParameters['MetricName'] = $metricName;
+        $this->queryParameters['MetricName'] = $metricName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $comparisonOperator
+     *
+     * @return $this
+     */
+    public function setComparisonOperator($comparisonOperator)
+    {
+        $this->requestParameters['ComparisonOperator'] = $comparisonOperator;
+        $this->queryParameters['ComparisonOperator'] = $comparisonOperator;
+
+        return $this;
+    }
+
+    /**
+     * @param array $dimensions
+     *
+     * @return $this
+     */
+    public function setDimensions(array $dimensions)
+    {
+        $this->requestParameters['Dimensions'] = $dimensions;
+        foreach ($dimensions as $i => $iValue) {
+            $this->queryParameters['Dimension.' . ($i + 1) . '.DimensionValue'] = $dimensions[$i]['DimensionValue'];
+            $this->queryParameters['Dimension.' . ($i + 1) . '.DimensionKey'] = $dimensions[$i]['DimensionKey'];
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param string $statistics
+     *
+     * @return $this
+     */
+    public function setStatistics($statistics)
+    {
+        $this->requestParameters['Statistics'] = $statistics;
+        $this->queryParameters['Statistics'] = $statistics;
+
+        return $this;
+    }
 }

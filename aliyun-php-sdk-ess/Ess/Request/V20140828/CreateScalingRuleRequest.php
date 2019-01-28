@@ -1,118 +1,211 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ess\Request\V20140828;
 
+/**
+ * Request of CreateScalingRule
+ *
+ * @method string getResourceOwnerAccount()
+ * @method string getAdjustmentValue()
+ * @method string getScalingGroupId()
+ * @method string getEstimatedInstanceWarmup()
+ * @method string getOwnerAccount()
+ * @method string getAdjustmentType()
+ * @method string getDisableScaleIn()
+ * @method string getOwnerId()
+ * @method string getScalingRuleName()
+ * @method string getCooldown()
+ * @method string getTargetValue()
+ * @method string getScalingRuleType()
+ * @method string getMetricName()
+ */
 class CreateScalingRuleRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ess", "2014-08-28", "CreateScalingRule", "ess", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $scalingRuleName;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $resourceOwnerAccount;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ess',
+            '2014-08-28',
+            'CreateScalingRule',
+            'ess'
+        );
+    }
 
-	private  $adjustmentValue;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $scalingGroupId;
+        return $this;
+    }
 
-	private  $ownerAccount;
+    /**
+     * @param string $adjustmentValue
+     *
+     * @return $this
+     */
+    public function setAdjustmentValue($adjustmentValue)
+    {
+        $this->requestParameters['AdjustmentValue'] = $adjustmentValue;
+        $this->queryParameters['AdjustmentValue'] = $adjustmentValue;
 
-	private  $cooldown;
+        return $this;
+    }
 
-	private  $adjustmentType;
+    /**
+     * @param string $scalingGroupId
+     *
+     * @return $this
+     */
+    public function setScalingGroupId($scalingGroupId)
+    {
+        $this->requestParameters['ScalingGroupId'] = $scalingGroupId;
+        $this->queryParameters['ScalingGroupId'] = $scalingGroupId;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	public function getScalingRuleName() {
-		return $this->scalingRuleName;
-	}
+    /**
+     * @param string $estimatedInstanceWarmup
+     *
+     * @return $this
+     */
+    public function setEstimatedInstanceWarmup($estimatedInstanceWarmup)
+    {
+        $this->requestParameters['EstimatedInstanceWarmup'] = $estimatedInstanceWarmup;
+        $this->queryParameters['EstimatedInstanceWarmup'] = $estimatedInstanceWarmup;
 
-	public function setScalingRuleName($scalingRuleName) {
-		$this->scalingRuleName = $scalingRuleName;
-		$this->queryParameters["ScalingRuleName"]=$scalingRuleName;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function getAdjustmentValue() {
-		return $this->adjustmentValue;
-	}
+    /**
+     * @param string $adjustmentType
+     *
+     * @return $this
+     */
+    public function setAdjustmentType($adjustmentType)
+    {
+        $this->requestParameters['AdjustmentType'] = $adjustmentType;
+        $this->queryParameters['AdjustmentType'] = $adjustmentType;
 
-	public function setAdjustmentValue($adjustmentValue) {
-		$this->adjustmentValue = $adjustmentValue;
-		$this->queryParameters["AdjustmentValue"]=$adjustmentValue;
-	}
+        return $this;
+    }
 
-	public function getScalingGroupId() {
-		return $this->scalingGroupId;
-	}
+    /**
+     * @param string $disableScaleIn
+     *
+     * @return $this
+     */
+    public function setDisableScaleIn($disableScaleIn)
+    {
+        $this->requestParameters['DisableScaleIn'] = $disableScaleIn;
+        $this->queryParameters['DisableScaleIn'] = $disableScaleIn;
 
-	public function setScalingGroupId($scalingGroupId) {
-		$this->scalingGroupId = $scalingGroupId;
-		$this->queryParameters["ScalingGroupId"]=$scalingGroupId;
-	}
+        return $this;
+    }
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
+        return $this;
+    }
 
-	public function getCooldown() {
-		return $this->cooldown;
-	}
+    /**
+     * @param string $scalingRuleName
+     *
+     * @return $this
+     */
+    public function setScalingRuleName($scalingRuleName)
+    {
+        $this->requestParameters['ScalingRuleName'] = $scalingRuleName;
+        $this->queryParameters['ScalingRuleName'] = $scalingRuleName;
 
-	public function setCooldown($cooldown) {
-		$this->cooldown = $cooldown;
-		$this->queryParameters["Cooldown"]=$cooldown;
-	}
+        return $this;
+    }
 
-	public function getAdjustmentType() {
-		return $this->adjustmentType;
-	}
+    /**
+     * @param string $cooldown
+     *
+     * @return $this
+     */
+    public function setCooldown($cooldown)
+    {
+        $this->requestParameters['Cooldown'] = $cooldown;
+        $this->queryParameters['Cooldown'] = $cooldown;
 
-	public function setAdjustmentType($adjustmentType) {
-		$this->adjustmentType = $adjustmentType;
-		$this->queryParameters["AdjustmentType"]=$adjustmentType;
-	}
+        return $this;
+    }
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+    /**
+     * @param string $targetValue
+     *
+     * @return $this
+     */
+    public function setTargetValue($targetValue)
+    {
+        $this->requestParameters['TargetValue'] = $targetValue;
+        $this->queryParameters['TargetValue'] = $targetValue;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-	
+        return $this;
+    }
+
+    /**
+     * @param string $scalingRuleType
+     *
+     * @return $this
+     */
+    public function setScalingRuleType($scalingRuleType)
+    {
+        $this->requestParameters['ScalingRuleType'] = $scalingRuleType;
+        $this->queryParameters['ScalingRuleType'] = $scalingRuleType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $metricName
+     *
+     * @return $this
+     */
+    public function setMetricName($metricName)
+    {
+        $this->requestParameters['MetricName'] = $metricName;
+        $this->queryParameters['MetricName'] = $metricName;
+
+        return $this;
+    }
 }

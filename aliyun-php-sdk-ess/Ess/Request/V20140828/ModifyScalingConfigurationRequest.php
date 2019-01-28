@@ -1,362 +1,460 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ess\Request\V20140828;
 
+/**
+ * Request of ModifyScalingConfiguration
+ *
+ * @method string getImageId()
+ * @method string getMemory()
+ * @method string getIoOptimized()
+ * @method array getInstanceTypes()
+ * @method string getInternetMaxBandwidthOut()
+ * @method string getSecurityGroupId()
+ * @method string getKeyPairName()
+ * @method array getSpotPriceLimits()
+ * @method string getSystemDiskCategory()
+ * @method string getUserData()
+ * @method string getResourceGroupId()
+ * @method string getHostName()
+ * @method string getPasswordInherit()
+ * @method string getImageName()
+ * @method string getOverride()
+ * @method string getDeploymentSetId()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getCpu()
+ * @method string getRamRoleName()
+ * @method string getOwnerId()
+ * @method array getDataDisks()
+ * @method string getScalingConfigurationName()
+ * @method string getTags()
+ * @method string getScalingConfigurationId()
+ * @method string getSpotStrategy()
+ * @method string getInstanceName()
+ * @method string getLoadBalancerWeight()
+ * @method string getSystemDiskSize()
+ * @method string getInternetChargeType()
+ */
 class ModifyScalingConfigurationRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ess", "2014-08-28", "ModifyScalingConfiguration", "ess", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $imageId;
-
-	private  $memory;
-
-	private  $ioOptimized;
-
-	private  $InstanceTypes;
-
-	private  $internetMaxBandwidthOut;
-
-	private  $securityGroupId;
-
-	private  $keyPairName;
-
-	private  $SpotPriceLimits;
-
-	private  $systemDiskCategory;
-
-	private  $userData;
-
-	private  $hostName;
-
-	private  $passwordInherit;
-
-	private  $imageName;
-
-	private  $override;
-
-	private  $deploymentSetId;
-
-	private  $resourceOwnerAccount;
-
-	private  $ownerAccount;
-
-	private  $cpu;
-
-	private  $ramRoleName;
-
-	private  $ownerId;
-
-	private  $DataDisks;
-
-	private  $scalingConfigurationName;
-
-	private  $tags;
-
-	private  $scalingConfigurationId;
-
-	private  $spotStrategy;
-
-	private  $instanceName;
-
-	private  $loadBalancerWeight;
-
-	private  $systemDiskSize;
-
-	private  $internetChargeType;
-
-	public function getImageId() {
-		return $this->imageId;
-	}
-
-	public function setImageId($imageId) {
-		$this->imageId = $imageId;
-		$this->queryParameters["ImageId"]=$imageId;
-	}
-
-	public function getMemory() {
-		return $this->memory;
-	}
-
-	public function setMemory($memory) {
-		$this->memory = $memory;
-		$this->queryParameters["Memory"]=$memory;
-	}
-
-	public function getIoOptimized() {
-		return $this->ioOptimized;
-	}
-
-	public function setIoOptimized($ioOptimized) {
-		$this->ioOptimized = $ioOptimized;
-		$this->queryParameters["IoOptimized"]=$ioOptimized;
-	}
-
-	public function getInstanceTypes() {
-		return $this->InstanceTypes;
-	}
-
-	public function setInstanceTypes($InstanceTypes) {
-		$this->InstanceTypes = $InstanceTypes;
-		for ($i = 0; $i < count($InstanceTypes); $i ++) {
-			$this->queryParameters["InstanceTypes.".($i+1)] = $InstanceTypes[$i];
-		}
-	}
-
-	public function getInternetMaxBandwidthOut() {
-		return $this->internetMaxBandwidthOut;
-	}
-
-	public function setInternetMaxBandwidthOut($internetMaxBandwidthOut) {
-		$this->internetMaxBandwidthOut = $internetMaxBandwidthOut;
-		$this->queryParameters["InternetMaxBandwidthOut"]=$internetMaxBandwidthOut;
-	}
-
-	public function getSecurityGroupId() {
-		return $this->securityGroupId;
-	}
-
-	public function setSecurityGroupId($securityGroupId) {
-		$this->securityGroupId = $securityGroupId;
-		$this->queryParameters["SecurityGroupId"]=$securityGroupId;
-	}
-
-	public function getKeyPairName() {
-		return $this->keyPairName;
-	}
-
-	public function setKeyPairName($keyPairName) {
-		$this->keyPairName = $keyPairName;
-		$this->queryParameters["KeyPairName"]=$keyPairName;
-	}
-
-	public function getSpotPriceLimits() {
-		return $this->SpotPriceLimits;
-	}
-
-	public function setSpotPriceLimits($SpotPriceLimits) {
-		$this->SpotPriceLimits = $SpotPriceLimits;
-		for ($i = 0; $i < count($SpotPriceLimits); $i ++) {	
-			$this->queryParameters['SpotPriceLimit.' . ($i + 1) . '.InstanceType'] = $SpotPriceLimits[$i]['InstanceType'];
-			$this->queryParameters['SpotPriceLimit.' . ($i + 1) . '.PriceLimit'] = $SpotPriceLimits[$i]['PriceLimit'];
-
-		}
-	}
-
-	public function getSystemDiskCategory() {
-		return $this->systemDiskCategory;
-	}
-
-	public function setSystemDiskCategory($systemDiskCategory) {
-		$this->systemDiskCategory = $systemDiskCategory;
-		$this->queryParameters["SystemDisk.Category"]=$systemDiskCategory;
-	}
-
-	public function getUserData() {
-		return $this->userData;
-	}
-
-	public function setUserData($userData) {
-		$this->userData = $userData;
-		$this->queryParameters["UserData"]=$userData;
-	}
-
-	public function getHostName() {
-		return $this->hostName;
-	}
-
-	public function setHostName($hostName) {
-		$this->hostName = $hostName;
-		$this->queryParameters["HostName"]=$hostName;
-	}
-
-	public function getPasswordInherit() {
-		return $this->passwordInherit;
-	}
-
-	public function setPasswordInherit($passwordInherit) {
-		$this->passwordInherit = $passwordInherit;
-		$this->queryParameters["PasswordInherit"]=$passwordInherit;
-	}
-
-	public function getImageName() {
-		return $this->imageName;
-	}
-
-	public function setImageName($imageName) {
-		$this->imageName = $imageName;
-		$this->queryParameters["ImageName"]=$imageName;
-	}
-
-	public function getOverride() {
-		return $this->override;
-	}
-
-	public function setOverride($override) {
-		$this->override = $override;
-		$this->queryParameters["Override"]=$override;
-	}
-
-	public function getDeploymentSetId() {
-		return $this->deploymentSetId;
-	}
-
-	public function setDeploymentSetId($deploymentSetId) {
-		$this->deploymentSetId = $deploymentSetId;
-		$this->queryParameters["DeploymentSetId"]=$deploymentSetId;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getCpu() {
-		return $this->cpu;
-	}
-
-	public function setCpu($cpu) {
-		$this->cpu = $cpu;
-		$this->queryParameters["Cpu"]=$cpu;
-	}
-
-	public function getRamRoleName() {
-		return $this->ramRoleName;
-	}
-
-	public function setRamRoleName($ramRoleName) {
-		$this->ramRoleName = $ramRoleName;
-		$this->queryParameters["RamRoleName"]=$ramRoleName;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getDataDisks() {
-		return $this->DataDisks;
-	}
-
-	public function setDataDisks($DataDisks) {
-		$this->DataDisks = $DataDisks;
-		for ($i = 0; $i < count($DataDisks); $i ++) {	
-			$this->queryParameters['DataDisk.' . ($i + 1) . '.SnapshotId'] = $DataDisks[$i]['SnapshotId'];
-			$this->queryParameters['DataDisk.' . ($i + 1) . '.Size'] = $DataDisks[$i]['Size'];
-			$this->queryParameters['DataDisk.' . ($i + 1) . '.Category'] = $DataDisks[$i]['Category'];
-			$this->queryParameters['DataDisk.' . ($i + 1) . '.Device'] = $DataDisks[$i]['Device'];
-			$this->queryParameters['DataDisk.' . ($i + 1) . '.DeleteWithInstance'] = $DataDisks[$i]['DeleteWithInstance'];
-
-		}
-	}
-
-	public function getScalingConfigurationName() {
-		return $this->scalingConfigurationName;
-	}
-
-	public function setScalingConfigurationName($scalingConfigurationName) {
-		$this->scalingConfigurationName = $scalingConfigurationName;
-		$this->queryParameters["ScalingConfigurationName"]=$scalingConfigurationName;
-	}
-
-	public function getTags() {
-		return $this->tags;
-	}
-
-	public function setTags($tags) {
-		$this->tags = $tags;
-		$this->queryParameters["Tags"]=$tags;
-	}
-
-	public function getScalingConfigurationId() {
-		return $this->scalingConfigurationId;
-	}
-
-	public function setScalingConfigurationId($scalingConfigurationId) {
-		$this->scalingConfigurationId = $scalingConfigurationId;
-		$this->queryParameters["ScalingConfigurationId"]=$scalingConfigurationId;
-	}
-
-	public function getSpotStrategy() {
-		return $this->spotStrategy;
-	}
-
-	public function setSpotStrategy($spotStrategy) {
-		$this->spotStrategy = $spotStrategy;
-		$this->queryParameters["SpotStrategy"]=$spotStrategy;
-	}
-
-	public function getInstanceName() {
-		return $this->instanceName;
-	}
-
-	public function setInstanceName($instanceName) {
-		$this->instanceName = $instanceName;
-		$this->queryParameters["InstanceName"]=$instanceName;
-	}
-
-	public function getLoadBalancerWeight() {
-		return $this->loadBalancerWeight;
-	}
-
-	public function setLoadBalancerWeight($loadBalancerWeight) {
-		$this->loadBalancerWeight = $loadBalancerWeight;
-		$this->queryParameters["LoadBalancerWeight"]=$loadBalancerWeight;
-	}
-
-	public function getSystemDiskSize() {
-		return $this->systemDiskSize;
-	}
-
-	public function setSystemDiskSize($systemDiskSize) {
-		$this->systemDiskSize = $systemDiskSize;
-		$this->queryParameters["SystemDisk.Size"]=$systemDiskSize;
-	}
-
-	public function getInternetChargeType() {
-		return $this->internetChargeType;
-	}
-
-	public function setInternetChargeType($internetChargeType) {
-		$this->internetChargeType = $internetChargeType;
-		$this->queryParameters["InternetChargeType"]=$internetChargeType;
-	}
-	
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
+
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ess',
+            '2014-08-28',
+            'ModifyScalingConfiguration',
+            'ess'
+        );
+    }
+
+    /**
+     * @param string $imageId
+     *
+     * @return $this
+     */
+    public function setImageId($imageId)
+    {
+        $this->requestParameters['ImageId'] = $imageId;
+        $this->queryParameters['ImageId'] = $imageId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $memory
+     *
+     * @return $this
+     */
+    public function setMemory($memory)
+    {
+        $this->requestParameters['Memory'] = $memory;
+        $this->queryParameters['Memory'] = $memory;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ioOptimized
+     *
+     * @return $this
+     */
+    public function setIoOptimized($ioOptimized)
+    {
+        $this->requestParameters['IoOptimized'] = $ioOptimized;
+        $this->queryParameters['IoOptimized'] = $ioOptimized;
+
+        return $this;
+    }
+
+    /**
+     * @param array $instanceTypes
+     *
+     * @return $this
+     */
+    public function setInstanceTypes(array $instanceTypes)
+    {
+        $this->requestParameters['InstanceTypes'] = $instanceTypes;
+        foreach ($instanceTypes as $i => $iValue) {
+            $this->queryParameters['InstanceTypes.' . ($i + 1)] = $iValue;
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param string $internetMaxBandwidthOut
+     *
+     * @return $this
+     */
+    public function setInternetMaxBandwidthOut($internetMaxBandwidthOut)
+    {
+        $this->requestParameters['InternetMaxBandwidthOut'] = $internetMaxBandwidthOut;
+        $this->queryParameters['InternetMaxBandwidthOut'] = $internetMaxBandwidthOut;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityGroupId
+     *
+     * @return $this
+     */
+    public function setSecurityGroupId($securityGroupId)
+    {
+        $this->requestParameters['SecurityGroupId'] = $securityGroupId;
+        $this->queryParameters['SecurityGroupId'] = $securityGroupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $keyPairName
+     *
+     * @return $this
+     */
+    public function setKeyPairName($keyPairName)
+    {
+        $this->requestParameters['KeyPairName'] = $keyPairName;
+        $this->queryParameters['KeyPairName'] = $keyPairName;
+
+        return $this;
+    }
+
+    /**
+     * @param array $spotPriceLimits
+     *
+     * @return $this
+     */
+    public function setSpotPriceLimits(array $spotPriceLimits)
+    {
+        $this->requestParameters['SpotPriceLimits'] = $spotPriceLimits;
+        foreach ($spotPriceLimits as $i => $iValue) {
+            $this->queryParameters['SpotPriceLimit.' . ($i + 1) . '.InstanceType'] = $spotPriceLimits[$i]['InstanceType'];
+            $this->queryParameters['SpotPriceLimit.' . ($i + 1) . '.PriceLimit'] = $spotPriceLimits[$i]['PriceLimit'];
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param string $systemDiskCategory
+     *
+     * @return $this
+     */
+    public function setSystemDiskCategory($systemDiskCategory)
+    {
+        $this->requestParameters['SystemDiskCategory'] = $systemDiskCategory;
+        $this->queryParameters['SystemDisk.Category'] = $systemDiskCategory;
+
+        return $this;
+    }
+
+    /**
+     * @param string $userData
+     *
+     * @return $this
+     */
+    public function setUserData($userData)
+    {
+        $this->requestParameters['UserData'] = $userData;
+        $this->queryParameters['UserData'] = $userData;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceGroupId
+     *
+     * @return $this
+     */
+    public function setResourceGroupId($resourceGroupId)
+    {
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $hostName
+     *
+     * @return $this
+     */
+    public function setHostName($hostName)
+    {
+        $this->requestParameters['HostName'] = $hostName;
+        $this->queryParameters['HostName'] = $hostName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $passwordInherit
+     *
+     * @return $this
+     */
+    public function setPasswordInherit($passwordInherit)
+    {
+        $this->requestParameters['PasswordInherit'] = $passwordInherit;
+        $this->queryParameters['PasswordInherit'] = $passwordInherit;
+
+        return $this;
+    }
+
+    /**
+     * @param string $imageName
+     *
+     * @return $this
+     */
+    public function setImageName($imageName)
+    {
+        $this->requestParameters['ImageName'] = $imageName;
+        $this->queryParameters['ImageName'] = $imageName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $override
+     *
+     * @return $this
+     */
+    public function setOverride($override)
+    {
+        $this->requestParameters['Override'] = $override;
+        $this->queryParameters['Override'] = $override;
+
+        return $this;
+    }
+
+    /**
+     * @param string $deploymentSetId
+     *
+     * @return $this
+     */
+    public function setDeploymentSetId($deploymentSetId)
+    {
+        $this->requestParameters['DeploymentSetId'] = $deploymentSetId;
+        $this->queryParameters['DeploymentSetId'] = $deploymentSetId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $cpu
+     *
+     * @return $this
+     */
+    public function setCpu($cpu)
+    {
+        $this->requestParameters['Cpu'] = $cpu;
+        $this->queryParameters['Cpu'] = $cpu;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ramRoleName
+     *
+     * @return $this
+     */
+    public function setRamRoleName($ramRoleName)
+    {
+        $this->requestParameters['RamRoleName'] = $ramRoleName;
+        $this->queryParameters['RamRoleName'] = $ramRoleName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param array $dataDisks
+     *
+     * @return $this
+     */
+    public function setDataDisks(array $dataDisks)
+    {
+        $this->requestParameters['DataDisks'] = $dataDisks;
+        foreach ($dataDisks as $i => $iValue) {
+            $this->queryParameters['DataDisk.' . ($i + 1) . '.SnapshotId'] = $dataDisks[$i]['SnapshotId'];
+            $this->queryParameters['DataDisk.' . ($i + 1) . '.Size'] = $dataDisks[$i]['Size'];
+            $this->queryParameters['DataDisk.' . ($i + 1) . '.Category'] = $dataDisks[$i]['Category'];
+            $this->queryParameters['DataDisk.' . ($i + 1) . '.Device'] = $dataDisks[$i]['Device'];
+            $this->queryParameters['DataDisk.' . ($i + 1) . '.DeleteWithInstance'] = $dataDisks[$i]['DeleteWithInstance'];
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param string $scalingConfigurationName
+     *
+     * @return $this
+     */
+    public function setScalingConfigurationName($scalingConfigurationName)
+    {
+        $this->requestParameters['ScalingConfigurationName'] = $scalingConfigurationName;
+        $this->queryParameters['ScalingConfigurationName'] = $scalingConfigurationName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $tags
+     *
+     * @return $this
+     */
+    public function setTags($tags)
+    {
+        $this->requestParameters['Tags'] = $tags;
+        $this->queryParameters['Tags'] = $tags;
+
+        return $this;
+    }
+
+    /**
+     * @param string $scalingConfigurationId
+     *
+     * @return $this
+     */
+    public function setScalingConfigurationId($scalingConfigurationId)
+    {
+        $this->requestParameters['ScalingConfigurationId'] = $scalingConfigurationId;
+        $this->queryParameters['ScalingConfigurationId'] = $scalingConfigurationId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $spotStrategy
+     *
+     * @return $this
+     */
+    public function setSpotStrategy($spotStrategy)
+    {
+        $this->requestParameters['SpotStrategy'] = $spotStrategy;
+        $this->queryParameters['SpotStrategy'] = $spotStrategy;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceName
+     *
+     * @return $this
+     */
+    public function setInstanceName($instanceName)
+    {
+        $this->requestParameters['InstanceName'] = $instanceName;
+        $this->queryParameters['InstanceName'] = $instanceName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $loadBalancerWeight
+     *
+     * @return $this
+     */
+    public function setLoadBalancerWeight($loadBalancerWeight)
+    {
+        $this->requestParameters['LoadBalancerWeight'] = $loadBalancerWeight;
+        $this->queryParameters['LoadBalancerWeight'] = $loadBalancerWeight;
+
+        return $this;
+    }
+
+    /**
+     * @param string $systemDiskSize
+     *
+     * @return $this
+     */
+    public function setSystemDiskSize($systemDiskSize)
+    {
+        $this->requestParameters['SystemDiskSize'] = $systemDiskSize;
+        $this->queryParameters['SystemDisk.Size'] = $systemDiskSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $internetChargeType
+     *
+     * @return $this
+     */
+    public function setInternetChargeType($internetChargeType)
+    {
+        $this->requestParameters['InternetChargeType'] = $internetChargeType;
+        $this->queryParameters['InternetChargeType'] = $internetChargeType;
+
+        return $this;
+    }
 }

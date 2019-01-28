@@ -1,159 +1,190 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ess\Request\V20140828;
 
+/**
+ * Request of CreateLifecycleHook
+ *
+ * @method string getDefaultResult()
+ * @method string getResourceOwnerAccount()
+ * @method string getHeartbeatTimeout()
+ * @method string getScalingGroupId()
+ * @method string getOwnerAccount()
+ * @method string getNotificationMetadata()
+ * @method string getOwnerId()
+ * @method string getLifecycleTransition()
+ * @method string getLifecycleHookName()
+ * @method string getNotificationArn()
+ * @method array getLifecycleHooks()
+ */
 class CreateLifecycleHookRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ess", "2014-08-28", "CreateLifecycleHook", "ess", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $defaultResult;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $resourceOwnerAccount;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ess',
+            '2014-08-28',
+            'CreateLifecycleHook',
+            'ess'
+        );
+    }
 
-	private  $heartbeatTimeout;
+    /**
+     * @param string $defaultResult
+     *
+     * @return $this
+     */
+    public function setDefaultResult($defaultResult)
+    {
+        $this->requestParameters['DefaultResult'] = $defaultResult;
+        $this->queryParameters['DefaultResult'] = $defaultResult;
 
-	private  $scalingGroupId;
+        return $this;
+    }
 
-	private  $ownerAccount;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $notificationMetadata;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $heartbeatTimeout
+     *
+     * @return $this
+     */
+    public function setHeartbeatTimeout($heartbeatTimeout)
+    {
+        $this->requestParameters['HeartbeatTimeout'] = $heartbeatTimeout;
+        $this->queryParameters['HeartbeatTimeout'] = $heartbeatTimeout;
 
-	private  $lifecycleTransition;
+        return $this;
+    }
 
-	private  $lifecycleHookName;
+    /**
+     * @param string $scalingGroupId
+     *
+     * @return $this
+     */
+    public function setScalingGroupId($scalingGroupId)
+    {
+        $this->requestParameters['ScalingGroupId'] = $scalingGroupId;
+        $this->queryParameters['ScalingGroupId'] = $scalingGroupId;
 
-	private  $notificationArn;
+        return $this;
+    }
 
-	private  $LifecycleHooks;
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	public function getDefaultResult() {
-		return $this->defaultResult;
-	}
+        return $this;
+    }
 
-	public function setDefaultResult($defaultResult) {
-		$this->defaultResult = $defaultResult;
-		$this->queryParameters["DefaultResult"]=$defaultResult;
-	}
+    /**
+     * @param string $notificationMetadata
+     *
+     * @return $this
+     */
+    public function setNotificationMetadata($notificationMetadata)
+    {
+        $this->requestParameters['NotificationMetadata'] = $notificationMetadata;
+        $this->queryParameters['NotificationMetadata'] = $notificationMetadata;
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function getHeartbeatTimeout() {
-		return $this->heartbeatTimeout;
-	}
+        return $this;
+    }
 
-	public function setHeartbeatTimeout($heartbeatTimeout) {
-		$this->heartbeatTimeout = $heartbeatTimeout;
-		$this->queryParameters["HeartbeatTimeout"]=$heartbeatTimeout;
-	}
+    /**
+     * @param string $lifecycleTransition
+     *
+     * @return $this
+     */
+    public function setLifecycleTransition($lifecycleTransition)
+    {
+        $this->requestParameters['LifecycleTransition'] = $lifecycleTransition;
+        $this->queryParameters['LifecycleTransition'] = $lifecycleTransition;
 
-	public function getScalingGroupId() {
-		return $this->scalingGroupId;
-	}
+        return $this;
+    }
 
-	public function setScalingGroupId($scalingGroupId) {
-		$this->scalingGroupId = $scalingGroupId;
-		$this->queryParameters["ScalingGroupId"]=$scalingGroupId;
-	}
+    /**
+     * @param string $lifecycleHookName
+     *
+     * @return $this
+     */
+    public function setLifecycleHookName($lifecycleHookName)
+    {
+        $this->requestParameters['LifecycleHookName'] = $lifecycleHookName;
+        $this->queryParameters['LifecycleHookName'] = $lifecycleHookName;
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+        return $this;
+    }
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
+    /**
+     * @param string $notificationArn
+     *
+     * @return $this
+     */
+    public function setNotificationArn($notificationArn)
+    {
+        $this->requestParameters['NotificationArn'] = $notificationArn;
+        $this->queryParameters['NotificationArn'] = $notificationArn;
 
-	public function getNotificationMetadata() {
-		return $this->notificationMetadata;
-	}
+        return $this;
+    }
 
-	public function setNotificationMetadata($notificationMetadata) {
-		$this->notificationMetadata = $notificationMetadata;
-		$this->queryParameters["NotificationMetadata"]=$notificationMetadata;
-	}
+    /**
+     * @param array $lifecycleHooks
+     *
+     * @return $this
+     */
+    public function setLifecycleHooks(array $lifecycleHooks)
+    {
+        $this->requestParameters['LifecycleHooks'] = $lifecycleHooks;
+        foreach ($lifecycleHooks as $i => $iValue) {
+            $this->queryParameters['LifecycleHook.' . ($i + 1) . '.DefaultResult'] = $lifecycleHooks[$i]['DefaultResult'];
+            $this->queryParameters['LifecycleHook.' . ($i + 1) . '.LifecycleHookName'] = $lifecycleHooks[$i]['LifecycleHookName'];
+            $this->queryParameters['LifecycleHook.' . ($i + 1) . '.HeartbeatTimeout'] = $lifecycleHooks[$i]['HeartbeatTimeout'];
+            $this->queryParameters['LifecycleHook.' . ($i + 1) . '.NotificationArn'] = $lifecycleHooks[$i]['NotificationArn'];
+            $this->queryParameters['LifecycleHook.' . ($i + 1) . '.NotificationMetadata'] = $lifecycleHooks[$i]['NotificationMetadata'];
+            $this->queryParameters['LifecycleHook.' . ($i + 1) . '.LifecycleTransition'] = $lifecycleHooks[$i]['LifecycleTransition'];
+        }
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getLifecycleTransition() {
-		return $this->lifecycleTransition;
-	}
-
-	public function setLifecycleTransition($lifecycleTransition) {
-		$this->lifecycleTransition = $lifecycleTransition;
-		$this->queryParameters["LifecycleTransition"]=$lifecycleTransition;
-	}
-
-	public function getLifecycleHookName() {
-		return $this->lifecycleHookName;
-	}
-
-	public function setLifecycleHookName($lifecycleHookName) {
-		$this->lifecycleHookName = $lifecycleHookName;
-		$this->queryParameters["LifecycleHookName"]=$lifecycleHookName;
-	}
-
-	public function getNotificationArn() {
-		return $this->notificationArn;
-	}
-
-	public function setNotificationArn($notificationArn) {
-		$this->notificationArn = $notificationArn;
-		$this->queryParameters["NotificationArn"]=$notificationArn;
-	}
-
-	public function getLifecycleHooks() {
-		return $this->LifecycleHooks;
-	}
-
-	public function setLifecycleHooks($LifecycleHooks) {
-		$this->LifecycleHooks = $LifecycleHooks;
-		for ($i = 0; $i < count($LifecycleHooks); $i ++) {	
-			$this->queryParameters['LifecycleHook.' . ($i + 1) . '.DefaultResult'] = $LifecycleHooks[$i]['DefaultResult'];
-			$this->queryParameters['LifecycleHook.' . ($i + 1) . '.LifecycleHookName'] = $LifecycleHooks[$i]['LifecycleHookName'];
-			$this->queryParameters['LifecycleHook.' . ($i + 1) . '.HeartbeatTimeout'] = $LifecycleHooks[$i]['HeartbeatTimeout'];
-			$this->queryParameters['LifecycleHook.' . ($i + 1) . '.NotificationArn'] = $LifecycleHooks[$i]['NotificationArn'];
-			$this->queryParameters['LifecycleHook.' . ($i + 1) . '.NotificationMetadata'] = $LifecycleHooks[$i]['NotificationMetadata'];
-			$this->queryParameters['LifecycleHook.' . ($i + 1) . '.LifecycleTransition'] = $LifecycleHooks[$i]['LifecycleTransition'];
-
-		}
-	}
-	
+        return $this;
+    }
 }

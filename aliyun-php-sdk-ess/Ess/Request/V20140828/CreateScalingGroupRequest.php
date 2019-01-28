@@ -1,266 +1,323 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ess\Request\V20140828;
 
+/**
+ * Request of CreateScalingGroup
+ *
+ * @method string getMultiAZPolicy()
+ * @method string getDBInstanceIds()
+ * @method string getLaunchTemplateId()
+ * @method string getLoadBalancerIds()
+ * @method string getHealthCheckType()
+ * @method string getResourceOwnerAccount()
+ * @method string getScalingGroupName()
+ * @method array getVSwitchIds()
+ * @method string getOwnerAccount()
+ * @method string getMinSize()
+ * @method string getOwnerId()
+ * @method string getLaunchTemplateVersion()
+ * @method string getScalingPolicy()
+ * @method string getVSwitchId()
+ * @method string getMaxSize()
+ * @method array getLifecycleHooks()
+ * @method string getDefaultCooldown()
+ * @method string getRemovalPolicy1()
+ * @method array getVServerGroups()
+ * @method string getRemovalPolicy2()
+ */
 class CreateScalingGroupRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ess", "2014-08-28", "CreateScalingGroup", "ess", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $multiAZPolicy;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $dBInstanceIds;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ess',
+            '2014-08-28',
+            'CreateScalingGroup',
+            'ess'
+        );
+    }
 
-	private  $launchTemplateId;
+    /**
+     * @param string $multiAZPolicy
+     *
+     * @return $this
+     */
+    public function setMultiAZPolicy($multiAZPolicy)
+    {
+        $this->requestParameters['MultiAZPolicy'] = $multiAZPolicy;
+        $this->queryParameters['MultiAZPolicy'] = $multiAZPolicy;
 
-	private  $loadBalancerIds;
+        return $this;
+    }
 
-	private  $healthCheckType;
+    /**
+     * @param string $dBInstanceIds
+     *
+     * @return $this
+     */
+    public function setDBInstanceIds($dBInstanceIds)
+    {
+        $this->requestParameters['DBInstanceIds'] = $dBInstanceIds;
+        $this->queryParameters['DBInstanceIds'] = $dBInstanceIds;
 
-	private  $resourceOwnerAccount;
+        return $this;
+    }
 
-	private  $scalingGroupName;
+    /**
+     * @param string $launchTemplateId
+     *
+     * @return $this
+     */
+    public function setLaunchTemplateId($launchTemplateId)
+    {
+        $this->requestParameters['LaunchTemplateId'] = $launchTemplateId;
+        $this->queryParameters['LaunchTemplateId'] = $launchTemplateId;
 
-	private  $VSwitchIds;
+        return $this;
+    }
 
-	private  $ownerAccount;
+    /**
+     * @param string $loadBalancerIds
+     *
+     * @return $this
+     */
+    public function setLoadBalancerIds($loadBalancerIds)
+    {
+        $this->requestParameters['LoadBalancerIds'] = $loadBalancerIds;
+        $this->queryParameters['LoadBalancerIds'] = $loadBalancerIds;
 
-	private  $minSize;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $healthCheckType
+     *
+     * @return $this
+     */
+    public function setHealthCheckType($healthCheckType)
+    {
+        $this->requestParameters['HealthCheckType'] = $healthCheckType;
+        $this->queryParameters['HealthCheckType'] = $healthCheckType;
 
-	private  $launchTemplateVersion;
+        return $this;
+    }
 
-	private  $scalingPolicy;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $vSwitchId;
+        return $this;
+    }
 
-	private  $maxSize;
+    /**
+     * @param string $scalingGroupName
+     *
+     * @return $this
+     */
+    public function setScalingGroupName($scalingGroupName)
+    {
+        $this->requestParameters['ScalingGroupName'] = $scalingGroupName;
+        $this->queryParameters['ScalingGroupName'] = $scalingGroupName;
 
-	private  $LifecycleHooks;
+        return $this;
+    }
 
-	private  $defaultCooldown;
+    /**
+     * @param array $vSwitchIds
+     *
+     * @return $this
+     */
+    public function setVSwitchIds(array $vSwitchIds)
+    {
+        $this->requestParameters['VSwitchIds'] = $vSwitchIds;
+        foreach ($vSwitchIds as $i => $iValue) {
+            $this->queryParameters['VSwitchIds.' . ($i + 1)] = $iValue;
+        }
 
-	private  $removalPolicy1;
+        return $this;
+    }
 
-	private  $VServerGroups;
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	private  $removalPolicy2;
+        return $this;
+    }
 
-	public function getMultiAZPolicy() {
-		return $this->multiAZPolicy;
-	}
+    /**
+     * @param string $minSize
+     *
+     * @return $this
+     */
+    public function setMinSize($minSize)
+    {
+        $this->requestParameters['MinSize'] = $minSize;
+        $this->queryParameters['MinSize'] = $minSize;
 
-	public function setMultiAZPolicy($multiAZPolicy) {
-		$this->multiAZPolicy = $multiAZPolicy;
-		$this->queryParameters["MultiAZPolicy"]=$multiAZPolicy;
-	}
+        return $this;
+    }
 
-	public function getDBInstanceIds() {
-		return $this->dBInstanceIds;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setDBInstanceIds($dBInstanceIds) {
-		$this->dBInstanceIds = $dBInstanceIds;
-		$this->queryParameters["DBInstanceIds"]=$dBInstanceIds;
-	}
+        return $this;
+    }
 
-	public function getLaunchTemplateId() {
-		return $this->launchTemplateId;
-	}
+    /**
+     * @param string $launchTemplateVersion
+     *
+     * @return $this
+     */
+    public function setLaunchTemplateVersion($launchTemplateVersion)
+    {
+        $this->requestParameters['LaunchTemplateVersion'] = $launchTemplateVersion;
+        $this->queryParameters['LaunchTemplateVersion'] = $launchTemplateVersion;
 
-	public function setLaunchTemplateId($launchTemplateId) {
-		$this->launchTemplateId = $launchTemplateId;
-		$this->queryParameters["LaunchTemplateId"]=$launchTemplateId;
-	}
+        return $this;
+    }
 
-	public function getLoadBalancerIds() {
-		return $this->loadBalancerIds;
-	}
+    /**
+     * @param string $scalingPolicy
+     *
+     * @return $this
+     */
+    public function setScalingPolicy($scalingPolicy)
+    {
+        $this->requestParameters['ScalingPolicy'] = $scalingPolicy;
+        $this->queryParameters['ScalingPolicy'] = $scalingPolicy;
 
-	public function setLoadBalancerIds($loadBalancerIds) {
-		$this->loadBalancerIds = $loadBalancerIds;
-		$this->queryParameters["LoadBalancerIds"]=$loadBalancerIds;
-	}
+        return $this;
+    }
 
-	public function getHealthCheckType() {
-		return $this->healthCheckType;
-	}
+    /**
+     * @param string $vSwitchId
+     *
+     * @return $this
+     */
+    public function setVSwitchId($vSwitchId)
+    {
+        $this->requestParameters['VSwitchId'] = $vSwitchId;
+        $this->queryParameters['VSwitchId'] = $vSwitchId;
 
-	public function setHealthCheckType($healthCheckType) {
-		$this->healthCheckType = $healthCheckType;
-		$this->queryParameters["HealthCheckType"]=$healthCheckType;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param string $maxSize
+     *
+     * @return $this
+     */
+    public function setMaxSize($maxSize)
+    {
+        $this->requestParameters['MaxSize'] = $maxSize;
+        $this->queryParameters['MaxSize'] = $maxSize;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function getScalingGroupName() {
-		return $this->scalingGroupName;
-	}
+    /**
+     * @param array $lifecycleHooks
+     *
+     * @return $this
+     */
+    public function setLifecycleHooks(array $lifecycleHooks)
+    {
+        $this->requestParameters['LifecycleHooks'] = $lifecycleHooks;
+        foreach ($lifecycleHooks as $i => $iValue) {
+            $this->queryParameters['LifecycleHook.' . ($i + 1) . '.DefaultResult'] = $lifecycleHooks[$i]['DefaultResult'];
+            $this->queryParameters['LifecycleHook.' . ($i + 1) . '.LifecycleHookName'] = $lifecycleHooks[$i]['LifecycleHookName'];
+            $this->queryParameters['LifecycleHook.' . ($i + 1) . '.HeartbeatTimeout'] = $lifecycleHooks[$i]['HeartbeatTimeout'];
+            $this->queryParameters['LifecycleHook.' . ($i + 1) . '.NotificationArn'] = $lifecycleHooks[$i]['NotificationArn'];
+            $this->queryParameters['LifecycleHook.' . ($i + 1) . '.NotificationMetadata'] = $lifecycleHooks[$i]['NotificationMetadata'];
+            $this->queryParameters['LifecycleHook.' . ($i + 1) . '.LifecycleTransition'] = $lifecycleHooks[$i]['LifecycleTransition'];
+        }
 
-	public function setScalingGroupName($scalingGroupName) {
-		$this->scalingGroupName = $scalingGroupName;
-		$this->queryParameters["ScalingGroupName"]=$scalingGroupName;
-	}
+        return $this;
+    }
 
-	public function getVSwitchIds() {
-		return $this->VSwitchIds;
-	}
+    /**
+     * @param string $defaultCooldown
+     *
+     * @return $this
+     */
+    public function setDefaultCooldown($defaultCooldown)
+    {
+        $this->requestParameters['DefaultCooldown'] = $defaultCooldown;
+        $this->queryParameters['DefaultCooldown'] = $defaultCooldown;
 
-	public function setVSwitchIds($VSwitchIds) {
-		$this->VSwitchIds = $VSwitchIds;
-		for ($i = 0; $i < count($VSwitchIds); $i ++) {
-			$this->queryParameters["VSwitchIds.".($i+1)] = $VSwitchIds[$i];
-		}
-	}
+        return $this;
+    }
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+    /**
+     * @param string $removalPolicy1
+     *
+     * @return $this
+     */
+    public function setRemovalPolicy1($removalPolicy1)
+    {
+        $this->requestParameters['RemovalPolicy1'] = $removalPolicy1;
+        $this->queryParameters['RemovalPolicy.1'] = $removalPolicy1;
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
+        return $this;
+    }
 
-	public function getMinSize() {
-		return $this->minSize;
-	}
+    /**
+     * @param array $vServerGroups
+     *
+     * @return $this
+     */
+    public function setVServerGroups(array $vServerGroups)
+    {
+        $this->requestParameters['VServerGroups'] = $vServerGroups;
+        foreach ($vServerGroups as $i => $iValue) {
+            $this->queryParameters['VServerGroup.' . ($i + 1) . '.LoadBalancerId'] = $vServerGroups[$i]['LoadBalancerId'];
+            foreach ($vServerGroups[$i]['VServerGroupAttributes'] as $j => $jValue) {
+                $this->queryParameters['VServerGroup.' . ($i + 1) . '.VServerGroupAttribute.' . ($j + 1)] = $jValue;
+            }
+        }
 
-	public function setMinSize($minSize) {
-		$this->minSize = $minSize;
-		$this->queryParameters["MinSize"]=$minSize;
-	}
+        return $this;
+    }
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+    /**
+     * @param string $removalPolicy2
+     *
+     * @return $this
+     */
+    public function setRemovalPolicy2($removalPolicy2)
+    {
+        $this->requestParameters['RemovalPolicy2'] = $removalPolicy2;
+        $this->queryParameters['RemovalPolicy.2'] = $removalPolicy2;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getLaunchTemplateVersion() {
-		return $this->launchTemplateVersion;
-	}
-
-	public function setLaunchTemplateVersion($launchTemplateVersion) {
-		$this->launchTemplateVersion = $launchTemplateVersion;
-		$this->queryParameters["LaunchTemplateVersion"]=$launchTemplateVersion;
-	}
-
-	public function getScalingPolicy() {
-		return $this->scalingPolicy;
-	}
-
-	public function setScalingPolicy($scalingPolicy) {
-		$this->scalingPolicy = $scalingPolicy;
-		$this->queryParameters["ScalingPolicy"]=$scalingPolicy;
-	}
-
-	public function getVSwitchId() {
-		return $this->vSwitchId;
-	}
-
-	public function setVSwitchId($vSwitchId) {
-		$this->vSwitchId = $vSwitchId;
-		$this->queryParameters["VSwitchId"]=$vSwitchId;
-	}
-
-	public function getMaxSize() {
-		return $this->maxSize;
-	}
-
-	public function setMaxSize($maxSize) {
-		$this->maxSize = $maxSize;
-		$this->queryParameters["MaxSize"]=$maxSize;
-	}
-
-	public function getLifecycleHooks() {
-		return $this->LifecycleHooks;
-	}
-
-	public function setLifecycleHooks($LifecycleHooks) {
-		$this->LifecycleHooks = $LifecycleHooks;
-		for ($i = 0; $i < count($LifecycleHooks); $i ++) {	
-			$this->queryParameters['LifecycleHook.' . ($i + 1) . '.DefaultResult'] = $LifecycleHooks[$i]['DefaultResult'];
-			$this->queryParameters['LifecycleHook.' . ($i + 1) . '.LifecycleHookName'] = $LifecycleHooks[$i]['LifecycleHookName'];
-			$this->queryParameters['LifecycleHook.' . ($i + 1) . '.HeartbeatTimeout'] = $LifecycleHooks[$i]['HeartbeatTimeout'];
-			$this->queryParameters['LifecycleHook.' . ($i + 1) . '.NotificationArn'] = $LifecycleHooks[$i]['NotificationArn'];
-			$this->queryParameters['LifecycleHook.' . ($i + 1) . '.NotificationMetadata'] = $LifecycleHooks[$i]['NotificationMetadata'];
-			$this->queryParameters['LifecycleHook.' . ($i + 1) . '.LifecycleTransition'] = $LifecycleHooks[$i]['LifecycleTransition'];
-
-		}
-	}
-
-	public function getDefaultCooldown() {
-		return $this->defaultCooldown;
-	}
-
-	public function setDefaultCooldown($defaultCooldown) {
-		$this->defaultCooldown = $defaultCooldown;
-		$this->queryParameters["DefaultCooldown"]=$defaultCooldown;
-	}
-
-	public function getRemovalPolicy1() {
-		return $this->removalPolicy1;
-	}
-
-	public function setRemovalPolicy1($removalPolicy1) {
-		$this->removalPolicy1 = $removalPolicy1;
-		$this->queryParameters["RemovalPolicy.1"]=$removalPolicy1;
-	}
-
-	public function getVServerGroups() {
-		return $this->VServerGroups;
-	}
-
-	public function setVServerGroups($VServerGroups) {
-		$this->VServerGroups = $VServerGroups;
-		for ($i = 0; $i < count($VServerGroups); $i ++) {	
-			$this->queryParameters['VServerGroup.' . ($i + 1) . '.LoadBalancerId'] = $VServerGroups[$i]['LoadBalancerId'];
-			for ($j = 0; $j < count($VServerGroups[$i]['VServerGroupAttributes']); $j ++) {
-				$this->queryParameters['VServerGroup.' . ($i + 1) . '.VServerGroupAttribute.' . ($j + 1)] = $VServerGroups[$i]['VServerGroupAttributes'][$j];
-			}
-
-		}
-	}
-
-	public function getRemovalPolicy2() {
-		return $this->removalPolicy2;
-	}
-
-	public function setRemovalPolicy2($removalPolicy2) {
-		$this->removalPolicy2 = $removalPolicy2;
-		$this->queryParameters["RemovalPolicy.2"]=$removalPolicy2;
-	}
-	
+        return $this;
+    }
 }

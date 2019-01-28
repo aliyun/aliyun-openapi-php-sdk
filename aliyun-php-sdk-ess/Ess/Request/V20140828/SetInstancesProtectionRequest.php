@@ -1,87 +1,101 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ess\Request\V20140828;
 
+/**
+ * Request of SetInstancesProtection
+ *
+ * @method array getInstanceIds()
+ * @method string getResourceOwnerAccount()
+ * @method string getScalingGroupId()
+ * @method string getOwnerId()
+ * @method string getProtectedFromScaleIn()
+ */
 class SetInstancesProtectionRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ess", "2014-08-28", "SetInstancesProtection", "ess", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $InstanceIds;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $resourceOwnerAccount;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ess',
+            '2014-08-28',
+            'SetInstancesProtection',
+            'ess'
+        );
+    }
 
-	private  $scalingGroupId;
+    /**
+     * @param array $instanceIds
+     *
+     * @return $this
+     */
+    public function setInstanceIds(array $instanceIds)
+    {
+        $this->requestParameters['InstanceIds'] = $instanceIds;
+        foreach ($instanceIds as $i => $iValue) {
+            $this->queryParameters['InstanceId.' . ($i + 1)] = $iValue;
+        }
 
-	private  $ownerId;
+        return $this;
+    }
 
-	private  $protectedFromScaleIn;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	public function getInstanceIds() {
-		return $this->InstanceIds;
-	}
+        return $this;
+    }
 
-	public function setInstanceIds($InstanceIds) {
-		$this->InstanceIds = $InstanceIds;
-		for ($i = 0; $i < count($InstanceIds); $i ++) {	
-			$this->queryParameters["InstanceId.".($i+1)] = $InstanceIds[$i];
-		}
-	}
+    /**
+     * @param string $scalingGroupId
+     *
+     * @return $this
+     */
+    public function setScalingGroupId($scalingGroupId)
+    {
+        $this->requestParameters['ScalingGroupId'] = $scalingGroupId;
+        $this->queryParameters['ScalingGroupId'] = $scalingGroupId;
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function getScalingGroupId() {
-		return $this->scalingGroupId;
-	}
+        return $this;
+    }
 
-	public function setScalingGroupId($scalingGroupId) {
-		$this->scalingGroupId = $scalingGroupId;
-		$this->queryParameters["ScalingGroupId"]=$scalingGroupId;
-	}
+    /**
+     * @param string $protectedFromScaleIn
+     *
+     * @return $this
+     */
+    public function setProtectedFromScaleIn($protectedFromScaleIn)
+    {
+        $this->requestParameters['ProtectedFromScaleIn'] = $protectedFromScaleIn;
+        $this->queryParameters['ProtectedFromScaleIn'] = $protectedFromScaleIn;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getProtectedFromScaleIn() {
-		return $this->protectedFromScaleIn;
-	}
-
-	public function setProtectedFromScaleIn($protectedFromScaleIn) {
-		$this->protectedFromScaleIn = $protectedFromScaleIn;
-		$this->queryParameters["ProtectedFromScaleIn"]=$protectedFromScaleIn;
-	}
-	
+        return $this;
+    }
 }

@@ -1,120 +1,143 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ess\Request\V20140828;
 
+/**
+ * Request of DescribeLifecycleHooks
+ *
+ * @method string getLifecycleHookName()
+ * @method string getResourceOwnerAccount()
+ * @method string getScalingGroupId()
+ * @method array getLifecycleHookIds()
+ * @method string getOwnerAccount()
+ * @method string getPageSize()
+ * @method string getOwnerId()
+ * @method string getPageNumber()
+ */
 class DescribeLifecycleHooksRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ess", "2014-08-28", "DescribeLifecycleHooks", "ess", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $lifecycleHookName;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $resourceOwnerAccount;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ess',
+            '2014-08-28',
+            'DescribeLifecycleHooks',
+            'ess'
+        );
+    }
 
-	private  $scalingGroupId;
+    /**
+     * @param string $lifecycleHookName
+     *
+     * @return $this
+     */
+    public function setLifecycleHookName($lifecycleHookName)
+    {
+        $this->requestParameters['LifecycleHookName'] = $lifecycleHookName;
+        $this->queryParameters['LifecycleHookName'] = $lifecycleHookName;
 
-	private  $LifecycleHookIds;
+        return $this;
+    }
 
-	private  $ownerAccount;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $pageSize;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $scalingGroupId
+     *
+     * @return $this
+     */
+    public function setScalingGroupId($scalingGroupId)
+    {
+        $this->requestParameters['ScalingGroupId'] = $scalingGroupId;
+        $this->queryParameters['ScalingGroupId'] = $scalingGroupId;
 
-	private  $pageNumber;
+        return $this;
+    }
 
-	public function getLifecycleHookName() {
-		return $this->lifecycleHookName;
-	}
+    /**
+     * @param array $lifecycleHookIds
+     *
+     * @return $this
+     */
+    public function setLifecycleHookIds(array $lifecycleHookIds)
+    {
+        $this->requestParameters['LifecycleHookIds'] = $lifecycleHookIds;
+        foreach ($lifecycleHookIds as $i => $iValue) {
+            $this->queryParameters['LifecycleHookId.' . ($i + 1)] = $iValue;
+        }
 
-	public function setLifecycleHookName($lifecycleHookName) {
-		$this->lifecycleHookName = $lifecycleHookName;
-		$this->queryParameters["LifecycleHookName"]=$lifecycleHookName;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function getScalingGroupId() {
-		return $this->scalingGroupId;
-	}
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	public function setScalingGroupId($scalingGroupId) {
-		$this->scalingGroupId = $scalingGroupId;
-		$this->queryParameters["ScalingGroupId"]=$scalingGroupId;
-	}
+        return $this;
+    }
 
-	public function getLifecycleHookIds() {
-		return $this->LifecycleHookIds;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setLifecycleHookIds($LifecycleHookIds) {
-		$this->LifecycleHookIds = $LifecycleHookIds;
-		for ($i = 0; $i < count($LifecycleHookIds); $i ++) {	
-			$this->queryParameters["LifecycleHookId.".($i+1)] = $LifecycleHookIds[$i];
-		}
-	}
+        return $this;
+    }
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-	
+        return $this;
+    }
 }

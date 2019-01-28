@@ -3,14 +3,12 @@
 namespace Ess\Request\V20140828;
 
 /**
- * Request of EnterStandby
+ * Request of DescribeAccountAttributes
  *
- * @method array getInstanceIds()
  * @method string getResourceOwnerAccount()
- * @method string getScalingGroupId()
  * @method string getOwnerId()
  */
-class EnterStandbyRequest extends \RpcAcsRequest
+class DescribeAccountAttributesRequest extends \RpcAcsRequest
 {
 
     /**
@@ -26,24 +24,9 @@ class EnterStandbyRequest extends \RpcAcsRequest
         parent::__construct(
             'Ess',
             '2014-08-28',
-            'EnterStandby',
+            'DescribeAccountAttributes',
             'ess'
         );
-    }
-
-    /**
-     * @param array $instanceIds
-     *
-     * @return $this
-     */
-    public function setInstanceIds(array $instanceIds)
-    {
-        $this->requestParameters['InstanceIds'] = $instanceIds;
-        foreach ($instanceIds as $i => $iValue) {
-            $this->queryParameters['InstanceId.' . ($i + 1)] = $iValue;
-        }
-
-        return $this;
     }
 
     /**
@@ -55,19 +38,6 @@ class EnterStandbyRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $scalingGroupId
-     *
-     * @return $this
-     */
-    public function setScalingGroupId($scalingGroupId)
-    {
-        $this->requestParameters['ScalingGroupId'] = $scalingGroupId;
-        $this->queryParameters['ScalingGroupId'] = $scalingGroupId;
 
         return $this;
     }

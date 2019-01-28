@@ -1,437 +1,561 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ess\Request\V20140828;
 
+/**
+ * Request of DescribeScalingRules
+ *
+ * @method string getScalingRuleName1()
+ * @method string getResourceOwnerId()
+ * @method string getScalingRuleName2()
+ * @method string getScalingRuleName3()
+ * @method string getScalingRuleName4()
+ * @method string getScalingRuleName5()
+ * @method string getScalingGroupId()
+ * @method string getScalingRuleName6()
+ * @method string getScalingRuleName7()
+ * @method string getScalingRuleName8()
+ * @method string getScalingRuleAri9()
+ * @method string getScalingRuleName9()
+ * @method string getPageNumber()
+ * @method string getPageSize()
+ * @method string getScalingRuleType()
+ * @method string getScalingRuleId10()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getOwnerId()
+ * @method string getScalingRuleAri1()
+ * @method string getScalingRuleAri2()
+ * @method string getScalingRuleName10()
+ * @method string getScalingRuleAri3()
+ * @method string getScalingRuleAri4()
+ * @method string getScalingRuleId8()
+ * @method string getScalingRuleAri5()
+ * @method string getScalingRuleId9()
+ * @method string getScalingRuleAri6()
+ * @method string getScalingRuleAri7()
+ * @method string getScalingRuleAri10()
+ * @method string getScalingRuleAri8()
+ * @method string getScalingRuleId4()
+ * @method string getScalingRuleId5()
+ * @method string getScalingRuleId6()
+ * @method string getScalingRuleId7()
+ * @method string getScalingRuleId1()
+ * @method string getScalingRuleId2()
+ * @method string getScalingRuleId3()
+ */
 class DescribeScalingRulesRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ess", "2014-08-28", "DescribeScalingRules", "ess", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $scalingRuleName1;
-
-	private  $resourceOwnerId;
-
-	private  $scalingRuleName2;
-
-	private  $scalingRuleName3;
-
-	private  $scalingRuleName4;
-
-	private  $scalingRuleName5;
-
-	private  $scalingGroupId;
-
-	private  $scalingRuleName6;
-
-	private  $scalingRuleName7;
-
-	private  $scalingRuleName8;
-
-	private  $scalingRuleAri9;
-
-	private  $scalingRuleName9;
-
-	private  $pageNumber;
-
-	private  $pageSize;
-
-	private  $scalingRuleId10;
-
-	private  $resourceOwnerAccount;
-
-	private  $ownerAccount;
-
-	private  $ownerId;
-
-	private  $scalingRuleAri1;
-
-	private  $scalingRuleAri2;
-
-	private  $scalingRuleName10;
-
-	private  $scalingRuleAri3;
-
-	private  $scalingRuleAri4;
-
-	private  $scalingRuleId8;
-
-	private  $scalingRuleAri5;
-
-	private  $scalingRuleId9;
-
-	private  $scalingRuleAri6;
-
-	private  $scalingRuleAri7;
-
-	private  $scalingRuleAri10;
-
-	private  $scalingRuleAri8;
-
-	private  $scalingRuleId4;
-
-	private  $scalingRuleId5;
-
-	private  $scalingRuleId6;
-
-	private  $scalingRuleId7;
-
-	private  $scalingRuleId1;
-
-	private  $scalingRuleId2;
-
-	private  $scalingRuleId3;
-
-	public function getScalingRuleName1() {
-		return $this->scalingRuleName1;
-	}
-
-	public function setScalingRuleName1($scalingRuleName1) {
-		$this->scalingRuleName1 = $scalingRuleName1;
-		$this->queryParameters["ScalingRuleName.1"]=$scalingRuleName1;
-	}
-
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
-
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
-
-	public function getScalingRuleName2() {
-		return $this->scalingRuleName2;
-	}
-
-	public function setScalingRuleName2($scalingRuleName2) {
-		$this->scalingRuleName2 = $scalingRuleName2;
-		$this->queryParameters["ScalingRuleName.2"]=$scalingRuleName2;
-	}
-
-	public function getScalingRuleName3() {
-		return $this->scalingRuleName3;
-	}
-
-	public function setScalingRuleName3($scalingRuleName3) {
-		$this->scalingRuleName3 = $scalingRuleName3;
-		$this->queryParameters["ScalingRuleName.3"]=$scalingRuleName3;
-	}
-
-	public function getScalingRuleName4() {
-		return $this->scalingRuleName4;
-	}
-
-	public function setScalingRuleName4($scalingRuleName4) {
-		$this->scalingRuleName4 = $scalingRuleName4;
-		$this->queryParameters["ScalingRuleName.4"]=$scalingRuleName4;
-	}
-
-	public function getScalingRuleName5() {
-		return $this->scalingRuleName5;
-	}
-
-	public function setScalingRuleName5($scalingRuleName5) {
-		$this->scalingRuleName5 = $scalingRuleName5;
-		$this->queryParameters["ScalingRuleName.5"]=$scalingRuleName5;
-	}
-
-	public function getScalingGroupId() {
-		return $this->scalingGroupId;
-	}
-
-	public function setScalingGroupId($scalingGroupId) {
-		$this->scalingGroupId = $scalingGroupId;
-		$this->queryParameters["ScalingGroupId"]=$scalingGroupId;
-	}
-
-	public function getScalingRuleName6() {
-		return $this->scalingRuleName6;
-	}
-
-	public function setScalingRuleName6($scalingRuleName6) {
-		$this->scalingRuleName6 = $scalingRuleName6;
-		$this->queryParameters["ScalingRuleName.6"]=$scalingRuleName6;
-	}
-
-	public function getScalingRuleName7() {
-		return $this->scalingRuleName7;
-	}
-
-	public function setScalingRuleName7($scalingRuleName7) {
-		$this->scalingRuleName7 = $scalingRuleName7;
-		$this->queryParameters["ScalingRuleName.7"]=$scalingRuleName7;
-	}
-
-	public function getScalingRuleName8() {
-		return $this->scalingRuleName8;
-	}
-
-	public function setScalingRuleName8($scalingRuleName8) {
-		$this->scalingRuleName8 = $scalingRuleName8;
-		$this->queryParameters["ScalingRuleName.8"]=$scalingRuleName8;
-	}
-
-	public function getScalingRuleAri9() {
-		return $this->scalingRuleAri9;
-	}
-
-	public function setScalingRuleAri9($scalingRuleAri9) {
-		$this->scalingRuleAri9 = $scalingRuleAri9;
-		$this->queryParameters["ScalingRuleAri.9"]=$scalingRuleAri9;
-	}
-
-	public function getScalingRuleName9() {
-		return $this->scalingRuleName9;
-	}
-
-	public function setScalingRuleName9($scalingRuleName9) {
-		$this->scalingRuleName9 = $scalingRuleName9;
-		$this->queryParameters["ScalingRuleName.9"]=$scalingRuleName9;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getScalingRuleId10() {
-		return $this->scalingRuleId10;
-	}
-
-	public function setScalingRuleId10($scalingRuleId10) {
-		$this->scalingRuleId10 = $scalingRuleId10;
-		$this->queryParameters["ScalingRuleId.10"]=$scalingRuleId10;
-	}
-
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
-
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getScalingRuleAri1() {
-		return $this->scalingRuleAri1;
-	}
-
-	public function setScalingRuleAri1($scalingRuleAri1) {
-		$this->scalingRuleAri1 = $scalingRuleAri1;
-		$this->queryParameters["ScalingRuleAri.1"]=$scalingRuleAri1;
-	}
-
-	public function getScalingRuleAri2() {
-		return $this->scalingRuleAri2;
-	}
-
-	public function setScalingRuleAri2($scalingRuleAri2) {
-		$this->scalingRuleAri2 = $scalingRuleAri2;
-		$this->queryParameters["ScalingRuleAri.2"]=$scalingRuleAri2;
-	}
-
-	public function getScalingRuleName10() {
-		return $this->scalingRuleName10;
-	}
-
-	public function setScalingRuleName10($scalingRuleName10) {
-		$this->scalingRuleName10 = $scalingRuleName10;
-		$this->queryParameters["ScalingRuleName.10"]=$scalingRuleName10;
-	}
-
-	public function getScalingRuleAri3() {
-		return $this->scalingRuleAri3;
-	}
-
-	public function setScalingRuleAri3($scalingRuleAri3) {
-		$this->scalingRuleAri3 = $scalingRuleAri3;
-		$this->queryParameters["ScalingRuleAri.3"]=$scalingRuleAri3;
-	}
-
-	public function getScalingRuleAri4() {
-		return $this->scalingRuleAri4;
-	}
-
-	public function setScalingRuleAri4($scalingRuleAri4) {
-		$this->scalingRuleAri4 = $scalingRuleAri4;
-		$this->queryParameters["ScalingRuleAri.4"]=$scalingRuleAri4;
-	}
-
-	public function getScalingRuleId8() {
-		return $this->scalingRuleId8;
-	}
-
-	public function setScalingRuleId8($scalingRuleId8) {
-		$this->scalingRuleId8 = $scalingRuleId8;
-		$this->queryParameters["ScalingRuleId.8"]=$scalingRuleId8;
-	}
-
-	public function getScalingRuleAri5() {
-		return $this->scalingRuleAri5;
-	}
-
-	public function setScalingRuleAri5($scalingRuleAri5) {
-		$this->scalingRuleAri5 = $scalingRuleAri5;
-		$this->queryParameters["ScalingRuleAri.5"]=$scalingRuleAri5;
-	}
-
-	public function getScalingRuleId9() {
-		return $this->scalingRuleId9;
-	}
-
-	public function setScalingRuleId9($scalingRuleId9) {
-		$this->scalingRuleId9 = $scalingRuleId9;
-		$this->queryParameters["ScalingRuleId.9"]=$scalingRuleId9;
-	}
-
-	public function getScalingRuleAri6() {
-		return $this->scalingRuleAri6;
-	}
-
-	public function setScalingRuleAri6($scalingRuleAri6) {
-		$this->scalingRuleAri6 = $scalingRuleAri6;
-		$this->queryParameters["ScalingRuleAri.6"]=$scalingRuleAri6;
-	}
-
-	public function getScalingRuleAri7() {
-		return $this->scalingRuleAri7;
-	}
-
-	public function setScalingRuleAri7($scalingRuleAri7) {
-		$this->scalingRuleAri7 = $scalingRuleAri7;
-		$this->queryParameters["ScalingRuleAri.7"]=$scalingRuleAri7;
-	}
-
-	public function getScalingRuleAri10() {
-		return $this->scalingRuleAri10;
-	}
-
-	public function setScalingRuleAri10($scalingRuleAri10) {
-		$this->scalingRuleAri10 = $scalingRuleAri10;
-		$this->queryParameters["ScalingRuleAri.10"]=$scalingRuleAri10;
-	}
-
-	public function getScalingRuleAri8() {
-		return $this->scalingRuleAri8;
-	}
-
-	public function setScalingRuleAri8($scalingRuleAri8) {
-		$this->scalingRuleAri8 = $scalingRuleAri8;
-		$this->queryParameters["ScalingRuleAri.8"]=$scalingRuleAri8;
-	}
-
-	public function getScalingRuleId4() {
-		return $this->scalingRuleId4;
-	}
-
-	public function setScalingRuleId4($scalingRuleId4) {
-		$this->scalingRuleId4 = $scalingRuleId4;
-		$this->queryParameters["ScalingRuleId.4"]=$scalingRuleId4;
-	}
-
-	public function getScalingRuleId5() {
-		return $this->scalingRuleId5;
-	}
-
-	public function setScalingRuleId5($scalingRuleId5) {
-		$this->scalingRuleId5 = $scalingRuleId5;
-		$this->queryParameters["ScalingRuleId.5"]=$scalingRuleId5;
-	}
-
-	public function getScalingRuleId6() {
-		return $this->scalingRuleId6;
-	}
-
-	public function setScalingRuleId6($scalingRuleId6) {
-		$this->scalingRuleId6 = $scalingRuleId6;
-		$this->queryParameters["ScalingRuleId.6"]=$scalingRuleId6;
-	}
-
-	public function getScalingRuleId7() {
-		return $this->scalingRuleId7;
-	}
-
-	public function setScalingRuleId7($scalingRuleId7) {
-		$this->scalingRuleId7 = $scalingRuleId7;
-		$this->queryParameters["ScalingRuleId.7"]=$scalingRuleId7;
-	}
-
-	public function getScalingRuleId1() {
-		return $this->scalingRuleId1;
-	}
-
-	public function setScalingRuleId1($scalingRuleId1) {
-		$this->scalingRuleId1 = $scalingRuleId1;
-		$this->queryParameters["ScalingRuleId.1"]=$scalingRuleId1;
-	}
-
-	public function getScalingRuleId2() {
-		return $this->scalingRuleId2;
-	}
-
-	public function setScalingRuleId2($scalingRuleId2) {
-		$this->scalingRuleId2 = $scalingRuleId2;
-		$this->queryParameters["ScalingRuleId.2"]=$scalingRuleId2;
-	}
-
-	public function getScalingRuleId3() {
-		return $this->scalingRuleId3;
-	}
-
-	public function setScalingRuleId3($scalingRuleId3) {
-		$this->scalingRuleId3 = $scalingRuleId3;
-		$this->queryParameters["ScalingRuleId.3"]=$scalingRuleId3;
-	}
-	
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
+
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ess',
+            '2014-08-28',
+            'DescribeScalingRules',
+            'ess'
+        );
+    }
+
+    /**
+     * @param string $scalingRuleName1
+     *
+     * @return $this
+     */
+    public function setScalingRuleName1($scalingRuleName1)
+    {
+        $this->requestParameters['ScalingRuleName1'] = $scalingRuleName1;
+        $this->queryParameters['ScalingRuleName.1'] = $scalingRuleName1;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $scalingRuleName2
+     *
+     * @return $this
+     */
+    public function setScalingRuleName2($scalingRuleName2)
+    {
+        $this->requestParameters['ScalingRuleName2'] = $scalingRuleName2;
+        $this->queryParameters['ScalingRuleName.2'] = $scalingRuleName2;
+
+        return $this;
+    }
+
+    /**
+     * @param string $scalingRuleName3
+     *
+     * @return $this
+     */
+    public function setScalingRuleName3($scalingRuleName3)
+    {
+        $this->requestParameters['ScalingRuleName3'] = $scalingRuleName3;
+        $this->queryParameters['ScalingRuleName.3'] = $scalingRuleName3;
+
+        return $this;
+    }
+
+    /**
+     * @param string $scalingRuleName4
+     *
+     * @return $this
+     */
+    public function setScalingRuleName4($scalingRuleName4)
+    {
+        $this->requestParameters['ScalingRuleName4'] = $scalingRuleName4;
+        $this->queryParameters['ScalingRuleName.4'] = $scalingRuleName4;
+
+        return $this;
+    }
+
+    /**
+     * @param string $scalingRuleName5
+     *
+     * @return $this
+     */
+    public function setScalingRuleName5($scalingRuleName5)
+    {
+        $this->requestParameters['ScalingRuleName5'] = $scalingRuleName5;
+        $this->queryParameters['ScalingRuleName.5'] = $scalingRuleName5;
+
+        return $this;
+    }
+
+    /**
+     * @param string $scalingGroupId
+     *
+     * @return $this
+     */
+    public function setScalingGroupId($scalingGroupId)
+    {
+        $this->requestParameters['ScalingGroupId'] = $scalingGroupId;
+        $this->queryParameters['ScalingGroupId'] = $scalingGroupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $scalingRuleName6
+     *
+     * @return $this
+     */
+    public function setScalingRuleName6($scalingRuleName6)
+    {
+        $this->requestParameters['ScalingRuleName6'] = $scalingRuleName6;
+        $this->queryParameters['ScalingRuleName.6'] = $scalingRuleName6;
+
+        return $this;
+    }
+
+    /**
+     * @param string $scalingRuleName7
+     *
+     * @return $this
+     */
+    public function setScalingRuleName7($scalingRuleName7)
+    {
+        $this->requestParameters['ScalingRuleName7'] = $scalingRuleName7;
+        $this->queryParameters['ScalingRuleName.7'] = $scalingRuleName7;
+
+        return $this;
+    }
+
+    /**
+     * @param string $scalingRuleName8
+     *
+     * @return $this
+     */
+    public function setScalingRuleName8($scalingRuleName8)
+    {
+        $this->requestParameters['ScalingRuleName8'] = $scalingRuleName8;
+        $this->queryParameters['ScalingRuleName.8'] = $scalingRuleName8;
+
+        return $this;
+    }
+
+    /**
+     * @param string $scalingRuleAri9
+     *
+     * @return $this
+     */
+    public function setScalingRuleAri9($scalingRuleAri9)
+    {
+        $this->requestParameters['ScalingRuleAri9'] = $scalingRuleAri9;
+        $this->queryParameters['ScalingRuleAri.9'] = $scalingRuleAri9;
+
+        return $this;
+    }
+
+    /**
+     * @param string $scalingRuleName9
+     *
+     * @return $this
+     */
+    public function setScalingRuleName9($scalingRuleName9)
+    {
+        $this->requestParameters['ScalingRuleName9'] = $scalingRuleName9;
+        $this->queryParameters['ScalingRuleName.9'] = $scalingRuleName9;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $scalingRuleType
+     *
+     * @return $this
+     */
+    public function setScalingRuleType($scalingRuleType)
+    {
+        $this->requestParameters['ScalingRuleType'] = $scalingRuleType;
+        $this->queryParameters['ScalingRuleType'] = $scalingRuleType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $scalingRuleId10
+     *
+     * @return $this
+     */
+    public function setScalingRuleId10($scalingRuleId10)
+    {
+        $this->requestParameters['ScalingRuleId10'] = $scalingRuleId10;
+        $this->queryParameters['ScalingRuleId.10'] = $scalingRuleId10;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $scalingRuleAri1
+     *
+     * @return $this
+     */
+    public function setScalingRuleAri1($scalingRuleAri1)
+    {
+        $this->requestParameters['ScalingRuleAri1'] = $scalingRuleAri1;
+        $this->queryParameters['ScalingRuleAri.1'] = $scalingRuleAri1;
+
+        return $this;
+    }
+
+    /**
+     * @param string $scalingRuleAri2
+     *
+     * @return $this
+     */
+    public function setScalingRuleAri2($scalingRuleAri2)
+    {
+        $this->requestParameters['ScalingRuleAri2'] = $scalingRuleAri2;
+        $this->queryParameters['ScalingRuleAri.2'] = $scalingRuleAri2;
+
+        return $this;
+    }
+
+    /**
+     * @param string $scalingRuleName10
+     *
+     * @return $this
+     */
+    public function setScalingRuleName10($scalingRuleName10)
+    {
+        $this->requestParameters['ScalingRuleName10'] = $scalingRuleName10;
+        $this->queryParameters['ScalingRuleName.10'] = $scalingRuleName10;
+
+        return $this;
+    }
+
+    /**
+     * @param string $scalingRuleAri3
+     *
+     * @return $this
+     */
+    public function setScalingRuleAri3($scalingRuleAri3)
+    {
+        $this->requestParameters['ScalingRuleAri3'] = $scalingRuleAri3;
+        $this->queryParameters['ScalingRuleAri.3'] = $scalingRuleAri3;
+
+        return $this;
+    }
+
+    /**
+     * @param string $scalingRuleAri4
+     *
+     * @return $this
+     */
+    public function setScalingRuleAri4($scalingRuleAri4)
+    {
+        $this->requestParameters['ScalingRuleAri4'] = $scalingRuleAri4;
+        $this->queryParameters['ScalingRuleAri.4'] = $scalingRuleAri4;
+
+        return $this;
+    }
+
+    /**
+     * @param string $scalingRuleId8
+     *
+     * @return $this
+     */
+    public function setScalingRuleId8($scalingRuleId8)
+    {
+        $this->requestParameters['ScalingRuleId8'] = $scalingRuleId8;
+        $this->queryParameters['ScalingRuleId.8'] = $scalingRuleId8;
+
+        return $this;
+    }
+
+    /**
+     * @param string $scalingRuleAri5
+     *
+     * @return $this
+     */
+    public function setScalingRuleAri5($scalingRuleAri5)
+    {
+        $this->requestParameters['ScalingRuleAri5'] = $scalingRuleAri5;
+        $this->queryParameters['ScalingRuleAri.5'] = $scalingRuleAri5;
+
+        return $this;
+    }
+
+    /**
+     * @param string $scalingRuleId9
+     *
+     * @return $this
+     */
+    public function setScalingRuleId9($scalingRuleId9)
+    {
+        $this->requestParameters['ScalingRuleId9'] = $scalingRuleId9;
+        $this->queryParameters['ScalingRuleId.9'] = $scalingRuleId9;
+
+        return $this;
+    }
+
+    /**
+     * @param string $scalingRuleAri6
+     *
+     * @return $this
+     */
+    public function setScalingRuleAri6($scalingRuleAri6)
+    {
+        $this->requestParameters['ScalingRuleAri6'] = $scalingRuleAri6;
+        $this->queryParameters['ScalingRuleAri.6'] = $scalingRuleAri6;
+
+        return $this;
+    }
+
+    /**
+     * @param string $scalingRuleAri7
+     *
+     * @return $this
+     */
+    public function setScalingRuleAri7($scalingRuleAri7)
+    {
+        $this->requestParameters['ScalingRuleAri7'] = $scalingRuleAri7;
+        $this->queryParameters['ScalingRuleAri.7'] = $scalingRuleAri7;
+
+        return $this;
+    }
+
+    /**
+     * @param string $scalingRuleAri10
+     *
+     * @return $this
+     */
+    public function setScalingRuleAri10($scalingRuleAri10)
+    {
+        $this->requestParameters['ScalingRuleAri10'] = $scalingRuleAri10;
+        $this->queryParameters['ScalingRuleAri.10'] = $scalingRuleAri10;
+
+        return $this;
+    }
+
+    /**
+     * @param string $scalingRuleAri8
+     *
+     * @return $this
+     */
+    public function setScalingRuleAri8($scalingRuleAri8)
+    {
+        $this->requestParameters['ScalingRuleAri8'] = $scalingRuleAri8;
+        $this->queryParameters['ScalingRuleAri.8'] = $scalingRuleAri8;
+
+        return $this;
+    }
+
+    /**
+     * @param string $scalingRuleId4
+     *
+     * @return $this
+     */
+    public function setScalingRuleId4($scalingRuleId4)
+    {
+        $this->requestParameters['ScalingRuleId4'] = $scalingRuleId4;
+        $this->queryParameters['ScalingRuleId.4'] = $scalingRuleId4;
+
+        return $this;
+    }
+
+    /**
+     * @param string $scalingRuleId5
+     *
+     * @return $this
+     */
+    public function setScalingRuleId5($scalingRuleId5)
+    {
+        $this->requestParameters['ScalingRuleId5'] = $scalingRuleId5;
+        $this->queryParameters['ScalingRuleId.5'] = $scalingRuleId5;
+
+        return $this;
+    }
+
+    /**
+     * @param string $scalingRuleId6
+     *
+     * @return $this
+     */
+    public function setScalingRuleId6($scalingRuleId6)
+    {
+        $this->requestParameters['ScalingRuleId6'] = $scalingRuleId6;
+        $this->queryParameters['ScalingRuleId.6'] = $scalingRuleId6;
+
+        return $this;
+    }
+
+    /**
+     * @param string $scalingRuleId7
+     *
+     * @return $this
+     */
+    public function setScalingRuleId7($scalingRuleId7)
+    {
+        $this->requestParameters['ScalingRuleId7'] = $scalingRuleId7;
+        $this->queryParameters['ScalingRuleId.7'] = $scalingRuleId7;
+
+        return $this;
+    }
+
+    /**
+     * @param string $scalingRuleId1
+     *
+     * @return $this
+     */
+    public function setScalingRuleId1($scalingRuleId1)
+    {
+        $this->requestParameters['ScalingRuleId1'] = $scalingRuleId1;
+        $this->queryParameters['ScalingRuleId.1'] = $scalingRuleId1;
+
+        return $this;
+    }
+
+    /**
+     * @param string $scalingRuleId2
+     *
+     * @return $this
+     */
+    public function setScalingRuleId2($scalingRuleId2)
+    {
+        $this->requestParameters['ScalingRuleId2'] = $scalingRuleId2;
+        $this->queryParameters['ScalingRuleId.2'] = $scalingRuleId2;
+
+        return $this;
+    }
+
+    /**
+     * @param string $scalingRuleId3
+     *
+     * @return $this
+     */
+    public function setScalingRuleId3($scalingRuleId3)
+    {
+        $this->requestParameters['ScalingRuleId3'] = $scalingRuleId3;
+        $this->queryParameters['ScalingRuleId.3'] = $scalingRuleId3;
+
+        return $this;
+    }
 }

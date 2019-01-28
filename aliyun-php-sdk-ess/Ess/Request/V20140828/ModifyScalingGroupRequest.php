@@ -1,195 +1,255 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ess\Request\V20140828;
 
+/**
+ * Request of ModifyScalingGroup
+ *
+ * @method string getResourceOwnerId()
+ * @method string getHealthCheckType()
+ * @method string getLaunchTemplateId()
+ * @method string getResourceOwnerAccount()
+ * @method string getScalingGroupName()
+ * @method string getScalingGroupId()
+ * @method array getVSwitchIds()
+ * @method string getOwnerAccount()
+ * @method string getActiveScalingConfigurationId()
+ * @method string getMinSize()
+ * @method string getOwnerId()
+ * @method string getLaunchTemplateVersion()
+ * @method string getMaxSize()
+ * @method string getDefaultCooldown()
+ * @method string getRemovalPolicy1()
+ * @method string getRemovalPolicy2()
+ */
 class ModifyScalingGroupRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ess", "2014-08-28", "ModifyScalingGroup", "ess", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $healthCheckType;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ess',
+            '2014-08-28',
+            'ModifyScalingGroup',
+            'ess'
+        );
+    }
 
-	private  $launchTemplateId;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $resourceOwnerAccount;
+        return $this;
+    }
 
-	private  $scalingGroupName;
+    /**
+     * @param string $healthCheckType
+     *
+     * @return $this
+     */
+    public function setHealthCheckType($healthCheckType)
+    {
+        $this->requestParameters['HealthCheckType'] = $healthCheckType;
+        $this->queryParameters['HealthCheckType'] = $healthCheckType;
 
-	private  $scalingGroupId;
+        return $this;
+    }
 
-	private  $ownerAccount;
+    /**
+     * @param string $launchTemplateId
+     *
+     * @return $this
+     */
+    public function setLaunchTemplateId($launchTemplateId)
+    {
+        $this->requestParameters['LaunchTemplateId'] = $launchTemplateId;
+        $this->queryParameters['LaunchTemplateId'] = $launchTemplateId;
 
-	private  $activeScalingConfigurationId;
+        return $this;
+    }
 
-	private  $minSize;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	private  $launchTemplateVersion;
+    /**
+     * @param string $scalingGroupName
+     *
+     * @return $this
+     */
+    public function setScalingGroupName($scalingGroupName)
+    {
+        $this->requestParameters['ScalingGroupName'] = $scalingGroupName;
+        $this->queryParameters['ScalingGroupName'] = $scalingGroupName;
 
-	private  $maxSize;
+        return $this;
+    }
 
-	private  $defaultCooldown;
+    /**
+     * @param string $scalingGroupId
+     *
+     * @return $this
+     */
+    public function setScalingGroupId($scalingGroupId)
+    {
+        $this->requestParameters['ScalingGroupId'] = $scalingGroupId;
+        $this->queryParameters['ScalingGroupId'] = $scalingGroupId;
 
-	private  $removalPolicy1;
+        return $this;
+    }
 
-	private  $removalPolicy2;
+    /**
+     * @param array $vSwitchIds
+     *
+     * @return $this
+     */
+    public function setVSwitchIds(array $vSwitchIds)
+    {
+        $this->requestParameters['VSwitchIds'] = $vSwitchIds;
+        foreach ($vSwitchIds as $i => $iValue) {
+            $this->queryParameters['VSwitchIds.' . ($i + 1)] = $iValue;
+        }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	public function getHealthCheckType() {
-		return $this->healthCheckType;
-	}
+        return $this;
+    }
 
-	public function setHealthCheckType($healthCheckType) {
-		$this->healthCheckType = $healthCheckType;
-		$this->queryParameters["HealthCheckType"]=$healthCheckType;
-	}
+    /**
+     * @param string $activeScalingConfigurationId
+     *
+     * @return $this
+     */
+    public function setActiveScalingConfigurationId($activeScalingConfigurationId)
+    {
+        $this->requestParameters['ActiveScalingConfigurationId'] = $activeScalingConfigurationId;
+        $this->queryParameters['ActiveScalingConfigurationId'] = $activeScalingConfigurationId;
 
-	public function getLaunchTemplateId() {
-		return $this->launchTemplateId;
-	}
+        return $this;
+    }
 
-	public function setLaunchTemplateId($launchTemplateId) {
-		$this->launchTemplateId = $launchTemplateId;
-		$this->queryParameters["LaunchTemplateId"]=$launchTemplateId;
-	}
+    /**
+     * @param string $minSize
+     *
+     * @return $this
+     */
+    public function setMinSize($minSize)
+    {
+        $this->requestParameters['MinSize'] = $minSize;
+        $this->queryParameters['MinSize'] = $minSize;
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function getScalingGroupName() {
-		return $this->scalingGroupName;
-	}
+        return $this;
+    }
 
-	public function setScalingGroupName($scalingGroupName) {
-		$this->scalingGroupName = $scalingGroupName;
-		$this->queryParameters["ScalingGroupName"]=$scalingGroupName;
-	}
+    /**
+     * @param string $launchTemplateVersion
+     *
+     * @return $this
+     */
+    public function setLaunchTemplateVersion($launchTemplateVersion)
+    {
+        $this->requestParameters['LaunchTemplateVersion'] = $launchTemplateVersion;
+        $this->queryParameters['LaunchTemplateVersion'] = $launchTemplateVersion;
 
-	public function getScalingGroupId() {
-		return $this->scalingGroupId;
-	}
+        return $this;
+    }
 
-	public function setScalingGroupId($scalingGroupId) {
-		$this->scalingGroupId = $scalingGroupId;
-		$this->queryParameters["ScalingGroupId"]=$scalingGroupId;
-	}
+    /**
+     * @param string $maxSize
+     *
+     * @return $this
+     */
+    public function setMaxSize($maxSize)
+    {
+        $this->requestParameters['MaxSize'] = $maxSize;
+        $this->queryParameters['MaxSize'] = $maxSize;
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+        return $this;
+    }
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
+    /**
+     * @param string $defaultCooldown
+     *
+     * @return $this
+     */
+    public function setDefaultCooldown($defaultCooldown)
+    {
+        $this->requestParameters['DefaultCooldown'] = $defaultCooldown;
+        $this->queryParameters['DefaultCooldown'] = $defaultCooldown;
 
-	public function getActiveScalingConfigurationId() {
-		return $this->activeScalingConfigurationId;
-	}
+        return $this;
+    }
 
-	public function setActiveScalingConfigurationId($activeScalingConfigurationId) {
-		$this->activeScalingConfigurationId = $activeScalingConfigurationId;
-		$this->queryParameters["ActiveScalingConfigurationId"]=$activeScalingConfigurationId;
-	}
+    /**
+     * @param string $removalPolicy1
+     *
+     * @return $this
+     */
+    public function setRemovalPolicy1($removalPolicy1)
+    {
+        $this->requestParameters['RemovalPolicy1'] = $removalPolicy1;
+        $this->queryParameters['RemovalPolicy.1'] = $removalPolicy1;
 
-	public function getMinSize() {
-		return $this->minSize;
-	}
+        return $this;
+    }
 
-	public function setMinSize($minSize) {
-		$this->minSize = $minSize;
-		$this->queryParameters["MinSize"]=$minSize;
-	}
+    /**
+     * @param string $removalPolicy2
+     *
+     * @return $this
+     */
+    public function setRemovalPolicy2($removalPolicy2)
+    {
+        $this->requestParameters['RemovalPolicy2'] = $removalPolicy2;
+        $this->queryParameters['RemovalPolicy.2'] = $removalPolicy2;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getLaunchTemplateVersion() {
-		return $this->launchTemplateVersion;
-	}
-
-	public function setLaunchTemplateVersion($launchTemplateVersion) {
-		$this->launchTemplateVersion = $launchTemplateVersion;
-		$this->queryParameters["LaunchTemplateVersion"]=$launchTemplateVersion;
-	}
-
-	public function getMaxSize() {
-		return $this->maxSize;
-	}
-
-	public function setMaxSize($maxSize) {
-		$this->maxSize = $maxSize;
-		$this->queryParameters["MaxSize"]=$maxSize;
-	}
-
-	public function getDefaultCooldown() {
-		return $this->defaultCooldown;
-	}
-
-	public function setDefaultCooldown($defaultCooldown) {
-		$this->defaultCooldown = $defaultCooldown;
-		$this->queryParameters["DefaultCooldown"]=$defaultCooldown;
-	}
-
-	public function getRemovalPolicy1() {
-		return $this->removalPolicy1;
-	}
-
-	public function setRemovalPolicy1($removalPolicy1) {
-		$this->removalPolicy1 = $removalPolicy1;
-		$this->queryParameters["RemovalPolicy.1"]=$removalPolicy1;
-	}
-
-	public function getRemovalPolicy2() {
-		return $this->removalPolicy2;
-	}
-
-	public function setRemovalPolicy2($removalPolicy2) {
-		$this->removalPolicy2 = $removalPolicy2;
-		$this->queryParameters["RemovalPolicy.2"]=$removalPolicy2;
-	}
-	
+        return $this;
+    }
 }
