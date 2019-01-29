@@ -1,173 +1,210 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace cloudesl\Request\V20180801;
 
+/**
+ * Request of DescribeUserOperationLog
+ *
+ * @method string getOperateUserId()
+ * @method string getItemTitle()
+ * @method string getOperateStatus()
+ * @method string getStoreId()
+ * @method string getReverse()
+ * @method string getPageNumber()
+ * @method string getFromDate()
+ * @method string getItemId()
+ * @method string getToDate()
+ * @method string getEslBarCode()
+ * @method string getPageSize()
+ * @method string getOperateType()
+ * @method string getItemBarCode()
+ */
 class DescribeUserOperationLogRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("cloudesl", "2018-08-01", "DescribeUserOperationLog");
-		$this->setMethod("POST");
-	}
 
-	private  $operateUserId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $itemTitle;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'cloudesl',
+            '2018-08-01',
+            'DescribeUserOperationLog'
+        );
+    }
 
-	private  $operateStatus;
+    /**
+     * @param string $operateUserId
+     *
+     * @return $this
+     */
+    public function setOperateUserId($operateUserId)
+    {
+        $this->requestParameters['OperateUserId'] = $operateUserId;
+        $this->queryParameters['OperateUserId'] = $operateUserId;
 
-	private  $storeId;
+        return $this;
+    }
 
-	private  $reverse;
+    /**
+     * @param string $itemTitle
+     *
+     * @return $this
+     */
+    public function setItemTitle($itemTitle)
+    {
+        $this->requestParameters['ItemTitle'] = $itemTitle;
+        $this->queryParameters['ItemTitle'] = $itemTitle;
 
-	private  $pageNumber;
+        return $this;
+    }
 
-	private  $fromDate;
+    /**
+     * @param string $operateStatus
+     *
+     * @return $this
+     */
+    public function setOperateStatus($operateStatus)
+    {
+        $this->requestParameters['OperateStatus'] = $operateStatus;
+        $this->queryParameters['OperateStatus'] = $operateStatus;
 
-	private  $itemId;
+        return $this;
+    }
 
-	private  $toDate;
+    /**
+     * @param string $storeId
+     *
+     * @return $this
+     */
+    public function setStoreId($storeId)
+    {
+        $this->requestParameters['StoreId'] = $storeId;
+        $this->queryParameters['StoreId'] = $storeId;
 
-	private  $eslBarCode;
+        return $this;
+    }
 
-	private  $pageSize;
+    /**
+     * @param string $reverse
+     *
+     * @return $this
+     */
+    public function setReverse($reverse)
+    {
+        $this->requestParameters['Reverse'] = $reverse;
+        $this->queryParameters['Reverse'] = $reverse;
 
-	private  $operateType;
+        return $this;
+    }
 
-	private  $itemBarCode;
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
-	public function getOperateUserId() {
-		return $this->operateUserId;
-	}
+        return $this;
+    }
 
-	public function setOperateUserId($operateUserId) {
-		$this->operateUserId = $operateUserId;
-		$this->queryParameters["OperateUserId"]=$operateUserId;
-	}
+    /**
+     * @param string $fromDate
+     *
+     * @return $this
+     */
+    public function setFromDate($fromDate)
+    {
+        $this->requestParameters['FromDate'] = $fromDate;
+        $this->queryParameters['FromDate'] = $fromDate;
 
-	public function getItemTitle() {
-		return $this->itemTitle;
-	}
+        return $this;
+    }
 
-	public function setItemTitle($itemTitle) {
-		$this->itemTitle = $itemTitle;
-		$this->queryParameters["ItemTitle"]=$itemTitle;
-	}
+    /**
+     * @param string $itemId
+     *
+     * @return $this
+     */
+    public function setItemId($itemId)
+    {
+        $this->requestParameters['ItemId'] = $itemId;
+        $this->queryParameters['ItemId'] = $itemId;
 
-	public function getOperateStatus() {
-		return $this->operateStatus;
-	}
+        return $this;
+    }
 
-	public function setOperateStatus($operateStatus) {
-		$this->operateStatus = $operateStatus;
-		$this->queryParameters["OperateStatus"]=$operateStatus;
-	}
+    /**
+     * @param string $toDate
+     *
+     * @return $this
+     */
+    public function setToDate($toDate)
+    {
+        $this->requestParameters['ToDate'] = $toDate;
+        $this->queryParameters['ToDate'] = $toDate;
 
-	public function getStoreId() {
-		return $this->storeId;
-	}
+        return $this;
+    }
 
-	public function setStoreId($storeId) {
-		$this->storeId = $storeId;
-		$this->queryParameters["StoreId"]=$storeId;
-	}
+    /**
+     * @param string $eslBarCode
+     *
+     * @return $this
+     */
+    public function setEslBarCode($eslBarCode)
+    {
+        $this->requestParameters['EslBarCode'] = $eslBarCode;
+        $this->queryParameters['EslBarCode'] = $eslBarCode;
 
-	public function getReverse() {
-		return $this->reverse;
-	}
+        return $this;
+    }
 
-	public function setReverse($reverse) {
-		$this->reverse = $reverse;
-		$this->queryParameters["Reverse"]=$reverse;
-	}
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
+        return $this;
+    }
 
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
+    /**
+     * @param string $operateType
+     *
+     * @return $this
+     */
+    public function setOperateType($operateType)
+    {
+        $this->requestParameters['OperateType'] = $operateType;
+        $this->queryParameters['OperateType'] = $operateType;
 
-	public function getFromDate() {
-		return $this->fromDate;
-	}
+        return $this;
+    }
 
-	public function setFromDate($fromDate) {
-		$this->fromDate = $fromDate;
-		$this->queryParameters["FromDate"]=$fromDate;
-	}
+    /**
+     * @param string $itemBarCode
+     *
+     * @return $this
+     */
+    public function setItemBarCode($itemBarCode)
+    {
+        $this->requestParameters['ItemBarCode'] = $itemBarCode;
+        $this->queryParameters['ItemBarCode'] = $itemBarCode;
 
-	public function getItemId() {
-		return $this->itemId;
-	}
-
-	public function setItemId($itemId) {
-		$this->itemId = $itemId;
-		$this->queryParameters["ItemId"]=$itemId;
-	}
-
-	public function getToDate() {
-		return $this->toDate;
-	}
-
-	public function setToDate($toDate) {
-		$this->toDate = $toDate;
-		$this->queryParameters["ToDate"]=$toDate;
-	}
-
-	public function getEslBarCode() {
-		return $this->eslBarCode;
-	}
-
-	public function setEslBarCode($eslBarCode) {
-		$this->eslBarCode = $eslBarCode;
-		$this->queryParameters["EslBarCode"]=$eslBarCode;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getOperateType() {
-		return $this->operateType;
-	}
-
-	public function setOperateType($operateType) {
-		$this->operateType = $operateType;
-		$this->queryParameters["OperateType"]=$operateType;
-	}
-
-	public function getItemBarCode() {
-		return $this->itemBarCode;
-	}
-
-	public function setItemBarCode($itemBarCode) {
-		$this->itemBarCode = $itemBarCode;
-		$this->queryParameters["ItemBarCode"]=$itemBarCode;
-	}
-	
+        return $this;
+    }
 }

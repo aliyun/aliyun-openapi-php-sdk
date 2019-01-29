@@ -1,173 +1,210 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace cloudesl\Request\V20180801;
 
+/**
+ * Request of DescribeEslDevices
+ *
+ * @method string getEslStatus()
+ * @method string getToBatteryLevel()
+ * @method string getStoreId()
+ * @method string getType()
+ * @method string getMac()
+ * @method string getPageNumber()
+ * @method string getFromBatteryLevel()
+ * @method string getShelfCode()
+ * @method string getEslBarCode()
+ * @method string getVendor()
+ * @method string getPageSize()
+ * @method string getBeBind()
+ * @method string getItemBarCode()
+ */
 class DescribeEslDevicesRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("cloudesl", "2018-08-01", "DescribeEslDevices");
-		$this->setMethod("POST");
-	}
 
-	private  $eslStatus;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $toBatteryLevel;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'cloudesl',
+            '2018-08-01',
+            'DescribeEslDevices'
+        );
+    }
 
-	private  $storeId;
+    /**
+     * @param string $eslStatus
+     *
+     * @return $this
+     */
+    public function setEslStatus($eslStatus)
+    {
+        $this->requestParameters['EslStatus'] = $eslStatus;
+        $this->queryParameters['EslStatus'] = $eslStatus;
 
-	private  $type;
+        return $this;
+    }
 
-	private  $mac;
+    /**
+     * @param string $toBatteryLevel
+     *
+     * @return $this
+     */
+    public function setToBatteryLevel($toBatteryLevel)
+    {
+        $this->requestParameters['ToBatteryLevel'] = $toBatteryLevel;
+        $this->queryParameters['ToBatteryLevel'] = $toBatteryLevel;
 
-	private  $pageNumber;
+        return $this;
+    }
 
-	private  $fromBatteryLevel;
+    /**
+     * @param string $storeId
+     *
+     * @return $this
+     */
+    public function setStoreId($storeId)
+    {
+        $this->requestParameters['StoreId'] = $storeId;
+        $this->queryParameters['StoreId'] = $storeId;
 
-	private  $shelfCode;
+        return $this;
+    }
 
-	private  $eslBarCode;
+    /**
+     * @param string $type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->requestParameters['Type'] = $type;
+        $this->queryParameters['Type'] = $type;
 
-	private  $vendor;
+        return $this;
+    }
 
-	private  $pageSize;
+    /**
+     * @param string $mac
+     *
+     * @return $this
+     */
+    public function setMac($mac)
+    {
+        $this->requestParameters['Mac'] = $mac;
+        $this->queryParameters['Mac'] = $mac;
 
-	private  $beBind;
+        return $this;
+    }
 
-	private  $itemBarCode;
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
-	public function getEslStatus() {
-		return $this->eslStatus;
-	}
+        return $this;
+    }
 
-	public function setEslStatus($eslStatus) {
-		$this->eslStatus = $eslStatus;
-		$this->queryParameters["EslStatus"]=$eslStatus;
-	}
+    /**
+     * @param string $fromBatteryLevel
+     *
+     * @return $this
+     */
+    public function setFromBatteryLevel($fromBatteryLevel)
+    {
+        $this->requestParameters['FromBatteryLevel'] = $fromBatteryLevel;
+        $this->queryParameters['FromBatteryLevel'] = $fromBatteryLevel;
 
-	public function getToBatteryLevel() {
-		return $this->toBatteryLevel;
-	}
+        return $this;
+    }
 
-	public function setToBatteryLevel($toBatteryLevel) {
-		$this->toBatteryLevel = $toBatteryLevel;
-		$this->queryParameters["ToBatteryLevel"]=$toBatteryLevel;
-	}
+    /**
+     * @param string $shelfCode
+     *
+     * @return $this
+     */
+    public function setShelfCode($shelfCode)
+    {
+        $this->requestParameters['ShelfCode'] = $shelfCode;
+        $this->queryParameters['ShelfCode'] = $shelfCode;
 
-	public function getStoreId() {
-		return $this->storeId;
-	}
+        return $this;
+    }
 
-	public function setStoreId($storeId) {
-		$this->storeId = $storeId;
-		$this->queryParameters["StoreId"]=$storeId;
-	}
+    /**
+     * @param string $eslBarCode
+     *
+     * @return $this
+     */
+    public function setEslBarCode($eslBarCode)
+    {
+        $this->requestParameters['EslBarCode'] = $eslBarCode;
+        $this->queryParameters['EslBarCode'] = $eslBarCode;
 
-	public function getType() {
-		return $this->type;
-	}
+        return $this;
+    }
 
-	public function setType($type) {
-		$this->type = $type;
-		$this->queryParameters["Type"]=$type;
-	}
+    /**
+     * @param string $vendor
+     *
+     * @return $this
+     */
+    public function setVendor($vendor)
+    {
+        $this->requestParameters['Vendor'] = $vendor;
+        $this->queryParameters['Vendor'] = $vendor;
 
-	public function getMac() {
-		return $this->mac;
-	}
+        return $this;
+    }
 
-	public function setMac($mac) {
-		$this->mac = $mac;
-		$this->queryParameters["Mac"]=$mac;
-	}
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
+        return $this;
+    }
 
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
+    /**
+     * @param string $beBind
+     *
+     * @return $this
+     */
+    public function setBeBind($beBind)
+    {
+        $this->requestParameters['BeBind'] = $beBind;
+        $this->queryParameters['BeBind'] = $beBind;
 
-	public function getFromBatteryLevel() {
-		return $this->fromBatteryLevel;
-	}
+        return $this;
+    }
 
-	public function setFromBatteryLevel($fromBatteryLevel) {
-		$this->fromBatteryLevel = $fromBatteryLevel;
-		$this->queryParameters["FromBatteryLevel"]=$fromBatteryLevel;
-	}
+    /**
+     * @param string $itemBarCode
+     *
+     * @return $this
+     */
+    public function setItemBarCode($itemBarCode)
+    {
+        $this->requestParameters['ItemBarCode'] = $itemBarCode;
+        $this->queryParameters['ItemBarCode'] = $itemBarCode;
 
-	public function getShelfCode() {
-		return $this->shelfCode;
-	}
-
-	public function setShelfCode($shelfCode) {
-		$this->shelfCode = $shelfCode;
-		$this->queryParameters["ShelfCode"]=$shelfCode;
-	}
-
-	public function getEslBarCode() {
-		return $this->eslBarCode;
-	}
-
-	public function setEslBarCode($eslBarCode) {
-		$this->eslBarCode = $eslBarCode;
-		$this->queryParameters["EslBarCode"]=$eslBarCode;
-	}
-
-	public function getVendor() {
-		return $this->vendor;
-	}
-
-	public function setVendor($vendor) {
-		$this->vendor = $vendor;
-		$this->queryParameters["Vendor"]=$vendor;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getBeBind() {
-		return $this->beBind;
-	}
-
-	public function setBeBind($beBind) {
-		$this->beBind = $beBind;
-		$this->queryParameters["BeBind"]=$beBind;
-	}
-
-	public function getItemBarCode() {
-		return $this->itemBarCode;
-	}
-
-	public function setItemBarCode($itemBarCode) {
-		$this->itemBarCode = $itemBarCode;
-		$this->queryParameters["ItemBarCode"]=$itemBarCode;
-	}
-	
+        return $this;
+    }
 }

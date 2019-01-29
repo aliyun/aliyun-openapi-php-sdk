@@ -3,13 +3,12 @@
 namespace cloudesl\Request\V20180801;
 
 /**
- * Request of UnbindEslDevice
+ * Request of DeleteItemBySkuId
  *
- * @method string getEslBarCode()
  * @method string getStoreId()
- * @method string getItemBarCode()
+ * @method string getSkuId()
  */
-class UnbindEslDeviceRequest extends \RpcAcsRequest
+class DeleteItemBySkuIdRequest extends \RpcAcsRequest
 {
 
     /**
@@ -25,21 +24,8 @@ class UnbindEslDeviceRequest extends \RpcAcsRequest
         parent::__construct(
             'cloudesl',
             '2018-08-01',
-            'UnbindEslDevice'
+            'DeleteItemBySkuId'
         );
-    }
-
-    /**
-     * @param string $eslBarCode
-     *
-     * @return $this
-     */
-    public function setEslBarCode($eslBarCode)
-    {
-        $this->requestParameters['EslBarCode'] = $eslBarCode;
-        $this->queryParameters['EslBarCode'] = $eslBarCode;
-
-        return $this;
     }
 
     /**
@@ -56,14 +42,14 @@ class UnbindEslDeviceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $itemBarCode
+     * @param string $skuId
      *
      * @return $this
      */
-    public function setItemBarCode($itemBarCode)
+    public function setSkuId($skuId)
     {
-        $this->requestParameters['ItemBarCode'] = $itemBarCode;
-        $this->queryParameters['ItemBarCode'] = $itemBarCode;
+        $this->requestParameters['SkuId'] = $skuId;
+        $this->queryParameters['SkuId'] = $skuId;
 
         return $this;
     }

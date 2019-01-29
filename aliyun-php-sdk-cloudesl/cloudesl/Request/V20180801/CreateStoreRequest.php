@@ -1,118 +1,140 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace cloudesl\Request\V20180801;
 
+/**
+ * Request of CreateStore
+ *
+ * @method string getCompanyId()
+ * @method string getComments()
+ * @method string getPhone()
+ * @method string getStoreName()
+ * @method string getGroups()
+ * @method string getOutId()
+ * @method string getBrand()
+ * @method string getParentId()
+ */
 class CreateStoreRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("cloudesl", "2018-08-01", "CreateStore");
-		$this->setMethod("POST");
-	}
 
-	private  $companyId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $comments;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'cloudesl',
+            '2018-08-01',
+            'CreateStore'
+        );
+    }
 
-	private  $phone;
+    /**
+     * @param string $companyId
+     *
+     * @return $this
+     */
+    public function setCompanyId($companyId)
+    {
+        $this->requestParameters['CompanyId'] = $companyId;
+        $this->queryParameters['CompanyId'] = $companyId;
 
-	private  $storeName;
+        return $this;
+    }
 
-	private  $groups;
+    /**
+     * @param string $comments
+     *
+     * @return $this
+     */
+    public function setComments($comments)
+    {
+        $this->requestParameters['Comments'] = $comments;
+        $this->queryParameters['Comments'] = $comments;
 
-	private  $outId;
+        return $this;
+    }
 
-	private  $brand;
+    /**
+     * @param string $phone
+     *
+     * @return $this
+     */
+    public function setPhone($phone)
+    {
+        $this->requestParameters['Phone'] = $phone;
+        $this->queryParameters['Phone'] = $phone;
 
-	private  $parentId;
+        return $this;
+    }
 
-	public function getCompanyId() {
-		return $this->companyId;
-	}
+    /**
+     * @param string $storeName
+     *
+     * @return $this
+     */
+    public function setStoreName($storeName)
+    {
+        $this->requestParameters['StoreName'] = $storeName;
+        $this->queryParameters['StoreName'] = $storeName;
 
-	public function setCompanyId($companyId) {
-		$this->companyId = $companyId;
-		$this->queryParameters["CompanyId"]=$companyId;
-	}
+        return $this;
+    }
 
-	public function getComments() {
-		return $this->comments;
-	}
+    /**
+     * @param string $groups
+     *
+     * @return $this
+     */
+    public function setGroups($groups)
+    {
+        $this->requestParameters['Groups'] = $groups;
+        $this->queryParameters['Groups'] = $groups;
 
-	public function setComments($comments) {
-		$this->comments = $comments;
-		$this->queryParameters["Comments"]=$comments;
-	}
+        return $this;
+    }
 
-	public function getPhone() {
-		return $this->phone;
-	}
+    /**
+     * @param string $outId
+     *
+     * @return $this
+     */
+    public function setOutId($outId)
+    {
+        $this->requestParameters['OutId'] = $outId;
+        $this->queryParameters['OutId'] = $outId;
 
-	public function setPhone($phone) {
-		$this->phone = $phone;
-		$this->queryParameters["Phone"]=$phone;
-	}
+        return $this;
+    }
 
-	public function getStoreName() {
-		return $this->storeName;
-	}
+    /**
+     * @param string $brand
+     *
+     * @return $this
+     */
+    public function setBrand($brand)
+    {
+        $this->requestParameters['Brand'] = $brand;
+        $this->queryParameters['Brand'] = $brand;
 
-	public function setStoreName($storeName) {
-		$this->storeName = $storeName;
-		$this->queryParameters["StoreName"]=$storeName;
-	}
+        return $this;
+    }
 
-	public function getGroups() {
-		return $this->groups;
-	}
+    /**
+     * @param string $parentId
+     *
+     * @return $this
+     */
+    public function setParentId($parentId)
+    {
+        $this->requestParameters['ParentId'] = $parentId;
+        $this->queryParameters['ParentId'] = $parentId;
 
-	public function setGroups($groups) {
-		$this->groups = $groups;
-		$this->queryParameters["Groups"]=$groups;
-	}
-
-	public function getOutId() {
-		return $this->outId;
-	}
-
-	public function setOutId($outId) {
-		$this->outId = $outId;
-		$this->queryParameters["OutId"]=$outId;
-	}
-
-	public function getBrand() {
-		return $this->brand;
-	}
-
-	public function setBrand($brand) {
-		$this->brand = $brand;
-		$this->queryParameters["Brand"]=$brand;
-	}
-
-	public function getParentId() {
-		return $this->parentId;
-	}
-
-	public function setParentId($parentId) {
-		$this->parentId = $parentId;
-		$this->queryParameters["ParentId"]=$parentId;
-	}
-	
+        return $this;
+    }
 }

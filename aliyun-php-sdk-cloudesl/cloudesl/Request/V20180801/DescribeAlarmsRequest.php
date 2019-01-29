@@ -1,129 +1,154 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace cloudesl\Request\V20180801;
 
+/**
+ * Request of DescribeAlarms
+ *
+ * @method string getErrorType()
+ * @method string getToAlarmTime()
+ * @method string getAlarmType()
+ * @method string getFromAlarmTime()
+ * @method string getAlarmId()
+ * @method string getPageSize()
+ * @method string getStoreId()
+ * @method string getPageNumber()
+ * @method string getAlarmStatus()
+ */
 class DescribeAlarmsRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("cloudesl", "2018-08-01", "DescribeAlarms");
-		$this->setMethod("POST");
-	}
 
-	private  $errorType;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $toAlarmTime;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'cloudesl',
+            '2018-08-01',
+            'DescribeAlarms'
+        );
+    }
 
-	private  $alarmType;
+    /**
+     * @param string $errorType
+     *
+     * @return $this
+     */
+    public function setErrorType($errorType)
+    {
+        $this->requestParameters['ErrorType'] = $errorType;
+        $this->queryParameters['ErrorType'] = $errorType;
 
-	private  $fromAlarmTime;
+        return $this;
+    }
 
-	private  $alarmId;
+    /**
+     * @param string $toAlarmTime
+     *
+     * @return $this
+     */
+    public function setToAlarmTime($toAlarmTime)
+    {
+        $this->requestParameters['ToAlarmTime'] = $toAlarmTime;
+        $this->queryParameters['ToAlarmTime'] = $toAlarmTime;
 
-	private  $pageSize;
+        return $this;
+    }
 
-	private  $storeId;
+    /**
+     * @param string $alarmType
+     *
+     * @return $this
+     */
+    public function setAlarmType($alarmType)
+    {
+        $this->requestParameters['AlarmType'] = $alarmType;
+        $this->queryParameters['AlarmType'] = $alarmType;
 
-	private  $pageNumber;
+        return $this;
+    }
 
-	private  $alarmStatus;
+    /**
+     * @param string $fromAlarmTime
+     *
+     * @return $this
+     */
+    public function setFromAlarmTime($fromAlarmTime)
+    {
+        $this->requestParameters['FromAlarmTime'] = $fromAlarmTime;
+        $this->queryParameters['FromAlarmTime'] = $fromAlarmTime;
 
-	public function getErrorType() {
-		return $this->errorType;
-	}
+        return $this;
+    }
 
-	public function setErrorType($errorType) {
-		$this->errorType = $errorType;
-		$this->queryParameters["ErrorType"]=$errorType;
-	}
+    /**
+     * @param string $alarmId
+     *
+     * @return $this
+     */
+    public function setAlarmId($alarmId)
+    {
+        $this->requestParameters['AlarmId'] = $alarmId;
+        $this->queryParameters['AlarmId'] = $alarmId;
 
-	public function getToAlarmTime() {
-		return $this->toAlarmTime;
-	}
+        return $this;
+    }
 
-	public function setToAlarmTime($toAlarmTime) {
-		$this->toAlarmTime = $toAlarmTime;
-		$this->queryParameters["ToAlarmTime"]=$toAlarmTime;
-	}
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	public function getAlarmType() {
-		return $this->alarmType;
-	}
+        return $this;
+    }
 
-	public function setAlarmType($alarmType) {
-		$this->alarmType = $alarmType;
-		$this->queryParameters["AlarmType"]=$alarmType;
-	}
+    /**
+     * @param string $storeId
+     *
+     * @return $this
+     */
+    public function setStoreId($storeId)
+    {
+        $this->requestParameters['StoreId'] = $storeId;
+        $this->queryParameters['StoreId'] = $storeId;
 
-	public function getFromAlarmTime() {
-		return $this->fromAlarmTime;
-	}
+        return $this;
+    }
 
-	public function setFromAlarmTime($fromAlarmTime) {
-		$this->fromAlarmTime = $fromAlarmTime;
-		$this->queryParameters["FromAlarmTime"]=$fromAlarmTime;
-	}
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
-	public function getAlarmId() {
-		return $this->alarmId;
-	}
+        return $this;
+    }
 
-	public function setAlarmId($alarmId) {
-		$this->alarmId = $alarmId;
-		$this->queryParameters["AlarmId"]=$alarmId;
-	}
+    /**
+     * @param string $alarmStatus
+     *
+     * @return $this
+     */
+    public function setAlarmStatus($alarmStatus)
+    {
+        $this->requestParameters['AlarmStatus'] = $alarmStatus;
+        $this->queryParameters['AlarmStatus'] = $alarmStatus;
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getStoreId() {
-		return $this->storeId;
-	}
-
-	public function setStoreId($storeId) {
-		$this->storeId = $storeId;
-		$this->queryParameters["StoreId"]=$storeId;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
-	public function getAlarmStatus() {
-		return $this->alarmStatus;
-	}
-
-	public function setAlarmStatus($alarmStatus) {
-		$this->alarmStatus = $alarmStatus;
-		$this->queryParameters["AlarmStatus"]=$alarmStatus;
-	}
-	
+        return $this;
+    }
 }

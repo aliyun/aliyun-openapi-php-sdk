@@ -1,118 +1,140 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace cloudesl\Request\V20180801;
 
+/**
+ * Request of DescribeStores
+ *
+ * @method string getToDate()
+ * @method string getPageSize()
+ * @method string getStoreName()
+ * @method string getGroups()
+ * @method string getStoreId()
+ * @method string getBrand()
+ * @method string getPageNumber()
+ * @method string getFromDate()
+ */
 class DescribeStoresRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("cloudesl", "2018-08-01", "DescribeStores");
-		$this->setMethod("POST");
-	}
 
-	private  $toDate;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $pageSize;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'cloudesl',
+            '2018-08-01',
+            'DescribeStores'
+        );
+    }
 
-	private  $storeName;
+    /**
+     * @param string $toDate
+     *
+     * @return $this
+     */
+    public function setToDate($toDate)
+    {
+        $this->requestParameters['ToDate'] = $toDate;
+        $this->queryParameters['ToDate'] = $toDate;
 
-	private  $groups;
+        return $this;
+    }
 
-	private  $storeId;
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	private  $brand;
+        return $this;
+    }
 
-	private  $pageNumber;
+    /**
+     * @param string $storeName
+     *
+     * @return $this
+     */
+    public function setStoreName($storeName)
+    {
+        $this->requestParameters['StoreName'] = $storeName;
+        $this->queryParameters['StoreName'] = $storeName;
 
-	private  $fromDate;
+        return $this;
+    }
 
-	public function getToDate() {
-		return $this->toDate;
-	}
+    /**
+     * @param string $groups
+     *
+     * @return $this
+     */
+    public function setGroups($groups)
+    {
+        $this->requestParameters['Groups'] = $groups;
+        $this->queryParameters['Groups'] = $groups;
 
-	public function setToDate($toDate) {
-		$this->toDate = $toDate;
-		$this->queryParameters["ToDate"]=$toDate;
-	}
+        return $this;
+    }
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
+    /**
+     * @param string $storeId
+     *
+     * @return $this
+     */
+    public function setStoreId($storeId)
+    {
+        $this->requestParameters['StoreId'] = $storeId;
+        $this->queryParameters['StoreId'] = $storeId;
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
+        return $this;
+    }
 
-	public function getStoreName() {
-		return $this->storeName;
-	}
+    /**
+     * @param string $brand
+     *
+     * @return $this
+     */
+    public function setBrand($brand)
+    {
+        $this->requestParameters['Brand'] = $brand;
+        $this->queryParameters['Brand'] = $brand;
 
-	public function setStoreName($storeName) {
-		$this->storeName = $storeName;
-		$this->queryParameters["StoreName"]=$storeName;
-	}
+        return $this;
+    }
 
-	public function getGroups() {
-		return $this->groups;
-	}
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
-	public function setGroups($groups) {
-		$this->groups = $groups;
-		$this->queryParameters["Groups"]=$groups;
-	}
+        return $this;
+    }
 
-	public function getStoreId() {
-		return $this->storeId;
-	}
+    /**
+     * @param string $fromDate
+     *
+     * @return $this
+     */
+    public function setFromDate($fromDate)
+    {
+        $this->requestParameters['FromDate'] = $fromDate;
+        $this->queryParameters['FromDate'] = $fromDate;
 
-	public function setStoreId($storeId) {
-		$this->storeId = $storeId;
-		$this->queryParameters["StoreId"]=$storeId;
-	}
-
-	public function getBrand() {
-		return $this->brand;
-	}
-
-	public function setBrand($brand) {
-		$this->brand = $brand;
-		$this->queryParameters["Brand"]=$brand;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-
-	public function getFromDate() {
-		return $this->fromDate;
-	}
-
-	public function setFromDate($fromDate) {
-		$this->fromDate = $fromDate;
-		$this->queryParameters["FromDate"]=$fromDate;
-	}
-	
+        return $this;
+    }
 }
