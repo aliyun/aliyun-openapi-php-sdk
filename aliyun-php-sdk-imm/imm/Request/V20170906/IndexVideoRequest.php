@@ -10,9 +10,12 @@ namespace imm\Request\V20170906;
  * @method string getProject()
  * @method string getRemarksA()
  * @method string getEndTime()
+ * @method string getExternalId()
  * @method string getStartTime()
  * @method string getVideoUri()
  * @method string getSaveType()
+ * @method string getRemarksD()
+ * @method string getRemarksC()
  * @method string getSetId()
  * @method string getInterval()
  * @method string getTgtUri()
@@ -104,6 +107,19 @@ class IndexVideoRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $externalId
+     *
+     * @return $this
+     */
+    public function setExternalId($externalId)
+    {
+        $this->requestParameters['ExternalId'] = $externalId;
+        $this->queryParameters['ExternalId'] = $externalId;
+
+        return $this;
+    }
+
+    /**
      * @param string $startTime
      *
      * @return $this
@@ -138,6 +154,32 @@ class IndexVideoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SaveType'] = $saveType;
         $this->queryParameters['SaveType'] = $saveType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $remarksD
+     *
+     * @return $this
+     */
+    public function setRemarksD($remarksD)
+    {
+        $this->requestParameters['RemarksD'] = $remarksD;
+        $this->queryParameters['RemarksD'] = $remarksD;
+
+        return $this;
+    }
+
+    /**
+     * @param string $remarksC
+     *
+     * @return $this
+     */
+    public function setRemarksC($remarksC)
+    {
+        $this->requestParameters['RemarksC'] = $remarksC;
+        $this->queryParameters['RemarksC'] = $remarksC;
 
         return $this;
     }

@@ -5,13 +5,16 @@ namespace imm\Request\V20170906;
 /**
  * Request of IndexImage
  *
+ * @method string getRemarksB()
+ * @method string getProject()
+ * @method string getRemarksA()
+ * @method string getExternalId()
  * @method string getImageUri()
  * @method string getSourceUri()
  * @method string getSourcePosition()
- * @method string getRemarksB()
- * @method string getProject()
+ * @method string getRemarksD()
+ * @method string getRemarksC()
  * @method string getSetId()
- * @method string getRemarksA()
  * @method string getSourceType()
  */
 class IndexImageRequest extends \RpcAcsRequest
@@ -33,6 +36,58 @@ class IndexImageRequest extends \RpcAcsRequest
             'IndexImage',
             'imm'
         );
+    }
+
+    /**
+     * @param string $remarksB
+     *
+     * @return $this
+     */
+    public function setRemarksB($remarksB)
+    {
+        $this->requestParameters['RemarksB'] = $remarksB;
+        $this->queryParameters['RemarksB'] = $remarksB;
+
+        return $this;
+    }
+
+    /**
+     * @param string $project
+     *
+     * @return $this
+     */
+    public function setProject($project)
+    {
+        $this->requestParameters['Project'] = $project;
+        $this->queryParameters['Project'] = $project;
+
+        return $this;
+    }
+
+    /**
+     * @param string $remarksA
+     *
+     * @return $this
+     */
+    public function setRemarksA($remarksA)
+    {
+        $this->requestParameters['RemarksA'] = $remarksA;
+        $this->queryParameters['RemarksA'] = $remarksA;
+
+        return $this;
+    }
+
+    /**
+     * @param string $externalId
+     *
+     * @return $this
+     */
+    public function setExternalId($externalId)
+    {
+        $this->requestParameters['ExternalId'] = $externalId;
+        $this->queryParameters['ExternalId'] = $externalId;
+
+        return $this;
     }
 
     /**
@@ -75,27 +130,27 @@ class IndexImageRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $remarksB
+     * @param string $remarksD
      *
      * @return $this
      */
-    public function setRemarksB($remarksB)
+    public function setRemarksD($remarksD)
     {
-        $this->requestParameters['RemarksB'] = $remarksB;
-        $this->queryParameters['RemarksB'] = $remarksB;
+        $this->requestParameters['RemarksD'] = $remarksD;
+        $this->queryParameters['RemarksD'] = $remarksD;
 
         return $this;
     }
 
     /**
-     * @param string $project
+     * @param string $remarksC
      *
      * @return $this
      */
-    public function setProject($project)
+    public function setRemarksC($remarksC)
     {
-        $this->requestParameters['Project'] = $project;
-        $this->queryParameters['Project'] = $project;
+        $this->requestParameters['RemarksC'] = $remarksC;
+        $this->queryParameters['RemarksC'] = $remarksC;
 
         return $this;
     }
@@ -109,19 +164,6 @@ class IndexImageRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SetId'] = $setId;
         $this->queryParameters['SetId'] = $setId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $remarksA
-     *
-     * @return $this
-     */
-    public function setRemarksA($remarksA)
-    {
-        $this->requestParameters['RemarksA'] = $remarksA;
-        $this->queryParameters['RemarksA'] = $remarksA;
 
         return $this;
     }

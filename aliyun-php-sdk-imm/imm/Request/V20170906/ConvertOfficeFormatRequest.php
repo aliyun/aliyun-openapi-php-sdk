@@ -19,6 +19,7 @@ namespace imm\Request\V20170906;
  * @method string getMaxSheetCol()
  * @method string getTgtType()
  * @method string getFitToPagesWide()
+ * @method string getHidecomments()
  * @method string getTgtFilePrefix()
  * @method string getFitToPagesTall()
  * @method string getSrcUri()
@@ -224,6 +225,19 @@ class ConvertOfficeFormatRequest extends \RpcAcsRequest
     {
         $this->requestParameters['FitToPagesWide'] = $fitToPagesWide;
         $this->queryParameters['FitToPagesWide'] = $fitToPagesWide;
+
+        return $this;
+    }
+
+    /**
+     * @param string $hidecomments
+     *
+     * @return $this
+     */
+    public function setHidecomments($hidecomments)
+    {
+        $this->requestParameters['Hidecomments'] = $hidecomments;
+        $this->queryParameters['Hidecomments'] = $hidecomments;
 
         return $this;
     }
