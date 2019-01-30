@@ -7,7 +7,6 @@ namespace vod\Request\V20170321;
  *
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
- * @method string getResourceRealOwnerId()
  * @method string getOwnerId()
  * @method string getTranscodeTemplateGroupId()
  * @method string getTranscodeTemplateIdList()
@@ -55,19 +54,6 @@ class DeleteTranscodeTemplatesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceRealOwnerId
-     *
-     * @return $this
-     */
-    public function setResourceRealOwnerId($resourceRealOwnerId)
-    {
-        $this->requestParameters['ResourceRealOwnerId'] = $resourceRealOwnerId;
-        $this->queryParameters['ResourceRealOwnerId'] = $resourceRealOwnerId;
 
         return $this;
     }

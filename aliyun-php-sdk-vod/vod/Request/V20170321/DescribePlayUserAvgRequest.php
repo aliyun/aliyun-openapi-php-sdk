@@ -3,12 +3,13 @@
 namespace vod\Request\V20170321;
 
 /**
- * Request of DescribeVodUserQuota
+ * Request of DescribePlayUserAvg
  *
- * @method string getSecurityToken()
+ * @method string getStartTime()
+ * @method string getEndTime()
  * @method string getOwnerId()
  */
-class DescribeVodUserQuotaRequest extends \RpcAcsRequest
+class DescribePlayUserAvgRequest extends \RpcAcsRequest
 {
 
     /**
@@ -24,20 +25,33 @@ class DescribeVodUserQuotaRequest extends \RpcAcsRequest
         parent::__construct(
             'vod',
             '2017-03-21',
-            'DescribeVodUserQuota',
+            'DescribePlayUserAvg',
             'vod'
         );
     }
 
     /**
-     * @param string $securityToken
+     * @param string $startTime
      *
      * @return $this
      */
-    public function setSecurityToken($securityToken)
+    public function setStartTime($startTime)
     {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $endTime
+     *
+     * @return $this
+     */
+    public function setEndTime($endTime)
+    {
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
 
         return $this;
     }

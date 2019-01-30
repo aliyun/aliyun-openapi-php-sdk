@@ -9,7 +9,6 @@ namespace vod\Request\V20170321;
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
  * @method string getName()
- * @method string getResourceRealOwnerId()
  * @method string getOwnerId()
  * @method string getTranscodeTemplateGroupId()
  */
@@ -82,19 +81,6 @@ class AddTranscodeTemplateGroupRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Name'] = $name;
         $this->queryParameters['Name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceRealOwnerId
-     *
-     * @return $this
-     */
-    public function setResourceRealOwnerId($resourceRealOwnerId)
-    {
-        $this->requestParameters['ResourceRealOwnerId'] = $resourceRealOwnerId;
-        $this->queryParameters['ResourceRealOwnerId'] = $resourceRealOwnerId;
 
         return $this;
     }

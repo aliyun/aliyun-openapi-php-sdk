@@ -3,17 +3,15 @@
 namespace vod\Request\V20170321;
 
 /**
- * Request of GetOSSStatis
+ * Request of GetURLUploadInfos
  *
  * @method string getResourceOwnerId()
- * @method string getStartStatisTime()
  * @method string getResourceOwnerAccount()
- * @method string getLevel()
- * @method string getOwnerAccount()
+ * @method string getJobIds()
+ * @method string getUploadURLs()
  * @method string getOwnerId()
- * @method string getEndStatisTime()
  */
-class GetOSSStatisRequest extends \RpcAcsRequest
+class GetURLUploadInfosRequest extends \RpcAcsRequest
 {
 
     /**
@@ -29,7 +27,7 @@ class GetOSSStatisRequest extends \RpcAcsRequest
         parent::__construct(
             'vod',
             '2017-03-21',
-            'GetOSSStatis',
+            'GetURLUploadInfos',
             'vod'
         );
     }
@@ -48,19 +46,6 @@ class GetOSSStatisRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $startStatisTime
-     *
-     * @return $this
-     */
-    public function setStartStatisTime($startStatisTime)
-    {
-        $this->requestParameters['StartStatisTime'] = $startStatisTime;
-        $this->queryParameters['StartStatisTime'] = $startStatisTime;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -74,27 +59,27 @@ class GetOSSStatisRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $level
+     * @param string $jobIds
      *
      * @return $this
      */
-    public function setLevel($level)
+    public function setJobIds($jobIds)
     {
-        $this->requestParameters['Level'] = $level;
-        $this->queryParameters['Level'] = $level;
+        $this->requestParameters['JobIds'] = $jobIds;
+        $this->queryParameters['JobIds'] = $jobIds;
 
         return $this;
     }
 
     /**
-     * @param string $ownerAccount
+     * @param string $uploadURLs
      *
      * @return $this
      */
-    public function setOwnerAccount($ownerAccount)
+    public function setUploadURLs($uploadURLs)
     {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+        $this->requestParameters['UploadURLs'] = $uploadURLs;
+        $this->queryParameters['UploadURLs'] = $uploadURLs;
 
         return $this;
     }
@@ -108,19 +93,6 @@ class GetOSSStatisRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $endStatisTime
-     *
-     * @return $this
-     */
-    public function setEndStatisTime($endStatisTime)
-    {
-        $this->requestParameters['EndStatisTime'] = $endStatisTime;
-        $this->queryParameters['EndStatisTime'] = $endStatisTime;
 
         return $this;
     }
