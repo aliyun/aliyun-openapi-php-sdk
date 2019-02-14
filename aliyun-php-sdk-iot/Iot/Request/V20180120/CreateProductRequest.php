@@ -8,6 +8,7 @@ namespace Iot\Request\V20180120;
  * @method string getDataFormat()
  * @method string getNodeType()
  * @method string getId2()
+ * @method string getIotInstanceId()
  * @method string getNetType()
  * @method string getProductName()
  * @method string getDescription()
@@ -70,6 +71,19 @@ class CreateProductRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Id2'] = $id2;
         $this->queryParameters['Id2'] = $id2;
+
+        return $this;
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
 
         return $this;
     }

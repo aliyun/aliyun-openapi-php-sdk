@@ -6,6 +6,7 @@ namespace Iot\Request\V20180120;
  * Request of UpdateDeviceGroup
  *
  * @method string getGroupDesc()
+ * @method string getIotInstanceId()
  * @method string getGroupId()
  */
 class UpdateDeviceGroupRequest extends \RpcAcsRequest
@@ -37,6 +38,19 @@ class UpdateDeviceGroupRequest extends \RpcAcsRequest
     {
         $this->requestParameters['GroupDesc'] = $groupDesc;
         $this->queryParameters['GroupDesc'] = $groupDesc;
+
+        return $this;
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
 
         return $this;
     }

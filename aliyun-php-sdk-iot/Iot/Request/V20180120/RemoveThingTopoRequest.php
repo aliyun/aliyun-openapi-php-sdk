@@ -6,6 +6,7 @@ namespace Iot\Request\V20180120;
  * Request of RemoveThingTopo
  *
  * @method string getIotId()
+ * @method string getIotInstanceId()
  * @method string getDeviceName()
  * @method string getProductKey()
  */
@@ -38,6 +39,19 @@ class RemoveThingTopoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['IotId'] = $iotId;
         $this->queryParameters['IotId'] = $iotId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
 
         return $this;
     }

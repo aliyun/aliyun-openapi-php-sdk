@@ -7,6 +7,7 @@ namespace Iot\Request\V20180120;
  *
  * @method array getProductKeyLists()
  * @method array getCategoryKeyLists()
+ * @method string getIotInstanceId()
  * @method string getPageSize()
  * @method string getCurrentPage()
  * @method string getAppKey()
@@ -58,6 +59,19 @@ class QueryAppDeviceListRequest extends \RpcAcsRequest
         foreach ($categoryKeyLists as $i => $iValue) {
             $this->queryParameters['CategoryKeyList.' . ($i + 1)] = $iValue;
         }
+
+        return $this;
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
 
         return $this;
     }

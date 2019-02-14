@@ -5,6 +5,7 @@ namespace Iot\Request\V20180120;
 /**
  * Request of BatchAddDeviceGroupRelations
  *
+ * @method string getIotInstanceId()
  * @method string getGroupId()
  * @method array getDevices()
  */
@@ -26,6 +27,19 @@ class BatchAddDeviceGroupRelationsRequest extends \RpcAcsRequest
             '2018-01-20',
             'BatchAddDeviceGroupRelations'
         );
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
+
+        return $this;
     }
 
     /**

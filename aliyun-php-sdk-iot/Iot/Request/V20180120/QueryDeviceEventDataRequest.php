@@ -8,6 +8,7 @@ namespace Iot\Request\V20180120;
  * @method string getAsc()
  * @method string getIdentifier()
  * @method string getIotId()
+ * @method string getIotInstanceId()
  * @method string getPageSize()
  * @method string getEndTime()
  * @method string getEventType()
@@ -70,6 +71,19 @@ class QueryDeviceEventDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['IotId'] = $iotId;
         $this->queryParameters['IotId'] = $iotId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
 
         return $this;
     }

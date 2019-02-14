@@ -5,6 +5,7 @@ namespace Iot\Request\V20180120;
 /**
  * Request of QueryDevice
  *
+ * @method string getIotInstanceId()
  * @method string getPageSize()
  * @method string getCurrentPage()
  * @method string getProductKey()
@@ -27,6 +28,19 @@ class QueryDeviceRequest extends \RpcAcsRequest
             '2018-01-20',
             'QueryDevice'
         );
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
+
+        return $this;
     }
 
     /**

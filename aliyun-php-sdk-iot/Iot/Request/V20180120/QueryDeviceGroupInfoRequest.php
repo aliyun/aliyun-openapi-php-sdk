@@ -5,6 +5,7 @@ namespace Iot\Request\V20180120;
 /**
  * Request of QueryDeviceGroupInfo
  *
+ * @method string getIotInstanceId()
  * @method string getGroupId()
  */
 class QueryDeviceGroupInfoRequest extends \RpcAcsRequest
@@ -25,6 +26,19 @@ class QueryDeviceGroupInfoRequest extends \RpcAcsRequest
             '2018-01-20',
             'QueryDeviceGroupInfo'
         );
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
+
+        return $this;
     }
 
     /**

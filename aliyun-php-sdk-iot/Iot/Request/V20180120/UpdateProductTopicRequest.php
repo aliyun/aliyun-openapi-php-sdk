@@ -6,6 +6,7 @@ namespace Iot\Request\V20180120;
  * Request of UpdateProductTopic
  *
  * @method string getTopicId()
+ * @method string getIotInstanceId()
  * @method string getOperation()
  * @method string getTopicShortName()
  * @method string getDesc()
@@ -39,6 +40,19 @@ class UpdateProductTopicRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TopicId'] = $topicId;
         $this->queryParameters['TopicId'] = $topicId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
 
         return $this;
     }

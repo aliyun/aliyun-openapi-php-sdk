@@ -5,6 +5,7 @@ namespace Iot\Request\V20180120;
 /**
  * Request of QueryDeviceGroupByTags
  *
+ * @method string getIotInstanceId()
  * @method string getPageSize()
  * @method string getCurrentPage()
  * @method array getTags()
@@ -27,6 +28,19 @@ class QueryDeviceGroupByTagsRequest extends \RpcAcsRequest
             '2018-01-20',
             'QueryDeviceGroupByTags'
         );
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
+
+        return $this;
     }
 
     /**

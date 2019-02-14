@@ -5,6 +5,7 @@ namespace Iot\Request\V20180120;
 /**
  * Request of QueryTopicRouteTable
  *
+ * @method string getIotInstanceId()
  * @method string getTopic()
  */
 class QueryTopicRouteTableRequest extends \RpcAcsRequest
@@ -25,6 +26,19 @@ class QueryTopicRouteTableRequest extends \RpcAcsRequest
             '2018-01-20',
             'QueryTopicRouteTable'
         );
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
+
+        return $this;
     }
 
     /**

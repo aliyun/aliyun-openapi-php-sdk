@@ -6,6 +6,7 @@ namespace Iot\Request\V20180120;
  * Request of UpdateProductTags
  *
  * @method array getProductTags()
+ * @method string getIotInstanceId()
  * @method string getProductKey()
  */
 class UpdateProductTagsRequest extends \RpcAcsRequest
@@ -40,6 +41,19 @@ class UpdateProductTagsRequest extends \RpcAcsRequest
             $this->queryParameters['ProductTag.' . ($i + 1) . '.TagValue'] = $productTags[$i]['TagValue'];
             $this->queryParameters['ProductTag.' . ($i + 1) . '.TagKey'] = $productTags[$i]['TagKey'];
         }
+
+        return $this;
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
 
         return $this;
     }

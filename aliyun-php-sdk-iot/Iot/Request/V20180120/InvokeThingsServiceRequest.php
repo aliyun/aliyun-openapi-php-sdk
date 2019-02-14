@@ -7,6 +7,7 @@ namespace Iot\Request\V20180120;
  *
  * @method string getArgs()
  * @method string getIdentifier()
+ * @method string getIotInstanceId()
  * @method array getDeviceNames()
  * @method string getProductKey()
  */
@@ -52,6 +53,19 @@ class InvokeThingsServiceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Identifier'] = $identifier;
         $this->queryParameters['Identifier'] = $identifier;
+
+        return $this;
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
 
         return $this;
     }

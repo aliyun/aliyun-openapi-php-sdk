@@ -5,6 +5,7 @@ namespace Iot\Request\V20180120;
 /**
  * Request of CreateProductTopic
  *
+ * @method string getIotInstanceId()
  * @method string getProductKey()
  * @method string getTopicShortName()
  * @method string getOperation()
@@ -28,6 +29,19 @@ class CreateProductTopicRequest extends \RpcAcsRequest
             '2018-01-20',
             'CreateProductTopic'
         );
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
+
+        return $this;
     }
 
     /**

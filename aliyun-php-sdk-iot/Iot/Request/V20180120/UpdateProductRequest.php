@@ -5,6 +5,7 @@ namespace Iot\Request\V20180120;
 /**
  * Request of UpdateProduct
  *
+ * @method string getIotInstanceId()
  * @method string getProductName()
  * @method string getDescription()
  * @method string getProductKey()
@@ -27,6 +28,19 @@ class UpdateProductRequest extends \RpcAcsRequest
             '2018-01-20',
             'UpdateProduct'
         );
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
+
+        return $this;
     }
 
     /**

@@ -6,6 +6,7 @@ namespace Iot\Request\V20180120;
  * Request of CreateTopicRouteTable
  *
  * @method array getDstTopics()
+ * @method string getIotInstanceId()
  * @method string getSrcTopic()
  */
 class CreateTopicRouteTableRequest extends \RpcAcsRequest
@@ -39,6 +40,19 @@ class CreateTopicRouteTableRequest extends \RpcAcsRequest
         foreach ($dstTopics as $i => $iValue) {
             $this->queryParameters['DstTopic.' . ($i + 1)] = $iValue;
         }
+
+        return $this;
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
 
         return $this;
     }

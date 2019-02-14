@@ -7,6 +7,7 @@ namespace Iot\Request\V20180120;
  *
  * @method string getSelect()
  * @method string getRuleDesc()
+ * @method string getIotInstanceId()
  * @method string getName()
  * @method string getWhere()
  * @method string getRuleId()
@@ -56,6 +57,19 @@ class UpdateRuleRequest extends \RpcAcsRequest
     {
         $this->requestParameters['RuleDesc'] = $ruleDesc;
         $this->queryParameters['RuleDesc'] = $ruleDesc;
+
+        return $this;
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
 
         return $this;
     }

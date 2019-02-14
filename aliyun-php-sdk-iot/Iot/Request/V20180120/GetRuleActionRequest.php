@@ -5,6 +5,7 @@ namespace Iot\Request\V20180120;
 /**
  * Request of GetRuleAction
  *
+ * @method string getIotInstanceId()
  * @method string getActionId()
  */
 class GetRuleActionRequest extends \RpcAcsRequest
@@ -25,6 +26,19 @@ class GetRuleActionRequest extends \RpcAcsRequest
             '2018-01-20',
             'GetRuleAction'
         );
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
+
+        return $this;
     }
 
     /**

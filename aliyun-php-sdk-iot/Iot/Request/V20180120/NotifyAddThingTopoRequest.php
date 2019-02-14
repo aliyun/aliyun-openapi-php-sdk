@@ -7,6 +7,7 @@ namespace Iot\Request\V20180120;
  *
  * @method string getGwProductKey()
  * @method string getGwDeviceName()
+ * @method string getIotInstanceId()
  * @method string getGwIotId()
  * @method string getDeviceListStr()
  */
@@ -52,6 +53,19 @@ class NotifyAddThingTopoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['GwDeviceName'] = $gwDeviceName;
         $this->queryParameters['GwDeviceName'] = $gwDeviceName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
 
         return $this;
     }

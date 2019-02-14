@@ -5,6 +5,7 @@ namespace Iot\Request\V20180120;
 /**
  * Request of DeleteRule
  *
+ * @method string getIotInstanceId()
  * @method string getRuleId()
  */
 class DeleteRuleRequest extends \RpcAcsRequest
@@ -25,6 +26,19 @@ class DeleteRuleRequest extends \RpcAcsRequest
             '2018-01-20',
             'DeleteRule'
         );
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
+
+        return $this;
     }
 
     /**

@@ -8,6 +8,7 @@ namespace Iot\Request\V20180120;
  * @method string getSelect()
  * @method string getRuleDesc()
  * @method string getDataType()
+ * @method string getIotInstanceId()
  * @method string getName()
  * @method string getWhere()
  * @method string getProductKey()
@@ -69,6 +70,19 @@ class CreateRuleRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DataType'] = $dataType;
         $this->queryParameters['DataType'] = $dataType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
 
         return $this;
     }

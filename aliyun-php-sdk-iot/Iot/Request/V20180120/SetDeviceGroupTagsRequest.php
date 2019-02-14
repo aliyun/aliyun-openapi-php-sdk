@@ -6,6 +6,7 @@ namespace Iot\Request\V20180120;
  * Request of SetDeviceGroupTags
  *
  * @method string getTagString()
+ * @method string getIotInstanceId()
  * @method string getGroupId()
  */
 class SetDeviceGroupTagsRequest extends \RpcAcsRequest
@@ -37,6 +38,19 @@ class SetDeviceGroupTagsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TagString'] = $tagString;
         $this->queryParameters['TagString'] = $tagString;
+
+        return $this;
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
 
         return $this;
     }

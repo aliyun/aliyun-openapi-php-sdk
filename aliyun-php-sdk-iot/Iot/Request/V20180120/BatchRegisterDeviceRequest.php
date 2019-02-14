@@ -5,6 +5,7 @@ namespace Iot\Request\V20180120;
 /**
  * Request of BatchRegisterDevice
  *
+ * @method string getIotInstanceId()
  * @method string getCount()
  * @method string getProductKey()
  */
@@ -26,6 +27,19 @@ class BatchRegisterDeviceRequest extends \RpcAcsRequest
             '2018-01-20',
             'BatchRegisterDevice'
         );
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
+
+        return $this;
     }
 
     /**

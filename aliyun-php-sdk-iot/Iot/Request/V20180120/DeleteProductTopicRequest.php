@@ -6,6 +6,7 @@ namespace Iot\Request\V20180120;
  * Request of DeleteProductTopic
  *
  * @method string getTopicId()
+ * @method string getIotInstanceId()
  */
 class DeleteProductTopicRequest extends \RpcAcsRequest
 {
@@ -36,6 +37,19 @@ class DeleteProductTopicRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TopicId'] = $topicId;
         $this->queryParameters['TopicId'] = $topicId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
 
         return $this;
     }

@@ -5,6 +5,7 @@ namespace Iot\Request\V20180120;
 /**
  * Request of DeleteDeviceProp
  *
+ * @method string getIotInstanceId()
  * @method string getDeviceName()
  * @method string getProductKey()
  * @method string getPropKey()
@@ -27,6 +28,19 @@ class DeleteDevicePropRequest extends \RpcAcsRequest
             '2018-01-20',
             'DeleteDeviceProp'
         );
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
+
+        return $this;
     }
 
     /**

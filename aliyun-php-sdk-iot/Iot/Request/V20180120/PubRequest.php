@@ -8,6 +8,7 @@ namespace Iot\Request\V20180120;
  * @method string getTopicFullName()
  * @method string getQos()
  * @method string getMessageContent()
+ * @method string getIotInstanceId()
  * @method string getProductKey()
  */
 class PubRequest extends \RpcAcsRequest
@@ -65,6 +66,19 @@ class PubRequest extends \RpcAcsRequest
     {
         $this->requestParameters['MessageContent'] = $messageContent;
         $this->queryParameters['MessageContent'] = $messageContent;
+
+        return $this;
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
 
         return $this;
     }

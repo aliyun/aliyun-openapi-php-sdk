@@ -5,6 +5,7 @@ namespace Iot\Request\V20180120;
 /**
  * Request of RegisterDevice
  *
+ * @method string getIotInstanceId()
  * @method string getDeviceName()
  * @method string getProductKey()
  */
@@ -26,6 +27,19 @@ class RegisterDeviceRequest extends \RpcAcsRequest
             '2018-01-20',
             'RegisterDevice'
         );
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
+
+        return $this;
     }
 
     /**

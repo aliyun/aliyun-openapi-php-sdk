@@ -5,6 +5,7 @@ namespace Iot\Request\V20180120;
 /**
  * Request of BatchDeleteDeviceGroupRelations
  *
+ * @method string getIotInstanceId()
  * @method string getGroupId()
  * @method array getDevices()
  */
@@ -26,6 +27,19 @@ class BatchDeleteDeviceGroupRelationsRequest extends \RpcAcsRequest
             '2018-01-20',
             'BatchDeleteDeviceGroupRelations'
         );
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
+
+        return $this;
     }
 
     /**

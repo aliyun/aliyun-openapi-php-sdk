@@ -6,6 +6,7 @@ namespace Iot\Request\V20180120;
  * Request of QueryPageByApplyId
  *
  * @method string getApplyId()
+ * @method string getIotInstanceId()
  * @method string getPageSize()
  * @method string getCurrentPage()
  */
@@ -38,6 +39,19 @@ class QueryPageByApplyIdRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ApplyId'] = $applyId;
         $this->queryParameters['ApplyId'] = $applyId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
 
         return $this;
     }

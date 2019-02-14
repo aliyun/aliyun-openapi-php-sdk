@@ -7,6 +7,7 @@ namespace Iot\Request\V20180120;
  *
  * @method string getIotId()
  * @method string getPageNo()
+ * @method string getIotInstanceId()
  * @method string getPageSize()
  * @method string getDeviceName()
  * @method string getProductKey()
@@ -53,6 +54,19 @@ class GetThingTopoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageNo'] = $pageNo;
         $this->queryParameters['PageNo'] = $pageNo;
+
+        return $this;
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
 
         return $this;
     }

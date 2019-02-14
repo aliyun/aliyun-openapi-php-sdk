@@ -6,6 +6,7 @@ namespace Iot\Request\V20180120;
  * Request of QueryBatchRegisterDeviceStatus
  *
  * @method string getApplyId()
+ * @method string getIotInstanceId()
  * @method string getProductKey()
  */
 class QueryBatchRegisterDeviceStatusRequest extends \RpcAcsRequest
@@ -37,6 +38,19 @@ class QueryBatchRegisterDeviceStatusRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ApplyId'] = $applyId;
         $this->queryParameters['ApplyId'] = $applyId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
 
         return $this;
     }

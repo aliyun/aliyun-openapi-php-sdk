@@ -6,6 +6,7 @@ namespace Iot\Request\V20180120;
  * Request of CreateDeviceGroup
  *
  * @method string getGroupDesc()
+ * @method string getIotInstanceId()
  * @method string getSuperGroupId()
  * @method string getGroupName()
  */
@@ -38,6 +39,19 @@ class CreateDeviceGroupRequest extends \RpcAcsRequest
     {
         $this->requestParameters['GroupDesc'] = $groupDesc;
         $this->queryParameters['GroupDesc'] = $groupDesc;
+
+        return $this;
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
 
         return $this;
     }

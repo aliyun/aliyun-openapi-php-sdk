@@ -5,6 +5,7 @@ namespace Iot\Request\V20180120;
 /**
  * Request of RRpc
  *
+ * @method string getIotInstanceId()
  * @method string getRequestBase64Byte()
  * @method string getTopic()
  * @method string getDeviceName()
@@ -29,6 +30,19 @@ class RRpcRequest extends \RpcAcsRequest
             '2018-01-20',
             'RRpc'
         );
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
+
+        return $this;
     }
 
     /**
