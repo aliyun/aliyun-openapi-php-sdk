@@ -1,73 +1,79 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Cdn\Request\V20180510;
 
+/**
+ * Request of SetPageCompressConfig
+ *
+ * @method string getEnable()
+ * @method string getDomainName()
+ * @method string getOwnerId()
+ * @method string getConfigId()
+ */
 class SetPageCompressConfigRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cdn", "2018-05-10", "SetPageCompressConfig");
-	}
 
-	private  $enable;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Cdn',
+            '2018-05-10',
+            'SetPageCompressConfig'
+        );
+    }
 
-	private  $domainName;
+    /**
+     * @param string $enable
+     *
+     * @return $this
+     */
+    public function setEnable($enable)
+    {
+        $this->requestParameters['Enable'] = $enable;
+        $this->queryParameters['Enable'] = $enable;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	private  $configId;
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
 
-	public function getEnable() {
-		return $this->enable;
-	}
+        return $this;
+    }
 
-	public function setEnable($enable) {
-		$this->enable = $enable;
-		$this->queryParameters["Enable"]=$enable;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function getDomainName() {
-		return $this->domainName;
-	}
+        return $this;
+    }
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
+    /**
+     * @param string $configId
+     *
+     * @return $this
+     */
+    public function setConfigId($configId)
+    {
+        $this->requestParameters['ConfigId'] = $configId;
+        $this->queryParameters['ConfigId'] = $configId;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getConfigId() {
-		return $this->configId;
-	}
-
-	public function setConfigId($configId) {
-		$this->configId = $configId;
-		$this->queryParameters["ConfigId"]=$configId;
-	}
-	
+        return $this;
+    }
 }

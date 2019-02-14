@@ -1,151 +1,182 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Cdn\Request\V20141111;
 
+/**
+ * Request of DescribeDomainBpsData
+ *
+ * @method string getDomainType()
+ * @method string getFixTimeGap()
+ * @method string getSecurityToken()
+ * @method string getTimeMerge()
+ * @method string getDomainName()
+ * @method string getEndTime()
+ * @method string getInterval()
+ * @method string getLocationNameEn()
+ * @method string getStartTime()
+ * @method string getIspNameEn()
+ * @method string getOwnerId()
+ */
 class DescribeDomainBpsDataRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cdn", "2014-11-11", "DescribeDomainBpsData");
-		$this->setMethod("POST");
-	}
 
-	private  $fixTimeGap;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $timeMerge;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Cdn',
+            '2014-11-11',
+            'DescribeDomainBpsData'
+        );
+    }
 
-	private  $domainName;
+    /**
+     * @param string $domainType
+     *
+     * @return $this
+     */
+    public function setDomainType($domainType)
+    {
+        $this->requestParameters['DomainType'] = $domainType;
+        $this->queryParameters['DomainType'] = $domainType;
 
-	private  $endTime;
+        return $this;
+    }
 
-	private  $locationNameEn;
+    /**
+     * @param string $fixTimeGap
+     *
+     * @return $this
+     */
+    public function setFixTimeGap($fixTimeGap)
+    {
+        $this->requestParameters['FixTimeGap'] = $fixTimeGap;
+        $this->queryParameters['FixTimeGap'] = $fixTimeGap;
 
-	private  $startTime;
+        return $this;
+    }
 
-	private  $ispNameEn;
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	private  $domainType;
+    /**
+     * @param string $timeMerge
+     *
+     * @return $this
+     */
+    public function setTimeMerge($timeMerge)
+    {
+        $this->requestParameters['TimeMerge'] = $timeMerge;
+        $this->queryParameters['TimeMerge'] = $timeMerge;
 
-	private  $securityToken;
+        return $this;
+    }
 
-	private  $interval;
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
 
-	public function getFixTimeGap() {
-		return $this->fixTimeGap;
-	}
+        return $this;
+    }
 
-	public function setFixTimeGap($fixTimeGap) {
-		$this->fixTimeGap = $fixTimeGap;
-		$this->queryParameters["FixTimeGap"]=$fixTimeGap;
-	}
+    /**
+     * @param string $endTime
+     *
+     * @return $this
+     */
+    public function setEndTime($endTime)
+    {
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
 
-	public function getTimeMerge() {
-		return $this->timeMerge;
-	}
+        return $this;
+    }
 
-	public function setTimeMerge($timeMerge) {
-		$this->timeMerge = $timeMerge;
-		$this->queryParameters["TimeMerge"]=$timeMerge;
-	}
+    /**
+     * @param string $interval
+     *
+     * @return $this
+     */
+    public function setInterval($interval)
+    {
+        $this->requestParameters['Interval'] = $interval;
+        $this->queryParameters['Interval'] = $interval;
 
-	public function getDomainName() {
-		return $this->domainName;
-	}
+        return $this;
+    }
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
+    /**
+     * @param string $locationNameEn
+     *
+     * @return $this
+     */
+    public function setLocationNameEn($locationNameEn)
+    {
+        $this->requestParameters['LocationNameEn'] = $locationNameEn;
+        $this->queryParameters['LocationNameEn'] = $locationNameEn;
 
-	public function getEndTime() {
-		return $this->endTime;
-	}
+        return $this;
+    }
 
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
+    /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
 
-	public function getLocationNameEn() {
-		return $this->locationNameEn;
-	}
+        return $this;
+    }
 
-	public function setLocationNameEn($locationNameEn) {
-		$this->locationNameEn = $locationNameEn;
-		$this->queryParameters["LocationNameEn"]=$locationNameEn;
-	}
+    /**
+     * @param string $ispNameEn
+     *
+     * @return $this
+     */
+    public function setIspNameEn($ispNameEn)
+    {
+        $this->requestParameters['IspNameEn'] = $ispNameEn;
+        $this->queryParameters['IspNameEn'] = $ispNameEn;
 
-	public function getStartTime() {
-		return $this->startTime;
-	}
+        return $this;
+    }
 
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function getIspNameEn() {
-		return $this->ispNameEn;
-	}
-
-	public function setIspNameEn($ispNameEn) {
-		$this->ispNameEn = $ispNameEn;
-		$this->queryParameters["IspNameEn"]=$ispNameEn;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getDomainType() {
-		return $this->domainType;
-	}
-
-	public function setDomainType($domainType) {
-		$this->domainType = $domainType;
-		$this->queryParameters["DomainType"]=$domainType;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
-
-	public function getInterval() {
-		return $this->interval;
-	}
-
-	public function setInterval($interval) {
-		$this->interval = $interval;
-		$this->queryParameters["Interval"]=$interval;
-	}
-	
+        return $this;
+    }
 }

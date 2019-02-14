@@ -1,102 +1,126 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Cdn\Request\V20180510;
 
+/**
+ * Request of AddFCTrigger
+ *
+ * @method string getNotes()
+ * @method string getEventMetaVersion()
+ * @method string getTriggerARN()
+ * @method string getSourceARN()
+ * @method string getOwnerId()
+ * @method string getRoleARN()
+ * @method string getEventMetaName()
+ */
 class AddFCTriggerRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cdn", "2018-05-10", "AddFCTrigger");
-		$this->setMethod("POST");
-	}
 
-	private  $notes;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $eventMetaVersion;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Cdn',
+            '2018-05-10',
+            'AddFCTrigger'
+        );
+    }
 
-	private  $triggerARN;
+    /**
+     * @param string $notes
+     *
+     * @return $this
+     */
+    public function setNotes($notes)
+    {
+        $this->requestParameters['Notes'] = $notes;
+        $this->queryParameters['Notes'] = $notes;
 
-	private  $sourceARN;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $eventMetaVersion
+     *
+     * @return $this
+     */
+    public function setEventMetaVersion($eventMetaVersion)
+    {
+        $this->requestParameters['EventMetaVersion'] = $eventMetaVersion;
+        $this->queryParameters['EventMetaVersion'] = $eventMetaVersion;
 
-	private  $roleARN;
+        return $this;
+    }
 
-	private  $eventMetaName;
+    /**
+     * @param string $triggerARN
+     *
+     * @return $this
+     */
+    public function setTriggerARN($triggerARN)
+    {
+        $this->requestParameters['TriggerARN'] = $triggerARN;
+        $this->queryParameters['TriggerARN'] = $triggerARN;
 
-	public function getNotes() {
-		return $this->notes;
-	}
+        return $this;
+    }
 
-	public function setNotes($notes) {
-		$this->notes = $notes;
-		}
+    /**
+     * @param string $sourceARN
+     *
+     * @return $this
+     */
+    public function setSourceARN($sourceARN)
+    {
+        $this->requestParameters['SourceARN'] = $sourceARN;
+        $this->queryParameters['SourceARN'] = $sourceARN;
 
-	public function getEventMetaVersion() {
-		return $this->eventMetaVersion;
-	}
+        return $this;
+    }
 
-	public function setEventMetaVersion($eventMetaVersion) {
-		$this->eventMetaVersion = $eventMetaVersion;
-		}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function getTriggerARN() {
-		return $this->triggerARN;
-	}
+        return $this;
+    }
 
-	public function setTriggerARN($triggerARN) {
-		$this->triggerARN = $triggerARN;
-		$this->queryParameters["TriggerARN"]=$triggerARN;
-	}
+    /**
+     * @param string $roleARN
+     *
+     * @return $this
+     */
+    public function setRoleARN($roleARN)
+    {
+        $this->requestParameters['RoleARN'] = $roleARN;
+        $this->queryParameters['RoleARN'] = $roleARN;
 
-	public function getSourceARN() {
-		return $this->sourceARN;
-	}
+        return $this;
+    }
 
-	public function setSourceARN($sourceARN) {
-		$this->sourceARN = $sourceARN;
-		}
+    /**
+     * @param string $eventMetaName
+     *
+     * @return $this
+     */
+    public function setEventMetaName($eventMetaName)
+    {
+        $this->requestParameters['EventMetaName'] = $eventMetaName;
+        $this->queryParameters['EventMetaName'] = $eventMetaName;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getRoleARN() {
-		return $this->roleARN;
-	}
-
-	public function setRoleARN($roleARN) {
-		$this->roleARN = $roleARN;
-		}
-
-	public function getEventMetaName() {
-		return $this->eventMetaName;
-	}
-
-	public function setEventMetaName($eventMetaName) {
-		$this->eventMetaName = $eventMetaName;
-		}
-	
+        return $this;
+    }
 }

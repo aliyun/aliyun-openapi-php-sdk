@@ -1,162 +1,213 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Cdn\Request\V20180510;
 
+/**
+ * Request of DescribeUserDomains
+ *
+ * @method string getFuncFilter()
+ * @method string getDomainName()
+ * @method string getOwnerId()
+ * @method string getFuncId()
+ * @method string getPageNumber()
+ * @method string getDomainStatus()
+ * @method string getDomainSearchType()
+ * @method string getCheckDomainShow()
+ * @method string getResourceGroupId()
+ * @method string getSecurityToken()
+ * @method string getCdnType()
+ * @method string getPageSize()
+ * @method array getTags()
+ */
 class DescribeUserDomainsRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cdn", "2018-05-10", "DescribeUserDomains");
-		$this->setMethod("POST");
-	}
 
-	private  $funcFilter;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $domainName;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Cdn',
+            '2018-05-10',
+            'DescribeUserDomains'
+        );
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $funcFilter
+     *
+     * @return $this
+     */
+    public function setFuncFilter($funcFilter)
+    {
+        $this->requestParameters['FuncFilter'] = $funcFilter;
+        $this->queryParameters['FuncFilter'] = $funcFilter;
 
-	private  $funcId;
+        return $this;
+    }
 
-	private  $pageNumber;
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
 
-	private  $domainStatus;
+        return $this;
+    }
 
-	private  $domainSearchType;
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	private  $checkDomainShow;
+        return $this;
+    }
 
-	private  $resourceGroupId;
+    /**
+     * @param string $funcId
+     *
+     * @return $this
+     */
+    public function setFuncId($funcId)
+    {
+        $this->requestParameters['FuncId'] = $funcId;
+        $this->queryParameters['FuncId'] = $funcId;
 
-	private  $securityToken;
+        return $this;
+    }
 
-	private  $cdnType;
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
-	private  $pageSize;
+        return $this;
+    }
 
-	public function getFuncFilter() {
-		return $this->funcFilter;
-	}
+    /**
+     * @param string $domainStatus
+     *
+     * @return $this
+     */
+    public function setDomainStatus($domainStatus)
+    {
+        $this->requestParameters['DomainStatus'] = $domainStatus;
+        $this->queryParameters['DomainStatus'] = $domainStatus;
 
-	public function setFuncFilter($funcFilter) {
-		$this->funcFilter = $funcFilter;
-		$this->queryParameters["FuncFilter"]=$funcFilter;
-	}
+        return $this;
+    }
 
-	public function getDomainName() {
-		return $this->domainName;
-	}
+    /**
+     * @param string $domainSearchType
+     *
+     * @return $this
+     */
+    public function setDomainSearchType($domainSearchType)
+    {
+        $this->requestParameters['DomainSearchType'] = $domainSearchType;
+        $this->queryParameters['DomainSearchType'] = $domainSearchType;
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
+        return $this;
+    }
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+    /**
+     * @param string $checkDomainShow
+     *
+     * @return $this
+     */
+    public function setCheckDomainShow($checkDomainShow)
+    {
+        $this->requestParameters['CheckDomainShow'] = $checkDomainShow;
+        $this->queryParameters['CheckDomainShow'] = $checkDomainShow;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+        return $this;
+    }
 
-	public function getFuncId() {
-		return $this->funcId;
-	}
+    /**
+     * @param string $resourceGroupId
+     *
+     * @return $this
+     */
+    public function setResourceGroupId($resourceGroupId)
+    {
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
 
-	public function setFuncId($funcId) {
-		$this->funcId = $funcId;
-		$this->queryParameters["FuncId"]=$funcId;
-	}
+        return $this;
+    }
 
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
+        return $this;
+    }
 
-	public function getDomainStatus() {
-		return $this->domainStatus;
-	}
+    /**
+     * @param string $cdnType
+     *
+     * @return $this
+     */
+    public function setCdnType($cdnType)
+    {
+        $this->requestParameters['CdnType'] = $cdnType;
+        $this->queryParameters['CdnType'] = $cdnType;
 
-	public function setDomainStatus($domainStatus) {
-		$this->domainStatus = $domainStatus;
-		$this->queryParameters["DomainStatus"]=$domainStatus;
-	}
+        return $this;
+    }
 
-	public function getDomainSearchType() {
-		return $this->domainSearchType;
-	}
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	public function setDomainSearchType($domainSearchType) {
-		$this->domainSearchType = $domainSearchType;
-		$this->queryParameters["DomainSearchType"]=$domainSearchType;
-	}
+        return $this;
+    }
 
-	public function getCheckDomainShow() {
-		return $this->checkDomainShow;
-	}
+    /**
+     * @param array $tags
+     *
+     * @return $this
+     */
+    public function setTags(array $tags)
+    {
+        $this->requestParameters['Tags'] = $tags;
+        foreach ($tags as $i => $iValue) {
+            $this->queryParameters['Tag.' . ($i + 1) . '.Value'] = $tags[$i]['Value'];
+            $this->queryParameters['Tag.' . ($i + 1) . '.Key'] = $tags[$i]['Key'];
+        }
 
-	public function setCheckDomainShow($checkDomainShow) {
-		$this->checkDomainShow = $checkDomainShow;
-		$this->queryParameters["CheckDomainShow"]=$checkDomainShow;
-	}
-
-	public function getResourceGroupId() {
-		return $this->resourceGroupId;
-	}
-
-	public function setResourceGroupId($resourceGroupId) {
-		$this->resourceGroupId = $resourceGroupId;
-		$this->queryParameters["ResourceGroupId"]=$resourceGroupId;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
-
-	public function getCdnType() {
-		return $this->cdnType;
-	}
-
-	public function setCdnType($cdnType) {
-		$this->cdnType = $cdnType;
-		$this->queryParameters["CdnType"]=$cdnType;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-	
+        return $this;
+    }
 }

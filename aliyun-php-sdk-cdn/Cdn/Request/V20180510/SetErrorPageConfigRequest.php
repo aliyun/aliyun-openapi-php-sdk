@@ -1,85 +1,98 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Cdn\Request\V20180510;
 
+/**
+ * Request of SetErrorPageConfig
+ *
+ * @method string getPageType()
+ * @method string getSecurityToken()
+ * @method string getDomainName()
+ * @method string getCustomPageUrl()
+ * @method string getOwnerId()
+ */
 class SetErrorPageConfigRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cdn", "2018-05-10", "SetErrorPageConfig");
-		$this->setMethod("POST");
-	}
 
-	private  $pageType;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $securityToken;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Cdn',
+            '2018-05-10',
+            'SetErrorPageConfig'
+        );
+    }
 
-	private  $domainName;
+    /**
+     * @param string $pageType
+     *
+     * @return $this
+     */
+    public function setPageType($pageType)
+    {
+        $this->requestParameters['PageType'] = $pageType;
+        $this->queryParameters['PageType'] = $pageType;
 
-	private  $customPageUrl;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
-	public function getPageType() {
-		return $this->pageType;
-	}
+        return $this;
+    }
 
-	public function setPageType($pageType) {
-		$this->pageType = $pageType;
-		$this->queryParameters["PageType"]=$pageType;
-	}
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
 
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
+        return $this;
+    }
 
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
+    /**
+     * @param string $customPageUrl
+     *
+     * @return $this
+     */
+    public function setCustomPageUrl($customPageUrl)
+    {
+        $this->requestParameters['CustomPageUrl'] = $customPageUrl;
+        $this->queryParameters['CustomPageUrl'] = $customPageUrl;
 
-	public function getDomainName() {
-		return $this->domainName;
-	}
+        return $this;
+    }
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function getCustomPageUrl() {
-		return $this->customPageUrl;
-	}
-
-	public function setCustomPageUrl($customPageUrl) {
-		$this->customPageUrl = $customPageUrl;
-		$this->queryParameters["CustomPageUrl"]=$customPageUrl;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-	
+        return $this;
+    }
 }

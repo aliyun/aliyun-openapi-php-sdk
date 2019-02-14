@@ -1,106 +1,121 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Cdn\Request\V20180510;
 
+/**
+ * Request of SetWaitingRoomConfig
+ *
+ * @method string getWaitUrl()
+ * @method string getWaitUri()
+ * @method string getMaxTimeWait()
+ * @method string getDomainName()
+ * @method string getAllowPct()
+ * @method string getGapTime()
+ * @method string getOwnerId()
+ */
 class SetWaitingRoomConfigRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Cdn", "2018-05-10", "SetWaitingRoomConfig");
-	}
 
-	private  $waitUrl;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Cdn',
+            '2018-05-10',
+            'SetWaitingRoomConfig'
+        );
+    }
 
-	private  $waitUri;
+    /**
+     * @param string $waitUrl
+     *
+     * @return $this
+     */
+    public function setWaitUrl($waitUrl)
+    {
+        $this->requestParameters['WaitUrl'] = $waitUrl;
+        $this->queryParameters['WaitUrl'] = $waitUrl;
 
-	private  $maxTimeWait;
+        return $this;
+    }
 
-	private  $domainName;
+    /**
+     * @param string $waitUri
+     *
+     * @return $this
+     */
+    public function setWaitUri($waitUri)
+    {
+        $this->requestParameters['WaitUri'] = $waitUri;
+        $this->queryParameters['WaitUri'] = $waitUri;
 
-	private  $allowPct;
+        return $this;
+    }
 
-	private  $gapTime;
+    /**
+     * @param string $maxTimeWait
+     *
+     * @return $this
+     */
+    public function setMaxTimeWait($maxTimeWait)
+    {
+        $this->requestParameters['MaxTimeWait'] = $maxTimeWait;
+        $this->queryParameters['MaxTimeWait'] = $maxTimeWait;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	public function getWaitUrl() {
-		return $this->waitUrl;
-	}
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
 
-	public function setWaitUrl($waitUrl) {
-		$this->waitUrl = $waitUrl;
-		$this->queryParameters["WaitUrl"]=$waitUrl;
-	}
+        return $this;
+    }
 
-	public function getWaitUri() {
-		return $this->waitUri;
-	}
+    /**
+     * @param string $allowPct
+     *
+     * @return $this
+     */
+    public function setAllowPct($allowPct)
+    {
+        $this->requestParameters['AllowPct'] = $allowPct;
+        $this->queryParameters['AllowPct'] = $allowPct;
 
-	public function setWaitUri($waitUri) {
-		$this->waitUri = $waitUri;
-		$this->queryParameters["WaitUri"]=$waitUri;
-	}
+        return $this;
+    }
 
-	public function getMaxTimeWait() {
-		return $this->maxTimeWait;
-	}
+    /**
+     * @param string $gapTime
+     *
+     * @return $this
+     */
+    public function setGapTime($gapTime)
+    {
+        $this->requestParameters['GapTime'] = $gapTime;
+        $this->queryParameters['GapTime'] = $gapTime;
 
-	public function setMaxTimeWait($maxTimeWait) {
-		$this->maxTimeWait = $maxTimeWait;
-		$this->queryParameters["MaxTimeWait"]=$maxTimeWait;
-	}
+        return $this;
+    }
 
-	public function getDomainName() {
-		return $this->domainName;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
-
-	public function getAllowPct() {
-		return $this->allowPct;
-	}
-
-	public function setAllowPct($allowPct) {
-		$this->allowPct = $allowPct;
-		$this->queryParameters["AllowPct"]=$allowPct;
-	}
-
-	public function getGapTime() {
-		return $this->gapTime;
-	}
-
-	public function setGapTime($gapTime) {
-		$this->gapTime = $gapTime;
-		$this->queryParameters["GapTime"]=$gapTime;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-	
+        return $this;
+    }
 }
