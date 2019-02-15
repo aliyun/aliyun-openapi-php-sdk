@@ -1,118 +1,141 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Dds\Request\V20151201;
 
+/**
+ * Request of DescribeReplicaUsage
+ *
+ * @method string getResourceOwnerId()
+ * @method string getSourceDBInstanceId()
+ * @method string getDestinationDBInstanceId()
+ * @method string getSecurityToken()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getReplicaId()
+ * @method string getOwnerId()
+ */
 class DescribeReplicaUsageRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Dds", "2015-12-01", "DescribeReplicaUsage", "dds", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $sourceDBInstanceId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Dds',
+            '2015-12-01',
+            'DescribeReplicaUsage',
+            'dds'
+        );
+    }
 
-	private  $destinationDBInstanceId;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $securityToken;
+        return $this;
+    }
 
-	private  $resourceOwnerAccount;
+    /**
+     * @param string $sourceDBInstanceId
+     *
+     * @return $this
+     */
+    public function setSourceDBInstanceId($sourceDBInstanceId)
+    {
+        $this->requestParameters['SourceDBInstanceId'] = $sourceDBInstanceId;
+        $this->queryParameters['SourceDBInstanceId'] = $sourceDBInstanceId;
 
-	private  $ownerAccount;
+        return $this;
+    }
 
-	private  $replicaId;
+    /**
+     * @param string $destinationDBInstanceId
+     *
+     * @return $this
+     */
+    public function setDestinationDBInstanceId($destinationDBInstanceId)
+    {
+        $this->requestParameters['DestinationDBInstanceId'] = $destinationDBInstanceId;
+        $this->queryParameters['DestinationDBInstanceId'] = $destinationDBInstanceId;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getSourceDBInstanceId() {
-		return $this->sourceDBInstanceId;
-	}
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	public function setSourceDBInstanceId($sourceDBInstanceId) {
-		$this->sourceDBInstanceId = $sourceDBInstanceId;
-		$this->queryParameters["SourceDBInstanceId"]=$sourceDBInstanceId;
-	}
+        return $this;
+    }
 
-	public function getDestinationDBInstanceId() {
-		return $this->destinationDBInstanceId;
-	}
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	public function setDestinationDBInstanceId($destinationDBInstanceId) {
-		$this->destinationDBInstanceId = $destinationDBInstanceId;
-		$this->queryParameters["DestinationDBInstanceId"]=$destinationDBInstanceId;
-	}
+        return $this;
+    }
 
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
+    /**
+     * @param string $replicaId
+     *
+     * @return $this
+     */
+    public function setReplicaId($replicaId)
+    {
+        $this->requestParameters['ReplicaId'] = $replicaId;
+        $this->queryParameters['ReplicaId'] = $replicaId;
 
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
-
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getReplicaId() {
-		return $this->replicaId;
-	}
-
-	public function setReplicaId($replicaId) {
-		$this->replicaId = $replicaId;
-		$this->queryParameters["ReplicaId"]=$replicaId;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-	
+        return $this;
+    }
 }
