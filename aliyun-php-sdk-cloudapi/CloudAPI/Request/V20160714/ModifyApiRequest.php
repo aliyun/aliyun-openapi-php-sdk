@@ -8,6 +8,7 @@ namespace CloudAPI\Request\V20160714;
  * @method string getWebSocketApiType()
  * @method string getErrorCodeSamples()
  * @method string getDescription()
+ * @method string getDisableInternet()
  * @method string getConstantParameters()
  * @method string getAuthType()
  * @method string getAllowSignatureMethod()
@@ -25,6 +26,7 @@ namespace CloudAPI\Request\V20160714;
  * @method string getResultType()
  * @method string getApiName()
  * @method string getResultSample()
+ * @method string getForceNonceCheck()
  * @method string getRequestConfig()
  * @method string getResultBodyModel()
  * @method string getApiId()
@@ -85,6 +87,19 @@ class ModifyApiRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Description'] = $description;
         $this->queryParameters['Description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * @param string $disableInternet
+     *
+     * @return $this
+     */
+    public function setDisableInternet($disableInternet)
+    {
+        $this->requestParameters['DisableInternet'] = $disableInternet;
+        $this->queryParameters['DisableInternet'] = $disableInternet;
 
         return $this;
     }
@@ -306,6 +321,19 @@ class ModifyApiRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResultSample'] = $resultSample;
         $this->queryParameters['ResultSample'] = $resultSample;
+
+        return $this;
+    }
+
+    /**
+     * @param string $forceNonceCheck
+     *
+     * @return $this
+     */
+    public function setForceNonceCheck($forceNonceCheck)
+    {
+        $this->requestParameters['ForceNonceCheck'] = $forceNonceCheck;
+        $this->queryParameters['ForceNonceCheck'] = $forceNonceCheck;
 
         return $this;
     }

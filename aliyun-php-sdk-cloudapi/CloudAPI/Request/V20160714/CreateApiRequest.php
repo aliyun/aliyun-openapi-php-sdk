@@ -5,26 +5,28 @@ namespace CloudAPI\Request\V20160714;
 /**
  * Request of CreateApi
  *
- * @method string getResultDescriptions()
  * @method string getWebSocketApiType()
- * @method string getVisibility()
- * @method string getGroupId()
  * @method string getErrorCodeSamples()
  * @method string getDescription()
- * @method string getServiceConfig()
+ * @method string getDisableInternet()
  * @method string getConstantParameters()
- * @method string getResultType()
  * @method string getAuthType()
  * @method string getAllowSignatureMethod()
  * @method string getServiceParameters()
  * @method string getFailResultSample()
- * @method string getApiName()
  * @method string getSystemParameters()
  * @method string getServiceParametersMap()
- * @method string getResultSample()
  * @method string getSecurityToken()
  * @method string getOpenIdConnectConfig()
  * @method string getRequestParameters()
+ * @method string getResultDescriptions()
+ * @method string getVisibility()
+ * @method string getGroupId()
+ * @method string getServiceConfig()
+ * @method string getResultType()
+ * @method string getApiName()
+ * @method string getResultSample()
+ * @method string getForceNonceCheck()
  * @method string getRequestConfig()
  * @method string getResultBodyModel()
  */
@@ -50,19 +52,6 @@ class CreateApiRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resultDescriptions
-     *
-     * @return $this
-     */
-    public function setResultDescriptions($resultDescriptions)
-    {
-        $this->requestParameters['ResultDescriptions'] = $resultDescriptions;
-        $this->queryParameters['ResultDescriptions'] = $resultDescriptions;
-
-        return $this;
-    }
-
-    /**
      * @param string $webSocketApiType
      *
      * @return $this
@@ -71,32 +60,6 @@ class CreateApiRequest extends \RpcAcsRequest
     {
         $this->requestParameters['WebSocketApiType'] = $webSocketApiType;
         $this->queryParameters['WebSocketApiType'] = $webSocketApiType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $visibility
-     *
-     * @return $this
-     */
-    public function setVisibility($visibility)
-    {
-        $this->requestParameters['Visibility'] = $visibility;
-        $this->queryParameters['Visibility'] = $visibility;
-
-        return $this;
-    }
-
-    /**
-     * @param string $groupId
-     *
-     * @return $this
-     */
-    public function setGroupId($groupId)
-    {
-        $this->requestParameters['GroupId'] = $groupId;
-        $this->queryParameters['GroupId'] = $groupId;
 
         return $this;
     }
@@ -128,14 +91,14 @@ class CreateApiRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $serviceConfig
+     * @param string $disableInternet
      *
      * @return $this
      */
-    public function setServiceConfig($serviceConfig)
+    public function setDisableInternet($disableInternet)
     {
-        $this->requestParameters['ServiceConfig'] = $serviceConfig;
-        $this->queryParameters['ServiceConfig'] = $serviceConfig;
+        $this->requestParameters['DisableInternet'] = $disableInternet;
+        $this->queryParameters['DisableInternet'] = $disableInternet;
 
         return $this;
     }
@@ -149,19 +112,6 @@ class CreateApiRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ConstantParameters'] = $constantParameters;
         $this->queryParameters['ConstantParameters'] = $constantParameters;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resultType
-     *
-     * @return $this
-     */
-    public function setResultType($resultType)
-    {
-        $this->requestParameters['ResultType'] = $resultType;
-        $this->queryParameters['ResultType'] = $resultType;
 
         return $this;
     }
@@ -219,19 +169,6 @@ class CreateApiRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $apiName
-     *
-     * @return $this
-     */
-    public function setApiName($apiName)
-    {
-        $this->requestParameters['ApiName'] = $apiName;
-        $this->queryParameters['ApiName'] = $apiName;
-
-        return $this;
-    }
-
-    /**
      * @param string $systemParameters
      *
      * @return $this
@@ -253,19 +190,6 @@ class CreateApiRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ServiceParametersMap'] = $serviceParametersMap;
         $this->queryParameters['ServiceParametersMap'] = $serviceParametersMap;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resultSample
-     *
-     * @return $this
-     */
-    public function setResultSample($resultSample)
-    {
-        $this->requestParameters['ResultSample'] = $resultSample;
-        $this->queryParameters['ResultSample'] = $resultSample;
 
         return $this;
     }
@@ -305,6 +229,110 @@ class CreateApiRequest extends \RpcAcsRequest
     {
         $this->requestParameters['RequestParameters'] = $requestParameters;
         $this->queryParameters['RequestParameters'] = $requestParameters;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resultDescriptions
+     *
+     * @return $this
+     */
+    public function setResultDescriptions($resultDescriptions)
+    {
+        $this->requestParameters['ResultDescriptions'] = $resultDescriptions;
+        $this->queryParameters['ResultDescriptions'] = $resultDescriptions;
+
+        return $this;
+    }
+
+    /**
+     * @param string $visibility
+     *
+     * @return $this
+     */
+    public function setVisibility($visibility)
+    {
+        $this->requestParameters['Visibility'] = $visibility;
+        $this->queryParameters['Visibility'] = $visibility;
+
+        return $this;
+    }
+
+    /**
+     * @param string $groupId
+     *
+     * @return $this
+     */
+    public function setGroupId($groupId)
+    {
+        $this->requestParameters['GroupId'] = $groupId;
+        $this->queryParameters['GroupId'] = $groupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $serviceConfig
+     *
+     * @return $this
+     */
+    public function setServiceConfig($serviceConfig)
+    {
+        $this->requestParameters['ServiceConfig'] = $serviceConfig;
+        $this->queryParameters['ServiceConfig'] = $serviceConfig;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resultType
+     *
+     * @return $this
+     */
+    public function setResultType($resultType)
+    {
+        $this->requestParameters['ResultType'] = $resultType;
+        $this->queryParameters['ResultType'] = $resultType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiName
+     *
+     * @return $this
+     */
+    public function setApiName($apiName)
+    {
+        $this->requestParameters['ApiName'] = $apiName;
+        $this->queryParameters['ApiName'] = $apiName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resultSample
+     *
+     * @return $this
+     */
+    public function setResultSample($resultSample)
+    {
+        $this->requestParameters['ResultSample'] = $resultSample;
+        $this->queryParameters['ResultSample'] = $resultSample;
+
+        return $this;
+    }
+
+    /**
+     * @param string $forceNonceCheck
+     *
+     * @return $this
+     */
+    public function setForceNonceCheck($forceNonceCheck)
+    {
+        $this->requestParameters['ForceNonceCheck'] = $forceNonceCheck;
+        $this->queryParameters['ForceNonceCheck'] = $forceNonceCheck;
 
         return $this;
     }
