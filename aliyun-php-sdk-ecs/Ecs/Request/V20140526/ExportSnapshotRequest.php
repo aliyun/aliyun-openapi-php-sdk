@@ -3,17 +3,16 @@
 namespace Ecs\Request\V20140526;
 
 /**
- * Request of StartInstance
+ * Request of ExportSnapshot
  *
- * @method string getInitLocalDisk()
  * @method string getResourceOwnerId()
- * @method string getInstanceId()
- * @method string getDryRun()
+ * @method string getSnapshotId()
+ * @method string getOssBucket()
  * @method string getResourceOwnerAccount()
- * @method string getOwnerAccount()
+ * @method string getRoleName()
  * @method string getOwnerId()
  */
-class StartInstanceRequest extends \RpcAcsRequest
+class ExportSnapshotRequest extends \RpcAcsRequest
 {
 
     /**
@@ -29,22 +28,9 @@ class StartInstanceRequest extends \RpcAcsRequest
         parent::__construct(
             'Ecs',
             '2014-05-26',
-            'StartInstance',
+            'ExportSnapshot',
             'ecs'
         );
-    }
-
-    /**
-     * @param string $initLocalDisk
-     *
-     * @return $this
-     */
-    public function setInitLocalDisk($initLocalDisk)
-    {
-        $this->requestParameters['InitLocalDisk'] = $initLocalDisk;
-        $this->queryParameters['InitLocalDisk'] = $initLocalDisk;
-
-        return $this;
     }
 
     /**
@@ -61,27 +47,27 @@ class StartInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
+     * @param string $snapshotId
      *
      * @return $this
      */
-    public function setInstanceId($instanceId)
+    public function setSnapshotId($snapshotId)
     {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
+        $this->requestParameters['SnapshotId'] = $snapshotId;
+        $this->queryParameters['SnapshotId'] = $snapshotId;
 
         return $this;
     }
 
     /**
-     * @param string $dryRun
+     * @param string $ossBucket
      *
      * @return $this
      */
-    public function setDryRun($dryRun)
+    public function setOssBucket($ossBucket)
     {
-        $this->requestParameters['DryRun'] = $dryRun;
-        $this->queryParameters['DryRun'] = $dryRun;
+        $this->requestParameters['OssBucket'] = $ossBucket;
+        $this->queryParameters['OssBucket'] = $ossBucket;
 
         return $this;
     }
@@ -100,14 +86,14 @@ class StartInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerAccount
+     * @param string $roleName
      *
      * @return $this
      */
-    public function setOwnerAccount($ownerAccount)
+    public function setRoleName($roleName)
     {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+        $this->requestParameters['RoleName'] = $roleName;
+        $this->queryParameters['RoleName'] = $roleName;
 
         return $this;
     }

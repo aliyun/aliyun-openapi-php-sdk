@@ -7,6 +7,7 @@ namespace Ecs\Request\V20140526;
  *
  * @method string getResourceOwnerId()
  * @method string getInstanceId()
+ * @method string getDryRun()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
@@ -55,6 +56,19 @@ class RebootInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['InstanceId'] = $instanceId;
         $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dryRun
+     *
+     * @return $this
+     */
+    public function setDryRun($dryRun)
+    {
+        $this->requestParameters['DryRun'] = $dryRun;
+        $this->queryParameters['DryRun'] = $dryRun;
 
         return $this;
     }
