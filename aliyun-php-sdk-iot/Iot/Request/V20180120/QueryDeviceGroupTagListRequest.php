@@ -24,7 +24,8 @@ class QueryDeviceGroupTagListRequest extends \RpcAcsRequest
         parent::__construct(
             'Iot',
             '2018-01-20',
-            'QueryDeviceGroupTagList'
+            'QueryDeviceGroupTagList',
+            'iot'
         );
     }
 

@@ -24,7 +24,8 @@ class DeleteProductTopicRequest extends \RpcAcsRequest
         parent::__construct(
             'Iot',
             '2018-01-20',
-            'DeleteProductTopic'
+            'DeleteProductTopic',
+            'iot'
         );
     }
 

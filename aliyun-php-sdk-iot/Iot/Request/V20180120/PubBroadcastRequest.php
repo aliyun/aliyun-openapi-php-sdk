@@ -26,7 +26,8 @@ class PubBroadcastRequest extends \RpcAcsRequest
         parent::__construct(
             'Iot',
             '2018-01-20',
-            'PubBroadcast'
+            'PubBroadcast',
+            'iot'
         );
     }
 

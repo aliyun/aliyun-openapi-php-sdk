@@ -28,7 +28,8 @@ class GetThingTopoRequest extends \RpcAcsRequest
         parent::__construct(
             'Iot',
             '2018-01-20',
-            'GetThingTopo'
+            'GetThingTopo',
+            'iot'
         );
     }
 

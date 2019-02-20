@@ -26,7 +26,8 @@ class UpdateDeviceShadowRequest extends \RpcAcsRequest
         parent::__construct(
             'Iot',
             '2018-01-20',
-            'UpdateDeviceShadow'
+            'UpdateDeviceShadow',
+            'iot'
         );
     }
 

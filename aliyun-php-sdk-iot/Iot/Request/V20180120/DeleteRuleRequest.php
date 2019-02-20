@@ -24,7 +24,8 @@ class DeleteRuleRequest extends \RpcAcsRequest
         parent::__construct(
             'Iot',
             '2018-01-20',
-            'DeleteRule'
+            'DeleteRule',
+            'iot'
         );
     }
 

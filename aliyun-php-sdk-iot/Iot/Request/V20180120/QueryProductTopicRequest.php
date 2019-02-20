@@ -24,7 +24,8 @@ class QueryProductTopicRequest extends \RpcAcsRequest
         parent::__construct(
             'Iot',
             '2018-01-20',
-            'QueryProductTopic'
+            'QueryProductTopic',
+            'iot'
         );
     }
 

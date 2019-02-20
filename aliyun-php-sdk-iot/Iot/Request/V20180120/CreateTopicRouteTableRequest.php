@@ -25,7 +25,8 @@ class CreateTopicRouteTableRequest extends \RpcAcsRequest
         parent::__construct(
             'Iot',
             '2018-01-20',
-            'CreateTopicRouteTable'
+            'CreateTopicRouteTable',
+            'iot'
         );
     }
 

@@ -32,7 +32,8 @@ class QueryDeviceEventDataRequest extends \RpcAcsRequest
         parent::__construct(
             'Iot',
             '2018-01-20',
-            'QueryDeviceEventData'
+            'QueryDeviceEventData',
+            'iot'
         );
     }
 
