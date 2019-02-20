@@ -16,11 +16,6 @@ class InvokeServiceRequest extends \RpcAcsRequest
     /**
      * @var string
      */
-    protected $requestScheme = 'https';
-
-    /**
-     * @var string
-     */
     protected $method = 'POST';
 
     /**
