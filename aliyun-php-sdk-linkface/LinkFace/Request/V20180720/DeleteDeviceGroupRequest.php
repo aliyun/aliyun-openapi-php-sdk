@@ -3,14 +3,14 @@
 namespace LinkFace\Request\V20180720;
 
 /**
- * Request of QueryAddUserInfo
+ * Request of DeleteDeviceGroup
  *
  * @method string getIotId()
  * @method string getGroupId()
  * @method string getDeviceName()
  * @method string getProductKey()
  */
-class QueryAddUserInfoRequest extends \RpcAcsRequest
+class DeleteDeviceGroupRequest extends \RpcAcsRequest
 {
 
     /**
@@ -31,7 +31,7 @@ class QueryAddUserInfoRequest extends \RpcAcsRequest
         parent::__construct(
             'LinkFace',
             '2018-07-20',
-            'QueryAddUserInfo'
+            'DeleteDeviceGroup'
         );
     }
 

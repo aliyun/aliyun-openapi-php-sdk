@@ -3,14 +3,13 @@
 namespace LinkFace\Request\V20180720;
 
 /**
- * Request of QueryAddUserInfo
+ * Request of DeleteDeviceAllGroup
  *
  * @method string getIotId()
- * @method string getGroupId()
  * @method string getDeviceName()
  * @method string getProductKey()
  */
-class QueryAddUserInfoRequest extends \RpcAcsRequest
+class DeleteDeviceAllGroupRequest extends \RpcAcsRequest
 {
 
     /**
@@ -31,7 +30,7 @@ class QueryAddUserInfoRequest extends \RpcAcsRequest
         parent::__construct(
             'LinkFace',
             '2018-07-20',
-            'QueryAddUserInfo'
+            'DeleteDeviceAllGroup'
         );
     }
 
@@ -44,19 +43,6 @@ class QueryAddUserInfoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['IotId'] = $iotId;
         $this->queryParameters['IotId'] = $iotId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $groupId
-     *
-     * @return $this
-     */
-    public function setGroupId($groupId)
-    {
-        $this->requestParameters['GroupId'] = $groupId;
-        $this->queryParameters['GroupId'] = $groupId;
 
         return $this;
     }
