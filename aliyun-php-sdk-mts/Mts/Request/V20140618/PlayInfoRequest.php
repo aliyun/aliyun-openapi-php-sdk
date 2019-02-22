@@ -1,162 +1,197 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Mts\Request\V20140618;
 
+/**
+ * Request of PlayInfo
+ *
+ * @method string getPlayDomain()
+ * @method string getResourceOwnerId()
+ * @method string getFormats()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getHlsUriToken()
+ * @method string getTerminal()
+ * @method string getOwnerId()
+ * @method string getMediaId()
+ * @method string getRand()
+ * @method string getAuthTimeout()
+ * @method string getAuthInfo()
+ */
 class PlayInfoRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Mts", "2014-06-18", "PlayInfo", "mts", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $playDomain;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $resourceOwnerId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Mts',
+            '2014-06-18',
+            'PlayInfo',
+            'Mts'
+        );
+    }
 
-	private  $formats;
+    /**
+     * @param string $playDomain
+     *
+     * @return $this
+     */
+    public function setPlayDomain($playDomain)
+    {
+        $this->requestParameters['PlayDomain'] = $playDomain;
+        $this->queryParameters['PlayDomain'] = $playDomain;
 
-	private  $resourceOwnerAccount;
+        return $this;
+    }
 
-	private  $ownerAccount;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $hlsUriToken;
+        return $this;
+    }
 
-	private  $terminal;
+    /**
+     * @param string $formats
+     *
+     * @return $this
+     */
+    public function setFormats($formats)
+    {
+        $this->requestParameters['Formats'] = $formats;
+        $this->queryParameters['Formats'] = $formats;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	private  $mediaId;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $rand;
+        return $this;
+    }
 
-	private  $authTimeout;
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	private  $authInfo;
+        return $this;
+    }
 
-	public function getPlayDomain() {
-		return $this->playDomain;
-	}
+    /**
+     * @param string $hlsUriToken
+     *
+     * @return $this
+     */
+    public function setHlsUriToken($hlsUriToken)
+    {
+        $this->requestParameters['HlsUriToken'] = $hlsUriToken;
+        $this->queryParameters['HlsUriToken'] = $hlsUriToken;
 
-	public function setPlayDomain($playDomain) {
-		$this->playDomain = $playDomain;
-		$this->queryParameters["PlayDomain"]=$playDomain;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+    /**
+     * @param string $terminal
+     *
+     * @return $this
+     */
+    public function setTerminal($terminal)
+    {
+        $this->requestParameters['Terminal'] = $terminal;
+        $this->queryParameters['Terminal'] = $terminal;
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getFormats() {
-		return $this->formats;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setFormats($formats) {
-		$this->formats = $formats;
-		$this->queryParameters["Formats"]=$formats;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param string $mediaId
+     *
+     * @return $this
+     */
+    public function setMediaId($mediaId)
+    {
+        $this->requestParameters['MediaId'] = $mediaId;
+        $this->queryParameters['MediaId'] = $mediaId;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+    /**
+     * @param string $rand
+     *
+     * @return $this
+     */
+    public function setRand($rand)
+    {
+        $this->requestParameters['Rand'] = $rand;
+        $this->queryParameters['Rand'] = $rand;
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
+        return $this;
+    }
 
-	public function getHlsUriToken() {
-		return $this->hlsUriToken;
-	}
+    /**
+     * @param string $authTimeout
+     *
+     * @return $this
+     */
+    public function setAuthTimeout($authTimeout)
+    {
+        $this->requestParameters['AuthTimeout'] = $authTimeout;
+        $this->queryParameters['AuthTimeout'] = $authTimeout;
 
-	public function setHlsUriToken($hlsUriToken) {
-		$this->hlsUriToken = $hlsUriToken;
-		$this->queryParameters["HlsUriToken"]=$hlsUriToken;
-	}
+        return $this;
+    }
 
-	public function getTerminal() {
-		return $this->terminal;
-	}
+    /**
+     * @param string $authInfo
+     *
+     * @return $this
+     */
+    public function setAuthInfo($authInfo)
+    {
+        $this->requestParameters['AuthInfo'] = $authInfo;
+        $this->queryParameters['AuthInfo'] = $authInfo;
 
-	public function setTerminal($terminal) {
-		$this->terminal = $terminal;
-		$this->queryParameters["Terminal"]=$terminal;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getMediaId() {
-		return $this->mediaId;
-	}
-
-	public function setMediaId($mediaId) {
-		$this->mediaId = $mediaId;
-		$this->queryParameters["MediaId"]=$mediaId;
-	}
-
-	public function getRand() {
-		return $this->rand;
-	}
-
-	public function setRand($rand) {
-		$this->rand = $rand;
-		$this->queryParameters["Rand"]=$rand;
-	}
-
-	public function getAuthTimeout() {
-		return $this->authTimeout;
-	}
-
-	public function setAuthTimeout($authTimeout) {
-		$this->authTimeout = $authTimeout;
-		$this->queryParameters["AuthTimeout"]=$authTimeout;
-	}
-
-	public function getAuthInfo() {
-		return $this->authInfo;
-	}
-
-	public function setAuthInfo($authInfo) {
-		$this->authInfo = $authInfo;
-		$this->queryParameters["AuthInfo"]=$authInfo;
-	}
-	
+        return $this;
+    }
 }

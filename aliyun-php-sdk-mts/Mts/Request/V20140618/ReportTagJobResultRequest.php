@@ -1,107 +1,127 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Mts\Request\V20140618;
 
+/**
+ * Request of ReportTagJobResult
+ *
+ * @method string getResult()
+ * @method string getJobId()
+ * @method string getResourceOwnerId()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getTag()
+ * @method string getOwnerId()
+ */
 class ReportTagJobResultRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Mts", "2014-06-18", "ReportTagJobResult", "mts", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $result;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $jobId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Mts',
+            '2014-06-18',
+            'ReportTagJobResult',
+            'Mts'
+        );
+    }
 
-	private  $resourceOwnerId;
+    /**
+     * @param string $result
+     *
+     * @return $this
+     */
+    public function setResult($result)
+    {
+        $this->requestParameters['Result'] = $result;
+        $this->queryParameters['Result'] = $result;
 
-	private  $resourceOwnerAccount;
+        return $this;
+    }
 
-	private  $ownerAccount;
+    /**
+     * @param string $jobId
+     *
+     * @return $this
+     */
+    public function setJobId($jobId)
+    {
+        $this->requestParameters['JobId'] = $jobId;
+        $this->queryParameters['JobId'] = $jobId;
 
-	private  $tag;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	public function getResult() {
-		return $this->result;
-	}
+        return $this;
+    }
 
-	public function setResult($result) {
-		$this->result = $result;
-		$this->queryParameters["Result"]=$result;
-	}
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	public function getJobId() {
-		return $this->jobId;
-	}
+        return $this;
+    }
 
-	public function setJobId($jobId) {
-		$this->jobId = $jobId;
-		$this->queryParameters["JobId"]=$jobId;
-	}
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+    /**
+     * @param string $tag
+     *
+     * @return $this
+     */
+    public function setTag($tag)
+    {
+        $this->requestParameters['Tag'] = $tag;
+        $this->queryParameters['Tag'] = $tag;
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
-
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
-
-	public function getTag() {
-		return $this->tag;
-	}
-
-	public function setTag($tag) {
-		$this->tag = $tag;
-		$this->queryParameters["Tag"]=$tag;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-	
+        return $this;
+    }
 }

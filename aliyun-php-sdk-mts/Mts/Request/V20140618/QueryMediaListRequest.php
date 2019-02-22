@@ -1,129 +1,155 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Mts\Request\V20140618;
 
+/**
+ * Request of QueryMediaList
+ *
+ * @method string getResourceOwnerId()
+ * @method string getIncludeSummaryList()
+ * @method string getResourceOwnerAccount()
+ * @method string getIncludeSnapshotList()
+ * @method string getOwnerAccount()
+ * @method string getMediaIds()
+ * @method string getOwnerId()
+ * @method string getIncludePlayList()
+ * @method string getIncludeMediaInfo()
+ */
 class QueryMediaListRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Mts", "2014-06-18", "QueryMediaList", "mts", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $includeSummaryList;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Mts',
+            '2014-06-18',
+            'QueryMediaList',
+            'Mts'
+        );
+    }
 
-	private  $resourceOwnerAccount;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $includeSnapshotList;
+        return $this;
+    }
 
-	private  $ownerAccount;
+    /**
+     * @param string $includeSummaryList
+     *
+     * @return $this
+     */
+    public function setIncludeSummaryList($includeSummaryList)
+    {
+        $this->requestParameters['IncludeSummaryList'] = $includeSummaryList;
+        $this->queryParameters['IncludeSummaryList'] = $includeSummaryList;
 
-	private  $mediaIds;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $includePlayList;
+        return $this;
+    }
 
-	private  $includeMediaInfo;
+    /**
+     * @param string $includeSnapshotList
+     *
+     * @return $this
+     */
+    public function setIncludeSnapshotList($includeSnapshotList)
+    {
+        $this->requestParameters['IncludeSnapshotList'] = $includeSnapshotList;
+        $this->queryParameters['IncludeSnapshotList'] = $includeSnapshotList;
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	public function getIncludeSummaryList() {
-		return $this->includeSummaryList;
-	}
+        return $this;
+    }
 
-	public function setIncludeSummaryList($includeSummaryList) {
-		$this->includeSummaryList = $includeSummaryList;
-		$this->queryParameters["IncludeSummaryList"]=$includeSummaryList;
-	}
+    /**
+     * @param string $mediaIds
+     *
+     * @return $this
+     */
+    public function setMediaIds($mediaIds)
+    {
+        $this->requestParameters['MediaIds'] = $mediaIds;
+        $this->queryParameters['MediaIds'] = $mediaIds;
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function getIncludeSnapshotList() {
-		return $this->includeSnapshotList;
-	}
+        return $this;
+    }
 
-	public function setIncludeSnapshotList($includeSnapshotList) {
-		$this->includeSnapshotList = $includeSnapshotList;
-		$this->queryParameters["IncludeSnapshotList"]=$includeSnapshotList;
-	}
+    /**
+     * @param string $includePlayList
+     *
+     * @return $this
+     */
+    public function setIncludePlayList($includePlayList)
+    {
+        $this->requestParameters['IncludePlayList'] = $includePlayList;
+        $this->queryParameters['IncludePlayList'] = $includePlayList;
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+        return $this;
+    }
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
+    /**
+     * @param string $includeMediaInfo
+     *
+     * @return $this
+     */
+    public function setIncludeMediaInfo($includeMediaInfo)
+    {
+        $this->requestParameters['IncludeMediaInfo'] = $includeMediaInfo;
+        $this->queryParameters['IncludeMediaInfo'] = $includeMediaInfo;
 
-	public function getMediaIds() {
-		return $this->mediaIds;
-	}
-
-	public function setMediaIds($mediaIds) {
-		$this->mediaIds = $mediaIds;
-		$this->queryParameters["MediaIds"]=$mediaIds;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getIncludePlayList() {
-		return $this->includePlayList;
-	}
-
-	public function setIncludePlayList($includePlayList) {
-		$this->includePlayList = $includePlayList;
-		$this->queryParameters["IncludePlayList"]=$includePlayList;
-	}
-
-	public function getIncludeMediaInfo() {
-		return $this->includeMediaInfo;
-	}
-
-	public function setIncludeMediaInfo($includeMediaInfo) {
-		$this->includeMediaInfo = $includeMediaInfo;
-		$this->queryParameters["IncludeMediaInfo"]=$includeMediaInfo;
-	}
-	
+        return $this;
+    }
 }

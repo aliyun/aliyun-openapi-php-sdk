@@ -1,3 +1,12 @@
+2019-02-22 Version: 2.7.0
+1, Add SubmitMcuJob interface
+2, Add QueryMcuJob interface
+3, Add DeleteMcuJob interface
+4, Add CreateMcuTemplate interface
+5, Add QueryMcuTemplate interface
+6, Add DeleteMcuTemplate interface
+7, Add UpdateMcuTemplate interface
+
 2018-08-05 Version: 2.6.0
 1, Add Interface SubmitSubtitleJob
 2, Support convert ttml、stl subtitle to vtt
