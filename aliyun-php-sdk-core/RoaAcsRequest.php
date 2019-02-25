@@ -95,6 +95,7 @@ abstract class RoaAcsRequest extends AcsRequest
             $queryString = substr($queryString, 0, -1);
         }
         $signString                     .= $queryString;
+        $this->stringToBeSigned         = $signString;
         $this->headers['Authorization'] = 'acs ' . $credential->getAccessKeyId() . ':'
                                           . $iSigner->signString($signString, $credential->getAccessSecret());
         $requestUrl                     = $this->getProtocol() . '://' . $domain . $queryString;

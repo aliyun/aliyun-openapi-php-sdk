@@ -73,6 +73,10 @@ abstract class AcsRequest
      * @var array The original parameters of the request object.
      */
     protected $requestParameters = array();
+    /**
+     * @var string
+     */
+    protected $stringToBeSigned = '';
 
     /**
      * AcsRequest constructor.
@@ -302,5 +306,13 @@ abstract class AcsRequest
     protected function propertyNameByMethodName($methodName)
     {
         return \mb_strcut($methodName, 3);
+    }
+
+    /**
+     * @return string
+     */
+    public function stringToBeSigned()
+    {
+        return $this->stringToBeSigned;
     }
 }
