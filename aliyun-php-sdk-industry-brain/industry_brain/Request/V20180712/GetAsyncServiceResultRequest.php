@@ -5,20 +5,10 @@ namespace industry_brain\Request\V20180712;
 /**
  * Request of GetAsyncServiceResult
  *
- * @method string getServiceId()
+ * @method string getTaskId()
  */
 class GetAsyncServiceResultRequest extends \RpcAcsRequest
 {
-
-    /**
-     * @var string
-     */
-    protected $requestScheme = 'https';
-
-    /**
-     * @var string
-     */
-    protected $method = 'POST';
 
     /**
      * Class constructor.
@@ -33,14 +23,14 @@ class GetAsyncServiceResultRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $serviceId
+     * @param string $taskId
      *
      * @return $this
      */
-    public function setServiceId($serviceId)
+    public function setTaskId($taskId)
     {
-        $this->requestParameters['ServiceId'] = $serviceId;
-        $this->queryParameters['ServiceId'] = $serviceId;
+        $this->requestParameters['TaskId'] = $taskId;
+        $this->queryParameters['TaskId'] = $taskId;
 
         return $this;
     }

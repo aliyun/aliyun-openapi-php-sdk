@@ -5,16 +5,13 @@ namespace industry_brain\Request\V20180712;
 /**
  * Request of InvokeServiceAsync
  *
+ * @method string getIsShowInput()
  * @method string getServiceId()
  * @method string getParams()
+ * @method string getRequestData()
  */
 class InvokeServiceAsyncRequest extends \RpcAcsRequest
 {
-
-    /**
-     * @var string
-     */
-    protected $requestScheme = 'https';
 
     /**
      * @var string
@@ -31,6 +28,19 @@ class InvokeServiceAsyncRequest extends \RpcAcsRequest
             '2018-07-12',
             'InvokeServiceAsync'
         );
+    }
+
+    /**
+     * @param string $isShowInput
+     *
+     * @return $this
+     */
+    public function setIsShowInput($isShowInput)
+    {
+        $this->requestParameters['IsShowInput'] = $isShowInput;
+        $this->queryParameters['IsShowInput'] = $isShowInput;
+
+        return $this;
     }
 
     /**
@@ -55,6 +65,19 @@ class InvokeServiceAsyncRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Params'] = $params;
         $this->queryParameters['Params'] = $params;
+
+        return $this;
+    }
+
+    /**
+     * @param string $requestData
+     *
+     * @return $this
+     */
+    public function setRequestData($requestData)
+    {
+        $this->requestParameters['RequestData'] = $requestData;
+        $this->queryParameters['RequestData'] = $requestData;
 
         return $this;
     }
