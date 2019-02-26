@@ -17,6 +17,11 @@ class SetWaitingRoomConfigRequest extends \RpcAcsRequest
 {
 
     /**
+     * @var string
+     */
+    protected $method = 'POST';
+
+    /**
      * Class constructor.
      */
     public function __construct()
