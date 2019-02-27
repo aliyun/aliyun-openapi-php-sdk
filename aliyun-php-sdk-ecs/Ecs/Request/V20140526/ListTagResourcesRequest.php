@@ -3,18 +3,18 @@
 namespace Ecs\Request\V20140526;
 
 /**
- * Request of StartInstance
+ * Request of ListTagResources
  *
- * @method string getSourceRegionId()
- * @method string getInitLocalDisk()
  * @method string getResourceOwnerId()
- * @method string getInstanceId()
- * @method string getDryRun()
+ * @method string getNextToken()
+ * @method array getTags()
+ * @method array getResourceIds()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getResourceType()
  */
-class StartInstanceRequest extends \RpcAcsRequest
+class ListTagResourcesRequest extends \RpcAcsRequest
 {
 
     /**
@@ -30,35 +30,9 @@ class StartInstanceRequest extends \RpcAcsRequest
         parent::__construct(
             'Ecs',
             '2014-05-26',
-            'StartInstance',
+            'ListTagResources',
             'ecs'
         );
-    }
-
-    /**
-     * @param string $sourceRegionId
-     *
-     * @return $this
-     */
-    public function setSourceRegionId($sourceRegionId)
-    {
-        $this->requestParameters['SourceRegionId'] = $sourceRegionId;
-        $this->queryParameters['SourceRegionId'] = $sourceRegionId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $initLocalDisk
-     *
-     * @return $this
-     */
-    public function setInitLocalDisk($initLocalDisk)
-    {
-        $this->requestParameters['InitLocalDisk'] = $initLocalDisk;
-        $this->queryParameters['InitLocalDisk'] = $initLocalDisk;
-
-        return $this;
     }
 
     /**
@@ -75,27 +49,45 @@ class StartInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
+     * @param string $nextToken
      *
      * @return $this
      */
-    public function setInstanceId($instanceId)
+    public function setNextToken($nextToken)
     {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
+        $this->requestParameters['NextToken'] = $nextToken;
+        $this->queryParameters['NextToken'] = $nextToken;
 
         return $this;
     }
 
     /**
-     * @param string $dryRun
+     * @param array $tags
      *
      * @return $this
      */
-    public function setDryRun($dryRun)
+    public function setTags(array $tags)
     {
-        $this->requestParameters['DryRun'] = $dryRun;
-        $this->queryParameters['DryRun'] = $dryRun;
+        $this->requestParameters['Tags'] = $tags;
+        foreach ($tags as $i => $iValue) {
+            $this->queryParameters['Tag.' . ($i + 1) . '.Key'] = $tags[$i]['Key'];
+            $this->queryParameters['Tag.' . ($i + 1) . '.Value'] = $tags[$i]['Value'];
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param array $resourceIds
+     *
+     * @return $this
+     */
+    public function setResourceIds(array $resourceIds)
+    {
+        $this->requestParameters['ResourceIds'] = $resourceIds;
+        foreach ($resourceIds as $i => $iValue) {
+            $this->queryParameters['ResourceId.' . ($i + 1)] = $iValue;
+        }
 
         return $this;
     }
@@ -135,6 +127,19 @@ class StartInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceType
+     *
+     * @return $this
+     */
+    public function setResourceType($resourceType)
+    {
+        $this->requestParameters['ResourceType'] = $resourceType;
+        $this->queryParameters['ResourceType'] = $resourceType;
 
         return $this;
     }

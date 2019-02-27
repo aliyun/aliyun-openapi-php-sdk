@@ -5,16 +5,16 @@ namespace Ecs\Request\V20140526;
 /**
  * Request of CreateSecurityGroup
  *
- * @method string getResourceGroupId()
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
  * @method string getClientToken()
- * @method string getVpcId()
  * @method string getOwnerAccount()
  * @method string getDescription()
- * @method array getTags()
  * @method string getOwnerId()
  * @method string getSecurityGroupName()
+ * @method string getResourceGroupId()
+ * @method string getVpcId()
+ * @method array getTags()
  */
 class CreateSecurityGroupRequest extends \RpcAcsRequest
 {
@@ -35,19 +35,6 @@ class CreateSecurityGroupRequest extends \RpcAcsRequest
             'CreateSecurityGroup',
             'ecs'
         );
-    }
-
-    /**
-     * @param string $resourceGroupId
-     *
-     * @return $this
-     */
-    public function setResourceGroupId($resourceGroupId)
-    {
-        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
-        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
-
-        return $this;
     }
 
     /**
@@ -90,19 +77,6 @@ class CreateSecurityGroupRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $vpcId
-     *
-     * @return $this
-     */
-    public function setVpcId($vpcId)
-    {
-        $this->requestParameters['VpcId'] = $vpcId;
-        $this->queryParameters['VpcId'] = $vpcId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerAccount
      *
      * @return $this
@@ -129,22 +103,6 @@ class CreateSecurityGroupRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $tags
-     *
-     * @return $this
-     */
-    public function setTags(array $tags)
-    {
-        $this->requestParameters['Tags'] = $tags;
-        foreach ($tags as $i => $iValue) {
-            $this->queryParameters['Tag.' . ($i + 1) . '.Value'] = $tags[$i]['Value'];
-            $this->queryParameters['Tag.' . ($i + 1) . '.Key'] = $tags[$i]['Key'];
-        }
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -166,6 +124,48 @@ class CreateSecurityGroupRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityGroupName'] = $securityGroupName;
         $this->queryParameters['SecurityGroupName'] = $securityGroupName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceGroupId
+     *
+     * @return $this
+     */
+    public function setResourceGroupId($resourceGroupId)
+    {
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $vpcId
+     *
+     * @return $this
+     */
+    public function setVpcId($vpcId)
+    {
+        $this->requestParameters['VpcId'] = $vpcId;
+        $this->queryParameters['VpcId'] = $vpcId;
+
+        return $this;
+    }
+
+    /**
+     * @param array $tags
+     *
+     * @return $this
+     */
+    public function setTags(array $tags)
+    {
+        $this->requestParameters['Tags'] = $tags;
+        foreach ($tags as $i => $iValue) {
+            $this->queryParameters['Tag.' . ($i + 1) . '.Value'] = $tags[$i]['Value'];
+            $this->queryParameters['Tag.' . ($i + 1) . '.Key'] = $tags[$i]['Key'];
+        }
 
         return $this;
     }

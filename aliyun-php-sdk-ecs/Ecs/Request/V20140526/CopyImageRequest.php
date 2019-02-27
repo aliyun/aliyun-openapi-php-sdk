@@ -7,13 +7,13 @@ namespace Ecs\Request\V20140526;
  *
  * @method string getResourceOwnerId()
  * @method string getImageId()
- * @method string getEncrypted()
  * @method string getResourceOwnerAccount()
  * @method string getDestinationImageName()
  * @method string getDestinationRegionId()
  * @method string getOwnerAccount()
- * @method array getTags()
  * @method string getOwnerId()
+ * @method string getEncrypted()
+ * @method array getTags()
  * @method string getDestinationDescription()
  */
 class CopyImageRequest extends \RpcAcsRequest
@@ -59,19 +59,6 @@ class CopyImageRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ImageId'] = $imageId;
         $this->queryParameters['ImageId'] = $imageId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $encrypted
-     *
-     * @return $this
-     */
-    public function setEncrypted($encrypted)
-    {
-        $this->requestParameters['Encrypted'] = $encrypted;
-        $this->queryParameters['Encrypted'] = $encrypted;
 
         return $this;
     }
@@ -129,6 +116,32 @@ class CopyImageRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $encrypted
+     *
+     * @return $this
+     */
+    public function setEncrypted($encrypted)
+    {
+        $this->requestParameters['Encrypted'] = $encrypted;
+        $this->queryParameters['Encrypted'] = $encrypted;
+
+        return $this;
+    }
+
+    /**
      * @param array $tags
      *
      * @return $this
@@ -140,19 +153,6 @@ class CopyImageRequest extends \RpcAcsRequest
             $this->queryParameters['Tag.' . ($i + 1) . '.Value'] = $tags[$i]['Value'];
             $this->queryParameters['Tag.' . ($i + 1) . '.Key'] = $tags[$i]['Key'];
         }
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }
