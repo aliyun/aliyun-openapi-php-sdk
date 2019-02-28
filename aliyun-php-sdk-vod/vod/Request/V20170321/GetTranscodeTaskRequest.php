@@ -3,16 +3,14 @@
 namespace vod\Request\V20170321;
 
 /**
- * Request of DeleteTranscodeTemplateGroup
+ * Request of GetTranscodeTask
  *
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
- * @method string getTranscodeTemplateIds()
+ * @method string getTranscodeTaskId()
  * @method string getOwnerId()
- * @method string getTranscodeTemplateGroupId()
- * @method string getForceDelGroup()
  */
-class DeleteTranscodeTemplateGroupRequest extends \RpcAcsRequest
+class GetTranscodeTaskRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,7 +26,7 @@ class DeleteTranscodeTemplateGroupRequest extends \RpcAcsRequest
         parent::__construct(
             'vod',
             '2017-03-21',
-            'DeleteTranscodeTemplateGroup',
+            'GetTranscodeTask',
             'vod'
         );
     }
@@ -60,14 +58,14 @@ class DeleteTranscodeTemplateGroupRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $transcodeTemplateIds
+     * @param string $transcodeTaskId
      *
      * @return $this
      */
-    public function setTranscodeTemplateIds($transcodeTemplateIds)
+    public function setTranscodeTaskId($transcodeTaskId)
     {
-        $this->requestParameters['TranscodeTemplateIds'] = $transcodeTemplateIds;
-        $this->queryParameters['TranscodeTemplateIds'] = $transcodeTemplateIds;
+        $this->requestParameters['TranscodeTaskId'] = $transcodeTaskId;
+        $this->queryParameters['TranscodeTaskId'] = $transcodeTaskId;
 
         return $this;
     }
@@ -81,32 +79,6 @@ class DeleteTranscodeTemplateGroupRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $transcodeTemplateGroupId
-     *
-     * @return $this
-     */
-    public function setTranscodeTemplateGroupId($transcodeTemplateGroupId)
-    {
-        $this->requestParameters['TranscodeTemplateGroupId'] = $transcodeTemplateGroupId;
-        $this->queryParameters['TranscodeTemplateGroupId'] = $transcodeTemplateGroupId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $forceDelGroup
-     *
-     * @return $this
-     */
-    public function setForceDelGroup($forceDelGroup)
-    {
-        $this->requestParameters['ForceDelGroup'] = $forceDelGroup;
-        $this->queryParameters['ForceDelGroup'] = $forceDelGroup;
 
         return $this;
     }

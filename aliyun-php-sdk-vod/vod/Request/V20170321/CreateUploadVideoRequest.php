@@ -21,6 +21,7 @@ namespace vod\Request\V20170321;
  * @method string getTemplateGroupId()
  * @method string getCateId()
  * @method string getWorkflowId()
+ * @method string getCustomMediaInfo()
  */
 class CreateUploadVideoRequest extends \RpcAcsRequest
 {
@@ -247,6 +248,19 @@ class CreateUploadVideoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['WorkflowId'] = $workflowId;
         $this->queryParameters['WorkflowId'] = $workflowId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $customMediaInfo
+     *
+     * @return $this
+     */
+    public function setCustomMediaInfo($customMediaInfo)
+    {
+        $this->requestParameters['CustomMediaInfo'] = $customMediaInfo;
+        $this->queryParameters['CustomMediaInfo'] = $customMediaInfo;
 
         return $this;
     }

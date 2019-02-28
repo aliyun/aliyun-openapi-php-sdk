@@ -7,15 +7,16 @@ namespace vod\Request\V20170321;
  *
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
- * @method string getPageNo()
- * @method string getSearchType()
  * @method string getMatch()
- * @method string getPageSize()
- * @method string getSortBy()
  * @method string getSessionId()
  * @method string getOwnerId()
- * @method string getFields()
  * @method string getScrollToken()
+ * @method string getPageNo()
+ * @method string getSearchType()
+ * @method string getPageSize()
+ * @method string getSortBy()
+ * @method string getResultTypes()
+ * @method string getFields()
  */
 class SearchMediaRequest extends \RpcAcsRequest
 {
@@ -65,32 +66,6 @@ class SearchMediaRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageNo
-     *
-     * @return $this
-     */
-    public function setPageNo($pageNo)
-    {
-        $this->requestParameters['PageNo'] = $pageNo;
-        $this->queryParameters['PageNo'] = $pageNo;
-
-        return $this;
-    }
-
-    /**
-     * @param string $searchType
-     *
-     * @return $this
-     */
-    public function setSearchType($searchType)
-    {
-        $this->requestParameters['SearchType'] = $searchType;
-        $this->queryParameters['SearchType'] = $searchType;
-
-        return $this;
-    }
-
-    /**
      * @param string $match
      *
      * @return $this
@@ -99,32 +74,6 @@ class SearchMediaRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Match'] = $match;
         $this->queryParameters['Match'] = $match;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param string $sortBy
-     *
-     * @return $this
-     */
-    public function setSortBy($sortBy)
-    {
-        $this->requestParameters['SortBy'] = $sortBy;
-        $this->queryParameters['SortBy'] = $sortBy;
 
         return $this;
     }
@@ -156,19 +105,6 @@ class SearchMediaRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $fields
-     *
-     * @return $this
-     */
-    public function setFields($fields)
-    {
-        $this->requestParameters['Fields'] = $fields;
-        $this->queryParameters['Fields'] = $fields;
-
-        return $this;
-    }
-
-    /**
      * @param string $scrollToken
      *
      * @return $this
@@ -177,6 +113,84 @@ class SearchMediaRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ScrollToken'] = $scrollToken;
         $this->queryParameters['ScrollToken'] = $scrollToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNo
+     *
+     * @return $this
+     */
+    public function setPageNo($pageNo)
+    {
+        $this->requestParameters['PageNo'] = $pageNo;
+        $this->queryParameters['PageNo'] = $pageNo;
+
+        return $this;
+    }
+
+    /**
+     * @param string $searchType
+     *
+     * @return $this
+     */
+    public function setSearchType($searchType)
+    {
+        $this->requestParameters['SearchType'] = $searchType;
+        $this->queryParameters['SearchType'] = $searchType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sortBy
+     *
+     * @return $this
+     */
+    public function setSortBy($sortBy)
+    {
+        $this->requestParameters['SortBy'] = $sortBy;
+        $this->queryParameters['SortBy'] = $sortBy;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resultTypes
+     *
+     * @return $this
+     */
+    public function setResultTypes($resultTypes)
+    {
+        $this->requestParameters['ResultTypes'] = $resultTypes;
+        $this->queryParameters['ResultTypes'] = $resultTypes;
+
+        return $this;
+    }
+
+    /**
+     * @param string $fields
+     *
+     * @return $this
+     */
+    public function setFields($fields)
+    {
+        $this->requestParameters['Fields'] = $fields;
+        $this->queryParameters['Fields'] = $fields;
 
         return $this;
     }

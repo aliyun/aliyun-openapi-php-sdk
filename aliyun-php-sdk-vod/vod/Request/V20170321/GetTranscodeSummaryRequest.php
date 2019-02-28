@@ -3,15 +3,14 @@
 namespace vod\Request\V20170321;
 
 /**
- * Request of DeleteTranscodeTemplates
+ * Request of GetTranscodeSummary
  *
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerId()
- * @method string getTranscodeTemplateGroupId()
- * @method string getTranscodeTemplateIdList()
+ * @method string getVideoIds()
  */
-class DeleteTranscodeTemplatesRequest extends \RpcAcsRequest
+class GetTranscodeSummaryRequest extends \RpcAcsRequest
 {
 
     /**
@@ -27,7 +26,7 @@ class DeleteTranscodeTemplatesRequest extends \RpcAcsRequest
         parent::__construct(
             'vod',
             '2017-03-21',
-            'DeleteTranscodeTemplates',
+            'GetTranscodeSummary',
             'vod'
         );
     }
@@ -72,27 +71,14 @@ class DeleteTranscodeTemplatesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $transcodeTemplateGroupId
+     * @param string $videoIds
      *
      * @return $this
      */
-    public function setTranscodeTemplateGroupId($transcodeTemplateGroupId)
+    public function setVideoIds($videoIds)
     {
-        $this->requestParameters['TranscodeTemplateGroupId'] = $transcodeTemplateGroupId;
-        $this->queryParameters['TranscodeTemplateGroupId'] = $transcodeTemplateGroupId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $transcodeTemplateIdList
-     *
-     * @return $this
-     */
-    public function setTranscodeTemplateIdList($transcodeTemplateIdList)
-    {
-        $this->requestParameters['TranscodeTemplateIdList'] = $transcodeTemplateIdList;
-        $this->queryParameters['TranscodeTemplateIdList'] = $transcodeTemplateIdList;
+        $this->requestParameters['VideoIds'] = $videoIds;
+        $this->queryParameters['VideoIds'] = $videoIds;
 
         return $this;
     }

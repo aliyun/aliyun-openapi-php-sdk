@@ -5,15 +5,18 @@ namespace vod\Request\V20170321;
 /**
  * Request of UpdateVideoInfo
  *
- * @method string getCoverURL()
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
- * @method string getCateId()
  * @method string getDescription()
  * @method string getVideoId()
  * @method string getOwnerId()
  * @method string getTitle()
  * @method string getTags()
+ * @method string getCoverURL()
+ * @method string getDownloadSwitch()
+ * @method string getCateId()
+ * @method string getCustomMediaInfo()
+ * @method string getStatus()
  */
 class UpdateVideoInfoRequest extends \RpcAcsRequest
 {
@@ -34,19 +37,6 @@ class UpdateVideoInfoRequest extends \RpcAcsRequest
             'UpdateVideoInfo',
             'vod'
         );
-    }
-
-    /**
-     * @param string $coverURL
-     *
-     * @return $this
-     */
-    public function setCoverURL($coverURL)
-    {
-        $this->requestParameters['CoverURL'] = $coverURL;
-        $this->queryParameters['CoverURL'] = $coverURL;
-
-        return $this;
     }
 
     /**
@@ -71,19 +61,6 @@ class UpdateVideoInfoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $cateId
-     *
-     * @return $this
-     */
-    public function setCateId($cateId)
-    {
-        $this->requestParameters['CateId'] = $cateId;
-        $this->queryParameters['CateId'] = $cateId;
 
         return $this;
     }
@@ -149,6 +126,71 @@ class UpdateVideoInfoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Tags'] = $tags;
         $this->queryParameters['Tags'] = $tags;
+
+        return $this;
+    }
+
+    /**
+     * @param string $coverURL
+     *
+     * @return $this
+     */
+    public function setCoverURL($coverURL)
+    {
+        $this->requestParameters['CoverURL'] = $coverURL;
+        $this->queryParameters['CoverURL'] = $coverURL;
+
+        return $this;
+    }
+
+    /**
+     * @param string $downloadSwitch
+     *
+     * @return $this
+     */
+    public function setDownloadSwitch($downloadSwitch)
+    {
+        $this->requestParameters['DownloadSwitch'] = $downloadSwitch;
+        $this->queryParameters['DownloadSwitch'] = $downloadSwitch;
+
+        return $this;
+    }
+
+    /**
+     * @param string $cateId
+     *
+     * @return $this
+     */
+    public function setCateId($cateId)
+    {
+        $this->requestParameters['CateId'] = $cateId;
+        $this->queryParameters['CateId'] = $cateId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $customMediaInfo
+     *
+     * @return $this
+     */
+    public function setCustomMediaInfo($customMediaInfo)
+    {
+        $this->requestParameters['CustomMediaInfo'] = $customMediaInfo;
+        $this->queryParameters['CustomMediaInfo'] = $customMediaInfo;
+
+        return $this;
+    }
+
+    /**
+     * @param string $status
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->requestParameters['Status'] = $status;
+        $this->queryParameters['Status'] = $status;
 
         return $this;
     }
