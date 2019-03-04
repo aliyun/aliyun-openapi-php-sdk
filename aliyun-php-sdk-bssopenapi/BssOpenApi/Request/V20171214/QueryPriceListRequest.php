@@ -3,19 +3,15 @@
 namespace BssOpenApi\Request\V20171214;
 
 /**
- * Request of QueryInstanceBill
+ * Request of QueryPriceList
  *
- * @method string getIsBillingItem()
+ * @method string getModuleCode()
  * @method string getProductCode()
- * @method string getIsHideZeroCharge()
  * @method string getSubscriptionType()
- * @method string getPageSize()
- * @method string getBillingCycle()
  * @method string getOwnerId()
- * @method string getPageNum()
  * @method string getProductType()
  */
-class QueryInstanceBillRequest extends \RpcAcsRequest
+class QueryPriceListRequest extends \RpcAcsRequest
 {
 
     /**
@@ -31,19 +27,19 @@ class QueryInstanceBillRequest extends \RpcAcsRequest
         parent::__construct(
             'BssOpenApi',
             '2017-12-14',
-            'QueryInstanceBill'
+            'QueryPriceList'
         );
     }
 
     /**
-     * @param string $isBillingItem
+     * @param string $moduleCode
      *
      * @return $this
      */
-    public function setIsBillingItem($isBillingItem)
+    public function setModuleCode($moduleCode)
     {
-        $this->requestParameters['IsBillingItem'] = $isBillingItem;
-        $this->queryParameters['IsBillingItem'] = $isBillingItem;
+        $this->requestParameters['ModuleCode'] = $moduleCode;
+        $this->queryParameters['ModuleCode'] = $moduleCode;
 
         return $this;
     }
@@ -62,19 +58,6 @@ class QueryInstanceBillRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $isHideZeroCharge
-     *
-     * @return $this
-     */
-    public function setIsHideZeroCharge($isHideZeroCharge)
-    {
-        $this->requestParameters['IsHideZeroCharge'] = $isHideZeroCharge;
-        $this->queryParameters['IsHideZeroCharge'] = $isHideZeroCharge;
-
-        return $this;
-    }
-
-    /**
      * @param string $subscriptionType
      *
      * @return $this
@@ -88,32 +71,6 @@ class QueryInstanceBillRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param string $billingCycle
-     *
-     * @return $this
-     */
-    public function setBillingCycle($billingCycle)
-    {
-        $this->requestParameters['BillingCycle'] = $billingCycle;
-        $this->queryParameters['BillingCycle'] = $billingCycle;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -122,19 +79,6 @@ class QueryInstanceBillRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNum
-     *
-     * @return $this
-     */
-    public function setPageNum($pageNum)
-    {
-        $this->requestParameters['PageNum'] = $pageNum;
-        $this->queryParameters['PageNum'] = $pageNum;
 
         return $this;
     }
