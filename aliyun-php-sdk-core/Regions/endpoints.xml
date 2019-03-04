@@ -1081,6 +1081,10 @@
         </RegionIds>
         <Products>
             <Product>
+                <ProductName>CCC</ProductName>
+                <DomainName>ccc.cn-shanghai.aliyuncs.com</DomainName>
+            </Product>
+            <Product>
                 <ProductName>saf</ProductName>
                 <DomainName>saf.cn-shanghai.aliyuncs.com</DomainName>
             </Product>
