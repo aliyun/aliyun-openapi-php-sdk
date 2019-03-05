@@ -26,8 +26,7 @@ class RefreshDcdnObjectCachesRequest extends \RpcAcsRequest
         parent::__construct(
             'dcdn',
             '2018-01-15',
-            'RefreshDcdnObjectCaches',
-            'dcdn'
+            'RefreshDcdnObjectCaches'
         );
     }
 

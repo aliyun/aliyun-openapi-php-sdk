@@ -3,23 +3,15 @@
 namespace dcdn\Request\V20180115;
 
 /**
- * Request of DescribeDcdnDomainWebsocketHttpCodeData
+ * Request of DescribeDcdnDomainRealTimeReqHitRateData
  *
- * @method string getLocationNameEn()
  * @method string getStartTime()
- * @method string getIspNameEn()
  * @method string getDomainName()
  * @method string getEndTime()
  * @method string getOwnerId()
- * @method string getInterval()
  */
-class DescribeDcdnDomainWebsocketHttpCodeDataRequest extends \RpcAcsRequest
+class DescribeDcdnDomainRealTimeReqHitRateDataRequest extends \RpcAcsRequest
 {
-
-    /**
-     * @var string
-     */
-    protected $method = 'POST';
 
     /**
      * Class constructor.
@@ -29,21 +21,8 @@ class DescribeDcdnDomainWebsocketHttpCodeDataRequest extends \RpcAcsRequest
         parent::__construct(
             'dcdn',
             '2018-01-15',
-            'DescribeDcdnDomainWebsocketHttpCodeData'
+            'DescribeDcdnDomainRealTimeReqHitRateData'
         );
-    }
-
-    /**
-     * @param string $locationNameEn
-     *
-     * @return $this
-     */
-    public function setLocationNameEn($locationNameEn)
-    {
-        $this->requestParameters['LocationNameEn'] = $locationNameEn;
-        $this->queryParameters['LocationNameEn'] = $locationNameEn;
-
-        return $this;
     }
 
     /**
@@ -55,19 +34,6 @@ class DescribeDcdnDomainWebsocketHttpCodeDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['StartTime'] = $startTime;
         $this->queryParameters['StartTime'] = $startTime;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ispNameEn
-     *
-     * @return $this
-     */
-    public function setIspNameEn($ispNameEn)
-    {
-        $this->requestParameters['IspNameEn'] = $ispNameEn;
-        $this->queryParameters['IspNameEn'] = $ispNameEn;
 
         return $this;
     }
@@ -107,19 +73,6 @@ class DescribeDcdnDomainWebsocketHttpCodeDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $interval
-     *
-     * @return $this
-     */
-    public function setInterval($interval)
-    {
-        $this->requestParameters['Interval'] = $interval;
-        $this->queryParameters['Interval'] = $interval;
 
         return $this;
     }

@@ -25,8 +25,7 @@ class DescribeDcdnCertificateListRequest extends \RpcAcsRequest
         parent::__construct(
             'dcdn',
             '2018-01-15',
-            'DescribeDcdnCertificateList',
-            'dcdn'
+            'DescribeDcdnCertificateList'
         );
     }
 

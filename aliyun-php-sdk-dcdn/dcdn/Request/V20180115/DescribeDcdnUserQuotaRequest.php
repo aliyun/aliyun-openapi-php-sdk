@@ -24,8 +24,7 @@ class DescribeDcdnUserQuotaRequest extends \RpcAcsRequest
         parent::__construct(
             'dcdn',
             '2018-01-15',
-            'DescribeDcdnUserQuota',
-            'dcdn'
+            'DescribeDcdnUserQuota'
         );
     }
 

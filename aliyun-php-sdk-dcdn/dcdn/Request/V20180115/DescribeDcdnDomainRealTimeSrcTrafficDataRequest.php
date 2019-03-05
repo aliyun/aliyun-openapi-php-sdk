@@ -3,15 +3,14 @@
 namespace dcdn\Request\V20180115;
 
 /**
- * Request of DescribeDcdnDomainTopReferVisit
+ * Request of DescribeDcdnDomainRealTimeSrcTrafficData
  *
- * @method string getSecurityToken()
- * @method string getDomainName()
- * @method string getSortBy()
  * @method string getStartTime()
+ * @method string getDomainName()
+ * @method string getEndTime()
  * @method string getOwnerId()
  */
-class DescribeDcdnDomainTopReferVisitRequest extends \RpcAcsRequest
+class DescribeDcdnDomainRealTimeSrcTrafficDataRequest extends \RpcAcsRequest
 {
 
     /**
@@ -27,19 +26,19 @@ class DescribeDcdnDomainTopReferVisitRequest extends \RpcAcsRequest
         parent::__construct(
             'dcdn',
             '2018-01-15',
-            'DescribeDcdnDomainTopReferVisit'
+            'DescribeDcdnDomainRealTimeSrcTrafficData'
         );
     }
 
     /**
-     * @param string $securityToken
+     * @param string $startTime
      *
      * @return $this
      */
-    public function setSecurityToken($securityToken)
+    public function setStartTime($startTime)
     {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
 
         return $this;
     }
@@ -58,27 +57,14 @@ class DescribeDcdnDomainTopReferVisitRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $sortBy
+     * @param string $endTime
      *
      * @return $this
      */
-    public function setSortBy($sortBy)
+    public function setEndTime($endTime)
     {
-        $this->requestParameters['SortBy'] = $sortBy;
-        $this->queryParameters['SortBy'] = $sortBy;
-
-        return $this;
-    }
-
-    /**
-     * @param string $startTime
-     *
-     * @return $this
-     */
-    public function setStartTime($startTime)
-    {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
 
         return $this;
     }

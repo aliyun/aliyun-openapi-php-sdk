@@ -31,8 +31,7 @@ class DescribeDcdnDomainWebsocketTrafficDataRequest extends \RpcAcsRequest
         parent::__construct(
             'dcdn',
             '2018-01-15',
-            'DescribeDcdnDomainWebsocketTrafficData',
-            'dcdn'
+            'DescribeDcdnDomainWebsocketTrafficData'
         );
     }
 

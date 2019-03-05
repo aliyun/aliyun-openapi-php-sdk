@@ -25,8 +25,7 @@ class StartDcdnDomainRequest extends \RpcAcsRequest
         parent::__construct(
             'dcdn',
             '2018-01-15',
-            'StartDcdnDomain',
-            'dcdn'
+            'StartDcdnDomain'
         );
     }
 
