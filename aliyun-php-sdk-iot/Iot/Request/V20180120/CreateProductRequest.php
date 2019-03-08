@@ -14,6 +14,7 @@ namespace Iot\Request\V20180120;
  * @method string getDescription()
  * @method string getProtocolType()
  * @method string getAliyunCommodityCode()
+ * @method string getJoinPermissionId()
  * @method string getCategoryId()
  */
 class CreateProductRequest extends \RpcAcsRequest
@@ -150,6 +151,19 @@ class CreateProductRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AliyunCommodityCode'] = $aliyunCommodityCode;
         $this->queryParameters['AliyunCommodityCode'] = $aliyunCommodityCode;
+
+        return $this;
+    }
+
+    /**
+     * @param string $joinPermissionId
+     *
+     * @return $this
+     */
+    public function setJoinPermissionId($joinPermissionId)
+    {
+        $this->requestParameters['JoinPermissionId'] = $joinPermissionId;
+        $this->queryParameters['JoinPermissionId'] = $joinPermissionId;
 
         return $this;
     }

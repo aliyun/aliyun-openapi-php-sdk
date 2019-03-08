@@ -3,14 +3,15 @@
 namespace Iot\Request\V20180120;
 
 /**
- * Request of BatchGetDeviceState
+ * Request of QueryDeviceDesiredProperty
  *
- * @method array getIotIds()
+ * @method array getIdentifiers()
+ * @method string getIotId()
  * @method string getIotInstanceId()
- * @method array getDeviceNames()
+ * @method string getDeviceName()
  * @method string getProductKey()
  */
-class BatchGetDeviceStateRequest extends \RpcAcsRequest
+class QueryDeviceDesiredPropertyRequest extends \RpcAcsRequest
 {
 
     /**
@@ -26,22 +27,35 @@ class BatchGetDeviceStateRequest extends \RpcAcsRequest
         parent::__construct(
             'Iot',
             '2018-01-20',
-            'BatchGetDeviceState',
+            'QueryDeviceDesiredProperty',
             'iot'
         );
     }
 
     /**
-     * @param array $iotIds
+     * @param array $identifiers
      *
      * @return $this
      */
-    public function setIotIds(array $iotIds)
+    public function setIdentifiers(array $identifiers)
     {
-        $this->requestParameters['IotIds'] = $iotIds;
-        foreach ($iotIds as $i => $iValue) {
-            $this->queryParameters['IotId.' . ($i + 1)] = $iValue;
+        $this->requestParameters['Identifiers'] = $identifiers;
+        foreach ($identifiers as $i => $iValue) {
+            $this->queryParameters['Identifier.' . ($i + 1)] = $iValue;
         }
+
+        return $this;
+    }
+
+    /**
+     * @param string $iotId
+     *
+     * @return $this
+     */
+    public function setIotId($iotId)
+    {
+        $this->requestParameters['IotId'] = $iotId;
+        $this->queryParameters['IotId'] = $iotId;
 
         return $this;
     }
@@ -60,16 +74,14 @@ class BatchGetDeviceStateRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $deviceNames
+     * @param string $deviceName
      *
      * @return $this
      */
-    public function setDeviceNames(array $deviceNames)
+    public function setDeviceName($deviceName)
     {
-        $this->requestParameters['DeviceNames'] = $deviceNames;
-        foreach ($deviceNames as $i => $iValue) {
-            $this->queryParameters['DeviceName.' . ($i + 1)] = $iValue;
-        }
+        $this->requestParameters['DeviceName'] = $deviceName;
+        $this->queryParameters['DeviceName'] = $deviceName;
 
         return $this;
     }

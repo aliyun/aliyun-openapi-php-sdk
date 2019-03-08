@@ -3,15 +3,16 @@
 namespace Iot\Request\V20180120;
 
 /**
- * Request of SaveDeviceProp
+ * Request of SetDeviceDesiredProperty
  *
  * @method string getIotId()
+ * @method string getVersions()
  * @method string getIotInstanceId()
  * @method string getDeviceName()
  * @method string getProductKey()
- * @method string getProps()
+ * @method string getItems()
  */
-class SaveDevicePropRequest extends \RpcAcsRequest
+class SetDeviceDesiredPropertyRequest extends \RpcAcsRequest
 {
 
     /**
@@ -27,7 +28,7 @@ class SaveDevicePropRequest extends \RpcAcsRequest
         parent::__construct(
             'Iot',
             '2018-01-20',
-            'SaveDeviceProp',
+            'SetDeviceDesiredProperty',
             'iot'
         );
     }
@@ -41,6 +42,19 @@ class SaveDevicePropRequest extends \RpcAcsRequest
     {
         $this->requestParameters['IotId'] = $iotId;
         $this->queryParameters['IotId'] = $iotId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $versions
+     *
+     * @return $this
+     */
+    public function setVersions($versions)
+    {
+        $this->requestParameters['Versions'] = $versions;
+        $this->queryParameters['Versions'] = $versions;
 
         return $this;
     }
@@ -85,14 +99,14 @@ class SaveDevicePropRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $props
+     * @param string $items
      *
      * @return $this
      */
-    public function setProps($props)
+    public function setItems($items)
     {
-        $this->requestParameters['Props'] = $props;
-        $this->queryParameters['Props'] = $props;
+        $this->requestParameters['Items'] = $items;
+        $this->queryParameters['Items'] = $items;
 
         return $this;
     }

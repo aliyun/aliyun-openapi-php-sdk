@@ -5,9 +5,11 @@ namespace Iot\Request\V20180120;
 /**
  * Request of RegisterDevice
  *
+ * @method string getPinCode()
  * @method string getIotInstanceId()
  * @method string getDeviceName()
  * @method string getProductKey()
+ * @method string getDevEui()
  */
 class RegisterDeviceRequest extends \RpcAcsRequest
 {
@@ -28,6 +30,19 @@ class RegisterDeviceRequest extends \RpcAcsRequest
             'RegisterDevice',
             'iot'
         );
+    }
+
+    /**
+     * @param string $pinCode
+     *
+     * @return $this
+     */
+    public function setPinCode($pinCode)
+    {
+        $this->requestParameters['PinCode'] = $pinCode;
+        $this->queryParameters['PinCode'] = $pinCode;
+
+        return $this;
     }
 
     /**
@@ -65,6 +80,19 @@ class RegisterDeviceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ProductKey'] = $productKey;
         $this->queryParameters['ProductKey'] = $productKey;
+
+        return $this;
+    }
+
+    /**
+     * @param string $devEui
+     *
+     * @return $this
+     */
+    public function setDevEui($devEui)
+    {
+        $this->requestParameters['DevEui'] = $devEui;
+        $this->queryParameters['DevEui'] = $devEui;
 
         return $this;
     }
