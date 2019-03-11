@@ -13,11 +13,13 @@ namespace imm\Request\V20170906;
  * @method string getLocationBoundary()
  * @method string getImageTimeRange()
  * @method string getOCRContentsMatch()
+ * @method string getLimit()
  * @method string getRemarksDPrefix()
  * @method string getSourceType()
  * @method string getAgeRange()
  * @method string getOrder()
  * @method string getRemarksAPrefix()
+ * @method string getGroupId()
  * @method string getOrderBy()
  * @method string getTagNames()
  * @method string getSourceUriPrefix()
@@ -26,7 +28,7 @@ namespace imm\Request\V20170906;
  * @method string getRemarksCPrefix()
  * @method string getCreateTimeRange()
  * @method string getSetId()
- * @method string getUpdateTimeRange()
+ * @method string getModifyTimeRange()
  */
 class FindImagesRequest extends \RpcAcsRequest
 {
@@ -154,6 +156,19 @@ class FindImagesRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $limit
+     *
+     * @return $this
+     */
+    public function setLimit($limit)
+    {
+        $this->requestParameters['Limit'] = $limit;
+        $this->queryParameters['Limit'] = $limit;
+
+        return $this;
+    }
+
+    /**
      * @param string $remarksDPrefix
      *
      * @return $this
@@ -214,6 +229,19 @@ class FindImagesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['RemarksAPrefix'] = $remarksAPrefix;
         $this->queryParameters['RemarksAPrefix'] = $remarksAPrefix;
+
+        return $this;
+    }
+
+    /**
+     * @param string $groupId
+     *
+     * @return $this
+     */
+    public function setGroupId($groupId)
+    {
+        $this->requestParameters['GroupId'] = $groupId;
+        $this->queryParameters['GroupId'] = $groupId;
 
         return $this;
     }
@@ -323,14 +351,14 @@ class FindImagesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $updateTimeRange
+     * @param string $modifyTimeRange
      *
      * @return $this
      */
-    public function setUpdateTimeRange($updateTimeRange)
+    public function setModifyTimeRange($modifyTimeRange)
     {
-        $this->requestParameters['UpdateTimeRange'] = $updateTimeRange;
-        $this->queryParameters['UpdateTimeRange'] = $updateTimeRange;
+        $this->requestParameters['ModifyTimeRange'] = $modifyTimeRange;
+        $this->queryParameters['ModifyTimeRange'] = $modifyTimeRange;
 
         return $this;
     }

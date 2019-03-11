@@ -3,15 +3,14 @@
 namespace imm\Request\V20170906;
 
 /**
- * Request of ListImages
+ * Request of CreateGroupFacesJob
  *
- * @method string getMarker()
- * @method string getLimit()
+ * @method string getNotifyTopicName()
+ * @method string getNotifyEndpoint()
  * @method string getProject()
  * @method string getSetId()
- * @method string getCreateTimeStart()
  */
-class ListImagesRequest extends \RpcAcsRequest
+class CreateGroupFacesJobRequest extends \RpcAcsRequest
 {
 
     /**
@@ -27,33 +26,33 @@ class ListImagesRequest extends \RpcAcsRequest
         parent::__construct(
             'imm',
             '2017-09-06',
-            'ListImages',
+            'CreateGroupFacesJob',
             'imm'
         );
     }
 
     /**
-     * @param string $marker
+     * @param string $notifyTopicName
      *
      * @return $this
      */
-    public function setMarker($marker)
+    public function setNotifyTopicName($notifyTopicName)
     {
-        $this->requestParameters['Marker'] = $marker;
-        $this->queryParameters['Marker'] = $marker;
+        $this->requestParameters['NotifyTopicName'] = $notifyTopicName;
+        $this->queryParameters['NotifyTopicName'] = $notifyTopicName;
 
         return $this;
     }
 
     /**
-     * @param string $limit
+     * @param string $notifyEndpoint
      *
      * @return $this
      */
-    public function setLimit($limit)
+    public function setNotifyEndpoint($notifyEndpoint)
     {
-        $this->requestParameters['Limit'] = $limit;
-        $this->queryParameters['Limit'] = $limit;
+        $this->requestParameters['NotifyEndpoint'] = $notifyEndpoint;
+        $this->queryParameters['NotifyEndpoint'] = $notifyEndpoint;
 
         return $this;
     }
@@ -80,19 +79,6 @@ class ListImagesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SetId'] = $setId;
         $this->queryParameters['SetId'] = $setId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $createTimeStart
-     *
-     * @return $this
-     */
-    public function setCreateTimeStart($createTimeStart)
-    {
-        $this->requestParameters['CreateTimeStart'] = $createTimeStart;
-        $this->queryParameters['CreateTimeStart'] = $createTimeStart;
 
         return $this;
     }

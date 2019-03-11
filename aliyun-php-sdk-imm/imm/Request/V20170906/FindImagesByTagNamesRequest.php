@@ -6,6 +6,7 @@ namespace imm\Request\V20170906;
  * Request of FindImagesByTagNames
  *
  * @method string getMarker()
+ * @method string getLimit()
  * @method string getProject()
  * @method string getSetId()
  * @method string getTagNames()
@@ -40,6 +41,19 @@ class FindImagesByTagNamesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Marker'] = $marker;
         $this->queryParameters['Marker'] = $marker;
+
+        return $this;
+    }
+
+    /**
+     * @param string $limit
+     *
+     * @return $this
+     */
+    public function setLimit($limit)
+    {
+        $this->requestParameters['Limit'] = $limit;
+        $this->queryParameters['Limit'] = $limit;
 
         return $this;
     }
