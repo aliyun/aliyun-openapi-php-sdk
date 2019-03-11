@@ -1,107 +1,126 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Push\Request\V20160801;
 
+/**
+ * Request of PushNoticeToAndroid
+ *
+ * @method string getExtParameters()
+ * @method string getAppKey()
+ * @method string getTargetValue()
+ * @method string getTitle()
+ * @method string getBody()
+ * @method string getJobKey()
+ * @method string getTarget()
+ */
 class PushNoticeToAndroidRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Push", "2016-08-01", "PushNoticeToAndroid");
-		$this->setMethod("POST");
-	}
 
-	private  $extParameters;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $appKey;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Push',
+            '2016-08-01',
+            'PushNoticeToAndroid'
+        );
+    }
 
-	private  $targetValue;
+    /**
+     * @param string $extParameters
+     *
+     * @return $this
+     */
+    public function setExtParameters($extParameters)
+    {
+        $this->requestParameters['ExtParameters'] = $extParameters;
+        $this->queryParameters['ExtParameters'] = $extParameters;
 
-	private  $title;
+        return $this;
+    }
 
-	private  $body;
+    /**
+     * @param string $appKey
+     *
+     * @return $this
+     */
+    public function setAppKey($appKey)
+    {
+        $this->requestParameters['AppKey'] = $appKey;
+        $this->queryParameters['AppKey'] = $appKey;
 
-	private  $jobKey;
+        return $this;
+    }
 
-	private  $target;
+    /**
+     * @param string $targetValue
+     *
+     * @return $this
+     */
+    public function setTargetValue($targetValue)
+    {
+        $this->requestParameters['TargetValue'] = $targetValue;
+        $this->queryParameters['TargetValue'] = $targetValue;
 
-	public function getExtParameters() {
-		return $this->extParameters;
-	}
+        return $this;
+    }
 
-	public function setExtParameters($extParameters) {
-		$this->extParameters = $extParameters;
-		$this->queryParameters["ExtParameters"]=$extParameters;
-	}
+    /**
+     * @param string $title
+     *
+     * @return $this
+     */
+    public function setTitle($title)
+    {
+        $this->requestParameters['Title'] = $title;
+        $this->queryParameters['Title'] = $title;
 
-	public function getAppKey() {
-		return $this->appKey;
-	}
+        return $this;
+    }
 
-	public function setAppKey($appKey) {
-		$this->appKey = $appKey;
-		$this->queryParameters["AppKey"]=$appKey;
-	}
+    /**
+     * @param string $body
+     *
+     * @return $this
+     */
+    public function setBody($body)
+    {
+        $this->requestParameters['Body'] = $body;
+        $this->queryParameters['Body'] = $body;
 
-	public function getTargetValue() {
-		return $this->targetValue;
-	}
+        return $this;
+    }
 
-	public function setTargetValue($targetValue) {
-		$this->targetValue = $targetValue;
-		$this->queryParameters["TargetValue"]=$targetValue;
-	}
+    /**
+     * @param string $jobKey
+     *
+     * @return $this
+     */
+    public function setJobKey($jobKey)
+    {
+        $this->requestParameters['JobKey'] = $jobKey;
+        $this->queryParameters['JobKey'] = $jobKey;
 
-	public function getTitle() {
-		return $this->title;
-	}
+        return $this;
+    }
 
-	public function setTitle($title) {
-		$this->title = $title;
-		$this->queryParameters["Title"]=$title;
-	}
+    /**
+     * @param string $target
+     *
+     * @return $this
+     */
+    public function setTarget($target)
+    {
+        $this->requestParameters['Target'] = $target;
+        $this->queryParameters['Target'] = $target;
 
-	public function getBody() {
-		return $this->body;
-	}
-
-	public function setBody($body) {
-		$this->body = $body;
-		$this->queryParameters["Body"]=$body;
-	}
-
-	public function getJobKey() {
-		return $this->jobKey;
-	}
-
-	public function setJobKey($jobKey) {
-		$this->jobKey = $jobKey;
-		$this->queryParameters["JobKey"]=$jobKey;
-	}
-
-	public function getTarget() {
-		return $this->target;
-	}
-
-	public function setTarget($target) {
-		$this->target = $target;
-		$this->queryParameters["Target"]=$target;
-	}
-	
+        return $this;
+    }
 }
