@@ -1,84 +1,94 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace TeslaMaxCompute\Request\V20180104;
 
+/**
+ * Request of GetQuotaHistoryInfo
+ *
+ * @method string getCluster()
+ * @method string getEndTime()
+ * @method string getStartTime()
+ * @method string getRegion()
+ * @method string getQuotaName()
+ */
 class GetQuotaHistoryInfoRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("TeslaMaxCompute", "2018-01-04", "GetQuotaHistoryInfo");
-	}
 
-	private  $cluster;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'TeslaMaxCompute',
+            '2018-01-04',
+            'GetQuotaHistoryInfo',
+            'teslamaxcompute'
+        );
+    }
 
-	private  $endTime;
+    /**
+     * @param string $cluster
+     *
+     * @return $this
+     */
+    public function setCluster($cluster)
+    {
+        $this->requestParameters['Cluster'] = $cluster;
+        $this->queryParameters['Cluster'] = $cluster;
 
-	private  $startTime;
+        return $this;
+    }
 
-	private  $region;
+    /**
+     * @param string $endTime
+     *
+     * @return $this
+     */
+    public function setEndTime($endTime)
+    {
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
 
-	private  $quotaName;
+        return $this;
+    }
 
-	public function getCluster() {
-		return $this->cluster;
-	}
+    /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
 
-	public function setCluster($cluster) {
-		$this->cluster = $cluster;
-		$this->queryParameters["Cluster"]=$cluster;
-	}
+        return $this;
+    }
 
-	public function getEndTime() {
-		return $this->endTime;
-	}
+    /**
+     * @param string $region
+     *
+     * @return $this
+     */
+    public function setRegion($region)
+    {
+        $this->requestParameters['Region'] = $region;
+        $this->queryParameters['Region'] = $region;
 
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
+        return $this;
+    }
 
-	public function getStartTime() {
-		return $this->startTime;
-	}
+    /**
+     * @param string $quotaName
+     *
+     * @return $this
+     */
+    public function setQuotaName($quotaName)
+    {
+        $this->requestParameters['QuotaName'] = $quotaName;
+        $this->queryParameters['QuotaName'] = $quotaName;
 
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
-
-	public function getRegion() {
-		return $this->region;
-	}
-
-	public function setRegion($region) {
-		$this->region = $region;
-		$this->queryParameters["Region"]=$region;
-	}
-
-	public function getQuotaName() {
-		return $this->quotaName;
-	}
-
-	public function setQuotaName($quotaName) {
-		$this->quotaName = $quotaName;
-		$this->queryParameters["QuotaName"]=$quotaName;
-	}
-	
+        return $this;
+    }
 }

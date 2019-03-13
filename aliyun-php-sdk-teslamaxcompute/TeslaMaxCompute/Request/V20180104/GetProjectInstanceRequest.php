@@ -1,84 +1,94 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace TeslaMaxCompute\Request\V20180104;
 
+/**
+ * Request of GetProjectInstance
+ *
+ * @method string getPageSize()
+ * @method string getProject()
+ * @method string getPageNum()
+ * @method string getRegion()
+ * @method string getStatus()
+ */
 class GetProjectInstanceRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("TeslaMaxCompute", "2018-01-04", "GetProjectInstance");
-	}
 
-	private  $pageSize;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'TeslaMaxCompute',
+            '2018-01-04',
+            'GetProjectInstance',
+            'teslamaxcompute'
+        );
+    }
 
-	private  $project;
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	private  $pageNum;
+        return $this;
+    }
 
-	private  $region;
+    /**
+     * @param string $project
+     *
+     * @return $this
+     */
+    public function setProject($project)
+    {
+        $this->requestParameters['Project'] = $project;
+        $this->queryParameters['Project'] = $project;
 
-	private  $status;
+        return $this;
+    }
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
+    /**
+     * @param string $pageNum
+     *
+     * @return $this
+     */
+    public function setPageNum($pageNum)
+    {
+        $this->requestParameters['PageNum'] = $pageNum;
+        $this->queryParameters['PageNum'] = $pageNum;
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
+        return $this;
+    }
 
-	public function getProject() {
-		return $this->project;
-	}
+    /**
+     * @param string $region
+     *
+     * @return $this
+     */
+    public function setRegion($region)
+    {
+        $this->requestParameters['Region'] = $region;
+        $this->queryParameters['Region'] = $region;
 
-	public function setProject($project) {
-		$this->project = $project;
-		$this->queryParameters["Project"]=$project;
-	}
+        return $this;
+    }
 
-	public function getPageNum() {
-		return $this->pageNum;
-	}
+    /**
+     * @param string $status
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->requestParameters['Status'] = $status;
+        $this->queryParameters['Status'] = $status;
 
-	public function setPageNum($pageNum) {
-		$this->pageNum = $pageNum;
-		$this->queryParameters["PageNum"]=$pageNum;
-	}
-
-	public function getRegion() {
-		return $this->region;
-	}
-
-	public function setRegion($region) {
-		$this->region = $region;
-		$this->queryParameters["Region"]=$region;
-	}
-
-	public function getStatus() {
-		return $this->status;
-	}
-
-	public function setStatus($status) {
-		$this->status = $status;
-		$this->queryParameters["Status"]=$status;
-	}
-	
+        return $this;
+    }
 }

@@ -3,11 +3,16 @@
 namespace TeslaMaxCompute\Request\V20180104;
 
 /**
- * Request of QueryTopology
+ * Request of ListUserQuotas
  *
  */
-class QueryTopologyRequest extends \RpcAcsRequest
+class ListUserQuotasRequest extends \RpcAcsRequest
 {
+
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
     /**
      * Class constructor.
@@ -17,7 +22,7 @@ class QueryTopologyRequest extends \RpcAcsRequest
         parent::__construct(
             'TeslaMaxCompute',
             '2018-01-04',
-            'QueryTopology',
+            'ListUserQuotas',
             'teslamaxcompute'
         );
     }
