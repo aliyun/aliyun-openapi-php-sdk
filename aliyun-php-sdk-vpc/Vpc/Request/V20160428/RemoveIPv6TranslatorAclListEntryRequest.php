@@ -3,18 +3,17 @@
 namespace Vpc\Request\V20160428;
 
 /**
- * Request of ModifyNatGatewaySpec
+ * Request of RemoveIPv6TranslatorAclListEntry
  *
+ * @method string getAclId()
  * @method string getResourceOwnerId()
- * @method string getAutoPay()
  * @method string getResourceOwnerAccount()
  * @method string getClientToken()
  * @method string getOwnerAccount()
- * @method string getNatGatewayId()
  * @method string getOwnerId()
- * @method string getSpec()
+ * @method string getAclEntryId()
  */
-class ModifyNatGatewaySpecRequest extends \RpcAcsRequest
+class RemoveIPv6TranslatorAclListEntryRequest extends \RpcAcsRequest
 {
 
     /**
@@ -30,9 +29,22 @@ class ModifyNatGatewaySpecRequest extends \RpcAcsRequest
         parent::__construct(
             'Vpc',
             '2016-04-28',
-            'ModifyNatGatewaySpec',
+            'RemoveIPv6TranslatorAclListEntry',
             'vpc'
         );
+    }
+
+    /**
+     * @param string $aclId
+     *
+     * @return $this
+     */
+    public function setAclId($aclId)
+    {
+        $this->requestParameters['AclId'] = $aclId;
+        $this->queryParameters['AclId'] = $aclId;
+
+        return $this;
     }
 
     /**
@@ -44,19 +56,6 @@ class ModifyNatGatewaySpecRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $autoPay
-     *
-     * @return $this
-     */
-    public function setAutoPay($autoPay)
-    {
-        $this->requestParameters['AutoPay'] = $autoPay;
-        $this->queryParameters['AutoPay'] = $autoPay;
 
         return $this;
     }
@@ -101,19 +100,6 @@ class ModifyNatGatewaySpecRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $natGatewayId
-     *
-     * @return $this
-     */
-    public function setNatGatewayId($natGatewayId)
-    {
-        $this->requestParameters['NatGatewayId'] = $natGatewayId;
-        $this->queryParameters['NatGatewayId'] = $natGatewayId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -127,14 +113,14 @@ class ModifyNatGatewaySpecRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $spec
+     * @param string $aclEntryId
      *
      * @return $this
      */
-    public function setSpec($spec)
+    public function setAclEntryId($aclEntryId)
     {
-        $this->requestParameters['Spec'] = $spec;
-        $this->queryParameters['Spec'] = $spec;
+        $this->requestParameters['AclEntryId'] = $aclEntryId;
+        $this->queryParameters['AclEntryId'] = $aclEntryId;
 
         return $this;
     }

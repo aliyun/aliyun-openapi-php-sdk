@@ -8,6 +8,7 @@ namespace Vpc\Request\V20160428;
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
+ * @method string getSnatEntryName()
  * @method string getSnatTableId()
  * @method string getSnatEntryId()
  * @method string getOwnerId()
@@ -69,6 +70,19 @@ class ModifySnatEntryRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $snatEntryName
+     *
+     * @return $this
+     */
+    public function setSnatEntryName($snatEntryName)
+    {
+        $this->requestParameters['SnatEntryName'] = $snatEntryName;
+        $this->queryParameters['SnatEntryName'] = $snatEntryName;
 
         return $this;
     }

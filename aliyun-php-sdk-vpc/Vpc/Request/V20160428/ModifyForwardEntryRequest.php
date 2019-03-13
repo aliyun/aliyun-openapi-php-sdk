@@ -8,6 +8,7 @@ namespace Vpc\Request\V20160428;
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
  * @method string getIpProtocol()
+ * @method string getForwardEntryName()
  * @method string getOwnerAccount()
  * @method string getForwardTableId()
  * @method string getOwnerId()
@@ -73,6 +74,19 @@ class ModifyForwardEntryRequest extends \RpcAcsRequest
     {
         $this->requestParameters['IpProtocol'] = $ipProtocol;
         $this->queryParameters['IpProtocol'] = $ipProtocol;
+
+        return $this;
+    }
+
+    /**
+     * @param string $forwardEntryName
+     *
+     * @return $this
+     */
+    public function setForwardEntryName($forwardEntryName)
+    {
+        $this->requestParameters['ForwardEntryName'] = $forwardEntryName;
+        $this->queryParameters['ForwardEntryName'] = $forwardEntryName;
 
         return $this;
     }

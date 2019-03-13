@@ -6,6 +6,7 @@ namespace Vpc\Request\V20160428;
  * Request of DescribeIPv6TranslatorEntries
  *
  * @method string getBackendIpv4Port()
+ * @method string getAclId()
  * @method string getResourceOwnerId()
  * @method string getIpv6TranslatorEntryId()
  * @method string getResourceOwnerAccount()
@@ -14,7 +15,9 @@ namespace Vpc\Request\V20160428;
  * @method string getClientToken()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getAclStatus()
  * @method string getPageNumber()
+ * @method string getAclType()
  * @method string getAllocateIpv6Port()
  * @method string getPageSize()
  * @method string getBackendIpv4Addr()
@@ -51,6 +54,19 @@ class DescribeIPv6TranslatorEntriesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['BackendIpv4Port'] = $backendIpv4Port;
         $this->queryParameters['BackendIpv4Port'] = $backendIpv4Port;
+
+        return $this;
+    }
+
+    /**
+     * @param string $aclId
+     *
+     * @return $this
+     */
+    public function setAclId($aclId)
+    {
+        $this->requestParameters['AclId'] = $aclId;
+        $this->queryParameters['AclId'] = $aclId;
 
         return $this;
     }
@@ -160,6 +176,19 @@ class DescribeIPv6TranslatorEntriesRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $aclStatus
+     *
+     * @return $this
+     */
+    public function setAclStatus($aclStatus)
+    {
+        $this->requestParameters['AclStatus'] = $aclStatus;
+        $this->queryParameters['AclStatus'] = $aclStatus;
+
+        return $this;
+    }
+
+    /**
      * @param string $pageNumber
      *
      * @return $this
@@ -168,6 +197,19 @@ class DescribeIPv6TranslatorEntriesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageNumber'] = $pageNumber;
         $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $aclType
+     *
+     * @return $this
+     */
+    public function setAclType($aclType)
+    {
+        $this->requestParameters['AclType'] = $aclType;
+        $this->queryParameters['AclType'] = $aclType;
 
         return $this;
     }

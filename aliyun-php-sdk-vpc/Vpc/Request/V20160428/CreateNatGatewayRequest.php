@@ -6,15 +6,19 @@ namespace Vpc\Request\V20160428;
  * Request of CreateNatGateway
  *
  * @method string getResourceOwnerId()
+ * @method string getAutoPay()
  * @method string getResourceOwnerAccount()
  * @method string getClientToken()
  * @method string getOwnerAccount()
- * @method string getVpcId()
- * @method string getName()
  * @method string getDescription()
  * @method string getOwnerId()
- * @method array getBandwidthPackages()
  * @method string getSpec()
+ * @method string getDuration()
+ * @method string getVpcId()
+ * @method string getName()
+ * @method array getBandwidthPackages()
+ * @method string getInstanceChargeType()
+ * @method string getPricingCycle()
  */
 class CreateNatGatewayRequest extends \RpcAcsRequest
 {
@@ -46,6 +50,19 @@ class CreateNatGatewayRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $autoPay
+     *
+     * @return $this
+     */
+    public function setAutoPay($autoPay)
+    {
+        $this->requestParameters['AutoPay'] = $autoPay;
+        $this->queryParameters['AutoPay'] = $autoPay;
 
         return $this;
     }
@@ -90,32 +107,6 @@ class CreateNatGatewayRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $vpcId
-     *
-     * @return $this
-     */
-    public function setVpcId($vpcId)
-    {
-        $this->requestParameters['VpcId'] = $vpcId;
-        $this->queryParameters['VpcId'] = $vpcId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $name
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->requestParameters['Name'] = $name;
-        $this->queryParameters['Name'] = $name;
-
-        return $this;
-    }
-
-    /**
      * @param string $description
      *
      * @return $this
@@ -142,6 +133,58 @@ class CreateNatGatewayRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $spec
+     *
+     * @return $this
+     */
+    public function setSpec($spec)
+    {
+        $this->requestParameters['Spec'] = $spec;
+        $this->queryParameters['Spec'] = $spec;
+
+        return $this;
+    }
+
+    /**
+     * @param string $duration
+     *
+     * @return $this
+     */
+    public function setDuration($duration)
+    {
+        $this->requestParameters['Duration'] = $duration;
+        $this->queryParameters['Duration'] = $duration;
+
+        return $this;
+    }
+
+    /**
+     * @param string $vpcId
+     *
+     * @return $this
+     */
+    public function setVpcId($vpcId)
+    {
+        $this->requestParameters['VpcId'] = $vpcId;
+        $this->queryParameters['VpcId'] = $vpcId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
+
+        return $this;
+    }
+
+    /**
      * @param array $bandwidthPackages
      *
      * @return $this
@@ -161,14 +204,27 @@ class CreateNatGatewayRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $spec
+     * @param string $instanceChargeType
      *
      * @return $this
      */
-    public function setSpec($spec)
+    public function setInstanceChargeType($instanceChargeType)
     {
-        $this->requestParameters['Spec'] = $spec;
-        $this->queryParameters['Spec'] = $spec;
+        $this->requestParameters['InstanceChargeType'] = $instanceChargeType;
+        $this->queryParameters['InstanceChargeType'] = $instanceChargeType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pricingCycle
+     *
+     * @return $this
+     */
+    public function setPricingCycle($pricingCycle)
+    {
+        $this->requestParameters['PricingCycle'] = $pricingCycle;
+        $this->queryParameters['PricingCycle'] = $pricingCycle;
 
         return $this;
     }

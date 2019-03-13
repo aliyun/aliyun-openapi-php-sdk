@@ -8,13 +8,14 @@ namespace Vpc\Request\V20160428;
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
  * @method string getIpProtocol()
- * @method string getInternalPort()
+ * @method string getForwardEntryName()
  * @method string getOwnerAccount()
  * @method string getForwardTableId()
  * @method string getOwnerId()
+ * @method string getInternalIp()
+ * @method string getInternalPort()
  * @method string getExternalIp()
  * @method string getExternalPort()
- * @method string getInternalIp()
  */
 class CreateForwardEntryRequest extends \RpcAcsRequest
 {
@@ -77,14 +78,14 @@ class CreateForwardEntryRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $internalPort
+     * @param string $forwardEntryName
      *
      * @return $this
      */
-    public function setInternalPort($internalPort)
+    public function setForwardEntryName($forwardEntryName)
     {
-        $this->requestParameters['InternalPort'] = $internalPort;
-        $this->queryParameters['InternalPort'] = $internalPort;
+        $this->requestParameters['ForwardEntryName'] = $forwardEntryName;
+        $this->queryParameters['ForwardEntryName'] = $forwardEntryName;
 
         return $this;
     }
@@ -129,6 +130,32 @@ class CreateForwardEntryRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $internalIp
+     *
+     * @return $this
+     */
+    public function setInternalIp($internalIp)
+    {
+        $this->requestParameters['InternalIp'] = $internalIp;
+        $this->queryParameters['InternalIp'] = $internalIp;
+
+        return $this;
+    }
+
+    /**
+     * @param string $internalPort
+     *
+     * @return $this
+     */
+    public function setInternalPort($internalPort)
+    {
+        $this->requestParameters['InternalPort'] = $internalPort;
+        $this->queryParameters['InternalPort'] = $internalPort;
+
+        return $this;
+    }
+
+    /**
      * @param string $externalIp
      *
      * @return $this
@@ -150,19 +177,6 @@ class CreateForwardEntryRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ExternalPort'] = $externalPort;
         $this->queryParameters['ExternalPort'] = $externalPort;
-
-        return $this;
-    }
-
-    /**
-     * @param string $internalIp
-     *
-     * @return $this
-     */
-    public function setInternalIp($internalIp)
-    {
-        $this->requestParameters['InternalIp'] = $internalIp;
-        $this->queryParameters['InternalIp'] = $internalIp;
 
         return $this;
     }

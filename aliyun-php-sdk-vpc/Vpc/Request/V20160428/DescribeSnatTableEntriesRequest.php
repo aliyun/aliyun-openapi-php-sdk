@@ -8,11 +8,15 @@ namespace Vpc\Request\V20160428;
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getPageSize()
+ * @method string getSourceCIDR()
  * @method string getSnatTableId()
- * @method string getSnatEntryId()
  * @method string getOwnerId()
+ * @method string getSnatIp()
  * @method string getPageNumber()
+ * @method string getSourceVSwitchId()
+ * @method string getSnatEntryName()
+ * @method string getPageSize()
+ * @method string getSnatEntryId()
  */
 class DescribeSnatTableEntriesRequest extends \RpcAcsRequest
 {
@@ -75,14 +79,14 @@ class DescribeSnatTableEntriesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageSize
+     * @param string $sourceCIDR
      *
      * @return $this
      */
-    public function setPageSize($pageSize)
+    public function setSourceCIDR($sourceCIDR)
     {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
+        $this->requestParameters['SourceCIDR'] = $sourceCIDR;
+        $this->queryParameters['SourceCIDR'] = $sourceCIDR;
 
         return $this;
     }
@@ -101,19 +105,6 @@ class DescribeSnatTableEntriesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $snatEntryId
-     *
-     * @return $this
-     */
-    public function setSnatEntryId($snatEntryId)
-    {
-        $this->requestParameters['SnatEntryId'] = $snatEntryId;
-        $this->queryParameters['SnatEntryId'] = $snatEntryId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -127,6 +118,19 @@ class DescribeSnatTableEntriesRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $snatIp
+     *
+     * @return $this
+     */
+    public function setSnatIp($snatIp)
+    {
+        $this->requestParameters['SnatIp'] = $snatIp;
+        $this->queryParameters['SnatIp'] = $snatIp;
+
+        return $this;
+    }
+
+    /**
      * @param string $pageNumber
      *
      * @return $this
@@ -135,6 +139,58 @@ class DescribeSnatTableEntriesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageNumber'] = $pageNumber;
         $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sourceVSwitchId
+     *
+     * @return $this
+     */
+    public function setSourceVSwitchId($sourceVSwitchId)
+    {
+        $this->requestParameters['SourceVSwitchId'] = $sourceVSwitchId;
+        $this->queryParameters['SourceVSwitchId'] = $sourceVSwitchId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $snatEntryName
+     *
+     * @return $this
+     */
+    public function setSnatEntryName($snatEntryName)
+    {
+        $this->requestParameters['SnatEntryName'] = $snatEntryName;
+        $this->queryParameters['SnatEntryName'] = $snatEntryName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $snatEntryId
+     *
+     * @return $this
+     */
+    public function setSnatEntryId($snatEntryId)
+    {
+        $this->requestParameters['SnatEntryId'] = $snatEntryId;
+        $this->queryParameters['SnatEntryId'] = $snatEntryId;
 
         return $this;
     }

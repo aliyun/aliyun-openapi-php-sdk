@@ -3,18 +3,17 @@
 namespace Vpc\Request\V20160428;
 
 /**
- * Request of ModifyNatGatewaySpec
+ * Request of DescribeIPv6TranslatorAclListAttributes
  *
+ * @method string getAclId()
  * @method string getResourceOwnerId()
- * @method string getAutoPay()
  * @method string getResourceOwnerAccount()
- * @method string getClientToken()
  * @method string getOwnerAccount()
- * @method string getNatGatewayId()
+ * @method string getPageSize()
  * @method string getOwnerId()
- * @method string getSpec()
+ * @method string getPageNumber()
  */
-class ModifyNatGatewaySpecRequest extends \RpcAcsRequest
+class DescribeIPv6TranslatorAclListAttributesRequest extends \RpcAcsRequest
 {
 
     /**
@@ -30,9 +29,22 @@ class ModifyNatGatewaySpecRequest extends \RpcAcsRequest
         parent::__construct(
             'Vpc',
             '2016-04-28',
-            'ModifyNatGatewaySpec',
+            'DescribeIPv6TranslatorAclListAttributes',
             'vpc'
         );
+    }
+
+    /**
+     * @param string $aclId
+     *
+     * @return $this
+     */
+    public function setAclId($aclId)
+    {
+        $this->requestParameters['AclId'] = $aclId;
+        $this->queryParameters['AclId'] = $aclId;
+
+        return $this;
     }
 
     /**
@@ -44,19 +56,6 @@ class ModifyNatGatewaySpecRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $autoPay
-     *
-     * @return $this
-     */
-    public function setAutoPay($autoPay)
-    {
-        $this->requestParameters['AutoPay'] = $autoPay;
-        $this->queryParameters['AutoPay'] = $autoPay;
 
         return $this;
     }
@@ -75,19 +74,6 @@ class ModifyNatGatewaySpecRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $clientToken
-     *
-     * @return $this
-     */
-    public function setClientToken($clientToken)
-    {
-        $this->requestParameters['ClientToken'] = $clientToken;
-        $this->queryParameters['ClientToken'] = $clientToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerAccount
      *
      * @return $this
@@ -101,14 +87,14 @@ class ModifyNatGatewaySpecRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $natGatewayId
+     * @param string $pageSize
      *
      * @return $this
      */
-    public function setNatGatewayId($natGatewayId)
+    public function setPageSize($pageSize)
     {
-        $this->requestParameters['NatGatewayId'] = $natGatewayId;
-        $this->queryParameters['NatGatewayId'] = $natGatewayId;
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }
@@ -127,14 +113,14 @@ class ModifyNatGatewaySpecRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $spec
+     * @param string $pageNumber
      *
      * @return $this
      */
-    public function setSpec($spec)
+    public function setPageNumber($pageNumber)
     {
-        $this->requestParameters['Spec'] = $spec;
-        $this->queryParameters['Spec'] = $spec;
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

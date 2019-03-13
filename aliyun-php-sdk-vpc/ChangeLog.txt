@@ -1,3 +1,6 @@
+2019-03-13 Version: 3.0.4
+1, Update Dependency
+
 2019-01-17 Version: 3.0.3
 1, new version release, 3.0.3
 

@@ -7,6 +7,7 @@ namespace Vpc\Request\V20160428;
  *
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
+ * @method string getRouteEntryId()
  * @method string getDestinationCidrBlock()
  * @method string getOwnerAccount()
  * @method string getNextHopId()
@@ -57,6 +58,19 @@ class DeleteRouteEntryRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $routeEntryId
+     *
+     * @return $this
+     */
+    public function setRouteEntryId($routeEntryId)
+    {
+        $this->requestParameters['RouteEntryId'] = $routeEntryId;
+        $this->queryParameters['RouteEntryId'] = $routeEntryId;
 
         return $this;
     }

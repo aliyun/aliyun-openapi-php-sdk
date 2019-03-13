@@ -3,19 +3,17 @@
 namespace Vpc\Request\V20160428;
 
 /**
- * Request of CreateSnatEntry
+ * Request of AddIPv6TranslatorAclListEntry
  *
+ * @method string getAclId()
  * @method string getResourceOwnerId()
- * @method string getSourceVSwitchId()
+ * @method string getAclEntryIp()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getSnatEntryName()
- * @method string getSourceCIDR()
- * @method string getSnatTableId()
+ * @method string getAclEntryComment()
  * @method string getOwnerId()
- * @method string getSnatIp()
  */
-class CreateSnatEntryRequest extends \RpcAcsRequest
+class AddIPv6TranslatorAclListEntryRequest extends \RpcAcsRequest
 {
 
     /**
@@ -31,9 +29,22 @@ class CreateSnatEntryRequest extends \RpcAcsRequest
         parent::__construct(
             'Vpc',
             '2016-04-28',
-            'CreateSnatEntry',
+            'AddIPv6TranslatorAclListEntry',
             'vpc'
         );
+    }
+
+    /**
+     * @param string $aclId
+     *
+     * @return $this
+     */
+    public function setAclId($aclId)
+    {
+        $this->requestParameters['AclId'] = $aclId;
+        $this->queryParameters['AclId'] = $aclId;
+
+        return $this;
     }
 
     /**
@@ -50,14 +61,14 @@ class CreateSnatEntryRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $sourceVSwitchId
+     * @param string $aclEntryIp
      *
      * @return $this
      */
-    public function setSourceVSwitchId($sourceVSwitchId)
+    public function setAclEntryIp($aclEntryIp)
     {
-        $this->requestParameters['SourceVSwitchId'] = $sourceVSwitchId;
-        $this->queryParameters['SourceVSwitchId'] = $sourceVSwitchId;
+        $this->requestParameters['AclEntryIp'] = $aclEntryIp;
+        $this->queryParameters['AclEntryIp'] = $aclEntryIp;
 
         return $this;
     }
@@ -89,40 +100,14 @@ class CreateSnatEntryRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $snatEntryName
+     * @param string $aclEntryComment
      *
      * @return $this
      */
-    public function setSnatEntryName($snatEntryName)
+    public function setAclEntryComment($aclEntryComment)
     {
-        $this->requestParameters['SnatEntryName'] = $snatEntryName;
-        $this->queryParameters['SnatEntryName'] = $snatEntryName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $sourceCIDR
-     *
-     * @return $this
-     */
-    public function setSourceCIDR($sourceCIDR)
-    {
-        $this->requestParameters['SourceCIDR'] = $sourceCIDR;
-        $this->queryParameters['SourceCIDR'] = $sourceCIDR;
-
-        return $this;
-    }
-
-    /**
-     * @param string $snatTableId
-     *
-     * @return $this
-     */
-    public function setSnatTableId($snatTableId)
-    {
-        $this->requestParameters['SnatTableId'] = $snatTableId;
-        $this->queryParameters['SnatTableId'] = $snatTableId;
+        $this->requestParameters['AclEntryComment'] = $aclEntryComment;
+        $this->queryParameters['AclEntryComment'] = $aclEntryComment;
 
         return $this;
     }
@@ -136,19 +121,6 @@ class CreateSnatEntryRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $snatIp
-     *
-     * @return $this
-     */
-    public function setSnatIp($snatIp)
-    {
-        $this->requestParameters['SnatIp'] = $snatIp;
-        $this->queryParameters['SnatIp'] = $snatIp;
 
         return $this;
     }

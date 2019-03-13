@@ -8,12 +8,14 @@ namespace Vpc\Request\V20160428;
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
+ * @method string getOwnerId()
+ * @method string getSpec()
+ * @method string getPageNumber()
  * @method string getVpcId()
  * @method string getName()
  * @method string getPageSize()
  * @method string getNatGatewayId()
- * @method string getOwnerId()
- * @method string getPageNumber()
+ * @method string getInstanceChargeType()
  */
 class DescribeNatGatewaysRequest extends \RpcAcsRequest
 {
@@ -76,6 +78,45 @@ class DescribeNatGatewaysRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $spec
+     *
+     * @return $this
+     */
+    public function setSpec($spec)
+    {
+        $this->requestParameters['Spec'] = $spec;
+        $this->queryParameters['Spec'] = $spec;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
      * @param string $vpcId
      *
      * @return $this
@@ -128,27 +169,14 @@ class DescribeNatGatewaysRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerId
+     * @param string $instanceChargeType
      *
      * @return $this
      */
-    public function setOwnerId($ownerId)
+    public function setInstanceChargeType($instanceChargeType)
     {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
+        $this->requestParameters['InstanceChargeType'] = $instanceChargeType;
+        $this->queryParameters['InstanceChargeType'] = $instanceChargeType;
 
         return $this;
     }
