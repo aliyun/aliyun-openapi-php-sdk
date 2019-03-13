@@ -20,6 +20,7 @@ namespace Ecs\Request\V20140526;
  * @method string getPeriod()
  * @method string getDryRun()
  * @method string getOwnerId()
+ * @method string getCapacityReservationPreference()
  * @method string getVSwitchId()
  * @method string getPrivateIpAddress()
  * @method string getSpotStrategy()
@@ -39,6 +40,7 @@ namespace Ecs\Request\V20140526;
  * @method string getInternetMaxBandwidthOut()
  * @method string getDescription()
  * @method string getSystemDiskCategory()
+ * @method string getCapacityReservationId()
  * @method string getUserData()
  * @method string getPasswordInherit()
  * @method string getInstanceType()
@@ -271,6 +273,19 @@ class CreateInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $capacityReservationPreference
+     *
+     * @return $this
+     */
+    public function setCapacityReservationPreference($capacityReservationPreference)
+    {
+        $this->requestParameters['CapacityReservationPreference'] = $capacityReservationPreference;
+        $this->queryParameters['CapacityReservationPreference'] = $capacityReservationPreference;
 
         return $this;
     }
@@ -518,6 +533,19 @@ class CreateInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SystemDiskCategory'] = $systemDiskCategory;
         $this->queryParameters['SystemDisk.Category'] = $systemDiskCategory;
+
+        return $this;
+    }
+
+    /**
+     * @param string $capacityReservationId
+     *
+     * @return $this
+     */
+    public function setCapacityReservationId($capacityReservationId)
+    {
+        $this->requestParameters['CapacityReservationId'] = $capacityReservationId;
+        $this->queryParameters['CapacityReservationId'] = $capacityReservationId;
 
         return $this;
     }

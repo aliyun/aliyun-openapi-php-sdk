@@ -24,6 +24,7 @@ namespace Ecs\Request\V20140526;
  * @method string getLaunchTemplateId()
  * @method string getIpv6AddressCount()
  * @method string getOwnerId()
+ * @method string getCapacityReservationPreference()
  * @method string getVSwitchId()
  * @method string getSpotStrategy()
  * @method string getPrivateIpAddress()
@@ -42,9 +43,11 @@ namespace Ecs\Request\V20140526;
  * @method string getInternetMaxBandwidthOut()
  * @method string getDescription()
  * @method string getSystemDiskCategory()
+ * @method string getCapacityReservationId()
  * @method string getUserData()
  * @method string getPasswordInherit()
  * @method string getInstanceType()
+ * @method string getHibernationConfigured()
  * @method string getInstanceChargeType()
  * @method array getNetworkInterfaces()
  * @method string getDeploymentSetId()
@@ -333,6 +336,19 @@ class RunInstancesRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $capacityReservationPreference
+     *
+     * @return $this
+     */
+    public function setCapacityReservationPreference($capacityReservationPreference)
+    {
+        $this->requestParameters['CapacityReservationPreference'] = $capacityReservationPreference;
+        $this->queryParameters['CapacityReservationPreference'] = $capacityReservationPreference;
+
+        return $this;
+    }
+
+    /**
      * @param string $vSwitchId
      *
      * @return $this
@@ -569,6 +585,19 @@ class RunInstancesRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $capacityReservationId
+     *
+     * @return $this
+     */
+    public function setCapacityReservationId($capacityReservationId)
+    {
+        $this->requestParameters['CapacityReservationId'] = $capacityReservationId;
+        $this->queryParameters['CapacityReservationId'] = $capacityReservationId;
+
+        return $this;
+    }
+
+    /**
      * @param string $userData
      *
      * @return $this
@@ -603,6 +632,19 @@ class RunInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['InstanceType'] = $instanceType;
         $this->queryParameters['InstanceType'] = $instanceType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $hibernationConfigured
+     *
+     * @return $this
+     */
+    public function setHibernationConfigured($hibernationConfigured)
+    {
+        $this->requestParameters['HibernationConfigured'] = $hibernationConfigured;
+        $this->queryParameters['HibernationConfigured'] = $hibernationConfigured;
 
         return $this;
     }

@@ -13,6 +13,7 @@ namespace Ecs\Request\V20140526;
  * @method string getOwnerAccount()
  * @method string getStoppedMode()
  * @method string getOwnerId()
+ * @method string getHibernate()
  * @method string getForceStop()
  */
 class StopInstanceRequest extends \RpcAcsRequest
@@ -136,6 +137,19 @@ class StopInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $hibernate
+     *
+     * @return $this
+     */
+    public function setHibernate($hibernate)
+    {
+        $this->requestParameters['Hibernate'] = $hibernate;
+        $this->queryParameters['Hibernate'] = $hibernate;
 
         return $this;
     }
