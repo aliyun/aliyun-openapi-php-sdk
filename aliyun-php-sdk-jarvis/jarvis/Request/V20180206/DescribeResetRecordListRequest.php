@@ -1,129 +1,155 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace jarvis\Request\V20180206;
 
+/**
+ * Request of DescribeResetRecordList
+ *
+ * @method string getSrcIP()
+ * @method string getPeriod()
+ * @method string getSourceIp()
+ * @method string getpageSize()
+ * @method string getcurrentPage()
+ * @method string getDstIP()
+ * @method string getRegion()
+ * @method string getLang()
+ * @method string getSourceCode()
+ */
 class DescribeResetRecordListRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("jarvis", "2018-02-06", "DescribeResetRecordList");
-		$this->setMethod("POST");
-	}
 
-	private  $srcIP;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $period;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'jarvis',
+            '2018-02-06',
+            'DescribeResetRecordList',
+            'jarvis'
+        );
+    }
 
-	private  $sourceIp;
+    /**
+     * @param string $srcIP
+     *
+     * @return $this
+     */
+    public function setSrcIP($srcIP)
+    {
+        $this->requestParameters['SrcIP'] = $srcIP;
+        $this->queryParameters['SrcIP'] = $srcIP;
 
-	private  $pageSize;
+        return $this;
+    }
 
-	private  $currentPage;
+    /**
+     * @param string $period
+     *
+     * @return $this
+     */
+    public function setPeriod($period)
+    {
+        $this->requestParameters['Period'] = $period;
+        $this->queryParameters['Period'] = $period;
 
-	private  $dstIP;
+        return $this;
+    }
 
-	private  $region;
+    /**
+     * @param string $sourceIp
+     *
+     * @return $this
+     */
+    public function setSourceIp($sourceIp)
+    {
+        $this->requestParameters['SourceIp'] = $sourceIp;
+        $this->queryParameters['SourceIp'] = $sourceIp;
 
-	private  $lang;
+        return $this;
+    }
 
-	private  $sourceCode;
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setpageSize($pageSize)
+    {
+        $this->requestParameters['pageSize'] = $pageSize;
+        $this->queryParameters['pageSize'] = $pageSize;
 
-	public function getSrcIP() {
-		return $this->srcIP;
-	}
+        return $this;
+    }
 
-	public function setSrcIP($srcIP) {
-		$this->srcIP = $srcIP;
-		$this->queryParameters["SrcIP"]=$srcIP;
-	}
+    /**
+     * @param string $currentPage
+     *
+     * @return $this
+     */
+    public function setcurrentPage($currentPage)
+    {
+        $this->requestParameters['currentPage'] = $currentPage;
+        $this->queryParameters['currentPage'] = $currentPage;
 
-	public function getPeriod() {
-		return $this->period;
-	}
+        return $this;
+    }
 
-	public function setPeriod($period) {
-		$this->period = $period;
-		$this->queryParameters["Period"]=$period;
-	}
+    /**
+     * @param string $dstIP
+     *
+     * @return $this
+     */
+    public function setDstIP($dstIP)
+    {
+        $this->requestParameters['DstIP'] = $dstIP;
+        $this->queryParameters['DstIP'] = $dstIP;
 
-	public function getSourceIp() {
-		return $this->sourceIp;
-	}
+        return $this;
+    }
 
-	public function setSourceIp($sourceIp) {
-		$this->sourceIp = $sourceIp;
-		$this->queryParameters["SourceIp"]=$sourceIp;
-	}
+    /**
+     * @param string $region
+     *
+     * @return $this
+     */
+    public function setRegion($region)
+    {
+        $this->requestParameters['Region'] = $region;
+        $this->queryParameters['Region'] = $region;
 
-	public function getpageSize() {
-		return $this->pageSize;
-	}
+        return $this;
+    }
 
-	public function setpageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["pageSize"]=$pageSize;
-	}
+    /**
+     * @param string $lang
+     *
+     * @return $this
+     */
+    public function setLang($lang)
+    {
+        $this->requestParameters['Lang'] = $lang;
+        $this->queryParameters['Lang'] = $lang;
 
-	public function getcurrentPage() {
-		return $this->currentPage;
-	}
+        return $this;
+    }
 
-	public function setcurrentPage($currentPage) {
-		$this->currentPage = $currentPage;
-		$this->queryParameters["currentPage"]=$currentPage;
-	}
+    /**
+     * @param string $sourceCode
+     *
+     * @return $this
+     */
+    public function setSourceCode($sourceCode)
+    {
+        $this->requestParameters['SourceCode'] = $sourceCode;
+        $this->queryParameters['SourceCode'] = $sourceCode;
 
-	public function getDstIP() {
-		return $this->dstIP;
-	}
-
-	public function setDstIP($dstIP) {
-		$this->dstIP = $dstIP;
-		$this->queryParameters["DstIP"]=$dstIP;
-	}
-
-	public function getRegion() {
-		return $this->region;
-	}
-
-	public function setRegion($region) {
-		$this->region = $region;
-		$this->queryParameters["Region"]=$region;
-	}
-
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-
-	public function getSourceCode() {
-		return $this->sourceCode;
-	}
-
-	public function setSourceCode($sourceCode) {
-		$this->sourceCode = $sourceCode;
-		$this->queryParameters["SourceCode"]=$sourceCode;
-	}
-	
+        return $this;
+    }
 }

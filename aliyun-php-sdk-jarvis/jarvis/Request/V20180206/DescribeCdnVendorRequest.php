@@ -3,13 +3,15 @@
 namespace jarvis\Request\V20180206;
 
 /**
- * Request of DescribeUidGcLevel
+ * Request of DescribeCdnVendor
  *
  * @method string getSourceIp()
+ * @method string getPageSize()
+ * @method string getCurrentPage()
  * @method string getLang()
  * @method string getSourceCode()
  */
-class DescribeUidGcLevelRequest extends \RpcAcsRequest
+class DescribeCdnVendorRequest extends \RpcAcsRequest
 {
 
     /**
@@ -25,7 +27,7 @@ class DescribeUidGcLevelRequest extends \RpcAcsRequest
         parent::__construct(
             'jarvis',
             '2018-02-06',
-            'DescribeUidGcLevel',
+            'DescribeCdnVendor',
             'jarvis'
         );
     }
@@ -39,6 +41,32 @@ class DescribeUidGcLevelRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SourceIp'] = $sourceIp;
         $this->queryParameters['SourceIp'] = $sourceIp;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $currentPage
+     *
+     * @return $this
+     */
+    public function setCurrentPage($currentPage)
+    {
+        $this->requestParameters['CurrentPage'] = $currentPage;
+        $this->queryParameters['CurrentPage'] = $currentPage;
 
         return $this;
     }

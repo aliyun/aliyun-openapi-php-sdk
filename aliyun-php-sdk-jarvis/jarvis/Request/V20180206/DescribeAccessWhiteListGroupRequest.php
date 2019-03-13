@@ -1,129 +1,169 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace jarvis\Request\V20180206;
 
+/**
+ * Request of DescribeAccessWhiteListGroup
+ *
+ * @method string getSrcIP()
+ * @method string getSourceIp()
+ * @method string getPageSize()
+ * @method string getqueryProduct()
+ * @method string getCurrentPage()
+ * @method string getWhiteListType()
+ * @method string getDstIP()
+ * @method string getLang()
+ * @method string getStatus()
+ * @method string getSourceCode()
+ */
 class DescribeAccessWhiteListGroupRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("jarvis", "2018-02-06", "DescribeAccessWhiteListGroup");
-		$this->setMethod("POST");
-	}
 
-	private  $srcIP;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $sourceIp;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'jarvis',
+            '2018-02-06',
+            'DescribeAccessWhiteListGroup',
+            'jarvis'
+        );
+    }
 
-	private  $pageSize;
+    /**
+     * @param string $srcIP
+     *
+     * @return $this
+     */
+    public function setSrcIP($srcIP)
+    {
+        $this->requestParameters['SrcIP'] = $srcIP;
+        $this->queryParameters['SrcIP'] = $srcIP;
 
-	private  $currentPage;
+        return $this;
+    }
 
-	private  $whiteListType;
+    /**
+     * @param string $sourceIp
+     *
+     * @return $this
+     */
+    public function setSourceIp($sourceIp)
+    {
+        $this->requestParameters['SourceIp'] = $sourceIp;
+        $this->queryParameters['SourceIp'] = $sourceIp;
 
-	private  $dstIP;
+        return $this;
+    }
 
-	private  $lang;
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	private  $status;
+        return $this;
+    }
 
-	private  $sourceCode;
+    /**
+     * @param string $queryProduct
+     *
+     * @return $this
+     */
+    public function setqueryProduct($queryProduct)
+    {
+        $this->requestParameters['queryProduct'] = $queryProduct;
+        $this->queryParameters['queryProduct'] = $queryProduct;
 
-	public function getSrcIP() {
-		return $this->srcIP;
-	}
+        return $this;
+    }
 
-	public function setSrcIP($srcIP) {
-		$this->srcIP = $srcIP;
-		$this->queryParameters["SrcIP"]=$srcIP;
-	}
+    /**
+     * @param string $currentPage
+     *
+     * @return $this
+     */
+    public function setCurrentPage($currentPage)
+    {
+        $this->requestParameters['CurrentPage'] = $currentPage;
+        $this->queryParameters['CurrentPage'] = $currentPage;
 
-	public function getSourceIp() {
-		return $this->sourceIp;
-	}
+        return $this;
+    }
 
-	public function setSourceIp($sourceIp) {
-		$this->sourceIp = $sourceIp;
-		$this->queryParameters["SourceIp"]=$sourceIp;
-	}
+    /**
+     * @param string $whiteListType
+     *
+     * @return $this
+     */
+    public function setWhiteListType($whiteListType)
+    {
+        $this->requestParameters['WhiteListType'] = $whiteListType;
+        $this->queryParameters['WhiteListType'] = $whiteListType;
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
+        return $this;
+    }
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
+    /**
+     * @param string $dstIP
+     *
+     * @return $this
+     */
+    public function setDstIP($dstIP)
+    {
+        $this->requestParameters['DstIP'] = $dstIP;
+        $this->queryParameters['DstIP'] = $dstIP;
 
-	public function getCurrentPage() {
-		return $this->currentPage;
-	}
+        return $this;
+    }
 
-	public function setCurrentPage($currentPage) {
-		$this->currentPage = $currentPage;
-		$this->queryParameters["CurrentPage"]=$currentPage;
-	}
+    /**
+     * @param string $lang
+     *
+     * @return $this
+     */
+    public function setLang($lang)
+    {
+        $this->requestParameters['Lang'] = $lang;
+        $this->queryParameters['Lang'] = $lang;
 
-	public function getWhiteListType() {
-		return $this->whiteListType;
-	}
+        return $this;
+    }
 
-	public function setWhiteListType($whiteListType) {
-		$this->whiteListType = $whiteListType;
-		$this->queryParameters["WhiteListType"]=$whiteListType;
-	}
+    /**
+     * @param string $status
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->requestParameters['Status'] = $status;
+        $this->queryParameters['Status'] = $status;
 
-	public function getDstIP() {
-		return $this->dstIP;
-	}
+        return $this;
+    }
 
-	public function setDstIP($dstIP) {
-		$this->dstIP = $dstIP;
-		$this->queryParameters["DstIP"]=$dstIP;
-	}
+    /**
+     * @param string $sourceCode
+     *
+     * @return $this
+     */
+    public function setSourceCode($sourceCode)
+    {
+        $this->requestParameters['SourceCode'] = $sourceCode;
+        $this->queryParameters['SourceCode'] = $sourceCode;
 
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-
-	public function getStatus() {
-		return $this->status;
-	}
-
-	public function setStatus($status) {
-		$this->status = $status;
-		$this->queryParameters["Status"]=$status;
-	}
-
-	public function getSourceCode() {
-		return $this->sourceCode;
-	}
-
-	public function setSourceCode($sourceCode) {
-		$this->sourceCode = $sourceCode;
-		$this->queryParameters["SourceCode"]=$sourceCode;
-	}
-	
+        return $this;
+    }
 }

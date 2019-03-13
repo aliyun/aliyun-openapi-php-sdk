@@ -1,151 +1,183 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace jarvis\Request\V20180206;
 
+/**
+ * Request of DescribeRiskListDetail
+ *
+ * @method string getriskType()
+ * @method string getSourceIp()
+ * @method string getpageSize()
+ * @method string getqueryProduct()
+ * @method string getcurrentPage()
+ * @method string getriskDescribe()
+ * @method string getLang()
+ * @method string getsrcUid()
+ * @method string getsourceCode()
+ * @method string getqueryRegionId()
+ * @method string getstatus()
+ */
 class DescribeRiskListDetailRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("jarvis", "2018-02-06", "DescribeRiskListDetail");
-		$this->setMethod("POST");
-	}
 
-	private  $riskType;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $sourceIp;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'jarvis',
+            '2018-02-06',
+            'DescribeRiskListDetail',
+            'jarvis'
+        );
+    }
 
-	private  $pageSize;
+    /**
+     * @param string $riskType
+     *
+     * @return $this
+     */
+    public function setriskType($riskType)
+    {
+        $this->requestParameters['riskType'] = $riskType;
+        $this->queryParameters['riskType'] = $riskType;
 
-	private  $queryProduct;
+        return $this;
+    }
 
-	private  $currentPage;
+    /**
+     * @param string $sourceIp
+     *
+     * @return $this
+     */
+    public function setSourceIp($sourceIp)
+    {
+        $this->requestParameters['SourceIp'] = $sourceIp;
+        $this->queryParameters['SourceIp'] = $sourceIp;
 
-	private  $riskDescribe;
+        return $this;
+    }
 
-	private  $lang;
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setpageSize($pageSize)
+    {
+        $this->requestParameters['pageSize'] = $pageSize;
+        $this->queryParameters['pageSize'] = $pageSize;
 
-	private  $srcUid;
+        return $this;
+    }
 
-	private  $sourceCode;
+    /**
+     * @param string $queryProduct
+     *
+     * @return $this
+     */
+    public function setqueryProduct($queryProduct)
+    {
+        $this->requestParameters['queryProduct'] = $queryProduct;
+        $this->queryParameters['queryProduct'] = $queryProduct;
 
-	private  $queryRegionId;
+        return $this;
+    }
 
-	private  $status;
+    /**
+     * @param string $currentPage
+     *
+     * @return $this
+     */
+    public function setcurrentPage($currentPage)
+    {
+        $this->requestParameters['currentPage'] = $currentPage;
+        $this->queryParameters['currentPage'] = $currentPage;
 
-	public function getriskType() {
-		return $this->riskType;
-	}
+        return $this;
+    }
 
-	public function setriskType($riskType) {
-		$this->riskType = $riskType;
-		$this->queryParameters["riskType"]=$riskType;
-	}
+    /**
+     * @param string $riskDescribe
+     *
+     * @return $this
+     */
+    public function setriskDescribe($riskDescribe)
+    {
+        $this->requestParameters['riskDescribe'] = $riskDescribe;
+        $this->queryParameters['riskDescribe'] = $riskDescribe;
 
-	public function getSourceIp() {
-		return $this->sourceIp;
-	}
+        return $this;
+    }
 
-	public function setSourceIp($sourceIp) {
-		$this->sourceIp = $sourceIp;
-		$this->queryParameters["SourceIp"]=$sourceIp;
-	}
+    /**
+     * @param string $lang
+     *
+     * @return $this
+     */
+    public function setLang($lang)
+    {
+        $this->requestParameters['Lang'] = $lang;
+        $this->queryParameters['Lang'] = $lang;
 
-	public function getpageSize() {
-		return $this->pageSize;
-	}
+        return $this;
+    }
 
-	public function setpageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["pageSize"]=$pageSize;
-	}
+    /**
+     * @param string $srcUid
+     *
+     * @return $this
+     */
+    public function setsrcUid($srcUid)
+    {
+        $this->requestParameters['srcUid'] = $srcUid;
+        $this->queryParameters['srcUid'] = $srcUid;
 
-	public function getqueryProduct() {
-		return $this->queryProduct;
-	}
+        return $this;
+    }
 
-	public function setqueryProduct($queryProduct) {
-		$this->queryProduct = $queryProduct;
-		$this->queryParameters["queryProduct"]=$queryProduct;
-	}
+    /**
+     * @param string $sourceCode
+     *
+     * @return $this
+     */
+    public function setsourceCode($sourceCode)
+    {
+        $this->requestParameters['sourceCode'] = $sourceCode;
+        $this->queryParameters['sourceCode'] = $sourceCode;
 
-	public function getcurrentPage() {
-		return $this->currentPage;
-	}
+        return $this;
+    }
 
-	public function setcurrentPage($currentPage) {
-		$this->currentPage = $currentPage;
-		$this->queryParameters["currentPage"]=$currentPage;
-	}
+    /**
+     * @param string $queryRegionId
+     *
+     * @return $this
+     */
+    public function setqueryRegionId($queryRegionId)
+    {
+        $this->requestParameters['queryRegionId'] = $queryRegionId;
+        $this->queryParameters['queryRegionId'] = $queryRegionId;
 
-	public function getriskDescribe() {
-		return $this->riskDescribe;
-	}
+        return $this;
+    }
 
-	public function setriskDescribe($riskDescribe) {
-		$this->riskDescribe = $riskDescribe;
-		$this->queryParameters["riskDescribe"]=$riskDescribe;
-	}
+    /**
+     * @param string $status
+     *
+     * @return $this
+     */
+    public function setstatus($status)
+    {
+        $this->requestParameters['status'] = $status;
+        $this->queryParameters['status'] = $status;
 
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-
-	public function getsrcUid() {
-		return $this->srcUid;
-	}
-
-	public function setsrcUid($srcUid) {
-		$this->srcUid = $srcUid;
-		$this->queryParameters["srcUid"]=$srcUid;
-	}
-
-	public function getsourceCode() {
-		return $this->sourceCode;
-	}
-
-	public function setsourceCode($sourceCode) {
-		$this->sourceCode = $sourceCode;
-		$this->queryParameters["sourceCode"]=$sourceCode;
-	}
-
-	public function getqueryRegionId() {
-		return $this->queryRegionId;
-	}
-
-	public function setqueryRegionId($queryRegionId) {
-		$this->queryRegionId = $queryRegionId;
-		$this->queryParameters["queryRegionId"]=$queryRegionId;
-	}
-
-	public function getstatus() {
-		return $this->status;
-	}
-
-	public function setstatus($status) {
-		$this->status = $status;
-		$this->queryParameters["status"]=$status;
-	}
-	
+        return $this;
+    }
 }

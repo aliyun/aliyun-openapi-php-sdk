@@ -1,118 +1,141 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace jarvis\Request\V20180206;
 
+/**
+ * Request of DescribePunishList
+ *
+ * @method string getSrcIP()
+ * @method string getSourceIp()
+ * @method string getpageSize()
+ * @method string getcurrentPage()
+ * @method string getPunishStatus()
+ * @method string getLang()
+ * @method string getsrcUid()
+ * @method string getsourceCode()
+ */
 class DescribePunishListRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("jarvis", "2018-02-06", "DescribePunishList");
-		$this->setMethod("POST");
-	}
 
-	private  $srcIP;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $sourceIp;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'jarvis',
+            '2018-02-06',
+            'DescribePunishList',
+            'jarvis'
+        );
+    }
 
-	private  $pageSize;
+    /**
+     * @param string $srcIP
+     *
+     * @return $this
+     */
+    public function setSrcIP($srcIP)
+    {
+        $this->requestParameters['SrcIP'] = $srcIP;
+        $this->queryParameters['SrcIP'] = $srcIP;
 
-	private  $currentPage;
+        return $this;
+    }
 
-	private  $punishStatus;
+    /**
+     * @param string $sourceIp
+     *
+     * @return $this
+     */
+    public function setSourceIp($sourceIp)
+    {
+        $this->requestParameters['SourceIp'] = $sourceIp;
+        $this->queryParameters['SourceIp'] = $sourceIp;
 
-	private  $lang;
+        return $this;
+    }
 
-	private  $srcUid;
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setpageSize($pageSize)
+    {
+        $this->requestParameters['pageSize'] = $pageSize;
+        $this->queryParameters['pageSize'] = $pageSize;
 
-	private  $sourceCode;
+        return $this;
+    }
 
-	public function getSrcIP() {
-		return $this->srcIP;
-	}
+    /**
+     * @param string $currentPage
+     *
+     * @return $this
+     */
+    public function setcurrentPage($currentPage)
+    {
+        $this->requestParameters['currentPage'] = $currentPage;
+        $this->queryParameters['currentPage'] = $currentPage;
 
-	public function setSrcIP($srcIP) {
-		$this->srcIP = $srcIP;
-		$this->queryParameters["SrcIP"]=$srcIP;
-	}
+        return $this;
+    }
 
-	public function getSourceIp() {
-		return $this->sourceIp;
-	}
+    /**
+     * @param string $punishStatus
+     *
+     * @return $this
+     */
+    public function setPunishStatus($punishStatus)
+    {
+        $this->requestParameters['PunishStatus'] = $punishStatus;
+        $this->queryParameters['PunishStatus'] = $punishStatus;
 
-	public function setSourceIp($sourceIp) {
-		$this->sourceIp = $sourceIp;
-		$this->queryParameters["SourceIp"]=$sourceIp;
-	}
+        return $this;
+    }
 
-	public function getpageSize() {
-		return $this->pageSize;
-	}
+    /**
+     * @param string $lang
+     *
+     * @return $this
+     */
+    public function setLang($lang)
+    {
+        $this->requestParameters['Lang'] = $lang;
+        $this->queryParameters['Lang'] = $lang;
 
-	public function setpageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["pageSize"]=$pageSize;
-	}
+        return $this;
+    }
 
-	public function getcurrentPage() {
-		return $this->currentPage;
-	}
+    /**
+     * @param string $srcUid
+     *
+     * @return $this
+     */
+    public function setsrcUid($srcUid)
+    {
+        $this->requestParameters['srcUid'] = $srcUid;
+        $this->queryParameters['srcUid'] = $srcUid;
 
-	public function setcurrentPage($currentPage) {
-		$this->currentPage = $currentPage;
-		$this->queryParameters["currentPage"]=$currentPage;
-	}
+        return $this;
+    }
 
-	public function getPunishStatus() {
-		return $this->punishStatus;
-	}
+    /**
+     * @param string $sourceCode
+     *
+     * @return $this
+     */
+    public function setsourceCode($sourceCode)
+    {
+        $this->requestParameters['sourceCode'] = $sourceCode;
+        $this->queryParameters['sourceCode'] = $sourceCode;
 
-	public function setPunishStatus($punishStatus) {
-		$this->punishStatus = $punishStatus;
-		$this->queryParameters["PunishStatus"]=$punishStatus;
-	}
-
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-
-	public function getsrcUid() {
-		return $this->srcUid;
-	}
-
-	public function setsrcUid($srcUid) {
-		$this->srcUid = $srcUid;
-		$this->queryParameters["srcUid"]=$srcUid;
-	}
-
-	public function getsourceCode() {
-		return $this->sourceCode;
-	}
-
-	public function setsourceCode($sourceCode) {
-		$this->sourceCode = $sourceCode;
-		$this->queryParameters["sourceCode"]=$sourceCode;
-	}
-	
+        return $this;
+    }
 }

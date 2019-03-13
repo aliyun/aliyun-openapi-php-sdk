@@ -3,14 +3,14 @@
 namespace jarvis\Request\V20180206;
 
 /**
- * Request of DeleteAccessWhiteListGroup
+ * Request of CreateAllEcsWhiteList
  *
- * @method string getGroupIdList()
+ * @method string getResourceOwnerId()
+ * @method string getSrcIP()
  * @method string getSourceIp()
- * @method string getLang()
  * @method string getSourceCode()
  */
-class DeleteAccessWhiteListGroupRequest extends \RpcAcsRequest
+class CreateAllEcsWhiteListRequest extends \RpcAcsRequest
 {
 
     /**
@@ -26,20 +26,33 @@ class DeleteAccessWhiteListGroupRequest extends \RpcAcsRequest
         parent::__construct(
             'jarvis',
             '2018-02-06',
-            'DeleteAccessWhiteListGroup',
+            'CreateAllEcsWhiteList',
             'jarvis'
         );
     }
 
     /**
-     * @param string $groupIdList
+     * @param string $resourceOwnerId
      *
      * @return $this
      */
-    public function setGroupIdList($groupIdList)
+    public function setResourceOwnerId($resourceOwnerId)
     {
-        $this->requestParameters['GroupIdList'] = $groupIdList;
-        $this->queryParameters['GroupIdList'] = $groupIdList;
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $srcIP
+     *
+     * @return $this
+     */
+    public function setSrcIP($srcIP)
+    {
+        $this->requestParameters['SrcIP'] = $srcIP;
+        $this->queryParameters['SrcIP'] = $srcIP;
 
         return $this;
     }
@@ -53,19 +66,6 @@ class DeleteAccessWhiteListGroupRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SourceIp'] = $sourceIp;
         $this->queryParameters['SourceIp'] = $sourceIp;
-
-        return $this;
-    }
-
-    /**
-     * @param string $lang
-     *
-     * @return $this
-     */
-    public function setLang($lang)
-    {
-        $this->requestParameters['Lang'] = $lang;
-        $this->queryParameters['Lang'] = $lang;
 
         return $this;
     }

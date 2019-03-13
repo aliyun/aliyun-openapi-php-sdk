@@ -1,151 +1,183 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace jarvis\Request\V20180206;
 
+/**
+ * Request of CreateUidWhiteListGroup
+ *
+ * @method string getNote()
+ * @method string getResourceOwnerId()
+ * @method string getSourceIp()
+ * @method string getDstPort()
+ * @method string getInstanceIdList()
+ * @method string getLiveTime()
+ * @method string getProductName()
+ * @method string getWhiteListType()
+ * @method string getLang()
+ * @method string getSrcUid()
+ * @method string getSourceCode()
+ */
 class CreateUidWhiteListGroupRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("jarvis", "2018-02-06", "CreateUidWhiteListGroup");
-		$this->setMethod("POST");
-	}
 
-	private  $note;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $resourceOwnerId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'jarvis',
+            '2018-02-06',
+            'CreateUidWhiteListGroup',
+            'jarvis'
+        );
+    }
 
-	private  $sourceIp;
+    /**
+     * @param string $note
+     *
+     * @return $this
+     */
+    public function setNote($note)
+    {
+        $this->requestParameters['Note'] = $note;
+        $this->queryParameters['Note'] = $note;
 
-	private  $dstPort;
+        return $this;
+    }
 
-	private  $instanceIdList;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $liveTime;
+        return $this;
+    }
 
-	private  $productName;
+    /**
+     * @param string $sourceIp
+     *
+     * @return $this
+     */
+    public function setSourceIp($sourceIp)
+    {
+        $this->requestParameters['SourceIp'] = $sourceIp;
+        $this->queryParameters['SourceIp'] = $sourceIp;
 
-	private  $whiteListType;
+        return $this;
+    }
 
-	private  $lang;
+    /**
+     * @param string $dstPort
+     *
+     * @return $this
+     */
+    public function setDstPort($dstPort)
+    {
+        $this->requestParameters['DstPort'] = $dstPort;
+        $this->queryParameters['DstPort'] = $dstPort;
 
-	private  $srcUid;
+        return $this;
+    }
 
-	private  $sourceCode;
+    /**
+     * @param string $instanceIdList
+     *
+     * @return $this
+     */
+    public function setInstanceIdList($instanceIdList)
+    {
+        $this->requestParameters['InstanceIdList'] = $instanceIdList;
+        $this->queryParameters['InstanceIdList'] = $instanceIdList;
 
-	public function getNote() {
-		return $this->note;
-	}
+        return $this;
+    }
 
-	public function setNote($note) {
-		$this->note = $note;
-		$this->queryParameters["Note"]=$note;
-	}
+    /**
+     * @param string $liveTime
+     *
+     * @return $this
+     */
+    public function setLiveTime($liveTime)
+    {
+        $this->requestParameters['LiveTime'] = $liveTime;
+        $this->queryParameters['LiveTime'] = $liveTime;
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+    /**
+     * @param string $productName
+     *
+     * @return $this
+     */
+    public function setProductName($productName)
+    {
+        $this->requestParameters['ProductName'] = $productName;
+        $this->queryParameters['ProductName'] = $productName;
 
-	public function getSourceIp() {
-		return $this->sourceIp;
-	}
+        return $this;
+    }
 
-	public function setSourceIp($sourceIp) {
-		$this->sourceIp = $sourceIp;
-		$this->queryParameters["SourceIp"]=$sourceIp;
-	}
+    /**
+     * @param string $whiteListType
+     *
+     * @return $this
+     */
+    public function setWhiteListType($whiteListType)
+    {
+        $this->requestParameters['WhiteListType'] = $whiteListType;
+        $this->queryParameters['WhiteListType'] = $whiteListType;
 
-	public function getDstPort() {
-		return $this->dstPort;
-	}
+        return $this;
+    }
 
-	public function setDstPort($dstPort) {
-		$this->dstPort = $dstPort;
-		$this->queryParameters["DstPort"]=$dstPort;
-	}
+    /**
+     * @param string $lang
+     *
+     * @return $this
+     */
+    public function setLang($lang)
+    {
+        $this->requestParameters['Lang'] = $lang;
+        $this->queryParameters['Lang'] = $lang;
 
-	public function getInstanceIdList() {
-		return $this->instanceIdList;
-	}
+        return $this;
+    }
 
-	public function setInstanceIdList($instanceIdList) {
-		$this->instanceIdList = $instanceIdList;
-		$this->queryParameters["InstanceIdList"]=$instanceIdList;
-	}
+    /**
+     * @param string $srcUid
+     *
+     * @return $this
+     */
+    public function setSrcUid($srcUid)
+    {
+        $this->requestParameters['SrcUid'] = $srcUid;
+        $this->queryParameters['SrcUid'] = $srcUid;
 
-	public function getLiveTime() {
-		return $this->liveTime;
-	}
+        return $this;
+    }
 
-	public function setLiveTime($liveTime) {
-		$this->liveTime = $liveTime;
-		$this->queryParameters["LiveTime"]=$liveTime;
-	}
+    /**
+     * @param string $sourceCode
+     *
+     * @return $this
+     */
+    public function setSourceCode($sourceCode)
+    {
+        $this->requestParameters['SourceCode'] = $sourceCode;
+        $this->queryParameters['SourceCode'] = $sourceCode;
 
-	public function getProductName() {
-		return $this->productName;
-	}
-
-	public function setProductName($productName) {
-		$this->productName = $productName;
-		$this->queryParameters["ProductName"]=$productName;
-	}
-
-	public function getWhiteListType() {
-		return $this->whiteListType;
-	}
-
-	public function setWhiteListType($whiteListType) {
-		$this->whiteListType = $whiteListType;
-		$this->queryParameters["WhiteListType"]=$whiteListType;
-	}
-
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-
-	public function getSrcUid() {
-		return $this->srcUid;
-	}
-
-	public function setSrcUid($srcUid) {
-		$this->srcUid = $srcUid;
-		$this->queryParameters["SrcUid"]=$srcUid;
-	}
-
-	public function getSourceCode() {
-		return $this->sourceCode;
-	}
-
-	public function setSourceCode($sourceCode) {
-		$this->sourceCode = $sourceCode;
-		$this->queryParameters["SourceCode"]=$sourceCode;
-	}
-	
+        return $this;
+    }
 }

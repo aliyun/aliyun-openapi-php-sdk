@@ -3,13 +3,15 @@
 namespace jarvis\Request\V20180206;
 
 /**
- * Request of DescribeUidGcLevel
+ * Request of CreateCdnIp
  *
+ * @method string getCdnIpList()
+ * @method string getResourceOwnerId()
  * @method string getSourceIp()
  * @method string getLang()
  * @method string getSourceCode()
  */
-class DescribeUidGcLevelRequest extends \RpcAcsRequest
+class CreateCdnIpRequest extends \RpcAcsRequest
 {
 
     /**
@@ -25,9 +27,35 @@ class DescribeUidGcLevelRequest extends \RpcAcsRequest
         parent::__construct(
             'jarvis',
             '2018-02-06',
-            'DescribeUidGcLevel',
+            'CreateCdnIp',
             'jarvis'
         );
+    }
+
+    /**
+     * @param string $cdnIpList
+     *
+     * @return $this
+     */
+    public function setCdnIpList($cdnIpList)
+    {
+        $this->requestParameters['CdnIpList'] = $cdnIpList;
+        $this->queryParameters['CdnIpList'] = $cdnIpList;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
     }
 
     /**

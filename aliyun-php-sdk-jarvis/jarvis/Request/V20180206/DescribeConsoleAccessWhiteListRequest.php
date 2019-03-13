@@ -3,17 +3,20 @@
 namespace jarvis\Request\V20180206;
 
 /**
- * Request of ModifyUidWhiteListAutoShare
+ * Request of DescribeConsoleAccessWhiteList
  *
+ * @method string getSrcIP()
  * @method string getSourceIp()
- * @method string getAutoConfig()
- * @method string getProductName()
+ * @method string getPageSize()
+ * @method string getqueryProduct()
+ * @method string getCurrentPage()
  * @method string getWhiteListType()
+ * @method string getDstIP()
  * @method string getLang()
- * @method string getSrcUid()
+ * @method string getStatus()
  * @method string getSourceCode()
  */
-class ModifyUidWhiteListAutoShareRequest extends \RpcAcsRequest
+class DescribeConsoleAccessWhiteListRequest extends \RpcAcsRequest
 {
 
     /**
@@ -29,9 +32,22 @@ class ModifyUidWhiteListAutoShareRequest extends \RpcAcsRequest
         parent::__construct(
             'jarvis',
             '2018-02-06',
-            'ModifyUidWhiteListAutoShare',
+            'DescribeConsoleAccessWhiteList',
             'jarvis'
         );
+    }
+
+    /**
+     * @param string $srcIP
+     *
+     * @return $this
+     */
+    public function setSrcIP($srcIP)
+    {
+        $this->requestParameters['SrcIP'] = $srcIP;
+        $this->queryParameters['SrcIP'] = $srcIP;
+
+        return $this;
     }
 
     /**
@@ -48,27 +64,40 @@ class ModifyUidWhiteListAutoShareRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $autoConfig
+     * @param string $pageSize
      *
      * @return $this
      */
-    public function setAutoConfig($autoConfig)
+    public function setPageSize($pageSize)
     {
-        $this->requestParameters['AutoConfig'] = $autoConfig;
-        $this->queryParameters['AutoConfig'] = $autoConfig;
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }
 
     /**
-     * @param string $productName
+     * @param string $queryProduct
      *
      * @return $this
      */
-    public function setProductName($productName)
+    public function setqueryProduct($queryProduct)
     {
-        $this->requestParameters['ProductName'] = $productName;
-        $this->queryParameters['ProductName'] = $productName;
+        $this->requestParameters['queryProduct'] = $queryProduct;
+        $this->queryParameters['queryProduct'] = $queryProduct;
+
+        return $this;
+    }
+
+    /**
+     * @param string $currentPage
+     *
+     * @return $this
+     */
+    public function setCurrentPage($currentPage)
+    {
+        $this->requestParameters['CurrentPage'] = $currentPage;
+        $this->queryParameters['CurrentPage'] = $currentPage;
 
         return $this;
     }
@@ -87,6 +116,19 @@ class ModifyUidWhiteListAutoShareRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $dstIP
+     *
+     * @return $this
+     */
+    public function setDstIP($dstIP)
+    {
+        $this->requestParameters['DstIP'] = $dstIP;
+        $this->queryParameters['DstIP'] = $dstIP;
+
+        return $this;
+    }
+
+    /**
      * @param string $lang
      *
      * @return $this
@@ -100,14 +142,14 @@ class ModifyUidWhiteListAutoShareRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $srcUid
+     * @param string $status
      *
      * @return $this
      */
-    public function setSrcUid($srcUid)
+    public function setStatus($status)
     {
-        $this->requestParameters['SrcUid'] = $srcUid;
-        $this->queryParameters['SrcUid'] = $srcUid;
+        $this->requestParameters['Status'] = $status;
+        $this->queryParameters['Status'] = $status;
 
         return $this;
     }

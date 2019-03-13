@@ -3,13 +3,15 @@
 namespace jarvis\Request\V20180206;
 
 /**
- * Request of DescribeUidGcLevel
+ * Request of CreateCdnSubscription
  *
+ * @method string getResourceOwnerId()
  * @method string getSourceIp()
  * @method string getLang()
+ * @method string getCdnUidList()
  * @method string getSourceCode()
  */
-class DescribeUidGcLevelRequest extends \RpcAcsRequest
+class CreateCdnSubscriptionRequest extends \RpcAcsRequest
 {
 
     /**
@@ -25,9 +27,22 @@ class DescribeUidGcLevelRequest extends \RpcAcsRequest
         parent::__construct(
             'jarvis',
             '2018-02-06',
-            'DescribeUidGcLevel',
+            'CreateCdnSubscription',
             'jarvis'
         );
+    }
+
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
     }
 
     /**
@@ -52,6 +67,19 @@ class DescribeUidGcLevelRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Lang'] = $lang;
         $this->queryParameters['Lang'] = $lang;
+
+        return $this;
+    }
+
+    /**
+     * @param string $cdnUidList
+     *
+     * @return $this
+     */
+    public function setCdnUidList($cdnUidList)
+    {
+        $this->requestParameters['CdnUidList'] = $cdnUidList;
+        $this->queryParameters['CdnUidList'] = $cdnUidList;
 
         return $this;
     }

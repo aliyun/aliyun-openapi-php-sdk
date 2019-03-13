@@ -3,7 +3,7 @@
 namespace jarvis\Request\V20180206;
 
 /**
- * Request of CreateAccessWhiteListGroup
+ * Request of CreateConsoleAccessWhiteList
  *
  * @method string getNote()
  * @method string getResourceOwnerId()
@@ -18,7 +18,7 @@ namespace jarvis\Request\V20180206;
  * @method string getLang()
  * @method string getSourceCode()
  */
-class CreateAccessWhiteListGroupRequest extends \RpcAcsRequest
+class CreateConsoleAccessWhiteListRequest extends \RpcAcsRequest
 {
 
     /**
@@ -34,7 +34,7 @@ class CreateAccessWhiteListGroupRequest extends \RpcAcsRequest
         parent::__construct(
             'jarvis',
             '2018-02-06',
-            'CreateAccessWhiteListGroup',
+            'CreateConsoleAccessWhiteList',
             'jarvis'
         );
     }

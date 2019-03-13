@@ -1,151 +1,183 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace jarvis\Request\V20180206;
 
+/**
+ * Request of CreateCpmcPunishFeedBack
+ *
+ * @method string getFeedBack()
+ * @method string getSrcIP()
+ * @method string getSourceIp()
+ * @method string getDstPort()
+ * @method string getProtocolName()
+ * @method string getSrcPort()
+ * @method string getPunishType()
+ * @method string getGmtCreate()
+ * @method string getDstIP()
+ * @method string getLang()
+ * @method string getSourceCode()
+ */
 class CreateCpmcPunishFeedBackRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("jarvis", "2018-02-06", "CreateCpmcPunishFeedBack");
-		$this->setMethod("POST");
-	}
 
-	private  $feedBack;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $srcIP;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'jarvis',
+            '2018-02-06',
+            'CreateCpmcPunishFeedBack',
+            'jarvis'
+        );
+    }
 
-	private  $sourceIp;
+    /**
+     * @param string $feedBack
+     *
+     * @return $this
+     */
+    public function setFeedBack($feedBack)
+    {
+        $this->requestParameters['FeedBack'] = $feedBack;
+        $this->queryParameters['FeedBack'] = $feedBack;
 
-	private  $dstPort;
+        return $this;
+    }
 
-	private  $protocolName;
+    /**
+     * @param string $srcIP
+     *
+     * @return $this
+     */
+    public function setSrcIP($srcIP)
+    {
+        $this->requestParameters['SrcIP'] = $srcIP;
+        $this->queryParameters['SrcIP'] = $srcIP;
 
-	private  $srcPort;
+        return $this;
+    }
 
-	private  $punishType;
+    /**
+     * @param string $sourceIp
+     *
+     * @return $this
+     */
+    public function setSourceIp($sourceIp)
+    {
+        $this->requestParameters['SourceIp'] = $sourceIp;
+        $this->queryParameters['SourceIp'] = $sourceIp;
 
-	private  $gmtCreate;
+        return $this;
+    }
 
-	private  $dstIP;
+    /**
+     * @param string $dstPort
+     *
+     * @return $this
+     */
+    public function setDstPort($dstPort)
+    {
+        $this->requestParameters['DstPort'] = $dstPort;
+        $this->queryParameters['DstPort'] = $dstPort;
 
-	private  $lang;
+        return $this;
+    }
 
-	private  $sourceCode;
+    /**
+     * @param string $protocolName
+     *
+     * @return $this
+     */
+    public function setProtocolName($protocolName)
+    {
+        $this->requestParameters['ProtocolName'] = $protocolName;
+        $this->queryParameters['ProtocolName'] = $protocolName;
 
-	public function getFeedBack() {
-		return $this->feedBack;
-	}
+        return $this;
+    }
 
-	public function setFeedBack($feedBack) {
-		$this->feedBack = $feedBack;
-		$this->queryParameters["FeedBack"]=$feedBack;
-	}
+    /**
+     * @param string $srcPort
+     *
+     * @return $this
+     */
+    public function setSrcPort($srcPort)
+    {
+        $this->requestParameters['SrcPort'] = $srcPort;
+        $this->queryParameters['SrcPort'] = $srcPort;
 
-	public function getSrcIP() {
-		return $this->srcIP;
-	}
+        return $this;
+    }
 
-	public function setSrcIP($srcIP) {
-		$this->srcIP = $srcIP;
-		$this->queryParameters["SrcIP"]=$srcIP;
-	}
+    /**
+     * @param string $punishType
+     *
+     * @return $this
+     */
+    public function setPunishType($punishType)
+    {
+        $this->requestParameters['PunishType'] = $punishType;
+        $this->queryParameters['PunishType'] = $punishType;
 
-	public function getSourceIp() {
-		return $this->sourceIp;
-	}
+        return $this;
+    }
 
-	public function setSourceIp($sourceIp) {
-		$this->sourceIp = $sourceIp;
-		$this->queryParameters["SourceIp"]=$sourceIp;
-	}
+    /**
+     * @param string $gmtCreate
+     *
+     * @return $this
+     */
+    public function setGmtCreate($gmtCreate)
+    {
+        $this->requestParameters['GmtCreate'] = $gmtCreate;
+        $this->queryParameters['GmtCreate'] = $gmtCreate;
 
-	public function getDstPort() {
-		return $this->dstPort;
-	}
+        return $this;
+    }
 
-	public function setDstPort($dstPort) {
-		$this->dstPort = $dstPort;
-		$this->queryParameters["DstPort"]=$dstPort;
-	}
+    /**
+     * @param string $dstIP
+     *
+     * @return $this
+     */
+    public function setDstIP($dstIP)
+    {
+        $this->requestParameters['DstIP'] = $dstIP;
+        $this->queryParameters['DstIP'] = $dstIP;
 
-	public function getProtocolName() {
-		return $this->protocolName;
-	}
+        return $this;
+    }
 
-	public function setProtocolName($protocolName) {
-		$this->protocolName = $protocolName;
-		$this->queryParameters["ProtocolName"]=$protocolName;
-	}
+    /**
+     * @param string $lang
+     *
+     * @return $this
+     */
+    public function setLang($lang)
+    {
+        $this->requestParameters['Lang'] = $lang;
+        $this->queryParameters['Lang'] = $lang;
 
-	public function getSrcPort() {
-		return $this->srcPort;
-	}
+        return $this;
+    }
 
-	public function setSrcPort($srcPort) {
-		$this->srcPort = $srcPort;
-		$this->queryParameters["SrcPort"]=$srcPort;
-	}
+    /**
+     * @param string $sourceCode
+     *
+     * @return $this
+     */
+    public function setSourceCode($sourceCode)
+    {
+        $this->requestParameters['SourceCode'] = $sourceCode;
+        $this->queryParameters['SourceCode'] = $sourceCode;
 
-	public function getPunishType() {
-		return $this->punishType;
-	}
-
-	public function setPunishType($punishType) {
-		$this->punishType = $punishType;
-		$this->queryParameters["PunishType"]=$punishType;
-	}
-
-	public function getGmtCreate() {
-		return $this->gmtCreate;
-	}
-
-	public function setGmtCreate($gmtCreate) {
-		$this->gmtCreate = $gmtCreate;
-		$this->queryParameters["GmtCreate"]=$gmtCreate;
-	}
-
-	public function getDstIP() {
-		return $this->dstIP;
-	}
-
-	public function setDstIP($dstIP) {
-		$this->dstIP = $dstIP;
-		$this->queryParameters["DstIP"]=$dstIP;
-	}
-
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-
-	public function getSourceCode() {
-		return $this->sourceCode;
-	}
-
-	public function setSourceCode($sourceCode) {
-		$this->sourceCode = $sourceCode;
-		$this->queryParameters["SourceCode"]=$sourceCode;
-	}
-	
+        return $this;
+    }
 }

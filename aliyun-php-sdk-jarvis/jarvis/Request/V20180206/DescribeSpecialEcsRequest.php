@@ -3,13 +3,14 @@
 namespace jarvis\Request\V20180206;
 
 /**
- * Request of DescribeUidGcLevel
+ * Request of DescribeSpecialEcs
  *
+ * @method string getTargetIp()
  * @method string getSourceIp()
  * @method string getLang()
  * @method string getSourceCode()
  */
-class DescribeUidGcLevelRequest extends \RpcAcsRequest
+class DescribeSpecialEcsRequest extends \RpcAcsRequest
 {
 
     /**
@@ -25,9 +26,22 @@ class DescribeUidGcLevelRequest extends \RpcAcsRequest
         parent::__construct(
             'jarvis',
             '2018-02-06',
-            'DescribeUidGcLevel',
+            'DescribeSpecialEcs',
             'jarvis'
         );
+    }
+
+    /**
+     * @param string $targetIp
+     *
+     * @return $this
+     */
+    public function setTargetIp($targetIp)
+    {
+        $this->requestParameters['TargetIp'] = $targetIp;
+        $this->queryParameters['TargetIp'] = $targetIp;
+
+        return $this;
     }
 
     /**

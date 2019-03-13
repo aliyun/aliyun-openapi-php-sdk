@@ -3,13 +3,14 @@
 namespace jarvis\Request\V20180206;
 
 /**
- * Request of DescribeUidGcLevel
+ * Request of DeleteConsoleAccessWhiteList
  *
  * @method string getSourceIp()
  * @method string getLang()
+ * @method string getDisableWhitelist()
  * @method string getSourceCode()
  */
-class DescribeUidGcLevelRequest extends \RpcAcsRequest
+class DeleteConsoleAccessWhiteListRequest extends \RpcAcsRequest
 {
 
     /**
@@ -25,7 +26,7 @@ class DescribeUidGcLevelRequest extends \RpcAcsRequest
         parent::__construct(
             'jarvis',
             '2018-02-06',
-            'DescribeUidGcLevel',
+            'DeleteConsoleAccessWhiteList',
             'jarvis'
         );
     }
@@ -52,6 +53,19 @@ class DescribeUidGcLevelRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Lang'] = $lang;
         $this->queryParameters['Lang'] = $lang;
+
+        return $this;
+    }
+
+    /**
+     * @param string $disableWhitelist
+     *
+     * @return $this
+     */
+    public function setDisableWhitelist($disableWhitelist)
+    {
+        $this->requestParameters['DisableWhitelist'] = $disableWhitelist;
+        $this->queryParameters['DisableWhitelist'] = $disableWhitelist;
 
         return $this;
     }

@@ -3,13 +3,13 @@
 namespace jarvis\Request\V20180206;
 
 /**
- * Request of DescribeUidGcLevel
+ * Request of DescribeCdnCertify
  *
  * @method string getSourceIp()
  * @method string getLang()
  * @method string getSourceCode()
  */
-class DescribeUidGcLevelRequest extends \RpcAcsRequest
+class DescribeCdnCertifyRequest extends \RpcAcsRequest
 {
 
     /**
@@ -25,7 +25,7 @@ class DescribeUidGcLevelRequest extends \RpcAcsRequest
         parent::__construct(
             'jarvis',
             '2018-02-06',
-            'DescribeUidGcLevel',
+            'DescribeCdnCertify',
             'jarvis'
         );
     }

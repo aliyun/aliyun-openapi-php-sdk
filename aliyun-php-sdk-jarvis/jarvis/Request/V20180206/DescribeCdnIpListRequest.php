@@ -3,14 +3,17 @@
 namespace jarvis\Request\V20180206;
 
 /**
- * Request of DeleteAccessWhiteListGroup
+ * Request of DescribeCdnIpList
  *
- * @method string getGroupIdList()
+ * @method string getSrcIP()
  * @method string getSourceIp()
+ * @method string getWlState()
+ * @method string getPageSize()
+ * @method string getCurrentPage()
  * @method string getLang()
  * @method string getSourceCode()
  */
-class DeleteAccessWhiteListGroupRequest extends \RpcAcsRequest
+class DescribeCdnIpListRequest extends \RpcAcsRequest
 {
 
     /**
@@ -26,20 +29,20 @@ class DeleteAccessWhiteListGroupRequest extends \RpcAcsRequest
         parent::__construct(
             'jarvis',
             '2018-02-06',
-            'DeleteAccessWhiteListGroup',
+            'DescribeCdnIpList',
             'jarvis'
         );
     }
 
     /**
-     * @param string $groupIdList
+     * @param string $srcIP
      *
      * @return $this
      */
-    public function setGroupIdList($groupIdList)
+    public function setSrcIP($srcIP)
     {
-        $this->requestParameters['GroupIdList'] = $groupIdList;
-        $this->queryParameters['GroupIdList'] = $groupIdList;
+        $this->requestParameters['SrcIP'] = $srcIP;
+        $this->queryParameters['SrcIP'] = $srcIP;
 
         return $this;
     }
@@ -53,6 +56,45 @@ class DeleteAccessWhiteListGroupRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SourceIp'] = $sourceIp;
         $this->queryParameters['SourceIp'] = $sourceIp;
+
+        return $this;
+    }
+
+    /**
+     * @param string $wlState
+     *
+     * @return $this
+     */
+    public function setWlState($wlState)
+    {
+        $this->requestParameters['WlState'] = $wlState;
+        $this->queryParameters['WlState'] = $wlState;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $currentPage
+     *
+     * @return $this
+     */
+    public function setCurrentPage($currentPage)
+    {
+        $this->requestParameters['CurrentPage'] = $currentPage;
+        $this->queryParameters['CurrentPage'] = $currentPage;
 
         return $this;
     }

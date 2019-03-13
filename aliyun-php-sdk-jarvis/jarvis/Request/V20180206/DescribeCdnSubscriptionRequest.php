@@ -3,17 +3,17 @@
 namespace jarvis\Request\V20180206;
 
 /**
- * Request of ModifyUidWhiteListAutoShare
+ * Request of DescribeCdnSubscription
  *
  * @method string getSourceIp()
- * @method string getAutoConfig()
- * @method string getProductName()
- * @method string getWhiteListType()
+ * @method string getSubscriptionState()
+ * @method string getPageSize()
+ * @method string getCurrentPage()
  * @method string getLang()
- * @method string getSrcUid()
+ * @method string getVendorName()
  * @method string getSourceCode()
  */
-class ModifyUidWhiteListAutoShareRequest extends \RpcAcsRequest
+class DescribeCdnSubscriptionRequest extends \RpcAcsRequest
 {
 
     /**
@@ -29,7 +29,7 @@ class ModifyUidWhiteListAutoShareRequest extends \RpcAcsRequest
         parent::__construct(
             'jarvis',
             '2018-02-06',
-            'ModifyUidWhiteListAutoShare',
+            'DescribeCdnSubscription',
             'jarvis'
         );
     }
@@ -48,40 +48,40 @@ class ModifyUidWhiteListAutoShareRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $autoConfig
+     * @param string $subscriptionState
      *
      * @return $this
      */
-    public function setAutoConfig($autoConfig)
+    public function setSubscriptionState($subscriptionState)
     {
-        $this->requestParameters['AutoConfig'] = $autoConfig;
-        $this->queryParameters['AutoConfig'] = $autoConfig;
+        $this->requestParameters['SubscriptionState'] = $subscriptionState;
+        $this->queryParameters['SubscriptionState'] = $subscriptionState;
 
         return $this;
     }
 
     /**
-     * @param string $productName
+     * @param string $pageSize
      *
      * @return $this
      */
-    public function setProductName($productName)
+    public function setPageSize($pageSize)
     {
-        $this->requestParameters['ProductName'] = $productName;
-        $this->queryParameters['ProductName'] = $productName;
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }
 
     /**
-     * @param string $whiteListType
+     * @param string $currentPage
      *
      * @return $this
      */
-    public function setWhiteListType($whiteListType)
+    public function setCurrentPage($currentPage)
     {
-        $this->requestParameters['WhiteListType'] = $whiteListType;
-        $this->queryParameters['WhiteListType'] = $whiteListType;
+        $this->requestParameters['CurrentPage'] = $currentPage;
+        $this->queryParameters['CurrentPage'] = $currentPage;
 
         return $this;
     }
@@ -100,14 +100,14 @@ class ModifyUidWhiteListAutoShareRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $srcUid
+     * @param string $vendorName
      *
      * @return $this
      */
-    public function setSrcUid($srcUid)
+    public function setVendorName($vendorName)
     {
-        $this->requestParameters['SrcUid'] = $srcUid;
-        $this->queryParameters['SrcUid'] = $srcUid;
+        $this->requestParameters['VendorName'] = $vendorName;
+        $this->queryParameters['VendorName'] = $vendorName;
 
         return $this;
     }

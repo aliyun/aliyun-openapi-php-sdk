@@ -3,13 +3,16 @@
 namespace jarvis\Request\V20180206;
 
 /**
- * Request of DescribeUidGcLevel
+ * Request of DeleteCdnIp
  *
+ * @method string getItemId()
+ * @method string getResourceOwnerId()
  * @method string getSourceIp()
+ * @method string getCdnIp()
  * @method string getLang()
  * @method string getSourceCode()
  */
-class DescribeUidGcLevelRequest extends \RpcAcsRequest
+class DeleteCdnIpRequest extends \RpcAcsRequest
 {
 
     /**
@@ -25,9 +28,35 @@ class DescribeUidGcLevelRequest extends \RpcAcsRequest
         parent::__construct(
             'jarvis',
             '2018-02-06',
-            'DescribeUidGcLevel',
+            'DeleteCdnIp',
             'jarvis'
         );
+    }
+
+    /**
+     * @param string $itemId
+     *
+     * @return $this
+     */
+    public function setItemId($itemId)
+    {
+        $this->requestParameters['ItemId'] = $itemId;
+        $this->queryParameters['ItemId'] = $itemId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
     }
 
     /**
@@ -39,6 +68,19 @@ class DescribeUidGcLevelRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SourceIp'] = $sourceIp;
         $this->queryParameters['SourceIp'] = $sourceIp;
+
+        return $this;
+    }
+
+    /**
+     * @param string $cdnIp
+     *
+     * @return $this
+     */
+    public function setCdnIp($cdnIp)
+    {
+        $this->requestParameters['CdnIp'] = $cdnIp;
+        $this->queryParameters['CdnIp'] = $cdnIp;
 
         return $this;
     }
