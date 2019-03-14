@@ -3,16 +3,16 @@
 namespace Dyvmsapi\Request\V20170525;
 
 /**
- * Request of QueryCallDetailByCallId
+ * Request of QueryCallDetailByTaskId
  *
- * @method string getCallId()
  * @method string getResourceOwnerId()
  * @method string getQueryDate()
  * @method string getResourceOwnerAccount()
- * @method string getProdId()
+ * @method string getCallee()
  * @method string getOwnerId()
+ * @method string getTaskId()
  */
-class QueryCallDetailByCallIdRequest extends \RpcAcsRequest
+class QueryCallDetailByTaskIdRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,22 +28,9 @@ class QueryCallDetailByCallIdRequest extends \RpcAcsRequest
         parent::__construct(
             'Dyvmsapi',
             '2017-05-25',
-            'QueryCallDetailByCallId',
+            'QueryCallDetailByTaskId',
             'dyvmsapi'
         );
-    }
-
-    /**
-     * @param string $callId
-     *
-     * @return $this
-     */
-    public function setCallId($callId)
-    {
-        $this->requestParameters['CallId'] = $callId;
-        $this->queryParameters['CallId'] = $callId;
-
-        return $this;
     }
 
     /**
@@ -86,14 +73,14 @@ class QueryCallDetailByCallIdRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $prodId
+     * @param string $callee
      *
      * @return $this
      */
-    public function setProdId($prodId)
+    public function setCallee($callee)
     {
-        $this->requestParameters['ProdId'] = $prodId;
-        $this->queryParameters['ProdId'] = $prodId;
+        $this->requestParameters['Callee'] = $callee;
+        $this->queryParameters['Callee'] = $callee;
 
         return $this;
     }
@@ -107,6 +94,19 @@ class QueryCallDetailByCallIdRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $taskId
+     *
+     * @return $this
+     */
+    public function setTaskId($taskId)
+    {
+        $this->requestParameters['TaskId'] = $taskId;
+        $this->queryParameters['TaskId'] = $taskId;
 
         return $this;
     }

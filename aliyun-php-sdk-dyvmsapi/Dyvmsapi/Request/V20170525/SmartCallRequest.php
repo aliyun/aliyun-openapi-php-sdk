@@ -1,195 +1,351 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Dyvmsapi\Request\V20170525;
 
+/**
+ * Request of SmartCall
+ *
+ * @method string getResourceOwnerId()
+ * @method string getVoiceCodeParam()
+ * @method string getEarlyMediaAsr()
+ * @method string getSpeed()
+ * @method string getSessionTimeout()
+ * @method string getDynamicId()
+ * @method string getCalledNumber()
+ * @method string getTtsSpeed()
+ * @method string getVoiceCode()
+ * @method string getCalledShowNumber()
+ * @method string getActionCodeTimeBreak()
+ * @method string getTtsConf()
+ * @method string getActionCodeBreak()
+ * @method string getResourceOwnerAccount()
+ * @method string getRecordFlag()
+ * @method string getOwnerId()
+ * @method string getTtsVolume()
+ * @method string getVolume()
+ * @method string getMuteTime()
+ * @method string getOutId()
+ * @method string getAsrModelId()
+ * @method string getPauseTime()
+ * @method string getTtsStyle()
+ */
 class SmartCallRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Dyvmsapi", "2017-05-25", "SmartCall");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $actionCodeBreak;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Dyvmsapi',
+            '2017-05-25',
+            'SmartCall',
+            'dyvmsapi'
+        );
+    }
 
-	private  $resourceOwnerAccount;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $recordFlag;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $voiceCodeParam
+     *
+     * @return $this
+     */
+    public function setVoiceCodeParam($voiceCodeParam)
+    {
+        $this->requestParameters['VoiceCodeParam'] = $voiceCodeParam;
+        $this->queryParameters['VoiceCodeParam'] = $voiceCodeParam;
 
-	private  $speed;
+        return $this;
+    }
 
-	private  $volume;
+    /**
+     * @param string $earlyMediaAsr
+     *
+     * @return $this
+     */
+    public function setEarlyMediaAsr($earlyMediaAsr)
+    {
+        $this->requestParameters['EarlyMediaAsr'] = $earlyMediaAsr;
+        $this->queryParameters['EarlyMediaAsr'] = $earlyMediaAsr;
 
-	private  $dynamicId;
+        return $this;
+    }
 
-	private  $calledNumber;
+    /**
+     * @param string $speed
+     *
+     * @return $this
+     */
+    public function setSpeed($speed)
+    {
+        $this->requestParameters['Speed'] = $speed;
+        $this->queryParameters['Speed'] = $speed;
 
-	private  $voiceCode;
+        return $this;
+    }
 
-	private  $muteTime;
+    /**
+     * @param string $sessionTimeout
+     *
+     * @return $this
+     */
+    public function setSessionTimeout($sessionTimeout)
+    {
+        $this->requestParameters['SessionTimeout'] = $sessionTimeout;
+        $this->queryParameters['SessionTimeout'] = $sessionTimeout;
 
-	private  $calledShowNumber;
+        return $this;
+    }
 
-	private  $outId;
+    /**
+     * @param string $dynamicId
+     *
+     * @return $this
+     */
+    public function setDynamicId($dynamicId)
+    {
+        $this->requestParameters['DynamicId'] = $dynamicId;
+        $this->queryParameters['DynamicId'] = $dynamicId;
 
-	private  $asrModelId;
+        return $this;
+    }
 
-	private  $pauseTime;
+    /**
+     * @param string $calledNumber
+     *
+     * @return $this
+     */
+    public function setCalledNumber($calledNumber)
+    {
+        $this->requestParameters['CalledNumber'] = $calledNumber;
+        $this->queryParameters['CalledNumber'] = $calledNumber;
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+    /**
+     * @param string $ttsSpeed
+     *
+     * @return $this
+     */
+    public function setTtsSpeed($ttsSpeed)
+    {
+        $this->requestParameters['TtsSpeed'] = $ttsSpeed;
+        $this->queryParameters['TtsSpeed'] = $ttsSpeed;
 
-	public function getActionCodeBreak() {
-		return $this->actionCodeBreak;
-	}
+        return $this;
+    }
 
-	public function setActionCodeBreak($actionCodeBreak) {
-		$this->actionCodeBreak = $actionCodeBreak;
-		$this->queryParameters["ActionCodeBreak"]=$actionCodeBreak;
-	}
+    /**
+     * @param string $voiceCode
+     *
+     * @return $this
+     */
+    public function setVoiceCode($voiceCode)
+    {
+        $this->requestParameters['VoiceCode'] = $voiceCode;
+        $this->queryParameters['VoiceCode'] = $voiceCode;
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+    /**
+     * @param string $calledShowNumber
+     *
+     * @return $this
+     */
+    public function setCalledShowNumber($calledShowNumber)
+    {
+        $this->requestParameters['CalledShowNumber'] = $calledShowNumber;
+        $this->queryParameters['CalledShowNumber'] = $calledShowNumber;
 
-	public function getRecordFlag() {
-		return $this->recordFlag;
-	}
+        return $this;
+    }
 
-	public function setRecordFlag($recordFlag) {
-		$this->recordFlag = $recordFlag;
-		$this->queryParameters["RecordFlag"]=$recordFlag;
-	}
+    /**
+     * @param string $actionCodeTimeBreak
+     *
+     * @return $this
+     */
+    public function setActionCodeTimeBreak($actionCodeTimeBreak)
+    {
+        $this->requestParameters['ActionCodeTimeBreak'] = $actionCodeTimeBreak;
+        $this->queryParameters['ActionCodeTimeBreak'] = $actionCodeTimeBreak;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+        return $this;
+    }
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+    /**
+     * @param string $ttsConf
+     *
+     * @return $this
+     */
+    public function setTtsConf($ttsConf)
+    {
+        $this->requestParameters['TtsConf'] = $ttsConf;
+        $this->queryParameters['TtsConf'] = $ttsConf;
 
-	public function getSpeed() {
-		return $this->speed;
-	}
+        return $this;
+    }
 
-	public function setSpeed($speed) {
-		$this->speed = $speed;
-		$this->queryParameters["Speed"]=$speed;
-	}
+    /**
+     * @param string $actionCodeBreak
+     *
+     * @return $this
+     */
+    public function setActionCodeBreak($actionCodeBreak)
+    {
+        $this->requestParameters['ActionCodeBreak'] = $actionCodeBreak;
+        $this->queryParameters['ActionCodeBreak'] = $actionCodeBreak;
 
-	public function getVolume() {
-		return $this->volume;
-	}
+        return $this;
+    }
 
-	public function setVolume($volume) {
-		$this->volume = $volume;
-		$this->queryParameters["Volume"]=$volume;
-	}
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	public function getDynamicId() {
-		return $this->dynamicId;
-	}
+        return $this;
+    }
 
-	public function setDynamicId($dynamicId) {
-		$this->dynamicId = $dynamicId;
-		$this->queryParameters["DynamicId"]=$dynamicId;
-	}
+    /**
+     * @param string $recordFlag
+     *
+     * @return $this
+     */
+    public function setRecordFlag($recordFlag)
+    {
+        $this->requestParameters['RecordFlag'] = $recordFlag;
+        $this->queryParameters['RecordFlag'] = $recordFlag;
 
-	public function getCalledNumber() {
-		return $this->calledNumber;
-	}
+        return $this;
+    }
 
-	public function setCalledNumber($calledNumber) {
-		$this->calledNumber = $calledNumber;
-		$this->queryParameters["CalledNumber"]=$calledNumber;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function getVoiceCode() {
-		return $this->voiceCode;
-	}
+        return $this;
+    }
 
-	public function setVoiceCode($voiceCode) {
-		$this->voiceCode = $voiceCode;
-		$this->queryParameters["VoiceCode"]=$voiceCode;
-	}
+    /**
+     * @param string $ttsVolume
+     *
+     * @return $this
+     */
+    public function setTtsVolume($ttsVolume)
+    {
+        $this->requestParameters['TtsVolume'] = $ttsVolume;
+        $this->queryParameters['TtsVolume'] = $ttsVolume;
 
-	public function getMuteTime() {
-		return $this->muteTime;
-	}
+        return $this;
+    }
 
-	public function setMuteTime($muteTime) {
-		$this->muteTime = $muteTime;
-		$this->queryParameters["MuteTime"]=$muteTime;
-	}
+    /**
+     * @param string $volume
+     *
+     * @return $this
+     */
+    public function setVolume($volume)
+    {
+        $this->requestParameters['Volume'] = $volume;
+        $this->queryParameters['Volume'] = $volume;
 
-	public function getCalledShowNumber() {
-		return $this->calledShowNumber;
-	}
+        return $this;
+    }
 
-	public function setCalledShowNumber($calledShowNumber) {
-		$this->calledShowNumber = $calledShowNumber;
-		$this->queryParameters["CalledShowNumber"]=$calledShowNumber;
-	}
+    /**
+     * @param string $muteTime
+     *
+     * @return $this
+     */
+    public function setMuteTime($muteTime)
+    {
+        $this->requestParameters['MuteTime'] = $muteTime;
+        $this->queryParameters['MuteTime'] = $muteTime;
 
-	public function getOutId() {
-		return $this->outId;
-	}
+        return $this;
+    }
 
-	public function setOutId($outId) {
-		$this->outId = $outId;
-		$this->queryParameters["OutId"]=$outId;
-	}
+    /**
+     * @param string $outId
+     *
+     * @return $this
+     */
+    public function setOutId($outId)
+    {
+        $this->requestParameters['OutId'] = $outId;
+        $this->queryParameters['OutId'] = $outId;
 
-	public function getAsrModelId() {
-		return $this->asrModelId;
-	}
+        return $this;
+    }
 
-	public function setAsrModelId($asrModelId) {
-		$this->asrModelId = $asrModelId;
-		$this->queryParameters["AsrModelId"]=$asrModelId;
-	}
+    /**
+     * @param string $asrModelId
+     *
+     * @return $this
+     */
+    public function setAsrModelId($asrModelId)
+    {
+        $this->requestParameters['AsrModelId'] = $asrModelId;
+        $this->queryParameters['AsrModelId'] = $asrModelId;
 
-	public function getPauseTime() {
-		return $this->pauseTime;
-	}
+        return $this;
+    }
 
-	public function setPauseTime($pauseTime) {
-		$this->pauseTime = $pauseTime;
-		$this->queryParameters["PauseTime"]=$pauseTime;
-	}
-	
+    /**
+     * @param string $pauseTime
+     *
+     * @return $this
+     */
+    public function setPauseTime($pauseTime)
+    {
+        $this->requestParameters['PauseTime'] = $pauseTime;
+        $this->queryParameters['PauseTime'] = $pauseTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ttsStyle
+     *
+     * @return $this
+     */
+    public function setTtsStyle($ttsStyle)
+    {
+        $this->requestParameters['TtsStyle'] = $ttsStyle;
+        $this->queryParameters['TtsStyle'] = $ttsStyle;
+
+        return $this;
+    }
 }

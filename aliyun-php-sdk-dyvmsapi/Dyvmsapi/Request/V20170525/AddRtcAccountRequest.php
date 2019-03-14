@@ -3,16 +3,14 @@
 namespace Dyvmsapi\Request\V20170525;
 
 /**
- * Request of QueryCallDetailByCallId
+ * Request of AddRtcAccount
  *
- * @method string getCallId()
  * @method string getResourceOwnerId()
- * @method string getQueryDate()
  * @method string getResourceOwnerAccount()
- * @method string getProdId()
  * @method string getOwnerId()
+ * @method string getDeviceId()
  */
-class QueryCallDetailByCallIdRequest extends \RpcAcsRequest
+class AddRtcAccountRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,22 +26,9 @@ class QueryCallDetailByCallIdRequest extends \RpcAcsRequest
         parent::__construct(
             'Dyvmsapi',
             '2017-05-25',
-            'QueryCallDetailByCallId',
+            'AddRtcAccount',
             'dyvmsapi'
         );
-    }
-
-    /**
-     * @param string $callId
-     *
-     * @return $this
-     */
-    public function setCallId($callId)
-    {
-        $this->requestParameters['CallId'] = $callId;
-        $this->queryParameters['CallId'] = $callId;
-
-        return $this;
     }
 
     /**
@@ -55,19 +40,6 @@ class QueryCallDetailByCallIdRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $queryDate
-     *
-     * @return $this
-     */
-    public function setQueryDate($queryDate)
-    {
-        $this->requestParameters['QueryDate'] = $queryDate;
-        $this->queryParameters['QueryDate'] = $queryDate;
 
         return $this;
     }
@@ -86,19 +58,6 @@ class QueryCallDetailByCallIdRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $prodId
-     *
-     * @return $this
-     */
-    public function setProdId($prodId)
-    {
-        $this->requestParameters['ProdId'] = $prodId;
-        $this->queryParameters['ProdId'] = $prodId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -107,6 +66,19 @@ class QueryCallDetailByCallIdRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $deviceId
+     *
+     * @return $this
+     */
+    public function setDeviceId($deviceId)
+    {
+        $this->requestParameters['DeviceId'] = $deviceId;
+        $this->queryParameters['DeviceId'] = $deviceId;
 
         return $this;
     }

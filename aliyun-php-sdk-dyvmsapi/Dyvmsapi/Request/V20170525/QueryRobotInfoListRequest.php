@@ -3,16 +3,14 @@
 namespace Dyvmsapi\Request\V20170525;
 
 /**
- * Request of QueryCallDetailByCallId
+ * Request of QueryRobotInfoList
  *
- * @method string getCallId()
  * @method string getResourceOwnerId()
- * @method string getQueryDate()
+ * @method string getAuditStatus()
  * @method string getResourceOwnerAccount()
- * @method string getProdId()
  * @method string getOwnerId()
  */
-class QueryCallDetailByCallIdRequest extends \RpcAcsRequest
+class QueryRobotInfoListRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,22 +26,9 @@ class QueryCallDetailByCallIdRequest extends \RpcAcsRequest
         parent::__construct(
             'Dyvmsapi',
             '2017-05-25',
-            'QueryCallDetailByCallId',
+            'QueryRobotInfoList',
             'dyvmsapi'
         );
-    }
-
-    /**
-     * @param string $callId
-     *
-     * @return $this
-     */
-    public function setCallId($callId)
-    {
-        $this->requestParameters['CallId'] = $callId;
-        $this->queryParameters['CallId'] = $callId;
-
-        return $this;
     }
 
     /**
@@ -60,14 +45,14 @@ class QueryCallDetailByCallIdRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $queryDate
+     * @param string $auditStatus
      *
      * @return $this
      */
-    public function setQueryDate($queryDate)
+    public function setAuditStatus($auditStatus)
     {
-        $this->requestParameters['QueryDate'] = $queryDate;
-        $this->queryParameters['QueryDate'] = $queryDate;
+        $this->requestParameters['AuditStatus'] = $auditStatus;
+        $this->queryParameters['AuditStatus'] = $auditStatus;
 
         return $this;
     }
@@ -81,19 +66,6 @@ class QueryCallDetailByCallIdRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $prodId
-     *
-     * @return $this
-     */
-    public function setProdId($prodId)
-    {
-        $this->requestParameters['ProdId'] = $prodId;
-        $this->queryParameters['ProdId'] = $prodId;
 
         return $this;
     }

@@ -1,178 +1,215 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Dyvmsapi\Request\V20170525;
 
+/**
+ * Request of IvrCall
+ *
+ * @method string getByeCode()
+ * @method array getMenuKeyMaps()
+ * @method string getResourceOwnerId()
+ * @method string getResourceOwnerAccount()
+ * @method string getStartTtsParams()
+ * @method string getPlayTimes()
+ * @method string getOwnerId()
+ * @method string getTimeout()
+ * @method string getStartCode()
+ * @method string getCalledNumber()
+ * @method string getCalledShowNumber()
+ * @method string getOutId()
+ * @method string getByeTtsParams()
+ */
 class IvrCallRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Dyvmsapi", "2017-05-25", "IvrCall");
-		$this->setMethod("POST");
-	}
 
-	private  $byeCode;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $MenuKeyMaps;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Dyvmsapi',
+            '2017-05-25',
+            'IvrCall',
+            'dyvmsapi'
+        );
+    }
 
-	private  $resourceOwnerId;
+    /**
+     * @param string $byeCode
+     *
+     * @return $this
+     */
+    public function setByeCode($byeCode)
+    {
+        $this->requestParameters['ByeCode'] = $byeCode;
+        $this->queryParameters['ByeCode'] = $byeCode;
 
-	private  $resourceOwnerAccount;
+        return $this;
+    }
 
-	private  $startTtsParams;
+    /**
+     * @param array $menuKeyMaps
+     *
+     * @return $this
+     */
+    public function setMenuKeyMaps(array $menuKeyMaps)
+    {
+        $this->requestParameters['MenuKeyMaps'] = $menuKeyMaps;
+        foreach ($menuKeyMaps as $i => $iValue) {
+            $this->queryParameters['MenuKeyMap.' . ($i + 1) . '.Code'] = $menuKeyMaps[$i]['Code'];
+            $this->queryParameters['MenuKeyMap.' . ($i + 1) . '.TtsParams'] = $menuKeyMaps[$i]['TtsParams'];
+            $this->queryParameters['MenuKeyMap.' . ($i + 1) . '.Key'] = $menuKeyMaps[$i]['Key'];
+        }
 
-	private  $playTimes;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $timeout;
+        return $this;
+    }
 
-	private  $startCode;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $calledNumber;
+        return $this;
+    }
 
-	private  $calledShowNumber;
+    /**
+     * @param string $startTtsParams
+     *
+     * @return $this
+     */
+    public function setStartTtsParams($startTtsParams)
+    {
+        $this->requestParameters['StartTtsParams'] = $startTtsParams;
+        $this->queryParameters['StartTtsParams'] = $startTtsParams;
 
-	private  $outId;
+        return $this;
+    }
 
-	private  $byeTtsParams;
+    /**
+     * @param string $playTimes
+     *
+     * @return $this
+     */
+    public function setPlayTimes($playTimes)
+    {
+        $this->requestParameters['PlayTimes'] = $playTimes;
+        $this->queryParameters['PlayTimes'] = $playTimes;
 
-	public function getByeCode() {
-		return $this->byeCode;
-	}
+        return $this;
+    }
 
-	public function setByeCode($byeCode) {
-		$this->byeCode = $byeCode;
-		$this->queryParameters["ByeCode"]=$byeCode;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function getMenuKeyMaps() {
-		return $this->MenuKeyMaps;
-	}
+        return $this;
+    }
 
-	public function setMenuKeyMaps($MenuKeyMaps) {
-		$this->MenuKeyMaps = $MenuKeyMaps;
-		for ($i = 0; $i < count($MenuKeyMaps); $i ++) {	
-			$this->queryParameters['MenuKeyMap.' . ($i + 1) . '.Key'] = $MenuKeyMaps[$i]['Key'];
-			$this->queryParameters['MenuKeyMap.' . ($i + 1) . '.Code'] = $MenuKeyMaps[$i]['Code'];
-			$this->queryParameters['MenuKeyMap.' . ($i + 1) . '.TtsParams'] = $MenuKeyMaps[$i]['TtsParams'];
+    /**
+     * @param string $timeout
+     *
+     * @return $this
+     */
+    public function setTimeout($timeout)
+    {
+        $this->requestParameters['Timeout'] = $timeout;
+        $this->queryParameters['Timeout'] = $timeout;
 
-		}
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+    /**
+     * @param string $startCode
+     *
+     * @return $this
+     */
+    public function setStartCode($startCode)
+    {
+        $this->requestParameters['StartCode'] = $startCode;
+        $this->queryParameters['StartCode'] = $startCode;
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param string $calledNumber
+     *
+     * @return $this
+     */
+    public function setCalledNumber($calledNumber)
+    {
+        $this->requestParameters['CalledNumber'] = $calledNumber;
+        $this->queryParameters['CalledNumber'] = $calledNumber;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function getStartTtsParams() {
-		return $this->startTtsParams;
-	}
+    /**
+     * @param string $calledShowNumber
+     *
+     * @return $this
+     */
+    public function setCalledShowNumber($calledShowNumber)
+    {
+        $this->requestParameters['CalledShowNumber'] = $calledShowNumber;
+        $this->queryParameters['CalledShowNumber'] = $calledShowNumber;
 
-	public function setStartTtsParams($startTtsParams) {
-		$this->startTtsParams = $startTtsParams;
-		$this->queryParameters["StartTtsParams"]=$startTtsParams;
-	}
+        return $this;
+    }
 
-	public function getPlayTimes() {
-		return $this->playTimes;
-	}
+    /**
+     * @param string $outId
+     *
+     * @return $this
+     */
+    public function setOutId($outId)
+    {
+        $this->requestParameters['OutId'] = $outId;
+        $this->queryParameters['OutId'] = $outId;
 
-	public function setPlayTimes($playTimes) {
-		$this->playTimes = $playTimes;
-		$this->queryParameters["PlayTimes"]=$playTimes;
-	}
+        return $this;
+    }
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+    /**
+     * @param string $byeTtsParams
+     *
+     * @return $this
+     */
+    public function setByeTtsParams($byeTtsParams)
+    {
+        $this->requestParameters['ByeTtsParams'] = $byeTtsParams;
+        $this->queryParameters['ByeTtsParams'] = $byeTtsParams;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getTimeout() {
-		return $this->timeout;
-	}
-
-	public function setTimeout($timeout) {
-		$this->timeout = $timeout;
-		$this->queryParameters["Timeout"]=$timeout;
-	}
-
-	public function getStartCode() {
-		return $this->startCode;
-	}
-
-	public function setStartCode($startCode) {
-		$this->startCode = $startCode;
-		$this->queryParameters["StartCode"]=$startCode;
-	}
-
-	public function getCalledNumber() {
-		return $this->calledNumber;
-	}
-
-	public function setCalledNumber($calledNumber) {
-		$this->calledNumber = $calledNumber;
-		$this->queryParameters["CalledNumber"]=$calledNumber;
-	}
-
-	public function getCalledShowNumber() {
-		return $this->calledShowNumber;
-	}
-
-	public function setCalledShowNumber($calledShowNumber) {
-		$this->calledShowNumber = $calledShowNumber;
-		$this->queryParameters["CalledShowNumber"]=$calledShowNumber;
-	}
-
-	public function getOutId() {
-		return $this->outId;
-	}
-
-	public function setOutId($outId) {
-		$this->outId = $outId;
-		$this->queryParameters["OutId"]=$outId;
-	}
-
-	public function getByeTtsParams() {
-		return $this->byeTtsParams;
-	}
-
-	public function setByeTtsParams($byeTtsParams) {
-		$this->byeTtsParams = $byeTtsParams;
-		$this->queryParameters["ByeTtsParams"]=$byeTtsParams;
-	}
-	
+        return $this;
+    }
 }

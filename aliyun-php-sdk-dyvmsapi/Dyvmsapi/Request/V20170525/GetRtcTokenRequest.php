@@ -3,16 +3,16 @@
 namespace Dyvmsapi\Request\V20170525;
 
 /**
- * Request of VoipGetToken
+ * Request of GetRtcToken
  *
  * @method string getResourceOwnerId()
- * @method string getVoipId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerId()
+ * @method string getUserId()
  * @method string getDeviceId()
  * @method string getIsCustomAccount()
  */
-class VoipGetTokenRequest extends \RpcAcsRequest
+class GetRtcTokenRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,7 +28,7 @@ class VoipGetTokenRequest extends \RpcAcsRequest
         parent::__construct(
             'Dyvmsapi',
             '2017-05-25',
-            'VoipGetToken',
+            'GetRtcToken',
             'dyvmsapi'
         );
     }
@@ -42,19 +42,6 @@ class VoipGetTokenRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $voipId
-     *
-     * @return $this
-     */
-    public function setVoipId($voipId)
-    {
-        $this->requestParameters['VoipId'] = $voipId;
-        $this->queryParameters['VoipId'] = $voipId;
 
         return $this;
     }
@@ -81,6 +68,19 @@ class VoipGetTokenRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $userId
+     *
+     * @return $this
+     */
+    public function setUserId($userId)
+    {
+        $this->requestParameters['UserId'] = $userId;
+        $this->queryParameters['UserId'] = $userId;
 
         return $this;
     }

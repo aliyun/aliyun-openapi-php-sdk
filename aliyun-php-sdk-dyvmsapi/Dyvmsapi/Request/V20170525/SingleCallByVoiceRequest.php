@@ -1,140 +1,169 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Dyvmsapi\Request\V20170525;
 
+/**
+ * Request of SingleCallByVoice
+ *
+ * @method string getVolume()
+ * @method string getResourceOwnerId()
+ * @method string getResourceOwnerAccount()
+ * @method string getCalledNumber()
+ * @method string getVoiceCode()
+ * @method string getCalledShowNumber()
+ * @method string getPlayTimes()
+ * @method string getOutId()
+ * @method string getOwnerId()
+ * @method string getSpeed()
+ */
 class SingleCallByVoiceRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Dyvmsapi", "2017-05-25", "SingleCallByVoice");
-		$this->setMethod("POST");
-	}
 
-	private  $volume;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $resourceOwnerId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Dyvmsapi',
+            '2017-05-25',
+            'SingleCallByVoice',
+            'dyvmsapi'
+        );
+    }
 
-	private  $resourceOwnerAccount;
+    /**
+     * @param string $volume
+     *
+     * @return $this
+     */
+    public function setVolume($volume)
+    {
+        $this->requestParameters['Volume'] = $volume;
+        $this->queryParameters['Volume'] = $volume;
 
-	private  $calledNumber;
+        return $this;
+    }
 
-	private  $voiceCode;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $calledShowNumber;
+        return $this;
+    }
 
-	private  $playTimes;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $outId;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $calledNumber
+     *
+     * @return $this
+     */
+    public function setCalledNumber($calledNumber)
+    {
+        $this->requestParameters['CalledNumber'] = $calledNumber;
+        $this->queryParameters['CalledNumber'] = $calledNumber;
 
-	private  $speed;
+        return $this;
+    }
 
-	public function getVolume() {
-		return $this->volume;
-	}
+    /**
+     * @param string $voiceCode
+     *
+     * @return $this
+     */
+    public function setVoiceCode($voiceCode)
+    {
+        $this->requestParameters['VoiceCode'] = $voiceCode;
+        $this->queryParameters['VoiceCode'] = $voiceCode;
 
-	public function setVolume($volume) {
-		$this->volume = $volume;
-		$this->queryParameters["Volume"]=$volume;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+    /**
+     * @param string $calledShowNumber
+     *
+     * @return $this
+     */
+    public function setCalledShowNumber($calledShowNumber)
+    {
+        $this->requestParameters['CalledShowNumber'] = $calledShowNumber;
+        $this->queryParameters['CalledShowNumber'] = $calledShowNumber;
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param string $playTimes
+     *
+     * @return $this
+     */
+    public function setPlayTimes($playTimes)
+    {
+        $this->requestParameters['PlayTimes'] = $playTimes;
+        $this->queryParameters['PlayTimes'] = $playTimes;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function getCalledNumber() {
-		return $this->calledNumber;
-	}
+    /**
+     * @param string $outId
+     *
+     * @return $this
+     */
+    public function setOutId($outId)
+    {
+        $this->requestParameters['OutId'] = $outId;
+        $this->queryParameters['OutId'] = $outId;
 
-	public function setCalledNumber($calledNumber) {
-		$this->calledNumber = $calledNumber;
-		$this->queryParameters["CalledNumber"]=$calledNumber;
-	}
+        return $this;
+    }
 
-	public function getVoiceCode() {
-		return $this->voiceCode;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setVoiceCode($voiceCode) {
-		$this->voiceCode = $voiceCode;
-		$this->queryParameters["VoiceCode"]=$voiceCode;
-	}
+        return $this;
+    }
 
-	public function getCalledShowNumber() {
-		return $this->calledShowNumber;
-	}
+    /**
+     * @param string $speed
+     *
+     * @return $this
+     */
+    public function setSpeed($speed)
+    {
+        $this->requestParameters['Speed'] = $speed;
+        $this->queryParameters['Speed'] = $speed;
 
-	public function setCalledShowNumber($calledShowNumber) {
-		$this->calledShowNumber = $calledShowNumber;
-		$this->queryParameters["CalledShowNumber"]=$calledShowNumber;
-	}
-
-	public function getPlayTimes() {
-		return $this->playTimes;
-	}
-
-	public function setPlayTimes($playTimes) {
-		$this->playTimes = $playTimes;
-		$this->queryParameters["PlayTimes"]=$playTimes;
-	}
-
-	public function getOutId() {
-		return $this->outId;
-	}
-
-	public function setOutId($outId) {
-		$this->outId = $outId;
-		$this->queryParameters["OutId"]=$outId;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getSpeed() {
-		return $this->speed;
-	}
-
-	public function setSpeed($speed) {
-		$this->speed = $speed;
-		$this->queryParameters["Speed"]=$speed;
-	}
-	
+        return $this;
+    }
 }

@@ -1,162 +1,197 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Dyvmsapi\Request\V20170525;
 
+/**
+ * Request of ClickToDial
+ *
+ * @method string getResourceOwnerId()
+ * @method string getResourceOwnerAccount()
+ * @method string getRecordFlag()
+ * @method string getOwnerId()
+ * @method string getCallerShowNumber()
+ * @method string getSessionTimeout()
+ * @method string getCalledNumber()
+ * @method string getCalledShowNumber()
+ * @method string getOutId()
+ * @method string getAsrFlag()
+ * @method string getAsrModelId()
+ * @method string getCallerNumber()
+ */
 class ClickToDialRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Dyvmsapi", "2017-05-25", "ClickToDial");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $resourceOwnerAccount;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Dyvmsapi',
+            '2017-05-25',
+            'ClickToDial',
+            'dyvmsapi'
+        );
+    }
 
-	private  $recordFlag;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	private  $callerShowNumber;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $sessionTimeout;
+        return $this;
+    }
 
-	private  $calledNumber;
+    /**
+     * @param string $recordFlag
+     *
+     * @return $this
+     */
+    public function setRecordFlag($recordFlag)
+    {
+        $this->requestParameters['RecordFlag'] = $recordFlag;
+        $this->queryParameters['RecordFlag'] = $recordFlag;
 
-	private  $calledShowNumber;
+        return $this;
+    }
 
-	private  $outId;
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	private  $asrFlag;
+        return $this;
+    }
 
-	private  $asrModelId;
+    /**
+     * @param string $callerShowNumber
+     *
+     * @return $this
+     */
+    public function setCallerShowNumber($callerShowNumber)
+    {
+        $this->requestParameters['CallerShowNumber'] = $callerShowNumber;
+        $this->queryParameters['CallerShowNumber'] = $callerShowNumber;
 
-	private  $callerNumber;
+        return $this;
+    }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+    /**
+     * @param string $sessionTimeout
+     *
+     * @return $this
+     */
+    public function setSessionTimeout($sessionTimeout)
+    {
+        $this->requestParameters['SessionTimeout'] = $sessionTimeout;
+        $this->queryParameters['SessionTimeout'] = $sessionTimeout;
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param string $calledNumber
+     *
+     * @return $this
+     */
+    public function setCalledNumber($calledNumber)
+    {
+        $this->requestParameters['CalledNumber'] = $calledNumber;
+        $this->queryParameters['CalledNumber'] = $calledNumber;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function getRecordFlag() {
-		return $this->recordFlag;
-	}
+    /**
+     * @param string $calledShowNumber
+     *
+     * @return $this
+     */
+    public function setCalledShowNumber($calledShowNumber)
+    {
+        $this->requestParameters['CalledShowNumber'] = $calledShowNumber;
+        $this->queryParameters['CalledShowNumber'] = $calledShowNumber;
 
-	public function setRecordFlag($recordFlag) {
-		$this->recordFlag = $recordFlag;
-		$this->queryParameters["RecordFlag"]=$recordFlag;
-	}
+        return $this;
+    }
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+    /**
+     * @param string $outId
+     *
+     * @return $this
+     */
+    public function setOutId($outId)
+    {
+        $this->requestParameters['OutId'] = $outId;
+        $this->queryParameters['OutId'] = $outId;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+        return $this;
+    }
 
-	public function getCallerShowNumber() {
-		return $this->callerShowNumber;
-	}
+    /**
+     * @param string $asrFlag
+     *
+     * @return $this
+     */
+    public function setAsrFlag($asrFlag)
+    {
+        $this->requestParameters['AsrFlag'] = $asrFlag;
+        $this->queryParameters['AsrFlag'] = $asrFlag;
 
-	public function setCallerShowNumber($callerShowNumber) {
-		$this->callerShowNumber = $callerShowNumber;
-		$this->queryParameters["CallerShowNumber"]=$callerShowNumber;
-	}
+        return $this;
+    }
 
-	public function getSessionTimeout() {
-		return $this->sessionTimeout;
-	}
+    /**
+     * @param string $asrModelId
+     *
+     * @return $this
+     */
+    public function setAsrModelId($asrModelId)
+    {
+        $this->requestParameters['AsrModelId'] = $asrModelId;
+        $this->queryParameters['AsrModelId'] = $asrModelId;
 
-	public function setSessionTimeout($sessionTimeout) {
-		$this->sessionTimeout = $sessionTimeout;
-		$this->queryParameters["SessionTimeout"]=$sessionTimeout;
-	}
+        return $this;
+    }
 
-	public function getCalledNumber() {
-		return $this->calledNumber;
-	}
+    /**
+     * @param string $callerNumber
+     *
+     * @return $this
+     */
+    public function setCallerNumber($callerNumber)
+    {
+        $this->requestParameters['CallerNumber'] = $callerNumber;
+        $this->queryParameters['CallerNumber'] = $callerNumber;
 
-	public function setCalledNumber($calledNumber) {
-		$this->calledNumber = $calledNumber;
-		$this->queryParameters["CalledNumber"]=$calledNumber;
-	}
-
-	public function getCalledShowNumber() {
-		return $this->calledShowNumber;
-	}
-
-	public function setCalledShowNumber($calledShowNumber) {
-		$this->calledShowNumber = $calledShowNumber;
-		$this->queryParameters["CalledShowNumber"]=$calledShowNumber;
-	}
-
-	public function getOutId() {
-		return $this->outId;
-	}
-
-	public function setOutId($outId) {
-		$this->outId = $outId;
-		$this->queryParameters["OutId"]=$outId;
-	}
-
-	public function getAsrFlag() {
-		return $this->asrFlag;
-	}
-
-	public function setAsrFlag($asrFlag) {
-		$this->asrFlag = $asrFlag;
-		$this->queryParameters["AsrFlag"]=$asrFlag;
-	}
-
-	public function getAsrModelId() {
-		return $this->asrModelId;
-	}
-
-	public function setAsrModelId($asrModelId) {
-		$this->asrModelId = $asrModelId;
-		$this->queryParameters["AsrModelId"]=$asrModelId;
-	}
-
-	public function getCallerNumber() {
-		return $this->callerNumber;
-	}
-
-	public function setCallerNumber($callerNumber) {
-		$this->callerNumber = $callerNumber;
-		$this->queryParameters["CallerNumber"]=$callerNumber;
-	}
-	
+        return $this;
+    }
 }

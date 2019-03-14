@@ -3,21 +3,23 @@
 namespace Dyvmsapi\Request\V20170525;
 
 /**
- * Request of SingleCallByTts
+ * Request of BatchRobotSmartCall
  *
  * @method string getResourceOwnerId()
+ * @method string getEarlyMediaAsr()
  * @method string getResourceOwnerAccount()
- * @method string getTtsCode()
- * @method string getPlayTimes()
+ * @method string getTtsParamHead()
+ * @method string getTaskName()
  * @method string getTtsParam()
  * @method string getOwnerId()
- * @method string getSpeed()
- * @method string getVolume()
+ * @method string getDialogId()
  * @method string getCalledNumber()
+ * @method string getScheduleTime()
  * @method string getCalledShowNumber()
- * @method string getOutId()
+ * @method string getCorpName()
+ * @method string getScheduleCall()
  */
-class SingleCallByTtsRequest extends \RpcAcsRequest
+class BatchRobotSmartCallRequest extends \RpcAcsRequest
 {
 
     /**
@@ -33,7 +35,7 @@ class SingleCallByTtsRequest extends \RpcAcsRequest
         parent::__construct(
             'Dyvmsapi',
             '2017-05-25',
-            'SingleCallByTts',
+            'BatchRobotSmartCall',
             'dyvmsapi'
         );
     }
@@ -52,6 +54,19 @@ class SingleCallByTtsRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $earlyMediaAsr
+     *
+     * @return $this
+     */
+    public function setEarlyMediaAsr($earlyMediaAsr)
+    {
+        $this->requestParameters['EarlyMediaAsr'] = $earlyMediaAsr;
+        $this->queryParameters['EarlyMediaAsr'] = $earlyMediaAsr;
+
+        return $this;
+    }
+
+    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -65,27 +80,27 @@ class SingleCallByTtsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ttsCode
+     * @param string $ttsParamHead
      *
      * @return $this
      */
-    public function setTtsCode($ttsCode)
+    public function setTtsParamHead($ttsParamHead)
     {
-        $this->requestParameters['TtsCode'] = $ttsCode;
-        $this->queryParameters['TtsCode'] = $ttsCode;
+        $this->requestParameters['TtsParamHead'] = $ttsParamHead;
+        $this->queryParameters['TtsParamHead'] = $ttsParamHead;
 
         return $this;
     }
 
     /**
-     * @param string $playTimes
+     * @param string $taskName
      *
      * @return $this
      */
-    public function setPlayTimes($playTimes)
+    public function setTaskName($taskName)
     {
-        $this->requestParameters['PlayTimes'] = $playTimes;
-        $this->queryParameters['PlayTimes'] = $playTimes;
+        $this->requestParameters['TaskName'] = $taskName;
+        $this->queryParameters['TaskName'] = $taskName;
 
         return $this;
     }
@@ -117,27 +132,14 @@ class SingleCallByTtsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $speed
+     * @param string $dialogId
      *
      * @return $this
      */
-    public function setSpeed($speed)
+    public function setDialogId($dialogId)
     {
-        $this->requestParameters['Speed'] = $speed;
-        $this->queryParameters['Speed'] = $speed;
-
-        return $this;
-    }
-
-    /**
-     * @param string $volume
-     *
-     * @return $this
-     */
-    public function setVolume($volume)
-    {
-        $this->requestParameters['Volume'] = $volume;
-        $this->queryParameters['Volume'] = $volume;
+        $this->requestParameters['DialogId'] = $dialogId;
+        $this->queryParameters['DialogId'] = $dialogId;
 
         return $this;
     }
@@ -156,6 +158,19 @@ class SingleCallByTtsRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $scheduleTime
+     *
+     * @return $this
+     */
+    public function setScheduleTime($scheduleTime)
+    {
+        $this->requestParameters['ScheduleTime'] = $scheduleTime;
+        $this->queryParameters['ScheduleTime'] = $scheduleTime;
+
+        return $this;
+    }
+
+    /**
      * @param string $calledShowNumber
      *
      * @return $this
@@ -169,14 +184,27 @@ class SingleCallByTtsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $outId
+     * @param string $corpName
      *
      * @return $this
      */
-    public function setOutId($outId)
+    public function setCorpName($corpName)
     {
-        $this->requestParameters['OutId'] = $outId;
-        $this->queryParameters['OutId'] = $outId;
+        $this->requestParameters['CorpName'] = $corpName;
+        $this->queryParameters['CorpName'] = $corpName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $scheduleCall
+     *
+     * @return $this
+     */
+    public function setScheduleCall($scheduleCall)
+    {
+        $this->requestParameters['ScheduleCall'] = $scheduleCall;
+        $this->queryParameters['ScheduleCall'] = $scheduleCall;
 
         return $this;
     }
