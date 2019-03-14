@@ -1,86 +1,132 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ram\Request\V20150501;
 
+/**
+ * Request of SetSecurityPreference
+ *
+ * @method string getAllowUserToManageAccessKeys()
+ * @method string getAllowUserToManageMFADevices()
+ * @method string getAllowUserToManagePublicKeys()
+ * @method string getEnableSaveMFATicket()
+ * @method string getLoginNetworkMasks()
+ * @method string getAllowUserToChangePassword()
+ * @method string getLoginSessionDuration()
+ */
 class SetSecurityPreferenceRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ram", "2015-05-01", "SetSecurityPreference");
-		$this->setProtocol("https");
-		$this->setMethod("POST");
-	}
 
-	private  $allowUserToManageAccessKeys;
+    /**
+     * @var string
+     */
+    protected $requestScheme = 'https';
 
-	private  $allowUserToManageMFADevices;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $allowUserToManagePublicKeys;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ram',
+            '2015-05-01',
+            'SetSecurityPreference',
+            'ram'
+        );
+    }
 
-	private  $enableSaveMFATicket;
+    /**
+     * @param string $allowUserToManageAccessKeys
+     *
+     * @return $this
+     */
+    public function setAllowUserToManageAccessKeys($allowUserToManageAccessKeys)
+    {
+        $this->requestParameters['AllowUserToManageAccessKeys'] = $allowUserToManageAccessKeys;
+        $this->queryParameters['AllowUserToManageAccessKeys'] = $allowUserToManageAccessKeys;
 
-	private  $allowUserToChangePassword;
+        return $this;
+    }
 
-	public function getAllowUserToManageAccessKeys() {
-		return $this->allowUserToManageAccessKeys;
-	}
+    /**
+     * @param string $allowUserToManageMFADevices
+     *
+     * @return $this
+     */
+    public function setAllowUserToManageMFADevices($allowUserToManageMFADevices)
+    {
+        $this->requestParameters['AllowUserToManageMFADevices'] = $allowUserToManageMFADevices;
+        $this->queryParameters['AllowUserToManageMFADevices'] = $allowUserToManageMFADevices;
 
-	public function setAllowUserToManageAccessKeys($allowUserToManageAccessKeys) {
-		$this->allowUserToManageAccessKeys = $allowUserToManageAccessKeys;
-		$this->queryParameters["AllowUserToManageAccessKeys"]=$allowUserToManageAccessKeys;
-	}
+        return $this;
+    }
 
-	public function getAllowUserToManageMFADevices() {
-		return $this->allowUserToManageMFADevices;
-	}
+    /**
+     * @param string $allowUserToManagePublicKeys
+     *
+     * @return $this
+     */
+    public function setAllowUserToManagePublicKeys($allowUserToManagePublicKeys)
+    {
+        $this->requestParameters['AllowUserToManagePublicKeys'] = $allowUserToManagePublicKeys;
+        $this->queryParameters['AllowUserToManagePublicKeys'] = $allowUserToManagePublicKeys;
 
-	public function setAllowUserToManageMFADevices($allowUserToManageMFADevices) {
-		$this->allowUserToManageMFADevices = $allowUserToManageMFADevices;
-		$this->queryParameters["AllowUserToManageMFADevices"]=$allowUserToManageMFADevices;
-	}
+        return $this;
+    }
 
-	public function getAllowUserToManagePublicKeys() {
-		return $this->allowUserToManagePublicKeys;
-	}
+    /**
+     * @param string $enableSaveMFATicket
+     *
+     * @return $this
+     */
+    public function setEnableSaveMFATicket($enableSaveMFATicket)
+    {
+        $this->requestParameters['EnableSaveMFATicket'] = $enableSaveMFATicket;
+        $this->queryParameters['EnableSaveMFATicket'] = $enableSaveMFATicket;
 
-	public function setAllowUserToManagePublicKeys($allowUserToManagePublicKeys) {
-		$this->allowUserToManagePublicKeys = $allowUserToManagePublicKeys;
-		$this->queryParameters["AllowUserToManagePublicKeys"]=$allowUserToManagePublicKeys;
-	}
+        return $this;
+    }
 
-	public function getEnableSaveMFATicket() {
-		return $this->enableSaveMFATicket;
-	}
+    /**
+     * @param string $loginNetworkMasks
+     *
+     * @return $this
+     */
+    public function setLoginNetworkMasks($loginNetworkMasks)
+    {
+        $this->requestParameters['LoginNetworkMasks'] = $loginNetworkMasks;
+        $this->queryParameters['LoginNetworkMasks'] = $loginNetworkMasks;
 
-	public function setEnableSaveMFATicket($enableSaveMFATicket) {
-		$this->enableSaveMFATicket = $enableSaveMFATicket;
-		$this->queryParameters["EnableSaveMFATicket"]=$enableSaveMFATicket;
-	}
+        return $this;
+    }
 
-	public function getAllowUserToChangePassword() {
-		return $this->allowUserToChangePassword;
-	}
+    /**
+     * @param string $allowUserToChangePassword
+     *
+     * @return $this
+     */
+    public function setAllowUserToChangePassword($allowUserToChangePassword)
+    {
+        $this->requestParameters['AllowUserToChangePassword'] = $allowUserToChangePassword;
+        $this->queryParameters['AllowUserToChangePassword'] = $allowUserToChangePassword;
 
-	public function setAllowUserToChangePassword($allowUserToChangePassword) {
-		$this->allowUserToChangePassword = $allowUserToChangePassword;
-		$this->queryParameters["AllowUserToChangePassword"]=$allowUserToChangePassword;
-	}
-	
+        return $this;
+    }
+
+    /**
+     * @param string $loginSessionDuration
+     *
+     * @return $this
+     */
+    public function setLoginSessionDuration($loginSessionDuration)
+    {
+        $this->requestParameters['LoginSessionDuration'] = $loginSessionDuration;
+        $this->queryParameters['LoginSessionDuration'] = $loginSessionDuration;
+
+        return $this;
+    }
 }

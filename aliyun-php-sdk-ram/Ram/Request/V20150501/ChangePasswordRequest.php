@@ -1,53 +1,62 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ram\Request\V20150501;
 
+/**
+ * Request of ChangePassword
+ *
+ * @method string getOldPassword()
+ * @method string getNewPassword()
+ */
 class ChangePasswordRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ram", "2015-05-01", "ChangePassword");
-		$this->setProtocol("https");
-		$this->setMethod("POST");
-	}
 
-	private  $oldPassword;
+    /**
+     * @var string
+     */
+    protected $requestScheme = 'https';
 
-	private  $newPassword;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	public function getOldPassword() {
-		return $this->oldPassword;
-	}
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ram',
+            '2015-05-01',
+            'ChangePassword',
+            'ram'
+        );
+    }
 
-	public function setOldPassword($oldPassword) {
-		$this->oldPassword = $oldPassword;
-		$this->queryParameters["OldPassword"]=$oldPassword;
-	}
+    /**
+     * @param string $oldPassword
+     *
+     * @return $this
+     */
+    public function setOldPassword($oldPassword)
+    {
+        $this->requestParameters['OldPassword'] = $oldPassword;
+        $this->queryParameters['OldPassword'] = $oldPassword;
 
-	public function getNewPassword() {
-		return $this->newPassword;
-	}
+        return $this;
+    }
 
-	public function setNewPassword($newPassword) {
-		$this->newPassword = $newPassword;
-		$this->queryParameters["NewPassword"]=$newPassword;
-	}
-	
+    /**
+     * @param string $newPassword
+     *
+     * @return $this
+     */
+    public function setNewPassword($newPassword)
+    {
+        $this->requestParameters['NewPassword'] = $newPassword;
+        $this->queryParameters['NewPassword'] = $newPassword;
+
+        return $this;
+    }
 }

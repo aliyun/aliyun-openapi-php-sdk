@@ -1,97 +1,118 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ram\Request\V20150501;
 
+/**
+ * Request of UpdateUser
+ *
+ * @method string getNewUserName()
+ * @method string getNewDisplayName()
+ * @method string getNewMobilePhone()
+ * @method string getNewComments()
+ * @method string getNewEmail()
+ * @method string getUserName()
+ */
 class UpdateUserRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ram", "2015-05-01", "UpdateUser");
-		$this->setProtocol("https");
-		$this->setMethod("POST");
-	}
 
-	private  $newUserName;
+    /**
+     * @var string
+     */
+    protected $requestScheme = 'https';
 
-	private  $newDisplayName;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $newMobilePhone;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ram',
+            '2015-05-01',
+            'UpdateUser',
+            'ram'
+        );
+    }
 
-	private  $newComments;
+    /**
+     * @param string $newUserName
+     *
+     * @return $this
+     */
+    public function setNewUserName($newUserName)
+    {
+        $this->requestParameters['NewUserName'] = $newUserName;
+        $this->queryParameters['NewUserName'] = $newUserName;
 
-	private  $newEmail;
+        return $this;
+    }
 
-	private  $userName;
+    /**
+     * @param string $newDisplayName
+     *
+     * @return $this
+     */
+    public function setNewDisplayName($newDisplayName)
+    {
+        $this->requestParameters['NewDisplayName'] = $newDisplayName;
+        $this->queryParameters['NewDisplayName'] = $newDisplayName;
 
-	public function getNewUserName() {
-		return $this->newUserName;
-	}
+        return $this;
+    }
 
-	public function setNewUserName($newUserName) {
-		$this->newUserName = $newUserName;
-		$this->queryParameters["NewUserName"]=$newUserName;
-	}
+    /**
+     * @param string $newMobilePhone
+     *
+     * @return $this
+     */
+    public function setNewMobilePhone($newMobilePhone)
+    {
+        $this->requestParameters['NewMobilePhone'] = $newMobilePhone;
+        $this->queryParameters['NewMobilePhone'] = $newMobilePhone;
 
-	public function getNewDisplayName() {
-		return $this->newDisplayName;
-	}
+        return $this;
+    }
 
-	public function setNewDisplayName($newDisplayName) {
-		$this->newDisplayName = $newDisplayName;
-		$this->queryParameters["NewDisplayName"]=$newDisplayName;
-	}
+    /**
+     * @param string $newComments
+     *
+     * @return $this
+     */
+    public function setNewComments($newComments)
+    {
+        $this->requestParameters['NewComments'] = $newComments;
+        $this->queryParameters['NewComments'] = $newComments;
 
-	public function getNewMobilePhone() {
-		return $this->newMobilePhone;
-	}
+        return $this;
+    }
 
-	public function setNewMobilePhone($newMobilePhone) {
-		$this->newMobilePhone = $newMobilePhone;
-		$this->queryParameters["NewMobilePhone"]=$newMobilePhone;
-	}
+    /**
+     * @param string $newEmail
+     *
+     * @return $this
+     */
+    public function setNewEmail($newEmail)
+    {
+        $this->requestParameters['NewEmail'] = $newEmail;
+        $this->queryParameters['NewEmail'] = $newEmail;
 
-	public function getNewComments() {
-		return $this->newComments;
-	}
+        return $this;
+    }
 
-	public function setNewComments($newComments) {
-		$this->newComments = $newComments;
-		$this->queryParameters["NewComments"]=$newComments;
-	}
+    /**
+     * @param string $userName
+     *
+     * @return $this
+     */
+    public function setUserName($userName)
+    {
+        $this->requestParameters['UserName'] = $userName;
+        $this->queryParameters['UserName'] = $userName;
 
-	public function getNewEmail() {
-		return $this->newEmail;
-	}
-
-	public function setNewEmail($newEmail) {
-		$this->newEmail = $newEmail;
-		$this->queryParameters["NewEmail"]=$newEmail;
-	}
-
-	public function getUserName() {
-		return $this->userName;
-	}
-
-	public function setUserName($userName) {
-		$this->userName = $userName;
-		$this->queryParameters["UserName"]=$userName;
-	}
-	
+        return $this;
+    }
 }

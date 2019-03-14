@@ -1,64 +1,76 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ram\Request\V20150501;
 
+/**
+ * Request of UpdateAccessKey
+ *
+ * @method string getUserAccessKeyId()
+ * @method string getUserName()
+ * @method string getStatus()
+ */
 class UpdateAccessKeyRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ram", "2015-05-01", "UpdateAccessKey");
-		$this->setProtocol("https");
-		$this->setMethod("POST");
-	}
 
-	private  $userAccessKeyId;
+    /**
+     * @var string
+     */
+    protected $requestScheme = 'https';
 
-	private  $userName;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $status;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ram',
+            '2015-05-01',
+            'UpdateAccessKey',
+            'ram'
+        );
+    }
 
-	public function getUserAccessKeyId() {
-		return $this->userAccessKeyId;
-	}
+    /**
+     * @param string $userAccessKeyId
+     *
+     * @return $this
+     */
+    public function setUserAccessKeyId($userAccessKeyId)
+    {
+        $this->requestParameters['UserAccessKeyId'] = $userAccessKeyId;
+        $this->queryParameters['UserAccessKeyId'] = $userAccessKeyId;
 
-	public function setUserAccessKeyId($userAccessKeyId) {
-		$this->userAccessKeyId = $userAccessKeyId;
-		$this->queryParameters["UserAccessKeyId"]=$userAccessKeyId;
-	}
+        return $this;
+    }
 
-	public function getUserName() {
-		return $this->userName;
-	}
+    /**
+     * @param string $userName
+     *
+     * @return $this
+     */
+    public function setUserName($userName)
+    {
+        $this->requestParameters['UserName'] = $userName;
+        $this->queryParameters['UserName'] = $userName;
 
-	public function setUserName($userName) {
-		$this->userName = $userName;
-		$this->queryParameters["UserName"]=$userName;
-	}
+        return $this;
+    }
 
-	public function getStatus() {
-		return $this->status;
-	}
+    /**
+     * @param string $status
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->requestParameters['Status'] = $status;
+        $this->queryParameters['Status'] = $status;
 
-	public function setStatus($status) {
-		$this->status = $status;
-		$this->queryParameters["Status"]=$status;
-	}
-	
+        return $this;
+    }
 }

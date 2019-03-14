@@ -1,75 +1,90 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ram\Request\V20150501;
 
+/**
+ * Request of BindMFADevice
+ *
+ * @method string getSerialNumber()
+ * @method string getAuthenticationCode2()
+ * @method string getAuthenticationCode1()
+ * @method string getUserName()
+ */
 class BindMFADeviceRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ram", "2015-05-01", "BindMFADevice");
-		$this->setProtocol("https");
-		$this->setMethod("POST");
-	}
 
-	private  $serialNumber;
+    /**
+     * @var string
+     */
+    protected $requestScheme = 'https';
 
-	private  $authenticationCode2;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $authenticationCode1;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ram',
+            '2015-05-01',
+            'BindMFADevice',
+            'ram'
+        );
+    }
 
-	private  $userName;
+    /**
+     * @param string $serialNumber
+     *
+     * @return $this
+     */
+    public function setSerialNumber($serialNumber)
+    {
+        $this->requestParameters['SerialNumber'] = $serialNumber;
+        $this->queryParameters['SerialNumber'] = $serialNumber;
 
-	public function getSerialNumber() {
-		return $this->serialNumber;
-	}
+        return $this;
+    }
 
-	public function setSerialNumber($serialNumber) {
-		$this->serialNumber = $serialNumber;
-		$this->queryParameters["SerialNumber"]=$serialNumber;
-	}
+    /**
+     * @param string $authenticationCode2
+     *
+     * @return $this
+     */
+    public function setAuthenticationCode2($authenticationCode2)
+    {
+        $this->requestParameters['AuthenticationCode2'] = $authenticationCode2;
+        $this->queryParameters['AuthenticationCode2'] = $authenticationCode2;
 
-	public function getAuthenticationCode2() {
-		return $this->authenticationCode2;
-	}
+        return $this;
+    }
 
-	public function setAuthenticationCode2($authenticationCode2) {
-		$this->authenticationCode2 = $authenticationCode2;
-		$this->queryParameters["AuthenticationCode2"]=$authenticationCode2;
-	}
+    /**
+     * @param string $authenticationCode1
+     *
+     * @return $this
+     */
+    public function setAuthenticationCode1($authenticationCode1)
+    {
+        $this->requestParameters['AuthenticationCode1'] = $authenticationCode1;
+        $this->queryParameters['AuthenticationCode1'] = $authenticationCode1;
 
-	public function getAuthenticationCode1() {
-		return $this->authenticationCode1;
-	}
+        return $this;
+    }
 
-	public function setAuthenticationCode1($authenticationCode1) {
-		$this->authenticationCode1 = $authenticationCode1;
-		$this->queryParameters["AuthenticationCode1"]=$authenticationCode1;
-	}
+    /**
+     * @param string $userName
+     *
+     * @return $this
+     */
+    public function setUserName($userName)
+    {
+        $this->requestParameters['UserName'] = $userName;
+        $this->queryParameters['UserName'] = $userName;
 
-	public function getUserName() {
-		return $this->userName;
-	}
-
-	public function setUserName($userName) {
-		$this->userName = $userName;
-		$this->queryParameters["UserName"]=$userName;
-	}
-	
+        return $this;
+    }
 }

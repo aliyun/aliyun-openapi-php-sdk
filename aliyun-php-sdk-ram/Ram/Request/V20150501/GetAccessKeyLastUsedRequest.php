@@ -3,12 +3,12 @@
 namespace Ram\Request\V20150501;
 
 /**
- * Request of DeletePublicKey
+ * Request of GetAccessKeyLastUsed
  *
- * @method string getUserPublicKeyId()
+ * @method string getUserAccessKeyId()
  * @method string getUserName()
  */
-class DeletePublicKeyRequest extends \RpcAcsRequest
+class GetAccessKeyLastUsedRequest extends \RpcAcsRequest
 {
 
     /**
@@ -29,20 +29,20 @@ class DeletePublicKeyRequest extends \RpcAcsRequest
         parent::__construct(
             'Ram',
             '2015-05-01',
-            'DeletePublicKey',
+            'GetAccessKeyLastUsed',
             'ram'
         );
     }
 
     /**
-     * @param string $userPublicKeyId
+     * @param string $userAccessKeyId
      *
      * @return $this
      */
-    public function setUserPublicKeyId($userPublicKeyId)
+    public function setUserAccessKeyId($userAccessKeyId)
     {
-        $this->requestParameters['UserPublicKeyId'] = $userPublicKeyId;
-        $this->queryParameters['UserPublicKeyId'] = $userPublicKeyId;
+        $this->requestParameters['UserAccessKeyId'] = $userAccessKeyId;
+        $this->queryParameters['UserAccessKeyId'] = $userAccessKeyId;
 
         return $this;
     }

@@ -1,64 +1,76 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ram\Request\V20150501;
 
+/**
+ * Request of UpdateGroup
+ *
+ * @method string getNewGroupName()
+ * @method string getNewComments()
+ * @method string getGroupName()
+ */
 class UpdateGroupRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ram", "2015-05-01", "UpdateGroup");
-		$this->setProtocol("https");
-		$this->setMethod("POST");
-	}
 
-	private  $newGroupName;
+    /**
+     * @var string
+     */
+    protected $requestScheme = 'https';
 
-	private  $newComments;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $groupName;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ram',
+            '2015-05-01',
+            'UpdateGroup',
+            'ram'
+        );
+    }
 
-	public function getNewGroupName() {
-		return $this->newGroupName;
-	}
+    /**
+     * @param string $newGroupName
+     *
+     * @return $this
+     */
+    public function setNewGroupName($newGroupName)
+    {
+        $this->requestParameters['NewGroupName'] = $newGroupName;
+        $this->queryParameters['NewGroupName'] = $newGroupName;
 
-	public function setNewGroupName($newGroupName) {
-		$this->newGroupName = $newGroupName;
-		$this->queryParameters["NewGroupName"]=$newGroupName;
-	}
+        return $this;
+    }
 
-	public function getNewComments() {
-		return $this->newComments;
-	}
+    /**
+     * @param string $newComments
+     *
+     * @return $this
+     */
+    public function setNewComments($newComments)
+    {
+        $this->requestParameters['NewComments'] = $newComments;
+        $this->queryParameters['NewComments'] = $newComments;
 
-	public function setNewComments($newComments) {
-		$this->newComments = $newComments;
-		$this->queryParameters["NewComments"]=$newComments;
-	}
+        return $this;
+    }
 
-	public function getGroupName() {
-		return $this->groupName;
-	}
+    /**
+     * @param string $groupName
+     *
+     * @return $this
+     */
+    public function setGroupName($groupName)
+    {
+        $this->requestParameters['GroupName'] = $groupName;
+        $this->queryParameters['GroupName'] = $groupName;
 
-	public function setGroupName($groupName) {
-		$this->groupName = $groupName;
-		$this->queryParameters["GroupName"]=$groupName;
-	}
-	
+        return $this;
+    }
 }

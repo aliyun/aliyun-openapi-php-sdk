@@ -1,86 +1,104 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ram\Request\V20150501;
 
+/**
+ * Request of CreateUser
+ *
+ * @method string getComments()
+ * @method string getDisplayName()
+ * @method string getMobilePhone()
+ * @method string getEmail()
+ * @method string getUserName()
+ */
 class CreateUserRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ram", "2015-05-01", "CreateUser");
-		$this->setProtocol("https");
-		$this->setMethod("POST");
-	}
 
-	private  $comments;
+    /**
+     * @var string
+     */
+    protected $requestScheme = 'https';
 
-	private  $displayName;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $mobilePhone;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ram',
+            '2015-05-01',
+            'CreateUser',
+            'ram'
+        );
+    }
 
-	private  $email;
+    /**
+     * @param string $comments
+     *
+     * @return $this
+     */
+    public function setComments($comments)
+    {
+        $this->requestParameters['Comments'] = $comments;
+        $this->queryParameters['Comments'] = $comments;
 
-	private  $userName;
+        return $this;
+    }
 
-	public function getComments() {
-		return $this->comments;
-	}
+    /**
+     * @param string $displayName
+     *
+     * @return $this
+     */
+    public function setDisplayName($displayName)
+    {
+        $this->requestParameters['DisplayName'] = $displayName;
+        $this->queryParameters['DisplayName'] = $displayName;
 
-	public function setComments($comments) {
-		$this->comments = $comments;
-		$this->queryParameters["Comments"]=$comments;
-	}
+        return $this;
+    }
 
-	public function getDisplayName() {
-		return $this->displayName;
-	}
+    /**
+     * @param string $mobilePhone
+     *
+     * @return $this
+     */
+    public function setMobilePhone($mobilePhone)
+    {
+        $this->requestParameters['MobilePhone'] = $mobilePhone;
+        $this->queryParameters['MobilePhone'] = $mobilePhone;
 
-	public function setDisplayName($displayName) {
-		$this->displayName = $displayName;
-		$this->queryParameters["DisplayName"]=$displayName;
-	}
+        return $this;
+    }
 
-	public function getMobilePhone() {
-		return $this->mobilePhone;
-	}
+    /**
+     * @param string $email
+     *
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->requestParameters['Email'] = $email;
+        $this->queryParameters['Email'] = $email;
 
-	public function setMobilePhone($mobilePhone) {
-		$this->mobilePhone = $mobilePhone;
-		$this->queryParameters["MobilePhone"]=$mobilePhone;
-	}
+        return $this;
+    }
 
-	public function getEmail() {
-		return $this->email;
-	}
+    /**
+     * @param string $userName
+     *
+     * @return $this
+     */
+    public function setUserName($userName)
+    {
+        $this->requestParameters['UserName'] = $userName;
+        $this->queryParameters['UserName'] = $userName;
 
-	public function setEmail($email) {
-		$this->email = $email;
-		$this->queryParameters["Email"]=$email;
-	}
-
-	public function getUserName() {
-		return $this->userName;
-	}
-
-	public function setUserName($userName) {
-		$this->userName = $userName;
-		$this->queryParameters["UserName"]=$userName;
-	}
-	
+        return $this;
+    }
 }
