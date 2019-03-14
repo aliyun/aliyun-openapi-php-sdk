@@ -1,118 +1,141 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace hsm\Request\V20180111;
 
+/**
+ * Request of CreateInstance
+ *
+ * @method string getPeriod()
+ * @method string getPeriodUnit()
+ * @method string getResourceOwnerId()
+ * @method string getQuantity()
+ * @method string getHsmDeviceType()
+ * @method string getClientToken()
+ * @method string getZoneId()
+ * @method string getHsmOem()
+ */
 class CreateInstanceRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("hsm", "2018-01-11", "CreateInstance", "hsm", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $period;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $periodUnit;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'hsm',
+            '2018-01-11',
+            'CreateInstance',
+            'hsm'
+        );
+    }
 
-	private  $resourceOwnerId;
+    /**
+     * @param string $period
+     *
+     * @return $this
+     */
+    public function setPeriod($period)
+    {
+        $this->requestParameters['Period'] = $period;
+        $this->queryParameters['Period'] = $period;
 
-	private  $quantity;
+        return $this;
+    }
 
-	private  $hsmDeviceType;
+    /**
+     * @param string $periodUnit
+     *
+     * @return $this
+     */
+    public function setPeriodUnit($periodUnit)
+    {
+        $this->requestParameters['PeriodUnit'] = $periodUnit;
+        $this->queryParameters['PeriodUnit'] = $periodUnit;
 
-	private  $clientToken;
+        return $this;
+    }
 
-	private  $zoneId;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $hsmOem;
+        return $this;
+    }
 
-	public function getPeriod() {
-		return $this->period;
-	}
+    /**
+     * @param string $quantity
+     *
+     * @return $this
+     */
+    public function setQuantity($quantity)
+    {
+        $this->requestParameters['Quantity'] = $quantity;
+        $this->queryParameters['Quantity'] = $quantity;
 
-	public function setPeriod($period) {
-		$this->period = $period;
-		$this->queryParameters["Period"]=$period;
-	}
+        return $this;
+    }
 
-	public function getPeriodUnit() {
-		return $this->periodUnit;
-	}
+    /**
+     * @param string $hsmDeviceType
+     *
+     * @return $this
+     */
+    public function setHsmDeviceType($hsmDeviceType)
+    {
+        $this->requestParameters['HsmDeviceType'] = $hsmDeviceType;
+        $this->queryParameters['HsmDeviceType'] = $hsmDeviceType;
 
-	public function setPeriodUnit($periodUnit) {
-		$this->periodUnit = $periodUnit;
-		$this->queryParameters["PeriodUnit"]=$periodUnit;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+    /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getQuantity() {
-		return $this->quantity;
-	}
+    /**
+     * @param string $zoneId
+     *
+     * @return $this
+     */
+    public function setZoneId($zoneId)
+    {
+        $this->requestParameters['ZoneId'] = $zoneId;
+        $this->queryParameters['ZoneId'] = $zoneId;
 
-	public function setQuantity($quantity) {
-		$this->quantity = $quantity;
-		$this->queryParameters["Quantity"]=$quantity;
-	}
+        return $this;
+    }
 
-	public function getHsmDeviceType() {
-		return $this->hsmDeviceType;
-	}
+    /**
+     * @param string $hsmOem
+     *
+     * @return $this
+     */
+    public function setHsmOem($hsmOem)
+    {
+        $this->requestParameters['HsmOem'] = $hsmOem;
+        $this->queryParameters['HsmOem'] = $hsmOem;
 
-	public function setHsmDeviceType($hsmDeviceType) {
-		$this->hsmDeviceType = $hsmDeviceType;
-		$this->queryParameters["HsmDeviceType"]=$hsmDeviceType;
-	}
-
-	public function getClientToken() {
-		return $this->clientToken;
-	}
-
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
-
-	public function getZoneId() {
-		return $this->zoneId;
-	}
-
-	public function setZoneId($zoneId) {
-		$this->zoneId = $zoneId;
-		$this->queryParameters["ZoneId"]=$zoneId;
-	}
-
-	public function getHsmOem() {
-		return $this->hsmOem;
-	}
-
-	public function setHsmOem($hsmOem) {
-		$this->hsmOem = $hsmOem;
-		$this->queryParameters["HsmOem"]=$hsmOem;
-	}
-	
+        return $this;
+    }
 }

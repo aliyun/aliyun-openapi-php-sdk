@@ -1,85 +1,99 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace hsm\Request\V20180111;
 
+/**
+ * Request of RenewInstance
+ *
+ * @method string getPeriod()
+ * @method string getPeriodUnit()
+ * @method string getResourceOwnerId()
+ * @method string getInstanceId()
+ * @method string getClientToken()
+ */
 class RenewInstanceRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("hsm", "2018-01-11", "RenewInstance", "hsm", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $period;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $periodUnit;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'hsm',
+            '2018-01-11',
+            'RenewInstance',
+            'hsm'
+        );
+    }
 
-	private  $resourceOwnerId;
+    /**
+     * @param string $period
+     *
+     * @return $this
+     */
+    public function setPeriod($period)
+    {
+        $this->requestParameters['Period'] = $period;
+        $this->queryParameters['Period'] = $period;
 
-	private  $instanceId;
+        return $this;
+    }
 
-	private  $clientToken;
+    /**
+     * @param string $periodUnit
+     *
+     * @return $this
+     */
+    public function setPeriodUnit($periodUnit)
+    {
+        $this->requestParameters['PeriodUnit'] = $periodUnit;
+        $this->queryParameters['PeriodUnit'] = $periodUnit;
 
-	public function getPeriod() {
-		return $this->period;
-	}
+        return $this;
+    }
 
-	public function setPeriod($period) {
-		$this->period = $period;
-		$this->queryParameters["Period"]=$period;
-	}
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	public function getPeriodUnit() {
-		return $this->periodUnit;
-	}
+        return $this;
+    }
 
-	public function setPeriodUnit($periodUnit) {
-		$this->periodUnit = $periodUnit;
-		$this->queryParameters["PeriodUnit"]=$periodUnit;
-	}
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+    /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
 
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
-
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
-
-	public function getClientToken() {
-		return $this->clientToken;
-	}
-
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
-	
+        return $this;
+    }
 }
