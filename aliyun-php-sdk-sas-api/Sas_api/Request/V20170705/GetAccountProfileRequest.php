@@ -1,162 +1,197 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Sas_api\Request\V20170705;
 
+/**
+ * Request of GetAccountProfile
+ *
+ * @method string getDeviceIdMd5()
+ * @method string getCarrier()
+ * @method string getOs()
+ * @method string getPhone()
+ * @method string getRequestUrl()
+ * @method string getIp()
+ * @method string getUserAgent()
+ * @method string getConnectionType()
+ * @method string getSensType()
+ * @method string getDeviceType()
+ * @method string getAccessTimestamp()
+ * @method string getBusinessType()
+ */
 class GetAccountProfileRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Sas-api", "2017-07-05", "GetAccountProfile");
-		$this->setMethod("POST");
-	}
 
-	private  $deviceIdMd5;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $carrier;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Sas-api',
+            '2017-07-05',
+            'GetAccountProfile',
+            'sas-api'
+        );
+    }
 
-	private  $os;
+    /**
+     * @param string $deviceIdMd5
+     *
+     * @return $this
+     */
+    public function setDeviceIdMd5($deviceIdMd5)
+    {
+        $this->requestParameters['DeviceIdMd5'] = $deviceIdMd5;
+        $this->queryParameters['DeviceIdMd5'] = $deviceIdMd5;
 
-	private  $phone;
+        return $this;
+    }
 
-	private  $requestUrl;
+    /**
+     * @param string $carrier
+     *
+     * @return $this
+     */
+    public function setCarrier($carrier)
+    {
+        $this->requestParameters['Carrier'] = $carrier;
+        $this->queryParameters['Carrier'] = $carrier;
 
-	private  $ip;
+        return $this;
+    }
 
-	private  $userAgent;
+    /**
+     * @param string $os
+     *
+     * @return $this
+     */
+    public function setOs($os)
+    {
+        $this->requestParameters['Os'] = $os;
+        $this->queryParameters['Os'] = $os;
 
-	private  $connectionType;
+        return $this;
+    }
 
-	private  $sensType;
+    /**
+     * @param string $phone
+     *
+     * @return $this
+     */
+    public function setPhone($phone)
+    {
+        $this->requestParameters['Phone'] = $phone;
+        $this->queryParameters['Phone'] = $phone;
 
-	private  $deviceType;
+        return $this;
+    }
 
-	private  $accessTimestamp;
+    /**
+     * @param string $requestUrl
+     *
+     * @return $this
+     */
+    public function setRequestUrl($requestUrl)
+    {
+        $this->requestParameters['RequestUrl'] = $requestUrl;
+        $this->queryParameters['RequestUrl'] = $requestUrl;
 
-	private  $businessType;
+        return $this;
+    }
 
-	public function getDeviceIdMd5() {
-		return $this->deviceIdMd5;
-	}
+    /**
+     * @param string $ip
+     *
+     * @return $this
+     */
+    public function setIp($ip)
+    {
+        $this->requestParameters['Ip'] = $ip;
+        $this->queryParameters['Ip'] = $ip;
 
-	public function setDeviceIdMd5($deviceIdMd5) {
-		$this->deviceIdMd5 = $deviceIdMd5;
-		$this->queryParameters["DeviceIdMd5"]=$deviceIdMd5;
-	}
+        return $this;
+    }
 
-	public function getCarrier() {
-		return $this->carrier;
-	}
+    /**
+     * @param string $userAgent
+     *
+     * @return $this
+     */
+    public function setUserAgent($userAgent)
+    {
+        $this->requestParameters['UserAgent'] = $userAgent;
+        $this->queryParameters['UserAgent'] = $userAgent;
 
-	public function setCarrier($carrier) {
-		$this->carrier = $carrier;
-		$this->queryParameters["Carrier"]=$carrier;
-	}
+        return $this;
+    }
 
-	public function getOs() {
-		return $this->os;
-	}
+    /**
+     * @param string $connectionType
+     *
+     * @return $this
+     */
+    public function setConnectionType($connectionType)
+    {
+        $this->requestParameters['ConnectionType'] = $connectionType;
+        $this->queryParameters['ConnectionType'] = $connectionType;
 
-	public function setOs($os) {
-		$this->os = $os;
-		$this->queryParameters["Os"]=$os;
-	}
+        return $this;
+    }
 
-	public function getPhone() {
-		return $this->phone;
-	}
+    /**
+     * @param string $sensType
+     *
+     * @return $this
+     */
+    public function setSensType($sensType)
+    {
+        $this->requestParameters['SensType'] = $sensType;
+        $this->queryParameters['SensType'] = $sensType;
 
-	public function setPhone($phone) {
-		$this->phone = $phone;
-		$this->queryParameters["Phone"]=$phone;
-	}
+        return $this;
+    }
 
-	public function getRequestUrl() {
-		return $this->requestUrl;
-	}
+    /**
+     * @param string $deviceType
+     *
+     * @return $this
+     */
+    public function setDeviceType($deviceType)
+    {
+        $this->requestParameters['DeviceType'] = $deviceType;
+        $this->queryParameters['DeviceType'] = $deviceType;
 
-	public function setRequestUrl($requestUrl) {
-		$this->requestUrl = $requestUrl;
-		$this->queryParameters["RequestUrl"]=$requestUrl;
-	}
+        return $this;
+    }
 
-	public function getIp() {
-		return $this->ip;
-	}
+    /**
+     * @param string $accessTimestamp
+     *
+     * @return $this
+     */
+    public function setAccessTimestamp($accessTimestamp)
+    {
+        $this->requestParameters['AccessTimestamp'] = $accessTimestamp;
+        $this->queryParameters['AccessTimestamp'] = $accessTimestamp;
 
-	public function setIp($ip) {
-		$this->ip = $ip;
-		$this->queryParameters["Ip"]=$ip;
-	}
+        return $this;
+    }
 
-	public function getUserAgent() {
-		return $this->userAgent;
-	}
+    /**
+     * @param string $businessType
+     *
+     * @return $this
+     */
+    public function setBusinessType($businessType)
+    {
+        $this->requestParameters['BusinessType'] = $businessType;
+        $this->queryParameters['BusinessType'] = $businessType;
 
-	public function setUserAgent($userAgent) {
-		$this->userAgent = $userAgent;
-		$this->queryParameters["UserAgent"]=$userAgent;
-	}
-
-	public function getConnectionType() {
-		return $this->connectionType;
-	}
-
-	public function setConnectionType($connectionType) {
-		$this->connectionType = $connectionType;
-		$this->queryParameters["ConnectionType"]=$connectionType;
-	}
-
-	public function getSensType() {
-		return $this->sensType;
-	}
-
-	public function setSensType($sensType) {
-		$this->sensType = $sensType;
-		$this->queryParameters["SensType"]=$sensType;
-	}
-
-	public function getDeviceType() {
-		return $this->deviceType;
-	}
-
-	public function setDeviceType($deviceType) {
-		$this->deviceType = $deviceType;
-		$this->queryParameters["DeviceType"]=$deviceType;
-	}
-
-	public function getAccessTimestamp() {
-		return $this->accessTimestamp;
-	}
-
-	public function setAccessTimestamp($accessTimestamp) {
-		$this->accessTimestamp = $accessTimestamp;
-		$this->queryParameters["AccessTimestamp"]=$accessTimestamp;
-	}
-
-	public function getBusinessType() {
-		return $this->businessType;
-	}
-
-	public function setBusinessType($businessType) {
-		$this->businessType = $businessType;
-		$this->queryParameters["BusinessType"]=$businessType;
-	}
-	
+        return $this;
+    }
 }

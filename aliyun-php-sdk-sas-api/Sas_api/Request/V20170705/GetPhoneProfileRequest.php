@@ -1,74 +1,85 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Sas_api\Request\V20170705;
 
+/**
+ * Request of GetPhoneProfile
+ *
+ * @method string getPhone()
+ * @method string getSensType()
+ * @method string getDataVersion()
+ * @method string getBusinessType()
+ */
 class GetPhoneProfileRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Sas-api", "2017-07-05", "GetPhoneProfile");
-		$this->setMethod("POST");
-	}
 
-	private  $phone;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $sensType;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Sas-api',
+            '2017-07-05',
+            'GetPhoneProfile',
+            'sas-api'
+        );
+    }
 
-	private  $dataVersion;
+    /**
+     * @param string $phone
+     *
+     * @return $this
+     */
+    public function setPhone($phone)
+    {
+        $this->requestParameters['Phone'] = $phone;
+        $this->queryParameters['Phone'] = $phone;
 
-	private  $businessType;
+        return $this;
+    }
 
-	public function getPhone() {
-		return $this->phone;
-	}
+    /**
+     * @param string $sensType
+     *
+     * @return $this
+     */
+    public function setSensType($sensType)
+    {
+        $this->requestParameters['SensType'] = $sensType;
+        $this->queryParameters['SensType'] = $sensType;
 
-	public function setPhone($phone) {
-		$this->phone = $phone;
-		$this->queryParameters["Phone"]=$phone;
-	}
+        return $this;
+    }
 
-	public function getSensType() {
-		return $this->sensType;
-	}
+    /**
+     * @param string $dataVersion
+     *
+     * @return $this
+     */
+    public function setDataVersion($dataVersion)
+    {
+        $this->requestParameters['DataVersion'] = $dataVersion;
+        $this->queryParameters['DataVersion'] = $dataVersion;
 
-	public function setSensType($sensType) {
-		$this->sensType = $sensType;
-		$this->queryParameters["SensType"]=$sensType;
-	}
+        return $this;
+    }
 
-	public function getDataVersion() {
-		return $this->dataVersion;
-	}
+    /**
+     * @param string $businessType
+     *
+     * @return $this
+     */
+    public function setBusinessType($businessType)
+    {
+        $this->requestParameters['BusinessType'] = $businessType;
+        $this->queryParameters['BusinessType'] = $businessType;
 
-	public function setDataVersion($dataVersion) {
-		$this->dataVersion = $dataVersion;
-		$this->queryParameters["DataVersion"]=$dataVersion;
-	}
-
-	public function getBusinessType() {
-		return $this->businessType;
-	}
-
-	public function setBusinessType($businessType) {
-		$this->businessType = $businessType;
-		$this->queryParameters["BusinessType"]=$businessType;
-	}
-	
+        return $this;
+    }
 }
