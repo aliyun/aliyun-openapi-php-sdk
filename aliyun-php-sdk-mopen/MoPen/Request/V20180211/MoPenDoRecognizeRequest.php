@@ -1,101 +1,132 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace MoPen\Request\V20180211;
 
+/**
+ * Request of MoPenDoRecognize
+ *
+ * @method string getCanvasId()
+ * @method string getEndY()
+ * @method string getEndX()
+ * @method string getJsonConf()
+ * @method string getExportType()
+ * @method string getStartY()
+ * @method string getStartX()
+ */
 class MoPenDoRecognizeRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("MoPen", "2018-02-11", "MoPenDoRecognize");
-		$this->setProtocol("https");
-		$this->setMethod("POST");
-	}
 
-	private  $canvasId;
+    /**
+     * @var string
+     */
+    protected $requestScheme = 'https';
 
-	private  $endY;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $endX;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'MoPen',
+            '2018-02-11',
+            'MoPenDoRecognize',
+            'mopen'
+        );
+    }
 
-	private  $jsonConf;
+    /**
+     * @param string $canvasId
+     *
+     * @return $this
+     */
+    public function setCanvasId($canvasId)
+    {
+        $this->requestParameters['CanvasId'] = $canvasId;
+        $this->queryParameters['CanvasId'] = $canvasId;
 
-	private  $exportType;
+        return $this;
+    }
 
-	private  $startY;
+    /**
+     * @param string $endY
+     *
+     * @return $this
+     */
+    public function setEndY($endY)
+    {
+        $this->requestParameters['EndY'] = $endY;
+        $this->queryParameters['EndY'] = $endY;
 
-	private  $startX;
+        return $this;
+    }
 
-	public function getCanvasId() {
-		return $this->canvasId;
-	}
+    /**
+     * @param string $endX
+     *
+     * @return $this
+     */
+    public function setEndX($endX)
+    {
+        $this->requestParameters['EndX'] = $endX;
+        $this->queryParameters['EndX'] = $endX;
 
-	public function setCanvasId($canvasId) {
-		$this->canvasId = $canvasId;
-		}
+        return $this;
+    }
 
-	public function getEndY() {
-		return $this->endY;
-	}
+    /**
+     * @param string $jsonConf
+     *
+     * @return $this
+     */
+    public function setJsonConf($jsonConf)
+    {
+        $this->requestParameters['JsonConf'] = $jsonConf;
+        $this->queryParameters['JsonConf'] = $jsonConf;
 
-	public function setEndY($endY) {
-		$this->endY = $endY;
-		}
+        return $this;
+    }
 
-	public function getEndX() {
-		return $this->endX;
-	}
+    /**
+     * @param string $exportType
+     *
+     * @return $this
+     */
+    public function setExportType($exportType)
+    {
+        $this->requestParameters['ExportType'] = $exportType;
+        $this->queryParameters['ExportType'] = $exportType;
 
-	public function setEndX($endX) {
-		$this->endX = $endX;
-		}
+        return $this;
+    }
 
-	public function getJsonConf() {
-		return $this->jsonConf;
-	}
+    /**
+     * @param string $startY
+     *
+     * @return $this
+     */
+    public function setStartY($startY)
+    {
+        $this->requestParameters['StartY'] = $startY;
+        $this->queryParameters['StartY'] = $startY;
 
-	public function setJsonConf($jsonConf) {
-		$this->jsonConf = $jsonConf;
-		}
+        return $this;
+    }
 
-	public function getExportType() {
-		return $this->exportType;
-	}
+    /**
+     * @param string $startX
+     *
+     * @return $this
+     */
+    public function setStartX($startX)
+    {
+        $this->requestParameters['StartX'] = $startX;
+        $this->queryParameters['StartX'] = $startX;
 
-	public function setExportType($exportType) {
-		$this->exportType = $exportType;
-		}
-
-	public function getStartY() {
-		return $this->startY;
-	}
-
-	public function setStartY($startY) {
-		$this->startY = $startY;
-		}
-
-	public function getStartX() {
-		return $this->startX;
-	}
-
-	public function setStartX($startX) {
-		$this->startX = $startX;
-		}
-	
+        return $this;
+    }
 }
