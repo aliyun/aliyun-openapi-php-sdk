@@ -29,7 +29,7 @@ class UpdateCategoryNameRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'UpdateCategoryName',
-            'Mts'
+            'mts'
         );
     }
 

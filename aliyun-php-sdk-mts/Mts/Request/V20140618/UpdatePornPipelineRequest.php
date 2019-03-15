@@ -32,7 +32,7 @@ class UpdatePornPipelineRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'UpdatePornPipeline',
-            'Mts'
+            'mts'
         );
     }
 

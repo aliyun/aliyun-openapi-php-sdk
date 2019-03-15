@@ -30,7 +30,7 @@ class QueryMediaCensorJobDetailRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'QueryMediaCensorJobDetail',
-            'Mts'
+            'mts'
         );
     }
 

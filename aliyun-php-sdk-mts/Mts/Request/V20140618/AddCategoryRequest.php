@@ -29,7 +29,7 @@ class AddCategoryRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'AddCategory',
-            'Mts'
+            'mts'
         );
     }
 

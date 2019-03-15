@@ -29,7 +29,7 @@ class BindOutputBucketRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'BindOutputBucket',
-            'Mts'
+            'mts'
         );
     }
 

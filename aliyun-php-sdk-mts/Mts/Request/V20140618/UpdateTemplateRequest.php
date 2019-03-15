@@ -34,7 +34,7 @@ class UpdateTemplateRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'UpdateTemplate',
-            'Mts'
+            'mts'
         );
     }
 

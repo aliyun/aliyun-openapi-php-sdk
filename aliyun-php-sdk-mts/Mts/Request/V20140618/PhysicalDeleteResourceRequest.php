@@ -34,7 +34,7 @@ class PhysicalDeleteResourceRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'PhysicalDeleteResource',
-            'Mts'
+            'mts'
         );
     }
 

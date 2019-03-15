@@ -28,7 +28,7 @@ class DeleteMediaWorkflowRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'DeleteMediaWorkflow',
-            'Mts'
+            'mts'
         );
     }
 

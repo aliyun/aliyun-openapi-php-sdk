@@ -28,7 +28,7 @@ class QueryCensorPipelineListRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'QueryCensorPipelineList',
-            'Mts'
+            'mts'
         );
     }
 

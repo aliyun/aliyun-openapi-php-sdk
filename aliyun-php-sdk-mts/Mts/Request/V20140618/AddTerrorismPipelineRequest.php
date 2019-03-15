@@ -30,7 +30,7 @@ class AddTerrorismPipelineRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'AddTerrorismPipeline',
-            'Mts'
+            'mts'
         );
     }
 

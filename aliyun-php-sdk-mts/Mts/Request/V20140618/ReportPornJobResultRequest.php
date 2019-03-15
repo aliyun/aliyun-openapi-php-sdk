@@ -30,7 +30,7 @@ class ReportPornJobResultRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'ReportPornJobResult',
-            'Mts'
+            'mts'
         );
     }
 

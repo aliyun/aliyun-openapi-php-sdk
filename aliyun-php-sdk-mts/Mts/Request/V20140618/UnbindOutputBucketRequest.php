@@ -28,7 +28,7 @@ class UnbindOutputBucketRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'UnbindOutputBucket',
-            'Mts'
+            'mts'
         );
     }
 

@@ -30,7 +30,7 @@ class ListTerrorismPipelineRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'ListTerrorismPipeline',
-            'Mts'
+            'mts'
         );
     }
 

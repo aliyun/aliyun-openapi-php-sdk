@@ -28,7 +28,7 @@ class RefreshCdnDomainConfigsCacheRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'RefreshCdnDomainConfigsCache',
-            'Mts'
+            'mts'
         );
     }
 

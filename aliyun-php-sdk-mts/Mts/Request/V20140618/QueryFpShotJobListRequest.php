@@ -35,7 +35,7 @@ class QueryFpShotJobListRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'QueryFpShotJobList',
-            'Mts'
+            'mts'
         );
     }
 

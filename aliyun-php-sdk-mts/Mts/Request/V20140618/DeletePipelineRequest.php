@@ -28,7 +28,7 @@ class DeletePipelineRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'DeletePipeline',
-            'Mts'
+            'mts'
         );
     }
 

@@ -28,7 +28,7 @@ class QueryVideoSplitJobListRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'QueryVideoSplitJobList',
-            'Mts'
+            'mts'
         );
     }
 

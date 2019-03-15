@@ -28,7 +28,7 @@ class DeleteMcuJobRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'DeleteMcuJob',
-            'Mts'
+            'mts'
         );
     }
 

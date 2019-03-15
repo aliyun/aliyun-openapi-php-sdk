@@ -31,7 +31,7 @@ class SubmitAsrJobRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'SubmitAsrJob',
-            'Mts'
+            'mts'
         );
     }
 

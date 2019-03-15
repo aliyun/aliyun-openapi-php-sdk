@@ -30,7 +30,7 @@ class ReportFpShotJobResultRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'ReportFpShotJobResult',
-            'Mts'
+            'mts'
         );
     }
 

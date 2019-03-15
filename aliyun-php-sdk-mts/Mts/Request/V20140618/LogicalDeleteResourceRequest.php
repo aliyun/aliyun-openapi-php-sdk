@@ -34,7 +34,7 @@ class LogicalDeleteResourceRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'LogicalDeleteResource',
-            'Mts'
+            'mts'
         );
     }
 

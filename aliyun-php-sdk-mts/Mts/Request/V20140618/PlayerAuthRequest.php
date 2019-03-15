@@ -27,7 +27,7 @@ class PlayerAuthRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'PlayerAuth',
-            'Mts'
+            'mts'
         );
     }
 

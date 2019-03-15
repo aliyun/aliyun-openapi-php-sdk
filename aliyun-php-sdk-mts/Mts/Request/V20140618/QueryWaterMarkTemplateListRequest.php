@@ -28,7 +28,7 @@ class QueryWaterMarkTemplateListRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'QueryWaterMarkTemplateList',
-            'Mts'
+            'mts'
         );
     }
 

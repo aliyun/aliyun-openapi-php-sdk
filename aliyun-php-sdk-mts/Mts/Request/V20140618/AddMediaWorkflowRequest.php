@@ -30,7 +30,7 @@ class AddMediaWorkflowRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'AddMediaWorkflow',
-            'Mts'
+            'mts'
         );
     }
 

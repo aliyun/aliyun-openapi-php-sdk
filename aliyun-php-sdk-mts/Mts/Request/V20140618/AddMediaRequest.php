@@ -37,7 +37,7 @@ class AddMediaRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'AddMedia',
-            'Mts'
+            'mts'
         );
     }
 

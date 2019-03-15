@@ -28,7 +28,7 @@ class GetPackageRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'GetPackage',
-            'Mts'
+            'mts'
         );
     }
 

@@ -32,7 +32,7 @@ class QueryMediaListRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'QueryMediaList',
-            'Mts'
+            'mts'
         );
     }
 

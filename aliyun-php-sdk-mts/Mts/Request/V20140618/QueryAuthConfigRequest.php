@@ -27,7 +27,7 @@ class QueryAuthConfigRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'QueryAuthConfig',
-            'Mts'
+            'mts'
         );
     }
 

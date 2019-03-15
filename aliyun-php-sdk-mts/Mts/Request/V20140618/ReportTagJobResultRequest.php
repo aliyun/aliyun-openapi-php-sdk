@@ -30,7 +30,7 @@ class ReportTagJobResultRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'ReportTagJobResult',
-            'Mts'
+            'mts'
         );
     }
 

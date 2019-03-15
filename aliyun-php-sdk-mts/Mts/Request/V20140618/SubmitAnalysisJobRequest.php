@@ -32,7 +32,7 @@ class SubmitAnalysisJobRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'SubmitAnalysisJob',
-            'Mts'
+            'mts'
         );
     }
 

@@ -29,7 +29,7 @@ class UpdateMediaWorkflowTriggerModeRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'UpdateMediaWorkflowTriggerMode',
-            'Mts'
+            'mts'
         );
     }
 

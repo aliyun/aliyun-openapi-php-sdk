@@ -28,7 +28,7 @@ class QuerySubtitleJobListRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'QuerySubtitleJobList',
-            'Mts'
+            'mts'
         );
     }
 

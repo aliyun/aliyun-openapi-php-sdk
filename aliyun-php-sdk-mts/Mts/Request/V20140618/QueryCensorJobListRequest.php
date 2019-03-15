@@ -28,7 +28,7 @@ class QueryCensorJobListRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'QueryCensorJobList',
-            'Mts'
+            'mts'
         );
     }
 

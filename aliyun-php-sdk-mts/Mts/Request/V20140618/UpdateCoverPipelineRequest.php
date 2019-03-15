@@ -33,7 +33,7 @@ class UpdateCoverPipelineRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'UpdateCoverPipeline',
-            'Mts'
+            'mts'
         );
     }
 

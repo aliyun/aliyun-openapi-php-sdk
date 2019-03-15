@@ -31,7 +31,7 @@ class QueryFpImportResultRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'QueryFpImportResult',
-            'Mts'
+            'mts'
         );
     }
 

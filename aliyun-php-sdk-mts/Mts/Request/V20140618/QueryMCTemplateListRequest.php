@@ -28,7 +28,7 @@ class QueryMCTemplateListRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'QueryMCTemplateList',
-            'Mts'
+            'mts'
         );
     }
 

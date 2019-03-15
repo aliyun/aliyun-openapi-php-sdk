@@ -30,7 +30,7 @@ class RegisterMediaDetailScenarioRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'RegisterMediaDetailScenario',
-            'Mts'
+            'mts'
         );
     }
 

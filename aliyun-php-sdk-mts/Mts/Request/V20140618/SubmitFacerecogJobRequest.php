@@ -31,7 +31,7 @@ class SubmitFacerecogJobRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'SubmitFacerecogJob',
-            'Mts'
+            'mts'
         );
     }
 

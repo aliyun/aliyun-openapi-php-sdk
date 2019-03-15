@@ -29,7 +29,7 @@ class SetAuthConfigRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'SetAuthConfig',
-            'Mts'
+            'mts'
         );
     }
 

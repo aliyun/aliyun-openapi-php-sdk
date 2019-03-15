@@ -32,7 +32,7 @@ class UpdateAsrPipelineRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'UpdateAsrPipeline',
-            'Mts'
+            'mts'
         );
     }
 

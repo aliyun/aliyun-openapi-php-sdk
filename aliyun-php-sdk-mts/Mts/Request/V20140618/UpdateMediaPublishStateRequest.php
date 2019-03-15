@@ -29,7 +29,7 @@ class UpdateMediaPublishStateRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'UpdateMediaPublishState',
-            'Mts'
+            'mts'
         );
     }
 

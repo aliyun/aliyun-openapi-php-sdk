@@ -29,7 +29,7 @@ class AddWaterMarkTemplateRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'AddWaterMarkTemplate',
-            'Mts'
+            'mts'
         );
     }
 

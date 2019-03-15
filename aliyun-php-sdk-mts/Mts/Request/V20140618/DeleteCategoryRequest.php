@@ -28,7 +28,7 @@ class DeleteCategoryRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'DeleteCategory',
-            'Mts'
+            'mts'
         );
     }
 

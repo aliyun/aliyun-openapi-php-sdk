@@ -30,7 +30,7 @@ class ReportFacerecogJobResultRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'ReportFacerecogJobResult',
-            'Mts'
+            'mts'
         );
     }
 

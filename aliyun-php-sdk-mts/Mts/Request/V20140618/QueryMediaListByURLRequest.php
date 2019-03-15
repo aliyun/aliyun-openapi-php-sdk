@@ -32,7 +32,7 @@ class QueryMediaListByURLRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'QueryMediaListByURL',
-            'Mts'
+            'mts'
         );
     }
 

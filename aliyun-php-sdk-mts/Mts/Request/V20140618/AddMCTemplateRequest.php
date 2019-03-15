@@ -38,7 +38,7 @@ class AddMCTemplateRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'AddMCTemplate',
-            'Mts'
+            'mts'
         );
     }
 

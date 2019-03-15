@@ -30,7 +30,7 @@ class ListCoverPipelineRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'ListCoverPipeline',
-            'Mts'
+            'mts'
         );
     }
 

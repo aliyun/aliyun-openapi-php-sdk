@@ -37,7 +37,7 @@ class SearchMediaRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'SearchMedia',
-            'Mts'
+            'mts'
         );
     }
 

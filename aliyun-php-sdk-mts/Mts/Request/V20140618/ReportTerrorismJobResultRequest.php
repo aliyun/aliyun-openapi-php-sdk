@@ -30,7 +30,7 @@ class ReportTerrorismJobResultRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'ReportTerrorismJobResult',
-            'Mts'
+            'mts'
         );
     }
 

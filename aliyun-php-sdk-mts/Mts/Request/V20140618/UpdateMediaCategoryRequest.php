@@ -29,7 +29,7 @@ class UpdateMediaCategoryRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'UpdateMediaCategory',
-            'Mts'
+            'mts'
         );
     }
 

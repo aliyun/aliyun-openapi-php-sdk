@@ -31,7 +31,7 @@ class SubmitAnnotationJobRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'SubmitAnnotationJob',
-            'Mts'
+            'mts'
         );
     }
 

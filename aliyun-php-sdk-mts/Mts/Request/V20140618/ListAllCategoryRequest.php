@@ -27,7 +27,7 @@ class ListAllCategoryRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'ListAllCategory',
-            'Mts'
+            'mts'
         );
     }
 

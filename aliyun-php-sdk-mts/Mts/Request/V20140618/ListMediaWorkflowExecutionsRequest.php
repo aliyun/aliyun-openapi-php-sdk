@@ -32,7 +32,7 @@ class ListMediaWorkflowExecutionsRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'ListMediaWorkflowExecutions',
-            'Mts'
+            'mts'
         );
     }
 

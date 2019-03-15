@@ -31,7 +31,7 @@ class SubmitSnapshotJobRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'SubmitSnapshotJob',
-            'Mts'
+            'mts'
         );
     }
 

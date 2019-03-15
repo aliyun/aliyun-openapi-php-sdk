@@ -28,7 +28,7 @@ class QueryFacerecogJobListRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'QueryFacerecogJobList',
-            'Mts'
+            'mts'
         );
     }
 

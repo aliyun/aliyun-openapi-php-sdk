@@ -28,7 +28,7 @@ class QueryAnalysisJobListRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'QueryAnalysisJobList',
-            'Mts'
+            'mts'
         );
     }
 

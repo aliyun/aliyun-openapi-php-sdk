@@ -30,7 +30,7 @@ class ReportMediaDetailJobResultRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'ReportMediaDetailJobResult',
-            'Mts'
+            'mts'
         );
     }
 

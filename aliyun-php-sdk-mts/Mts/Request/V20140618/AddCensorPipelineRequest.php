@@ -30,7 +30,7 @@ class AddCensorPipelineRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'AddCensorPipeline',
-            'Mts'
+            'mts'
         );
     }
 

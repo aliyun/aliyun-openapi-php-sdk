@@ -28,7 +28,7 @@ class QueryAsrPipelineListRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'QueryAsrPipelineList',
-            'Mts'
+            'mts'
         );
     }
 

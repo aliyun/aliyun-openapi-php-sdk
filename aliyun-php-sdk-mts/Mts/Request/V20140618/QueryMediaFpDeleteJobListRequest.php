@@ -28,7 +28,7 @@ class QueryMediaFpDeleteJobListRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'QueryMediaFpDeleteJobList',
-            'Mts'
+            'mts'
         );
     }
 

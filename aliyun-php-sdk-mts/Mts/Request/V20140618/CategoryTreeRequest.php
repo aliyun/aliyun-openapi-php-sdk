@@ -27,7 +27,7 @@ class CategoryTreeRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'CategoryTree',
-            'Mts'
+            'mts'
         );
     }
 

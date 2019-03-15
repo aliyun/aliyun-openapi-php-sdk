@@ -28,7 +28,7 @@ class QueryImageSearchJobListRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'QueryImageSearchJobList',
-            'Mts'
+            'mts'
         );
     }
 

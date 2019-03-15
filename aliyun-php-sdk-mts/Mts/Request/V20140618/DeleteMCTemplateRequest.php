@@ -28,7 +28,7 @@ class DeleteMCTemplateRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'DeleteMCTemplate',
-            'Mts'
+            'mts'
         );
     }
 

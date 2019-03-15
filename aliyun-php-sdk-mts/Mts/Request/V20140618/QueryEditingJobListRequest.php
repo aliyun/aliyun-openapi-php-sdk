@@ -28,7 +28,7 @@ class QueryEditingJobListRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'QueryEditingJobList',
-            'Mts'
+            'mts'
         );
     }
 

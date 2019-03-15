@@ -32,7 +32,7 @@ class GetLicenseRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'GetLicense',
-            'Mts'
+            'mts'
         );
     }
 

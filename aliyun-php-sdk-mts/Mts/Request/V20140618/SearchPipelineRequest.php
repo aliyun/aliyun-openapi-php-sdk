@@ -30,7 +30,7 @@ class SearchPipelineRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'SearchPipeline',
-            'Mts'
+            'mts'
         );
     }
 

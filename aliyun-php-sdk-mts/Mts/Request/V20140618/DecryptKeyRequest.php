@@ -29,7 +29,7 @@ class DecryptKeyRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'DecryptKey',
-            'Mts'
+            'mts'
         );
     }
 

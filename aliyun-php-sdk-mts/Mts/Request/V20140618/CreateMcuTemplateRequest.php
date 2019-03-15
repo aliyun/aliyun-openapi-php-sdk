@@ -28,7 +28,7 @@ class CreateMcuTemplateRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'CreateMcuTemplate',
-            'Mts'
+            'mts'
         );
     }
 

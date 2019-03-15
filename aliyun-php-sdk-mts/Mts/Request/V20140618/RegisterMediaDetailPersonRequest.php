@@ -31,7 +31,7 @@ class RegisterMediaDetailPersonRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'RegisterMediaDetailPerson',
-            'Mts'
+            'mts'
         );
     }
 

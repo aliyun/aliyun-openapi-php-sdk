@@ -30,7 +30,7 @@ class AddAsrPipelineRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'AddAsrPipeline',
-            'Mts'
+            'mts'
         );
     }
 

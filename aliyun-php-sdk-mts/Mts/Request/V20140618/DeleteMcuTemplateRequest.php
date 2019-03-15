@@ -28,7 +28,7 @@ class DeleteMcuTemplateRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'DeleteMcuTemplate',
-            'Mts'
+            'mts'
         );
     }
 

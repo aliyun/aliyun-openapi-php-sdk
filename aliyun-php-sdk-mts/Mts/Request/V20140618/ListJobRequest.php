@@ -33,7 +33,7 @@ class ListJobRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'ListJob',
-            'Mts'
+            'mts'
         );
     }
 

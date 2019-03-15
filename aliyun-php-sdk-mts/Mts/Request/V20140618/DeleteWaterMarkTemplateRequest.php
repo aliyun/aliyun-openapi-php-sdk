@@ -28,7 +28,7 @@ class DeleteWaterMarkTemplateRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'DeleteWaterMarkTemplate',
-            'Mts'
+            'mts'
         );
     }
 

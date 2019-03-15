@@ -28,7 +28,7 @@ class QueryVideoGifJobListRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'QueryVideoGifJobList',
-            'Mts'
+            'mts'
         );
     }
 

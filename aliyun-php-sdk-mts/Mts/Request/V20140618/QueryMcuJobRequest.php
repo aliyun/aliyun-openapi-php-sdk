@@ -28,7 +28,7 @@ class QueryMcuJobRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'QueryMcuJob',
-            'Mts'
+            'mts'
         );
     }
 

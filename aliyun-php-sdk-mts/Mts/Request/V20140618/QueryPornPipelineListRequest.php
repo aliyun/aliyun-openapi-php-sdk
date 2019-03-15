@@ -28,7 +28,7 @@ class QueryPornPipelineListRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'QueryPornPipelineList',
-            'Mts'
+            'mts'
         );
     }
 

@@ -31,7 +31,7 @@ class SubmitTagJobRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'SubmitTagJob',
-            'Mts'
+            'mts'
         );
     }
 

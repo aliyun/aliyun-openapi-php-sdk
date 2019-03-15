@@ -29,7 +29,7 @@ class AddMediaTagRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'AddMediaTag',
-            'Mts'
+            'mts'
         );
     }
 

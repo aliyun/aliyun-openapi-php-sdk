@@ -31,7 +31,7 @@ class SubmitVideoSummaryJobRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'SubmitVideoSummaryJob',
-            'Mts'
+            'mts'
         );
     }
 

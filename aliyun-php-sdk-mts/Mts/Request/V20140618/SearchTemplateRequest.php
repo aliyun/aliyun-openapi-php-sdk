@@ -30,7 +30,7 @@ class SearchTemplateRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'SearchTemplate',
-            'Mts'
+            'mts'
         );
     }
 

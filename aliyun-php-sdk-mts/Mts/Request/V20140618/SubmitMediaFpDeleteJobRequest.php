@@ -31,7 +31,7 @@ class SubmitMediaFpDeleteJobRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'SubmitMediaFpDeleteJob',
-            'Mts'
+            'mts'
         );
     }
 

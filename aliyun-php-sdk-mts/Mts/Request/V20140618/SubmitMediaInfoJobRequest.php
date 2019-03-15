@@ -31,7 +31,7 @@ class SubmitMediaInfoJobRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'SubmitMediaInfoJob',
-            'Mts'
+            'mts'
         );
     }
 

@@ -35,7 +35,7 @@ class PlayInfoRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'PlayInfo',
-            'Mts'
+            'mts'
         );
     }
 

@@ -29,7 +29,7 @@ class ListAllMediaBucketRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'ListAllMediaBucket',
-            'Mts'
+            'mts'
         );
     }
 

@@ -28,7 +28,7 @@ class QueryMediaWorkflowListRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'QueryMediaWorkflowList',
-            'Mts'
+            'mts'
         );
     }
 

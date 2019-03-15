@@ -28,7 +28,7 @@ class QueryTerrorismJobListRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'QueryTerrorismJobList',
-            'Mts'
+            'mts'
         );
     }
 

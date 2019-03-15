@@ -33,7 +33,7 @@ class SubmitImageSearchJobRequest extends \RpcAcsRequest
             'Mts',
             '2014-06-18',
             'SubmitImageSearchJob',
-            'Mts'
+            'mts'
         );
     }
 
