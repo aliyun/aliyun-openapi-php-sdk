@@ -1,107 +1,127 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Crm\Request\V20150408;
 
+/**
+ * Request of AddIdentityCertifiedForBidUser
+ *
+ * @method string getBidType()
+ * @method string getLicenseNumber()
+ * @method string getLicenseType()
+ * @method string getPhone()
+ * @method string getName()
+ * @method string getPK()
+ * @method string getIsEnterprise()
+ */
 class AddIdentityCertifiedForBidUserRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Crm", "2015-04-08", "AddIdentityCertifiedForBidUser");
-		$this->setMethod("POST");
-	}
 
-	private  $bidType;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $licenseNumber;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Crm',
+            '2015-04-08',
+            'AddIdentityCertifiedForBidUser',
+            'crm'
+        );
+    }
 
-	private  $licenseType;
+    /**
+     * @param string $bidType
+     *
+     * @return $this
+     */
+    public function setBidType($bidType)
+    {
+        $this->requestParameters['BidType'] = $bidType;
+        $this->queryParameters['BidType'] = $bidType;
 
-	private  $phone;
+        return $this;
+    }
 
-	private  $name;
+    /**
+     * @param string $licenseNumber
+     *
+     * @return $this
+     */
+    public function setLicenseNumber($licenseNumber)
+    {
+        $this->requestParameters['LicenseNumber'] = $licenseNumber;
+        $this->queryParameters['LicenseNumber'] = $licenseNumber;
 
-	private  $pK;
+        return $this;
+    }
 
-	private  $isEnterprise;
+    /**
+     * @param string $licenseType
+     *
+     * @return $this
+     */
+    public function setLicenseType($licenseType)
+    {
+        $this->requestParameters['LicenseType'] = $licenseType;
+        $this->queryParameters['LicenseType'] = $licenseType;
 
-	public function getBidType() {
-		return $this->bidType;
-	}
+        return $this;
+    }
 
-	public function setBidType($bidType) {
-		$this->bidType = $bidType;
-		$this->queryParameters["BidType"]=$bidType;
-	}
+    /**
+     * @param string $phone
+     *
+     * @return $this
+     */
+    public function setPhone($phone)
+    {
+        $this->requestParameters['Phone'] = $phone;
+        $this->queryParameters['Phone'] = $phone;
 
-	public function getLicenseNumber() {
-		return $this->licenseNumber;
-	}
+        return $this;
+    }
 
-	public function setLicenseNumber($licenseNumber) {
-		$this->licenseNumber = $licenseNumber;
-		$this->queryParameters["LicenseNumber"]=$licenseNumber;
-	}
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
-	public function getLicenseType() {
-		return $this->licenseType;
-	}
+        return $this;
+    }
 
-	public function setLicenseType($licenseType) {
-		$this->licenseType = $licenseType;
-		$this->queryParameters["LicenseType"]=$licenseType;
-	}
+    /**
+     * @param string $pK
+     *
+     * @return $this
+     */
+    public function setPK($pK)
+    {
+        $this->requestParameters['PK'] = $pK;
+        $this->queryParameters['PK'] = $pK;
 
-	public function getPhone() {
-		return $this->phone;
-	}
+        return $this;
+    }
 
-	public function setPhone($phone) {
-		$this->phone = $phone;
-		$this->queryParameters["Phone"]=$phone;
-	}
+    /**
+     * @param string $isEnterprise
+     *
+     * @return $this
+     */
+    public function setIsEnterprise($isEnterprise)
+    {
+        $this->requestParameters['IsEnterprise'] = $isEnterprise;
+        $this->queryParameters['IsEnterprise'] = $isEnterprise;
 
-	public function getName() {
-		return $this->name;
-	}
-
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
-	}
-
-	public function getPK() {
-		return $this->pK;
-	}
-
-	public function setPK($pK) {
-		$this->pK = $pK;
-		$this->queryParameters["PK"]=$pK;
-	}
-
-	public function getIsEnterprise() {
-		return $this->isEnterprise;
-	}
-
-	public function setIsEnterprise($isEnterprise) {
-		$this->isEnterprise = $isEnterprise;
-		$this->queryParameters["IsEnterprise"]=$isEnterprise;
-	}
-	
+        return $this;
+    }
 }
