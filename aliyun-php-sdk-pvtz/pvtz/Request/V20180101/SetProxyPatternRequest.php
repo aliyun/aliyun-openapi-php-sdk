@@ -3,16 +3,14 @@
 namespace pvtz\Request\V20180101;
 
 /**
- * Request of DescribeRequestGraph
+ * Request of SetProxyPattern
  *
- * @method string getVpcId()
+ * @method string getProxyPattern()
  * @method string getUserClientIp()
  * @method string getZoneId()
  * @method string getLang()
- * @method string getStartTimestamp()
- * @method string getEndTimestamp()
  */
-class DescribeRequestGraphRequest extends \RpcAcsRequest
+class SetProxyPatternRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,20 +26,20 @@ class DescribeRequestGraphRequest extends \RpcAcsRequest
         parent::__construct(
             'pvtz',
             '2018-01-01',
-            'DescribeRequestGraph',
+            'SetProxyPattern',
             'pvtz'
         );
     }
 
     /**
-     * @param string $vpcId
+     * @param string $proxyPattern
      *
      * @return $this
      */
-    public function setVpcId($vpcId)
+    public function setProxyPattern($proxyPattern)
     {
-        $this->requestParameters['VpcId'] = $vpcId;
-        $this->queryParameters['VpcId'] = $vpcId;
+        $this->requestParameters['ProxyPattern'] = $proxyPattern;
+        $this->queryParameters['ProxyPattern'] = $proxyPattern;
 
         return $this;
     }
@@ -81,32 +79,6 @@ class DescribeRequestGraphRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Lang'] = $lang;
         $this->queryParameters['Lang'] = $lang;
-
-        return $this;
-    }
-
-    /**
-     * @param string $startTimestamp
-     *
-     * @return $this
-     */
-    public function setStartTimestamp($startTimestamp)
-    {
-        $this->requestParameters['StartTimestamp'] = $startTimestamp;
-        $this->queryParameters['StartTimestamp'] = $startTimestamp;
-
-        return $this;
-    }
-
-    /**
-     * @param string $endTimestamp
-     *
-     * @return $this
-     */
-    public function setEndTimestamp($endTimestamp)
-    {
-        $this->requestParameters['EndTimestamp'] = $endTimestamp;
-        $this->queryParameters['EndTimestamp'] = $endTimestamp;
 
         return $this;
     }

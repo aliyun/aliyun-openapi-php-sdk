@@ -1,85 +1,141 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace pvtz\Request\V20180101;
 
+/**
+ * Request of DescribeZones
+ *
+ * @method string getQueryVpcId()
+ * @method string getPageSize()
+ * @method string getUserClientIp()
+ * @method string getSearchMode()
+ * @method string getLang()
+ * @method string getKeyword()
+ * @method string getPageNumber()
+ * @method string getQueryRegionId()
+ */
 class DescribeZonesRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("pvtz", "2018-01-01", "DescribeZones", "pvtz", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $pageSize;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $userClientIp;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'pvtz',
+            '2018-01-01',
+            'DescribeZones',
+            'pvtz'
+        );
+    }
 
-	private  $lang;
+    /**
+     * @param string $queryVpcId
+     *
+     * @return $this
+     */
+    public function setQueryVpcId($queryVpcId)
+    {
+        $this->requestParameters['QueryVpcId'] = $queryVpcId;
+        $this->queryParameters['QueryVpcId'] = $queryVpcId;
 
-	private  $keyword;
+        return $this;
+    }
 
-	private  $pageNumber;
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
+        return $this;
+    }
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
+    /**
+     * @param string $userClientIp
+     *
+     * @return $this
+     */
+    public function setUserClientIp($userClientIp)
+    {
+        $this->requestParameters['UserClientIp'] = $userClientIp;
+        $this->queryParameters['UserClientIp'] = $userClientIp;
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
-	}
+        return $this;
+    }
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
-	}
+    /**
+     * @param string $searchMode
+     *
+     * @return $this
+     */
+    public function setSearchMode($searchMode)
+    {
+        $this->requestParameters['SearchMode'] = $searchMode;
+        $this->queryParameters['SearchMode'] = $searchMode;
 
-	public function getLang() {
-		return $this->lang;
-	}
+        return $this;
+    }
 
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
+    /**
+     * @param string $lang
+     *
+     * @return $this
+     */
+    public function setLang($lang)
+    {
+        $this->requestParameters['Lang'] = $lang;
+        $this->queryParameters['Lang'] = $lang;
 
-	public function getKeyword() {
-		return $this->keyword;
-	}
+        return $this;
+    }
 
-	public function setKeyword($keyword) {
-		$this->keyword = $keyword;
-		$this->queryParameters["Keyword"]=$keyword;
-	}
+    /**
+     * @param string $keyword
+     *
+     * @return $this
+     */
+    public function setKeyword($keyword)
+    {
+        $this->requestParameters['Keyword'] = $keyword;
+        $this->queryParameters['Keyword'] = $keyword;
 
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
+        return $this;
+    }
 
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-	
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $queryRegionId
+     *
+     * @return $this
+     */
+    public function setQueryRegionId($queryRegionId)
+    {
+        $this->requestParameters['QueryRegionId'] = $queryRegionId;
+        $this->queryParameters['QueryRegionId'] = $queryRegionId;
+
+        return $this;
+    }
 }

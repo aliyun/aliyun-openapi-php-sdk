@@ -1,118 +1,141 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace pvtz\Request\V20180101;
 
+/**
+ * Request of UpdateZoneRecord
+ *
+ * @method string getRr()
+ * @method string getRecordId()
+ * @method string getUserClientIp()
+ * @method string getLang()
+ * @method string getType()
+ * @method string getPriority()
+ * @method string getTtl()
+ * @method string getValue()
+ */
 class UpdateZoneRecordRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("pvtz", "2018-01-01", "UpdateZoneRecord", "pvtz", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $rr;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $recordId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'pvtz',
+            '2018-01-01',
+            'UpdateZoneRecord',
+            'pvtz'
+        );
+    }
 
-	private  $userClientIp;
+    /**
+     * @param string $rr
+     *
+     * @return $this
+     */
+    public function setRr($rr)
+    {
+        $this->requestParameters['Rr'] = $rr;
+        $this->queryParameters['Rr'] = $rr;
 
-	private  $lang;
+        return $this;
+    }
 
-	private  $type;
+    /**
+     * @param string $recordId
+     *
+     * @return $this
+     */
+    public function setRecordId($recordId)
+    {
+        $this->requestParameters['RecordId'] = $recordId;
+        $this->queryParameters['RecordId'] = $recordId;
 
-	private  $priority;
+        return $this;
+    }
 
-	private  $ttl;
+    /**
+     * @param string $userClientIp
+     *
+     * @return $this
+     */
+    public function setUserClientIp($userClientIp)
+    {
+        $this->requestParameters['UserClientIp'] = $userClientIp;
+        $this->queryParameters['UserClientIp'] = $userClientIp;
 
-	private  $value;
+        return $this;
+    }
 
-	public function getRr() {
-		return $this->rr;
-	}
+    /**
+     * @param string $lang
+     *
+     * @return $this
+     */
+    public function setLang($lang)
+    {
+        $this->requestParameters['Lang'] = $lang;
+        $this->queryParameters['Lang'] = $lang;
 
-	public function setRr($rr) {
-		$this->rr = $rr;
-		$this->queryParameters["Rr"]=$rr;
-	}
+        return $this;
+    }
 
-	public function getRecordId() {
-		return $this->recordId;
-	}
+    /**
+     * @param string $type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->requestParameters['Type'] = $type;
+        $this->queryParameters['Type'] = $type;
 
-	public function setRecordId($recordId) {
-		$this->recordId = $recordId;
-		$this->queryParameters["RecordId"]=$recordId;
-	}
+        return $this;
+    }
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
-	}
+    /**
+     * @param string $priority
+     *
+     * @return $this
+     */
+    public function setPriority($priority)
+    {
+        $this->requestParameters['Priority'] = $priority;
+        $this->queryParameters['Priority'] = $priority;
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
-	}
+        return $this;
+    }
 
-	public function getLang() {
-		return $this->lang;
-	}
+    /**
+     * @param string $ttl
+     *
+     * @return $this
+     */
+    public function setTtl($ttl)
+    {
+        $this->requestParameters['Ttl'] = $ttl;
+        $this->queryParameters['Ttl'] = $ttl;
 
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
+        return $this;
+    }
 
-	public function getType() {
-		return $this->type;
-	}
+    /**
+     * @param string $value
+     *
+     * @return $this
+     */
+    public function setValue($value)
+    {
+        $this->requestParameters['Value'] = $value;
+        $this->queryParameters['Value'] = $value;
 
-	public function setType($type) {
-		$this->type = $type;
-		$this->queryParameters["Type"]=$type;
-	}
-
-	public function getPriority() {
-		return $this->priority;
-	}
-
-	public function setPriority($priority) {
-		$this->priority = $priority;
-		$this->queryParameters["Priority"]=$priority;
-	}
-
-	public function getTtl() {
-		return $this->ttl;
-	}
-
-	public function setTtl($ttl) {
-		$this->ttl = $ttl;
-		$this->queryParameters["Ttl"]=$ttl;
-	}
-
-	public function getValue() {
-		return $this->value;
-	}
-
-	public function setValue($value) {
-		$this->value = $value;
-		$this->queryParameters["Value"]=$value;
-	}
-	
+        return $this;
+    }
 }
