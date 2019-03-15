@@ -1,110 +1,134 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace CloudPhoto\Request\V20170711;
 
+/**
+ * Request of EditPhotos
+ *
+ * @method string getTakenAt()
+ * @method string getLibraryId()
+ * @method string getShareExpireTime()
+ * @method array getPhotoIds()
+ * @method string getStoreName()
+ * @method string getRemark()
+ * @method string getTitle()
+ */
 class EditPhotosRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("CloudPhoto", "2017-07-11", "EditPhotos", "cloudphoto", "openAPI");
-		$this->setProtocol("https");
-		$this->setMethod("POST");
-	}
 
-	private  $takenAt;
+    /**
+     * @var string
+     */
+    protected $requestScheme = 'https';
 
-	private  $libraryId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $shareExpireTime;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'CloudPhoto',
+            '2017-07-11',
+            'EditPhotos',
+            'cloudphoto'
+        );
+    }
 
-	private  $PhotoIds;
+    /**
+     * @param string $takenAt
+     *
+     * @return $this
+     */
+    public function setTakenAt($takenAt)
+    {
+        $this->requestParameters['TakenAt'] = $takenAt;
+        $this->queryParameters['TakenAt'] = $takenAt;
 
-	private  $storeName;
+        return $this;
+    }
 
-	private  $remark;
+    /**
+     * @param string $libraryId
+     *
+     * @return $this
+     */
+    public function setLibraryId($libraryId)
+    {
+        $this->requestParameters['LibraryId'] = $libraryId;
+        $this->queryParameters['LibraryId'] = $libraryId;
 
-	private  $title;
+        return $this;
+    }
 
-	public function getTakenAt() {
-		return $this->takenAt;
-	}
+    /**
+     * @param string $shareExpireTime
+     *
+     * @return $this
+     */
+    public function setShareExpireTime($shareExpireTime)
+    {
+        $this->requestParameters['ShareExpireTime'] = $shareExpireTime;
+        $this->queryParameters['ShareExpireTime'] = $shareExpireTime;
 
-	public function setTakenAt($takenAt) {
-		$this->takenAt = $takenAt;
-		$this->queryParameters["TakenAt"]=$takenAt;
-	}
+        return $this;
+    }
 
-	public function getLibraryId() {
-		return $this->libraryId;
-	}
+    /**
+     * @param array $photoIds
+     *
+     * @return $this
+     */
+    public function setPhotoIds(array $photoIds)
+    {
+        $this->requestParameters['PhotoIds'] = $photoIds;
+        foreach ($photoIds as $i => $iValue) {
+            $this->queryParameters['PhotoId.' . ($i + 1)] = $iValue;
+        }
 
-	public function setLibraryId($libraryId) {
-		$this->libraryId = $libraryId;
-		$this->queryParameters["LibraryId"]=$libraryId;
-	}
+        return $this;
+    }
 
-	public function getShareExpireTime() {
-		return $this->shareExpireTime;
-	}
+    /**
+     * @param string $storeName
+     *
+     * @return $this
+     */
+    public function setStoreName($storeName)
+    {
+        $this->requestParameters['StoreName'] = $storeName;
+        $this->queryParameters['StoreName'] = $storeName;
 
-	public function setShareExpireTime($shareExpireTime) {
-		$this->shareExpireTime = $shareExpireTime;
-		$this->queryParameters["ShareExpireTime"]=$shareExpireTime;
-	}
+        return $this;
+    }
 
-	public function getPhotoIds() {
-		return $this->PhotoIds;
-	}
+    /**
+     * @param string $remark
+     *
+     * @return $this
+     */
+    public function setRemark($remark)
+    {
+        $this->requestParameters['Remark'] = $remark;
+        $this->queryParameters['Remark'] = $remark;
 
-	public function setPhotoIds($PhotoIds) {
-		$this->PhotoIds = $PhotoIds;
-		for ($i = 0; $i < count($PhotoIds); $i ++) {	
-			$this->queryParameters["PhotoId.".($i+1)] = $PhotoIds[$i];
-		}
-	}
+        return $this;
+    }
 
-	public function getStoreName() {
-		return $this->storeName;
-	}
+    /**
+     * @param string $title
+     *
+     * @return $this
+     */
+    public function setTitle($title)
+    {
+        $this->requestParameters['Title'] = $title;
+        $this->queryParameters['Title'] = $title;
 
-	public function setStoreName($storeName) {
-		$this->storeName = $storeName;
-		$this->queryParameters["StoreName"]=$storeName;
-	}
-
-	public function getRemark() {
-		return $this->remark;
-	}
-
-	public function setRemark($remark) {
-		$this->remark = $remark;
-		$this->queryParameters["Remark"]=$remark;
-	}
-
-	public function getTitle() {
-		return $this->title;
-	}
-
-	public function setTitle($title) {
-		$this->title = $title;
-		$this->queryParameters["Title"]=$title;
-	}
-	
+        return $this;
+    }
 }

@@ -1,88 +1,106 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace CloudPhoto\Request\V20170711;
 
+/**
+ * Request of MoveAlbumPhotos
+ *
+ * @method string getSourceAlbumId()
+ * @method string getTargetAlbumId()
+ * @method string getLibraryId()
+ * @method array getPhotoIds()
+ * @method string getStoreName()
+ */
 class MoveAlbumPhotosRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("CloudPhoto", "2017-07-11", "MoveAlbumPhotos", "cloudphoto", "openAPI");
-		$this->setProtocol("https");
-		$this->setMethod("POST");
-	}
 
-	private  $sourceAlbumId;
+    /**
+     * @var string
+     */
+    protected $requestScheme = 'https';
 
-	private  $targetAlbumId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $libraryId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'CloudPhoto',
+            '2017-07-11',
+            'MoveAlbumPhotos',
+            'cloudphoto'
+        );
+    }
 
-	private  $PhotoIds;
+    /**
+     * @param string $sourceAlbumId
+     *
+     * @return $this
+     */
+    public function setSourceAlbumId($sourceAlbumId)
+    {
+        $this->requestParameters['SourceAlbumId'] = $sourceAlbumId;
+        $this->queryParameters['SourceAlbumId'] = $sourceAlbumId;
 
-	private  $storeName;
+        return $this;
+    }
 
-	public function getSourceAlbumId() {
-		return $this->sourceAlbumId;
-	}
+    /**
+     * @param string $targetAlbumId
+     *
+     * @return $this
+     */
+    public function setTargetAlbumId($targetAlbumId)
+    {
+        $this->requestParameters['TargetAlbumId'] = $targetAlbumId;
+        $this->queryParameters['TargetAlbumId'] = $targetAlbumId;
 
-	public function setSourceAlbumId($sourceAlbumId) {
-		$this->sourceAlbumId = $sourceAlbumId;
-		$this->queryParameters["SourceAlbumId"]=$sourceAlbumId;
-	}
+        return $this;
+    }
 
-	public function getTargetAlbumId() {
-		return $this->targetAlbumId;
-	}
+    /**
+     * @param string $libraryId
+     *
+     * @return $this
+     */
+    public function setLibraryId($libraryId)
+    {
+        $this->requestParameters['LibraryId'] = $libraryId;
+        $this->queryParameters['LibraryId'] = $libraryId;
 
-	public function setTargetAlbumId($targetAlbumId) {
-		$this->targetAlbumId = $targetAlbumId;
-		$this->queryParameters["TargetAlbumId"]=$targetAlbumId;
-	}
+        return $this;
+    }
 
-	public function getLibraryId() {
-		return $this->libraryId;
-	}
+    /**
+     * @param array $photoIds
+     *
+     * @return $this
+     */
+    public function setPhotoIds(array $photoIds)
+    {
+        $this->requestParameters['PhotoIds'] = $photoIds;
+        foreach ($photoIds as $i => $iValue) {
+            $this->queryParameters['PhotoId.' . ($i + 1)] = $iValue;
+        }
 
-	public function setLibraryId($libraryId) {
-		$this->libraryId = $libraryId;
-		$this->queryParameters["LibraryId"]=$libraryId;
-	}
+        return $this;
+    }
 
-	public function getPhotoIds() {
-		return $this->PhotoIds;
-	}
+    /**
+     * @param string $storeName
+     *
+     * @return $this
+     */
+    public function setStoreName($storeName)
+    {
+        $this->requestParameters['StoreName'] = $storeName;
+        $this->queryParameters['StoreName'] = $storeName;
 
-	public function setPhotoIds($PhotoIds) {
-		$this->PhotoIds = $PhotoIds;
-		for ($i = 0; $i < count($PhotoIds); $i ++) {	
-			$this->queryParameters["PhotoId.".($i+1)] = $PhotoIds[$i];
-		}
-	}
-
-	public function getStoreName() {
-		return $this->storeName;
-	}
-
-	public function setStoreName($storeName) {
-		$this->storeName = $storeName;
-		$this->queryParameters["StoreName"]=$storeName;
-	}
-	
+        return $this;
+    }
 }

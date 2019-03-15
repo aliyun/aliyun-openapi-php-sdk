@@ -1,141 +1,174 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace CloudPhoto\Request\V20170711;
 
+/**
+ * Request of CreatePhoto
+ *
+ * @method string getTakenAt()
+ * @method string getPhotoTitle()
+ * @method string getLibraryId()
+ * @method string getShareExpireTime()
+ * @method string getStoreName()
+ * @method string getUploadType()
+ * @method string getRemark()
+ * @method string getSessionId()
+ * @method string getStaging()
+ * @method string getFileId()
+ */
 class CreatePhotoRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("CloudPhoto", "2017-07-11", "CreatePhoto", "cloudphoto", "openAPI");
-		$this->setProtocol("https");
-		$this->setMethod("POST");
-	}
 
-	private  $takenAt;
+    /**
+     * @var string
+     */
+    protected $requestScheme = 'https';
 
-	private  $photoTitle;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $libraryId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'CloudPhoto',
+            '2017-07-11',
+            'CreatePhoto',
+            'cloudphoto'
+        );
+    }
 
-	private  $shareExpireTime;
+    /**
+     * @param string $takenAt
+     *
+     * @return $this
+     */
+    public function setTakenAt($takenAt)
+    {
+        $this->requestParameters['TakenAt'] = $takenAt;
+        $this->queryParameters['TakenAt'] = $takenAt;
 
-	private  $storeName;
+        return $this;
+    }
 
-	private  $uploadType;
+    /**
+     * @param string $photoTitle
+     *
+     * @return $this
+     */
+    public function setPhotoTitle($photoTitle)
+    {
+        $this->requestParameters['PhotoTitle'] = $photoTitle;
+        $this->queryParameters['PhotoTitle'] = $photoTitle;
 
-	private  $remark;
+        return $this;
+    }
 
-	private  $sessionId;
+    /**
+     * @param string $libraryId
+     *
+     * @return $this
+     */
+    public function setLibraryId($libraryId)
+    {
+        $this->requestParameters['LibraryId'] = $libraryId;
+        $this->queryParameters['LibraryId'] = $libraryId;
 
-	private  $staging;
+        return $this;
+    }
 
-	private  $fileId;
+    /**
+     * @param string $shareExpireTime
+     *
+     * @return $this
+     */
+    public function setShareExpireTime($shareExpireTime)
+    {
+        $this->requestParameters['ShareExpireTime'] = $shareExpireTime;
+        $this->queryParameters['ShareExpireTime'] = $shareExpireTime;
 
-	public function getTakenAt() {
-		return $this->takenAt;
-	}
+        return $this;
+    }
 
-	public function setTakenAt($takenAt) {
-		$this->takenAt = $takenAt;
-		$this->queryParameters["TakenAt"]=$takenAt;
-	}
+    /**
+     * @param string $storeName
+     *
+     * @return $this
+     */
+    public function setStoreName($storeName)
+    {
+        $this->requestParameters['StoreName'] = $storeName;
+        $this->queryParameters['StoreName'] = $storeName;
 
-	public function getPhotoTitle() {
-		return $this->photoTitle;
-	}
+        return $this;
+    }
 
-	public function setPhotoTitle($photoTitle) {
-		$this->photoTitle = $photoTitle;
-		$this->queryParameters["PhotoTitle"]=$photoTitle;
-	}
+    /**
+     * @param string $uploadType
+     *
+     * @return $this
+     */
+    public function setUploadType($uploadType)
+    {
+        $this->requestParameters['UploadType'] = $uploadType;
+        $this->queryParameters['UploadType'] = $uploadType;
 
-	public function getLibraryId() {
-		return $this->libraryId;
-	}
+        return $this;
+    }
 
-	public function setLibraryId($libraryId) {
-		$this->libraryId = $libraryId;
-		$this->queryParameters["LibraryId"]=$libraryId;
-	}
+    /**
+     * @param string $remark
+     *
+     * @return $this
+     */
+    public function setRemark($remark)
+    {
+        $this->requestParameters['Remark'] = $remark;
+        $this->queryParameters['Remark'] = $remark;
 
-	public function getShareExpireTime() {
-		return $this->shareExpireTime;
-	}
+        return $this;
+    }
 
-	public function setShareExpireTime($shareExpireTime) {
-		$this->shareExpireTime = $shareExpireTime;
-		$this->queryParameters["ShareExpireTime"]=$shareExpireTime;
-	}
+    /**
+     * @param string $sessionId
+     *
+     * @return $this
+     */
+    public function setSessionId($sessionId)
+    {
+        $this->requestParameters['SessionId'] = $sessionId;
+        $this->queryParameters['SessionId'] = $sessionId;
 
-	public function getStoreName() {
-		return $this->storeName;
-	}
+        return $this;
+    }
 
-	public function setStoreName($storeName) {
-		$this->storeName = $storeName;
-		$this->queryParameters["StoreName"]=$storeName;
-	}
+    /**
+     * @param string $staging
+     *
+     * @return $this
+     */
+    public function setStaging($staging)
+    {
+        $this->requestParameters['Staging'] = $staging;
+        $this->queryParameters['Staging'] = $staging;
 
-	public function getUploadType() {
-		return $this->uploadType;
-	}
+        return $this;
+    }
 
-	public function setUploadType($uploadType) {
-		$this->uploadType = $uploadType;
-		$this->queryParameters["UploadType"]=$uploadType;
-	}
+    /**
+     * @param string $fileId
+     *
+     * @return $this
+     */
+    public function setFileId($fileId)
+    {
+        $this->requestParameters['FileId'] = $fileId;
+        $this->queryParameters['FileId'] = $fileId;
 
-	public function getRemark() {
-		return $this->remark;
-	}
-
-	public function setRemark($remark) {
-		$this->remark = $remark;
-		$this->queryParameters["Remark"]=$remark;
-	}
-
-	public function getSessionId() {
-		return $this->sessionId;
-	}
-
-	public function setSessionId($sessionId) {
-		$this->sessionId = $sessionId;
-		$this->queryParameters["SessionId"]=$sessionId;
-	}
-
-	public function getStaging() {
-		return $this->staging;
-	}
-
-	public function setStaging($staging) {
-		$this->staging = $staging;
-		$this->queryParameters["Staging"]=$staging;
-	}
-
-	public function getFileId() {
-		return $this->fileId;
-	}
-
-	public function setFileId($fileId) {
-		$this->fileId = $fileId;
-		$this->queryParameters["FileId"]=$fileId;
-	}
-	
+        return $this;
+    }
 }

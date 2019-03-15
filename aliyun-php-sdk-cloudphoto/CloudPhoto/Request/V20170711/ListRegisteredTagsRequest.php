@@ -1,55 +1,64 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace CloudPhoto\Request\V20170711;
 
+/**
+ * Request of ListRegisteredTags
+ *
+ * @method string getStoreName()
+ * @method array getLangs()
+ */
 class ListRegisteredTagsRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("CloudPhoto", "2017-07-11", "ListRegisteredTags", "cloudphoto", "openAPI");
-		$this->setProtocol("https");
-		$this->setMethod("POST");
-	}
 
-	private  $storeName;
+    /**
+     * @var string
+     */
+    protected $requestScheme = 'https';
 
-	private  $Langs;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	public function getStoreName() {
-		return $this->storeName;
-	}
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'CloudPhoto',
+            '2017-07-11',
+            'ListRegisteredTags',
+            'cloudphoto'
+        );
+    }
 
-	public function setStoreName($storeName) {
-		$this->storeName = $storeName;
-		$this->queryParameters["StoreName"]=$storeName;
-	}
+    /**
+     * @param string $storeName
+     *
+     * @return $this
+     */
+    public function setStoreName($storeName)
+    {
+        $this->requestParameters['StoreName'] = $storeName;
+        $this->queryParameters['StoreName'] = $storeName;
 
-	public function getLangs() {
-		return $this->Langs;
-	}
+        return $this;
+    }
 
-	public function setLangs($Langs) {
-		$this->Langs = $Langs;
-		for ($i = 0; $i < count($Langs); $i ++) {	
-			$this->queryParameters["Lang.".($i+1)] = $Langs[$i];
-		}
-	}
-	
+    /**
+     * @param array $langs
+     *
+     * @return $this
+     */
+    public function setLangs(array $langs)
+    {
+        $this->requestParameters['Langs'] = $langs;
+        foreach ($langs as $i => $iValue) {
+            $this->queryParameters['Lang.' . ($i + 1)] = $iValue;
+        }
+
+        return $this;
+    }
 }

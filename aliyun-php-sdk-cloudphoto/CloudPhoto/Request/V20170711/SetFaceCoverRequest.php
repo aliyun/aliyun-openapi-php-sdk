@@ -1,75 +1,90 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace CloudPhoto\Request\V20170711;
 
+/**
+ * Request of SetFaceCover
+ *
+ * @method string getLibraryId()
+ * @method string getPhotoId()
+ * @method string getStoreName()
+ * @method string getFaceId()
+ */
 class SetFaceCoverRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("CloudPhoto", "2017-07-11", "SetFaceCover", "cloudphoto", "openAPI");
-		$this->setProtocol("https");
-		$this->setMethod("POST");
-	}
 
-	private  $libraryId;
+    /**
+     * @var string
+     */
+    protected $requestScheme = 'https';
 
-	private  $photoId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $storeName;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'CloudPhoto',
+            '2017-07-11',
+            'SetFaceCover',
+            'cloudphoto'
+        );
+    }
 
-	private  $faceId;
+    /**
+     * @param string $libraryId
+     *
+     * @return $this
+     */
+    public function setLibraryId($libraryId)
+    {
+        $this->requestParameters['LibraryId'] = $libraryId;
+        $this->queryParameters['LibraryId'] = $libraryId;
 
-	public function getLibraryId() {
-		return $this->libraryId;
-	}
+        return $this;
+    }
 
-	public function setLibraryId($libraryId) {
-		$this->libraryId = $libraryId;
-		$this->queryParameters["LibraryId"]=$libraryId;
-	}
+    /**
+     * @param string $photoId
+     *
+     * @return $this
+     */
+    public function setPhotoId($photoId)
+    {
+        $this->requestParameters['PhotoId'] = $photoId;
+        $this->queryParameters['PhotoId'] = $photoId;
 
-	public function getPhotoId() {
-		return $this->photoId;
-	}
+        return $this;
+    }
 
-	public function setPhotoId($photoId) {
-		$this->photoId = $photoId;
-		$this->queryParameters["PhotoId"]=$photoId;
-	}
+    /**
+     * @param string $storeName
+     *
+     * @return $this
+     */
+    public function setStoreName($storeName)
+    {
+        $this->requestParameters['StoreName'] = $storeName;
+        $this->queryParameters['StoreName'] = $storeName;
 
-	public function getStoreName() {
-		return $this->storeName;
-	}
+        return $this;
+    }
 
-	public function setStoreName($storeName) {
-		$this->storeName = $storeName;
-		$this->queryParameters["StoreName"]=$storeName;
-	}
+    /**
+     * @param string $faceId
+     *
+     * @return $this
+     */
+    public function setFaceId($faceId)
+    {
+        $this->requestParameters['FaceId'] = $faceId;
+        $this->queryParameters['FaceId'] = $faceId;
 
-	public function getFaceId() {
-		return $this->faceId;
-	}
-
-	public function setFaceId($faceId) {
-		$this->faceId = $faceId;
-		$this->queryParameters["FaceId"]=$faceId;
-	}
-	
+        return $this;
+    }
 }

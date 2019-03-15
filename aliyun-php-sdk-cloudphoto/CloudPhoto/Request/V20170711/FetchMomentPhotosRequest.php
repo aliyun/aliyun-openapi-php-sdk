@@ -1,108 +1,132 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace CloudPhoto\Request\V20170711;
 
+/**
+ * Request of FetchMomentPhotos
+ *
+ * @method string getSize()
+ * @method string getLibraryId()
+ * @method string getOrderBy()
+ * @method string getStoreName()
+ * @method string getPage()
+ * @method string getMomentId()
+ * @method string getOrder()
+ */
 class FetchMomentPhotosRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("CloudPhoto", "2017-07-11", "FetchMomentPhotos", "cloudphoto", "openAPI");
-		$this->setProtocol("https");
-		$this->setMethod("POST");
-	}
 
-	private  $size;
+    /**
+     * @var string
+     */
+    protected $requestScheme = 'https';
 
-	private  $libraryId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $orderBy;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'CloudPhoto',
+            '2017-07-11',
+            'FetchMomentPhotos',
+            'cloudphoto'
+        );
+    }
 
-	private  $storeName;
+    /**
+     * @param string $size
+     *
+     * @return $this
+     */
+    public function setSize($size)
+    {
+        $this->requestParameters['Size'] = $size;
+        $this->queryParameters['Size'] = $size;
 
-	private  $page;
+        return $this;
+    }
 
-	private  $momentId;
+    /**
+     * @param string $libraryId
+     *
+     * @return $this
+     */
+    public function setLibraryId($libraryId)
+    {
+        $this->requestParameters['LibraryId'] = $libraryId;
+        $this->queryParameters['LibraryId'] = $libraryId;
 
-	private  $order;
+        return $this;
+    }
 
-	public function getSize() {
-		return $this->size;
-	}
+    /**
+     * @param string $orderBy
+     *
+     * @return $this
+     */
+    public function setOrderBy($orderBy)
+    {
+        $this->requestParameters['OrderBy'] = $orderBy;
+        $this->queryParameters['OrderBy'] = $orderBy;
 
-	public function setSize($size) {
-		$this->size = $size;
-		$this->queryParameters["Size"]=$size;
-	}
+        return $this;
+    }
 
-	public function getLibraryId() {
-		return $this->libraryId;
-	}
+    /**
+     * @param string $storeName
+     *
+     * @return $this
+     */
+    public function setStoreName($storeName)
+    {
+        $this->requestParameters['StoreName'] = $storeName;
+        $this->queryParameters['StoreName'] = $storeName;
 
-	public function setLibraryId($libraryId) {
-		$this->libraryId = $libraryId;
-		$this->queryParameters["LibraryId"]=$libraryId;
-	}
+        return $this;
+    }
 
-	public function getOrderBy() {
-		return $this->orderBy;
-	}
+    /**
+     * @param string $page
+     *
+     * @return $this
+     */
+    public function setPage($page)
+    {
+        $this->requestParameters['Page'] = $page;
+        $this->queryParameters['Page'] = $page;
 
-	public function setOrderBy($orderBy) {
-		$this->orderBy = $orderBy;
-		$this->queryParameters["OrderBy"]=$orderBy;
-	}
+        return $this;
+    }
 
-	public function getStoreName() {
-		return $this->storeName;
-	}
+    /**
+     * @param string $momentId
+     *
+     * @return $this
+     */
+    public function setMomentId($momentId)
+    {
+        $this->requestParameters['MomentId'] = $momentId;
+        $this->queryParameters['MomentId'] = $momentId;
 
-	public function setStoreName($storeName) {
-		$this->storeName = $storeName;
-		$this->queryParameters["StoreName"]=$storeName;
-	}
+        return $this;
+    }
 
-	public function getPage() {
-		return $this->page;
-	}
+    /**
+     * @param string $order
+     *
+     * @return $this
+     */
+    public function setOrder($order)
+    {
+        $this->requestParameters['Order'] = $order;
+        $this->queryParameters['Order'] = $order;
 
-	public function setPage($page) {
-		$this->page = $page;
-		$this->queryParameters["Page"]=$page;
-	}
-
-	public function getMomentId() {
-		return $this->momentId;
-	}
-
-	public function setMomentId($momentId) {
-		$this->momentId = $momentId;
-		$this->queryParameters["MomentId"]=$momentId;
-	}
-
-	public function getOrder() {
-		return $this->order;
-	}
-
-	public function setOrder($order) {
-		$this->order = $order;
-		$this->queryParameters["Order"]=$order;
-	}
-	
+        return $this;
+    }
 }

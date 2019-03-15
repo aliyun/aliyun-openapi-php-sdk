@@ -1,97 +1,118 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace CloudPhoto\Request\V20170711;
 
+/**
+ * Request of EditPhotoStore
+ *
+ * @method string getAutoCleanEnabled()
+ * @method string getDefaultTrashQuota()
+ * @method string getStoreName()
+ * @method string getRemark()
+ * @method string getDefaultQuota()
+ * @method string getAutoCleanDays()
+ */
 class EditPhotoStoreRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("CloudPhoto", "2017-07-11", "EditPhotoStore", "cloudphoto", "openAPI");
-		$this->setProtocol("https");
-		$this->setMethod("POST");
-	}
 
-	private  $autoCleanEnabled;
+    /**
+     * @var string
+     */
+    protected $requestScheme = 'https';
 
-	private  $defaultTrashQuota;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $storeName;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'CloudPhoto',
+            '2017-07-11',
+            'EditPhotoStore',
+            'cloudphoto'
+        );
+    }
 
-	private  $remark;
+    /**
+     * @param string $autoCleanEnabled
+     *
+     * @return $this
+     */
+    public function setAutoCleanEnabled($autoCleanEnabled)
+    {
+        $this->requestParameters['AutoCleanEnabled'] = $autoCleanEnabled;
+        $this->queryParameters['AutoCleanEnabled'] = $autoCleanEnabled;
 
-	private  $defaultQuota;
+        return $this;
+    }
 
-	private  $autoCleanDays;
+    /**
+     * @param string $defaultTrashQuota
+     *
+     * @return $this
+     */
+    public function setDefaultTrashQuota($defaultTrashQuota)
+    {
+        $this->requestParameters['DefaultTrashQuota'] = $defaultTrashQuota;
+        $this->queryParameters['DefaultTrashQuota'] = $defaultTrashQuota;
 
-	public function getAutoCleanEnabled() {
-		return $this->autoCleanEnabled;
-	}
+        return $this;
+    }
 
-	public function setAutoCleanEnabled($autoCleanEnabled) {
-		$this->autoCleanEnabled = $autoCleanEnabled;
-		$this->queryParameters["AutoCleanEnabled"]=$autoCleanEnabled;
-	}
+    /**
+     * @param string $storeName
+     *
+     * @return $this
+     */
+    public function setStoreName($storeName)
+    {
+        $this->requestParameters['StoreName'] = $storeName;
+        $this->queryParameters['StoreName'] = $storeName;
 
-	public function getDefaultTrashQuota() {
-		return $this->defaultTrashQuota;
-	}
+        return $this;
+    }
 
-	public function setDefaultTrashQuota($defaultTrashQuota) {
-		$this->defaultTrashQuota = $defaultTrashQuota;
-		$this->queryParameters["DefaultTrashQuota"]=$defaultTrashQuota;
-	}
+    /**
+     * @param string $remark
+     *
+     * @return $this
+     */
+    public function setRemark($remark)
+    {
+        $this->requestParameters['Remark'] = $remark;
+        $this->queryParameters['Remark'] = $remark;
 
-	public function getStoreName() {
-		return $this->storeName;
-	}
+        return $this;
+    }
 
-	public function setStoreName($storeName) {
-		$this->storeName = $storeName;
-		$this->queryParameters["StoreName"]=$storeName;
-	}
+    /**
+     * @param string $defaultQuota
+     *
+     * @return $this
+     */
+    public function setDefaultQuota($defaultQuota)
+    {
+        $this->requestParameters['DefaultQuota'] = $defaultQuota;
+        $this->queryParameters['DefaultQuota'] = $defaultQuota;
 
-	public function getRemark() {
-		return $this->remark;
-	}
+        return $this;
+    }
 
-	public function setRemark($remark) {
-		$this->remark = $remark;
-		$this->queryParameters["Remark"]=$remark;
-	}
+    /**
+     * @param string $autoCleanDays
+     *
+     * @return $this
+     */
+    public function setAutoCleanDays($autoCleanDays)
+    {
+        $this->requestParameters['AutoCleanDays'] = $autoCleanDays;
+        $this->queryParameters['AutoCleanDays'] = $autoCleanDays;
 
-	public function getDefaultQuota() {
-		return $this->defaultQuota;
-	}
-
-	public function setDefaultQuota($defaultQuota) {
-		$this->defaultQuota = $defaultQuota;
-		$this->queryParameters["DefaultQuota"]=$defaultQuota;
-	}
-
-	public function getAutoCleanDays() {
-		return $this->autoCleanDays;
-	}
-
-	public function setAutoCleanDays($autoCleanDays) {
-		$this->autoCleanDays = $autoCleanDays;
-		$this->queryParameters["AutoCleanDays"]=$autoCleanDays;
-	}
-	
+        return $this;
+    }
 }

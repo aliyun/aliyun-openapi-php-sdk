@@ -1,90 +1,108 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace CloudPhoto\Request\V20170711;
 
+/**
+ * Request of TagPhoto
+ *
+ * @method string getLibraryId()
+ * @method array getConfidences()
+ * @method string getStoreName()
+ * @method string getPhotoId()
+ * @method array getTagKeys()
+ */
 class TagPhotoRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("CloudPhoto", "2017-07-11", "TagPhoto", "cloudphoto", "openAPI");
-		$this->setProtocol("https");
-		$this->setMethod("POST");
-	}
 
-	private  $libraryId;
+    /**
+     * @var string
+     */
+    protected $requestScheme = 'https';
 
-	private  $Confidences;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $storeName;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'CloudPhoto',
+            '2017-07-11',
+            'TagPhoto',
+            'cloudphoto'
+        );
+    }
 
-	private  $photoId;
+    /**
+     * @param string $libraryId
+     *
+     * @return $this
+     */
+    public function setLibraryId($libraryId)
+    {
+        $this->requestParameters['LibraryId'] = $libraryId;
+        $this->queryParameters['LibraryId'] = $libraryId;
 
-	private  $TagKeys;
+        return $this;
+    }
 
-	public function getLibraryId() {
-		return $this->libraryId;
-	}
+    /**
+     * @param array $confidences
+     *
+     * @return $this
+     */
+    public function setConfidences(array $confidences)
+    {
+        $this->requestParameters['Confidences'] = $confidences;
+        foreach ($confidences as $i => $iValue) {
+            $this->queryParameters['Confidence.' . ($i + 1)] = $iValue;
+        }
 
-	public function setLibraryId($libraryId) {
-		$this->libraryId = $libraryId;
-		$this->queryParameters["LibraryId"]=$libraryId;
-	}
+        return $this;
+    }
 
-	public function getConfidences() {
-		return $this->Confidences;
-	}
+    /**
+     * @param string $storeName
+     *
+     * @return $this
+     */
+    public function setStoreName($storeName)
+    {
+        $this->requestParameters['StoreName'] = $storeName;
+        $this->queryParameters['StoreName'] = $storeName;
 
-	public function setConfidences($Confidences) {
-		$this->Confidences = $Confidences;
-		for ($i = 0; $i < count($Confidences); $i ++) {	
-			$this->queryParameters["Confidence.".($i+1)] = $Confidences[$i];
-		}
-	}
+        return $this;
+    }
 
-	public function getStoreName() {
-		return $this->storeName;
-	}
+    /**
+     * @param string $photoId
+     *
+     * @return $this
+     */
+    public function setPhotoId($photoId)
+    {
+        $this->requestParameters['PhotoId'] = $photoId;
+        $this->queryParameters['PhotoId'] = $photoId;
 
-	public function setStoreName($storeName) {
-		$this->storeName = $storeName;
-		$this->queryParameters["StoreName"]=$storeName;
-	}
+        return $this;
+    }
 
-	public function getPhotoId() {
-		return $this->photoId;
-	}
+    /**
+     * @param array $tagKeys
+     *
+     * @return $this
+     */
+    public function setTagKeys(array $tagKeys)
+    {
+        $this->requestParameters['TagKeys'] = $tagKeys;
+        foreach ($tagKeys as $i => $iValue) {
+            $this->queryParameters['TagKey.' . ($i + 1)] = $iValue;
+        }
 
-	public function setPhotoId($photoId) {
-		$this->photoId = $photoId;
-		$this->queryParameters["PhotoId"]=$photoId;
-	}
-
-	public function getTagKeys() {
-		return $this->TagKeys;
-	}
-
-	public function setTagKeys($TagKeys) {
-		$this->TagKeys = $TagKeys;
-		for ($i = 0; $i < count($TagKeys); $i ++) {	
-			$this->queryParameters["TagKey.".($i+1)] = $TagKeys[$i];
-		}
-	}
-	
+        return $this;
+    }
 }

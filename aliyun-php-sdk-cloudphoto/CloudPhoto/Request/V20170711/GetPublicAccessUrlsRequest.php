@@ -1,88 +1,106 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace CloudPhoto\Request\V20170711;
 
+/**
+ * Request of GetPublicAccessUrls
+ *
+ * @method string getDomainType()
+ * @method string getLibraryId()
+ * @method array getPhotoIds()
+ * @method string getStoreName()
+ * @method string getZoomType()
+ */
 class GetPublicAccessUrlsRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("CloudPhoto", "2017-07-11", "GetPublicAccessUrls", "cloudphoto", "openAPI");
-		$this->setProtocol("https");
-		$this->setMethod("POST");
-	}
 
-	private  $domainType;
+    /**
+     * @var string
+     */
+    protected $requestScheme = 'https';
 
-	private  $libraryId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $PhotoIds;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'CloudPhoto',
+            '2017-07-11',
+            'GetPublicAccessUrls',
+            'cloudphoto'
+        );
+    }
 
-	private  $storeName;
+    /**
+     * @param string $domainType
+     *
+     * @return $this
+     */
+    public function setDomainType($domainType)
+    {
+        $this->requestParameters['DomainType'] = $domainType;
+        $this->queryParameters['DomainType'] = $domainType;
 
-	private  $zoomType;
+        return $this;
+    }
 
-	public function getDomainType() {
-		return $this->domainType;
-	}
+    /**
+     * @param string $libraryId
+     *
+     * @return $this
+     */
+    public function setLibraryId($libraryId)
+    {
+        $this->requestParameters['LibraryId'] = $libraryId;
+        $this->queryParameters['LibraryId'] = $libraryId;
 
-	public function setDomainType($domainType) {
-		$this->domainType = $domainType;
-		$this->queryParameters["DomainType"]=$domainType;
-	}
+        return $this;
+    }
 
-	public function getLibraryId() {
-		return $this->libraryId;
-	}
+    /**
+     * @param array $photoIds
+     *
+     * @return $this
+     */
+    public function setPhotoIds(array $photoIds)
+    {
+        $this->requestParameters['PhotoIds'] = $photoIds;
+        foreach ($photoIds as $i => $iValue) {
+            $this->queryParameters['PhotoId.' . ($i + 1)] = $iValue;
+        }
 
-	public function setLibraryId($libraryId) {
-		$this->libraryId = $libraryId;
-		$this->queryParameters["LibraryId"]=$libraryId;
-	}
+        return $this;
+    }
 
-	public function getPhotoIds() {
-		return $this->PhotoIds;
-	}
+    /**
+     * @param string $storeName
+     *
+     * @return $this
+     */
+    public function setStoreName($storeName)
+    {
+        $this->requestParameters['StoreName'] = $storeName;
+        $this->queryParameters['StoreName'] = $storeName;
 
-	public function setPhotoIds($PhotoIds) {
-		$this->PhotoIds = $PhotoIds;
-		for ($i = 0; $i < count($PhotoIds); $i ++) {	
-			$this->queryParameters["PhotoId.".($i+1)] = $PhotoIds[$i];
-		}
-	}
+        return $this;
+    }
 
-	public function getStoreName() {
-		return $this->storeName;
-	}
+    /**
+     * @param string $zoomType
+     *
+     * @return $this
+     */
+    public function setZoomType($zoomType)
+    {
+        $this->requestParameters['ZoomType'] = $zoomType;
+        $this->queryParameters['ZoomType'] = $zoomType;
 
-	public function setStoreName($storeName) {
-		$this->storeName = $storeName;
-		$this->queryParameters["StoreName"]=$storeName;
-	}
-
-	public function getZoomType() {
-		return $this->zoomType;
-	}
-
-	public function setZoomType($zoomType) {
-		$this->zoomType = $zoomType;
-		$this->queryParameters["ZoomType"]=$zoomType;
-	}
-	
+        return $this;
+    }
 }

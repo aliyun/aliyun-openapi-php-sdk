@@ -1,75 +1,90 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace CloudPhoto\Request\V20170711;
 
+/**
+ * Request of RegisterTag
+ *
+ * @method string getStoreName()
+ * @method string getText()
+ * @method string getTagKey()
+ * @method string getLang()
+ */
 class RegisterTagRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("CloudPhoto", "2017-07-11", "RegisterTag", "cloudphoto", "openAPI");
-		$this->setProtocol("https");
-		$this->setMethod("POST");
-	}
 
-	private  $storeName;
+    /**
+     * @var string
+     */
+    protected $requestScheme = 'https';
 
-	private  $text;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $tagKey;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'CloudPhoto',
+            '2017-07-11',
+            'RegisterTag',
+            'cloudphoto'
+        );
+    }
 
-	private  $lang;
+    /**
+     * @param string $storeName
+     *
+     * @return $this
+     */
+    public function setStoreName($storeName)
+    {
+        $this->requestParameters['StoreName'] = $storeName;
+        $this->queryParameters['StoreName'] = $storeName;
 
-	public function getStoreName() {
-		return $this->storeName;
-	}
+        return $this;
+    }
 
-	public function setStoreName($storeName) {
-		$this->storeName = $storeName;
-		$this->queryParameters["StoreName"]=$storeName;
-	}
+    /**
+     * @param string $text
+     *
+     * @return $this
+     */
+    public function setText($text)
+    {
+        $this->requestParameters['Text'] = $text;
+        $this->queryParameters['Text'] = $text;
 
-	public function getText() {
-		return $this->text;
-	}
+        return $this;
+    }
 
-	public function setText($text) {
-		$this->text = $text;
-		$this->queryParameters["Text"]=$text;
-	}
+    /**
+     * @param string $tagKey
+     *
+     * @return $this
+     */
+    public function setTagKey($tagKey)
+    {
+        $this->requestParameters['TagKey'] = $tagKey;
+        $this->queryParameters['TagKey'] = $tagKey;
 
-	public function getTagKey() {
-		return $this->tagKey;
-	}
+        return $this;
+    }
 
-	public function setTagKey($tagKey) {
-		$this->tagKey = $tagKey;
-		$this->queryParameters["TagKey"]=$tagKey;
-	}
+    /**
+     * @param string $lang
+     *
+     * @return $this
+     */
+    public function setLang($lang)
+    {
+        $this->requestParameters['Lang'] = $lang;
+        $this->queryParameters['Lang'] = $lang;
 
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-	
+        return $this;
+    }
 }

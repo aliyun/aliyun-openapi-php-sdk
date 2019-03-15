@@ -1,163 +1,202 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace CloudPhoto\Request\V20170711;
 
+/**
+ * Request of EditEvent
+ *
+ * @method string getEventId()
+ * @method string getBannerPhotoId()
+ * @method string getWatermarkPhotoId()
+ * @method string getIdentity()
+ * @method string getSplashPhotoId()
+ * @method string getLibraryId()
+ * @method string getWeixinTitle()
+ * @method string getStoreName()
+ * @method string getRemark()
+ * @method string getTitle()
+ * @method string getEndAt()
+ * @method string getStartAt()
+ */
 class EditEventRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("CloudPhoto", "2017-07-11", "EditEvent", "cloudphoto", "openAPI");
-		$this->setProtocol("https");
-		$this->setMethod("POST");
-	}
 
-	private  $eventId;
+    /**
+     * @var string
+     */
+    protected $requestScheme = 'https';
 
-	private  $bannerPhotoId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $watermarkPhotoId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'CloudPhoto',
+            '2017-07-11',
+            'EditEvent',
+            'cloudphoto'
+        );
+    }
 
-	private  $identity;
+    /**
+     * @param string $eventId
+     *
+     * @return $this
+     */
+    public function setEventId($eventId)
+    {
+        $this->requestParameters['EventId'] = $eventId;
+        $this->queryParameters['EventId'] = $eventId;
 
-	private  $splashPhotoId;
+        return $this;
+    }
 
-	private  $libraryId;
+    /**
+     * @param string $bannerPhotoId
+     *
+     * @return $this
+     */
+    public function setBannerPhotoId($bannerPhotoId)
+    {
+        $this->requestParameters['BannerPhotoId'] = $bannerPhotoId;
+        $this->queryParameters['BannerPhotoId'] = $bannerPhotoId;
 
-	private  $weixinTitle;
+        return $this;
+    }
 
-	private  $storeName;
+    /**
+     * @param string $watermarkPhotoId
+     *
+     * @return $this
+     */
+    public function setWatermarkPhotoId($watermarkPhotoId)
+    {
+        $this->requestParameters['WatermarkPhotoId'] = $watermarkPhotoId;
+        $this->queryParameters['WatermarkPhotoId'] = $watermarkPhotoId;
 
-	private  $remark;
+        return $this;
+    }
 
-	private  $title;
+    /**
+     * @param string $identity
+     *
+     * @return $this
+     */
+    public function setIdentity($identity)
+    {
+        $this->requestParameters['Identity'] = $identity;
+        $this->queryParameters['Identity'] = $identity;
 
-	private  $endAt;
+        return $this;
+    }
 
-	private  $startAt;
+    /**
+     * @param string $splashPhotoId
+     *
+     * @return $this
+     */
+    public function setSplashPhotoId($splashPhotoId)
+    {
+        $this->requestParameters['SplashPhotoId'] = $splashPhotoId;
+        $this->queryParameters['SplashPhotoId'] = $splashPhotoId;
 
-	public function getEventId() {
-		return $this->eventId;
-	}
+        return $this;
+    }
 
-	public function setEventId($eventId) {
-		$this->eventId = $eventId;
-		$this->queryParameters["EventId"]=$eventId;
-	}
+    /**
+     * @param string $libraryId
+     *
+     * @return $this
+     */
+    public function setLibraryId($libraryId)
+    {
+        $this->requestParameters['LibraryId'] = $libraryId;
+        $this->queryParameters['LibraryId'] = $libraryId;
 
-	public function getBannerPhotoId() {
-		return $this->bannerPhotoId;
-	}
+        return $this;
+    }
 
-	public function setBannerPhotoId($bannerPhotoId) {
-		$this->bannerPhotoId = $bannerPhotoId;
-		$this->queryParameters["BannerPhotoId"]=$bannerPhotoId;
-	}
+    /**
+     * @param string $weixinTitle
+     *
+     * @return $this
+     */
+    public function setWeixinTitle($weixinTitle)
+    {
+        $this->requestParameters['WeixinTitle'] = $weixinTitle;
+        $this->queryParameters['WeixinTitle'] = $weixinTitle;
 
-	public function getWatermarkPhotoId() {
-		return $this->watermarkPhotoId;
-	}
+        return $this;
+    }
 
-	public function setWatermarkPhotoId($watermarkPhotoId) {
-		$this->watermarkPhotoId = $watermarkPhotoId;
-		$this->queryParameters["WatermarkPhotoId"]=$watermarkPhotoId;
-	}
+    /**
+     * @param string $storeName
+     *
+     * @return $this
+     */
+    public function setStoreName($storeName)
+    {
+        $this->requestParameters['StoreName'] = $storeName;
+        $this->queryParameters['StoreName'] = $storeName;
 
-	public function getIdentity() {
-		return $this->identity;
-	}
+        return $this;
+    }
 
-	public function setIdentity($identity) {
-		$this->identity = $identity;
-		$this->queryParameters["Identity"]=$identity;
-	}
+    /**
+     * @param string $remark
+     *
+     * @return $this
+     */
+    public function setRemark($remark)
+    {
+        $this->requestParameters['Remark'] = $remark;
+        $this->queryParameters['Remark'] = $remark;
 
-	public function getSplashPhotoId() {
-		return $this->splashPhotoId;
-	}
+        return $this;
+    }
 
-	public function setSplashPhotoId($splashPhotoId) {
-		$this->splashPhotoId = $splashPhotoId;
-		$this->queryParameters["SplashPhotoId"]=$splashPhotoId;
-	}
+    /**
+     * @param string $title
+     *
+     * @return $this
+     */
+    public function setTitle($title)
+    {
+        $this->requestParameters['Title'] = $title;
+        $this->queryParameters['Title'] = $title;
 
-	public function getLibraryId() {
-		return $this->libraryId;
-	}
+        return $this;
+    }
 
-	public function setLibraryId($libraryId) {
-		$this->libraryId = $libraryId;
-		$this->queryParameters["LibraryId"]=$libraryId;
-	}
+    /**
+     * @param string $endAt
+     *
+     * @return $this
+     */
+    public function setEndAt($endAt)
+    {
+        $this->requestParameters['EndAt'] = $endAt;
+        $this->queryParameters['EndAt'] = $endAt;
 
-	public function getWeixinTitle() {
-		return $this->weixinTitle;
-	}
+        return $this;
+    }
 
-	public function setWeixinTitle($weixinTitle) {
-		$this->weixinTitle = $weixinTitle;
-		$this->queryParameters["WeixinTitle"]=$weixinTitle;
-	}
+    /**
+     * @param string $startAt
+     *
+     * @return $this
+     */
+    public function setStartAt($startAt)
+    {
+        $this->requestParameters['StartAt'] = $startAt;
+        $this->queryParameters['StartAt'] = $startAt;
 
-	public function getStoreName() {
-		return $this->storeName;
-	}
-
-	public function setStoreName($storeName) {
-		$this->storeName = $storeName;
-		$this->queryParameters["StoreName"]=$storeName;
-	}
-
-	public function getRemark() {
-		return $this->remark;
-	}
-
-	public function setRemark($remark) {
-		$this->remark = $remark;
-		$this->queryParameters["Remark"]=$remark;
-	}
-
-	public function getTitle() {
-		return $this->title;
-	}
-
-	public function setTitle($title) {
-		$this->title = $title;
-		$this->queryParameters["Title"]=$title;
-	}
-
-	public function getEndAt() {
-		return $this->endAt;
-	}
-
-	public function setEndAt($endAt) {
-		$this->endAt = $endAt;
-		$this->queryParameters["EndAt"]=$endAt;
-	}
-
-	public function getStartAt() {
-		return $this->startAt;
-	}
-
-	public function setStartAt($startAt) {
-		$this->startAt = $startAt;
-		$this->queryParameters["StartAt"]=$startAt;
-	}
-	
+        return $this;
+    }
 }

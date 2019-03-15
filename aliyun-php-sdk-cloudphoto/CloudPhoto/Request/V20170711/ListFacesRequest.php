@@ -1,108 +1,132 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace CloudPhoto\Request\V20170711;
 
+/**
+ * Request of ListFaces
+ *
+ * @method string getCursor()
+ * @method string getHasFaceName()
+ * @method string getSize()
+ * @method string getLibraryId()
+ * @method string getStoreName()
+ * @method string getState()
+ * @method string getDirection()
+ */
 class ListFacesRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("CloudPhoto", "2017-07-11", "ListFaces", "cloudphoto", "openAPI");
-		$this->setProtocol("https");
-		$this->setMethod("POST");
-	}
 
-	private  $cursor;
+    /**
+     * @var string
+     */
+    protected $requestScheme = 'https';
 
-	private  $hasFaceName;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $size;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'CloudPhoto',
+            '2017-07-11',
+            'ListFaces',
+            'cloudphoto'
+        );
+    }
 
-	private  $libraryId;
+    /**
+     * @param string $cursor
+     *
+     * @return $this
+     */
+    public function setCursor($cursor)
+    {
+        $this->requestParameters['Cursor'] = $cursor;
+        $this->queryParameters['Cursor'] = $cursor;
 
-	private  $storeName;
+        return $this;
+    }
 
-	private  $state;
+    /**
+     * @param string $hasFaceName
+     *
+     * @return $this
+     */
+    public function setHasFaceName($hasFaceName)
+    {
+        $this->requestParameters['HasFaceName'] = $hasFaceName;
+        $this->queryParameters['HasFaceName'] = $hasFaceName;
 
-	private  $direction;
+        return $this;
+    }
 
-	public function getCursor() {
-		return $this->cursor;
-	}
+    /**
+     * @param string $size
+     *
+     * @return $this
+     */
+    public function setSize($size)
+    {
+        $this->requestParameters['Size'] = $size;
+        $this->queryParameters['Size'] = $size;
 
-	public function setCursor($cursor) {
-		$this->cursor = $cursor;
-		$this->queryParameters["Cursor"]=$cursor;
-	}
+        return $this;
+    }
 
-	public function getHasFaceName() {
-		return $this->hasFaceName;
-	}
+    /**
+     * @param string $libraryId
+     *
+     * @return $this
+     */
+    public function setLibraryId($libraryId)
+    {
+        $this->requestParameters['LibraryId'] = $libraryId;
+        $this->queryParameters['LibraryId'] = $libraryId;
 
-	public function setHasFaceName($hasFaceName) {
-		$this->hasFaceName = $hasFaceName;
-		$this->queryParameters["HasFaceName"]=$hasFaceName;
-	}
+        return $this;
+    }
 
-	public function getSize() {
-		return $this->size;
-	}
+    /**
+     * @param string $storeName
+     *
+     * @return $this
+     */
+    public function setStoreName($storeName)
+    {
+        $this->requestParameters['StoreName'] = $storeName;
+        $this->queryParameters['StoreName'] = $storeName;
 
-	public function setSize($size) {
-		$this->size = $size;
-		$this->queryParameters["Size"]=$size;
-	}
+        return $this;
+    }
 
-	public function getLibraryId() {
-		return $this->libraryId;
-	}
+    /**
+     * @param string $state
+     *
+     * @return $this
+     */
+    public function setState($state)
+    {
+        $this->requestParameters['State'] = $state;
+        $this->queryParameters['State'] = $state;
 
-	public function setLibraryId($libraryId) {
-		$this->libraryId = $libraryId;
-		$this->queryParameters["LibraryId"]=$libraryId;
-	}
+        return $this;
+    }
 
-	public function getStoreName() {
-		return $this->storeName;
-	}
+    /**
+     * @param string $direction
+     *
+     * @return $this
+     */
+    public function setDirection($direction)
+    {
+        $this->requestParameters['Direction'] = $direction;
+        $this->queryParameters['Direction'] = $direction;
 
-	public function setStoreName($storeName) {
-		$this->storeName = $storeName;
-		$this->queryParameters["StoreName"]=$storeName;
-	}
-
-	public function getState() {
-		return $this->state;
-	}
-
-	public function setState($state) {
-		$this->state = $state;
-		$this->queryParameters["State"]=$state;
-	}
-
-	public function getDirection() {
-		return $this->direction;
-	}
-
-	public function setDirection($direction) {
-		$this->direction = $direction;
-		$this->queryParameters["Direction"]=$direction;
-	}
-	
+        return $this;
+    }
 }

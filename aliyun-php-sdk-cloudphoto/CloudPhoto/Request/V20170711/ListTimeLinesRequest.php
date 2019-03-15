@@ -1,130 +1,160 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace CloudPhoto\Request\V20170711;
 
+/**
+ * Request of ListTimeLines
+ *
+ * @method string getCursor()
+ * @method string getPhotoSize()
+ * @method string getTimeLineCount()
+ * @method string getLibraryId()
+ * @method string getStoreName()
+ * @method string getTimeLineUnit()
+ * @method string getFilterBy()
+ * @method string getDirection()
+ * @method string getOrder()
+ */
 class ListTimeLinesRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("CloudPhoto", "2017-07-11", "ListTimeLines", "cloudphoto", "openAPI");
-		$this->setProtocol("https");
-		$this->setMethod("POST");
-	}
 
-	private  $cursor;
+    /**
+     * @var string
+     */
+    protected $requestScheme = 'https';
 
-	private  $photoSize;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $timeLineCount;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'CloudPhoto',
+            '2017-07-11',
+            'ListTimeLines',
+            'cloudphoto'
+        );
+    }
 
-	private  $libraryId;
+    /**
+     * @param string $cursor
+     *
+     * @return $this
+     */
+    public function setCursor($cursor)
+    {
+        $this->requestParameters['Cursor'] = $cursor;
+        $this->queryParameters['Cursor'] = $cursor;
 
-	private  $storeName;
+        return $this;
+    }
 
-	private  $timeLineUnit;
+    /**
+     * @param string $photoSize
+     *
+     * @return $this
+     */
+    public function setPhotoSize($photoSize)
+    {
+        $this->requestParameters['PhotoSize'] = $photoSize;
+        $this->queryParameters['PhotoSize'] = $photoSize;
 
-	private  $filterBy;
+        return $this;
+    }
 
-	private  $direction;
+    /**
+     * @param string $timeLineCount
+     *
+     * @return $this
+     */
+    public function setTimeLineCount($timeLineCount)
+    {
+        $this->requestParameters['TimeLineCount'] = $timeLineCount;
+        $this->queryParameters['TimeLineCount'] = $timeLineCount;
 
-	private  $order;
+        return $this;
+    }
 
-	public function getCursor() {
-		return $this->cursor;
-	}
+    /**
+     * @param string $libraryId
+     *
+     * @return $this
+     */
+    public function setLibraryId($libraryId)
+    {
+        $this->requestParameters['LibraryId'] = $libraryId;
+        $this->queryParameters['LibraryId'] = $libraryId;
 
-	public function setCursor($cursor) {
-		$this->cursor = $cursor;
-		$this->queryParameters["Cursor"]=$cursor;
-	}
+        return $this;
+    }
 
-	public function getPhotoSize() {
-		return $this->photoSize;
-	}
+    /**
+     * @param string $storeName
+     *
+     * @return $this
+     */
+    public function setStoreName($storeName)
+    {
+        $this->requestParameters['StoreName'] = $storeName;
+        $this->queryParameters['StoreName'] = $storeName;
 
-	public function setPhotoSize($photoSize) {
-		$this->photoSize = $photoSize;
-		$this->queryParameters["PhotoSize"]=$photoSize;
-	}
+        return $this;
+    }
 
-	public function getTimeLineCount() {
-		return $this->timeLineCount;
-	}
+    /**
+     * @param string $timeLineUnit
+     *
+     * @return $this
+     */
+    public function setTimeLineUnit($timeLineUnit)
+    {
+        $this->requestParameters['TimeLineUnit'] = $timeLineUnit;
+        $this->queryParameters['TimeLineUnit'] = $timeLineUnit;
 
-	public function setTimeLineCount($timeLineCount) {
-		$this->timeLineCount = $timeLineCount;
-		$this->queryParameters["TimeLineCount"]=$timeLineCount;
-	}
+        return $this;
+    }
 
-	public function getLibraryId() {
-		return $this->libraryId;
-	}
+    /**
+     * @param string $filterBy
+     *
+     * @return $this
+     */
+    public function setFilterBy($filterBy)
+    {
+        $this->requestParameters['FilterBy'] = $filterBy;
+        $this->queryParameters['FilterBy'] = $filterBy;
 
-	public function setLibraryId($libraryId) {
-		$this->libraryId = $libraryId;
-		$this->queryParameters["LibraryId"]=$libraryId;
-	}
+        return $this;
+    }
 
-	public function getStoreName() {
-		return $this->storeName;
-	}
+    /**
+     * @param string $direction
+     *
+     * @return $this
+     */
+    public function setDirection($direction)
+    {
+        $this->requestParameters['Direction'] = $direction;
+        $this->queryParameters['Direction'] = $direction;
 
-	public function setStoreName($storeName) {
-		$this->storeName = $storeName;
-		$this->queryParameters["StoreName"]=$storeName;
-	}
+        return $this;
+    }
 
-	public function getTimeLineUnit() {
-		return $this->timeLineUnit;
-	}
+    /**
+     * @param string $order
+     *
+     * @return $this
+     */
+    public function setOrder($order)
+    {
+        $this->requestParameters['Order'] = $order;
+        $this->queryParameters['Order'] = $order;
 
-	public function setTimeLineUnit($timeLineUnit) {
-		$this->timeLineUnit = $timeLineUnit;
-		$this->queryParameters["TimeLineUnit"]=$timeLineUnit;
-	}
-
-	public function getFilterBy() {
-		return $this->filterBy;
-	}
-
-	public function setFilterBy($filterBy) {
-		$this->filterBy = $filterBy;
-		$this->queryParameters["FilterBy"]=$filterBy;
-	}
-
-	public function getDirection() {
-		return $this->direction;
-	}
-
-	public function setDirection($direction) {
-		$this->direction = $direction;
-		$this->queryParameters["Direction"]=$direction;
-	}
-
-	public function getOrder() {
-		return $this->order;
-	}
-
-	public function setOrder($order) {
-		$this->order = $order;
-		$this->queryParameters["Order"]=$order;
-	}
-	
+        return $this;
+    }
 }
