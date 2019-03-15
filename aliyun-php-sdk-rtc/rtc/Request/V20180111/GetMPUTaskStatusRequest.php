@@ -3,13 +3,13 @@
 namespace rtc\Request\V20180111;
 
 /**
- * Request of DeleteChannel
+ * Request of GetMPUTaskStatus
  *
  * @method string getOwnerId()
  * @method string getAppId()
- * @method string getChannelId()
+ * @method string getTaskId()
  */
-class DeleteChannelRequest extends \RpcAcsRequest
+class GetMPUTaskStatusRequest extends \RpcAcsRequest
 {
 
     /**
@@ -25,7 +25,7 @@ class DeleteChannelRequest extends \RpcAcsRequest
         parent::__construct(
             'rtc',
             '2018-01-11',
-            'DeleteChannel',
+            'GetMPUTaskStatus',
             'rtc'
         );
     }
@@ -57,14 +57,14 @@ class DeleteChannelRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $channelId
+     * @param string $taskId
      *
      * @return $this
      */
-    public function setChannelId($channelId)
+    public function setTaskId($taskId)
     {
-        $this->requestParameters['ChannelId'] = $channelId;
-        $this->queryParameters['ChannelId'] = $channelId;
+        $this->requestParameters['TaskId'] = $taskId;
+        $this->queryParameters['TaskId'] = $taskId;
 
         return $this;
     }

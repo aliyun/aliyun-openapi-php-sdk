@@ -1,74 +1,85 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace rtc\Request\V20180111;
 
+/**
+ * Request of UpdateChannel
+ *
+ * @method string getOwnerId()
+ * @method string getNonce()
+ * @method string getAppId()
+ * @method string getChannelId()
+ */
 class UpdateChannelRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("rtc", "2018-01-11", "UpdateChannel", "rtc", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $ownerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $nonce;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'rtc',
+            '2018-01-11',
+            'UpdateChannel',
+            'rtc'
+        );
+    }
 
-	private  $appId;
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	private  $channelId;
+        return $this;
+    }
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+    /**
+     * @param string $nonce
+     *
+     * @return $this
+     */
+    public function setNonce($nonce)
+    {
+        $this->requestParameters['Nonce'] = $nonce;
+        $this->queryParameters['Nonce'] = $nonce;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+        return $this;
+    }
 
-	public function getNonce() {
-		return $this->nonce;
-	}
+    /**
+     * @param string $appId
+     *
+     * @return $this
+     */
+    public function setAppId($appId)
+    {
+        $this->requestParameters['AppId'] = $appId;
+        $this->queryParameters['AppId'] = $appId;
 
-	public function setNonce($nonce) {
-		$this->nonce = $nonce;
-		$this->queryParameters["Nonce"]=$nonce;
-	}
+        return $this;
+    }
 
-	public function getAppId() {
-		return $this->appId;
-	}
+    /**
+     * @param string $channelId
+     *
+     * @return $this
+     */
+    public function setChannelId($channelId)
+    {
+        $this->requestParameters['ChannelId'] = $channelId;
+        $this->queryParameters['ChannelId'] = $channelId;
 
-	public function setAppId($appId) {
-		$this->appId = $appId;
-		$this->queryParameters["AppId"]=$appId;
-	}
-
-	public function getChannelId() {
-		return $this->channelId;
-	}
-
-	public function setChannelId($channelId) {
-		$this->channelId = $channelId;
-		$this->queryParameters["ChannelId"]=$channelId;
-	}
-	
+        return $this;
+    }
 }

@@ -1,101 +1,117 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace rtc\Request\V20180111;
 
+/**
+ * Request of StartTask
+ *
+ * @method array getMixPaness()
+ * @method string getIdempotentId()
+ * @method string getOwnerId()
+ * @method string getTemplateId()
+ * @method string getAppId()
+ * @method string getChannelId()
+ */
 class StartTaskRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("rtc", "2018-01-11", "StartTask", "rtc", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $MixPaness;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $idempotentId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'rtc',
+            '2018-01-11',
+            'StartTask',
+            'rtc'
+        );
+    }
 
-	private  $ownerId;
+    /**
+     * @param array $mixPaness
+     *
+     * @return $this
+     */
+    public function setMixPaness(array $mixPaness)
+    {
+        $this->requestParameters['MixPaness'] = $mixPaness;
+        foreach ($mixPaness as $i => $iValue) {
+            $this->queryParameters['MixPanes.' . ($i + 1) . '.PaneId'] = $mixPaness[$i]['PaneId'];
+            $this->queryParameters['MixPanes.' . ($i + 1) . '.UserId'] = $mixPaness[$i]['UserId'];
+            $this->queryParameters['MixPanes.' . ($i + 1) . '.SourceType'] = $mixPaness[$i]['SourceType'];
+        }
 
-	private  $templateId;
+        return $this;
+    }
 
-	private  $appId;
+    /**
+     * @param string $idempotentId
+     *
+     * @return $this
+     */
+    public function setIdempotentId($idempotentId)
+    {
+        $this->requestParameters['IdempotentId'] = $idempotentId;
+        $this->queryParameters['IdempotentId'] = $idempotentId;
 
-	private  $channelId;
+        return $this;
+    }
 
-	public function getMixPaness() {
-		return $this->MixPaness;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setMixPaness($MixPaness) {
-		$this->MixPaness = $MixPaness;
-		for ($i = 0; $i < count($MixPaness); $i ++) {	
-			$this->queryParameters['MixPanes.' . ($i + 1) . '.PaneId'] = $MixPaness[$i]['PaneId'];
-			$this->queryParameters['MixPanes.' . ($i + 1) . '.UserId'] = $MixPaness[$i]['UserId'];
-			$this->queryParameters['MixPanes.' . ($i + 1) . '.SourceType'] = $MixPaness[$i]['SourceType'];
+        return $this;
+    }
 
-		}
-	}
+    /**
+     * @param string $templateId
+     *
+     * @return $this
+     */
+    public function setTemplateId($templateId)
+    {
+        $this->requestParameters['TemplateId'] = $templateId;
+        $this->queryParameters['TemplateId'] = $templateId;
 
-	public function getIdempotentId() {
-		return $this->idempotentId;
-	}
+        return $this;
+    }
 
-	public function setIdempotentId($idempotentId) {
-		$this->idempotentId = $idempotentId;
-		$this->queryParameters["IdempotentId"]=$idempotentId;
-	}
+    /**
+     * @param string $appId
+     *
+     * @return $this
+     */
+    public function setAppId($appId)
+    {
+        $this->requestParameters['AppId'] = $appId;
+        $this->queryParameters['AppId'] = $appId;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+        return $this;
+    }
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+    /**
+     * @param string $channelId
+     *
+     * @return $this
+     */
+    public function setChannelId($channelId)
+    {
+        $this->requestParameters['ChannelId'] = $channelId;
+        $this->queryParameters['ChannelId'] = $channelId;
 
-	public function getTemplateId() {
-		return $this->templateId;
-	}
-
-	public function setTemplateId($templateId) {
-		$this->templateId = $templateId;
-		$this->queryParameters["TemplateId"]=$templateId;
-	}
-
-	public function getAppId() {
-		return $this->appId;
-	}
-
-	public function setAppId($appId) {
-		$this->appId = $appId;
-		$this->queryParameters["AppId"]=$appId;
-	}
-
-	public function getChannelId() {
-		return $this->channelId;
-	}
-
-	public function setChannelId($channelId) {
-		$this->channelId = $channelId;
-		$this->queryParameters["ChannelId"]=$channelId;
-	}
-	
+        return $this;
+    }
 }

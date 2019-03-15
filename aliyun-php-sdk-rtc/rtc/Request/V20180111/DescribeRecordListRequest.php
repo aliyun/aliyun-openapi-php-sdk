@@ -1,140 +1,169 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace rtc\Request\V20180111;
 
+/**
+ * Request of DescribeRecordList
+ *
+ * @method string getSortType()
+ * @method string getStartTime()
+ * @method string getServiceArea()
+ * @method string getPageSize()
+ * @method string getId()
+ * @method string getEndTime()
+ * @method string getOwnerId()
+ * @method string getIdType()
+ * @method string getPageNo()
+ * @method string getAppId()
+ */
 class DescribeRecordListRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("rtc", "2018-01-11", "DescribeRecordList", "rtc", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $sortType;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $startTime;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'rtc',
+            '2018-01-11',
+            'DescribeRecordList',
+            'rtc'
+        );
+    }
 
-	private  $serviceArea;
+    /**
+     * @param string $sortType
+     *
+     * @return $this
+     */
+    public function setSortType($sortType)
+    {
+        $this->requestParameters['SortType'] = $sortType;
+        $this->queryParameters['SortType'] = $sortType;
 
-	private  $pageSize;
+        return $this;
+    }
 
-	private  $id;
+    /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
 
-	private  $endTime;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $serviceArea
+     *
+     * @return $this
+     */
+    public function setServiceArea($serviceArea)
+    {
+        $this->requestParameters['ServiceArea'] = $serviceArea;
+        $this->queryParameters['ServiceArea'] = $serviceArea;
 
-	private  $idType;
+        return $this;
+    }
 
-	private  $pageNo;
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	private  $appId;
+        return $this;
+    }
 
-	public function getSortType() {
-		return $this->sortType;
-	}
+    /**
+     * @param string $id
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->requestParameters['Id'] = $id;
+        $this->queryParameters['Id'] = $id;
 
-	public function setSortType($sortType) {
-		$this->sortType = $sortType;
-		$this->queryParameters["SortType"]=$sortType;
-	}
+        return $this;
+    }
 
-	public function getStartTime() {
-		return $this->startTime;
-	}
+    /**
+     * @param string $endTime
+     *
+     * @return $this
+     */
+    public function setEndTime($endTime)
+    {
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
 
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
+        return $this;
+    }
 
-	public function getServiceArea() {
-		return $this->serviceArea;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setServiceArea($serviceArea) {
-		$this->serviceArea = $serviceArea;
-		$this->queryParameters["ServiceArea"]=$serviceArea;
-	}
+        return $this;
+    }
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
+    /**
+     * @param string $idType
+     *
+     * @return $this
+     */
+    public function setIdType($idType)
+    {
+        $this->requestParameters['IdType'] = $idType;
+        $this->queryParameters['IdType'] = $idType;
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
+        return $this;
+    }
 
-	public function getId() {
-		return $this->id;
-	}
+    /**
+     * @param string $pageNo
+     *
+     * @return $this
+     */
+    public function setPageNo($pageNo)
+    {
+        $this->requestParameters['PageNo'] = $pageNo;
+        $this->queryParameters['PageNo'] = $pageNo;
 
-	public function setId($id) {
-		$this->id = $id;
-		$this->queryParameters["Id"]=$id;
-	}
+        return $this;
+    }
 
-	public function getEndTime() {
-		return $this->endTime;
-	}
+    /**
+     * @param string $appId
+     *
+     * @return $this
+     */
+    public function setAppId($appId)
+    {
+        $this->requestParameters['AppId'] = $appId;
+        $this->queryParameters['AppId'] = $appId;
 
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getIdType() {
-		return $this->idType;
-	}
-
-	public function setIdType($idType) {
-		$this->idType = $idType;
-		$this->queryParameters["IdType"]=$idType;
-	}
-
-	public function getPageNo() {
-		return $this->pageNo;
-	}
-
-	public function setPageNo($pageNo) {
-		$this->pageNo = $pageNo;
-		$this->queryParameters["PageNo"]=$pageNo;
-	}
-
-	public function getAppId() {
-		return $this->appId;
-	}
-
-	public function setAppId($appId) {
-		$this->appId = $appId;
-		$this->queryParameters["AppId"]=$appId;
-	}
-	
+        return $this;
+    }
 }

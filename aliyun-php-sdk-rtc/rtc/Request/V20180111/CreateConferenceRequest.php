@@ -1,107 +1,127 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace rtc\Request\V20180111;
 
+/**
+ * Request of CreateConference
+ *
+ * @method string getClientToken()
+ * @method string getStartTime()
+ * @method string getType()
+ * @method string getConferenceName()
+ * @method string getOwnerId()
+ * @method string getAppId()
+ * @method string getRemindNotice()
+ */
 class CreateConferenceRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("rtc", "2018-01-11", "CreateConference", "rtc", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $clientToken;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $startTime;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'rtc',
+            '2018-01-11',
+            'CreateConference',
+            'rtc'
+        );
+    }
 
-	private  $type;
+    /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
 
-	private  $conferenceName;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
 
-	private  $appId;
+        return $this;
+    }
 
-	private  $remindNotice;
+    /**
+     * @param string $type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->requestParameters['Type'] = $type;
+        $this->queryParameters['Type'] = $type;
 
-	public function getClientToken() {
-		return $this->clientToken;
-	}
+        return $this;
+    }
 
-	public function setClientToken($clientToken) {
-		$this->clientToken = $clientToken;
-		$this->queryParameters["ClientToken"]=$clientToken;
-	}
+    /**
+     * @param string $conferenceName
+     *
+     * @return $this
+     */
+    public function setConferenceName($conferenceName)
+    {
+        $this->requestParameters['ConferenceName'] = $conferenceName;
+        $this->queryParameters['ConferenceName'] = $conferenceName;
 
-	public function getStartTime() {
-		return $this->startTime;
-	}
+        return $this;
+    }
 
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function getType() {
-		return $this->type;
-	}
+        return $this;
+    }
 
-	public function setType($type) {
-		$this->type = $type;
-		$this->queryParameters["Type"]=$type;
-	}
+    /**
+     * @param string $appId
+     *
+     * @return $this
+     */
+    public function setAppId($appId)
+    {
+        $this->requestParameters['AppId'] = $appId;
+        $this->queryParameters['AppId'] = $appId;
 
-	public function getConferenceName() {
-		return $this->conferenceName;
-	}
+        return $this;
+    }
 
-	public function setConferenceName($conferenceName) {
-		$this->conferenceName = $conferenceName;
-		$this->queryParameters["ConferenceName"]=$conferenceName;
-	}
+    /**
+     * @param string $remindNotice
+     *
+     * @return $this
+     */
+    public function setRemindNotice($remindNotice)
+    {
+        $this->requestParameters['RemindNotice'] = $remindNotice;
+        $this->queryParameters['RemindNotice'] = $remindNotice;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getAppId() {
-		return $this->appId;
-	}
-
-	public function setAppId($appId) {
-		$this->appId = $appId;
-		$this->queryParameters["AppId"]=$appId;
-	}
-
-	public function getRemindNotice() {
-		return $this->remindNotice;
-	}
-
-	public function setRemindNotice($remindNotice) {
-		$this->remindNotice = $remindNotice;
-		$this->queryParameters["RemindNotice"]=$remindNotice;
-	}
-	
+        return $this;
+    }
 }

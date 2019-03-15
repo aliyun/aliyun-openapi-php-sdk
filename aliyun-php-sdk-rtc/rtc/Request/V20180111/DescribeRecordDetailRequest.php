@@ -1,96 +1,113 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace rtc\Request\V20180111;
 
+/**
+ * Request of DescribeRecordDetail
+ *
+ * @method string getStartTime()
+ * @method string getEndTime()
+ * @method string getOwnerId()
+ * @method string getRecordId()
+ * @method string getAppId()
+ * @method string getChannelId()
+ */
 class DescribeRecordDetailRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("rtc", "2018-01-11", "DescribeRecordDetail", "rtc", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $startTime;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $endTime;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'rtc',
+            '2018-01-11',
+            'DescribeRecordDetail',
+            'rtc'
+        );
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
 
-	private  $recordId;
+        return $this;
+    }
 
-	private  $appId;
+    /**
+     * @param string $endTime
+     *
+     * @return $this
+     */
+    public function setEndTime($endTime)
+    {
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
 
-	private  $channelId;
+        return $this;
+    }
 
-	public function getStartTime() {
-		return $this->startTime;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
+        return $this;
+    }
 
-	public function getEndTime() {
-		return $this->endTime;
-	}
+    /**
+     * @param string $recordId
+     *
+     * @return $this
+     */
+    public function setRecordId($recordId)
+    {
+        $this->requestParameters['RecordId'] = $recordId;
+        $this->queryParameters['RecordId'] = $recordId;
 
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
+        return $this;
+    }
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+    /**
+     * @param string $appId
+     *
+     * @return $this
+     */
+    public function setAppId($appId)
+    {
+        $this->requestParameters['AppId'] = $appId;
+        $this->queryParameters['AppId'] = $appId;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+        return $this;
+    }
 
-	public function getRecordId() {
-		return $this->recordId;
-	}
+    /**
+     * @param string $channelId
+     *
+     * @return $this
+     */
+    public function setChannelId($channelId)
+    {
+        $this->requestParameters['ChannelId'] = $channelId;
+        $this->queryParameters['ChannelId'] = $channelId;
 
-	public function setRecordId($recordId) {
-		$this->recordId = $recordId;
-		$this->queryParameters["RecordId"]=$recordId;
-	}
-
-	public function getAppId() {
-		return $this->appId;
-	}
-
-	public function setAppId($appId) {
-		$this->appId = $appId;
-		$this->queryParameters["AppId"]=$appId;
-	}
-
-	public function getChannelId() {
-		return $this->channelId;
-	}
-
-	public function setChannelId($channelId) {
-		$this->channelId = $channelId;
-		$this->queryParameters["ChannelId"]=$channelId;
-	}
-	
+        return $this;
+    }
 }

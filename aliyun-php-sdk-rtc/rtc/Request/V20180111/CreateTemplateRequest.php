@@ -1,156 +1,182 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace rtc\Request\V20180111;
 
+/**
+ * Request of CreateTemplate
+ *
+ * @method string getServiceMode()
+ * @method array getLiveConfigs()
+ * @method string getMediaConfig()
+ * @method string getMaxMixStreamCount()
+ * @method array getRecordConfigs()
+ * @method string getOwnerId()
+ * @method array getLayOuts()
+ * @method string getAppId()
+ * @method string getCallBack()
+ * @method string getMixMode()
+ */
 class CreateTemplateRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("rtc", "2018-01-11", "CreateTemplate", "rtc", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $serviceMode;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $LiveConfigs;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'rtc',
+            '2018-01-11',
+            'CreateTemplate',
+            'rtc'
+        );
+    }
 
-	private  $mediaConfig;
+    /**
+     * @param string $serviceMode
+     *
+     * @return $this
+     */
+    public function setServiceMode($serviceMode)
+    {
+        $this->requestParameters['ServiceMode'] = $serviceMode;
+        $this->queryParameters['ServiceMode'] = $serviceMode;
 
-	private  $maxMixStreamCount;
+        return $this;
+    }
 
-	private  $RecordConfigs;
+    /**
+     * @param array $liveConfigs
+     *
+     * @return $this
+     */
+    public function setLiveConfigs(array $liveConfigs)
+    {
+        $this->requestParameters['LiveConfigs'] = $liveConfigs;
+        foreach ($liveConfigs as $i => $iValue) {
+            $this->queryParameters['LiveConfig.' . ($i + 1) . '.DomainName'] = $liveConfigs[$i]['DomainName'];
+            $this->queryParameters['LiveConfig.' . ($i + 1) . '.AppName'] = $liveConfigs[$i]['AppName'];
+        }
 
-	private  $ownerId;
+        return $this;
+    }
 
-	private  $LayOuts;
+    /**
+     * @param string $mediaConfig
+     *
+     * @return $this
+     */
+    public function setMediaConfig($mediaConfig)
+    {
+        $this->requestParameters['MediaConfig'] = $mediaConfig;
+        $this->queryParameters['MediaConfig'] = $mediaConfig;
 
-	private  $appId;
+        return $this;
+    }
 
-	private  $callBack;
+    /**
+     * @param string $maxMixStreamCount
+     *
+     * @return $this
+     */
+    public function setMaxMixStreamCount($maxMixStreamCount)
+    {
+        $this->requestParameters['MaxMixStreamCount'] = $maxMixStreamCount;
+        $this->queryParameters['MaxMixStreamCount'] = $maxMixStreamCount;
 
-	private  $mixMode;
+        return $this;
+    }
 
-	public function getServiceMode() {
-		return $this->serviceMode;
-	}
+    /**
+     * @param array $recordConfigs
+     *
+     * @return $this
+     */
+    public function setRecordConfigs(array $recordConfigs)
+    {
+        $this->requestParameters['RecordConfigs'] = $recordConfigs;
+        foreach ($recordConfigs as $i => $iValue) {
+            $this->queryParameters['RecordConfig.' . ($i + 1) . '.StorageType'] = $recordConfigs[$i]['StorageType'];
+            $this->queryParameters['RecordConfig.' . ($i + 1) . '.FileFormat'] = $recordConfigs[$i]['FileFormat'];
+            $this->queryParameters['RecordConfig.' . ($i + 1) . '.OssEndPoint'] = $recordConfigs[$i]['OssEndPoint'];
+            $this->queryParameters['RecordConfig.' . ($i + 1) . '.OssBucket'] = $recordConfigs[$i]['OssBucket'];
+            $this->queryParameters['RecordConfig.' . ($i + 1) . '.VodTransCodeGroupId'] = $recordConfigs[$i]['VodTransCodeGroupId'];
+        }
 
-	public function setServiceMode($serviceMode) {
-		$this->serviceMode = $serviceMode;
-		$this->queryParameters["ServiceMode"]=$serviceMode;
-	}
+        return $this;
+    }
 
-	public function getLiveConfigs() {
-		return $this->LiveConfigs;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setLiveConfigs($LiveConfigs) {
-		$this->LiveConfigs = $LiveConfigs;
-		for ($i = 0; $i < count($LiveConfigs); $i ++) {	
-			$this->queryParameters['LiveConfig.' . ($i + 1) . '.DomainName'] = $LiveConfigs[$i]['DomainName'];
-			$this->queryParameters['LiveConfig.' . ($i + 1) . '.AppName'] = $LiveConfigs[$i]['AppName'];
+        return $this;
+    }
 
-		}
-	}
+    /**
+     * @param array $layOuts
+     *
+     * @return $this
+     */
+    public function setLayOuts(array $layOuts)
+    {
+        $this->requestParameters['LayOuts'] = $layOuts;
+        foreach ($layOuts as $i => $iValue) {
+            $this->queryParameters['LayOut.' . ($i + 1) . '.Color'] = $layOuts[$i]['Color'];
+            $this->queryParameters['LayOut.' . ($i + 1) . '.CutMode'] = $layOuts[$i]['CutMode'];
+            $this->queryParameters['LayOut.' . ($i + 1) . '.LayOutId'] = $layOuts[$i]['LayOutId'];
+        }
 
-	public function getMediaConfig() {
-		return $this->mediaConfig;
-	}
+        return $this;
+    }
 
-	public function setMediaConfig($mediaConfig) {
-		$this->mediaConfig = $mediaConfig;
-		$this->queryParameters["MediaConfig"]=$mediaConfig;
-	}
+    /**
+     * @param string $appId
+     *
+     * @return $this
+     */
+    public function setAppId($appId)
+    {
+        $this->requestParameters['AppId'] = $appId;
+        $this->queryParameters['AppId'] = $appId;
 
-	public function getMaxMixStreamCount() {
-		return $this->maxMixStreamCount;
-	}
+        return $this;
+    }
 
-	public function setMaxMixStreamCount($maxMixStreamCount) {
-		$this->maxMixStreamCount = $maxMixStreamCount;
-		$this->queryParameters["MaxMixStreamCount"]=$maxMixStreamCount;
-	}
+    /**
+     * @param string $callBack
+     *
+     * @return $this
+     */
+    public function setCallBack($callBack)
+    {
+        $this->requestParameters['CallBack'] = $callBack;
+        $this->queryParameters['CallBack'] = $callBack;
 
-	public function getRecordConfigs() {
-		return $this->RecordConfigs;
-	}
+        return $this;
+    }
 
-	public function setRecordConfigs($RecordConfigs) {
-		$this->RecordConfigs = $RecordConfigs;
-		for ($i = 0; $i < count($RecordConfigs); $i ++) {	
-			$this->queryParameters['RecordConfig.' . ($i + 1) . '.StorageType'] = $RecordConfigs[$i]['StorageType'];
-			$this->queryParameters['RecordConfig.' . ($i + 1) . '.FileFormat'] = $RecordConfigs[$i]['FileFormat'];
-			$this->queryParameters['RecordConfig.' . ($i + 1) . '.OssEndPoint'] = $RecordConfigs[$i]['OssEndPoint'];
-			$this->queryParameters['RecordConfig.' . ($i + 1) . '.OssBucket'] = $RecordConfigs[$i]['OssBucket'];
-			$this->queryParameters['RecordConfig.' . ($i + 1) . '.VodTransCodeGroupId'] = $RecordConfigs[$i]['VodTransCodeGroupId'];
+    /**
+     * @param string $mixMode
+     *
+     * @return $this
+     */
+    public function setMixMode($mixMode)
+    {
+        $this->requestParameters['MixMode'] = $mixMode;
+        $this->queryParameters['MixMode'] = $mixMode;
 
-		}
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getLayOuts() {
-		return $this->LayOuts;
-	}
-
-	public function setLayOuts($LayOuts) {
-		$this->LayOuts = $LayOuts;
-		for ($i = 0; $i < count($LayOuts); $i ++) {	
-			$this->queryParameters['LayOut.' . ($i + 1) . '.Color'] = $LayOuts[$i]['Color'];
-			$this->queryParameters['LayOut.' . ($i + 1) . '.CutMode'] = $LayOuts[$i]['CutMode'];
-			$this->queryParameters['LayOut.' . ($i + 1) . '.LayOutId'] = $LayOuts[$i]['LayOutId'];
-
-		}
-	}
-
-	public function getAppId() {
-		return $this->appId;
-	}
-
-	public function setAppId($appId) {
-		$this->appId = $appId;
-		$this->queryParameters["AppId"]=$appId;
-	}
-
-	public function getCallBack() {
-		return $this->callBack;
-	}
-
-	public function setCallBack($callBack) {
-		$this->callBack = $callBack;
-		$this->queryParameters["CallBack"]=$callBack;
-	}
-
-	public function getMixMode() {
-		return $this->mixMode;
-	}
-
-	public function setMixMode($mixMode) {
-		$this->mixMode = $mixMode;
-		$this->queryParameters["MixMode"]=$mixMode;
-	}
-	
+        return $this;
+    }
 }
