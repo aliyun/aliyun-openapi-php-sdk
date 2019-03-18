@@ -3,6 +3,8 @@
 namespace xspace\Request\V20170720;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of QueryCustomerByPhone
  *
  * @method string getPhone()
