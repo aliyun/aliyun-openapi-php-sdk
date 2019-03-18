@@ -1,129 +1,141 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace afs\Request\V20180112;
 
+/**
+ * Request of SetEarlyWarning
+ *
+ * @method string getTimeEnd()
+ * @method string getWarnOpen()
+ * @method string getSourceIp()
+ * @method string getChannel()
+ * @method string getTitle()
+ * @method string getTimeOpen()
+ * @method string getTimeBegin()
+ * @method string getFrequency()
+ */
 class SetEarlyWarningRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("afs", "2018-01-12", "SetEarlyWarning");
-		$this->setMethod("POST");
-	}
 
-	private  $timeEnd;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $resourceOwnerId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'afs',
+            '2018-01-12',
+            'SetEarlyWarning',
+            'afs'
+        );
+    }
 
-	private  $warnOpen;
+    /**
+     * @param string $timeEnd
+     *
+     * @return $this
+     */
+    public function setTimeEnd($timeEnd)
+    {
+        $this->requestParameters['TimeEnd'] = $timeEnd;
+        $this->queryParameters['TimeEnd'] = $timeEnd;
 
-	private  $sourceIp;
+        return $this;
+    }
 
-	private  $channel;
+    /**
+     * @param string $warnOpen
+     *
+     * @return $this
+     */
+    public function setWarnOpen($warnOpen)
+    {
+        $this->requestParameters['WarnOpen'] = $warnOpen;
+        $this->queryParameters['WarnOpen'] = $warnOpen;
 
-	private  $title;
+        return $this;
+    }
 
-	private  $timeOpen;
+    /**
+     * @param string $sourceIp
+     *
+     * @return $this
+     */
+    public function setSourceIp($sourceIp)
+    {
+        $this->requestParameters['SourceIp'] = $sourceIp;
+        $this->queryParameters['SourceIp'] = $sourceIp;
 
-	private  $timeBegin;
+        return $this;
+    }
 
-	private  $frequency;
+    /**
+     * @param string $channel
+     *
+     * @return $this
+     */
+    public function setChannel($channel)
+    {
+        $this->requestParameters['Channel'] = $channel;
+        $this->queryParameters['Channel'] = $channel;
 
-	public function getTimeEnd() {
-		return $this->timeEnd;
-	}
+        return $this;
+    }
 
-	public function setTimeEnd($timeEnd) {
-		$this->timeEnd = $timeEnd;
-		$this->queryParameters["TimeEnd"]=$timeEnd;
-	}
+    /**
+     * @param string $title
+     *
+     * @return $this
+     */
+    public function setTitle($title)
+    {
+        $this->requestParameters['Title'] = $title;
+        $this->queryParameters['Title'] = $title;
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+    /**
+     * @param string $timeOpen
+     *
+     * @return $this
+     */
+    public function setTimeOpen($timeOpen)
+    {
+        $this->requestParameters['TimeOpen'] = $timeOpen;
+        $this->queryParameters['TimeOpen'] = $timeOpen;
 
-	public function getWarnOpen() {
-		return $this->warnOpen;
-	}
+        return $this;
+    }
 
-	public function setWarnOpen($warnOpen) {
-		$this->warnOpen = $warnOpen;
-		$this->queryParameters["WarnOpen"]=$warnOpen;
-	}
+    /**
+     * @param string $timeBegin
+     *
+     * @return $this
+     */
+    public function setTimeBegin($timeBegin)
+    {
+        $this->requestParameters['TimeBegin'] = $timeBegin;
+        $this->queryParameters['TimeBegin'] = $timeBegin;
 
-	public function getSourceIp() {
-		return $this->sourceIp;
-	}
+        return $this;
+    }
 
-	public function setSourceIp($sourceIp) {
-		$this->sourceIp = $sourceIp;
-		$this->queryParameters["SourceIp"]=$sourceIp;
-	}
+    /**
+     * @param string $frequency
+     *
+     * @return $this
+     */
+    public function setFrequency($frequency)
+    {
+        $this->requestParameters['Frequency'] = $frequency;
+        $this->queryParameters['Frequency'] = $frequency;
 
-	public function getChannel() {
-		return $this->channel;
-	}
-
-	public function setChannel($channel) {
-		$this->channel = $channel;
-		$this->queryParameters["Channel"]=$channel;
-	}
-
-	public function getTitle() {
-		return $this->title;
-	}
-
-	public function setTitle($title) {
-		$this->title = $title;
-		$this->queryParameters["Title"]=$title;
-	}
-
-	public function getTimeOpen() {
-		return $this->timeOpen;
-	}
-
-	public function setTimeOpen($timeOpen) {
-		$this->timeOpen = $timeOpen;
-		$this->queryParameters["TimeOpen"]=$timeOpen;
-	}
-
-	public function getTimeBegin() {
-		return $this->timeBegin;
-	}
-
-	public function setTimeBegin($timeBegin) {
-		$this->timeBegin = $timeBegin;
-		$this->queryParameters["TimeBegin"]=$timeBegin;
-	}
-
-	public function getFrequency() {
-		return $this->frequency;
-	}
-
-	public function setFrequency($frequency) {
-		$this->frequency = $frequency;
-		$this->queryParameters["Frequency"]=$frequency;
-	}
-	
+        return $this;
+    }
 }

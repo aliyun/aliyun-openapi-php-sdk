@@ -3,11 +3,11 @@
 namespace afs\Request\V20180112;
 
 /**
- * Request of DescribePersonMachineList
+ * Request of DescribeOrderInfo
  *
  * @method string getSourceIp()
  */
-class DescribePersonMachineListRequest extends \RpcAcsRequest
+class DescribeOrderInfoRequest extends \RpcAcsRequest
 {
 
     /**
@@ -23,7 +23,7 @@ class DescribePersonMachineListRequest extends \RpcAcsRequest
         parent::__construct(
             'afs',
             '2018-01-12',
-            'DescribePersonMachineList',
+            'DescribeOrderInfo',
             'afs'
         );
     }

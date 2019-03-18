@@ -3,15 +3,14 @@
 namespace afs\Request\V20180112;
 
 /**
- * Request of ConfigurationStyle
+ * Request of UpdateConfigName
  *
  * @method string getSourceIp()
- * @method string getConfigurationMethod()
+ * @method string getConfigName()
  * @method string getRefExtId()
- * @method string getApplyType()
- * @method string getScene()
+ * @method string getLang()
  */
-class ConfigurationStyleRequest extends \RpcAcsRequest
+class UpdateConfigNameRequest extends \RpcAcsRequest
 {
 
     /**
@@ -27,7 +26,7 @@ class ConfigurationStyleRequest extends \RpcAcsRequest
         parent::__construct(
             'afs',
             '2018-01-12',
-            'ConfigurationStyle',
+            'UpdateConfigName',
             'afs'
         );
     }
@@ -46,14 +45,14 @@ class ConfigurationStyleRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $configurationMethod
+     * @param string $configName
      *
      * @return $this
      */
-    public function setConfigurationMethod($configurationMethod)
+    public function setConfigName($configName)
     {
-        $this->requestParameters['ConfigurationMethod'] = $configurationMethod;
-        $this->queryParameters['ConfigurationMethod'] = $configurationMethod;
+        $this->requestParameters['ConfigName'] = $configName;
+        $this->queryParameters['ConfigName'] = $configName;
 
         return $this;
     }
@@ -72,27 +71,14 @@ class ConfigurationStyleRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $applyType
+     * @param string $lang
      *
      * @return $this
      */
-    public function setApplyType($applyType)
+    public function setLang($lang)
     {
-        $this->requestParameters['ApplyType'] = $applyType;
-        $this->queryParameters['ApplyType'] = $applyType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $scene
-     *
-     * @return $this
-     */
-    public function setScene($scene)
-    {
-        $this->requestParameters['Scene'] = $scene;
-        $this->queryParameters['Scene'] = $scene;
+        $this->requestParameters['Lang'] = $lang;
+        $this->queryParameters['Lang'] = $lang;
 
         return $this;
     }
