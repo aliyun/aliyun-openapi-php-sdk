@@ -1,206 +1,255 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ccs\Request\V20171001;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of QueryHotlineRecord
+ *
+ * @method string getAgentId()
+ * @method string getMaxTalkDuration()
+ * @method string getGroupId()
+ * @method string getEndTime()
+ * @method string getStartTime()
+ * @method string getPageNum()
+ * @method string getSatisfaction()
+ * @method string getMinTalkDuratoin()
+ * @method string getCategoryIds()
+ * @method string getVisitorProvince()
+ * @method string getPageSize()
+ * @method string getCallType()
+ * @method string getCcsInstanceId()
+ * @method string getVisitorPhone()
+ * @method string getVisitorId()
+ * @method string getStatus()
+ */
 class QueryHotlineRecordRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ccs", "2017-10-01", "QueryHotlineRecord", "ccs", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $agentId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $maxTalkDuration;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ccs',
+            '2017-10-01',
+            'QueryHotlineRecord',
+            'ccs'
+        );
+    }
 
-	private  $groupId;
+    /**
+     * @param string $agentId
+     *
+     * @return $this
+     */
+    public function setAgentId($agentId)
+    {
+        $this->requestParameters['AgentId'] = $agentId;
+        $this->queryParameters['AgentId'] = $agentId;
 
-	private  $endTime;
+        return $this;
+    }
 
-	private  $startTime;
+    /**
+     * @param string $maxTalkDuration
+     *
+     * @return $this
+     */
+    public function setMaxTalkDuration($maxTalkDuration)
+    {
+        $this->requestParameters['MaxTalkDuration'] = $maxTalkDuration;
+        $this->queryParameters['MaxTalkDuration'] = $maxTalkDuration;
 
-	private  $pageNum;
+        return $this;
+    }
 
-	private  $satisfaction;
+    /**
+     * @param string $groupId
+     *
+     * @return $this
+     */
+    public function setGroupId($groupId)
+    {
+        $this->requestParameters['GroupId'] = $groupId;
+        $this->queryParameters['GroupId'] = $groupId;
 
-	private  $minTalkDuratoin;
+        return $this;
+    }
 
-	private  $categoryIds;
+    /**
+     * @param string $endTime
+     *
+     * @return $this
+     */
+    public function setEndTime($endTime)
+    {
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
 
-	private  $visitorProvince;
+        return $this;
+    }
 
-	private  $pageSize;
+    /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
 
-	private  $callType;
+        return $this;
+    }
 
-	private  $ccsInstanceId;
+    /**
+     * @param string $pageNum
+     *
+     * @return $this
+     */
+    public function setPageNum($pageNum)
+    {
+        $this->requestParameters['PageNum'] = $pageNum;
+        $this->queryParameters['PageNum'] = $pageNum;
 
-	private  $visitorPhone;
+        return $this;
+    }
 
-	private  $visitorId;
+    /**
+     * @param string $satisfaction
+     *
+     * @return $this
+     */
+    public function setSatisfaction($satisfaction)
+    {
+        $this->requestParameters['Satisfaction'] = $satisfaction;
+        $this->queryParameters['Satisfaction'] = $satisfaction;
 
-	private  $status;
+        return $this;
+    }
 
-	public function getAgentId() {
-		return $this->agentId;
-	}
+    /**
+     * @param string $minTalkDuratoin
+     *
+     * @return $this
+     */
+    public function setMinTalkDuratoin($minTalkDuratoin)
+    {
+        $this->requestParameters['MinTalkDuratoin'] = $minTalkDuratoin;
+        $this->queryParameters['MinTalkDuratoin'] = $minTalkDuratoin;
 
-	public function setAgentId($agentId) {
-		$this->agentId = $agentId;
-		$this->queryParameters["AgentId"]=$agentId;
-	}
+        return $this;
+    }
 
-	public function getMaxTalkDuration() {
-		return $this->maxTalkDuration;
-	}
+    /**
+     * @param string $categoryIds
+     *
+     * @return $this
+     */
+    public function setCategoryIds($categoryIds)
+    {
+        $this->requestParameters['CategoryIds'] = $categoryIds;
+        $this->queryParameters['CategoryIds'] = $categoryIds;
 
-	public function setMaxTalkDuration($maxTalkDuration) {
-		$this->maxTalkDuration = $maxTalkDuration;
-		$this->queryParameters["MaxTalkDuration"]=$maxTalkDuration;
-	}
+        return $this;
+    }
 
-	public function getGroupId() {
-		return $this->groupId;
-	}
+    /**
+     * @param string $visitorProvince
+     *
+     * @return $this
+     */
+    public function setVisitorProvince($visitorProvince)
+    {
+        $this->requestParameters['VisitorProvince'] = $visitorProvince;
+        $this->queryParameters['VisitorProvince'] = $visitorProvince;
 
-	public function setGroupId($groupId) {
-		$this->groupId = $groupId;
-		$this->queryParameters["GroupId"]=$groupId;
-	}
+        return $this;
+    }
 
-	public function getEndTime() {
-		return $this->endTime;
-	}
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
+        return $this;
+    }
 
-	public function getStartTime() {
-		return $this->startTime;
-	}
+    /**
+     * @param string $callType
+     *
+     * @return $this
+     */
+    public function setCallType($callType)
+    {
+        $this->requestParameters['CallType'] = $callType;
+        $this->queryParameters['CallType'] = $callType;
 
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
+        return $this;
+    }
 
-	public function getPageNum() {
-		return $this->pageNum;
-	}
+    /**
+     * @param string $ccsInstanceId
+     *
+     * @return $this
+     */
+    public function setCcsInstanceId($ccsInstanceId)
+    {
+        $this->requestParameters['CcsInstanceId'] = $ccsInstanceId;
+        $this->queryParameters['CcsInstanceId'] = $ccsInstanceId;
 
-	public function setPageNum($pageNum) {
-		$this->pageNum = $pageNum;
-		$this->queryParameters["PageNum"]=$pageNum;
-	}
+        return $this;
+    }
 
-	public function getSatisfaction() {
-		return $this->satisfaction;
-	}
+    /**
+     * @param string $visitorPhone
+     *
+     * @return $this
+     */
+    public function setVisitorPhone($visitorPhone)
+    {
+        $this->requestParameters['VisitorPhone'] = $visitorPhone;
+        $this->queryParameters['VisitorPhone'] = $visitorPhone;
 
-	public function setSatisfaction($satisfaction) {
-		$this->satisfaction = $satisfaction;
-		$this->queryParameters["Satisfaction"]=$satisfaction;
-	}
+        return $this;
+    }
 
-	public function getMinTalkDuratoin() {
-		return $this->minTalkDuratoin;
-	}
+    /**
+     * @param string $visitorId
+     *
+     * @return $this
+     */
+    public function setVisitorId($visitorId)
+    {
+        $this->requestParameters['VisitorId'] = $visitorId;
+        $this->queryParameters['VisitorId'] = $visitorId;
 
-	public function setMinTalkDuratoin($minTalkDuratoin) {
-		$this->minTalkDuratoin = $minTalkDuratoin;
-		$this->queryParameters["MinTalkDuratoin"]=$minTalkDuratoin;
-	}
+        return $this;
+    }
 
-	public function getCategoryIds() {
-		return $this->categoryIds;
-	}
+    /**
+     * @param string $status
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->requestParameters['Status'] = $status;
+        $this->queryParameters['Status'] = $status;
 
-	public function setCategoryIds($categoryIds) {
-		$this->categoryIds = $categoryIds;
-		$this->queryParameters["CategoryIds"]=$categoryIds;
-	}
-
-	public function getVisitorProvince() {
-		return $this->visitorProvince;
-	}
-
-	public function setVisitorProvince($visitorProvince) {
-		$this->visitorProvince = $visitorProvince;
-		$this->queryParameters["VisitorProvince"]=$visitorProvince;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getCallType() {
-		return $this->callType;
-	}
-
-	public function setCallType($callType) {
-		$this->callType = $callType;
-		$this->queryParameters["CallType"]=$callType;
-	}
-
-	public function getCcsInstanceId() {
-		return $this->ccsInstanceId;
-	}
-
-	public function setCcsInstanceId($ccsInstanceId) {
-		$this->ccsInstanceId = $ccsInstanceId;
-		$this->queryParameters["CcsInstanceId"]=$ccsInstanceId;
-	}
-
-	public function getVisitorPhone() {
-		return $this->visitorPhone;
-	}
-
-	public function setVisitorPhone($visitorPhone) {
-		$this->visitorPhone = $visitorPhone;
-		$this->queryParameters["VisitorPhone"]=$visitorPhone;
-	}
-
-	public function getVisitorId() {
-		return $this->visitorId;
-	}
-
-	public function setVisitorId($visitorId) {
-		$this->visitorId = $visitorId;
-		$this->queryParameters["VisitorId"]=$visitorId;
-	}
-
-	public function getStatus() {
-		return $this->status;
-	}
-
-	public function setStatus($status) {
-		$this->status = $status;
-		$this->queryParameters["Status"]=$status;
-	}
-	
+        return $this;
+    }
 }
