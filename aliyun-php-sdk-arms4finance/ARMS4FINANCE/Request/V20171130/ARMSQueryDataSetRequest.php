@@ -1,124 +1,148 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace ARMS4FINANCE\Request\V20171130;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of ARMSQueryDataSet
+ *
+ * @method array getMeasuress()
+ * @method string getIntervalInSec()
+ * @method string getDateStr()
+ * @method string getIsDrillDown()
+ * @method string getMinTime()
+ * @method string getDatasetId()
+ * @method string getMaxTime()
+ * @method array getDimensionss()
+ */
 class ARMSQueryDataSetRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("ARMS4FINANCE", "2017-11-30", "ARMSQueryDataSet");
-		$this->setMethod("POST");
-	}
 
-	private  $Measuress;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $intervalInSec;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'ARMS4FINANCE',
+            '2017-11-30',
+            'ARMSQueryDataSet',
+            'arms4finance'
+        );
+    }
 
-	private  $dateStr;
+    /**
+     * @param array $value
+     *
+     * @return $this
+     */
+    public function setMeasuress(array $value)
+    {
+        $this->requestParameters['Measuress'] = $value;
+        foreach ($value as $i => $iValue) {
+            $this->queryParameters['Measures.' . ($i + 1)] = $iValue;
+        }
 
-	private  $isDrillDown;
+        return $this;
+    }
 
-	private  $minTime;
+    /**
+     * @param string $intervalInSec
+     *
+     * @return $this
+     */
+    public function setIntervalInSec($intervalInSec)
+    {
+        $this->requestParameters['IntervalInSec'] = $intervalInSec;
+        $this->queryParameters['IntervalInSec'] = $intervalInSec;
 
-	private  $datasetId;
+        return $this;
+    }
 
-	private  $maxTime;
+    /**
+     * @param string $dateStr
+     *
+     * @return $this
+     */
+    public function setDateStr($dateStr)
+    {
+        $this->requestParameters['DateStr'] = $dateStr;
+        $this->queryParameters['DateStr'] = $dateStr;
 
-	private  $Dimensionss;
+        return $this;
+    }
 
-	public function getMeasuress() {
-		return $this->Measuress;
-	}
+    /**
+     * @param string $isDrillDown
+     *
+     * @return $this
+     */
+    public function setIsDrillDown($isDrillDown)
+    {
+        $this->requestParameters['IsDrillDown'] = $isDrillDown;
+        $this->queryParameters['IsDrillDown'] = $isDrillDown;
 
-	public function setMeasuress($Measuress) {
-		$this->Measuress = $Measuress;
-		for ($i = 0; $i < count($Measuress); $i ++) {	
-			$this->queryParameters["Measures.".($i+1)] = $Measuress[$i];
-		}
-	}
+        return $this;
+    }
 
-	public function getIntervalInSec() {
-		return $this->intervalInSec;
-	}
+    /**
+     * @param string $minTime
+     *
+     * @return $this
+     */
+    public function setMinTime($minTime)
+    {
+        $this->requestParameters['MinTime'] = $minTime;
+        $this->queryParameters['MinTime'] = $minTime;
 
-	public function setIntervalInSec($intervalInSec) {
-		$this->intervalInSec = $intervalInSec;
-		$this->queryParameters["IntervalInSec"]=$intervalInSec;
-	}
+        return $this;
+    }
 
-	public function getDateStr() {
-		return $this->dateStr;
-	}
+    /**
+     * @param string $datasetId
+     *
+     * @return $this
+     */
+    public function setDatasetId($datasetId)
+    {
+        $this->requestParameters['DatasetId'] = $datasetId;
+        $this->queryParameters['DatasetId'] = $datasetId;
 
-	public function setDateStr($dateStr) {
-		$this->dateStr = $dateStr;
-		$this->queryParameters["DateStr"]=$dateStr;
-	}
+        return $this;
+    }
 
-	public function getIsDrillDown() {
-		return $this->isDrillDown;
-	}
+    /**
+     * @param string $maxTime
+     *
+     * @return $this
+     */
+    public function setMaxTime($maxTime)
+    {
+        $this->requestParameters['MaxTime'] = $maxTime;
+        $this->queryParameters['MaxTime'] = $maxTime;
 
-	public function setIsDrillDown($isDrillDown) {
-		$this->isDrillDown = $isDrillDown;
-		$this->queryParameters["IsDrillDown"]=$isDrillDown;
-	}
+        return $this;
+    }
 
-	public function getMinTime() {
-		return $this->minTime;
-	}
+    /**
+     * @param array $value
+     *
+     * @return $this
+     */
+    public function setDimensionss(array $value)
+    {
+        $this->requestParameters['Dimensionss'] = $value;
+        foreach ($value as $i => $iValue) {
+            $this->queryParameters['Dimensions.' . ($i + 1) . '.Value'] = $value[$i]['Value'];
+            $this->queryParameters['Dimensions.' . ($i + 1) . '.Key'] = $value[$i]['Key'];
+        }
 
-	public function setMinTime($minTime) {
-		$this->minTime = $minTime;
-		$this->queryParameters["MinTime"]=$minTime;
-	}
-
-	public function getDatasetId() {
-		return $this->datasetId;
-	}
-
-	public function setDatasetId($datasetId) {
-		$this->datasetId = $datasetId;
-		$this->queryParameters["DatasetId"]=$datasetId;
-	}
-
-	public function getMaxTime() {
-		return $this->maxTime;
-	}
-
-	public function setMaxTime($maxTime) {
-		$this->maxTime = $maxTime;
-		$this->queryParameters["MaxTime"]=$maxTime;
-	}
-
-	public function getDimensionss() {
-		return $this->Dimensionss;
-	}
-
-	public function setDimensionss($Dimensionss) {
-		$this->Dimensionss = $Dimensionss;
-		for ($i = 0; $i < count($Dimensionss); $i ++) {	
-			$this->queryParameters['Dimensions.' . ($i + 1) . '.Key'] = $Dimensionss[$i]['Key'];
-			$this->queryParameters['Dimensions.' . ($i + 1) . '.Value'] = $Dimensionss[$i]['Value'];
-
-		}
-	}
-	
+        return $this;
+    }
 }
