@@ -1,85 +1,101 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Ots\Request\V20160620;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of UnbindInstance2Vpc
+ *
+ * @method string getaccess_key_id()
+ * @method string getInstanceVpcName()
+ * @method string getResourceOwnerId()
+ * @method string getInstanceName()
+ * @method string getRegionNo()
+ */
 class UnbindInstance2VpcRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Ots", "2016-06-20", "UnbindInstance2Vpc", "ots", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $access_key_id;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $instanceVpcName;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Ots',
+            '2016-06-20',
+            'UnbindInstance2Vpc',
+            'ots'
+        );
+    }
 
-	private  $resourceOwnerId;
+    /**
+     * @param string $access_key_id
+     *
+     * @return $this
+     */
+    public function setaccess_key_id($access_key_id)
+    {
+        $this->requestParameters['access_key_id'] = $access_key_id;
+        $this->queryParameters['access_key_id'] = $access_key_id;
 
-	private  $instanceName;
+        return $this;
+    }
 
-	private  $regionNo;
+    /**
+     * @param string $instanceVpcName
+     *
+     * @return $this
+     */
+    public function setInstanceVpcName($instanceVpcName)
+    {
+        $this->requestParameters['InstanceVpcName'] = $instanceVpcName;
+        $this->queryParameters['InstanceVpcName'] = $instanceVpcName;
 
-	public function getaccess_key_id() {
-		return $this->access_key_id;
-	}
+        return $this;
+    }
 
-	public function setaccess_key_id($access_key_id) {
-		$this->access_key_id = $access_key_id;
-		$this->queryParameters["access_key_id"]=$access_key_id;
-	}
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	public function getInstanceVpcName() {
-		return $this->instanceVpcName;
-	}
+        return $this;
+    }
 
-	public function setInstanceVpcName($instanceVpcName) {
-		$this->instanceVpcName = $instanceVpcName;
-		$this->queryParameters["InstanceVpcName"]=$instanceVpcName;
-	}
+    /**
+     * @param string $instanceName
+     *
+     * @return $this
+     */
+    public function setInstanceName($instanceName)
+    {
+        $this->requestParameters['InstanceName'] = $instanceName;
+        $this->queryParameters['InstanceName'] = $instanceName;
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+    /**
+     * @param string $regionNo
+     *
+     * @return $this
+     */
+    public function setRegionNo($regionNo)
+    {
+        $this->requestParameters['RegionNo'] = $regionNo;
+        $this->queryParameters['RegionNo'] = $regionNo;
 
-	public function getInstanceName() {
-		return $this->instanceName;
-	}
-
-	public function setInstanceName($instanceName) {
-		$this->instanceName = $instanceName;
-		$this->queryParameters["InstanceName"]=$instanceName;
-	}
-
-	public function getRegionNo() {
-		return $this->regionNo;
-	}
-
-	public function setRegionNo($regionNo) {
-		$this->regionNo = $regionNo;
-		$this->queryParameters["RegionNo"]=$regionNo;
-	}
-	
+        return $this;
+    }
 }
