@@ -3,6 +3,8 @@
 namespace BssOpenApi\Request\V20171214;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of QueryProductList
  *
  * @method string getQueryTotalCount()

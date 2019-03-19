@@ -3,9 +3,13 @@
 namespace BssOpenApi\Request\V20171214;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of QueryInvoicingCustomerList
  *
+ * @method string getcallerBid()
  * @method string getOwnerId()
+ * @method string getcallerUid()
  */
 class QueryInvoicingCustomerListRequest extends \RpcAcsRequest
 {
@@ -28,6 +32,19 @@ class QueryInvoicingCustomerListRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $callerBid
+     *
+     * @return $this
+     */
+    public function setcallerBid($callerBid)
+    {
+        $this->requestParameters['callerBid'] = $callerBid;
+        $this->queryParameters['callerBid'] = $callerBid;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -36,6 +53,19 @@ class QueryInvoicingCustomerListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $callerUid
+     *
+     * @return $this
+     */
+    public function setcallerUid($callerUid)
+    {
+        $this->requestParameters['callerUid'] = $callerUid;
+        $this->queryParameters['callerUid'] = $callerUid;
 
         return $this;
     }

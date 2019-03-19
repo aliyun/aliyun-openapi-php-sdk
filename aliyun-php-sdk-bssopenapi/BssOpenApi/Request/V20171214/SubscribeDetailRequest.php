@@ -3,6 +3,8 @@
 namespace BssOpenApi\Request\V20171214;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of SubscribeDetail
  *
  * @method string getBucketOwnerId()
@@ -43,14 +45,14 @@ class SubscribeDetailRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $subscribeTypes
+     * @param array $value
      *
      * @return $this
      */
-    public function setSubscribeTypes(array $subscribeTypes)
+    public function setSubscribeTypes(array $value)
     {
-        $this->requestParameters['SubscribeTypes'] = $subscribeTypes;
-        foreach ($subscribeTypes as $i => $iValue) {
+        $this->requestParameters['SubscribeTypes'] = $value;
+        foreach ($value as $i => $iValue) {
             $this->queryParameters['SubscribeType.' . ($i + 1)] = $iValue;
         }
 

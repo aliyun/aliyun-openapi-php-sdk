@@ -3,12 +3,15 @@
 namespace BssOpenApi\Request\V20171214;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of QueryEvaluateList
  *
  * @method string getEndSearchTime()
  * @method string getOutBizId()
  * @method string getSortType()
  * @method array getBizTypeLists()
+ * @method string getcallerBid()
  * @method string getType()
  * @method string getOwnerId()
  * @method string getPageNum()
@@ -19,6 +22,7 @@ namespace BssOpenApi\Request\V20171214;
  * @method string getBillCycle()
  * @method string getStartAmount()
  * @method string getStartBizTime()
+ * @method string getcallerUid()
  */
 class QueryEvaluateListRequest extends \RpcAcsRequest
 {
@@ -80,16 +84,29 @@ class QueryEvaluateListRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $bizTypeLists
+     * @param array $value
      *
      * @return $this
      */
-    public function setBizTypeLists(array $bizTypeLists)
+    public function setBizTypeLists(array $value)
     {
-        $this->requestParameters['BizTypeLists'] = $bizTypeLists;
-        foreach ($bizTypeLists as $i => $iValue) {
+        $this->requestParameters['BizTypeLists'] = $value;
+        foreach ($value as $i => $iValue) {
             $this->queryParameters['BizTypeList.' . ($i + 1)] = $iValue;
         }
+
+        return $this;
+    }
+
+    /**
+     * @param string $callerBid
+     *
+     * @return $this
+     */
+    public function setcallerBid($callerBid)
+    {
+        $this->requestParameters['callerBid'] = $callerBid;
+        $this->queryParameters['callerBid'] = $callerBid;
 
         return $this;
     }
@@ -220,6 +237,19 @@ class QueryEvaluateListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['StartBizTime'] = $startBizTime;
         $this->queryParameters['StartBizTime'] = $startBizTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $callerUid
+     *
+     * @return $this
+     */
+    public function setcallerUid($callerUid)
+    {
+        $this->requestParameters['callerUid'] = $callerUid;
+        $this->queryParameters['callerUid'] = $callerUid;
 
         return $this;
     }

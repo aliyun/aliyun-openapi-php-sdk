@@ -3,6 +3,8 @@
 namespace BssOpenApi\Request\V20171214;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of ModifyInstance
  *
  * @method string getProductCode()
@@ -86,16 +88,16 @@ class ModifyInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $parameters
+     * @param array $value
      *
      * @return $this
      */
-    public function setParameters(array $parameters)
+    public function setParameters(array $value)
     {
-        $this->requestParameters['Parameters'] = $parameters;
-        foreach ($parameters as $i => $iValue) {
-            $this->queryParameters['Parameter.' . ($i + 1) . '.Code'] = $parameters[$i]['Code'];
-            $this->queryParameters['Parameter.' . ($i + 1) . '.Value'] = $parameters[$i]['Value'];
+        $this->requestParameters['Parameters'] = $value;
+        foreach ($value as $i => $iValue) {
+            $this->queryParameters['Parameter.' . ($i + 1) . '.Code'] = $value[$i]['Code'];
+            $this->queryParameters['Parameter.' . ($i + 1) . '.Value'] = $value[$i]['Value'];
         }
 
         return $this;

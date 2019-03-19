@@ -3,6 +3,8 @@
 namespace BssOpenApi\Request\V20171214;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of ApplyInvoice
  *
  * @method string getInvoicingType()
@@ -11,9 +13,11 @@ namespace BssOpenApi\Request\V20171214;
  * @method string getCustomerId()
  * @method array getSelectedIdss()
  * @method string getProcessWay()
+ * @method string getcallerBid()
  * @method string getOwnerId()
  * @method string getInvoiceAmount()
  * @method string getAddressId()
+ * @method string getcallerUid()
  */
 class ApplyInvoiceRequest extends \RpcAcsRequest
 {
@@ -88,14 +92,14 @@ class ApplyInvoiceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $selectedIdss
+     * @param array $value
      *
      * @return $this
      */
-    public function setSelectedIdss(array $selectedIdss)
+    public function setSelectedIdss(array $value)
     {
-        $this->requestParameters['SelectedIdss'] = $selectedIdss;
-        foreach ($selectedIdss as $i => $iValue) {
+        $this->requestParameters['SelectedIdss'] = $value;
+        foreach ($value as $i => $iValue) {
             $this->queryParameters['SelectedIds.' . ($i + 1)] = $iValue;
         }
 
@@ -111,6 +115,19 @@ class ApplyInvoiceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ProcessWay'] = $processWay;
         $this->queryParameters['ProcessWay'] = $processWay;
+
+        return $this;
+    }
+
+    /**
+     * @param string $callerBid
+     *
+     * @return $this
+     */
+    public function setcallerBid($callerBid)
+    {
+        $this->requestParameters['callerBid'] = $callerBid;
+        $this->queryParameters['callerBid'] = $callerBid;
 
         return $this;
     }
@@ -150,6 +167,19 @@ class ApplyInvoiceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AddressId'] = $addressId;
         $this->queryParameters['AddressId'] = $addressId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $callerUid
+     *
+     * @return $this
+     */
+    public function setcallerUid($callerUid)
+    {
+        $this->requestParameters['callerUid'] = $callerUid;
+        $this->queryParameters['callerUid'] = $callerUid;
 
         return $this;
     }

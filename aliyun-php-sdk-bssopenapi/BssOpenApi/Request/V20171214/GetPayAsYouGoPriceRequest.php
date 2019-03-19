@@ -3,6 +3,8 @@
 namespace BssOpenApi\Request\V20171214;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of GetPayAsYouGoPrice
  *
  * @method string getProductCode()
@@ -59,17 +61,17 @@ class GetPayAsYouGoPriceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $moduleLists
+     * @param array $value
      *
      * @return $this
      */
-    public function setModuleLists(array $moduleLists)
+    public function setModuleLists(array $value)
     {
-        $this->requestParameters['ModuleLists'] = $moduleLists;
-        foreach ($moduleLists as $i => $iValue) {
-            $this->queryParameters['ModuleList.' . ($i + 1) . '.ModuleCode'] = $moduleLists[$i]['ModuleCode'];
-            $this->queryParameters['ModuleList.' . ($i + 1) . '.PriceType'] = $moduleLists[$i]['PriceType'];
-            $this->queryParameters['ModuleList.' . ($i + 1) . '.Config'] = $moduleLists[$i]['Config'];
+        $this->requestParameters['ModuleLists'] = $value;
+        foreach ($value as $i => $iValue) {
+            $this->queryParameters['ModuleList.' . ($i + 1) . '.ModuleCode'] = $value[$i]['ModuleCode'];
+            $this->queryParameters['ModuleList.' . ($i + 1) . '.PriceType'] = $value[$i]['PriceType'];
+            $this->queryParameters['ModuleList.' . ($i + 1) . '.Config'] = $value[$i]['Config'];
         }
 
         return $this;

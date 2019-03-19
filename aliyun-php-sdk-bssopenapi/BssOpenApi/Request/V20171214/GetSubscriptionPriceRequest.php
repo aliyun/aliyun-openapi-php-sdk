@@ -3,6 +3,8 @@
 namespace BssOpenApi\Request\V20171214;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of GetSubscriptionPrice
  *
  * @method string getServicePeriodQuantity()
@@ -116,18 +118,18 @@ class GetSubscriptionPriceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $moduleLists
+     * @param array $value
      *
      * @return $this
      */
-    public function setModuleLists(array $moduleLists)
+    public function setModuleLists(array $value)
     {
-        $this->requestParameters['ModuleLists'] = $moduleLists;
-        foreach ($moduleLists as $i => $iValue) {
-            $this->queryParameters['ModuleList.' . ($i + 1) . '.ModuleCode'] = $moduleLists[$i]['ModuleCode'];
-            $this->queryParameters['ModuleList.' . ($i + 1) . '.ModuleStatus'] = $moduleLists[$i]['ModuleStatus'];
-            $this->queryParameters['ModuleList.' . ($i + 1) . '.Tag'] = $moduleLists[$i]['Tag'];
-            $this->queryParameters['ModuleList.' . ($i + 1) . '.Config'] = $moduleLists[$i]['Config'];
+        $this->requestParameters['ModuleLists'] = $value;
+        foreach ($value as $i => $iValue) {
+            $this->queryParameters['ModuleList.' . ($i + 1) . '.ModuleCode'] = $value[$i]['ModuleCode'];
+            $this->queryParameters['ModuleList.' . ($i + 1) . '.ModuleStatus'] = $value[$i]['ModuleStatus'];
+            $this->queryParameters['ModuleList.' . ($i + 1) . '.Tag'] = $value[$i]['Tag'];
+            $this->queryParameters['ModuleList.' . ($i + 1) . '.Config'] = $value[$i]['Config'];
         }
 
         return $this;
