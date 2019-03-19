@@ -3,19 +3,19 @@
 namespace Cdn\Request\V20141111;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeDomainFlowData
  *
+ * @method string getLocationNameEn()
+ * @method string getStartTime()
+ * @method string getIspNameEn()
  * @method string getDomainType()
- * @method string getFixTimeGap()
- * @method string getSecurityToken()
  * @method string getTimeMerge()
  * @method string getDomainName()
  * @method string getEndTime()
- * @method string getLocationNameEn()
- * @method string getInterval()
- * @method string getStartTime()
- * @method string getIspNameEn()
  * @method string getOwnerId()
+ * @method string getInterval()
  */
 class DescribeDomainFlowDataRequest extends \RpcAcsRequest
 {
@@ -38,6 +38,45 @@ class DescribeDomainFlowDataRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $locationNameEn
+     *
+     * @return $this
+     */
+    public function setLocationNameEn($locationNameEn)
+    {
+        $this->requestParameters['LocationNameEn'] = $locationNameEn;
+        $this->queryParameters['LocationNameEn'] = $locationNameEn;
+
+        return $this;
+    }
+
+    /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ispNameEn
+     *
+     * @return $this
+     */
+    public function setIspNameEn($ispNameEn)
+    {
+        $this->requestParameters['IspNameEn'] = $ispNameEn;
+        $this->queryParameters['IspNameEn'] = $ispNameEn;
+
+        return $this;
+    }
+
+    /**
      * @param string $domainType
      *
      * @return $this
@@ -46,32 +85,6 @@ class DescribeDomainFlowDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DomainType'] = $domainType;
         $this->queryParameters['DomainType'] = $domainType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $fixTimeGap
-     *
-     * @return $this
-     */
-    public function setFixTimeGap($fixTimeGap)
-    {
-        $this->requestParameters['FixTimeGap'] = $fixTimeGap;
-        $this->queryParameters['FixTimeGap'] = $fixTimeGap;
-
-        return $this;
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }
@@ -116,14 +129,14 @@ class DescribeDomainFlowDataRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $locationNameEn
+     * @param string $ownerId
      *
      * @return $this
      */
-    public function setLocationNameEn($locationNameEn)
+    public function setOwnerId($ownerId)
     {
-        $this->requestParameters['LocationNameEn'] = $locationNameEn;
-        $this->queryParameters['LocationNameEn'] = $locationNameEn;
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }
@@ -137,45 +150,6 @@ class DescribeDomainFlowDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Interval'] = $interval;
         $this->queryParameters['Interval'] = $interval;
-
-        return $this;
-    }
-
-    /**
-     * @param string $startTime
-     *
-     * @return $this
-     */
-    public function setStartTime($startTime)
-    {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ispNameEn
-     *
-     * @return $this
-     */
-    public function setIspNameEn($ispNameEn)
-    {
-        $this->requestParameters['IspNameEn'] = $ispNameEn;
-        $this->queryParameters['IspNameEn'] = $ispNameEn;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

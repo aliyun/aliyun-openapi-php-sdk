@@ -3,16 +3,18 @@
 namespace Cdn\Request\V20180510;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeDomainUsageData
  *
  * @method string getStartTime()
- * @method string getType()
  * @method string getDataProtocol()
  * @method string getArea()
  * @method string getDomainName()
  * @method string getEndTime()
  * @method string getOwnerId()
  * @method string getField()
+ * @method string getInterval()
  */
 class DescribeDomainUsageDataRequest extends \RpcAcsRequest
 {
@@ -43,19 +45,6 @@ class DescribeDomainUsageDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['StartTime'] = $startTime;
         $this->queryParameters['StartTime'] = $startTime;
-
-        return $this;
-    }
-
-    /**
-     * @param string $type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->requestParameters['Type'] = $type;
-        $this->queryParameters['Type'] = $type;
 
         return $this;
     }
@@ -134,6 +123,19 @@ class DescribeDomainUsageDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Field'] = $field;
         $this->queryParameters['Field'] = $field;
+
+        return $this;
+    }
+
+    /**
+     * @param string $interval
+     *
+     * @return $this
+     */
+    public function setInterval($interval)
+    {
+        $this->requestParameters['Interval'] = $interval;
+        $this->queryParameters['Interval'] = $interval;
 
         return $this;
     }

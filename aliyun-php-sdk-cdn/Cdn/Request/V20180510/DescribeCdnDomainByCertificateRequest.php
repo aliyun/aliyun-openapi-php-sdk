@@ -5,12 +5,12 @@ namespace Cdn\Request\V20180510;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DeleteUserUsageDataExportTask
+ * Request of DescribeCdnDomainByCertificate
  *
  * @method string getOwnerId()
- * @method string getTaskId()
+ * @method string getSSLPub()
  */
-class DeleteUserUsageDataExportTaskRequest extends \RpcAcsRequest
+class DescribeCdnDomainByCertificateRequest extends \RpcAcsRequest
 {
 
     /**
@@ -26,7 +26,7 @@ class DeleteUserUsageDataExportTaskRequest extends \RpcAcsRequest
         parent::__construct(
             'Cdn',
             '2018-05-10',
-            'DeleteUserUsageDataExportTask'
+            'DescribeCdnDomainByCertificate'
         );
     }
 
@@ -44,14 +44,14 @@ class DeleteUserUsageDataExportTaskRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $taskId
+     * @param string $sSLPub
      *
      * @return $this
      */
-    public function setTaskId($taskId)
+    public function setSSLPub($sSLPub)
     {
-        $this->requestParameters['TaskId'] = $taskId;
-        $this->queryParameters['TaskId'] = $taskId;
+        $this->requestParameters['SSLPub'] = $sSLPub;
+        $this->queryParameters['SSLPub'] = $sSLPub;
 
         return $this;
     }

@@ -3,6 +3,8 @@
 namespace Cdn\Request\V20180510;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of SetForceRedirectConfig
  *
  * @method string getSecurityToken()

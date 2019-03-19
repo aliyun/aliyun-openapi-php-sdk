@@ -3,6 +3,8 @@
 namespace Cdn\Request\V20180510;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeUserDomains
  *
  * @method string getFuncFilter()
@@ -196,16 +198,16 @@ class DescribeUserDomainsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $tags
+     * @param array $value
      *
      * @return $this
      */
-    public function setTags(array $tags)
+    public function setTags(array $value)
     {
-        $this->requestParameters['Tags'] = $tags;
-        foreach ($tags as $i => $iValue) {
-            $this->queryParameters['Tag.' . ($i + 1) . '.Value'] = $tags[$i]['Value'];
-            $this->queryParameters['Tag.' . ($i + 1) . '.Key'] = $tags[$i]['Key'];
+        $this->requestParameters['Tags'] = $value;
+        foreach ($value as $i => $iValue) {
+            $this->queryParameters['Tag.' . ($i + 1) . '.Value'] = $value[$i]['Value'];
+            $this->queryParameters['Tag.' . ($i + 1) . '.Key'] = $value[$i]['Key'];
         }
 
         return $this;

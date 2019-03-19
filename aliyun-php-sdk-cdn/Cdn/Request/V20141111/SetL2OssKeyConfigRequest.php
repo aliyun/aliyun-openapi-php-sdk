@@ -3,6 +3,8 @@
 namespace Cdn\Request\V20141111;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of SetL2OssKeyConfig
  *
  * @method string getSecurityToken()

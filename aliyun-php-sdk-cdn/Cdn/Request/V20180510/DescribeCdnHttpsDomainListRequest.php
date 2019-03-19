@@ -1,17 +1,21 @@
 <?php
 
-namespace Cdn\Request\V20141111;
+namespace Cdn\Request\V20180510;
 
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeL2VipsByDynamicDomain
+ * Request of DescribeCdnHttpsDomainList
  *
- * @method string getDomainName()
  * @method string getOwnerId()
  */
-class DescribeL2VipsByDynamicDomainRequest extends \RpcAcsRequest
+class DescribeCdnHttpsDomainListRequest extends \RpcAcsRequest
 {
+
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
     /**
      * Class constructor.
@@ -20,22 +24,9 @@ class DescribeL2VipsByDynamicDomainRequest extends \RpcAcsRequest
     {
         parent::__construct(
             'Cdn',
-            '2014-11-11',
-            'DescribeL2VipsByDynamicDomain'
+            '2018-05-10',
+            'DescribeCdnHttpsDomainList'
         );
-    }
-
-    /**
-     * @param string $domainName
-     *
-     * @return $this
-     */
-    public function setDomainName($domainName)
-    {
-        $this->requestParameters['DomainName'] = $domainName;
-        $this->queryParameters['DomainName'] = $domainName;
-
-        return $this;
     }
 
     /**
