@@ -5,22 +5,17 @@ namespace CS\Request\V20151215;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ScaleCluster
+ * Request of DescribeClusterUserKubeconfig
  *
  * @method string getClusterId()
  */
-class ScaleClusterRequest extends \RoaAcsRequest
+class DescribeClusterUserKubeconfigRequest extends \RoaAcsRequest
 {
 
     /**
      * @var string
      */
-    protected $uriPattern = '/clusters/[ClusterId]';
-
-    /**
-     * @var string
-     */
-    protected $method = 'PUT';
+    protected $uriPattern = '/k8s/[ClusterId]/user_config';
 
     /**
      * Class constructor.
@@ -30,7 +25,7 @@ class ScaleClusterRequest extends \RoaAcsRequest
         parent::__construct(
             'CS',
             '2015-12-15',
-            'ScaleCluster',
+            'DescribeClusterUserKubeconfig',
             'cs'
         );
     }

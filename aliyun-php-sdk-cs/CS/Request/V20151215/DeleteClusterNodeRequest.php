@@ -1,75 +1,92 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace CS\Request\V20151215;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of DeleteClusterNode
+ *
+ * @method string getreleaseInstance()
+ * @method string getIp()
+ * @method string getforce()
+ * @method string getClusterId()
+ */
 class DeleteClusterNodeRequest extends \RoaAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("CS", "2015-12-15", "DeleteClusterNode");
-		$this->setUriPattern("/clusters/[ClusterId]/ip/[Ip]");
-		$this->setMethod("DELETE");
-	}
 
-	private  $releaseInstance;
+    /**
+     * @var string
+     */
+    protected $uriPattern = '/clusters/[ClusterId]/ip/[Ip]';
 
-	private  $ip;
+    /**
+     * @var string
+     */
+    protected $method = 'DELETE';
 
-	private  $force;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'CS',
+            '2015-12-15',
+            'DeleteClusterNode',
+            'cs'
+        );
+    }
 
-	private  $clusterId;
+    /**
+     * @param string $releaseInstance
+     *
+     * @return $this
+     */
+    public function setreleaseInstance($releaseInstance)
+    {
+        $this->requestParameters['releaseInstance'] = $releaseInstance;
+        $this->queryParameters['releaseInstance'] = $releaseInstance;
 
-	public function getreleaseInstance() {
-		return $this->releaseInstance;
-	}
+        return $this;
+    }
 
-	public function setreleaseInstance($releaseInstance) {
-		$this->releaseInstance = $releaseInstance;
-		$this->queryParameters["releaseInstance"]=$releaseInstance;
-	}
+    /**
+     * @param string $ip
+     *
+     * @return $this
+     */
+    public function setIp($ip)
+    {
+        $this->requestParameters['Ip'] = $ip;
+        $this->pathParameters['Ip'] = $ip;
 
-	public function getIp() {
-		return $this->ip;
-	}
+        return $this;
+    }
 
-	public function setIp($ip) {
-		$this->ip = $ip;
-		$this->pathParameters["Ip"]=$ip;
-	}
+    /**
+     * @param string $force
+     *
+     * @return $this
+     */
+    public function setforce($force)
+    {
+        $this->requestParameters['force'] = $force;
+        $this->queryParameters['force'] = $force;
 
-	public function getforce() {
-		return $this->force;
-	}
+        return $this;
+    }
 
-	public function setforce($force) {
-		$this->force = $force;
-		$this->queryParameters["force"]=$force;
-	}
+    /**
+     * @param string $clusterId
+     *
+     * @return $this
+     */
+    public function setClusterId($clusterId)
+    {
+        $this->requestParameters['ClusterId'] = $clusterId;
+        $this->pathParameters['ClusterId'] = $clusterId;
 
-	public function getClusterId() {
-		return $this->clusterId;
-	}
-
-	public function setClusterId($clusterId) {
-		$this->clusterId = $clusterId;
-		$this->pathParameters["ClusterId"]=$clusterId;
-	}
-	
+        return $this;
+    }
 }
