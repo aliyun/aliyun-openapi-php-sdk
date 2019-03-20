@@ -5,14 +5,14 @@ namespace Alidns\Request\V20150109;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of SetDNSSLBStatus
+ * Request of SetGtmMonitorStatus
  *
  * @method string getUserClientIp()
- * @method string getSubDomain()
+ * @method string getMonitorConfigId()
  * @method string getLang()
- * @method string getOpen()
+ * @method string getStatus()
  */
-class SetDNSSLBStatusRequest extends \RpcAcsRequest
+class SetGtmMonitorStatusRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,7 +28,7 @@ class SetDNSSLBStatusRequest extends \RpcAcsRequest
         parent::__construct(
             'Alidns',
             '2015-01-09',
-            'SetDNSSLBStatus',
+            'SetGtmMonitorStatus',
             'alidns'
         );
     }
@@ -47,14 +47,14 @@ class SetDNSSLBStatusRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $subDomain
+     * @param string $monitorConfigId
      *
      * @return $this
      */
-    public function setSubDomain($subDomain)
+    public function setMonitorConfigId($monitorConfigId)
     {
-        $this->requestParameters['SubDomain'] = $subDomain;
-        $this->queryParameters['SubDomain'] = $subDomain;
+        $this->requestParameters['MonitorConfigId'] = $monitorConfigId;
+        $this->queryParameters['MonitorConfigId'] = $monitorConfigId;
 
         return $this;
     }
@@ -73,14 +73,14 @@ class SetDNSSLBStatusRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $open
+     * @param string $status
      *
      * @return $this
      */
-    public function setOpen($open)
+    public function setStatus($status)
     {
-        $this->requestParameters['Open'] = $open;
-        $this->queryParameters['Open'] = $open;
+        $this->requestParameters['Status'] = $status;
+        $this->queryParameters['Status'] = $status;
 
         return $this;
     }

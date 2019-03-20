@@ -5,17 +5,18 @@ namespace Alidns\Request\V20150109;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeDomains
+ * Request of DescribeGtmLogs
  *
- * @method string getGroupId()
+ * @method string getInstanceId()
  * @method string getUserClientIp()
  * @method string getPageSize()
- * @method string getSearchMode()
  * @method string getLang()
- * @method string getKeyWord()
+ * @method string getKeyword()
+ * @method string getStartTimestamp()
  * @method string getPageNumber()
+ * @method string getEndTimestamp()
  */
-class DescribeDomainsRequest extends \RpcAcsRequest
+class DescribeGtmLogsRequest extends \RpcAcsRequest
 {
 
     /**
@@ -31,20 +32,20 @@ class DescribeDomainsRequest extends \RpcAcsRequest
         parent::__construct(
             'Alidns',
             '2015-01-09',
-            'DescribeDomains',
+            'DescribeGtmLogs',
             'alidns'
         );
     }
 
     /**
-     * @param string $groupId
+     * @param string $instanceId
      *
      * @return $this
      */
-    public function setGroupId($groupId)
+    public function setInstanceId($instanceId)
     {
-        $this->requestParameters['GroupId'] = $groupId;
-        $this->queryParameters['GroupId'] = $groupId;
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }
@@ -76,19 +77,6 @@ class DescribeDomainsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $searchMode
-     *
-     * @return $this
-     */
-    public function setSearchMode($searchMode)
-    {
-        $this->requestParameters['SearchMode'] = $searchMode;
-        $this->queryParameters['SearchMode'] = $searchMode;
-
-        return $this;
-    }
-
-    /**
      * @param string $lang
      *
      * @return $this
@@ -102,14 +90,27 @@ class DescribeDomainsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $keyWord
+     * @param string $keyword
      *
      * @return $this
      */
-    public function setKeyWord($keyWord)
+    public function setKeyword($keyword)
     {
-        $this->requestParameters['KeyWord'] = $keyWord;
-        $this->queryParameters['KeyWord'] = $keyWord;
+        $this->requestParameters['Keyword'] = $keyword;
+        $this->queryParameters['Keyword'] = $keyword;
+
+        return $this;
+    }
+
+    /**
+     * @param string $startTimestamp
+     *
+     * @return $this
+     */
+    public function setStartTimestamp($startTimestamp)
+    {
+        $this->requestParameters['StartTimestamp'] = $startTimestamp;
+        $this->queryParameters['StartTimestamp'] = $startTimestamp;
 
         return $this;
     }
@@ -123,6 +124,19 @@ class DescribeDomainsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageNumber'] = $pageNumber;
         $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $endTimestamp
+     *
+     * @return $this
+     */
+    public function setEndTimestamp($endTimestamp)
+    {
+        $this->requestParameters['EndTimestamp'] = $endTimestamp;
+        $this->queryParameters['EndTimestamp'] = $endTimestamp;
 
         return $this;
     }

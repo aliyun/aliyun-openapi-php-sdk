@@ -5,14 +5,14 @@ namespace Alidns\Request\V20150109;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of UpdateDNSSLBWeight
+ * Request of DescribeBatchResultCount
  *
- * @method string getRecordId()
+ * @method string getBatchType()
  * @method string getUserClientIp()
- * @method string getWeight()
  * @method string getLang()
+ * @method string getTaskId()
  */
-class UpdateDNSSLBWeightRequest extends \RpcAcsRequest
+class DescribeBatchResultCountRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,20 +28,20 @@ class UpdateDNSSLBWeightRequest extends \RpcAcsRequest
         parent::__construct(
             'Alidns',
             '2015-01-09',
-            'UpdateDNSSLBWeight',
+            'DescribeBatchResultCount',
             'alidns'
         );
     }
 
     /**
-     * @param string $recordId
+     * @param string $batchType
      *
      * @return $this
      */
-    public function setRecordId($recordId)
+    public function setBatchType($batchType)
     {
-        $this->requestParameters['RecordId'] = $recordId;
-        $this->queryParameters['RecordId'] = $recordId;
+        $this->requestParameters['BatchType'] = $batchType;
+        $this->queryParameters['BatchType'] = $batchType;
 
         return $this;
     }
@@ -60,19 +60,6 @@ class UpdateDNSSLBWeightRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $weight
-     *
-     * @return $this
-     */
-    public function setWeight($weight)
-    {
-        $this->requestParameters['Weight'] = $weight;
-        $this->queryParameters['Weight'] = $weight;
-
-        return $this;
-    }
-
-    /**
      * @param string $lang
      *
      * @return $this
@@ -81,6 +68,19 @@ class UpdateDNSSLBWeightRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Lang'] = $lang;
         $this->queryParameters['Lang'] = $lang;
+
+        return $this;
+    }
+
+    /**
+     * @param string $taskId
+     *
+     * @return $this
+     */
+    public function setTaskId($taskId)
+    {
+        $this->requestParameters['TaskId'] = $taskId;
+        $this->queryParameters['TaskId'] = $taskId;
 
         return $this;
     }

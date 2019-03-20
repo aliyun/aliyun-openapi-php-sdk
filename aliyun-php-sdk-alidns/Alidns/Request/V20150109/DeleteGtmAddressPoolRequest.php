@@ -5,14 +5,13 @@ namespace Alidns\Request\V20150109;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of UpdateDNSSLBWeight
+ * Request of DeleteGtmAddressPool
  *
- * @method string getRecordId()
+ * @method string getAddrPoolId()
  * @method string getUserClientIp()
- * @method string getWeight()
  * @method string getLang()
  */
-class UpdateDNSSLBWeightRequest extends \RpcAcsRequest
+class DeleteGtmAddressPoolRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,20 +27,20 @@ class UpdateDNSSLBWeightRequest extends \RpcAcsRequest
         parent::__construct(
             'Alidns',
             '2015-01-09',
-            'UpdateDNSSLBWeight',
+            'DeleteGtmAddressPool',
             'alidns'
         );
     }
 
     /**
-     * @param string $recordId
+     * @param string $addrPoolId
      *
      * @return $this
      */
-    public function setRecordId($recordId)
+    public function setAddrPoolId($addrPoolId)
     {
-        $this->requestParameters['RecordId'] = $recordId;
-        $this->queryParameters['RecordId'] = $recordId;
+        $this->requestParameters['AddrPoolId'] = $addrPoolId;
+        $this->queryParameters['AddrPoolId'] = $addrPoolId;
 
         return $this;
     }
@@ -55,19 +54,6 @@ class UpdateDNSSLBWeightRequest extends \RpcAcsRequest
     {
         $this->requestParameters['UserClientIp'] = $userClientIp;
         $this->queryParameters['UserClientIp'] = $userClientIp;
-
-        return $this;
-    }
-
-    /**
-     * @param string $weight
-     *
-     * @return $this
-     */
-    public function setWeight($weight)
-    {
-        $this->requestParameters['Weight'] = $weight;
-        $this->queryParameters['Weight'] = $weight;
 
         return $this;
     }

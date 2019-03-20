@@ -1,117 +1,213 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Alidns\Request\V20150109;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of DescribeDomainRecords
+ *
+ * @method string getValueKeyWord()
+ * @method string getGroupId()
+ * @method string getDomainName()
+ * @method string getOrderBy()
+ * @method string getPageNumber()
+ * @method string getUserClientIp()
+ * @method string getPageSize()
+ * @method string getSearchMode()
+ * @method string getLang()
+ * @method string getKeyWord()
+ * @method string getTypeKeyWord()
+ * @method string getRRKeyWord()
+ * @method string getDirection()
+ */
 class DescribeDomainRecordsRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Alidns", "2015-01-09", "DescribeDomainRecords");
-	}
 
-	private  $lang;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $userClientIp;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Alidns',
+            '2015-01-09',
+            'DescribeDomainRecords',
+            'alidns'
+        );
+    }
 
-	private  $domainName;
+    /**
+     * @param string $valueKeyWord
+     *
+     * @return $this
+     */
+    public function setValueKeyWord($valueKeyWord)
+    {
+        $this->requestParameters['ValueKeyWord'] = $valueKeyWord;
+        $this->queryParameters['ValueKeyWord'] = $valueKeyWord;
 
-	private  $pageNumber;
+        return $this;
+    }
 
-	private  $pageSize;
+    /**
+     * @param string $groupId
+     *
+     * @return $this
+     */
+    public function setGroupId($groupId)
+    {
+        $this->requestParameters['GroupId'] = $groupId;
+        $this->queryParameters['GroupId'] = $groupId;
 
-	private  $rRKeyWord;
+        return $this;
+    }
 
-	private  $typeKeyWord;
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
 
-	private  $valueKeyWord;
+        return $this;
+    }
 
-	public function getLang() {
-		return $this->lang;
-	}
+    /**
+     * @param string $orderBy
+     *
+     * @return $this
+     */
+    public function setOrderBy($orderBy)
+    {
+        $this->requestParameters['OrderBy'] = $orderBy;
+        $this->queryParameters['OrderBy'] = $orderBy;
 
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
+        return $this;
+    }
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
-	}
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
-	}
+        return $this;
+    }
 
-	public function getDomainName() {
-		return $this->domainName;
-	}
+    /**
+     * @param string $userClientIp
+     *
+     * @return $this
+     */
+    public function setUserClientIp($userClientIp)
+    {
+        $this->requestParameters['UserClientIp'] = $userClientIp;
+        $this->queryParameters['UserClientIp'] = $userClientIp;
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
+        return $this;
+    }
 
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
+        return $this;
+    }
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
+    /**
+     * @param string $searchMode
+     *
+     * @return $this
+     */
+    public function setSearchMode($searchMode)
+    {
+        $this->requestParameters['SearchMode'] = $searchMode;
+        $this->queryParameters['SearchMode'] = $searchMode;
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
+        return $this;
+    }
 
-	public function getRRKeyWord() {
-		return $this->rRKeyWord;
-	}
+    /**
+     * @param string $lang
+     *
+     * @return $this
+     */
+    public function setLang($lang)
+    {
+        $this->requestParameters['Lang'] = $lang;
+        $this->queryParameters['Lang'] = $lang;
 
-	public function setRRKeyWord($rRKeyWord) {
-		$this->rRKeyWord = $rRKeyWord;
-		$this->queryParameters["RRKeyWord"]=$rRKeyWord;
-	}
+        return $this;
+    }
 
-	public function getTypeKeyWord() {
-		return $this->typeKeyWord;
-	}
+    /**
+     * @param string $keyWord
+     *
+     * @return $this
+     */
+    public function setKeyWord($keyWord)
+    {
+        $this->requestParameters['KeyWord'] = $keyWord;
+        $this->queryParameters['KeyWord'] = $keyWord;
 
-	public function setTypeKeyWord($typeKeyWord) {
-		$this->typeKeyWord = $typeKeyWord;
-		$this->queryParameters["TypeKeyWord"]=$typeKeyWord;
-	}
+        return $this;
+    }
 
-	public function getValueKeyWord() {
-		return $this->valueKeyWord;
-	}
+    /**
+     * @param string $typeKeyWord
+     *
+     * @return $this
+     */
+    public function setTypeKeyWord($typeKeyWord)
+    {
+        $this->requestParameters['TypeKeyWord'] = $typeKeyWord;
+        $this->queryParameters['TypeKeyWord'] = $typeKeyWord;
 
-	public function setValueKeyWord($valueKeyWord) {
-		$this->valueKeyWord = $valueKeyWord;
-		$this->queryParameters["ValueKeyWord"]=$valueKeyWord;
-	}
-	
+        return $this;
+    }
+
+    /**
+     * @param string $rRKeyWord
+     *
+     * @return $this
+     */
+    public function setRRKeyWord($rRKeyWord)
+    {
+        $this->requestParameters['RRKeyWord'] = $rRKeyWord;
+        $this->queryParameters['RRKeyWord'] = $rRKeyWord;
+
+        return $this;
+    }
+
+    /**
+     * @param string $direction
+     *
+     * @return $this
+     */
+    public function setDirection($direction)
+    {
+        $this->requestParameters['Direction'] = $direction;
+        $this->queryParameters['Direction'] = $direction;
+
+        return $this;
+    }
 }

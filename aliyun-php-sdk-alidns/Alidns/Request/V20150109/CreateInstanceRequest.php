@@ -5,19 +5,17 @@ namespace Alidns\Request\V20150109;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of AddDomainRecord
+ * Request of CreateInstance
  *
- * @method string getRR()
- * @method string getLine()
+ * @method string getMonth()
  * @method string getUserClientIp()
  * @method string getDomainName()
  * @method string getLang()
- * @method string getType()
- * @method string getPriority()
- * @method string getValue()
- * @method string getTTL()
+ * @method string getInstanceVersion()
+ * @method string getOwnerId()
+ * @method string getToken()
  */
-class AddDomainRecordRequest extends \RpcAcsRequest
+class CreateInstanceRequest extends \RpcAcsRequest
 {
 
     /**
@@ -33,33 +31,20 @@ class AddDomainRecordRequest extends \RpcAcsRequest
         parent::__construct(
             'Alidns',
             '2015-01-09',
-            'AddDomainRecord',
+            'CreateInstance',
             'alidns'
         );
     }
 
     /**
-     * @param string $rR
+     * @param string $month
      *
      * @return $this
      */
-    public function setRR($rR)
+    public function setMonth($month)
     {
-        $this->requestParameters['RR'] = $rR;
-        $this->queryParameters['RR'] = $rR;
-
-        return $this;
-    }
-
-    /**
-     * @param string $line
-     *
-     * @return $this
-     */
-    public function setLine($line)
-    {
-        $this->requestParameters['Line'] = $line;
-        $this->queryParameters['Line'] = $line;
+        $this->requestParameters['Month'] = $month;
+        $this->queryParameters['Month'] = $month;
 
         return $this;
     }
@@ -104,53 +89,40 @@ class AddDomainRecordRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $type
+     * @param string $instanceVersion
      *
      * @return $this
      */
-    public function setType($type)
+    public function setInstanceVersion($instanceVersion)
     {
-        $this->requestParameters['Type'] = $type;
-        $this->queryParameters['Type'] = $type;
+        $this->requestParameters['InstanceVersion'] = $instanceVersion;
+        $this->queryParameters['InstanceVersion'] = $instanceVersion;
 
         return $this;
     }
 
     /**
-     * @param string $priority
+     * @param string $ownerId
      *
      * @return $this
      */
-    public function setPriority($priority)
+    public function setOwnerId($ownerId)
     {
-        $this->requestParameters['Priority'] = $priority;
-        $this->queryParameters['Priority'] = $priority;
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }
 
     /**
-     * @param string $value
+     * @param string $token
      *
      * @return $this
      */
-    public function setValue($value)
+    public function setToken($token)
     {
-        $this->requestParameters['Value'] = $value;
-        $this->queryParameters['Value'] = $value;
-
-        return $this;
-    }
-
-    /**
-     * @param string $tTL
-     *
-     * @return $this
-     */
-    public function setTTL($tTL)
-    {
-        $this->requestParameters['TTL'] = $tTL;
-        $this->queryParameters['TTL'] = $tTL;
+        $this->requestParameters['Token'] = $token;
+        $this->queryParameters['Token'] = $token;
 
         return $this;
     }

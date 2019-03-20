@@ -5,14 +5,13 @@ namespace Alidns\Request\V20150109;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of UpdateDNSSLBWeight
+ * Request of DescribeGtmMonitorConfig
  *
- * @method string getRecordId()
  * @method string getUserClientIp()
- * @method string getWeight()
+ * @method string getMonitorConfigId()
  * @method string getLang()
  */
-class UpdateDNSSLBWeightRequest extends \RpcAcsRequest
+class DescribeGtmMonitorConfigRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,22 +27,9 @@ class UpdateDNSSLBWeightRequest extends \RpcAcsRequest
         parent::__construct(
             'Alidns',
             '2015-01-09',
-            'UpdateDNSSLBWeight',
+            'DescribeGtmMonitorConfig',
             'alidns'
         );
-    }
-
-    /**
-     * @param string $recordId
-     *
-     * @return $this
-     */
-    public function setRecordId($recordId)
-    {
-        $this->requestParameters['RecordId'] = $recordId;
-        $this->queryParameters['RecordId'] = $recordId;
-
-        return $this;
     }
 
     /**
@@ -60,14 +46,14 @@ class UpdateDNSSLBWeightRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $weight
+     * @param string $monitorConfigId
      *
      * @return $this
      */
-    public function setWeight($weight)
+    public function setMonitorConfigId($monitorConfigId)
     {
-        $this->requestParameters['Weight'] = $weight;
-        $this->queryParameters['Weight'] = $weight;
+        $this->requestParameters['MonitorConfigId'] = $monitorConfigId;
+        $this->queryParameters['MonitorConfigId'] = $monitorConfigId;
 
         return $this;
     }

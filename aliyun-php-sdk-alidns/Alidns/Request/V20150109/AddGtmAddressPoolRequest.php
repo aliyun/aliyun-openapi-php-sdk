@@ -5,19 +5,17 @@ namespace Alidns\Request\V20150109;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of AddDomainRecord
+ * Request of AddGtmAddressPool
  *
- * @method string getRR()
- * @method string getLine()
+ * @method string getInstanceId()
  * @method string getUserClientIp()
- * @method string getDomainName()
+ * @method string getName()
  * @method string getLang()
  * @method string getType()
- * @method string getPriority()
- * @method string getValue()
- * @method string getTTL()
+ * @method array getAddrs()
+ * @method string getMinAvailableAddrNum()
  */
-class AddDomainRecordRequest extends \RpcAcsRequest
+class AddGtmAddressPoolRequest extends \RpcAcsRequest
 {
 
     /**
@@ -33,33 +31,20 @@ class AddDomainRecordRequest extends \RpcAcsRequest
         parent::__construct(
             'Alidns',
             '2015-01-09',
-            'AddDomainRecord',
+            'AddGtmAddressPool',
             'alidns'
         );
     }
 
     /**
-     * @param string $rR
+     * @param string $instanceId
      *
      * @return $this
      */
-    public function setRR($rR)
+    public function setInstanceId($instanceId)
     {
-        $this->requestParameters['RR'] = $rR;
-        $this->queryParameters['RR'] = $rR;
-
-        return $this;
-    }
-
-    /**
-     * @param string $line
-     *
-     * @return $this
-     */
-    public function setLine($line)
-    {
-        $this->requestParameters['Line'] = $line;
-        $this->queryParameters['Line'] = $line;
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }
@@ -78,14 +63,14 @@ class AddDomainRecordRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $domainName
+     * @param string $name
      *
      * @return $this
      */
-    public function setDomainName($domainName)
+    public function setName($name)
     {
-        $this->requestParameters['DomainName'] = $domainName;
-        $this->queryParameters['DomainName'] = $domainName;
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
         return $this;
     }
@@ -117,40 +102,31 @@ class AddDomainRecordRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $priority
+     * @param array $value
      *
      * @return $this
      */
-    public function setPriority($priority)
+    public function setAddrs(array $value)
     {
-        $this->requestParameters['Priority'] = $priority;
-        $this->queryParameters['Priority'] = $priority;
+        $this->requestParameters['Addrs'] = $value;
+        foreach ($value as $i => $iValue) {
+            $this->queryParameters['Addr.' . ($i + 1) . '.Mode'] = $value[$i]['Mode'];
+            $this->queryParameters['Addr.' . ($i + 1) . '.LbaWeight'] = $value[$i]['LbaWeight'];
+            $this->queryParameters['Addr.' . ($i + 1) . '.Value'] = $value[$i]['Value'];
+        }
 
         return $this;
     }
 
     /**
-     * @param string $value
+     * @param string $minAvailableAddrNum
      *
      * @return $this
      */
-    public function setValue($value)
+    public function setMinAvailableAddrNum($minAvailableAddrNum)
     {
-        $this->requestParameters['Value'] = $value;
-        $this->queryParameters['Value'] = $value;
-
-        return $this;
-    }
-
-    /**
-     * @param string $tTL
-     *
-     * @return $this
-     */
-    public function setTTL($tTL)
-    {
-        $this->requestParameters['TTL'] = $tTL;
-        $this->queryParameters['TTL'] = $tTL;
+        $this->requestParameters['MinAvailableAddrNum'] = $minAvailableAddrNum;
+        $this->queryParameters['MinAvailableAddrNum'] = $minAvailableAddrNum;
 
         return $this;
     }

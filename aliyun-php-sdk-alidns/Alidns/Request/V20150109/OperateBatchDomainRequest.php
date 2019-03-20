@@ -5,15 +5,14 @@ namespace Alidns\Request\V20150109;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DeleteSubDomainRecords
+ * Request of OperateBatchDomain
  *
- * @method string getRR()
  * @method string getUserClientIp()
- * @method string getDomainName()
+ * @method array getDomainRecordInfos()
  * @method string getLang()
  * @method string getType()
  */
-class DeleteSubDomainRecordsRequest extends \RpcAcsRequest
+class OperateBatchDomainRequest extends \RpcAcsRequest
 {
 
     /**
@@ -29,22 +28,9 @@ class DeleteSubDomainRecordsRequest extends \RpcAcsRequest
         parent::__construct(
             'Alidns',
             '2015-01-09',
-            'DeleteSubDomainRecords',
+            'OperateBatchDomain',
             'alidns'
         );
-    }
-
-    /**
-     * @param string $rR
-     *
-     * @return $this
-     */
-    public function setRR($rR)
-    {
-        $this->requestParameters['RR'] = $rR;
-        $this->queryParameters['RR'] = $rR;
-
-        return $this;
     }
 
     /**
@@ -61,14 +47,22 @@ class DeleteSubDomainRecordsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $domainName
+     * @param array $value
      *
      * @return $this
      */
-    public function setDomainName($domainName)
+    public function setDomainRecordInfos(array $value)
     {
-        $this->requestParameters['DomainName'] = $domainName;
-        $this->queryParameters['DomainName'] = $domainName;
+        $this->requestParameters['DomainRecordInfos'] = $value;
+        foreach ($value as $i => $iValue) {
+            $this->queryParameters['DomainRecordInfo.' . ($i + 1) . '.Rr'] = $value[$i]['Rr'];
+            $this->queryParameters['DomainRecordInfo.' . ($i + 1) . '.Line'] = $value[$i]['Line'];
+            $this->queryParameters['DomainRecordInfo.' . ($i + 1) . '.Domain'] = $value[$i]['Domain'];
+            $this->queryParameters['DomainRecordInfo.' . ($i + 1) . '.Type'] = $value[$i]['Type'];
+            $this->queryParameters['DomainRecordInfo.' . ($i + 1) . '.Priority'] = $value[$i]['Priority'];
+            $this->queryParameters['DomainRecordInfo.' . ($i + 1) . '.Value'] = $value[$i]['Value'];
+            $this->queryParameters['DomainRecordInfo.' . ($i + 1) . '.Ttl'] = $value[$i]['Ttl'];
+        }
 
         return $this;
     }

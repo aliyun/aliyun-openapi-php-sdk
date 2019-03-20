@@ -5,17 +5,16 @@ namespace Alidns\Request\V20150109;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeDomains
+ * Request of DescribeBatchResultDetail
  *
- * @method string getGroupId()
+ * @method string getBatchType()
  * @method string getUserClientIp()
  * @method string getPageSize()
- * @method string getSearchMode()
  * @method string getLang()
- * @method string getKeyWord()
  * @method string getPageNumber()
+ * @method string getTaskId()
  */
-class DescribeDomainsRequest extends \RpcAcsRequest
+class DescribeBatchResultDetailRequest extends \RpcAcsRequest
 {
 
     /**
@@ -31,20 +30,20 @@ class DescribeDomainsRequest extends \RpcAcsRequest
         parent::__construct(
             'Alidns',
             '2015-01-09',
-            'DescribeDomains',
+            'DescribeBatchResultDetail',
             'alidns'
         );
     }
 
     /**
-     * @param string $groupId
+     * @param string $batchType
      *
      * @return $this
      */
-    public function setGroupId($groupId)
+    public function setBatchType($batchType)
     {
-        $this->requestParameters['GroupId'] = $groupId;
-        $this->queryParameters['GroupId'] = $groupId;
+        $this->requestParameters['BatchType'] = $batchType;
+        $this->queryParameters['BatchType'] = $batchType;
 
         return $this;
     }
@@ -76,19 +75,6 @@ class DescribeDomainsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $searchMode
-     *
-     * @return $this
-     */
-    public function setSearchMode($searchMode)
-    {
-        $this->requestParameters['SearchMode'] = $searchMode;
-        $this->queryParameters['SearchMode'] = $searchMode;
-
-        return $this;
-    }
-
-    /**
      * @param string $lang
      *
      * @return $this
@@ -102,19 +88,6 @@ class DescribeDomainsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $keyWord
-     *
-     * @return $this
-     */
-    public function setKeyWord($keyWord)
-    {
-        $this->requestParameters['KeyWord'] = $keyWord;
-        $this->queryParameters['KeyWord'] = $keyWord;
-
-        return $this;
-    }
-
-    /**
      * @param string $pageNumber
      *
      * @return $this
@@ -123,6 +96,19 @@ class DescribeDomainsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageNumber'] = $pageNumber;
         $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $taskId
+     *
+     * @return $this
+     */
+    public function setTaskId($taskId)
+    {
+        $this->requestParameters['TaskId'] = $taskId;
+        $this->queryParameters['TaskId'] = $taskId;
 
         return $this;
     }

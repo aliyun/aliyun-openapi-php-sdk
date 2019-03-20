@@ -5,14 +5,15 @@ namespace Alidns\Request\V20150109;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of SetDNSSLBStatus
+ * Request of DescribeGtmInstances
  *
  * @method string getUserClientIp()
- * @method string getSubDomain()
+ * @method string getPageSize()
  * @method string getLang()
- * @method string getOpen()
+ * @method string getKeyword()
+ * @method string getPageNumber()
  */
-class SetDNSSLBStatusRequest extends \RpcAcsRequest
+class DescribeGtmInstancesRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,7 +29,7 @@ class SetDNSSLBStatusRequest extends \RpcAcsRequest
         parent::__construct(
             'Alidns',
             '2015-01-09',
-            'SetDNSSLBStatus',
+            'DescribeGtmInstances',
             'alidns'
         );
     }
@@ -47,14 +48,14 @@ class SetDNSSLBStatusRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $subDomain
+     * @param string $pageSize
      *
      * @return $this
      */
-    public function setSubDomain($subDomain)
+    public function setPageSize($pageSize)
     {
-        $this->requestParameters['SubDomain'] = $subDomain;
-        $this->queryParameters['SubDomain'] = $subDomain;
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }
@@ -73,14 +74,27 @@ class SetDNSSLBStatusRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $open
+     * @param string $keyword
      *
      * @return $this
      */
-    public function setOpen($open)
+    public function setKeyword($keyword)
     {
-        $this->requestParameters['Open'] = $open;
-        $this->queryParameters['Open'] = $open;
+        $this->requestParameters['Keyword'] = $keyword;
+        $this->queryParameters['Keyword'] = $keyword;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

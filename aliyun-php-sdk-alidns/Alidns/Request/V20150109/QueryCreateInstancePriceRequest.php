@@ -5,14 +5,15 @@ namespace Alidns\Request\V20150109;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of SetDomainRecordStatus
+ * Request of QueryCreateInstancePrice
  *
- * @method string getRecordId()
+ * @method string getMonth()
  * @method string getUserClientIp()
  * @method string getLang()
- * @method string getStatus()
+ * @method string getInstanceVersion()
+ * @method string getOwnerId()
  */
-class SetDomainRecordStatusRequest extends \RpcAcsRequest
+class QueryCreateInstancePriceRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,20 +29,20 @@ class SetDomainRecordStatusRequest extends \RpcAcsRequest
         parent::__construct(
             'Alidns',
             '2015-01-09',
-            'SetDomainRecordStatus',
+            'QueryCreateInstancePrice',
             'alidns'
         );
     }
 
     /**
-     * @param string $recordId
+     * @param string $month
      *
      * @return $this
      */
-    public function setRecordId($recordId)
+    public function setMonth($month)
     {
-        $this->requestParameters['RecordId'] = $recordId;
-        $this->queryParameters['RecordId'] = $recordId;
+        $this->requestParameters['Month'] = $month;
+        $this->queryParameters['Month'] = $month;
 
         return $this;
     }
@@ -73,14 +74,27 @@ class SetDomainRecordStatusRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $status
+     * @param string $instanceVersion
      *
      * @return $this
      */
-    public function setStatus($status)
+    public function setInstanceVersion($instanceVersion)
     {
-        $this->requestParameters['Status'] = $status;
-        $this->queryParameters['Status'] = $status;
+        $this->requestParameters['InstanceVersion'] = $instanceVersion;
+        $this->queryParameters['InstanceVersion'] = $instanceVersion;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

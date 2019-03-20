@@ -5,14 +5,14 @@ namespace Alidns\Request\V20150109;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of SetDNSSLBStatus
+ * Request of SetGtmAccessMode
  *
  * @method string getUserClientIp()
- * @method string getSubDomain()
+ * @method string getStrategyId()
  * @method string getLang()
- * @method string getOpen()
+ * @method string getAccessMode()
  */
-class SetDNSSLBStatusRequest extends \RpcAcsRequest
+class SetGtmAccessModeRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,7 +28,7 @@ class SetDNSSLBStatusRequest extends \RpcAcsRequest
         parent::__construct(
             'Alidns',
             '2015-01-09',
-            'SetDNSSLBStatus',
+            'SetGtmAccessMode',
             'alidns'
         );
     }
@@ -47,14 +47,14 @@ class SetDNSSLBStatusRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $subDomain
+     * @param string $strategyId
      *
      * @return $this
      */
-    public function setSubDomain($subDomain)
+    public function setStrategyId($strategyId)
     {
-        $this->requestParameters['SubDomain'] = $subDomain;
-        $this->queryParameters['SubDomain'] = $subDomain;
+        $this->requestParameters['StrategyId'] = $strategyId;
+        $this->queryParameters['StrategyId'] = $strategyId;
 
         return $this;
     }
@@ -73,14 +73,14 @@ class SetDNSSLBStatusRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $open
+     * @param string $accessMode
      *
      * @return $this
      */
-    public function setOpen($open)
+    public function setAccessMode($accessMode)
     {
-        $this->requestParameters['Open'] = $open;
-        $this->queryParameters['Open'] = $open;
+        $this->requestParameters['AccessMode'] = $accessMode;
+        $this->queryParameters['AccessMode'] = $accessMode;
 
         return $this;
     }

@@ -1,73 +1,101 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Alidns\Request\V20150109;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of ChangeDomainOfDnsProduct
+ *
+ * @method string getInstanceId()
+ * @method string getNewDomain()
+ * @method string getUserClientIp()
+ * @method string getForce()
+ * @method string getLang()
+ */
 class ChangeDomainOfDnsProductRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Alidns", "2015-01-09", "ChangeDomainOfDnsProduct");
-	}
 
-	private  $lang;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $userClientIp;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Alidns',
+            '2015-01-09',
+            'ChangeDomainOfDnsProduct',
+            'alidns'
+        );
+    }
 
-	private  $instanceId;
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
-	private  $newDomain;
+        return $this;
+    }
 
-	public function getLang() {
-		return $this->lang;
-	}
+    /**
+     * @param string $newDomain
+     *
+     * @return $this
+     */
+    public function setNewDomain($newDomain)
+    {
+        $this->requestParameters['NewDomain'] = $newDomain;
+        $this->queryParameters['NewDomain'] = $newDomain;
 
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
+        return $this;
+    }
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
-	}
+    /**
+     * @param string $userClientIp
+     *
+     * @return $this
+     */
+    public function setUserClientIp($userClientIp)
+    {
+        $this->requestParameters['UserClientIp'] = $userClientIp;
+        $this->queryParameters['UserClientIp'] = $userClientIp;
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
-	}
+        return $this;
+    }
 
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
+    /**
+     * @param string $force
+     *
+     * @return $this
+     */
+    public function setForce($force)
+    {
+        $this->requestParameters['Force'] = $force;
+        $this->queryParameters['Force'] = $force;
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
+        return $this;
+    }
 
-	public function getNewDomain() {
-		return $this->newDomain;
-	}
+    /**
+     * @param string $lang
+     *
+     * @return $this
+     */
+    public function setLang($lang)
+    {
+        $this->requestParameters['Lang'] = $lang;
+        $this->queryParameters['Lang'] = $lang;
 
-	public function setNewDomain($newDomain) {
-		$this->newDomain = $newDomain;
-		$this->queryParameters["NewDomain"]=$newDomain;
-	}
-	
+        return $this;
+    }
 }
