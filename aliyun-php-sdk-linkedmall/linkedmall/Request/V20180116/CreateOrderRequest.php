@@ -1,107 +1,175 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace linkedmall\Request\V20180116;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of CreateOrder
+ *
+ * @method string getItemId()
+ * @method string getQuantity()
+ * @method string getTotalAmount()
+ * @method string getBizUid()
+ * @method string getExtJson()
+ * @method string getBizId()
+ * @method string getOutTradeId()
+ * @method string getOrderExpireTime()
+ * @method array getItemLists()
+ * @method string getDeliveryAddress()
+ */
 class CreateOrderRequest extends \RpcAcsRequest
 {
-    public function  __construct()
+
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
+
+    /**
+     * Class constructor.
+     */
+    public function __construct()
     {
-        parent::__construct("linkedmall", "2018-01-16", "CreateOrder", "linkedmall", "openAPI");
-		$this->setMethod("POST");
+        parent::__construct(
+            'linkedmall',
+            '2018-01-16',
+            'CreateOrder',
+            'linkedmall'
+        );
     }
 
-    protected $bizId;
+    /**
+     * @param string $itemId
+     *
+     * @return $this
+     */
+    public function setItemId($itemId)
+    {
+        $this->requestParameters['ItemId'] = $itemId;
+        $this->queryParameters['ItemId'] = $itemId;
 
-    protected $bizUid;
-
-    protected $outTradeId;
-
-    protected $itemId;
-
-    protected $quantity;
-
-    protected $totalAmount;
-
-    protected $extJson;
-
-    public function getBizId() {
-	    return $this->bizId;
+        return $this;
     }
 
-    public function setBizId($bizId) {
-    	$this->bizId = $bizId;
-    	$this->queryParameters['BizId'] = $bizId;
-	}
+    /**
+     * @param string $quantity
+     *
+     * @return $this
+     */
+    public function setQuantity($quantity)
+    {
+        $this->requestParameters['Quantity'] = $quantity;
+        $this->queryParameters['Quantity'] = $quantity;
 
-    public function getBizUid() {
-	    return $this->bizUid;
+        return $this;
     }
 
-    public function setBizUid($bizUid) {
-    	$this->bizUid = $bizUid;
-    	$this->queryParameters['BizUid'] = $bizUid;
-	}
+    /**
+     * @param string $totalAmount
+     *
+     * @return $this
+     */
+    public function setTotalAmount($totalAmount)
+    {
+        $this->requestParameters['TotalAmount'] = $totalAmount;
+        $this->queryParameters['TotalAmount'] = $totalAmount;
 
-    public function getOutTradeId() {
-	    return $this->outTradeId;
+        return $this;
     }
 
-    public function setOutTradeId($outTradeId) {
-    	$this->outTradeId = $outTradeId;
-    	$this->queryParameters['OutTradeId'] = $outTradeId;
-	}
+    /**
+     * @param string $bizUid
+     *
+     * @return $this
+     */
+    public function setBizUid($bizUid)
+    {
+        $this->requestParameters['BizUid'] = $bizUid;
+        $this->queryParameters['BizUid'] = $bizUid;
 
-    public function getItemId() {
-	    return $this->itemId;
+        return $this;
     }
 
-    public function setItemId($itemId) {
-    	$this->itemId = $itemId;
-    	$this->queryParameters['ItemId'] = $itemId;
-	}
+    /**
+     * @param string $extJson
+     *
+     * @return $this
+     */
+    public function setExtJson($extJson)
+    {
+        $this->requestParameters['ExtJson'] = $extJson;
+        $this->queryParameters['ExtJson'] = $extJson;
 
-    public function getQuantity() {
-	    return $this->quantity;
+        return $this;
     }
 
-    public function setQuantity($quantity) {
-    	$this->quantity = $quantity;
-    	$this->queryParameters['Quantity'] = $quantity;
-	}
+    /**
+     * @param string $bizId
+     *
+     * @return $this
+     */
+    public function setBizId($bizId)
+    {
+        $this->requestParameters['BizId'] = $bizId;
+        $this->queryParameters['BizId'] = $bizId;
 
-    public function getTotalAmount() {
-	    return $this->totalAmount;
+        return $this;
     }
 
-    public function setTotalAmount($totalAmount) {
-    	$this->totalAmount = $totalAmount;
-    	$this->queryParameters['TotalAmount'] = $totalAmount;
-	}
+    /**
+     * @param string $outTradeId
+     *
+     * @return $this
+     */
+    public function setOutTradeId($outTradeId)
+    {
+        $this->requestParameters['OutTradeId'] = $outTradeId;
+        $this->queryParameters['OutTradeId'] = $outTradeId;
 
-    public function getExtJson() {
-	    return $this->extJson;
+        return $this;
     }
 
-    public function setExtJson($extJson) {
-    	$this->extJson = $extJson;
-    	$this->queryParameters['ExtJson'] = $extJson;
-	}
+    /**
+     * @param string $orderExpireTime
+     *
+     * @return $this
+     */
+    public function setOrderExpireTime($orderExpireTime)
+    {
+        $this->requestParameters['OrderExpireTime'] = $orderExpireTime;
+        $this->queryParameters['OrderExpireTime'] = $orderExpireTime;
 
+        return $this;
+    }
+
+    /**
+     * @param array $itemList
+     *
+     * @return $this
+     */
+    public function withItemLists(array $itemList)
+    {
+        $this->requestParameters['ItemLists'] = $itemList;
+        foreach ($itemList as $depth1 => $depth1Value) {
+            $this->queryParameters['ItemList.' . ($depth1 + 1) . '.ItemId'] = $depth1Value['ItemId'];
+            $this->queryParameters['ItemList.' . ($depth1 + 1) . '.Quantity'] = $depth1Value['Quantity'];
+            $this->queryParameters['ItemList.' . ($depth1 + 1) . '.SkuId'] = $depth1Value['SkuId'];
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param string $deliveryAddress
+     *
+     * @return $this
+     */
+    public function setDeliveryAddress($deliveryAddress)
+    {
+        $this->requestParameters['DeliveryAddress'] = $deliveryAddress;
+        $this->queryParameters['DeliveryAddress'] = $deliveryAddress;
+
+        return $this;
+    }
 }

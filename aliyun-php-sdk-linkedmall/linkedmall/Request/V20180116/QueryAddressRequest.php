@@ -5,13 +5,13 @@ namespace linkedmall\Request\V20180116;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of QueryMovieSchedules
+ * Request of QueryAddress
  *
- * @method string getCinemaId()
- * @method string getExtJson()
+ * @method string getDivisionCode()
+ * @method string getIp()
  * @method string getBizId()
  */
-class QueryMovieSchedulesRequest extends \RpcAcsRequest
+class QueryAddressRequest extends \RpcAcsRequest
 {
 
     /**
@@ -27,33 +27,33 @@ class QueryMovieSchedulesRequest extends \RpcAcsRequest
         parent::__construct(
             'linkedmall',
             '2018-01-16',
-            'QueryMovieSchedules',
+            'QueryAddress',
             'linkedmall'
         );
     }
 
     /**
-     * @param string $cinemaId
+     * @param string $divisionCode
      *
      * @return $this
      */
-    public function setCinemaId($cinemaId)
+    public function setDivisionCode($divisionCode)
     {
-        $this->requestParameters['CinemaId'] = $cinemaId;
-        $this->queryParameters['CinemaId'] = $cinemaId;
+        $this->requestParameters['DivisionCode'] = $divisionCode;
+        $this->queryParameters['DivisionCode'] = $divisionCode;
 
         return $this;
     }
 
     /**
-     * @param string $extJson
+     * @param string $ip
      *
      * @return $this
      */
-    public function setExtJson($extJson)
+    public function setIp($ip)
     {
-        $this->requestParameters['ExtJson'] = $extJson;
-        $this->queryParameters['ExtJson'] = $extJson;
+        $this->requestParameters['Ip'] = $ip;
+        $this->queryParameters['Ip'] = $ip;
 
         return $this;
     }

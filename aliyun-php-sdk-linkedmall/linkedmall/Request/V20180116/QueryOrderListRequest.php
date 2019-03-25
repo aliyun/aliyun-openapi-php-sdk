@@ -5,14 +5,15 @@ namespace linkedmall\Request\V20180116;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of QueryMovieComments
+ * Request of QueryOrderList
  *
- * @method string getExtJson()
+ * @method string getBizUid()
+ * @method string getFilterOption()
  * @method string getBizId()
- * @method string getMovieId()
+ * @method string getPageSize()
  * @method string getPageNumber()
  */
-class QueryMovieCommentsRequest extends \RpcAcsRequest
+class QueryOrderListRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,20 +29,33 @@ class QueryMovieCommentsRequest extends \RpcAcsRequest
         parent::__construct(
             'linkedmall',
             '2018-01-16',
-            'QueryMovieComments',
+            'QueryOrderList',
             'linkedmall'
         );
     }
 
     /**
-     * @param string $extJson
+     * @param string $bizUid
      *
      * @return $this
      */
-    public function setExtJson($extJson)
+    public function setBizUid($bizUid)
     {
-        $this->requestParameters['ExtJson'] = $extJson;
-        $this->queryParameters['ExtJson'] = $extJson;
+        $this->requestParameters['BizUid'] = $bizUid;
+        $this->queryParameters['BizUid'] = $bizUid;
+
+        return $this;
+    }
+
+    /**
+     * @param string $filterOption
+     *
+     * @return $this
+     */
+    public function setFilterOption($filterOption)
+    {
+        $this->requestParameters['FilterOption'] = $filterOption;
+        $this->queryParameters['FilterOption'] = $filterOption;
 
         return $this;
     }
@@ -60,14 +74,14 @@ class QueryMovieCommentsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $movieId
+     * @param string $pageSize
      *
      * @return $this
      */
-    public function setMovieId($movieId)
+    public function setPageSize($pageSize)
     {
-        $this->requestParameters['MovieId'] = $movieId;
-        $this->queryParameters['MovieId'] = $movieId;
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }

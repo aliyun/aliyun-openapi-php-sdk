@@ -5,13 +5,12 @@ namespace linkedmall\Request\V20180116;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of QueryMessages
+ * Request of AddSupplierNewItems
  *
- * @method string getExtJson()
  * @method string getBizId()
- * @method string getTopic()
+ * @method array getItemLists()
  */
-class QueryMessagesRequest extends \RpcAcsRequest
+class AddSupplierNewItemsRequest extends \RpcAcsRequest
 {
 
     /**
@@ -27,22 +26,9 @@ class QueryMessagesRequest extends \RpcAcsRequest
         parent::__construct(
             'linkedmall',
             '2018-01-16',
-            'QueryMessages',
+            'AddSupplierNewItems',
             'linkedmall'
         );
-    }
-
-    /**
-     * @param string $extJson
-     *
-     * @return $this
-     */
-    public function setExtJson($extJson)
-    {
-        $this->requestParameters['ExtJson'] = $extJson;
-        $this->queryParameters['ExtJson'] = $extJson;
-
-        return $this;
     }
 
     /**
@@ -59,14 +45,19 @@ class QueryMessagesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $topic
+     * @param array $itemList
      *
      * @return $this
      */
-    public function setTopic($topic)
+    public function withItemLists(array $itemList)
     {
-        $this->requestParameters['Topic'] = $topic;
-        $this->queryParameters['Topic'] = $topic;
+        $this->requestParameters['ItemLists'] = $itemList;
+        foreach ($itemList as $depth1 => $depth1Value) {
+            $this->queryParameters['ItemList.' . ($depth1 + 1) . '.ItemId'] = $depth1Value['ItemId'];
+            foreach ($depth1Value['SkuList'] as $i => $iValue) {
+                $this->queryParameters['ItemList.' . ($depth1 + 1) . '.SkuList.' . ($i + 1)] = $iValue;
+            }
+        }
 
         return $this;
     }

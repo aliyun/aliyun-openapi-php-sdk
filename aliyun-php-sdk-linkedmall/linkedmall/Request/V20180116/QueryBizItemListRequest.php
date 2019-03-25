@@ -5,7 +5,7 @@ namespace linkedmall\Request\V20180116;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of QueryBizItems
+ * Request of QueryBizItemList
  *
  * @method string getBizId()
  * @method string getPageSize()
@@ -13,7 +13,7 @@ namespace linkedmall\Request\V20180116;
  * @method string getPageNumber()
  * @method string getSubBizId()
  */
-class QueryBizItemsRequest extends \RpcAcsRequest
+class QueryBizItemListRequest extends \RpcAcsRequest
 {
 
     /**
@@ -29,7 +29,7 @@ class QueryBizItemsRequest extends \RpcAcsRequest
         parent::__construct(
             'linkedmall',
             '2018-01-16',
-            'QueryBizItems',
+            'QueryBizItemList',
             'linkedmall'
         );
     }

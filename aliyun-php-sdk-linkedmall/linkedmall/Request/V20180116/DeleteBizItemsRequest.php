@@ -5,15 +5,13 @@ namespace linkedmall\Request\V20180116;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of QueryBizItems
+ * Request of DeleteBizItems
  *
  * @method string getBizId()
- * @method string getPageSize()
- * @method string getUserId()
- * @method string getPageNumber()
+ * @method array getItemIdLists()
  * @method string getSubBizId()
  */
-class QueryBizItemsRequest extends \RpcAcsRequest
+class DeleteBizItemsRequest extends \RpcAcsRequest
 {
 
     /**
@@ -29,7 +27,7 @@ class QueryBizItemsRequest extends \RpcAcsRequest
         parent::__construct(
             'linkedmall',
             '2018-01-16',
-            'QueryBizItems',
+            'DeleteBizItems',
             'linkedmall'
         );
     }
@@ -48,40 +46,16 @@ class QueryBizItemsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageSize
+     * @param array $itemIdList
      *
      * @return $this
      */
-    public function setPageSize($pageSize)
+    public function withItemIdLists(array $itemIdList)
     {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param string $userId
-     *
-     * @return $this
-     */
-    public function setUserId($userId)
-    {
-        $this->requestParameters['UserId'] = $userId;
-        $this->queryParameters['UserId'] = $userId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
+        $this->requestParameters['ItemIdLists'] = $itemIdList;
+        foreach ($itemIdList as $i => $iValue) {
+            $this->queryParameters['ItemIdList.' . ($i + 1)] = $iValue;
+        }
 
         return $this;
     }

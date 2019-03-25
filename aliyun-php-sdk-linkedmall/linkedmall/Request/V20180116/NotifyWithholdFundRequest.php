@@ -5,15 +5,16 @@ namespace linkedmall\Request\V20180116;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of NotifyPayOrderStatus
+ * Request of NotifyWithholdFund
  *
  * @method string getAmount()
  * @method string getPayTypes()
+ * @method string getTenantOrderId()
  * @method string getRequestId()
  * @method string getOperationDate()
  * @method string getChannelId()
  */
-class NotifyPayOrderStatusRequest extends \RpcAcsRequest
+class NotifyWithholdFundRequest extends \RpcAcsRequest
 {
 
     /**
@@ -29,7 +30,7 @@ class NotifyPayOrderStatusRequest extends \RpcAcsRequest
         parent::__construct(
             'linkedmall',
             '2018-01-16',
-            'NotifyPayOrderStatus',
+            'NotifyWithholdFund',
             'linkedmall'
         );
     }
@@ -56,6 +57,19 @@ class NotifyPayOrderStatusRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PayTypes'] = $payTypes;
         $this->queryParameters['PayTypes'] = $payTypes;
+
+        return $this;
+    }
+
+    /**
+     * @param string $tenantOrderId
+     *
+     * @return $this
+     */
+    public function setTenantOrderId($tenantOrderId)
+    {
+        $this->requestParameters['TenantOrderId'] = $tenantOrderId;
+        $this->queryParameters['TenantOrderId'] = $tenantOrderId;
 
         return $this;
     }

@@ -1,74 +1,87 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace linkedmall\Request\V20180116;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of QueryGuideItemGroup
+ *
+ * @method string getGroupId()
+ * @method string getBizId()
+ * @method string getPageSize()
+ * @method string getPageNumber()
+ */
 class QueryGuideItemGroupRequest extends \RpcAcsRequest
 {
-    public function  __construct()
+
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
+
+    /**
+     * Class constructor.
+     */
+    public function __construct()
     {
-        parent::__construct("linkedmall", "2018-01-16", "QueryGuideItemGroup", "linkedmall", "openAPI");
-		$this->setMethod("POST");
+        parent::__construct(
+            'linkedmall',
+            '2018-01-16',
+            'QueryGuideItemGroup',
+            'linkedmall'
+        );
     }
 
-    protected $bizId;
+    /**
+     * @param string $groupId
+     *
+     * @return $this
+     */
+    public function setGroupId($groupId)
+    {
+        $this->requestParameters['GroupId'] = $groupId;
+        $this->queryParameters['GroupId'] = $groupId;
 
-    protected $groupId;
-
-    protected $pageNumber;
-
-    protected $pageSize;
-
-    public function getBizId() {
-	    return $this->bizId;
+        return $this;
     }
 
-    public function setBizId($bizId) {
-    	$this->bizId = $bizId;
-    	$this->queryParameters['BizId'] = $bizId;
-	}
+    /**
+     * @param string $bizId
+     *
+     * @return $this
+     */
+    public function setBizId($bizId)
+    {
+        $this->requestParameters['BizId'] = $bizId;
+        $this->queryParameters['BizId'] = $bizId;
 
-    public function getGroupId() {
-	    return $this->groupId;
+        return $this;
     }
 
-    public function setGroupId($groupId) {
-    	$this->groupId = $groupId;
-    	$this->queryParameters['GroupId'] = $groupId;
-	}
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-    public function getPageNumber() {
-	    return $this->pageNumber;
+        return $this;
     }
 
-    public function setPageNumber($pageNumber) {
-    	$this->pageNumber = $pageNumber;
-    	$this->queryParameters['PageNumber'] = $pageNumber;
-	}
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
-    public function getPageSize() {
-	    return $this->pageSize;
+        return $this;
     }
-
-    public function setPageSize($pageSize) {
-    	$this->pageSize = $pageSize;
-    	$this->queryParameters['PageSize'] = $pageSize;
-	}
-
 }

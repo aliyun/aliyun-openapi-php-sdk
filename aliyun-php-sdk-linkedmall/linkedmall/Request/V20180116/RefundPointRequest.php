@@ -5,15 +5,20 @@ namespace linkedmall\Request\V20180116;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of QueryMovieTickets
+ * Request of RefundPoint
  *
- * @method string getOrderId()
- * @method string getBizUid()
- * @method string getExtJson()
+ * @method string getReason()
+ * @method string getSellerId()
+ * @method string getLmOrderId()
  * @method string getBizId()
  */
-class QueryMovieTicketsRequest extends \RpcAcsRequest
+class RefundPointRequest extends \RpcAcsRequest
 {
+
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
     /**
      * Class constructor.
@@ -23,46 +28,46 @@ class QueryMovieTicketsRequest extends \RpcAcsRequest
         parent::__construct(
             'linkedmall',
             '2018-01-16',
-            'QueryMovieTickets',
+            'RefundPoint',
             'linkedmall'
         );
     }
 
     /**
-     * @param string $orderId
+     * @param string $reason
      *
      * @return $this
      */
-    public function setOrderId($orderId)
+    public function setReason($reason)
     {
-        $this->requestParameters['OrderId'] = $orderId;
-        $this->queryParameters['OrderId'] = $orderId;
+        $this->requestParameters['Reason'] = $reason;
+        $this->queryParameters['Reason'] = $reason;
 
         return $this;
     }
 
     /**
-     * @param string $bizUid
+     * @param string $sellerId
      *
      * @return $this
      */
-    public function setBizUid($bizUid)
+    public function setSellerId($sellerId)
     {
-        $this->requestParameters['BizUid'] = $bizUid;
-        $this->queryParameters['BizUid'] = $bizUid;
+        $this->requestParameters['SellerId'] = $sellerId;
+        $this->queryParameters['SellerId'] = $sellerId;
 
         return $this;
     }
 
     /**
-     * @param string $extJson
+     * @param string $lmOrderId
      *
      * @return $this
      */
-    public function setExtJson($extJson)
+    public function setLmOrderId($lmOrderId)
     {
-        $this->requestParameters['ExtJson'] = $extJson;
-        $this->queryParameters['ExtJson'] = $extJson;
+        $this->requestParameters['LmOrderId'] = $lmOrderId;
+        $this->queryParameters['LmOrderId'] = $lmOrderId;
 
         return $this;
     }

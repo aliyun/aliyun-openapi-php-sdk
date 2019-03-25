@@ -5,15 +5,19 @@ namespace linkedmall\Request\V20180116;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of QueryMovieTickets
+ * Request of QueryLogistics
  *
- * @method string getOrderId()
+ * @method string getLmOrderId()
  * @method string getBizUid()
- * @method string getExtJson()
  * @method string getBizId()
  */
-class QueryMovieTicketsRequest extends \RpcAcsRequest
+class QueryLogisticsRequest extends \RpcAcsRequest
 {
+
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
     /**
      * Class constructor.
@@ -23,20 +27,20 @@ class QueryMovieTicketsRequest extends \RpcAcsRequest
         parent::__construct(
             'linkedmall',
             '2018-01-16',
-            'QueryMovieTickets',
+            'QueryLogistics',
             'linkedmall'
         );
     }
 
     /**
-     * @param string $orderId
+     * @param string $lmOrderId
      *
      * @return $this
      */
-    public function setOrderId($orderId)
+    public function setLmOrderId($lmOrderId)
     {
-        $this->requestParameters['OrderId'] = $orderId;
-        $this->queryParameters['OrderId'] = $orderId;
+        $this->requestParameters['LmOrderId'] = $lmOrderId;
+        $this->queryParameters['LmOrderId'] = $lmOrderId;
 
         return $this;
     }
@@ -50,19 +54,6 @@ class QueryMovieTicketsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['BizUid'] = $bizUid;
         $this->queryParameters['BizUid'] = $bizUid;
-
-        return $this;
-    }
-
-    /**
-     * @param string $extJson
-     *
-     * @return $this
-     */
-    public function setExtJson($extJson)
-    {
-        $this->requestParameters['ExtJson'] = $extJson;
-        $this->queryParameters['ExtJson'] = $extJson;
 
         return $this;
     }
