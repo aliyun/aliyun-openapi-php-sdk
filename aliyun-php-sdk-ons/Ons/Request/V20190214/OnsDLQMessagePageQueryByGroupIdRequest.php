@@ -5,16 +5,18 @@ namespace Ons\Request\V20190214;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of OnsTraceQueryByMsgKey
+ * Request of OnsDLQMessagePageQueryByGroupId
  *
  * @method string getPreventCache()
  * @method string getInstanceId()
- * @method string getTopic()
+ * @method string getGroupId()
+ * @method string getPageSize()
  * @method string getEndTime()
  * @method string getBeginTime()
- * @method string getMsgKey()
+ * @method string getCurrentPage()
+ * @method string getTaskId()
  */
-class OnsTraceQueryByMsgKeyRequest extends \RpcAcsRequest
+class OnsDLQMessagePageQueryByGroupIdRequest extends \RpcAcsRequest
 {
 
     /**
@@ -30,7 +32,7 @@ class OnsTraceQueryByMsgKeyRequest extends \RpcAcsRequest
         parent::__construct(
             'Ons',
             '2019-02-14',
-            'OnsTraceQueryByMsgKey',
+            'OnsDLQMessagePageQueryByGroupId',
             'ons'
         );
     }
@@ -62,14 +64,27 @@ class OnsTraceQueryByMsgKeyRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $topic
+     * @param string $groupId
      *
      * @return $this
      */
-    public function setTopic($topic)
+    public function setGroupId($groupId)
     {
-        $this->requestParameters['Topic'] = $topic;
-        $this->queryParameters['Topic'] = $topic;
+        $this->requestParameters['GroupId'] = $groupId;
+        $this->queryParameters['GroupId'] = $groupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }
@@ -101,14 +116,27 @@ class OnsTraceQueryByMsgKeyRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $msgKey
+     * @param string $currentPage
      *
      * @return $this
      */
-    public function setMsgKey($msgKey)
+    public function setCurrentPage($currentPage)
     {
-        $this->requestParameters['MsgKey'] = $msgKey;
-        $this->queryParameters['MsgKey'] = $msgKey;
+        $this->requestParameters['CurrentPage'] = $currentPage;
+        $this->queryParameters['CurrentPage'] = $currentPage;
+
+        return $this;
+    }
+
+    /**
+     * @param string $taskId
+     *
+     * @return $this
+     */
+    public function setTaskId($taskId)
+    {
+        $this->requestParameters['TaskId'] = $taskId;
+        $this->queryParameters['TaskId'] = $taskId;
 
         return $this;
     }

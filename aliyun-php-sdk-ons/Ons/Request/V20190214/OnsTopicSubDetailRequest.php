@@ -5,14 +5,13 @@ namespace Ons\Request\V20190214;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of OnsInstanceUpdate
+ * Request of OnsTopicSubDetail
  *
  * @method string getPreventCache()
- * @method string getInstanceName()
  * @method string getInstanceId()
- * @method string getRemark()
+ * @method string getTopic()
  */
-class OnsInstanceUpdateRequest extends \RpcAcsRequest
+class OnsTopicSubDetailRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,7 +27,7 @@ class OnsInstanceUpdateRequest extends \RpcAcsRequest
         parent::__construct(
             'Ons',
             '2019-02-14',
-            'OnsInstanceUpdate',
+            'OnsTopicSubDetail',
             'ons'
         );
     }
@@ -47,19 +46,6 @@ class OnsInstanceUpdateRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceName
-     *
-     * @return $this
-     */
-    public function setInstanceName($instanceName)
-    {
-        $this->requestParameters['InstanceName'] = $instanceName;
-        $this->queryParameters['InstanceName'] = $instanceName;
-
-        return $this;
-    }
-
-    /**
      * @param string $instanceId
      *
      * @return $this
@@ -73,14 +59,14 @@ class OnsInstanceUpdateRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $remark
+     * @param string $topic
      *
      * @return $this
      */
-    public function setRemark($remark)
+    public function setTopic($topic)
     {
-        $this->requestParameters['Remark'] = $remark;
-        $this->queryParameters['Remark'] = $remark;
+        $this->requestParameters['Topic'] = $topic;
+        $this->queryParameters['Topic'] = $topic;
 
         return $this;
     }

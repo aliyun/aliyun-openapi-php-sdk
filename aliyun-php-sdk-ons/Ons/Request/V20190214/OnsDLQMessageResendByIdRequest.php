@@ -5,14 +5,14 @@ namespace Ons\Request\V20190214;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of OnsInstanceUpdate
+ * Request of OnsDLQMessageResendById
  *
  * @method string getPreventCache()
- * @method string getInstanceName()
  * @method string getInstanceId()
- * @method string getRemark()
+ * @method string getGroupId()
+ * @method string getMsgId()
  */
-class OnsInstanceUpdateRequest extends \RpcAcsRequest
+class OnsDLQMessageResendByIdRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,7 +28,7 @@ class OnsInstanceUpdateRequest extends \RpcAcsRequest
         parent::__construct(
             'Ons',
             '2019-02-14',
-            'OnsInstanceUpdate',
+            'OnsDLQMessageResendById',
             'ons'
         );
     }
@@ -47,19 +47,6 @@ class OnsInstanceUpdateRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceName
-     *
-     * @return $this
-     */
-    public function setInstanceName($instanceName)
-    {
-        $this->requestParameters['InstanceName'] = $instanceName;
-        $this->queryParameters['InstanceName'] = $instanceName;
-
-        return $this;
-    }
-
-    /**
      * @param string $instanceId
      *
      * @return $this
@@ -73,14 +60,27 @@ class OnsInstanceUpdateRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $remark
+     * @param string $groupId
      *
      * @return $this
      */
-    public function setRemark($remark)
+    public function setGroupId($groupId)
     {
-        $this->requestParameters['Remark'] = $remark;
-        $this->queryParameters['Remark'] = $remark;
+        $this->requestParameters['GroupId'] = $groupId;
+        $this->queryParameters['GroupId'] = $groupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $msgId
+     *
+     * @return $this
+     */
+    public function setMsgId($msgId)
+    {
+        $this->requestParameters['MsgId'] = $msgId;
+        $this->queryParameters['MsgId'] = $msgId;
 
         return $this;
     }

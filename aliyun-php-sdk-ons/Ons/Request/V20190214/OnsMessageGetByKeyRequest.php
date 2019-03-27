@@ -3,6 +3,8 @@
 namespace Ons\Request\V20190214;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of OnsMessageGetByKey
  *
  * @method string getPreventCache()
