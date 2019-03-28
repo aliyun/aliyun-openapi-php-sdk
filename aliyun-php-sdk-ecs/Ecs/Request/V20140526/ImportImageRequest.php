@@ -3,17 +3,19 @@
 namespace Ecs\Request\V20140526;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of ImportImage
  *
  * @method array getDiskDeviceMappings()
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
- * @method string getImageName()
  * @method string getRoleName()
  * @method string getDescription()
  * @method string getOSType()
  * @method string getOwnerId()
  * @method string getPlatform()
+ * @method string getImageName()
  * @method string getArchitecture()
  */
 class ImportImageRequest extends \RpcAcsRequest
@@ -38,20 +40,20 @@ class ImportImageRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $diskDeviceMappings
+     * @param array $diskDeviceMapping
      *
      * @return $this
      */
-    public function setDiskDeviceMappings(array $diskDeviceMappings)
+    public function setDiskDeviceMappings(array $diskDeviceMapping)
     {
-        $this->requestParameters['DiskDeviceMappings'] = $diskDeviceMappings;
-        foreach ($diskDeviceMappings as $i => $iValue) {
-            $this->queryParameters['DiskDeviceMapping.' . ($i + 1) . '.OSSBucket'] = $diskDeviceMappings[$i]['OSSBucket'];
-            $this->queryParameters['DiskDeviceMapping.' . ($i + 1) . '.DiskImSize'] = $diskDeviceMappings[$i]['DiskImSize'];
-            $this->queryParameters['DiskDeviceMapping.' . ($i + 1) . '.Format'] = $diskDeviceMappings[$i]['Format'];
-            $this->queryParameters['DiskDeviceMapping.' . ($i + 1) . '.Device'] = $diskDeviceMappings[$i]['Device'];
-            $this->queryParameters['DiskDeviceMapping.' . ($i + 1) . '.OSSObject'] = $diskDeviceMappings[$i]['OSSObject'];
-            $this->queryParameters['DiskDeviceMapping.' . ($i + 1) . '.DiskImageSize'] = $diskDeviceMappings[$i]['DiskImageSize'];
+        $this->requestParameters['DiskDeviceMappings'] = $diskDeviceMapping;
+        foreach ($diskDeviceMapping as $depth1 => $depth1Value) {
+            $this->queryParameters['DiskDeviceMapping.' . ($depth1 + 1) . '.OSSBucket'] = $depth1Value['OSSBucket'];
+            $this->queryParameters['DiskDeviceMapping.' . ($depth1 + 1) . '.DiskImSize'] = $depth1Value['DiskImSize'];
+            $this->queryParameters['DiskDeviceMapping.' . ($depth1 + 1) . '.Format'] = $depth1Value['Format'];
+            $this->queryParameters['DiskDeviceMapping.' . ($depth1 + 1) . '.Device'] = $depth1Value['Device'];
+            $this->queryParameters['DiskDeviceMapping.' . ($depth1 + 1) . '.OSSObject'] = $depth1Value['OSSObject'];
+            $this->queryParameters['DiskDeviceMapping.' . ($depth1 + 1) . '.DiskImageSize'] = $depth1Value['DiskImageSize'];
         }
 
         return $this;
@@ -79,19 +81,6 @@ class ImportImageRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $imageName
-     *
-     * @return $this
-     */
-    public function setImageName($imageName)
-    {
-        $this->requestParameters['ImageName'] = $imageName;
-        $this->queryParameters['ImageName'] = $imageName;
 
         return $this;
     }
@@ -157,6 +146,19 @@ class ImportImageRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Platform'] = $platform;
         $this->queryParameters['Platform'] = $platform;
+
+        return $this;
+    }
+
+    /**
+     * @param string $imageName
+     *
+     * @return $this
+     */
+    public function setImageName($imageName)
+    {
+        $this->requestParameters['ImageName'] = $imageName;
+        $this->queryParameters['ImageName'] = $imageName;
 
         return $this;
     }

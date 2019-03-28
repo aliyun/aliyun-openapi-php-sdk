@@ -3,12 +3,15 @@
 namespace Ecs\Request\V20140526;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeZones
  *
  * @method string getSpotStrategy()
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
+ * @method string getAcceptLanguage()
  * @method string getOwnerId()
  * @method string getInstanceChargeType()
  * @method string getVerbose()
@@ -82,6 +85,19 @@ class DescribeZonesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $acceptLanguage
+     *
+     * @return $this
+     */
+    public function setAcceptLanguage($acceptLanguage)
+    {
+        $this->requestParameters['AcceptLanguage'] = $acceptLanguage;
+        $this->queryParameters['AcceptLanguage'] = $acceptLanguage;
 
         return $this;
     }

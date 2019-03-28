@@ -3,6 +3,8 @@
 namespace Ecs\Request\V20140526;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of ModifyImageSharePermission
  *
  * @method string getResourceOwnerId()
@@ -61,14 +63,14 @@ class ModifyImageSharePermissionRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $addAccounts
+     * @param array $addAccount
      *
      * @return $this
      */
-    public function setAddAccounts(array $addAccounts)
+    public function setAddAccounts(array $addAccount)
     {
-        $this->requestParameters['AddAccounts'] = $addAccounts;
-        foreach ($addAccounts as $i => $iValue) {
+        $this->requestParameters['AddAccounts'] = $addAccount;
+        foreach ($addAccount as $i => $iValue) {
             $this->queryParameters['AddAccount.' . ($i + 1)] = $iValue;
         }
 
@@ -89,14 +91,14 @@ class ModifyImageSharePermissionRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $removeAccounts
+     * @param array $removeAccount
      *
      * @return $this
      */
-    public function setRemoveAccounts(array $removeAccounts)
+    public function setRemoveAccounts(array $removeAccount)
     {
-        $this->requestParameters['RemoveAccounts'] = $removeAccounts;
-        foreach ($removeAccounts as $i => $iValue) {
+        $this->requestParameters['RemoveAccounts'] = $removeAccount;
+        foreach ($removeAccount as $i => $iValue) {
             $this->queryParameters['RemoveAccount.' . ($i + 1)] = $iValue;
         }
 

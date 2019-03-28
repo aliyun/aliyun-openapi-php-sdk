@@ -3,6 +3,8 @@
 namespace Ecs\Request\V20140526;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeLaunchTemplates
  *
  * @method array getLaunchTemplateNames()
@@ -38,14 +40,14 @@ class DescribeLaunchTemplatesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $launchTemplateNames
+     * @param array $launchTemplateName
      *
      * @return $this
      */
-    public function setLaunchTemplateNames(array $launchTemplateNames)
+    public function setLaunchTemplateNames(array $launchTemplateName)
     {
-        $this->requestParameters['LaunchTemplateNames'] = $launchTemplateNames;
-        foreach ($launchTemplateNames as $i => $iValue) {
+        $this->requestParameters['LaunchTemplateNames'] = $launchTemplateName;
+        foreach ($launchTemplateName as $i => $iValue) {
             $this->queryParameters['LaunchTemplateName.' . ($i + 1)] = $iValue;
         }
 
@@ -92,30 +94,30 @@ class DescribeLaunchTemplatesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $templateTags
+     * @param array $templateTag
      *
      * @return $this
      */
-    public function setTemplateTags(array $templateTags)
+    public function setTemplateTags(array $templateTag)
     {
-        $this->requestParameters['TemplateTags'] = $templateTags;
-        foreach ($templateTags as $i => $iValue) {
-            $this->queryParameters['TemplateTag.' . ($i + 1) . '.Key'] = $templateTags[$i]['Key'];
-            $this->queryParameters['TemplateTag.' . ($i + 1) . '.Value'] = $templateTags[$i]['Value'];
+        $this->requestParameters['TemplateTags'] = $templateTag;
+        foreach ($templateTag as $depth1 => $depth1Value) {
+            $this->queryParameters['TemplateTag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+            $this->queryParameters['TemplateTag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
         }
 
         return $this;
     }
 
     /**
-     * @param array $launchTemplateIds
+     * @param array $launchTemplateId
      *
      * @return $this
      */
-    public function setLaunchTemplateIds(array $launchTemplateIds)
+    public function setLaunchTemplateIds(array $launchTemplateId)
     {
-        $this->requestParameters['LaunchTemplateIds'] = $launchTemplateIds;
-        foreach ($launchTemplateIds as $i => $iValue) {
+        $this->requestParameters['LaunchTemplateIds'] = $launchTemplateId;
+        foreach ($launchTemplateId as $i => $iValue) {
             $this->queryParameters['LaunchTemplateId.' . ($i + 1)] = $iValue;
         }
 

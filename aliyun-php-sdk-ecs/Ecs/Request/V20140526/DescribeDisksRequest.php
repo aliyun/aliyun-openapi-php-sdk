@@ -3,6 +3,8 @@
 namespace Ecs\Request\V20140526;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeDisks
  *
  * @method string getResourceOwnerId()
@@ -230,16 +232,16 @@ class DescribeDisksRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $tags
+     * @param array $tag
      *
      * @return $this
      */
-    public function setTags(array $tags)
+    public function setTags(array $tag)
     {
-        $this->requestParameters['Tags'] = $tags;
-        foreach ($tags as $i => $iValue) {
-            $this->queryParameters['Tag.' . ($i + 1) . '.Value'] = $tags[$i]['Value'];
-            $this->queryParameters['Tag.' . ($i + 1) . '.Key'] = $tags[$i]['Key'];
+        $this->requestParameters['Tags'] = $tag;
+        foreach ($tag as $depth1 => $depth1Value) {
+            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
         }
 
         return $this;
@@ -389,14 +391,14 @@ class DescribeDisksRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $additionalAttributess
+     * @param array $additionalAttributes
      *
      * @return $this
      */
-    public function setAdditionalAttributess(array $additionalAttributess)
+    public function setAdditionalAttributess(array $additionalAttributes)
     {
-        $this->requestParameters['AdditionalAttributess'] = $additionalAttributess;
-        foreach ($additionalAttributess as $i => $iValue) {
+        $this->requestParameters['AdditionalAttributess'] = $additionalAttributes;
+        foreach ($additionalAttributes as $i => $iValue) {
             $this->queryParameters['AdditionalAttributes.' . ($i + 1)] = $iValue;
         }
 

@@ -3,6 +3,8 @@
 namespace Ecs\Request\V20140526;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of RemoveBandwidthPackageIps
  *
  * @method array getRemovedIpAddressess()
@@ -35,14 +37,14 @@ class RemoveBandwidthPackageIpsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $removedIpAddressess
+     * @param array $removedIpAddresses
      *
      * @return $this
      */
-    public function setRemovedIpAddressess(array $removedIpAddressess)
+    public function setRemovedIpAddressess(array $removedIpAddresses)
     {
-        $this->requestParameters['RemovedIpAddressess'] = $removedIpAddressess;
-        foreach ($removedIpAddressess as $i => $iValue) {
+        $this->requestParameters['RemovedIpAddressess'] = $removedIpAddresses;
+        foreach ($removedIpAddresses as $i => $iValue) {
             $this->queryParameters['RemovedIpAddresses.' . ($i + 1)] = $iValue;
         }
 

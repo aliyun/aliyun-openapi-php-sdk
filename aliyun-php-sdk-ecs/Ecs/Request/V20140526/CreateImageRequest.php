@@ -3,6 +3,8 @@
 namespace Ecs\Request\V20140526;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of CreateImage
  *
  * @method array getDiskDeviceMappings()
@@ -43,18 +45,18 @@ class CreateImageRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $diskDeviceMappings
+     * @param array $diskDeviceMapping
      *
      * @return $this
      */
-    public function setDiskDeviceMappings(array $diskDeviceMappings)
+    public function setDiskDeviceMappings(array $diskDeviceMapping)
     {
-        $this->requestParameters['DiskDeviceMappings'] = $diskDeviceMappings;
-        foreach ($diskDeviceMappings as $i => $iValue) {
-            $this->queryParameters['DiskDeviceMapping.' . ($i + 1) . '.SnapshotId'] = $diskDeviceMappings[$i]['SnapshotId'];
-            $this->queryParameters['DiskDeviceMapping.' . ($i + 1) . '.Size'] = $diskDeviceMappings[$i]['Size'];
-            $this->queryParameters['DiskDeviceMapping.' . ($i + 1) . '.DiskType'] = $diskDeviceMappings[$i]['DiskType'];
-            $this->queryParameters['DiskDeviceMapping.' . ($i + 1) . '.Device'] = $diskDeviceMappings[$i]['Device'];
+        $this->requestParameters['DiskDeviceMappings'] = $diskDeviceMapping;
+        foreach ($diskDeviceMapping as $depth1 => $depth1Value) {
+            $this->queryParameters['DiskDeviceMapping.' . ($depth1 + 1) . '.SnapshotId'] = $depth1Value['SnapshotId'];
+            $this->queryParameters['DiskDeviceMapping.' . ($depth1 + 1) . '.Size'] = $depth1Value['Size'];
+            $this->queryParameters['DiskDeviceMapping.' . ($depth1 + 1) . '.DiskType'] = $depth1Value['DiskType'];
+            $this->queryParameters['DiskDeviceMapping.' . ($depth1 + 1) . '.Device'] = $depth1Value['Device'];
         }
 
         return $this;
@@ -217,16 +219,16 @@ class CreateImageRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $tags
+     * @param array $tag
      *
      * @return $this
      */
-    public function setTags(array $tags)
+    public function setTags(array $tag)
     {
-        $this->requestParameters['Tags'] = $tags;
-        foreach ($tags as $i => $iValue) {
-            $this->queryParameters['Tag.' . ($i + 1) . '.Value'] = $tags[$i]['Value'];
-            $this->queryParameters['Tag.' . ($i + 1) . '.Key'] = $tags[$i]['Key'];
+        $this->requestParameters['Tags'] = $tag;
+        foreach ($tag as $depth1 => $depth1Value) {
+            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
         }
 
         return $this;

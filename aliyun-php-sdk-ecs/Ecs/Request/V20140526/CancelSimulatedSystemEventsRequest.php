@@ -3,6 +3,8 @@
 namespace Ecs\Request\V20140526;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of CancelSimulatedSystemEvents
  *
  * @method array getEventIds()
@@ -33,14 +35,14 @@ class CancelSimulatedSystemEventsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $eventIds
+     * @param array $eventId
      *
      * @return $this
      */
-    public function setEventIds(array $eventIds)
+    public function setEventIds(array $eventId)
     {
-        $this->requestParameters['EventIds'] = $eventIds;
-        foreach ($eventIds as $i => $iValue) {
+        $this->requestParameters['EventIds'] = $eventId;
+        foreach ($eventId as $i => $iValue) {
             $this->queryParameters['EventId.' . ($i + 1)] = $iValue;
         }
 

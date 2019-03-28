@@ -3,6 +3,8 @@
 namespace Ecs\Request\V20140526;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of CreateNatGateway
  *
  * @method string getResourceOwnerId()
@@ -141,17 +143,17 @@ class CreateNatGatewayRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $bandwidthPackages
+     * @param array $bandwidthPackage
      *
      * @return $this
      */
-    public function setBandwidthPackages(array $bandwidthPackages)
+    public function setBandwidthPackages(array $bandwidthPackage)
     {
-        $this->requestParameters['BandwidthPackages'] = $bandwidthPackages;
-        foreach ($bandwidthPackages as $i => $iValue) {
-            $this->queryParameters['BandwidthPackage.' . ($i + 1) . '.Bandwidth'] = $bandwidthPackages[$i]['Bandwidth'];
-            $this->queryParameters['BandwidthPackage.' . ($i + 1) . '.Zone'] = $bandwidthPackages[$i]['Zone'];
-            $this->queryParameters['BandwidthPackage.' . ($i + 1) . '.IpCount'] = $bandwidthPackages[$i]['IpCount'];
+        $this->requestParameters['BandwidthPackages'] = $bandwidthPackage;
+        foreach ($bandwidthPackage as $depth1 => $depth1Value) {
+            $this->queryParameters['BandwidthPackage.' . ($depth1 + 1) . '.Bandwidth'] = $depth1Value['Bandwidth'];
+            $this->queryParameters['BandwidthPackage.' . ($depth1 + 1) . '.Zone'] = $depth1Value['Zone'];
+            $this->queryParameters['BandwidthPackage.' . ($depth1 + 1) . '.IpCount'] = $depth1Value['IpCount'];
         }
 
         return $this;

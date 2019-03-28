@@ -3,6 +3,8 @@
 namespace Ecs\Request\V20140526;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeDisksFullStatus
  *
  * @method array getEventIds()
@@ -41,14 +43,14 @@ class DescribeDisksFullStatusRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $eventIds
+     * @param array $eventId
      *
      * @return $this
      */
-    public function setEventIds(array $eventIds)
+    public function setEventIds(array $eventId)
     {
-        $this->requestParameters['EventIds'] = $eventIds;
-        foreach ($eventIds as $i => $iValue) {
+        $this->requestParameters['EventIds'] = $eventId;
+        foreach ($eventId as $i => $iValue) {
             $this->queryParameters['EventId.' . ($i + 1)] = $iValue;
         }
 
@@ -108,14 +110,14 @@ class DescribeDisksFullStatusRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $diskIds
+     * @param array $diskId
      *
      * @return $this
      */
-    public function setDiskIds(array $diskIds)
+    public function setDiskIds(array $diskId)
     {
-        $this->requestParameters['DiskIds'] = $diskIds;
-        foreach ($diskIds as $i => $iValue) {
+        $this->requestParameters['DiskIds'] = $diskId;
+        foreach ($diskId as $i => $iValue) {
             $this->queryParameters['DiskId.' . ($i + 1)] = $iValue;
         }
 

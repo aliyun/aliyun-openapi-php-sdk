@@ -3,6 +3,8 @@
 namespace Ecs\Request\V20140526;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DeleteLaunchTemplateVersion
  *
  * @method string getLaunchTemplateName()
@@ -61,14 +63,14 @@ class DeleteLaunchTemplateVersionRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $deleteVersions
+     * @param array $deleteVersion
      *
      * @return $this
      */
-    public function setDeleteVersions(array $deleteVersions)
+    public function setDeleteVersions(array $deleteVersion)
     {
-        $this->requestParameters['DeleteVersions'] = $deleteVersions;
-        foreach ($deleteVersions as $i => $iValue) {
+        $this->requestParameters['DeleteVersions'] = $deleteVersion;
+        foreach ($deleteVersion as $i => $iValue) {
             $this->queryParameters['DeleteVersion.' . ($i + 1)] = $iValue;
         }
 

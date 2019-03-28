@@ -3,6 +3,8 @@
 namespace Ecs\Request\V20140526;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of CreateInstance
  *
  * @method string getResourceOwnerId()
@@ -197,16 +199,16 @@ class CreateInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $tags
+     * @param array $tag
      *
      * @return $this
      */
-    public function setTags(array $tags)
+    public function setTags(array $tag)
     {
-        $this->requestParameters['Tags'] = $tags;
-        foreach ($tags as $i => $iValue) {
-            $this->queryParameters['Tag.' . ($i + 1) . '.Value'] = $tags[$i]['Value'];
-            $this->queryParameters['Tag.' . ($i + 1) . '.Key'] = $tags[$i]['Key'];
+        $this->requestParameters['Tags'] = $tag;
+        foreach ($tag as $depth1 => $depth1Value) {
+            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
         }
 
         return $this;
@@ -720,23 +722,23 @@ class CreateInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $dataDisks
+     * @param array $dataDisk
      *
      * @return $this
      */
-    public function setDataDisks(array $dataDisks)
+    public function setDataDisks(array $dataDisk)
     {
-        $this->requestParameters['DataDisks'] = $dataDisks;
-        foreach ($dataDisks as $i => $iValue) {
-            $this->queryParameters['DataDisk.' . ($i + 1) . '.DiskName'] = $dataDisks[$i]['DiskName'];
-            $this->queryParameters['DataDisk.' . ($i + 1) . '.SnapshotId'] = $dataDisks[$i]['SnapshotId'];
-            $this->queryParameters['DataDisk.' . ($i + 1) . '.Size'] = $dataDisks[$i]['Size'];
-            $this->queryParameters['DataDisk.' . ($i + 1) . '.Encrypted'] = $dataDisks[$i]['Encrypted'];
-            $this->queryParameters['DataDisk.' . ($i + 1) . '.Description'] = $dataDisks[$i]['Description'];
-            $this->queryParameters['DataDisk.' . ($i + 1) . '.Category'] = $dataDisks[$i]['Category'];
-            $this->queryParameters['DataDisk.' . ($i + 1) . '.KMSKeyId'] = $dataDisks[$i]['KMSKeyId'];
-            $this->queryParameters['DataDisk.' . ($i + 1) . '.Device'] = $dataDisks[$i]['Device'];
-            $this->queryParameters['DataDisk.' . ($i + 1) . '.DeleteWithInstance'] = $dataDisks[$i]['DeleteWithInstance'];
+        $this->requestParameters['DataDisks'] = $dataDisk;
+        foreach ($dataDisk as $depth1 => $depth1Value) {
+            $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.DiskName'] = $depth1Value['DiskName'];
+            $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.SnapshotId'] = $depth1Value['SnapshotId'];
+            $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Size'] = $depth1Value['Size'];
+            $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Encrypted'] = $depth1Value['Encrypted'];
+            $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Description'] = $depth1Value['Description'];
+            $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Category'] = $depth1Value['Category'];
+            $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.KMSKeyId'] = $depth1Value['KMSKeyId'];
+            $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Device'] = $depth1Value['Device'];
+            $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.DeleteWithInstance'] = $depth1Value['DeleteWithInstance'];
         }
 
         return $this;

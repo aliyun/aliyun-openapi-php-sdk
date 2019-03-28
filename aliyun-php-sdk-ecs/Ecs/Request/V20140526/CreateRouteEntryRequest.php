@@ -3,6 +3,8 @@
 namespace Ecs\Request\V20140526;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of CreateRouteEntry
  *
  * @method string getResourceOwnerId()
@@ -142,16 +144,16 @@ class CreateRouteEntryRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $nextHopLists
+     * @param array $nextHopList
      *
      * @return $this
      */
-    public function setNextHopLists(array $nextHopLists)
+    public function setNextHopLists(array $nextHopList)
     {
-        $this->requestParameters['NextHopLists'] = $nextHopLists;
-        foreach ($nextHopLists as $i => $iValue) {
-            $this->queryParameters['NextHopList.' . ($i + 1) . '.NextHopId'] = $nextHopLists[$i]['NextHopId'];
-            $this->queryParameters['NextHopList.' . ($i + 1) . '.NextHopType'] = $nextHopLists[$i]['NextHopType'];
+        $this->requestParameters['NextHopLists'] = $nextHopList;
+        foreach ($nextHopList as $depth1 => $depth1Value) {
+            $this->queryParameters['NextHopList.' . ($depth1 + 1) . '.NextHopId'] = $depth1Value['NextHopId'];
+            $this->queryParameters['NextHopList.' . ($depth1 + 1) . '.NextHopType'] = $depth1Value['NextHopType'];
         }
 
         return $this;

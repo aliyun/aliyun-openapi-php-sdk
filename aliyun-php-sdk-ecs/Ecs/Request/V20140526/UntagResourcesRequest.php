@@ -3,6 +3,8 @@
 namespace Ecs\Request\V20140526;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of UntagResources
  *
  * @method string getResourceOwnerId()
@@ -62,14 +64,14 @@ class UntagResourcesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $resourceIds
+     * @param array $resourceId
      *
      * @return $this
      */
-    public function setResourceIds(array $resourceIds)
+    public function setResourceIds(array $resourceId)
     {
-        $this->requestParameters['ResourceIds'] = $resourceIds;
-        foreach ($resourceIds as $i => $iValue) {
+        $this->requestParameters['ResourceIds'] = $resourceId;
+        foreach ($resourceId as $i => $iValue) {
             $this->queryParameters['ResourceId.' . ($i + 1)] = $iValue;
         }
 
@@ -129,14 +131,14 @@ class UntagResourcesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $tagKeys
+     * @param array $tagKey
      *
      * @return $this
      */
-    public function setTagKeys(array $tagKeys)
+    public function setTagKeys(array $tagKey)
     {
-        $this->requestParameters['TagKeys'] = $tagKeys;
-        foreach ($tagKeys as $i => $iValue) {
+        $this->requestParameters['TagKeys'] = $tagKey;
+        foreach ($tagKey as $i => $iValue) {
             $this->queryParameters['TagKey.' . ($i + 1)] = $iValue;
         }
 

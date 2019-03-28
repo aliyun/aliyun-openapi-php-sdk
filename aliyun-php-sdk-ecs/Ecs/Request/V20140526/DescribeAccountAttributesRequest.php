@@ -3,6 +3,8 @@
 namespace Ecs\Request\V20140526;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeAccountAttributes
  *
  * @method string getResourceOwnerId()
@@ -46,14 +48,14 @@ class DescribeAccountAttributesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $attributeNames
+     * @param array $attributeName
      *
      * @return $this
      */
-    public function setAttributeNames(array $attributeNames)
+    public function setAttributeNames(array $attributeName)
     {
-        $this->requestParameters['AttributeNames'] = $attributeNames;
-        foreach ($attributeNames as $i => $iValue) {
+        $this->requestParameters['AttributeNames'] = $attributeName;
+        foreach ($attributeName as $i => $iValue) {
             $this->queryParameters['AttributeName.' . ($i + 1)] = $iValue;
         }
 

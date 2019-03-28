@@ -3,6 +3,8 @@
 namespace Ecs\Request\V20140526;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeNetworkInterfacePermissions
  *
  * @method string getResourceOwnerId()
@@ -75,14 +77,14 @@ class DescribeNetworkInterfacePermissionsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $networkInterfacePermissionIds
+     * @param array $networkInterfacePermissionId
      *
      * @return $this
      */
-    public function setNetworkInterfacePermissionIds(array $networkInterfacePermissionIds)
+    public function setNetworkInterfacePermissionIds(array $networkInterfacePermissionId)
     {
-        $this->requestParameters['NetworkInterfacePermissionIds'] = $networkInterfacePermissionIds;
-        foreach ($networkInterfacePermissionIds as $i => $iValue) {
+        $this->requestParameters['NetworkInterfacePermissionIds'] = $networkInterfacePermissionId;
+        foreach ($networkInterfacePermissionId as $i => $iValue) {
             $this->queryParameters['NetworkInterfacePermissionId.' . ($i + 1)] = $iValue;
         }
 

@@ -3,6 +3,8 @@
 namespace Ecs\Request\V20140526;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeDemands
  *
  * @method string getResourceOwnerId()
@@ -93,16 +95,16 @@ class DescribeDemandsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $tags
+     * @param array $tag
      *
      * @return $this
      */
-    public function setTags(array $tags)
+    public function setTags(array $tag)
     {
-        $this->requestParameters['Tags'] = $tags;
-        foreach ($tags as $i => $iValue) {
-            $this->queryParameters['Tag.' . ($i + 1) . '.Key'] = $tags[$i]['Key'];
-            $this->queryParameters['Tag.' . ($i + 1) . '.Value'] = $tags[$i]['Value'];
+        $this->requestParameters['Tags'] = $tag;
+        foreach ($tag as $depth1 => $depth1Value) {
+            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
         }
 
         return $this;
@@ -187,14 +189,14 @@ class DescribeDemandsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $demandStatuss
+     * @param array $demandStatus
      *
      * @return $this
      */
-    public function setDemandStatuss(array $demandStatuss)
+    public function setDemandStatuss(array $demandStatus)
     {
-        $this->requestParameters['DemandStatuss'] = $demandStatuss;
-        foreach ($demandStatuss as $i => $iValue) {
+        $this->requestParameters['DemandStatuss'] = $demandStatus;
+        foreach ($demandStatus as $i => $iValue) {
             $this->queryParameters['DemandStatus.' . ($i + 1)] = $iValue;
         }
 

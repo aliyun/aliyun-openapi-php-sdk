@@ -3,6 +3,8 @@
 namespace Ecs\Request\V20140526;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeAccessPoints
  *
  * @method array getFilters()
@@ -35,18 +37,18 @@ class DescribeAccessPointsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $filters
+     * @param array $filter
      *
      * @return $this
      */
-    public function setFilters(array $filters)
+    public function setFilters(array $filter)
     {
-        $this->requestParameters['Filters'] = $filters;
-        foreach ($filters as $i => $iValue) {
-            foreach ($filters[$i]['Values'] as $j => $jValue) {
-                $this->queryParameters['Filter.' . ($i + 1) . '.Value.' . ($j + 1)] = $jValue;
+        $this->requestParameters['Filters'] = $filter;
+        foreach ($filter as $depth1 => $depth1Value) {
+            foreach ($depth1Value['Value'] as $i => $iValue) {
+                $this->queryParameters['Filter.' . ($depth1 + 1) . '.Value.' . ($i + 1)] = $iValue;
             }
-            $this->queryParameters['Filter.' . ($i + 1) . '.Key'] = $filters[$i]['Key'];
+            $this->queryParameters['Filter.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
         }
 
         return $this;

@@ -3,6 +3,8 @@
 namespace Ecs\Request\V20140526;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of UnassignPrivateIpAddresses
  *
  * @method string getResourceOwnerId()
@@ -86,14 +88,14 @@ class UnassignPrivateIpAddressesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $privateIpAddresss
+     * @param array $privateIpAddress
      *
      * @return $this
      */
-    public function setPrivateIpAddresss(array $privateIpAddresss)
+    public function setPrivateIpAddresss(array $privateIpAddress)
     {
-        $this->requestParameters['PrivateIpAddresss'] = $privateIpAddresss;
-        foreach ($privateIpAddresss as $i => $iValue) {
+        $this->requestParameters['PrivateIpAddresss'] = $privateIpAddress;
+        foreach ($privateIpAddress as $i => $iValue) {
             $this->queryParameters['PrivateIpAddress.' . ($i + 1)] = $iValue;
         }
 

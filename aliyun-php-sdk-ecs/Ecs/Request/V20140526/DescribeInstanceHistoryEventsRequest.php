@@ -3,6 +3,8 @@
 namespace Ecs\Request\V20140526;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeInstanceHistoryEvents
  *
  * @method array getEventIds()
@@ -44,14 +46,14 @@ class DescribeInstanceHistoryEventsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $eventIds
+     * @param array $eventId
      *
      * @return $this
      */
-    public function setEventIds(array $eventIds)
+    public function setEventIds(array $eventId)
     {
-        $this->requestParameters['EventIds'] = $eventIds;
-        foreach ($eventIds as $i => $iValue) {
+        $this->requestParameters['EventIds'] = $eventId;
+        foreach ($eventId as $i => $iValue) {
             $this->queryParameters['EventId.' . ($i + 1)] = $iValue;
         }
 
@@ -111,14 +113,14 @@ class DescribeInstanceHistoryEventsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $instanceEventCycleStatuss
+     * @param array $instanceEventCycleStatus
      *
      * @return $this
      */
-    public function setInstanceEventCycleStatuss(array $instanceEventCycleStatuss)
+    public function setInstanceEventCycleStatuss(array $instanceEventCycleStatus)
     {
-        $this->requestParameters['InstanceEventCycleStatuss'] = $instanceEventCycleStatuss;
-        foreach ($instanceEventCycleStatuss as $i => $iValue) {
+        $this->requestParameters['InstanceEventCycleStatuss'] = $instanceEventCycleStatus;
+        foreach ($instanceEventCycleStatus as $i => $iValue) {
             $this->queryParameters['InstanceEventCycleStatus.' . ($i + 1)] = $iValue;
         }
 
@@ -139,14 +141,14 @@ class DescribeInstanceHistoryEventsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $instanceEventTypes
+     * @param array $instanceEventType
      *
      * @return $this
      */
-    public function setInstanceEventTypes(array $instanceEventTypes)
+    public function setInstanceEventTypes(array $instanceEventType)
     {
-        $this->requestParameters['InstanceEventTypes'] = $instanceEventTypes;
-        foreach ($instanceEventTypes as $i => $iValue) {
+        $this->requestParameters['InstanceEventTypes'] = $instanceEventType;
+        foreach ($instanceEventType as $i => $iValue) {
             $this->queryParameters['InstanceEventType.' . ($i + 1)] = $iValue;
         }
 

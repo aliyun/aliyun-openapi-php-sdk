@@ -3,6 +3,8 @@
 namespace Ecs\Request\V20140526;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of UnassignIpv6Addresses
  *
  * @method string getResourceOwnerId()
@@ -99,14 +101,14 @@ class UnassignIpv6AddressesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $ipv6Addresss
+     * @param array $ipv6Address
      *
      * @return $this
      */
-    public function setIpv6Addresss(array $ipv6Addresss)
+    public function setIpv6Addresss(array $ipv6Address)
     {
-        $this->requestParameters['Ipv6Addresss'] = $ipv6Addresss;
-        foreach ($ipv6Addresss as $i => $iValue) {
+        $this->requestParameters['Ipv6Addresss'] = $ipv6Address;
+        foreach ($ipv6Address as $i => $iValue) {
             $this->queryParameters['Ipv6Address.' . ($i + 1)] = $iValue;
         }
 

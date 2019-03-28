@@ -3,6 +3,8 @@
 namespace Ecs\Request\V20140526;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeNetworkInterfaces
  *
  * @method string getResourceOwnerId()
@@ -122,16 +124,16 @@ class DescribeNetworkInterfacesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $tags
+     * @param array $tag
      *
      * @return $this
      */
-    public function setTags(array $tags)
+    public function setTags(array $tag)
     {
-        $this->requestParameters['Tags'] = $tags;
-        foreach ($tags as $i => $iValue) {
-            $this->queryParameters['Tag.' . ($i + 1) . '.Key'] = $tags[$i]['Key'];
-            $this->queryParameters['Tag.' . ($i + 1) . '.Value'] = $tags[$i]['Value'];
+        $this->requestParameters['Tags'] = $tag;
+        foreach ($tag as $depth1 => $depth1Value) {
+            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
         }
 
         return $this;
@@ -242,14 +244,14 @@ class DescribeNetworkInterfacesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $networkInterfaceIds
+     * @param array $networkInterfaceId
      *
      * @return $this
      */
-    public function setNetworkInterfaceIds(array $networkInterfaceIds)
+    public function setNetworkInterfaceIds(array $networkInterfaceId)
     {
-        $this->requestParameters['NetworkInterfaceIds'] = $networkInterfaceIds;
-        foreach ($networkInterfaceIds as $i => $iValue) {
+        $this->requestParameters['NetworkInterfaceIds'] = $networkInterfaceId;
+        foreach ($networkInterfaceId as $i => $iValue) {
             $this->queryParameters['NetworkInterfaceId.' . ($i + 1)] = $iValue;
         }
 

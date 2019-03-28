@@ -3,6 +3,8 @@
 namespace Ecs\Request\V20140526;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeLaunchTemplateVersions
  *
  * @method string getLaunchTemplateName()
@@ -184,14 +186,14 @@ class DescribeLaunchTemplateVersionsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $launchTemplateVersions
+     * @param array $launchTemplateVersion
      *
      * @return $this
      */
-    public function setLaunchTemplateVersions(array $launchTemplateVersions)
+    public function setLaunchTemplateVersions(array $launchTemplateVersion)
     {
-        $this->requestParameters['LaunchTemplateVersions'] = $launchTemplateVersions;
-        foreach ($launchTemplateVersions as $i => $iValue) {
+        $this->requestParameters['LaunchTemplateVersions'] = $launchTemplateVersion;
+        foreach ($launchTemplateVersion as $i => $iValue) {
             $this->queryParameters['LaunchTemplateVersion.' . ($i + 1)] = $iValue;
         }
 

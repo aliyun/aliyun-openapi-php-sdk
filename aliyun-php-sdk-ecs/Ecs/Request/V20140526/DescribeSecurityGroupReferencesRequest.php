@@ -3,6 +3,8 @@
 namespace Ecs\Request\V20140526;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeSecurityGroupReferences
  *
  * @method string getResourceOwnerId()
@@ -72,14 +74,14 @@ class DescribeSecurityGroupReferencesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $securityGroupIds
+     * @param array $securityGroupId
      *
      * @return $this
      */
-    public function setSecurityGroupIds(array $securityGroupIds)
+    public function setSecurityGroupIds(array $securityGroupId)
     {
-        $this->requestParameters['SecurityGroupIds'] = $securityGroupIds;
-        foreach ($securityGroupIds as $i => $iValue) {
+        $this->requestParameters['SecurityGroupIds'] = $securityGroupId;
+        foreach ($securityGroupId as $i => $iValue) {
             $this->queryParameters['SecurityGroupId.' . ($i + 1)] = $iValue;
         }
 
