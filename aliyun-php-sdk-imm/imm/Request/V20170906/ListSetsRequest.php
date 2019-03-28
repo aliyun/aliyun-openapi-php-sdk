@@ -3,6 +3,8 @@
 namespace imm\Request\V20170906;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of ListSets
  *
  * @method string getMarker()

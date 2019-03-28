@@ -3,6 +3,8 @@
 namespace imm\Request\V20170906;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of CreateOfficeConversionTask
  *
  * @method string getSrcType()
@@ -16,6 +18,7 @@ namespace imm\Request\V20170906;
  * @method string getTgtFilePrefix()
  * @method string getNotifyTopicName()
  * @method string getModelId()
+ * @method string getDisplayDpi()
  * @method string getMaxSheetRow()
  * @method string getMaxSheetCount()
  * @method string getEndPage()
@@ -189,6 +192,19 @@ class CreateOfficeConversionTaskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ModelId'] = $modelId;
         $this->queryParameters['ModelId'] = $modelId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $displayDpi
+     *
+     * @return $this
+     */
+    public function setDisplayDpi($displayDpi)
+    {
+        $this->requestParameters['DisplayDpi'] = $displayDpi;
+        $this->queryParameters['DisplayDpi'] = $displayDpi;
 
         return $this;
     }

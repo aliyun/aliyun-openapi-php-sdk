@@ -5,12 +5,12 @@ namespace imm\Request\V20170906;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DeleteFaceSearchGroup
+ * Request of DetectImageLogos
  *
+ * @method string getImageUri()
  * @method string getProject()
- * @method string getGroupName()
  */
-class DeleteFaceSearchGroupRequest extends \RpcAcsRequest
+class DetectImageLogosRequest extends \RpcAcsRequest
 {
 
     /**
@@ -26,9 +26,22 @@ class DeleteFaceSearchGroupRequest extends \RpcAcsRequest
         parent::__construct(
             'imm',
             '2017-09-06',
-            'DeleteFaceSearchGroup',
+            'DetectImageLogos',
             'imm'
         );
+    }
+
+    /**
+     * @param string $imageUri
+     *
+     * @return $this
+     */
+    public function setImageUri($imageUri)
+    {
+        $this->requestParameters['ImageUri'] = $imageUri;
+        $this->queryParameters['ImageUri'] = $imageUri;
+
+        return $this;
     }
 
     /**
@@ -40,19 +53,6 @@ class DeleteFaceSearchGroupRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Project'] = $project;
         $this->queryParameters['Project'] = $project;
-
-        return $this;
-    }
-
-    /**
-     * @param string $groupName
-     *
-     * @return $this
-     */
-    public function setGroupName($groupName)
-    {
-        $this->requestParameters['GroupName'] = $groupName;
-        $this->queryParameters['GroupName'] = $groupName;
 
         return $this;
     }
