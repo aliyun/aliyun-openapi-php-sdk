@@ -4,7 +4,6 @@ the requirements below.
 
 Bug fixes and new features should include tests and possibly benchmarks.
 
-Contributors guide: https://github.com/aliyun/aliyun-openapi-php-sdk/blob/master/CONTRIBUTING.md
 -->
 
 ##### You need to complete
