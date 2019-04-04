@@ -3,6 +3,8 @@
 namespace Ess\Request\V20140828;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of AttachLoadBalancers
  *
  * @method array getLoadBalancers()
@@ -33,14 +35,14 @@ class AttachLoadBalancersRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $loadBalancers
+     * @param array $loadBalancer
      *
      * @return $this
      */
-    public function setLoadBalancers(array $loadBalancers)
+    public function setLoadBalancers(array $loadBalancer)
     {
-        $this->requestParameters['LoadBalancers'] = $loadBalancers;
-        foreach ($loadBalancers as $i => $iValue) {
+        $this->requestParameters['LoadBalancers'] = $loadBalancer;
+        foreach ($loadBalancer as $i => $iValue) {
             $this->queryParameters['LoadBalancer.' . ($i + 1)] = $iValue;
         }
 

@@ -3,6 +3,8 @@
 namespace Ess\Request\V20140828;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeLifecycleHooks
  *
  * @method string getLifecycleHookName()
@@ -75,14 +77,14 @@ class DescribeLifecycleHooksRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $lifecycleHookIds
+     * @param array $lifecycleHookId
      *
      * @return $this
      */
-    public function setLifecycleHookIds(array $lifecycleHookIds)
+    public function setLifecycleHookIds(array $lifecycleHookId)
     {
-        $this->requestParameters['LifecycleHookIds'] = $lifecycleHookIds;
-        foreach ($lifecycleHookIds as $i => $iValue) {
+        $this->requestParameters['LifecycleHookIds'] = $lifecycleHookId;
+        foreach ($lifecycleHookId as $i => $iValue) {
             $this->queryParameters['LifecycleHookId.' . ($i + 1)] = $iValue;
         }
 

@@ -3,6 +3,8 @@
 namespace Ess\Request\V20140828;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeAlertConfig
  *
  * @method string getResourceOwnerAccount()

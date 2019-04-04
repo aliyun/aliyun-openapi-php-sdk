@@ -3,11 +3,14 @@
 namespace Ess\Request\V20140828;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of ModifyScalingRule
  *
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
  * @method string getAdjustmentValue()
+ * @method array getStepAdjustments()
  * @method string getEstimatedInstanceWarmup()
  * @method string getOwnerAccount()
  * @method string getAdjustmentType()
@@ -16,6 +19,7 @@ namespace Ess\Request\V20140828;
  * @method string getScalingRuleId()
  * @method string getScalingRuleName()
  * @method string getCooldown()
+ * @method string getMinAdjustmentMagnitude()
  * @method string getTargetValue()
  * @method string getMetricName()
  */
@@ -75,6 +79,23 @@ class ModifyScalingRuleRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AdjustmentValue'] = $adjustmentValue;
         $this->queryParameters['AdjustmentValue'] = $adjustmentValue;
+
+        return $this;
+    }
+
+    /**
+     * @param array $stepAdjustment
+     *
+     * @return $this
+     */
+    public function setStepAdjustments(array $stepAdjustment)
+    {
+        $this->requestParameters['StepAdjustments'] = $stepAdjustment;
+        foreach ($stepAdjustment as $depth1 => $depth1Value) {
+            $this->queryParameters['StepAdjustment.' . ($depth1 + 1) . '.MetricIntervalLowerBound'] = $depth1Value['MetricIntervalLowerBound'];
+            $this->queryParameters['StepAdjustment.' . ($depth1 + 1) . '.MetricIntervalUpperBound'] = $depth1Value['MetricIntervalUpperBound'];
+            $this->queryParameters['StepAdjustment.' . ($depth1 + 1) . '.ScalingAdjustment'] = $depth1Value['ScalingAdjustment'];
+        }
 
         return $this;
     }
@@ -179,6 +200,19 @@ class ModifyScalingRuleRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Cooldown'] = $cooldown;
         $this->queryParameters['Cooldown'] = $cooldown;
+
+        return $this;
+    }
+
+    /**
+     * @param string $minAdjustmentMagnitude
+     *
+     * @return $this
+     */
+    public function setMinAdjustmentMagnitude($minAdjustmentMagnitude)
+    {
+        $this->requestParameters['MinAdjustmentMagnitude'] = $minAdjustmentMagnitude;
+        $this->queryParameters['MinAdjustmentMagnitude'] = $minAdjustmentMagnitude;
 
         return $this;
     }

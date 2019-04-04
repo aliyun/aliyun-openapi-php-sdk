@@ -3,6 +3,8 @@
 namespace Ess\Request\V20140828;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of CreateScalingGroup
  *
  * @method string getMultiAZPolicy()
@@ -12,6 +14,7 @@ namespace Ess\Request\V20140828;
  * @method string getHealthCheckType()
  * @method string getResourceOwnerAccount()
  * @method string getScalingGroupName()
+ * @method string getClientToken()
  * @method array getVSwitchIds()
  * @method string getOwnerAccount()
  * @method string getMinSize()
@@ -139,6 +142,19 @@ class CreateScalingGroupRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
+
+        return $this;
+    }
+
+    /**
      * @param array $vSwitchIds
      *
      * @return $this
@@ -245,20 +261,20 @@ class CreateScalingGroupRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $lifecycleHooks
+     * @param array $lifecycleHook
      *
      * @return $this
      */
-    public function setLifecycleHooks(array $lifecycleHooks)
+    public function setLifecycleHooks(array $lifecycleHook)
     {
-        $this->requestParameters['LifecycleHooks'] = $lifecycleHooks;
-        foreach ($lifecycleHooks as $i => $iValue) {
-            $this->queryParameters['LifecycleHook.' . ($i + 1) . '.DefaultResult'] = $lifecycleHooks[$i]['DefaultResult'];
-            $this->queryParameters['LifecycleHook.' . ($i + 1) . '.LifecycleHookName'] = $lifecycleHooks[$i]['LifecycleHookName'];
-            $this->queryParameters['LifecycleHook.' . ($i + 1) . '.HeartbeatTimeout'] = $lifecycleHooks[$i]['HeartbeatTimeout'];
-            $this->queryParameters['LifecycleHook.' . ($i + 1) . '.NotificationArn'] = $lifecycleHooks[$i]['NotificationArn'];
-            $this->queryParameters['LifecycleHook.' . ($i + 1) . '.NotificationMetadata'] = $lifecycleHooks[$i]['NotificationMetadata'];
-            $this->queryParameters['LifecycleHook.' . ($i + 1) . '.LifecycleTransition'] = $lifecycleHooks[$i]['LifecycleTransition'];
+        $this->requestParameters['LifecycleHooks'] = $lifecycleHook;
+        foreach ($lifecycleHook as $depth1 => $depth1Value) {
+            $this->queryParameters['LifecycleHook.' . ($depth1 + 1) . '.DefaultResult'] = $depth1Value['DefaultResult'];
+            $this->queryParameters['LifecycleHook.' . ($depth1 + 1) . '.LifecycleHookName'] = $depth1Value['LifecycleHookName'];
+            $this->queryParameters['LifecycleHook.' . ($depth1 + 1) . '.HeartbeatTimeout'] = $depth1Value['HeartbeatTimeout'];
+            $this->queryParameters['LifecycleHook.' . ($depth1 + 1) . '.NotificationArn'] = $depth1Value['NotificationArn'];
+            $this->queryParameters['LifecycleHook.' . ($depth1 + 1) . '.NotificationMetadata'] = $depth1Value['NotificationMetadata'];
+            $this->queryParameters['LifecycleHook.' . ($depth1 + 1) . '.LifecycleTransition'] = $depth1Value['LifecycleTransition'];
         }
 
         return $this;
@@ -291,17 +307,19 @@ class CreateScalingGroupRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $vServerGroups
+     * @param array $vServerGroup
      *
      * @return $this
      */
-    public function setVServerGroups(array $vServerGroups)
+    public function setVServerGroups(array $vServerGroup)
     {
-        $this->requestParameters['VServerGroups'] = $vServerGroups;
-        foreach ($vServerGroups as $i => $iValue) {
-            $this->queryParameters['VServerGroup.' . ($i + 1) . '.LoadBalancerId'] = $vServerGroups[$i]['LoadBalancerId'];
-            foreach ($vServerGroups[$i]['VServerGroupAttributes'] as $j => $jValue) {
-                $this->queryParameters['VServerGroup.' . ($i + 1) . '.VServerGroupAttribute.' . ($j + 1)] = $jValue;
+        $this->requestParameters['VServerGroups'] = $vServerGroup;
+        foreach ($vServerGroup as $depth1 => $depth1Value) {
+            $this->queryParameters['VServerGroup.' . ($depth1 + 1) . '.LoadBalancerId'] = $depth1Value['LoadBalancerId'];
+            foreach ($depth1Value['VServerGroupAttribute'] as $depth2 => $depth2Value) {
+                $this->queryParameters['VServerGroup.' . ($depth1 + 1) . '.VServerGroupAttribute.' . ($depth2 + 1) . '.VServerGroupId'] = $depth2Value['VServerGroupId'];
+                $this->queryParameters['VServerGroup.' . ($depth1 + 1) . '.VServerGroupAttribute.' . ($depth2 + 1) . '.Port'] = $depth2Value['Port'];
+                $this->queryParameters['VServerGroup.' . ($depth1 + 1) . '.VServerGroupAttribute.' . ($depth2 + 1) . '.Weight'] = $depth2Value['Weight'];
             }
         }
 

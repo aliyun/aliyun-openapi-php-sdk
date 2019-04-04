@@ -3,6 +3,8 @@
 namespace Ess\Request\V20140828;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of AttachVServerGroups
  *
  * @method string getResourceOwnerAccount()
@@ -85,17 +87,19 @@ class AttachVServerGroupsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $vServerGroups
+     * @param array $vServerGroup
      *
      * @return $this
      */
-    public function setVServerGroups(array $vServerGroups)
+    public function setVServerGroups(array $vServerGroup)
     {
-        $this->requestParameters['VServerGroups'] = $vServerGroups;
-        foreach ($vServerGroups as $i => $iValue) {
-            $this->queryParameters['VServerGroup.' . ($i + 1) . '.LoadBalancerId'] = $vServerGroups[$i]['LoadBalancerId'];
-            foreach ($vServerGroups[$i]['VServerGroupAttributes'] as $j => $jValue) {
-                $this->queryParameters['VServerGroup.' . ($i + 1) . '.VServerGroupAttribute.' . ($j + 1)] = $jValue;
+        $this->requestParameters['VServerGroups'] = $vServerGroup;
+        foreach ($vServerGroup as $depth1 => $depth1Value) {
+            $this->queryParameters['VServerGroup.' . ($depth1 + 1) . '.LoadBalancerId'] = $depth1Value['LoadBalancerId'];
+            foreach ($depth1Value['VServerGroupAttribute'] as $depth2 => $depth2Value) {
+                $this->queryParameters['VServerGroup.' . ($depth1 + 1) . '.VServerGroupAttribute.' . ($depth2 + 1) . '.VServerGroupId'] = $depth2Value['VServerGroupId'];
+                $this->queryParameters['VServerGroup.' . ($depth1 + 1) . '.VServerGroupAttribute.' . ($depth2 + 1) . '.Port'] = $depth2Value['Port'];
+                $this->queryParameters['VServerGroup.' . ($depth1 + 1) . '.VServerGroupAttribute.' . ($depth2 + 1) . '.Weight'] = $depth2Value['Weight'];
             }
         }
 

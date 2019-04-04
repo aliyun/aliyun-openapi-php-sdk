@@ -3,6 +3,8 @@
 namespace Ess\Request\V20140828;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of AttachDBInstances
  *
  * @method string getResourceOwnerAccount()
@@ -72,14 +74,14 @@ class AttachDBInstancesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $dBInstances
+     * @param array $dBInstance
      *
      * @return $this
      */
-    public function setDBInstances(array $dBInstances)
+    public function setDBInstances(array $dBInstance)
     {
-        $this->requestParameters['DBInstances'] = $dBInstances;
-        foreach ($dBInstances as $i => $iValue) {
+        $this->requestParameters['DBInstances'] = $dBInstance;
+        foreach ($dBInstance as $i => $iValue) {
             $this->queryParameters['DBInstance.' . ($i + 1)] = $iValue;
         }
 

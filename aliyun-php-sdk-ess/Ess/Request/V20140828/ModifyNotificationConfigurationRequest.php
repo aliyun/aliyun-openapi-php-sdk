@@ -3,6 +3,8 @@
 namespace Ess\Request\V20140828;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of ModifyNotificationConfiguration
  *
  * @method string getResourceOwnerAccount()
@@ -72,14 +74,14 @@ class ModifyNotificationConfigurationRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $notificationTypes
+     * @param array $notificationType
      *
      * @return $this
      */
-    public function setNotificationTypes(array $notificationTypes)
+    public function setNotificationTypes(array $notificationType)
     {
-        $this->requestParameters['NotificationTypes'] = $notificationTypes;
-        foreach ($notificationTypes as $i => $iValue) {
+        $this->requestParameters['NotificationTypes'] = $notificationType;
+        foreach ($notificationType as $i => $iValue) {
             $this->queryParameters['NotificationType.' . ($i + 1)] = $iValue;
         }
 

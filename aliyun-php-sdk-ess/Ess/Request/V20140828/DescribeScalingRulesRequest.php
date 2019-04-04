@@ -3,6 +3,8 @@
 namespace Ess\Request\V20140828;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeScalingRules
  *
  * @method string getScalingRuleName1()
@@ -37,6 +39,7 @@ namespace Ess\Request\V20140828;
  * @method string getScalingRuleAri10()
  * @method string getScalingRuleAri8()
  * @method string getScalingRuleId4()
+ * @method string getShowAlarmRules()
  * @method string getScalingRuleId5()
  * @method string getScalingRuleId6()
  * @method string getScalingRuleId7()
@@ -477,6 +480,19 @@ class DescribeScalingRulesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ScalingRuleId4'] = $scalingRuleId4;
         $this->queryParameters['ScalingRuleId.4'] = $scalingRuleId4;
+
+        return $this;
+    }
+
+    /**
+     * @param string $showAlarmRules
+     *
+     * @return $this
+     */
+    public function setShowAlarmRules($showAlarmRules)
+    {
+        $this->requestParameters['ShowAlarmRules'] = $showAlarmRules;
+        $this->queryParameters['ShowAlarmRules'] = $showAlarmRules;
 
         return $this;
     }

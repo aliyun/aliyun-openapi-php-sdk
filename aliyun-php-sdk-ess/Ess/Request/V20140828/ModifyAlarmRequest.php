@@ -3,6 +3,8 @@
 namespace Ess\Request\V20140828;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of ModifyAlarm
  *
  * @method string getMetricType()
@@ -108,14 +110,14 @@ class ModifyAlarmRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $alarmActions
+     * @param array $alarmAction
      *
      * @return $this
      */
-    public function setAlarmActions(array $alarmActions)
+    public function setAlarmActions(array $alarmAction)
     {
-        $this->requestParameters['AlarmActions'] = $alarmActions;
-        foreach ($alarmActions as $i => $iValue) {
+        $this->requestParameters['AlarmActions'] = $alarmAction;
+        foreach ($alarmAction as $i => $iValue) {
             $this->queryParameters['AlarmAction.' . ($i + 1)] = $iValue;
         }
 
@@ -214,16 +216,16 @@ class ModifyAlarmRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $dimensions
+     * @param array $dimension
      *
      * @return $this
      */
-    public function setDimensions(array $dimensions)
+    public function setDimensions(array $dimension)
     {
-        $this->requestParameters['Dimensions'] = $dimensions;
-        foreach ($dimensions as $i => $iValue) {
-            $this->queryParameters['Dimension.' . ($i + 1) . '.DimensionValue'] = $dimensions[$i]['DimensionValue'];
-            $this->queryParameters['Dimension.' . ($i + 1) . '.DimensionKey'] = $dimensions[$i]['DimensionKey'];
+        $this->requestParameters['Dimensions'] = $dimension;
+        foreach ($dimension as $depth1 => $depth1Value) {
+            $this->queryParameters['Dimension.' . ($depth1 + 1) . '.DimensionValue'] = $depth1Value['DimensionValue'];
+            $this->queryParameters['Dimension.' . ($depth1 + 1) . '.DimensionKey'] = $depth1Value['DimensionKey'];
         }
 
         return $this;

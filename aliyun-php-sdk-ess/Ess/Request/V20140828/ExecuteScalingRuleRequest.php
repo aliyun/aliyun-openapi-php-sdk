@@ -3,14 +3,18 @@
 namespace Ess\Request\V20140828;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of ExecuteScalingRule
  *
  * @method string getResourceOwnerId()
  * @method string getScalingRuleAri()
  * @method string getResourceOwnerAccount()
  * @method string getClientToken()
+ * @method string getBreachThreshold()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getMetricValue()
  */
 class ExecuteScalingRuleRequest extends \RpcAcsRequest
 {
@@ -86,6 +90,19 @@ class ExecuteScalingRuleRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $breachThreshold
+     *
+     * @return $this
+     */
+    public function setBreachThreshold($breachThreshold)
+    {
+        $this->requestParameters['BreachThreshold'] = $breachThreshold;
+        $this->queryParameters['BreachThreshold'] = $breachThreshold;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerAccount
      *
      * @return $this
@@ -107,6 +124,19 @@ class ExecuteScalingRuleRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $metricValue
+     *
+     * @return $this
+     */
+    public function setMetricValue($metricValue)
+    {
+        $this->requestParameters['MetricValue'] = $metricValue;
+        $this->queryParameters['MetricValue'] = $metricValue;
 
         return $this;
     }
