@@ -3,6 +3,8 @@
 namespace Iot\Request\V20180120;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of BatchAddDeviceGroupRelations
  *
  * @method string getIotInstanceId()
@@ -57,16 +59,16 @@ class BatchAddDeviceGroupRelationsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $devices
+     * @param array $device
      *
      * @return $this
      */
-    public function setDevices(array $devices)
+    public function setDevices(array $device)
     {
-        $this->requestParameters['Devices'] = $devices;
-        foreach ($devices as $i => $iValue) {
-            $this->queryParameters['Device.' . ($i + 1) . '.DeviceName'] = $devices[$i]['DeviceName'];
-            $this->queryParameters['Device.' . ($i + 1) . '.ProductKey'] = $devices[$i]['ProductKey'];
+        $this->requestParameters['Devices'] = $device;
+        foreach ($device as $depth1 => $depth1Value) {
+            $this->queryParameters['Device.' . ($depth1 + 1) . '.DeviceName'] = $depth1Value['DeviceName'];
+            $this->queryParameters['Device.' . ($depth1 + 1) . '.ProductKey'] = $depth1Value['ProductKey'];
         }
 
         return $this;

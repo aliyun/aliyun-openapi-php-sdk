@@ -3,6 +3,8 @@
 namespace Iot\Request\V20180120;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of InvokeThingsService
  *
  * @method string getArgs()
@@ -72,14 +74,14 @@ class InvokeThingsServiceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $deviceNames
+     * @param array $deviceName
      *
      * @return $this
      */
-    public function setDeviceNames(array $deviceNames)
+    public function setDeviceNames(array $deviceName)
     {
-        $this->requestParameters['DeviceNames'] = $deviceNames;
-        foreach ($deviceNames as $i => $iValue) {
+        $this->requestParameters['DeviceNames'] = $deviceName;
+        foreach ($deviceName as $i => $iValue) {
             $this->queryParameters['DeviceName.' . ($i + 1)] = $iValue;
         }
 

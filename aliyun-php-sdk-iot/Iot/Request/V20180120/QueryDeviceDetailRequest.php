@@ -3,6 +3,8 @@
 namespace Iot\Request\V20180120;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of QueryDeviceDetail
  *
  * @method string getIotId()

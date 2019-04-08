@@ -3,6 +3,8 @@
 namespace Iot\Request\V20180120;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of BatchGetDeviceState
  *
  * @method array getIotIds()
@@ -32,14 +34,14 @@ class BatchGetDeviceStateRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $iotIds
+     * @param array $iotId
      *
      * @return $this
      */
-    public function setIotIds(array $iotIds)
+    public function setIotIds(array $iotId)
     {
-        $this->requestParameters['IotIds'] = $iotIds;
-        foreach ($iotIds as $i => $iValue) {
+        $this->requestParameters['IotIds'] = $iotId;
+        foreach ($iotId as $i => $iValue) {
             $this->queryParameters['IotId.' . ($i + 1)] = $iValue;
         }
 
@@ -60,14 +62,14 @@ class BatchGetDeviceStateRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $deviceNames
+     * @param array $deviceName
      *
      * @return $this
      */
-    public function setDeviceNames(array $deviceNames)
+    public function setDeviceNames(array $deviceName)
     {
-        $this->requestParameters['DeviceNames'] = $deviceNames;
-        foreach ($deviceNames as $i => $iValue) {
+        $this->requestParameters['DeviceNames'] = $deviceName;
+        foreach ($deviceName as $i => $iValue) {
             $this->queryParameters['DeviceName.' . ($i + 1)] = $iValue;
         }
 

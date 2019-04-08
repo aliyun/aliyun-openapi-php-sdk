@@ -3,6 +3,8 @@
 namespace Iot\Request\V20180120;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of QueryAppDeviceList
  *
  * @method array getProductKeyLists()
@@ -35,14 +37,14 @@ class QueryAppDeviceListRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $productKeyLists
+     * @param array $productKeyList
      *
      * @return $this
      */
-    public function setProductKeyLists(array $productKeyLists)
+    public function setProductKeyLists(array $productKeyList)
     {
-        $this->requestParameters['ProductKeyLists'] = $productKeyLists;
-        foreach ($productKeyLists as $i => $iValue) {
+        $this->requestParameters['ProductKeyLists'] = $productKeyList;
+        foreach ($productKeyList as $i => $iValue) {
             $this->queryParameters['ProductKeyList.' . ($i + 1)] = $iValue;
         }
 
@@ -50,14 +52,14 @@ class QueryAppDeviceListRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $categoryKeyLists
+     * @param array $categoryKeyList
      *
      * @return $this
      */
-    public function setCategoryKeyLists(array $categoryKeyLists)
+    public function setCategoryKeyLists(array $categoryKeyList)
     {
-        $this->requestParameters['CategoryKeyLists'] = $categoryKeyLists;
-        foreach ($categoryKeyLists as $i => $iValue) {
+        $this->requestParameters['CategoryKeyLists'] = $categoryKeyList;
+        foreach ($categoryKeyList as $i => $iValue) {
             $this->queryParameters['CategoryKeyList.' . ($i + 1)] = $iValue;
         }
 
@@ -117,16 +119,16 @@ class QueryAppDeviceListRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $tagLists
+     * @param array $tagList
      *
      * @return $this
      */
-    public function setTagLists(array $tagLists)
+    public function setTagLists(array $tagList)
     {
-        $this->requestParameters['TagLists'] = $tagLists;
-        foreach ($tagLists as $i => $iValue) {
-            $this->queryParameters['TagList.' . ($i + 1) . '.TagName'] = $tagLists[$i]['TagName'];
-            $this->queryParameters['TagList.' . ($i + 1) . '.TagValue'] = $tagLists[$i]['TagValue'];
+        $this->requestParameters['TagLists'] = $tagList;
+        foreach ($tagList as $depth1 => $depth1Value) {
+            $this->queryParameters['TagList.' . ($depth1 + 1) . '.TagName'] = $depth1Value['TagName'];
+            $this->queryParameters['TagList.' . ($depth1 + 1) . '.TagValue'] = $depth1Value['TagValue'];
         }
 
         return $this;

@@ -5,14 +5,16 @@ namespace Iot\Request\V20180120;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of GetDeviceStatus
+ * Request of QueryDeviceFileList
  *
  * @method string getIotId()
  * @method string getIotInstanceId()
+ * @method string getPageSize()
  * @method string getDeviceName()
+ * @method string getCurrentPage()
  * @method string getProductKey()
  */
-class GetDeviceStatusRequest extends \RpcAcsRequest
+class QueryDeviceFileListRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,7 +30,7 @@ class GetDeviceStatusRequest extends \RpcAcsRequest
         parent::__construct(
             'Iot',
             '2018-01-20',
-            'GetDeviceStatus',
+            'QueryDeviceFileList',
             'iot'
         );
     }
@@ -60,6 +62,19 @@ class GetDeviceStatusRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
      * @param string $deviceName
      *
      * @return $this
@@ -68,6 +83,19 @@ class GetDeviceStatusRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DeviceName'] = $deviceName;
         $this->queryParameters['DeviceName'] = $deviceName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $currentPage
+     *
+     * @return $this
+     */
+    public function setCurrentPage($currentPage)
+    {
+        $this->requestParameters['CurrentPage'] = $currentPage;
+        $this->queryParameters['CurrentPage'] = $currentPage;
 
         return $this;
     }

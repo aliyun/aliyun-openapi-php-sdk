@@ -3,6 +3,8 @@
 namespace Iot\Request\V20180120;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of UpdateProductTags
  *
  * @method array getProductTags()
@@ -31,16 +33,16 @@ class UpdateProductTagsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $productTags
+     * @param array $productTag
      *
      * @return $this
      */
-    public function setProductTags(array $productTags)
+    public function setProductTags(array $productTag)
     {
-        $this->requestParameters['ProductTags'] = $productTags;
-        foreach ($productTags as $i => $iValue) {
-            $this->queryParameters['ProductTag.' . ($i + 1) . '.TagValue'] = $productTags[$i]['TagValue'];
-            $this->queryParameters['ProductTag.' . ($i + 1) . '.TagKey'] = $productTags[$i]['TagKey'];
+        $this->requestParameters['ProductTags'] = $productTag;
+        foreach ($productTag as $depth1 => $depth1Value) {
+            $this->queryParameters['ProductTag.' . ($depth1 + 1) . '.TagValue'] = $depth1Value['TagValue'];
+            $this->queryParameters['ProductTag.' . ($depth1 + 1) . '.TagKey'] = $depth1Value['TagKey'];
         }
 
         return $this;

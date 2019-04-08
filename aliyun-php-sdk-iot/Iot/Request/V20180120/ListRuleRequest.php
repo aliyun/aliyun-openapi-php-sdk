@@ -3,8 +3,11 @@
 namespace Iot\Request\V20180120;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of ListRule
  *
+ * @method string getSearchName()
  * @method string getIotInstanceId()
  * @method string getPageSize()
  * @method string getCurrentPage()
@@ -28,6 +31,19 @@ class ListRuleRequest extends \RpcAcsRequest
             'ListRule',
             'iot'
         );
+    }
+
+    /**
+     * @param string $searchName
+     *
+     * @return $this
+     */
+    public function setSearchName($searchName)
+    {
+        $this->requestParameters['SearchName'] = $searchName;
+        $this->queryParameters['SearchName'] = $searchName;
+
+        return $this;
     }
 
     /**

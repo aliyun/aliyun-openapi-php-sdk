@@ -3,6 +3,8 @@
 namespace Iot\Request\V20180120;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DeleteProductTags
  *
  * @method string getIotInstanceId()
@@ -44,14 +46,14 @@ class DeleteProductTagsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $productTagKeys
+     * @param array $productTagKey
      *
      * @return $this
      */
-    public function setProductTagKeys(array $productTagKeys)
+    public function setProductTagKeys(array $productTagKey)
     {
-        $this->requestParameters['ProductTagKeys'] = $productTagKeys;
-        foreach ($productTagKeys as $i => $iValue) {
+        $this->requestParameters['ProductTagKeys'] = $productTagKey;
+        foreach ($productTagKey as $i => $iValue) {
             $this->queryParameters['ProductTagKey.' . ($i + 1)] = $iValue;
         }
 

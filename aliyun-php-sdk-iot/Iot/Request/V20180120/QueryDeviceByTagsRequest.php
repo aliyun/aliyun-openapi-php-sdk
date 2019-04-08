@@ -3,6 +3,8 @@
 namespace Iot\Request\V20180120;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of QueryDeviceByTags
  *
  * @method string getIotInstanceId()
@@ -71,16 +73,16 @@ class QueryDeviceByTagsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $tags
+     * @param array $tag
      *
      * @return $this
      */
-    public function setTags(array $tags)
+    public function setTags(array $tag)
     {
-        $this->requestParameters['Tags'] = $tags;
-        foreach ($tags as $i => $iValue) {
-            $this->queryParameters['Tag.' . ($i + 1) . '.TagValue'] = $tags[$i]['TagValue'];
-            $this->queryParameters['Tag.' . ($i + 1) . '.TagKey'] = $tags[$i]['TagKey'];
+        $this->requestParameters['Tags'] = $tag;
+        foreach ($tag as $depth1 => $depth1Value) {
+            $this->queryParameters['Tag.' . ($depth1 + 1) . '.TagValue'] = $depth1Value['TagValue'];
+            $this->queryParameters['Tag.' . ($depth1 + 1) . '.TagKey'] = $depth1Value['TagKey'];
         }
 
         return $this;

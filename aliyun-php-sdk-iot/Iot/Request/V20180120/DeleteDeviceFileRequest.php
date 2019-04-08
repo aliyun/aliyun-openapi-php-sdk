@@ -5,12 +5,15 @@ namespace Iot\Request\V20180120;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of QueryProductTopic
+ * Request of DeleteDeviceFile
  *
+ * @method string getIotId()
  * @method string getIotInstanceId()
+ * @method string getDeviceName()
  * @method string getProductKey()
+ * @method string getFileId()
  */
-class QueryProductTopicRequest extends \RpcAcsRequest
+class DeleteDeviceFileRequest extends \RpcAcsRequest
 {
 
     /**
@@ -26,9 +29,22 @@ class QueryProductTopicRequest extends \RpcAcsRequest
         parent::__construct(
             'Iot',
             '2018-01-20',
-            'QueryProductTopic',
+            'DeleteDeviceFile',
             'iot'
         );
+    }
+
+    /**
+     * @param string $iotId
+     *
+     * @return $this
+     */
+    public function setIotId($iotId)
+    {
+        $this->requestParameters['IotId'] = $iotId;
+        $this->queryParameters['IotId'] = $iotId;
+
+        return $this;
     }
 
     /**
@@ -45,6 +61,19 @@ class QueryProductTopicRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $deviceName
+     *
+     * @return $this
+     */
+    public function setDeviceName($deviceName)
+    {
+        $this->requestParameters['DeviceName'] = $deviceName;
+        $this->queryParameters['DeviceName'] = $deviceName;
+
+        return $this;
+    }
+
+    /**
      * @param string $productKey
      *
      * @return $this
@@ -53,6 +82,19 @@ class QueryProductTopicRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ProductKey'] = $productKey;
         $this->queryParameters['ProductKey'] = $productKey;
+
+        return $this;
+    }
+
+    /**
+     * @param string $fileId
+     *
+     * @return $this
+     */
+    public function setFileId($fileId)
+    {
+        $this->requestParameters['FileId'] = $fileId;
+        $this->queryParameters['FileId'] = $fileId;
 
         return $this;
     }

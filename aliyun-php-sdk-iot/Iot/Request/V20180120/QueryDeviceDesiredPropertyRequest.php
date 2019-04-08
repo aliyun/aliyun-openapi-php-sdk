@@ -3,6 +3,8 @@
 namespace Iot\Request\V20180120;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of QueryDeviceDesiredProperty
  *
  * @method array getIdentifiers()
@@ -33,14 +35,14 @@ class QueryDeviceDesiredPropertyRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $identifiers
+     * @param array $identifier
      *
      * @return $this
      */
-    public function setIdentifiers(array $identifiers)
+    public function setIdentifiers(array $identifier)
     {
-        $this->requestParameters['Identifiers'] = $identifiers;
-        foreach ($identifiers as $i => $iValue) {
+        $this->requestParameters['Identifiers'] = $identifier;
+        foreach ($identifier as $i => $iValue) {
             $this->queryParameters['Identifier.' . ($i + 1)] = $iValue;
         }
 

@@ -3,10 +3,13 @@
 namespace Iot\Request\V20180120;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of RegisterDevice
  *
  * @method string getPinCode()
  * @method string getIotInstanceId()
+ * @method string getNickname()
  * @method string getDeviceName()
  * @method string getProductKey()
  * @method string getDevEui()
@@ -54,6 +57,19 @@ class RegisterDeviceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['IotInstanceId'] = $iotInstanceId;
         $this->queryParameters['IotInstanceId'] = $iotInstanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $nickname
+     *
+     * @return $this
+     */
+    public function setNickname($nickname)
+    {
+        $this->requestParameters['Nickname'] = $nickname;
+        $this->queryParameters['Nickname'] = $nickname;
 
         return $this;
     }

@@ -3,6 +3,8 @@
 namespace Iot\Request\V20180120;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DeleteTopicRouteTable
  *
  * @method array getDstTopics()
@@ -31,14 +33,14 @@ class DeleteTopicRouteTableRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $dstTopics
+     * @param array $dstTopic
      *
      * @return $this
      */
-    public function setDstTopics(array $dstTopics)
+    public function setDstTopics(array $dstTopic)
     {
-        $this->requestParameters['DstTopics'] = $dstTopics;
-        foreach ($dstTopics as $i => $iValue) {
+        $this->requestParameters['DstTopics'] = $dstTopic;
+        foreach ($dstTopic as $i => $iValue) {
             $this->queryParameters['DstTopic.' . ($i + 1)] = $iValue;
         }
 
