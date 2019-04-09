@@ -11,9 +11,11 @@ namespace Ecs\Request\V20140526;
  * @method string getClientToken()
  * @method string getSecurityGroupId()
  * @method string getDescription()
+ * @method string getBusinessType()
  * @method string getResourceGroupId()
  * @method array getTags()
  * @method string getNetworkInterfaceName()
+ * @method string getVisible()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
@@ -94,6 +96,19 @@ class CreateNetworkInterfaceRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $businessType
+     *
+     * @return $this
+     */
+    public function setBusinessType($businessType)
+    {
+        $this->requestParameters['BusinessType'] = $businessType;
+        $this->queryParameters['BusinessType'] = $businessType;
+
+        return $this;
+    }
+
+    /**
      * @param string $resourceGroupId
      *
      * @return $this
@@ -131,6 +146,19 @@ class CreateNetworkInterfaceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['NetworkInterfaceName'] = $networkInterfaceName;
         $this->queryParameters['NetworkInterfaceName'] = $networkInterfaceName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $visible
+     *
+     * @return $this
+     */
+    public function setVisible($visible)
+    {
+        $this->requestParameters['Visible'] = $visible;
+        $this->queryParameters['Visible'] = $visible;
 
         return $this;
     }

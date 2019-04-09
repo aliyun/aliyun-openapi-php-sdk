@@ -8,6 +8,7 @@ namespace Ecs\Request\V20140526;
  * Request of DescribeNetworkInterfaces
  *
  * @method string getResourceOwnerId()
+ * @method string getServiceManaged()
  * @method string getSecurityGroupId()
  * @method string getType()
  * @method string getPageNumber()
@@ -54,6 +55,19 @@ class DescribeNetworkInterfacesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $serviceManaged
+     *
+     * @return $this
+     */
+    public function setServiceManaged($serviceManaged)
+    {
+        $this->requestParameters['ServiceManaged'] = $serviceManaged;
+        $this->queryParameters['ServiceManaged'] = $serviceManaged;
 
         return $this;
     }
