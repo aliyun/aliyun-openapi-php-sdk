@@ -3,6 +3,8 @@
 namespace Cloudauth\Request\V20180916;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of GetStatus
  *
  * @method string getResourceOwnerId()
@@ -32,7 +34,7 @@ class GetStatusRequest extends \RpcAcsRequest
             'Cloudauth',
             '2018-09-16',
             'GetStatus',
-            'CloudAuth'
+            'cloudauth'
         );
     }
 

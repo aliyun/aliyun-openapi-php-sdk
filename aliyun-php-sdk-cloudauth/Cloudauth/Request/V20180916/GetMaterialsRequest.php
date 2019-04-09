@@ -3,6 +3,8 @@
 namespace Cloudauth\Request\V20180916;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of GetMaterials
  *
  * @method string getResourceOwnerId()
@@ -32,7 +34,7 @@ class GetMaterialsRequest extends \RpcAcsRequest
             'Cloudauth',
             '2018-09-16',
             'GetMaterials',
-            'CloudAuth'
+            'cloudauth'
         );
     }
 

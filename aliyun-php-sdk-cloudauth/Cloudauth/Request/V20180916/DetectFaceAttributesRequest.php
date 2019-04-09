@@ -3,6 +3,8 @@
 namespace Cloudauth\Request\V20180916;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DetectFaceAttributes
  *
  * @method string getMaxNumPhotosPerCategory()
@@ -36,7 +38,7 @@ class DetectFaceAttributesRequest extends \RpcAcsRequest
             'Cloudauth',
             '2018-09-16',
             'DetectFaceAttributes',
-            'CloudAuth'
+            'cloudauth'
         );
     }
 

@@ -3,6 +3,8 @@
 namespace Cloudauth\Request\V20180916;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of GetVerifyToken
  *
  * @method string getUserData()
@@ -35,7 +37,7 @@ class GetVerifyTokenRequest extends \RpcAcsRequest
             'Cloudauth',
             '2018-09-16',
             'GetVerifyToken',
-            'CloudAuth'
+            'cloudauth'
         );
     }
 

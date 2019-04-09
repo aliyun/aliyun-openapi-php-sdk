@@ -3,6 +3,8 @@
 namespace Cloudauth\Request\V20180916;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of SubmitVerification
  *
  * @method string getResourceOwnerId()
@@ -33,7 +35,7 @@ class SubmitVerificationRequest extends \RpcAcsRequest
             'Cloudauth',
             '2018-09-16',
             'SubmitVerification',
-            'CloudAuth'
+            'cloudauth'
         );
     }
 
@@ -77,16 +79,16 @@ class SubmitVerificationRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $materials
+     * @param array $material
      *
      * @return $this
      */
-    public function setMaterials(array $materials)
+    public function setMaterials(array $material)
     {
-        $this->requestParameters['Materials'] = $materials;
-        foreach ($materials as $i => $iValue) {
-            $this->queryParameters['Material.' . ($i + 1) . '.MaterialType'] = $materials[$i]['MaterialType'];
-            $this->queryParameters['Material.' . ($i + 1) . '.Value'] = $materials[$i]['Value'];
+        $this->requestParameters['Materials'] = $material;
+        foreach ($material as $depth1 => $depth1Value) {
+            $this->queryParameters['Material.' . ($depth1 + 1) . '.MaterialType'] = $depth1Value['MaterialType'];
+            $this->queryParameters['Material.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
         }
 
         return $this;

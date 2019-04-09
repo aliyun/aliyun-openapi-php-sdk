@@ -3,6 +3,8 @@
 namespace Cloudauth\Request\V20180916;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of CompareFaces
  *
  * @method string getSourceImageType()
@@ -34,7 +36,7 @@ class CompareFacesRequest extends \RpcAcsRequest
             'Cloudauth',
             '2018-09-16',
             'CompareFaces',
-            'CloudAuth'
+            'cloudauth'
         );
     }
 
