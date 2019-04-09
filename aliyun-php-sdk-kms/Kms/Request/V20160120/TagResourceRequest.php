@@ -5,13 +5,12 @@ namespace Kms\Request\V20160120;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ListAliasesByKeyId
+ * Request of TagResource
  *
- * @method string getPageSize()
  * @method string getKeyId()
- * @method string getPageNumber()
+ * @method string getTags()
  */
-class ListAliasesByKeyIdRequest extends \RpcAcsRequest
+class TagResourceRequest extends \RpcAcsRequest
 {
 
     /**
@@ -32,22 +31,9 @@ class ListAliasesByKeyIdRequest extends \RpcAcsRequest
         parent::__construct(
             'Kms',
             '2016-01-20',
-            'ListAliasesByKeyId',
+            'TagResource',
             'kms'
         );
-    }
-
-    /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
     }
 
     /**
@@ -64,14 +50,14 @@ class ListAliasesByKeyIdRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageNumber
+     * @param string $tags
      *
      * @return $this
      */
-    public function setPageNumber($pageNumber)
+    public function setTags($tags)
     {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
+        $this->requestParameters['Tags'] = $tags;
+        $this->queryParameters['Tags'] = $tags;
 
         return $this;
     }

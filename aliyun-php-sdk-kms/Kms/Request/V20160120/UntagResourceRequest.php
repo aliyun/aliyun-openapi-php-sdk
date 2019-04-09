@@ -5,13 +5,12 @@ namespace Kms\Request\V20160120;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ListAliasesByKeyId
+ * Request of UntagResource
  *
- * @method string getPageSize()
+ * @method string getTagKeys()
  * @method string getKeyId()
- * @method string getPageNumber()
  */
-class ListAliasesByKeyIdRequest extends \RpcAcsRequest
+class UntagResourceRequest extends \RpcAcsRequest
 {
 
     /**
@@ -32,20 +31,20 @@ class ListAliasesByKeyIdRequest extends \RpcAcsRequest
         parent::__construct(
             'Kms',
             '2016-01-20',
-            'ListAliasesByKeyId',
+            'UntagResource',
             'kms'
         );
     }
 
     /**
-     * @param string $pageSize
+     * @param string $tagKeys
      *
      * @return $this
      */
-    public function setPageSize($pageSize)
+    public function setTagKeys($tagKeys)
     {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
+        $this->requestParameters['TagKeys'] = $tagKeys;
+        $this->queryParameters['TagKeys'] = $tagKeys;
 
         return $this;
     }
@@ -59,19 +58,6 @@ class ListAliasesByKeyIdRequest extends \RpcAcsRequest
     {
         $this->requestParameters['KeyId'] = $keyId;
         $this->queryParameters['KeyId'] = $keyId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

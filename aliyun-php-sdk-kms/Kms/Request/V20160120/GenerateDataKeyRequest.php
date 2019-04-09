@@ -1,86 +1,92 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Kms\Request\V20160120;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of GenerateDataKey
+ *
+ * @method string getEncryptionContext()
+ * @method string getKeyId()
+ * @method string getKeySpec()
+ * @method string getNumberOfBytes()
+ */
 class GenerateDataKeyRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Kms", "2016-01-20", "GenerateDataKey", "kms", "openAPI");
-		$this->setProtocol("https");
-		$this->setMethod("POST");
-	}
 
-	private  $encryptionContext;
+    /**
+     * @var string
+     */
+    protected $requestScheme = 'https';
 
-	private  $keyId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $keySpec;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Kms',
+            '2016-01-20',
+            'GenerateDataKey',
+            'kms'
+        );
+    }
 
-	private  $sTSToken;
+    /**
+     * @param string $encryptionContext
+     *
+     * @return $this
+     */
+    public function setEncryptionContext($encryptionContext)
+    {
+        $this->requestParameters['EncryptionContext'] = $encryptionContext;
+        $this->queryParameters['EncryptionContext'] = $encryptionContext;
 
-	private  $numberOfBytes;
+        return $this;
+    }
 
-	public function getEncryptionContext() {
-		return $this->encryptionContext;
-	}
+    /**
+     * @param string $keyId
+     *
+     * @return $this
+     */
+    public function setKeyId($keyId)
+    {
+        $this->requestParameters['KeyId'] = $keyId;
+        $this->queryParameters['KeyId'] = $keyId;
 
-	public function setEncryptionContext($encryptionContext) {
-		$this->encryptionContext = $encryptionContext;
-		$this->queryParameters["EncryptionContext"]=$encryptionContext;
-	}
+        return $this;
+    }
 
-	public function getKeyId() {
-		return $this->keyId;
-	}
+    /**
+     * @param string $keySpec
+     *
+     * @return $this
+     */
+    public function setKeySpec($keySpec)
+    {
+        $this->requestParameters['KeySpec'] = $keySpec;
+        $this->queryParameters['KeySpec'] = $keySpec;
 
-	public function setKeyId($keyId) {
-		$this->keyId = $keyId;
-		$this->queryParameters["KeyId"]=$keyId;
-	}
+        return $this;
+    }
 
-	public function getKeySpec() {
-		return $this->keySpec;
-	}
+    /**
+     * @param string $numberOfBytes
+     *
+     * @return $this
+     */
+    public function setNumberOfBytes($numberOfBytes)
+    {
+        $this->requestParameters['NumberOfBytes'] = $numberOfBytes;
+        $this->queryParameters['NumberOfBytes'] = $numberOfBytes;
 
-	public function setKeySpec($keySpec) {
-		$this->keySpec = $keySpec;
-		$this->queryParameters["KeySpec"]=$keySpec;
-	}
-
-	public function getSTSToken() {
-		return $this->sTSToken;
-	}
-
-	public function setSTSToken($sTSToken) {
-		$this->sTSToken = $sTSToken;
-		$this->queryParameters["STSToken"]=$sTSToken;
-	}
-
-	public function getNumberOfBytes() {
-		return $this->numberOfBytes;
-	}
-
-	public function setNumberOfBytes($numberOfBytes) {
-		$this->numberOfBytes = $numberOfBytes;
-		$this->queryParameters["NumberOfBytes"]=$numberOfBytes;
-	}
-	
+        return $this;
+    }
 }
