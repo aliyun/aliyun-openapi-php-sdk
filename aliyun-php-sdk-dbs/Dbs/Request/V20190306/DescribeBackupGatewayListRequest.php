@@ -7,6 +7,7 @@ namespace Dbs\Request\V20190306;
  *
  * Request of DescribeBackupGatewayList
  *
+ * @method string getIdentifier()
  * @method string getClientToken()
  * @method string getPageSize()
  * @method string getRegion()
@@ -32,6 +33,19 @@ class DescribeBackupGatewayListRequest extends \RpcAcsRequest
             'DescribeBackupGatewayList',
             'cbs'
         );
+    }
+
+    /**
+     * @param string $identifier
+     *
+     * @return $this
+     */
+    public function setIdentifier($identifier)
+    {
+        $this->requestParameters['Identifier'] = $identifier;
+        $this->queryParameters['Identifier'] = $identifier;
+
+        return $this;
     }
 
     /**
