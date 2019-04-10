@@ -1,128 +1,152 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace EHPC\Request\V20180412;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of GetCloudMetricLogs
+ *
+ * @method string getAggregationType()
+ * @method string getFilter()
+ * @method string getMetricCategories()
+ * @method string getMetricScope()
+ * @method string getFrom()
+ * @method string getClusterId()
+ * @method string getTo()
+ * @method string getAggregationInterval()
+ * @method string getReverse()
+ */
 class GetCloudMetricLogsRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("EHPC", "2018-04-12", "GetCloudMetricLogs", "ehs", "openAPI");
-	}
 
-	private  $aggregationType;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'EHPC',
+            '2018-04-12',
+            'GetCloudMetricLogs',
+            'ehs'
+        );
+    }
 
-	private  $filter;
+    /**
+     * @param string $aggregationType
+     *
+     * @return $this
+     */
+    public function setAggregationType($aggregationType)
+    {
+        $this->requestParameters['AggregationType'] = $aggregationType;
+        $this->queryParameters['AggregationType'] = $aggregationType;
 
-	private  $metricCategories;
+        return $this;
+    }
 
-	private  $metricScope;
+    /**
+     * @param string $filter
+     *
+     * @return $this
+     */
+    public function setFilter($filter)
+    {
+        $this->requestParameters['Filter'] = $filter;
+        $this->queryParameters['Filter'] = $filter;
 
-	private  $from;
+        return $this;
+    }
 
-	private  $clusterId;
+    /**
+     * @param string $metricCategories
+     *
+     * @return $this
+     */
+    public function setMetricCategories($metricCategories)
+    {
+        $this->requestParameters['MetricCategories'] = $metricCategories;
+        $this->queryParameters['MetricCategories'] = $metricCategories;
 
-	private  $to;
+        return $this;
+    }
 
-	private  $aggregationInterval;
+    /**
+     * @param string $metricScope
+     *
+     * @return $this
+     */
+    public function setMetricScope($metricScope)
+    {
+        $this->requestParameters['MetricScope'] = $metricScope;
+        $this->queryParameters['MetricScope'] = $metricScope;
 
-	private  $reverse;
+        return $this;
+    }
 
-	public function getAggregationType() {
-		return $this->aggregationType;
-	}
+    /**
+     * @param string $from
+     *
+     * @return $this
+     */
+    public function setFrom($from)
+    {
+        $this->requestParameters['From'] = $from;
+        $this->queryParameters['From'] = $from;
 
-	public function setAggregationType($aggregationType) {
-		$this->aggregationType = $aggregationType;
-		$this->queryParameters["AggregationType"]=$aggregationType;
-	}
+        return $this;
+    }
 
-	public function getFilter() {
-		return $this->filter;
-	}
+    /**
+     * @param string $clusterId
+     *
+     * @return $this
+     */
+    public function setClusterId($clusterId)
+    {
+        $this->requestParameters['ClusterId'] = $clusterId;
+        $this->queryParameters['ClusterId'] = $clusterId;
 
-	public function setFilter($filter) {
-		$this->filter = $filter;
-		$this->queryParameters["Filter"]=$filter;
-	}
+        return $this;
+    }
 
-	public function getMetricCategories() {
-		return $this->metricCategories;
-	}
+    /**
+     * @param string $to
+     *
+     * @return $this
+     */
+    public function setTo($to)
+    {
+        $this->requestParameters['To'] = $to;
+        $this->queryParameters['To'] = $to;
 
-	public function setMetricCategories($metricCategories) {
-		$this->metricCategories = $metricCategories;
-		$this->queryParameters["MetricCategories"]=$metricCategories;
-	}
+        return $this;
+    }
 
-	public function getMetricScope() {
-		return $this->metricScope;
-	}
+    /**
+     * @param string $aggregationInterval
+     *
+     * @return $this
+     */
+    public function setAggregationInterval($aggregationInterval)
+    {
+        $this->requestParameters['AggregationInterval'] = $aggregationInterval;
+        $this->queryParameters['AggregationInterval'] = $aggregationInterval;
 
-	public function setMetricScope($metricScope) {
-		$this->metricScope = $metricScope;
-		$this->queryParameters["MetricScope"]=$metricScope;
-	}
+        return $this;
+    }
 
-	public function getFrom() {
-		return $this->from;
-	}
+    /**
+     * @param string $reverse
+     *
+     * @return $this
+     */
+    public function setReverse($reverse)
+    {
+        $this->requestParameters['Reverse'] = $reverse;
+        $this->queryParameters['Reverse'] = $reverse;
 
-	public function setFrom($from) {
-		$this->from = $from;
-		$this->queryParameters["From"]=$from;
-	}
-
-	public function getClusterId() {
-		return $this->clusterId;
-	}
-
-	public function setClusterId($clusterId) {
-		$this->clusterId = $clusterId;
-		$this->queryParameters["ClusterId"]=$clusterId;
-	}
-
-	public function getTo() {
-		return $this->to;
-	}
-
-	public function setTo($to) {
-		$this->to = $to;
-		$this->queryParameters["To"]=$to;
-	}
-
-	public function getAggregationInterval() {
-		return $this->aggregationInterval;
-	}
-
-	public function setAggregationInterval($aggregationInterval) {
-		$this->aggregationInterval = $aggregationInterval;
-		$this->queryParameters["AggregationInterval"]=$aggregationInterval;
-	}
-
-	public function getReverse() {
-		return $this->reverse;
-	}
-
-	public function setReverse($reverse) {
-		$this->reverse = $reverse;
-		$this->queryParameters["Reverse"]=$reverse;
-	}
-	
+        return $this;
+    }
 }

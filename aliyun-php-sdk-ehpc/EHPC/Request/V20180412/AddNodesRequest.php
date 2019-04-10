@@ -1,194 +1,264 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace EHPC\Request\V20180412;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of AddNodes
+ *
+ * @method string getAutoRenewPeriod()
+ * @method string getPeriod()
+ * @method string getImageId()
+ * @method string getCount()
+ * @method string getClusterId()
+ * @method string getComputeSpotStrategy()
+ * @method string getJobQueue()
+ * @method string getImageOwnerAlias()
+ * @method string getVSwitchId()
+ * @method string getPeriodUnit()
+ * @method string getAutoRenew()
+ * @method string getEcsChargeType()
+ * @method string getCreateMode()
+ * @method string getSystemDiskSize()
+ * @method string getInstanceType()
+ * @method string getZoneId()
+ * @method string getComputeSpotPriceLimit()
+ */
 class AddNodesRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("EHPC", "2018-04-12", "AddNodes", "ehs", "openAPI");
-	}
 
-	private  $autoRenewPeriod;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'EHPC',
+            '2018-04-12',
+            'AddNodes',
+            'ehs'
+        );
+    }
 
-	private  $period;
+    /**
+     * @param string $autoRenewPeriod
+     *
+     * @return $this
+     */
+    public function setAutoRenewPeriod($autoRenewPeriod)
+    {
+        $this->requestParameters['AutoRenewPeriod'] = $autoRenewPeriod;
+        $this->queryParameters['AutoRenewPeriod'] = $autoRenewPeriod;
 
-	private  $imageId;
+        return $this;
+    }
 
-	private  $count;
+    /**
+     * @param string $period
+     *
+     * @return $this
+     */
+    public function setPeriod($period)
+    {
+        $this->requestParameters['Period'] = $period;
+        $this->queryParameters['Period'] = $period;
 
-	private  $clusterId;
+        return $this;
+    }
 
-	private  $computeSpotStrategy;
+    /**
+     * @param string $imageId
+     *
+     * @return $this
+     */
+    public function setImageId($imageId)
+    {
+        $this->requestParameters['ImageId'] = $imageId;
+        $this->queryParameters['ImageId'] = $imageId;
 
-	private  $jobQueue;
+        return $this;
+    }
 
-	private  $imageOwnerAlias;
+    /**
+     * @param string $count
+     *
+     * @return $this
+     */
+    public function setCount($count)
+    {
+        $this->requestParameters['Count'] = $count;
+        $this->queryParameters['Count'] = $count;
 
-	private  $periodUnit;
+        return $this;
+    }
 
-	private  $autoRenew;
+    /**
+     * @param string $clusterId
+     *
+     * @return $this
+     */
+    public function setClusterId($clusterId)
+    {
+        $this->requestParameters['ClusterId'] = $clusterId;
+        $this->queryParameters['ClusterId'] = $clusterId;
 
-	private  $ecsChargeType;
+        return $this;
+    }
 
-	private  $createMode;
+    /**
+     * @param string $computeSpotStrategy
+     *
+     * @return $this
+     */
+    public function setComputeSpotStrategy($computeSpotStrategy)
+    {
+        $this->requestParameters['ComputeSpotStrategy'] = $computeSpotStrategy;
+        $this->queryParameters['ComputeSpotStrategy'] = $computeSpotStrategy;
 
-	private  $systemDiskSize;
+        return $this;
+    }
 
-	private  $instanceType;
+    /**
+     * @param string $jobQueue
+     *
+     * @return $this
+     */
+    public function setJobQueue($jobQueue)
+    {
+        $this->requestParameters['JobQueue'] = $jobQueue;
+        $this->queryParameters['JobQueue'] = $jobQueue;
 
-	private  $computeSpotPriceLimit;
+        return $this;
+    }
 
-	public function getAutoRenewPeriod() {
-		return $this->autoRenewPeriod;
-	}
+    /**
+     * @param string $imageOwnerAlias
+     *
+     * @return $this
+     */
+    public function setImageOwnerAlias($imageOwnerAlias)
+    {
+        $this->requestParameters['ImageOwnerAlias'] = $imageOwnerAlias;
+        $this->queryParameters['ImageOwnerAlias'] = $imageOwnerAlias;
 
-	public function setAutoRenewPeriod($autoRenewPeriod) {
-		$this->autoRenewPeriod = $autoRenewPeriod;
-		$this->queryParameters["AutoRenewPeriod"]=$autoRenewPeriod;
-	}
+        return $this;
+    }
 
-	public function getPeriod() {
-		return $this->period;
-	}
+    /**
+     * @param string $vSwitchId
+     *
+     * @return $this
+     */
+    public function setVSwitchId($vSwitchId)
+    {
+        $this->requestParameters['VSwitchId'] = $vSwitchId;
+        $this->queryParameters['VSwitchId'] = $vSwitchId;
 
-	public function setPeriod($period) {
-		$this->period = $period;
-		$this->queryParameters["Period"]=$period;
-	}
+        return $this;
+    }
 
-	public function getImageId() {
-		return $this->imageId;
-	}
+    /**
+     * @param string $periodUnit
+     *
+     * @return $this
+     */
+    public function setPeriodUnit($periodUnit)
+    {
+        $this->requestParameters['PeriodUnit'] = $periodUnit;
+        $this->queryParameters['PeriodUnit'] = $periodUnit;
 
-	public function setImageId($imageId) {
-		$this->imageId = $imageId;
-		$this->queryParameters["ImageId"]=$imageId;
-	}
+        return $this;
+    }
 
-	public function getCount() {
-		return $this->count;
-	}
+    /**
+     * @param string $autoRenew
+     *
+     * @return $this
+     */
+    public function setAutoRenew($autoRenew)
+    {
+        $this->requestParameters['AutoRenew'] = $autoRenew;
+        $this->queryParameters['AutoRenew'] = $autoRenew;
 
-	public function setCount($count) {
-		$this->count = $count;
-		$this->queryParameters["Count"]=$count;
-	}
+        return $this;
+    }
 
-	public function getClusterId() {
-		return $this->clusterId;
-	}
+    /**
+     * @param string $ecsChargeType
+     *
+     * @return $this
+     */
+    public function setEcsChargeType($ecsChargeType)
+    {
+        $this->requestParameters['EcsChargeType'] = $ecsChargeType;
+        $this->queryParameters['EcsChargeType'] = $ecsChargeType;
 
-	public function setClusterId($clusterId) {
-		$this->clusterId = $clusterId;
-		$this->queryParameters["ClusterId"]=$clusterId;
-	}
+        return $this;
+    }
 
-	public function getComputeSpotStrategy() {
-		return $this->computeSpotStrategy;
-	}
+    /**
+     * @param string $createMode
+     *
+     * @return $this
+     */
+    public function setCreateMode($createMode)
+    {
+        $this->requestParameters['CreateMode'] = $createMode;
+        $this->queryParameters['CreateMode'] = $createMode;
 
-	public function setComputeSpotStrategy($computeSpotStrategy) {
-		$this->computeSpotStrategy = $computeSpotStrategy;
-		$this->queryParameters["ComputeSpotStrategy"]=$computeSpotStrategy;
-	}
+        return $this;
+    }
 
-	public function getJobQueue() {
-		return $this->jobQueue;
-	}
+    /**
+     * @param string $systemDiskSize
+     *
+     * @return $this
+     */
+    public function setSystemDiskSize($systemDiskSize)
+    {
+        $this->requestParameters['SystemDiskSize'] = $systemDiskSize;
+        $this->queryParameters['SystemDiskSize'] = $systemDiskSize;
 
-	public function setJobQueue($jobQueue) {
-		$this->jobQueue = $jobQueue;
-		$this->queryParameters["JobQueue"]=$jobQueue;
-	}
+        return $this;
+    }
 
-	public function getImageOwnerAlias() {
-		return $this->imageOwnerAlias;
-	}
+    /**
+     * @param string $instanceType
+     *
+     * @return $this
+     */
+    public function setInstanceType($instanceType)
+    {
+        $this->requestParameters['InstanceType'] = $instanceType;
+        $this->queryParameters['InstanceType'] = $instanceType;
 
-	public function setImageOwnerAlias($imageOwnerAlias) {
-		$this->imageOwnerAlias = $imageOwnerAlias;
-		$this->queryParameters["ImageOwnerAlias"]=$imageOwnerAlias;
-	}
+        return $this;
+    }
 
-	public function getPeriodUnit() {
-		return $this->periodUnit;
-	}
+    /**
+     * @param string $zoneId
+     *
+     * @return $this
+     */
+    public function setZoneId($zoneId)
+    {
+        $this->requestParameters['ZoneId'] = $zoneId;
+        $this->queryParameters['ZoneId'] = $zoneId;
 
-	public function setPeriodUnit($periodUnit) {
-		$this->periodUnit = $periodUnit;
-		$this->queryParameters["PeriodUnit"]=$periodUnit;
-	}
+        return $this;
+    }
 
-	public function getAutoRenew() {
-		return $this->autoRenew;
-	}
+    /**
+     * @param string $computeSpotPriceLimit
+     *
+     * @return $this
+     */
+    public function setComputeSpotPriceLimit($computeSpotPriceLimit)
+    {
+        $this->requestParameters['ComputeSpotPriceLimit'] = $computeSpotPriceLimit;
+        $this->queryParameters['ComputeSpotPriceLimit'] = $computeSpotPriceLimit;
 
-	public function setAutoRenew($autoRenew) {
-		$this->autoRenew = $autoRenew;
-		$this->queryParameters["AutoRenew"]=$autoRenew;
-	}
-
-	public function getEcsChargeType() {
-		return $this->ecsChargeType;
-	}
-
-	public function setEcsChargeType($ecsChargeType) {
-		$this->ecsChargeType = $ecsChargeType;
-		$this->queryParameters["EcsChargeType"]=$ecsChargeType;
-	}
-
-	public function getCreateMode() {
-		return $this->createMode;
-	}
-
-	public function setCreateMode($createMode) {
-		$this->createMode = $createMode;
-		$this->queryParameters["CreateMode"]=$createMode;
-	}
-
-	public function getSystemDiskSize() {
-		return $this->systemDiskSize;
-	}
-
-	public function setSystemDiskSize($systemDiskSize) {
-		$this->systemDiskSize = $systemDiskSize;
-		$this->queryParameters["SystemDiskSize"]=$systemDiskSize;
-	}
-
-	public function getInstanceType() {
-		return $this->instanceType;
-	}
-
-	public function setInstanceType($instanceType) {
-		$this->instanceType = $instanceType;
-		$this->queryParameters["InstanceType"]=$instanceType;
-	}
-
-	public function getComputeSpotPriceLimit() {
-		return $this->computeSpotPriceLimit;
-	}
-
-	public function setComputeSpotPriceLimit($computeSpotPriceLimit) {
-		$this->computeSpotPriceLimit = $computeSpotPriceLimit;
-		$this->queryParameters["ComputeSpotPriceLimit"]=$computeSpotPriceLimit;
-	}
-	
+        return $this;
+    }
 }

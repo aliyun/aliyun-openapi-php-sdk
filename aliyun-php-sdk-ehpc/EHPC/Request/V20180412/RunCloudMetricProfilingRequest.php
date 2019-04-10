@@ -1,84 +1,96 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace EHPC\Request\V20180412;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of RunCloudMetricProfiling
+ *
+ * @method string getDuration()
+ * @method string getHostName()
+ * @method string getProcessId()
+ * @method string getFreq()
+ * @method string getClusterId()
+ */
 class RunCloudMetricProfilingRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("EHPC", "2018-04-12", "RunCloudMetricProfiling", "ehs", "openAPI");
-	}
 
-	private  $duration;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'EHPC',
+            '2018-04-12',
+            'RunCloudMetricProfiling',
+            'ehs'
+        );
+    }
 
-	private  $hostName;
+    /**
+     * @param string $duration
+     *
+     * @return $this
+     */
+    public function setDuration($duration)
+    {
+        $this->requestParameters['Duration'] = $duration;
+        $this->queryParameters['Duration'] = $duration;
 
-	private  $processId;
+        return $this;
+    }
 
-	private  $freq;
+    /**
+     * @param string $hostName
+     *
+     * @return $this
+     */
+    public function setHostName($hostName)
+    {
+        $this->requestParameters['HostName'] = $hostName;
+        $this->queryParameters['HostName'] = $hostName;
 
-	private  $clusterId;
+        return $this;
+    }
 
-	public function getDuration() {
-		return $this->duration;
-	}
+    /**
+     * @param string $processId
+     *
+     * @return $this
+     */
+    public function setProcessId($processId)
+    {
+        $this->requestParameters['ProcessId'] = $processId;
+        $this->queryParameters['ProcessId'] = $processId;
 
-	public function setDuration($duration) {
-		$this->duration = $duration;
-		$this->queryParameters["Duration"]=$duration;
-	}
+        return $this;
+    }
 
-	public function getHostName() {
-		return $this->hostName;
-	}
+    /**
+     * @param string $freq
+     *
+     * @return $this
+     */
+    public function setFreq($freq)
+    {
+        $this->requestParameters['Freq'] = $freq;
+        $this->queryParameters['Freq'] = $freq;
 
-	public function setHostName($hostName) {
-		$this->hostName = $hostName;
-		$this->queryParameters["HostName"]=$hostName;
-	}
+        return $this;
+    }
 
-	public function getProcessId() {
-		return $this->processId;
-	}
+    /**
+     * @param string $clusterId
+     *
+     * @return $this
+     */
+    public function setClusterId($clusterId)
+    {
+        $this->requestParameters['ClusterId'] = $clusterId;
+        $this->queryParameters['ClusterId'] = $clusterId;
 
-	public function setProcessId($processId) {
-		$this->processId = $processId;
-		$this->queryParameters["ProcessId"]=$processId;
-	}
-
-	public function getFreq() {
-		return $this->freq;
-	}
-
-	public function setFreq($freq) {
-		$this->freq = $freq;
-		$this->queryParameters["Freq"]=$freq;
-	}
-
-	public function getClusterId() {
-		return $this->clusterId;
-	}
-
-	public function setClusterId($clusterId) {
-		$this->clusterId = $clusterId;
-		$this->queryParameters["ClusterId"]=$clusterId;
-	}
-	
+        return $this;
+    }
 }

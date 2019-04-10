@@ -1,216 +1,264 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace EHPC\Request\V20180412;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of SubmitJob
+ *
+ * @method string getStderrRedirectPath()
+ * @method string getVariables()
+ * @method string getRunasUserPassword()
+ * @method string getPostCmdLine()
+ * @method string getRunasUser()
+ * @method string getClusterId()
+ * @method string getReRunable()
+ * @method string getPriority()
+ * @method string getCommandLine()
+ * @method string getJobQueue()
+ * @method string getArrayRequest()
+ * @method string getUnzipCmd()
+ * @method string getPackagePath()
+ * @method string getInputFileUrl()
+ * @method string getName()
+ * @method string getStdoutRedirectPath()
+ * @method string getContainerId()
+ */
 class SubmitJobRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("EHPC", "2018-04-12", "SubmitJob", "ehs", "openAPI");
-	}
 
-	private  $stderrRedirectPath;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'EHPC',
+            '2018-04-12',
+            'SubmitJob',
+            'ehs'
+        );
+    }
 
-	private  $variables;
+    /**
+     * @param string $stderrRedirectPath
+     *
+     * @return $this
+     */
+    public function setStderrRedirectPath($stderrRedirectPath)
+    {
+        $this->requestParameters['StderrRedirectPath'] = $stderrRedirectPath;
+        $this->queryParameters['StderrRedirectPath'] = $stderrRedirectPath;
 
-	private  $runasUserPassword;
+        return $this;
+    }
 
-	private  $postCmdLine;
+    /**
+     * @param string $variables
+     *
+     * @return $this
+     */
+    public function setVariables($variables)
+    {
+        $this->requestParameters['Variables'] = $variables;
+        $this->queryParameters['Variables'] = $variables;
 
-	private  $runasUser;
+        return $this;
+    }
 
-	private  $clusterId;
+    /**
+     * @param string $runasUserPassword
+     *
+     * @return $this
+     */
+    public function setRunasUserPassword($runasUserPassword)
+    {
+        $this->requestParameters['RunasUserPassword'] = $runasUserPassword;
+        $this->queryParameters['RunasUserPassword'] = $runasUserPassword;
 
-	private  $reRunable;
+        return $this;
+    }
 
-	private  $priority;
+    /**
+     * @param string $postCmdLine
+     *
+     * @return $this
+     */
+    public function setPostCmdLine($postCmdLine)
+    {
+        $this->requestParameters['PostCmdLine'] = $postCmdLine;
+        $this->queryParameters['PostCmdLine'] = $postCmdLine;
 
-	private  $commandLine;
+        return $this;
+    }
 
-	private  $jobQueue;
+    /**
+     * @param string $runasUser
+     *
+     * @return $this
+     */
+    public function setRunasUser($runasUser)
+    {
+        $this->requestParameters['RunasUser'] = $runasUser;
+        $this->queryParameters['RunasUser'] = $runasUser;
 
-	private  $arrayRequest;
+        return $this;
+    }
 
-	private  $unzipCmd;
+    /**
+     * @param string $clusterId
+     *
+     * @return $this
+     */
+    public function setClusterId($clusterId)
+    {
+        $this->requestParameters['ClusterId'] = $clusterId;
+        $this->queryParameters['ClusterId'] = $clusterId;
 
-	private  $packagePath;
+        return $this;
+    }
 
-	private  $inputFileUrl;
+    /**
+     * @param string $reRunable
+     *
+     * @return $this
+     */
+    public function setReRunable($reRunable)
+    {
+        $this->requestParameters['ReRunable'] = $reRunable;
+        $this->queryParameters['ReRunable'] = $reRunable;
 
-	private  $name;
+        return $this;
+    }
 
-	private  $stdoutRedirectPath;
+    /**
+     * @param string $priority
+     *
+     * @return $this
+     */
+    public function setPriority($priority)
+    {
+        $this->requestParameters['Priority'] = $priority;
+        $this->queryParameters['Priority'] = $priority;
 
-	private  $containerId;
+        return $this;
+    }
 
-	public function getStderrRedirectPath() {
-		return $this->stderrRedirectPath;
-	}
+    /**
+     * @param string $commandLine
+     *
+     * @return $this
+     */
+    public function setCommandLine($commandLine)
+    {
+        $this->requestParameters['CommandLine'] = $commandLine;
+        $this->queryParameters['CommandLine'] = $commandLine;
 
-	public function setStderrRedirectPath($stderrRedirectPath) {
-		$this->stderrRedirectPath = $stderrRedirectPath;
-		$this->queryParameters["StderrRedirectPath"]=$stderrRedirectPath;
-	}
+        return $this;
+    }
 
-	public function getVariables() {
-		return $this->variables;
-	}
+    /**
+     * @param string $jobQueue
+     *
+     * @return $this
+     */
+    public function setJobQueue($jobQueue)
+    {
+        $this->requestParameters['JobQueue'] = $jobQueue;
+        $this->queryParameters['JobQueue'] = $jobQueue;
 
-	public function setVariables($variables) {
-		$this->variables = $variables;
-		$this->queryParameters["Variables"]=$variables;
-	}
+        return $this;
+    }
 
-	public function getRunasUserPassword() {
-		return $this->runasUserPassword;
-	}
+    /**
+     * @param string $arrayRequest
+     *
+     * @return $this
+     */
+    public function setArrayRequest($arrayRequest)
+    {
+        $this->requestParameters['ArrayRequest'] = $arrayRequest;
+        $this->queryParameters['ArrayRequest'] = $arrayRequest;
 
-	public function setRunasUserPassword($runasUserPassword) {
-		$this->runasUserPassword = $runasUserPassword;
-		$this->queryParameters["RunasUserPassword"]=$runasUserPassword;
-	}
+        return $this;
+    }
 
-	public function getPostCmdLine() {
-		return $this->postCmdLine;
-	}
+    /**
+     * @param string $unzipCmd
+     *
+     * @return $this
+     */
+    public function setUnzipCmd($unzipCmd)
+    {
+        $this->requestParameters['UnzipCmd'] = $unzipCmd;
+        $this->queryParameters['UnzipCmd'] = $unzipCmd;
 
-	public function setPostCmdLine($postCmdLine) {
-		$this->postCmdLine = $postCmdLine;
-		$this->queryParameters["PostCmdLine"]=$postCmdLine;
-	}
+        return $this;
+    }
 
-	public function getRunasUser() {
-		return $this->runasUser;
-	}
+    /**
+     * @param string $packagePath
+     *
+     * @return $this
+     */
+    public function setPackagePath($packagePath)
+    {
+        $this->requestParameters['PackagePath'] = $packagePath;
+        $this->queryParameters['PackagePath'] = $packagePath;
 
-	public function setRunasUser($runasUser) {
-		$this->runasUser = $runasUser;
-		$this->queryParameters["RunasUser"]=$runasUser;
-	}
+        return $this;
+    }
 
-	public function getClusterId() {
-		return $this->clusterId;
-	}
+    /**
+     * @param string $inputFileUrl
+     *
+     * @return $this
+     */
+    public function setInputFileUrl($inputFileUrl)
+    {
+        $this->requestParameters['InputFileUrl'] = $inputFileUrl;
+        $this->queryParameters['InputFileUrl'] = $inputFileUrl;
 
-	public function setClusterId($clusterId) {
-		$this->clusterId = $clusterId;
-		$this->queryParameters["ClusterId"]=$clusterId;
-	}
+        return $this;
+    }
 
-	public function getReRunable() {
-		return $this->reRunable;
-	}
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
-	public function setReRunable($reRunable) {
-		$this->reRunable = $reRunable;
-		$this->queryParameters["ReRunable"]=$reRunable;
-	}
+        return $this;
+    }
 
-	public function getPriority() {
-		return $this->priority;
-	}
+    /**
+     * @param string $stdoutRedirectPath
+     *
+     * @return $this
+     */
+    public function setStdoutRedirectPath($stdoutRedirectPath)
+    {
+        $this->requestParameters['StdoutRedirectPath'] = $stdoutRedirectPath;
+        $this->queryParameters['StdoutRedirectPath'] = $stdoutRedirectPath;
 
-	public function setPriority($priority) {
-		$this->priority = $priority;
-		$this->queryParameters["Priority"]=$priority;
-	}
+        return $this;
+    }
 
-	public function getCommandLine() {
-		return $this->commandLine;
-	}
+    /**
+     * @param string $containerId
+     *
+     * @return $this
+     */
+    public function setContainerId($containerId)
+    {
+        $this->requestParameters['ContainerId'] = $containerId;
+        $this->queryParameters['ContainerId'] = $containerId;
 
-	public function setCommandLine($commandLine) {
-		$this->commandLine = $commandLine;
-		$this->queryParameters["CommandLine"]=$commandLine;
-	}
-
-	public function getJobQueue() {
-		return $this->jobQueue;
-	}
-
-	public function setJobQueue($jobQueue) {
-		$this->jobQueue = $jobQueue;
-		$this->queryParameters["JobQueue"]=$jobQueue;
-	}
-
-	public function getArrayRequest() {
-		return $this->arrayRequest;
-	}
-
-	public function setArrayRequest($arrayRequest) {
-		$this->arrayRequest = $arrayRequest;
-		$this->queryParameters["ArrayRequest"]=$arrayRequest;
-	}
-
-	public function getUnzipCmd() {
-		return $this->unzipCmd;
-	}
-
-	public function setUnzipCmd($unzipCmd) {
-		$this->unzipCmd = $unzipCmd;
-		$this->queryParameters["UnzipCmd"]=$unzipCmd;
-	}
-
-	public function getPackagePath() {
-		return $this->packagePath;
-	}
-
-	public function setPackagePath($packagePath) {
-		$this->packagePath = $packagePath;
-		$this->queryParameters["PackagePath"]=$packagePath;
-	}
-
-	public function getInputFileUrl() {
-		return $this->inputFileUrl;
-	}
-
-	public function setInputFileUrl($inputFileUrl) {
-		$this->inputFileUrl = $inputFileUrl;
-		$this->queryParameters["InputFileUrl"]=$inputFileUrl;
-	}
-
-	public function getName() {
-		return $this->name;
-	}
-
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
-	}
-
-	public function getStdoutRedirectPath() {
-		return $this->stdoutRedirectPath;
-	}
-
-	public function setStdoutRedirectPath($stdoutRedirectPath) {
-		$this->stdoutRedirectPath = $stdoutRedirectPath;
-		$this->queryParameters["StdoutRedirectPath"]=$stdoutRedirectPath;
-	}
-
-	public function getContainerId() {
-		return $this->containerId;
-	}
-
-	public function setContainerId($containerId) {
-		$this->containerId = $containerId;
-		$this->queryParameters["ContainerId"]=$containerId;
-	}
-	
+        return $this;
+    }
 }

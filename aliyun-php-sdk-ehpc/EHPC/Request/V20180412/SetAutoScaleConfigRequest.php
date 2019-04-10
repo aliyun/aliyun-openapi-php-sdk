@@ -1,191 +1,234 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace EHPC\Request\V20180412;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of SetAutoScaleConfig
+ *
+ * @method string getShrinkIdleTimes()
+ * @method string getGrowTimeoutInMinutes()
+ * @method string getClusterId()
+ * @method string getEnableAutoGrow()
+ * @method string getSpotPriceLimit()
+ * @method string getEnableAutoShrink()
+ * @method string getSpotStrategy()
+ * @method string getMaxNodesInCluster()
+ * @method string getExcludeNodes()
+ * @method string getShrinkIntervalInMinutes()
+ * @method array getQueuess()
+ * @method string getExtraNodesGrowRatio()
+ * @method string getGrowIntervalInMinutes()
+ * @method string getGrowRatio()
+ */
 class SetAutoScaleConfigRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("EHPC", "2018-04-12", "SetAutoScaleConfig", "ehs", "openAPI");
-	}
 
-	private  $shrinkIdleTimes;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'EHPC',
+            '2018-04-12',
+            'SetAutoScaleConfig',
+            'ehs'
+        );
+    }
 
-	private  $growTimeoutInMinutes;
+    /**
+     * @param string $shrinkIdleTimes
+     *
+     * @return $this
+     */
+    public function setShrinkIdleTimes($shrinkIdleTimes)
+    {
+        $this->requestParameters['ShrinkIdleTimes'] = $shrinkIdleTimes;
+        $this->queryParameters['ShrinkIdleTimes'] = $shrinkIdleTimes;
 
-	private  $clusterId;
+        return $this;
+    }
 
-	private  $enableAutoGrow;
+    /**
+     * @param string $growTimeoutInMinutes
+     *
+     * @return $this
+     */
+    public function setGrowTimeoutInMinutes($growTimeoutInMinutes)
+    {
+        $this->requestParameters['GrowTimeoutInMinutes'] = $growTimeoutInMinutes;
+        $this->queryParameters['GrowTimeoutInMinutes'] = $growTimeoutInMinutes;
 
-	private  $spotPriceLimit;
+        return $this;
+    }
 
-	private  $enableAutoShrink;
+    /**
+     * @param string $clusterId
+     *
+     * @return $this
+     */
+    public function setClusterId($clusterId)
+    {
+        $this->requestParameters['ClusterId'] = $clusterId;
+        $this->queryParameters['ClusterId'] = $clusterId;
 
-	private  $spotStrategy;
+        return $this;
+    }
 
-	private  $maxNodesInCluster;
+    /**
+     * @param string $enableAutoGrow
+     *
+     * @return $this
+     */
+    public function setEnableAutoGrow($enableAutoGrow)
+    {
+        $this->requestParameters['EnableAutoGrow'] = $enableAutoGrow;
+        $this->queryParameters['EnableAutoGrow'] = $enableAutoGrow;
 
-	private  $excludeNodes;
+        return $this;
+    }
 
-	private  $shrinkIntervalInMinutes;
+    /**
+     * @param string $spotPriceLimit
+     *
+     * @return $this
+     */
+    public function setSpotPriceLimit($spotPriceLimit)
+    {
+        $this->requestParameters['SpotPriceLimit'] = $spotPriceLimit;
+        $this->queryParameters['SpotPriceLimit'] = $spotPriceLimit;
 
-	private  $Queuess;
+        return $this;
+    }
 
-	private  $extraNodesGrowRatio;
+    /**
+     * @param string $enableAutoShrink
+     *
+     * @return $this
+     */
+    public function setEnableAutoShrink($enableAutoShrink)
+    {
+        $this->requestParameters['EnableAutoShrink'] = $enableAutoShrink;
+        $this->queryParameters['EnableAutoShrink'] = $enableAutoShrink;
 
-	private  $growIntervalInMinutes;
+        return $this;
+    }
 
-	private  $growRatio;
+    /**
+     * @param string $spotStrategy
+     *
+     * @return $this
+     */
+    public function setSpotStrategy($spotStrategy)
+    {
+        $this->requestParameters['SpotStrategy'] = $spotStrategy;
+        $this->queryParameters['SpotStrategy'] = $spotStrategy;
 
-	public function getShrinkIdleTimes() {
-		return $this->shrinkIdleTimes;
-	}
+        return $this;
+    }
 
-	public function setShrinkIdleTimes($shrinkIdleTimes) {
-		$this->shrinkIdleTimes = $shrinkIdleTimes;
-		$this->queryParameters["ShrinkIdleTimes"]=$shrinkIdleTimes;
-	}
+    /**
+     * @param string $maxNodesInCluster
+     *
+     * @return $this
+     */
+    public function setMaxNodesInCluster($maxNodesInCluster)
+    {
+        $this->requestParameters['MaxNodesInCluster'] = $maxNodesInCluster;
+        $this->queryParameters['MaxNodesInCluster'] = $maxNodesInCluster;
 
-	public function getGrowTimeoutInMinutes() {
-		return $this->growTimeoutInMinutes;
-	}
+        return $this;
+    }
 
-	public function setGrowTimeoutInMinutes($growTimeoutInMinutes) {
-		$this->growTimeoutInMinutes = $growTimeoutInMinutes;
-		$this->queryParameters["GrowTimeoutInMinutes"]=$growTimeoutInMinutes;
-	}
+    /**
+     * @param string $excludeNodes
+     *
+     * @return $this
+     */
+    public function setExcludeNodes($excludeNodes)
+    {
+        $this->requestParameters['ExcludeNodes'] = $excludeNodes;
+        $this->queryParameters['ExcludeNodes'] = $excludeNodes;
 
-	public function getClusterId() {
-		return $this->clusterId;
-	}
+        return $this;
+    }
 
-	public function setClusterId($clusterId) {
-		$this->clusterId = $clusterId;
-		$this->queryParameters["ClusterId"]=$clusterId;
-	}
+    /**
+     * @param string $shrinkIntervalInMinutes
+     *
+     * @return $this
+     */
+    public function setShrinkIntervalInMinutes($shrinkIntervalInMinutes)
+    {
+        $this->requestParameters['ShrinkIntervalInMinutes'] = $shrinkIntervalInMinutes;
+        $this->queryParameters['ShrinkIntervalInMinutes'] = $shrinkIntervalInMinutes;
 
-	public function getEnableAutoGrow() {
-		return $this->enableAutoGrow;
-	}
+        return $this;
+    }
 
-	public function setEnableAutoGrow($enableAutoGrow) {
-		$this->enableAutoGrow = $enableAutoGrow;
-		$this->queryParameters["EnableAutoGrow"]=$enableAutoGrow;
-	}
+    /**
+     * @param array $queues
+     *
+     * @return $this
+     */
+    public function setQueuess(array $queues)
+    {
+        $this->requestParameters['Queuess'] = $queues;
+        foreach ($queues as $depth1 => $depth1Value) {
+            $this->queryParameters['Queues.' . ($depth1 + 1) . '.SpotStrategy'] = $depth1Value['SpotStrategy'];
+            $this->queryParameters['Queues.' . ($depth1 + 1) . '.QueueName'] = $depth1Value['QueueName'];
+            foreach ($depth1Value['InstanceTypes'] as $depth2 => $depth2Value) {
+                $this->queryParameters['Queues.' . ($depth1 + 1) . '.InstanceTypes.' . ($depth2 + 1) . '.SpotStrategy'] = $depth2Value['SpotStrategy'];
+                $this->queryParameters['Queues.' . ($depth1 + 1) . '.InstanceTypes.' . ($depth2 + 1) . '.InstanceType'] = $depth2Value['InstanceType'];
+                $this->queryParameters['Queues.' . ($depth1 + 1) . '.InstanceTypes.' . ($depth2 + 1) . '.SpotPriceLimit'] = $depth2Value['SpotPriceLimit'];
+            }
+            $this->queryParameters['Queues.' . ($depth1 + 1) . '.InstanceType'] = $depth1Value['InstanceType'];
+            $this->queryParameters['Queues.' . ($depth1 + 1) . '.EnableAutoGrow'] = $depth1Value['EnableAutoGrow'];
+            $this->queryParameters['Queues.' . ($depth1 + 1) . '.SpotPriceLimit'] = $depth1Value['SpotPriceLimit'];
+            $this->queryParameters['Queues.' . ($depth1 + 1) . '.EnableAutoShrink'] = $depth1Value['EnableAutoShrink'];
+        }
 
-	public function getSpotPriceLimit() {
-		return $this->spotPriceLimit;
-	}
+        return $this;
+    }
 
-	public function setSpotPriceLimit($spotPriceLimit) {
-		$this->spotPriceLimit = $spotPriceLimit;
-		$this->queryParameters["SpotPriceLimit"]=$spotPriceLimit;
-	}
+    /**
+     * @param string $extraNodesGrowRatio
+     *
+     * @return $this
+     */
+    public function setExtraNodesGrowRatio($extraNodesGrowRatio)
+    {
+        $this->requestParameters['ExtraNodesGrowRatio'] = $extraNodesGrowRatio;
+        $this->queryParameters['ExtraNodesGrowRatio'] = $extraNodesGrowRatio;
 
-	public function getEnableAutoShrink() {
-		return $this->enableAutoShrink;
-	}
+        return $this;
+    }
 
-	public function setEnableAutoShrink($enableAutoShrink) {
-		$this->enableAutoShrink = $enableAutoShrink;
-		$this->queryParameters["EnableAutoShrink"]=$enableAutoShrink;
-	}
+    /**
+     * @param string $growIntervalInMinutes
+     *
+     * @return $this
+     */
+    public function setGrowIntervalInMinutes($growIntervalInMinutes)
+    {
+        $this->requestParameters['GrowIntervalInMinutes'] = $growIntervalInMinutes;
+        $this->queryParameters['GrowIntervalInMinutes'] = $growIntervalInMinutes;
 
-	public function getSpotStrategy() {
-		return $this->spotStrategy;
-	}
+        return $this;
+    }
 
-	public function setSpotStrategy($spotStrategy) {
-		$this->spotStrategy = $spotStrategy;
-		$this->queryParameters["SpotStrategy"]=$spotStrategy;
-	}
+    /**
+     * @param string $growRatio
+     *
+     * @return $this
+     */
+    public function setGrowRatio($growRatio)
+    {
+        $this->requestParameters['GrowRatio'] = $growRatio;
+        $this->queryParameters['GrowRatio'] = $growRatio;
 
-	public function getMaxNodesInCluster() {
-		return $this->maxNodesInCluster;
-	}
-
-	public function setMaxNodesInCluster($maxNodesInCluster) {
-		$this->maxNodesInCluster = $maxNodesInCluster;
-		$this->queryParameters["MaxNodesInCluster"]=$maxNodesInCluster;
-	}
-
-	public function getExcludeNodes() {
-		return $this->excludeNodes;
-	}
-
-	public function setExcludeNodes($excludeNodes) {
-		$this->excludeNodes = $excludeNodes;
-		$this->queryParameters["ExcludeNodes"]=$excludeNodes;
-	}
-
-	public function getShrinkIntervalInMinutes() {
-		return $this->shrinkIntervalInMinutes;
-	}
-
-	public function setShrinkIntervalInMinutes($shrinkIntervalInMinutes) {
-		$this->shrinkIntervalInMinutes = $shrinkIntervalInMinutes;
-		$this->queryParameters["ShrinkIntervalInMinutes"]=$shrinkIntervalInMinutes;
-	}
-
-	public function getQueuess() {
-		return $this->Queuess;
-	}
-
-	public function setQueuess($Queuess) {
-		$this->Queuess = $Queuess;
-		for ($i = 0; $i < count($Queuess); $i ++) {	
-			$this->queryParameters['Queues.' . ($i + 1) . '.SpotStrategy'] = $Queuess[$i]['SpotStrategy'];
-			$this->queryParameters['Queues.' . ($i + 1) . '.QueueName'] = $Queuess[$i]['QueueName'];
-			$this->queryParameters['Queues.' . ($i + 1) . '.InstanceType'] = $Queuess[$i]['InstanceType'];
-			$this->queryParameters['Queues.' . ($i + 1) . '.EnableAutoGrow'] = $Queuess[$i]['EnableAutoGrow'];
-			$this->queryParameters['Queues.' . ($i + 1) . '.SpotPriceLimit'] = $Queuess[$i]['SpotPriceLimit'];
-			$this->queryParameters['Queues.' . ($i + 1) . '.EnableAutoShrink'] = $Queuess[$i]['EnableAutoShrink'];
-
-		}
-	}
-
-	public function getExtraNodesGrowRatio() {
-		return $this->extraNodesGrowRatio;
-	}
-
-	public function setExtraNodesGrowRatio($extraNodesGrowRatio) {
-		$this->extraNodesGrowRatio = $extraNodesGrowRatio;
-		$this->queryParameters["ExtraNodesGrowRatio"]=$extraNodesGrowRatio;
-	}
-
-	public function getGrowIntervalInMinutes() {
-		return $this->growIntervalInMinutes;
-	}
-
-	public function setGrowIntervalInMinutes($growIntervalInMinutes) {
-		$this->growIntervalInMinutes = $growIntervalInMinutes;
-		$this->queryParameters["GrowIntervalInMinutes"]=$growIntervalInMinutes;
-	}
-
-	public function getGrowRatio() {
-		return $this->growRatio;
-	}
-
-	public function setGrowRatio($growRatio) {
-		$this->growRatio = $growRatio;
-		$this->queryParameters["GrowRatio"]=$growRatio;
-	}
-	
+        return $this;
+    }
 }

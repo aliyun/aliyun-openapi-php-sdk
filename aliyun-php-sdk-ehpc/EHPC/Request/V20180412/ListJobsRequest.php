@@ -1,95 +1,110 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace EHPC\Request\V20180412;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of ListJobs
+ *
+ * @method string getOwner()
+ * @method string getPageSize()
+ * @method string getClusterId()
+ * @method string getState()
+ * @method string getRerunable()
+ * @method string getPageNumber()
+ */
 class ListJobsRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("EHPC", "2018-04-12", "ListJobs", "ehs", "openAPI");
-	}
 
-	private  $owner;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'EHPC',
+            '2018-04-12',
+            'ListJobs',
+            'ehs'
+        );
+    }
 
-	private  $pageSize;
+    /**
+     * @param string $owner
+     *
+     * @return $this
+     */
+    public function setOwner($owner)
+    {
+        $this->requestParameters['Owner'] = $owner;
+        $this->queryParameters['Owner'] = $owner;
 
-	private  $clusterId;
+        return $this;
+    }
 
-	private  $state;
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	private  $rerunable;
+        return $this;
+    }
 
-	private  $pageNumber;
+    /**
+     * @param string $clusterId
+     *
+     * @return $this
+     */
+    public function setClusterId($clusterId)
+    {
+        $this->requestParameters['ClusterId'] = $clusterId;
+        $this->queryParameters['ClusterId'] = $clusterId;
 
-	public function getOwner() {
-		return $this->owner;
-	}
+        return $this;
+    }
 
-	public function setOwner($owner) {
-		$this->owner = $owner;
-		$this->queryParameters["Owner"]=$owner;
-	}
+    /**
+     * @param string $state
+     *
+     * @return $this
+     */
+    public function setState($state)
+    {
+        $this->requestParameters['State'] = $state;
+        $this->queryParameters['State'] = $state;
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
+        return $this;
+    }
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
+    /**
+     * @param string $rerunable
+     *
+     * @return $this
+     */
+    public function setRerunable($rerunable)
+    {
+        $this->requestParameters['Rerunable'] = $rerunable;
+        $this->queryParameters['Rerunable'] = $rerunable;
 
-	public function getClusterId() {
-		return $this->clusterId;
-	}
+        return $this;
+    }
 
-	public function setClusterId($clusterId) {
-		$this->clusterId = $clusterId;
-		$this->queryParameters["ClusterId"]=$clusterId;
-	}
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
-	public function getState() {
-		return $this->state;
-	}
-
-	public function setState($state) {
-		$this->state = $state;
-		$this->queryParameters["State"]=$state;
-	}
-
-	public function getRerunable() {
-		return $this->rerunable;
-	}
-
-	public function setRerunable($rerunable) {
-		$this->rerunable = $rerunable;
-		$this->queryParameters["Rerunable"]=$rerunable;
-	}
-
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
-
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
-	
+        return $this;
+    }
 }

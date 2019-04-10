@@ -1,150 +1,180 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace EHPC\Request\V20180412;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of EditJobTemplate
+ *
+ * @method string getStderrRedirectPath()
+ * @method string getVariables()
+ * @method string getRunasUser()
+ * @method string getReRunable()
+ * @method string getTemplateId()
+ * @method string getPriority()
+ * @method string getCommandLine()
+ * @method string getArrayRequest()
+ * @method string getPackagePath()
+ * @method string getName()
+ * @method string getStdoutRedirectPath()
+ */
 class EditJobTemplateRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("EHPC", "2018-04-12", "EditJobTemplate", "ehs", "openAPI");
-	}
 
-	private  $stderrRedirectPath;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'EHPC',
+            '2018-04-12',
+            'EditJobTemplate',
+            'ehs'
+        );
+    }
 
-	private  $variables;
+    /**
+     * @param string $stderrRedirectPath
+     *
+     * @return $this
+     */
+    public function setStderrRedirectPath($stderrRedirectPath)
+    {
+        $this->requestParameters['StderrRedirectPath'] = $stderrRedirectPath;
+        $this->queryParameters['StderrRedirectPath'] = $stderrRedirectPath;
 
-	private  $runasUser;
+        return $this;
+    }
 
-	private  $reRunable;
+    /**
+     * @param string $variables
+     *
+     * @return $this
+     */
+    public function setVariables($variables)
+    {
+        $this->requestParameters['Variables'] = $variables;
+        $this->queryParameters['Variables'] = $variables;
 
-	private  $templateId;
+        return $this;
+    }
 
-	private  $priority;
+    /**
+     * @param string $runasUser
+     *
+     * @return $this
+     */
+    public function setRunasUser($runasUser)
+    {
+        $this->requestParameters['RunasUser'] = $runasUser;
+        $this->queryParameters['RunasUser'] = $runasUser;
 
-	private  $commandLine;
+        return $this;
+    }
 
-	private  $arrayRequest;
+    /**
+     * @param string $reRunable
+     *
+     * @return $this
+     */
+    public function setReRunable($reRunable)
+    {
+        $this->requestParameters['ReRunable'] = $reRunable;
+        $this->queryParameters['ReRunable'] = $reRunable;
 
-	private  $packagePath;
+        return $this;
+    }
 
-	private  $name;
+    /**
+     * @param string $templateId
+     *
+     * @return $this
+     */
+    public function setTemplateId($templateId)
+    {
+        $this->requestParameters['TemplateId'] = $templateId;
+        $this->queryParameters['TemplateId'] = $templateId;
 
-	private  $stdoutRedirectPath;
+        return $this;
+    }
 
-	public function getStderrRedirectPath() {
-		return $this->stderrRedirectPath;
-	}
+    /**
+     * @param string $priority
+     *
+     * @return $this
+     */
+    public function setPriority($priority)
+    {
+        $this->requestParameters['Priority'] = $priority;
+        $this->queryParameters['Priority'] = $priority;
 
-	public function setStderrRedirectPath($stderrRedirectPath) {
-		$this->stderrRedirectPath = $stderrRedirectPath;
-		$this->queryParameters["StderrRedirectPath"]=$stderrRedirectPath;
-	}
+        return $this;
+    }
 
-	public function getVariables() {
-		return $this->variables;
-	}
+    /**
+     * @param string $commandLine
+     *
+     * @return $this
+     */
+    public function setCommandLine($commandLine)
+    {
+        $this->requestParameters['CommandLine'] = $commandLine;
+        $this->queryParameters['CommandLine'] = $commandLine;
 
-	public function setVariables($variables) {
-		$this->variables = $variables;
-		$this->queryParameters["Variables"]=$variables;
-	}
+        return $this;
+    }
 
-	public function getRunasUser() {
-		return $this->runasUser;
-	}
+    /**
+     * @param string $arrayRequest
+     *
+     * @return $this
+     */
+    public function setArrayRequest($arrayRequest)
+    {
+        $this->requestParameters['ArrayRequest'] = $arrayRequest;
+        $this->queryParameters['ArrayRequest'] = $arrayRequest;
 
-	public function setRunasUser($runasUser) {
-		$this->runasUser = $runasUser;
-		$this->queryParameters["RunasUser"]=$runasUser;
-	}
+        return $this;
+    }
 
-	public function getReRunable() {
-		return $this->reRunable;
-	}
+    /**
+     * @param string $packagePath
+     *
+     * @return $this
+     */
+    public function setPackagePath($packagePath)
+    {
+        $this->requestParameters['PackagePath'] = $packagePath;
+        $this->queryParameters['PackagePath'] = $packagePath;
 
-	public function setReRunable($reRunable) {
-		$this->reRunable = $reRunable;
-		$this->queryParameters["ReRunable"]=$reRunable;
-	}
+        return $this;
+    }
 
-	public function getTemplateId() {
-		return $this->templateId;
-	}
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
-	public function setTemplateId($templateId) {
-		$this->templateId = $templateId;
-		$this->queryParameters["TemplateId"]=$templateId;
-	}
+        return $this;
+    }
 
-	public function getPriority() {
-		return $this->priority;
-	}
+    /**
+     * @param string $stdoutRedirectPath
+     *
+     * @return $this
+     */
+    public function setStdoutRedirectPath($stdoutRedirectPath)
+    {
+        $this->requestParameters['StdoutRedirectPath'] = $stdoutRedirectPath;
+        $this->queryParameters['StdoutRedirectPath'] = $stdoutRedirectPath;
 
-	public function setPriority($priority) {
-		$this->priority = $priority;
-		$this->queryParameters["Priority"]=$priority;
-	}
-
-	public function getCommandLine() {
-		return $this->commandLine;
-	}
-
-	public function setCommandLine($commandLine) {
-		$this->commandLine = $commandLine;
-		$this->queryParameters["CommandLine"]=$commandLine;
-	}
-
-	public function getArrayRequest() {
-		return $this->arrayRequest;
-	}
-
-	public function setArrayRequest($arrayRequest) {
-		$this->arrayRequest = $arrayRequest;
-		$this->queryParameters["ArrayRequest"]=$arrayRequest;
-	}
-
-	public function getPackagePath() {
-		return $this->packagePath;
-	}
-
-	public function setPackagePath($packagePath) {
-		$this->packagePath = $packagePath;
-		$this->queryParameters["PackagePath"]=$packagePath;
-	}
-
-	public function getName() {
-		return $this->name;
-	}
-
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
-	}
-
-	public function getStdoutRedirectPath() {
-		return $this->stdoutRedirectPath;
-	}
-
-	public function setStdoutRedirectPath($stdoutRedirectPath) {
-		$this->stdoutRedirectPath = $stdoutRedirectPath;
-		$this->queryParameters["StdoutRedirectPath"]=$stdoutRedirectPath;
-	}
-	
+        return $this;
+    }
 }

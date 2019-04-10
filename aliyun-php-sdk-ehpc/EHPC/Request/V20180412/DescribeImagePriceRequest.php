@@ -1,95 +1,110 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace EHPC\Request\V20180412;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of DescribeImagePrice
+ *
+ * @method string getPeriod()
+ * @method string getAmount()
+ * @method string getImageId()
+ * @method string getPriceUnit()
+ * @method string getSkuCode()
+ * @method string getOrderType()
+ */
 class DescribeImagePriceRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("EHPC", "2018-04-12", "DescribeImagePrice", "ehs", "openAPI");
-	}
 
-	private  $period;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'EHPC',
+            '2018-04-12',
+            'DescribeImagePrice',
+            'ehs'
+        );
+    }
 
-	private  $amount;
+    /**
+     * @param string $period
+     *
+     * @return $this
+     */
+    public function setPeriod($period)
+    {
+        $this->requestParameters['Period'] = $period;
+        $this->queryParameters['Period'] = $period;
 
-	private  $imageId;
+        return $this;
+    }
 
-	private  $priceUnit;
+    /**
+     * @param string $amount
+     *
+     * @return $this
+     */
+    public function setAmount($amount)
+    {
+        $this->requestParameters['Amount'] = $amount;
+        $this->queryParameters['Amount'] = $amount;
 
-	private  $skuCode;
+        return $this;
+    }
 
-	private  $orderType;
+    /**
+     * @param string $imageId
+     *
+     * @return $this
+     */
+    public function setImageId($imageId)
+    {
+        $this->requestParameters['ImageId'] = $imageId;
+        $this->queryParameters['ImageId'] = $imageId;
 
-	public function getPeriod() {
-		return $this->period;
-	}
+        return $this;
+    }
 
-	public function setPeriod($period) {
-		$this->period = $period;
-		$this->queryParameters["Period"]=$period;
-	}
+    /**
+     * @param string $priceUnit
+     *
+     * @return $this
+     */
+    public function setPriceUnit($priceUnit)
+    {
+        $this->requestParameters['PriceUnit'] = $priceUnit;
+        $this->queryParameters['PriceUnit'] = $priceUnit;
 
-	public function getAmount() {
-		return $this->amount;
-	}
+        return $this;
+    }
 
-	public function setAmount($amount) {
-		$this->amount = $amount;
-		$this->queryParameters["Amount"]=$amount;
-	}
+    /**
+     * @param string $skuCode
+     *
+     * @return $this
+     */
+    public function setSkuCode($skuCode)
+    {
+        $this->requestParameters['SkuCode'] = $skuCode;
+        $this->queryParameters['SkuCode'] = $skuCode;
 
-	public function getImageId() {
-		return $this->imageId;
-	}
+        return $this;
+    }
 
-	public function setImageId($imageId) {
-		$this->imageId = $imageId;
-		$this->queryParameters["ImageId"]=$imageId;
-	}
+    /**
+     * @param string $orderType
+     *
+     * @return $this
+     */
+    public function setOrderType($orderType)
+    {
+        $this->requestParameters['OrderType'] = $orderType;
+        $this->queryParameters['OrderType'] = $orderType;
 
-	public function getPriceUnit() {
-		return $this->priceUnit;
-	}
-
-	public function setPriceUnit($priceUnit) {
-		$this->priceUnit = $priceUnit;
-		$this->queryParameters["PriceUnit"]=$priceUnit;
-	}
-
-	public function getSkuCode() {
-		return $this->skuCode;
-	}
-
-	public function setSkuCode($skuCode) {
-		$this->skuCode = $skuCode;
-		$this->queryParameters["SkuCode"]=$skuCode;
-	}
-
-	public function getOrderType() {
-		return $this->orderType;
-	}
-
-	public function setOrderType($orderType) {
-		$this->orderType = $orderType;
-		$this->queryParameters["OrderType"]=$orderType;
-	}
-	
+        return $this;
+    }
 }

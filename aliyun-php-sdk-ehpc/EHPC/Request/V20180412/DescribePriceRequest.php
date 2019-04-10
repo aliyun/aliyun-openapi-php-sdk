@@ -1,82 +1,90 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace EHPC\Request\V20180412;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of DescribePrice
+ *
+ * @method string getPriceUnit()
+ * @method array getCommoditiess()
+ * @method string getChargeType()
+ * @method string getOrderType()
+ */
 class DescribePriceRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("EHPC", "2018-04-12", "DescribePrice", "ehs", "openAPI");
-	}
 
-	private  $priceUnit;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'EHPC',
+            '2018-04-12',
+            'DescribePrice',
+            'ehs'
+        );
+    }
 
-	private  $Commoditiess;
+    /**
+     * @param string $priceUnit
+     *
+     * @return $this
+     */
+    public function setPriceUnit($priceUnit)
+    {
+        $this->requestParameters['PriceUnit'] = $priceUnit;
+        $this->queryParameters['PriceUnit'] = $priceUnit;
 
-	private  $chargeType;
+        return $this;
+    }
 
-	private  $orderType;
+    /**
+     * @param array $commodities
+     *
+     * @return $this
+     */
+    public function setCommoditiess(array $commodities)
+    {
+        $this->requestParameters['Commoditiess'] = $commodities;
+        foreach ($commodities as $depth1 => $depth1Value) {
+            $this->queryParameters['Commodities.' . ($depth1 + 1) . '.Amount'] = $depth1Value['Amount'];
+            $this->queryParameters['Commodities.' . ($depth1 + 1) . '.Period'] = $depth1Value['Period'];
+            $this->queryParameters['Commodities.' . ($depth1 + 1) . '.NodeType'] = $depth1Value['NodeType'];
+            $this->queryParameters['Commodities.' . ($depth1 + 1) . '.SystemDiskCategory'] = $depth1Value['SystemDiskCategory'];
+            $this->queryParameters['Commodities.' . ($depth1 + 1) . '.SystemDiskSize'] = $depth1Value['SystemDiskSize'];
+            $this->queryParameters['Commodities.' . ($depth1 + 1) . '.InstanceType'] = $depth1Value['InstanceType'];
+            $this->queryParameters['Commodities.' . ($depth1 + 1) . '.NetworkType'] = $depth1Value['NetworkType'];
+        }
 
-	public function getPriceUnit() {
-		return $this->priceUnit;
-	}
+        return $this;
+    }
 
-	public function setPriceUnit($priceUnit) {
-		$this->priceUnit = $priceUnit;
-		$this->queryParameters["PriceUnit"]=$priceUnit;
-	}
+    /**
+     * @param string $chargeType
+     *
+     * @return $this
+     */
+    public function setChargeType($chargeType)
+    {
+        $this->requestParameters['ChargeType'] = $chargeType;
+        $this->queryParameters['ChargeType'] = $chargeType;
 
-	public function getCommoditiess() {
-		return $this->Commoditiess;
-	}
+        return $this;
+    }
 
-	public function setCommoditiess($Commoditiess) {
-		$this->Commoditiess = $Commoditiess;
-		for ($i = 0; $i < count($Commoditiess); $i ++) {	
-			$this->queryParameters['Commodities.' . ($i + 1) . '.Amount'] = $Commoditiess[$i]['Amount'];
-			$this->queryParameters['Commodities.' . ($i + 1) . '.Period'] = $Commoditiess[$i]['Period'];
-			$this->queryParameters['Commodities.' . ($i + 1) . '.NodeType'] = $Commoditiess[$i]['NodeType'];
-			$this->queryParameters['Commodities.' . ($i + 1) . '.SystemDiskCategory'] = $Commoditiess[$i]['SystemDiskCategory'];
-			$this->queryParameters['Commodities.' . ($i + 1) . '.SystemDiskSize'] = $Commoditiess[$i]['SystemDiskSize'];
-			$this->queryParameters['Commodities.' . ($i + 1) . '.InstanceType'] = $Commoditiess[$i]['InstanceType'];
-			$this->queryParameters['Commodities.' . ($i + 1) . '.NetworkType'] = $Commoditiess[$i]['NetworkType'];
+    /**
+     * @param string $orderType
+     *
+     * @return $this
+     */
+    public function setOrderType($orderType)
+    {
+        $this->requestParameters['OrderType'] = $orderType;
+        $this->queryParameters['OrderType'] = $orderType;
 
-		}
-	}
-
-	public function getChargeType() {
-		return $this->chargeType;
-	}
-
-	public function setChargeType($chargeType) {
-		$this->chargeType = $chargeType;
-		$this->queryParameters["ChargeType"]=$chargeType;
-	}
-
-	public function getOrderType() {
-		return $this->orderType;
-	}
-
-	public function setOrderType($orderType) {
-		$this->orderType = $orderType;
-		$this->queryParameters["OrderType"]=$orderType;
-	}
-	
+        return $this;
+    }
 }

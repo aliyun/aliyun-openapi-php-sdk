@@ -1,51 +1,54 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace EHPC\Request\V20180412;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of ListInvocationStatus
+ *
+ * @method string getClusterId()
+ * @method string getCommandId()
+ */
 class ListInvocationStatusRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("EHPC", "2018-04-12", "ListInvocationStatus", "ehs", "openAPI");
-	}
 
-	private  $clusterId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'EHPC',
+            '2018-04-12',
+            'ListInvocationStatus',
+            'ehs'
+        );
+    }
 
-	private  $commandId;
+    /**
+     * @param string $clusterId
+     *
+     * @return $this
+     */
+    public function setClusterId($clusterId)
+    {
+        $this->requestParameters['ClusterId'] = $clusterId;
+        $this->queryParameters['ClusterId'] = $clusterId;
 
-	public function getClusterId() {
-		return $this->clusterId;
-	}
+        return $this;
+    }
 
-	public function setClusterId($clusterId) {
-		$this->clusterId = $clusterId;
-		$this->queryParameters["ClusterId"]=$clusterId;
-	}
+    /**
+     * @param string $commandId
+     *
+     * @return $this
+     */
+    public function setCommandId($commandId)
+    {
+        $this->requestParameters['CommandId'] = $commandId;
+        $this->queryParameters['CommandId'] = $commandId;
 
-	public function getCommandId() {
-		return $this->commandId;
-	}
-
-	public function setCommandId($commandId) {
-		$this->commandId = $commandId;
-		$this->queryParameters["CommandId"]=$commandId;
-	}
-	
+        return $this;
+    }
 }

@@ -1,40 +1,40 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace EHPC\Request\V20180412;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of DeleteJobTemplates
+ *
+ * @method string getTemplates()
+ */
 class DeleteJobTemplatesRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("EHPC", "2018-04-12", "DeleteJobTemplates", "ehs", "openAPI");
-	}
 
-	private  $templates;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'EHPC',
+            '2018-04-12',
+            'DeleteJobTemplates',
+            'ehs'
+        );
+    }
 
-	public function getTemplates() {
-		return $this->templates;
-	}
+    /**
+     * @param string $templates
+     *
+     * @return $this
+     */
+    public function setTemplates($templates)
+    {
+        $this->requestParameters['Templates'] = $templates;
+        $this->queryParameters['Templates'] = $templates;
 
-	public function setTemplates($templates) {
-		$this->templates = $templates;
-		$this->queryParameters["Templates"]=$templates;
-	}
-	
+        return $this;
+    }
 }

@@ -1,133 +1,156 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace EHPC\Request\V20180412;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of ModifyImageGatewayConfig
+ *
+ * @method string getDefaultRepoLocation()
+ * @method string getDBPassword()
+ * @method array getRepos()
+ * @method string getDBType()
+ * @method string getDBUsername()
+ * @method string getDBServerInfo()
+ * @method string getPullUpdateTimeout()
+ * @method string getClusterId()
+ * @method string getImageExpirationTimeout()
+ */
 class ModifyImageGatewayConfigRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("EHPC", "2018-04-12", "ModifyImageGatewayConfig", "ehs", "openAPI");
-	}
 
-	private  $defaultRepoLocation;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'EHPC',
+            '2018-04-12',
+            'ModifyImageGatewayConfig',
+            'ehs'
+        );
+    }
 
-	private  $dBPassword;
+    /**
+     * @param string $defaultRepoLocation
+     *
+     * @return $this
+     */
+    public function setDefaultRepoLocation($defaultRepoLocation)
+    {
+        $this->requestParameters['DefaultRepoLocation'] = $defaultRepoLocation;
+        $this->queryParameters['DefaultRepoLocation'] = $defaultRepoLocation;
 
-	private  $Repos;
+        return $this;
+    }
 
-	private  $dBType;
+    /**
+     * @param string $dBPassword
+     *
+     * @return $this
+     */
+    public function setDBPassword($dBPassword)
+    {
+        $this->requestParameters['DBPassword'] = $dBPassword;
+        $this->queryParameters['DBPassword'] = $dBPassword;
 
-	private  $dBUsername;
+        return $this;
+    }
 
-	private  $dBServerInfo;
+    /**
+     * @param array $repo
+     *
+     * @return $this
+     */
+    public function setRepos(array $repo)
+    {
+        $this->requestParameters['Repos'] = $repo;
+        foreach ($repo as $depth1 => $depth1Value) {
+            $this->queryParameters['Repo.' . ($depth1 + 1) . '.Auth'] = $depth1Value['Auth'];
+            $this->queryParameters['Repo.' . ($depth1 + 1) . '.Location'] = $depth1Value['Location'];
+            $this->queryParameters['Repo.' . ($depth1 + 1) . '.URL'] = $depth1Value['URL'];
+        }
 
-	private  $pullUpdateTimeout;
+        return $this;
+    }
 
-	private  $clusterId;
+    /**
+     * @param string $dBType
+     *
+     * @return $this
+     */
+    public function setDBType($dBType)
+    {
+        $this->requestParameters['DBType'] = $dBType;
+        $this->queryParameters['DBType'] = $dBType;
 
-	private  $imageExpirationTimeout;
+        return $this;
+    }
 
-	public function getDefaultRepoLocation() {
-		return $this->defaultRepoLocation;
-	}
+    /**
+     * @param string $dBUsername
+     *
+     * @return $this
+     */
+    public function setDBUsername($dBUsername)
+    {
+        $this->requestParameters['DBUsername'] = $dBUsername;
+        $this->queryParameters['DBUsername'] = $dBUsername;
 
-	public function setDefaultRepoLocation($defaultRepoLocation) {
-		$this->defaultRepoLocation = $defaultRepoLocation;
-		$this->queryParameters["DefaultRepoLocation"]=$defaultRepoLocation;
-	}
+        return $this;
+    }
 
-	public function getDBPassword() {
-		return $this->dBPassword;
-	}
+    /**
+     * @param string $dBServerInfo
+     *
+     * @return $this
+     */
+    public function setDBServerInfo($dBServerInfo)
+    {
+        $this->requestParameters['DBServerInfo'] = $dBServerInfo;
+        $this->queryParameters['DBServerInfo'] = $dBServerInfo;
 
-	public function setDBPassword($dBPassword) {
-		$this->dBPassword = $dBPassword;
-		$this->queryParameters["DBPassword"]=$dBPassword;
-	}
+        return $this;
+    }
 
-	public function getRepos() {
-		return $this->Repos;
-	}
+    /**
+     * @param string $pullUpdateTimeout
+     *
+     * @return $this
+     */
+    public function setPullUpdateTimeout($pullUpdateTimeout)
+    {
+        $this->requestParameters['PullUpdateTimeout'] = $pullUpdateTimeout;
+        $this->queryParameters['PullUpdateTimeout'] = $pullUpdateTimeout;
 
-	public function setRepos($Repos) {
-		$this->Repos = $Repos;
-		for ($i = 0; $i < count($Repos); $i ++) {	
-			$this->queryParameters['Repo.' . ($i + 1) . '.Auth'] = $Repos[$i]['Auth'];
-			$this->queryParameters['Repo.' . ($i + 1) . '.Location'] = $Repos[$i]['Location'];
-			$this->queryParameters['Repo.' . ($i + 1) . '.URL'] = $Repos[$i]['URL'];
+        return $this;
+    }
 
-		}
-	}
+    /**
+     * @param string $clusterId
+     *
+     * @return $this
+     */
+    public function setClusterId($clusterId)
+    {
+        $this->requestParameters['ClusterId'] = $clusterId;
+        $this->queryParameters['ClusterId'] = $clusterId;
 
-	public function getDBType() {
-		return $this->dBType;
-	}
+        return $this;
+    }
 
-	public function setDBType($dBType) {
-		$this->dBType = $dBType;
-		$this->queryParameters["DBType"]=$dBType;
-	}
+    /**
+     * @param string $imageExpirationTimeout
+     *
+     * @return $this
+     */
+    public function setImageExpirationTimeout($imageExpirationTimeout)
+    {
+        $this->requestParameters['ImageExpirationTimeout'] = $imageExpirationTimeout;
+        $this->queryParameters['ImageExpirationTimeout'] = $imageExpirationTimeout;
 
-	public function getDBUsername() {
-		return $this->dBUsername;
-	}
-
-	public function setDBUsername($dBUsername) {
-		$this->dBUsername = $dBUsername;
-		$this->queryParameters["DBUsername"]=$dBUsername;
-	}
-
-	public function getDBServerInfo() {
-		return $this->dBServerInfo;
-	}
-
-	public function setDBServerInfo($dBServerInfo) {
-		$this->dBServerInfo = $dBServerInfo;
-		$this->queryParameters["DBServerInfo"]=$dBServerInfo;
-	}
-
-	public function getPullUpdateTimeout() {
-		return $this->pullUpdateTimeout;
-	}
-
-	public function setPullUpdateTimeout($pullUpdateTimeout) {
-		$this->pullUpdateTimeout = $pullUpdateTimeout;
-		$this->queryParameters["PullUpdateTimeout"]=$pullUpdateTimeout;
-	}
-
-	public function getClusterId() {
-		return $this->clusterId;
-	}
-
-	public function setClusterId($clusterId) {
-		$this->clusterId = $clusterId;
-		$this->queryParameters["ClusterId"]=$clusterId;
-	}
-
-	public function getImageExpirationTimeout() {
-		return $this->imageExpirationTimeout;
-	}
-
-	public function setImageExpirationTimeout($imageExpirationTimeout) {
-		$this->imageExpirationTimeout = $imageExpirationTimeout;
-		$this->queryParameters["ImageExpirationTimeout"]=$imageExpirationTimeout;
-	}
-	
+        return $this;
+    }
 }
