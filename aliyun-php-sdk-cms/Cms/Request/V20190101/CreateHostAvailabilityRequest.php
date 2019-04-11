@@ -10,6 +10,7 @@ namespace Cms\Request\V20190101;
  * @method array getInstanceLists()
  * @method string getTaskType()
  * @method string getTaskOptionHttpMethod()
+ * @method array getAlertConfigEscalationLists()
  * @method string getGroupId()
  * @method string getTaskName()
  * @method string getAlertConfigSilenceTime()
@@ -22,7 +23,6 @@ namespace Cms\Request\V20190101;
  * @method string getAlertConfigStartTime()
  * @method string getTaskOptionTelnetOrPingHost()
  * @method string getTaskOptionHttpResponseMatchContent()
- * @method array getAlertConfigEscalationLists()
  * @method string getAlertConfigWebHook()
  */
 class CreateHostAvailabilityRequest extends \RpcAcsRequest
@@ -83,6 +83,25 @@ class CreateHostAvailabilityRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TaskOptionHttpMethod'] = $taskOptionHttpMethod;
         $this->queryParameters['TaskOption.HttpMethod'] = $taskOptionHttpMethod;
+
+        return $this;
+    }
+
+    /**
+     * @param array $alertConfigEscalationList
+     *
+     * @return $this
+     */
+    public function setAlertConfigEscalationLists(array $alertConfigEscalationList)
+    {
+        $this->requestParameters['AlertConfigEscalationLists'] = $alertConfigEscalationList;
+        foreach ($alertConfigEscalationList as $depth1 => $depth1Value) {
+            $this->queryParameters['AlertConfigEscalationList.' . ($depth1 + 1) . '.Times'] = $depth1Value['Times'];
+            $this->queryParameters['AlertConfigEscalationList.' . ($depth1 + 1) . '.MetricName'] = $depth1Value['MetricName'];
+            $this->queryParameters['AlertConfigEscalationList.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+            $this->queryParameters['AlertConfigEscalationList.' . ($depth1 + 1) . '.Operator'] = $depth1Value['Operator'];
+            $this->queryParameters['AlertConfigEscalationList.' . ($depth1 + 1) . '.Aggregate'] = $depth1Value['Aggregate'];
+        }
 
         return $this;
     }
@@ -239,25 +258,6 @@ class CreateHostAvailabilityRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TaskOptionHttpResponseMatchContent'] = $taskOptionHttpResponseMatchContent;
         $this->queryParameters['TaskOption.HttpResponseMatchContent'] = $taskOptionHttpResponseMatchContent;
-
-        return $this;
-    }
-
-    /**
-     * @param array $alertConfigEscalationList
-     *
-     * @return $this
-     */
-    public function setAlertConfigEscalationLists(array $alertConfigEscalationList)
-    {
-        $this->requestParameters['AlertConfigEscalationLists'] = $alertConfigEscalationList;
-        foreach ($alertConfigEscalationList as $depth1 => $depth1Value) {
-            $this->queryParameters['AlertConfig.EscalationList.' . ($depth1 + 1) . '.Times'] = $depth1Value['Times'];
-            $this->queryParameters['AlertConfig.EscalationList.' . ($depth1 + 1) . '.MetricName'] = $depth1Value['MetricName'];
-            $this->queryParameters['AlertConfig.EscalationList.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
-            $this->queryParameters['AlertConfig.EscalationList.' . ($depth1 + 1) . '.Operator'] = $depth1Value['Operator'];
-            $this->queryParameters['AlertConfig.EscalationList.' . ($depth1 + 1) . '.Aggregate'] = $depth1Value['Aggregate'];
-        }
 
         return $this;
     }
