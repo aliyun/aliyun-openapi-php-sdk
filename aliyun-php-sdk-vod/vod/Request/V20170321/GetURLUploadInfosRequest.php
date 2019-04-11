@@ -3,6 +3,8 @@
 namespace vod\Request\V20170321;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of GetURLUploadInfos
  *
  * @method string getResourceOwnerId()

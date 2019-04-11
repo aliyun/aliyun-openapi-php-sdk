@@ -3,9 +3,12 @@
 namespace vod\Request\V20170321;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of AddEditingProject
  *
  * @method string getCoverURL()
+ * @method string getDivision()
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
@@ -44,6 +47,19 @@ class AddEditingProjectRequest extends \RpcAcsRequest
     {
         $this->requestParameters['CoverURL'] = $coverURL;
         $this->queryParameters['CoverURL'] = $coverURL;
+
+        return $this;
+    }
+
+    /**
+     * @param string $division
+     *
+     * @return $this
+     */
+    public function setDivision($division)
+    {
+        $this->requestParameters['Division'] = $division;
+        $this->queryParameters['Division'] = $division;
 
         return $this;
     }

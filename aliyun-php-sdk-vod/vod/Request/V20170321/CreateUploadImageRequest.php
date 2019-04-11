@@ -3,6 +3,8 @@
 namespace vod\Request\V20170321;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of CreateUploadImage
  *
  * @method string getResourceOwnerId()
@@ -17,6 +19,7 @@ namespace vod\Request\V20170321;
  * @method string getUserData()
  * @method string getOriginalFileName()
  * @method string getCateId()
+ * @method string getAppId()
  */
 class CreateUploadImageRequest extends \RpcAcsRequest
 {
@@ -191,6 +194,19 @@ class CreateUploadImageRequest extends \RpcAcsRequest
     {
         $this->requestParameters['CateId'] = $cateId;
         $this->queryParameters['CateId'] = $cateId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $appId
+     *
+     * @return $this
+     */
+    public function setAppId($appId)
+    {
+        $this->requestParameters['AppId'] = $appId;
+        $this->queryParameters['AppId'] = $appId;
 
         return $this;
     }

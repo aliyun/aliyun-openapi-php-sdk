@@ -3,10 +3,13 @@
 namespace vod\Request\V20170321;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of GetVideoInfos
  *
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
+ * @method string getAdditionType()
  * @method string getOwnerId()
  * @method string getVideoIds()
  */
@@ -53,6 +56,19 @@ class GetVideoInfosRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $additionType
+     *
+     * @return $this
+     */
+    public function setAdditionType($additionType)
+    {
+        $this->requestParameters['AdditionType'] = $additionType;
+        $this->queryParameters['AdditionType'] = $additionType;
 
         return $this;
     }

@@ -3,10 +3,14 @@
 namespace vod\Request\V20170321;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of CreateUploadAttachedMedia
  *
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
+ * @method string getCateIds()
+ * @method string getIcon()
  * @method string getDescription()
  * @method string getFileSize()
  * @method string getOwnerId()
@@ -18,6 +22,7 @@ namespace vod\Request\V20170321;
  * @method string getMediaExt()
  * @method string getFileName()
  * @method string getCateId()
+ * @method string getAppId()
  */
 class CreateUploadAttachedMediaRequest extends \RpcAcsRequest
 {
@@ -62,6 +67,32 @@ class CreateUploadAttachedMediaRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $cateIds
+     *
+     * @return $this
+     */
+    public function setCateIds($cateIds)
+    {
+        $this->requestParameters['CateIds'] = $cateIds;
+        $this->queryParameters['CateIds'] = $cateIds;
+
+        return $this;
+    }
+
+    /**
+     * @param string $icon
+     *
+     * @return $this
+     */
+    public function setIcon($icon)
+    {
+        $this->requestParameters['Icon'] = $icon;
+        $this->queryParameters['Icon'] = $icon;
 
         return $this;
     }
@@ -205,6 +236,19 @@ class CreateUploadAttachedMediaRequest extends \RpcAcsRequest
     {
         $this->requestParameters['CateId'] = $cateId;
         $this->queryParameters['CateId'] = $cateId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $appId
+     *
+     * @return $this
+     */
+    public function setAppId($appId)
+    {
+        $this->requestParameters['AppId'] = $appId;
+        $this->queryParameters['AppId'] = $appId;
 
         return $this;
     }

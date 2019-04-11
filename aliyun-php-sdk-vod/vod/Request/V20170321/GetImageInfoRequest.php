@@ -3,11 +3,14 @@
 namespace vod\Request\V20170321;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of GetImageInfo
  *
  * @method string getResourceOwnerId()
  * @method string getImageId()
  * @method string getResourceOwnerAccount()
+ * @method string getOutputType()
  * @method string getOwnerId()
  * @method string getAuthTimeout()
  */
@@ -67,6 +70,19 @@ class GetImageInfoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $outputType
+     *
+     * @return $this
+     */
+    public function setOutputType($outputType)
+    {
+        $this->requestParameters['OutputType'] = $outputType;
+        $this->queryParameters['OutputType'] = $outputType;
 
         return $this;
     }

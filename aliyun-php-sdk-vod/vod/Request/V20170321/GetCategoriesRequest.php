@@ -3,6 +3,8 @@
 namespace vod\Request\V20170321;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of GetCategories
  *
  * @method string getResourceOwnerId()
@@ -12,6 +14,7 @@ namespace vod\Request\V20170321;
  * @method string getPageSize()
  * @method string getSortBy()
  * @method string getOwnerId()
+ * @method string getType()
  */
 class GetCategoriesRequest extends \RpcAcsRequest
 {
@@ -121,6 +124,19 @@ class GetCategoriesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->requestParameters['Type'] = $type;
+        $this->queryParameters['Type'] = $type;
 
         return $this;
     }

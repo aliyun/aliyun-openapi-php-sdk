@@ -3,11 +3,14 @@
 namespace vod\Request\V20170321;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of AddCategory
  *
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerId()
+ * @method string getType()
  * @method string getParentId()
  * @method string getCateName()
  */
@@ -67,6 +70,19 @@ class AddCategoryRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->requestParameters['Type'] = $type;
+        $this->queryParameters['Type'] = $type;
 
         return $this;
     }

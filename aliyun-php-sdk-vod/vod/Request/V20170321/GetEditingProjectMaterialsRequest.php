@@ -3,9 +3,12 @@
 namespace vod\Request\V20170321;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of GetEditingProjectMaterials
  *
  * @method string getResourceOwnerId()
+ * @method string getMaterialType()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
@@ -42,6 +45,19 @@ class GetEditingProjectMaterialsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $materialType
+     *
+     * @return $this
+     */
+    public function setMaterialType($materialType)
+    {
+        $this->requestParameters['MaterialType'] = $materialType;
+        $this->queryParameters['MaterialType'] = $materialType;
 
         return $this;
     }
