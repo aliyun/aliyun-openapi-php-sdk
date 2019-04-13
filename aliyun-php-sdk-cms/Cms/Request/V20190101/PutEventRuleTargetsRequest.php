@@ -20,7 +20,7 @@ class PutEventRuleTargetsRequest extends \RpcAcsRequest
     /**
      * @var string
      */
-    protected $method = 'POST';
+    protected $method = 'PUT';
 
     /**
      * Class constructor.

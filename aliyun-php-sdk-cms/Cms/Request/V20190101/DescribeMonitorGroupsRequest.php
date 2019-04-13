@@ -10,11 +10,9 @@ namespace Cms\Request\V20190101;
  * @method string getSelectContactGroups()
  * @method string getInstanceId()
  * @method string getPageSize()
- * @method string getType()
  * @method string getKeyword()
  * @method string getGroupName()
  * @method string getPageNumber()
- * @method string getBindUrls()
  */
 class DescribeMonitorGroupsRequest extends \RpcAcsRequest
 {
@@ -77,19 +75,6 @@ class DescribeMonitorGroupsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->requestParameters['Type'] = $type;
-        $this->queryParameters['Type'] = $type;
-
-        return $this;
-    }
-
-    /**
      * @param string $keyword
      *
      * @return $this
@@ -124,19 +109,6 @@ class DescribeMonitorGroupsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageNumber'] = $pageNumber;
         $this->queryParameters['PageNumber'] = $pageNumber;
-
-        return $this;
-    }
-
-    /**
-     * @param string $bindUrls
-     *
-     * @return $this
-     */
-    public function setBindUrls($bindUrls)
-    {
-        $this->requestParameters['BindUrls'] = $bindUrls;
-        $this->queryParameters['BindUrls'] = $bindUrls;
 
         return $this;
     }
