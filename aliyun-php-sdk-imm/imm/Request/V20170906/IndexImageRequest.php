@@ -18,6 +18,7 @@ namespace imm\Request\V20170906;
  * @method string getRemarksC()
  * @method string getSetId()
  * @method string getSourceType()
+ * @method string getRealUid()
  */
 class IndexImageRequest extends \RpcAcsRequest
 {
@@ -179,6 +180,19 @@ class IndexImageRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SourceType'] = $sourceType;
         $this->queryParameters['SourceType'] = $sourceType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $realUid
+     *
+     * @return $this
+     */
+    public function setRealUid($realUid)
+    {
+        $this->requestParameters['RealUid'] = $realUid;
+        $this->queryParameters['RealUid'] = $realUid;
 
         return $this;
     }

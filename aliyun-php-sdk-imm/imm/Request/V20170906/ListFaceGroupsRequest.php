@@ -5,14 +5,16 @@ namespace imm\Request\V20170906;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ListVideos
+ * Request of ListFaceGroups
  *
  * @method string getMarker()
+ * @method string getLimit()
  * @method string getProject()
  * @method string getSetId()
- * @method string getCreateTimeStart()
+ * @method string getOrderBy()
+ * @method string getOrder()
  */
-class ListVideosRequest extends \RpcAcsRequest
+class ListFaceGroupsRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,7 +30,7 @@ class ListVideosRequest extends \RpcAcsRequest
         parent::__construct(
             'imm',
             '2017-09-06',
-            'ListVideos',
+            'ListFaceGroups',
             'imm'
         );
     }
@@ -42,6 +44,19 @@ class ListVideosRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Marker'] = $marker;
         $this->queryParameters['Marker'] = $marker;
+
+        return $this;
+    }
+
+    /**
+     * @param string $limit
+     *
+     * @return $this
+     */
+    public function setLimit($limit)
+    {
+        $this->requestParameters['Limit'] = $limit;
+        $this->queryParameters['Limit'] = $limit;
 
         return $this;
     }
@@ -73,14 +88,27 @@ class ListVideosRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $createTimeStart
+     * @param string $orderBy
      *
      * @return $this
      */
-    public function setCreateTimeStart($createTimeStart)
+    public function setOrderBy($orderBy)
     {
-        $this->requestParameters['CreateTimeStart'] = $createTimeStart;
-        $this->queryParameters['CreateTimeStart'] = $createTimeStart;
+        $this->requestParameters['OrderBy'] = $orderBy;
+        $this->queryParameters['OrderBy'] = $orderBy;
+
+        return $this;
+    }
+
+    /**
+     * @param string $order
+     *
+     * @return $this
+     */
+    public function setOrder($order)
+    {
+        $this->requestParameters['Order'] = $order;
+        $this->queryParameters['Order'] = $order;
 
         return $this;
     }

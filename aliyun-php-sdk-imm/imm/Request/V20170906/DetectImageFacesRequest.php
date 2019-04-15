@@ -9,6 +9,7 @@ namespace imm\Request\V20170906;
  *
  * @method string getImageUri()
  * @method string getProject()
+ * @method string getRealUid()
  */
 class DetectImageFacesRequest extends \RpcAcsRequest
 {
@@ -53,6 +54,19 @@ class DetectImageFacesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Project'] = $project;
         $this->queryParameters['Project'] = $project;
+
+        return $this;
+    }
+
+    /**
+     * @param string $realUid
+     *
+     * @return $this
+     */
+    public function setRealUid($realUid)
+    {
+        $this->requestParameters['RealUid'] = $realUid;
+        $this->queryParameters['RealUid'] = $realUid;
 
         return $this;
     }

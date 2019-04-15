@@ -5,13 +5,15 @@ namespace imm\Request\V20170906;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DeleteTagByUrl
+ * Request of UpdateFaceGroup
  *
+ * @method string getGroupId()
  * @method string getProject()
  * @method string getSetId()
- * @method string getSrcUri()
+ * @method string getGroupName()
+ * @method string getGroupCoverFaceId()
  */
-class DeleteTagByUrlRequest extends \RpcAcsRequest
+class UpdateFaceGroupRequest extends \RpcAcsRequest
 {
 
     /**
@@ -27,9 +29,22 @@ class DeleteTagByUrlRequest extends \RpcAcsRequest
         parent::__construct(
             'imm',
             '2017-09-06',
-            'DeleteTagByUrl',
+            'UpdateFaceGroup',
             'imm'
         );
+    }
+
+    /**
+     * @param string $groupId
+     *
+     * @return $this
+     */
+    public function setGroupId($groupId)
+    {
+        $this->requestParameters['GroupId'] = $groupId;
+        $this->queryParameters['GroupId'] = $groupId;
+
+        return $this;
     }
 
     /**
@@ -59,14 +74,27 @@ class DeleteTagByUrlRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $srcUri
+     * @param string $groupName
      *
      * @return $this
      */
-    public function setSrcUri($srcUri)
+    public function setGroupName($groupName)
     {
-        $this->requestParameters['SrcUri'] = $srcUri;
-        $this->queryParameters['SrcUri'] = $srcUri;
+        $this->requestParameters['GroupName'] = $groupName;
+        $this->queryParameters['GroupName'] = $groupName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $groupCoverFaceId
+     *
+     * @return $this
+     */
+    public function setGroupCoverFaceId($groupCoverFaceId)
+    {
+        $this->requestParameters['GroupCoverFaceId'] = $groupCoverFaceId;
+        $this->queryParameters['GroupCoverFaceId'] = $groupCoverFaceId;
 
         return $this;
     }
