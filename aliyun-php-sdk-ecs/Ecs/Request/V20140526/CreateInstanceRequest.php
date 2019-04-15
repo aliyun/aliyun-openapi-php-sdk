@@ -46,6 +46,7 @@ namespace Ecs\Request\V20140526;
  * @method string getUserData()
  * @method string getPasswordInherit()
  * @method string getInstanceType()
+ * @method array getArns()
  * @method string getInstanceChargeType()
  * @method string getDeploymentSetId()
  * @method string getInnerIpAddress()
@@ -587,6 +588,23 @@ class CreateInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['InstanceType'] = $instanceType;
         $this->queryParameters['InstanceType'] = $instanceType;
+
+        return $this;
+    }
+
+    /**
+     * @param array $arn
+     *
+     * @return $this
+     */
+    public function setArns(array $arn)
+    {
+        $this->requestParameters['Arns'] = $arn;
+        foreach ($arn as $depth1 => $depth1Value) {
+            $this->queryParameters['Arn.' . ($depth1 + 1) . '.Rolearn'] = $depth1Value['Rolearn'];
+            $this->queryParameters['Arn.' . ($depth1 + 1) . '.RoleType'] = $depth1Value['RoleType'];
+            $this->queryParameters['Arn.' . ($depth1 + 1) . '.AssumeRoleFor'] = $depth1Value['AssumeRoleFor'];
+        }
 
         return $this;
     }

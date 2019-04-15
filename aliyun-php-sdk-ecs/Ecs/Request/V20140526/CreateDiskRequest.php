@@ -21,6 +21,7 @@ namespace Ecs\Request\V20140526;
  * @method string getDiskCategory()
  * @method string getZoneId()
  * @method array getTags()
+ * @method array getArns()
  * @method string getKMSKeyId()
  * @method string getAdvancedFeatures()
  */
@@ -225,6 +226,23 @@ class CreateDiskRequest extends \RpcAcsRequest
         foreach ($tag as $depth1 => $depth1Value) {
             $this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
             $this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param array $arn
+     *
+     * @return $this
+     */
+    public function setArns(array $arn)
+    {
+        $this->requestParameters['Arns'] = $arn;
+        foreach ($arn as $depth1 => $depth1Value) {
+            $this->queryParameters['Arn.' . ($depth1 + 1) . '.Rolearn'] = $depth1Value['Rolearn'];
+            $this->queryParameters['Arn.' . ($depth1 + 1) . '.RoleType'] = $depth1Value['RoleType'];
+            $this->queryParameters['Arn.' . ($depth1 + 1) . '.AssumeRoleFor'] = $depth1Value['AssumeRoleFor'];
         }
 
         return $this;
