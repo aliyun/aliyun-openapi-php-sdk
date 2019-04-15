@@ -3,10 +3,14 @@
 namespace aegis\Request\V20161111;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeVulDetails
  *
+ * @method string getAliasName()
  * @method string getSourceIp()
  * @method string getName()
+ * @method string getLang()
  * @method string getType()
  */
 class DescribeVulDetailsRequest extends \RpcAcsRequest
@@ -31,6 +35,19 @@ class DescribeVulDetailsRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $aliasName
+     *
+     * @return $this
+     */
+    public function setAliasName($aliasName)
+    {
+        $this->requestParameters['AliasName'] = $aliasName;
+        $this->queryParameters['AliasName'] = $aliasName;
+
+        return $this;
+    }
+
+    /**
      * @param string $sourceIp
      *
      * @return $this
@@ -52,6 +69,19 @@ class DescribeVulDetailsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Name'] = $name;
         $this->queryParameters['Name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * @param string $lang
+     *
+     * @return $this
+     */
+    public function setLang($lang)
+    {
+        $this->requestParameters['Lang'] = $lang;
+        $this->queryParameters['Lang'] = $lang;
 
         return $this;
     }

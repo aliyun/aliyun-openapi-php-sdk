@@ -3,10 +3,11 @@
 namespace aegis\Request\V20161111;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of ModifyBatchIgnoreVul
  *
  * @method string getReason()
- * @method string getResourceOwnerId()
  * @method string getSourceIp()
  * @method string getInfo()
  */
@@ -40,19 +41,6 @@ class ModifyBatchIgnoreVulRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Reason'] = $reason;
         $this->queryParameters['Reason'] = $reason;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerId
-     *
-     * @return $this
-     */
-    public function setResourceOwnerId($resourceOwnerId)
-    {
-        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
-        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
         return $this;
     }

@@ -3,9 +3,12 @@
 namespace aegis\Request\V20161111;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeWebLockStatus
  *
  * @method string getSourceIp()
+ * @method string getFrom()
  * @method string getLang()
  */
 class DescribeWebLockStatusRequest extends \RpcAcsRequest
@@ -38,6 +41,19 @@ class DescribeWebLockStatusRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SourceIp'] = $sourceIp;
         $this->queryParameters['SourceIp'] = $sourceIp;
+
+        return $this;
+    }
+
+    /**
+     * @param string $from
+     *
+     * @return $this
+     */
+    public function setFrom($from)
+    {
+        $this->requestParameters['From'] = $from;
+        $this->queryParameters['From'] = $from;
 
         return $this;
     }

@@ -3,16 +3,22 @@
 namespace aegis\Request\V20161111;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of ExportWarning
  *
+ * @method string getStatusList()
+ * @method string getRiskLevels()
+ * @method string getExportType()
+ * @method string getDealed()
  * @method string getTypeNames()
  * @method string getIsSummaryExport()
  * @method string getRiskName()
- * @method string getStatusList()
+ * @method string getRiskIds()
  * @method string getSourceIp()
- * @method string getRiskLevels()
- * @method string getDealed()
  * @method string getStrategyId()
+ * @method string getLang()
+ * @method string getTypeName()
  * @method string getSubTypeNames()
  * @method string getUuids()
  */
@@ -35,6 +41,58 @@ class ExportWarningRequest extends \RpcAcsRequest
             'ExportWarning',
             'vipaegis'
         );
+    }
+
+    /**
+     * @param string $statusList
+     *
+     * @return $this
+     */
+    public function setStatusList($statusList)
+    {
+        $this->requestParameters['StatusList'] = $statusList;
+        $this->queryParameters['StatusList'] = $statusList;
+
+        return $this;
+    }
+
+    /**
+     * @param string $riskLevels
+     *
+     * @return $this
+     */
+    public function setRiskLevels($riskLevels)
+    {
+        $this->requestParameters['RiskLevels'] = $riskLevels;
+        $this->queryParameters['RiskLevels'] = $riskLevels;
+
+        return $this;
+    }
+
+    /**
+     * @param string $exportType
+     *
+     * @return $this
+     */
+    public function setExportType($exportType)
+    {
+        $this->requestParameters['ExportType'] = $exportType;
+        $this->queryParameters['ExportType'] = $exportType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dealed
+     *
+     * @return $this
+     */
+    public function setDealed($dealed)
+    {
+        $this->requestParameters['Dealed'] = $dealed;
+        $this->queryParameters['Dealed'] = $dealed;
+
+        return $this;
     }
 
     /**
@@ -77,14 +135,14 @@ class ExportWarningRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $statusList
+     * @param string $riskIds
      *
      * @return $this
      */
-    public function setStatusList($statusList)
+    public function setRiskIds($riskIds)
     {
-        $this->requestParameters['StatusList'] = $statusList;
-        $this->queryParameters['StatusList'] = $statusList;
+        $this->requestParameters['RiskIds'] = $riskIds;
+        $this->queryParameters['RiskIds'] = $riskIds;
 
         return $this;
     }
@@ -103,32 +161,6 @@ class ExportWarningRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $riskLevels
-     *
-     * @return $this
-     */
-    public function setRiskLevels($riskLevels)
-    {
-        $this->requestParameters['RiskLevels'] = $riskLevels;
-        $this->queryParameters['RiskLevels'] = $riskLevels;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dealed
-     *
-     * @return $this
-     */
-    public function setDealed($dealed)
-    {
-        $this->requestParameters['Dealed'] = $dealed;
-        $this->queryParameters['Dealed'] = $dealed;
-
-        return $this;
-    }
-
-    /**
      * @param string $strategyId
      *
      * @return $this
@@ -137,6 +169,32 @@ class ExportWarningRequest extends \RpcAcsRequest
     {
         $this->requestParameters['StrategyId'] = $strategyId;
         $this->queryParameters['StrategyId'] = $strategyId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $lang
+     *
+     * @return $this
+     */
+    public function setLang($lang)
+    {
+        $this->requestParameters['Lang'] = $lang;
+        $this->queryParameters['Lang'] = $lang;
+
+        return $this;
+    }
+
+    /**
+     * @param string $typeName
+     *
+     * @return $this
+     */
+    public function setTypeName($typeName)
+    {
+        $this->requestParameters['TypeName'] = $typeName;
+        $this->queryParameters['TypeName'] = $typeName;
 
         return $this;
     }

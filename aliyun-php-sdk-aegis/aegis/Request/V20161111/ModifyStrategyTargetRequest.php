@@ -3,6 +3,8 @@
 namespace aegis\Request\V20161111;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of ModifyStrategyTarget
  *
  * @method string getSourceIp()

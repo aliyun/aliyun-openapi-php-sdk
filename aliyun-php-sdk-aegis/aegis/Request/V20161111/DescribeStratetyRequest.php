@@ -3,9 +3,12 @@
 namespace aegis\Request\V20161111;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeStratety
  *
  * @method string getSourceIp()
+ * @method string getStrategyIds()
  * @method string getLang()
  */
 class DescribeStratetyRequest extends \RpcAcsRequest
@@ -38,6 +41,19 @@ class DescribeStratetyRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SourceIp'] = $sourceIp;
         $this->queryParameters['SourceIp'] = $sourceIp;
+
+        return $this;
+    }
+
+    /**
+     * @param string $strategyIds
+     *
+     * @return $this
+     */
+    public function setStrategyIds($strategyIds)
+    {
+        $this->requestParameters['StrategyIds'] = $strategyIds;
+        $this->queryParameters['StrategyIds'] = $strategyIds;
 
         return $this;
     }

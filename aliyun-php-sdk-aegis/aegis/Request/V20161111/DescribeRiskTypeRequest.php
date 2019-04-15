@@ -3,10 +3,13 @@
 namespace aegis\Request\V20161111;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeRiskType
  *
  * @method string getSourceIp()
  * @method string getStrategyId()
+ * @method string getLang()
  * @method string getUuids()
  */
 class DescribeRiskTypeRequest extends \RpcAcsRequest
@@ -52,6 +55,19 @@ class DescribeRiskTypeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['StrategyId'] = $strategyId;
         $this->queryParameters['StrategyId'] = $strategyId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $lang
+     *
+     * @return $this
+     */
+    public function setLang($lang)
+    {
+        $this->requestParameters['Lang'] = $lang;
+        $this->queryParameters['Lang'] = $lang;
 
         return $this;
     }

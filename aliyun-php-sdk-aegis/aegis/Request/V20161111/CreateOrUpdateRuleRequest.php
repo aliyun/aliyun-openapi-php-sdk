@@ -3,16 +3,20 @@
 namespace aegis\Request\V20161111;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of CreateOrUpdateRule
  *
  * @method string getWarnLevel()
  * @method string getSourceIp()
+ * @method string getStatisticsRules()
  * @method string getDataSourceId()
  * @method string getDescription()
  * @method string getRuleName()
  * @method string getId()
  * @method string getLang()
  * @method string getExpressions()
+ * @method string getActions()
  * @method string getRuleGroupIds()
  */
 class CreateOrUpdateRuleRequest extends \RpcAcsRequest
@@ -58,6 +62,19 @@ class CreateOrUpdateRuleRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SourceIp'] = $sourceIp;
         $this->queryParameters['SourceIp'] = $sourceIp;
+
+        return $this;
+    }
+
+    /**
+     * @param string $statisticsRules
+     *
+     * @return $this
+     */
+    public function setStatisticsRules($statisticsRules)
+    {
+        $this->requestParameters['StatisticsRules'] = $statisticsRules;
+        $this->queryParameters['StatisticsRules'] = $statisticsRules;
 
         return $this;
     }
@@ -136,6 +153,19 @@ class CreateOrUpdateRuleRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Expressions'] = $expressions;
         $this->queryParameters['Expressions'] = $expressions;
+
+        return $this;
+    }
+
+    /**
+     * @param string $actions
+     *
+     * @return $this
+     */
+    public function setActions($actions)
+    {
+        $this->requestParameters['Actions'] = $actions;
+        $this->queryParameters['Actions'] = $actions;
 
         return $this;
     }
