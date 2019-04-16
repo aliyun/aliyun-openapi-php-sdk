@@ -3,6 +3,8 @@
 namespace Rds\Request\V20140815;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of CreateAccount
  *
  * @method string getResourceOwnerId()
@@ -32,7 +34,7 @@ class CreateAccountRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'CreateAccount',
-            'rds'
+            'Rds'
         );
     }
 

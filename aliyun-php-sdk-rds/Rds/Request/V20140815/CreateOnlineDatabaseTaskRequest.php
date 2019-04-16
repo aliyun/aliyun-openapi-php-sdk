@@ -3,6 +3,8 @@
 namespace Rds\Request\V20140815;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of CreateOnlineDatabaseTask
  *
  * @method string getResourceOwnerId()
@@ -32,7 +34,7 @@ class CreateOnlineDatabaseTaskRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'CreateOnlineDatabaseTask',
-            'rds'
+            'Rds'
         );
     }
 

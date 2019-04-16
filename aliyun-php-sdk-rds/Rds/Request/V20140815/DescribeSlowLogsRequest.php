@@ -3,6 +3,8 @@
 namespace Rds\Request\V20140815;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeSlowLogs
  *
  * @method string getResourceOwnerId()
@@ -34,7 +36,7 @@ class DescribeSlowLogsRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'DescribeSlowLogs',
-            'rds'
+            'Rds'
         );
     }
 

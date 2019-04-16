@@ -3,6 +3,8 @@
 namespace Rds\Request\V20140815;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of RecoveryDBInstance
  *
  * @method string getResourceOwnerId()
@@ -44,7 +46,7 @@ class RecoveryDBInstanceRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'RecoveryDBInstance',
-            'rds'
+            'Rds'
         );
     }
 

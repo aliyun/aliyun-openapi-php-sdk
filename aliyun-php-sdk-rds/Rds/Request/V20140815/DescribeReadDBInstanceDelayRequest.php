@@ -5,15 +5,17 @@ namespace Rds\Request\V20140815;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ModifyReadonlyInstanceDelayReplicationTime
+ * Request of DescribeReadDBInstanceDelay
  *
  * @method string getResourceOwnerId()
- * @method string getReadSQLReplicationTime()
+ * @method string getSecurityToken()
  * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getReadInstanceId()
  * @method string getDBInstanceId()
  * @method string getOwnerId()
  */
-class ModifyReadonlyInstanceDelayReplicationTimeRequest extends \RpcAcsRequest
+class DescribeReadDBInstanceDelayRequest extends \RpcAcsRequest
 {
 
     /**
@@ -29,7 +31,7 @@ class ModifyReadonlyInstanceDelayReplicationTimeRequest extends \RpcAcsRequest
         parent::__construct(
             'Rds',
             '2014-08-15',
-            'ModifyReadonlyInstanceDelayReplicationTime',
+            'DescribeReadDBInstanceDelay',
             'Rds'
         );
     }
@@ -48,14 +50,14 @@ class ModifyReadonlyInstanceDelayReplicationTimeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $readSQLReplicationTime
+     * @param string $securityToken
      *
      * @return $this
      */
-    public function setReadSQLReplicationTime($readSQLReplicationTime)
+    public function setSecurityToken($securityToken)
     {
-        $this->requestParameters['ReadSQLReplicationTime'] = $readSQLReplicationTime;
-        $this->queryParameters['ReadSQLReplicationTime'] = $readSQLReplicationTime;
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }
@@ -69,6 +71,32 @@ class ModifyReadonlyInstanceDelayReplicationTimeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $readInstanceId
+     *
+     * @return $this
+     */
+    public function setReadInstanceId($readInstanceId)
+    {
+        $this->requestParameters['ReadInstanceId'] = $readInstanceId;
+        $this->queryParameters['ReadInstanceId'] = $readInstanceId;
 
         return $this;
     }

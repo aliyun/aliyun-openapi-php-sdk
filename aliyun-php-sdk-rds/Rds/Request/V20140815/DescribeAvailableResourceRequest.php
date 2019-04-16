@@ -3,6 +3,8 @@
 namespace Rds\Request\V20140815;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeAvailableResource
  *
  * @method string getResourceOwnerId()
@@ -33,7 +35,7 @@ class DescribeAvailableResourceRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'DescribeAvailableResource',
-            'rds'
+            'Rds'
         );
     }
 

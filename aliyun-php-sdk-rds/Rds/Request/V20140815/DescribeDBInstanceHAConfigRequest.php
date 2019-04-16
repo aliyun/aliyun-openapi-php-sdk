@@ -3,6 +3,8 @@
 namespace Rds\Request\V20140815;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeDBInstanceHAConfig
  *
  * @method string getResourceOwnerId()
@@ -28,7 +30,7 @@ class DescribeDBInstanceHAConfigRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'DescribeDBInstanceHAConfig',
-            'rds'
+            'Rds'
         );
     }
 

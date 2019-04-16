@@ -3,11 +3,14 @@
 namespace Rds\Request\V20140815;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeBackupPolicy
  *
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
+ * @method string getCompressType()
  * @method string getDBInstanceId()
  * @method string getOwnerId()
  * @method string getBackupPolicyMode()
@@ -29,7 +32,7 @@ class DescribeBackupPolicyRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'DescribeBackupPolicy',
-            'rds'
+            'Rds'
         );
     }
 
@@ -68,6 +71,19 @@ class DescribeBackupPolicyRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $compressType
+     *
+     * @return $this
+     */
+    public function setCompressType($compressType)
+    {
+        $this->requestParameters['CompressType'] = $compressType;
+        $this->queryParameters['CompressType'] = $compressType;
 
         return $this;
     }

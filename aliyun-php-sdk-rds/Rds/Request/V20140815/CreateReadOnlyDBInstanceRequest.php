@@ -3,6 +3,8 @@
 namespace Rds\Request\V20140815;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of CreateReadOnlyDBInstance
  *
  * @method string getResourceOwnerId()
@@ -20,6 +22,8 @@ namespace Rds\Request\V20140815;
  * @method string getZoneId()
  * @method string getDBInstanceId()
  * @method string getDBInstanceDescription()
+ * @method string getDBInstanceStorageType()
+ * @method string getCategory()
  * @method string getPayType()
  * @method string getInstanceNetworkType()
  */
@@ -40,7 +44,7 @@ class CreateReadOnlyDBInstanceRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'CreateReadOnlyDBInstance',
-            'rds'
+            'Rds'
         );
     }
 
@@ -235,6 +239,32 @@ class CreateReadOnlyDBInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DBInstanceDescription'] = $dBInstanceDescription;
         $this->queryParameters['DBInstanceDescription'] = $dBInstanceDescription;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceStorageType
+     *
+     * @return $this
+     */
+    public function setDBInstanceStorageType($dBInstanceStorageType)
+    {
+        $this->requestParameters['DBInstanceStorageType'] = $dBInstanceStorageType;
+        $this->queryParameters['DBInstanceStorageType'] = $dBInstanceStorageType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $category
+     *
+     * @return $this
+     */
+    public function setCategory($category)
+    {
+        $this->requestParameters['Category'] = $category;
+        $this->queryParameters['Category'] = $category;
 
         return $this;
     }

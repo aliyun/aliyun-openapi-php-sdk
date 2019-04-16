@@ -3,6 +3,8 @@
 namespace Rds\Request\V20140815;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of ModifyDBInstanceConnectionMode
  *
  * @method string getConnectionMode()
@@ -29,7 +31,7 @@ class ModifyDBInstanceConnectionModeRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'ModifyDBInstanceConnectionMode',
-            'rds'
+            'Rds'
         );
     }
 

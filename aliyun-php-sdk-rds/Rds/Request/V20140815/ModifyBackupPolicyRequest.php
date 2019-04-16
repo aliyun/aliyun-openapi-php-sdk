@@ -3,6 +3,8 @@
 namespace Rds\Request\V20140815;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of ModifyBackupPolicy
  *
  * @method string getPreferredBackupPeriod()
@@ -11,6 +13,7 @@ namespace Rds\Request\V20140815;
  * @method string getLocalLogRetentionHours()
  * @method string getOwnerAccount()
  * @method string getLogBackupFrequency()
+ * @method string getCompressType()
  * @method string getBackupLog()
  * @method string getLocalLogRetentionSpace()
  * @method string getOwnerId()
@@ -42,7 +45,7 @@ class ModifyBackupPolicyRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'ModifyBackupPolicy',
-            'rds'
+            'Rds'
         );
     }
 
@@ -120,6 +123,19 @@ class ModifyBackupPolicyRequest extends \RpcAcsRequest
     {
         $this->requestParameters['LogBackupFrequency'] = $logBackupFrequency;
         $this->queryParameters['LogBackupFrequency'] = $logBackupFrequency;
+
+        return $this;
+    }
+
+    /**
+     * @param string $compressType
+     *
+     * @return $this
+     */
+    public function setCompressType($compressType)
+    {
+        $this->requestParameters['CompressType'] = $compressType;
+        $this->queryParameters['CompressType'] = $compressType;
 
         return $this;
     }

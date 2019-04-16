@@ -3,17 +3,21 @@
 namespace Rds\Request\V20140815;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of MigrateToOtherRegion
  *
  * @method string getResourceOwnerId()
- * @method string getTargetZoneId()
  * @method string getResourceOwnerAccount()
- * @method string getEffectiveTime()
  * @method string getOwnerAccount()
+ * @method string getTargetVSwitchId()
+ * @method string getOwnerId()
+ * @method string getTargetVpcId()
+ * @method string getTargetZoneId()
+ * @method string getEffectiveTime()
  * @method string getDBInstanceId()
  * @method string getTargetRegionId()
  * @method string getSwitchTime()
- * @method string getOwnerId()
  */
 class MigrateToOtherRegionRequest extends \RpcAcsRequest
 {
@@ -32,7 +36,7 @@ class MigrateToOtherRegionRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'MigrateToOtherRegion',
-            'rds'
+            'Rds'
         );
     }
 
@@ -45,19 +49,6 @@ class MigrateToOtherRegionRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $targetZoneId
-     *
-     * @return $this
-     */
-    public function setTargetZoneId($targetZoneId)
-    {
-        $this->requestParameters['TargetZoneId'] = $targetZoneId;
-        $this->queryParameters['TargetZoneId'] = $targetZoneId;
 
         return $this;
     }
@@ -76,19 +67,6 @@ class MigrateToOtherRegionRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $effectiveTime
-     *
-     * @return $this
-     */
-    public function setEffectiveTime($effectiveTime)
-    {
-        $this->requestParameters['EffectiveTime'] = $effectiveTime;
-        $this->queryParameters['EffectiveTime'] = $effectiveTime;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerAccount
      *
      * @return $this
@@ -97,6 +75,71 @@ class MigrateToOtherRegionRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $targetVSwitchId
+     *
+     * @return $this
+     */
+    public function setTargetVSwitchId($targetVSwitchId)
+    {
+        $this->requestParameters['TargetVSwitchId'] = $targetVSwitchId;
+        $this->queryParameters['TargetVSwitchId'] = $targetVSwitchId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $targetVpcId
+     *
+     * @return $this
+     */
+    public function setTargetVpcId($targetVpcId)
+    {
+        $this->requestParameters['TargetVpcId'] = $targetVpcId;
+        $this->queryParameters['TargetVpcId'] = $targetVpcId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $targetZoneId
+     *
+     * @return $this
+     */
+    public function setTargetZoneId($targetZoneId)
+    {
+        $this->requestParameters['TargetZoneId'] = $targetZoneId;
+        $this->queryParameters['TargetZoneId'] = $targetZoneId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $effectiveTime
+     *
+     * @return $this
+     */
+    public function setEffectiveTime($effectiveTime)
+    {
+        $this->requestParameters['EffectiveTime'] = $effectiveTime;
+        $this->queryParameters['EffectiveTime'] = $effectiveTime;
 
         return $this;
     }
@@ -136,19 +179,6 @@ class MigrateToOtherRegionRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SwitchTime'] = $switchTime;
         $this->queryParameters['SwitchTime'] = $switchTime;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

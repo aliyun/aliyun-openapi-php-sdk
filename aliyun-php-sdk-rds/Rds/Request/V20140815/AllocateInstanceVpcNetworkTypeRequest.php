@@ -5,15 +5,19 @@ namespace Rds\Request\V20140815;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ModifyReadonlyInstanceDelayReplicationTime
+ * Request of AllocateInstanceVpcNetworkType
  *
+ * @method string getTargetVpcId()
  * @method string getResourceOwnerId()
- * @method string getReadSQLReplicationTime()
+ * @method string getTargetZoneId()
  * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
  * @method string getDBInstanceId()
+ * @method string getTargetRegionId()
+ * @method string getTargetVSwitchId()
  * @method string getOwnerId()
  */
-class ModifyReadonlyInstanceDelayReplicationTimeRequest extends \RpcAcsRequest
+class AllocateInstanceVpcNetworkTypeRequest extends \RpcAcsRequest
 {
 
     /**
@@ -29,9 +33,22 @@ class ModifyReadonlyInstanceDelayReplicationTimeRequest extends \RpcAcsRequest
         parent::__construct(
             'Rds',
             '2014-08-15',
-            'ModifyReadonlyInstanceDelayReplicationTime',
+            'AllocateInstanceVpcNetworkType',
             'Rds'
         );
+    }
+
+    /**
+     * @param string $targetVpcId
+     *
+     * @return $this
+     */
+    public function setTargetVpcId($targetVpcId)
+    {
+        $this->requestParameters['TargetVpcId'] = $targetVpcId;
+        $this->queryParameters['TargetVpcId'] = $targetVpcId;
+
+        return $this;
     }
 
     /**
@@ -48,14 +65,14 @@ class ModifyReadonlyInstanceDelayReplicationTimeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $readSQLReplicationTime
+     * @param string $targetZoneId
      *
      * @return $this
      */
-    public function setReadSQLReplicationTime($readSQLReplicationTime)
+    public function setTargetZoneId($targetZoneId)
     {
-        $this->requestParameters['ReadSQLReplicationTime'] = $readSQLReplicationTime;
-        $this->queryParameters['ReadSQLReplicationTime'] = $readSQLReplicationTime;
+        $this->requestParameters['TargetZoneId'] = $targetZoneId;
+        $this->queryParameters['TargetZoneId'] = $targetZoneId;
 
         return $this;
     }
@@ -74,6 +91,19 @@ class ModifyReadonlyInstanceDelayReplicationTimeRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
      * @param string $dBInstanceId
      *
      * @return $this
@@ -82,6 +112,32 @@ class ModifyReadonlyInstanceDelayReplicationTimeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DBInstanceId'] = $dBInstanceId;
         $this->queryParameters['DBInstanceId'] = $dBInstanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $targetRegionId
+     *
+     * @return $this
+     */
+    public function setTargetRegionId($targetRegionId)
+    {
+        $this->requestParameters['TargetRegionId'] = $targetRegionId;
+        $this->queryParameters['TargetRegionId'] = $targetRegionId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $targetVSwitchId
+     *
+     * @return $this
+     */
+    public function setTargetVSwitchId($targetVSwitchId)
+    {
+        $this->requestParameters['TargetVSwitchId'] = $targetVSwitchId;
+        $this->queryParameters['TargetVSwitchId'] = $targetVSwitchId;
 
         return $this;
     }

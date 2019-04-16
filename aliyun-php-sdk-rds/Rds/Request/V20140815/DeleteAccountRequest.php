@@ -3,6 +3,8 @@
 namespace Rds\Request\V20140815;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DeleteAccount
  *
  * @method string getResourceOwnerId()
@@ -29,7 +31,7 @@ class DeleteAccountRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'DeleteAccount',
-            'rds'
+            'Rds'
         );
     }
 

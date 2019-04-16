@@ -3,6 +3,8 @@
 namespace Rds\Request\V20140815;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeDBInstanceNetInfo
  *
  * @method string getResourceOwnerId()
@@ -31,7 +33,7 @@ class DescribeDBInstanceNetInfoRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'DescribeDBInstanceNetInfo',
-            'rds'
+            'Rds'
         );
     }
 

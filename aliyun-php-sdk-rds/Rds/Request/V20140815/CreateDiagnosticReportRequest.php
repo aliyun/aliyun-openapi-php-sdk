@@ -5,13 +5,13 @@ namespace Rds\Request\V20140815;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of RequestServiceOfCloudDBExpert
+ * Request of CreateDiagnosticReport
  *
- * @method string getServiceRequestParam()
+ * @method string getEndTime()
  * @method string getDBInstanceId()
- * @method string getServiceRequestType()
+ * @method string getStartTime()
  */
-class RequestServiceOfCloudDBExpertRequest extends \RpcAcsRequest
+class CreateDiagnosticReportRequest extends \RpcAcsRequest
 {
 
     /**
@@ -27,20 +27,20 @@ class RequestServiceOfCloudDBExpertRequest extends \RpcAcsRequest
         parent::__construct(
             'Rds',
             '2014-08-15',
-            'RequestServiceOfCloudDBExpert',
+            'CreateDiagnosticReport',
             'Rds'
         );
     }
 
     /**
-     * @param string $serviceRequestParam
+     * @param string $endTime
      *
      * @return $this
      */
-    public function setServiceRequestParam($serviceRequestParam)
+    public function setEndTime($endTime)
     {
-        $this->requestParameters['ServiceRequestParam'] = $serviceRequestParam;
-        $this->queryParameters['ServiceRequestParam'] = $serviceRequestParam;
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
 
         return $this;
     }
@@ -59,14 +59,14 @@ class RequestServiceOfCloudDBExpertRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $serviceRequestType
+     * @param string $startTime
      *
      * @return $this
      */
-    public function setServiceRequestType($serviceRequestType)
+    public function setStartTime($startTime)
     {
-        $this->requestParameters['ServiceRequestType'] = $serviceRequestType;
-        $this->queryParameters['ServiceRequestType'] = $serviceRequestType;
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
 
         return $this;
     }

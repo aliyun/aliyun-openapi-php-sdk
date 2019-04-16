@@ -3,6 +3,8 @@
 namespace Rds\Request\V20140815;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of PurgeDBInstanceLog
  *
  * @method string getResourceOwnerId()
@@ -29,7 +31,7 @@ class PurgeDBInstanceLogRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'PurgeDBInstanceLog',
-            'rds'
+            'Rds'
         );
     }
 

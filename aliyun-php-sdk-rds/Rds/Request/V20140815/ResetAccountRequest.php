@@ -3,6 +3,8 @@
 namespace Rds\Request\V20140815;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of ResetAccount
  *
  * @method string getResourceOwnerId()
@@ -30,7 +32,7 @@ class ResetAccountRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'ResetAccount',
-            'rds'
+            'Rds'
         );
     }
 

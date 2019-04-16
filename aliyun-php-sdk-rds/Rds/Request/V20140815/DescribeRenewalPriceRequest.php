@@ -3,6 +3,8 @@
 namespace Rds\Request\V20140815;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeRenewalPrice
  *
  * @method string getResourceOwnerId()
@@ -38,7 +40,7 @@ class DescribeRenewalPriceRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'DescribeRenewalPrice',
-            'rds'
+            'Rds'
         );
     }
 

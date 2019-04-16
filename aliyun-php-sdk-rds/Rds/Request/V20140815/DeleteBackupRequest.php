@@ -3,6 +3,8 @@
 namespace Rds\Request\V20140815;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DeleteBackup
  *
  * @method string getResourceOwnerId()
@@ -29,7 +31,7 @@ class DeleteBackupRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'DeleteBackup',
-            'rds'
+            'Rds'
         );
     }
 

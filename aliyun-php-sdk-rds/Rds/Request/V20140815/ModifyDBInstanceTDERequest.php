@@ -3,13 +3,17 @@
 namespace Rds\Request\V20140815;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of ModifyDBInstanceTDE
  *
  * @method string getResourceOwnerId()
  * @method string getDBName()
  * @method string getResourceOwnerAccount()
+ * @method string getRoleArn()
  * @method string getOwnerAccount()
  * @method string getDBInstanceId()
+ * @method string getEncryptionKey()
  * @method string getOwnerId()
  * @method string getTDEStatus()
  */
@@ -30,7 +34,7 @@ class ModifyDBInstanceTDERequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'ModifyDBInstanceTDE',
-            'rds'
+            'Rds'
         );
     }
 
@@ -74,6 +78,19 @@ class ModifyDBInstanceTDERequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $roleArn
+     *
+     * @return $this
+     */
+    public function setRoleArn($roleArn)
+    {
+        $this->requestParameters['RoleArn'] = $roleArn;
+        $this->queryParameters['RoleArn'] = $roleArn;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerAccount
      *
      * @return $this
@@ -95,6 +112,19 @@ class ModifyDBInstanceTDERequest extends \RpcAcsRequest
     {
         $this->requestParameters['DBInstanceId'] = $dBInstanceId;
         $this->queryParameters['DBInstanceId'] = $dBInstanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $encryptionKey
+     *
+     * @return $this
+     */
+    public function setEncryptionKey($encryptionKey)
+    {
+        $this->requestParameters['EncryptionKey'] = $encryptionKey;
+        $this->queryParameters['EncryptionKey'] = $encryptionKey;
 
         return $this;
     }

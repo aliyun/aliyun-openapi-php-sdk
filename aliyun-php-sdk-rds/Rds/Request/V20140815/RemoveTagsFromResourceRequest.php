@@ -3,6 +3,8 @@
 namespace Rds\Request\V20140815;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of RemoveTagsFromResource
  *
  * @method string getTag4value()
@@ -41,7 +43,7 @@ class RemoveTagsFromResourceRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'RemoveTagsFromResource',
-            'rds'
+            'Rds'
         );
     }
 

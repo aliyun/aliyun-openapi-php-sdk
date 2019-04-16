@@ -3,16 +3,22 @@
 namespace Rds\Request\V20140815;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of MigrateToOtherZone
  *
- * @method string getVSwitchId()
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
- * @method string getEffectiveTime()
  * @method string getOwnerAccount()
+ * @method string getZoneIdSlave1()
+ * @method string getZoneIdSlave2()
+ * @method string getOwnerId()
+ * @method string getVSwitchId()
+ * @method string getEffectiveTime()
+ * @method string getVPCId()
  * @method string getZoneId()
  * @method string getDBInstanceId()
- * @method string getOwnerId()
+ * @method string getCategory()
  */
 class MigrateToOtherZoneRequest extends \RpcAcsRequest
 {
@@ -31,21 +37,8 @@ class MigrateToOtherZoneRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'MigrateToOtherZone',
-            'rds'
+            'Rds'
         );
-    }
-
-    /**
-     * @param string $vSwitchId
-     *
-     * @return $this
-     */
-    public function setVSwitchId($vSwitchId)
-    {
-        $this->requestParameters['VSwitchId'] = $vSwitchId;
-        $this->queryParameters['VSwitchId'] = $vSwitchId;
-
-        return $this;
     }
 
     /**
@@ -75,6 +68,71 @@ class MigrateToOtherZoneRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $zoneIdSlave1
+     *
+     * @return $this
+     */
+    public function setZoneIdSlave1($zoneIdSlave1)
+    {
+        $this->requestParameters['ZoneIdSlave1'] = $zoneIdSlave1;
+        $this->queryParameters['ZoneIdSlave1'] = $zoneIdSlave1;
+
+        return $this;
+    }
+
+    /**
+     * @param string $zoneIdSlave2
+     *
+     * @return $this
+     */
+    public function setZoneIdSlave2($zoneIdSlave2)
+    {
+        $this->requestParameters['ZoneIdSlave2'] = $zoneIdSlave2;
+        $this->queryParameters['ZoneIdSlave2'] = $zoneIdSlave2;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $vSwitchId
+     *
+     * @return $this
+     */
+    public function setVSwitchId($vSwitchId)
+    {
+        $this->requestParameters['VSwitchId'] = $vSwitchId;
+        $this->queryParameters['VSwitchId'] = $vSwitchId;
+
+        return $this;
+    }
+
+    /**
      * @param string $effectiveTime
      *
      * @return $this
@@ -88,14 +146,14 @@ class MigrateToOtherZoneRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerAccount
+     * @param string $vPCId
      *
      * @return $this
      */
-    public function setOwnerAccount($ownerAccount)
+    public function setVPCId($vPCId)
     {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+        $this->requestParameters['VPCId'] = $vPCId;
+        $this->queryParameters['VPCId'] = $vPCId;
 
         return $this;
     }
@@ -127,14 +185,14 @@ class MigrateToOtherZoneRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerId
+     * @param string $category
      *
      * @return $this
      */
-    public function setOwnerId($ownerId)
+    public function setCategory($category)
     {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
+        $this->requestParameters['Category'] = $category;
+        $this->queryParameters['Category'] = $category;
 
         return $this;
     }
