@@ -5,14 +5,18 @@ namespace R_kvstore\Request\V20150101;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of CreateSnapshot
+ * Request of AllocateInstancePublicConnection
  *
  * @method string getResourceOwnerId()
+ * @method string getConnectionStringPrefix()
+ * @method string getInstanceId()
+ * @method string getSecurityToken()
  * @method string getResourceOwnerAccount()
+ * @method string getPort()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
  */
-class CreateSnapshotRequest extends \RpcAcsRequest
+class AllocateInstancePublicConnectionRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,7 +32,7 @@ class CreateSnapshotRequest extends \RpcAcsRequest
         parent::__construct(
             'R-kvstore',
             '2015-01-01',
-            'CreateSnapshot',
+            'AllocateInstancePublicConnection',
             'R-kvstore'
         );
     }
@@ -47,6 +51,45 @@ class CreateSnapshotRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $connectionStringPrefix
+     *
+     * @return $this
+     */
+    public function setConnectionStringPrefix($connectionStringPrefix)
+    {
+        $this->requestParameters['ConnectionStringPrefix'] = $connectionStringPrefix;
+        $this->queryParameters['ConnectionStringPrefix'] = $connectionStringPrefix;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -55,6 +98,19 @@ class CreateSnapshotRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $port
+     *
+     * @return $this
+     */
+    public function setPort($port)
+    {
+        $this->requestParameters['Port'] = $port;
+        $this->queryParameters['Port'] = $port;
 
         return $this;
     }

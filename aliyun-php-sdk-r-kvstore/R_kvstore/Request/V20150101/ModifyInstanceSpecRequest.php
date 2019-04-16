@@ -1,173 +1,213 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace R_kvstore\Request\V20150101;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of ModifyInstanceSpec
+ *
+ * @method string getResourceOwnerId()
+ * @method string getAutoPay()
+ * @method string getFromApp()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getCouponNo()
+ * @method string getOwnerId()
+ * @method string getInstanceClass()
+ * @method string getInstanceId()
+ * @method string getSecurityToken()
+ * @method string getEffectiveTime()
+ * @method string getForceUpgrade()
+ * @method string getBusinessInfo()
+ */
 class ModifyInstanceSpecRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("R-kvstore", "2015-01-01", "ModifyInstanceSpec", "redisa", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $autoPay;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'R-kvstore',
+            '2015-01-01',
+            'ModifyInstanceSpec',
+            'R-kvstore'
+        );
+    }
 
-	private  $fromApp;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $resourceOwnerAccount;
+        return $this;
+    }
 
-	private  $ownerAccount;
+    /**
+     * @param string $autoPay
+     *
+     * @return $this
+     */
+    public function setAutoPay($autoPay)
+    {
+        $this->requestParameters['AutoPay'] = $autoPay;
+        $this->queryParameters['AutoPay'] = $autoPay;
 
-	private  $couponNo;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $fromApp
+     *
+     * @return $this
+     */
+    public function setFromApp($fromApp)
+    {
+        $this->requestParameters['FromApp'] = $fromApp;
+        $this->queryParameters['FromApp'] = $fromApp;
 
-	private  $instanceClass;
+        return $this;
+    }
 
-	private  $instanceId;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $securityToken;
+        return $this;
+    }
 
-	private  $effectiveTime;
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	private  $forceUpgrade;
+        return $this;
+    }
 
-	private  $businessInfo;
+    /**
+     * @param string $couponNo
+     *
+     * @return $this
+     */
+    public function setCouponNo($couponNo)
+    {
+        $this->requestParameters['CouponNo'] = $couponNo;
+        $this->queryParameters['CouponNo'] = $couponNo;
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function getAutoPay() {
-		return $this->autoPay;
-	}
+        return $this;
+    }
 
-	public function setAutoPay($autoPay) {
-		$this->autoPay = $autoPay;
-		$this->queryParameters["AutoPay"]=$autoPay;
-	}
+    /**
+     * @param string $instanceClass
+     *
+     * @return $this
+     */
+    public function setInstanceClass($instanceClass)
+    {
+        $this->requestParameters['InstanceClass'] = $instanceClass;
+        $this->queryParameters['InstanceClass'] = $instanceClass;
 
-	public function getFromApp() {
-		return $this->fromApp;
-	}
+        return $this;
+    }
 
-	public function setFromApp($fromApp) {
-		$this->fromApp = $fromApp;
-		$this->queryParameters["FromApp"]=$fromApp;
-	}
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+        return $this;
+    }
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
+    /**
+     * @param string $effectiveTime
+     *
+     * @return $this
+     */
+    public function setEffectiveTime($effectiveTime)
+    {
+        $this->requestParameters['EffectiveTime'] = $effectiveTime;
+        $this->queryParameters['EffectiveTime'] = $effectiveTime;
 
-	public function getCouponNo() {
-		return $this->couponNo;
-	}
+        return $this;
+    }
 
-	public function setCouponNo($couponNo) {
-		$this->couponNo = $couponNo;
-		$this->queryParameters["CouponNo"]=$couponNo;
-	}
+    /**
+     * @param string $forceUpgrade
+     *
+     * @return $this
+     */
+    public function setForceUpgrade($forceUpgrade)
+    {
+        $this->requestParameters['ForceUpgrade'] = $forceUpgrade;
+        $this->queryParameters['ForceUpgrade'] = $forceUpgrade;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+        return $this;
+    }
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+    /**
+     * @param string $businessInfo
+     *
+     * @return $this
+     */
+    public function setBusinessInfo($businessInfo)
+    {
+        $this->requestParameters['BusinessInfo'] = $businessInfo;
+        $this->queryParameters['BusinessInfo'] = $businessInfo;
 
-	public function getInstanceClass() {
-		return $this->instanceClass;
-	}
-
-	public function setInstanceClass($instanceClass) {
-		$this->instanceClass = $instanceClass;
-		$this->queryParameters["InstanceClass"]=$instanceClass;
-	}
-
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
-
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
-
-	public function getEffectiveTime() {
-		return $this->effectiveTime;
-	}
-
-	public function setEffectiveTime($effectiveTime) {
-		$this->effectiveTime = $effectiveTime;
-		$this->queryParameters["EffectiveTime"]=$effectiveTime;
-	}
-
-	public function getForceUpgrade() {
-		return $this->forceUpgrade;
-	}
-
-	public function setForceUpgrade($forceUpgrade) {
-		$this->forceUpgrade = $forceUpgrade;
-		$this->queryParameters["ForceUpgrade"]=$forceUpgrade;
-	}
-
-	public function getBusinessInfo() {
-		return $this->businessInfo;
-	}
-
-	public function setBusinessInfo($businessInfo) {
-		$this->businessInfo = $businessInfo;
-		$this->queryParameters["BusinessInfo"]=$businessInfo;
-	}
-	
+        return $this;
+    }
 }

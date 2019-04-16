@@ -1,151 +1,185 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace R_kvstore\Request\V20150101;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of SwitchNetwork
+ *
+ * @method string getResourceOwnerId()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getOwnerId()
+ * @method string getVSwitchId()
+ * @method string getInstanceId()
+ * @method string getSecurityToken()
+ * @method string getTargetNetworkType()
+ * @method string getRetainClassic()
+ * @method string getClassicExpiredDays()
+ * @method string getVpcId()
+ */
 class SwitchNetworkRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("R-kvstore", "2015-01-01", "SwitchNetwork", "redisa", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $resourceOwnerAccount;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'R-kvstore',
+            '2015-01-01',
+            'SwitchNetwork',
+            'R-kvstore'
+        );
+    }
 
-	private  $ownerAccount;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	private  $vSwitchId;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $instanceId;
+        return $this;
+    }
 
-	private  $securityToken;
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	private  $targetNetworkType;
+        return $this;
+    }
 
-	private  $retainClassic;
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	private  $classicExpiredDays;
+        return $this;
+    }
 
-	private  $vpcId;
+    /**
+     * @param string $vSwitchId
+     *
+     * @return $this
+     */
+    public function setVSwitchId($vSwitchId)
+    {
+        $this->requestParameters['VSwitchId'] = $vSwitchId;
+        $this->queryParameters['VSwitchId'] = $vSwitchId;
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+        return $this;
+    }
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
+    /**
+     * @param string $targetNetworkType
+     *
+     * @return $this
+     */
+    public function setTargetNetworkType($targetNetworkType)
+    {
+        $this->requestParameters['TargetNetworkType'] = $targetNetworkType;
+        $this->queryParameters['TargetNetworkType'] = $targetNetworkType;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+        return $this;
+    }
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+    /**
+     * @param string $retainClassic
+     *
+     * @return $this
+     */
+    public function setRetainClassic($retainClassic)
+    {
+        $this->requestParameters['RetainClassic'] = $retainClassic;
+        $this->queryParameters['RetainClassic'] = $retainClassic;
 
-	public function getVSwitchId() {
-		return $this->vSwitchId;
-	}
+        return $this;
+    }
 
-	public function setVSwitchId($vSwitchId) {
-		$this->vSwitchId = $vSwitchId;
-		$this->queryParameters["VSwitchId"]=$vSwitchId;
-	}
+    /**
+     * @param string $classicExpiredDays
+     *
+     * @return $this
+     */
+    public function setClassicExpiredDays($classicExpiredDays)
+    {
+        $this->requestParameters['ClassicExpiredDays'] = $classicExpiredDays;
+        $this->queryParameters['ClassicExpiredDays'] = $classicExpiredDays;
 
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
+        return $this;
+    }
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
+    /**
+     * @param string $vpcId
+     *
+     * @return $this
+     */
+    public function setVpcId($vpcId)
+    {
+        $this->requestParameters['VpcId'] = $vpcId;
+        $this->queryParameters['VpcId'] = $vpcId;
 
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
-
-	public function getTargetNetworkType() {
-		return $this->targetNetworkType;
-	}
-
-	public function setTargetNetworkType($targetNetworkType) {
-		$this->targetNetworkType = $targetNetworkType;
-		$this->queryParameters["TargetNetworkType"]=$targetNetworkType;
-	}
-
-	public function getRetainClassic() {
-		return $this->retainClassic;
-	}
-
-	public function setRetainClassic($retainClassic) {
-		$this->retainClassic = $retainClassic;
-		$this->queryParameters["RetainClassic"]=$retainClassic;
-	}
-
-	public function getClassicExpiredDays() {
-		return $this->classicExpiredDays;
-	}
-
-	public function setClassicExpiredDays($classicExpiredDays) {
-		$this->classicExpiredDays = $classicExpiredDays;
-		$this->queryParameters["ClassicExpiredDays"]=$classicExpiredDays;
-	}
-
-	public function getVpcId() {
-		return $this->vpcId;
-	}
-
-	public function setVpcId($vpcId) {
-		$this->vpcId = $vpcId;
-		$this->queryParameters["VpcId"]=$vpcId;
-	}
-	
+        return $this;
+    }
 }

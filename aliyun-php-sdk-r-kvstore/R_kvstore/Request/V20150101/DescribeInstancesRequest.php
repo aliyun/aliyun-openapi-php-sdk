@@ -1,250 +1,328 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace R_kvstore\Request\V20150101;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of DescribeInstances
+ *
+ * @method string getResourceOwnerId()
+ * @method string getInstanceStatus()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getSearchKey()
+ * @method string getNetworkType()
+ * @method string getEngineVersion()
+ * @method string getOwnerId()
+ * @method string getInstanceClass()
+ * @method string getPageNumber()
+ * @method string getVSwitchId()
+ * @method string getExpired()
+ * @method string getSecurityToken()
+ * @method string getInstanceIds()
+ * @method string getArchitectureType()
+ * @method string getVpcId()
+ * @method string getPageSize()
+ * @method string getInstanceType()
+ * @method string getZoneId()
+ * @method string getChargeType()
+ * @method array getTags()
+ */
 class DescribeInstancesRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("R-kvstore", "2015-01-01", "DescribeInstances", "redisa", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $instanceStatus;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'R-kvstore',
+            '2015-01-01',
+            'DescribeInstances',
+            'R-kvstore'
+        );
+    }
 
-	private  $resourceOwnerAccount;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $ownerAccount;
+        return $this;
+    }
 
-	private  $searchKey;
+    /**
+     * @param string $instanceStatus
+     *
+     * @return $this
+     */
+    public function setInstanceStatus($instanceStatus)
+    {
+        $this->requestParameters['InstanceStatus'] = $instanceStatus;
+        $this->queryParameters['InstanceStatus'] = $instanceStatus;
 
-	private  $networkType;
+        return $this;
+    }
 
-	private  $engineVersion;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	private  $instanceClass;
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	private  $pageNumber;
+        return $this;
+    }
 
-	private  $vSwitchId;
+    /**
+     * @param string $searchKey
+     *
+     * @return $this
+     */
+    public function setSearchKey($searchKey)
+    {
+        $this->requestParameters['SearchKey'] = $searchKey;
+        $this->queryParameters['SearchKey'] = $searchKey;
 
-	private  $expired;
+        return $this;
+    }
 
-	private  $securityToken;
+    /**
+     * @param string $networkType
+     *
+     * @return $this
+     */
+    public function setNetworkType($networkType)
+    {
+        $this->requestParameters['NetworkType'] = $networkType;
+        $this->queryParameters['NetworkType'] = $networkType;
 
-	private  $instanceIds;
+        return $this;
+    }
 
-	private  $architectureType;
+    /**
+     * @param string $engineVersion
+     *
+     * @return $this
+     */
+    public function setEngineVersion($engineVersion)
+    {
+        $this->requestParameters['EngineVersion'] = $engineVersion;
+        $this->queryParameters['EngineVersion'] = $engineVersion;
 
-	private  $vpcId;
+        return $this;
+    }
 
-	private  $pageSize;
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	private  $instanceType;
+        return $this;
+    }
 
-	private  $zoneId;
+    /**
+     * @param string $instanceClass
+     *
+     * @return $this
+     */
+    public function setInstanceClass($instanceClass)
+    {
+        $this->requestParameters['InstanceClass'] = $instanceClass;
+        $this->queryParameters['InstanceClass'] = $instanceClass;
 
-	private  $chargeType;
+        return $this;
+    }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getInstanceStatus() {
-		return $this->instanceStatus;
-	}
+    /**
+     * @param string $vSwitchId
+     *
+     * @return $this
+     */
+    public function setVSwitchId($vSwitchId)
+    {
+        $this->requestParameters['VSwitchId'] = $vSwitchId;
+        $this->queryParameters['VSwitchId'] = $vSwitchId;
 
-	public function setInstanceStatus($instanceStatus) {
-		$this->instanceStatus = $instanceStatus;
-		$this->queryParameters["InstanceStatus"]=$instanceStatus;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param string $expired
+     *
+     * @return $this
+     */
+    public function setExpired($expired)
+    {
+        $this->requestParameters['Expired'] = $expired;
+        $this->queryParameters['Expired'] = $expired;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
+        return $this;
+    }
 
-	public function getSearchKey() {
-		return $this->searchKey;
-	}
+    /**
+     * @param string $instanceIds
+     *
+     * @return $this
+     */
+    public function setInstanceIds($instanceIds)
+    {
+        $this->requestParameters['InstanceIds'] = $instanceIds;
+        $this->queryParameters['InstanceIds'] = $instanceIds;
 
-	public function setSearchKey($searchKey) {
-		$this->searchKey = $searchKey;
-		$this->queryParameters["SearchKey"]=$searchKey;
-	}
+        return $this;
+    }
 
-	public function getNetworkType() {
-		return $this->networkType;
-	}
+    /**
+     * @param string $architectureType
+     *
+     * @return $this
+     */
+    public function setArchitectureType($architectureType)
+    {
+        $this->requestParameters['ArchitectureType'] = $architectureType;
+        $this->queryParameters['ArchitectureType'] = $architectureType;
 
-	public function setNetworkType($networkType) {
-		$this->networkType = $networkType;
-		$this->queryParameters["NetworkType"]=$networkType;
-	}
+        return $this;
+    }
 
-	public function getEngineVersion() {
-		return $this->engineVersion;
-	}
+    /**
+     * @param string $vpcId
+     *
+     * @return $this
+     */
+    public function setVpcId($vpcId)
+    {
+        $this->requestParameters['VpcId'] = $vpcId;
+        $this->queryParameters['VpcId'] = $vpcId;
 
-	public function setEngineVersion($engineVersion) {
-		$this->engineVersion = $engineVersion;
-		$this->queryParameters["EngineVersion"]=$engineVersion;
-	}
+        return $this;
+    }
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+        return $this;
+    }
 
-	public function getInstanceClass() {
-		return $this->instanceClass;
-	}
+    /**
+     * @param string $instanceType
+     *
+     * @return $this
+     */
+    public function setInstanceType($instanceType)
+    {
+        $this->requestParameters['InstanceType'] = $instanceType;
+        $this->queryParameters['InstanceType'] = $instanceType;
 
-	public function setInstanceClass($instanceClass) {
-		$this->instanceClass = $instanceClass;
-		$this->queryParameters["InstanceClass"]=$instanceClass;
-	}
+        return $this;
+    }
 
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
+    /**
+     * @param string $zoneId
+     *
+     * @return $this
+     */
+    public function setZoneId($zoneId)
+    {
+        $this->requestParameters['ZoneId'] = $zoneId;
+        $this->queryParameters['ZoneId'] = $zoneId;
 
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
+        return $this;
+    }
 
-	public function getVSwitchId() {
-		return $this->vSwitchId;
-	}
+    /**
+     * @param string $chargeType
+     *
+     * @return $this
+     */
+    public function setChargeType($chargeType)
+    {
+        $this->requestParameters['ChargeType'] = $chargeType;
+        $this->queryParameters['ChargeType'] = $chargeType;
 
-	public function setVSwitchId($vSwitchId) {
-		$this->vSwitchId = $vSwitchId;
-		$this->queryParameters["VSwitchId"]=$vSwitchId;
-	}
+        return $this;
+    }
 
-	public function getExpired() {
-		return $this->expired;
-	}
+    /**
+     * @param array $tag
+     *
+     * @return $this
+     */
+    public function setTags(array $tag)
+    {
+        $this->requestParameters['Tags'] = $tag;
+        foreach ($tag as $depth1 => $depth1Value) {
+            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+        }
 
-	public function setExpired($expired) {
-		$this->expired = $expired;
-		$this->queryParameters["Expired"]=$expired;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
-
-	public function getInstanceIds() {
-		return $this->instanceIds;
-	}
-
-	public function setInstanceIds($instanceIds) {
-		$this->instanceIds = $instanceIds;
-		$this->queryParameters["InstanceIds"]=$instanceIds;
-	}
-
-	public function getArchitectureType() {
-		return $this->architectureType;
-	}
-
-	public function setArchitectureType($architectureType) {
-		$this->architectureType = $architectureType;
-		$this->queryParameters["ArchitectureType"]=$architectureType;
-	}
-
-	public function getVpcId() {
-		return $this->vpcId;
-	}
-
-	public function setVpcId($vpcId) {
-		$this->vpcId = $vpcId;
-		$this->queryParameters["VpcId"]=$vpcId;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getInstanceType() {
-		return $this->instanceType;
-	}
-
-	public function setInstanceType($instanceType) {
-		$this->instanceType = $instanceType;
-		$this->queryParameters["InstanceType"]=$instanceType;
-	}
-
-	public function getZoneId() {
-		return $this->zoneId;
-	}
-
-	public function setZoneId($zoneId) {
-		$this->zoneId = $zoneId;
-		$this->queryParameters["ZoneId"]=$zoneId;
-	}
-
-	public function getChargeType() {
-		return $this->chargeType;
-	}
-
-	public function setChargeType($chargeType) {
-		$this->chargeType = $chargeType;
-		$this->queryParameters["ChargeType"]=$chargeType;
-	}
-	
+        return $this;
+    }
 }

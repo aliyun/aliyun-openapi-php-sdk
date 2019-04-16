@@ -5,14 +5,17 @@ namespace R_kvstore\Request\V20150101;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of CreateSnapshot
+ * Request of ReleaseInstancePublicConnection
  *
  * @method string getResourceOwnerId()
+ * @method string getInstanceId()
+ * @method string getSecurityToken()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getCurrentConnectionString()
  */
-class CreateSnapshotRequest extends \RpcAcsRequest
+class ReleaseInstancePublicConnectionRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,7 +31,7 @@ class CreateSnapshotRequest extends \RpcAcsRequest
         parent::__construct(
             'R-kvstore',
             '2015-01-01',
-            'CreateSnapshot',
+            'ReleaseInstancePublicConnection',
             'R-kvstore'
         );
     }
@@ -42,6 +45,32 @@ class CreateSnapshotRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }
@@ -81,6 +110,19 @@ class CreateSnapshotRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $currentConnectionString
+     *
+     * @return $this
+     */
+    public function setCurrentConnectionString($currentConnectionString)
+    {
+        $this->requestParameters['CurrentConnectionString'] = $currentConnectionString;
+        $this->queryParameters['CurrentConnectionString'] = $currentConnectionString;
 
         return $this;
     }

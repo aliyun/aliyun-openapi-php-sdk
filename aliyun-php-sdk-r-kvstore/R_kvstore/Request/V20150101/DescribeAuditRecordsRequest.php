@@ -1,195 +1,241 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace R_kvstore\Request\V20150101;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of DescribeAuditRecords
+ *
+ * @method string getResourceOwnerId()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getEndTime()
+ * @method string getStartTime()
+ * @method string getOwnerId()
+ * @method string getQueryKeywords()
+ * @method string getPageNumber()
+ * @method string getHostAddress()
+ * @method string getInstanceId()
+ * @method string getAccountName()
+ * @method string getSecurityToken()
+ * @method string getDatabaseName()
+ * @method string getPageSize()
+ * @method string getNodeId()
+ */
 class DescribeAuditRecordsRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("R-kvstore", "2015-01-01", "DescribeAuditRecords", "redisa", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $resourceOwnerAccount;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'R-kvstore',
+            '2015-01-01',
+            'DescribeAuditRecords',
+            'R-kvstore'
+        );
+    }
 
-	private  $ownerAccount;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $endTime;
+        return $this;
+    }
 
-	private  $startTime;
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	private  $queryKeywords;
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	private  $pageNumber;
+        return $this;
+    }
 
-	private  $hostAddress;
+    /**
+     * @param string $endTime
+     *
+     * @return $this
+     */
+    public function setEndTime($endTime)
+    {
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
 
-	private  $instanceId;
+        return $this;
+    }
 
-	private  $accountName;
+    /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
 
-	private  $securityToken;
+        return $this;
+    }
 
-	private  $databaseName;
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	private  $pageSize;
+        return $this;
+    }
 
-	private  $nodeId;
+    /**
+     * @param string $queryKeywords
+     *
+     * @return $this
+     */
+    public function setQueryKeywords($queryKeywords)
+    {
+        $this->requestParameters['QueryKeywords'] = $queryKeywords;
+        $this->queryParameters['QueryKeywords'] = $queryKeywords;
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+    /**
+     * @param string $hostAddress
+     *
+     * @return $this
+     */
+    public function setHostAddress($hostAddress)
+    {
+        $this->requestParameters['HostAddress'] = $hostAddress;
+        $this->queryParameters['HostAddress'] = $hostAddress;
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+        return $this;
+    }
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
-	public function getEndTime() {
-		return $this->endTime;
-	}
+        return $this;
+    }
 
-	public function setEndTime($endTime) {
-		$this->endTime = $endTime;
-		$this->queryParameters["EndTime"]=$endTime;
-	}
+    /**
+     * @param string $accountName
+     *
+     * @return $this
+     */
+    public function setAccountName($accountName)
+    {
+        $this->requestParameters['AccountName'] = $accountName;
+        $this->queryParameters['AccountName'] = $accountName;
 
-	public function getStartTime() {
-		return $this->startTime;
-	}
+        return $this;
+    }
 
-	public function setStartTime($startTime) {
-		$this->startTime = $startTime;
-		$this->queryParameters["StartTime"]=$startTime;
-	}
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+        return $this;
+    }
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+    /**
+     * @param string $databaseName
+     *
+     * @return $this
+     */
+    public function setDatabaseName($databaseName)
+    {
+        $this->requestParameters['DatabaseName'] = $databaseName;
+        $this->queryParameters['DatabaseName'] = $databaseName;
 
-	public function getQueryKeywords() {
-		return $this->queryKeywords;
-	}
+        return $this;
+    }
 
-	public function setQueryKeywords($queryKeywords) {
-		$this->queryKeywords = $queryKeywords;
-		$this->queryParameters["QueryKeywords"]=$queryKeywords;
-	}
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
+        return $this;
+    }
 
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
+    /**
+     * @param string $nodeId
+     *
+     * @return $this
+     */
+    public function setNodeId($nodeId)
+    {
+        $this->requestParameters['NodeId'] = $nodeId;
+        $this->queryParameters['NodeId'] = $nodeId;
 
-	public function getHostAddress() {
-		return $this->hostAddress;
-	}
-
-	public function setHostAddress($hostAddress) {
-		$this->hostAddress = $hostAddress;
-		$this->queryParameters["HostAddress"]=$hostAddress;
-	}
-
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
-
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
-
-	public function getAccountName() {
-		return $this->accountName;
-	}
-
-	public function setAccountName($accountName) {
-		$this->accountName = $accountName;
-		$this->queryParameters["AccountName"]=$accountName;
-	}
-
-	public function getSecurityToken() {
-		return $this->securityToken;
-	}
-
-	public function setSecurityToken($securityToken) {
-		$this->securityToken = $securityToken;
-		$this->queryParameters["SecurityToken"]=$securityToken;
-	}
-
-	public function getDatabaseName() {
-		return $this->databaseName;
-	}
-
-	public function setDatabaseName($databaseName) {
-		$this->databaseName = $databaseName;
-		$this->queryParameters["DatabaseName"]=$databaseName;
-	}
-
-	public function getPageSize() {
-		return $this->pageSize;
-	}
-
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
-
-	public function getNodeId() {
-		return $this->nodeId;
-	}
-
-	public function setNodeId($nodeId) {
-		$this->nodeId = $nodeId;
-		$this->queryParameters["NodeId"]=$nodeId;
-	}
-	
+        return $this;
+    }
 }
