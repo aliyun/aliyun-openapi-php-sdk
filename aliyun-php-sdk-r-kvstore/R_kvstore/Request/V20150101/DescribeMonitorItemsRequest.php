@@ -30,7 +30,7 @@ class DescribeMonitorItemsRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'DescribeMonitorItems',
-            'R-kvstore'
+            'redisa'
         );
     }
 

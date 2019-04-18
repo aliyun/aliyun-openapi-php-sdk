@@ -31,7 +31,7 @@ class DeleteInstanceRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'DeleteInstance',
-            'R-kvstore'
+            'redisa'
         );
     }
 

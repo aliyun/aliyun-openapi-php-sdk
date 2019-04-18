@@ -29,7 +29,7 @@ class DeleteTempInstanceRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'DeleteTempInstance',
-            'R-kvstore'
+            'redisa'
         );
     }
 

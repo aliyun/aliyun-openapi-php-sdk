@@ -33,7 +33,7 @@ class ModifyInstanceMinorVersionRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'ModifyInstanceMinorVersion',
-            'R-kvstore'
+            'redisa'
         );
     }
 

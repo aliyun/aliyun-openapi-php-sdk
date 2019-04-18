@@ -34,7 +34,7 @@ class DescribeInstanceAutoRenewalAttributeRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'DescribeInstanceAutoRenewalAttribute',
-            'R-kvstore'
+            'redisa'
         );
     }
 

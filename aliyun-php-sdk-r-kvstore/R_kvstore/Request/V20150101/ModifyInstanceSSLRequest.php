@@ -32,7 +32,7 @@ class ModifyInstanceSSLRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'ModifyInstanceSSL',
-            'R-kvstore'
+            'redisa'
         );
     }
 

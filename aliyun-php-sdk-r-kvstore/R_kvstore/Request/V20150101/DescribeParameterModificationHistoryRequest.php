@@ -34,7 +34,7 @@ class DescribeParameterModificationHistoryRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'DescribeParameterModificationHistory',
-            'R-kvstore'
+            'redisa'
         );
     }
 

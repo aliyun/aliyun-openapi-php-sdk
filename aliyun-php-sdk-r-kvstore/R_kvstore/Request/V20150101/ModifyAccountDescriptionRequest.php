@@ -33,7 +33,7 @@ class ModifyAccountDescriptionRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'ModifyAccountDescription',
-            'R-kvstore'
+            'redisa'
         );
     }
 

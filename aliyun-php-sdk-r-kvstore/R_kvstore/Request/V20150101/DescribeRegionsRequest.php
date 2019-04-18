@@ -31,7 +31,7 @@ class DescribeRegionsRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'DescribeRegions',
-            'R-kvstore'
+            'redisa'
         );
     }
 

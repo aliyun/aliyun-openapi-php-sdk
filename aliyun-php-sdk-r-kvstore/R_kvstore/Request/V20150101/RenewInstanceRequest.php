@@ -39,7 +39,7 @@ class RenewInstanceRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'RenewInstance',
-            'R-kvstore'
+            'redisa'
         );
     }
 

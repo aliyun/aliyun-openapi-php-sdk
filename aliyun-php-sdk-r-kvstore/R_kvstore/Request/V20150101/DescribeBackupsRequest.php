@@ -36,7 +36,7 @@ class DescribeBackupsRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'DescribeBackups',
-            'R-kvstore'
+            'redisa'
         );
     }
 

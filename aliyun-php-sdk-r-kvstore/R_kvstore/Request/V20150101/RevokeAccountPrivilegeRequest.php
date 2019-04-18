@@ -32,7 +32,7 @@ class RevokeAccountPrivilegeRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'RevokeAccountPrivilege',
-            'R-kvstore'
+            'redisa'
         );
     }
 

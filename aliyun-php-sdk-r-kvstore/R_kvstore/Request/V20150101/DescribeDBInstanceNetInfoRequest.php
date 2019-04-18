@@ -31,7 +31,7 @@ class DescribeDBInstanceNetInfoRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'DescribeDBInstanceNetInfo',
-            'R-kvstore'
+            'redisa'
         );
     }
 

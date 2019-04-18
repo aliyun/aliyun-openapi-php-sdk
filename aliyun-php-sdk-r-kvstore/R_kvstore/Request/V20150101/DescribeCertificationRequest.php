@@ -32,7 +32,7 @@ class DescribeCertificationRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'DescribeCertification',
-            'R-kvstore'
+            'redisa'
         );
     }
 

@@ -39,7 +39,7 @@ class DescribeRunningLogRecordsRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'DescribeRunningLogRecords',
-            'R-kvstore'
+            'redisa'
         );
     }
 

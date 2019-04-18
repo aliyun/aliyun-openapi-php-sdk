@@ -33,7 +33,7 @@ class GrantAccountPrivilegeRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'GrantAccountPrivilege',
-            'R-kvstore'
+            'redisa'
         );
     }
 

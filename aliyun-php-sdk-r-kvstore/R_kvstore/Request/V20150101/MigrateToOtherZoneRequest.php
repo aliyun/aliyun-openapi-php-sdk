@@ -34,7 +34,7 @@ class MigrateToOtherZoneRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'MigrateToOtherZone',
-            'R-kvstore'
+            'redisa'
         );
     }
 

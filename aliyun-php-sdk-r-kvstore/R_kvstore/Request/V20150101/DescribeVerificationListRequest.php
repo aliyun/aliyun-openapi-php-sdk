@@ -35,7 +35,7 @@ class DescribeVerificationListRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'DescribeVerificationList',
-            'R-kvstore'
+            'redisa'
         );
     }
 

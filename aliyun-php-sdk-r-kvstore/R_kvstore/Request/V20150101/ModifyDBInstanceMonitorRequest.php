@@ -32,7 +32,7 @@ class ModifyDBInstanceMonitorRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'ModifyDBInstanceMonitor',
-            'R-kvstore'
+            'redisa'
         );
     }
 

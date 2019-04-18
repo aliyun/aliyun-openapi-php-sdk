@@ -31,7 +31,7 @@ class DescribeIntranetAttributeRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'DescribeIntranetAttribute',
-            'R-kvstore'
+            'redisa'
         );
     }
 

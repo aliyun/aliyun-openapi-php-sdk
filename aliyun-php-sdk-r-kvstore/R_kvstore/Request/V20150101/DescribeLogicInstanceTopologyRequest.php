@@ -31,7 +31,7 @@ class DescribeLogicInstanceTopologyRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'DescribeLogicInstanceTopology',
-            'R-kvstore'
+            'redisa'
         );
     }
 

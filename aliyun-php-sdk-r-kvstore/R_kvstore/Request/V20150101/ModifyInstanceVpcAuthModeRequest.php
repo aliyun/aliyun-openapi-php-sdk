@@ -32,7 +32,7 @@ class ModifyInstanceVpcAuthModeRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'ModifyInstanceVpcAuthMode',
-            'R-kvstore'
+            'redisa'
         );
     }
 

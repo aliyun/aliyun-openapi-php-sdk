@@ -32,7 +32,7 @@ class ReleaseInstancePublicConnectionRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'ReleaseInstancePublicConnection',
-            'R-kvstore'
+            'redisa'
         );
     }
 

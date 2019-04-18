@@ -40,7 +40,7 @@ class DescribeAuditRecordsRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'DescribeAuditRecords',
-            'R-kvstore'
+            'redisa'
         );
     }
 

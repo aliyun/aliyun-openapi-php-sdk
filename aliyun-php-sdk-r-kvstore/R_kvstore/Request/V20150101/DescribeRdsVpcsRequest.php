@@ -31,7 +31,7 @@ class DescribeRdsVpcsRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'DescribeRdsVpcs',
-            'R-kvstore'
+            'redisa'
         );
     }
 

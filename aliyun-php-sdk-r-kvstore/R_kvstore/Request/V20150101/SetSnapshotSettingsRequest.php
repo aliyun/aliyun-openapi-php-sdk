@@ -29,7 +29,7 @@ class SetSnapshotSettingsRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'SetSnapshotSettings',
-            'R-kvstore'
+            'redisa'
         );
     }
 

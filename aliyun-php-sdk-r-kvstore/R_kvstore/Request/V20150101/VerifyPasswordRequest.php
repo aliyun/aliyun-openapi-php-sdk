@@ -32,7 +32,7 @@ class VerifyPasswordRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'VerifyPassword',
-            'R-kvstore'
+            'redisa'
         );
     }
 

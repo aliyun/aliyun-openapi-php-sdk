@@ -32,7 +32,7 @@ class RestartInstanceRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'RestartInstance',
-            'R-kvstore'
+            'redisa'
         );
     }
 

@@ -33,7 +33,7 @@ class DescribeParameterTemplatesRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'DescribeParameterTemplates',
-            'R-kvstore'
+            'redisa'
         );
     }
 

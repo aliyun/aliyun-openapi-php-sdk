@@ -32,7 +32,7 @@ class UnlinkReplicaInstanceRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'UnlinkReplicaInstance',
-            'R-kvstore'
+            'redisa'
         );
     }
 

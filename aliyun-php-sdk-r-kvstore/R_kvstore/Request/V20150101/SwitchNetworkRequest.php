@@ -36,7 +36,7 @@ class SwitchNetworkRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'SwitchNetwork',
-            'R-kvstore'
+            'redisa'
         );
     }
 

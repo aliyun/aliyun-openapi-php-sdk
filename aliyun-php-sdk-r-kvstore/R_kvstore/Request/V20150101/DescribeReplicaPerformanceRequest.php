@@ -36,7 +36,7 @@ class DescribeReplicaPerformanceRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'DescribeReplicaPerformance',
-            'R-kvstore'
+            'redisa'
         );
     }
 

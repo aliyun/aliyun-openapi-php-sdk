@@ -35,7 +35,7 @@ class DescribeReplicaConflictInfoRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'DescribeReplicaConflictInfo',
-            'R-kvstore'
+            'redisa'
         );
     }
 

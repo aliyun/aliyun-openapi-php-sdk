@@ -29,7 +29,7 @@ class CreateTempInstanceRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'CreateTempInstance',
-            'R-kvstore'
+            'redisa'
         );
     }
 

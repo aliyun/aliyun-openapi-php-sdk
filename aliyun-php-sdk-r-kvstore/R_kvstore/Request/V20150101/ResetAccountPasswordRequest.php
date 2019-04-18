@@ -33,7 +33,7 @@ class ResetAccountPasswordRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'ResetAccountPassword',
-            'R-kvstore'
+            'redisa'
         );
     }
 

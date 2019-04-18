@@ -31,7 +31,7 @@ class DescribeSecurityIpsRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'DescribeSecurityIps',
-            'R-kvstore'
+            'redisa'
         );
     }
 

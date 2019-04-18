@@ -34,7 +34,7 @@ class ModifyReplicaModeRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'ModifyReplicaMode',
-            'R-kvstore'
+            'redisa'
         );
     }
 

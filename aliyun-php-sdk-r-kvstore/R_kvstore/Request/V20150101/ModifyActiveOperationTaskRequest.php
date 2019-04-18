@@ -32,7 +32,7 @@ class ModifyActiveOperationTaskRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'ModifyActiveOperationTask',
-            'R-kvstore'
+            'redisa'
         );
     }
 

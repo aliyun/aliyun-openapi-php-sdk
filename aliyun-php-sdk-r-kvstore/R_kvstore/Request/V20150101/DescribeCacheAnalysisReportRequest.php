@@ -36,7 +36,7 @@ class DescribeCacheAnalysisReportRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'DescribeCacheAnalysisReport',
-            'R-kvstore'
+            'redisa'
         );
     }
 

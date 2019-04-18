@@ -29,7 +29,7 @@ class DeleteSnapshotRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'DeleteSnapshot',
-            'R-kvstore'
+            'redisa'
         );
     }
 

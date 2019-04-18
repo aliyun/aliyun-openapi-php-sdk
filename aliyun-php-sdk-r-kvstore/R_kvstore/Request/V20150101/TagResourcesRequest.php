@@ -32,7 +32,7 @@ class TagResourcesRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'TagResources',
-            'R-kvstore'
+            'redisa'
         );
     }
 

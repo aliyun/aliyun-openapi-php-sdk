@@ -33,7 +33,7 @@ class ModifyInstanceMaintainTimeRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'ModifyInstanceMaintainTime',
-            'R-kvstore'
+            'redisa'
         );
     }
 

@@ -33,7 +33,7 @@ class ModifyInstanceNetExpireTimeRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'ModifyInstanceNetExpireTime',
-            'R-kvstore'
+            'redisa'
         );
     }
 

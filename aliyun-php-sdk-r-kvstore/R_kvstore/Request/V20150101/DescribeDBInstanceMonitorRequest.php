@@ -31,7 +31,7 @@ class DescribeDBInstanceMonitorRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'DescribeDBInstanceMonitor',
-            'R-kvstore'
+            'redisa'
         );
     }
 

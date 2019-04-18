@@ -32,7 +32,7 @@ class DescribeMonthlyServiceStatusRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'DescribeMonthlyServiceStatus',
-            'R-kvstore'
+            'redisa'
         );
     }
 

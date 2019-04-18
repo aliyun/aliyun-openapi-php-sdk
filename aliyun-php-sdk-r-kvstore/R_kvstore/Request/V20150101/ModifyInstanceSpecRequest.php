@@ -38,7 +38,7 @@ class ModifyInstanceSpecRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'ModifyInstanceSpec',
-            'R-kvstore'
+            'redisa'
         );
     }
 

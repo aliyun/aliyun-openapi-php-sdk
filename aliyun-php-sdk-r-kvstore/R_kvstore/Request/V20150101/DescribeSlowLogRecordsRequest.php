@@ -38,7 +38,7 @@ class DescribeSlowLogRecordsRequest extends \RpcAcsRequest
             'R-kvstore',
             '2015-01-01',
             'DescribeSlowLogRecords',
-            'R-kvstore'
+            'redisa'
         );
     }
 
