@@ -5,18 +5,18 @@ namespace Dds\Request\V20151201;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeStaticVerificationList
+ * Request of UntagResources
  *
+ * @method string getAll()
  * @method string getResourceOwnerId()
- * @method string getSecurityToken()
+ * @method array getResourceIds()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getReplicaId()
- * @method string getDestinationInstanceId()
- * @method string getSourceInstanceId()
  * @method string getOwnerId()
+ * @method array getTagKeys()
+ * @method string getResourceType()
  */
-class DescribeStaticVerificationListRequest extends \RpcAcsRequest
+class UntagResourcesRequest extends \RpcAcsRequest
 {
 
     /**
@@ -32,9 +32,22 @@ class DescribeStaticVerificationListRequest extends \RpcAcsRequest
         parent::__construct(
             'Dds',
             '2015-12-01',
-            'DescribeStaticVerificationList',
+            'UntagResources',
             'Dds'
         );
+    }
+
+    /**
+     * @param string $all
+     *
+     * @return $this
+     */
+    public function setAll($all)
+    {
+        $this->requestParameters['All'] = $all;
+        $this->queryParameters['All'] = $all;
+
+        return $this;
     }
 
     /**
@@ -51,14 +64,16 @@ class DescribeStaticVerificationListRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $securityToken
+     * @param array $resourceId
      *
      * @return $this
      */
-    public function setSecurityToken($securityToken)
+    public function setResourceIds(array $resourceId)
     {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
+        $this->requestParameters['ResourceIds'] = $resourceId;
+        foreach ($resourceId as $i => $iValue) {
+            $this->queryParameters['ResourceId.' . ($i + 1)] = $iValue;
+        }
 
         return $this;
     }
@@ -90,45 +105,6 @@ class DescribeStaticVerificationListRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $replicaId
-     *
-     * @return $this
-     */
-    public function setReplicaId($replicaId)
-    {
-        $this->requestParameters['ReplicaId'] = $replicaId;
-        $this->queryParameters['ReplicaId'] = $replicaId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $destinationInstanceId
-     *
-     * @return $this
-     */
-    public function setDestinationInstanceId($destinationInstanceId)
-    {
-        $this->requestParameters['DestinationInstanceId'] = $destinationInstanceId;
-        $this->queryParameters['DestinationInstanceId'] = $destinationInstanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $sourceInstanceId
-     *
-     * @return $this
-     */
-    public function setSourceInstanceId($sourceInstanceId)
-    {
-        $this->requestParameters['SourceInstanceId'] = $sourceInstanceId;
-        $this->queryParameters['SourceInstanceId'] = $sourceInstanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -137,6 +113,34 @@ class DescribeStaticVerificationListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param array $tagKey
+     *
+     * @return $this
+     */
+    public function setTagKeys(array $tagKey)
+    {
+        $this->requestParameters['TagKeys'] = $tagKey;
+        foreach ($tagKey as $i => $iValue) {
+            $this->queryParameters['TagKey.' . ($i + 1)] = $iValue;
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceType
+     *
+     * @return $this
+     */
+    public function setResourceType($resourceType)
+    {
+        $this->requestParameters['ResourceType'] = $resourceType;
+        $this->queryParameters['ResourceType'] = $resourceType;
 
         return $this;
     }

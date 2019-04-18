@@ -3,6 +3,8 @@
 namespace Dds\Request\V20151201;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of ModifyReplicaRelation
  *
  * @method string getResourceOwnerId()
@@ -29,7 +31,7 @@ class ModifyReplicaRelationRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'ModifyReplicaRelation',
-            'dds'
+            'Dds'
         );
     }
 

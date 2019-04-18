@@ -3,6 +3,8 @@
 namespace Dds\Request\V20151201;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeReplicaPerformance
  *
  * @method string getResourceOwnerId()
@@ -34,7 +36,7 @@ class DescribeReplicaPerformanceRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'DescribeReplicaPerformance',
-            'dds'
+            'Dds'
         );
     }
 

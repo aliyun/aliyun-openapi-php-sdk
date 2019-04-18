@@ -3,6 +3,8 @@
 namespace Dds\Request\V20151201;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeAuditRecords
  *
  * @method string getResourceOwnerId()
@@ -38,7 +40,7 @@ class DescribeAuditRecordsRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'DescribeAuditRecords',
-            'dds'
+            'Dds'
         );
     }
 

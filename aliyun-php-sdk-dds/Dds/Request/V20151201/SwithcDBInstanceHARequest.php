@@ -3,6 +3,8 @@
 namespace Dds\Request\V20151201;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of SwithcDBInstanceHA
  *
  * @method string getResourceOwnerId()
@@ -33,7 +35,7 @@ class SwithcDBInstanceHARequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'SwithcDBInstanceHA',
-            'dds'
+            'Dds'
         );
     }
 

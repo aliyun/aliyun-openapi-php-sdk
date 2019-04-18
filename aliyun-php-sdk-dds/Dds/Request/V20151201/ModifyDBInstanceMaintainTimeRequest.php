@@ -3,6 +3,8 @@
 namespace Dds\Request\V20151201;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of ModifyDBInstanceMaintainTime
  *
  * @method string getResourceOwnerId()
@@ -31,7 +33,7 @@ class ModifyDBInstanceMaintainTimeRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'ModifyDBInstanceMaintainTime',
-            'dds'
+            'Dds'
         );
     }
 

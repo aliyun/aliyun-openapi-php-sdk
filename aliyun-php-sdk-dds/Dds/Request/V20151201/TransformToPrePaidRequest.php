@@ -3,6 +3,8 @@
 namespace Dds\Request\V20151201;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of TransformToPrePaid
  *
  * @method string getResourceOwnerId()
@@ -35,7 +37,7 @@ class TransformToPrePaidRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'TransformToPrePaid',
-            'dds'
+            'Dds'
         );
     }
 

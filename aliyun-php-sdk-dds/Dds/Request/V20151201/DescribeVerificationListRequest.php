@@ -3,6 +3,8 @@
 namespace Dds\Request\V20151201;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeVerificationList
  *
  * @method string getResourceOwnerId()
@@ -33,7 +35,7 @@ class DescribeVerificationListRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'DescribeVerificationList',
-            'dds'
+            'Dds'
         );
     }
 

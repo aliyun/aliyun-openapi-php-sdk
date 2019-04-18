@@ -5,17 +5,20 @@ namespace Dds\Request\V20151201;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeDBInstanceAttribute
+ * Request of DescribeBackupDBs
  *
  * @method string getResourceOwnerId()
+ * @method string getRestoreTime()
  * @method string getSecurityToken()
  * @method string getResourceOwnerAccount()
- * @method string getEngine()
  * @method string getOwnerAccount()
- * @method string getDBInstanceId()
+ * @method string getBackupId()
+ * @method string getPageSize()
+ * @method string getSourceDBInstance()
  * @method string getOwnerId()
+ * @method string getPageNumber()
  */
-class DescribeDBInstanceAttributeRequest extends \RpcAcsRequest
+class DescribeBackupDBsRequest extends \RpcAcsRequest
 {
 
     /**
@@ -31,7 +34,7 @@ class DescribeDBInstanceAttributeRequest extends \RpcAcsRequest
         parent::__construct(
             'Dds',
             '2015-12-01',
-            'DescribeDBInstanceAttribute',
+            'DescribeBackupDBs',
             'Dds'
         );
     }
@@ -45,6 +48,19 @@ class DescribeDBInstanceAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $restoreTime
+     *
+     * @return $this
+     */
+    public function setRestoreTime($restoreTime)
+    {
+        $this->requestParameters['RestoreTime'] = $restoreTime;
+        $this->queryParameters['RestoreTime'] = $restoreTime;
 
         return $this;
     }
@@ -76,19 +92,6 @@ class DescribeDBInstanceAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $engine
-     *
-     * @return $this
-     */
-    public function setEngine($engine)
-    {
-        $this->requestParameters['Engine'] = $engine;
-        $this->queryParameters['Engine'] = $engine;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerAccount
      *
      * @return $this
@@ -102,14 +105,40 @@ class DescribeDBInstanceAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dBInstanceId
+     * @param string $backupId
      *
      * @return $this
      */
-    public function setDBInstanceId($dBInstanceId)
+    public function setBackupId($backupId)
     {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
+        $this->requestParameters['BackupId'] = $backupId;
+        $this->queryParameters['BackupId'] = $backupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sourceDBInstance
+     *
+     * @return $this
+     */
+    public function setSourceDBInstance($sourceDBInstance)
+    {
+        $this->requestParameters['SourceDBInstance'] = $sourceDBInstance;
+        $this->queryParameters['SourceDBInstance'] = $sourceDBInstance;
 
         return $this;
     }
@@ -123,6 +152,19 @@ class DescribeDBInstanceAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

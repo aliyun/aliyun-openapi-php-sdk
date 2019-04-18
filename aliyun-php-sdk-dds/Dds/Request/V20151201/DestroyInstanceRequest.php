@@ -3,6 +3,8 @@
 namespace Dds\Request\V20151201;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DestroyInstance
  *
  * @method string getResourceOwnerId()
@@ -11,6 +13,7 @@ namespace Dds\Request\V20151201;
  * @method string getResourceOwnerAccount()
  * @method string getClientToken()
  * @method string getOwnerAccount()
+ * @method string getDBInstanceId()
  * @method string getOwnerId()
  */
 class DestroyInstanceRequest extends \RpcAcsRequest
@@ -30,7 +33,7 @@ class DestroyInstanceRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'DestroyInstance',
-            'dds'
+            'Dds'
         );
     }
 
@@ -108,6 +111,19 @@ class DestroyInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
 
         return $this;
     }

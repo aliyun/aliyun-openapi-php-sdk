@@ -5,17 +5,19 @@ namespace Dds\Request\V20151201;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeDBInstanceAttribute
+ * Request of CheckRecoveryCondition
  *
  * @method string getResourceOwnerId()
+ * @method string getRestoreTime()
+ * @method string getDatabaseNames()
  * @method string getSecurityToken()
  * @method string getResourceOwnerAccount()
- * @method string getEngine()
  * @method string getOwnerAccount()
- * @method string getDBInstanceId()
+ * @method string getBackupId()
+ * @method string getSourceDBInstance()
  * @method string getOwnerId()
  */
-class DescribeDBInstanceAttributeRequest extends \RpcAcsRequest
+class CheckRecoveryConditionRequest extends \RpcAcsRequest
 {
 
     /**
@@ -31,7 +33,7 @@ class DescribeDBInstanceAttributeRequest extends \RpcAcsRequest
         parent::__construct(
             'Dds',
             '2015-12-01',
-            'DescribeDBInstanceAttribute',
+            'CheckRecoveryCondition',
             'Dds'
         );
     }
@@ -45,6 +47,32 @@ class DescribeDBInstanceAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $restoreTime
+     *
+     * @return $this
+     */
+    public function setRestoreTime($restoreTime)
+    {
+        $this->requestParameters['RestoreTime'] = $restoreTime;
+        $this->queryParameters['RestoreTime'] = $restoreTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $databaseNames
+     *
+     * @return $this
+     */
+    public function setDatabaseNames($databaseNames)
+    {
+        $this->requestParameters['DatabaseNames'] = $databaseNames;
+        $this->queryParameters['DatabaseNames'] = $databaseNames;
 
         return $this;
     }
@@ -76,19 +104,6 @@ class DescribeDBInstanceAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $engine
-     *
-     * @return $this
-     */
-    public function setEngine($engine)
-    {
-        $this->requestParameters['Engine'] = $engine;
-        $this->queryParameters['Engine'] = $engine;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerAccount
      *
      * @return $this
@@ -102,14 +117,27 @@ class DescribeDBInstanceAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dBInstanceId
+     * @param string $backupId
      *
      * @return $this
      */
-    public function setDBInstanceId($dBInstanceId)
+    public function setBackupId($backupId)
     {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
+        $this->requestParameters['BackupId'] = $backupId;
+        $this->queryParameters['BackupId'] = $backupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sourceDBInstance
+     *
+     * @return $this
+     */
+    public function setSourceDBInstance($sourceDBInstance)
+    {
+        $this->requestParameters['SourceDBInstance'] = $sourceDBInstance;
+        $this->queryParameters['SourceDBInstance'] = $sourceDBInstance;
 
         return $this;
     }

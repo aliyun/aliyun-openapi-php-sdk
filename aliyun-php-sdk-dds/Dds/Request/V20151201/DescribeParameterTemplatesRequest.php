@@ -3,6 +3,8 @@
 namespace Dds\Request\V20151201;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeParameterTemplates
  *
  * @method string getResourceOwnerId()
@@ -30,7 +32,7 @@ class DescribeParameterTemplatesRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'DescribeParameterTemplates',
-            'dds'
+            'Dds'
         );
     }
 

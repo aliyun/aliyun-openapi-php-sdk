@@ -3,6 +3,8 @@
 namespace Dds\Request\V20151201;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of CreateDBInstance
  *
  * @method string getResourceOwnerId()
@@ -14,6 +16,7 @@ namespace Dds\Request\V20151201;
  * @method string getReplicationFactor()
  * @method string getStorageEngine()
  * @method string getResourceGroupId()
+ * @method string getDatabaseNames()
  * @method string getSecurityToken()
  * @method string getEngine()
  * @method string getDBInstanceDescription()
@@ -51,7 +54,7 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'CreateDBInstance',
-            'dds'
+            'Dds'
         );
     }
 
@@ -168,6 +171,19 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
         $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $databaseNames
+     *
+     * @return $this
+     */
+    public function setDatabaseNames($databaseNames)
+    {
+        $this->requestParameters['DatabaseNames'] = $databaseNames;
+        $this->queryParameters['DatabaseNames'] = $databaseNames;
 
         return $this;
     }

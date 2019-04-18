@@ -3,6 +3,8 @@
 namespace Dds\Request\V20151201;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeDBInstances
  *
  * @method string getResourceOwnerId()
@@ -17,6 +19,7 @@ namespace Dds\Request\V20151201;
  * @method string getDBInstanceId()
  * @method string getDBInstanceDescription()
  * @method string getDBInstanceStatus()
+ * @method array getTags()
  * @method string getExpireTime()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
@@ -45,7 +48,7 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'DescribeDBInstances',
-            'dds'
+            'Dds'
         );
     }
 
@@ -201,6 +204,22 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DBInstanceStatus'] = $dBInstanceStatus;
         $this->queryParameters['DBInstanceStatus'] = $dBInstanceStatus;
+
+        return $this;
+    }
+
+    /**
+     * @param array $tag
+     *
+     * @return $this
+     */
+    public function setTags(array $tag)
+    {
+        $this->requestParameters['Tags'] = $tag;
+        foreach ($tag as $depth1 => $depth1Value) {
+            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+        }
 
         return $this;
     }

@@ -3,6 +3,8 @@
 namespace Dds\Request\V20151201;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeErrorLogRecords
  *
  * @method string getSQLId()
@@ -37,7 +39,7 @@ class DescribeErrorLogRecordsRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'DescribeErrorLogRecords',
-            'dds'
+            'Dds'
         );
     }
 

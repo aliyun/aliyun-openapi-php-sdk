@@ -3,6 +3,8 @@
 namespace Dds\Request\V20151201;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of SwitchDBInstanceHA
  *
  * @method string getResourceOwnerId()
@@ -33,7 +35,7 @@ class SwitchDBInstanceHARequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'SwitchDBInstanceHA',
-            'dds'
+            'Dds'
         );
     }
 

@@ -5,17 +5,18 @@ namespace Dds\Request\V20151201;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeDBInstanceAttribute
+ * Request of MigrateAvailableZone
  *
+ * @method string getVswitch()
  * @method string getResourceOwnerId()
- * @method string getSecurityToken()
  * @method string getResourceOwnerAccount()
- * @method string getEngine()
+ * @method string getEffectiveTime()
  * @method string getOwnerAccount()
+ * @method string getZoneId()
  * @method string getDBInstanceId()
  * @method string getOwnerId()
  */
-class DescribeDBInstanceAttributeRequest extends \RpcAcsRequest
+class MigrateAvailableZoneRequest extends \RpcAcsRequest
 {
 
     /**
@@ -31,9 +32,22 @@ class DescribeDBInstanceAttributeRequest extends \RpcAcsRequest
         parent::__construct(
             'Dds',
             '2015-12-01',
-            'DescribeDBInstanceAttribute',
+            'MigrateAvailableZone',
             'Dds'
         );
+    }
+
+    /**
+     * @param string $vswitch
+     *
+     * @return $this
+     */
+    public function setVswitch($vswitch)
+    {
+        $this->requestParameters['Vswitch'] = $vswitch;
+        $this->queryParameters['Vswitch'] = $vswitch;
+
+        return $this;
     }
 
     /**
@@ -45,19 +59,6 @@ class DescribeDBInstanceAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }
@@ -76,14 +77,14 @@ class DescribeDBInstanceAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $engine
+     * @param string $effectiveTime
      *
      * @return $this
      */
-    public function setEngine($engine)
+    public function setEffectiveTime($effectiveTime)
     {
-        $this->requestParameters['Engine'] = $engine;
-        $this->queryParameters['Engine'] = $engine;
+        $this->requestParameters['EffectiveTime'] = $effectiveTime;
+        $this->queryParameters['EffectiveTime'] = $effectiveTime;
 
         return $this;
     }
@@ -97,6 +98,19 @@ class DescribeDBInstanceAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $zoneId
+     *
+     * @return $this
+     */
+    public function setZoneId($zoneId)
+    {
+        $this->requestParameters['ZoneId'] = $zoneId;
+        $this->queryParameters['ZoneId'] = $zoneId;
 
         return $this;
     }

@@ -3,6 +3,8 @@
 namespace Dds\Request\V20151201;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeInstanceAutoRenewalAttribute
  *
  * @method string getResourceOwnerId()
@@ -32,7 +34,7 @@ class DescribeInstanceAutoRenewalAttributeRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'DescribeInstanceAutoRenewalAttribute',
-            'dds'
+            'Dds'
         );
     }
 

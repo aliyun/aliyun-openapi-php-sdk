@@ -3,6 +3,8 @@
 namespace Dds\Request\V20151201;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of MigrateToOtherZone
  *
  * @method string getVSwitchId()
@@ -31,7 +33,7 @@ class MigrateToOtherZoneRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'MigrateToOtherZone',
-            'dds'
+            'Dds'
         );
     }
 

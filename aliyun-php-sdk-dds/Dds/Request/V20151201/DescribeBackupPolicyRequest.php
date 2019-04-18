@@ -3,6 +3,8 @@
 namespace Dds\Request\V20151201;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeBackupPolicy
  *
  * @method string getResourceOwnerId()
@@ -29,7 +31,7 @@ class DescribeBackupPolicyRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'DescribeBackupPolicy',
-            'dds'
+            'Dds'
         );
     }
 

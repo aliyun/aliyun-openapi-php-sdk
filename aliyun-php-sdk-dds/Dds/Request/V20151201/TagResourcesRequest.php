@@ -5,17 +5,17 @@ namespace Dds\Request\V20151201;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeDBInstanceAttribute
+ * Request of TagResources
  *
  * @method string getResourceOwnerId()
- * @method string getSecurityToken()
+ * @method array getResourceIds()
  * @method string getResourceOwnerAccount()
- * @method string getEngine()
  * @method string getOwnerAccount()
- * @method string getDBInstanceId()
+ * @method array getTags()
  * @method string getOwnerId()
+ * @method string getResourceType()
  */
-class DescribeDBInstanceAttributeRequest extends \RpcAcsRequest
+class TagResourcesRequest extends \RpcAcsRequest
 {
 
     /**
@@ -31,7 +31,7 @@ class DescribeDBInstanceAttributeRequest extends \RpcAcsRequest
         parent::__construct(
             'Dds',
             '2015-12-01',
-            'DescribeDBInstanceAttribute',
+            'TagResources',
             'Dds'
         );
     }
@@ -50,14 +50,16 @@ class DescribeDBInstanceAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $securityToken
+     * @param array $resourceId
      *
      * @return $this
      */
-    public function setSecurityToken($securityToken)
+    public function setResourceIds(array $resourceId)
     {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
+        $this->requestParameters['ResourceIds'] = $resourceId;
+        foreach ($resourceId as $i => $iValue) {
+            $this->queryParameters['ResourceId.' . ($i + 1)] = $iValue;
+        }
 
         return $this;
     }
@@ -76,19 +78,6 @@ class DescribeDBInstanceAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $engine
-     *
-     * @return $this
-     */
-    public function setEngine($engine)
-    {
-        $this->requestParameters['Engine'] = $engine;
-        $this->queryParameters['Engine'] = $engine;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerAccount
      *
      * @return $this
@@ -102,14 +91,17 @@ class DescribeDBInstanceAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dBInstanceId
+     * @param array $tag
      *
      * @return $this
      */
-    public function setDBInstanceId($dBInstanceId)
+    public function setTags(array $tag)
     {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
+        $this->requestParameters['Tags'] = $tag;
+        foreach ($tag as $depth1 => $depth1Value) {
+            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+        }
 
         return $this;
     }
@@ -123,6 +115,19 @@ class DescribeDBInstanceAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceType
+     *
+     * @return $this
+     */
+    public function setResourceType($resourceType)
+    {
+        $this->requestParameters['ResourceType'] = $resourceType;
+        $this->queryParameters['ResourceType'] = $resourceType;
 
         return $this;
     }

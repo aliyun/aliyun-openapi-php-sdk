@@ -3,6 +3,8 @@
 namespace Dds\Request\V20151201;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of ModifyAuditLogFilter
  *
  * @method string getFilter()
@@ -31,7 +33,7 @@ class ModifyAuditLogFilterRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'ModifyAuditLogFilter',
-            'dds'
+            'Dds'
         );
     }
 

@@ -3,6 +3,8 @@
 namespace Dds\Request\V20151201;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeReplicaSetRole
  *
  * @method string getResourceOwnerId()
@@ -29,7 +31,7 @@ class DescribeReplicaSetRoleRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'DescribeReplicaSetRole',
-            'dds'
+            'Dds'
         );
     }
 

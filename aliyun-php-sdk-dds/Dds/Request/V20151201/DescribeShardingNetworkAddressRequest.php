@@ -3,6 +3,8 @@
 namespace Dds\Request\V20151201;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeShardingNetworkAddress
  *
  * @method string getResourceOwnerId()
@@ -30,7 +32,7 @@ class DescribeShardingNetworkAddressRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'DescribeShardingNetworkAddress',
-            'dds'
+            'Dds'
         );
     }
 

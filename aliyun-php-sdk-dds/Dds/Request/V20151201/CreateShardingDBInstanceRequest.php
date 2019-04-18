@@ -3,6 +3,8 @@
 namespace Dds\Request\V20151201;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of CreateShardingDBInstance
  *
  * @method string getResourceOwnerId()
@@ -47,7 +49,7 @@ class CreateShardingDBInstanceRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'CreateShardingDBInstance',
-            'dds'
+            'Dds'
         );
     }
 
@@ -104,16 +106,16 @@ class CreateShardingDBInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $replicaSets
+     * @param array $replicaSet
      *
      * @return $this
      */
-    public function setReplicaSets(array $replicaSets)
+    public function setReplicaSets(array $replicaSet)
     {
-        $this->requestParameters['ReplicaSets'] = $replicaSets;
-        foreach ($replicaSets as $i => $iValue) {
-            $this->queryParameters['ReplicaSet.' . ($i + 1) . '.Storage'] = $replicaSets[$i]['Storage'];
-            $this->queryParameters['ReplicaSet.' . ($i + 1) . '.Class'] = $replicaSets[$i]['Class'];
+        $this->requestParameters['ReplicaSets'] = $replicaSet;
+        foreach ($replicaSet as $depth1 => $depth1Value) {
+            $this->queryParameters['ReplicaSet.' . ($depth1 + 1) . '.Storage'] = $depth1Value['Storage'];
+            $this->queryParameters['ReplicaSet.' . ($depth1 + 1) . '.Class'] = $depth1Value['Class'];
         }
 
         return $this;
@@ -237,16 +239,16 @@ class CreateShardingDBInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $configServers
+     * @param array $configServer
      *
      * @return $this
      */
-    public function setConfigServers(array $configServers)
+    public function setConfigServers(array $configServer)
     {
-        $this->requestParameters['ConfigServers'] = $configServers;
-        foreach ($configServers as $i => $iValue) {
-            $this->queryParameters['ConfigServer.' . ($i + 1) . '.Storage'] = $configServers[$i]['Storage'];
-            $this->queryParameters['ConfigServer.' . ($i + 1) . '.Class'] = $configServers[$i]['Class'];
+        $this->requestParameters['ConfigServers'] = $configServer;
+        foreach ($configServer as $depth1 => $depth1Value) {
+            $this->queryParameters['ConfigServer.' . ($depth1 + 1) . '.Storage'] = $depth1Value['Storage'];
+            $this->queryParameters['ConfigServer.' . ($depth1 + 1) . '.Class'] = $depth1Value['Class'];
         }
 
         return $this;
@@ -266,15 +268,15 @@ class CreateShardingDBInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $mongoss
+     * @param array $mongos
      *
      * @return $this
      */
-    public function setMongoss(array $mongoss)
+    public function setMongoss(array $mongos)
     {
-        $this->requestParameters['Mongoss'] = $mongoss;
-        foreach ($mongoss as $i => $iValue) {
-            $this->queryParameters['Mongos.' . ($i + 1) . '.Class'] = $mongoss[$i]['Class'];
+        $this->requestParameters['Mongoss'] = $mongos;
+        foreach ($mongos as $depth1 => $depth1Value) {
+            $this->queryParameters['Mongos.' . ($depth1 + 1) . '.Class'] = $depth1Value['Class'];
         }
 
         return $this;

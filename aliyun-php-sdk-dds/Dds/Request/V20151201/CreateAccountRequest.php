@@ -5,17 +5,19 @@ namespace Dds\Request\V20151201;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeDBInstanceAttribute
+ * Request of CreateAccount
  *
  * @method string getResourceOwnerId()
+ * @method string getAccountPassword()
+ * @method string getAccountName()
  * @method string getSecurityToken()
  * @method string getResourceOwnerAccount()
- * @method string getEngine()
  * @method string getOwnerAccount()
  * @method string getDBInstanceId()
  * @method string getOwnerId()
+ * @method string getAccountDescription()
  */
-class DescribeDBInstanceAttributeRequest extends \RpcAcsRequest
+class CreateAccountRequest extends \RpcAcsRequest
 {
 
     /**
@@ -31,7 +33,7 @@ class DescribeDBInstanceAttributeRequest extends \RpcAcsRequest
         parent::__construct(
             'Dds',
             '2015-12-01',
-            'DescribeDBInstanceAttribute',
+            'CreateAccount',
             'Dds'
         );
     }
@@ -45,6 +47,32 @@ class DescribeDBInstanceAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $accountPassword
+     *
+     * @return $this
+     */
+    public function setAccountPassword($accountPassword)
+    {
+        $this->requestParameters['AccountPassword'] = $accountPassword;
+        $this->queryParameters['AccountPassword'] = $accountPassword;
+
+        return $this;
+    }
+
+    /**
+     * @param string $accountName
+     *
+     * @return $this
+     */
+    public function setAccountName($accountName)
+    {
+        $this->requestParameters['AccountName'] = $accountName;
+        $this->queryParameters['AccountName'] = $accountName;
 
         return $this;
     }
@@ -71,19 +99,6 @@ class DescribeDBInstanceAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $engine
-     *
-     * @return $this
-     */
-    public function setEngine($engine)
-    {
-        $this->requestParameters['Engine'] = $engine;
-        $this->queryParameters['Engine'] = $engine;
 
         return $this;
     }
@@ -123,6 +138,19 @@ class DescribeDBInstanceAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $accountDescription
+     *
+     * @return $this
+     */
+    public function setAccountDescription($accountDescription)
+    {
+        $this->requestParameters['AccountDescription'] = $accountDescription;
+        $this->queryParameters['AccountDescription'] = $accountDescription;
 
         return $this;
     }
