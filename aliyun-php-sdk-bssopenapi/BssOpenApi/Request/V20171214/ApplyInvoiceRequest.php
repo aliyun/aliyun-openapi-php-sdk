@@ -92,14 +92,14 @@ class ApplyInvoiceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $value
+     * @param array $selectedIds
      *
      * @return $this
      */
-    public function setSelectedIdss(array $value)
+    public function setSelectedIdss(array $selectedIds)
     {
-        $this->requestParameters['SelectedIdss'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->requestParameters['SelectedIdss'] = $selectedIds;
+        foreach ($selectedIds as $i => $iValue) {
             $this->queryParameters['SelectedIds.' . ($i + 1)] = $iValue;
         }
 

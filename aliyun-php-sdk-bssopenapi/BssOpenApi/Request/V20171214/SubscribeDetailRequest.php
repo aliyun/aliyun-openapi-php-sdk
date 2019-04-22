@@ -45,14 +45,14 @@ class SubscribeDetailRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $value
+     * @param array $subscribeType
      *
      * @return $this
      */
-    public function setSubscribeTypes(array $value)
+    public function setSubscribeTypes(array $subscribeType)
     {
-        $this->requestParameters['SubscribeTypes'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->requestParameters['SubscribeTypes'] = $subscribeType;
+        foreach ($subscribeType as $i => $iValue) {
             $this->queryParameters['SubscribeType.' . ($i + 1)] = $iValue;
         }
 

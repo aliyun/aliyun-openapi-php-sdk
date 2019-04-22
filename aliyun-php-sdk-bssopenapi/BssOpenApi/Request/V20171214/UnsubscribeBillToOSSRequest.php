@@ -5,11 +5,11 @@ namespace BssOpenApi\Request\V20171214;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of QueryInvoicingCustomerList
+ * Request of UnsubscribeBillToOSS
  *
- * @method string getOwnerId()
+ * @method string getSubscribeType()
  */
-class QueryInvoicingCustomerListRequest extends \RpcAcsRequest
+class UnsubscribeBillToOSSRequest extends \RpcAcsRequest
 {
 
     /**
@@ -25,19 +25,19 @@ class QueryInvoicingCustomerListRequest extends \RpcAcsRequest
         parent::__construct(
             'BssOpenApi',
             '2017-12-14',
-            'QueryInvoicingCustomerList'
+            'UnsubscribeBillToOSS'
         );
     }
 
     /**
-     * @param string $ownerId
+     * @param string $subscribeType
      *
      * @return $this
      */
-    public function setOwnerId($ownerId)
+    public function setSubscribeType($subscribeType)
     {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
+        $this->requestParameters['SubscribeType'] = $subscribeType;
+        $this->queryParameters['SubscribeType'] = $subscribeType;
 
         return $this;
     }

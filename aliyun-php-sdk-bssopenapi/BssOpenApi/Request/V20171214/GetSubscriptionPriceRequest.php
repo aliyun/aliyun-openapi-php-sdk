@@ -118,18 +118,18 @@ class GetSubscriptionPriceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $value
+     * @param array $moduleList
      *
      * @return $this
      */
-    public function setModuleLists(array $value)
+    public function setModuleLists(array $moduleList)
     {
-        $this->requestParameters['ModuleLists'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->queryParameters['ModuleList.' . ($i + 1) . '.ModuleCode'] = $value[$i]['ModuleCode'];
-            $this->queryParameters['ModuleList.' . ($i + 1) . '.ModuleStatus'] = $value[$i]['ModuleStatus'];
-            $this->queryParameters['ModuleList.' . ($i + 1) . '.Tag'] = $value[$i]['Tag'];
-            $this->queryParameters['ModuleList.' . ($i + 1) . '.Config'] = $value[$i]['Config'];
+        $this->requestParameters['ModuleLists'] = $moduleList;
+        foreach ($moduleList as $depth1 => $depth1Value) {
+            $this->queryParameters['ModuleList.' . ($depth1 + 1) . '.ModuleCode'] = $depth1Value['ModuleCode'];
+            $this->queryParameters['ModuleList.' . ($depth1 + 1) . '.ModuleStatus'] = $depth1Value['ModuleStatus'];
+            $this->queryParameters['ModuleList.' . ($depth1 + 1) . '.Tag'] = $depth1Value['Tag'];
+            $this->queryParameters['ModuleList.' . ($depth1 + 1) . '.Config'] = $depth1Value['Config'];
         }
 
         return $this;

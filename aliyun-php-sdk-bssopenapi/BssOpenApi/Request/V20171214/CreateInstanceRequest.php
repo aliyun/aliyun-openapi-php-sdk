@@ -89,16 +89,16 @@ class CreateInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $value
+     * @param array $parameter
      *
      * @return $this
      */
-    public function setParameters(array $value)
+    public function setParameters(array $parameter)
     {
-        $this->requestParameters['Parameters'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->queryParameters['Parameter.' . ($i + 1) . '.Code'] = $value[$i]['Code'];
-            $this->queryParameters['Parameter.' . ($i + 1) . '.Value'] = $value[$i]['Value'];
+        $this->requestParameters['Parameters'] = $parameter;
+        foreach ($parameter as $depth1 => $depth1Value) {
+            $this->queryParameters['Parameter.' . ($depth1 + 1) . '.Code'] = $depth1Value['Code'];
+            $this->queryParameters['Parameter.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
         }
 
         return $this;
