@@ -1,63 +1,72 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Domain\Request\V20180208;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of BidDomain
+ *
+ * @method string getAuctionId()
+ * @method string getMaxBid()
+ * @method string getCurrency()
+ */
 class BidDomainRequest extends \RpcAcsRequest
 {
-    public function  __construct()
+
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
+
+    /**
+     * Class constructor.
+     */
+    public function __construct()
     {
-        parent::__construct("Domain", "2018-02-08", "BidDomain");
-		$this->setMethod("POST");
+        parent::__construct(
+            'Domain',
+            '2018-02-08',
+            'BidDomain'
+        );
     }
 
-	private  $auctionId;
+    /**
+     * @param string $auctionId
+     *
+     * @return $this
+     */
+    public function setAuctionId($auctionId)
+    {
+        $this->requestParameters['AuctionId'] = $auctionId;
+        $this->queryParameters['AuctionId'] = $auctionId;
 
-	private  $maxBid;
-
-	private  $currency;
-
-    public function getAuctionId() {
-	    return $this->auctionId;
+        return $this;
     }
 
-    public function setAuctionId($auctionId) {
-    	$this->auctionId = $auctionId;
-    	$this->queryParameters['AuctionId'] = $auctionId;
-	}
+    /**
+     * @param string $maxBid
+     *
+     * @return $this
+     */
+    public function setMaxBid($maxBid)
+    {
+        $this->requestParameters['MaxBid'] = $maxBid;
+        $this->queryParameters['MaxBid'] = $maxBid;
 
-    public function getMaxBid() {
-	    return $this->maxBid;
+        return $this;
     }
 
-    public function setMaxBid($maxBid) {
-    	$this->maxBid = $maxBid;
-    	$this->queryParameters['MaxBid'] = $maxBid;
-	}
+    /**
+     * @param string $currency
+     *
+     * @return $this
+     */
+    public function setCurrency($currency)
+    {
+        $this->requestParameters['Currency'] = $currency;
+        $this->queryParameters['Currency'] = $currency;
 
-    public function getCurrency() {
-	    return $this->currency;
+        return $this;
     }
-
-    public function setCurrency($currency) {
-    	$this->currency = $currency;
-    	$this->queryParameters['Currency'] = $currency;
-	}
-
 }

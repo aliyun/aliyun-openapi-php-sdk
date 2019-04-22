@@ -1,184 +1,226 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Domain\Request\V20180129;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of QueryDomainList
+ *
+ * @method string getEndExpirationDate()
+ * @method string getProductDomainType()
+ * @method string getOrderKeyType()
+ * @method string getDomainName()
+ * @method string getStartExpirationDate()
+ * @method string getPageNum()
+ * @method string getOrderByType()
+ * @method string getDomainGroupId()
+ * @method string getEndRegistrationDate()
+ * @method string getUserClientIp()
+ * @method string getPageSize()
+ * @method string getLang()
+ * @method string getQueryType()
+ * @method string getStartRegistrationDate()
+ */
 class QueryDomainListRequest extends \RpcAcsRequest
 {
-    public function  __construct()
+
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
+
+    /**
+     * Class constructor.
+     */
+    public function __construct()
     {
-        parent::__construct("Domain", "2018-01-29", "QueryDomainList");
-		$this->setMethod("POST");
+        parent::__construct(
+            'Domain',
+            '2018-01-29',
+            'QueryDomainList'
+        );
     }
 
-	private  $endExpirationDate;
+    /**
+     * @param string $endExpirationDate
+     *
+     * @return $this
+     */
+    public function setEndExpirationDate($endExpirationDate)
+    {
+        $this->requestParameters['EndExpirationDate'] = $endExpirationDate;
+        $this->queryParameters['EndExpirationDate'] = $endExpirationDate;
 
-	private  $productDomainType;
-
-	private  $orderKeyType;
-
-	private  $domainName;
-
-	private  $startExpirationDate;
-
-	private  $pageNum;
-
-	private  $orderByType;
-
-	private  $domainGroupId;
-
-	private  $endRegistrationDate;
-
-	private  $userClientIp;
-
-	private  $pageSize;
-
-	private  $lang;
-
-	private  $queryType;
-
-	private  $startRegistrationDate;
-
-    public function getEndExpirationDate() {
-	    return $this->endExpirationDate;
+        return $this;
     }
 
-    public function setEndExpirationDate($endExpirationDate) {
-    	$this->endExpirationDate = $endExpirationDate;
-    	$this->queryParameters['EndExpirationDate'] = $endExpirationDate;
-	}
+    /**
+     * @param string $productDomainType
+     *
+     * @return $this
+     */
+    public function setProductDomainType($productDomainType)
+    {
+        $this->requestParameters['ProductDomainType'] = $productDomainType;
+        $this->queryParameters['ProductDomainType'] = $productDomainType;
 
-    public function getProductDomainType() {
-	    return $this->productDomainType;
+        return $this;
     }
 
-    public function setProductDomainType($productDomainType) {
-    	$this->productDomainType = $productDomainType;
-    	$this->queryParameters['ProductDomainType'] = $productDomainType;
-	}
+    /**
+     * @param string $orderKeyType
+     *
+     * @return $this
+     */
+    public function setOrderKeyType($orderKeyType)
+    {
+        $this->requestParameters['OrderKeyType'] = $orderKeyType;
+        $this->queryParameters['OrderKeyType'] = $orderKeyType;
 
-    public function getOrderKeyType() {
-	    return $this->orderKeyType;
+        return $this;
     }
 
-    public function setOrderKeyType($orderKeyType) {
-    	$this->orderKeyType = $orderKeyType;
-    	$this->queryParameters['OrderKeyType'] = $orderKeyType;
-	}
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
 
-    public function getDomainName() {
-	    return $this->domainName;
+        return $this;
     }
 
-    public function setDomainName($domainName) {
-    	$this->domainName = $domainName;
-    	$this->queryParameters['DomainName'] = $domainName;
-	}
+    /**
+     * @param string $startExpirationDate
+     *
+     * @return $this
+     */
+    public function setStartExpirationDate($startExpirationDate)
+    {
+        $this->requestParameters['StartExpirationDate'] = $startExpirationDate;
+        $this->queryParameters['StartExpirationDate'] = $startExpirationDate;
 
-    public function getStartExpirationDate() {
-	    return $this->startExpirationDate;
+        return $this;
     }
 
-    public function setStartExpirationDate($startExpirationDate) {
-    	$this->startExpirationDate = $startExpirationDate;
-    	$this->queryParameters['StartExpirationDate'] = $startExpirationDate;
-	}
+    /**
+     * @param string $pageNum
+     *
+     * @return $this
+     */
+    public function setPageNum($pageNum)
+    {
+        $this->requestParameters['PageNum'] = $pageNum;
+        $this->queryParameters['PageNum'] = $pageNum;
 
-    public function getPageNum() {
-	    return $this->pageNum;
+        return $this;
     }
 
-    public function setPageNum($pageNum) {
-    	$this->pageNum = $pageNum;
-    	$this->queryParameters['PageNum'] = $pageNum;
-	}
+    /**
+     * @param string $orderByType
+     *
+     * @return $this
+     */
+    public function setOrderByType($orderByType)
+    {
+        $this->requestParameters['OrderByType'] = $orderByType;
+        $this->queryParameters['OrderByType'] = $orderByType;
 
-    public function getOrderByType() {
-	    return $this->orderByType;
+        return $this;
     }
 
-    public function setOrderByType($orderByType) {
-    	$this->orderByType = $orderByType;
-    	$this->queryParameters['OrderByType'] = $orderByType;
-	}
+    /**
+     * @param string $domainGroupId
+     *
+     * @return $this
+     */
+    public function setDomainGroupId($domainGroupId)
+    {
+        $this->requestParameters['DomainGroupId'] = $domainGroupId;
+        $this->queryParameters['DomainGroupId'] = $domainGroupId;
 
-    public function getDomainGroupId() {
-	    return $this->domainGroupId;
+        return $this;
     }
 
-    public function setDomainGroupId($domainGroupId) {
-    	$this->domainGroupId = $domainGroupId;
-    	$this->queryParameters['DomainGroupId'] = $domainGroupId;
-	}
+    /**
+     * @param string $endRegistrationDate
+     *
+     * @return $this
+     */
+    public function setEndRegistrationDate($endRegistrationDate)
+    {
+        $this->requestParameters['EndRegistrationDate'] = $endRegistrationDate;
+        $this->queryParameters['EndRegistrationDate'] = $endRegistrationDate;
 
-    public function getEndRegistrationDate() {
-	    return $this->endRegistrationDate;
+        return $this;
     }
 
-    public function setEndRegistrationDate($endRegistrationDate) {
-    	$this->endRegistrationDate = $endRegistrationDate;
-    	$this->queryParameters['EndRegistrationDate'] = $endRegistrationDate;
-	}
+    /**
+     * @param string $userClientIp
+     *
+     * @return $this
+     */
+    public function setUserClientIp($userClientIp)
+    {
+        $this->requestParameters['UserClientIp'] = $userClientIp;
+        $this->queryParameters['UserClientIp'] = $userClientIp;
 
-    public function getUserClientIp() {
-	    return $this->userClientIp;
+        return $this;
     }
 
-    public function setUserClientIp($userClientIp) {
-    	$this->userClientIp = $userClientIp;
-    	$this->queryParameters['UserClientIp'] = $userClientIp;
-	}
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-    public function getPageSize() {
-	    return $this->pageSize;
+        return $this;
     }
 
-    public function setPageSize($pageSize) {
-    	$this->pageSize = $pageSize;
-    	$this->queryParameters['PageSize'] = $pageSize;
-	}
+    /**
+     * @param string $lang
+     *
+     * @return $this
+     */
+    public function setLang($lang)
+    {
+        $this->requestParameters['Lang'] = $lang;
+        $this->queryParameters['Lang'] = $lang;
 
-    public function getLang() {
-	    return $this->lang;
+        return $this;
     }
 
-    public function setLang($lang) {
-    	$this->lang = $lang;
-    	$this->queryParameters['Lang'] = $lang;
-	}
+    /**
+     * @param string $queryType
+     *
+     * @return $this
+     */
+    public function setQueryType($queryType)
+    {
+        $this->requestParameters['QueryType'] = $queryType;
+        $this->queryParameters['QueryType'] = $queryType;
 
-    public function getQueryType() {
-	    return $this->queryType;
+        return $this;
     }
 
-    public function setQueryType($queryType) {
-    	$this->queryType = $queryType;
-    	$this->queryParameters['QueryType'] = $queryType;
-	}
+    /**
+     * @param string $startRegistrationDate
+     *
+     * @return $this
+     */
+    public function setStartRegistrationDate($startRegistrationDate)
+    {
+        $this->requestParameters['StartRegistrationDate'] = $startRegistrationDate;
+        $this->queryParameters['StartRegistrationDate'] = $startRegistrationDate;
 
-    public function getStartRegistrationDate() {
-	    return $this->startRegistrationDate;
+        return $this;
     }
-
-    public function setStartRegistrationDate($startRegistrationDate) {
-    	$this->startRegistrationDate = $startRegistrationDate;
-    	$this->queryParameters['StartRegistrationDate'] = $startRegistrationDate;
-	}
-
 }

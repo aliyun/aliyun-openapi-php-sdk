@@ -5,13 +5,13 @@ namespace Domain\Request\V20180129;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of SaveSingleTaskForDisassociatingEns
+ * Request of QueryDomainByDomainName
  *
  * @method string getUserClientIp()
  * @method string getDomainName()
  * @method string getLang()
  */
-class SaveSingleTaskForDisassociatingEnsRequest extends \RpcAcsRequest
+class QueryDomainByDomainNameRequest extends \RpcAcsRequest
 {
 
     /**
@@ -27,7 +27,7 @@ class SaveSingleTaskForDisassociatingEnsRequest extends \RpcAcsRequest
         parent::__construct(
             'Domain',
             '2018-01-29',
-            'SaveSingleTaskForDisassociatingEns'
+            'QueryDomainByDomainName'
         );
     }
 

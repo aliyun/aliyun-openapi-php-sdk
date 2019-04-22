@@ -1,296 +1,368 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Domain\Request\V20180129;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of SaveTaskForUpdatingRegistrantInfoByIdentityCredential
+ *
+ * @method string getCountry()
+ * @method string getIdentityCredentialType()
+ * @method string getAddress()
+ * @method string getTelArea()
+ * @method string getCity()
+ * @method string getZhAddress()
+ * @method string getRegistrantType()
+ * @method array getDomainNames()
+ * @method string getIdentityCredential()
+ * @method string getTelephone()
+ * @method string getTransferOutProhibited()
+ * @method string getZhCity()
+ * @method string getZhProvince()
+ * @method string getRegistrantOrganization()
+ * @method string getTelExt()
+ * @method string getProvince()
+ * @method string getZhRegistrantName()
+ * @method string getPostalCode()
+ * @method string getUserClientIp()
+ * @method string getLang()
+ * @method string getIdentityCredentialNo()
+ * @method string getEmail()
+ * @method string getRegistrantName()
+ * @method string getZhRegistrantOrganization()
+ */
 class SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest extends \RpcAcsRequest
 {
-    public function  __construct()
+
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
+
+    /**
+     * Class constructor.
+     */
+    public function __construct()
     {
-        parent::__construct("Domain", "2018-01-29", "SaveTaskForUpdatingRegistrantInfoByIdentityCredential");
-		$this->setMethod("POST");
+        parent::__construct(
+            'Domain',
+            '2018-01-29',
+            'SaveTaskForUpdatingRegistrantInfoByIdentityCredential'
+        );
     }
 
-	private  $country;
+    /**
+     * @param string $country
+     *
+     * @return $this
+     */
+    public function setCountry($country)
+    {
+        $this->requestParameters['Country'] = $country;
+        $this->queryParameters['Country'] = $country;
 
-	private  $identityCredentialType;
-
-	private  $address;
-
-	private  $telArea;
-
-	private  $city;
-
-	private  $zhAddress;
-
-	private  $registrantType;
-
-	private  $DomainNames;
-
-	private  $identityCredential;
-
-	private  $telephone;
-
-	private  $transferOutProhibited;
-
-	private  $zhCity;
-
-	private  $zhProvince;
-
-	private  $registrantOrganization;
-
-	private  $telExt;
-
-	private  $province;
-
-	private  $zhRegistrantName;
-
-	private  $postalCode;
-
-	private  $userClientIp;
-
-	private  $lang;
-
-	private  $identityCredentialNo;
-
-	private  $email;
-
-	private  $registrantName;
-
-	private  $zhRegistrantOrganization;
-
-    public function getCountry() {
-	    return $this->country;
+        return $this;
     }
 
-    public function setCountry($country) {
-    	$this->country = $country;
-    	$this->queryParameters['Country'] = $country;
-	}
+    /**
+     * @param string $identityCredentialType
+     *
+     * @return $this
+     */
+    public function setIdentityCredentialType($identityCredentialType)
+    {
+        $this->requestParameters['IdentityCredentialType'] = $identityCredentialType;
+        $this->queryParameters['IdentityCredentialType'] = $identityCredentialType;
 
-    public function getIdentityCredentialType() {
-	    return $this->identityCredentialType;
+        return $this;
     }
 
-    public function setIdentityCredentialType($identityCredentialType) {
-    	$this->identityCredentialType = $identityCredentialType;
-    	$this->queryParameters['IdentityCredentialType'] = $identityCredentialType;
-	}
+    /**
+     * @param string $address
+     *
+     * @return $this
+     */
+    public function setAddress($address)
+    {
+        $this->requestParameters['Address'] = $address;
+        $this->queryParameters['Address'] = $address;
 
-    public function getAddress() {
-	    return $this->address;
+        return $this;
     }
 
-    public function setAddress($address) {
-    	$this->address = $address;
-    	$this->queryParameters['Address'] = $address;
-	}
+    /**
+     * @param string $telArea
+     *
+     * @return $this
+     */
+    public function setTelArea($telArea)
+    {
+        $this->requestParameters['TelArea'] = $telArea;
+        $this->queryParameters['TelArea'] = $telArea;
 
-    public function getTelArea() {
-	    return $this->telArea;
+        return $this;
     }
 
-    public function setTelArea($telArea) {
-    	$this->telArea = $telArea;
-    	$this->queryParameters['TelArea'] = $telArea;
-	}
+    /**
+     * @param string $city
+     *
+     * @return $this
+     */
+    public function setCity($city)
+    {
+        $this->requestParameters['City'] = $city;
+        $this->queryParameters['City'] = $city;
 
-    public function getCity() {
-	    return $this->city;
+        return $this;
     }
 
-    public function setCity($city) {
-    	$this->city = $city;
-    	$this->queryParameters['City'] = $city;
-	}
+    /**
+     * @param string $zhAddress
+     *
+     * @return $this
+     */
+    public function setZhAddress($zhAddress)
+    {
+        $this->requestParameters['ZhAddress'] = $zhAddress;
+        $this->queryParameters['ZhAddress'] = $zhAddress;
 
-    public function getZhAddress() {
-	    return $this->zhAddress;
+        return $this;
     }
 
-    public function setZhAddress($zhAddress) {
-    	$this->zhAddress = $zhAddress;
-    	$this->queryParameters['ZhAddress'] = $zhAddress;
-	}
+    /**
+     * @param string $registrantType
+     *
+     * @return $this
+     */
+    public function setRegistrantType($registrantType)
+    {
+        $this->requestParameters['RegistrantType'] = $registrantType;
+        $this->queryParameters['RegistrantType'] = $registrantType;
 
-    public function getRegistrantType() {
-	    return $this->registrantType;
+        return $this;
     }
 
-    public function setRegistrantType($registrantType) {
-    	$this->registrantType = $registrantType;
-    	$this->queryParameters['RegistrantType'] = $registrantType;
-	}
+    /**
+     * @param array $domainName
+     *
+     * @return $this
+     */
+    public function setDomainNames(array $domainName)
+    {
+        $this->requestParameters['DomainNames'] = $domainName;
+        foreach ($domainName as $i => $iValue) {
+            $this->queryParameters['DomainName.' . ($i + 1)] = $iValue;
+        }
 
-	public function getDomainNames() {
-		return $this->DomainNames;
-	}
-
-	public function setDomainNames($DomainNames) {
-		$this->DomainNames = $DomainNames;
-		for ($i = 0; $i < count($DomainNames); $i ++) {	
-			$this->queryParameters["DomainName.".($i+1)] = $DomainNames[$i];
-		}
-	}
-
-    public function getIdentityCredential() {
-	    return $this->identityCredential;
+        return $this;
     }
 
-    public function setIdentityCredential($identityCredential) {
-    	$this->identityCredential = $identityCredential;
-    	$this->queryParameters['IdentityCredential'] = $identityCredential;
-	}
+    /**
+     * @param string $identityCredential
+     *
+     * @return $this
+     */
+    public function setIdentityCredential($identityCredential)
+    {
+        $this->requestParameters['IdentityCredential'] = $identityCredential;
+        $this->queryParameters['IdentityCredential'] = $identityCredential;
 
-    public function getTelephone() {
-	    return $this->telephone;
+        return $this;
     }
 
-    public function setTelephone($telephone) {
-    	$this->telephone = $telephone;
-    	$this->queryParameters['Telephone'] = $telephone;
-	}
+    /**
+     * @param string $telephone
+     *
+     * @return $this
+     */
+    public function setTelephone($telephone)
+    {
+        $this->requestParameters['Telephone'] = $telephone;
+        $this->queryParameters['Telephone'] = $telephone;
 
-    public function getTransferOutProhibited() {
-	    return $this->transferOutProhibited;
+        return $this;
     }
 
-    public function setTransferOutProhibited($transferOutProhibited) {
-    	$this->transferOutProhibited = $transferOutProhibited;
-    	$this->queryParameters['TransferOutProhibited'] = $transferOutProhibited;
-	}
+    /**
+     * @param string $transferOutProhibited
+     *
+     * @return $this
+     */
+    public function setTransferOutProhibited($transferOutProhibited)
+    {
+        $this->requestParameters['TransferOutProhibited'] = $transferOutProhibited;
+        $this->queryParameters['TransferOutProhibited'] = $transferOutProhibited;
 
-    public function getZhCity() {
-	    return $this->zhCity;
+        return $this;
     }
 
-    public function setZhCity($zhCity) {
-    	$this->zhCity = $zhCity;
-    	$this->queryParameters['ZhCity'] = $zhCity;
-	}
+    /**
+     * @param string $zhCity
+     *
+     * @return $this
+     */
+    public function setZhCity($zhCity)
+    {
+        $this->requestParameters['ZhCity'] = $zhCity;
+        $this->queryParameters['ZhCity'] = $zhCity;
 
-    public function getZhProvince() {
-	    return $this->zhProvince;
+        return $this;
     }
 
-    public function setZhProvince($zhProvince) {
-    	$this->zhProvince = $zhProvince;
-    	$this->queryParameters['ZhProvince'] = $zhProvince;
-	}
+    /**
+     * @param string $zhProvince
+     *
+     * @return $this
+     */
+    public function setZhProvince($zhProvince)
+    {
+        $this->requestParameters['ZhProvince'] = $zhProvince;
+        $this->queryParameters['ZhProvince'] = $zhProvince;
 
-    public function getRegistrantOrganization() {
-	    return $this->registrantOrganization;
+        return $this;
     }
 
-    public function setRegistrantOrganization($registrantOrganization) {
-    	$this->registrantOrganization = $registrantOrganization;
-    	$this->queryParameters['RegistrantOrganization'] = $registrantOrganization;
-	}
+    /**
+     * @param string $registrantOrganization
+     *
+     * @return $this
+     */
+    public function setRegistrantOrganization($registrantOrganization)
+    {
+        $this->requestParameters['RegistrantOrganization'] = $registrantOrganization;
+        $this->queryParameters['RegistrantOrganization'] = $registrantOrganization;
 
-    public function getTelExt() {
-	    return $this->telExt;
+        return $this;
     }
 
-    public function setTelExt($telExt) {
-    	$this->telExt = $telExt;
-    	$this->queryParameters['TelExt'] = $telExt;
-	}
+    /**
+     * @param string $telExt
+     *
+     * @return $this
+     */
+    public function setTelExt($telExt)
+    {
+        $this->requestParameters['TelExt'] = $telExt;
+        $this->queryParameters['TelExt'] = $telExt;
 
-    public function getProvince() {
-	    return $this->province;
+        return $this;
     }
 
-    public function setProvince($province) {
-    	$this->province = $province;
-    	$this->queryParameters['Province'] = $province;
-	}
+    /**
+     * @param string $province
+     *
+     * @return $this
+     */
+    public function setProvince($province)
+    {
+        $this->requestParameters['Province'] = $province;
+        $this->queryParameters['Province'] = $province;
 
-    public function getZhRegistrantName() {
-	    return $this->zhRegistrantName;
+        return $this;
     }
 
-    public function setZhRegistrantName($zhRegistrantName) {
-    	$this->zhRegistrantName = $zhRegistrantName;
-    	$this->queryParameters['ZhRegistrantName'] = $zhRegistrantName;
-	}
+    /**
+     * @param string $zhRegistrantName
+     *
+     * @return $this
+     */
+    public function setZhRegistrantName($zhRegistrantName)
+    {
+        $this->requestParameters['ZhRegistrantName'] = $zhRegistrantName;
+        $this->queryParameters['ZhRegistrantName'] = $zhRegistrantName;
 
-    public function getPostalCode() {
-	    return $this->postalCode;
+        return $this;
     }
 
-    public function setPostalCode($postalCode) {
-    	$this->postalCode = $postalCode;
-    	$this->queryParameters['PostalCode'] = $postalCode;
-	}
+    /**
+     * @param string $postalCode
+     *
+     * @return $this
+     */
+    public function setPostalCode($postalCode)
+    {
+        $this->requestParameters['PostalCode'] = $postalCode;
+        $this->queryParameters['PostalCode'] = $postalCode;
 
-    public function getUserClientIp() {
-	    return $this->userClientIp;
+        return $this;
     }
 
-    public function setUserClientIp($userClientIp) {
-    	$this->userClientIp = $userClientIp;
-    	$this->queryParameters['UserClientIp'] = $userClientIp;
-	}
+    /**
+     * @param string $userClientIp
+     *
+     * @return $this
+     */
+    public function setUserClientIp($userClientIp)
+    {
+        $this->requestParameters['UserClientIp'] = $userClientIp;
+        $this->queryParameters['UserClientIp'] = $userClientIp;
 
-    public function getLang() {
-	    return $this->lang;
+        return $this;
     }
 
-    public function setLang($lang) {
-    	$this->lang = $lang;
-    	$this->queryParameters['Lang'] = $lang;
-	}
+    /**
+     * @param string $lang
+     *
+     * @return $this
+     */
+    public function setLang($lang)
+    {
+        $this->requestParameters['Lang'] = $lang;
+        $this->queryParameters['Lang'] = $lang;
 
-    public function getIdentityCredentialNo() {
-	    return $this->identityCredentialNo;
+        return $this;
     }
 
-    public function setIdentityCredentialNo($identityCredentialNo) {
-    	$this->identityCredentialNo = $identityCredentialNo;
-    	$this->queryParameters['IdentityCredentialNo'] = $identityCredentialNo;
-	}
+    /**
+     * @param string $identityCredentialNo
+     *
+     * @return $this
+     */
+    public function setIdentityCredentialNo($identityCredentialNo)
+    {
+        $this->requestParameters['IdentityCredentialNo'] = $identityCredentialNo;
+        $this->queryParameters['IdentityCredentialNo'] = $identityCredentialNo;
 
-    public function getEmail() {
-	    return $this->email;
+        return $this;
     }
 
-    public function setEmail($email) {
-    	$this->email = $email;
-    	$this->queryParameters['Email'] = $email;
-	}
+    /**
+     * @param string $email
+     *
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->requestParameters['Email'] = $email;
+        $this->queryParameters['Email'] = $email;
 
-    public function getRegistrantName() {
-	    return $this->registrantName;
+        return $this;
     }
 
-    public function setRegistrantName($registrantName) {
-    	$this->registrantName = $registrantName;
-    	$this->queryParameters['RegistrantName'] = $registrantName;
-	}
+    /**
+     * @param string $registrantName
+     *
+     * @return $this
+     */
+    public function setRegistrantName($registrantName)
+    {
+        $this->requestParameters['RegistrantName'] = $registrantName;
+        $this->queryParameters['RegistrantName'] = $registrantName;
 
-    public function getZhRegistrantOrganization() {
-	    return $this->zhRegistrantOrganization;
+        return $this;
     }
 
-    public function setZhRegistrantOrganization($zhRegistrantOrganization) {
-    	$this->zhRegistrantOrganization = $zhRegistrantOrganization;
-    	$this->queryParameters['ZhRegistrantOrganization'] = $zhRegistrantOrganization;
-	}
+    /**
+     * @param string $zhRegistrantOrganization
+     *
+     * @return $this
+     */
+    public function setZhRegistrantOrganization($zhRegistrantOrganization)
+    {
+        $this->requestParameters['ZhRegistrantOrganization'] = $zhRegistrantOrganization;
+        $this->queryParameters['ZhRegistrantOrganization'] = $zhRegistrantOrganization;
 
+        return $this;
+    }
 }

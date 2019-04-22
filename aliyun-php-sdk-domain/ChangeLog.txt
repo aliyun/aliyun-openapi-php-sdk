@@ -1,3 +1,6 @@
+2019-04-22 Version: 3.13.0
+1, Add a new api, QueryDomainByDomainName.
+
 2018-12-27 Version: 3.12.2
 1, Generate all versions.
 

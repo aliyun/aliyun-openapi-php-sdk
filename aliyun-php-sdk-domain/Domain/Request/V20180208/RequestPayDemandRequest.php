@@ -1,85 +1,100 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Domain\Request\V20180208;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of RequestPayDemand
+ *
+ * @method string getPrice()
+ * @method string getBizId()
+ * @method string getDomainName()
+ * @method string getProduceType()
+ * @method string getMessage()
+ */
 class RequestPayDemandRequest extends \RpcAcsRequest
 {
-    public function  __construct()
+
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
+
+    /**
+     * Class constructor.
+     */
+    public function __construct()
     {
-        parent::__construct("Domain", "2018-02-08", "RequestPayDemand");
-		$this->setMethod("POST");
+        parent::__construct(
+            'Domain',
+            '2018-02-08',
+            'RequestPayDemand'
+        );
     }
 
-	private  $price;
+    /**
+     * @param string $price
+     *
+     * @return $this
+     */
+    public function setPrice($price)
+    {
+        $this->requestParameters['Price'] = $price;
+        $this->queryParameters['Price'] = $price;
 
-	private  $bizId;
-
-	private  $domainName;
-
-	private  $produceType;
-
-	private  $message;
-
-    public function getPrice() {
-	    return $this->price;
+        return $this;
     }
 
-    public function setPrice($price) {
-    	$this->price = $price;
-    	$this->queryParameters['Price'] = $price;
-	}
+    /**
+     * @param string $bizId
+     *
+     * @return $this
+     */
+    public function setBizId($bizId)
+    {
+        $this->requestParameters['BizId'] = $bizId;
+        $this->queryParameters['BizId'] = $bizId;
 
-    public function getBizId() {
-	    return $this->bizId;
+        return $this;
     }
 
-    public function setBizId($bizId) {
-    	$this->bizId = $bizId;
-    	$this->queryParameters['BizId'] = $bizId;
-	}
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
 
-    public function getDomainName() {
-	    return $this->domainName;
+        return $this;
     }
 
-    public function setDomainName($domainName) {
-    	$this->domainName = $domainName;
-    	$this->queryParameters['DomainName'] = $domainName;
-	}
+    /**
+     * @param string $produceType
+     *
+     * @return $this
+     */
+    public function setProduceType($produceType)
+    {
+        $this->requestParameters['ProduceType'] = $produceType;
+        $this->queryParameters['ProduceType'] = $produceType;
 
-    public function getProduceType() {
-	    return $this->produceType;
+        return $this;
     }
 
-    public function setProduceType($produceType) {
-    	$this->produceType = $produceType;
-    	$this->queryParameters['ProduceType'] = $produceType;
-	}
+    /**
+     * @param string $message
+     *
+     * @return $this
+     */
+    public function setMessage($message)
+    {
+        $this->requestParameters['Message'] = $message;
+        $this->queryParameters['Message'] = $message;
 
-    public function getMessage() {
-	    return $this->message;
+        return $this;
     }
-
-    public function setMessage($message) {
-    	$this->message = $message;
-    	$this->queryParameters['Message'] = $message;
-	}
-
 }
