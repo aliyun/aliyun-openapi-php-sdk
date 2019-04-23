@@ -5,13 +5,14 @@ namespace Domain_intl\Request\V20171218;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of SaveSingleTaskForQueryingTransferAuthorizationCode
+ * Request of QueryRegistrantProfileRealNameVerificationInfo
  *
- * @method string getDomainName()
+ * @method string getFetchImage()
  * @method string getUserClientIp()
+ * @method string getRegistrantProfileId()
  * @method string getLang()
  */
-class SaveSingleTaskForQueryingTransferAuthorizationCodeRequest extends \RpcAcsRequest
+class QueryRegistrantProfileRealNameVerificationInfoRequest extends \RpcAcsRequest
 {
 
     /**
@@ -27,20 +28,20 @@ class SaveSingleTaskForQueryingTransferAuthorizationCodeRequest extends \RpcAcsR
         parent::__construct(
             'Domain-intl',
             '2017-12-18',
-            'SaveSingleTaskForQueryingTransferAuthorizationCode',
+            'QueryRegistrantProfileRealNameVerificationInfo',
             'domain'
         );
     }
 
     /**
-     * @param string $domainName
+     * @param string $fetchImage
      *
      * @return $this
      */
-    public function setDomainName($domainName)
+    public function setFetchImage($fetchImage)
     {
-        $this->requestParameters['DomainName'] = $domainName;
-        $this->queryParameters['DomainName'] = $domainName;
+        $this->requestParameters['FetchImage'] = $fetchImage;
+        $this->queryParameters['FetchImage'] = $fetchImage;
 
         return $this;
     }
@@ -54,6 +55,19 @@ class SaveSingleTaskForQueryingTransferAuthorizationCodeRequest extends \RpcAcsR
     {
         $this->requestParameters['UserClientIp'] = $userClientIp;
         $this->queryParameters['UserClientIp'] = $userClientIp;
+
+        return $this;
+    }
+
+    /**
+     * @param string $registrantProfileId
+     *
+     * @return $this
+     */
+    public function setRegistrantProfileId($registrantProfileId)
+    {
+        $this->requestParameters['RegistrantProfileId'] = $registrantProfileId;
+        $this->queryParameters['RegistrantProfileId'] = $registrantProfileId;
 
         return $this;
     }

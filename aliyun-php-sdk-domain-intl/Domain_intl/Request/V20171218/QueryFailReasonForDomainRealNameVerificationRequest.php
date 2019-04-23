@@ -5,13 +5,14 @@ namespace Domain_intl\Request\V20171218;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of SaveSingleTaskForQueryingTransferAuthorizationCode
+ * Request of QueryFailReasonForDomainRealNameVerification
  *
- * @method string getDomainName()
+ * @method string getRealNameVerificationAction()
  * @method string getUserClientIp()
+ * @method string getDomainName()
  * @method string getLang()
  */
-class SaveSingleTaskForQueryingTransferAuthorizationCodeRequest extends \RpcAcsRequest
+class QueryFailReasonForDomainRealNameVerificationRequest extends \RpcAcsRequest
 {
 
     /**
@@ -27,20 +28,20 @@ class SaveSingleTaskForQueryingTransferAuthorizationCodeRequest extends \RpcAcsR
         parent::__construct(
             'Domain-intl',
             '2017-12-18',
-            'SaveSingleTaskForQueryingTransferAuthorizationCode',
+            'QueryFailReasonForDomainRealNameVerification',
             'domain'
         );
     }
 
     /**
-     * @param string $domainName
+     * @param string $realNameVerificationAction
      *
      * @return $this
      */
-    public function setDomainName($domainName)
+    public function setRealNameVerificationAction($realNameVerificationAction)
     {
-        $this->requestParameters['DomainName'] = $domainName;
-        $this->queryParameters['DomainName'] = $domainName;
+        $this->requestParameters['RealNameVerificationAction'] = $realNameVerificationAction;
+        $this->queryParameters['RealNameVerificationAction'] = $realNameVerificationAction;
 
         return $this;
     }
@@ -54,6 +55,19 @@ class SaveSingleTaskForQueryingTransferAuthorizationCodeRequest extends \RpcAcsR
     {
         $this->requestParameters['UserClientIp'] = $userClientIp;
         $this->queryParameters['UserClientIp'] = $userClientIp;
+
+        return $this;
+    }
+
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
 
         return $this;
     }

@@ -1,316 +1,409 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Domain_intl\Request\V20171218;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of SaveSingleTaskForCreatingOrderActivate
+ *
+ * @method string getCountry()
+ * @method string getSubscriptionDuration()
+ * @method string getPermitPremiumActivation()
+ * @method string getCity()
+ * @method string getDns2()
+ * @method string getDns1()
+ * @method string getRegistrantProfileId()
+ * @method string getCouponNo()
+ * @method string getAliyunDns()
+ * @method string getTelExt()
+ * @method string getProvince()
+ * @method string getPostalCode()
+ * @method string getLang()
+ * @method string getEmail()
+ * @method string getAddress()
+ * @method string getTelArea()
+ * @method string getDomainName()
+ * @method string getRegistrantType()
+ * @method string getTelephone()
+ * @method string getTrademarkDomainActivation()
+ * @method string getUseCoupon()
+ * @method string getRegistrantOrganization()
+ * @method string getPromotionNo()
+ * @method string getUserClientIp()
+ * @method string getEnableDomainProxy()
+ * @method string getRegistrantName()
+ * @method string getUsePromotion()
+ */
 class SaveSingleTaskForCreatingOrderActivateRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain-intl", "2017-12-18", "SaveSingleTaskForCreatingOrderActivate", "domain", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $country;
-
-	private  $subscriptionDuration;
-
-	private  $permitPremiumActivation;
-
-	private  $city;
-
-	private  $dns2;
-
-	private  $dns1;
-
-	private  $registrantProfileId;
-
-	private  $couponNo;
-
-	private  $aliyunDns;
-
-	private  $telExt;
-
-	private  $province;
-
-	private  $postalCode;
-
-	private  $lang;
-
-	private  $email;
-
-	private  $address;
-
-	private  $telArea;
-
-	private  $domainName;
-
-	private  $telephone;
-
-	private  $trademarkDomainActivation;
-
-	private  $useCoupon;
-
-	private  $registrantOrganization;
-
-	private  $promotionNo;
-
-	private  $userClientIp;
-
-	private  $enableDomainProxy;
-
-	private  $registrantName;
-
-	private  $usePromotion;
-
-	public function getCountry() {
-		return $this->country;
-	}
-
-	public function setCountry($country) {
-		$this->country = $country;
-		$this->queryParameters["Country"]=$country;
-	}
-
-	public function getSubscriptionDuration() {
-		return $this->subscriptionDuration;
-	}
-
-	public function setSubscriptionDuration($subscriptionDuration) {
-		$this->subscriptionDuration = $subscriptionDuration;
-		$this->queryParameters["SubscriptionDuration"]=$subscriptionDuration;
-	}
-
-	public function getPermitPremiumActivation() {
-		return $this->permitPremiumActivation;
-	}
-
-	public function setPermitPremiumActivation($permitPremiumActivation) {
-		$this->permitPremiumActivation = $permitPremiumActivation;
-		$this->queryParameters["PermitPremiumActivation"]=$permitPremiumActivation;
-	}
-
-	public function getCity() {
-		return $this->city;
-	}
-
-	public function setCity($city) {
-		$this->city = $city;
-		$this->queryParameters["City"]=$city;
-	}
-
-	public function getDns2() {
-		return $this->dns2;
-	}
-
-	public function setDns2($dns2) {
-		$this->dns2 = $dns2;
-		$this->queryParameters["Dns2"]=$dns2;
-	}
-
-	public function getDns1() {
-		return $this->dns1;
-	}
-
-	public function setDns1($dns1) {
-		$this->dns1 = $dns1;
-		$this->queryParameters["Dns1"]=$dns1;
-	}
-
-	public function getRegistrantProfileId() {
-		return $this->registrantProfileId;
-	}
-
-	public function setRegistrantProfileId($registrantProfileId) {
-		$this->registrantProfileId = $registrantProfileId;
-		$this->queryParameters["RegistrantProfileId"]=$registrantProfileId;
-	}
-
-	public function getCouponNo() {
-		return $this->couponNo;
-	}
-
-	public function setCouponNo($couponNo) {
-		$this->couponNo = $couponNo;
-		$this->queryParameters["CouponNo"]=$couponNo;
-	}
-
-	public function getAliyunDns() {
-		return $this->aliyunDns;
-	}
-
-	public function setAliyunDns($aliyunDns) {
-		$this->aliyunDns = $aliyunDns;
-		$this->queryParameters["AliyunDns"]=$aliyunDns;
-	}
-
-	public function getTelExt() {
-		return $this->telExt;
-	}
-
-	public function setTelExt($telExt) {
-		$this->telExt = $telExt;
-		$this->queryParameters["TelExt"]=$telExt;
-	}
-
-	public function getProvince() {
-		return $this->province;
-	}
-
-	public function setProvince($province) {
-		$this->province = $province;
-		$this->queryParameters["Province"]=$province;
-	}
-
-	public function getPostalCode() {
-		return $this->postalCode;
-	}
-
-	public function setPostalCode($postalCode) {
-		$this->postalCode = $postalCode;
-		$this->queryParameters["PostalCode"]=$postalCode;
-	}
-
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-
-	public function getEmail() {
-		return $this->email;
-	}
-
-	public function setEmail($email) {
-		$this->email = $email;
-		$this->queryParameters["Email"]=$email;
-	}
-
-	public function getAddress() {
-		return $this->address;
-	}
-
-	public function setAddress($address) {
-		$this->address = $address;
-		$this->queryParameters["Address"]=$address;
-	}
-
-	public function getTelArea() {
-		return $this->telArea;
-	}
-
-	public function setTelArea($telArea) {
-		$this->telArea = $telArea;
-		$this->queryParameters["TelArea"]=$telArea;
-	}
-
-	public function getDomainName() {
-		return $this->domainName;
-	}
-
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
-
-	public function getTelephone() {
-		return $this->telephone;
-	}
-
-	public function setTelephone($telephone) {
-		$this->telephone = $telephone;
-		$this->queryParameters["Telephone"]=$telephone;
-	}
-
-	public function getTrademarkDomainActivation() {
-		return $this->trademarkDomainActivation;
-	}
-
-	public function setTrademarkDomainActivation($trademarkDomainActivation) {
-		$this->trademarkDomainActivation = $trademarkDomainActivation;
-		$this->queryParameters["TrademarkDomainActivation"]=$trademarkDomainActivation;
-	}
-
-	public function getUseCoupon() {
-		return $this->useCoupon;
-	}
-
-	public function setUseCoupon($useCoupon) {
-		$this->useCoupon = $useCoupon;
-		$this->queryParameters["UseCoupon"]=$useCoupon;
-	}
-
-	public function getRegistrantOrganization() {
-		return $this->registrantOrganization;
-	}
-
-	public function setRegistrantOrganization($registrantOrganization) {
-		$this->registrantOrganization = $registrantOrganization;
-		$this->queryParameters["RegistrantOrganization"]=$registrantOrganization;
-	}
-
-	public function getPromotionNo() {
-		return $this->promotionNo;
-	}
-
-	public function setPromotionNo($promotionNo) {
-		$this->promotionNo = $promotionNo;
-		$this->queryParameters["PromotionNo"]=$promotionNo;
-	}
-
-	public function getUserClientIp() {
-		return $this->userClientIp;
-	}
-
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
-	}
-
-	public function getEnableDomainProxy() {
-		return $this->enableDomainProxy;
-	}
-
-	public function setEnableDomainProxy($enableDomainProxy) {
-		$this->enableDomainProxy = $enableDomainProxy;
-		$this->queryParameters["EnableDomainProxy"]=$enableDomainProxy;
-	}
-
-	public function getRegistrantName() {
-		return $this->registrantName;
-	}
-
-	public function setRegistrantName($registrantName) {
-		$this->registrantName = $registrantName;
-		$this->queryParameters["RegistrantName"]=$registrantName;
-	}
-
-	public function getUsePromotion() {
-		return $this->usePromotion;
-	}
-
-	public function setUsePromotion($usePromotion) {
-		$this->usePromotion = $usePromotion;
-		$this->queryParameters["UsePromotion"]=$usePromotion;
-	}
-	
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
+
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Domain-intl',
+            '2017-12-18',
+            'SaveSingleTaskForCreatingOrderActivate',
+            'domain'
+        );
+    }
+
+    /**
+     * @param string $country
+     *
+     * @return $this
+     */
+    public function setCountry($country)
+    {
+        $this->requestParameters['Country'] = $country;
+        $this->queryParameters['Country'] = $country;
+
+        return $this;
+    }
+
+    /**
+     * @param string $subscriptionDuration
+     *
+     * @return $this
+     */
+    public function setSubscriptionDuration($subscriptionDuration)
+    {
+        $this->requestParameters['SubscriptionDuration'] = $subscriptionDuration;
+        $this->queryParameters['SubscriptionDuration'] = $subscriptionDuration;
+
+        return $this;
+    }
+
+    /**
+     * @param string $permitPremiumActivation
+     *
+     * @return $this
+     */
+    public function setPermitPremiumActivation($permitPremiumActivation)
+    {
+        $this->requestParameters['PermitPremiumActivation'] = $permitPremiumActivation;
+        $this->queryParameters['PermitPremiumActivation'] = $permitPremiumActivation;
+
+        return $this;
+    }
+
+    /**
+     * @param string $city
+     *
+     * @return $this
+     */
+    public function setCity($city)
+    {
+        $this->requestParameters['City'] = $city;
+        $this->queryParameters['City'] = $city;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dns2
+     *
+     * @return $this
+     */
+    public function setDns2($dns2)
+    {
+        $this->requestParameters['Dns2'] = $dns2;
+        $this->queryParameters['Dns2'] = $dns2;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dns1
+     *
+     * @return $this
+     */
+    public function setDns1($dns1)
+    {
+        $this->requestParameters['Dns1'] = $dns1;
+        $this->queryParameters['Dns1'] = $dns1;
+
+        return $this;
+    }
+
+    /**
+     * @param string $registrantProfileId
+     *
+     * @return $this
+     */
+    public function setRegistrantProfileId($registrantProfileId)
+    {
+        $this->requestParameters['RegistrantProfileId'] = $registrantProfileId;
+        $this->queryParameters['RegistrantProfileId'] = $registrantProfileId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $couponNo
+     *
+     * @return $this
+     */
+    public function setCouponNo($couponNo)
+    {
+        $this->requestParameters['CouponNo'] = $couponNo;
+        $this->queryParameters['CouponNo'] = $couponNo;
+
+        return $this;
+    }
+
+    /**
+     * @param string $aliyunDns
+     *
+     * @return $this
+     */
+    public function setAliyunDns($aliyunDns)
+    {
+        $this->requestParameters['AliyunDns'] = $aliyunDns;
+        $this->queryParameters['AliyunDns'] = $aliyunDns;
+
+        return $this;
+    }
+
+    /**
+     * @param string $telExt
+     *
+     * @return $this
+     */
+    public function setTelExt($telExt)
+    {
+        $this->requestParameters['TelExt'] = $telExt;
+        $this->queryParameters['TelExt'] = $telExt;
+
+        return $this;
+    }
+
+    /**
+     * @param string $province
+     *
+     * @return $this
+     */
+    public function setProvince($province)
+    {
+        $this->requestParameters['Province'] = $province;
+        $this->queryParameters['Province'] = $province;
+
+        return $this;
+    }
+
+    /**
+     * @param string $postalCode
+     *
+     * @return $this
+     */
+    public function setPostalCode($postalCode)
+    {
+        $this->requestParameters['PostalCode'] = $postalCode;
+        $this->queryParameters['PostalCode'] = $postalCode;
+
+        return $this;
+    }
+
+    /**
+     * @param string $lang
+     *
+     * @return $this
+     */
+    public function setLang($lang)
+    {
+        $this->requestParameters['Lang'] = $lang;
+        $this->queryParameters['Lang'] = $lang;
+
+        return $this;
+    }
+
+    /**
+     * @param string $email
+     *
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->requestParameters['Email'] = $email;
+        $this->queryParameters['Email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * @param string $address
+     *
+     * @return $this
+     */
+    public function setAddress($address)
+    {
+        $this->requestParameters['Address'] = $address;
+        $this->queryParameters['Address'] = $address;
+
+        return $this;
+    }
+
+    /**
+     * @param string $telArea
+     *
+     * @return $this
+     */
+    public function setTelArea($telArea)
+    {
+        $this->requestParameters['TelArea'] = $telArea;
+        $this->queryParameters['TelArea'] = $telArea;
+
+        return $this;
+    }
+
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $registrantType
+     *
+     * @return $this
+     */
+    public function setRegistrantType($registrantType)
+    {
+        $this->requestParameters['RegistrantType'] = $registrantType;
+        $this->queryParameters['RegistrantType'] = $registrantType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $telephone
+     *
+     * @return $this
+     */
+    public function setTelephone($telephone)
+    {
+        $this->requestParameters['Telephone'] = $telephone;
+        $this->queryParameters['Telephone'] = $telephone;
+
+        return $this;
+    }
+
+    /**
+     * @param string $trademarkDomainActivation
+     *
+     * @return $this
+     */
+    public function setTrademarkDomainActivation($trademarkDomainActivation)
+    {
+        $this->requestParameters['TrademarkDomainActivation'] = $trademarkDomainActivation;
+        $this->queryParameters['TrademarkDomainActivation'] = $trademarkDomainActivation;
+
+        return $this;
+    }
+
+    /**
+     * @param string $useCoupon
+     *
+     * @return $this
+     */
+    public function setUseCoupon($useCoupon)
+    {
+        $this->requestParameters['UseCoupon'] = $useCoupon;
+        $this->queryParameters['UseCoupon'] = $useCoupon;
+
+        return $this;
+    }
+
+    /**
+     * @param string $registrantOrganization
+     *
+     * @return $this
+     */
+    public function setRegistrantOrganization($registrantOrganization)
+    {
+        $this->requestParameters['RegistrantOrganization'] = $registrantOrganization;
+        $this->queryParameters['RegistrantOrganization'] = $registrantOrganization;
+
+        return $this;
+    }
+
+    /**
+     * @param string $promotionNo
+     *
+     * @return $this
+     */
+    public function setPromotionNo($promotionNo)
+    {
+        $this->requestParameters['PromotionNo'] = $promotionNo;
+        $this->queryParameters['PromotionNo'] = $promotionNo;
+
+        return $this;
+    }
+
+    /**
+     * @param string $userClientIp
+     *
+     * @return $this
+     */
+    public function setUserClientIp($userClientIp)
+    {
+        $this->requestParameters['UserClientIp'] = $userClientIp;
+        $this->queryParameters['UserClientIp'] = $userClientIp;
+
+        return $this;
+    }
+
+    /**
+     * @param string $enableDomainProxy
+     *
+     * @return $this
+     */
+    public function setEnableDomainProxy($enableDomainProxy)
+    {
+        $this->requestParameters['EnableDomainProxy'] = $enableDomainProxy;
+        $this->queryParameters['EnableDomainProxy'] = $enableDomainProxy;
+
+        return $this;
+    }
+
+    /**
+     * @param string $registrantName
+     *
+     * @return $this
+     */
+    public function setRegistrantName($registrantName)
+    {
+        $this->requestParameters['RegistrantName'] = $registrantName;
+        $this->queryParameters['RegistrantName'] = $registrantName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $usePromotion
+     *
+     * @return $this
+     */
+    public function setUsePromotion($usePromotion)
+    {
+        $this->requestParameters['UsePromotion'] = $usePromotion;
+        $this->queryParameters['UsePromotion'] = $usePromotion;
+
+        return $this;
+    }
 }

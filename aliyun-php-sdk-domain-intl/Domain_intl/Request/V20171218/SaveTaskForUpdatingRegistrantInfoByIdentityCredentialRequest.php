@@ -5,14 +5,16 @@ namespace Domain_intl\Request\V20171218;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of SaveBatchTaskForUpdatingContactInfoByNewContact
+ * Request of SaveTaskForUpdatingRegistrantInfoByIdentityCredential
  *
  * @method string getCountry()
+ * @method string getIdentityCredentialType()
  * @method string getAddress()
  * @method string getTelArea()
- * @method string getContactType()
  * @method string getCity()
+ * @method string getRegistrantType()
  * @method array getDomainNames()
+ * @method string getIdentityCredential()
  * @method string getTelephone()
  * @method string getTransferOutProhibited()
  * @method string getRegistrantOrganization()
@@ -21,10 +23,11 @@ namespace Domain_intl\Request\V20171218;
  * @method string getPostalCode()
  * @method string getUserClientIp()
  * @method string getLang()
+ * @method string getIdentityCredentialNo()
  * @method string getEmail()
  * @method string getRegistrantName()
  */
-class SaveBatchTaskForUpdatingContactInfoByNewContactRequest extends \RpcAcsRequest
+class SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest extends \RpcAcsRequest
 {
 
     /**
@@ -40,7 +43,7 @@ class SaveBatchTaskForUpdatingContactInfoByNewContactRequest extends \RpcAcsRequ
         parent::__construct(
             'Domain-intl',
             '2017-12-18',
-            'SaveBatchTaskForUpdatingContactInfoByNewContact',
+            'SaveTaskForUpdatingRegistrantInfoByIdentityCredential',
             'domain'
         );
     }
@@ -54,6 +57,19 @@ class SaveBatchTaskForUpdatingContactInfoByNewContactRequest extends \RpcAcsRequ
     {
         $this->requestParameters['Country'] = $country;
         $this->queryParameters['Country'] = $country;
+
+        return $this;
+    }
+
+    /**
+     * @param string $identityCredentialType
+     *
+     * @return $this
+     */
+    public function setIdentityCredentialType($identityCredentialType)
+    {
+        $this->requestParameters['IdentityCredentialType'] = $identityCredentialType;
+        $this->queryParameters['IdentityCredentialType'] = $identityCredentialType;
 
         return $this;
     }
@@ -85,19 +101,6 @@ class SaveBatchTaskForUpdatingContactInfoByNewContactRequest extends \RpcAcsRequ
     }
 
     /**
-     * @param string $contactType
-     *
-     * @return $this
-     */
-    public function setContactType($contactType)
-    {
-        $this->requestParameters['ContactType'] = $contactType;
-        $this->queryParameters['ContactType'] = $contactType;
-
-        return $this;
-    }
-
-    /**
      * @param string $city
      *
      * @return $this
@@ -106,6 +109,19 @@ class SaveBatchTaskForUpdatingContactInfoByNewContactRequest extends \RpcAcsRequ
     {
         $this->requestParameters['City'] = $city;
         $this->queryParameters['City'] = $city;
+
+        return $this;
+    }
+
+    /**
+     * @param string $registrantType
+     *
+     * @return $this
+     */
+    public function setRegistrantType($registrantType)
+    {
+        $this->requestParameters['RegistrantType'] = $registrantType;
+        $this->queryParameters['RegistrantType'] = $registrantType;
 
         return $this;
     }
@@ -121,6 +137,19 @@ class SaveBatchTaskForUpdatingContactInfoByNewContactRequest extends \RpcAcsRequ
         foreach ($domainName as $i => $iValue) {
             $this->queryParameters['DomainName.' . ($i + 1)] = $iValue;
         }
+
+        return $this;
+    }
+
+    /**
+     * @param string $identityCredential
+     *
+     * @return $this
+     */
+    public function setIdentityCredential($identityCredential)
+    {
+        $this->requestParameters['IdentityCredential'] = $identityCredential;
+        $this->queryParameters['IdentityCredential'] = $identityCredential;
 
         return $this;
     }
@@ -225,6 +254,19 @@ class SaveBatchTaskForUpdatingContactInfoByNewContactRequest extends \RpcAcsRequ
     {
         $this->requestParameters['Lang'] = $lang;
         $this->queryParameters['Lang'] = $lang;
+
+        return $this;
+    }
+
+    /**
+     * @param string $identityCredentialNo
+     *
+     * @return $this
+     */
+    public function setIdentityCredentialNo($identityCredentialNo)
+    {
+        $this->requestParameters['IdentityCredentialNo'] = $identityCredentialNo;
+        $this->queryParameters['IdentityCredentialNo'] = $identityCredentialNo;
 
         return $this;
     }

@@ -1,111 +1,132 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Domain_intl\Request\V20171218;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of SaveBatchTaskForCreatingOrderRedeem
+ *
+ * @method string getPromotionNo()
+ * @method array getOrderRedeemParams()
+ * @method string getUserClientIp()
+ * @method string getCouponNo()
+ * @method string getUseCoupon()
+ * @method string getLang()
+ * @method string getUsePromotion()
+ */
 class SaveBatchTaskForCreatingOrderRedeemRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain-intl", "2017-12-18", "SaveBatchTaskForCreatingOrderRedeem", "domain", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $promotionNo;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $OrderRedeemParams;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Domain-intl',
+            '2017-12-18',
+            'SaveBatchTaskForCreatingOrderRedeem',
+            'domain'
+        );
+    }
 
-	private  $userClientIp;
+    /**
+     * @param string $promotionNo
+     *
+     * @return $this
+     */
+    public function setPromotionNo($promotionNo)
+    {
+        $this->requestParameters['PromotionNo'] = $promotionNo;
+        $this->queryParameters['PromotionNo'] = $promotionNo;
 
-	private  $couponNo;
+        return $this;
+    }
 
-	private  $useCoupon;
+    /**
+     * @param array $orderRedeemParam
+     *
+     * @return $this
+     */
+    public function setOrderRedeemParams(array $orderRedeemParam)
+    {
+        $this->requestParameters['OrderRedeemParams'] = $orderRedeemParam;
+        foreach ($orderRedeemParam as $depth1 => $depth1Value) {
+            $this->queryParameters['OrderRedeemParam.' . ($depth1 + 1) . '.CurrentExpirationDate'] = $depth1Value['CurrentExpirationDate'];
+            $this->queryParameters['OrderRedeemParam.' . ($depth1 + 1) . '.DomainName'] = $depth1Value['DomainName'];
+        }
 
-	private  $lang;
+        return $this;
+    }
 
-	private  $usePromotion;
+    /**
+     * @param string $userClientIp
+     *
+     * @return $this
+     */
+    public function setUserClientIp($userClientIp)
+    {
+        $this->requestParameters['UserClientIp'] = $userClientIp;
+        $this->queryParameters['UserClientIp'] = $userClientIp;
 
-	public function getPromotionNo() {
-		return $this->promotionNo;
-	}
+        return $this;
+    }
 
-	public function setPromotionNo($promotionNo) {
-		$this->promotionNo = $promotionNo;
-		$this->queryParameters["PromotionNo"]=$promotionNo;
-	}
+    /**
+     * @param string $couponNo
+     *
+     * @return $this
+     */
+    public function setCouponNo($couponNo)
+    {
+        $this->requestParameters['CouponNo'] = $couponNo;
+        $this->queryParameters['CouponNo'] = $couponNo;
 
-	public function getOrderRedeemParams() {
-		return $this->OrderRedeemParams;
-	}
+        return $this;
+    }
 
-	public function setOrderRedeemParams($OrderRedeemParams) {
-		$this->OrderRedeemParams = $OrderRedeemParams;
-		for ($i = 0; $i < count($OrderRedeemParams); $i ++) {	
-			$this->queryParameters['OrderRedeemParam.' . ($i + 1) . '.CurrentExpirationDate'] = $OrderRedeemParams[$i]['CurrentExpirationDate'];
-			$this->queryParameters['OrderRedeemParam.' . ($i + 1) . '.DomainName'] = $OrderRedeemParams[$i]['DomainName'];
+    /**
+     * @param string $useCoupon
+     *
+     * @return $this
+     */
+    public function setUseCoupon($useCoupon)
+    {
+        $this->requestParameters['UseCoupon'] = $useCoupon;
+        $this->queryParameters['UseCoupon'] = $useCoupon;
 
-		}
-	}
+        return $this;
+    }
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
-	}
+    /**
+     * @param string $lang
+     *
+     * @return $this
+     */
+    public function setLang($lang)
+    {
+        $this->requestParameters['Lang'] = $lang;
+        $this->queryParameters['Lang'] = $lang;
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
-	}
+        return $this;
+    }
 
-	public function getCouponNo() {
-		return $this->couponNo;
-	}
+    /**
+     * @param string $usePromotion
+     *
+     * @return $this
+     */
+    public function setUsePromotion($usePromotion)
+    {
+        $this->requestParameters['UsePromotion'] = $usePromotion;
+        $this->queryParameters['UsePromotion'] = $usePromotion;
 
-	public function setCouponNo($couponNo) {
-		$this->couponNo = $couponNo;
-		$this->queryParameters["CouponNo"]=$couponNo;
-	}
-
-	public function getUseCoupon() {
-		return $this->useCoupon;
-	}
-
-	public function setUseCoupon($useCoupon) {
-		$this->useCoupon = $useCoupon;
-		$this->queryParameters["UseCoupon"]=$useCoupon;
-	}
-
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-
-	public function getUsePromotion() {
-		return $this->usePromotion;
-	}
-
-	public function setUsePromotion($usePromotion) {
-		$this->usePromotion = $usePromotion;
-		$this->queryParameters["UsePromotion"]=$usePromotion;
-	}
-	
+        return $this;
+    }
 }

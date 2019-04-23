@@ -5,18 +5,15 @@ namespace Domain_intl\Request\V20171218;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of QueryTaskDetailList
+ * Request of SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileID
  *
- * @method string getTaskStatus()
  * @method string getInstanceId()
  * @method string getUserClientIp()
- * @method string getTaskNo()
  * @method string getDomainName()
- * @method string getPageSize()
+ * @method string getRegistrantProfileId()
  * @method string getLang()
- * @method string getPageNum()
  */
-class QueryTaskDetailListRequest extends \RpcAcsRequest
+class SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest extends \RpcAcsRequest
 {
 
     /**
@@ -32,22 +29,9 @@ class QueryTaskDetailListRequest extends \RpcAcsRequest
         parent::__construct(
             'Domain-intl',
             '2017-12-18',
-            'QueryTaskDetailList',
+            'SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileID',
             'domain'
         );
-    }
-
-    /**
-     * @param string $taskStatus
-     *
-     * @return $this
-     */
-    public function setTaskStatus($taskStatus)
-    {
-        $this->requestParameters['TaskStatus'] = $taskStatus;
-        $this->queryParameters['TaskStatus'] = $taskStatus;
-
-        return $this;
     }
 
     /**
@@ -77,19 +61,6 @@ class QueryTaskDetailListRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $taskNo
-     *
-     * @return $this
-     */
-    public function setTaskNo($taskNo)
-    {
-        $this->requestParameters['TaskNo'] = $taskNo;
-        $this->queryParameters['TaskNo'] = $taskNo;
-
-        return $this;
-    }
-
-    /**
      * @param string $domainName
      *
      * @return $this
@@ -103,14 +74,14 @@ class QueryTaskDetailListRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageSize
+     * @param string $registrantProfileId
      *
      * @return $this
      */
-    public function setPageSize($pageSize)
+    public function setRegistrantProfileId($registrantProfileId)
     {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
+        $this->requestParameters['RegistrantProfileId'] = $registrantProfileId;
+        $this->queryParameters['RegistrantProfileId'] = $registrantProfileId;
 
         return $this;
     }
@@ -124,19 +95,6 @@ class QueryTaskDetailListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Lang'] = $lang;
         $this->queryParameters['Lang'] = $lang;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNum
-     *
-     * @return $this
-     */
-    public function setPageNum($pageNum)
-    {
-        $this->requestParameters['PageNum'] = $pageNum;
-        $this->queryParameters['PageNum'] = $pageNum;
 
         return $this;
     }

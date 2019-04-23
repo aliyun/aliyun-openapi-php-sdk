@@ -1,107 +1,129 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Domain_intl\Request\V20171218;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of SaveSingleTaskForUpdatingContactInfo
+ *
+ * @method string getInstanceId()
+ * @method string getContactType()
+ * @method string getUserClientIp()
+ * @method string getDomainName()
+ * @method string getRegistrantProfileId()
+ * @method string getAddTransferLock()
+ * @method string getLang()
+ */
 class SaveSingleTaskForUpdatingContactInfoRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain-intl", "2017-12-18", "SaveSingleTaskForUpdatingContactInfo", "domain", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $instanceId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $contactType;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Domain-intl',
+            '2017-12-18',
+            'SaveSingleTaskForUpdatingContactInfo',
+            'domain'
+        );
+    }
 
-	private  $userClientIp;
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
-	private  $domainName;
+        return $this;
+    }
 
-	private  $registrantProfileId;
+    /**
+     * @param string $contactType
+     *
+     * @return $this
+     */
+    public function setContactType($contactType)
+    {
+        $this->requestParameters['ContactType'] = $contactType;
+        $this->queryParameters['ContactType'] = $contactType;
 
-	private  $addTransferLock;
+        return $this;
+    }
 
-	private  $lang;
+    /**
+     * @param string $userClientIp
+     *
+     * @return $this
+     */
+    public function setUserClientIp($userClientIp)
+    {
+        $this->requestParameters['UserClientIp'] = $userClientIp;
+        $this->queryParameters['UserClientIp'] = $userClientIp;
 
-	public function getInstanceId() {
-		return $this->instanceId;
-	}
+        return $this;
+    }
 
-	public function setInstanceId($instanceId) {
-		$this->instanceId = $instanceId;
-		$this->queryParameters["InstanceId"]=$instanceId;
-	}
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
 
-	public function getContactType() {
-		return $this->contactType;
-	}
+        return $this;
+    }
 
-	public function setContactType($contactType) {
-		$this->contactType = $contactType;
-		$this->queryParameters["ContactType"]=$contactType;
-	}
+    /**
+     * @param string $registrantProfileId
+     *
+     * @return $this
+     */
+    public function setRegistrantProfileId($registrantProfileId)
+    {
+        $this->requestParameters['RegistrantProfileId'] = $registrantProfileId;
+        $this->queryParameters['RegistrantProfileId'] = $registrantProfileId;
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
-	}
+        return $this;
+    }
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
-	}
+    /**
+     * @param string $addTransferLock
+     *
+     * @return $this
+     */
+    public function setAddTransferLock($addTransferLock)
+    {
+        $this->requestParameters['AddTransferLock'] = $addTransferLock;
+        $this->queryParameters['AddTransferLock'] = $addTransferLock;
 
-	public function getDomainName() {
-		return $this->domainName;
-	}
+        return $this;
+    }
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
+    /**
+     * @param string $lang
+     *
+     * @return $this
+     */
+    public function setLang($lang)
+    {
+        $this->requestParameters['Lang'] = $lang;
+        $this->queryParameters['Lang'] = $lang;
 
-	public function getRegistrantProfileId() {
-		return $this->registrantProfileId;
-	}
-
-	public function setRegistrantProfileId($registrantProfileId) {
-		$this->registrantProfileId = $registrantProfileId;
-		$this->queryParameters["RegistrantProfileId"]=$registrantProfileId;
-	}
-
-	public function getAddTransferLock() {
-		return $this->addTransferLock;
-	}
-
-	public function setAddTransferLock($addTransferLock) {
-		$this->addTransferLock = $addTransferLock;
-		$this->queryParameters["AddTransferLock"]=$addTransferLock;
-	}
-
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-	
+        return $this;
+    }
 }

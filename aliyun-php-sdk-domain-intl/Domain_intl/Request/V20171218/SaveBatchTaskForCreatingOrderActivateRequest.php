@@ -1,129 +1,151 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Domain_intl\Request\V20171218;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of SaveBatchTaskForCreatingOrderActivate
+ *
+ * @method array getOrderActivateParams()
+ * @method string getPromotionNo()
+ * @method string getUserClientIp()
+ * @method string getCouponNo()
+ * @method string getUseCoupon()
+ * @method string getLang()
+ * @method string getUsePromotion()
+ */
 class SaveBatchTaskForCreatingOrderActivateRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain-intl", "2017-12-18", "SaveBatchTaskForCreatingOrderActivate", "domain", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $OrderActivateParams;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $promotionNo;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Domain-intl',
+            '2017-12-18',
+            'SaveBatchTaskForCreatingOrderActivate',
+            'domain'
+        );
+    }
 
-	private  $userClientIp;
+    /**
+     * @param array $orderActivateParam
+     *
+     * @return $this
+     */
+    public function setOrderActivateParams(array $orderActivateParam)
+    {
+        $this->requestParameters['OrderActivateParams'] = $orderActivateParam;
+        foreach ($orderActivateParam as $depth1 => $depth1Value) {
+            $this->queryParameters['OrderActivateParam.' . ($depth1 + 1) . '.Country'] = $depth1Value['Country'];
+            $this->queryParameters['OrderActivateParam.' . ($depth1 + 1) . '.SubscriptionDuration'] = $depth1Value['SubscriptionDuration'];
+            $this->queryParameters['OrderActivateParam.' . ($depth1 + 1) . '.Address'] = $depth1Value['Address'];
+            $this->queryParameters['OrderActivateParam.' . ($depth1 + 1) . '.PermitPremiumActivation'] = $depth1Value['PermitPremiumActivation'];
+            $this->queryParameters['OrderActivateParam.' . ($depth1 + 1) . '.TelArea'] = $depth1Value['TelArea'];
+            $this->queryParameters['OrderActivateParam.' . ($depth1 + 1) . '.City'] = $depth1Value['City'];
+            $this->queryParameters['OrderActivateParam.' . ($depth1 + 1) . '.Dns2'] = $depth1Value['Dns2'];
+            $this->queryParameters['OrderActivateParam.' . ($depth1 + 1) . '.Dns1'] = $depth1Value['Dns1'];
+            $this->queryParameters['OrderActivateParam.' . ($depth1 + 1) . '.DomainName'] = $depth1Value['DomainName'];
+            $this->queryParameters['OrderActivateParam.' . ($depth1 + 1) . '.RegistrantProfileId'] = $depth1Value['RegistrantProfileId'];
+            $this->queryParameters['OrderActivateParam.' . ($depth1 + 1) . '.RegistrantType'] = $depth1Value['RegistrantType'];
+            $this->queryParameters['OrderActivateParam.' . ($depth1 + 1) . '.Telephone'] = $depth1Value['Telephone'];
+            $this->queryParameters['OrderActivateParam.' . ($depth1 + 1) . '.TrademarkDomainActivation'] = $depth1Value['TrademarkDomainActivation'];
+            $this->queryParameters['OrderActivateParam.' . ($depth1 + 1) . '.AliyunDns'] = $depth1Value['AliyunDns'];
+            $this->queryParameters['OrderActivateParam.' . ($depth1 + 1) . '.RegistrantOrganization'] = $depth1Value['RegistrantOrganization'];
+            $this->queryParameters['OrderActivateParam.' . ($depth1 + 1) . '.TelExt'] = $depth1Value['TelExt'];
+            $this->queryParameters['OrderActivateParam.' . ($depth1 + 1) . '.Province'] = $depth1Value['Province'];
+            $this->queryParameters['OrderActivateParam.' . ($depth1 + 1) . '.PostalCode'] = $depth1Value['PostalCode'];
+            $this->queryParameters['OrderActivateParam.' . ($depth1 + 1) . '.EnableDomainProxy'] = $depth1Value['EnableDomainProxy'];
+            $this->queryParameters['OrderActivateParam.' . ($depth1 + 1) . '.Email'] = $depth1Value['Email'];
+            $this->queryParameters['OrderActivateParam.' . ($depth1 + 1) . '.RegistrantName'] = $depth1Value['RegistrantName'];
+        }
 
-	private  $couponNo;
+        return $this;
+    }
 
-	private  $useCoupon;
+    /**
+     * @param string $promotionNo
+     *
+     * @return $this
+     */
+    public function setPromotionNo($promotionNo)
+    {
+        $this->requestParameters['PromotionNo'] = $promotionNo;
+        $this->queryParameters['PromotionNo'] = $promotionNo;
 
-	private  $lang;
+        return $this;
+    }
 
-	private  $usePromotion;
+    /**
+     * @param string $userClientIp
+     *
+     * @return $this
+     */
+    public function setUserClientIp($userClientIp)
+    {
+        $this->requestParameters['UserClientIp'] = $userClientIp;
+        $this->queryParameters['UserClientIp'] = $userClientIp;
 
-	public function getOrderActivateParams() {
-		return $this->OrderActivateParams;
-	}
+        return $this;
+    }
 
-	public function setOrderActivateParams($OrderActivateParams) {
-		$this->OrderActivateParams = $OrderActivateParams;
-		for ($i = 0; $i < count($OrderActivateParams); $i ++) {	
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.Country'] = $OrderActivateParams[$i]['Country'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.SubscriptionDuration'] = $OrderActivateParams[$i]['SubscriptionDuration'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.Address'] = $OrderActivateParams[$i]['Address'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.PermitPremiumActivation'] = $OrderActivateParams[$i]['PermitPremiumActivation'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.TelArea'] = $OrderActivateParams[$i]['TelArea'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.City'] = $OrderActivateParams[$i]['City'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.Dns2'] = $OrderActivateParams[$i]['Dns2'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.Dns1'] = $OrderActivateParams[$i]['Dns1'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.DomainName'] = $OrderActivateParams[$i]['DomainName'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.RegistrantProfileId'] = $OrderActivateParams[$i]['RegistrantProfileId'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.Telephone'] = $OrderActivateParams[$i]['Telephone'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.TrademarkDomainActivation'] = $OrderActivateParams[$i]['TrademarkDomainActivation'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.AliyunDns'] = $OrderActivateParams[$i]['AliyunDns'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.RegistrantOrganization'] = $OrderActivateParams[$i]['RegistrantOrganization'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.TelExt'] = $OrderActivateParams[$i]['TelExt'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.Province'] = $OrderActivateParams[$i]['Province'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.PostalCode'] = $OrderActivateParams[$i]['PostalCode'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.EnableDomainProxy'] = $OrderActivateParams[$i]['EnableDomainProxy'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.Email'] = $OrderActivateParams[$i]['Email'];
-			$this->queryParameters['OrderActivateParam.' . ($i + 1) . '.RegistrantName'] = $OrderActivateParams[$i]['RegistrantName'];
+    /**
+     * @param string $couponNo
+     *
+     * @return $this
+     */
+    public function setCouponNo($couponNo)
+    {
+        $this->requestParameters['CouponNo'] = $couponNo;
+        $this->queryParameters['CouponNo'] = $couponNo;
 
-		}
-	}
+        return $this;
+    }
 
-	public function getPromotionNo() {
-		return $this->promotionNo;
-	}
+    /**
+     * @param string $useCoupon
+     *
+     * @return $this
+     */
+    public function setUseCoupon($useCoupon)
+    {
+        $this->requestParameters['UseCoupon'] = $useCoupon;
+        $this->queryParameters['UseCoupon'] = $useCoupon;
 
-	public function setPromotionNo($promotionNo) {
-		$this->promotionNo = $promotionNo;
-		$this->queryParameters["PromotionNo"]=$promotionNo;
-	}
+        return $this;
+    }
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
-	}
+    /**
+     * @param string $lang
+     *
+     * @return $this
+     */
+    public function setLang($lang)
+    {
+        $this->requestParameters['Lang'] = $lang;
+        $this->queryParameters['Lang'] = $lang;
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
-	}
+        return $this;
+    }
 
-	public function getCouponNo() {
-		return $this->couponNo;
-	}
+    /**
+     * @param string $usePromotion
+     *
+     * @return $this
+     */
+    public function setUsePromotion($usePromotion)
+    {
+        $this->requestParameters['UsePromotion'] = $usePromotion;
+        $this->queryParameters['UsePromotion'] = $usePromotion;
 
-	public function setCouponNo($couponNo) {
-		$this->couponNo = $couponNo;
-		$this->queryParameters["CouponNo"]=$couponNo;
-	}
-
-	public function getUseCoupon() {
-		return $this->useCoupon;
-	}
-
-	public function setUseCoupon($useCoupon) {
-		$this->useCoupon = $useCoupon;
-		$this->queryParameters["UseCoupon"]=$useCoupon;
-	}
-
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-
-	public function getUsePromotion() {
-		return $this->usePromotion;
-	}
-
-	public function setUsePromotion($usePromotion) {
-		$this->usePromotion = $usePromotion;
-		$this->queryParameters["UsePromotion"]=$usePromotion;
-	}
-	
+        return $this;
+    }
 }

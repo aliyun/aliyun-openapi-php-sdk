@@ -1,74 +1,87 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Domain_intl\Request\V20171218;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of TransferInReenterTransferAuthorizationCode
+ *
+ * @method string getTransferAuthorizationCode()
+ * @method string getDomainName()
+ * @method string getUserClientIp()
+ * @method string getLang()
+ */
 class TransferInReenterTransferAuthorizationCodeRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain-intl", "2017-12-18", "TransferInReenterTransferAuthorizationCode", "domain", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $transferAuthorizationCode;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $domainName;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Domain-intl',
+            '2017-12-18',
+            'TransferInReenterTransferAuthorizationCode',
+            'domain'
+        );
+    }
 
-	private  $userClientIp;
+    /**
+     * @param string $transferAuthorizationCode
+     *
+     * @return $this
+     */
+    public function setTransferAuthorizationCode($transferAuthorizationCode)
+    {
+        $this->requestParameters['TransferAuthorizationCode'] = $transferAuthorizationCode;
+        $this->queryParameters['TransferAuthorizationCode'] = $transferAuthorizationCode;
 
-	private  $lang;
+        return $this;
+    }
 
-	public function getTransferAuthorizationCode() {
-		return $this->transferAuthorizationCode;
-	}
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
 
-	public function setTransferAuthorizationCode($transferAuthorizationCode) {
-		$this->transferAuthorizationCode = $transferAuthorizationCode;
-		$this->queryParameters["TransferAuthorizationCode"]=$transferAuthorizationCode;
-	}
+        return $this;
+    }
 
-	public function getDomainName() {
-		return $this->domainName;
-	}
+    /**
+     * @param string $userClientIp
+     *
+     * @return $this
+     */
+    public function setUserClientIp($userClientIp)
+    {
+        $this->requestParameters['UserClientIp'] = $userClientIp;
+        $this->queryParameters['UserClientIp'] = $userClientIp;
 
-	public function setDomainName($domainName) {
-		$this->domainName = $domainName;
-		$this->queryParameters["DomainName"]=$domainName;
-	}
+        return $this;
+    }
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
-	}
+    /**
+     * @param string $lang
+     *
+     * @return $this
+     */
+    public function setLang($lang)
+    {
+        $this->requestParameters['Lang'] = $lang;
+        $this->queryParameters['Lang'] = $lang;
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
-	}
-
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-	
+        return $this;
+    }
 }

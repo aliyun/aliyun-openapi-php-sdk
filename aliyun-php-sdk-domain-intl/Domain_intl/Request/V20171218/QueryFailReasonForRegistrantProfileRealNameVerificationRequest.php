@@ -5,13 +5,13 @@ namespace Domain_intl\Request\V20171218;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of SaveSingleTaskForQueryingTransferAuthorizationCode
+ * Request of QueryFailReasonForRegistrantProfileRealNameVerification
  *
- * @method string getDomainName()
  * @method string getUserClientIp()
+ * @method string getRegistrantProfileID()
  * @method string getLang()
  */
-class SaveSingleTaskForQueryingTransferAuthorizationCodeRequest extends \RpcAcsRequest
+class QueryFailReasonForRegistrantProfileRealNameVerificationRequest extends \RpcAcsRequest
 {
 
     /**
@@ -27,22 +27,9 @@ class SaveSingleTaskForQueryingTransferAuthorizationCodeRequest extends \RpcAcsR
         parent::__construct(
             'Domain-intl',
             '2017-12-18',
-            'SaveSingleTaskForQueryingTransferAuthorizationCode',
+            'QueryFailReasonForRegistrantProfileRealNameVerification',
             'domain'
         );
-    }
-
-    /**
-     * @param string $domainName
-     *
-     * @return $this
-     */
-    public function setDomainName($domainName)
-    {
-        $this->requestParameters['DomainName'] = $domainName;
-        $this->queryParameters['DomainName'] = $domainName;
-
-        return $this;
     }
 
     /**
@@ -54,6 +41,19 @@ class SaveSingleTaskForQueryingTransferAuthorizationCodeRequest extends \RpcAcsR
     {
         $this->requestParameters['UserClientIp'] = $userClientIp;
         $this->queryParameters['UserClientIp'] = $userClientIp;
+
+        return $this;
+    }
+
+    /**
+     * @param string $registrantProfileID
+     *
+     * @return $this
+     */
+    public function setRegistrantProfileID($registrantProfileID)
+    {
+        $this->requestParameters['RegistrantProfileID'] = $registrantProfileID;
+        $this->queryParameters['RegistrantProfileID'] = $registrantProfileID;
 
         return $this;
     }

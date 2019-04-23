@@ -1,118 +1,185 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Domain_intl\Request\V20171218;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of QueryRegistrantProfiles
+ *
+ * @method string getRegistrantOrganization()
+ * @method string getUserClientIp()
+ * @method string getRegistrantProfileId()
+ * @method string getPageSize()
+ * @method string getRegistrantType()
+ * @method string getRegistrantProfileType()
+ * @method string getRealNameStatus()
+ * @method string getLang()
+ * @method string getPageNum()
+ * @method string getDefaultRegistrantProfile()
+ * @method string getEmail()
+ */
 class QueryRegistrantProfilesRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain-intl", "2017-12-18", "QueryRegistrantProfiles", "domain", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $registrantOrganization;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $userClientIp;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Domain-intl',
+            '2017-12-18',
+            'QueryRegistrantProfiles',
+            'domain'
+        );
+    }
 
-	private  $registrantProfileId;
+    /**
+     * @param string $registrantOrganization
+     *
+     * @return $this
+     */
+    public function setRegistrantOrganization($registrantOrganization)
+    {
+        $this->requestParameters['RegistrantOrganization'] = $registrantOrganization;
+        $this->queryParameters['RegistrantOrganization'] = $registrantOrganization;
 
-	private  $pageSize;
+        return $this;
+    }
 
-	private  $lang;
+    /**
+     * @param string $userClientIp
+     *
+     * @return $this
+     */
+    public function setUserClientIp($userClientIp)
+    {
+        $this->requestParameters['UserClientIp'] = $userClientIp;
+        $this->queryParameters['UserClientIp'] = $userClientIp;
 
-	private  $pageNum;
+        return $this;
+    }
 
-	private  $defaultRegistrantProfile;
+    /**
+     * @param string $registrantProfileId
+     *
+     * @return $this
+     */
+    public function setRegistrantProfileId($registrantProfileId)
+    {
+        $this->requestParameters['RegistrantProfileId'] = $registrantProfileId;
+        $this->queryParameters['RegistrantProfileId'] = $registrantProfileId;
 
-	private  $email;
+        return $this;
+    }
 
-	public function getRegistrantOrganization() {
-		return $this->registrantOrganization;
-	}
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	public function setRegistrantOrganization($registrantOrganization) {
-		$this->registrantOrganization = $registrantOrganization;
-		$this->queryParameters["RegistrantOrganization"]=$registrantOrganization;
-	}
+        return $this;
+    }
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
-	}
+    /**
+     * @param string $registrantType
+     *
+     * @return $this
+     */
+    public function setRegistrantType($registrantType)
+    {
+        $this->requestParameters['RegistrantType'] = $registrantType;
+        $this->queryParameters['RegistrantType'] = $registrantType;
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
-	}
+        return $this;
+    }
 
-	public function getRegistrantProfileId() {
-		return $this->registrantProfileId;
-	}
+    /**
+     * @param string $registrantProfileType
+     *
+     * @return $this
+     */
+    public function setRegistrantProfileType($registrantProfileType)
+    {
+        $this->requestParameters['RegistrantProfileType'] = $registrantProfileType;
+        $this->queryParameters['RegistrantProfileType'] = $registrantProfileType;
 
-	public function setRegistrantProfileId($registrantProfileId) {
-		$this->registrantProfileId = $registrantProfileId;
-		$this->queryParameters["RegistrantProfileId"]=$registrantProfileId;
-	}
+        return $this;
+    }
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
+    /**
+     * @param string $realNameStatus
+     *
+     * @return $this
+     */
+    public function setRealNameStatus($realNameStatus)
+    {
+        $this->requestParameters['RealNameStatus'] = $realNameStatus;
+        $this->queryParameters['RealNameStatus'] = $realNameStatus;
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
+        return $this;
+    }
 
-	public function getLang() {
-		return $this->lang;
-	}
+    /**
+     * @param string $lang
+     *
+     * @return $this
+     */
+    public function setLang($lang)
+    {
+        $this->requestParameters['Lang'] = $lang;
+        $this->queryParameters['Lang'] = $lang;
 
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
+        return $this;
+    }
 
-	public function getPageNum() {
-		return $this->pageNum;
-	}
+    /**
+     * @param string $pageNum
+     *
+     * @return $this
+     */
+    public function setPageNum($pageNum)
+    {
+        $this->requestParameters['PageNum'] = $pageNum;
+        $this->queryParameters['PageNum'] = $pageNum;
 
-	public function setPageNum($pageNum) {
-		$this->pageNum = $pageNum;
-		$this->queryParameters["PageNum"]=$pageNum;
-	}
+        return $this;
+    }
 
-	public function getDefaultRegistrantProfile() {
-		return $this->defaultRegistrantProfile;
-	}
+    /**
+     * @param string $defaultRegistrantProfile
+     *
+     * @return $this
+     */
+    public function setDefaultRegistrantProfile($defaultRegistrantProfile)
+    {
+        $this->requestParameters['DefaultRegistrantProfile'] = $defaultRegistrantProfile;
+        $this->queryParameters['DefaultRegistrantProfile'] = $defaultRegistrantProfile;
 
-	public function setDefaultRegistrantProfile($defaultRegistrantProfile) {
-		$this->defaultRegistrantProfile = $defaultRegistrantProfile;
-		$this->queryParameters["DefaultRegistrantProfile"]=$defaultRegistrantProfile;
-	}
+        return $this;
+    }
 
-	public function getEmail() {
-		return $this->email;
-	}
+    /**
+     * @param string $email
+     *
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->requestParameters['Email'] = $email;
+        $this->queryParameters['Email'] = $email;
 
-	public function setEmail($email) {
-		$this->email = $email;
-		$this->queryParameters["Email"]=$email;
-	}
-	
+        return $this;
+    }
 }

@@ -1,195 +1,269 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Domain_intl\Request\V20171218;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of SaveRegistrantProfile
+ *
+ * @method string getCountry()
+ * @method string getAddress()
+ * @method string getTelArea()
+ * @method string getCity()
+ * @method string getRegistrantProfileId()
+ * @method string getRegistrantType()
+ * @method string getRegistrantProfileType()
+ * @method string getTelephone()
+ * @method string getDefaultRegistrantProfile()
+ * @method string getRegistrantOrganization()
+ * @method string getTelExt()
+ * @method string getProvince()
+ * @method string getPostalCode()
+ * @method string getUserClientIp()
+ * @method string getLang()
+ * @method string getEmail()
+ * @method string getRegistrantName()
+ */
 class SaveRegistrantProfileRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain-intl", "2017-12-18", "SaveRegistrantProfile", "domain", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $country;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $address;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Domain-intl',
+            '2017-12-18',
+            'SaveRegistrantProfile',
+            'domain'
+        );
+    }
 
-	private  $telArea;
+    /**
+     * @param string $country
+     *
+     * @return $this
+     */
+    public function setCountry($country)
+    {
+        $this->requestParameters['Country'] = $country;
+        $this->queryParameters['Country'] = $country;
 
-	private  $city;
+        return $this;
+    }
 
-	private  $registrantProfileId;
+    /**
+     * @param string $address
+     *
+     * @return $this
+     */
+    public function setAddress($address)
+    {
+        $this->requestParameters['Address'] = $address;
+        $this->queryParameters['Address'] = $address;
 
-	private  $telephone;
+        return $this;
+    }
 
-	private  $defaultRegistrantProfile;
+    /**
+     * @param string $telArea
+     *
+     * @return $this
+     */
+    public function setTelArea($telArea)
+    {
+        $this->requestParameters['TelArea'] = $telArea;
+        $this->queryParameters['TelArea'] = $telArea;
 
-	private  $registrantOrganization;
+        return $this;
+    }
 
-	private  $telExt;
+    /**
+     * @param string $city
+     *
+     * @return $this
+     */
+    public function setCity($city)
+    {
+        $this->requestParameters['City'] = $city;
+        $this->queryParameters['City'] = $city;
 
-	private  $province;
+        return $this;
+    }
 
-	private  $postalCode;
+    /**
+     * @param string $registrantProfileId
+     *
+     * @return $this
+     */
+    public function setRegistrantProfileId($registrantProfileId)
+    {
+        $this->requestParameters['RegistrantProfileId'] = $registrantProfileId;
+        $this->queryParameters['RegistrantProfileId'] = $registrantProfileId;
 
-	private  $userClientIp;
+        return $this;
+    }
 
-	private  $lang;
+    /**
+     * @param string $registrantType
+     *
+     * @return $this
+     */
+    public function setRegistrantType($registrantType)
+    {
+        $this->requestParameters['RegistrantType'] = $registrantType;
+        $this->queryParameters['RegistrantType'] = $registrantType;
 
-	private  $email;
+        return $this;
+    }
 
-	private  $registrantName;
+    /**
+     * @param string $registrantProfileType
+     *
+     * @return $this
+     */
+    public function setRegistrantProfileType($registrantProfileType)
+    {
+        $this->requestParameters['RegistrantProfileType'] = $registrantProfileType;
+        $this->queryParameters['RegistrantProfileType'] = $registrantProfileType;
 
-	public function getCountry() {
-		return $this->country;
-	}
+        return $this;
+    }
 
-	public function setCountry($country) {
-		$this->country = $country;
-		$this->queryParameters["Country"]=$country;
-	}
+    /**
+     * @param string $telephone
+     *
+     * @return $this
+     */
+    public function setTelephone($telephone)
+    {
+        $this->requestParameters['Telephone'] = $telephone;
+        $this->queryParameters['Telephone'] = $telephone;
 
-	public function getAddress() {
-		return $this->address;
-	}
+        return $this;
+    }
 
-	public function setAddress($address) {
-		$this->address = $address;
-		$this->queryParameters["Address"]=$address;
-	}
+    /**
+     * @param string $defaultRegistrantProfile
+     *
+     * @return $this
+     */
+    public function setDefaultRegistrantProfile($defaultRegistrantProfile)
+    {
+        $this->requestParameters['DefaultRegistrantProfile'] = $defaultRegistrantProfile;
+        $this->queryParameters['DefaultRegistrantProfile'] = $defaultRegistrantProfile;
 
-	public function getTelArea() {
-		return $this->telArea;
-	}
+        return $this;
+    }
 
-	public function setTelArea($telArea) {
-		$this->telArea = $telArea;
-		$this->queryParameters["TelArea"]=$telArea;
-	}
+    /**
+     * @param string $registrantOrganization
+     *
+     * @return $this
+     */
+    public function setRegistrantOrganization($registrantOrganization)
+    {
+        $this->requestParameters['RegistrantOrganization'] = $registrantOrganization;
+        $this->queryParameters['RegistrantOrganization'] = $registrantOrganization;
 
-	public function getCity() {
-		return $this->city;
-	}
+        return $this;
+    }
 
-	public function setCity($city) {
-		$this->city = $city;
-		$this->queryParameters["City"]=$city;
-	}
+    /**
+     * @param string $telExt
+     *
+     * @return $this
+     */
+    public function setTelExt($telExt)
+    {
+        $this->requestParameters['TelExt'] = $telExt;
+        $this->queryParameters['TelExt'] = $telExt;
 
-	public function getRegistrantProfileId() {
-		return $this->registrantProfileId;
-	}
+        return $this;
+    }
 
-	public function setRegistrantProfileId($registrantProfileId) {
-		$this->registrantProfileId = $registrantProfileId;
-		$this->queryParameters["RegistrantProfileId"]=$registrantProfileId;
-	}
+    /**
+     * @param string $province
+     *
+     * @return $this
+     */
+    public function setProvince($province)
+    {
+        $this->requestParameters['Province'] = $province;
+        $this->queryParameters['Province'] = $province;
 
-	public function getTelephone() {
-		return $this->telephone;
-	}
+        return $this;
+    }
 
-	public function setTelephone($telephone) {
-		$this->telephone = $telephone;
-		$this->queryParameters["Telephone"]=$telephone;
-	}
+    /**
+     * @param string $postalCode
+     *
+     * @return $this
+     */
+    public function setPostalCode($postalCode)
+    {
+        $this->requestParameters['PostalCode'] = $postalCode;
+        $this->queryParameters['PostalCode'] = $postalCode;
 
-	public function getDefaultRegistrantProfile() {
-		return $this->defaultRegistrantProfile;
-	}
+        return $this;
+    }
 
-	public function setDefaultRegistrantProfile($defaultRegistrantProfile) {
-		$this->defaultRegistrantProfile = $defaultRegistrantProfile;
-		$this->queryParameters["DefaultRegistrantProfile"]=$defaultRegistrantProfile;
-	}
+    /**
+     * @param string $userClientIp
+     *
+     * @return $this
+     */
+    public function setUserClientIp($userClientIp)
+    {
+        $this->requestParameters['UserClientIp'] = $userClientIp;
+        $this->queryParameters['UserClientIp'] = $userClientIp;
 
-	public function getRegistrantOrganization() {
-		return $this->registrantOrganization;
-	}
+        return $this;
+    }
 
-	public function setRegistrantOrganization($registrantOrganization) {
-		$this->registrantOrganization = $registrantOrganization;
-		$this->queryParameters["RegistrantOrganization"]=$registrantOrganization;
-	}
+    /**
+     * @param string $lang
+     *
+     * @return $this
+     */
+    public function setLang($lang)
+    {
+        $this->requestParameters['Lang'] = $lang;
+        $this->queryParameters['Lang'] = $lang;
 
-	public function getTelExt() {
-		return $this->telExt;
-	}
+        return $this;
+    }
 
-	public function setTelExt($telExt) {
-		$this->telExt = $telExt;
-		$this->queryParameters["TelExt"]=$telExt;
-	}
+    /**
+     * @param string $email
+     *
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->requestParameters['Email'] = $email;
+        $this->queryParameters['Email'] = $email;
 
-	public function getProvince() {
-		return $this->province;
-	}
+        return $this;
+    }
 
-	public function setProvince($province) {
-		$this->province = $province;
-		$this->queryParameters["Province"]=$province;
-	}
+    /**
+     * @param string $registrantName
+     *
+     * @return $this
+     */
+    public function setRegistrantName($registrantName)
+    {
+        $this->requestParameters['RegistrantName'] = $registrantName;
+        $this->queryParameters['RegistrantName'] = $registrantName;
 
-	public function getPostalCode() {
-		return $this->postalCode;
-	}
-
-	public function setPostalCode($postalCode) {
-		$this->postalCode = $postalCode;
-		$this->queryParameters["PostalCode"]=$postalCode;
-	}
-
-	public function getUserClientIp() {
-		return $this->userClientIp;
-	}
-
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
-	}
-
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-
-	public function getEmail() {
-		return $this->email;
-	}
-
-	public function setEmail($email) {
-		$this->email = $email;
-		$this->queryParameters["Email"]=$email;
-	}
-
-	public function getRegistrantName() {
-		return $this->registrantName;
-	}
-
-	public function setRegistrantName($registrantName) {
-		$this->registrantName = $registrantName;
-		$this->queryParameters["RegistrantName"]=$registrantName;
-	}
-	
+        return $this;
+    }
 }

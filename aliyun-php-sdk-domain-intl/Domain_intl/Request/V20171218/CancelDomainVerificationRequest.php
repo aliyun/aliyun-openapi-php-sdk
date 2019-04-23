@@ -5,13 +5,14 @@ namespace Domain_intl\Request\V20171218;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of SaveSingleTaskForQueryingTransferAuthorizationCode
+ * Request of CancelDomainVerification
  *
- * @method string getDomainName()
+ * @method string getActionType()
+ * @method string getInstanceId()
  * @method string getUserClientIp()
  * @method string getLang()
  */
-class SaveSingleTaskForQueryingTransferAuthorizationCodeRequest extends \RpcAcsRequest
+class CancelDomainVerificationRequest extends \RpcAcsRequest
 {
 
     /**
@@ -27,20 +28,33 @@ class SaveSingleTaskForQueryingTransferAuthorizationCodeRequest extends \RpcAcsR
         parent::__construct(
             'Domain-intl',
             '2017-12-18',
-            'SaveSingleTaskForQueryingTransferAuthorizationCode',
+            'CancelDomainVerification',
             'domain'
         );
     }
 
     /**
-     * @param string $domainName
+     * @param string $actionType
      *
      * @return $this
      */
-    public function setDomainName($domainName)
+    public function setActionType($actionType)
     {
-        $this->requestParameters['DomainName'] = $domainName;
-        $this->queryParameters['DomainName'] = $domainName;
+        $this->requestParameters['ActionType'] = $actionType;
+        $this->queryParameters['ActionType'] = $actionType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

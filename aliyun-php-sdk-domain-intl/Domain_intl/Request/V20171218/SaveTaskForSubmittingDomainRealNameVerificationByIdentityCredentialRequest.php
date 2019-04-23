@@ -5,16 +5,16 @@ namespace Domain_intl\Request\V20171218;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of SaveBatchTaskForUpdatingContactInfo
+ * Request of SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredential
  *
- * @method string getContactType()
+ * @method string getIdentityCredentialType()
  * @method string getUserClientIp()
- * @method string getRegistrantProfileId()
+ * @method string getIdentityCredential()
  * @method array getDomainNames()
- * @method string getAddTransferLock()
  * @method string getLang()
+ * @method string getIdentityCredentialNo()
  */
-class SaveBatchTaskForUpdatingContactInfoRequest extends \RpcAcsRequest
+class SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest extends \RpcAcsRequest
 {
 
     /**
@@ -30,20 +30,20 @@ class SaveBatchTaskForUpdatingContactInfoRequest extends \RpcAcsRequest
         parent::__construct(
             'Domain-intl',
             '2017-12-18',
-            'SaveBatchTaskForUpdatingContactInfo',
+            'SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredential',
             'domain'
         );
     }
 
     /**
-     * @param string $contactType
+     * @param string $identityCredentialType
      *
      * @return $this
      */
-    public function setContactType($contactType)
+    public function setIdentityCredentialType($identityCredentialType)
     {
-        $this->requestParameters['ContactType'] = $contactType;
-        $this->queryParameters['ContactType'] = $contactType;
+        $this->requestParameters['IdentityCredentialType'] = $identityCredentialType;
+        $this->queryParameters['IdentityCredentialType'] = $identityCredentialType;
 
         return $this;
     }
@@ -62,14 +62,14 @@ class SaveBatchTaskForUpdatingContactInfoRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $registrantProfileId
+     * @param string $identityCredential
      *
      * @return $this
      */
-    public function setRegistrantProfileId($registrantProfileId)
+    public function setIdentityCredential($identityCredential)
     {
-        $this->requestParameters['RegistrantProfileId'] = $registrantProfileId;
-        $this->queryParameters['RegistrantProfileId'] = $registrantProfileId;
+        $this->requestParameters['IdentityCredential'] = $identityCredential;
+        $this->queryParameters['IdentityCredential'] = $identityCredential;
 
         return $this;
     }
@@ -90,19 +90,6 @@ class SaveBatchTaskForUpdatingContactInfoRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $addTransferLock
-     *
-     * @return $this
-     */
-    public function setAddTransferLock($addTransferLock)
-    {
-        $this->requestParameters['AddTransferLock'] = $addTransferLock;
-        $this->queryParameters['AddTransferLock'] = $addTransferLock;
-
-        return $this;
-    }
-
-    /**
      * @param string $lang
      *
      * @return $this
@@ -111,6 +98,19 @@ class SaveBatchTaskForUpdatingContactInfoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Lang'] = $lang;
         $this->queryParameters['Lang'] = $lang;
+
+        return $this;
+    }
+
+    /**
+     * @param string $identityCredentialNo
+     *
+     * @return $this
+     */
+    public function setIdentityCredentialNo($identityCredentialNo)
+    {
+        $this->requestParameters['IdentityCredentialNo'] = $identityCredentialNo;
+        $this->queryParameters['IdentityCredentialNo'] = $identityCredentialNo;
 
         return $this;
     }

@@ -1,89 +1,105 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Domain_intl\Request\V20171218;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of SaveBatchTaskForModifyingDomainDns
+ *
+ * @method string getUserClientIp()
+ * @method array getDomainNames()
+ * @method array getDomainNameServers()
+ * @method string getLang()
+ * @method string getAliyunDns()
+ */
 class SaveBatchTaskForModifyingDomainDnsRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Domain-intl", "2017-12-18", "SaveBatchTaskForModifyingDomainDns", "domain", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $userClientIp;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $DomainNames;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Domain-intl',
+            '2017-12-18',
+            'SaveBatchTaskForModifyingDomainDns',
+            'domain'
+        );
+    }
 
-	private  $DomainNameServers;
+    /**
+     * @param string $userClientIp
+     *
+     * @return $this
+     */
+    public function setUserClientIp($userClientIp)
+    {
+        $this->requestParameters['UserClientIp'] = $userClientIp;
+        $this->queryParameters['UserClientIp'] = $userClientIp;
 
-	private  $lang;
+        return $this;
+    }
 
-	private  $aliyunDns;
+    /**
+     * @param array $domainName
+     *
+     * @return $this
+     */
+    public function setDomainNames(array $domainName)
+    {
+        $this->requestParameters['DomainNames'] = $domainName;
+        foreach ($domainName as $i => $iValue) {
+            $this->queryParameters['DomainName.' . ($i + 1)] = $iValue;
+        }
 
-	public function getUserClientIp() {
-		return $this->userClientIp;
-	}
+        return $this;
+    }
 
-	public function setUserClientIp($userClientIp) {
-		$this->userClientIp = $userClientIp;
-		$this->queryParameters["UserClientIp"]=$userClientIp;
-	}
+    /**
+     * @param array $domainNameServer
+     *
+     * @return $this
+     */
+    public function setDomainNameServers(array $domainNameServer)
+    {
+        $this->requestParameters['DomainNameServers'] = $domainNameServer;
+        foreach ($domainNameServer as $i => $iValue) {
+            $this->queryParameters['DomainNameServer.' . ($i + 1)] = $iValue;
+        }
 
-	public function getDomainNames() {
-		return $this->DomainNames;
-	}
+        return $this;
+    }
 
-	public function setDomainNames($DomainNames) {
-		$this->DomainNames = $DomainNames;
-		for ($i = 0; $i < count($DomainNames); $i ++) {	
-			$this->queryParameters["DomainName.".($i+1)] = $DomainNames[$i];
-		}
-	}
+    /**
+     * @param string $lang
+     *
+     * @return $this
+     */
+    public function setLang($lang)
+    {
+        $this->requestParameters['Lang'] = $lang;
+        $this->queryParameters['Lang'] = $lang;
 
-	public function getDomainNameServers() {
-		return $this->DomainNameServers;
-	}
+        return $this;
+    }
 
-	public function setDomainNameServers($DomainNameServers) {
-		$this->DomainNameServers = $DomainNameServers;
-		for ($i = 0; $i < count($DomainNameServers); $i ++) {	
-			$this->queryParameters["DomainNameServer.".($i+1)] = $DomainNameServers[$i];
-		}
-	}
+    /**
+     * @param string $aliyunDns
+     *
+     * @return $this
+     */
+    public function setAliyunDns($aliyunDns)
+    {
+        $this->requestParameters['AliyunDns'] = $aliyunDns;
+        $this->queryParameters['AliyunDns'] = $aliyunDns;
 
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-
-	public function getAliyunDns() {
-		return $this->aliyunDns;
-	}
-
-	public function setAliyunDns($aliyunDns) {
-		$this->aliyunDns = $aliyunDns;
-		$this->queryParameters["AliyunDns"]=$aliyunDns;
-	}
-	
+        return $this;
+    }
 }

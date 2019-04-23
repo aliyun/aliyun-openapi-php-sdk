@@ -5,16 +5,15 @@ namespace Domain_intl\Request\V20171218;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of SaveBatchTaskForUpdatingContactInfo
+ * Request of SaveTaskForUpdatingRegistrantInfoByRegistrantProfileID
  *
- * @method string getContactType()
  * @method string getUserClientIp()
  * @method string getRegistrantProfileId()
  * @method array getDomainNames()
- * @method string getAddTransferLock()
+ * @method string getTransferOutProhibited()
  * @method string getLang()
  */
-class SaveBatchTaskForUpdatingContactInfoRequest extends \RpcAcsRequest
+class SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest extends \RpcAcsRequest
 {
 
     /**
@@ -30,22 +29,9 @@ class SaveBatchTaskForUpdatingContactInfoRequest extends \RpcAcsRequest
         parent::__construct(
             'Domain-intl',
             '2017-12-18',
-            'SaveBatchTaskForUpdatingContactInfo',
+            'SaveTaskForUpdatingRegistrantInfoByRegistrantProfileID',
             'domain'
         );
-    }
-
-    /**
-     * @param string $contactType
-     *
-     * @return $this
-     */
-    public function setContactType($contactType)
-    {
-        $this->requestParameters['ContactType'] = $contactType;
-        $this->queryParameters['ContactType'] = $contactType;
-
-        return $this;
     }
 
     /**
@@ -90,14 +76,14 @@ class SaveBatchTaskForUpdatingContactInfoRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $addTransferLock
+     * @param string $transferOutProhibited
      *
      * @return $this
      */
-    public function setAddTransferLock($addTransferLock)
+    public function setTransferOutProhibited($transferOutProhibited)
     {
-        $this->requestParameters['AddTransferLock'] = $addTransferLock;
-        $this->queryParameters['AddTransferLock'] = $addTransferLock;
+        $this->requestParameters['TransferOutProhibited'] = $transferOutProhibited;
+        $this->queryParameters['TransferOutProhibited'] = $transferOutProhibited;
 
         return $this;
     }
