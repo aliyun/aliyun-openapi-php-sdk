@@ -40,7 +40,7 @@ class DescribeRenewalPriceRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'DescribeRenewalPrice',
-            'Rds'
+            'rds'
         );
     }
 

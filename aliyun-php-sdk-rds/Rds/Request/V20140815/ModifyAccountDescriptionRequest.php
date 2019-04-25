@@ -32,7 +32,7 @@ class ModifyAccountDescriptionRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'ModifyAccountDescription',
-            'Rds'
+            'rds'
         );
     }
 

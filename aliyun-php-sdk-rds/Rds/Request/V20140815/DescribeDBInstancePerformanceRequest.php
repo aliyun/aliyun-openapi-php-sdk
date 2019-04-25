@@ -33,7 +33,7 @@ class DescribeDBInstancePerformanceRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'DescribeDBInstancePerformance',
-            'Rds'
+            'rds'
         );
     }
 

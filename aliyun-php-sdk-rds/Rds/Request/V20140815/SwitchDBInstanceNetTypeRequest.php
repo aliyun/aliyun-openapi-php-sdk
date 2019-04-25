@@ -34,7 +34,7 @@ class SwitchDBInstanceNetTypeRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'SwitchDBInstanceNetType',
-            'Rds'
+            'rds'
         );
     }
 

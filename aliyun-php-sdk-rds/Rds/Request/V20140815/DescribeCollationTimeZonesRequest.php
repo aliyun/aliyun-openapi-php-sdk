@@ -28,7 +28,7 @@ class DescribeCollationTimeZonesRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'DescribeCollationTimeZones',
-            'Rds'
+            'rds'
         );
     }
 

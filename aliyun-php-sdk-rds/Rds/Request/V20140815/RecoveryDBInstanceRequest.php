@@ -46,7 +46,7 @@ class RecoveryDBInstanceRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'RecoveryDBInstance',
-            'Rds'
+            'rds'
         );
     }
 

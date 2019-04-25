@@ -30,7 +30,7 @@ class DescribeOssDownloadsForSQLServerRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'DescribeOssDownloadsForSQLServer',
-            'Rds'
+            'rds'
         );
     }
 
