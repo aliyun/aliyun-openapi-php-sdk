@@ -9,6 +9,7 @@ namespace Cms\Request\V20190101;
  *
  * @method string getContactName()
  * @method string getPageSize()
+ * @method string getPageNumber()
  */
 class DescribeContactListRequest extends \RpcAcsRequest
 {
@@ -53,6 +54,19 @@ class DescribeContactListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageSize'] = $pageSize;
         $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }
