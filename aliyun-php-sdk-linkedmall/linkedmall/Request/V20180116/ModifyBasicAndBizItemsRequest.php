@@ -5,13 +5,13 @@ namespace linkedmall\Request\V20180116;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ModifyBizItems
+ * Request of ModifyBasicAndBizItems
  *
  * @method string getBizId()
  * @method array getItemLists()
  * @method string getSubBizId()
  */
-class ModifyBizItemsRequest extends \RpcAcsRequest
+class ModifyBasicAndBizItemsRequest extends \RpcAcsRequest
 {
 
     /**
@@ -27,7 +27,7 @@ class ModifyBizItemsRequest extends \RpcAcsRequest
         parent::__construct(
             'linkedmall',
             '2018-01-16',
-            'ModifyBizItems',
+            'ModifyBasicAndBizItems',
             'linkedmall'
         );
     }
@@ -62,6 +62,7 @@ class ModifyBizItemsRequest extends \RpcAcsRequest
                 $this->queryParameters['ItemList.' . ($depth1 + 1) . '.SkuList.' . ($depth2 + 1) . '.Quantity'] = $depth2Value['Quantity'];
                 $this->queryParameters['ItemList.' . ($depth1 + 1) . '.SkuList.' . ($depth2 + 1) . '.BenefitId'] = $depth2Value['BenefitId'];
                 $this->queryParameters['ItemList.' . ($depth1 + 1) . '.SkuList.' . ($depth2 + 1) . '.SkuId'] = $depth2Value['SkuId'];
+                $this->queryParameters['ItemList.' . ($depth1 + 1) . '.SkuList.' . ($depth2 + 1) . '.SupplierPrice'] = $depth2Value['SupplierPrice'];
                 $this->queryParameters['ItemList.' . ($depth1 + 1) . '.SkuList.' . ($depth2 + 1) . '.Points'] = $depth2Value['Points'];
             }
         }

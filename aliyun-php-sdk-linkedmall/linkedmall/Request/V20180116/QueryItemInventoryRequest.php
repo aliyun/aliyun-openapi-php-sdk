@@ -77,7 +77,7 @@ class QueryItemInventoryRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function withItemLists(array $itemList)
+    public function setItemLists(array $itemList)
     {
         $this->requestParameters['ItemLists'] = $itemList;
         foreach ($itemList as $depth1 => $depth1Value) {

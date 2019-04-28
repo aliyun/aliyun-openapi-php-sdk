@@ -50,7 +50,7 @@ class DeleteBizItemsRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function withItemIdLists(array $itemIdList)
+    public function setItemIdLists(array $itemIdList)
     {
         $this->requestParameters['ItemIdLists'] = $itemIdList;
         foreach ($itemIdList as $i => $iValue) {
