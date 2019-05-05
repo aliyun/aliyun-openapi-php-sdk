@@ -9,6 +9,7 @@ namespace BssOpenApi\Request\V20171214;
  *
  * @method string getProductCode()
  * @method string getPeriod()
+ * @method string getClientToken()
  * @method string getSubscriptionType()
  * @method string getRenewPeriod()
  * @method array getParameters()
@@ -58,6 +59,19 @@ class CreateInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Period'] = $period;
         $this->queryParameters['Period'] = $period;
+
+        return $this;
+    }
+
+    /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
 
         return $this;
     }

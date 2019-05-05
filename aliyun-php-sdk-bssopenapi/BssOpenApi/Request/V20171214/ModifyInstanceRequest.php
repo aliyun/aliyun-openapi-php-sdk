@@ -9,6 +9,7 @@ namespace BssOpenApi\Request\V20171214;
  *
  * @method string getProductCode()
  * @method string getInstanceId()
+ * @method string getClientToken()
  * @method string getSubscriptionType()
  * @method string getModifyType()
  * @method array getParameters()
@@ -57,6 +58,19 @@ class ModifyInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['InstanceId'] = $instanceId;
         $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
 
         return $this;
     }
