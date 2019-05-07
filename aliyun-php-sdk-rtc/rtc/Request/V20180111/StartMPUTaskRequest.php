@@ -3,10 +3,13 @@
 namespace rtc\Request\V20180111;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of StartMPUTask
  *
  * @method array getUserPaness()
  * @method string getBackgroundColor()
+ * @method string getTaskProfile()
  * @method array getLayoutIdss()
  * @method string getTaskId()
  * @method string getStreamURL()
@@ -37,17 +40,17 @@ class StartMPUTaskRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $userPaness
+     * @param array $userPanes
      *
      * @return $this
      */
-    public function setUserPaness(array $userPaness)
+    public function setUserPaness(array $userPanes)
     {
-        $this->requestParameters['UserPaness'] = $userPaness;
-        foreach ($userPaness as $i => $iValue) {
-            $this->queryParameters['UserPanes.' . ($i + 1) . '.PaneId'] = $userPaness[$i]['PaneId'];
-            $this->queryParameters['UserPanes.' . ($i + 1) . '.UserId'] = $userPaness[$i]['UserId'];
-            $this->queryParameters['UserPanes.' . ($i + 1) . '.SourceType'] = $userPaness[$i]['SourceType'];
+        $this->requestParameters['UserPaness'] = $userPanes;
+        foreach ($userPanes as $depth1 => $depth1Value) {
+            $this->queryParameters['UserPanes.' . ($depth1 + 1) . '.PaneId'] = $depth1Value['PaneId'];
+            $this->queryParameters['UserPanes.' . ($depth1 + 1) . '.UserId'] = $depth1Value['UserId'];
+            $this->queryParameters['UserPanes.' . ($depth1 + 1) . '.SourceType'] = $depth1Value['SourceType'];
         }
 
         return $this;
@@ -67,14 +70,27 @@ class StartMPUTaskRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $layoutIdss
+     * @param string $taskProfile
      *
      * @return $this
      */
-    public function setLayoutIdss(array $layoutIdss)
+    public function setTaskProfile($taskProfile)
     {
-        $this->requestParameters['LayoutIdss'] = $layoutIdss;
-        foreach ($layoutIdss as $i => $iValue) {
+        $this->requestParameters['TaskProfile'] = $taskProfile;
+        $this->queryParameters['TaskProfile'] = $taskProfile;
+
+        return $this;
+    }
+
+    /**
+     * @param array $layoutIds
+     *
+     * @return $this
+     */
+    public function setLayoutIdss(array $layoutIds)
+    {
+        $this->requestParameters['LayoutIdss'] = $layoutIds;
+        foreach ($layoutIds as $i => $iValue) {
             $this->queryParameters['LayoutIds.' . ($i + 1)] = $iValue;
         }
 

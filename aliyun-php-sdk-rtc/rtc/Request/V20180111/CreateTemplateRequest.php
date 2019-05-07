@@ -3,6 +3,8 @@
 namespace rtc\Request\V20180111;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of CreateTemplate
  *
  * @method string getServiceMode()
@@ -51,16 +53,16 @@ class CreateTemplateRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $liveConfigs
+     * @param array $liveConfig
      *
      * @return $this
      */
-    public function setLiveConfigs(array $liveConfigs)
+    public function setLiveConfigs(array $liveConfig)
     {
-        $this->requestParameters['LiveConfigs'] = $liveConfigs;
-        foreach ($liveConfigs as $i => $iValue) {
-            $this->queryParameters['LiveConfig.' . ($i + 1) . '.DomainName'] = $liveConfigs[$i]['DomainName'];
-            $this->queryParameters['LiveConfig.' . ($i + 1) . '.AppName'] = $liveConfigs[$i]['AppName'];
+        $this->requestParameters['LiveConfigs'] = $liveConfig;
+        foreach ($liveConfig as $depth1 => $depth1Value) {
+            $this->queryParameters['LiveConfig.' . ($depth1 + 1) . '.DomainName'] = $depth1Value['DomainName'];
+            $this->queryParameters['LiveConfig.' . ($depth1 + 1) . '.AppName'] = $depth1Value['AppName'];
         }
 
         return $this;
@@ -93,19 +95,19 @@ class CreateTemplateRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $recordConfigs
+     * @param array $recordConfig
      *
      * @return $this
      */
-    public function setRecordConfigs(array $recordConfigs)
+    public function setRecordConfigs(array $recordConfig)
     {
-        $this->requestParameters['RecordConfigs'] = $recordConfigs;
-        foreach ($recordConfigs as $i => $iValue) {
-            $this->queryParameters['RecordConfig.' . ($i + 1) . '.StorageType'] = $recordConfigs[$i]['StorageType'];
-            $this->queryParameters['RecordConfig.' . ($i + 1) . '.FileFormat'] = $recordConfigs[$i]['FileFormat'];
-            $this->queryParameters['RecordConfig.' . ($i + 1) . '.OssEndPoint'] = $recordConfigs[$i]['OssEndPoint'];
-            $this->queryParameters['RecordConfig.' . ($i + 1) . '.OssBucket'] = $recordConfigs[$i]['OssBucket'];
-            $this->queryParameters['RecordConfig.' . ($i + 1) . '.VodTransCodeGroupId'] = $recordConfigs[$i]['VodTransCodeGroupId'];
+        $this->requestParameters['RecordConfigs'] = $recordConfig;
+        foreach ($recordConfig as $depth1 => $depth1Value) {
+            $this->queryParameters['RecordConfig.' . ($depth1 + 1) . '.StorageType'] = $depth1Value['StorageType'];
+            $this->queryParameters['RecordConfig.' . ($depth1 + 1) . '.FileFormat'] = $depth1Value['FileFormat'];
+            $this->queryParameters['RecordConfig.' . ($depth1 + 1) . '.OssEndPoint'] = $depth1Value['OssEndPoint'];
+            $this->queryParameters['RecordConfig.' . ($depth1 + 1) . '.OssBucket'] = $depth1Value['OssBucket'];
+            $this->queryParameters['RecordConfig.' . ($depth1 + 1) . '.VodTransCodeGroupId'] = $depth1Value['VodTransCodeGroupId'];
         }
 
         return $this;
@@ -125,17 +127,17 @@ class CreateTemplateRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $layOuts
+     * @param array $layOut
      *
      * @return $this
      */
-    public function setLayOuts(array $layOuts)
+    public function setLayOuts(array $layOut)
     {
-        $this->requestParameters['LayOuts'] = $layOuts;
-        foreach ($layOuts as $i => $iValue) {
-            $this->queryParameters['LayOut.' . ($i + 1) . '.Color'] = $layOuts[$i]['Color'];
-            $this->queryParameters['LayOut.' . ($i + 1) . '.CutMode'] = $layOuts[$i]['CutMode'];
-            $this->queryParameters['LayOut.' . ($i + 1) . '.LayOutId'] = $layOuts[$i]['LayOutId'];
+        $this->requestParameters['LayOuts'] = $layOut;
+        foreach ($layOut as $depth1 => $depth1Value) {
+            $this->queryParameters['LayOut.' . ($depth1 + 1) . '.Color'] = $depth1Value['Color'];
+            $this->queryParameters['LayOut.' . ($depth1 + 1) . '.CutMode'] = $depth1Value['CutMode'];
+            $this->queryParameters['LayOut.' . ($depth1 + 1) . '.LayOutId'] = $depth1Value['LayOutId'];
         }
 
         return $this;

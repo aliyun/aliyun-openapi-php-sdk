@@ -3,6 +3,8 @@
 namespace rtc\Request\V20180111;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of GetTaskParam
  *
  * @method string getOwnerId()

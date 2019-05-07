@@ -3,6 +3,8 @@
 namespace rtc\Request\V20180111;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of RemoveParticipants
  *
  * @method array getParticipantIdss()
@@ -32,14 +34,14 @@ class RemoveParticipantsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $participantIdss
+     * @param array $participantIds
      *
      * @return $this
      */
-    public function setParticipantIdss(array $participantIdss)
+    public function setParticipantIdss(array $participantIds)
     {
-        $this->requestParameters['ParticipantIdss'] = $participantIdss;
-        foreach ($participantIdss as $i => $iValue) {
+        $this->requestParameters['ParticipantIdss'] = $participantIds;
+        foreach ($participantIds as $i => $iValue) {
             $this->queryParameters['ParticipantIds.' . ($i + 1)] = $iValue;
         }
 

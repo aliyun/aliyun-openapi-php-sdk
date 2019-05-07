@@ -5,17 +5,16 @@ namespace rtc\Request\V20180111;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ModifyConference
+ * Request of DescribeRtcDurationData
  *
  * @method string getStartTime()
- * @method string getType()
- * @method string getConferenceId()
- * @method string getConferenceName()
+ * @method string getServiceArea()
+ * @method string getEndTime()
  * @method string getOwnerId()
  * @method string getAppId()
- * @method string getRemindNotice()
+ * @method string getInterval()
  */
-class ModifyConferenceRequest extends \RpcAcsRequest
+class DescribeRtcDurationDataRequest extends \RpcAcsRequest
 {
 
     /**
@@ -31,7 +30,7 @@ class ModifyConferenceRequest extends \RpcAcsRequest
         parent::__construct(
             'rtc',
             '2018-01-11',
-            'ModifyConference',
+            'DescribeRtcDurationData',
             'rtc'
         );
     }
@@ -50,40 +49,27 @@ class ModifyConferenceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $type
+     * @param string $serviceArea
      *
      * @return $this
      */
-    public function setType($type)
+    public function setServiceArea($serviceArea)
     {
-        $this->requestParameters['Type'] = $type;
-        $this->queryParameters['Type'] = $type;
+        $this->requestParameters['ServiceArea'] = $serviceArea;
+        $this->queryParameters['ServiceArea'] = $serviceArea;
 
         return $this;
     }
 
     /**
-     * @param string $conferenceId
+     * @param string $endTime
      *
      * @return $this
      */
-    public function setConferenceId($conferenceId)
+    public function setEndTime($endTime)
     {
-        $this->requestParameters['ConferenceId'] = $conferenceId;
-        $this->queryParameters['ConferenceId'] = $conferenceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $conferenceName
-     *
-     * @return $this
-     */
-    public function setConferenceName($conferenceName)
-    {
-        $this->requestParameters['ConferenceName'] = $conferenceName;
-        $this->queryParameters['ConferenceName'] = $conferenceName;
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
 
         return $this;
     }
@@ -115,14 +101,14 @@ class ModifyConferenceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $remindNotice
+     * @param string $interval
      *
      * @return $this
      */
-    public function setRemindNotice($remindNotice)
+    public function setInterval($interval)
     {
-        $this->requestParameters['RemindNotice'] = $remindNotice;
-        $this->queryParameters['RemindNotice'] = $remindNotice;
+        $this->requestParameters['Interval'] = $interval;
+        $this->queryParameters['Interval'] = $interval;
 
         return $this;
     }

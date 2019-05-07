@@ -3,6 +3,8 @@
 namespace rtc\Request\V20180111;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of StartTask
  *
  * @method array getMixPaness()
@@ -34,17 +36,17 @@ class StartTaskRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $mixPaness
+     * @param array $mixPanes
      *
      * @return $this
      */
-    public function setMixPaness(array $mixPaness)
+    public function setMixPaness(array $mixPanes)
     {
-        $this->requestParameters['MixPaness'] = $mixPaness;
-        foreach ($mixPaness as $i => $iValue) {
-            $this->queryParameters['MixPanes.' . ($i + 1) . '.PaneId'] = $mixPaness[$i]['PaneId'];
-            $this->queryParameters['MixPanes.' . ($i + 1) . '.UserId'] = $mixPaness[$i]['UserId'];
-            $this->queryParameters['MixPanes.' . ($i + 1) . '.SourceType'] = $mixPaness[$i]['SourceType'];
+        $this->requestParameters['MixPaness'] = $mixPanes;
+        foreach ($mixPanes as $depth1 => $depth1Value) {
+            $this->queryParameters['MixPanes.' . ($depth1 + 1) . '.PaneId'] = $depth1Value['PaneId'];
+            $this->queryParameters['MixPanes.' . ($depth1 + 1) . '.UserId'] = $depth1Value['UserId'];
+            $this->queryParameters['MixPanes.' . ($depth1 + 1) . '.SourceType'] = $depth1Value['SourceType'];
         }
 
         return $this;

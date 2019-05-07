@@ -3,6 +3,8 @@
 namespace rtc\Request\V20180111;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of RemoveTerminals
  *
  * @method array getTerminalIdss()
@@ -32,14 +34,14 @@ class RemoveTerminalsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $terminalIdss
+     * @param array $terminalIds
      *
      * @return $this
      */
-    public function setTerminalIdss(array $terminalIdss)
+    public function setTerminalIdss(array $terminalIds)
     {
-        $this->requestParameters['TerminalIdss'] = $terminalIdss;
-        foreach ($terminalIdss as $i => $iValue) {
+        $this->requestParameters['TerminalIdss'] = $terminalIds;
+        foreach ($terminalIds as $i => $iValue) {
             $this->queryParameters['TerminalIds.' . ($i + 1)] = $iValue;
         }
 
