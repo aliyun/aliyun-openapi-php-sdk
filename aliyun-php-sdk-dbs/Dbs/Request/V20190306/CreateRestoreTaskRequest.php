@@ -24,6 +24,7 @@ namespace Dbs\Request\V20190306;
  * @method string getDestinationEndpointUserName()
  * @method string getRestoreObjects()
  * @method string getRestoreTaskName()
+ * @method string getDuplicateConflict()
  * @method string getDestinationEndpointPassword()
  */
 class CreateRestoreTaskRequest extends \RpcAcsRequest
@@ -264,6 +265,19 @@ class CreateRestoreTaskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['RestoreTaskName'] = $restoreTaskName;
         $this->queryParameters['RestoreTaskName'] = $restoreTaskName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $duplicateConflict
+     *
+     * @return $this
+     */
+    public function setDuplicateConflict($duplicateConflict)
+    {
+        $this->requestParameters['DuplicateConflict'] = $duplicateConflict;
+        $this->queryParameters['DuplicateConflict'] = $duplicateConflict;
 
         return $this;
     }
