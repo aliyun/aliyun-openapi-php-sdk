@@ -16,6 +16,7 @@ namespace Ecs\Request\V20140526;
  * @method string getDedicatedHostId()
  * @method string getOwnerId()
  * @method string getNetworkAttributesSlbUdpTimeout()
+ * @method string getAutoPlacement()
  * @method string getNetworkAttributesUdpTimeout()
  */
 class ModifyDedicatedHostAttributeRequest extends \RpcAcsRequest
@@ -152,6 +153,19 @@ class ModifyDedicatedHostAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['NetworkAttributesSlbUdpTimeout'] = $networkAttributesSlbUdpTimeout;
         $this->queryParameters['NetworkAttributes.SlbUdpTimeout'] = $networkAttributesSlbUdpTimeout;
+
+        return $this;
+    }
+
+    /**
+     * @param string $autoPlacement
+     *
+     * @return $this
+     */
+    public function setAutoPlacement($autoPlacement)
+    {
+        $this->requestParameters['AutoPlacement'] = $autoPlacement;
+        $this->queryParameters['AutoPlacement'] = $autoPlacement;
 
         return $this;
     }

@@ -61,6 +61,7 @@ namespace Ecs\Request\V20140526;
  * @method string getAutoReleaseTime()
  * @method string getDedicatedHostId()
  * @method string getCreditSpecification()
+ * @method array getSecurityGroupIdss()
  * @method array getDataDisks()
  * @method string getLaunchTemplateVersion()
  * @method string getSystemDiskSize()
@@ -796,6 +797,21 @@ class RunInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['CreditSpecification'] = $creditSpecification;
         $this->queryParameters['CreditSpecification'] = $creditSpecification;
+
+        return $this;
+    }
+
+    /**
+     * @param array $securityGroupIds
+     *
+     * @return $this
+     */
+    public function setSecurityGroupIdss(array $securityGroupIds)
+    {
+        $this->requestParameters['SecurityGroupIdss'] = $securityGroupIds;
+        foreach ($securityGroupIds as $i => $iValue) {
+            $this->queryParameters['SecurityGroupIds.' . ($i + 1)] = $iValue;
+        }
 
         return $this;
     }

@@ -26,6 +26,7 @@ namespace Ecs\Request\V20140526;
  * @method string getAutoRenew()
  * @method string getNetworkAttributesSlbUdpTimeout()
  * @method string getZoneId()
+ * @method string getAutoPlacement()
  * @method string getChargeType()
  * @method string getNetworkAttributesUdpTimeout()
  */
@@ -296,6 +297,19 @@ class AllocateDedicatedHostsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ZoneId'] = $zoneId;
         $this->queryParameters['ZoneId'] = $zoneId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $autoPlacement
+     *
+     * @return $this
+     */
+    public function setAutoPlacement($autoPlacement)
+    {
+        $this->requestParameters['AutoPlacement'] = $autoPlacement;
+        $this->queryParameters['AutoPlacement'] = $autoPlacement;
 
         return $this;
     }

@@ -16,6 +16,7 @@ namespace Ecs\Request\V20140526;
  * @method string getOwnerId()
  * @method string getEncrypted()
  * @method array getTags()
+ * @method string getKMSKeyId()
  * @method string getDestinationDescription()
  */
 class CopyImageRequest extends \RpcAcsRequest
@@ -155,6 +156,19 @@ class CopyImageRequest extends \RpcAcsRequest
             $this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
             $this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
         }
+
+        return $this;
+    }
+
+    /**
+     * @param string $kMSKeyId
+     *
+     * @return $this
+     */
+    public function setKMSKeyId($kMSKeyId)
+    {
+        $this->requestParameters['KMSKeyId'] = $kMSKeyId;
+        $this->queryParameters['KMSKeyId'] = $kMSKeyId;
 
         return $this;
     }

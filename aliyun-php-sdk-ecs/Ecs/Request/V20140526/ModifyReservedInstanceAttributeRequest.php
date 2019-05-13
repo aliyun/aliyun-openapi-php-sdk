@@ -5,19 +5,17 @@ namespace Ecs\Request\V20140526;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of InvokeCommand
+ * Request of ModifyReservedInstanceAttribute
  *
  * @method string getResourceOwnerId()
- * @method string getCommandId()
- * @method string getFrequency()
- * @method string getTimed()
+ * @method string getDescription()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
- * @method array getInstanceIds()
- * @method string getParameters()
+ * @method string getReservedInstanceId()
+ * @method string getReservedInstanceName()
  */
-class InvokeCommandRequest extends \RpcAcsRequest
+class ModifyReservedInstanceAttributeRequest extends \RpcAcsRequest
 {
 
     /**
@@ -33,7 +31,7 @@ class InvokeCommandRequest extends \RpcAcsRequest
         parent::__construct(
             'Ecs',
             '2014-05-26',
-            'InvokeCommand',
+            'ModifyReservedInstanceAttribute',
             'ecs'
         );
     }
@@ -52,40 +50,14 @@ class InvokeCommandRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $commandId
+     * @param string $description
      *
      * @return $this
      */
-    public function setCommandId($commandId)
+    public function setDescription($description)
     {
-        $this->requestParameters['CommandId'] = $commandId;
-        $this->queryParameters['CommandId'] = $commandId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $frequency
-     *
-     * @return $this
-     */
-    public function setFrequency($frequency)
-    {
-        $this->requestParameters['Frequency'] = $frequency;
-        $this->queryParameters['Frequency'] = $frequency;
-
-        return $this;
-    }
-
-    /**
-     * @param string $timed
-     *
-     * @return $this
-     */
-    public function setTimed($timed)
-    {
-        $this->requestParameters['Timed'] = $timed;
-        $this->queryParameters['Timed'] = $timed;
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
 
         return $this;
     }
@@ -130,29 +102,27 @@ class InvokeCommandRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $instanceId
+     * @param string $reservedInstanceId
      *
      * @return $this
      */
-    public function setInstanceIds(array $instanceId)
+    public function setReservedInstanceId($reservedInstanceId)
     {
-        $this->requestParameters['InstanceIds'] = $instanceId;
-        foreach ($instanceId as $i => $iValue) {
-            $this->queryParameters['InstanceId.' . ($i + 1)] = $iValue;
-        }
+        $this->requestParameters['ReservedInstanceId'] = $reservedInstanceId;
+        $this->queryParameters['ReservedInstanceId'] = $reservedInstanceId;
 
         return $this;
     }
 
     /**
-     * @param string $parameters
+     * @param string $reservedInstanceName
      *
      * @return $this
      */
-    public function setParameters($parameters)
+    public function setReservedInstanceName($reservedInstanceName)
     {
-        $this->requestParameters['Parameters'] = $parameters;
-        $this->queryParameters['Parameters'] = $parameters;
+        $this->requestParameters['ReservedInstanceName'] = $reservedInstanceName;
+        $this->queryParameters['ReservedInstanceName'] = $reservedInstanceName;
 
         return $this;
     }

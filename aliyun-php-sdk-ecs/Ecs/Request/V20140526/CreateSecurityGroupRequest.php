@@ -14,6 +14,7 @@ namespace Ecs\Request\V20140526;
  * @method string getDescription()
  * @method string getOwnerId()
  * @method string getSecurityGroupName()
+ * @method string getSecurityGroupType()
  * @method string getResourceGroupId()
  * @method string getVpcId()
  * @method array getTags()
@@ -126,6 +127,19 @@ class CreateSecurityGroupRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityGroupName'] = $securityGroupName;
         $this->queryParameters['SecurityGroupName'] = $securityGroupName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityGroupType
+     *
+     * @return $this
+     */
+    public function setSecurityGroupType($securityGroupType)
+    {
+        $this->requestParameters['SecurityGroupType'] = $securityGroupType;
+        $this->queryParameters['SecurityGroupType'] = $securityGroupType;
 
         return $this;
     }

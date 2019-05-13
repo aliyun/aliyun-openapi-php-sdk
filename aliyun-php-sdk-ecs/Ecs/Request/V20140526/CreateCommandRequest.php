@@ -17,6 +17,7 @@ namespace Ecs\Request\V20140526;
  * @method string getOwnerAccount()
  * @method string getOwnerId()
  * @method string getName()
+ * @method string getEnableParameter()
  */
 class CreateCommandRequest extends \RpcAcsRequest
 {
@@ -165,6 +166,19 @@ class CreateCommandRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Name'] = $name;
         $this->queryParameters['Name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * @param string $enableParameter
+     *
+     * @return $this
+     */
+    public function setEnableParameter($enableParameter)
+    {
+        $this->requestParameters['EnableParameter'] = $enableParameter;
+        $this->queryParameters['EnableParameter'] = $enableParameter;
 
         return $this;
     }
