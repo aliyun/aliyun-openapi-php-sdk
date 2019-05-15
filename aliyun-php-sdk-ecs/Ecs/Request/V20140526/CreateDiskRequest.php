@@ -16,6 +16,7 @@ namespace Ecs\Request\V20140526;
  * @method string getOwnerId()
  * @method string getDiskName()
  * @method string getResourceGroupId()
+ * @method string getInstanceId()
  * @method string getSize()
  * @method string getEncrypted()
  * @method string getDiskCategory()
@@ -159,6 +160,19 @@ class CreateDiskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
         $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

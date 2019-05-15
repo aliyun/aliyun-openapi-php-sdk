@@ -33,6 +33,7 @@ namespace Ecs\Request\V20140526;
  * @method string getZoneId()
  * @method string getInternetMaxBandwidthIn()
  * @method string getUseAdditionalService()
+ * @method string getAffinity()
  * @method string getImageId()
  * @method string getClientToken()
  * @method string getVlanId()
@@ -52,6 +53,7 @@ namespace Ecs\Request\V20140526;
  * @method string getInnerIpAddress()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
+ * @method string getTenancy()
  * @method string getSystemDiskDiskName()
  * @method string getRamRoleName()
  * @method string getDedicatedHostId()
@@ -424,6 +426,19 @@ class CreateInstanceRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $affinity
+     *
+     * @return $this
+     */
+    public function setAffinity($affinity)
+    {
+        $this->requestParameters['Affinity'] = $affinity;
+        $this->queryParameters['Affinity'] = $affinity;
+
+        return $this;
+    }
+
+    /**
      * @param string $imageId
      *
      * @return $this
@@ -670,6 +685,19 @@ class CreateInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $tenancy
+     *
+     * @return $this
+     */
+    public function setTenancy($tenancy)
+    {
+        $this->requestParameters['Tenancy'] = $tenancy;
+        $this->queryParameters['Tenancy'] = $tenancy;
 
         return $this;
     }

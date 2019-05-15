@@ -11,10 +11,12 @@ namespace Ecs\Request\V20140526;
  * @method string getDeploymentSetId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
+ * @method string getTenancy()
  * @method string getDedicatedHostId()
  * @method string getOwnerId()
  * @method string getInstanceId()
  * @method string getForce()
+ * @method string getAffinity()
  */
 class ModifyInstanceDeploymentRequest extends \RpcAcsRequest
 {
@@ -90,6 +92,19 @@ class ModifyInstanceDeploymentRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $tenancy
+     *
+     * @return $this
+     */
+    public function setTenancy($tenancy)
+    {
+        $this->requestParameters['Tenancy'] = $tenancy;
+        $this->queryParameters['Tenancy'] = $tenancy;
+
+        return $this;
+    }
+
+    /**
      * @param string $dedicatedHostId
      *
      * @return $this
@@ -137,6 +152,19 @@ class ModifyInstanceDeploymentRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Force'] = $force;
         $this->queryParameters['Force'] = $force;
+
+        return $this;
+    }
+
+    /**
+     * @param string $affinity
+     *
+     * @return $this
+     */
+    public function setAffinity($affinity)
+    {
+        $this->requestParameters['Affinity'] = $affinity;
+        $this->queryParameters['Affinity'] = $affinity;
 
         return $this;
     }
