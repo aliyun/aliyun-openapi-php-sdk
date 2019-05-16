@@ -31,8 +31,7 @@ class ResetClusterNodeRequest extends \RoaAcsRequest
         parent::__construct(
             'CS',
             '2015-12-15',
-            'ResetClusterNode',
-            'cs'
+            'ResetClusterNode'
         );
     }
 

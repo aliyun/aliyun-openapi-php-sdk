@@ -25,8 +25,7 @@ class DescribeClusterLogsRequest extends \RoaAcsRequest
         parent::__construct(
             'CS',
             '2015-12-15',
-            'DescribeClusterLogs',
-            'cs'
+            'DescribeClusterLogs'
         );
     }
 

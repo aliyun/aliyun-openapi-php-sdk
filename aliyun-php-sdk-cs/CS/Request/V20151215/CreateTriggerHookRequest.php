@@ -5,21 +5,21 @@ namespace CS\Request\V20151215;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of CreateCluster
+ * Request of CreateTriggerHook
  *
  */
-class CreateClusterRequest extends \RoaAcsRequest
+class CreateTriggerHookRequest extends \RoaAcsRequest
 {
 
     /**
      * @var string
      */
-    protected $uriPattern = '/clusters';
+    protected $uriPattern = '/hook/trigger';
 
     /**
      * @var string
      */
-    protected $method = 'POST';
+    protected $method = 'PUT';
 
     /**
      * Class constructor.
@@ -29,7 +29,7 @@ class CreateClusterRequest extends \RoaAcsRequest
         parent::__construct(
             'CS',
             '2015-12-15',
-            'CreateCluster'
+            'CreateTriggerHook'
         );
     }
 }

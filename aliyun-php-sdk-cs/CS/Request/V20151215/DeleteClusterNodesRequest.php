@@ -5,17 +5,17 @@ namespace CS\Request\V20151215;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of AttachInstances
+ * Request of DeleteClusterNodes
  *
  * @method string getClusterId()
  */
-class AttachInstancesRequest extends \RoaAcsRequest
+class DeleteClusterNodesRequest extends \RoaAcsRequest
 {
 
     /**
      * @var string
      */
-    protected $uriPattern = '/clusters/[ClusterId]/attach';
+    protected $uriPattern = '/clusters/[ClusterId]/nodes';
 
     /**
      * @var string
@@ -30,7 +30,7 @@ class AttachInstancesRequest extends \RoaAcsRequest
         parent::__construct(
             'CS',
             '2015-12-15',
-            'AttachInstances'
+            'DeleteClusterNodes'
         );
     }
 

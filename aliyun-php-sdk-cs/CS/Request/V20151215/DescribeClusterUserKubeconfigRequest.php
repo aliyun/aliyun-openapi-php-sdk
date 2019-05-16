@@ -7,6 +7,7 @@ namespace CS\Request\V20151215;
  *
  * Request of DescribeClusterUserKubeconfig
  *
+ * @method string getPrivateIpAddress()
  * @method string getClusterId()
  */
 class DescribeClusterUserKubeconfigRequest extends \RoaAcsRequest
@@ -25,9 +26,21 @@ class DescribeClusterUserKubeconfigRequest extends \RoaAcsRequest
         parent::__construct(
             'CS',
             '2015-12-15',
-            'DescribeClusterUserKubeconfig',
-            'cs'
+            'DescribeClusterUserKubeconfig'
         );
+    }
+
+    /**
+     * @param string $privateIpAddress
+     *
+     * @return $this
+     */
+    public function setPrivateIpAddress($privateIpAddress)
+    {
+        $this->requestParameters['PrivateIpAddress'] = $privateIpAddress;
+        $this->queryParameters['PrivateIpAddress'] = $privateIpAddress;
+
+        return $this;
     }
 
     /**

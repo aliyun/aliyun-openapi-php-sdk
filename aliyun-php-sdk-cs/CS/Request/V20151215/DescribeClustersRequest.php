@@ -26,8 +26,7 @@ class DescribeClustersRequest extends \RoaAcsRequest
         parent::__construct(
             'CS',
             '2015-12-15',
-            'DescribeClusters',
-            'cs'
+            'DescribeClusters'
         );
     }
 

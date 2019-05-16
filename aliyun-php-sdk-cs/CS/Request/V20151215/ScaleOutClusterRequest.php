@@ -5,17 +5,17 @@ namespace CS\Request\V20151215;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of AttachInstances
+ * Request of ScaleOutCluster
  *
  * @method string getClusterId()
  */
-class AttachInstancesRequest extends \RoaAcsRequest
+class ScaleOutClusterRequest extends \RoaAcsRequest
 {
 
     /**
      * @var string
      */
-    protected $uriPattern = '/clusters/[ClusterId]/attach';
+    protected $uriPattern = '/api/v2/clusters/[ClusterId]';
 
     /**
      * @var string
@@ -30,7 +30,7 @@ class AttachInstancesRequest extends \RoaAcsRequest
         parent::__construct(
             'CS',
             '2015-12-15',
-            'AttachInstances'
+            'ScaleOutCluster'
         );
     }
 

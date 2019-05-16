@@ -26,8 +26,7 @@ class DownloadClusterNodeCertsRequest extends \RoaAcsRequest
         parent::__construct(
             'CS',
             '2015-12-15',
-            'DownloadClusterNodeCerts',
-            'cs'
+            'DownloadClusterNodeCerts'
         );
     }
 

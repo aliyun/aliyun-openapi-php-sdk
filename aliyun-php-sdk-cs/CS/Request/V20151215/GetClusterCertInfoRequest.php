@@ -5,22 +5,17 @@ namespace CS\Request\V20151215;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of AttachInstances
+ * Request of GetClusterCertInfo
  *
  * @method string getClusterId()
  */
-class AttachInstancesRequest extends \RoaAcsRequest
+class GetClusterCertInfoRequest extends \RoaAcsRequest
 {
 
     /**
      * @var string
      */
-    protected $uriPattern = '/clusters/[ClusterId]/attach';
-
-    /**
-     * @var string
-     */
-    protected $method = 'POST';
+    protected $uriPattern = '/clusters/[ClusterId]/hosts/certs';
 
     /**
      * Class constructor.
@@ -30,7 +25,7 @@ class AttachInstancesRequest extends \RoaAcsRequest
         parent::__construct(
             'CS',
             '2015-12-15',
-            'AttachInstances'
+            'GetClusterCertInfo'
         );
     }
 
