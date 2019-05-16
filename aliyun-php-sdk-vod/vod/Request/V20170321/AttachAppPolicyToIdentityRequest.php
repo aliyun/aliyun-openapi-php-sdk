@@ -13,6 +13,7 @@ namespace vod\Request\V20170321;
  * @method string getResourceOwnerAccount()
  * @method string getAppId()
  * @method string getPolicyNames()
+ * @method string getResourceRealOwnerId()
  * @method string getOwnerId()
  */
 class AttachAppPolicyToIdentityRequest extends \RpcAcsRequest
@@ -110,6 +111,19 @@ class AttachAppPolicyToIdentityRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PolicyNames'] = $policyNames;
         $this->queryParameters['PolicyNames'] = $policyNames;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceRealOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceRealOwnerId($resourceRealOwnerId)
+    {
+        $this->requestParameters['ResourceRealOwnerId'] = $resourceRealOwnerId;
+        $this->queryParameters['ResourceRealOwnerId'] = $resourceRealOwnerId;
 
         return $this;
     }

@@ -12,6 +12,7 @@ namespace vod\Request\V20170321;
  * @method string getCount()
  * @method string getVideoId()
  * @method string getOwnerId()
+ * @method string getUserData()
  * @method string getSpecifiedOffsetTime()
  * @method string getWidth()
  * @method string getInterval()
@@ -101,6 +102,19 @@ class SubmitSnapshotJobRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $userData
+     *
+     * @return $this
+     */
+    public function setUserData($userData)
+    {
+        $this->requestParameters['UserData'] = $userData;
+        $this->queryParameters['UserData'] = $userData;
 
         return $this;
     }
