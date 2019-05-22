@@ -12,9 +12,11 @@ namespace Ecs\Request\V20140526;
  * @method string getResourceOwnerAccount()
  * @method string getClientToken()
  * @method string getOwnerAccount()
+ * @method string getEndTime()
  * @method string getOwnerId()
  * @method string getOperatorType()
  * @method string getSystemDiskCategory()
+ * @method string getRebootTime()
  * @method string getInstanceId()
  * @method string getMigrateAcrossZone()
  * @method string getInstanceType()
@@ -106,6 +108,19 @@ class ModifyPrepayInstanceSpecRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $endTime
+     *
+     * @return $this
+     */
+    public function setEndTime($endTime)
+    {
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -140,6 +155,19 @@ class ModifyPrepayInstanceSpecRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SystemDiskCategory'] = $systemDiskCategory;
         $this->queryParameters['SystemDisk.Category'] = $systemDiskCategory;
+
+        return $this;
+    }
+
+    /**
+     * @param string $rebootTime
+     *
+     * @return $this
+     */
+    public function setRebootTime($rebootTime)
+    {
+        $this->requestParameters['RebootTime'] = $rebootTime;
+        $this->queryParameters['RebootTime'] = $rebootTime;
 
         return $this;
     }

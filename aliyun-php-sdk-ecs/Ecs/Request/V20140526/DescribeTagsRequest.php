@@ -13,6 +13,7 @@ namespace Ecs\Request\V20140526;
  * @method string getPageSize()
  * @method array getTags()
  * @method string getOwnerId()
+ * @method string getCategory()
  * @method string getResourceType()
  * @method string getPageNumber()
  */
@@ -114,6 +115,19 @@ class DescribeTagsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $category
+     *
+     * @return $this
+     */
+    public function setCategory($category)
+    {
+        $this->requestParameters['Category'] = $category;
+        $this->queryParameters['Category'] = $category;
 
         return $this;
     }
