@@ -5,13 +5,15 @@ namespace linkedmall\Request\V20180116;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of QueryRefundApplicationDetail
+ * Request of GetCustomServiceUrl
  *
- * @method string getSubLmOrderId()
+ * @method string getNick()
+ * @method string getSellerId()
+ * @method string getCuid()
  * @method string getBizUid()
  * @method string getBizId()
  */
-class QueryRefundApplicationDetailRequest extends \RpcAcsRequest
+class GetCustomServiceUrlRequest extends \RpcAcsRequest
 {
 
     /**
@@ -27,20 +29,46 @@ class QueryRefundApplicationDetailRequest extends \RpcAcsRequest
         parent::__construct(
             'linkedmall',
             '2018-01-16',
-            'QueryRefundApplicationDetail',
+            'GetCustomServiceUrl',
             'linkedmall'
         );
     }
 
     /**
-     * @param string $subLmOrderId
+     * @param string $nick
      *
      * @return $this
      */
-    public function setSubLmOrderId($subLmOrderId)
+    public function setNick($nick)
     {
-        $this->requestParameters['SubLmOrderId'] = $subLmOrderId;
-        $this->queryParameters['SubLmOrderId'] = $subLmOrderId;
+        $this->requestParameters['Nick'] = $nick;
+        $this->queryParameters['Nick'] = $nick;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sellerId
+     *
+     * @return $this
+     */
+    public function setSellerId($sellerId)
+    {
+        $this->requestParameters['SellerId'] = $sellerId;
+        $this->queryParameters['SellerId'] = $sellerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $cuid
+     *
+     * @return $this
+     */
+    public function setCuid($cuid)
+    {
+        $this->requestParameters['Cuid'] = $cuid;
+        $this->queryParameters['Cuid'] = $cuid;
 
         return $this;
     }

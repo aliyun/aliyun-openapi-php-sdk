@@ -5,19 +5,14 @@ namespace linkedmall\Request\V20180116;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of RemoveMessages
+ * Request of QueryOrderInfoAfterSale
  *
- * @method string getExtJson()
+ * @method string getLmOrderId()
  * @method string getBizId()
- * @method string getMessageIds()
+ * @method string getChannelUserId()
  */
-class RemoveMessagesRequest extends \RpcAcsRequest
+class QueryOrderInfoAfterSaleRequest extends \RpcAcsRequest
 {
-
-    /**
-     * @var string
-     */
-    protected $method = 'POST';
 
     /**
      * Class constructor.
@@ -27,20 +22,20 @@ class RemoveMessagesRequest extends \RpcAcsRequest
         parent::__construct(
             'linkedmall',
             '2018-01-16',
-            'RemoveMessages',
+            'QueryOrderInfoAfterSale',
             'linkedmall'
         );
     }
 
     /**
-     * @param string $extJson
+     * @param string $lmOrderId
      *
      * @return $this
      */
-    public function setExtJson($extJson)
+    public function setLmOrderId($lmOrderId)
     {
-        $this->requestParameters['ExtJson'] = $extJson;
-        $this->queryParameters['ExtJson'] = $extJson;
+        $this->requestParameters['LmOrderId'] = $lmOrderId;
+        $this->queryParameters['LmOrderId'] = $lmOrderId;
 
         return $this;
     }
@@ -59,14 +54,14 @@ class RemoveMessagesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $messageIds
+     * @param string $channelUserId
      *
      * @return $this
      */
-    public function setMessageIds($messageIds)
+    public function setChannelUserId($channelUserId)
     {
-        $this->requestParameters['MessageIds'] = $messageIds;
-        $this->queryParameters['MessageIds'] = $messageIds;
+        $this->requestParameters['ChannelUserId'] = $channelUserId;
+        $this->queryParameters['ChannelUserId'] = $channelUserId;
 
         return $this;
     }

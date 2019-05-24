@@ -5,14 +5,15 @@ namespace linkedmall\Request\V20180116;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of QueryAllCinemas
+ * Request of ValidateTaobaoAccount
  *
- * @method string getCityCode()
+ * @method string getBizUid()
  * @method string getExtJson()
  * @method string getBizId()
- * @method string getPageNumber()
+ * @method string getMobileNo()
+ * @method string getTbUserNick()
  */
-class QueryAllCinemasRequest extends \RpcAcsRequest
+class ValidateTaobaoAccountRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,20 +29,20 @@ class QueryAllCinemasRequest extends \RpcAcsRequest
         parent::__construct(
             'linkedmall',
             '2018-01-16',
-            'QueryAllCinemas',
+            'ValidateTaobaoAccount',
             'linkedmall'
         );
     }
 
     /**
-     * @param string $cityCode
+     * @param string $bizUid
      *
      * @return $this
      */
-    public function setCityCode($cityCode)
+    public function setBizUid($bizUid)
     {
-        $this->requestParameters['CityCode'] = $cityCode;
-        $this->queryParameters['CityCode'] = $cityCode;
+        $this->requestParameters['BizUid'] = $bizUid;
+        $this->queryParameters['BizUid'] = $bizUid;
 
         return $this;
     }
@@ -73,14 +74,27 @@ class QueryAllCinemasRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageNumber
+     * @param string $mobileNo
      *
      * @return $this
      */
-    public function setPageNumber($pageNumber)
+    public function setMobileNo($mobileNo)
     {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
+        $this->requestParameters['MobileNo'] = $mobileNo;
+        $this->queryParameters['MobileNo'] = $mobileNo;
+
+        return $this;
+    }
+
+    /**
+     * @param string $tbUserNick
+     *
+     * @return $this
+     */
+    public function setTbUserNick($tbUserNick)
+    {
+        $this->requestParameters['TbUserNick'] = $tbUserNick;
+        $this->queryParameters['TbUserNick'] = $tbUserNick;
 
         return $this;
     }
