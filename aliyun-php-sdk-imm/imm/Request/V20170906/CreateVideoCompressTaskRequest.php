@@ -5,16 +5,15 @@ namespace imm\Request\V20170906;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of CreateMergeFaceGroupsJob
+ * Request of CreateVideoCompressTask
  *
- * @method string getGroupIdFrom()
- * @method string getGroupIdTo()
+ * @method string getVideoUri()
  * @method string getNotifyTopicName()
+ * @method string getTargetList()
  * @method string getNotifyEndpoint()
  * @method string getProject()
- * @method string getSetId()
  */
-class CreateMergeFaceGroupsJobRequest extends \RpcAcsRequest
+class CreateVideoCompressTaskRequest extends \RpcAcsRequest
 {
 
     /**
@@ -30,33 +29,20 @@ class CreateMergeFaceGroupsJobRequest extends \RpcAcsRequest
         parent::__construct(
             'imm',
             '2017-09-06',
-            'CreateMergeFaceGroupsJob',
+            'CreateVideoCompressTask',
             'imm'
         );
     }
 
     /**
-     * @param string $groupIdFrom
+     * @param string $videoUri
      *
      * @return $this
      */
-    public function setGroupIdFrom($groupIdFrom)
+    public function setVideoUri($videoUri)
     {
-        $this->requestParameters['GroupIdFrom'] = $groupIdFrom;
-        $this->queryParameters['GroupIdFrom'] = $groupIdFrom;
-
-        return $this;
-    }
-
-    /**
-     * @param string $groupIdTo
-     *
-     * @return $this
-     */
-    public function setGroupIdTo($groupIdTo)
-    {
-        $this->requestParameters['GroupIdTo'] = $groupIdTo;
-        $this->queryParameters['GroupIdTo'] = $groupIdTo;
+        $this->requestParameters['VideoUri'] = $videoUri;
+        $this->queryParameters['VideoUri'] = $videoUri;
 
         return $this;
     }
@@ -70,6 +56,19 @@ class CreateMergeFaceGroupsJobRequest extends \RpcAcsRequest
     {
         $this->requestParameters['NotifyTopicName'] = $notifyTopicName;
         $this->queryParameters['NotifyTopicName'] = $notifyTopicName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $targetList
+     *
+     * @return $this
+     */
+    public function setTargetList($targetList)
+    {
+        $this->requestParameters['TargetList'] = $targetList;
+        $this->queryParameters['TargetList'] = $targetList;
 
         return $this;
     }
@@ -96,19 +95,6 @@ class CreateMergeFaceGroupsJobRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Project'] = $project;
         $this->queryParameters['Project'] = $project;
-
-        return $this;
-    }
-
-    /**
-     * @param string $setId
-     *
-     * @return $this
-     */
-    public function setSetId($setId)
-    {
-        $this->requestParameters['SetId'] = $setId;
-        $this->queryParameters['SetId'] = $setId;
 
         return $this;
     }
