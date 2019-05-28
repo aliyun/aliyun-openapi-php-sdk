@@ -28,7 +28,7 @@ class RequestServiceOfCloudDBExpertRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'RequestServiceOfCloudDBExpert',
-            'rds'
+            'Rds'
         );
     }
 

@@ -30,7 +30,7 @@ class CalculateDBInstanceWeightRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'CalculateDBInstanceWeight',
-            'rds'
+            'Rds'
         );
     }
 

@@ -28,7 +28,7 @@ class CreateDiagnosticReportRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'CreateDiagnosticReport',
-            'rds'
+            'Rds'
         );
     }
 

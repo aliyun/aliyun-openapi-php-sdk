@@ -31,7 +31,7 @@ class UpgradeDBInstanceKernelVersionRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'UpgradeDBInstanceKernelVersion',
-            'rds'
+            'Rds'
         );
     }
 

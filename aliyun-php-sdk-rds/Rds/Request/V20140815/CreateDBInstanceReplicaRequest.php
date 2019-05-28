@@ -51,7 +51,7 @@ class CreateDBInstanceReplicaRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'CreateDBInstanceReplica',
-            'rds'
+            'Rds'
         );
     }
 

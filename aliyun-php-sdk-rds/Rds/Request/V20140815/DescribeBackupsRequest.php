@@ -38,7 +38,7 @@ class DescribeBackupsRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'DescribeBackups',
-            'rds'
+            'Rds'
         );
     }
 

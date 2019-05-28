@@ -5,21 +5,20 @@ namespace Rds\Request\V20140815;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of CheckResource
+ * Request of EvaluateSupportByokShow
  *
  * @method string getResourceOwnerId()
+ * @method string getNodeType()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getSpecifyCount()
  * @method string getEngineVersion()
  * @method string getOwnerId()
- * @method string getDBInstanceClass()
+ * @method string getSecurityToken()
  * @method string getEngine()
- * @method string getZoneId()
- * @method string getDBInstanceUseType()
- * @method string getDBInstanceId()
+ * @method string getTargetRegionId()
+ * @method string getDbInstanceStorageType()
  */
-class CheckResourceRequest extends \RpcAcsRequest
+class EvaluateSupportByokShowRequest extends \RpcAcsRequest
 {
 
     /**
@@ -35,7 +34,7 @@ class CheckResourceRequest extends \RpcAcsRequest
         parent::__construct(
             'Rds',
             '2014-08-15',
-            'CheckResource',
+            'EvaluateSupportByokShow',
             'Rds'
         );
     }
@@ -49,6 +48,19 @@ class CheckResourceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $nodeType
+     *
+     * @return $this
+     */
+    public function setNodeType($nodeType)
+    {
+        $this->requestParameters['NodeType'] = $nodeType;
+        $this->queryParameters['NodeType'] = $nodeType;
 
         return $this;
     }
@@ -80,19 +92,6 @@ class CheckResourceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $specifyCount
-     *
-     * @return $this
-     */
-    public function setSpecifyCount($specifyCount)
-    {
-        $this->requestParameters['SpecifyCount'] = $specifyCount;
-        $this->queryParameters['SpecifyCount'] = $specifyCount;
-
-        return $this;
-    }
-
-    /**
      * @param string $engineVersion
      *
      * @return $this
@@ -119,14 +118,14 @@ class CheckResourceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dBInstanceClass
+     * @param string $securityToken
      *
      * @return $this
      */
-    public function setDBInstanceClass($dBInstanceClass)
+    public function setSecurityToken($securityToken)
     {
-        $this->requestParameters['DBInstanceClass'] = $dBInstanceClass;
-        $this->queryParameters['DBInstanceClass'] = $dBInstanceClass;
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }
@@ -145,40 +144,27 @@ class CheckResourceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $zoneId
+     * @param string $targetRegionId
      *
      * @return $this
      */
-    public function setZoneId($zoneId)
+    public function setTargetRegionId($targetRegionId)
     {
-        $this->requestParameters['ZoneId'] = $zoneId;
-        $this->queryParameters['ZoneId'] = $zoneId;
+        $this->requestParameters['TargetRegionId'] = $targetRegionId;
+        $this->queryParameters['TargetRegionId'] = $targetRegionId;
 
         return $this;
     }
 
     /**
-     * @param string $dBInstanceUseType
+     * @param string $dbInstanceStorageType
      *
      * @return $this
      */
-    public function setDBInstanceUseType($dBInstanceUseType)
+    public function setDbInstanceStorageType($dbInstanceStorageType)
     {
-        $this->requestParameters['DBInstanceUseType'] = $dBInstanceUseType;
-        $this->queryParameters['DBInstanceUseType'] = $dBInstanceUseType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
+        $this->requestParameters['DbInstanceStorageType'] = $dbInstanceStorageType;
+        $this->queryParameters['DbInstanceStorageType'] = $dbInstanceStorageType;
 
         return $this;
     }

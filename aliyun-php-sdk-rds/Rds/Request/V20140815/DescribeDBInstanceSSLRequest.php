@@ -30,7 +30,7 @@ class DescribeDBInstanceSSLRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'DescribeDBInstanceSSL',
-            'rds'
+            'Rds'
         );
     }
 

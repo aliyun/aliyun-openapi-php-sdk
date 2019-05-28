@@ -29,7 +29,7 @@ class DescribeDBInstanceProxyConfigurationRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'DescribeDBInstanceProxyConfiguration',
-            'rds'
+            'Rds'
         );
     }
 

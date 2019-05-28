@@ -32,7 +32,7 @@ class DescribeInstanceVpcMigrateInfoRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'DescribeInstanceVpcMigrateInfo',
-            'rds'
+            'Rds'
         );
     }
 

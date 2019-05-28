@@ -22,12 +22,15 @@ namespace Rds\Request\V20140815;
  * @method string getPeriod()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
+ * @method string getEncryptionKey()
  * @method string getOwnerId()
  * @method string getUsedTime()
  * @method string getDBInstanceClass()
  * @method string getSecurityIPList()
  * @method string getVSwitchId()
  * @method string getPrivateIpAddress()
+ * @method string getAutoRenew()
+ * @method string getRoleARN()
  * @method string getVPCId()
  * @method string getTunnelId()
  * @method string getZoneId()
@@ -51,7 +54,7 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'CreateDBInstance',
-            'rds'
+            'Rds'
         );
     }
 
@@ -251,6 +254,19 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $encryptionKey
+     *
+     * @return $this
+     */
+    public function setEncryptionKey($encryptionKey)
+    {
+        $this->requestParameters['EncryptionKey'] = $encryptionKey;
+        $this->queryParameters['EncryptionKey'] = $encryptionKey;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -324,6 +340,32 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PrivateIpAddress'] = $privateIpAddress;
         $this->queryParameters['PrivateIpAddress'] = $privateIpAddress;
+
+        return $this;
+    }
+
+    /**
+     * @param string $autoRenew
+     *
+     * @return $this
+     */
+    public function setAutoRenew($autoRenew)
+    {
+        $this->requestParameters['AutoRenew'] = $autoRenew;
+        $this->queryParameters['AutoRenew'] = $autoRenew;
+
+        return $this;
+    }
+
+    /**
+     * @param string $roleARN
+     *
+     * @return $this
+     */
+    public function setRoleARN($roleARN)
+    {
+        $this->requestParameters['RoleARN'] = $roleARN;
+        $this->queryParameters['RoleARN'] = $roleARN;
 
         return $this;
     }

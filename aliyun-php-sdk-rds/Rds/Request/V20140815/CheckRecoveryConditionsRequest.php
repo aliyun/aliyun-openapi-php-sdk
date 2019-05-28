@@ -33,7 +33,7 @@ class CheckRecoveryConditionsRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'CheckRecoveryConditions',
-            'rds'
+            'Rds'
         );
     }
 

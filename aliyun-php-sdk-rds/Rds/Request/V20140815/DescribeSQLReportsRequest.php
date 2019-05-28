@@ -34,7 +34,7 @@ class DescribeSQLReportsRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'DescribeSQLReports',
-            'rds'
+            'Rds'
         );
     }
 

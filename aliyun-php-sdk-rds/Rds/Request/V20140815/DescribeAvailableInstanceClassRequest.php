@@ -35,7 +35,7 @@ class DescribeAvailableInstanceClassRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'DescribeAvailableInstanceClass',
-            'rds'
+            'Rds'
         );
     }
 

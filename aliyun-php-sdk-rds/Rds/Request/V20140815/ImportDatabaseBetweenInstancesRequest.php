@@ -32,7 +32,7 @@ class ImportDatabaseBetweenInstancesRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'ImportDatabaseBetweenInstances',
-            'rds'
+            'Rds'
         );
     }
 

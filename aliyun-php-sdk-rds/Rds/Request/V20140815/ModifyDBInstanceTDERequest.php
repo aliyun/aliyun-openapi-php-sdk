@@ -34,7 +34,7 @@ class ModifyDBInstanceTDERequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'ModifyDBInstanceTDE',
-            'rds'
+            'Rds'
         );
     }
 

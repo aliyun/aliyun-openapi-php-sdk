@@ -32,7 +32,7 @@ class ModifyDBInstanceHAConfigRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'ModifyDBInstanceHAConfig',
-            'rds'
+            'Rds'
         );
     }
 

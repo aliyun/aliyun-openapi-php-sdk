@@ -29,7 +29,7 @@ class DescribeDBInstancesAsCsvRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'DescribeDBInstancesAsCsv',
-            'rds'
+            'Rds'
         );
     }
 
