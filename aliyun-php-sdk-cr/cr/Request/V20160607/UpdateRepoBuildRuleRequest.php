@@ -3,11 +3,13 @@
 namespace cr\Request\V20160607;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of UpdateRepoBuildRule
  *
+ * @method string getBuildRuleId()
  * @method string getRepoNamespace()
  * @method string getRepoName()
- * @method string getBuildRuleId()
  */
 class UpdateRepoBuildRuleRequest extends \RoaAcsRequest
 {
@@ -36,6 +38,19 @@ class UpdateRepoBuildRuleRequest extends \RoaAcsRequest
     }
 
     /**
+     * @param string $buildRuleId
+     *
+     * @return $this
+     */
+    public function setBuildRuleId($buildRuleId)
+    {
+        $this->requestParameters['BuildRuleId'] = $buildRuleId;
+        $this->pathParameters['BuildRuleId'] = $buildRuleId;
+
+        return $this;
+    }
+
+    /**
      * @param string $repoNamespace
      *
      * @return $this
@@ -57,19 +72,6 @@ class UpdateRepoBuildRuleRequest extends \RoaAcsRequest
     {
         $this->requestParameters['RepoName'] = $repoName;
         $this->pathParameters['RepoName'] = $repoName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $buildRuleId
-     *
-     * @return $this
-     */
-    public function setBuildRuleId($buildRuleId)
-    {
-        $this->requestParameters['BuildRuleId'] = $buildRuleId;
-        $this->pathParameters['BuildRuleId'] = $buildRuleId;
 
         return $this;
     }

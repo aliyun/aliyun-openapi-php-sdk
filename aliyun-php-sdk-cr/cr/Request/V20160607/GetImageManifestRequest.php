@@ -3,12 +3,14 @@
 namespace cr\Request\V20160607;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of GetImageManifest
  *
+ * @method string getSchemaVersion()
  * @method string getRepoNamespace()
  * @method string getRepoName()
  * @method string getTag()
- * @method string getSchemaVersion()
  */
 class GetImageManifestRequest extends \RoaAcsRequest
 {
@@ -29,6 +31,19 @@ class GetImageManifestRequest extends \RoaAcsRequest
             'GetImageManifest',
             'cr'
         );
+    }
+
+    /**
+     * @param string $schemaVersion
+     *
+     * @return $this
+     */
+    public function setSchemaVersion($schemaVersion)
+    {
+        $this->requestParameters['SchemaVersion'] = $schemaVersion;
+        $this->queryParameters['SchemaVersion'] = $schemaVersion;
+
+        return $this;
     }
 
     /**
@@ -66,19 +81,6 @@ class GetImageManifestRequest extends \RoaAcsRequest
     {
         $this->requestParameters['Tag'] = $tag;
         $this->pathParameters['Tag'] = $tag;
-
-        return $this;
-    }
-
-    /**
-     * @param string $schemaVersion
-     *
-     * @return $this
-     */
-    public function setSchemaVersion($schemaVersion)
-    {
-        $this->requestParameters['SchemaVersion'] = $schemaVersion;
-        $this->queryParameters['SchemaVersion'] = $schemaVersion;
 
         return $this;
     }

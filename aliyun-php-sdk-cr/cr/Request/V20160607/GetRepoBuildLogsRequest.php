@@ -3,11 +3,13 @@
 namespace cr\Request\V20160607;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of GetRepoBuildLogs
  *
+ * @method string getBuildId()
  * @method string getRepoNamespace()
  * @method string getRepoName()
- * @method string getBuildId()
  */
 class GetRepoBuildLogsRequest extends \RoaAcsRequest
 {
@@ -28,6 +30,19 @@ class GetRepoBuildLogsRequest extends \RoaAcsRequest
             'GetRepoBuildLogs',
             'cr'
         );
+    }
+
+    /**
+     * @param string $buildId
+     *
+     * @return $this
+     */
+    public function setBuildId($buildId)
+    {
+        $this->requestParameters['BuildId'] = $buildId;
+        $this->pathParameters['BuildId'] = $buildId;
+
+        return $this;
     }
 
     /**
@@ -52,19 +67,6 @@ class GetRepoBuildLogsRequest extends \RoaAcsRequest
     {
         $this->requestParameters['RepoName'] = $repoName;
         $this->pathParameters['RepoName'] = $repoName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $buildId
-     *
-     * @return $this
-     */
-    public function setBuildId($buildId)
-    {
-        $this->requestParameters['BuildId'] = $buildId;
-        $this->pathParameters['BuildId'] = $buildId;
 
         return $this;
     }

@@ -3,11 +3,13 @@
 namespace cr\Request\V20160607;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of GetRepoSyncTask
  *
+ * @method string getSyncTaskId()
  * @method string getRepoNamespace()
  * @method string getRepoName()
- * @method string getSyncTaskId()
  */
 class GetRepoSyncTaskRequest extends \RoaAcsRequest
 {
@@ -28,6 +30,19 @@ class GetRepoSyncTaskRequest extends \RoaAcsRequest
             'GetRepoSyncTask',
             'cr'
         );
+    }
+
+    /**
+     * @param string $syncTaskId
+     *
+     * @return $this
+     */
+    public function setSyncTaskId($syncTaskId)
+    {
+        $this->requestParameters['SyncTaskId'] = $syncTaskId;
+        $this->pathParameters['SyncTaskId'] = $syncTaskId;
+
+        return $this;
     }
 
     /**
@@ -52,19 +67,6 @@ class GetRepoSyncTaskRequest extends \RoaAcsRequest
     {
         $this->requestParameters['RepoName'] = $repoName;
         $this->pathParameters['RepoName'] = $repoName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $syncTaskId
-     *
-     * @return $this
-     */
-    public function setSyncTaskId($syncTaskId)
-    {
-        $this->requestParameters['SyncTaskId'] = $syncTaskId;
-        $this->pathParameters['SyncTaskId'] = $syncTaskId;
 
         return $this;
     }

@@ -3,6 +3,8 @@
 namespace cr\Request\V20160607;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of GetNamespaceList
  *
  * @method string getAuthorize()

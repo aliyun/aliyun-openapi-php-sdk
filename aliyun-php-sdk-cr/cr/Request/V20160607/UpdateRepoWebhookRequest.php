@@ -3,10 +3,12 @@
 namespace cr\Request\V20160607;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of UpdateRepoWebhook
  *
- * @method string getRepoNamespace()
  * @method string getWebhookId()
+ * @method string getRepoNamespace()
  * @method string getRepoName()
  */
 class UpdateRepoWebhookRequest extends \RoaAcsRequest
@@ -36,19 +38,6 @@ class UpdateRepoWebhookRequest extends \RoaAcsRequest
     }
 
     /**
-     * @param string $repoNamespace
-     *
-     * @return $this
-     */
-    public function setRepoNamespace($repoNamespace)
-    {
-        $this->requestParameters['RepoNamespace'] = $repoNamespace;
-        $this->pathParameters['RepoNamespace'] = $repoNamespace;
-
-        return $this;
-    }
-
-    /**
      * @param string $webhookId
      *
      * @return $this
@@ -57,6 +46,19 @@ class UpdateRepoWebhookRequest extends \RoaAcsRequest
     {
         $this->requestParameters['WebhookId'] = $webhookId;
         $this->pathParameters['WebhookId'] = $webhookId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $repoNamespace
+     *
+     * @return $this
+     */
+    public function setRepoNamespace($repoNamespace)
+    {
+        $this->requestParameters['RepoNamespace'] = $repoNamespace;
+        $this->pathParameters['RepoNamespace'] = $repoNamespace;
 
         return $this;
     }

@@ -3,11 +3,13 @@
 namespace cr\Request\V20160607;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of CancelRepoBuild
  *
+ * @method string getBuildId()
  * @method string getRepoNamespace()
  * @method string getRepoName()
- * @method string getBuildId()
  */
 class CancelRepoBuildRequest extends \RoaAcsRequest
 {
@@ -36,6 +38,19 @@ class CancelRepoBuildRequest extends \RoaAcsRequest
     }
 
     /**
+     * @param string $buildId
+     *
+     * @return $this
+     */
+    public function setBuildId($buildId)
+    {
+        $this->requestParameters['BuildId'] = $buildId;
+        $this->pathParameters['BuildId'] = $buildId;
+
+        return $this;
+    }
+
+    /**
      * @param string $repoNamespace
      *
      * @return $this
@@ -57,19 +72,6 @@ class CancelRepoBuildRequest extends \RoaAcsRequest
     {
         $this->requestParameters['RepoName'] = $repoName;
         $this->pathParameters['RepoName'] = $repoName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $buildId
-     *
-     * @return $this
-     */
-    public function setBuildId($buildId)
-    {
-        $this->requestParameters['BuildId'] = $buildId;
-        $this->pathParameters['BuildId'] = $buildId;
 
         return $this;
     }
