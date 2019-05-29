@@ -33,7 +33,7 @@ class CreateMigrateTaskForSQLServerRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'CreateMigrateTaskForSQLServer',
-            'Rds'
+            'rds'
         );
     }
 

@@ -43,7 +43,7 @@ class AddTagsToResourceRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'AddTagsToResource',
-            'Rds'
+            'rds'
         );
     }
 

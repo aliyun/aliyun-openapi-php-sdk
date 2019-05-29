@@ -31,7 +31,7 @@ class DeleteDBInstanceRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'DeleteDBInstance',
-            'Rds'
+            'rds'
         );
     }
 

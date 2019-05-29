@@ -31,7 +31,7 @@ class ImportDataForSQLServerRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'ImportDataForSQLServer',
-            'Rds'
+            'rds'
         );
     }
 

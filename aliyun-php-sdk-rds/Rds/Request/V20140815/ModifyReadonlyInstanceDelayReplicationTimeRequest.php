@@ -30,7 +30,7 @@ class ModifyReadonlyInstanceDelayReplicationTimeRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'ModifyReadonlyInstanceDelayReplicationTime',
-            'Rds'
+            'rds'
         );
     }
 

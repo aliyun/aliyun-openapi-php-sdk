@@ -31,7 +31,7 @@ class DescribeProxyFunctionSupportRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'DescribeProxyFunctionSupport',
-            'Rds'
+            'rds'
         );
     }
 

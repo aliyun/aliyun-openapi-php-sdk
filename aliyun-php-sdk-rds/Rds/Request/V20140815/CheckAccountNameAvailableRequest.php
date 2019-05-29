@@ -32,7 +32,7 @@ class CheckAccountNameAvailableRequest extends \RpcAcsRequest
             'Rds',
             '2014-08-15',
             'CheckAccountNameAvailable',
-            'Rds'
+            'rds'
         );
     }
 
