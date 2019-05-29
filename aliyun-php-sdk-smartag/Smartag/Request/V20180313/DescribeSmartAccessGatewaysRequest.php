@@ -1,151 +1,227 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Smartag\Request\V20180313;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of DescribeSmartAccessGateways
+ *
+ * @method string getResourceOwnerId()
+ * @method string getAclIds()
+ * @method string getUnboundAclIds()
+ * @method string getPageNumber()
+ * @method string getPageSize()
+ * @method string getInstanceType()
+ * @method string getSerialNumber()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getAssociatedCcnId()
+ * @method string getOwnerId()
+ * @method string getName()
+ * @method string getSmartAGId()
+ * @method string getStatus()
+ */
 class DescribeSmartAccessGatewaysRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Smartag", "2018-03-13", "DescribeSmartAccessGateways", "smartag", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $serialNumber;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Smartag',
+            '2018-03-13',
+            'DescribeSmartAccessGateways',
+            'smartag'
+        );
+    }
 
-	private  $resourceOwnerAccount;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $ownerAccount;
+        return $this;
+    }
 
-	private  $associatedCcnId;
+    /**
+     * @param string $aclIds
+     *
+     * @return $this
+     */
+    public function setAclIds($aclIds)
+    {
+        $this->requestParameters['AclIds'] = $aclIds;
+        $this->queryParameters['AclIds'] = $aclIds;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	private  $pageNumber;
+    /**
+     * @param string $unboundAclIds
+     *
+     * @return $this
+     */
+    public function setUnboundAclIds($unboundAclIds)
+    {
+        $this->requestParameters['UnboundAclIds'] = $unboundAclIds;
+        $this->queryParameters['UnboundAclIds'] = $unboundAclIds;
 
-	private  $name;
+        return $this;
+    }
 
-	private  $pageSize;
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
-	private  $smartAGId;
+        return $this;
+    }
 
-	private  $status;
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+    /**
+     * @param string $instanceType
+     *
+     * @return $this
+     */
+    public function setInstanceType($instanceType)
+    {
+        $this->requestParameters['InstanceType'] = $instanceType;
+        $this->queryParameters['InstanceType'] = $instanceType;
 
-	public function getSerialNumber() {
-		return $this->serialNumber;
-	}
+        return $this;
+    }
 
-	public function setSerialNumber($serialNumber) {
-		$this->serialNumber = $serialNumber;
-		$this->queryParameters["SerialNumber"]=$serialNumber;
-	}
+    /**
+     * @param string $serialNumber
+     *
+     * @return $this
+     */
+    public function setSerialNumber($serialNumber)
+    {
+        $this->requestParameters['SerialNumber'] = $serialNumber;
+        $this->queryParameters['SerialNumber'] = $serialNumber;
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+        return $this;
+    }
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	public function getAssociatedCcnId() {
-		return $this->associatedCcnId;
-	}
+        return $this;
+    }
 
-	public function setAssociatedCcnId($associatedCcnId) {
-		$this->associatedCcnId = $associatedCcnId;
-		$this->queryParameters["AssociatedCcnId"]=$associatedCcnId;
-	}
+    /**
+     * @param string $associatedCcnId
+     *
+     * @return $this
+     */
+    public function setAssociatedCcnId($associatedCcnId)
+    {
+        $this->requestParameters['AssociatedCcnId'] = $associatedCcnId;
+        $this->queryParameters['AssociatedCcnId'] = $associatedCcnId;
 
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
+        return $this;
+    }
 
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function getPageNumber() {
-		return $this->pageNumber;
-	}
+        return $this;
+    }
 
-	public function setPageNumber($pageNumber) {
-		$this->pageNumber = $pageNumber;
-		$this->queryParameters["PageNumber"]=$pageNumber;
-	}
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
-	public function getName() {
-		return $this->name;
-	}
+        return $this;
+    }
 
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
-	}
+    /**
+     * @param string $smartAGId
+     *
+     * @return $this
+     */
+    public function setSmartAGId($smartAGId)
+    {
+        $this->requestParameters['SmartAGId'] = $smartAGId;
+        $this->queryParameters['SmartAGId'] = $smartAGId;
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
+        return $this;
+    }
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
+    /**
+     * @param string $status
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->requestParameters['Status'] = $status;
+        $this->queryParameters['Status'] = $status;
 
-	public function getSmartAGId() {
-		return $this->smartAGId;
-	}
-
-	public function setSmartAGId($smartAGId) {
-		$this->smartAGId = $smartAGId;
-		$this->queryParameters["SmartAGId"]=$smartAGId;
-	}
-
-	public function getStatus() {
-		return $this->status;
-	}
-
-	public function setStatus($status) {
-		$this->status = $status;
-		$this->queryParameters["Status"]=$status;
-	}
-	
+        return $this;
+    }
 }

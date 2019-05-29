@@ -1,140 +1,188 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Smartag\Request\V20180313;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of ModifySmartAccessGateway
+ *
+ * @method string getResourceOwnerId()
+ * @method string getCity()
+ * @method string getDescription()
+ * @method string getSecurityLockThreshold()
+ * @method array getSnatEntriess()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getOwnerId()
+ * @method string getName()
+ * @method string getCidrBlock()
+ * @method string getSmartAGId()
+ */
 class ModifySmartAccessGatewayRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Smartag", "2018-03-13", "ModifySmartAccessGateway", "smartag", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $resourceOwnerAccount;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Smartag',
+            '2018-03-13',
+            'ModifySmartAccessGateway',
+            'smartag'
+        );
+    }
 
-	private  $city;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $ownerAccount;
+        return $this;
+    }
 
-	private  $name;
+    /**
+     * @param string $city
+     *
+     * @return $this
+     */
+    public function setCity($city)
+    {
+        $this->requestParameters['City'] = $city;
+        $this->queryParameters['City'] = $city;
 
-	private  $cidrBlock;
+        return $this;
+    }
 
-	private  $smartAGId;
+    /**
+     * @param string $description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
 
-	private  $description;
+        return $this;
+    }
 
-	private  $ownerId;
+    /**
+     * @param string $securityLockThreshold
+     *
+     * @return $this
+     */
+    public function setSecurityLockThreshold($securityLockThreshold)
+    {
+        $this->requestParameters['SecurityLockThreshold'] = $securityLockThreshold;
+        $this->queryParameters['SecurityLockThreshold'] = $securityLockThreshold;
 
-	private  $securityLockThreshold;
+        return $this;
+    }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+    /**
+     * @param array $snatEntries
+     *
+     * @return $this
+     */
+    public function setSnatEntriess(array $snatEntries)
+    {
+        $this->requestParameters['SnatEntriess'] = $snatEntries;
+        foreach ($snatEntries as $depth1 => $depth1Value) {
+            $this->queryParameters['SnatEntries.' . ($depth1 + 1) . '.CidrBlock'] = $depth1Value['CidrBlock'];
+            $this->queryParameters['SnatEntries.' . ($depth1 + 1) . '.SnatIp'] = $depth1Value['SnatIp'];
+        }
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function getCity() {
-		return $this->city;
-	}
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	public function setCity($city) {
-		$this->city = $city;
-		$this->queryParameters["City"]=$city;
-	}
+        return $this;
+    }
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
+        return $this;
+    }
 
-	public function getName() {
-		return $this->name;
-	}
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
-	}
+        return $this;
+    }
 
-	public function getCidrBlock() {
-		return $this->cidrBlock;
-	}
+    /**
+     * @param string $cidrBlock
+     *
+     * @return $this
+     */
+    public function setCidrBlock($cidrBlock)
+    {
+        $this->requestParameters['CidrBlock'] = $cidrBlock;
+        $this->queryParameters['CidrBlock'] = $cidrBlock;
 
-	public function setCidrBlock($cidrBlock) {
-		$this->cidrBlock = $cidrBlock;
-		$this->queryParameters["CidrBlock"]=$cidrBlock;
-	}
+        return $this;
+    }
 
-	public function getSmartAGId() {
-		return $this->smartAGId;
-	}
+    /**
+     * @param string $smartAGId
+     *
+     * @return $this
+     */
+    public function setSmartAGId($smartAGId)
+    {
+        $this->requestParameters['SmartAGId'] = $smartAGId;
+        $this->queryParameters['SmartAGId'] = $smartAGId;
 
-	public function setSmartAGId($smartAGId) {
-		$this->smartAGId = $smartAGId;
-		$this->queryParameters["SmartAGId"]=$smartAGId;
-	}
-
-	public function getDescription() {
-		return $this->description;
-	}
-
-	public function setDescription($description) {
-		$this->description = $description;
-		$this->queryParameters["Description"]=$description;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getSecurityLockThreshold() {
-		return $this->securityLockThreshold;
-	}
-
-	public function setSecurityLockThreshold($securityLockThreshold) {
-		$this->securityLockThreshold = $securityLockThreshold;
-		$this->queryParameters["SecurityLockThreshold"]=$securityLockThreshold;
-	}
-	
+        return $this;
+    }
 }

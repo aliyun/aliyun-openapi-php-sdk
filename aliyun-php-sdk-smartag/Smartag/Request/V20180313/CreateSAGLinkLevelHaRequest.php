@@ -1,140 +1,171 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Smartag\Request\V20180313;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of CreateSAGLinkLevelHa
+ *
+ * @method string getResourceOwnerId()
+ * @method string getBackupLinkId()
+ * @method string getMainLinkRegionId()
+ * @method string getMainLinkId()
+ * @method string getBackupLinkRegionId()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getOwnerId()
+ * @method string getHaType()
+ * @method string getSmartAGId()
+ */
 class CreateSAGLinkLevelHaRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Smartag", "2018-03-13", "CreateSAGLinkLevelHa", "smartag", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $resourceOwnerId;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $backupLinkId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Smartag',
+            '2018-03-13',
+            'CreateSAGLinkLevelHa',
+            'smartag'
+        );
+    }
 
-	private  $resourceOwnerAccount;
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
-	private  $haType;
+        return $this;
+    }
 
-	private  $ownerAccount;
+    /**
+     * @param string $backupLinkId
+     *
+     * @return $this
+     */
+    public function setBackupLinkId($backupLinkId)
+    {
+        $this->requestParameters['BackupLinkId'] = $backupLinkId;
+        $this->queryParameters['BackupLinkId'] = $backupLinkId;
 
-	private  $mainLinkRegionId;
+        return $this;
+    }
 
-	private  $smartAGId;
+    /**
+     * @param string $mainLinkRegionId
+     *
+     * @return $this
+     */
+    public function setMainLinkRegionId($mainLinkRegionId)
+    {
+        $this->requestParameters['MainLinkRegionId'] = $mainLinkRegionId;
+        $this->queryParameters['MainLinkRegionId'] = $mainLinkRegionId;
 
-	private  $ownerId;
+        return $this;
+    }
 
-	private  $mainLinkId;
+    /**
+     * @param string $mainLinkId
+     *
+     * @return $this
+     */
+    public function setMainLinkId($mainLinkId)
+    {
+        $this->requestParameters['MainLinkId'] = $mainLinkId;
+        $this->queryParameters['MainLinkId'] = $mainLinkId;
 
-	private  $backupLinkRegionId;
+        return $this;
+    }
 
-	public function getResourceOwnerId() {
-		return $this->resourceOwnerId;
-	}
+    /**
+     * @param string $backupLinkRegionId
+     *
+     * @return $this
+     */
+    public function setBackupLinkRegionId($backupLinkRegionId)
+    {
+        $this->requestParameters['BackupLinkRegionId'] = $backupLinkRegionId;
+        $this->queryParameters['BackupLinkRegionId'] = $backupLinkRegionId;
 
-	public function setResourceOwnerId($resourceOwnerId) {
-		$this->resourceOwnerId = $resourceOwnerId;
-		$this->queryParameters["ResourceOwnerId"]=$resourceOwnerId;
-	}
+        return $this;
+    }
 
-	public function getBackupLinkId() {
-		return $this->backupLinkId;
-	}
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
-	public function setBackupLinkId($backupLinkId) {
-		$this->backupLinkId = $backupLinkId;
-		$this->queryParameters["BackupLinkId"]=$backupLinkId;
-	}
+        return $this;
+    }
 
-	public function getResourceOwnerAccount() {
-		return $this->resourceOwnerAccount;
-	}
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
-	public function setResourceOwnerAccount($resourceOwnerAccount) {
-		$this->resourceOwnerAccount = $resourceOwnerAccount;
-		$this->queryParameters["ResourceOwnerAccount"]=$resourceOwnerAccount;
-	}
+        return $this;
+    }
 
-	public function getHaType() {
-		return $this->haType;
-	}
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
-	public function setHaType($haType) {
-		$this->haType = $haType;
-		$this->queryParameters["HaType"]=$haType;
-	}
+        return $this;
+    }
 
-	public function getOwnerAccount() {
-		return $this->ownerAccount;
-	}
+    /**
+     * @param string $haType
+     *
+     * @return $this
+     */
+    public function setHaType($haType)
+    {
+        $this->requestParameters['HaType'] = $haType;
+        $this->queryParameters['HaType'] = $haType;
 
-	public function setOwnerAccount($ownerAccount) {
-		$this->ownerAccount = $ownerAccount;
-		$this->queryParameters["OwnerAccount"]=$ownerAccount;
-	}
+        return $this;
+    }
 
-	public function getMainLinkRegionId() {
-		return $this->mainLinkRegionId;
-	}
+    /**
+     * @param string $smartAGId
+     *
+     * @return $this
+     */
+    public function setSmartAGId($smartAGId)
+    {
+        $this->requestParameters['SmartAGId'] = $smartAGId;
+        $this->queryParameters['SmartAGId'] = $smartAGId;
 
-	public function setMainLinkRegionId($mainLinkRegionId) {
-		$this->mainLinkRegionId = $mainLinkRegionId;
-		$this->queryParameters["MainLinkRegionId"]=$mainLinkRegionId;
-	}
-
-	public function getSmartAGId() {
-		return $this->smartAGId;
-	}
-
-	public function setSmartAGId($smartAGId) {
-		$this->smartAGId = $smartAGId;
-		$this->queryParameters["SmartAGId"]=$smartAGId;
-	}
-
-	public function getOwnerId() {
-		return $this->ownerId;
-	}
-
-	public function setOwnerId($ownerId) {
-		$this->ownerId = $ownerId;
-		$this->queryParameters["OwnerId"]=$ownerId;
-	}
-
-	public function getMainLinkId() {
-		return $this->mainLinkId;
-	}
-
-	public function setMainLinkId($mainLinkId) {
-		$this->mainLinkId = $mainLinkId;
-		$this->queryParameters["MainLinkId"]=$mainLinkId;
-	}
-
-	public function getBackupLinkRegionId() {
-		return $this->backupLinkRegionId;
-	}
-
-	public function setBackupLinkRegionId($backupLinkRegionId) {
-		$this->backupLinkRegionId = $backupLinkRegionId;
-		$this->queryParameters["BackupLinkRegionId"]=$backupLinkRegionId;
-	}
-	
+        return $this;
+    }
 }
