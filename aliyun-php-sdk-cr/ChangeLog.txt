@@ -1,3 +1,6 @@
+2019-05-29 Version: 3.0.2
+- Generated 2015-05-06 for `cr`
+
 2019-03-15 Version: 3.0.1
 1,  Update Dependency
 
