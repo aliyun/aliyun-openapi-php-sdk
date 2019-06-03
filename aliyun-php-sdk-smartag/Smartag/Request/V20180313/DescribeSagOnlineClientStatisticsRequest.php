@@ -8,9 +8,9 @@ namespace Smartag\Request\V20180313;
  * Request of DescribeSagOnlineClientStatistics
  *
  * @method string getResourceOwnerId()
- * @method array getSmartAGIdss()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
+ * @method array getSmartAGIdss()
  * @method string getOwnerId()
  */
 class DescribeSagOnlineClientStatisticsRequest extends \RpcAcsRequest
@@ -48,21 +48,6 @@ class DescribeSagOnlineClientStatisticsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $smartAGIds
-     *
-     * @return $this
-     */
-    public function setSmartAGIdss(array $smartAGIds)
-    {
-        $this->requestParameters['SmartAGIdss'] = $smartAGIds;
-        foreach ($smartAGIds as $i => $iValue) {
-            $this->queryParameters['SmartAGIds.' . ($i + 1)] = $iValue;
-        }
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -84,6 +69,21 @@ class DescribeSagOnlineClientStatisticsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param array $smartAGIds
+     *
+     * @return $this
+     */
+    public function setSmartAGIdss(array $smartAGIds)
+    {
+        $this->requestParameters['SmartAGIdss'] = $smartAGIds;
+        foreach ($smartAGIds as $i => $iValue) {
+            $this->queryParameters['SmartAGIds.' . ($i + 1)] = $iValue;
+        }
 
         return $this;
     }

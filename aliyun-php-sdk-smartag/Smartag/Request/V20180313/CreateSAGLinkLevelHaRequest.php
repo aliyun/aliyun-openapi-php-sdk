@@ -9,14 +9,14 @@ namespace Smartag\Request\V20180313;
  *
  * @method string getResourceOwnerId()
  * @method string getBackupLinkId()
+ * @method string getResourceOwnerAccount()
+ * @method string getHaType()
+ * @method string getOwnerAccount()
  * @method string getMainLinkRegionId()
+ * @method string getSmartAGId()
+ * @method string getOwnerId()
  * @method string getMainLinkId()
  * @method string getBackupLinkRegionId()
- * @method string getResourceOwnerAccount()
- * @method string getOwnerAccount()
- * @method string getOwnerId()
- * @method string getHaType()
- * @method string getSmartAGId()
  */
 class CreateSAGLinkLevelHaRequest extends \RpcAcsRequest
 {
@@ -66,6 +66,45 @@ class CreateSAGLinkLevelHaRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $haType
+     *
+     * @return $this
+     */
+    public function setHaType($haType)
+    {
+        $this->requestParameters['HaType'] = $haType;
+        $this->queryParameters['HaType'] = $haType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
      * @param string $mainLinkRegionId
      *
      * @return $this
@@ -74,6 +113,32 @@ class CreateSAGLinkLevelHaRequest extends \RpcAcsRequest
     {
         $this->requestParameters['MainLinkRegionId'] = $mainLinkRegionId;
         $this->queryParameters['MainLinkRegionId'] = $mainLinkRegionId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $smartAGId
+     *
+     * @return $this
+     */
+    public function setSmartAGId($smartAGId)
+    {
+        $this->requestParameters['SmartAGId'] = $smartAGId;
+        $this->queryParameters['SmartAGId'] = $smartAGId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }
@@ -100,71 +165,6 @@ class CreateSAGLinkLevelHaRequest extends \RpcAcsRequest
     {
         $this->requestParameters['BackupLinkRegionId'] = $backupLinkRegionId;
         $this->queryParameters['BackupLinkRegionId'] = $backupLinkRegionId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $haType
-     *
-     * @return $this
-     */
-    public function setHaType($haType)
-    {
-        $this->requestParameters['HaType'] = $haType;
-        $this->queryParameters['HaType'] = $haType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $smartAGId
-     *
-     * @return $this
-     */
-    public function setSmartAGId($smartAGId)
-    {
-        $this->requestParameters['SmartAGId'] = $smartAGId;
-        $this->queryParameters['SmartAGId'] = $smartAGId;
 
         return $this;
     }

@@ -8,8 +8,8 @@ namespace Smartag\Request\V20180313;
  * Request of DeleteNetworkOptimization
  *
  * @method string getResourceOwnerId()
- * @method string getNetworkOptId()
  * @method string getResourceOwnerAccount()
+ * @method string getNetworkOptId()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
  */
@@ -48,19 +48,6 @@ class DeleteNetworkOptimizationRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $networkOptId
-     *
-     * @return $this
-     */
-    public function setNetworkOptId($networkOptId)
-    {
-        $this->requestParameters['NetworkOptId'] = $networkOptId;
-        $this->queryParameters['NetworkOptId'] = $networkOptId;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -69,6 +56,19 @@ class DeleteNetworkOptimizationRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $networkOptId
+     *
+     * @return $this
+     */
+    public function setNetworkOptId($networkOptId)
+    {
+        $this->requestParameters['NetworkOptId'] = $networkOptId;
+        $this->queryParameters['NetworkOptId'] = $networkOptId;
 
         return $this;
     }

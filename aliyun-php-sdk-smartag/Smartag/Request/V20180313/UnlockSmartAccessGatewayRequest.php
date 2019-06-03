@@ -10,8 +10,8 @@ namespace Smartag\Request\V20180313;
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getOwnerId()
  * @method string getSmartAGId()
+ * @method string getOwnerId()
  */
 class UnlockSmartAccessGatewayRequest extends \RpcAcsRequest
 {
@@ -74,19 +74,6 @@ class UnlockSmartAccessGatewayRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
      * @param string $smartAGId
      *
      * @return $this
@@ -95,6 +82,19 @@ class UnlockSmartAccessGatewayRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SmartAGId'] = $smartAGId;
         $this->queryParameters['SmartAGId'] = $smartAGId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

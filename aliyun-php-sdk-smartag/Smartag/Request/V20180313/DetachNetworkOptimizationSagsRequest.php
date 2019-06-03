@@ -8,10 +8,10 @@ namespace Smartag\Request\V20180313;
  * Request of DetachNetworkOptimizationSags
  *
  * @method string getResourceOwnerId()
- * @method string getNetworkOptId()
- * @method array getSmartAGIdss()
  * @method string getResourceOwnerAccount()
+ * @method string getNetworkOptId()
  * @method string getOwnerAccount()
+ * @method array getSmartAGIdss()
  * @method string getOwnerId()
  */
 class DetachNetworkOptimizationSagsRequest extends \RpcAcsRequest
@@ -49,6 +49,19 @@ class DetachNetworkOptimizationSagsRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
      * @param string $networkOptId
      *
      * @return $this
@@ -57,6 +70,19 @@ class DetachNetworkOptimizationSagsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['NetworkOptId'] = $networkOptId;
         $this->queryParameters['NetworkOptId'] = $networkOptId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
         return $this;
     }
@@ -72,32 +98,6 @@ class DetachNetworkOptimizationSagsRequest extends \RpcAcsRequest
         foreach ($smartAGIds as $i => $iValue) {
             $this->queryParameters['SmartAGIds.' . ($i + 1)] = $iValue;
         }
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
         return $this;
     }

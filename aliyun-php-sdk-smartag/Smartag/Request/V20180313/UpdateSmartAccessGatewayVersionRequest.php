@@ -8,12 +8,12 @@ namespace Smartag\Request\V20180313;
  * Request of UpdateSmartAccessGatewayVersion
  *
  * @method string getResourceOwnerId()
- * @method string getVersionCode()
  * @method string getSerialNumber()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getOwnerId()
  * @method string getSmartAGId()
+ * @method string getOwnerId()
+ * @method string getVersionCode()
  */
 class UpdateSmartAccessGatewayVersionRequest extends \RpcAcsRequest
 {
@@ -45,19 +45,6 @@ class UpdateSmartAccessGatewayVersionRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $versionCode
-     *
-     * @return $this
-     */
-    public function setVersionCode($versionCode)
-    {
-        $this->requestParameters['VersionCode'] = $versionCode;
-        $this->queryParameters['VersionCode'] = $versionCode;
 
         return $this;
     }
@@ -102,6 +89,19 @@ class UpdateSmartAccessGatewayVersionRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $smartAGId
+     *
+     * @return $this
+     */
+    public function setSmartAGId($smartAGId)
+    {
+        $this->requestParameters['SmartAGId'] = $smartAGId;
+        $this->queryParameters['SmartAGId'] = $smartAGId;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -115,14 +115,14 @@ class UpdateSmartAccessGatewayVersionRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $smartAGId
+     * @param string $versionCode
      *
      * @return $this
      */
-    public function setSmartAGId($smartAGId)
+    public function setVersionCode($versionCode)
     {
-        $this->requestParameters['SmartAGId'] = $smartAGId;
-        $this->queryParameters['SmartAGId'] = $smartAGId;
+        $this->requestParameters['VersionCode'] = $versionCode;
+        $this->queryParameters['VersionCode'] = $versionCode;
 
         return $this;
     }

@@ -8,11 +8,11 @@ namespace Smartag\Request\V20180313;
  * Request of RevokeInstanceFromCbn
  *
  * @method string getResourceOwnerId()
- * @method string getCcnInstanceId()
  * @method string getResourceOwnerAccount()
- * @method string getOwnerAccount()
- * @method string getOwnerId()
  * @method string getCenInstanceId()
+ * @method string getOwnerAccount()
+ * @method string getCcnInstanceId()
+ * @method string getOwnerId()
  */
 class RevokeInstanceFromCbnRequest extends \RpcAcsRequest
 {
@@ -49,19 +49,6 @@ class RevokeInstanceFromCbnRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ccnInstanceId
-     *
-     * @return $this
-     */
-    public function setCcnInstanceId($ccnInstanceId)
-    {
-        $this->requestParameters['CcnInstanceId'] = $ccnInstanceId;
-        $this->queryParameters['CcnInstanceId'] = $ccnInstanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -70,6 +57,19 @@ class RevokeInstanceFromCbnRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $cenInstanceId
+     *
+     * @return $this
+     */
+    public function setCenInstanceId($cenInstanceId)
+    {
+        $this->requestParameters['CenInstanceId'] = $cenInstanceId;
+        $this->queryParameters['CenInstanceId'] = $cenInstanceId;
 
         return $this;
     }
@@ -88,6 +88,19 @@ class RevokeInstanceFromCbnRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $ccnInstanceId
+     *
+     * @return $this
+     */
+    public function setCcnInstanceId($ccnInstanceId)
+    {
+        $this->requestParameters['CcnInstanceId'] = $ccnInstanceId;
+        $this->queryParameters['CcnInstanceId'] = $ccnInstanceId;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -96,19 +109,6 @@ class RevokeInstanceFromCbnRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $cenInstanceId
-     *
-     * @return $this
-     */
-    public function setCenInstanceId($cenInstanceId)
-    {
-        $this->requestParameters['CenInstanceId'] = $cenInstanceId;
-        $this->queryParameters['CenInstanceId'] = $cenInstanceId;
 
         return $this;
     }

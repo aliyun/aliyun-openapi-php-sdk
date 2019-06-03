@@ -8,12 +8,12 @@ namespace Smartag\Request\V20180313;
  * Request of DescribeSmartAccessGatewayClientUsers
  *
  * @method string getResourceOwnerId()
- * @method string getPageSize()
  * @method string getResourceOwnerAccount()
- * @method string getOwnerAccount()
- * @method string getOwnerId()
  * @method string getPageNo()
+ * @method string getOwnerAccount()
+ * @method string getPageSize()
  * @method string getSmartAGId()
+ * @method string getOwnerId()
  * @method string getUserName()
  */
 class DescribeSmartAccessGatewayClientUsersRequest extends \RpcAcsRequest
@@ -51,19 +51,6 @@ class DescribeSmartAccessGatewayClientUsersRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -72,32 +59,6 @@ class DescribeSmartAccessGatewayClientUsersRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }
@@ -116,6 +77,32 @@ class DescribeSmartAccessGatewayClientUsersRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
      * @param string $smartAGId
      *
      * @return $this
@@ -124,6 +111,19 @@ class DescribeSmartAccessGatewayClientUsersRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SmartAGId'] = $smartAGId;
         $this->queryParameters['SmartAGId'] = $smartAGId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

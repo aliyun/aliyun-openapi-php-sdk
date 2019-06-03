@@ -8,13 +8,13 @@ namespace Smartag\Request\V20180313;
  * Request of DescribeACLs
  *
  * @method string getResourceOwnerId()
- * @method string getAclIds()
- * @method string getPageNumber()
- * @method string getPageSize()
  * @method string getResourceOwnerAccount()
+ * @method string getAclIds()
  * @method string getOwnerAccount()
- * @method string getOwnerId()
  * @method string getName()
+ * @method string getPageSize()
+ * @method string getOwnerId()
+ * @method string getPageNumber()
  */
 class DescribeACLsRequest extends \RpcAcsRequest
 {
@@ -51,45 +51,6 @@ class DescribeACLsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $aclIds
-     *
-     * @return $this
-     */
-    public function setAclIds($aclIds)
-    {
-        $this->requestParameters['AclIds'] = $aclIds;
-        $this->queryParameters['AclIds'] = $aclIds;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -98,6 +59,19 @@ class DescribeACLsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $aclIds
+     *
+     * @return $this
+     */
+    public function setAclIds($aclIds)
+    {
+        $this->requestParameters['AclIds'] = $aclIds;
+        $this->queryParameters['AclIds'] = $aclIds;
 
         return $this;
     }
@@ -116,6 +90,32 @@ class DescribeACLsRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -129,14 +129,14 @@ class DescribeACLsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $name
+     * @param string $pageNumber
      *
      * @return $this
      */
-    public function setName($name)
+    public function setPageNumber($pageNumber)
     {
-        $this->requestParameters['Name'] = $name;
-        $this->queryParameters['Name'] = $name;
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

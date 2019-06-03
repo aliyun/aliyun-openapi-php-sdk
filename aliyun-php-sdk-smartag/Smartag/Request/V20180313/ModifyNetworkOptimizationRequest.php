@@ -8,11 +8,11 @@ namespace Smartag\Request\V20180313;
  * Request of ModifyNetworkOptimization
  *
  * @method string getResourceOwnerId()
- * @method string getNetworkOptId()
  * @method string getResourceOwnerAccount()
+ * @method string getNetworkOptId()
  * @method string getOwnerAccount()
- * @method string getOwnerId()
  * @method string getName()
+ * @method string getOwnerId()
  */
 class ModifyNetworkOptimizationRequest extends \RpcAcsRequest
 {
@@ -49,19 +49,6 @@ class ModifyNetworkOptimizationRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $networkOptId
-     *
-     * @return $this
-     */
-    public function setNetworkOptId($networkOptId)
-    {
-        $this->requestParameters['NetworkOptId'] = $networkOptId;
-        $this->queryParameters['NetworkOptId'] = $networkOptId;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -70,6 +57,19 @@ class ModifyNetworkOptimizationRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $networkOptId
+     *
+     * @return $this
+     */
+    public function setNetworkOptId($networkOptId)
+    {
+        $this->requestParameters['NetworkOptId'] = $networkOptId;
+        $this->queryParameters['NetworkOptId'] = $networkOptId;
 
         return $this;
     }
@@ -88,19 +88,6 @@ class ModifyNetworkOptimizationRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
      * @param string $name
      *
      * @return $this
@@ -109,6 +96,19 @@ class ModifyNetworkOptimizationRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Name'] = $name;
         $this->queryParameters['Name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

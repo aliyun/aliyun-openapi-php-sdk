@@ -7,12 +7,12 @@ namespace Smartag\Request\V20180313;
  *
  * Request of ModifyACL
  *
- * @method string getResourceOwnerId()
  * @method string getAclId()
+ * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getOwnerId()
  * @method string getName()
+ * @method string getOwnerId()
  */
 class ModifyACLRequest extends \RpcAcsRequest
 {
@@ -36,19 +36,6 @@ class ModifyACLRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerId
-     *
-     * @return $this
-     */
-    public function setResourceOwnerId($resourceOwnerId)
-    {
-        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
-        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
      * @param string $aclId
      *
      * @return $this
@@ -57,6 +44,19 @@ class ModifyACLRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AclId'] = $aclId;
         $this->queryParameters['AclId'] = $aclId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
         return $this;
     }
@@ -88,19 +88,6 @@ class ModifyACLRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
      * @param string $name
      *
      * @return $this
@@ -109,6 +96,19 @@ class ModifyACLRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Name'] = $name;
         $this->queryParameters['Name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

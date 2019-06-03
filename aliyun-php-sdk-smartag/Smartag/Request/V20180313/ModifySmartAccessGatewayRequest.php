@@ -7,14 +7,14 @@ namespace Smartag\Request\V20180313;
  *
  * Request of ModifySmartAccessGateway
  *
- * @method string getResourceOwnerId()
- * @method string getCity()
- * @method string getDescription()
- * @method string getSecurityLockThreshold()
  * @method array getSnatEntriess()
+ * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
+ * @method string getCity()
  * @method string getOwnerAccount()
+ * @method string getDescription()
  * @method string getOwnerId()
+ * @method string getSecurityLockThreshold()
  * @method string getName()
  * @method string getCidrBlock()
  * @method string getSmartAGId()
@@ -41,58 +41,6 @@ class ModifySmartAccessGatewayRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerId
-     *
-     * @return $this
-     */
-    public function setResourceOwnerId($resourceOwnerId)
-    {
-        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
-        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $city
-     *
-     * @return $this
-     */
-    public function setCity($city)
-    {
-        $this->requestParameters['City'] = $city;
-        $this->queryParameters['City'] = $city;
-
-        return $this;
-    }
-
-    /**
-     * @param string $description
-     *
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->requestParameters['Description'] = $description;
-        $this->queryParameters['Description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * @param string $securityLockThreshold
-     *
-     * @return $this
-     */
-    public function setSecurityLockThreshold($securityLockThreshold)
-    {
-        $this->requestParameters['SecurityLockThreshold'] = $securityLockThreshold;
-        $this->queryParameters['SecurityLockThreshold'] = $securityLockThreshold;
-
-        return $this;
-    }
-
-    /**
      * @param array $snatEntries
      *
      * @return $this
@@ -104,6 +52,19 @@ class ModifySmartAccessGatewayRequest extends \RpcAcsRequest
             $this->queryParameters['SnatEntries.' . ($depth1 + 1) . '.CidrBlock'] = $depth1Value['CidrBlock'];
             $this->queryParameters['SnatEntries.' . ($depth1 + 1) . '.SnatIp'] = $depth1Value['SnatIp'];
         }
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
         return $this;
     }
@@ -122,6 +83,19 @@ class ModifySmartAccessGatewayRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $city
+     *
+     * @return $this
+     */
+    public function setCity($city)
+    {
+        $this->requestParameters['City'] = $city;
+        $this->queryParameters['City'] = $city;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerAccount
      *
      * @return $this
@@ -135,6 +109,19 @@ class ModifySmartAccessGatewayRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -143,6 +130,19 @@ class ModifySmartAccessGatewayRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityLockThreshold
+     *
+     * @return $this
+     */
+    public function setSecurityLockThreshold($securityLockThreshold)
+    {
+        $this->requestParameters['SecurityLockThreshold'] = $securityLockThreshold;
+        $this->queryParameters['SecurityLockThreshold'] = $securityLockThreshold;
 
         return $this;
     }

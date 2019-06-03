@@ -8,13 +8,13 @@ namespace Smartag\Request\V20180313;
  * Request of CreateSmartAccessGatewaySoftware
  *
  * @method string getResourceOwnerId()
- * @method string getUserCount()
  * @method string getPeriod()
  * @method string getAutoPay()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getOwnerId()
+ * @method string getUserCount()
  * @method string getChargeType()
+ * @method string getOwnerId()
  * @method string getDataPlan()
  */
 class CreateSmartAccessGatewaySoftwareRequest extends \RpcAcsRequest
@@ -47,19 +47,6 @@ class CreateSmartAccessGatewaySoftwareRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $userCount
-     *
-     * @return $this
-     */
-    public function setUserCount($userCount)
-    {
-        $this->requestParameters['UserCount'] = $userCount;
-        $this->queryParameters['UserCount'] = $userCount;
 
         return $this;
     }
@@ -117,14 +104,14 @@ class CreateSmartAccessGatewaySoftwareRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerId
+     * @param string $userCount
      *
      * @return $this
      */
-    public function setOwnerId($ownerId)
+    public function setUserCount($userCount)
     {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
+        $this->requestParameters['UserCount'] = $userCount;
+        $this->queryParameters['UserCount'] = $userCount;
 
         return $this;
     }
@@ -138,6 +125,19 @@ class CreateSmartAccessGatewaySoftwareRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ChargeType'] = $chargeType;
         $this->queryParameters['ChargeType'] = $chargeType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

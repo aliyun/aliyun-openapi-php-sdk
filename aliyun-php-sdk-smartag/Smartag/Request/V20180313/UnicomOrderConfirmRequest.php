@@ -7,16 +7,16 @@ namespace Smartag\Request\V20180313;
  *
  * Request of UnicomOrderConfirm
  *
- * @method string getResourceOwnerId()
  * @method string getTmsCode()
+ * @method string getResourceOwnerId()
  * @method array getOrderItems()
- * @method string getOrderPostFee()
- * @method string getTradeId()
  * @method string getOwnerUserId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
+ * @method string getOrderPostFee()
  * @method string getOwnerId()
  * @method string getTmsOrderCode()
+ * @method string getTradeId()
  */
 class UnicomOrderConfirmRequest extends \RpcAcsRequest
 {
@@ -40,19 +40,6 @@ class UnicomOrderConfirmRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerId
-     *
-     * @return $this
-     */
-    public function setResourceOwnerId($resourceOwnerId)
-    {
-        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
-        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
      * @param string $tmsCode
      *
      * @return $this
@@ -61,6 +48,19 @@ class UnicomOrderConfirmRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TmsCode'] = $tmsCode;
         $this->queryParameters['TmsCode'] = $tmsCode;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
         return $this;
     }
@@ -85,32 +85,6 @@ class UnicomOrderConfirmRequest extends \RpcAcsRequest
             $this->queryParameters['OrderItem.' . ($depth1 + 1) . '.TradeId'] = $depth1Value['TradeId'];
             $this->queryParameters['OrderItem.' . ($depth1 + 1) . '.TradeItemId'] = $depth1Value['TradeItemId'];
         }
-
-        return $this;
-    }
-
-    /**
-     * @param string $orderPostFee
-     *
-     * @return $this
-     */
-    public function setOrderPostFee($orderPostFee)
-    {
-        $this->requestParameters['OrderPostFee'] = $orderPostFee;
-        $this->queryParameters['OrderPostFee'] = $orderPostFee;
-
-        return $this;
-    }
-
-    /**
-     * @param string $tradeId
-     *
-     * @return $this
-     */
-    public function setTradeId($tradeId)
-    {
-        $this->requestParameters['TradeId'] = $tradeId;
-        $this->queryParameters['TradeId'] = $tradeId;
 
         return $this;
     }
@@ -155,6 +129,19 @@ class UnicomOrderConfirmRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $orderPostFee
+     *
+     * @return $this
+     */
+    public function setOrderPostFee($orderPostFee)
+    {
+        $this->requestParameters['OrderPostFee'] = $orderPostFee;
+        $this->queryParameters['OrderPostFee'] = $orderPostFee;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -176,6 +163,19 @@ class UnicomOrderConfirmRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TmsOrderCode'] = $tmsOrderCode;
         $this->queryParameters['TmsOrderCode'] = $tmsOrderCode;
+
+        return $this;
+    }
+
+    /**
+     * @param string $tradeId
+     *
+     * @return $this
+     */
+    public function setTradeId($tradeId)
+    {
+        $this->requestParameters['TradeId'] = $tradeId;
+        $this->queryParameters['TradeId'] = $tradeId;
 
         return $this;
     }

@@ -8,13 +8,13 @@ namespace Smartag\Request\V20180313;
  * Request of UpgradeSmartAccessGateway
  *
  * @method string getResourceOwnerId()
- * @method string getBandWidthSpec()
- * @method string getUserCount()
  * @method string getAutoPay()
+ * @method string getBandWidthSpec()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getOwnerId()
+ * @method string getUserCount()
  * @method string getSmartAGId()
+ * @method string getOwnerId()
  * @method string getDataPlan()
  */
 class UpgradeSmartAccessGatewayRequest extends \RpcAcsRequest
@@ -52,32 +52,6 @@ class UpgradeSmartAccessGatewayRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $bandWidthSpec
-     *
-     * @return $this
-     */
-    public function setBandWidthSpec($bandWidthSpec)
-    {
-        $this->requestParameters['BandWidthSpec'] = $bandWidthSpec;
-        $this->queryParameters['BandWidthSpec'] = $bandWidthSpec;
-
-        return $this;
-    }
-
-    /**
-     * @param string $userCount
-     *
-     * @return $this
-     */
-    public function setUserCount($userCount)
-    {
-        $this->requestParameters['UserCount'] = $userCount;
-        $this->queryParameters['UserCount'] = $userCount;
-
-        return $this;
-    }
-
-    /**
      * @param string $autoPay
      *
      * @return $this
@@ -86,6 +60,19 @@ class UpgradeSmartAccessGatewayRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AutoPay'] = $autoPay;
         $this->queryParameters['AutoPay'] = $autoPay;
+
+        return $this;
+    }
+
+    /**
+     * @param string $bandWidthSpec
+     *
+     * @return $this
+     */
+    public function setBandWidthSpec($bandWidthSpec)
+    {
+        $this->requestParameters['BandWidthSpec'] = $bandWidthSpec;
+        $this->queryParameters['BandWidthSpec'] = $bandWidthSpec;
 
         return $this;
     }
@@ -117,14 +104,14 @@ class UpgradeSmartAccessGatewayRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerId
+     * @param string $userCount
      *
      * @return $this
      */
-    public function setOwnerId($ownerId)
+    public function setUserCount($userCount)
     {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
+        $this->requestParameters['UserCount'] = $userCount;
+        $this->queryParameters['UserCount'] = $userCount;
 
         return $this;
     }
@@ -138,6 +125,19 @@ class UpgradeSmartAccessGatewayRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SmartAGId'] = $smartAGId;
         $this->queryParameters['SmartAGId'] = $smartAGId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

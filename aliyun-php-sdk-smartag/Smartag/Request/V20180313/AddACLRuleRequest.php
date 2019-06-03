@@ -7,20 +7,20 @@ namespace Smartag\Request\V20180313;
  *
  * Request of AddACLRule
  *
+ * @method string getAclId()
  * @method string getResourceOwnerId()
  * @method string getSourcePortRange()
- * @method string getSourceCidr()
- * @method string getDescription()
- * @method string getDestCidr()
- * @method string getDirection()
- * @method string getPolicy()
- * @method string getAclId()
  * @method string getResourceOwnerAccount()
  * @method string getIpProtocol()
  * @method string getOwnerAccount()
+ * @method string getSourceCidr()
+ * @method string getDescription()
  * @method string getOwnerId()
  * @method string getPriority()
+ * @method string getDestCidr()
  * @method string getDestPortRange()
+ * @method string getDirection()
+ * @method string getPolicy()
  */
 class AddACLRuleRequest extends \RpcAcsRequest
 {
@@ -41,6 +41,19 @@ class AddACLRuleRequest extends \RpcAcsRequest
             'AddACLRule',
             'smartag'
         );
+    }
+
+    /**
+     * @param string $aclId
+     *
+     * @return $this
+     */
+    public function setAclId($aclId)
+    {
+        $this->requestParameters['AclId'] = $aclId;
+        $this->queryParameters['AclId'] = $aclId;
+
+        return $this;
     }
 
     /**
@@ -65,84 +78,6 @@ class AddACLRuleRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SourcePortRange'] = $sourcePortRange;
         $this->queryParameters['SourcePortRange'] = $sourcePortRange;
-
-        return $this;
-    }
-
-    /**
-     * @param string $sourceCidr
-     *
-     * @return $this
-     */
-    public function setSourceCidr($sourceCidr)
-    {
-        $this->requestParameters['SourceCidr'] = $sourceCidr;
-        $this->queryParameters['SourceCidr'] = $sourceCidr;
-
-        return $this;
-    }
-
-    /**
-     * @param string $description
-     *
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->requestParameters['Description'] = $description;
-        $this->queryParameters['Description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * @param string $destCidr
-     *
-     * @return $this
-     */
-    public function setDestCidr($destCidr)
-    {
-        $this->requestParameters['DestCidr'] = $destCidr;
-        $this->queryParameters['DestCidr'] = $destCidr;
-
-        return $this;
-    }
-
-    /**
-     * @param string $direction
-     *
-     * @return $this
-     */
-    public function setDirection($direction)
-    {
-        $this->requestParameters['Direction'] = $direction;
-        $this->queryParameters['Direction'] = $direction;
-
-        return $this;
-    }
-
-    /**
-     * @param string $policy
-     *
-     * @return $this
-     */
-    public function setPolicy($policy)
-    {
-        $this->requestParameters['Policy'] = $policy;
-        $this->queryParameters['Policy'] = $policy;
-
-        return $this;
-    }
-
-    /**
-     * @param string $aclId
-     *
-     * @return $this
-     */
-    public function setAclId($aclId)
-    {
-        $this->requestParameters['AclId'] = $aclId;
-        $this->queryParameters['AclId'] = $aclId;
 
         return $this;
     }
@@ -187,6 +122,32 @@ class AddACLRuleRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $sourceCidr
+     *
+     * @return $this
+     */
+    public function setSourceCidr($sourceCidr)
+    {
+        $this->requestParameters['SourceCidr'] = $sourceCidr;
+        $this->queryParameters['SourceCidr'] = $sourceCidr;
+
+        return $this;
+    }
+
+    /**
+     * @param string $description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -213,6 +174,19 @@ class AddACLRuleRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $destCidr
+     *
+     * @return $this
+     */
+    public function setDestCidr($destCidr)
+    {
+        $this->requestParameters['DestCidr'] = $destCidr;
+        $this->queryParameters['DestCidr'] = $destCidr;
+
+        return $this;
+    }
+
+    /**
      * @param string $destPortRange
      *
      * @return $this
@@ -221,6 +195,32 @@ class AddACLRuleRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DestPortRange'] = $destPortRange;
         $this->queryParameters['DestPortRange'] = $destPortRange;
+
+        return $this;
+    }
+
+    /**
+     * @param string $direction
+     *
+     * @return $this
+     */
+    public function setDirection($direction)
+    {
+        $this->requestParameters['Direction'] = $direction;
+        $this->queryParameters['Direction'] = $direction;
+
+        return $this;
+    }
+
+    /**
+     * @param string $policy
+     *
+     * @return $this
+     */
+    public function setPolicy($policy)
+    {
+        $this->requestParameters['Policy'] = $policy;
+        $this->queryParameters['Policy'] = $policy;
 
         return $this;
     }

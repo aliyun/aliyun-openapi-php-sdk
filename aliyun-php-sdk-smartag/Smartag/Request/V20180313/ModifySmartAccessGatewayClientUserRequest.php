@@ -11,8 +11,8 @@ namespace Smartag\Request\V20180313;
  * @method string getResourceOwnerAccount()
  * @method string getBandwidth()
  * @method string getOwnerAccount()
- * @method string getOwnerId()
  * @method string getSmartAGId()
+ * @method string getOwnerId()
  * @method string getUserName()
  */
 class ModifySmartAccessGatewayClientUserRequest extends \RpcAcsRequest
@@ -89,19 +89,6 @@ class ModifySmartAccessGatewayClientUserRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
      * @param string $smartAGId
      *
      * @return $this
@@ -110,6 +97,19 @@ class ModifySmartAccessGatewayClientUserRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SmartAGId'] = $smartAGId;
         $this->queryParameters['SmartAGId'] = $smartAGId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

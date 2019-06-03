@@ -8,11 +8,11 @@ namespace Smartag\Request\V20180313;
  * Request of BindSmartAccessGateway
  *
  * @method string getResourceOwnerId()
- * @method string getCcnId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getOwnerId()
+ * @method string getCcnId()
  * @method string getSmartAGId()
+ * @method string getOwnerId()
  */
 class BindSmartAccessGatewayRequest extends \RpcAcsRequest
 {
@@ -49,19 +49,6 @@ class BindSmartAccessGatewayRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ccnId
-     *
-     * @return $this
-     */
-    public function setCcnId($ccnId)
-    {
-        $this->requestParameters['CcnId'] = $ccnId;
-        $this->queryParameters['CcnId'] = $ccnId;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -88,14 +75,14 @@ class BindSmartAccessGatewayRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerId
+     * @param string $ccnId
      *
      * @return $this
      */
-    public function setOwnerId($ownerId)
+    public function setCcnId($ccnId)
     {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
+        $this->requestParameters['CcnId'] = $ccnId;
+        $this->queryParameters['CcnId'] = $ccnId;
 
         return $this;
     }
@@ -109,6 +96,19 @@ class BindSmartAccessGatewayRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SmartAGId'] = $smartAGId;
         $this->queryParameters['SmartAGId'] = $smartAGId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

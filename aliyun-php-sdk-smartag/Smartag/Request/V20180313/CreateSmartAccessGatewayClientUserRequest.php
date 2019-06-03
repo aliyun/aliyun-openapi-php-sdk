@@ -8,13 +8,13 @@ namespace Smartag\Request\V20180313;
  * Request of CreateSmartAccessGatewayClientUser
  *
  * @method string getResourceOwnerId()
- * @method string getClientIp()
  * @method string getResourceOwnerAccount()
  * @method string getBandwidth()
  * @method string getOwnerAccount()
+ * @method string getClientIp()
+ * @method string getSmartAGId()
  * @method string getUserMail()
  * @method string getOwnerId()
- * @method string getSmartAGId()
  * @method string getUserName()
  */
 class CreateSmartAccessGatewayClientUserRequest extends \RpcAcsRequest
@@ -47,19 +47,6 @@ class CreateSmartAccessGatewayClientUserRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $clientIp
-     *
-     * @return $this
-     */
-    public function setClientIp($clientIp)
-    {
-        $this->requestParameters['ClientIp'] = $clientIp;
-        $this->queryParameters['ClientIp'] = $clientIp;
 
         return $this;
     }
@@ -104,6 +91,32 @@ class CreateSmartAccessGatewayClientUserRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $clientIp
+     *
+     * @return $this
+     */
+    public function setClientIp($clientIp)
+    {
+        $this->requestParameters['ClientIp'] = $clientIp;
+        $this->queryParameters['ClientIp'] = $clientIp;
+
+        return $this;
+    }
+
+    /**
+     * @param string $smartAGId
+     *
+     * @return $this
+     */
+    public function setSmartAGId($smartAGId)
+    {
+        $this->requestParameters['SmartAGId'] = $smartAGId;
+        $this->queryParameters['SmartAGId'] = $smartAGId;
+
+        return $this;
+    }
+
+    /**
      * @param string $userMail
      *
      * @return $this
@@ -125,19 +138,6 @@ class CreateSmartAccessGatewayClientUserRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $smartAGId
-     *
-     * @return $this
-     */
-    public function setSmartAGId($smartAGId)
-    {
-        $this->requestParameters['SmartAGId'] = $smartAGId;
-        $this->queryParameters['SmartAGId'] = $smartAGId;
 
         return $this;
     }

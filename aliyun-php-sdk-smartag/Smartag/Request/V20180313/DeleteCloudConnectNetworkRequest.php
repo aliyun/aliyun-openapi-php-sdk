@@ -8,9 +8,9 @@ namespace Smartag\Request\V20180313;
  * Request of DeleteCloudConnectNetwork
  *
  * @method string getResourceOwnerId()
- * @method string getCcnId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
+ * @method string getCcnId()
  * @method string getOwnerId()
  */
 class DeleteCloudConnectNetworkRequest extends \RpcAcsRequest
@@ -48,19 +48,6 @@ class DeleteCloudConnectNetworkRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ccnId
-     *
-     * @return $this
-     */
-    public function setCcnId($ccnId)
-    {
-        $this->requestParameters['CcnId'] = $ccnId;
-        $this->queryParameters['CcnId'] = $ccnId;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -82,6 +69,19 @@ class DeleteCloudConnectNetworkRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ccnId
+     *
+     * @return $this
+     */
+    public function setCcnId($ccnId)
+    {
+        $this->requestParameters['CcnId'] = $ccnId;
+        $this->queryParameters['CcnId'] = $ccnId;
 
         return $this;
     }

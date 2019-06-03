@@ -9,11 +9,11 @@ namespace Smartag\Request\V20180313;
  *
  * @method string getaccess_key_id()
  * @method string getResourceOwnerId()
- * @method string getRouteableAddress()
  * @method string getResourceOwnerAccount()
+ * @method string getSagId()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
- * @method string getSagId()
+ * @method string getRouteableAddress()
  */
 class SetSagRouteableAddressRequest extends \RpcAcsRequest
 {
@@ -63,19 +63,6 @@ class SetSagRouteableAddressRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $routeableAddress
-     *
-     * @return $this
-     */
-    public function setRouteableAddress($routeableAddress)
-    {
-        $this->requestParameters['RouteableAddress'] = $routeableAddress;
-        $this->queryParameters['RouteableAddress'] = $routeableAddress;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -84,6 +71,19 @@ class SetSagRouteableAddressRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sagId
+     *
+     * @return $this
+     */
+    public function setSagId($sagId)
+    {
+        $this->requestParameters['SagId'] = $sagId;
+        $this->queryParameters['SagId'] = $sagId;
 
         return $this;
     }
@@ -115,14 +115,14 @@ class SetSagRouteableAddressRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $sagId
+     * @param string $routeableAddress
      *
      * @return $this
      */
-    public function setSagId($sagId)
+    public function setRouteableAddress($routeableAddress)
     {
-        $this->requestParameters['SagId'] = $sagId;
-        $this->queryParameters['SagId'] = $sagId;
+        $this->requestParameters['RouteableAddress'] = $routeableAddress;
+        $this->queryParameters['RouteableAddress'] = $routeableAddress;
 
         return $this;
     }

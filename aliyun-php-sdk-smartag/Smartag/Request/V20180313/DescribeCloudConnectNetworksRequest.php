@@ -8,14 +8,14 @@ namespace Smartag\Request\V20180313;
  * Request of DescribeCloudConnectNetworks
  *
  * @method string getResourceOwnerId()
- * @method string getCcnId()
- * @method string getPageNumber()
- * @method string getPageSize()
- * @method array getTags()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getOwnerId()
  * @method string getName()
+ * @method string getCcnId()
+ * @method string getPageSize()
+ * @method array getTags()
+ * @method string getOwnerId()
+ * @method string getPageNumber()
  */
 class DescribeCloudConnectNetworksRequest extends \RpcAcsRequest
 {
@@ -52,6 +52,45 @@ class DescribeCloudConnectNetworksRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
+
+        return $this;
+    }
+
+    /**
      * @param string $ccnId
      *
      * @return $this
@@ -60,19 +99,6 @@ class DescribeCloudConnectNetworksRequest extends \RpcAcsRequest
     {
         $this->requestParameters['CcnId'] = $ccnId;
         $this->queryParameters['CcnId'] = $ccnId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }
@@ -107,32 +133,6 @@ class DescribeCloudConnectNetworksRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -146,14 +146,14 @@ class DescribeCloudConnectNetworksRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $name
+     * @param string $pageNumber
      *
      * @return $this
      */
-    public function setName($name)
+    public function setPageNumber($pageNumber)
     {
-        $this->requestParameters['Name'] = $name;
-        $this->queryParameters['Name'] = $name;
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

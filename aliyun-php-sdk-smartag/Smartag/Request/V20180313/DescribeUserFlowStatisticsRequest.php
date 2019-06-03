@@ -8,12 +8,12 @@ namespace Smartag\Request\V20180313;
  * Request of DescribeUserFlowStatistics
  *
  * @method string getResourceOwnerId()
- * @method array getUserNamess()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getStatisticsDate()
- * @method string getOwnerId()
  * @method string getSmartAGId()
+ * @method string getStatisticsDate()
+ * @method array getUserNamess()
+ * @method string getOwnerId()
  */
 class DescribeUserFlowStatisticsRequest extends \RpcAcsRequest
 {
@@ -50,21 +50,6 @@ class DescribeUserFlowStatisticsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $userNames
-     *
-     * @return $this
-     */
-    public function setUserNamess(array $userNames)
-    {
-        $this->requestParameters['UserNamess'] = $userNames;
-        foreach ($userNames as $i => $iValue) {
-            $this->queryParameters['UserNames.' . ($i + 1)] = $iValue;
-        }
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -91,6 +76,19 @@ class DescribeUserFlowStatisticsRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $smartAGId
+     *
+     * @return $this
+     */
+    public function setSmartAGId($smartAGId)
+    {
+        $this->requestParameters['SmartAGId'] = $smartAGId;
+        $this->queryParameters['SmartAGId'] = $smartAGId;
+
+        return $this;
+    }
+
+    /**
      * @param string $statisticsDate
      *
      * @return $this
@@ -104,6 +102,21 @@ class DescribeUserFlowStatisticsRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param array $userNames
+     *
+     * @return $this
+     */
+    public function setUserNamess(array $userNames)
+    {
+        $this->requestParameters['UserNamess'] = $userNames;
+        foreach ($userNames as $i => $iValue) {
+            $this->queryParameters['UserNames.' . ($i + 1)] = $iValue;
+        }
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -112,19 +125,6 @@ class DescribeUserFlowStatisticsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $smartAGId
-     *
-     * @return $this
-     */
-    public function setSmartAGId($smartAGId)
-    {
-        $this->requestParameters['SmartAGId'] = $smartAGId;
-        $this->queryParameters['SmartAGId'] = $smartAGId;
 
         return $this;
     }

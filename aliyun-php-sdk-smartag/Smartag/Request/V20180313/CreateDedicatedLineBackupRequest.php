@@ -8,12 +8,12 @@ namespace Smartag\Request\V20180313;
  * Request of CreateDedicatedLineBackup
  *
  * @method string getResourceOwnerId()
- * @method string getVbrId()
- * @method string getVbrRegionId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getOwnerId()
  * @method string getSmartAGId()
+ * @method string getOwnerId()
+ * @method string getVbrId()
+ * @method string getVbrRegionId()
  */
 class CreateDedicatedLineBackupRequest extends \RpcAcsRequest
 {
@@ -50,32 +50,6 @@ class CreateDedicatedLineBackupRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $vbrId
-     *
-     * @return $this
-     */
-    public function setVbrId($vbrId)
-    {
-        $this->requestParameters['VbrId'] = $vbrId;
-        $this->queryParameters['VbrId'] = $vbrId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $vbrRegionId
-     *
-     * @return $this
-     */
-    public function setVbrRegionId($vbrRegionId)
-    {
-        $this->requestParameters['VbrRegionId'] = $vbrRegionId;
-        $this->queryParameters['VbrRegionId'] = $vbrRegionId;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -102,6 +76,19 @@ class CreateDedicatedLineBackupRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $smartAGId
+     *
+     * @return $this
+     */
+    public function setSmartAGId($smartAGId)
+    {
+        $this->requestParameters['SmartAGId'] = $smartAGId;
+        $this->queryParameters['SmartAGId'] = $smartAGId;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -115,14 +102,27 @@ class CreateDedicatedLineBackupRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $smartAGId
+     * @param string $vbrId
      *
      * @return $this
      */
-    public function setSmartAGId($smartAGId)
+    public function setVbrId($vbrId)
     {
-        $this->requestParameters['SmartAGId'] = $smartAGId;
-        $this->queryParameters['SmartAGId'] = $smartAGId;
+        $this->requestParameters['VbrId'] = $vbrId;
+        $this->queryParameters['VbrId'] = $vbrId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $vbrRegionId
+     *
+     * @return $this
+     */
+    public function setVbrRegionId($vbrRegionId)
+    {
+        $this->requestParameters['VbrRegionId'] = $vbrRegionId;
+        $this->queryParameters['VbrRegionId'] = $vbrRegionId;
 
         return $this;
     }

@@ -7,8 +7,8 @@ namespace Smartag\Request\V20180313;
  *
  * Request of DeleteACL
  *
- * @method string getResourceOwnerId()
  * @method string getAclId()
+ * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
@@ -35,19 +35,6 @@ class DeleteACLRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerId
-     *
-     * @return $this
-     */
-    public function setResourceOwnerId($resourceOwnerId)
-    {
-        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
-        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
      * @param string $aclId
      *
      * @return $this
@@ -56,6 +43,19 @@ class DeleteACLRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AclId'] = $aclId;
         $this->queryParameters['AclId'] = $aclId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
         return $this;
     }

@@ -8,12 +8,12 @@ namespace Smartag\Request\V20180313;
  * Request of DescribeNetworkOptimizationSags
  *
  * @method string getResourceOwnerId()
- * @method string getNetworkOptId()
- * @method string getPageSize()
  * @method string getResourceOwnerAccount()
- * @method string getOwnerAccount()
- * @method string getOwnerId()
+ * @method string getNetworkOptId()
  * @method string getPageNo()
+ * @method string getOwnerAccount()
+ * @method string getPageSize()
+ * @method string getOwnerId()
  */
 class DescribeNetworkOptimizationSagsRequest extends \RpcAcsRequest
 {
@@ -50,6 +50,19 @@ class DescribeNetworkOptimizationSagsRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
      * @param string $networkOptId
      *
      * @return $this
@@ -63,27 +76,14 @@ class DescribeNetworkOptimizationSagsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageSize
+     * @param string $pageNo
      *
      * @return $this
      */
-    public function setPageSize($pageSize)
+    public function setPageNo($pageNo)
     {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->requestParameters['PageNo'] = $pageNo;
+        $this->queryParameters['PageNo'] = $pageNo;
 
         return $this;
     }
@@ -102,6 +102,19 @@ class DescribeNetworkOptimizationSagsRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -110,19 +123,6 @@ class DescribeNetworkOptimizationSagsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNo
-     *
-     * @return $this
-     */
-    public function setPageNo($pageNo)
-    {
-        $this->requestParameters['PageNo'] = $pageNo;
-        $this->queryParameters['PageNo'] = $pageNo;
 
         return $this;
     }

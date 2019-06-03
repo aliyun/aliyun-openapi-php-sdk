@@ -9,10 +9,10 @@ namespace Smartag\Request\V20180313;
  *
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
- * @method string getOwnerAccount()
- * @method string getOwnerId()
  * @method string getHaType()
+ * @method string getOwnerAccount()
  * @method string getSmartAGId()
+ * @method string getOwnerId()
  */
 class SwitchSAGHaStateRequest extends \RpcAcsRequest
 {
@@ -62,32 +62,6 @@ class SwitchSAGHaStateRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
      * @param string $haType
      *
      * @return $this
@@ -101,6 +75,19 @@ class SwitchSAGHaStateRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
      * @param string $smartAGId
      *
      * @return $this
@@ -109,6 +96,19 @@ class SwitchSAGHaStateRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SmartAGId'] = $smartAGId;
         $this->queryParameters['SmartAGId'] = $smartAGId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

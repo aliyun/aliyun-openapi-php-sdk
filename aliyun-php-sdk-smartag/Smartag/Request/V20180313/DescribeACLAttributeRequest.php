@@ -7,15 +7,15 @@ namespace Smartag\Request\V20180313;
  *
  * Request of DescribeACLAttribute
  *
- * @method string getResourceOwnerId()
- * @method string getPageNumber()
- * @method string getPageSize()
- * @method string getDirection()
- * @method string getOrder()
  * @method string getAclId()
+ * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
+ * @method string getPageSize()
  * @method string getOwnerId()
+ * @method string getPageNumber()
+ * @method string getDirection()
+ * @method string getOrder()
  */
 class DescribeACLAttributeRequest extends \RpcAcsRequest
 {
@@ -39,71 +39,6 @@ class DescribeACLAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerId
-     *
-     * @return $this
-     */
-    public function setResourceOwnerId($resourceOwnerId)
-    {
-        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
-        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param string $direction
-     *
-     * @return $this
-     */
-    public function setDirection($direction)
-    {
-        $this->requestParameters['Direction'] = $direction;
-        $this->queryParameters['Direction'] = $direction;
-
-        return $this;
-    }
-
-    /**
-     * @param string $order
-     *
-     * @return $this
-     */
-    public function setOrder($order)
-    {
-        $this->requestParameters['Order'] = $order;
-        $this->queryParameters['Order'] = $order;
-
-        return $this;
-    }
-
-    /**
      * @param string $aclId
      *
      * @return $this
@@ -112,6 +47,19 @@ class DescribeACLAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AclId'] = $aclId;
         $this->queryParameters['AclId'] = $aclId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
         return $this;
     }
@@ -143,6 +91,19 @@ class DescribeACLAttributeRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -151,6 +112,45 @@ class DescribeACLAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $direction
+     *
+     * @return $this
+     */
+    public function setDirection($direction)
+    {
+        $this->requestParameters['Direction'] = $direction;
+        $this->queryParameters['Direction'] = $direction;
+
+        return $this;
+    }
+
+    /**
+     * @param string $order
+     *
+     * @return $this
+     */
+    public function setOrder($order)
+    {
+        $this->requestParameters['Order'] = $order;
+        $this->queryParameters['Order'] = $order;
 
         return $this;
     }

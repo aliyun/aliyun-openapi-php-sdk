@@ -8,12 +8,12 @@ namespace Smartag\Request\V20180313;
  * Request of AddNetworkOptimizationSetting
  *
  * @method string getResourceOwnerId()
- * @method string getType()
- * @method string getNetworkOptId()
  * @method string getResourceOwnerAccount()
+ * @method string getNetworkOptId()
  * @method string getOwnerAccount()
- * @method string getOwnerId()
  * @method string getDomain()
+ * @method string getOwnerId()
+ * @method string getType()
  */
 class AddNetworkOptimizationSettingRequest extends \RpcAcsRequest
 {
@@ -50,14 +50,14 @@ class AddNetworkOptimizationSettingRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $type
+     * @param string $resourceOwnerAccount
      *
      * @return $this
      */
-    public function setType($type)
+    public function setResourceOwnerAccount($resourceOwnerAccount)
     {
-        $this->requestParameters['Type'] = $type;
-        $this->queryParameters['Type'] = $type;
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }
@@ -76,19 +76,6 @@ class AddNetworkOptimizationSettingRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerAccount
      *
      * @return $this
@@ -97,6 +84,19 @@ class AddNetworkOptimizationSettingRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $domain
+     *
+     * @return $this
+     */
+    public function setDomain($domain)
+    {
+        $this->requestParameters['Domain'] = $domain;
+        $this->queryParameters['Domain'] = $domain;
 
         return $this;
     }
@@ -115,14 +115,14 @@ class AddNetworkOptimizationSettingRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $domain
+     * @param string $type
      *
      * @return $this
      */
-    public function setDomain($domain)
+    public function setType($type)
     {
-        $this->requestParameters['Domain'] = $domain;
-        $this->queryParameters['Domain'] = $domain;
+        $this->requestParameters['Type'] = $type;
+        $this->queryParameters['Type'] = $type;
 
         return $this;
     }

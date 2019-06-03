@@ -8,14 +8,14 @@ namespace Smartag\Request\V20180313;
  * Request of ModifyCloudConnectNetwork
  *
  * @method string getResourceOwnerId()
- * @method string getCcnId()
- * @method string getDescription()
- * @method string getSnatCidrBlock()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getOwnerId()
+ * @method string getCcnId()
  * @method string getName()
  * @method string getCidrBlock()
+ * @method string getDescription()
+ * @method string getSnatCidrBlock()
+ * @method string getOwnerId()
  */
 class ModifyCloudConnectNetworkRequest extends \RpcAcsRequest
 {
@@ -52,6 +52,32 @@ class ModifyCloudConnectNetworkRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
      * @param string $ccnId
      *
      * @return $this
@@ -60,6 +86,32 @@ class ModifyCloudConnectNetworkRequest extends \RpcAcsRequest
     {
         $this->requestParameters['CcnId'] = $ccnId;
         $this->queryParameters['CcnId'] = $ccnId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * @param string $cidrBlock
+     *
+     * @return $this
+     */
+    public function setCidrBlock($cidrBlock)
+    {
+        $this->requestParameters['CidrBlock'] = $cidrBlock;
+        $this->queryParameters['CidrBlock'] = $cidrBlock;
 
         return $this;
     }
@@ -91,32 +143,6 @@ class ModifyCloudConnectNetworkRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -125,32 +151,6 @@ class ModifyCloudConnectNetworkRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $name
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->requestParameters['Name'] = $name;
-        $this->queryParameters['Name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * @param string $cidrBlock
-     *
-     * @return $this
-     */
-    public function setCidrBlock($cidrBlock)
-    {
-        $this->requestParameters['CidrBlock'] = $cidrBlock;
-        $this->queryParameters['CidrBlock'] = $cidrBlock;
 
         return $this;
     }

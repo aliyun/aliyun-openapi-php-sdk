@@ -10,8 +10,8 @@ namespace Smartag\Request\V20180313;
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getOwnerId()
  * @method string getAcceptLanguage()
+ * @method string getOwnerId()
  */
 class DescribeRegionsRequest extends \RpcAcsRequest
 {
@@ -74,19 +74,6 @@ class DescribeRegionsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
      * @param string $acceptLanguage
      *
      * @return $this
@@ -95,6 +82,19 @@ class DescribeRegionsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AcceptLanguage'] = $acceptLanguage;
         $this->queryParameters['AcceptLanguage'] = $acceptLanguage;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

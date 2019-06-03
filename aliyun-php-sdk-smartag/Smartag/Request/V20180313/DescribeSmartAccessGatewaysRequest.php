@@ -8,18 +8,18 @@ namespace Smartag\Request\V20180313;
  * Request of DescribeSmartAccessGateways
  *
  * @method string getResourceOwnerId()
- * @method string getAclIds()
- * @method string getUnboundAclIds()
- * @method string getPageNumber()
- * @method string getPageSize()
- * @method string getInstanceType()
  * @method string getSerialNumber()
  * @method string getResourceOwnerAccount()
+ * @method string getAclIds()
  * @method string getOwnerAccount()
  * @method string getAssociatedCcnId()
  * @method string getOwnerId()
+ * @method string getUnboundAclIds()
+ * @method string getPageNumber()
  * @method string getName()
+ * @method string getPageSize()
  * @method string getSmartAGId()
+ * @method string getInstanceType()
  * @method string getStatus()
  */
 class DescribeSmartAccessGatewaysRequest extends \RpcAcsRequest
@@ -57,71 +57,6 @@ class DescribeSmartAccessGatewaysRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $aclIds
-     *
-     * @return $this
-     */
-    public function setAclIds($aclIds)
-    {
-        $this->requestParameters['AclIds'] = $aclIds;
-        $this->queryParameters['AclIds'] = $aclIds;
-
-        return $this;
-    }
-
-    /**
-     * @param string $unboundAclIds
-     *
-     * @return $this
-     */
-    public function setUnboundAclIds($unboundAclIds)
-    {
-        $this->requestParameters['UnboundAclIds'] = $unboundAclIds;
-        $this->queryParameters['UnboundAclIds'] = $unboundAclIds;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param string $instanceType
-     *
-     * @return $this
-     */
-    public function setInstanceType($instanceType)
-    {
-        $this->requestParameters['InstanceType'] = $instanceType;
-        $this->queryParameters['InstanceType'] = $instanceType;
-
-        return $this;
-    }
-
-    /**
      * @param string $serialNumber
      *
      * @return $this
@@ -143,6 +78,19 @@ class DescribeSmartAccessGatewaysRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $aclIds
+     *
+     * @return $this
+     */
+    public function setAclIds($aclIds)
+    {
+        $this->requestParameters['AclIds'] = $aclIds;
+        $this->queryParameters['AclIds'] = $aclIds;
 
         return $this;
     }
@@ -187,6 +135,32 @@ class DescribeSmartAccessGatewaysRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $unboundAclIds
+     *
+     * @return $this
+     */
+    public function setUnboundAclIds($unboundAclIds)
+    {
+        $this->requestParameters['UnboundAclIds'] = $unboundAclIds;
+        $this->queryParameters['UnboundAclIds'] = $unboundAclIds;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
      * @param string $name
      *
      * @return $this
@@ -200,6 +174,19 @@ class DescribeSmartAccessGatewaysRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
      * @param string $smartAGId
      *
      * @return $this
@@ -208,6 +195,19 @@ class DescribeSmartAccessGatewaysRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SmartAGId'] = $smartAGId;
         $this->queryParameters['SmartAGId'] = $smartAGId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceType
+     *
+     * @return $this
+     */
+    public function setInstanceType($instanceType)
+    {
+        $this->requestParameters['InstanceType'] = $instanceType;
+        $this->queryParameters['InstanceType'] = $instanceType;
 
         return $this;
     }

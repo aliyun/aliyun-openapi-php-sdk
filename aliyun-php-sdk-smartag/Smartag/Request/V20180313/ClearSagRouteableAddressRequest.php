@@ -10,9 +10,9 @@ namespace Smartag\Request\V20180313;
  * @method string getaccess_key_id()
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
+ * @method string getSagId()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
- * @method string getSagId()
  */
 class ClearSagRouteableAddressRequest extends \RpcAcsRequest
 {
@@ -75,6 +75,19 @@ class ClearSagRouteableAddressRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $sagId
+     *
+     * @return $this
+     */
+    public function setSagId($sagId)
+    {
+        $this->requestParameters['SagId'] = $sagId;
+        $this->queryParameters['SagId'] = $sagId;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerAccount
      *
      * @return $this
@@ -96,19 +109,6 @@ class ClearSagRouteableAddressRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $sagId
-     *
-     * @return $this
-     */
-    public function setSagId($sagId)
-    {
-        $this->requestParameters['SagId'] = $sagId;
-        $this->queryParameters['SagId'] = $sagId;
 
         return $this;
     }
