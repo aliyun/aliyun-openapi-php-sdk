@@ -5,14 +5,13 @@ namespace BssOpenApi\Request\V20171214;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of QueryEnduserStatus
+ * Request of SetResellerUserStatus
  *
- * @method string getUid()
- * @method string getPrimaryAccount()
+ * @method string getOwnerId()
  * @method string getStatus()
  * @method string getBusinessType()
  */
-class QueryEnduserStatusRequest extends \RpcAcsRequest
+class SetResellerUserStatusRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,32 +27,19 @@ class QueryEnduserStatusRequest extends \RpcAcsRequest
         parent::__construct(
             'BssOpenApi',
             '2017-12-14',
-            'QueryEnduserStatus'
+            'SetResellerUserStatus'
         );
     }
 
     /**
-     * @param string $uid
+     * @param string $ownerId
      *
      * @return $this
      */
-    public function setUid($uid)
+    public function setOwnerId($ownerId)
     {
-        $this->requestParameters['Uid'] = $uid;
-        $this->queryParameters['Uid'] = $uid;
-
-        return $this;
-    }
-
-    /**
-     * @param string $primaryAccount
-     *
-     * @return $this
-     */
-    public function setPrimaryAccount($primaryAccount)
-    {
-        $this->requestParameters['PrimaryAccount'] = $primaryAccount;
-        $this->queryParameters['PrimaryAccount'] = $primaryAccount;
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

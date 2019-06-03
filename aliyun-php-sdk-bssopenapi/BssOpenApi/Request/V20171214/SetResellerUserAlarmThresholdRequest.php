@@ -5,12 +5,13 @@ namespace BssOpenApi\Request\V20171214;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of GetOrderDetail
+ * Request of SetResellerUserAlarmThreshold
  *
- * @method string getOrderId()
+ * @method string getAlarmType()
+ * @method string getAlarmThresholds()
  * @method string getOwnerId()
  */
-class GetOrderDetailRequest extends \RpcAcsRequest
+class SetResellerUserAlarmThresholdRequest extends \RpcAcsRequest
 {
 
     /**
@@ -26,19 +27,32 @@ class GetOrderDetailRequest extends \RpcAcsRequest
         parent::__construct(
             'BssOpenApi',
             '2017-12-14',
-            'GetOrderDetail'
+            'SetResellerUserAlarmThreshold'
         );
     }
 
     /**
-     * @param string $orderId
+     * @param string $alarmType
      *
      * @return $this
      */
-    public function setOrderId($orderId)
+    public function setAlarmType($alarmType)
     {
-        $this->requestParameters['OrderId'] = $orderId;
-        $this->queryParameters['OrderId'] = $orderId;
+        $this->requestParameters['AlarmType'] = $alarmType;
+        $this->queryParameters['AlarmType'] = $alarmType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $alarmThresholds
+     *
+     * @return $this
+     */
+    public function setAlarmThresholds($alarmThresholds)
+    {
+        $this->requestParameters['AlarmThresholds'] = $alarmThresholds;
+        $this->queryParameters['AlarmThresholds'] = $alarmThresholds;
 
         return $this;
     }

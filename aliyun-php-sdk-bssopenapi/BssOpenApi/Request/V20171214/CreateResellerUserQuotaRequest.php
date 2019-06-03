@@ -5,15 +5,14 @@ namespace BssOpenApi\Request\V20171214;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of CreateUserQuota
+ * Request of CreateResellerUserQuota
  *
- * @method string getUid()
  * @method string getAmount()
  * @method string getOutBizId()
  * @method string getCurrency()
- * @method string getBid()
+ * @method string getOwnerId()
  */
-class CreateUserQuotaRequest extends \RpcAcsRequest
+class CreateResellerUserQuotaRequest extends \RpcAcsRequest
 {
 
     /**
@@ -29,21 +28,8 @@ class CreateUserQuotaRequest extends \RpcAcsRequest
         parent::__construct(
             'BssOpenApi',
             '2017-12-14',
-            'CreateUserQuota'
+            'CreateResellerUserQuota'
         );
-    }
-
-    /**
-     * @param string $uid
-     *
-     * @return $this
-     */
-    public function setUid($uid)
-    {
-        $this->requestParameters['Uid'] = $uid;
-        $this->queryParameters['Uid'] = $uid;
-
-        return $this;
     }
 
     /**
@@ -86,14 +72,14 @@ class CreateUserQuotaRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $bid
+     * @param string $ownerId
      *
      * @return $this
      */
-    public function setBid($bid)
+    public function setOwnerId($ownerId)
     {
-        $this->requestParameters['Bid'] = $bid;
-        $this->queryParameters['Bid'] = $bid;
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

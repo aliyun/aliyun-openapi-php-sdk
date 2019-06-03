@@ -5,12 +5,12 @@ namespace BssOpenApi\Request\V20171214;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of GetOrderDetail
+ * Request of QueryResellerAvailableQuota
  *
- * @method string getOrderId()
+ * @method string getItemCodes()
  * @method string getOwnerId()
  */
-class GetOrderDetailRequest extends \RpcAcsRequest
+class QueryResellerAvailableQuotaRequest extends \RpcAcsRequest
 {
 
     /**
@@ -26,19 +26,19 @@ class GetOrderDetailRequest extends \RpcAcsRequest
         parent::__construct(
             'BssOpenApi',
             '2017-12-14',
-            'GetOrderDetail'
+            'QueryResellerAvailableQuota'
         );
     }
 
     /**
-     * @param string $orderId
+     * @param string $itemCodes
      *
      * @return $this
      */
-    public function setOrderId($orderId)
+    public function setItemCodes($itemCodes)
     {
-        $this->requestParameters['OrderId'] = $orderId;
-        $this->queryParameters['OrderId'] = $orderId;
+        $this->requestParameters['ItemCodes'] = $itemCodes;
+        $this->queryParameters['ItemCodes'] = $itemCodes;
 
         return $this;
     }
