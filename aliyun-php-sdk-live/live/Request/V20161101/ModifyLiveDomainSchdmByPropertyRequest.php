@@ -3,13 +3,15 @@
 namespace live\Request\V20161101;
 
 /**
- * Request of DescribeLiveMixNotifyConfig
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * @method string getSecurityToken()
+ * Request of ModifyLiveDomainSchdmByProperty
+ *
+ * @method string getProperty()
  * @method string getDomainName()
  * @method string getOwnerId()
  */
-class DescribeLiveMixNotifyConfigRequest extends \RpcAcsRequest
+class ModifyLiveDomainSchdmByPropertyRequest extends \RpcAcsRequest
 {
 
     /**
@@ -25,20 +27,20 @@ class DescribeLiveMixNotifyConfigRequest extends \RpcAcsRequest
         parent::__construct(
             'live',
             '2016-11-01',
-            'DescribeLiveMixNotifyConfig',
+            'ModifyLiveDomainSchdmByProperty',
             'live'
         );
     }
 
     /**
-     * @param string $securityToken
+     * @param string $property
      *
      * @return $this
      */
-    public function setSecurityToken($securityToken)
+    public function setProperty($property)
     {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
+        $this->requestParameters['Property'] = $property;
+        $this->queryParameters['Property'] = $property;
 
         return $this;
     }

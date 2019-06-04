@@ -3,6 +3,8 @@
 namespace live\Request\V20161101;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of SetCasterSceneConfig
  *
  * @method array getComponentIds()
@@ -33,14 +35,14 @@ class SetCasterSceneConfigRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $componentIds
+     * @param array $componentId
      *
      * @return $this
      */
-    public function setComponentIds(array $componentIds)
+    public function setComponentIds(array $componentId)
     {
-        $this->requestParameters['ComponentIds'] = $componentIds;
-        foreach ($componentIds as $i => $iValue) {
+        $this->requestParameters['ComponentIds'] = $componentId;
+        foreach ($componentId as $i => $iValue) {
             $this->queryParameters['ComponentId.' . ($i + 1)] = $iValue;
         }
 

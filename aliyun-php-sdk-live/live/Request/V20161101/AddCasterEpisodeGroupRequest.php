@@ -3,6 +3,8 @@
 namespace live\Request\V20161101;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of AddCasterEpisodeGroup
  *
  * @method string getSideOutputUrl()
@@ -49,16 +51,16 @@ class AddCasterEpisodeGroupRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $items
+     * @param array $item
      *
      * @return $this
      */
-    public function setItems(array $items)
+    public function setItems(array $item)
     {
-        $this->requestParameters['Items'] = $items;
-        foreach ($items as $i => $iValue) {
-            $this->queryParameters['Item.' . ($i + 1) . '.VodUrl'] = $items[$i]['VodUrl'];
-            $this->queryParameters['Item.' . ($i + 1) . '.ItemName'] = $items[$i]['ItemName'];
+        $this->requestParameters['Items'] = $item;
+        foreach ($item as $depth1 => $depth1Value) {
+            $this->queryParameters['Item.' . ($depth1 + 1) . '.VodUrl'] = $depth1Value['VodUrl'];
+            $this->queryParameters['Item.' . ($depth1 + 1) . '.ItemName'] = $depth1Value['ItemName'];
         }
 
         return $this;

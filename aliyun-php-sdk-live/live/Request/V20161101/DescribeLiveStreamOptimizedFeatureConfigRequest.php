@@ -3,14 +3,15 @@
 namespace live\Request\V20161101;
 
 /**
- * Request of UpdateLiveMixNotifyConfig
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * @method string getSecurityToken()
+ * Request of DescribeLiveStreamOptimizedFeatureConfig
+ *
+ * @method string getConfigName()
  * @method string getDomainName()
- * @method string getNotifyUrl()
  * @method string getOwnerId()
  */
-class UpdateLiveMixNotifyConfigRequest extends \RpcAcsRequest
+class DescribeLiveStreamOptimizedFeatureConfigRequest extends \RpcAcsRequest
 {
 
     /**
@@ -26,20 +27,20 @@ class UpdateLiveMixNotifyConfigRequest extends \RpcAcsRequest
         parent::__construct(
             'live',
             '2016-11-01',
-            'UpdateLiveMixNotifyConfig',
+            'DescribeLiveStreamOptimizedFeatureConfig',
             'live'
         );
     }
 
     /**
-     * @param string $securityToken
+     * @param string $configName
      *
      * @return $this
      */
-    public function setSecurityToken($securityToken)
+    public function setConfigName($configName)
     {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
+        $this->requestParameters['ConfigName'] = $configName;
+        $this->queryParameters['ConfigName'] = $configName;
 
         return $this;
     }
@@ -53,19 +54,6 @@ class UpdateLiveMixNotifyConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DomainName'] = $domainName;
         $this->queryParameters['DomainName'] = $domainName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $notifyUrl
-     *
-     * @return $this
-     */
-    public function setNotifyUrl($notifyUrl)
-    {
-        $this->requestParameters['NotifyUrl'] = $notifyUrl;
-        $this->queryParameters['NotifyUrl'] = $notifyUrl;
 
         return $this;
     }

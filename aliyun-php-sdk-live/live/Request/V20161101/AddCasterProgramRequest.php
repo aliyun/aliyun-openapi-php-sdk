@@ -3,6 +3,8 @@
 namespace live\Request\V20161101;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of AddCasterProgram
  *
  * @method string getCasterId()
@@ -44,23 +46,23 @@ class AddCasterProgramRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $episodes
+     * @param array $episode
      *
      * @return $this
      */
-    public function setEpisodes(array $episodes)
+    public function setEpisodes(array $episode)
     {
-        $this->requestParameters['Episodes'] = $episodes;
-        foreach ($episodes as $i => $iValue) {
-            $this->queryParameters['Episode.' . ($i + 1) . '.ResourceId'] = $episodes[$i]['ResourceId'];
-            foreach ($episodes[$i]['ComponentIds'] as $j => $jValue) {
-                $this->queryParameters['Episode.' . ($i + 1) . '.ComponentId.' . ($j + 1)] = $jValue;
+        $this->requestParameters['Episodes'] = $episode;
+        foreach ($episode as $depth1 => $depth1Value) {
+            $this->queryParameters['Episode.' . ($depth1 + 1) . '.ResourceId'] = $depth1Value['ResourceId'];
+            foreach ($depth1Value['ComponentId'] as $i => $iValue) {
+                $this->queryParameters['Episode.' . ($depth1 + 1) . '.ComponentId.' . ($i + 1)] = $iValue;
             }
-            $this->queryParameters['Episode.' . ($i + 1) . '.SwitchType'] = $episodes[$i]['SwitchType'];
-            $this->queryParameters['Episode.' . ($i + 1) . '.EpisodeType'] = $episodes[$i]['EpisodeType'];
-            $this->queryParameters['Episode.' . ($i + 1) . '.EpisodeName'] = $episodes[$i]['EpisodeName'];
-            $this->queryParameters['Episode.' . ($i + 1) . '.EndTime'] = $episodes[$i]['EndTime'];
-            $this->queryParameters['Episode.' . ($i + 1) . '.StartTime'] = $episodes[$i]['StartTime'];
+            $this->queryParameters['Episode.' . ($depth1 + 1) . '.SwitchType'] = $depth1Value['SwitchType'];
+            $this->queryParameters['Episode.' . ($depth1 + 1) . '.EpisodeType'] = $depth1Value['EpisodeType'];
+            $this->queryParameters['Episode.' . ($depth1 + 1) . '.EpisodeName'] = $depth1Value['EpisodeName'];
+            $this->queryParameters['Episode.' . ($depth1 + 1) . '.EndTime'] = $depth1Value['EndTime'];
+            $this->queryParameters['Episode.' . ($depth1 + 1) . '.StartTime'] = $depth1Value['StartTime'];
         }
 
         return $this;

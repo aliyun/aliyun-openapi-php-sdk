@@ -3,11 +3,12 @@
 namespace live\Request\V20161101;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeLiveStreamOnlineUserNum
  *
  * @method string getAppName()
  * @method string getSecurityToken()
- * @method string getHlsSwitch()
  * @method string getDomainName()
  * @method string getEndTime()
  * @method string getStartTime()
@@ -57,19 +58,6 @@ class DescribeLiveStreamOnlineUserNumRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $hlsSwitch
-     *
-     * @return $this
-     */
-    public function setHlsSwitch($hlsSwitch)
-    {
-        $this->requestParameters['HlsSwitch'] = $hlsSwitch;
-        $this->queryParameters['HlsSwitch'] = $hlsSwitch;
 
         return $this;
     }

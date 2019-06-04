@@ -3,6 +3,8 @@
 namespace live\Request\V20161101;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeLiveDomainTranscodeData
  *
  * @method string getDomainName()

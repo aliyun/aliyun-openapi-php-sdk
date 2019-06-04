@@ -3,13 +3,14 @@
 namespace live\Request\V20161101;
 
 /**
- * Request of DeleteLiveMixNotifyConfig
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * @method string getSecurityToken()
+ * Request of DescribeLiveStreamDelayConfig
+ *
  * @method string getDomainName()
  * @method string getOwnerId()
  */
-class DeleteLiveMixNotifyConfigRequest extends \RpcAcsRequest
+class DescribeLiveStreamDelayConfigRequest extends \RpcAcsRequest
 {
 
     /**
@@ -25,22 +26,9 @@ class DeleteLiveMixNotifyConfigRequest extends \RpcAcsRequest
         parent::__construct(
             'live',
             '2016-11-01',
-            'DeleteLiveMixNotifyConfig',
+            'DescribeLiveStreamDelayConfig',
             'live'
         );
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
     }
 
     /**

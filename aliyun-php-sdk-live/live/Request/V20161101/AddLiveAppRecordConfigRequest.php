@@ -3,17 +3,19 @@
 namespace live\Request\V20161101;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of AddLiveAppRecordConfig
  *
  * @method string getOssBucket()
+ * @method string getAppName()
+ * @method string getSecurityToken()
+ * @method array getRecordFormats()
  * @method string getDomainName()
  * @method string getOssEndpoint()
  * @method string getEndTime()
  * @method string getStartTime()
  * @method string getOwnerId()
- * @method string getAppName()
- * @method string getSecurityToken()
- * @method array getRecordFormats()
  * @method string getOnDemand()
  * @method string getStreamName()
  */
@@ -47,6 +49,50 @@ class AddLiveAppRecordConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OssBucket'] = $ossBucket;
         $this->queryParameters['OssBucket'] = $ossBucket;
+
+        return $this;
+    }
+
+    /**
+     * @param string $appName
+     *
+     * @return $this
+     */
+    public function setAppName($appName)
+    {
+        $this->requestParameters['AppName'] = $appName;
+        $this->queryParameters['AppName'] = $appName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param array $recordFormat
+     *
+     * @return $this
+     */
+    public function setRecordFormats(array $recordFormat)
+    {
+        $this->requestParameters['RecordFormats'] = $recordFormat;
+        foreach ($recordFormat as $depth1 => $depth1Value) {
+            $this->queryParameters['RecordFormat.' . ($depth1 + 1) . '.SliceOssObjectPrefix'] = $depth1Value['SliceOssObjectPrefix'];
+            $this->queryParameters['RecordFormat.' . ($depth1 + 1) . '.Format'] = $depth1Value['Format'];
+            $this->queryParameters['RecordFormat.' . ($depth1 + 1) . '.OssObjectPrefix'] = $depth1Value['OssObjectPrefix'];
+            $this->queryParameters['RecordFormat.' . ($depth1 + 1) . '.CycleDuration'] = $depth1Value['CycleDuration'];
+        }
 
         return $this;
     }
@@ -112,50 +158,6 @@ class AddLiveAppRecordConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $appName
-     *
-     * @return $this
-     */
-    public function setAppName($appName)
-    {
-        $this->requestParameters['AppName'] = $appName;
-        $this->queryParameters['AppName'] = $appName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
-     * @param array $recordFormats
-     *
-     * @return $this
-     */
-    public function setRecordFormats(array $recordFormats)
-    {
-        $this->requestParameters['RecordFormats'] = $recordFormats;
-        foreach ($recordFormats as $i => $iValue) {
-            $this->queryParameters['RecordFormat.' . ($i + 1) . '.SliceOssObjectPrefix'] = $recordFormats[$i]['SliceOssObjectPrefix'];
-            $this->queryParameters['RecordFormat.' . ($i + 1) . '.Format'] = $recordFormats[$i]['Format'];
-            $this->queryParameters['RecordFormat.' . ($i + 1) . '.OssObjectPrefix'] = $recordFormats[$i]['OssObjectPrefix'];
-            $this->queryParameters['RecordFormat.' . ($i + 1) . '.CycleDuration'] = $recordFormats[$i]['CycleDuration'];
-        }
 
         return $this;
     }

@@ -3,11 +3,13 @@
 namespace live\Request\V20161101;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeLiveLazyPullStreamConfig
  *
+ * @method string getAppName()
  * @method string getDomainName()
  * @method string getOwnerId()
- * @method string getAppName()
  */
 class DescribeLiveLazyPullStreamConfigRequest extends \RpcAcsRequest
 {
@@ -28,6 +30,19 @@ class DescribeLiveLazyPullStreamConfigRequest extends \RpcAcsRequest
             'DescribeLiveLazyPullStreamConfig',
             'live'
         );
+    }
+
+    /**
+     * @param string $appName
+     *
+     * @return $this
+     */
+    public function setAppName($appName)
+    {
+        $this->requestParameters['AppName'] = $appName;
+        $this->queryParameters['AppName'] = $appName;
+
+        return $this;
     }
 
     /**
@@ -52,19 +67,6 @@ class DescribeLiveLazyPullStreamConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $appName
-     *
-     * @return $this
-     */
-    public function setAppName($appName)
-    {
-        $this->requestParameters['AppName'] = $appName;
-        $this->queryParameters['AppName'] = $appName;
 
         return $this;
     }

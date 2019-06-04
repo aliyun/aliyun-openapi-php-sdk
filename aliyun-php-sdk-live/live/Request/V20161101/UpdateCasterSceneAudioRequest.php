@@ -3,6 +3,8 @@
 namespace live\Request\V20161101;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of UpdateCasterSceneAudio
  *
  * @method array getAudioLayers()
@@ -34,17 +36,17 @@ class UpdateCasterSceneAudioRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $audioLayers
+     * @param array $audioLayer
      *
      * @return $this
      */
-    public function setAudioLayers(array $audioLayers)
+    public function setAudioLayers(array $audioLayer)
     {
-        $this->requestParameters['AudioLayers'] = $audioLayers;
-        foreach ($audioLayers as $i => $iValue) {
-            $this->queryParameters['AudioLayer.' . ($i + 1) . '.FixedDelayDuration'] = $audioLayers[$i]['FixedDelayDuration'];
-            $this->queryParameters['AudioLayer.' . ($i + 1) . '.VolumeRate'] = $audioLayers[$i]['VolumeRate'];
-            $this->queryParameters['AudioLayer.' . ($i + 1) . '.ValidChannel'] = $audioLayers[$i]['ValidChannel'];
+        $this->requestParameters['AudioLayers'] = $audioLayer;
+        foreach ($audioLayer as $depth1 => $depth1Value) {
+            $this->queryParameters['AudioLayer.' . ($depth1 + 1) . '.FixedDelayDuration'] = $depth1Value['FixedDelayDuration'];
+            $this->queryParameters['AudioLayer.' . ($depth1 + 1) . '.VolumeRate'] = $depth1Value['VolumeRate'];
+            $this->queryParameters['AudioLayer.' . ($depth1 + 1) . '.ValidChannel'] = $depth1Value['ValidChannel'];
         }
 
         return $this;
@@ -77,14 +79,14 @@ class UpdateCasterSceneAudioRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $mixLists
+     * @param array $mixList
      *
      * @return $this
      */
-    public function setMixLists(array $mixLists)
+    public function setMixLists(array $mixList)
     {
-        $this->requestParameters['MixLists'] = $mixLists;
-        foreach ($mixLists as $i => $iValue) {
+        $this->requestParameters['MixLists'] = $mixList;
+        foreach ($mixList as $i => $iValue) {
             $this->queryParameters['MixList.' . ($i + 1)] = $iValue;
         }
 

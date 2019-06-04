@@ -3,8 +3,11 @@
 namespace live\Request\V20161101;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of SetLiveLazyPullStreamInfoConfig
  *
+ * @method string getPullArgs()
  * @method string getAppName()
  * @method string getPullAuthKey()
  * @method string getPullAuthType()
@@ -33,6 +36,19 @@ class SetLiveLazyPullStreamInfoConfigRequest extends \RpcAcsRequest
             'SetLiveLazyPullStreamInfoConfig',
             'live'
         );
+    }
+
+    /**
+     * @param string $pullArgs
+     *
+     * @return $this
+     */
+    public function setPullArgs($pullArgs)
+    {
+        $this->requestParameters['PullArgs'] = $pullArgs;
+        $this->queryParameters['PullArgs'] = $pullArgs;
+
+        return $this;
     }
 
     /**

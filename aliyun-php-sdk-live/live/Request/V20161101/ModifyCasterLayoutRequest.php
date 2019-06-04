@@ -3,6 +3,8 @@
 namespace live\Request\V20161101;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of ModifyCasterLayout
  *
  * @method array getBlendLists()
@@ -35,14 +37,14 @@ class ModifyCasterLayoutRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $blendLists
+     * @param array $blendList
      *
      * @return $this
      */
-    public function setBlendLists(array $blendLists)
+    public function setBlendLists(array $blendList)
     {
-        $this->requestParameters['BlendLists'] = $blendLists;
-        foreach ($blendLists as $i => $iValue) {
+        $this->requestParameters['BlendLists'] = $blendList;
+        foreach ($blendList as $i => $iValue) {
             $this->queryParameters['BlendList.' . ($i + 1)] = $iValue;
         }
 
@@ -50,39 +52,39 @@ class ModifyCasterLayoutRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $audioLayers
+     * @param array $audioLayer
      *
      * @return $this
      */
-    public function setAudioLayers(array $audioLayers)
+    public function setAudioLayers(array $audioLayer)
     {
-        $this->requestParameters['AudioLayers'] = $audioLayers;
-        foreach ($audioLayers as $i => $iValue) {
-            $this->queryParameters['AudioLayer.' . ($i + 1) . '.FixedDelayDuration'] = $audioLayers[$i]['FixedDelayDuration'];
-            $this->queryParameters['AudioLayer.' . ($i + 1) . '.VolumeRate'] = $audioLayers[$i]['VolumeRate'];
-            $this->queryParameters['AudioLayer.' . ($i + 1) . '.ValidChannel'] = $audioLayers[$i]['ValidChannel'];
+        $this->requestParameters['AudioLayers'] = $audioLayer;
+        foreach ($audioLayer as $depth1 => $depth1Value) {
+            $this->queryParameters['AudioLayer.' . ($depth1 + 1) . '.FixedDelayDuration'] = $depth1Value['FixedDelayDuration'];
+            $this->queryParameters['AudioLayer.' . ($depth1 + 1) . '.VolumeRate'] = $depth1Value['VolumeRate'];
+            $this->queryParameters['AudioLayer.' . ($depth1 + 1) . '.ValidChannel'] = $depth1Value['ValidChannel'];
         }
 
         return $this;
     }
 
     /**
-     * @param array $videoLayers
+     * @param array $videoLayer
      *
      * @return $this
      */
-    public function setVideoLayers(array $videoLayers)
+    public function setVideoLayers(array $videoLayer)
     {
-        $this->requestParameters['VideoLayers'] = $videoLayers;
-        foreach ($videoLayers as $i => $iValue) {
-            $this->queryParameters['VideoLayer.' . ($i + 1) . '.FillMode'] = $videoLayers[$i]['FillMode'];
-            $this->queryParameters['VideoLayer.' . ($i + 1) . '.WidthNormalized'] = $videoLayers[$i]['WidthNormalized'];
-            $this->queryParameters['VideoLayer.' . ($i + 1) . '.FixedDelayDuration'] = $videoLayers[$i]['FixedDelayDuration'];
-            $this->queryParameters['VideoLayer.' . ($i + 1) . '.PositionRefer'] = $videoLayers[$i]['PositionRefer'];
-            foreach ($videoLayers[$i]['PositionNormalizeds'] as $j => $jValue) {
-                $this->queryParameters['VideoLayer.' . ($i + 1) . '.PositionNormalized.' . ($j + 1)] = $jValue;
+        $this->requestParameters['VideoLayers'] = $videoLayer;
+        foreach ($videoLayer as $depth1 => $depth1Value) {
+            $this->queryParameters['VideoLayer.' . ($depth1 + 1) . '.FillMode'] = $depth1Value['FillMode'];
+            $this->queryParameters['VideoLayer.' . ($depth1 + 1) . '.WidthNormalized'] = $depth1Value['WidthNormalized'];
+            $this->queryParameters['VideoLayer.' . ($depth1 + 1) . '.FixedDelayDuration'] = $depth1Value['FixedDelayDuration'];
+            $this->queryParameters['VideoLayer.' . ($depth1 + 1) . '.PositionRefer'] = $depth1Value['PositionRefer'];
+            foreach ($depth1Value['PositionNormalized'] as $i => $iValue) {
+                $this->queryParameters['VideoLayer.' . ($depth1 + 1) . '.PositionNormalized.' . ($i + 1)] = $iValue;
             }
-            $this->queryParameters['VideoLayer.' . ($i + 1) . '.HeightNormalized'] = $videoLayers[$i]['HeightNormalized'];
+            $this->queryParameters['VideoLayer.' . ($depth1 + 1) . '.HeightNormalized'] = $depth1Value['HeightNormalized'];
         }
 
         return $this;
@@ -102,14 +104,14 @@ class ModifyCasterLayoutRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $mixLists
+     * @param array $mixList
      *
      * @return $this
      */
-    public function setMixLists(array $mixLists)
+    public function setMixLists(array $mixList)
     {
-        $this->requestParameters['MixLists'] = $mixLists;
-        foreach ($mixLists as $i => $iValue) {
+        $this->requestParameters['MixLists'] = $mixList;
+        foreach ($mixList as $i => $iValue) {
             $this->queryParameters['MixList.' . ($i + 1)] = $iValue;
         }
 

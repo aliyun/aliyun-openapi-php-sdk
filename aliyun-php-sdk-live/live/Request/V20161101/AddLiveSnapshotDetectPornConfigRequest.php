@@ -3,6 +3,8 @@
 namespace live\Request\V20161101;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of AddLiveSnapshotDetectPornConfig
  *
  * @method string getOssBucket()
@@ -141,14 +143,14 @@ class AddLiveSnapshotDetectPornConfigRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $scenes
+     * @param array $scene
      *
      * @return $this
      */
-    public function setScenes(array $scenes)
+    public function setScenes(array $scene)
     {
-        $this->requestParameters['Scenes'] = $scenes;
-        foreach ($scenes as $i => $iValue) {
+        $this->requestParameters['Scenes'] = $scene;
+        foreach ($scene as $i => $iValue) {
             $this->queryParameters['Scene.' . ($i + 1)] = $iValue;
         }
 

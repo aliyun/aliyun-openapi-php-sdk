@@ -3,8 +3,11 @@
 namespace live\Request\V20161101;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DeleteCaster
  *
+ * @method string getSecurityToken()
  * @method string getCasterId()
  * @method string getOwnerId()
  */
@@ -27,6 +30,19 @@ class DeleteCasterRequest extends \RpcAcsRequest
             'DeleteCaster',
             'live'
         );
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
     }
 
     /**
