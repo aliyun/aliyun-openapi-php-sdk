@@ -5,15 +5,15 @@ namespace Dbs\Request\V20190306;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeIncrementBackupList
+ * Request of RenewBackupPlan
  *
+ * @method string getPeriod()
  * @method string getClientToken()
- * @method string getPageSize()
  * @method string getBackupPlanId()
- * @method string getPageNum()
  * @method string getOwnerId()
+ * @method string getUsedTime()
  */
-class DescribeIncrementBackupListRequest extends \RpcAcsRequest
+class RenewBackupPlanRequest extends \RpcAcsRequest
 {
 
     /**
@@ -29,9 +29,22 @@ class DescribeIncrementBackupListRequest extends \RpcAcsRequest
         parent::__construct(
             'Dbs',
             '2019-03-06',
-            'DescribeIncrementBackupList',
+            'RenewBackupPlan',
             'cbs'
         );
+    }
+
+    /**
+     * @param string $period
+     *
+     * @return $this
+     */
+    public function setPeriod($period)
+    {
+        $this->requestParameters['Period'] = $period;
+        $this->queryParameters['Period'] = $period;
+
+        return $this;
     }
 
     /**
@@ -43,19 +56,6 @@ class DescribeIncrementBackupListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ClientToken'] = $clientToken;
         $this->queryParameters['ClientToken'] = $clientToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }
@@ -74,19 +74,6 @@ class DescribeIncrementBackupListRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageNum
-     *
-     * @return $this
-     */
-    public function setPageNum($pageNum)
-    {
-        $this->requestParameters['PageNum'] = $pageNum;
-        $this->queryParameters['PageNum'] = $pageNum;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -95,6 +82,19 @@ class DescribeIncrementBackupListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $usedTime
+     *
+     * @return $this
+     */
+    public function setUsedTime($usedTime)
+    {
+        $this->requestParameters['UsedTime'] = $usedTime;
+        $this->queryParameters['UsedTime'] = $usedTime;
 
         return $this;
     }
