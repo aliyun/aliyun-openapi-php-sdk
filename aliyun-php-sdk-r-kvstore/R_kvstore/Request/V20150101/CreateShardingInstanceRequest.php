@@ -5,21 +5,22 @@ namespace R_kvstore\Request\V20150101;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of CreateInstance
+ * Request of CreateShardingInstance
  *
+ * @method string getShardStorageQuantity()
  * @method string getResourceOwnerId()
  * @method string getNodeType()
  * @method string getCouponNo()
  * @method string getNetworkType()
  * @method string getEngineVersion()
- * @method string getAutoUseCoupon()
  * @method string getInstanceClass()
  * @method string getCapacity()
  * @method string getPassword()
+ * @method string getShardReplicaClass()
  * @method string getSecurityToken()
+ * @method string getIncrementalBackupMode()
  * @method string getInstanceType()
  * @method string getBusinessInfo()
- * @method string getAutoRenewPeriod()
  * @method string getPeriod()
  * @method string getResourceOwnerAccount()
  * @method string getSrcDBInstanceId()
@@ -27,16 +28,22 @@ namespace R_kvstore\Request\V20150101;
  * @method string getBackupId()
  * @method string getOwnerId()
  * @method string getToken()
+ * @method string getShardQuantity()
  * @method string getVSwitchId()
  * @method string getPrivateIpAddress()
+ * @method string getSecurityIPList()
  * @method string getInstanceName()
- * @method string getAutoRenew()
+ * @method string getShardReplicaQuantity()
+ * @method string getArchitectureType()
  * @method string getVpcId()
+ * @method string getRedisManagerClass()
  * @method string getZoneId()
  * @method string getChargeType()
+ * @method string getProxyQuantity()
  * @method string getConfig()
+ * @method string getProxyMode()
  */
-class CreateInstanceRequest extends \RpcAcsRequest
+class CreateShardingInstanceRequest extends \RpcAcsRequest
 {
 
     /**
@@ -52,9 +59,22 @@ class CreateInstanceRequest extends \RpcAcsRequest
         parent::__construct(
             'R-kvstore',
             '2015-01-01',
-            'CreateInstance',
+            'CreateShardingInstance',
             'redisa'
         );
+    }
+
+    /**
+     * @param string $shardStorageQuantity
+     *
+     * @return $this
+     */
+    public function setShardStorageQuantity($shardStorageQuantity)
+    {
+        $this->requestParameters['ShardStorageQuantity'] = $shardStorageQuantity;
+        $this->queryParameters['ShardStorageQuantity'] = $shardStorageQuantity;
+
+        return $this;
     }
 
     /**
@@ -123,19 +143,6 @@ class CreateInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $autoUseCoupon
-     *
-     * @return $this
-     */
-    public function setAutoUseCoupon($autoUseCoupon)
-    {
-        $this->requestParameters['AutoUseCoupon'] = $autoUseCoupon;
-        $this->queryParameters['AutoUseCoupon'] = $autoUseCoupon;
-
-        return $this;
-    }
-
-    /**
      * @param string $instanceClass
      *
      * @return $this
@@ -175,6 +182,19 @@ class CreateInstanceRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $shardReplicaClass
+     *
+     * @return $this
+     */
+    public function setShardReplicaClass($shardReplicaClass)
+    {
+        $this->requestParameters['ShardReplicaClass'] = $shardReplicaClass;
+        $this->queryParameters['ShardReplicaClass'] = $shardReplicaClass;
+
+        return $this;
+    }
+
+    /**
      * @param string $securityToken
      *
      * @return $this
@@ -183,6 +203,19 @@ class CreateInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $incrementalBackupMode
+     *
+     * @return $this
+     */
+    public function setIncrementalBackupMode($incrementalBackupMode)
+    {
+        $this->requestParameters['IncrementalBackupMode'] = $incrementalBackupMode;
+        $this->queryParameters['IncrementalBackupMode'] = $incrementalBackupMode;
 
         return $this;
     }
@@ -209,19 +242,6 @@ class CreateInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['BusinessInfo'] = $businessInfo;
         $this->queryParameters['BusinessInfo'] = $businessInfo;
-
-        return $this;
-    }
-
-    /**
-     * @param string $autoRenewPeriod
-     *
-     * @return $this
-     */
-    public function setAutoRenewPeriod($autoRenewPeriod)
-    {
-        $this->requestParameters['AutoRenewPeriod'] = $autoRenewPeriod;
-        $this->queryParameters['AutoRenewPeriod'] = $autoRenewPeriod;
 
         return $this;
     }
@@ -318,6 +338,19 @@ class CreateInstanceRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $shardQuantity
+     *
+     * @return $this
+     */
+    public function setShardQuantity($shardQuantity)
+    {
+        $this->requestParameters['ShardQuantity'] = $shardQuantity;
+        $this->queryParameters['ShardQuantity'] = $shardQuantity;
+
+        return $this;
+    }
+
+    /**
      * @param string $vSwitchId
      *
      * @return $this
@@ -344,6 +377,19 @@ class CreateInstanceRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $securityIPList
+     *
+     * @return $this
+     */
+    public function setSecurityIPList($securityIPList)
+    {
+        $this->requestParameters['SecurityIPList'] = $securityIPList;
+        $this->queryParameters['SecurityIPList'] = $securityIPList;
+
+        return $this;
+    }
+
+    /**
      * @param string $instanceName
      *
      * @return $this
@@ -357,14 +403,27 @@ class CreateInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $autoRenew
+     * @param string $shardReplicaQuantity
      *
      * @return $this
      */
-    public function setAutoRenew($autoRenew)
+    public function setShardReplicaQuantity($shardReplicaQuantity)
     {
-        $this->requestParameters['AutoRenew'] = $autoRenew;
-        $this->queryParameters['AutoRenew'] = $autoRenew;
+        $this->requestParameters['ShardReplicaQuantity'] = $shardReplicaQuantity;
+        $this->queryParameters['ShardReplicaQuantity'] = $shardReplicaQuantity;
+
+        return $this;
+    }
+
+    /**
+     * @param string $architectureType
+     *
+     * @return $this
+     */
+    public function setArchitectureType($architectureType)
+    {
+        $this->requestParameters['ArchitectureType'] = $architectureType;
+        $this->queryParameters['ArchitectureType'] = $architectureType;
 
         return $this;
     }
@@ -378,6 +437,19 @@ class CreateInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['VpcId'] = $vpcId;
         $this->queryParameters['VpcId'] = $vpcId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $redisManagerClass
+     *
+     * @return $this
+     */
+    public function setRedisManagerClass($redisManagerClass)
+    {
+        $this->requestParameters['RedisManagerClass'] = $redisManagerClass;
+        $this->queryParameters['RedisManagerClass'] = $redisManagerClass;
 
         return $this;
     }
@@ -409,6 +481,19 @@ class CreateInstanceRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $proxyQuantity
+     *
+     * @return $this
+     */
+    public function setProxyQuantity($proxyQuantity)
+    {
+        $this->requestParameters['ProxyQuantity'] = $proxyQuantity;
+        $this->queryParameters['ProxyQuantity'] = $proxyQuantity;
+
+        return $this;
+    }
+
+    /**
      * @param string $config
      *
      * @return $this
@@ -417,6 +502,19 @@ class CreateInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Config'] = $config;
         $this->queryParameters['Config'] = $config;
+
+        return $this;
+    }
+
+    /**
+     * @param string $proxyMode
+     *
+     * @return $this
+     */
+    public function setProxyMode($proxyMode)
+    {
+        $this->requestParameters['ProxyMode'] = $proxyMode;
+        $this->queryParameters['ProxyMode'] = $proxyMode;
 
         return $this;
     }
