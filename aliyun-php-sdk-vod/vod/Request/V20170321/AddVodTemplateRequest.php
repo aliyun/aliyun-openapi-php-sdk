@@ -11,6 +11,7 @@ namespace vod\Request\V20170321;
  * @method string getResourceOwnerAccount()
  * @method string getTemplateConfig()
  * @method string getTemplateType()
+ * @method string getAppId()
  * @method string getName()
  * @method string getOwnerId()
  * @method string getSubTemplateType()
@@ -84,6 +85,19 @@ class AddVodTemplateRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TemplateType'] = $templateType;
         $this->queryParameters['TemplateType'] = $templateType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $appId
+     *
+     * @return $this
+     */
+    public function setAppId($appId)
+    {
+        $this->requestParameters['AppId'] = $appId;
+        $this->queryParameters['AppId'] = $appId;
 
         return $this;
     }

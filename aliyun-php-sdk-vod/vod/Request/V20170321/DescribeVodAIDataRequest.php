@@ -8,6 +8,7 @@ namespace vod\Request\V20170321;
  * Request of DescribeVodAIData
  *
  * @method string getStartTime()
+ * @method string getAIType()
  * @method string getEndTime()
  * @method string getOwnerId()
  * @method string getRegion()
@@ -42,6 +43,19 @@ class DescribeVodAIDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['StartTime'] = $startTime;
         $this->queryParameters['StartTime'] = $startTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $aIType
+     *
+     * @return $this
+     */
+    public function setAIType($aIType)
+    {
+        $this->requestParameters['AIType'] = $aIType;
+        $this->queryParameters['AIType'] = $aIType;
 
         return $this;
     }

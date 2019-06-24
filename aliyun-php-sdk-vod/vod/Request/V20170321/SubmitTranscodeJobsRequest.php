@@ -7,6 +7,7 @@ namespace vod\Request\V20170321;
  *
  * Request of SubmitTranscodeJobs
  *
+ * @method string getUserData()
  * @method string getResourceOwnerId()
  * @method string getTemplateGroupId()
  * @method string getResourceOwnerAccount()
@@ -36,6 +37,19 @@ class SubmitTranscodeJobsRequest extends \RpcAcsRequest
             'SubmitTranscodeJobs',
             'vod'
         );
+    }
+
+    /**
+     * @param string $userData
+     *
+     * @return $this
+     */
+    public function setUserData($userData)
+    {
+        $this->requestParameters['UserData'] = $userData;
+        $this->queryParameters['UserData'] = $userData;
+
+        return $this;
     }
 
     /**

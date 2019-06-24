@@ -13,6 +13,7 @@ namespace vod\Request\V20170321;
  * @method string getUploadMetadatas()
  * @method string getResourceOwnerAccount()
  * @method string getUploadURLs()
+ * @method string getAppId()
  * @method string getMessageCallback()
  * @method string getOwnerId()
  * @method string getPriority()
@@ -113,6 +114,19 @@ class UploadMediaByURLRequest extends \RpcAcsRequest
     {
         $this->requestParameters['UploadURLs'] = $uploadURLs;
         $this->queryParameters['UploadURLs'] = $uploadURLs;
+
+        return $this;
+    }
+
+    /**
+     * @param string $appId
+     *
+     * @return $this
+     */
+    public function setAppId($appId)
+    {
+        $this->requestParameters['AppId'] = $appId;
+        $this->queryParameters['AppId'] = $appId;
 
         return $this;
     }

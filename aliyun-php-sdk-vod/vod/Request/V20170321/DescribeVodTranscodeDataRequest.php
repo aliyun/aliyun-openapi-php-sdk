@@ -8,7 +8,9 @@ namespace vod\Request\V20170321;
  * Request of DescribeVodTranscodeData
  *
  * @method string getStartTime()
+ * @method string getStorage()
  * @method string getEndTime()
+ * @method string getSpecification()
  * @method string getOwnerId()
  * @method string getRegion()
  */
@@ -47,6 +49,19 @@ class DescribeVodTranscodeDataRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $storage
+     *
+     * @return $this
+     */
+    public function setStorage($storage)
+    {
+        $this->requestParameters['Storage'] = $storage;
+        $this->queryParameters['Storage'] = $storage;
+
+        return $this;
+    }
+
+    /**
      * @param string $endTime
      *
      * @return $this
@@ -55,6 +70,19 @@ class DescribeVodTranscodeDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['EndTime'] = $endTime;
         $this->queryParameters['EndTime'] = $endTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $specification
+     *
+     * @return $this
+     */
+    public function setSpecification($specification)
+    {
+        $this->requestParameters['Specification'] = $specification;
+        $this->queryParameters['Specification'] = $specification;
 
         return $this;
     }

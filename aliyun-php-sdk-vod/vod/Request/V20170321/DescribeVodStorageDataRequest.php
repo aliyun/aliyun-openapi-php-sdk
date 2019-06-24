@@ -8,6 +8,7 @@ namespace vod\Request\V20170321;
  * Request of DescribeVodStorageData
  *
  * @method string getStartTime()
+ * @method string getStorage()
  * @method string getStorageType()
  * @method string getEndTime()
  * @method string getOwnerId()
@@ -43,6 +44,19 @@ class DescribeVodStorageDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['StartTime'] = $startTime;
         $this->queryParameters['StartTime'] = $startTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $storage
+     *
+     * @return $this
+     */
+    public function setStorage($storage)
+    {
+        $this->requestParameters['Storage'] = $storage;
+        $this->queryParameters['Storage'] = $storage;
 
         return $this;
     }

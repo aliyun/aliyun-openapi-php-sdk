@@ -10,6 +10,7 @@ namespace vod\Request\V20170321;
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
  * @method string getTemplateType()
+ * @method string getAppId()
  * @method string getOwnerId()
  */
 class ListVodTemplateRequest extends \RpcAcsRequest
@@ -68,6 +69,19 @@ class ListVodTemplateRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TemplateType'] = $templateType;
         $this->queryParameters['TemplateType'] = $templateType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $appId
+     *
+     * @return $this
+     */
+    public function setAppId($appId)
+    {
+        $this->requestParameters['AppId'] = $appId;
+        $this->queryParameters['AppId'] = $appId;
 
         return $this;
     }
