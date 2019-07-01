@@ -7,6 +7,7 @@ namespace Ecs\Request\V20140526;
  *
  * Request of DescribePrice
  *
+ * @method string getDataDisk3PerformanceLevel()
  * @method string getDataDisk3Size()
  * @method string getResourceOwnerId()
  * @method string getImageId()
@@ -14,7 +15,9 @@ namespace Ecs\Request\V20140526;
  * @method string getIoOptimized()
  * @method string getInternetMaxBandwidthOut()
  * @method string getSystemDiskCategory()
+ * @method string getSystemDiskPerformanceLevel()
  * @method string getDataDisk4Category()
+ * @method string getDataDisk4PerformanceLevel()
  * @method string getDataDisk4Size()
  * @method string getPriceUnit()
  * @method string getInstanceType()
@@ -25,9 +28,11 @@ namespace Ecs\Request\V20140526;
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getDataDisk2Size()
+ * @method string getDataDisk1PerformanceLevel()
  * @method string getOwnerId()
  * @method string getResourceType()
  * @method string getDataDisk1Category()
+ * @method string getDataDisk2PerformanceLevel()
  * @method string getSystemDiskSize()
  * @method string getInternetChargeType()
  * @method string getInstanceNetworkType()
@@ -51,6 +56,19 @@ class DescribePriceRequest extends \RpcAcsRequest
             'DescribePrice',
             'ecs'
         );
+    }
+
+    /**
+     * @param string $dataDisk3PerformanceLevel
+     *
+     * @return $this
+     */
+    public function setDataDisk3PerformanceLevel($dataDisk3PerformanceLevel)
+    {
+        $this->requestParameters['DataDisk3PerformanceLevel'] = $dataDisk3PerformanceLevel;
+        $this->queryParameters['DataDisk.3.PerformanceLevel'] = $dataDisk3PerformanceLevel;
+
+        return $this;
     }
 
     /**
@@ -145,6 +163,19 @@ class DescribePriceRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $systemDiskPerformanceLevel
+     *
+     * @return $this
+     */
+    public function setSystemDiskPerformanceLevel($systemDiskPerformanceLevel)
+    {
+        $this->requestParameters['SystemDiskPerformanceLevel'] = $systemDiskPerformanceLevel;
+        $this->queryParameters['SystemDisk.PerformanceLevel'] = $systemDiskPerformanceLevel;
+
+        return $this;
+    }
+
+    /**
      * @param string $dataDisk4Category
      *
      * @return $this
@@ -153,6 +184,19 @@ class DescribePriceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DataDisk4Category'] = $dataDisk4Category;
         $this->queryParameters['DataDisk.4.Category'] = $dataDisk4Category;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dataDisk4PerformanceLevel
+     *
+     * @return $this
+     */
+    public function setDataDisk4PerformanceLevel($dataDisk4PerformanceLevel)
+    {
+        $this->requestParameters['DataDisk4PerformanceLevel'] = $dataDisk4PerformanceLevel;
+        $this->queryParameters['DataDisk.4.PerformanceLevel'] = $dataDisk4PerformanceLevel;
 
         return $this;
     }
@@ -288,6 +332,19 @@ class DescribePriceRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $dataDisk1PerformanceLevel
+     *
+     * @return $this
+     */
+    public function setDataDisk1PerformanceLevel($dataDisk1PerformanceLevel)
+    {
+        $this->requestParameters['DataDisk1PerformanceLevel'] = $dataDisk1PerformanceLevel;
+        $this->queryParameters['DataDisk.1.PerformanceLevel'] = $dataDisk1PerformanceLevel;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -322,6 +379,19 @@ class DescribePriceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DataDisk1Category'] = $dataDisk1Category;
         $this->queryParameters['DataDisk.1.Category'] = $dataDisk1Category;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dataDisk2PerformanceLevel
+     *
+     * @return $this
+     */
+    public function setDataDisk2PerformanceLevel($dataDisk2PerformanceLevel)
+    {
+        $this->requestParameters['DataDisk2PerformanceLevel'] = $dataDisk2PerformanceLevel;
+        $this->queryParameters['DataDisk.2.PerformanceLevel'] = $dataDisk2PerformanceLevel;
 
         return $this;
     }

@@ -14,6 +14,7 @@ namespace Ecs\Request\V20140526;
  * @method string getDescription()
  * @method string getDiskId()
  * @method string getSnapshotName()
+ * @method string getRetentionDays()
  * @method array getTags()
  * @method string getOwnerId()
  */
@@ -125,6 +126,19 @@ class CreateSnapshotRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SnapshotName'] = $snapshotName;
         $this->queryParameters['SnapshotName'] = $snapshotName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $retentionDays
+     *
+     * @return $this
+     */
+    public function setRetentionDays($retentionDays)
+    {
+        $this->requestParameters['RetentionDays'] = $retentionDays;
+        $this->queryParameters['RetentionDays'] = $retentionDays;
 
         return $this;
     }

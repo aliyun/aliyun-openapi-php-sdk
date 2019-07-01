@@ -47,6 +47,7 @@ namespace Ecs\Request\V20140526;
  * @method string getDescription()
  * @method string getSystemDiskCategory()
  * @method string getCapacityReservationId()
+ * @method string getSystemDiskPerformanceLevel()
  * @method string getUserData()
  * @method string getPasswordInherit()
  * @method string getInstanceType()
@@ -616,6 +617,19 @@ class RunInstancesRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $systemDiskPerformanceLevel
+     *
+     * @return $this
+     */
+    public function setSystemDiskPerformanceLevel($systemDiskPerformanceLevel)
+    {
+        $this->requestParameters['SystemDiskPerformanceLevel'] = $systemDiskPerformanceLevel;
+        $this->queryParameters['SystemDisk.PerformanceLevel'] = $systemDiskPerformanceLevel;
+
+        return $this;
+    }
+
+    /**
      * @param string $userData
      *
      * @return $this
@@ -862,6 +876,7 @@ class RunInstancesRequest extends \RpcAcsRequest
             $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Description'] = $depth1Value['Description'];
             $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Device'] = $depth1Value['Device'];
             $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.DeleteWithInstance'] = $depth1Value['DeleteWithInstance'];
+            $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.PerformanceLevel'] = $depth1Value['PerformanceLevel'];
         }
 
         return $this;

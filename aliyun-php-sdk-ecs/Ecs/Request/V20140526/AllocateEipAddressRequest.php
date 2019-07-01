@@ -7,6 +7,7 @@ namespace Ecs\Request\V20140526;
  *
  * Request of AllocateEipAddress
  *
+ * @method string getActivityId()
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
  * @method string getBandwidth()
@@ -35,6 +36,19 @@ class AllocateEipAddressRequest extends \RpcAcsRequest
             'AllocateEipAddress',
             'ecs'
         );
+    }
+
+    /**
+     * @param string $activityId
+     *
+     * @return $this
+     */
+    public function setActivityId($activityId)
+    {
+        $this->requestParameters['ActivityId'] = $activityId;
+        $this->queryParameters['ActivityId'] = $activityId;
+
+        return $this;
     }
 
     /**

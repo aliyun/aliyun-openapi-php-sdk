@@ -11,6 +11,7 @@ namespace Ecs\Request\V20140526;
  * @method string getSnapshotId()
  * @method string getResourceOwnerAccount()
  * @method string getClientToken()
+ * @method string getPerformanceLevel()
  * @method string getOwnerAccount()
  * @method string getDescription()
  * @method string getOwnerId()
@@ -95,6 +96,19 @@ class CreateDiskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ClientToken'] = $clientToken;
         $this->queryParameters['ClientToken'] = $clientToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $performanceLevel
+     *
+     * @return $this
+     */
+    public function setPerformanceLevel($performanceLevel)
+    {
+        $this->requestParameters['PerformanceLevel'] = $performanceLevel;
+        $this->queryParameters['PerformanceLevel'] = $performanceLevel;
 
         return $this;
     }

@@ -44,6 +44,7 @@ namespace Ecs\Request\V20140526;
  * @method string getDescription()
  * @method string getSystemDiskCategory()
  * @method string getCapacityReservationId()
+ * @method string getSystemDiskPerformanceLevel()
  * @method string getUserData()
  * @method string getPasswordInherit()
  * @method string getInstanceType()
@@ -569,6 +570,19 @@ class CreateInstanceRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $systemDiskPerformanceLevel
+     *
+     * @return $this
+     */
+    public function setSystemDiskPerformanceLevel($systemDiskPerformanceLevel)
+    {
+        $this->requestParameters['SystemDiskPerformanceLevel'] = $systemDiskPerformanceLevel;
+        $this->queryParameters['SystemDisk.PerformanceLevel'] = $systemDiskPerformanceLevel;
+
+        return $this;
+    }
+
+    /**
      * @param string $userData
      *
      * @return $this
@@ -780,6 +794,7 @@ class CreateInstanceRequest extends \RpcAcsRequest
             $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.SnapshotId'] = $depth1Value['SnapshotId'];
             $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Size'] = $depth1Value['Size'];
             $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Encrypted'] = $depth1Value['Encrypted'];
+            $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.PerformanceLevel'] = $depth1Value['PerformanceLevel'];
             $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Description'] = $depth1Value['Description'];
             $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Category'] = $depth1Value['Category'];
             $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.KMSKeyId'] = $depth1Value['KMSKeyId'];
