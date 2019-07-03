@@ -7,6 +7,7 @@ namespace Alidns\Request\V20150109;
  *
  * Request of DescribeGtmInstances
  *
+ * @method string getResourceGroupId()
  * @method string getUserClientIp()
  * @method string getPageSize()
  * @method string getLang()
@@ -30,8 +31,21 @@ class DescribeGtmInstancesRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'DescribeGtmInstances',
-            'alidns'
+            'Alidns'
         );
+    }
+
+    /**
+     * @param string $resourceGroupId
+     *
+     * @return $this
+     */
+    public function setResourceGroupId($resourceGroupId)
+    {
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
+
+        return $this;
     }
 
     /**

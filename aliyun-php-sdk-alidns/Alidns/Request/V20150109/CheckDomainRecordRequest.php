@@ -31,7 +31,7 @@ class CheckDomainRecordRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'CheckDomainRecord',
-            'alidns'
+            'Alidns'
         );
     }
 

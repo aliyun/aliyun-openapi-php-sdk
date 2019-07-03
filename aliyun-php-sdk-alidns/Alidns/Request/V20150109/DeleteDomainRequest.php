@@ -28,7 +28,7 @@ class DeleteDomainRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'DeleteDomain',
-            'alidns'
+            'Alidns'
         );
     }
 

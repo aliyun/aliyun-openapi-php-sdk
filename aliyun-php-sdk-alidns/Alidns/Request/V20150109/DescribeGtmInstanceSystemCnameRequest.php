@@ -5,13 +5,13 @@ namespace Alidns\Request\V20150109;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ModifyHichinaDomainDNS
+ * Request of DescribeGtmInstanceSystemCname
  *
+ * @method string getInstanceId()
  * @method string getUserClientIp()
- * @method string getDomainName()
  * @method string getLang()
  */
-class ModifyHichinaDomainDNSRequest extends \RpcAcsRequest
+class DescribeGtmInstanceSystemCnameRequest extends \RpcAcsRequest
 {
 
     /**
@@ -27,9 +27,22 @@ class ModifyHichinaDomainDNSRequest extends \RpcAcsRequest
         parent::__construct(
             'Alidns',
             '2015-01-09',
-            'ModifyHichinaDomainDNS',
+            'DescribeGtmInstanceSystemCname',
             'Alidns'
         );
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
     }
 
     /**
@@ -41,19 +54,6 @@ class ModifyHichinaDomainDNSRequest extends \RpcAcsRequest
     {
         $this->requestParameters['UserClientIp'] = $userClientIp;
         $this->queryParameters['UserClientIp'] = $userClientIp;
-
-        return $this;
-    }
-
-    /**
-     * @param string $domainName
-     *
-     * @return $this
-     */
-    public function setDomainName($domainName)
-    {
-        $this->requestParameters['DomainName'] = $domainName;
-        $this->queryParameters['DomainName'] = $domainName;
 
         return $this;
     }

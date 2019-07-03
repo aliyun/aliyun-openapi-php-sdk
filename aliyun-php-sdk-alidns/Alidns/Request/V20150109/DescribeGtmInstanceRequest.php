@@ -28,7 +28,7 @@ class DescribeGtmInstanceRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'DescribeGtmInstance',
-            'alidns'
+            'Alidns'
         );
     }
 

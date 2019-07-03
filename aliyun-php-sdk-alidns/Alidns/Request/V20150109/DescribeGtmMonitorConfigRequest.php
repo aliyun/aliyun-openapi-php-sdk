@@ -28,7 +28,7 @@ class DescribeGtmMonitorConfigRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'DescribeGtmMonitorConfig',
-            'alidns'
+            'Alidns'
         );
     }
 

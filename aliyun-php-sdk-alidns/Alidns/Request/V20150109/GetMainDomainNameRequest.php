@@ -28,7 +28,7 @@ class GetMainDomainNameRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'GetMainDomainName',
-            'alidns'
+            'Alidns'
         );
     }
 

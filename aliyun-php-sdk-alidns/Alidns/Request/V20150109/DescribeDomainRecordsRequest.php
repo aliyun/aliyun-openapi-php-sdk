@@ -8,9 +8,11 @@ namespace Alidns\Request\V20150109;
  * Request of DescribeDomainRecords
  *
  * @method string getValueKeyWord()
+ * @method string getLine()
  * @method string getGroupId()
  * @method string getDomainName()
  * @method string getOrderBy()
+ * @method string getType()
  * @method string getPageNumber()
  * @method string getUserClientIp()
  * @method string getPageSize()
@@ -20,6 +22,7 @@ namespace Alidns\Request\V20150109;
  * @method string getTypeKeyWord()
  * @method string getRRKeyWord()
  * @method string getDirection()
+ * @method string getStatus()
  */
 class DescribeDomainRecordsRequest extends \RpcAcsRequest
 {
@@ -38,7 +41,7 @@ class DescribeDomainRecordsRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'DescribeDomainRecords',
-            'alidns'
+            'Alidns'
         );
     }
 
@@ -51,6 +54,19 @@ class DescribeDomainRecordsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ValueKeyWord'] = $valueKeyWord;
         $this->queryParameters['ValueKeyWord'] = $valueKeyWord;
+
+        return $this;
+    }
+
+    /**
+     * @param string $line
+     *
+     * @return $this
+     */
+    public function setLine($line)
+    {
+        $this->requestParameters['Line'] = $line;
+        $this->queryParameters['Line'] = $line;
 
         return $this;
     }
@@ -90,6 +106,19 @@ class DescribeDomainRecordsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OrderBy'] = $orderBy;
         $this->queryParameters['OrderBy'] = $orderBy;
+
+        return $this;
+    }
+
+    /**
+     * @param string $type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->requestParameters['Type'] = $type;
+        $this->queryParameters['Type'] = $type;
 
         return $this;
     }
@@ -207,6 +236,19 @@ class DescribeDomainRecordsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Direction'] = $direction;
         $this->queryParameters['Direction'] = $direction;
+
+        return $this;
+    }
+
+    /**
+     * @param string $status
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->requestParameters['Status'] = $status;
+        $this->queryParameters['Status'] = $status;
 
         return $this;
     }

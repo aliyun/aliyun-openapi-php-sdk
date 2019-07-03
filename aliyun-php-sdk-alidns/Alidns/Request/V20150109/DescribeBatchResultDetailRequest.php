@@ -31,7 +31,7 @@ class DescribeBatchResultDetailRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'DescribeBatchResultDetail',
-            'alidns'
+            'Alidns'
         );
     }
 

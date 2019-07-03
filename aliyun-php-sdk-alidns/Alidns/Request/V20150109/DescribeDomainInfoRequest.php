@@ -29,7 +29,7 @@ class DescribeDomainInfoRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'DescribeDomainInfo',
-            'alidns'
+            'Alidns'
         );
     }
 

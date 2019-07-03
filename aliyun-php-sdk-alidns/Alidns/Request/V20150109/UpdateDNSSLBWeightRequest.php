@@ -29,7 +29,7 @@ class UpdateDNSSLBWeightRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'UpdateDNSSLBWeight',
-            'alidns'
+            'Alidns'
         );
     }
 

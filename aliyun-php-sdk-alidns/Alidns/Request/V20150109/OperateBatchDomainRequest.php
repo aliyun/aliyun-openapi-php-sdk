@@ -29,7 +29,7 @@ class OperateBatchDomainRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'OperateBatchDomain',
-            'alidns'
+            'Alidns'
         );
     }
 
@@ -47,21 +47,24 @@ class OperateBatchDomainRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $value
+     * @param array $domainRecordInfo
      *
      * @return $this
      */
-    public function setDomainRecordInfos(array $value)
+    public function setDomainRecordInfos(array $domainRecordInfo)
     {
-        $this->requestParameters['DomainRecordInfos'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->queryParameters['DomainRecordInfo.' . ($i + 1) . '.Rr'] = $value[$i]['Rr'];
-            $this->queryParameters['DomainRecordInfo.' . ($i + 1) . '.Line'] = $value[$i]['Line'];
-            $this->queryParameters['DomainRecordInfo.' . ($i + 1) . '.Domain'] = $value[$i]['Domain'];
-            $this->queryParameters['DomainRecordInfo.' . ($i + 1) . '.Type'] = $value[$i]['Type'];
-            $this->queryParameters['DomainRecordInfo.' . ($i + 1) . '.Priority'] = $value[$i]['Priority'];
-            $this->queryParameters['DomainRecordInfo.' . ($i + 1) . '.Value'] = $value[$i]['Value'];
-            $this->queryParameters['DomainRecordInfo.' . ($i + 1) . '.Ttl'] = $value[$i]['Ttl'];
+        $this->requestParameters['DomainRecordInfos'] = $domainRecordInfo;
+        foreach ($domainRecordInfo as $depth1 => $depth1Value) {
+            $this->queryParameters['DomainRecordInfo.' . ($depth1 + 1) . '.Rr'] = $depth1Value['Rr'];
+            $this->queryParameters['DomainRecordInfo.' . ($depth1 + 1) . '.NewType'] = $depth1Value['NewType'];
+            $this->queryParameters['DomainRecordInfo.' . ($depth1 + 1) . '.NewValue'] = $depth1Value['NewValue'];
+            $this->queryParameters['DomainRecordInfo.' . ($depth1 + 1) . '.Line'] = $depth1Value['Line'];
+            $this->queryParameters['DomainRecordInfo.' . ($depth1 + 1) . '.Domain'] = $depth1Value['Domain'];
+            $this->queryParameters['DomainRecordInfo.' . ($depth1 + 1) . '.Type'] = $depth1Value['Type'];
+            $this->queryParameters['DomainRecordInfo.' . ($depth1 + 1) . '.Priority'] = $depth1Value['Priority'];
+            $this->queryParameters['DomainRecordInfo.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+            $this->queryParameters['DomainRecordInfo.' . ($depth1 + 1) . '.Ttl'] = $depth1Value['Ttl'];
+            $this->queryParameters['DomainRecordInfo.' . ($depth1 + 1) . '.NewRr'] = $depth1Value['NewRr'];
         }
 
         return $this;

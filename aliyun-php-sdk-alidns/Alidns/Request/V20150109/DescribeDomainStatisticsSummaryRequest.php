@@ -5,18 +5,21 @@ namespace Alidns\Request\V20150109;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeGtmLogs
+ * Request of DescribeDomainStatisticsSummary
  *
- * @method string getInstanceId()
+ * @method string getEndDate()
  * @method string getUserClientIp()
  * @method string getPageSize()
+ * @method string getOrderBy()
+ * @method string getSearchMode()
+ * @method string getThreshold()
  * @method string getLang()
+ * @method string getStartDate()
  * @method string getKeyword()
- * @method string getStartTimestamp()
  * @method string getPageNumber()
- * @method string getEndTimestamp()
+ * @method string getDirection()
  */
-class DescribeGtmLogsRequest extends \RpcAcsRequest
+class DescribeDomainStatisticsSummaryRequest extends \RpcAcsRequest
 {
 
     /**
@@ -32,20 +35,20 @@ class DescribeGtmLogsRequest extends \RpcAcsRequest
         parent::__construct(
             'Alidns',
             '2015-01-09',
-            'DescribeGtmLogs',
+            'DescribeDomainStatisticsSummary',
             'Alidns'
         );
     }
 
     /**
-     * @param string $instanceId
+     * @param string $endDate
      *
      * @return $this
      */
-    public function setInstanceId($instanceId)
+    public function setEndDate($endDate)
     {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
+        $this->requestParameters['EndDate'] = $endDate;
+        $this->queryParameters['EndDate'] = $endDate;
 
         return $this;
     }
@@ -77,6 +80,45 @@ class DescribeGtmLogsRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $orderBy
+     *
+     * @return $this
+     */
+    public function setOrderBy($orderBy)
+    {
+        $this->requestParameters['OrderBy'] = $orderBy;
+        $this->queryParameters['OrderBy'] = $orderBy;
+
+        return $this;
+    }
+
+    /**
+     * @param string $searchMode
+     *
+     * @return $this
+     */
+    public function setSearchMode($searchMode)
+    {
+        $this->requestParameters['SearchMode'] = $searchMode;
+        $this->queryParameters['SearchMode'] = $searchMode;
+
+        return $this;
+    }
+
+    /**
+     * @param string $threshold
+     *
+     * @return $this
+     */
+    public function setThreshold($threshold)
+    {
+        $this->requestParameters['Threshold'] = $threshold;
+        $this->queryParameters['Threshold'] = $threshold;
+
+        return $this;
+    }
+
+    /**
      * @param string $lang
      *
      * @return $this
@@ -85,6 +127,19 @@ class DescribeGtmLogsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Lang'] = $lang;
         $this->queryParameters['Lang'] = $lang;
+
+        return $this;
+    }
+
+    /**
+     * @param string $startDate
+     *
+     * @return $this
+     */
+    public function setStartDate($startDate)
+    {
+        $this->requestParameters['StartDate'] = $startDate;
+        $this->queryParameters['StartDate'] = $startDate;
 
         return $this;
     }
@@ -103,19 +158,6 @@ class DescribeGtmLogsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $startTimestamp
-     *
-     * @return $this
-     */
-    public function setStartTimestamp($startTimestamp)
-    {
-        $this->requestParameters['StartTimestamp'] = $startTimestamp;
-        $this->queryParameters['StartTimestamp'] = $startTimestamp;
-
-        return $this;
-    }
-
-    /**
      * @param string $pageNumber
      *
      * @return $this
@@ -129,14 +171,14 @@ class DescribeGtmLogsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $endTimestamp
+     * @param string $direction
      *
      * @return $this
      */
-    public function setEndTimestamp($endTimestamp)
+    public function setDirection($direction)
     {
-        $this->requestParameters['EndTimestamp'] = $endTimestamp;
-        $this->queryParameters['EndTimestamp'] = $endTimestamp;
+        $this->requestParameters['Direction'] = $direction;
+        $this->queryParameters['Direction'] = $direction;
 
         return $this;
     }

@@ -35,7 +35,7 @@ class AddGtmMonitorRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'AddGtmMonitor',
-            'alidns'
+            'Alidns'
         );
     }
 
@@ -157,16 +157,16 @@ class AddGtmMonitorRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $value
+     * @param array $ispCityNode
      *
      * @return $this
      */
-    public function setIspCityNodes(array $value)
+    public function setIspCityNodes(array $ispCityNode)
     {
-        $this->requestParameters['IspCityNodes'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->queryParameters['IspCityNode.' . ($i + 1) . '.CityCode'] = $value[$i]['CityCode'];
-            $this->queryParameters['IspCityNode.' . ($i + 1) . '.IspCode'] = $value[$i]['IspCode'];
+        $this->requestParameters['IspCityNodes'] = $ispCityNode;
+        foreach ($ispCityNode as $depth1 => $depth1Value) {
+            $this->queryParameters['IspCityNode.' . ($depth1 + 1) . '.CityCode'] = $depth1Value['CityCode'];
+            $this->queryParameters['IspCityNode.' . ($depth1 + 1) . '.IspCode'] = $depth1Value['IspCode'];
         }
 
         return $this;

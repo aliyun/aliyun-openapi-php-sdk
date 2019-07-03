@@ -28,7 +28,7 @@ class DescribeDnsProductInstanceRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'DescribeDnsProductInstance',
-            'alidns'
+            'Alidns'
         );
     }
 

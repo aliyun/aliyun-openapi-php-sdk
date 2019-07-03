@@ -5,18 +5,15 @@ namespace Alidns\Request\V20150109;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeRecordLogs
+ * Request of DescribeDomainDnsStatistics
  *
- * @method string getendDate()
+ * @method string getEndDate()
  * @method string getUserClientIp()
  * @method string getDomainName()
- * @method string getPageSize()
  * @method string getLang()
- * @method string getKeyWord()
  * @method string getStartDate()
- * @method string getPageNumber()
  */
-class DescribeRecordLogsRequest extends \RpcAcsRequest
+class DescribeDomainDnsStatisticsRequest extends \RpcAcsRequest
 {
 
     /**
@@ -32,7 +29,7 @@ class DescribeRecordLogsRequest extends \RpcAcsRequest
         parent::__construct(
             'Alidns',
             '2015-01-09',
-            'DescribeRecordLogs',
+            'DescribeDomainDnsStatistics',
             'Alidns'
         );
     }
@@ -42,10 +39,10 @@ class DescribeRecordLogsRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setendDate($endDate)
+    public function setEndDate($endDate)
     {
-        $this->requestParameters['endDate'] = $endDate;
-        $this->queryParameters['endDate'] = $endDate;
+        $this->requestParameters['EndDate'] = $endDate;
+        $this->queryParameters['EndDate'] = $endDate;
 
         return $this;
     }
@@ -77,19 +74,6 @@ class DescribeRecordLogsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
      * @param string $lang
      *
      * @return $this
@@ -103,19 +87,6 @@ class DescribeRecordLogsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $keyWord
-     *
-     * @return $this
-     */
-    public function setKeyWord($keyWord)
-    {
-        $this->requestParameters['KeyWord'] = $keyWord;
-        $this->queryParameters['KeyWord'] = $keyWord;
-
-        return $this;
-    }
-
-    /**
      * @param string $startDate
      *
      * @return $this
@@ -124,19 +95,6 @@ class DescribeRecordLogsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['StartDate'] = $startDate;
         $this->queryParameters['StartDate'] = $startDate;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

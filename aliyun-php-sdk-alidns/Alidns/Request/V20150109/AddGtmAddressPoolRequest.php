@@ -32,7 +32,7 @@ class AddGtmAddressPoolRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'AddGtmAddressPool',
-            'alidns'
+            'Alidns'
         );
     }
 
@@ -102,17 +102,17 @@ class AddGtmAddressPoolRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $value
+     * @param array $addr
      *
      * @return $this
      */
-    public function setAddrs(array $value)
+    public function setAddrs(array $addr)
     {
-        $this->requestParameters['Addrs'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->queryParameters['Addr.' . ($i + 1) . '.Mode'] = $value[$i]['Mode'];
-            $this->queryParameters['Addr.' . ($i + 1) . '.LbaWeight'] = $value[$i]['LbaWeight'];
-            $this->queryParameters['Addr.' . ($i + 1) . '.Value'] = $value[$i]['Value'];
+        $this->requestParameters['Addrs'] = $addr;
+        foreach ($addr as $depth1 => $depth1Value) {
+            $this->queryParameters['Addr.' . ($depth1 + 1) . '.Mode'] = $depth1Value['Mode'];
+            $this->queryParameters['Addr.' . ($depth1 + 1) . '.LbaWeight'] = $depth1Value['LbaWeight'];
+            $this->queryParameters['Addr.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
         }
 
         return $this;

@@ -34,7 +34,7 @@ class AddDomainRecordRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'AddDomainRecord',
-            'alidns'
+            'Alidns'
         );
     }
 

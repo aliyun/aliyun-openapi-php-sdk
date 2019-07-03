@@ -28,7 +28,7 @@ class DescribeSupportLinesRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'DescribeSupportLines',
-            'alidns'
+            'Alidns'
         );
     }
 

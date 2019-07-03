@@ -7,6 +7,7 @@ namespace Alidns\Request\V20150109;
  *
  * Request of DescribeDomains
  *
+ * @method string getResourceGroupId()
  * @method string getGroupId()
  * @method string getUserClientIp()
  * @method string getPageSize()
@@ -32,8 +33,21 @@ class DescribeDomainsRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'DescribeDomains',
-            'alidns'
+            'Alidns'
         );
+    }
+
+    /**
+     * @param string $resourceGroupId
+     *
+     * @return $this
+     */
+    public function setResourceGroupId($resourceGroupId)
+    {
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
+
+        return $this;
     }
 
     /**

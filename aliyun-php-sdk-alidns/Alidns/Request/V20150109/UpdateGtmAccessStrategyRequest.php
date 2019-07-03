@@ -32,7 +32,7 @@ class UpdateGtmAccessStrategyRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'UpdateGtmAccessStrategy',
-            'alidns'
+            'Alidns'
         );
     }
 

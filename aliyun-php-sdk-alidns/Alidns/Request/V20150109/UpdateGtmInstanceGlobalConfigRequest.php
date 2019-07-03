@@ -11,10 +11,12 @@ namespace Alidns\Request\V20150109;
  * @method string getInstanceId()
  * @method string getInstanceName()
  * @method string getUserDomainName()
+ * @method string getCnameMode()
  * @method string getUserClientIp()
  * @method string getLbaStrategy()
  * @method string getLang()
  * @method string getTtl()
+ * @method string getCnameCustomDomainName()
  */
 class UpdateGtmInstanceGlobalConfigRequest extends \RpcAcsRequest
 {
@@ -33,7 +35,7 @@ class UpdateGtmInstanceGlobalConfigRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'UpdateGtmInstanceGlobalConfig',
-            'alidns'
+            'Alidns'
         );
     }
 
@@ -90,6 +92,19 @@ class UpdateGtmInstanceGlobalConfigRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $cnameMode
+     *
+     * @return $this
+     */
+    public function setCnameMode($cnameMode)
+    {
+        $this->requestParameters['CnameMode'] = $cnameMode;
+        $this->queryParameters['CnameMode'] = $cnameMode;
+
+        return $this;
+    }
+
+    /**
      * @param string $userClientIp
      *
      * @return $this
@@ -137,6 +152,19 @@ class UpdateGtmInstanceGlobalConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Ttl'] = $ttl;
         $this->queryParameters['Ttl'] = $ttl;
+
+        return $this;
+    }
+
+    /**
+     * @param string $cnameCustomDomainName
+     *
+     * @return $this
+     */
+    public function setCnameCustomDomainName($cnameCustomDomainName)
+    {
+        $this->requestParameters['CnameCustomDomainName'] = $cnameCustomDomainName;
+        $this->queryParameters['CnameCustomDomainName'] = $cnameCustomDomainName;
 
         return $this;
     }

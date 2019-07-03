@@ -29,7 +29,7 @@ class ChangeDomainGroupRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'ChangeDomainGroup',
-            'alidns'
+            'Alidns'
         );
     }
 

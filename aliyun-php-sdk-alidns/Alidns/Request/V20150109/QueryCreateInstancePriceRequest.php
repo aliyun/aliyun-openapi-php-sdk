@@ -30,7 +30,7 @@ class QueryCreateInstancePriceRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'QueryCreateInstancePrice',
-            'alidns'
+            'Alidns'
         );
     }
 

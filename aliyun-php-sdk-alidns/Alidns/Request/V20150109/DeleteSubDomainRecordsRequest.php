@@ -30,7 +30,7 @@ class DeleteSubDomainRecordsRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'DeleteSubDomainRecords',
-            'alidns'
+            'Alidns'
         );
     }
 
