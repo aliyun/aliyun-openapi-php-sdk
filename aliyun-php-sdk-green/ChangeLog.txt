@@ -1,3 +1,7 @@
+2019-07-05 Version: 3.4.4
+- Supported library managment for simillarity scene.
+- Remove the local file uploader code which can be downloaded from yundun content security document.
+
 2018-11-22 Version: 3.4.1
 1, bugfix for delete client upload tmp file
 

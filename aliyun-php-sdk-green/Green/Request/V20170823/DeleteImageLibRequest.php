@@ -1,52 +1,59 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Green\Request\V20170823;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of DeleteImageLib
+ *
+ * @method string getSourceIp()
+ * @method string getId()
+ */
 class DeleteImageLibRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Green", "2017-08-23", "DeleteImageLib", "green", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $sourceIp;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $id;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Green',
+            '2017-08-23',
+            'DeleteImageLib',
+            'green'
+        );
+    }
 
-	public function getSourceIp() {
-		return $this->sourceIp;
-	}
+    /**
+     * @param string $sourceIp
+     *
+     * @return $this
+     */
+    public function setSourceIp($sourceIp)
+    {
+        $this->requestParameters['SourceIp'] = $sourceIp;
+        $this->queryParameters['SourceIp'] = $sourceIp;
 
-	public function setSourceIp($sourceIp) {
-		$this->sourceIp = $sourceIp;
-		$this->queryParameters["SourceIp"]=$sourceIp;
-	}
+        return $this;
+    }
 
-	public function getId() {
-		return $this->id;
-	}
+    /**
+     * @param string $id
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->requestParameters['Id'] = $id;
+        $this->queryParameters['Id'] = $id;
 
-	public function setId($id) {
-		$this->id = $id;
-		$this->queryParameters["Id"]=$id;
-	}
-	
+        return $this;
+    }
 }

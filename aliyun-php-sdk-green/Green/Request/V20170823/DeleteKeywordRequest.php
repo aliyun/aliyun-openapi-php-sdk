@@ -1,74 +1,101 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Green\Request\V20170823;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of DeleteKeyword
+ *
+ * @method string getSourceIp()
+ * @method string getKeywords()
+ * @method string getKeywordLibId()
+ * @method string getIds()
+ * @method string getLang()
+ */
 class DeleteKeywordRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Green", "2017-08-23", "DeleteKeyword", "green", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $sourceIp;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $keywordLibId;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Green',
+            '2017-08-23',
+            'DeleteKeyword',
+            'green'
+        );
+    }
 
-	private  $ids;
+    /**
+     * @param string $sourceIp
+     *
+     * @return $this
+     */
+    public function setSourceIp($sourceIp)
+    {
+        $this->requestParameters['SourceIp'] = $sourceIp;
+        $this->queryParameters['SourceIp'] = $sourceIp;
 
-	private  $lang;
+        return $this;
+    }
 
-	public function getSourceIp() {
-		return $this->sourceIp;
-	}
+    /**
+     * @param string $keywords
+     *
+     * @return $this
+     */
+    public function setKeywords($keywords)
+    {
+        $this->requestParameters['Keywords'] = $keywords;
+        $this->queryParameters['Keywords'] = $keywords;
 
-	public function setSourceIp($sourceIp) {
-		$this->sourceIp = $sourceIp;
-		$this->queryParameters["SourceIp"]=$sourceIp;
-	}
+        return $this;
+    }
 
-	public function getKeywordLibId() {
-		return $this->keywordLibId;
-	}
+    /**
+     * @param string $keywordLibId
+     *
+     * @return $this
+     */
+    public function setKeywordLibId($keywordLibId)
+    {
+        $this->requestParameters['KeywordLibId'] = $keywordLibId;
+        $this->queryParameters['KeywordLibId'] = $keywordLibId;
 
-	public function setKeywordLibId($keywordLibId) {
-		$this->keywordLibId = $keywordLibId;
-		$this->queryParameters["KeywordLibId"]=$keywordLibId;
-	}
+        return $this;
+    }
 
-	public function getIds() {
-		return $this->ids;
-	}
+    /**
+     * @param string $ids
+     *
+     * @return $this
+     */
+    public function setIds($ids)
+    {
+        $this->requestParameters['Ids'] = $ids;
+        $this->queryParameters['Ids'] = $ids;
 
-	public function setIds($ids) {
-		$this->ids = $ids;
-		$this->queryParameters["Ids"]=$ids;
-	}
+        return $this;
+    }
 
-	public function getLang() {
-		return $this->lang;
-	}
+    /**
+     * @param string $lang
+     *
+     * @return $this
+     */
+    public function setLang($lang)
+    {
+        $this->requestParameters['Lang'] = $lang;
+        $this->queryParameters['Lang'] = $lang;
 
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-	
+        return $this;
+    }
 }

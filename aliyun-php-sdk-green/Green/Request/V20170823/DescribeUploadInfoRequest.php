@@ -1,63 +1,73 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Green\Request\V20170823;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of DescribeUploadInfo
+ *
+ * @method string getBiz()
+ * @method string getSourceIp()
+ * @method string getLang()
+ */
 class DescribeUploadInfoRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Green", "2017-08-23", "DescribeUploadInfo", "green", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $biz;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $sourceIp;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Green',
+            '2017-08-23',
+            'DescribeUploadInfo',
+            'green'
+        );
+    }
 
-	private  $lang;
+    /**
+     * @param string $biz
+     *
+     * @return $this
+     */
+    public function setBiz($biz)
+    {
+        $this->requestParameters['Biz'] = $biz;
+        $this->queryParameters['Biz'] = $biz;
 
-	public function getBiz() {
-		return $this->biz;
-	}
+        return $this;
+    }
 
-	public function setBiz($biz) {
-		$this->biz = $biz;
-		$this->queryParameters["Biz"]=$biz;
-	}
+    /**
+     * @param string $sourceIp
+     *
+     * @return $this
+     */
+    public function setSourceIp($sourceIp)
+    {
+        $this->requestParameters['SourceIp'] = $sourceIp;
+        $this->queryParameters['SourceIp'] = $sourceIp;
 
-	public function getSourceIp() {
-		return $this->sourceIp;
-	}
+        return $this;
+    }
 
-	public function setSourceIp($sourceIp) {
-		$this->sourceIp = $sourceIp;
-		$this->queryParameters["SourceIp"]=$sourceIp;
-	}
+    /**
+     * @param string $lang
+     *
+     * @return $this
+     */
+    public function setLang($lang)
+    {
+        $this->requestParameters['Lang'] = $lang;
+        $this->queryParameters['Lang'] = $lang;
 
-	public function getLang() {
-		return $this->lang;
-	}
-
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
-	
+        return $this;
+    }
 }

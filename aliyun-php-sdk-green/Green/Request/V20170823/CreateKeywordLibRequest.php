@@ -1,118 +1,185 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Green\Request\V20170823;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of CreateKeywordLib
+ *
+ * @method string getSourceIp()
+ * @method string getLibType()
+ * @method string getEnable()
+ * @method string getName()
+ * @method string getBizTypes()
+ * @method string getLanguage()
+ * @method string getServiceModule()
+ * @method string getLang()
+ * @method string getCategory()
+ * @method string getMatchMode()
+ * @method string getResourceType()
+ */
 class CreateKeywordLibRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Green", "2017-08-23", "CreateKeywordLib", "green", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $sourceIp;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $libType;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Green',
+            '2017-08-23',
+            'CreateKeywordLib',
+            'green'
+        );
+    }
 
-	private  $name;
+    /**
+     * @param string $sourceIp
+     *
+     * @return $this
+     */
+    public function setSourceIp($sourceIp)
+    {
+        $this->requestParameters['SourceIp'] = $sourceIp;
+        $this->queryParameters['SourceIp'] = $sourceIp;
 
-	private  $bizTypes;
+        return $this;
+    }
 
-	private  $serviceModule;
+    /**
+     * @param string $libType
+     *
+     * @return $this
+     */
+    public function setLibType($libType)
+    {
+        $this->requestParameters['LibType'] = $libType;
+        $this->queryParameters['LibType'] = $libType;
 
-	private  $lang;
+        return $this;
+    }
 
-	private  $category;
+    /**
+     * @param string $enable
+     *
+     * @return $this
+     */
+    public function setEnable($enable)
+    {
+        $this->requestParameters['Enable'] = $enable;
+        $this->queryParameters['Enable'] = $enable;
 
-	private  $resourceType;
+        return $this;
+    }
 
-	public function getSourceIp() {
-		return $this->sourceIp;
-	}
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
-	public function setSourceIp($sourceIp) {
-		$this->sourceIp = $sourceIp;
-		$this->queryParameters["SourceIp"]=$sourceIp;
-	}
+        return $this;
+    }
 
-	public function getLibType() {
-		return $this->libType;
-	}
+    /**
+     * @param string $bizTypes
+     *
+     * @return $this
+     */
+    public function setBizTypes($bizTypes)
+    {
+        $this->requestParameters['BizTypes'] = $bizTypes;
+        $this->queryParameters['BizTypes'] = $bizTypes;
 
-	public function setLibType($libType) {
-		$this->libType = $libType;
-		$this->queryParameters["LibType"]=$libType;
-	}
+        return $this;
+    }
 
-	public function getName() {
-		return $this->name;
-	}
+    /**
+     * @param string $language
+     *
+     * @return $this
+     */
+    public function setLanguage($language)
+    {
+        $this->requestParameters['Language'] = $language;
+        $this->queryParameters['Language'] = $language;
 
-	public function setName($name) {
-		$this->name = $name;
-		$this->queryParameters["Name"]=$name;
-	}
+        return $this;
+    }
 
-	public function getBizTypes() {
-		return $this->bizTypes;
-	}
+    /**
+     * @param string $serviceModule
+     *
+     * @return $this
+     */
+    public function setServiceModule($serviceModule)
+    {
+        $this->requestParameters['ServiceModule'] = $serviceModule;
+        $this->queryParameters['ServiceModule'] = $serviceModule;
 
-	public function setBizTypes($bizTypes) {
-		$this->bizTypes = $bizTypes;
-		$this->queryParameters["BizTypes"]=$bizTypes;
-	}
+        return $this;
+    }
 
-	public function getServiceModule() {
-		return $this->serviceModule;
-	}
+    /**
+     * @param string $lang
+     *
+     * @return $this
+     */
+    public function setLang($lang)
+    {
+        $this->requestParameters['Lang'] = $lang;
+        $this->queryParameters['Lang'] = $lang;
 
-	public function setServiceModule($serviceModule) {
-		$this->serviceModule = $serviceModule;
-		$this->queryParameters["ServiceModule"]=$serviceModule;
-	}
+        return $this;
+    }
 
-	public function getLang() {
-		return $this->lang;
-	}
+    /**
+     * @param string $category
+     *
+     * @return $this
+     */
+    public function setCategory($category)
+    {
+        $this->requestParameters['Category'] = $category;
+        $this->queryParameters['Category'] = $category;
 
-	public function setLang($lang) {
-		$this->lang = $lang;
-		$this->queryParameters["Lang"]=$lang;
-	}
+        return $this;
+    }
 
-	public function getCategory() {
-		return $this->category;
-	}
+    /**
+     * @param string $matchMode
+     *
+     * @return $this
+     */
+    public function setMatchMode($matchMode)
+    {
+        $this->requestParameters['MatchMode'] = $matchMode;
+        $this->queryParameters['MatchMode'] = $matchMode;
 
-	public function setCategory($category) {
-		$this->category = $category;
-		$this->queryParameters["Category"]=$category;
-	}
+        return $this;
+    }
 
-	public function getResourceType() {
-		return $this->resourceType;
-	}
+    /**
+     * @param string $resourceType
+     *
+     * @return $this
+     */
+    public function setResourceType($resourceType)
+    {
+        $this->requestParameters['ResourceType'] = $resourceType;
+        $this->queryParameters['ResourceType'] = $resourceType;
 
-	public function setResourceType($resourceType) {
-		$this->resourceType = $resourceType;
-		$this->queryParameters["ResourceType"]=$resourceType;
-	}
-	
+        return $this;
+    }
 }

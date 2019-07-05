@@ -1,85 +1,143 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Green\Request\V20170823;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of DescribeImageFromLib
+ *
+ * @method string getTotalCount()
+ * @method string getEndDate()
+ * @method string getSourceIp()
+ * @method string getImageLibId()
+ * @method string getPageSize()
+ * @method string getCurrentPage()
+ * @method string getId()
+ * @method string getStartDate()
+ */
 class DescribeImageFromLibRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Green", "2017-08-23", "DescribeImageFromLib", "green", "openAPI");
-		$this->setMethod("POST");
-	}
 
-	private  $totalCount;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $sourceIp;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Green',
+            '2017-08-23',
+            'DescribeImageFromLib',
+            'green'
+        );
+    }
 
-	private  $imageLibId;
+    /**
+     * @param string $totalCount
+     *
+     * @return $this
+     */
+    public function setTotalCount($totalCount)
+    {
+        $this->requestParameters['TotalCount'] = $totalCount;
+        $this->queryParameters['TotalCount'] = $totalCount;
 
-	private  $pageSize;
+        return $this;
+    }
 
-	private  $currentPage;
+    /**
+     * @param string $endDate
+     *
+     * @return $this
+     */
+    public function setEndDate($endDate)
+    {
+        $this->requestParameters['EndDate'] = $endDate;
+        $this->queryParameters['EndDate'] = $endDate;
 
-	public function getTotalCount() {
-		return $this->totalCount;
-	}
+        return $this;
+    }
 
-	public function setTotalCount($totalCount) {
-		$this->totalCount = $totalCount;
-		$this->queryParameters["TotalCount"]=$totalCount;
-	}
+    /**
+     * @param string $sourceIp
+     *
+     * @return $this
+     */
+    public function setSourceIp($sourceIp)
+    {
+        $this->requestParameters['SourceIp'] = $sourceIp;
+        $this->queryParameters['SourceIp'] = $sourceIp;
 
-	public function getSourceIp() {
-		return $this->sourceIp;
-	}
+        return $this;
+    }
 
-	public function setSourceIp($sourceIp) {
-		$this->sourceIp = $sourceIp;
-		$this->queryParameters["SourceIp"]=$sourceIp;
-	}
+    /**
+     * @param string $imageLibId
+     *
+     * @return $this
+     */
+    public function setImageLibId($imageLibId)
+    {
+        $this->requestParameters['ImageLibId'] = $imageLibId;
+        $this->queryParameters['ImageLibId'] = $imageLibId;
 
-	public function getImageLibId() {
-		return $this->imageLibId;
-	}
+        return $this;
+    }
 
-	public function setImageLibId($imageLibId) {
-		$this->imageLibId = $imageLibId;
-		$this->queryParameters["ImageLibId"]=$imageLibId;
-	}
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
-	public function getPageSize() {
-		return $this->pageSize;
-	}
+        return $this;
+    }
 
-	public function setPageSize($pageSize) {
-		$this->pageSize = $pageSize;
-		$this->queryParameters["PageSize"]=$pageSize;
-	}
+    /**
+     * @param string $currentPage
+     *
+     * @return $this
+     */
+    public function setCurrentPage($currentPage)
+    {
+        $this->requestParameters['CurrentPage'] = $currentPage;
+        $this->queryParameters['CurrentPage'] = $currentPage;
 
-	public function getCurrentPage() {
-		return $this->currentPage;
-	}
+        return $this;
+    }
 
-	public function setCurrentPage($currentPage) {
-		$this->currentPage = $currentPage;
-		$this->queryParameters["CurrentPage"]=$currentPage;
-	}
-	
+    /**
+     * @param string $id
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->requestParameters['Id'] = $id;
+        $this->queryParameters['Id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * @param string $startDate
+     *
+     * @return $this
+     */
+    public function setStartDate($startDate)
+    {
+        $this->requestParameters['StartDate'] = $startDate;
+        $this->queryParameters['StartDate'] = $startDate;
+
+        return $this;
+    }
 }
