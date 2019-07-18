@@ -7,17 +7,18 @@ namespace vod\Request\V20170321;
  *
  * Request of UploadMediaByURL
  *
- * @method string getUserData()
  * @method string getResourceOwnerId()
- * @method string getTemplateGroupId()
- * @method string getUploadMetadatas()
  * @method string getResourceOwnerAccount()
- * @method string getUploadURLs()
- * @method string getAppId()
  * @method string getMessageCallback()
  * @method string getOwnerId()
  * @method string getPriority()
  * @method string getStorageLocation()
+ * @method string getUserData()
+ * @method string getTemplateGroupId()
+ * @method string getUploadMetadatas()
+ * @method string getUploadURLs()
+ * @method string getAppId()
+ * @method string getWorkflowId()
  */
 class UploadMediaByURLRequest extends \RpcAcsRequest
 {
@@ -41,19 +42,6 @@ class UploadMediaByURLRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $userData
-     *
-     * @return $this
-     */
-    public function setUserData($userData)
-    {
-        $this->requestParameters['UserData'] = $userData;
-        $this->queryParameters['UserData'] = $userData;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerId
      *
      * @return $this
@@ -67,32 +55,6 @@ class UploadMediaByURLRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $templateGroupId
-     *
-     * @return $this
-     */
-    public function setTemplateGroupId($templateGroupId)
-    {
-        $this->requestParameters['TemplateGroupId'] = $templateGroupId;
-        $this->queryParameters['TemplateGroupId'] = $templateGroupId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $uploadMetadatas
-     *
-     * @return $this
-     */
-    public function setUploadMetadatas($uploadMetadatas)
-    {
-        $this->requestParameters['UploadMetadatas'] = $uploadMetadatas;
-        $this->queryParameters['UploadMetadatas'] = $uploadMetadatas;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -101,32 +63,6 @@ class UploadMediaByURLRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $uploadURLs
-     *
-     * @return $this
-     */
-    public function setUploadURLs($uploadURLs)
-    {
-        $this->requestParameters['UploadURLs'] = $uploadURLs;
-        $this->queryParameters['UploadURLs'] = $uploadURLs;
-
-        return $this;
-    }
-
-    /**
-     * @param string $appId
-     *
-     * @return $this
-     */
-    public function setAppId($appId)
-    {
-        $this->requestParameters['AppId'] = $appId;
-        $this->queryParameters['AppId'] = $appId;
 
         return $this;
     }
@@ -179,6 +115,84 @@ class UploadMediaByURLRequest extends \RpcAcsRequest
     {
         $this->requestParameters['StorageLocation'] = $storageLocation;
         $this->queryParameters['StorageLocation'] = $storageLocation;
+
+        return $this;
+    }
+
+    /**
+     * @param string $userData
+     *
+     * @return $this
+     */
+    public function setUserData($userData)
+    {
+        $this->requestParameters['UserData'] = $userData;
+        $this->queryParameters['UserData'] = $userData;
+
+        return $this;
+    }
+
+    /**
+     * @param string $templateGroupId
+     *
+     * @return $this
+     */
+    public function setTemplateGroupId($templateGroupId)
+    {
+        $this->requestParameters['TemplateGroupId'] = $templateGroupId;
+        $this->queryParameters['TemplateGroupId'] = $templateGroupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $uploadMetadatas
+     *
+     * @return $this
+     */
+    public function setUploadMetadatas($uploadMetadatas)
+    {
+        $this->requestParameters['UploadMetadatas'] = $uploadMetadatas;
+        $this->queryParameters['UploadMetadatas'] = $uploadMetadatas;
+
+        return $this;
+    }
+
+    /**
+     * @param string $uploadURLs
+     *
+     * @return $this
+     */
+    public function setUploadURLs($uploadURLs)
+    {
+        $this->requestParameters['UploadURLs'] = $uploadURLs;
+        $this->queryParameters['UploadURLs'] = $uploadURLs;
+
+        return $this;
+    }
+
+    /**
+     * @param string $appId
+     *
+     * @return $this
+     */
+    public function setAppId($appId)
+    {
+        $this->requestParameters['AppId'] = $appId;
+        $this->queryParameters['AppId'] = $appId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $workflowId
+     *
+     * @return $this
+     */
+    public function setWorkflowId($workflowId)
+    {
+        $this->requestParameters['WorkflowId'] = $workflowId;
+        $this->queryParameters['WorkflowId'] = $workflowId;
 
         return $this;
     }

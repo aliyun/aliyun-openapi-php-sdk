@@ -8,6 +8,7 @@ namespace vod\Request\V20170321;
  * Request of SubmitAIJob
  *
  * @method string getUserData()
+ * @method string getInput()
  * @method string getResourceOwnerId()
  * @method string getTypes()
  * @method string getResourceOwnerAccount()
@@ -46,6 +47,19 @@ class SubmitAIJobRequest extends \RpcAcsRequest
     {
         $this->requestParameters['UserData'] = $userData;
         $this->queryParameters['UserData'] = $userData;
+
+        return $this;
+    }
+
+    /**
+     * @param string $input
+     *
+     * @return $this
+     */
+    public function setInput($input)
+    {
+        $this->requestParameters['Input'] = $input;
+        $this->queryParameters['Input'] = $input;
 
         return $this;
     }

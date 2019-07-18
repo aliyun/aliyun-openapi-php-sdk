@@ -13,7 +13,7 @@ namespace vod\Request\V20170321;
  * @method string getResourceOwnerAccount()
  * @method string getOwnerId()
  * @method string getRegisterMetadatas()
- * @method string getWorkFlowId()
+ * @method string getWorkflowId()
  */
 class RegisterMediaRequest extends \RpcAcsRequest
 {
@@ -115,14 +115,14 @@ class RegisterMediaRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $workFlowId
+     * @param string $workflowId
      *
      * @return $this
      */
-    public function setWorkFlowId($workFlowId)
+    public function setWorkflowId($workflowId)
     {
-        $this->requestParameters['WorkFlowId'] = $workFlowId;
-        $this->queryParameters['WorkFlowId'] = $workFlowId;
+        $this->requestParameters['WorkflowId'] = $workflowId;
+        $this->queryParameters['WorkflowId'] = $workflowId;
 
         return $this;
     }
