@@ -3,12 +3,15 @@
 namespace CloudAPI\Request\V20160714;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of ModifyApp
  *
  * @method string getAppName()
  * @method string getSecurityToken()
  * @method string getAppId()
  * @method string getDescription()
+ * @method array getTags()
  */
 class ModifyAppRequest extends \RpcAcsRequest
 {
@@ -79,6 +82,22 @@ class ModifyAppRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Description'] = $description;
         $this->queryParameters['Description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * @param array $tag
+     *
+     * @return $this
+     */
+    public function setTags(array $tag)
+    {
+        $this->requestParameters['Tags'] = $tag;
+        foreach ($tag as $depth1 => $depth1Value) {
+            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+        }
 
         return $this;
     }

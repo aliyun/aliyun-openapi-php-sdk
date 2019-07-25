@@ -3,6 +3,8 @@
 namespace CloudAPI\Request\V20160714;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of CreateIpControl
  *
  * @method string getSecurityToken()
@@ -72,16 +74,16 @@ class CreateIpControlRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $ipControlPolicyss
+     * @param array $ipControlPolicys
      *
      * @return $this
      */
-    public function setIpControlPolicyss(array $ipControlPolicyss)
+    public function setIpControlPolicyss(array $ipControlPolicys)
     {
-        $this->requestParameters['IpControlPolicyss'] = $ipControlPolicyss;
-        foreach ($ipControlPolicyss as $i => $iValue) {
-            $this->queryParameters['IpControlPolicys.' . ($i + 1) . '.AppId'] = $ipControlPolicyss[$i]['AppId'];
-            $this->queryParameters['IpControlPolicys.' . ($i + 1) . '.CidrIp'] = $ipControlPolicyss[$i]['CidrIp'];
+        $this->requestParameters['IpControlPolicyss'] = $ipControlPolicys;
+        foreach ($ipControlPolicys as $depth1 => $depth1Value) {
+            $this->queryParameters['IpControlPolicys.' . ($depth1 + 1) . '.AppId'] = $depth1Value['AppId'];
+            $this->queryParameters['IpControlPolicys.' . ($depth1 + 1) . '.CidrIp'] = $depth1Value['CidrIp'];
         }
 
         return $this;

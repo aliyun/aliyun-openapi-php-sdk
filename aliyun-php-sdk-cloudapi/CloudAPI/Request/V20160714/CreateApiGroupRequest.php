@@ -3,8 +3,11 @@
 namespace CloudAPI\Request\V20160714;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of CreateApiGroup
  *
+ * @method string getInstanceId()
  * @method string getSecurityToken()
  * @method string getDescription()
  * @method string getSource()
@@ -29,6 +32,19 @@ class CreateApiGroupRequest extends \RpcAcsRequest
             'CreateApiGroup',
             'apigateway'
         );
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
     }
 
     /**

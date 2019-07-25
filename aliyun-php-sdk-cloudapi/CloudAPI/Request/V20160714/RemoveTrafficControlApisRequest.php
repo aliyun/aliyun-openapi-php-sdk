@@ -3,6 +3,8 @@
 namespace CloudAPI\Request\V20160714;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of RemoveTrafficControlApis
  *
  * @method string getTrafficControlId()

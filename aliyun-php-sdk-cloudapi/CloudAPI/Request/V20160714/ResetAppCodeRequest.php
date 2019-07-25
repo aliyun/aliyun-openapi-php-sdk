@@ -5,13 +5,12 @@ namespace CloudAPI\Request\V20160714;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeVpcAccesses
+ * Request of ResetAppCode
  *
  * @method string getSecurityToken()
- * @method string getPageSize()
- * @method string getPageNumber()
+ * @method string getAppCode()
  */
-class DescribeVpcAccessesRequest extends \RpcAcsRequest
+class ResetAppCodeRequest extends \RpcAcsRequest
 {
 
     /**
@@ -27,7 +26,7 @@ class DescribeVpcAccessesRequest extends \RpcAcsRequest
         parent::__construct(
             'CloudAPI',
             '2016-07-14',
-            'DescribeVpcAccesses',
+            'ResetAppCode',
             'apigateway'
         );
     }
@@ -46,27 +45,14 @@ class DescribeVpcAccessesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageSize
+     * @param string $appCode
      *
      * @return $this
      */
-    public function setPageSize($pageSize)
+    public function setAppCode($appCode)
     {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
+        $this->requestParameters['AppCode'] = $appCode;
+        $this->queryParameters['AppCode'] = $appCode;
 
         return $this;
     }

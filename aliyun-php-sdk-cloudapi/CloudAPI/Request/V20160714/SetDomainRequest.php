@@ -3,14 +3,13 @@
 namespace CloudAPI\Request\V20160714;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of SetDomain
  *
  * @method string getSecurityToken()
- * @method string getCertificatePrivateKey()
  * @method string getGroupId()
  * @method string getDomainName()
- * @method string getCertificateName()
- * @method string getCertificateBody()
  */
 class SetDomainRequest extends \RpcAcsRequest
 {
@@ -47,19 +46,6 @@ class SetDomainRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $certificatePrivateKey
-     *
-     * @return $this
-     */
-    public function setCertificatePrivateKey($certificatePrivateKey)
-    {
-        $this->requestParameters['CertificatePrivateKey'] = $certificatePrivateKey;
-        $this->queryParameters['CertificatePrivateKey'] = $certificatePrivateKey;
-
-        return $this;
-    }
-
-    /**
      * @param string $groupId
      *
      * @return $this
@@ -81,32 +67,6 @@ class SetDomainRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DomainName'] = $domainName;
         $this->queryParameters['DomainName'] = $domainName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $certificateName
-     *
-     * @return $this
-     */
-    public function setCertificateName($certificateName)
-    {
-        $this->requestParameters['CertificateName'] = $certificateName;
-        $this->queryParameters['CertificateName'] = $certificateName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $certificateBody
-     *
-     * @return $this
-     */
-    public function setCertificateBody($certificateBody)
-    {
-        $this->requestParameters['CertificateBody'] = $certificateBody;
-        $this->queryParameters['CertificateBody'] = $certificateBody;
 
         return $this;
     }

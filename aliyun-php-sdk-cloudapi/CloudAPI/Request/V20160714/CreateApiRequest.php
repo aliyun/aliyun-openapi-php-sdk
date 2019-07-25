@@ -3,10 +3,13 @@
 namespace CloudAPI\Request\V20160714;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of CreateApi
  *
  * @method string getWebSocketApiType()
  * @method string getErrorCodeSamples()
+ * @method string getAppCodeAuthType()
  * @method string getDescription()
  * @method string getDisableInternet()
  * @method string getConstantParameters()
@@ -73,6 +76,19 @@ class CreateApiRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ErrorCodeSamples'] = $errorCodeSamples;
         $this->queryParameters['ErrorCodeSamples'] = $errorCodeSamples;
+
+        return $this;
+    }
+
+    /**
+     * @param string $appCodeAuthType
+     *
+     * @return $this
+     */
+    public function setAppCodeAuthType($appCodeAuthType)
+    {
+        $this->requestParameters['AppCodeAuthType'] = $appCodeAuthType;
+        $this->queryParameters['AppCodeAuthType'] = $appCodeAuthType;
 
         return $this;
     }

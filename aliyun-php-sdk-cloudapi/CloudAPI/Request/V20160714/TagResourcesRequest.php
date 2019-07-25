@@ -5,13 +5,14 @@ namespace CloudAPI\Request\V20160714;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeAppSecurity
+ * Request of TagResources
  *
+ * @method array getResourceIds()
  * @method string getSecurityToken()
- * @method string getAppId()
  * @method array getTags()
+ * @method string getResourceType()
  */
-class DescribeAppSecurityRequest extends \RpcAcsRequest
+class TagResourcesRequest extends \RpcAcsRequest
 {
 
     /**
@@ -27,9 +28,24 @@ class DescribeAppSecurityRequest extends \RpcAcsRequest
         parent::__construct(
             'CloudAPI',
             '2016-07-14',
-            'DescribeAppSecurity',
+            'TagResources',
             'apigateway'
         );
+    }
+
+    /**
+     * @param array $resourceId
+     *
+     * @return $this
+     */
+    public function setResourceIds(array $resourceId)
+    {
+        $this->requestParameters['ResourceIds'] = $resourceId;
+        foreach ($resourceId as $i => $iValue) {
+            $this->queryParameters['ResourceId.' . ($i + 1)] = $iValue;
+        }
+
+        return $this;
     }
 
     /**
@@ -46,19 +62,6 @@ class DescribeAppSecurityRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $appId
-     *
-     * @return $this
-     */
-    public function setAppId($appId)
-    {
-        $this->requestParameters['AppId'] = $appId;
-        $this->queryParameters['AppId'] = $appId;
-
-        return $this;
-    }
-
-    /**
      * @param array $tag
      *
      * @return $this
@@ -70,6 +73,19 @@ class DescribeAppSecurityRequest extends \RpcAcsRequest
             $this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
             $this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
         }
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceType
+     *
+     * @return $this
+     */
+    public function setResourceType($resourceType)
+    {
+        $this->requestParameters['ResourceType'] = $resourceType;
+        $this->queryParameters['ResourceType'] = $resourceType;
 
         return $this;
     }

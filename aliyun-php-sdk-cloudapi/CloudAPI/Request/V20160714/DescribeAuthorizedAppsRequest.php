@@ -3,11 +3,16 @@
 namespace CloudAPI\Request\V20160714;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeAuthorizedApps
  *
  * @method string getStageName()
+ * @method string getAppName()
  * @method string getSecurityToken()
  * @method string getGroupId()
+ * @method string getAppId()
+ * @method string getAppOwnerId()
  * @method string getPageSize()
  * @method string getApiId()
  * @method string getPageNumber()
@@ -47,6 +52,19 @@ class DescribeAuthorizedAppsRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $appName
+     *
+     * @return $this
+     */
+    public function setAppName($appName)
+    {
+        $this->requestParameters['AppName'] = $appName;
+        $this->queryParameters['AppName'] = $appName;
+
+        return $this;
+    }
+
+    /**
      * @param string $securityToken
      *
      * @return $this
@@ -68,6 +86,32 @@ class DescribeAuthorizedAppsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['GroupId'] = $groupId;
         $this->queryParameters['GroupId'] = $groupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $appId
+     *
+     * @return $this
+     */
+    public function setAppId($appId)
+    {
+        $this->requestParameters['AppId'] = $appId;
+        $this->queryParameters['AppId'] = $appId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $appOwnerId
+     *
+     * @return $this
+     */
+    public function setAppOwnerId($appOwnerId)
+    {
+        $this->requestParameters['AppOwnerId'] = $appOwnerId;
+        $this->queryParameters['AppOwnerId'] = $appOwnerId;
 
         return $this;
     }
