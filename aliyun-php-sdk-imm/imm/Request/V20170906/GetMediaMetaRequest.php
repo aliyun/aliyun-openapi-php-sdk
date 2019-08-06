@@ -5,12 +5,12 @@ namespace imm\Request\V20170906;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DetectLogo
+ * Request of GetMediaMeta
  *
- * @method string getSrcUris()
+ * @method string getMediaUri()
  * @method string getProject()
  */
-class DetectLogoRequest extends \RpcAcsRequest
+class GetMediaMetaRequest extends \RpcAcsRequest
 {
 
     /**
@@ -26,20 +26,20 @@ class DetectLogoRequest extends \RpcAcsRequest
         parent::__construct(
             'imm',
             '2017-09-06',
-            'DetectLogo',
+            'GetMediaMeta',
             'imm'
         );
     }
 
     /**
-     * @param string $srcUris
+     * @param string $mediaUri
      *
      * @return $this
      */
-    public function setSrcUris($srcUris)
+    public function setMediaUri($mediaUri)
     {
-        $this->requestParameters['SrcUris'] = $srcUris;
-        $this->queryParameters['SrcUris'] = $srcUris;
+        $this->requestParameters['MediaUri'] = $mediaUri;
+        $this->queryParameters['MediaUri'] = $mediaUri;
 
         return $this;
     }

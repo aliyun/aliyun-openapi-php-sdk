@@ -5,12 +5,11 @@ namespace imm\Request\V20170906;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DetectLogo
+ * Request of ListProjectAPIs
  *
- * @method string getSrcUris()
  * @method string getProject()
  */
-class DetectLogoRequest extends \RpcAcsRequest
+class ListProjectAPIsRequest extends \RpcAcsRequest
 {
 
     /**
@@ -26,22 +25,9 @@ class DetectLogoRequest extends \RpcAcsRequest
         parent::__construct(
             'imm',
             '2017-09-06',
-            'DetectLogo',
+            'ListProjectAPIs',
             'imm'
         );
-    }
-
-    /**
-     * @param string $srcUris
-     *
-     * @return $this
-     */
-    public function setSrcUris($srcUris)
-    {
-        $this->requestParameters['SrcUris'] = $srcUris;
-        $this->queryParameters['SrcUris'] = $srcUris;
-
-        return $this;
     }
 
     /**
