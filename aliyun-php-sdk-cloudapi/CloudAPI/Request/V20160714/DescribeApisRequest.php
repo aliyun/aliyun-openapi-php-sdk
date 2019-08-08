@@ -13,6 +13,8 @@ namespace CloudAPI\Request\V20160714;
  * @method string getSecurityToken()
  * @method string getGroupId()
  * @method string getPageSize()
+ * @method array getTags()
+ * @method string getEnableTagAuth()
  * @method string getApiId()
  * @method string getPageNumber()
  */
@@ -111,6 +113,35 @@ class DescribeApisRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageSize'] = $pageSize;
         $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * @param array $tag
+     *
+     * @return $this
+     */
+    public function setTags(array $tag)
+    {
+        $this->requestParameters['Tags'] = $tag;
+        foreach ($tag as $depth1 => $depth1Value) {
+            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param string $enableTagAuth
+     *
+     * @return $this
+     */
+    public function setEnableTagAuth($enableTagAuth)
+    {
+        $this->requestParameters['EnableTagAuth'] = $enableTagAuth;
+        $this->queryParameters['EnableTagAuth'] = $enableTagAuth;
 
         return $this;
     }

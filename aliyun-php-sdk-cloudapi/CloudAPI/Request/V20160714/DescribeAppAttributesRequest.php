@@ -12,6 +12,7 @@ namespace CloudAPI\Request\V20160714;
  * @method string getAppId()
  * @method string getPageSize()
  * @method array getTags()
+ * @method string getEnableTagAuth()
  * @method string getPageNumber()
  */
 class DescribeAppAttributesRequest extends \RpcAcsRequest
@@ -99,6 +100,19 @@ class DescribeAppAttributesRequest extends \RpcAcsRequest
             $this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
             $this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
         }
+
+        return $this;
+    }
+
+    /**
+     * @param string $enableTagAuth
+     *
+     * @return $this
+     */
+    public function setEnableTagAuth($enableTagAuth)
+    {
+        $this->requestParameters['EnableTagAuth'] = $enableTagAuth;
+        $this->queryParameters['EnableTagAuth'] = $enableTagAuth;
 
         return $this;
     }

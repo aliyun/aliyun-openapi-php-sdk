@@ -9,6 +9,7 @@ namespace CloudAPI\Request\V20160714;
  *
  * @method string getSecurityToken()
  * @method string getGroupId()
+ * @method array getTags()
  */
 class DeleteApiGroupRequest extends \RpcAcsRequest
 {
@@ -53,6 +54,22 @@ class DeleteApiGroupRequest extends \RpcAcsRequest
     {
         $this->requestParameters['GroupId'] = $groupId;
         $this->queryParameters['GroupId'] = $groupId;
+
+        return $this;
+    }
+
+    /**
+     * @param array $tag
+     *
+     * @return $this
+     */
+    public function setTags(array $tag)
+    {
+        $this->requestParameters['Tags'] = $tag;
+        foreach ($tag as $depth1 => $depth1Value) {
+            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+        }
 
         return $this;
     }
