@@ -12,11 +12,14 @@ namespace Ecs\Request\V20140526;
  * @method string getClientToken()
  * @method string getOwnerAccount()
  * @method string getDescription()
- * @method string getDiskId()
  * @method string getSnapshotName()
+ * @method string getOwnerId()
+ * @method string getSourceSnapshotId()
+ * @method string getRemoveSourceSnapshot()
+ * @method string getDiskId()
  * @method string getRetentionDays()
  * @method array getTags()
- * @method string getOwnerId()
+ * @method string getCategory()
  */
 class CreateSnapshotRequest extends \RpcAcsRequest
 {
@@ -105,19 +108,6 @@ class CreateSnapshotRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $diskId
-     *
-     * @return $this
-     */
-    public function setDiskId($diskId)
-    {
-        $this->requestParameters['DiskId'] = $diskId;
-        $this->queryParameters['DiskId'] = $diskId;
-
-        return $this;
-    }
-
-    /**
      * @param string $snapshotName
      *
      * @return $this
@@ -126,6 +116,58 @@ class CreateSnapshotRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SnapshotName'] = $snapshotName;
         $this->queryParameters['SnapshotName'] = $snapshotName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sourceSnapshotId
+     *
+     * @return $this
+     */
+    public function setSourceSnapshotId($sourceSnapshotId)
+    {
+        $this->requestParameters['SourceSnapshotId'] = $sourceSnapshotId;
+        $this->queryParameters['SourceSnapshotId'] = $sourceSnapshotId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $removeSourceSnapshot
+     *
+     * @return $this
+     */
+    public function setRemoveSourceSnapshot($removeSourceSnapshot)
+    {
+        $this->requestParameters['RemoveSourceSnapshot'] = $removeSourceSnapshot;
+        $this->queryParameters['RemoveSourceSnapshot'] = $removeSourceSnapshot;
+
+        return $this;
+    }
+
+    /**
+     * @param string $diskId
+     *
+     * @return $this
+     */
+    public function setDiskId($diskId)
+    {
+        $this->requestParameters['DiskId'] = $diskId;
+        $this->queryParameters['DiskId'] = $diskId;
 
         return $this;
     }
@@ -160,14 +202,14 @@ class CreateSnapshotRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerId
+     * @param string $category
      *
      * @return $this
      */
-    public function setOwnerId($ownerId)
+    public function setCategory($category)
     {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
+        $this->requestParameters['Category'] = $category;
+        $this->queryParameters['Category'] = $category;
 
         return $this;
     }

@@ -20,6 +20,7 @@ namespace Ecs\Request\V20140526;
  * @method string getOwnerAccount()
  * @method string getOwnerId()
  * @method string getVSwitchId()
+ * @method array getPrivateIpAddresss()
  * @method string getInstanceId()
  * @method string getVpcId()
  * @method string getPrimaryIpAddress()
@@ -214,6 +215,21 @@ class DescribeNetworkInterfacesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['VSwitchId'] = $vSwitchId;
         $this->queryParameters['VSwitchId'] = $vSwitchId;
+
+        return $this;
+    }
+
+    /**
+     * @param array $privateIpAddress
+     *
+     * @return $this
+     */
+    public function setPrivateIpAddresss(array $privateIpAddress)
+    {
+        $this->requestParameters['PrivateIpAddresss'] = $privateIpAddress;
+        foreach ($privateIpAddress as $i => $iValue) {
+            $this->queryParameters['PrivateIpAddress.' . ($i + 1)] = $iValue;
+        }
 
         return $this;
     }

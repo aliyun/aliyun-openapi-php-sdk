@@ -18,6 +18,7 @@ namespace Ecs\Request\V20140526;
  * @method string getOwnerId()
  * @method string getPeriodUnit()
  * @method string getInstanceIds()
+ * @method string getIsDetailFee()
  * @method string getInstanceChargeType()
  */
 class ModifyInstanceChargeTypeRequest extends \RpcAcsRequest
@@ -180,6 +181,19 @@ class ModifyInstanceChargeTypeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['InstanceIds'] = $instanceIds;
         $this->queryParameters['InstanceIds'] = $instanceIds;
+
+        return $this;
+    }
+
+    /**
+     * @param string $isDetailFee
+     *
+     * @return $this
+     */
+    public function setIsDetailFee($isDetailFee)
+    {
+        $this->requestParameters['IsDetailFee'] = $isDetailFee;
+        $this->queryParameters['IsDetailFee'] = $isDetailFee;
 
         return $this;
     }

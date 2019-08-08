@@ -18,10 +18,12 @@ namespace Ecs\Request\V20140526;
  * @method string getDiskName()
  * @method string getResourceGroupId()
  * @method string getInstanceId()
+ * @method string getStorageSetId()
  * @method string getSize()
  * @method string getEncrypted()
  * @method string getDiskCategory()
  * @method string getZoneId()
+ * @method string getStorageSetPartitionNumber()
  * @method array getTags()
  * @method array getArns()
  * @method string getKMSKeyId()
@@ -192,6 +194,19 @@ class CreateDiskRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $storageSetId
+     *
+     * @return $this
+     */
+    public function setStorageSetId($storageSetId)
+    {
+        $this->requestParameters['StorageSetId'] = $storageSetId;
+        $this->queryParameters['StorageSetId'] = $storageSetId;
+
+        return $this;
+    }
+
+    /**
      * @param string $size
      *
      * @return $this
@@ -239,6 +254,19 @@ class CreateDiskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ZoneId'] = $zoneId;
         $this->queryParameters['ZoneId'] = $zoneId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $storageSetPartitionNumber
+     *
+     * @return $this
+     */
+    public function setStorageSetPartitionNumber($storageSetPartitionNumber)
+    {
+        $this->requestParameters['StorageSetPartitionNumber'] = $storageSetPartitionNumber;
+        $this->queryParameters['StorageSetPartitionNumber'] = $storageSetPartitionNumber;
 
         return $this;
     }

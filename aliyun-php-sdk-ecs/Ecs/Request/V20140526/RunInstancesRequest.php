@@ -13,18 +13,20 @@ namespace Ecs\Request\V20140526;
  * @method string getHpcClusterId()
  * @method string getSecurityEnhancementStrategy()
  * @method string getKeyPairName()
- * @method string getMinAmount()
  * @method string getSpotPriceLimit()
  * @method string getDeletionProtection()
  * @method string getResourceGroupId()
  * @method string getHostName()
  * @method string getPassword()
+ * @method string getStorageSetPartitionNumber()
  * @method array getTags()
  * @method string getAutoRenewPeriod()
+ * @method string getCpuOptionsCore()
  * @method string getPeriod()
  * @method string getDryRun()
  * @method string getLaunchTemplateId()
  * @method string getIpv6AddressCount()
+ * @method string getCpuOptionsNuma()
  * @method string getOwnerId()
  * @method string getCapacityReservationPreference()
  * @method string getVSwitchId()
@@ -45,6 +47,7 @@ namespace Ecs\Request\V20140526;
  * @method string getSecurityGroupId()
  * @method string getInternetMaxBandwidthOut()
  * @method string getDescription()
+ * @method string getCpuOptionsThreadsPerCore()
  * @method string getSystemDiskCategory()
  * @method string getCapacityReservationId()
  * @method string getSystemDiskPerformanceLevel()
@@ -65,8 +68,10 @@ namespace Ecs\Request\V20140526;
  * @method string getDedicatedHostId()
  * @method string getCreditSpecification()
  * @method array getSecurityGroupIdss()
+ * @method string getSpotDuration()
  * @method array getDataDisks()
  * @method string getLaunchTemplateVersion()
+ * @method string getStorageSetId()
  * @method string getSystemDiskSize()
  * @method string getSystemDiskDescription()
  */
@@ -170,19 +175,6 @@ class RunInstancesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $minAmount
-     *
-     * @return $this
-     */
-    public function setMinAmount($minAmount)
-    {
-        $this->requestParameters['MinAmount'] = $minAmount;
-        $this->queryParameters['MinAmount'] = $minAmount;
-
-        return $this;
-    }
-
-    /**
      * @param string $spotPriceLimit
      *
      * @return $this
@@ -248,6 +240,19 @@ class RunInstancesRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $storageSetPartitionNumber
+     *
+     * @return $this
+     */
+    public function setStorageSetPartitionNumber($storageSetPartitionNumber)
+    {
+        $this->requestParameters['StorageSetPartitionNumber'] = $storageSetPartitionNumber;
+        $this->queryParameters['StorageSetPartitionNumber'] = $storageSetPartitionNumber;
+
+        return $this;
+    }
+
+    /**
      * @param array $tag
      *
      * @return $this
@@ -272,6 +277,19 @@ class RunInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AutoRenewPeriod'] = $autoRenewPeriod;
         $this->queryParameters['AutoRenewPeriod'] = $autoRenewPeriod;
+
+        return $this;
+    }
+
+    /**
+     * @param string $cpuOptionsCore
+     *
+     * @return $this
+     */
+    public function setCpuOptionsCore($cpuOptionsCore)
+    {
+        $this->requestParameters['CpuOptionsCore'] = $cpuOptionsCore;
+        $this->queryParameters['CpuOptions.Core'] = $cpuOptionsCore;
 
         return $this;
     }
@@ -324,6 +342,19 @@ class RunInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Ipv6AddressCount'] = $ipv6AddressCount;
         $this->queryParameters['Ipv6AddressCount'] = $ipv6AddressCount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $cpuOptionsNuma
+     *
+     * @return $this
+     */
+    public function setCpuOptionsNuma($cpuOptionsNuma)
+    {
+        $this->requestParameters['CpuOptionsNuma'] = $cpuOptionsNuma;
+        $this->queryParameters['CpuOptions.Numa'] = $cpuOptionsNuma;
 
         return $this;
     }
@@ -586,6 +617,19 @@ class RunInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Description'] = $description;
         $this->queryParameters['Description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * @param string $cpuOptionsThreadsPerCore
+     *
+     * @return $this
+     */
+    public function setCpuOptionsThreadsPerCore($cpuOptionsThreadsPerCore)
+    {
+        $this->requestParameters['CpuOptionsThreadsPerCore'] = $cpuOptionsThreadsPerCore;
+        $this->queryParameters['CpuOptions.ThreadsPerCore'] = $cpuOptionsThreadsPerCore;
 
         return $this;
     }
@@ -859,6 +903,19 @@ class RunInstancesRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $spotDuration
+     *
+     * @return $this
+     */
+    public function setSpotDuration($spotDuration)
+    {
+        $this->requestParameters['SpotDuration'] = $spotDuration;
+        $this->queryParameters['SpotDuration'] = $spotDuration;
+
+        return $this;
+    }
+
+    /**
      * @param array $dataDisk
      *
      * @return $this
@@ -891,6 +948,19 @@ class RunInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['LaunchTemplateVersion'] = $launchTemplateVersion;
         $this->queryParameters['LaunchTemplateVersion'] = $launchTemplateVersion;
+
+        return $this;
+    }
+
+    /**
+     * @param string $storageSetId
+     *
+     * @return $this
+     */
+    public function setStorageSetId($storageSetId)
+    {
+        $this->requestParameters['StorageSetId'] = $storageSetId;
+        $this->queryParameters['StorageSetId'] = $storageSetId;
 
         return $this;
     }

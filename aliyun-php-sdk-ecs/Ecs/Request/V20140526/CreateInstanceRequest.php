@@ -16,6 +16,7 @@ namespace Ecs\Request\V20140526;
  * @method string getResourceGroupId()
  * @method string getHostName()
  * @method string getPassword()
+ * @method string getStorageSetPartitionNumber()
  * @method array getTags()
  * @method string getAutoRenewPeriod()
  * @method string getNodeControllerId()
@@ -61,6 +62,7 @@ namespace Ecs\Request\V20140526;
  * @method string getClusterId()
  * @method string getCreditSpecification()
  * @method array getDataDisks()
+ * @method string getStorageSetId()
  * @method string getSystemDiskSize()
  * @method string getSystemDiskDescription()
  */
@@ -198,6 +200,19 @@ class CreateInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Password'] = $password;
         $this->queryParameters['Password'] = $password;
+
+        return $this;
+    }
+
+    /**
+     * @param string $storageSetPartitionNumber
+     *
+     * @return $this
+     */
+    public function setStorageSetPartitionNumber($storageSetPartitionNumber)
+    {
+        $this->requestParameters['StorageSetPartitionNumber'] = $storageSetPartitionNumber;
+        $this->queryParameters['StorageSetPartitionNumber'] = $storageSetPartitionNumber;
 
         return $this;
     }
@@ -801,6 +816,19 @@ class CreateInstanceRequest extends \RpcAcsRequest
             $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Device'] = $depth1Value['Device'];
             $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.DeleteWithInstance'] = $depth1Value['DeleteWithInstance'];
         }
+
+        return $this;
+    }
+
+    /**
+     * @param string $storageSetId
+     *
+     * @return $this
+     */
+    public function setStorageSetId($storageSetId)
+    {
+        $this->requestParameters['StorageSetId'] = $storageSetId;
+        $this->queryParameters['StorageSetId'] = $storageSetId;
 
         return $this;
     }

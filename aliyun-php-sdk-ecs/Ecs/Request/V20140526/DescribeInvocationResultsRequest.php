@@ -17,6 +17,7 @@ namespace Ecs\Request\V20140526;
  * @method string getOwnerId()
  * @method string getInstanceId()
  * @method string getInvokeRecordStatus()
+ * @method string getIncludeHistory()
  */
 class DescribeInvocationResultsRequest extends \RpcAcsRequest
 {
@@ -165,6 +166,19 @@ class DescribeInvocationResultsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['InvokeRecordStatus'] = $invokeRecordStatus;
         $this->queryParameters['InvokeRecordStatus'] = $invokeRecordStatus;
+
+        return $this;
+    }
+
+    /**
+     * @param string $includeHistory
+     *
+     * @return $this
+     */
+    public function setIncludeHistory($includeHistory)
+    {
+        $this->requestParameters['IncludeHistory'] = $includeHistory;
+        $this->queryParameters['IncludeHistory'] = $includeHistory;
 
         return $this;
     }
