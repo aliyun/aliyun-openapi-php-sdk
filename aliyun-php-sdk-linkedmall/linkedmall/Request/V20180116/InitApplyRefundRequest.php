@@ -9,9 +9,11 @@ namespace linkedmall\Request\V20180116;
  *
  * @method string getGoodsStatus()
  * @method string getSubLmOrderId()
+ * @method string getThirdPartyUserId()
  * @method string getBizUid()
  * @method string getBizClaimType()
  * @method string getBizId()
+ * @method string getUseAnonymousTbAccount()
  */
 class InitApplyRefundRequest extends \RpcAcsRequest
 {
@@ -61,6 +63,19 @@ class InitApplyRefundRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $thirdPartyUserId
+     *
+     * @return $this
+     */
+    public function setThirdPartyUserId($thirdPartyUserId)
+    {
+        $this->requestParameters['ThirdPartyUserId'] = $thirdPartyUserId;
+        $this->queryParameters['ThirdPartyUserId'] = $thirdPartyUserId;
+
+        return $this;
+    }
+
+    /**
      * @param string $bizUid
      *
      * @return $this
@@ -95,6 +110,19 @@ class InitApplyRefundRequest extends \RpcAcsRequest
     {
         $this->requestParameters['BizId'] = $bizId;
         $this->queryParameters['BizId'] = $bizId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $useAnonymousTbAccount
+     *
+     * @return $this
+     */
+    public function setUseAnonymousTbAccount($useAnonymousTbAccount)
+    {
+        $this->requestParameters['UseAnonymousTbAccount'] = $useAnonymousTbAccount;
+        $this->queryParameters['UseAnonymousTbAccount'] = $useAnonymousTbAccount;
 
         return $this;
     }

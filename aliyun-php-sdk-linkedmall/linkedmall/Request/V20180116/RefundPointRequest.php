@@ -10,7 +10,9 @@ namespace linkedmall\Request\V20180116;
  * @method string getReason()
  * @method string getSellerId()
  * @method string getLmOrderId()
+ * @method string getThirdPartyUserId()
  * @method string getBizId()
+ * @method string getUseAnonymousTbAccount()
  */
 class RefundPointRequest extends \RpcAcsRequest
 {
@@ -73,6 +75,19 @@ class RefundPointRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $thirdPartyUserId
+     *
+     * @return $this
+     */
+    public function setThirdPartyUserId($thirdPartyUserId)
+    {
+        $this->requestParameters['ThirdPartyUserId'] = $thirdPartyUserId;
+        $this->queryParameters['ThirdPartyUserId'] = $thirdPartyUserId;
+
+        return $this;
+    }
+
+    /**
      * @param string $bizId
      *
      * @return $this
@@ -81,6 +96,19 @@ class RefundPointRequest extends \RpcAcsRequest
     {
         $this->requestParameters['BizId'] = $bizId;
         $this->queryParameters['BizId'] = $bizId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $useAnonymousTbAccount
+     *
+     * @return $this
+     */
+    public function setUseAnonymousTbAccount($useAnonymousTbAccount)
+    {
+        $this->requestParameters['UseAnonymousTbAccount'] = $useAnonymousTbAccount;
+        $this->queryParameters['UseAnonymousTbAccount'] = $useAnonymousTbAccount;
 
         return $this;
     }

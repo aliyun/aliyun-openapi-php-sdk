@@ -8,7 +8,9 @@ namespace linkedmall\Request\V20180116;
  * Request of QueryOrderInfoAfterSale
  *
  * @method string getLmOrderId()
+ * @method string getThirdPartyUserId()
  * @method string getBizId()
+ * @method string getUseAnonymousTbAccount()
  * @method string getChannelUserId()
  */
 class QueryOrderInfoAfterSaleRequest extends \RpcAcsRequest
@@ -41,6 +43,19 @@ class QueryOrderInfoAfterSaleRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $thirdPartyUserId
+     *
+     * @return $this
+     */
+    public function setThirdPartyUserId($thirdPartyUserId)
+    {
+        $this->requestParameters['ThirdPartyUserId'] = $thirdPartyUserId;
+        $this->queryParameters['ThirdPartyUserId'] = $thirdPartyUserId;
+
+        return $this;
+    }
+
+    /**
      * @param string $bizId
      *
      * @return $this
@@ -49,6 +64,19 @@ class QueryOrderInfoAfterSaleRequest extends \RpcAcsRequest
     {
         $this->requestParameters['BizId'] = $bizId;
         $this->queryParameters['BizId'] = $bizId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $useAnonymousTbAccount
+     *
+     * @return $this
+     */
+    public function setUseAnonymousTbAccount($useAnonymousTbAccount)
+    {
+        $this->requestParameters['UseAnonymousTbAccount'] = $useAnonymousTbAccount;
+        $this->queryParameters['UseAnonymousTbAccount'] = $useAnonymousTbAccount;
 
         return $this;
     }

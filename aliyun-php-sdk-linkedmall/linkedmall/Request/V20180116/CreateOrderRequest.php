@@ -10,10 +10,12 @@ namespace linkedmall\Request\V20180116;
  * @method string getItemId()
  * @method string getQuantity()
  * @method string getTotalAmount()
+ * @method string getThirdPartyUserId()
  * @method string getBizUid()
  * @method string getExtJson()
  * @method string getBizId()
  * @method string getOutTradeId()
+ * @method string getUseAnonymousTbAccount()
  * @method string getOrderExpireTime()
  * @method array getItemLists()
  * @method string getDeliveryAddress()
@@ -79,6 +81,19 @@ class CreateOrderRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $thirdPartyUserId
+     *
+     * @return $this
+     */
+    public function setThirdPartyUserId($thirdPartyUserId)
+    {
+        $this->requestParameters['ThirdPartyUserId'] = $thirdPartyUserId;
+        $this->queryParameters['ThirdPartyUserId'] = $thirdPartyUserId;
+
+        return $this;
+    }
+
+    /**
      * @param string $bizUid
      *
      * @return $this
@@ -126,6 +141,19 @@ class CreateOrderRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OutTradeId'] = $outTradeId;
         $this->queryParameters['OutTradeId'] = $outTradeId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $useAnonymousTbAccount
+     *
+     * @return $this
+     */
+    public function setUseAnonymousTbAccount($useAnonymousTbAccount)
+    {
+        $this->requestParameters['UseAnonymousTbAccount'] = $useAnonymousTbAccount;
+        $this->queryParameters['UseAnonymousTbAccount'] = $useAnonymousTbAccount;
 
         return $this;
     }

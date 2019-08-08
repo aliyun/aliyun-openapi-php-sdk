@@ -5,15 +5,15 @@ namespace linkedmall\Request\V20180116;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of QueryOrderLogistics
+ * Request of QueryOrderIdByPayId
  *
- * @method string getLmOrderId()
  * @method string getThirdPartyUserId()
  * @method string getBizUid()
+ * @method string getPaymentId()
  * @method string getBizId()
  * @method string getUseAnonymousTbAccount()
  */
-class QueryOrderLogisticsRequest extends \RpcAcsRequest
+class QueryOrderIdByPayIdRequest extends \RpcAcsRequest
 {
 
     /**
@@ -29,22 +29,9 @@ class QueryOrderLogisticsRequest extends \RpcAcsRequest
         parent::__construct(
             'linkedmall',
             '2018-01-16',
-            'QueryOrderLogistics',
+            'QueryOrderIdByPayId',
             'linkedmall'
         );
-    }
-
-    /**
-     * @param string $lmOrderId
-     *
-     * @return $this
-     */
-    public function setLmOrderId($lmOrderId)
-    {
-        $this->requestParameters['LmOrderId'] = $lmOrderId;
-        $this->queryParameters['LmOrderId'] = $lmOrderId;
-
-        return $this;
     }
 
     /**
@@ -69,6 +56,19 @@ class QueryOrderLogisticsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['BizUid'] = $bizUid;
         $this->queryParameters['BizUid'] = $bizUid;
+
+        return $this;
+    }
+
+    /**
+     * @param string $paymentId
+     *
+     * @return $this
+     */
+    public function setPaymentId($paymentId)
+    {
+        $this->requestParameters['PaymentId'] = $paymentId;
+        $this->queryParameters['PaymentId'] = $paymentId;
 
         return $this;
     }

@@ -10,8 +10,10 @@ namespace linkedmall\Request\V20180116;
  * @method string getNick()
  * @method string getSellerId()
  * @method string getCuid()
+ * @method string getThirdPartyUserId()
  * @method string getBizUid()
  * @method string getBizId()
+ * @method string getUseAnonymousTbAccount()
  */
 class GetCustomServiceUrlRequest extends \RpcAcsRequest
 {
@@ -74,6 +76,19 @@ class GetCustomServiceUrlRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $thirdPartyUserId
+     *
+     * @return $this
+     */
+    public function setThirdPartyUserId($thirdPartyUserId)
+    {
+        $this->requestParameters['ThirdPartyUserId'] = $thirdPartyUserId;
+        $this->queryParameters['ThirdPartyUserId'] = $thirdPartyUserId;
+
+        return $this;
+    }
+
+    /**
      * @param string $bizUid
      *
      * @return $this
@@ -95,6 +110,19 @@ class GetCustomServiceUrlRequest extends \RpcAcsRequest
     {
         $this->requestParameters['BizId'] = $bizId;
         $this->queryParameters['BizId'] = $bizId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $useAnonymousTbAccount
+     *
+     * @return $this
+     */
+    public function setUseAnonymousTbAccount($useAnonymousTbAccount)
+    {
+        $this->requestParameters['UseAnonymousTbAccount'] = $useAnonymousTbAccount;
+        $this->queryParameters['UseAnonymousTbAccount'] = $useAnonymousTbAccount;
 
         return $this;
     }

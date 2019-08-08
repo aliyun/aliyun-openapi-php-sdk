@@ -8,9 +8,11 @@ namespace linkedmall\Request\V20180116;
  * Request of CancelRefund
  *
  * @method string getSubLmOrderId()
+ * @method string getThirdPartyUserId()
  * @method string getBizUid()
  * @method string getDisputeId()
  * @method string getBizId()
+ * @method string getUseAnonymousTbAccount()
  */
 class CancelRefundRequest extends \RpcAcsRequest
 {
@@ -42,6 +44,19 @@ class CancelRefundRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SubLmOrderId'] = $subLmOrderId;
         $this->queryParameters['SubLmOrderId'] = $subLmOrderId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $thirdPartyUserId
+     *
+     * @return $this
+     */
+    public function setThirdPartyUserId($thirdPartyUserId)
+    {
+        $this->requestParameters['ThirdPartyUserId'] = $thirdPartyUserId;
+        $this->queryParameters['ThirdPartyUserId'] = $thirdPartyUserId;
 
         return $this;
     }
@@ -81,6 +96,19 @@ class CancelRefundRequest extends \RpcAcsRequest
     {
         $this->requestParameters['BizId'] = $bizId;
         $this->queryParameters['BizId'] = $bizId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $useAnonymousTbAccount
+     *
+     * @return $this
+     */
+    public function setUseAnonymousTbAccount($useAnonymousTbAccount)
+    {
+        $this->requestParameters['UseAnonymousTbAccount'] = $useAnonymousTbAccount;
+        $this->queryParameters['UseAnonymousTbAccount'] = $useAnonymousTbAccount;
 
         return $this;
     }

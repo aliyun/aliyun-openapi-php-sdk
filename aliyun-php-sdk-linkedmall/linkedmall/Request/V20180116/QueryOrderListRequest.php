@@ -7,10 +7,12 @@ namespace linkedmall\Request\V20180116;
  *
  * Request of QueryOrderList
  *
+ * @method string getThirdPartyUserId()
  * @method string getBizUid()
  * @method string getFilterOption()
  * @method string getBizId()
  * @method string getPageSize()
+ * @method string getUseAnonymousTbAccount()
  * @method string getPageNumber()
  */
 class QueryOrderListRequest extends \RpcAcsRequest
@@ -32,6 +34,19 @@ class QueryOrderListRequest extends \RpcAcsRequest
             'QueryOrderList',
             'linkedmall'
         );
+    }
+
+    /**
+     * @param string $thirdPartyUserId
+     *
+     * @return $this
+     */
+    public function setThirdPartyUserId($thirdPartyUserId)
+    {
+        $this->requestParameters['ThirdPartyUserId'] = $thirdPartyUserId;
+        $this->queryParameters['ThirdPartyUserId'] = $thirdPartyUserId;
+
+        return $this;
     }
 
     /**
@@ -82,6 +97,19 @@ class QueryOrderListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageSize'] = $pageSize;
         $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $useAnonymousTbAccount
+     *
+     * @return $this
+     */
+    public function setUseAnonymousTbAccount($useAnonymousTbAccount)
+    {
+        $this->requestParameters['UseAnonymousTbAccount'] = $useAnonymousTbAccount;
+        $this->queryParameters['UseAnonymousTbAccount'] = $useAnonymousTbAccount;
 
         return $this;
     }

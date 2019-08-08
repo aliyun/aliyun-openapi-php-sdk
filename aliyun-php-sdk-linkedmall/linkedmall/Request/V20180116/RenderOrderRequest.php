@@ -7,9 +7,11 @@ namespace linkedmall\Request\V20180116;
  *
  * Request of RenderOrder
  *
+ * @method string getThirdPartyUserId()
  * @method string getBizUid()
  * @method string getExtJson()
  * @method string getBizId()
+ * @method string getUseAnonymousTbAccount()
  * @method array getItemLists()
  * @method string getDeliveryAddress()
  */
@@ -32,6 +34,19 @@ class RenderOrderRequest extends \RpcAcsRequest
             'RenderOrder',
             'linkedmall'
         );
+    }
+
+    /**
+     * @param string $thirdPartyUserId
+     *
+     * @return $this
+     */
+    public function setThirdPartyUserId($thirdPartyUserId)
+    {
+        $this->requestParameters['ThirdPartyUserId'] = $thirdPartyUserId;
+        $this->queryParameters['ThirdPartyUserId'] = $thirdPartyUserId;
+
+        return $this;
     }
 
     /**
@@ -69,6 +84,19 @@ class RenderOrderRequest extends \RpcAcsRequest
     {
         $this->requestParameters['BizId'] = $bizId;
         $this->queryParameters['BizId'] = $bizId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $useAnonymousTbAccount
+     *
+     * @return $this
+     */
+    public function setUseAnonymousTbAccount($useAnonymousTbAccount)
+    {
+        $this->requestParameters['UseAnonymousTbAccount'] = $useAnonymousTbAccount;
+        $this->queryParameters['UseAnonymousTbAccount'] = $useAnonymousTbAccount;
 
         return $this;
     }

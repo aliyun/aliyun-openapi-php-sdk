@@ -8,8 +8,10 @@ namespace linkedmall\Request\V20180116;
  * Request of QueryLogistics
  *
  * @method string getLmOrderId()
+ * @method string getThirdPartyUserId()
  * @method string getBizUid()
  * @method string getBizId()
+ * @method string getUseAnonymousTbAccount()
  */
 class QueryLogisticsRequest extends \RpcAcsRequest
 {
@@ -46,6 +48,19 @@ class QueryLogisticsRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $thirdPartyUserId
+     *
+     * @return $this
+     */
+    public function setThirdPartyUserId($thirdPartyUserId)
+    {
+        $this->requestParameters['ThirdPartyUserId'] = $thirdPartyUserId;
+        $this->queryParameters['ThirdPartyUserId'] = $thirdPartyUserId;
+
+        return $this;
+    }
+
+    /**
      * @param string $bizUid
      *
      * @return $this
@@ -67,6 +82,19 @@ class QueryLogisticsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['BizId'] = $bizId;
         $this->queryParameters['BizId'] = $bizId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $useAnonymousTbAccount
+     *
+     * @return $this
+     */
+    public function setUseAnonymousTbAccount($useAnonymousTbAccount)
+    {
+        $this->requestParameters['UseAnonymousTbAccount'] = $useAnonymousTbAccount;
+        $this->queryParameters['UseAnonymousTbAccount'] = $useAnonymousTbAccount;
 
         return $this;
     }

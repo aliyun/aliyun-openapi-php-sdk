@@ -9,10 +9,12 @@ namespace linkedmall\Request\V20180116;
  *
  * @method string getCpCode()
  * @method string getSubLmOrderId()
+ * @method string getThirdPartyUserId()
  * @method string getBizUid()
  * @method string getDisputeId()
  * @method string getBizId()
  * @method string getLogisticsNo()
+ * @method string getUseAnonymousTbAccount()
  */
 class SubmitReturnGoodLogisticsRequest extends \RpcAcsRequest
 {
@@ -57,6 +59,19 @@ class SubmitReturnGoodLogisticsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SubLmOrderId'] = $subLmOrderId;
         $this->queryParameters['SubLmOrderId'] = $subLmOrderId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $thirdPartyUserId
+     *
+     * @return $this
+     */
+    public function setThirdPartyUserId($thirdPartyUserId)
+    {
+        $this->requestParameters['ThirdPartyUserId'] = $thirdPartyUserId;
+        $this->queryParameters['ThirdPartyUserId'] = $thirdPartyUserId;
 
         return $this;
     }
@@ -109,6 +124,19 @@ class SubmitReturnGoodLogisticsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['LogisticsNo'] = $logisticsNo;
         $this->queryParameters['LogisticsNo'] = $logisticsNo;
+
+        return $this;
+    }
+
+    /**
+     * @param string $useAnonymousTbAccount
+     *
+     * @return $this
+     */
+    public function setUseAnonymousTbAccount($useAnonymousTbAccount)
+    {
+        $this->requestParameters['UseAnonymousTbAccount'] = $useAnonymousTbAccount;
+        $this->queryParameters['UseAnonymousTbAccount'] = $useAnonymousTbAccount;
 
         return $this;
     }
