@@ -5,17 +5,17 @@ namespace Green\Request\V20180509;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of VideoSyncScan
+ * Request of DetectFace
  *
  * @method string getClientInfo()
  */
-class VideoSyncScanRequest extends \RoaAcsRequest
+class DetectFaceRequest extends \RoaAcsRequest
 {
 
     /**
      * @var string
      */
-    protected $uriPattern = '/green/video/syncscan';
+    protected $uriPattern = '/green/face/detect';
 
     /**
      * @var string
@@ -30,7 +30,7 @@ class VideoSyncScanRequest extends \RoaAcsRequest
         parent::__construct(
             'Green',
             '2018-05-09',
-            'VideoSyncScan',
+            'DetectFace',
             'green'
         );
     }
