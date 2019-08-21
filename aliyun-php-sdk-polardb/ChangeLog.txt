@@ -1,0 +1,4 @@
+2019-08-21 Version: 1.6.1
+- Return backup job id when create backup.
+- Return backup set size when describe backups.
+
