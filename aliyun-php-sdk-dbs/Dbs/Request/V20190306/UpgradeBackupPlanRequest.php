@@ -5,16 +5,14 @@ namespace Dbs\Request\V20190306;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeBackupPlanList
+ * Request of UpgradeBackupPlan
  *
  * @method string getClientToken()
- * @method string getPageSize()
  * @method string getBackupPlanId()
- * @method string getRegion()
- * @method string getPageNum()
  * @method string getOwnerId()
+ * @method string getInstanceClass()
  */
-class DescribeBackupPlanListRequest extends \RpcAcsRequest
+class UpgradeBackupPlanRequest extends \RpcAcsRequest
 {
 
     /**
@@ -30,7 +28,7 @@ class DescribeBackupPlanListRequest extends \RpcAcsRequest
         parent::__construct(
             'Dbs',
             '2019-03-06',
-            'DescribeBackupPlanList',
+            'UpgradeBackupPlan',
             'cbs'
         );
     }
@@ -49,19 +47,6 @@ class DescribeBackupPlanListRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
      * @param string $backupPlanId
      *
      * @return $this
@@ -75,32 +60,6 @@ class DescribeBackupPlanListRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $region
-     *
-     * @return $this
-     */
-    public function setRegion($region)
-    {
-        $this->requestParameters['Region'] = $region;
-        $this->queryParameters['Region'] = $region;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNum
-     *
-     * @return $this
-     */
-    public function setPageNum($pageNum)
-    {
-        $this->requestParameters['PageNum'] = $pageNum;
-        $this->queryParameters['PageNum'] = $pageNum;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -109,6 +68,19 @@ class DescribeBackupPlanListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceClass
+     *
+     * @return $this
+     */
+    public function setInstanceClass($instanceClass)
+    {
+        $this->requestParameters['InstanceClass'] = $instanceClass;
+        $this->queryParameters['InstanceClass'] = $instanceClass;
 
         return $this;
     }

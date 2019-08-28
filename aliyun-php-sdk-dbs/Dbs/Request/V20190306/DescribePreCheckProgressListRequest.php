@@ -5,16 +5,14 @@ namespace Dbs\Request\V20190306;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeBackupPlanList
+ * Request of DescribePreCheckProgressList
  *
  * @method string getClientToken()
- * @method string getPageSize()
+ * @method string getRestoreTaskId()
  * @method string getBackupPlanId()
- * @method string getRegion()
- * @method string getPageNum()
  * @method string getOwnerId()
  */
-class DescribeBackupPlanListRequest extends \RpcAcsRequest
+class DescribePreCheckProgressListRequest extends \RpcAcsRequest
 {
 
     /**
@@ -30,7 +28,7 @@ class DescribeBackupPlanListRequest extends \RpcAcsRequest
         parent::__construct(
             'Dbs',
             '2019-03-06',
-            'DescribeBackupPlanList',
+            'DescribePreCheckProgressList',
             'cbs'
         );
     }
@@ -49,14 +47,14 @@ class DescribeBackupPlanListRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageSize
+     * @param string $restoreTaskId
      *
      * @return $this
      */
-    public function setPageSize($pageSize)
+    public function setRestoreTaskId($restoreTaskId)
     {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
+        $this->requestParameters['RestoreTaskId'] = $restoreTaskId;
+        $this->queryParameters['RestoreTaskId'] = $restoreTaskId;
 
         return $this;
     }
@@ -70,32 +68,6 @@ class DescribeBackupPlanListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['BackupPlanId'] = $backupPlanId;
         $this->queryParameters['BackupPlanId'] = $backupPlanId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $region
-     *
-     * @return $this
-     */
-    public function setRegion($region)
-    {
-        $this->requestParameters['Region'] = $region;
-        $this->queryParameters['Region'] = $region;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNum
-     *
-     * @return $this
-     */
-    public function setPageNum($pageNum)
-    {
-        $this->requestParameters['PageNum'] = $pageNum;
-        $this->queryParameters['PageNum'] = $pageNum;
 
         return $this;
     }
