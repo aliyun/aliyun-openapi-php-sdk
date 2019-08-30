@@ -10,6 +10,7 @@ namespace imm\Request\V20170906;
  * @method string getGender()
  * @method string getProject()
  * @method string getExternalId()
+ * @method string getFacesModifyTimeRange()
  * @method string getImageSizeRange()
  * @method string getRemarksBPrefix()
  * @method string getLocationBoundary()
@@ -17,6 +18,7 @@ namespace imm\Request\V20170906;
  * @method string getOCRContentsMatch()
  * @method string getLimit()
  * @method string getRemarksDPrefix()
+ * @method string getTagsModifyTimeRange()
  * @method string getSourceType()
  * @method string getAgeRange()
  * @method string getOrder()
@@ -88,6 +90,19 @@ class FindImagesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ExternalId'] = $externalId;
         $this->queryParameters['ExternalId'] = $externalId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $facesModifyTimeRange
+     *
+     * @return $this
+     */
+    public function setFacesModifyTimeRange($facesModifyTimeRange)
+    {
+        $this->requestParameters['FacesModifyTimeRange'] = $facesModifyTimeRange;
+        $this->queryParameters['FacesModifyTimeRange'] = $facesModifyTimeRange;
 
         return $this;
     }
@@ -179,6 +194,19 @@ class FindImagesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['RemarksDPrefix'] = $remarksDPrefix;
         $this->queryParameters['RemarksDPrefix'] = $remarksDPrefix;
+
+        return $this;
+    }
+
+    /**
+     * @param string $tagsModifyTimeRange
+     *
+     * @return $this
+     */
+    public function setTagsModifyTimeRange($tagsModifyTimeRange)
+    {
+        $this->requestParameters['TagsModifyTimeRange'] = $tagsModifyTimeRange;
+        $this->queryParameters['TagsModifyTimeRange'] = $tagsModifyTimeRange;
 
         return $this;
     }

@@ -9,6 +9,7 @@ namespace imm\Request\V20170906;
  *
  * @method string getImageUri()
  * @method string getMinSimilarity()
+ * @method string getResponseFormat()
  * @method string getLimit()
  * @method string getProject()
  * @method string getSetId()
@@ -57,6 +58,19 @@ class FindSimilarFacesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['MinSimilarity'] = $minSimilarity;
         $this->queryParameters['MinSimilarity'] = $minSimilarity;
+
+        return $this;
+    }
+
+    /**
+     * @param string $responseFormat
+     *
+     * @return $this
+     */
+    public function setResponseFormat($responseFormat)
+    {
+        $this->requestParameters['ResponseFormat'] = $responseFormat;
+        $this->queryParameters['ResponseFormat'] = $responseFormat;
 
         return $this;
     }

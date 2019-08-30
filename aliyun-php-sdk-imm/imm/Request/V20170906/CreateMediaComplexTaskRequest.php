@@ -5,16 +5,14 @@ namespace imm\Request\V20170906;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of CreatePornBatchDetectJob
+ * Request of CreateMediaComplexTask
  *
  * @method string getNotifyTopicName()
  * @method string getNotifyEndpoint()
  * @method string getProject()
- * @method string getExternalID()
- * @method string getSrcUri()
- * @method string getTgtUri()
+ * @method string getParameters()
  */
-class CreatePornBatchDetectJobRequest extends \RpcAcsRequest
+class CreateMediaComplexTaskRequest extends \RpcAcsRequest
 {
 
     /**
@@ -30,7 +28,7 @@ class CreatePornBatchDetectJobRequest extends \RpcAcsRequest
         parent::__construct(
             'imm',
             '2017-09-06',
-            'CreatePornBatchDetectJob',
+            'CreateMediaComplexTask',
             'imm'
         );
     }
@@ -75,40 +73,14 @@ class CreatePornBatchDetectJobRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $externalID
+     * @param string $parameters
      *
      * @return $this
      */
-    public function setExternalID($externalID)
+    public function setParameters($parameters)
     {
-        $this->requestParameters['ExternalID'] = $externalID;
-        $this->queryParameters['ExternalID'] = $externalID;
-
-        return $this;
-    }
-
-    /**
-     * @param string $srcUri
-     *
-     * @return $this
-     */
-    public function setSrcUri($srcUri)
-    {
-        $this->requestParameters['SrcUri'] = $srcUri;
-        $this->queryParameters['SrcUri'] = $srcUri;
-
-        return $this;
-    }
-
-    /**
-     * @param string $tgtUri
-     *
-     * @return $this
-     */
-    public function setTgtUri($tgtUri)
-    {
-        $this->requestParameters['TgtUri'] = $tgtUri;
-        $this->queryParameters['TgtUri'] = $tgtUri;
+        $this->requestParameters['Parameters'] = $parameters;
+        $this->queryParameters['Parameters'] = $parameters;
 
         return $this;
     }
