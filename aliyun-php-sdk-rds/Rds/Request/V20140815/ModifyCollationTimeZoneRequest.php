@@ -10,9 +10,9 @@ namespace Rds\Request\V20140815;
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
  * @method string getTimezone()
+ * @method string getOwnerId()
  * @method string getDBInstanceId()
  * @method string getCollation()
- * @method string getOwnerId()
  */
 class ModifyCollationTimeZoneRequest extends \RpcAcsRequest
 {
@@ -75,6 +75,19 @@ class ModifyCollationTimeZoneRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
      * @param string $dBInstanceId
      *
      * @return $this
@@ -96,19 +109,6 @@ class ModifyCollationTimeZoneRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Collation'] = $collation;
         $this->queryParameters['Collation'] = $collation;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

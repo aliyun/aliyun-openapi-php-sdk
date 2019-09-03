@@ -8,12 +8,12 @@ namespace Rds\Request\V20140815;
  * Request of ModifyDBInstanceHAConfig
  *
  * @method string getResourceOwnerId()
+ * @method string getDbInstanceId()
+ * @method string getHAMode()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getSyncMode()
- * @method string getDbInstanceId()
  * @method string getOwnerId()
- * @method string getHAMode()
  */
 class ModifyDBInstanceHAConfigRequest extends \RpcAcsRequest
 {
@@ -45,6 +45,32 @@ class ModifyDBInstanceHAConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dbInstanceId
+     *
+     * @return $this
+     */
+    public function setDbInstanceId($dbInstanceId)
+    {
+        $this->requestParameters['DbInstanceId'] = $dbInstanceId;
+        $this->queryParameters['DbInstanceId'] = $dbInstanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $hAMode
+     *
+     * @return $this
+     */
+    public function setHAMode($hAMode)
+    {
+        $this->requestParameters['HAMode'] = $hAMode;
+        $this->queryParameters['HAMode'] = $hAMode;
 
         return $this;
     }
@@ -89,19 +115,6 @@ class ModifyDBInstanceHAConfigRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dbInstanceId
-     *
-     * @return $this
-     */
-    public function setDbInstanceId($dbInstanceId)
-    {
-        $this->requestParameters['DbInstanceId'] = $dbInstanceId;
-        $this->queryParameters['DbInstanceId'] = $dbInstanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -110,19 +123,6 @@ class ModifyDBInstanceHAConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $hAMode
-     *
-     * @return $this
-     */
-    public function setHAMode($hAMode)
-    {
-        $this->requestParameters['HAMode'] = $hAMode;
-        $this->queryParameters['HAMode'] = $hAMode;
 
         return $this;
     }

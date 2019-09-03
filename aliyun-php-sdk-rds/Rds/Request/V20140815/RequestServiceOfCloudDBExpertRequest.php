@@ -7,9 +7,9 @@ namespace Rds\Request\V20140815;
  *
  * Request of RequestServiceOfCloudDBExpert
  *
+ * @method string getServiceRequestType()
  * @method string getServiceRequestParam()
  * @method string getDBInstanceId()
- * @method string getServiceRequestType()
  */
 class RequestServiceOfCloudDBExpertRequest extends \RpcAcsRequest
 {
@@ -30,6 +30,19 @@ class RequestServiceOfCloudDBExpertRequest extends \RpcAcsRequest
             'RequestServiceOfCloudDBExpert',
             'rds'
         );
+    }
+
+    /**
+     * @param string $serviceRequestType
+     *
+     * @return $this
+     */
+    public function setServiceRequestType($serviceRequestType)
+    {
+        $this->requestParameters['ServiceRequestType'] = $serviceRequestType;
+        $this->queryParameters['ServiceRequestType'] = $serviceRequestType;
+
+        return $this;
     }
 
     /**
@@ -54,19 +67,6 @@ class RequestServiceOfCloudDBExpertRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DBInstanceId'] = $dBInstanceId;
         $this->queryParameters['DBInstanceId'] = $dBInstanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $serviceRequestType
-     *
-     * @return $this
-     */
-    public function setServiceRequestType($serviceRequestType)
-    {
-        $this->requestParameters['ServiceRequestType'] = $serviceRequestType;
-        $this->queryParameters['ServiceRequestType'] = $serviceRequestType;
 
         return $this;
     }

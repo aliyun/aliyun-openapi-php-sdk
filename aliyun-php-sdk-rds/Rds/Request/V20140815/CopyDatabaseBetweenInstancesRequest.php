@@ -8,17 +8,17 @@ namespace Rds\Request\V20140815;
  * Request of CopyDatabaseBetweenInstances
  *
  * @method string getResourceOwnerId()
+ * @method string getClientToken()
+ * @method string getResourceGroupId()
+ * @method string getDBInstanceId()
  * @method string getRestoreTime()
  * @method string getResourceOwnerAccount()
- * @method string getClientToken()
  * @method string getBackupId()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
  * @method string getSyncUserPrivilege()
  * @method string getDbNames()
- * @method string getResourceGroupId()
  * @method string getTargetDBInstanceId()
- * @method string getDBInstanceId()
  * @method string getPayType()
  */
 class CopyDatabaseBetweenInstancesRequest extends \RpcAcsRequest
@@ -56,6 +56,45 @@ class CopyDatabaseBetweenInstancesRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceGroupId
+     *
+     * @return $this
+     */
+    public function setResourceGroupId($resourceGroupId)
+    {
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
+
+        return $this;
+    }
+
+    /**
      * @param string $restoreTime
      *
      * @return $this
@@ -77,19 +116,6 @@ class CopyDatabaseBetweenInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $clientToken
-     *
-     * @return $this
-     */
-    public function setClientToken($clientToken)
-    {
-        $this->requestParameters['ClientToken'] = $clientToken;
-        $this->queryParameters['ClientToken'] = $clientToken;
 
         return $this;
     }
@@ -160,19 +186,6 @@ class CopyDatabaseBetweenInstancesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceGroupId
-     *
-     * @return $this
-     */
-    public function setResourceGroupId($resourceGroupId)
-    {
-        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
-        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
-
-        return $this;
-    }
-
-    /**
      * @param string $targetDBInstanceId
      *
      * @return $this
@@ -181,19 +194,6 @@ class CopyDatabaseBetweenInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TargetDBInstanceId'] = $targetDBInstanceId;
         $this->queryParameters['TargetDBInstanceId'] = $targetDBInstanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
 
         return $this;
     }

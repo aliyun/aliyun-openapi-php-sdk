@@ -8,8 +8,8 @@ namespace Rds\Request\V20140815;
  * Request of CreateDiagnosticReport
  *
  * @method string getEndTime()
- * @method string getDBInstanceId()
  * @method string getStartTime()
+ * @method string getDBInstanceId()
  */
 class CreateDiagnosticReportRequest extends \RpcAcsRequest
 {
@@ -46,19 +46,6 @@ class CreateDiagnosticReportRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $startTime
      *
      * @return $this
@@ -67,6 +54,19 @@ class CreateDiagnosticReportRequest extends \RpcAcsRequest
     {
         $this->requestParameters['StartTime'] = $startTime;
         $this->queryParameters['StartTime'] = $startTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
 
         return $this;
     }

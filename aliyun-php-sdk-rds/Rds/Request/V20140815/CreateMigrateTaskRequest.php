@@ -8,14 +8,14 @@ namespace Rds\Request\V20140815;
  * Request of CreateMigrateTask
  *
  * @method string getResourceOwnerId()
+ * @method string getIsOnlineDB()
+ * @method string getDBInstanceId()
  * @method string getMigrateTaskId()
  * @method string getResourceOwnerAccount()
- * @method string getIsOnlineDB()
  * @method string getOwnerId()
  * @method string getOssObjectPositions()
  * @method string getOSSUrls()
  * @method string getDBName()
- * @method string getDBInstanceId()
  * @method string getBackupMode()
  * @method string getCheckDBMode()
  */
@@ -54,6 +54,32 @@ class CreateMigrateTaskRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $isOnlineDB
+     *
+     * @return $this
+     */
+    public function setIsOnlineDB($isOnlineDB)
+    {
+        $this->requestParameters['IsOnlineDB'] = $isOnlineDB;
+        $this->queryParameters['IsOnlineDB'] = $isOnlineDB;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
+
+        return $this;
+    }
+
+    /**
      * @param string $migrateTaskId
      *
      * @return $this
@@ -75,19 +101,6 @@ class CreateMigrateTaskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $isOnlineDB
-     *
-     * @return $this
-     */
-    public function setIsOnlineDB($isOnlineDB)
-    {
-        $this->requestParameters['IsOnlineDB'] = $isOnlineDB;
-        $this->queryParameters['IsOnlineDB'] = $isOnlineDB;
 
         return $this;
     }
@@ -140,19 +153,6 @@ class CreateMigrateTaskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DBName'] = $dBName;
         $this->queryParameters['DBName'] = $dBName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
 
         return $this;
     }

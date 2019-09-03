@@ -7,14 +7,14 @@ namespace Rds\Request\V20140815;
  *
  * Request of DescribeCloudDbExpertService
  *
- * @method string getServiceRequestParam()
  * @method string getResourceOwnerId()
+ * @method string getServiceRequestType()
+ * @method string getServiceRequestParam()
  * @method string getSecurityToken()
+ * @method string getDBInstanceId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getDBInstanceId()
  * @method string getOwnerId()
- * @method string getServiceRequestType()
  */
 class DescribeCloudDbExpertServiceRequest extends \RpcAcsRequest
 {
@@ -38,19 +38,6 @@ class DescribeCloudDbExpertServiceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $serviceRequestParam
-     *
-     * @return $this
-     */
-    public function setServiceRequestParam($serviceRequestParam)
-    {
-        $this->requestParameters['ServiceRequestParam'] = $serviceRequestParam;
-        $this->queryParameters['ServiceRequestParam'] = $serviceRequestParam;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerId
      *
      * @return $this
@@ -64,6 +51,32 @@ class DescribeCloudDbExpertServiceRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $serviceRequestType
+     *
+     * @return $this
+     */
+    public function setServiceRequestType($serviceRequestType)
+    {
+        $this->requestParameters['ServiceRequestType'] = $serviceRequestType;
+        $this->queryParameters['ServiceRequestType'] = $serviceRequestType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $serviceRequestParam
+     *
+     * @return $this
+     */
+    public function setServiceRequestParam($serviceRequestParam)
+    {
+        $this->requestParameters['ServiceRequestParam'] = $serviceRequestParam;
+        $this->queryParameters['ServiceRequestParam'] = $serviceRequestParam;
+
+        return $this;
+    }
+
+    /**
      * @param string $securityToken
      *
      * @return $this
@@ -72,6 +85,19 @@ class DescribeCloudDbExpertServiceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
 
         return $this;
     }
@@ -103,19 +129,6 @@ class DescribeCloudDbExpertServiceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -124,19 +137,6 @@ class DescribeCloudDbExpertServiceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $serviceRequestType
-     *
-     * @return $this
-     */
-    public function setServiceRequestType($serviceRequestType)
-    {
-        $this->requestParameters['ServiceRequestType'] = $serviceRequestType;
-        $this->queryParameters['ServiceRequestType'] = $serviceRequestType;
 
         return $this;
     }

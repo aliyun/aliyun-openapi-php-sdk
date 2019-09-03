@@ -8,13 +8,13 @@ namespace Rds\Request\V20140815;
  * Request of DescribeMigrateTasksForSQLServer
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
- * @method string getPageSize()
- * @method string getEndTime()
- * @method string getDBInstanceId()
  * @method string getStartTime()
- * @method string getOwnerId()
  * @method string getPageNumber()
+ * @method string getPageSize()
+ * @method string getDBInstanceId()
+ * @method string getResourceOwnerAccount()
+ * @method string getEndTime()
+ * @method string getOwnerId()
  */
 class DescribeMigrateTasksForSQLServerRequest extends \RpcAcsRequest
 {
@@ -51,14 +51,27 @@ class DescribeMigrateTasksForSQLServerRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
+     * @param string $startTime
      *
      * @return $this
      */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
+    public function setStartTime($startTime)
     {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }
@@ -77,19 +90,6 @@ class DescribeMigrateTasksForSQLServerRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $endTime
-     *
-     * @return $this
-     */
-    public function setEndTime($endTime)
-    {
-        $this->requestParameters['EndTime'] = $endTime;
-        $this->queryParameters['EndTime'] = $endTime;
-
-        return $this;
-    }
-
-    /**
      * @param string $dBInstanceId
      *
      * @return $this
@@ -103,14 +103,27 @@ class DescribeMigrateTasksForSQLServerRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $startTime
+     * @param string $resourceOwnerAccount
      *
      * @return $this
      */
-    public function setStartTime($startTime)
+    public function setResourceOwnerAccount($resourceOwnerAccount)
     {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $endTime
+     *
+     * @return $this
+     */
+    public function setEndTime($endTime)
+    {
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
 
         return $this;
     }
@@ -124,19 +137,6 @@ class DescribeMigrateTasksForSQLServerRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

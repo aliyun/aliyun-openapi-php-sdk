@@ -8,13 +8,13 @@ namespace Rds\Request\V20140815;
  * Request of ModifyDBInstanceTDE
  *
  * @method string getResourceOwnerId()
- * @method string getDBName()
- * @method string getResourceOwnerAccount()
- * @method string getRoleArn()
- * @method string getOwnerAccount()
  * @method string getDBInstanceId()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
  * @method string getEncryptionKey()
  * @method string getOwnerId()
+ * @method string getDBName()
+ * @method string getRoleArn()
  * @method string getTDEStatus()
  */
 class ModifyDBInstanceTDERequest extends \RpcAcsRequest
@@ -52,14 +52,14 @@ class ModifyDBInstanceTDERequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dBName
+     * @param string $dBInstanceId
      *
      * @return $this
      */
-    public function setDBName($dBName)
+    public function setDBInstanceId($dBInstanceId)
     {
-        $this->requestParameters['DBName'] = $dBName;
-        $this->queryParameters['DBName'] = $dBName;
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
 
         return $this;
     }
@@ -78,19 +78,6 @@ class ModifyDBInstanceTDERequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $roleArn
-     *
-     * @return $this
-     */
-    public function setRoleArn($roleArn)
-    {
-        $this->requestParameters['RoleArn'] = $roleArn;
-        $this->queryParameters['RoleArn'] = $roleArn;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerAccount
      *
      * @return $this
@@ -99,19 +86,6 @@ class ModifyDBInstanceTDERequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
 
         return $this;
     }
@@ -138,6 +112,32 @@ class ModifyDBInstanceTDERequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBName
+     *
+     * @return $this
+     */
+    public function setDBName($dBName)
+    {
+        $this->requestParameters['DBName'] = $dBName;
+        $this->queryParameters['DBName'] = $dBName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $roleArn
+     *
+     * @return $this
+     */
+    public function setRoleArn($roleArn)
+    {
+        $this->requestParameters['RoleArn'] = $roleArn;
+        $this->queryParameters['RoleArn'] = $roleArn;
 
         return $this;
     }

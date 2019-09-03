@@ -8,11 +8,11 @@ namespace Rds\Request\V20140815;
  * Request of ImportDataForSQLServer
  *
  * @method string getResourceOwnerId()
- * @method string getFileName()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getDBInstanceId()
  * @method string getOwnerId()
+ * @method string getFileName()
+ * @method string getDBInstanceId()
  */
 class ImportDataForSQLServerRequest extends \RpcAcsRequest
 {
@@ -49,19 +49,6 @@ class ImportDataForSQLServerRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $fileName
-     *
-     * @return $this
-     */
-    public function setFileName($fileName)
-    {
-        $this->requestParameters['FileName'] = $fileName;
-        $this->queryParameters['FileName'] = $fileName;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -88,19 +75,6 @@ class ImportDataForSQLServerRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -109,6 +83,32 @@ class ImportDataForSQLServerRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $fileName
+     *
+     * @return $this
+     */
+    public function setFileName($fileName)
+    {
+        $this->requestParameters['FileName'] = $fileName;
+        $this->queryParameters['FileName'] = $fileName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
 
         return $this;
     }

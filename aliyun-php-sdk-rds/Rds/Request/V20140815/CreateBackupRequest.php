@@ -7,15 +7,15 @@ namespace Rds\Request\V20140815;
  *
  * Request of CreateBackup
  *
- * @method string getBackupMethod()
  * @method string getResourceOwnerId()
  * @method string getBackupStrategy()
- * @method string getDBName()
+ * @method string getDBInstanceId()
+ * @method string getBackupType()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getDBInstanceId()
  * @method string getOwnerId()
- * @method string getBackupType()
+ * @method string getBackupMethod()
+ * @method string getDBName()
  */
 class CreateBackupRequest extends \RpcAcsRequest
 {
@@ -36,19 +36,6 @@ class CreateBackupRequest extends \RpcAcsRequest
             'CreateBackup',
             'rds'
         );
-    }
-
-    /**
-     * @param string $backupMethod
-     *
-     * @return $this
-     */
-    public function setBackupMethod($backupMethod)
-    {
-        $this->requestParameters['BackupMethod'] = $backupMethod;
-        $this->queryParameters['BackupMethod'] = $backupMethod;
-
-        return $this;
     }
 
     /**
@@ -78,14 +65,27 @@ class CreateBackupRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dBName
+     * @param string $dBInstanceId
      *
      * @return $this
      */
-    public function setDBName($dBName)
+    public function setDBInstanceId($dBInstanceId)
     {
-        $this->requestParameters['DBName'] = $dBName;
-        $this->queryParameters['DBName'] = $dBName;
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $backupType
+     *
+     * @return $this
+     */
+    public function setBackupType($backupType)
+    {
+        $this->requestParameters['BackupType'] = $backupType;
+        $this->queryParameters['BackupType'] = $backupType;
 
         return $this;
     }
@@ -117,19 +117,6 @@ class CreateBackupRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -143,14 +130,27 @@ class CreateBackupRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $backupType
+     * @param string $backupMethod
      *
      * @return $this
      */
-    public function setBackupType($backupType)
+    public function setBackupMethod($backupMethod)
     {
-        $this->requestParameters['BackupType'] = $backupType;
-        $this->queryParameters['BackupType'] = $backupType;
+        $this->requestParameters['BackupMethod'] = $backupMethod;
+        $this->queryParameters['BackupMethod'] = $backupMethod;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBName
+     *
+     * @return $this
+     */
+    public function setDBName($dBName)
+    {
+        $this->requestParameters['DBName'] = $dBName;
+        $this->queryParameters['DBName'] = $dBName;
 
         return $this;
     }

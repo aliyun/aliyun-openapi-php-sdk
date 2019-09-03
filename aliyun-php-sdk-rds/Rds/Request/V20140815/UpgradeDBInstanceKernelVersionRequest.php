@@ -9,10 +9,10 @@ namespace Rds\Request\V20140815;
  *
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
+ * @method string getOwnerId()
  * @method string getUpgradeTime()
  * @method string getDBInstanceId()
  * @method string getSwitchTime()
- * @method string getOwnerId()
  */
 class UpgradeDBInstanceKernelVersionRequest extends \RpcAcsRequest
 {
@@ -62,6 +62,19 @@ class UpgradeDBInstanceKernelVersionRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
      * @param string $upgradeTime
      *
      * @return $this
@@ -96,19 +109,6 @@ class UpgradeDBInstanceKernelVersionRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SwitchTime'] = $switchTime;
         $this->queryParameters['SwitchTime'] = $switchTime;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

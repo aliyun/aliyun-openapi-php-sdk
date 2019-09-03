@@ -8,14 +8,14 @@ namespace Rds\Request\V20140815;
  * Request of DescribeDatabases
  *
  * @method string getResourceOwnerId()
- * @method string getDBName()
- * @method string getResourceOwnerAccount()
+ * @method string getPageNumber()
  * @method string getDBStatus()
- * @method string getOwnerAccount()
  * @method string getPageSize()
  * @method string getDBInstanceId()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
  * @method string getOwnerId()
- * @method string getPageNumber()
+ * @method string getDBName()
  */
 class DescribeDatabasesRequest extends \RpcAcsRequest
 {
@@ -52,27 +52,14 @@ class DescribeDatabasesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dBName
+     * @param string $pageNumber
      *
      * @return $this
      */
-    public function setDBName($dBName)
+    public function setPageNumber($pageNumber)
     {
-        $this->requestParameters['DBName'] = $dBName;
-        $this->queryParameters['DBName'] = $dBName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }
@@ -86,19 +73,6 @@ class DescribeDatabasesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DBStatus'] = $dBStatus;
         $this->queryParameters['DBStatus'] = $dBStatus;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
         return $this;
     }
@@ -130,6 +104,32 @@ class DescribeDatabasesRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -143,14 +143,14 @@ class DescribeDatabasesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageNumber
+     * @param string $dBName
      *
      * @return $this
      */
-    public function setPageNumber($pageNumber)
+    public function setDBName($dBName)
     {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
+        $this->requestParameters['DBName'] = $dBName;
+        $this->queryParameters['DBName'] = $dBName;
 
         return $this;
     }

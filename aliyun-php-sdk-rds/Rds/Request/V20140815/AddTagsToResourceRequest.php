@@ -10,21 +10,21 @@ namespace Rds\Request\V20140815;
  * @method string getTag4value()
  * @method string getResourceOwnerId()
  * @method string getTag2key()
+ * @method string getClientToken()
+ * @method string getTag3key()
+ * @method string getTag1value()
+ * @method string getDBInstanceId()
+ * @method string getTag3value()
+ * @method string getproxyId()
  * @method string getTag5key()
  * @method string getResourceOwnerAccount()
- * @method string getClientToken()
  * @method string getOwnerAccount()
- * @method string getTag3key()
  * @method string getOwnerId()
  * @method string getTag5value()
  * @method string getTags()
  * @method string getTag1key()
- * @method string getTag1value()
  * @method string getTag2value()
  * @method string getTag4key()
- * @method string getDBInstanceId()
- * @method string getTag3value()
- * @method string getproxyId()
  */
 class AddTagsToResourceRequest extends \RpcAcsRequest
 {
@@ -87,6 +87,84 @@ class AddTagsToResourceRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $tag3key
+     *
+     * @return $this
+     */
+    public function setTag3key($tag3key)
+    {
+        $this->requestParameters['Tag3key'] = $tag3key;
+        $this->queryParameters['Tag.3.key'] = $tag3key;
+
+        return $this;
+    }
+
+    /**
+     * @param string $tag1value
+     *
+     * @return $this
+     */
+    public function setTag1value($tag1value)
+    {
+        $this->requestParameters['Tag1value'] = $tag1value;
+        $this->queryParameters['Tag.1.value'] = $tag1value;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $tag3value
+     *
+     * @return $this
+     */
+    public function setTag3value($tag3value)
+    {
+        $this->requestParameters['Tag3value'] = $tag3value;
+        $this->queryParameters['Tag.3.value'] = $tag3value;
+
+        return $this;
+    }
+
+    /**
+     * @param string $proxyId
+     *
+     * @return $this
+     */
+    public function setproxyId($proxyId)
+    {
+        $this->requestParameters['proxyId'] = $proxyId;
+        $this->queryParameters['proxyId'] = $proxyId;
+
+        return $this;
+    }
+
+    /**
      * @param string $tag5key
      *
      * @return $this
@@ -113,19 +191,6 @@ class AddTagsToResourceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $clientToken
-     *
-     * @return $this
-     */
-    public function setClientToken($clientToken)
-    {
-        $this->requestParameters['ClientToken'] = $clientToken;
-        $this->queryParameters['ClientToken'] = $clientToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerAccount
      *
      * @return $this
@@ -134,19 +199,6 @@ class AddTagsToResourceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $tag3key
-     *
-     * @return $this
-     */
-    public function setTag3key($tag3key)
-    {
-        $this->requestParameters['Tag3key'] = $tag3key;
-        $this->queryParameters['Tag.3.key'] = $tag3key;
 
         return $this;
     }
@@ -204,19 +256,6 @@ class AddTagsToResourceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $tag1value
-     *
-     * @return $this
-     */
-    public function setTag1value($tag1value)
-    {
-        $this->requestParameters['Tag1value'] = $tag1value;
-        $this->queryParameters['Tag.1.value'] = $tag1value;
-
-        return $this;
-    }
-
-    /**
      * @param string $tag2value
      *
      * @return $this
@@ -238,45 +277,6 @@ class AddTagsToResourceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Tag4key'] = $tag4key;
         $this->queryParameters['Tag.4.key'] = $tag4key;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $tag3value
-     *
-     * @return $this
-     */
-    public function setTag3value($tag3value)
-    {
-        $this->requestParameters['Tag3value'] = $tag3value;
-        $this->queryParameters['Tag.3.value'] = $tag3value;
-
-        return $this;
-    }
-
-    /**
-     * @param string $proxyId
-     *
-     * @return $this
-     */
-    public function setproxyId($proxyId)
-    {
-        $this->requestParameters['proxyId'] = $proxyId;
-        $this->queryParameters['proxyId'] = $proxyId;
 
         return $this;
     }

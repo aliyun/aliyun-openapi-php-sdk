@@ -8,14 +8,14 @@ namespace Rds\Request\V20140815;
  * Request of CreateOnlineDatabaseTask
  *
  * @method string getResourceOwnerId()
- * @method string getMigrateTaskId()
- * @method string getDBName()
- * @method string getResourceOwnerAccount()
  * @method string getClientToken()
- * @method string getOwnerAccount()
  * @method string getDBInstanceId()
- * @method string getCheckDBMode()
+ * @method string getMigrateTaskId()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getDBName()
+ * @method string getCheckDBMode()
  */
 class CreateOnlineDatabaseTaskRequest extends \RpcAcsRequest
 {
@@ -52,45 +52,6 @@ class CreateOnlineDatabaseTaskRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $migrateTaskId
-     *
-     * @return $this
-     */
-    public function setMigrateTaskId($migrateTaskId)
-    {
-        $this->requestParameters['MigrateTaskId'] = $migrateTaskId;
-        $this->queryParameters['MigrateTaskId'] = $migrateTaskId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBName
-     *
-     * @return $this
-     */
-    public function setDBName($dBName)
-    {
-        $this->requestParameters['DBName'] = $dBName;
-        $this->queryParameters['DBName'] = $dBName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $clientToken
      *
      * @return $this
@@ -99,19 +60,6 @@ class CreateOnlineDatabaseTaskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ClientToken'] = $clientToken;
         $this->queryParameters['ClientToken'] = $clientToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
         return $this;
     }
@@ -130,14 +78,40 @@ class CreateOnlineDatabaseTaskRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $checkDBMode
+     * @param string $migrateTaskId
      *
      * @return $this
      */
-    public function setCheckDBMode($checkDBMode)
+    public function setMigrateTaskId($migrateTaskId)
     {
-        $this->requestParameters['CheckDBMode'] = $checkDBMode;
-        $this->queryParameters['CheckDBMode'] = $checkDBMode;
+        $this->requestParameters['MigrateTaskId'] = $migrateTaskId;
+        $this->queryParameters['MigrateTaskId'] = $migrateTaskId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
         return $this;
     }
@@ -151,6 +125,32 @@ class CreateOnlineDatabaseTaskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBName
+     *
+     * @return $this
+     */
+    public function setDBName($dBName)
+    {
+        $this->requestParameters['DBName'] = $dBName;
+        $this->queryParameters['DBName'] = $dBName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $checkDBMode
+     *
+     * @return $this
+     */
+    public function setCheckDBMode($checkDBMode)
+    {
+        $this->requestParameters['CheckDBMode'] = $checkDBMode;
+        $this->queryParameters['CheckDBMode'] = $checkDBMode;
 
         return $this;
     }

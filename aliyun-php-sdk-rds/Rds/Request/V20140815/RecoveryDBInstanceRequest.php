@@ -8,11 +8,14 @@ namespace Rds\Request\V20140815;
  * Request of RecoveryDBInstance
  *
  * @method string getResourceOwnerId()
+ * @method string getDBInstanceStorage()
+ * @method string getClientToken()
+ * @method string getResourceGroupId()
+ * @method string getDBInstanceDescription()
+ * @method string getDBInstanceId()
  * @method string getRestoreTime()
  * @method string getPeriod()
- * @method string getDBInstanceStorage()
  * @method string getResourceOwnerAccount()
- * @method string getClientToken()
  * @method string getBackupId()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
@@ -21,11 +24,8 @@ namespace Rds\Request\V20140815;
  * @method string getDbNames()
  * @method string getVSwitchId()
  * @method string getPrivateIpAddress()
- * @method string getResourceGroupId()
  * @method string getTargetDBInstanceId()
  * @method string getVPCId()
- * @method string getDBInstanceDescription()
- * @method string getDBInstanceId()
  * @method string getPayType()
  * @method string getInstanceNetworkType()
  */
@@ -64,6 +64,71 @@ class RecoveryDBInstanceRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $dBInstanceStorage
+     *
+     * @return $this
+     */
+    public function setDBInstanceStorage($dBInstanceStorage)
+    {
+        $this->requestParameters['DBInstanceStorage'] = $dBInstanceStorage;
+        $this->queryParameters['DBInstanceStorage'] = $dBInstanceStorage;
+
+        return $this;
+    }
+
+    /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceGroupId
+     *
+     * @return $this
+     */
+    public function setResourceGroupId($resourceGroupId)
+    {
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceDescription
+     *
+     * @return $this
+     */
+    public function setDBInstanceDescription($dBInstanceDescription)
+    {
+        $this->requestParameters['DBInstanceDescription'] = $dBInstanceDescription;
+        $this->queryParameters['DBInstanceDescription'] = $dBInstanceDescription;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
+
+        return $this;
+    }
+
+    /**
      * @param string $restoreTime
      *
      * @return $this
@@ -90,19 +155,6 @@ class RecoveryDBInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dBInstanceStorage
-     *
-     * @return $this
-     */
-    public function setDBInstanceStorage($dBInstanceStorage)
-    {
-        $this->requestParameters['DBInstanceStorage'] = $dBInstanceStorage;
-        $this->queryParameters['DBInstanceStorage'] = $dBInstanceStorage;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -111,19 +163,6 @@ class RecoveryDBInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $clientToken
-     *
-     * @return $this
-     */
-    public function setClientToken($clientToken)
-    {
-        $this->requestParameters['ClientToken'] = $clientToken;
-        $this->queryParameters['ClientToken'] = $clientToken;
 
         return $this;
     }
@@ -233,19 +272,6 @@ class RecoveryDBInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceGroupId
-     *
-     * @return $this
-     */
-    public function setResourceGroupId($resourceGroupId)
-    {
-        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
-        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
-
-        return $this;
-    }
-
-    /**
      * @param string $targetDBInstanceId
      *
      * @return $this
@@ -267,32 +293,6 @@ class RecoveryDBInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['VPCId'] = $vPCId;
         $this->queryParameters['VPCId'] = $vPCId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBInstanceDescription
-     *
-     * @return $this
-     */
-    public function setDBInstanceDescription($dBInstanceDescription)
-    {
-        $this->requestParameters['DBInstanceDescription'] = $dBInstanceDescription;
-        $this->queryParameters['DBInstanceDescription'] = $dBInstanceDescription;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
 
         return $this;
     }

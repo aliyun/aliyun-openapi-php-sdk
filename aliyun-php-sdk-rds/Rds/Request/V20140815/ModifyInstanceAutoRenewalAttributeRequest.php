@@ -7,14 +7,14 @@ namespace Rds\Request\V20140815;
  *
  * Request of ModifyInstanceAutoRenewalAttribute
  *
- * @method string getDuration()
  * @method string getResourceOwnerId()
- * @method string getAutoRenew()
- * @method string getResourceOwnerAccount()
  * @method string getClientToken()
- * @method string getOwnerAccount()
+ * @method string getDuration()
  * @method string getDBInstanceId()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getAutoRenew()
  */
 class ModifyInstanceAutoRenewalAttributeRequest extends \RpcAcsRequest
 {
@@ -38,19 +38,6 @@ class ModifyInstanceAutoRenewalAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $duration
-     *
-     * @return $this
-     */
-    public function setDuration($duration)
-    {
-        $this->requestParameters['Duration'] = $duration;
-        $this->queryParameters['Duration'] = $duration;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerId
      *
      * @return $this
@@ -59,32 +46,6 @@ class ModifyInstanceAutoRenewalAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $autoRenew
-     *
-     * @return $this
-     */
-    public function setAutoRenew($autoRenew)
-    {
-        $this->requestParameters['AutoRenew'] = $autoRenew;
-        $this->queryParameters['AutoRenew'] = $autoRenew;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }
@@ -103,14 +64,14 @@ class ModifyInstanceAutoRenewalAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerAccount
+     * @param string $duration
      *
      * @return $this
      */
-    public function setOwnerAccount($ownerAccount)
+    public function setDuration($duration)
     {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+        $this->requestParameters['Duration'] = $duration;
+        $this->queryParameters['Duration'] = $duration;
 
         return $this;
     }
@@ -129,6 +90,32 @@ class ModifyInstanceAutoRenewalAttributeRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -137,6 +124,19 @@ class ModifyInstanceAutoRenewalAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $autoRenew
+     *
+     * @return $this
+     */
+    public function setAutoRenew($autoRenew)
+    {
+        $this->requestParameters['AutoRenew'] = $autoRenew;
+        $this->queryParameters['AutoRenew'] = $autoRenew;
 
         return $this;
     }

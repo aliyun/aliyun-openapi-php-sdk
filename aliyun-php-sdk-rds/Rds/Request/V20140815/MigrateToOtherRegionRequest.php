@@ -8,16 +8,16 @@ namespace Rds\Request\V20140815;
  * Request of MigrateToOtherRegion
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
- * @method string getOwnerAccount()
- * @method string getTargetVSwitchId()
- * @method string getOwnerId()
  * @method string getTargetVpcId()
  * @method string getTargetZoneId()
  * @method string getEffectiveTime()
  * @method string getDBInstanceId()
- * @method string getTargetRegionId()
  * @method string getSwitchTime()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getTargetVSwitchId()
+ * @method string getOwnerId()
+ * @method string getTargetRegionId()
  */
 class MigrateToOtherRegionRequest extends \RpcAcsRequest
 {
@@ -49,58 +49,6 @@ class MigrateToOtherRegionRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $targetVSwitchId
-     *
-     * @return $this
-     */
-    public function setTargetVSwitchId($targetVSwitchId)
-    {
-        $this->requestParameters['TargetVSwitchId'] = $targetVSwitchId;
-        $this->queryParameters['TargetVSwitchId'] = $targetVSwitchId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }
@@ -158,19 +106,6 @@ class MigrateToOtherRegionRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $targetRegionId
-     *
-     * @return $this
-     */
-    public function setTargetRegionId($targetRegionId)
-    {
-        $this->requestParameters['TargetRegionId'] = $targetRegionId;
-        $this->queryParameters['TargetRegionId'] = $targetRegionId;
-
-        return $this;
-    }
-
-    /**
      * @param string $switchTime
      *
      * @return $this
@@ -179,6 +114,71 @@ class MigrateToOtherRegionRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SwitchTime'] = $switchTime;
         $this->queryParameters['SwitchTime'] = $switchTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $targetVSwitchId
+     *
+     * @return $this
+     */
+    public function setTargetVSwitchId($targetVSwitchId)
+    {
+        $this->requestParameters['TargetVSwitchId'] = $targetVSwitchId;
+        $this->queryParameters['TargetVSwitchId'] = $targetVSwitchId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $targetRegionId
+     *
+     * @return $this
+     */
+    public function setTargetRegionId($targetRegionId)
+    {
+        $this->requestParameters['TargetRegionId'] = $targetRegionId;
+        $this->queryParameters['TargetRegionId'] = $targetRegionId;
 
         return $this;
     }

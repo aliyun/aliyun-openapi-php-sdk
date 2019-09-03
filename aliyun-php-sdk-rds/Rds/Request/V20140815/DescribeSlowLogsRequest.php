@@ -8,16 +8,16 @@ namespace Rds\Request\V20140815;
  * Request of DescribeSlowLogs
  *
  * @method string getResourceOwnerId()
+ * @method string getStartTime()
+ * @method string getPageNumber()
+ * @method string getSortKey()
+ * @method string getPageSize()
+ * @method string getDBInstanceId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getEndTime()
- * @method string getStartTime()
  * @method string getOwnerId()
- * @method string getPageNumber()
- * @method string getSortKey()
  * @method string getDBName()
- * @method string getPageSize()
- * @method string getDBInstanceId()
  */
 class DescribeSlowLogsRequest extends \RpcAcsRequest
 {
@@ -49,6 +49,71 @@ class DescribeSlowLogsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sortKey
+     *
+     * @return $this
+     */
+    public function setSortKey($sortKey)
+    {
+        $this->requestParameters['SortKey'] = $sortKey;
+        $this->queryParameters['SortKey'] = $sortKey;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
 
         return $this;
     }
@@ -93,19 +158,6 @@ class DescribeSlowLogsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $startTime
-     *
-     * @return $this
-     */
-    public function setStartTime($startTime)
-    {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -119,32 +171,6 @@ class DescribeSlowLogsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
-
-        return $this;
-    }
-
-    /**
-     * @param string $sortKey
-     *
-     * @return $this
-     */
-    public function setSortKey($sortKey)
-    {
-        $this->requestParameters['SortKey'] = $sortKey;
-        $this->queryParameters['SortKey'] = $sortKey;
-
-        return $this;
-    }
-
-    /**
      * @param string $dBName
      *
      * @return $this
@@ -153,32 +179,6 @@ class DescribeSlowLogsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DBName'] = $dBName;
         $this->queryParameters['DBName'] = $dBName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
 
         return $this;
     }

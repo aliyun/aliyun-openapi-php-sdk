@@ -8,23 +8,23 @@ namespace Rds\Request\V20140815;
  * Request of DescribeTemplatesList
  *
  * @method string getResourceOwnerId()
+ * @method string getStartTime()
+ * @method string getSortKey()
+ * @method string getMinAvgScanRows()
+ * @method string getSecurityToken()
+ * @method string getPageNumbers()
+ * @method string getPagingId()
+ * @method string getDBInstanceId()
+ * @method string getMaxAvgScanRows()
  * @method string getResourceOwnerAccount()
  * @method string getMinAvgConsume()
  * @method string getOwnerAccount()
  * @method string getMaxRecordsPerPage()
  * @method string getEndTime()
- * @method string getStartTime()
  * @method string getOwnerId()
  * @method string getMaxAvgConsume()
- * @method string getSortKey()
- * @method string getMinAvgScanRows()
  * @method string getSqType()
- * @method string getSecurityToken()
  * @method string getSortMethod()
- * @method string getPageNumbers()
- * @method string getPagingId()
- * @method string getDBInstanceId()
- * @method string getMaxAvgScanRows()
  */
 class DescribeTemplatesListRequest extends \RpcAcsRequest
 {
@@ -56,6 +56,110 @@ class DescribeTemplatesListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sortKey
+     *
+     * @return $this
+     */
+    public function setSortKey($sortKey)
+    {
+        $this->requestParameters['SortKey'] = $sortKey;
+        $this->queryParameters['SortKey'] = $sortKey;
+
+        return $this;
+    }
+
+    /**
+     * @param string $minAvgScanRows
+     *
+     * @return $this
+     */
+    public function setMinAvgScanRows($minAvgScanRows)
+    {
+        $this->requestParameters['MinAvgScanRows'] = $minAvgScanRows;
+        $this->queryParameters['MinAvgScanRows'] = $minAvgScanRows;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumbers
+     *
+     * @return $this
+     */
+    public function setPageNumbers($pageNumbers)
+    {
+        $this->requestParameters['PageNumbers'] = $pageNumbers;
+        $this->queryParameters['PageNumbers'] = $pageNumbers;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pagingId
+     *
+     * @return $this
+     */
+    public function setPagingId($pagingId)
+    {
+        $this->requestParameters['PagingId'] = $pagingId;
+        $this->queryParameters['PagingId'] = $pagingId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $maxAvgScanRows
+     *
+     * @return $this
+     */
+    public function setMaxAvgScanRows($maxAvgScanRows)
+    {
+        $this->requestParameters['MaxAvgScanRows'] = $maxAvgScanRows;
+        $this->queryParameters['MaxAvgScanRows'] = $maxAvgScanRows;
 
         return $this;
     }
@@ -126,19 +230,6 @@ class DescribeTemplatesListRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $startTime
-     *
-     * @return $this
-     */
-    public function setStartTime($startTime)
-    {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -165,32 +256,6 @@ class DescribeTemplatesListRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $sortKey
-     *
-     * @return $this
-     */
-    public function setSortKey($sortKey)
-    {
-        $this->requestParameters['SortKey'] = $sortKey;
-        $this->queryParameters['SortKey'] = $sortKey;
-
-        return $this;
-    }
-
-    /**
-     * @param string $minAvgScanRows
-     *
-     * @return $this
-     */
-    public function setMinAvgScanRows($minAvgScanRows)
-    {
-        $this->requestParameters['MinAvgScanRows'] = $minAvgScanRows;
-        $this->queryParameters['MinAvgScanRows'] = $minAvgScanRows;
-
-        return $this;
-    }
-
-    /**
      * @param string $sqType
      *
      * @return $this
@@ -204,19 +269,6 @@ class DescribeTemplatesListRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $sortMethod
      *
      * @return $this
@@ -225,58 +277,6 @@ class DescribeTemplatesListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SortMethod'] = $sortMethod;
         $this->queryParameters['SortMethod'] = $sortMethod;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumbers
-     *
-     * @return $this
-     */
-    public function setPageNumbers($pageNumbers)
-    {
-        $this->requestParameters['PageNumbers'] = $pageNumbers;
-        $this->queryParameters['PageNumbers'] = $pageNumbers;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pagingId
-     *
-     * @return $this
-     */
-    public function setPagingId($pagingId)
-    {
-        $this->requestParameters['PagingId'] = $pagingId;
-        $this->queryParameters['PagingId'] = $pagingId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $maxAvgScanRows
-     *
-     * @return $this
-     */
-    public function setMaxAvgScanRows($maxAvgScanRows)
-    {
-        $this->requestParameters['MaxAvgScanRows'] = $maxAvgScanRows;
-        $this->queryParameters['MaxAvgScanRows'] = $maxAvgScanRows;
 
         return $this;
     }

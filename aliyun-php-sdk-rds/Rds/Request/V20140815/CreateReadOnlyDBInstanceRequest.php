@@ -9,20 +9,20 @@ namespace Rds\Request\V20140815;
  *
  * @method string getResourceOwnerId()
  * @method string getDBInstanceStorage()
- * @method string getResourceOwnerAccount()
  * @method string getClientToken()
- * @method string getOwnerAccount()
  * @method string getEngineVersion()
+ * @method string getResourceGroupId()
+ * @method string getDBInstanceId()
+ * @method string getDBInstanceDescription()
+ * @method string getDBInstanceStorageType()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
  * @method string getOwnerId()
  * @method string getDBInstanceClass()
  * @method string getVSwitchId()
  * @method string getPrivateIpAddress()
- * @method string getResourceGroupId()
  * @method string getVPCId()
  * @method string getZoneId()
- * @method string getDBInstanceId()
- * @method string getDBInstanceDescription()
- * @method string getDBInstanceStorageType()
  * @method string getCategory()
  * @method string getPayType()
  * @method string getInstanceNetworkType()
@@ -75,19 +75,6 @@ class CreateReadOnlyDBInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $clientToken
      *
      * @return $this
@@ -101,19 +88,6 @@ class CreateReadOnlyDBInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $engineVersion
      *
      * @return $this
@@ -122,6 +96,84 @@ class CreateReadOnlyDBInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['EngineVersion'] = $engineVersion;
         $this->queryParameters['EngineVersion'] = $engineVersion;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceGroupId
+     *
+     * @return $this
+     */
+    public function setResourceGroupId($resourceGroupId)
+    {
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceDescription
+     *
+     * @return $this
+     */
+    public function setDBInstanceDescription($dBInstanceDescription)
+    {
+        $this->requestParameters['DBInstanceDescription'] = $dBInstanceDescription;
+        $this->queryParameters['DBInstanceDescription'] = $dBInstanceDescription;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceStorageType
+     *
+     * @return $this
+     */
+    public function setDBInstanceStorageType($dBInstanceStorageType)
+    {
+        $this->requestParameters['DBInstanceStorageType'] = $dBInstanceStorageType;
+        $this->queryParameters['DBInstanceStorageType'] = $dBInstanceStorageType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
         return $this;
     }
@@ -179,19 +231,6 @@ class CreateReadOnlyDBInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceGroupId
-     *
-     * @return $this
-     */
-    public function setResourceGroupId($resourceGroupId)
-    {
-        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
-        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
-
-        return $this;
-    }
-
-    /**
      * @param string $vPCId
      *
      * @return $this
@@ -213,45 +252,6 @@ class CreateReadOnlyDBInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ZoneId'] = $zoneId;
         $this->queryParameters['ZoneId'] = $zoneId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBInstanceDescription
-     *
-     * @return $this
-     */
-    public function setDBInstanceDescription($dBInstanceDescription)
-    {
-        $this->requestParameters['DBInstanceDescription'] = $dBInstanceDescription;
-        $this->queryParameters['DBInstanceDescription'] = $dBInstanceDescription;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBInstanceStorageType
-     *
-     * @return $this
-     */
-    public function setDBInstanceStorageType($dBInstanceStorageType)
-    {
-        $this->requestParameters['DBInstanceStorageType'] = $dBInstanceStorageType;
-        $this->queryParameters['DBInstanceStorageType'] = $dBInstanceStorageType;
 
         return $this;
     }

@@ -8,13 +8,13 @@ namespace Rds\Request\V20140815;
  * Request of CreateMigrateTaskForSQLServer
  *
  * @method string getResourceOwnerId()
- * @method string getTaskType()
- * @method string getDBName()
- * @method string getResourceOwnerAccount()
  * @method string getIsOnlineDB()
  * @method string getDBInstanceId()
+ * @method string getTaskType()
+ * @method string getResourceOwnerAccount()
  * @method string getOwnerId()
  * @method string getOSSUrls()
+ * @method string getDBName()
  */
 class CreateMigrateTaskForSQLServerRequest extends \RpcAcsRequest
 {
@@ -51,45 +51,6 @@ class CreateMigrateTaskForSQLServerRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $taskType
-     *
-     * @return $this
-     */
-    public function setTaskType($taskType)
-    {
-        $this->requestParameters['TaskType'] = $taskType;
-        $this->queryParameters['TaskType'] = $taskType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBName
-     *
-     * @return $this
-     */
-    public function setDBName($dBName)
-    {
-        $this->requestParameters['DBName'] = $dBName;
-        $this->queryParameters['DBName'] = $dBName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $isOnlineDB
      *
      * @return $this
@@ -116,6 +77,32 @@ class CreateMigrateTaskForSQLServerRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $taskType
+     *
+     * @return $this
+     */
+    public function setTaskType($taskType)
+    {
+        $this->requestParameters['TaskType'] = $taskType;
+        $this->queryParameters['TaskType'] = $taskType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -137,6 +124,19 @@ class CreateMigrateTaskForSQLServerRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OSSUrls'] = $oSSUrls;
         $this->queryParameters['OSSUrls'] = $oSSUrls;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBName
+     *
+     * @return $this
+     */
+    public function setDBName($dBName)
+    {
+        $this->requestParameters['DBName'] = $dBName;
+        $this->queryParameters['DBName'] = $dBName;
 
         return $this;
     }

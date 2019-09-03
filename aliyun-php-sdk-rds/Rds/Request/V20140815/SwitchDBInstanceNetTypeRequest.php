@@ -9,13 +9,13 @@ namespace Rds\Request\V20140815;
  *
  * @method string getResourceOwnerId()
  * @method string getConnectionStringPrefix()
- * @method string getConnectionStringType()
- * @method string getResourceOwnerAccount()
  * @method string getClientToken()
- * @method string getPort()
- * @method string getOwnerAccount()
  * @method string getDBInstanceId()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getConnectionStringType()
+ * @method string getPort()
  */
 class SwitchDBInstanceNetTypeRequest extends \RpcAcsRequest
 {
@@ -65,32 +65,6 @@ class SwitchDBInstanceNetTypeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $connectionStringType
-     *
-     * @return $this
-     */
-    public function setConnectionStringType($connectionStringType)
-    {
-        $this->requestParameters['ConnectionStringType'] = $connectionStringType;
-        $this->queryParameters['ConnectionStringType'] = $connectionStringType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $clientToken
      *
      * @return $this
@@ -99,32 +73,6 @@ class SwitchDBInstanceNetTypeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ClientToken'] = $clientToken;
         $this->queryParameters['ClientToken'] = $clientToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $port
-     *
-     * @return $this
-     */
-    public function setPort($port)
-    {
-        $this->requestParameters['Port'] = $port;
-        $this->queryParameters['Port'] = $port;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
         return $this;
     }
@@ -143,6 +91,32 @@ class SwitchDBInstanceNetTypeRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -151,6 +125,32 @@ class SwitchDBInstanceNetTypeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $connectionStringType
+     *
+     * @return $this
+     */
+    public function setConnectionStringType($connectionStringType)
+    {
+        $this->requestParameters['ConnectionStringType'] = $connectionStringType;
+        $this->queryParameters['ConnectionStringType'] = $connectionStringType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $port
+     *
+     * @return $this
+     */
+    public function setPort($port)
+    {
+        $this->requestParameters['Port'] = $port;
+        $this->queryParameters['Port'] = $port;
 
         return $this;
     }

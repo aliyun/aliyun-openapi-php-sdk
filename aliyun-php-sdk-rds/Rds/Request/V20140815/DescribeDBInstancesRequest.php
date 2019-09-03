@@ -7,40 +7,40 @@ namespace Rds\Request\V20140815;
  *
  * Request of DescribeDBInstances
  *
- * @method string getConnectionMode()
  * @method string getTag4value()
  * @method string getResourceOwnerId()
  * @method string getTag2key()
- * @method string getClientToken()
- * @method string getSearchKey()
  * @method string getTag3key()
  * @method string getEngineVersion()
- * @method string getPageNumber()
  * @method string getTag1value()
  * @method string getResourceGroupId()
+ * @method string getproxyId()
+ * @method string getTag5key()
+ * @method string getOwnerId()
+ * @method string getDBInstanceType()
+ * @method string getDBInstanceClass()
+ * @method string getTags()
+ * @method string getVSwitchId()
+ * @method string getZoneId()
+ * @method string getTag4key()
+ * @method string getInstanceNetworkType()
+ * @method string getConnectionMode()
+ * @method string getClientToken()
+ * @method string getSearchKey()
+ * @method string getPageNumber()
  * @method string getExpired()
  * @method string getEngine()
  * @method string getPageSize()
  * @method string getDBInstanceStatus()
  * @method string getDBInstanceId()
  * @method string getTag3value()
- * @method string getproxyId()
- * @method string getTag5key()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getOwnerId()
  * @method string getTag5value()
- * @method string getDBInstanceType()
- * @method string getDBInstanceClass()
- * @method string getTags()
- * @method string getVSwitchId()
  * @method string getTag1key()
  * @method string getVpcId()
  * @method string getTag2value()
- * @method string getZoneId()
- * @method string getTag4key()
  * @method string getPayType()
- * @method string getInstanceNetworkType()
  */
 class DescribeDBInstancesRequest extends \RpcAcsRequest
 {
@@ -61,19 +61,6 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
             'DescribeDBInstances',
             'rds'
         );
-    }
-
-    /**
-     * @param string $connectionMode
-     *
-     * @return $this
-     */
-    public function setConnectionMode($connectionMode)
-    {
-        $this->requestParameters['ConnectionMode'] = $connectionMode;
-        $this->queryParameters['ConnectionMode'] = $connectionMode;
-
-        return $this;
     }
 
     /**
@@ -116,32 +103,6 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $clientToken
-     *
-     * @return $this
-     */
-    public function setClientToken($clientToken)
-    {
-        $this->requestParameters['ClientToken'] = $clientToken;
-        $this->queryParameters['ClientToken'] = $clientToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $searchKey
-     *
-     * @return $this
-     */
-    public function setSearchKey($searchKey)
-    {
-        $this->requestParameters['SearchKey'] = $searchKey;
-        $this->queryParameters['SearchKey'] = $searchKey;
-
-        return $this;
-    }
-
-    /**
      * @param string $tag3key
      *
      * @return $this
@@ -168,19 +129,6 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
-
-        return $this;
-    }
-
-    /**
      * @param string $tag1value
      *
      * @return $this
@@ -202,6 +150,188 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
         $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $proxyId
+     *
+     * @return $this
+     */
+    public function setproxyId($proxyId)
+    {
+        $this->requestParameters['proxyId'] = $proxyId;
+        $this->queryParameters['proxyId'] = $proxyId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $tag5key
+     *
+     * @return $this
+     */
+    public function setTag5key($tag5key)
+    {
+        $this->requestParameters['Tag5key'] = $tag5key;
+        $this->queryParameters['Tag.5.key'] = $tag5key;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceType
+     *
+     * @return $this
+     */
+    public function setDBInstanceType($dBInstanceType)
+    {
+        $this->requestParameters['DBInstanceType'] = $dBInstanceType;
+        $this->queryParameters['DBInstanceType'] = $dBInstanceType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceClass
+     *
+     * @return $this
+     */
+    public function setDBInstanceClass($dBInstanceClass)
+    {
+        $this->requestParameters['DBInstanceClass'] = $dBInstanceClass;
+        $this->queryParameters['DBInstanceClass'] = $dBInstanceClass;
+
+        return $this;
+    }
+
+    /**
+     * @param string $tags
+     *
+     * @return $this
+     */
+    public function setTags($tags)
+    {
+        $this->requestParameters['Tags'] = $tags;
+        $this->queryParameters['Tags'] = $tags;
+
+        return $this;
+    }
+
+    /**
+     * @param string $vSwitchId
+     *
+     * @return $this
+     */
+    public function setVSwitchId($vSwitchId)
+    {
+        $this->requestParameters['VSwitchId'] = $vSwitchId;
+        $this->queryParameters['VSwitchId'] = $vSwitchId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $zoneId
+     *
+     * @return $this
+     */
+    public function setZoneId($zoneId)
+    {
+        $this->requestParameters['ZoneId'] = $zoneId;
+        $this->queryParameters['ZoneId'] = $zoneId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $tag4key
+     *
+     * @return $this
+     */
+    public function setTag4key($tag4key)
+    {
+        $this->requestParameters['Tag4key'] = $tag4key;
+        $this->queryParameters['Tag.4.key'] = $tag4key;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceNetworkType
+     *
+     * @return $this
+     */
+    public function setInstanceNetworkType($instanceNetworkType)
+    {
+        $this->requestParameters['InstanceNetworkType'] = $instanceNetworkType;
+        $this->queryParameters['InstanceNetworkType'] = $instanceNetworkType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $connectionMode
+     *
+     * @return $this
+     */
+    public function setConnectionMode($connectionMode)
+    {
+        $this->requestParameters['ConnectionMode'] = $connectionMode;
+        $this->queryParameters['ConnectionMode'] = $connectionMode;
+
+        return $this;
+    }
+
+    /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $searchKey
+     *
+     * @return $this
+     */
+    public function setSearchKey($searchKey)
+    {
+        $this->requestParameters['SearchKey'] = $searchKey;
+        $this->queryParameters['SearchKey'] = $searchKey;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }
@@ -285,32 +415,6 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $proxyId
-     *
-     * @return $this
-     */
-    public function setproxyId($proxyId)
-    {
-        $this->requestParameters['proxyId'] = $proxyId;
-        $this->queryParameters['proxyId'] = $proxyId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $tag5key
-     *
-     * @return $this
-     */
-    public function setTag5key($tag5key)
-    {
-        $this->requestParameters['Tag5key'] = $tag5key;
-        $this->queryParameters['Tag.5.key'] = $tag5key;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -337,19 +441,6 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
      * @param string $tag5value
      *
      * @return $this
@@ -358,58 +449,6 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Tag5value'] = $tag5value;
         $this->queryParameters['Tag.5.value'] = $tag5value;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBInstanceType
-     *
-     * @return $this
-     */
-    public function setDBInstanceType($dBInstanceType)
-    {
-        $this->requestParameters['DBInstanceType'] = $dBInstanceType;
-        $this->queryParameters['DBInstanceType'] = $dBInstanceType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBInstanceClass
-     *
-     * @return $this
-     */
-    public function setDBInstanceClass($dBInstanceClass)
-    {
-        $this->requestParameters['DBInstanceClass'] = $dBInstanceClass;
-        $this->queryParameters['DBInstanceClass'] = $dBInstanceClass;
-
-        return $this;
-    }
-
-    /**
-     * @param string $tags
-     *
-     * @return $this
-     */
-    public function setTags($tags)
-    {
-        $this->requestParameters['Tags'] = $tags;
-        $this->queryParameters['Tags'] = $tags;
-
-        return $this;
-    }
-
-    /**
-     * @param string $vSwitchId
-     *
-     * @return $this
-     */
-    public function setVSwitchId($vSwitchId)
-    {
-        $this->requestParameters['VSwitchId'] = $vSwitchId;
-        $this->queryParameters['VSwitchId'] = $vSwitchId;
 
         return $this;
     }
@@ -454,32 +493,6 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $zoneId
-     *
-     * @return $this
-     */
-    public function setZoneId($zoneId)
-    {
-        $this->requestParameters['ZoneId'] = $zoneId;
-        $this->queryParameters['ZoneId'] = $zoneId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $tag4key
-     *
-     * @return $this
-     */
-    public function setTag4key($tag4key)
-    {
-        $this->requestParameters['Tag4key'] = $tag4key;
-        $this->queryParameters['Tag.4.key'] = $tag4key;
-
-        return $this;
-    }
-
-    /**
      * @param string $payType
      *
      * @return $this
@@ -488,19 +501,6 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PayType'] = $payType;
         $this->queryParameters['PayType'] = $payType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $instanceNetworkType
-     *
-     * @return $this
-     */
-    public function setInstanceNetworkType($instanceNetworkType)
-    {
-        $this->requestParameters['InstanceNetworkType'] = $instanceNetworkType;
-        $this->queryParameters['InstanceNetworkType'] = $instanceNetworkType;
 
         return $this;
     }

@@ -8,16 +8,16 @@ namespace Rds\Request\V20140815;
  * Request of ModifyDBInstanceNetworkType
  *
  * @method string getResourceOwnerId()
+ * @method string getClassicExpiredDays()
+ * @method string getDBInstanceId()
+ * @method string getReadWriteSplittingPrivateIpAddress()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
  * @method string getVSwitchId()
  * @method string getPrivateIpAddress()
  * @method string getRetainClassic()
- * @method string getClassicExpiredDays()
  * @method string getVPCId()
- * @method string getDBInstanceId()
- * @method string getReadWriteSplittingPrivateIpAddress()
  * @method string getInstanceNetworkType()
  * @method string getReadWriteSplittingClassicExpiredDays()
  */
@@ -51,6 +51,45 @@ class ModifyDBInstanceNetworkTypeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $classicExpiredDays
+     *
+     * @return $this
+     */
+    public function setClassicExpiredDays($classicExpiredDays)
+    {
+        $this->requestParameters['ClassicExpiredDays'] = $classicExpiredDays;
+        $this->queryParameters['ClassicExpiredDays'] = $classicExpiredDays;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $readWriteSplittingPrivateIpAddress
+     *
+     * @return $this
+     */
+    public function setReadWriteSplittingPrivateIpAddress($readWriteSplittingPrivateIpAddress)
+    {
+        $this->requestParameters['ReadWriteSplittingPrivateIpAddress'] = $readWriteSplittingPrivateIpAddress;
+        $this->queryParameters['ReadWriteSplittingPrivateIpAddress'] = $readWriteSplittingPrivateIpAddress;
 
         return $this;
     }
@@ -134,19 +173,6 @@ class ModifyDBInstanceNetworkTypeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $classicExpiredDays
-     *
-     * @return $this
-     */
-    public function setClassicExpiredDays($classicExpiredDays)
-    {
-        $this->requestParameters['ClassicExpiredDays'] = $classicExpiredDays;
-        $this->queryParameters['ClassicExpiredDays'] = $classicExpiredDays;
-
-        return $this;
-    }
-
-    /**
      * @param string $vPCId
      *
      * @return $this
@@ -155,32 +181,6 @@ class ModifyDBInstanceNetworkTypeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['VPCId'] = $vPCId;
         $this->queryParameters['VPCId'] = $vPCId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $readWriteSplittingPrivateIpAddress
-     *
-     * @return $this
-     */
-    public function setReadWriteSplittingPrivateIpAddress($readWriteSplittingPrivateIpAddress)
-    {
-        $this->requestParameters['ReadWriteSplittingPrivateIpAddress'] = $readWriteSplittingPrivateIpAddress;
-        $this->queryParameters['ReadWriteSplittingPrivateIpAddress'] = $readWriteSplittingPrivateIpAddress;
 
         return $this;
     }

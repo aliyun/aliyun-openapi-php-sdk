@@ -9,11 +9,11 @@ namespace Rds\Request\V20140815;
  *
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
- * @method string getEffectiveTime()
  * @method string getOwnerAccount()
+ * @method string getOwnerId()
+ * @method string getEffectiveTime()
  * @method string getDBInstanceId()
  * @method string getForce()
- * @method string getOwnerId()
  * @method string getNodeId()
  * @method string getOperation()
  */
@@ -65,19 +65,6 @@ class SwitchDBInstanceHARequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $effectiveTime
-     *
-     * @return $this
-     */
-    public function setEffectiveTime($effectiveTime)
-    {
-        $this->requestParameters['EffectiveTime'] = $effectiveTime;
-        $this->queryParameters['EffectiveTime'] = $effectiveTime;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerAccount
      *
      * @return $this
@@ -86,6 +73,32 @@ class SwitchDBInstanceHARequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $effectiveTime
+     *
+     * @return $this
+     */
+    public function setEffectiveTime($effectiveTime)
+    {
+        $this->requestParameters['EffectiveTime'] = $effectiveTime;
+        $this->queryParameters['EffectiveTime'] = $effectiveTime;
 
         return $this;
     }
@@ -112,19 +125,6 @@ class SwitchDBInstanceHARequest extends \RpcAcsRequest
     {
         $this->requestParameters['Force'] = $force;
         $this->queryParameters['Force'] = $force;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

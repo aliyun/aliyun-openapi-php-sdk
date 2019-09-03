@@ -8,16 +8,16 @@ namespace Rds\Request\V20140815;
  * Request of CheckResource
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
- * @method string getOwnerAccount()
  * @method string getSpecifyCount()
  * @method string getEngineVersion()
- * @method string getOwnerId()
- * @method string getDBInstanceClass()
  * @method string getEngine()
- * @method string getZoneId()
  * @method string getDBInstanceUseType()
  * @method string getDBInstanceId()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getOwnerId()
+ * @method string getDBInstanceClass()
+ * @method string getZoneId()
  */
 class CheckResourceRequest extends \RpcAcsRequest
 {
@@ -54,32 +54,6 @@ class CheckResourceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $specifyCount
      *
      * @return $this
@@ -101,6 +75,71 @@ class CheckResourceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['EngineVersion'] = $engineVersion;
         $this->queryParameters['EngineVersion'] = $engineVersion;
+
+        return $this;
+    }
+
+    /**
+     * @param string $engine
+     *
+     * @return $this
+     */
+    public function setEngine($engine)
+    {
+        $this->requestParameters['Engine'] = $engine;
+        $this->queryParameters['Engine'] = $engine;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceUseType
+     *
+     * @return $this
+     */
+    public function setDBInstanceUseType($dBInstanceUseType)
+    {
+        $this->requestParameters['DBInstanceUseType'] = $dBInstanceUseType;
+        $this->queryParameters['DBInstanceUseType'] = $dBInstanceUseType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
         return $this;
     }
@@ -132,19 +171,6 @@ class CheckResourceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $engine
-     *
-     * @return $this
-     */
-    public function setEngine($engine)
-    {
-        $this->requestParameters['Engine'] = $engine;
-        $this->queryParameters['Engine'] = $engine;
-
-        return $this;
-    }
-
-    /**
      * @param string $zoneId
      *
      * @return $this
@@ -153,32 +179,6 @@ class CheckResourceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ZoneId'] = $zoneId;
         $this->queryParameters['ZoneId'] = $zoneId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBInstanceUseType
-     *
-     * @return $this
-     */
-    public function setDBInstanceUseType($dBInstanceUseType)
-    {
-        $this->requestParameters['DBInstanceUseType'] = $dBInstanceUseType;
-        $this->queryParameters['DBInstanceUseType'] = $dBInstanceUseType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
 
         return $this;
     }

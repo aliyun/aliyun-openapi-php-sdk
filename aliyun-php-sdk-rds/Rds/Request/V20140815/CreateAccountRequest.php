@@ -8,14 +8,14 @@ namespace Rds\Request\V20140815;
  * Request of CreateAccount
  *
  * @method string getResourceOwnerId()
- * @method string getAccountPassword()
+ * @method string getAccountType()
+ * @method string getAccountDescription()
  * @method string getAccountName()
+ * @method string getDBInstanceId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getAccountType()
- * @method string getDBInstanceId()
  * @method string getOwnerId()
- * @method string getAccountDescription()
+ * @method string getAccountPassword()
  */
 class CreateAccountRequest extends \RpcAcsRequest
 {
@@ -52,14 +52,27 @@ class CreateAccountRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $accountPassword
+     * @param string $accountType
      *
      * @return $this
      */
-    public function setAccountPassword($accountPassword)
+    public function setAccountType($accountType)
     {
-        $this->requestParameters['AccountPassword'] = $accountPassword;
-        $this->queryParameters['AccountPassword'] = $accountPassword;
+        $this->requestParameters['AccountType'] = $accountType;
+        $this->queryParameters['AccountType'] = $accountType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $accountDescription
+     *
+     * @return $this
+     */
+    public function setAccountDescription($accountDescription)
+    {
+        $this->requestParameters['AccountDescription'] = $accountDescription;
+        $this->queryParameters['AccountDescription'] = $accountDescription;
 
         return $this;
     }
@@ -73,6 +86,19 @@ class CreateAccountRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AccountName'] = $accountName;
         $this->queryParameters['AccountName'] = $accountName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
 
         return $this;
     }
@@ -104,32 +130,6 @@ class CreateAccountRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $accountType
-     *
-     * @return $this
-     */
-    public function setAccountType($accountType)
-    {
-        $this->requestParameters['AccountType'] = $accountType;
-        $this->queryParameters['AccountType'] = $accountType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -143,14 +143,14 @@ class CreateAccountRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $accountDescription
+     * @param string $accountPassword
      *
      * @return $this
      */
-    public function setAccountDescription($accountDescription)
+    public function setAccountPassword($accountPassword)
     {
-        $this->requestParameters['AccountDescription'] = $accountDescription;
-        $this->queryParameters['AccountDescription'] = $accountDescription;
+        $this->requestParameters['AccountPassword'] = $accountPassword;
+        $this->queryParameters['AccountPassword'] = $accountPassword;
 
         return $this;
     }

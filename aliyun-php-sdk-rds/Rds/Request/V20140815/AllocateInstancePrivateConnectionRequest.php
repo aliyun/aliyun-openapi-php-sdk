@@ -9,11 +9,11 @@ namespace Rds\Request\V20140815;
  *
  * @method string getResourceOwnerId()
  * @method string getConnectionStringPrefix()
- * @method string getResourceOwnerAccount()
- * @method string getPort()
- * @method string getOwnerAccount()
  * @method string getDBInstanceId()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getPort()
  */
 class AllocateInstancePrivateConnectionRequest extends \RpcAcsRequest
 {
@@ -63,6 +63,19 @@ class AllocateInstancePrivateConnectionRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
+
+        return $this;
+    }
+
+    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -71,19 +84,6 @@ class AllocateInstancePrivateConnectionRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $port
-     *
-     * @return $this
-     */
-    public function setPort($port)
-    {
-        $this->requestParameters['Port'] = $port;
-        $this->queryParameters['Port'] = $port;
 
         return $this;
     }
@@ -102,19 +102,6 @@ class AllocateInstancePrivateConnectionRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -123,6 +110,19 @@ class AllocateInstancePrivateConnectionRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $port
+     *
+     * @return $this
+     */
+    public function setPort($port)
+    {
+        $this->requestParameters['Port'] = $port;
+        $this->queryParameters['Port'] = $port;
 
         return $this;
     }

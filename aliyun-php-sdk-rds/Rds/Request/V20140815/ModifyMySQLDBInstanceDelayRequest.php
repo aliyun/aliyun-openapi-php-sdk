@@ -9,9 +9,9 @@ namespace Rds\Request\V20140815;
  *
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
+ * @method string getOwnerId()
  * @method string getSqlDelay()
  * @method string getDBInstanceId()
- * @method string getOwnerId()
  */
 class ModifyMySQLDBInstanceDelayRequest extends \RpcAcsRequest
 {
@@ -61,6 +61,19 @@ class ModifyMySQLDBInstanceDelayRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
      * @param string $sqlDelay
      *
      * @return $this
@@ -82,19 +95,6 @@ class ModifyMySQLDBInstanceDelayRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DBInstanceId'] = $dBInstanceId;
         $this->queryParameters['DBInstanceId'] = $dBInstanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

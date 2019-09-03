@@ -9,14 +9,14 @@ namespace Rds\Request\V20140815;
  *
  * @method string getResourceOwnerId()
  * @method string getConnectionStringPrefix()
+ * @method string getDistributionType()
+ * @method string getDBInstanceId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getWeight()
  * @method string getOwnerId()
  * @method string getPort()
- * @method string getDistributionType()
  * @method string getNetType()
- * @method string getDBInstanceId()
  * @method string getMaxDelayTime()
  */
 class AllocateReadWriteSplittingConnectionRequest extends \RpcAcsRequest
@@ -62,6 +62,32 @@ class AllocateReadWriteSplittingConnectionRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ConnectionStringPrefix'] = $connectionStringPrefix;
         $this->queryParameters['ConnectionStringPrefix'] = $connectionStringPrefix;
+
+        return $this;
+    }
+
+    /**
+     * @param string $distributionType
+     *
+     * @return $this
+     */
+    public function setDistributionType($distributionType)
+    {
+        $this->requestParameters['DistributionType'] = $distributionType;
+        $this->queryParameters['DistributionType'] = $distributionType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
 
         return $this;
     }
@@ -132,19 +158,6 @@ class AllocateReadWriteSplittingConnectionRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $distributionType
-     *
-     * @return $this
-     */
-    public function setDistributionType($distributionType)
-    {
-        $this->requestParameters['DistributionType'] = $distributionType;
-        $this->queryParameters['DistributionType'] = $distributionType;
-
-        return $this;
-    }
-
-    /**
      * @param string $netType
      *
      * @return $this
@@ -153,19 +166,6 @@ class AllocateReadWriteSplittingConnectionRequest extends \RpcAcsRequest
     {
         $this->requestParameters['NetType'] = $netType;
         $this->queryParameters['NetType'] = $netType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
 
         return $this;
     }

@@ -9,17 +9,17 @@ namespace Rds\Request\V20140815;
  *
  * @method string getDBInstanceIPArrayName()
  * @method string getResourceOwnerId()
- * @method string getModifyMode()
- * @method string getResourceOwnerAccount()
  * @method string getClientToken()
- * @method string getOwnerAccount()
  * @method string getSecurityIps()
  * @method string getSecurityGroupId()
- * @method string getOwnerId()
  * @method string getWhitelistNetworkType()
- * @method string getDBInstanceIPArrayAttribute()
  * @method string getSecurityIPType()
  * @method string getDBInstanceId()
+ * @method string getModifyMode()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getOwnerId()
+ * @method string getDBInstanceIPArrayAttribute()
  */
 class ModifySecurityIpsRequest extends \RpcAcsRequest
 {
@@ -69,32 +69,6 @@ class ModifySecurityIpsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $modifyMode
-     *
-     * @return $this
-     */
-    public function setModifyMode($modifyMode)
-    {
-        $this->requestParameters['ModifyMode'] = $modifyMode;
-        $this->queryParameters['ModifyMode'] = $modifyMode;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $clientToken
      *
      * @return $this
@@ -103,19 +77,6 @@ class ModifySecurityIpsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ClientToken'] = $clientToken;
         $this->queryParameters['ClientToken'] = $clientToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
         return $this;
     }
@@ -147,19 +108,6 @@ class ModifySecurityIpsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
      * @param string $whitelistNetworkType
      *
      * @return $this
@@ -168,19 +116,6 @@ class ModifySecurityIpsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['WhitelistNetworkType'] = $whitelistNetworkType;
         $this->queryParameters['WhitelistNetworkType'] = $whitelistNetworkType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBInstanceIPArrayAttribute
-     *
-     * @return $this
-     */
-    public function setDBInstanceIPArrayAttribute($dBInstanceIPArrayAttribute)
-    {
-        $this->requestParameters['DBInstanceIPArrayAttribute'] = $dBInstanceIPArrayAttribute;
-        $this->queryParameters['DBInstanceIPArrayAttribute'] = $dBInstanceIPArrayAttribute;
 
         return $this;
     }
@@ -207,6 +142,71 @@ class ModifySecurityIpsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DBInstanceId'] = $dBInstanceId;
         $this->queryParameters['DBInstanceId'] = $dBInstanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $modifyMode
+     *
+     * @return $this
+     */
+    public function setModifyMode($modifyMode)
+    {
+        $this->requestParameters['ModifyMode'] = $modifyMode;
+        $this->queryParameters['ModifyMode'] = $modifyMode;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceIPArrayAttribute
+     *
+     * @return $this
+     */
+    public function setDBInstanceIPArrayAttribute($dBInstanceIPArrayAttribute)
+    {
+        $this->requestParameters['DBInstanceIPArrayAttribute'] = $dBInstanceIPArrayAttribute;
+        $this->queryParameters['DBInstanceIPArrayAttribute'] = $dBInstanceIPArrayAttribute;
 
         return $this;
     }

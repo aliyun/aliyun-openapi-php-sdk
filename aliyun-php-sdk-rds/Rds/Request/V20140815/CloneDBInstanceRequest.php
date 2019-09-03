@@ -8,24 +8,30 @@ namespace Rds\Request\V20140815;
  * Request of CloneDBInstance
  *
  * @method string getResourceOwnerId()
+ * @method string getDBInstanceStorage()
+ * @method string getClientToken()
+ * @method string getZoneIdSlave1()
+ * @method string getZoneIdSlave2()
+ * @method string getResourceGroupId()
+ * @method string getTableMeta()
+ * @method string getDBInstanceDescription()
+ * @method string getDBInstanceId()
+ * @method string getDBInstanceStorageType()
  * @method string getRestoreTime()
  * @method string getPeriod()
- * @method string getDBInstanceStorage()
  * @method string getResourceOwnerAccount()
- * @method string getClientToken()
  * @method string getBackupId()
  * @method string getOwnerAccount()
+ * @method string getRestoreTable()
  * @method string getOwnerId()
  * @method string getUsedTime()
  * @method string getDBInstanceClass()
  * @method string getDbNames()
  * @method string getVSwitchId()
  * @method string getPrivateIpAddress()
- * @method string getResourceGroupId()
  * @method string getVPCId()
  * @method string getZoneId()
- * @method string getDBInstanceDescription()
- * @method string getDBInstanceId()
+ * @method string getCategory()
  * @method string getPayType()
  * @method string getInstanceNetworkType()
  */
@@ -64,6 +70,123 @@ class CloneDBInstanceRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $dBInstanceStorage
+     *
+     * @return $this
+     */
+    public function setDBInstanceStorage($dBInstanceStorage)
+    {
+        $this->requestParameters['DBInstanceStorage'] = $dBInstanceStorage;
+        $this->queryParameters['DBInstanceStorage'] = $dBInstanceStorage;
+
+        return $this;
+    }
+
+    /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $zoneIdSlave1
+     *
+     * @return $this
+     */
+    public function setZoneIdSlave1($zoneIdSlave1)
+    {
+        $this->requestParameters['ZoneIdSlave1'] = $zoneIdSlave1;
+        $this->queryParameters['ZoneIdSlave1'] = $zoneIdSlave1;
+
+        return $this;
+    }
+
+    /**
+     * @param string $zoneIdSlave2
+     *
+     * @return $this
+     */
+    public function setZoneIdSlave2($zoneIdSlave2)
+    {
+        $this->requestParameters['ZoneIdSlave2'] = $zoneIdSlave2;
+        $this->queryParameters['ZoneIdSlave2'] = $zoneIdSlave2;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceGroupId
+     *
+     * @return $this
+     */
+    public function setResourceGroupId($resourceGroupId)
+    {
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $tableMeta
+     *
+     * @return $this
+     */
+    public function setTableMeta($tableMeta)
+    {
+        $this->requestParameters['TableMeta'] = $tableMeta;
+        $this->queryParameters['TableMeta'] = $tableMeta;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceDescription
+     *
+     * @return $this
+     */
+    public function setDBInstanceDescription($dBInstanceDescription)
+    {
+        $this->requestParameters['DBInstanceDescription'] = $dBInstanceDescription;
+        $this->queryParameters['DBInstanceDescription'] = $dBInstanceDescription;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceStorageType
+     *
+     * @return $this
+     */
+    public function setDBInstanceStorageType($dBInstanceStorageType)
+    {
+        $this->requestParameters['DBInstanceStorageType'] = $dBInstanceStorageType;
+        $this->queryParameters['DBInstanceStorageType'] = $dBInstanceStorageType;
+
+        return $this;
+    }
+
+    /**
      * @param string $restoreTime
      *
      * @return $this
@@ -90,19 +213,6 @@ class CloneDBInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dBInstanceStorage
-     *
-     * @return $this
-     */
-    public function setDBInstanceStorage($dBInstanceStorage)
-    {
-        $this->requestParameters['DBInstanceStorage'] = $dBInstanceStorage;
-        $this->queryParameters['DBInstanceStorage'] = $dBInstanceStorage;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -111,19 +221,6 @@ class CloneDBInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $clientToken
-     *
-     * @return $this
-     */
-    public function setClientToken($clientToken)
-    {
-        $this->requestParameters['ClientToken'] = $clientToken;
-        $this->queryParameters['ClientToken'] = $clientToken;
 
         return $this;
     }
@@ -150,6 +247,19 @@ class CloneDBInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $restoreTable
+     *
+     * @return $this
+     */
+    public function setRestoreTable($restoreTable)
+    {
+        $this->requestParameters['RestoreTable'] = $restoreTable;
+        $this->queryParameters['RestoreTable'] = $restoreTable;
 
         return $this;
     }
@@ -233,19 +343,6 @@ class CloneDBInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceGroupId
-     *
-     * @return $this
-     */
-    public function setResourceGroupId($resourceGroupId)
-    {
-        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
-        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
-
-        return $this;
-    }
-
-    /**
      * @param string $vPCId
      *
      * @return $this
@@ -272,27 +369,14 @@ class CloneDBInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dBInstanceDescription
+     * @param string $category
      *
      * @return $this
      */
-    public function setDBInstanceDescription($dBInstanceDescription)
+    public function setCategory($category)
     {
-        $this->requestParameters['DBInstanceDescription'] = $dBInstanceDescription;
-        $this->queryParameters['DBInstanceDescription'] = $dBInstanceDescription;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
+        $this->requestParameters['Category'] = $category;
+        $this->queryParameters['Category'] = $category;
 
         return $this;
     }

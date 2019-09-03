@@ -9,17 +9,17 @@ namespace Rds\Request\V20140815;
  *
  * @method string getResourceOwnerId()
  * @method string getDBInstanceStorage()
+ * @method string getClientToken()
+ * @method string getEngineVersion()
+ * @method string getEngine()
  * @method string getQuantity()
  * @method string getResourceOwnerAccount()
- * @method string getClientToken()
  * @method string getOwnerAccount()
  * @method string getCommodityCode()
- * @method string getEngineVersion()
  * @method string getOwnerId()
  * @method string getUsedTime()
  * @method string getDBInstanceClass()
  * @method string getInstanceUsedType()
- * @method string getEngine()
  * @method string getZoneId()
  * @method string getTimeType()
  * @method string getPayType()
@@ -73,6 +73,45 @@ class DescribePriceRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $engineVersion
+     *
+     * @return $this
+     */
+    public function setEngineVersion($engineVersion)
+    {
+        $this->requestParameters['EngineVersion'] = $engineVersion;
+        $this->queryParameters['EngineVersion'] = $engineVersion;
+
+        return $this;
+    }
+
+    /**
+     * @param string $engine
+     *
+     * @return $this
+     */
+    public function setEngine($engine)
+    {
+        $this->requestParameters['Engine'] = $engine;
+        $this->queryParameters['Engine'] = $engine;
+
+        return $this;
+    }
+
+    /**
      * @param string $quantity
      *
      * @return $this
@@ -99,19 +138,6 @@ class DescribePriceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $clientToken
-     *
-     * @return $this
-     */
-    public function setClientToken($clientToken)
-    {
-        $this->requestParameters['ClientToken'] = $clientToken;
-        $this->queryParameters['ClientToken'] = $clientToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerAccount
      *
      * @return $this
@@ -133,19 +159,6 @@ class DescribePriceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['CommodityCode'] = $commodityCode;
         $this->queryParameters['CommodityCode'] = $commodityCode;
-
-        return $this;
-    }
-
-    /**
-     * @param string $engineVersion
-     *
-     * @return $this
-     */
-    public function setEngineVersion($engineVersion)
-    {
-        $this->requestParameters['EngineVersion'] = $engineVersion;
-        $this->queryParameters['EngineVersion'] = $engineVersion;
 
         return $this;
     }
@@ -198,19 +211,6 @@ class DescribePriceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['InstanceUsedType'] = $instanceUsedType;
         $this->queryParameters['InstanceUsedType'] = $instanceUsedType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $engine
-     *
-     * @return $this
-     */
-    public function setEngine($engine)
-    {
-        $this->requestParameters['Engine'] = $engine;
-        $this->queryParameters['Engine'] = $engine;
 
         return $this;
     }

@@ -8,10 +8,10 @@ namespace Rds\Request\V20140815;
  * Request of ModifyReadonlyInstanceDelayReplicationTime
  *
  * @method string getResourceOwnerId()
- * @method string getReadSQLReplicationTime()
  * @method string getResourceOwnerAccount()
- * @method string getDBInstanceId()
  * @method string getOwnerId()
+ * @method string getReadSQLReplicationTime()
+ * @method string getDBInstanceId()
  */
 class ModifyReadonlyInstanceDelayReplicationTimeRequest extends \RpcAcsRequest
 {
@@ -48,19 +48,6 @@ class ModifyReadonlyInstanceDelayReplicationTimeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $readSQLReplicationTime
-     *
-     * @return $this
-     */
-    public function setReadSQLReplicationTime($readSQLReplicationTime)
-    {
-        $this->requestParameters['ReadSQLReplicationTime'] = $readSQLReplicationTime;
-        $this->queryParameters['ReadSQLReplicationTime'] = $readSQLReplicationTime;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -74,19 +61,6 @@ class ModifyReadonlyInstanceDelayReplicationTimeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -95,6 +69,32 @@ class ModifyReadonlyInstanceDelayReplicationTimeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $readSQLReplicationTime
+     *
+     * @return $this
+     */
+    public function setReadSQLReplicationTime($readSQLReplicationTime)
+    {
+        $this->requestParameters['ReadSQLReplicationTime'] = $readSQLReplicationTime;
+        $this->queryParameters['ReadSQLReplicationTime'] = $readSQLReplicationTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
 
         return $this;
     }

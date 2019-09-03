@@ -10,13 +10,13 @@ namespace Rds\Request\V20140815;
  * @method string getBackupJobId()
  * @method string getResourceOwnerId()
  * @method string getFlag()
- * @method string getResourceOwnerAccount()
  * @method string getClientToken()
- * @method string getOwnerAccount()
  * @method string getDBInstanceId()
- * @method string getBackupMode()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
  * @method string getOwnerId()
  * @method string getBackupJobStatus()
+ * @method string getBackupMode()
  */
 class DescribeBackupTasksRequest extends \RpcAcsRequest
 {
@@ -79,19 +79,6 @@ class DescribeBackupTasksRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $clientToken
      *
      * @return $this
@@ -100,19 +87,6 @@ class DescribeBackupTasksRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ClientToken'] = $clientToken;
         $this->queryParameters['ClientToken'] = $clientToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
         return $this;
     }
@@ -131,14 +105,27 @@ class DescribeBackupTasksRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $backupMode
+     * @param string $resourceOwnerAccount
      *
      * @return $this
      */
-    public function setBackupMode($backupMode)
+    public function setResourceOwnerAccount($resourceOwnerAccount)
     {
-        $this->requestParameters['BackupMode'] = $backupMode;
-        $this->queryParameters['BackupMode'] = $backupMode;
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
         return $this;
     }
@@ -165,6 +152,19 @@ class DescribeBackupTasksRequest extends \RpcAcsRequest
     {
         $this->requestParameters['BackupJobStatus'] = $backupJobStatus;
         $this->queryParameters['BackupJobStatus'] = $backupJobStatus;
+
+        return $this;
+    }
+
+    /**
+     * @param string $backupMode
+     *
+     * @return $this
+     */
+    public function setBackupMode($backupMode)
+    {
+        $this->requestParameters['BackupMode'] = $backupMode;
+        $this->queryParameters['BackupMode'] = $backupMode;
 
         return $this;
     }

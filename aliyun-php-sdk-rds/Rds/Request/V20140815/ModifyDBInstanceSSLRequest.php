@@ -8,11 +8,12 @@ namespace Rds\Request\V20140815;
  * Request of ModifyDBInstanceSSL
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
  * @method string getConnectionString()
- * @method string getOwnerAccount()
  * @method string getDBInstanceId()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getSSLEnabled()
  */
 class ModifyDBInstanceSSLRequest extends \RpcAcsRequest
 {
@@ -49,19 +50,6 @@ class ModifyDBInstanceSSLRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $connectionString
      *
      * @return $this
@@ -70,19 +58,6 @@ class ModifyDBInstanceSSLRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ConnectionString'] = $connectionString;
         $this->queryParameters['ConnectionString'] = $connectionString;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
         return $this;
     }
@@ -101,6 +76,32 @@ class ModifyDBInstanceSSLRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -109,6 +110,19 @@ class ModifyDBInstanceSSLRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sSLEnabled
+     *
+     * @return $this
+     */
+    public function setSSLEnabled($sSLEnabled)
+    {
+        $this->requestParameters['SSLEnabled'] = $sSLEnabled;
+        $this->queryParameters['SSLEnabled'] = $sSLEnabled;
 
         return $this;
     }

@@ -8,19 +8,19 @@ namespace Rds\Request\V20140815;
  * Request of DescribeRenewalPrice
  *
  * @method string getResourceOwnerId()
+ * @method string getClientToken()
+ * @method string getDBInstanceId()
+ * @method string getBusinessInfo()
  * @method string getQuantity()
  * @method string getResourceOwnerAccount()
- * @method string getClientToken()
  * @method string getOwnerAccount()
  * @method string getCommodityCode()
  * @method string getOwnerId()
  * @method string getUsedTime()
  * @method string getDBInstanceClass()
  * @method string getPromotionCode()
- * @method string getDBInstanceId()
  * @method string getTimeType()
  * @method string getPayType()
- * @method string getBusinessInfo()
  * @method string getOrderType()
  */
 class DescribeRenewalPriceRequest extends \RpcAcsRequest
@@ -58,6 +58,45 @@ class DescribeRenewalPriceRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $businessInfo
+     *
+     * @return $this
+     */
+    public function setBusinessInfo($businessInfo)
+    {
+        $this->requestParameters['BusinessInfo'] = $businessInfo;
+        $this->queryParameters['BusinessInfo'] = $businessInfo;
+
+        return $this;
+    }
+
+    /**
      * @param string $quantity
      *
      * @return $this
@@ -79,19 +118,6 @@ class DescribeRenewalPriceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $clientToken
-     *
-     * @return $this
-     */
-    public function setClientToken($clientToken)
-    {
-        $this->requestParameters['ClientToken'] = $clientToken;
-        $this->queryParameters['ClientToken'] = $clientToken;
 
         return $this;
     }
@@ -175,19 +201,6 @@ class DescribeRenewalPriceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $timeType
      *
      * @return $this
@@ -209,19 +222,6 @@ class DescribeRenewalPriceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PayType'] = $payType;
         $this->queryParameters['PayType'] = $payType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $businessInfo
-     *
-     * @return $this
-     */
-    public function setBusinessInfo($businessInfo)
-    {
-        $this->requestParameters['BusinessInfo'] = $businessInfo;
-        $this->queryParameters['BusinessInfo'] = $businessInfo;
 
         return $this;
     }

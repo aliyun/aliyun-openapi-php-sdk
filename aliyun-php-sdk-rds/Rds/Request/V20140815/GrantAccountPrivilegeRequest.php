@@ -8,13 +8,13 @@ namespace Rds\Request\V20140815;
  * Request of GrantAccountPrivilege
  *
  * @method string getResourceOwnerId()
+ * @method string getAccountPrivilege()
  * @method string getAccountName()
- * @method string getDBName()
+ * @method string getDBInstanceId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getDBInstanceId()
  * @method string getOwnerId()
- * @method string getAccountPrivilege()
+ * @method string getDBName()
  */
 class GrantAccountPrivilegeRequest extends \RpcAcsRequest
 {
@@ -51,6 +51,19 @@ class GrantAccountPrivilegeRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $accountPrivilege
+     *
+     * @return $this
+     */
+    public function setAccountPrivilege($accountPrivilege)
+    {
+        $this->requestParameters['AccountPrivilege'] = $accountPrivilege;
+        $this->queryParameters['AccountPrivilege'] = $accountPrivilege;
+
+        return $this;
+    }
+
+    /**
      * @param string $accountName
      *
      * @return $this
@@ -64,14 +77,14 @@ class GrantAccountPrivilegeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dBName
+     * @param string $dBInstanceId
      *
      * @return $this
      */
-    public function setDBName($dBName)
+    public function setDBInstanceId($dBInstanceId)
     {
-        $this->requestParameters['DBName'] = $dBName;
-        $this->queryParameters['DBName'] = $dBName;
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
 
         return $this;
     }
@@ -103,19 +116,6 @@ class GrantAccountPrivilegeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -129,14 +129,14 @@ class GrantAccountPrivilegeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $accountPrivilege
+     * @param string $dBName
      *
      * @return $this
      */
-    public function setAccountPrivilege($accountPrivilege)
+    public function setDBName($dBName)
     {
-        $this->requestParameters['AccountPrivilege'] = $accountPrivilege;
-        $this->queryParameters['AccountPrivilege'] = $accountPrivilege;
+        $this->requestParameters['DBName'] = $dBName;
+        $this->queryParameters['DBName'] = $dBName;
 
         return $this;
     }

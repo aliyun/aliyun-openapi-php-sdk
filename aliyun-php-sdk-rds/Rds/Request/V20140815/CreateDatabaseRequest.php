@@ -8,12 +8,12 @@ namespace Rds\Request\V20140815;
  * Request of CreateDatabase
  *
  * @method string getResourceOwnerId()
- * @method string getDBName()
- * @method string getResourceOwnerAccount()
- * @method string getOwnerAccount()
  * @method string getDBInstanceId()
  * @method string getDBDescription()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getDBName()
  * @method string getCharacterSetName()
  */
 class CreateDatabaseRequest extends \RpcAcsRequest
@@ -51,14 +51,27 @@ class CreateDatabaseRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dBName
+     * @param string $dBInstanceId
      *
      * @return $this
      */
-    public function setDBName($dBName)
+    public function setDBInstanceId($dBInstanceId)
     {
-        $this->requestParameters['DBName'] = $dBName;
-        $this->queryParameters['DBName'] = $dBName;
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBDescription
+     *
+     * @return $this
+     */
+    public function setDBDescription($dBDescription)
+    {
+        $this->requestParameters['DBDescription'] = $dBDescription;
+        $this->queryParameters['DBDescription'] = $dBDescription;
 
         return $this;
     }
@@ -90,32 +103,6 @@ class CreateDatabaseRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBDescription
-     *
-     * @return $this
-     */
-    public function setDBDescription($dBDescription)
-    {
-        $this->requestParameters['DBDescription'] = $dBDescription;
-        $this->queryParameters['DBDescription'] = $dBDescription;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -124,6 +111,19 @@ class CreateDatabaseRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBName
+     *
+     * @return $this
+     */
+    public function setDBName($dBName)
+    {
+        $this->requestParameters['DBName'] = $dBName;
+        $this->queryParameters['DBName'] = $dBName;
 
         return $this;
     }

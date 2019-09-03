@@ -9,14 +9,14 @@ namespace Rds\Request\V20140815;
  *
  * @method string getResourceOwnerId()
  * @method string getNodeType()
- * @method string getResourceOwnerAccount()
- * @method string getOwnerAccount()
  * @method string getEngineVersion()
- * @method string getOwnerId()
  * @method string getSecurityToken()
  * @method string getEngine()
- * @method string getTargetRegionId()
  * @method string getDbInstanceStorageType()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getOwnerId()
+ * @method string getTargetRegionId()
  */
 class EvaluateSupportByokShowRequest extends \RpcAcsRequest
 {
@@ -66,32 +66,6 @@ class EvaluateSupportByokShowRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $engineVersion
      *
      * @return $this
@@ -100,19 +74,6 @@ class EvaluateSupportByokShowRequest extends \RpcAcsRequest
     {
         $this->requestParameters['EngineVersion'] = $engineVersion;
         $this->queryParameters['EngineVersion'] = $engineVersion;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }
@@ -144,19 +105,6 @@ class EvaluateSupportByokShowRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $targetRegionId
-     *
-     * @return $this
-     */
-    public function setTargetRegionId($targetRegionId)
-    {
-        $this->requestParameters['TargetRegionId'] = $targetRegionId;
-        $this->queryParameters['TargetRegionId'] = $targetRegionId;
-
-        return $this;
-    }
-
-    /**
      * @param string $dbInstanceStorageType
      *
      * @return $this
@@ -165,6 +113,58 @@ class EvaluateSupportByokShowRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DbInstanceStorageType'] = $dbInstanceStorageType;
         $this->queryParameters['DbInstanceStorageType'] = $dbInstanceStorageType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $targetRegionId
+     *
+     * @return $this
+     */
+    public function setTargetRegionId($targetRegionId)
+    {
+        $this->requestParameters['TargetRegionId'] = $targetRegionId;
+        $this->queryParameters['TargetRegionId'] = $targetRegionId;
 
         return $this;
     }
