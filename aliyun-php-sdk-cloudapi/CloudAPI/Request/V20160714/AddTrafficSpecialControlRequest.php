@@ -9,8 +9,8 @@ namespace CloudAPI\Request\V20160714;
  *
  * @method string getTrafficControlId()
  * @method string getSpecialKey()
- * @method string getSecurityToken()
  * @method string getTrafficValue()
+ * @method string getSecurityToken()
  * @method string getSpecialType()
  */
 class AddTrafficSpecialControlRequest extends \RpcAcsRequest
@@ -61,19 +61,6 @@ class AddTrafficSpecialControlRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $trafficValue
      *
      * @return $this
@@ -82,6 +69,19 @@ class AddTrafficSpecialControlRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TrafficValue'] = $trafficValue;
         $this->queryParameters['TrafficValue'] = $trafficValue;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

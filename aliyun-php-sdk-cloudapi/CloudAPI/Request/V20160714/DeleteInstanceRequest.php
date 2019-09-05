@@ -5,12 +5,12 @@ namespace CloudAPI\Request\V20160714;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeApp
+ * Request of DeleteInstance
  *
- * @method string getSecurityToken()
- * @method string getAppId()
+ * @method string getToken()
+ * @method string getInstanceId()
  */
-class DescribeAppRequest extends \RpcAcsRequest
+class DeleteInstanceRequest extends \RpcAcsRequest
 {
 
     /**
@@ -26,33 +26,33 @@ class DescribeAppRequest extends \RpcAcsRequest
         parent::__construct(
             'CloudAPI',
             '2016-07-14',
-            'DescribeApp',
+            'DeleteInstance',
             'apigateway'
         );
     }
 
     /**
-     * @param string $securityToken
+     * @param string $token
      *
      * @return $this
      */
-    public function setSecurityToken($securityToken)
+    public function setToken($token)
     {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
+        $this->requestParameters['Token'] = $token;
+        $this->queryParameters['Token'] = $token;
 
         return $this;
     }
 
     /**
-     * @param string $appId
+     * @param string $instanceId
      *
      * @return $this
      */
-    public function setAppId($appId)
+    public function setInstanceId($instanceId)
     {
-        $this->requestParameters['AppId'] = $appId;
-        $this->queryParameters['AppId'] = $appId;
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

@@ -7,10 +7,10 @@ namespace CloudAPI\Request\V20160714;
  *
  * Request of ModifyIpControl
  *
- * @method string getIpControlId()
- * @method string getSecurityToken()
  * @method string getIpControlName()
  * @method string getDescription()
+ * @method string getIpControlId()
+ * @method string getSecurityToken()
  */
 class ModifyIpControlRequest extends \RpcAcsRequest
 {
@@ -31,32 +31,6 @@ class ModifyIpControlRequest extends \RpcAcsRequest
             'ModifyIpControl',
             'apigateway'
         );
-    }
-
-    /**
-     * @param string $ipControlId
-     *
-     * @return $this
-     */
-    public function setIpControlId($ipControlId)
-    {
-        $this->requestParameters['IpControlId'] = $ipControlId;
-        $this->queryParameters['IpControlId'] = $ipControlId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
     }
 
     /**
@@ -81,6 +55,32 @@ class ModifyIpControlRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Description'] = $description;
         $this->queryParameters['Description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ipControlId
+     *
+     * @return $this
+     */
+    public function setIpControlId($ipControlId)
+    {
+        $this->requestParameters['IpControlId'] = $ipControlId;
+        $this->queryParameters['IpControlId'] = $ipControlId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

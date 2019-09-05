@@ -7,10 +7,10 @@ namespace CloudAPI\Request\V20160714;
  *
  * Request of DescribeApiErrorData
  *
- * @method string getSecurityToken()
  * @method string getGroupId()
  * @method string getEndTime()
  * @method string getStartTime()
+ * @method string getSecurityToken()
  * @method string getApiId()
  */
 class DescribeApiErrorDataRequest extends \RpcAcsRequest
@@ -32,19 +32,6 @@ class DescribeApiErrorDataRequest extends \RpcAcsRequest
             'DescribeApiErrorData',
             'apigateway'
         );
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
     }
 
     /**
@@ -82,6 +69,19 @@ class DescribeApiErrorDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['StartTime'] = $startTime;
         $this->queryParameters['StartTime'] = $startTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

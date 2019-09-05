@@ -7,9 +7,9 @@ namespace CloudAPI\Request\V20160714;
  *
  * Request of RemoveIpControlPolicyItem
  *
+ * @method string getPolicyItemIds()
  * @method string getIpControlId()
  * @method string getSecurityToken()
- * @method string getPolicyItemIds()
  */
 class RemoveIpControlPolicyItemRequest extends \RpcAcsRequest
 {
@@ -30,6 +30,19 @@ class RemoveIpControlPolicyItemRequest extends \RpcAcsRequest
             'RemoveIpControlPolicyItem',
             'apigateway'
         );
+    }
+
+    /**
+     * @param string $policyItemIds
+     *
+     * @return $this
+     */
+    public function setPolicyItemIds($policyItemIds)
+    {
+        $this->requestParameters['PolicyItemIds'] = $policyItemIds;
+        $this->queryParameters['PolicyItemIds'] = $policyItemIds;
+
+        return $this;
     }
 
     /**
@@ -54,19 +67,6 @@ class RemoveIpControlPolicyItemRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $policyItemIds
-     *
-     * @return $this
-     */
-    public function setPolicyItemIds($policyItemIds)
-    {
-        $this->requestParameters['PolicyItemIds'] = $policyItemIds;
-        $this->queryParameters['PolicyItemIds'] = $policyItemIds;
 
         return $this;
     }

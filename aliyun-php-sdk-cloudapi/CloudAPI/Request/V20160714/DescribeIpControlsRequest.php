@@ -7,12 +7,12 @@ namespace CloudAPI\Request\V20160714;
  *
  * Request of DescribeIpControls
  *
+ * @method string getIpControlName()
+ * @method string getPageNumber()
  * @method string getIpControlId()
  * @method string getSecurityToken()
- * @method string getIpControlName()
  * @method string getIpControlType()
  * @method string getPageSize()
- * @method string getPageNumber()
  */
 class DescribeIpControlsRequest extends \RpcAcsRequest
 {
@@ -33,6 +33,32 @@ class DescribeIpControlsRequest extends \RpcAcsRequest
             'DescribeIpControls',
             'apigateway'
         );
+    }
+
+    /**
+     * @param string $ipControlName
+     *
+     * @return $this
+     */
+    public function setIpControlName($ipControlName)
+    {
+        $this->requestParameters['IpControlName'] = $ipControlName;
+        $this->queryParameters['IpControlName'] = $ipControlName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
     }
 
     /**
@@ -62,19 +88,6 @@ class DescribeIpControlsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ipControlName
-     *
-     * @return $this
-     */
-    public function setIpControlName($ipControlName)
-    {
-        $this->requestParameters['IpControlName'] = $ipControlName;
-        $this->queryParameters['IpControlName'] = $ipControlName;
-
-        return $this;
-    }
-
-    /**
      * @param string $ipControlType
      *
      * @return $this
@@ -96,19 +109,6 @@ class DescribeIpControlsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageSize'] = $pageSize;
         $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

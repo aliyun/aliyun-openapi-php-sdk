@@ -7,12 +7,12 @@ namespace CloudAPI\Request\V20160714;
  *
  * Request of SetDomainCertificate
  *
- * @method string getSecurityToken()
  * @method string getCertificatePrivateKey()
  * @method string getGroupId()
  * @method string getDomainName()
- * @method string getCertificateName()
  * @method string getCertificateBody()
+ * @method string getSecurityToken()
+ * @method string getCertificateName()
  */
 class SetDomainCertificateRequest extends \RpcAcsRequest
 {
@@ -33,19 +33,6 @@ class SetDomainCertificateRequest extends \RpcAcsRequest
             'SetDomainCertificate',
             'apigateway'
         );
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
     }
 
     /**
@@ -88,19 +75,6 @@ class SetDomainCertificateRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $certificateName
-     *
-     * @return $this
-     */
-    public function setCertificateName($certificateName)
-    {
-        $this->requestParameters['CertificateName'] = $certificateName;
-        $this->queryParameters['CertificateName'] = $certificateName;
-
-        return $this;
-    }
-
-    /**
      * @param string $certificateBody
      *
      * @return $this
@@ -109,6 +83,32 @@ class SetDomainCertificateRequest extends \RpcAcsRequest
     {
         $this->requestParameters['CertificateBody'] = $certificateBody;
         $this->queryParameters['CertificateBody'] = $certificateBody;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $certificateName
+     *
+     * @return $this
+     */
+    public function setCertificateName($certificateName)
+    {
+        $this->requestParameters['CertificateName'] = $certificateName;
+        $this->queryParameters['CertificateName'] = $certificateName;
 
         return $this;
     }

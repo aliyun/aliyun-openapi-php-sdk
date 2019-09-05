@@ -7,9 +7,9 @@ namespace CloudAPI\Request\V20160714;
  *
  * Request of SdkGenerateByGroup
  *
- * @method string getSecurityToken()
  * @method string getGroupId()
  * @method string getLanguage()
+ * @method string getSecurityToken()
  */
 class SdkGenerateByGroupRequest extends \RpcAcsRequest
 {
@@ -30,19 +30,6 @@ class SdkGenerateByGroupRequest extends \RpcAcsRequest
             'SdkGenerateByGroup',
             'apigateway'
         );
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
     }
 
     /**
@@ -67,6 +54,19 @@ class SdkGenerateByGroupRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Language'] = $language;
         $this->queryParameters['Language'] = $language;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

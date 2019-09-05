@@ -8,10 +8,10 @@ namespace CloudAPI\Request\V20160714;
  * Request of ListTagResources
  *
  * @method array getResourceIds()
+ * @method string getResourceType()
  * @method string getSecurityToken()
  * @method string getNextToken()
  * @method array getTags()
- * @method string getResourceType()
  */
 class ListTagResourcesRequest extends \RpcAcsRequest
 {
@@ -39,12 +39,25 @@ class ListTagResourcesRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setResourceIds(array $resourceId)
+	public function setResourceIds(array $resourceId)
+	{
+	    $this->requestParameters['ResourceIds'] = $resourceId;
+		foreach ($resourceId as $i => $iValue) {
+			$this->queryParameters['ResourceId.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
+    }
+
+    /**
+     * @param string $resourceType
+     *
+     * @return $this
+     */
+    public function setResourceType($resourceType)
     {
-        $this->requestParameters['ResourceIds'] = $resourceId;
-        foreach ($resourceId as $i => $iValue) {
-            $this->queryParameters['ResourceId.' . ($i + 1)] = $iValue;
-        }
+        $this->requestParameters['ResourceType'] = $resourceType;
+        $this->queryParameters['ResourceType'] = $resourceType;
 
         return $this;
     }
@@ -80,27 +93,14 @@ class ListTagResourcesRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setTags(array $tag)
-    {
-        $this->requestParameters['Tags'] = $tag;
-        foreach ($tag as $depth1 => $depth1Value) {
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
-        }
+	public function setTags(array $tag)
+	{
+	    $this->requestParameters['Tags'] = $tag;
+		foreach ($tag as $depth1 => $depth1Value) {
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+		}
 
-        return $this;
-    }
-
-    /**
-     * @param string $resourceType
-     *
-     * @return $this
-     */
-    public function setResourceType($resourceType)
-    {
-        $this->requestParameters['ResourceType'] = $resourceType;
-        $this->queryParameters['ResourceType'] = $resourceType;
-
-        return $this;
+		return $this;
     }
 }

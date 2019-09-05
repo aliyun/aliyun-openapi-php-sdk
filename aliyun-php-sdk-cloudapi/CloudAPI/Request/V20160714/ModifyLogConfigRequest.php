@@ -8,9 +8,9 @@ namespace CloudAPI\Request\V20160714;
  * Request of ModifyLogConfig
  *
  * @method string getSlsLogStore()
+ * @method string getSlsProject()
  * @method string getLogType()
  * @method string getSecurityToken()
- * @method string getSlsProject()
  */
 class ModifyLogConfigRequest extends \RpcAcsRequest
 {
@@ -47,6 +47,19 @@ class ModifyLogConfigRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $slsProject
+     *
+     * @return $this
+     */
+    public function setSlsProject($slsProject)
+    {
+        $this->requestParameters['SlsProject'] = $slsProject;
+        $this->queryParameters['SlsProject'] = $slsProject;
+
+        return $this;
+    }
+
+    /**
      * @param string $logType
      *
      * @return $this
@@ -68,19 +81,6 @@ class ModifyLogConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $slsProject
-     *
-     * @return $this
-     */
-    public function setSlsProject($slsProject)
-    {
-        $this->requestParameters['SlsProject'] = $slsProject;
-        $this->queryParameters['SlsProject'] = $slsProject;
 
         return $this;
     }

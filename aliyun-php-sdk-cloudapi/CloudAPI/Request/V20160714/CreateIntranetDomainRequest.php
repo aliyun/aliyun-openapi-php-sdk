@@ -7,9 +7,9 @@ namespace CloudAPI\Request\V20160714;
  *
  * Request of CreateIntranetDomain
  *
+ * @method string getGroupId()
  * @method string getDeleteInternetDomain()
  * @method string getSecurityToken()
- * @method string getGroupId()
  */
 class CreateIntranetDomainRequest extends \RpcAcsRequest
 {
@@ -30,6 +30,19 @@ class CreateIntranetDomainRequest extends \RpcAcsRequest
             'CreateIntranetDomain',
             'apigateway'
         );
+    }
+
+    /**
+     * @param string $groupId
+     *
+     * @return $this
+     */
+    public function setGroupId($groupId)
+    {
+        $this->requestParameters['GroupId'] = $groupId;
+        $this->queryParameters['GroupId'] = $groupId;
+
+        return $this;
     }
 
     /**
@@ -54,19 +67,6 @@ class CreateIntranetDomainRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $groupId
-     *
-     * @return $this
-     */
-    public function setGroupId($groupId)
-    {
-        $this->requestParameters['GroupId'] = $groupId;
-        $this->queryParameters['GroupId'] = $groupId;
 
         return $this;
     }

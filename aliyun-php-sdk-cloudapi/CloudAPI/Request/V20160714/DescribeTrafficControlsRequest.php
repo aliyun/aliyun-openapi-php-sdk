@@ -9,12 +9,12 @@ namespace CloudAPI\Request\V20160714;
  *
  * @method string getTrafficControlId()
  * @method string getStageName()
- * @method string getSecurityToken()
  * @method string getTrafficControlName()
  * @method string getGroupId()
+ * @method string getPageNumber()
+ * @method string getSecurityToken()
  * @method string getPageSize()
  * @method string getApiId()
- * @method string getPageNumber()
  */
 class DescribeTrafficControlsRequest extends \RpcAcsRequest
 {
@@ -64,19 +64,6 @@ class DescribeTrafficControlsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $trafficControlName
      *
      * @return $this
@@ -103,6 +90,32 @@ class DescribeTrafficControlsRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
      * @param string $pageSize
      *
      * @return $this
@@ -124,19 +137,6 @@ class DescribeTrafficControlsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ApiId'] = $apiId;
         $this->queryParameters['ApiId'] = $apiId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

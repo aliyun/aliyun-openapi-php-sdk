@@ -8,9 +8,9 @@ namespace CloudAPI\Request\V20160714;
  * Request of SetIpControlApis
  *
  * @method string getStageName()
+ * @method string getGroupId()
  * @method string getIpControlId()
  * @method string getSecurityToken()
- * @method string getGroupId()
  * @method string getApiIds()
  */
 class SetIpControlApisRequest extends \RpcAcsRequest
@@ -48,6 +48,19 @@ class SetIpControlApisRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $groupId
+     *
+     * @return $this
+     */
+    public function setGroupId($groupId)
+    {
+        $this->requestParameters['GroupId'] = $groupId;
+        $this->queryParameters['GroupId'] = $groupId;
+
+        return $this;
+    }
+
+    /**
      * @param string $ipControlId
      *
      * @return $this
@@ -69,19 +82,6 @@ class SetIpControlApisRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $groupId
-     *
-     * @return $this
-     */
-    public function setGroupId($groupId)
-    {
-        $this->requestParameters['GroupId'] = $groupId;
-        $this->queryParameters['GroupId'] = $groupId;
 
         return $this;
     }

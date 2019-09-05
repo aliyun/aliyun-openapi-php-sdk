@@ -8,12 +8,12 @@ namespace CloudAPI\Request\V20160714;
  * Request of ModifyTrafficControl
  *
  * @method string getTrafficControlId()
- * @method string getApiDefault()
- * @method string getSecurityToken()
  * @method string getTrafficControlName()
- * @method string getTrafficControlUnit()
  * @method string getDescription()
  * @method string getUserDefault()
+ * @method string getApiDefault()
+ * @method string getSecurityToken()
+ * @method string getTrafficControlUnit()
  * @method string getAppDefault()
  */
 class ModifyTrafficControlRequest extends \RpcAcsRequest
@@ -51,32 +51,6 @@ class ModifyTrafficControlRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $apiDefault
-     *
-     * @return $this
-     */
-    public function setApiDefault($apiDefault)
-    {
-        $this->requestParameters['ApiDefault'] = $apiDefault;
-        $this->queryParameters['ApiDefault'] = $apiDefault;
-
-        return $this;
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $trafficControlName
      *
      * @return $this
@@ -85,19 +59,6 @@ class ModifyTrafficControlRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TrafficControlName'] = $trafficControlName;
         $this->queryParameters['TrafficControlName'] = $trafficControlName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $trafficControlUnit
-     *
-     * @return $this
-     */
-    public function setTrafficControlUnit($trafficControlUnit)
-    {
-        $this->requestParameters['TrafficControlUnit'] = $trafficControlUnit;
-        $this->queryParameters['TrafficControlUnit'] = $trafficControlUnit;
 
         return $this;
     }
@@ -124,6 +85,45 @@ class ModifyTrafficControlRequest extends \RpcAcsRequest
     {
         $this->requestParameters['UserDefault'] = $userDefault;
         $this->queryParameters['UserDefault'] = $userDefault;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiDefault
+     *
+     * @return $this
+     */
+    public function setApiDefault($apiDefault)
+    {
+        $this->requestParameters['ApiDefault'] = $apiDefault;
+        $this->queryParameters['ApiDefault'] = $apiDefault;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $trafficControlUnit
+     *
+     * @return $this
+     */
+    public function setTrafficControlUnit($trafficControlUnit)
+    {
+        $this->requestParameters['TrafficControlUnit'] = $trafficControlUnit;
+        $this->queryParameters['TrafficControlUnit'] = $trafficControlUnit;
 
         return $this;
     }

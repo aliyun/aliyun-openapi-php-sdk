@@ -7,9 +7,9 @@ namespace CloudAPI\Request\V20160714;
  *
  * Request of SetDomainWebSocketStatus
  *
- * @method string getSecurityToken()
  * @method string getGroupId()
  * @method string getDomainName()
+ * @method string getSecurityToken()
  * @method string getActionValue()
  */
 class SetDomainWebSocketStatusRequest extends \RpcAcsRequest
@@ -34,19 +34,6 @@ class SetDomainWebSocketStatusRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $groupId
      *
      * @return $this
@@ -68,6 +55,19 @@ class SetDomainWebSocketStatusRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DomainName'] = $domainName;
         $this->queryParameters['DomainName'] = $domainName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

@@ -8,9 +8,9 @@ namespace CloudAPI\Request\V20160714;
  * Request of DeployApi
  *
  * @method string getStageName()
- * @method string getSecurityToken()
  * @method string getGroupId()
  * @method string getDescription()
+ * @method string getSecurityToken()
  * @method string getApiId()
  */
 class DeployApiRequest extends \RpcAcsRequest
@@ -48,19 +48,6 @@ class DeployApiRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $groupId
      *
      * @return $this
@@ -82,6 +69,19 @@ class DeployApiRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Description'] = $description;
         $this->queryParameters['Description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

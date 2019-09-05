@@ -7,11 +7,11 @@ namespace CloudAPI\Request\V20160714;
  *
  * Request of ModifySignature
  *
- * @method string getSecurityToken()
  * @method string getSignatureName()
- * @method string getSignatureKey()
  * @method string getSignatureId()
  * @method string getSignatureSecret()
+ * @method string getSecurityToken()
+ * @method string getSignatureKey()
  */
 class ModifySignatureRequest extends \RpcAcsRequest
 {
@@ -35,19 +35,6 @@ class ModifySignatureRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $signatureName
      *
      * @return $this
@@ -56,19 +43,6 @@ class ModifySignatureRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SignatureName'] = $signatureName;
         $this->queryParameters['SignatureName'] = $signatureName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $signatureKey
-     *
-     * @return $this
-     */
-    public function setSignatureKey($signatureKey)
-    {
-        $this->requestParameters['SignatureKey'] = $signatureKey;
-        $this->queryParameters['SignatureKey'] = $signatureKey;
 
         return $this;
     }
@@ -95,6 +69,32 @@ class ModifySignatureRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SignatureSecret'] = $signatureSecret;
         $this->queryParameters['SignatureSecret'] = $signatureSecret;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $signatureKey
+     *
+     * @return $this
+     */
+    public function setSignatureKey($signatureKey)
+    {
+        $this->requestParameters['SignatureKey'] = $signatureKey;
+        $this->queryParameters['SignatureKey'] = $signatureKey;
 
         return $this;
     }

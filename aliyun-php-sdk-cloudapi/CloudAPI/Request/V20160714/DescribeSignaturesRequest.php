@@ -7,11 +7,11 @@ namespace CloudAPI\Request\V20160714;
  *
  * Request of DescribeSignatures
  *
- * @method string getSecurityToken()
  * @method string getSignatureName()
- * @method string getPageSize()
  * @method string getSignatureId()
  * @method string getPageNumber()
+ * @method string getSecurityToken()
+ * @method string getPageSize()
  */
 class DescribeSignaturesRequest extends \RpcAcsRequest
 {
@@ -35,19 +35,6 @@ class DescribeSignaturesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $signatureName
      *
      * @return $this
@@ -56,19 +43,6 @@ class DescribeSignaturesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SignatureName'] = $signatureName;
         $this->queryParameters['SignatureName'] = $signatureName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }
@@ -95,6 +69,32 @@ class DescribeSignaturesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageNumber'] = $pageNumber;
         $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }

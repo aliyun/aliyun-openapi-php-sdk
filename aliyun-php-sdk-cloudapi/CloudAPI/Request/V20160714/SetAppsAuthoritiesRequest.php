@@ -9,12 +9,12 @@ namespace CloudAPI\Request\V20160714;
  *
  * @method string getAuthVaildTime()
  * @method string getStageName()
- * @method string getAppIds()
- * @method string getSecurityToken()
  * @method string getGroupId()
  * @method string getDescription()
- * @method string getApiId()
  * @method string getAuthValidTime()
+ * @method string getAppIds()
+ * @method string getSecurityToken()
+ * @method string getApiId()
  */
 class SetAppsAuthoritiesRequest extends \RpcAcsRequest
 {
@@ -64,32 +64,6 @@ class SetAppsAuthoritiesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $appIds
-     *
-     * @return $this
-     */
-    public function setAppIds($appIds)
-    {
-        $this->requestParameters['AppIds'] = $appIds;
-        $this->queryParameters['AppIds'] = $appIds;
-
-        return $this;
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $groupId
      *
      * @return $this
@@ -116,19 +90,6 @@ class SetAppsAuthoritiesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $apiId
-     *
-     * @return $this
-     */
-    public function setApiId($apiId)
-    {
-        $this->requestParameters['ApiId'] = $apiId;
-        $this->queryParameters['ApiId'] = $apiId;
-
-        return $this;
-    }
-
-    /**
      * @param string $authValidTime
      *
      * @return $this
@@ -137,6 +98,45 @@ class SetAppsAuthoritiesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AuthValidTime'] = $authValidTime;
         $this->queryParameters['AuthValidTime'] = $authValidTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $appIds
+     *
+     * @return $this
+     */
+    public function setAppIds($appIds)
+    {
+        $this->requestParameters['AppIds'] = $appIds;
+        $this->queryParameters['AppIds'] = $appIds;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiId
+     *
+     * @return $this
+     */
+    public function setApiId($apiId)
+    {
+        $this->requestParameters['ApiId'] = $apiId;
+        $this->queryParameters['ApiId'] = $apiId;
 
         return $this;
     }

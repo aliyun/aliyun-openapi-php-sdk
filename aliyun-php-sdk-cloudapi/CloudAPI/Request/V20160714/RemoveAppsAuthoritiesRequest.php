@@ -8,9 +8,9 @@ namespace CloudAPI\Request\V20160714;
  * Request of RemoveAppsAuthorities
  *
  * @method string getStageName()
+ * @method string getGroupId()
  * @method string getAppIds()
  * @method string getSecurityToken()
- * @method string getGroupId()
  * @method string getApiId()
  */
 class RemoveAppsAuthoritiesRequest extends \RpcAcsRequest
@@ -48,6 +48,19 @@ class RemoveAppsAuthoritiesRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $groupId
+     *
+     * @return $this
+     */
+    public function setGroupId($groupId)
+    {
+        $this->requestParameters['GroupId'] = $groupId;
+        $this->queryParameters['GroupId'] = $groupId;
+
+        return $this;
+    }
+
+    /**
      * @param string $appIds
      *
      * @return $this
@@ -69,19 +82,6 @@ class RemoveAppsAuthoritiesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $groupId
-     *
-     * @return $this
-     */
-    public function setGroupId($groupId)
-    {
-        $this->requestParameters['GroupId'] = $groupId;
-        $this->queryParameters['GroupId'] = $groupId;
 
         return $this;
     }

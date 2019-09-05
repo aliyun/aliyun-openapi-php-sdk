@@ -8,13 +8,13 @@ namespace CloudAPI\Request\V20160714;
  * Request of DescribePurchasedApis
  *
  * @method string getStageName()
- * @method string getApiName()
  * @method string getVisibility()
- * @method string getSecurityToken()
  * @method string getGroupId()
+ * @method string getPageNumber()
+ * @method string getApiName()
+ * @method string getSecurityToken()
  * @method string getPageSize()
  * @method string getApiId()
- * @method string getPageNumber()
  */
 class DescribePurchasedApisRequest extends \RpcAcsRequest
 {
@@ -51,19 +51,6 @@ class DescribePurchasedApisRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $apiName
-     *
-     * @return $this
-     */
-    public function setApiName($apiName)
-    {
-        $this->requestParameters['ApiName'] = $apiName;
-        $this->queryParameters['ApiName'] = $apiName;
-
-        return $this;
-    }
-
-    /**
      * @param string $visibility
      *
      * @return $this
@@ -77,19 +64,6 @@ class DescribePurchasedApisRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $groupId
      *
      * @return $this
@@ -98,6 +72,45 @@ class DescribePurchasedApisRequest extends \RpcAcsRequest
     {
         $this->requestParameters['GroupId'] = $groupId;
         $this->queryParameters['GroupId'] = $groupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiName
+     *
+     * @return $this
+     */
+    public function setApiName($apiName)
+    {
+        $this->requestParameters['ApiName'] = $apiName;
+        $this->queryParameters['ApiName'] = $apiName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }
@@ -124,19 +137,6 @@ class DescribePurchasedApisRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ApiId'] = $apiId;
         $this->queryParameters['ApiId'] = $apiId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

@@ -7,13 +7,13 @@ namespace CloudAPI\Request\V20160714;
  *
  * Request of DescribeAppAttributes
  *
+ * @method string getEnableTagAuth()
+ * @method string getPageNumber()
  * @method string getAppName()
  * @method string getSecurityToken()
  * @method string getAppId()
  * @method string getPageSize()
  * @method array getTags()
- * @method string getEnableTagAuth()
- * @method string getPageNumber()
  */
 class DescribeAppAttributesRequest extends \RpcAcsRequest
 {
@@ -34,6 +34,32 @@ class DescribeAppAttributesRequest extends \RpcAcsRequest
             'DescribeAppAttributes',
             'apigateway'
         );
+    }
+
+    /**
+     * @param string $enableTagAuth
+     *
+     * @return $this
+     */
+    public function setEnableTagAuth($enableTagAuth)
+    {
+        $this->requestParameters['EnableTagAuth'] = $enableTagAuth;
+        $this->queryParameters['EnableTagAuth'] = $enableTagAuth;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
     }
 
     /**
@@ -93,40 +119,14 @@ class DescribeAppAttributesRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setTags(array $tag)
-    {
-        $this->requestParameters['Tags'] = $tag;
-        foreach ($tag as $depth1 => $depth1Value) {
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
-        }
+	public function setTags(array $tag)
+	{
+	    $this->requestParameters['Tags'] = $tag;
+		foreach ($tag as $depth1 => $depth1Value) {
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+		}
 
-        return $this;
-    }
-
-    /**
-     * @param string $enableTagAuth
-     *
-     * @return $this
-     */
-    public function setEnableTagAuth($enableTagAuth)
-    {
-        $this->requestParameters['EnableTagAuth'] = $enableTagAuth;
-        $this->queryParameters['EnableTagAuth'] = $enableTagAuth;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
-
-        return $this;
+		return $this;
     }
 }

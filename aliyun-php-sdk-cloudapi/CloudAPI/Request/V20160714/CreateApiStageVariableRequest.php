@@ -8,11 +8,11 @@ namespace CloudAPI\Request\V20160714;
  * Request of CreateApiStageVariable
  *
  * @method string getSupportRoute()
- * @method string getSecurityToken()
- * @method string getVariableName()
  * @method string getVariableValue()
  * @method string getGroupId()
  * @method string getStageRouteModel()
+ * @method string getSecurityToken()
+ * @method string getVariableName()
  * @method string getStageId()
  */
 class CreateApiStageVariableRequest extends \RpcAcsRequest
@@ -45,32 +45,6 @@ class CreateApiStageVariableRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SupportRoute'] = $supportRoute;
         $this->queryParameters['SupportRoute'] = $supportRoute;
-
-        return $this;
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $variableName
-     *
-     * @return $this
-     */
-    public function setVariableName($variableName)
-    {
-        $this->requestParameters['VariableName'] = $variableName;
-        $this->queryParameters['VariableName'] = $variableName;
 
         return $this;
     }
@@ -110,6 +84,32 @@ class CreateApiStageVariableRequest extends \RpcAcsRequest
     {
         $this->requestParameters['StageRouteModel'] = $stageRouteModel;
         $this->queryParameters['StageRouteModel'] = $stageRouteModel;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $variableName
+     *
+     * @return $this
+     */
+    public function setVariableName($variableName)
+    {
+        $this->requestParameters['VariableName'] = $variableName;
+        $this->queryParameters['VariableName'] = $variableName;
 
         return $this;
     }

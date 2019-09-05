@@ -8,14 +8,14 @@ namespace CloudAPI\Request\V20160714;
  * Request of DescribeDeployedApis
  *
  * @method string getStageName()
+ * @method string getGroupId()
+ * @method string getEnableTagAuth()
+ * @method string getPageNumber()
  * @method string getApiName()
  * @method string getSecurityToken()
- * @method string getGroupId()
  * @method string getPageSize()
  * @method array getTags()
- * @method string getEnableTagAuth()
  * @method string getApiId()
- * @method string getPageNumber()
  */
 class DescribeDeployedApisRequest extends \RpcAcsRequest
 {
@@ -52,6 +52,45 @@ class DescribeDeployedApisRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $groupId
+     *
+     * @return $this
+     */
+    public function setGroupId($groupId)
+    {
+        $this->requestParameters['GroupId'] = $groupId;
+        $this->queryParameters['GroupId'] = $groupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $enableTagAuth
+     *
+     * @return $this
+     */
+    public function setEnableTagAuth($enableTagAuth)
+    {
+        $this->requestParameters['EnableTagAuth'] = $enableTagAuth;
+        $this->queryParameters['EnableTagAuth'] = $enableTagAuth;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
      * @param string $apiName
      *
      * @return $this
@@ -78,19 +117,6 @@ class DescribeDeployedApisRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $groupId
-     *
-     * @return $this
-     */
-    public function setGroupId($groupId)
-    {
-        $this->requestParameters['GroupId'] = $groupId;
-        $this->queryParameters['GroupId'] = $groupId;
-
-        return $this;
-    }
-
-    /**
      * @param string $pageSize
      *
      * @return $this
@@ -108,28 +134,15 @@ class DescribeDeployedApisRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setTags(array $tag)
-    {
-        $this->requestParameters['Tags'] = $tag;
-        foreach ($tag as $depth1 => $depth1Value) {
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
-        }
+	public function setTags(array $tag)
+	{
+	    $this->requestParameters['Tags'] = $tag;
+		foreach ($tag as $depth1 => $depth1Value) {
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+		}
 
-        return $this;
-    }
-
-    /**
-     * @param string $enableTagAuth
-     *
-     * @return $this
-     */
-    public function setEnableTagAuth($enableTagAuth)
-    {
-        $this->requestParameters['EnableTagAuth'] = $enableTagAuth;
-        $this->queryParameters['EnableTagAuth'] = $enableTagAuth;
-
-        return $this;
+		return $this;
     }
 
     /**
@@ -141,19 +154,6 @@ class DescribeDeployedApisRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ApiId'] = $apiId;
         $this->queryParameters['ApiId'] = $apiId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

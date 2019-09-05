@@ -7,9 +7,9 @@ namespace CloudAPI\Request\V20160714;
  *
  * Request of DeleteApiStageVariable
  *
+ * @method string getGroupId()
  * @method string getSecurityToken()
  * @method string getVariableName()
- * @method string getGroupId()
  * @method string getStageId()
  */
 class DeleteApiStageVariableRequest extends \RpcAcsRequest
@@ -34,6 +34,19 @@ class DeleteApiStageVariableRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $groupId
+     *
+     * @return $this
+     */
+    public function setGroupId($groupId)
+    {
+        $this->requestParameters['GroupId'] = $groupId;
+        $this->queryParameters['GroupId'] = $groupId;
+
+        return $this;
+    }
+
+    /**
      * @param string $securityToken
      *
      * @return $this
@@ -55,19 +68,6 @@ class DeleteApiStageVariableRequest extends \RpcAcsRequest
     {
         $this->requestParameters['VariableName'] = $variableName;
         $this->queryParameters['VariableName'] = $variableName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $groupId
-     *
-     * @return $this
-     */
-    public function setGroupId($groupId)
-    {
-        $this->requestParameters['GroupId'] = $groupId;
-        $this->queryParameters['GroupId'] = $groupId;
 
         return $this;
     }

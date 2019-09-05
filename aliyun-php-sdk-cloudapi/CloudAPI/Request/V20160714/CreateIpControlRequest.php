@@ -7,11 +7,11 @@ namespace CloudAPI\Request\V20160714;
  *
  * Request of CreateIpControl
  *
- * @method string getSecurityToken()
  * @method string getIpControlName()
- * @method string getIpControlType()
  * @method array getIpControlPolicyss()
  * @method string getDescription()
+ * @method string getSecurityToken()
+ * @method string getIpControlType()
  */
 class CreateIpControlRequest extends \RpcAcsRequest
 {
@@ -35,19 +35,6 @@ class CreateIpControlRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $ipControlName
      *
      * @return $this
@@ -61,32 +48,19 @@ class CreateIpControlRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ipControlType
-     *
-     * @return $this
-     */
-    public function setIpControlType($ipControlType)
-    {
-        $this->requestParameters['IpControlType'] = $ipControlType;
-        $this->queryParameters['IpControlType'] = $ipControlType;
-
-        return $this;
-    }
-
-    /**
      * @param array $ipControlPolicys
      *
      * @return $this
      */
-    public function setIpControlPolicyss(array $ipControlPolicys)
-    {
-        $this->requestParameters['IpControlPolicyss'] = $ipControlPolicys;
-        foreach ($ipControlPolicys as $depth1 => $depth1Value) {
-            $this->queryParameters['IpControlPolicys.' . ($depth1 + 1) . '.AppId'] = $depth1Value['AppId'];
-            $this->queryParameters['IpControlPolicys.' . ($depth1 + 1) . '.CidrIp'] = $depth1Value['CidrIp'];
-        }
+	public function setIpControlPolicyss(array $ipControlPolicys)
+	{
+	    $this->requestParameters['IpControlPolicyss'] = $ipControlPolicys;
+		foreach ($ipControlPolicys as $depth1 => $depth1Value) {
+			$this->queryParameters['IpControlPolicys.' . ($depth1 + 1) . '.AppId'] = $depth1Value['AppId'];
+			$this->queryParameters['IpControlPolicys.' . ($depth1 + 1) . '.CidrIp'] = $depth1Value['CidrIp'];
+		}
 
-        return $this;
+		return $this;
     }
 
     /**
@@ -98,6 +72,32 @@ class CreateIpControlRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Description'] = $description;
         $this->queryParameters['Description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ipControlType
+     *
+     * @return $this
+     */
+    public function setIpControlType($ipControlType)
+    {
+        $this->requestParameters['IpControlType'] = $ipControlType;
+        $this->queryParameters['IpControlType'] = $ipControlType;
 
         return $this;
     }

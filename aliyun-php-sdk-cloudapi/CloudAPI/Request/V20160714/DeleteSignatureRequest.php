@@ -7,8 +7,8 @@ namespace CloudAPI\Request\V20160714;
  *
  * Request of DeleteSignature
  *
- * @method string getSecurityToken()
  * @method string getSignatureId()
+ * @method string getSecurityToken()
  */
 class DeleteSignatureRequest extends \RpcAcsRequest
 {
@@ -32,19 +32,6 @@ class DeleteSignatureRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $signatureId
      *
      * @return $this
@@ -53,6 +40,19 @@ class DeleteSignatureRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SignatureId'] = $signatureId;
         $this->queryParameters['SignatureId'] = $signatureId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

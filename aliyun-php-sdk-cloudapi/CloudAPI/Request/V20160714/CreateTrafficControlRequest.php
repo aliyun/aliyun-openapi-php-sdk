@@ -7,12 +7,12 @@ namespace CloudAPI\Request\V20160714;
  *
  * Request of CreateTrafficControl
  *
- * @method string getApiDefault()
- * @method string getSecurityToken()
  * @method string getTrafficControlName()
- * @method string getTrafficControlUnit()
  * @method string getDescription()
  * @method string getUserDefault()
+ * @method string getApiDefault()
+ * @method string getSecurityToken()
+ * @method string getTrafficControlUnit()
  * @method string getAppDefault()
  */
 class CreateTrafficControlRequest extends \RpcAcsRequest
@@ -34,6 +34,45 @@ class CreateTrafficControlRequest extends \RpcAcsRequest
             'CreateTrafficControl',
             'apigateway'
         );
+    }
+
+    /**
+     * @param string $trafficControlName
+     *
+     * @return $this
+     */
+    public function setTrafficControlName($trafficControlName)
+    {
+        $this->requestParameters['TrafficControlName'] = $trafficControlName;
+        $this->queryParameters['TrafficControlName'] = $trafficControlName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * @param string $userDefault
+     *
+     * @return $this
+     */
+    public function setUserDefault($userDefault)
+    {
+        $this->requestParameters['UserDefault'] = $userDefault;
+        $this->queryParameters['UserDefault'] = $userDefault;
+
+        return $this;
     }
 
     /**
@@ -63,19 +102,6 @@ class CreateTrafficControlRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $trafficControlName
-     *
-     * @return $this
-     */
-    public function setTrafficControlName($trafficControlName)
-    {
-        $this->requestParameters['TrafficControlName'] = $trafficControlName;
-        $this->queryParameters['TrafficControlName'] = $trafficControlName;
-
-        return $this;
-    }
-
-    /**
      * @param string $trafficControlUnit
      *
      * @return $this
@@ -84,32 +110,6 @@ class CreateTrafficControlRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TrafficControlUnit'] = $trafficControlUnit;
         $this->queryParameters['TrafficControlUnit'] = $trafficControlUnit;
-
-        return $this;
-    }
-
-    /**
-     * @param string $description
-     *
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->requestParameters['Description'] = $description;
-        $this->queryParameters['Description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * @param string $userDefault
-     *
-     * @return $this
-     */
-    public function setUserDefault($userDefault)
-    {
-        $this->requestParameters['UserDefault'] = $userDefault;
-        $this->queryParameters['UserDefault'] = $userDefault;
 
         return $this;
     }

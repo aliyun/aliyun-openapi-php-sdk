@@ -7,16 +7,16 @@ namespace CloudAPI\Request\V20160714;
  *
  * Request of DescribeApis
  *
+ * @method string getVisibility()
+ * @method string getGroupId()
+ * @method string getEnableTagAuth()
+ * @method string getPageNumber()
  * @method string getApiName()
  * @method string getCatalogId()
- * @method string getVisibility()
  * @method string getSecurityToken()
- * @method string getGroupId()
  * @method string getPageSize()
  * @method array getTags()
- * @method string getEnableTagAuth()
  * @method string getApiId()
- * @method string getPageNumber()
  */
 class DescribeApisRequest extends \RpcAcsRequest
 {
@@ -37,6 +37,58 @@ class DescribeApisRequest extends \RpcAcsRequest
             'DescribeApis',
             'apigateway'
         );
+    }
+
+    /**
+     * @param string $visibility
+     *
+     * @return $this
+     */
+    public function setVisibility($visibility)
+    {
+        $this->requestParameters['Visibility'] = $visibility;
+        $this->queryParameters['Visibility'] = $visibility;
+
+        return $this;
+    }
+
+    /**
+     * @param string $groupId
+     *
+     * @return $this
+     */
+    public function setGroupId($groupId)
+    {
+        $this->requestParameters['GroupId'] = $groupId;
+        $this->queryParameters['GroupId'] = $groupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $enableTagAuth
+     *
+     * @return $this
+     */
+    public function setEnableTagAuth($enableTagAuth)
+    {
+        $this->requestParameters['EnableTagAuth'] = $enableTagAuth;
+        $this->queryParameters['EnableTagAuth'] = $enableTagAuth;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
     }
 
     /**
@@ -66,19 +118,6 @@ class DescribeApisRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $visibility
-     *
-     * @return $this
-     */
-    public function setVisibility($visibility)
-    {
-        $this->requestParameters['Visibility'] = $visibility;
-        $this->queryParameters['Visibility'] = $visibility;
-
-        return $this;
-    }
-
-    /**
      * @param string $securityToken
      *
      * @return $this
@@ -87,19 +126,6 @@ class DescribeApisRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $groupId
-     *
-     * @return $this
-     */
-    public function setGroupId($groupId)
-    {
-        $this->requestParameters['GroupId'] = $groupId;
-        $this->queryParameters['GroupId'] = $groupId;
 
         return $this;
     }
@@ -122,28 +148,15 @@ class DescribeApisRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setTags(array $tag)
-    {
-        $this->requestParameters['Tags'] = $tag;
-        foreach ($tag as $depth1 => $depth1Value) {
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
-        }
+	public function setTags(array $tag)
+	{
+	    $this->requestParameters['Tags'] = $tag;
+		foreach ($tag as $depth1 => $depth1Value) {
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+		}
 
-        return $this;
-    }
-
-    /**
-     * @param string $enableTagAuth
-     *
-     * @return $this
-     */
-    public function setEnableTagAuth($enableTagAuth)
-    {
-        $this->requestParameters['EnableTagAuth'] = $enableTagAuth;
-        $this->queryParameters['EnableTagAuth'] = $enableTagAuth;
-
-        return $this;
+		return $this;
     }
 
     /**
@@ -155,19 +168,6 @@ class DescribeApisRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ApiId'] = $apiId;
         $this->queryParameters['ApiId'] = $apiId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

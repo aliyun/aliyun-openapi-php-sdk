@@ -7,9 +7,9 @@ namespace CloudAPI\Request\V20160714;
  *
  * Request of DescribeDomainsResolution
  *
- * @method string getSecurityToken()
  * @method string getDomainNames()
  * @method string getGroupId()
+ * @method string getSecurityToken()
  */
 class DescribeDomainsResolutionRequest extends \RpcAcsRequest
 {
@@ -30,19 +30,6 @@ class DescribeDomainsResolutionRequest extends \RpcAcsRequest
             'DescribeDomainsResolution',
             'apigateway'
         );
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
     }
 
     /**
@@ -67,6 +54,19 @@ class DescribeDomainsResolutionRequest extends \RpcAcsRequest
     {
         $this->requestParameters['GroupId'] = $groupId;
         $this->queryParameters['GroupId'] = $groupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

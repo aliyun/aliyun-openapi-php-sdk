@@ -7,10 +7,10 @@ namespace CloudAPI\Request\V20160714;
  *
  * Request of DeleteDomainCertificate
  *
- * @method string getSecurityToken()
  * @method string getGroupId()
  * @method string getCertificateId()
  * @method string getDomainName()
+ * @method string getSecurityToken()
  */
 class DeleteDomainCertificateRequest extends \RpcAcsRequest
 {
@@ -31,19 +31,6 @@ class DeleteDomainCertificateRequest extends \RpcAcsRequest
             'DeleteDomainCertificate',
             'apigateway'
         );
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
     }
 
     /**
@@ -81,6 +68,19 @@ class DeleteDomainCertificateRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DomainName'] = $domainName;
         $this->queryParameters['DomainName'] = $domainName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

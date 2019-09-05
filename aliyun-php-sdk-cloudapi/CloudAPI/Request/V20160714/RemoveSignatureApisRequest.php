@@ -8,9 +8,9 @@ namespace CloudAPI\Request\V20160714;
  * Request of RemoveSignatureApis
  *
  * @method string getStageName()
- * @method string getSecurityToken()
  * @method string getGroupId()
  * @method string getSignatureId()
+ * @method string getSecurityToken()
  * @method string getApiIds()
  */
 class RemoveSignatureApisRequest extends \RpcAcsRequest
@@ -48,19 +48,6 @@ class RemoveSignatureApisRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $groupId
      *
      * @return $this
@@ -82,6 +69,19 @@ class RemoveSignatureApisRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SignatureId'] = $signatureId;
         $this->queryParameters['SignatureId'] = $signatureId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

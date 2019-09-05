@@ -7,11 +7,11 @@ namespace CloudAPI\Request\V20160714;
  *
  * Request of DescribeIpControlPolicyItems
  *
+ * @method string getPageNumber()
  * @method string getIpControlId()
  * @method string getPolicyItemId()
  * @method string getSecurityToken()
  * @method string getPageSize()
- * @method string getPageNumber()
  */
 class DescribeIpControlPolicyItemsRequest extends \RpcAcsRequest
 {
@@ -32,6 +32,19 @@ class DescribeIpControlPolicyItemsRequest extends \RpcAcsRequest
             'DescribeIpControlPolicyItems',
             'apigateway'
         );
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
     }
 
     /**
@@ -82,19 +95,6 @@ class DescribeIpControlPolicyItemsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageSize'] = $pageSize;
         $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

@@ -7,9 +7,9 @@ namespace CloudAPI\Request\V20160714;
  *
  * Request of DeleteDomain
  *
- * @method string getSecurityToken()
  * @method string getGroupId()
  * @method string getDomainName()
+ * @method string getSecurityToken()
  */
 class DeleteDomainRequest extends \RpcAcsRequest
 {
@@ -30,19 +30,6 @@ class DeleteDomainRequest extends \RpcAcsRequest
             'DeleteDomain',
             'apigateway'
         );
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
     }
 
     /**
@@ -67,6 +54,19 @@ class DeleteDomainRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DomainName'] = $domainName;
         $this->queryParameters['DomainName'] = $domainName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

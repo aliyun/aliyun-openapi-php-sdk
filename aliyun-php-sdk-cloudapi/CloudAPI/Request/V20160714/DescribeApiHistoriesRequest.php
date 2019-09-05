@@ -8,12 +8,12 @@ namespace CloudAPI\Request\V20160714;
  * Request of DescribeApiHistories
  *
  * @method string getStageName()
+ * @method string getGroupId()
+ * @method string getPageNumber()
  * @method string getApiName()
  * @method string getSecurityToken()
- * @method string getGroupId()
  * @method string getPageSize()
  * @method string getApiId()
- * @method string getPageNumber()
  */
 class DescribeApiHistoriesRequest extends \RpcAcsRequest
 {
@@ -50,6 +50,32 @@ class DescribeApiHistoriesRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $groupId
+     *
+     * @return $this
+     */
+    public function setGroupId($groupId)
+    {
+        $this->requestParameters['GroupId'] = $groupId;
+        $this->queryParameters['GroupId'] = $groupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
      * @param string $apiName
      *
      * @return $this
@@ -76,19 +102,6 @@ class DescribeApiHistoriesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $groupId
-     *
-     * @return $this
-     */
-    public function setGroupId($groupId)
-    {
-        $this->requestParameters['GroupId'] = $groupId;
-        $this->queryParameters['GroupId'] = $groupId;
-
-        return $this;
-    }
-
-    /**
      * @param string $pageSize
      *
      * @return $this
@@ -110,19 +123,6 @@ class DescribeApiHistoriesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ApiId'] = $apiId;
         $this->queryParameters['ApiId'] = $apiId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

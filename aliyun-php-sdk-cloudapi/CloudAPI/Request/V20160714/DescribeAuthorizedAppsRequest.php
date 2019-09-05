@@ -8,14 +8,14 @@ namespace CloudAPI\Request\V20160714;
  * Request of DescribeAuthorizedApps
  *
  * @method string getStageName()
+ * @method string getGroupId()
+ * @method string getAppOwnerId()
+ * @method string getPageNumber()
  * @method string getAppName()
  * @method string getSecurityToken()
- * @method string getGroupId()
  * @method string getAppId()
- * @method string getAppOwnerId()
  * @method string getPageSize()
  * @method string getApiId()
- * @method string getPageNumber()
  */
 class DescribeAuthorizedAppsRequest extends \RpcAcsRequest
 {
@@ -52,6 +52,45 @@ class DescribeAuthorizedAppsRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $groupId
+     *
+     * @return $this
+     */
+    public function setGroupId($groupId)
+    {
+        $this->requestParameters['GroupId'] = $groupId;
+        $this->queryParameters['GroupId'] = $groupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $appOwnerId
+     *
+     * @return $this
+     */
+    public function setAppOwnerId($appOwnerId)
+    {
+        $this->requestParameters['AppOwnerId'] = $appOwnerId;
+        $this->queryParameters['AppOwnerId'] = $appOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
      * @param string $appName
      *
      * @return $this
@@ -78,19 +117,6 @@ class DescribeAuthorizedAppsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $groupId
-     *
-     * @return $this
-     */
-    public function setGroupId($groupId)
-    {
-        $this->requestParameters['GroupId'] = $groupId;
-        $this->queryParameters['GroupId'] = $groupId;
-
-        return $this;
-    }
-
-    /**
      * @param string $appId
      *
      * @return $this
@@ -99,19 +125,6 @@ class DescribeAuthorizedAppsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AppId'] = $appId;
         $this->queryParameters['AppId'] = $appId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $appOwnerId
-     *
-     * @return $this
-     */
-    public function setAppOwnerId($appOwnerId)
-    {
-        $this->requestParameters['AppOwnerId'] = $appOwnerId;
-        $this->queryParameters['AppOwnerId'] = $appOwnerId;
 
         return $this;
     }
@@ -138,19 +151,6 @@ class DescribeAuthorizedAppsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ApiId'] = $apiId;
         $this->queryParameters['ApiId'] = $apiId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

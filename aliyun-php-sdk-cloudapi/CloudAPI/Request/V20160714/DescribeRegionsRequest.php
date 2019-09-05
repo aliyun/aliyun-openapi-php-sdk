@@ -7,8 +7,8 @@ namespace CloudAPI\Request\V20160714;
  *
  * Request of DescribeRegions
  *
- * @method string getSecurityToken()
  * @method string getLanguage()
+ * @method string getSecurityToken()
  */
 class DescribeRegionsRequest extends \RpcAcsRequest
 {
@@ -32,19 +32,6 @@ class DescribeRegionsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $language
      *
      * @return $this
@@ -53,6 +40,19 @@ class DescribeRegionsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Language'] = $language;
         $this->queryParameters['Language'] = $language;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

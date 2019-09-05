@@ -7,9 +7,9 @@ namespace CloudAPI\Request\V20160714;
  *
  * Request of DescribePurchasedApiGroups
  *
+ * @method string getPageNumber()
  * @method string getSecurityToken()
  * @method string getPageSize()
- * @method string getPageNumber()
  */
 class DescribePurchasedApiGroupsRequest extends \RpcAcsRequest
 {
@@ -30,6 +30,19 @@ class DescribePurchasedApiGroupsRequest extends \RpcAcsRequest
             'DescribePurchasedApiGroups',
             'apigateway'
         );
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
     }
 
     /**
@@ -54,19 +67,6 @@ class DescribePurchasedApiGroupsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageSize'] = $pageSize;
         $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

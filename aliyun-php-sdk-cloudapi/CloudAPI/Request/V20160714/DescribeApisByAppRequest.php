@@ -7,10 +7,10 @@ namespace CloudAPI\Request\V20160714;
  *
  * Request of DescribeApisByApp
  *
+ * @method string getPageNumber()
  * @method string getSecurityToken()
  * @method string getAppId()
  * @method string getPageSize()
- * @method string getPageNumber()
  */
 class DescribeApisByAppRequest extends \RpcAcsRequest
 {
@@ -31,6 +31,19 @@ class DescribeApisByAppRequest extends \RpcAcsRequest
             'DescribeApisByApp',
             'apigateway'
         );
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
     }
 
     /**
@@ -68,19 +81,6 @@ class DescribeApisByAppRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageSize'] = $pageSize;
         $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }
