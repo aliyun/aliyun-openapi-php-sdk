@@ -5,17 +5,14 @@ namespace BssOpenApi\Request\V20171214;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of CreateResourcePackage
+ * Request of UpgradeResourcePackage
  *
- * @method string getProductCode()
  * @method string getSpecification()
  * @method string getOwnerId()
  * @method string getEffectiveDate()
- * @method string getDuration()
- * @method string getPackageType()
- * @method string getPricingCycle()
+ * @method string getInstanceId()
  */
-class CreateResourcePackageRequest extends \RpcAcsRequest
+class UpgradeResourcePackageRequest extends \RpcAcsRequest
 {
 
     /**
@@ -31,22 +28,9 @@ class CreateResourcePackageRequest extends \RpcAcsRequest
         parent::__construct(
             'BssOpenApi',
             '2017-12-14',
-            'CreateResourcePackage',
+            'UpgradeResourcePackage',
             'bssopenapi'
         );
-    }
-
-    /**
-     * @param string $productCode
-     *
-     * @return $this
-     */
-    public function setProductCode($productCode)
-    {
-        $this->requestParameters['ProductCode'] = $productCode;
-        $this->queryParameters['ProductCode'] = $productCode;
-
-        return $this;
     }
 
     /**
@@ -89,40 +73,14 @@ class CreateResourcePackageRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $duration
+     * @param string $instanceId
      *
      * @return $this
      */
-    public function setDuration($duration)
+    public function setInstanceId($instanceId)
     {
-        $this->requestParameters['Duration'] = $duration;
-        $this->queryParameters['Duration'] = $duration;
-
-        return $this;
-    }
-
-    /**
-     * @param string $packageType
-     *
-     * @return $this
-     */
-    public function setPackageType($packageType)
-    {
-        $this->requestParameters['PackageType'] = $packageType;
-        $this->queryParameters['PackageType'] = $packageType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pricingCycle
-     *
-     * @return $this
-     */
-    public function setPricingCycle($pricingCycle)
-    {
-        $this->requestParameters['PricingCycle'] = $pricingCycle;
-        $this->queryParameters['PricingCycle'] = $pricingCycle;
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

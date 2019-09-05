@@ -9,10 +9,10 @@ namespace BssOpenApi\Request\V20171214;
  *
  * @method string getPeriod()
  * @method string getProductCode()
- * @method string getInstanceId()
  * @method string getSubscriptionType()
  * @method string getOwnerId()
  * @method string getProductType()
+ * @method string getInstanceId()
  */
 class ConvertChargeTypeRequest extends \RpcAcsRequest
 {
@@ -30,7 +30,8 @@ class ConvertChargeTypeRequest extends \RpcAcsRequest
         parent::__construct(
             'BssOpenApi',
             '2017-12-14',
-            'ConvertChargeType'
+            'ConvertChargeType',
+            'bssopenapi'
         );
     }
 
@@ -56,19 +57,6 @@ class ConvertChargeTypeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ProductCode'] = $productCode;
         $this->queryParameters['ProductCode'] = $productCode;
-
-        return $this;
-    }
-
-    /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }
@@ -108,6 +96,19 @@ class ConvertChargeTypeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ProductType'] = $productType;
         $this->queryParameters['ProductType'] = $productType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

@@ -7,14 +7,14 @@ namespace BssOpenApi\Request\V20171214;
  *
  * Request of ChangeResellerConsumeAmount
  *
- * @method string getAdjustType()
  * @method string getAmount()
  * @method string getOutBizId()
- * @method string getExtendMap()
- * @method string getCurrency()
  * @method string getSource()
  * @method string getOwnerId()
  * @method string getBusinessType()
+ * @method string getAdjustType()
+ * @method string getExtendMap()
+ * @method string getCurrency()
  */
 class ChangeResellerConsumeAmountRequest extends \RpcAcsRequest
 {
@@ -32,21 +32,9 @@ class ChangeResellerConsumeAmountRequest extends \RpcAcsRequest
         parent::__construct(
             'BssOpenApi',
             '2017-12-14',
-            'ChangeResellerConsumeAmount'
+            'ChangeResellerConsumeAmount',
+            'bssopenapi'
         );
-    }
-
-    /**
-     * @param string $adjustType
-     *
-     * @return $this
-     */
-    public function setAdjustType($adjustType)
-    {
-        $this->requestParameters['AdjustType'] = $adjustType;
-        $this->queryParameters['AdjustType'] = $adjustType;
-
-        return $this;
     }
 
     /**
@@ -71,32 +59,6 @@ class ChangeResellerConsumeAmountRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OutBizId'] = $outBizId;
         $this->queryParameters['OutBizId'] = $outBizId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $extendMap
-     *
-     * @return $this
-     */
-    public function setExtendMap($extendMap)
-    {
-        $this->requestParameters['ExtendMap'] = $extendMap;
-        $this->queryParameters['ExtendMap'] = $extendMap;
-
-        return $this;
-    }
-
-    /**
-     * @param string $currency
-     *
-     * @return $this
-     */
-    public function setCurrency($currency)
-    {
-        $this->requestParameters['Currency'] = $currency;
-        $this->queryParameters['Currency'] = $currency;
 
         return $this;
     }
@@ -136,6 +98,45 @@ class ChangeResellerConsumeAmountRequest extends \RpcAcsRequest
     {
         $this->requestParameters['BusinessType'] = $businessType;
         $this->queryParameters['BusinessType'] = $businessType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $adjustType
+     *
+     * @return $this
+     */
+    public function setAdjustType($adjustType)
+    {
+        $this->requestParameters['AdjustType'] = $adjustType;
+        $this->queryParameters['AdjustType'] = $adjustType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $extendMap
+     *
+     * @return $this
+     */
+    public function setExtendMap($extendMap)
+    {
+        $this->requestParameters['ExtendMap'] = $extendMap;
+        $this->queryParameters['ExtendMap'] = $extendMap;
+
+        return $this;
+    }
+
+    /**
+     * @param string $currency
+     *
+     * @return $this
+     */
+    public function setCurrency($currency)
+    {
+        $this->requestParameters['Currency'] = $currency;
+        $this->queryParameters['Currency'] = $currency;
 
         return $this;
     }

@@ -10,15 +10,15 @@ namespace BssOpenApi\Request\V20171214;
  * @method string getEndSearchTime()
  * @method string getOutBizId()
  * @method string getSortType()
- * @method array getBizTypeLists()
  * @method string getType()
- * @method string getOwnerId()
  * @method string getPageNum()
- * @method string getStartSearchTime()
- * @method string getEndBizTime()
  * @method string getPageSize()
  * @method string getEndAmount()
  * @method string getBillCycle()
+ * @method array getBizTypeLists()
+ * @method string getOwnerId()
+ * @method string getStartSearchTime()
+ * @method string getEndBizTime()
  * @method string getStartAmount()
  * @method string getStartBizTime()
  */
@@ -38,7 +38,8 @@ class QueryEvaluateListRequest extends \RpcAcsRequest
         parent::__construct(
             'BssOpenApi',
             '2017-12-14',
-            'QueryEvaluateList'
+            'QueryEvaluateList',
+            'bssopenapi'
         );
     }
 
@@ -82,21 +83,6 @@ class QueryEvaluateListRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $bizTypeList
-     *
-     * @return $this
-     */
-    public function setBizTypeLists(array $bizTypeList)
-    {
-        $this->requestParameters['BizTypeLists'] = $bizTypeList;
-        foreach ($bizTypeList as $i => $iValue) {
-            $this->queryParameters['BizTypeList.' . ($i + 1)] = $iValue;
-        }
-
-        return $this;
-    }
-
-    /**
      * @param string $type
      *
      * @return $this
@@ -110,19 +96,6 @@ class QueryEvaluateListRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
      * @param string $pageNum
      *
      * @return $this
@@ -131,32 +104,6 @@ class QueryEvaluateListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageNum'] = $pageNum;
         $this->queryParameters['PageNum'] = $pageNum;
-
-        return $this;
-    }
-
-    /**
-     * @param string $startSearchTime
-     *
-     * @return $this
-     */
-    public function setStartSearchTime($startSearchTime)
-    {
-        $this->requestParameters['StartSearchTime'] = $startSearchTime;
-        $this->queryParameters['StartSearchTime'] = $startSearchTime;
-
-        return $this;
-    }
-
-    /**
-     * @param string $endBizTime
-     *
-     * @return $this
-     */
-    public function setEndBizTime($endBizTime)
-    {
-        $this->requestParameters['EndBizTime'] = $endBizTime;
-        $this->queryParameters['EndBizTime'] = $endBizTime;
 
         return $this;
     }
@@ -196,6 +143,60 @@ class QueryEvaluateListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['BillCycle'] = $billCycle;
         $this->queryParameters['BillCycle'] = $billCycle;
+
+        return $this;
+    }
+
+    /**
+     * @param array $bizTypeList
+     *
+     * @return $this
+     */
+	public function setBizTypeLists(array $bizTypeList)
+	{
+	    $this->requestParameters['BizTypeLists'] = $bizTypeList;
+		foreach ($bizTypeList as $i => $iValue) {
+			$this->queryParameters['BizTypeList.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $startSearchTime
+     *
+     * @return $this
+     */
+    public function setStartSearchTime($startSearchTime)
+    {
+        $this->requestParameters['StartSearchTime'] = $startSearchTime;
+        $this->queryParameters['StartSearchTime'] = $startSearchTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $endBizTime
+     *
+     * @return $this
+     */
+    public function setEndBizTime($endBizTime)
+    {
+        $this->requestParameters['EndBizTime'] = $endBizTime;
+        $this->queryParameters['EndBizTime'] = $endBizTime;
 
         return $this;
     }

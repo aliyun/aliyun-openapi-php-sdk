@@ -24,7 +24,8 @@ class QueryAccountBalanceRequest extends \RpcAcsRequest
         parent::__construct(
             'BssOpenApi',
             '2017-12-14',
-            'QueryAccountBalance'
+            'QueryAccountBalance',
+            'bssopenapi'
         );
     }
 }

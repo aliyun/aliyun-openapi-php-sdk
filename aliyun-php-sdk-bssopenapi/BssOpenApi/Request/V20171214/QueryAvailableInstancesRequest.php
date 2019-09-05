@@ -9,17 +9,17 @@ namespace BssOpenApi\Request\V20171214;
  *
  * @method string getProductCode()
  * @method string getSubscriptionType()
- * @method string getOwnerId()
  * @method string getPageNum()
- * @method string getEndTimeStart()
  * @method string getProductType()
+ * @method string getPageSize()
+ * @method string getRenewStatus()
+ * @method string getOwnerId()
+ * @method string getEndTimeStart()
  * @method string getCreateTimeEnd()
  * @method string getInstanceIDs()
  * @method string getEndTimeEnd()
- * @method string getPageSize()
  * @method string getCreateTimeStart()
  * @method string getRegion()
- * @method string getRenewStatus()
  */
 class QueryAvailableInstancesRequest extends \RpcAcsRequest
 {
@@ -37,7 +37,8 @@ class QueryAvailableInstancesRequest extends \RpcAcsRequest
         parent::__construct(
             'BssOpenApi',
             '2017-12-14',
-            'QueryAvailableInstances'
+            'QueryAvailableInstances',
+            'bssopenapi'
         );
     }
 
@@ -68,19 +69,6 @@ class QueryAvailableInstancesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
      * @param string $pageNum
      *
      * @return $this
@@ -94,19 +82,6 @@ class QueryAvailableInstancesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $endTimeStart
-     *
-     * @return $this
-     */
-    public function setEndTimeStart($endTimeStart)
-    {
-        $this->requestParameters['EndTimeStart'] = $endTimeStart;
-        $this->queryParameters['EndTimeStart'] = $endTimeStart;
-
-        return $this;
-    }
-
-    /**
      * @param string $productType
      *
      * @return $this
@@ -115,6 +90,58 @@ class QueryAvailableInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ProductType'] = $productType;
         $this->queryParameters['ProductType'] = $productType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $renewStatus
+     *
+     * @return $this
+     */
+    public function setRenewStatus($renewStatus)
+    {
+        $this->requestParameters['RenewStatus'] = $renewStatus;
+        $this->queryParameters['RenewStatus'] = $renewStatus;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $endTimeStart
+     *
+     * @return $this
+     */
+    public function setEndTimeStart($endTimeStart)
+    {
+        $this->requestParameters['EndTimeStart'] = $endTimeStart;
+        $this->queryParameters['EndTimeStart'] = $endTimeStart;
 
         return $this;
     }
@@ -159,19 +186,6 @@ class QueryAvailableInstancesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
      * @param string $createTimeStart
      *
      * @return $this
@@ -193,19 +207,6 @@ class QueryAvailableInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Region'] = $region;
         $this->queryParameters['Region'] = $region;
-
-        return $this;
-    }
-
-    /**
-     * @param string $renewStatus
-     *
-     * @return $this
-     */
-    public function setRenewStatus($renewStatus)
-    {
-        $this->requestParameters['RenewStatus'] = $renewStatus;
-        $this->queryParameters['RenewStatus'] = $renewStatus;
 
         return $this;
     }

@@ -9,13 +9,13 @@ namespace BssOpenApi\Request\V20171214;
  *
  * @method string getProductCode()
  * @method string getSubscriptionType()
- * @method string getPageSize()
- * @method string getPaymentStatus()
- * @method string getCreateTimeStart()
  * @method string getPageNum()
  * @method string getOwnerId()
  * @method string getCreateTimeEnd()
  * @method string getProductType()
+ * @method string getPageSize()
+ * @method string getPaymentStatus()
+ * @method string getCreateTimeStart()
  * @method string getOrderType()
  */
 class QueryOrdersRequest extends \RpcAcsRequest
@@ -34,7 +34,8 @@ class QueryOrdersRequest extends \RpcAcsRequest
         parent::__construct(
             'BssOpenApi',
             '2017-12-14',
-            'QueryOrders'
+            'QueryOrders',
+            'bssopenapi'
         );
     }
 
@@ -60,45 +61,6 @@ class QueryOrdersRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SubscriptionType'] = $subscriptionType;
         $this->queryParameters['SubscriptionType'] = $subscriptionType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param string $paymentStatus
-     *
-     * @return $this
-     */
-    public function setPaymentStatus($paymentStatus)
-    {
-        $this->requestParameters['PaymentStatus'] = $paymentStatus;
-        $this->queryParameters['PaymentStatus'] = $paymentStatus;
-
-        return $this;
-    }
-
-    /**
-     * @param string $createTimeStart
-     *
-     * @return $this
-     */
-    public function setCreateTimeStart($createTimeStart)
-    {
-        $this->requestParameters['CreateTimeStart'] = $createTimeStart;
-        $this->queryParameters['CreateTimeStart'] = $createTimeStart;
 
         return $this;
     }
@@ -151,6 +113,45 @@ class QueryOrdersRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ProductType'] = $productType;
         $this->queryParameters['ProductType'] = $productType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $paymentStatus
+     *
+     * @return $this
+     */
+    public function setPaymentStatus($paymentStatus)
+    {
+        $this->requestParameters['PaymentStatus'] = $paymentStatus;
+        $this->queryParameters['PaymentStatus'] = $paymentStatus;
+
+        return $this;
+    }
+
+    /**
+     * @param string $createTimeStart
+     *
+     * @return $this
+     */
+    public function setCreateTimeStart($createTimeStart)
+    {
+        $this->requestParameters['CreateTimeStart'] = $createTimeStart;
+        $this->queryParameters['CreateTimeStart'] = $createTimeStart;
 
         return $this;
     }

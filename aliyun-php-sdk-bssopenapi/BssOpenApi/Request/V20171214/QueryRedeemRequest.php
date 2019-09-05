@@ -8,10 +8,10 @@ namespace BssOpenApi\Request\V20171214;
  * Request of QueryRedeem
  *
  * @method string getExpiryTimeEnd()
- * @method string getPageSize()
  * @method string getExpiryTimeStart()
  * @method string getPageNum()
  * @method string getEffectiveOrNot()
+ * @method string getPageSize()
  */
 class QueryRedeemRequest extends \RpcAcsRequest
 {
@@ -24,7 +24,8 @@ class QueryRedeemRequest extends \RpcAcsRequest
         parent::__construct(
             'BssOpenApi',
             '2017-12-14',
-            'QueryRedeem'
+            'QueryRedeem',
+            'bssopenapi'
         );
     }
 
@@ -37,19 +38,6 @@ class QueryRedeemRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ExpiryTimeEnd'] = $expiryTimeEnd;
         $this->queryParameters['ExpiryTimeEnd'] = $expiryTimeEnd;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }
@@ -89,6 +77,19 @@ class QueryRedeemRequest extends \RpcAcsRequest
     {
         $this->requestParameters['EffectiveOrNot'] = $effectiveOrNot;
         $this->queryParameters['EffectiveOrNot'] = $effectiveOrNot;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }

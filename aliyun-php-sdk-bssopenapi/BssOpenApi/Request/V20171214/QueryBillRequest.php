@@ -11,12 +11,12 @@ namespace BssOpenApi\Request\V20171214;
  * @method string getIsHideZeroCharge()
  * @method string getIsDisplayLocalCurrency()
  * @method string getSubscriptionType()
- * @method string getPageSize()
  * @method string getBillingCycle()
  * @method string getType()
  * @method string getOwnerId()
  * @method string getPageNum()
  * @method string getProductType()
+ * @method string getPageSize()
  */
 class QueryBillRequest extends \RpcAcsRequest
 {
@@ -34,7 +34,8 @@ class QueryBillRequest extends \RpcAcsRequest
         parent::__construct(
             'BssOpenApi',
             '2017-12-14',
-            'QueryBill'
+            'QueryBill',
+            'bssopenapi'
         );
     }
 
@@ -86,19 +87,6 @@ class QueryBillRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SubscriptionType'] = $subscriptionType;
         $this->queryParameters['SubscriptionType'] = $subscriptionType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }
@@ -164,6 +152,19 @@ class QueryBillRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ProductType'] = $productType;
         $this->queryParameters['ProductType'] = $productType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }

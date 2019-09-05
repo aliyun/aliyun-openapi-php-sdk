@@ -8,13 +8,13 @@ namespace BssOpenApi\Request\V20171214;
  * Request of SetRenewal
  *
  * @method string getProductCode()
- * @method string getInstanceIDs()
  * @method string getSubscriptionType()
- * @method string getRenewalStatus()
- * @method string getRenewalPeriodUnit()
  * @method string getRenewalPeriod()
  * @method string getOwnerId()
  * @method string getProductType()
+ * @method string getInstanceIDs()
+ * @method string getRenewalStatus()
+ * @method string getRenewalPeriodUnit()
  */
 class SetRenewalRequest extends \RpcAcsRequest
 {
@@ -32,7 +32,8 @@ class SetRenewalRequest extends \RpcAcsRequest
         parent::__construct(
             'BssOpenApi',
             '2017-12-14',
-            'SetRenewal'
+            'SetRenewal',
+            'bssopenapi'
         );
     }
 
@@ -50,19 +51,6 @@ class SetRenewalRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceIDs
-     *
-     * @return $this
-     */
-    public function setInstanceIDs($instanceIDs)
-    {
-        $this->requestParameters['InstanceIDs'] = $instanceIDs;
-        $this->queryParameters['InstanceIDs'] = $instanceIDs;
-
-        return $this;
-    }
-
-    /**
      * @param string $subscriptionType
      *
      * @return $this
@@ -71,32 +59,6 @@ class SetRenewalRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SubscriptionType'] = $subscriptionType;
         $this->queryParameters['SubscriptionType'] = $subscriptionType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $renewalStatus
-     *
-     * @return $this
-     */
-    public function setRenewalStatus($renewalStatus)
-    {
-        $this->requestParameters['RenewalStatus'] = $renewalStatus;
-        $this->queryParameters['RenewalStatus'] = $renewalStatus;
-
-        return $this;
-    }
-
-    /**
-     * @param string $renewalPeriodUnit
-     *
-     * @return $this
-     */
-    public function setRenewalPeriodUnit($renewalPeriodUnit)
-    {
-        $this->requestParameters['RenewalPeriodUnit'] = $renewalPeriodUnit;
-        $this->queryParameters['RenewalPeriodUnit'] = $renewalPeriodUnit;
 
         return $this;
     }
@@ -136,6 +98,45 @@ class SetRenewalRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ProductType'] = $productType;
         $this->queryParameters['ProductType'] = $productType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceIDs
+     *
+     * @return $this
+     */
+    public function setInstanceIDs($instanceIDs)
+    {
+        $this->requestParameters['InstanceIDs'] = $instanceIDs;
+        $this->queryParameters['InstanceIDs'] = $instanceIDs;
+
+        return $this;
+    }
+
+    /**
+     * @param string $renewalStatus
+     *
+     * @return $this
+     */
+    public function setRenewalStatus($renewalStatus)
+    {
+        $this->requestParameters['RenewalStatus'] = $renewalStatus;
+        $this->queryParameters['RenewalStatus'] = $renewalStatus;
+
+        return $this;
+    }
+
+    /**
+     * @param string $renewalPeriodUnit
+     *
+     * @return $this
+     */
+    public function setRenewalPeriodUnit($renewalPeriodUnit)
+    {
+        $this->requestParameters['RenewalPeriodUnit'] = $renewalPeriodUnit;
+        $this->queryParameters['RenewalPeriodUnit'] = $renewalPeriodUnit;
 
         return $this;
     }

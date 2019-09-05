@@ -7,8 +7,10 @@ namespace BssOpenApi\Request\V20171214;
  *
  * Request of SubscribeBillToOSS
  *
+ * @method string getBucketOwnerId()
  * @method string getSubscribeType()
  * @method string getSubscribeBucket()
+ * @method string getMultAccountRelSubscribe()
  */
 class SubscribeBillToOSSRequest extends \RpcAcsRequest
 {
@@ -26,8 +28,22 @@ class SubscribeBillToOSSRequest extends \RpcAcsRequest
         parent::__construct(
             'BssOpenApi',
             '2017-12-14',
-            'SubscribeBillToOSS'
+            'SubscribeBillToOSS',
+            'bssopenapi'
         );
+    }
+
+    /**
+     * @param string $bucketOwnerId
+     *
+     * @return $this
+     */
+    public function setBucketOwnerId($bucketOwnerId)
+    {
+        $this->requestParameters['BucketOwnerId'] = $bucketOwnerId;
+        $this->queryParameters['BucketOwnerId'] = $bucketOwnerId;
+
+        return $this;
     }
 
     /**
@@ -52,6 +68,19 @@ class SubscribeBillToOSSRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SubscribeBucket'] = $subscribeBucket;
         $this->queryParameters['SubscribeBucket'] = $subscribeBucket;
+
+        return $this;
+    }
+
+    /**
+     * @param string $multAccountRelSubscribe
+     *
+     * @return $this
+     */
+    public function setMultAccountRelSubscribe($multAccountRelSubscribe)
+    {
+        $this->requestParameters['MultAccountRelSubscribe'] = $multAccountRelSubscribe;
+        $this->queryParameters['MultAccountRelSubscribe'] = $multAccountRelSubscribe;
 
         return $this;
     }

@@ -28,7 +28,8 @@ class DescribePricingModuleRequest extends \RpcAcsRequest
         parent::__construct(
             'BssOpenApi',
             '2017-12-14',
-            'DescribePricingModule'
+            'DescribePricingModule',
+            'bssopenapi'
         );
     }
 

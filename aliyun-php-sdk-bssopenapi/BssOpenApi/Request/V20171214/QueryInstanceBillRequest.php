@@ -7,15 +7,15 @@ namespace BssOpenApi\Request\V20171214;
  *
  * Request of QueryInstanceBill
  *
- * @method string getIsBillingItem()
  * @method string getProductCode()
  * @method string getIsHideZeroCharge()
  * @method string getSubscriptionType()
- * @method string getPageSize()
  * @method string getBillingCycle()
  * @method string getOwnerId()
  * @method string getPageNum()
  * @method string getProductType()
+ * @method string getIsBillingItem()
+ * @method string getPageSize()
  */
 class QueryInstanceBillRequest extends \RpcAcsRequest
 {
@@ -33,21 +33,9 @@ class QueryInstanceBillRequest extends \RpcAcsRequest
         parent::__construct(
             'BssOpenApi',
             '2017-12-14',
-            'QueryInstanceBill'
+            'QueryInstanceBill',
+            'bssopenapi'
         );
-    }
-
-    /**
-     * @param string $isBillingItem
-     *
-     * @return $this
-     */
-    public function setIsBillingItem($isBillingItem)
-    {
-        $this->requestParameters['IsBillingItem'] = $isBillingItem;
-        $this->queryParameters['IsBillingItem'] = $isBillingItem;
-
-        return $this;
     }
 
     /**
@@ -85,19 +73,6 @@ class QueryInstanceBillRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SubscriptionType'] = $subscriptionType;
         $this->queryParameters['SubscriptionType'] = $subscriptionType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }
@@ -150,6 +125,32 @@ class QueryInstanceBillRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ProductType'] = $productType;
         $this->queryParameters['ProductType'] = $productType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $isBillingItem
+     *
+     * @return $this
+     */
+    public function setIsBillingItem($isBillingItem)
+    {
+        $this->requestParameters['IsBillingItem'] = $isBillingItem;
+        $this->queryParameters['IsBillingItem'] = $isBillingItem;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }

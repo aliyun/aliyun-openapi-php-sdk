@@ -7,17 +7,17 @@ namespace BssOpenApi\Request\V20171214;
  *
  * Request of GetSubscriptionPrice
  *
- * @method string getServicePeriodQuantity()
  * @method string getProductCode()
- * @method string getInstanceId()
  * @method string getQuantity()
- * @method string getServicePeriodUnit()
  * @method string getSubscriptionType()
  * @method array getModuleLists()
  * @method string getOwnerId()
+ * @method string getProductType()
+ * @method string getServicePeriodQuantity()
+ * @method string getInstanceId()
+ * @method string getServicePeriodUnit()
  * @method string getRegion()
  * @method string getOrderType()
- * @method string getProductType()
  */
 class GetSubscriptionPriceRequest extends \RpcAcsRequest
 {
@@ -35,21 +35,9 @@ class GetSubscriptionPriceRequest extends \RpcAcsRequest
         parent::__construct(
             'BssOpenApi',
             '2017-12-14',
-            'GetSubscriptionPrice'
+            'GetSubscriptionPrice',
+            'bssopenapi'
         );
-    }
-
-    /**
-     * @param string $servicePeriodQuantity
-     *
-     * @return $this
-     */
-    public function setServicePeriodQuantity($servicePeriodQuantity)
-    {
-        $this->requestParameters['ServicePeriodQuantity'] = $servicePeriodQuantity;
-        $this->queryParameters['ServicePeriodQuantity'] = $servicePeriodQuantity;
-
-        return $this;
     }
 
     /**
@@ -66,19 +54,6 @@ class GetSubscriptionPriceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $quantity
      *
      * @return $this
@@ -87,19 +62,6 @@ class GetSubscriptionPriceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Quantity'] = $quantity;
         $this->queryParameters['Quantity'] = $quantity;
-
-        return $this;
-    }
-
-    /**
-     * @param string $servicePeriodUnit
-     *
-     * @return $this
-     */
-    public function setServicePeriodUnit($servicePeriodUnit)
-    {
-        $this->requestParameters['ServicePeriodUnit'] = $servicePeriodUnit;
-        $this->queryParameters['ServicePeriodUnit'] = $servicePeriodUnit;
 
         return $this;
     }
@@ -122,17 +84,17 @@ class GetSubscriptionPriceRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setModuleLists(array $moduleList)
-    {
-        $this->requestParameters['ModuleLists'] = $moduleList;
-        foreach ($moduleList as $depth1 => $depth1Value) {
-            $this->queryParameters['ModuleList.' . ($depth1 + 1) . '.ModuleCode'] = $depth1Value['ModuleCode'];
-            $this->queryParameters['ModuleList.' . ($depth1 + 1) . '.ModuleStatus'] = $depth1Value['ModuleStatus'];
-            $this->queryParameters['ModuleList.' . ($depth1 + 1) . '.Tag'] = $depth1Value['Tag'];
-            $this->queryParameters['ModuleList.' . ($depth1 + 1) . '.Config'] = $depth1Value['Config'];
-        }
+	public function setModuleLists(array $moduleList)
+	{
+	    $this->requestParameters['ModuleLists'] = $moduleList;
+		foreach ($moduleList as $depth1 => $depth1Value) {
+			$this->queryParameters['ModuleList.' . ($depth1 + 1) . '.ModuleCode'] = $depth1Value['ModuleCode'];
+			$this->queryParameters['ModuleList.' . ($depth1 + 1) . '.ModuleStatus'] = $depth1Value['ModuleStatus'];
+			$this->queryParameters['ModuleList.' . ($depth1 + 1) . '.Tag'] = $depth1Value['Tag'];
+			$this->queryParameters['ModuleList.' . ($depth1 + 1) . '.Config'] = $depth1Value['Config'];
+		}
 
-        return $this;
+		return $this;
     }
 
     /**
@@ -144,6 +106,58 @@ class GetSubscriptionPriceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $productType
+     *
+     * @return $this
+     */
+    public function setProductType($productType)
+    {
+        $this->requestParameters['ProductType'] = $productType;
+        $this->queryParameters['ProductType'] = $productType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $servicePeriodQuantity
+     *
+     * @return $this
+     */
+    public function setServicePeriodQuantity($servicePeriodQuantity)
+    {
+        $this->requestParameters['ServicePeriodQuantity'] = $servicePeriodQuantity;
+        $this->queryParameters['ServicePeriodQuantity'] = $servicePeriodQuantity;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $servicePeriodUnit
+     *
+     * @return $this
+     */
+    public function setServicePeriodUnit($servicePeriodUnit)
+    {
+        $this->requestParameters['ServicePeriodUnit'] = $servicePeriodUnit;
+        $this->queryParameters['ServicePeriodUnit'] = $servicePeriodUnit;
 
         return $this;
     }
@@ -170,19 +184,6 @@ class GetSubscriptionPriceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OrderType'] = $orderType;
         $this->queryParameters['OrderType'] = $orderType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $productType
-     *
-     * @return $this
-     */
-    public function setProductType($productType)
-    {
-        $this->requestParameters['ProductType'] = $productType;
-        $this->queryParameters['ProductType'] = $productType;
 
         return $this;
     }

@@ -25,7 +25,8 @@ class DescribeResourcePackageProductRequest extends \RpcAcsRequest
         parent::__construct(
             'BssOpenApi',
             '2017-12-14',
-            'DescribeResourcePackageProduct'
+            'DescribeResourcePackageProduct',
+            'bssopenapi'
         );
     }
 

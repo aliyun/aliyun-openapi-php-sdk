@@ -9,10 +9,10 @@ namespace BssOpenApi\Request\V20171214;
  *
  * @method string getExpiryTimeEnd()
  * @method string getProductCode()
- * @method string getPageSize()
  * @method string getOwnerId()
  * @method string getExpiryTimeStart()
  * @method string getPageNum()
+ * @method string getPageSize()
  */
 class QueryResourcePackageInstancesRequest extends \RpcAcsRequest
 {
@@ -30,7 +30,8 @@ class QueryResourcePackageInstancesRequest extends \RpcAcsRequest
         parent::__construct(
             'BssOpenApi',
             '2017-12-14',
-            'QueryResourcePackageInstances'
+            'QueryResourcePackageInstances',
+            'bssopenapi'
         );
     }
 
@@ -56,19 +57,6 @@ class QueryResourcePackageInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ProductCode'] = $productCode;
         $this->queryParameters['ProductCode'] = $productCode;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }
@@ -108,6 +96,19 @@ class QueryResourcePackageInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageNum'] = $pageNum;
         $this->queryParameters['PageNum'] = $pageNum;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }

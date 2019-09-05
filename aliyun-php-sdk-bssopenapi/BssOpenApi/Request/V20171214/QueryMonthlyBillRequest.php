@@ -25,7 +25,8 @@ class QueryMonthlyBillRequest extends \RpcAcsRequest
         parent::__construct(
             'BssOpenApi',
             '2017-12-14',
-            'QueryMonthlyBill'
+            'QueryMonthlyBill',
+            'bssopenapi'
         );
     }
 

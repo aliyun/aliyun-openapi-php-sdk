@@ -8,8 +8,8 @@ namespace BssOpenApi\Request\V20171214;
  * Request of SetResellerUserStatus
  *
  * @method string getOwnerId()
- * @method string getStatus()
  * @method string getBusinessType()
+ * @method string getStatus()
  */
 class SetResellerUserStatusRequest extends \RpcAcsRequest
 {
@@ -27,7 +27,8 @@ class SetResellerUserStatusRequest extends \RpcAcsRequest
         parent::__construct(
             'BssOpenApi',
             '2017-12-14',
-            'SetResellerUserStatus'
+            'SetResellerUserStatus',
+            'bssopenapi'
         );
     }
 
@@ -45,19 +46,6 @@ class SetResellerUserStatusRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $status
-     *
-     * @return $this
-     */
-    public function setStatus($status)
-    {
-        $this->requestParameters['Status'] = $status;
-        $this->queryParameters['Status'] = $status;
-
-        return $this;
-    }
-
-    /**
      * @param string $businessType
      *
      * @return $this
@@ -66,6 +54,19 @@ class SetResellerUserStatusRequest extends \RpcAcsRequest
     {
         $this->requestParameters['BusinessType'] = $businessType;
         $this->queryParameters['BusinessType'] = $businessType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $status
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->requestParameters['Status'] = $status;
+        $this->queryParameters['Status'] = $status;
 
         return $this;
     }

@@ -9,8 +9,8 @@ namespace BssOpenApi\Request\V20171214;
  *
  * @method string getAmount()
  * @method string getOutBizId()
- * @method string getCurrency()
  * @method string getOwnerId()
+ * @method string getCurrency()
  */
 class CreateResellerUserQuotaRequest extends \RpcAcsRequest
 {
@@ -28,7 +28,8 @@ class CreateResellerUserQuotaRequest extends \RpcAcsRequest
         parent::__construct(
             'BssOpenApi',
             '2017-12-14',
-            'CreateResellerUserQuota'
+            'CreateResellerUserQuota',
+            'bssopenapi'
         );
     }
 
@@ -59,19 +60,6 @@ class CreateResellerUserQuotaRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $currency
-     *
-     * @return $this
-     */
-    public function setCurrency($currency)
-    {
-        $this->requestParameters['Currency'] = $currency;
-        $this->queryParameters['Currency'] = $currency;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -80,6 +68,19 @@ class CreateResellerUserQuotaRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $currency
+     *
+     * @return $this
+     */
+    public function setCurrency($currency)
+    {
+        $this->requestParameters['Currency'] = $currency;
+        $this->queryParameters['Currency'] = $currency;
 
         return $this;
     }

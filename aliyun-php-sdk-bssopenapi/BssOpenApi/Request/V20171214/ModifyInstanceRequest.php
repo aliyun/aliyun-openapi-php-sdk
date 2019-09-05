@@ -8,13 +8,13 @@ namespace BssOpenApi\Request\V20171214;
  * Request of ModifyInstance
  *
  * @method string getProductCode()
- * @method string getInstanceId()
  * @method string getClientToken()
  * @method string getSubscriptionType()
- * @method string getModifyType()
- * @method array getParameters()
  * @method string getOwnerId()
  * @method string getProductType()
+ * @method string getInstanceId()
+ * @method string getModifyType()
+ * @method array getParameters()
  */
 class ModifyInstanceRequest extends \RpcAcsRequest
 {
@@ -32,7 +32,8 @@ class ModifyInstanceRequest extends \RpcAcsRequest
         parent::__construct(
             'BssOpenApi',
             '2017-12-14',
-            'ModifyInstance'
+            'ModifyInstance',
+            'bssopenapi'
         );
     }
 
@@ -45,19 +46,6 @@ class ModifyInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ProductCode'] = $productCode;
         $this->queryParameters['ProductCode'] = $productCode;
-
-        return $this;
-    }
-
-    /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }
@@ -89,35 +77,6 @@ class ModifyInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $modifyType
-     *
-     * @return $this
-     */
-    public function setModifyType($modifyType)
-    {
-        $this->requestParameters['ModifyType'] = $modifyType;
-        $this->queryParameters['ModifyType'] = $modifyType;
-
-        return $this;
-    }
-
-    /**
-     * @param array $parameter
-     *
-     * @return $this
-     */
-    public function setParameters(array $parameter)
-    {
-        $this->requestParameters['Parameters'] = $parameter;
-        foreach ($parameter as $depth1 => $depth1Value) {
-            $this->queryParameters['Parameter.' . ($depth1 + 1) . '.Code'] = $depth1Value['Code'];
-            $this->queryParameters['Parameter.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
-        }
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -141,5 +100,47 @@ class ModifyInstanceRequest extends \RpcAcsRequest
         $this->queryParameters['ProductType'] = $productType;
 
         return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $modifyType
+     *
+     * @return $this
+     */
+    public function setModifyType($modifyType)
+    {
+        $this->requestParameters['ModifyType'] = $modifyType;
+        $this->queryParameters['ModifyType'] = $modifyType;
+
+        return $this;
+    }
+
+    /**
+     * @param array $parameter
+     *
+     * @return $this
+     */
+	public function setParameters(array $parameter)
+	{
+	    $this->requestParameters['Parameters'] = $parameter;
+		foreach ($parameter as $depth1 => $depth1Value) {
+			$this->queryParameters['Parameter.' . ($depth1 + 1) . '.Code'] = $depth1Value['Code'];
+			$this->queryParameters['Parameter.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+		}
+
+		return $this;
     }
 }

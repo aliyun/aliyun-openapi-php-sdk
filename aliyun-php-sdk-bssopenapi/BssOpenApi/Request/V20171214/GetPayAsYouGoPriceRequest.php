@@ -11,8 +11,8 @@ namespace BssOpenApi\Request\V20171214;
  * @method string getSubscriptionType()
  * @method array getModuleLists()
  * @method string getOwnerId()
- * @method string getRegion()
  * @method string getProductType()
+ * @method string getRegion()
  */
 class GetPayAsYouGoPriceRequest extends \RpcAcsRequest
 {
@@ -30,7 +30,8 @@ class GetPayAsYouGoPriceRequest extends \RpcAcsRequest
         parent::__construct(
             'BssOpenApi',
             '2017-12-14',
-            'GetPayAsYouGoPrice'
+            'GetPayAsYouGoPrice',
+            'bssopenapi'
         );
     }
 
@@ -65,16 +66,16 @@ class GetPayAsYouGoPriceRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setModuleLists(array $moduleList)
-    {
-        $this->requestParameters['ModuleLists'] = $moduleList;
-        foreach ($moduleList as $depth1 => $depth1Value) {
-            $this->queryParameters['ModuleList.' . ($depth1 + 1) . '.ModuleCode'] = $depth1Value['ModuleCode'];
-            $this->queryParameters['ModuleList.' . ($depth1 + 1) . '.PriceType'] = $depth1Value['PriceType'];
-            $this->queryParameters['ModuleList.' . ($depth1 + 1) . '.Config'] = $depth1Value['Config'];
-        }
+	public function setModuleLists(array $moduleList)
+	{
+	    $this->requestParameters['ModuleLists'] = $moduleList;
+		foreach ($moduleList as $depth1 => $depth1Value) {
+			$this->queryParameters['ModuleList.' . ($depth1 + 1) . '.ModuleCode'] = $depth1Value['ModuleCode'];
+			$this->queryParameters['ModuleList.' . ($depth1 + 1) . '.PriceType'] = $depth1Value['PriceType'];
+			$this->queryParameters['ModuleList.' . ($depth1 + 1) . '.Config'] = $depth1Value['Config'];
+		}
 
-        return $this;
+		return $this;
     }
 
     /**
@@ -91,19 +92,6 @@ class GetPayAsYouGoPriceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $region
-     *
-     * @return $this
-     */
-    public function setRegion($region)
-    {
-        $this->requestParameters['Region'] = $region;
-        $this->queryParameters['Region'] = $region;
-
-        return $this;
-    }
-
-    /**
      * @param string $productType
      *
      * @return $this
@@ -112,6 +100,19 @@ class GetPayAsYouGoPriceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ProductType'] = $productType;
         $this->queryParameters['ProductType'] = $productType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $region
+     *
+     * @return $this
+     */
+    public function setRegion($region)
+    {
+        $this->requestParameters['Region'] = $region;
+        $this->queryParameters['Region'] = $region;
 
         return $this;
     }

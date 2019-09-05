@@ -8,6 +8,7 @@ namespace BssOpenApi\Request\V20171214;
  * Request of UnsubscribeBillToOSS
  *
  * @method string getSubscribeType()
+ * @method string getMultAccountRelSubscribe()
  */
 class UnsubscribeBillToOSSRequest extends \RpcAcsRequest
 {
@@ -25,7 +26,8 @@ class UnsubscribeBillToOSSRequest extends \RpcAcsRequest
         parent::__construct(
             'BssOpenApi',
             '2017-12-14',
-            'UnsubscribeBillToOSS'
+            'UnsubscribeBillToOSS',
+            'bssopenapi'
         );
     }
 
@@ -38,6 +40,19 @@ class UnsubscribeBillToOSSRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SubscribeType'] = $subscribeType;
         $this->queryParameters['SubscribeType'] = $subscribeType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $multAccountRelSubscribe
+     *
+     * @return $this
+     */
+    public function setMultAccountRelSubscribe($multAccountRelSubscribe)
+    {
+        $this->requestParameters['MultAccountRelSubscribe'] = $multAccountRelSubscribe;
+        $this->queryParameters['MultAccountRelSubscribe'] = $multAccountRelSubscribe;
 
         return $this;
     }

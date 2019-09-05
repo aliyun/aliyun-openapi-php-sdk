@@ -7,13 +7,13 @@ namespace BssOpenApi\Request\V20171214;
  *
  * Request of QueryAccountTransactions
  *
+ * @method string getPageNum()
+ * @method string getCreateTimeEnd()
  * @method string getRecordID()
  * @method string getPageSize()
  * @method string getTransactionChannelSN()
  * @method string getCreateTimeStart()
  * @method string getTransactionNumber()
- * @method string getPageNum()
- * @method string getCreateTimeEnd()
  */
 class QueryAccountTransactionsRequest extends \RpcAcsRequest
 {
@@ -31,8 +31,35 @@ class QueryAccountTransactionsRequest extends \RpcAcsRequest
         parent::__construct(
             'BssOpenApi',
             '2017-12-14',
-            'QueryAccountTransactions'
+            'QueryAccountTransactions',
+            'bssopenapi'
         );
+    }
+
+    /**
+     * @param string $pageNum
+     *
+     * @return $this
+     */
+    public function setPageNum($pageNum)
+    {
+        $this->requestParameters['PageNum'] = $pageNum;
+        $this->queryParameters['PageNum'] = $pageNum;
+
+        return $this;
+    }
+
+    /**
+     * @param string $createTimeEnd
+     *
+     * @return $this
+     */
+    public function setCreateTimeEnd($createTimeEnd)
+    {
+        $this->requestParameters['CreateTimeEnd'] = $createTimeEnd;
+        $this->queryParameters['CreateTimeEnd'] = $createTimeEnd;
+
+        return $this;
     }
 
     /**
@@ -96,32 +123,6 @@ class QueryAccountTransactionsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TransactionNumber'] = $transactionNumber;
         $this->queryParameters['TransactionNumber'] = $transactionNumber;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNum
-     *
-     * @return $this
-     */
-    public function setPageNum($pageNum)
-    {
-        $this->requestParameters['PageNum'] = $pageNum;
-        $this->queryParameters['PageNum'] = $pageNum;
-
-        return $this;
-    }
-
-    /**
-     * @param string $createTimeEnd
-     *
-     * @return $this
-     */
-    public function setCreateTimeEnd($createTimeEnd)
-    {
-        $this->requestParameters['CreateTimeEnd'] = $createTimeEnd;
-        $this->queryParameters['CreateTimeEnd'] = $createTimeEnd;
 
         return $this;
     }

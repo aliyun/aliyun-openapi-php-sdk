@@ -7,12 +7,12 @@ namespace BssOpenApi\Request\V20171214;
  *
  * Request of QueryUserOmsData
  *
- * @method string getDataType()
- * @method string getMarker()
- * @method string getPageSize()
  * @method string getEndTime()
  * @method string getStartTime()
  * @method string getOwnerId()
+ * @method string getDataType()
+ * @method string getMarker()
+ * @method string getPageSize()
  * @method string getTable()
  */
 class QueryUserOmsDataRequest extends \RpcAcsRequest
@@ -26,47 +26,9 @@ class QueryUserOmsDataRequest extends \RpcAcsRequest
         parent::__construct(
             'BssOpenApi',
             '2017-12-14',
-            'QueryUserOmsData'
+            'QueryUserOmsData',
+            'bssopenapi'
         );
-    }
-
-    /**
-     * @param string $dataType
-     *
-     * @return $this
-     */
-    public function setDataType($dataType)
-    {
-        $this->requestParameters['DataType'] = $dataType;
-        $this->queryParameters['DataType'] = $dataType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $marker
-     *
-     * @return $this
-     */
-    public function setMarker($marker)
-    {
-        $this->requestParameters['Marker'] = $marker;
-        $this->queryParameters['Marker'] = $marker;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
     }
 
     /**
@@ -104,6 +66,45 @@ class QueryUserOmsDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dataType
+     *
+     * @return $this
+     */
+    public function setDataType($dataType)
+    {
+        $this->requestParameters['DataType'] = $dataType;
+        $this->queryParameters['DataType'] = $dataType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $marker
+     *
+     * @return $this
+     */
+    public function setMarker($marker)
+    {
+        $this->requestParameters['Marker'] = $marker;
+        $this->queryParameters['Marker'] = $marker;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }

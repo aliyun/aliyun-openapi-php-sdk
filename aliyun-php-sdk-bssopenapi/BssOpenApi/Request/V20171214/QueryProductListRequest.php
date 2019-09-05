@@ -7,9 +7,9 @@ namespace BssOpenApi\Request\V20171214;
  *
  * Request of QueryProductList
  *
+ * @method string getPageNum()
  * @method string getQueryTotalCount()
  * @method string getPageSize()
- * @method string getPageNum()
  */
 class QueryProductListRequest extends \RpcAcsRequest
 {
@@ -27,8 +27,22 @@ class QueryProductListRequest extends \RpcAcsRequest
         parent::__construct(
             'BssOpenApi',
             '2017-12-14',
-            'QueryProductList'
+            'QueryProductList',
+            'bssopenapi'
         );
+    }
+
+    /**
+     * @param string $pageNum
+     *
+     * @return $this
+     */
+    public function setPageNum($pageNum)
+    {
+        $this->requestParameters['PageNum'] = $pageNum;
+        $this->queryParameters['PageNum'] = $pageNum;
+
+        return $this;
     }
 
     /**
@@ -53,19 +67,6 @@ class QueryProductListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageSize'] = $pageSize;
         $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNum
-     *
-     * @return $this
-     */
-    public function setPageNum($pageNum)
-    {
-        $this->requestParameters['PageNum'] = $pageNum;
-        $this->queryParameters['PageNum'] = $pageNum;
 
         return $this;
     }

@@ -8,11 +8,11 @@ namespace BssOpenApi\Request\V20171214;
  * Request of RenewInstance
  *
  * @method string getProductCode()
- * @method string getInstanceId()
  * @method string getClientToken()
- * @method string getRenewPeriod()
  * @method string getOwnerId()
  * @method string getProductType()
+ * @method string getInstanceId()
+ * @method string getRenewPeriod()
  */
 class RenewInstanceRequest extends \RpcAcsRequest
 {
@@ -30,7 +30,8 @@ class RenewInstanceRequest extends \RpcAcsRequest
         parent::__construct(
             'BssOpenApi',
             '2017-12-14',
-            'RenewInstance'
+            'RenewInstance',
+            'bssopenapi'
         );
     }
 
@@ -48,19 +49,6 @@ class RenewInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $clientToken
      *
      * @return $this
@@ -69,19 +57,6 @@ class RenewInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ClientToken'] = $clientToken;
         $this->queryParameters['ClientToken'] = $clientToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $renewPeriod
-     *
-     * @return $this
-     */
-    public function setRenewPeriod($renewPeriod)
-    {
-        $this->requestParameters['RenewPeriod'] = $renewPeriod;
-        $this->queryParameters['RenewPeriod'] = $renewPeriod;
 
         return $this;
     }
@@ -108,6 +83,32 @@ class RenewInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ProductType'] = $productType;
         $this->queryParameters['ProductType'] = $productType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $renewPeriod
+     *
+     * @return $this
+     */
+    public function setRenewPeriod($renewPeriod)
+    {
+        $this->requestParameters['RenewPeriod'] = $renewPeriod;
+        $this->queryParameters['RenewPeriod'] = $renewPeriod;
 
         return $this;
     }

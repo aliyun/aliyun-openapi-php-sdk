@@ -24,7 +24,8 @@ class GetCustomerListRequest extends \RpcAcsRequest
         parent::__construct(
             'BssOpenApi',
             '2017-12-14',
-            'GetCustomerList'
+            'GetCustomerList',
+            'bssopenapi'
         );
     }
 }
