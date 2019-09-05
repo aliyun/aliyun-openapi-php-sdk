@@ -9,15 +9,15 @@ namespace polardb\Request\V20170801;
  *
  * @method string getAutoAddNewNodes()
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
  * @method string getClientToken()
+ * @method string getReadWriteMode()
+ * @method string getEndpointType()
+ * @method string getResourceOwnerAccount()
  * @method string getDBClusterId()
  * @method string getOwnerAccount()
  * @method string getEndpointConfig()
  * @method string getOwnerId()
  * @method string getNodes()
- * @method string getReadWriteMode()
- * @method string getEndpointType()
  */
 class CreateDBClusterEndpointRequest extends \RpcAcsRequest
 {
@@ -67,19 +67,6 @@ class CreateDBClusterEndpointRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $clientToken
      *
      * @return $this
@@ -88,6 +75,45 @@ class CreateDBClusterEndpointRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ClientToken'] = $clientToken;
         $this->queryParameters['ClientToken'] = $clientToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $readWriteMode
+     *
+     * @return $this
+     */
+    public function setReadWriteMode($readWriteMode)
+    {
+        $this->requestParameters['ReadWriteMode'] = $readWriteMode;
+        $this->queryParameters['ReadWriteMode'] = $readWriteMode;
+
+        return $this;
+    }
+
+    /**
+     * @param string $endpointType
+     *
+     * @return $this
+     */
+    public function setEndpointType($endpointType)
+    {
+        $this->requestParameters['EndpointType'] = $endpointType;
+        $this->queryParameters['EndpointType'] = $endpointType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }
@@ -153,32 +179,6 @@ class CreateDBClusterEndpointRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Nodes'] = $nodes;
         $this->queryParameters['Nodes'] = $nodes;
-
-        return $this;
-    }
-
-    /**
-     * @param string $readWriteMode
-     *
-     * @return $this
-     */
-    public function setReadWriteMode($readWriteMode)
-    {
-        $this->requestParameters['ReadWriteMode'] = $readWriteMode;
-        $this->queryParameters['ReadWriteMode'] = $readWriteMode;
-
-        return $this;
-    }
-
-    /**
-     * @param string $endpointType
-     *
-     * @return $this
-     */
-    public function setEndpointType($endpointType)
-    {
-        $this->requestParameters['EndpointType'] = $endpointType;
-        $this->queryParameters['EndpointType'] = $endpointType;
 
         return $this;
     }

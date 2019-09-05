@@ -8,13 +8,13 @@ namespace polardb\Request\V20170801;
  * Request of ModifyDBClusterAccessWhitelist
  *
  * @method string getResourceOwnerId()
+ * @method string getSecurityIps()
+ * @method string getDBClusterIPArrayAttribute()
  * @method string getResourceOwnerAccount()
  * @method string getDBClusterId()
  * @method string getOwnerAccount()
- * @method string getSecurityIps()
- * @method string getDBClusterIPArrayName()
  * @method string getOwnerId()
- * @method string getDBClusterIPArrayAttribute()
+ * @method string getDBClusterIPArrayName()
  */
 class ModifyDBClusterAccessWhitelistRequest extends \RpcAcsRequest
 {
@@ -46,6 +46,32 @@ class ModifyDBClusterAccessWhitelistRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityIps
+     *
+     * @return $this
+     */
+    public function setSecurityIps($securityIps)
+    {
+        $this->requestParameters['SecurityIps'] = $securityIps;
+        $this->queryParameters['SecurityIps'] = $securityIps;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBClusterIPArrayAttribute
+     *
+     * @return $this
+     */
+    public function setDBClusterIPArrayAttribute($dBClusterIPArrayAttribute)
+    {
+        $this->requestParameters['DBClusterIPArrayAttribute'] = $dBClusterIPArrayAttribute;
+        $this->queryParameters['DBClusterIPArrayAttribute'] = $dBClusterIPArrayAttribute;
 
         return $this;
     }
@@ -90,32 +116,6 @@ class ModifyDBClusterAccessWhitelistRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $securityIps
-     *
-     * @return $this
-     */
-    public function setSecurityIps($securityIps)
-    {
-        $this->requestParameters['SecurityIps'] = $securityIps;
-        $this->queryParameters['SecurityIps'] = $securityIps;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBClusterIPArrayName
-     *
-     * @return $this
-     */
-    public function setDBClusterIPArrayName($dBClusterIPArrayName)
-    {
-        $this->requestParameters['DBClusterIPArrayName'] = $dBClusterIPArrayName;
-        $this->queryParameters['DBClusterIPArrayName'] = $dBClusterIPArrayName;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -129,14 +129,14 @@ class ModifyDBClusterAccessWhitelistRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dBClusterIPArrayAttribute
+     * @param string $dBClusterIPArrayName
      *
      * @return $this
      */
-    public function setDBClusterIPArrayAttribute($dBClusterIPArrayAttribute)
+    public function setDBClusterIPArrayName($dBClusterIPArrayName)
     {
-        $this->requestParameters['DBClusterIPArrayAttribute'] = $dBClusterIPArrayAttribute;
-        $this->queryParameters['DBClusterIPArrayAttribute'] = $dBClusterIPArrayAttribute;
+        $this->requestParameters['DBClusterIPArrayName'] = $dBClusterIPArrayName;
+        $this->queryParameters['DBClusterIPArrayName'] = $dBClusterIPArrayName;
 
         return $this;
     }

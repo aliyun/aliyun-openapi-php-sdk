@@ -9,23 +9,23 @@ namespace polardb\Request\V20170801;
  *
  * @method string getResourceOwnerId()
  * @method string getDBClusterDescription()
+ * @method string getClientToken()
+ * @method string getClusterNetworkType()
+ * @method string getDBNodeClass()
+ * @method string getEngine()
+ * @method string getCreationOption()
+ * @method string getSourceResourceId()
  * @method string getPeriod()
  * @method string getResourceOwnerAccount()
- * @method string getClientToken()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
  * @method string getUsedTime()
- * @method string getClusterNetworkType()
  * @method string getVSwitchId()
- * @method string getDBNodeClass()
  * @method string getAutoRenew()
- * @method string getEngine()
  * @method string getVPCId()
  * @method string getDBType()
  * @method string getZoneId()
  * @method string getDBVersion()
- * @method string getCreationOption()
- * @method string getSourceResourceId()
  * @method string getCloneDataPoint()
  * @method string getPayType()
  */
@@ -77,6 +77,84 @@ class CreateDBClusterRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $clusterNetworkType
+     *
+     * @return $this
+     */
+    public function setClusterNetworkType($clusterNetworkType)
+    {
+        $this->requestParameters['ClusterNetworkType'] = $clusterNetworkType;
+        $this->queryParameters['ClusterNetworkType'] = $clusterNetworkType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBNodeClass
+     *
+     * @return $this
+     */
+    public function setDBNodeClass($dBNodeClass)
+    {
+        $this->requestParameters['DBNodeClass'] = $dBNodeClass;
+        $this->queryParameters['DBNodeClass'] = $dBNodeClass;
+
+        return $this;
+    }
+
+    /**
+     * @param string $engine
+     *
+     * @return $this
+     */
+    public function setEngine($engine)
+    {
+        $this->requestParameters['Engine'] = $engine;
+        $this->queryParameters['Engine'] = $engine;
+
+        return $this;
+    }
+
+    /**
+     * @param string $creationOption
+     *
+     * @return $this
+     */
+    public function setCreationOption($creationOption)
+    {
+        $this->requestParameters['CreationOption'] = $creationOption;
+        $this->queryParameters['CreationOption'] = $creationOption;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sourceResourceId
+     *
+     * @return $this
+     */
+    public function setSourceResourceId($sourceResourceId)
+    {
+        $this->requestParameters['SourceResourceId'] = $sourceResourceId;
+        $this->queryParameters['SourceResourceId'] = $sourceResourceId;
+
+        return $this;
+    }
+
+    /**
      * @param string $period
      *
      * @return $this
@@ -98,19 +176,6 @@ class CreateDBClusterRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $clientToken
-     *
-     * @return $this
-     */
-    public function setClientToken($clientToken)
-    {
-        $this->requestParameters['ClientToken'] = $clientToken;
-        $this->queryParameters['ClientToken'] = $clientToken;
 
         return $this;
     }
@@ -155,19 +220,6 @@ class CreateDBClusterRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $clusterNetworkType
-     *
-     * @return $this
-     */
-    public function setClusterNetworkType($clusterNetworkType)
-    {
-        $this->requestParameters['ClusterNetworkType'] = $clusterNetworkType;
-        $this->queryParameters['ClusterNetworkType'] = $clusterNetworkType;
-
-        return $this;
-    }
-
-    /**
      * @param string $vSwitchId
      *
      * @return $this
@@ -181,19 +233,6 @@ class CreateDBClusterRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dBNodeClass
-     *
-     * @return $this
-     */
-    public function setDBNodeClass($dBNodeClass)
-    {
-        $this->requestParameters['DBNodeClass'] = $dBNodeClass;
-        $this->queryParameters['DBNodeClass'] = $dBNodeClass;
-
-        return $this;
-    }
-
-    /**
      * @param string $autoRenew
      *
      * @return $this
@@ -202,19 +241,6 @@ class CreateDBClusterRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AutoRenew'] = $autoRenew;
         $this->queryParameters['AutoRenew'] = $autoRenew;
-
-        return $this;
-    }
-
-    /**
-     * @param string $engine
-     *
-     * @return $this
-     */
-    public function setEngine($engine)
-    {
-        $this->requestParameters['Engine'] = $engine;
-        $this->queryParameters['Engine'] = $engine;
 
         return $this;
     }
@@ -267,32 +293,6 @@ class CreateDBClusterRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DBVersion'] = $dBVersion;
         $this->queryParameters['DBVersion'] = $dBVersion;
-
-        return $this;
-    }
-
-    /**
-     * @param string $creationOption
-     *
-     * @return $this
-     */
-    public function setCreationOption($creationOption)
-    {
-        $this->requestParameters['CreationOption'] = $creationOption;
-        $this->queryParameters['CreationOption'] = $creationOption;
-
-        return $this;
-    }
-
-    /**
-     * @param string $sourceResourceId
-     *
-     * @return $this
-     */
-    public function setSourceResourceId($sourceResourceId)
-    {
-        $this->requestParameters['SourceResourceId'] = $sourceResourceId;
-        $this->queryParameters['SourceResourceId'] = $sourceResourceId;
 
         return $this;
     }

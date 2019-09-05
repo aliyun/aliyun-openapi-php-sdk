@@ -8,15 +8,15 @@ namespace polardb\Request\V20170801;
  * Request of CreateAccount
  *
  * @method string getResourceOwnerId()
+ * @method string getAccountType()
+ * @method string getAccountDescription()
+ * @method string getAccountPrivilege()
+ * @method string getAccountName()
  * @method string getResourceOwnerAccount()
  * @method string getDBClusterId()
  * @method string getOwnerAccount()
- * @method string getAccountType()
  * @method string getOwnerId()
- * @method string getAccountDescription()
- * @method string getAccountPrivilege()
  * @method string getAccountPassword()
- * @method string getAccountName()
  * @method string getDBName()
  */
 class CreateAccountRequest extends \RpcAcsRequest
@@ -49,6 +49,58 @@ class CreateAccountRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $accountType
+     *
+     * @return $this
+     */
+    public function setAccountType($accountType)
+    {
+        $this->requestParameters['AccountType'] = $accountType;
+        $this->queryParameters['AccountType'] = $accountType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $accountDescription
+     *
+     * @return $this
+     */
+    public function setAccountDescription($accountDescription)
+    {
+        $this->requestParameters['AccountDescription'] = $accountDescription;
+        $this->queryParameters['AccountDescription'] = $accountDescription;
+
+        return $this;
+    }
+
+    /**
+     * @param string $accountPrivilege
+     *
+     * @return $this
+     */
+    public function setAccountPrivilege($accountPrivilege)
+    {
+        $this->requestParameters['AccountPrivilege'] = $accountPrivilege;
+        $this->queryParameters['AccountPrivilege'] = $accountPrivilege;
+
+        return $this;
+    }
+
+    /**
+     * @param string $accountName
+     *
+     * @return $this
+     */
+    public function setAccountName($accountName)
+    {
+        $this->requestParameters['AccountName'] = $accountName;
+        $this->queryParameters['AccountName'] = $accountName;
 
         return $this;
     }
@@ -93,19 +145,6 @@ class CreateAccountRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $accountType
-     *
-     * @return $this
-     */
-    public function setAccountType($accountType)
-    {
-        $this->requestParameters['AccountType'] = $accountType;
-        $this->queryParameters['AccountType'] = $accountType;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -119,32 +158,6 @@ class CreateAccountRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $accountDescription
-     *
-     * @return $this
-     */
-    public function setAccountDescription($accountDescription)
-    {
-        $this->requestParameters['AccountDescription'] = $accountDescription;
-        $this->queryParameters['AccountDescription'] = $accountDescription;
-
-        return $this;
-    }
-
-    /**
-     * @param string $accountPrivilege
-     *
-     * @return $this
-     */
-    public function setAccountPrivilege($accountPrivilege)
-    {
-        $this->requestParameters['AccountPrivilege'] = $accountPrivilege;
-        $this->queryParameters['AccountPrivilege'] = $accountPrivilege;
-
-        return $this;
-    }
-
-    /**
      * @param string $accountPassword
      *
      * @return $this
@@ -153,19 +166,6 @@ class CreateAccountRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AccountPassword'] = $accountPassword;
         $this->queryParameters['AccountPassword'] = $accountPassword;
-
-        return $this;
-    }
-
-    /**
-     * @param string $accountName
-     *
-     * @return $this
-     */
-    public function setAccountName($accountName)
-    {
-        $this->requestParameters['AccountName'] = $accountName;
-        $this->queryParameters['AccountName'] = $accountName;
 
         return $this;
     }

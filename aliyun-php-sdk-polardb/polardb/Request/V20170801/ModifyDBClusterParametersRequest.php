@@ -8,8 +8,8 @@ namespace polardb\Request\V20170801;
  * Request of ModifyDBClusterParameters
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
  * @method string getEffectiveTime()
+ * @method string getResourceOwnerAccount()
  * @method string getDBClusterId()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
@@ -50,19 +50,6 @@ class ModifyDBClusterParametersRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $effectiveTime
      *
      * @return $this
@@ -71,6 +58,19 @@ class ModifyDBClusterParametersRequest extends \RpcAcsRequest
     {
         $this->requestParameters['EffectiveTime'] = $effectiveTime;
         $this->queryParameters['EffectiveTime'] = $effectiveTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }

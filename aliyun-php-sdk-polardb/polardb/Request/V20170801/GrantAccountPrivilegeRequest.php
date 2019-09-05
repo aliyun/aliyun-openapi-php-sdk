@@ -8,13 +8,13 @@ namespace polardb\Request\V20170801;
  * Request of GrantAccountPrivilege
  *
  * @method string getResourceOwnerId()
+ * @method string getAccountPrivilege()
  * @method string getAccountName()
- * @method string getDBName()
  * @method string getResourceOwnerAccount()
  * @method string getDBClusterId()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
- * @method string getAccountPrivilege()
+ * @method string getDBName()
  */
 class GrantAccountPrivilegeRequest extends \RpcAcsRequest
 {
@@ -51,6 +51,19 @@ class GrantAccountPrivilegeRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $accountPrivilege
+     *
+     * @return $this
+     */
+    public function setAccountPrivilege($accountPrivilege)
+    {
+        $this->requestParameters['AccountPrivilege'] = $accountPrivilege;
+        $this->queryParameters['AccountPrivilege'] = $accountPrivilege;
+
+        return $this;
+    }
+
+    /**
      * @param string $accountName
      *
      * @return $this
@@ -59,19 +72,6 @@ class GrantAccountPrivilegeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AccountName'] = $accountName;
         $this->queryParameters['AccountName'] = $accountName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBName
-     *
-     * @return $this
-     */
-    public function setDBName($dBName)
-    {
-        $this->requestParameters['DBName'] = $dBName;
-        $this->queryParameters['DBName'] = $dBName;
 
         return $this;
     }
@@ -129,14 +129,14 @@ class GrantAccountPrivilegeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $accountPrivilege
+     * @param string $dBName
      *
      * @return $this
      */
-    public function setAccountPrivilege($accountPrivilege)
+    public function setDBName($dBName)
     {
-        $this->requestParameters['AccountPrivilege'] = $accountPrivilege;
-        $this->queryParameters['AccountPrivilege'] = $accountPrivilege;
+        $this->requestParameters['DBName'] = $dBName;
+        $this->queryParameters['DBName'] = $dBName;
 
         return $this;
     }

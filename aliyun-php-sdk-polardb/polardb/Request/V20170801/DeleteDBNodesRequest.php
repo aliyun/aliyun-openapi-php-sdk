@@ -9,8 +9,8 @@ namespace polardb\Request\V20170801;
  *
  * @method string getResourceOwnerId()
  * @method array getDBNodeIds()
- * @method string getResourceOwnerAccount()
  * @method string getClientToken()
+ * @method string getResourceOwnerAccount()
  * @method string getDBClusterId()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
@@ -54,12 +54,25 @@ class DeleteDBNodesRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setDBNodeIds(array $dBNodeId)
+	public function setDBNodeIds(array $dBNodeId)
+	{
+	    $this->requestParameters['DBNodeIds'] = $dBNodeId;
+		foreach ($dBNodeId as $i => $iValue) {
+			$this->queryParameters['DBNodeId.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
+    }
+
+    /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
     {
-        $this->requestParameters['DBNodeIds'] = $dBNodeId;
-        foreach ($dBNodeId as $i => $iValue) {
-            $this->queryParameters['DBNodeId.' . ($i + 1)] = $iValue;
-        }
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
 
         return $this;
     }
@@ -73,19 +86,6 @@ class DeleteDBNodesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $clientToken
-     *
-     * @return $this
-     */
-    public function setClientToken($clientToken)
-    {
-        $this->requestParameters['ClientToken'] = $clientToken;
-        $this->queryParameters['ClientToken'] = $clientToken;
 
         return $this;
     }

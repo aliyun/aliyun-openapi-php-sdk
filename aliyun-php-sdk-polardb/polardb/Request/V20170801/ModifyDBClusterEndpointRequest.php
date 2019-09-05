@@ -9,14 +9,14 @@ namespace polardb\Request\V20170801;
  *
  * @method string getAutoAddNewNodes()
  * @method string getResourceOwnerId()
- * @method string getNodes()
+ * @method string getDBEndpointId()
  * @method string getReadWriteMode()
  * @method string getResourceOwnerAccount()
  * @method string getDBClusterId()
  * @method string getOwnerAccount()
- * @method string getDBEndpointId()
  * @method string getEndpointConfig()
  * @method string getOwnerId()
+ * @method string getNodes()
  */
 class ModifyDBClusterEndpointRequest extends \RpcAcsRequest
 {
@@ -66,14 +66,14 @@ class ModifyDBClusterEndpointRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $nodes
+     * @param string $dBEndpointId
      *
      * @return $this
      */
-    public function setNodes($nodes)
+    public function setDBEndpointId($dBEndpointId)
     {
-        $this->requestParameters['Nodes'] = $nodes;
-        $this->queryParameters['Nodes'] = $nodes;
+        $this->requestParameters['DBEndpointId'] = $dBEndpointId;
+        $this->queryParameters['DBEndpointId'] = $dBEndpointId;
 
         return $this;
     }
@@ -131,19 +131,6 @@ class ModifyDBClusterEndpointRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dBEndpointId
-     *
-     * @return $this
-     */
-    public function setDBEndpointId($dBEndpointId)
-    {
-        $this->requestParameters['DBEndpointId'] = $dBEndpointId;
-        $this->queryParameters['DBEndpointId'] = $dBEndpointId;
-
-        return $this;
-    }
-
-    /**
      * @param string $endpointConfig
      *
      * @return $this
@@ -165,6 +152,19 @@ class ModifyDBClusterEndpointRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $nodes
+     *
+     * @return $this
+     */
+    public function setNodes($nodes)
+    {
+        $this->requestParameters['Nodes'] = $nodes;
+        $this->queryParameters['Nodes'] = $nodes;
 
         return $this;
     }

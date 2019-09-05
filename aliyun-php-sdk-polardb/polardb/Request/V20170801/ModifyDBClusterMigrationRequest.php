@@ -9,11 +9,11 @@ namespace polardb\Request\V20170801;
  *
  * @method string getResourceOwnerId()
  * @method string getSecurityToken()
+ * @method string getNewMasterInstanceId()
  * @method string getResourceOwnerAccount()
  * @method string getDBClusterId()
  * @method string getOwnerAccount()
  * @method string getSourceRDSDBInstanceId()
- * @method string getNewMasterInstanceId()
  * @method string getOwnerId()
  */
 class ModifyDBClusterMigrationRequest extends \RpcAcsRequest
@@ -59,6 +59,19 @@ class ModifyDBClusterMigrationRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $newMasterInstanceId
+     *
+     * @return $this
+     */
+    public function setNewMasterInstanceId($newMasterInstanceId)
+    {
+        $this->requestParameters['NewMasterInstanceId'] = $newMasterInstanceId;
+        $this->queryParameters['NewMasterInstanceId'] = $newMasterInstanceId;
 
         return $this;
     }
@@ -111,19 +124,6 @@ class ModifyDBClusterMigrationRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SourceRDSDBInstanceId'] = $sourceRDSDBInstanceId;
         $this->queryParameters['SourceRDSDBInstanceId'] = $sourceRDSDBInstanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $newMasterInstanceId
-     *
-     * @return $this
-     */
-    public function setNewMasterInstanceId($newMasterInstanceId)
-    {
-        $this->requestParameters['NewMasterInstanceId'] = $newMasterInstanceId;
-        $this->queryParameters['NewMasterInstanceId'] = $newMasterInstanceId;
 
         return $this;
     }

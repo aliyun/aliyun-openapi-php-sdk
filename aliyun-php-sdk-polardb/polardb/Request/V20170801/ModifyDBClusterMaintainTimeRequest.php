@@ -7,8 +7,8 @@ namespace polardb\Request\V20170801;
  *
  * Request of ModifyDBClusterMaintainTime
  *
- * @method string getMaintainTime()
  * @method string getResourceOwnerId()
+ * @method string getMaintainTime()
  * @method string getResourceOwnerAccount()
  * @method string getDBClusterId()
  * @method string getOwnerAccount()
@@ -36,19 +36,6 @@ class ModifyDBClusterMaintainTimeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $maintainTime
-     *
-     * @return $this
-     */
-    public function setMaintainTime($maintainTime)
-    {
-        $this->requestParameters['MaintainTime'] = $maintainTime;
-        $this->queryParameters['MaintainTime'] = $maintainTime;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerId
      *
      * @return $this
@@ -57,6 +44,19 @@ class ModifyDBClusterMaintainTimeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $maintainTime
+     *
+     * @return $this
+     */
+    public function setMaintainTime($maintainTime)
+    {
+        $this->requestParameters['MaintainTime'] = $maintainTime;
+        $this->queryParameters['MaintainTime'] = $maintainTime;
 
         return $this;
     }

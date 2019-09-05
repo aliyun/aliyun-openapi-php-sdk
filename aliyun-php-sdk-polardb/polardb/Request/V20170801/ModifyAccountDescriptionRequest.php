@@ -8,12 +8,12 @@ namespace polardb\Request\V20170801;
  * Request of ModifyAccountDescription
  *
  * @method string getResourceOwnerId()
+ * @method string getAccountDescription()
  * @method string getAccountName()
  * @method string getResourceOwnerAccount()
  * @method string getDBClusterId()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
- * @method string getAccountDescription()
  */
 class ModifyAccountDescriptionRequest extends \RpcAcsRequest
 {
@@ -45,6 +45,19 @@ class ModifyAccountDescriptionRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $accountDescription
+     *
+     * @return $this
+     */
+    public function setAccountDescription($accountDescription)
+    {
+        $this->requestParameters['AccountDescription'] = $accountDescription;
+        $this->queryParameters['AccountDescription'] = $accountDescription;
 
         return $this;
     }
@@ -110,19 +123,6 @@ class ModifyAccountDescriptionRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $accountDescription
-     *
-     * @return $this
-     */
-    public function setAccountDescription($accountDescription)
-    {
-        $this->requestParameters['AccountDescription'] = $accountDescription;
-        $this->queryParameters['AccountDescription'] = $accountDescription;
 
         return $this;
     }

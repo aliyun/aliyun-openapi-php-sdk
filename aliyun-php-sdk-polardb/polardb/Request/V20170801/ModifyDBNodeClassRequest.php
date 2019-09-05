@@ -8,13 +8,13 @@ namespace polardb\Request\V20170801;
  * Request of ModifyDBNodeClass
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
  * @method string getClientToken()
+ * @method string getDBNodeTargetClass()
+ * @method string getResourceOwnerAccount()
  * @method string getDBClusterId()
  * @method string getOwnerAccount()
- * @method string getModifyType()
- * @method string getDBNodeTargetClass()
  * @method string getOwnerId()
+ * @method string getModifyType()
  */
 class ModifyDBNodeClassRequest extends \RpcAcsRequest
 {
@@ -51,19 +51,6 @@ class ModifyDBNodeClassRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $clientToken
      *
      * @return $this
@@ -72,6 +59,32 @@ class ModifyDBNodeClassRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ClientToken'] = $clientToken;
         $this->queryParameters['ClientToken'] = $clientToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBNodeTargetClass
+     *
+     * @return $this
+     */
+    public function setDBNodeTargetClass($dBNodeTargetClass)
+    {
+        $this->requestParameters['DBNodeTargetClass'] = $dBNodeTargetClass;
+        $this->queryParameters['DBNodeTargetClass'] = $dBNodeTargetClass;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }
@@ -103,32 +116,6 @@ class ModifyDBNodeClassRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $modifyType
-     *
-     * @return $this
-     */
-    public function setModifyType($modifyType)
-    {
-        $this->requestParameters['ModifyType'] = $modifyType;
-        $this->queryParameters['ModifyType'] = $modifyType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBNodeTargetClass
-     *
-     * @return $this
-     */
-    public function setDBNodeTargetClass($dBNodeTargetClass)
-    {
-        $this->requestParameters['DBNodeTargetClass'] = $dBNodeTargetClass;
-        $this->queryParameters['DBNodeTargetClass'] = $dBNodeTargetClass;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -137,6 +124,19 @@ class ModifyDBNodeClassRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $modifyType
+     *
+     * @return $this
+     */
+    public function setModifyType($modifyType)
+    {
+        $this->requestParameters['ModifyType'] = $modifyType;
+        $this->queryParameters['ModifyType'] = $modifyType;
 
         return $this;
     }

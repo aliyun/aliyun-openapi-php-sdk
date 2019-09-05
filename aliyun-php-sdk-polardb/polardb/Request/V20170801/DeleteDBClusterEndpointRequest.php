@@ -8,10 +8,10 @@ namespace polardb\Request\V20170801;
  * Request of DeleteDBClusterEndpoint
  *
  * @method string getResourceOwnerId()
+ * @method string getDBEndpointId()
  * @method string getResourceOwnerAccount()
  * @method string getDBClusterId()
  * @method string getOwnerAccount()
- * @method string getDBEndpointId()
  * @method string getOwnerId()
  */
 class DeleteDBClusterEndpointRequest extends \RpcAcsRequest
@@ -44,6 +44,19 @@ class DeleteDBClusterEndpointRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBEndpointId
+     *
+     * @return $this
+     */
+    public function setDBEndpointId($dBEndpointId)
+    {
+        $this->requestParameters['DBEndpointId'] = $dBEndpointId;
+        $this->queryParameters['DBEndpointId'] = $dBEndpointId;
 
         return $this;
     }
@@ -83,19 +96,6 @@ class DeleteDBClusterEndpointRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBEndpointId
-     *
-     * @return $this
-     */
-    public function setDBEndpointId($dBEndpointId)
-    {
-        $this->requestParameters['DBEndpointId'] = $dBEndpointId;
-        $this->queryParameters['DBEndpointId'] = $dBEndpointId;
 
         return $this;
     }

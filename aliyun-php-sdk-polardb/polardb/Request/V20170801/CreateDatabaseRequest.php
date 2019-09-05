@@ -8,15 +8,15 @@ namespace polardb\Request\V20170801;
  * Request of CreateDatabase
  *
  * @method string getResourceOwnerId()
- * @method string getDBName()
+ * @method string getAccountPrivilege()
  * @method string getAccountName()
+ * @method string getDBDescription()
  * @method string getResourceOwnerAccount()
  * @method string getDBClusterId()
  * @method string getOwnerAccount()
- * @method string getDBDescription()
  * @method string getOwnerId()
+ * @method string getDBName()
  * @method string getCharacterSetName()
- * @method string getAccountPrivilege()
  */
 class CreateDatabaseRequest extends \RpcAcsRequest
 {
@@ -53,14 +53,14 @@ class CreateDatabaseRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dBName
+     * @param string $accountPrivilege
      *
      * @return $this
      */
-    public function setDBName($dBName)
+    public function setAccountPrivilege($accountPrivilege)
     {
-        $this->requestParameters['DBName'] = $dBName;
-        $this->queryParameters['DBName'] = $dBName;
+        $this->requestParameters['AccountPrivilege'] = $accountPrivilege;
+        $this->queryParameters['AccountPrivilege'] = $accountPrivilege;
 
         return $this;
     }
@@ -74,6 +74,19 @@ class CreateDatabaseRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AccountName'] = $accountName;
         $this->queryParameters['AccountName'] = $accountName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBDescription
+     *
+     * @return $this
+     */
+    public function setDBDescription($dBDescription)
+    {
+        $this->requestParameters['DBDescription'] = $dBDescription;
+        $this->queryParameters['DBDescription'] = $dBDescription;
 
         return $this;
     }
@@ -118,19 +131,6 @@ class CreateDatabaseRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dBDescription
-     *
-     * @return $this
-     */
-    public function setDBDescription($dBDescription)
-    {
-        $this->requestParameters['DBDescription'] = $dBDescription;
-        $this->queryParameters['DBDescription'] = $dBDescription;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -144,6 +144,19 @@ class CreateDatabaseRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $dBName
+     *
+     * @return $this
+     */
+    public function setDBName($dBName)
+    {
+        $this->requestParameters['DBName'] = $dBName;
+        $this->queryParameters['DBName'] = $dBName;
+
+        return $this;
+    }
+
+    /**
      * @param string $characterSetName
      *
      * @return $this
@@ -152,19 +165,6 @@ class CreateDatabaseRequest extends \RpcAcsRequest
     {
         $this->requestParameters['CharacterSetName'] = $characterSetName;
         $this->queryParameters['CharacterSetName'] = $characterSetName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $accountPrivilege
-     *
-     * @return $this
-     */
-    public function setAccountPrivilege($accountPrivilege)
-    {
-        $this->requestParameters['AccountPrivilege'] = $accountPrivilege;
-        $this->queryParameters['AccountPrivilege'] = $accountPrivilege;
 
         return $this;
     }

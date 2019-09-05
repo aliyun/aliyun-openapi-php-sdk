@@ -9,11 +9,11 @@ namespace polardb\Request\V20170801;
  *
  * @method string getResourceOwnerId()
  * @method string getAccountName()
- * @method string getDBName()
  * @method string getResourceOwnerAccount()
  * @method string getDBClusterId()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getDBName()
  */
 class RevokeAccountPrivilegeRequest extends \RpcAcsRequest
 {
@@ -58,19 +58,6 @@ class RevokeAccountPrivilegeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AccountName'] = $accountName;
         $this->queryParameters['AccountName'] = $accountName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBName
-     *
-     * @return $this
-     */
-    public function setDBName($dBName)
-    {
-        $this->requestParameters['DBName'] = $dBName;
-        $this->queryParameters['DBName'] = $dBName;
 
         return $this;
     }
@@ -123,6 +110,19 @@ class RevokeAccountPrivilegeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBName
+     *
+     * @return $this
+     */
+    public function setDBName($dBName)
+    {
+        $this->requestParameters['DBName'] = $dBName;
+        $this->queryParameters['DBName'] = $dBName;
 
         return $this;
     }

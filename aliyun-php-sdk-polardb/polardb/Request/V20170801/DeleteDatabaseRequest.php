@@ -8,11 +8,11 @@ namespace polardb\Request\V20170801;
  * Request of DeleteDatabase
  *
  * @method string getResourceOwnerId()
- * @method string getDBName()
  * @method string getResourceOwnerAccount()
  * @method string getDBClusterId()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getDBName()
  */
 class DeleteDatabaseRequest extends \RpcAcsRequest
 {
@@ -44,19 +44,6 @@ class DeleteDatabaseRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBName
-     *
-     * @return $this
-     */
-    public function setDBName($dBName)
-    {
-        $this->requestParameters['DBName'] = $dBName;
-        $this->queryParameters['DBName'] = $dBName;
 
         return $this;
     }
@@ -109,6 +96,19 @@ class DeleteDatabaseRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBName
+     *
+     * @return $this
+     */
+    public function setDBName($dBName)
+    {
+        $this->requestParameters['DBName'] = $dBName;
+        $this->queryParameters['DBName'] = $dBName;
 
         return $this;
     }

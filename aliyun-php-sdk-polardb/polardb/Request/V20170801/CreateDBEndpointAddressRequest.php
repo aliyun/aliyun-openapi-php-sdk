@@ -9,12 +9,12 @@ namespace polardb\Request\V20170801;
  *
  * @method string getResourceOwnerId()
  * @method string getConnectionStringPrefix()
+ * @method string getDBEndpointId()
  * @method string getResourceOwnerAccount()
  * @method string getDBClusterId()
  * @method string getOwnerAccount()
- * @method string getNetType()
- * @method string getDBEndpointId()
  * @method string getOwnerId()
+ * @method string getNetType()
  */
 class CreateDBEndpointAddressRequest extends \RpcAcsRequest
 {
@@ -64,6 +64,19 @@ class CreateDBEndpointAddressRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $dBEndpointId
+     *
+     * @return $this
+     */
+    public function setDBEndpointId($dBEndpointId)
+    {
+        $this->requestParameters['DBEndpointId'] = $dBEndpointId;
+        $this->queryParameters['DBEndpointId'] = $dBEndpointId;
+
+        return $this;
+    }
+
+    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -103,32 +116,6 @@ class CreateDBEndpointAddressRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $netType
-     *
-     * @return $this
-     */
-    public function setNetType($netType)
-    {
-        $this->requestParameters['NetType'] = $netType;
-        $this->queryParameters['NetType'] = $netType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBEndpointId
-     *
-     * @return $this
-     */
-    public function setDBEndpointId($dBEndpointId)
-    {
-        $this->requestParameters['DBEndpointId'] = $dBEndpointId;
-        $this->queryParameters['DBEndpointId'] = $dBEndpointId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -137,6 +124,19 @@ class CreateDBEndpointAddressRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $netType
+     *
+     * @return $this
+     */
+    public function setNetType($netType)
+    {
+        $this->requestParameters['NetType'] = $netType;
+        $this->queryParameters['NetType'] = $netType;
 
         return $this;
     }

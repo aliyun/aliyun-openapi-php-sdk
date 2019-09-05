@@ -7,13 +7,13 @@ namespace polardb\Request\V20170801;
  *
  * Request of ModifyAutoRenewAttribute
  *
- * @method string getDuration()
  * @method string getResourceOwnerId()
- * @method string getPeriodUnit()
+ * @method string getDuration()
+ * @method string getRenewalStatus()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getRenewalStatus()
  * @method string getOwnerId()
+ * @method string getPeriodUnit()
  * @method string getDBClusterIds()
  */
 class ModifyAutoRenewAttributeRequest extends \RpcAcsRequest
@@ -38,19 +38,6 @@ class ModifyAutoRenewAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $duration
-     *
-     * @return $this
-     */
-    public function setDuration($duration)
-    {
-        $this->requestParameters['Duration'] = $duration;
-        $this->queryParameters['Duration'] = $duration;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerId
      *
      * @return $this
@@ -64,14 +51,27 @@ class ModifyAutoRenewAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $periodUnit
+     * @param string $duration
      *
      * @return $this
      */
-    public function setPeriodUnit($periodUnit)
+    public function setDuration($duration)
     {
-        $this->requestParameters['PeriodUnit'] = $periodUnit;
-        $this->queryParameters['PeriodUnit'] = $periodUnit;
+        $this->requestParameters['Duration'] = $duration;
+        $this->queryParameters['Duration'] = $duration;
+
+        return $this;
+    }
+
+    /**
+     * @param string $renewalStatus
+     *
+     * @return $this
+     */
+    public function setRenewalStatus($renewalStatus)
+    {
+        $this->requestParameters['RenewalStatus'] = $renewalStatus;
+        $this->queryParameters['RenewalStatus'] = $renewalStatus;
 
         return $this;
     }
@@ -103,19 +103,6 @@ class ModifyAutoRenewAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $renewalStatus
-     *
-     * @return $this
-     */
-    public function setRenewalStatus($renewalStatus)
-    {
-        $this->requestParameters['RenewalStatus'] = $renewalStatus;
-        $this->queryParameters['RenewalStatus'] = $renewalStatus;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -124,6 +111,19 @@ class ModifyAutoRenewAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $periodUnit
+     *
+     * @return $this
+     */
+    public function setPeriodUnit($periodUnit)
+    {
+        $this->requestParameters['PeriodUnit'] = $periodUnit;
+        $this->queryParameters['PeriodUnit'] = $periodUnit;
 
         return $this;
     }

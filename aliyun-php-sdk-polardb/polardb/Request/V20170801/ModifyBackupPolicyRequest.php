@@ -7,14 +7,14 @@ namespace polardb\Request\V20170801;
  *
  * Request of ModifyBackupPolicy
  *
- * @method string getPreferredBackupTime()
- * @method string getPreferredBackupPeriod()
- * @method string getBackupRetentionPeriod()
  * @method string getResourceOwnerId()
+ * @method string getPreferredBackupPeriod()
  * @method string getResourceOwnerAccount()
  * @method string getDBClusterId()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getPreferredBackupTime()
+ * @method string getBackupRetentionPeriod()
  */
 class ModifyBackupPolicyRequest extends \RpcAcsRequest
 {
@@ -38,14 +38,14 @@ class ModifyBackupPolicyRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $preferredBackupTime
+     * @param string $resourceOwnerId
      *
      * @return $this
      */
-    public function setPreferredBackupTime($preferredBackupTime)
+    public function setResourceOwnerId($resourceOwnerId)
     {
-        $this->requestParameters['PreferredBackupTime'] = $preferredBackupTime;
-        $this->queryParameters['PreferredBackupTime'] = $preferredBackupTime;
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
         return $this;
     }
@@ -59,32 +59,6 @@ class ModifyBackupPolicyRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PreferredBackupPeriod'] = $preferredBackupPeriod;
         $this->queryParameters['PreferredBackupPeriod'] = $preferredBackupPeriod;
-
-        return $this;
-    }
-
-    /**
-     * @param string $backupRetentionPeriod
-     *
-     * @return $this
-     */
-    public function setBackupRetentionPeriod($backupRetentionPeriod)
-    {
-        $this->requestParameters['BackupRetentionPeriod'] = $backupRetentionPeriod;
-        $this->queryParameters['BackupRetentionPeriod'] = $backupRetentionPeriod;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerId
-     *
-     * @return $this
-     */
-    public function setResourceOwnerId($resourceOwnerId)
-    {
-        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
-        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
         return $this;
     }
@@ -137,6 +111,32 @@ class ModifyBackupPolicyRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $preferredBackupTime
+     *
+     * @return $this
+     */
+    public function setPreferredBackupTime($preferredBackupTime)
+    {
+        $this->requestParameters['PreferredBackupTime'] = $preferredBackupTime;
+        $this->queryParameters['PreferredBackupTime'] = $preferredBackupTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $backupRetentionPeriod
+     *
+     * @return $this
+     */
+    public function setBackupRetentionPeriod($backupRetentionPeriod)
+    {
+        $this->requestParameters['BackupRetentionPeriod'] = $backupRetentionPeriod;
+        $this->queryParameters['BackupRetentionPeriod'] = $backupRetentionPeriod;
 
         return $this;
     }

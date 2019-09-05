@@ -8,8 +8,8 @@ namespace polardb\Request\V20170801;
  * Request of CreateDBNodes
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
  * @method string getClientToken()
+ * @method string getResourceOwnerAccount()
  * @method string getDBClusterId()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
@@ -50,19 +50,6 @@ class CreateDBNodesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $clientToken
      *
      * @return $this
@@ -71,6 +58,19 @@ class CreateDBNodesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ClientToken'] = $clientToken;
         $this->queryParameters['ClientToken'] = $clientToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }
@@ -119,14 +119,14 @@ class CreateDBNodesRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setDBNodes(array $dBNode)
-    {
-        $this->requestParameters['DBNodes'] = $dBNode;
-        foreach ($dBNode as $depth1 => $depth1Value) {
-            $this->queryParameters['DBNode.' . ($depth1 + 1) . '.TargetClass'] = $depth1Value['TargetClass'];
-            $this->queryParameters['DBNode.' . ($depth1 + 1) . '.ZoneId'] = $depth1Value['ZoneId'];
-        }
+	public function setDBNodes(array $dBNode)
+	{
+	    $this->requestParameters['DBNodes'] = $dBNode;
+		foreach ($dBNode as $depth1 => $depth1Value) {
+			$this->queryParameters['DBNode.' . ($depth1 + 1) . '.TargetClass'] = $depth1Value['TargetClass'];
+			$this->queryParameters['DBNode.' . ($depth1 + 1) . '.ZoneId'] = $depth1Value['ZoneId'];
+		}
 
-        return $this;
+		return $this;
     }
 }

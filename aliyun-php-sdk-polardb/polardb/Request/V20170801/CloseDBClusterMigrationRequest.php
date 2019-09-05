@@ -8,12 +8,12 @@ namespace polardb\Request\V20170801;
  * Request of CloseDBClusterMigration
  *
  * @method string getResourceOwnerId()
- * @method string getContinueEnableBinlog()
  * @method string getSecurityToken()
  * @method string getResourceOwnerAccount()
  * @method string getDBClusterId()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getContinueEnableBinlog()
  */
 class CloseDBClusterMigrationRequest extends \RpcAcsRequest
 {
@@ -45,19 +45,6 @@ class CloseDBClusterMigrationRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $continueEnableBinlog
-     *
-     * @return $this
-     */
-    public function setContinueEnableBinlog($continueEnableBinlog)
-    {
-        $this->requestParameters['ContinueEnableBinlog'] = $continueEnableBinlog;
-        $this->queryParameters['ContinueEnableBinlog'] = $continueEnableBinlog;
 
         return $this;
     }
@@ -123,6 +110,19 @@ class CloseDBClusterMigrationRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $continueEnableBinlog
+     *
+     * @return $this
+     */
+    public function setContinueEnableBinlog($continueEnableBinlog)
+    {
+        $this->requestParameters['ContinueEnableBinlog'] = $continueEnableBinlog;
+        $this->queryParameters['ContinueEnableBinlog'] = $continueEnableBinlog;
 
         return $this;
     }

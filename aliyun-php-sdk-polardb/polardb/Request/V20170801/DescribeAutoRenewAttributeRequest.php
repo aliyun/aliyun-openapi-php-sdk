@@ -8,11 +8,11 @@ namespace polardb\Request\V20170801;
  * Request of DescribeAutoRenewAttribute
  *
  * @method string getResourceOwnerId()
+ * @method string getPageNumber()
+ * @method string getPageSize()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getPageSize()
  * @method string getOwnerId()
- * @method string getPageNumber()
  * @method string getDBClusterIds()
  */
 class DescribeAutoRenewAttributeRequest extends \RpcAcsRequest
@@ -50,6 +50,32 @@ class DescribeAutoRenewAttributeRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -76,19 +102,6 @@ class DescribeAutoRenewAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -97,19 +110,6 @@ class DescribeAutoRenewAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

@@ -8,12 +8,12 @@ namespace polardb\Request\V20170801;
  * Request of ResetAccount
  *
  * @method string getResourceOwnerId()
- * @method string getAccountPassword()
  * @method string getAccountName()
  * @method string getResourceOwnerAccount()
  * @method string getDBClusterId()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getAccountPassword()
  */
 class ResetAccountRequest extends \RpcAcsRequest
 {
@@ -45,19 +45,6 @@ class ResetAccountRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $accountPassword
-     *
-     * @return $this
-     */
-    public function setAccountPassword($accountPassword)
-    {
-        $this->requestParameters['AccountPassword'] = $accountPassword;
-        $this->queryParameters['AccountPassword'] = $accountPassword;
 
         return $this;
     }
@@ -123,6 +110,19 @@ class ResetAccountRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $accountPassword
+     *
+     * @return $this
+     */
+    public function setAccountPassword($accountPassword)
+    {
+        $this->requestParameters['AccountPassword'] = $accountPassword;
+        $this->queryParameters['AccountPassword'] = $accountPassword;
 
         return $this;
     }

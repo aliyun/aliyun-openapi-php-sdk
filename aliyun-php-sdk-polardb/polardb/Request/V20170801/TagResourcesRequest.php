@@ -8,10 +8,10 @@ namespace polardb\Request\V20170801;
  * Request of TagResources
  *
  * @method string getResourceOwnerId()
+ * @method array getTags()
  * @method array getResourceIds()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method array getTags()
  * @method string getOwnerId()
  * @method string getResourceType()
  */
@@ -50,18 +50,34 @@ class TagResourcesRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param array $tag
+     *
+     * @return $this
+     */
+	public function setTags(array $tag)
+	{
+	    $this->requestParameters['Tags'] = $tag;
+		foreach ($tag as $depth1 => $depth1Value) {
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+		}
+
+		return $this;
+    }
+
+    /**
      * @param array $resourceId
      *
      * @return $this
      */
-    public function setResourceIds(array $resourceId)
-    {
-        $this->requestParameters['ResourceIds'] = $resourceId;
-        foreach ($resourceId as $i => $iValue) {
-            $this->queryParameters['ResourceId.' . ($i + 1)] = $iValue;
-        }
+	public function setResourceIds(array $resourceId)
+	{
+	    $this->requestParameters['ResourceIds'] = $resourceId;
+		foreach ($resourceId as $i => $iValue) {
+			$this->queryParameters['ResourceId.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 
     /**
@@ -86,22 +102,6 @@ class TagResourcesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param array $tag
-     *
-     * @return $this
-     */
-    public function setTags(array $tag)
-    {
-        $this->requestParameters['Tags'] = $tag;
-        foreach ($tag as $depth1 => $depth1Value) {
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
-        }
 
         return $this;
     }

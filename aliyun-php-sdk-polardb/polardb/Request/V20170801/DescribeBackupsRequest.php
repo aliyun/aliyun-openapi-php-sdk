@@ -8,16 +8,16 @@ namespace polardb\Request\V20170801;
  * Request of DescribeBackups
  *
  * @method string getResourceOwnerId()
+ * @method string getStartTime()
+ * @method string getPageNumber()
+ * @method string getPageSize()
  * @method string getResourceOwnerAccount()
  * @method string getDBClusterId()
  * @method string getOwnerAccount()
  * @method string getBackupId()
  * @method string getEndTime()
- * @method string getStartTime()
  * @method string getOwnerId()
- * @method string getPageNumber()
  * @method string getBackupStatus()
- * @method string getPageSize()
  * @method string getBackupMode()
  */
 class DescribeBackupsRequest extends \RpcAcsRequest
@@ -50,6 +50,45 @@ class DescribeBackupsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }
@@ -120,19 +159,6 @@ class DescribeBackupsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $startTime
-     *
-     * @return $this
-     */
-    public function setStartTime($startTime)
-    {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -146,19 +172,6 @@ class DescribeBackupsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
-
-        return $this;
-    }
-
-    /**
      * @param string $backupStatus
      *
      * @return $this
@@ -167,19 +180,6 @@ class DescribeBackupsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['BackupStatus'] = $backupStatus;
         $this->queryParameters['BackupStatus'] = $backupStatus;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }
