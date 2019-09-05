@@ -5,12 +5,11 @@ namespace cusanalytic_sc_online\Request\V20190524;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of SearchPersonByImg
+ * Request of GetActionCursor
  *
  * @method string getStoreId()
- * @method string getImgUrl()
  */
-class SearchPersonByImgRequest extends \RpcAcsRequest
+class GetActionCursorRequest extends \RpcAcsRequest
 {
 
     /**
@@ -26,7 +25,7 @@ class SearchPersonByImgRequest extends \RpcAcsRequest
         parent::__construct(
             'cusanalytic_sc_online',
             '2019-05-24',
-            'SearchPersonByImg'
+            'GetActionCursor'
         );
     }
 
@@ -39,19 +38,6 @@ class SearchPersonByImgRequest extends \RpcAcsRequest
     {
         $this->requestParameters['StoreId'] = $storeId;
         $this->queryParameters['StoreId'] = $storeId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $imgUrl
-     *
-     * @return $this
-     */
-    public function setImgUrl($imgUrl)
-    {
-        $this->requestParameters['ImgUrl'] = $imgUrl;
-        $this->queryParameters['ImgUrl'] = $imgUrl;
 
         return $this;
     }

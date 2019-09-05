@@ -7,17 +7,17 @@ namespace cusanalytic_sc_online\Request\V20190524;
  *
  * Request of ListVisitors
  *
- * @method string getPkId()
  * @method string getGender()
  * @method string getUkId()
- * @method string getPageSize()
  * @method string getLocationIds()
- * @method string getEndTime()
+ * @method string getStartTime()
+ * @method string getPageSize()
  * @method string getEnterCount()
  * @method string getPageIndex()
- * @method string getStartTime()
  * @method string getAgeStart()
  * @method string getAgeEnd()
+ * @method string getPkId()
+ * @method string getEndTime()
  * @method string getStoreIds()
  */
 class ListVisitorsRequest extends \RpcAcsRequest
@@ -38,19 +38,6 @@ class ListVisitorsRequest extends \RpcAcsRequest
             '2019-05-24',
             'ListVisitors'
         );
-    }
-
-    /**
-     * @param string $pkId
-     *
-     * @return $this
-     */
-    public function setPkId($pkId)
-    {
-        $this->requestParameters['PkId'] = $pkId;
-        $this->queryParameters['PkId'] = $pkId;
-
-        return $this;
     }
 
     /**
@@ -80,19 +67,6 @@ class ListVisitorsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
      * @param string $locationIds
      *
      * @return $this
@@ -106,14 +80,27 @@ class ListVisitorsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $endTime
+     * @param string $startTime
      *
      * @return $this
      */
-    public function setEndTime($endTime)
+    public function setStartTime($startTime)
     {
-        $this->requestParameters['EndTime'] = $endTime;
-        $this->queryParameters['EndTime'] = $endTime;
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }
@@ -145,19 +132,6 @@ class ListVisitorsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $startTime
-     *
-     * @return $this
-     */
-    public function setStartTime($startTime)
-    {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
-
-        return $this;
-    }
-
-    /**
      * @param string $ageStart
      *
      * @return $this
@@ -179,6 +153,32 @@ class ListVisitorsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AgeEnd'] = $ageEnd;
         $this->queryParameters['AgeEnd'] = $ageEnd;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pkId
+     *
+     * @return $this
+     */
+    public function setPkId($pkId)
+    {
+        $this->requestParameters['PkId'] = $pkId;
+        $this->queryParameters['PkId'] = $pkId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $endTime
+     *
+     * @return $this
+     */
+    public function setEndTime($endTime)
+    {
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
 
         return $this;
     }

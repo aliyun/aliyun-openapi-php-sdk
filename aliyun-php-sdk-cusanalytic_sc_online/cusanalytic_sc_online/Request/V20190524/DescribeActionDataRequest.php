@@ -8,10 +8,10 @@ namespace cusanalytic_sc_online\Request\V20190524;
  * Request of DescribeActionData
  *
  * @method string getTsEnd()
- * @method string getPageNo()
- * @method string getTsStart()
  * @method string getStoreId()
  * @method string getPageLimit()
+ * @method string getPageNo()
+ * @method string getTsStart()
  */
 class DescribeActionDataRequest extends \RpcAcsRequest
 {
@@ -47,32 +47,6 @@ class DescribeActionDataRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageNo
-     *
-     * @return $this
-     */
-    public function setPageNo($pageNo)
-    {
-        $this->requestParameters['PageNo'] = $pageNo;
-        $this->queryParameters['PageNo'] = $pageNo;
-
-        return $this;
-    }
-
-    /**
-     * @param string $tsStart
-     *
-     * @return $this
-     */
-    public function setTsStart($tsStart)
-    {
-        $this->requestParameters['TsStart'] = $tsStart;
-        $this->queryParameters['TsStart'] = $tsStart;
-
-        return $this;
-    }
-
-    /**
      * @param string $storeId
      *
      * @return $this
@@ -94,6 +68,32 @@ class DescribeActionDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageLimit'] = $pageLimit;
         $this->queryParameters['PageLimit'] = $pageLimit;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNo
+     *
+     * @return $this
+     */
+    public function setPageNo($pageNo)
+    {
+        $this->requestParameters['PageNo'] = $pageNo;
+        $this->queryParameters['PageNo'] = $pageNo;
+
+        return $this;
+    }
+
+    /**
+     * @param string $tsStart
+     *
+     * @return $this
+     */
+    public function setTsStart($tsStart)
+    {
+        $this->requestParameters['TsStart'] = $tsStart;
+        $this->queryParameters['TsStart'] = $tsStart;
 
         return $this;
     }

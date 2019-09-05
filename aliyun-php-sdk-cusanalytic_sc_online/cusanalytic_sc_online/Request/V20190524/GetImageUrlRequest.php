@@ -5,12 +5,13 @@ namespace cusanalytic_sc_online\Request\V20190524;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of SearchPersonByImg
+ * Request of GetImageUrl
  *
+ * @method string getOriginUrls()
  * @method string getStoreId()
- * @method string getImgUrl()
+ * @method string getObjectKeys()
  */
-class SearchPersonByImgRequest extends \RpcAcsRequest
+class GetImageUrlRequest extends \RpcAcsRequest
 {
 
     /**
@@ -26,8 +27,21 @@ class SearchPersonByImgRequest extends \RpcAcsRequest
         parent::__construct(
             'cusanalytic_sc_online',
             '2019-05-24',
-            'SearchPersonByImg'
+            'GetImageUrl'
         );
+    }
+
+    /**
+     * @param string $originUrls
+     *
+     * @return $this
+     */
+    public function setOriginUrls($originUrls)
+    {
+        $this->requestParameters['OriginUrls'] = $originUrls;
+        $this->queryParameters['OriginUrls'] = $originUrls;
+
+        return $this;
     }
 
     /**
@@ -44,14 +58,14 @@ class SearchPersonByImgRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $imgUrl
+     * @param string $objectKeys
      *
      * @return $this
      */
-    public function setImgUrl($imgUrl)
+    public function setObjectKeys($objectKeys)
     {
-        $this->requestParameters['ImgUrl'] = $imgUrl;
-        $this->queryParameters['ImgUrl'] = $imgUrl;
+        $this->requestParameters['ObjectKeys'] = $objectKeys;
+        $this->queryParameters['ObjectKeys'] = $objectKeys;
 
         return $this;
     }

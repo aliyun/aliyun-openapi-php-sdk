@@ -7,15 +7,15 @@ namespace cusanalytic_sc_online\Request\V20190524;
  *
  * Request of GetAnalyzeCommodityData
  *
- * @method string getStartUserCount()
- * @method string getEndDate()
- * @method string getEndUserCount()
- * @method string getPageSize()
- * @method string getMinSupportCount()
- * @method string getPageIndex()
  * @method string getStoreId()
  * @method string getStartDate()
+ * @method string getEndUserCount()
+ * @method string getPageSize()
+ * @method string getPageIndex()
  * @method string getStayPeriod()
+ * @method string getStartUserCount()
+ * @method string getMinSupportCount()
+ * @method string getEndDate()
  */
 class GetAnalyzeCommodityDataRequest extends \RpcAcsRequest
 {
@@ -38,27 +38,27 @@ class GetAnalyzeCommodityDataRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $startUserCount
+     * @param string $storeId
      *
      * @return $this
      */
-    public function setStartUserCount($startUserCount)
+    public function setStoreId($storeId)
     {
-        $this->requestParameters['StartUserCount'] = $startUserCount;
-        $this->queryParameters['StartUserCount'] = $startUserCount;
+        $this->requestParameters['StoreId'] = $storeId;
+        $this->queryParameters['StoreId'] = $storeId;
 
         return $this;
     }
 
     /**
-     * @param string $endDate
+     * @param string $startDate
      *
      * @return $this
      */
-    public function setEndDate($endDate)
+    public function setStartDate($startDate)
     {
-        $this->requestParameters['EndDate'] = $endDate;
-        $this->queryParameters['EndDate'] = $endDate;
+        $this->requestParameters['StartDate'] = $startDate;
+        $this->queryParameters['StartDate'] = $startDate;
 
         return $this;
     }
@@ -90,19 +90,6 @@ class GetAnalyzeCommodityDataRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $minSupportCount
-     *
-     * @return $this
-     */
-    public function setMinSupportCount($minSupportCount)
-    {
-        $this->requestParameters['MinSupportCount'] = $minSupportCount;
-        $this->queryParameters['MinSupportCount'] = $minSupportCount;
-
-        return $this;
-    }
-
-    /**
      * @param string $pageIndex
      *
      * @return $this
@@ -116,32 +103,6 @@ class GetAnalyzeCommodityDataRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $storeId
-     *
-     * @return $this
-     */
-    public function setStoreId($storeId)
-    {
-        $this->requestParameters['StoreId'] = $storeId;
-        $this->queryParameters['StoreId'] = $storeId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $startDate
-     *
-     * @return $this
-     */
-    public function setStartDate($startDate)
-    {
-        $this->requestParameters['StartDate'] = $startDate;
-        $this->queryParameters['StartDate'] = $startDate;
-
-        return $this;
-    }
-
-    /**
      * @param string $stayPeriod
      *
      * @return $this
@@ -150,6 +111,45 @@ class GetAnalyzeCommodityDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['StayPeriod'] = $stayPeriod;
         $this->queryParameters['StayPeriod'] = $stayPeriod;
+
+        return $this;
+    }
+
+    /**
+     * @param string $startUserCount
+     *
+     * @return $this
+     */
+    public function setStartUserCount($startUserCount)
+    {
+        $this->requestParameters['StartUserCount'] = $startUserCount;
+        $this->queryParameters['StartUserCount'] = $startUserCount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $minSupportCount
+     *
+     * @return $this
+     */
+    public function setMinSupportCount($minSupportCount)
+    {
+        $this->requestParameters['MinSupportCount'] = $minSupportCount;
+        $this->queryParameters['MinSupportCount'] = $minSupportCount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $endDate
+     *
+     * @return $this
+     */
+    public function setEndDate($endDate)
+    {
+        $this->requestParameters['EndDate'] = $endDate;
+        $this->queryParameters['EndDate'] = $endDate;
 
         return $this;
     }

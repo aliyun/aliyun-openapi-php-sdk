@@ -7,8 +7,8 @@ namespace cusanalytic_sc_online\Request\V20190524;
  *
  * Request of GetEMap
  *
- * @method string getLocationId()
  * @method string getStoreId()
+ * @method string getLocationId()
  */
 class GetEMapRequest extends \RpcAcsRequest
 {
@@ -31,19 +31,6 @@ class GetEMapRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $locationId
-     *
-     * @return $this
-     */
-    public function setLocationId($locationId)
-    {
-        $this->requestParameters['LocationId'] = $locationId;
-        $this->queryParameters['LocationId'] = $locationId;
-
-        return $this;
-    }
-
-    /**
      * @param string $storeId
      *
      * @return $this
@@ -52,6 +39,19 @@ class GetEMapRequest extends \RpcAcsRequest
     {
         $this->requestParameters['StoreId'] = $storeId;
         $this->queryParameters['StoreId'] = $storeId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $locationId
+     *
+     * @return $this
+     */
+    public function setLocationId($locationId)
+    {
+        $this->requestParameters['LocationId'] = $locationId;
+        $this->queryParameters['LocationId'] = $locationId;
 
         return $this;
     }

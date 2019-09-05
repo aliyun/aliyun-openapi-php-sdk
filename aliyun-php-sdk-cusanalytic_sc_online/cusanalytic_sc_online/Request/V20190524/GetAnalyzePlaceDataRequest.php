@@ -9,12 +9,12 @@ namespace cusanalytic_sc_online\Request\V20190524;
  *
  * @method string getEndUVCount()
  * @method string getParentAmount()
- * @method string getEndDate()
- * @method string getLocationId()
- * @method string getParentLocationIds()
  * @method string getStartDate()
  * @method string getStartUVCount()
  * @method string getStoreId()
+ * @method string getEndDate()
+ * @method string getLocationId()
+ * @method string getParentLocationIds()
  */
 class GetAnalyzePlaceDataRequest extends \RpcAcsRequest
 {
@@ -63,45 +63,6 @@ class GetAnalyzePlaceDataRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $endDate
-     *
-     * @return $this
-     */
-    public function setEndDate($endDate)
-    {
-        $this->requestParameters['EndDate'] = $endDate;
-        $this->queryParameters['EndDate'] = $endDate;
-
-        return $this;
-    }
-
-    /**
-     * @param string $locationId
-     *
-     * @return $this
-     */
-    public function setLocationId($locationId)
-    {
-        $this->requestParameters['LocationId'] = $locationId;
-        $this->queryParameters['LocationId'] = $locationId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $parentLocationIds
-     *
-     * @return $this
-     */
-    public function setParentLocationIds($parentLocationIds)
-    {
-        $this->requestParameters['ParentLocationIds'] = $parentLocationIds;
-        $this->queryParameters['ParentLocationIds'] = $parentLocationIds;
-
-        return $this;
-    }
-
-    /**
      * @param string $startDate
      *
      * @return $this
@@ -136,6 +97,45 @@ class GetAnalyzePlaceDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['StoreId'] = $storeId;
         $this->queryParameters['StoreId'] = $storeId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $endDate
+     *
+     * @return $this
+     */
+    public function setEndDate($endDate)
+    {
+        $this->requestParameters['EndDate'] = $endDate;
+        $this->queryParameters['EndDate'] = $endDate;
+
+        return $this;
+    }
+
+    /**
+     * @param string $locationId
+     *
+     * @return $this
+     */
+    public function setLocationId($locationId)
+    {
+        $this->requestParameters['LocationId'] = $locationId;
+        $this->queryParameters['LocationId'] = $locationId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $parentLocationIds
+     *
+     * @return $this
+     */
+    public function setParentLocationIds($parentLocationIds)
+    {
+        $this->requestParameters['ParentLocationIds'] = $parentLocationIds;
+        $this->queryParameters['ParentLocationIds'] = $parentLocationIds;
 
         return $this;
     }
