@@ -5,11 +5,11 @@ namespace Market\Request\V20151101;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeLicense
+ * Request of PushMeteringData
  *
- * @method string getLicenseCode()
+ * @method string getMetering()
  */
-class DescribeLicenseRequest extends \RpcAcsRequest
+class PushMeteringDataRequest extends \RpcAcsRequest
 {
 
     /**
@@ -25,20 +25,20 @@ class DescribeLicenseRequest extends \RpcAcsRequest
         parent::__construct(
             'Market',
             '2015-11-01',
-            'DescribeLicense',
+            'PushMeteringData',
             'yunmarket'
         );
     }
 
     /**
-     * @param string $licenseCode
+     * @param string $metering
      *
      * @return $this
      */
-    public function setLicenseCode($licenseCode)
+    public function setMetering($metering)
     {
-        $this->requestParameters['LicenseCode'] = $licenseCode;
-        $this->queryParameters['LicenseCode'] = $licenseCode;
+        $this->requestParameters['Metering'] = $metering;
+        $this->queryParameters['Metering'] = $metering;
 
         return $this;
     }

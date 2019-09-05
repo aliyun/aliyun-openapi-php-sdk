@@ -5,11 +5,11 @@ namespace Market\Request\V20151101;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeLicense
+ * Request of DescribeRate
  *
- * @method string getLicenseCode()
+ * @method string getOrderId()
  */
-class DescribeLicenseRequest extends \RpcAcsRequest
+class DescribeRateRequest extends \RpcAcsRequest
 {
 
     /**
@@ -25,20 +25,20 @@ class DescribeLicenseRequest extends \RpcAcsRequest
         parent::__construct(
             'Market',
             '2015-11-01',
-            'DescribeLicense',
+            'DescribeRate',
             'yunmarket'
         );
     }
 
     /**
-     * @param string $licenseCode
+     * @param string $orderId
      *
      * @return $this
      */
-    public function setLicenseCode($licenseCode)
+    public function setOrderId($orderId)
     {
-        $this->requestParameters['LicenseCode'] = $licenseCode;
-        $this->queryParameters['LicenseCode'] = $licenseCode;
+        $this->requestParameters['OrderId'] = $orderId;
+        $this->queryParameters['OrderId'] = $orderId;
 
         return $this;
     }

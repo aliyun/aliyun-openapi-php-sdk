@@ -5,17 +5,17 @@ namespace Market\Request\V20151101;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeLicense
+ * Request of DeleteCommodity
  *
- * @method string getLicenseCode()
+ * @method string getCommodityId()
  */
-class DescribeLicenseRequest extends \RpcAcsRequest
+class DeleteCommodityRequest extends \RpcAcsRequest
 {
 
     /**
      * @var string
      */
-    protected $method = 'POST';
+    protected $method = 'PUT';
 
     /**
      * Class constructor.
@@ -25,20 +25,20 @@ class DescribeLicenseRequest extends \RpcAcsRequest
         parent::__construct(
             'Market',
             '2015-11-01',
-            'DescribeLicense',
+            'DeleteCommodity',
             'yunmarket'
         );
     }
 
     /**
-     * @param string $licenseCode
+     * @param string $commodityId
      *
      * @return $this
      */
-    public function setLicenseCode($licenseCode)
+    public function setCommodityId($commodityId)
     {
-        $this->requestParameters['LicenseCode'] = $licenseCode;
-        $this->queryParameters['LicenseCode'] = $licenseCode;
+        $this->requestParameters['CommodityId'] = $commodityId;
+        $this->queryParameters['CommodityId'] = $commodityId;
 
         return $this;
     }

@@ -1,51 +1,59 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace Market\Request\V20151101;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of ActivateLicense
+ *
+ * @method string getIdentification()
+ * @method string getLicenseCode()
+ */
 class ActivateLicenseRequest extends \RpcAcsRequest
 {
-	function  __construct()
-	{
-		parent::__construct("Market", "2015-11-01", "ActivateLicense");
-	}
 
-	private  $licenseCode;
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
-	private  $identification;
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Market',
+            '2015-11-01',
+            'ActivateLicense',
+            'yunmarket'
+        );
+    }
 
-	public function getLicenseCode() {
-		return $this->licenseCode;
-	}
+    /**
+     * @param string $identification
+     *
+     * @return $this
+     */
+    public function setIdentification($identification)
+    {
+        $this->requestParameters['Identification'] = $identification;
+        $this->queryParameters['Identification'] = $identification;
 
-	public function setLicenseCode($licenseCode) {
-		$this->licenseCode = $licenseCode;
-		$this->queryParameters["LicenseCode"]=$licenseCode;
-	}
+        return $this;
+    }
 
-	public function getIdentification() {
-		return $this->identification;
-	}
+    /**
+     * @param string $licenseCode
+     *
+     * @return $this
+     */
+    public function setLicenseCode($licenseCode)
+    {
+        $this->requestParameters['LicenseCode'] = $licenseCode;
+        $this->queryParameters['LicenseCode'] = $licenseCode;
 
-	public function setIdentification($identification) {
-		$this->identification = $identification;
-		$this->queryParameters["Identification"]=$identification;
-	}
-	
+        return $this;
+    }
 }
