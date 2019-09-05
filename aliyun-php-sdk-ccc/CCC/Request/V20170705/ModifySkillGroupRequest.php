@@ -3,16 +3,19 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of ModifySkillGroup
  *
+ * @method string getAllowPrivateOutboundNumber()
+ * @method string getDescription()
+ * @method string getRoutingStrategy()
+ * @method array getUserIds()
  * @method array getSkillLevels()
  * @method string getInstanceId()
- * @method string getAllowPrivateOutboundNumber()
  * @method array getOutboundPhoneNumberIds()
  * @method string getSkillGroupId()
  * @method string getName()
- * @method string getDescription()
- * @method array getUserIds()
  */
 class ModifySkillGroupRequest extends \RpcAcsRequest
 {
@@ -35,18 +38,72 @@ class ModifySkillGroupRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $skillLevels
+     * @param string $allowPrivateOutboundNumber
      *
      * @return $this
      */
-    public function setSkillLevels(array $skillLevels)
+    public function setAllowPrivateOutboundNumber($allowPrivateOutboundNumber)
     {
-        $this->requestParameters['SkillLevels'] = $skillLevels;
-        foreach ($skillLevels as $i => $iValue) {
-            $this->queryParameters['SkillLevel.' . ($i + 1)] = $iValue;
-        }
+        $this->requestParameters['AllowPrivateOutboundNumber'] = $allowPrivateOutboundNumber;
+        $this->queryParameters['AllowPrivateOutboundNumber'] = $allowPrivateOutboundNumber;
 
         return $this;
+    }
+
+    /**
+     * @param string $description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * @param string $routingStrategy
+     *
+     * @return $this
+     */
+    public function setRoutingStrategy($routingStrategy)
+    {
+        $this->requestParameters['RoutingStrategy'] = $routingStrategy;
+        $this->queryParameters['RoutingStrategy'] = $routingStrategy;
+
+        return $this;
+    }
+
+    /**
+     * @param array $userId
+     *
+     * @return $this
+     */
+	public function setUserIds(array $userId)
+	{
+	    $this->requestParameters['UserIds'] = $userId;
+		foreach ($userId as $i => $iValue) {
+			$this->queryParameters['UserId.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
+    }
+
+    /**
+     * @param array $skillLevel
+     *
+     * @return $this
+     */
+	public function setSkillLevels(array $skillLevel)
+	{
+	    $this->requestParameters['SkillLevels'] = $skillLevel;
+		foreach ($skillLevel as $i => $iValue) {
+			$this->queryParameters['SkillLevel.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
     }
 
     /**
@@ -63,31 +120,18 @@ class ModifySkillGroupRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $allowPrivateOutboundNumber
+     * @param array $outboundPhoneNumberId
      *
      * @return $this
      */
-    public function setAllowPrivateOutboundNumber($allowPrivateOutboundNumber)
-    {
-        $this->requestParameters['AllowPrivateOutboundNumber'] = $allowPrivateOutboundNumber;
-        $this->queryParameters['AllowPrivateOutboundNumber'] = $allowPrivateOutboundNumber;
+	public function setOutboundPhoneNumberIds(array $outboundPhoneNumberId)
+	{
+	    $this->requestParameters['OutboundPhoneNumberIds'] = $outboundPhoneNumberId;
+		foreach ($outboundPhoneNumberId as $i => $iValue) {
+			$this->queryParameters['OutboundPhoneNumberId.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
-    }
-
-    /**
-     * @param array $outboundPhoneNumberIds
-     *
-     * @return $this
-     */
-    public function setOutboundPhoneNumberIds(array $outboundPhoneNumberIds)
-    {
-        $this->requestParameters['OutboundPhoneNumberIds'] = $outboundPhoneNumberIds;
-        foreach ($outboundPhoneNumberIds as $i => $iValue) {
-            $this->queryParameters['OutboundPhoneNumberId.' . ($i + 1)] = $iValue;
-        }
-
-        return $this;
+		return $this;
     }
 
     /**
@@ -112,34 +156,6 @@ class ModifySkillGroupRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Name'] = $name;
         $this->queryParameters['Name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * @param string $description
-     *
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->requestParameters['Description'] = $description;
-        $this->queryParameters['Description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * @param array $userIds
-     *
-     * @return $this
-     */
-    public function setUserIds(array $userIds)
-    {
-        $this->requestParameters['UserIds'] = $userIds;
-        foreach ($userIds as $i => $iValue) {
-            $this->queryParameters['UserId.' . ($i + 1)] = $iValue;
-        }
 
         return $this;
     }

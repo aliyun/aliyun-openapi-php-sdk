@@ -3,16 +3,18 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of ListAgentSummaryReportsByInterval
  *
  * @method string getAgentIds()
+ * @method string getEndTime()
+ * @method string getStartTime()
+ * @method string getPageNumber()
  * @method string getInstanceId()
  * @method string getSkillGroupId()
  * @method string getPageSize()
- * @method string getEndTime()
  * @method string getInterval()
- * @method string getStartTime()
- * @method string getPageNumber()
  */
 class ListAgentSummaryReportsByIntervalRequest extends \RpcAcsRequest
 {
@@ -43,6 +45,45 @@ class ListAgentSummaryReportsByIntervalRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AgentIds'] = $agentIds;
         $this->queryParameters['AgentIds'] = $agentIds;
+
+        return $this;
+    }
+
+    /**
+     * @param string $endTime
+     *
+     * @return $this
+     */
+    public function setEndTime($endTime)
+    {
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }
@@ -87,19 +128,6 @@ class ListAgentSummaryReportsByIntervalRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $endTime
-     *
-     * @return $this
-     */
-    public function setEndTime($endTime)
-    {
-        $this->requestParameters['EndTime'] = $endTime;
-        $this->queryParameters['EndTime'] = $endTime;
-
-        return $this;
-    }
-
-    /**
      * @param string $interval
      *
      * @return $this
@@ -108,32 +136,6 @@ class ListAgentSummaryReportsByIntervalRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Interval'] = $interval;
         $this->queryParameters['Interval'] = $interval;
-
-        return $this;
-    }
-
-    /**
-     * @param string $startTime
-     *
-     * @return $this
-     */
-    public function setStartTime($startTime)
-    {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

@@ -3,12 +3,14 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of FindUsers
  *
- * @method string getInstanceId()
  * @method string getCriteria()
- * @method string getPageSize()
  * @method string getPageNumber()
+ * @method string getInstanceId()
+ * @method string getPageSize()
  */
 class FindUsersRequest extends \RpcAcsRequest
 {
@@ -31,19 +33,6 @@ class FindUsersRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $criteria
      *
      * @return $this
@@ -57,19 +46,6 @@ class FindUsersRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
      * @param string $pageNumber
      *
      * @return $this
@@ -78,6 +54,32 @@ class FindUsersRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageNumber'] = $pageNumber;
         $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }

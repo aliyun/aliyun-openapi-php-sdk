@@ -3,6 +3,8 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of RemoveUsers
  *
  * @method string getInstanceId()
@@ -42,17 +44,17 @@ class RemoveUsersRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $userIds
+     * @param array $userId
      *
      * @return $this
      */
-    public function setUserIds(array $userIds)
-    {
-        $this->requestParameters['UserIds'] = $userIds;
-        foreach ($userIds as $i => $iValue) {
-            $this->queryParameters['UserId.' . ($i + 1)] = $iValue;
-        }
+	public function setUserIds(array $userId)
+	{
+	    $this->requestParameters['UserIds'] = $userId;
+		foreach ($userId as $i => $iValue) {
+			$this->queryParameters['UserId.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 }

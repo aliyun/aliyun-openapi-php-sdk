@@ -3,13 +3,15 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of ListAgentSummaryReportsSinceMidnight
  *
  * @method string getAgentIds()
+ * @method string getPageNumber()
  * @method string getInstanceId()
  * @method string getSkillGroupId()
  * @method string getPageSize()
- * @method string getPageNumber()
  */
 class ListAgentSummaryReportsSinceMidnightRequest extends \RpcAcsRequest
 {
@@ -40,6 +42,19 @@ class ListAgentSummaryReportsSinceMidnightRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AgentIds'] = $agentIds;
         $this->queryParameters['AgentIds'] = $agentIds;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }
@@ -79,19 +94,6 @@ class ListAgentSummaryReportsSinceMidnightRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageSize'] = $pageSize;
         $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

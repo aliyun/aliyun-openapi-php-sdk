@@ -3,12 +3,14 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of ListMedias
  *
+ * @method string getPageNumber()
  * @method string getInstanceId()
  * @method string getPageSize()
  * @method string getNamePrefix()
- * @method string getPageNumber()
  */
 class ListMediasRequest extends \RpcAcsRequest
 {
@@ -28,6 +30,19 @@ class ListMediasRequest extends \RpcAcsRequest
             '2017-07-05',
             'ListMedias'
         );
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
     }
 
     /**
@@ -65,19 +80,6 @@ class ListMediasRequest extends \RpcAcsRequest
     {
         $this->requestParameters['NamePrefix'] = $namePrefix;
         $this->queryParameters['NamePrefix'] = $namePrefix;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

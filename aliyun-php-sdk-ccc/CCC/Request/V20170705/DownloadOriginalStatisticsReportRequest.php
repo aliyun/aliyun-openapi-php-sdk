@@ -3,6 +3,8 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DownloadOriginalStatisticsReport
  *
  * @method string getInstanceId()

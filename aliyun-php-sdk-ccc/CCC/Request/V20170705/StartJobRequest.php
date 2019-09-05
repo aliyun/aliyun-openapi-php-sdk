@@ -3,12 +3,14 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of StartJob
  *
+ * @method string getGroupId()
  * @method string getJobJson()
  * @method array getCallingNumbers()
  * @method string getInstanceId()
- * @method string getGroupId()
  * @method string getSelfHostedCallCenter()
  * @method string getScenarioId()
  */
@@ -33,6 +35,19 @@ class StartJobRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $groupId
+     *
+     * @return $this
+     */
+    public function setGroupId($groupId)
+    {
+        $this->requestParameters['GroupId'] = $groupId;
+        $this->queryParameters['GroupId'] = $groupId;
+
+        return $this;
+    }
+
+    /**
      * @param string $jobJson
      *
      * @return $this
@@ -46,18 +61,18 @@ class StartJobRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $callingNumbers
+     * @param array $callingNumber
      *
      * @return $this
      */
-    public function setCallingNumbers(array $callingNumbers)
-    {
-        $this->requestParameters['CallingNumbers'] = $callingNumbers;
-        foreach ($callingNumbers as $i => $iValue) {
-            $this->queryParameters['CallingNumber.' . ($i + 1)] = $iValue;
-        }
+	public function setCallingNumbers(array $callingNumber)
+	{
+	    $this->requestParameters['CallingNumbers'] = $callingNumber;
+		foreach ($callingNumber as $i => $iValue) {
+			$this->queryParameters['CallingNumber.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 
     /**
@@ -69,19 +84,6 @@ class StartJobRequest extends \RpcAcsRequest
     {
         $this->requestParameters['InstanceId'] = $instanceId;
         $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $groupId
-     *
-     * @return $this
-     */
-    public function setGroupId($groupId)
-    {
-        $this->requestParameters['GroupId'] = $groupId;
-        $this->queryParameters['GroupId'] = $groupId;
 
         return $this;
     }

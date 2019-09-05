@@ -3,12 +3,14 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of ListSkillGroupStates
  *
+ * @method string getPageNumber()
  * @method string getInstanceId()
  * @method string getSkillGroupIds()
  * @method string getPageSize()
- * @method string getPageNumber()
  */
 class ListSkillGroupStatesRequest extends \RpcAcsRequest
 {
@@ -28,6 +30,19 @@ class ListSkillGroupStatesRequest extends \RpcAcsRequest
             '2017-07-05',
             'ListSkillGroupStates'
         );
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
     }
 
     /**
@@ -65,19 +80,6 @@ class ListSkillGroupStatesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageSize'] = $pageSize;
         $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

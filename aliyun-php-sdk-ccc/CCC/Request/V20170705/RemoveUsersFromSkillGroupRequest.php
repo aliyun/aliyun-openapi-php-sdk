@@ -3,11 +3,13 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of RemoveUsersFromSkillGroup
  *
+ * @method array getUserIds()
  * @method string getInstanceId()
  * @method string getSkillGroupId()
- * @method array getUserIds()
  */
 class RemoveUsersFromSkillGroupRequest extends \RpcAcsRequest
 {
@@ -27,6 +29,21 @@ class RemoveUsersFromSkillGroupRequest extends \RpcAcsRequest
             '2017-07-05',
             'RemoveUsersFromSkillGroup'
         );
+    }
+
+    /**
+     * @param array $userId
+     *
+     * @return $this
+     */
+	public function setUserIds(array $userId)
+	{
+	    $this->requestParameters['UserIds'] = $userId;
+		foreach ($userId as $i => $iValue) {
+			$this->queryParameters['UserId.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
     }
 
     /**
@@ -51,21 +68,6 @@ class RemoveUsersFromSkillGroupRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SkillGroupId'] = $skillGroupId;
         $this->queryParameters['SkillGroupId'] = $skillGroupId;
-
-        return $this;
-    }
-
-    /**
-     * @param array $userIds
-     *
-     * @return $this
-     */
-    public function setUserIds(array $userIds)
-    {
-        $this->requestParameters['UserIds'] = $userIds;
-        foreach ($userIds as $i => $iValue) {
-            $this->queryParameters['UserId.' . ($i + 1)] = $iValue;
-        }
 
         return $this;
     }

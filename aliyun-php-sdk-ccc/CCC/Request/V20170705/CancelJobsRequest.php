@@ -3,13 +3,15 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of CancelJobs
  *
  * @method string getAll()
- * @method array getJobIds()
- * @method string getInstanceId()
  * @method array getJobReferenceIds()
  * @method string getGroupId()
+ * @method array getJobIds()
+ * @method string getInstanceId()
  * @method string getScenarioId()
  */
 class CancelJobsRequest extends \RpcAcsRequest
@@ -46,46 +48,18 @@ class CancelJobsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $jobIds
+     * @param array $jobReferenceId
      *
      * @return $this
      */
-    public function setJobIds(array $jobIds)
-    {
-        $this->requestParameters['JobIds'] = $jobIds;
-        foreach ($jobIds as $i => $iValue) {
-            $this->queryParameters['JobId.' . ($i + 1)] = $iValue;
-        }
+	public function setJobReferenceIds(array $jobReferenceId)
+	{
+	    $this->requestParameters['JobReferenceIds'] = $jobReferenceId;
+		foreach ($jobReferenceId as $i => $iValue) {
+			$this->queryParameters['JobReferenceId.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
-    }
-
-    /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param array $jobReferenceIds
-     *
-     * @return $this
-     */
-    public function setJobReferenceIds(array $jobReferenceIds)
-    {
-        $this->requestParameters['JobReferenceIds'] = $jobReferenceIds;
-        foreach ($jobReferenceIds as $i => $iValue) {
-            $this->queryParameters['JobReferenceId.' . ($i + 1)] = $iValue;
-        }
-
-        return $this;
+		return $this;
     }
 
     /**
@@ -97,6 +71,34 @@ class CancelJobsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['GroupId'] = $groupId;
         $this->queryParameters['GroupId'] = $groupId;
+
+        return $this;
+    }
+
+    /**
+     * @param array $jobId
+     *
+     * @return $this
+     */
+	public function setJobIds(array $jobId)
+	{
+	    $this->requestParameters['JobIds'] = $jobId;
+		foreach ($jobId as $i => $iValue) {
+			$this->queryParameters['JobId.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

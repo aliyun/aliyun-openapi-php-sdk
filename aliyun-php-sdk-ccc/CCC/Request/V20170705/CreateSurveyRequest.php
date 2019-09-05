@@ -3,17 +3,19 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of CreateSurvey
  *
- * @method string getInstanceId()
  * @method string getRole()
+ * @method string getDescription()
+ * @method string getSpeechOptimizationParam()
+ * @method string getInstanceId()
  * @method string getRound()
  * @method string getFlowJson()
  * @method string getName()
  * @method string getGlobalQuestions()
- * @method string getDescription()
  * @method string getCorpora()
- * @method string getSpeechOptimizationParam()
  * @method string getScenarioId()
  */
 class CreateSurveyRequest extends \RpcAcsRequest
@@ -37,19 +39,6 @@ class CreateSurveyRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $role
      *
      * @return $this
@@ -58,6 +47,45 @@ class CreateSurveyRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Role'] = $role;
         $this->queryParameters['Role'] = $role;
+
+        return $this;
+    }
+
+    /**
+     * @param string $description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * @param string $speechOptimizationParam
+     *
+     * @return $this
+     */
+    public function setSpeechOptimizationParam($speechOptimizationParam)
+    {
+        $this->requestParameters['SpeechOptimizationParam'] = $speechOptimizationParam;
+        $this->queryParameters['SpeechOptimizationParam'] = $speechOptimizationParam;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }
@@ -115,19 +143,6 @@ class CreateSurveyRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $description
-     *
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->requestParameters['Description'] = $description;
-        $this->queryParameters['Description'] = $description;
-
-        return $this;
-    }
-
-    /**
      * @param string $corpora
      *
      * @return $this
@@ -136,19 +151,6 @@ class CreateSurveyRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Corpora'] = $corpora;
         $this->queryParameters['Corpora'] = $corpora;
-
-        return $this;
-    }
-
-    /**
-     * @param string $speechOptimizationParam
-     *
-     * @return $this
-     */
-    public function setSpeechOptimizationParam($speechOptimizationParam)
-    {
-        $this->requestParameters['SpeechOptimizationParam'] = $speechOptimizationParam;
-        $this->queryParameters['SpeechOptimizationParam'] = $speechOptimizationParam;
 
         return $this;
     }

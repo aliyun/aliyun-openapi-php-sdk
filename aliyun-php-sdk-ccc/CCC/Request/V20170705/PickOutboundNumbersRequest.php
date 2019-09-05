@@ -3,10 +3,12 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of PickOutboundNumbers
  *
- * @method string getInstanceId()
  * @method string getCount()
+ * @method string getInstanceId()
  * @method array getCandidateNumbers()
  * @method string getCalleeNumber()
  */
@@ -31,19 +33,6 @@ class PickOutboundNumbersRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $count
      *
      * @return $this
@@ -57,18 +46,31 @@ class PickOutboundNumbersRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $candidateNumbers
+     * @param string $instanceId
      *
      * @return $this
      */
-    public function setCandidateNumbers(array $candidateNumbers)
+    public function setInstanceId($instanceId)
     {
-        $this->requestParameters['CandidateNumbers'] = $candidateNumbers;
-        foreach ($candidateNumbers as $i => $iValue) {
-            $this->queryParameters['CandidateNumber.' . ($i + 1)] = $iValue;
-        }
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
+    }
+
+    /**
+     * @param array $candidateNumber
+     *
+     * @return $this
+     */
+	public function setCandidateNumbers(array $candidateNumber)
+	{
+	    $this->requestParameters['CandidateNumbers'] = $candidateNumber;
+		foreach ($candidateNumber as $i => $iValue) {
+			$this->queryParameters['CandidateNumber.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
     }
 
     /**

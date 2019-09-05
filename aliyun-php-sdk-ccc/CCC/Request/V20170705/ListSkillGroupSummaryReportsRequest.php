@@ -3,14 +3,16 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of ListSkillGroupSummaryReports
  *
- * @method string getInstanceId()
- * @method string getSkillGroupIds()
- * @method string getPageSize()
  * @method string getEndTime()
  * @method string getStartTime()
  * @method string getPageNumber()
+ * @method string getInstanceId()
+ * @method string getSkillGroupIds()
+ * @method string getPageSize()
  */
 class ListSkillGroupSummaryReportsRequest extends \RpcAcsRequest
 {
@@ -30,45 +32,6 @@ class ListSkillGroupSummaryReportsRequest extends \RpcAcsRequest
             '2017-07-05',
             'ListSkillGroupSummaryReports'
         );
-    }
-
-    /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $skillGroupIds
-     *
-     * @return $this
-     */
-    public function setSkillGroupIds($skillGroupIds)
-    {
-        $this->requestParameters['SkillGroupIds'] = $skillGroupIds;
-        $this->queryParameters['SkillGroupIds'] = $skillGroupIds;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
     }
 
     /**
@@ -106,6 +69,45 @@ class ListSkillGroupSummaryReportsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageNumber'] = $pageNumber;
         $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $skillGroupIds
+     *
+     * @return $this
+     */
+    public function setSkillGroupIds($skillGroupIds)
+    {
+        $this->requestParameters['SkillGroupIds'] = $skillGroupIds;
+        $this->queryParameters['SkillGroupIds'] = $skillGroupIds;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }

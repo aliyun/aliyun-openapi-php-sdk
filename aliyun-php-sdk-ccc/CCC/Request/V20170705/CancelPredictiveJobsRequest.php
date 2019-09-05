@@ -3,6 +3,8 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of CancelPredictiveJobs
  *
  * @method string getAll()
@@ -44,18 +46,18 @@ class CancelPredictiveJobsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $jobIds
+     * @param array $jobId
      *
      * @return $this
      */
-    public function setJobIds(array $jobIds)
-    {
-        $this->requestParameters['JobIds'] = $jobIds;
-        foreach ($jobIds as $i => $iValue) {
-            $this->queryParameters['JobId.' . ($i + 1)] = $iValue;
-        }
+	public function setJobIds(array $jobId)
+	{
+	    $this->requestParameters['JobIds'] = $jobId;
+		foreach ($jobId as $i => $iValue) {
+			$this->queryParameters['JobId.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 
     /**

@@ -3,12 +3,14 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of AssignUsers
  *
+ * @method array getRoleIds()
  * @method array getUserRamIds()
  * @method array getSkillLevels()
  * @method string getInstanceId()
- * @method array getRoleIds()
  * @method array getSkillGroupIds()
  */
 class AssignUsersRequest extends \RpcAcsRequest
@@ -32,33 +34,48 @@ class AssignUsersRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $userRamIds
+     * @param array $roleId
      *
      * @return $this
      */
-    public function setUserRamIds(array $userRamIds)
-    {
-        $this->requestParameters['UserRamIds'] = $userRamIds;
-        foreach ($userRamIds as $i => $iValue) {
-            $this->queryParameters['UserRamId.' . ($i + 1)] = $iValue;
-        }
+	public function setRoleIds(array $roleId)
+	{
+	    $this->requestParameters['RoleIds'] = $roleId;
+		foreach ($roleId as $i => $iValue) {
+			$this->queryParameters['RoleId.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 
     /**
-     * @param array $skillLevels
+     * @param array $userRamId
      *
      * @return $this
      */
-    public function setSkillLevels(array $skillLevels)
-    {
-        $this->requestParameters['SkillLevels'] = $skillLevels;
-        foreach ($skillLevels as $i => $iValue) {
-            $this->queryParameters['SkillLevel.' . ($i + 1)] = $iValue;
-        }
+	public function setUserRamIds(array $userRamId)
+	{
+	    $this->requestParameters['UserRamIds'] = $userRamId;
+		foreach ($userRamId as $i => $iValue) {
+			$this->queryParameters['UserRamId.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
+    }
+
+    /**
+     * @param array $skillLevel
+     *
+     * @return $this
+     */
+	public function setSkillLevels(array $skillLevel)
+	{
+	    $this->requestParameters['SkillLevels'] = $skillLevel;
+		foreach ($skillLevel as $i => $iValue) {
+			$this->queryParameters['SkillLevel.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
     }
 
     /**
@@ -75,32 +92,17 @@ class AssignUsersRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $roleIds
+     * @param array $skillGroupId
      *
      * @return $this
      */
-    public function setRoleIds(array $roleIds)
-    {
-        $this->requestParameters['RoleIds'] = $roleIds;
-        foreach ($roleIds as $i => $iValue) {
-            $this->queryParameters['RoleId.' . ($i + 1)] = $iValue;
-        }
+	public function setSkillGroupIds(array $skillGroupId)
+	{
+	    $this->requestParameters['SkillGroupIds'] = $skillGroupId;
+		foreach ($skillGroupId as $i => $iValue) {
+			$this->queryParameters['SkillGroupId.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
-    }
-
-    /**
-     * @param array $skillGroupIds
-     *
-     * @return $this
-     */
-    public function setSkillGroupIds(array $skillGroupIds)
-    {
-        $this->requestParameters['SkillGroupIds'] = $skillGroupIds;
-        foreach ($skillGroupIds as $i => $iValue) {
-            $this->queryParameters['SkillGroupId.' . ($i + 1)] = $iValue;
-        }
-
-        return $this;
+		return $this;
     }
 }

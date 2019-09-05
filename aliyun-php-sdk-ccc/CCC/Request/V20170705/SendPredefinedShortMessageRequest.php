@@ -3,10 +3,12 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of SendPredefinedShortMessage
  *
- * @method string getInstanceId()
  * @method string getPhoneNumbers()
+ * @method string getInstanceId()
  * @method string getConfigId()
  * @method string getTemplateParam()
  */
@@ -31,19 +33,6 @@ class SendPredefinedShortMessageRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $phoneNumbers
      *
      * @return $this
@@ -52,6 +41,19 @@ class SendPredefinedShortMessageRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PhoneNumbers'] = $phoneNumbers;
         $this->queryParameters['PhoneNumbers'] = $phoneNumbers;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

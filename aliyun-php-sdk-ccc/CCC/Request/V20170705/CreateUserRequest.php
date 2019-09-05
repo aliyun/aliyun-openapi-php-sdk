@@ -3,14 +3,16 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of CreateUser
  *
  * @method string getPrivateOutboundNumberId()
+ * @method string getLoginName()
+ * @method array getRoleIds()
  * @method array getSkillLevels()
  * @method string getInstanceId()
- * @method string getLoginName()
  * @method string getPhone()
- * @method array getRoleIds()
  * @method string getDisplayName()
  * @method array getSkillGroupIds()
  * @method string getEmail()
@@ -49,18 +51,46 @@ class CreateUserRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $skillLevels
+     * @param string $loginName
      *
      * @return $this
      */
-    public function setSkillLevels(array $skillLevels)
+    public function setLoginName($loginName)
     {
-        $this->requestParameters['SkillLevels'] = $skillLevels;
-        foreach ($skillLevels as $i => $iValue) {
-            $this->queryParameters['SkillLevel.' . ($i + 1)] = $iValue;
-        }
+        $this->requestParameters['LoginName'] = $loginName;
+        $this->queryParameters['LoginName'] = $loginName;
 
         return $this;
+    }
+
+    /**
+     * @param array $roleId
+     *
+     * @return $this
+     */
+	public function setRoleIds(array $roleId)
+	{
+	    $this->requestParameters['RoleIds'] = $roleId;
+		foreach ($roleId as $i => $iValue) {
+			$this->queryParameters['RoleId.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
+    }
+
+    /**
+     * @param array $skillLevel
+     *
+     * @return $this
+     */
+	public function setSkillLevels(array $skillLevel)
+	{
+	    $this->requestParameters['SkillLevels'] = $skillLevel;
+		foreach ($skillLevel as $i => $iValue) {
+			$this->queryParameters['SkillLevel.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
     }
 
     /**
@@ -72,19 +102,6 @@ class CreateUserRequest extends \RpcAcsRequest
     {
         $this->requestParameters['InstanceId'] = $instanceId;
         $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $loginName
-     *
-     * @return $this
-     */
-    public function setLoginName($loginName)
-    {
-        $this->requestParameters['LoginName'] = $loginName;
-        $this->queryParameters['LoginName'] = $loginName;
 
         return $this;
     }
@@ -103,21 +120,6 @@ class CreateUserRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $roleIds
-     *
-     * @return $this
-     */
-    public function setRoleIds(array $roleIds)
-    {
-        $this->requestParameters['RoleIds'] = $roleIds;
-        foreach ($roleIds as $i => $iValue) {
-            $this->queryParameters['RoleId.' . ($i + 1)] = $iValue;
-        }
-
-        return $this;
-    }
-
-    /**
      * @param string $displayName
      *
      * @return $this
@@ -131,18 +133,18 @@ class CreateUserRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $skillGroupIds
+     * @param array $skillGroupId
      *
      * @return $this
      */
-    public function setSkillGroupIds(array $skillGroupIds)
-    {
-        $this->requestParameters['SkillGroupIds'] = $skillGroupIds;
-        foreach ($skillGroupIds as $i => $iValue) {
-            $this->queryParameters['SkillGroupId.' . ($i + 1)] = $iValue;
-        }
+	public function setSkillGroupIds(array $skillGroupId)
+	{
+	    $this->requestParameters['SkillGroupIds'] = $skillGroupId;
+		foreach ($skillGroupId as $i => $iValue) {
+			$this->queryParameters['SkillGroupId.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 
     /**

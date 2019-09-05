@@ -3,14 +3,16 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of PreCreateMedia
  *
- * @method string getInstanceId()
- * @method string getFileName()
- * @method string getName()
  * @method string getDescription()
  * @method string getType()
  * @method string getContent()
+ * @method string getInstanceId()
+ * @method string getFileName()
+ * @method string getName()
  */
 class PreCreateMediaRequest extends \RpcAcsRequest
 {
@@ -30,45 +32,6 @@ class PreCreateMediaRequest extends \RpcAcsRequest
             '2017-07-05',
             'PreCreateMedia'
         );
-    }
-
-    /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $fileName
-     *
-     * @return $this
-     */
-    public function setFileName($fileName)
-    {
-        $this->requestParameters['FileName'] = $fileName;
-        $this->queryParameters['FileName'] = $fileName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $name
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->requestParameters['Name'] = $name;
-        $this->queryParameters['Name'] = $name;
-
-        return $this;
     }
 
     /**
@@ -106,6 +69,45 @@ class PreCreateMediaRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Content'] = $content;
         $this->queryParameters['Content'] = $content;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $fileName
+     *
+     * @return $this
+     */
+    public function setFileName($fileName)
+    {
+        $this->requestParameters['FileName'] = $fileName;
+        $this->queryParameters['FileName'] = $fileName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
         return $this;
     }

@@ -3,6 +3,8 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of GetSmsConfig
  *
  * @method string getInstanceId()
@@ -42,17 +44,17 @@ class GetSmsConfigRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $scenarios
+     * @param array $scenario
      *
      * @return $this
      */
-    public function setScenarios(array $scenarios)
-    {
-        $this->requestParameters['Scenarios'] = $scenarios;
-        foreach ($scenarios as $i => $iValue) {
-            $this->queryParameters['Scenario.' . ($i + 1)] = $iValue;
-        }
+	public function setScenarios(array $scenario)
+	{
+	    $this->requestParameters['Scenarios'] = $scenario;
+		foreach ($scenario as $i => $iValue) {
+			$this->queryParameters['Scenario.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 }

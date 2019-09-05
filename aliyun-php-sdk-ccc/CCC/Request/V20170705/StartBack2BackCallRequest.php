@@ -3,12 +3,14 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of StartBack2BackCall
  *
- * @method string getCaller()
- * @method string getInstanceId()
  * @method string getCallCenterNumber()
  * @method string getCallee()
+ * @method string getCaller()
+ * @method string getInstanceId()
  * @method string getWorkflowId()
  */
 class StartBack2BackCallRequest extends \RpcAcsRequest
@@ -29,32 +31,6 @@ class StartBack2BackCallRequest extends \RpcAcsRequest
             '2017-07-05',
             'StartBack2BackCall'
         );
-    }
-
-    /**
-     * @param string $caller
-     *
-     * @return $this
-     */
-    public function setCaller($caller)
-    {
-        $this->requestParameters['Caller'] = $caller;
-        $this->queryParameters['Caller'] = $caller;
-
-        return $this;
-    }
-
-    /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
     }
 
     /**
@@ -79,6 +55,32 @@ class StartBack2BackCallRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Callee'] = $callee;
         $this->queryParameters['Callee'] = $callee;
+
+        return $this;
+    }
+
+    /**
+     * @param string $caller
+     *
+     * @return $this
+     */
+    public function setCaller($caller)
+    {
+        $this->requestParameters['Caller'] = $caller;
+        $this->queryParameters['Caller'] = $caller;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

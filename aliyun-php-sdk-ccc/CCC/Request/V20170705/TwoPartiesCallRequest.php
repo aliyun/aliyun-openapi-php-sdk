@@ -3,11 +3,13 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of TwoPartiesCall
  *
+ * @method string getCalleeCustomer()
  * @method string getCaller()
  * @method string getInstanceId()
- * @method string getCalleeCustomer()
  * @method string getCalleeAgent()
  */
 class TwoPartiesCallRequest extends \RpcAcsRequest
@@ -28,6 +30,19 @@ class TwoPartiesCallRequest extends \RpcAcsRequest
             '2017-07-05',
             'TwoPartiesCall'
         );
+    }
+
+    /**
+     * @param string $calleeCustomer
+     *
+     * @return $this
+     */
+    public function setCalleeCustomer($calleeCustomer)
+    {
+        $this->requestParameters['CalleeCustomer'] = $calleeCustomer;
+        $this->queryParameters['CalleeCustomer'] = $calleeCustomer;
+
+        return $this;
     }
 
     /**
@@ -52,19 +67,6 @@ class TwoPartiesCallRequest extends \RpcAcsRequest
     {
         $this->requestParameters['InstanceId'] = $instanceId;
         $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $calleeCustomer
-     *
-     * @return $this
-     */
-    public function setCalleeCustomer($calleeCustomer)
-    {
-        $this->requestParameters['CalleeCustomer'] = $calleeCustomer;
-        $this->queryParameters['CalleeCustomer'] = $calleeCustomer;
 
         return $this;
     }

@@ -3,13 +3,15 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of CreateScenarioFromTemplate
  *
  * @method string getVariables()
- * @method string getInstanceId()
- * @method string getName()
  * @method string getDescription()
  * @method string getTemplateId()
+ * @method string getInstanceId()
+ * @method string getName()
  */
 class CreateScenarioFromTemplateRequest extends \RpcAcsRequest
 {
@@ -45,32 +47,6 @@ class CreateScenarioFromTemplateRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $name
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->requestParameters['Name'] = $name;
-        $this->queryParameters['Name'] = $name;
-
-        return $this;
-    }
-
-    /**
      * @param string $description
      *
      * @return $this
@@ -92,6 +68,32 @@ class CreateScenarioFromTemplateRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TemplateId'] = $templateId;
         $this->queryParameters['TemplateId'] = $templateId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
         return $this;
     }

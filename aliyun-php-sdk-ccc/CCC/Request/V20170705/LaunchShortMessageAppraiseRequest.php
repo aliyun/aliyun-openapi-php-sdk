@@ -3,12 +3,14 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of LaunchShortMessageAppraise
  *
- * @method string getAcid()
- * @method string getInstanceId()
  * @method string getContactType()
  * @method string getPhoneNumbers()
+ * @method string getAcid()
+ * @method string getInstanceId()
  * @method string getSkillGroupId()
  */
 class LaunchShortMessageAppraiseRequest extends \RpcAcsRequest
@@ -29,32 +31,6 @@ class LaunchShortMessageAppraiseRequest extends \RpcAcsRequest
             '2017-07-05',
             'LaunchShortMessageAppraise'
         );
-    }
-
-    /**
-     * @param string $acid
-     *
-     * @return $this
-     */
-    public function setAcid($acid)
-    {
-        $this->requestParameters['Acid'] = $acid;
-        $this->queryParameters['Acid'] = $acid;
-
-        return $this;
-    }
-
-    /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
     }
 
     /**
@@ -79,6 +55,32 @@ class LaunchShortMessageAppraiseRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PhoneNumbers'] = $phoneNumbers;
         $this->queryParameters['PhoneNumbers'] = $phoneNumbers;
+
+        return $this;
+    }
+
+    /**
+     * @param string $acid
+     *
+     * @return $this
+     */
+    public function setAcid($acid)
+    {
+        $this->requestParameters['Acid'] = $acid;
+        $this->queryParameters['Acid'] = $acid;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

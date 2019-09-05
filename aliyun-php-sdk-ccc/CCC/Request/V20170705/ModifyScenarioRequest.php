@@ -3,12 +3,14 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of ModifyScenario
  *
  * @method string getVariables()
+ * @method string getDescription()
  * @method string getInstanceId()
  * @method string getName()
- * @method string getDescription()
  * @method string getScenarioId()
  */
 class ModifyScenarioRequest extends \RpcAcsRequest
@@ -45,6 +47,19 @@ class ModifyScenarioRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
+
+        return $this;
+    }
+
+    /**
      * @param string $instanceId
      *
      * @return $this
@@ -66,19 +81,6 @@ class ModifyScenarioRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Name'] = $name;
         $this->queryParameters['Name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * @param string $description
-     *
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->requestParameters['Description'] = $description;
-        $this->queryParameters['Description'] = $description;
 
         return $this;
     }

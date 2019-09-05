@@ -3,14 +3,16 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of AssignJobs
  *
+ * @method string getGroupId()
+ * @method array getJobsJsons()
  * @method array getCallingNumbers()
  * @method string getInstanceId()
- * @method string getGroupId()
  * @method string getStrategyJson()
  * @method string getScenarioId()
- * @method array getJobsJsons()
  */
 class AssignJobsRequest extends \RpcAcsRequest
 {
@@ -33,18 +35,46 @@ class AssignJobsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $callingNumbers
+     * @param string $groupId
      *
      * @return $this
      */
-    public function setCallingNumbers(array $callingNumbers)
+    public function setGroupId($groupId)
     {
-        $this->requestParameters['CallingNumbers'] = $callingNumbers;
-        foreach ($callingNumbers as $i => $iValue) {
-            $this->queryParameters['CallingNumber.' . ($i + 1)] = $iValue;
-        }
+        $this->requestParameters['GroupId'] = $groupId;
+        $this->queryParameters['GroupId'] = $groupId;
 
         return $this;
+    }
+
+    /**
+     * @param array $jobsJson
+     *
+     * @return $this
+     */
+	public function setJobsJsons(array $jobsJson)
+	{
+	    $this->requestParameters['JobsJsons'] = $jobsJson;
+		foreach ($jobsJson as $i => $iValue) {
+			$this->queryParameters['JobsJson.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
+    }
+
+    /**
+     * @param array $callingNumber
+     *
+     * @return $this
+     */
+	public function setCallingNumbers(array $callingNumber)
+	{
+	    $this->requestParameters['CallingNumbers'] = $callingNumber;
+		foreach ($callingNumber as $i => $iValue) {
+			$this->queryParameters['CallingNumber.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
     }
 
     /**
@@ -56,19 +86,6 @@ class AssignJobsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['InstanceId'] = $instanceId;
         $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $groupId
-     *
-     * @return $this
-     */
-    public function setGroupId($groupId)
-    {
-        $this->requestParameters['GroupId'] = $groupId;
-        $this->queryParameters['GroupId'] = $groupId;
 
         return $this;
     }
@@ -95,21 +112,6 @@ class AssignJobsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ScenarioId'] = $scenarioId;
         $this->queryParameters['ScenarioId'] = $scenarioId;
-
-        return $this;
-    }
-
-    /**
-     * @param array $jobsJsons
-     *
-     * @return $this
-     */
-    public function setJobsJsons(array $jobsJsons)
-    {
-        $this->requestParameters['JobsJsons'] = $jobsJsons;
-        foreach ($jobsJsons as $i => $iValue) {
-            $this->queryParameters['JobsJson.' . ($i + 1)] = $iValue;
-        }
 
         return $this;
     }

@@ -3,13 +3,15 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of CreateJobGroup
  *
+ * @method string getDescription()
  * @method array getCallingNumbers()
  * @method string getInstanceId()
  * @method string getStrategyJson()
  * @method string getName()
- * @method string getDescription()
  * @method string getScenarioId()
  */
 class CreateJobGroupRequest extends \RpcAcsRequest
@@ -33,18 +35,31 @@ class CreateJobGroupRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $callingNumbers
+     * @param string $description
      *
      * @return $this
      */
-    public function setCallingNumbers(array $callingNumbers)
+    public function setDescription($description)
     {
-        $this->requestParameters['CallingNumbers'] = $callingNumbers;
-        foreach ($callingNumbers as $i => $iValue) {
-            $this->queryParameters['CallingNumber.' . ($i + 1)] = $iValue;
-        }
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
 
         return $this;
+    }
+
+    /**
+     * @param array $callingNumber
+     *
+     * @return $this
+     */
+	public function setCallingNumbers(array $callingNumber)
+	{
+	    $this->requestParameters['CallingNumbers'] = $callingNumber;
+		foreach ($callingNumber as $i => $iValue) {
+			$this->queryParameters['CallingNumber.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
     }
 
     /**
@@ -82,19 +97,6 @@ class CreateJobGroupRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Name'] = $name;
         $this->queryParameters['Name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * @param string $description
-     *
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->requestParameters['Description'] = $description;
-        $this->queryParameters['Description'] = $description;
 
         return $this;
     }

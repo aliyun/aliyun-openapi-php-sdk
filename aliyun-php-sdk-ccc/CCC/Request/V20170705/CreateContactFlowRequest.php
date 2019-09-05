@@ -3,14 +3,16 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of CreateContactFlow
  *
  * @method string getCanvas()
- * @method string getInstanceId()
- * @method string getName()
  * @method string getDescription()
  * @method string getType()
  * @method string getContent()
+ * @method string getInstanceId()
+ * @method string getName()
  */
 class CreateContactFlowRequest extends \RpcAcsRequest
 {
@@ -41,32 +43,6 @@ class CreateContactFlowRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Canvas'] = $canvas;
         $this->queryParameters['Canvas'] = $canvas;
-
-        return $this;
-    }
-
-    /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $name
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->requestParameters['Name'] = $name;
-        $this->queryParameters['Name'] = $name;
 
         return $this;
     }
@@ -106,6 +82,32 @@ class CreateContactFlowRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Content'] = $content;
         $this->queryParameters['Content'] = $content;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
         return $this;
     }

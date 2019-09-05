@@ -3,14 +3,17 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of Dialogue
  *
  * @method string getCallId()
+ * @method string getActionParams()
  * @method string getCallingNumber()
  * @method string getInstanceId()
  * @method string getCalledNumber()
+ * @method string getInstanceOwnerId()
  * @method string getActionKey()
- * @method string getActionParams()
  * @method string getCallType()
  * @method string getScenarioId()
  * @method string getTaskId()
@@ -45,6 +48,19 @@ class DialogueRequest extends \RpcAcsRequest
     {
         $this->requestParameters['CallId'] = $callId;
         $this->queryParameters['CallId'] = $callId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $actionParams
+     *
+     * @return $this
+     */
+    public function setActionParams($actionParams)
+    {
+        $this->requestParameters['ActionParams'] = $actionParams;
+        $this->queryParameters['ActionParams'] = $actionParams;
 
         return $this;
     }
@@ -89,6 +105,19 @@ class DialogueRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $instanceOwnerId
+     *
+     * @return $this
+     */
+    public function setInstanceOwnerId($instanceOwnerId)
+    {
+        $this->requestParameters['InstanceOwnerId'] = $instanceOwnerId;
+        $this->queryParameters['InstanceOwnerId'] = $instanceOwnerId;
+
+        return $this;
+    }
+
+    /**
      * @param string $actionKey
      *
      * @return $this
@@ -97,19 +126,6 @@ class DialogueRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ActionKey'] = $actionKey;
         $this->queryParameters['ActionKey'] = $actionKey;
-
-        return $this;
-    }
-
-    /**
-     * @param string $actionParams
-     *
-     * @return $this
-     */
-    public function setActionParams($actionParams)
-    {
-        $this->requestParameters['ActionParams'] = $actionParams;
-        $this->queryParameters['ActionParams'] = $actionParams;
 
         return $this;
     }

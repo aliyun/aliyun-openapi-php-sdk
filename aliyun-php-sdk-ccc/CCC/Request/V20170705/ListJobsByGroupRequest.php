@@ -3,14 +3,16 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of ListJobsByGroup
  *
+ * @method string getJobStatus()
+ * @method string getPageNumber()
  * @method string getInstanceId()
  * @method string getJobFailureReason()
- * @method string getJobStatus()
  * @method string getJobGroupId()
  * @method string getPageSize()
- * @method string getPageNumber()
  */
 class ListJobsByGroupRequest extends \RpcAcsRequest
 {
@@ -30,6 +32,32 @@ class ListJobsByGroupRequest extends \RpcAcsRequest
             '2017-07-05',
             'ListJobsByGroup'
         );
+    }
+
+    /**
+     * @param string $jobStatus
+     *
+     * @return $this
+     */
+    public function setJobStatus($jobStatus)
+    {
+        $this->requestParameters['JobStatus'] = $jobStatus;
+        $this->queryParameters['JobStatus'] = $jobStatus;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
     }
 
     /**
@@ -59,19 +87,6 @@ class ListJobsByGroupRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $jobStatus
-     *
-     * @return $this
-     */
-    public function setJobStatus($jobStatus)
-    {
-        $this->requestParameters['JobStatus'] = $jobStatus;
-        $this->queryParameters['JobStatus'] = $jobStatus;
-
-        return $this;
-    }
-
-    /**
      * @param string $jobGroupId
      *
      * @return $this
@@ -93,19 +108,6 @@ class ListJobsByGroupRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageSize'] = $pageSize;
         $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

@@ -3,16 +3,18 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of ListPrivacyNumberCallDetails
  *
  * @method string getAgentId()
- * @method string getInstanceId()
  * @method string getContactId()
- * @method string getAgentName()
- * @method string getPageSize()
  * @method string getEndTime()
  * @method string getStartTime()
  * @method string getPageNumber()
+ * @method string getInstanceId()
+ * @method string getAgentName()
+ * @method string getPageSize()
  */
 class ListPrivacyNumberCallDetailsRequest extends \RpcAcsRequest
 {
@@ -48,19 +50,6 @@ class ListPrivacyNumberCallDetailsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $contactId
      *
      * @return $this
@@ -69,32 +58,6 @@ class ListPrivacyNumberCallDetailsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ContactId'] = $contactId;
         $this->queryParameters['ContactId'] = $contactId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $agentName
-     *
-     * @return $this
-     */
-    public function setAgentName($agentName)
-    {
-        $this->requestParameters['AgentName'] = $agentName;
-        $this->queryParameters['AgentName'] = $agentName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }
@@ -134,6 +97,45 @@ class ListPrivacyNumberCallDetailsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageNumber'] = $pageNumber;
         $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $agentName
+     *
+     * @return $this
+     */
+    public function setAgentName($agentName)
+    {
+        $this->requestParameters['AgentName'] = $agentName;
+        $this->queryParameters['AgentName'] = $agentName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }

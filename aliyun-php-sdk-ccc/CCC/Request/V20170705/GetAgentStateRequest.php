@@ -3,11 +3,13 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of GetAgentState
  *
  * @method string getAgentId()
- * @method string getInstanceId()
  * @method string getDn()
+ * @method string getInstanceId()
  */
 class GetAgentStateRequest extends \RpcAcsRequest
 {
@@ -43,19 +45,6 @@ class GetAgentStateRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $dn
      *
      * @return $this
@@ -64,6 +53,19 @@ class GetAgentStateRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Dn'] = $dn;
         $this->queryParameters['Dn'] = $dn;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

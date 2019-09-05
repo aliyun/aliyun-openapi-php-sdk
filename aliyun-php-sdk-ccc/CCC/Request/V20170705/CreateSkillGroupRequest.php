@@ -3,14 +3,18 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of CreateSkillGroup
  *
+ * @method string getAllowPrivateOutboundNumber()
+ * @method string getDescription()
+ * @method string getRoutingStrategy()
+ * @method array getUserIds()
  * @method array getSkillLevels()
  * @method string getInstanceId()
  * @method array getOutboundPhoneNumberIds()
  * @method string getName()
- * @method string getDescription()
- * @method array getUserIds()
  */
 class CreateSkillGroupRequest extends \RpcAcsRequest
 {
@@ -33,57 +37,14 @@ class CreateSkillGroupRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $skillLevels
+     * @param string $allowPrivateOutboundNumber
      *
      * @return $this
      */
-    public function setSkillLevels(array $skillLevels)
+    public function setAllowPrivateOutboundNumber($allowPrivateOutboundNumber)
     {
-        $this->requestParameters['SkillLevels'] = $skillLevels;
-        foreach ($skillLevels as $i => $iValue) {
-            $this->queryParameters['SkillLevel.' . ($i + 1)] = $iValue;
-        }
-
-        return $this;
-    }
-
-    /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param array $outboundPhoneNumberIds
-     *
-     * @return $this
-     */
-    public function setOutboundPhoneNumberIds(array $outboundPhoneNumberIds)
-    {
-        $this->requestParameters['OutboundPhoneNumberIds'] = $outboundPhoneNumberIds;
-        foreach ($outboundPhoneNumberIds as $i => $iValue) {
-            $this->queryParameters['OutboundPhoneNumberId.' . ($i + 1)] = $iValue;
-        }
-
-        return $this;
-    }
-
-    /**
-     * @param string $name
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->requestParameters['Name'] = $name;
-        $this->queryParameters['Name'] = $name;
+        $this->requestParameters['AllowPrivateOutboundNumber'] = $allowPrivateOutboundNumber;
+        $this->queryParameters['AllowPrivateOutboundNumber'] = $allowPrivateOutboundNumber;
 
         return $this;
     }
@@ -102,16 +63,85 @@ class CreateSkillGroupRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $userIds
+     * @param string $routingStrategy
      *
      * @return $this
      */
-    public function setUserIds(array $userIds)
+    public function setRoutingStrategy($routingStrategy)
     {
-        $this->requestParameters['UserIds'] = $userIds;
-        foreach ($userIds as $i => $iValue) {
-            $this->queryParameters['UserId.' . ($i + 1)] = $iValue;
-        }
+        $this->requestParameters['RoutingStrategy'] = $routingStrategy;
+        $this->queryParameters['RoutingStrategy'] = $routingStrategy;
+
+        return $this;
+    }
+
+    /**
+     * @param array $userId
+     *
+     * @return $this
+     */
+	public function setUserIds(array $userId)
+	{
+	    $this->requestParameters['UserIds'] = $userId;
+		foreach ($userId as $i => $iValue) {
+			$this->queryParameters['UserId.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
+    }
+
+    /**
+     * @param array $skillLevel
+     *
+     * @return $this
+     */
+	public function setSkillLevels(array $skillLevel)
+	{
+	    $this->requestParameters['SkillLevels'] = $skillLevel;
+		foreach ($skillLevel as $i => $iValue) {
+			$this->queryParameters['SkillLevel.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param array $outboundPhoneNumberId
+     *
+     * @return $this
+     */
+	public function setOutboundPhoneNumberIds(array $outboundPhoneNumberId)
+	{
+	    $this->requestParameters['OutboundPhoneNumberIds'] = $outboundPhoneNumberId;
+		foreach ($outboundPhoneNumberId as $i => $iValue) {
+			$this->queryParameters['OutboundPhoneNumberId.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
         return $this;
     }

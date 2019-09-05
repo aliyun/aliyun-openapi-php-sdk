@@ -3,12 +3,14 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of CreatePredictiveJobs
  *
+ * @method array getJobsJsons()
  * @method string getInstanceId()
  * @method string getSkillGroupId()
  * @method string getStrategyJson()
- * @method array getJobsJsons()
  */
 class CreatePredictiveJobsRequest extends \RpcAcsRequest
 {
@@ -28,6 +30,21 @@ class CreatePredictiveJobsRequest extends \RpcAcsRequest
             '2017-07-05',
             'CreatePredictiveJobs'
         );
+    }
+
+    /**
+     * @param array $jobsJson
+     *
+     * @return $this
+     */
+	public function setJobsJsons(array $jobsJson)
+	{
+	    $this->requestParameters['JobsJsons'] = $jobsJson;
+		foreach ($jobsJson as $i => $iValue) {
+			$this->queryParameters['JobsJson.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
     }
 
     /**
@@ -65,21 +82,6 @@ class CreatePredictiveJobsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['StrategyJson'] = $strategyJson;
         $this->queryParameters['StrategyJson'] = $strategyJson;
-
-        return $this;
-    }
-
-    /**
-     * @param array $jobsJsons
-     *
-     * @return $this
-     */
-    public function setJobsJsons(array $jobsJsons)
-    {
-        $this->requestParameters['JobsJsons'] = $jobsJsons;
-        foreach ($jobsJsons as $i => $iValue) {
-            $this->queryParameters['JobsJson.' . ($i + 1)] = $iValue;
-        }
 
         return $this;
     }

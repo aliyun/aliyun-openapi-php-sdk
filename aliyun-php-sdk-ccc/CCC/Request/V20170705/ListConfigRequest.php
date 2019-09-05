@@ -3,6 +3,8 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of ListConfig
  *
  * @method string getInstanceId()
@@ -42,17 +44,17 @@ class ListConfigRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $configItems
+     * @param array $configItem
      *
      * @return $this
      */
-    public function setConfigItems(array $configItems)
-    {
-        $this->requestParameters['ConfigItems'] = $configItems;
-        foreach ($configItems as $i => $iValue) {
-            $this->queryParameters['ConfigItem.' . ($i + 1)] = $iValue;
-        }
+	public function setConfigItems(array $configItem)
+	{
+	    $this->requestParameters['ConfigItems'] = $configItem;
+		foreach ($configItem as $i => $iValue) {
+			$this->queryParameters['ConfigItem.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 }

@@ -3,16 +3,18 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of ListIvrTrackingDetail
  *
- * @method string getCallingNumber()
- * @method string getInstanceId()
  * @method string getContactId()
- * @method string getCalledNumber()
- * @method string getPageSize()
  * @method string getStartTime()
  * @method string getStopTime()
  * @method string getPageNumber()
+ * @method string getCallingNumber()
+ * @method string getInstanceId()
+ * @method string getCalledNumber()
+ * @method string getPageSize()
  */
 class ListIvrTrackingDetailRequest extends \RpcAcsRequest
 {
@@ -35,32 +37,6 @@ class ListIvrTrackingDetailRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $callingNumber
-     *
-     * @return $this
-     */
-    public function setCallingNumber($callingNumber)
-    {
-        $this->requestParameters['CallingNumber'] = $callingNumber;
-        $this->queryParameters['CallingNumber'] = $callingNumber;
-
-        return $this;
-    }
-
-    /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $contactId
      *
      * @return $this
@@ -69,32 +45,6 @@ class ListIvrTrackingDetailRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ContactId'] = $contactId;
         $this->queryParameters['ContactId'] = $contactId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $calledNumber
-     *
-     * @return $this
-     */
-    public function setCalledNumber($calledNumber)
-    {
-        $this->requestParameters['CalledNumber'] = $calledNumber;
-        $this->queryParameters['CalledNumber'] = $calledNumber;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }
@@ -134,6 +84,58 @@ class ListIvrTrackingDetailRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageNumber'] = $pageNumber;
         $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $callingNumber
+     *
+     * @return $this
+     */
+    public function setCallingNumber($callingNumber)
+    {
+        $this->requestParameters['CallingNumber'] = $callingNumber;
+        $this->queryParameters['CallingNumber'] = $callingNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $calledNumber
+     *
+     * @return $this
+     */
+    public function setCalledNumber($calledNumber)
+    {
+        $this->requestParameters['CalledNumber'] = $calledNumber;
+        $this->queryParameters['CalledNumber'] = $calledNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }

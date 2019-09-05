@@ -3,12 +3,14 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of AddPhoneNumber
  *
  * @method string getContactFlowId()
- * @method string getInstanceId()
  * @method string getUsage()
  * @method string getPhoneNumber()
+ * @method string getInstanceId()
  */
 class AddPhoneNumberRequest extends \RpcAcsRequest
 {
@@ -44,19 +46,6 @@ class AddPhoneNumberRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $usage
      *
      * @return $this
@@ -78,6 +67,19 @@ class AddPhoneNumberRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PhoneNumber'] = $phoneNumber;
         $this->queryParameters['PhoneNumber'] = $phoneNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

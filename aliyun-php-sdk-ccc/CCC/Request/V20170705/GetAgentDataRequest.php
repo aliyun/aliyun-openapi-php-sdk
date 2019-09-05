@@ -3,14 +3,16 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of GetAgentData
  *
- * @method string getInstanceId()
  * @method string getStartDay()
- * @method string getEndDay()
- * @method string getPageSize()
  * @method string getUserId()
  * @method string getPageNumber()
+ * @method string getInstanceId()
+ * @method string getEndDay()
+ * @method string getPageSize()
  */
 class GetAgentDataRequest extends \RpcAcsRequest
 {
@@ -33,19 +35,6 @@ class GetAgentDataRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $startDay
      *
      * @return $this
@@ -54,32 +43,6 @@ class GetAgentDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['StartDay'] = $startDay;
         $this->queryParameters['StartDay'] = $startDay;
-
-        return $this;
-    }
-
-    /**
-     * @param string $endDay
-     *
-     * @return $this
-     */
-    public function setEndDay($endDay)
-    {
-        $this->requestParameters['EndDay'] = $endDay;
-        $this->queryParameters['EndDay'] = $endDay;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }
@@ -106,6 +69,45 @@ class GetAgentDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageNumber'] = $pageNumber;
         $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $endDay
+     *
+     * @return $this
+     */
+    public function setEndDay($endDay)
+    {
+        $this->requestParameters['EndDay'] = $endDay;
+        $this->queryParameters['EndDay'] = $endDay;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }

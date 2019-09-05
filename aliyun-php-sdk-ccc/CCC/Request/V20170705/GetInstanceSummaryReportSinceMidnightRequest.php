@@ -3,11 +3,13 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of GetInstanceSummaryReportSinceMidnight
  *
+ * @method string getPageNumber()
  * @method string getInstanceId()
  * @method string getPageSize()
- * @method string getPageNumber()
  */
 class GetInstanceSummaryReportSinceMidnightRequest extends \RpcAcsRequest
 {
@@ -27,6 +29,19 @@ class GetInstanceSummaryReportSinceMidnightRequest extends \RpcAcsRequest
             '2017-07-05',
             'GetInstanceSummaryReportSinceMidnight'
         );
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
     }
 
     /**
@@ -51,19 +66,6 @@ class GetInstanceSummaryReportSinceMidnightRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageSize'] = $pageSize;
         $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

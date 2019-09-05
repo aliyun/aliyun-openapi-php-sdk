@@ -3,16 +3,18 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of CreateBatchJobs
  *
+ * @method string getDescription()
+ * @method string getJobFilePath()
  * @method array getCallingNumbers()
  * @method string getInstanceId()
  * @method string getSubmitted()
  * @method string getStrategyJson()
  * @method string getName()
- * @method string getDescription()
  * @method string getScenarioId()
- * @method string getJobFilePath()
  */
 class CreateBatchJobsRequest extends \RpcAcsRequest
 {
@@ -35,18 +37,44 @@ class CreateBatchJobsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $callingNumbers
+     * @param string $description
      *
      * @return $this
      */
-    public function setCallingNumbers(array $callingNumbers)
+    public function setDescription($description)
     {
-        $this->requestParameters['CallingNumbers'] = $callingNumbers;
-        foreach ($callingNumbers as $i => $iValue) {
-            $this->queryParameters['CallingNumber.' . ($i + 1)] = $iValue;
-        }
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
 
         return $this;
+    }
+
+    /**
+     * @param string $jobFilePath
+     *
+     * @return $this
+     */
+    public function setJobFilePath($jobFilePath)
+    {
+        $this->requestParameters['JobFilePath'] = $jobFilePath;
+        $this->queryParameters['JobFilePath'] = $jobFilePath;
+
+        return $this;
+    }
+
+    /**
+     * @param array $callingNumber
+     *
+     * @return $this
+     */
+	public function setCallingNumbers(array $callingNumber)
+	{
+	    $this->requestParameters['CallingNumbers'] = $callingNumber;
+		foreach ($callingNumber as $i => $iValue) {
+			$this->queryParameters['CallingNumber.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
     }
 
     /**
@@ -102,19 +130,6 @@ class CreateBatchJobsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $description
-     *
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->requestParameters['Description'] = $description;
-        $this->queryParameters['Description'] = $description;
-
-        return $this;
-    }
-
-    /**
      * @param string $scenarioId
      *
      * @return $this
@@ -123,19 +138,6 @@ class CreateBatchJobsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ScenarioId'] = $scenarioId;
         $this->queryParameters['ScenarioId'] = $scenarioId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $jobFilePath
-     *
-     * @return $this
-     */
-    public function setJobFilePath($jobFilePath)
-    {
-        $this->requestParameters['JobFilePath'] = $jobFilePath;
-        $this->queryParameters['JobFilePath'] = $jobFilePath;
 
         return $this;
     }

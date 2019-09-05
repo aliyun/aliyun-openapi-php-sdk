@@ -3,14 +3,16 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of GetJobList
  *
+ * @method string getPageNumber()
+ * @method string getQueryAll()
  * @method string getInstanceId()
  * @method string getJobGroupId()
  * @method string getPageSize()
- * @method string getPageNumber()
  * @method string getStatus()
- * @method string getQueryAll()
  */
 class GetJobListRequest extends \RpcAcsRequest
 {
@@ -30,6 +32,32 @@ class GetJobListRequest extends \RpcAcsRequest
             '2017-07-05',
             'GetJobList'
         );
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $queryAll
+     *
+     * @return $this
+     */
+    public function setQueryAll($queryAll)
+    {
+        $this->requestParameters['QueryAll'] = $queryAll;
+        $this->queryParameters['QueryAll'] = $queryAll;
+
+        return $this;
     }
 
     /**
@@ -72,19 +100,6 @@ class GetJobListRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
-
-        return $this;
-    }
-
-    /**
      * @param string $status
      *
      * @return $this
@@ -93,19 +108,6 @@ class GetJobListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Status'] = $status;
         $this->queryParameters['Status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * @param string $queryAll
-     *
-     * @return $this
-     */
-    public function setQueryAll($queryAll)
-    {
-        $this->requestParameters['QueryAll'] = $queryAll;
-        $this->queryParameters['QueryAll'] = $queryAll;
 
         return $this;
     }

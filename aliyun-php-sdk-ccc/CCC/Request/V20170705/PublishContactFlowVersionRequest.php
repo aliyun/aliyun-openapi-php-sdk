@@ -3,10 +3,13 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of PublishContactFlowVersion
  *
  * @method string getInstanceId()
  * @method string getContactFlowVersionId()
+ * @method string getUseTianGong()
  */
 class PublishContactFlowVersionRequest extends \RpcAcsRequest
 {
@@ -50,6 +53,19 @@ class PublishContactFlowVersionRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ContactFlowVersionId'] = $contactFlowVersionId;
         $this->queryParameters['ContactFlowVersionId'] = $contactFlowVersionId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $useTianGong
+     *
+     * @return $this
+     */
+    public function setUseTianGong($useTianGong)
+    {
+        $this->requestParameters['UseTianGong'] = $useTianGong;
+        $this->queryParameters['UseTianGong'] = $useTianGong;
 
         return $this;
     }

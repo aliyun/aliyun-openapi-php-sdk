@@ -3,12 +3,14 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of CommitContactFlowVersionModification
  *
  * @method string getCanvas()
+ * @method string getContent()
  * @method string getInstanceId()
  * @method string getContactFlowVersionId()
- * @method string getContent()
  */
 class CommitContactFlowVersionModificationRequest extends \RpcAcsRequest
 {
@@ -44,6 +46,19 @@ class CommitContactFlowVersionModificationRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $content
+     *
+     * @return $this
+     */
+    public function setContent($content)
+    {
+        $this->requestParameters['Content'] = $content;
+        $this->queryParameters['Content'] = $content;
+
+        return $this;
+    }
+
+    /**
      * @param string $instanceId
      *
      * @return $this
@@ -65,19 +80,6 @@ class CommitContactFlowVersionModificationRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ContactFlowVersionId'] = $contactFlowVersionId;
         $this->queryParameters['ContactFlowVersionId'] = $contactFlowVersionId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $content
-     *
-     * @return $this
-     */
-    public function setContent($content)
-    {
-        $this->requestParameters['Content'] = $content;
-        $this->queryParameters['Content'] = $content;
 
         return $this;
     }

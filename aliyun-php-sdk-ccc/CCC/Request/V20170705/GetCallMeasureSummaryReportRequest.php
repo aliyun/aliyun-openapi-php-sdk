@@ -3,14 +3,16 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of GetCallMeasureSummaryReport
  *
  * @method string getIntervalType()
- * @method string getMonth()
  * @method string getYear()
+ * @method string getPageNumber()
+ * @method string getMonth()
  * @method string getPageSize()
  * @method string getDay()
- * @method string getPageNumber()
  */
 class GetCallMeasureSummaryReportRequest extends \RpcAcsRequest
 {
@@ -46,19 +48,6 @@ class GetCallMeasureSummaryReportRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $month
-     *
-     * @return $this
-     */
-    public function setMonth($month)
-    {
-        $this->requestParameters['Month'] = $month;
-        $this->queryParameters['Month'] = $month;
-
-        return $this;
-    }
-
-    /**
      * @param string $year
      *
      * @return $this
@@ -67,6 +56,32 @@ class GetCallMeasureSummaryReportRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Year'] = $year;
         $this->queryParameters['Year'] = $year;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $month
+     *
+     * @return $this
+     */
+    public function setMonth($month)
+    {
+        $this->requestParameters['Month'] = $month;
+        $this->queryParameters['Month'] = $month;
 
         return $this;
     }
@@ -93,19 +108,6 @@ class GetCallMeasureSummaryReportRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Day'] = $day;
         $this->queryParameters['Day'] = $day;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

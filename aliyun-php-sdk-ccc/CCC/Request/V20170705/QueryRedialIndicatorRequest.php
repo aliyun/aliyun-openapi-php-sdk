@@ -3,11 +3,13 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of QueryRedialIndicator
  *
- * @method string getInstanceId()
  * @method string getContactId()
  * @method string getMockResponse()
+ * @method string getInstanceId()
  */
 class QueryRedialIndicatorRequest extends \RpcAcsRequest
 {
@@ -27,19 +29,6 @@ class QueryRedialIndicatorRequest extends \RpcAcsRequest
             '2017-07-05',
             'QueryRedialIndicator'
         );
-    }
-
-    /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
     }
 
     /**
@@ -64,6 +53,19 @@ class QueryRedialIndicatorRequest extends \RpcAcsRequest
     {
         $this->requestParameters['MockResponse'] = $mockResponse;
         $this->queryParameters['MockResponse'] = $mockResponse;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

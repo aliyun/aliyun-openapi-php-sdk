@@ -3,16 +3,18 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of ListRecordings
  *
  * @method string getAgentId()
- * @method string getInstanceId()
  * @method string getCriteria()
  * @method string getPhoneNumber()
- * @method string getPageSize()
  * @method string getStopTime()
  * @method string getStartTime()
  * @method string getPageNumber()
+ * @method string getInstanceId()
+ * @method string getPageSize()
  */
 class ListRecordingsRequest extends \RpcAcsRequest
 {
@@ -48,19 +50,6 @@ class ListRecordingsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $criteria
      *
      * @return $this
@@ -82,19 +71,6 @@ class ListRecordingsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PhoneNumber'] = $phoneNumber;
         $this->queryParameters['PhoneNumber'] = $phoneNumber;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }
@@ -134,6 +110,32 @@ class ListRecordingsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageNumber'] = $pageNumber;
         $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }

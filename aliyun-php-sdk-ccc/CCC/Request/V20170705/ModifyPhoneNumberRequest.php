@@ -3,12 +3,15 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of ModifyPhoneNumber
  *
  * @method string getContactFlowId()
+ * @method string getUsage()
  * @method string getInstanceId()
  * @method string getPhoneNumberId()
- * @method string getUsage()
+ * @method array getSkillGroupIds()
  */
 class ModifyPhoneNumberRequest extends \RpcAcsRequest
 {
@@ -44,6 +47,19 @@ class ModifyPhoneNumberRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $usage
+     *
+     * @return $this
+     */
+    public function setUsage($usage)
+    {
+        $this->requestParameters['Usage'] = $usage;
+        $this->queryParameters['Usage'] = $usage;
+
+        return $this;
+    }
+
+    /**
      * @param string $instanceId
      *
      * @return $this
@@ -70,15 +86,17 @@ class ModifyPhoneNumberRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $usage
+     * @param array $skillGroupId
      *
      * @return $this
      */
-    public function setUsage($usage)
-    {
-        $this->requestParameters['Usage'] = $usage;
-        $this->queryParameters['Usage'] = $usage;
+	public function setSkillGroupIds(array $skillGroupId)
+	{
+	    $this->requestParameters['SkillGroupIds'] = $skillGroupId;
+		foreach ($skillGroupId as $i => $iValue) {
+			$this->queryParameters['SkillGroupId.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 }

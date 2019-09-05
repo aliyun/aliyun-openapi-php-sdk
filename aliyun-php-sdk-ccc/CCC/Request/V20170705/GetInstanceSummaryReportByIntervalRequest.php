@@ -3,14 +3,16 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of GetInstanceSummaryReportByInterval
  *
- * @method string getInstanceId()
- * @method string getPageSize()
  * @method string getEndTime()
- * @method string getInterval()
  * @method string getStartTime()
  * @method string getPageNumber()
+ * @method string getInstanceId()
+ * @method string getPageSize()
+ * @method string getInterval()
  */
 class GetInstanceSummaryReportByIntervalRequest extends \RpcAcsRequest
 {
@@ -30,6 +32,45 @@ class GetInstanceSummaryReportByIntervalRequest extends \RpcAcsRequest
             '2017-07-05',
             'GetInstanceSummaryReportByInterval'
         );
+    }
+
+    /**
+     * @param string $endTime
+     *
+     * @return $this
+     */
+    public function setEndTime($endTime)
+    {
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
     }
 
     /**
@@ -59,19 +100,6 @@ class GetInstanceSummaryReportByIntervalRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $endTime
-     *
-     * @return $this
-     */
-    public function setEndTime($endTime)
-    {
-        $this->requestParameters['EndTime'] = $endTime;
-        $this->queryParameters['EndTime'] = $endTime;
-
-        return $this;
-    }
-
-    /**
      * @param string $interval
      *
      * @return $this
@@ -80,32 +108,6 @@ class GetInstanceSummaryReportByIntervalRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Interval'] = $interval;
         $this->queryParameters['Interval'] = $interval;
-
-        return $this;
-    }
-
-    /**
-     * @param string $startTime
-     *
-     * @return $this
-     */
-    public function setStartTime($startTime)
-    {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

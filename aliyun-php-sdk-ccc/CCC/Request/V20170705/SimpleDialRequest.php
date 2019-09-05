@@ -3,12 +3,14 @@
 namespace CCC\Request\V20170705;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of SimpleDial
  *
+ * @method string getCallee()
  * @method string getCaller()
  * @method string getInstanceId()
  * @method string getContractFlowId()
- * @method string getCallee()
  */
 class SimpleDialRequest extends \RpcAcsRequest
 {
@@ -28,6 +30,19 @@ class SimpleDialRequest extends \RpcAcsRequest
             '2017-07-05',
             'SimpleDial'
         );
+    }
+
+    /**
+     * @param string $callee
+     *
+     * @return $this
+     */
+    public function setCallee($callee)
+    {
+        $this->requestParameters['Callee'] = $callee;
+        $this->queryParameters['Callee'] = $callee;
+
+        return $this;
     }
 
     /**
@@ -65,19 +80,6 @@ class SimpleDialRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ContractFlowId'] = $contractFlowId;
         $this->queryParameters['ContractFlowId'] = $contractFlowId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $callee
-     *
-     * @return $this
-     */
-    public function setCallee($callee)
-    {
-        $this->requestParameters['Callee'] = $callee;
-        $this->queryParameters['Callee'] = $callee;
 
         return $this;
     }
