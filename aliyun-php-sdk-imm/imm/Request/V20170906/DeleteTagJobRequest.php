@@ -7,8 +7,8 @@ namespace imm\Request\V20170906;
  *
  * Request of DeleteTagJob
  *
- * @method string getJobId()
  * @method string getProject()
+ * @method string getJobId()
  * @method string getClearIndexData()
  */
 class DeleteTagJobRequest extends \RpcAcsRequest
@@ -33,19 +33,6 @@ class DeleteTagJobRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $jobId
-     *
-     * @return $this
-     */
-    public function setJobId($jobId)
-    {
-        $this->requestParameters['JobId'] = $jobId;
-        $this->queryParameters['JobId'] = $jobId;
-
-        return $this;
-    }
-
-    /**
      * @param string $project
      *
      * @return $this
@@ -54,6 +41,19 @@ class DeleteTagJobRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Project'] = $project;
         $this->queryParameters['Project'] = $project;
+
+        return $this;
+    }
+
+    /**
+     * @param string $jobId
+     *
+     * @return $this
+     */
+    public function setJobId($jobId)
+    {
+        $this->requestParameters['JobId'] = $jobId;
+        $this->queryParameters['JobId'] = $jobId;
 
         return $this;
     }

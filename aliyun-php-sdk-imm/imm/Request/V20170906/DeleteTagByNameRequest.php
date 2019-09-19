@@ -7,8 +7,8 @@ namespace imm\Request\V20170906;
  *
  * Request of DeleteTagByName
  *
- * @method string getTagName()
  * @method string getProject()
+ * @method string getTagName()
  * @method string getSetId()
  * @method string getSrcUri()
  */
@@ -34,19 +34,6 @@ class DeleteTagByNameRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $tagName
-     *
-     * @return $this
-     */
-    public function setTagName($tagName)
-    {
-        $this->requestParameters['TagName'] = $tagName;
-        $this->queryParameters['TagName'] = $tagName;
-
-        return $this;
-    }
-
-    /**
      * @param string $project
      *
      * @return $this
@@ -55,6 +42,19 @@ class DeleteTagByNameRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Project'] = $project;
         $this->queryParameters['Project'] = $project;
+
+        return $this;
+    }
+
+    /**
+     * @param string $tagName
+     *
+     * @return $this
+     */
+    public function setTagName($tagName)
+    {
+        $this->requestParameters['TagName'] = $tagName;
+        $this->queryParameters['TagName'] = $tagName;
 
         return $this;
     }

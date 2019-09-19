@@ -7,11 +7,11 @@ namespace imm\Request\V20170906;
  *
  * Request of CreateMergeFaceGroupsJob
  *
- * @method string getGroupIdFrom()
- * @method string getGroupIdTo()
- * @method string getNotifyTopicName()
- * @method string getNotifyEndpoint()
  * @method string getProject()
+ * @method string getNotifyEndpoint()
+ * @method string getGroupIdFrom()
+ * @method string getNotifyTopicName()
+ * @method string getGroupIdTo()
  * @method string getSetId()
  */
 class CreateMergeFaceGroupsJobRequest extends \RpcAcsRequest
@@ -36,40 +36,14 @@ class CreateMergeFaceGroupsJobRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $groupIdFrom
+     * @param string $project
      *
      * @return $this
      */
-    public function setGroupIdFrom($groupIdFrom)
+    public function setProject($project)
     {
-        $this->requestParameters['GroupIdFrom'] = $groupIdFrom;
-        $this->queryParameters['GroupIdFrom'] = $groupIdFrom;
-
-        return $this;
-    }
-
-    /**
-     * @param string $groupIdTo
-     *
-     * @return $this
-     */
-    public function setGroupIdTo($groupIdTo)
-    {
-        $this->requestParameters['GroupIdTo'] = $groupIdTo;
-        $this->queryParameters['GroupIdTo'] = $groupIdTo;
-
-        return $this;
-    }
-
-    /**
-     * @param string $notifyTopicName
-     *
-     * @return $this
-     */
-    public function setNotifyTopicName($notifyTopicName)
-    {
-        $this->requestParameters['NotifyTopicName'] = $notifyTopicName;
-        $this->queryParameters['NotifyTopicName'] = $notifyTopicName;
+        $this->requestParameters['Project'] = $project;
+        $this->queryParameters['Project'] = $project;
 
         return $this;
     }
@@ -88,14 +62,40 @@ class CreateMergeFaceGroupsJobRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $project
+     * @param string $groupIdFrom
      *
      * @return $this
      */
-    public function setProject($project)
+    public function setGroupIdFrom($groupIdFrom)
     {
-        $this->requestParameters['Project'] = $project;
-        $this->queryParameters['Project'] = $project;
+        $this->requestParameters['GroupIdFrom'] = $groupIdFrom;
+        $this->queryParameters['GroupIdFrom'] = $groupIdFrom;
+
+        return $this;
+    }
+
+    /**
+     * @param string $notifyTopicName
+     *
+     * @return $this
+     */
+    public function setNotifyTopicName($notifyTopicName)
+    {
+        $this->requestParameters['NotifyTopicName'] = $notifyTopicName;
+        $this->queryParameters['NotifyTopicName'] = $notifyTopicName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $groupIdTo
+     *
+     * @return $this
+     */
+    public function setGroupIdTo($groupIdTo)
+    {
+        $this->requestParameters['GroupIdTo'] = $groupIdTo;
+        $this->queryParameters['GroupIdTo'] = $groupIdTo;
 
         return $this;
     }

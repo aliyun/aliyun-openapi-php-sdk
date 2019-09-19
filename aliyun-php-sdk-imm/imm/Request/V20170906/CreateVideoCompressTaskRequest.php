@@ -7,11 +7,11 @@ namespace imm\Request\V20170906;
  *
  * Request of CreateVideoCompressTask
  *
- * @method string getVideoUri()
+ * @method string getProject()
+ * @method string getNotifyEndpoint()
  * @method string getNotifyTopicName()
  * @method string getTargetList()
- * @method string getNotifyEndpoint()
- * @method string getProject()
+ * @method string getVideoUri()
  */
 class CreateVideoCompressTaskRequest extends \RpcAcsRequest
 {
@@ -35,14 +35,27 @@ class CreateVideoCompressTaskRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $videoUri
+     * @param string $project
      *
      * @return $this
      */
-    public function setVideoUri($videoUri)
+    public function setProject($project)
     {
-        $this->requestParameters['VideoUri'] = $videoUri;
-        $this->queryParameters['VideoUri'] = $videoUri;
+        $this->requestParameters['Project'] = $project;
+        $this->queryParameters['Project'] = $project;
+
+        return $this;
+    }
+
+    /**
+     * @param string $notifyEndpoint
+     *
+     * @return $this
+     */
+    public function setNotifyEndpoint($notifyEndpoint)
+    {
+        $this->requestParameters['NotifyEndpoint'] = $notifyEndpoint;
+        $this->queryParameters['NotifyEndpoint'] = $notifyEndpoint;
 
         return $this;
     }
@@ -74,27 +87,14 @@ class CreateVideoCompressTaskRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $notifyEndpoint
+     * @param string $videoUri
      *
      * @return $this
      */
-    public function setNotifyEndpoint($notifyEndpoint)
+    public function setVideoUri($videoUri)
     {
-        $this->requestParameters['NotifyEndpoint'] = $notifyEndpoint;
-        $this->queryParameters['NotifyEndpoint'] = $notifyEndpoint;
-
-        return $this;
-    }
-
-    /**
-     * @param string $project
-     *
-     * @return $this
-     */
-    public function setProject($project)
-    {
-        $this->requestParameters['Project'] = $project;
-        $this->queryParameters['Project'] = $project;
+        $this->requestParameters['VideoUri'] = $videoUri;
+        $this->queryParameters['VideoUri'] = $videoUri;
 
         return $this;
     }

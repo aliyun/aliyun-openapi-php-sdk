@@ -7,10 +7,10 @@ namespace imm\Request\V20170906;
  *
  * Request of ListTagJobs
  *
- * @method string getCondition()
  * @method string getMaxKeys()
- * @method string getMarker()
  * @method string getProject()
+ * @method string getCondition()
+ * @method string getMarker()
  */
 class ListTagJobsRequest extends \RpcAcsRequest
 {
@@ -34,19 +34,6 @@ class ListTagJobsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $condition
-     *
-     * @return $this
-     */
-    public function setCondition($condition)
-    {
-        $this->requestParameters['Condition'] = $condition;
-        $this->queryParameters['Condition'] = $condition;
-
-        return $this;
-    }
-
-    /**
      * @param string $maxKeys
      *
      * @return $this
@@ -60,19 +47,6 @@ class ListTagJobsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $marker
-     *
-     * @return $this
-     */
-    public function setMarker($marker)
-    {
-        $this->requestParameters['Marker'] = $marker;
-        $this->queryParameters['Marker'] = $marker;
-
-        return $this;
-    }
-
-    /**
      * @param string $project
      *
      * @return $this
@@ -81,6 +55,32 @@ class ListTagJobsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Project'] = $project;
         $this->queryParameters['Project'] = $project;
+
+        return $this;
+    }
+
+    /**
+     * @param string $condition
+     *
+     * @return $this
+     */
+    public function setCondition($condition)
+    {
+        $this->requestParameters['Condition'] = $condition;
+        $this->queryParameters['Condition'] = $condition;
+
+        return $this;
+    }
+
+    /**
+     * @param string $marker
+     *
+     * @return $this
+     */
+    public function setMarker($marker)
+    {
+        $this->requestParameters['Marker'] = $marker;
+        $this->queryParameters['Marker'] = $marker;
 
         return $this;
     }

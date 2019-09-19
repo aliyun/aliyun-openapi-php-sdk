@@ -7,9 +7,9 @@ namespace imm\Request\V20170906;
  *
  * Request of DetectImageTags
  *
- * @method string getImageUri()
  * @method string getProject()
  * @method string getRealUid()
+ * @method string getImageUri()
  */
 class DetectImageTagsRequest extends \RpcAcsRequest
 {
@@ -30,19 +30,6 @@ class DetectImageTagsRequest extends \RpcAcsRequest
             'DetectImageTags',
             'imm'
         );
-    }
-
-    /**
-     * @param string $imageUri
-     *
-     * @return $this
-     */
-    public function setImageUri($imageUri)
-    {
-        $this->requestParameters['ImageUri'] = $imageUri;
-        $this->queryParameters['ImageUri'] = $imageUri;
-
-        return $this;
     }
 
     /**
@@ -67,6 +54,19 @@ class DetectImageTagsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['RealUid'] = $realUid;
         $this->queryParameters['RealUid'] = $realUid;
+
+        return $this;
+    }
+
+    /**
+     * @param string $imageUri
+     *
+     * @return $this
+     */
+    public function setImageUri($imageUri)
+    {
+        $this->requestParameters['ImageUri'] = $imageUri;
+        $this->queryParameters['ImageUri'] = $imageUri;
 
         return $this;
     }

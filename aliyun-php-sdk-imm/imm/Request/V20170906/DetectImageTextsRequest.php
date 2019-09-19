@@ -7,8 +7,8 @@ namespace imm\Request\V20170906;
  *
  * Request of DetectImageTexts
  *
- * @method string getImageUri()
  * @method string getProject()
+ * @method string getImageUri()
  */
 class DetectImageTextsRequest extends \RpcAcsRequest
 {
@@ -32,19 +32,6 @@ class DetectImageTextsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $imageUri
-     *
-     * @return $this
-     */
-    public function setImageUri($imageUri)
-    {
-        $this->requestParameters['ImageUri'] = $imageUri;
-        $this->queryParameters['ImageUri'] = $imageUri;
-
-        return $this;
-    }
-
-    /**
      * @param string $project
      *
      * @return $this
@@ -53,6 +40,19 @@ class DetectImageTextsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Project'] = $project;
         $this->queryParameters['Project'] = $project;
+
+        return $this;
+    }
+
+    /**
+     * @param string $imageUri
+     *
+     * @return $this
+     */
+    public function setImageUri($imageUri)
+    {
+        $this->requestParameters['ImageUri'] = $imageUri;
+        $this->queryParameters['ImageUri'] = $imageUri;
 
         return $this;
     }

@@ -7,8 +7,8 @@ namespace imm\Request\V20170906;
  *
  * Request of UpdateProject
  *
- * @method string getNewServiceRole()
  * @method string getProject()
+ * @method string getNewServiceRole()
  * @method string getNewCU()
  */
 class UpdateProjectRequest extends \RpcAcsRequest
@@ -33,19 +33,6 @@ class UpdateProjectRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $newServiceRole
-     *
-     * @return $this
-     */
-    public function setNewServiceRole($newServiceRole)
-    {
-        $this->requestParameters['NewServiceRole'] = $newServiceRole;
-        $this->queryParameters['NewServiceRole'] = $newServiceRole;
-
-        return $this;
-    }
-
-    /**
      * @param string $project
      *
      * @return $this
@@ -54,6 +41,19 @@ class UpdateProjectRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Project'] = $project;
         $this->queryParameters['Project'] = $project;
+
+        return $this;
+    }
+
+    /**
+     * @param string $newServiceRole
+     *
+     * @return $this
+     */
+    public function setNewServiceRole($newServiceRole)
+    {
+        $this->requestParameters['NewServiceRole'] = $newServiceRole;
+        $this->queryParameters['NewServiceRole'] = $newServiceRole;
 
         return $this;
     }

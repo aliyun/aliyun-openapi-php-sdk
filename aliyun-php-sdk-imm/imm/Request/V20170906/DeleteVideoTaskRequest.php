@@ -7,9 +7,9 @@ namespace imm\Request\V20170906;
  *
  * Request of DeleteVideoTask
  *
- * @method string getTaskType()
  * @method string getProject()
  * @method string getTaskId()
+ * @method string getTaskType()
  */
 class DeleteVideoTaskRequest extends \RpcAcsRequest
 {
@@ -30,19 +30,6 @@ class DeleteVideoTaskRequest extends \RpcAcsRequest
             'DeleteVideoTask',
             'imm'
         );
-    }
-
-    /**
-     * @param string $taskType
-     *
-     * @return $this
-     */
-    public function setTaskType($taskType)
-    {
-        $this->requestParameters['TaskType'] = $taskType;
-        $this->queryParameters['TaskType'] = $taskType;
-
-        return $this;
     }
 
     /**
@@ -67,6 +54,19 @@ class DeleteVideoTaskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TaskId'] = $taskId;
         $this->queryParameters['TaskId'] = $taskId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $taskType
+     *
+     * @return $this
+     */
+    public function setTaskType($taskType)
+    {
+        $this->requestParameters['TaskType'] = $taskType;
+        $this->queryParameters['TaskType'] = $taskType;
 
         return $this;
     }

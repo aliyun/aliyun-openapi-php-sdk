@@ -8,9 +8,9 @@ namespace imm\Request\V20170906;
  * Request of ListFaceSearchGroupImages
  *
  * @method string getMaxKeys()
- * @method string getMarker()
  * @method string getProject()
  * @method string getGroupName()
+ * @method string getMarker()
  * @method string getUser()
  */
 class ListFaceSearchGroupImagesRequest extends \RpcAcsRequest
@@ -48,19 +48,6 @@ class ListFaceSearchGroupImagesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $marker
-     *
-     * @return $this
-     */
-    public function setMarker($marker)
-    {
-        $this->requestParameters['Marker'] = $marker;
-        $this->queryParameters['Marker'] = $marker;
-
-        return $this;
-    }
-
-    /**
      * @param string $project
      *
      * @return $this
@@ -82,6 +69,19 @@ class ListFaceSearchGroupImagesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['GroupName'] = $groupName;
         $this->queryParameters['GroupName'] = $groupName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $marker
+     *
+     * @return $this
+     */
+    public function setMarker($marker)
+    {
+        $this->requestParameters['Marker'] = $marker;
+        $this->queryParameters['Marker'] = $marker;
 
         return $this;
     }

@@ -7,12 +7,12 @@ namespace imm\Request\V20170906;
  *
  * Request of CompareImageFaces
  *
- * @method string getImageUriB()
- * @method string getImageUriA()
  * @method string getProject()
- * @method string getSetId()
  * @method string getFaceIdA()
  * @method string getFaceIdB()
+ * @method string getImageUriB()
+ * @method string getImageUriA()
+ * @method string getSetId()
  */
 class CompareImageFacesRequest extends \RpcAcsRequest
 {
@@ -33,6 +33,45 @@ class CompareImageFacesRequest extends \RpcAcsRequest
             'CompareImageFaces',
             'imm'
         );
+    }
+
+    /**
+     * @param string $project
+     *
+     * @return $this
+     */
+    public function setProject($project)
+    {
+        $this->requestParameters['Project'] = $project;
+        $this->queryParameters['Project'] = $project;
+
+        return $this;
+    }
+
+    /**
+     * @param string $faceIdA
+     *
+     * @return $this
+     */
+    public function setFaceIdA($faceIdA)
+    {
+        $this->requestParameters['FaceIdA'] = $faceIdA;
+        $this->queryParameters['FaceIdA'] = $faceIdA;
+
+        return $this;
+    }
+
+    /**
+     * @param string $faceIdB
+     *
+     * @return $this
+     */
+    public function setFaceIdB($faceIdB)
+    {
+        $this->requestParameters['FaceIdB'] = $faceIdB;
+        $this->queryParameters['FaceIdB'] = $faceIdB;
+
+        return $this;
     }
 
     /**
@@ -62,19 +101,6 @@ class CompareImageFacesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $project
-     *
-     * @return $this
-     */
-    public function setProject($project)
-    {
-        $this->requestParameters['Project'] = $project;
-        $this->queryParameters['Project'] = $project;
-
-        return $this;
-    }
-
-    /**
      * @param string $setId
      *
      * @return $this
@@ -83,32 +109,6 @@ class CompareImageFacesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SetId'] = $setId;
         $this->queryParameters['SetId'] = $setId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $faceIdA
-     *
-     * @return $this
-     */
-    public function setFaceIdA($faceIdA)
-    {
-        $this->requestParameters['FaceIdA'] = $faceIdA;
-        $this->queryParameters['FaceIdA'] = $faceIdA;
-
-        return $this;
-    }
-
-    /**
-     * @param string $faceIdB
-     *
-     * @return $this
-     */
-    public function setFaceIdB($faceIdB)
-    {
-        $this->requestParameters['FaceIdB'] = $faceIdB;
-        $this->queryParameters['FaceIdB'] = $faceIdB;
 
         return $this;
     }

@@ -1,3 +1,6 @@
+2019-09-19 Version: 1.10.7
+- Supported Video Abstract for IMM.
+
 2019-08-30 Version: 1.10.5
 - Supported Meida complex for IMM.
 

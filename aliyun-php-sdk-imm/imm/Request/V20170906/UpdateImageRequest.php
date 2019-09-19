@@ -7,17 +7,17 @@ namespace imm\Request\V20170906;
  *
  * Request of UpdateImage
  *
- * @method string getRemarksB()
  * @method string getProject()
- * @method string getRemarksA()
  * @method string getExternalId()
+ * @method string getSourceType()
+ * @method string getRemarksB()
+ * @method string getRemarksA()
  * @method string getImageUri()
  * @method string getSourceUri()
  * @method string getSourcePosition()
  * @method string getRemarksD()
  * @method string getRemarksC()
  * @method string getSetId()
- * @method string getSourceType()
  */
 class UpdateImageRequest extends \RpcAcsRequest
 {
@@ -41,19 +41,6 @@ class UpdateImageRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $remarksB
-     *
-     * @return $this
-     */
-    public function setRemarksB($remarksB)
-    {
-        $this->requestParameters['RemarksB'] = $remarksB;
-        $this->queryParameters['RemarksB'] = $remarksB;
-
-        return $this;
-    }
-
-    /**
      * @param string $project
      *
      * @return $this
@@ -67,19 +54,6 @@ class UpdateImageRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $remarksA
-     *
-     * @return $this
-     */
-    public function setRemarksA($remarksA)
-    {
-        $this->requestParameters['RemarksA'] = $remarksA;
-        $this->queryParameters['RemarksA'] = $remarksA;
-
-        return $this;
-    }
-
-    /**
      * @param string $externalId
      *
      * @return $this
@@ -88,6 +62,45 @@ class UpdateImageRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ExternalId'] = $externalId;
         $this->queryParameters['ExternalId'] = $externalId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sourceType
+     *
+     * @return $this
+     */
+    public function setSourceType($sourceType)
+    {
+        $this->requestParameters['SourceType'] = $sourceType;
+        $this->queryParameters['SourceType'] = $sourceType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $remarksB
+     *
+     * @return $this
+     */
+    public function setRemarksB($remarksB)
+    {
+        $this->requestParameters['RemarksB'] = $remarksB;
+        $this->queryParameters['RemarksB'] = $remarksB;
+
+        return $this;
+    }
+
+    /**
+     * @param string $remarksA
+     *
+     * @return $this
+     */
+    public function setRemarksA($remarksA)
+    {
+        $this->requestParameters['RemarksA'] = $remarksA;
+        $this->queryParameters['RemarksA'] = $remarksA;
 
         return $this;
     }
@@ -166,19 +179,6 @@ class UpdateImageRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SetId'] = $setId;
         $this->queryParameters['SetId'] = $setId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $sourceType
-     *
-     * @return $this
-     */
-    public function setSourceType($sourceType)
-    {
-        $this->requestParameters['SourceType'] = $sourceType;
-        $this->queryParameters['SourceType'] = $sourceType;
 
         return $this;
     }

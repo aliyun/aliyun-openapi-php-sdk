@@ -7,8 +7,8 @@ namespace imm\Request\V20170906;
  *
  * Request of GetVideo
  *
- * @method string getVideoUri()
  * @method string getProject()
+ * @method string getVideoUri()
  * @method string getSetId()
  */
 class GetVideoRequest extends \RpcAcsRequest
@@ -33,19 +33,6 @@ class GetVideoRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $videoUri
-     *
-     * @return $this
-     */
-    public function setVideoUri($videoUri)
-    {
-        $this->requestParameters['VideoUri'] = $videoUri;
-        $this->queryParameters['VideoUri'] = $videoUri;
-
-        return $this;
-    }
-
-    /**
      * @param string $project
      *
      * @return $this
@@ -54,6 +41,19 @@ class GetVideoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Project'] = $project;
         $this->queryParameters['Project'] = $project;
+
+        return $this;
+    }
+
+    /**
+     * @param string $videoUri
+     *
+     * @return $this
+     */
+    public function setVideoUri($videoUri)
+    {
+        $this->requestParameters['VideoUri'] = $videoUri;
+        $this->queryParameters['VideoUri'] = $videoUri;
 
         return $this;
     }

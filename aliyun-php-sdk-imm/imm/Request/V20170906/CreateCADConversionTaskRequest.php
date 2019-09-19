@@ -8,17 +8,17 @@ namespace imm\Request\V20170906;
  * Request of CreateCADConversionTask
  *
  * @method string getSrcType()
+ * @method string getBaseRow()
+ * @method string getProject()
+ * @method string getZoomFactor()
+ * @method string getNotifyEndpoint()
  * @method string getBaseCol()
  * @method string getNotifyTopicName()
  * @method string getUnitWidth()
  * @method string getZoomLevel()
- * @method string getBaseRow()
  * @method string getModelId()
- * @method string getProject()
- * @method string getZoomFactor()
  * @method string getTgtType()
  * @method string getUnitHeight()
- * @method string getNotifyEndpoint()
  * @method string getSrcUri()
  * @method string getThumbnails()
  * @method string getTgtUri()
@@ -53,6 +53,58 @@ class CreateCADConversionTaskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SrcType'] = $srcType;
         $this->queryParameters['SrcType'] = $srcType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $baseRow
+     *
+     * @return $this
+     */
+    public function setBaseRow($baseRow)
+    {
+        $this->requestParameters['BaseRow'] = $baseRow;
+        $this->queryParameters['BaseRow'] = $baseRow;
+
+        return $this;
+    }
+
+    /**
+     * @param string $project
+     *
+     * @return $this
+     */
+    public function setProject($project)
+    {
+        $this->requestParameters['Project'] = $project;
+        $this->queryParameters['Project'] = $project;
+
+        return $this;
+    }
+
+    /**
+     * @param string $zoomFactor
+     *
+     * @return $this
+     */
+    public function setZoomFactor($zoomFactor)
+    {
+        $this->requestParameters['ZoomFactor'] = $zoomFactor;
+        $this->queryParameters['ZoomFactor'] = $zoomFactor;
+
+        return $this;
+    }
+
+    /**
+     * @param string $notifyEndpoint
+     *
+     * @return $this
+     */
+    public function setNotifyEndpoint($notifyEndpoint)
+    {
+        $this->requestParameters['NotifyEndpoint'] = $notifyEndpoint;
+        $this->queryParameters['NotifyEndpoint'] = $notifyEndpoint;
 
         return $this;
     }
@@ -110,19 +162,6 @@ class CreateCADConversionTaskRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $baseRow
-     *
-     * @return $this
-     */
-    public function setBaseRow($baseRow)
-    {
-        $this->requestParameters['BaseRow'] = $baseRow;
-        $this->queryParameters['BaseRow'] = $baseRow;
-
-        return $this;
-    }
-
-    /**
      * @param string $modelId
      *
      * @return $this
@@ -131,32 +170,6 @@ class CreateCADConversionTaskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ModelId'] = $modelId;
         $this->queryParameters['ModelId'] = $modelId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $project
-     *
-     * @return $this
-     */
-    public function setProject($project)
-    {
-        $this->requestParameters['Project'] = $project;
-        $this->queryParameters['Project'] = $project;
-
-        return $this;
-    }
-
-    /**
-     * @param string $zoomFactor
-     *
-     * @return $this
-     */
-    public function setZoomFactor($zoomFactor)
-    {
-        $this->requestParameters['ZoomFactor'] = $zoomFactor;
-        $this->queryParameters['ZoomFactor'] = $zoomFactor;
 
         return $this;
     }
@@ -183,19 +196,6 @@ class CreateCADConversionTaskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['UnitHeight'] = $unitHeight;
         $this->queryParameters['UnitHeight'] = $unitHeight;
-
-        return $this;
-    }
-
-    /**
-     * @param string $notifyEndpoint
-     *
-     * @return $this
-     */
-    public function setNotifyEndpoint($notifyEndpoint)
-    {
-        $this->requestParameters['NotifyEndpoint'] = $notifyEndpoint;
-        $this->queryParameters['NotifyEndpoint'] = $notifyEndpoint;
 
         return $this;
     }

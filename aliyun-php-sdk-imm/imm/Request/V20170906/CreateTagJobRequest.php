@@ -7,10 +7,10 @@ namespace imm\Request\V20170906;
  *
  * Request of CreateTagJob
  *
- * @method string getNotifyTopicName()
- * @method string getNotifyEndpoint()
  * @method string getProject()
  * @method string getExternalID()
+ * @method string getNotifyEndpoint()
+ * @method string getNotifyTopicName()
  * @method string getSrcUri()
  */
 class CreateTagJobRequest extends \RpcAcsRequest
@@ -35,32 +35,6 @@ class CreateTagJobRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $notifyTopicName
-     *
-     * @return $this
-     */
-    public function setNotifyTopicName($notifyTopicName)
-    {
-        $this->requestParameters['NotifyTopicName'] = $notifyTopicName;
-        $this->queryParameters['NotifyTopicName'] = $notifyTopicName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $notifyEndpoint
-     *
-     * @return $this
-     */
-    public function setNotifyEndpoint($notifyEndpoint)
-    {
-        $this->requestParameters['NotifyEndpoint'] = $notifyEndpoint;
-        $this->queryParameters['NotifyEndpoint'] = $notifyEndpoint;
-
-        return $this;
-    }
-
-    /**
      * @param string $project
      *
      * @return $this
@@ -82,6 +56,32 @@ class CreateTagJobRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ExternalID'] = $externalID;
         $this->queryParameters['ExternalID'] = $externalID;
+
+        return $this;
+    }
+
+    /**
+     * @param string $notifyEndpoint
+     *
+     * @return $this
+     */
+    public function setNotifyEndpoint($notifyEndpoint)
+    {
+        $this->requestParameters['NotifyEndpoint'] = $notifyEndpoint;
+        $this->queryParameters['NotifyEndpoint'] = $notifyEndpoint;
+
+        return $this;
+    }
+
+    /**
+     * @param string $notifyTopicName
+     *
+     * @return $this
+     */
+    public function setNotifyTopicName($notifyTopicName)
+    {
+        $this->requestParameters['NotifyTopicName'] = $notifyTopicName;
+        $this->queryParameters['NotifyTopicName'] = $notifyTopicName;
 
         return $this;
     }

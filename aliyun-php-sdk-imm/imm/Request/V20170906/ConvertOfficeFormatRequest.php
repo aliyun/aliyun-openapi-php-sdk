@@ -8,21 +8,21 @@ namespace imm\Request\V20170906;
  * Request of ConvertOfficeFormat
  *
  * @method string getSrcType()
- * @method string getModelId()
  * @method string getProject()
+ * @method string getPdfVector()
+ * @method string getPassword()
+ * @method string getStartPage()
+ * @method string getFitToPagesWide()
+ * @method string getTgtFilePrefix()
+ * @method string getModelId()
  * @method string getMaxSheetRow()
  * @method string getMaxSheetCount()
  * @method string getEndPage()
  * @method string getTgtFileSuffix()
- * @method string getPdfVector()
  * @method string getSheetOnePage()
- * @method string getPassword()
- * @method string getStartPage()
  * @method string getMaxSheetCol()
  * @method string getTgtType()
- * @method string getFitToPagesWide()
  * @method string getHidecomments()
- * @method string getTgtFilePrefix()
  * @method string getFitToPagesTall()
  * @method string getSrcUri()
  * @method string getTgtFilePages()
@@ -63,19 +63,6 @@ class ConvertOfficeFormatRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $modelId
-     *
-     * @return $this
-     */
-    public function setModelId($modelId)
-    {
-        $this->requestParameters['ModelId'] = $modelId;
-        $this->queryParameters['ModelId'] = $modelId;
-
-        return $this;
-    }
-
-    /**
      * @param string $project
      *
      * @return $this
@@ -84,6 +71,84 @@ class ConvertOfficeFormatRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Project'] = $project;
         $this->queryParameters['Project'] = $project;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pdfVector
+     *
+     * @return $this
+     */
+    public function setPdfVector($pdfVector)
+    {
+        $this->requestParameters['PdfVector'] = $pdfVector;
+        $this->queryParameters['PdfVector'] = $pdfVector;
+
+        return $this;
+    }
+
+    /**
+     * @param string $password
+     *
+     * @return $this
+     */
+    public function setPassword($password)
+    {
+        $this->requestParameters['Password'] = $password;
+        $this->queryParameters['Password'] = $password;
+
+        return $this;
+    }
+
+    /**
+     * @param string $startPage
+     *
+     * @return $this
+     */
+    public function setStartPage($startPage)
+    {
+        $this->requestParameters['StartPage'] = $startPage;
+        $this->queryParameters['StartPage'] = $startPage;
+
+        return $this;
+    }
+
+    /**
+     * @param string $fitToPagesWide
+     *
+     * @return $this
+     */
+    public function setFitToPagesWide($fitToPagesWide)
+    {
+        $this->requestParameters['FitToPagesWide'] = $fitToPagesWide;
+        $this->queryParameters['FitToPagesWide'] = $fitToPagesWide;
+
+        return $this;
+    }
+
+    /**
+     * @param string $tgtFilePrefix
+     *
+     * @return $this
+     */
+    public function setTgtFilePrefix($tgtFilePrefix)
+    {
+        $this->requestParameters['TgtFilePrefix'] = $tgtFilePrefix;
+        $this->queryParameters['TgtFilePrefix'] = $tgtFilePrefix;
+
+        return $this;
+    }
+
+    /**
+     * @param string $modelId
+     *
+     * @return $this
+     */
+    public function setModelId($modelId)
+    {
+        $this->requestParameters['ModelId'] = $modelId;
+        $this->queryParameters['ModelId'] = $modelId;
 
         return $this;
     }
@@ -141,19 +206,6 @@ class ConvertOfficeFormatRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pdfVector
-     *
-     * @return $this
-     */
-    public function setPdfVector($pdfVector)
-    {
-        $this->requestParameters['PdfVector'] = $pdfVector;
-        $this->queryParameters['PdfVector'] = $pdfVector;
-
-        return $this;
-    }
-
-    /**
      * @param string $sheetOnePage
      *
      * @return $this
@@ -162,32 +214,6 @@ class ConvertOfficeFormatRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SheetOnePage'] = $sheetOnePage;
         $this->queryParameters['SheetOnePage'] = $sheetOnePage;
-
-        return $this;
-    }
-
-    /**
-     * @param string $password
-     *
-     * @return $this
-     */
-    public function setPassword($password)
-    {
-        $this->requestParameters['Password'] = $password;
-        $this->queryParameters['Password'] = $password;
-
-        return $this;
-    }
-
-    /**
-     * @param string $startPage
-     *
-     * @return $this
-     */
-    public function setStartPage($startPage)
-    {
-        $this->requestParameters['StartPage'] = $startPage;
-        $this->queryParameters['StartPage'] = $startPage;
 
         return $this;
     }
@@ -219,19 +245,6 @@ class ConvertOfficeFormatRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $fitToPagesWide
-     *
-     * @return $this
-     */
-    public function setFitToPagesWide($fitToPagesWide)
-    {
-        $this->requestParameters['FitToPagesWide'] = $fitToPagesWide;
-        $this->queryParameters['FitToPagesWide'] = $fitToPagesWide;
-
-        return $this;
-    }
-
-    /**
      * @param string $hidecomments
      *
      * @return $this
@@ -240,19 +253,6 @@ class ConvertOfficeFormatRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Hidecomments'] = $hidecomments;
         $this->queryParameters['Hidecomments'] = $hidecomments;
-
-        return $this;
-    }
-
-    /**
-     * @param string $tgtFilePrefix
-     *
-     * @return $this
-     */
-    public function setTgtFilePrefix($tgtFilePrefix)
-    {
-        $this->requestParameters['TgtFilePrefix'] = $tgtFilePrefix;
-        $this->queryParameters['TgtFilePrefix'] = $tgtFilePrefix;
 
         return $this;
     }

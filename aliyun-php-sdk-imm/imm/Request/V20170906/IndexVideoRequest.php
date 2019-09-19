@@ -8,12 +8,12 @@ namespace imm\Request\V20170906;
  * Request of IndexVideo
  *
  * @method string getGrabType()
- * @method string getRemarksB()
  * @method string getProject()
- * @method string getRemarksA()
- * @method string getEndTime()
  * @method string getExternalId()
  * @method string getStartTime()
+ * @method string getRemarksB()
+ * @method string getRemarksA()
+ * @method string getEndTime()
  * @method string getVideoUri()
  * @method string getSaveType()
  * @method string getRemarksD()
@@ -57,19 +57,6 @@ class IndexVideoRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $remarksB
-     *
-     * @return $this
-     */
-    public function setRemarksB($remarksB)
-    {
-        $this->requestParameters['RemarksB'] = $remarksB;
-        $this->queryParameters['RemarksB'] = $remarksB;
-
-        return $this;
-    }
-
-    /**
      * @param string $project
      *
      * @return $this
@@ -78,32 +65,6 @@ class IndexVideoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Project'] = $project;
         $this->queryParameters['Project'] = $project;
-
-        return $this;
-    }
-
-    /**
-     * @param string $remarksA
-     *
-     * @return $this
-     */
-    public function setRemarksA($remarksA)
-    {
-        $this->requestParameters['RemarksA'] = $remarksA;
-        $this->queryParameters['RemarksA'] = $remarksA;
-
-        return $this;
-    }
-
-    /**
-     * @param string $endTime
-     *
-     * @return $this
-     */
-    public function setEndTime($endTime)
-    {
-        $this->requestParameters['EndTime'] = $endTime;
-        $this->queryParameters['EndTime'] = $endTime;
 
         return $this;
     }
@@ -130,6 +91,45 @@ class IndexVideoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['StartTime'] = $startTime;
         $this->queryParameters['StartTime'] = $startTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $remarksB
+     *
+     * @return $this
+     */
+    public function setRemarksB($remarksB)
+    {
+        $this->requestParameters['RemarksB'] = $remarksB;
+        $this->queryParameters['RemarksB'] = $remarksB;
+
+        return $this;
+    }
+
+    /**
+     * @param string $remarksA
+     *
+     * @return $this
+     */
+    public function setRemarksA($remarksA)
+    {
+        $this->requestParameters['RemarksA'] = $remarksA;
+        $this->queryParameters['RemarksA'] = $remarksA;
+
+        return $this;
+    }
+
+    /**
+     * @param string $endTime
+     *
+     * @return $this
+     */
+    public function setEndTime($endTime)
+    {
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
 
         return $this;
     }

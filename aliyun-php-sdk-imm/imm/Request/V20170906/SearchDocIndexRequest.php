@@ -8,24 +8,24 @@ namespace imm\Request\V20170906;
  * Request of SearchDocIndex
  *
  * @method string getModifiedTimeEnd()
+ * @method string getSizeLimitEnd()
+ * @method string getProject()
+ * @method string getModifiedTimeStart()
+ * @method string getPageNumLimitStart()
+ * @method string getContent()
+ * @method string getSizeLimitStart()
+ * @method string getLimit()
  * @method string getCustomKey1()
  * @method string getSet()
- * @method string getSizeLimitEnd()
  * @method string getCustomKey5()
  * @method string getOffset()
  * @method string getCustomKey4()
  * @method string getCustomKey3()
  * @method string getCustomKey2()
- * @method string getProject()
- * @method string getModifiedTimeStart()
- * @method string getPageNumLimitStart()
  * @method string getCustomKey6()
- * @method string getContent()
  * @method string getPageNumLimitEnd()
  * @method string getContentType()
- * @method string getSizeLimitStart()
  * @method string getName()
- * @method string getLimit()
  */
 class SearchDocIndexRequest extends \RpcAcsRequest
 {
@@ -62,6 +62,97 @@ class SearchDocIndexRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $sizeLimitEnd
+     *
+     * @return $this
+     */
+    public function setSizeLimitEnd($sizeLimitEnd)
+    {
+        $this->requestParameters['SizeLimitEnd'] = $sizeLimitEnd;
+        $this->queryParameters['SizeLimitEnd'] = $sizeLimitEnd;
+
+        return $this;
+    }
+
+    /**
+     * @param string $project
+     *
+     * @return $this
+     */
+    public function setProject($project)
+    {
+        $this->requestParameters['Project'] = $project;
+        $this->queryParameters['Project'] = $project;
+
+        return $this;
+    }
+
+    /**
+     * @param string $modifiedTimeStart
+     *
+     * @return $this
+     */
+    public function setModifiedTimeStart($modifiedTimeStart)
+    {
+        $this->requestParameters['ModifiedTimeStart'] = $modifiedTimeStart;
+        $this->queryParameters['ModifiedTimeStart'] = $modifiedTimeStart;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumLimitStart
+     *
+     * @return $this
+     */
+    public function setPageNumLimitStart($pageNumLimitStart)
+    {
+        $this->requestParameters['PageNumLimitStart'] = $pageNumLimitStart;
+        $this->queryParameters['PageNumLimitStart'] = $pageNumLimitStart;
+
+        return $this;
+    }
+
+    /**
+     * @param string $content
+     *
+     * @return $this
+     */
+    public function setContent($content)
+    {
+        $this->requestParameters['Content'] = $content;
+        $this->queryParameters['Content'] = $content;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sizeLimitStart
+     *
+     * @return $this
+     */
+    public function setSizeLimitStart($sizeLimitStart)
+    {
+        $this->requestParameters['SizeLimitStart'] = $sizeLimitStart;
+        $this->queryParameters['SizeLimitStart'] = $sizeLimitStart;
+
+        return $this;
+    }
+
+    /**
+     * @param string $limit
+     *
+     * @return $this
+     */
+    public function setLimit($limit)
+    {
+        $this->requestParameters['Limit'] = $limit;
+        $this->queryParameters['Limit'] = $limit;
+
+        return $this;
+    }
+
+    /**
      * @param string $customKey1
      *
      * @return $this
@@ -83,19 +174,6 @@ class SearchDocIndexRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Set'] = $set;
         $this->queryParameters['Set'] = $set;
-
-        return $this;
-    }
-
-    /**
-     * @param string $sizeLimitEnd
-     *
-     * @return $this
-     */
-    public function setSizeLimitEnd($sizeLimitEnd)
-    {
-        $this->requestParameters['SizeLimitEnd'] = $sizeLimitEnd;
-        $this->queryParameters['SizeLimitEnd'] = $sizeLimitEnd;
 
         return $this;
     }
@@ -166,45 +244,6 @@ class SearchDocIndexRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $project
-     *
-     * @return $this
-     */
-    public function setProject($project)
-    {
-        $this->requestParameters['Project'] = $project;
-        $this->queryParameters['Project'] = $project;
-
-        return $this;
-    }
-
-    /**
-     * @param string $modifiedTimeStart
-     *
-     * @return $this
-     */
-    public function setModifiedTimeStart($modifiedTimeStart)
-    {
-        $this->requestParameters['ModifiedTimeStart'] = $modifiedTimeStart;
-        $this->queryParameters['ModifiedTimeStart'] = $modifiedTimeStart;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumLimitStart
-     *
-     * @return $this
-     */
-    public function setPageNumLimitStart($pageNumLimitStart)
-    {
-        $this->requestParameters['PageNumLimitStart'] = $pageNumLimitStart;
-        $this->queryParameters['PageNumLimitStart'] = $pageNumLimitStart;
-
-        return $this;
-    }
-
-    /**
      * @param string $customKey6
      *
      * @return $this
@@ -213,19 +252,6 @@ class SearchDocIndexRequest extends \RpcAcsRequest
     {
         $this->requestParameters['CustomKey6'] = $customKey6;
         $this->queryParameters['CustomKey6'] = $customKey6;
-
-        return $this;
-    }
-
-    /**
-     * @param string $content
-     *
-     * @return $this
-     */
-    public function setContent($content)
-    {
-        $this->requestParameters['Content'] = $content;
-        $this->queryParameters['Content'] = $content;
 
         return $this;
     }
@@ -257,19 +283,6 @@ class SearchDocIndexRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $sizeLimitStart
-     *
-     * @return $this
-     */
-    public function setSizeLimitStart($sizeLimitStart)
-    {
-        $this->requestParameters['SizeLimitStart'] = $sizeLimitStart;
-        $this->queryParameters['SizeLimitStart'] = $sizeLimitStart;
-
-        return $this;
-    }
-
-    /**
      * @param string $name
      *
      * @return $this
@@ -278,19 +291,6 @@ class SearchDocIndexRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Name'] = $name;
         $this->queryParameters['Name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * @param string $limit
-     *
-     * @return $this
-     */
-    public function setLimit($limit)
-    {
-        $this->requestParameters['Limit'] = $limit;
-        $this->queryParameters['Limit'] = $limit;
 
         return $this;
     }

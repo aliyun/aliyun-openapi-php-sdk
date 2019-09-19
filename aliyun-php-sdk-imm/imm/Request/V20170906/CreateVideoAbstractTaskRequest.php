@@ -5,14 +5,17 @@ namespace imm\Request\V20170906;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of CreateGroupFacesJob
+ * Request of CreateVideoAbstractTask
  *
+ * @method string getTargetVideoUri()
  * @method string getProject()
  * @method string getNotifyEndpoint()
  * @method string getNotifyTopicName()
- * @method string getSetId()
+ * @method string getVideoUri()
+ * @method string getAbstractLength()
+ * @method string getTargetClipsUri()
  */
-class CreateGroupFacesJobRequest extends \RpcAcsRequest
+class CreateVideoAbstractTaskRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,9 +31,22 @@ class CreateGroupFacesJobRequest extends \RpcAcsRequest
         parent::__construct(
             'imm',
             '2017-09-06',
-            'CreateGroupFacesJob',
+            'CreateVideoAbstractTask',
             'imm'
         );
+    }
+
+    /**
+     * @param string $targetVideoUri
+     *
+     * @return $this
+     */
+    public function setTargetVideoUri($targetVideoUri)
+    {
+        $this->requestParameters['TargetVideoUri'] = $targetVideoUri;
+        $this->queryParameters['TargetVideoUri'] = $targetVideoUri;
+
+        return $this;
     }
 
     /**
@@ -73,14 +89,40 @@ class CreateGroupFacesJobRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $setId
+     * @param string $videoUri
      *
      * @return $this
      */
-    public function setSetId($setId)
+    public function setVideoUri($videoUri)
     {
-        $this->requestParameters['SetId'] = $setId;
-        $this->queryParameters['SetId'] = $setId;
+        $this->requestParameters['VideoUri'] = $videoUri;
+        $this->queryParameters['VideoUri'] = $videoUri;
+
+        return $this;
+    }
+
+    /**
+     * @param string $abstractLength
+     *
+     * @return $this
+     */
+    public function setAbstractLength($abstractLength)
+    {
+        $this->requestParameters['AbstractLength'] = $abstractLength;
+        $this->queryParameters['AbstractLength'] = $abstractLength;
+
+        return $this;
+    }
+
+    /**
+     * @param string $targetClipsUri
+     *
+     * @return $this
+     */
+    public function setTargetClipsUri($targetClipsUri)
+    {
+        $this->requestParameters['TargetClipsUri'] = $targetClipsUri;
+        $this->queryParameters['TargetClipsUri'] = $targetClipsUri;
 
         return $this;
     }

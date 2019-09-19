@@ -10,9 +10,9 @@ namespace imm\Request\V20170906;
  * @method string getResultNum()
  * @method string getProject()
  * @method string getSearchThresholdLevel()
- * @method string getSrcUri()
  * @method string getIsThreshold()
  * @method string getGroupName()
+ * @method string getSrcUri()
  */
 class SearchFaceRequest extends \RpcAcsRequest
 {
@@ -75,19 +75,6 @@ class SearchFaceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $srcUri
-     *
-     * @return $this
-     */
-    public function setSrcUri($srcUri)
-    {
-        $this->requestParameters['SrcUri'] = $srcUri;
-        $this->queryParameters['SrcUri'] = $srcUri;
-
-        return $this;
-    }
-
-    /**
      * @param string $isThreshold
      *
      * @return $this
@@ -109,6 +96,19 @@ class SearchFaceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['GroupName'] = $groupName;
         $this->queryParameters['GroupName'] = $groupName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $srcUri
+     *
+     * @return $this
+     */
+    public function setSrcUri($srcUri)
+    {
+        $this->requestParameters['SrcUri'] = $srcUri;
+        $this->queryParameters['SrcUri'] = $srcUri;
 
         return $this;
     }

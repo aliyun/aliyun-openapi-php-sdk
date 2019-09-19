@@ -7,8 +7,8 @@ namespace imm\Request\V20170906;
  *
  * Request of GetTagJob
  *
- * @method string getJobId()
  * @method string getProject()
+ * @method string getJobId()
  */
 class GetTagJobRequest extends \RpcAcsRequest
 {
@@ -32,19 +32,6 @@ class GetTagJobRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $jobId
-     *
-     * @return $this
-     */
-    public function setJobId($jobId)
-    {
-        $this->requestParameters['JobId'] = $jobId;
-        $this->queryParameters['JobId'] = $jobId;
-
-        return $this;
-    }
-
-    /**
      * @param string $project
      *
      * @return $this
@@ -53,6 +40,19 @@ class GetTagJobRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Project'] = $project;
         $this->queryParameters['Project'] = $project;
+
+        return $this;
+    }
+
+    /**
+     * @param string $jobId
+     *
+     * @return $this
+     */
+    public function setJobId($jobId)
+    {
+        $this->requestParameters['JobId'] = $jobId;
+        $this->queryParameters['JobId'] = $jobId;
 
         return $this;
     }

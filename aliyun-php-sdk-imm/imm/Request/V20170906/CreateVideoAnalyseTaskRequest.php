@@ -7,14 +7,14 @@ namespace imm\Request\V20170906;
  *
  * Request of CreateVideoAnalyseTask
  *
- * @method string getNotifyTopicName()
  * @method string getGrabType()
  * @method string getProject()
- * @method string getEndTime()
  * @method string getStartTime()
+ * @method string getNotifyEndpoint()
+ * @method string getNotifyTopicName()
+ * @method string getEndTime()
  * @method string getVideoUri()
  * @method string getSaveType()
- * @method string getNotifyEndpoint()
  * @method string getInterval()
  * @method string getTgtUri()
  */
@@ -37,19 +37,6 @@ class CreateVideoAnalyseTaskRequest extends \RpcAcsRequest
             'CreateVideoAnalyseTask',
             'imm'
         );
-    }
-
-    /**
-     * @param string $notifyTopicName
-     *
-     * @return $this
-     */
-    public function setNotifyTopicName($notifyTopicName)
-    {
-        $this->requestParameters['NotifyTopicName'] = $notifyTopicName;
-        $this->queryParameters['NotifyTopicName'] = $notifyTopicName;
-
-        return $this;
     }
 
     /**
@@ -79,19 +66,6 @@ class CreateVideoAnalyseTaskRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $endTime
-     *
-     * @return $this
-     */
-    public function setEndTime($endTime)
-    {
-        $this->requestParameters['EndTime'] = $endTime;
-        $this->queryParameters['EndTime'] = $endTime;
-
-        return $this;
-    }
-
-    /**
      * @param string $startTime
      *
      * @return $this
@@ -100,6 +74,45 @@ class CreateVideoAnalyseTaskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['StartTime'] = $startTime;
         $this->queryParameters['StartTime'] = $startTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $notifyEndpoint
+     *
+     * @return $this
+     */
+    public function setNotifyEndpoint($notifyEndpoint)
+    {
+        $this->requestParameters['NotifyEndpoint'] = $notifyEndpoint;
+        $this->queryParameters['NotifyEndpoint'] = $notifyEndpoint;
+
+        return $this;
+    }
+
+    /**
+     * @param string $notifyTopicName
+     *
+     * @return $this
+     */
+    public function setNotifyTopicName($notifyTopicName)
+    {
+        $this->requestParameters['NotifyTopicName'] = $notifyTopicName;
+        $this->queryParameters['NotifyTopicName'] = $notifyTopicName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $endTime
+     *
+     * @return $this
+     */
+    public function setEndTime($endTime)
+    {
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
 
         return $this;
     }
@@ -126,19 +139,6 @@ class CreateVideoAnalyseTaskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SaveType'] = $saveType;
         $this->queryParameters['SaveType'] = $saveType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $notifyEndpoint
-     *
-     * @return $this
-     */
-    public function setNotifyEndpoint($notifyEndpoint)
-    {
-        $this->requestParameters['NotifyEndpoint'] = $notifyEndpoint;
-        $this->queryParameters['NotifyEndpoint'] = $notifyEndpoint;
 
         return $this;
     }

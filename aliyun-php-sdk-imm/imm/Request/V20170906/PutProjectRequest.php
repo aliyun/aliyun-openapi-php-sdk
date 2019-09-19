@@ -7,11 +7,11 @@ namespace imm\Request\V20170906;
  *
  * Request of PutProject
  *
+ * @method string getProject()
+ * @method string getType()
  * @method string getCU()
  * @method string getServiceRole()
- * @method string getProject()
  * @method string getBillingType()
- * @method string getType()
  */
 class PutProjectRequest extends \RpcAcsRequest
 {
@@ -32,6 +32,32 @@ class PutProjectRequest extends \RpcAcsRequest
             'PutProject',
             'imm'
         );
+    }
+
+    /**
+     * @param string $project
+     *
+     * @return $this
+     */
+    public function setProject($project)
+    {
+        $this->requestParameters['Project'] = $project;
+        $this->queryParameters['Project'] = $project;
+
+        return $this;
+    }
+
+    /**
+     * @param string $type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->requestParameters['Type'] = $type;
+        $this->queryParameters['Type'] = $type;
+
+        return $this;
     }
 
     /**
@@ -61,19 +87,6 @@ class PutProjectRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $project
-     *
-     * @return $this
-     */
-    public function setProject($project)
-    {
-        $this->requestParameters['Project'] = $project;
-        $this->queryParameters['Project'] = $project;
-
-        return $this;
-    }
-
-    /**
      * @param string $billingType
      *
      * @return $this
@@ -82,19 +95,6 @@ class PutProjectRequest extends \RpcAcsRequest
     {
         $this->requestParameters['BillingType'] = $billingType;
         $this->queryParameters['BillingType'] = $billingType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->requestParameters['Type'] = $type;
-        $this->queryParameters['Type'] = $type;
 
         return $this;
     }

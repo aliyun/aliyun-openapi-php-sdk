@@ -7,8 +7,8 @@ namespace imm\Request\V20170906;
  *
  * Request of ListVideos
  *
- * @method string getMarker()
  * @method string getProject()
+ * @method string getMarker()
  * @method string getSetId()
  * @method string getCreateTimeStart()
  */
@@ -34,19 +34,6 @@ class ListVideosRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $marker
-     *
-     * @return $this
-     */
-    public function setMarker($marker)
-    {
-        $this->requestParameters['Marker'] = $marker;
-        $this->queryParameters['Marker'] = $marker;
-
-        return $this;
-    }
-
-    /**
      * @param string $project
      *
      * @return $this
@@ -55,6 +42,19 @@ class ListVideosRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Project'] = $project;
         $this->queryParameters['Project'] = $project;
+
+        return $this;
+    }
+
+    /**
+     * @param string $marker
+     *
+     * @return $this
+     */
+    public function setMarker($marker)
+    {
+        $this->requestParameters['Marker'] = $marker;
+        $this->queryParameters['Marker'] = $marker;
 
         return $this;
     }

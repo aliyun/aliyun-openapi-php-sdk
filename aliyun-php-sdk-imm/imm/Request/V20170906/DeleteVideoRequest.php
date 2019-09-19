@@ -7,10 +7,10 @@ namespace imm\Request\V20170906;
  *
  * Request of DeleteVideo
  *
- * @method string getVideoUri()
  * @method string getProject()
- * @method string getSetId()
  * @method string getResources()
+ * @method string getVideoUri()
+ * @method string getSetId()
  */
 class DeleteVideoRequest extends \RpcAcsRequest
 {
@@ -34,19 +34,6 @@ class DeleteVideoRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $videoUri
-     *
-     * @return $this
-     */
-    public function setVideoUri($videoUri)
-    {
-        $this->requestParameters['VideoUri'] = $videoUri;
-        $this->queryParameters['VideoUri'] = $videoUri;
-
-        return $this;
-    }
-
-    /**
      * @param string $project
      *
      * @return $this
@@ -60,19 +47,6 @@ class DeleteVideoRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $setId
-     *
-     * @return $this
-     */
-    public function setSetId($setId)
-    {
-        $this->requestParameters['SetId'] = $setId;
-        $this->queryParameters['SetId'] = $setId;
-
-        return $this;
-    }
-
-    /**
      * @param string $resources
      *
      * @return $this
@@ -81,6 +55,32 @@ class DeleteVideoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Resources'] = $resources;
         $this->queryParameters['Resources'] = $resources;
+
+        return $this;
+    }
+
+    /**
+     * @param string $videoUri
+     *
+     * @return $this
+     */
+    public function setVideoUri($videoUri)
+    {
+        $this->requestParameters['VideoUri'] = $videoUri;
+        $this->queryParameters['VideoUri'] = $videoUri;
+
+        return $this;
+    }
+
+    /**
+     * @param string $setId
+     *
+     * @return $this
+     */
+    public function setSetId($setId)
+    {
+        $this->requestParameters['SetId'] = $setId;
+        $this->queryParameters['SetId'] = $setId;
 
         return $this;
     }

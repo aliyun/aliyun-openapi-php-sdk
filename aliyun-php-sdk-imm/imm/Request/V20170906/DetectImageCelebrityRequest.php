@@ -7,10 +7,10 @@ namespace imm\Request\V20170906;
  *
  * Request of DetectImageCelebrity
  *
- * @method string getImageUri()
- * @method string getLibrary()
  * @method string getProject()
+ * @method string getLibrary()
  * @method string getRealUid()
+ * @method string getImageUri()
  */
 class DetectImageCelebrityRequest extends \RpcAcsRequest
 {
@@ -34,14 +34,14 @@ class DetectImageCelebrityRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $imageUri
+     * @param string $project
      *
      * @return $this
      */
-    public function setImageUri($imageUri)
+    public function setProject($project)
     {
-        $this->requestParameters['ImageUri'] = $imageUri;
-        $this->queryParameters['ImageUri'] = $imageUri;
+        $this->requestParameters['Project'] = $project;
+        $this->queryParameters['Project'] = $project;
 
         return $this;
     }
@@ -60,19 +60,6 @@ class DetectImageCelebrityRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $project
-     *
-     * @return $this
-     */
-    public function setProject($project)
-    {
-        $this->requestParameters['Project'] = $project;
-        $this->queryParameters['Project'] = $project;
-
-        return $this;
-    }
-
-    /**
      * @param string $realUid
      *
      * @return $this
@@ -81,6 +68,19 @@ class DetectImageCelebrityRequest extends \RpcAcsRequest
     {
         $this->requestParameters['RealUid'] = $realUid;
         $this->queryParameters['RealUid'] = $realUid;
+
+        return $this;
+    }
+
+    /**
+     * @param string $imageUri
+     *
+     * @return $this
+     */
+    public function setImageUri($imageUri)
+    {
+        $this->requestParameters['ImageUri'] = $imageUri;
+        $this->queryParameters['ImageUri'] = $imageUri;
 
         return $this;
     }

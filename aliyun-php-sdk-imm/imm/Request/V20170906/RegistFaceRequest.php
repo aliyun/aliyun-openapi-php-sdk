@@ -10,9 +10,9 @@ namespace imm\Request\V20170906;
  * @method string getChooseBiggestFace()
  * @method string getIsQualityLimit()
  * @method string getProject()
+ * @method string getGroupName()
  * @method string getSrcUri()
  * @method string getRegisterCheckLevel()
- * @method string getGroupName()
  * @method string getUser()
  */
 class RegistFaceRequest extends \RpcAcsRequest
@@ -76,6 +76,19 @@ class RegistFaceRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $groupName
+     *
+     * @return $this
+     */
+    public function setGroupName($groupName)
+    {
+        $this->requestParameters['GroupName'] = $groupName;
+        $this->queryParameters['GroupName'] = $groupName;
+
+        return $this;
+    }
+
+    /**
      * @param string $srcUri
      *
      * @return $this
@@ -97,19 +110,6 @@ class RegistFaceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['RegisterCheckLevel'] = $registerCheckLevel;
         $this->queryParameters['RegisterCheckLevel'] = $registerCheckLevel;
-
-        return $this;
-    }
-
-    /**
-     * @param string $groupName
-     *
-     * @return $this
-     */
-    public function setGroupName($groupName)
-    {
-        $this->requestParameters['GroupName'] = $groupName;
-        $this->queryParameters['GroupName'] = $groupName;
 
         return $this;
     }

@@ -8,9 +8,9 @@ namespace imm\Request\V20170906;
  * Request of ListImageJobs
  *
  * @method string getMaxKeys()
- * @method string getMarker()
  * @method string getProject()
  * @method string getJobType()
+ * @method string getMarker()
  */
 class ListImageJobsRequest extends \RpcAcsRequest
 {
@@ -47,19 +47,6 @@ class ListImageJobsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $marker
-     *
-     * @return $this
-     */
-    public function setMarker($marker)
-    {
-        $this->requestParameters['Marker'] = $marker;
-        $this->queryParameters['Marker'] = $marker;
-
-        return $this;
-    }
-
-    /**
      * @param string $project
      *
      * @return $this
@@ -81,6 +68,19 @@ class ListImageJobsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['JobType'] = $jobType;
         $this->queryParameters['JobType'] = $jobType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $marker
+     *
+     * @return $this
+     */
+    public function setMarker($marker)
+    {
+        $this->requestParameters['Marker'] = $marker;
+        $this->queryParameters['Marker'] = $marker;
 
         return $this;
     }

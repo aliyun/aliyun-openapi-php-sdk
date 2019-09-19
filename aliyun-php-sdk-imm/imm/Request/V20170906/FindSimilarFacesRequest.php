@@ -7,13 +7,13 @@ namespace imm\Request\V20170906;
  *
  * Request of FindSimilarFaces
  *
- * @method string getImageUri()
+ * @method string getProject()
  * @method string getMinSimilarity()
  * @method string getResponseFormat()
  * @method string getLimit()
- * @method string getProject()
- * @method string getSetId()
  * @method string getFaceId()
+ * @method string getImageUri()
+ * @method string getSetId()
  */
 class FindSimilarFacesRequest extends \RpcAcsRequest
 {
@@ -37,14 +37,14 @@ class FindSimilarFacesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $imageUri
+     * @param string $project
      *
      * @return $this
      */
-    public function setImageUri($imageUri)
+    public function setProject($project)
     {
-        $this->requestParameters['ImageUri'] = $imageUri;
-        $this->queryParameters['ImageUri'] = $imageUri;
+        $this->requestParameters['Project'] = $project;
+        $this->queryParameters['Project'] = $project;
 
         return $this;
     }
@@ -89,14 +89,27 @@ class FindSimilarFacesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $project
+     * @param string $faceId
      *
      * @return $this
      */
-    public function setProject($project)
+    public function setFaceId($faceId)
     {
-        $this->requestParameters['Project'] = $project;
-        $this->queryParameters['Project'] = $project;
+        $this->requestParameters['FaceId'] = $faceId;
+        $this->queryParameters['FaceId'] = $faceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $imageUri
+     *
+     * @return $this
+     */
+    public function setImageUri($imageUri)
+    {
+        $this->requestParameters['ImageUri'] = $imageUri;
+        $this->queryParameters['ImageUri'] = $imageUri;
 
         return $this;
     }
@@ -110,19 +123,6 @@ class FindSimilarFacesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SetId'] = $setId;
         $this->queryParameters['SetId'] = $setId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $faceId
-     *
-     * @return $this
-     */
-    public function setFaceId($faceId)
-    {
-        $this->requestParameters['FaceId'] = $faceId;
-        $this->queryParameters['FaceId'] = $faceId;
 
         return $this;
     }

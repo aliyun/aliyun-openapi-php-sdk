@@ -7,9 +7,9 @@ namespace imm\Request\V20170906;
  *
  * Request of ListVideoFrames
  *
+ * @method string getProject()
  * @method string getVideoUri()
  * @method string getMarker()
- * @method string getProject()
  * @method string getSetId()
  */
 class ListVideoFramesRequest extends \RpcAcsRequest
@@ -34,6 +34,19 @@ class ListVideoFramesRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $project
+     *
+     * @return $this
+     */
+    public function setProject($project)
+    {
+        $this->requestParameters['Project'] = $project;
+        $this->queryParameters['Project'] = $project;
+
+        return $this;
+    }
+
+    /**
      * @param string $videoUri
      *
      * @return $this
@@ -55,19 +68,6 @@ class ListVideoFramesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Marker'] = $marker;
         $this->queryParameters['Marker'] = $marker;
-
-        return $this;
-    }
-
-    /**
-     * @param string $project
-     *
-     * @return $this
-     */
-    public function setProject($project)
-    {
-        $this->requestParameters['Project'] = $project;
-        $this->queryParameters['Project'] = $project;
 
         return $this;
     }

@@ -7,11 +7,11 @@ namespace imm\Request\V20170906;
  *
  * Request of FindImagesByTagNames
  *
- * @method string getMarker()
- * @method string getLimit()
  * @method string getProject()
- * @method string getSetId()
+ * @method string getLimit()
  * @method string getTagNames()
+ * @method string getMarker()
+ * @method string getSetId()
  */
 class FindImagesByTagNamesRequest extends \RpcAcsRequest
 {
@@ -35,14 +35,14 @@ class FindImagesByTagNamesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $marker
+     * @param string $project
      *
      * @return $this
      */
-    public function setMarker($marker)
+    public function setProject($project)
     {
-        $this->requestParameters['Marker'] = $marker;
-        $this->queryParameters['Marker'] = $marker;
+        $this->requestParameters['Project'] = $project;
+        $this->queryParameters['Project'] = $project;
 
         return $this;
     }
@@ -61,14 +61,27 @@ class FindImagesByTagNamesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $project
+     * @param string $tagNames
      *
      * @return $this
      */
-    public function setProject($project)
+    public function setTagNames($tagNames)
     {
-        $this->requestParameters['Project'] = $project;
-        $this->queryParameters['Project'] = $project;
+        $this->requestParameters['TagNames'] = $tagNames;
+        $this->queryParameters['TagNames'] = $tagNames;
+
+        return $this;
+    }
+
+    /**
+     * @param string $marker
+     *
+     * @return $this
+     */
+    public function setMarker($marker)
+    {
+        $this->requestParameters['Marker'] = $marker;
+        $this->queryParameters['Marker'] = $marker;
 
         return $this;
     }
@@ -82,19 +95,6 @@ class FindImagesByTagNamesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SetId'] = $setId;
         $this->queryParameters['SetId'] = $setId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $tagNames
-     *
-     * @return $this
-     */
-    public function setTagNames($tagNames)
-    {
-        $this->requestParameters['TagNames'] = $tagNames;
-        $this->queryParameters['TagNames'] = $tagNames;
 
         return $this;
     }

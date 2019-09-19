@@ -7,9 +7,9 @@ namespace imm\Request\V20170906;
  *
  * Request of DetectTag
  *
- * @method string getSrcUris()
- * @method string getModelId()
  * @method string getProject()
+ * @method string getModelId()
+ * @method string getSrcUris()
  */
 class DetectTagRequest extends \RpcAcsRequest
 {
@@ -33,14 +33,14 @@ class DetectTagRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $srcUris
+     * @param string $project
      *
      * @return $this
      */
-    public function setSrcUris($srcUris)
+    public function setProject($project)
     {
-        $this->requestParameters['SrcUris'] = $srcUris;
-        $this->queryParameters['SrcUris'] = $srcUris;
+        $this->requestParameters['Project'] = $project;
+        $this->queryParameters['Project'] = $project;
 
         return $this;
     }
@@ -59,14 +59,14 @@ class DetectTagRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $project
+     * @param string $srcUris
      *
      * @return $this
      */
-    public function setProject($project)
+    public function setSrcUris($srcUris)
     {
-        $this->requestParameters['Project'] = $project;
-        $this->queryParameters['Project'] = $project;
+        $this->requestParameters['SrcUris'] = $srcUris;
+        $this->queryParameters['SrcUris'] = $srcUris;
 
         return $this;
     }

@@ -7,9 +7,9 @@ namespace imm\Request\V20170906;
  *
  * Request of DeleteDocIndex
  *
- * @method string getSet()
  * @method string getProject()
  * @method string getUniqueId()
+ * @method string getSet()
  */
 class DeleteDocIndexRequest extends \RpcAcsRequest
 {
@@ -30,19 +30,6 @@ class DeleteDocIndexRequest extends \RpcAcsRequest
             'DeleteDocIndex',
             'imm'
         );
-    }
-
-    /**
-     * @param string $set
-     *
-     * @return $this
-     */
-    public function setSet($set)
-    {
-        $this->requestParameters['Set'] = $set;
-        $this->queryParameters['Set'] = $set;
-
-        return $this;
     }
 
     /**
@@ -67,6 +54,19 @@ class DeleteDocIndexRequest extends \RpcAcsRequest
     {
         $this->requestParameters['UniqueId'] = $uniqueId;
         $this->queryParameters['UniqueId'] = $uniqueId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $set
+     *
+     * @return $this
+     */
+    public function setSet($set)
+    {
+        $this->requestParameters['Set'] = $set;
+        $this->queryParameters['Set'] = $set;
 
         return $this;
     }

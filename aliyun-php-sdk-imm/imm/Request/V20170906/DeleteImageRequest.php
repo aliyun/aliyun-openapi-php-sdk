@@ -7,8 +7,8 @@ namespace imm\Request\V20170906;
  *
  * Request of DeleteImage
  *
- * @method string getImageUri()
  * @method string getProject()
+ * @method string getImageUri()
  * @method string getSetId()
  */
 class DeleteImageRequest extends \RpcAcsRequest
@@ -33,19 +33,6 @@ class DeleteImageRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $imageUri
-     *
-     * @return $this
-     */
-    public function setImageUri($imageUri)
-    {
-        $this->requestParameters['ImageUri'] = $imageUri;
-        $this->queryParameters['ImageUri'] = $imageUri;
-
-        return $this;
-    }
-
-    /**
      * @param string $project
      *
      * @return $this
@@ -54,6 +41,19 @@ class DeleteImageRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Project'] = $project;
         $this->queryParameters['Project'] = $project;
+
+        return $this;
+    }
+
+    /**
+     * @param string $imageUri
+     *
+     * @return $this
+     */
+    public function setImageUri($imageUri)
+    {
+        $this->requestParameters['ImageUri'] = $imageUri;
+        $this->queryParameters['ImageUri'] = $imageUri;
 
         return $this;
     }

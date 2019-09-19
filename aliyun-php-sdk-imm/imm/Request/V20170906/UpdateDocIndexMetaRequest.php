@@ -7,16 +7,16 @@ namespace imm\Request\V20170906;
  *
  * Request of UpdateDocIndexMeta
  *
+ * @method string getProject()
+ * @method string getUniqueId()
  * @method string getCustomKey1()
  * @method string getSet()
  * @method string getCustomKey5()
  * @method string getCustomKey4()
  * @method string getCustomKey3()
  * @method string getCustomKey2()
- * @method string getProject()
  * @method string getCustomKey6()
  * @method string getName()
- * @method string getUniqueId()
  */
 class UpdateDocIndexMetaRequest extends \RpcAcsRequest
 {
@@ -37,6 +37,32 @@ class UpdateDocIndexMetaRequest extends \RpcAcsRequest
             'UpdateDocIndexMeta',
             'imm'
         );
+    }
+
+    /**
+     * @param string $project
+     *
+     * @return $this
+     */
+    public function setProject($project)
+    {
+        $this->requestParameters['Project'] = $project;
+        $this->queryParameters['Project'] = $project;
+
+        return $this;
+    }
+
+    /**
+     * @param string $uniqueId
+     *
+     * @return $this
+     */
+    public function setUniqueId($uniqueId)
+    {
+        $this->requestParameters['UniqueId'] = $uniqueId;
+        $this->queryParameters['UniqueId'] = $uniqueId;
+
+        return $this;
     }
 
     /**
@@ -118,19 +144,6 @@ class UpdateDocIndexMetaRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $project
-     *
-     * @return $this
-     */
-    public function setProject($project)
-    {
-        $this->requestParameters['Project'] = $project;
-        $this->queryParameters['Project'] = $project;
-
-        return $this;
-    }
-
-    /**
      * @param string $customKey6
      *
      * @return $this
@@ -152,19 +165,6 @@ class UpdateDocIndexMetaRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Name'] = $name;
         $this->queryParameters['Name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * @param string $uniqueId
-     *
-     * @return $this
-     */
-    public function setUniqueId($uniqueId)
-    {
-        $this->requestParameters['UniqueId'] = $uniqueId;
-        $this->queryParameters['UniqueId'] = $uniqueId;
 
         return $this;
     }

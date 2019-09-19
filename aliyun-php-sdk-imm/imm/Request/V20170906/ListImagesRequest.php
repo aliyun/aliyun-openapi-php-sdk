@@ -7,9 +7,9 @@ namespace imm\Request\V20170906;
  *
  * Request of ListImages
  *
- * @method string getMarker()
- * @method string getLimit()
  * @method string getProject()
+ * @method string getLimit()
+ * @method string getMarker()
  * @method string getSetId()
  * @method string getCreateTimeStart()
  */
@@ -35,14 +35,14 @@ class ListImagesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $marker
+     * @param string $project
      *
      * @return $this
      */
-    public function setMarker($marker)
+    public function setProject($project)
     {
-        $this->requestParameters['Marker'] = $marker;
-        $this->queryParameters['Marker'] = $marker;
+        $this->requestParameters['Project'] = $project;
+        $this->queryParameters['Project'] = $project;
 
         return $this;
     }
@@ -61,14 +61,14 @@ class ListImagesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $project
+     * @param string $marker
      *
      * @return $this
      */
-    public function setProject($project)
+    public function setMarker($marker)
     {
-        $this->requestParameters['Project'] = $project;
-        $this->queryParameters['Project'] = $project;
+        $this->requestParameters['Marker'] = $marker;
+        $this->queryParameters['Marker'] = $marker;
 
         return $this;
     }

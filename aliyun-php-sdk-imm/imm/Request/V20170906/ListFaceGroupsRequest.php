@@ -7,12 +7,12 @@ namespace imm\Request\V20170906;
  *
  * Request of ListFaceGroups
  *
- * @method string getMarker()
- * @method string getLimit()
  * @method string getProject()
- * @method string getSetId()
- * @method string getOrderBy()
+ * @method string getLimit()
  * @method string getOrder()
+ * @method string getOrderBy()
+ * @method string getMarker()
+ * @method string getSetId()
  */
 class ListFaceGroupsRequest extends \RpcAcsRequest
 {
@@ -36,14 +36,14 @@ class ListFaceGroupsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $marker
+     * @param string $project
      *
      * @return $this
      */
-    public function setMarker($marker)
+    public function setProject($project)
     {
-        $this->requestParameters['Marker'] = $marker;
-        $this->queryParameters['Marker'] = $marker;
+        $this->requestParameters['Project'] = $project;
+        $this->queryParameters['Project'] = $project;
 
         return $this;
     }
@@ -62,27 +62,14 @@ class ListFaceGroupsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $project
+     * @param string $order
      *
      * @return $this
      */
-    public function setProject($project)
+    public function setOrder($order)
     {
-        $this->requestParameters['Project'] = $project;
-        $this->queryParameters['Project'] = $project;
-
-        return $this;
-    }
-
-    /**
-     * @param string $setId
-     *
-     * @return $this
-     */
-    public function setSetId($setId)
-    {
-        $this->requestParameters['SetId'] = $setId;
-        $this->queryParameters['SetId'] = $setId;
+        $this->requestParameters['Order'] = $order;
+        $this->queryParameters['Order'] = $order;
 
         return $this;
     }
@@ -101,14 +88,27 @@ class ListFaceGroupsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $order
+     * @param string $marker
      *
      * @return $this
      */
-    public function setOrder($order)
+    public function setMarker($marker)
     {
-        $this->requestParameters['Order'] = $order;
-        $this->queryParameters['Order'] = $order;
+        $this->requestParameters['Marker'] = $marker;
+        $this->queryParameters['Marker'] = $marker;
+
+        return $this;
+    }
+
+    /**
+     * @param string $setId
+     *
+     * @return $this
+     */
+    public function setSetId($setId)
+    {
+        $this->requestParameters['SetId'] = $setId;
+        $this->queryParameters['SetId'] = $setId;
 
         return $this;
     }

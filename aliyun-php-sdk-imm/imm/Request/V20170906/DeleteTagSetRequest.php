@@ -7,10 +7,10 @@ namespace imm\Request\V20170906;
  *
  * Request of DeleteTagSet
  *
- * @method string getLazyMode()
  * @method string getProject()
- * @method string getSetId()
+ * @method string getLazyMode()
  * @method string getCheckEmpty()
+ * @method string getSetId()
  */
 class DeleteTagSetRequest extends \RpcAcsRequest
 {
@@ -34,19 +34,6 @@ class DeleteTagSetRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $lazyMode
-     *
-     * @return $this
-     */
-    public function setLazyMode($lazyMode)
-    {
-        $this->requestParameters['LazyMode'] = $lazyMode;
-        $this->queryParameters['LazyMode'] = $lazyMode;
-
-        return $this;
-    }
-
-    /**
      * @param string $project
      *
      * @return $this
@@ -60,14 +47,14 @@ class DeleteTagSetRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $setId
+     * @param string $lazyMode
      *
      * @return $this
      */
-    public function setSetId($setId)
+    public function setLazyMode($lazyMode)
     {
-        $this->requestParameters['SetId'] = $setId;
-        $this->queryParameters['SetId'] = $setId;
+        $this->requestParameters['LazyMode'] = $lazyMode;
+        $this->queryParameters['LazyMode'] = $lazyMode;
 
         return $this;
     }
@@ -81,6 +68,19 @@ class DeleteTagSetRequest extends \RpcAcsRequest
     {
         $this->requestParameters['CheckEmpty'] = $checkEmpty;
         $this->queryParameters['CheckEmpty'] = $checkEmpty;
+
+        return $this;
+    }
+
+    /**
+     * @param string $setId
+     *
+     * @return $this
+     */
+    public function setSetId($setId)
+    {
+        $this->requestParameters['SetId'] = $setId;
+        $this->queryParameters['SetId'] = $setId;
 
         return $this;
     }

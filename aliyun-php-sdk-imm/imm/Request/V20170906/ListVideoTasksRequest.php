@@ -8,9 +8,9 @@ namespace imm\Request\V20170906;
  * Request of ListVideoTasks
  *
  * @method string getMaxKeys()
+ * @method string getProject()
  * @method string getTaskType()
  * @method string getMarker()
- * @method string getProject()
  */
 class ListVideoTasksRequest extends \RpcAcsRequest
 {
@@ -47,6 +47,19 @@ class ListVideoTasksRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $project
+     *
+     * @return $this
+     */
+    public function setProject($project)
+    {
+        $this->requestParameters['Project'] = $project;
+        $this->queryParameters['Project'] = $project;
+
+        return $this;
+    }
+
+    /**
      * @param string $taskType
      *
      * @return $this
@@ -68,19 +81,6 @@ class ListVideoTasksRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Marker'] = $marker;
         $this->queryParameters['Marker'] = $marker;
-
-        return $this;
-    }
-
-    /**
-     * @param string $project
-     *
-     * @return $this
-     */
-    public function setProject($project)
-    {
-        $this->requestParameters['Project'] = $project;
-        $this->queryParameters['Project'] = $project;
 
         return $this;
     }

@@ -7,9 +7,9 @@ namespace imm\Request\V20170906;
  *
  * Request of CreateMediaComplexTask
  *
- * @method string getNotifyTopicName()
- * @method string getNotifyEndpoint()
  * @method string getProject()
+ * @method string getNotifyEndpoint()
+ * @method string getNotifyTopicName()
  * @method string getParameters()
  */
 class CreateMediaComplexTaskRequest extends \RpcAcsRequest
@@ -34,14 +34,14 @@ class CreateMediaComplexTaskRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $notifyTopicName
+     * @param string $project
      *
      * @return $this
      */
-    public function setNotifyTopicName($notifyTopicName)
+    public function setProject($project)
     {
-        $this->requestParameters['NotifyTopicName'] = $notifyTopicName;
-        $this->queryParameters['NotifyTopicName'] = $notifyTopicName;
+        $this->requestParameters['Project'] = $project;
+        $this->queryParameters['Project'] = $project;
 
         return $this;
     }
@@ -60,14 +60,14 @@ class CreateMediaComplexTaskRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $project
+     * @param string $notifyTopicName
      *
      * @return $this
      */
-    public function setProject($project)
+    public function setNotifyTopicName($notifyTopicName)
     {
-        $this->requestParameters['Project'] = $project;
-        $this->queryParameters['Project'] = $project;
+        $this->requestParameters['NotifyTopicName'] = $notifyTopicName;
+        $this->queryParameters['NotifyTopicName'] = $notifyTopicName;
 
         return $this;
     }

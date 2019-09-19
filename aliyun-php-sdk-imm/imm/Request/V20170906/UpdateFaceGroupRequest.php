@@ -7,10 +7,10 @@ namespace imm\Request\V20170906;
  *
  * Request of UpdateFaceGroup
  *
- * @method string getGroupId()
  * @method string getProject()
- * @method string getSetId()
+ * @method string getGroupId()
  * @method string getGroupName()
+ * @method string getSetId()
  * @method string getGroupCoverFaceId()
  */
 class UpdateFaceGroupRequest extends \RpcAcsRequest
@@ -35,19 +35,6 @@ class UpdateFaceGroupRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $groupId
-     *
-     * @return $this
-     */
-    public function setGroupId($groupId)
-    {
-        $this->requestParameters['GroupId'] = $groupId;
-        $this->queryParameters['GroupId'] = $groupId;
-
-        return $this;
-    }
-
-    /**
      * @param string $project
      *
      * @return $this
@@ -61,14 +48,14 @@ class UpdateFaceGroupRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $setId
+     * @param string $groupId
      *
      * @return $this
      */
-    public function setSetId($setId)
+    public function setGroupId($groupId)
     {
-        $this->requestParameters['SetId'] = $setId;
-        $this->queryParameters['SetId'] = $setId;
+        $this->requestParameters['GroupId'] = $groupId;
+        $this->queryParameters['GroupId'] = $groupId;
 
         return $this;
     }
@@ -82,6 +69,19 @@ class UpdateFaceGroupRequest extends \RpcAcsRequest
     {
         $this->requestParameters['GroupName'] = $groupName;
         $this->queryParameters['GroupName'] = $groupName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $setId
+     *
+     * @return $this
+     */
+    public function setSetId($setId)
+    {
+        $this->requestParameters['SetId'] = $setId;
+        $this->queryParameters['SetId'] = $setId;
 
         return $this;
     }

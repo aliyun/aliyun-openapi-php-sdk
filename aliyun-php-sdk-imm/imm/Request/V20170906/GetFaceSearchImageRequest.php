@@ -9,8 +9,8 @@ namespace imm\Request\V20170906;
  *
  * @method string getImageId()
  * @method string getProject()
- * @method string getSrcUri()
  * @method string getGroupName()
+ * @method string getSrcUri()
  * @method string getUser()
  */
 class GetFaceSearchImageRequest extends \RpcAcsRequest
@@ -61,19 +61,6 @@ class GetFaceSearchImageRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $srcUri
-     *
-     * @return $this
-     */
-    public function setSrcUri($srcUri)
-    {
-        $this->requestParameters['SrcUri'] = $srcUri;
-        $this->queryParameters['SrcUri'] = $srcUri;
-
-        return $this;
-    }
-
-    /**
      * @param string $groupName
      *
      * @return $this
@@ -82,6 +69,19 @@ class GetFaceSearchImageRequest extends \RpcAcsRequest
     {
         $this->requestParameters['GroupName'] = $groupName;
         $this->queryParameters['GroupName'] = $groupName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $srcUri
+     *
+     * @return $this
+     */
+    public function setSrcUri($srcUri)
+    {
+        $this->requestParameters['SrcUri'] = $srcUri;
+        $this->queryParameters['SrcUri'] = $srcUri;
 
         return $this;
     }
