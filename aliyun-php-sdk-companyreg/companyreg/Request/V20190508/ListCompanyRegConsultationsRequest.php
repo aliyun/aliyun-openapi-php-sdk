@@ -8,12 +8,12 @@ namespace companyreg\Request\V20190508;
  * Request of ListCompanyRegConsultations
  *
  * @method string getEndGmtCreate()
- * @method string getBizCode()
  * @method string getCity()
+ * @method string getPageNum()
+ * @method string getBizCode()
  * @method string getPageSize()
  * @method string getBizId()
  * @method string getStartGmtCreate()
- * @method string getPageNum()
  */
 class ListCompanyRegConsultationsRequest extends \RpcAcsRequest
 {
@@ -50,19 +50,6 @@ class ListCompanyRegConsultationsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $bizCode
-     *
-     * @return $this
-     */
-    public function setBizCode($bizCode)
-    {
-        $this->requestParameters['BizCode'] = $bizCode;
-        $this->queryParameters['BizCode'] = $bizCode;
-
-        return $this;
-    }
-
-    /**
      * @param string $city
      *
      * @return $this
@@ -71,6 +58,32 @@ class ListCompanyRegConsultationsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['City'] = $city;
         $this->queryParameters['City'] = $city;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNum
+     *
+     * @return $this
+     */
+    public function setPageNum($pageNum)
+    {
+        $this->requestParameters['PageNum'] = $pageNum;
+        $this->queryParameters['PageNum'] = $pageNum;
+
+        return $this;
+    }
+
+    /**
+     * @param string $bizCode
+     *
+     * @return $this
+     */
+    public function setBizCode($bizCode)
+    {
+        $this->requestParameters['BizCode'] = $bizCode;
+        $this->queryParameters['BizCode'] = $bizCode;
 
         return $this;
     }
@@ -110,19 +123,6 @@ class ListCompanyRegConsultationsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['StartGmtCreate'] = $startGmtCreate;
         $this->queryParameters['StartGmtCreate'] = $startGmtCreate;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNum
-     *
-     * @return $this
-     */
-    public function setPageNum($pageNum)
-    {
-        $this->requestParameters['PageNum'] = $pageNum;
-        $this->queryParameters['PageNum'] = $pageNum;
 
         return $this;
     }

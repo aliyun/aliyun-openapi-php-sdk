@@ -5,15 +5,13 @@ namespace companyreg\Request\V20190508;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of SubmitConsultation
+ * Request of GenerateCompanyRegUploadPolicy
  *
  * @method string getData()
- * @method string getVcode()
  * @method string getBizCode()
- * @method string getConsultRequestId()
  * @method string getBizSubCode()
  */
-class SubmitConsultationRequest extends \RpcAcsRequest
+class GenerateCompanyRegUploadPolicyRequest extends \RpcAcsRequest
 {
 
     /**
@@ -29,7 +27,7 @@ class SubmitConsultationRequest extends \RpcAcsRequest
         parent::__construct(
             'companyreg',
             '2019-05-08',
-            'SubmitConsultation',
+            'GenerateCompanyRegUploadPolicy',
             'companyreg'
         );
     }
@@ -48,19 +46,6 @@ class SubmitConsultationRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $vcode
-     *
-     * @return $this
-     */
-    public function setVcode($vcode)
-    {
-        $this->requestParameters['Vcode'] = $vcode;
-        $this->queryParameters['Vcode'] = $vcode;
-
-        return $this;
-    }
-
-    /**
      * @param string $bizCode
      *
      * @return $this
@@ -69,19 +54,6 @@ class SubmitConsultationRequest extends \RpcAcsRequest
     {
         $this->requestParameters['BizCode'] = $bizCode;
         $this->queryParameters['BizCode'] = $bizCode;
-
-        return $this;
-    }
-
-    /**
-     * @param string $consultRequestId
-     *
-     * @return $this
-     */
-    public function setConsultRequestId($consultRequestId)
-    {
-        $this->requestParameters['ConsultRequestId'] = $consultRequestId;
-        $this->queryParameters['ConsultRequestId'] = $consultRequestId;
 
         return $this;
     }

@@ -11,6 +11,7 @@ namespace companyreg\Request\V20190508;
  * @method string getBizCode()
  * @method string getBizId()
  * @method string getMaxOperationSize()
+ * @method string getBizSubCode()
  */
 class GetCompanyRegOrderRequest extends \RpcAcsRequest
 {
@@ -81,6 +82,19 @@ class GetCompanyRegOrderRequest extends \RpcAcsRequest
     {
         $this->requestParameters['MaxOperationSize'] = $maxOperationSize;
         $this->queryParameters['MaxOperationSize'] = $maxOperationSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $bizSubCode
+     *
+     * @return $this
+     */
+    public function setBizSubCode($bizSubCode)
+    {
+        $this->requestParameters['BizSubCode'] = $bizSubCode;
+        $this->queryParameters['BizSubCode'] = $bizSubCode;
 
         return $this;
     }

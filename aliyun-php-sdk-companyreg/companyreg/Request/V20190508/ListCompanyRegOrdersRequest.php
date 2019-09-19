@@ -7,12 +7,13 @@ namespace companyreg\Request\V20190508;
  *
  * Request of ListCompanyRegOrders
  *
+ * @method string getPageNum()
  * @method string getBizCode()
  * @method string getBizStatus()
  * @method string getCompanyName()
  * @method string getPageSize()
  * @method string getAliyunOrderId()
- * @method string getPageNum()
+ * @method string getBizSubCode()
  */
 class ListCompanyRegOrdersRequest extends \RpcAcsRequest
 {
@@ -33,6 +34,19 @@ class ListCompanyRegOrdersRequest extends \RpcAcsRequest
             'ListCompanyRegOrders',
             'companyreg'
         );
+    }
+
+    /**
+     * @param string $pageNum
+     *
+     * @return $this
+     */
+    public function setPageNum($pageNum)
+    {
+        $this->requestParameters['PageNum'] = $pageNum;
+        $this->queryParameters['PageNum'] = $pageNum;
+
+        return $this;
     }
 
     /**
@@ -101,14 +115,14 @@ class ListCompanyRegOrdersRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageNum
+     * @param string $bizSubCode
      *
      * @return $this
      */
-    public function setPageNum($pageNum)
+    public function setBizSubCode($bizSubCode)
     {
-        $this->requestParameters['PageNum'] = $pageNum;
-        $this->queryParameters['PageNum'] = $pageNum;
+        $this->requestParameters['BizSubCode'] = $bizSubCode;
+        $this->queryParameters['BizSubCode'] = $bizSubCode;
 
         return $this;
     }

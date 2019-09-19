@@ -7,8 +7,8 @@ namespace companyreg\Request\V20190508;
  *
  * Request of SendVcode
  *
- * @method string getBizCode()
  * @method string getMobile()
+ * @method string getBizCode()
  */
 class SendVcodeRequest extends \RpcAcsRequest
 {
@@ -32,19 +32,6 @@ class SendVcodeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $bizCode
-     *
-     * @return $this
-     */
-    public function setBizCode($bizCode)
-    {
-        $this->requestParameters['BizCode'] = $bizCode;
-        $this->queryParameters['BizCode'] = $bizCode;
-
-        return $this;
-    }
-
-    /**
      * @param string $mobile
      *
      * @return $this
@@ -53,6 +40,19 @@ class SendVcodeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Mobile'] = $mobile;
         $this->queryParameters['Mobile'] = $mobile;
+
+        return $this;
+    }
+
+    /**
+     * @param string $bizCode
+     *
+     * @return $this
+     */
+    public function setBizCode($bizCode)
+    {
+        $this->requestParameters['BizCode'] = $bizCode;
+        $this->queryParameters['BizCode'] = $bizCode;
 
         return $this;
     }
