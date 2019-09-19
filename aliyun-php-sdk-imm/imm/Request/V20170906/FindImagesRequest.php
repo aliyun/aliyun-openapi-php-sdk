@@ -7,32 +7,33 @@ namespace imm\Request\V20170906;
  *
  * Request of FindImages
  *
- * @method string getGender()
  * @method string getProject()
  * @method string getExternalId()
  * @method string getFacesModifyTimeRange()
+ * @method string getOCRContentsMatch()
+ * @method string getLimit()
+ * @method string getRemarksDPrefix()
+ * @method string getSourceType()
+ * @method string getOrder()
+ * @method string getGroupId()
+ * @method string getOrderBy()
+ * @method string getTagNames()
+ * @method string getMarker()
+ * @method string getRemarksCPrefix()
+ * @method string getModifyTimeRange()
+ * @method string getAddressLineContentsMatch()
+ * @method string getGender()
  * @method string getImageSizeRange()
  * @method string getRemarksBPrefix()
  * @method string getLocationBoundary()
  * @method string getImageTimeRange()
- * @method string getOCRContentsMatch()
- * @method string getLimit()
- * @method string getRemarksDPrefix()
  * @method string getTagsModifyTimeRange()
- * @method string getSourceType()
  * @method string getAgeRange()
- * @method string getOrder()
  * @method string getRemarksAPrefix()
- * @method string getGroupId()
- * @method string getOrderBy()
- * @method string getTagNames()
  * @method string getSourceUriPrefix()
  * @method string getEmotion()
- * @method string getMarker()
- * @method string getRemarksCPrefix()
  * @method string getCreateTimeRange()
  * @method string getSetId()
- * @method string getModifyTimeRange()
  */
 class FindImagesRequest extends \RpcAcsRequest
 {
@@ -53,19 +54,6 @@ class FindImagesRequest extends \RpcAcsRequest
             'FindImages',
             'imm'
         );
-    }
-
-    /**
-     * @param string $gender
-     *
-     * @return $this
-     */
-    public function setGender($gender)
-    {
-        $this->requestParameters['Gender'] = $gender;
-        $this->queryParameters['Gender'] = $gender;
-
-        return $this;
     }
 
     /**
@@ -103,6 +91,175 @@ class FindImagesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['FacesModifyTimeRange'] = $facesModifyTimeRange;
         $this->queryParameters['FacesModifyTimeRange'] = $facesModifyTimeRange;
+
+        return $this;
+    }
+
+    /**
+     * @param string $oCRContentsMatch
+     *
+     * @return $this
+     */
+    public function setOCRContentsMatch($oCRContentsMatch)
+    {
+        $this->requestParameters['OCRContentsMatch'] = $oCRContentsMatch;
+        $this->queryParameters['OCRContentsMatch'] = $oCRContentsMatch;
+
+        return $this;
+    }
+
+    /**
+     * @param string $limit
+     *
+     * @return $this
+     */
+    public function setLimit($limit)
+    {
+        $this->requestParameters['Limit'] = $limit;
+        $this->queryParameters['Limit'] = $limit;
+
+        return $this;
+    }
+
+    /**
+     * @param string $remarksDPrefix
+     *
+     * @return $this
+     */
+    public function setRemarksDPrefix($remarksDPrefix)
+    {
+        $this->requestParameters['RemarksDPrefix'] = $remarksDPrefix;
+        $this->queryParameters['RemarksDPrefix'] = $remarksDPrefix;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sourceType
+     *
+     * @return $this
+     */
+    public function setSourceType($sourceType)
+    {
+        $this->requestParameters['SourceType'] = $sourceType;
+        $this->queryParameters['SourceType'] = $sourceType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $order
+     *
+     * @return $this
+     */
+    public function setOrder($order)
+    {
+        $this->requestParameters['Order'] = $order;
+        $this->queryParameters['Order'] = $order;
+
+        return $this;
+    }
+
+    /**
+     * @param string $groupId
+     *
+     * @return $this
+     */
+    public function setGroupId($groupId)
+    {
+        $this->requestParameters['GroupId'] = $groupId;
+        $this->queryParameters['GroupId'] = $groupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $orderBy
+     *
+     * @return $this
+     */
+    public function setOrderBy($orderBy)
+    {
+        $this->requestParameters['OrderBy'] = $orderBy;
+        $this->queryParameters['OrderBy'] = $orderBy;
+
+        return $this;
+    }
+
+    /**
+     * @param string $tagNames
+     *
+     * @return $this
+     */
+    public function setTagNames($tagNames)
+    {
+        $this->requestParameters['TagNames'] = $tagNames;
+        $this->queryParameters['TagNames'] = $tagNames;
+
+        return $this;
+    }
+
+    /**
+     * @param string $marker
+     *
+     * @return $this
+     */
+    public function setMarker($marker)
+    {
+        $this->requestParameters['Marker'] = $marker;
+        $this->queryParameters['Marker'] = $marker;
+
+        return $this;
+    }
+
+    /**
+     * @param string $remarksCPrefix
+     *
+     * @return $this
+     */
+    public function setRemarksCPrefix($remarksCPrefix)
+    {
+        $this->requestParameters['RemarksCPrefix'] = $remarksCPrefix;
+        $this->queryParameters['RemarksCPrefix'] = $remarksCPrefix;
+
+        return $this;
+    }
+
+    /**
+     * @param string $modifyTimeRange
+     *
+     * @return $this
+     */
+    public function setModifyTimeRange($modifyTimeRange)
+    {
+        $this->requestParameters['ModifyTimeRange'] = $modifyTimeRange;
+        $this->queryParameters['ModifyTimeRange'] = $modifyTimeRange;
+
+        return $this;
+    }
+
+    /**
+     * @param string $addressLineContentsMatch
+     *
+     * @return $this
+     */
+    public function setAddressLineContentsMatch($addressLineContentsMatch)
+    {
+        $this->requestParameters['AddressLineContentsMatch'] = $addressLineContentsMatch;
+        $this->queryParameters['AddressLineContentsMatch'] = $addressLineContentsMatch;
+
+        return $this;
+    }
+
+    /**
+     * @param string $gender
+     *
+     * @return $this
+     */
+    public function setGender($gender)
+    {
+        $this->requestParameters['Gender'] = $gender;
+        $this->queryParameters['Gender'] = $gender;
 
         return $this;
     }
@@ -160,45 +317,6 @@ class FindImagesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $oCRContentsMatch
-     *
-     * @return $this
-     */
-    public function setOCRContentsMatch($oCRContentsMatch)
-    {
-        $this->requestParameters['OCRContentsMatch'] = $oCRContentsMatch;
-        $this->queryParameters['OCRContentsMatch'] = $oCRContentsMatch;
-
-        return $this;
-    }
-
-    /**
-     * @param string $limit
-     *
-     * @return $this
-     */
-    public function setLimit($limit)
-    {
-        $this->requestParameters['Limit'] = $limit;
-        $this->queryParameters['Limit'] = $limit;
-
-        return $this;
-    }
-
-    /**
-     * @param string $remarksDPrefix
-     *
-     * @return $this
-     */
-    public function setRemarksDPrefix($remarksDPrefix)
-    {
-        $this->requestParameters['RemarksDPrefix'] = $remarksDPrefix;
-        $this->queryParameters['RemarksDPrefix'] = $remarksDPrefix;
-
-        return $this;
-    }
-
-    /**
      * @param string $tagsModifyTimeRange
      *
      * @return $this
@@ -207,19 +325,6 @@ class FindImagesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TagsModifyTimeRange'] = $tagsModifyTimeRange;
         $this->queryParameters['TagsModifyTimeRange'] = $tagsModifyTimeRange;
-
-        return $this;
-    }
-
-    /**
-     * @param string $sourceType
-     *
-     * @return $this
-     */
-    public function setSourceType($sourceType)
-    {
-        $this->requestParameters['SourceType'] = $sourceType;
-        $this->queryParameters['SourceType'] = $sourceType;
 
         return $this;
     }
@@ -238,19 +343,6 @@ class FindImagesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $order
-     *
-     * @return $this
-     */
-    public function setOrder($order)
-    {
-        $this->requestParameters['Order'] = $order;
-        $this->queryParameters['Order'] = $order;
-
-        return $this;
-    }
-
-    /**
      * @param string $remarksAPrefix
      *
      * @return $this
@@ -259,45 +351,6 @@ class FindImagesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['RemarksAPrefix'] = $remarksAPrefix;
         $this->queryParameters['RemarksAPrefix'] = $remarksAPrefix;
-
-        return $this;
-    }
-
-    /**
-     * @param string $groupId
-     *
-     * @return $this
-     */
-    public function setGroupId($groupId)
-    {
-        $this->requestParameters['GroupId'] = $groupId;
-        $this->queryParameters['GroupId'] = $groupId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $orderBy
-     *
-     * @return $this
-     */
-    public function setOrderBy($orderBy)
-    {
-        $this->requestParameters['OrderBy'] = $orderBy;
-        $this->queryParameters['OrderBy'] = $orderBy;
-
-        return $this;
-    }
-
-    /**
-     * @param string $tagNames
-     *
-     * @return $this
-     */
-    public function setTagNames($tagNames)
-    {
-        $this->requestParameters['TagNames'] = $tagNames;
-        $this->queryParameters['TagNames'] = $tagNames;
 
         return $this;
     }
@@ -329,32 +382,6 @@ class FindImagesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $marker
-     *
-     * @return $this
-     */
-    public function setMarker($marker)
-    {
-        $this->requestParameters['Marker'] = $marker;
-        $this->queryParameters['Marker'] = $marker;
-
-        return $this;
-    }
-
-    /**
-     * @param string $remarksCPrefix
-     *
-     * @return $this
-     */
-    public function setRemarksCPrefix($remarksCPrefix)
-    {
-        $this->requestParameters['RemarksCPrefix'] = $remarksCPrefix;
-        $this->queryParameters['RemarksCPrefix'] = $remarksCPrefix;
-
-        return $this;
-    }
-
-    /**
      * @param string $createTimeRange
      *
      * @return $this
@@ -376,19 +403,6 @@ class FindImagesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SetId'] = $setId;
         $this->queryParameters['SetId'] = $setId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $modifyTimeRange
-     *
-     * @return $this
-     */
-    public function setModifyTimeRange($modifyTimeRange)
-    {
-        $this->requestParameters['ModifyTimeRange'] = $modifyTimeRange;
-        $this->queryParameters['ModifyTimeRange'] = $modifyTimeRange;
 
         return $this;
     }
