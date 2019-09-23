@@ -13,6 +13,7 @@ namespace Ecs\Request\V20140526;
  * @method string getHpcClusterId()
  * @method string getSecurityEnhancementStrategy()
  * @method string getKeyPairName()
+ * @method string getMinAmount()
  * @method string getSpotPriceLimit()
  * @method string getDeletionProtection()
  * @method string getResourceGroupId()
@@ -21,12 +22,10 @@ namespace Ecs\Request\V20140526;
  * @method string getStorageSetPartitionNumber()
  * @method array getTags()
  * @method string getAutoRenewPeriod()
- * @method string getCpuOptionsCore()
  * @method string getPeriod()
  * @method string getDryRun()
  * @method string getLaunchTemplateId()
  * @method string getIpv6AddressCount()
- * @method string getCpuOptionsNuma()
  * @method string getOwnerId()
  * @method string getCapacityReservationPreference()
  * @method string getVSwitchId()
@@ -47,7 +46,6 @@ namespace Ecs\Request\V20140526;
  * @method string getSecurityGroupId()
  * @method string getInternetMaxBandwidthOut()
  * @method string getDescription()
- * @method string getCpuOptionsThreadsPerCore()
  * @method string getSystemDiskCategory()
  * @method string getCapacityReservationId()
  * @method string getSystemDiskPerformanceLevel()
@@ -175,6 +173,19 @@ class RunInstancesRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $minAmount
+     *
+     * @return $this
+     */
+    public function setMinAmount($minAmount)
+    {
+        $this->requestParameters['MinAmount'] = $minAmount;
+        $this->queryParameters['MinAmount'] = $minAmount;
+
+        return $this;
+    }
+
+    /**
      * @param string $spotPriceLimit
      *
      * @return $this
@@ -257,15 +268,15 @@ class RunInstancesRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setTags(array $tag)
-    {
-        $this->requestParameters['Tags'] = $tag;
-        foreach ($tag as $depth1 => $depth1Value) {
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
-        }
+	public function setTags(array $tag)
+	{
+	    $this->requestParameters['Tags'] = $tag;
+		foreach ($tag as $depth1 => $depth1Value) {
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+		}
 
-        return $this;
+		return $this;
     }
 
     /**
@@ -277,19 +288,6 @@ class RunInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AutoRenewPeriod'] = $autoRenewPeriod;
         $this->queryParameters['AutoRenewPeriod'] = $autoRenewPeriod;
-
-        return $this;
-    }
-
-    /**
-     * @param string $cpuOptionsCore
-     *
-     * @return $this
-     */
-    public function setCpuOptionsCore($cpuOptionsCore)
-    {
-        $this->requestParameters['CpuOptionsCore'] = $cpuOptionsCore;
-        $this->queryParameters['CpuOptions.Core'] = $cpuOptionsCore;
 
         return $this;
     }
@@ -342,19 +340,6 @@ class RunInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Ipv6AddressCount'] = $ipv6AddressCount;
         $this->queryParameters['Ipv6AddressCount'] = $ipv6AddressCount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $cpuOptionsNuma
-     *
-     * @return $this
-     */
-    public function setCpuOptionsNuma($cpuOptionsNuma)
-    {
-        $this->requestParameters['CpuOptionsNuma'] = $cpuOptionsNuma;
-        $this->queryParameters['CpuOptions.Numa'] = $cpuOptionsNuma;
 
         return $this;
     }
@@ -494,14 +479,14 @@ class RunInstancesRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setIpv6Addresss(array $ipv6Address)
-    {
-        $this->requestParameters['Ipv6Addresss'] = $ipv6Address;
-        foreach ($ipv6Address as $i => $iValue) {
-            $this->queryParameters['Ipv6Address.' . ($i + 1)] = $iValue;
-        }
+	public function setIpv6Addresss(array $ipv6Address)
+	{
+	    $this->requestParameters['Ipv6Addresss'] = $ipv6Address;
+		foreach ($ipv6Address as $i => $iValue) {
+			$this->queryParameters['Ipv6Address.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 
     /**
@@ -622,19 +607,6 @@ class RunInstancesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $cpuOptionsThreadsPerCore
-     *
-     * @return $this
-     */
-    public function setCpuOptionsThreadsPerCore($cpuOptionsThreadsPerCore)
-    {
-        $this->requestParameters['CpuOptionsThreadsPerCore'] = $cpuOptionsThreadsPerCore;
-        $this->queryParameters['CpuOptions.ThreadsPerCore'] = $cpuOptionsThreadsPerCore;
-
-        return $this;
-    }
-
-    /**
      * @param string $systemDiskCategory
      *
      * @return $this
@@ -743,18 +715,18 @@ class RunInstancesRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setNetworkInterfaces(array $networkInterface)
-    {
-        $this->requestParameters['NetworkInterfaces'] = $networkInterface;
-        foreach ($networkInterface as $depth1 => $depth1Value) {
-            $this->queryParameters['NetworkInterface.' . ($depth1 + 1) . '.PrimaryIpAddress'] = $depth1Value['PrimaryIpAddress'];
-            $this->queryParameters['NetworkInterface.' . ($depth1 + 1) . '.VSwitchId'] = $depth1Value['VSwitchId'];
-            $this->queryParameters['NetworkInterface.' . ($depth1 + 1) . '.SecurityGroupId'] = $depth1Value['SecurityGroupId'];
-            $this->queryParameters['NetworkInterface.' . ($depth1 + 1) . '.NetworkInterfaceName'] = $depth1Value['NetworkInterfaceName'];
-            $this->queryParameters['NetworkInterface.' . ($depth1 + 1) . '.Description'] = $depth1Value['Description'];
-        }
+	public function setNetworkInterfaces(array $networkInterface)
+	{
+	    $this->requestParameters['NetworkInterfaces'] = $networkInterface;
+		foreach ($networkInterface as $depth1 => $depth1Value) {
+			$this->queryParameters['NetworkInterface.' . ($depth1 + 1) . '.PrimaryIpAddress'] = $depth1Value['PrimaryIpAddress'];
+			$this->queryParameters['NetworkInterface.' . ($depth1 + 1) . '.VSwitchId'] = $depth1Value['VSwitchId'];
+			$this->queryParameters['NetworkInterface.' . ($depth1 + 1) . '.SecurityGroupId'] = $depth1Value['SecurityGroupId'];
+			$this->queryParameters['NetworkInterface.' . ($depth1 + 1) . '.NetworkInterfaceName'] = $depth1Value['NetworkInterfaceName'];
+			$this->queryParameters['NetworkInterface.' . ($depth1 + 1) . '.Description'] = $depth1Value['Description'];
+		}
 
-        return $this;
+		return $this;
     }
 
     /**
@@ -892,14 +864,14 @@ class RunInstancesRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setSecurityGroupIdss(array $securityGroupIds)
-    {
-        $this->requestParameters['SecurityGroupIdss'] = $securityGroupIds;
-        foreach ($securityGroupIds as $i => $iValue) {
-            $this->queryParameters['SecurityGroupIds.' . ($i + 1)] = $iValue;
-        }
+	public function setSecurityGroupIdss(array $securityGroupIds)
+	{
+	    $this->requestParameters['SecurityGroupIdss'] = $securityGroupIds;
+		foreach ($securityGroupIds as $i => $iValue) {
+			$this->queryParameters['SecurityGroupIds.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 
     /**
@@ -920,23 +892,23 @@ class RunInstancesRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setDataDisks(array $dataDisk)
-    {
-        $this->requestParameters['DataDisks'] = $dataDisk;
-        foreach ($dataDisk as $depth1 => $depth1Value) {
-            $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Size'] = $depth1Value['Size'];
-            $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.SnapshotId'] = $depth1Value['SnapshotId'];
-            $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Category'] = $depth1Value['Category'];
-            $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Encrypted'] = $depth1Value['Encrypted'];
-            $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.KMSKeyId'] = $depth1Value['KMSKeyId'];
-            $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.DiskName'] = $depth1Value['DiskName'];
-            $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Description'] = $depth1Value['Description'];
-            $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Device'] = $depth1Value['Device'];
-            $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.DeleteWithInstance'] = $depth1Value['DeleteWithInstance'];
-            $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.PerformanceLevel'] = $depth1Value['PerformanceLevel'];
-        }
+	public function setDataDisks(array $dataDisk)
+	{
+	    $this->requestParameters['DataDisks'] = $dataDisk;
+		foreach ($dataDisk as $depth1 => $depth1Value) {
+			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Size'] = $depth1Value['Size'];
+			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.SnapshotId'] = $depth1Value['SnapshotId'];
+			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Category'] = $depth1Value['Category'];
+			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Encrypted'] = $depth1Value['Encrypted'];
+			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.KMSKeyId'] = $depth1Value['KMSKeyId'];
+			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.DiskName'] = $depth1Value['DiskName'];
+			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Description'] = $depth1Value['Description'];
+			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Device'] = $depth1Value['Device'];
+			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.DeleteWithInstance'] = $depth1Value['DeleteWithInstance'];
+			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.PerformanceLevel'] = $depth1Value['PerformanceLevel'];
+		}
 
-        return $this;
+		return $this;
     }
 
     /**

@@ -9,12 +9,12 @@ namespace Ecs\Request\V20140526;
  *
  * @method string getResourceOwnerId()
  * @method string getImageId()
+ * @method string getImageFormat()
  * @method string getOSSBucket()
  * @method string getResourceOwnerAccount()
- * @method string getOSSPrefix()
  * @method string getRoleName()
  * @method string getOwnerId()
- * @method string getImageFormat()
+ * @method string getOSSPrefix()
  */
 class ExportImageRequest extends \RpcAcsRequest
 {
@@ -64,6 +64,19 @@ class ExportImageRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $imageFormat
+     *
+     * @return $this
+     */
+    public function setImageFormat($imageFormat)
+    {
+        $this->requestParameters['ImageFormat'] = $imageFormat;
+        $this->queryParameters['ImageFormat'] = $imageFormat;
+
+        return $this;
+    }
+
+    /**
      * @param string $oSSBucket
      *
      * @return $this
@@ -85,19 +98,6 @@ class ExportImageRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $oSSPrefix
-     *
-     * @return $this
-     */
-    public function setOSSPrefix($oSSPrefix)
-    {
-        $this->requestParameters['OSSPrefix'] = $oSSPrefix;
-        $this->queryParameters['OSSPrefix'] = $oSSPrefix;
 
         return $this;
     }
@@ -129,14 +129,14 @@ class ExportImageRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $imageFormat
+     * @param string $oSSPrefix
      *
      * @return $this
      */
-    public function setImageFormat($imageFormat)
+    public function setOSSPrefix($oSSPrefix)
     {
-        $this->requestParameters['ImageFormat'] = $imageFormat;
-        $this->queryParameters['ImageFormat'] = $imageFormat;
+        $this->requestParameters['OSSPrefix'] = $oSSPrefix;
+        $this->queryParameters['OSSPrefix'] = $oSSPrefix;
 
         return $this;
     }

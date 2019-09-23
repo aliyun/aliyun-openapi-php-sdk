@@ -8,13 +8,13 @@ namespace Ecs\Request\V20140526;
  * Request of DeleteRouteEntry
  *
  * @method string getResourceOwnerId()
+ * @method string getNextHopId()
+ * @method string getRouteTableId()
  * @method string getResourceOwnerAccount()
  * @method string getDestinationCidrBlock()
  * @method string getOwnerAccount()
- * @method string getNextHopId()
  * @method string getOwnerId()
  * @method array getNextHopLists()
- * @method string getRouteTableId()
  */
 class DeleteRouteEntryRequest extends \RpcAcsRequest
 {
@@ -46,6 +46,32 @@ class DeleteRouteEntryRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $nextHopId
+     *
+     * @return $this
+     */
+    public function setNextHopId($nextHopId)
+    {
+        $this->requestParameters['NextHopId'] = $nextHopId;
+        $this->queryParameters['NextHopId'] = $nextHopId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $routeTableId
+     *
+     * @return $this
+     */
+    public function setRouteTableId($routeTableId)
+    {
+        $this->requestParameters['RouteTableId'] = $routeTableId;
+        $this->queryParameters['RouteTableId'] = $routeTableId;
 
         return $this;
     }
@@ -90,19 +116,6 @@ class DeleteRouteEntryRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $nextHopId
-     *
-     * @return $this
-     */
-    public function setNextHopId($nextHopId)
-    {
-        $this->requestParameters['NextHopId'] = $nextHopId;
-        $this->queryParameters['NextHopId'] = $nextHopId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -120,27 +133,14 @@ class DeleteRouteEntryRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setNextHopLists(array $nextHopList)
-    {
-        $this->requestParameters['NextHopLists'] = $nextHopList;
-        foreach ($nextHopList as $depth1 => $depth1Value) {
-            $this->queryParameters['NextHopList.' . ($depth1 + 1) . '.NextHopId'] = $depth1Value['NextHopId'];
-            $this->queryParameters['NextHopList.' . ($depth1 + 1) . '.NextHopType'] = $depth1Value['NextHopType'];
-        }
+	public function setNextHopLists(array $nextHopList)
+	{
+	    $this->requestParameters['NextHopLists'] = $nextHopList;
+		foreach ($nextHopList as $depth1 => $depth1Value) {
+			$this->queryParameters['NextHopList.' . ($depth1 + 1) . '.NextHopId'] = $depth1Value['NextHopId'];
+			$this->queryParameters['NextHopList.' . ($depth1 + 1) . '.NextHopType'] = $depth1Value['NextHopType'];
+		}
 
-        return $this;
-    }
-
-    /**
-     * @param string $routeTableId
-     *
-     * @return $this
-     */
-    public function setRouteTableId($routeTableId)
-    {
-        $this->requestParameters['RouteTableId'] = $routeTableId;
-        $this->queryParameters['RouteTableId'] = $routeTableId;
-
-        return $this;
+		return $this;
     }
 }

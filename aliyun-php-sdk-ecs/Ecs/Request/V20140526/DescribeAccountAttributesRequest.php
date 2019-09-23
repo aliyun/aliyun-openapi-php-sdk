@@ -52,14 +52,14 @@ class DescribeAccountAttributesRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setAttributeNames(array $attributeName)
-    {
-        $this->requestParameters['AttributeNames'] = $attributeName;
-        foreach ($attributeName as $i => $iValue) {
-            $this->queryParameters['AttributeName.' . ($i + 1)] = $iValue;
-        }
+	public function setAttributeNames(array $attributeName)
+	{
+	    $this->requestParameters['AttributeNames'] = $attributeName;
+		foreach ($attributeName as $i => $iValue) {
+			$this->queryParameters['AttributeName.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 
     /**

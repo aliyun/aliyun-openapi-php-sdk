@@ -8,12 +8,12 @@ namespace Ecs\Request\V20140526;
  * Request of UnassociateEipAddress
  *
  * @method string getResourceOwnerId()
- * @method string getInstanceId()
+ * @method string getAllocationId()
+ * @method string getInstanceType()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getInstanceType()
- * @method string getAllocationId()
  * @method string getOwnerId()
+ * @method string getInstanceId()
  */
 class UnassociateEipAddressRequest extends \RpcAcsRequest
 {
@@ -50,14 +50,27 @@ class UnassociateEipAddressRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
+     * @param string $allocationId
      *
      * @return $this
      */
-    public function setInstanceId($instanceId)
+    public function setAllocationId($allocationId)
     {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
+        $this->requestParameters['AllocationId'] = $allocationId;
+        $this->queryParameters['AllocationId'] = $allocationId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceType
+     *
+     * @return $this
+     */
+    public function setInstanceType($instanceType)
+    {
+        $this->requestParameters['InstanceType'] = $instanceType;
+        $this->queryParameters['InstanceType'] = $instanceType;
 
         return $this;
     }
@@ -89,32 +102,6 @@ class UnassociateEipAddressRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceType
-     *
-     * @return $this
-     */
-    public function setInstanceType($instanceType)
-    {
-        $this->requestParameters['InstanceType'] = $instanceType;
-        $this->queryParameters['InstanceType'] = $instanceType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $allocationId
-     *
-     * @return $this
-     */
-    public function setAllocationId($allocationId)
-    {
-        $this->requestParameters['AllocationId'] = $allocationId;
-        $this->queryParameters['AllocationId'] = $allocationId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -123,6 +110,19 @@ class UnassociateEipAddressRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

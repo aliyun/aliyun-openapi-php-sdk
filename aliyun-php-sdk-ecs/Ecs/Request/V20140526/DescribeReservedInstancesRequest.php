@@ -179,14 +179,14 @@ class DescribeReservedInstancesRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setReservedInstanceIds(array $reservedInstanceId)
-    {
-        $this->requestParameters['ReservedInstanceIds'] = $reservedInstanceId;
-        foreach ($reservedInstanceId as $i => $iValue) {
-            $this->queryParameters['ReservedInstanceId.' . ($i + 1)] = $iValue;
-        }
+	public function setReservedInstanceIds(array $reservedInstanceId)
+	{
+	    $this->requestParameters['ReservedInstanceIds'] = $reservedInstanceId;
+		foreach ($reservedInstanceId as $i => $iValue) {
+			$this->queryParameters['ReservedInstanceId.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 
     /**
@@ -233,13 +233,13 @@ class DescribeReservedInstancesRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setStatuss(array $status)
-    {
-        $this->requestParameters['Statuss'] = $status;
-        foreach ($status as $i => $iValue) {
-            $this->queryParameters['Status.' . ($i + 1)] = $iValue;
-        }
+	public function setStatuss(array $status)
+	{
+	    $this->requestParameters['Statuss'] = $status;
+		foreach ($status as $i => $iValue) {
+			$this->queryParameters['Status.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 }

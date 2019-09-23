@@ -8,15 +8,15 @@ namespace Ecs\Request\V20140526;
  * Request of ModifyForwardEntry
  *
  * @method string getResourceOwnerId()
+ * @method string getForwardTableId()
+ * @method string getInternalIp()
+ * @method string getForwardEntryId()
+ * @method string getExternalIp()
  * @method string getResourceOwnerAccount()
  * @method string getIpProtocol()
  * @method string getOwnerAccount()
- * @method string getForwardTableId()
  * @method string getOwnerId()
- * @method string getInternalIp()
- * @method string getForwardEntryId()
  * @method string getInternalPort()
- * @method string getExternalIp()
  * @method string getExternalPort()
  */
 class ModifyForwardEntryRequest extends \RpcAcsRequest
@@ -49,6 +49,58 @@ class ModifyForwardEntryRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $forwardTableId
+     *
+     * @return $this
+     */
+    public function setForwardTableId($forwardTableId)
+    {
+        $this->requestParameters['ForwardTableId'] = $forwardTableId;
+        $this->queryParameters['ForwardTableId'] = $forwardTableId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $internalIp
+     *
+     * @return $this
+     */
+    public function setInternalIp($internalIp)
+    {
+        $this->requestParameters['InternalIp'] = $internalIp;
+        $this->queryParameters['InternalIp'] = $internalIp;
+
+        return $this;
+    }
+
+    /**
+     * @param string $forwardEntryId
+     *
+     * @return $this
+     */
+    public function setForwardEntryId($forwardEntryId)
+    {
+        $this->requestParameters['ForwardEntryId'] = $forwardEntryId;
+        $this->queryParameters['ForwardEntryId'] = $forwardEntryId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $externalIp
+     *
+     * @return $this
+     */
+    public function setExternalIp($externalIp)
+    {
+        $this->requestParameters['ExternalIp'] = $externalIp;
+        $this->queryParameters['ExternalIp'] = $externalIp;
 
         return $this;
     }
@@ -93,19 +145,6 @@ class ModifyForwardEntryRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $forwardTableId
-     *
-     * @return $this
-     */
-    public function setForwardTableId($forwardTableId)
-    {
-        $this->requestParameters['ForwardTableId'] = $forwardTableId;
-        $this->queryParameters['ForwardTableId'] = $forwardTableId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -119,32 +158,6 @@ class ModifyForwardEntryRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $internalIp
-     *
-     * @return $this
-     */
-    public function setInternalIp($internalIp)
-    {
-        $this->requestParameters['InternalIp'] = $internalIp;
-        $this->queryParameters['InternalIp'] = $internalIp;
-
-        return $this;
-    }
-
-    /**
-     * @param string $forwardEntryId
-     *
-     * @return $this
-     */
-    public function setForwardEntryId($forwardEntryId)
-    {
-        $this->requestParameters['ForwardEntryId'] = $forwardEntryId;
-        $this->queryParameters['ForwardEntryId'] = $forwardEntryId;
-
-        return $this;
-    }
-
-    /**
      * @param string $internalPort
      *
      * @return $this
@@ -153,19 +166,6 @@ class ModifyForwardEntryRequest extends \RpcAcsRequest
     {
         $this->requestParameters['InternalPort'] = $internalPort;
         $this->queryParameters['InternalPort'] = $internalPort;
-
-        return $this;
-    }
-
-    /**
-     * @param string $externalIp
-     *
-     * @return $this
-     */
-    public function setExternalIp($externalIp)
-    {
-        $this->requestParameters['ExternalIp'] = $externalIp;
-        $this->queryParameters['ExternalIp'] = $externalIp;
 
         return $this;
     }

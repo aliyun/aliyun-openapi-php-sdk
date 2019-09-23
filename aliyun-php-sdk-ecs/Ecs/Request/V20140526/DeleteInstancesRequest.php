@@ -8,14 +8,14 @@ namespace Ecs\Request\V20140526;
  * Request of DeleteInstances
  *
  * @method string getResourceOwnerId()
- * @method array getInstanceIds()
+ * @method string getClientToken()
+ * @method string getTerminateSubscription()
  * @method string getDryRun()
  * @method string getResourceOwnerAccount()
- * @method string getClientToken()
  * @method string getOwnerAccount()
- * @method string getTerminateSubscription()
- * @method string getForce()
  * @method string getOwnerId()
+ * @method array getInstanceIds()
+ * @method string getForce()
  */
 class DeleteInstancesRequest extends \RpcAcsRequest
 {
@@ -52,16 +52,27 @@ class DeleteInstancesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $instanceId
+     * @param string $clientToken
      *
      * @return $this
      */
-    public function setInstanceIds(array $instanceId)
+    public function setClientToken($clientToken)
     {
-        $this->requestParameters['InstanceIds'] = $instanceId;
-        foreach ($instanceId as $i => $iValue) {
-            $this->queryParameters['InstanceId.' . ($i + 1)] = $iValue;
-        }
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $terminateSubscription
+     *
+     * @return $this
+     */
+    public function setTerminateSubscription($terminateSubscription)
+    {
+        $this->requestParameters['TerminateSubscription'] = $terminateSubscription;
+        $this->queryParameters['TerminateSubscription'] = $terminateSubscription;
 
         return $this;
     }
@@ -93,19 +104,6 @@ class DeleteInstancesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $clientToken
-     *
-     * @return $this
-     */
-    public function setClientToken($clientToken)
-    {
-        $this->requestParameters['ClientToken'] = $clientToken;
-        $this->queryParameters['ClientToken'] = $clientToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerAccount
      *
      * @return $this
@@ -119,16 +117,31 @@ class DeleteInstancesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $terminateSubscription
+     * @param string $ownerId
      *
      * @return $this
      */
-    public function setTerminateSubscription($terminateSubscription)
+    public function setOwnerId($ownerId)
     {
-        $this->requestParameters['TerminateSubscription'] = $terminateSubscription;
-        $this->queryParameters['TerminateSubscription'] = $terminateSubscription;
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
+    }
+
+    /**
+     * @param array $instanceId
+     *
+     * @return $this
+     */
+	public function setInstanceIds(array $instanceId)
+	{
+	    $this->requestParameters['InstanceIds'] = $instanceId;
+		foreach ($instanceId as $i => $iValue) {
+			$this->queryParameters['InstanceId.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
     }
 
     /**
@@ -140,19 +153,6 @@ class DeleteInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Force'] = $force;
         $this->queryParameters['Force'] = $force;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

@@ -8,12 +8,12 @@ namespace Ecs\Request\V20140526;
  * Request of DescribeInstanceRamRole
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
- * @method string getInstanceIds()
+ * @method string getPageNumber()
  * @method string getPageSize()
+ * @method string getResourceOwnerAccount()
  * @method string getRamRoleName()
  * @method string getOwnerId()
- * @method string getPageNumber()
+ * @method string getInstanceIds()
  */
 class DescribeInstanceRamRoleRequest extends \RpcAcsRequest
 {
@@ -50,27 +50,14 @@ class DescribeInstanceRamRoleRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
+     * @param string $pageNumber
      *
      * @return $this
      */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
+    public function setPageNumber($pageNumber)
     {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $instanceIds
-     *
-     * @return $this
-     */
-    public function setInstanceIds($instanceIds)
-    {
-        $this->requestParameters['InstanceIds'] = $instanceIds;
-        $this->queryParameters['InstanceIds'] = $instanceIds;
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }
@@ -84,6 +71,19 @@ class DescribeInstanceRamRoleRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageSize'] = $pageSize;
         $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }
@@ -115,14 +115,14 @@ class DescribeInstanceRamRoleRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageNumber
+     * @param string $instanceIds
      *
      * @return $this
      */
-    public function setPageNumber($pageNumber)
+    public function setInstanceIds($instanceIds)
     {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
+        $this->requestParameters['InstanceIds'] = $instanceIds;
+        $this->queryParameters['InstanceIds'] = $instanceIds;
 
         return $this;
     }

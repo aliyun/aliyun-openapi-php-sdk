@@ -8,9 +8,9 @@ namespace Ecs\Request\V20140526;
  * Request of DescribeTaskAttribute
  *
  * @method string getResourceOwnerId()
+ * @method string getTaskId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerId()
- * @method string getTaskId()
  */
 class DescribeTaskAttributeRequest extends \RpcAcsRequest
 {
@@ -47,6 +47,19 @@ class DescribeTaskAttributeRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $taskId
+     *
+     * @return $this
+     */
+    public function setTaskId($taskId)
+    {
+        $this->requestParameters['TaskId'] = $taskId;
+        $this->queryParameters['TaskId'] = $taskId;
+
+        return $this;
+    }
+
+    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -68,19 +81,6 @@ class DescribeTaskAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $taskId
-     *
-     * @return $this
-     */
-    public function setTaskId($taskId)
-    {
-        $this->requestParameters['TaskId'] = $taskId;
-        $this->queryParameters['TaskId'] = $taskId;
 
         return $this;
     }

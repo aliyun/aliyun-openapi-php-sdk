@@ -7,12 +7,12 @@ namespace Ecs\Request\V20140526;
  *
  * Request of ModifyVRouterAttribute
  *
- * @method string getVRouterName()
  * @method string getResourceOwnerId()
  * @method string getVRouterId()
+ * @method string getDescription()
+ * @method string getVRouterName()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getDescription()
  * @method string getOwnerId()
  */
 class ModifyVRouterAttributeRequest extends \RpcAcsRequest
@@ -34,19 +34,6 @@ class ModifyVRouterAttributeRequest extends \RpcAcsRequest
             'ModifyVRouterAttribute',
             'ecs'
         );
-    }
-
-    /**
-     * @param string $vRouterName
-     *
-     * @return $this
-     */
-    public function setVRouterName($vRouterName)
-    {
-        $this->requestParameters['VRouterName'] = $vRouterName;
-        $this->queryParameters['VRouterName'] = $vRouterName;
-
-        return $this;
     }
 
     /**
@@ -76,6 +63,32 @@ class ModifyVRouterAttributeRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * @param string $vRouterName
+     *
+     * @return $this
+     */
+    public function setVRouterName($vRouterName)
+    {
+        $this->requestParameters['VRouterName'] = $vRouterName;
+        $this->queryParameters['VRouterName'] = $vRouterName;
+
+        return $this;
+    }
+
+    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -97,19 +110,6 @@ class ModifyVRouterAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $description
-     *
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->requestParameters['Description'] = $description;
-        $this->queryParameters['Description'] = $description;
 
         return $this;
     }

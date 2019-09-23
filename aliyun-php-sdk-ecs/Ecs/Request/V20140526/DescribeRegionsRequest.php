@@ -8,12 +8,12 @@ namespace Ecs\Request\V20140526;
  * Request of DescribeRegions
  *
  * @method string getResourceOwnerId()
+ * @method string getInstanceChargeType()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getAcceptLanguage()
  * @method string getOwnerId()
- * @method string getInstanceChargeType()
  * @method string getResourceType()
+ * @method string getAcceptLanguage()
  */
 class DescribeRegionsRequest extends \RpcAcsRequest
 {
@@ -50,6 +50,19 @@ class DescribeRegionsRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $instanceChargeType
+     *
+     * @return $this
+     */
+    public function setInstanceChargeType($instanceChargeType)
+    {
+        $this->requestParameters['InstanceChargeType'] = $instanceChargeType;
+        $this->queryParameters['InstanceChargeType'] = $instanceChargeType;
+
+        return $this;
+    }
+
+    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -76,19 +89,6 @@ class DescribeRegionsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $acceptLanguage
-     *
-     * @return $this
-     */
-    public function setAcceptLanguage($acceptLanguage)
-    {
-        $this->requestParameters['AcceptLanguage'] = $acceptLanguage;
-        $this->queryParameters['AcceptLanguage'] = $acceptLanguage;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -102,19 +102,6 @@ class DescribeRegionsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceChargeType
-     *
-     * @return $this
-     */
-    public function setInstanceChargeType($instanceChargeType)
-    {
-        $this->requestParameters['InstanceChargeType'] = $instanceChargeType;
-        $this->queryParameters['InstanceChargeType'] = $instanceChargeType;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceType
      *
      * @return $this
@@ -123,6 +110,19 @@ class DescribeRegionsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceType'] = $resourceType;
         $this->queryParameters['ResourceType'] = $resourceType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $acceptLanguage
+     *
+     * @return $this
+     */
+    public function setAcceptLanguage($acceptLanguage)
+    {
+        $this->requestParameters['AcceptLanguage'] = $acceptLanguage;
+        $this->queryParameters['AcceptLanguage'] = $acceptLanguage;
 
         return $this;
     }

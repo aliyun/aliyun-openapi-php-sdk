@@ -8,9 +8,9 @@ namespace Ecs\Request\V20140526;
  * Request of DeleteNatGateway
  *
  * @method string getResourceOwnerId()
+ * @method string getNatGatewayId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getNatGatewayId()
  * @method string getOwnerId()
  */
 class DeleteNatGatewayRequest extends \RpcAcsRequest
@@ -48,6 +48,19 @@ class DeleteNatGatewayRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $natGatewayId
+     *
+     * @return $this
+     */
+    public function setNatGatewayId($natGatewayId)
+    {
+        $this->requestParameters['NatGatewayId'] = $natGatewayId;
+        $this->queryParameters['NatGatewayId'] = $natGatewayId;
+
+        return $this;
+    }
+
+    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -69,19 +82,6 @@ class DeleteNatGatewayRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $natGatewayId
-     *
-     * @return $this
-     */
-    public function setNatGatewayId($natGatewayId)
-    {
-        $this->requestParameters['NatGatewayId'] = $natGatewayId;
-        $this->queryParameters['NatGatewayId'] = $natGatewayId;
 
         return $this;
     }

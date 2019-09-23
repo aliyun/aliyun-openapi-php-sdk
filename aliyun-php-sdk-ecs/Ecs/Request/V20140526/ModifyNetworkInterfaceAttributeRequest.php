@@ -55,14 +55,14 @@ class ModifyNetworkInterfaceAttributeRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setSecurityGroupIds(array $securityGroupId)
-    {
-        $this->requestParameters['SecurityGroupIds'] = $securityGroupId;
-        foreach ($securityGroupId as $i => $iValue) {
-            $this->queryParameters['SecurityGroupId.' . ($i + 1)] = $iValue;
-        }
+	public function setSecurityGroupIds(array $securityGroupId)
+	{
+	    $this->requestParameters['SecurityGroupIds'] = $securityGroupId;
+		foreach ($securityGroupId as $i => $iValue) {
+			$this->queryParameters['SecurityGroupId.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 
     /**

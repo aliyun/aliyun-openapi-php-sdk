@@ -7,14 +7,14 @@ namespace Ecs\Request\V20140526;
  *
  * Request of StartInstance
  *
+ * @method string getResourceOwnerId()
  * @method string getSourceRegionId()
  * @method string getInitLocalDisk()
- * @method string getResourceOwnerId()
- * @method string getInstanceId()
  * @method string getDryRun()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getInstanceId()
  */
 class StartInstanceRequest extends \RpcAcsRequest
 {
@@ -35,6 +35,19 @@ class StartInstanceRequest extends \RpcAcsRequest
             'StartInstance',
             'ecs'
         );
+    }
+
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
     }
 
     /**
@@ -59,32 +72,6 @@ class StartInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['InitLocalDisk'] = $initLocalDisk;
         $this->queryParameters['InitLocalDisk'] = $initLocalDisk;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerId
-     *
-     * @return $this
-     */
-    public function setResourceOwnerId($resourceOwnerId)
-    {
-        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
-        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }
@@ -137,6 +124,19 @@ class StartInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

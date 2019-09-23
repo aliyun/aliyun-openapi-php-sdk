@@ -8,9 +8,9 @@ namespace Ecs\Request\V20140526;
  * Request of DeleteSecurityGroup
  *
  * @method string getResourceOwnerId()
+ * @method string getSecurityGroupId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getSecurityGroupId()
  * @method string getOwnerId()
  */
 class DeleteSecurityGroupRequest extends \RpcAcsRequest
@@ -48,6 +48,19 @@ class DeleteSecurityGroupRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $securityGroupId
+     *
+     * @return $this
+     */
+    public function setSecurityGroupId($securityGroupId)
+    {
+        $this->requestParameters['SecurityGroupId'] = $securityGroupId;
+        $this->queryParameters['SecurityGroupId'] = $securityGroupId;
+
+        return $this;
+    }
+
+    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -69,19 +82,6 @@ class DeleteSecurityGroupRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $securityGroupId
-     *
-     * @return $this
-     */
-    public function setSecurityGroupId($securityGroupId)
-    {
-        $this->requestParameters['SecurityGroupId'] = $securityGroupId;
-        $this->queryParameters['SecurityGroupId'] = $securityGroupId;
 
         return $this;
     }

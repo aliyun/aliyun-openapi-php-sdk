@@ -8,10 +8,10 @@ namespace Ecs\Request\V20140526;
  * Request of ModifyEipAddressAttribute
  *
  * @method string getResourceOwnerId()
+ * @method string getAllocationId()
  * @method string getResourceOwnerAccount()
  * @method string getBandwidth()
  * @method string getOwnerAccount()
- * @method string getAllocationId()
  * @method string getOwnerId()
  */
 class ModifyEipAddressAttributeRequest extends \RpcAcsRequest
@@ -44,6 +44,19 @@ class ModifyEipAddressAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $allocationId
+     *
+     * @return $this
+     */
+    public function setAllocationId($allocationId)
+    {
+        $this->requestParameters['AllocationId'] = $allocationId;
+        $this->queryParameters['AllocationId'] = $allocationId;
 
         return $this;
     }
@@ -83,19 +96,6 @@ class ModifyEipAddressAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $allocationId
-     *
-     * @return $this
-     */
-    public function setAllocationId($allocationId)
-    {
-        $this->requestParameters['AllocationId'] = $allocationId;
-        $this->queryParameters['AllocationId'] = $allocationId;
 
         return $this;
     }

@@ -10,17 +10,17 @@ namespace Ecs\Request\V20140526;
  * @method string getResourceOwnerId()
  * @method string getCircuitCode()
  * @method string getVlanId()
- * @method string getResourceOwnerAccount()
  * @method string getClientToken()
- * @method string getOwnerAccount()
  * @method string getDescription()
  * @method string getVbrId()
- * @method string getOwnerId()
  * @method string getPeerGatewayIp()
  * @method string getPeeringSubnetMask()
- * @method string getName()
  * @method string getLocalGatewayIp()
  * @method string getUserCidr()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getOwnerId()
+ * @method string getName()
  */
 class ModifyVirtualBorderRouterAttributeRequest extends \RpcAcsRequest
 {
@@ -83,19 +83,6 @@ class ModifyVirtualBorderRouterAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $clientToken
      *
      * @return $this
@@ -104,19 +91,6 @@ class ModifyVirtualBorderRouterAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ClientToken'] = $clientToken;
         $this->queryParameters['ClientToken'] = $clientToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
         return $this;
     }
@@ -148,19 +122,6 @@ class ModifyVirtualBorderRouterAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
      * @param string $peerGatewayIp
      *
      * @return $this
@@ -187,19 +148,6 @@ class ModifyVirtualBorderRouterAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $name
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->requestParameters['Name'] = $name;
-        $this->queryParameters['Name'] = $name;
-
-        return $this;
-    }
-
-    /**
      * @param string $localGatewayIp
      *
      * @return $this
@@ -221,6 +169,58 @@ class ModifyVirtualBorderRouterAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['UserCidr'] = $userCidr;
         $this->queryParameters['UserCidr'] = $userCidr;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
         return $this;
     }

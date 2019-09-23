@@ -8,15 +8,15 @@ namespace Ecs\Request\V20140526;
  * Request of CreateVSwitch
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
  * @method string getClientToken()
+ * @method string getDescription()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getOwnerId()
  * @method string getVpcId()
  * @method string getVSwitchName()
- * @method string getOwnerAccount()
  * @method string getCidrBlock()
  * @method string getZoneId()
- * @method string getDescription()
- * @method string getOwnerId()
  */
 class CreateVSwitchRequest extends \RpcAcsRequest
 {
@@ -53,6 +53,32 @@ class CreateVSwitchRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
+
+        return $this;
+    }
+
+    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -66,14 +92,27 @@ class CreateVSwitchRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $clientToken
+     * @param string $ownerAccount
      *
      * @return $this
      */
-    public function setClientToken($clientToken)
+    public function setOwnerAccount($ownerAccount)
     {
-        $this->requestParameters['ClientToken'] = $clientToken;
-        $this->queryParameters['ClientToken'] = $clientToken;
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }
@@ -105,19 +144,6 @@ class CreateVSwitchRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $cidrBlock
      *
      * @return $this
@@ -139,32 +165,6 @@ class CreateVSwitchRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ZoneId'] = $zoneId;
         $this->queryParameters['ZoneId'] = $zoneId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $description
-     *
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->requestParameters['Description'] = $description;
-        $this->queryParameters['Description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

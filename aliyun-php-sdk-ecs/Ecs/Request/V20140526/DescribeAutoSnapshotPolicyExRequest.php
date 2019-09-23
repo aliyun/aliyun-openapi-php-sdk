@@ -8,12 +8,12 @@ namespace Ecs\Request\V20140526;
  * Request of DescribeAutoSnapshotPolicyEx
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
  * @method string getAutoSnapshotPolicyId()
- * @method string getOwnerAccount()
- * @method string getPageSize()
- * @method string getOwnerId()
  * @method string getPageNumber()
+ * @method string getPageSize()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getOwnerId()
  */
 class DescribeAutoSnapshotPolicyExRequest extends \RpcAcsRequest
 {
@@ -50,19 +50,6 @@ class DescribeAutoSnapshotPolicyExRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $autoSnapshotPolicyId
      *
      * @return $this
@@ -76,14 +63,14 @@ class DescribeAutoSnapshotPolicyExRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerAccount
+     * @param string $pageNumber
      *
      * @return $this
      */
-    public function setOwnerAccount($ownerAccount)
+    public function setPageNumber($pageNumber)
     {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }
@@ -102,6 +89,32 @@ class DescribeAutoSnapshotPolicyExRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -110,19 +123,6 @@ class DescribeAutoSnapshotPolicyExRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

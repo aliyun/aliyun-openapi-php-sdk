@@ -9,11 +9,11 @@ namespace Ecs\Request\V20140526;
  *
  * @method string getResourceOwnerId()
  * @method string getClientToken()
+ * @method string getSecurityGroupId()
+ * @method string getInnerAccessPolicy()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getSecurityGroupId()
  * @method string getOwnerId()
- * @method string getInnerAccessPolicy()
  */
 class ModifySecurityGroupPolicyRequest extends \RpcAcsRequest
 {
@@ -63,6 +63,32 @@ class ModifySecurityGroupPolicyRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $securityGroupId
+     *
+     * @return $this
+     */
+    public function setSecurityGroupId($securityGroupId)
+    {
+        $this->requestParameters['SecurityGroupId'] = $securityGroupId;
+        $this->queryParameters['SecurityGroupId'] = $securityGroupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $innerAccessPolicy
+     *
+     * @return $this
+     */
+    public function setInnerAccessPolicy($innerAccessPolicy)
+    {
+        $this->requestParameters['InnerAccessPolicy'] = $innerAccessPolicy;
+        $this->queryParameters['InnerAccessPolicy'] = $innerAccessPolicy;
+
+        return $this;
+    }
+
+    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -89,19 +115,6 @@ class ModifySecurityGroupPolicyRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $securityGroupId
-     *
-     * @return $this
-     */
-    public function setSecurityGroupId($securityGroupId)
-    {
-        $this->requestParameters['SecurityGroupId'] = $securityGroupId;
-        $this->queryParameters['SecurityGroupId'] = $securityGroupId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -110,19 +123,6 @@ class ModifySecurityGroupPolicyRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $innerAccessPolicy
-     *
-     * @return $this
-     */
-    public function setInnerAccessPolicy($innerAccessPolicy)
-    {
-        $this->requestParameters['InnerAccessPolicy'] = $innerAccessPolicy;
-        $this->queryParameters['InnerAccessPolicy'] = $innerAccessPolicy;
 
         return $this;
     }

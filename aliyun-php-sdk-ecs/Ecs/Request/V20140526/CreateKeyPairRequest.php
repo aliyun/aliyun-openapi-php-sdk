@@ -7,11 +7,11 @@ namespace Ecs\Request\V20140526;
  *
  * Request of CreateKeyPair
  *
- * @method string getResourceGroupId()
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
  * @method string getKeyPairName()
+ * @method string getResourceGroupId()
  * @method array getTags()
+ * @method string getResourceOwnerAccount()
  * @method string getOwnerId()
  */
 class CreateKeyPairRequest extends \RpcAcsRequest
@@ -36,19 +36,6 @@ class CreateKeyPairRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceGroupId
-     *
-     * @return $this
-     */
-    public function setResourceGroupId($resourceGroupId)
-    {
-        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
-        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerId
      *
      * @return $this
@@ -57,19 +44,6 @@ class CreateKeyPairRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }
@@ -88,17 +62,43 @@ class CreateKeyPairRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $resourceGroupId
+     *
+     * @return $this
+     */
+    public function setResourceGroupId($resourceGroupId)
+    {
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
+
+        return $this;
+    }
+
+    /**
      * @param array $tag
      *
      * @return $this
      */
-    public function setTags(array $tag)
+	public function setTags(array $tag)
+	{
+	    $this->requestParameters['Tags'] = $tag;
+		foreach ($tag as $depth1 => $depth1Value) {
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+		}
+
+		return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
     {
-        $this->requestParameters['Tags'] = $tag;
-        foreach ($tag as $depth1 => $depth1Value) {
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
-        }
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }

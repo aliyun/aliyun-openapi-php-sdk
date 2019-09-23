@@ -9,9 +9,9 @@ namespace Ecs\Request\V20140526;
  *
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
- * @method string getInstanceIds()
  * @method string getRamRoleName()
  * @method string getOwnerId()
+ * @method string getInstanceIds()
  */
 class DetachInstanceRamRoleRequest extends \RpcAcsRequest
 {
@@ -61,19 +61,6 @@ class DetachInstanceRamRoleRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceIds
-     *
-     * @return $this
-     */
-    public function setInstanceIds($instanceIds)
-    {
-        $this->requestParameters['InstanceIds'] = $instanceIds;
-        $this->queryParameters['InstanceIds'] = $instanceIds;
-
-        return $this;
-    }
-
-    /**
      * @param string $ramRoleName
      *
      * @return $this
@@ -95,6 +82,19 @@ class DetachInstanceRamRoleRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceIds
+     *
+     * @return $this
+     */
+    public function setInstanceIds($instanceIds)
+    {
+        $this->requestParameters['InstanceIds'] = $instanceIds;
+        $this->queryParameters['InstanceIds'] = $instanceIds;
 
         return $this;
     }

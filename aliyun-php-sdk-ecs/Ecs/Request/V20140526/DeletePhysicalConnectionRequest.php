@@ -8,11 +8,11 @@ namespace Ecs\Request\V20140526;
  * Request of DeletePhysicalConnection
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
  * @method string getClientToken()
- * @method string getPhysicalConnectionId()
+ * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getPhysicalConnectionId()
  */
 class DeletePhysicalConnectionRequest extends \RpcAcsRequest
 {
@@ -49,19 +49,6 @@ class DeletePhysicalConnectionRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $clientToken
      *
      * @return $this
@@ -75,14 +62,14 @@ class DeletePhysicalConnectionRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $physicalConnectionId
+     * @param string $resourceOwnerAccount
      *
      * @return $this
      */
-    public function setPhysicalConnectionId($physicalConnectionId)
+    public function setResourceOwnerAccount($resourceOwnerAccount)
     {
-        $this->requestParameters['PhysicalConnectionId'] = $physicalConnectionId;
-        $this->queryParameters['PhysicalConnectionId'] = $physicalConnectionId;
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }
@@ -109,6 +96,19 @@ class DeletePhysicalConnectionRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $physicalConnectionId
+     *
+     * @return $this
+     */
+    public function setPhysicalConnectionId($physicalConnectionId)
+    {
+        $this->requestParameters['PhysicalConnectionId'] = $physicalConnectionId;
+        $this->queryParameters['PhysicalConnectionId'] = $physicalConnectionId;
 
         return $this;
     }

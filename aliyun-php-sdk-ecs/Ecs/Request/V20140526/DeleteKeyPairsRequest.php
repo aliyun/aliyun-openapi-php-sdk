@@ -8,8 +8,8 @@ namespace Ecs\Request\V20140526;
  * Request of DeleteKeyPairs
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
  * @method string getKeyPairNames()
+ * @method string getResourceOwnerAccount()
  * @method string getOwnerId()
  */
 class DeleteKeyPairsRequest extends \RpcAcsRequest
@@ -47,19 +47,6 @@ class DeleteKeyPairsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $keyPairNames
      *
      * @return $this
@@ -68,6 +55,19 @@ class DeleteKeyPairsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['KeyPairNames'] = $keyPairNames;
         $this->queryParameters['KeyPairNames'] = $keyPairNames;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }

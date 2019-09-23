@@ -8,38 +8,38 @@ namespace Ecs\Request\V20140526;
  * Request of DescribeDisks
  *
  * @method string getResourceOwnerId()
- * @method string getSnapshotId()
  * @method string getFilter2Value()
  * @method string getAutoSnapshotPolicyId()
- * @method string getPageNumber()
  * @method string getDiskName()
  * @method string getDeleteAutoSnapshot()
  * @method string getResourceGroupId()
  * @method string getDiskChargeType()
  * @method string getLockReason()
  * @method string getFilter1Key()
- * @method string getPageSize()
- * @method string getDiskIds()
  * @method array getTags()
- * @method string getDeleteWithInstance()
  * @method string getEnableAutoSnapshot()
  * @method string getDryRun()
- * @method string getResourceOwnerAccount()
- * @method string getOwnerAccount()
  * @method string getFilter1Value()
  * @method string getPortable()
+ * @method string getOwnerId()
+ * @method array getAdditionalAttributess()
+ * @method string getInstanceId()
+ * @method string getZoneId()
+ * @method string getStatus()
+ * @method string getSnapshotId()
+ * @method string getPageNumber()
+ * @method string getPageSize()
+ * @method string getDiskIds()
+ * @method string getDeleteWithInstance()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
  * @method string getEnableAutomatedSnapshotPolicy()
  * @method string getFilter2Key()
- * @method string getOwnerId()
  * @method string getDiskType()
- * @method array getAdditionalAttributess()
  * @method string getEnableShared()
- * @method string getInstanceId()
  * @method string getEncrypted()
- * @method string getZoneId()
  * @method string getCategory()
  * @method string getKMSKeyId()
- * @method string getStatus()
  */
 class DescribeDisksRequest extends \RpcAcsRequest
 {
@@ -76,19 +76,6 @@ class DescribeDisksRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $snapshotId
-     *
-     * @return $this
-     */
-    public function setSnapshotId($snapshotId)
-    {
-        $this->requestParameters['SnapshotId'] = $snapshotId;
-        $this->queryParameters['SnapshotId'] = $snapshotId;
-
-        return $this;
-    }
-
-    /**
      * @param string $filter2Value
      *
      * @return $this
@@ -110,19 +97,6 @@ class DescribeDisksRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AutoSnapshotPolicyId'] = $autoSnapshotPolicyId;
         $this->queryParameters['AutoSnapshotPolicyId'] = $autoSnapshotPolicyId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }
@@ -206,58 +180,19 @@ class DescribeDisksRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param string $diskIds
-     *
-     * @return $this
-     */
-    public function setDiskIds($diskIds)
-    {
-        $this->requestParameters['DiskIds'] = $diskIds;
-        $this->queryParameters['DiskIds'] = $diskIds;
-
-        return $this;
-    }
-
-    /**
      * @param array $tag
      *
      * @return $this
      */
-    public function setTags(array $tag)
-    {
-        $this->requestParameters['Tags'] = $tag;
-        foreach ($tag as $depth1 => $depth1Value) {
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
-        }
+	public function setTags(array $tag)
+	{
+	    $this->requestParameters['Tags'] = $tag;
+		foreach ($tag as $depth1 => $depth1Value) {
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+		}
 
-        return $this;
-    }
-
-    /**
-     * @param string $deleteWithInstance
-     *
-     * @return $this
-     */
-    public function setDeleteWithInstance($deleteWithInstance)
-    {
-        $this->requestParameters['DeleteWithInstance'] = $deleteWithInstance;
-        $this->queryParameters['DeleteWithInstance'] = $deleteWithInstance;
-
-        return $this;
+		return $this;
     }
 
     /**
@@ -282,32 +217,6 @@ class DescribeDisksRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DryRun'] = $dryRun;
         $this->queryParameters['DryRun'] = $dryRun;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
         return $this;
     }
@@ -339,6 +248,164 @@ class DescribeDisksRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param array $additionalAttributes
+     *
+     * @return $this
+     */
+	public function setAdditionalAttributess(array $additionalAttributes)
+	{
+	    $this->requestParameters['AdditionalAttributess'] = $additionalAttributes;
+		foreach ($additionalAttributes as $i => $iValue) {
+			$this->queryParameters['AdditionalAttributes.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $zoneId
+     *
+     * @return $this
+     */
+    public function setZoneId($zoneId)
+    {
+        $this->requestParameters['ZoneId'] = $zoneId;
+        $this->queryParameters['ZoneId'] = $zoneId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $status
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->requestParameters['Status'] = $status;
+        $this->queryParameters['Status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * @param string $snapshotId
+     *
+     * @return $this
+     */
+    public function setSnapshotId($snapshotId)
+    {
+        $this->requestParameters['SnapshotId'] = $snapshotId;
+        $this->queryParameters['SnapshotId'] = $snapshotId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $diskIds
+     *
+     * @return $this
+     */
+    public function setDiskIds($diskIds)
+    {
+        $this->requestParameters['DiskIds'] = $diskIds;
+        $this->queryParameters['DiskIds'] = $diskIds;
+
+        return $this;
+    }
+
+    /**
+     * @param string $deleteWithInstance
+     *
+     * @return $this
+     */
+    public function setDeleteWithInstance($deleteWithInstance)
+    {
+        $this->requestParameters['DeleteWithInstance'] = $deleteWithInstance;
+        $this->queryParameters['DeleteWithInstance'] = $deleteWithInstance;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
      * @param string $enableAutomatedSnapshotPolicy
      *
      * @return $this
@@ -365,19 +432,6 @@ class DescribeDisksRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
      * @param string $diskType
      *
      * @return $this
@@ -386,21 +440,6 @@ class DescribeDisksRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DiskType'] = $diskType;
         $this->queryParameters['DiskType'] = $diskType;
-
-        return $this;
-    }
-
-    /**
-     * @param array $additionalAttributes
-     *
-     * @return $this
-     */
-    public function setAdditionalAttributess(array $additionalAttributes)
-    {
-        $this->requestParameters['AdditionalAttributess'] = $additionalAttributes;
-        foreach ($additionalAttributes as $i => $iValue) {
-            $this->queryParameters['AdditionalAttributes.' . ($i + 1)] = $iValue;
-        }
 
         return $this;
     }
@@ -419,19 +458,6 @@ class DescribeDisksRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $encrypted
      *
      * @return $this
@@ -440,19 +466,6 @@ class DescribeDisksRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Encrypted'] = $encrypted;
         $this->queryParameters['Encrypted'] = $encrypted;
-
-        return $this;
-    }
-
-    /**
-     * @param string $zoneId
-     *
-     * @return $this
-     */
-    public function setZoneId($zoneId)
-    {
-        $this->requestParameters['ZoneId'] = $zoneId;
-        $this->queryParameters['ZoneId'] = $zoneId;
 
         return $this;
     }
@@ -479,19 +492,6 @@ class DescribeDisksRequest extends \RpcAcsRequest
     {
         $this->requestParameters['KMSKeyId'] = $kMSKeyId;
         $this->queryParameters['KMSKeyId'] = $kMSKeyId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $status
-     *
-     * @return $this
-     */
-    public function setStatus($status)
-    {
-        $this->requestParameters['Status'] = $status;
-        $this->queryParameters['Status'] = $status;
 
         return $this;
     }

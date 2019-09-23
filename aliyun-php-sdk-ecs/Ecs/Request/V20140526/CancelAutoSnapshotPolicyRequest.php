@@ -8,8 +8,8 @@ namespace Ecs\Request\V20140526;
  * Request of CancelAutoSnapshotPolicy
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
  * @method string getdiskIds()
+ * @method string getResourceOwnerAccount()
  * @method string getOwnerId()
  */
 class CancelAutoSnapshotPolicyRequest extends \RpcAcsRequest
@@ -47,19 +47,6 @@ class CancelAutoSnapshotPolicyRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $diskIds
      *
      * @return $this
@@ -68,6 +55,19 @@ class CancelAutoSnapshotPolicyRequest extends \RpcAcsRequest
     {
         $this->requestParameters['diskIds'] = $diskIds;
         $this->queryParameters['diskIds'] = $diskIds;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }

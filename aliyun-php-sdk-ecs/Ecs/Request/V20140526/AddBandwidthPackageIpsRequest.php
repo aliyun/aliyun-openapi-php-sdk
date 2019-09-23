@@ -8,9 +8,9 @@ namespace Ecs\Request\V20140526;
  * Request of AddBandwidthPackageIps
  *
  * @method string getResourceOwnerId()
+ * @method string getClientToken()
  * @method string getBandwidthPackageId()
  * @method string getResourceOwnerAccount()
- * @method string getClientToken()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
  * @method string getIpCount()
@@ -50,6 +50,19 @@ class AddBandwidthPackageIpsRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
+
+        return $this;
+    }
+
+    /**
      * @param string $bandwidthPackageId
      *
      * @return $this
@@ -71,19 +84,6 @@ class AddBandwidthPackageIpsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $clientToken
-     *
-     * @return $this
-     */
-    public function setClientToken($clientToken)
-    {
-        $this->requestParameters['ClientToken'] = $clientToken;
-        $this->queryParameters['ClientToken'] = $clientToken;
 
         return $this;
     }

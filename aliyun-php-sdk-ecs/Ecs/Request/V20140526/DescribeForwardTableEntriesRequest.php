@@ -8,13 +8,13 @@ namespace Ecs\Request\V20140526;
  * Request of DescribeForwardTableEntries
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
- * @method string getForwardEntryId()
- * @method string getOwnerAccount()
  * @method string getForwardTableId()
- * @method string getPageSize()
- * @method string getOwnerId()
  * @method string getPageNumber()
+ * @method string getForwardEntryId()
+ * @method string getPageSize()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getOwnerId()
  */
 class DescribeForwardTableEntriesRequest extends \RpcAcsRequest
 {
@@ -51,14 +51,27 @@ class DescribeForwardTableEntriesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
+     * @param string $forwardTableId
      *
      * @return $this
      */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
+    public function setForwardTableId($forwardTableId)
     {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->requestParameters['ForwardTableId'] = $forwardTableId;
+        $this->queryParameters['ForwardTableId'] = $forwardTableId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }
@@ -77,32 +90,6 @@ class DescribeForwardTableEntriesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $forwardTableId
-     *
-     * @return $this
-     */
-    public function setForwardTableId($forwardTableId)
-    {
-        $this->requestParameters['ForwardTableId'] = $forwardTableId;
-        $this->queryParameters['ForwardTableId'] = $forwardTableId;
-
-        return $this;
-    }
-
-    /**
      * @param string $pageSize
      *
      * @return $this
@@ -116,6 +103,32 @@ class DescribeForwardTableEntriesRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -124,19 +137,6 @@ class DescribeForwardTableEntriesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

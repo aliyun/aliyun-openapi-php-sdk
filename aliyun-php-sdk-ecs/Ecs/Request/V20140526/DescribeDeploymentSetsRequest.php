@@ -8,16 +8,16 @@ namespace Ecs\Request\V20140526;
  * Request of DescribeDeploymentSets
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
- * @method string getOwnerAccount()
  * @method string getNetworkType()
- * @method string getDeploymentSetName()
- * @method string getOwnerId()
  * @method string getPageNumber()
  * @method string getDeploymentSetIds()
+ * @method string getPageSize()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getDeploymentSetName()
+ * @method string getOwnerId()
  * @method string getGranularity()
  * @method string getDomain()
- * @method string getPageSize()
  * @method string getStrategy()
  */
 class DescribeDeploymentSetsRequest extends \RpcAcsRequest
@@ -55,32 +55,6 @@ class DescribeDeploymentSetsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $networkType
      *
      * @return $this
@@ -89,32 +63,6 @@ class DescribeDeploymentSetsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['NetworkType'] = $networkType;
         $this->queryParameters['NetworkType'] = $networkType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $deploymentSetName
-     *
-     * @return $this
-     */
-    public function setDeploymentSetName($deploymentSetName)
-    {
-        $this->requestParameters['DeploymentSetName'] = $deploymentSetName;
-        $this->queryParameters['DeploymentSetName'] = $deploymentSetName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }
@@ -146,6 +94,71 @@ class DescribeDeploymentSetsRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $deploymentSetName
+     *
+     * @return $this
+     */
+    public function setDeploymentSetName($deploymentSetName)
+    {
+        $this->requestParameters['DeploymentSetName'] = $deploymentSetName;
+        $this->queryParameters['DeploymentSetName'] = $deploymentSetName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
      * @param string $granularity
      *
      * @return $this
@@ -167,19 +180,6 @@ class DescribeDeploymentSetsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Domain'] = $domain;
         $this->queryParameters['Domain'] = $domain;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }

@@ -8,11 +8,11 @@ namespace Ecs\Request\V20140526;
  * Request of DetachDisk
  *
  * @method string getResourceOwnerId()
- * @method string getInstanceId()
+ * @method string getDiskId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getDiskId()
  * @method string getOwnerId()
+ * @method string getInstanceId()
  */
 class DetachDiskRequest extends \RpcAcsRequest
 {
@@ -49,14 +49,14 @@ class DetachDiskRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
+     * @param string $diskId
      *
      * @return $this
      */
-    public function setInstanceId($instanceId)
+    public function setDiskId($diskId)
     {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
+        $this->requestParameters['DiskId'] = $diskId;
+        $this->queryParameters['DiskId'] = $diskId;
 
         return $this;
     }
@@ -88,19 +88,6 @@ class DetachDiskRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $diskId
-     *
-     * @return $this
-     */
-    public function setDiskId($diskId)
-    {
-        $this->requestParameters['DiskId'] = $diskId;
-        $this->queryParameters['DiskId'] = $diskId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -109,6 +96,19 @@ class DetachDiskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

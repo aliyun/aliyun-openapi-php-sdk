@@ -9,9 +9,9 @@ namespace Ecs\Request\V20140526;
  *
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
- * @method string getVpcId()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getVpcId()
  */
 class DeleteVpcRequest extends \RpcAcsRequest
 {
@@ -61,19 +61,6 @@ class DeleteVpcRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $vpcId
-     *
-     * @return $this
-     */
-    public function setVpcId($vpcId)
-    {
-        $this->requestParameters['VpcId'] = $vpcId;
-        $this->queryParameters['VpcId'] = $vpcId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerAccount
      *
      * @return $this
@@ -95,6 +82,19 @@ class DeleteVpcRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $vpcId
+     *
+     * @return $this
+     */
+    public function setVpcId($vpcId)
+    {
+        $this->requestParameters['VpcId'] = $vpcId;
+        $this->queryParameters['VpcId'] = $vpcId;
 
         return $this;
     }

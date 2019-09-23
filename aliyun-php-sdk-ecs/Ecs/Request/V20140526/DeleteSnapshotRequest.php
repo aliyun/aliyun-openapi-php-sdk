@@ -11,8 +11,8 @@ namespace Ecs\Request\V20140526;
  * @method string getSnapshotId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getForce()
  * @method string getOwnerId()
+ * @method string getForce()
  */
 class DeleteSnapshotRequest extends \RpcAcsRequest
 {
@@ -88,19 +88,6 @@ class DeleteSnapshotRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $force
-     *
-     * @return $this
-     */
-    public function setForce($force)
-    {
-        $this->requestParameters['Force'] = $force;
-        $this->queryParameters['Force'] = $force;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -109,6 +96,19 @@ class DeleteSnapshotRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $force
+     *
+     * @return $this
+     */
+    public function setForce($force)
+    {
+        $this->requestParameters['Force'] = $force;
+        $this->queryParameters['Force'] = $force;
 
         return $this;
     }

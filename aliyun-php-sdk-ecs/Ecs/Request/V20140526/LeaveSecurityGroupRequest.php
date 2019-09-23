@@ -8,11 +8,11 @@ namespace Ecs\Request\V20140526;
  * Request of LeaveSecurityGroup
  *
  * @method string getResourceOwnerId()
- * @method string getInstanceId()
+ * @method string getSecurityGroupId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getSecurityGroupId()
  * @method string getOwnerId()
+ * @method string getInstanceId()
  */
 class LeaveSecurityGroupRequest extends \RpcAcsRequest
 {
@@ -49,14 +49,14 @@ class LeaveSecurityGroupRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
+     * @param string $securityGroupId
      *
      * @return $this
      */
-    public function setInstanceId($instanceId)
+    public function setSecurityGroupId($securityGroupId)
     {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
+        $this->requestParameters['SecurityGroupId'] = $securityGroupId;
+        $this->queryParameters['SecurityGroupId'] = $securityGroupId;
 
         return $this;
     }
@@ -88,19 +88,6 @@ class LeaveSecurityGroupRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $securityGroupId
-     *
-     * @return $this
-     */
-    public function setSecurityGroupId($securityGroupId)
-    {
-        $this->requestParameters['SecurityGroupId'] = $securityGroupId;
-        $this->queryParameters['SecurityGroupId'] = $securityGroupId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -109,6 +96,19 @@ class LeaveSecurityGroupRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

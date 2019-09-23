@@ -8,15 +8,15 @@ namespace Ecs\Request\V20140526;
  * Request of StopInstance
  *
  * @method string getResourceOwnerId()
- * @method string getInstanceId()
- * @method string getDryRun()
- * @method string getResourceOwnerAccount()
- * @method string getConfirmStop()
- * @method string getOwnerAccount()
  * @method string getStoppedMode()
- * @method string getOwnerId()
  * @method string getHibernate()
  * @method string getForceStop()
+ * @method string getConfirmStop()
+ * @method string getDryRun()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getOwnerId()
+ * @method string getInstanceId()
  */
 class StopInstanceRequest extends \RpcAcsRequest
 {
@@ -53,14 +53,53 @@ class StopInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
+     * @param string $stoppedMode
      *
      * @return $this
      */
-    public function setInstanceId($instanceId)
+    public function setStoppedMode($stoppedMode)
     {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
+        $this->requestParameters['StoppedMode'] = $stoppedMode;
+        $this->queryParameters['StoppedMode'] = $stoppedMode;
+
+        return $this;
+    }
+
+    /**
+     * @param string $hibernate
+     *
+     * @return $this
+     */
+    public function setHibernate($hibernate)
+    {
+        $this->requestParameters['Hibernate'] = $hibernate;
+        $this->queryParameters['Hibernate'] = $hibernate;
+
+        return $this;
+    }
+
+    /**
+     * @param string $forceStop
+     *
+     * @return $this
+     */
+    public function setForceStop($forceStop)
+    {
+        $this->requestParameters['ForceStop'] = $forceStop;
+        $this->queryParameters['ForceStop'] = $forceStop;
+
+        return $this;
+    }
+
+    /**
+     * @param string $confirmStop
+     *
+     * @return $this
+     */
+    public function setConfirmStop($confirmStop)
+    {
+        $this->requestParameters['ConfirmStop'] = $confirmStop;
+        $this->queryParameters['ConfirmStop'] = $confirmStop;
 
         return $this;
     }
@@ -92,19 +131,6 @@ class StopInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $confirmStop
-     *
-     * @return $this
-     */
-    public function setConfirmStop($confirmStop)
-    {
-        $this->requestParameters['ConfirmStop'] = $confirmStop;
-        $this->queryParameters['ConfirmStop'] = $confirmStop;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerAccount
      *
      * @return $this
@@ -113,19 +139,6 @@ class StopInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $stoppedMode
-     *
-     * @return $this
-     */
-    public function setStoppedMode($stoppedMode)
-    {
-        $this->requestParameters['StoppedMode'] = $stoppedMode;
-        $this->queryParameters['StoppedMode'] = $stoppedMode;
 
         return $this;
     }
@@ -144,27 +157,14 @@ class StopInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $hibernate
+     * @param string $instanceId
      *
      * @return $this
      */
-    public function setHibernate($hibernate)
+    public function setInstanceId($instanceId)
     {
-        $this->requestParameters['Hibernate'] = $hibernate;
-        $this->queryParameters['Hibernate'] = $hibernate;
-
-        return $this;
-    }
-
-    /**
-     * @param string $forceStop
-     *
-     * @return $this
-     */
-    public function setForceStop($forceStop)
-    {
-        $this->requestParameters['ForceStop'] = $forceStop;
-        $this->queryParameters['ForceStop'] = $forceStop;
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

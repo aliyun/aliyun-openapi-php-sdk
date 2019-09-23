@@ -8,12 +8,12 @@ namespace Ecs\Request\V20140526;
  * Request of RebootInstance
  *
  * @method string getResourceOwnerId()
- * @method string getInstanceId()
+ * @method string getForceStop()
  * @method string getDryRun()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
- * @method string getForceStop()
+ * @method string getInstanceId()
  */
 class RebootInstanceRequest extends \RpcAcsRequest
 {
@@ -50,14 +50,14 @@ class RebootInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
+     * @param string $forceStop
      *
      * @return $this
      */
-    public function setInstanceId($instanceId)
+    public function setForceStop($forceStop)
     {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
+        $this->requestParameters['ForceStop'] = $forceStop;
+        $this->queryParameters['ForceStop'] = $forceStop;
 
         return $this;
     }
@@ -115,14 +115,14 @@ class RebootInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $forceStop
+     * @param string $instanceId
      *
      * @return $this
      */
-    public function setForceStop($forceStop)
+    public function setInstanceId($instanceId)
     {
-        $this->requestParameters['ForceStop'] = $forceStop;
-        $this->queryParameters['ForceStop'] = $forceStop;
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

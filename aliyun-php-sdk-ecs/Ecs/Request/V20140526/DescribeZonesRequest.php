@@ -7,14 +7,14 @@ namespace Ecs\Request\V20140526;
  *
  * Request of DescribeZones
  *
- * @method string getSpotStrategy()
  * @method string getResourceOwnerId()
+ * @method string getInstanceChargeType()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getAcceptLanguage()
  * @method string getOwnerId()
- * @method string getInstanceChargeType()
  * @method string getVerbose()
+ * @method string getSpotStrategy()
+ * @method string getAcceptLanguage()
  */
 class DescribeZonesRequest extends \RpcAcsRequest
 {
@@ -38,19 +38,6 @@ class DescribeZonesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $spotStrategy
-     *
-     * @return $this
-     */
-    public function setSpotStrategy($spotStrategy)
-    {
-        $this->requestParameters['SpotStrategy'] = $spotStrategy;
-        $this->queryParameters['SpotStrategy'] = $spotStrategy;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerId
      *
      * @return $this
@@ -59,6 +46,19 @@ class DescribeZonesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceChargeType
+     *
+     * @return $this
+     */
+    public function setInstanceChargeType($instanceChargeType)
+    {
+        $this->requestParameters['InstanceChargeType'] = $instanceChargeType;
+        $this->queryParameters['InstanceChargeType'] = $instanceChargeType;
 
         return $this;
     }
@@ -90,19 +90,6 @@ class DescribeZonesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $acceptLanguage
-     *
-     * @return $this
-     */
-    public function setAcceptLanguage($acceptLanguage)
-    {
-        $this->requestParameters['AcceptLanguage'] = $acceptLanguage;
-        $this->queryParameters['AcceptLanguage'] = $acceptLanguage;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -116,19 +103,6 @@ class DescribeZonesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceChargeType
-     *
-     * @return $this
-     */
-    public function setInstanceChargeType($instanceChargeType)
-    {
-        $this->requestParameters['InstanceChargeType'] = $instanceChargeType;
-        $this->queryParameters['InstanceChargeType'] = $instanceChargeType;
-
-        return $this;
-    }
-
-    /**
      * @param string $verbose
      *
      * @return $this
@@ -137,6 +111,32 @@ class DescribeZonesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Verbose'] = $verbose;
         $this->queryParameters['Verbose'] = $verbose;
+
+        return $this;
+    }
+
+    /**
+     * @param string $spotStrategy
+     *
+     * @return $this
+     */
+    public function setSpotStrategy($spotStrategy)
+    {
+        $this->requestParameters['SpotStrategy'] = $spotStrategy;
+        $this->queryParameters['SpotStrategy'] = $spotStrategy;
+
+        return $this;
+    }
+
+    /**
+     * @param string $acceptLanguage
+     *
+     * @return $this
+     */
+    public function setAcceptLanguage($acceptLanguage)
+    {
+        $this->requestParameters['AcceptLanguage'] = $acceptLanguage;
+        $this->queryParameters['AcceptLanguage'] = $acceptLanguage;
 
         return $this;
     }

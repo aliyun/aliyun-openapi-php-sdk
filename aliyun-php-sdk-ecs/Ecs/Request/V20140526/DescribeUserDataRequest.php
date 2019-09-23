@@ -8,9 +8,9 @@ namespace Ecs\Request\V20140526;
  * Request of DescribeUserData
  *
  * @method string getResourceOwnerId()
- * @method string getInstanceId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerId()
+ * @method string getInstanceId()
  */
 class DescribeUserDataRequest extends \RpcAcsRequest
 {
@@ -47,19 +47,6 @@ class DescribeUserDataRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -81,6 +68,19 @@ class DescribeUserDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

@@ -8,13 +8,13 @@ namespace Ecs\Request\V20140526;
  * Request of DescribeBandwidthPackages
  *
  * @method string getResourceOwnerId()
+ * @method string getPageNumber()
+ * @method string getPageSize()
+ * @method string getNatGatewayId()
  * @method string getBandwidthPackageId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getPageSize()
- * @method string getNatGatewayId()
  * @method string getOwnerId()
- * @method string getPageNumber()
  */
 class DescribeBandwidthPackagesRequest extends \RpcAcsRequest
 {
@@ -46,6 +46,45 @@ class DescribeBandwidthPackagesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $natGatewayId
+     *
+     * @return $this
+     */
+    public function setNatGatewayId($natGatewayId)
+    {
+        $this->requestParameters['NatGatewayId'] = $natGatewayId;
+        $this->queryParameters['NatGatewayId'] = $natGatewayId;
 
         return $this;
     }
@@ -90,32 +129,6 @@ class DescribeBandwidthPackagesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param string $natGatewayId
-     *
-     * @return $this
-     */
-    public function setNatGatewayId($natGatewayId)
-    {
-        $this->requestParameters['NatGatewayId'] = $natGatewayId;
-        $this->queryParameters['NatGatewayId'] = $natGatewayId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -124,19 +137,6 @@ class DescribeBandwidthPackagesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

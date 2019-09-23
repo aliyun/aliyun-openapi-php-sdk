@@ -7,11 +7,11 @@ namespace Ecs\Request\V20140526;
  *
  * Request of DeleteVSwitch
  *
- * @method string getVSwitchId()
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getVSwitchId()
  */
 class DeleteVSwitchRequest extends \RpcAcsRequest
 {
@@ -32,19 +32,6 @@ class DeleteVSwitchRequest extends \RpcAcsRequest
             'DeleteVSwitch',
             'ecs'
         );
-    }
-
-    /**
-     * @param string $vSwitchId
-     *
-     * @return $this
-     */
-    public function setVSwitchId($vSwitchId)
-    {
-        $this->requestParameters['VSwitchId'] = $vSwitchId;
-        $this->queryParameters['VSwitchId'] = $vSwitchId;
-
-        return $this;
     }
 
     /**
@@ -95,6 +82,19 @@ class DeleteVSwitchRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $vSwitchId
+     *
+     * @return $this
+     */
+    public function setVSwitchId($vSwitchId)
+    {
+        $this->requestParameters['VSwitchId'] = $vSwitchId;
+        $this->queryParameters['VSwitchId'] = $vSwitchId;
 
         return $this;
     }

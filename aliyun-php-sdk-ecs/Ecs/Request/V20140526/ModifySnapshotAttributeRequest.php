@@ -9,10 +9,10 @@ namespace Ecs\Request\V20140526;
  *
  * @method string getResourceOwnerId()
  * @method string getSnapshotId()
- * @method string getResourceOwnerAccount()
- * @method string getOwnerAccount()
  * @method string getDescription()
  * @method string getSnapshotName()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
  * @method string getOwnerId()
  */
 class ModifySnapshotAttributeRequest extends \RpcAcsRequest
@@ -63,32 +63,6 @@ class ModifySnapshotAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $description
      *
      * @return $this
@@ -110,6 +84,32 @@ class ModifySnapshotAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SnapshotName'] = $snapshotName;
         $this->queryParameters['SnapshotName'] = $snapshotName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
         return $this;
     }

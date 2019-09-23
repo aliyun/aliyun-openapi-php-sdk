@@ -7,10 +7,10 @@ namespace Ecs\Request\V20140526;
  *
  * Request of DeleteHaVip
  *
- * @method string getHaVipId()
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
  * @method string getClientToken()
+ * @method string getHaVipId()
+ * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
  */
@@ -36,19 +36,6 @@ class DeleteHaVipRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $haVipId
-     *
-     * @return $this
-     */
-    public function setHaVipId($haVipId)
-    {
-        $this->requestParameters['HaVipId'] = $haVipId;
-        $this->queryParameters['HaVipId'] = $haVipId;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerId
      *
      * @return $this
@@ -62,19 +49,6 @@ class DeleteHaVipRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $clientToken
      *
      * @return $this
@@ -83,6 +57,32 @@ class DeleteHaVipRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ClientToken'] = $clientToken;
         $this->queryParameters['ClientToken'] = $clientToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $haVipId
+     *
+     * @return $this
+     */
+    public function setHaVipId($haVipId)
+    {
+        $this->requestParameters['HaVipId'] = $haVipId;
+        $this->queryParameters['HaVipId'] = $haVipId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }

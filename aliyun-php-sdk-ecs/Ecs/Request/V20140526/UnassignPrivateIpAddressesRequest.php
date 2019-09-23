@@ -92,14 +92,14 @@ class UnassignPrivateIpAddressesRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setPrivateIpAddresss(array $privateIpAddress)
-    {
-        $this->requestParameters['PrivateIpAddresss'] = $privateIpAddress;
-        foreach ($privateIpAddress as $i => $iValue) {
-            $this->queryParameters['PrivateIpAddress.' . ($i + 1)] = $iValue;
-        }
+	public function setPrivateIpAddresss(array $privateIpAddress)
+	{
+	    $this->requestParameters['PrivateIpAddresss'] = $privateIpAddress;
+		foreach ($privateIpAddress as $i => $iValue) {
+			$this->queryParameters['PrivateIpAddress.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 
     /**

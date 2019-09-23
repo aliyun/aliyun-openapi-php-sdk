@@ -9,11 +9,11 @@ namespace Ecs\Request\V20140526;
  *
  * @method string getNicType()
  * @method string getResourceOwnerId()
+ * @method string getSecurityGroupId()
+ * @method string getDirection()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getSecurityGroupId()
  * @method string getOwnerId()
- * @method string getDirection()
  */
 class DescribeSecurityGroupAttributeRequest extends \RpcAcsRequest
 {
@@ -63,6 +63,32 @@ class DescribeSecurityGroupAttributeRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $securityGroupId
+     *
+     * @return $this
+     */
+    public function setSecurityGroupId($securityGroupId)
+    {
+        $this->requestParameters['SecurityGroupId'] = $securityGroupId;
+        $this->queryParameters['SecurityGroupId'] = $securityGroupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $direction
+     *
+     * @return $this
+     */
+    public function setDirection($direction)
+    {
+        $this->requestParameters['Direction'] = $direction;
+        $this->queryParameters['Direction'] = $direction;
+
+        return $this;
+    }
+
+    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -89,19 +115,6 @@ class DescribeSecurityGroupAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $securityGroupId
-     *
-     * @return $this
-     */
-    public function setSecurityGroupId($securityGroupId)
-    {
-        $this->requestParameters['SecurityGroupId'] = $securityGroupId;
-        $this->queryParameters['SecurityGroupId'] = $securityGroupId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -110,19 +123,6 @@ class DescribeSecurityGroupAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $direction
-     *
-     * @return $this
-     */
-    public function setDirection($direction)
-    {
-        $this->requestParameters['Direction'] = $direction;
-        $this->queryParameters['Direction'] = $direction;
 
         return $this;
     }

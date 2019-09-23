@@ -8,13 +8,13 @@ namespace Ecs\Request\V20140526;
  * Request of AttachDisk
  *
  * @method string getResourceOwnerId()
- * @method string getInstanceId()
+ * @method string getDiskId()
+ * @method string getDeleteWithInstance()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getDiskId()
  * @method string getOwnerId()
+ * @method string getInstanceId()
  * @method string getDevice()
- * @method string getDeleteWithInstance()
  */
 class AttachDiskRequest extends \RpcAcsRequest
 {
@@ -51,14 +51,27 @@ class AttachDiskRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
+     * @param string $diskId
      *
      * @return $this
      */
-    public function setInstanceId($instanceId)
+    public function setDiskId($diskId)
     {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
+        $this->requestParameters['DiskId'] = $diskId;
+        $this->queryParameters['DiskId'] = $diskId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $deleteWithInstance
+     *
+     * @return $this
+     */
+    public function setDeleteWithInstance($deleteWithInstance)
+    {
+        $this->requestParameters['DeleteWithInstance'] = $deleteWithInstance;
+        $this->queryParameters['DeleteWithInstance'] = $deleteWithInstance;
 
         return $this;
     }
@@ -90,19 +103,6 @@ class AttachDiskRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $diskId
-     *
-     * @return $this
-     */
-    public function setDiskId($diskId)
-    {
-        $this->requestParameters['DiskId'] = $diskId;
-        $this->queryParameters['DiskId'] = $diskId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -116,6 +116,19 @@ class AttachDiskRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
      * @param string $device
      *
      * @return $this
@@ -124,19 +137,6 @@ class AttachDiskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Device'] = $device;
         $this->queryParameters['Device'] = $device;
-
-        return $this;
-    }
-
-    /**
-     * @param string $deleteWithInstance
-     *
-     * @return $this
-     */
-    public function setDeleteWithInstance($deleteWithInstance)
-    {
-        $this->requestParameters['DeleteWithInstance'] = $deleteWithInstance;
-        $this->queryParameters['DeleteWithInstance'] = $deleteWithInstance;
 
         return $this;
     }

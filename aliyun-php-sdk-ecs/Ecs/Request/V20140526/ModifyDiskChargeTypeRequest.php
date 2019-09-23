@@ -8,14 +8,14 @@ namespace Ecs\Request\V20140526;
  * Request of ModifyDiskChargeType
  *
  * @method string getResourceOwnerId()
+ * @method string getClientToken()
  * @method string getDiskChargeType()
- * @method string getInstanceId()
+ * @method string getDiskIds()
  * @method string getAutoPay()
  * @method string getResourceOwnerAccount()
- * @method string getClientToken()
  * @method string getOwnerAccount()
- * @method string getDiskIds()
  * @method string getOwnerId()
+ * @method string getInstanceId()
  */
 class ModifyDiskChargeTypeRequest extends \RpcAcsRequest
 {
@@ -52,6 +52,19 @@ class ModifyDiskChargeTypeRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
+
+        return $this;
+    }
+
+    /**
      * @param string $diskChargeType
      *
      * @return $this
@@ -65,14 +78,14 @@ class ModifyDiskChargeTypeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
+     * @param string $diskIds
      *
      * @return $this
      */
-    public function setInstanceId($instanceId)
+    public function setDiskIds($diskIds)
     {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
+        $this->requestParameters['DiskIds'] = $diskIds;
+        $this->queryParameters['DiskIds'] = $diskIds;
 
         return $this;
     }
@@ -104,19 +117,6 @@ class ModifyDiskChargeTypeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $clientToken
-     *
-     * @return $this
-     */
-    public function setClientToken($clientToken)
-    {
-        $this->requestParameters['ClientToken'] = $clientToken;
-        $this->queryParameters['ClientToken'] = $clientToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerAccount
      *
      * @return $this
@@ -130,19 +130,6 @@ class ModifyDiskChargeTypeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $diskIds
-     *
-     * @return $this
-     */
-    public function setDiskIds($diskIds)
-    {
-        $this->requestParameters['DiskIds'] = $diskIds;
-        $this->queryParameters['DiskIds'] = $diskIds;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -151,6 +138,19 @@ class ModifyDiskChargeTypeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

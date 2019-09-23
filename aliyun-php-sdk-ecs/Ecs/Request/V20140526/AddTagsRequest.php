@@ -8,9 +8,9 @@ namespace Ecs\Request\V20140526;
  * Request of AddTags
  *
  * @method string getResourceOwnerId()
+ * @method array getTags()
  * @method string getResourceId()
  * @method string getResourceOwnerAccount()
- * @method array getTags()
  * @method string getOwnerId()
  * @method string getResourceType()
  */
@@ -49,6 +49,22 @@ class AddTagsRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param array $tag
+     *
+     * @return $this
+     */
+	public function setTags(array $tag)
+	{
+	    $this->requestParameters['Tags'] = $tag;
+		foreach ($tag as $depth1 => $depth1Value) {
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+		}
+
+		return $this;
+    }
+
+    /**
      * @param string $resourceId
      *
      * @return $this
@@ -70,22 +86,6 @@ class AddTagsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param array $tag
-     *
-     * @return $this
-     */
-    public function setTags(array $tag)
-    {
-        $this->requestParameters['Tags'] = $tag;
-        foreach ($tag as $depth1 => $depth1Value) {
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
-        }
 
         return $this;
     }

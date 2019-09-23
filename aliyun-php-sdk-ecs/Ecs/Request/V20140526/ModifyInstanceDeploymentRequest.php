@@ -16,6 +16,7 @@ namespace Ecs\Request\V20140526;
  * @method string getOwnerId()
  * @method string getInstanceId()
  * @method string getForce()
+ * @method string getMigrationType()
  * @method string getAffinity()
  */
 class ModifyInstanceDeploymentRequest extends \RpcAcsRequest
@@ -152,6 +153,19 @@ class ModifyInstanceDeploymentRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Force'] = $force;
         $this->queryParameters['Force'] = $force;
+
+        return $this;
+    }
+
+    /**
+     * @param string $migrationType
+     *
+     * @return $this
+     */
+    public function setMigrationType($migrationType)
+    {
+        $this->requestParameters['MigrationType'] = $migrationType;
+        $this->queryParameters['MigrationType'] = $migrationType;
 
         return $this;
     }

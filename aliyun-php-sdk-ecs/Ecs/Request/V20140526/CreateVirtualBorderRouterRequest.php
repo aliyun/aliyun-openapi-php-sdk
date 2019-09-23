@@ -11,16 +11,16 @@ namespace Ecs\Request\V20140526;
  * @method string getCircuitCode()
  * @method string getVlanId()
  * @method string getClientToken()
- * @method string getResourceOwnerAccount()
- * @method string getOwnerAccount()
  * @method string getDescription()
- * @method string getOwnerId()
  * @method string getPeerGatewayIp()
  * @method string getPeeringSubnetMask()
- * @method string getPhysicalConnectionId()
- * @method string getName()
  * @method string getLocalGatewayIp()
  * @method string getUserCidr()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getOwnerId()
+ * @method string getPhysicalConnectionId()
+ * @method string getName()
  * @method string getVbrOwnerId()
  */
 class CreateVirtualBorderRouterRequest extends \RpcAcsRequest
@@ -97,32 +97,6 @@ class CreateVirtualBorderRouterRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $description
      *
      * @return $this
@@ -131,19 +105,6 @@ class CreateVirtualBorderRouterRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Description'] = $description;
         $this->queryParameters['Description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }
@@ -175,32 +136,6 @@ class CreateVirtualBorderRouterRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $physicalConnectionId
-     *
-     * @return $this
-     */
-    public function setPhysicalConnectionId($physicalConnectionId)
-    {
-        $this->requestParameters['PhysicalConnectionId'] = $physicalConnectionId;
-        $this->queryParameters['PhysicalConnectionId'] = $physicalConnectionId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $name
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->requestParameters['Name'] = $name;
-        $this->queryParameters['Name'] = $name;
-
-        return $this;
-    }
-
-    /**
      * @param string $localGatewayIp
      *
      * @return $this
@@ -222,6 +157,71 @@ class CreateVirtualBorderRouterRequest extends \RpcAcsRequest
     {
         $this->requestParameters['UserCidr'] = $userCidr;
         $this->queryParameters['UserCidr'] = $userCidr;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $physicalConnectionId
+     *
+     * @return $this
+     */
+    public function setPhysicalConnectionId($physicalConnectionId)
+    {
+        $this->requestParameters['PhysicalConnectionId'] = $physicalConnectionId;
+        $this->queryParameters['PhysicalConnectionId'] = $physicalConnectionId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
         return $this;
     }

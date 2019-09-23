@@ -7,13 +7,13 @@ namespace Ecs\Request\V20140526;
  *
  * Request of AssociateHaVip
  *
- * @method string getHaVipId()
  * @method string getResourceOwnerId()
- * @method string getInstanceId()
- * @method string getResourceOwnerAccount()
  * @method string getClientToken()
+ * @method string getHaVipId()
+ * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getInstanceId()
  */
 class AssociateHaVipRequest extends \RpcAcsRequest
 {
@@ -37,19 +37,6 @@ class AssociateHaVipRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $haVipId
-     *
-     * @return $this
-     */
-    public function setHaVipId($haVipId)
-    {
-        $this->requestParameters['HaVipId'] = $haVipId;
-        $this->queryParameters['HaVipId'] = $haVipId;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerId
      *
      * @return $this
@@ -63,14 +50,27 @@ class AssociateHaVipRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
+     * @param string $clientToken
      *
      * @return $this
      */
-    public function setInstanceId($instanceId)
+    public function setClientToken($clientToken)
     {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $haVipId
+     *
+     * @return $this
+     */
+    public function setHaVipId($haVipId)
+    {
+        $this->requestParameters['HaVipId'] = $haVipId;
+        $this->queryParameters['HaVipId'] = $haVipId;
 
         return $this;
     }
@@ -84,19 +84,6 @@ class AssociateHaVipRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $clientToken
-     *
-     * @return $this
-     */
-    public function setClientToken($clientToken)
-    {
-        $this->requestParameters['ClientToken'] = $clientToken;
-        $this->queryParameters['ClientToken'] = $clientToken;
 
         return $this;
     }
@@ -123,6 +110,19 @@ class AssociateHaVipRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

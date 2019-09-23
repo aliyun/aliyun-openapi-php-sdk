@@ -8,12 +8,12 @@ namespace Ecs\Request\V20140526;
  * Request of DescribeResourceByTags
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
+ * @method string getPageNumber()
  * @method string getPageSize()
  * @method array getTags()
+ * @method string getResourceOwnerAccount()
  * @method string getOwnerId()
  * @method string getResourceType()
- * @method string getPageNumber()
  */
 class DescribeResourceByTagsRequest extends \RpcAcsRequest
 {
@@ -50,14 +50,14 @@ class DescribeResourceByTagsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
+     * @param string $pageNumber
      *
      * @return $this
      */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
+    public function setPageNumber($pageNumber)
     {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }
@@ -80,13 +80,26 @@ class DescribeResourceByTagsRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setTags(array $tag)
+	public function setTags(array $tag)
+	{
+	    $this->requestParameters['Tags'] = $tag;
+		foreach ($tag as $depth1 => $depth1Value) {
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+		}
+
+		return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
     {
-        $this->requestParameters['Tags'] = $tag;
-        foreach ($tag as $depth1 => $depth1Value) {
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
-        }
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }
@@ -113,19 +126,6 @@ class DescribeResourceByTagsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceType'] = $resourceType;
         $this->queryParameters['ResourceType'] = $resourceType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

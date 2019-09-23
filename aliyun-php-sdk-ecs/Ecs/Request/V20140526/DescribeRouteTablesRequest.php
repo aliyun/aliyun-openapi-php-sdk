@@ -9,15 +9,15 @@ namespace Ecs\Request\V20140526;
  *
  * @method string getResourceOwnerId()
  * @method string getVRouterId()
+ * @method string getPageNumber()
+ * @method string getRouteTableName()
+ * @method string getPageSize()
+ * @method string getRouteTableId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
- * @method string getPageNumber()
  * @method string getRouterType()
- * @method string getRouteTableName()
  * @method string getRouterId()
- * @method string getPageSize()
- * @method string getRouteTableId()
  */
 class DescribeRouteTablesRequest extends \RpcAcsRequest
 {
@@ -67,6 +67,58 @@ class DescribeRouteTablesRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $routeTableName
+     *
+     * @return $this
+     */
+    public function setRouteTableName($routeTableName)
+    {
+        $this->requestParameters['RouteTableName'] = $routeTableName;
+        $this->queryParameters['RouteTableName'] = $routeTableName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $routeTableId
+     *
+     * @return $this
+     */
+    public function setRouteTableId($routeTableId)
+    {
+        $this->requestParameters['RouteTableId'] = $routeTableId;
+        $this->queryParameters['RouteTableId'] = $routeTableId;
+
+        return $this;
+    }
+
+    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -106,19 +158,6 @@ class DescribeRouteTablesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
-
-        return $this;
-    }
-
-    /**
      * @param string $routerType
      *
      * @return $this
@@ -132,19 +171,6 @@ class DescribeRouteTablesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $routeTableName
-     *
-     * @return $this
-     */
-    public function setRouteTableName($routeTableName)
-    {
-        $this->requestParameters['RouteTableName'] = $routeTableName;
-        $this->queryParameters['RouteTableName'] = $routeTableName;
-
-        return $this;
-    }
-
-    /**
      * @param string $routerId
      *
      * @return $this
@@ -153,32 +179,6 @@ class DescribeRouteTablesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['RouterId'] = $routerId;
         $this->queryParameters['RouterId'] = $routerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param string $routeTableId
-     *
-     * @return $this
-     */
-    public function setRouteTableId($routeTableId)
-    {
-        $this->requestParameters['RouteTableId'] = $routeTableId;
-        $this->queryParameters['RouteTableId'] = $routeTableId;
 
         return $this;
     }

@@ -8,21 +8,21 @@ namespace Ecs\Request\V20140526;
  * Request of DescribeSecurityGroups
  *
  * @method string getResourceOwnerId()
- * @method string getDryRun()
  * @method string getFuzzyQuery()
- * @method string getResourceOwnerAccount()
- * @method string getOwnerAccount()
  * @method string getSecurityGroupId()
  * @method string getIsQueryEcsCount()
  * @method string getNetworkType()
- * @method string getOwnerId()
- * @method string getSecurityGroupIds()
  * @method string getSecurityGroupName()
  * @method string getPageNumber()
  * @method string getResourceGroupId()
- * @method string getVpcId()
  * @method string getPageSize()
  * @method array getTags()
+ * @method string getDryRun()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getOwnerId()
+ * @method string getSecurityGroupIds()
+ * @method string getVpcId()
  */
 class DescribeSecurityGroupsRequest extends \RpcAcsRequest
 {
@@ -59,19 +59,6 @@ class DescribeSecurityGroupsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dryRun
-     *
-     * @return $this
-     */
-    public function setDryRun($dryRun)
-    {
-        $this->requestParameters['DryRun'] = $dryRun;
-        $this->queryParameters['DryRun'] = $dryRun;
-
-        return $this;
-    }
-
-    /**
      * @param string $fuzzyQuery
      *
      * @return $this
@@ -80,32 +67,6 @@ class DescribeSecurityGroupsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['FuzzyQuery'] = $fuzzyQuery;
         $this->queryParameters['FuzzyQuery'] = $fuzzyQuery;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
         return $this;
     }
@@ -150,32 +111,6 @@ class DescribeSecurityGroupsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $securityGroupIds
-     *
-     * @return $this
-     */
-    public function setSecurityGroupIds($securityGroupIds)
-    {
-        $this->requestParameters['SecurityGroupIds'] = $securityGroupIds;
-        $this->queryParameters['SecurityGroupIds'] = $securityGroupIds;
-
-        return $this;
-    }
-
-    /**
      * @param string $securityGroupName
      *
      * @return $this
@@ -215,19 +150,6 @@ class DescribeSecurityGroupsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $vpcId
-     *
-     * @return $this
-     */
-    public function setVpcId($vpcId)
-    {
-        $this->requestParameters['VpcId'] = $vpcId;
-        $this->queryParameters['VpcId'] = $vpcId;
-
-        return $this;
-    }
-
-    /**
      * @param string $pageSize
      *
      * @return $this
@@ -245,13 +167,91 @@ class DescribeSecurityGroupsRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setTags(array $tag)
+	public function setTags(array $tag)
+	{
+	    $this->requestParameters['Tags'] = $tag;
+		foreach ($tag as $depth1 => $depth1Value) {
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+		}
+
+		return $this;
+    }
+
+    /**
+     * @param string $dryRun
+     *
+     * @return $this
+     */
+    public function setDryRun($dryRun)
     {
-        $this->requestParameters['Tags'] = $tag;
-        foreach ($tag as $depth1 => $depth1Value) {
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
-        }
+        $this->requestParameters['DryRun'] = $dryRun;
+        $this->queryParameters['DryRun'] = $dryRun;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityGroupIds
+     *
+     * @return $this
+     */
+    public function setSecurityGroupIds($securityGroupIds)
+    {
+        $this->requestParameters['SecurityGroupIds'] = $securityGroupIds;
+        $this->queryParameters['SecurityGroupIds'] = $securityGroupIds;
+
+        return $this;
+    }
+
+    /**
+     * @param string $vpcId
+     *
+     * @return $this
+     */
+    public function setVpcId($vpcId)
+    {
+        $this->requestParameters['VpcId'] = $vpcId;
+        $this->queryParameters['VpcId'] = $vpcId;
 
         return $this;
     }

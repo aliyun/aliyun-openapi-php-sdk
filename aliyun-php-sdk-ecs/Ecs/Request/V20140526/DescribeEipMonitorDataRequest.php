@@ -8,12 +8,12 @@ namespace Ecs\Request\V20140526;
  * Request of DescribeEipMonitorData
  *
  * @method string getResourceOwnerId()
+ * @method string getAllocationId()
+ * @method string getStartTime()
  * @method string getPeriod()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getEndTime()
- * @method string getAllocationId()
- * @method string getStartTime()
  * @method string getOwnerId()
  */
 class DescribeEipMonitorDataRequest extends \RpcAcsRequest
@@ -46,6 +46,32 @@ class DescribeEipMonitorDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $allocationId
+     *
+     * @return $this
+     */
+    public function setAllocationId($allocationId)
+    {
+        $this->requestParameters['AllocationId'] = $allocationId;
+        $this->queryParameters['AllocationId'] = $allocationId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
 
         return $this;
     }
@@ -98,32 +124,6 @@ class DescribeEipMonitorDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['EndTime'] = $endTime;
         $this->queryParameters['EndTime'] = $endTime;
-
-        return $this;
-    }
-
-    /**
-     * @param string $allocationId
-     *
-     * @return $this
-     */
-    public function setAllocationId($allocationId)
-    {
-        $this->requestParameters['AllocationId'] = $allocationId;
-        $this->queryParameters['AllocationId'] = $allocationId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $startTime
-     *
-     * @return $this
-     */
-    public function setStartTime($startTime)
-    {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
 
         return $this;
     }

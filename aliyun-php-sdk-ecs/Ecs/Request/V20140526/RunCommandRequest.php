@@ -5,20 +5,27 @@ namespace Ecs\Request\V20140526;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ModifyCommand
+ * Request of RunCommand
  *
  * @method string getResourceOwnerId()
  * @method string getWorkingDir()
  * @method string getDescription()
- * @method string getCommandId()
+ * @method string getType()
  * @method string getCommandContent()
  * @method string getTimeout()
+ * @method string getFrequency()
+ * @method string getContentEncoding()
+ * @method string getKeepCommand()
+ * @method string getTimed()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method array getInstanceIds()
  * @method string getName()
+ * @method string getParameters()
+ * @method string getEnableParameter()
  */
-class ModifyCommandRequest extends \RpcAcsRequest
+class RunCommandRequest extends \RpcAcsRequest
 {
 
     /**
@@ -34,7 +41,7 @@ class ModifyCommandRequest extends \RpcAcsRequest
         parent::__construct(
             'Ecs',
             '2014-05-26',
-            'ModifyCommand',
+            'RunCommand',
             'ecs'
         );
     }
@@ -79,14 +86,14 @@ class ModifyCommandRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $commandId
+     * @param string $type
      *
      * @return $this
      */
-    public function setCommandId($commandId)
+    public function setType($type)
     {
-        $this->requestParameters['CommandId'] = $commandId;
-        $this->queryParameters['CommandId'] = $commandId;
+        $this->requestParameters['Type'] = $type;
+        $this->queryParameters['Type'] = $type;
 
         return $this;
     }
@@ -113,6 +120,58 @@ class ModifyCommandRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Timeout'] = $timeout;
         $this->queryParameters['Timeout'] = $timeout;
+
+        return $this;
+    }
+
+    /**
+     * @param string $frequency
+     *
+     * @return $this
+     */
+    public function setFrequency($frequency)
+    {
+        $this->requestParameters['Frequency'] = $frequency;
+        $this->queryParameters['Frequency'] = $frequency;
+
+        return $this;
+    }
+
+    /**
+     * @param string $contentEncoding
+     *
+     * @return $this
+     */
+    public function setContentEncoding($contentEncoding)
+    {
+        $this->requestParameters['ContentEncoding'] = $contentEncoding;
+        $this->queryParameters['ContentEncoding'] = $contentEncoding;
+
+        return $this;
+    }
+
+    /**
+     * @param string $keepCommand
+     *
+     * @return $this
+     */
+    public function setKeepCommand($keepCommand)
+    {
+        $this->requestParameters['KeepCommand'] = $keepCommand;
+        $this->queryParameters['KeepCommand'] = $keepCommand;
+
+        return $this;
+    }
+
+    /**
+     * @param string $timed
+     *
+     * @return $this
+     */
+    public function setTimed($timed)
+    {
+        $this->requestParameters['Timed'] = $timed;
+        $this->queryParameters['Timed'] = $timed;
 
         return $this;
     }
@@ -157,6 +216,21 @@ class ModifyCommandRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param array $instanceId
+     *
+     * @return $this
+     */
+	public function setInstanceIds(array $instanceId)
+	{
+	    $this->requestParameters['InstanceIds'] = $instanceId;
+		foreach ($instanceId as $i => $iValue) {
+			$this->queryParameters['InstanceId.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
+    }
+
+    /**
      * @param string $name
      *
      * @return $this
@@ -165,6 +239,32 @@ class ModifyCommandRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Name'] = $name;
         $this->queryParameters['Name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * @param string $parameters
+     *
+     * @return $this
+     */
+    public function setParameters($parameters)
+    {
+        $this->requestParameters['Parameters'] = $parameters;
+        $this->queryParameters['Parameters'] = $parameters;
+
+        return $this;
+    }
+
+    /**
+     * @param string $enableParameter
+     *
+     * @return $this
+     */
+    public function setEnableParameter($enableParameter)
+    {
+        $this->requestParameters['EnableParameter'] = $enableParameter;
+        $this->queryParameters['EnableParameter'] = $enableParameter;
 
         return $this;
     }

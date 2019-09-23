@@ -8,9 +8,9 @@ namespace Ecs\Request\V20140526;
  * Request of ImportKeyPair
  *
  * @method string getResourceOwnerId()
+ * @method string getKeyPairName()
  * @method string getResourceOwnerAccount()
  * @method string getPublicKeyBody()
- * @method string getKeyPairName()
  * @method string getOwnerId()
  */
 class ImportKeyPairRequest extends \RpcAcsRequest
@@ -48,6 +48,19 @@ class ImportKeyPairRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $keyPairName
+     *
+     * @return $this
+     */
+    public function setKeyPairName($keyPairName)
+    {
+        $this->requestParameters['KeyPairName'] = $keyPairName;
+        $this->queryParameters['KeyPairName'] = $keyPairName;
+
+        return $this;
+    }
+
+    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -69,19 +82,6 @@ class ImportKeyPairRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PublicKeyBody'] = $publicKeyBody;
         $this->queryParameters['PublicKeyBody'] = $publicKeyBody;
-
-        return $this;
-    }
-
-    /**
-     * @param string $keyPairName
-     *
-     * @return $this
-     */
-    public function setKeyPairName($keyPairName)
-    {
-        $this->requestParameters['KeyPairName'] = $keyPairName;
-        $this->queryParameters['KeyPairName'] = $keyPairName;
 
         return $this;
     }

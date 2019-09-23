@@ -105,13 +105,13 @@ class UnassignIpv6AddressesRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setIpv6Addresss(array $ipv6Address)
-    {
-        $this->requestParameters['Ipv6Addresss'] = $ipv6Address;
-        foreach ($ipv6Address as $i => $iValue) {
-            $this->queryParameters['Ipv6Address.' . ($i + 1)] = $iValue;
-        }
+	public function setIpv6Addresss(array $ipv6Address)
+	{
+	    $this->requestParameters['Ipv6Addresss'] = $ipv6Address;
+		foreach ($ipv6Address as $i => $iValue) {
+			$this->queryParameters['Ipv6Address.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 }

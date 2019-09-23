@@ -8,11 +8,11 @@ namespace Ecs\Request\V20140526;
  * Request of DescribeSnapshotMonitorData
  *
  * @method string getResourceOwnerId()
+ * @method string getStartTime()
  * @method string getPeriod()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getEndTime()
- * @method string getStartTime()
  * @method string getOwnerId()
  */
 class DescribeSnapshotMonitorDataRequest extends \RpcAcsRequest
@@ -45,6 +45,19 @@ class DescribeSnapshotMonitorDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
 
         return $this;
     }
@@ -97,19 +110,6 @@ class DescribeSnapshotMonitorDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['EndTime'] = $endTime;
         $this->queryParameters['EndTime'] = $endTime;
-
-        return $this;
-    }
-
-    /**
-     * @param string $startTime
-     *
-     * @return $this
-     */
-    public function setStartTime($startTime)
-    {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
 
         return $this;
     }

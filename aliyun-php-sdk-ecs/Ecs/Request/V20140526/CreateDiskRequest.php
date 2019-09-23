@@ -9,25 +9,25 @@ namespace Ecs\Request\V20140526;
  *
  * @method string getResourceOwnerId()
  * @method string getSnapshotId()
- * @method string getResourceOwnerAccount()
  * @method string getClientToken()
- * @method string getPerformanceLevel()
- * @method string getOwnerAccount()
  * @method string getDescription()
- * @method string getOwnerId()
  * @method string getDiskName()
  * @method string getResourceGroupId()
+ * @method string getDiskCategory()
+ * @method string getStorageSetPartitionNumber()
+ * @method array getTags()
+ * @method array getArns()
+ * @method string getAdvancedFeatures()
+ * @method string getResourceOwnerAccount()
+ * @method string getPerformanceLevel()
+ * @method string getOwnerAccount()
+ * @method string getOwnerId()
  * @method string getInstanceId()
  * @method string getStorageSetId()
  * @method string getSize()
  * @method string getEncrypted()
- * @method string getDiskCategory()
  * @method string getZoneId()
- * @method string getStorageSetPartitionNumber()
- * @method array getTags()
- * @method array getArns()
  * @method string getKMSKeyId()
- * @method string getAdvancedFeatures()
  */
 class CreateDiskRequest extends \RpcAcsRequest
 {
@@ -77,19 +77,6 @@ class CreateDiskRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $clientToken
      *
      * @return $this
@@ -98,6 +85,130 @@ class CreateDiskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ClientToken'] = $clientToken;
         $this->queryParameters['ClientToken'] = $clientToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * @param string $diskName
+     *
+     * @return $this
+     */
+    public function setDiskName($diskName)
+    {
+        $this->requestParameters['DiskName'] = $diskName;
+        $this->queryParameters['DiskName'] = $diskName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceGroupId
+     *
+     * @return $this
+     */
+    public function setResourceGroupId($resourceGroupId)
+    {
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $diskCategory
+     *
+     * @return $this
+     */
+    public function setDiskCategory($diskCategory)
+    {
+        $this->requestParameters['DiskCategory'] = $diskCategory;
+        $this->queryParameters['DiskCategory'] = $diskCategory;
+
+        return $this;
+    }
+
+    /**
+     * @param string $storageSetPartitionNumber
+     *
+     * @return $this
+     */
+    public function setStorageSetPartitionNumber($storageSetPartitionNumber)
+    {
+        $this->requestParameters['StorageSetPartitionNumber'] = $storageSetPartitionNumber;
+        $this->queryParameters['StorageSetPartitionNumber'] = $storageSetPartitionNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param array $tag
+     *
+     * @return $this
+     */
+	public function setTags(array $tag)
+	{
+	    $this->requestParameters['Tags'] = $tag;
+		foreach ($tag as $depth1 => $depth1Value) {
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+		}
+
+		return $this;
+    }
+
+    /**
+     * @param array $arn
+     *
+     * @return $this
+     */
+	public function setArns(array $arn)
+	{
+	    $this->requestParameters['Arns'] = $arn;
+		foreach ($arn as $depth1 => $depth1Value) {
+			$this->queryParameters['Arn.' . ($depth1 + 1) . '.Rolearn'] = $depth1Value['Rolearn'];
+			$this->queryParameters['Arn.' . ($depth1 + 1) . '.RoleType'] = $depth1Value['RoleType'];
+			$this->queryParameters['Arn.' . ($depth1 + 1) . '.AssumeRoleFor'] = $depth1Value['AssumeRoleFor'];
+		}
+
+		return $this;
+    }
+
+    /**
+     * @param string $advancedFeatures
+     *
+     * @return $this
+     */
+    public function setAdvancedFeatures($advancedFeatures)
+    {
+        $this->requestParameters['AdvancedFeatures'] = $advancedFeatures;
+        $this->queryParameters['AdvancedFeatures'] = $advancedFeatures;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }
@@ -129,19 +240,6 @@ class CreateDiskRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $description
-     *
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->requestParameters['Description'] = $description;
-        $this->queryParameters['Description'] = $description;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -150,32 +248,6 @@ class CreateDiskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $diskName
-     *
-     * @return $this
-     */
-    public function setDiskName($diskName)
-    {
-        $this->requestParameters['DiskName'] = $diskName;
-        $this->queryParameters['DiskName'] = $diskName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceGroupId
-     *
-     * @return $this
-     */
-    public function setResourceGroupId($resourceGroupId)
-    {
-        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
-        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
 
         return $this;
     }
@@ -233,19 +305,6 @@ class CreateDiskRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $diskCategory
-     *
-     * @return $this
-     */
-    public function setDiskCategory($diskCategory)
-    {
-        $this->requestParameters['DiskCategory'] = $diskCategory;
-        $this->queryParameters['DiskCategory'] = $diskCategory;
-
-        return $this;
-    }
-
-    /**
      * @param string $zoneId
      *
      * @return $this
@@ -259,52 +318,6 @@ class CreateDiskRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $storageSetPartitionNumber
-     *
-     * @return $this
-     */
-    public function setStorageSetPartitionNumber($storageSetPartitionNumber)
-    {
-        $this->requestParameters['StorageSetPartitionNumber'] = $storageSetPartitionNumber;
-        $this->queryParameters['StorageSetPartitionNumber'] = $storageSetPartitionNumber;
-
-        return $this;
-    }
-
-    /**
-     * @param array $tag
-     *
-     * @return $this
-     */
-    public function setTags(array $tag)
-    {
-        $this->requestParameters['Tags'] = $tag;
-        foreach ($tag as $depth1 => $depth1Value) {
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
-        }
-
-        return $this;
-    }
-
-    /**
-     * @param array $arn
-     *
-     * @return $this
-     */
-    public function setArns(array $arn)
-    {
-        $this->requestParameters['Arns'] = $arn;
-        foreach ($arn as $depth1 => $depth1Value) {
-            $this->queryParameters['Arn.' . ($depth1 + 1) . '.Rolearn'] = $depth1Value['Rolearn'];
-            $this->queryParameters['Arn.' . ($depth1 + 1) . '.RoleType'] = $depth1Value['RoleType'];
-            $this->queryParameters['Arn.' . ($depth1 + 1) . '.AssumeRoleFor'] = $depth1Value['AssumeRoleFor'];
-        }
-
-        return $this;
-    }
-
-    /**
      * @param string $kMSKeyId
      *
      * @return $this
@@ -313,19 +326,6 @@ class CreateDiskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['KMSKeyId'] = $kMSKeyId;
         $this->queryParameters['KMSKeyId'] = $kMSKeyId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $advancedFeatures
-     *
-     * @return $this
-     */
-    public function setAdvancedFeatures($advancedFeatures)
-    {
-        $this->requestParameters['AdvancedFeatures'] = $advancedFeatures;
-        $this->queryParameters['AdvancedFeatures'] = $advancedFeatures;
 
         return $this;
     }

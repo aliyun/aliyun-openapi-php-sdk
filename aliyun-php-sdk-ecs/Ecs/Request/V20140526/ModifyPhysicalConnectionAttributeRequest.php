@@ -7,21 +7,21 @@ namespace Ecs\Request\V20140526;
  *
  * Request of ModifyPhysicalConnectionAttribute
  *
- * @method string getRedundantPhysicalConnectionId()
- * @method string getPeerLocation()
  * @method string getResourceOwnerId()
  * @method string getPortType()
  * @method string getCircuitCode()
- * @method string getbandwidth()
  * @method string getClientToken()
+ * @method string getDescription()
+ * @method string getUserCidr()
+ * @method string getRedundantPhysicalConnectionId()
+ * @method string getPeerLocation()
+ * @method string getbandwidth()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getDescription()
  * @method string getOwnerId()
  * @method string getLineOperator()
  * @method string getPhysicalConnectionId()
  * @method string getName()
- * @method string getUserCidr()
  */
 class ModifyPhysicalConnectionAttributeRequest extends \RpcAcsRequest
 {
@@ -42,32 +42,6 @@ class ModifyPhysicalConnectionAttributeRequest extends \RpcAcsRequest
             'ModifyPhysicalConnectionAttribute',
             'ecs'
         );
-    }
-
-    /**
-     * @param string $redundantPhysicalConnectionId
-     *
-     * @return $this
-     */
-    public function setRedundantPhysicalConnectionId($redundantPhysicalConnectionId)
-    {
-        $this->requestParameters['RedundantPhysicalConnectionId'] = $redundantPhysicalConnectionId;
-        $this->queryParameters['RedundantPhysicalConnectionId'] = $redundantPhysicalConnectionId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $peerLocation
-     *
-     * @return $this
-     */
-    public function setPeerLocation($peerLocation)
-    {
-        $this->requestParameters['PeerLocation'] = $peerLocation;
-        $this->queryParameters['PeerLocation'] = $peerLocation;
-
-        return $this;
     }
 
     /**
@@ -110,19 +84,6 @@ class ModifyPhysicalConnectionAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $bandwidth
-     *
-     * @return $this
-     */
-    public function setbandwidth($bandwidth)
-    {
-        $this->requestParameters['bandwidth'] = $bandwidth;
-        $this->queryParameters['bandwidth'] = $bandwidth;
-
-        return $this;
-    }
-
-    /**
      * @param string $clientToken
      *
      * @return $this
@@ -131,6 +92,71 @@ class ModifyPhysicalConnectionAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ClientToken'] = $clientToken;
         $this->queryParameters['ClientToken'] = $clientToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * @param string $userCidr
+     *
+     * @return $this
+     */
+    public function setUserCidr($userCidr)
+    {
+        $this->requestParameters['UserCidr'] = $userCidr;
+        $this->queryParameters['UserCidr'] = $userCidr;
+
+        return $this;
+    }
+
+    /**
+     * @param string $redundantPhysicalConnectionId
+     *
+     * @return $this
+     */
+    public function setRedundantPhysicalConnectionId($redundantPhysicalConnectionId)
+    {
+        $this->requestParameters['RedundantPhysicalConnectionId'] = $redundantPhysicalConnectionId;
+        $this->queryParameters['RedundantPhysicalConnectionId'] = $redundantPhysicalConnectionId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $peerLocation
+     *
+     * @return $this
+     */
+    public function setPeerLocation($peerLocation)
+    {
+        $this->requestParameters['PeerLocation'] = $peerLocation;
+        $this->queryParameters['PeerLocation'] = $peerLocation;
+
+        return $this;
+    }
+
+    /**
+     * @param string $bandwidth
+     *
+     * @return $this
+     */
+    public function setbandwidth($bandwidth)
+    {
+        $this->requestParameters['bandwidth'] = $bandwidth;
+        $this->queryParameters['bandwidth'] = $bandwidth;
 
         return $this;
     }
@@ -157,19 +183,6 @@ class ModifyPhysicalConnectionAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $description
-     *
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->requestParameters['Description'] = $description;
-        $this->queryParameters['Description'] = $description;
 
         return $this;
     }
@@ -222,19 +235,6 @@ class ModifyPhysicalConnectionAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Name'] = $name;
         $this->queryParameters['Name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * @param string $userCidr
-     *
-     * @return $this
-     */
-    public function setUserCidr($userCidr)
-    {
-        $this->requestParameters['UserCidr'] = $userCidr;
-        $this->queryParameters['UserCidr'] = $userCidr;
 
         return $this;
     }

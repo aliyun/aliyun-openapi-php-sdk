@@ -8,11 +8,11 @@ namespace Ecs\Request\V20140526;
  * Request of ModifyInstanceAutoReleaseTime
  *
  * @method string getResourceOwnerId()
- * @method string getInstanceId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getAutoReleaseTime()
  * @method string getOwnerId()
+ * @method string getInstanceId()
  */
 class ModifyInstanceAutoReleaseTimeRequest extends \RpcAcsRequest
 {
@@ -44,19 +44,6 @@ class ModifyInstanceAutoReleaseTimeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }
@@ -109,6 +96,19 @@ class ModifyInstanceAutoReleaseTimeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

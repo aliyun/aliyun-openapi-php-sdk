@@ -8,9 +8,9 @@ namespace Ecs\Request\V20140526;
  * Request of DescribeSecurityGroupReferences
  *
  * @method string getResourceOwnerId()
+ * @method array getSecurityGroupIds()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method array getSecurityGroupIds()
  * @method string getOwnerId()
  */
 class DescribeSecurityGroupReferencesRequest extends \RpcAcsRequest
@@ -48,6 +48,21 @@ class DescribeSecurityGroupReferencesRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param array $securityGroupId
+     *
+     * @return $this
+     */
+	public function setSecurityGroupIds(array $securityGroupId)
+	{
+	    $this->requestParameters['SecurityGroupIds'] = $securityGroupId;
+		foreach ($securityGroupId as $i => $iValue) {
+			$this->queryParameters['SecurityGroupId.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
+    }
+
+    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -69,21 +84,6 @@ class DescribeSecurityGroupReferencesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param array $securityGroupId
-     *
-     * @return $this
-     */
-    public function setSecurityGroupIds(array $securityGroupId)
-    {
-        $this->requestParameters['SecurityGroupIds'] = $securityGroupId;
-        foreach ($securityGroupId as $i => $iValue) {
-            $this->queryParameters['SecurityGroupId.' . ($i + 1)] = $iValue;
-        }
 
         return $this;
     }

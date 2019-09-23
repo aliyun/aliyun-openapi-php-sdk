@@ -7,15 +7,15 @@ namespace Ecs\Request\V20140526;
  *
  * Request of ModifyDedicatedHostAutoRenewAttribute
  *
- * @method string getDuration()
  * @method string getDedicatedHostIds()
  * @method string getResourceOwnerId()
- * @method string getPeriodUnit()
- * @method string getAutoRenew()
+ * @method string getDuration()
+ * @method string getRenewalStatus()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getRenewalStatus()
  * @method string getOwnerId()
+ * @method string getPeriodUnit()
+ * @method string getAutoRenew()
  */
 class ModifyDedicatedHostAutoRenewAttributeRequest extends \RpcAcsRequest
 {
@@ -36,19 +36,6 @@ class ModifyDedicatedHostAutoRenewAttributeRequest extends \RpcAcsRequest
             'ModifyDedicatedHostAutoRenewAttribute',
             'ecs'
         );
-    }
-
-    /**
-     * @param string $duration
-     *
-     * @return $this
-     */
-    public function setDuration($duration)
-    {
-        $this->requestParameters['Duration'] = $duration;
-        $this->queryParameters['Duration'] = $duration;
-
-        return $this;
     }
 
     /**
@@ -78,27 +65,27 @@ class ModifyDedicatedHostAutoRenewAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $periodUnit
+     * @param string $duration
      *
      * @return $this
      */
-    public function setPeriodUnit($periodUnit)
+    public function setDuration($duration)
     {
-        $this->requestParameters['PeriodUnit'] = $periodUnit;
-        $this->queryParameters['PeriodUnit'] = $periodUnit;
+        $this->requestParameters['Duration'] = $duration;
+        $this->queryParameters['Duration'] = $duration;
 
         return $this;
     }
 
     /**
-     * @param string $autoRenew
+     * @param string $renewalStatus
      *
      * @return $this
      */
-    public function setAutoRenew($autoRenew)
+    public function setRenewalStatus($renewalStatus)
     {
-        $this->requestParameters['AutoRenew'] = $autoRenew;
-        $this->queryParameters['AutoRenew'] = $autoRenew;
+        $this->requestParameters['RenewalStatus'] = $renewalStatus;
+        $this->queryParameters['RenewalStatus'] = $renewalStatus;
 
         return $this;
     }
@@ -130,19 +117,6 @@ class ModifyDedicatedHostAutoRenewAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $renewalStatus
-     *
-     * @return $this
-     */
-    public function setRenewalStatus($renewalStatus)
-    {
-        $this->requestParameters['RenewalStatus'] = $renewalStatus;
-        $this->queryParameters['RenewalStatus'] = $renewalStatus;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -151,6 +125,32 @@ class ModifyDedicatedHostAutoRenewAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $periodUnit
+     *
+     * @return $this
+     */
+    public function setPeriodUnit($periodUnit)
+    {
+        $this->requestParameters['PeriodUnit'] = $periodUnit;
+        $this->queryParameters['PeriodUnit'] = $periodUnit;
+
+        return $this;
+    }
+
+    /**
+     * @param string $autoRenew
+     *
+     * @return $this
+     */
+    public function setAutoRenew($autoRenew)
+    {
+        $this->requestParameters['AutoRenew'] = $autoRenew;
+        $this->queryParameters['AutoRenew'] = $autoRenew;
 
         return $this;
     }

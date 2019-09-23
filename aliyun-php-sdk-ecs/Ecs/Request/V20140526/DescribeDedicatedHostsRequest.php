@@ -9,17 +9,17 @@ namespace Ecs\Request\V20140526;
  *
  * @method string getDedicatedHostIds()
  * @method string getResourceOwnerId()
- * @method string getDedicatedHostName()
- * @method string getResourceOwnerAccount()
- * @method string getOwnerAccount()
- * @method string getOwnerId()
  * @method string getPageNumber()
  * @method string getResourceGroupId()
  * @method string getLockReason()
  * @method string getPageSize()
- * @method string getZoneId()
  * @method string getDedicatedHostType()
  * @method array getTags()
+ * @method string getDedicatedHostName()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getOwnerId()
+ * @method string getZoneId()
  * @method string getStatus()
  */
 class DescribeDedicatedHostsRequest extends \RpcAcsRequest
@@ -65,58 +65,6 @@ class DescribeDedicatedHostsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dedicatedHostName
-     *
-     * @return $this
-     */
-    public function setDedicatedHostName($dedicatedHostName)
-    {
-        $this->requestParameters['DedicatedHostName'] = $dedicatedHostName;
-        $this->queryParameters['DedicatedHostName'] = $dedicatedHostName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }
@@ -174,19 +122,6 @@ class DescribeDedicatedHostsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $zoneId
-     *
-     * @return $this
-     */
-    public function setZoneId($zoneId)
-    {
-        $this->requestParameters['ZoneId'] = $zoneId;
-        $this->queryParameters['ZoneId'] = $zoneId;
-
-        return $this;
-    }
-
-    /**
      * @param string $dedicatedHostType
      *
      * @return $this
@@ -204,13 +139,78 @@ class DescribeDedicatedHostsRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setTags(array $tag)
+	public function setTags(array $tag)
+	{
+	    $this->requestParameters['Tags'] = $tag;
+		foreach ($tag as $depth1 => $depth1Value) {
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+		}
+
+		return $this;
+    }
+
+    /**
+     * @param string $dedicatedHostName
+     *
+     * @return $this
+     */
+    public function setDedicatedHostName($dedicatedHostName)
     {
-        $this->requestParameters['Tags'] = $tag;
-        foreach ($tag as $depth1 => $depth1Value) {
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
-        }
+        $this->requestParameters['DedicatedHostName'] = $dedicatedHostName;
+        $this->queryParameters['DedicatedHostName'] = $dedicatedHostName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $zoneId
+     *
+     * @return $this
+     */
+    public function setZoneId($zoneId)
+    {
+        $this->requestParameters['ZoneId'] = $zoneId;
+        $this->queryParameters['ZoneId'] = $zoneId;
 
         return $this;
     }

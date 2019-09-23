@@ -8,13 +8,13 @@ namespace Ecs\Request\V20140526;
  * Request of ResizeDisk
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
  * @method string getClientToken()
+ * @method string getType()
+ * @method string getDiskId()
+ * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getNewSize()
- * @method string getDiskId()
  * @method string getOwnerId()
- * @method string getType()
  */
 class ResizeDiskRequest extends \RpcAcsRequest
 {
@@ -51,19 +51,6 @@ class ResizeDiskRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $clientToken
      *
      * @return $this
@@ -72,6 +59,45 @@ class ResizeDiskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ClientToken'] = $clientToken;
         $this->queryParameters['ClientToken'] = $clientToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->requestParameters['Type'] = $type;
+        $this->queryParameters['Type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * @param string $diskId
+     *
+     * @return $this
+     */
+    public function setDiskId($diskId)
+    {
+        $this->requestParameters['DiskId'] = $diskId;
+        $this->queryParameters['DiskId'] = $diskId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }
@@ -103,19 +129,6 @@ class ResizeDiskRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $diskId
-     *
-     * @return $this
-     */
-    public function setDiskId($diskId)
-    {
-        $this->requestParameters['DiskId'] = $diskId;
-        $this->queryParameters['DiskId'] = $diskId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -124,19 +137,6 @@ class ResizeDiskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->requestParameters['Type'] = $type;
-        $this->queryParameters['Type'] = $type;
 
         return $this;
     }

@@ -81,14 +81,14 @@ class DescribeNetworkInterfacePermissionsRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setNetworkInterfacePermissionIds(array $networkInterfacePermissionId)
-    {
-        $this->requestParameters['NetworkInterfacePermissionIds'] = $networkInterfacePermissionId;
-        foreach ($networkInterfacePermissionId as $i => $iValue) {
-            $this->queryParameters['NetworkInterfacePermissionId.' . ($i + 1)] = $iValue;
-        }
+	public function setNetworkInterfacePermissionIds(array $networkInterfacePermissionId)
+	{
+	    $this->requestParameters['NetworkInterfacePermissionIds'] = $networkInterfacePermissionId;
+		foreach ($networkInterfacePermissionId as $i => $iValue) {
+			$this->queryParameters['NetworkInterfacePermissionId.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 
     /**

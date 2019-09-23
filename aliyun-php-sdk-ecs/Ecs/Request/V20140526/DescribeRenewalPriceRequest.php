@@ -8,11 +8,11 @@ namespace Ecs\Request\V20140526;
  * Request of DescribeRenewalPrice
  *
  * @method string getResourceOwnerId()
+ * @method string getPriceUnit()
  * @method string getResourceId()
  * @method string getPeriod()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getPriceUnit()
  * @method string getOwnerId()
  * @method string getResourceType()
  */
@@ -46,6 +46,19 @@ class DescribeRenewalPriceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $priceUnit
+     *
+     * @return $this
+     */
+    public function setPriceUnit($priceUnit)
+    {
+        $this->requestParameters['PriceUnit'] = $priceUnit;
+        $this->queryParameters['PriceUnit'] = $priceUnit;
 
         return $this;
     }
@@ -98,19 +111,6 @@ class DescribeRenewalPriceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $priceUnit
-     *
-     * @return $this
-     */
-    public function setPriceUnit($priceUnit)
-    {
-        $this->requestParameters['PriceUnit'] = $priceUnit;
-        $this->queryParameters['PriceUnit'] = $priceUnit;
 
         return $this;
     }

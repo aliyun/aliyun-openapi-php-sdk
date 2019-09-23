@@ -9,14 +9,15 @@ namespace Ecs\Request\V20140526;
  *
  * @method array getDiskDeviceMappings()
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
- * @method string getRoleName()
  * @method string getDescription()
- * @method string getOSType()
- * @method string getOwnerId()
  * @method string getPlatform()
  * @method string getImageName()
  * @method string getArchitecture()
+ * @method string getLicenseType()
+ * @method string getResourceOwnerAccount()
+ * @method string getRoleName()
+ * @method string getOSType()
+ * @method string getOwnerId()
  */
 class ImportImageRequest extends \RpcAcsRequest
 {
@@ -44,19 +45,19 @@ class ImportImageRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setDiskDeviceMappings(array $diskDeviceMapping)
-    {
-        $this->requestParameters['DiskDeviceMappings'] = $diskDeviceMapping;
-        foreach ($diskDeviceMapping as $depth1 => $depth1Value) {
-            $this->queryParameters['DiskDeviceMapping.' . ($depth1 + 1) . '.OSSBucket'] = $depth1Value['OSSBucket'];
-            $this->queryParameters['DiskDeviceMapping.' . ($depth1 + 1) . '.DiskImSize'] = $depth1Value['DiskImSize'];
-            $this->queryParameters['DiskDeviceMapping.' . ($depth1 + 1) . '.Format'] = $depth1Value['Format'];
-            $this->queryParameters['DiskDeviceMapping.' . ($depth1 + 1) . '.Device'] = $depth1Value['Device'];
-            $this->queryParameters['DiskDeviceMapping.' . ($depth1 + 1) . '.OSSObject'] = $depth1Value['OSSObject'];
-            $this->queryParameters['DiskDeviceMapping.' . ($depth1 + 1) . '.DiskImageSize'] = $depth1Value['DiskImageSize'];
-        }
+	public function setDiskDeviceMappings(array $diskDeviceMapping)
+	{
+	    $this->requestParameters['DiskDeviceMappings'] = $diskDeviceMapping;
+		foreach ($diskDeviceMapping as $depth1 => $depth1Value) {
+			$this->queryParameters['DiskDeviceMapping.' . ($depth1 + 1) . '.OSSBucket'] = $depth1Value['OSSBucket'];
+			$this->queryParameters['DiskDeviceMapping.' . ($depth1 + 1) . '.DiskImSize'] = $depth1Value['DiskImSize'];
+			$this->queryParameters['DiskDeviceMapping.' . ($depth1 + 1) . '.Format'] = $depth1Value['Format'];
+			$this->queryParameters['DiskDeviceMapping.' . ($depth1 + 1) . '.Device'] = $depth1Value['Device'];
+			$this->queryParameters['DiskDeviceMapping.' . ($depth1 + 1) . '.OSSObject'] = $depth1Value['OSSObject'];
+			$this->queryParameters['DiskDeviceMapping.' . ($depth1 + 1) . '.DiskImageSize'] = $depth1Value['DiskImageSize'];
+		}
 
-        return $this;
+		return $this;
     }
 
     /**
@@ -73,32 +74,6 @@ class ImportImageRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $roleName
-     *
-     * @return $this
-     */
-    public function setRoleName($roleName)
-    {
-        $this->requestParameters['RoleName'] = $roleName;
-        $this->queryParameters['RoleName'] = $roleName;
-
-        return $this;
-    }
-
-    /**
      * @param string $description
      *
      * @return $this
@@ -107,32 +82,6 @@ class ImportImageRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Description'] = $description;
         $this->queryParameters['Description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * @param string $oSType
-     *
-     * @return $this
-     */
-    public function setOSType($oSType)
-    {
-        $this->requestParameters['OSType'] = $oSType;
-        $this->queryParameters['OSType'] = $oSType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }
@@ -172,6 +121,71 @@ class ImportImageRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Architecture'] = $architecture;
         $this->queryParameters['Architecture'] = $architecture;
+
+        return $this;
+    }
+
+    /**
+     * @param string $licenseType
+     *
+     * @return $this
+     */
+    public function setLicenseType($licenseType)
+    {
+        $this->requestParameters['LicenseType'] = $licenseType;
+        $this->queryParameters['LicenseType'] = $licenseType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $roleName
+     *
+     * @return $this
+     */
+    public function setRoleName($roleName)
+    {
+        $this->requestParameters['RoleName'] = $roleName;
+        $this->queryParameters['RoleName'] = $roleName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $oSType
+     *
+     * @return $this
+     */
+    public function setOSType($oSType)
+    {
+        $this->requestParameters['OSType'] = $oSType;
+        $this->queryParameters['OSType'] = $oSType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

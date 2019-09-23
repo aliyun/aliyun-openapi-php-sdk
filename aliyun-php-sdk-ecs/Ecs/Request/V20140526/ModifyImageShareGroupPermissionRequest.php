@@ -12,8 +12,8 @@ namespace Ecs\Request\V20140526;
  * @method string getAddGroup1()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getRemoveGroup1()
  * @method string getOwnerId()
+ * @method string getRemoveGroup1()
  */
 class ModifyImageShareGroupPermissionRequest extends \RpcAcsRequest
 {
@@ -102,19 +102,6 @@ class ModifyImageShareGroupPermissionRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $removeGroup1
-     *
-     * @return $this
-     */
-    public function setRemoveGroup1($removeGroup1)
-    {
-        $this->requestParameters['RemoveGroup1'] = $removeGroup1;
-        $this->queryParameters['RemoveGroup.1'] = $removeGroup1;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -123,6 +110,19 @@ class ModifyImageShareGroupPermissionRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $removeGroup1
+     *
+     * @return $this
+     */
+    public function setRemoveGroup1($removeGroup1)
+    {
+        $this->requestParameters['RemoveGroup1'] = $removeGroup1;
+        $this->queryParameters['RemoveGroup.1'] = $removeGroup1;
 
         return $this;
     }

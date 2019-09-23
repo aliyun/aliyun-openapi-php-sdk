@@ -208,15 +208,15 @@ class CreateLaunchTemplateRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setTemplateTags(array $templateTag)
-    {
-        $this->requestParameters['TemplateTags'] = $templateTag;
-        foreach ($templateTag as $depth1 => $depth1Value) {
-            $this->queryParameters['TemplateTag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
-            $this->queryParameters['TemplateTag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
-        }
+	public function setTemplateTags(array $templateTag)
+	{
+	    $this->requestParameters['TemplateTags'] = $templateTag;
+		foreach ($templateTag as $depth1 => $depth1Value) {
+			$this->queryParameters['TemplateTag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+			$this->queryParameters['TemplateTag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+		}
 
-        return $this;
+		return $this;
     }
 
     /**
@@ -224,15 +224,15 @@ class CreateLaunchTemplateRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setTags(array $tag)
-    {
-        $this->requestParameters['Tags'] = $tag;
-        foreach ($tag as $depth1 => $depth1Value) {
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
-        }
+	public function setTags(array $tag)
+	{
+	    $this->requestParameters['Tags'] = $tag;
+		foreach ($tag as $depth1 => $depth1Value) {
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+		}
 
-        return $this;
+		return $this;
     }
 
     /**
@@ -513,18 +513,18 @@ class CreateLaunchTemplateRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setNetworkInterfaces(array $networkInterface)
-    {
-        $this->requestParameters['NetworkInterfaces'] = $networkInterface;
-        foreach ($networkInterface as $depth1 => $depth1Value) {
-            $this->queryParameters['NetworkInterface.' . ($depth1 + 1) . '.PrimaryIpAddress'] = $depth1Value['PrimaryIpAddress'];
-            $this->queryParameters['NetworkInterface.' . ($depth1 + 1) . '.VSwitchId'] = $depth1Value['VSwitchId'];
-            $this->queryParameters['NetworkInterface.' . ($depth1 + 1) . '.SecurityGroupId'] = $depth1Value['SecurityGroupId'];
-            $this->queryParameters['NetworkInterface.' . ($depth1 + 1) . '.NetworkInterfaceName'] = $depth1Value['NetworkInterfaceName'];
-            $this->queryParameters['NetworkInterface.' . ($depth1 + 1) . '.Description'] = $depth1Value['Description'];
-        }
+	public function setNetworkInterfaces(array $networkInterface)
+	{
+	    $this->requestParameters['NetworkInterfaces'] = $networkInterface;
+		foreach ($networkInterface as $depth1 => $depth1Value) {
+			$this->queryParameters['NetworkInterface.' . ($depth1 + 1) . '.PrimaryIpAddress'] = $depth1Value['PrimaryIpAddress'];
+			$this->queryParameters['NetworkInterface.' . ($depth1 + 1) . '.VSwitchId'] = $depth1Value['VSwitchId'];
+			$this->queryParameters['NetworkInterface.' . ($depth1 + 1) . '.SecurityGroupId'] = $depth1Value['SecurityGroupId'];
+			$this->queryParameters['NetworkInterface.' . ($depth1 + 1) . '.NetworkInterfaceName'] = $depth1Value['NetworkInterfaceName'];
+			$this->queryParameters['NetworkInterface.' . ($depth1 + 1) . '.Description'] = $depth1Value['Description'];
+		}
 
-        return $this;
+		return $this;
     }
 
     /**
@@ -610,21 +610,21 @@ class CreateLaunchTemplateRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setDataDisks(array $dataDisk)
-    {
-        $this->requestParameters['DataDisks'] = $dataDisk;
-        foreach ($dataDisk as $depth1 => $depth1Value) {
-            $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Size'] = $depth1Value['Size'];
-            $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.SnapshotId'] = $depth1Value['SnapshotId'];
-            $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Category'] = $depth1Value['Category'];
-            $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Encrypted'] = $depth1Value['Encrypted'];
-            $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.DiskName'] = $depth1Value['DiskName'];
-            $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Description'] = $depth1Value['Description'];
-            $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.DeleteWithInstance'] = $depth1Value['DeleteWithInstance'];
-            $this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Device'] = $depth1Value['Device'];
-        }
+	public function setDataDisks(array $dataDisk)
+	{
+	    $this->requestParameters['DataDisks'] = $dataDisk;
+		foreach ($dataDisk as $depth1 => $depth1Value) {
+			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Size'] = $depth1Value['Size'];
+			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.SnapshotId'] = $depth1Value['SnapshotId'];
+			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Category'] = $depth1Value['Category'];
+			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Encrypted'] = $depth1Value['Encrypted'];
+			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.DiskName'] = $depth1Value['DiskName'];
+			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Description'] = $depth1Value['Description'];
+			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.DeleteWithInstance'] = $depth1Value['DeleteWithInstance'];
+			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Device'] = $depth1Value['Device'];
+		}
 
-        return $this;
+		return $this;
     }
 
     /**

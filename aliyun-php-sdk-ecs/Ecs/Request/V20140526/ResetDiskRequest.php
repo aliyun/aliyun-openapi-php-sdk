@@ -9,9 +9,9 @@ namespace Ecs\Request\V20140526;
  *
  * @method string getResourceOwnerId()
  * @method string getSnapshotId()
+ * @method string getDiskId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getDiskId()
  * @method string getOwnerId()
  */
 class ResetDiskRequest extends \RpcAcsRequest
@@ -62,6 +62,19 @@ class ResetDiskRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $diskId
+     *
+     * @return $this
+     */
+    public function setDiskId($diskId)
+    {
+        $this->requestParameters['DiskId'] = $diskId;
+        $this->queryParameters['DiskId'] = $diskId;
+
+        return $this;
+    }
+
+    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -83,19 +96,6 @@ class ResetDiskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $diskId
-     *
-     * @return $this
-     */
-    public function setDiskId($diskId)
-    {
-        $this->requestParameters['DiskId'] = $diskId;
-        $this->queryParameters['DiskId'] = $diskId;
 
         return $this;
     }

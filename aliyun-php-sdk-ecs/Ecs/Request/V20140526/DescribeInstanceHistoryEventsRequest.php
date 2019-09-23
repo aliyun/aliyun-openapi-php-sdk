@@ -50,14 +50,14 @@ class DescribeInstanceHistoryEventsRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setEventIds(array $eventId)
-    {
-        $this->requestParameters['EventIds'] = $eventId;
-        foreach ($eventId as $i => $iValue) {
-            $this->queryParameters['EventId.' . ($i + 1)] = $iValue;
-        }
+	public function setEventIds(array $eventId)
+	{
+	    $this->requestParameters['EventIds'] = $eventId;
+		foreach ($eventId as $i => $iValue) {
+			$this->queryParameters['EventId.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 
     /**
@@ -117,14 +117,14 @@ class DescribeInstanceHistoryEventsRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setInstanceEventCycleStatuss(array $instanceEventCycleStatus)
-    {
-        $this->requestParameters['InstanceEventCycleStatuss'] = $instanceEventCycleStatus;
-        foreach ($instanceEventCycleStatus as $i => $iValue) {
-            $this->queryParameters['InstanceEventCycleStatus.' . ($i + 1)] = $iValue;
-        }
+	public function setInstanceEventCycleStatuss(array $instanceEventCycleStatus)
+	{
+	    $this->requestParameters['InstanceEventCycleStatuss'] = $instanceEventCycleStatus;
+		foreach ($instanceEventCycleStatus as $i => $iValue) {
+			$this->queryParameters['InstanceEventCycleStatus.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 
     /**
@@ -145,14 +145,14 @@ class DescribeInstanceHistoryEventsRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setInstanceEventTypes(array $instanceEventType)
-    {
-        $this->requestParameters['InstanceEventTypes'] = $instanceEventType;
-        foreach ($instanceEventType as $i => $iValue) {
-            $this->queryParameters['InstanceEventType.' . ($i + 1)] = $iValue;
-        }
+	public function setInstanceEventTypes(array $instanceEventType)
+	{
+	    $this->requestParameters['InstanceEventTypes'] = $instanceEventType;
+		foreach ($instanceEventType as $i => $iValue) {
+			$this->queryParameters['InstanceEventType.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 
     /**

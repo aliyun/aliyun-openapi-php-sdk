@@ -7,8 +7,8 @@ namespace Ecs\Request\V20140526;
  *
  * Request of JoinResourceGroup
  *
- * @method string getResourceGroupId()
  * @method string getResourceOwnerId()
+ * @method string getResourceGroupId()
  * @method string getResourceId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
@@ -37,19 +37,6 @@ class JoinResourceGroupRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceGroupId
-     *
-     * @return $this
-     */
-    public function setResourceGroupId($resourceGroupId)
-    {
-        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
-        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerId
      *
      * @return $this
@@ -58,6 +45,19 @@ class JoinResourceGroupRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceGroupId
+     *
+     * @return $this
+     */
+    public function setResourceGroupId($resourceGroupId)
+    {
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
 
         return $this;
     }

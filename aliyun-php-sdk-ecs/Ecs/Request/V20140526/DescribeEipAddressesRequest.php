@@ -8,20 +8,20 @@ namespace Ecs\Request\V20140526;
  * Request of DescribeEipAddresses
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
  * @method string getFilter2Value()
  * @method string getISP()
- * @method string getOwnerAccount()
  * @method string getAllocationId()
- * @method string getFilter1Value()
- * @method string getFilter2Key()
- * @method string getOwnerId()
  * @method string getEipAddress()
  * @method string getPageNumber()
  * @method string getLockReason()
  * @method string getFilter1Key()
  * @method string getAssociatedInstanceType()
  * @method string getPageSize()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getFilter1Value()
+ * @method string getFilter2Key()
+ * @method string getOwnerId()
  * @method string getChargeType()
  * @method string getAssociatedInstanceId()
  * @method string getStatus()
@@ -61,19 +61,6 @@ class DescribeEipAddressesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $filter2Value
      *
      * @return $this
@@ -100,19 +87,6 @@ class DescribeEipAddressesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $allocationId
      *
      * @return $this
@@ -121,45 +95,6 @@ class DescribeEipAddressesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AllocationId'] = $allocationId;
         $this->queryParameters['AllocationId'] = $allocationId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $filter1Value
-     *
-     * @return $this
-     */
-    public function setFilter1Value($filter1Value)
-    {
-        $this->requestParameters['Filter1Value'] = $filter1Value;
-        $this->queryParameters['Filter.1.Value'] = $filter1Value;
-
-        return $this;
-    }
-
-    /**
-     * @param string $filter2Key
-     *
-     * @return $this
-     */
-    public function setFilter2Key($filter2Key)
-    {
-        $this->requestParameters['Filter2Key'] = $filter2Key;
-        $this->queryParameters['Filter.2.Key'] = $filter2Key;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }
@@ -238,6 +173,71 @@ class DescribeEipAddressesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageSize'] = $pageSize;
         $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $filter1Value
+     *
+     * @return $this
+     */
+    public function setFilter1Value($filter1Value)
+    {
+        $this->requestParameters['Filter1Value'] = $filter1Value;
+        $this->queryParameters['Filter.1.Value'] = $filter1Value;
+
+        return $this;
+    }
+
+    /**
+     * @param string $filter2Key
+     *
+     * @return $this
+     */
+    public function setFilter2Key($filter2Key)
+    {
+        $this->requestParameters['Filter2Key'] = $filter2Key;
+        $this->queryParameters['Filter.2.Key'] = $filter2Key;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

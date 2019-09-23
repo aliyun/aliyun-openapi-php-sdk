@@ -8,14 +8,14 @@ namespace Ecs\Request\V20140526;
  * Request of DescribeTags
  *
  * @method string getResourceOwnerId()
- * @method string getResourceId()
- * @method string getResourceOwnerAccount()
+ * @method string getPageNumber()
  * @method string getPageSize()
  * @method array getTags()
+ * @method string getResourceId()
+ * @method string getResourceOwnerAccount()
  * @method string getOwnerId()
- * @method string getCategory()
  * @method string getResourceType()
- * @method string getPageNumber()
+ * @method string getCategory()
  */
 class DescribeTagsRequest extends \RpcAcsRequest
 {
@@ -52,6 +52,48 @@ class DescribeTagsRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * @param array $tag
+     *
+     * @return $this
+     */
+	public function setTags(array $tag)
+	{
+	    $this->requestParameters['Tags'] = $tag;
+		foreach ($tag as $depth1 => $depth1Value) {
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+		}
+
+		return $this;
+    }
+
+    /**
      * @param string $resourceId
      *
      * @return $this
@@ -78,35 +120,6 @@ class DescribeTagsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param array $tag
-     *
-     * @return $this
-     */
-    public function setTags(array $tag)
-    {
-        $this->requestParameters['Tags'] = $tag;
-        foreach ($tag as $depth1 => $depth1Value) {
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
-        }
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -115,19 +128,6 @@ class DescribeTagsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $category
-     *
-     * @return $this
-     */
-    public function setCategory($category)
-    {
-        $this->requestParameters['Category'] = $category;
-        $this->queryParameters['Category'] = $category;
 
         return $this;
     }
@@ -146,14 +146,14 @@ class DescribeTagsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageNumber
+     * @param string $category
      *
      * @return $this
      */
-    public function setPageNumber($pageNumber)
+    public function setCategory($category)
     {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
+        $this->requestParameters['Category'] = $category;
+        $this->queryParameters['Category'] = $category;
 
         return $this;
     }

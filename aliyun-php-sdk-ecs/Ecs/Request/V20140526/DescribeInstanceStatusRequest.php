@@ -8,13 +8,13 @@ namespace Ecs\Request\V20140526;
  * Request of DescribeInstanceStatus
  *
  * @method string getResourceOwnerId()
+ * @method string getPageNumber()
+ * @method string getPageSize()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getPageSize()
- * @method string getZoneId()
  * @method string getClusterId()
  * @method string getOwnerId()
- * @method string getPageNumber()
+ * @method string getZoneId()
  */
 class DescribeInstanceStatusRequest extends \RpcAcsRequest
 {
@@ -51,6 +51,32 @@ class DescribeInstanceStatusRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -72,32 +98,6 @@ class DescribeInstanceStatusRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param string $zoneId
-     *
-     * @return $this
-     */
-    public function setZoneId($zoneId)
-    {
-        $this->requestParameters['ZoneId'] = $zoneId;
-        $this->queryParameters['ZoneId'] = $zoneId;
 
         return $this;
     }
@@ -129,14 +129,14 @@ class DescribeInstanceStatusRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageNumber
+     * @param string $zoneId
      *
      * @return $this
      */
-    public function setPageNumber($pageNumber)
+    public function setZoneId($zoneId)
     {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
+        $this->requestParameters['ZoneId'] = $zoneId;
+        $this->queryParameters['ZoneId'] = $zoneId;
 
         return $this;
     }

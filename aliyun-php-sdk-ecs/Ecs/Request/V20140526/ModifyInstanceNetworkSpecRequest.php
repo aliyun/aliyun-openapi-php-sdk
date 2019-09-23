@@ -8,13 +8,13 @@ namespace Ecs\Request\V20140526;
  * Request of ModifyInstanceNetworkSpec
  *
  * @method string getResourceOwnerId()
+ * @method string getClientToken()
+ * @method string getInternetMaxBandwidthOut()
+ * @method string getStartTime()
  * @method string getAutoPay()
  * @method string getResourceOwnerAccount()
- * @method string getClientToken()
  * @method string getOwnerAccount()
- * @method string getInternetMaxBandwidthOut()
  * @method string getEndTime()
- * @method string getStartTime()
  * @method string getOwnerId()
  * @method string getInstanceId()
  * @method string getNetworkChargeType()
@@ -56,6 +56,45 @@ class ModifyInstanceNetworkSpecRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $internetMaxBandwidthOut
+     *
+     * @return $this
+     */
+    public function setInternetMaxBandwidthOut($internetMaxBandwidthOut)
+    {
+        $this->requestParameters['InternetMaxBandwidthOut'] = $internetMaxBandwidthOut;
+        $this->queryParameters['InternetMaxBandwidthOut'] = $internetMaxBandwidthOut;
+
+        return $this;
+    }
+
+    /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
+
+        return $this;
+    }
+
+    /**
      * @param string $autoPay
      *
      * @return $this
@@ -82,19 +121,6 @@ class ModifyInstanceNetworkSpecRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $clientToken
-     *
-     * @return $this
-     */
-    public function setClientToken($clientToken)
-    {
-        $this->requestParameters['ClientToken'] = $clientToken;
-        $this->queryParameters['ClientToken'] = $clientToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerAccount
      *
      * @return $this
@@ -108,19 +134,6 @@ class ModifyInstanceNetworkSpecRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $internetMaxBandwidthOut
-     *
-     * @return $this
-     */
-    public function setInternetMaxBandwidthOut($internetMaxBandwidthOut)
-    {
-        $this->requestParameters['InternetMaxBandwidthOut'] = $internetMaxBandwidthOut;
-        $this->queryParameters['InternetMaxBandwidthOut'] = $internetMaxBandwidthOut;
-
-        return $this;
-    }
-
-    /**
      * @param string $endTime
      *
      * @return $this
@@ -129,19 +142,6 @@ class ModifyInstanceNetworkSpecRequest extends \RpcAcsRequest
     {
         $this->requestParameters['EndTime'] = $endTime;
         $this->queryParameters['EndTime'] = $endTime;
-
-        return $this;
-    }
-
-    /**
-     * @param string $startTime
-     *
-     * @return $this
-     */
-    public function setStartTime($startTime)
-    {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
 
         return $this;
     }

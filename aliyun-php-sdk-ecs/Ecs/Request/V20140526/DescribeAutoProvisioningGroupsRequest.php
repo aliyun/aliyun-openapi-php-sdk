@@ -82,14 +82,14 @@ class DescribeAutoProvisioningGroupsRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setAutoProvisioningGroupStatuss(array $autoProvisioningGroupStatus)
-    {
-        $this->requestParameters['AutoProvisioningGroupStatuss'] = $autoProvisioningGroupStatus;
-        foreach ($autoProvisioningGroupStatus as $i => $iValue) {
-            $this->queryParameters['AutoProvisioningGroupStatus.' . ($i + 1)] = $iValue;
-        }
+	public function setAutoProvisioningGroupStatuss(array $autoProvisioningGroupStatus)
+	{
+	    $this->requestParameters['AutoProvisioningGroupStatuss'] = $autoProvisioningGroupStatus;
+		foreach ($autoProvisioningGroupStatus as $i => $iValue) {
+			$this->queryParameters['AutoProvisioningGroupStatus.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 
     /**
@@ -136,14 +136,14 @@ class DescribeAutoProvisioningGroupsRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setAutoProvisioningGroupIds(array $autoProvisioningGroupId)
-    {
-        $this->requestParameters['AutoProvisioningGroupIds'] = $autoProvisioningGroupId;
-        foreach ($autoProvisioningGroupId as $i => $iValue) {
-            $this->queryParameters['AutoProvisioningGroupId.' . ($i + 1)] = $iValue;
-        }
+	public function setAutoProvisioningGroupIds(array $autoProvisioningGroupId)
+	{
+	    $this->requestParameters['AutoProvisioningGroupIds'] = $autoProvisioningGroupId;
+		foreach ($autoProvisioningGroupId as $i => $iValue) {
+			$this->queryParameters['AutoProvisioningGroupId.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 
     /**

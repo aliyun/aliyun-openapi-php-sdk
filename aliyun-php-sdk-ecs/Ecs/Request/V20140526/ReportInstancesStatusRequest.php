@@ -97,14 +97,14 @@ class ReportInstancesStatusRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setDiskIds(array $diskId)
-    {
-        $this->requestParameters['DiskIds'] = $diskId;
-        foreach ($diskId as $i => $iValue) {
-            $this->queryParameters['DiskId.' . ($i + 1)] = $iValue;
-        }
+	public function setDiskIds(array $diskId)
+	{
+	    $this->requestParameters['DiskIds'] = $diskId;
+		foreach ($diskId as $i => $iValue) {
+			$this->queryParameters['DiskId.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 
     /**
@@ -164,14 +164,14 @@ class ReportInstancesStatusRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setInstanceIds(array $instanceId)
-    {
-        $this->requestParameters['InstanceIds'] = $instanceId;
-        foreach ($instanceId as $i => $iValue) {
-            $this->queryParameters['InstanceId.' . ($i + 1)] = $iValue;
-        }
+	public function setInstanceIds(array $instanceId)
+	{
+	    $this->requestParameters['InstanceIds'] = $instanceId;
+		foreach ($instanceId as $i => $iValue) {
+			$this->queryParameters['InstanceId.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 
     /**
@@ -179,13 +179,13 @@ class ReportInstancesStatusRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setDevices(array $device)
-    {
-        $this->requestParameters['Devices'] = $device;
-        foreach ($device as $i => $iValue) {
-            $this->queryParameters['Device.' . ($i + 1)] = $iValue;
-        }
+	public function setDevices(array $device)
+	{
+	    $this->requestParameters['Devices'] = $device;
+		foreach ($device as $i => $iValue) {
+			$this->queryParameters['Device.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 }

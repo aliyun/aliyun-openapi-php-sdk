@@ -9,13 +9,13 @@ namespace Ecs\Request\V20140526;
  *
  * @method string getResourceOwnerId()
  * @method string getImageId()
+ * @method string getDestinationRegionId()
+ * @method array getTags()
  * @method string getResourceOwnerAccount()
  * @method string getDestinationImageName()
- * @method string getDestinationRegionId()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
  * @method string getEncrypted()
- * @method array getTags()
  * @method string getKMSKeyId()
  * @method string getDestinationDescription()
  */
@@ -67,6 +67,35 @@ class CopyImageRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $destinationRegionId
+     *
+     * @return $this
+     */
+    public function setDestinationRegionId($destinationRegionId)
+    {
+        $this->requestParameters['DestinationRegionId'] = $destinationRegionId;
+        $this->queryParameters['DestinationRegionId'] = $destinationRegionId;
+
+        return $this;
+    }
+
+    /**
+     * @param array $tag
+     *
+     * @return $this
+     */
+	public function setTags(array $tag)
+	{
+	    $this->requestParameters['Tags'] = $tag;
+		foreach ($tag as $depth1 => $depth1Value) {
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+		}
+
+		return $this;
+    }
+
+    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -88,19 +117,6 @@ class CopyImageRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DestinationImageName'] = $destinationImageName;
         $this->queryParameters['DestinationImageName'] = $destinationImageName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $destinationRegionId
-     *
-     * @return $this
-     */
-    public function setDestinationRegionId($destinationRegionId)
-    {
-        $this->requestParameters['DestinationRegionId'] = $destinationRegionId;
-        $this->queryParameters['DestinationRegionId'] = $destinationRegionId;
 
         return $this;
     }
@@ -140,22 +156,6 @@ class CopyImageRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Encrypted'] = $encrypted;
         $this->queryParameters['Encrypted'] = $encrypted;
-
-        return $this;
-    }
-
-    /**
-     * @param array $tag
-     *
-     * @return $this
-     */
-    public function setTags(array $tag)
-    {
-        $this->requestParameters['Tags'] = $tag;
-        foreach ($tag as $depth1 => $depth1Value) {
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
-        }
 
         return $this;
     }

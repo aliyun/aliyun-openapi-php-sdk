@@ -82,14 +82,14 @@ class DescribeFleetsRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setFleetStatuss(array $fleetStatus)
-    {
-        $this->requestParameters['FleetStatuss'] = $fleetStatus;
-        foreach ($fleetStatus as $i => $iValue) {
-            $this->queryParameters['FleetStatus.' . ($i + 1)] = $iValue;
-        }
+	public function setFleetStatuss(array $fleetStatus)
+	{
+	    $this->requestParameters['FleetStatuss'] = $fleetStatus;
+		foreach ($fleetStatus as $i => $iValue) {
+			$this->queryParameters['FleetStatus.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 
     /**
@@ -149,13 +149,13 @@ class DescribeFleetsRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setFleetIds(array $fleetId)
-    {
-        $this->requestParameters['FleetIds'] = $fleetId;
-        foreach ($fleetId as $i => $iValue) {
-            $this->queryParameters['FleetId.' . ($i + 1)] = $iValue;
-        }
+	public function setFleetIds(array $fleetId)
+	{
+	    $this->requestParameters['FleetIds'] = $fleetId;
+		foreach ($fleetId as $i => $iValue) {
+			$this->queryParameters['FleetId.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 }

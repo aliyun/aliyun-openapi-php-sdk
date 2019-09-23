@@ -8,10 +8,10 @@ namespace Ecs\Request\V20140526;
  * Request of DetachClassicLinkVpc
  *
  * @method string getResourceOwnerId()
- * @method string getInstanceId()
  * @method string getResourceOwnerAccount()
- * @method string getVpcId()
  * @method string getOwnerId()
+ * @method string getInstanceId()
+ * @method string getVpcId()
  */
 class DetachClassicLinkVpcRequest extends \RpcAcsRequest
 {
@@ -48,19 +48,6 @@ class DetachClassicLinkVpcRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -74,19 +61,6 @@ class DetachClassicLinkVpcRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $vpcId
-     *
-     * @return $this
-     */
-    public function setVpcId($vpcId)
-    {
-        $this->requestParameters['VpcId'] = $vpcId;
-        $this->queryParameters['VpcId'] = $vpcId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -95,6 +69,32 @@ class DetachClassicLinkVpcRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $vpcId
+     *
+     * @return $this
+     */
+    public function setVpcId($vpcId)
+    {
+        $this->requestParameters['VpcId'] = $vpcId;
+        $this->queryParameters['VpcId'] = $vpcId;
 
         return $this;
     }

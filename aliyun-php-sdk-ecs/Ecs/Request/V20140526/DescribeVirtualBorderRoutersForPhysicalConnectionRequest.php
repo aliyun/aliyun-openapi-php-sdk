@@ -7,13 +7,13 @@ namespace Ecs\Request\V20140526;
  *
  * Request of DescribeVirtualBorderRoutersForPhysicalConnection
  *
- * @method array getFilters()
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
- * @method string getPhysicalConnectionId()
- * @method string getPageSize()
- * @method string getOwnerId()
  * @method string getPageNumber()
+ * @method string getPageSize()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerId()
+ * @method array getFilters()
+ * @method string getPhysicalConnectionId()
  */
 class DescribeVirtualBorderRoutersForPhysicalConnectionRequest extends \RpcAcsRequest
 {
@@ -37,24 +37,6 @@ class DescribeVirtualBorderRoutersForPhysicalConnectionRequest extends \RpcAcsRe
     }
 
     /**
-     * @param array $filter
-     *
-     * @return $this
-     */
-    public function setFilters(array $filter)
-    {
-        $this->requestParameters['Filters'] = $filter;
-        foreach ($filter as $depth1 => $depth1Value) {
-            foreach ($depth1Value['Value'] as $i => $iValue) {
-                $this->queryParameters['Filter.' . ($depth1 + 1) . '.Value.' . ($i + 1)] = $iValue;
-            }
-            $this->queryParameters['Filter.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
-        }
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerId
      *
      * @return $this
@@ -68,27 +50,14 @@ class DescribeVirtualBorderRoutersForPhysicalConnectionRequest extends \RpcAcsRe
     }
 
     /**
-     * @param string $resourceOwnerAccount
+     * @param string $pageNumber
      *
      * @return $this
      */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
+    public function setPageNumber($pageNumber)
     {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $physicalConnectionId
-     *
-     * @return $this
-     */
-    public function setPhysicalConnectionId($physicalConnectionId)
-    {
-        $this->requestParameters['PhysicalConnectionId'] = $physicalConnectionId;
-        $this->queryParameters['PhysicalConnectionId'] = $physicalConnectionId;
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }
@@ -107,6 +76,19 @@ class DescribeVirtualBorderRoutersForPhysicalConnectionRequest extends \RpcAcsRe
     }
 
     /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -120,14 +102,32 @@ class DescribeVirtualBorderRoutersForPhysicalConnectionRequest extends \RpcAcsRe
     }
 
     /**
-     * @param string $pageNumber
+     * @param array $filter
      *
      * @return $this
      */
-    public function setPageNumber($pageNumber)
+	public function setFilters(array $filter)
+	{
+	    $this->requestParameters['Filters'] = $filter;
+		foreach ($filter as $depth1 => $depth1Value) {
+			foreach ($depth1Value['Value'] as $i => $iValue) {
+				$this->queryParameters['Filter.' . ($depth1 + 1) . '.Value.' . ($i + 1)] = $iValue;
+			}
+			$this->queryParameters['Filter.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+		}
+
+		return $this;
+    }
+
+    /**
+     * @param string $physicalConnectionId
+     *
+     * @return $this
+     */
+    public function setPhysicalConnectionId($physicalConnectionId)
     {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
+        $this->requestParameters['PhysicalConnectionId'] = $physicalConnectionId;
+        $this->queryParameters['PhysicalConnectionId'] = $physicalConnectionId;
 
         return $this;
     }

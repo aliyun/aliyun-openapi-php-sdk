@@ -7,15 +7,15 @@ namespace Ecs\Request\V20140526;
  *
  * Request of ModifyInstanceAutoRenewAttribute
  *
- * @method string getDuration()
  * @method string getResourceOwnerId()
+ * @method string getDuration()
+ * @method string getRenewalStatus()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getOwnerId()
  * @method string getPeriodUnit()
  * @method string getInstanceId()
  * @method string getAutoRenew()
- * @method string getResourceOwnerAccount()
- * @method string getOwnerAccount()
- * @method string getRenewalStatus()
- * @method string getOwnerId()
  */
 class ModifyInstanceAutoRenewAttributeRequest extends \RpcAcsRequest
 {
@@ -39,6 +39,19 @@ class ModifyInstanceAutoRenewAttributeRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
      * @param string $duration
      *
      * @return $this
@@ -52,14 +65,53 @@ class ModifyInstanceAutoRenewAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerId
+     * @param string $renewalStatus
      *
      * @return $this
      */
-    public function setResourceOwnerId($resourceOwnerId)
+    public function setRenewalStatus($renewalStatus)
     {
-        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
-        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->requestParameters['RenewalStatus'] = $renewalStatus;
+        $this->queryParameters['RenewalStatus'] = $renewalStatus;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }
@@ -99,58 +151,6 @@ class ModifyInstanceAutoRenewAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AutoRenew'] = $autoRenew;
         $this->queryParameters['AutoRenew'] = $autoRenew;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $renewalStatus
-     *
-     * @return $this
-     */
-    public function setRenewalStatus($renewalStatus)
-    {
-        $this->requestParameters['RenewalStatus'] = $renewalStatus;
-        $this->queryParameters['RenewalStatus'] = $renewalStatus;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

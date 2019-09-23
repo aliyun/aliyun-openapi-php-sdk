@@ -9,8 +9,8 @@ namespace Ecs\Request\V20140526;
  *
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
- * @method string getInstanceIds()
  * @method string getOwnerId()
+ * @method string getInstanceIds()
  */
 class DescribeInstanceTopologyRequest extends \RpcAcsRequest
 {
@@ -60,19 +60,6 @@ class DescribeInstanceTopologyRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceIds
-     *
-     * @return $this
-     */
-    public function setInstanceIds($instanceIds)
-    {
-        $this->requestParameters['InstanceIds'] = $instanceIds;
-        $this->queryParameters['InstanceIds'] = $instanceIds;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -81,6 +68,19 @@ class DescribeInstanceTopologyRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceIds
+     *
+     * @return $this
+     */
+    public function setInstanceIds($instanceIds)
+    {
+        $this->requestParameters['InstanceIds'] = $instanceIds;
+        $this->queryParameters['InstanceIds'] = $instanceIds;
 
         return $this;
     }

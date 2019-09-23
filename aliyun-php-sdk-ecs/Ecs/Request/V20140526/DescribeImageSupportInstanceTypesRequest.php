@@ -8,11 +8,11 @@ namespace Ecs\Request\V20140526;
  * Request of DescribeImageSupportInstanceTypes
  *
  * @method string getActionType()
- * @method array getFilters()
  * @method string getResourceOwnerId()
  * @method string getImageId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerId()
+ * @method array getFilters()
  */
 class DescribeImageSupportInstanceTypesRequest extends \RpcAcsRequest
 {
@@ -44,22 +44,6 @@ class DescribeImageSupportInstanceTypesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ActionType'] = $actionType;
         $this->queryParameters['ActionType'] = $actionType;
-
-        return $this;
-    }
-
-    /**
-     * @param array $filter
-     *
-     * @return $this
-     */
-    public function setFilters(array $filter)
-    {
-        $this->requestParameters['Filters'] = $filter;
-        foreach ($filter as $depth1 => $depth1Value) {
-            $this->queryParameters['Filter.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
-            $this->queryParameters['Filter.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
-        }
 
         return $this;
     }
@@ -114,5 +98,21 @@ class DescribeImageSupportInstanceTypesRequest extends \RpcAcsRequest
         $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
+    }
+
+    /**
+     * @param array $filter
+     *
+     * @return $this
+     */
+	public function setFilters(array $filter)
+	{
+	    $this->requestParameters['Filters'] = $filter;
+		foreach ($filter as $depth1 => $depth1Value) {
+			$this->queryParameters['Filter.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+			$this->queryParameters['Filter.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+		}
+
+		return $this;
     }
 }

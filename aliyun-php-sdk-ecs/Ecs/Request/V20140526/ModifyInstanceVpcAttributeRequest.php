@@ -7,13 +7,13 @@ namespace Ecs\Request\V20140526;
  *
  * Request of ModifyInstanceVpcAttribute
  *
- * @method string getVSwitchId()
- * @method string getPrivateIpAddress()
  * @method string getResourceOwnerId()
- * @method string getInstanceId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getVSwitchId()
+ * @method string getPrivateIpAddress()
+ * @method string getInstanceId()
  */
 class ModifyInstanceVpcAttributeRequest extends \RpcAcsRequest
 {
@@ -37,32 +37,6 @@ class ModifyInstanceVpcAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $vSwitchId
-     *
-     * @return $this
-     */
-    public function setVSwitchId($vSwitchId)
-    {
-        $this->requestParameters['VSwitchId'] = $vSwitchId;
-        $this->queryParameters['VSwitchId'] = $vSwitchId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $privateIpAddress
-     *
-     * @return $this
-     */
-    public function setPrivateIpAddress($privateIpAddress)
-    {
-        $this->requestParameters['PrivateIpAddress'] = $privateIpAddress;
-        $this->queryParameters['PrivateIpAddress'] = $privateIpAddress;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerId
      *
      * @return $this
@@ -71,19 +45,6 @@ class ModifyInstanceVpcAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }
@@ -123,6 +84,45 @@ class ModifyInstanceVpcAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $vSwitchId
+     *
+     * @return $this
+     */
+    public function setVSwitchId($vSwitchId)
+    {
+        $this->requestParameters['VSwitchId'] = $vSwitchId;
+        $this->queryParameters['VSwitchId'] = $vSwitchId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $privateIpAddress
+     *
+     * @return $this
+     */
+    public function setPrivateIpAddress($privateIpAddress)
+    {
+        $this->requestParameters['PrivateIpAddress'] = $privateIpAddress;
+        $this->queryParameters['PrivateIpAddress'] = $privateIpAddress;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

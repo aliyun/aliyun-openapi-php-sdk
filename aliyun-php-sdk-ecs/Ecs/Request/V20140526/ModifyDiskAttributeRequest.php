@@ -7,16 +7,16 @@ namespace Ecs\Request\V20140526;
  *
  * Request of ModifyDiskAttribute
  *
+ * @method string getResourceOwnerId()
+ * @method string getDescription()
  * @method string getDiskName()
  * @method string getDeleteAutoSnapshot()
- * @method string getResourceOwnerId()
+ * @method string getDiskId()
+ * @method string getDeleteWithInstance()
  * @method string getEnableAutoSnapshot()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getDescription()
- * @method string getDiskId()
  * @method string getOwnerId()
- * @method string getDeleteWithInstance()
  */
 class ModifyDiskAttributeRequest extends \RpcAcsRequest
 {
@@ -37,6 +37,32 @@ class ModifyDiskAttributeRequest extends \RpcAcsRequest
             'ModifyDiskAttribute',
             'ecs'
         );
+    }
+
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
+
+        return $this;
     }
 
     /**
@@ -66,14 +92,27 @@ class ModifyDiskAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerId
+     * @param string $diskId
      *
      * @return $this
      */
-    public function setResourceOwnerId($resourceOwnerId)
+    public function setDiskId($diskId)
     {
-        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
-        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->requestParameters['DiskId'] = $diskId;
+        $this->queryParameters['DiskId'] = $diskId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $deleteWithInstance
+     *
+     * @return $this
+     */
+    public function setDeleteWithInstance($deleteWithInstance)
+    {
+        $this->requestParameters['DeleteWithInstance'] = $deleteWithInstance;
+        $this->queryParameters['DeleteWithInstance'] = $deleteWithInstance;
 
         return $this;
     }
@@ -118,32 +157,6 @@ class ModifyDiskAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $description
-     *
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->requestParameters['Description'] = $description;
-        $this->queryParameters['Description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * @param string $diskId
-     *
-     * @return $this
-     */
-    public function setDiskId($diskId)
-    {
-        $this->requestParameters['DiskId'] = $diskId;
-        $this->queryParameters['DiskId'] = $diskId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -152,19 +165,6 @@ class ModifyDiskAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $deleteWithInstance
-     *
-     * @return $this
-     */
-    public function setDeleteWithInstance($deleteWithInstance)
-    {
-        $this->requestParameters['DeleteWithInstance'] = $deleteWithInstance;
-        $this->queryParameters['DeleteWithInstance'] = $deleteWithInstance;
 
         return $this;
     }

@@ -99,15 +99,15 @@ class DescribeDemandsRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setTags(array $tag)
-    {
-        $this->requestParameters['Tags'] = $tag;
-        foreach ($tag as $depth1 => $depth1Value) {
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
-        }
+	public function setTags(array $tag)
+	{
+	    $this->requestParameters['Tags'] = $tag;
+		foreach ($tag as $depth1 => $depth1Value) {
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+		}
 
-        return $this;
+		return $this;
     }
 
     /**
@@ -193,14 +193,14 @@ class DescribeDemandsRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setDemandStatuss(array $demandStatus)
-    {
-        $this->requestParameters['DemandStatuss'] = $demandStatus;
-        foreach ($demandStatus as $i => $iValue) {
-            $this->queryParameters['DemandStatus.' . ($i + 1)] = $iValue;
-        }
+	public function setDemandStatuss(array $demandStatus)
+	{
+	    $this->requestParameters['DemandStatuss'] = $demandStatus;
+		foreach ($demandStatus as $i => $iValue) {
+			$this->queryParameters['DemandStatus.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 
     /**

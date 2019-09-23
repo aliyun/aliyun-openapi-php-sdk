@@ -8,16 +8,16 @@ namespace Ecs\Request\V20140526;
  * Request of ModifyInstanceAttribute
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
  * @method string getRecyclable()
- * @method string getOwnerAccount()
  * @method string getDescription()
- * @method string getCreditSpecification()
- * @method string getOwnerId()
  * @method string getDeletionProtection()
  * @method string getUserData()
  * @method string getPassword()
  * @method string getHostName()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getCreditSpecification()
+ * @method string getOwnerId()
  * @method string getInstanceId()
  * @method string getInstanceName()
  */
@@ -56,19 +56,6 @@ class ModifyInstanceAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $recyclable
      *
      * @return $this
@@ -82,19 +69,6 @@ class ModifyInstanceAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $description
      *
      * @return $this
@@ -103,32 +77,6 @@ class ModifyInstanceAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Description'] = $description;
         $this->queryParameters['Description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * @param string $creditSpecification
-     *
-     * @return $this
-     */
-    public function setCreditSpecification($creditSpecification)
-    {
-        $this->requestParameters['CreditSpecification'] = $creditSpecification;
-        $this->queryParameters['CreditSpecification'] = $creditSpecification;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }
@@ -181,6 +129,58 @@ class ModifyInstanceAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['HostName'] = $hostName;
         $this->queryParameters['HostName'] = $hostName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $creditSpecification
+     *
+     * @return $this
+     */
+    public function setCreditSpecification($creditSpecification)
+    {
+        $this->requestParameters['CreditSpecification'] = $creditSpecification;
+        $this->queryParameters['CreditSpecification'] = $creditSpecification;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

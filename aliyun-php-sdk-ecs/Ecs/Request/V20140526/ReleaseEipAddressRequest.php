@@ -8,9 +8,9 @@ namespace Ecs\Request\V20140526;
  * Request of ReleaseEipAddress
  *
  * @method string getResourceOwnerId()
+ * @method string getAllocationId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getAllocationId()
  * @method string getOwnerId()
  */
 class ReleaseEipAddressRequest extends \RpcAcsRequest
@@ -48,6 +48,19 @@ class ReleaseEipAddressRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $allocationId
+     *
+     * @return $this
+     */
+    public function setAllocationId($allocationId)
+    {
+        $this->requestParameters['AllocationId'] = $allocationId;
+        $this->queryParameters['AllocationId'] = $allocationId;
+
+        return $this;
+    }
+
+    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -69,19 +82,6 @@ class ReleaseEipAddressRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $allocationId
-     *
-     * @return $this
-     */
-    public function setAllocationId($allocationId)
-    {
-        $this->requestParameters['AllocationId'] = $allocationId;
-        $this->queryParameters['AllocationId'] = $allocationId;
 
         return $this;
     }

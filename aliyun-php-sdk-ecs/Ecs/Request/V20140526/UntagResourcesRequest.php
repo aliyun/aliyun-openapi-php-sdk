@@ -68,14 +68,14 @@ class UntagResourcesRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setResourceIds(array $resourceId)
-    {
-        $this->requestParameters['ResourceIds'] = $resourceId;
-        foreach ($resourceId as $i => $iValue) {
-            $this->queryParameters['ResourceId.' . ($i + 1)] = $iValue;
-        }
+	public function setResourceIds(array $resourceId)
+	{
+	    $this->requestParameters['ResourceIds'] = $resourceId;
+		foreach ($resourceId as $i => $iValue) {
+			$this->queryParameters['ResourceId.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 
     /**
@@ -135,13 +135,13 @@ class UntagResourcesRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setTagKeys(array $tagKey)
-    {
-        $this->requestParameters['TagKeys'] = $tagKey;
-        foreach ($tagKey as $i => $iValue) {
-            $this->queryParameters['TagKey.' . ($i + 1)] = $iValue;
-        }
+	public function setTagKeys(array $tagKey)
+	{
+	    $this->requestParameters['TagKeys'] = $tagKey;
+		foreach ($tagKey as $i => $iValue) {
+			$this->queryParameters['TagKey.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 }

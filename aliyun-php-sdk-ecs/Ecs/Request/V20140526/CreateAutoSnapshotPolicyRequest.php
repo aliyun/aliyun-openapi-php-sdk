@@ -8,12 +8,12 @@ namespace Ecs\Request\V20140526;
  * Request of CreateAutoSnapshotPolicy
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
  * @method string gettimePoints()
- * @method string getretentionDays()
- * @method string getOwnerId()
  * @method string getrepeatWeekdays()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerId()
  * @method string getautoSnapshotPolicyName()
+ * @method string getretentionDays()
  */
 class CreateAutoSnapshotPolicyRequest extends \RpcAcsRequest
 {
@@ -50,19 +50,6 @@ class CreateAutoSnapshotPolicyRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $timePoints
      *
      * @return $this
@@ -71,32 +58,6 @@ class CreateAutoSnapshotPolicyRequest extends \RpcAcsRequest
     {
         $this->requestParameters['timePoints'] = $timePoints;
         $this->queryParameters['timePoints'] = $timePoints;
-
-        return $this;
-    }
-
-    /**
-     * @param string $retentionDays
-     *
-     * @return $this
-     */
-    public function setretentionDays($retentionDays)
-    {
-        $this->requestParameters['retentionDays'] = $retentionDays;
-        $this->queryParameters['retentionDays'] = $retentionDays;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }
@@ -115,6 +76,32 @@ class CreateAutoSnapshotPolicyRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
      * @param string $autoSnapshotPolicyName
      *
      * @return $this
@@ -123,6 +110,19 @@ class CreateAutoSnapshotPolicyRequest extends \RpcAcsRequest
     {
         $this->requestParameters['autoSnapshotPolicyName'] = $autoSnapshotPolicyName;
         $this->queryParameters['autoSnapshotPolicyName'] = $autoSnapshotPolicyName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $retentionDays
+     *
+     * @return $this
+     */
+    public function setretentionDays($retentionDays)
+    {
+        $this->requestParameters['retentionDays'] = $retentionDays;
+        $this->queryParameters['retentionDays'] = $retentionDays;
 
         return $this;
     }

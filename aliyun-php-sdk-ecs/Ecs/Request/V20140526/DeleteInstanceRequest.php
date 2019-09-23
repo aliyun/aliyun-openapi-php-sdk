@@ -8,12 +8,12 @@ namespace Ecs\Request\V20140526;
  * Request of DeleteInstance
  *
  * @method string getResourceOwnerId()
- * @method string getInstanceId()
+ * @method string getTerminateSubscription()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getTerminateSubscription()
- * @method string getForce()
  * @method string getOwnerId()
+ * @method string getInstanceId()
+ * @method string getForce()
  */
 class DeleteInstanceRequest extends \RpcAcsRequest
 {
@@ -50,14 +50,14 @@ class DeleteInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
+     * @param string $terminateSubscription
      *
      * @return $this
      */
-    public function setInstanceId($instanceId)
+    public function setTerminateSubscription($terminateSubscription)
     {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
+        $this->requestParameters['TerminateSubscription'] = $terminateSubscription;
+        $this->queryParameters['TerminateSubscription'] = $terminateSubscription;
 
         return $this;
     }
@@ -89,14 +89,27 @@ class DeleteInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $terminateSubscription
+     * @param string $ownerId
      *
      * @return $this
      */
-    public function setTerminateSubscription($terminateSubscription)
+    public function setOwnerId($ownerId)
     {
-        $this->requestParameters['TerminateSubscription'] = $terminateSubscription;
-        $this->queryParameters['TerminateSubscription'] = $terminateSubscription;
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }
@@ -110,19 +123,6 @@ class DeleteInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Force'] = $force;
         $this->queryParameters['Force'] = $force;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

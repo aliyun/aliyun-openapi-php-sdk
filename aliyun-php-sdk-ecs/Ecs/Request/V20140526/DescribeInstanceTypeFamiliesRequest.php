@@ -7,8 +7,8 @@ namespace Ecs\Request\V20140526;
  *
  * Request of DescribeInstanceTypeFamilies
  *
- * @method string getGeneration()
  * @method string getResourceOwnerId()
+ * @method string getGeneration()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
@@ -35,19 +35,6 @@ class DescribeInstanceTypeFamiliesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $generation
-     *
-     * @return $this
-     */
-    public function setGeneration($generation)
-    {
-        $this->requestParameters['Generation'] = $generation;
-        $this->queryParameters['Generation'] = $generation;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerId
      *
      * @return $this
@@ -56,6 +43,19 @@ class DescribeInstanceTypeFamiliesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $generation
+     *
+     * @return $this
+     */
+    public function setGeneration($generation)
+    {
+        $this->requestParameters['Generation'] = $generation;
+        $this->queryParameters['Generation'] = $generation;
 
         return $this;
     }

@@ -9,16 +9,16 @@ namespace Ecs\Request\V20140526;
  *
  * @method string getOppositeRouterId()
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
  * @method string getDescription()
  * @method string getHealthCheckTargetIp()
+ * @method string getOppositeInterfaceId()
+ * @method string getResourceOwnerAccount()
  * @method string getOwnerId()
  * @method string getRouterInterfaceId()
  * @method string getOppositeInterfaceOwnerId()
  * @method string getHealthCheckSourceIp()
  * @method string getName()
  * @method string getOppositeRouterType()
- * @method string getOppositeInterfaceId()
  */
 class ModifyRouterInterfaceAttributeRequest extends \RpcAcsRequest
 {
@@ -68,19 +68,6 @@ class ModifyRouterInterfaceAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $description
      *
      * @return $this
@@ -102,6 +89,32 @@ class ModifyRouterInterfaceAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['HealthCheckTargetIp'] = $healthCheckTargetIp;
         $this->queryParameters['HealthCheckTargetIp'] = $healthCheckTargetIp;
+
+        return $this;
+    }
+
+    /**
+     * @param string $oppositeInterfaceId
+     *
+     * @return $this
+     */
+    public function setOppositeInterfaceId($oppositeInterfaceId)
+    {
+        $this->requestParameters['OppositeInterfaceId'] = $oppositeInterfaceId;
+        $this->queryParameters['OppositeInterfaceId'] = $oppositeInterfaceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }
@@ -180,19 +193,6 @@ class ModifyRouterInterfaceAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OppositeRouterType'] = $oppositeRouterType;
         $this->queryParameters['OppositeRouterType'] = $oppositeRouterType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $oppositeInterfaceId
-     *
-     * @return $this
-     */
-    public function setOppositeInterfaceId($oppositeInterfaceId)
-    {
-        $this->requestParameters['OppositeInterfaceId'] = $oppositeInterfaceId;
-        $this->queryParameters['OppositeInterfaceId'] = $oppositeInterfaceId;
 
         return $this;
     }

@@ -9,45 +9,45 @@ namespace Ecs\Request\V20140526;
  *
  * @method string getInnerIpAddresses()
  * @method string getResourceOwnerId()
- * @method string getImageId()
  * @method string getPrivateIpAddresses()
  * @method string getHpcClusterId()
  * @method string getFilter2Value()
- * @method string getFilter4Value()
- * @method string getIoOptimized()
- * @method string getSecurityGroupId()
  * @method string getKeyPairName()
- * @method string getFilter4Key()
- * @method string getPageNumber()
  * @method string getResourceGroupId()
  * @method string getLockReason()
  * @method string getFilter1Key()
- * @method string getRdmaIpAddresses()
  * @method string getDeviceAvailable()
- * @method string getPageSize()
- * @method string getPublicIpAddresses()
- * @method string getInstanceType()
  * @method array getTags()
- * @method string getInstanceChargeType()
  * @method string getFilter3Value()
  * @method string getDryRun()
- * @method string getResourceOwnerAccount()
- * @method string getOwnerAccount()
- * @method string getInstanceTypeFamily()
  * @method string getFilter1Value()
  * @method string getNeedSaleCycle()
- * @method string getFilter2Key()
  * @method string getOwnerId()
  * @method string getVSwitchId()
- * @method string getEipAddresses()
  * @method string getInstanceName()
  * @method string getInstanceIds()
  * @method string getInternetChargeType()
- * @method string getVpcId()
  * @method string getZoneId()
- * @method string getFilter3Key()
  * @method string getInstanceNetworkType()
  * @method string getStatus()
+ * @method string getImageId()
+ * @method string getFilter4Value()
+ * @method string getIoOptimized()
+ * @method string getSecurityGroupId()
+ * @method string getFilter4Key()
+ * @method string getPageNumber()
+ * @method string getRdmaIpAddresses()
+ * @method string getPageSize()
+ * @method string getPublicIpAddresses()
+ * @method string getInstanceType()
+ * @method string getInstanceChargeType()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getInstanceTypeFamily()
+ * @method string getFilter2Key()
+ * @method string getEipAddresses()
+ * @method string getVpcId()
+ * @method string getFilter3Key()
  */
 class DescribeInstancesRequest extends \RpcAcsRequest
 {
@@ -97,19 +97,6 @@ class DescribeInstancesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $imageId
-     *
-     * @return $this
-     */
-    public function setImageId($imageId)
-    {
-        $this->requestParameters['ImageId'] = $imageId;
-        $this->queryParameters['ImageId'] = $imageId;
-
-        return $this;
-    }
-
-    /**
      * @param string $privateIpAddresses
      *
      * @return $this
@@ -149,45 +136,6 @@ class DescribeInstancesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $filter4Value
-     *
-     * @return $this
-     */
-    public function setFilter4Value($filter4Value)
-    {
-        $this->requestParameters['Filter4Value'] = $filter4Value;
-        $this->queryParameters['Filter.4.Value'] = $filter4Value;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ioOptimized
-     *
-     * @return $this
-     */
-    public function setIoOptimized($ioOptimized)
-    {
-        $this->requestParameters['IoOptimized'] = $ioOptimized;
-        $this->queryParameters['IoOptimized'] = $ioOptimized;
-
-        return $this;
-    }
-
-    /**
-     * @param string $securityGroupId
-     *
-     * @return $this
-     */
-    public function setSecurityGroupId($securityGroupId)
-    {
-        $this->requestParameters['SecurityGroupId'] = $securityGroupId;
-        $this->queryParameters['SecurityGroupId'] = $securityGroupId;
-
-        return $this;
-    }
-
-    /**
      * @param string $keyPairName
      *
      * @return $this
@@ -196,32 +144,6 @@ class DescribeInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['KeyPairName'] = $keyPairName;
         $this->queryParameters['KeyPairName'] = $keyPairName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $filter4Key
-     *
-     * @return $this
-     */
-    public function setFilter4Key($filter4Key)
-    {
-        $this->requestParameters['Filter4Key'] = $filter4Key;
-        $this->queryParameters['Filter.4.Key'] = $filter4Key;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }
@@ -266,19 +188,6 @@ class DescribeInstancesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $rdmaIpAddresses
-     *
-     * @return $this
-     */
-    public function setRdmaIpAddresses($rdmaIpAddresses)
-    {
-        $this->requestParameters['RdmaIpAddresses'] = $rdmaIpAddresses;
-        $this->queryParameters['RdmaIpAddresses'] = $rdmaIpAddresses;
-
-        return $this;
-    }
-
-    /**
      * @param string $deviceAvailable
      *
      * @return $this
@@ -292,71 +201,19 @@ class DescribeInstancesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param string $publicIpAddresses
-     *
-     * @return $this
-     */
-    public function setPublicIpAddresses($publicIpAddresses)
-    {
-        $this->requestParameters['PublicIpAddresses'] = $publicIpAddresses;
-        $this->queryParameters['PublicIpAddresses'] = $publicIpAddresses;
-
-        return $this;
-    }
-
-    /**
-     * @param string $instanceType
-     *
-     * @return $this
-     */
-    public function setInstanceType($instanceType)
-    {
-        $this->requestParameters['InstanceType'] = $instanceType;
-        $this->queryParameters['InstanceType'] = $instanceType;
-
-        return $this;
-    }
-
-    /**
      * @param array $tag
      *
      * @return $this
      */
-    public function setTags(array $tag)
-    {
-        $this->requestParameters['Tags'] = $tag;
-        foreach ($tag as $depth1 => $depth1Value) {
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
-        }
+	public function setTags(array $tag)
+	{
+	    $this->requestParameters['Tags'] = $tag;
+		foreach ($tag as $depth1 => $depth1Value) {
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+		}
 
-        return $this;
-    }
-
-    /**
-     * @param string $instanceChargeType
-     *
-     * @return $this
-     */
-    public function setInstanceChargeType($instanceChargeType)
-    {
-        $this->requestParameters['InstanceChargeType'] = $instanceChargeType;
-        $this->queryParameters['InstanceChargeType'] = $instanceChargeType;
-
-        return $this;
+		return $this;
     }
 
     /**
@@ -381,45 +238,6 @@ class DescribeInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DryRun'] = $dryRun;
         $this->queryParameters['DryRun'] = $dryRun;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $instanceTypeFamily
-     *
-     * @return $this
-     */
-    public function setInstanceTypeFamily($instanceTypeFamily)
-    {
-        $this->requestParameters['InstanceTypeFamily'] = $instanceTypeFamily;
-        $this->queryParameters['InstanceTypeFamily'] = $instanceTypeFamily;
 
         return $this;
     }
@@ -451,19 +269,6 @@ class DescribeInstancesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $filter2Key
-     *
-     * @return $this
-     */
-    public function setFilter2Key($filter2Key)
-    {
-        $this->requestParameters['Filter2Key'] = $filter2Key;
-        $this->queryParameters['Filter.2.Key'] = $filter2Key;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -485,19 +290,6 @@ class DescribeInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['VSwitchId'] = $vSwitchId;
         $this->queryParameters['VSwitchId'] = $vSwitchId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $eipAddresses
-     *
-     * @return $this
-     */
-    public function setEipAddresses($eipAddresses)
-    {
-        $this->requestParameters['EipAddresses'] = $eipAddresses;
-        $this->queryParameters['EipAddresses'] = $eipAddresses;
 
         return $this;
     }
@@ -542,19 +334,6 @@ class DescribeInstancesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $vpcId
-     *
-     * @return $this
-     */
-    public function setVpcId($vpcId)
-    {
-        $this->requestParameters['VpcId'] = $vpcId;
-        $this->queryParameters['VpcId'] = $vpcId;
-
-        return $this;
-    }
-
-    /**
      * @param string $zoneId
      *
      * @return $this
@@ -563,19 +342,6 @@ class DescribeInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ZoneId'] = $zoneId;
         $this->queryParameters['ZoneId'] = $zoneId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $filter3Key
-     *
-     * @return $this
-     */
-    public function setFilter3Key($filter3Key)
-    {
-        $this->requestParameters['Filter3Key'] = $filter3Key;
-        $this->queryParameters['Filter.3.Key'] = $filter3Key;
 
         return $this;
     }
@@ -602,6 +368,240 @@ class DescribeInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Status'] = $status;
         $this->queryParameters['Status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * @param string $imageId
+     *
+     * @return $this
+     */
+    public function setImageId($imageId)
+    {
+        $this->requestParameters['ImageId'] = $imageId;
+        $this->queryParameters['ImageId'] = $imageId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $filter4Value
+     *
+     * @return $this
+     */
+    public function setFilter4Value($filter4Value)
+    {
+        $this->requestParameters['Filter4Value'] = $filter4Value;
+        $this->queryParameters['Filter.4.Value'] = $filter4Value;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ioOptimized
+     *
+     * @return $this
+     */
+    public function setIoOptimized($ioOptimized)
+    {
+        $this->requestParameters['IoOptimized'] = $ioOptimized;
+        $this->queryParameters['IoOptimized'] = $ioOptimized;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityGroupId
+     *
+     * @return $this
+     */
+    public function setSecurityGroupId($securityGroupId)
+    {
+        $this->requestParameters['SecurityGroupId'] = $securityGroupId;
+        $this->queryParameters['SecurityGroupId'] = $securityGroupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $filter4Key
+     *
+     * @return $this
+     */
+    public function setFilter4Key($filter4Key)
+    {
+        $this->requestParameters['Filter4Key'] = $filter4Key;
+        $this->queryParameters['Filter.4.Key'] = $filter4Key;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $rdmaIpAddresses
+     *
+     * @return $this
+     */
+    public function setRdmaIpAddresses($rdmaIpAddresses)
+    {
+        $this->requestParameters['RdmaIpAddresses'] = $rdmaIpAddresses;
+        $this->queryParameters['RdmaIpAddresses'] = $rdmaIpAddresses;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $publicIpAddresses
+     *
+     * @return $this
+     */
+    public function setPublicIpAddresses($publicIpAddresses)
+    {
+        $this->requestParameters['PublicIpAddresses'] = $publicIpAddresses;
+        $this->queryParameters['PublicIpAddresses'] = $publicIpAddresses;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceType
+     *
+     * @return $this
+     */
+    public function setInstanceType($instanceType)
+    {
+        $this->requestParameters['InstanceType'] = $instanceType;
+        $this->queryParameters['InstanceType'] = $instanceType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceChargeType
+     *
+     * @return $this
+     */
+    public function setInstanceChargeType($instanceChargeType)
+    {
+        $this->requestParameters['InstanceChargeType'] = $instanceChargeType;
+        $this->queryParameters['InstanceChargeType'] = $instanceChargeType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceTypeFamily
+     *
+     * @return $this
+     */
+    public function setInstanceTypeFamily($instanceTypeFamily)
+    {
+        $this->requestParameters['InstanceTypeFamily'] = $instanceTypeFamily;
+        $this->queryParameters['InstanceTypeFamily'] = $instanceTypeFamily;
+
+        return $this;
+    }
+
+    /**
+     * @param string $filter2Key
+     *
+     * @return $this
+     */
+    public function setFilter2Key($filter2Key)
+    {
+        $this->requestParameters['Filter2Key'] = $filter2Key;
+        $this->queryParameters['Filter.2.Key'] = $filter2Key;
+
+        return $this;
+    }
+
+    /**
+     * @param string $eipAddresses
+     *
+     * @return $this
+     */
+    public function setEipAddresses($eipAddresses)
+    {
+        $this->requestParameters['EipAddresses'] = $eipAddresses;
+        $this->queryParameters['EipAddresses'] = $eipAddresses;
+
+        return $this;
+    }
+
+    /**
+     * @param string $vpcId
+     *
+     * @return $this
+     */
+    public function setVpcId($vpcId)
+    {
+        $this->requestParameters['VpcId'] = $vpcId;
+        $this->queryParameters['VpcId'] = $vpcId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $filter3Key
+     *
+     * @return $this
+     */
+    public function setFilter3Key($filter3Key)
+    {
+        $this->requestParameters['Filter3Key'] = $filter3Key;
+        $this->queryParameters['Filter.3.Key'] = $filter3Key;
 
         return $this;
     }

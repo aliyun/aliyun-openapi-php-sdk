@@ -8,11 +8,11 @@ namespace Ecs\Request\V20140526;
  * Request of ReleasePublicIpAddress
  *
  * @method string getResourceOwnerId()
- * @method string getPublicIpAddress()
- * @method string getInstanceId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getPublicIpAddress()
+ * @method string getInstanceId()
  */
 class ReleasePublicIpAddressRequest extends \RpcAcsRequest
 {
@@ -44,32 +44,6 @@ class ReleasePublicIpAddressRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $publicIpAddress
-     *
-     * @return $this
-     */
-    public function setPublicIpAddress($publicIpAddress)
-    {
-        $this->requestParameters['PublicIpAddress'] = $publicIpAddress;
-        $this->queryParameters['PublicIpAddress'] = $publicIpAddress;
-
-        return $this;
-    }
-
-    /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }
@@ -109,6 +83,32 @@ class ReleasePublicIpAddressRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $publicIpAddress
+     *
+     * @return $this
+     */
+    public function setPublicIpAddress($publicIpAddress)
+    {
+        $this->requestParameters['PublicIpAddress'] = $publicIpAddress;
+        $this->queryParameters['PublicIpAddress'] = $publicIpAddress;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

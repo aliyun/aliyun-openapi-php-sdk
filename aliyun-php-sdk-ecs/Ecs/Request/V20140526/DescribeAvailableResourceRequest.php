@@ -21,6 +21,7 @@ namespace Ecs\Request\V20140526;
  * @method string getOwnerAccount()
  * @method string getDedicatedHostId()
  * @method string getOwnerId()
+ * @method string getSpotDuration()
  * @method string getResourceType()
  * @method string getSpotStrategy()
  * @method string getDestinationResource()
@@ -225,6 +226,19 @@ class DescribeAvailableResourceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $spotDuration
+     *
+     * @return $this
+     */
+    public function setSpotDuration($spotDuration)
+    {
+        $this->requestParameters['SpotDuration'] = $spotDuration;
+        $this->queryParameters['SpotDuration'] = $spotDuration;
 
         return $this;
     }

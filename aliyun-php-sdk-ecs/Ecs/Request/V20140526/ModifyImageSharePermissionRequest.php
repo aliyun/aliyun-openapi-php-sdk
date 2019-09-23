@@ -9,11 +9,11 @@ namespace Ecs\Request\V20140526;
  *
  * @method string getResourceOwnerId()
  * @method string getImageId()
- * @method array getAddAccounts()
  * @method string getResourceOwnerAccount()
- * @method array getRemoveAccounts()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method array getAddAccounts()
+ * @method array getRemoveAccounts()
  */
 class ModifyImageSharePermissionRequest extends \RpcAcsRequest
 {
@@ -63,21 +63,6 @@ class ModifyImageSharePermissionRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $addAccount
-     *
-     * @return $this
-     */
-    public function setAddAccounts(array $addAccount)
-    {
-        $this->requestParameters['AddAccounts'] = $addAccount;
-        foreach ($addAccount as $i => $iValue) {
-            $this->queryParameters['AddAccount.' . ($i + 1)] = $iValue;
-        }
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -86,21 +71,6 @@ class ModifyImageSharePermissionRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param array $removeAccount
-     *
-     * @return $this
-     */
-    public function setRemoveAccounts(array $removeAccount)
-    {
-        $this->requestParameters['RemoveAccounts'] = $removeAccount;
-        foreach ($removeAccount as $i => $iValue) {
-            $this->queryParameters['RemoveAccount.' . ($i + 1)] = $iValue;
-        }
 
         return $this;
     }
@@ -129,5 +99,35 @@ class ModifyImageSharePermissionRequest extends \RpcAcsRequest
         $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
+    }
+
+    /**
+     * @param array $addAccount
+     *
+     * @return $this
+     */
+	public function setAddAccounts(array $addAccount)
+	{
+	    $this->requestParameters['AddAccounts'] = $addAccount;
+		foreach ($addAccount as $i => $iValue) {
+			$this->queryParameters['AddAccount.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
+    }
+
+    /**
+     * @param array $removeAccount
+     *
+     * @return $this
+     */
+	public function setRemoveAccounts(array $removeAccount)
+	{
+	    $this->requestParameters['RemoveAccounts'] = $removeAccount;
+		foreach ($removeAccount as $i => $iValue) {
+			$this->queryParameters['RemoveAccount.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
     }
 }

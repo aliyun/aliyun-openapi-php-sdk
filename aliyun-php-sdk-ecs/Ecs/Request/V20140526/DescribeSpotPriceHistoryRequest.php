@@ -18,6 +18,7 @@ namespace Ecs\Request\V20140526;
  * @method string getEndTime()
  * @method string getOSType()
  * @method string getOwnerId()
+ * @method string getSpotDuration()
  * @method string getZoneId()
  */
 class DescribeSpotPriceHistoryRequest extends \RpcAcsRequest
@@ -180,6 +181,19 @@ class DescribeSpotPriceHistoryRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $spotDuration
+     *
+     * @return $this
+     */
+    public function setSpotDuration($spotDuration)
+    {
+        $this->requestParameters['SpotDuration'] = $spotDuration;
+        $this->queryParameters['SpotDuration'] = $spotDuration;
 
         return $this;
     }

@@ -7,8 +7,8 @@ namespace Ecs\Request\V20140526;
  *
  * Request of DeleteDeploymentSet
  *
- * @method string getDeploymentSetId()
  * @method string getResourceOwnerId()
+ * @method string getDeploymentSetId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
@@ -35,19 +35,6 @@ class DeleteDeploymentSetRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $deploymentSetId
-     *
-     * @return $this
-     */
-    public function setDeploymentSetId($deploymentSetId)
-    {
-        $this->requestParameters['DeploymentSetId'] = $deploymentSetId;
-        $this->queryParameters['DeploymentSetId'] = $deploymentSetId;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerId
      *
      * @return $this
@@ -56,6 +43,19 @@ class DeleteDeploymentSetRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $deploymentSetId
+     *
+     * @return $this
+     */
+    public function setDeploymentSetId($deploymentSetId)
+    {
+        $this->requestParameters['DeploymentSetId'] = $deploymentSetId;
+        $this->queryParameters['DeploymentSetId'] = $deploymentSetId;
 
         return $this;
     }

@@ -8,13 +8,13 @@ namespace Ecs\Request\V20140526;
  * Request of ModifyRouterInterfaceSpec
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
  * @method string getClientToken()
- * @method string getOwnerAccount()
+ * @method string getSpec()
  * @method string getUserCidr()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
  * @method string getRouterInterfaceId()
  * @method string getOwnerId()
- * @method string getSpec()
  */
 class ModifyRouterInterfaceSpecRequest extends \RpcAcsRequest
 {
@@ -51,19 +51,6 @@ class ModifyRouterInterfaceSpecRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $clientToken
      *
      * @return $this
@@ -77,14 +64,14 @@ class ModifyRouterInterfaceSpecRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerAccount
+     * @param string $spec
      *
      * @return $this
      */
-    public function setOwnerAccount($ownerAccount)
+    public function setSpec($spec)
     {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+        $this->requestParameters['Spec'] = $spec;
+        $this->queryParameters['Spec'] = $spec;
 
         return $this;
     }
@@ -98,6 +85,32 @@ class ModifyRouterInterfaceSpecRequest extends \RpcAcsRequest
     {
         $this->requestParameters['UserCidr'] = $userCidr;
         $this->queryParameters['UserCidr'] = $userCidr;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
         return $this;
     }
@@ -124,19 +137,6 @@ class ModifyRouterInterfaceSpecRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $spec
-     *
-     * @return $this
-     */
-    public function setSpec($spec)
-    {
-        $this->requestParameters['Spec'] = $spec;
-        $this->queryParameters['Spec'] = $spec;
 
         return $this;
     }

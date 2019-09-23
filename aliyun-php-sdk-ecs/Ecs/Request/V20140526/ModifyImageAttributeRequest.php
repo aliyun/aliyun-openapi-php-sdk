@@ -9,10 +9,10 @@ namespace Ecs\Request\V20140526;
  *
  * @method string getResourceOwnerId()
  * @method string getImageId()
- * @method string getResourceOwnerAccount()
- * @method string getImageName()
- * @method string getOwnerAccount()
  * @method string getDescription()
+ * @method string getImageName()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
  * @method string getOwnerId()
  */
 class ModifyImageAttributeRequest extends \RpcAcsRequest
@@ -63,14 +63,14 @@ class ModifyImageAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
+     * @param string $description
      *
      * @return $this
      */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
+    public function setDescription($description)
     {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
 
         return $this;
     }
@@ -89,6 +89,19 @@ class ModifyImageAttributeRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerAccount
      *
      * @return $this
@@ -97,19 +110,6 @@ class ModifyImageAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $description
-     *
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->requestParameters['Description'] = $description;
-        $this->queryParameters['Description'] = $description;
 
         return $this;
     }

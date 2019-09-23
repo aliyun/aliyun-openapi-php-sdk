@@ -9,20 +9,20 @@ namespace Ecs\Request\V20140526;
  *
  * @method string getResourceOwnerId()
  * @method string getImageId()
- * @method string getResourceOwnerAccount()
  * @method string getClientToken()
- * @method string getOwnerAccount()
  * @method string getSecurityEnhancementStrategy()
  * @method string getKeyPairName()
- * @method string getOwnerId()
  * @method string getPlatform()
  * @method string getPassword()
- * @method string getInstanceId()
  * @method string getPasswordInherit()
- * @method string getSystemDiskSize()
  * @method string getDiskId()
- * @method string getUseAdditionalService()
  * @method string getArchitecture()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getOwnerId()
+ * @method string getInstanceId()
+ * @method string getSystemDiskSize()
+ * @method string getUseAdditionalService()
  */
 class ReplaceSystemDiskRequest extends \RpcAcsRequest
 {
@@ -72,19 +72,6 @@ class ReplaceSystemDiskRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $clientToken
      *
      * @return $this
@@ -93,19 +80,6 @@ class ReplaceSystemDiskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ClientToken'] = $clientToken;
         $this->queryParameters['ClientToken'] = $clientToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
         return $this;
     }
@@ -137,19 +111,6 @@ class ReplaceSystemDiskRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
      * @param string $platform
      *
      * @return $this
@@ -176,19 +137,6 @@ class ReplaceSystemDiskRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $passwordInherit
      *
      * @return $this
@@ -197,19 +145,6 @@ class ReplaceSystemDiskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PasswordInherit'] = $passwordInherit;
         $this->queryParameters['PasswordInherit'] = $passwordInherit;
-
-        return $this;
-    }
-
-    /**
-     * @param string $systemDiskSize
-     *
-     * @return $this
-     */
-    public function setSystemDiskSize($systemDiskSize)
-    {
-        $this->requestParameters['SystemDiskSize'] = $systemDiskSize;
-        $this->queryParameters['SystemDisk.Size'] = $systemDiskSize;
 
         return $this;
     }
@@ -228,19 +163,6 @@ class ReplaceSystemDiskRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $useAdditionalService
-     *
-     * @return $this
-     */
-    public function setUseAdditionalService($useAdditionalService)
-    {
-        $this->requestParameters['UseAdditionalService'] = $useAdditionalService;
-        $this->queryParameters['UseAdditionalService'] = $useAdditionalService;
-
-        return $this;
-    }
-
-    /**
      * @param string $architecture
      *
      * @return $this
@@ -249,6 +171,84 @@ class ReplaceSystemDiskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Architecture'] = $architecture;
         $this->queryParameters['Architecture'] = $architecture;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $systemDiskSize
+     *
+     * @return $this
+     */
+    public function setSystemDiskSize($systemDiskSize)
+    {
+        $this->requestParameters['SystemDiskSize'] = $systemDiskSize;
+        $this->queryParameters['SystemDisk.Size'] = $systemDiskSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $useAdditionalService
+     *
+     * @return $this
+     */
+    public function setUseAdditionalService($useAdditionalService)
+    {
+        $this->requestParameters['UseAdditionalService'] = $useAdditionalService;
+        $this->queryParameters['UseAdditionalService'] = $useAdditionalService;
 
         return $this;
     }

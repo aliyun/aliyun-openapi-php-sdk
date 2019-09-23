@@ -53,18 +53,18 @@ class ModifyReservedInstancesRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setConfigurations(array $configuration)
-    {
-        $this->requestParameters['Configurations'] = $configuration;
-        foreach ($configuration as $depth1 => $depth1Value) {
-            $this->queryParameters['Configuration.' . ($depth1 + 1) . '.ZoneId'] = $depth1Value['ZoneId'];
-            $this->queryParameters['Configuration.' . ($depth1 + 1) . '.ReservedInstanceName'] = $depth1Value['ReservedInstanceName'];
-            $this->queryParameters['Configuration.' . ($depth1 + 1) . '.InstanceType'] = $depth1Value['InstanceType'];
-            $this->queryParameters['Configuration.' . ($depth1 + 1) . '.Scope'] = $depth1Value['Scope'];
-            $this->queryParameters['Configuration.' . ($depth1 + 1) . '.InstanceAmount'] = $depth1Value['InstanceAmount'];
-        }
+	public function setConfigurations(array $configuration)
+	{
+	    $this->requestParameters['Configurations'] = $configuration;
+		foreach ($configuration as $depth1 => $depth1Value) {
+			$this->queryParameters['Configuration.' . ($depth1 + 1) . '.ZoneId'] = $depth1Value['ZoneId'];
+			$this->queryParameters['Configuration.' . ($depth1 + 1) . '.ReservedInstanceName'] = $depth1Value['ReservedInstanceName'];
+			$this->queryParameters['Configuration.' . ($depth1 + 1) . '.InstanceType'] = $depth1Value['InstanceType'];
+			$this->queryParameters['Configuration.' . ($depth1 + 1) . '.Scope'] = $depth1Value['Scope'];
+			$this->queryParameters['Configuration.' . ($depth1 + 1) . '.InstanceAmount'] = $depth1Value['InstanceAmount'];
+		}
 
-        return $this;
+		return $this;
     }
 
     /**
@@ -111,13 +111,13 @@ class ModifyReservedInstancesRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setReservedInstanceIds(array $reservedInstanceId)
-    {
-        $this->requestParameters['ReservedInstanceIds'] = $reservedInstanceId;
-        foreach ($reservedInstanceId as $i => $iValue) {
-            $this->queryParameters['ReservedInstanceId.' . ($i + 1)] = $iValue;
-        }
+	public function setReservedInstanceIds(array $reservedInstanceId)
+	{
+	    $this->requestParameters['ReservedInstanceIds'] = $reservedInstanceId;
+		foreach ($reservedInstanceId as $i => $iValue) {
+			$this->queryParameters['ReservedInstanceId.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 }

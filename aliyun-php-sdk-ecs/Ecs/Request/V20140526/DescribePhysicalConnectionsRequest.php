@@ -7,15 +7,15 @@ namespace Ecs\Request\V20140526;
  *
  * Request of DescribePhysicalConnections
  *
- * @method array getFilters()
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
  * @method string getClientToken()
- * @method string getOwnerAccount()
+ * @method string getPageNumber()
  * @method string getPageSize()
  * @method string getUserCidr()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
  * @method string getOwnerId()
- * @method string getPageNumber()
+ * @method array getFilters()
  */
 class DescribePhysicalConnectionsRequest extends \RpcAcsRequest
 {
@@ -39,24 +39,6 @@ class DescribePhysicalConnectionsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $filter
-     *
-     * @return $this
-     */
-    public function setFilters(array $filter)
-    {
-        $this->requestParameters['Filters'] = $filter;
-        foreach ($filter as $depth1 => $depth1Value) {
-            foreach ($depth1Value['Value'] as $i => $iValue) {
-                $this->queryParameters['Filter.' . ($depth1 + 1) . '.Value.' . ($i + 1)] = $iValue;
-            }
-            $this->queryParameters['Filter.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
-        }
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerId
      *
      * @return $this
@@ -65,19 +47,6 @@ class DescribePhysicalConnectionsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }
@@ -96,14 +65,14 @@ class DescribePhysicalConnectionsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerAccount
+     * @param string $pageNumber
      *
      * @return $this
      */
-    public function setOwnerAccount($ownerAccount)
+    public function setPageNumber($pageNumber)
     {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }
@@ -135,6 +104,32 @@ class DescribePhysicalConnectionsRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -148,15 +143,20 @@ class DescribePhysicalConnectionsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageNumber
+     * @param array $filter
      *
      * @return $this
      */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
+	public function setFilters(array $filter)
+	{
+	    $this->requestParameters['Filters'] = $filter;
+		foreach ($filter as $depth1 => $depth1Value) {
+			foreach ($depth1Value['Value'] as $i => $iValue) {
+				$this->queryParameters['Filter.' . ($depth1 + 1) . '.Value.' . ($i + 1)] = $iValue;
+			}
+			$this->queryParameters['Filter.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+		}
 
-        return $this;
+		return $this;
     }
 }

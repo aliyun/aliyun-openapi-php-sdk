@@ -8,10 +8,10 @@ namespace Ecs\Request\V20140526;
  * Request of DeleteForwardEntry
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
- * @method string getForwardEntryId()
- * @method string getOwnerAccount()
  * @method string getForwardTableId()
+ * @method string getForwardEntryId()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
  * @method string getOwnerId()
  */
 class DeleteForwardEntryRequest extends \RpcAcsRequest
@@ -49,14 +49,14 @@ class DeleteForwardEntryRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
+     * @param string $forwardTableId
      *
      * @return $this
      */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
+    public function setForwardTableId($forwardTableId)
     {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->requestParameters['ForwardTableId'] = $forwardTableId;
+        $this->queryParameters['ForwardTableId'] = $forwardTableId;
 
         return $this;
     }
@@ -75,6 +75,19 @@ class DeleteForwardEntryRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerAccount
      *
      * @return $this
@@ -83,19 +96,6 @@ class DeleteForwardEntryRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $forwardTableId
-     *
-     * @return $this
-     */
-    public function setForwardTableId($forwardTableId)
-    {
-        $this->requestParameters['ForwardTableId'] = $forwardTableId;
-        $this->queryParameters['ForwardTableId'] = $forwardTableId;
 
         return $this;
     }

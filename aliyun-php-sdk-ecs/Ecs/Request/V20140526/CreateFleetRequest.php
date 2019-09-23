@@ -189,18 +189,18 @@ class CreateFleetRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setLaunchTemplateConfigs(array $launchTemplateConfig)
-    {
-        $this->requestParameters['LaunchTemplateConfigs'] = $launchTemplateConfig;
-        foreach ($launchTemplateConfig as $depth1 => $depth1Value) {
-            $this->queryParameters['LaunchTemplateConfig.' . ($depth1 + 1) . '.InstanceType'] = $depth1Value['InstanceType'];
-            $this->queryParameters['LaunchTemplateConfig.' . ($depth1 + 1) . '.MaxPrice'] = $depth1Value['MaxPrice'];
-            $this->queryParameters['LaunchTemplateConfig.' . ($depth1 + 1) . '.VSwitchId'] = $depth1Value['VSwitchId'];
-            $this->queryParameters['LaunchTemplateConfig.' . ($depth1 + 1) . '.WeightedCapacity'] = $depth1Value['WeightedCapacity'];
-            $this->queryParameters['LaunchTemplateConfig.' . ($depth1 + 1) . '.Priority'] = $depth1Value['Priority'];
-        }
+	public function setLaunchTemplateConfigs(array $launchTemplateConfig)
+	{
+	    $this->requestParameters['LaunchTemplateConfigs'] = $launchTemplateConfig;
+		foreach ($launchTemplateConfig as $depth1 => $depth1Value) {
+			$this->queryParameters['LaunchTemplateConfig.' . ($depth1 + 1) . '.InstanceType'] = $depth1Value['InstanceType'];
+			$this->queryParameters['LaunchTemplateConfig.' . ($depth1 + 1) . '.MaxPrice'] = $depth1Value['MaxPrice'];
+			$this->queryParameters['LaunchTemplateConfig.' . ($depth1 + 1) . '.VSwitchId'] = $depth1Value['VSwitchId'];
+			$this->queryParameters['LaunchTemplateConfig.' . ($depth1 + 1) . '.WeightedCapacity'] = $depth1Value['WeightedCapacity'];
+			$this->queryParameters['LaunchTemplateConfig.' . ($depth1 + 1) . '.Priority'] = $depth1Value['Priority'];
+		}
 
-        return $this;
+		return $this;
     }
 
     /**

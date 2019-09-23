@@ -8,18 +8,15 @@ namespace Ecs\Request\V20140526;
  * Request of CreateSnapshot
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
  * @method string getClientToken()
- * @method string getOwnerAccount()
  * @method string getDescription()
  * @method string getSnapshotName()
- * @method string getOwnerId()
- * @method string getSourceSnapshotId()
- * @method string getRemoveSourceSnapshot()
  * @method string getDiskId()
- * @method string getRetentionDays()
  * @method array getTags()
- * @method string getCategory()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getOwnerId()
+ * @method string getRetentionDays()
  */
 class CreateSnapshotRequest extends \RpcAcsRequest
 {
@@ -56,19 +53,6 @@ class CreateSnapshotRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $clientToken
      *
      * @return $this
@@ -77,19 +61,6 @@ class CreateSnapshotRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ClientToken'] = $clientToken;
         $this->queryParameters['ClientToken'] = $clientToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
         return $this;
     }
@@ -121,45 +92,6 @@ class CreateSnapshotRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $sourceSnapshotId
-     *
-     * @return $this
-     */
-    public function setSourceSnapshotId($sourceSnapshotId)
-    {
-        $this->requestParameters['SourceSnapshotId'] = $sourceSnapshotId;
-        $this->queryParameters['SourceSnapshotId'] = $sourceSnapshotId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $removeSourceSnapshot
-     *
-     * @return $this
-     */
-    public function setRemoveSourceSnapshot($removeSourceSnapshot)
-    {
-        $this->requestParameters['RemoveSourceSnapshot'] = $removeSourceSnapshot;
-        $this->queryParameters['RemoveSourceSnapshot'] = $removeSourceSnapshot;
-
-        return $this;
-    }
-
-    /**
      * @param string $diskId
      *
      * @return $this
@@ -173,6 +105,61 @@ class CreateSnapshotRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param array $tag
+     *
+     * @return $this
+     */
+	public function setTags(array $tag)
+	{
+	    $this->requestParameters['Tags'] = $tag;
+		foreach ($tag as $depth1 => $depth1Value) {
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+		}
+
+		return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
      * @param string $retentionDays
      *
      * @return $this
@@ -181,35 +168,6 @@ class CreateSnapshotRequest extends \RpcAcsRequest
     {
         $this->requestParameters['RetentionDays'] = $retentionDays;
         $this->queryParameters['RetentionDays'] = $retentionDays;
-
-        return $this;
-    }
-
-    /**
-     * @param array $tag
-     *
-     * @return $this
-     */
-    public function setTags(array $tag)
-    {
-        $this->requestParameters['Tags'] = $tag;
-        foreach ($tag as $depth1 => $depth1Value) {
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
-        }
-
-        return $this;
-    }
-
-    /**
-     * @param string $category
-     *
-     * @return $this
-     */
-    public function setCategory($category)
-    {
-        $this->requestParameters['Category'] = $category;
-        $this->queryParameters['Category'] = $category;
 
         return $this;
     }
