@@ -1,0 +1,129 @@
+<?php
+
+namespace Dyplsapi\Request\V20170525;
+
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of OperateAxgGroup
+ *
+ * @method string getResourceOwnerId()
+ * @method string getNumbers()
+ * @method string getResourceOwnerAccount()
+ * @method string getGroupId()
+ * @method string getOwnerId()
+ * @method string getPoolKey()
+ * @method string getOperateType()
+ */
+class OperateAxgGroupRequest extends \RpcAcsRequest
+{
+
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
+
+    /**
+     * Class constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct(
+            'Dyplsapi',
+            '2017-05-25',
+            'OperateAxgGroup',
+            'dypls'
+        );
+    }
+
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $numbers
+     *
+     * @return $this
+     */
+    public function setNumbers($numbers)
+    {
+        $this->requestParameters['Numbers'] = $numbers;
+        $this->queryParameters['Numbers'] = $numbers;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $groupId
+     *
+     * @return $this
+     */
+    public function setGroupId($groupId)
+    {
+        $this->requestParameters['GroupId'] = $groupId;
+        $this->queryParameters['GroupId'] = $groupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $poolKey
+     *
+     * @return $this
+     */
+    public function setPoolKey($poolKey)
+    {
+        $this->requestParameters['PoolKey'] = $poolKey;
+        $this->queryParameters['PoolKey'] = $poolKey;
+
+        return $this;
+    }
+
+    /**
+     * @param string $operateType
+     *
+     * @return $this
+     */
+    public function setOperateType($operateType)
+    {
+        $this->requestParameters['OperateType'] = $operateType;
+        $this->queryParameters['OperateType'] = $operateType;
+
+        return $this;
+    }
+}
