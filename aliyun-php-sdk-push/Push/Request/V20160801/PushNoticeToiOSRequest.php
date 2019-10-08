@@ -3,16 +3,18 @@
 namespace Push\Request\V20160801;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of PushNoticeToiOS
  *
  * @method string getExtParameters()
  * @method string getApnsEnv()
- * @method string getAppKey()
- * @method string getTargetValue()
  * @method string getTitle()
  * @method string getBody()
  * @method string getJobKey()
  * @method string getTarget()
+ * @method string getAppKey()
+ * @method string getTargetValue()
  */
 class PushNoticeToiOSRequest extends \RpcAcsRequest
 {
@@ -56,32 +58,6 @@ class PushNoticeToiOSRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ApnsEnv'] = $apnsEnv;
         $this->queryParameters['ApnsEnv'] = $apnsEnv;
-
-        return $this;
-    }
-
-    /**
-     * @param string $appKey
-     *
-     * @return $this
-     */
-    public function setAppKey($appKey)
-    {
-        $this->requestParameters['AppKey'] = $appKey;
-        $this->queryParameters['AppKey'] = $appKey;
-
-        return $this;
-    }
-
-    /**
-     * @param string $targetValue
-     *
-     * @return $this
-     */
-    public function setTargetValue($targetValue)
-    {
-        $this->requestParameters['TargetValue'] = $targetValue;
-        $this->queryParameters['TargetValue'] = $targetValue;
 
         return $this;
     }
@@ -134,6 +110,32 @@ class PushNoticeToiOSRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Target'] = $target;
         $this->queryParameters['Target'] = $target;
+
+        return $this;
+    }
+
+    /**
+     * @param string $appKey
+     *
+     * @return $this
+     */
+    public function setAppKey($appKey)
+    {
+        $this->requestParameters['AppKey'] = $appKey;
+        $this->queryParameters['AppKey'] = $appKey;
+
+        return $this;
+    }
+
+    /**
+     * @param string $targetValue
+     *
+     * @return $this
+     */
+    public function setTargetValue($targetValue)
+    {
+        $this->requestParameters['TargetValue'] = $targetValue;
+        $this->queryParameters['TargetValue'] = $targetValue;
 
         return $this;
     }

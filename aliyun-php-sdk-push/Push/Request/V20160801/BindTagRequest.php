@@ -3,12 +3,14 @@
 namespace Push\Request\V20160801;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of BindTag
  *
+ * @method string getKeyType()
  * @method string getTagName()
  * @method string getClientKey()
  * @method string getAppKey()
- * @method string getKeyType()
  */
 class BindTagRequest extends \RpcAcsRequest
 {
@@ -28,6 +30,19 @@ class BindTagRequest extends \RpcAcsRequest
             '2016-08-01',
             'BindTag'
         );
+    }
+
+    /**
+     * @param string $keyType
+     *
+     * @return $this
+     */
+    public function setKeyType($keyType)
+    {
+        $this->requestParameters['KeyType'] = $keyType;
+        $this->queryParameters['KeyType'] = $keyType;
+
+        return $this;
     }
 
     /**
@@ -65,19 +80,6 @@ class BindTagRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AppKey'] = $appKey;
         $this->queryParameters['AppKey'] = $appKey;
-
-        return $this;
-    }
-
-    /**
-     * @param string $keyType
-     *
-     * @return $this
-     */
-    public function setKeyType($keyType)
-    {
-        $this->requestParameters['KeyType'] = $keyType;
-        $this->queryParameters['KeyType'] = $keyType;
 
         return $this;
     }

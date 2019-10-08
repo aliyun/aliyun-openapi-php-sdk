@@ -3,6 +3,8 @@
 namespace Push\Request\V20160801;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of CancelPush
  *
  * @method string getMessageId()

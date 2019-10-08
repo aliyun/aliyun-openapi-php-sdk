@@ -3,11 +3,13 @@
 namespace Push\Request\V20160801;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of BindAlias
  *
+ * @method string getDeviceId()
  * @method string getAliasName()
  * @method string getAppKey()
- * @method string getDeviceId()
  */
 class BindAliasRequest extends \RpcAcsRequest
 {
@@ -27,6 +29,19 @@ class BindAliasRequest extends \RpcAcsRequest
             '2016-08-01',
             'BindAlias'
         );
+    }
+
+    /**
+     * @param string $deviceId
+     *
+     * @return $this
+     */
+    public function setDeviceId($deviceId)
+    {
+        $this->requestParameters['DeviceId'] = $deviceId;
+        $this->queryParameters['DeviceId'] = $deviceId;
+
+        return $this;
     }
 
     /**
@@ -51,19 +66,6 @@ class BindAliasRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AppKey'] = $appKey;
         $this->queryParameters['AppKey'] = $appKey;
-
-        return $this;
-    }
-
-    /**
-     * @param string $deviceId
-     *
-     * @return $this
-     */
-    public function setDeviceId($deviceId)
-    {
-        $this->requestParameters['DeviceId'] = $deviceId;
-        $this->queryParameters['DeviceId'] = $deviceId;
 
         return $this;
     }

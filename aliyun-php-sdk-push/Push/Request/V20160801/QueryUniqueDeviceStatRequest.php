@@ -3,12 +3,14 @@
 namespace Push\Request\V20160801;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of QueryUniqueDeviceStat
  *
- * @method string getGranularity()
  * @method string getEndTime()
- * @method string getAppKey()
  * @method string getStartTime()
+ * @method string getGranularity()
+ * @method string getAppKey()
  */
 class QueryUniqueDeviceStatRequest extends \RpcAcsRequest
 {
@@ -31,19 +33,6 @@ class QueryUniqueDeviceStatRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $granularity
-     *
-     * @return $this
-     */
-    public function setGranularity($granularity)
-    {
-        $this->requestParameters['Granularity'] = $granularity;
-        $this->queryParameters['Granularity'] = $granularity;
-
-        return $this;
-    }
-
-    /**
      * @param string $endTime
      *
      * @return $this
@@ -57,19 +46,6 @@ class QueryUniqueDeviceStatRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $appKey
-     *
-     * @return $this
-     */
-    public function setAppKey($appKey)
-    {
-        $this->requestParameters['AppKey'] = $appKey;
-        $this->queryParameters['AppKey'] = $appKey;
-
-        return $this;
-    }
-
-    /**
      * @param string $startTime
      *
      * @return $this
@@ -78,6 +54,32 @@ class QueryUniqueDeviceStatRequest extends \RpcAcsRequest
     {
         $this->requestParameters['StartTime'] = $startTime;
         $this->queryParameters['StartTime'] = $startTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $granularity
+     *
+     * @return $this
+     */
+    public function setGranularity($granularity)
+    {
+        $this->requestParameters['Granularity'] = $granularity;
+        $this->queryParameters['Granularity'] = $granularity;
+
+        return $this;
+    }
+
+    /**
+     * @param string $appKey
+     *
+     * @return $this
+     */
+    public function setAppKey($appKey)
+    {
+        $this->requestParameters['AppKey'] = $appKey;
+        $this->queryParameters['AppKey'] = $appKey;
 
         return $this;
     }

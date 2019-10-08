@@ -3,11 +3,13 @@
 namespace Push\Request\V20160801;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of UnbindAlias
  *
+ * @method string getDeviceId()
  * @method string getAliasName()
  * @method string getAppKey()
- * @method string getDeviceId()
  * @method string getUnbindAll()
  */
 class UnbindAliasRequest extends \RpcAcsRequest
@@ -28,6 +30,19 @@ class UnbindAliasRequest extends \RpcAcsRequest
             '2016-08-01',
             'UnbindAlias'
         );
+    }
+
+    /**
+     * @param string $deviceId
+     *
+     * @return $this
+     */
+    public function setDeviceId($deviceId)
+    {
+        $this->requestParameters['DeviceId'] = $deviceId;
+        $this->queryParameters['DeviceId'] = $deviceId;
+
+        return $this;
     }
 
     /**
@@ -52,19 +67,6 @@ class UnbindAliasRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AppKey'] = $appKey;
         $this->queryParameters['AppKey'] = $appKey;
-
-        return $this;
-    }
-
-    /**
-     * @param string $deviceId
-     *
-     * @return $this
-     */
-    public function setDeviceId($deviceId)
-    {
-        $this->requestParameters['DeviceId'] = $deviceId;
-        $this->queryParameters['DeviceId'] = $deviceId;
 
         return $this;
     }

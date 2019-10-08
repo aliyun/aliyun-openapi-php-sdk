@@ -3,12 +3,14 @@
 namespace Push\Request\V20160801;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of QueryPushList
  *
- * @method string getPageSize()
  * @method string getEndTime()
- * @method string getAppKey()
  * @method string getStartTime()
+ * @method string getPageSize()
+ * @method string getAppKey()
  * @method string getPage()
  * @method string getPushType()
  */
@@ -33,19 +35,6 @@ class QueryPushListRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
      * @param string $endTime
      *
      * @return $this
@@ -59,19 +48,6 @@ class QueryPushListRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $appKey
-     *
-     * @return $this
-     */
-    public function setAppKey($appKey)
-    {
-        $this->requestParameters['AppKey'] = $appKey;
-        $this->queryParameters['AppKey'] = $appKey;
-
-        return $this;
-    }
-
-    /**
      * @param string $startTime
      *
      * @return $this
@@ -80,6 +56,32 @@ class QueryPushListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['StartTime'] = $startTime;
         $this->queryParameters['StartTime'] = $startTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $appKey
+     *
+     * @return $this
+     */
+    public function setAppKey($appKey)
+    {
+        $this->requestParameters['AppKey'] = $appKey;
+        $this->queryParameters['AppKey'] = $appKey;
 
         return $this;
     }

@@ -3,12 +3,14 @@
 namespace Push\Request\V20160801;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of QueryDeviceStat
  *
  * @method string getEndTime()
- * @method string getAppKey()
  * @method string getStartTime()
  * @method string getDeviceType()
+ * @method string getAppKey()
  * @method string getQueryType()
  */
 class QueryDeviceStatRequest extends \RpcAcsRequest
@@ -45,19 +47,6 @@ class QueryDeviceStatRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $appKey
-     *
-     * @return $this
-     */
-    public function setAppKey($appKey)
-    {
-        $this->requestParameters['AppKey'] = $appKey;
-        $this->queryParameters['AppKey'] = $appKey;
-
-        return $this;
-    }
-
-    /**
      * @param string $startTime
      *
      * @return $this
@@ -79,6 +68,19 @@ class QueryDeviceStatRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DeviceType'] = $deviceType;
         $this->queryParameters['DeviceType'] = $deviceType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $appKey
+     *
+     * @return $this
+     */
+    public function setAppKey($appKey)
+    {
+        $this->requestParameters['AppKey'] = $appKey;
+        $this->queryParameters['AppKey'] = $appKey;
 
         return $this;
     }

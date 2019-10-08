@@ -3,11 +3,13 @@
 namespace Push\Request\V20160801;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of BindPhone
  *
  * @method string getPhoneNumber()
- * @method string getAppKey()
  * @method string getDeviceId()
+ * @method string getAppKey()
  */
 class BindPhoneRequest extends \RpcAcsRequest
 {
@@ -43,19 +45,6 @@ class BindPhoneRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $appKey
-     *
-     * @return $this
-     */
-    public function setAppKey($appKey)
-    {
-        $this->requestParameters['AppKey'] = $appKey;
-        $this->queryParameters['AppKey'] = $appKey;
-
-        return $this;
-    }
-
-    /**
      * @param string $deviceId
      *
      * @return $this
@@ -64,6 +53,19 @@ class BindPhoneRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DeviceId'] = $deviceId;
         $this->queryParameters['DeviceId'] = $deviceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $appKey
+     *
+     * @return $this
+     */
+    public function setAppKey($appKey)
+    {
+        $this->requestParameters['AppKey'] = $appKey;
+        $this->queryParameters['AppKey'] = $appKey;
 
         return $this;
     }
