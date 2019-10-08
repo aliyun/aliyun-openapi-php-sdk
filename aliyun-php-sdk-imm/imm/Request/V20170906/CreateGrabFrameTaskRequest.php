@@ -5,7 +5,7 @@ namespace imm\Request\V20170906;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of CreateVideoCompressTask
+ * Request of CreateGrabFrameTask
  *
  * @method string getProject()
  * @method string getNotifyEndpoint()
@@ -14,7 +14,7 @@ namespace imm\Request\V20170906;
  * @method string getTargetList()
  * @method string getVideoUri()
  */
-class CreateVideoCompressTaskRequest extends \RpcAcsRequest
+class CreateGrabFrameTaskRequest extends \RpcAcsRequest
 {
 
     /**
@@ -30,7 +30,7 @@ class CreateVideoCompressTaskRequest extends \RpcAcsRequest
         parent::__construct(
             'imm',
             '2017-09-06',
-            'CreateVideoCompressTask',
+            'CreateGrabFrameTask',
             'imm'
         );
     }
