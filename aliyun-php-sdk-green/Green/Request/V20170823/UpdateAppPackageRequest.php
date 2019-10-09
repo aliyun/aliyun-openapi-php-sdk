@@ -8,11 +8,11 @@ namespace Green\Request\V20170823;
  * Request of UpdateAppPackage
  *
  * @method string getDebug()
+ * @method string getPlatform()
  * @method string getSourceIp()
  * @method string getPackageUrl()
  * @method string getId()
  * @method string getLang()
- * @method string getPlatform()
  */
 class UpdateAppPackageRequest extends \RpcAcsRequest
 {
@@ -44,6 +44,19 @@ class UpdateAppPackageRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Debug'] = $debug;
         $this->queryParameters['Debug'] = $debug;
+
+        return $this;
+    }
+
+    /**
+     * @param string $platform
+     *
+     * @return $this
+     */
+    public function setPlatform($platform)
+    {
+        $this->requestParameters['Platform'] = $platform;
+        $this->queryParameters['Platform'] = $platform;
 
         return $this;
     }
@@ -96,19 +109,6 @@ class UpdateAppPackageRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Lang'] = $lang;
         $this->queryParameters['Lang'] = $lang;
-
-        return $this;
-    }
-
-    /**
-     * @param string $platform
-     *
-     * @return $this
-     */
-    public function setPlatform($platform)
-    {
-        $this->requestParameters['Platform'] = $platform;
-        $this->queryParameters['Platform'] = $platform;
 
         return $this;
     }

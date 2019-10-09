@@ -7,13 +7,13 @@ namespace Green\Request\V20170823;
  *
  * Request of UpdateImageLib
  *
+ * @method string getScene()
  * @method string getSourceIp()
  * @method string getEnable()
- * @method string getName()
- * @method string getBizTypes()
  * @method string getId()
+ * @method string getBizTypes()
+ * @method string getName()
  * @method string getCategory()
- * @method string getScene()
  */
 class UpdateImageLibRequest extends \RpcAcsRequest
 {
@@ -34,6 +34,19 @@ class UpdateImageLibRequest extends \RpcAcsRequest
             'UpdateImageLib',
             'green'
         );
+    }
+
+    /**
+     * @param string $scene
+     *
+     * @return $this
+     */
+    public function setScene($scene)
+    {
+        $this->requestParameters['Scene'] = $scene;
+        $this->queryParameters['Scene'] = $scene;
+
+        return $this;
     }
 
     /**
@@ -63,14 +76,14 @@ class UpdateImageLibRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $name
+     * @param string $id
      *
      * @return $this
      */
-    public function setName($name)
+    public function setId($id)
     {
-        $this->requestParameters['Name'] = $name;
-        $this->queryParameters['Name'] = $name;
+        $this->requestParameters['Id'] = $id;
+        $this->queryParameters['Id'] = $id;
 
         return $this;
     }
@@ -89,14 +102,14 @@ class UpdateImageLibRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $id
+     * @param string $name
      *
      * @return $this
      */
-    public function setId($id)
+    public function setName($name)
     {
-        $this->requestParameters['Id'] = $id;
-        $this->queryParameters['Id'] = $id;
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
         return $this;
     }
@@ -110,19 +123,6 @@ class UpdateImageLibRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Category'] = $category;
         $this->queryParameters['Category'] = $category;
-
-        return $this;
-    }
-
-    /**
-     * @param string $scene
-     *
-     * @return $this
-     */
-    public function setScene($scene)
-    {
-        $this->requestParameters['Scene'] = $scene;
-        $this->queryParameters['Scene'] = $scene;
 
         return $this;
     }

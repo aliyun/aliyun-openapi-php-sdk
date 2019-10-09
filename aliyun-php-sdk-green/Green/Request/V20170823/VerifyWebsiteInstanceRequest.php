@@ -7,9 +7,9 @@ namespace Green\Request\V20170823;
  *
  * Request of VerifyWebsiteInstance
  *
+ * @method string getVerifyMethod()
  * @method string getInstanceId()
  * @method string getSourceIp()
- * @method string getVerifyMethod()
  * @method string getLang()
  */
 class VerifyWebsiteInstanceRequest extends \RpcAcsRequest
@@ -34,6 +34,19 @@ class VerifyWebsiteInstanceRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $verifyMethod
+     *
+     * @return $this
+     */
+    public function setVerifyMethod($verifyMethod)
+    {
+        $this->requestParameters['VerifyMethod'] = $verifyMethod;
+        $this->queryParameters['VerifyMethod'] = $verifyMethod;
+
+        return $this;
+    }
+
+    /**
      * @param string $instanceId
      *
      * @return $this
@@ -55,19 +68,6 @@ class VerifyWebsiteInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SourceIp'] = $sourceIp;
         $this->queryParameters['SourceIp'] = $sourceIp;
-
-        return $this;
-    }
-
-    /**
-     * @param string $verifyMethod
-     *
-     * @return $this
-     */
-    public function setVerifyMethod($verifyMethod)
-    {
-        $this->requestParameters['VerifyMethod'] = $verifyMethod;
-        $this->queryParameters['VerifyMethod'] = $verifyMethod;
 
         return $this;
     }

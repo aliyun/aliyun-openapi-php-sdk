@@ -7,8 +7,8 @@ namespace Green\Request\V20170823;
  *
  * Request of ImportKeywords
  *
- * @method string getSourceIp()
  * @method string getKeywordLibId()
+ * @method string getSourceIp()
  * @method string getKeywordsObject()
  */
 class ImportKeywordsRequest extends \RpcAcsRequest
@@ -33,19 +33,6 @@ class ImportKeywordsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $sourceIp
-     *
-     * @return $this
-     */
-    public function setSourceIp($sourceIp)
-    {
-        $this->requestParameters['SourceIp'] = $sourceIp;
-        $this->queryParameters['SourceIp'] = $sourceIp;
-
-        return $this;
-    }
-
-    /**
      * @param string $keywordLibId
      *
      * @return $this
@@ -54,6 +41,19 @@ class ImportKeywordsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['KeywordLibId'] = $keywordLibId;
         $this->queryParameters['KeywordLibId'] = $keywordLibId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sourceIp
+     *
+     * @return $this
+     */
+    public function setSourceIp($sourceIp)
+    {
+        $this->requestParameters['SourceIp'] = $sourceIp;
+        $this->queryParameters['SourceIp'] = $sourceIp;
 
         return $this;
     }

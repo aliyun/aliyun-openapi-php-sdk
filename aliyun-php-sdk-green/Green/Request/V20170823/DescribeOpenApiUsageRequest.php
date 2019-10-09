@@ -7,10 +7,10 @@ namespace Green\Request\V20170823;
  *
  * Request of DescribeOpenApiUsage
  *
- * @method string getEndDate()
- * @method string getSourceIp()
  * @method string getStartDate()
  * @method string getResourceType()
+ * @method string getEndDate()
+ * @method string getSourceIp()
  */
 class DescribeOpenApiUsageRequest extends \RpcAcsRequest
 {
@@ -31,32 +31,6 @@ class DescribeOpenApiUsageRequest extends \RpcAcsRequest
             'DescribeOpenApiUsage',
             'green'
         );
-    }
-
-    /**
-     * @param string $endDate
-     *
-     * @return $this
-     */
-    public function setEndDate($endDate)
-    {
-        $this->requestParameters['EndDate'] = $endDate;
-        $this->queryParameters['EndDate'] = $endDate;
-
-        return $this;
-    }
-
-    /**
-     * @param string $sourceIp
-     *
-     * @return $this
-     */
-    public function setSourceIp($sourceIp)
-    {
-        $this->requestParameters['SourceIp'] = $sourceIp;
-        $this->queryParameters['SourceIp'] = $sourceIp;
-
-        return $this;
     }
 
     /**
@@ -81,6 +55,32 @@ class DescribeOpenApiUsageRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceType'] = $resourceType;
         $this->queryParameters['ResourceType'] = $resourceType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $endDate
+     *
+     * @return $this
+     */
+    public function setEndDate($endDate)
+    {
+        $this->requestParameters['EndDate'] = $endDate;
+        $this->queryParameters['EndDate'] = $endDate;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sourceIp
+     *
+     * @return $this
+     */
+    public function setSourceIp($sourceIp)
+    {
+        $this->requestParameters['SourceIp'] = $sourceIp;
+        $this->queryParameters['SourceIp'] = $sourceIp;
 
         return $this;
     }

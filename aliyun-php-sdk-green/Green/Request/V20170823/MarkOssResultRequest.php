@@ -7,13 +7,13 @@ namespace Green\Request\V20170823;
  *
  * Request of MarkOssResult
  *
+ * @method string getScene()
  * @method string getSourceIp()
- * @method string getIds()
  * @method string getLang()
  * @method string getStock()
- * @method string getOperation()
  * @method string getResourceType()
- * @method string getScene()
+ * @method string getIds()
+ * @method string getOperation()
  */
 class MarkOssResultRequest extends \RpcAcsRequest
 {
@@ -37,6 +37,19 @@ class MarkOssResultRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $scene
+     *
+     * @return $this
+     */
+    public function setScene($scene)
+    {
+        $this->requestParameters['Scene'] = $scene;
+        $this->queryParameters['Scene'] = $scene;
+
+        return $this;
+    }
+
+    /**
      * @param string $sourceIp
      *
      * @return $this
@@ -45,19 +58,6 @@ class MarkOssResultRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SourceIp'] = $sourceIp;
         $this->queryParameters['SourceIp'] = $sourceIp;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ids
-     *
-     * @return $this
-     */
-    public function setIds($ids)
-    {
-        $this->requestParameters['Ids'] = $ids;
-        $this->queryParameters['Ids'] = $ids;
 
         return $this;
     }
@@ -89,19 +89,6 @@ class MarkOssResultRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $operation
-     *
-     * @return $this
-     */
-    public function setOperation($operation)
-    {
-        $this->requestParameters['Operation'] = $operation;
-        $this->queryParameters['Operation'] = $operation;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceType
      *
      * @return $this
@@ -115,14 +102,27 @@ class MarkOssResultRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $scene
+     * @param string $ids
      *
      * @return $this
      */
-    public function setScene($scene)
+    public function setIds($ids)
     {
-        $this->requestParameters['Scene'] = $scene;
-        $this->queryParameters['Scene'] = $scene;
+        $this->requestParameters['Ids'] = $ids;
+        $this->queryParameters['Ids'] = $ids;
+
+        return $this;
+    }
+
+    /**
+     * @param string $operation
+     *
+     * @return $this
+     */
+    public function setOperation($operation)
+    {
+        $this->requestParameters['Operation'] = $operation;
+        $this->queryParameters['Operation'] = $operation;
 
         return $this;
     }

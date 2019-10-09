@@ -7,21 +7,21 @@ namespace Green\Request\V20170823;
  *
  * Request of DescribeOssResultItems
  *
- * @method string getTotalCount()
  * @method string getMinScore()
- * @method string getSuggestion()
- * @method string getCurrentPage()
  * @method string getMaxScore()
  * @method string getStartDate()
- * @method string getResourceType()
  * @method string getScene()
- * @method string getQueryId()
- * @method string getBucket()
- * @method string getEndDate()
  * @method string getSourceIp()
  * @method string getPageSize()
  * @method string getLang()
  * @method string getStock()
+ * @method string getTotalCount()
+ * @method string getSuggestion()
+ * @method string getCurrentPage()
+ * @method string getResourceType()
+ * @method string getQueryId()
+ * @method string getBucket()
+ * @method string getEndDate()
  * @method string getObject()
  */
 class DescribeOssResultItemsRequest extends \RpcAcsRequest
@@ -46,19 +46,6 @@ class DescribeOssResultItemsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $totalCount
-     *
-     * @return $this
-     */
-    public function setTotalCount($totalCount)
-    {
-        $this->requestParameters['TotalCount'] = $totalCount;
-        $this->queryParameters['TotalCount'] = $totalCount;
-
-        return $this;
-    }
-
-    /**
      * @param string $minScore
      *
      * @return $this
@@ -67,32 +54,6 @@ class DescribeOssResultItemsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['MinScore'] = $minScore;
         $this->queryParameters['MinScore'] = $minScore;
-
-        return $this;
-    }
-
-    /**
-     * @param string $suggestion
-     *
-     * @return $this
-     */
-    public function setSuggestion($suggestion)
-    {
-        $this->requestParameters['Suggestion'] = $suggestion;
-        $this->queryParameters['Suggestion'] = $suggestion;
-
-        return $this;
-    }
-
-    /**
-     * @param string $currentPage
-     *
-     * @return $this
-     */
-    public function setCurrentPage($currentPage)
-    {
-        $this->requestParameters['CurrentPage'] = $currentPage;
-        $this->queryParameters['CurrentPage'] = $currentPage;
 
         return $this;
     }
@@ -124,19 +85,6 @@ class DescribeOssResultItemsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceType
-     *
-     * @return $this
-     */
-    public function setResourceType($resourceType)
-    {
-        $this->requestParameters['ResourceType'] = $resourceType;
-        $this->queryParameters['ResourceType'] = $resourceType;
-
-        return $this;
-    }
-
-    /**
      * @param string $scene
      *
      * @return $this
@@ -145,45 +93,6 @@ class DescribeOssResultItemsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Scene'] = $scene;
         $this->queryParameters['Scene'] = $scene;
-
-        return $this;
-    }
-
-    /**
-     * @param string $queryId
-     *
-     * @return $this
-     */
-    public function setQueryId($queryId)
-    {
-        $this->requestParameters['QueryId'] = $queryId;
-        $this->queryParameters['QueryId'] = $queryId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $bucket
-     *
-     * @return $this
-     */
-    public function setBucket($bucket)
-    {
-        $this->requestParameters['Bucket'] = $bucket;
-        $this->queryParameters['Bucket'] = $bucket;
-
-        return $this;
-    }
-
-    /**
-     * @param string $endDate
-     *
-     * @return $this
-     */
-    public function setEndDate($endDate)
-    {
-        $this->requestParameters['EndDate'] = $endDate;
-        $this->queryParameters['EndDate'] = $endDate;
 
         return $this;
     }
@@ -236,6 +145,97 @@ class DescribeOssResultItemsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Stock'] = $stock;
         $this->queryParameters['Stock'] = $stock;
+
+        return $this;
+    }
+
+    /**
+     * @param string $totalCount
+     *
+     * @return $this
+     */
+    public function setTotalCount($totalCount)
+    {
+        $this->requestParameters['TotalCount'] = $totalCount;
+        $this->queryParameters['TotalCount'] = $totalCount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $suggestion
+     *
+     * @return $this
+     */
+    public function setSuggestion($suggestion)
+    {
+        $this->requestParameters['Suggestion'] = $suggestion;
+        $this->queryParameters['Suggestion'] = $suggestion;
+
+        return $this;
+    }
+
+    /**
+     * @param string $currentPage
+     *
+     * @return $this
+     */
+    public function setCurrentPage($currentPage)
+    {
+        $this->requestParameters['CurrentPage'] = $currentPage;
+        $this->queryParameters['CurrentPage'] = $currentPage;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceType
+     *
+     * @return $this
+     */
+    public function setResourceType($resourceType)
+    {
+        $this->requestParameters['ResourceType'] = $resourceType;
+        $this->queryParameters['ResourceType'] = $resourceType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $queryId
+     *
+     * @return $this
+     */
+    public function setQueryId($queryId)
+    {
+        $this->requestParameters['QueryId'] = $queryId;
+        $this->queryParameters['QueryId'] = $queryId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $bucket
+     *
+     * @return $this
+     */
+    public function setBucket($bucket)
+    {
+        $this->requestParameters['Bucket'] = $bucket;
+        $this->queryParameters['Bucket'] = $bucket;
+
+        return $this;
+    }
+
+    /**
+     * @param string $endDate
+     *
+     * @return $this
+     */
+    public function setEndDate($endDate)
+    {
+        $this->requestParameters['EndDate'] = $endDate;
+        $this->queryParameters['EndDate'] = $endDate;
 
         return $this;
     }

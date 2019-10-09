@@ -7,23 +7,23 @@ namespace Green\Request\V20170823;
  *
  * Request of DescribeViewContent
  *
- * @method string getTotalCount()
- * @method string getKeywordId()
  * @method string getImageId()
- * @method string getSuggestion()
- * @method string getCurrentPage()
- * @method string getLabel()
  * @method string getStartDate()
- * @method string getResourceType()
  * @method string getScene()
- * @method string getBizType()
- * @method string getEndDate()
  * @method string getSourceIp()
- * @method string getDataId()
  * @method string getLibType()
  * @method string getAuditResult()
  * @method string getPageSize()
  * @method string getTaskId()
+ * @method string getTotalCount()
+ * @method string getKeywordId()
+ * @method string getSuggestion()
+ * @method string getCurrentPage()
+ * @method string getLabel()
+ * @method string getResourceType()
+ * @method string getBizType()
+ * @method string getEndDate()
+ * @method string getDataId()
  */
 class DescribeViewContentRequest extends \RpcAcsRequest
 {
@@ -47,32 +47,6 @@ class DescribeViewContentRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $totalCount
-     *
-     * @return $this
-     */
-    public function setTotalCount($totalCount)
-    {
-        $this->requestParameters['TotalCount'] = $totalCount;
-        $this->queryParameters['TotalCount'] = $totalCount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $keywordId
-     *
-     * @return $this
-     */
-    public function setKeywordId($keywordId)
-    {
-        $this->requestParameters['KeywordId'] = $keywordId;
-        $this->queryParameters['KeywordId'] = $keywordId;
-
-        return $this;
-    }
-
-    /**
      * @param string $imageId
      *
      * @return $this
@@ -81,45 +55,6 @@ class DescribeViewContentRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ImageId'] = $imageId;
         $this->queryParameters['ImageId'] = $imageId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $suggestion
-     *
-     * @return $this
-     */
-    public function setSuggestion($suggestion)
-    {
-        $this->requestParameters['Suggestion'] = $suggestion;
-        $this->queryParameters['Suggestion'] = $suggestion;
-
-        return $this;
-    }
-
-    /**
-     * @param string $currentPage
-     *
-     * @return $this
-     */
-    public function setCurrentPage($currentPage)
-    {
-        $this->requestParameters['CurrentPage'] = $currentPage;
-        $this->queryParameters['CurrentPage'] = $currentPage;
-
-        return $this;
-    }
-
-    /**
-     * @param string $label
-     *
-     * @return $this
-     */
-    public function setLabel($label)
-    {
-        $this->requestParameters['Label'] = $label;
-        $this->queryParameters['Label'] = $label;
 
         return $this;
     }
@@ -138,19 +73,6 @@ class DescribeViewContentRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceType
-     *
-     * @return $this
-     */
-    public function setResourceType($resourceType)
-    {
-        $this->requestParameters['ResourceType'] = $resourceType;
-        $this->queryParameters['ResourceType'] = $resourceType;
-
-        return $this;
-    }
-
-    /**
      * @param string $scene
      *
      * @return $this
@@ -164,32 +86,6 @@ class DescribeViewContentRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $bizType
-     *
-     * @return $this
-     */
-    public function setBizType($bizType)
-    {
-        $this->requestParameters['BizType'] = $bizType;
-        $this->queryParameters['BizType'] = $bizType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $endDate
-     *
-     * @return $this
-     */
-    public function setEndDate($endDate)
-    {
-        $this->requestParameters['EndDate'] = $endDate;
-        $this->queryParameters['EndDate'] = $endDate;
-
-        return $this;
-    }
-
-    /**
      * @param string $sourceIp
      *
      * @return $this
@@ -198,19 +94,6 @@ class DescribeViewContentRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SourceIp'] = $sourceIp;
         $this->queryParameters['SourceIp'] = $sourceIp;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dataId
-     *
-     * @return $this
-     */
-    public function setDataId($dataId)
-    {
-        $this->requestParameters['DataId'] = $dataId;
-        $this->queryParameters['DataId'] = $dataId;
 
         return $this;
     }
@@ -263,6 +146,123 @@ class DescribeViewContentRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TaskId'] = $taskId;
         $this->queryParameters['TaskId'] = $taskId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $totalCount
+     *
+     * @return $this
+     */
+    public function setTotalCount($totalCount)
+    {
+        $this->requestParameters['TotalCount'] = $totalCount;
+        $this->queryParameters['TotalCount'] = $totalCount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $keywordId
+     *
+     * @return $this
+     */
+    public function setKeywordId($keywordId)
+    {
+        $this->requestParameters['KeywordId'] = $keywordId;
+        $this->queryParameters['KeywordId'] = $keywordId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $suggestion
+     *
+     * @return $this
+     */
+    public function setSuggestion($suggestion)
+    {
+        $this->requestParameters['Suggestion'] = $suggestion;
+        $this->queryParameters['Suggestion'] = $suggestion;
+
+        return $this;
+    }
+
+    /**
+     * @param string $currentPage
+     *
+     * @return $this
+     */
+    public function setCurrentPage($currentPage)
+    {
+        $this->requestParameters['CurrentPage'] = $currentPage;
+        $this->queryParameters['CurrentPage'] = $currentPage;
+
+        return $this;
+    }
+
+    /**
+     * @param string $label
+     *
+     * @return $this
+     */
+    public function setLabel($label)
+    {
+        $this->requestParameters['Label'] = $label;
+        $this->queryParameters['Label'] = $label;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceType
+     *
+     * @return $this
+     */
+    public function setResourceType($resourceType)
+    {
+        $this->requestParameters['ResourceType'] = $resourceType;
+        $this->queryParameters['ResourceType'] = $resourceType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $bizType
+     *
+     * @return $this
+     */
+    public function setBizType($bizType)
+    {
+        $this->requestParameters['BizType'] = $bizType;
+        $this->queryParameters['BizType'] = $bizType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $endDate
+     *
+     * @return $this
+     */
+    public function setEndDate($endDate)
+    {
+        $this->requestParameters['EndDate'] = $endDate;
+        $this->queryParameters['EndDate'] = $endDate;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dataId
+     *
+     * @return $this
+     */
+    public function setDataId($dataId)
+    {
+        $this->requestParameters['DataId'] = $dataId;
+        $this->queryParameters['DataId'] = $dataId;
 
         return $this;
     }

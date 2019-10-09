@@ -7,10 +7,10 @@ namespace Green\Request\V20170823;
  *
  * Request of DescribeWebsiteScanResultDetail
  *
+ * @method string getResourceType()
  * @method string getSourceIp()
  * @method string getId()
  * @method string getLang()
- * @method string getResourceType()
  */
 class DescribeWebsiteScanResultDetailRequest extends \RpcAcsRequest
 {
@@ -31,6 +31,19 @@ class DescribeWebsiteScanResultDetailRequest extends \RpcAcsRequest
             'DescribeWebsiteScanResultDetail',
             'green'
         );
+    }
+
+    /**
+     * @param string $resourceType
+     *
+     * @return $this
+     */
+    public function setResourceType($resourceType)
+    {
+        $this->requestParameters['ResourceType'] = $resourceType;
+        $this->queryParameters['ResourceType'] = $resourceType;
+
+        return $this;
     }
 
     /**
@@ -68,19 +81,6 @@ class DescribeWebsiteScanResultDetailRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Lang'] = $lang;
         $this->queryParameters['Lang'] = $lang;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceType
-     *
-     * @return $this
-     */
-    public function setResourceType($resourceType)
-    {
-        $this->requestParameters['ResourceType'] = $resourceType;
-        $this->queryParameters['ResourceType'] = $resourceType;
 
         return $this;
     }

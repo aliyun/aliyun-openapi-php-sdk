@@ -7,13 +7,13 @@ namespace Green\Request\V20170823;
  *
  * Request of UpdateOssCallbackSetting
  *
- * @method string getSourceIp()
- * @method string getScanCallback()
  * @method string getScanCallbackSuggestions()
+ * @method string getSourceIp()
  * @method string getCallbackSeed()
- * @method string getAuditCallback()
- * @method string getCallbackUrl()
  * @method string getServiceModules()
+ * @method string getAuditCallback()
+ * @method string getScanCallback()
+ * @method string getCallbackUrl()
  */
 class UpdateOssCallbackSettingRequest extends \RpcAcsRequest
 {
@@ -37,32 +37,6 @@ class UpdateOssCallbackSettingRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $sourceIp
-     *
-     * @return $this
-     */
-    public function setSourceIp($sourceIp)
-    {
-        $this->requestParameters['SourceIp'] = $sourceIp;
-        $this->queryParameters['SourceIp'] = $sourceIp;
-
-        return $this;
-    }
-
-    /**
-     * @param string $scanCallback
-     *
-     * @return $this
-     */
-    public function setScanCallback($scanCallback)
-    {
-        $this->requestParameters['ScanCallback'] = $scanCallback;
-        $this->queryParameters['ScanCallback'] = $scanCallback;
-
-        return $this;
-    }
-
-    /**
      * @param string $scanCallbackSuggestions
      *
      * @return $this
@@ -71,6 +45,19 @@ class UpdateOssCallbackSettingRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ScanCallbackSuggestions'] = $scanCallbackSuggestions;
         $this->queryParameters['ScanCallbackSuggestions'] = $scanCallbackSuggestions;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sourceIp
+     *
+     * @return $this
+     */
+    public function setSourceIp($sourceIp)
+    {
+        $this->requestParameters['SourceIp'] = $sourceIp;
+        $this->queryParameters['SourceIp'] = $sourceIp;
 
         return $this;
     }
@@ -89,6 +76,19 @@ class UpdateOssCallbackSettingRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $serviceModules
+     *
+     * @return $this
+     */
+    public function setServiceModules($serviceModules)
+    {
+        $this->requestParameters['ServiceModules'] = $serviceModules;
+        $this->queryParameters['ServiceModules'] = $serviceModules;
+
+        return $this;
+    }
+
+    /**
      * @param string $auditCallback
      *
      * @return $this
@@ -102,6 +102,19 @@ class UpdateOssCallbackSettingRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $scanCallback
+     *
+     * @return $this
+     */
+    public function setScanCallback($scanCallback)
+    {
+        $this->requestParameters['ScanCallback'] = $scanCallback;
+        $this->queryParameters['ScanCallback'] = $scanCallback;
+
+        return $this;
+    }
+
+    /**
      * @param string $callbackUrl
      *
      * @return $this
@@ -110,19 +123,6 @@ class UpdateOssCallbackSettingRequest extends \RpcAcsRequest
     {
         $this->requestParameters['CallbackUrl'] = $callbackUrl;
         $this->queryParameters['CallbackUrl'] = $callbackUrl;
-
-        return $this;
-    }
-
-    /**
-     * @param string $serviceModules
-     *
-     * @return $this
-     */
-    public function setServiceModules($serviceModules)
-    {
-        $this->requestParameters['ServiceModules'] = $serviceModules;
-        $this->queryParameters['ServiceModules'] = $serviceModules;
 
         return $this;
     }

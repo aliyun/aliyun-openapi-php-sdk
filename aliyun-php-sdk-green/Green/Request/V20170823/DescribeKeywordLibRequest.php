@@ -7,8 +7,8 @@ namespace Green\Request\V20170823;
  *
  * Request of DescribeKeywordLib
  *
- * @method string getSourceIp()
  * @method string getServiceModule()
+ * @method string getSourceIp()
  * @method string getLang()
  */
 class DescribeKeywordLibRequest extends \RpcAcsRequest
@@ -33,19 +33,6 @@ class DescribeKeywordLibRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $sourceIp
-     *
-     * @return $this
-     */
-    public function setSourceIp($sourceIp)
-    {
-        $this->requestParameters['SourceIp'] = $sourceIp;
-        $this->queryParameters['SourceIp'] = $sourceIp;
-
-        return $this;
-    }
-
-    /**
      * @param string $serviceModule
      *
      * @return $this
@@ -54,6 +41,19 @@ class DescribeKeywordLibRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ServiceModule'] = $serviceModule;
         $this->queryParameters['ServiceModule'] = $serviceModule;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sourceIp
+     *
+     * @return $this
+     */
+    public function setSourceIp($sourceIp)
+    {
+        $this->requestParameters['SourceIp'] = $sourceIp;
+        $this->queryParameters['SourceIp'] = $sourceIp;
 
         return $this;
     }

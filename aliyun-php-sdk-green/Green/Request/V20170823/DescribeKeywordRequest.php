@@ -7,13 +7,13 @@ namespace Green\Request\V20170823;
  *
  * Request of DescribeKeyword
  *
- * @method string getTotalCount()
  * @method string getSourceIp()
- * @method string getKeywordLibId()
  * @method string getPageSize()
- * @method string getCurrentPage()
  * @method string getLang()
  * @method string getKeyword()
+ * @method string getTotalCount()
+ * @method string getKeywordLibId()
+ * @method string getCurrentPage()
  */
 class DescribeKeywordRequest extends \RpcAcsRequest
 {
@@ -37,19 +37,6 @@ class DescribeKeywordRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $totalCount
-     *
-     * @return $this
-     */
-    public function setTotalCount($totalCount)
-    {
-        $this->requestParameters['TotalCount'] = $totalCount;
-        $this->queryParameters['TotalCount'] = $totalCount;
-
-        return $this;
-    }
-
-    /**
      * @param string $sourceIp
      *
      * @return $this
@@ -63,19 +50,6 @@ class DescribeKeywordRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $keywordLibId
-     *
-     * @return $this
-     */
-    public function setKeywordLibId($keywordLibId)
-    {
-        $this->requestParameters['KeywordLibId'] = $keywordLibId;
-        $this->queryParameters['KeywordLibId'] = $keywordLibId;
-
-        return $this;
-    }
-
-    /**
      * @param string $pageSize
      *
      * @return $this
@@ -84,19 +58,6 @@ class DescribeKeywordRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageSize'] = $pageSize;
         $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param string $currentPage
-     *
-     * @return $this
-     */
-    public function setCurrentPage($currentPage)
-    {
-        $this->requestParameters['CurrentPage'] = $currentPage;
-        $this->queryParameters['CurrentPage'] = $currentPage;
 
         return $this;
     }
@@ -123,6 +84,45 @@ class DescribeKeywordRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Keyword'] = $keyword;
         $this->queryParameters['Keyword'] = $keyword;
+
+        return $this;
+    }
+
+    /**
+     * @param string $totalCount
+     *
+     * @return $this
+     */
+    public function setTotalCount($totalCount)
+    {
+        $this->requestParameters['TotalCount'] = $totalCount;
+        $this->queryParameters['TotalCount'] = $totalCount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $keywordLibId
+     *
+     * @return $this
+     */
+    public function setKeywordLibId($keywordLibId)
+    {
+        $this->requestParameters['KeywordLibId'] = $keywordLibId;
+        $this->queryParameters['KeywordLibId'] = $keywordLibId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $currentPage
+     *
+     * @return $this
+     */
+    public function setCurrentPage($currentPage)
+    {
+        $this->requestParameters['CurrentPage'] = $currentPage;
+        $this->queryParameters['CurrentPage'] = $currentPage;
 
         return $this;
     }

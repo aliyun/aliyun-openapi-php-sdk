@@ -8,10 +8,10 @@ namespace Green\Request\V20170823;
  * Request of DescribeWebsiteInstance
  *
  * @method string getTotalCount()
+ * @method string getCurrentPage()
  * @method string getInstanceId()
  * @method string getSourceIp()
  * @method string getPageSize()
- * @method string getCurrentPage()
  * @method string getLang()
  */
 class DescribeWebsiteInstanceRequest extends \RpcAcsRequest
@@ -44,6 +44,19 @@ class DescribeWebsiteInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TotalCount'] = $totalCount;
         $this->queryParameters['TotalCount'] = $totalCount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $currentPage
+     *
+     * @return $this
+     */
+    public function setCurrentPage($currentPage)
+    {
+        $this->requestParameters['CurrentPage'] = $currentPage;
+        $this->queryParameters['CurrentPage'] = $currentPage;
 
         return $this;
     }
@@ -83,19 +96,6 @@ class DescribeWebsiteInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageSize'] = $pageSize;
         $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param string $currentPage
-     *
-     * @return $this
-     */
-    public function setCurrentPage($currentPage)
-    {
-        $this->requestParameters['CurrentPage'] = $currentPage;
-        $this->queryParameters['CurrentPage'] = $currentPage;
 
         return $this;
     }

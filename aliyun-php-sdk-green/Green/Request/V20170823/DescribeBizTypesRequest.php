@@ -7,8 +7,8 @@ namespace Green\Request\V20170823;
  *
  * Request of DescribeBizTypes
  *
- * @method string getSourceIp()
  * @method string getImportFlag()
+ * @method string getSourceIp()
  */
 class DescribeBizTypesRequest extends \RpcAcsRequest
 {
@@ -32,19 +32,6 @@ class DescribeBizTypesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $sourceIp
-     *
-     * @return $this
-     */
-    public function setSourceIp($sourceIp)
-    {
-        $this->requestParameters['SourceIp'] = $sourceIp;
-        $this->queryParameters['SourceIp'] = $sourceIp;
-
-        return $this;
-    }
-
-    /**
      * @param string $importFlag
      *
      * @return $this
@@ -53,6 +40,19 @@ class DescribeBizTypesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ImportFlag'] = $importFlag;
         $this->queryParameters['ImportFlag'] = $importFlag;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sourceIp
+     *
+     * @return $this
+     */
+    public function setSourceIp($sourceIp)
+    {
+        $this->requestParameters['SourceIp'] = $sourceIp;
+        $this->queryParameters['SourceIp'] = $sourceIp;
 
         return $this;
     }

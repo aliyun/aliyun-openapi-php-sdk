@@ -7,13 +7,13 @@ namespace Green\Request\V20170823;
  *
  * Request of UpdateWebsiteInstance
  *
+ * @method string getIndexPage()
+ * @method string getSourceIp()
+ * @method string getLang()
+ * @method string getWebsiteScanInterval()
  * @method string getSiteProtocol()
  * @method string getInstanceId()
- * @method string getSourceIp()
- * @method string getWebsiteScanInterval()
  * @method string getDomain()
- * @method string getIndexPage()
- * @method string getLang()
  * @method string getIndexPageScanInterval()
  */
 class UpdateWebsiteInstanceRequest extends \RpcAcsRequest
@@ -35,6 +35,58 @@ class UpdateWebsiteInstanceRequest extends \RpcAcsRequest
             'UpdateWebsiteInstance',
             'green'
         );
+    }
+
+    /**
+     * @param string $indexPage
+     *
+     * @return $this
+     */
+    public function setIndexPage($indexPage)
+    {
+        $this->requestParameters['IndexPage'] = $indexPage;
+        $this->queryParameters['IndexPage'] = $indexPage;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sourceIp
+     *
+     * @return $this
+     */
+    public function setSourceIp($sourceIp)
+    {
+        $this->requestParameters['SourceIp'] = $sourceIp;
+        $this->queryParameters['SourceIp'] = $sourceIp;
+
+        return $this;
+    }
+
+    /**
+     * @param string $lang
+     *
+     * @return $this
+     */
+    public function setLang($lang)
+    {
+        $this->requestParameters['Lang'] = $lang;
+        $this->queryParameters['Lang'] = $lang;
+
+        return $this;
+    }
+
+    /**
+     * @param string $websiteScanInterval
+     *
+     * @return $this
+     */
+    public function setWebsiteScanInterval($websiteScanInterval)
+    {
+        $this->requestParameters['WebsiteScanInterval'] = $websiteScanInterval;
+        $this->queryParameters['WebsiteScanInterval'] = $websiteScanInterval;
+
+        return $this;
     }
 
     /**
@@ -64,32 +116,6 @@ class UpdateWebsiteInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $sourceIp
-     *
-     * @return $this
-     */
-    public function setSourceIp($sourceIp)
-    {
-        $this->requestParameters['SourceIp'] = $sourceIp;
-        $this->queryParameters['SourceIp'] = $sourceIp;
-
-        return $this;
-    }
-
-    /**
-     * @param string $websiteScanInterval
-     *
-     * @return $this
-     */
-    public function setWebsiteScanInterval($websiteScanInterval)
-    {
-        $this->requestParameters['WebsiteScanInterval'] = $websiteScanInterval;
-        $this->queryParameters['WebsiteScanInterval'] = $websiteScanInterval;
-
-        return $this;
-    }
-
-    /**
      * @param string $domain
      *
      * @return $this
@@ -98,32 +124,6 @@ class UpdateWebsiteInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Domain'] = $domain;
         $this->queryParameters['Domain'] = $domain;
-
-        return $this;
-    }
-
-    /**
-     * @param string $indexPage
-     *
-     * @return $this
-     */
-    public function setIndexPage($indexPage)
-    {
-        $this->requestParameters['IndexPage'] = $indexPage;
-        $this->queryParameters['IndexPage'] = $indexPage;
-
-        return $this;
-    }
-
-    /**
-     * @param string $lang
-     *
-     * @return $this
-     */
-    public function setLang($lang)
-    {
-        $this->requestParameters['Lang'] = $lang;
-        $this->queryParameters['Lang'] = $lang;
 
         return $this;
     }

@@ -7,13 +7,13 @@ namespace Green\Request\V20170823;
  *
  * Request of UpdateKeywordLib
  *
+ * @method string getMatchMode()
  * @method string getSourceIp()
  * @method string getEnable()
- * @method string getName()
- * @method string getBizTypes()
  * @method string getId()
  * @method string getLang()
- * @method string getMatchMode()
+ * @method string getBizTypes()
+ * @method string getName()
  */
 class UpdateKeywordLibRequest extends \RpcAcsRequest
 {
@@ -34,6 +34,19 @@ class UpdateKeywordLibRequest extends \RpcAcsRequest
             'UpdateKeywordLib',
             'green'
         );
+    }
+
+    /**
+     * @param string $matchMode
+     *
+     * @return $this
+     */
+    public function setMatchMode($matchMode)
+    {
+        $this->requestParameters['MatchMode'] = $matchMode;
+        $this->queryParameters['MatchMode'] = $matchMode;
+
+        return $this;
     }
 
     /**
@@ -58,32 +71,6 @@ class UpdateKeywordLibRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Enable'] = $enable;
         $this->queryParameters['Enable'] = $enable;
-
-        return $this;
-    }
-
-    /**
-     * @param string $name
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->requestParameters['Name'] = $name;
-        $this->queryParameters['Name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * @param string $bizTypes
-     *
-     * @return $this
-     */
-    public function setBizTypes($bizTypes)
-    {
-        $this->requestParameters['BizTypes'] = $bizTypes;
-        $this->queryParameters['BizTypes'] = $bizTypes;
 
         return $this;
     }
@@ -115,14 +102,27 @@ class UpdateKeywordLibRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $matchMode
+     * @param string $bizTypes
      *
      * @return $this
      */
-    public function setMatchMode($matchMode)
+    public function setBizTypes($bizTypes)
     {
-        $this->requestParameters['MatchMode'] = $matchMode;
-        $this->queryParameters['MatchMode'] = $matchMode;
+        $this->requestParameters['BizTypes'] = $bizTypes;
+        $this->queryParameters['BizTypes'] = $bizTypes;
+
+        return $this;
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
         return $this;
     }

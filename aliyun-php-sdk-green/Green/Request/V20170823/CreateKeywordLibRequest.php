@@ -7,17 +7,17 @@ namespace Green\Request\V20170823;
  *
  * Request of CreateKeywordLib
  *
+ * @method string getLanguage()
+ * @method string getServiceModule()
+ * @method string getMatchMode()
  * @method string getSourceIp()
  * @method string getLibType()
  * @method string getEnable()
- * @method string getName()
- * @method string getBizTypes()
- * @method string getLanguage()
- * @method string getServiceModule()
  * @method string getLang()
- * @method string getCategory()
- * @method string getMatchMode()
+ * @method string getBizTypes()
  * @method string getResourceType()
+ * @method string getName()
+ * @method string getCategory()
  */
 class CreateKeywordLibRequest extends \RpcAcsRequest
 {
@@ -38,6 +38,45 @@ class CreateKeywordLibRequest extends \RpcAcsRequest
             'CreateKeywordLib',
             'green'
         );
+    }
+
+    /**
+     * @param string $language
+     *
+     * @return $this
+     */
+    public function setLanguage($language)
+    {
+        $this->requestParameters['Language'] = $language;
+        $this->queryParameters['Language'] = $language;
+
+        return $this;
+    }
+
+    /**
+     * @param string $serviceModule
+     *
+     * @return $this
+     */
+    public function setServiceModule($serviceModule)
+    {
+        $this->requestParameters['ServiceModule'] = $serviceModule;
+        $this->queryParameters['ServiceModule'] = $serviceModule;
+
+        return $this;
+    }
+
+    /**
+     * @param string $matchMode
+     *
+     * @return $this
+     */
+    public function setMatchMode($matchMode)
+    {
+        $this->requestParameters['MatchMode'] = $matchMode;
+        $this->queryParameters['MatchMode'] = $matchMode;
+
+        return $this;
     }
 
     /**
@@ -80,14 +119,14 @@ class CreateKeywordLibRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $name
+     * @param string $lang
      *
      * @return $this
      */
-    public function setName($name)
+    public function setLang($lang)
     {
-        $this->requestParameters['Name'] = $name;
-        $this->queryParameters['Name'] = $name;
+        $this->requestParameters['Lang'] = $lang;
+        $this->queryParameters['Lang'] = $lang;
 
         return $this;
     }
@@ -106,40 +145,27 @@ class CreateKeywordLibRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $language
+     * @param string $resourceType
      *
      * @return $this
      */
-    public function setLanguage($language)
+    public function setResourceType($resourceType)
     {
-        $this->requestParameters['Language'] = $language;
-        $this->queryParameters['Language'] = $language;
+        $this->requestParameters['ResourceType'] = $resourceType;
+        $this->queryParameters['ResourceType'] = $resourceType;
 
         return $this;
     }
 
     /**
-     * @param string $serviceModule
+     * @param string $name
      *
      * @return $this
      */
-    public function setServiceModule($serviceModule)
+    public function setName($name)
     {
-        $this->requestParameters['ServiceModule'] = $serviceModule;
-        $this->queryParameters['ServiceModule'] = $serviceModule;
-
-        return $this;
-    }
-
-    /**
-     * @param string $lang
-     *
-     * @return $this
-     */
-    public function setLang($lang)
-    {
-        $this->requestParameters['Lang'] = $lang;
-        $this->queryParameters['Lang'] = $lang;
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
         return $this;
     }
@@ -153,32 +179,6 @@ class CreateKeywordLibRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Category'] = $category;
         $this->queryParameters['Category'] = $category;
-
-        return $this;
-    }
-
-    /**
-     * @param string $matchMode
-     *
-     * @return $this
-     */
-    public function setMatchMode($matchMode)
-    {
-        $this->requestParameters['MatchMode'] = $matchMode;
-        $this->queryParameters['MatchMode'] = $matchMode;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceType
-     *
-     * @return $this
-     */
-    public function setResourceType($resourceType)
-    {
-        $this->requestParameters['ResourceType'] = $resourceType;
-        $this->queryParameters['ResourceType'] = $resourceType;
 
         return $this;
     }

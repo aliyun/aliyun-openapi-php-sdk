@@ -7,12 +7,12 @@ namespace Green\Request\V20170823;
  *
  * Request of RenewWebSiteInstance
  *
- * @method string getDuration()
- * @method string getInstanceId()
  * @method string getClientToken()
  * @method string getOrderNum()
  * @method string getCommodityCode()
  * @method string getOwnerId()
+ * @method string getDuration()
+ * @method string getInstanceId()
  * @method string getPricingCycle()
  * @method string getOrderType()
  */
@@ -35,32 +35,6 @@ class RenewWebSiteInstanceRequest extends \RpcAcsRequest
             'RenewWebSiteInstance',
             'green'
         );
-    }
-
-    /**
-     * @param string $duration
-     *
-     * @return $this
-     */
-    public function setDuration($duration)
-    {
-        $this->requestParameters['Duration'] = $duration;
-        $this->queryParameters['Duration'] = $duration;
-
-        return $this;
-    }
-
-    /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
     }
 
     /**
@@ -111,6 +85,32 @@ class RenewWebSiteInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $duration
+     *
+     * @return $this
+     */
+    public function setDuration($duration)
+    {
+        $this->requestParameters['Duration'] = $duration;
+        $this->queryParameters['Duration'] = $duration;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

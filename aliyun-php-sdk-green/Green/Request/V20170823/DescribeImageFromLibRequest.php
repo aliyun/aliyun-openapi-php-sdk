@@ -7,14 +7,14 @@ namespace Green\Request\V20170823;
  *
  * Request of DescribeImageFromLib
  *
- * @method string getTotalCount()
- * @method string getEndDate()
+ * @method string getStartDate()
  * @method string getSourceIp()
  * @method string getImageLibId()
  * @method string getPageSize()
- * @method string getCurrentPage()
  * @method string getId()
- * @method string getStartDate()
+ * @method string getTotalCount()
+ * @method string getCurrentPage()
+ * @method string getEndDate()
  */
 class DescribeImageFromLibRequest extends \RpcAcsRequest
 {
@@ -38,27 +38,14 @@ class DescribeImageFromLibRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $totalCount
+     * @param string $startDate
      *
      * @return $this
      */
-    public function setTotalCount($totalCount)
+    public function setStartDate($startDate)
     {
-        $this->requestParameters['TotalCount'] = $totalCount;
-        $this->queryParameters['TotalCount'] = $totalCount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $endDate
-     *
-     * @return $this
-     */
-    public function setEndDate($endDate)
-    {
-        $this->requestParameters['EndDate'] = $endDate;
-        $this->queryParameters['EndDate'] = $endDate;
+        $this->requestParameters['StartDate'] = $startDate;
+        $this->queryParameters['StartDate'] = $startDate;
 
         return $this;
     }
@@ -103,19 +90,6 @@ class DescribeImageFromLibRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $currentPage
-     *
-     * @return $this
-     */
-    public function setCurrentPage($currentPage)
-    {
-        $this->requestParameters['CurrentPage'] = $currentPage;
-        $this->queryParameters['CurrentPage'] = $currentPage;
-
-        return $this;
-    }
-
-    /**
      * @param string $id
      *
      * @return $this
@@ -129,14 +103,40 @@ class DescribeImageFromLibRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $startDate
+     * @param string $totalCount
      *
      * @return $this
      */
-    public function setStartDate($startDate)
+    public function setTotalCount($totalCount)
     {
-        $this->requestParameters['StartDate'] = $startDate;
-        $this->queryParameters['StartDate'] = $startDate;
+        $this->requestParameters['TotalCount'] = $totalCount;
+        $this->queryParameters['TotalCount'] = $totalCount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $currentPage
+     *
+     * @return $this
+     */
+    public function setCurrentPage($currentPage)
+    {
+        $this->requestParameters['CurrentPage'] = $currentPage;
+        $this->queryParameters['CurrentPage'] = $currentPage;
+
+        return $this;
+    }
+
+    /**
+     * @param string $endDate
+     *
+     * @return $this
+     */
+    public function setEndDate($endDate)
+    {
+        $this->requestParameters['EndDate'] = $endDate;
+        $this->queryParameters['EndDate'] = $endDate;
 
         return $this;
     }

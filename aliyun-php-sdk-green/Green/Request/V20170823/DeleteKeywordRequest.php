@@ -7,9 +7,9 @@ namespace Green\Request\V20170823;
  *
  * Request of DeleteKeyword
  *
- * @method string getSourceIp()
  * @method string getKeywords()
  * @method string getKeywordLibId()
+ * @method string getSourceIp()
  * @method string getIds()
  * @method string getLang()
  */
@@ -35,19 +35,6 @@ class DeleteKeywordRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $sourceIp
-     *
-     * @return $this
-     */
-    public function setSourceIp($sourceIp)
-    {
-        $this->requestParameters['SourceIp'] = $sourceIp;
-        $this->queryParameters['SourceIp'] = $sourceIp;
-
-        return $this;
-    }
-
-    /**
      * @param string $keywords
      *
      * @return $this
@@ -69,6 +56,19 @@ class DeleteKeywordRequest extends \RpcAcsRequest
     {
         $this->requestParameters['KeywordLibId'] = $keywordLibId;
         $this->queryParameters['KeywordLibId'] = $keywordLibId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sourceIp
+     *
+     * @return $this
+     */
+    public function setSourceIp($sourceIp)
+    {
+        $this->requestParameters['SourceIp'] = $sourceIp;
+        $this->queryParameters['SourceIp'] = $sourceIp;
 
         return $this;
     }

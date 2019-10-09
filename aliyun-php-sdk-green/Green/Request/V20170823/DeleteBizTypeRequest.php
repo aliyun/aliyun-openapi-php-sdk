@@ -5,13 +5,12 @@ namespace Green\Request\V20170823;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeBizTypeSetting
+ * Request of DeleteBizType
  *
- * @method string getResourceType()
  * @method string getSourceIp()
  * @method string getBizTypeName()
  */
-class DescribeBizTypeSettingRequest extends \RpcAcsRequest
+class DeleteBizTypeRequest extends \RpcAcsRequest
 {
 
     /**
@@ -27,22 +26,9 @@ class DescribeBizTypeSettingRequest extends \RpcAcsRequest
         parent::__construct(
             'Green',
             '2017-08-23',
-            'DescribeBizTypeSetting',
+            'DeleteBizType',
             'green'
         );
-    }
-
-    /**
-     * @param string $resourceType
-     *
-     * @return $this
-     */
-    public function setResourceType($resourceType)
-    {
-        $this->requestParameters['ResourceType'] = $resourceType;
-        $this->queryParameters['ResourceType'] = $resourceType;
-
-        return $this;
     }
 
     /**

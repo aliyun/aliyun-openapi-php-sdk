@@ -8,9 +8,9 @@ namespace Green\Request\V20170823;
  * Request of UpdateNotificationSetting
  *
  * @method string getRealtimeMessageList()
+ * @method string getScheduleMessageTime()
  * @method string getSourceIp()
  * @method string getReminderModeList()
- * @method string getScheduleMessageTime()
  * @method string getLang()
  * @method string getScheduleMessageTimeZone()
  */
@@ -49,6 +49,19 @@ class UpdateNotificationSettingRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $scheduleMessageTime
+     *
+     * @return $this
+     */
+    public function setScheduleMessageTime($scheduleMessageTime)
+    {
+        $this->requestParameters['ScheduleMessageTime'] = $scheduleMessageTime;
+        $this->queryParameters['ScheduleMessageTime'] = $scheduleMessageTime;
+
+        return $this;
+    }
+
+    /**
      * @param string $sourceIp
      *
      * @return $this
@@ -70,19 +83,6 @@ class UpdateNotificationSettingRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ReminderModeList'] = $reminderModeList;
         $this->queryParameters['ReminderModeList'] = $reminderModeList;
-
-        return $this;
-    }
-
-    /**
-     * @param string $scheduleMessageTime
-     *
-     * @return $this
-     */
-    public function setScheduleMessageTime($scheduleMessageTime)
-    {
-        $this->requestParameters['ScheduleMessageTime'] = $scheduleMessageTime;
-        $this->queryParameters['ScheduleMessageTime'] = $scheduleMessageTime;
 
         return $this;
     }

@@ -5,12 +5,11 @@ namespace Green\Request\V20170823;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeImageLib
+ * Request of DescribeAuditCallback
  *
- * @method string getServiceModule()
  * @method string getSourceIp()
  */
-class DescribeImageLibRequest extends \RpcAcsRequest
+class DescribeAuditCallbackRequest extends \RpcAcsRequest
 {
 
     /**
@@ -26,22 +25,9 @@ class DescribeImageLibRequest extends \RpcAcsRequest
         parent::__construct(
             'Green',
             '2017-08-23',
-            'DescribeImageLib',
+            'DescribeAuditCallback',
             'green'
         );
-    }
-
-    /**
-     * @param string $serviceModule
-     *
-     * @return $this
-     */
-    public function setServiceModule($serviceModule)
-    {
-        $this->requestParameters['ServiceModule'] = $serviceModule;
-        $this->queryParameters['ServiceModule'] = $serviceModule;
-
-        return $this;
     }
 
     /**

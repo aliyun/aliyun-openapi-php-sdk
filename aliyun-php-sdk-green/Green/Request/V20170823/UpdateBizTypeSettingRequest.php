@@ -7,11 +7,11 @@ namespace Green\Request\V20170823;
  *
  * Request of UpdateBizTypeSetting
  *
+ * @method string getResourceType()
+ * @method string getPorn()
  * @method string getSourceIp()
  * @method string getTerrorism()
  * @method string getBizTypeName()
- * @method string getResourceType()
- * @method string getPorn()
  */
 class UpdateBizTypeSettingRequest extends \RpcAcsRequest
 {
@@ -32,6 +32,32 @@ class UpdateBizTypeSettingRequest extends \RpcAcsRequest
             'UpdateBizTypeSetting',
             'green'
         );
+    }
+
+    /**
+     * @param string $resourceType
+     *
+     * @return $this
+     */
+    public function setResourceType($resourceType)
+    {
+        $this->requestParameters['ResourceType'] = $resourceType;
+        $this->queryParameters['ResourceType'] = $resourceType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $porn
+     *
+     * @return $this
+     */
+    public function setPorn($porn)
+    {
+        $this->requestParameters['Porn'] = $porn;
+        $this->queryParameters['Porn'] = $porn;
+
+        return $this;
     }
 
     /**
@@ -69,32 +95,6 @@ class UpdateBizTypeSettingRequest extends \RpcAcsRequest
     {
         $this->requestParameters['BizTypeName'] = $bizTypeName;
         $this->queryParameters['BizTypeName'] = $bizTypeName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceType
-     *
-     * @return $this
-     */
-    public function setResourceType($resourceType)
-    {
-        $this->requestParameters['ResourceType'] = $resourceType;
-        $this->queryParameters['ResourceType'] = $resourceType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $porn
-     *
-     * @return $this
-     */
-    public function setPorn($porn)
-    {
-        $this->requestParameters['Porn'] = $porn;
-        $this->queryParameters['Porn'] = $porn;
 
         return $this;
     }

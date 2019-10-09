@@ -7,13 +7,13 @@ namespace Green\Request\V20170823;
  *
  * Request of DescribeAuditContentItem
  *
- * @method string getTotalCount()
  * @method string getSourceIp()
  * @method string getPageSize()
- * @method string getCurrentPage()
  * @method string getLang()
- * @method string getResourceType()
  * @method string getTaskId()
+ * @method string getTotalCount()
+ * @method string getCurrentPage()
+ * @method string getResourceType()
  */
 class DescribeAuditContentItemRequest extends \RpcAcsRequest
 {
@@ -34,19 +34,6 @@ class DescribeAuditContentItemRequest extends \RpcAcsRequest
             'DescribeAuditContentItem',
             'green'
         );
-    }
-
-    /**
-     * @param string $totalCount
-     *
-     * @return $this
-     */
-    public function setTotalCount($totalCount)
-    {
-        $this->requestParameters['TotalCount'] = $totalCount;
-        $this->queryParameters['TotalCount'] = $totalCount;
-
-        return $this;
     }
 
     /**
@@ -76,19 +63,6 @@ class DescribeAuditContentItemRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $currentPage
-     *
-     * @return $this
-     */
-    public function setCurrentPage($currentPage)
-    {
-        $this->requestParameters['CurrentPage'] = $currentPage;
-        $this->queryParameters['CurrentPage'] = $currentPage;
-
-        return $this;
-    }
-
-    /**
      * @param string $lang
      *
      * @return $this
@@ -102,19 +76,6 @@ class DescribeAuditContentItemRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceType
-     *
-     * @return $this
-     */
-    public function setResourceType($resourceType)
-    {
-        $this->requestParameters['ResourceType'] = $resourceType;
-        $this->queryParameters['ResourceType'] = $resourceType;
-
-        return $this;
-    }
-
-    /**
      * @param string $taskId
      *
      * @return $this
@@ -123,6 +84,45 @@ class DescribeAuditContentItemRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TaskId'] = $taskId;
         $this->queryParameters['TaskId'] = $taskId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $totalCount
+     *
+     * @return $this
+     */
+    public function setTotalCount($totalCount)
+    {
+        $this->requestParameters['TotalCount'] = $totalCount;
+        $this->queryParameters['TotalCount'] = $totalCount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $currentPage
+     *
+     * @return $this
+     */
+    public function setCurrentPage($currentPage)
+    {
+        $this->requestParameters['CurrentPage'] = $currentPage;
+        $this->queryParameters['CurrentPage'] = $currentPage;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceType
+     *
+     * @return $this
+     */
+    public function setResourceType($resourceType)
+    {
+        $this->requestParameters['ResourceType'] = $resourceType;
+        $this->queryParameters['ResourceType'] = $resourceType;
 
         return $this;
     }

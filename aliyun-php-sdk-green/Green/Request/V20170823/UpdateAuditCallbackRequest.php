@@ -5,14 +5,13 @@ namespace Green\Request\V20170823;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of CreateKeyword
+ * Request of UpdateAuditCallback
  *
- * @method string getKeywords()
- * @method string getKeywordLibId()
+ * @method string getSeed()
  * @method string getSourceIp()
- * @method string getLang()
+ * @method string getCallback()
  */
-class CreateKeywordRequest extends \RpcAcsRequest
+class UpdateAuditCallbackRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,33 +27,20 @@ class CreateKeywordRequest extends \RpcAcsRequest
         parent::__construct(
             'Green',
             '2017-08-23',
-            'CreateKeyword',
+            'UpdateAuditCallback',
             'green'
         );
     }
 
     /**
-     * @param string $keywords
+     * @param string $seed
      *
      * @return $this
      */
-    public function setKeywords($keywords)
+    public function setSeed($seed)
     {
-        $this->requestParameters['Keywords'] = $keywords;
-        $this->queryParameters['Keywords'] = $keywords;
-
-        return $this;
-    }
-
-    /**
-     * @param string $keywordLibId
-     *
-     * @return $this
-     */
-    public function setKeywordLibId($keywordLibId)
-    {
-        $this->requestParameters['KeywordLibId'] = $keywordLibId;
-        $this->queryParameters['KeywordLibId'] = $keywordLibId;
+        $this->requestParameters['Seed'] = $seed;
+        $this->queryParameters['Seed'] = $seed;
 
         return $this;
     }
@@ -73,14 +59,14 @@ class CreateKeywordRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $lang
+     * @param string $callback
      *
      * @return $this
      */
-    public function setLang($lang)
+    public function setCallback($callback)
     {
-        $this->requestParameters['Lang'] = $lang;
-        $this->queryParameters['Lang'] = $lang;
+        $this->requestParameters['Callback'] = $callback;
+        $this->queryParameters['Callback'] = $callback;
 
         return $this;
     }

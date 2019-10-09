@@ -7,13 +7,13 @@ namespace Green\Request\V20170823;
  *
  * Request of CreateImageLib
  *
+ * @method string getServiceModule()
+ * @method string getScene()
  * @method string getSourceIp()
  * @method string getEnable()
- * @method string getName()
  * @method string getBizTypes()
- * @method string getServiceModule()
+ * @method string getName()
  * @method string getCategory()
- * @method string getScene()
  */
 class CreateImageLibRequest extends \RpcAcsRequest
 {
@@ -34,6 +34,32 @@ class CreateImageLibRequest extends \RpcAcsRequest
             'CreateImageLib',
             'green'
         );
+    }
+
+    /**
+     * @param string $serviceModule
+     *
+     * @return $this
+     */
+    public function setServiceModule($serviceModule)
+    {
+        $this->requestParameters['ServiceModule'] = $serviceModule;
+        $this->queryParameters['ServiceModule'] = $serviceModule;
+
+        return $this;
+    }
+
+    /**
+     * @param string $scene
+     *
+     * @return $this
+     */
+    public function setScene($scene)
+    {
+        $this->requestParameters['Scene'] = $scene;
+        $this->queryParameters['Scene'] = $scene;
+
+        return $this;
     }
 
     /**
@@ -63,19 +89,6 @@ class CreateImageLibRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $name
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->requestParameters['Name'] = $name;
-        $this->queryParameters['Name'] = $name;
-
-        return $this;
-    }
-
-    /**
      * @param string $bizTypes
      *
      * @return $this
@@ -89,14 +102,14 @@ class CreateImageLibRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $serviceModule
+     * @param string $name
      *
      * @return $this
      */
-    public function setServiceModule($serviceModule)
+    public function setName($name)
     {
-        $this->requestParameters['ServiceModule'] = $serviceModule;
-        $this->queryParameters['ServiceModule'] = $serviceModule;
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
         return $this;
     }
@@ -110,19 +123,6 @@ class CreateImageLibRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Category'] = $category;
         $this->queryParameters['Category'] = $category;
-
-        return $this;
-    }
-
-    /**
-     * @param string $scene
-     *
-     * @return $this
-     */
-    public function setScene($scene)
-    {
-        $this->requestParameters['Scene'] = $scene;
-        $this->queryParameters['Scene'] = $scene;
 
         return $this;
     }

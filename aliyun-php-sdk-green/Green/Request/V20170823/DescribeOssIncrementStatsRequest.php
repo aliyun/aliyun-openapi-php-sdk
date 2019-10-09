@@ -7,12 +7,12 @@ namespace Green\Request\V20170823;
  *
  * Request of DescribeOssIncrementStats
  *
- * @method string getEndDate()
- * @method string getSourceIp()
- * @method string getLang()
  * @method string getStartDate()
  * @method string getResourceType()
  * @method string getScene()
+ * @method string getEndDate()
+ * @method string getSourceIp()
+ * @method string getLang()
  */
 class DescribeOssIncrementStatsRequest extends \RpcAcsRequest
 {
@@ -33,45 +33,6 @@ class DescribeOssIncrementStatsRequest extends \RpcAcsRequest
             'DescribeOssIncrementStats',
             'green'
         );
-    }
-
-    /**
-     * @param string $endDate
-     *
-     * @return $this
-     */
-    public function setEndDate($endDate)
-    {
-        $this->requestParameters['EndDate'] = $endDate;
-        $this->queryParameters['EndDate'] = $endDate;
-
-        return $this;
-    }
-
-    /**
-     * @param string $sourceIp
-     *
-     * @return $this
-     */
-    public function setSourceIp($sourceIp)
-    {
-        $this->requestParameters['SourceIp'] = $sourceIp;
-        $this->queryParameters['SourceIp'] = $sourceIp;
-
-        return $this;
-    }
-
-    /**
-     * @param string $lang
-     *
-     * @return $this
-     */
-    public function setLang($lang)
-    {
-        $this->requestParameters['Lang'] = $lang;
-        $this->queryParameters['Lang'] = $lang;
-
-        return $this;
     }
 
     /**
@@ -109,6 +70,45 @@ class DescribeOssIncrementStatsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Scene'] = $scene;
         $this->queryParameters['Scene'] = $scene;
+
+        return $this;
+    }
+
+    /**
+     * @param string $endDate
+     *
+     * @return $this
+     */
+    public function setEndDate($endDate)
+    {
+        $this->requestParameters['EndDate'] = $endDate;
+        $this->queryParameters['EndDate'] = $endDate;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sourceIp
+     *
+     * @return $this
+     */
+    public function setSourceIp($sourceIp)
+    {
+        $this->requestParameters['SourceIp'] = $sourceIp;
+        $this->queryParameters['SourceIp'] = $sourceIp;
+
+        return $this;
+    }
+
+    /**
+     * @param string $lang
+     *
+     * @return $this
+     */
+    public function setLang($lang)
+    {
+        $this->requestParameters['Lang'] = $lang;
+        $this->queryParameters['Lang'] = $lang;
 
         return $this;
     }

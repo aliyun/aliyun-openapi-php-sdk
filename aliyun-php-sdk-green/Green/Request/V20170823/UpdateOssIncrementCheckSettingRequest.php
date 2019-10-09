@@ -7,17 +7,17 @@ namespace Green\Request\V20170823;
  *
  * Request of UpdateOssIncrementCheckSetting
  *
- * @method string getImageAutoFreeze()
  * @method string getVideoSceneList()
- * @method string getAutoFreezeType()
  * @method string getImageSceneList()
- * @method string getBucketConfigList()
+ * @method string getVideoFrameInterval()
  * @method string getSourceIp()
  * @method string getImageScanLimit()
  * @method string getVideoAutoFreezeSceneList()
- * @method string getVideoFrameInterval()
- * @method string getVideoMaxSize()
  * @method string getLang()
+ * @method string getImageAutoFreeze()
+ * @method string getVideoMaxSize()
+ * @method string getAutoFreezeType()
+ * @method string getBucketConfigList()
  * @method string getVideoMaxFrames()
  */
 class UpdateOssIncrementCheckSettingRequest extends \RpcAcsRequest
@@ -42,19 +42,6 @@ class UpdateOssIncrementCheckSettingRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $imageAutoFreeze
-     *
-     * @return $this
-     */
-    public function setImageAutoFreeze($imageAutoFreeze)
-    {
-        $this->requestParameters['ImageAutoFreeze'] = $imageAutoFreeze;
-        $this->queryParameters['ImageAutoFreeze'] = $imageAutoFreeze;
-
-        return $this;
-    }
-
-    /**
      * @param string $videoSceneList
      *
      * @return $this
@@ -63,19 +50,6 @@ class UpdateOssIncrementCheckSettingRequest extends \RpcAcsRequest
     {
         $this->requestParameters['VideoSceneList'] = $videoSceneList;
         $this->queryParameters['VideoSceneList'] = $videoSceneList;
-
-        return $this;
-    }
-
-    /**
-     * @param string $autoFreezeType
-     *
-     * @return $this
-     */
-    public function setAutoFreezeType($autoFreezeType)
-    {
-        $this->requestParameters['AutoFreezeType'] = $autoFreezeType;
-        $this->queryParameters['AutoFreezeType'] = $autoFreezeType;
 
         return $this;
     }
@@ -94,14 +68,14 @@ class UpdateOssIncrementCheckSettingRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $bucketConfigList
+     * @param string $videoFrameInterval
      *
      * @return $this
      */
-    public function setBucketConfigList($bucketConfigList)
+    public function setVideoFrameInterval($videoFrameInterval)
     {
-        $this->requestParameters['BucketConfigList'] = $bucketConfigList;
-        $this->queryParameters['BucketConfigList'] = $bucketConfigList;
+        $this->requestParameters['VideoFrameInterval'] = $videoFrameInterval;
+        $this->queryParameters['VideoFrameInterval'] = $videoFrameInterval;
 
         return $this;
     }
@@ -146,14 +120,27 @@ class UpdateOssIncrementCheckSettingRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $videoFrameInterval
+     * @param string $lang
      *
      * @return $this
      */
-    public function setVideoFrameInterval($videoFrameInterval)
+    public function setLang($lang)
     {
-        $this->requestParameters['VideoFrameInterval'] = $videoFrameInterval;
-        $this->queryParameters['VideoFrameInterval'] = $videoFrameInterval;
+        $this->requestParameters['Lang'] = $lang;
+        $this->queryParameters['Lang'] = $lang;
+
+        return $this;
+    }
+
+    /**
+     * @param string $imageAutoFreeze
+     *
+     * @return $this
+     */
+    public function setImageAutoFreeze($imageAutoFreeze)
+    {
+        $this->requestParameters['ImageAutoFreeze'] = $imageAutoFreeze;
+        $this->queryParameters['ImageAutoFreeze'] = $imageAutoFreeze;
 
         return $this;
     }
@@ -172,14 +159,27 @@ class UpdateOssIncrementCheckSettingRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $lang
+     * @param string $autoFreezeType
      *
      * @return $this
      */
-    public function setLang($lang)
+    public function setAutoFreezeType($autoFreezeType)
     {
-        $this->requestParameters['Lang'] = $lang;
-        $this->queryParameters['Lang'] = $lang;
+        $this->requestParameters['AutoFreezeType'] = $autoFreezeType;
+        $this->queryParameters['AutoFreezeType'] = $autoFreezeType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $bucketConfigList
+     *
+     * @return $this
+     */
+    public function setBucketConfigList($bucketConfigList)
+    {
+        $this->requestParameters['BucketConfigList'] = $bucketConfigList;
+        $this->queryParameters['BucketConfigList'] = $bucketConfigList;
 
         return $this;
     }

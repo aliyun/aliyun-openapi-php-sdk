@@ -8,11 +8,11 @@ namespace Green\Request\V20170823;
  * Request of DescribeAppInfo
  *
  * @method string getTotalCount()
+ * @method string getCurrentPage()
+ * @method string getPlatform()
  * @method string getSourceIp()
  * @method string getPageSize()
- * @method string getCurrentPage()
  * @method string getLang()
- * @method string getPlatform()
  */
 class DescribeAppInfoRequest extends \RpcAcsRequest
 {
@@ -49,6 +49,32 @@ class DescribeAppInfoRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $currentPage
+     *
+     * @return $this
+     */
+    public function setCurrentPage($currentPage)
+    {
+        $this->requestParameters['CurrentPage'] = $currentPage;
+        $this->queryParameters['CurrentPage'] = $currentPage;
+
+        return $this;
+    }
+
+    /**
+     * @param string $platform
+     *
+     * @return $this
+     */
+    public function setPlatform($platform)
+    {
+        $this->requestParameters['Platform'] = $platform;
+        $this->queryParameters['Platform'] = $platform;
+
+        return $this;
+    }
+
+    /**
      * @param string $sourceIp
      *
      * @return $this
@@ -75,19 +101,6 @@ class DescribeAppInfoRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $currentPage
-     *
-     * @return $this
-     */
-    public function setCurrentPage($currentPage)
-    {
-        $this->requestParameters['CurrentPage'] = $currentPage;
-        $this->queryParameters['CurrentPage'] = $currentPage;
-
-        return $this;
-    }
-
-    /**
      * @param string $lang
      *
      * @return $this
@@ -96,19 +109,6 @@ class DescribeAppInfoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Lang'] = $lang;
         $this->queryParameters['Lang'] = $lang;
-
-        return $this;
-    }
-
-    /**
-     * @param string $platform
-     *
-     * @return $this
-     */
-    public function setPlatform($platform)
-    {
-        $this->requestParameters['Platform'] = $platform;
-        $this->queryParameters['Platform'] = $platform;
 
         return $this;
     }

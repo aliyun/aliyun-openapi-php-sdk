@@ -7,10 +7,10 @@ namespace Green\Request\V20170823;
  *
  * Request of CreateBizType
  *
+ * @method string getBizTypeImport()
  * @method string getSourceIp()
  * @method string getIndustryInfo()
  * @method string getBizTypeName()
- * @method string getBizTypeImport()
  */
 class CreateBizTypeRequest extends \RpcAcsRequest
 {
@@ -31,6 +31,19 @@ class CreateBizTypeRequest extends \RpcAcsRequest
             'CreateBizType',
             'green'
         );
+    }
+
+    /**
+     * @param string $bizTypeImport
+     *
+     * @return $this
+     */
+    public function setBizTypeImport($bizTypeImport)
+    {
+        $this->requestParameters['BizTypeImport'] = $bizTypeImport;
+        $this->queryParameters['BizTypeImport'] = $bizTypeImport;
+
+        return $this;
     }
 
     /**
@@ -68,19 +81,6 @@ class CreateBizTypeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['BizTypeName'] = $bizTypeName;
         $this->queryParameters['BizTypeName'] = $bizTypeName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $bizTypeImport
-     *
-     * @return $this
-     */
-    public function setBizTypeImport($bizTypeImport)
-    {
-        $this->requestParameters['BizTypeImport'] = $bizTypeImport;
-        $this->queryParameters['BizTypeImport'] = $bizTypeImport;
 
         return $this;
     }

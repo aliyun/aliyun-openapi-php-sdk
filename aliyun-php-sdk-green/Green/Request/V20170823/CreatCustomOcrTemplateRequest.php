@@ -7,10 +7,10 @@ namespace Green\Request\V20170823;
  *
  * Request of CreatCustomOcrTemplate
  *
+ * @method string getRecognizeArea()
  * @method string getImgUrl()
  * @method string getSourceIp()
  * @method string getReferArea()
- * @method string getRecognizeArea()
  * @method string getName()
  */
 class CreatCustomOcrTemplateRequest extends \RpcAcsRequest
@@ -32,6 +32,19 @@ class CreatCustomOcrTemplateRequest extends \RpcAcsRequest
             'CreatCustomOcrTemplate',
             'green'
         );
+    }
+
+    /**
+     * @param string $recognizeArea
+     *
+     * @return $this
+     */
+    public function setRecognizeArea($recognizeArea)
+    {
+        $this->requestParameters['RecognizeArea'] = $recognizeArea;
+        $this->queryParameters['RecognizeArea'] = $recognizeArea;
+
+        return $this;
     }
 
     /**
@@ -69,19 +82,6 @@ class CreatCustomOcrTemplateRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ReferArea'] = $referArea;
         $this->queryParameters['ReferArea'] = $referArea;
-
-        return $this;
-    }
-
-    /**
-     * @param string $recognizeArea
-     *
-     * @return $this
-     */
-    public function setRecognizeArea($recognizeArea)
-    {
-        $this->requestParameters['RecognizeArea'] = $recognizeArea;
-        $this->queryParameters['RecognizeArea'] = $recognizeArea;
 
         return $this;
     }

@@ -7,16 +7,16 @@ namespace Green\Request\V20170823;
  *
  * Request of DescribeWebsiteScanResult
  *
- * @method string getTotalCount()
  * @method string getSubServiceModule()
- * @method string getSiteUrl()
  * @method string getSourceIp()
- * @method string getHandleStatus()
- * @method string getDomain()
  * @method string getPageSize()
+ * @method string getLang()
+ * @method string getTotalCount()
+ * @method string getSiteUrl()
+ * @method string getHandleStatus()
  * @method string getCurrentPage()
  * @method string getLabel()
- * @method string getLang()
+ * @method string getDomain()
  */
 class DescribeWebsiteScanResultRequest extends \RpcAcsRequest
 {
@@ -40,19 +40,6 @@ class DescribeWebsiteScanResultRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $totalCount
-     *
-     * @return $this
-     */
-    public function setTotalCount($totalCount)
-    {
-        $this->requestParameters['TotalCount'] = $totalCount;
-        $this->queryParameters['TotalCount'] = $totalCount;
-
-        return $this;
-    }
-
-    /**
      * @param string $subServiceModule
      *
      * @return $this
@@ -61,19 +48,6 @@ class DescribeWebsiteScanResultRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SubServiceModule'] = $subServiceModule;
         $this->queryParameters['SubServiceModule'] = $subServiceModule;
-
-        return $this;
-    }
-
-    /**
-     * @param string $siteUrl
-     *
-     * @return $this
-     */
-    public function setSiteUrl($siteUrl)
-    {
-        $this->requestParameters['SiteUrl'] = $siteUrl;
-        $this->queryParameters['SiteUrl'] = $siteUrl;
 
         return $this;
     }
@@ -92,32 +66,6 @@ class DescribeWebsiteScanResultRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $handleStatus
-     *
-     * @return $this
-     */
-    public function setHandleStatus($handleStatus)
-    {
-        $this->requestParameters['HandleStatus'] = $handleStatus;
-        $this->queryParameters['HandleStatus'] = $handleStatus;
-
-        return $this;
-    }
-
-    /**
-     * @param string $domain
-     *
-     * @return $this
-     */
-    public function setDomain($domain)
-    {
-        $this->requestParameters['Domain'] = $domain;
-        $this->queryParameters['Domain'] = $domain;
-
-        return $this;
-    }
-
-    /**
      * @param string $pageSize
      *
      * @return $this
@@ -126,6 +74,58 @@ class DescribeWebsiteScanResultRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageSize'] = $pageSize;
         $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $lang
+     *
+     * @return $this
+     */
+    public function setLang($lang)
+    {
+        $this->requestParameters['Lang'] = $lang;
+        $this->queryParameters['Lang'] = $lang;
+
+        return $this;
+    }
+
+    /**
+     * @param string $totalCount
+     *
+     * @return $this
+     */
+    public function setTotalCount($totalCount)
+    {
+        $this->requestParameters['TotalCount'] = $totalCount;
+        $this->queryParameters['TotalCount'] = $totalCount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $siteUrl
+     *
+     * @return $this
+     */
+    public function setSiteUrl($siteUrl)
+    {
+        $this->requestParameters['SiteUrl'] = $siteUrl;
+        $this->queryParameters['SiteUrl'] = $siteUrl;
+
+        return $this;
+    }
+
+    /**
+     * @param string $handleStatus
+     *
+     * @return $this
+     */
+    public function setHandleStatus($handleStatus)
+    {
+        $this->requestParameters['HandleStatus'] = $handleStatus;
+        $this->queryParameters['HandleStatus'] = $handleStatus;
 
         return $this;
     }
@@ -157,14 +157,14 @@ class DescribeWebsiteScanResultRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $lang
+     * @param string $domain
      *
      * @return $this
      */
-    public function setLang($lang)
+    public function setDomain($domain)
     {
-        $this->requestParameters['Lang'] = $lang;
-        $this->queryParameters['Lang'] = $lang;
+        $this->requestParameters['Domain'] = $domain;
+        $this->queryParameters['Domain'] = $domain;
 
         return $this;
     }

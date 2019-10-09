@@ -5,13 +5,12 @@ namespace Green\Request\V20170823;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeBizTypeSetting
+ * Request of UpdateAuditRange
  *
- * @method string getResourceType()
+ * @method string getAuditRange()
  * @method string getSourceIp()
- * @method string getBizTypeName()
  */
-class DescribeBizTypeSettingRequest extends \RpcAcsRequest
+class UpdateAuditRangeRequest extends \RpcAcsRequest
 {
 
     /**
@@ -27,20 +26,20 @@ class DescribeBizTypeSettingRequest extends \RpcAcsRequest
         parent::__construct(
             'Green',
             '2017-08-23',
-            'DescribeBizTypeSetting',
+            'UpdateAuditRange',
             'green'
         );
     }
 
     /**
-     * @param string $resourceType
+     * @param string $auditRange
      *
      * @return $this
      */
-    public function setResourceType($resourceType)
+    public function setAuditRange($auditRange)
     {
-        $this->requestParameters['ResourceType'] = $resourceType;
-        $this->queryParameters['ResourceType'] = $resourceType;
+        $this->requestParameters['AuditRange'] = $auditRange;
+        $this->queryParameters['AuditRange'] = $auditRange;
 
         return $this;
     }
@@ -54,19 +53,6 @@ class DescribeBizTypeSettingRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SourceIp'] = $sourceIp;
         $this->queryParameters['SourceIp'] = $sourceIp;
-
-        return $this;
-    }
-
-    /**
-     * @param string $bizTypeName
-     *
-     * @return $this
-     */
-    public function setBizTypeName($bizTypeName)
-    {
-        $this->requestParameters['BizTypeName'] = $bizTypeName;
-        $this->queryParameters['BizTypeName'] = $bizTypeName;
 
         return $this;
     }

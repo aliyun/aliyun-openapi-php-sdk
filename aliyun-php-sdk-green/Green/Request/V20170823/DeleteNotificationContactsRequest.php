@@ -7,9 +7,9 @@ namespace Green\Request\V20170823;
  *
  * Request of DeleteNotificationContacts
  *
+ * @method string getContactTypes()
  * @method string getSourceIp()
  * @method string getLang()
- * @method string getContactTypes()
  */
 class DeleteNotificationContactsRequest extends \RpcAcsRequest
 {
@@ -30,6 +30,19 @@ class DeleteNotificationContactsRequest extends \RpcAcsRequest
             'DeleteNotificationContacts',
             'green'
         );
+    }
+
+    /**
+     * @param string $contactTypes
+     *
+     * @return $this
+     */
+    public function setContactTypes($contactTypes)
+    {
+        $this->requestParameters['ContactTypes'] = $contactTypes;
+        $this->queryParameters['ContactTypes'] = $contactTypes;
+
+        return $this;
     }
 
     /**
@@ -54,19 +67,6 @@ class DeleteNotificationContactsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Lang'] = $lang;
         $this->queryParameters['Lang'] = $lang;
-
-        return $this;
-    }
-
-    /**
-     * @param string $contactTypes
-     *
-     * @return $this
-     */
-    public function setContactTypes($contactTypes)
-    {
-        $this->requestParameters['ContactTypes'] = $contactTypes;
-        $this->queryParameters['ContactTypes'] = $contactTypes;
 
         return $this;
     }

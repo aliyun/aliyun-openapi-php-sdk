@@ -7,9 +7,9 @@ namespace Green\Request\V20170823;
  *
  * Request of UpdateAuditSetting
  *
- * @method string getSourceIp()
  * @method string getSeed()
  * @method string getAuditRange()
+ * @method string getSourceIp()
  * @method string getCallback()
  */
 class UpdateAuditSettingRequest extends \RpcAcsRequest
@@ -34,19 +34,6 @@ class UpdateAuditSettingRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $sourceIp
-     *
-     * @return $this
-     */
-    public function setSourceIp($sourceIp)
-    {
-        $this->requestParameters['SourceIp'] = $sourceIp;
-        $this->queryParameters['SourceIp'] = $sourceIp;
-
-        return $this;
-    }
-
-    /**
      * @param string $seed
      *
      * @return $this
@@ -68,6 +55,19 @@ class UpdateAuditSettingRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AuditRange'] = $auditRange;
         $this->queryParameters['AuditRange'] = $auditRange;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sourceIp
+     *
+     * @return $this
+     */
+    public function setSourceIp($sourceIp)
+    {
+        $this->requestParameters['SourceIp'] = $sourceIp;
+        $this->queryParameters['SourceIp'] = $sourceIp;
 
         return $this;
     }
