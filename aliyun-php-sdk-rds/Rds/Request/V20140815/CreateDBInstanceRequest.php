@@ -12,6 +12,7 @@ namespace Rds\Request\V20140815;
  * @method string getSystemDBCharset()
  * @method string getEngineVersion()
  * @method string getResourceGroupId()
+ * @method string getTargetDedicatedHostIdForMaster()
  * @method string getDBInstanceDescription()
  * @method string getBusinessInfo()
  * @method string getPeriod()
@@ -21,6 +22,7 @@ namespace Rds\Request\V20140815;
  * @method string getSecurityIPList()
  * @method string getVSwitchId()
  * @method string getPrivateIpAddress()
+ * @method string getTargetDedicatedHostIdForLog()
  * @method string getAutoRenew()
  * @method string getRoleARN()
  * @method string getTunnelId()
@@ -28,10 +30,12 @@ namespace Rds\Request\V20140815;
  * @method string getInstanceNetworkType()
  * @method string getConnectionMode()
  * @method string getClientToken()
+ * @method string getTargetDedicatedHostIdForSlave()
  * @method string getZoneIdSlave1()
  * @method string getZoneIdSlave2()
  * @method string getEngine()
  * @method string getDBInstanceStorageType()
+ * @method string getDedicatedHostGroupId()
  * @method string getDBInstanceNetType()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
@@ -122,6 +126,19 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
         $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $targetDedicatedHostIdForMaster
+     *
+     * @return $this
+     */
+    public function setTargetDedicatedHostIdForMaster($targetDedicatedHostIdForMaster)
+    {
+        $this->requestParameters['TargetDedicatedHostIdForMaster'] = $targetDedicatedHostIdForMaster;
+        $this->queryParameters['TargetDedicatedHostIdForMaster'] = $targetDedicatedHostIdForMaster;
 
         return $this;
     }
@@ -244,6 +261,19 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $targetDedicatedHostIdForLog
+     *
+     * @return $this
+     */
+    public function setTargetDedicatedHostIdForLog($targetDedicatedHostIdForLog)
+    {
+        $this->requestParameters['TargetDedicatedHostIdForLog'] = $targetDedicatedHostIdForLog;
+        $this->queryParameters['TargetDedicatedHostIdForLog'] = $targetDedicatedHostIdForLog;
+
+        return $this;
+    }
+
+    /**
      * @param string $autoRenew
      *
      * @return $this
@@ -335,6 +365,19 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $targetDedicatedHostIdForSlave
+     *
+     * @return $this
+     */
+    public function setTargetDedicatedHostIdForSlave($targetDedicatedHostIdForSlave)
+    {
+        $this->requestParameters['TargetDedicatedHostIdForSlave'] = $targetDedicatedHostIdForSlave;
+        $this->queryParameters['TargetDedicatedHostIdForSlave'] = $targetDedicatedHostIdForSlave;
+
+        return $this;
+    }
+
+    /**
      * @param string $zoneIdSlave1
      *
      * @return $this
@@ -382,6 +425,19 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DBInstanceStorageType'] = $dBInstanceStorageType;
         $this->queryParameters['DBInstanceStorageType'] = $dBInstanceStorageType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dedicatedHostGroupId
+     *
+     * @return $this
+     */
+    public function setDedicatedHostGroupId($dedicatedHostGroupId)
+    {
+        $this->requestParameters['DedicatedHostGroupId'] = $dedicatedHostGroupId;
+        $this->queryParameters['DedicatedHostGroupId'] = $dedicatedHostGroupId;
 
         return $this;
     }

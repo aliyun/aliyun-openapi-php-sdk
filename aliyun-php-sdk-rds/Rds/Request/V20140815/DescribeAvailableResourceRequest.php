@@ -11,6 +11,7 @@ namespace Rds\Request\V20140815;
  * @method string getEngineVersion()
  * @method string getEngine()
  * @method string getDBInstanceId()
+ * @method string getDBInstanceStorageType()
  * @method string getInstanceChargeType()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
@@ -88,6 +89,19 @@ class DescribeAvailableResourceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DBInstanceId'] = $dBInstanceId;
         $this->queryParameters['DBInstanceId'] = $dBInstanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceStorageType
+     *
+     * @return $this
+     */
+    public function setDBInstanceStorageType($dBInstanceStorageType)
+    {
+        $this->requestParameters['DBInstanceStorageType'] = $dBInstanceStorageType;
+        $this->queryParameters['DBInstanceStorageType'] = $dBInstanceStorageType;
 
         return $this;
     }

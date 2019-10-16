@@ -5,19 +5,18 @@ namespace Rds\Request\V20140815;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeParameterTemplates
+ * Request of DescribeDBProxyPerformance
  *
  * @method string getResourceOwnerId()
- * @method string getClientToken()
- * @method string getEngineVersion()
- * @method string getEngine()
+ * @method string getMetricsName()
+ * @method string getStartTime()
  * @method string getDBInstanceId()
  * @method string getResourceOwnerAccount()
- * @method string getOwnerAccount()
+ * @method string getEndTime()
  * @method string getOwnerId()
- * @method string getCategory()
+ * @method string getDBProxyInstanceType()
  */
-class DescribeParameterTemplatesRequest extends \RpcAcsRequest
+class DescribeDBProxyPerformanceRequest extends \RpcAcsRequest
 {
 
     /**
@@ -33,7 +32,7 @@ class DescribeParameterTemplatesRequest extends \RpcAcsRequest
         parent::__construct(
             'Rds',
             '2014-08-15',
-            'DescribeParameterTemplates',
+            'DescribeDBProxyPerformance',
             'rds'
         );
     }
@@ -52,40 +51,27 @@ class DescribeParameterTemplatesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $clientToken
+     * @param string $metricsName
      *
      * @return $this
      */
-    public function setClientToken($clientToken)
+    public function setMetricsName($metricsName)
     {
-        $this->requestParameters['ClientToken'] = $clientToken;
-        $this->queryParameters['ClientToken'] = $clientToken;
+        $this->requestParameters['MetricsName'] = $metricsName;
+        $this->queryParameters['MetricsName'] = $metricsName;
 
         return $this;
     }
 
     /**
-     * @param string $engineVersion
+     * @param string $startTime
      *
      * @return $this
      */
-    public function setEngineVersion($engineVersion)
+    public function setStartTime($startTime)
     {
-        $this->requestParameters['EngineVersion'] = $engineVersion;
-        $this->queryParameters['EngineVersion'] = $engineVersion;
-
-        return $this;
-    }
-
-    /**
-     * @param string $engine
-     *
-     * @return $this
-     */
-    public function setEngine($engine)
-    {
-        $this->requestParameters['Engine'] = $engine;
-        $this->queryParameters['Engine'] = $engine;
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
 
         return $this;
     }
@@ -117,14 +103,14 @@ class DescribeParameterTemplatesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerAccount
+     * @param string $endTime
      *
      * @return $this
      */
-    public function setOwnerAccount($ownerAccount)
+    public function setEndTime($endTime)
     {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
 
         return $this;
     }
@@ -143,14 +129,14 @@ class DescribeParameterTemplatesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $category
+     * @param string $dBProxyInstanceType
      *
      * @return $this
      */
-    public function setCategory($category)
+    public function setDBProxyInstanceType($dBProxyInstanceType)
     {
-        $this->requestParameters['Category'] = $category;
-        $this->queryParameters['Category'] = $category;
+        $this->requestParameters['DBProxyInstanceType'] = $dBProxyInstanceType;
+        $this->queryParameters['DBProxyInstanceType'] = $dBProxyInstanceType;
 
         return $this;
     }

@@ -5,18 +5,16 @@ namespace Rds\Request\V20140815;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeCrossRegionBackupDBInstance
+ * Request of RebuildDBInstance
  *
  * @method string getResourceOwnerId()
- * @method string getPageNumber()
- * @method string getPageSize()
  * @method string getDBInstanceId()
- * @method string getNotEnabled()
- * @method string getProduct()
+ * @method string getDedicatedHostGroupId()
  * @method string getResourceOwnerAccount()
+ * @method string getDedicatedHostId()
  * @method string getOwnerId()
  */
-class DescribeCrossRegionBackupDBInstanceRequest extends \RpcAcsRequest
+class RebuildDBInstanceRequest extends \RpcAcsRequest
 {
 
     /**
@@ -32,7 +30,7 @@ class DescribeCrossRegionBackupDBInstanceRequest extends \RpcAcsRequest
         parent::__construct(
             'Rds',
             '2014-08-15',
-            'DescribeCrossRegionBackupDBInstance',
+            'RebuildDBInstance',
             'rds'
         );
     }
@@ -51,32 +49,6 @@ class DescribeCrossRegionBackupDBInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
      * @param string $dBInstanceId
      *
      * @return $this
@@ -90,27 +62,14 @@ class DescribeCrossRegionBackupDBInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $notEnabled
+     * @param string $dedicatedHostGroupId
      *
      * @return $this
      */
-    public function setNotEnabled($notEnabled)
+    public function setDedicatedHostGroupId($dedicatedHostGroupId)
     {
-        $this->requestParameters['NotEnabled'] = $notEnabled;
-        $this->queryParameters['NotEnabled'] = $notEnabled;
-
-        return $this;
-    }
-
-    /**
-     * @param string $product
-     *
-     * @return $this
-     */
-    public function setProduct($product)
-    {
-        $this->requestParameters['Product'] = $product;
-        $this->queryParameters['Product'] = $product;
+        $this->requestParameters['DedicatedHostGroupId'] = $dedicatedHostGroupId;
+        $this->queryParameters['DedicatedHostGroupId'] = $dedicatedHostGroupId;
 
         return $this;
     }
@@ -124,6 +83,19 @@ class DescribeCrossRegionBackupDBInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dedicatedHostId
+     *
+     * @return $this
+     */
+    public function setDedicatedHostId($dedicatedHostId)
+    {
+        $this->requestParameters['DedicatedHostId'] = $dedicatedHostId;
+        $this->queryParameters['DedicatedHostId'] = $dedicatedHostId;
 
         return $this;
     }

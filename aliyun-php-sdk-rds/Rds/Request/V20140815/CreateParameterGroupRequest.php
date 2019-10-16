@@ -5,19 +5,18 @@ namespace Rds\Request\V20140815;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeParameterTemplates
+ * Request of CreateParameterGroup
  *
  * @method string getResourceOwnerId()
- * @method string getClientToken()
  * @method string getEngineVersion()
  * @method string getEngine()
- * @method string getDBInstanceId()
  * @method string getResourceOwnerAccount()
- * @method string getOwnerAccount()
  * @method string getOwnerId()
- * @method string getCategory()
+ * @method string getParameterGroupName()
+ * @method string getParameters()
+ * @method string getParameterGroupDesc()
  */
-class DescribeParameterTemplatesRequest extends \RpcAcsRequest
+class CreateParameterGroupRequest extends \RpcAcsRequest
 {
 
     /**
@@ -33,7 +32,7 @@ class DescribeParameterTemplatesRequest extends \RpcAcsRequest
         parent::__construct(
             'Rds',
             '2014-08-15',
-            'DescribeParameterTemplates',
+            'CreateParameterGroup',
             'rds'
         );
     }
@@ -47,19 +46,6 @@ class DescribeParameterTemplatesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $clientToken
-     *
-     * @return $this
-     */
-    public function setClientToken($clientToken)
-    {
-        $this->requestParameters['ClientToken'] = $clientToken;
-        $this->queryParameters['ClientToken'] = $clientToken;
 
         return $this;
     }
@@ -91,19 +77,6 @@ class DescribeParameterTemplatesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -112,19 +85,6 @@ class DescribeParameterTemplatesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
         return $this;
     }
@@ -143,14 +103,40 @@ class DescribeParameterTemplatesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $category
+     * @param string $parameterGroupName
      *
      * @return $this
      */
-    public function setCategory($category)
+    public function setParameterGroupName($parameterGroupName)
     {
-        $this->requestParameters['Category'] = $category;
-        $this->queryParameters['Category'] = $category;
+        $this->requestParameters['ParameterGroupName'] = $parameterGroupName;
+        $this->queryParameters['ParameterGroupName'] = $parameterGroupName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $parameters
+     *
+     * @return $this
+     */
+    public function setParameters($parameters)
+    {
+        $this->requestParameters['Parameters'] = $parameters;
+        $this->queryParameters['Parameters'] = $parameters;
+
+        return $this;
+    }
+
+    /**
+     * @param string $parameterGroupDesc
+     *
+     * @return $this
+     */
+    public function setParameterGroupDesc($parameterGroupDesc)
+    {
+        $this->requestParameters['ParameterGroupDesc'] = $parameterGroupDesc;
+        $this->queryParameters['ParameterGroupDesc'] = $parameterGroupDesc;
 
         return $this;
     }

@@ -33,6 +33,7 @@ namespace Rds\Request\V20140815;
  * @method string getPageSize()
  * @method string getDBInstanceStatus()
  * @method string getDBInstanceId()
+ * @method string getDedicatedHostGroupId()
  * @method string getTag3value()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
@@ -397,6 +398,19 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DBInstanceId'] = $dBInstanceId;
         $this->queryParameters['DBInstanceId'] = $dBInstanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dedicatedHostGroupId
+     *
+     * @return $this
+     */
+    public function setDedicatedHostGroupId($dedicatedHostGroupId)
+    {
+        $this->requestParameters['DedicatedHostGroupId'] = $dedicatedHostGroupId;
+        $this->queryParameters['DedicatedHostGroupId'] = $dedicatedHostGroupId;
 
         return $this;
     }

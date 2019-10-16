@@ -10,6 +10,7 @@ namespace Rds\Request\V20140815;
  * @method string getResourceOwnerId()
  * @method string getLocalLogRetentionHours()
  * @method string getLogBackupFrequency()
+ * @method string getArchiveBackupKeepCount()
  * @method string getBackupLog()
  * @method string getDuplicationContent()
  * @method string getHighSpaceUsageProtection()
@@ -22,10 +23,12 @@ namespace Rds\Request\V20140815;
  * @method string getCompressType()
  * @method string getLocalLogRetentionSpace()
  * @method string getOwnerId()
+ * @method string getArchiveBackupKeepPolicy()
  * @method string getDuplication()
  * @method string getPreferredBackupTime()
  * @method string getBackupRetentionPeriod()
  * @method string getDuplicationLocation()
+ * @method string getArchiveBackupRetentionPeriod()
  * @method string getLogBackupRetentionPeriod()
  */
 class ModifyBackupPolicyRequest extends \RpcAcsRequest
@@ -84,6 +87,19 @@ class ModifyBackupPolicyRequest extends \RpcAcsRequest
     {
         $this->requestParameters['LogBackupFrequency'] = $logBackupFrequency;
         $this->queryParameters['LogBackupFrequency'] = $logBackupFrequency;
+
+        return $this;
+    }
+
+    /**
+     * @param string $archiveBackupKeepCount
+     *
+     * @return $this
+     */
+    public function setArchiveBackupKeepCount($archiveBackupKeepCount)
+    {
+        $this->requestParameters['ArchiveBackupKeepCount'] = $archiveBackupKeepCount;
+        $this->queryParameters['ArchiveBackupKeepCount'] = $archiveBackupKeepCount;
 
         return $this;
     }
@@ -245,6 +261,19 @@ class ModifyBackupPolicyRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $archiveBackupKeepPolicy
+     *
+     * @return $this
+     */
+    public function setArchiveBackupKeepPolicy($archiveBackupKeepPolicy)
+    {
+        $this->requestParameters['ArchiveBackupKeepPolicy'] = $archiveBackupKeepPolicy;
+        $this->queryParameters['ArchiveBackupKeepPolicy'] = $archiveBackupKeepPolicy;
+
+        return $this;
+    }
+
+    /**
      * @param string $duplication
      *
      * @return $this
@@ -292,6 +321,19 @@ class ModifyBackupPolicyRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DuplicationLocation'] = $duplicationLocation;
         $this->queryParameters['DuplicationLocation'] = $duplicationLocation;
+
+        return $this;
+    }
+
+    /**
+     * @param string $archiveBackupRetentionPeriod
+     *
+     * @return $this
+     */
+    public function setArchiveBackupRetentionPeriod($archiveBackupRetentionPeriod)
+    {
+        $this->requestParameters['ArchiveBackupRetentionPeriod'] = $archiveBackupRetentionPeriod;
+        $this->queryParameters['ArchiveBackupRetentionPeriod'] = $archiveBackupRetentionPeriod;
 
         return $this;
     }
