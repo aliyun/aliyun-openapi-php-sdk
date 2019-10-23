@@ -8,11 +8,11 @@ namespace vod\Request\V20170321;
  * Request of GetVideoInfo
  *
  * @method string getResourceOwnerId()
+ * @method string getResultTypes()
  * @method string getResourceOwnerAccount()
  * @method string getVideoId()
- * @method string getAdditionType()
- * @method string getResultTypes()
  * @method string getOwnerId()
+ * @method string getAdditionType()
  */
 class GetVideoInfoRequest extends \RpcAcsRequest
 {
@@ -49,6 +49,19 @@ class GetVideoInfoRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $resultTypes
+     *
+     * @return $this
+     */
+    public function setResultTypes($resultTypes)
+    {
+        $this->requestParameters['ResultTypes'] = $resultTypes;
+        $this->queryParameters['ResultTypes'] = $resultTypes;
+
+        return $this;
+    }
+
+    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -75,32 +88,6 @@ class GetVideoInfoRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $additionType
-     *
-     * @return $this
-     */
-    public function setAdditionType($additionType)
-    {
-        $this->requestParameters['AdditionType'] = $additionType;
-        $this->queryParameters['AdditionType'] = $additionType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resultTypes
-     *
-     * @return $this
-     */
-    public function setResultTypes($resultTypes)
-    {
-        $this->requestParameters['ResultTypes'] = $resultTypes;
-        $this->queryParameters['ResultTypes'] = $resultTypes;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -109,6 +96,19 @@ class GetVideoInfoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $additionType
+     *
+     * @return $this
+     */
+    public function setAdditionType($additionType)
+    {
+        $this->requestParameters['AdditionType'] = $additionType;
+        $this->queryParameters['AdditionType'] = $additionType;
 
         return $this;
     }

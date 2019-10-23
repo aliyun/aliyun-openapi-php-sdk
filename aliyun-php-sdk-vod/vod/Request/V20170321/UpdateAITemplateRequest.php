@@ -8,9 +8,9 @@ namespace vod\Request\V20170321;
  * Request of UpdateAITemplate
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
  * @method string getTemplateConfig()
  * @method string getTemplateName()
+ * @method string getResourceOwnerAccount()
  * @method string getOwnerId()
  * @method string getTemplateId()
  */
@@ -49,19 +49,6 @@ class UpdateAITemplateRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $templateConfig
      *
      * @return $this
@@ -83,6 +70,19 @@ class UpdateAITemplateRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TemplateName'] = $templateName;
         $this->queryParameters['TemplateName'] = $templateName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }

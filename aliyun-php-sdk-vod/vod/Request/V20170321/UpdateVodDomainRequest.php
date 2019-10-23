@@ -9,9 +9,9 @@ namespace vod\Request\V20170321;
  *
  * @method string getTopLevelDomain()
  * @method string getSources()
- * @method string getSecurityToken()
  * @method string getDomainName()
  * @method string getOwnerId()
+ * @method string getSecurityToken()
  */
 class UpdateVodDomainRequest extends \RpcAcsRequest
 {
@@ -61,19 +61,6 @@ class UpdateVodDomainRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $domainName
      *
      * @return $this
@@ -95,6 +82,19 @@ class UpdateVodDomainRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

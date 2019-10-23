@@ -8,9 +8,9 @@ namespace vod\Request\V20170321;
  * Request of DescribeVodDomainConfigs
  *
  * @method string getFunctionNames()
- * @method string getSecurityToken()
  * @method string getDomainName()
  * @method string getOwnerId()
+ * @method string getSecurityToken()
  */
 class DescribeVodDomainConfigsRequest extends \RpcAcsRequest
 {
@@ -47,19 +47,6 @@ class DescribeVodDomainConfigsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $domainName
      *
      * @return $this
@@ -81,6 +68,19 @@ class DescribeVodDomainConfigsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

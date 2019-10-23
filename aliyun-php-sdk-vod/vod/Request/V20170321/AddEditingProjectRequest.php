@@ -7,15 +7,15 @@ namespace vod\Request\V20170321;
  *
  * Request of AddEditingProject
  *
+ * @method string getResourceOwnerId()
+ * @method string getDescription()
+ * @method string getTitle()
  * @method string getCoverURL()
  * @method string getDivision()
- * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getDescription()
- * @method string getTimeline()
  * @method string getOwnerId()
- * @method string getTitle()
+ * @method string getTimeline()
  */
 class AddEditingProjectRequest extends \RpcAcsRequest
 {
@@ -36,6 +36,45 @@ class AddEditingProjectRequest extends \RpcAcsRequest
             'AddEditingProject',
             'vod'
         );
+    }
+
+    /**
+     * @param string $resourceOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceOwnerId($resourceOwnerId)
+    {
+        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
+        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * @param string $title
+     *
+     * @return $this
+     */
+    public function setTitle($title)
+    {
+        $this->requestParameters['Title'] = $title;
+        $this->queryParameters['Title'] = $title;
+
+        return $this;
     }
 
     /**
@@ -60,19 +99,6 @@ class AddEditingProjectRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Division'] = $division;
         $this->queryParameters['Division'] = $division;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerId
-     *
-     * @return $this
-     */
-    public function setResourceOwnerId($resourceOwnerId)
-    {
-        $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
-        $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
         return $this;
     }
@@ -104,32 +130,6 @@ class AddEditingProjectRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $description
-     *
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->requestParameters['Description'] = $description;
-        $this->queryParameters['Description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * @param string $timeline
-     *
-     * @return $this
-     */
-    public function setTimeline($timeline)
-    {
-        $this->requestParameters['Timeline'] = $timeline;
-        $this->queryParameters['Timeline'] = $timeline;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -143,14 +143,14 @@ class AddEditingProjectRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $title
+     * @param string $timeline
      *
      * @return $this
      */
-    public function setTitle($title)
+    public function setTimeline($timeline)
     {
-        $this->requestParameters['Title'] = $title;
-        $this->queryParameters['Title'] = $title;
+        $this->requestParameters['Timeline'] = $timeline;
+        $this->queryParameters['Timeline'] = $timeline;
 
         return $this;
     }

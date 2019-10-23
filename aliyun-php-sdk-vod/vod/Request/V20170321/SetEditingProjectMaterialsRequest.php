@@ -8,11 +8,11 @@ namespace vod\Request\V20170321;
  * Request of SetEditingProjectMaterials
  *
  * @method string getResourceOwnerId()
+ * @method string getProjectId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getMaterialIds()
  * @method string getOwnerId()
- * @method string getProjectId()
+ * @method string getMaterialIds()
  */
 class SetEditingProjectMaterialsRequest extends \RpcAcsRequest
 {
@@ -49,6 +49,19 @@ class SetEditingProjectMaterialsRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $projectId
+     *
+     * @return $this
+     */
+    public function setProjectId($projectId)
+    {
+        $this->requestParameters['ProjectId'] = $projectId;
+        $this->queryParameters['ProjectId'] = $projectId;
+
+        return $this;
+    }
+
+    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -75,19 +88,6 @@ class SetEditingProjectMaterialsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $materialIds
-     *
-     * @return $this
-     */
-    public function setMaterialIds($materialIds)
-    {
-        $this->requestParameters['MaterialIds'] = $materialIds;
-        $this->queryParameters['MaterialIds'] = $materialIds;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -101,14 +101,14 @@ class SetEditingProjectMaterialsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $projectId
+     * @param string $materialIds
      *
      * @return $this
      */
-    public function setProjectId($projectId)
+    public function setMaterialIds($materialIds)
     {
-        $this->requestParameters['ProjectId'] = $projectId;
-        $this->queryParameters['ProjectId'] = $projectId;
+        $this->requestParameters['MaterialIds'] = $materialIds;
+        $this->queryParameters['MaterialIds'] = $materialIds;
 
         return $this;
     }

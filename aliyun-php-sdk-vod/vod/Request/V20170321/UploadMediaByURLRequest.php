@@ -8,17 +8,17 @@ namespace vod\Request\V20170321;
  * Request of UploadMediaByURL
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
  * @method string getMessageCallback()
- * @method string getOwnerId()
- * @method string getPriority()
  * @method string getStorageLocation()
  * @method string getUserData()
+ * @method string getWorkflowId()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerId()
+ * @method string getPriority()
  * @method string getTemplateGroupId()
  * @method string getUploadMetadatas()
  * @method string getUploadURLs()
  * @method string getAppId()
- * @method string getWorkflowId()
  */
 class UploadMediaByURLRequest extends \RpcAcsRequest
 {
@@ -55,19 +55,6 @@ class UploadMediaByURLRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $messageCallback
      *
      * @return $this
@@ -76,32 +63,6 @@ class UploadMediaByURLRequest extends \RpcAcsRequest
     {
         $this->requestParameters['MessageCallback'] = $messageCallback;
         $this->queryParameters['MessageCallback'] = $messageCallback;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $priority
-     *
-     * @return $this
-     */
-    public function setPriority($priority)
-    {
-        $this->requestParameters['Priority'] = $priority;
-        $this->queryParameters['Priority'] = $priority;
 
         return $this;
     }
@@ -128,6 +89,58 @@ class UploadMediaByURLRequest extends \RpcAcsRequest
     {
         $this->requestParameters['UserData'] = $userData;
         $this->queryParameters['UserData'] = $userData;
+
+        return $this;
+    }
+
+    /**
+     * @param string $workflowId
+     *
+     * @return $this
+     */
+    public function setWorkflowId($workflowId)
+    {
+        $this->requestParameters['WorkflowId'] = $workflowId;
+        $this->queryParameters['WorkflowId'] = $workflowId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $priority
+     *
+     * @return $this
+     */
+    public function setPriority($priority)
+    {
+        $this->requestParameters['Priority'] = $priority;
+        $this->queryParameters['Priority'] = $priority;
 
         return $this;
     }
@@ -180,19 +193,6 @@ class UploadMediaByURLRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AppId'] = $appId;
         $this->queryParameters['AppId'] = $appId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $workflowId
-     *
-     * @return $this
-     */
-    public function setWorkflowId($workflowId)
-    {
-        $this->requestParameters['WorkflowId'] = $workflowId;
-        $this->queryParameters['WorkflowId'] = $workflowId;
 
         return $this;
     }

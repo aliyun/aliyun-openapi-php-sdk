@@ -9,8 +9,8 @@ namespace vod\Request\V20170321;
  *
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
- * @method string getTranscodeTaskId()
  * @method string getOwnerId()
+ * @method string getTranscodeTaskId()
  */
 class GetTranscodeTaskRequest extends \RpcAcsRequest
 {
@@ -60,19 +60,6 @@ class GetTranscodeTaskRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $transcodeTaskId
-     *
-     * @return $this
-     */
-    public function setTranscodeTaskId($transcodeTaskId)
-    {
-        $this->requestParameters['TranscodeTaskId'] = $transcodeTaskId;
-        $this->queryParameters['TranscodeTaskId'] = $transcodeTaskId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -81,6 +68,19 @@ class GetTranscodeTaskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $transcodeTaskId
+     *
+     * @return $this
+     */
+    public function setTranscodeTaskId($transcodeTaskId)
+    {
+        $this->requestParameters['TranscodeTaskId'] = $transcodeTaskId;
+        $this->queryParameters['TranscodeTaskId'] = $transcodeTaskId;
 
         return $this;
     }

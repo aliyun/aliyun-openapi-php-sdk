@@ -9,14 +9,14 @@ namespace vod\Request\V20170321;
  *
  * @method string getAuthKey()
  * @method string getResourceOwnerId()
+ * @method string getResourceRealOwnerId()
+ * @method string getCallbackType()
+ * @method string getCallbackSwitch()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getEventTypeList()
  * @method string getMnsQueueName()
- * @method string getResourceRealOwnerId()
  * @method string getOwnerId()
- * @method string getCallbackType()
- * @method string getCallbackSwitch()
  * @method string getMnsEndpoint()
  * @method string getAppId()
  * @method string getAuthSwitch()
@@ -65,6 +65,45 @@ class SetMessageCallbackRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceRealOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceRealOwnerId($resourceRealOwnerId)
+    {
+        $this->requestParameters['ResourceRealOwnerId'] = $resourceRealOwnerId;
+        $this->queryParameters['ResourceRealOwnerId'] = $resourceRealOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $callbackType
+     *
+     * @return $this
+     */
+    public function setCallbackType($callbackType)
+    {
+        $this->requestParameters['CallbackType'] = $callbackType;
+        $this->queryParameters['CallbackType'] = $callbackType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $callbackSwitch
+     *
+     * @return $this
+     */
+    public function setCallbackSwitch($callbackSwitch)
+    {
+        $this->requestParameters['CallbackSwitch'] = $callbackSwitch;
+        $this->queryParameters['CallbackSwitch'] = $callbackSwitch;
 
         return $this;
     }
@@ -122,19 +161,6 @@ class SetMessageCallbackRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceRealOwnerId
-     *
-     * @return $this
-     */
-    public function setResourceRealOwnerId($resourceRealOwnerId)
-    {
-        $this->requestParameters['ResourceRealOwnerId'] = $resourceRealOwnerId;
-        $this->queryParameters['ResourceRealOwnerId'] = $resourceRealOwnerId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -143,32 +169,6 @@ class SetMessageCallbackRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $callbackType
-     *
-     * @return $this
-     */
-    public function setCallbackType($callbackType)
-    {
-        $this->requestParameters['CallbackType'] = $callbackType;
-        $this->queryParameters['CallbackType'] = $callbackType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $callbackSwitch
-     *
-     * @return $this
-     */
-    public function setCallbackSwitch($callbackSwitch)
-    {
-        $this->requestParameters['CallbackSwitch'] = $callbackSwitch;
-        $this->queryParameters['CallbackSwitch'] = $callbackSwitch;
 
         return $this;
     }

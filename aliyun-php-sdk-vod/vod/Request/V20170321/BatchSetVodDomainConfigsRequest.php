@@ -8,10 +8,10 @@ namespace vod\Request\V20170321;
  * Request of BatchSetVodDomainConfigs
  *
  * @method string getFunctions()
- * @method string getSecurityToken()
  * @method string getDomainNames()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getSecurityToken()
  */
 class BatchSetVodDomainConfigsRequest extends \RpcAcsRequest
 {
@@ -43,19 +43,6 @@ class BatchSetVodDomainConfigsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Functions'] = $functions;
         $this->queryParameters['Functions'] = $functions;
-
-        return $this;
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }
@@ -95,6 +82,19 @@ class BatchSetVodDomainConfigsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

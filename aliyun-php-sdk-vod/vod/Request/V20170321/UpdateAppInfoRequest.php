@@ -8,12 +8,12 @@ namespace vod\Request\V20170321;
  * Request of UpdateAppInfo
  *
  * @method string getResourceOwnerId()
- * @method string getAppName()
- * @method string getResourceOwnerAccount()
- * @method string getAppId()
  * @method string getDescription()
  * @method string getResourceRealOwnerId()
+ * @method string getAppName()
+ * @method string getResourceOwnerAccount()
  * @method string getOwnerId()
+ * @method string getAppId()
  * @method string getStatus()
  */
 class UpdateAppInfoRequest extends \RpcAcsRequest
@@ -51,45 +51,6 @@ class UpdateAppInfoRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $appName
-     *
-     * @return $this
-     */
-    public function setAppName($appName)
-    {
-        $this->requestParameters['AppName'] = $appName;
-        $this->queryParameters['AppName'] = $appName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $appId
-     *
-     * @return $this
-     */
-    public function setAppId($appId)
-    {
-        $this->requestParameters['AppId'] = $appId;
-        $this->queryParameters['AppId'] = $appId;
-
-        return $this;
-    }
-
-    /**
      * @param string $description
      *
      * @return $this
@@ -116,6 +77,32 @@ class UpdateAppInfoRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $appName
+     *
+     * @return $this
+     */
+    public function setAppName($appName)
+    {
+        $this->requestParameters['AppName'] = $appName;
+        $this->queryParameters['AppName'] = $appName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -124,6 +111,19 @@ class UpdateAppInfoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $appId
+     *
+     * @return $this
+     */
+    public function setAppId($appId)
+    {
+        $this->requestParameters['AppId'] = $appId;
+        $this->queryParameters['AppId'] = $appId;
 
         return $this;
     }

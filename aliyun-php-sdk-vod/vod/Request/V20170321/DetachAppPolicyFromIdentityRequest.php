@@ -7,13 +7,13 @@ namespace vod\Request\V20170321;
  *
  * Request of DetachAppPolicyFromIdentity
  *
- * @method string getIdentityName()
  * @method string getResourceOwnerId()
+ * @method string getPolicyNames()
+ * @method string getIdentityName()
  * @method string getIdentityType()
  * @method string getResourceOwnerAccount()
- * @method string getAppId()
- * @method string getPolicyNames()
  * @method string getOwnerId()
+ * @method string getAppId()
  */
 class DetachAppPolicyFromIdentityRequest extends \RpcAcsRequest
 {
@@ -37,19 +37,6 @@ class DetachAppPolicyFromIdentityRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $identityName
-     *
-     * @return $this
-     */
-    public function setIdentityName($identityName)
-    {
-        $this->requestParameters['IdentityName'] = $identityName;
-        $this->queryParameters['IdentityName'] = $identityName;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerId
      *
      * @return $this
@@ -58,6 +45,32 @@ class DetachAppPolicyFromIdentityRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $policyNames
+     *
+     * @return $this
+     */
+    public function setPolicyNames($policyNames)
+    {
+        $this->requestParameters['PolicyNames'] = $policyNames;
+        $this->queryParameters['PolicyNames'] = $policyNames;
+
+        return $this;
+    }
+
+    /**
+     * @param string $identityName
+     *
+     * @return $this
+     */
+    public function setIdentityName($identityName)
+    {
+        $this->requestParameters['IdentityName'] = $identityName;
+        $this->queryParameters['IdentityName'] = $identityName;
 
         return $this;
     }
@@ -89,32 +102,6 @@ class DetachAppPolicyFromIdentityRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $appId
-     *
-     * @return $this
-     */
-    public function setAppId($appId)
-    {
-        $this->requestParameters['AppId'] = $appId;
-        $this->queryParameters['AppId'] = $appId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $policyNames
-     *
-     * @return $this
-     */
-    public function setPolicyNames($policyNames)
-    {
-        $this->requestParameters['PolicyNames'] = $policyNames;
-        $this->queryParameters['PolicyNames'] = $policyNames;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -123,6 +110,19 @@ class DetachAppPolicyFromIdentityRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $appId
+     *
+     * @return $this
+     */
+    public function setAppId($appId)
+    {
+        $this->requestParameters['AppId'] = $appId;
+        $this->queryParameters['AppId'] = $appId;
 
         return $this;
     }

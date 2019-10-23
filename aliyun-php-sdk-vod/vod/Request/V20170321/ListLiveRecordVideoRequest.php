@@ -8,17 +8,17 @@ namespace vod\Request\V20170321;
  * Request of ListLiveRecordVideo
  *
  * @method string getResourceOwnerId()
+ * @method string getStartTime()
+ * @method string getAppName()
+ * @method string getPageSize()
+ * @method string getStreamName()
+ * @method string getQueryType()
  * @method string getResourceOwnerAccount()
  * @method string getDomainName()
  * @method string getEndTime()
- * @method string getStartTime()
  * @method string getOwnerId()
- * @method string getAppName()
  * @method string getPageNo()
- * @method string getPageSize()
  * @method string getSortBy()
- * @method string getStreamName()
- * @method string getQueryType()
  */
 class ListLiveRecordVideoRequest extends \RpcAcsRequest
 {
@@ -50,6 +50,71 @@ class ListLiveRecordVideoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $appName
+     *
+     * @return $this
+     */
+    public function setAppName($appName)
+    {
+        $this->requestParameters['AppName'] = $appName;
+        $this->queryParameters['AppName'] = $appName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $streamName
+     *
+     * @return $this
+     */
+    public function setStreamName($streamName)
+    {
+        $this->requestParameters['StreamName'] = $streamName;
+        $this->queryParameters['StreamName'] = $streamName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $queryType
+     *
+     * @return $this
+     */
+    public function setQueryType($queryType)
+    {
+        $this->requestParameters['QueryType'] = $queryType;
+        $this->queryParameters['QueryType'] = $queryType;
 
         return $this;
     }
@@ -94,19 +159,6 @@ class ListLiveRecordVideoRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $startTime
-     *
-     * @return $this
-     */
-    public function setStartTime($startTime)
-    {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -115,19 +167,6 @@ class ListLiveRecordVideoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $appName
-     *
-     * @return $this
-     */
-    public function setAppName($appName)
-    {
-        $this->requestParameters['AppName'] = $appName;
-        $this->queryParameters['AppName'] = $appName;
 
         return $this;
     }
@@ -146,19 +185,6 @@ class ListLiveRecordVideoRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
      * @param string $sortBy
      *
      * @return $this
@@ -167,32 +193,6 @@ class ListLiveRecordVideoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SortBy'] = $sortBy;
         $this->queryParameters['SortBy'] = $sortBy;
-
-        return $this;
-    }
-
-    /**
-     * @param string $streamName
-     *
-     * @return $this
-     */
-    public function setStreamName($streamName)
-    {
-        $this->requestParameters['StreamName'] = $streamName;
-        $this->queryParameters['StreamName'] = $streamName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $queryType
-     *
-     * @return $this
-     */
-    public function setQueryType($queryType)
-    {
-        $this->requestParameters['QueryType'] = $queryType;
-        $this->queryParameters['QueryType'] = $queryType;
 
         return $this;
     }

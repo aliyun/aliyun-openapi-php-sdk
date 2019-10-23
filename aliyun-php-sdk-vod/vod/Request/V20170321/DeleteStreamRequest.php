@@ -9,9 +9,9 @@ namespace vod\Request\V20170321;
  *
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
- * @method string getJobIds()
  * @method string getVideoId()
  * @method string getOwnerId()
+ * @method string getJobIds()
  */
 class DeleteStreamRequest extends \RpcAcsRequest
 {
@@ -61,19 +61,6 @@ class DeleteStreamRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $jobIds
-     *
-     * @return $this
-     */
-    public function setJobIds($jobIds)
-    {
-        $this->requestParameters['JobIds'] = $jobIds;
-        $this->queryParameters['JobIds'] = $jobIds;
-
-        return $this;
-    }
-
-    /**
      * @param string $videoId
      *
      * @return $this
@@ -95,6 +82,19 @@ class DeleteStreamRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $jobIds
+     *
+     * @return $this
+     */
+    public function setJobIds($jobIds)
+    {
+        $this->requestParameters['JobIds'] = $jobIds;
+        $this->queryParameters['JobIds'] = $jobIds;
 
         return $this;
     }

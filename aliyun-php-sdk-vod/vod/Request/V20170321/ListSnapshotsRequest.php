@@ -8,13 +8,13 @@ namespace vod\Request\V20170321;
  * Request of ListSnapshots
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
- * @method string getSnapshotType()
- * @method string getPageNo()
  * @method string getPageSize()
+ * @method string getAuthTimeout()
+ * @method string getResourceOwnerAccount()
  * @method string getVideoId()
  * @method string getOwnerId()
- * @method string getAuthTimeout()
+ * @method string getSnapshotType()
+ * @method string getPageNo()
  */
 class ListSnapshotsRequest extends \RpcAcsRequest
 {
@@ -51,45 +51,6 @@ class ListSnapshotsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $snapshotType
-     *
-     * @return $this
-     */
-    public function setSnapshotType($snapshotType)
-    {
-        $this->requestParameters['SnapshotType'] = $snapshotType;
-        $this->queryParameters['SnapshotType'] = $snapshotType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNo
-     *
-     * @return $this
-     */
-    public function setPageNo($pageNo)
-    {
-        $this->requestParameters['PageNo'] = $pageNo;
-        $this->queryParameters['PageNo'] = $pageNo;
-
-        return $this;
-    }
-
-    /**
      * @param string $pageSize
      *
      * @return $this
@@ -98,6 +59,32 @@ class ListSnapshotsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageSize'] = $pageSize;
         $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $authTimeout
+     *
+     * @return $this
+     */
+    public function setAuthTimeout($authTimeout)
+    {
+        $this->requestParameters['AuthTimeout'] = $authTimeout;
+        $this->queryParameters['AuthTimeout'] = $authTimeout;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }
@@ -129,14 +116,27 @@ class ListSnapshotsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $authTimeout
+     * @param string $snapshotType
      *
      * @return $this
      */
-    public function setAuthTimeout($authTimeout)
+    public function setSnapshotType($snapshotType)
     {
-        $this->requestParameters['AuthTimeout'] = $authTimeout;
-        $this->queryParameters['AuthTimeout'] = $authTimeout;
+        $this->requestParameters['SnapshotType'] = $snapshotType;
+        $this->queryParameters['SnapshotType'] = $snapshotType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNo
+     *
+     * @return $this
+     */
+    public function setPageNo($pageNo)
+    {
+        $this->requestParameters['PageNo'] = $pageNo;
+        $this->queryParameters['PageNo'] = $pageNo;
 
         return $this;
     }

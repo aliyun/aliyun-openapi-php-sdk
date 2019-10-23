@@ -9,8 +9,8 @@ namespace vod\Request\V20170321;
  *
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
- * @method string getMediaIds()
  * @method string getOwnerId()
+ * @method string getMediaIds()
  */
 class DeleteAttachedMediaRequest extends \RpcAcsRequest
 {
@@ -60,19 +60,6 @@ class DeleteAttachedMediaRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $mediaIds
-     *
-     * @return $this
-     */
-    public function setMediaIds($mediaIds)
-    {
-        $this->requestParameters['MediaIds'] = $mediaIds;
-        $this->queryParameters['MediaIds'] = $mediaIds;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -81,6 +68,19 @@ class DeleteAttachedMediaRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $mediaIds
+     *
+     * @return $this
+     */
+    public function setMediaIds($mediaIds)
+    {
+        $this->requestParameters['MediaIds'] = $mediaIds;
+        $this->queryParameters['MediaIds'] = $mediaIds;
 
         return $this;
     }

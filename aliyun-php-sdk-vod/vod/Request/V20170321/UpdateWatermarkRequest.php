@@ -7,12 +7,12 @@ namespace vod\Request\V20170321;
  *
  * Request of UpdateWatermark
  *
- * @method string getWatermarkId()
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
- * @method string getName()
  * @method string getOwnerId()
  * @method string getWatermarkConfig()
+ * @method string getWatermarkId()
+ * @method string getName()
  */
 class UpdateWatermarkRequest extends \RpcAcsRequest
 {
@@ -33,19 +33,6 @@ class UpdateWatermarkRequest extends \RpcAcsRequest
             'UpdateWatermark',
             'vod'
         );
-    }
-
-    /**
-     * @param string $watermarkId
-     *
-     * @return $this
-     */
-    public function setWatermarkId($watermarkId)
-    {
-        $this->requestParameters['WatermarkId'] = $watermarkId;
-        $this->queryParameters['WatermarkId'] = $watermarkId;
-
-        return $this;
     }
 
     /**
@@ -75,19 +62,6 @@ class UpdateWatermarkRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $name
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->requestParameters['Name'] = $name;
-        $this->queryParameters['Name'] = $name;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -109,6 +83,32 @@ class UpdateWatermarkRequest extends \RpcAcsRequest
     {
         $this->requestParameters['WatermarkConfig'] = $watermarkConfig;
         $this->queryParameters['WatermarkConfig'] = $watermarkConfig;
+
+        return $this;
+    }
+
+    /**
+     * @param string $watermarkId
+     *
+     * @return $this
+     */
+    public function setWatermarkId($watermarkId)
+    {
+        $this->requestParameters['WatermarkId'] = $watermarkId;
+        $this->queryParameters['WatermarkId'] = $watermarkId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
         return $this;
     }

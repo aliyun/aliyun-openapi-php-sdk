@@ -9,8 +9,8 @@ namespace vod\Request\V20170321;
  *
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
- * @method string getForce()
  * @method string getOwnerId()
+ * @method string getForce()
  * @method string getVideoIds()
  */
 class DeleteMezzaninesRequest extends \RpcAcsRequest
@@ -61,19 +61,6 @@ class DeleteMezzaninesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $force
-     *
-     * @return $this
-     */
-    public function setForce($force)
-    {
-        $this->requestParameters['Force'] = $force;
-        $this->queryParameters['Force'] = $force;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -82,6 +69,19 @@ class DeleteMezzaninesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $force
+     *
+     * @return $this
+     */
+    public function setForce($force)
+    {
+        $this->requestParameters['Force'] = $force;
+        $this->queryParameters['Force'] = $force;
 
         return $this;
     }

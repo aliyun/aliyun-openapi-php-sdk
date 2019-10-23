@@ -9,8 +9,8 @@ namespace vod\Request\V20170321;
  *
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
- * @method string getCateId()
  * @method string getOwnerId()
+ * @method string getCateId()
  * @method string getCateName()
  */
 class UpdateCategoryRequest extends \RpcAcsRequest
@@ -61,19 +61,6 @@ class UpdateCategoryRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $cateId
-     *
-     * @return $this
-     */
-    public function setCateId($cateId)
-    {
-        $this->requestParameters['CateId'] = $cateId;
-        $this->queryParameters['CateId'] = $cateId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -82,6 +69,19 @@ class UpdateCategoryRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $cateId
+     *
+     * @return $this
+     */
+    public function setCateId($cateId)
+    {
+        $this->requestParameters['CateId'] = $cateId;
+        $this->queryParameters['CateId'] = $cateId;
 
         return $this;
     }

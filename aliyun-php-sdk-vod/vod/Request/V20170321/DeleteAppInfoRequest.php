@@ -9,9 +9,9 @@ namespace vod\Request\V20170321;
  *
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
- * @method string getAppId()
  * @method string getResourceRealOwnerId()
  * @method string getOwnerId()
+ * @method string getAppId()
  */
 class DeleteAppInfoRequest extends \RpcAcsRequest
 {
@@ -61,19 +61,6 @@ class DeleteAppInfoRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $appId
-     *
-     * @return $this
-     */
-    public function setAppId($appId)
-    {
-        $this->requestParameters['AppId'] = $appId;
-        $this->queryParameters['AppId'] = $appId;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceRealOwnerId
      *
      * @return $this
@@ -95,6 +82,19 @@ class DeleteAppInfoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $appId
+     *
+     * @return $this
+     */
+    public function setAppId($appId)
+    {
+        $this->requestParameters['AppId'] = $appId;
+        $this->queryParameters['AppId'] = $appId;
 
         return $this;
     }

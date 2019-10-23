@@ -8,20 +8,20 @@ namespace vod\Request\V20170321;
  * Request of CreateUploadAttachedMedia
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
- * @method string getCateIds()
  * @method string getIcon()
  * @method string getDescription()
  * @method string getFileSize()
- * @method string getOwnerId()
  * @method string getTitle()
  * @method string getBusinessType()
- * @method string getTags()
  * @method string getStorageLocation()
  * @method string getUserData()
+ * @method string getCateId()
+ * @method string getResourceOwnerAccount()
+ * @method string getCateIds()
+ * @method string getOwnerId()
+ * @method string getTags()
  * @method string getMediaExt()
  * @method string getFileName()
- * @method string getCateId()
  * @method string getAppId()
  */
 class CreateUploadAttachedMediaRequest extends \RpcAcsRequest
@@ -54,32 +54,6 @@ class CreateUploadAttachedMediaRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $cateIds
-     *
-     * @return $this
-     */
-    public function setCateIds($cateIds)
-    {
-        $this->requestParameters['CateIds'] = $cateIds;
-        $this->queryParameters['CateIds'] = $cateIds;
 
         return $this;
     }
@@ -124,19 +98,6 @@ class CreateUploadAttachedMediaRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
      * @param string $title
      *
      * @return $this
@@ -158,19 +119,6 @@ class CreateUploadAttachedMediaRequest extends \RpcAcsRequest
     {
         $this->requestParameters['BusinessType'] = $businessType;
         $this->queryParameters['BusinessType'] = $businessType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $tags
-     *
-     * @return $this
-     */
-    public function setTags($tags)
-    {
-        $this->requestParameters['Tags'] = $tags;
-        $this->queryParameters['Tags'] = $tags;
 
         return $this;
     }
@@ -202,6 +150,71 @@ class CreateUploadAttachedMediaRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $cateId
+     *
+     * @return $this
+     */
+    public function setCateId($cateId)
+    {
+        $this->requestParameters['CateId'] = $cateId;
+        $this->queryParameters['CateId'] = $cateId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $cateIds
+     *
+     * @return $this
+     */
+    public function setCateIds($cateIds)
+    {
+        $this->requestParameters['CateIds'] = $cateIds;
+        $this->queryParameters['CateIds'] = $cateIds;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $tags
+     *
+     * @return $this
+     */
+    public function setTags($tags)
+    {
+        $this->requestParameters['Tags'] = $tags;
+        $this->queryParameters['Tags'] = $tags;
+
+        return $this;
+    }
+
+    /**
      * @param string $mediaExt
      *
      * @return $this
@@ -223,19 +236,6 @@ class CreateUploadAttachedMediaRequest extends \RpcAcsRequest
     {
         $this->requestParameters['FileName'] = $fileName;
         $this->queryParameters['FileName'] = $fileName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $cateId
-     *
-     * @return $this
-     */
-    public function setCateId($cateId)
-    {
-        $this->requestParameters['CateId'] = $cateId;
-        $this->queryParameters['CateId'] = $cateId;
 
         return $this;
     }

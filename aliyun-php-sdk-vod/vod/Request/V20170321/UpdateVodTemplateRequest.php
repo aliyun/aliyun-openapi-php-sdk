@@ -8,11 +8,11 @@ namespace vod\Request\V20170321;
  * Request of UpdateVodTemplate
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
  * @method string getTemplateConfig()
- * @method string getName()
  * @method string getVodTemplateId()
+ * @method string getResourceOwnerAccount()
  * @method string getOwnerId()
+ * @method string getName()
  */
 class UpdateVodTemplateRequest extends \RpcAcsRequest
 {
@@ -49,19 +49,6 @@ class UpdateVodTemplateRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $templateConfig
      *
      * @return $this
@@ -70,19 +57,6 @@ class UpdateVodTemplateRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TemplateConfig'] = $templateConfig;
         $this->queryParameters['TemplateConfig'] = $templateConfig;
-
-        return $this;
-    }
-
-    /**
-     * @param string $name
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->requestParameters['Name'] = $name;
-        $this->queryParameters['Name'] = $name;
 
         return $this;
     }
@@ -101,6 +75,19 @@ class UpdateVodTemplateRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -109,6 +96,19 @@ class UpdateVodTemplateRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
         return $this;
     }

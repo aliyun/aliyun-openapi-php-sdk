@@ -8,17 +8,18 @@ namespace vod\Request\V20170321;
  * Request of SubmitSnapshotJob
  *
  * @method string getResourceOwnerId()
+ * @method string getUserData()
+ * @method string getSpecifiedOffsetTime()
+ * @method string getSpriteSnapshotConfig()
+ * @method string getSnapshotTemplateId()
+ * @method string getHeight()
  * @method string getResourceOwnerAccount()
  * @method string getCount()
  * @method string getVideoId()
  * @method string getOwnerId()
- * @method string getUserData()
- * @method string getSpecifiedOffsetTime()
  * @method string getWidth()
+ * @method string getFileUrl()
  * @method string getInterval()
- * @method string getSpriteSnapshotConfig()
- * @method string getSnapshotTemplateId()
- * @method string getHeight()
  */
 class SubmitSnapshotJobRequest extends \RpcAcsRequest
 {
@@ -50,6 +51,71 @@ class SubmitSnapshotJobRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $userData
+     *
+     * @return $this
+     */
+    public function setUserData($userData)
+    {
+        $this->requestParameters['UserData'] = $userData;
+        $this->queryParameters['UserData'] = $userData;
+
+        return $this;
+    }
+
+    /**
+     * @param string $specifiedOffsetTime
+     *
+     * @return $this
+     */
+    public function setSpecifiedOffsetTime($specifiedOffsetTime)
+    {
+        $this->requestParameters['SpecifiedOffsetTime'] = $specifiedOffsetTime;
+        $this->queryParameters['SpecifiedOffsetTime'] = $specifiedOffsetTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $spriteSnapshotConfig
+     *
+     * @return $this
+     */
+    public function setSpriteSnapshotConfig($spriteSnapshotConfig)
+    {
+        $this->requestParameters['SpriteSnapshotConfig'] = $spriteSnapshotConfig;
+        $this->queryParameters['SpriteSnapshotConfig'] = $spriteSnapshotConfig;
+
+        return $this;
+    }
+
+    /**
+     * @param string $snapshotTemplateId
+     *
+     * @return $this
+     */
+    public function setSnapshotTemplateId($snapshotTemplateId)
+    {
+        $this->requestParameters['SnapshotTemplateId'] = $snapshotTemplateId;
+        $this->queryParameters['SnapshotTemplateId'] = $snapshotTemplateId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $height
+     *
+     * @return $this
+     */
+    public function setHeight($height)
+    {
+        $this->requestParameters['Height'] = $height;
+        $this->queryParameters['Height'] = $height;
 
         return $this;
     }
@@ -107,32 +173,6 @@ class SubmitSnapshotJobRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $userData
-     *
-     * @return $this
-     */
-    public function setUserData($userData)
-    {
-        $this->requestParameters['UserData'] = $userData;
-        $this->queryParameters['UserData'] = $userData;
-
-        return $this;
-    }
-
-    /**
-     * @param string $specifiedOffsetTime
-     *
-     * @return $this
-     */
-    public function setSpecifiedOffsetTime($specifiedOffsetTime)
-    {
-        $this->requestParameters['SpecifiedOffsetTime'] = $specifiedOffsetTime;
-        $this->queryParameters['SpecifiedOffsetTime'] = $specifiedOffsetTime;
-
-        return $this;
-    }
-
-    /**
      * @param string $width
      *
      * @return $this
@@ -146,6 +186,19 @@ class SubmitSnapshotJobRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $fileUrl
+     *
+     * @return $this
+     */
+    public function setFileUrl($fileUrl)
+    {
+        $this->requestParameters['FileUrl'] = $fileUrl;
+        $this->queryParameters['FileUrl'] = $fileUrl;
+
+        return $this;
+    }
+
+    /**
      * @param string $interval
      *
      * @return $this
@@ -154,45 +207,6 @@ class SubmitSnapshotJobRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Interval'] = $interval;
         $this->queryParameters['Interval'] = $interval;
-
-        return $this;
-    }
-
-    /**
-     * @param string $spriteSnapshotConfig
-     *
-     * @return $this
-     */
-    public function setSpriteSnapshotConfig($spriteSnapshotConfig)
-    {
-        $this->requestParameters['SpriteSnapshotConfig'] = $spriteSnapshotConfig;
-        $this->queryParameters['SpriteSnapshotConfig'] = $spriteSnapshotConfig;
-
-        return $this;
-    }
-
-    /**
-     * @param string $snapshotTemplateId
-     *
-     * @return $this
-     */
-    public function setSnapshotTemplateId($snapshotTemplateId)
-    {
-        $this->requestParameters['SnapshotTemplateId'] = $snapshotTemplateId;
-        $this->queryParameters['SnapshotTemplateId'] = $snapshotTemplateId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $height
-     *
-     * @return $this
-     */
-    public function setHeight($height)
-    {
-        $this->requestParameters['Height'] = $height;
-        $this->queryParameters['Height'] = $height;
 
         return $this;
     }

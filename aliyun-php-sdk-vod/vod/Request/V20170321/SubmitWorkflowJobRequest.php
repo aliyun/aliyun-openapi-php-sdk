@@ -5,14 +5,16 @@ namespace vod\Request\V20170321;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DeleteVodTemplate
+ * Request of SubmitWorkflowJob
  *
  * @method string getResourceOwnerId()
+ * @method string getWorkflowId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerId()
- * @method string getVodTemplateId()
+ * @method string getMediaId()
+ * @method string getFileUrl()
  */
-class DeleteVodTemplateRequest extends \RpcAcsRequest
+class SubmitWorkflowJobRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,7 +30,7 @@ class DeleteVodTemplateRequest extends \RpcAcsRequest
         parent::__construct(
             'vod',
             '2017-03-21',
-            'DeleteVodTemplate',
+            'SubmitWorkflowJob',
             'vod'
         );
     }
@@ -42,6 +44,19 @@ class DeleteVodTemplateRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $workflowId
+     *
+     * @return $this
+     */
+    public function setWorkflowId($workflowId)
+    {
+        $this->requestParameters['WorkflowId'] = $workflowId;
+        $this->queryParameters['WorkflowId'] = $workflowId;
 
         return $this;
     }
@@ -73,14 +88,27 @@ class DeleteVodTemplateRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $vodTemplateId
+     * @param string $mediaId
      *
      * @return $this
      */
-    public function setVodTemplateId($vodTemplateId)
+    public function setMediaId($mediaId)
     {
-        $this->requestParameters['VodTemplateId'] = $vodTemplateId;
-        $this->queryParameters['VodTemplateId'] = $vodTemplateId;
+        $this->requestParameters['MediaId'] = $mediaId;
+        $this->queryParameters['MediaId'] = $mediaId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $fileUrl
+     *
+     * @return $this
+     */
+    public function setFileUrl($fileUrl)
+    {
+        $this->requestParameters['FileUrl'] = $fileUrl;
+        $this->queryParameters['FileUrl'] = $fileUrl;
 
         return $this;
     }

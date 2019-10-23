@@ -7,16 +7,17 @@ namespace vod\Request\V20170321;
  *
  * Request of SubmitTranscodeJobs
  *
- * @method string getUserData()
  * @method string getResourceOwnerId()
- * @method string getTemplateGroupId()
+ * @method string getUserData()
  * @method string getResourceOwnerAccount()
  * @method string getVideoId()
  * @method string getOverrideParams()
  * @method string getOwnerId()
  * @method string getPriority()
- * @method string getEncryptConfig()
  * @method string getPipelineId()
+ * @method string getTemplateGroupId()
+ * @method string getFileUrl()
+ * @method string getEncryptConfig()
  */
 class SubmitTranscodeJobsRequest extends \RpcAcsRequest
 {
@@ -40,19 +41,6 @@ class SubmitTranscodeJobsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $userData
-     *
-     * @return $this
-     */
-    public function setUserData($userData)
-    {
-        $this->requestParameters['UserData'] = $userData;
-        $this->queryParameters['UserData'] = $userData;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerId
      *
      * @return $this
@@ -66,14 +54,14 @@ class SubmitTranscodeJobsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $templateGroupId
+     * @param string $userData
      *
      * @return $this
      */
-    public function setTemplateGroupId($templateGroupId)
+    public function setUserData($userData)
     {
-        $this->requestParameters['TemplateGroupId'] = $templateGroupId;
-        $this->queryParameters['TemplateGroupId'] = $templateGroupId;
+        $this->requestParameters['UserData'] = $userData;
+        $this->queryParameters['UserData'] = $userData;
 
         return $this;
     }
@@ -144,19 +132,6 @@ class SubmitTranscodeJobsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $encryptConfig
-     *
-     * @return $this
-     */
-    public function setEncryptConfig($encryptConfig)
-    {
-        $this->requestParameters['EncryptConfig'] = $encryptConfig;
-        $this->queryParameters['EncryptConfig'] = $encryptConfig;
-
-        return $this;
-    }
-
-    /**
      * @param string $pipelineId
      *
      * @return $this
@@ -165,6 +140,45 @@ class SubmitTranscodeJobsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PipelineId'] = $pipelineId;
         $this->queryParameters['PipelineId'] = $pipelineId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $templateGroupId
+     *
+     * @return $this
+     */
+    public function setTemplateGroupId($templateGroupId)
+    {
+        $this->requestParameters['TemplateGroupId'] = $templateGroupId;
+        $this->queryParameters['TemplateGroupId'] = $templateGroupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $fileUrl
+     *
+     * @return $this
+     */
+    public function setFileUrl($fileUrl)
+    {
+        $this->requestParameters['FileUrl'] = $fileUrl;
+        $this->queryParameters['FileUrl'] = $fileUrl;
+
+        return $this;
+    }
+
+    /**
+     * @param string $encryptConfig
+     *
+     * @return $this
+     */
+    public function setEncryptConfig($encryptConfig)
+    {
+        $this->requestParameters['EncryptConfig'] = $encryptConfig;
+        $this->queryParameters['EncryptConfig'] = $encryptConfig;
 
         return $this;
     }

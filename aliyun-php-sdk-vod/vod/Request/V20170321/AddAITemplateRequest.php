@@ -8,10 +8,10 @@ namespace vod\Request\V20170321;
  * Request of AddAITemplate
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
  * @method string getTemplateConfig()
  * @method string getTemplateType()
  * @method string getTemplateName()
+ * @method string getResourceOwnerAccount()
  * @method string getOwnerId()
  */
 class AddAITemplateRequest extends \RpcAcsRequest
@@ -44,19 +44,6 @@ class AddAITemplateRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }
@@ -96,6 +83,19 @@ class AddAITemplateRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TemplateName'] = $templateName;
         $this->queryParameters['TemplateName'] = $templateName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }

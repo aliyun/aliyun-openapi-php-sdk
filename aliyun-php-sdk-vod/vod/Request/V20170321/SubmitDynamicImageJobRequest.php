@@ -5,14 +5,16 @@ namespace vod\Request\V20170321;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DeleteVodTemplate
+ * Request of SubmitDynamicImageJob
  *
  * @method string getResourceOwnerId()
+ * @method string getDynamicImageTemplateId()
  * @method string getResourceOwnerAccount()
+ * @method string getVideoId()
+ * @method string getOverrideParams()
  * @method string getOwnerId()
- * @method string getVodTemplateId()
  */
-class DeleteVodTemplateRequest extends \RpcAcsRequest
+class SubmitDynamicImageJobRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,7 +30,7 @@ class DeleteVodTemplateRequest extends \RpcAcsRequest
         parent::__construct(
             'vod',
             '2017-03-21',
-            'DeleteVodTemplate',
+            'SubmitDynamicImageJob',
             'vod'
         );
     }
@@ -47,6 +49,19 @@ class DeleteVodTemplateRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $dynamicImageTemplateId
+     *
+     * @return $this
+     */
+    public function setDynamicImageTemplateId($dynamicImageTemplateId)
+    {
+        $this->requestParameters['DynamicImageTemplateId'] = $dynamicImageTemplateId;
+        $this->queryParameters['DynamicImageTemplateId'] = $dynamicImageTemplateId;
+
+        return $this;
+    }
+
+    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -60,6 +75,32 @@ class DeleteVodTemplateRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $videoId
+     *
+     * @return $this
+     */
+    public function setVideoId($videoId)
+    {
+        $this->requestParameters['VideoId'] = $videoId;
+        $this->queryParameters['VideoId'] = $videoId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $overrideParams
+     *
+     * @return $this
+     */
+    public function setOverrideParams($overrideParams)
+    {
+        $this->requestParameters['OverrideParams'] = $overrideParams;
+        $this->queryParameters['OverrideParams'] = $overrideParams;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -68,19 +109,6 @@ class DeleteVodTemplateRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $vodTemplateId
-     *
-     * @return $this
-     */
-    public function setVodTemplateId($vodTemplateId)
-    {
-        $this->requestParameters['VodTemplateId'] = $vodTemplateId;
-        $this->queryParameters['VodTemplateId'] = $vodTemplateId;
 
         return $this;
     }

@@ -8,13 +8,13 @@ namespace vod\Request\V20170321;
  * Request of AddVodTemplate
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
+ * @method string getSubTemplateType()
  * @method string getTemplateConfig()
  * @method string getTemplateType()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerId()
  * @method string getAppId()
  * @method string getName()
- * @method string getOwnerId()
- * @method string getSubTemplateType()
  */
 class AddVodTemplateRequest extends \RpcAcsRequest
 {
@@ -51,14 +51,14 @@ class AddVodTemplateRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
+     * @param string $subTemplateType
      *
      * @return $this
      */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
+    public function setSubTemplateType($subTemplateType)
     {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->requestParameters['SubTemplateType'] = $subTemplateType;
+        $this->queryParameters['SubTemplateType'] = $subTemplateType;
 
         return $this;
     }
@@ -90,6 +90,32 @@ class AddVodTemplateRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
      * @param string $appId
      *
      * @return $this
@@ -111,32 +137,6 @@ class AddVodTemplateRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Name'] = $name;
         $this->queryParameters['Name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $subTemplateType
-     *
-     * @return $this
-     */
-    public function setSubTemplateType($subTemplateType)
-    {
-        $this->requestParameters['SubTemplateType'] = $subTemplateType;
-        $this->queryParameters['SubTemplateType'] = $subTemplateType;
 
         return $this;
     }

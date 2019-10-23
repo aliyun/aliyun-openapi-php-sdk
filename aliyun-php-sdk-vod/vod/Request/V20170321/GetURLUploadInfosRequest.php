@@ -9,9 +9,9 @@ namespace vod\Request\V20170321;
  *
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
+ * @method string getOwnerId()
  * @method string getJobIds()
  * @method string getUploadURLs()
- * @method string getOwnerId()
  */
 class GetURLUploadInfosRequest extends \RpcAcsRequest
 {
@@ -61,6 +61,19 @@ class GetURLUploadInfosRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
      * @param string $jobIds
      *
      * @return $this
@@ -82,19 +95,6 @@ class GetURLUploadInfosRequest extends \RpcAcsRequest
     {
         $this->requestParameters['UploadURLs'] = $uploadURLs;
         $this->queryParameters['UploadURLs'] = $uploadURLs;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

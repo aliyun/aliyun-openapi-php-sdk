@@ -8,9 +8,9 @@ namespace vod\Request\V20170321;
  * Request of DeleteImage
  *
  * @method string getResourceOwnerId()
+ * @method string getImageURLs()
  * @method string getImageType()
  * @method string getResourceOwnerAccount()
- * @method string getImageURLs()
  * @method string getVideoId()
  * @method string getOwnerId()
  * @method string getDeleteImageType()
@@ -51,6 +51,19 @@ class DeleteImageRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $imageURLs
+     *
+     * @return $this
+     */
+    public function setImageURLs($imageURLs)
+    {
+        $this->requestParameters['ImageURLs'] = $imageURLs;
+        $this->queryParameters['ImageURLs'] = $imageURLs;
+
+        return $this;
+    }
+
+    /**
      * @param string $imageType
      *
      * @return $this
@@ -72,19 +85,6 @@ class DeleteImageRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $imageURLs
-     *
-     * @return $this
-     */
-    public function setImageURLs($imageURLs)
-    {
-        $this->requestParameters['ImageURLs'] = $imageURLs;
-        $this->queryParameters['ImageURLs'] = $imageURLs;
 
         return $this;
     }

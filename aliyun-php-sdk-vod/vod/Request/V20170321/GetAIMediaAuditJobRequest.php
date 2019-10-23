@@ -7,10 +7,10 @@ namespace vod\Request\V20170321;
  *
  * Request of GetAIMediaAuditJob
  *
- * @method string getJobId()
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerId()
+ * @method string getJobId()
  */
 class GetAIMediaAuditJobRequest extends \RpcAcsRequest
 {
@@ -31,19 +31,6 @@ class GetAIMediaAuditJobRequest extends \RpcAcsRequest
             'GetAIMediaAuditJob',
             'vod'
         );
-    }
-
-    /**
-     * @param string $jobId
-     *
-     * @return $this
-     */
-    public function setJobId($jobId)
-    {
-        $this->requestParameters['JobId'] = $jobId;
-        $this->queryParameters['JobId'] = $jobId;
-
-        return $this;
     }
 
     /**
@@ -81,6 +68,19 @@ class GetAIMediaAuditJobRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $jobId
+     *
+     * @return $this
+     */
+    public function setJobId($jobId)
+    {
+        $this->requestParameters['JobId'] = $jobId;
+        $this->queryParameters['JobId'] = $jobId;
 
         return $this;
     }

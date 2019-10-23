@@ -7,13 +7,13 @@ namespace vod\Request\V20170321;
  *
  * Request of RegisterMedia
  *
- * @method string getUserData()
  * @method string getResourceOwnerId()
- * @method string getTemplateGroupId()
- * @method string getResourceOwnerAccount()
- * @method string getOwnerId()
+ * @method string getUserData()
  * @method string getRegisterMetadatas()
  * @method string getWorkflowId()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerId()
+ * @method string getTemplateGroupId()
  */
 class RegisterMediaRequest extends \RpcAcsRequest
 {
@@ -37,19 +37,6 @@ class RegisterMediaRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $userData
-     *
-     * @return $this
-     */
-    public function setUserData($userData)
-    {
-        $this->requestParameters['UserData'] = $userData;
-        $this->queryParameters['UserData'] = $userData;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerId
      *
      * @return $this
@@ -63,14 +50,40 @@ class RegisterMediaRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $templateGroupId
+     * @param string $userData
      *
      * @return $this
      */
-    public function setTemplateGroupId($templateGroupId)
+    public function setUserData($userData)
     {
-        $this->requestParameters['TemplateGroupId'] = $templateGroupId;
-        $this->queryParameters['TemplateGroupId'] = $templateGroupId;
+        $this->requestParameters['UserData'] = $userData;
+        $this->queryParameters['UserData'] = $userData;
+
+        return $this;
+    }
+
+    /**
+     * @param string $registerMetadatas
+     *
+     * @return $this
+     */
+    public function setRegisterMetadatas($registerMetadatas)
+    {
+        $this->requestParameters['RegisterMetadatas'] = $registerMetadatas;
+        $this->queryParameters['RegisterMetadatas'] = $registerMetadatas;
+
+        return $this;
+    }
+
+    /**
+     * @param string $workflowId
+     *
+     * @return $this
+     */
+    public function setWorkflowId($workflowId)
+    {
+        $this->requestParameters['WorkflowId'] = $workflowId;
+        $this->queryParameters['WorkflowId'] = $workflowId;
 
         return $this;
     }
@@ -102,27 +115,14 @@ class RegisterMediaRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $registerMetadatas
+     * @param string $templateGroupId
      *
      * @return $this
      */
-    public function setRegisterMetadatas($registerMetadatas)
+    public function setTemplateGroupId($templateGroupId)
     {
-        $this->requestParameters['RegisterMetadatas'] = $registerMetadatas;
-        $this->queryParameters['RegisterMetadatas'] = $registerMetadatas;
-
-        return $this;
-    }
-
-    /**
-     * @param string $workflowId
-     *
-     * @return $this
-     */
-    public function setWorkflowId($workflowId)
-    {
-        $this->requestParameters['WorkflowId'] = $workflowId;
-        $this->queryParameters['WorkflowId'] = $workflowId;
+        $this->requestParameters['TemplateGroupId'] = $templateGroupId;
+        $this->queryParameters['TemplateGroupId'] = $templateGroupId;
 
         return $this;
     }

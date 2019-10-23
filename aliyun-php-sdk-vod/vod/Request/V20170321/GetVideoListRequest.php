@@ -8,16 +8,16 @@ namespace vod\Request\V20170321;
  * Request of GetVideoList
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
- * @method string getCateId()
- * @method string getPageNo()
- * @method string getPageSize()
- * @method string getEndTime()
- * @method string getSortBy()
  * @method string getStartTime()
- * @method string getOwnerId()
- * @method string getStatus()
  * @method string getStorageLocation()
+ * @method string getCateId()
+ * @method string getPageSize()
+ * @method string getResourceOwnerAccount()
+ * @method string getEndTime()
+ * @method string getOwnerId()
+ * @method string getPageNo()
+ * @method string getSortBy()
+ * @method string getStatus()
  */
 class GetVideoListRequest extends \RpcAcsRequest
 {
@@ -54,14 +54,27 @@ class GetVideoListRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
+     * @param string $startTime
      *
      * @return $this
      */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
+    public function setStartTime($startTime)
     {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $storageLocation
+     *
+     * @return $this
+     */
+    public function setStorageLocation($storageLocation)
+    {
+        $this->requestParameters['StorageLocation'] = $storageLocation;
+        $this->queryParameters['StorageLocation'] = $storageLocation;
 
         return $this;
     }
@@ -80,19 +93,6 @@ class GetVideoListRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageNo
-     *
-     * @return $this
-     */
-    public function setPageNo($pageNo)
-    {
-        $this->requestParameters['PageNo'] = $pageNo;
-        $this->queryParameters['PageNo'] = $pageNo;
-
-        return $this;
-    }
-
-    /**
      * @param string $pageSize
      *
      * @return $this
@@ -101,6 +101,19 @@ class GetVideoListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageSize'] = $pageSize;
         $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }
@@ -119,32 +132,6 @@ class GetVideoListRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $sortBy
-     *
-     * @return $this
-     */
-    public function setSortBy($sortBy)
-    {
-        $this->requestParameters['SortBy'] = $sortBy;
-        $this->queryParameters['SortBy'] = $sortBy;
-
-        return $this;
-    }
-
-    /**
-     * @param string $startTime
-     *
-     * @return $this
-     */
-    public function setStartTime($startTime)
-    {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -158,6 +145,32 @@ class GetVideoListRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $pageNo
+     *
+     * @return $this
+     */
+    public function setPageNo($pageNo)
+    {
+        $this->requestParameters['PageNo'] = $pageNo;
+        $this->queryParameters['PageNo'] = $pageNo;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sortBy
+     *
+     * @return $this
+     */
+    public function setSortBy($sortBy)
+    {
+        $this->requestParameters['SortBy'] = $sortBy;
+        $this->queryParameters['SortBy'] = $sortBy;
+
+        return $this;
+    }
+
+    /**
      * @param string $status
      *
      * @return $this
@@ -166,19 +179,6 @@ class GetVideoListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Status'] = $status;
         $this->queryParameters['Status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * @param string $storageLocation
-     *
-     * @return $this
-     */
-    public function setStorageLocation($storageLocation)
-    {
-        $this->requestParameters['StorageLocation'] = $storageLocation;
-        $this->queryParameters['StorageLocation'] = $storageLocation;
 
         return $this;
     }

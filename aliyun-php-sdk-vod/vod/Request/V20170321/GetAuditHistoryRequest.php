@@ -7,9 +7,9 @@ namespace vod\Request\V20170321;
  *
  * Request of GetAuditHistory
  *
- * @method string getPageNo()
  * @method string getPageSize()
  * @method string getVideoId()
+ * @method string getPageNo()
  * @method string getSortBy()
  */
 class GetAuditHistoryRequest extends \RpcAcsRequest
@@ -34,19 +34,6 @@ class GetAuditHistoryRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageNo
-     *
-     * @return $this
-     */
-    public function setPageNo($pageNo)
-    {
-        $this->requestParameters['PageNo'] = $pageNo;
-        $this->queryParameters['PageNo'] = $pageNo;
-
-        return $this;
-    }
-
-    /**
      * @param string $pageSize
      *
      * @return $this
@@ -68,6 +55,19 @@ class GetAuditHistoryRequest extends \RpcAcsRequest
     {
         $this->requestParameters['VideoId'] = $videoId;
         $this->queryParameters['VideoId'] = $videoId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNo
+     *
+     * @return $this
+     */
+    public function setPageNo($pageNo)
+    {
+        $this->requestParameters['PageNo'] = $pageNo;
+        $this->queryParameters['PageNo'] = $pageNo;
 
         return $this;
     }

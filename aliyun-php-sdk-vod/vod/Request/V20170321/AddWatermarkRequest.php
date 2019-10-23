@@ -8,13 +8,13 @@ namespace vod\Request\V20170321;
  * Request of AddWatermark
  *
  * @method string getResourceOwnerId()
+ * @method string getType()
  * @method string getResourceOwnerAccount()
+ * @method string getOwnerId()
+ * @method string getWatermarkConfig()
  * @method string getAppId()
  * @method string getName()
  * @method string getFileUrl()
- * @method string getOwnerId()
- * @method string getType()
- * @method string getWatermarkConfig()
  */
 class AddWatermarkRequest extends \RpcAcsRequest
 {
@@ -51,6 +51,19 @@ class AddWatermarkRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->requestParameters['Type'] = $type;
+        $this->queryParameters['Type'] = $type;
+
+        return $this;
+    }
+
+    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -59,6 +72,32 @@ class AddWatermarkRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $watermarkConfig
+     *
+     * @return $this
+     */
+    public function setWatermarkConfig($watermarkConfig)
+    {
+        $this->requestParameters['WatermarkConfig'] = $watermarkConfig;
+        $this->queryParameters['WatermarkConfig'] = $watermarkConfig;
 
         return $this;
     }
@@ -98,45 +137,6 @@ class AddWatermarkRequest extends \RpcAcsRequest
     {
         $this->requestParameters['FileUrl'] = $fileUrl;
         $this->queryParameters['FileUrl'] = $fileUrl;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->requestParameters['Type'] = $type;
-        $this->queryParameters['Type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * @param string $watermarkConfig
-     *
-     * @return $this
-     */
-    public function setWatermarkConfig($watermarkConfig)
-    {
-        $this->requestParameters['WatermarkConfig'] = $watermarkConfig;
-        $this->queryParameters['WatermarkConfig'] = $watermarkConfig;
 
         return $this;
     }

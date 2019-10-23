@@ -7,10 +7,10 @@ namespace vod\Request\V20170321;
  *
  * Request of SetDefaultWatermark
  *
- * @method string getWatermarkId()
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerId()
+ * @method string getWatermarkId()
  */
 class SetDefaultWatermarkRequest extends \RpcAcsRequest
 {
@@ -31,19 +31,6 @@ class SetDefaultWatermarkRequest extends \RpcAcsRequest
             'SetDefaultWatermark',
             'vod'
         );
-    }
-
-    /**
-     * @param string $watermarkId
-     *
-     * @return $this
-     */
-    public function setWatermarkId($watermarkId)
-    {
-        $this->requestParameters['WatermarkId'] = $watermarkId;
-        $this->queryParameters['WatermarkId'] = $watermarkId;
-
-        return $this;
     }
 
     /**
@@ -81,6 +68,19 @@ class SetDefaultWatermarkRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $watermarkId
+     *
+     * @return $this
+     */
+    public function setWatermarkId($watermarkId)
+    {
+        $this->requestParameters['WatermarkId'] = $watermarkId;
+        $this->queryParameters['WatermarkId'] = $watermarkId;
 
         return $this;
     }

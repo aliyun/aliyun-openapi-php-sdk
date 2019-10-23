@@ -8,11 +8,11 @@ namespace vod\Request\V20170321;
  * Request of DeleteMessageCallback
  *
  * @method string getResourceOwnerId()
+ * @method string getResourceRealOwnerId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getAppId()
- * @method string getResourceRealOwnerId()
  * @method string getOwnerId()
+ * @method string getAppId()
  */
 class DeleteMessageCallbackRequest extends \RpcAcsRequest
 {
@@ -49,6 +49,19 @@ class DeleteMessageCallbackRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $resourceRealOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceRealOwnerId($resourceRealOwnerId)
+    {
+        $this->requestParameters['ResourceRealOwnerId'] = $resourceRealOwnerId;
+        $this->queryParameters['ResourceRealOwnerId'] = $resourceRealOwnerId;
+
+        return $this;
+    }
+
+    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -75,32 +88,6 @@ class DeleteMessageCallbackRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $appId
-     *
-     * @return $this
-     */
-    public function setAppId($appId)
-    {
-        $this->requestParameters['AppId'] = $appId;
-        $this->queryParameters['AppId'] = $appId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceRealOwnerId
-     *
-     * @return $this
-     */
-    public function setResourceRealOwnerId($resourceRealOwnerId)
-    {
-        $this->requestParameters['ResourceRealOwnerId'] = $resourceRealOwnerId;
-        $this->queryParameters['ResourceRealOwnerId'] = $resourceRealOwnerId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -109,6 +96,19 @@ class DeleteMessageCallbackRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $appId
+     *
+     * @return $this
+     */
+    public function setAppId($appId)
+    {
+        $this->requestParameters['AppId'] = $appId;
+        $this->queryParameters['AppId'] = $appId;
 
         return $this;
     }

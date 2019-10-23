@@ -8,16 +8,16 @@ namespace vod\Request\V20170321;
  * Request of SearchMedia
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
- * @method string getMatch()
  * @method string getSessionId()
- * @method string getOwnerId()
  * @method string getScrollToken()
- * @method string getPageNo()
  * @method string getSearchType()
  * @method string getPageSize()
- * @method string getSortBy()
  * @method string getResultTypes()
+ * @method string getResourceOwnerAccount()
+ * @method string getMatch()
+ * @method string getOwnerId()
+ * @method string getPageNo()
+ * @method string getSortBy()
  * @method string getFields()
  */
 class SearchMediaRequest extends \RpcAcsRequest
@@ -55,32 +55,6 @@ class SearchMediaRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $match
-     *
-     * @return $this
-     */
-    public function setMatch($match)
-    {
-        $this->requestParameters['Match'] = $match;
-        $this->queryParameters['Match'] = $match;
-
-        return $this;
-    }
-
-    /**
      * @param string $sessionId
      *
      * @return $this
@@ -94,19 +68,6 @@ class SearchMediaRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
      * @param string $scrollToken
      *
      * @return $this
@@ -115,19 +76,6 @@ class SearchMediaRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ScrollToken'] = $scrollToken;
         $this->queryParameters['ScrollToken'] = $scrollToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNo
-     *
-     * @return $this
-     */
-    public function setPageNo($pageNo)
-    {
-        $this->requestParameters['PageNo'] = $pageNo;
-        $this->queryParameters['PageNo'] = $pageNo;
 
         return $this;
     }
@@ -159,19 +107,6 @@ class SearchMediaRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $sortBy
-     *
-     * @return $this
-     */
-    public function setSortBy($sortBy)
-    {
-        $this->requestParameters['SortBy'] = $sortBy;
-        $this->queryParameters['SortBy'] = $sortBy;
-
-        return $this;
-    }
-
-    /**
      * @param string $resultTypes
      *
      * @return $this
@@ -180,6 +115,71 @@ class SearchMediaRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResultTypes'] = $resultTypes;
         $this->queryParameters['ResultTypes'] = $resultTypes;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $match
+     *
+     * @return $this
+     */
+    public function setMatch($match)
+    {
+        $this->requestParameters['Match'] = $match;
+        $this->queryParameters['Match'] = $match;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNo
+     *
+     * @return $this
+     */
+    public function setPageNo($pageNo)
+    {
+        $this->requestParameters['PageNo'] = $pageNo;
+        $this->queryParameters['PageNo'] = $pageNo;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sortBy
+     *
+     * @return $this
+     */
+    public function setSortBy($sortBy)
+    {
+        $this->requestParameters['SortBy'] = $sortBy;
+        $this->queryParameters['SortBy'] = $sortBy;
 
         return $this;
     }

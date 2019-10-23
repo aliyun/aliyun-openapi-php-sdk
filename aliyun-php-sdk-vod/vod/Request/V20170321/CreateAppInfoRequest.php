@@ -8,10 +8,10 @@ namespace vod\Request\V20170321;
  * Request of CreateAppInfo
  *
  * @method string getResourceOwnerId()
- * @method string getAppName()
- * @method string getResourceOwnerAccount()
  * @method string getDescription()
  * @method string getResourceRealOwnerId()
+ * @method string getAppName()
+ * @method string getResourceOwnerAccount()
  * @method string getOwnerId()
  */
 class CreateAppInfoRequest extends \RpcAcsRequest
@@ -49,32 +49,6 @@ class CreateAppInfoRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $appName
-     *
-     * @return $this
-     */
-    public function setAppName($appName)
-    {
-        $this->requestParameters['AppName'] = $appName;
-        $this->queryParameters['AppName'] = $appName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $description
      *
      * @return $this
@@ -96,6 +70,32 @@ class CreateAppInfoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceRealOwnerId'] = $resourceRealOwnerId;
         $this->queryParameters['ResourceRealOwnerId'] = $resourceRealOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $appName
+     *
+     * @return $this
+     */
+    public function setAppName($appName)
+    {
+        $this->requestParameters['AppName'] = $appName;
+        $this->queryParameters['AppName'] = $appName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }

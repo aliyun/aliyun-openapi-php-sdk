@@ -7,12 +7,12 @@ namespace vod\Request\V20170321;
  *
  * Request of ListAppPoliciesForIdentity
  *
- * @method string getIdentityName()
  * @method string getResourceOwnerId()
+ * @method string getIdentityName()
  * @method string getIdentityType()
  * @method string getResourceOwnerAccount()
- * @method string getAppId()
  * @method string getOwnerId()
+ * @method string getAppId()
  */
 class ListAppPoliciesForIdentityRequest extends \RpcAcsRequest
 {
@@ -36,19 +36,6 @@ class ListAppPoliciesForIdentityRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $identityName
-     *
-     * @return $this
-     */
-    public function setIdentityName($identityName)
-    {
-        $this->requestParameters['IdentityName'] = $identityName;
-        $this->queryParameters['IdentityName'] = $identityName;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerId
      *
      * @return $this
@@ -57,6 +44,19 @@ class ListAppPoliciesForIdentityRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $identityName
+     *
+     * @return $this
+     */
+    public function setIdentityName($identityName)
+    {
+        $this->requestParameters['IdentityName'] = $identityName;
+        $this->queryParameters['IdentityName'] = $identityName;
 
         return $this;
     }
@@ -88,19 +88,6 @@ class ListAppPoliciesForIdentityRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $appId
-     *
-     * @return $this
-     */
-    public function setAppId($appId)
-    {
-        $this->requestParameters['AppId'] = $appId;
-        $this->queryParameters['AppId'] = $appId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -109,6 +96,19 @@ class ListAppPoliciesForIdentityRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $appId
+     *
+     * @return $this
+     */
+    public function setAppId($appId)
+    {
+        $this->requestParameters['AppId'] = $appId;
+        $this->queryParameters['AppId'] = $appId;
 
         return $this;
     }

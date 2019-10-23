@@ -8,11 +8,11 @@ namespace vod\Request\V20170321;
  * Request of ListTranscodeTemplateGroup
  *
  * @method string getResourceOwnerId()
+ * @method string getPageSize()
  * @method string getResourceOwnerAccount()
+ * @method string getOwnerId()
  * @method string getPageNo()
  * @method string getAppId()
- * @method string getPageSize()
- * @method string getOwnerId()
  */
 class ListTranscodeTemplateGroupRequest extends \RpcAcsRequest
 {
@@ -49,6 +49,19 @@ class ListTranscodeTemplateGroupRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -57,6 +70,19 @@ class ListTranscodeTemplateGroupRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }
@@ -83,32 +109,6 @@ class ListTranscodeTemplateGroupRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AppId'] = $appId;
         $this->queryParameters['AppId'] = $appId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

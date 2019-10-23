@@ -8,10 +8,10 @@ namespace vod\Request\V20170321;
  * Request of GetAppInfos
  *
  * @method string getResourceOwnerId()
- * @method string getAppIds()
  * @method string getResourceOwnerAccount()
  * @method string getResourceRealOwnerId()
  * @method string getOwnerId()
+ * @method string getAppIds()
  */
 class GetAppInfosRequest extends \RpcAcsRequest
 {
@@ -43,19 +43,6 @@ class GetAppInfosRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $appIds
-     *
-     * @return $this
-     */
-    public function setAppIds($appIds)
-    {
-        $this->requestParameters['AppIds'] = $appIds;
-        $this->queryParameters['AppIds'] = $appIds;
 
         return $this;
     }
@@ -95,6 +82,19 @@ class GetAppInfosRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $appIds
+     *
+     * @return $this
+     */
+    public function setAppIds($appIds)
+    {
+        $this->requestParameters['AppIds'] = $appIds;
+        $this->queryParameters['AppIds'] = $appIds;
 
         return $this;
     }

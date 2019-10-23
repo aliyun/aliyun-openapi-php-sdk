@@ -8,9 +8,9 @@ namespace vod\Request\V20170321;
  * Request of DeleteMultipartUpload
  *
  * @method string getResourceOwnerId()
+ * @method string getResourceRealOwnerId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getResourceRealOwnerId()
  * @method string getOwnerId()
  * @method string getMediaId()
  * @method string getMediaType()
@@ -50,6 +50,19 @@ class DeleteMultipartUploadRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $resourceRealOwnerId
+     *
+     * @return $this
+     */
+    public function setResourceRealOwnerId($resourceRealOwnerId)
+    {
+        $this->requestParameters['ResourceRealOwnerId'] = $resourceRealOwnerId;
+        $this->queryParameters['ResourceRealOwnerId'] = $resourceRealOwnerId;
+
+        return $this;
+    }
+
+    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -71,19 +84,6 @@ class DeleteMultipartUploadRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceRealOwnerId
-     *
-     * @return $this
-     */
-    public function setResourceRealOwnerId($resourceRealOwnerId)
-    {
-        $this->requestParameters['ResourceRealOwnerId'] = $resourceRealOwnerId;
-        $this->queryParameters['ResourceRealOwnerId'] = $resourceRealOwnerId;
 
         return $this;
     }

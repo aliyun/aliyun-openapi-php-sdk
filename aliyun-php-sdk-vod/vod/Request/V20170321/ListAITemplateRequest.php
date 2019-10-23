@@ -9,8 +9,8 @@ namespace vod\Request\V20170321;
  *
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
- * @method string getTemplateType()
  * @method string getOwnerId()
+ * @method string getTemplateType()
  */
 class ListAITemplateRequest extends \RpcAcsRequest
 {
@@ -60,19 +60,6 @@ class ListAITemplateRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $templateType
-     *
-     * @return $this
-     */
-    public function setTemplateType($templateType)
-    {
-        $this->requestParameters['TemplateType'] = $templateType;
-        $this->queryParameters['TemplateType'] = $templateType;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -81,6 +68,19 @@ class ListAITemplateRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $templateType
+     *
+     * @return $this
+     */
+    public function setTemplateType($templateType)
+    {
+        $this->requestParameters['TemplateType'] = $templateType;
+        $this->queryParameters['TemplateType'] = $templateType;
 
         return $this;
     }

@@ -8,13 +8,13 @@ namespace vod\Request\V20170321;
  * Request of GetCategories
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
- * @method string getCateId()
- * @method string getPageNo()
- * @method string getPageSize()
- * @method string getSortBy()
- * @method string getOwnerId()
  * @method string getType()
+ * @method string getCateId()
+ * @method string getPageSize()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerId()
+ * @method string getPageNo()
+ * @method string getSortBy()
  */
 class GetCategoriesRequest extends \RpcAcsRequest
 {
@@ -51,14 +51,14 @@ class GetCategoriesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
+     * @param string $type
      *
      * @return $this
      */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
+    public function setType($type)
     {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->requestParameters['Type'] = $type;
+        $this->queryParameters['Type'] = $type;
 
         return $this;
     }
@@ -77,19 +77,6 @@ class GetCategoriesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageNo
-     *
-     * @return $this
-     */
-    public function setPageNo($pageNo)
-    {
-        $this->requestParameters['PageNo'] = $pageNo;
-        $this->queryParameters['PageNo'] = $pageNo;
-
-        return $this;
-    }
-
-    /**
      * @param string $pageSize
      *
      * @return $this
@@ -103,14 +90,14 @@ class GetCategoriesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $sortBy
+     * @param string $resourceOwnerAccount
      *
      * @return $this
      */
-    public function setSortBy($sortBy)
+    public function setResourceOwnerAccount($resourceOwnerAccount)
     {
-        $this->requestParameters['SortBy'] = $sortBy;
-        $this->queryParameters['SortBy'] = $sortBy;
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }
@@ -129,14 +116,27 @@ class GetCategoriesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $type
+     * @param string $pageNo
      *
      * @return $this
      */
-    public function setType($type)
+    public function setPageNo($pageNo)
     {
-        $this->requestParameters['Type'] = $type;
-        $this->queryParameters['Type'] = $type;
+        $this->requestParameters['PageNo'] = $pageNo;
+        $this->queryParameters['PageNo'] = $pageNo;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sortBy
+     *
+     * @return $this
+     */
+    public function setSortBy($sortBy)
+    {
+        $this->requestParameters['SortBy'] = $sortBy;
+        $this->queryParameters['SortBy'] = $sortBy;
 
         return $this;
     }

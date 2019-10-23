@@ -8,20 +8,20 @@ namespace vod\Request\V20170321;
  * Request of GetPlayInfo
  *
  * @method string getResourceOwnerId()
- * @method string getStreamType()
  * @method string getFormats()
- * @method string getResourceOwnerAccount()
  * @method string getChannel()
- * @method string getVideoId()
  * @method string getPlayerVersion()
- * @method string getOwnerId()
- * @method string getResultType()
  * @method string getRand()
  * @method string getReAuthInfo()
  * @method string getPlayConfig()
  * @method string getOutputType()
  * @method string getDefinition()
  * @method string getAuthTimeout()
+ * @method string getStreamType()
+ * @method string getResourceOwnerAccount()
+ * @method string getVideoId()
+ * @method string getOwnerId()
+ * @method string getResultType()
  * @method string getAuthInfo()
  */
 class GetPlayInfoRequest extends \RpcAcsRequest
@@ -59,19 +59,6 @@ class GetPlayInfoRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $streamType
-     *
-     * @return $this
-     */
-    public function setStreamType($streamType)
-    {
-        $this->requestParameters['StreamType'] = $streamType;
-        $this->queryParameters['StreamType'] = $streamType;
-
-        return $this;
-    }
-
-    /**
      * @param string $formats
      *
      * @return $this
@@ -80,19 +67,6 @@ class GetPlayInfoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Formats'] = $formats;
         $this->queryParameters['Formats'] = $formats;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }
@@ -111,19 +85,6 @@ class GetPlayInfoRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $videoId
-     *
-     * @return $this
-     */
-    public function setVideoId($videoId)
-    {
-        $this->requestParameters['VideoId'] = $videoId;
-        $this->queryParameters['VideoId'] = $videoId;
-
-        return $this;
-    }
-
-    /**
      * @param string $playerVersion
      *
      * @return $this
@@ -132,32 +93,6 @@ class GetPlayInfoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PlayerVersion'] = $playerVersion;
         $this->queryParameters['PlayerVersion'] = $playerVersion;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resultType
-     *
-     * @return $this
-     */
-    public function setResultType($resultType)
-    {
-        $this->requestParameters['ResultType'] = $resultType;
-        $this->queryParameters['ResultType'] = $resultType;
 
         return $this;
     }
@@ -236,6 +171,71 @@ class GetPlayInfoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AuthTimeout'] = $authTimeout;
         $this->queryParameters['AuthTimeout'] = $authTimeout;
+
+        return $this;
+    }
+
+    /**
+     * @param string $streamType
+     *
+     * @return $this
+     */
+    public function setStreamType($streamType)
+    {
+        $this->requestParameters['StreamType'] = $streamType;
+        $this->queryParameters['StreamType'] = $streamType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $videoId
+     *
+     * @return $this
+     */
+    public function setVideoId($videoId)
+    {
+        $this->requestParameters['VideoId'] = $videoId;
+        $this->queryParameters['VideoId'] = $videoId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resultType
+     *
+     * @return $this
+     */
+    public function setResultType($resultType)
+    {
+        $this->requestParameters['ResultType'] = $resultType;
+        $this->queryParameters['ResultType'] = $resultType;
 
         return $this;
     }

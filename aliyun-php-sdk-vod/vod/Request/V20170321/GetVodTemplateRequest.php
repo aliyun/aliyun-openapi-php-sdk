@@ -9,8 +9,8 @@ namespace vod\Request\V20170321;
  *
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
- * @method string getVodTemplateId()
  * @method string getOwnerId()
+ * @method string getVodTemplateId()
  */
 class GetVodTemplateRequest extends \RpcAcsRequest
 {
@@ -60,19 +60,6 @@ class GetVodTemplateRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $vodTemplateId
-     *
-     * @return $this
-     */
-    public function setVodTemplateId($vodTemplateId)
-    {
-        $this->requestParameters['VodTemplateId'] = $vodTemplateId;
-        $this->queryParameters['VodTemplateId'] = $vodTemplateId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -81,6 +68,19 @@ class GetVodTemplateRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $vodTemplateId
+     *
+     * @return $this
+     */
+    public function setVodTemplateId($vodTemplateId)
+    {
+        $this->requestParameters['VodTemplateId'] = $vodTemplateId;
+        $this->queryParameters['VodTemplateId'] = $vodTemplateId;
 
         return $this;
     }

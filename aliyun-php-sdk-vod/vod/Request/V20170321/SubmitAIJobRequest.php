@@ -7,14 +7,14 @@ namespace vod\Request\V20170321;
  *
  * Request of SubmitAIJob
  *
- * @method string getUserData()
- * @method string getInput()
  * @method string getResourceOwnerId()
+ * @method string getUserData()
  * @method string getTypes()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
  * @method string getMediaId()
+ * @method string getInput()
  * @method string getConfig()
  */
 class SubmitAIJobRequest extends \RpcAcsRequest
@@ -39,32 +39,6 @@ class SubmitAIJobRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $userData
-     *
-     * @return $this
-     */
-    public function setUserData($userData)
-    {
-        $this->requestParameters['UserData'] = $userData;
-        $this->queryParameters['UserData'] = $userData;
-
-        return $this;
-    }
-
-    /**
-     * @param string $input
-     *
-     * @return $this
-     */
-    public function setInput($input)
-    {
-        $this->requestParameters['Input'] = $input;
-        $this->queryParameters['Input'] = $input;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerId
      *
      * @return $this
@@ -73,6 +47,19 @@ class SubmitAIJobRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $userData
+     *
+     * @return $this
+     */
+    public function setUserData($userData)
+    {
+        $this->requestParameters['UserData'] = $userData;
+        $this->queryParameters['UserData'] = $userData;
 
         return $this;
     }
@@ -138,6 +125,19 @@ class SubmitAIJobRequest extends \RpcAcsRequest
     {
         $this->requestParameters['MediaId'] = $mediaId;
         $this->queryParameters['MediaId'] = $mediaId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $input
+     *
+     * @return $this
+     */
+    public function setInput($input)
+    {
+        $this->requestParameters['Input'] = $input;
+        $this->queryParameters['Input'] = $input;
 
         return $this;
     }

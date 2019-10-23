@@ -8,14 +8,14 @@ namespace vod\Request\V20170321;
  * Request of SearchEditingProject
  *
  * @method string getResourceOwnerId()
+ * @method string getStartTime()
+ * @method string getTitle()
+ * @method string getPageSize()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getEndTime()
- * @method string getStartTime()
  * @method string getOwnerId()
- * @method string getTitle()
  * @method string getPageNo()
- * @method string getPageSize()
  * @method string getSortBy()
  * @method string getStatus()
  */
@@ -49,6 +49,45 @@ class SearchEditingProjectRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $title
+     *
+     * @return $this
+     */
+    public function setTitle($title)
+    {
+        $this->requestParameters['Title'] = $title;
+        $this->queryParameters['Title'] = $title;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }
@@ -93,19 +132,6 @@ class SearchEditingProjectRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $startTime
-     *
-     * @return $this
-     */
-    public function setStartTime($startTime)
-    {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -119,19 +145,6 @@ class SearchEditingProjectRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $title
-     *
-     * @return $this
-     */
-    public function setTitle($title)
-    {
-        $this->requestParameters['Title'] = $title;
-        $this->queryParameters['Title'] = $title;
-
-        return $this;
-    }
-
-    /**
      * @param string $pageNo
      *
      * @return $this
@@ -140,19 +153,6 @@ class SearchEditingProjectRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageNo'] = $pageNo;
         $this->queryParameters['PageNo'] = $pageNo;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }

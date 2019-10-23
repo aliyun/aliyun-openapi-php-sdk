@@ -9,8 +9,8 @@ namespace vod\Request\V20170321;
  *
  * @method string getSources()
  * @method string getSecurityToken()
- * @method string getOwnerAccount()
  * @method string getScope()
+ * @method string getOwnerAccount()
  * @method string getDomainName()
  * @method string getOwnerId()
  * @method string getCheckUrl()
@@ -63,19 +63,6 @@ class AddVodDomainRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $scope
      *
      * @return $this
@@ -84,6 +71,19 @@ class AddVodDomainRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Scope'] = $scope;
         $this->queryParameters['Scope'] = $scope;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
         return $this;
     }

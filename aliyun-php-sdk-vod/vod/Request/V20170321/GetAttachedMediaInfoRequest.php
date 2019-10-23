@@ -8,12 +8,12 @@ namespace vod\Request\V20170321;
  * Request of GetAttachedMediaInfo
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
+ * @method string getResourceRealOwnerId()
  * @method string getOutputType()
  * @method string getMediaIds()
- * @method string getResourceRealOwnerId()
- * @method string getOwnerId()
  * @method string getAuthTimeout()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerId()
  */
 class GetAttachedMediaInfoRequest extends \RpcAcsRequest
 {
@@ -50,14 +50,14 @@ class GetAttachedMediaInfoRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
+     * @param string $resourceRealOwnerId
      *
      * @return $this
      */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
+    public function setResourceRealOwnerId($resourceRealOwnerId)
     {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->requestParameters['ResourceRealOwnerId'] = $resourceRealOwnerId;
+        $this->queryParameters['ResourceRealOwnerId'] = $resourceRealOwnerId;
 
         return $this;
     }
@@ -89,14 +89,27 @@ class GetAttachedMediaInfoRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceRealOwnerId
+     * @param string $authTimeout
      *
      * @return $this
      */
-    public function setResourceRealOwnerId($resourceRealOwnerId)
+    public function setAuthTimeout($authTimeout)
     {
-        $this->requestParameters['ResourceRealOwnerId'] = $resourceRealOwnerId;
-        $this->queryParameters['ResourceRealOwnerId'] = $resourceRealOwnerId;
+        $this->requestParameters['AuthTimeout'] = $authTimeout;
+        $this->queryParameters['AuthTimeout'] = $authTimeout;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }
@@ -110,19 +123,6 @@ class GetAttachedMediaInfoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $authTimeout
-     *
-     * @return $this
-     */
-    public function setAuthTimeout($authTimeout)
-    {
-        $this->requestParameters['AuthTimeout'] = $authTimeout;
-        $this->queryParameters['AuthTimeout'] = $authTimeout;
 
         return $this;
     }

@@ -8,12 +8,12 @@ namespace vod\Request\V20170321;
  * Request of GetVideoPlayAuth
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
  * @method string getReAuthInfo()
  * @method string getPlayConfig()
- * @method string getAuthInfoTimeout()
+ * @method string getResourceOwnerAccount()
  * @method string getVideoId()
  * @method string getOwnerId()
+ * @method string getAuthInfoTimeout()
  */
 class GetVideoPlayAuthRequest extends \RpcAcsRequest
 {
@@ -50,19 +50,6 @@ class GetVideoPlayAuthRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $reAuthInfo
      *
      * @return $this
@@ -89,14 +76,14 @@ class GetVideoPlayAuthRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $authInfoTimeout
+     * @param string $resourceOwnerAccount
      *
      * @return $this
      */
-    public function setAuthInfoTimeout($authInfoTimeout)
+    public function setResourceOwnerAccount($resourceOwnerAccount)
     {
-        $this->requestParameters['AuthInfoTimeout'] = $authInfoTimeout;
-        $this->queryParameters['AuthInfoTimeout'] = $authInfoTimeout;
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }
@@ -123,6 +110,19 @@ class GetVideoPlayAuthRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $authInfoTimeout
+     *
+     * @return $this
+     */
+    public function setAuthInfoTimeout($authInfoTimeout)
+    {
+        $this->requestParameters['AuthInfoTimeout'] = $authInfoTimeout;
+        $this->queryParameters['AuthInfoTimeout'] = $authInfoTimeout;
 
         return $this;
     }

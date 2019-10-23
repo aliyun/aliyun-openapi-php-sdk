@@ -8,11 +8,11 @@ namespace vod\Request\V20170321;
  * Request of ListAppInfo
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
- * @method string getPageNo()
- * @method string getPageSize()
  * @method string getResourceRealOwnerId()
+ * @method string getPageSize()
+ * @method string getResourceOwnerAccount()
  * @method string getOwnerId()
+ * @method string getPageNo()
  * @method string getStatus()
  */
 class ListAppInfoRequest extends \RpcAcsRequest
@@ -50,27 +50,14 @@ class ListAppInfoRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
+     * @param string $resourceRealOwnerId
      *
      * @return $this
      */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
+    public function setResourceRealOwnerId($resourceRealOwnerId)
     {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNo
-     *
-     * @return $this
-     */
-    public function setPageNo($pageNo)
-    {
-        $this->requestParameters['PageNo'] = $pageNo;
-        $this->queryParameters['PageNo'] = $pageNo;
+        $this->requestParameters['ResourceRealOwnerId'] = $resourceRealOwnerId;
+        $this->queryParameters['ResourceRealOwnerId'] = $resourceRealOwnerId;
 
         return $this;
     }
@@ -89,14 +76,14 @@ class ListAppInfoRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceRealOwnerId
+     * @param string $resourceOwnerAccount
      *
      * @return $this
      */
-    public function setResourceRealOwnerId($resourceRealOwnerId)
+    public function setResourceOwnerAccount($resourceOwnerAccount)
     {
-        $this->requestParameters['ResourceRealOwnerId'] = $resourceRealOwnerId;
-        $this->queryParameters['ResourceRealOwnerId'] = $resourceRealOwnerId;
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }
@@ -110,6 +97,19 @@ class ListAppInfoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNo
+     *
+     * @return $this
+     */
+    public function setPageNo($pageNo)
+    {
+        $this->requestParameters['PageNo'] = $pageNo;
+        $this->queryParameters['PageNo'] = $pageNo;
 
         return $this;
     }

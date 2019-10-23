@@ -9,11 +9,11 @@ namespace vod\Request\V20170321;
  *
  * @method string getTranscodeTemplateList()
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
- * @method string getName()
- * @method string getOwnerId()
  * @method string getLocked()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerId()
  * @method string getTranscodeTemplateGroupId()
+ * @method string getName()
  */
 class UpdateTranscodeTemplateGroupRequest extends \RpcAcsRequest
 {
@@ -63,6 +63,19 @@ class UpdateTranscodeTemplateGroupRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $locked
+     *
+     * @return $this
+     */
+    public function setLocked($locked)
+    {
+        $this->requestParameters['Locked'] = $locked;
+        $this->queryParameters['Locked'] = $locked;
+
+        return $this;
+    }
+
+    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -71,19 +84,6 @@ class UpdateTranscodeTemplateGroupRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $name
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->requestParameters['Name'] = $name;
-        $this->queryParameters['Name'] = $name;
 
         return $this;
     }
@@ -102,19 +102,6 @@ class UpdateTranscodeTemplateGroupRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $locked
-     *
-     * @return $this
-     */
-    public function setLocked($locked)
-    {
-        $this->requestParameters['Locked'] = $locked;
-        $this->queryParameters['Locked'] = $locked;
-
-        return $this;
-    }
-
-    /**
      * @param string $transcodeTemplateGroupId
      *
      * @return $this
@@ -123,6 +110,19 @@ class UpdateTranscodeTemplateGroupRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TranscodeTemplateGroupId'] = $transcodeTemplateGroupId;
         $this->queryParameters['TranscodeTemplateGroupId'] = $transcodeTemplateGroupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
         return $this;
     }

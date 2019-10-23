@@ -10,8 +10,8 @@ namespace vod\Request\V20170321;
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getJobIds()
  * @method string getOwnerId()
+ * @method string getJobIds()
  */
 class ListAIJobRequest extends \RpcAcsRequest
 {
@@ -74,19 +74,6 @@ class ListAIJobRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $jobIds
-     *
-     * @return $this
-     */
-    public function setJobIds($jobIds)
-    {
-        $this->requestParameters['JobIds'] = $jobIds;
-        $this->queryParameters['JobIds'] = $jobIds;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -95,6 +82,19 @@ class ListAIJobRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $jobIds
+     *
+     * @return $this
+     */
+    public function setJobIds($jobIds)
+    {
+        $this->requestParameters['JobIds'] = $jobIds;
+        $this->queryParameters['JobIds'] = $jobIds;
 
         return $this;
     }

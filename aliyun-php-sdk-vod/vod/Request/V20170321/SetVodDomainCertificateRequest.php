@@ -7,14 +7,14 @@ namespace vod\Request\V20170321;
  *
  * Request of SetVodDomainCertificate
  *
- * @method string getSecurityToken()
- * @method string getSSLPub()
- * @method string getCertName()
  * @method string getSSLProtocol()
+ * @method string getSecurityToken()
+ * @method string getSSLPri()
+ * @method string getCertName()
  * @method string getDomainName()
  * @method string getOwnerId()
+ * @method string getSSLPub()
  * @method string getRegion()
- * @method string getSSLPri()
  */
 class SetVodDomainCertificateRequest extends \RpcAcsRequest
 {
@@ -38,6 +38,19 @@ class SetVodDomainCertificateRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $sSLProtocol
+     *
+     * @return $this
+     */
+    public function setSSLProtocol($sSLProtocol)
+    {
+        $this->requestParameters['SSLProtocol'] = $sSLProtocol;
+        $this->queryParameters['SSLProtocol'] = $sSLProtocol;
+
+        return $this;
+    }
+
+    /**
      * @param string $securityToken
      *
      * @return $this
@@ -51,14 +64,14 @@ class SetVodDomainCertificateRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $sSLPub
+     * @param string $sSLPri
      *
      * @return $this
      */
-    public function setSSLPub($sSLPub)
+    public function setSSLPri($sSLPri)
     {
-        $this->requestParameters['SSLPub'] = $sSLPub;
-        $this->queryParameters['SSLPub'] = $sSLPub;
+        $this->requestParameters['SSLPri'] = $sSLPri;
+        $this->queryParameters['SSLPri'] = $sSLPri;
 
         return $this;
     }
@@ -72,19 +85,6 @@ class SetVodDomainCertificateRequest extends \RpcAcsRequest
     {
         $this->requestParameters['CertName'] = $certName;
         $this->queryParameters['CertName'] = $certName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $sSLProtocol
-     *
-     * @return $this
-     */
-    public function setSSLProtocol($sSLProtocol)
-    {
-        $this->requestParameters['SSLProtocol'] = $sSLProtocol;
-        $this->queryParameters['SSLProtocol'] = $sSLProtocol;
 
         return $this;
     }
@@ -116,6 +116,19 @@ class SetVodDomainCertificateRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $sSLPub
+     *
+     * @return $this
+     */
+    public function setSSLPub($sSLPub)
+    {
+        $this->requestParameters['SSLPub'] = $sSLPub;
+        $this->queryParameters['SSLPub'] = $sSLPub;
+
+        return $this;
+    }
+
+    /**
      * @param string $region
      *
      * @return $this
@@ -124,19 +137,6 @@ class SetVodDomainCertificateRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Region'] = $region;
         $this->queryParameters['Region'] = $region;
-
-        return $this;
-    }
-
-    /**
-     * @param string $sSLPri
-     *
-     * @return $this
-     */
-    public function setSSLPri($sSLPri)
-    {
-        $this->requestParameters['SSLPri'] = $sSLPri;
-        $this->queryParameters['SSLPri'] = $sSLPri;
 
         return $this;
     }

@@ -8,9 +8,9 @@ namespace vod\Request\V20170321;
  * Request of GetUploadDetails
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
  * @method string getResourceRealOwnerId()
  * @method string getMediaIds()
+ * @method string getResourceOwnerAccount()
  * @method string getOwnerId()
  * @method string getMediaType()
  */
@@ -49,19 +49,6 @@ class GetUploadDetailsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceRealOwnerId
      *
      * @return $this
@@ -83,6 +70,19 @@ class GetUploadDetailsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['MediaIds'] = $mediaIds;
         $this->queryParameters['MediaIds'] = $mediaIds;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }

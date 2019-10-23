@@ -9,9 +9,9 @@ namespace vod\Request\V20170321;
  *
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
- * @method string getPageNo()
  * @method string getOwnerId()
  * @method string getMediaId()
+ * @method string getPageNo()
  */
 class GetMediaAuditResultDetailRequest extends \RpcAcsRequest
 {
@@ -61,19 +61,6 @@ class GetMediaAuditResultDetailRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageNo
-     *
-     * @return $this
-     */
-    public function setPageNo($pageNo)
-    {
-        $this->requestParameters['PageNo'] = $pageNo;
-        $this->queryParameters['PageNo'] = $pageNo;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -95,6 +82,19 @@ class GetMediaAuditResultDetailRequest extends \RpcAcsRequest
     {
         $this->requestParameters['MediaId'] = $mediaId;
         $this->queryParameters['MediaId'] = $mediaId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNo
+     *
+     * @return $this
+     */
+    public function setPageNo($pageNo)
+    {
+        $this->requestParameters['PageNo'] = $pageNo;
+        $this->queryParameters['PageNo'] = $pageNo;
 
         return $this;
     }

@@ -7,10 +7,10 @@ namespace vod\Request\V20170321;
  *
  * Request of MoveAppResource
  *
- * @method string getTargetAppId()
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
  * @method string getResourceRealOwnerId()
+ * @method string getTargetAppId()
+ * @method string getResourceOwnerAccount()
  * @method string getOwnerId()
  * @method string getResourceType()
  * @method string getResourceIds()
@@ -37,19 +37,6 @@ class MoveAppResourceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $targetAppId
-     *
-     * @return $this
-     */
-    public function setTargetAppId($targetAppId)
-    {
-        $this->requestParameters['TargetAppId'] = $targetAppId;
-        $this->queryParameters['TargetAppId'] = $targetAppId;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerId
      *
      * @return $this
@@ -63,19 +50,6 @@ class MoveAppResourceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceRealOwnerId
      *
      * @return $this
@@ -84,6 +58,32 @@ class MoveAppResourceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceRealOwnerId'] = $resourceRealOwnerId;
         $this->queryParameters['ResourceRealOwnerId'] = $resourceRealOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $targetAppId
+     *
+     * @return $this
+     */
+    public function setTargetAppId($targetAppId)
+    {
+        $this->requestParameters['TargetAppId'] = $targetAppId;
+        $this->queryParameters['TargetAppId'] = $targetAppId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }

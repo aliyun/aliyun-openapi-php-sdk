@@ -7,9 +7,9 @@ namespace vod\Request\V20170321;
  *
  * Request of PreloadVodObjectCaches
  *
- * @method string getSecurityToken()
  * @method string getObjectPath()
  * @method string getOwnerId()
+ * @method string getSecurityToken()
  */
 class PreloadVodObjectCachesRequest extends \RpcAcsRequest
 {
@@ -30,19 +30,6 @@ class PreloadVodObjectCachesRequest extends \RpcAcsRequest
             'PreloadVodObjectCaches',
             'vod'
         );
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
     }
 
     /**
@@ -67,6 +54,19 @@ class PreloadVodObjectCachesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

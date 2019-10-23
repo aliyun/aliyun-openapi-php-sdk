@@ -7,15 +7,15 @@ namespace vod\Request\V20170321;
  *
  * Request of DescribeVodUserDomains
  *
- * @method string getFuncFilter()
+ * @method string getPageNumber()
  * @method string getCheckDomainShow()
  * @method string getSecurityToken()
  * @method string getCdnType()
  * @method string getPageSize()
+ * @method string getFuncFilter()
  * @method string getDomainName()
  * @method string getOwnerId()
  * @method string getFuncId()
- * @method string getPageNumber()
  * @method string getDomainStatus()
  * @method string getDomainSearchType()
  */
@@ -41,14 +41,14 @@ class DescribeVodUserDomainsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $funcFilter
+     * @param string $pageNumber
      *
      * @return $this
      */
-    public function setFuncFilter($funcFilter)
+    public function setPageNumber($pageNumber)
     {
-        $this->requestParameters['FuncFilter'] = $funcFilter;
-        $this->queryParameters['FuncFilter'] = $funcFilter;
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }
@@ -106,6 +106,19 @@ class DescribeVodUserDomainsRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $funcFilter
+     *
+     * @return $this
+     */
+    public function setFuncFilter($funcFilter)
+    {
+        $this->requestParameters['FuncFilter'] = $funcFilter;
+        $this->queryParameters['FuncFilter'] = $funcFilter;
+
+        return $this;
+    }
+
+    /**
      * @param string $domainName
      *
      * @return $this
@@ -140,19 +153,6 @@ class DescribeVodUserDomainsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['FuncId'] = $funcId;
         $this->queryParameters['FuncId'] = $funcId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

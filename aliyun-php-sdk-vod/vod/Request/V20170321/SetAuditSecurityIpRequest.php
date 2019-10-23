@@ -7,8 +7,8 @@ namespace vod\Request\V20170321;
  *
  * Request of SetAuditSecurityIp
  *
- * @method string getOperateMode()
  * @method string getSecurityGroupName()
+ * @method string getOperateMode()
  * @method string getIps()
  */
 class SetAuditSecurityIpRequest extends \RpcAcsRequest
@@ -33,19 +33,6 @@ class SetAuditSecurityIpRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $operateMode
-     *
-     * @return $this
-     */
-    public function setOperateMode($operateMode)
-    {
-        $this->requestParameters['OperateMode'] = $operateMode;
-        $this->queryParameters['OperateMode'] = $operateMode;
-
-        return $this;
-    }
-
-    /**
      * @param string $securityGroupName
      *
      * @return $this
@@ -54,6 +41,19 @@ class SetAuditSecurityIpRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityGroupName'] = $securityGroupName;
         $this->queryParameters['SecurityGroupName'] = $securityGroupName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $operateMode
+     *
+     * @return $this
+     */
+    public function setOperateMode($operateMode)
+    {
+        $this->requestParameters['OperateMode'] = $operateMode;
+        $this->queryParameters['OperateMode'] = $operateMode;
 
         return $this;
     }

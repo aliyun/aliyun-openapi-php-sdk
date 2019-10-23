@@ -8,23 +8,23 @@ namespace vod\Request\V20170321;
  * Request of CreateUploadVideo
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
  * @method string getTranscodeMode()
- * @method string getIP()
  * @method string getDescription()
  * @method string getFileSize()
- * @method string getOwnerId()
  * @method string getTitle()
- * @method string getTags()
  * @method string getStorageLocation()
  * @method string getCoverURL()
  * @method string getUserData()
- * @method string getFileName()
- * @method string getTemplateGroupId()
  * @method string getCateId()
- * @method string getAppId()
  * @method string getWorkflowId()
  * @method string getCustomMediaInfo()
+ * @method string getResourceOwnerAccount()
+ * @method string getIP()
+ * @method string getOwnerId()
+ * @method string getTags()
+ * @method string getFileName()
+ * @method string getTemplateGroupId()
+ * @method string getAppId()
  */
 class CreateUploadVideoRequest extends \RpcAcsRequest
 {
@@ -61,19 +61,6 @@ class CreateUploadVideoRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $transcodeMode
      *
      * @return $this
@@ -82,19 +69,6 @@ class CreateUploadVideoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TranscodeMode'] = $transcodeMode;
         $this->queryParameters['TranscodeMode'] = $transcodeMode;
-
-        return $this;
-    }
-
-    /**
-     * @param string $iP
-     *
-     * @return $this
-     */
-    public function setIP($iP)
-    {
-        $this->requestParameters['IP'] = $iP;
-        $this->queryParameters['IP'] = $iP;
 
         return $this;
     }
@@ -126,19 +100,6 @@ class CreateUploadVideoRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
      * @param string $title
      *
      * @return $this
@@ -147,19 +108,6 @@ class CreateUploadVideoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Title'] = $title;
         $this->queryParameters['Title'] = $title;
-
-        return $this;
-    }
-
-    /**
-     * @param string $tags
-     *
-     * @return $this
-     */
-    public function setTags($tags)
-    {
-        $this->requestParameters['Tags'] = $tags;
-        $this->queryParameters['Tags'] = $tags;
 
         return $this;
     }
@@ -204,32 +152,6 @@ class CreateUploadVideoRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $fileName
-     *
-     * @return $this
-     */
-    public function setFileName($fileName)
-    {
-        $this->requestParameters['FileName'] = $fileName;
-        $this->queryParameters['FileName'] = $fileName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $templateGroupId
-     *
-     * @return $this
-     */
-    public function setTemplateGroupId($templateGroupId)
-    {
-        $this->requestParameters['TemplateGroupId'] = $templateGroupId;
-        $this->queryParameters['TemplateGroupId'] = $templateGroupId;
-
-        return $this;
-    }
-
-    /**
      * @param string $cateId
      *
      * @return $this
@@ -238,19 +160,6 @@ class CreateUploadVideoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['CateId'] = $cateId;
         $this->queryParameters['CateId'] = $cateId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $appId
-     *
-     * @return $this
-     */
-    public function setAppId($appId)
-    {
-        $this->requestParameters['AppId'] = $appId;
-        $this->queryParameters['AppId'] = $appId;
 
         return $this;
     }
@@ -277,6 +186,97 @@ class CreateUploadVideoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['CustomMediaInfo'] = $customMediaInfo;
         $this->queryParameters['CustomMediaInfo'] = $customMediaInfo;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $iP
+     *
+     * @return $this
+     */
+    public function setIP($iP)
+    {
+        $this->requestParameters['IP'] = $iP;
+        $this->queryParameters['IP'] = $iP;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $tags
+     *
+     * @return $this
+     */
+    public function setTags($tags)
+    {
+        $this->requestParameters['Tags'] = $tags;
+        $this->queryParameters['Tags'] = $tags;
+
+        return $this;
+    }
+
+    /**
+     * @param string $fileName
+     *
+     * @return $this
+     */
+    public function setFileName($fileName)
+    {
+        $this->requestParameters['FileName'] = $fileName;
+        $this->queryParameters['FileName'] = $fileName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $templateGroupId
+     *
+     * @return $this
+     */
+    public function setTemplateGroupId($templateGroupId)
+    {
+        $this->requestParameters['TemplateGroupId'] = $templateGroupId;
+        $this->queryParameters['TemplateGroupId'] = $templateGroupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $appId
+     *
+     * @return $this
+     */
+    public function setAppId($appId)
+    {
+        $this->requestParameters['AppId'] = $appId;
+        $this->queryParameters['AppId'] = $appId;
 
         return $this;
     }

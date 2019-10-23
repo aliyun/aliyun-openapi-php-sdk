@@ -9,8 +9,8 @@ namespace vod\Request\V20170321;
  *
  * @method string getResourceOwnerId()
  * @method string getResourceOwnerAccount()
- * @method string getAdditionType()
  * @method string getOwnerId()
+ * @method string getAdditionType()
  * @method string getVideoIds()
  */
 class GetVideoInfosRequest extends \RpcAcsRequest
@@ -61,19 +61,6 @@ class GetVideoInfosRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $additionType
-     *
-     * @return $this
-     */
-    public function setAdditionType($additionType)
-    {
-        $this->requestParameters['AdditionType'] = $additionType;
-        $this->queryParameters['AdditionType'] = $additionType;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -82,6 +69,19 @@ class GetVideoInfosRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $additionType
+     *
+     * @return $this
+     */
+    public function setAdditionType($additionType)
+    {
+        $this->requestParameters['AdditionType'] = $additionType;
+        $this->queryParameters['AdditionType'] = $additionType;
 
         return $this;
     }
