@@ -26,7 +26,8 @@ class CheckDevicesRequest extends \RpcAcsRequest
         parent::__construct(
             'Push',
             '2016-08-01',
-            'CheckDevices'
+            'CheckDevices',
+            'cps'
         );
     }
 

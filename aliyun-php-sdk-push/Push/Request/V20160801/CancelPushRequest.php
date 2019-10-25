@@ -26,7 +26,8 @@ class CancelPushRequest extends \RpcAcsRequest
         parent::__construct(
             'Push',
             '2016-08-01',
-            'CancelPush'
+            'CancelPush',
+            'cps'
         );
     }
 

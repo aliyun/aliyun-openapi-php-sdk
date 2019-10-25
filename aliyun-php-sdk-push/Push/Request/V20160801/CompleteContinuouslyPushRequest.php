@@ -5,12 +5,12 @@ namespace Push\Request\V20160801;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of QueryDevicesByAccount
+ * Request of CompleteContinuouslyPush
  *
+ * @method string getMessageId()
  * @method string getAppKey()
- * @method string getAccount()
  */
-class QueryDevicesByAccountRequest extends \RpcAcsRequest
+class CompleteContinuouslyPushRequest extends \RpcAcsRequest
 {
 
     /**
@@ -26,9 +26,22 @@ class QueryDevicesByAccountRequest extends \RpcAcsRequest
         parent::__construct(
             'Push',
             '2016-08-01',
-            'QueryDevicesByAccount',
+            'CompleteContinuouslyPush',
             'cps'
         );
+    }
+
+    /**
+     * @param string $messageId
+     *
+     * @return $this
+     */
+    public function setMessageId($messageId)
+    {
+        $this->requestParameters['MessageId'] = $messageId;
+        $this->queryParameters['MessageId'] = $messageId;
+
+        return $this;
     }
 
     /**
@@ -40,19 +53,6 @@ class QueryDevicesByAccountRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AppKey'] = $appKey;
         $this->queryParameters['AppKey'] = $appKey;
-
-        return $this;
-    }
-
-    /**
-     * @param string $account
-     *
-     * @return $this
-     */
-    public function setAccount($account)
-    {
-        $this->requestParameters['Account'] = $account;
-        $this->queryParameters['Account'] = $account;
 
         return $this;
     }

@@ -30,7 +30,8 @@ class QueryPushListRequest extends \RpcAcsRequest
         parent::__construct(
             'Push',
             '2016-08-01',
-            'QueryPushList'
+            'QueryPushList',
+            'cps'
         );
     }
 

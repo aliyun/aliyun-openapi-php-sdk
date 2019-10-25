@@ -28,7 +28,8 @@ class UnbindAliasRequest extends \RpcAcsRequest
         parent::__construct(
             'Push',
             '2016-08-01',
-            'UnbindAlias'
+            'UnbindAlias',
+            'cps'
         );
     }
 
