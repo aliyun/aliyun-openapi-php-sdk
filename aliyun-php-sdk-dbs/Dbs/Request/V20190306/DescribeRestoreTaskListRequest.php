@@ -8,11 +8,11 @@ namespace Dbs\Request\V20190306;
  * Request of DescribeRestoreTaskList
  *
  * @method string getClientToken()
- * @method string getRestoreTaskId()
- * @method string getPageSize()
  * @method string getBackupPlanId()
  * @method string getPageNum()
  * @method string getOwnerId()
+ * @method string getRestoreTaskId()
+ * @method string getPageSize()
  */
 class DescribeRestoreTaskListRequest extends \RpcAcsRequest
 {
@@ -44,32 +44,6 @@ class DescribeRestoreTaskListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ClientToken'] = $clientToken;
         $this->queryParameters['ClientToken'] = $clientToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $restoreTaskId
-     *
-     * @return $this
-     */
-    public function setRestoreTaskId($restoreTaskId)
-    {
-        $this->requestParameters['RestoreTaskId'] = $restoreTaskId;
-        $this->queryParameters['RestoreTaskId'] = $restoreTaskId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }
@@ -109,6 +83,32 @@ class DescribeRestoreTaskListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $restoreTaskId
+     *
+     * @return $this
+     */
+    public function setRestoreTaskId($restoreTaskId)
+    {
+        $this->requestParameters['RestoreTaskId'] = $restoreTaskId;
+        $this->queryParameters['RestoreTaskId'] = $restoreTaskId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }

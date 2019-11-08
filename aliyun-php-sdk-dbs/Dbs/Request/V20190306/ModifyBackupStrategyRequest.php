@@ -7,11 +7,11 @@ namespace Dbs\Request\V20190306;
  *
  * Request of ModifyBackupStrategy
  *
- * @method string getBackupPeriod()
- * @method string getBackupStartTime()
  * @method string getClientToken()
  * @method string getBackupPlanId()
  * @method string getOwnerId()
+ * @method string getBackupPeriod()
+ * @method string getBackupStartTime()
  */
 class ModifyBackupStrategyRequest extends \RpcAcsRequest
 {
@@ -32,32 +32,6 @@ class ModifyBackupStrategyRequest extends \RpcAcsRequest
             'ModifyBackupStrategy',
             'cbs'
         );
-    }
-
-    /**
-     * @param string $backupPeriod
-     *
-     * @return $this
-     */
-    public function setBackupPeriod($backupPeriod)
-    {
-        $this->requestParameters['BackupPeriod'] = $backupPeriod;
-        $this->queryParameters['BackupPeriod'] = $backupPeriod;
-
-        return $this;
-    }
-
-    /**
-     * @param string $backupStartTime
-     *
-     * @return $this
-     */
-    public function setBackupStartTime($backupStartTime)
-    {
-        $this->requestParameters['BackupStartTime'] = $backupStartTime;
-        $this->queryParameters['BackupStartTime'] = $backupStartTime;
-
-        return $this;
     }
 
     /**
@@ -95,6 +69,32 @@ class ModifyBackupStrategyRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $backupPeriod
+     *
+     * @return $this
+     */
+    public function setBackupPeriod($backupPeriod)
+    {
+        $this->requestParameters['BackupPeriod'] = $backupPeriod;
+        $this->queryParameters['BackupPeriod'] = $backupPeriod;
+
+        return $this;
+    }
+
+    /**
+     * @param string $backupStartTime
+     *
+     * @return $this
+     */
+    public function setBackupStartTime($backupStartTime)
+    {
+        $this->requestParameters['BackupStartTime'] = $backupStartTime;
+        $this->queryParameters['BackupStartTime'] = $backupStartTime;
 
         return $this;
     }

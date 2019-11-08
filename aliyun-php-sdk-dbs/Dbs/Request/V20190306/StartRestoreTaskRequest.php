@@ -8,8 +8,8 @@ namespace Dbs\Request\V20190306;
  * Request of StartRestoreTask
  *
  * @method string getClientToken()
- * @method string getRestoreTaskId()
  * @method string getOwnerId()
+ * @method string getRestoreTaskId()
  */
 class StartRestoreTaskRequest extends \RpcAcsRequest
 {
@@ -46,19 +46,6 @@ class StartRestoreTaskRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $restoreTaskId
-     *
-     * @return $this
-     */
-    public function setRestoreTaskId($restoreTaskId)
-    {
-        $this->requestParameters['RestoreTaskId'] = $restoreTaskId;
-        $this->queryParameters['RestoreTaskId'] = $restoreTaskId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -67,6 +54,19 @@ class StartRestoreTaskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $restoreTaskId
+     *
+     * @return $this
+     */
+    public function setRestoreTaskId($restoreTaskId)
+    {
+        $this->requestParameters['RestoreTaskId'] = $restoreTaskId;
+        $this->queryParameters['RestoreTaskId'] = $restoreTaskId;
 
         return $this;
     }

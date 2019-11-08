@@ -8,8 +8,8 @@ namespace Dbs\Request\V20190306;
  * Request of DescribeNodeCidrList
  *
  * @method string getClientToken()
- * @method string getRegion()
  * @method string getOwnerId()
+ * @method string getRegion()
  */
 class DescribeNodeCidrListRequest extends \RpcAcsRequest
 {
@@ -46,19 +46,6 @@ class DescribeNodeCidrListRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $region
-     *
-     * @return $this
-     */
-    public function setRegion($region)
-    {
-        $this->requestParameters['Region'] = $region;
-        $this->queryParameters['Region'] = $region;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -67,6 +54,19 @@ class DescribeNodeCidrListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $region
+     *
+     * @return $this
+     */
+    public function setRegion($region)
+    {
+        $this->requestParameters['Region'] = $region;
+        $this->queryParameters['Region'] = $region;
 
         return $this;
     }

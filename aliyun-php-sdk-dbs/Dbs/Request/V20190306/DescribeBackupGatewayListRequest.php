@@ -9,10 +9,10 @@ namespace Dbs\Request\V20190306;
  *
  * @method string getIdentifier()
  * @method string getClientToken()
- * @method string getPageSize()
- * @method string getRegion()
  * @method string getPageNum()
  * @method string getOwnerId()
+ * @method string getPageSize()
+ * @method string getRegion()
  */
 class DescribeBackupGatewayListRequest extends \RpcAcsRequest
 {
@@ -62,32 +62,6 @@ class DescribeBackupGatewayListRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param string $region
-     *
-     * @return $this
-     */
-    public function setRegion($region)
-    {
-        $this->requestParameters['Region'] = $region;
-        $this->queryParameters['Region'] = $region;
-
-        return $this;
-    }
-
-    /**
      * @param string $pageNum
      *
      * @return $this
@@ -109,6 +83,32 @@ class DescribeBackupGatewayListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $region
+     *
+     * @return $this
+     */
+    public function setRegion($region)
+    {
+        $this->requestParameters['Region'] = $region;
+        $this->queryParameters['Region'] = $region;
 
         return $this;
     }

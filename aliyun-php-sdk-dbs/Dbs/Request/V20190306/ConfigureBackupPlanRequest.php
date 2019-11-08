@@ -8,27 +8,27 @@ namespace Dbs\Request\V20190306;
  * Request of ConfigureBackupPlan
  *
  * @method string getSourceEndpointRegion()
- * @method string getDuplicationArchivePeriod()
  * @method string getBackupGatewayId()
  * @method string getSourceEndpointInstanceID()
  * @method string getSourceEndpointUserName()
  * @method string getClientToken()
- * @method string getSourceEndpointPassword()
  * @method string getBackupPlanId()
+ * @method string getSourceEndpointDatabaseName()
+ * @method string getDuplicationInfrequentAccessPeriod()
+ * @method string getBackupStartTime()
+ * @method string getSourceEndpointIP()
+ * @method string getEnableBackupLog()
+ * @method string getDuplicationArchivePeriod()
+ * @method string getSourceEndpointPassword()
  * @method string getBackupObjects()
  * @method string getOwnerId()
  * @method string getSourceEndpointPort()
- * @method string getSourceEndpointDatabaseName()
  * @method string getBackupRetentionPeriod()
- * @method string getDuplicationInfrequentAccessPeriod()
  * @method string getBackupPeriod()
- * @method string getBackupStartTime()
  * @method string getSourceEndpointInstanceType()
- * @method string getSourceEndpointIP()
  * @method string getBackupPlanName()
  * @method string getSourceEndpointOracleSID()
  * @method string getOSSBucketName()
- * @method string getEnableBackupLog()
  */
 class ConfigureBackupPlanRequest extends \RpcAcsRequest
 {
@@ -60,19 +60,6 @@ class ConfigureBackupPlanRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SourceEndpointRegion'] = $sourceEndpointRegion;
         $this->queryParameters['SourceEndpointRegion'] = $sourceEndpointRegion;
-
-        return $this;
-    }
-
-    /**
-     * @param string $duplicationArchivePeriod
-     *
-     * @return $this
-     */
-    public function setDuplicationArchivePeriod($duplicationArchivePeriod)
-    {
-        $this->requestParameters['DuplicationArchivePeriod'] = $duplicationArchivePeriod;
-        $this->queryParameters['DuplicationArchivePeriod'] = $duplicationArchivePeriod;
 
         return $this;
     }
@@ -130,19 +117,6 @@ class ConfigureBackupPlanRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $sourceEndpointPassword
-     *
-     * @return $this
-     */
-    public function setSourceEndpointPassword($sourceEndpointPassword)
-    {
-        $this->requestParameters['SourceEndpointPassword'] = $sourceEndpointPassword;
-        $this->queryParameters['SourceEndpointPassword'] = $sourceEndpointPassword;
-
-        return $this;
-    }
-
-    /**
      * @param string $backupPlanId
      *
      * @return $this
@@ -151,6 +125,97 @@ class ConfigureBackupPlanRequest extends \RpcAcsRequest
     {
         $this->requestParameters['BackupPlanId'] = $backupPlanId;
         $this->queryParameters['BackupPlanId'] = $backupPlanId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sourceEndpointDatabaseName
+     *
+     * @return $this
+     */
+    public function setSourceEndpointDatabaseName($sourceEndpointDatabaseName)
+    {
+        $this->requestParameters['SourceEndpointDatabaseName'] = $sourceEndpointDatabaseName;
+        $this->queryParameters['SourceEndpointDatabaseName'] = $sourceEndpointDatabaseName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $duplicationInfrequentAccessPeriod
+     *
+     * @return $this
+     */
+    public function setDuplicationInfrequentAccessPeriod($duplicationInfrequentAccessPeriod)
+    {
+        $this->requestParameters['DuplicationInfrequentAccessPeriod'] = $duplicationInfrequentAccessPeriod;
+        $this->queryParameters['DuplicationInfrequentAccessPeriod'] = $duplicationInfrequentAccessPeriod;
+
+        return $this;
+    }
+
+    /**
+     * @param string $backupStartTime
+     *
+     * @return $this
+     */
+    public function setBackupStartTime($backupStartTime)
+    {
+        $this->requestParameters['BackupStartTime'] = $backupStartTime;
+        $this->queryParameters['BackupStartTime'] = $backupStartTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sourceEndpointIP
+     *
+     * @return $this
+     */
+    public function setSourceEndpointIP($sourceEndpointIP)
+    {
+        $this->requestParameters['SourceEndpointIP'] = $sourceEndpointIP;
+        $this->queryParameters['SourceEndpointIP'] = $sourceEndpointIP;
+
+        return $this;
+    }
+
+    /**
+     * @param string $enableBackupLog
+     *
+     * @return $this
+     */
+    public function setEnableBackupLog($enableBackupLog)
+    {
+        $this->requestParameters['EnableBackupLog'] = $enableBackupLog;
+        $this->queryParameters['EnableBackupLog'] = $enableBackupLog;
+
+        return $this;
+    }
+
+    /**
+     * @param string $duplicationArchivePeriod
+     *
+     * @return $this
+     */
+    public function setDuplicationArchivePeriod($duplicationArchivePeriod)
+    {
+        $this->requestParameters['DuplicationArchivePeriod'] = $duplicationArchivePeriod;
+        $this->queryParameters['DuplicationArchivePeriod'] = $duplicationArchivePeriod;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sourceEndpointPassword
+     *
+     * @return $this
+     */
+    public function setSourceEndpointPassword($sourceEndpointPassword)
+    {
+        $this->requestParameters['SourceEndpointPassword'] = $sourceEndpointPassword;
+        $this->queryParameters['SourceEndpointPassword'] = $sourceEndpointPassword;
 
         return $this;
     }
@@ -195,19 +260,6 @@ class ConfigureBackupPlanRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $sourceEndpointDatabaseName
-     *
-     * @return $this
-     */
-    public function setSourceEndpointDatabaseName($sourceEndpointDatabaseName)
-    {
-        $this->requestParameters['SourceEndpointDatabaseName'] = $sourceEndpointDatabaseName;
-        $this->queryParameters['SourceEndpointDatabaseName'] = $sourceEndpointDatabaseName;
-
-        return $this;
-    }
-
-    /**
      * @param string $backupRetentionPeriod
      *
      * @return $this
@@ -216,19 +268,6 @@ class ConfigureBackupPlanRequest extends \RpcAcsRequest
     {
         $this->requestParameters['BackupRetentionPeriod'] = $backupRetentionPeriod;
         $this->queryParameters['BackupRetentionPeriod'] = $backupRetentionPeriod;
-
-        return $this;
-    }
-
-    /**
-     * @param string $duplicationInfrequentAccessPeriod
-     *
-     * @return $this
-     */
-    public function setDuplicationInfrequentAccessPeriod($duplicationInfrequentAccessPeriod)
-    {
-        $this->requestParameters['DuplicationInfrequentAccessPeriod'] = $duplicationInfrequentAccessPeriod;
-        $this->queryParameters['DuplicationInfrequentAccessPeriod'] = $duplicationInfrequentAccessPeriod;
 
         return $this;
     }
@@ -247,19 +286,6 @@ class ConfigureBackupPlanRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $backupStartTime
-     *
-     * @return $this
-     */
-    public function setBackupStartTime($backupStartTime)
-    {
-        $this->requestParameters['BackupStartTime'] = $backupStartTime;
-        $this->queryParameters['BackupStartTime'] = $backupStartTime;
-
-        return $this;
-    }
-
-    /**
      * @param string $sourceEndpointInstanceType
      *
      * @return $this
@@ -268,19 +294,6 @@ class ConfigureBackupPlanRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SourceEndpointInstanceType'] = $sourceEndpointInstanceType;
         $this->queryParameters['SourceEndpointInstanceType'] = $sourceEndpointInstanceType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $sourceEndpointIP
-     *
-     * @return $this
-     */
-    public function setSourceEndpointIP($sourceEndpointIP)
-    {
-        $this->requestParameters['SourceEndpointIP'] = $sourceEndpointIP;
-        $this->queryParameters['SourceEndpointIP'] = $sourceEndpointIP;
 
         return $this;
     }
@@ -320,19 +333,6 @@ class ConfigureBackupPlanRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OSSBucketName'] = $oSSBucketName;
         $this->queryParameters['OSSBucketName'] = $oSSBucketName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $enableBackupLog
-     *
-     * @return $this
-     */
-    public function setEnableBackupLog($enableBackupLog)
-    {
-        $this->requestParameters['EnableBackupLog'] = $enableBackupLog;
-        $this->queryParameters['EnableBackupLog'] = $enableBackupLog;
 
         return $this;
     }

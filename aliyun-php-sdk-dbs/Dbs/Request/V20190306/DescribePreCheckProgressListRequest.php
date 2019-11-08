@@ -8,9 +8,9 @@ namespace Dbs\Request\V20190306;
  * Request of DescribePreCheckProgressList
  *
  * @method string getClientToken()
- * @method string getRestoreTaskId()
  * @method string getBackupPlanId()
  * @method string getOwnerId()
+ * @method string getRestoreTaskId()
  */
 class DescribePreCheckProgressListRequest extends \RpcAcsRequest
 {
@@ -47,19 +47,6 @@ class DescribePreCheckProgressListRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $restoreTaskId
-     *
-     * @return $this
-     */
-    public function setRestoreTaskId($restoreTaskId)
-    {
-        $this->requestParameters['RestoreTaskId'] = $restoreTaskId;
-        $this->queryParameters['RestoreTaskId'] = $restoreTaskId;
-
-        return $this;
-    }
-
-    /**
      * @param string $backupPlanId
      *
      * @return $this
@@ -81,6 +68,19 @@ class DescribePreCheckProgressListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $restoreTaskId
+     *
+     * @return $this
+     */
+    public function setRestoreTaskId($restoreTaskId)
+    {
+        $this->requestParameters['RestoreTaskId'] = $restoreTaskId;
+        $this->queryParameters['RestoreTaskId'] = $restoreTaskId;
 
         return $this;
     }

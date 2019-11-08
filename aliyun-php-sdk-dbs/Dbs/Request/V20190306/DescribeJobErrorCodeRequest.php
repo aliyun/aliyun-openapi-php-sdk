@@ -5,14 +5,14 @@ namespace Dbs\Request\V20190306;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ModifyBackupPlanName
+ * Request of DescribeJobErrorCode
  *
  * @method string getClientToken()
- * @method string getBackupPlanId()
+ * @method string getLanguage()
  * @method string getOwnerId()
- * @method string getBackupPlanName()
+ * @method string getTaskId()
  */
-class ModifyBackupPlanNameRequest extends \RpcAcsRequest
+class DescribeJobErrorCodeRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,7 +28,7 @@ class ModifyBackupPlanNameRequest extends \RpcAcsRequest
         parent::__construct(
             'Dbs',
             '2019-03-06',
-            'ModifyBackupPlanName',
+            'DescribeJobErrorCode',
             'cbs'
         );
     }
@@ -47,14 +47,14 @@ class ModifyBackupPlanNameRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $backupPlanId
+     * @param string $language
      *
      * @return $this
      */
-    public function setBackupPlanId($backupPlanId)
+    public function setLanguage($language)
     {
-        $this->requestParameters['BackupPlanId'] = $backupPlanId;
-        $this->queryParameters['BackupPlanId'] = $backupPlanId;
+        $this->requestParameters['Language'] = $language;
+        $this->queryParameters['Language'] = $language;
 
         return $this;
     }
@@ -73,14 +73,14 @@ class ModifyBackupPlanNameRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $backupPlanName
+     * @param string $taskId
      *
      * @return $this
      */
-    public function setBackupPlanName($backupPlanName)
+    public function setTaskId($taskId)
     {
-        $this->requestParameters['BackupPlanName'] = $backupPlanName;
-        $this->queryParameters['BackupPlanName'] = $backupPlanName;
+        $this->requestParameters['TaskId'] = $taskId;
+        $this->queryParameters['TaskId'] = $taskId;
 
         return $this;
     }

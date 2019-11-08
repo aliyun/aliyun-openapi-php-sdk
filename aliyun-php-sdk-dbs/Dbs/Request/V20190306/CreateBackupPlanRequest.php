@@ -8,16 +8,16 @@ namespace Dbs\Request\V20190306;
  * Request of CreateBackupPlan
  *
  * @method string getDatabaseType()
- * @method string getPeriod()
  * @method string getClientToken()
- * @method string getOwnerId()
- * @method string getUsedTime()
  * @method string getInstanceClass()
  * @method string getStorageType()
- * @method string getBackupMethod()
  * @method string getDatabaseRegion()
- * @method string getStorageRegion()
  * @method string getInstanceType()
+ * @method string getPeriod()
+ * @method string getOwnerId()
+ * @method string getUsedTime()
+ * @method string getBackupMethod()
+ * @method string getStorageRegion()
  * @method string getRegion()
  * @method string getPayType()
  */
@@ -56,19 +56,6 @@ class CreateBackupPlanRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $period
-     *
-     * @return $this
-     */
-    public function setPeriod($period)
-    {
-        $this->requestParameters['Period'] = $period;
-        $this->queryParameters['Period'] = $period;
-
-        return $this;
-    }
-
-    /**
      * @param string $clientToken
      *
      * @return $this
@@ -77,32 +64,6 @@ class CreateBackupPlanRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ClientToken'] = $clientToken;
         $this->queryParameters['ClientToken'] = $clientToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $usedTime
-     *
-     * @return $this
-     */
-    public function setUsedTime($usedTime)
-    {
-        $this->requestParameters['UsedTime'] = $usedTime;
-        $this->queryParameters['UsedTime'] = $usedTime;
 
         return $this;
     }
@@ -134,19 +95,6 @@ class CreateBackupPlanRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $backupMethod
-     *
-     * @return $this
-     */
-    public function setBackupMethod($backupMethod)
-    {
-        $this->requestParameters['BackupMethod'] = $backupMethod;
-        $this->queryParameters['BackupMethod'] = $backupMethod;
-
-        return $this;
-    }
-
-    /**
      * @param string $databaseRegion
      *
      * @return $this
@@ -160,19 +108,6 @@ class CreateBackupPlanRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $storageRegion
-     *
-     * @return $this
-     */
-    public function setStorageRegion($storageRegion)
-    {
-        $this->requestParameters['StorageRegion'] = $storageRegion;
-        $this->queryParameters['StorageRegion'] = $storageRegion;
-
-        return $this;
-    }
-
-    /**
      * @param string $instanceType
      *
      * @return $this
@@ -181,6 +116,71 @@ class CreateBackupPlanRequest extends \RpcAcsRequest
     {
         $this->requestParameters['InstanceType'] = $instanceType;
         $this->queryParameters['InstanceType'] = $instanceType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $period
+     *
+     * @return $this
+     */
+    public function setPeriod($period)
+    {
+        $this->requestParameters['Period'] = $period;
+        $this->queryParameters['Period'] = $period;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $usedTime
+     *
+     * @return $this
+     */
+    public function setUsedTime($usedTime)
+    {
+        $this->requestParameters['UsedTime'] = $usedTime;
+        $this->queryParameters['UsedTime'] = $usedTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $backupMethod
+     *
+     * @return $this
+     */
+    public function setBackupMethod($backupMethod)
+    {
+        $this->requestParameters['BackupMethod'] = $backupMethod;
+        $this->queryParameters['BackupMethod'] = $backupMethod;
+
+        return $this;
+    }
+
+    /**
+     * @param string $storageRegion
+     *
+     * @return $this
+     */
+    public function setStorageRegion($storageRegion)
+    {
+        $this->requestParameters['StorageRegion'] = $storageRegion;
+        $this->queryParameters['StorageRegion'] = $storageRegion;
 
         return $this;
     }

@@ -8,11 +8,11 @@ namespace Dbs\Request\V20190306;
  * Request of DescribeBackupPlanList
  *
  * @method string getClientToken()
- * @method string getPageSize()
  * @method string getBackupPlanId()
- * @method string getRegion()
  * @method string getPageNum()
  * @method string getOwnerId()
+ * @method string getPageSize()
+ * @method string getRegion()
  */
 class DescribeBackupPlanListRequest extends \RpcAcsRequest
 {
@@ -49,19 +49,6 @@ class DescribeBackupPlanListRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
      * @param string $backupPlanId
      *
      * @return $this
@@ -70,19 +57,6 @@ class DescribeBackupPlanListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['BackupPlanId'] = $backupPlanId;
         $this->queryParameters['BackupPlanId'] = $backupPlanId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $region
-     *
-     * @return $this
-     */
-    public function setRegion($region)
-    {
-        $this->requestParameters['Region'] = $region;
-        $this->queryParameters['Region'] = $region;
 
         return $this;
     }
@@ -109,6 +83,32 @@ class DescribeBackupPlanListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $region
+     *
+     * @return $this
+     */
+    public function setRegion($region)
+    {
+        $this->requestParameters['Region'] = $region;
+        $this->queryParameters['Region'] = $region;
 
         return $this;
     }

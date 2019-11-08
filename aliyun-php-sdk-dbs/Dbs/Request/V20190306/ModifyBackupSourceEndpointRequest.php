@@ -12,14 +12,14 @@ namespace Dbs\Request\V20190306;
  * @method string getSourceEndpointInstanceID()
  * @method string getSourceEndpointUserName()
  * @method string getClientToken()
- * @method string getSourceEndpointPassword()
  * @method string getBackupPlanId()
+ * @method string getSourceEndpointDatabaseName()
+ * @method string getSourceEndpointIP()
+ * @method string getSourceEndpointPassword()
  * @method string getBackupObjects()
  * @method string getOwnerId()
  * @method string getSourceEndpointPort()
- * @method string getSourceEndpointDatabaseName()
  * @method string getSourceEndpointInstanceType()
- * @method string getSourceEndpointIP()
  * @method string getSourceEndpointOracleSID()
  */
 class ModifyBackupSourceEndpointRequest extends \RpcAcsRequest
@@ -109,19 +109,6 @@ class ModifyBackupSourceEndpointRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $sourceEndpointPassword
-     *
-     * @return $this
-     */
-    public function setSourceEndpointPassword($sourceEndpointPassword)
-    {
-        $this->requestParameters['SourceEndpointPassword'] = $sourceEndpointPassword;
-        $this->queryParameters['SourceEndpointPassword'] = $sourceEndpointPassword;
-
-        return $this;
-    }
-
-    /**
      * @param string $backupPlanId
      *
      * @return $this
@@ -130,6 +117,45 @@ class ModifyBackupSourceEndpointRequest extends \RpcAcsRequest
     {
         $this->requestParameters['BackupPlanId'] = $backupPlanId;
         $this->queryParameters['BackupPlanId'] = $backupPlanId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sourceEndpointDatabaseName
+     *
+     * @return $this
+     */
+    public function setSourceEndpointDatabaseName($sourceEndpointDatabaseName)
+    {
+        $this->requestParameters['SourceEndpointDatabaseName'] = $sourceEndpointDatabaseName;
+        $this->queryParameters['SourceEndpointDatabaseName'] = $sourceEndpointDatabaseName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sourceEndpointIP
+     *
+     * @return $this
+     */
+    public function setSourceEndpointIP($sourceEndpointIP)
+    {
+        $this->requestParameters['SourceEndpointIP'] = $sourceEndpointIP;
+        $this->queryParameters['SourceEndpointIP'] = $sourceEndpointIP;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sourceEndpointPassword
+     *
+     * @return $this
+     */
+    public function setSourceEndpointPassword($sourceEndpointPassword)
+    {
+        $this->requestParameters['SourceEndpointPassword'] = $sourceEndpointPassword;
+        $this->queryParameters['SourceEndpointPassword'] = $sourceEndpointPassword;
 
         return $this;
     }
@@ -174,19 +200,6 @@ class ModifyBackupSourceEndpointRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $sourceEndpointDatabaseName
-     *
-     * @return $this
-     */
-    public function setSourceEndpointDatabaseName($sourceEndpointDatabaseName)
-    {
-        $this->requestParameters['SourceEndpointDatabaseName'] = $sourceEndpointDatabaseName;
-        $this->queryParameters['SourceEndpointDatabaseName'] = $sourceEndpointDatabaseName;
-
-        return $this;
-    }
-
-    /**
      * @param string $sourceEndpointInstanceType
      *
      * @return $this
@@ -195,19 +208,6 @@ class ModifyBackupSourceEndpointRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SourceEndpointInstanceType'] = $sourceEndpointInstanceType;
         $this->queryParameters['SourceEndpointInstanceType'] = $sourceEndpointInstanceType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $sourceEndpointIP
-     *
-     * @return $this
-     */
-    public function setSourceEndpointIP($sourceEndpointIP)
-    {
-        $this->requestParameters['SourceEndpointIP'] = $sourceEndpointIP;
-        $this->queryParameters['SourceEndpointIP'] = $sourceEndpointIP;
 
         return $this;
     }
