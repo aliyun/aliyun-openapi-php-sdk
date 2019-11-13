@@ -35,7 +35,7 @@ class QueryOrdersRequest extends \RpcAcsRequest
             'BssOpenApi',
             '2017-12-14',
             'QueryOrders',
-            'bssopenapi'
+            'BssOpenApi'
         );
     }
 

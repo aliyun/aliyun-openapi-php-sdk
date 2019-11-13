@@ -29,7 +29,7 @@ class DescribePricingModuleRequest extends \RpcAcsRequest
             'BssOpenApi',
             '2017-12-14',
             'DescribePricingModule',
-            'bssopenapi'
+            'BssOpenApi'
         );
     }
 

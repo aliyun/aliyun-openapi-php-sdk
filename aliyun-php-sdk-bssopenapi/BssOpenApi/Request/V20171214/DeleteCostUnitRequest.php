@@ -27,7 +27,7 @@ class DeleteCostUnitRequest extends \RpcAcsRequest
             'BssOpenApi',
             '2017-12-14',
             'DeleteCostUnit',
-            'bssopenapi'
+            'BssOpenApi'
         );
     }
 

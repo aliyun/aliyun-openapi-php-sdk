@@ -29,7 +29,7 @@ class QueryCostUnitResourceRequest extends \RpcAcsRequest
             'BssOpenApi',
             '2017-12-14',
             'QueryCostUnitResource',
-            'bssopenapi'
+            'BssOpenApi'
         );
     }
 

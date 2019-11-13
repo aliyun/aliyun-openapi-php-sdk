@@ -26,7 +26,7 @@ class GetCustomerAccountInfoRequest extends \RpcAcsRequest
             'BssOpenApi',
             '2017-12-14',
             'GetCustomerAccountInfo',
-            'bssopenapi'
+            'BssOpenApi'
         );
     }
 

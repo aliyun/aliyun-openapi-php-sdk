@@ -29,7 +29,7 @@ class SubscribeBillToOSSRequest extends \RpcAcsRequest
             'BssOpenApi',
             '2017-12-14',
             'SubscribeBillToOSS',
-            'bssopenapi'
+            'BssOpenApi'
         );
     }
 

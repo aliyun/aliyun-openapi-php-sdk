@@ -33,7 +33,7 @@ class ModifyInstanceRequest extends \RpcAcsRequest
             'BssOpenApi',
             '2017-12-14',
             'ModifyInstance',
-            'bssopenapi'
+            'BssOpenApi'
         );
     }
 

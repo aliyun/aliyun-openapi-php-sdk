@@ -29,7 +29,7 @@ class UpgradeResourcePackageRequest extends \RpcAcsRequest
             'BssOpenApi',
             '2017-12-14',
             'UpgradeResourcePackage',
-            'bssopenapi'
+            'BssOpenApi'
         );
     }
 

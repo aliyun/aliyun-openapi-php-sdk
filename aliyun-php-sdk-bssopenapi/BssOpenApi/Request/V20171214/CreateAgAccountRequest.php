@@ -39,7 +39,7 @@ class CreateAgAccountRequest extends \RpcAcsRequest
             'BssOpenApi',
             '2017-12-14',
             'CreateAgAccount',
-            'bssopenapi'
+            'BssOpenApi'
         );
     }
 

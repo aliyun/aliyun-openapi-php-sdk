@@ -5,17 +5,14 @@ namespace BssOpenApi\Request\V20171214;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of QueryMonthlyInstanceConsumption
+ * Request of QueryAccountBill
  *
- * @method string getProductCode()
- * @method string getSubscriptionType()
  * @method string getBillingCycle()
- * @method string getOwnerId()
  * @method string getPageNum()
- * @method string getProductType()
+ * @method string getOwnerID()
  * @method string getPageSize()
  */
-class QueryMonthlyInstanceConsumptionRequest extends \RpcAcsRequest
+class QueryAccountBillRequest extends \RpcAcsRequest
 {
 
     /**
@@ -31,35 +28,9 @@ class QueryMonthlyInstanceConsumptionRequest extends \RpcAcsRequest
         parent::__construct(
             'BssOpenApi',
             '2017-12-14',
-            'QueryMonthlyInstanceConsumption',
+            'QueryAccountBill',
             'BssOpenApi'
         );
-    }
-
-    /**
-     * @param string $productCode
-     *
-     * @return $this
-     */
-    public function setProductCode($productCode)
-    {
-        $this->requestParameters['ProductCode'] = $productCode;
-        $this->queryParameters['ProductCode'] = $productCode;
-
-        return $this;
-    }
-
-    /**
-     * @param string $subscriptionType
-     *
-     * @return $this
-     */
-    public function setSubscriptionType($subscriptionType)
-    {
-        $this->requestParameters['SubscriptionType'] = $subscriptionType;
-        $this->queryParameters['SubscriptionType'] = $subscriptionType;
-
-        return $this;
     }
 
     /**
@@ -71,19 +42,6 @@ class QueryMonthlyInstanceConsumptionRequest extends \RpcAcsRequest
     {
         $this->requestParameters['BillingCycle'] = $billingCycle;
         $this->queryParameters['BillingCycle'] = $billingCycle;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }
@@ -102,14 +60,14 @@ class QueryMonthlyInstanceConsumptionRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $productType
+     * @param string $ownerID
      *
      * @return $this
      */
-    public function setProductType($productType)
+    public function setOwnerID($ownerID)
     {
-        $this->requestParameters['ProductType'] = $productType;
-        $this->queryParameters['ProductType'] = $productType;
+        $this->requestParameters['OwnerID'] = $ownerID;
+        $this->queryParameters['OwnerID'] = $ownerID;
 
         return $this;
     }

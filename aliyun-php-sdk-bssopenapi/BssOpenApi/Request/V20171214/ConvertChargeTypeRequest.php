@@ -31,7 +31,7 @@ class ConvertChargeTypeRequest extends \RpcAcsRequest
             'BssOpenApi',
             '2017-12-14',
             'ConvertChargeType',
-            'bssopenapi'
+            'BssOpenApi'
         );
     }
 

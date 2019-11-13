@@ -27,7 +27,7 @@ class UnsubscribeBillToOSSRequest extends \RpcAcsRequest
             'BssOpenApi',
             '2017-12-14',
             'UnsubscribeBillToOSS',
-            'bssopenapi'
+            'BssOpenApi'
         );
     }
 

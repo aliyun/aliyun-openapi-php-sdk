@@ -32,7 +32,7 @@ class CreateResourcePackageRequest extends \RpcAcsRequest
             'BssOpenApi',
             '2017-12-14',
             'CreateResourcePackage',
-            'bssopenapi'
+            'BssOpenApi'
         );
     }
 

@@ -32,7 +32,7 @@ class QueryAccountTransactionsRequest extends \RpcAcsRequest
             'BssOpenApi',
             '2017-12-14',
             'QueryAccountTransactions',
-            'bssopenapi'
+            'BssOpenApi'
         );
     }
 

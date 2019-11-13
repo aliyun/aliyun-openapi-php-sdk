@@ -27,7 +27,7 @@ class CancelOrderRequest extends \RpcAcsRequest
             'BssOpenApi',
             '2017-12-14',
             'CancelOrder',
-            'bssopenapi'
+            'BssOpenApi'
         );
     }
 

@@ -27,7 +27,7 @@ class QueryUserOmsDataRequest extends \RpcAcsRequest
             'BssOpenApi',
             '2017-12-14',
             'QueryUserOmsData',
-            'bssopenapi'
+            'BssOpenApi'
         );
     }
 

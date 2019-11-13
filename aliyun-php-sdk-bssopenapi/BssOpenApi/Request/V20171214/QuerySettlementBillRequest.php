@@ -36,7 +36,7 @@ class QuerySettlementBillRequest extends \RpcAcsRequest
             'BssOpenApi',
             '2017-12-14',
             'QuerySettlementBill',
-            'bssopenapi'
+            'BssOpenApi'
         );
     }
 

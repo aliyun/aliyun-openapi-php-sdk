@@ -29,7 +29,7 @@ class SetResellerUserQuotaRequest extends \RpcAcsRequest
             'BssOpenApi',
             '2017-12-14',
             'SetResellerUserQuota',
-            'bssopenapi'
+            'BssOpenApi'
         );
     }
 

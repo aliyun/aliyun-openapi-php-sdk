@@ -31,7 +31,7 @@ class QueryResourcePackageInstancesRequest extends \RpcAcsRequest
             'BssOpenApi',
             '2017-12-14',
             'QueryResourcePackageInstances',
-            'bssopenapi'
+            'BssOpenApi'
         );
     }
 

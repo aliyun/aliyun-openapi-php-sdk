@@ -34,7 +34,7 @@ class CreateInstanceRequest extends \RpcAcsRequest
             'BssOpenApi',
             '2017-12-14',
             'CreateInstance',
-            'bssopenapi'
+            'BssOpenApi'
         );
     }
 

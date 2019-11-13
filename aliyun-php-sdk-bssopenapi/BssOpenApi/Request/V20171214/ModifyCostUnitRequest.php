@@ -26,7 +26,7 @@ class ModifyCostUnitRequest extends \RpcAcsRequest
             'BssOpenApi',
             '2017-12-14',
             'ModifyCostUnit',
-            'bssopenapi'
+            'BssOpenApi'
         );
     }
 

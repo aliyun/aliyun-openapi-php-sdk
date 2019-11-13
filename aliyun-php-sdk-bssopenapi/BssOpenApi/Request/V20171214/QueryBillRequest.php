@@ -35,7 +35,7 @@ class QueryBillRequest extends \RpcAcsRequest
             'BssOpenApi',
             '2017-12-14',
             'QueryBill',
-            'bssopenapi'
+            'BssOpenApi'
         );
     }
 

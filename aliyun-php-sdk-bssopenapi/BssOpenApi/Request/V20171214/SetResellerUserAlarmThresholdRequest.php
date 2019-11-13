@@ -28,7 +28,7 @@ class SetResellerUserAlarmThresholdRequest extends \RpcAcsRequest
             'BssOpenApi',
             '2017-12-14',
             'SetResellerUserAlarmThreshold',
-            'bssopenapi'
+            'BssOpenApi'
         );
     }
 

@@ -38,7 +38,7 @@ class QueryAvailableInstancesRequest extends \RpcAcsRequest
             'BssOpenApi',
             '2017-12-14',
             'QueryAvailableInstances',
-            'bssopenapi'
+            'BssOpenApi'
         );
     }
 

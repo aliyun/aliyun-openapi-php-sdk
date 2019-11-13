@@ -30,7 +30,7 @@ class RenewResourcePackageRequest extends \RpcAcsRequest
             'BssOpenApi',
             '2017-12-14',
             'RenewResourcePackage',
-            'bssopenapi'
+            'BssOpenApi'
         );
     }
 

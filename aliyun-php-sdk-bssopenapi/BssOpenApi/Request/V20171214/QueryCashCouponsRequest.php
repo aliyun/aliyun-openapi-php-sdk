@@ -28,7 +28,7 @@ class QueryCashCouponsRequest extends \RpcAcsRequest
             'BssOpenApi',
             '2017-12-14',
             'QueryCashCoupons',
-            'bssopenapi'
+            'BssOpenApi'
         );
     }
 

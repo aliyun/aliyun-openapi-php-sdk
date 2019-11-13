@@ -27,7 +27,7 @@ class EnableBillGenerationRequest extends \RpcAcsRequest
             'BssOpenApi',
             '2017-12-14',
             'EnableBillGeneration',
-            'bssopenapi'
+            'BssOpenApi'
         );
     }
 

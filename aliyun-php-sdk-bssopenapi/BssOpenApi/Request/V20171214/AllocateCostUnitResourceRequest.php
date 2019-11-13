@@ -30,7 +30,7 @@ class AllocateCostUnitResourceRequest extends \RpcAcsRequest
             'BssOpenApi',
             '2017-12-14',
             'AllocateCostUnitResource',
-            'bssopenapi'
+            'BssOpenApi'
         );
     }
 

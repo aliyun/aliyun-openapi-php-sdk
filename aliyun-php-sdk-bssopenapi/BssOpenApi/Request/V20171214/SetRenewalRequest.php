@@ -33,7 +33,7 @@ class SetRenewalRequest extends \RpcAcsRequest
             'BssOpenApi',
             '2017-12-14',
             'SetRenewal',
-            'bssopenapi'
+            'BssOpenApi'
         );
     }
 

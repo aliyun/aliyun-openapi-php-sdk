@@ -34,7 +34,7 @@ class GetResourcePackagePriceRequest extends \RpcAcsRequest
             'BssOpenApi',
             '2017-12-14',
             'GetResourcePackagePrice',
-            'bssopenapi'
+            'BssOpenApi'
         );
     }
 

@@ -28,7 +28,7 @@ class SetResellerUserStatusRequest extends \RpcAcsRequest
             'BssOpenApi',
             '2017-12-14',
             'SetResellerUserStatus',
-            'bssopenapi'
+            'BssOpenApi'
         );
     }
 

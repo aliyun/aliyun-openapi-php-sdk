@@ -36,7 +36,7 @@ class ApplyInvoiceRequest extends \RpcAcsRequest
             'BssOpenApi',
             '2017-12-14',
             'ApplyInvoice',
-            'bssopenapi'
+            'BssOpenApi'
         );
     }
 

@@ -28,7 +28,7 @@ class QueryCustomerAddressListRequest extends \RpcAcsRequest
             'BssOpenApi',
             '2017-12-14',
             'QueryCustomerAddressList',
-            'bssopenapi'
+            'BssOpenApi'
         );
     }
 

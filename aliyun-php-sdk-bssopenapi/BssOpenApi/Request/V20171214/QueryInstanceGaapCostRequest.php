@@ -31,7 +31,7 @@ class QueryInstanceGaapCostRequest extends \RpcAcsRequest
             'BssOpenApi',
             '2017-12-14',
             'QueryInstanceGaapCost',
-            'bssopenapi'
+            'BssOpenApi'
         );
     }
 

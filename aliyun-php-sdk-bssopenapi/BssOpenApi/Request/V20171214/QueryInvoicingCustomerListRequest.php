@@ -26,7 +26,7 @@ class QueryInvoicingCustomerListRequest extends \RpcAcsRequest
             'BssOpenApi',
             '2017-12-14',
             'QueryInvoicingCustomerList',
-            'bssopenapi'
+            'BssOpenApi'
         );
     }
 

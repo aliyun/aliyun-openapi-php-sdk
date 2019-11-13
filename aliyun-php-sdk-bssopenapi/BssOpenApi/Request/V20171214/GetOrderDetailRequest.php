@@ -27,7 +27,7 @@ class GetOrderDetailRequest extends \RpcAcsRequest
             'BssOpenApi',
             '2017-12-14',
             'GetOrderDetail',
-            'bssopenapi'
+            'BssOpenApi'
         );
     }
 
