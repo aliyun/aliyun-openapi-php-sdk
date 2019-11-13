@@ -7,10 +7,10 @@ namespace Alidns\Request\V20150109;
  *
  * Request of OperateBatchDomain
  *
- * @method string getUserClientIp()
  * @method array getDomainRecordInfos()
- * @method string getLang()
  * @method string getType()
+ * @method string getUserClientIp()
+ * @method string getLang()
  */
 class OperateBatchDomainRequest extends \RpcAcsRequest
 {
@@ -29,8 +29,45 @@ class OperateBatchDomainRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'OperateBatchDomain',
-            'Alidns'
+            'alidns'
         );
+    }
+
+    /**
+     * @param array $domainRecordInfo
+     *
+     * @return $this
+     */
+	public function setDomainRecordInfos(array $domainRecordInfo)
+	{
+	    $this->requestParameters['DomainRecordInfos'] = $domainRecordInfo;
+		foreach ($domainRecordInfo as $depth1 => $depth1Value) {
+			$this->queryParameters['DomainRecordInfo.' . ($depth1 + 1) . '.Rr'] = $depth1Value['Rr'];
+			$this->queryParameters['DomainRecordInfo.' . ($depth1 + 1) . '.NewType'] = $depth1Value['NewType'];
+			$this->queryParameters['DomainRecordInfo.' . ($depth1 + 1) . '.NewValue'] = $depth1Value['NewValue'];
+			$this->queryParameters['DomainRecordInfo.' . ($depth1 + 1) . '.Line'] = $depth1Value['Line'];
+			$this->queryParameters['DomainRecordInfo.' . ($depth1 + 1) . '.Domain'] = $depth1Value['Domain'];
+			$this->queryParameters['DomainRecordInfo.' . ($depth1 + 1) . '.Type'] = $depth1Value['Type'];
+			$this->queryParameters['DomainRecordInfo.' . ($depth1 + 1) . '.Priority'] = $depth1Value['Priority'];
+			$this->queryParameters['DomainRecordInfo.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+			$this->queryParameters['DomainRecordInfo.' . ($depth1 + 1) . '.Ttl'] = $depth1Value['Ttl'];
+			$this->queryParameters['DomainRecordInfo.' . ($depth1 + 1) . '.NewRr'] = $depth1Value['NewRr'];
+		}
+
+		return $this;
+    }
+
+    /**
+     * @param string $type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->requestParameters['Type'] = $type;
+        $this->queryParameters['Type'] = $type;
+
+        return $this;
     }
 
     /**
@@ -47,30 +84,6 @@ class OperateBatchDomainRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $domainRecordInfo
-     *
-     * @return $this
-     */
-    public function setDomainRecordInfos(array $domainRecordInfo)
-    {
-        $this->requestParameters['DomainRecordInfos'] = $domainRecordInfo;
-        foreach ($domainRecordInfo as $depth1 => $depth1Value) {
-            $this->queryParameters['DomainRecordInfo.' . ($depth1 + 1) . '.Rr'] = $depth1Value['Rr'];
-            $this->queryParameters['DomainRecordInfo.' . ($depth1 + 1) . '.NewType'] = $depth1Value['NewType'];
-            $this->queryParameters['DomainRecordInfo.' . ($depth1 + 1) . '.NewValue'] = $depth1Value['NewValue'];
-            $this->queryParameters['DomainRecordInfo.' . ($depth1 + 1) . '.Line'] = $depth1Value['Line'];
-            $this->queryParameters['DomainRecordInfo.' . ($depth1 + 1) . '.Domain'] = $depth1Value['Domain'];
-            $this->queryParameters['DomainRecordInfo.' . ($depth1 + 1) . '.Type'] = $depth1Value['Type'];
-            $this->queryParameters['DomainRecordInfo.' . ($depth1 + 1) . '.Priority'] = $depth1Value['Priority'];
-            $this->queryParameters['DomainRecordInfo.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
-            $this->queryParameters['DomainRecordInfo.' . ($depth1 + 1) . '.Ttl'] = $depth1Value['Ttl'];
-            $this->queryParameters['DomainRecordInfo.' . ($depth1 + 1) . '.NewRr'] = $depth1Value['NewRr'];
-        }
-
-        return $this;
-    }
-
-    /**
      * @param string $lang
      *
      * @return $this
@@ -79,19 +92,6 @@ class OperateBatchDomainRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Lang'] = $lang;
         $this->queryParameters['Lang'] = $lang;
-
-        return $this;
-    }
-
-    /**
-     * @param string $type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->requestParameters['Type'] = $type;
-        $this->queryParameters['Type'] = $type;
 
         return $this;
     }

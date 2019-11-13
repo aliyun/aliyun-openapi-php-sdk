@@ -7,11 +7,11 @@ namespace Alidns\Request\V20150109;
  *
  * Request of DescribeDNSSLBSubDomains
  *
- * @method string getUserClientIp()
  * @method string getDomainName()
+ * @method string getPageNumber()
+ * @method string getUserClientIp()
  * @method string getPageSize()
  * @method string getLang()
- * @method string getPageNumber()
  */
 class DescribeDNSSLBSubDomainsRequest extends \RpcAcsRequest
 {
@@ -30,21 +30,8 @@ class DescribeDNSSLBSubDomainsRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'DescribeDNSSLBSubDomains',
-            'Alidns'
+            'alidns'
         );
-    }
-
-    /**
-     * @param string $userClientIp
-     *
-     * @return $this
-     */
-    public function setUserClientIp($userClientIp)
-    {
-        $this->requestParameters['UserClientIp'] = $userClientIp;
-        $this->queryParameters['UserClientIp'] = $userClientIp;
-
-        return $this;
     }
 
     /**
@@ -56,6 +43,32 @@ class DescribeDNSSLBSubDomainsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DomainName'] = $domainName;
         $this->queryParameters['DomainName'] = $domainName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $userClientIp
+     *
+     * @return $this
+     */
+    public function setUserClientIp($userClientIp)
+    {
+        $this->requestParameters['UserClientIp'] = $userClientIp;
+        $this->queryParameters['UserClientIp'] = $userClientIp;
 
         return $this;
     }
@@ -82,19 +95,6 @@ class DescribeDNSSLBSubDomainsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Lang'] = $lang;
         $this->queryParameters['Lang'] = $lang;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

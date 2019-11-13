@@ -7,11 +7,11 @@ namespace Alidns\Request\V20150109;
  *
  * Request of DescribeDomainGroups
  *
+ * @method string getPageNumber()
  * @method string getUserClientIp()
  * @method string getPageSize()
  * @method string getLang()
  * @method string getKeyWord()
- * @method string getPageNumber()
  */
 class DescribeDomainGroupsRequest extends \RpcAcsRequest
 {
@@ -30,8 +30,21 @@ class DescribeDomainGroupsRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'DescribeDomainGroups',
-            'Alidns'
+            'alidns'
         );
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
     }
 
     /**
@@ -82,19 +95,6 @@ class DescribeDomainGroupsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['KeyWord'] = $keyWord;
         $this->queryParameters['KeyWord'] = $keyWord;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

@@ -8,14 +8,13 @@ namespace Alidns\Request\V20150109;
  * Request of AddGtmMonitor
  *
  * @method string getMonitorExtendInfo()
+ * @method string getTimeout()
  * @method string getAddrPoolId()
  * @method string getUserClientIp()
- * @method string getName()
  * @method string getEvaluationCount()
  * @method string getProtocolType()
  * @method string getInterval()
  * @method string getLang()
- * @method string getTimeout()
  * @method array getIspCityNodes()
  */
 class AddGtmMonitorRequest extends \RpcAcsRequest
@@ -35,7 +34,7 @@ class AddGtmMonitorRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'AddGtmMonitor',
-            'Alidns'
+            'alidns'
         );
     }
 
@@ -48,6 +47,19 @@ class AddGtmMonitorRequest extends \RpcAcsRequest
     {
         $this->requestParameters['MonitorExtendInfo'] = $monitorExtendInfo;
         $this->queryParameters['MonitorExtendInfo'] = $monitorExtendInfo;
+
+        return $this;
+    }
+
+    /**
+     * @param string $timeout
+     *
+     * @return $this
+     */
+    public function setTimeout($timeout)
+    {
+        $this->requestParameters['Timeout'] = $timeout;
+        $this->queryParameters['Timeout'] = $timeout;
 
         return $this;
     }
@@ -74,19 +86,6 @@ class AddGtmMonitorRequest extends \RpcAcsRequest
     {
         $this->requestParameters['UserClientIp'] = $userClientIp;
         $this->queryParameters['UserClientIp'] = $userClientIp;
-
-        return $this;
-    }
-
-    /**
-     * @param string $name
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->requestParameters['Name'] = $name;
-        $this->queryParameters['Name'] = $name;
 
         return $this;
     }
@@ -144,31 +143,18 @@ class AddGtmMonitorRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $timeout
-     *
-     * @return $this
-     */
-    public function setTimeout($timeout)
-    {
-        $this->requestParameters['Timeout'] = $timeout;
-        $this->queryParameters['Timeout'] = $timeout;
-
-        return $this;
-    }
-
-    /**
      * @param array $ispCityNode
      *
      * @return $this
      */
-    public function setIspCityNodes(array $ispCityNode)
-    {
-        $this->requestParameters['IspCityNodes'] = $ispCityNode;
-        foreach ($ispCityNode as $depth1 => $depth1Value) {
-            $this->queryParameters['IspCityNode.' . ($depth1 + 1) . '.CityCode'] = $depth1Value['CityCode'];
-            $this->queryParameters['IspCityNode.' . ($depth1 + 1) . '.IspCode'] = $depth1Value['IspCode'];
-        }
+	public function setIspCityNodes(array $ispCityNode)
+	{
+	    $this->requestParameters['IspCityNodes'] = $ispCityNode;
+		foreach ($ispCityNode as $depth1 => $depth1Value) {
+			$this->queryParameters['IspCityNode.' . ($depth1 + 1) . '.CityCode'] = $depth1Value['CityCode'];
+			$this->queryParameters['IspCityNode.' . ($depth1 + 1) . '.IspCode'] = $depth1Value['IspCode'];
+		}
 
-        return $this;
+		return $this;
     }
 }

@@ -7,9 +7,9 @@ namespace Alidns\Request\V20150109;
  *
  * Request of UpdateDNSSLBWeight
  *
+ * @method string getWeight()
  * @method string getRecordId()
  * @method string getUserClientIp()
- * @method string getWeight()
  * @method string getLang()
  */
 class UpdateDNSSLBWeightRequest extends \RpcAcsRequest
@@ -29,8 +29,21 @@ class UpdateDNSSLBWeightRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'UpdateDNSSLBWeight',
-            'Alidns'
+            'alidns'
         );
+    }
+
+    /**
+     * @param string $weight
+     *
+     * @return $this
+     */
+    public function setWeight($weight)
+    {
+        $this->requestParameters['Weight'] = $weight;
+        $this->queryParameters['Weight'] = $weight;
+
+        return $this;
     }
 
     /**
@@ -55,19 +68,6 @@ class UpdateDNSSLBWeightRequest extends \RpcAcsRequest
     {
         $this->requestParameters['UserClientIp'] = $userClientIp;
         $this->queryParameters['UserClientIp'] = $userClientIp;
-
-        return $this;
-    }
-
-    /**
-     * @param string $weight
-     *
-     * @return $this
-     */
-    public function setWeight($weight)
-    {
-        $this->requestParameters['Weight'] = $weight;
-        $this->queryParameters['Weight'] = $weight;
 
         return $this;
     }

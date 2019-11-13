@@ -8,9 +8,9 @@ namespace Alidns\Request\V20150109;
  * Request of UpdateDomainGroup
  *
  * @method string getGroupId()
+ * @method string getGroupName()
  * @method string getUserClientIp()
  * @method string getLang()
- * @method string getGroupName()
  */
 class UpdateDomainGroupRequest extends \RpcAcsRequest
 {
@@ -29,7 +29,7 @@ class UpdateDomainGroupRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'UpdateDomainGroup',
-            'Alidns'
+            'alidns'
         );
     }
 
@@ -42,6 +42,19 @@ class UpdateDomainGroupRequest extends \RpcAcsRequest
     {
         $this->requestParameters['GroupId'] = $groupId;
         $this->queryParameters['GroupId'] = $groupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $groupName
+     *
+     * @return $this
+     */
+    public function setGroupName($groupName)
+    {
+        $this->requestParameters['GroupName'] = $groupName;
+        $this->queryParameters['GroupName'] = $groupName;
 
         return $this;
     }
@@ -68,19 +81,6 @@ class UpdateDomainGroupRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Lang'] = $lang;
         $this->queryParameters['Lang'] = $lang;
-
-        return $this;
-    }
-
-    /**
-     * @param string $groupName
-     *
-     * @return $this
-     */
-    public function setGroupName($groupName)
-    {
-        $this->requestParameters['GroupName'] = $groupName;
-        $this->queryParameters['GroupName'] = $groupName;
 
         return $this;
     }

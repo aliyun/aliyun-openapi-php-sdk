@@ -28,7 +28,7 @@ class DescribeGtmAccessStrategyAvailableConfigRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'DescribeGtmAccessStrategyAvailableConfig',
-            'Alidns'
+            'alidns'
         );
     }
 

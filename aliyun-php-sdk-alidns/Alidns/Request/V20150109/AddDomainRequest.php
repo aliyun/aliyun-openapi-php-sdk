@@ -7,9 +7,9 @@ namespace Alidns\Request\V20150109;
  *
  * Request of AddDomain
  *
- * @method string getResourceGroupId()
  * @method string getGroupId()
  * @method string getDomainName()
+ * @method string getResourceGroupId()
  * @method string getUserClientIp()
  * @method string getLang()
  */
@@ -30,21 +30,8 @@ class AddDomainRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'AddDomain',
-            'Alidns'
+            'alidns'
         );
-    }
-
-    /**
-     * @param string $resourceGroupId
-     *
-     * @return $this
-     */
-    public function setResourceGroupId($resourceGroupId)
-    {
-        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
-        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
-
-        return $this;
     }
 
     /**
@@ -69,6 +56,19 @@ class AddDomainRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DomainName'] = $domainName;
         $this->queryParameters['DomainName'] = $domainName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceGroupId
+     *
+     * @return $this
+     */
+    public function setResourceGroupId($resourceGroupId)
+    {
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
 
         return $this;
     }

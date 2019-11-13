@@ -7,14 +7,17 @@ namespace Alidns\Request\V20150109;
  *
  * Request of DescribeDomains
  *
+ * @method string getPageNumber()
  * @method string getResourceGroupId()
- * @method string getGroupId()
- * @method string getUserClientIp()
  * @method string getPageSize()
- * @method string getSearchMode()
  * @method string getLang()
  * @method string getKeyWord()
- * @method string getPageNumber()
+ * @method string getDirection()
+ * @method string getStarmark()
+ * @method string getGroupId()
+ * @method string getOrderBy()
+ * @method string getUserClientIp()
+ * @method string getSearchMode()
  */
 class DescribeDomainsRequest extends \RpcAcsRequest
 {
@@ -33,8 +36,21 @@ class DescribeDomainsRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'DescribeDomains',
-            'Alidns'
+            'alidns'
         );
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
     }
 
     /**
@@ -51,32 +67,6 @@ class DescribeDomainsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $groupId
-     *
-     * @return $this
-     */
-    public function setGroupId($groupId)
-    {
-        $this->requestParameters['GroupId'] = $groupId;
-        $this->queryParameters['GroupId'] = $groupId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $userClientIp
-     *
-     * @return $this
-     */
-    public function setUserClientIp($userClientIp)
-    {
-        $this->requestParameters['UserClientIp'] = $userClientIp;
-        $this->queryParameters['UserClientIp'] = $userClientIp;
-
-        return $this;
-    }
-
-    /**
      * @param string $pageSize
      *
      * @return $this
@@ -85,19 +75,6 @@ class DescribeDomainsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageSize'] = $pageSize;
         $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param string $searchMode
-     *
-     * @return $this
-     */
-    public function setSearchMode($searchMode)
-    {
-        $this->requestParameters['SearchMode'] = $searchMode;
-        $this->queryParameters['SearchMode'] = $searchMode;
 
         return $this;
     }
@@ -129,14 +106,79 @@ class DescribeDomainsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageNumber
+     * @param string $direction
      *
      * @return $this
      */
-    public function setPageNumber($pageNumber)
+    public function setDirection($direction)
     {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
+        $this->requestParameters['Direction'] = $direction;
+        $this->queryParameters['Direction'] = $direction;
+
+        return $this;
+    }
+
+    /**
+     * @param string $starmark
+     *
+     * @return $this
+     */
+    public function setStarmark($starmark)
+    {
+        $this->requestParameters['Starmark'] = $starmark;
+        $this->queryParameters['Starmark'] = $starmark;
+
+        return $this;
+    }
+
+    /**
+     * @param string $groupId
+     *
+     * @return $this
+     */
+    public function setGroupId($groupId)
+    {
+        $this->requestParameters['GroupId'] = $groupId;
+        $this->queryParameters['GroupId'] = $groupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $orderBy
+     *
+     * @return $this
+     */
+    public function setOrderBy($orderBy)
+    {
+        $this->requestParameters['OrderBy'] = $orderBy;
+        $this->queryParameters['OrderBy'] = $orderBy;
+
+        return $this;
+    }
+
+    /**
+     * @param string $userClientIp
+     *
+     * @return $this
+     */
+    public function setUserClientIp($userClientIp)
+    {
+        $this->requestParameters['UserClientIp'] = $userClientIp;
+        $this->queryParameters['UserClientIp'] = $userClientIp;
+
+        return $this;
+    }
+
+    /**
+     * @param string $searchMode
+     *
+     * @return $this
+     */
+    public function setSearchMode($searchMode)
+    {
+        $this->requestParameters['SearchMode'] = $searchMode;
+        $this->queryParameters['SearchMode'] = $searchMode;
 
         return $this;
     }

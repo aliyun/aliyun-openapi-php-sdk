@@ -7,13 +7,13 @@ namespace Alidns\Request\V20150109;
  *
  * Request of UpdateGtmAddressPool
  *
+ * @method string getType()
+ * @method string getMinAvailableAddrNum()
  * @method string getAddrPoolId()
  * @method string getUserClientIp()
  * @method string getName()
  * @method string getLang()
- * @method string getType()
  * @method array getAddrs()
- * @method string getMinAvailableAddrNum()
  */
 class UpdateGtmAddressPoolRequest extends \RpcAcsRequest
 {
@@ -32,8 +32,34 @@ class UpdateGtmAddressPoolRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'UpdateGtmAddressPool',
-            'Alidns'
+            'alidns'
         );
+    }
+
+    /**
+     * @param string $type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->requestParameters['Type'] = $type;
+        $this->queryParameters['Type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * @param string $minAvailableAddrNum
+     *
+     * @return $this
+     */
+    public function setMinAvailableAddrNum($minAvailableAddrNum)
+    {
+        $this->requestParameters['MinAvailableAddrNum'] = $minAvailableAddrNum;
+        $this->queryParameters['MinAvailableAddrNum'] = $minAvailableAddrNum;
+
+        return $this;
     }
 
     /**
@@ -89,45 +115,19 @@ class UpdateGtmAddressPoolRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->requestParameters['Type'] = $type;
-        $this->queryParameters['Type'] = $type;
-
-        return $this;
-    }
-
-    /**
      * @param array $addr
      *
      * @return $this
      */
-    public function setAddrs(array $addr)
-    {
-        $this->requestParameters['Addrs'] = $addr;
-        foreach ($addr as $depth1 => $depth1Value) {
-            $this->queryParameters['Addr.' . ($depth1 + 1) . '.Mode'] = $depth1Value['Mode'];
-            $this->queryParameters['Addr.' . ($depth1 + 1) . '.LbaWeight'] = $depth1Value['LbaWeight'];
-            $this->queryParameters['Addr.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
-        }
+	public function setAddrs(array $addr)
+	{
+	    $this->requestParameters['Addrs'] = $addr;
+		foreach ($addr as $depth1 => $depth1Value) {
+			$this->queryParameters['Addr.' . ($depth1 + 1) . '.Mode'] = $depth1Value['Mode'];
+			$this->queryParameters['Addr.' . ($depth1 + 1) . '.LbaWeight'] = $depth1Value['LbaWeight'];
+			$this->queryParameters['Addr.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+		}
 
-        return $this;
-    }
-
-    /**
-     * @param string $minAvailableAddrNum
-     *
-     * @return $this
-     */
-    public function setMinAvailableAddrNum($minAvailableAddrNum)
-    {
-        $this->requestParameters['MinAvailableAddrNum'] = $minAvailableAddrNum;
-        $this->queryParameters['MinAvailableAddrNum'] = $minAvailableAddrNum;
-
-        return $this;
+		return $this;
     }
 }

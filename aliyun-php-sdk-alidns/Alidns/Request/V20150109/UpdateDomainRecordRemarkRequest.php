@@ -5,12 +5,14 @@ namespace Alidns\Request\V20150109;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeGtmMonitorAvailableConfig
+ * Request of UpdateDomainRecordRemark
  *
+ * @method string getRemark()
+ * @method string getRecordId()
  * @method string getUserClientIp()
  * @method string getLang()
  */
-class DescribeGtmMonitorAvailableConfigRequest extends \RpcAcsRequest
+class UpdateDomainRecordRemarkRequest extends \RpcAcsRequest
 {
 
     /**
@@ -26,9 +28,35 @@ class DescribeGtmMonitorAvailableConfigRequest extends \RpcAcsRequest
         parent::__construct(
             'Alidns',
             '2015-01-09',
-            'DescribeGtmMonitorAvailableConfig',
+            'UpdateDomainRecordRemark',
             'alidns'
         );
+    }
+
+    /**
+     * @param string $remark
+     *
+     * @return $this
+     */
+    public function setRemark($remark)
+    {
+        $this->requestParameters['Remark'] = $remark;
+        $this->queryParameters['Remark'] = $remark;
+
+        return $this;
+    }
+
+    /**
+     * @param string $recordId
+     *
+     * @return $this
+     */
+    public function setRecordId($recordId)
+    {
+        $this->requestParameters['RecordId'] = $recordId;
+        $this->queryParameters['RecordId'] = $recordId;
+
+        return $this;
     }
 
     /**

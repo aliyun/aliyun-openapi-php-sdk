@@ -7,8 +7,8 @@ namespace Alidns\Request\V20150109;
  *
  * Request of DeleteDomain
  *
- * @method string getUserClientIp()
  * @method string getDomainName()
+ * @method string getUserClientIp()
  * @method string getLang()
  */
 class DeleteDomainRequest extends \RpcAcsRequest
@@ -28,21 +28,8 @@ class DeleteDomainRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'DeleteDomain',
-            'Alidns'
+            'alidns'
         );
-    }
-
-    /**
-     * @param string $userClientIp
-     *
-     * @return $this
-     */
-    public function setUserClientIp($userClientIp)
-    {
-        $this->requestParameters['UserClientIp'] = $userClientIp;
-        $this->queryParameters['UserClientIp'] = $userClientIp;
-
-        return $this;
     }
 
     /**
@@ -54,6 +41,19 @@ class DeleteDomainRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DomainName'] = $domainName;
         $this->queryParameters['DomainName'] = $domainName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $userClientIp
+     *
+     * @return $this
+     */
+    public function setUserClientIp($userClientIp)
+    {
+        $this->requestParameters['UserClientIp'] = $userClientIp;
+        $this->queryParameters['UserClientIp'] = $userClientIp;
 
         return $this;
     }

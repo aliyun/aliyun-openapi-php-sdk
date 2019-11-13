@@ -8,11 +8,11 @@ namespace Alidns\Request\V20150109;
  * Request of DescribeRecordStatistics
  *
  * @method string getRr()
+ * @method string getDomainName()
+ * @method string getStartDate()
  * @method string getEndDate()
  * @method string getUserClientIp()
- * @method string getDomainName()
  * @method string getLang()
- * @method string getStartDate()
  */
 class DescribeRecordStatisticsRequest extends \RpcAcsRequest
 {
@@ -31,7 +31,7 @@ class DescribeRecordStatisticsRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'DescribeRecordStatistics',
-            'Alidns'
+            'alidns'
         );
     }
 
@@ -44,6 +44,32 @@ class DescribeRecordStatisticsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Rr'] = $rr;
         $this->queryParameters['Rr'] = $rr;
+
+        return $this;
+    }
+
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $startDate
+     *
+     * @return $this
+     */
+    public function setStartDate($startDate)
+    {
+        $this->requestParameters['StartDate'] = $startDate;
+        $this->queryParameters['StartDate'] = $startDate;
 
         return $this;
     }
@@ -75,19 +101,6 @@ class DescribeRecordStatisticsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $domainName
-     *
-     * @return $this
-     */
-    public function setDomainName($domainName)
-    {
-        $this->requestParameters['DomainName'] = $domainName;
-        $this->queryParameters['DomainName'] = $domainName;
-
-        return $this;
-    }
-
-    /**
      * @param string $lang
      *
      * @return $this
@@ -96,19 +109,6 @@ class DescribeRecordStatisticsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Lang'] = $lang;
         $this->queryParameters['Lang'] = $lang;
-
-        return $this;
-    }
-
-    /**
-     * @param string $startDate
-     *
-     * @return $this
-     */
-    public function setStartDate($startDate)
-    {
-        $this->requestParameters['StartDate'] = $startDate;
-        $this->queryParameters['StartDate'] = $startDate;
 
         return $this;
     }

@@ -8,15 +8,15 @@ namespace Alidns\Request\V20150109;
  * Request of UpdateGtmInstanceGlobalConfig
  *
  * @method string getAlertGroup()
+ * @method string getCnameMode()
+ * @method string getLbaStrategy()
+ * @method string getTtl()
+ * @method string getCnameCustomDomainName()
  * @method string getInstanceId()
  * @method string getInstanceName()
  * @method string getUserDomainName()
- * @method string getCnameMode()
  * @method string getUserClientIp()
- * @method string getLbaStrategy()
  * @method string getLang()
- * @method string getTtl()
- * @method string getCnameCustomDomainName()
  */
 class UpdateGtmInstanceGlobalConfigRequest extends \RpcAcsRequest
 {
@@ -35,7 +35,7 @@ class UpdateGtmInstanceGlobalConfigRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'UpdateGtmInstanceGlobalConfig',
-            'Alidns'
+            'alidns'
         );
     }
 
@@ -48,6 +48,58 @@ class UpdateGtmInstanceGlobalConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AlertGroup'] = $alertGroup;
         $this->queryParameters['AlertGroup'] = $alertGroup;
+
+        return $this;
+    }
+
+    /**
+     * @param string $cnameMode
+     *
+     * @return $this
+     */
+    public function setCnameMode($cnameMode)
+    {
+        $this->requestParameters['CnameMode'] = $cnameMode;
+        $this->queryParameters['CnameMode'] = $cnameMode;
+
+        return $this;
+    }
+
+    /**
+     * @param string $lbaStrategy
+     *
+     * @return $this
+     */
+    public function setLbaStrategy($lbaStrategy)
+    {
+        $this->requestParameters['LbaStrategy'] = $lbaStrategy;
+        $this->queryParameters['LbaStrategy'] = $lbaStrategy;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ttl
+     *
+     * @return $this
+     */
+    public function setTtl($ttl)
+    {
+        $this->requestParameters['Ttl'] = $ttl;
+        $this->queryParameters['Ttl'] = $ttl;
+
+        return $this;
+    }
+
+    /**
+     * @param string $cnameCustomDomainName
+     *
+     * @return $this
+     */
+    public function setCnameCustomDomainName($cnameCustomDomainName)
+    {
+        $this->requestParameters['CnameCustomDomainName'] = $cnameCustomDomainName;
+        $this->queryParameters['CnameCustomDomainName'] = $cnameCustomDomainName;
 
         return $this;
     }
@@ -92,19 +144,6 @@ class UpdateGtmInstanceGlobalConfigRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $cnameMode
-     *
-     * @return $this
-     */
-    public function setCnameMode($cnameMode)
-    {
-        $this->requestParameters['CnameMode'] = $cnameMode;
-        $this->queryParameters['CnameMode'] = $cnameMode;
-
-        return $this;
-    }
-
-    /**
      * @param string $userClientIp
      *
      * @return $this
@@ -118,19 +157,6 @@ class UpdateGtmInstanceGlobalConfigRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $lbaStrategy
-     *
-     * @return $this
-     */
-    public function setLbaStrategy($lbaStrategy)
-    {
-        $this->requestParameters['LbaStrategy'] = $lbaStrategy;
-        $this->queryParameters['LbaStrategy'] = $lbaStrategy;
-
-        return $this;
-    }
-
-    /**
      * @param string $lang
      *
      * @return $this
@@ -139,32 +165,6 @@ class UpdateGtmInstanceGlobalConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Lang'] = $lang;
         $this->queryParameters['Lang'] = $lang;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ttl
-     *
-     * @return $this
-     */
-    public function setTtl($ttl)
-    {
-        $this->requestParameters['Ttl'] = $ttl;
-        $this->queryParameters['Ttl'] = $ttl;
-
-        return $this;
-    }
-
-    /**
-     * @param string $cnameCustomDomainName
-     *
-     * @return $this
-     */
-    public function setCnameCustomDomainName($cnameCustomDomainName)
-    {
-        $this->requestParameters['CnameCustomDomainName'] = $cnameCustomDomainName;
-        $this->queryParameters['CnameCustomDomainName'] = $cnameCustomDomainName;
 
         return $this;
     }

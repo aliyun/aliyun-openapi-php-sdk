@@ -5,17 +5,15 @@ namespace Alidns\Request\V20150109;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeGtmInstances
+ * Request of PreviewGtmRecoveryPlan
  *
  * @method string getPageNumber()
- * @method string getResourceGroupId()
  * @method string getUserClientIp()
  * @method string getPageSize()
+ * @method string getRecoveryPlanId()
  * @method string getLang()
- * @method string getKeyword()
- * @method string getNeedDetailAttributes()
  */
-class DescribeGtmInstancesRequest extends \RpcAcsRequest
+class PreviewGtmRecoveryPlanRequest extends \RpcAcsRequest
 {
 
     /**
@@ -31,7 +29,7 @@ class DescribeGtmInstancesRequest extends \RpcAcsRequest
         parent::__construct(
             'Alidns',
             '2015-01-09',
-            'DescribeGtmInstances',
+            'PreviewGtmRecoveryPlan',
             'alidns'
         );
     }
@@ -45,19 +43,6 @@ class DescribeGtmInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageNumber'] = $pageNumber;
         $this->queryParameters['PageNumber'] = $pageNumber;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceGroupId
-     *
-     * @return $this
-     */
-    public function setResourceGroupId($resourceGroupId)
-    {
-        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
-        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
 
         return $this;
     }
@@ -89,6 +74,19 @@ class DescribeGtmInstancesRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $recoveryPlanId
+     *
+     * @return $this
+     */
+    public function setRecoveryPlanId($recoveryPlanId)
+    {
+        $this->requestParameters['RecoveryPlanId'] = $recoveryPlanId;
+        $this->queryParameters['RecoveryPlanId'] = $recoveryPlanId;
+
+        return $this;
+    }
+
+    /**
      * @param string $lang
      *
      * @return $this
@@ -97,32 +95,6 @@ class DescribeGtmInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Lang'] = $lang;
         $this->queryParameters['Lang'] = $lang;
-
-        return $this;
-    }
-
-    /**
-     * @param string $keyword
-     *
-     * @return $this
-     */
-    public function setKeyword($keyword)
-    {
-        $this->requestParameters['Keyword'] = $keyword;
-        $this->queryParameters['Keyword'] = $keyword;
-
-        return $this;
-    }
-
-    /**
-     * @param string $needDetailAttributes
-     *
-     * @return $this
-     */
-    public function setNeedDetailAttributes($needDetailAttributes)
-    {
-        $this->requestParameters['NeedDetailAttributes'] = $needDetailAttributes;
-        $this->queryParameters['NeedDetailAttributes'] = $needDetailAttributes;
 
         return $this;
     }

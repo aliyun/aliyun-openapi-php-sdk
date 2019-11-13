@@ -5,15 +5,16 @@ namespace Alidns\Request\V20150109;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ChangeDomainOfDnsProduct
+ * Request of UpdateGtmRecoveryPlan
  *
- * @method string getInstanceId()
- * @method string getNewDomain()
+ * @method string getFaultAddrPool()
+ * @method string getRemark()
  * @method string getUserClientIp()
- * @method string getForce()
+ * @method string getName()
+ * @method string getRecoveryPlanId()
  * @method string getLang()
  */
-class ChangeDomainOfDnsProductRequest extends \RpcAcsRequest
+class UpdateGtmRecoveryPlanRequest extends \RpcAcsRequest
 {
 
     /**
@@ -29,33 +30,33 @@ class ChangeDomainOfDnsProductRequest extends \RpcAcsRequest
         parent::__construct(
             'Alidns',
             '2015-01-09',
-            'ChangeDomainOfDnsProduct',
+            'UpdateGtmRecoveryPlan',
             'alidns'
         );
     }
 
     /**
-     * @param string $instanceId
+     * @param string $faultAddrPool
      *
      * @return $this
      */
-    public function setInstanceId($instanceId)
+    public function setFaultAddrPool($faultAddrPool)
     {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
+        $this->requestParameters['FaultAddrPool'] = $faultAddrPool;
+        $this->queryParameters['FaultAddrPool'] = $faultAddrPool;
 
         return $this;
     }
 
     /**
-     * @param string $newDomain
+     * @param string $remark
      *
      * @return $this
      */
-    public function setNewDomain($newDomain)
+    public function setRemark($remark)
     {
-        $this->requestParameters['NewDomain'] = $newDomain;
-        $this->queryParameters['NewDomain'] = $newDomain;
+        $this->requestParameters['Remark'] = $remark;
+        $this->queryParameters['Remark'] = $remark;
 
         return $this;
     }
@@ -74,14 +75,27 @@ class ChangeDomainOfDnsProductRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $force
+     * @param string $name
      *
      * @return $this
      */
-    public function setForce($force)
+    public function setName($name)
     {
-        $this->requestParameters['Force'] = $force;
-        $this->queryParameters['Force'] = $force;
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * @param string $recoveryPlanId
+     *
+     * @return $this
+     */
+    public function setRecoveryPlanId($recoveryPlanId)
+    {
+        $this->requestParameters['RecoveryPlanId'] = $recoveryPlanId;
+        $this->queryParameters['RecoveryPlanId'] = $recoveryPlanId;
 
         return $this;
     }

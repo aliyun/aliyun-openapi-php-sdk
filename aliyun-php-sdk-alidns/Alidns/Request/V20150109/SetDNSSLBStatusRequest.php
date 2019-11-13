@@ -7,6 +7,8 @@ namespace Alidns\Request\V20150109;
  *
  * Request of SetDNSSLBStatus
  *
+ * @method string getDomainName()
+ * @method string getType()
  * @method string getUserClientIp()
  * @method string getSubDomain()
  * @method string getLang()
@@ -29,8 +31,34 @@ class SetDNSSLBStatusRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'SetDNSSLBStatus',
-            'Alidns'
+            'alidns'
         );
+    }
+
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->requestParameters['Type'] = $type;
+        $this->queryParameters['Type'] = $type;
+
+        return $this;
     }
 
     /**

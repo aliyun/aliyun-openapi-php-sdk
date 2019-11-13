@@ -7,11 +7,11 @@ namespace Alidns\Request\V20150109;
  *
  * Request of AddGtmAccessStrategy
  *
- * @method string getStrategyName()
  * @method string getDefaultAddrPoolId()
+ * @method string getFailoverAddrPoolId()
+ * @method string getStrategyName()
  * @method string getAccessLines()
  * @method string getInstanceId()
- * @method string getFailoverAddrPoolId()
  * @method string getUserClientIp()
  * @method string getLang()
  */
@@ -32,21 +32,8 @@ class AddGtmAccessStrategyRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'AddGtmAccessStrategy',
-            'Alidns'
+            'alidns'
         );
-    }
-
-    /**
-     * @param string $strategyName
-     *
-     * @return $this
-     */
-    public function setStrategyName($strategyName)
-    {
-        $this->requestParameters['StrategyName'] = $strategyName;
-        $this->queryParameters['StrategyName'] = $strategyName;
-
-        return $this;
     }
 
     /**
@@ -58,6 +45,32 @@ class AddGtmAccessStrategyRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DefaultAddrPoolId'] = $defaultAddrPoolId;
         $this->queryParameters['DefaultAddrPoolId'] = $defaultAddrPoolId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $failoverAddrPoolId
+     *
+     * @return $this
+     */
+    public function setFailoverAddrPoolId($failoverAddrPoolId)
+    {
+        $this->requestParameters['FailoverAddrPoolId'] = $failoverAddrPoolId;
+        $this->queryParameters['FailoverAddrPoolId'] = $failoverAddrPoolId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $strategyName
+     *
+     * @return $this
+     */
+    public function setStrategyName($strategyName)
+    {
+        $this->requestParameters['StrategyName'] = $strategyName;
+        $this->queryParameters['StrategyName'] = $strategyName;
 
         return $this;
     }
@@ -84,19 +97,6 @@ class AddGtmAccessStrategyRequest extends \RpcAcsRequest
     {
         $this->requestParameters['InstanceId'] = $instanceId;
         $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $failoverAddrPoolId
-     *
-     * @return $this
-     */
-    public function setFailoverAddrPoolId($failoverAddrPoolId)
-    {
-        $this->requestParameters['FailoverAddrPoolId'] = $failoverAddrPoolId;
-        $this->queryParameters['FailoverAddrPoolId'] = $failoverAddrPoolId;
 
         return $this;
     }

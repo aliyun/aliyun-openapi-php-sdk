@@ -7,15 +7,15 @@ namespace Alidns\Request\V20150109;
  *
  * Request of DescribeDomainLogs
  *
- * @method string getendDate()
  * @method string getGroupId()
+ * @method string getStartDate()
+ * @method string getType()
+ * @method string getPageNumber()
+ * @method string getendDate()
  * @method string getUserClientIp()
  * @method string getPageSize()
  * @method string getLang()
  * @method string getKeyWord()
- * @method string getStartDate()
- * @method string getType()
- * @method string getPageNumber()
  */
 class DescribeDomainLogsRequest extends \RpcAcsRequest
 {
@@ -34,21 +34,8 @@ class DescribeDomainLogsRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'DescribeDomainLogs',
-            'Alidns'
+            'alidns'
         );
-    }
-
-    /**
-     * @param string $endDate
-     *
-     * @return $this
-     */
-    public function setendDate($endDate)
-    {
-        $this->requestParameters['endDate'] = $endDate;
-        $this->queryParameters['endDate'] = $endDate;
-
-        return $this;
     }
 
     /**
@@ -60,6 +47,58 @@ class DescribeDomainLogsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['GroupId'] = $groupId;
         $this->queryParameters['GroupId'] = $groupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $startDate
+     *
+     * @return $this
+     */
+    public function setStartDate($startDate)
+    {
+        $this->requestParameters['StartDate'] = $startDate;
+        $this->queryParameters['StartDate'] = $startDate;
+
+        return $this;
+    }
+
+    /**
+     * @param string $type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->requestParameters['Type'] = $type;
+        $this->queryParameters['Type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $endDate
+     *
+     * @return $this
+     */
+    public function setendDate($endDate)
+    {
+        $this->requestParameters['endDate'] = $endDate;
+        $this->queryParameters['endDate'] = $endDate;
 
         return $this;
     }
@@ -112,45 +151,6 @@ class DescribeDomainLogsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['KeyWord'] = $keyWord;
         $this->queryParameters['KeyWord'] = $keyWord;
-
-        return $this;
-    }
-
-    /**
-     * @param string $startDate
-     *
-     * @return $this
-     */
-    public function setStartDate($startDate)
-    {
-        $this->requestParameters['StartDate'] = $startDate;
-        $this->queryParameters['StartDate'] = $startDate;
-
-        return $this;
-    }
-
-    /**
-     * @param string $type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->requestParameters['Type'] = $type;
-        $this->queryParameters['Type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

@@ -8,10 +8,10 @@ namespace Alidns\Request\V20150109;
  * Request of DeleteSubDomainRecords
  *
  * @method string getRR()
- * @method string getUserClientIp()
  * @method string getDomainName()
- * @method string getLang()
  * @method string getType()
+ * @method string getUserClientIp()
+ * @method string getLang()
  */
 class DeleteSubDomainRecordsRequest extends \RpcAcsRequest
 {
@@ -30,7 +30,7 @@ class DeleteSubDomainRecordsRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'DeleteSubDomainRecords',
-            'Alidns'
+            'alidns'
         );
     }
 
@@ -43,19 +43,6 @@ class DeleteSubDomainRecordsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['RR'] = $rR;
         $this->queryParameters['RR'] = $rR;
-
-        return $this;
-    }
-
-    /**
-     * @param string $userClientIp
-     *
-     * @return $this
-     */
-    public function setUserClientIp($userClientIp)
-    {
-        $this->requestParameters['UserClientIp'] = $userClientIp;
-        $this->queryParameters['UserClientIp'] = $userClientIp;
 
         return $this;
     }
@@ -74,19 +61,6 @@ class DeleteSubDomainRecordsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $lang
-     *
-     * @return $this
-     */
-    public function setLang($lang)
-    {
-        $this->requestParameters['Lang'] = $lang;
-        $this->queryParameters['Lang'] = $lang;
-
-        return $this;
-    }
-
-    /**
      * @param string $type
      *
      * @return $this
@@ -95,6 +69,32 @@ class DeleteSubDomainRecordsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Type'] = $type;
         $this->queryParameters['Type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * @param string $userClientIp
+     *
+     * @return $this
+     */
+    public function setUserClientIp($userClientIp)
+    {
+        $this->requestParameters['UserClientIp'] = $userClientIp;
+        $this->queryParameters['UserClientIp'] = $userClientIp;
+
+        return $this;
+    }
+
+    /**
+     * @param string $lang
+     *
+     * @return $this
+     */
+    public function setLang($lang)
+    {
+        $this->requestParameters['Lang'] = $lang;
+        $this->queryParameters['Lang'] = $lang;
 
         return $this;
     }

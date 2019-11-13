@@ -8,14 +8,13 @@ namespace Alidns\Request\V20150109;
  * Request of UpdateGtmMonitor
  *
  * @method string getMonitorExtendInfo()
- * @method string getUserClientIp()
- * @method string getName()
  * @method string getMonitorConfigId()
+ * @method string getTimeout()
+ * @method string getUserClientIp()
  * @method string getEvaluationCount()
  * @method string getProtocolType()
  * @method string getInterval()
  * @method string getLang()
- * @method string getTimeout()
  * @method array getIspCityNodes()
  */
 class UpdateGtmMonitorRequest extends \RpcAcsRequest
@@ -35,7 +34,7 @@ class UpdateGtmMonitorRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'UpdateGtmMonitor',
-            'Alidns'
+            'alidns'
         );
     }
 
@@ -53,32 +52,6 @@ class UpdateGtmMonitorRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $userClientIp
-     *
-     * @return $this
-     */
-    public function setUserClientIp($userClientIp)
-    {
-        $this->requestParameters['UserClientIp'] = $userClientIp;
-        $this->queryParameters['UserClientIp'] = $userClientIp;
-
-        return $this;
-    }
-
-    /**
-     * @param string $name
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->requestParameters['Name'] = $name;
-        $this->queryParameters['Name'] = $name;
-
-        return $this;
-    }
-
-    /**
      * @param string $monitorConfigId
      *
      * @return $this
@@ -87,6 +60,32 @@ class UpdateGtmMonitorRequest extends \RpcAcsRequest
     {
         $this->requestParameters['MonitorConfigId'] = $monitorConfigId;
         $this->queryParameters['MonitorConfigId'] = $monitorConfigId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $timeout
+     *
+     * @return $this
+     */
+    public function setTimeout($timeout)
+    {
+        $this->requestParameters['Timeout'] = $timeout;
+        $this->queryParameters['Timeout'] = $timeout;
+
+        return $this;
+    }
+
+    /**
+     * @param string $userClientIp
+     *
+     * @return $this
+     */
+    public function setUserClientIp($userClientIp)
+    {
+        $this->requestParameters['UserClientIp'] = $userClientIp;
+        $this->queryParameters['UserClientIp'] = $userClientIp;
 
         return $this;
     }
@@ -144,31 +143,18 @@ class UpdateGtmMonitorRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $timeout
-     *
-     * @return $this
-     */
-    public function setTimeout($timeout)
-    {
-        $this->requestParameters['Timeout'] = $timeout;
-        $this->queryParameters['Timeout'] = $timeout;
-
-        return $this;
-    }
-
-    /**
      * @param array $ispCityNode
      *
      * @return $this
      */
-    public function setIspCityNodes(array $ispCityNode)
-    {
-        $this->requestParameters['IspCityNodes'] = $ispCityNode;
-        foreach ($ispCityNode as $depth1 => $depth1Value) {
-            $this->queryParameters['IspCityNode.' . ($depth1 + 1) . '.CityCode'] = $depth1Value['CityCode'];
-            $this->queryParameters['IspCityNode.' . ($depth1 + 1) . '.IspCode'] = $depth1Value['IspCode'];
-        }
+	public function setIspCityNodes(array $ispCityNode)
+	{
+	    $this->requestParameters['IspCityNodes'] = $ispCityNode;
+		foreach ($ispCityNode as $depth1 => $depth1Value) {
+			$this->queryParameters['IspCityNode.' . ($depth1 + 1) . '.CityCode'] = $depth1Value['CityCode'];
+			$this->queryParameters['IspCityNode.' . ($depth1 + 1) . '.IspCode'] = $depth1Value['IspCode'];
+		}
 
-        return $this;
+		return $this;
     }
 }

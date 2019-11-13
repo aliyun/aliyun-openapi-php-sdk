@@ -7,11 +7,11 @@ namespace Alidns\Request\V20150109;
  *
  * Request of DescribeGtmInstanceAddressPools
  *
+ * @method string getPageNumber()
  * @method string getInstanceId()
  * @method string getUserClientIp()
  * @method string getPageSize()
  * @method string getLang()
- * @method string getPageNumber()
  */
 class DescribeGtmInstanceAddressPoolsRequest extends \RpcAcsRequest
 {
@@ -30,8 +30,21 @@ class DescribeGtmInstanceAddressPoolsRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'DescribeGtmInstanceAddressPools',
-            'Alidns'
+            'alidns'
         );
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
     }
 
     /**
@@ -82,19 +95,6 @@ class DescribeGtmInstanceAddressPoolsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Lang'] = $lang;
         $this->queryParameters['Lang'] = $lang;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

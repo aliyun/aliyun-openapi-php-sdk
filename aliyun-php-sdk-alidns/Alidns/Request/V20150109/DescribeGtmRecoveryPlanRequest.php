@@ -5,12 +5,13 @@ namespace Alidns\Request\V20150109;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeGtmMonitorAvailableConfig
+ * Request of DescribeGtmRecoveryPlan
  *
  * @method string getUserClientIp()
+ * @method string getRecoveryPlanId()
  * @method string getLang()
  */
-class DescribeGtmMonitorAvailableConfigRequest extends \RpcAcsRequest
+class DescribeGtmRecoveryPlanRequest extends \RpcAcsRequest
 {
 
     /**
@@ -26,7 +27,7 @@ class DescribeGtmMonitorAvailableConfigRequest extends \RpcAcsRequest
         parent::__construct(
             'Alidns',
             '2015-01-09',
-            'DescribeGtmMonitorAvailableConfig',
+            'DescribeGtmRecoveryPlan',
             'alidns'
         );
     }
@@ -40,6 +41,19 @@ class DescribeGtmMonitorAvailableConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['UserClientIp'] = $userClientIp;
         $this->queryParameters['UserClientIp'] = $userClientIp;
+
+        return $this;
+    }
+
+    /**
+     * @param string $recoveryPlanId
+     *
+     * @return $this
+     */
+    public function setRecoveryPlanId($recoveryPlanId)
+    {
+        $this->requestParameters['RecoveryPlanId'] = $recoveryPlanId;
+        $this->queryParameters['RecoveryPlanId'] = $recoveryPlanId;
 
         return $this;
     }

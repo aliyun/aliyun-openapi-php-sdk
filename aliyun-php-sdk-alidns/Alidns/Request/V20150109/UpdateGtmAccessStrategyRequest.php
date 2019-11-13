@@ -7,10 +7,10 @@ namespace Alidns\Request\V20150109;
  *
  * Request of UpdateGtmAccessStrategy
  *
- * @method string getStrategyName()
  * @method string getDefaultAddrPoolId()
- * @method string getAccessLines()
  * @method string getFailoverAddrPoolId()
+ * @method string getStrategyName()
+ * @method string getAccessLines()
  * @method string getUserClientIp()
  * @method string getStrategyId()
  * @method string getLang()
@@ -32,21 +32,8 @@ class UpdateGtmAccessStrategyRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'UpdateGtmAccessStrategy',
-            'Alidns'
+            'alidns'
         );
-    }
-
-    /**
-     * @param string $strategyName
-     *
-     * @return $this
-     */
-    public function setStrategyName($strategyName)
-    {
-        $this->requestParameters['StrategyName'] = $strategyName;
-        $this->queryParameters['StrategyName'] = $strategyName;
-
-        return $this;
     }
 
     /**
@@ -63,19 +50,6 @@ class UpdateGtmAccessStrategyRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $accessLines
-     *
-     * @return $this
-     */
-    public function setAccessLines($accessLines)
-    {
-        $this->requestParameters['AccessLines'] = $accessLines;
-        $this->queryParameters['AccessLines'] = $accessLines;
-
-        return $this;
-    }
-
-    /**
      * @param string $failoverAddrPoolId
      *
      * @return $this
@@ -84,6 +58,32 @@ class UpdateGtmAccessStrategyRequest extends \RpcAcsRequest
     {
         $this->requestParameters['FailoverAddrPoolId'] = $failoverAddrPoolId;
         $this->queryParameters['FailoverAddrPoolId'] = $failoverAddrPoolId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $strategyName
+     *
+     * @return $this
+     */
+    public function setStrategyName($strategyName)
+    {
+        $this->requestParameters['StrategyName'] = $strategyName;
+        $this->queryParameters['StrategyName'] = $strategyName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $accessLines
+     *
+     * @return $this
+     */
+    public function setAccessLines($accessLines)
+    {
+        $this->requestParameters['AccessLines'] = $accessLines;
+        $this->queryParameters['AccessLines'] = $accessLines;
 
         return $this;
     }

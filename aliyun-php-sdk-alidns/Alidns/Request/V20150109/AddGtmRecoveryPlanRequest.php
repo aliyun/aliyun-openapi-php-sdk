@@ -5,13 +5,15 @@ namespace Alidns\Request\V20150109;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeDomainRecordInfo
+ * Request of AddGtmRecoveryPlan
  *
- * @method string getRecordId()
+ * @method string getFaultAddrPool()
+ * @method string getRemark()
  * @method string getUserClientIp()
+ * @method string getName()
  * @method string getLang()
  */
-class DescribeDomainRecordInfoRequest extends \RpcAcsRequest
+class AddGtmRecoveryPlanRequest extends \RpcAcsRequest
 {
 
     /**
@@ -27,20 +29,33 @@ class DescribeDomainRecordInfoRequest extends \RpcAcsRequest
         parent::__construct(
             'Alidns',
             '2015-01-09',
-            'DescribeDomainRecordInfo',
+            'AddGtmRecoveryPlan',
             'alidns'
         );
     }
 
     /**
-     * @param string $recordId
+     * @param string $faultAddrPool
      *
      * @return $this
      */
-    public function setRecordId($recordId)
+    public function setFaultAddrPool($faultAddrPool)
     {
-        $this->requestParameters['RecordId'] = $recordId;
-        $this->queryParameters['RecordId'] = $recordId;
+        $this->requestParameters['FaultAddrPool'] = $faultAddrPool;
+        $this->queryParameters['FaultAddrPool'] = $faultAddrPool;
+
+        return $this;
+    }
+
+    /**
+     * @param string $remark
+     *
+     * @return $this
+     */
+    public function setRemark($remark)
+    {
+        $this->requestParameters['Remark'] = $remark;
+        $this->queryParameters['Remark'] = $remark;
 
         return $this;
     }
@@ -54,6 +69,19 @@ class DescribeDomainRecordInfoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['UserClientIp'] = $userClientIp;
         $this->queryParameters['UserClientIp'] = $userClientIp;
+
+        return $this;
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
         return $this;
     }

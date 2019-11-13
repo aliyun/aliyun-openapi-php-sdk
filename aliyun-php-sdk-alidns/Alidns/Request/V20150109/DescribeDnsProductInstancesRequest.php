@@ -7,11 +7,11 @@ namespace Alidns\Request\V20150109;
  *
  * Request of DescribeDnsProductInstances
  *
+ * @method string getPageNumber()
  * @method string getUserClientIp()
  * @method string getPageSize()
  * @method string getLang()
  * @method string getVersionCode()
- * @method string getPageNumber()
  */
 class DescribeDnsProductInstancesRequest extends \RpcAcsRequest
 {
@@ -30,8 +30,21 @@ class DescribeDnsProductInstancesRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'DescribeDnsProductInstances',
-            'Alidns'
+            'alidns'
         );
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
     }
 
     /**
@@ -82,19 +95,6 @@ class DescribeDnsProductInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['VersionCode'] = $versionCode;
         $this->queryParameters['VersionCode'] = $versionCode;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

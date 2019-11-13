@@ -7,8 +7,8 @@ namespace Alidns\Request\V20150109;
  *
  * Request of DescribeDomainInfo
  *
- * @method string getUserClientIp()
  * @method string getDomainName()
+ * @method string getUserClientIp()
  * @method string getLang()
  * @method string getNeedDetailAttributes()
  */
@@ -29,21 +29,8 @@ class DescribeDomainInfoRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'DescribeDomainInfo',
-            'Alidns'
+            'alidns'
         );
-    }
-
-    /**
-     * @param string $userClientIp
-     *
-     * @return $this
-     */
-    public function setUserClientIp($userClientIp)
-    {
-        $this->requestParameters['UserClientIp'] = $userClientIp;
-        $this->queryParameters['UserClientIp'] = $userClientIp;
-
-        return $this;
     }
 
     /**
@@ -55,6 +42,19 @@ class DescribeDomainInfoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DomainName'] = $domainName;
         $this->queryParameters['DomainName'] = $domainName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $userClientIp
+     *
+     * @return $this
+     */
+    public function setUserClientIp($userClientIp)
+    {
+        $this->requestParameters['UserClientIp'] = $userClientIp;
+        $this->queryParameters['UserClientIp'] = $userClientIp;
 
         return $this;
     }

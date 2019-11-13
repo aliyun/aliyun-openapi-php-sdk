@@ -8,8 +8,8 @@ namespace Alidns\Request\V20150109;
  * Request of ChangeDomainGroup
  *
  * @method string getGroupId()
- * @method string getUserClientIp()
  * @method string getDomainName()
+ * @method string getUserClientIp()
  * @method string getLang()
  */
 class ChangeDomainGroupRequest extends \RpcAcsRequest
@@ -29,7 +29,7 @@ class ChangeDomainGroupRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'ChangeDomainGroup',
-            'Alidns'
+            'alidns'
         );
     }
 
@@ -47,19 +47,6 @@ class ChangeDomainGroupRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $userClientIp
-     *
-     * @return $this
-     */
-    public function setUserClientIp($userClientIp)
-    {
-        $this->requestParameters['UserClientIp'] = $userClientIp;
-        $this->queryParameters['UserClientIp'] = $userClientIp;
-
-        return $this;
-    }
-
-    /**
      * @param string $domainName
      *
      * @return $this
@@ -68,6 +55,19 @@ class ChangeDomainGroupRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DomainName'] = $domainName;
         $this->queryParameters['DomainName'] = $domainName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $userClientIp
+     *
+     * @return $this
+     */
+    public function setUserClientIp($userClientIp)
+    {
+        $this->requestParameters['UserClientIp'] = $userClientIp;
+        $this->queryParameters['UserClientIp'] = $userClientIp;
 
         return $this;
     }

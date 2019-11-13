@@ -7,14 +7,14 @@ namespace Alidns\Request\V20150109;
  *
  * Request of DescribeGtmLogs
  *
+ * @method string getStartTimestamp()
+ * @method string getPageNumber()
+ * @method string getEndTimestamp()
  * @method string getInstanceId()
  * @method string getUserClientIp()
  * @method string getPageSize()
  * @method string getLang()
  * @method string getKeyword()
- * @method string getStartTimestamp()
- * @method string getPageNumber()
- * @method string getEndTimestamp()
  */
 class DescribeGtmLogsRequest extends \RpcAcsRequest
 {
@@ -33,8 +33,47 @@ class DescribeGtmLogsRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'DescribeGtmLogs',
-            'Alidns'
+            'alidns'
         );
+    }
+
+    /**
+     * @param string $startTimestamp
+     *
+     * @return $this
+     */
+    public function setStartTimestamp($startTimestamp)
+    {
+        $this->requestParameters['StartTimestamp'] = $startTimestamp;
+        $this->queryParameters['StartTimestamp'] = $startTimestamp;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $endTimestamp
+     *
+     * @return $this
+     */
+    public function setEndTimestamp($endTimestamp)
+    {
+        $this->requestParameters['EndTimestamp'] = $endTimestamp;
+        $this->queryParameters['EndTimestamp'] = $endTimestamp;
+
+        return $this;
     }
 
     /**
@@ -98,45 +137,6 @@ class DescribeGtmLogsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Keyword'] = $keyword;
         $this->queryParameters['Keyword'] = $keyword;
-
-        return $this;
-    }
-
-    /**
-     * @param string $startTimestamp
-     *
-     * @return $this
-     */
-    public function setStartTimestamp($startTimestamp)
-    {
-        $this->requestParameters['StartTimestamp'] = $startTimestamp;
-        $this->queryParameters['StartTimestamp'] = $startTimestamp;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
-
-        return $this;
-    }
-
-    /**
-     * @param string $endTimestamp
-     *
-     * @return $this
-     */
-    public function setEndTimestamp($endTimestamp)
-    {
-        $this->requestParameters['EndTimestamp'] = $endTimestamp;
-        $this->queryParameters['EndTimestamp'] = $endTimestamp;
 
         return $this;
     }

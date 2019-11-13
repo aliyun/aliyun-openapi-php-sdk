@@ -7,8 +7,8 @@ namespace Alidns\Request\V20150109;
  *
  * Request of SetGtmMonitorStatus
  *
- * @method string getUserClientIp()
  * @method string getMonitorConfigId()
+ * @method string getUserClientIp()
  * @method string getLang()
  * @method string getStatus()
  */
@@ -29,21 +29,8 @@ class SetGtmMonitorStatusRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'SetGtmMonitorStatus',
-            'Alidns'
+            'alidns'
         );
-    }
-
-    /**
-     * @param string $userClientIp
-     *
-     * @return $this
-     */
-    public function setUserClientIp($userClientIp)
-    {
-        $this->requestParameters['UserClientIp'] = $userClientIp;
-        $this->queryParameters['UserClientIp'] = $userClientIp;
-
-        return $this;
     }
 
     /**
@@ -55,6 +42,19 @@ class SetGtmMonitorStatusRequest extends \RpcAcsRequest
     {
         $this->requestParameters['MonitorConfigId'] = $monitorConfigId;
         $this->queryParameters['MonitorConfigId'] = $monitorConfigId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $userClientIp
+     *
+     * @return $this
+     */
+    public function setUserClientIp($userClientIp)
+    {
+        $this->requestParameters['UserClientIp'] = $userClientIp;
+        $this->queryParameters['UserClientIp'] = $userClientIp;
 
         return $this;
     }

@@ -7,9 +7,9 @@ namespace Alidns\Request\V20150109;
  *
  * Request of AddDomainGroup
  *
+ * @method string getGroupName()
  * @method string getUserClientIp()
  * @method string getLang()
- * @method string getGroupName()
  */
 class AddDomainGroupRequest extends \RpcAcsRequest
 {
@@ -28,8 +28,21 @@ class AddDomainGroupRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'AddDomainGroup',
-            'Alidns'
+            'alidns'
         );
+    }
+
+    /**
+     * @param string $groupName
+     *
+     * @return $this
+     */
+    public function setGroupName($groupName)
+    {
+        $this->requestParameters['GroupName'] = $groupName;
+        $this->queryParameters['GroupName'] = $groupName;
+
+        return $this;
     }
 
     /**
@@ -54,19 +67,6 @@ class AddDomainGroupRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Lang'] = $lang;
         $this->queryParameters['Lang'] = $lang;
-
-        return $this;
-    }
-
-    /**
-     * @param string $groupName
-     *
-     * @return $this
-     */
-    public function setGroupName($groupName)
-    {
-        $this->requestParameters['GroupName'] = $groupName;
-        $this->queryParameters['GroupName'] = $groupName;
 
         return $this;
     }

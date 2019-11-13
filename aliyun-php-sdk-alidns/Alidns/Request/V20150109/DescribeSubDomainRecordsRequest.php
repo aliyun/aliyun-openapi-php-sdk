@@ -8,12 +8,13 @@ namespace Alidns\Request\V20150109;
  * Request of DescribeSubDomainRecords
  *
  * @method string getLine()
+ * @method string getDomainName()
+ * @method string getType()
+ * @method string getPageNumber()
  * @method string getUserClientIp()
  * @method string getPageSize()
  * @method string getSubDomain()
  * @method string getLang()
- * @method string getType()
- * @method string getPageNumber()
  */
 class DescribeSubDomainRecordsRequest extends \RpcAcsRequest
 {
@@ -32,7 +33,7 @@ class DescribeSubDomainRecordsRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'DescribeSubDomainRecords',
-            'Alidns'
+            'alidns'
         );
     }
 
@@ -45,6 +46,45 @@ class DescribeSubDomainRecordsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Line'] = $line;
         $this->queryParameters['Line'] = $line;
+
+        return $this;
+    }
+
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->requestParameters['Type'] = $type;
+        $this->queryParameters['Type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }
@@ -97,32 +137,6 @@ class DescribeSubDomainRecordsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Lang'] = $lang;
         $this->queryParameters['Lang'] = $lang;
-
-        return $this;
-    }
-
-    /**
-     * @param string $type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->requestParameters['Type'] = $type;
-        $this->queryParameters['Type'] = $type;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

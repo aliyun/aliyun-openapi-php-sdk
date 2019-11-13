@@ -28,7 +28,7 @@ class DeleteGtmAddressPoolRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'DeleteGtmAddressPool',
-            'Alidns'
+            'alidns'
         );
     }
 

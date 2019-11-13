@@ -10,6 +10,7 @@ namespace Alidns\Request\V20150109;
  * @method string getInstanceId()
  * @method string getUserClientIp()
  * @method string getLang()
+ * @method string getNeedDetailAttributes()
  */
 class DescribeGtmInstanceRequest extends \RpcAcsRequest
 {
@@ -28,7 +29,7 @@ class DescribeGtmInstanceRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'DescribeGtmInstance',
-            'Alidns'
+            'alidns'
         );
     }
 
@@ -67,6 +68,19 @@ class DescribeGtmInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Lang'] = $lang;
         $this->queryParameters['Lang'] = $lang;
+
+        return $this;
+    }
+
+    /**
+     * @param string $needDetailAttributes
+     *
+     * @return $this
+     */
+    public function setNeedDetailAttributes($needDetailAttributes)
+    {
+        $this->requestParameters['NeedDetailAttributes'] = $needDetailAttributes;
+        $this->queryParameters['NeedDetailAttributes'] = $needDetailAttributes;
 
         return $this;
     }

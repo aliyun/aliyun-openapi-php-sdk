@@ -8,10 +8,10 @@ namespace Alidns\Request\V20150109;
  * Request of DescribeBatchResultDetail
  *
  * @method string getBatchType()
+ * @method string getPageNumber()
  * @method string getUserClientIp()
  * @method string getPageSize()
  * @method string getLang()
- * @method string getPageNumber()
  * @method string getTaskId()
  */
 class DescribeBatchResultDetailRequest extends \RpcAcsRequest
@@ -31,7 +31,7 @@ class DescribeBatchResultDetailRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'DescribeBatchResultDetail',
-            'Alidns'
+            'alidns'
         );
     }
 
@@ -44,6 +44,19 @@ class DescribeBatchResultDetailRequest extends \RpcAcsRequest
     {
         $this->requestParameters['BatchType'] = $batchType;
         $this->queryParameters['BatchType'] = $batchType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }
@@ -83,19 +96,6 @@ class DescribeBatchResultDetailRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Lang'] = $lang;
         $this->queryParameters['Lang'] = $lang;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

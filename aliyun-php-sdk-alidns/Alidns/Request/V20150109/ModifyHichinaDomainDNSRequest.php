@@ -7,8 +7,8 @@ namespace Alidns\Request\V20150109;
  *
  * Request of ModifyHichinaDomainDNS
  *
- * @method string getUserClientIp()
  * @method string getDomainName()
+ * @method string getUserClientIp()
  * @method string getLang()
  */
 class ModifyHichinaDomainDNSRequest extends \RpcAcsRequest
@@ -28,21 +28,8 @@ class ModifyHichinaDomainDNSRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'ModifyHichinaDomainDNS',
-            'Alidns'
+            'alidns'
         );
-    }
-
-    /**
-     * @param string $userClientIp
-     *
-     * @return $this
-     */
-    public function setUserClientIp($userClientIp)
-    {
-        $this->requestParameters['UserClientIp'] = $userClientIp;
-        $this->queryParameters['UserClientIp'] = $userClientIp;
-
-        return $this;
     }
 
     /**
@@ -54,6 +41,19 @@ class ModifyHichinaDomainDNSRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DomainName'] = $domainName;
         $this->queryParameters['DomainName'] = $domainName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $userClientIp
+     *
+     * @return $this
+     */
+    public function setUserClientIp($userClientIp)
+    {
+        $this->requestParameters['UserClientIp'] = $userClientIp;
+        $this->queryParameters['UserClientIp'] = $userClientIp;
 
         return $this;
     }

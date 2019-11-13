@@ -7,14 +7,14 @@ namespace Alidns\Request\V20150109;
  *
  * Request of DescribeRecordLogs
  *
+ * @method string getDomainName()
+ * @method string getStartDate()
+ * @method string getPageNumber()
  * @method string getendDate()
  * @method string getUserClientIp()
- * @method string getDomainName()
  * @method string getPageSize()
  * @method string getLang()
  * @method string getKeyWord()
- * @method string getStartDate()
- * @method string getPageNumber()
  */
 class DescribeRecordLogsRequest extends \RpcAcsRequest
 {
@@ -33,8 +33,47 @@ class DescribeRecordLogsRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'DescribeRecordLogs',
-            'Alidns'
+            'alidns'
         );
+    }
+
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $startDate
+     *
+     * @return $this
+     */
+    public function setStartDate($startDate)
+    {
+        $this->requestParameters['StartDate'] = $startDate;
+        $this->queryParameters['StartDate'] = $startDate;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
     }
 
     /**
@@ -59,19 +98,6 @@ class DescribeRecordLogsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['UserClientIp'] = $userClientIp;
         $this->queryParameters['UserClientIp'] = $userClientIp;
-
-        return $this;
-    }
-
-    /**
-     * @param string $domainName
-     *
-     * @return $this
-     */
-    public function setDomainName($domainName)
-    {
-        $this->requestParameters['DomainName'] = $domainName;
-        $this->queryParameters['DomainName'] = $domainName;
 
         return $this;
     }
@@ -111,32 +137,6 @@ class DescribeRecordLogsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['KeyWord'] = $keyWord;
         $this->queryParameters['KeyWord'] = $keyWord;
-
-        return $this;
-    }
-
-    /**
-     * @param string $startDate
-     *
-     * @return $this
-     */
-    public function setStartDate($startDate)
-    {
-        $this->requestParameters['StartDate'] = $startDate;
-        $this->queryParameters['StartDate'] = $startDate;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

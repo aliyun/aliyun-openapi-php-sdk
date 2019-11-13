@@ -7,15 +7,15 @@ namespace Alidns\Request\V20150109;
  *
  * Request of UpdateDomainRecord
  *
- * @method string getRecordId()
  * @method string getRR()
  * @method string getLine()
- * @method string getUserClientIp()
- * @method string getLang()
  * @method string getType()
- * @method string getPriority()
+ * @method string getLang()
  * @method string getValue()
+ * @method string getPriority()
  * @method string getTTL()
+ * @method string getRecordId()
+ * @method string getUserClientIp()
  */
 class UpdateDomainRecordRequest extends \RpcAcsRequest
 {
@@ -34,21 +34,8 @@ class UpdateDomainRecordRequest extends \RpcAcsRequest
             'Alidns',
             '2015-01-09',
             'UpdateDomainRecord',
-            'Alidns'
+            'alidns'
         );
-    }
-
-    /**
-     * @param string $recordId
-     *
-     * @return $this
-     */
-    public function setRecordId($recordId)
-    {
-        $this->requestParameters['RecordId'] = $recordId;
-        $this->queryParameters['RecordId'] = $recordId;
-
-        return $this;
     }
 
     /**
@@ -78,14 +65,14 @@ class UpdateDomainRecordRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $userClientIp
+     * @param string $type
      *
      * @return $this
      */
-    public function setUserClientIp($userClientIp)
+    public function setType($type)
     {
-        $this->requestParameters['UserClientIp'] = $userClientIp;
-        $this->queryParameters['UserClientIp'] = $userClientIp;
+        $this->requestParameters['Type'] = $type;
+        $this->queryParameters['Type'] = $type;
 
         return $this;
     }
@@ -104,14 +91,14 @@ class UpdateDomainRecordRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $type
+     * @param string $value
      *
      * @return $this
      */
-    public function setType($type)
+    public function setValue($value)
     {
-        $this->requestParameters['Type'] = $type;
-        $this->queryParameters['Type'] = $type;
+        $this->requestParameters['Value'] = $value;
+        $this->queryParameters['Value'] = $value;
 
         return $this;
     }
@@ -130,19 +117,6 @@ class UpdateDomainRecordRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $value
-     *
-     * @return $this
-     */
-    public function setValue($value)
-    {
-        $this->requestParameters['Value'] = $value;
-        $this->queryParameters['Value'] = $value;
-
-        return $this;
-    }
-
-    /**
      * @param string $tTL
      *
      * @return $this
@@ -151,6 +125,32 @@ class UpdateDomainRecordRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TTL'] = $tTL;
         $this->queryParameters['TTL'] = $tTL;
+
+        return $this;
+    }
+
+    /**
+     * @param string $recordId
+     *
+     * @return $this
+     */
+    public function setRecordId($recordId)
+    {
+        $this->requestParameters['RecordId'] = $recordId;
+        $this->queryParameters['RecordId'] = $recordId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $userClientIp
+     *
+     * @return $this
+     */
+    public function setUserClientIp($userClientIp)
+    {
+        $this->requestParameters['UserClientIp'] = $userClientIp;
+        $this->queryParameters['UserClientIp'] = $userClientIp;
 
         return $this;
     }
