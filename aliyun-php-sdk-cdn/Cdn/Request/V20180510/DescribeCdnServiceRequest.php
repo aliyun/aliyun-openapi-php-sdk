@@ -7,8 +7,8 @@ namespace Cdn\Request\V20180510;
  *
  * Request of DescribeCdnService
  *
- * @method string getSecurityToken()
  * @method string getOwnerId()
+ * @method string getSecurityToken()
  */
 class DescribeCdnServiceRequest extends \RpcAcsRequest
 {
@@ -31,19 +31,6 @@ class DescribeCdnServiceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -52,6 +39,19 @@ class DescribeCdnServiceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

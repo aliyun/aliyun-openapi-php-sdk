@@ -7,11 +7,11 @@ namespace Cdn\Request\V20141111;
  *
  * Request of DescribeDomainUvData
  *
- * @method string getSecurityToken()
  * @method string getDomainName()
  * @method string getEndTime()
  * @method string getStartTime()
  * @method string getOwnerId()
+ * @method string getSecurityToken()
  */
 class DescribeDomainUvDataRequest extends \RpcAcsRequest
 {
@@ -31,19 +31,6 @@ class DescribeDomainUvDataRequest extends \RpcAcsRequest
             '2014-11-11',
             'DescribeDomainUvData'
         );
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
     }
 
     /**
@@ -94,6 +81,19 @@ class DescribeDomainUvDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

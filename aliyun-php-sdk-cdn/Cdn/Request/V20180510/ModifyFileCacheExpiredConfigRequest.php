@@ -7,13 +7,13 @@ namespace Cdn\Request\V20180510;
  *
  * Request of ModifyFileCacheExpiredConfig
  *
- * @method string getSecurityToken()
- * @method string getConfigID()
  * @method string getDomainName()
  * @method string getWeight()
  * @method string getCacheContent()
  * @method string getOwnerId()
  * @method string getTTL()
+ * @method string getSecurityToken()
+ * @method string getConfigID()
  */
 class ModifyFileCacheExpiredConfigRequest extends \RpcAcsRequest
 {
@@ -33,32 +33,6 @@ class ModifyFileCacheExpiredConfigRequest extends \RpcAcsRequest
             '2018-05-10',
             'ModifyFileCacheExpiredConfig'
         );
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $configID
-     *
-     * @return $this
-     */
-    public function setConfigID($configID)
-    {
-        $this->requestParameters['ConfigID'] = $configID;
-        $this->queryParameters['ConfigID'] = $configID;
-
-        return $this;
     }
 
     /**
@@ -122,6 +96,32 @@ class ModifyFileCacheExpiredConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TTL'] = $tTL;
         $this->queryParameters['TTL'] = $tTL;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $configID
+     *
+     * @return $this
+     */
+    public function setConfigID($configID)
+    {
+        $this->requestParameters['ConfigID'] = $configID;
+        $this->queryParameters['ConfigID'] = $configID;
 
         return $this;
     }

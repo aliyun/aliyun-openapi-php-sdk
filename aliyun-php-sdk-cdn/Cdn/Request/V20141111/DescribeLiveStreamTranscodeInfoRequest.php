@@ -7,9 +7,9 @@ namespace Cdn\Request\V20141111;
  *
  * Request of DescribeLiveStreamTranscodeInfo
  *
- * @method string getSecurityToken()
  * @method string getOwnerId()
  * @method string getDomainTranscodeName()
+ * @method string getSecurityToken()
  */
 class DescribeLiveStreamTranscodeInfoRequest extends \RpcAcsRequest
 {
@@ -29,19 +29,6 @@ class DescribeLiveStreamTranscodeInfoRequest extends \RpcAcsRequest
             '2014-11-11',
             'DescribeLiveStreamTranscodeInfo'
         );
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
     }
 
     /**
@@ -66,6 +53,19 @@ class DescribeLiveStreamTranscodeInfoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DomainTranscodeName'] = $domainTranscodeName;
         $this->queryParameters['DomainTranscodeName'] = $domainTranscodeName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

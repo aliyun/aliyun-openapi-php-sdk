@@ -7,13 +7,13 @@ namespace Cdn\Request\V20141111;
  *
  * Request of DescribeLiveStreamsFrameRateAndBitRateData
  *
+ * @method string getStartTime()
  * @method string getAppName()
  * @method string getSecurityToken()
+ * @method string getStreamName()
  * @method string getDomainName()
  * @method string getEndTime()
- * @method string getStartTime()
  * @method string getOwnerId()
- * @method string getStreamName()
  */
 class DescribeLiveStreamsFrameRateAndBitRateDataRequest extends \RpcAcsRequest
 {
@@ -33,6 +33,19 @@ class DescribeLiveStreamsFrameRateAndBitRateDataRequest extends \RpcAcsRequest
             '2014-11-11',
             'DescribeLiveStreamsFrameRateAndBitRateData'
         );
+    }
+
+    /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
+
+        return $this;
     }
 
     /**
@@ -57,6 +70,19 @@ class DescribeLiveStreamsFrameRateAndBitRateDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $streamName
+     *
+     * @return $this
+     */
+    public function setStreamName($streamName)
+    {
+        $this->requestParameters['StreamName'] = $streamName;
+        $this->queryParameters['StreamName'] = $streamName;
 
         return $this;
     }
@@ -88,19 +114,6 @@ class DescribeLiveStreamsFrameRateAndBitRateDataRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $startTime
-     *
-     * @return $this
-     */
-    public function setStartTime($startTime)
-    {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -109,19 +122,6 @@ class DescribeLiveStreamsFrameRateAndBitRateDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $streamName
-     *
-     * @return $this
-     */
-    public function setStreamName($streamName)
-    {
-        $this->requestParameters['StreamName'] = $streamName;
-        $this->queryParameters['StreamName'] = $streamName;
 
         return $this;
     }

@@ -8,13 +8,13 @@ namespace Cdn\Request\V20141111;
  * Request of UpdateLiveAppSnapshotConfig
  *
  * @method string getTimeInterval()
- * @method string getOssBucket()
+ * @method string getOssEndpoint()
  * @method string getAppName()
  * @method string getSecurityToken()
- * @method string getDomainName()
- * @method string getOssEndpoint()
- * @method string getSequenceOssObject()
  * @method string getOverwriteOssObject()
+ * @method string getOssBucket()
+ * @method string getDomainName()
+ * @method string getSequenceOssObject()
  * @method string getOwnerId()
  */
 class UpdateLiveAppSnapshotConfigRequest extends \RpcAcsRequest
@@ -51,14 +51,14 @@ class UpdateLiveAppSnapshotConfigRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ossBucket
+     * @param string $ossEndpoint
      *
      * @return $this
      */
-    public function setOssBucket($ossBucket)
+    public function setOssEndpoint($ossEndpoint)
     {
-        $this->requestParameters['OssBucket'] = $ossBucket;
-        $this->queryParameters['OssBucket'] = $ossBucket;
+        $this->requestParameters['OssEndpoint'] = $ossEndpoint;
+        $this->queryParameters['OssEndpoint'] = $ossEndpoint;
 
         return $this;
     }
@@ -90,6 +90,32 @@ class UpdateLiveAppSnapshotConfigRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $overwriteOssObject
+     *
+     * @return $this
+     */
+    public function setOverwriteOssObject($overwriteOssObject)
+    {
+        $this->requestParameters['OverwriteOssObject'] = $overwriteOssObject;
+        $this->queryParameters['OverwriteOssObject'] = $overwriteOssObject;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ossBucket
+     *
+     * @return $this
+     */
+    public function setOssBucket($ossBucket)
+    {
+        $this->requestParameters['OssBucket'] = $ossBucket;
+        $this->queryParameters['OssBucket'] = $ossBucket;
+
+        return $this;
+    }
+
+    /**
      * @param string $domainName
      *
      * @return $this
@@ -103,19 +129,6 @@ class UpdateLiveAppSnapshotConfigRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ossEndpoint
-     *
-     * @return $this
-     */
-    public function setOssEndpoint($ossEndpoint)
-    {
-        $this->requestParameters['OssEndpoint'] = $ossEndpoint;
-        $this->queryParameters['OssEndpoint'] = $ossEndpoint;
-
-        return $this;
-    }
-
-    /**
      * @param string $sequenceOssObject
      *
      * @return $this
@@ -124,19 +137,6 @@ class UpdateLiveAppSnapshotConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SequenceOssObject'] = $sequenceOssObject;
         $this->queryParameters['SequenceOssObject'] = $sequenceOssObject;
-
-        return $this;
-    }
-
-    /**
-     * @param string $overwriteOssObject
-     *
-     * @return $this
-     */
-    public function setOverwriteOssObject($overwriteOssObject)
-    {
-        $this->requestParameters['OverwriteOssObject'] = $overwriteOssObject;
-        $this->queryParameters['OverwriteOssObject'] = $overwriteOssObject;
 
         return $this;
     }

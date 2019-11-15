@@ -7,12 +7,12 @@ namespace Cdn\Request\V20141111;
  *
  * Request of SetPathCacheExpiredConfig
  *
- * @method string getSecurityToken()
  * @method string getDomainName()
  * @method string getWeight()
  * @method string getCacheContent()
  * @method string getOwnerId()
  * @method string getTTL()
+ * @method string getSecurityToken()
  */
 class SetPathCacheExpiredConfigRequest extends \RpcAcsRequest
 {
@@ -32,19 +32,6 @@ class SetPathCacheExpiredConfigRequest extends \RpcAcsRequest
             '2014-11-11',
             'SetPathCacheExpiredConfig'
         );
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
     }
 
     /**
@@ -108,6 +95,19 @@ class SetPathCacheExpiredConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TTL'] = $tTL;
         $this->queryParameters['TTL'] = $tTL;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

@@ -7,12 +7,12 @@ namespace Cdn\Request\V20141111;
  *
  * Request of DescribeLiveStreamRecordContent
  *
- * @method string getAppName()
- * @method string getSecurityToken()
  * @method string getDomainName()
  * @method string getEndTime()
  * @method string getStartTime()
  * @method string getOwnerId()
+ * @method string getAppName()
+ * @method string getSecurityToken()
  * @method string getStreamName()
  */
 class DescribeLiveStreamRecordContentRequest extends \RpcAcsRequest
@@ -33,32 +33,6 @@ class DescribeLiveStreamRecordContentRequest extends \RpcAcsRequest
             '2014-11-11',
             'DescribeLiveStreamRecordContent'
         );
-    }
-
-    /**
-     * @param string $appName
-     *
-     * @return $this
-     */
-    public function setAppName($appName)
-    {
-        $this->requestParameters['AppName'] = $appName;
-        $this->queryParameters['AppName'] = $appName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
     }
 
     /**
@@ -109,6 +83,32 @@ class DescribeLiveStreamRecordContentRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $appName
+     *
+     * @return $this
+     */
+    public function setAppName($appName)
+    {
+        $this->requestParameters['AppName'] = $appName;
+        $this->queryParameters['AppName'] = $appName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

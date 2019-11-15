@@ -9,10 +9,10 @@ namespace Cdn\Request\V20141111;
  *
  * @method string getTemplate()
  * @method string getApp()
- * @method string getSecurityToken()
  * @method string getOwnerAccount()
- * @method string getDomain()
  * @method string getOwnerId()
+ * @method string getSecurityToken()
+ * @method string getDomain()
  */
 class DeleteLiveStreamTranscodeRequest extends \RpcAcsRequest
 {
@@ -61,19 +61,6 @@ class DeleteLiveStreamTranscodeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerAccount
      *
      * @return $this
@@ -87,19 +74,6 @@ class DeleteLiveStreamTranscodeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $domain
-     *
-     * @return $this
-     */
-    public function setDomain($domain)
-    {
-        $this->requestParameters['Domain'] = $domain;
-        $this->queryParameters['Domain'] = $domain;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -108,6 +82,32 @@ class DeleteLiveStreamTranscodeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $domain
+     *
+     * @return $this
+     */
+    public function setDomain($domain)
+    {
+        $this->requestParameters['Domain'] = $domain;
+        $this->queryParameters['Domain'] = $domain;
 
         return $this;
     }

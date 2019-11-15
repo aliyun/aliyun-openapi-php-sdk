@@ -8,12 +8,12 @@ namespace Cdn\Request\V20141111;
  * Request of AddLiveStreamTranscode
  *
  * @method string getTemplate()
- * @method string getApp()
  * @method string getSecurityToken()
- * @method string getOwnerAccount()
- * @method string getDomain()
  * @method string getRecord()
+ * @method string getApp()
+ * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getDomain()
  * @method string getSnapshot()
  */
 class AddLiveStreamTranscodeRequest extends \RpcAcsRequest
@@ -50,19 +50,6 @@ class AddLiveStreamTranscodeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $app
-     *
-     * @return $this
-     */
-    public function setApp($app)
-    {
-        $this->requestParameters['App'] = $app;
-        $this->queryParameters['App'] = $app;
-
-        return $this;
-    }
-
-    /**
      * @param string $securityToken
      *
      * @return $this
@@ -71,32 +58,6 @@ class AddLiveStreamTranscodeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $domain
-     *
-     * @return $this
-     */
-    public function setDomain($domain)
-    {
-        $this->requestParameters['Domain'] = $domain;
-        $this->queryParameters['Domain'] = $domain;
 
         return $this;
     }
@@ -115,6 +76,32 @@ class AddLiveStreamTranscodeRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $app
+     *
+     * @return $this
+     */
+    public function setApp($app)
+    {
+        $this->requestParameters['App'] = $app;
+        $this->queryParameters['App'] = $app;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -123,6 +110,19 @@ class AddLiveStreamTranscodeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $domain
+     *
+     * @return $this
+     */
+    public function setDomain($domain)
+    {
+        $this->requestParameters['Domain'] = $domain;
+        $this->queryParameters['Domain'] = $domain;
 
         return $this;
     }

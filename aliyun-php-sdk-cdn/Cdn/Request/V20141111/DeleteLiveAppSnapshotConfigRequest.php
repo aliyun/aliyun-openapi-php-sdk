@@ -7,10 +7,10 @@ namespace Cdn\Request\V20141111;
  *
  * Request of DeleteLiveAppSnapshotConfig
  *
- * @method string getAppName()
- * @method string getSecurityToken()
  * @method string getDomainName()
  * @method string getOwnerId()
+ * @method string getAppName()
+ * @method string getSecurityToken()
  */
 class DeleteLiveAppSnapshotConfigRequest extends \RpcAcsRequest
 {
@@ -30,32 +30,6 @@ class DeleteLiveAppSnapshotConfigRequest extends \RpcAcsRequest
             '2014-11-11',
             'DeleteLiveAppSnapshotConfig'
         );
-    }
-
-    /**
-     * @param string $appName
-     *
-     * @return $this
-     */
-    public function setAppName($appName)
-    {
-        $this->requestParameters['AppName'] = $appName;
-        $this->queryParameters['AppName'] = $appName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
     }
 
     /**
@@ -80,6 +54,32 @@ class DeleteLiveAppSnapshotConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $appName
+     *
+     * @return $this
+     */
+    public function setAppName($appName)
+    {
+        $this->requestParameters['AppName'] = $appName;
+        $this->queryParameters['AppName'] = $appName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

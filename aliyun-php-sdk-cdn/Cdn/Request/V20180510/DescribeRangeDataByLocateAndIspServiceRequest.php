@@ -7,12 +7,11 @@ namespace Cdn\Request\V20180510;
  *
  * Request of DescribeRangeDataByLocateAndIspService
  *
- * @method string getIspNames()
- * @method string getSecurityToken()
  * @method string getDomainNames()
  * @method string getLocationNames()
- * @method string getEndTime()
  * @method string getStartTime()
+ * @method string getIspNames()
+ * @method string getEndTime()
  * @method string getOwnerId()
  */
 class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
@@ -33,32 +32,6 @@ class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
             '2018-05-10',
             'DescribeRangeDataByLocateAndIspService'
         );
-    }
-
-    /**
-     * @param string $ispNames
-     *
-     * @return $this
-     */
-    public function setIspNames($ispNames)
-    {
-        $this->requestParameters['IspNames'] = $ispNames;
-        $this->queryParameters['IspNames'] = $ispNames;
-
-        return $this;
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
     }
 
     /**
@@ -88,19 +61,6 @@ class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $endTime
-     *
-     * @return $this
-     */
-    public function setEndTime($endTime)
-    {
-        $this->requestParameters['EndTime'] = $endTime;
-        $this->queryParameters['EndTime'] = $endTime;
-
-        return $this;
-    }
-
-    /**
      * @param string $startTime
      *
      * @return $this
@@ -109,6 +69,32 @@ class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['StartTime'] = $startTime;
         $this->queryParameters['StartTime'] = $startTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ispNames
+     *
+     * @return $this
+     */
+    public function setIspNames($ispNames)
+    {
+        $this->requestParameters['IspNames'] = $ispNames;
+        $this->queryParameters['IspNames'] = $ispNames;
+
+        return $this;
+    }
+
+    /**
+     * @param string $endTime
+     *
+     * @return $this
+     */
+    public function setEndTime($endTime)
+    {
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
 
         return $this;
     }

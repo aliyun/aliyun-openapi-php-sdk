@@ -14,6 +14,7 @@ namespace Cdn\Request\V20180510;
  * @method string getOwnerId()
  * @method string getRoleARN()
  * @method string getEventMetaName()
+ * @method string getFunctionARN()
  */
 class AddFCTriggerRequest extends \RpcAcsRequest
 {
@@ -122,6 +123,19 @@ class AddFCTriggerRequest extends \RpcAcsRequest
     {
         $this->requestParameters['EventMetaName'] = $eventMetaName;
         $this->queryParameters['EventMetaName'] = $eventMetaName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $functionARN
+     *
+     * @return $this
+     */
+    public function setFunctionARN($functionARN)
+    {
+        $this->requestParameters['FunctionARN'] = $functionARN;
+        $this->queryParameters['FunctionARN'] = $functionARN;
 
         return $this;
     }

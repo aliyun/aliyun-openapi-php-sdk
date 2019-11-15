@@ -7,9 +7,9 @@ namespace Cdn\Request\V20141111;
  *
  * Request of RefreshObjectCaches
  *
- * @method string getSecurityToken()
  * @method string getObjectPath()
  * @method string getOwnerId()
+ * @method string getSecurityToken()
  * @method string getObjectType()
  */
 class RefreshObjectCachesRequest extends \RpcAcsRequest
@@ -30,19 +30,6 @@ class RefreshObjectCachesRequest extends \RpcAcsRequest
             '2014-11-11',
             'RefreshObjectCaches'
         );
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
     }
 
     /**
@@ -67,6 +54,19 @@ class RefreshObjectCachesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

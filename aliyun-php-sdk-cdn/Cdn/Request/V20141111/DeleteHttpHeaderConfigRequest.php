@@ -7,10 +7,10 @@ namespace Cdn\Request\V20141111;
  *
  * Request of DeleteHttpHeaderConfig
  *
- * @method string getSecurityToken()
- * @method string getConfigID()
  * @method string getDomainName()
  * @method string getOwnerId()
+ * @method string getSecurityToken()
+ * @method string getConfigID()
  */
 class DeleteHttpHeaderConfigRequest extends \RpcAcsRequest
 {
@@ -30,32 +30,6 @@ class DeleteHttpHeaderConfigRequest extends \RpcAcsRequest
             '2014-11-11',
             'DeleteHttpHeaderConfig'
         );
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $configID
-     *
-     * @return $this
-     */
-    public function setConfigID($configID)
-    {
-        $this->requestParameters['ConfigID'] = $configID;
-        $this->queryParameters['ConfigID'] = $configID;
-
-        return $this;
     }
 
     /**
@@ -80,6 +54,32 @@ class DeleteHttpHeaderConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $configID
+     *
+     * @return $this
+     */
+    public function setConfigID($configID)
+    {
+        $this->requestParameters['ConfigID'] = $configID;
+        $this->queryParameters['ConfigID'] = $configID;
 
         return $this;
     }

@@ -7,9 +7,9 @@ namespace Cdn\Request\V20141111;
  *
  * Request of SetUserGreenManagerConfig
  *
+ * @method string getOwnerId()
  * @method string getSecurityToken()
  * @method string getQuota()
- * @method string getOwnerId()
  * @method string getRatio()
  */
 class SetUserGreenManagerConfigRequest extends \RpcAcsRequest
@@ -30,6 +30,19 @@ class SetUserGreenManagerConfigRequest extends \RpcAcsRequest
             '2014-11-11',
             'SetUserGreenManagerConfig'
         );
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
     }
 
     /**
@@ -54,19 +67,6 @@ class SetUserGreenManagerConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Quota'] = $quota;
         $this->queryParameters['Quota'] = $quota;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

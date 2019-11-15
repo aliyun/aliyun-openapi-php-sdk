@@ -8,11 +8,11 @@ namespace Cdn\Request\V20141111;
  * Request of SetRefererConfig
  *
  * @method string getReferList()
- * @method string getSecurityToken()
  * @method string getDomainName()
+ * @method string getOwnerId()
+ * @method string getSecurityToken()
  * @method string getReferType()
  * @method string getDisableAst()
- * @method string getOwnerId()
  * @method string getAllowEmpty()
  */
 class SetRefererConfigRequest extends \RpcAcsRequest
@@ -49,19 +49,6 @@ class SetRefererConfigRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $domainName
      *
      * @return $this
@@ -70,6 +57,32 @@ class SetRefererConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DomainName'] = $domainName;
         $this->queryParameters['DomainName'] = $domainName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }
@@ -96,19 +109,6 @@ class SetRefererConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DisableAst'] = $disableAst;
         $this->queryParameters['DisableAst'] = $disableAst;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

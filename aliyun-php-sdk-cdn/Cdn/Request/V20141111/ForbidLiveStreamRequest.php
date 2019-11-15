@@ -8,11 +8,11 @@ namespace Cdn\Request\V20141111;
  * Request of ForbidLiveStream
  *
  * @method string getResumeTime()
- * @method string getAppName()
- * @method string getSecurityToken()
  * @method string getLiveStreamType()
  * @method string getDomainName()
  * @method string getOwnerId()
+ * @method string getAppName()
+ * @method string getSecurityToken()
  * @method string getStreamName()
  */
 class ForbidLiveStreamRequest extends \RpcAcsRequest
@@ -44,32 +44,6 @@ class ForbidLiveStreamRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResumeTime'] = $resumeTime;
         $this->queryParameters['ResumeTime'] = $resumeTime;
-
-        return $this;
-    }
-
-    /**
-     * @param string $appName
-     *
-     * @return $this
-     */
-    public function setAppName($appName)
-    {
-        $this->requestParameters['AppName'] = $appName;
-        $this->queryParameters['AppName'] = $appName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }
@@ -109,6 +83,32 @@ class ForbidLiveStreamRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $appName
+     *
+     * @return $this
+     */
+    public function setAppName($appName)
+    {
+        $this->requestParameters['AppName'] = $appName;
+        $this->queryParameters['AppName'] = $appName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

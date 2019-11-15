@@ -7,10 +7,10 @@ namespace Cdn\Request\V20141111;
  *
  * Request of SetHttpErrorPageConfig
  *
- * @method string getSecurityToken()
  * @method string getDomainName()
- * @method string getPageUrl()
  * @method string getOwnerId()
+ * @method string getSecurityToken()
+ * @method string getPageUrl()
  * @method string getErrorCode()
  */
 class SetHttpErrorPageConfigRequest extends \RpcAcsRequest
@@ -34,19 +34,6 @@ class SetHttpErrorPageConfigRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $domainName
      *
      * @return $this
@@ -60,19 +47,6 @@ class SetHttpErrorPageConfigRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageUrl
-     *
-     * @return $this
-     */
-    public function setPageUrl($pageUrl)
-    {
-        $this->requestParameters['PageUrl'] = $pageUrl;
-        $this->queryParameters['PageUrl'] = $pageUrl;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -81,6 +55,32 @@ class SetHttpErrorPageConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageUrl
+     *
+     * @return $this
+     */
+    public function setPageUrl($pageUrl)
+    {
+        $this->requestParameters['PageUrl'] = $pageUrl;
+        $this->queryParameters['PageUrl'] = $pageUrl;
 
         return $this;
     }

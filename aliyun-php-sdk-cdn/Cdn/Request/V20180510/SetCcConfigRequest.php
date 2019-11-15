@@ -7,10 +7,10 @@ namespace Cdn\Request\V20180510;
  *
  * Request of SetCcConfig
  *
- * @method string getAllowIps()
- * @method string getSecurityToken()
  * @method string getDomainName()
  * @method string getOwnerId()
+ * @method string getAllowIps()
+ * @method string getSecurityToken()
  * @method string getBlockIps()
  */
 class SetCcConfigRequest extends \RpcAcsRequest
@@ -31,32 +31,6 @@ class SetCcConfigRequest extends \RpcAcsRequest
             '2018-05-10',
             'SetCcConfig'
         );
-    }
-
-    /**
-     * @param string $allowIps
-     *
-     * @return $this
-     */
-    public function setAllowIps($allowIps)
-    {
-        $this->requestParameters['AllowIps'] = $allowIps;
-        $this->queryParameters['AllowIps'] = $allowIps;
-
-        return $this;
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
     }
 
     /**
@@ -81,6 +55,32 @@ class SetCcConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $allowIps
+     *
+     * @return $this
+     */
+    public function setAllowIps($allowIps)
+    {
+        $this->requestParameters['AllowIps'] = $allowIps;
+        $this->queryParameters['AllowIps'] = $allowIps;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

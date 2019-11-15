@@ -7,12 +7,12 @@ namespace Cdn\Request\V20141111;
  *
  * Request of ModifyHttpHeaderConfig
  *
+ * @method string getDomainName()
+ * @method string getOwnerId()
  * @method string getHeaderValue()
  * @method string getSecurityToken()
  * @method string getConfigID()
- * @method string getDomainName()
  * @method string getHeaderKey()
- * @method string getOwnerId()
  */
 class ModifyHttpHeaderConfigRequest extends \RpcAcsRequest
 {
@@ -32,6 +32,32 @@ class ModifyHttpHeaderConfigRequest extends \RpcAcsRequest
             '2014-11-11',
             'ModifyHttpHeaderConfig'
         );
+    }
+
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
     }
 
     /**
@@ -74,19 +100,6 @@ class ModifyHttpHeaderConfigRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $domainName
-     *
-     * @return $this
-     */
-    public function setDomainName($domainName)
-    {
-        $this->requestParameters['DomainName'] = $domainName;
-        $this->queryParameters['DomainName'] = $domainName;
-
-        return $this;
-    }
-
-    /**
      * @param string $headerKey
      *
      * @return $this
@@ -95,19 +108,6 @@ class ModifyHttpHeaderConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['HeaderKey'] = $headerKey;
         $this->queryParameters['HeaderKey'] = $headerKey;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

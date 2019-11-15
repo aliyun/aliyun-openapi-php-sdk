@@ -7,9 +7,9 @@ namespace Cdn\Request\V20180510;
  *
  * Request of DescribeCdnCertificateDetail
  *
- * @method string getSecurityToken()
  * @method string getCertName()
  * @method string getOwnerId()
+ * @method string getSecurityToken()
  */
 class DescribeCdnCertificateDetailRequest extends \RpcAcsRequest
 {
@@ -29,19 +29,6 @@ class DescribeCdnCertificateDetailRequest extends \RpcAcsRequest
             '2018-05-10',
             'DescribeCdnCertificateDetail'
         );
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
     }
 
     /**
@@ -66,6 +53,19 @@ class DescribeCdnCertificateDetailRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

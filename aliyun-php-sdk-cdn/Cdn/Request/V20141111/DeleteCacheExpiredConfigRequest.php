@@ -7,11 +7,11 @@ namespace Cdn\Request\V20141111;
  *
  * Request of DeleteCacheExpiredConfig
  *
+ * @method string getDomainName()
+ * @method string getOwnerId()
  * @method string getCacheType()
  * @method string getSecurityToken()
  * @method string getConfigID()
- * @method string getDomainName()
- * @method string getOwnerId()
  */
 class DeleteCacheExpiredConfigRequest extends \RpcAcsRequest
 {
@@ -31,6 +31,32 @@ class DeleteCacheExpiredConfigRequest extends \RpcAcsRequest
             '2014-11-11',
             'DeleteCacheExpiredConfig'
         );
+    }
+
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
     }
 
     /**
@@ -68,32 +94,6 @@ class DeleteCacheExpiredConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ConfigID'] = $configID;
         $this->queryParameters['ConfigID'] = $configID;
-
-        return $this;
-    }
-
-    /**
-     * @param string $domainName
-     *
-     * @return $this
-     */
-    public function setDomainName($domainName)
-    {
-        $this->requestParameters['DomainName'] = $domainName;
-        $this->queryParameters['DomainName'] = $domainName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

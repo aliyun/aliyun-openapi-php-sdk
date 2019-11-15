@@ -8,9 +8,9 @@ namespace Cdn\Request\V20180510;
  * Request of PushObjectCache
  *
  * @method string getArea()
- * @method string getSecurityToken()
  * @method string getObjectPath()
  * @method string getOwnerId()
+ * @method string getSecurityToken()
  */
 class PushObjectCacheRequest extends \RpcAcsRequest
 {
@@ -46,19 +46,6 @@ class PushObjectCacheRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $objectPath
      *
      * @return $this
@@ -80,6 +67,19 @@ class PushObjectCacheRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

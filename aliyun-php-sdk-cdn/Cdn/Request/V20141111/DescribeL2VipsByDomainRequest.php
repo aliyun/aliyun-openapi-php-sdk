@@ -7,9 +7,9 @@ namespace Cdn\Request\V20141111;
  *
  * Request of DescribeL2VipsByDomain
  *
- * @method string getSecurityToken()
  * @method string getDomainName()
  * @method string getOwnerId()
+ * @method string getSecurityToken()
  */
 class DescribeL2VipsByDomainRequest extends \RpcAcsRequest
 {
@@ -29,19 +29,6 @@ class DescribeL2VipsByDomainRequest extends \RpcAcsRequest
             '2014-11-11',
             'DescribeL2VipsByDomain'
         );
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
     }
 
     /**
@@ -66,6 +53,19 @@ class DescribeL2VipsByDomainRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

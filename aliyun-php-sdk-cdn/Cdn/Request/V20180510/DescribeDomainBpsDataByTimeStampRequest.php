@@ -7,9 +7,8 @@ namespace Cdn\Request\V20180510;
  *
  * Request of DescribeDomainBpsDataByTimeStamp
  *
- * @method string getIspNames()
- * @method string getSecurityToken()
  * @method string getLocationNames()
+ * @method string getIspNames()
  * @method string getDomainName()
  * @method string getOwnerId()
  * @method string getTimePoint()
@@ -35,32 +34,6 @@ class DescribeDomainBpsDataByTimeStampRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ispNames
-     *
-     * @return $this
-     */
-    public function setIspNames($ispNames)
-    {
-        $this->requestParameters['IspNames'] = $ispNames;
-        $this->queryParameters['IspNames'] = $ispNames;
-
-        return $this;
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $locationNames
      *
      * @return $this
@@ -69,6 +42,19 @@ class DescribeDomainBpsDataByTimeStampRequest extends \RpcAcsRequest
     {
         $this->requestParameters['LocationNames'] = $locationNames;
         $this->queryParameters['LocationNames'] = $locationNames;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ispNames
+     *
+     * @return $this
+     */
+    public function setIspNames($ispNames)
+    {
+        $this->requestParameters['IspNames'] = $ispNames;
+        $this->queryParameters['IspNames'] = $ispNames;
 
         return $this;
     }

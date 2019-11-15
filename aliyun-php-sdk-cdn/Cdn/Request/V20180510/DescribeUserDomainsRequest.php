@@ -7,19 +7,21 @@ namespace Cdn\Request\V20180510;
  *
  * Request of DescribeUserDomains
  *
- * @method string getFuncFilter()
- * @method string getDomainName()
- * @method string getOwnerId()
- * @method string getFuncId()
  * @method string getPageNumber()
- * @method string getDomainStatus()
- * @method string getDomainSearchType()
  * @method string getCheckDomainShow()
  * @method string getResourceGroupId()
  * @method string getSecurityToken()
  * @method string getCdnType()
+ * @method string getChangeEndTime()
  * @method string getPageSize()
  * @method array getTags()
+ * @method string getFuncFilter()
+ * @method string getDomainName()
+ * @method string getOwnerId()
+ * @method string getFuncId()
+ * @method string getDomainStatus()
+ * @method string getDomainSearchType()
+ * @method string getChangeStartTime()
  */
 class DescribeUserDomainsRequest extends \RpcAcsRequest
 {
@@ -42,58 +44,6 @@ class DescribeUserDomainsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $funcFilter
-     *
-     * @return $this
-     */
-    public function setFuncFilter($funcFilter)
-    {
-        $this->requestParameters['FuncFilter'] = $funcFilter;
-        $this->queryParameters['FuncFilter'] = $funcFilter;
-
-        return $this;
-    }
-
-    /**
-     * @param string $domainName
-     *
-     * @return $this
-     */
-    public function setDomainName($domainName)
-    {
-        $this->requestParameters['DomainName'] = $domainName;
-        $this->queryParameters['DomainName'] = $domainName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $funcId
-     *
-     * @return $this
-     */
-    public function setFuncId($funcId)
-    {
-        $this->requestParameters['FuncId'] = $funcId;
-        $this->queryParameters['FuncId'] = $funcId;
-
-        return $this;
-    }
-
-    /**
      * @param string $pageNumber
      *
      * @return $this
@@ -102,32 +52,6 @@ class DescribeUserDomainsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageNumber'] = $pageNumber;
         $this->queryParameters['PageNumber'] = $pageNumber;
-
-        return $this;
-    }
-
-    /**
-     * @param string $domainStatus
-     *
-     * @return $this
-     */
-    public function setDomainStatus($domainStatus)
-    {
-        $this->requestParameters['DomainStatus'] = $domainStatus;
-        $this->queryParameters['DomainStatus'] = $domainStatus;
-
-        return $this;
-    }
-
-    /**
-     * @param string $domainSearchType
-     *
-     * @return $this
-     */
-    public function setDomainSearchType($domainSearchType)
-    {
-        $this->requestParameters['DomainSearchType'] = $domainSearchType;
-        $this->queryParameters['DomainSearchType'] = $domainSearchType;
 
         return $this;
     }
@@ -185,6 +109,19 @@ class DescribeUserDomainsRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $changeEndTime
+     *
+     * @return $this
+     */
+    public function setChangeEndTime($changeEndTime)
+    {
+        $this->requestParameters['ChangeEndTime'] = $changeEndTime;
+        $this->queryParameters['ChangeEndTime'] = $changeEndTime;
+
+        return $this;
+    }
+
+    /**
      * @param string $pageSize
      *
      * @return $this
@@ -198,17 +135,108 @@ class DescribeUserDomainsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $value
+     * @param array $tag
      *
      * @return $this
      */
-    public function setTags(array $value)
+	public function setTags(array $tag)
+	{
+	    $this->requestParameters['Tags'] = $tag;
+		foreach ($tag as $depth1 => $depth1Value) {
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+		}
+
+		return $this;
+    }
+
+    /**
+     * @param string $funcFilter
+     *
+     * @return $this
+     */
+    public function setFuncFilter($funcFilter)
     {
-        $this->requestParameters['Tags'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->queryParameters['Tag.' . ($i + 1) . '.Value'] = $value[$i]['Value'];
-            $this->queryParameters['Tag.' . ($i + 1) . '.Key'] = $value[$i]['Key'];
-        }
+        $this->requestParameters['FuncFilter'] = $funcFilter;
+        $this->queryParameters['FuncFilter'] = $funcFilter;
+
+        return $this;
+    }
+
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $funcId
+     *
+     * @return $this
+     */
+    public function setFuncId($funcId)
+    {
+        $this->requestParameters['FuncId'] = $funcId;
+        $this->queryParameters['FuncId'] = $funcId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $domainStatus
+     *
+     * @return $this
+     */
+    public function setDomainStatus($domainStatus)
+    {
+        $this->requestParameters['DomainStatus'] = $domainStatus;
+        $this->queryParameters['DomainStatus'] = $domainStatus;
+
+        return $this;
+    }
+
+    /**
+     * @param string $domainSearchType
+     *
+     * @return $this
+     */
+    public function setDomainSearchType($domainSearchType)
+    {
+        $this->requestParameters['DomainSearchType'] = $domainSearchType;
+        $this->queryParameters['DomainSearchType'] = $domainSearchType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $changeStartTime
+     *
+     * @return $this
+     */
+    public function setChangeStartTime($changeStartTime)
+    {
+        $this->requestParameters['ChangeStartTime'] = $changeStartTime;
+        $this->queryParameters['ChangeStartTime'] = $changeStartTime;
 
         return $this;
     }

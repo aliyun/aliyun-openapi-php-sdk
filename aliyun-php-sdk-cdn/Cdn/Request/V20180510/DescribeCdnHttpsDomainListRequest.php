@@ -7,6 +7,9 @@ namespace Cdn\Request\V20180510;
  *
  * Request of DescribeCdnHttpsDomainList
  *
+ * @method string getPageNumber()
+ * @method string getPageSize()
+ * @method string getKeyword()
  * @method string getOwnerId()
  */
 class DescribeCdnHttpsDomainListRequest extends \RpcAcsRequest
@@ -27,6 +30,45 @@ class DescribeCdnHttpsDomainListRequest extends \RpcAcsRequest
             '2018-05-10',
             'DescribeCdnHttpsDomainList'
         );
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $keyword
+     *
+     * @return $this
+     */
+    public function setKeyword($keyword)
+    {
+        $this->requestParameters['Keyword'] = $keyword;
+        $this->queryParameters['Keyword'] = $keyword;
+
+        return $this;
     }
 
     /**

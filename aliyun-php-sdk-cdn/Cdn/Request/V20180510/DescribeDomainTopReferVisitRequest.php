@@ -10,6 +10,7 @@ namespace Cdn\Request\V20180510;
  * @method string getStartTime()
  * @method string getPercent()
  * @method string getDomainName()
+ * @method string getEndTime()
  * @method string getOwnerId()
  * @method string getSortBy()
  */
@@ -68,6 +69,19 @@ class DescribeDomainTopReferVisitRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DomainName'] = $domainName;
         $this->queryParameters['DomainName'] = $domainName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $endTime
+     *
+     * @return $this
+     */
+    public function setEndTime($endTime)
+    {
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
 
         return $this;
     }

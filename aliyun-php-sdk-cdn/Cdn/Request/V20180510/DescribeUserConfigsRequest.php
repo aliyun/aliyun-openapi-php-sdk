@@ -7,8 +7,8 @@ namespace Cdn\Request\V20180510;
  *
  * Request of DescribeUserConfigs
  *
- * @method string getSecurityToken()
  * @method string getOwnerId()
+ * @method string getSecurityToken()
  * @method string getConfig()
  */
 class DescribeUserConfigsRequest extends \RpcAcsRequest
@@ -32,19 +32,6 @@ class DescribeUserConfigsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -53,6 +40,19 @@ class DescribeUserConfigsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

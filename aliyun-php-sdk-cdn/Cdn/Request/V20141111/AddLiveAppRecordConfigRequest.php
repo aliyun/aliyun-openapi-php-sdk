@@ -8,12 +8,12 @@ namespace Cdn\Request\V20141111;
  * Request of AddLiveAppRecordConfig
  *
  * @method string getOssBucket()
- * @method string getAppName()
- * @method string getSecurityToken()
  * @method string getDomainName()
  * @method string getOssEndpoint()
- * @method string getOssObjectPrefix()
  * @method string getOwnerId()
+ * @method string getAppName()
+ * @method string getSecurityToken()
+ * @method string getOssObjectPrefix()
  */
 class AddLiveAppRecordConfigRequest extends \RpcAcsRequest
 {
@@ -49,32 +49,6 @@ class AddLiveAppRecordConfigRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $appName
-     *
-     * @return $this
-     */
-    public function setAppName($appName)
-    {
-        $this->requestParameters['AppName'] = $appName;
-        $this->queryParameters['AppName'] = $appName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $domainName
      *
      * @return $this
@@ -101,19 +75,6 @@ class AddLiveAppRecordConfigRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ossObjectPrefix
-     *
-     * @return $this
-     */
-    public function setOssObjectPrefix($ossObjectPrefix)
-    {
-        $this->requestParameters['OssObjectPrefix'] = $ossObjectPrefix;
-        $this->queryParameters['OssObjectPrefix'] = $ossObjectPrefix;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -122,6 +83,45 @@ class AddLiveAppRecordConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $appName
+     *
+     * @return $this
+     */
+    public function setAppName($appName)
+    {
+        $this->requestParameters['AppName'] = $appName;
+        $this->queryParameters['AppName'] = $appName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ossObjectPrefix
+     *
+     * @return $this
+     */
+    public function setOssObjectPrefix($ossObjectPrefix)
+    {
+        $this->requestParameters['OssObjectPrefix'] = $ossObjectPrefix;
+        $this->queryParameters['OssObjectPrefix'] = $ossObjectPrefix;
 
         return $this;
     }

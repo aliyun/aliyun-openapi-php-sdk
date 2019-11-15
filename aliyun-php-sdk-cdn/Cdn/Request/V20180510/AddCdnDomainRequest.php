@@ -7,13 +7,13 @@ namespace Cdn\Request\V20180510;
  *
  * Request of AddCdnDomain
  *
- * @method string getTopLevelDomain()
- * @method string getResourceGroupId()
  * @method string getSources()
+ * @method string getResourceGroupId()
  * @method string getSecurityToken()
  * @method string getCdnType()
- * @method string getOwnerAccount()
  * @method string getScope()
+ * @method string getTopLevelDomain()
+ * @method string getOwnerAccount()
  * @method string getDomainName()
  * @method string getOwnerId()
  * @method string getCheckUrl()
@@ -39,14 +39,14 @@ class AddCdnDomainRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $topLevelDomain
+     * @param string $sources
      *
      * @return $this
      */
-    public function setTopLevelDomain($topLevelDomain)
+    public function setSources($sources)
     {
-        $this->requestParameters['TopLevelDomain'] = $topLevelDomain;
-        $this->queryParameters['TopLevelDomain'] = $topLevelDomain;
+        $this->requestParameters['Sources'] = $sources;
+        $this->queryParameters['Sources'] = $sources;
 
         return $this;
     }
@@ -60,19 +60,6 @@ class AddCdnDomainRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
         $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $sources
-     *
-     * @return $this
-     */
-    public function setSources($sources)
-    {
-        $this->requestParameters['Sources'] = $sources;
-        $this->queryParameters['Sources'] = $sources;
 
         return $this;
     }
@@ -104,19 +91,6 @@ class AddCdnDomainRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $scope
      *
      * @return $this
@@ -125,6 +99,32 @@ class AddCdnDomainRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Scope'] = $scope;
         $this->queryParameters['Scope'] = $scope;
+
+        return $this;
+    }
+
+    /**
+     * @param string $topLevelDomain
+     *
+     * @return $this
+     */
+    public function setTopLevelDomain($topLevelDomain)
+    {
+        $this->requestParameters['TopLevelDomain'] = $topLevelDomain;
+        $this->queryParameters['TopLevelDomain'] = $topLevelDomain;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
         return $this;
     }

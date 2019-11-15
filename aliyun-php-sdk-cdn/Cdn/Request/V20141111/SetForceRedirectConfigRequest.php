@@ -7,10 +7,10 @@ namespace Cdn\Request\V20141111;
  *
  * Request of SetForceRedirectConfig
  *
- * @method string getSecurityToken()
  * @method string getDomainName()
  * @method string getRedirectType()
  * @method string getOwnerId()
+ * @method string getSecurityToken()
  */
 class SetForceRedirectConfigRequest extends \RpcAcsRequest
 {
@@ -30,19 +30,6 @@ class SetForceRedirectConfigRequest extends \RpcAcsRequest
             '2014-11-11',
             'SetForceRedirectConfig'
         );
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
     }
 
     /**
@@ -80,6 +67,19 @@ class SetForceRedirectConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

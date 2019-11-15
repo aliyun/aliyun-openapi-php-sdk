@@ -7,11 +7,11 @@ namespace Cdn\Request\V20141111;
  *
  * Request of DeleteSpecificConfig
  *
+ * @method string getDomainName()
+ * @method string getOwnerId()
  * @method string getSecurityToken()
  * @method string getFunctionName()
  * @method string getConfigId()
- * @method string getDomainName()
- * @method string getOwnerId()
  */
 class DeleteSpecificConfigRequest extends \RpcAcsRequest
 {
@@ -31,6 +31,32 @@ class DeleteSpecificConfigRequest extends \RpcAcsRequest
             '2014-11-11',
             'DeleteSpecificConfig'
         );
+    }
+
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
     }
 
     /**
@@ -68,32 +94,6 @@ class DeleteSpecificConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ConfigId'] = $configId;
         $this->queryParameters['ConfigId'] = $configId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $domainName
-     *
-     * @return $this
-     */
-    public function setDomainName($domainName)
-    {
-        $this->requestParameters['DomainName'] = $domainName;
-        $this->queryParameters['DomainName'] = $domainName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

@@ -7,9 +7,9 @@ namespace Cdn\Request\V20141111;
  *
  * Request of ModifyCdnService
  *
+ * @method string getOwnerId()
  * @method string getSecurityToken()
  * @method string getInternetChargeType()
- * @method string getOwnerId()
  */
 class ModifyCdnServiceRequest extends \RpcAcsRequest
 {
@@ -29,6 +29,19 @@ class ModifyCdnServiceRequest extends \RpcAcsRequest
             '2014-11-11',
             'ModifyCdnService'
         );
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
     }
 
     /**
@@ -53,19 +66,6 @@ class ModifyCdnServiceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['InternetChargeType'] = $internetChargeType;
         $this->queryParameters['InternetChargeType'] = $internetChargeType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

@@ -7,10 +7,10 @@ namespace Cdn\Request\V20141111;
  *
  * Request of SetLiveStreamsNotifyUrlConfig
  *
- * @method string getSecurityToken()
  * @method string getDomainName()
- * @method string getNotifyUrl()
  * @method string getOwnerId()
+ * @method string getSecurityToken()
+ * @method string getNotifyUrl()
  */
 class SetLiveStreamsNotifyUrlConfigRequest extends \RpcAcsRequest
 {
@@ -33,19 +33,6 @@ class SetLiveStreamsNotifyUrlConfigRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $domainName
      *
      * @return $this
@@ -59,19 +46,6 @@ class SetLiveStreamsNotifyUrlConfigRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $notifyUrl
-     *
-     * @return $this
-     */
-    public function setNotifyUrl($notifyUrl)
-    {
-        $this->requestParameters['NotifyUrl'] = $notifyUrl;
-        $this->queryParameters['NotifyUrl'] = $notifyUrl;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -80,6 +54,32 @@ class SetLiveStreamsNotifyUrlConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $notifyUrl
+     *
+     * @return $this
+     */
+    public function setNotifyUrl($notifyUrl)
+    {
+        $this->requestParameters['NotifyUrl'] = $notifyUrl;
+        $this->queryParameters['NotifyUrl'] = $notifyUrl;
 
         return $this;
     }

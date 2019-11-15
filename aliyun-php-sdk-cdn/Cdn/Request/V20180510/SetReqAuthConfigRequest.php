@@ -9,12 +9,12 @@ namespace Cdn\Request\V20180510;
  *
  * @method string getKey1()
  * @method string getKey2()
+ * @method string getTimeOut()
+ * @method string getAuthType()
  * @method string getAuthRemoteDesc()
  * @method string getSecurityToken()
  * @method string getDomainName()
  * @method string getOwnerId()
- * @method string getTimeOut()
- * @method string getAuthType()
  */
 class SetReqAuthConfigRequest extends \RpcAcsRequest
 {
@@ -58,6 +58,32 @@ class SetReqAuthConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Key2'] = $key2;
         $this->queryParameters['Key2'] = $key2;
+
+        return $this;
+    }
+
+    /**
+     * @param string $timeOut
+     *
+     * @return $this
+     */
+    public function setTimeOut($timeOut)
+    {
+        $this->requestParameters['TimeOut'] = $timeOut;
+        $this->queryParameters['TimeOut'] = $timeOut;
+
+        return $this;
+    }
+
+    /**
+     * @param string $authType
+     *
+     * @return $this
+     */
+    public function setAuthType($authType)
+    {
+        $this->requestParameters['AuthType'] = $authType;
+        $this->queryParameters['AuthType'] = $authType;
 
         return $this;
     }
@@ -110,32 +136,6 @@ class SetReqAuthConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $timeOut
-     *
-     * @return $this
-     */
-    public function setTimeOut($timeOut)
-    {
-        $this->requestParameters['TimeOut'] = $timeOut;
-        $this->queryParameters['TimeOut'] = $timeOut;
-
-        return $this;
-    }
-
-    /**
-     * @param string $authType
-     *
-     * @return $this
-     */
-    public function setAuthType($authType)
-    {
-        $this->requestParameters['AuthType'] = $authType;
-        $this->queryParameters['AuthType'] = $authType;
 
         return $this;
     }

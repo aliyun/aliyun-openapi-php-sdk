@@ -7,12 +7,12 @@ namespace Cdn\Request\V20141111;
  *
  * Request of SetDomainServerCertificate
  *
- * @method string getPrivateKey()
- * @method string getForceSet()
- * @method string getServerCertificateStatus()
  * @method string getServerCertificate()
+ * @method string getPrivateKey()
+ * @method string getServerCertificateStatus()
  * @method string getSecurityToken()
  * @method string getCertType()
+ * @method string getForceSet()
  * @method string getCertName()
  * @method string getDomainName()
  * @method string getOwnerId()
@@ -39,6 +39,19 @@ class SetDomainServerCertificateRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $serverCertificate
+     *
+     * @return $this
+     */
+    public function setServerCertificate($serverCertificate)
+    {
+        $this->requestParameters['ServerCertificate'] = $serverCertificate;
+        $this->queryParameters['ServerCertificate'] = $serverCertificate;
+
+        return $this;
+    }
+
+    /**
      * @param string $privateKey
      *
      * @return $this
@@ -52,19 +65,6 @@ class SetDomainServerCertificateRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $forceSet
-     *
-     * @return $this
-     */
-    public function setForceSet($forceSet)
-    {
-        $this->requestParameters['ForceSet'] = $forceSet;
-        $this->queryParameters['ForceSet'] = $forceSet;
-
-        return $this;
-    }
-
-    /**
      * @param string $serverCertificateStatus
      *
      * @return $this
@@ -73,19 +73,6 @@ class SetDomainServerCertificateRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ServerCertificateStatus'] = $serverCertificateStatus;
         $this->queryParameters['ServerCertificateStatus'] = $serverCertificateStatus;
-
-        return $this;
-    }
-
-    /**
-     * @param string $serverCertificate
-     *
-     * @return $this
-     */
-    public function setServerCertificate($serverCertificate)
-    {
-        $this->requestParameters['ServerCertificate'] = $serverCertificate;
-        $this->queryParameters['ServerCertificate'] = $serverCertificate;
 
         return $this;
     }
@@ -112,6 +99,19 @@ class SetDomainServerCertificateRequest extends \RpcAcsRequest
     {
         $this->requestParameters['CertType'] = $certType;
         $this->queryParameters['CertType'] = $certType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $forceSet
+     *
+     * @return $this
+     */
+    public function setForceSet($forceSet)
+    {
+        $this->requestParameters['ForceSet'] = $forceSet;
+        $this->queryParameters['ForceSet'] = $forceSet;
 
         return $this;
     }

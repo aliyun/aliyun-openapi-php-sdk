@@ -7,11 +7,7 @@ namespace Cdn\Request\V20141111;
  *
  * Request of AddCdnDomain
  *
- * @method string getTopLevelDomain()
  * @method string getSources()
- * @method string getOwnerAccount()
- * @method string getDomainName()
- * @method string getOwnerId()
  * @method string getResourceGroupId()
  * @method string getSourcePort()
  * @method string getPriorities()
@@ -19,6 +15,10 @@ namespace Cdn\Request\V20141111;
  * @method string getCdnType()
  * @method string getScope()
  * @method string getSourceType()
+ * @method string getTopLevelDomain()
+ * @method string getOwnerAccount()
+ * @method string getDomainName()
+ * @method string getOwnerId()
  * @method string getCheckUrl()
  * @method string getRegion()
  */
@@ -43,19 +43,6 @@ class AddCdnDomainRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $topLevelDomain
-     *
-     * @return $this
-     */
-    public function setTopLevelDomain($topLevelDomain)
-    {
-        $this->requestParameters['TopLevelDomain'] = $topLevelDomain;
-        $this->queryParameters['TopLevelDomain'] = $topLevelDomain;
-
-        return $this;
-    }
-
-    /**
      * @param string $sources
      *
      * @return $this
@@ -64,45 +51,6 @@ class AddCdnDomainRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Sources'] = $sources;
         $this->queryParameters['Sources'] = $sources;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $domainName
-     *
-     * @return $this
-     */
-    public function setDomainName($domainName)
-    {
-        $this->requestParameters['DomainName'] = $domainName;
-        $this->queryParameters['DomainName'] = $domainName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }
@@ -194,6 +142,58 @@ class AddCdnDomainRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SourceType'] = $sourceType;
         $this->queryParameters['SourceType'] = $sourceType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $topLevelDomain
+     *
+     * @return $this
+     */
+    public function setTopLevelDomain($topLevelDomain)
+    {
+        $this->requestParameters['TopLevelDomain'] = $topLevelDomain;
+        $this->queryParameters['TopLevelDomain'] = $topLevelDomain;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

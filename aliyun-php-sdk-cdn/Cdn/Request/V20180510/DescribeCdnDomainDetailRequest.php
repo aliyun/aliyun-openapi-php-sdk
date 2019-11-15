@@ -7,9 +7,9 @@ namespace Cdn\Request\V20180510;
  *
  * Request of DescribeCdnDomainDetail
  *
- * @method string getSecurityToken()
  * @method string getDomainName()
  * @method string getOwnerId()
+ * @method string getSecurityToken()
  */
 class DescribeCdnDomainDetailRequest extends \RpcAcsRequest
 {
@@ -29,19 +29,6 @@ class DescribeCdnDomainDetailRequest extends \RpcAcsRequest
             '2018-05-10',
             'DescribeCdnDomainDetail'
         );
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
     }
 
     /**
@@ -66,6 +53,19 @@ class DescribeCdnDomainDetailRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

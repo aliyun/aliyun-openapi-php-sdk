@@ -8,10 +8,10 @@ namespace Cdn\Request\V20180510;
  * Request of SetErrorPageConfig
  *
  * @method string getPageType()
- * @method string getSecurityToken()
  * @method string getDomainName()
  * @method string getCustomPageUrl()
  * @method string getOwnerId()
+ * @method string getSecurityToken()
  */
 class SetErrorPageConfigRequest extends \RpcAcsRequest
 {
@@ -42,19 +42,6 @@ class SetErrorPageConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageType'] = $pageType;
         $this->queryParameters['PageType'] = $pageType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }
@@ -94,6 +81,19 @@ class SetErrorPageConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

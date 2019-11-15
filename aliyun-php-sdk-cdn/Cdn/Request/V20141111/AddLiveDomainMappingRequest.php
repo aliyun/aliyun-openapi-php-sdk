@@ -7,10 +7,10 @@ namespace Cdn\Request\V20141111;
  *
  * Request of AddLiveDomainMapping
  *
+ * @method string getOwnerId()
  * @method string getPullDomain()
  * @method string getSecurityToken()
  * @method string getPushDomain()
- * @method string getOwnerId()
  */
 class AddLiveDomainMappingRequest extends \RpcAcsRequest
 {
@@ -30,6 +30,19 @@ class AddLiveDomainMappingRequest extends \RpcAcsRequest
             '2014-11-11',
             'AddLiveDomainMapping'
         );
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
     }
 
     /**
@@ -67,19 +80,6 @@ class AddLiveDomainMappingRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PushDomain'] = $pushDomain;
         $this->queryParameters['PushDomain'] = $pushDomain;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

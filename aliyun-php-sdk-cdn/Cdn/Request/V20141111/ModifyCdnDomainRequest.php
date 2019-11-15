@@ -7,14 +7,14 @@ namespace Cdn\Request\V20141111;
  *
  * Request of ModifyCdnDomain
  *
- * @method string getTopLevelDomain()
+ * @method string getSources()
  * @method string getSourcePort()
  * @method string getResourceGroupId()
  * @method string getPriorities()
- * @method string getSources()
  * @method string getSecurityToken()
- * @method string getDomainName()
  * @method string getSourceType()
+ * @method string getTopLevelDomain()
+ * @method string getDomainName()
  * @method string getOwnerId()
  */
 class ModifyCdnDomainRequest extends \RpcAcsRequest
@@ -38,14 +38,14 @@ class ModifyCdnDomainRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $topLevelDomain
+     * @param string $sources
      *
      * @return $this
      */
-    public function setTopLevelDomain($topLevelDomain)
+    public function setSources($sources)
     {
-        $this->requestParameters['TopLevelDomain'] = $topLevelDomain;
-        $this->queryParameters['TopLevelDomain'] = $topLevelDomain;
+        $this->requestParameters['Sources'] = $sources;
+        $this->queryParameters['Sources'] = $sources;
 
         return $this;
     }
@@ -90,19 +90,6 @@ class ModifyCdnDomainRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $sources
-     *
-     * @return $this
-     */
-    public function setSources($sources)
-    {
-        $this->requestParameters['Sources'] = $sources;
-        $this->queryParameters['Sources'] = $sources;
-
-        return $this;
-    }
-
-    /**
      * @param string $securityToken
      *
      * @return $this
@@ -116,19 +103,6 @@ class ModifyCdnDomainRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $domainName
-     *
-     * @return $this
-     */
-    public function setDomainName($domainName)
-    {
-        $this->requestParameters['DomainName'] = $domainName;
-        $this->queryParameters['DomainName'] = $domainName;
-
-        return $this;
-    }
-
-    /**
      * @param string $sourceType
      *
      * @return $this
@@ -137,6 +111,32 @@ class ModifyCdnDomainRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SourceType'] = $sourceType;
         $this->queryParameters['SourceType'] = $sourceType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $topLevelDomain
+     *
+     * @return $this
+     */
+    public function setTopLevelDomain($topLevelDomain)
+    {
+        $this->requestParameters['TopLevelDomain'] = $topLevelDomain;
+        $this->queryParameters['TopLevelDomain'] = $topLevelDomain;
+
+        return $this;
+    }
+
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
 
         return $this;
     }

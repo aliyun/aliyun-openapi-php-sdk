@@ -7,10 +7,10 @@ namespace Cdn\Request\V20141111;
  *
  * Request of SetHttpsOptionConfig
  *
- * @method string getSecurityToken()
  * @method string getDomainName()
- * @method string getHttp2()
  * @method string getOwnerId()
+ * @method string getSecurityToken()
+ * @method string getHttp2()
  */
 class SetHttpsOptionConfigRequest extends \RpcAcsRequest
 {
@@ -33,19 +33,6 @@ class SetHttpsOptionConfigRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $domainName
      *
      * @return $this
@@ -59,19 +46,6 @@ class SetHttpsOptionConfigRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $http2
-     *
-     * @return $this
-     */
-    public function setHttp2($http2)
-    {
-        $this->requestParameters['Http2'] = $http2;
-        $this->queryParameters['Http2'] = $http2;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -80,6 +54,32 @@ class SetHttpsOptionConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $http2
+     *
+     * @return $this
+     */
+    public function setHttp2($http2)
+    {
+        $this->requestParameters['Http2'] = $http2;
+        $this->queryParameters['Http2'] = $http2;
 
         return $this;
     }

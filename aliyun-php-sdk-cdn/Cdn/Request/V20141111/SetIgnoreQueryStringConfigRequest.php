@@ -8,11 +8,11 @@ namespace Cdn\Request\V20141111;
  * Request of SetIgnoreQueryStringConfig
  *
  * @method string getKeepOssArgs()
+ * @method string getDomainName()
+ * @method string getOwnerId()
  * @method string getHashKeyArgs()
  * @method string getSecurityToken()
  * @method string getEnable()
- * @method string getDomainName()
- * @method string getOwnerId()
  */
 class SetIgnoreQueryStringConfigRequest extends \RpcAcsRequest
 {
@@ -43,6 +43,32 @@ class SetIgnoreQueryStringConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['KeepOssArgs'] = $keepOssArgs;
         $this->queryParameters['KeepOssArgs'] = $keepOssArgs;
+
+        return $this;
+    }
+
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }
@@ -82,32 +108,6 @@ class SetIgnoreQueryStringConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Enable'] = $enable;
         $this->queryParameters['Enable'] = $enable;
-
-        return $this;
-    }
-
-    /**
-     * @param string $domainName
-     *
-     * @return $this
-     */
-    public function setDomainName($domainName)
-    {
-        $this->requestParameters['DomainName'] = $domainName;
-        $this->queryParameters['DomainName'] = $domainName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

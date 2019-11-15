@@ -8,10 +8,10 @@ namespace Cdn\Request\V20180510;
  * Request of BatchDeleteCdnDomainConfig
  *
  * @method string getFunctionNames()
- * @method string getSecurityToken()
  * @method string getDomainNames()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getSecurityToken()
  */
 class BatchDeleteCdnDomainConfigRequest extends \RpcAcsRequest
 {
@@ -42,19 +42,6 @@ class BatchDeleteCdnDomainConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['FunctionNames'] = $functionNames;
         $this->queryParameters['FunctionNames'] = $functionNames;
-
-        return $this;
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }
@@ -94,6 +81,19 @@ class BatchDeleteCdnDomainConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

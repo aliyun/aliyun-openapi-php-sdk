@@ -7,11 +7,12 @@ namespace Cdn\Request\V20180510;
  *
  * Request of SetFileCacheExpiredConfig
  *
+ * @method string getSecurityToken()
  * @method string getDomainName()
+ * @method string getWeight()
  * @method string getCacheContent()
  * @method string getOwnerId()
  * @method string getTTL()
- * @method string getConfigId()
  */
 class SetFileCacheExpiredConfigRequest extends \RpcAcsRequest
 {
@@ -34,6 +35,19 @@ class SetFileCacheExpiredConfigRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
      * @param string $domainName
      *
      * @return $this
@@ -42,6 +56,19 @@ class SetFileCacheExpiredConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DomainName'] = $domainName;
         $this->queryParameters['DomainName'] = $domainName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $weight
+     *
+     * @return $this
+     */
+    public function setWeight($weight)
+    {
+        $this->requestParameters['Weight'] = $weight;
+        $this->queryParameters['Weight'] = $weight;
 
         return $this;
     }
@@ -81,19 +108,6 @@ class SetFileCacheExpiredConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TTL'] = $tTL;
         $this->queryParameters['TTL'] = $tTL;
-
-        return $this;
-    }
-
-    /**
-     * @param string $configId
-     *
-     * @return $this
-     */
-    public function setConfigId($configId)
-    {
-        $this->requestParameters['ConfigId'] = $configId;
-        $this->queryParameters['ConfigId'] = $configId;
 
         return $this;
     }

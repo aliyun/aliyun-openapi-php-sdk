@@ -8,8 +8,8 @@ namespace Cdn\Request\V20180510;
  * Request of DescribeDomainTopUrlVisit
  *
  * @method string getStartTime()
- * @method string getPercent()
  * @method string getDomainName()
+ * @method string getEndTime()
  * @method string getOwnerId()
  * @method string getSortBy()
  */
@@ -47,19 +47,6 @@ class DescribeDomainTopUrlVisitRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $percent
-     *
-     * @return $this
-     */
-    public function setPercent($percent)
-    {
-        $this->requestParameters['Percent'] = $percent;
-        $this->queryParameters['Percent'] = $percent;
-
-        return $this;
-    }
-
-    /**
      * @param string $domainName
      *
      * @return $this
@@ -68,6 +55,19 @@ class DescribeDomainTopUrlVisitRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DomainName'] = $domainName;
         $this->queryParameters['DomainName'] = $domainName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $endTime
+     *
+     * @return $this
+     */
+    public function setEndTime($endTime)
+    {
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
 
         return $this;
     }

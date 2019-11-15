@@ -8,10 +8,10 @@ namespace Cdn\Request\V20141111;
  * Request of SetRemoveQueryStringConfig
  *
  * @method string getKeepOssArgs()
- * @method string getSecurityToken()
  * @method string getDomainName()
- * @method string getAliRemoveArgs()
  * @method string getOwnerId()
+ * @method string getSecurityToken()
+ * @method string getAliRemoveArgs()
  */
 class SetRemoveQueryStringConfigRequest extends \RpcAcsRequest
 {
@@ -47,19 +47,6 @@ class SetRemoveQueryStringConfigRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $domainName
      *
      * @return $this
@@ -73,19 +60,6 @@ class SetRemoveQueryStringConfigRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $aliRemoveArgs
-     *
-     * @return $this
-     */
-    public function setAliRemoveArgs($aliRemoveArgs)
-    {
-        $this->requestParameters['AliRemoveArgs'] = $aliRemoveArgs;
-        $this->queryParameters['AliRemoveArgs'] = $aliRemoveArgs;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -94,6 +68,32 @@ class SetRemoveQueryStringConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $aliRemoveArgs
+     *
+     * @return $this
+     */
+    public function setAliRemoveArgs($aliRemoveArgs)
+    {
+        $this->requestParameters['AliRemoveArgs'] = $aliRemoveArgs;
+        $this->queryParameters['AliRemoveArgs'] = $aliRemoveArgs;
 
         return $this;
     }

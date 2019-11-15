@@ -7,12 +7,11 @@ namespace Cdn\Request\V20141111;
  *
  * Request of DescribeRangeDataByLocateAndIspService
  *
- * @method string getIspNames()
- * @method string getSecurityToken()
  * @method string getDomainNames()
  * @method string getLocationNames()
+ * @method string getStartTime()
+ * @method string getIspNames()
  * @method string getEndTime()
- * @method string getstartTime()
  * @method string getOwnerId()
  */
 class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
@@ -33,32 +32,6 @@ class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
             '2014-11-11',
             'DescribeRangeDataByLocateAndIspService'
         );
-    }
-
-    /**
-     * @param string $ispNames
-     *
-     * @return $this
-     */
-    public function setIspNames($ispNames)
-    {
-        $this->requestParameters['IspNames'] = $ispNames;
-        $this->queryParameters['IspNames'] = $ispNames;
-
-        return $this;
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
     }
 
     /**
@@ -88,6 +61,32 @@ class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ispNames
+     *
+     * @return $this
+     */
+    public function setIspNames($ispNames)
+    {
+        $this->requestParameters['IspNames'] = $ispNames;
+        $this->queryParameters['IspNames'] = $ispNames;
+
+        return $this;
+    }
+
+    /**
      * @param string $endTime
      *
      * @return $this
@@ -96,19 +95,6 @@ class DescribeRangeDataByLocateAndIspServiceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['EndTime'] = $endTime;
         $this->queryParameters['EndTime'] = $endTime;
-
-        return $this;
-    }
-
-    /**
-     * @param string $startTime
-     *
-     * @return $this
-     */
-    public function setstartTime($startTime)
-    {
-        $this->requestParameters['startTime'] = $startTime;
-        $this->queryParameters['startTime'] = $startTime;
 
         return $this;
     }

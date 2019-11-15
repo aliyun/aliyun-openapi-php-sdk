@@ -8,8 +8,8 @@ namespace Cdn\Request\V20141111;
  * Request of DescribeDomainsBySource
  *
  * @method string getSources()
- * @method string getSecurityToken()
  * @method string getOwnerId()
+ * @method string getSecurityToken()
  */
 class DescribeDomainsBySourceRequest extends \RpcAcsRequest
 {
@@ -45,19 +45,6 @@ class DescribeDomainsBySourceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -66,6 +53,19 @@ class DescribeDomainsBySourceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

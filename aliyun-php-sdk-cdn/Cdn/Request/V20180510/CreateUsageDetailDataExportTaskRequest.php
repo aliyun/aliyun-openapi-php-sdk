@@ -9,6 +9,7 @@ namespace Cdn\Request\V20180510;
  *
  * @method string getDomainNames()
  * @method string getTaskName()
+ * @method string getLanguage()
  * @method string getStartTime()
  * @method string getType()
  * @method string getGroup()
@@ -57,6 +58,19 @@ class CreateUsageDetailDataExportTaskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TaskName'] = $taskName;
         $this->queryParameters['TaskName'] = $taskName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $language
+     *
+     * @return $this
+     */
+    public function setLanguage($language)
+    {
+        $this->requestParameters['Language'] = $language;
+        $this->queryParameters['Language'] = $language;
 
         return $this;
     }

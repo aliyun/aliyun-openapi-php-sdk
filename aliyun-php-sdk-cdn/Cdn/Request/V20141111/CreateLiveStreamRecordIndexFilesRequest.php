@@ -7,16 +7,16 @@ namespace Cdn\Request\V20141111;
  *
  * Request of CreateLiveStreamRecordIndexFiles
  *
- * @method string getOssBucket()
+ * @method string getOssEndpoint()
+ * @method string getStartTime()
+ * @method string getOssObject()
  * @method string getAppName()
  * @method string getSecurityToken()
- * @method string getDomainName()
- * @method string getOssEndpoint()
- * @method string getEndTime()
- * @method string getStartTime()
- * @method string getOwnerId()
  * @method string getStreamName()
- * @method string getOssObject()
+ * @method string getOssBucket()
+ * @method string getDomainName()
+ * @method string getEndTime()
+ * @method string getOwnerId()
  */
 class CreateLiveStreamRecordIndexFilesRequest extends \RpcAcsRequest
 {
@@ -39,14 +39,40 @@ class CreateLiveStreamRecordIndexFilesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ossBucket
+     * @param string $ossEndpoint
      *
      * @return $this
      */
-    public function setOssBucket($ossBucket)
+    public function setOssEndpoint($ossEndpoint)
     {
-        $this->requestParameters['OssBucket'] = $ossBucket;
-        $this->queryParameters['OssBucket'] = $ossBucket;
+        $this->requestParameters['OssEndpoint'] = $ossEndpoint;
+        $this->queryParameters['OssEndpoint'] = $ossEndpoint;
+
+        return $this;
+    }
+
+    /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ossObject
+     *
+     * @return $this
+     */
+    public function setOssObject($ossObject)
+    {
+        $this->requestParameters['OssObject'] = $ossObject;
+        $this->queryParameters['OssObject'] = $ossObject;
 
         return $this;
     }
@@ -78,6 +104,32 @@ class CreateLiveStreamRecordIndexFilesRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $streamName
+     *
+     * @return $this
+     */
+    public function setStreamName($streamName)
+    {
+        $this->requestParameters['StreamName'] = $streamName;
+        $this->queryParameters['StreamName'] = $streamName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ossBucket
+     *
+     * @return $this
+     */
+    public function setOssBucket($ossBucket)
+    {
+        $this->requestParameters['OssBucket'] = $ossBucket;
+        $this->queryParameters['OssBucket'] = $ossBucket;
+
+        return $this;
+    }
+
+    /**
      * @param string $domainName
      *
      * @return $this
@@ -86,19 +138,6 @@ class CreateLiveStreamRecordIndexFilesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DomainName'] = $domainName;
         $this->queryParameters['DomainName'] = $domainName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ossEndpoint
-     *
-     * @return $this
-     */
-    public function setOssEndpoint($ossEndpoint)
-    {
-        $this->requestParameters['OssEndpoint'] = $ossEndpoint;
-        $this->queryParameters['OssEndpoint'] = $ossEndpoint;
 
         return $this;
     }
@@ -117,19 +156,6 @@ class CreateLiveStreamRecordIndexFilesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $startTime
-     *
-     * @return $this
-     */
-    public function setStartTime($startTime)
-    {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -138,32 +164,6 @@ class CreateLiveStreamRecordIndexFilesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $streamName
-     *
-     * @return $this
-     */
-    public function setStreamName($streamName)
-    {
-        $this->requestParameters['StreamName'] = $streamName;
-        $this->queryParameters['StreamName'] = $streamName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ossObject
-     *
-     * @return $this
-     */
-    public function setOssObject($ossObject)
-    {
-        $this->requestParameters['OssObject'] = $ossObject;
-        $this->queryParameters['OssObject'] = $ossObject;
 
         return $this;
     }

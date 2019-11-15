@@ -7,9 +7,9 @@ namespace Cdn\Request\V20141111;
  *
  * Request of DescribeUserCustomerLabels
  *
+ * @method string getOwnerId()
  * @method string getUid()
  * @method string getSecurityToken()
- * @method string getOwnerId()
  */
 class DescribeUserCustomerLabelsRequest extends \RpcAcsRequest
 {
@@ -29,6 +29,19 @@ class DescribeUserCustomerLabelsRequest extends \RpcAcsRequest
             '2014-11-11',
             'DescribeUserCustomerLabels'
         );
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
     }
 
     /**
@@ -53,19 +66,6 @@ class DescribeUserCustomerLabelsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

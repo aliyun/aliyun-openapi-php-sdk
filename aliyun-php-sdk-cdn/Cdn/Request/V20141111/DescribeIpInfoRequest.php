@@ -7,9 +7,9 @@ namespace Cdn\Request\V20141111;
  *
  * Request of DescribeIpInfo
  *
- * @method string getSecurityToken()
  * @method string getIP()
  * @method string getOwnerId()
+ * @method string getSecurityToken()
  */
 class DescribeIpInfoRequest extends \RpcAcsRequest
 {
@@ -29,19 +29,6 @@ class DescribeIpInfoRequest extends \RpcAcsRequest
             '2014-11-11',
             'DescribeIpInfo'
         );
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
     }
 
     /**
@@ -66,6 +53,19 @@ class DescribeIpInfoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

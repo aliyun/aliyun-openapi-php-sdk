@@ -7,14 +7,14 @@ namespace Cdn\Request\V20141111;
  *
  * Request of DescribeLiveStreamSnapshotInfo
  *
+ * @method string getStartTime()
  * @method string getAppName()
  * @method string getSecurityToken()
- * @method string getDomainName()
  * @method string getLimit()
- * @method string getEndTime()
- * @method string getStartTime()
- * @method string getOwnerId()
  * @method string getStreamName()
+ * @method string getDomainName()
+ * @method string getEndTime()
+ * @method string getOwnerId()
  */
 class DescribeLiveStreamSnapshotInfoRequest extends \RpcAcsRequest
 {
@@ -34,6 +34,19 @@ class DescribeLiveStreamSnapshotInfoRequest extends \RpcAcsRequest
             '2014-11-11',
             'DescribeLiveStreamSnapshotInfo'
         );
+    }
+
+    /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
+
+        return $this;
     }
 
     /**
@@ -63,19 +76,6 @@ class DescribeLiveStreamSnapshotInfoRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $domainName
-     *
-     * @return $this
-     */
-    public function setDomainName($domainName)
-    {
-        $this->requestParameters['DomainName'] = $domainName;
-        $this->queryParameters['DomainName'] = $domainName;
-
-        return $this;
-    }
-
-    /**
      * @param string $limit
      *
      * @return $this
@@ -84,6 +84,32 @@ class DescribeLiveStreamSnapshotInfoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Limit'] = $limit;
         $this->queryParameters['Limit'] = $limit;
+
+        return $this;
+    }
+
+    /**
+     * @param string $streamName
+     *
+     * @return $this
+     */
+    public function setStreamName($streamName)
+    {
+        $this->requestParameters['StreamName'] = $streamName;
+        $this->queryParameters['StreamName'] = $streamName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
 
         return $this;
     }
@@ -102,19 +128,6 @@ class DescribeLiveStreamSnapshotInfoRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $startTime
-     *
-     * @return $this
-     */
-    public function setStartTime($startTime)
-    {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -123,19 +136,6 @@ class DescribeLiveStreamSnapshotInfoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $streamName
-     *
-     * @return $this
-     */
-    public function setStreamName($streamName)
-    {
-        $this->requestParameters['StreamName'] = $streamName;
-        $this->queryParameters['StreamName'] = $streamName;
 
         return $this;
     }

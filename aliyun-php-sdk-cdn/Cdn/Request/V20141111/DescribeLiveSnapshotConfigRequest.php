@@ -7,14 +7,14 @@ namespace Cdn\Request\V20141111;
  *
  * Request of DescribeLiveSnapshotConfig
  *
+ * @method string getPageNum()
  * @method string getAppName()
  * @method string getSecurityToken()
- * @method string getDomainName()
  * @method string getPageSize()
- * @method string getOwnerId()
- * @method string getPageNum()
  * @method string getStreamName()
  * @method string getOrder()
+ * @method string getDomainName()
+ * @method string getOwnerId()
  */
 class DescribeLiveSnapshotConfigRequest extends \RpcAcsRequest
 {
@@ -34,6 +34,19 @@ class DescribeLiveSnapshotConfigRequest extends \RpcAcsRequest
             '2014-11-11',
             'DescribeLiveSnapshotConfig'
         );
+    }
+
+    /**
+     * @param string $pageNum
+     *
+     * @return $this
+     */
+    public function setPageNum($pageNum)
+    {
+        $this->requestParameters['PageNum'] = $pageNum;
+        $this->queryParameters['PageNum'] = $pageNum;
+
+        return $this;
     }
 
     /**
@@ -63,19 +76,6 @@ class DescribeLiveSnapshotConfigRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $domainName
-     *
-     * @return $this
-     */
-    public function setDomainName($domainName)
-    {
-        $this->requestParameters['DomainName'] = $domainName;
-        $this->queryParameters['DomainName'] = $domainName;
-
-        return $this;
-    }
-
-    /**
      * @param string $pageSize
      *
      * @return $this
@@ -84,32 +84,6 @@ class DescribeLiveSnapshotConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageSize'] = $pageSize;
         $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNum
-     *
-     * @return $this
-     */
-    public function setPageNum($pageNum)
-    {
-        $this->requestParameters['PageNum'] = $pageNum;
-        $this->queryParameters['PageNum'] = $pageNum;
 
         return $this;
     }
@@ -136,6 +110,32 @@ class DescribeLiveSnapshotConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Order'] = $order;
         $this->queryParameters['Order'] = $order;
+
+        return $this;
+    }
+
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

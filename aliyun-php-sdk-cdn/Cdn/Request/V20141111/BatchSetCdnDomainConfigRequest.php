@@ -8,10 +8,10 @@ namespace Cdn\Request\V20141111;
  * Request of BatchSetCdnDomainConfig
  *
  * @method string getFunctions()
- * @method string getSecurityToken()
  * @method string getDomainNames()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getSecurityToken()
  */
 class BatchSetCdnDomainConfigRequest extends \RpcAcsRequest
 {
@@ -42,19 +42,6 @@ class BatchSetCdnDomainConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Functions'] = $functions;
         $this->queryParameters['Functions'] = $functions;
-
-        return $this;
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }
@@ -94,6 +81,19 @@ class BatchSetCdnDomainConfigRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }
