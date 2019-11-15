@@ -3,13 +3,13 @@
 namespace dcdn\Request\V20180115;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeDcdnDomainBpsData
  *
  * @method string getLocationNameEn()
  * @method string getStartTime()
  * @method string getIspNameEn()
- * @method string getFixTimeGap()
- * @method string getTimeMerge()
  * @method string getDomainName()
  * @method string getEndTime()
  * @method string getOwnerId()
@@ -70,32 +70,6 @@ class DescribeDcdnDomainBpsDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['IspNameEn'] = $ispNameEn;
         $this->queryParameters['IspNameEn'] = $ispNameEn;
-
-        return $this;
-    }
-
-    /**
-     * @param string $fixTimeGap
-     *
-     * @return $this
-     */
-    public function setFixTimeGap($fixTimeGap)
-    {
-        $this->requestParameters['FixTimeGap'] = $fixTimeGap;
-        $this->queryParameters['FixTimeGap'] = $fixTimeGap;
-
-        return $this;
-    }
-
-    /**
-     * @param string $timeMerge
-     *
-     * @return $this
-     */
-    public function setTimeMerge($timeMerge)
-    {
-        $this->requestParameters['TimeMerge'] = $timeMerge;
-        $this->queryParameters['TimeMerge'] = $timeMerge;
 
         return $this;
     }

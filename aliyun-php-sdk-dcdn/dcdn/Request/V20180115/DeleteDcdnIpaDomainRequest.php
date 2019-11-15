@@ -5,16 +5,15 @@ namespace dcdn\Request\V20180115;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeDcdnDomainLog
+ * Request of DeleteDcdnIpaDomain
  *
- * @method string getStartTime()
- * @method string getPageNumber()
- * @method string getPageSize()
+ * @method string getResourceGroupId()
+ * @method string getSecurityToken()
+ * @method string getOwnerAccount()
  * @method string getDomainName()
- * @method string getEndTime()
  * @method string getOwnerId()
  */
-class DescribeDcdnDomainLogRequest extends \RpcAcsRequest
+class DeleteDcdnIpaDomainRequest extends \RpcAcsRequest
 {
 
     /**
@@ -30,45 +29,45 @@ class DescribeDcdnDomainLogRequest extends \RpcAcsRequest
         parent::__construct(
             'dcdn',
             '2018-01-15',
-            'DescribeDcdnDomainLog'
+            'DeleteDcdnIpaDomain'
         );
     }
 
     /**
-     * @param string $startTime
+     * @param string $resourceGroupId
      *
      * @return $this
      */
-    public function setStartTime($startTime)
+    public function setResourceGroupId($resourceGroupId)
     {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
 
         return $this;
     }
 
     /**
-     * @param string $pageNumber
+     * @param string $securityToken
      *
      * @return $this
      */
-    public function setPageNumber($pageNumber)
+    public function setSecurityToken($securityToken)
     {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }
 
     /**
-     * @param string $pageSize
+     * @param string $ownerAccount
      *
      * @return $this
      */
-    public function setPageSize($pageSize)
+    public function setOwnerAccount($ownerAccount)
     {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
         return $this;
     }
@@ -82,19 +81,6 @@ class DescribeDcdnDomainLogRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DomainName'] = $domainName;
         $this->queryParameters['DomainName'] = $domainName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $endTime
-     *
-     * @return $this
-     */
-    public function setEndTime($endTime)
-    {
-        $this->requestParameters['EndTime'] = $endTime;
-        $this->queryParameters['EndTime'] = $endTime;
 
         return $this;
     }

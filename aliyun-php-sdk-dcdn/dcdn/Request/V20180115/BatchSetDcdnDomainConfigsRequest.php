@@ -3,13 +3,15 @@
 namespace dcdn\Request\V20180115;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of BatchSetDcdnDomainConfigs
  *
  * @method string getFunctions()
- * @method string getSecurityToken()
  * @method string getDomainNames()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getSecurityToken()
  */
 class BatchSetDcdnDomainConfigsRequest extends \RpcAcsRequest
 {
@@ -40,19 +42,6 @@ class BatchSetDcdnDomainConfigsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Functions'] = $functions;
         $this->queryParameters['Functions'] = $functions;
-
-        return $this;
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }
@@ -92,6 +81,19 @@ class BatchSetDcdnDomainConfigsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

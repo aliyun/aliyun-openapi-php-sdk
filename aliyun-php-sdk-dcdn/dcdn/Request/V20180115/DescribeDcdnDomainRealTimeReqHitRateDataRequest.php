@@ -3,6 +3,8 @@
 namespace dcdn\Request\V20180115;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeDcdnDomainRealTimeReqHitRateData
  *
  * @method string getStartTime()

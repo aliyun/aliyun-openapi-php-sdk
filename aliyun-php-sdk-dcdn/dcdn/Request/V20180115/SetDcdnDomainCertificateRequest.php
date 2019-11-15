@@ -3,18 +3,20 @@
 namespace dcdn\Request\V20180115;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of SetDcdnDomainCertificate
  *
- * @method string getForceSet()
+ * @method string getSSLProtocol()
  * @method string getSecurityToken()
  * @method string getCertType()
- * @method string getSSLPub()
+ * @method string getSSLPri()
+ * @method string getForceSet()
  * @method string getCertName()
- * @method string getSSLProtocol()
  * @method string getDomainName()
  * @method string getOwnerId()
+ * @method string getSSLPub()
  * @method string getRegion()
- * @method string getSSLPri()
  */
 class SetDcdnDomainCertificateRequest extends \RpcAcsRequest
 {
@@ -37,14 +39,14 @@ class SetDcdnDomainCertificateRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $forceSet
+     * @param string $sSLProtocol
      *
      * @return $this
      */
-    public function setForceSet($forceSet)
+    public function setSSLProtocol($sSLProtocol)
     {
-        $this->requestParameters['ForceSet'] = $forceSet;
-        $this->queryParameters['ForceSet'] = $forceSet;
+        $this->requestParameters['SSLProtocol'] = $sSLProtocol;
+        $this->queryParameters['SSLProtocol'] = $sSLProtocol;
 
         return $this;
     }
@@ -76,14 +78,27 @@ class SetDcdnDomainCertificateRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $sSLPub
+     * @param string $sSLPri
      *
      * @return $this
      */
-    public function setSSLPub($sSLPub)
+    public function setSSLPri($sSLPri)
     {
-        $this->requestParameters['SSLPub'] = $sSLPub;
-        $this->queryParameters['SSLPub'] = $sSLPub;
+        $this->requestParameters['SSLPri'] = $sSLPri;
+        $this->queryParameters['SSLPri'] = $sSLPri;
+
+        return $this;
+    }
+
+    /**
+     * @param string $forceSet
+     *
+     * @return $this
+     */
+    public function setForceSet($forceSet)
+    {
+        $this->requestParameters['ForceSet'] = $forceSet;
+        $this->queryParameters['ForceSet'] = $forceSet;
 
         return $this;
     }
@@ -97,19 +112,6 @@ class SetDcdnDomainCertificateRequest extends \RpcAcsRequest
     {
         $this->requestParameters['CertName'] = $certName;
         $this->queryParameters['CertName'] = $certName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $sSLProtocol
-     *
-     * @return $this
-     */
-    public function setSSLProtocol($sSLProtocol)
-    {
-        $this->requestParameters['SSLProtocol'] = $sSLProtocol;
-        $this->queryParameters['SSLProtocol'] = $sSLProtocol;
 
         return $this;
     }
@@ -141,6 +143,19 @@ class SetDcdnDomainCertificateRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $sSLPub
+     *
+     * @return $this
+     */
+    public function setSSLPub($sSLPub)
+    {
+        $this->requestParameters['SSLPub'] = $sSLPub;
+        $this->queryParameters['SSLPub'] = $sSLPub;
+
+        return $this;
+    }
+
+    /**
      * @param string $region
      *
      * @return $this
@@ -149,19 +164,6 @@ class SetDcdnDomainCertificateRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Region'] = $region;
         $this->queryParameters['Region'] = $region;
-
-        return $this;
-    }
-
-    /**
-     * @param string $sSLPri
-     *
-     * @return $this
-     */
-    public function setSSLPri($sSLPri)
-    {
-        $this->requestParameters['SSLPri'] = $sSLPri;
-        $this->queryParameters['SSLPri'] = $sSLPri;
 
         return $this;
     }

@@ -5,12 +5,14 @@ namespace dcdn\Request\V20180115;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeDcdnService
+ * Request of DeleteDcdnSpecificConfig
  *
+ * @method string getDomainName()
  * @method string getOwnerId()
  * @method string getSecurityToken()
+ * @method string getConfigId()
  */
-class DescribeDcdnServiceRequest extends \RpcAcsRequest
+class DeleteDcdnSpecificConfigRequest extends \RpcAcsRequest
 {
 
     /**
@@ -26,8 +28,21 @@ class DescribeDcdnServiceRequest extends \RpcAcsRequest
         parent::__construct(
             'dcdn',
             '2018-01-15',
-            'DescribeDcdnService'
+            'DeleteDcdnSpecificConfig'
         );
+    }
+
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
+
+        return $this;
     }
 
     /**
@@ -52,6 +67,19 @@ class DescribeDcdnServiceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $configId
+     *
+     * @return $this
+     */
+    public function setConfigId($configId)
+    {
+        $this->requestParameters['ConfigId'] = $configId;
+        $this->queryParameters['ConfigId'] = $configId;
 
         return $this;
     }

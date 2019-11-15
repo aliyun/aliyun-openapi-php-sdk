@@ -5,14 +5,14 @@ namespace dcdn\Request\V20180115;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeDcdnDomainIspData
+ * Request of DescribeDcdnIpaDomainConfigs
  *
- * @method string getStartTime()
+ * @method string getFunctionNames()
  * @method string getDomainName()
- * @method string getEndTime()
  * @method string getOwnerId()
+ * @method string getSecurityToken()
  */
-class DescribeDcdnDomainIspDataRequest extends \RpcAcsRequest
+class DescribeDcdnIpaDomainConfigsRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,19 +28,19 @@ class DescribeDcdnDomainIspDataRequest extends \RpcAcsRequest
         parent::__construct(
             'dcdn',
             '2018-01-15',
-            'DescribeDcdnDomainIspData'
+            'DescribeDcdnIpaDomainConfigs'
         );
     }
 
     /**
-     * @param string $startTime
+     * @param string $functionNames
      *
      * @return $this
      */
-    public function setStartTime($startTime)
+    public function setFunctionNames($functionNames)
     {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
+        $this->requestParameters['FunctionNames'] = $functionNames;
+        $this->queryParameters['FunctionNames'] = $functionNames;
 
         return $this;
     }
@@ -59,19 +59,6 @@ class DescribeDcdnDomainIspDataRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $endTime
-     *
-     * @return $this
-     */
-    public function setEndTime($endTime)
-    {
-        $this->requestParameters['EndTime'] = $endTime;
-        $this->queryParameters['EndTime'] = $endTime;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -80,6 +67,19 @@ class DescribeDcdnDomainIspDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

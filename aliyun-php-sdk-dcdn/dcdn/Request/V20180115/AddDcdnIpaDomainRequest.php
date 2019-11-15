@@ -5,7 +5,7 @@ namespace dcdn\Request\V20180115;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of AddDcdnDomain
+ * Request of AddDcdnIpaDomain
  *
  * @method string getSources()
  * @method string getResourceGroupId()
@@ -17,7 +17,7 @@ namespace dcdn\Request\V20180115;
  * @method string getOwnerId()
  * @method string getCheckUrl()
  */
-class AddDcdnDomainRequest extends \RpcAcsRequest
+class AddDcdnIpaDomainRequest extends \RpcAcsRequest
 {
 
     /**
@@ -33,7 +33,7 @@ class AddDcdnDomainRequest extends \RpcAcsRequest
         parent::__construct(
             'dcdn',
             '2018-01-15',
-            'AddDcdnDomain'
+            'AddDcdnIpaDomain'
         );
     }
 

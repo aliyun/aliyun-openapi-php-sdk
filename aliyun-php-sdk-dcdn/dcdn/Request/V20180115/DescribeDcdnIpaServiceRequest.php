@@ -5,14 +5,12 @@ namespace dcdn\Request\V20180115;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of PreloadDcdnObjectCaches
+ * Request of DescribeDcdnIpaService
  *
- * @method string getArea()
- * @method string getObjectPath()
  * @method string getOwnerId()
  * @method string getSecurityToken()
  */
-class PreloadDcdnObjectCachesRequest extends \RpcAcsRequest
+class DescribeDcdnIpaServiceRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,34 +26,8 @@ class PreloadDcdnObjectCachesRequest extends \RpcAcsRequest
         parent::__construct(
             'dcdn',
             '2018-01-15',
-            'PreloadDcdnObjectCaches'
+            'DescribeDcdnIpaService'
         );
-    }
-
-    /**
-     * @param string $area
-     *
-     * @return $this
-     */
-    public function setArea($area)
-    {
-        $this->requestParameters['Area'] = $area;
-        $this->queryParameters['Area'] = $area;
-
-        return $this;
-    }
-
-    /**
-     * @param string $objectPath
-     *
-     * @return $this
-     */
-    public function setObjectPath($objectPath)
-    {
-        $this->requestParameters['ObjectPath'] = $objectPath;
-        $this->queryParameters['ObjectPath'] = $objectPath;
-
-        return $this;
     }
 
     /**

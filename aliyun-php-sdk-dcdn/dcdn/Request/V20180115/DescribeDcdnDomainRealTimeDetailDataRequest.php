@@ -5,22 +5,20 @@ namespace dcdn\Request\V20180115;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeDcdnDomainLog
+ * Request of DescribeDcdnDomainRealTimeDetailData
  *
+ * @method string getLocationNameEn()
  * @method string getStartTime()
- * @method string getPageNumber()
- * @method string getPageSize()
+ * @method string getIspNameEn()
+ * @method string getMerge()
  * @method string getDomainName()
  * @method string getEndTime()
+ * @method string getMergeLocIsp()
  * @method string getOwnerId()
+ * @method string getField()
  */
-class DescribeDcdnDomainLogRequest extends \RpcAcsRequest
+class DescribeDcdnDomainRealTimeDetailDataRequest extends \RpcAcsRequest
 {
-
-    /**
-     * @var string
-     */
-    protected $method = 'POST';
 
     /**
      * Class constructor.
@@ -30,8 +28,21 @@ class DescribeDcdnDomainLogRequest extends \RpcAcsRequest
         parent::__construct(
             'dcdn',
             '2018-01-15',
-            'DescribeDcdnDomainLog'
+            'DescribeDcdnDomainRealTimeDetailData'
         );
+    }
+
+    /**
+     * @param string $locationNameEn
+     *
+     * @return $this
+     */
+    public function setLocationNameEn($locationNameEn)
+    {
+        $this->requestParameters['LocationNameEn'] = $locationNameEn;
+        $this->queryParameters['LocationNameEn'] = $locationNameEn;
+
+        return $this;
     }
 
     /**
@@ -48,27 +59,27 @@ class DescribeDcdnDomainLogRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageNumber
+     * @param string $ispNameEn
      *
      * @return $this
      */
-    public function setPageNumber($pageNumber)
+    public function setIspNameEn($ispNameEn)
     {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
+        $this->requestParameters['IspNameEn'] = $ispNameEn;
+        $this->queryParameters['IspNameEn'] = $ispNameEn;
 
         return $this;
     }
 
     /**
-     * @param string $pageSize
+     * @param string $merge
      *
      * @return $this
      */
-    public function setPageSize($pageSize)
+    public function setMerge($merge)
     {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
+        $this->requestParameters['Merge'] = $merge;
+        $this->queryParameters['Merge'] = $merge;
 
         return $this;
     }
@@ -100,6 +111,19 @@ class DescribeDcdnDomainLogRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $mergeLocIsp
+     *
+     * @return $this
+     */
+    public function setMergeLocIsp($mergeLocIsp)
+    {
+        $this->requestParameters['MergeLocIsp'] = $mergeLocIsp;
+        $this->queryParameters['MergeLocIsp'] = $mergeLocIsp;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -108,6 +132,19 @@ class DescribeDcdnDomainLogRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $field
+     *
+     * @return $this
+     */
+    public function setField($field)
+    {
+        $this->requestParameters['Field'] = $field;
+        $this->queryParameters['Field'] = $field;
 
         return $this;
     }

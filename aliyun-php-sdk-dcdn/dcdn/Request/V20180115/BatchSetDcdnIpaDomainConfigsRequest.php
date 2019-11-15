@@ -5,15 +5,15 @@ namespace dcdn\Request\V20180115;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of BatchDeleteDcdnDomainConfigs
+ * Request of BatchSetDcdnIpaDomainConfigs
  *
- * @method string getFunctionNames()
+ * @method string getFunctions()
  * @method string getDomainNames()
+ * @method string getSecurityToken()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
- * @method string getSecurityToken()
  */
-class BatchDeleteDcdnDomainConfigsRequest extends \RpcAcsRequest
+class BatchSetDcdnIpaDomainConfigsRequest extends \RpcAcsRequest
 {
 
     /**
@@ -29,19 +29,19 @@ class BatchDeleteDcdnDomainConfigsRequest extends \RpcAcsRequest
         parent::__construct(
             'dcdn',
             '2018-01-15',
-            'BatchDeleteDcdnDomainConfigs'
+            'BatchSetDcdnIpaDomainConfigs'
         );
     }
 
     /**
-     * @param string $functionNames
+     * @param string $functions
      *
      * @return $this
      */
-    public function setFunctionNames($functionNames)
+    public function setFunctions($functions)
     {
-        $this->requestParameters['FunctionNames'] = $functionNames;
-        $this->queryParameters['FunctionNames'] = $functionNames;
+        $this->requestParameters['Functions'] = $functions;
+        $this->queryParameters['Functions'] = $functions;
 
         return $this;
     }
@@ -55,6 +55,19 @@ class BatchDeleteDcdnDomainConfigsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DomainNames'] = $domainNames;
         $this->queryParameters['DomainNames'] = $domainNames;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }
@@ -81,19 +94,6 @@ class BatchDeleteDcdnDomainConfigsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

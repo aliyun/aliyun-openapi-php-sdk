@@ -3,11 +3,12 @@
 namespace dcdn\Request\V20180115;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeDcdnTopDomainsByFlow
  *
  * @method string getStartTime()
  * @method string getLimit()
- * @method string getProduct()
  * @method string getEndTime()
  * @method string getOwnerId()
  */
@@ -53,19 +54,6 @@ class DescribeDcdnTopDomainsByFlowRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Limit'] = $limit;
         $this->queryParameters['Limit'] = $limit;
-
-        return $this;
-    }
-
-    /**
-     * @param string $product
-     *
-     * @return $this
-     */
-    public function setProduct($product)
-    {
-        $this->requestParameters['Product'] = $product;
-        $this->queryParameters['Product'] = $product;
 
         return $this;
     }

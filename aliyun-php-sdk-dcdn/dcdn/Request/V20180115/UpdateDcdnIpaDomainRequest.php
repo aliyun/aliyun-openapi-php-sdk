@@ -5,19 +5,16 @@ namespace dcdn\Request\V20180115;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of AddDcdnDomain
+ * Request of UpdateDcdnIpaDomain
  *
  * @method string getSources()
  * @method string getResourceGroupId()
  * @method string getSecurityToken()
- * @method string getScope()
  * @method string getTopLevelDomain()
- * @method string getOwnerAccount()
  * @method string getDomainName()
  * @method string getOwnerId()
- * @method string getCheckUrl()
  */
-class AddDcdnDomainRequest extends \RpcAcsRequest
+class UpdateDcdnIpaDomainRequest extends \RpcAcsRequest
 {
 
     /**
@@ -33,7 +30,7 @@ class AddDcdnDomainRequest extends \RpcAcsRequest
         parent::__construct(
             'dcdn',
             '2018-01-15',
-            'AddDcdnDomain'
+            'UpdateDcdnIpaDomain'
         );
     }
 
@@ -77,19 +74,6 @@ class AddDcdnDomainRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $scope
-     *
-     * @return $this
-     */
-    public function setScope($scope)
-    {
-        $this->requestParameters['Scope'] = $scope;
-        $this->queryParameters['Scope'] = $scope;
-
-        return $this;
-    }
-
-    /**
      * @param string $topLevelDomain
      *
      * @return $this
@@ -98,19 +82,6 @@ class AddDcdnDomainRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TopLevelDomain'] = $topLevelDomain;
         $this->queryParameters['TopLevelDomain'] = $topLevelDomain;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
         return $this;
     }
@@ -137,19 +108,6 @@ class AddDcdnDomainRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $checkUrl
-     *
-     * @return $this
-     */
-    public function setCheckUrl($checkUrl)
-    {
-        $this->requestParameters['CheckUrl'] = $checkUrl;
-        $this->queryParameters['CheckUrl'] = $checkUrl;
 
         return $this;
     }

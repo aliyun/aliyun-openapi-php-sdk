@@ -5,14 +5,13 @@ namespace dcdn\Request\V20180115;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeDcdnDomainIspData
+ * Request of ModifyDCdnDomainSchdmByProperty
  *
- * @method string getStartTime()
+ * @method string getProperty()
  * @method string getDomainName()
- * @method string getEndTime()
  * @method string getOwnerId()
  */
-class DescribeDcdnDomainIspDataRequest extends \RpcAcsRequest
+class ModifyDCdnDomainSchdmByPropertyRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,19 +27,19 @@ class DescribeDcdnDomainIspDataRequest extends \RpcAcsRequest
         parent::__construct(
             'dcdn',
             '2018-01-15',
-            'DescribeDcdnDomainIspData'
+            'ModifyDCdnDomainSchdmByProperty'
         );
     }
 
     /**
-     * @param string $startTime
+     * @param string $property
      *
      * @return $this
      */
-    public function setStartTime($startTime)
+    public function setProperty($property)
     {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
+        $this->requestParameters['Property'] = $property;
+        $this->queryParameters['Property'] = $property;
 
         return $this;
     }
@@ -54,19 +53,6 @@ class DescribeDcdnDomainIspDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DomainName'] = $domainName;
         $this->queryParameters['DomainName'] = $domainName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $endTime
-     *
-     * @return $this
-     */
-    public function setEndTime($endTime)
-    {
-        $this->requestParameters['EndTime'] = $endTime;
-        $this->queryParameters['EndTime'] = $endTime;
 
         return $this;
     }

@@ -5,13 +5,12 @@ namespace dcdn\Request\V20180115;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeDcdnUserDomains
+ * Request of DescribeDcdnIpaUserDomains
  *
  * @method string getPageNumber()
  * @method string getCheckDomainShow()
  * @method string getResourceGroupId()
  * @method string getSecurityToken()
- * @method string getChangeEndTime()
  * @method string getPageSize()
  * @method string getFuncFilter()
  * @method string getDomainName()
@@ -19,9 +18,8 @@ namespace dcdn\Request\V20180115;
  * @method string getFuncId()
  * @method string getDomainStatus()
  * @method string getDomainSearchType()
- * @method string getChangeStartTime()
  */
-class DescribeDcdnUserDomainsRequest extends \RpcAcsRequest
+class DescribeDcdnIpaUserDomainsRequest extends \RpcAcsRequest
 {
 
     /**
@@ -37,7 +35,7 @@ class DescribeDcdnUserDomainsRequest extends \RpcAcsRequest
         parent::__construct(
             'dcdn',
             '2018-01-15',
-            'DescribeDcdnUserDomains'
+            'DescribeDcdnIpaUserDomains'
         );
     }
 
@@ -89,19 +87,6 @@ class DescribeDcdnUserDomainsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $changeEndTime
-     *
-     * @return $this
-     */
-    public function setChangeEndTime($changeEndTime)
-    {
-        $this->requestParameters['ChangeEndTime'] = $changeEndTime;
-        $this->queryParameters['ChangeEndTime'] = $changeEndTime;
 
         return $this;
     }
@@ -193,19 +178,6 @@ class DescribeDcdnUserDomainsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DomainSearchType'] = $domainSearchType;
         $this->queryParameters['DomainSearchType'] = $domainSearchType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $changeStartTime
-     *
-     * @return $this
-     */
-    public function setChangeStartTime($changeStartTime)
-    {
-        $this->requestParameters['ChangeStartTime'] = $changeStartTime;
-        $this->queryParameters['ChangeStartTime'] = $changeStartTime;
 
         return $this;
     }

@@ -5,16 +5,19 @@ namespace dcdn\Request\V20180115;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeDcdnDomainLog
+ * Request of DescribeDcdnDomainIpaTrafficData
  *
+ * @method string getLocationNameEn()
  * @method string getStartTime()
- * @method string getPageNumber()
- * @method string getPageSize()
+ * @method string getIspNameEn()
+ * @method string getFixTimeGap()
+ * @method string getTimeMerge()
  * @method string getDomainName()
  * @method string getEndTime()
  * @method string getOwnerId()
+ * @method string getInterval()
  */
-class DescribeDcdnDomainLogRequest extends \RpcAcsRequest
+class DescribeDcdnDomainIpaTrafficDataRequest extends \RpcAcsRequest
 {
 
     /**
@@ -30,8 +33,21 @@ class DescribeDcdnDomainLogRequest extends \RpcAcsRequest
         parent::__construct(
             'dcdn',
             '2018-01-15',
-            'DescribeDcdnDomainLog'
+            'DescribeDcdnDomainIpaTrafficData'
         );
+    }
+
+    /**
+     * @param string $locationNameEn
+     *
+     * @return $this
+     */
+    public function setLocationNameEn($locationNameEn)
+    {
+        $this->requestParameters['LocationNameEn'] = $locationNameEn;
+        $this->queryParameters['LocationNameEn'] = $locationNameEn;
+
+        return $this;
     }
 
     /**
@@ -48,27 +64,40 @@ class DescribeDcdnDomainLogRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageNumber
+     * @param string $ispNameEn
      *
      * @return $this
      */
-    public function setPageNumber($pageNumber)
+    public function setIspNameEn($ispNameEn)
     {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
+        $this->requestParameters['IspNameEn'] = $ispNameEn;
+        $this->queryParameters['IspNameEn'] = $ispNameEn;
 
         return $this;
     }
 
     /**
-     * @param string $pageSize
+     * @param string $fixTimeGap
      *
      * @return $this
      */
-    public function setPageSize($pageSize)
+    public function setFixTimeGap($fixTimeGap)
     {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
+        $this->requestParameters['FixTimeGap'] = $fixTimeGap;
+        $this->queryParameters['FixTimeGap'] = $fixTimeGap;
+
+        return $this;
+    }
+
+    /**
+     * @param string $timeMerge
+     *
+     * @return $this
+     */
+    public function setTimeMerge($timeMerge)
+    {
+        $this->requestParameters['TimeMerge'] = $timeMerge;
+        $this->queryParameters['TimeMerge'] = $timeMerge;
 
         return $this;
     }
@@ -108,6 +137,19 @@ class DescribeDcdnDomainLogRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $interval
+     *
+     * @return $this
+     */
+    public function setInterval($interval)
+    {
+        $this->requestParameters['Interval'] = $interval;
+        $this->queryParameters['Interval'] = $interval;
 
         return $this;
     }
