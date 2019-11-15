@@ -3,13 +3,15 @@
 namespace scdn\Request\V20171115;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of AddScdnDomain
  *
- * @method string getResourceGroupId()
  * @method string getSources()
+ * @method string getResourceGroupId()
  * @method string getSecurityToken()
- * @method string getOwnerAccount()
  * @method string getScope()
+ * @method string getOwnerAccount()
  * @method string getDomainName()
  * @method string getOwnerId()
  * @method string getCheckUrl()
@@ -30,22 +32,8 @@ class AddScdnDomainRequest extends \RpcAcsRequest
         parent::__construct(
             'scdn',
             '2017-11-15',
-            'AddScdnDomain',
-            'scdn'
+            'AddScdnDomain'
         );
-    }
-
-    /**
-     * @param string $resourceGroupId
-     *
-     * @return $this
-     */
-    public function setResourceGroupId($resourceGroupId)
-    {
-        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
-        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
-
-        return $this;
     }
 
     /**
@@ -57,6 +45,19 @@ class AddScdnDomainRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Sources'] = $sources;
         $this->queryParameters['Sources'] = $sources;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceGroupId
+     *
+     * @return $this
+     */
+    public function setResourceGroupId($resourceGroupId)
+    {
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
 
         return $this;
     }
@@ -75,19 +76,6 @@ class AddScdnDomainRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $scope
      *
      * @return $this
@@ -96,6 +84,19 @@ class AddScdnDomainRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Scope'] = $scope;
         $this->queryParameters['Scope'] = $scope;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
         return $this;
     }

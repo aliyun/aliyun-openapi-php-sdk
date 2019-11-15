@@ -3,18 +3,20 @@
 namespace scdn\Request\V20171115;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of OpenScdnService
  *
- * @method string getEndDate()
+ * @method string getStartDate()
+ * @method string getCcProtection()
  * @method string getSecurityToken()
+ * @method string getProtectType()
+ * @method string getDDoSBasic()
  * @method string getBandwidth()
  * @method string getDomainCount()
  * @method string getOwnerId()
- * @method string getProtectType()
- * @method string getStartDate()
+ * @method string getEndDate()
  * @method string getElasticProtection()
- * @method string getDDoSBasic()
- * @method string getCcProtection()
  */
 class OpenScdnServiceRequest extends \RpcAcsRequest
 {
@@ -32,20 +34,32 @@ class OpenScdnServiceRequest extends \RpcAcsRequest
         parent::__construct(
             'scdn',
             '2017-11-15',
-            'OpenScdnService',
-            'scdn'
+            'OpenScdnService'
         );
     }
 
     /**
-     * @param string $endDate
+     * @param string $startDate
      *
      * @return $this
      */
-    public function setEndDate($endDate)
+    public function setStartDate($startDate)
     {
-        $this->requestParameters['EndDate'] = $endDate;
-        $this->queryParameters['EndDate'] = $endDate;
+        $this->requestParameters['StartDate'] = $startDate;
+        $this->queryParameters['StartDate'] = $startDate;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ccProtection
+     *
+     * @return $this
+     */
+    public function setCcProtection($ccProtection)
+    {
+        $this->requestParameters['CcProtection'] = $ccProtection;
+        $this->queryParameters['CcProtection'] = $ccProtection;
 
         return $this;
     }
@@ -59,6 +73,32 @@ class OpenScdnServiceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $protectType
+     *
+     * @return $this
+     */
+    public function setProtectType($protectType)
+    {
+        $this->requestParameters['ProtectType'] = $protectType;
+        $this->queryParameters['ProtectType'] = $protectType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dDoSBasic
+     *
+     * @return $this
+     */
+    public function setDDoSBasic($dDoSBasic)
+    {
+        $this->requestParameters['DDoSBasic'] = $dDoSBasic;
+        $this->queryParameters['DDoSBasic'] = $dDoSBasic;
 
         return $this;
     }
@@ -103,27 +143,14 @@ class OpenScdnServiceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $protectType
+     * @param string $endDate
      *
      * @return $this
      */
-    public function setProtectType($protectType)
+    public function setEndDate($endDate)
     {
-        $this->requestParameters['ProtectType'] = $protectType;
-        $this->queryParameters['ProtectType'] = $protectType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $startDate
-     *
-     * @return $this
-     */
-    public function setStartDate($startDate)
-    {
-        $this->requestParameters['StartDate'] = $startDate;
-        $this->queryParameters['StartDate'] = $startDate;
+        $this->requestParameters['EndDate'] = $endDate;
+        $this->queryParameters['EndDate'] = $endDate;
 
         return $this;
     }
@@ -137,32 +164,6 @@ class OpenScdnServiceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ElasticProtection'] = $elasticProtection;
         $this->queryParameters['ElasticProtection'] = $elasticProtection;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dDoSBasic
-     *
-     * @return $this
-     */
-    public function setDDoSBasic($dDoSBasic)
-    {
-        $this->requestParameters['DDoSBasic'] = $dDoSBasic;
-        $this->queryParameters['DDoSBasic'] = $dDoSBasic;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ccProtection
-     *
-     * @return $this
-     */
-    public function setCcProtection($ccProtection)
-    {
-        $this->requestParameters['CcProtection'] = $ccProtection;
-        $this->queryParameters['CcProtection'] = $ccProtection;
 
         return $this;
     }

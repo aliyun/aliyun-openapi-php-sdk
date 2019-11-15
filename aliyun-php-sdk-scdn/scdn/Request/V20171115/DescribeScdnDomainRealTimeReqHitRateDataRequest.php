@@ -3,6 +3,8 @@
 namespace scdn\Request\V20171115;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeScdnDomainRealTimeReqHitRateData
  *
  * @method string getStartTime()
@@ -21,8 +23,7 @@ class DescribeScdnDomainRealTimeReqHitRateDataRequest extends \RpcAcsRequest
         parent::__construct(
             'scdn',
             '2017-11-15',
-            'DescribeScdnDomainRealTimeReqHitRateData',
-            'scdn'
+            'DescribeScdnDomainRealTimeReqHitRateData'
         );
     }
 

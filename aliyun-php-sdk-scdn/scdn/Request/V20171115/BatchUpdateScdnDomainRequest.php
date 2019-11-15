@@ -3,14 +3,16 @@
 namespace scdn\Request\V20171115;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of BatchUpdateScdnDomain
  *
  * @method string getTopLevelDomain()
- * @method string getResourceGroupId()
  * @method string getSources()
- * @method string getSecurityToken()
  * @method string getDomainName()
  * @method string getOwnerId()
+ * @method string getResourceGroupId()
+ * @method string getSecurityToken()
  */
 class BatchUpdateScdnDomainRequest extends \RpcAcsRequest
 {
@@ -28,8 +30,7 @@ class BatchUpdateScdnDomainRequest extends \RpcAcsRequest
         parent::__construct(
             'scdn',
             '2017-11-15',
-            'BatchUpdateScdnDomain',
-            'scdn'
+            'BatchUpdateScdnDomain'
         );
     }
 
@@ -47,19 +48,6 @@ class BatchUpdateScdnDomainRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceGroupId
-     *
-     * @return $this
-     */
-    public function setResourceGroupId($resourceGroupId)
-    {
-        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
-        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
-
-        return $this;
-    }
-
-    /**
      * @param string $sources
      *
      * @return $this
@@ -68,19 +56,6 @@ class BatchUpdateScdnDomainRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Sources'] = $sources;
         $this->queryParameters['Sources'] = $sources;
-
-        return $this;
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }
@@ -107,6 +82,32 @@ class BatchUpdateScdnDomainRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceGroupId
+     *
+     * @return $this
+     */
+    public function setResourceGroupId($resourceGroupId)
+    {
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

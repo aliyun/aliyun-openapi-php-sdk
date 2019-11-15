@@ -3,13 +3,15 @@
 namespace scdn\Request\V20171115;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of BatchDeleteScdnDomainConfigs
  *
  * @method string getFunctionNames()
- * @method string getSecurityToken()
  * @method string getDomainNames()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getSecurityToken()
  */
 class BatchDeleteScdnDomainConfigsRequest extends \RpcAcsRequest
 {
@@ -27,8 +29,7 @@ class BatchDeleteScdnDomainConfigsRequest extends \RpcAcsRequest
         parent::__construct(
             'scdn',
             '2017-11-15',
-            'BatchDeleteScdnDomainConfigs',
-            'scdn'
+            'BatchDeleteScdnDomainConfigs'
         );
     }
 
@@ -41,19 +42,6 @@ class BatchDeleteScdnDomainConfigsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['FunctionNames'] = $functionNames;
         $this->queryParameters['FunctionNames'] = $functionNames;
-
-        return $this;
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }
@@ -93,6 +81,19 @@ class BatchDeleteScdnDomainConfigsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

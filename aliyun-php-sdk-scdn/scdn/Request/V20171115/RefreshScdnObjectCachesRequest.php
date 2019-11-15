@@ -3,11 +3,13 @@
 namespace scdn\Request\V20171115;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of RefreshScdnObjectCaches
  *
- * @method string getSecurityToken()
  * @method string getObjectPath()
  * @method string getOwnerId()
+ * @method string getSecurityToken()
  * @method string getObjectType()
  */
 class RefreshScdnObjectCachesRequest extends \RpcAcsRequest
@@ -26,22 +28,8 @@ class RefreshScdnObjectCachesRequest extends \RpcAcsRequest
         parent::__construct(
             'scdn',
             '2017-11-15',
-            'RefreshScdnObjectCaches',
-            'scdn'
+            'RefreshScdnObjectCaches'
         );
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
     }
 
     /**
@@ -66,6 +54,19 @@ class RefreshScdnObjectCachesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

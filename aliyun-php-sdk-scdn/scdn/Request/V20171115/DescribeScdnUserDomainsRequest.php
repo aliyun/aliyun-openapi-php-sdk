@@ -3,19 +3,23 @@
 namespace scdn\Request\V20171115;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeScdnUserDomains
  *
- * @method string getFuncFilter()
+ * @method string getPageNumber()
  * @method string getCheckDomainShow()
  * @method string getResourceGroupId()
  * @method string getSecurityToken()
+ * @method string getChangeEndTime()
  * @method string getPageSize()
+ * @method string getFuncFilter()
  * @method string getDomainName()
  * @method string getOwnerId()
  * @method string getFuncId()
- * @method string getPageNumber()
  * @method string getDomainStatus()
  * @method string getDomainSearchType()
+ * @method string getChangeStartTime()
  */
 class DescribeScdnUserDomainsRequest extends \RpcAcsRequest
 {
@@ -33,20 +37,19 @@ class DescribeScdnUserDomainsRequest extends \RpcAcsRequest
         parent::__construct(
             'scdn',
             '2017-11-15',
-            'DescribeScdnUserDomains',
-            'scdn'
+            'DescribeScdnUserDomains'
         );
     }
 
     /**
-     * @param string $funcFilter
+     * @param string $pageNumber
      *
      * @return $this
      */
-    public function setFuncFilter($funcFilter)
+    public function setPageNumber($pageNumber)
     {
-        $this->requestParameters['FuncFilter'] = $funcFilter;
-        $this->queryParameters['FuncFilter'] = $funcFilter;
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }
@@ -91,6 +94,19 @@ class DescribeScdnUserDomainsRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $changeEndTime
+     *
+     * @return $this
+     */
+    public function setChangeEndTime($changeEndTime)
+    {
+        $this->requestParameters['ChangeEndTime'] = $changeEndTime;
+        $this->queryParameters['ChangeEndTime'] = $changeEndTime;
+
+        return $this;
+    }
+
+    /**
      * @param string $pageSize
      *
      * @return $this
@@ -99,6 +115,19 @@ class DescribeScdnUserDomainsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageSize'] = $pageSize;
         $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $funcFilter
+     *
+     * @return $this
+     */
+    public function setFuncFilter($funcFilter)
+    {
+        $this->requestParameters['FuncFilter'] = $funcFilter;
+        $this->queryParameters['FuncFilter'] = $funcFilter;
 
         return $this;
     }
@@ -143,19 +172,6 @@ class DescribeScdnUserDomainsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
-
-        return $this;
-    }
-
-    /**
      * @param string $domainStatus
      *
      * @return $this
@@ -177,6 +193,19 @@ class DescribeScdnUserDomainsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DomainSearchType'] = $domainSearchType;
         $this->queryParameters['DomainSearchType'] = $domainSearchType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $changeStartTime
+     *
+     * @return $this
+     */
+    public function setChangeStartTime($changeStartTime)
+    {
+        $this->requestParameters['ChangeStartTime'] = $changeStartTime;
+        $this->queryParameters['ChangeStartTime'] = $changeStartTime;
 
         return $this;
     }

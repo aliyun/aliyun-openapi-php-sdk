@@ -3,12 +3,13 @@
 namespace scdn\Request\V20171115;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeScdnDomainPvData
  *
- * @method string getSecurityToken()
+ * @method string getStartTime()
  * @method string getDomainName()
  * @method string getEndTime()
- * @method string getStartTime()
  * @method string getOwnerId()
  */
 class DescribeScdnDomainPvDataRequest extends \RpcAcsRequest
@@ -27,20 +28,19 @@ class DescribeScdnDomainPvDataRequest extends \RpcAcsRequest
         parent::__construct(
             'scdn',
             '2017-11-15',
-            'DescribeScdnDomainPvData',
-            'scdn'
+            'DescribeScdnDomainPvData'
         );
     }
 
     /**
-     * @param string $securityToken
+     * @param string $startTime
      *
      * @return $this
      */
-    public function setSecurityToken($securityToken)
+    public function setStartTime($startTime)
     {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
 
         return $this;
     }
@@ -67,19 +67,6 @@ class DescribeScdnDomainPvDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['EndTime'] = $endTime;
         $this->queryParameters['EndTime'] = $endTime;
-
-        return $this;
-    }
-
-    /**
-     * @param string $startTime
-     *
-     * @return $this
-     */
-    public function setStartTime($startTime)
-    {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
 
         return $this;
     }

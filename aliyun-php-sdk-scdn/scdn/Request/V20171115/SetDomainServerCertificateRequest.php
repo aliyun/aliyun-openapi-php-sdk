@@ -3,16 +3,18 @@
 namespace scdn\Request\V20171115;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of SetDomainServerCertificate
  *
- * @method string getSecurityToken()
- * @method string getSSLPub()
- * @method string getCertName()
  * @method string getSSLProtocol()
+ * @method string getSecurityToken()
+ * @method string getSSLPri()
+ * @method string getCertName()
  * @method string getDomainName()
  * @method string getOwnerId()
+ * @method string getSSLPub()
  * @method string getRegion()
- * @method string getSSLPri()
  */
 class SetDomainServerCertificateRequest extends \RpcAcsRequest
 {
@@ -30,9 +32,21 @@ class SetDomainServerCertificateRequest extends \RpcAcsRequest
         parent::__construct(
             'scdn',
             '2017-11-15',
-            'SetDomainServerCertificate',
-            'scdn'
+            'SetDomainServerCertificate'
         );
+    }
+
+    /**
+     * @param string $sSLProtocol
+     *
+     * @return $this
+     */
+    public function setSSLProtocol($sSLProtocol)
+    {
+        $this->requestParameters['SSLProtocol'] = $sSLProtocol;
+        $this->queryParameters['SSLProtocol'] = $sSLProtocol;
+
+        return $this;
     }
 
     /**
@@ -49,14 +63,14 @@ class SetDomainServerCertificateRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $sSLPub
+     * @param string $sSLPri
      *
      * @return $this
      */
-    public function setSSLPub($sSLPub)
+    public function setSSLPri($sSLPri)
     {
-        $this->requestParameters['SSLPub'] = $sSLPub;
-        $this->queryParameters['SSLPub'] = $sSLPub;
+        $this->requestParameters['SSLPri'] = $sSLPri;
+        $this->queryParameters['SSLPri'] = $sSLPri;
 
         return $this;
     }
@@ -70,19 +84,6 @@ class SetDomainServerCertificateRequest extends \RpcAcsRequest
     {
         $this->requestParameters['CertName'] = $certName;
         $this->queryParameters['CertName'] = $certName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $sSLProtocol
-     *
-     * @return $this
-     */
-    public function setSSLProtocol($sSLProtocol)
-    {
-        $this->requestParameters['SSLProtocol'] = $sSLProtocol;
-        $this->queryParameters['SSLProtocol'] = $sSLProtocol;
 
         return $this;
     }
@@ -114,6 +115,19 @@ class SetDomainServerCertificateRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $sSLPub
+     *
+     * @return $this
+     */
+    public function setSSLPub($sSLPub)
+    {
+        $this->requestParameters['SSLPub'] = $sSLPub;
+        $this->queryParameters['SSLPub'] = $sSLPub;
+
+        return $this;
+    }
+
+    /**
      * @param string $region
      *
      * @return $this
@@ -122,19 +136,6 @@ class SetDomainServerCertificateRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Region'] = $region;
         $this->queryParameters['Region'] = $region;
-
-        return $this;
-    }
-
-    /**
-     * @param string $sSLPri
-     *
-     * @return $this
-     */
-    public function setSSLPri($sSLPri)
-    {
-        $this->requestParameters['SSLPri'] = $sSLPri;
-        $this->queryParameters['SSLPri'] = $sSLPri;
 
         return $this;
     }

@@ -3,6 +3,8 @@
 namespace scdn\Request\V20171115;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeScdnDomainRealTimeQpsData
  *
  * @method string getLocationNameEn()
@@ -23,8 +25,7 @@ class DescribeScdnDomainRealTimeQpsDataRequest extends \RpcAcsRequest
         parent::__construct(
             'scdn',
             '2017-11-15',
-            'DescribeScdnDomainRealTimeQpsData',
-            'scdn'
+            'DescribeScdnDomainRealTimeQpsData'
         );
     }
 

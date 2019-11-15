@@ -3,6 +3,8 @@
 namespace scdn\Request\V20171115;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeScdnDomainHttpCodeData
  *
  * @method string getLocationNameEn()
@@ -29,8 +31,7 @@ class DescribeScdnDomainHttpCodeDataRequest extends \RpcAcsRequest
         parent::__construct(
             'scdn',
             '2017-11-15',
-            'DescribeScdnDomainHttpCodeData',
-            'scdn'
+            'DescribeScdnDomainHttpCodeData'
         );
     }
 

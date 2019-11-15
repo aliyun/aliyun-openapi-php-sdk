@@ -3,11 +3,13 @@
 namespace scdn\Request\V20171115;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeScdnCertificateDetail
  *
- * @method string getSecurityToken()
  * @method string getCertName()
  * @method string getOwnerId()
+ * @method string getSecurityToken()
  */
 class DescribeScdnCertificateDetailRequest extends \RpcAcsRequest
 {
@@ -25,22 +27,8 @@ class DescribeScdnCertificateDetailRequest extends \RpcAcsRequest
         parent::__construct(
             'scdn',
             '2017-11-15',
-            'DescribeScdnCertificateDetail',
-            'scdn'
+            'DescribeScdnCertificateDetail'
         );
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
     }
 
     /**
@@ -65,6 +53,19 @@ class DescribeScdnCertificateDetailRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }

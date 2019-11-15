@@ -3,6 +3,8 @@
 namespace scdn\Request\V20171115;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeScdnDomainCname
  *
  * @method string getDomainName()
@@ -19,8 +21,7 @@ class DescribeScdnDomainCnameRequest extends \RpcAcsRequest
         parent::__construct(
             'scdn',
             '2017-11-15',
-            'DescribeScdnDomainCname',
-            'scdn'
+            'DescribeScdnDomainCname'
         );
     }
 

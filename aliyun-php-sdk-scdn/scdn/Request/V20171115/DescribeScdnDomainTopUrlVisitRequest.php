@@ -3,13 +3,15 @@
 namespace scdn\Request\V20171115;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeScdnDomainTopUrlVisit
  *
- * @method string getSecurityToken()
  * @method string getDomainName()
- * @method string getSortBy()
  * @method string getStartTime()
  * @method string getOwnerId()
+ * @method string getSecurityToken()
+ * @method string getSortBy()
  */
 class DescribeScdnDomainTopUrlVisitRequest extends \RpcAcsRequest
 {
@@ -27,22 +29,8 @@ class DescribeScdnDomainTopUrlVisitRequest extends \RpcAcsRequest
         parent::__construct(
             'scdn',
             '2017-11-15',
-            'DescribeScdnDomainTopUrlVisit',
-            'scdn'
+            'DescribeScdnDomainTopUrlVisit'
         );
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
     }
 
     /**
@@ -54,19 +42,6 @@ class DescribeScdnDomainTopUrlVisitRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DomainName'] = $domainName;
         $this->queryParameters['DomainName'] = $domainName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $sortBy
-     *
-     * @return $this
-     */
-    public function setSortBy($sortBy)
-    {
-        $this->requestParameters['SortBy'] = $sortBy;
-        $this->queryParameters['SortBy'] = $sortBy;
 
         return $this;
     }
@@ -93,6 +68,32 @@ class DescribeScdnDomainTopUrlVisitRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sortBy
+     *
+     * @return $this
+     */
+    public function setSortBy($sortBy)
+    {
+        $this->requestParameters['SortBy'] = $sortBy;
+        $this->queryParameters['SortBy'] = $sortBy;
 
         return $this;
     }
