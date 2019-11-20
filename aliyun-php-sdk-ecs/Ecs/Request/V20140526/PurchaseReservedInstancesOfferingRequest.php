@@ -10,6 +10,7 @@ namespace Ecs\Request\V20140526;
  * @method string getResourceOwnerId()
  * @method string getClientToken()
  * @method string getDescription()
+ * @method string getPlatform()
  * @method string getResourceGroupId()
  * @method string getScope()
  * @method string getInstanceType()
@@ -79,6 +80,19 @@ class PurchaseReservedInstancesOfferingRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Description'] = $description;
         $this->queryParameters['Description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * @param string $platform
+     *
+     * @return $this
+     */
+    public function setPlatform($platform)
+    {
+        $this->requestParameters['Platform'] = $platform;
+        $this->queryParameters['Platform'] = $platform;
 
         return $this;
     }

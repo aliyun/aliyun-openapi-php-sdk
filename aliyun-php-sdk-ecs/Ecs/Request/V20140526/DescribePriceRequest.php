@@ -24,6 +24,7 @@ namespace Ecs\Request\V20140526;
  * @method string getInternetMaxBandwidthOut()
  * @method string getSystemDiskCategory()
  * @method string getPlatform()
+ * @method string getCapacity()
  * @method string getSystemDiskPerformanceLevel()
  * @method string getDataDisk4Category()
  * @method string getDataDisk4PerformanceLevel()
@@ -279,6 +280,19 @@ class DescribePriceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Platform'] = $platform;
         $this->queryParameters['Platform'] = $platform;
+
+        return $this;
+    }
+
+    /**
+     * @param string $capacity
+     *
+     * @return $this
+     */
+    public function setCapacity($capacity)
+    {
+        $this->requestParameters['Capacity'] = $capacity;
+        $this->queryParameters['Capacity'] = $capacity;
 
         return $this;
     }

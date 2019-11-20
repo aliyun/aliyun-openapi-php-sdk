@@ -9,6 +9,7 @@ namespace Ecs\Request\V20140526;
  *
  * @method string getResourceOwnerId()
  * @method string getInvokeStatus()
+ * @method string getIncludeOutput()
  * @method string getCommandId()
  * @method string getPageNumber()
  * @method string getContentEncoding()
@@ -65,6 +66,19 @@ class DescribeInvocationsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['InvokeStatus'] = $invokeStatus;
         $this->queryParameters['InvokeStatus'] = $invokeStatus;
+
+        return $this;
+    }
+
+    /**
+     * @param string $includeOutput
+     *
+     * @return $this
+     */
+    public function setIncludeOutput($includeOutput)
+    {
+        $this->requestParameters['IncludeOutput'] = $includeOutput;
+        $this->queryParameters['IncludeOutput'] = $includeOutput;
 
         return $this;
     }

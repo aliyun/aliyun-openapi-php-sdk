@@ -27,6 +27,7 @@ namespace Ecs\Request\V20140526;
  * @method string getOwnerId()
  * @method string getSpotStrategy()
  * @method string getPriorityStrategy()
+ * @method string getInstanceFamilyLevel()
  * @method string getZoneId()
  */
 class DescribeRecommendInstanceTypeRequest extends \RpcAcsRequest
@@ -308,6 +309,19 @@ class DescribeRecommendInstanceTypeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PriorityStrategy'] = $priorityStrategy;
         $this->queryParameters['PriorityStrategy'] = $priorityStrategy;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceFamilyLevel
+     *
+     * @return $this
+     */
+    public function setInstanceFamilyLevel($instanceFamilyLevel)
+    {
+        $this->requestParameters['InstanceFamilyLevel'] = $instanceFamilyLevel;
+        $this->queryParameters['InstanceFamilyLevel'] = $instanceFamilyLevel;
 
         return $this;
     }

@@ -11,6 +11,7 @@ namespace Ecs\Request\V20140526;
  * @method string getDescription()
  * @method string getDiskName()
  * @method string getDeleteAutoSnapshot()
+ * @method array getDiskIdss()
  * @method string getDiskId()
  * @method string getDeleteWithInstance()
  * @method string getEnableAutoSnapshot()
@@ -89,6 +90,21 @@ class ModifyDiskAttributeRequest extends \RpcAcsRequest
         $this->queryParameters['DeleteAutoSnapshot'] = $deleteAutoSnapshot;
 
         return $this;
+    }
+
+    /**
+     * @param array $diskIds
+     *
+     * @return $this
+     */
+	public function setDiskIdss(array $diskIds)
+	{
+	    $this->requestParameters['DiskIdss'] = $diskIds;
+		foreach ($diskIds as $i => $iValue) {
+			$this->queryParameters['DiskIds.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
     }
 
     /**

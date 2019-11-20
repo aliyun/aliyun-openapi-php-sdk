@@ -14,6 +14,7 @@ namespace Ecs\Request\V20140526;
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method array getTagFilters()
  * @method string getResourceType()
  */
 class ListTagResourcesRequest extends \RpcAcsRequest
@@ -131,6 +132,24 @@ class ListTagResourcesRequest extends \RpcAcsRequest
         $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
+    }
+
+    /**
+     * @param array $tagFilter
+     *
+     * @return $this
+     */
+	public function setTagFilters(array $tagFilter)
+	{
+	    $this->requestParameters['TagFilters'] = $tagFilter;
+		foreach ($tagFilter as $depth1 => $depth1Value) {
+			$this->queryParameters['TagFilter.' . ($depth1 + 1) . '.TagKey'] = $depth1Value['TagKey'];
+			foreach ($depth1Value['TagValues'] as $i => $iValue) {
+				$this->queryParameters['TagFilter.' . ($depth1 + 1) . '.TagValues.' . ($i + 1)] = $iValue;
+			}
+		}
+
+		return $this;
     }
 
     /**

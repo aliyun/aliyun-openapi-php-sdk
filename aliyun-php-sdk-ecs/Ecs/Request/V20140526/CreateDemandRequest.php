@@ -5,25 +5,25 @@ namespace Ecs\Request\V20140526;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeDemands
+ * Request of CreateDemand
  *
  * @method string getResourceOwnerId()
- * @method string getPageNumber()
- * @method string getPageSize()
+ * @method string getClientToken()
+ * @method string getStartTime()
+ * @method string getDemandDescription()
  * @method string getInstanceType()
- * @method array getTags()
  * @method string getInstanceChargeType()
- * @method string getDryRun()
+ * @method string getDemandName()
+ * @method string getAmount()
+ * @method string getPeriod()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getInstanceTypeFamily()
+ * @method string getEndTime()
  * @method string getOwnerId()
- * @method array getDemandStatuss()
- * @method string getDemandId()
+ * @method string getPeriodUnit()
  * @method string getZoneId()
- * @method string getDemandType()
  */
-class DescribeDemandsRequest extends \RpcAcsRequest
+class CreateDemandRequest extends \RpcAcsRequest
 {
 
     /**
@@ -39,7 +39,7 @@ class DescribeDemandsRequest extends \RpcAcsRequest
         parent::__construct(
             'Ecs',
             '2014-05-26',
-            'DescribeDemands',
+            'CreateDemand',
             'ecs'
         );
     }
@@ -58,27 +58,40 @@ class DescribeDemandsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageNumber
+     * @param string $clientToken
      *
      * @return $this
      */
-    public function setPageNumber($pageNumber)
+    public function setClientToken($clientToken)
     {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
 
         return $this;
     }
 
     /**
-     * @param string $pageSize
+     * @param string $startTime
      *
      * @return $this
      */
-    public function setPageSize($pageSize)
+    public function setStartTime($startTime)
     {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $demandDescription
+     *
+     * @return $this
+     */
+    public function setDemandDescription($demandDescription)
+    {
+        $this->requestParameters['DemandDescription'] = $demandDescription;
+        $this->queryParameters['DemandDescription'] = $demandDescription;
 
         return $this;
     }
@@ -97,22 +110,6 @@ class DescribeDemandsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $tag
-     *
-     * @return $this
-     */
-	public function setTags(array $tag)
-	{
-	    $this->requestParameters['Tags'] = $tag;
-		foreach ($tag as $depth1 => $depth1Value) {
-			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
-			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
-		}
-
-		return $this;
-    }
-
-    /**
      * @param string $instanceChargeType
      *
      * @return $this
@@ -126,14 +123,40 @@ class DescribeDemandsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dryRun
+     * @param string $demandName
      *
      * @return $this
      */
-    public function setDryRun($dryRun)
+    public function setDemandName($demandName)
     {
-        $this->requestParameters['DryRun'] = $dryRun;
-        $this->queryParameters['DryRun'] = $dryRun;
+        $this->requestParameters['DemandName'] = $demandName;
+        $this->queryParameters['DemandName'] = $demandName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $amount
+     *
+     * @return $this
+     */
+    public function setAmount($amount)
+    {
+        $this->requestParameters['Amount'] = $amount;
+        $this->queryParameters['Amount'] = $amount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $period
+     *
+     * @return $this
+     */
+    public function setPeriod($period)
+    {
+        $this->requestParameters['Period'] = $period;
+        $this->queryParameters['Period'] = $period;
 
         return $this;
     }
@@ -165,14 +188,14 @@ class DescribeDemandsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceTypeFamily
+     * @param string $endTime
      *
      * @return $this
      */
-    public function setInstanceTypeFamily($instanceTypeFamily)
+    public function setEndTime($endTime)
     {
-        $this->requestParameters['InstanceTypeFamily'] = $instanceTypeFamily;
-        $this->queryParameters['InstanceTypeFamily'] = $instanceTypeFamily;
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
 
         return $this;
     }
@@ -191,29 +214,14 @@ class DescribeDemandsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $demandStatus
+     * @param string $periodUnit
      *
      * @return $this
      */
-	public function setDemandStatuss(array $demandStatus)
-	{
-	    $this->requestParameters['DemandStatuss'] = $demandStatus;
-		foreach ($demandStatus as $i => $iValue) {
-			$this->queryParameters['DemandStatus.' . ($i + 1)] = $iValue;
-		}
-
-		return $this;
-    }
-
-    /**
-     * @param string $demandId
-     *
-     * @return $this
-     */
-    public function setDemandId($demandId)
+    public function setPeriodUnit($periodUnit)
     {
-        $this->requestParameters['DemandId'] = $demandId;
-        $this->queryParameters['DemandId'] = $demandId;
+        $this->requestParameters['PeriodUnit'] = $periodUnit;
+        $this->queryParameters['PeriodUnit'] = $periodUnit;
 
         return $this;
     }
@@ -227,19 +235,6 @@ class DescribeDemandsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ZoneId'] = $zoneId;
         $this->queryParameters['ZoneId'] = $zoneId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $demandType
-     *
-     * @return $this
-     */
-    public function setDemandType($demandType)
-    {
-        $this->requestParameters['DemandType'] = $demandType;
-        $this->queryParameters['DemandType'] = $demandType;
 
         return $this;
     }

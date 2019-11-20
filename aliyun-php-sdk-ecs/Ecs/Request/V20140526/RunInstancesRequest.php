@@ -21,11 +21,14 @@ namespace Ecs\Request\V20140526;
  * @method string getPassword()
  * @method string getStorageSetPartitionNumber()
  * @method array getTags()
+ * @method string getSystemDiskAutoSnapshotPolicyId()
  * @method string getAutoRenewPeriod()
+ * @method string getCpuOptionsCore()
  * @method string getPeriod()
  * @method string getDryRun()
  * @method string getLaunchTemplateId()
  * @method string getIpv6AddressCount()
+ * @method string getCpuOptionsNuma()
  * @method string getOwnerId()
  * @method string getCapacityReservationPreference()
  * @method string getVSwitchId()
@@ -46,6 +49,7 @@ namespace Ecs\Request\V20140526;
  * @method string getSecurityGroupId()
  * @method string getInternetMaxBandwidthOut()
  * @method string getDescription()
+ * @method string getCpuOptionsThreadsPerCore()
  * @method string getSystemDiskCategory()
  * @method string getCapacityReservationId()
  * @method string getSystemDiskPerformanceLevel()
@@ -280,6 +284,19 @@ class RunInstancesRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $systemDiskAutoSnapshotPolicyId
+     *
+     * @return $this
+     */
+    public function setSystemDiskAutoSnapshotPolicyId($systemDiskAutoSnapshotPolicyId)
+    {
+        $this->requestParameters['SystemDiskAutoSnapshotPolicyId'] = $systemDiskAutoSnapshotPolicyId;
+        $this->queryParameters['SystemDisk.AutoSnapshotPolicyId'] = $systemDiskAutoSnapshotPolicyId;
+
+        return $this;
+    }
+
+    /**
      * @param string $autoRenewPeriod
      *
      * @return $this
@@ -288,6 +305,19 @@ class RunInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AutoRenewPeriod'] = $autoRenewPeriod;
         $this->queryParameters['AutoRenewPeriod'] = $autoRenewPeriod;
+
+        return $this;
+    }
+
+    /**
+     * @param string $cpuOptionsCore
+     *
+     * @return $this
+     */
+    public function setCpuOptionsCore($cpuOptionsCore)
+    {
+        $this->requestParameters['CpuOptionsCore'] = $cpuOptionsCore;
+        $this->queryParameters['CpuOptions.Core'] = $cpuOptionsCore;
 
         return $this;
     }
@@ -340,6 +370,19 @@ class RunInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Ipv6AddressCount'] = $ipv6AddressCount;
         $this->queryParameters['Ipv6AddressCount'] = $ipv6AddressCount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $cpuOptionsNuma
+     *
+     * @return $this
+     */
+    public function setCpuOptionsNuma($cpuOptionsNuma)
+    {
+        $this->requestParameters['CpuOptionsNuma'] = $cpuOptionsNuma;
+        $this->queryParameters['CpuOptions.Numa'] = $cpuOptionsNuma;
 
         return $this;
     }
@@ -602,6 +645,19 @@ class RunInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Description'] = $description;
         $this->queryParameters['Description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * @param string $cpuOptionsThreadsPerCore
+     *
+     * @return $this
+     */
+    public function setCpuOptionsThreadsPerCore($cpuOptionsThreadsPerCore)
+    {
+        $this->requestParameters['CpuOptionsThreadsPerCore'] = $cpuOptionsThreadsPerCore;
+        $this->queryParameters['CpuOptions.ThreadsPerCore'] = $cpuOptionsThreadsPerCore;
 
         return $this;
     }
@@ -906,6 +962,7 @@ class RunInstancesRequest extends \RpcAcsRequest
 			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Device'] = $depth1Value['Device'];
 			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.DeleteWithInstance'] = $depth1Value['DeleteWithInstance'];
 			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.PerformanceLevel'] = $depth1Value['PerformanceLevel'];
+			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.AutoSnapshotPolicyId'] = $depth1Value['AutoSnapshotPolicyId'];
 		}
 
 		return $this;
