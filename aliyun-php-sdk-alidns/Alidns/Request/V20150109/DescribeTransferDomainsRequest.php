@@ -5,17 +5,15 @@ namespace Alidns\Request\V20150109;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeBatchResultDetail
+ * Request of DescribeTransferDomains
  *
- * @method string getBatchType()
  * @method string getPageNumber()
+ * @method string getTransferType()
  * @method string getUserClientIp()
  * @method string getPageSize()
  * @method string getLang()
- * @method string getTaskId()
- * @method string getStatus()
  */
-class DescribeBatchResultDetailRequest extends \RpcAcsRequest
+class DescribeTransferDomainsRequest extends \RpcAcsRequest
 {
 
     /**
@@ -31,22 +29,9 @@ class DescribeBatchResultDetailRequest extends \RpcAcsRequest
         parent::__construct(
             'Alidns',
             '2015-01-09',
-            'DescribeBatchResultDetail',
+            'DescribeTransferDomains',
             'alidns'
         );
-    }
-
-    /**
-     * @param string $batchType
-     *
-     * @return $this
-     */
-    public function setBatchType($batchType)
-    {
-        $this->requestParameters['BatchType'] = $batchType;
-        $this->queryParameters['BatchType'] = $batchType;
-
-        return $this;
     }
 
     /**
@@ -58,6 +43,19 @@ class DescribeBatchResultDetailRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageNumber'] = $pageNumber;
         $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $transferType
+     *
+     * @return $this
+     */
+    public function setTransferType($transferType)
+    {
+        $this->requestParameters['TransferType'] = $transferType;
+        $this->queryParameters['TransferType'] = $transferType;
 
         return $this;
     }
@@ -97,32 +95,6 @@ class DescribeBatchResultDetailRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Lang'] = $lang;
         $this->queryParameters['Lang'] = $lang;
-
-        return $this;
-    }
-
-    /**
-     * @param string $taskId
-     *
-     * @return $this
-     */
-    public function setTaskId($taskId)
-    {
-        $this->requestParameters['TaskId'] = $taskId;
-        $this->queryParameters['TaskId'] = $taskId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $status
-     *
-     * @return $this
-     */
-    public function setStatus($status)
-    {
-        $this->requestParameters['Status'] = $status;
-        $this->queryParameters['Status'] = $status;
 
         return $this;
     }

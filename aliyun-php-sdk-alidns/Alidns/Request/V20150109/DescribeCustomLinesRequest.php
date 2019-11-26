@@ -5,17 +5,15 @@ namespace Alidns\Request\V20150109;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeBatchResultDetail
+ * Request of DescribeCustomLines
  *
- * @method string getBatchType()
+ * @method string getDomainName()
  * @method string getPageNumber()
  * @method string getUserClientIp()
  * @method string getPageSize()
  * @method string getLang()
- * @method string getTaskId()
- * @method string getStatus()
  */
-class DescribeBatchResultDetailRequest extends \RpcAcsRequest
+class DescribeCustomLinesRequest extends \RpcAcsRequest
 {
 
     /**
@@ -31,20 +29,20 @@ class DescribeBatchResultDetailRequest extends \RpcAcsRequest
         parent::__construct(
             'Alidns',
             '2015-01-09',
-            'DescribeBatchResultDetail',
+            'DescribeCustomLines',
             'alidns'
         );
     }
 
     /**
-     * @param string $batchType
+     * @param string $domainName
      *
      * @return $this
      */
-    public function setBatchType($batchType)
+    public function setDomainName($domainName)
     {
-        $this->requestParameters['BatchType'] = $batchType;
-        $this->queryParameters['BatchType'] = $batchType;
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
 
         return $this;
     }
@@ -97,32 +95,6 @@ class DescribeBatchResultDetailRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Lang'] = $lang;
         $this->queryParameters['Lang'] = $lang;
-
-        return $this;
-    }
-
-    /**
-     * @param string $taskId
-     *
-     * @return $this
-     */
-    public function setTaskId($taskId)
-    {
-        $this->requestParameters['TaskId'] = $taskId;
-        $this->queryParameters['TaskId'] = $taskId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $status
-     *
-     * @return $this
-     */
-    public function setStatus($status)
-    {
-        $this->requestParameters['Status'] = $status;
-        $this->queryParameters['Status'] = $status;
 
         return $this;
     }
