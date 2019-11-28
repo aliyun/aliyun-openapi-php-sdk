@@ -19,6 +19,7 @@ namespace Ecs\Request\V20140526;
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method array getSecurityGroupIdss()
  * @method string getVSwitchId()
  * @method string getPrimaryIpAddress()
  */
@@ -200,6 +201,21 @@ class CreateNetworkInterfaceRequest extends \RpcAcsRequest
         $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
+    }
+
+    /**
+     * @param array $securityGroupIds
+     *
+     * @return $this
+     */
+	public function setSecurityGroupIdss(array $securityGroupIds)
+	{
+	    $this->requestParameters['SecurityGroupIdss'] = $securityGroupIds;
+		foreach ($securityGroupIds as $i => $iValue) {
+			$this->queryParameters['SecurityGroupIds.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
     }
 
     /**
