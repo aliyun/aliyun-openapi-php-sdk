@@ -9,6 +9,7 @@ namespace imm\Request\V20170906;
  *
  * @method string getProject()
  * @method string getNotifyEndpoint()
+ * @method string getTargetContainer()
  * @method string getCustomMessage()
  * @method string getNotifyTopicName()
  * @method string getTargetList()
@@ -57,6 +58,19 @@ class CreateVideoCompressTaskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['NotifyEndpoint'] = $notifyEndpoint;
         $this->queryParameters['NotifyEndpoint'] = $notifyEndpoint;
+
+        return $this;
+    }
+
+    /**
+     * @param string $targetContainer
+     *
+     * @return $this
+     */
+    public function setTargetContainer($targetContainer)
+    {
+        $this->requestParameters['TargetContainer'] = $targetContainer;
+        $this->queryParameters['TargetContainer'] = $targetContainer;
 
         return $this;
     }
