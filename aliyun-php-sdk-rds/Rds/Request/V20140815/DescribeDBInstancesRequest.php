@@ -37,6 +37,7 @@ namespace Rds\Request\V20140815;
  * @method string getTag3value()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
+ * @method string getDedicatedHostId()
  * @method string getTag5value()
  * @method string getTag1key()
  * @method string getVpcId()
@@ -450,6 +451,19 @@ class DescribeDBInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dedicatedHostId
+     *
+     * @return $this
+     */
+    public function setDedicatedHostId($dedicatedHostId)
+    {
+        $this->requestParameters['DedicatedHostId'] = $dedicatedHostId;
+        $this->queryParameters['DedicatedHostId'] = $dedicatedHostId;
 
         return $this;
     }

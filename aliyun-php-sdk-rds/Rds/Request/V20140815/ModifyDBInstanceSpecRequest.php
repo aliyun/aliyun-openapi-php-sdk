@@ -14,6 +14,7 @@ namespace Rds\Request\V20140815;
  * @method string getEffectiveTime()
  * @method string getDBInstanceId()
  * @method string getDBInstanceStorageType()
+ * @method string getDirection()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
@@ -128,6 +129,19 @@ class ModifyDBInstanceSpecRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DBInstanceStorageType'] = $dBInstanceStorageType;
         $this->queryParameters['DBInstanceStorageType'] = $dBInstanceStorageType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $direction
+     *
+     * @return $this
+     */
+    public function setDirection($direction)
+    {
+        $this->requestParameters['Direction'] = $direction;
+        $this->queryParameters['Direction'] = $direction;
 
         return $this;
     }

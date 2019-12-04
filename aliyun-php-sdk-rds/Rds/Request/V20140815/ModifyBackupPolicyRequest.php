@@ -18,6 +18,7 @@ namespace Rds\Request\V20140815;
  * @method string getEnableBackupLog()
  * @method string getBackupPolicyMode()
  * @method string getPreferredBackupPeriod()
+ * @method string getReleasedKeepPolicy()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getCompressType()
@@ -191,6 +192,19 @@ class ModifyBackupPolicyRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PreferredBackupPeriod'] = $preferredBackupPeriod;
         $this->queryParameters['PreferredBackupPeriod'] = $preferredBackupPeriod;
+
+        return $this;
+    }
+
+    /**
+     * @param string $releasedKeepPolicy
+     *
+     * @return $this
+     */
+    public function setReleasedKeepPolicy($releasedKeepPolicy)
+    {
+        $this->requestParameters['ReleasedKeepPolicy'] = $releasedKeepPolicy;
+        $this->queryParameters['ReleasedKeepPolicy'] = $releasedKeepPolicy;
 
         return $this;
     }

@@ -5,19 +5,17 @@ namespace Rds\Request\V20140815;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of SwitchDBInstanceHA
+ * Request of CheckDBNameAvailable
  *
  * @method string getResourceOwnerId()
- * @method string getEffectiveTime()
+ * @method string getClientToken()
  * @method string getDBInstanceId()
- * @method string getNodeId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
- * @method string getForce()
- * @method string getOperation()
+ * @method string getDBName()
  */
-class SwitchDBInstanceHARequest extends \RpcAcsRequest
+class CheckDBNameAvailableRequest extends \RpcAcsRequest
 {
 
     /**
@@ -33,7 +31,7 @@ class SwitchDBInstanceHARequest extends \RpcAcsRequest
         parent::__construct(
             'Rds',
             '2014-08-15',
-            'SwitchDBInstanceHA',
+            'CheckDBNameAvailable',
             'rds'
         );
     }
@@ -52,14 +50,14 @@ class SwitchDBInstanceHARequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $effectiveTime
+     * @param string $clientToken
      *
      * @return $this
      */
-    public function setEffectiveTime($effectiveTime)
+    public function setClientToken($clientToken)
     {
-        $this->requestParameters['EffectiveTime'] = $effectiveTime;
-        $this->queryParameters['EffectiveTime'] = $effectiveTime;
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
 
         return $this;
     }
@@ -73,19 +71,6 @@ class SwitchDBInstanceHARequest extends \RpcAcsRequest
     {
         $this->requestParameters['DBInstanceId'] = $dBInstanceId;
         $this->queryParameters['DBInstanceId'] = $dBInstanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $nodeId
-     *
-     * @return $this
-     */
-    public function setNodeId($nodeId)
-    {
-        $this->requestParameters['NodeId'] = $nodeId;
-        $this->queryParameters['NodeId'] = $nodeId;
 
         return $this;
     }
@@ -130,27 +115,14 @@ class SwitchDBInstanceHARequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $force
+     * @param string $dBName
      *
      * @return $this
      */
-    public function setForce($force)
+    public function setDBName($dBName)
     {
-        $this->requestParameters['Force'] = $force;
-        $this->queryParameters['Force'] = $force;
-
-        return $this;
-    }
-
-    /**
-     * @param string $operation
-     *
-     * @return $this
-     */
-    public function setOperation($operation)
-    {
-        $this->requestParameters['Operation'] = $operation;
-        $this->queryParameters['Operation'] = $operation;
+        $this->requestParameters['DBName'] = $dBName;
+        $this->queryParameters['DBName'] = $dBName;
 
         return $this;
     }

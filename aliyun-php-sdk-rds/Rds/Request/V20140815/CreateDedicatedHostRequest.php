@@ -10,7 +10,6 @@ namespace Rds\Request\V20140815;
  * @method string getResourceOwnerId()
  * @method string getClientToken()
  * @method string getHostName()
- * @method string getHostCount()
  * @method string getDedicatedHostGroupId()
  * @method string getPeriod()
  * @method string getHostClass()
@@ -78,19 +77,6 @@ class CreateDedicatedHostRequest extends \RpcAcsRequest
     {
         $this->requestParameters['HostName'] = $hostName;
         $this->queryParameters['HostName'] = $hostName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $hostCount
-     *
-     * @return $this
-     */
-    public function setHostCount($hostCount)
-    {
-        $this->requestParameters['HostCount'] = $hostCount;
-        $this->queryParameters['HostCount'] = $hostCount;
 
         return $this;
     }

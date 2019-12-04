@@ -5,30 +5,33 @@ namespace Rds\Request\V20140815;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of CreateReadOnlyDBInstance
+ * Request of DescribeDBInstancesForClone
  *
+ * @method string getConnectionMode()
  * @method string getResourceOwnerId()
- * @method string getDBInstanceStorage()
+ * @method string getNodeType()
  * @method string getClientToken()
+ * @method string getSearchKey()
  * @method string getEngineVersion()
- * @method string getResourceGroupId()
+ * @method string getPageNumber()
+ * @method string getExpired()
+ * @method string getEngine()
+ * @method string getPageSize()
+ * @method string getDBInstanceStatus()
  * @method string getDBInstanceId()
- * @method string getDBInstanceDescription()
- * @method string getDBInstanceStorageType()
- * @method string getDedicatedHostGroupId()
+ * @method string getproxyId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getDBInstanceType()
  * @method string getDBInstanceClass()
  * @method string getVSwitchId()
- * @method string getPrivateIpAddress()
- * @method string getVPCId()
+ * @method string getVpcId()
  * @method string getZoneId()
- * @method string getCategory()
  * @method string getPayType()
  * @method string getInstanceNetworkType()
  */
-class CreateReadOnlyDBInstanceRequest extends \RpcAcsRequest
+class DescribeDBInstancesForCloneRequest extends \RpcAcsRequest
 {
 
     /**
@@ -44,9 +47,22 @@ class CreateReadOnlyDBInstanceRequest extends \RpcAcsRequest
         parent::__construct(
             'Rds',
             '2014-08-15',
-            'CreateReadOnlyDBInstance',
+            'DescribeDBInstancesForClone',
             'rds'
         );
+    }
+
+    /**
+     * @param string $connectionMode
+     *
+     * @return $this
+     */
+    public function setConnectionMode($connectionMode)
+    {
+        $this->requestParameters['ConnectionMode'] = $connectionMode;
+        $this->queryParameters['ConnectionMode'] = $connectionMode;
+
+        return $this;
     }
 
     /**
@@ -63,14 +79,14 @@ class CreateReadOnlyDBInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dBInstanceStorage
+     * @param string $nodeType
      *
      * @return $this
      */
-    public function setDBInstanceStorage($dBInstanceStorage)
+    public function setNodeType($nodeType)
     {
-        $this->requestParameters['DBInstanceStorage'] = $dBInstanceStorage;
-        $this->queryParameters['DBInstanceStorage'] = $dBInstanceStorage;
+        $this->requestParameters['NodeType'] = $nodeType;
+        $this->queryParameters['NodeType'] = $nodeType;
 
         return $this;
     }
@@ -89,6 +105,19 @@ class CreateReadOnlyDBInstanceRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $searchKey
+     *
+     * @return $this
+     */
+    public function setSearchKey($searchKey)
+    {
+        $this->requestParameters['SearchKey'] = $searchKey;
+        $this->queryParameters['SearchKey'] = $searchKey;
+
+        return $this;
+    }
+
+    /**
      * @param string $engineVersion
      *
      * @return $this
@@ -102,14 +131,66 @@ class CreateReadOnlyDBInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceGroupId
+     * @param string $pageNumber
      *
      * @return $this
      */
-    public function setResourceGroupId($resourceGroupId)
+    public function setPageNumber($pageNumber)
     {
-        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
-        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $expired
+     *
+     * @return $this
+     */
+    public function setExpired($expired)
+    {
+        $this->requestParameters['Expired'] = $expired;
+        $this->queryParameters['Expired'] = $expired;
+
+        return $this;
+    }
+
+    /**
+     * @param string $engine
+     *
+     * @return $this
+     */
+    public function setEngine($engine)
+    {
+        $this->requestParameters['Engine'] = $engine;
+        $this->queryParameters['Engine'] = $engine;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceStatus
+     *
+     * @return $this
+     */
+    public function setDBInstanceStatus($dBInstanceStatus)
+    {
+        $this->requestParameters['DBInstanceStatus'] = $dBInstanceStatus;
+        $this->queryParameters['DBInstanceStatus'] = $dBInstanceStatus;
 
         return $this;
     }
@@ -128,40 +209,14 @@ class CreateReadOnlyDBInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dBInstanceDescription
+     * @param string $proxyId
      *
      * @return $this
      */
-    public function setDBInstanceDescription($dBInstanceDescription)
+    public function setproxyId($proxyId)
     {
-        $this->requestParameters['DBInstanceDescription'] = $dBInstanceDescription;
-        $this->queryParameters['DBInstanceDescription'] = $dBInstanceDescription;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBInstanceStorageType
-     *
-     * @return $this
-     */
-    public function setDBInstanceStorageType($dBInstanceStorageType)
-    {
-        $this->requestParameters['DBInstanceStorageType'] = $dBInstanceStorageType;
-        $this->queryParameters['DBInstanceStorageType'] = $dBInstanceStorageType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dedicatedHostGroupId
-     *
-     * @return $this
-     */
-    public function setDedicatedHostGroupId($dedicatedHostGroupId)
-    {
-        $this->requestParameters['DedicatedHostGroupId'] = $dedicatedHostGroupId;
-        $this->queryParameters['DedicatedHostGroupId'] = $dedicatedHostGroupId;
+        $this->requestParameters['proxyId'] = $proxyId;
+        $this->queryParameters['proxyId'] = $proxyId;
 
         return $this;
     }
@@ -206,6 +261,19 @@ class CreateReadOnlyDBInstanceRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $dBInstanceType
+     *
+     * @return $this
+     */
+    public function setDBInstanceType($dBInstanceType)
+    {
+        $this->requestParameters['DBInstanceType'] = $dBInstanceType;
+        $this->queryParameters['DBInstanceType'] = $dBInstanceType;
+
+        return $this;
+    }
+
+    /**
      * @param string $dBInstanceClass
      *
      * @return $this
@@ -232,27 +300,14 @@ class CreateReadOnlyDBInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $privateIpAddress
+     * @param string $vpcId
      *
      * @return $this
      */
-    public function setPrivateIpAddress($privateIpAddress)
+    public function setVpcId($vpcId)
     {
-        $this->requestParameters['PrivateIpAddress'] = $privateIpAddress;
-        $this->queryParameters['PrivateIpAddress'] = $privateIpAddress;
-
-        return $this;
-    }
-
-    /**
-     * @param string $vPCId
-     *
-     * @return $this
-     */
-    public function setVPCId($vPCId)
-    {
-        $this->requestParameters['VPCId'] = $vPCId;
-        $this->queryParameters['VPCId'] = $vPCId;
+        $this->requestParameters['VpcId'] = $vpcId;
+        $this->queryParameters['VpcId'] = $vpcId;
 
         return $this;
     }
@@ -266,19 +321,6 @@ class CreateReadOnlyDBInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ZoneId'] = $zoneId;
         $this->queryParameters['ZoneId'] = $zoneId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $category
-     *
-     * @return $this
-     */
-    public function setCategory($category)
-    {
-        $this->requestParameters['Category'] = $category;
-        $this->queryParameters['Category'] = $category;
 
         return $this;
     }

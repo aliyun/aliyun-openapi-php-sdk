@@ -17,6 +17,7 @@ namespace Rds\Request\V20140815;
  * @method string getDBInstanceDescription()
  * @method string getDBInstanceId()
  * @method string getDBInstanceStorageType()
+ * @method string getDedicatedHostGroupId()
  * @method string getRestoreTime()
  * @method string getPeriod()
  * @method string getResourceOwnerAccount()
@@ -182,6 +183,19 @@ class CloneDBInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DBInstanceStorageType'] = $dBInstanceStorageType;
         $this->queryParameters['DBInstanceStorageType'] = $dBInstanceStorageType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dedicatedHostGroupId
+     *
+     * @return $this
+     */
+    public function setDedicatedHostGroupId($dedicatedHostGroupId)
+    {
+        $this->requestParameters['DedicatedHostGroupId'] = $dedicatedHostGroupId;
+        $this->queryParameters['DedicatedHostGroupId'] = $dedicatedHostGroupId;
 
         return $this;
     }

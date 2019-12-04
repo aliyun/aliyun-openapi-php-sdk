@@ -7,6 +7,7 @@ namespace Rds\Request\V20140815;
  *
  * Request of DescribeAvailableResource
  *
+ * @method string getDBInstanceName()
  * @method string getResourceOwnerId()
  * @method string getEngineVersion()
  * @method string getEngine()
@@ -15,6 +16,7 @@ namespace Rds\Request\V20140815;
  * @method string getInstanceChargeType()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
+ * @method string getCommodityCode()
  * @method string getOwnerId()
  * @method string getDBInstanceClass()
  * @method string getZoneId()
@@ -39,6 +41,19 @@ class DescribeAvailableResourceRequest extends \RpcAcsRequest
             'DescribeAvailableResource',
             'rds'
         );
+    }
+
+    /**
+     * @param string $dBInstanceName
+     *
+     * @return $this
+     */
+    public function setDBInstanceName($dBInstanceName)
+    {
+        $this->requestParameters['DBInstanceName'] = $dBInstanceName;
+        $this->queryParameters['DBInstanceName'] = $dBInstanceName;
+
+        return $this;
     }
 
     /**
@@ -141,6 +156,19 @@ class DescribeAvailableResourceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $commodityCode
+     *
+     * @return $this
+     */
+    public function setCommodityCode($commodityCode)
+    {
+        $this->requestParameters['CommodityCode'] = $commodityCode;
+        $this->queryParameters['CommodityCode'] = $commodityCode;
 
         return $this;
     }

@@ -5,19 +5,17 @@ namespace Rds\Request\V20140815;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of SwitchDBInstanceHA
+ * Request of ReleaseInstanceConnection
  *
  * @method string getResourceOwnerId()
- * @method string getEffectiveTime()
  * @method string getDBInstanceId()
- * @method string getNodeId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
- * @method string getForce()
- * @method string getOperation()
+ * @method string getCurrentConnectionString()
+ * @method string getInstanceNetworkType()
  */
-class SwitchDBInstanceHARequest extends \RpcAcsRequest
+class ReleaseInstanceConnectionRequest extends \RpcAcsRequest
 {
 
     /**
@@ -33,7 +31,7 @@ class SwitchDBInstanceHARequest extends \RpcAcsRequest
         parent::__construct(
             'Rds',
             '2014-08-15',
-            'SwitchDBInstanceHA',
+            'ReleaseInstanceConnection',
             'rds'
         );
     }
@@ -52,19 +50,6 @@ class SwitchDBInstanceHARequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $effectiveTime
-     *
-     * @return $this
-     */
-    public function setEffectiveTime($effectiveTime)
-    {
-        $this->requestParameters['EffectiveTime'] = $effectiveTime;
-        $this->queryParameters['EffectiveTime'] = $effectiveTime;
-
-        return $this;
-    }
-
-    /**
      * @param string $dBInstanceId
      *
      * @return $this
@@ -73,19 +58,6 @@ class SwitchDBInstanceHARequest extends \RpcAcsRequest
     {
         $this->requestParameters['DBInstanceId'] = $dBInstanceId;
         $this->queryParameters['DBInstanceId'] = $dBInstanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $nodeId
-     *
-     * @return $this
-     */
-    public function setNodeId($nodeId)
-    {
-        $this->requestParameters['NodeId'] = $nodeId;
-        $this->queryParameters['NodeId'] = $nodeId;
 
         return $this;
     }
@@ -130,27 +102,27 @@ class SwitchDBInstanceHARequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $force
+     * @param string $currentConnectionString
      *
      * @return $this
      */
-    public function setForce($force)
+    public function setCurrentConnectionString($currentConnectionString)
     {
-        $this->requestParameters['Force'] = $force;
-        $this->queryParameters['Force'] = $force;
+        $this->requestParameters['CurrentConnectionString'] = $currentConnectionString;
+        $this->queryParameters['CurrentConnectionString'] = $currentConnectionString;
 
         return $this;
     }
 
     /**
-     * @param string $operation
+     * @param string $instanceNetworkType
      *
      * @return $this
      */
-    public function setOperation($operation)
+    public function setInstanceNetworkType($instanceNetworkType)
     {
-        $this->requestParameters['Operation'] = $operation;
-        $this->queryParameters['Operation'] = $operation;
+        $this->requestParameters['InstanceNetworkType'] = $instanceNetworkType;
+        $this->queryParameters['InstanceNetworkType'] = $instanceNetworkType;
 
         return $this;
     }
