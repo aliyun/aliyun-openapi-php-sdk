@@ -7,11 +7,14 @@ namespace Alidns\Request\V20150109;
  *
  * Request of DescribeTransferDomains
  *
+ * @method string getFromUserId()
  * @method string getPageNumber()
- * @method string getTransferType()
- * @method string getUserClientIp()
+ * @method string getTargetUserId()
  * @method string getPageSize()
  * @method string getLang()
+ * @method string getDomainName()
+ * @method string getTransferType()
+ * @method string getUserClientIp()
  */
 class DescribeTransferDomainsRequest extends \RpcAcsRequest
 {
@@ -35,6 +38,19 @@ class DescribeTransferDomainsRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $fromUserId
+     *
+     * @return $this
+     */
+    public function setFromUserId($fromUserId)
+    {
+        $this->requestParameters['FromUserId'] = $fromUserId;
+        $this->queryParameters['FromUserId'] = $fromUserId;
+
+        return $this;
+    }
+
+    /**
      * @param string $pageNumber
      *
      * @return $this
@@ -48,27 +64,14 @@ class DescribeTransferDomainsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $transferType
+     * @param string $targetUserId
      *
      * @return $this
      */
-    public function setTransferType($transferType)
+    public function setTargetUserId($targetUserId)
     {
-        $this->requestParameters['TransferType'] = $transferType;
-        $this->queryParameters['TransferType'] = $transferType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $userClientIp
-     *
-     * @return $this
-     */
-    public function setUserClientIp($userClientIp)
-    {
-        $this->requestParameters['UserClientIp'] = $userClientIp;
-        $this->queryParameters['UserClientIp'] = $userClientIp;
+        $this->requestParameters['TargetUserId'] = $targetUserId;
+        $this->queryParameters['TargetUserId'] = $targetUserId;
 
         return $this;
     }
@@ -95,6 +98,45 @@ class DescribeTransferDomainsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Lang'] = $lang;
         $this->queryParameters['Lang'] = $lang;
+
+        return $this;
+    }
+
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $transferType
+     *
+     * @return $this
+     */
+    public function setTransferType($transferType)
+    {
+        $this->requestParameters['TransferType'] = $transferType;
+        $this->queryParameters['TransferType'] = $transferType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $userClientIp
+     *
+     * @return $this
+     */
+    public function setUserClientIp($userClientIp)
+    {
+        $this->requestParameters['UserClientIp'] = $userClientIp;
+        $this->queryParameters['UserClientIp'] = $userClientIp;
 
         return $this;
     }
