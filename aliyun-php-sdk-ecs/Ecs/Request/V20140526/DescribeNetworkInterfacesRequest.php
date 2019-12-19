@@ -13,6 +13,7 @@ namespace Ecs\Request\V20140526;
  * @method string getType()
  * @method string getPageNumber()
  * @method string getResourceGroupId()
+ * @method string getNextToken()
  * @method string getPageSize()
  * @method array getTags()
  * @method string getNetworkInterfaceName()
@@ -24,6 +25,7 @@ namespace Ecs\Request\V20140526;
  * @method string getInstanceId()
  * @method string getVpcId()
  * @method string getPrimaryIpAddress()
+ * @method string getMaxResults()
  * @method array getNetworkInterfaceIds()
  */
 class DescribeNetworkInterfacesRequest extends \RpcAcsRequest
@@ -121,6 +123,19 @@ class DescribeNetworkInterfacesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
         $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $nextToken
+     *
+     * @return $this
+     */
+    public function setNextToken($nextToken)
+    {
+        $this->requestParameters['NextToken'] = $nextToken;
+        $this->queryParameters['NextToken'] = $nextToken;
 
         return $this;
     }
@@ -269,6 +284,19 @@ class DescribeNetworkInterfacesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PrimaryIpAddress'] = $primaryIpAddress;
         $this->queryParameters['PrimaryIpAddress'] = $primaryIpAddress;
+
+        return $this;
+    }
+
+    /**
+     * @param string $maxResults
+     *
+     * @return $this
+     */
+    public function setMaxResults($maxResults)
+    {
+        $this->requestParameters['MaxResults'] = $maxResults;
+        $this->queryParameters['MaxResults'] = $maxResults;
 
         return $this;
     }

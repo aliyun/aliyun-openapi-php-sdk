@@ -8,6 +8,9 @@ namespace Ecs\Request\V20140526;
  * Request of AttachDisk
  *
  * @method string getResourceOwnerId()
+ * @method string getKeyPairName()
+ * @method string getBootable()
+ * @method string getPassword()
  * @method string getDiskId()
  * @method string getDeleteWithInstance()
  * @method string getResourceOwnerAccount()
@@ -46,6 +49,45 @@ class AttachDiskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $keyPairName
+     *
+     * @return $this
+     */
+    public function setKeyPairName($keyPairName)
+    {
+        $this->requestParameters['KeyPairName'] = $keyPairName;
+        $this->queryParameters['KeyPairName'] = $keyPairName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $bootable
+     *
+     * @return $this
+     */
+    public function setBootable($bootable)
+    {
+        $this->requestParameters['Bootable'] = $bootable;
+        $this->queryParameters['Bootable'] = $bootable;
+
+        return $this;
+    }
+
+    /**
+     * @param string $password
+     *
+     * @return $this
+     */
+    public function setPassword($password)
+    {
+        $this->requestParameters['Password'] = $password;
+        $this->queryParameters['Password'] = $password;
 
         return $this;
     }

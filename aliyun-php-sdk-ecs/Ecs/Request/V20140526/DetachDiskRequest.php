@@ -9,6 +9,7 @@ namespace Ecs\Request\V20140526;
  *
  * @method string getResourceOwnerId()
  * @method string getDiskId()
+ * @method string getDeleteWithInstance()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
@@ -57,6 +58,19 @@ class DetachDiskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DiskId'] = $diskId;
         $this->queryParameters['DiskId'] = $diskId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $deleteWithInstance
+     *
+     * @return $this
+     */
+    public function setDeleteWithInstance($deleteWithInstance)
+    {
+        $this->requestParameters['DeleteWithInstance'] = $deleteWithInstance;
+        $this->queryParameters['DeleteWithInstance'] = $deleteWithInstance;
 
         return $this;
     }

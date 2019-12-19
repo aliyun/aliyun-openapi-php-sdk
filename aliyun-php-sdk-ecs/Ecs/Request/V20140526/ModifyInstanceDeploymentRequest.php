@@ -8,6 +8,7 @@ namespace Ecs\Request\V20140526;
  * Request of ModifyInstanceDeployment
  *
  * @method string getResourceOwnerId()
+ * @method string getInstanceType()
  * @method string getDeploymentSetId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
@@ -49,6 +50,19 @@ class ModifyInstanceDeploymentRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceType
+     *
+     * @return $this
+     */
+    public function setInstanceType($instanceType)
+    {
+        $this->requestParameters['InstanceType'] = $instanceType;
+        $this->queryParameters['InstanceType'] = $instanceType;
 
         return $this;
     }
