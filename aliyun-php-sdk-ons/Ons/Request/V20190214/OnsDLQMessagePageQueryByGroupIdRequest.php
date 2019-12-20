@@ -7,13 +7,12 @@ namespace Ons\Request\V20190214;
  *
  * Request of OnsDLQMessagePageQueryByGroupId
  *
- * @method string getPreventCache()
- * @method string getInstanceId()
  * @method string getGroupId()
- * @method string getPageSize()
  * @method string getEndTime()
  * @method string getBeginTime()
  * @method string getCurrentPage()
+ * @method string getInstanceId()
+ * @method string getPageSize()
  * @method string getTaskId()
  */
 class OnsDLQMessagePageQueryByGroupIdRequest extends \RpcAcsRequest
@@ -38,32 +37,6 @@ class OnsDLQMessagePageQueryByGroupIdRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $preventCache
-     *
-     * @return $this
-     */
-    public function setPreventCache($preventCache)
-    {
-        $this->requestParameters['PreventCache'] = $preventCache;
-        $this->queryParameters['PreventCache'] = $preventCache;
-
-        return $this;
-    }
-
-    /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $groupId
      *
      * @return $this
@@ -72,19 +45,6 @@ class OnsDLQMessagePageQueryByGroupIdRequest extends \RpcAcsRequest
     {
         $this->requestParameters['GroupId'] = $groupId;
         $this->queryParameters['GroupId'] = $groupId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }
@@ -124,6 +84,32 @@ class OnsDLQMessagePageQueryByGroupIdRequest extends \RpcAcsRequest
     {
         $this->requestParameters['CurrentPage'] = $currentPage;
         $this->queryParameters['CurrentPage'] = $currentPage;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }

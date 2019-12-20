@@ -7,9 +7,8 @@ namespace Ons\Request\V20190214;
  *
  * Request of OnsTopicUpdate
  *
- * @method string getPreventCache()
- * @method string getInstanceId()
  * @method string getPerm()
+ * @method string getInstanceId()
  * @method string getTopic()
  */
 class OnsTopicUpdateRequest extends \RpcAcsRequest
@@ -34,14 +33,14 @@ class OnsTopicUpdateRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $preventCache
+     * @param string $perm
      *
      * @return $this
      */
-    public function setPreventCache($preventCache)
+    public function setPerm($perm)
     {
-        $this->requestParameters['PreventCache'] = $preventCache;
-        $this->queryParameters['PreventCache'] = $preventCache;
+        $this->requestParameters['Perm'] = $perm;
+        $this->queryParameters['Perm'] = $perm;
 
         return $this;
     }
@@ -55,19 +54,6 @@ class OnsTopicUpdateRequest extends \RpcAcsRequest
     {
         $this->requestParameters['InstanceId'] = $instanceId;
         $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $perm
-     *
-     * @return $this
-     */
-    public function setPerm($perm)
-    {
-        $this->requestParameters['Perm'] = $perm;
-        $this->queryParameters['Perm'] = $perm;
 
         return $this;
     }

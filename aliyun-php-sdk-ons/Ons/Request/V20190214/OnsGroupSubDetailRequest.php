@@ -7,9 +7,8 @@ namespace Ons\Request\V20190214;
  *
  * Request of OnsGroupSubDetail
  *
- * @method string getPreventCache()
- * @method string getInstanceId()
  * @method string getGroupId()
+ * @method string getInstanceId()
  */
 class OnsGroupSubDetailRequest extends \RpcAcsRequest
 {
@@ -33,14 +32,14 @@ class OnsGroupSubDetailRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $preventCache
+     * @param string $groupId
      *
      * @return $this
      */
-    public function setPreventCache($preventCache)
+    public function setGroupId($groupId)
     {
-        $this->requestParameters['PreventCache'] = $preventCache;
-        $this->queryParameters['PreventCache'] = $preventCache;
+        $this->requestParameters['GroupId'] = $groupId;
+        $this->queryParameters['GroupId'] = $groupId;
 
         return $this;
     }
@@ -54,19 +53,6 @@ class OnsGroupSubDetailRequest extends \RpcAcsRequest
     {
         $this->requestParameters['InstanceId'] = $instanceId;
         $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $groupId
-     *
-     * @return $this
-     */
-    public function setGroupId($groupId)
-    {
-        $this->requestParameters['GroupId'] = $groupId;
-        $this->queryParameters['GroupId'] = $groupId;
 
         return $this;
     }

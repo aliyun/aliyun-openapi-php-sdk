@@ -7,7 +7,6 @@ namespace Ons\Request\V20190214;
  *
  * Request of OnsMessageGetByKey
  *
- * @method string getPreventCache()
  * @method string getInstanceId()
  * @method string getTopic()
  * @method string getKey()
@@ -31,19 +30,6 @@ class OnsMessageGetByKeyRequest extends \RpcAcsRequest
             'OnsMessageGetByKey',
             'ons'
         );
-    }
-
-    /**
-     * @param string $preventCache
-     *
-     * @return $this
-     */
-    public function setPreventCache($preventCache)
-    {
-        $this->requestParameters['PreventCache'] = $preventCache;
-        $this->queryParameters['PreventCache'] = $preventCache;
-
-        return $this;
     }
 
     /**

@@ -7,7 +7,6 @@ namespace Ons\Request\V20190214;
  *
  * Request of OnsMqttQueryClientByClientId
  *
- * @method string getPreventCache()
  * @method string getClientId()
  * @method string getInstanceId()
  */
@@ -30,19 +29,6 @@ class OnsMqttQueryClientByClientIdRequest extends \RpcAcsRequest
             'OnsMqttQueryClientByClientId',
             'ons'
         );
-    }
-
-    /**
-     * @param string $preventCache
-     *
-     * @return $this
-     */
-    public function setPreventCache($preventCache)
-    {
-        $this->requestParameters['PreventCache'] = $preventCache;
-        $this->queryParameters['PreventCache'] = $preventCache;
-
-        return $this;
     }
 
     /**

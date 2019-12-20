@@ -7,10 +7,9 @@ namespace Ons\Request\V20190214;
  *
  * Request of OnsGroupCreate
  *
- * @method string getPreventCache()
- * @method string getInstanceId()
  * @method string getGroupId()
  * @method string getRemark()
+ * @method string getInstanceId()
  */
 class OnsGroupCreateRequest extends \RpcAcsRequest
 {
@@ -31,32 +30,6 @@ class OnsGroupCreateRequest extends \RpcAcsRequest
             'OnsGroupCreate',
             'ons'
         );
-    }
-
-    /**
-     * @param string $preventCache
-     *
-     * @return $this
-     */
-    public function setPreventCache($preventCache)
-    {
-        $this->requestParameters['PreventCache'] = $preventCache;
-        $this->queryParameters['PreventCache'] = $preventCache;
-
-        return $this;
-    }
-
-    /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
     }
 
     /**
@@ -81,6 +54,19 @@ class OnsGroupCreateRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Remark'] = $remark;
         $this->queryParameters['Remark'] = $remark;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

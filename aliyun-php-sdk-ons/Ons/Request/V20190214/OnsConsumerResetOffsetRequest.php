@@ -7,12 +7,11 @@ namespace Ons\Request\V20190214;
  *
  * Request of OnsConsumerResetOffset
  *
- * @method string getPreventCache()
- * @method string getInstanceId()
  * @method string getGroupId()
- * @method string getTopic()
  * @method string getResetTimestamp()
  * @method string getType()
+ * @method string getInstanceId()
+ * @method string getTopic()
  */
 class OnsConsumerResetOffsetRequest extends \RpcAcsRequest
 {
@@ -36,32 +35,6 @@ class OnsConsumerResetOffsetRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $preventCache
-     *
-     * @return $this
-     */
-    public function setPreventCache($preventCache)
-    {
-        $this->requestParameters['PreventCache'] = $preventCache;
-        $this->queryParameters['PreventCache'] = $preventCache;
-
-        return $this;
-    }
-
-    /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $groupId
      *
      * @return $this
@@ -70,19 +43,6 @@ class OnsConsumerResetOffsetRequest extends \RpcAcsRequest
     {
         $this->requestParameters['GroupId'] = $groupId;
         $this->queryParameters['GroupId'] = $groupId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $topic
-     *
-     * @return $this
-     */
-    public function setTopic($topic)
-    {
-        $this->requestParameters['Topic'] = $topic;
-        $this->queryParameters['Topic'] = $topic;
 
         return $this;
     }
@@ -109,6 +69,32 @@ class OnsConsumerResetOffsetRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Type'] = $type;
         $this->queryParameters['Type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $topic
+     *
+     * @return $this
+     */
+    public function setTopic($topic)
+    {
+        $this->requestParameters['Topic'] = $topic;
+        $this->queryParameters['Topic'] = $topic;
 
         return $this;
     }

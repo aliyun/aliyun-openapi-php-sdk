@@ -7,7 +7,6 @@ namespace Ons\Request\V20190214;
  *
  * Request of OnsInstanceInServiceList
  *
- * @method string getPreventCache()
  */
 class OnsInstanceInServiceListRequest extends \RpcAcsRequest
 {
@@ -28,18 +27,5 @@ class OnsInstanceInServiceListRequest extends \RpcAcsRequest
             'OnsInstanceInServiceList',
             'ons'
         );
-    }
-
-    /**
-     * @param string $preventCache
-     *
-     * @return $this
-     */
-    public function setPreventCache($preventCache)
-    {
-        $this->requestParameters['PreventCache'] = $preventCache;
-        $this->queryParameters['PreventCache'] = $preventCache;
-
-        return $this;
     }
 }

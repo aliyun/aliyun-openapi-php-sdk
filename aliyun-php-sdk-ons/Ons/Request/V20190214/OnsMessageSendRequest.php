@@ -7,11 +7,10 @@ namespace Ons\Request\V20190214;
  *
  * Request of OnsMessageSend
  *
- * @method string getPreventCache()
+ * @method string getMessage()
  * @method string getInstanceId()
  * @method string getTopic()
  * @method string getTag()
- * @method string getMessage()
  * @method string getKey()
  */
 class OnsMessageSendRequest extends \RpcAcsRequest
@@ -36,14 +35,14 @@ class OnsMessageSendRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $preventCache
+     * @param string $message
      *
      * @return $this
      */
-    public function setPreventCache($preventCache)
+    public function setMessage($message)
     {
-        $this->requestParameters['PreventCache'] = $preventCache;
-        $this->queryParameters['PreventCache'] = $preventCache;
+        $this->requestParameters['Message'] = $message;
+        $this->queryParameters['Message'] = $message;
 
         return $this;
     }
@@ -83,19 +82,6 @@ class OnsMessageSendRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Tag'] = $tag;
         $this->queryParameters['Tag'] = $tag;
-
-        return $this;
-    }
-
-    /**
-     * @param string $message
-     *
-     * @return $this
-     */
-    public function setMessage($message)
-    {
-        $this->requestParameters['Message'] = $message;
-        $this->queryParameters['Message'] = $message;
 
         return $this;
     }

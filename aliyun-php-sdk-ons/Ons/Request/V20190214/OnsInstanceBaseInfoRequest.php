@@ -7,7 +7,6 @@ namespace Ons\Request\V20190214;
  *
  * Request of OnsInstanceBaseInfo
  *
- * @method string getPreventCache()
  * @method string getInstanceId()
  */
 class OnsInstanceBaseInfoRequest extends \RpcAcsRequest
@@ -29,19 +28,6 @@ class OnsInstanceBaseInfoRequest extends \RpcAcsRequest
             'OnsInstanceBaseInfo',
             'ons'
         );
-    }
-
-    /**
-     * @param string $preventCache
-     *
-     * @return $this
-     */
-    public function setPreventCache($preventCache)
-    {
-        $this->requestParameters['PreventCache'] = $preventCache;
-        $this->queryParameters['PreventCache'] = $preventCache;
-
-        return $this;
     }
 
     /**

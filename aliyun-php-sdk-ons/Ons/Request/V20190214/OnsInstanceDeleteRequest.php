@@ -7,7 +7,6 @@ namespace Ons\Request\V20190214;
  *
  * Request of OnsInstanceDelete
  *
- * @method string getPreventCache()
  * @method string getInstanceId()
  */
 class OnsInstanceDeleteRequest extends \RpcAcsRequest
@@ -29,19 +28,6 @@ class OnsInstanceDeleteRequest extends \RpcAcsRequest
             'OnsInstanceDelete',
             'ons'
         );
-    }
-
-    /**
-     * @param string $preventCache
-     *
-     * @return $this
-     */
-    public function setPreventCache($preventCache)
-    {
-        $this->requestParameters['PreventCache'] = $preventCache;
-        $this->queryParameters['PreventCache'] = $preventCache;
-
-        return $this;
     }
 
     /**

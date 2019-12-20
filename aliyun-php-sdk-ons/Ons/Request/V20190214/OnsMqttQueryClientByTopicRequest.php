@@ -7,9 +7,8 @@ namespace Ons\Request\V20190214;
  *
  * Request of OnsMqttQueryClientByTopic
  *
- * @method string getPreventCache()
- * @method string getInstanceId()
  * @method string getParentTopic()
+ * @method string getInstanceId()
  * @method string getSubTopic()
  */
 class OnsMqttQueryClientByTopicRequest extends \RpcAcsRequest
@@ -34,14 +33,14 @@ class OnsMqttQueryClientByTopicRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $preventCache
+     * @param string $parentTopic
      *
      * @return $this
      */
-    public function setPreventCache($preventCache)
+    public function setParentTopic($parentTopic)
     {
-        $this->requestParameters['PreventCache'] = $preventCache;
-        $this->queryParameters['PreventCache'] = $preventCache;
+        $this->requestParameters['ParentTopic'] = $parentTopic;
+        $this->queryParameters['ParentTopic'] = $parentTopic;
 
         return $this;
     }
@@ -55,19 +54,6 @@ class OnsMqttQueryClientByTopicRequest extends \RpcAcsRequest
     {
         $this->requestParameters['InstanceId'] = $instanceId;
         $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $parentTopic
-     *
-     * @return $this
-     */
-    public function setParentTopic($parentTopic)
-    {
-        $this->requestParameters['ParentTopic'] = $parentTopic;
-        $this->queryParameters['ParentTopic'] = $parentTopic;
 
         return $this;
     }

@@ -7,10 +7,9 @@ namespace Ons\Request\V20190214;
  *
  * Request of OnsMessageTrace
  *
- * @method string getPreventCache()
+ * @method string getMsgId()
  * @method string getInstanceId()
  * @method string getTopic()
- * @method string getMsgId()
  */
 class OnsMessageTraceRequest extends \RpcAcsRequest
 {
@@ -34,14 +33,14 @@ class OnsMessageTraceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $preventCache
+     * @param string $msgId
      *
      * @return $this
      */
-    public function setPreventCache($preventCache)
+    public function setMsgId($msgId)
     {
-        $this->requestParameters['PreventCache'] = $preventCache;
-        $this->queryParameters['PreventCache'] = $preventCache;
+        $this->requestParameters['MsgId'] = $msgId;
+        $this->queryParameters['MsgId'] = $msgId;
 
         return $this;
     }
@@ -68,19 +67,6 @@ class OnsMessageTraceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Topic'] = $topic;
         $this->queryParameters['Topic'] = $topic;
-
-        return $this;
-    }
-
-    /**
-     * @param string $msgId
-     *
-     * @return $this
-     */
-    public function setMsgId($msgId)
-    {
-        $this->requestParameters['MsgId'] = $msgId;
-        $this->queryParameters['MsgId'] = $msgId;
 
         return $this;
     }

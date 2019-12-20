@@ -7,14 +7,13 @@ namespace Ons\Request\V20190214;
  *
  * Request of OnsMqttQueryMsgTransTrend
  *
- * @method string getPreventCache()
- * @method string getInstanceId()
- * @method string getQos()
  * @method string getTransType()
  * @method string getEndTime()
  * @method string getBeginTime()
  * @method string getTpsType()
  * @method string getParentTopic()
+ * @method string getInstanceId()
+ * @method string getQos()
  * @method string getMsgType()
  * @method string getSubTopic()
  */
@@ -37,45 +36,6 @@ class OnsMqttQueryMsgTransTrendRequest extends \RpcAcsRequest
             'OnsMqttQueryMsgTransTrend',
             'ons'
         );
-    }
-
-    /**
-     * @param string $preventCache
-     *
-     * @return $this
-     */
-    public function setPreventCache($preventCache)
-    {
-        $this->requestParameters['PreventCache'] = $preventCache;
-        $this->queryParameters['PreventCache'] = $preventCache;
-
-        return $this;
-    }
-
-    /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $qos
-     *
-     * @return $this
-     */
-    public function setQos($qos)
-    {
-        $this->requestParameters['Qos'] = $qos;
-        $this->queryParameters['Qos'] = $qos;
-
-        return $this;
     }
 
     /**
@@ -139,6 +99,32 @@ class OnsMqttQueryMsgTransTrendRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ParentTopic'] = $parentTopic;
         $this->queryParameters['ParentTopic'] = $parentTopic;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $qos
+     *
+     * @return $this
+     */
+    public function setQos($qos)
+    {
+        $this->requestParameters['Qos'] = $qos;
+        $this->queryParameters['Qos'] = $qos;
 
         return $this;
     }

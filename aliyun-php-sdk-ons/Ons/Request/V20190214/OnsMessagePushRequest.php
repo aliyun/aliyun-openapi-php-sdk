@@ -7,11 +7,10 @@ namespace Ons\Request\V20190214;
  *
  * Request of OnsMessagePush
  *
- * @method string getPreventCache()
  * @method string getClientId()
- * @method string getInstanceId()
  * @method string getGroupId()
  * @method string getMsgId()
+ * @method string getInstanceId()
  * @method string getTopic()
  */
 class OnsMessagePushRequest extends \RpcAcsRequest
@@ -36,19 +35,6 @@ class OnsMessagePushRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $preventCache
-     *
-     * @return $this
-     */
-    public function setPreventCache($preventCache)
-    {
-        $this->requestParameters['PreventCache'] = $preventCache;
-        $this->queryParameters['PreventCache'] = $preventCache;
-
-        return $this;
-    }
-
-    /**
      * @param string $clientId
      *
      * @return $this
@@ -57,19 +43,6 @@ class OnsMessagePushRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ClientId'] = $clientId;
         $this->queryParameters['ClientId'] = $clientId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }
@@ -96,6 +69,19 @@ class OnsMessagePushRequest extends \RpcAcsRequest
     {
         $this->requestParameters['MsgId'] = $msgId;
         $this->queryParameters['MsgId'] = $msgId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

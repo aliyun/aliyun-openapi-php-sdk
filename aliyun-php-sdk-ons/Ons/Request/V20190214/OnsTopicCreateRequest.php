@@ -7,11 +7,10 @@ namespace Ons\Request\V20190214;
  *
  * Request of OnsTopicCreate
  *
- * @method string getPreventCache()
- * @method string getInstanceId()
  * @method string getMessageType()
- * @method string getTopic()
  * @method string getRemark()
+ * @method string getInstanceId()
+ * @method string getTopic()
  */
 class OnsTopicCreateRequest extends \RpcAcsRequest
 {
@@ -35,14 +34,27 @@ class OnsTopicCreateRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $preventCache
+     * @param string $messageType
      *
      * @return $this
      */
-    public function setPreventCache($preventCache)
+    public function setMessageType($messageType)
     {
-        $this->requestParameters['PreventCache'] = $preventCache;
-        $this->queryParameters['PreventCache'] = $preventCache;
+        $this->requestParameters['MessageType'] = $messageType;
+        $this->queryParameters['MessageType'] = $messageType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $remark
+     *
+     * @return $this
+     */
+    public function setRemark($remark)
+    {
+        $this->requestParameters['Remark'] = $remark;
+        $this->queryParameters['Remark'] = $remark;
 
         return $this;
     }
@@ -61,19 +73,6 @@ class OnsTopicCreateRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $messageType
-     *
-     * @return $this
-     */
-    public function setMessageType($messageType)
-    {
-        $this->requestParameters['MessageType'] = $messageType;
-        $this->queryParameters['MessageType'] = $messageType;
-
-        return $this;
-    }
-
-    /**
      * @param string $topic
      *
      * @return $this
@@ -82,19 +81,6 @@ class OnsTopicCreateRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Topic'] = $topic;
         $this->queryParameters['Topic'] = $topic;
-
-        return $this;
-    }
-
-    /**
-     * @param string $remark
-     *
-     * @return $this
-     */
-    public function setRemark($remark)
-    {
-        $this->requestParameters['Remark'] = $remark;
-        $this->queryParameters['Remark'] = $remark;
 
         return $this;
     }

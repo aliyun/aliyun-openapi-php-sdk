@@ -7,7 +7,6 @@ namespace Ons\Request\V20190214;
  *
  * Request of OnsMqttGroupIdList
  *
- * @method string getPreventCache()
  * @method string getInstanceId()
  */
 class OnsMqttGroupIdListRequest extends \RpcAcsRequest
@@ -29,19 +28,6 @@ class OnsMqttGroupIdListRequest extends \RpcAcsRequest
             'OnsMqttGroupIdList',
             'ons'
         );
-    }
-
-    /**
-     * @param string $preventCache
-     *
-     * @return $this
-     */
-    public function setPreventCache($preventCache)
-    {
-        $this->requestParameters['PreventCache'] = $preventCache;
-        $this->queryParameters['PreventCache'] = $preventCache;
-
-        return $this;
     }
 
     /**

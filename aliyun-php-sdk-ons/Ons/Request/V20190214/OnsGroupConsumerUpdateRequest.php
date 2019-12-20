@@ -7,10 +7,9 @@ namespace Ons\Request\V20190214;
  *
  * Request of OnsGroupConsumerUpdate
  *
- * @method string getPreventCache()
+ * @method string getGroupId()
  * @method string getReadEnable()
  * @method string getInstanceId()
- * @method string getGroupId()
  */
 class OnsGroupConsumerUpdateRequest extends \RpcAcsRequest
 {
@@ -34,14 +33,14 @@ class OnsGroupConsumerUpdateRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $preventCache
+     * @param string $groupId
      *
      * @return $this
      */
-    public function setPreventCache($preventCache)
+    public function setGroupId($groupId)
     {
-        $this->requestParameters['PreventCache'] = $preventCache;
-        $this->queryParameters['PreventCache'] = $preventCache;
+        $this->requestParameters['GroupId'] = $groupId;
+        $this->queryParameters['GroupId'] = $groupId;
 
         return $this;
     }
@@ -68,19 +67,6 @@ class OnsGroupConsumerUpdateRequest extends \RpcAcsRequest
     {
         $this->requestParameters['InstanceId'] = $instanceId;
         $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $groupId
-     *
-     * @return $this
-     */
-    public function setGroupId($groupId)
-    {
-        $this->requestParameters['GroupId'] = $groupId;
-        $this->queryParameters['GroupId'] = $groupId;
 
         return $this;
     }

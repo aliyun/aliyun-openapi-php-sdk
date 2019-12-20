@@ -7,10 +7,9 @@ namespace Ons\Request\V20190214;
  *
  * Request of OnsConsumerStatus
  *
- * @method string getPreventCache()
+ * @method string getGroupId()
  * @method string getInstanceId()
  * @method string getNeedJstack()
- * @method string getGroupId()
  * @method string getDetail()
  */
 class OnsConsumerStatusRequest extends \RpcAcsRequest
@@ -35,14 +34,14 @@ class OnsConsumerStatusRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $preventCache
+     * @param string $groupId
      *
      * @return $this
      */
-    public function setPreventCache($preventCache)
+    public function setGroupId($groupId)
     {
-        $this->requestParameters['PreventCache'] = $preventCache;
-        $this->queryParameters['PreventCache'] = $preventCache;
+        $this->requestParameters['GroupId'] = $groupId;
+        $this->queryParameters['GroupId'] = $groupId;
 
         return $this;
     }
@@ -69,19 +68,6 @@ class OnsConsumerStatusRequest extends \RpcAcsRequest
     {
         $this->requestParameters['NeedJstack'] = $needJstack;
         $this->queryParameters['NeedJstack'] = $needJstack;
-
-        return $this;
-    }
-
-    /**
-     * @param string $groupId
-     *
-     * @return $this
-     */
-    public function setGroupId($groupId)
-    {
-        $this->requestParameters['GroupId'] = $groupId;
-        $this->queryParameters['GroupId'] = $groupId;
 
         return $this;
     }

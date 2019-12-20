@@ -7,7 +7,6 @@ namespace Ons\Request\V20190214;
  *
  * Request of OnsTraceGetResult
  *
- * @method string getPreventCache()
  * @method string getQueryId()
  */
 class OnsTraceGetResultRequest extends \RpcAcsRequest
@@ -29,19 +28,6 @@ class OnsTraceGetResultRequest extends \RpcAcsRequest
             'OnsTraceGetResult',
             'ons'
         );
-    }
-
-    /**
-     * @param string $preventCache
-     *
-     * @return $this
-     */
-    public function setPreventCache($preventCache)
-    {
-        $this->requestParameters['PreventCache'] = $preventCache;
-        $this->queryParameters['PreventCache'] = $preventCache;
-
-        return $this;
     }
 
     /**

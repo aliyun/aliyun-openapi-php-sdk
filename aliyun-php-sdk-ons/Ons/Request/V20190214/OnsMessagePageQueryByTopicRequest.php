@@ -7,13 +7,12 @@ namespace Ons\Request\V20190214;
  *
  * Request of OnsMessagePageQueryByTopic
  *
- * @method string getPreventCache()
- * @method string getInstanceId()
- * @method string getPageSize()
- * @method string getTopic()
  * @method string getEndTime()
  * @method string getBeginTime()
  * @method string getCurrentPage()
+ * @method string getInstanceId()
+ * @method string getPageSize()
+ * @method string getTopic()
  * @method string getTaskId()
  */
 class OnsMessagePageQueryByTopicRequest extends \RpcAcsRequest
@@ -38,14 +37,40 @@ class OnsMessagePageQueryByTopicRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $preventCache
+     * @param string $endTime
      *
      * @return $this
      */
-    public function setPreventCache($preventCache)
+    public function setEndTime($endTime)
     {
-        $this->requestParameters['PreventCache'] = $preventCache;
-        $this->queryParameters['PreventCache'] = $preventCache;
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $beginTime
+     *
+     * @return $this
+     */
+    public function setBeginTime($beginTime)
+    {
+        $this->requestParameters['BeginTime'] = $beginTime;
+        $this->queryParameters['BeginTime'] = $beginTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $currentPage
+     *
+     * @return $this
+     */
+    public function setCurrentPage($currentPage)
+    {
+        $this->requestParameters['CurrentPage'] = $currentPage;
+        $this->queryParameters['CurrentPage'] = $currentPage;
 
         return $this;
     }
@@ -85,45 +110,6 @@ class OnsMessagePageQueryByTopicRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Topic'] = $topic;
         $this->queryParameters['Topic'] = $topic;
-
-        return $this;
-    }
-
-    /**
-     * @param string $endTime
-     *
-     * @return $this
-     */
-    public function setEndTime($endTime)
-    {
-        $this->requestParameters['EndTime'] = $endTime;
-        $this->queryParameters['EndTime'] = $endTime;
-
-        return $this;
-    }
-
-    /**
-     * @param string $beginTime
-     *
-     * @return $this
-     */
-    public function setBeginTime($beginTime)
-    {
-        $this->requestParameters['BeginTime'] = $beginTime;
-        $this->queryParameters['BeginTime'] = $beginTime;
-
-        return $this;
-    }
-
-    /**
-     * @param string $currentPage
-     *
-     * @return $this
-     */
-    public function setCurrentPage($currentPage)
-    {
-        $this->requestParameters['CurrentPage'] = $currentPage;
-        $this->queryParameters['CurrentPage'] = $currentPage;
 
         return $this;
     }

@@ -7,11 +7,10 @@ namespace Ons\Request\V20190214;
  *
  * Request of OnsMqttQueryHistoryOnline
  *
- * @method string getPreventCache()
- * @method string getInstanceId()
  * @method string getGroupId()
  * @method string getEndTime()
  * @method string getBeginTime()
+ * @method string getInstanceId()
  */
 class OnsMqttQueryHistoryOnlineRequest extends \RpcAcsRequest
 {
@@ -32,32 +31,6 @@ class OnsMqttQueryHistoryOnlineRequest extends \RpcAcsRequest
             'OnsMqttQueryHistoryOnline',
             'ons'
         );
-    }
-
-    /**
-     * @param string $preventCache
-     *
-     * @return $this
-     */
-    public function setPreventCache($preventCache)
-    {
-        $this->requestParameters['PreventCache'] = $preventCache;
-        $this->queryParameters['PreventCache'] = $preventCache;
-
-        return $this;
-    }
-
-    /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
     }
 
     /**
@@ -95,6 +68,19 @@ class OnsMqttQueryHistoryOnlineRequest extends \RpcAcsRequest
     {
         $this->requestParameters['BeginTime'] = $beginTime;
         $this->queryParameters['BeginTime'] = $beginTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

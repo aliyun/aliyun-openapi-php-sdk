@@ -7,10 +7,9 @@ namespace Ons\Request\V20190214;
  *
  * Request of OnsInstanceUpdate
  *
- * @method string getPreventCache()
+ * @method string getRemark()
  * @method string getInstanceName()
  * @method string getInstanceId()
- * @method string getRemark()
  */
 class OnsInstanceUpdateRequest extends \RpcAcsRequest
 {
@@ -34,14 +33,14 @@ class OnsInstanceUpdateRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $preventCache
+     * @param string $remark
      *
      * @return $this
      */
-    public function setPreventCache($preventCache)
+    public function setRemark($remark)
     {
-        $this->requestParameters['PreventCache'] = $preventCache;
-        $this->queryParameters['PreventCache'] = $preventCache;
+        $this->requestParameters['Remark'] = $remark;
+        $this->queryParameters['Remark'] = $remark;
 
         return $this;
     }
@@ -68,19 +67,6 @@ class OnsInstanceUpdateRequest extends \RpcAcsRequest
     {
         $this->requestParameters['InstanceId'] = $instanceId;
         $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $remark
-     *
-     * @return $this
-     */
-    public function setRemark($remark)
-    {
-        $this->requestParameters['Remark'] = $remark;
-        $this->queryParameters['Remark'] = $remark;
 
         return $this;
     }

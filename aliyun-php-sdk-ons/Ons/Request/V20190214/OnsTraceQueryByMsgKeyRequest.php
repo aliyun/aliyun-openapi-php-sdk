@@ -7,11 +7,10 @@ namespace Ons\Request\V20190214;
  *
  * Request of OnsTraceQueryByMsgKey
  *
- * @method string getPreventCache()
- * @method string getInstanceId()
- * @method string getTopic()
  * @method string getEndTime()
  * @method string getBeginTime()
+ * @method string getInstanceId()
+ * @method string getTopic()
  * @method string getMsgKey()
  */
 class OnsTraceQueryByMsgKeyRequest extends \RpcAcsRequest
@@ -36,14 +35,27 @@ class OnsTraceQueryByMsgKeyRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $preventCache
+     * @param string $endTime
      *
      * @return $this
      */
-    public function setPreventCache($preventCache)
+    public function setEndTime($endTime)
     {
-        $this->requestParameters['PreventCache'] = $preventCache;
-        $this->queryParameters['PreventCache'] = $preventCache;
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $beginTime
+     *
+     * @return $this
+     */
+    public function setBeginTime($beginTime)
+    {
+        $this->requestParameters['BeginTime'] = $beginTime;
+        $this->queryParameters['BeginTime'] = $beginTime;
 
         return $this;
     }
@@ -70,32 +82,6 @@ class OnsTraceQueryByMsgKeyRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Topic'] = $topic;
         $this->queryParameters['Topic'] = $topic;
-
-        return $this;
-    }
-
-    /**
-     * @param string $endTime
-     *
-     * @return $this
-     */
-    public function setEndTime($endTime)
-    {
-        $this->requestParameters['EndTime'] = $endTime;
-        $this->queryParameters['EndTime'] = $endTime;
-
-        return $this;
-    }
-
-    /**
-     * @param string $beginTime
-     *
-     * @return $this
-     */
-    public function setBeginTime($beginTime)
-    {
-        $this->requestParameters['BeginTime'] = $beginTime;
-        $this->queryParameters['BeginTime'] = $beginTime;
 
         return $this;
     }
