@@ -15,6 +15,7 @@ namespace Dbs\Request\V20190306;
  * @method string getDestinationEndpointUserName()
  * @method string getRestoreObjects()
  * @method string getRestoreTaskName()
+ * @method string getRestoreHome()
  * @method string getDestinationEndpointOracleSID()
  * @method string getRestoreTime()
  * @method string getDestinationEndpointInstanceID()
@@ -148,6 +149,19 @@ class CreateRestoreTaskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['RestoreTaskName'] = $restoreTaskName;
         $this->queryParameters['RestoreTaskName'] = $restoreTaskName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $restoreHome
+     *
+     * @return $this
+     */
+    public function setRestoreHome($restoreHome)
+    {
+        $this->requestParameters['RestoreHome'] = $restoreHome;
+        $this->queryParameters['RestoreHome'] = $restoreHome;
 
         return $this;
     }
