@@ -3,6 +3,8 @@
 namespace Actiontrail\Request\V20171204;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of StopLogging
  *
  * @method string getName()

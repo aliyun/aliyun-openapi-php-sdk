@@ -3,18 +3,26 @@
 namespace Actiontrail\Request\V20171204;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of UpdateTrail
  *
  * @method string getSlsProjectArn()
  * @method string getSlsWriteRoleArn()
+ * @method string getOssKeyPrefix()
  * @method string getRoleName()
+ * @method string getEventRW()
  * @method string getName()
  * @method string getOssBucketName()
- * @method string getOssKeyPrefix()
- * @method string getEventRW()
+ * @method string getTrailRegion()
  */
 class UpdateTrailRequest extends \RpcAcsRequest
 {
+
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
     /**
      * Class constructor.
@@ -56,6 +64,19 @@ class UpdateTrailRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $ossKeyPrefix
+     *
+     * @return $this
+     */
+    public function setOssKeyPrefix($ossKeyPrefix)
+    {
+        $this->requestParameters['OssKeyPrefix'] = $ossKeyPrefix;
+        $this->queryParameters['OssKeyPrefix'] = $ossKeyPrefix;
+
+        return $this;
+    }
+
+    /**
      * @param string $roleName
      *
      * @return $this
@@ -64,6 +85,19 @@ class UpdateTrailRequest extends \RpcAcsRequest
     {
         $this->requestParameters['RoleName'] = $roleName;
         $this->queryParameters['RoleName'] = $roleName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $eventRW
+     *
+     * @return $this
+     */
+    public function setEventRW($eventRW)
+    {
+        $this->requestParameters['EventRW'] = $eventRW;
+        $this->queryParameters['EventRW'] = $eventRW;
 
         return $this;
     }
@@ -95,27 +129,14 @@ class UpdateTrailRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ossKeyPrefix
+     * @param string $trailRegion
      *
      * @return $this
      */
-    public function setOssKeyPrefix($ossKeyPrefix)
+    public function setTrailRegion($trailRegion)
     {
-        $this->requestParameters['OssKeyPrefix'] = $ossKeyPrefix;
-        $this->queryParameters['OssKeyPrefix'] = $ossKeyPrefix;
-
-        return $this;
-    }
-
-    /**
-     * @param string $eventRW
-     *
-     * @return $this
-     */
-    public function setEventRW($eventRW)
-    {
-        $this->requestParameters['EventRW'] = $eventRW;
-        $this->queryParameters['EventRW'] = $eventRW;
+        $this->requestParameters['TrailRegion'] = $trailRegion;
+        $this->queryParameters['TrailRegion'] = $trailRegion;
 
         return $this;
     }
