@@ -8,7 +8,6 @@ namespace imm\Request\V20170906;
  * Request of GetOfficePreviewURL
  *
  * @method string getSrcType()
- * @method string getExpires()
  * @method string getProject()
  * @method string getUseHTTPS()
  * @method string getSrcUri()
@@ -43,19 +42,6 @@ class GetOfficePreviewURLRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SrcType'] = $srcType;
         $this->queryParameters['SrcType'] = $srcType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $expires
-     *
-     * @return $this
-     */
-    public function setExpires($expires)
-    {
-        $this->requestParameters['Expires'] = $expires;
-        $this->queryParameters['Expires'] = $expires;
 
         return $this;
     }
