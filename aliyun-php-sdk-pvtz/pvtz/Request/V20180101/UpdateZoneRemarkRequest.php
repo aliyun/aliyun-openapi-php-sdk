@@ -3,11 +3,13 @@
 namespace pvtz\Request\V20180101;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of UpdateZoneRemark
  *
+ * @method string getRemark()
  * @method string getUserClientIp()
  * @method string getZoneId()
- * @method string getRemark()
  * @method string getLang()
  */
 class UpdateZoneRemarkRequest extends \RpcAcsRequest
@@ -32,6 +34,19 @@ class UpdateZoneRemarkRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $remark
+     *
+     * @return $this
+     */
+    public function setRemark($remark)
+    {
+        $this->requestParameters['Remark'] = $remark;
+        $this->queryParameters['Remark'] = $remark;
+
+        return $this;
+    }
+
+    /**
      * @param string $userClientIp
      *
      * @return $this
@@ -53,19 +68,6 @@ class UpdateZoneRemarkRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ZoneId'] = $zoneId;
         $this->queryParameters['ZoneId'] = $zoneId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $remark
-     *
-     * @return $this
-     */
-    public function setRemark($remark)
-    {
-        $this->requestParameters['Remark'] = $remark;
-        $this->queryParameters['Remark'] = $remark;
 
         return $this;
     }

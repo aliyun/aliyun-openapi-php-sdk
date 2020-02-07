@@ -3,8 +3,12 @@
 namespace pvtz\Request\V20180101;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeZoneRecords
  *
+ * @method string getOrderBy()
+ * @method string getPageNumber()
  * @method string getPageSize()
  * @method string getUserClientIp()
  * @method string getZoneId()
@@ -12,7 +16,7 @@ namespace pvtz\Request\V20180101;
  * @method string getTag()
  * @method string getLang()
  * @method string getKeyword()
- * @method string getPageNumber()
+ * @method string getDirection()
  */
 class DescribeZoneRecordsRequest extends \RpcAcsRequest
 {
@@ -33,6 +37,32 @@ class DescribeZoneRecordsRequest extends \RpcAcsRequest
             'DescribeZoneRecords',
             'pvtz'
         );
+    }
+
+    /**
+     * @param string $orderBy
+     *
+     * @return $this
+     */
+    public function setOrderBy($orderBy)
+    {
+        $this->requestParameters['OrderBy'] = $orderBy;
+        $this->queryParameters['OrderBy'] = $orderBy;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
     }
 
     /**
@@ -127,14 +157,14 @@ class DescribeZoneRecordsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageNumber
+     * @param string $direction
      *
      * @return $this
      */
-    public function setPageNumber($pageNumber)
+    public function setDirection($direction)
     {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
+        $this->requestParameters['Direction'] = $direction;
+        $this->queryParameters['Direction'] = $direction;
 
         return $this;
     }

@@ -3,6 +3,8 @@
 namespace pvtz\Request\V20180101;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of BindZoneVpc
  *
  * @method string getUserClientIp()
@@ -71,18 +73,18 @@ class BindZoneVpcRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $vpcss
+     * @param array $vpcs
      *
      * @return $this
      */
-    public function setVpcss(array $vpcss)
-    {
-        $this->requestParameters['Vpcss'] = $vpcss;
-        foreach ($vpcss as $i => $iValue) {
-            $this->queryParameters['Vpcs.' . ($i + 1) . '.RegionId'] = $vpcss[$i]['RegionId'];
-            $this->queryParameters['Vpcs.' . ($i + 1) . '.VpcId'] = $vpcss[$i]['VpcId'];
-        }
+	public function setVpcss(array $vpcs)
+	{
+	    $this->requestParameters['Vpcss'] = $vpcs;
+		foreach ($vpcs as $depth1 => $depth1Value) {
+			$this->queryParameters['Vpcs.' . ($depth1 + 1) . '.RegionId'] = $depth1Value['RegionId'];
+			$this->queryParameters['Vpcs.' . ($depth1 + 1) . '.VpcId'] = $depth1Value['VpcId'];
+		}
 
-        return $this;
+		return $this;
     }
 }

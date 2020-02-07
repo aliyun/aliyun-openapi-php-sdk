@@ -3,14 +3,16 @@
 namespace pvtz\Request\V20180101;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeRequestGraph
  *
+ * @method string getStartTimestamp()
+ * @method string getEndTimestamp()
  * @method string getVpcId()
  * @method string getUserClientIp()
  * @method string getZoneId()
  * @method string getLang()
- * @method string getStartTimestamp()
- * @method string getEndTimestamp()
  */
 class DescribeRequestGraphRequest extends \RpcAcsRequest
 {
@@ -31,6 +33,32 @@ class DescribeRequestGraphRequest extends \RpcAcsRequest
             'DescribeRequestGraph',
             'pvtz'
         );
+    }
+
+    /**
+     * @param string $startTimestamp
+     *
+     * @return $this
+     */
+    public function setStartTimestamp($startTimestamp)
+    {
+        $this->requestParameters['StartTimestamp'] = $startTimestamp;
+        $this->queryParameters['StartTimestamp'] = $startTimestamp;
+
+        return $this;
+    }
+
+    /**
+     * @param string $endTimestamp
+     *
+     * @return $this
+     */
+    public function setEndTimestamp($endTimestamp)
+    {
+        $this->requestParameters['EndTimestamp'] = $endTimestamp;
+        $this->queryParameters['EndTimestamp'] = $endTimestamp;
+
+        return $this;
     }
 
     /**
@@ -81,32 +109,6 @@ class DescribeRequestGraphRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Lang'] = $lang;
         $this->queryParameters['Lang'] = $lang;
-
-        return $this;
-    }
-
-    /**
-     * @param string $startTimestamp
-     *
-     * @return $this
-     */
-    public function setStartTimestamp($startTimestamp)
-    {
-        $this->requestParameters['StartTimestamp'] = $startTimestamp;
-        $this->queryParameters['StartTimestamp'] = $startTimestamp;
-
-        return $this;
-    }
-
-    /**
-     * @param string $endTimestamp
-     *
-     * @return $this
-     */
-    public function setEndTimestamp($endTimestamp)
-    {
-        $this->requestParameters['EndTimestamp'] = $endTimestamp;
-        $this->queryParameters['EndTimestamp'] = $endTimestamp;
 
         return $this;
     }

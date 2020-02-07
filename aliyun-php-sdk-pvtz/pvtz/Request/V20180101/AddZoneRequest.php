@@ -3,12 +3,15 @@
 namespace pvtz\Request\V20180101;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of AddZone
  *
  * @method string getProxyPattern()
+ * @method string getZoneName()
+ * @method string getResourceGroupId()
  * @method string getUserClientIp()
  * @method string getLang()
- * @method string getZoneName()
  */
 class AddZoneRequest extends \RpcAcsRequest
 {
@@ -45,6 +48,32 @@ class AddZoneRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $zoneName
+     *
+     * @return $this
+     */
+    public function setZoneName($zoneName)
+    {
+        $this->requestParameters['ZoneName'] = $zoneName;
+        $this->queryParameters['ZoneName'] = $zoneName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceGroupId
+     *
+     * @return $this
+     */
+    public function setResourceGroupId($resourceGroupId)
+    {
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
+
+        return $this;
+    }
+
+    /**
      * @param string $userClientIp
      *
      * @return $this
@@ -66,19 +95,6 @@ class AddZoneRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Lang'] = $lang;
         $this->queryParameters['Lang'] = $lang;
-
-        return $this;
-    }
-
-    /**
-     * @param string $zoneName
-     *
-     * @return $this
-     */
-    public function setZoneName($zoneName)
-    {
-        $this->requestParameters['ZoneName'] = $zoneName;
-        $this->queryParameters['ZoneName'] = $zoneName;
 
         return $this;
     }

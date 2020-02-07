@@ -3,8 +3,11 @@
 namespace pvtz\Request\V20180101;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeRegions
  *
+ * @method string getAuthorizedUserId()
  * @method string getUserClientIp()
  * @method string getAcceptLanguage()
  * @method string getLang()
@@ -28,6 +31,19 @@ class DescribeRegionsRequest extends \RpcAcsRequest
             'DescribeRegions',
             'pvtz'
         );
+    }
+
+    /**
+     * @param string $authorizedUserId
+     *
+     * @return $this
+     */
+    public function setAuthorizedUserId($authorizedUserId)
+    {
+        $this->requestParameters['AuthorizedUserId'] = $authorizedUserId;
+        $this->queryParameters['AuthorizedUserId'] = $authorizedUserId;
+
+        return $this;
     }
 
     /**

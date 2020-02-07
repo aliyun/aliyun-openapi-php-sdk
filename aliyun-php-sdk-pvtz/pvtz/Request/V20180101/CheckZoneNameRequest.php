@@ -3,11 +3,13 @@
 namespace pvtz\Request\V20180101;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of CheckZoneName
  *
+ * @method string getZoneName()
  * @method string getUserClientIp()
  * @method string getLang()
- * @method string getZoneName()
  */
 class CheckZoneNameRequest extends \RpcAcsRequest
 {
@@ -28,6 +30,19 @@ class CheckZoneNameRequest extends \RpcAcsRequest
             'CheckZoneName',
             'pvtz'
         );
+    }
+
+    /**
+     * @param string $zoneName
+     *
+     * @return $this
+     */
+    public function setZoneName($zoneName)
+    {
+        $this->requestParameters['ZoneName'] = $zoneName;
+        $this->queryParameters['ZoneName'] = $zoneName;
+
+        return $this;
     }
 
     /**
@@ -52,19 +67,6 @@ class CheckZoneNameRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Lang'] = $lang;
         $this->queryParameters['Lang'] = $lang;
-
-        return $this;
-    }
-
-    /**
-     * @param string $zoneName
-     *
-     * @return $this
-     */
-    public function setZoneName($zoneName)
-    {
-        $this->requestParameters['ZoneName'] = $zoneName;
-        $this->queryParameters['ZoneName'] = $zoneName;
 
         return $this;
     }

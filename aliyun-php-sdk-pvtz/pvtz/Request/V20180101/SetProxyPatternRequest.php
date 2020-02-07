@@ -3,6 +3,8 @@
 namespace pvtz\Request\V20180101;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of SetProxyPattern
  *
  * @method string getProxyPattern()

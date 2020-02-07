@@ -5,12 +5,14 @@ namespace pvtz\Request\V20180101;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeStatisticSummary
+ * Request of UpdateRecordRemark
  *
+ * @method string getRemark()
+ * @method string getRecordId()
  * @method string getUserClientIp()
  * @method string getLang()
  */
-class DescribeStatisticSummaryRequest extends \RpcAcsRequest
+class UpdateRecordRemarkRequest extends \RpcAcsRequest
 {
 
     /**
@@ -26,9 +28,35 @@ class DescribeStatisticSummaryRequest extends \RpcAcsRequest
         parent::__construct(
             'pvtz',
             '2018-01-01',
-            'DescribeStatisticSummary',
+            'UpdateRecordRemark',
             'pvtz'
         );
+    }
+
+    /**
+     * @param string $remark
+     *
+     * @return $this
+     */
+    public function setRemark($remark)
+    {
+        $this->requestParameters['Remark'] = $remark;
+        $this->queryParameters['Remark'] = $remark;
+
+        return $this;
+    }
+
+    /**
+     * @param string $recordId
+     *
+     * @return $this
+     */
+    public function setRecordId($recordId)
+    {
+        $this->requestParameters['RecordId'] = $recordId;
+        $this->queryParameters['RecordId'] = $recordId;
+
+        return $this;
     }
 
     /**

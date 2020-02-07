@@ -3,15 +3,17 @@
 namespace pvtz\Request\V20180101;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of UpdateZoneRecord
  *
  * @method string getRr()
- * @method string getRecordId()
- * @method string getUserClientIp()
- * @method string getLang()
  * @method string getType()
  * @method string getPriority()
  * @method string getTtl()
+ * @method string getRecordId()
+ * @method string getUserClientIp()
+ * @method string getLang()
  * @method string getValue()
  */
 class UpdateZoneRecordRequest extends \RpcAcsRequest
@@ -44,45 +46,6 @@ class UpdateZoneRecordRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Rr'] = $rr;
         $this->queryParameters['Rr'] = $rr;
-
-        return $this;
-    }
-
-    /**
-     * @param string $recordId
-     *
-     * @return $this
-     */
-    public function setRecordId($recordId)
-    {
-        $this->requestParameters['RecordId'] = $recordId;
-        $this->queryParameters['RecordId'] = $recordId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $userClientIp
-     *
-     * @return $this
-     */
-    public function setUserClientIp($userClientIp)
-    {
-        $this->requestParameters['UserClientIp'] = $userClientIp;
-        $this->queryParameters['UserClientIp'] = $userClientIp;
-
-        return $this;
-    }
-
-    /**
-     * @param string $lang
-     *
-     * @return $this
-     */
-    public function setLang($lang)
-    {
-        $this->requestParameters['Lang'] = $lang;
-        $this->queryParameters['Lang'] = $lang;
 
         return $this;
     }
@@ -122,6 +85,45 @@ class UpdateZoneRecordRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Ttl'] = $ttl;
         $this->queryParameters['Ttl'] = $ttl;
+
+        return $this;
+    }
+
+    /**
+     * @param string $recordId
+     *
+     * @return $this
+     */
+    public function setRecordId($recordId)
+    {
+        $this->requestParameters['RecordId'] = $recordId;
+        $this->queryParameters['RecordId'] = $recordId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $userClientIp
+     *
+     * @return $this
+     */
+    public function setUserClientIp($userClientIp)
+    {
+        $this->requestParameters['UserClientIp'] = $userClientIp;
+        $this->queryParameters['UserClientIp'] = $userClientIp;
+
+        return $this;
+    }
+
+    /**
+     * @param string $lang
+     *
+     * @return $this
+     */
+    public function setLang($lang)
+    {
+        $this->requestParameters['Lang'] = $lang;
+        $this->queryParameters['Lang'] = $lang;
 
         return $this;
     }

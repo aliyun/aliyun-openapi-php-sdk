@@ -3,15 +3,20 @@
 namespace pvtz\Request\V20180101;
 
 /**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
  * Request of DescribeZones
  *
  * @method string getQueryVpcId()
+ * @method string getPageNumber()
+ * @method string getResourceGroupId()
  * @method string getPageSize()
- * @method string getUserClientIp()
- * @method string getSearchMode()
  * @method string getLang()
  * @method string getKeyword()
- * @method string getPageNumber()
+ * @method string getDirection()
+ * @method string getOrderBy()
+ * @method string getUserClientIp()
+ * @method string getSearchMode()
  * @method string getQueryRegionId()
  */
 class DescribeZonesRequest extends \RpcAcsRequest
@@ -49,6 +54,32 @@ class DescribeZonesRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceGroupId
+     *
+     * @return $this
+     */
+    public function setResourceGroupId($resourceGroupId)
+    {
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
+
+        return $this;
+    }
+
+    /**
      * @param string $pageSize
      *
      * @return $this
@@ -57,32 +88,6 @@ class DescribeZonesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageSize'] = $pageSize;
         $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param string $userClientIp
-     *
-     * @return $this
-     */
-    public function setUserClientIp($userClientIp)
-    {
-        $this->requestParameters['UserClientIp'] = $userClientIp;
-        $this->queryParameters['UserClientIp'] = $userClientIp;
-
-        return $this;
-    }
-
-    /**
-     * @param string $searchMode
-     *
-     * @return $this
-     */
-    public function setSearchMode($searchMode)
-    {
-        $this->requestParameters['SearchMode'] = $searchMode;
-        $this->queryParameters['SearchMode'] = $searchMode;
 
         return $this;
     }
@@ -114,14 +119,53 @@ class DescribeZonesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageNumber
+     * @param string $direction
      *
      * @return $this
      */
-    public function setPageNumber($pageNumber)
+    public function setDirection($direction)
     {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
+        $this->requestParameters['Direction'] = $direction;
+        $this->queryParameters['Direction'] = $direction;
+
+        return $this;
+    }
+
+    /**
+     * @param string $orderBy
+     *
+     * @return $this
+     */
+    public function setOrderBy($orderBy)
+    {
+        $this->requestParameters['OrderBy'] = $orderBy;
+        $this->queryParameters['OrderBy'] = $orderBy;
+
+        return $this;
+    }
+
+    /**
+     * @param string $userClientIp
+     *
+     * @return $this
+     */
+    public function setUserClientIp($userClientIp)
+    {
+        $this->requestParameters['UserClientIp'] = $userClientIp;
+        $this->queryParameters['UserClientIp'] = $userClientIp;
+
+        return $this;
+    }
+
+    /**
+     * @param string $searchMode
+     *
+     * @return $this
+     */
+    public function setSearchMode($searchMode)
+    {
+        $this->requestParameters['SearchMode'] = $searchMode;
+        $this->queryParameters['SearchMode'] = $searchMode;
 
         return $this;
     }
