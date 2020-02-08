@@ -35,6 +35,10 @@ define('AUTH_TYPE_ECS_RAM_ROLE', 'ECS_RAM_ROLE');
  */
 define('AUTH_TYPE_BEARER_TOKEN', 'BEARER_TOKEN');
 
+/**
+ * @deprecated
+ * Class DefaultProfile
+ */
 class DefaultProfile implements IClientProfile
 {
     /**

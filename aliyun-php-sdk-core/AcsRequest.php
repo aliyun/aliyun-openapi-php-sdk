@@ -19,6 +19,10 @@
  * under the License.
  */
 
+/**
+ * @deprecated
+ * Class AcsRequest
+ */
 abstract class AcsRequest
 {
     /**

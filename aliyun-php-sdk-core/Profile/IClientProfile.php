@@ -19,6 +19,10 @@
  * under the License.
  */
 
+/**
+ * @deprecated
+ * Interface IClientProfile
+ */
 interface IClientProfile
 {
     public function getSigner();

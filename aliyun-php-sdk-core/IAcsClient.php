@@ -19,6 +19,10 @@
  * under the License.
  */
 
+/**
+ * @deprecated
+ * Interface IAcsClient
+ */
 interface IAcsClient
 {
     /**

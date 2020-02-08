@@ -19,6 +19,10 @@
  * under the License.
  */
 
+/**
+ * @deprecated
+ * Class DefaultAcsClient
+ */
 class DefaultAcsClient implements IAcsClient
 {
     /**

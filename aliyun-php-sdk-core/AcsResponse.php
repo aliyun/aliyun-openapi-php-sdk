@@ -19,6 +19,10 @@
  * under the License.
  */
 
+/**
+ * @deprecated
+ * Class AcsResponse
+ */
 class AcsResponse
 {
     /**
