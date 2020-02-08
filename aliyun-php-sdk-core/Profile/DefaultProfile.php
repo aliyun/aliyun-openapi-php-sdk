@@ -237,11 +237,17 @@ class DefaultProfile implements IClientProfile
      */
     public static function findEndpointByName($endpointName)
     {
+        if (self::$endpoints === null) {
+            return null;
+        }
+
         foreach (self::$endpoints as $key => $endpoint) {
             if ($endpoint->getName() == $endpointName) {
                 return $endpoint;
             }
         }
+
+        return null;
     }
 
     /**
