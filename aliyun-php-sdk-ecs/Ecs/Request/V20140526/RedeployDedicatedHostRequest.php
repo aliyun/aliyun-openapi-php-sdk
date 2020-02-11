@@ -5,18 +5,15 @@ namespace Ecs\Request\V20140526;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeSnapshotMonitorData
+ * Request of RedeployDedicatedHost
  *
  * @method string getResourceOwnerId()
- * @method string getStartTime()
- * @method string getPeriod()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getEndTime()
+ * @method string getDedicatedHostId()
  * @method string getOwnerId()
- * @method string getCategory()
  */
-class DescribeSnapshotMonitorDataRequest extends \RpcAcsRequest
+class RedeployDedicatedHostRequest extends \RpcAcsRequest
 {
 
     /**
@@ -32,7 +29,7 @@ class DescribeSnapshotMonitorDataRequest extends \RpcAcsRequest
         parent::__construct(
             'Ecs',
             '2014-05-26',
-            'DescribeSnapshotMonitorData',
+            'RedeployDedicatedHost',
             'ecs'
         );
     }
@@ -46,32 +43,6 @@ class DescribeSnapshotMonitorDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $startTime
-     *
-     * @return $this
-     */
-    public function setStartTime($startTime)
-    {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
-
-        return $this;
-    }
-
-    /**
-     * @param string $period
-     *
-     * @return $this
-     */
-    public function setPeriod($period)
-    {
-        $this->requestParameters['Period'] = $period;
-        $this->queryParameters['Period'] = $period;
 
         return $this;
     }
@@ -103,14 +74,14 @@ class DescribeSnapshotMonitorDataRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $endTime
+     * @param string $dedicatedHostId
      *
      * @return $this
      */
-    public function setEndTime($endTime)
+    public function setDedicatedHostId($dedicatedHostId)
     {
-        $this->requestParameters['EndTime'] = $endTime;
-        $this->queryParameters['EndTime'] = $endTime;
+        $this->requestParameters['DedicatedHostId'] = $dedicatedHostId;
+        $this->queryParameters['DedicatedHostId'] = $dedicatedHostId;
 
         return $this;
     }
@@ -124,19 +95,6 @@ class DescribeSnapshotMonitorDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $category
-     *
-     * @return $this
-     */
-    public function setCategory($category)
-    {
-        $this->requestParameters['Category'] = $category;
-        $this->queryParameters['Category'] = $category;
 
         return $this;
     }

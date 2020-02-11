@@ -15,6 +15,7 @@ namespace Ecs\Request\V20140526;
  * @method string getMigrateAcrossZone()
  * @method string getInstanceType()
  * @method string getAutoPay()
+ * @method string getRebootWhenFinished()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getEndTime()
@@ -142,6 +143,19 @@ class ModifyPrepayInstanceSpecRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AutoPay'] = $autoPay;
         $this->queryParameters['AutoPay'] = $autoPay;
+
+        return $this;
+    }
+
+    /**
+     * @param string $rebootWhenFinished
+     *
+     * @return $this
+     */
+    public function setRebootWhenFinished($rebootWhenFinished)
+    {
+        $this->requestParameters['RebootWhenFinished'] = $rebootWhenFinished;
+        $this->queryParameters['RebootWhenFinished'] = $rebootWhenFinished;
 
         return $this;
     }

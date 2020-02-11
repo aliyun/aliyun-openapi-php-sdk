@@ -18,6 +18,7 @@ namespace Ecs\Request\V20140526;
  * @method string getOwnerAccount()
  * @method string getCreditSpecification()
  * @method string getOwnerId()
+ * @method array getSecurityGroupIdss()
  * @method string getInstanceId()
  * @method string getInstanceName()
  */
@@ -183,6 +184,21 @@ class ModifyInstanceAttributeRequest extends \RpcAcsRequest
         $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
+    }
+
+    /**
+     * @param array $securityGroupIds
+     *
+     * @return $this
+     */
+	public function setSecurityGroupIdss(array $securityGroupIds)
+	{
+	    $this->requestParameters['SecurityGroupIdss'] = $securityGroupIds;
+		foreach ($securityGroupIds as $i => $iValue) {
+			$this->queryParameters['SecurityGroupIds.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
     }
 
     /**

@@ -22,6 +22,7 @@ namespace Ecs\Request\V20140526;
  * @method string getZoneId()
  * @method string getReservedInstanceName()
  * @method array getStatuss()
+ * @method string getAllocationType()
  */
 class DescribeReservedInstancesRequest extends \RpcAcsRequest
 {
@@ -241,5 +242,18 @@ class DescribeReservedInstancesRequest extends \RpcAcsRequest
 		}
 
 		return $this;
+    }
+
+    /**
+     * @param string $allocationType
+     *
+     * @return $this
+     */
+    public function setAllocationType($allocationType)
+    {
+        $this->requestParameters['AllocationType'] = $allocationType;
+        $this->queryParameters['AllocationType'] = $allocationType;
+
+        return $this;
     }
 }

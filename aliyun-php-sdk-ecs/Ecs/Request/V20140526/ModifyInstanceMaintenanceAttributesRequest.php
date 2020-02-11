@@ -5,18 +5,17 @@ namespace Ecs\Request\V20140526;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeSnapshotMonitorData
+ * Request of ModifyInstanceMaintenanceAttributes
  *
  * @method string getResourceOwnerId()
- * @method string getStartTime()
- * @method string getPeriod()
+ * @method array getMaintenanceWindows()
+ * @method string getActionOnMaintenance()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getEndTime()
  * @method string getOwnerId()
- * @method string getCategory()
+ * @method array getInstanceIds()
  */
-class DescribeSnapshotMonitorDataRequest extends \RpcAcsRequest
+class ModifyInstanceMaintenanceAttributesRequest extends \RpcAcsRequest
 {
 
     /**
@@ -32,7 +31,7 @@ class DescribeSnapshotMonitorDataRequest extends \RpcAcsRequest
         parent::__construct(
             'Ecs',
             '2014-05-26',
-            'DescribeSnapshotMonitorData',
+            'ModifyInstanceMaintenanceAttributes',
             'ecs'
         );
     }
@@ -51,27 +50,30 @@ class DescribeSnapshotMonitorDataRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $startTime
+     * @param array $maintenanceWindow
      *
      * @return $this
      */
-    public function setStartTime($startTime)
-    {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
+	public function setMaintenanceWindows(array $maintenanceWindow)
+	{
+	    $this->requestParameters['MaintenanceWindows'] = $maintenanceWindow;
+		foreach ($maintenanceWindow as $depth1 => $depth1Value) {
+			$this->queryParameters['MaintenanceWindow.' . ($depth1 + 1) . '.StartTime'] = $depth1Value['StartTime'];
+			$this->queryParameters['MaintenanceWindow.' . ($depth1 + 1) . '.EndTime'] = $depth1Value['EndTime'];
+		}
 
-        return $this;
+		return $this;
     }
 
     /**
-     * @param string $period
+     * @param string $actionOnMaintenance
      *
      * @return $this
      */
-    public function setPeriod($period)
+    public function setActionOnMaintenance($actionOnMaintenance)
     {
-        $this->requestParameters['Period'] = $period;
-        $this->queryParameters['Period'] = $period;
+        $this->requestParameters['ActionOnMaintenance'] = $actionOnMaintenance;
+        $this->queryParameters['ActionOnMaintenance'] = $actionOnMaintenance;
 
         return $this;
     }
@@ -103,19 +105,6 @@ class DescribeSnapshotMonitorDataRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $endTime
-     *
-     * @return $this
-     */
-    public function setEndTime($endTime)
-    {
-        $this->requestParameters['EndTime'] = $endTime;
-        $this->queryParameters['EndTime'] = $endTime;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -129,15 +118,17 @@ class DescribeSnapshotMonitorDataRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $category
+     * @param array $instanceId
      *
      * @return $this
      */
-    public function setCategory($category)
-    {
-        $this->requestParameters['Category'] = $category;
-        $this->queryParameters['Category'] = $category;
+	public function setInstanceIds(array $instanceId)
+	{
+	    $this->requestParameters['InstanceIds'] = $instanceId;
+		foreach ($instanceId as $i => $iValue) {
+			$this->queryParameters['InstanceId.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 }

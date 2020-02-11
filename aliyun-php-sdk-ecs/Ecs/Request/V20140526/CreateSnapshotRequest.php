@@ -17,6 +17,7 @@ namespace Ecs\Request\V20140526;
  * @method string getOwnerAccount()
  * @method string getOwnerId()
  * @method string getRetentionDays()
+ * @method string getCategory()
  */
 class CreateSnapshotRequest extends \RpcAcsRequest
 {
@@ -168,6 +169,19 @@ class CreateSnapshotRequest extends \RpcAcsRequest
     {
         $this->requestParameters['RetentionDays'] = $retentionDays;
         $this->queryParameters['RetentionDays'] = $retentionDays;
+
+        return $this;
+    }
+
+    /**
+     * @param string $category
+     *
+     * @return $this
+     */
+    public function setCategory($category)
+    {
+        $this->requestParameters['Category'] = $category;
+        $this->queryParameters['Category'] = $category;
 
         return $this;
     }

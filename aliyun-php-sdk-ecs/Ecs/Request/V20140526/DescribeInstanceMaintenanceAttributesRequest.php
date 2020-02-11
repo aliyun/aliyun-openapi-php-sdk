@@ -5,18 +5,17 @@ namespace Ecs\Request\V20140526;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeSnapshotMonitorData
+ * Request of DescribeInstanceMaintenanceAttributes
  *
  * @method string getResourceOwnerId()
- * @method string getStartTime()
- * @method string getPeriod()
+ * @method string getPageNumber()
+ * @method string getPageSize()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getEndTime()
  * @method string getOwnerId()
- * @method string getCategory()
+ * @method array getInstanceIds()
  */
-class DescribeSnapshotMonitorDataRequest extends \RpcAcsRequest
+class DescribeInstanceMaintenanceAttributesRequest extends \RpcAcsRequest
 {
 
     /**
@@ -32,7 +31,7 @@ class DescribeSnapshotMonitorDataRequest extends \RpcAcsRequest
         parent::__construct(
             'Ecs',
             '2014-05-26',
-            'DescribeSnapshotMonitorData',
+            'DescribeInstanceMaintenanceAttributes',
             'ecs'
         );
     }
@@ -51,27 +50,27 @@ class DescribeSnapshotMonitorDataRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $startTime
+     * @param string $pageNumber
      *
      * @return $this
      */
-    public function setStartTime($startTime)
+    public function setPageNumber($pageNumber)
     {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }
 
     /**
-     * @param string $period
+     * @param string $pageSize
      *
      * @return $this
      */
-    public function setPeriod($period)
+    public function setPageSize($pageSize)
     {
-        $this->requestParameters['Period'] = $period;
-        $this->queryParameters['Period'] = $period;
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }
@@ -103,19 +102,6 @@ class DescribeSnapshotMonitorDataRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $endTime
-     *
-     * @return $this
-     */
-    public function setEndTime($endTime)
-    {
-        $this->requestParameters['EndTime'] = $endTime;
-        $this->queryParameters['EndTime'] = $endTime;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -129,15 +115,17 @@ class DescribeSnapshotMonitorDataRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $category
+     * @param array $instanceId
      *
      * @return $this
      */
-    public function setCategory($category)
-    {
-        $this->requestParameters['Category'] = $category;
-        $this->queryParameters['Category'] = $category;
+	public function setInstanceIds(array $instanceId)
+	{
+	    $this->requestParameters['InstanceIds'] = $instanceId;
+		foreach ($instanceId as $i => $iValue) {
+			$this->queryParameters['InstanceId.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 }
