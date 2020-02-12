@@ -11,6 +11,7 @@ namespace Dbs\Request\V20190306;
  * @method string getBackupPlanId()
  * @method string getPageNum()
  * @method string getOwnerId()
+ * @method string getShowStorageType()
  * @method string getPageSize()
  */
 class DescribeIncrementBackupListRequest extends \RpcAcsRequest
@@ -82,6 +83,19 @@ class DescribeIncrementBackupListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $showStorageType
+     *
+     * @return $this
+     */
+    public function setShowStorageType($showStorageType)
+    {
+        $this->requestParameters['ShowStorageType'] = $showStorageType;
+        $this->queryParameters['ShowStorageType'] = $showStorageType;
 
         return $this;
     }
