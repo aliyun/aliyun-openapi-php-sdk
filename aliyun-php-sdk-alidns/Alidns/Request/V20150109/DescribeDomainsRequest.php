@@ -7,6 +7,7 @@ namespace Alidns\Request\V20150109;
  *
  * Request of DescribeDomains
  *
+ * @method string getStartDate()
  * @method string getPageNumber()
  * @method string getResourceGroupId()
  * @method string getPageSize()
@@ -16,6 +17,7 @@ namespace Alidns\Request\V20150109;
  * @method string getStarmark()
  * @method string getGroupId()
  * @method string getOrderBy()
+ * @method string getEndDate()
  * @method string getUserClientIp()
  * @method string getSearchMode()
  */
@@ -38,6 +40,19 @@ class DescribeDomainsRequest extends \RpcAcsRequest
             'DescribeDomains',
             'alidns'
         );
+    }
+
+    /**
+     * @param string $startDate
+     *
+     * @return $this
+     */
+    public function setStartDate($startDate)
+    {
+        $this->requestParameters['StartDate'] = $startDate;
+        $this->queryParameters['StartDate'] = $startDate;
+
+        return $this;
     }
 
     /**
@@ -153,6 +168,19 @@ class DescribeDomainsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OrderBy'] = $orderBy;
         $this->queryParameters['OrderBy'] = $orderBy;
+
+        return $this;
+    }
+
+    /**
+     * @param string $endDate
+     *
+     * @return $this
+     */
+    public function setEndDate($endDate)
+    {
+        $this->requestParameters['EndDate'] = $endDate;
+        $this->queryParameters['EndDate'] = $endDate;
 
         return $this;
     }
