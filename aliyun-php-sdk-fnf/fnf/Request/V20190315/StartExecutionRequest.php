@@ -7,8 +7,9 @@ namespace fnf\Request\V20190315;
  *
  * Request of StartExecution
  *
- * @method string getInput()
+ * @method string getCallbackFnFTaskToken()
  * @method string getExecutionName()
+ * @method string getInput()
  * @method string getRequestId()
  * @method string getFlowName()
  */
@@ -34,14 +35,14 @@ class StartExecutionRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $input
+     * @param string $callbackFnFTaskToken
      *
      * @return $this
      */
-    public function setInput($input)
+    public function setCallbackFnFTaskToken($callbackFnFTaskToken)
     {
-        $this->requestParameters['Input'] = $input;
-        $this->queryParameters['Input'] = $input;
+        $this->requestParameters['CallbackFnFTaskToken'] = $callbackFnFTaskToken;
+        $this->queryParameters['CallbackFnFTaskToken'] = $callbackFnFTaskToken;
 
         return $this;
     }
@@ -55,6 +56,19 @@ class StartExecutionRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ExecutionName'] = $executionName;
         $this->queryParameters['ExecutionName'] = $executionName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $input
+     *
+     * @return $this
+     */
+    public function setInput($input)
+    {
+        $this->requestParameters['Input'] = $input;
+        $this->queryParameters['Input'] = $input;
 
         return $this;
     }

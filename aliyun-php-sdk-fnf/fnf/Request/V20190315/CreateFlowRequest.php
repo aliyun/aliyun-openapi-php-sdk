@@ -7,12 +7,12 @@ namespace fnf\Request\V20190315;
  *
  * Request of CreateFlow
  *
+ * @method string getDescription()
+ * @method string getType()
  * @method string getRequestId()
  * @method string getRoleArn()
  * @method string getName()
- * @method string getDescription()
  * @method string getDefinition()
- * @method string getType()
  */
 class CreateFlowRequest extends \RpcAcsRequest
 {
@@ -33,6 +33,32 @@ class CreateFlowRequest extends \RpcAcsRequest
             'CreateFlow',
             'fnf'
         );
+    }
+
+    /**
+     * @param string $description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * @param string $type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->requestParameters['Type'] = $type;
+        $this->queryParameters['Type'] = $type;
+
+        return $this;
     }
 
     /**
@@ -75,19 +101,6 @@ class CreateFlowRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $description
-     *
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->requestParameters['Description'] = $description;
-        $this->queryParameters['Description'] = $description;
-
-        return $this;
-    }
-
-    /**
      * @param string $definition
      *
      * @return $this
@@ -96,19 +109,6 @@ class CreateFlowRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Definition'] = $definition;
         $this->queryParameters['Definition'] = $definition;
-
-        return $this;
-    }
-
-    /**
-     * @param string $type
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $this->requestParameters['Type'] = $type;
-        $this->queryParameters['Type'] = $type;
 
         return $this;
     }

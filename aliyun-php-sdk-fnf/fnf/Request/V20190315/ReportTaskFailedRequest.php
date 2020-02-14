@@ -7,10 +7,10 @@ namespace fnf\Request\V20190315;
  *
  * Request of ReportTaskFailed
  *
- * @method string getRequestId()
  * @method string getCause()
- * @method string getTaskToken()
  * @method string getError()
+ * @method string getRequestId()
+ * @method string getTaskToken()
  */
 class ReportTaskFailedRequest extends \RpcAcsRequest
 {
@@ -34,19 +34,6 @@ class ReportTaskFailedRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $requestId
-     *
-     * @return $this
-     */
-    public function setRequestId($requestId)
-    {
-        $this->requestParameters['RequestId'] = $requestId;
-        $this->queryParameters['RequestId'] = $requestId;
-
-        return $this;
-    }
-
-    /**
      * @param string $cause
      *
      * @return $this
@@ -60,19 +47,6 @@ class ReportTaskFailedRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $taskToken
-     *
-     * @return $this
-     */
-    public function setTaskToken($taskToken)
-    {
-        $this->requestParameters['TaskToken'] = $taskToken;
-        $this->queryParameters['TaskToken'] = $taskToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $error
      *
      * @return $this
@@ -81,6 +55,32 @@ class ReportTaskFailedRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Error'] = $error;
         $this->queryParameters['Error'] = $error;
+
+        return $this;
+    }
+
+    /**
+     * @param string $requestId
+     *
+     * @return $this
+     */
+    public function setRequestId($requestId)
+    {
+        $this->requestParameters['RequestId'] = $requestId;
+        $this->queryParameters['RequestId'] = $requestId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $taskToken
+     *
+     * @return $this
+     */
+    public function setTaskToken($taskToken)
+    {
+        $this->requestParameters['TaskToken'] = $taskToken;
+        $this->queryParameters['TaskToken'] = $taskToken;
 
         return $this;
     }

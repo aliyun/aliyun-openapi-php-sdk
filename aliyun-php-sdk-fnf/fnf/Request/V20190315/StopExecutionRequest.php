@@ -8,10 +8,10 @@ namespace fnf\Request\V20190315;
  * Request of StopExecution
  *
  * @method string getExecutionName()
- * @method string getRequestId()
  * @method string getCause()
- * @method string getFlowName()
  * @method string getError()
+ * @method string getRequestId()
+ * @method string getFlowName()
  */
 class StopExecutionRequest extends \RpcAcsRequest
 {
@@ -48,19 +48,6 @@ class StopExecutionRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $requestId
-     *
-     * @return $this
-     */
-    public function setRequestId($requestId)
-    {
-        $this->requestParameters['RequestId'] = $requestId;
-        $this->queryParameters['RequestId'] = $requestId;
-
-        return $this;
-    }
-
-    /**
      * @param string $cause
      *
      * @return $this
@@ -74,19 +61,6 @@ class StopExecutionRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $flowName
-     *
-     * @return $this
-     */
-    public function setFlowName($flowName)
-    {
-        $this->requestParameters['FlowName'] = $flowName;
-        $this->queryParameters['FlowName'] = $flowName;
-
-        return $this;
-    }
-
-    /**
      * @param string $error
      *
      * @return $this
@@ -95,6 +69,32 @@ class StopExecutionRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Error'] = $error;
         $this->queryParameters['Error'] = $error;
+
+        return $this;
+    }
+
+    /**
+     * @param string $requestId
+     *
+     * @return $this
+     */
+    public function setRequestId($requestId)
+    {
+        $this->requestParameters['RequestId'] = $requestId;
+        $this->queryParameters['RequestId'] = $requestId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $flowName
+     *
+     * @return $this
+     */
+    public function setFlowName($flowName)
+    {
+        $this->requestParameters['FlowName'] = $flowName;
+        $this->queryParameters['FlowName'] = $flowName;
 
         return $this;
     }

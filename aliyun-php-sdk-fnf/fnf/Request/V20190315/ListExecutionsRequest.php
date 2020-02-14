@@ -11,6 +11,7 @@ namespace fnf\Request\V20190315;
  * @method string getRequestId()
  * @method string getLimit()
  * @method string getFlowName()
+ * @method string getStatus()
  */
 class ListExecutionsRequest extends \RpcAcsRequest
 {
@@ -76,6 +77,19 @@ class ListExecutionsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['FlowName'] = $flowName;
         $this->queryParameters['FlowName'] = $flowName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $status
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->requestParameters['Status'] = $status;
+        $this->queryParameters['Status'] = $status;
 
         return $this;
     }
