@@ -28,8 +28,7 @@ class ModifyBackupPlanNameRequest extends \RpcAcsRequest
         parent::__construct(
             'Dbs',
             '2019-03-06',
-            'ModifyBackupPlanName',
-            'cbs'
+            'ModifyBackupPlanName'
         );
     }
 

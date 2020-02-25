@@ -5,16 +5,16 @@ namespace Dbs\Request\V20190306;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeRestoreTaskList
+ * Request of DescribeBackupSetDownloadTaskList
  *
  * @method string getClientToken()
+ * @method string getBackupSetDownloadTaskId()
  * @method string getBackupPlanId()
  * @method string getPageNum()
  * @method string getOwnerId()
- * @method string getRestoreTaskId()
  * @method string getPageSize()
  */
-class DescribeRestoreTaskListRequest extends \RpcAcsRequest
+class DescribeBackupSetDownloadTaskListRequest extends \RpcAcsRequest
 {
 
     /**
@@ -30,7 +30,7 @@ class DescribeRestoreTaskListRequest extends \RpcAcsRequest
         parent::__construct(
             'Dbs',
             '2019-03-06',
-            'DescribeRestoreTaskList'
+            'DescribeBackupSetDownloadTaskList'
         );
     }
 
@@ -43,6 +43,19 @@ class DescribeRestoreTaskListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ClientToken'] = $clientToken;
         $this->queryParameters['ClientToken'] = $clientToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $backupSetDownloadTaskId
+     *
+     * @return $this
+     */
+    public function setBackupSetDownloadTaskId($backupSetDownloadTaskId)
+    {
+        $this->requestParameters['BackupSetDownloadTaskId'] = $backupSetDownloadTaskId;
+        $this->queryParameters['BackupSetDownloadTaskId'] = $backupSetDownloadTaskId;
 
         return $this;
     }
@@ -82,19 +95,6 @@ class DescribeRestoreTaskListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $restoreTaskId
-     *
-     * @return $this
-     */
-    public function setRestoreTaskId($restoreTaskId)
-    {
-        $this->requestParameters['RestoreTaskId'] = $restoreTaskId;
-        $this->queryParameters['RestoreTaskId'] = $restoreTaskId;
 
         return $this;
     }

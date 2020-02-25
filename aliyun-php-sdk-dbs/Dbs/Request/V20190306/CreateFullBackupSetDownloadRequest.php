@@ -5,14 +5,14 @@ namespace Dbs\Request\V20190306;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ModifyBackupObjects
+ * Request of CreateFullBackupSetDownload
  *
  * @method string getClientToken()
- * @method string getBackupPlanId()
- * @method string getBackupObjects()
+ * @method string getBackupSetId()
  * @method string getOwnerId()
+ * @method string getBackupSetDataFormat()
  */
-class ModifyBackupObjectsRequest extends \RpcAcsRequest
+class CreateFullBackupSetDownloadRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,7 +28,7 @@ class ModifyBackupObjectsRequest extends \RpcAcsRequest
         parent::__construct(
             'Dbs',
             '2019-03-06',
-            'ModifyBackupObjects'
+            'CreateFullBackupSetDownload'
         );
     }
 
@@ -46,27 +46,14 @@ class ModifyBackupObjectsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $backupPlanId
+     * @param string $backupSetId
      *
      * @return $this
      */
-    public function setBackupPlanId($backupPlanId)
+    public function setBackupSetId($backupSetId)
     {
-        $this->requestParameters['BackupPlanId'] = $backupPlanId;
-        $this->queryParameters['BackupPlanId'] = $backupPlanId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $backupObjects
-     *
-     * @return $this
-     */
-    public function setBackupObjects($backupObjects)
-    {
-        $this->requestParameters['BackupObjects'] = $backupObjects;
-        $this->queryParameters['BackupObjects'] = $backupObjects;
+        $this->requestParameters['BackupSetId'] = $backupSetId;
+        $this->queryParameters['BackupSetId'] = $backupSetId;
 
         return $this;
     }
@@ -80,6 +67,19 @@ class ModifyBackupObjectsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $backupSetDataFormat
+     *
+     * @return $this
+     */
+    public function setBackupSetDataFormat($backupSetDataFormat)
+    {
+        $this->requestParameters['BackupSetDataFormat'] = $backupSetDataFormat;
+        $this->queryParameters['BackupSetDataFormat'] = $backupSetDataFormat;
 
         return $this;
     }

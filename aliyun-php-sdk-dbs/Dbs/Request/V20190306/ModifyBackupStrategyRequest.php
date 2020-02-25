@@ -29,8 +29,7 @@ class ModifyBackupStrategyRequest extends \RpcAcsRequest
         parent::__construct(
             'Dbs',
             '2019-03-06',
-            'ModifyBackupStrategy',
-            'cbs'
+            'ModifyBackupStrategy'
         );
     }
 

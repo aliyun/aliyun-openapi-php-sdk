@@ -5,14 +5,13 @@ namespace Dbs\Request\V20190306;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of StopBackupPlan
+ * Request of StartTask
  *
- * @method string getStopMethod()
  * @method string getClientToken()
- * @method string getBackupPlanId()
  * @method string getOwnerId()
+ * @method string getTaskId()
  */
-class StopBackupPlanRequest extends \RpcAcsRequest
+class StartTaskRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,21 +27,8 @@ class StopBackupPlanRequest extends \RpcAcsRequest
         parent::__construct(
             'Dbs',
             '2019-03-06',
-            'StopBackupPlan'
+            'StartTask'
         );
-    }
-
-    /**
-     * @param string $stopMethod
-     *
-     * @return $this
-     */
-    public function setStopMethod($stopMethod)
-    {
-        $this->requestParameters['StopMethod'] = $stopMethod;
-        $this->queryParameters['StopMethod'] = $stopMethod;
-
-        return $this;
     }
 
     /**
@@ -59,19 +45,6 @@ class StopBackupPlanRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $backupPlanId
-     *
-     * @return $this
-     */
-    public function setBackupPlanId($backupPlanId)
-    {
-        $this->requestParameters['BackupPlanId'] = $backupPlanId;
-        $this->queryParameters['BackupPlanId'] = $backupPlanId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -80,6 +53,19 @@ class StopBackupPlanRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $taskId
+     *
+     * @return $this
+     */
+    public function setTaskId($taskId)
+    {
+        $this->requestParameters['TaskId'] = $taskId;
+        $this->queryParameters['TaskId'] = $taskId;
 
         return $this;
     }

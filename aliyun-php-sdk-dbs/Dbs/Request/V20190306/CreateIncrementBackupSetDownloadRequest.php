@@ -5,16 +5,15 @@ namespace Dbs\Request\V20190306;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeRestoreTaskList
+ * Request of CreateIncrementBackupSetDownload
  *
  * @method string getClientToken()
- * @method string getBackupPlanId()
- * @method string getPageNum()
+ * @method string getBackupSetName()
+ * @method string getBackupSetId()
  * @method string getOwnerId()
- * @method string getRestoreTaskId()
- * @method string getPageSize()
+ * @method string getBackupSetDataFormat()
  */
-class DescribeRestoreTaskListRequest extends \RpcAcsRequest
+class CreateIncrementBackupSetDownloadRequest extends \RpcAcsRequest
 {
 
     /**
@@ -30,7 +29,7 @@ class DescribeRestoreTaskListRequest extends \RpcAcsRequest
         parent::__construct(
             'Dbs',
             '2019-03-06',
-            'DescribeRestoreTaskList'
+            'CreateIncrementBackupSetDownload'
         );
     }
 
@@ -48,27 +47,27 @@ class DescribeRestoreTaskListRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $backupPlanId
+     * @param string $backupSetName
      *
      * @return $this
      */
-    public function setBackupPlanId($backupPlanId)
+    public function setBackupSetName($backupSetName)
     {
-        $this->requestParameters['BackupPlanId'] = $backupPlanId;
-        $this->queryParameters['BackupPlanId'] = $backupPlanId;
+        $this->requestParameters['BackupSetName'] = $backupSetName;
+        $this->queryParameters['BackupSetName'] = $backupSetName;
 
         return $this;
     }
 
     /**
-     * @param string $pageNum
+     * @param string $backupSetId
      *
      * @return $this
      */
-    public function setPageNum($pageNum)
+    public function setBackupSetId($backupSetId)
     {
-        $this->requestParameters['PageNum'] = $pageNum;
-        $this->queryParameters['PageNum'] = $pageNum;
+        $this->requestParameters['BackupSetId'] = $backupSetId;
+        $this->queryParameters['BackupSetId'] = $backupSetId;
 
         return $this;
     }
@@ -87,27 +86,14 @@ class DescribeRestoreTaskListRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $restoreTaskId
+     * @param string $backupSetDataFormat
      *
      * @return $this
      */
-    public function setRestoreTaskId($restoreTaskId)
+    public function setBackupSetDataFormat($backupSetDataFormat)
     {
-        $this->requestParameters['RestoreTaskId'] = $restoreTaskId;
-        $this->queryParameters['RestoreTaskId'] = $restoreTaskId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
+        $this->requestParameters['BackupSetDataFormat'] = $backupSetDataFormat;
+        $this->queryParameters['BackupSetDataFormat'] = $backupSetDataFormat;
 
         return $this;
     }
