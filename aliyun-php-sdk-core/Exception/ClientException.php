@@ -19,6 +19,10 @@
  * under the License.
  */
 
+/**
+ * @deprecated See: https://github.com/aliyun/openapi-sdk-php
+ * Class ClientException
+ */
 class ClientException extends Exception
 {
     /**

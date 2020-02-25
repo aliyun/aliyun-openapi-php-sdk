@@ -19,6 +19,10 @@
  */
 spl_autoload_register('Autoloader::autoload');
 
+/**
+ * @deprecated See: https://github.com/aliyun/openapi-sdk-php
+ * Class Autoloader
+ */
 class Autoloader
 {
     /**

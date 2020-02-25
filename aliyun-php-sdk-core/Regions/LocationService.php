@@ -43,6 +43,10 @@ define('LOCATION_SERVICE_REGION', 'cn-hangzhou');
  */
 define('CACHE_EXPIRE_TIME', 3600);
 
+/**
+ * @deprecated See: https://github.com/aliyun/openapi-sdk-php
+ * Class DescribeEndpointRequest
+ */
 class DescribeEndpointRequest extends RpcAcsRequest
 {
     /**

@@ -20,7 +20,7 @@
  */
 
 /**
- * @deprecated
+ * @deprecated See: https://github.com/aliyun/openapi-sdk-php
  * Interface IClientProfile
  */
 interface IClientProfile
