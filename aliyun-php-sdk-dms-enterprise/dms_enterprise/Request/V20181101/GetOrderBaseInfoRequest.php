@@ -5,12 +5,12 @@ namespace dms_enterprise\Request\V20181101;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DisableUser
+ * Request of GetOrderBaseInfo
  *
- * @method string getUid()
+ * @method string getOrderId()
  * @method string getTid()
  */
-class DisableUserRequest extends \RpcAcsRequest
+class GetOrderBaseInfoRequest extends \RpcAcsRequest
 {
 
     /**
@@ -26,19 +26,19 @@ class DisableUserRequest extends \RpcAcsRequest
         parent::__construct(
             'dms-enterprise',
             '2018-11-01',
-            'DisableUser'
+            'GetOrderBaseInfo'
         );
     }
 
     /**
-     * @param string $uid
+     * @param string $orderId
      *
      * @return $this
      */
-    public function setUid($uid)
+    public function setOrderId($orderId)
     {
-        $this->requestParameters['Uid'] = $uid;
-        $this->queryParameters['Uid'] = $uid;
+        $this->requestParameters['OrderId'] = $orderId;
+        $this->queryParameters['OrderId'] = $orderId;
 
         return $this;
     }

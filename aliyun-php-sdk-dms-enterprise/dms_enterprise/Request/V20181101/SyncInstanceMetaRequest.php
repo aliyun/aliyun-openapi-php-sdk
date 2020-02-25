@@ -5,12 +5,13 @@ namespace dms_enterprise\Request\V20181101;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DisableUser
+ * Request of SyncInstanceMeta
  *
- * @method string getUid()
+ * @method string getInstanceId()
+ * @method string getIgnoreTable()
  * @method string getTid()
  */
-class DisableUserRequest extends \RpcAcsRequest
+class SyncInstanceMetaRequest extends \RpcAcsRequest
 {
 
     /**
@@ -26,19 +27,32 @@ class DisableUserRequest extends \RpcAcsRequest
         parent::__construct(
             'dms-enterprise',
             '2018-11-01',
-            'DisableUser'
+            'SyncInstanceMeta'
         );
     }
 
     /**
-     * @param string $uid
+     * @param string $instanceId
      *
      * @return $this
      */
-    public function setUid($uid)
+    public function setInstanceId($instanceId)
     {
-        $this->requestParameters['Uid'] = $uid;
-        $this->queryParameters['Uid'] = $uid;
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ignoreTable
+     *
+     * @return $this
+     */
+    public function setIgnoreTable($ignoreTable)
+    {
+        $this->requestParameters['IgnoreTable'] = $ignoreTable;
+        $this->queryParameters['IgnoreTable'] = $ignoreTable;
 
         return $this;
     }

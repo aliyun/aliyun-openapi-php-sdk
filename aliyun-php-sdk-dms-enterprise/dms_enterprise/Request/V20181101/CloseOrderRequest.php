@@ -5,12 +5,13 @@ namespace dms_enterprise\Request\V20181101;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DisableUser
+ * Request of CloseOrder
  *
- * @method string getUid()
+ * @method string getOrderId()
+ * @method string getCloseReason()
  * @method string getTid()
  */
-class DisableUserRequest extends \RpcAcsRequest
+class CloseOrderRequest extends \RpcAcsRequest
 {
 
     /**
@@ -26,19 +27,32 @@ class DisableUserRequest extends \RpcAcsRequest
         parent::__construct(
             'dms-enterprise',
             '2018-11-01',
-            'DisableUser'
+            'CloseOrder'
         );
     }
 
     /**
-     * @param string $uid
+     * @param string $orderId
      *
      * @return $this
      */
-    public function setUid($uid)
+    public function setOrderId($orderId)
     {
-        $this->requestParameters['Uid'] = $uid;
-        $this->queryParameters['Uid'] = $uid;
+        $this->requestParameters['OrderId'] = $orderId;
+        $this->queryParameters['OrderId'] = $orderId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $closeReason
+     *
+     * @return $this
+     */
+    public function setCloseReason($closeReason)
+    {
+        $this->requestParameters['CloseReason'] = $closeReason;
+        $this->queryParameters['CloseReason'] = $closeReason;
 
         return $this;
     }

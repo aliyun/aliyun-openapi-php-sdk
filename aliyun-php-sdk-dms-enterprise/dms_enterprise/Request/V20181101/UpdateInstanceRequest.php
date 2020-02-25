@@ -5,14 +5,15 @@ namespace dms_enterprise\Request\V20181101;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of RegisterInstance
+ * Request of UpdateInstance
  *
+ * @method string getSafeRuleId()
  * @method string getEcsRegion()
  * @method string getDdlOnline()
  * @method string getUseDsql()
- * @method string getNetworkType()
  * @method string getTid()
  * @method string getSid()
+ * @method string getDbaId()
  * @method string getDataLinkName()
  * @method string getInstanceSource()
  * @method string getEnvType()
@@ -24,12 +25,11 @@ namespace dms_enterprise\Request\V20181101;
  * @method string getDatabasePassword()
  * @method string getInstanceAlias()
  * @method string getDatabaseUser()
+ * @method string getInstanceId()
  * @method string getPort()
  * @method string getVpcId()
- * @method string getDbaUid()
- * @method string getSafeRule()
  */
-class RegisterInstanceRequest extends \RpcAcsRequest
+class UpdateInstanceRequest extends \RpcAcsRequest
 {
 
     /**
@@ -45,8 +45,21 @@ class RegisterInstanceRequest extends \RpcAcsRequest
         parent::__construct(
             'dms-enterprise',
             '2018-11-01',
-            'RegisterInstance'
+            'UpdateInstance'
         );
+    }
+
+    /**
+     * @param string $safeRuleId
+     *
+     * @return $this
+     */
+    public function setSafeRuleId($safeRuleId)
+    {
+        $this->requestParameters['SafeRuleId'] = $safeRuleId;
+        $this->queryParameters['SafeRuleId'] = $safeRuleId;
+
+        return $this;
     }
 
     /**
@@ -89,19 +102,6 @@ class RegisterInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $networkType
-     *
-     * @return $this
-     */
-    public function setNetworkType($networkType)
-    {
-        $this->requestParameters['NetworkType'] = $networkType;
-        $this->queryParameters['NetworkType'] = $networkType;
-
-        return $this;
-    }
-
-    /**
      * @param string $tid
      *
      * @return $this
@@ -123,6 +123,19 @@ class RegisterInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Sid'] = $sid;
         $this->queryParameters['Sid'] = $sid;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dbaId
+     *
+     * @return $this
+     */
+    public function setDbaId($dbaId)
+    {
+        $this->requestParameters['DbaId'] = $dbaId;
+        $this->queryParameters['DbaId'] = $dbaId;
 
         return $this;
     }
@@ -271,6 +284,19 @@ class RegisterInstanceRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
      * @param string $port
      *
      * @return $this
@@ -292,32 +318,6 @@ class RegisterInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['VpcId'] = $vpcId;
         $this->queryParameters['VpcId'] = $vpcId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dbaUid
-     *
-     * @return $this
-     */
-    public function setDbaUid($dbaUid)
-    {
-        $this->requestParameters['DbaUid'] = $dbaUid;
-        $this->queryParameters['DbaUid'] = $dbaUid;
-
-        return $this;
-    }
-
-    /**
-     * @param string $safeRule
-     *
-     * @return $this
-     */
-    public function setSafeRule($safeRule)
-    {
-        $this->requestParameters['SafeRule'] = $safeRule;
-        $this->queryParameters['SafeRule'] = $safeRule;
 
         return $this;
     }

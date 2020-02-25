@@ -5,7 +5,7 @@ namespace dms_enterprise\Request\V20181101;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of RegisterUser
+ * Request of UpdateUser
  *
  * @method string getRoleNames()
  * @method string getUid()
@@ -13,7 +13,7 @@ namespace dms_enterprise\Request\V20181101;
  * @method string getMobile()
  * @method string getTid()
  */
-class RegisterUserRequest extends \RpcAcsRequest
+class UpdateUserRequest extends \RpcAcsRequest
 {
 
     /**
@@ -29,7 +29,7 @@ class RegisterUserRequest extends \RpcAcsRequest
         parent::__construct(
             'dms-enterprise',
             '2018-11-01',
-            'RegisterUser'
+            'UpdateUser'
         );
     }
 

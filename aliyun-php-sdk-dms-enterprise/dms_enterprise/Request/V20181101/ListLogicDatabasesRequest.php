@@ -5,18 +5,14 @@ namespace dms_enterprise\Request\V20181101;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DisableUser
+ * Request of ListLogicDatabases
  *
- * @method string getUid()
+ * @method string getPageSize()
  * @method string getTid()
+ * @method string getPageNumber()
  */
-class DisableUserRequest extends \RpcAcsRequest
+class ListLogicDatabasesRequest extends \RpcAcsRequest
 {
-
-    /**
-     * @var string
-     */
-    protected $method = 'POST';
 
     /**
      * Class constructor.
@@ -26,19 +22,19 @@ class DisableUserRequest extends \RpcAcsRequest
         parent::__construct(
             'dms-enterprise',
             '2018-11-01',
-            'DisableUser'
+            'ListLogicDatabases'
         );
     }
 
     /**
-     * @param string $uid
+     * @param string $pageSize
      *
      * @return $this
      */
-    public function setUid($uid)
+    public function setPageSize($pageSize)
     {
-        $this->requestParameters['Uid'] = $uid;
-        $this->queryParameters['Uid'] = $uid;
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }
@@ -52,6 +48,19 @@ class DisableUserRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Tid'] = $tid;
         $this->queryParameters['Tid'] = $tid;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

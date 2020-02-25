@@ -5,16 +5,14 @@ namespace dms_enterprise\Request\V20181101;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of GetOpLog
+ * Request of ListDatabases
  *
- * @method string getModule()
+ * @method string getInstanceId()
  * @method string getPageSize()
- * @method string getEndTime()
- * @method string getStartTime()
  * @method string getTid()
  * @method string getPageNumber()
  */
-class GetOpLogRequest extends \RpcAcsRequest
+class ListDatabasesRequest extends \RpcAcsRequest
 {
 
     /**
@@ -25,19 +23,19 @@ class GetOpLogRequest extends \RpcAcsRequest
         parent::__construct(
             'dms-enterprise',
             '2018-11-01',
-            'GetOpLog'
+            'ListDatabases'
         );
     }
 
     /**
-     * @param string $module
+     * @param string $instanceId
      *
      * @return $this
      */
-    public function setModule($module)
+    public function setInstanceId($instanceId)
     {
-        $this->requestParameters['Module'] = $module;
-        $this->queryParameters['Module'] = $module;
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }
@@ -51,32 +49,6 @@ class GetOpLogRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageSize'] = $pageSize;
         $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param string $endTime
-     *
-     * @return $this
-     */
-    public function setEndTime($endTime)
-    {
-        $this->requestParameters['EndTime'] = $endTime;
-        $this->queryParameters['EndTime'] = $endTime;
-
-        return $this;
-    }
-
-    /**
-     * @param string $startTime
-     *
-     * @return $this
-     */
-    public function setStartTime($startTime)
-    {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
 
         return $this;
     }

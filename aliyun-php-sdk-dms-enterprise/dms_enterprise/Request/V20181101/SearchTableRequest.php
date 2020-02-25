@@ -5,16 +5,17 @@ namespace dms_enterprise\Request\V20181101;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of GetOpLog
+ * Request of SearchTable
  *
- * @method string getModule()
+ * @method string getSearchTarget()
  * @method string getPageSize()
- * @method string getEndTime()
- * @method string getStartTime()
+ * @method string getEnvType()
+ * @method string getSearchKey()
+ * @method string getSearchRange()
  * @method string getTid()
  * @method string getPageNumber()
  */
-class GetOpLogRequest extends \RpcAcsRequest
+class SearchTableRequest extends \RpcAcsRequest
 {
 
     /**
@@ -25,19 +26,19 @@ class GetOpLogRequest extends \RpcAcsRequest
         parent::__construct(
             'dms-enterprise',
             '2018-11-01',
-            'GetOpLog'
+            'SearchTable'
         );
     }
 
     /**
-     * @param string $module
+     * @param string $searchTarget
      *
      * @return $this
      */
-    public function setModule($module)
+    public function setSearchTarget($searchTarget)
     {
-        $this->requestParameters['Module'] = $module;
-        $this->queryParameters['Module'] = $module;
+        $this->requestParameters['SearchTarget'] = $searchTarget;
+        $this->queryParameters['SearchTarget'] = $searchTarget;
 
         return $this;
     }
@@ -56,27 +57,40 @@ class GetOpLogRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $endTime
+     * @param string $envType
      *
      * @return $this
      */
-    public function setEndTime($endTime)
+    public function setEnvType($envType)
     {
-        $this->requestParameters['EndTime'] = $endTime;
-        $this->queryParameters['EndTime'] = $endTime;
+        $this->requestParameters['EnvType'] = $envType;
+        $this->queryParameters['EnvType'] = $envType;
 
         return $this;
     }
 
     /**
-     * @param string $startTime
+     * @param string $searchKey
      *
      * @return $this
      */
-    public function setStartTime($startTime)
+    public function setSearchKey($searchKey)
     {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
+        $this->requestParameters['SearchKey'] = $searchKey;
+        $this->queryParameters['SearchKey'] = $searchKey;
+
+        return $this;
+    }
+
+    /**
+     * @param string $searchRange
+     *
+     * @return $this
+     */
+    public function setSearchRange($searchRange)
+    {
+        $this->requestParameters['SearchRange'] = $searchRange;
+        $this->queryParameters['SearchRange'] = $searchRange;
 
         return $this;
     }

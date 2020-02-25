@@ -1,3 +1,6 @@
+2020-02-25 Version: 1.7.0
+- Fix ListWorkFlowTemplates, ListWorkFlowNodes API Go SDK build error.
+
 2018-12-29 Version: 1.1.0
 1, Add EnableUser interface, Support admin user to enable another user.
 2, Add DisableUser Interface, Support admin user to disable another user.

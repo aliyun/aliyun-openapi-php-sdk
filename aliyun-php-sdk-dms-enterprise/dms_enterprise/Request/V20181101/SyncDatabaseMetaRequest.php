@@ -5,12 +5,13 @@ namespace dms_enterprise\Request\V20181101;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DisableUser
+ * Request of SyncDatabaseMeta
  *
- * @method string getUid()
+ * @method string getDbId()
+ * @method string getLogic()
  * @method string getTid()
  */
-class DisableUserRequest extends \RpcAcsRequest
+class SyncDatabaseMetaRequest extends \RpcAcsRequest
 {
 
     /**
@@ -26,19 +27,32 @@ class DisableUserRequest extends \RpcAcsRequest
         parent::__construct(
             'dms-enterprise',
             '2018-11-01',
-            'DisableUser'
+            'SyncDatabaseMeta'
         );
     }
 
     /**
-     * @param string $uid
+     * @param string $dbId
      *
      * @return $this
      */
-    public function setUid($uid)
+    public function setDbId($dbId)
     {
-        $this->requestParameters['Uid'] = $uid;
-        $this->queryParameters['Uid'] = $uid;
+        $this->requestParameters['DbId'] = $dbId;
+        $this->queryParameters['DbId'] = $dbId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $logic
+     *
+     * @return $this
+     */
+    public function setLogic($logic)
+    {
+        $this->requestParameters['Logic'] = $logic;
+        $this->queryParameters['Logic'] = $logic;
 
         return $this;
     }

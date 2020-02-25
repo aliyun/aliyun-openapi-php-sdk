@@ -5,12 +5,12 @@ namespace dms_enterprise\Request\V20181101;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DisableUser
+ * Request of ListWorkFlowTemplates
  *
- * @method string getUid()
+ * @method string getSearchName()
  * @method string getTid()
  */
-class DisableUserRequest extends \RpcAcsRequest
+class ListWorkFlowTemplatesRequest extends \RpcAcsRequest
 {
 
     /**
@@ -26,19 +26,19 @@ class DisableUserRequest extends \RpcAcsRequest
         parent::__construct(
             'dms-enterprise',
             '2018-11-01',
-            'DisableUser'
+            'ListWorkFlowTemplates'
         );
     }
 
     /**
-     * @param string $uid
+     * @param string $searchName
      *
      * @return $this
      */
-    public function setUid($uid)
+    public function setSearchName($searchName)
     {
-        $this->requestParameters['Uid'] = $uid;
-        $this->queryParameters['Uid'] = $uid;
+        $this->requestParameters['SearchName'] = $searchName;
+        $this->queryParameters['SearchName'] = $searchName;
 
         return $this;
     }

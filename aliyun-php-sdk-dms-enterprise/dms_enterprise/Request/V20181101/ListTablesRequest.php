@@ -5,16 +5,15 @@ namespace dms_enterprise\Request\V20181101;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of GetOpLog
+ * Request of ListTables
  *
- * @method string getModule()
+ * @method string getSearchName()
  * @method string getPageSize()
- * @method string getEndTime()
- * @method string getStartTime()
+ * @method string getDatabaseId()
  * @method string getTid()
  * @method string getPageNumber()
  */
-class GetOpLogRequest extends \RpcAcsRequest
+class ListTablesRequest extends \RpcAcsRequest
 {
 
     /**
@@ -25,19 +24,19 @@ class GetOpLogRequest extends \RpcAcsRequest
         parent::__construct(
             'dms-enterprise',
             '2018-11-01',
-            'GetOpLog'
+            'ListTables'
         );
     }
 
     /**
-     * @param string $module
+     * @param string $searchName
      *
      * @return $this
      */
-    public function setModule($module)
+    public function setSearchName($searchName)
     {
-        $this->requestParameters['Module'] = $module;
-        $this->queryParameters['Module'] = $module;
+        $this->requestParameters['SearchName'] = $searchName;
+        $this->queryParameters['SearchName'] = $searchName;
 
         return $this;
     }
@@ -56,27 +55,14 @@ class GetOpLogRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $endTime
+     * @param string $databaseId
      *
      * @return $this
      */
-    public function setEndTime($endTime)
+    public function setDatabaseId($databaseId)
     {
-        $this->requestParameters['EndTime'] = $endTime;
-        $this->queryParameters['EndTime'] = $endTime;
-
-        return $this;
-    }
-
-    /**
-     * @param string $startTime
-     *
-     * @return $this
-     */
-    public function setStartTime($startTime)
-    {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
+        $this->requestParameters['DatabaseId'] = $databaseId;
+        $this->queryParameters['DatabaseId'] = $databaseId;
 
         return $this;
     }

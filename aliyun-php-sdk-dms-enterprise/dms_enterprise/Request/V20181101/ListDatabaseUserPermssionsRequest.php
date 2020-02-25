@@ -5,16 +5,17 @@ namespace dms_enterprise\Request\V20181101;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of GetOpLog
+ * Request of ListDatabaseUserPermssions
  *
- * @method string getModule()
+ * @method string getPermType()
+ * @method string getDbId()
  * @method string getPageSize()
- * @method string getEndTime()
- * @method string getStartTime()
+ * @method string getLogic()
  * @method string getTid()
  * @method string getPageNumber()
+ * @method string getUserName()
  */
-class GetOpLogRequest extends \RpcAcsRequest
+class ListDatabaseUserPermssionsRequest extends \RpcAcsRequest
 {
 
     /**
@@ -25,19 +26,32 @@ class GetOpLogRequest extends \RpcAcsRequest
         parent::__construct(
             'dms-enterprise',
             '2018-11-01',
-            'GetOpLog'
+            'ListDatabaseUserPermssions'
         );
     }
 
     /**
-     * @param string $module
+     * @param string $permType
      *
      * @return $this
      */
-    public function setModule($module)
+    public function setPermType($permType)
     {
-        $this->requestParameters['Module'] = $module;
-        $this->queryParameters['Module'] = $module;
+        $this->requestParameters['PermType'] = $permType;
+        $this->queryParameters['PermType'] = $permType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dbId
+     *
+     * @return $this
+     */
+    public function setDbId($dbId)
+    {
+        $this->requestParameters['DbId'] = $dbId;
+        $this->queryParameters['DbId'] = $dbId;
 
         return $this;
     }
@@ -56,27 +70,14 @@ class GetOpLogRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $endTime
+     * @param string $logic
      *
      * @return $this
      */
-    public function setEndTime($endTime)
+    public function setLogic($logic)
     {
-        $this->requestParameters['EndTime'] = $endTime;
-        $this->queryParameters['EndTime'] = $endTime;
-
-        return $this;
-    }
-
-    /**
-     * @param string $startTime
-     *
-     * @return $this
-     */
-    public function setStartTime($startTime)
-    {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
+        $this->requestParameters['Logic'] = $logic;
+        $this->queryParameters['Logic'] = $logic;
 
         return $this;
     }
@@ -103,6 +104,19 @@ class GetOpLogRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageNumber'] = $pageNumber;
         $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $userName
+     *
+     * @return $this
+     */
+    public function setUserName($userName)
+    {
+        $this->requestParameters['UserName'] = $userName;
+        $this->queryParameters['UserName'] = $userName;
 
         return $this;
     }

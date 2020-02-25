@@ -5,18 +5,14 @@ namespace dms_enterprise\Request\V20181101;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DisableUser
+ * Request of GetUser
  *
  * @method string getUid()
+ * @method string getUserId()
  * @method string getTid()
  */
-class DisableUserRequest extends \RpcAcsRequest
+class GetUserRequest extends \RpcAcsRequest
 {
-
-    /**
-     * @var string
-     */
-    protected $method = 'POST';
 
     /**
      * Class constructor.
@@ -26,7 +22,7 @@ class DisableUserRequest extends \RpcAcsRequest
         parent::__construct(
             'dms-enterprise',
             '2018-11-01',
-            'DisableUser'
+            'GetUser'
         );
     }
 
@@ -39,6 +35,19 @@ class DisableUserRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Uid'] = $uid;
         $this->queryParameters['Uid'] = $uid;
+
+        return $this;
+    }
+
+    /**
+     * @param string $userId
+     *
+     * @return $this
+     */
+    public function setUserId($userId)
+    {
+        $this->requestParameters['UserId'] = $userId;
+        $this->queryParameters['UserId'] = $userId;
 
         return $this;
     }
