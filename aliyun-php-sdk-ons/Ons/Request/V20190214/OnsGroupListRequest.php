@@ -9,6 +9,7 @@ namespace Ons\Request\V20190214;
  *
  * @method string getGroupId()
  * @method string getInstanceId()
+ * @method string getGroupType()
  */
 class OnsGroupListRequest extends \RpcAcsRequest
 {
@@ -53,6 +54,19 @@ class OnsGroupListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['InstanceId'] = $instanceId;
         $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $groupType
+     *
+     * @return $this
+     */
+    public function setGroupType($groupType)
+    {
+        $this->requestParameters['GroupType'] = $groupType;
+        $this->queryParameters['GroupType'] = $groupType;
 
         return $this;
     }
