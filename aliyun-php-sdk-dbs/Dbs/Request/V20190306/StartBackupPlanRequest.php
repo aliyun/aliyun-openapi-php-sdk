@@ -27,7 +27,8 @@ class StartBackupPlanRequest extends \RpcAcsRequest
         parent::__construct(
             'Dbs',
             '2019-03-06',
-            'StartBackupPlan'
+            'StartBackupPlan',
+            'cbs'
         );
     }
 

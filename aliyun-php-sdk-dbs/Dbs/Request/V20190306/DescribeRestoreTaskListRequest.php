@@ -30,7 +30,8 @@ class DescribeRestoreTaskListRequest extends \RpcAcsRequest
         parent::__construct(
             'Dbs',
             '2019-03-06',
-            'DescribeRestoreTaskList'
+            'DescribeRestoreTaskList',
+            'cbs'
         );
     }
 

@@ -29,7 +29,8 @@ class CreateIncrementBackupSetDownloadRequest extends \RpcAcsRequest
         parent::__construct(
             'Dbs',
             '2019-03-06',
-            'CreateIncrementBackupSetDownload'
+            'CreateIncrementBackupSetDownload',
+            'cbs'
         );
     }
 

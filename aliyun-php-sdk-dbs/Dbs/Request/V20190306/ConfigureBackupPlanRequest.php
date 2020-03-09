@@ -18,6 +18,7 @@ namespace Dbs\Request\V20190306;
  * @method string getBackupStartTime()
  * @method string getSourceEndpointIP()
  * @method string getEnableBackupLog()
+ * @method string getBackupStorageType()
  * @method string getDuplicationArchivePeriod()
  * @method string getSourceEndpointPassword()
  * @method string getBackupObjects()
@@ -46,7 +47,8 @@ class ConfigureBackupPlanRequest extends \RpcAcsRequest
         parent::__construct(
             'Dbs',
             '2019-03-06',
-            'ConfigureBackupPlan'
+            'ConfigureBackupPlan',
+            'cbs'
         );
     }
 
@@ -189,6 +191,19 @@ class ConfigureBackupPlanRequest extends \RpcAcsRequest
     {
         $this->requestParameters['EnableBackupLog'] = $enableBackupLog;
         $this->queryParameters['EnableBackupLog'] = $enableBackupLog;
+
+        return $this;
+    }
+
+    /**
+     * @param string $backupStorageType
+     *
+     * @return $this
+     */
+    public function setBackupStorageType($backupStorageType)
+    {
+        $this->requestParameters['BackupStorageType'] = $backupStorageType;
+        $this->queryParameters['BackupStorageType'] = $backupStorageType;
 
         return $this;
     }
