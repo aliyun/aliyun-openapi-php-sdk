@@ -8,13 +8,13 @@ namespace Dds\Request\V20151201;
  * Request of DescribeInstanceAutoRenewalAttribute
  *
  * @method string getResourceOwnerId()
+ * @method string getPageNumber()
  * @method string getSecurityToken()
- * @method string getResourceOwnerAccount()
- * @method string getOwnerAccount()
  * @method string getPageSize()
  * @method string getDBInstanceId()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
  * @method string getOwnerId()
- * @method string getPageNumber()
  * @method string getDBInstanceType()
  */
 class DescribeInstanceAutoRenewalAttributeRequest extends \RpcAcsRequest
@@ -34,7 +34,7 @@ class DescribeInstanceAutoRenewalAttributeRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'DescribeInstanceAutoRenewalAttribute',
-            'Dds'
+            'dds'
         );
     }
 
@@ -52,6 +52,19 @@ class DescribeInstanceAutoRenewalAttributeRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
      * @param string $securityToken
      *
      * @return $this
@@ -60,32 +73,6 @@ class DescribeInstanceAutoRenewalAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
         return $this;
     }
@@ -117,6 +104,32 @@ class DescribeInstanceAutoRenewalAttributeRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -125,19 +138,6 @@ class DescribeInstanceAutoRenewalAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

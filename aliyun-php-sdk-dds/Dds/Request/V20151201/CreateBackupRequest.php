@@ -7,13 +7,13 @@ namespace Dds\Request\V20151201;
  *
  * Request of CreateBackup
  *
- * @method string getBackupMethod()
  * @method string getResourceOwnerId()
  * @method string getSecurityToken()
+ * @method string getDBInstanceId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getDBInstanceId()
  * @method string getOwnerId()
+ * @method string getBackupMethod()
  */
 class CreateBackupRequest extends \RpcAcsRequest
 {
@@ -32,21 +32,8 @@ class CreateBackupRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'CreateBackup',
-            'Dds'
+            'dds'
         );
-    }
-
-    /**
-     * @param string $backupMethod
-     *
-     * @return $this
-     */
-    public function setBackupMethod($backupMethod)
-    {
-        $this->requestParameters['BackupMethod'] = $backupMethod;
-        $this->queryParameters['BackupMethod'] = $backupMethod;
-
-        return $this;
     }
 
     /**
@@ -71,6 +58,19 @@ class CreateBackupRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
 
         return $this;
     }
@@ -102,19 +102,6 @@ class CreateBackupRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -123,6 +110,19 @@ class CreateBackupRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $backupMethod
+     *
+     * @return $this
+     */
+    public function setBackupMethod($backupMethod)
+    {
+        $this->requestParameters['BackupMethod'] = $backupMethod;
+        $this->queryParameters['BackupMethod'] = $backupMethod;
 
         return $this;
     }

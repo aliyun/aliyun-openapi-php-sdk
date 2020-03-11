@@ -8,9 +8,9 @@ namespace Dds\Request\V20151201;
  * Request of CheckRecoveryCondition
  *
  * @method string getResourceOwnerId()
- * @method string getRestoreTime()
  * @method string getDatabaseNames()
  * @method string getSecurityToken()
+ * @method string getRestoreTime()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getBackupId()
@@ -34,7 +34,7 @@ class CheckRecoveryConditionRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'CheckRecoveryCondition',
-            'Dds'
+            'dds'
         );
     }
 
@@ -47,19 +47,6 @@ class CheckRecoveryConditionRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $restoreTime
-     *
-     * @return $this
-     */
-    public function setRestoreTime($restoreTime)
-    {
-        $this->requestParameters['RestoreTime'] = $restoreTime;
-        $this->queryParameters['RestoreTime'] = $restoreTime;
 
         return $this;
     }
@@ -86,6 +73,19 @@ class CheckRecoveryConditionRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $restoreTime
+     *
+     * @return $this
+     */
+    public function setRestoreTime($restoreTime)
+    {
+        $this->requestParameters['RestoreTime'] = $restoreTime;
+        $this->queryParameters['RestoreTime'] = $restoreTime;
 
         return $this;
     }

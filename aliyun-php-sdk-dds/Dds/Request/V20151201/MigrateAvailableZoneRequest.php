@@ -7,14 +7,14 @@ namespace Dds\Request\V20151201;
  *
  * Request of MigrateAvailableZone
  *
- * @method string getVswitch()
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
  * @method string getEffectiveTime()
- * @method string getOwnerAccount()
- * @method string getZoneId()
  * @method string getDBInstanceId()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getVswitch()
+ * @method string getZoneId()
  */
 class MigrateAvailableZoneRequest extends \RpcAcsRequest
 {
@@ -33,21 +33,8 @@ class MigrateAvailableZoneRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'MigrateAvailableZone',
-            'Dds'
+            'dds'
         );
-    }
-
-    /**
-     * @param string $vswitch
-     *
-     * @return $this
-     */
-    public function setVswitch($vswitch)
-    {
-        $this->requestParameters['Vswitch'] = $vswitch;
-        $this->queryParameters['Vswitch'] = $vswitch;
-
-        return $this;
     }
 
     /**
@@ -59,19 +46,6 @@ class MigrateAvailableZoneRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }
@@ -90,32 +64,6 @@ class MigrateAvailableZoneRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $zoneId
-     *
-     * @return $this
-     */
-    public function setZoneId($zoneId)
-    {
-        $this->requestParameters['ZoneId'] = $zoneId;
-        $this->queryParameters['ZoneId'] = $zoneId;
-
-        return $this;
-    }
-
-    /**
      * @param string $dBInstanceId
      *
      * @return $this
@@ -129,6 +77,32 @@ class MigrateAvailableZoneRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -137,6 +111,32 @@ class MigrateAvailableZoneRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $vswitch
+     *
+     * @return $this
+     */
+    public function setVswitch($vswitch)
+    {
+        $this->requestParameters['Vswitch'] = $vswitch;
+        $this->queryParameters['Vswitch'] = $vswitch;
+
+        return $this;
+    }
+
+    /**
+     * @param string $zoneId
+     *
+     * @return $this
+     */
+    public function setZoneId($zoneId)
+    {
+        $this->requestParameters['ZoneId'] = $zoneId;
+        $this->queryParameters['ZoneId'] = $zoneId;
 
         return $this;
     }

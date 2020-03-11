@@ -5,18 +5,17 @@ namespace Dds\Request\V20151201;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ResetAccountPassword
+ * Request of DescribeAvailableResource
  *
  * @method string getResourceOwnerId()
- * @method string getAccountName()
  * @method string getSecurityToken()
- * @method string getDBInstanceId()
+ * @method string getInstanceChargeType()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
- * @method string getAccountPassword()
+ * @method string getZoneId()
  */
-class ResetAccountPasswordRequest extends \RpcAcsRequest
+class DescribeAvailableResourceRequest extends \RpcAcsRequest
 {
 
     /**
@@ -32,7 +31,7 @@ class ResetAccountPasswordRequest extends \RpcAcsRequest
         parent::__construct(
             'Dds',
             '2015-12-01',
-            'ResetAccountPassword',
+            'DescribeAvailableResource',
             'dds'
         );
     }
@@ -51,19 +50,6 @@ class ResetAccountPasswordRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $accountName
-     *
-     * @return $this
-     */
-    public function setAccountName($accountName)
-    {
-        $this->requestParameters['AccountName'] = $accountName;
-        $this->queryParameters['AccountName'] = $accountName;
-
-        return $this;
-    }
-
-    /**
      * @param string $securityToken
      *
      * @return $this
@@ -77,14 +63,14 @@ class ResetAccountPasswordRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dBInstanceId
+     * @param string $instanceChargeType
      *
      * @return $this
      */
-    public function setDBInstanceId($dBInstanceId)
+    public function setInstanceChargeType($instanceChargeType)
     {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
+        $this->requestParameters['InstanceChargeType'] = $instanceChargeType;
+        $this->queryParameters['InstanceChargeType'] = $instanceChargeType;
 
         return $this;
     }
@@ -129,14 +115,14 @@ class ResetAccountPasswordRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $accountPassword
+     * @param string $zoneId
      *
      * @return $this
      */
-    public function setAccountPassword($accountPassword)
+    public function setZoneId($zoneId)
     {
-        $this->requestParameters['AccountPassword'] = $accountPassword;
-        $this->queryParameters['AccountPassword'] = $accountPassword;
+        $this->requestParameters['ZoneId'] = $zoneId;
+        $this->queryParameters['ZoneId'] = $zoneId;
 
         return $this;
     }

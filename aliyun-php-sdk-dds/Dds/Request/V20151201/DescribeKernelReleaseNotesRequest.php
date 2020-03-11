@@ -8,11 +8,11 @@ namespace Dds\Request\V20151201;
  * Request of DescribeKernelReleaseNotes
  *
  * @method string getResourceOwnerId()
+ * @method string getKernelVersion()
  * @method string getSecurityToken()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
- * @method string getKernelVersion()
  */
 class DescribeKernelReleaseNotesRequest extends \RpcAcsRequest
 {
@@ -31,7 +31,7 @@ class DescribeKernelReleaseNotesRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'DescribeKernelReleaseNotes',
-            'Dds'
+            'dds'
         );
     }
 
@@ -44,6 +44,19 @@ class DescribeKernelReleaseNotesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $kernelVersion
+     *
+     * @return $this
+     */
+    public function setKernelVersion($kernelVersion)
+    {
+        $this->requestParameters['KernelVersion'] = $kernelVersion;
+        $this->queryParameters['KernelVersion'] = $kernelVersion;
 
         return $this;
     }
@@ -96,19 +109,6 @@ class DescribeKernelReleaseNotesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $kernelVersion
-     *
-     * @return $this
-     */
-    public function setKernelVersion($kernelVersion)
-    {
-        $this->requestParameters['KernelVersion'] = $kernelVersion;
-        $this->queryParameters['KernelVersion'] = $kernelVersion;
 
         return $this;
     }

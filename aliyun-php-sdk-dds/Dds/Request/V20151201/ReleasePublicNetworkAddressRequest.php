@@ -9,11 +9,11 @@ namespace Dds\Request\V20151201;
  *
  * @method string getResourceOwnerId()
  * @method string getSecurityToken()
+ * @method string getDBInstanceId()
+ * @method string getNodeId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getDBInstanceId()
  * @method string getOwnerId()
- * @method string getNodeId()
  */
 class ReleasePublicNetworkAddressRequest extends \RpcAcsRequest
 {
@@ -32,7 +32,7 @@ class ReleasePublicNetworkAddressRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'ReleasePublicNetworkAddress',
-            'Dds'
+            'dds'
         );
     }
 
@@ -58,6 +58,32 @@ class ReleasePublicNetworkAddressRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $nodeId
+     *
+     * @return $this
+     */
+    public function setNodeId($nodeId)
+    {
+        $this->requestParameters['NodeId'] = $nodeId;
+        $this->queryParameters['NodeId'] = $nodeId;
 
         return $this;
     }
@@ -89,19 +115,6 @@ class ReleasePublicNetworkAddressRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -110,19 +123,6 @@ class ReleasePublicNetworkAddressRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $nodeId
-     *
-     * @return $this
-     */
-    public function setNodeId($nodeId)
-    {
-        $this->requestParameters['NodeId'] = $nodeId;
-        $this->queryParameters['NodeId'] = $nodeId;
 
         return $this;
     }

@@ -9,32 +9,33 @@ namespace Dds\Request\V20151201;
  *
  * @method string getResourceOwnerId()
  * @method string getDBInstanceStorage()
- * @method string getClientToken()
  * @method string getCouponNo()
  * @method string getEngineVersion()
  * @method string getNetworkType()
- * @method string getReplicationFactor()
- * @method string getStorageEngine()
  * @method string getResourceGroupId()
- * @method string getDatabaseNames()
  * @method string getSecurityToken()
- * @method string getEngine()
  * @method string getDBInstanceDescription()
  * @method string getBusinessInfo()
  * @method string getPeriod()
- * @method string getRestoreTime()
- * @method string getResourceOwnerAccount()
- * @method string getSrcDBInstanceId()
- * @method string getOwnerAccount()
  * @method string getBackupId()
  * @method string getOwnerId()
  * @method string getDBInstanceClass()
  * @method string getSecurityIPList()
  * @method string getVSwitchId()
- * @method string getAccountPassword()
  * @method string getAutoRenew()
- * @method string getVpcId()
  * @method string getZoneId()
+ * @method string getClientToken()
+ * @method string getReadonlyReplicas()
+ * @method string getReplicationFactor()
+ * @method string getStorageEngine()
+ * @method string getDatabaseNames()
+ * @method string getEngine()
+ * @method string getRestoreTime()
+ * @method string getResourceOwnerAccount()
+ * @method string getSrcDBInstanceId()
+ * @method string getOwnerAccount()
+ * @method string getAccountPassword()
+ * @method string getVpcId()
  * @method string getChargeType()
  */
 class CreateDBInstanceRequest extends \RpcAcsRequest
@@ -54,7 +55,7 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'CreateDBInstance',
-            'Dds'
+            'dds'
         );
     }
 
@@ -80,19 +81,6 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DBInstanceStorage'] = $dBInstanceStorage;
         $this->queryParameters['DBInstanceStorage'] = $dBInstanceStorage;
-
-        return $this;
-    }
-
-    /**
-     * @param string $clientToken
-     *
-     * @return $this
-     */
-    public function setClientToken($clientToken)
-    {
-        $this->requestParameters['ClientToken'] = $clientToken;
-        $this->queryParameters['ClientToken'] = $clientToken;
 
         return $this;
     }
@@ -137,32 +125,6 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $replicationFactor
-     *
-     * @return $this
-     */
-    public function setReplicationFactor($replicationFactor)
-    {
-        $this->requestParameters['ReplicationFactor'] = $replicationFactor;
-        $this->queryParameters['ReplicationFactor'] = $replicationFactor;
-
-        return $this;
-    }
-
-    /**
-     * @param string $storageEngine
-     *
-     * @return $this
-     */
-    public function setStorageEngine($storageEngine)
-    {
-        $this->requestParameters['StorageEngine'] = $storageEngine;
-        $this->queryParameters['StorageEngine'] = $storageEngine;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceGroupId
      *
      * @return $this
@@ -176,19 +138,6 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $databaseNames
-     *
-     * @return $this
-     */
-    public function setDatabaseNames($databaseNames)
-    {
-        $this->requestParameters['DatabaseNames'] = $databaseNames;
-        $this->queryParameters['DatabaseNames'] = $databaseNames;
-
-        return $this;
-    }
-
-    /**
      * @param string $securityToken
      *
      * @return $this
@@ -197,19 +146,6 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $engine
-     *
-     * @return $this
-     */
-    public function setEngine($engine)
-    {
-        $this->requestParameters['Engine'] = $engine;
-        $this->queryParameters['Engine'] = $engine;
 
         return $this;
     }
@@ -249,58 +185,6 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Period'] = $period;
         $this->queryParameters['Period'] = $period;
-
-        return $this;
-    }
-
-    /**
-     * @param string $restoreTime
-     *
-     * @return $this
-     */
-    public function setRestoreTime($restoreTime)
-    {
-        $this->requestParameters['RestoreTime'] = $restoreTime;
-        $this->queryParameters['RestoreTime'] = $restoreTime;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $srcDBInstanceId
-     *
-     * @return $this
-     */
-    public function setSrcDBInstanceId($srcDBInstanceId)
-    {
-        $this->requestParameters['SrcDBInstanceId'] = $srcDBInstanceId;
-        $this->queryParameters['SrcDBInstanceId'] = $srcDBInstanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
         return $this;
     }
@@ -371,19 +255,6 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $accountPassword
-     *
-     * @return $this
-     */
-    public function setAccountPassword($accountPassword)
-    {
-        $this->requestParameters['AccountPassword'] = $accountPassword;
-        $this->queryParameters['AccountPassword'] = $accountPassword;
-
-        return $this;
-    }
-
-    /**
      * @param string $autoRenew
      *
      * @return $this
@@ -397,19 +268,6 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $vpcId
-     *
-     * @return $this
-     */
-    public function setVpcId($vpcId)
-    {
-        $this->requestParameters['VpcId'] = $vpcId;
-        $this->queryParameters['VpcId'] = $vpcId;
-
-        return $this;
-    }
-
-    /**
      * @param string $zoneId
      *
      * @return $this
@@ -418,6 +276,162 @@ class CreateDBInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ZoneId'] = $zoneId;
         $this->queryParameters['ZoneId'] = $zoneId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $readonlyReplicas
+     *
+     * @return $this
+     */
+    public function setReadonlyReplicas($readonlyReplicas)
+    {
+        $this->requestParameters['ReadonlyReplicas'] = $readonlyReplicas;
+        $this->queryParameters['ReadonlyReplicas'] = $readonlyReplicas;
+
+        return $this;
+    }
+
+    /**
+     * @param string $replicationFactor
+     *
+     * @return $this
+     */
+    public function setReplicationFactor($replicationFactor)
+    {
+        $this->requestParameters['ReplicationFactor'] = $replicationFactor;
+        $this->queryParameters['ReplicationFactor'] = $replicationFactor;
+
+        return $this;
+    }
+
+    /**
+     * @param string $storageEngine
+     *
+     * @return $this
+     */
+    public function setStorageEngine($storageEngine)
+    {
+        $this->requestParameters['StorageEngine'] = $storageEngine;
+        $this->queryParameters['StorageEngine'] = $storageEngine;
+
+        return $this;
+    }
+
+    /**
+     * @param string $databaseNames
+     *
+     * @return $this
+     */
+    public function setDatabaseNames($databaseNames)
+    {
+        $this->requestParameters['DatabaseNames'] = $databaseNames;
+        $this->queryParameters['DatabaseNames'] = $databaseNames;
+
+        return $this;
+    }
+
+    /**
+     * @param string $engine
+     *
+     * @return $this
+     */
+    public function setEngine($engine)
+    {
+        $this->requestParameters['Engine'] = $engine;
+        $this->queryParameters['Engine'] = $engine;
+
+        return $this;
+    }
+
+    /**
+     * @param string $restoreTime
+     *
+     * @return $this
+     */
+    public function setRestoreTime($restoreTime)
+    {
+        $this->requestParameters['RestoreTime'] = $restoreTime;
+        $this->queryParameters['RestoreTime'] = $restoreTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $srcDBInstanceId
+     *
+     * @return $this
+     */
+    public function setSrcDBInstanceId($srcDBInstanceId)
+    {
+        $this->requestParameters['SrcDBInstanceId'] = $srcDBInstanceId;
+        $this->queryParameters['SrcDBInstanceId'] = $srcDBInstanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $accountPassword
+     *
+     * @return $this
+     */
+    public function setAccountPassword($accountPassword)
+    {
+        $this->requestParameters['AccountPassword'] = $accountPassword;
+        $this->queryParameters['AccountPassword'] = $accountPassword;
+
+        return $this;
+    }
+
+    /**
+     * @param string $vpcId
+     *
+     * @return $this
+     */
+    public function setVpcId($vpcId)
+    {
+        $this->requestParameters['VpcId'] = $vpcId;
+        $this->queryParameters['VpcId'] = $vpcId;
 
         return $this;
     }

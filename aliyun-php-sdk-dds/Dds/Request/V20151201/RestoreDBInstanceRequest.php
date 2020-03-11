@@ -9,10 +9,10 @@ namespace Dds\Request\V20151201;
  *
  * @method string getResourceOwnerId()
  * @method string getSecurityToken()
+ * @method string getDBInstanceId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getBackupId()
- * @method string getDBInstanceId()
  * @method string getOwnerId()
  */
 class RestoreDBInstanceRequest extends \RpcAcsRequest
@@ -32,7 +32,7 @@ class RestoreDBInstanceRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'RestoreDBInstance',
-            'Dds'
+            'dds'
         );
     }
 
@@ -58,6 +58,19 @@ class RestoreDBInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
 
         return $this;
     }
@@ -97,19 +110,6 @@ class RestoreDBInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['BackupId'] = $backupId;
         $this->queryParameters['BackupId'] = $backupId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
 
         return $this;
     }

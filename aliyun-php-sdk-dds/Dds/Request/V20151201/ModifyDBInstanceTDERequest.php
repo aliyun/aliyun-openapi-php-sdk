@@ -5,18 +5,20 @@ namespace Dds\Request\V20151201;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ResetAccountPassword
+ * Request of ModifyDBInstanceTDE
  *
  * @method string getResourceOwnerId()
- * @method string getAccountName()
  * @method string getSecurityToken()
  * @method string getDBInstanceId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
+ * @method string getEncryptionKey()
  * @method string getOwnerId()
- * @method string getAccountPassword()
+ * @method string getEncryptorName()
+ * @method string getRoleARN()
+ * @method string getTDEStatus()
  */
-class ResetAccountPasswordRequest extends \RpcAcsRequest
+class ModifyDBInstanceTDERequest extends \RpcAcsRequest
 {
 
     /**
@@ -32,7 +34,7 @@ class ResetAccountPasswordRequest extends \RpcAcsRequest
         parent::__construct(
             'Dds',
             '2015-12-01',
-            'ResetAccountPassword',
+            'ModifyDBInstanceTDE',
             'dds'
         );
     }
@@ -46,19 +48,6 @@ class ResetAccountPasswordRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $accountName
-     *
-     * @return $this
-     */
-    public function setAccountName($accountName)
-    {
-        $this->requestParameters['AccountName'] = $accountName;
-        $this->queryParameters['AccountName'] = $accountName;
 
         return $this;
     }
@@ -116,6 +105,19 @@ class ResetAccountPasswordRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $encryptionKey
+     *
+     * @return $this
+     */
+    public function setEncryptionKey($encryptionKey)
+    {
+        $this->requestParameters['EncryptionKey'] = $encryptionKey;
+        $this->queryParameters['EncryptionKey'] = $encryptionKey;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -129,14 +131,40 @@ class ResetAccountPasswordRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $accountPassword
+     * @param string $encryptorName
      *
      * @return $this
      */
-    public function setAccountPassword($accountPassword)
+    public function setEncryptorName($encryptorName)
     {
-        $this->requestParameters['AccountPassword'] = $accountPassword;
-        $this->queryParameters['AccountPassword'] = $accountPassword;
+        $this->requestParameters['EncryptorName'] = $encryptorName;
+        $this->queryParameters['EncryptorName'] = $encryptorName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $roleARN
+     *
+     * @return $this
+     */
+    public function setRoleARN($roleARN)
+    {
+        $this->requestParameters['RoleARN'] = $roleARN;
+        $this->queryParameters['RoleARN'] = $roleARN;
+
+        return $this;
+    }
+
+    /**
+     * @param string $tDEStatus
+     *
+     * @return $this
+     */
+    public function setTDEStatus($tDEStatus)
+    {
+        $this->requestParameters['TDEStatus'] = $tDEStatus;
+        $this->queryParameters['TDEStatus'] = $tDEStatus;
 
         return $this;
     }

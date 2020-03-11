@@ -8,17 +8,17 @@ namespace Dds\Request\V20151201;
  * Request of DescribeDBInstancePerformance
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
  * @method string getRoleId()
- * @method string getOwnerAccount()
- * @method string getEndTime()
  * @method string getStartTime()
- * @method string getOwnerId()
  * @method string getReplicaSetRole()
  * @method string getSecurityToken()
  * @method string getDBInstanceId()
  * @method string getNodeId()
  * @method string getKey()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getEndTime()
+ * @method string getOwnerId()
  */
 class DescribeDBInstancePerformanceRequest extends \RpcAcsRequest
 {
@@ -37,7 +37,7 @@ class DescribeDBInstancePerformanceRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'DescribeDBInstancePerformance',
-            'Dds'
+            'dds'
         );
     }
 
@@ -50,19 +50,6 @@ class DescribeDBInstancePerformanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }
@@ -81,32 +68,6 @@ class DescribeDBInstancePerformanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $endTime
-     *
-     * @return $this
-     */
-    public function setEndTime($endTime)
-    {
-        $this->requestParameters['EndTime'] = $endTime;
-        $this->queryParameters['EndTime'] = $endTime;
-
-        return $this;
-    }
-
-    /**
      * @param string $startTime
      *
      * @return $this
@@ -115,19 +76,6 @@ class DescribeDBInstancePerformanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['StartTime'] = $startTime;
         $this->queryParameters['StartTime'] = $startTime;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }
@@ -193,6 +141,58 @@ class DescribeDBInstancePerformanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Key'] = $key;
         $this->queryParameters['Key'] = $key;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $endTime
+     *
+     * @return $this
+     */
+    public function setEndTime($endTime)
+    {
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

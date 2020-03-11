@@ -8,13 +8,13 @@ namespace Dds\Request\V20151201;
  * Request of ModifyDBInstanceNetExpireTime
  *
  * @method string getResourceOwnerId()
- * @method string getSecurityToken()
- * @method string getResourceOwnerAccount()
  * @method string getConnectionString()
- * @method string getOwnerAccount()
- * @method string getDBInstanceId()
- * @method string getOwnerId()
  * @method string getClassicExpendExpiredDays()
+ * @method string getSecurityToken()
+ * @method string getDBInstanceId()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getOwnerId()
  */
 class ModifyDBInstanceNetExpireTimeRequest extends \RpcAcsRequest
 {
@@ -33,7 +33,7 @@ class ModifyDBInstanceNetExpireTimeRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'ModifyDBInstanceNetExpireTime',
-            'Dds'
+            'dds'
         );
     }
 
@@ -46,32 +46,6 @@ class ModifyDBInstanceNetExpireTimeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }
@@ -90,14 +64,27 @@ class ModifyDBInstanceNetExpireTimeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerAccount
+     * @param string $classicExpendExpiredDays
      *
      * @return $this
      */
-    public function setOwnerAccount($ownerAccount)
+    public function setClassicExpendExpiredDays($classicExpendExpiredDays)
     {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+        $this->requestParameters['ClassicExpendExpiredDays'] = $classicExpendExpiredDays;
+        $this->queryParameters['ClassicExpendExpiredDays'] = $classicExpendExpiredDays;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }
@@ -116,6 +103,32 @@ class ModifyDBInstanceNetExpireTimeRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -124,19 +137,6 @@ class ModifyDBInstanceNetExpireTimeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $classicExpendExpiredDays
-     *
-     * @return $this
-     */
-    public function setClassicExpendExpiredDays($classicExpendExpiredDays)
-    {
-        $this->requestParameters['ClassicExpendExpiredDays'] = $classicExpendExpiredDays;
-        $this->queryParameters['ClassicExpendExpiredDays'] = $classicExpendExpiredDays;
 
         return $this;
     }

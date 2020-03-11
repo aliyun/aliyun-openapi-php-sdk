@@ -30,7 +30,7 @@ class DescribeRegionsRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'DescribeRegions',
-            'Dds'
+            'dds'
         );
     }
 

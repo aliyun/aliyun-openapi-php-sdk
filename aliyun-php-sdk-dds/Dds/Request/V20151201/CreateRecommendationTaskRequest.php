@@ -8,14 +8,14 @@ namespace Dds\Request\V20151201;
  * Request of CreateRecommendationTask
  *
  * @method string getResourceOwnerId()
- * @method string getInstanceId()
+ * @method string getStartTime()
  * @method string getSecurityToken()
+ * @method string getNodeId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getEndTime()
- * @method string getStartTime()
  * @method string getOwnerId()
- * @method string getNodeId()
+ * @method string getInstanceId()
  */
 class CreateRecommendationTaskRequest extends \RpcAcsRequest
 {
@@ -34,7 +34,7 @@ class CreateRecommendationTaskRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'CreateRecommendationTask',
-            'Dds'
+            'dds'
         );
     }
 
@@ -52,14 +52,14 @@ class CreateRecommendationTaskRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
+     * @param string $startTime
      *
      * @return $this
      */
-    public function setInstanceId($instanceId)
+    public function setStartTime($startTime)
     {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
 
         return $this;
     }
@@ -73,6 +73,19 @@ class CreateRecommendationTaskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $nodeId
+     *
+     * @return $this
+     */
+    public function setNodeId($nodeId)
+    {
+        $this->requestParameters['NodeId'] = $nodeId;
+        $this->queryParameters['NodeId'] = $nodeId;
 
         return $this;
     }
@@ -117,19 +130,6 @@ class CreateRecommendationTaskRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $startTime
-     *
-     * @return $this
-     */
-    public function setStartTime($startTime)
-    {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -143,14 +143,14 @@ class CreateRecommendationTaskRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $nodeId
+     * @param string $instanceId
      *
      * @return $this
      */
-    public function setNodeId($nodeId)
+    public function setInstanceId($instanceId)
     {
-        $this->requestParameters['NodeId'] = $nodeId;
-        $this->queryParameters['NodeId'] = $nodeId;
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

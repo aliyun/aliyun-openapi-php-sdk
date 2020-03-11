@@ -7,19 +7,19 @@ namespace Dds\Request\V20151201;
  *
  * Request of DescribeSlowLogRecords
  *
- * @method string getSQLId()
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
- * @method string getOwnerAccount()
- * @method string getEndTime()
  * @method string getStartTime()
- * @method string getOwnerId()
  * @method string getPageNumber()
- * @method string getDBName()
  * @method string getSecurityToken()
  * @method string getPageSize()
  * @method string getDBInstanceId()
  * @method string getNodeId()
+ * @method string getSQLId()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getEndTime()
+ * @method string getOwnerId()
+ * @method string getDBName()
  */
 class DescribeSlowLogRecordsRequest extends \RpcAcsRequest
 {
@@ -38,21 +38,8 @@ class DescribeSlowLogRecordsRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'DescribeSlowLogRecords',
-            'Dds'
+            'dds'
         );
-    }
-
-    /**
-     * @param string $sQLId
-     *
-     * @return $this
-     */
-    public function setSQLId($sQLId)
-    {
-        $this->requestParameters['SQLId'] = $sQLId;
-        $this->queryParameters['SQLId'] = $sQLId;
-
-        return $this;
     }
 
     /**
@@ -64,45 +51,6 @@ class DescribeSlowLogRecordsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $endTime
-     *
-     * @return $this
-     */
-    public function setEndTime($endTime)
-    {
-        $this->requestParameters['EndTime'] = $endTime;
-        $this->queryParameters['EndTime'] = $endTime;
 
         return $this;
     }
@@ -121,19 +69,6 @@ class DescribeSlowLogRecordsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
      * @param string $pageNumber
      *
      * @return $this
@@ -142,19 +77,6 @@ class DescribeSlowLogRecordsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageNumber'] = $pageNumber;
         $this->queryParameters['PageNumber'] = $pageNumber;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBName
-     *
-     * @return $this
-     */
-    public function setDBName($dBName)
-    {
-        $this->requestParameters['DBName'] = $dBName;
-        $this->queryParameters['DBName'] = $dBName;
 
         return $this;
     }
@@ -207,6 +129,84 @@ class DescribeSlowLogRecordsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['NodeId'] = $nodeId;
         $this->queryParameters['NodeId'] = $nodeId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sQLId
+     *
+     * @return $this
+     */
+    public function setSQLId($sQLId)
+    {
+        $this->requestParameters['SQLId'] = $sQLId;
+        $this->queryParameters['SQLId'] = $sQLId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $endTime
+     *
+     * @return $this
+     */
+    public function setEndTime($endTime)
+    {
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBName
+     *
+     * @return $this
+     */
+    public function setDBName($dBName)
+    {
+        $this->requestParameters['DBName'] = $dBName;
+        $this->queryParameters['DBName'] = $dBName;
 
         return $this;
     }

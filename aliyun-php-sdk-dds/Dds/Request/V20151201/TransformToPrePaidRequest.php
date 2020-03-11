@@ -8,17 +8,17 @@ namespace Dds\Request\V20151201;
  * Request of TransformToPrePaid
  *
  * @method string getResourceOwnerId()
+ * @method string getCouponNo()
+ * @method string getSecurityToken()
+ * @method string getBusinessInfo()
  * @method string getPeriod()
  * @method string getAutoPay()
  * @method string getFromApp()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getCouponNo()
  * @method string getOwnerId()
  * @method string getInstanceId()
  * @method string getAutoRenew()
- * @method string getSecurityToken()
- * @method string getBusinessInfo()
  */
 class TransformToPrePaidRequest extends \RpcAcsRequest
 {
@@ -37,7 +37,7 @@ class TransformToPrePaidRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'TransformToPrePaid',
-            'Dds'
+            'dds'
         );
     }
 
@@ -50,6 +50,45 @@ class TransformToPrePaidRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $couponNo
+     *
+     * @return $this
+     */
+    public function setCouponNo($couponNo)
+    {
+        $this->requestParameters['CouponNo'] = $couponNo;
+        $this->queryParameters['CouponNo'] = $couponNo;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $businessInfo
+     *
+     * @return $this
+     */
+    public function setBusinessInfo($businessInfo)
+    {
+        $this->requestParameters['BusinessInfo'] = $businessInfo;
+        $this->queryParameters['BusinessInfo'] = $businessInfo;
 
         return $this;
     }
@@ -120,19 +159,6 @@ class TransformToPrePaidRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $couponNo
-     *
-     * @return $this
-     */
-    public function setCouponNo($couponNo)
-    {
-        $this->requestParameters['CouponNo'] = $couponNo;
-        $this->queryParameters['CouponNo'] = $couponNo;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -167,32 +193,6 @@ class TransformToPrePaidRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AutoRenew'] = $autoRenew;
         $this->queryParameters['AutoRenew'] = $autoRenew;
-
-        return $this;
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $businessInfo
-     *
-     * @return $this
-     */
-    public function setBusinessInfo($businessInfo)
-    {
-        $this->requestParameters['BusinessInfo'] = $businessInfo;
-        $this->queryParameters['BusinessInfo'] = $businessInfo;
 
         return $this;
     }

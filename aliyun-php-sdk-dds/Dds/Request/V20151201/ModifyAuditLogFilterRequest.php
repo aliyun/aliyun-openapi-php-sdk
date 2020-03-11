@@ -7,14 +7,14 @@ namespace Dds\Request\V20151201;
  *
  * Request of ModifyAuditLogFilter
  *
- * @method string getFilter()
  * @method string getResourceOwnerId()
  * @method string getSecurityToken()
- * @method string getResourceOwnerAccount()
- * @method string getOwnerAccount()
  * @method string getDBInstanceId()
  * @method string getRoleType()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getFilter()
  */
 class ModifyAuditLogFilterRequest extends \RpcAcsRequest
 {
@@ -33,21 +33,8 @@ class ModifyAuditLogFilterRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'ModifyAuditLogFilter',
-            'Dds'
+            'dds'
         );
-    }
-
-    /**
-     * @param string $filter
-     *
-     * @return $this
-     */
-    public function setFilter($filter)
-    {
-        $this->requestParameters['Filter'] = $filter;
-        $this->queryParameters['Filter'] = $filter;
-
-        return $this;
     }
 
     /**
@@ -72,32 +59,6 @@ class ModifyAuditLogFilterRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
         return $this;
     }
@@ -129,6 +90,32 @@ class ModifyAuditLogFilterRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -137,6 +124,19 @@ class ModifyAuditLogFilterRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $filter
+     *
+     * @return $this
+     */
+    public function setFilter($filter)
+    {
+        $this->requestParameters['Filter'] = $filter;
+        $this->queryParameters['Filter'] = $filter;
 
         return $this;
     }

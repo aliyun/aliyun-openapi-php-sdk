@@ -8,12 +8,12 @@ namespace Dds\Request\V20151201;
  * Request of DescribeAvailableTimeRange
  *
  * @method string getResourceOwnerId()
- * @method string getInstanceId()
  * @method string getSecurityToken()
+ * @method string getNodeId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
- * @method string getNodeId()
+ * @method string getInstanceId()
  */
 class DescribeAvailableTimeRangeRequest extends \RpcAcsRequest
 {
@@ -32,7 +32,7 @@ class DescribeAvailableTimeRangeRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'DescribeAvailableTimeRange',
-            'Dds'
+            'dds'
         );
     }
 
@@ -50,19 +50,6 @@ class DescribeAvailableTimeRangeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $securityToken
      *
      * @return $this
@@ -71,6 +58,19 @@ class DescribeAvailableTimeRangeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $nodeId
+     *
+     * @return $this
+     */
+    public function setNodeId($nodeId)
+    {
+        $this->requestParameters['NodeId'] = $nodeId;
+        $this->queryParameters['NodeId'] = $nodeId;
 
         return $this;
     }
@@ -115,14 +115,14 @@ class DescribeAvailableTimeRangeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $nodeId
+     * @param string $instanceId
      *
      * @return $this
      */
-    public function setNodeId($nodeId)
+    public function setInstanceId($instanceId)
     {
-        $this->requestParameters['NodeId'] = $nodeId;
-        $this->queryParameters['NodeId'] = $nodeId;
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

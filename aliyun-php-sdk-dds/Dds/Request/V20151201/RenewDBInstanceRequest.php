@@ -8,16 +8,16 @@ namespace Dds\Request\V20151201;
  * Request of RenewDBInstance
  *
  * @method string getResourceOwnerId()
- * @method string getPeriod()
- * @method string getAutoPay()
- * @method string getResourceOwnerAccount()
  * @method string getClientToken()
- * @method string getOwnerAccount()
  * @method string getCouponNo()
- * @method string getOwnerId()
  * @method string getSecurityToken()
  * @method string getDBInstanceId()
  * @method string getBusinessInfo()
+ * @method string getPeriod()
+ * @method string getAutoPay()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getOwnerId()
  */
 class RenewDBInstanceRequest extends \RpcAcsRequest
 {
@@ -36,7 +36,7 @@ class RenewDBInstanceRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'RenewDBInstance',
-            'Dds'
+            'dds'
         );
     }
 
@@ -49,6 +49,71 @@ class RenewDBInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $couponNo
+     *
+     * @return $this
+     */
+    public function setCouponNo($couponNo)
+    {
+        $this->requestParameters['CouponNo'] = $couponNo;
+        $this->queryParameters['CouponNo'] = $couponNo;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $businessInfo
+     *
+     * @return $this
+     */
+    public function setBusinessInfo($businessInfo)
+    {
+        $this->requestParameters['BusinessInfo'] = $businessInfo;
+        $this->queryParameters['BusinessInfo'] = $businessInfo;
 
         return $this;
     }
@@ -93,19 +158,6 @@ class RenewDBInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $clientToken
-     *
-     * @return $this
-     */
-    public function setClientToken($clientToken)
-    {
-        $this->requestParameters['ClientToken'] = $clientToken;
-        $this->queryParameters['ClientToken'] = $clientToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerAccount
      *
      * @return $this
@@ -119,19 +171,6 @@ class RenewDBInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $couponNo
-     *
-     * @return $this
-     */
-    public function setCouponNo($couponNo)
-    {
-        $this->requestParameters['CouponNo'] = $couponNo;
-        $this->queryParameters['CouponNo'] = $couponNo;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -140,45 +179,6 @@ class RenewDBInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $businessInfo
-     *
-     * @return $this
-     */
-    public function setBusinessInfo($businessInfo)
-    {
-        $this->requestParameters['BusinessInfo'] = $businessInfo;
-        $this->queryParameters['BusinessInfo'] = $businessInfo;
 
         return $this;
     }

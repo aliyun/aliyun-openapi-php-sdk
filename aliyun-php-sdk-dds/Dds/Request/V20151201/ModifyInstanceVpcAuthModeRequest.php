@@ -5,23 +5,18 @@ namespace Dds\Request\V20151201;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ModifyNodeSpec
+ * Request of ModifyInstanceVpcAuthMode
  *
  * @method string getResourceOwnerId()
- * @method string getClientToken()
- * @method string getNodeClass()
  * @method string getSecurityToken()
- * @method string getEffectiveTime()
+ * @method string getVpcAuthMode()
  * @method string getDBInstanceId()
  * @method string getNodeId()
- * @method string getAutoPay()
- * @method string getFromApp()
  * @method string getResourceOwnerAccount()
- * @method string getNodeStorage()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
  */
-class ModifyNodeSpecRequest extends \RpcAcsRequest
+class ModifyInstanceVpcAuthModeRequest extends \RpcAcsRequest
 {
 
     /**
@@ -37,7 +32,7 @@ class ModifyNodeSpecRequest extends \RpcAcsRequest
         parent::__construct(
             'Dds',
             '2015-12-01',
-            'ModifyNodeSpec',
+            'ModifyInstanceVpcAuthMode',
             'dds'
         );
     }
@@ -56,32 +51,6 @@ class ModifyNodeSpecRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $clientToken
-     *
-     * @return $this
-     */
-    public function setClientToken($clientToken)
-    {
-        $this->requestParameters['ClientToken'] = $clientToken;
-        $this->queryParameters['ClientToken'] = $clientToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $nodeClass
-     *
-     * @return $this
-     */
-    public function setNodeClass($nodeClass)
-    {
-        $this->requestParameters['NodeClass'] = $nodeClass;
-        $this->queryParameters['NodeClass'] = $nodeClass;
-
-        return $this;
-    }
-
-    /**
      * @param string $securityToken
      *
      * @return $this
@@ -95,14 +64,14 @@ class ModifyNodeSpecRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $effectiveTime
+     * @param string $vpcAuthMode
      *
      * @return $this
      */
-    public function setEffectiveTime($effectiveTime)
+    public function setVpcAuthMode($vpcAuthMode)
     {
-        $this->requestParameters['EffectiveTime'] = $effectiveTime;
-        $this->queryParameters['EffectiveTime'] = $effectiveTime;
+        $this->requestParameters['VpcAuthMode'] = $vpcAuthMode;
+        $this->queryParameters['VpcAuthMode'] = $vpcAuthMode;
 
         return $this;
     }
@@ -134,32 +103,6 @@ class ModifyNodeSpecRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $autoPay
-     *
-     * @return $this
-     */
-    public function setAutoPay($autoPay)
-    {
-        $this->requestParameters['AutoPay'] = $autoPay;
-        $this->queryParameters['AutoPay'] = $autoPay;
-
-        return $this;
-    }
-
-    /**
-     * @param string $fromApp
-     *
-     * @return $this
-     */
-    public function setFromApp($fromApp)
-    {
-        $this->requestParameters['FromApp'] = $fromApp;
-        $this->queryParameters['FromApp'] = $fromApp;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -168,19 +111,6 @@ class ModifyNodeSpecRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $nodeStorage
-     *
-     * @return $this
-     */
-    public function setNodeStorage($nodeStorage)
-    {
-        $this->requestParameters['NodeStorage'] = $nodeStorage;
-        $this->queryParameters['NodeStorage'] = $nodeStorage;
 
         return $this;
     }

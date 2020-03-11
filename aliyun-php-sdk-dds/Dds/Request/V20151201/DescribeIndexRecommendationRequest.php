@@ -8,20 +8,20 @@ namespace Dds\Request\V20151201;
  * Request of DescribeIndexRecommendation
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
- * @method string getOwnerAccount()
- * @method string getEndTime()
- * @method string getCollection()
  * @method string getStartTime()
- * @method string getOperationType()
- * @method string getOwnerId()
  * @method string getPageNumber()
  * @method string getDatabase()
- * @method string getInstanceId()
  * @method string getSecurityToken()
  * @method string getPageSize()
  * @method string getNodeId()
  * @method string getTaskId()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getEndTime()
+ * @method string getCollection()
+ * @method string getOperationType()
+ * @method string getOwnerId()
+ * @method string getInstanceId()
  */
 class DescribeIndexRecommendationRequest extends \RpcAcsRequest
 {
@@ -40,7 +40,7 @@ class DescribeIndexRecommendationRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'DescribeIndexRecommendation',
-            'Dds'
+            'dds'
         );
     }
 
@@ -53,6 +53,97 @@ class DescribeIndexRecommendationRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $database
+     *
+     * @return $this
+     */
+    public function setDatabase($database)
+    {
+        $this->requestParameters['Database'] = $database;
+        $this->queryParameters['Database'] = $database;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $nodeId
+     *
+     * @return $this
+     */
+    public function setNodeId($nodeId)
+    {
+        $this->requestParameters['NodeId'] = $nodeId;
+        $this->queryParameters['NodeId'] = $nodeId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $taskId
+     *
+     * @return $this
+     */
+    public function setTaskId($taskId)
+    {
+        $this->requestParameters['TaskId'] = $taskId;
+        $this->queryParameters['TaskId'] = $taskId;
 
         return $this;
     }
@@ -110,19 +201,6 @@ class DescribeIndexRecommendationRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $startTime
-     *
-     * @return $this
-     */
-    public function setStartTime($startTime)
-    {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
-
-        return $this;
-    }
-
-    /**
      * @param string $operationType
      *
      * @return $this
@@ -149,32 +227,6 @@ class DescribeIndexRecommendationRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
-
-        return $this;
-    }
-
-    /**
-     * @param string $database
-     *
-     * @return $this
-     */
-    public function setDatabase($database)
-    {
-        $this->requestParameters['Database'] = $database;
-        $this->queryParameters['Database'] = $database;
-
-        return $this;
-    }
-
-    /**
      * @param string $instanceId
      *
      * @return $this
@@ -183,58 +235,6 @@ class DescribeIndexRecommendationRequest extends \RpcAcsRequest
     {
         $this->requestParameters['InstanceId'] = $instanceId;
         $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param string $nodeId
-     *
-     * @return $this
-     */
-    public function setNodeId($nodeId)
-    {
-        $this->requestParameters['NodeId'] = $nodeId;
-        $this->queryParameters['NodeId'] = $nodeId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $taskId
-     *
-     * @return $this
-     */
-    public function setTaskId($taskId)
-    {
-        $this->requestParameters['TaskId'] = $taskId;
-        $this->queryParameters['TaskId'] = $taskId;
 
         return $this;
     }

@@ -9,16 +9,16 @@ namespace Dds\Request\V20151201;
  *
  * @method string getResourceOwnerId()
  * @method string getNodeType()
- * @method string getAutoPay()
- * @method string getFromApp()
- * @method string getResourceOwnerAccount()
  * @method string getClientToken()
- * @method string getNodeStorage()
- * @method string getOwnerAccount()
- * @method string getOwnerId()
  * @method string getNodeClass()
  * @method string getSecurityToken()
  * @method string getDBInstanceId()
+ * @method string getAutoPay()
+ * @method string getFromApp()
+ * @method string getResourceOwnerAccount()
+ * @method string getNodeStorage()
+ * @method string getOwnerAccount()
+ * @method string getOwnerId()
  */
 class CreateNodeRequest extends \RpcAcsRequest
 {
@@ -37,7 +37,7 @@ class CreateNodeRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'CreateNode',
-            'Dds'
+            'dds'
         );
     }
 
@@ -63,6 +63,58 @@ class CreateNodeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['NodeType'] = $nodeType;
         $this->queryParameters['NodeType'] = $nodeType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $nodeClass
+     *
+     * @return $this
+     */
+    public function setNodeClass($nodeClass)
+    {
+        $this->requestParameters['NodeClass'] = $nodeClass;
+        $this->queryParameters['NodeClass'] = $nodeClass;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
 
         return $this;
     }
@@ -107,19 +159,6 @@ class CreateNodeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $clientToken
-     *
-     * @return $this
-     */
-    public function setClientToken($clientToken)
-    {
-        $this->requestParameters['ClientToken'] = $clientToken;
-        $this->queryParameters['ClientToken'] = $clientToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $nodeStorage
      *
      * @return $this
@@ -154,45 +193,6 @@ class CreateNodeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $nodeClass
-     *
-     * @return $this
-     */
-    public function setNodeClass($nodeClass)
-    {
-        $this->requestParameters['NodeClass'] = $nodeClass;
-        $this->queryParameters['NodeClass'] = $nodeClass;
-
-        return $this;
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
 
         return $this;
     }

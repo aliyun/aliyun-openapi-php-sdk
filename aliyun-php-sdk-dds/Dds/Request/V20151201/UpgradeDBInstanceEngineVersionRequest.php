@@ -8,11 +8,11 @@ namespace Dds\Request\V20151201;
  * Request of UpgradeDBInstanceEngineVersion
  *
  * @method string getResourceOwnerId()
+ * @method string getEngineVersion()
  * @method string getSecurityToken()
+ * @method string getDBInstanceId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getDBInstanceId()
- * @method string getEngineVersion()
  * @method string getOwnerId()
  */
 class UpgradeDBInstanceEngineVersionRequest extends \RpcAcsRequest
@@ -32,7 +32,7 @@ class UpgradeDBInstanceEngineVersionRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'UpgradeDBInstanceEngineVersion',
-            'Dds'
+            'dds'
         );
     }
 
@@ -50,6 +50,19 @@ class UpgradeDBInstanceEngineVersionRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $engineVersion
+     *
+     * @return $this
+     */
+    public function setEngineVersion($engineVersion)
+    {
+        $this->requestParameters['EngineVersion'] = $engineVersion;
+        $this->queryParameters['EngineVersion'] = $engineVersion;
+
+        return $this;
+    }
+
+    /**
      * @param string $securityToken
      *
      * @return $this
@@ -58,6 +71,19 @@ class UpgradeDBInstanceEngineVersionRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
 
         return $this;
     }
@@ -84,32 +110,6 @@ class UpgradeDBInstanceEngineVersionRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $engineVersion
-     *
-     * @return $this
-     */
-    public function setEngineVersion($engineVersion)
-    {
-        $this->requestParameters['EngineVersion'] = $engineVersion;
-        $this->queryParameters['EngineVersion'] = $engineVersion;
 
         return $this;
     }

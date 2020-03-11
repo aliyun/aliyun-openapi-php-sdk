@@ -8,16 +8,16 @@ namespace Dds\Request\V20151201;
  * Request of ModifyDBInstanceNetworkType
  *
  * @method string getResourceOwnerId()
+ * @method string getNetworkType()
+ * @method string getSecurityToken()
+ * @method string getClassicExpiredDays()
+ * @method string getDBInstanceId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getNetworkType()
  * @method string getOwnerId()
  * @method string getVSwitchId()
- * @method string getSecurityToken()
  * @method string getRetainClassic()
- * @method string getClassicExpiredDays()
  * @method string getVpcId()
- * @method string getDBInstanceId()
  */
 class ModifyDBInstanceNetworkTypeRequest extends \RpcAcsRequest
 {
@@ -36,7 +36,7 @@ class ModifyDBInstanceNetworkTypeRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'ModifyDBInstanceNetworkType',
-            'Dds'
+            'dds'
         );
     }
 
@@ -49,6 +49,58 @@ class ModifyDBInstanceNetworkTypeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $networkType
+     *
+     * @return $this
+     */
+    public function setNetworkType($networkType)
+    {
+        $this->requestParameters['NetworkType'] = $networkType;
+        $this->queryParameters['NetworkType'] = $networkType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $classicExpiredDays
+     *
+     * @return $this
+     */
+    public function setClassicExpiredDays($classicExpiredDays)
+    {
+        $this->requestParameters['ClassicExpiredDays'] = $classicExpiredDays;
+        $this->queryParameters['ClassicExpiredDays'] = $classicExpiredDays;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
 
         return $this;
     }
@@ -80,19 +132,6 @@ class ModifyDBInstanceNetworkTypeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $networkType
-     *
-     * @return $this
-     */
-    public function setNetworkType($networkType)
-    {
-        $this->requestParameters['NetworkType'] = $networkType;
-        $this->queryParameters['NetworkType'] = $networkType;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -119,19 +158,6 @@ class ModifyDBInstanceNetworkTypeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $retainClassic
      *
      * @return $this
@@ -145,19 +171,6 @@ class ModifyDBInstanceNetworkTypeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $classicExpiredDays
-     *
-     * @return $this
-     */
-    public function setClassicExpiredDays($classicExpiredDays)
-    {
-        $this->requestParameters['ClassicExpiredDays'] = $classicExpiredDays;
-        $this->queryParameters['ClassicExpiredDays'] = $classicExpiredDays;
-
-        return $this;
-    }
-
-    /**
      * @param string $vpcId
      *
      * @return $this
@@ -166,19 +179,6 @@ class ModifyDBInstanceNetworkTypeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['VpcId'] = $vpcId;
         $this->queryParameters['VpcId'] = $vpcId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
 
         return $this;
     }

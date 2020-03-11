@@ -5,18 +5,20 @@ namespace Dds\Request\V20151201;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ResetAccountPassword
+ * Request of AllocateNodePrivateNetworkAddress
  *
  * @method string getResourceOwnerId()
  * @method string getAccountName()
  * @method string getSecurityToken()
  * @method string getDBInstanceId()
+ * @method string getNodeId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
  * @method string getAccountPassword()
+ * @method string getZoneId()
  */
-class ResetAccountPasswordRequest extends \RpcAcsRequest
+class AllocateNodePrivateNetworkAddressRequest extends \RpcAcsRequest
 {
 
     /**
@@ -32,7 +34,7 @@ class ResetAccountPasswordRequest extends \RpcAcsRequest
         parent::__construct(
             'Dds',
             '2015-12-01',
-            'ResetAccountPassword',
+            'AllocateNodePrivateNetworkAddress',
             'dds'
         );
     }
@@ -90,6 +92,19 @@ class ResetAccountPasswordRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $nodeId
+     *
+     * @return $this
+     */
+    public function setNodeId($nodeId)
+    {
+        $this->requestParameters['NodeId'] = $nodeId;
+        $this->queryParameters['NodeId'] = $nodeId;
+
+        return $this;
+    }
+
+    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -137,6 +152,19 @@ class ResetAccountPasswordRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AccountPassword'] = $accountPassword;
         $this->queryParameters['AccountPassword'] = $accountPassword;
+
+        return $this;
+    }
+
+    /**
+     * @param string $zoneId
+     *
+     * @return $this
+     */
+    public function setZoneId($zoneId)
+    {
+        $this->requestParameters['ZoneId'] = $zoneId;
+        $this->queryParameters['ZoneId'] = $zoneId;
 
         return $this;
     }

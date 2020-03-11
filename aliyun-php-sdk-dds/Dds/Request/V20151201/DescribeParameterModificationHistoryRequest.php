@@ -8,14 +8,14 @@ namespace Dds\Request\V20151201;
  * Request of DescribeParameterModificationHistory
  *
  * @method string getResourceOwnerId()
+ * @method string getStartTime()
  * @method string getSecurityToken()
+ * @method string getDBInstanceId()
+ * @method string getNodeId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getEndTime()
- * @method string getDBInstanceId()
- * @method string getStartTime()
  * @method string getOwnerId()
- * @method string getNodeId()
  */
 class DescribeParameterModificationHistoryRequest extends \RpcAcsRequest
 {
@@ -34,7 +34,7 @@ class DescribeParameterModificationHistoryRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'DescribeParameterModificationHistory',
-            'Dds'
+            'dds'
         );
     }
 
@@ -52,6 +52,19 @@ class DescribeParameterModificationHistoryRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
+
+        return $this;
+    }
+
+    /**
      * @param string $securityToken
      *
      * @return $this
@@ -60,6 +73,32 @@ class DescribeParameterModificationHistoryRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $nodeId
+     *
+     * @return $this
+     */
+    public function setNodeId($nodeId)
+    {
+        $this->requestParameters['NodeId'] = $nodeId;
+        $this->queryParameters['NodeId'] = $nodeId;
 
         return $this;
     }
@@ -104,32 +143,6 @@ class DescribeParameterModificationHistoryRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $startTime
-     *
-     * @return $this
-     */
-    public function setStartTime($startTime)
-    {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -138,19 +151,6 @@ class DescribeParameterModificationHistoryRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $nodeId
-     *
-     * @return $this
-     */
-    public function setNodeId($nodeId)
-    {
-        $this->requestParameters['NodeId'] = $nodeId;
-        $this->queryParameters['NodeId'] = $nodeId;
 
         return $this;
     }

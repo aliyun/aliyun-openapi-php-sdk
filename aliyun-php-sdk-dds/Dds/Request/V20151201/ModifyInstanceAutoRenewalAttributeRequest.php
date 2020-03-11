@@ -7,14 +7,14 @@ namespace Dds\Request\V20151201;
  *
  * Request of ModifyInstanceAutoRenewalAttribute
  *
- * @method string getDuration()
  * @method string getResourceOwnerId()
- * @method string getAutoRenew()
+ * @method string getDuration()
  * @method string getSecurityToken()
+ * @method string getDBInstanceId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getDBInstanceId()
  * @method string getOwnerId()
+ * @method string getAutoRenew()
  */
 class ModifyInstanceAutoRenewalAttributeRequest extends \RpcAcsRequest
 {
@@ -33,21 +33,8 @@ class ModifyInstanceAutoRenewalAttributeRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'ModifyInstanceAutoRenewalAttribute',
-            'Dds'
+            'dds'
         );
-    }
-
-    /**
-     * @param string $duration
-     *
-     * @return $this
-     */
-    public function setDuration($duration)
-    {
-        $this->requestParameters['Duration'] = $duration;
-        $this->queryParameters['Duration'] = $duration;
-
-        return $this;
     }
 
     /**
@@ -64,14 +51,14 @@ class ModifyInstanceAutoRenewalAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $autoRenew
+     * @param string $duration
      *
      * @return $this
      */
-    public function setAutoRenew($autoRenew)
+    public function setDuration($duration)
     {
-        $this->requestParameters['AutoRenew'] = $autoRenew;
-        $this->queryParameters['AutoRenew'] = $autoRenew;
+        $this->requestParameters['Duration'] = $duration;
+        $this->queryParameters['Duration'] = $duration;
 
         return $this;
     }
@@ -85,6 +72,19 @@ class ModifyInstanceAutoRenewalAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
 
         return $this;
     }
@@ -116,19 +116,6 @@ class ModifyInstanceAutoRenewalAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -137,6 +124,19 @@ class ModifyInstanceAutoRenewalAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $autoRenew
+     *
+     * @return $this
+     */
+    public function setAutoRenew($autoRenew)
+    {
+        $this->requestParameters['AutoRenew'] = $autoRenew;
+        $this->queryParameters['AutoRenew'] = $autoRenew;
 
         return $this;
     }

@@ -9,12 +9,12 @@ namespace Dds\Request\V20151201;
  *
  * @method string getResourceOwnerId()
  * @method string getSecurityToken()
- * @method string getResourceOwnerAccount()
- * @method string getOwnerAccount()
  * @method string getDBInstanceId()
  * @method string getDBInstanceDescription()
- * @method string getOwnerId()
  * @method string getNodeId()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getOwnerId()
  */
 class ModifyDBInstanceDescriptionRequest extends \RpcAcsRequest
 {
@@ -33,7 +33,7 @@ class ModifyDBInstanceDescriptionRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'ModifyDBInstanceDescription',
-            'Dds'
+            'dds'
         );
     }
 
@@ -59,32 +59,6 @@ class ModifyDBInstanceDescriptionRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
         return $this;
     }
@@ -116,19 +90,6 @@ class ModifyDBInstanceDescriptionRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
      * @param string $nodeId
      *
      * @return $this
@@ -137,6 +98,45 @@ class ModifyDBInstanceDescriptionRequest extends \RpcAcsRequest
     {
         $this->requestParameters['NodeId'] = $nodeId;
         $this->queryParameters['NodeId'] = $nodeId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

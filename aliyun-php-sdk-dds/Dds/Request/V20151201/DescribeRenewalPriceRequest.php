@@ -8,13 +8,13 @@ namespace Dds\Request\V20151201;
  * Request of DescribeRenewalPrice
  *
  * @method string getResourceOwnerId()
+ * @method string getCouponNo()
  * @method string getSecurityToken()
+ * @method string getDBInstanceId()
+ * @method string getBusinessInfo()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getCouponNo()
- * @method string getDBInstanceId()
  * @method string getOwnerId()
- * @method string getBusinessInfo()
  */
 class DescribeRenewalPriceRequest extends \RpcAcsRequest
 {
@@ -33,7 +33,7 @@ class DescribeRenewalPriceRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'DescribeRenewalPrice',
-            'Dds'
+            'dds'
         );
     }
 
@@ -51,6 +51,19 @@ class DescribeRenewalPriceRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $couponNo
+     *
+     * @return $this
+     */
+    public function setCouponNo($couponNo)
+    {
+        $this->requestParameters['CouponNo'] = $couponNo;
+        $this->queryParameters['CouponNo'] = $couponNo;
+
+        return $this;
+    }
+
+    /**
      * @param string $securityToken
      *
      * @return $this
@@ -59,6 +72,32 @@ class DescribeRenewalPriceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $businessInfo
+     *
+     * @return $this
+     */
+    public function setBusinessInfo($businessInfo)
+    {
+        $this->requestParameters['BusinessInfo'] = $businessInfo;
+        $this->queryParameters['BusinessInfo'] = $businessInfo;
 
         return $this;
     }
@@ -90,32 +129,6 @@ class DescribeRenewalPriceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $couponNo
-     *
-     * @return $this
-     */
-    public function setCouponNo($couponNo)
-    {
-        $this->requestParameters['CouponNo'] = $couponNo;
-        $this->queryParameters['CouponNo'] = $couponNo;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -124,19 +137,6 @@ class DescribeRenewalPriceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $businessInfo
-     *
-     * @return $this
-     */
-    public function setBusinessInfo($businessInfo)
-    {
-        $this->requestParameters['BusinessInfo'] = $businessInfo;
-        $this->queryParameters['BusinessInfo'] = $businessInfo;
 
         return $this;
     }

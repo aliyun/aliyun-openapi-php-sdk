@@ -8,14 +8,14 @@ namespace Dds\Request\V20151201;
  * Request of DescribeAuditFiles
  *
  * @method string getResourceOwnerId()
+ * @method string getPageNumber()
  * @method string getSecurityToken()
- * @method string getResourceOwnerAccount()
- * @method string getOwnerAccount()
  * @method string getPageSize()
  * @method string getDBInstanceId()
- * @method string getOwnerId()
  * @method string getNodeId()
- * @method string getPageNumber()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getOwnerId()
  */
 class DescribeAuditFilesRequest extends \RpcAcsRequest
 {
@@ -34,7 +34,7 @@ class DescribeAuditFilesRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'DescribeAuditFiles',
-            'Dds'
+            'dds'
         );
     }
 
@@ -52,6 +52,19 @@ class DescribeAuditFilesRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
      * @param string $securityToken
      *
      * @return $this
@@ -60,32 +73,6 @@ class DescribeAuditFilesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
         return $this;
     }
@@ -117,19 +104,6 @@ class DescribeAuditFilesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
      * @param string $nodeId
      *
      * @return $this
@@ -143,14 +117,40 @@ class DescribeAuditFilesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageNumber
+     * @param string $resourceOwnerAccount
      *
      * @return $this
      */
-    public function setPageNumber($pageNumber)
+    public function setResourceOwnerAccount($resourceOwnerAccount)
     {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }

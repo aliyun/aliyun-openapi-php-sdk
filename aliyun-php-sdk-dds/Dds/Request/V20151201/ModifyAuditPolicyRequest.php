@@ -8,12 +8,12 @@ namespace Dds\Request\V20151201;
  * Request of ModifyAuditPolicy
  *
  * @method string getResourceOwnerId()
- * @method string getAuditStatus()
  * @method string getStoragePeriod()
  * @method string getSecurityToken()
+ * @method string getDBInstanceId()
+ * @method string getAuditStatus()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getDBInstanceId()
  * @method string getOwnerId()
  */
 class ModifyAuditPolicyRequest extends \RpcAcsRequest
@@ -33,7 +33,7 @@ class ModifyAuditPolicyRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'ModifyAuditPolicy',
-            'Dds'
+            'dds'
         );
     }
 
@@ -46,19 +46,6 @@ class ModifyAuditPolicyRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $auditStatus
-     *
-     * @return $this
-     */
-    public function setAuditStatus($auditStatus)
-    {
-        $this->requestParameters['AuditStatus'] = $auditStatus;
-        $this->queryParameters['AuditStatus'] = $auditStatus;
 
         return $this;
     }
@@ -90,6 +77,32 @@ class ModifyAuditPolicyRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $auditStatus
+     *
+     * @return $this
+     */
+    public function setAuditStatus($auditStatus)
+    {
+        $this->requestParameters['AuditStatus'] = $auditStatus;
+        $this->queryParameters['AuditStatus'] = $auditStatus;
+
+        return $this;
+    }
+
+    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -111,19 +124,6 @@ class ModifyAuditPolicyRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
 
         return $this;
     }

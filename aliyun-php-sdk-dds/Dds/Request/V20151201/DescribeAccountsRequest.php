@@ -10,9 +10,9 @@ namespace Dds\Request\V20151201;
  * @method string getResourceOwnerId()
  * @method string getAccountName()
  * @method string getSecurityToken()
+ * @method string getDBInstanceId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getDBInstanceId()
  * @method string getOwnerId()
  */
 class DescribeAccountsRequest extends \RpcAcsRequest
@@ -32,7 +32,7 @@ class DescribeAccountsRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'DescribeAccounts',
-            'Dds'
+            'dds'
         );
     }
 
@@ -76,6 +76,19 @@ class DescribeAccountsRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
+
+        return $this;
+    }
+
+    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -97,19 +110,6 @@ class DescribeAccountsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
 
         return $this;
     }

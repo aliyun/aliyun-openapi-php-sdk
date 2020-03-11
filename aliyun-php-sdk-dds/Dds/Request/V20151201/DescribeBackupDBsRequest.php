@@ -8,15 +8,15 @@ namespace Dds\Request\V20151201;
  * Request of DescribeBackupDBs
  *
  * @method string getResourceOwnerId()
- * @method string getRestoreTime()
+ * @method string getPageNumber()
  * @method string getSecurityToken()
+ * @method string getPageSize()
+ * @method string getRestoreTime()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getBackupId()
- * @method string getPageSize()
  * @method string getSourceDBInstance()
  * @method string getOwnerId()
- * @method string getPageNumber()
  */
 class DescribeBackupDBsRequest extends \RpcAcsRequest
 {
@@ -35,7 +35,7 @@ class DescribeBackupDBsRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'DescribeBackupDBs',
-            'Dds'
+            'dds'
         );
     }
 
@@ -53,14 +53,14 @@ class DescribeBackupDBsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $restoreTime
+     * @param string $pageNumber
      *
      * @return $this
      */
-    public function setRestoreTime($restoreTime)
+    public function setPageNumber($pageNumber)
     {
-        $this->requestParameters['RestoreTime'] = $restoreTime;
-        $this->queryParameters['RestoreTime'] = $restoreTime;
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }
@@ -74,6 +74,32 @@ class DescribeBackupDBsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $restoreTime
+     *
+     * @return $this
+     */
+    public function setRestoreTime($restoreTime)
+    {
+        $this->requestParameters['RestoreTime'] = $restoreTime;
+        $this->queryParameters['RestoreTime'] = $restoreTime;
 
         return $this;
     }
@@ -118,19 +144,6 @@ class DescribeBackupDBsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
      * @param string $sourceDBInstance
      *
      * @return $this
@@ -152,19 +165,6 @@ class DescribeBackupDBsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }

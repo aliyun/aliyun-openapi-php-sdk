@@ -9,11 +9,11 @@ namespace Dds\Request\V20151201;
  *
  * @method string getResourceOwnerId()
  * @method string getSecurityToken()
- * @method string getResourceOwnerAccount()
- * @method string getGranularity()
- * @method string getOwnerAccount()
  * @method string getDBInstanceId()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getGranularity()
  */
 class ModifyDBInstanceMonitorRequest extends \RpcAcsRequest
 {
@@ -32,7 +32,7 @@ class ModifyDBInstanceMonitorRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'ModifyDBInstanceMonitor',
-            'Dds'
+            'dds'
         );
     }
 
@@ -63,6 +63,19 @@ class ModifyDBInstanceMonitorRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
+
+        return $this;
+    }
+
+    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -71,19 +84,6 @@ class ModifyDBInstanceMonitorRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $granularity
-     *
-     * @return $this
-     */
-    public function setGranularity($granularity)
-    {
-        $this->requestParameters['Granularity'] = $granularity;
-        $this->queryParameters['Granularity'] = $granularity;
 
         return $this;
     }
@@ -102,19 +102,6 @@ class ModifyDBInstanceMonitorRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -123,6 +110,19 @@ class ModifyDBInstanceMonitorRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $granularity
+     *
+     * @return $this
+     */
+    public function setGranularity($granularity)
+    {
+        $this->requestParameters['Granularity'] = $granularity;
+        $this->queryParameters['Granularity'] = $granularity;
 
         return $this;
     }

@@ -9,11 +9,11 @@ namespace Dds\Request\V20151201;
  *
  * @method string getResourceOwnerId()
  * @method string getSecurityToken()
+ * @method string getDBInstanceId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getSSLAction()
- * @method string getDBInstanceId()
  * @method string getOwnerId()
+ * @method string getSSLAction()
  */
 class ModifyDBInstanceSSLRequest extends \RpcAcsRequest
 {
@@ -32,7 +32,7 @@ class ModifyDBInstanceSSLRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'ModifyDBInstanceSSL',
-            'Dds'
+            'dds'
         );
     }
 
@@ -58,6 +58,19 @@ class ModifyDBInstanceSSLRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dBInstanceId
+     *
+     * @return $this
+     */
+    public function setDBInstanceId($dBInstanceId)
+    {
+        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
+        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
 
         return $this;
     }
@@ -89,32 +102,6 @@ class ModifyDBInstanceSSLRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $sSLAction
-     *
-     * @return $this
-     */
-    public function setSSLAction($sSLAction)
-    {
-        $this->requestParameters['SSLAction'] = $sSLAction;
-        $this->queryParameters['SSLAction'] = $sSLAction;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -123,6 +110,19 @@ class ModifyDBInstanceSSLRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $sSLAction
+     *
+     * @return $this
+     */
+    public function setSSLAction($sSLAction)
+    {
+        $this->requestParameters['SSLAction'] = $sSLAction;
+        $this->queryParameters['SSLAction'] = $sSLAction;
 
         return $this;
     }

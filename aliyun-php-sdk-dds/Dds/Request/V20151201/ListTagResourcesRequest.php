@@ -8,11 +8,11 @@ namespace Dds\Request\V20151201;
  * Request of ListTagResources
  *
  * @method string getResourceOwnerId()
+ * @method string getNextToken()
+ * @method array getTags()
  * @method array getResourceIds()
  * @method string getResourceOwnerAccount()
- * @method string getNextToken()
  * @method string getOwnerAccount()
- * @method array getTags()
  * @method string getOwnerId()
  * @method string getResourceType()
  */
@@ -33,7 +33,7 @@ class ListTagResourcesRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'ListTagResources',
-            'Dds'
+            'dds'
         );
     }
 
@@ -46,34 +46,6 @@ class ListTagResourcesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param array $resourceId
-     *
-     * @return $this
-     */
-    public function setResourceIds(array $resourceId)
-    {
-        $this->requestParameters['ResourceIds'] = $resourceId;
-        foreach ($resourceId as $i => $iValue) {
-            $this->queryParameters['ResourceId.' . ($i + 1)] = $iValue;
-        }
-
-        return $this;
-    }
-
-    /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }
@@ -92,6 +64,50 @@ class ListTagResourcesRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param array $tag
+     *
+     * @return $this
+     */
+	public function setTags(array $tag)
+	{
+	    $this->requestParameters['Tags'] = $tag;
+		foreach ($tag as $depth1 => $depth1Value) {
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+		}
+
+		return $this;
+    }
+
+    /**
+     * @param array $resourceId
+     *
+     * @return $this
+     */
+	public function setResourceIds(array $resourceId)
+	{
+	    $this->requestParameters['ResourceIds'] = $resourceId;
+		foreach ($resourceId as $i => $iValue) {
+			$this->queryParameters['ResourceId.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerAccount
      *
      * @return $this
@@ -100,22 +116,6 @@ class ListTagResourcesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param array $tag
-     *
-     * @return $this
-     */
-    public function setTags(array $tag)
-    {
-        $this->requestParameters['Tags'] = $tag;
-        foreach ($tag as $depth1 => $depth1Value) {
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
-        }
 
         return $this;
     }

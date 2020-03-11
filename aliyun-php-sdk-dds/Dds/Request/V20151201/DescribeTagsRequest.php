@@ -5,18 +5,16 @@ namespace Dds\Request\V20151201;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ResetAccountPassword
+ * Request of DescribeTags
  *
  * @method string getResourceOwnerId()
- * @method string getAccountName()
- * @method string getSecurityToken()
- * @method string getDBInstanceId()
+ * @method string getNextToken()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
- * @method string getAccountPassword()
+ * @method string getResourceType()
  */
-class ResetAccountPasswordRequest extends \RpcAcsRequest
+class DescribeTagsRequest extends \RpcAcsRequest
 {
 
     /**
@@ -32,7 +30,7 @@ class ResetAccountPasswordRequest extends \RpcAcsRequest
         parent::__construct(
             'Dds',
             '2015-12-01',
-            'ResetAccountPassword',
+            'DescribeTags',
             'dds'
         );
     }
@@ -51,40 +49,14 @@ class ResetAccountPasswordRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $accountName
+     * @param string $nextToken
      *
      * @return $this
      */
-    public function setAccountName($accountName)
+    public function setNextToken($nextToken)
     {
-        $this->requestParameters['AccountName'] = $accountName;
-        $this->queryParameters['AccountName'] = $accountName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dBInstanceId
-     *
-     * @return $this
-     */
-    public function setDBInstanceId($dBInstanceId)
-    {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
+        $this->requestParameters['NextToken'] = $nextToken;
+        $this->queryParameters['NextToken'] = $nextToken;
 
         return $this;
     }
@@ -129,14 +101,14 @@ class ResetAccountPasswordRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $accountPassword
+     * @param string $resourceType
      *
      * @return $this
      */
-    public function setAccountPassword($accountPassword)
+    public function setResourceType($resourceType)
     {
-        $this->requestParameters['AccountPassword'] = $accountPassword;
-        $this->queryParameters['AccountPassword'] = $accountPassword;
+        $this->requestParameters['ResourceType'] = $resourceType;
+        $this->queryParameters['ResourceType'] = $resourceType;
 
         return $this;
     }

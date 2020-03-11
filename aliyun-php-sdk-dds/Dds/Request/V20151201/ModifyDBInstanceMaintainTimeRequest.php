@@ -9,10 +9,10 @@ namespace Dds\Request\V20151201;
  *
  * @method string getResourceOwnerId()
  * @method string getSecurityToken()
- * @method string getResourceOwnerAccount()
  * @method string getMaintainStartTime()
- * @method string getOwnerAccount()
  * @method string getDBInstanceId()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
  * @method string getOwnerId()
  * @method string getMaintainEndTime()
  */
@@ -33,7 +33,7 @@ class ModifyDBInstanceMaintainTimeRequest extends \RpcAcsRequest
             'Dds',
             '2015-12-01',
             'ModifyDBInstanceMaintainTime',
-            'Dds'
+            'dds'
         );
     }
 
@@ -64,19 +64,6 @@ class ModifyDBInstanceMaintainTimeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $maintainStartTime
      *
      * @return $this
@@ -90,19 +77,6 @@ class ModifyDBInstanceMaintainTimeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $dBInstanceId
      *
      * @return $this
@@ -111,6 +85,32 @@ class ModifyDBInstanceMaintainTimeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DBInstanceId'] = $dBInstanceId;
         $this->queryParameters['DBInstanceId'] = $dBInstanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
         return $this;
     }
