@@ -29,6 +29,7 @@ namespace Ecs\Request\V20140526;
  * @method string getOSType()
  * @method string getOwnerId()
  * @method array getFilters()
+ * @method string getImageFamily()
  * @method string getStatus()
  */
 class DescribeImagesRequest extends \RpcAcsRequest
@@ -342,6 +343,19 @@ class DescribeImagesRequest extends \RpcAcsRequest
 		}
 
 		return $this;
+    }
+
+    /**
+     * @param string $imageFamily
+     *
+     * @return $this
+     */
+    public function setImageFamily($imageFamily)
+    {
+        $this->requestParameters['ImageFamily'] = $imageFamily;
+        $this->queryParameters['ImageFamily'] = $imageFamily;
+
+        return $this;
     }
 
     /**

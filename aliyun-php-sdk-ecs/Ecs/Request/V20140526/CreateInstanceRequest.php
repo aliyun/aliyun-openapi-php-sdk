@@ -65,6 +65,7 @@ namespace Ecs\Request\V20140526;
  * @method array getDataDisks()
  * @method string getStorageSetId()
  * @method string getSystemDiskSize()
+ * @method string getImageFamily()
  * @method string getSystemDiskDescription()
  */
 class CreateInstanceRequest extends \RpcAcsRequest
@@ -824,6 +825,7 @@ class CreateInstanceRequest extends \RpcAcsRequest
 			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Size'] = $depth1Value['Size'];
 			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Encrypted'] = $depth1Value['Encrypted'];
 			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.PerformanceLevel'] = $depth1Value['PerformanceLevel'];
+			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.EncryptAlgorithm'] = $depth1Value['EncryptAlgorithm'];
 			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Description'] = $depth1Value['Description'];
 			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Category'] = $depth1Value['Category'];
 			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.KMSKeyId'] = $depth1Value['KMSKeyId'];
@@ -856,6 +858,19 @@ class CreateInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SystemDiskSize'] = $systemDiskSize;
         $this->queryParameters['SystemDisk.Size'] = $systemDiskSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $imageFamily
+     *
+     * @return $this
+     */
+    public function setImageFamily($imageFamily)
+    {
+        $this->requestParameters['ImageFamily'] = $imageFamily;
+        $this->queryParameters['ImageFamily'] = $imageFamily;
 
         return $this;
     }

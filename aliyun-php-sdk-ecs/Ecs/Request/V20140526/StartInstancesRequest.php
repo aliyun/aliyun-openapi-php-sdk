@@ -5,17 +5,16 @@ namespace Ecs\Request\V20140526;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ImportKeyPair
+ * Request of StartInstances
  *
  * @method string getResourceOwnerId()
- * @method string getKeyPairName()
- * @method string getResourceGroupId()
- * @method array getTags()
+ * @method string getDryRun()
  * @method string getResourceOwnerAccount()
- * @method string getPublicKeyBody()
+ * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method array getInstanceIds()
  */
-class ImportKeyPairRequest extends \RpcAcsRequest
+class StartInstancesRequest extends \RpcAcsRequest
 {
 
     /**
@@ -31,7 +30,7 @@ class ImportKeyPairRequest extends \RpcAcsRequest
         parent::__construct(
             'Ecs',
             '2014-05-26',
-            'ImportKeyPair',
+            'StartInstances',
             'ecs'
         );
     }
@@ -50,45 +49,16 @@ class ImportKeyPairRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $keyPairName
+     * @param string $dryRun
      *
      * @return $this
      */
-    public function setKeyPairName($keyPairName)
+    public function setDryRun($dryRun)
     {
-        $this->requestParameters['KeyPairName'] = $keyPairName;
-        $this->queryParameters['KeyPairName'] = $keyPairName;
+        $this->requestParameters['DryRun'] = $dryRun;
+        $this->queryParameters['DryRun'] = $dryRun;
 
         return $this;
-    }
-
-    /**
-     * @param string $resourceGroupId
-     *
-     * @return $this
-     */
-    public function setResourceGroupId($resourceGroupId)
-    {
-        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
-        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
-
-        return $this;
-    }
-
-    /**
-     * @param array $tag
-     *
-     * @return $this
-     */
-	public function setTags(array $tag)
-	{
-	    $this->requestParameters['Tags'] = $tag;
-		foreach ($tag as $depth1 => $depth1Value) {
-			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
-			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
-		}
-
-		return $this;
     }
 
     /**
@@ -105,14 +75,14 @@ class ImportKeyPairRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $publicKeyBody
+     * @param string $ownerAccount
      *
      * @return $this
      */
-    public function setPublicKeyBody($publicKeyBody)
+    public function setOwnerAccount($ownerAccount)
     {
-        $this->requestParameters['PublicKeyBody'] = $publicKeyBody;
-        $this->queryParameters['PublicKeyBody'] = $publicKeyBody;
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
         return $this;
     }
@@ -128,5 +98,20 @@ class ImportKeyPairRequest extends \RpcAcsRequest
         $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
+    }
+
+    /**
+     * @param array $instanceId
+     *
+     * @return $this
+     */
+	public function setInstanceIds(array $instanceId)
+	{
+	    $this->requestParameters['InstanceIds'] = $instanceId;
+		foreach ($instanceId as $i => $iValue) {
+			$this->queryParameters['InstanceId.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
     }
 }

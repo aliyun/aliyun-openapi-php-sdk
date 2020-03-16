@@ -75,6 +75,7 @@ namespace Ecs\Request\V20140526;
  * @method string getLaunchTemplateVersion()
  * @method string getStorageSetId()
  * @method string getSystemDiskSize()
+ * @method string getImageFamily()
  * @method string getSystemDiskDescription()
  */
 class RunInstancesRequest extends \RpcAcsRequest
@@ -966,6 +967,7 @@ class RunInstancesRequest extends \RpcAcsRequest
 			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.DeleteWithInstance'] = $depth1Value['DeleteWithInstance'];
 			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.PerformanceLevel'] = $depth1Value['PerformanceLevel'];
 			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.AutoSnapshotPolicyId'] = $depth1Value['AutoSnapshotPolicyId'];
+			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.EncryptAlgorithm'] = $depth1Value['EncryptAlgorithm'];
 		}
 
 		return $this;
@@ -1006,6 +1008,19 @@ class RunInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SystemDiskSize'] = $systemDiskSize;
         $this->queryParameters['SystemDisk.Size'] = $systemDiskSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $imageFamily
+     *
+     * @return $this
+     */
+    public function setImageFamily($imageFamily)
+    {
+        $this->requestParameters['ImageFamily'] = $imageFamily;
+        $this->queryParameters['ImageFamily'] = $imageFamily;
 
         return $this;
     }

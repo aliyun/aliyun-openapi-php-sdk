@@ -21,6 +21,7 @@ namespace Ecs\Request\V20140526;
  * @method string getOwnerAccount()
  * @method string getOwnerId()
  * @method string getInstanceId()
+ * @method string getImageFamily()
  * @method string getImageVersion()
  */
 class CreateImageRequest extends \RpcAcsRequest
@@ -230,6 +231,19 @@ class CreateImageRequest extends \RpcAcsRequest
     {
         $this->requestParameters['InstanceId'] = $instanceId;
         $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $imageFamily
+     *
+     * @return $this
+     */
+    public function setImageFamily($imageFamily)
+    {
+        $this->requestParameters['ImageFamily'] = $imageFamily;
+        $this->queryParameters['ImageFamily'] = $imageFamily;
 
         return $this;
     }

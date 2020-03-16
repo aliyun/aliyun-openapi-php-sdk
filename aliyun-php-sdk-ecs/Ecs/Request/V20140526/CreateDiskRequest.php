@@ -10,6 +10,7 @@ namespace Ecs\Request\V20140526;
  * @method string getResourceOwnerId()
  * @method string getSnapshotId()
  * @method string getClientToken()
+ * @method string getEncryptAlgorithm()
  * @method string getDescription()
  * @method string getDiskName()
  * @method string getResourceGroupId()
@@ -85,6 +86,19 @@ class CreateDiskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ClientToken'] = $clientToken;
         $this->queryParameters['ClientToken'] = $clientToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $encryptAlgorithm
+     *
+     * @return $this
+     */
+    public function setEncryptAlgorithm($encryptAlgorithm)
+    {
+        $this->requestParameters['EncryptAlgorithm'] = $encryptAlgorithm;
+        $this->queryParameters['EncryptAlgorithm'] = $encryptAlgorithm;
 
         return $this;
     }

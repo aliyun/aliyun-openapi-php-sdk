@@ -5,19 +5,17 @@ namespace Ecs\Request\V20140526;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ModifyNetworkInterfaceAttribute
+ * Request of RebootInstances
  *
- * @method string getQueueNumber()
  * @method string getResourceOwnerId()
- * @method array getSecurityGroupIds()
- * @method string getDescription()
- * @method string getNetworkInterfaceName()
+ * @method string getDryRun()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
- * @method string getNetworkInterfaceId()
+ * @method string getForceReboot()
+ * @method array getInstanceIds()
  */
-class ModifyNetworkInterfaceAttributeRequest extends \RpcAcsRequest
+class RebootInstancesRequest extends \RpcAcsRequest
 {
 
     /**
@@ -33,22 +31,9 @@ class ModifyNetworkInterfaceAttributeRequest extends \RpcAcsRequest
         parent::__construct(
             'Ecs',
             '2014-05-26',
-            'ModifyNetworkInterfaceAttribute',
+            'RebootInstances',
             'ecs'
         );
-    }
-
-    /**
-     * @param string $queueNumber
-     *
-     * @return $this
-     */
-    public function setQueueNumber($queueNumber)
-    {
-        $this->requestParameters['QueueNumber'] = $queueNumber;
-        $this->queryParameters['QueueNumber'] = $queueNumber;
-
-        return $this;
     }
 
     /**
@@ -65,42 +50,14 @@ class ModifyNetworkInterfaceAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $securityGroupId
+     * @param string $dryRun
      *
      * @return $this
      */
-	public function setSecurityGroupIds(array $securityGroupId)
-	{
-	    $this->requestParameters['SecurityGroupIds'] = $securityGroupId;
-		foreach ($securityGroupId as $i => $iValue) {
-			$this->queryParameters['SecurityGroupId.' . ($i + 1)] = $iValue;
-		}
-
-		return $this;
-    }
-
-    /**
-     * @param string $description
-     *
-     * @return $this
-     */
-    public function setDescription($description)
+    public function setDryRun($dryRun)
     {
-        $this->requestParameters['Description'] = $description;
-        $this->queryParameters['Description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * @param string $networkInterfaceName
-     *
-     * @return $this
-     */
-    public function setNetworkInterfaceName($networkInterfaceName)
-    {
-        $this->requestParameters['NetworkInterfaceName'] = $networkInterfaceName;
-        $this->queryParameters['NetworkInterfaceName'] = $networkInterfaceName;
+        $this->requestParameters['DryRun'] = $dryRun;
+        $this->queryParameters['DryRun'] = $dryRun;
 
         return $this;
     }
@@ -145,15 +102,30 @@ class ModifyNetworkInterfaceAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $networkInterfaceId
+     * @param string $forceReboot
      *
      * @return $this
      */
-    public function setNetworkInterfaceId($networkInterfaceId)
+    public function setForceReboot($forceReboot)
     {
-        $this->requestParameters['NetworkInterfaceId'] = $networkInterfaceId;
-        $this->queryParameters['NetworkInterfaceId'] = $networkInterfaceId;
+        $this->requestParameters['ForceReboot'] = $forceReboot;
+        $this->queryParameters['ForceReboot'] = $forceReboot;
 
         return $this;
+    }
+
+    /**
+     * @param array $instanceId
+     *
+     * @return $this
+     */
+	public function setInstanceIds(array $instanceId)
+	{
+	    $this->requestParameters['InstanceIds'] = $instanceId;
+		foreach ($instanceId as $i => $iValue) {
+			$this->queryParameters['InstanceId.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
     }
 }

@@ -5,19 +5,15 @@ namespace Ecs\Request\V20140526;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeInstanceStatus
+ * Request of DescribeImageFromFamily
  *
  * @method string getResourceOwnerId()
- * @method string getPageNumber()
- * @method string getPageSize()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getClusterId()
  * @method string getOwnerId()
- * @method array getInstanceIds()
- * @method string getZoneId()
+ * @method string getImageFamily()
  */
-class DescribeInstanceStatusRequest extends \RpcAcsRequest
+class DescribeImageFromFamilyRequest extends \RpcAcsRequest
 {
 
     /**
@@ -33,7 +29,7 @@ class DescribeInstanceStatusRequest extends \RpcAcsRequest
         parent::__construct(
             'Ecs',
             '2014-05-26',
-            'DescribeInstanceStatus',
+            'DescribeImageFromFamily',
             'ecs'
         );
     }
@@ -47,32 +43,6 @@ class DescribeInstanceStatusRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }
@@ -104,19 +74,6 @@ class DescribeInstanceStatusRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $clusterId
-     *
-     * @return $this
-     */
-    public function setClusterId($clusterId)
-    {
-        $this->requestParameters['ClusterId'] = $clusterId;
-        $this->queryParameters['ClusterId'] = $clusterId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -130,29 +87,14 @@ class DescribeInstanceStatusRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $instanceId
+     * @param string $imageFamily
      *
      * @return $this
      */
-	public function setInstanceIds(array $instanceId)
-	{
-	    $this->requestParameters['InstanceIds'] = $instanceId;
-		foreach ($instanceId as $i => $iValue) {
-			$this->queryParameters['InstanceId.' . ($i + 1)] = $iValue;
-		}
-
-		return $this;
-    }
-
-    /**
-     * @param string $zoneId
-     *
-     * @return $this
-     */
-    public function setZoneId($zoneId)
+    public function setImageFamily($imageFamily)
     {
-        $this->requestParameters['ZoneId'] = $zoneId;
-        $this->queryParameters['ZoneId'] = $zoneId;
+        $this->requestParameters['ImageFamily'] = $imageFamily;
+        $this->queryParameters['ImageFamily'] = $imageFamily;
 
         return $this;
     }

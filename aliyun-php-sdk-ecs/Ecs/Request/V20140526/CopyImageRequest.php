@@ -9,6 +9,7 @@ namespace Ecs\Request\V20140526;
  *
  * @method string getResourceOwnerId()
  * @method string getImageId()
+ * @method string getEncryptAlgorithm()
  * @method string getDestinationRegionId()
  * @method array getTags()
  * @method string getResourceOwnerAccount()
@@ -62,6 +63,19 @@ class CopyImageRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ImageId'] = $imageId;
         $this->queryParameters['ImageId'] = $imageId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $encryptAlgorithm
+     *
+     * @return $this
+     */
+    public function setEncryptAlgorithm($encryptAlgorithm)
+    {
+        $this->requestParameters['EncryptAlgorithm'] = $encryptAlgorithm;
+        $this->queryParameters['EncryptAlgorithm'] = $encryptAlgorithm;
 
         return $this;
     }
