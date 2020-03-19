@@ -7,11 +7,13 @@ namespace Green\Request\V20170823;
  *
  * Request of UpdateBizTypeSetting
  *
- * @method string getResourceType()
+ * @method string getAntispam()
  * @method string getPorn()
  * @method string getSourceIp()
  * @method string getTerrorism()
  * @method string getBizTypeName()
+ * @method string getAd()
+ * @method string getResourceType()
  */
 class UpdateBizTypeSettingRequest extends \RpcAcsRequest
 {
@@ -35,14 +37,14 @@ class UpdateBizTypeSettingRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceType
+     * @param string $antispam
      *
      * @return $this
      */
-    public function setResourceType($resourceType)
+    public function setAntispam($antispam)
     {
-        $this->requestParameters['ResourceType'] = $resourceType;
-        $this->queryParameters['ResourceType'] = $resourceType;
+        $this->requestParameters['Antispam'] = $antispam;
+        $this->queryParameters['Antispam'] = $antispam;
 
         return $this;
     }
@@ -95,6 +97,32 @@ class UpdateBizTypeSettingRequest extends \RpcAcsRequest
     {
         $this->requestParameters['BizTypeName'] = $bizTypeName;
         $this->queryParameters['BizTypeName'] = $bizTypeName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ad
+     *
+     * @return $this
+     */
+    public function setAd($ad)
+    {
+        $this->requestParameters['Ad'] = $ad;
+        $this->queryParameters['Ad'] = $ad;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceType
+     *
+     * @return $this
+     */
+    public function setResourceType($resourceType)
+    {
+        $this->requestParameters['ResourceType'] = $resourceType;
+        $this->queryParameters['ResourceType'] = $resourceType;
 
         return $this;
     }
