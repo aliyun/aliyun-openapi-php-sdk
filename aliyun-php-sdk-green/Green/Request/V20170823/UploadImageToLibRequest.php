@@ -8,6 +8,7 @@ namespace Green\Request\V20170823;
  * Request of UploadImageToLib
  *
  * @method string getImages()
+ * @method string getUrls()
  * @method string getSourceIp()
  * @method string getImageLibId()
  */
@@ -41,6 +42,19 @@ class UploadImageToLibRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Images'] = $images;
         $this->queryParameters['Images'] = $images;
+
+        return $this;
+    }
+
+    /**
+     * @param string $urls
+     *
+     * @return $this
+     */
+    public function setUrls($urls)
+    {
+        $this->requestParameters['Urls'] = $urls;
+        $this->queryParameters['Urls'] = $urls;
 
         return $this;
     }
