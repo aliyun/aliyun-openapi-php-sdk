@@ -8,15 +8,15 @@ namespace R_kvstore\Request\V20150101;
  * Request of SwitchNetwork
  *
  * @method string getResourceOwnerId()
+ * @method string getSecurityToken()
+ * @method string getClassicExpiredDays()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
  * @method string getVSwitchId()
  * @method string getInstanceId()
- * @method string getSecurityToken()
  * @method string getTargetNetworkType()
  * @method string getRetainClassic()
- * @method string getClassicExpiredDays()
  * @method string getVpcId()
  */
 class SwitchNetworkRequest extends \RpcAcsRequest
@@ -49,6 +49,32 @@ class SwitchNetworkRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $classicExpiredDays
+     *
+     * @return $this
+     */
+    public function setClassicExpiredDays($classicExpiredDays)
+    {
+        $this->requestParameters['ClassicExpiredDays'] = $classicExpiredDays;
+        $this->queryParameters['ClassicExpiredDays'] = $classicExpiredDays;
 
         return $this;
     }
@@ -119,19 +145,6 @@ class SwitchNetworkRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
      * @param string $targetNetworkType
      *
      * @return $this
@@ -153,19 +166,6 @@ class SwitchNetworkRequest extends \RpcAcsRequest
     {
         $this->requestParameters['RetainClassic'] = $retainClassic;
         $this->queryParameters['RetainClassic'] = $retainClassic;
-
-        return $this;
-    }
-
-    /**
-     * @param string $classicExpiredDays
-     *
-     * @return $this
-     */
-    public function setClassicExpiredDays($classicExpiredDays)
-    {
-        $this->requestParameters['ClassicExpiredDays'] = $classicExpiredDays;
-        $this->queryParameters['ClassicExpiredDays'] = $classicExpiredDays;
 
         return $this;
     }

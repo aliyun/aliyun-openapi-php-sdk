@@ -5,21 +5,17 @@ namespace R_kvstore\Request\V20150101;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeCacheAnalysisReportList
+ * Request of FlushExpireKeys
  *
- * @method string getDate()
  * @method string getResourceOwnerId()
  * @method string getSecurityToken()
- * @method string getPageSize()
- * @method string getPageNumbers()
- * @method string getNodeId()
+ * @method string getEffectiveTime()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
  * @method string getInstanceId()
- * @method string getDays()
  */
-class DescribeCacheAnalysisReportListRequest extends \RpcAcsRequest
+class FlushExpireKeysRequest extends \RpcAcsRequest
 {
 
     /**
@@ -35,22 +31,9 @@ class DescribeCacheAnalysisReportListRequest extends \RpcAcsRequest
         parent::__construct(
             'R-kvstore',
             '2015-01-01',
-            'DescribeCacheAnalysisReportList',
+            'FlushExpireKeys',
             'redisa'
         );
-    }
-
-    /**
-     * @param string $date
-     *
-     * @return $this
-     */
-    public function setDate($date)
-    {
-        $this->requestParameters['Date'] = $date;
-        $this->queryParameters['Date'] = $date;
-
-        return $this;
     }
 
     /**
@@ -80,40 +63,14 @@ class DescribeCacheAnalysisReportListRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageSize
+     * @param string $effectiveTime
      *
      * @return $this
      */
-    public function setPageSize($pageSize)
+    public function setEffectiveTime($effectiveTime)
     {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumbers
-     *
-     * @return $this
-     */
-    public function setPageNumbers($pageNumbers)
-    {
-        $this->requestParameters['PageNumbers'] = $pageNumbers;
-        $this->queryParameters['PageNumbers'] = $pageNumbers;
-
-        return $this;
-    }
-
-    /**
-     * @param string $nodeId
-     *
-     * @return $this
-     */
-    public function setNodeId($nodeId)
-    {
-        $this->requestParameters['NodeId'] = $nodeId;
-        $this->queryParameters['NodeId'] = $nodeId;
+        $this->requestParameters['EffectiveTime'] = $effectiveTime;
+        $this->queryParameters['EffectiveTime'] = $effectiveTime;
 
         return $this;
     }
@@ -166,19 +123,6 @@ class DescribeCacheAnalysisReportListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['InstanceId'] = $instanceId;
         $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $days
-     *
-     * @return $this
-     */
-    public function setDays($days)
-    {
-        $this->requestParameters['Days'] = $days;
-        $this->queryParameters['Days'] = $days;
 
         return $this;
     }

@@ -8,13 +8,13 @@ namespace R_kvstore\Request\V20150101;
  * Request of GrantAccountPrivilege
  *
  * @method string getResourceOwnerId()
- * @method string getInstanceId()
+ * @method string getAccountPrivilege()
  * @method string getAccountName()
  * @method string getSecurityToken()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
- * @method string getAccountPrivilege()
+ * @method string getInstanceId()
  */
 class GrantAccountPrivilegeRequest extends \RpcAcsRequest
 {
@@ -51,14 +51,14 @@ class GrantAccountPrivilegeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
+     * @param string $accountPrivilege
      *
      * @return $this
      */
-    public function setInstanceId($instanceId)
+    public function setAccountPrivilege($accountPrivilege)
     {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
+        $this->requestParameters['AccountPrivilege'] = $accountPrivilege;
+        $this->queryParameters['AccountPrivilege'] = $accountPrivilege;
 
         return $this;
     }
@@ -129,14 +129,14 @@ class GrantAccountPrivilegeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $accountPrivilege
+     * @param string $instanceId
      *
      * @return $this
      */
-    public function setAccountPrivilege($accountPrivilege)
+    public function setInstanceId($instanceId)
     {
-        $this->requestParameters['AccountPrivilege'] = $accountPrivilege;
-        $this->queryParameters['AccountPrivilege'] = $accountPrivilege;
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

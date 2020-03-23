@@ -8,13 +8,13 @@ namespace R_kvstore\Request\V20150101;
  * Request of ModifyInstanceAttribute
  *
  * @method string getResourceOwnerId()
- * @method string getInstanceId()
- * @method string getInstanceName()
  * @method string getSecurityToken()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
  * @method string getNewPassword()
+ * @method string getInstanceId()
+ * @method string getInstanceName()
  */
 class ModifyInstanceAttributeRequest extends \RpcAcsRequest
 {
@@ -46,32 +46,6 @@ class ModifyInstanceAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $instanceName
-     *
-     * @return $this
-     */
-    public function setInstanceName($instanceName)
-    {
-        $this->requestParameters['InstanceName'] = $instanceName;
-        $this->queryParameters['InstanceName'] = $instanceName;
 
         return $this;
     }
@@ -137,6 +111,32 @@ class ModifyInstanceAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['NewPassword'] = $newPassword;
         $this->queryParameters['NewPassword'] = $newPassword;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceName
+     *
+     * @return $this
+     */
+    public function setInstanceName($instanceName)
+    {
+        $this->requestParameters['InstanceName'] = $instanceName;
+        $this->queryParameters['InstanceName'] = $instanceName;
 
         return $this;
     }

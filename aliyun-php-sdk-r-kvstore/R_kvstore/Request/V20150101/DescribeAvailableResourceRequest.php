@@ -9,11 +9,13 @@ namespace R_kvstore\Request\V20150101;
  *
  * @method string getResourceOwnerId()
  * @method string getSecurityToken()
- * @method string getResourceOwnerAccount()
- * @method string getOwnerAccount()
- * @method string getZoneId()
- * @method string getOwnerId()
+ * @method string getEngine()
  * @method string getInstanceChargeType()
+ * @method string getResourceOwnerAccount()
+ * @method string getLevel()
+ * @method string getOwnerAccount()
+ * @method string getOwnerId()
+ * @method string getZoneId()
  * @method string getOrderType()
  */
 class DescribeAvailableResourceRequest extends \RpcAcsRequest
@@ -64,6 +66,32 @@ class DescribeAvailableResourceRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $engine
+     *
+     * @return $this
+     */
+    public function setEngine($engine)
+    {
+        $this->requestParameters['Engine'] = $engine;
+        $this->queryParameters['Engine'] = $engine;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceChargeType
+     *
+     * @return $this
+     */
+    public function setInstanceChargeType($instanceChargeType)
+    {
+        $this->requestParameters['InstanceChargeType'] = $instanceChargeType;
+        $this->queryParameters['InstanceChargeType'] = $instanceChargeType;
+
+        return $this;
+    }
+
+    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -72,6 +100,19 @@ class DescribeAvailableResourceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $level
+     *
+     * @return $this
+     */
+    public function setLevel($level)
+    {
+        $this->requestParameters['Level'] = $level;
+        $this->queryParameters['Level'] = $level;
 
         return $this;
     }
@@ -90,19 +131,6 @@ class DescribeAvailableResourceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $zoneId
-     *
-     * @return $this
-     */
-    public function setZoneId($zoneId)
-    {
-        $this->requestParameters['ZoneId'] = $zoneId;
-        $this->queryParameters['ZoneId'] = $zoneId;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -116,14 +144,14 @@ class DescribeAvailableResourceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceChargeType
+     * @param string $zoneId
      *
      * @return $this
      */
-    public function setInstanceChargeType($instanceChargeType)
+    public function setZoneId($zoneId)
     {
-        $this->requestParameters['InstanceChargeType'] = $instanceChargeType;
-        $this->queryParameters['InstanceChargeType'] = $instanceChargeType;
+        $this->requestParameters['ZoneId'] = $zoneId;
+        $this->queryParameters['ZoneId'] = $zoneId;
 
         return $this;
     }

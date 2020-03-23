@@ -11,8 +11,8 @@ namespace R_kvstore\Request\V20150101;
  * @method string getSecurityToken()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getAcceptLanguage()
  * @method string getOwnerId()
+ * @method string getAcceptLanguage()
  */
 class DescribeZonesRequest extends \RpcAcsRequest
 {
@@ -88,19 +88,6 @@ class DescribeZonesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $acceptLanguage
-     *
-     * @return $this
-     */
-    public function setAcceptLanguage($acceptLanguage)
-    {
-        $this->requestParameters['AcceptLanguage'] = $acceptLanguage;
-        $this->queryParameters['AcceptLanguage'] = $acceptLanguage;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -109,6 +96,19 @@ class DescribeZonesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $acceptLanguage
+     *
+     * @return $this
+     */
+    public function setAcceptLanguage($acceptLanguage)
+    {
+        $this->requestParameters['AcceptLanguage'] = $acceptLanguage;
+        $this->queryParameters['AcceptLanguage'] = $acceptLanguage;
 
         return $this;
     }

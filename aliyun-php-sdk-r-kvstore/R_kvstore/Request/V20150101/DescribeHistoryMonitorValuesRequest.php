@@ -8,15 +8,18 @@ namespace R_kvstore\Request\V20150101;
  * Request of DescribeHistoryMonitorValues
  *
  * @method string getResourceOwnerId()
- * @method string getResourceOwnerAccount()
- * @method string getOwnerAccount()
- * @method string getEndTime()
  * @method string getStartTime()
- * @method string getOwnerId()
- * @method string getInstanceId()
  * @method string getSecurityToken()
  * @method string getIntervalForHistory()
  * @method string getNodeId()
+ * @method string getAccessType()
+ * @method string getProduct()
+ * @method string getResourceOwnerAccount()
+ * @method string getOwnerAccount()
+ * @method string getEndTime()
+ * @method string getOwnerId()
+ * @method string getInstanceId()
+ * @method string getCategory()
  * @method string getMonitorKeys()
  */
 class DescribeHistoryMonitorValuesRequest extends \RpcAcsRequest
@@ -49,6 +52,84 @@ class DescribeHistoryMonitorValuesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $intervalForHistory
+     *
+     * @return $this
+     */
+    public function setIntervalForHistory($intervalForHistory)
+    {
+        $this->requestParameters['IntervalForHistory'] = $intervalForHistory;
+        $this->queryParameters['IntervalForHistory'] = $intervalForHistory;
+
+        return $this;
+    }
+
+    /**
+     * @param string $nodeId
+     *
+     * @return $this
+     */
+    public function setNodeId($nodeId)
+    {
+        $this->requestParameters['NodeId'] = $nodeId;
+        $this->queryParameters['NodeId'] = $nodeId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $accessType
+     *
+     * @return $this
+     */
+    public function setAccessType($accessType)
+    {
+        $this->requestParameters['AccessType'] = $accessType;
+        $this->queryParameters['AccessType'] = $accessType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $product
+     *
+     * @return $this
+     */
+    public function setProduct($product)
+    {
+        $this->requestParameters['Product'] = $product;
+        $this->queryParameters['Product'] = $product;
 
         return $this;
     }
@@ -93,19 +174,6 @@ class DescribeHistoryMonitorValuesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $startTime
-     *
-     * @return $this
-     */
-    public function setStartTime($startTime)
-    {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -132,40 +200,14 @@ class DescribeHistoryMonitorValuesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $securityToken
+     * @param string $category
      *
      * @return $this
      */
-    public function setSecurityToken($securityToken)
+    public function setCategory($category)
     {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $intervalForHistory
-     *
-     * @return $this
-     */
-    public function setIntervalForHistory($intervalForHistory)
-    {
-        $this->requestParameters['IntervalForHistory'] = $intervalForHistory;
-        $this->queryParameters['IntervalForHistory'] = $intervalForHistory;
-
-        return $this;
-    }
-
-    /**
-     * @param string $nodeId
-     *
-     * @return $this
-     */
-    public function setNodeId($nodeId)
-    {
-        $this->requestParameters['NodeId'] = $nodeId;
-        $this->queryParameters['NodeId'] = $nodeId;
+        $this->requestParameters['Category'] = $category;
+        $this->queryParameters['Category'] = $category;
 
         return $this;
     }

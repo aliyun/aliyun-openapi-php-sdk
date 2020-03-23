@@ -7,14 +7,15 @@ namespace R_kvstore\Request\V20150101;
  *
  * Request of ModifyBackupPolicy
  *
- * @method string getPreferredBackupTime()
- * @method string getPreferredBackupPeriod()
  * @method string getResourceOwnerId()
- * @method string getInstanceId()
  * @method string getSecurityToken()
+ * @method string getEnableBackupLog()
+ * @method string getPreferredBackupPeriod()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getPreferredBackupTime()
+ * @method string getInstanceId()
  */
 class ModifyBackupPolicyRequest extends \RpcAcsRequest
 {
@@ -38,32 +39,6 @@ class ModifyBackupPolicyRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $preferredBackupTime
-     *
-     * @return $this
-     */
-    public function setPreferredBackupTime($preferredBackupTime)
-    {
-        $this->requestParameters['PreferredBackupTime'] = $preferredBackupTime;
-        $this->queryParameters['PreferredBackupTime'] = $preferredBackupTime;
-
-        return $this;
-    }
-
-    /**
-     * @param string $preferredBackupPeriod
-     *
-     * @return $this
-     */
-    public function setPreferredBackupPeriod($preferredBackupPeriod)
-    {
-        $this->requestParameters['PreferredBackupPeriod'] = $preferredBackupPeriod;
-        $this->queryParameters['PreferredBackupPeriod'] = $preferredBackupPeriod;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerId
      *
      * @return $this
@@ -77,19 +52,6 @@ class ModifyBackupPolicyRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $securityToken
      *
      * @return $this
@@ -98,6 +60,32 @@ class ModifyBackupPolicyRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $enableBackupLog
+     *
+     * @return $this
+     */
+    public function setEnableBackupLog($enableBackupLog)
+    {
+        $this->requestParameters['EnableBackupLog'] = $enableBackupLog;
+        $this->queryParameters['EnableBackupLog'] = $enableBackupLog;
+
+        return $this;
+    }
+
+    /**
+     * @param string $preferredBackupPeriod
+     *
+     * @return $this
+     */
+    public function setPreferredBackupPeriod($preferredBackupPeriod)
+    {
+        $this->requestParameters['PreferredBackupPeriod'] = $preferredBackupPeriod;
+        $this->queryParameters['PreferredBackupPeriod'] = $preferredBackupPeriod;
 
         return $this;
     }
@@ -137,6 +125,32 @@ class ModifyBackupPolicyRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $preferredBackupTime
+     *
+     * @return $this
+     */
+    public function setPreferredBackupTime($preferredBackupTime)
+    {
+        $this->requestParameters['PreferredBackupTime'] = $preferredBackupTime;
+        $this->queryParameters['PreferredBackupTime'] = $preferredBackupTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

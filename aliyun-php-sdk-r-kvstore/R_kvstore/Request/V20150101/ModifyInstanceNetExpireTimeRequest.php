@@ -8,13 +8,13 @@ namespace R_kvstore\Request\V20150101;
  * Request of ModifyInstanceNetExpireTime
  *
  * @method string getResourceOwnerId()
- * @method string getInstanceId()
- * @method string getSecurityToken()
- * @method string getResourceOwnerAccount()
  * @method string getConnectionString()
+ * @method string getSecurityToken()
  * @method string getClassicExpiredDays()
+ * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getInstanceId()
  */
 class ModifyInstanceNetExpireTimeRequest extends \RpcAcsRequest
 {
@@ -51,14 +51,14 @@ class ModifyInstanceNetExpireTimeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
+     * @param string $connectionString
      *
      * @return $this
      */
-    public function setInstanceId($instanceId)
+    public function setConnectionString($connectionString)
     {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
+        $this->requestParameters['ConnectionString'] = $connectionString;
+        $this->queryParameters['ConnectionString'] = $connectionString;
 
         return $this;
     }
@@ -77,32 +77,6 @@ class ModifyInstanceNetExpireTimeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $connectionString
-     *
-     * @return $this
-     */
-    public function setConnectionString($connectionString)
-    {
-        $this->requestParameters['ConnectionString'] = $connectionString;
-        $this->queryParameters['ConnectionString'] = $connectionString;
-
-        return $this;
-    }
-
-    /**
      * @param string $classicExpiredDays
      *
      * @return $this
@@ -111,6 +85,19 @@ class ModifyInstanceNetExpireTimeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ClassicExpiredDays'] = $classicExpiredDays;
         $this->queryParameters['ClassicExpiredDays'] = $classicExpiredDays;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }
@@ -137,6 +124,19 @@ class ModifyInstanceNetExpireTimeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

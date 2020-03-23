@@ -8,31 +8,33 @@ namespace R_kvstore\Request\V20150101;
  * Request of CreateInstance
  *
  * @method string getResourceOwnerId()
- * @method string getNodeType()
  * @method string getCouponNo()
  * @method string getNetworkType()
  * @method string getEngineVersion()
- * @method string getAutoUseCoupon()
- * @method string getInstanceClass()
- * @method string getCapacity()
+ * @method string getResourceGroupId()
  * @method string getPassword()
  * @method string getSecurityToken()
- * @method string getInstanceType()
  * @method string getBusinessInfo()
  * @method string getAutoRenewPeriod()
  * @method string getPeriod()
- * @method string getResourceOwnerAccount()
- * @method string getSrcDBInstanceId()
- * @method string getOwnerAccount()
  * @method string getBackupId()
  * @method string getOwnerId()
- * @method string getToken()
  * @method string getVSwitchId()
  * @method string getPrivateIpAddress()
  * @method string getInstanceName()
  * @method string getAutoRenew()
- * @method string getVpcId()
  * @method string getZoneId()
+ * @method string getNodeType()
+ * @method string getAutoUseCoupon()
+ * @method string getInstanceClass()
+ * @method string getCapacity()
+ * @method string getInstanceType()
+ * @method string getRestoreTime()
+ * @method string getResourceOwnerAccount()
+ * @method string getSrcDBInstanceId()
+ * @method string getOwnerAccount()
+ * @method string getToken()
+ * @method string getVpcId()
  * @method string getChargeType()
  * @method string getConfig()
  */
@@ -66,19 +68,6 @@ class CreateInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $nodeType
-     *
-     * @return $this
-     */
-    public function setNodeType($nodeType)
-    {
-        $this->requestParameters['NodeType'] = $nodeType;
-        $this->queryParameters['NodeType'] = $nodeType;
 
         return $this;
     }
@@ -123,40 +112,14 @@ class CreateInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $autoUseCoupon
+     * @param string $resourceGroupId
      *
      * @return $this
      */
-    public function setAutoUseCoupon($autoUseCoupon)
+    public function setResourceGroupId($resourceGroupId)
     {
-        $this->requestParameters['AutoUseCoupon'] = $autoUseCoupon;
-        $this->queryParameters['AutoUseCoupon'] = $autoUseCoupon;
-
-        return $this;
-    }
-
-    /**
-     * @param string $instanceClass
-     *
-     * @return $this
-     */
-    public function setInstanceClass($instanceClass)
-    {
-        $this->requestParameters['InstanceClass'] = $instanceClass;
-        $this->queryParameters['InstanceClass'] = $instanceClass;
-
-        return $this;
-    }
-
-    /**
-     * @param string $capacity
-     *
-     * @return $this
-     */
-    public function setCapacity($capacity)
-    {
-        $this->requestParameters['Capacity'] = $capacity;
-        $this->queryParameters['Capacity'] = $capacity;
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
 
         return $this;
     }
@@ -183,19 +146,6 @@ class CreateInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $instanceType
-     *
-     * @return $this
-     */
-    public function setInstanceType($instanceType)
-    {
-        $this->requestParameters['InstanceType'] = $instanceType;
-        $this->queryParameters['InstanceType'] = $instanceType;
 
         return $this;
     }
@@ -240,45 +190,6 @@ class CreateInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $srcDBInstanceId
-     *
-     * @return $this
-     */
-    public function setSrcDBInstanceId($srcDBInstanceId)
-    {
-        $this->requestParameters['SrcDBInstanceId'] = $srcDBInstanceId;
-        $this->queryParameters['SrcDBInstanceId'] = $srcDBInstanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerAccount
-     *
-     * @return $this
-     */
-    public function setOwnerAccount($ownerAccount)
-    {
-        $this->requestParameters['OwnerAccount'] = $ownerAccount;
-        $this->queryParameters['OwnerAccount'] = $ownerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $backupId
      *
      * @return $this
@@ -300,19 +211,6 @@ class CreateInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $token
-     *
-     * @return $this
-     */
-    public function setToken($token)
-    {
-        $this->requestParameters['Token'] = $token;
-        $this->queryParameters['Token'] = $token;
 
         return $this;
     }
@@ -370,19 +268,6 @@ class CreateInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $vpcId
-     *
-     * @return $this
-     */
-    public function setVpcId($vpcId)
-    {
-        $this->requestParameters['VpcId'] = $vpcId;
-        $this->queryParameters['VpcId'] = $vpcId;
-
-        return $this;
-    }
-
-    /**
      * @param string $zoneId
      *
      * @return $this
@@ -391,6 +276,149 @@ class CreateInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ZoneId'] = $zoneId;
         $this->queryParameters['ZoneId'] = $zoneId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $nodeType
+     *
+     * @return $this
+     */
+    public function setNodeType($nodeType)
+    {
+        $this->requestParameters['NodeType'] = $nodeType;
+        $this->queryParameters['NodeType'] = $nodeType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $autoUseCoupon
+     *
+     * @return $this
+     */
+    public function setAutoUseCoupon($autoUseCoupon)
+    {
+        $this->requestParameters['AutoUseCoupon'] = $autoUseCoupon;
+        $this->queryParameters['AutoUseCoupon'] = $autoUseCoupon;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceClass
+     *
+     * @return $this
+     */
+    public function setInstanceClass($instanceClass)
+    {
+        $this->requestParameters['InstanceClass'] = $instanceClass;
+        $this->queryParameters['InstanceClass'] = $instanceClass;
+
+        return $this;
+    }
+
+    /**
+     * @param string $capacity
+     *
+     * @return $this
+     */
+    public function setCapacity($capacity)
+    {
+        $this->requestParameters['Capacity'] = $capacity;
+        $this->queryParameters['Capacity'] = $capacity;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceType
+     *
+     * @return $this
+     */
+    public function setInstanceType($instanceType)
+    {
+        $this->requestParameters['InstanceType'] = $instanceType;
+        $this->queryParameters['InstanceType'] = $instanceType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $restoreTime
+     *
+     * @return $this
+     */
+    public function setRestoreTime($restoreTime)
+    {
+        $this->requestParameters['RestoreTime'] = $restoreTime;
+        $this->queryParameters['RestoreTime'] = $restoreTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $srcDBInstanceId
+     *
+     * @return $this
+     */
+    public function setSrcDBInstanceId($srcDBInstanceId)
+    {
+        $this->requestParameters['SrcDBInstanceId'] = $srcDBInstanceId;
+        $this->queryParameters['SrcDBInstanceId'] = $srcDBInstanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerAccount
+     *
+     * @return $this
+     */
+    public function setOwnerAccount($ownerAccount)
+    {
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $token
+     *
+     * @return $this
+     */
+    public function setToken($token)
+    {
+        $this->requestParameters['Token'] = $token;
+        $this->queryParameters['Token'] = $token;
+
+        return $this;
+    }
+
+    /**
+     * @param string $vpcId
+     *
+     * @return $this
+     */
+    public function setVpcId($vpcId)
+    {
+        $this->requestParameters['VpcId'] = $vpcId;
+        $this->queryParameters['VpcId'] = $vpcId;
 
         return $this;
     }

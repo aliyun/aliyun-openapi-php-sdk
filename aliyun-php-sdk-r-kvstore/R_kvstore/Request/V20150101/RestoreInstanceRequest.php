@@ -8,12 +8,14 @@ namespace R_kvstore\Request\V20150101;
  * Request of RestoreInstance
  *
  * @method string getResourceOwnerId()
- * @method string getInstanceId()
  * @method string getSecurityToken()
+ * @method string getRestoreTime()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getBackupId()
  * @method string getOwnerId()
+ * @method string getRestoreType()
+ * @method string getInstanceId()
  */
 class RestoreInstanceRequest extends \RpcAcsRequest
 {
@@ -50,19 +52,6 @@ class RestoreInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $securityToken
      *
      * @return $this
@@ -71,6 +60,19 @@ class RestoreInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $restoreTime
+     *
+     * @return $this
+     */
+    public function setRestoreTime($restoreTime)
+    {
+        $this->requestParameters['RestoreTime'] = $restoreTime;
+        $this->queryParameters['RestoreTime'] = $restoreTime;
 
         return $this;
     }
@@ -123,6 +125,32 @@ class RestoreInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $restoreType
+     *
+     * @return $this
+     */
+    public function setRestoreType($restoreType)
+    {
+        $this->requestParameters['RestoreType'] = $restoreType;
+        $this->queryParameters['RestoreType'] = $restoreType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

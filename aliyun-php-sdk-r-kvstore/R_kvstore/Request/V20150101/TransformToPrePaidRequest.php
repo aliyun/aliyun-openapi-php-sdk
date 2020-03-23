@@ -8,14 +8,14 @@ namespace R_kvstore\Request\V20150101;
  * Request of TransformToPrePaid
  *
  * @method string getResourceOwnerId()
+ * @method string getSecurityToken()
  * @method string getPeriod()
- * @method string getInstanceId()
  * @method string getAutoPay()
  * @method string getFromApp()
- * @method string getSecurityToken()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getInstanceId()
  */
 class TransformToPrePaidRequest extends \RpcAcsRequest
 {
@@ -52,6 +52,19 @@ class TransformToPrePaidRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $securityToken
+     *
+     * @return $this
+     */
+    public function setSecurityToken($securityToken)
+    {
+        $this->requestParameters['SecurityToken'] = $securityToken;
+        $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
      * @param string $period
      *
      * @return $this
@@ -60,19 +73,6 @@ class TransformToPrePaidRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Period'] = $period;
         $this->queryParameters['Period'] = $period;
-
-        return $this;
-    }
-
-    /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }
@@ -99,19 +99,6 @@ class TransformToPrePaidRequest extends \RpcAcsRequest
     {
         $this->requestParameters['FromApp'] = $fromApp;
         $this->queryParameters['FromApp'] = $fromApp;
-
-        return $this;
-    }
-
-    /**
-     * @param string $securityToken
-     *
-     * @return $this
-     */
-    public function setSecurityToken($securityToken)
-    {
-        $this->requestParameters['SecurityToken'] = $securityToken;
-        $this->queryParameters['SecurityToken'] = $securityToken;
 
         return $this;
     }
@@ -151,6 +138,19 @@ class TransformToPrePaidRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

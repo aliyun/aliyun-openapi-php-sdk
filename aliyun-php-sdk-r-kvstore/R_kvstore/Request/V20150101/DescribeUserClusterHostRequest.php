@@ -5,16 +5,20 @@ namespace R_kvstore\Request\V20150101;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of CreateBackup
+ * Request of DescribeUserClusterHost
  *
  * @method string getResourceOwnerId()
+ * @method string getPageNumber()
  * @method string getSecurityToken()
+ * @method string getEngine()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
+ * @method string getMaxRecordsPerPage()
+ * @method string getClusterId()
  * @method string getOwnerId()
- * @method string getInstanceId()
+ * @method string getZoneId()
  */
-class CreateBackupRequest extends \RpcAcsRequest
+class DescribeUserClusterHostRequest extends \RpcAcsRequest
 {
 
     /**
@@ -30,7 +34,7 @@ class CreateBackupRequest extends \RpcAcsRequest
         parent::__construct(
             'R-kvstore',
             '2015-01-01',
-            'CreateBackup',
+            'DescribeUserClusterHost',
             'redisa'
         );
     }
@@ -49,6 +53,19 @@ class CreateBackupRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
      * @param string $securityToken
      *
      * @return $this
@@ -57,6 +74,19 @@ class CreateBackupRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $engine
+     *
+     * @return $this
+     */
+    public function setEngine($engine)
+    {
+        $this->requestParameters['Engine'] = $engine;
+        $this->queryParameters['Engine'] = $engine;
 
         return $this;
     }
@@ -88,6 +118,32 @@ class CreateBackupRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $maxRecordsPerPage
+     *
+     * @return $this
+     */
+    public function setMaxRecordsPerPage($maxRecordsPerPage)
+    {
+        $this->requestParameters['MaxRecordsPerPage'] = $maxRecordsPerPage;
+        $this->queryParameters['MaxRecordsPerPage'] = $maxRecordsPerPage;
+
+        return $this;
+    }
+
+    /**
+     * @param string $clusterId
+     *
+     * @return $this
+     */
+    public function setClusterId($clusterId)
+    {
+        $this->requestParameters['ClusterId'] = $clusterId;
+        $this->queryParameters['ClusterId'] = $clusterId;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -101,14 +157,14 @@ class CreateBackupRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
+     * @param string $zoneId
      *
      * @return $this
      */
-    public function setInstanceId($instanceId)
+    public function setZoneId($zoneId)
     {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
+        $this->requestParameters['ZoneId'] = $zoneId;
+        $this->queryParameters['ZoneId'] = $zoneId;
 
         return $this;
     }

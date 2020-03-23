@@ -8,11 +8,12 @@ namespace R_kvstore\Request\V20150101;
  * Request of DescribeIntranetAttribute
  *
  * @method string getResourceOwnerId()
- * @method string getInstanceId()
+ * @method string getResourceGroupId()
  * @method string getSecurityToken()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getInstanceId()
  */
 class DescribeIntranetAttributeRequest extends \RpcAcsRequest
 {
@@ -49,14 +50,14 @@ class DescribeIntranetAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
+     * @param string $resourceGroupId
      *
      * @return $this
      */
-    public function setInstanceId($instanceId)
+    public function setResourceGroupId($resourceGroupId)
     {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
 
         return $this;
     }
@@ -109,6 +110,19 @@ class DescribeIntranetAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

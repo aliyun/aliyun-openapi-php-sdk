@@ -8,12 +8,12 @@ namespace R_kvstore\Request\V20150101;
  * Request of ModifyInstanceVpcAuthMode
  *
  * @method string getResourceOwnerId()
- * @method string getInstanceId()
  * @method string getSecurityToken()
+ * @method string getVpcAuthMode()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getVpcAuthMode()
  * @method string getOwnerId()
+ * @method string getInstanceId()
  */
 class ModifyInstanceVpcAuthModeRequest extends \RpcAcsRequest
 {
@@ -50,19 +50,6 @@ class ModifyInstanceVpcAuthModeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $securityToken
      *
      * @return $this
@@ -71,6 +58,19 @@ class ModifyInstanceVpcAuthModeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $vpcAuthMode
+     *
+     * @return $this
+     */
+    public function setVpcAuthMode($vpcAuthMode)
+    {
+        $this->requestParameters['VpcAuthMode'] = $vpcAuthMode;
+        $this->queryParameters['VpcAuthMode'] = $vpcAuthMode;
 
         return $this;
     }
@@ -102,19 +102,6 @@ class ModifyInstanceVpcAuthModeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $vpcAuthMode
-     *
-     * @return $this
-     */
-    public function setVpcAuthMode($vpcAuthMode)
-    {
-        $this->requestParameters['VpcAuthMode'] = $vpcAuthMode;
-        $this->queryParameters['VpcAuthMode'] = $vpcAuthMode;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerId
      *
      * @return $this
@@ -123,6 +110,19 @@ class ModifyInstanceVpcAuthModeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

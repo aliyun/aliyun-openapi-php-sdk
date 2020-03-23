@@ -5,33 +5,31 @@ namespace R_kvstore\Request\V20150101;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeInstances
+ * Request of CreateDedicatedInstance
  *
  * @method string getResourceOwnerId()
- * @method string getSearchKey()
+ * @method string getNodeType()
  * @method string getNetworkType()
  * @method string getEngineVersion()
  * @method string getInstanceClass()
- * @method string getPageNumber()
  * @method string getResourceGroupId()
- * @method string getExpired()
+ * @method string getPassword()
  * @method string getSecurityToken()
- * @method string getPageSize()
  * @method string getInstanceType()
- * @method array getTags()
- * @method string getInstanceStatus()
  * @method string getResourceOwnerAccount()
+ * @method string getSrcDBInstanceId()
  * @method string getOwnerAccount()
+ * @method string getBackupId()
+ * @method string getClusterId()
  * @method string getOwnerId()
  * @method string getVSwitchId()
- * @method string getVpcCloudInsInfo()
- * @method string getInstanceIds()
- * @method string getArchitectureType()
+ * @method string getPrivateIpAddress()
+ * @method string getInstanceName()
  * @method string getVpcId()
  * @method string getZoneId()
- * @method string getChargeType()
+ * @method string getConfig()
  */
-class DescribeInstancesRequest extends \RpcAcsRequest
+class CreateDedicatedInstanceRequest extends \RpcAcsRequest
 {
 
     /**
@@ -47,7 +45,7 @@ class DescribeInstancesRequest extends \RpcAcsRequest
         parent::__construct(
             'R-kvstore',
             '2015-01-01',
-            'DescribeInstances',
+            'CreateDedicatedInstance',
             'redisa'
         );
     }
@@ -66,14 +64,14 @@ class DescribeInstancesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $searchKey
+     * @param string $nodeType
      *
      * @return $this
      */
-    public function setSearchKey($searchKey)
+    public function setNodeType($nodeType)
     {
-        $this->requestParameters['SearchKey'] = $searchKey;
-        $this->queryParameters['SearchKey'] = $searchKey;
+        $this->requestParameters['NodeType'] = $nodeType;
+        $this->queryParameters['NodeType'] = $nodeType;
 
         return $this;
     }
@@ -118,19 +116,6 @@ class DescribeInstancesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceGroupId
      *
      * @return $this
@@ -144,14 +129,14 @@ class DescribeInstancesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $expired
+     * @param string $password
      *
      * @return $this
      */
-    public function setExpired($expired)
+    public function setPassword($password)
     {
-        $this->requestParameters['Expired'] = $expired;
-        $this->queryParameters['Expired'] = $expired;
+        $this->requestParameters['Password'] = $password;
+        $this->queryParameters['Password'] = $password;
 
         return $this;
     }
@@ -170,19 +155,6 @@ class DescribeInstancesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
      * @param string $instanceType
      *
      * @return $this
@@ -191,35 +163,6 @@ class DescribeInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['InstanceType'] = $instanceType;
         $this->queryParameters['InstanceType'] = $instanceType;
-
-        return $this;
-    }
-
-    /**
-     * @param array $tag
-     *
-     * @return $this
-     */
-	public function setTags(array $tag)
-	{
-	    $this->requestParameters['Tags'] = $tag;
-		foreach ($tag as $depth1 => $depth1Value) {
-			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
-			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
-		}
-
-		return $this;
-    }
-
-    /**
-     * @param string $instanceStatus
-     *
-     * @return $this
-     */
-    public function setInstanceStatus($instanceStatus)
-    {
-        $this->requestParameters['InstanceStatus'] = $instanceStatus;
-        $this->queryParameters['InstanceStatus'] = $instanceStatus;
 
         return $this;
     }
@@ -238,6 +181,19 @@ class DescribeInstancesRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $srcDBInstanceId
+     *
+     * @return $this
+     */
+    public function setSrcDBInstanceId($srcDBInstanceId)
+    {
+        $this->requestParameters['SrcDBInstanceId'] = $srcDBInstanceId;
+        $this->queryParameters['SrcDBInstanceId'] = $srcDBInstanceId;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerAccount
      *
      * @return $this
@@ -246,6 +202,32 @@ class DescribeInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $backupId
+     *
+     * @return $this
+     */
+    public function setBackupId($backupId)
+    {
+        $this->requestParameters['BackupId'] = $backupId;
+        $this->queryParameters['BackupId'] = $backupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $clusterId
+     *
+     * @return $this
+     */
+    public function setClusterId($clusterId)
+    {
+        $this->requestParameters['ClusterId'] = $clusterId;
+        $this->queryParameters['ClusterId'] = $clusterId;
 
         return $this;
     }
@@ -277,40 +259,27 @@ class DescribeInstancesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $vpcCloudInsInfo
+     * @param string $privateIpAddress
      *
      * @return $this
      */
-    public function setVpcCloudInsInfo($vpcCloudInsInfo)
+    public function setPrivateIpAddress($privateIpAddress)
     {
-        $this->requestParameters['VpcCloudInsInfo'] = $vpcCloudInsInfo;
-        $this->queryParameters['VpcCloudInsInfo'] = $vpcCloudInsInfo;
+        $this->requestParameters['PrivateIpAddress'] = $privateIpAddress;
+        $this->queryParameters['PrivateIpAddress'] = $privateIpAddress;
 
         return $this;
     }
 
     /**
-     * @param string $instanceIds
+     * @param string $instanceName
      *
      * @return $this
      */
-    public function setInstanceIds($instanceIds)
+    public function setInstanceName($instanceName)
     {
-        $this->requestParameters['InstanceIds'] = $instanceIds;
-        $this->queryParameters['InstanceIds'] = $instanceIds;
-
-        return $this;
-    }
-
-    /**
-     * @param string $architectureType
-     *
-     * @return $this
-     */
-    public function setArchitectureType($architectureType)
-    {
-        $this->requestParameters['ArchitectureType'] = $architectureType;
-        $this->queryParameters['ArchitectureType'] = $architectureType;
+        $this->requestParameters['InstanceName'] = $instanceName;
+        $this->queryParameters['InstanceName'] = $instanceName;
 
         return $this;
     }
@@ -342,14 +311,14 @@ class DescribeInstancesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $chargeType
+     * @param string $config
      *
      * @return $this
      */
-    public function setChargeType($chargeType)
+    public function setConfig($config)
     {
-        $this->requestParameters['ChargeType'] = $chargeType;
-        $this->queryParameters['ChargeType'] = $chargeType;
+        $this->requestParameters['Config'] = $config;
+        $this->queryParameters['Config'] = $config;
 
         return $this;
     }

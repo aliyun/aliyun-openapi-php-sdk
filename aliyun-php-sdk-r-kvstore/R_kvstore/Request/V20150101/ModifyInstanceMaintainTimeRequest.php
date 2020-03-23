@@ -8,13 +8,13 @@ namespace R_kvstore\Request\V20150101;
  * Request of ModifyInstanceMaintainTime
  *
  * @method string getResourceOwnerId()
- * @method string getInstanceId()
  * @method string getSecurityToken()
- * @method string getResourceOwnerAccount()
  * @method string getMaintainStartTime()
+ * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
  * @method string getMaintainEndTime()
+ * @method string getInstanceId()
  */
 class ModifyInstanceMaintainTimeRequest extends \RpcAcsRequest
 {
@@ -51,19 +51,6 @@ class ModifyInstanceMaintainTimeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $securityToken
      *
      * @return $this
@@ -77,19 +64,6 @@ class ModifyInstanceMaintainTimeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceOwnerAccount
-     *
-     * @return $this
-     */
-    public function setResourceOwnerAccount($resourceOwnerAccount)
-    {
-        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
      * @param string $maintainStartTime
      *
      * @return $this
@@ -98,6 +72,19 @@ class ModifyInstanceMaintainTimeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['MaintainStartTime'] = $maintainStartTime;
         $this->queryParameters['MaintainStartTime'] = $maintainStartTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceOwnerAccount
+     *
+     * @return $this
+     */
+    public function setResourceOwnerAccount($resourceOwnerAccount)
+    {
+        $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+        $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
 
         return $this;
     }
@@ -137,6 +124,19 @@ class ModifyInstanceMaintainTimeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['MaintainEndTime'] = $maintainEndTime;
         $this->queryParameters['MaintainEndTime'] = $maintainEndTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

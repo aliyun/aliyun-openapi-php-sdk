@@ -8,13 +8,13 @@ namespace R_kvstore\Request\V20150101;
  * Request of ModifyAccountDescription
  *
  * @method string getResourceOwnerId()
- * @method string getInstanceId()
+ * @method string getAccountDescription()
  * @method string getAccountName()
  * @method string getSecurityToken()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
- * @method string getAccountDescription()
+ * @method string getInstanceId()
  */
 class ModifyAccountDescriptionRequest extends \RpcAcsRequest
 {
@@ -51,14 +51,14 @@ class ModifyAccountDescriptionRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
+     * @param string $accountDescription
      *
      * @return $this
      */
-    public function setInstanceId($instanceId)
+    public function setAccountDescription($accountDescription)
     {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
+        $this->requestParameters['AccountDescription'] = $accountDescription;
+        $this->queryParameters['AccountDescription'] = $accountDescription;
 
         return $this;
     }
@@ -129,14 +129,14 @@ class ModifyAccountDescriptionRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $accountDescription
+     * @param string $instanceId
      *
      * @return $this
      */
-    public function setAccountDescription($accountDescription)
+    public function setInstanceId($instanceId)
     {
-        $this->requestParameters['AccountDescription'] = $accountDescription;
-        $this->queryParameters['AccountDescription'] = $accountDescription;
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

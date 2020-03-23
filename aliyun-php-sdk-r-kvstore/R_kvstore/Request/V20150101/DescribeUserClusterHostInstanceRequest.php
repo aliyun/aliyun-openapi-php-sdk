@@ -5,17 +5,22 @@ namespace R_kvstore\Request\V20150101;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ReleaseInstancePublicConnection
+ * Request of DescribeUserClusterHostInstance
  *
  * @method string getResourceOwnerId()
+ * @method string getPageNumber()
  * @method string getSecurityToken()
+ * @method string getEngine()
+ * @method string getInstanceStatus()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
+ * @method string getMaxRecordsPerPage()
+ * @method string getClusterId()
  * @method string getOwnerId()
- * @method string getCurrentConnectionString()
- * @method string getInstanceId()
+ * @method string getInstanceIds()
+ * @method string getZoneId()
  */
-class ReleaseInstancePublicConnectionRequest extends \RpcAcsRequest
+class DescribeUserClusterHostInstanceRequest extends \RpcAcsRequest
 {
 
     /**
@@ -31,7 +36,7 @@ class ReleaseInstancePublicConnectionRequest extends \RpcAcsRequest
         parent::__construct(
             'R-kvstore',
             '2015-01-01',
-            'ReleaseInstancePublicConnection',
+            'DescribeUserClusterHostInstance',
             'redisa'
         );
     }
@@ -50,6 +55,19 @@ class ReleaseInstancePublicConnectionRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
      * @param string $securityToken
      *
      * @return $this
@@ -58,6 +76,32 @@ class ReleaseInstancePublicConnectionRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $engine
+     *
+     * @return $this
+     */
+    public function setEngine($engine)
+    {
+        $this->requestParameters['Engine'] = $engine;
+        $this->queryParameters['Engine'] = $engine;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceStatus
+     *
+     * @return $this
+     */
+    public function setInstanceStatus($instanceStatus)
+    {
+        $this->requestParameters['InstanceStatus'] = $instanceStatus;
+        $this->queryParameters['InstanceStatus'] = $instanceStatus;
 
         return $this;
     }
@@ -89,6 +133,32 @@ class ReleaseInstancePublicConnectionRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $maxRecordsPerPage
+     *
+     * @return $this
+     */
+    public function setMaxRecordsPerPage($maxRecordsPerPage)
+    {
+        $this->requestParameters['MaxRecordsPerPage'] = $maxRecordsPerPage;
+        $this->queryParameters['MaxRecordsPerPage'] = $maxRecordsPerPage;
+
+        return $this;
+    }
+
+    /**
+     * @param string $clusterId
+     *
+     * @return $this
+     */
+    public function setClusterId($clusterId)
+    {
+        $this->requestParameters['ClusterId'] = $clusterId;
+        $this->queryParameters['ClusterId'] = $clusterId;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -102,27 +172,27 @@ class ReleaseInstancePublicConnectionRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $currentConnectionString
+     * @param string $instanceIds
      *
      * @return $this
      */
-    public function setCurrentConnectionString($currentConnectionString)
+    public function setInstanceIds($instanceIds)
     {
-        $this->requestParameters['CurrentConnectionString'] = $currentConnectionString;
-        $this->queryParameters['CurrentConnectionString'] = $currentConnectionString;
+        $this->requestParameters['InstanceIds'] = $instanceIds;
+        $this->queryParameters['InstanceIds'] = $instanceIds;
 
         return $this;
     }
 
     /**
-     * @param string $instanceId
+     * @param string $zoneId
      *
      * @return $this
      */
-    public function setInstanceId($instanceId)
+    public function setZoneId($zoneId)
     {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
+        $this->requestParameters['ZoneId'] = $zoneId;
+        $this->queryParameters['ZoneId'] = $zoneId;
 
         return $this;
     }

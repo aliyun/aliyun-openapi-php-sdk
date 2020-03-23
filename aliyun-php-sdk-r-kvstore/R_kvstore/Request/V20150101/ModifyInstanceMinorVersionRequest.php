@@ -8,13 +8,13 @@ namespace R_kvstore\Request\V20150101;
  * Request of ModifyInstanceMinorVersion
  *
  * @method string getResourceOwnerId()
- * @method string getInstanceId()
+ * @method string getEffectTime()
  * @method string getSecurityToken()
  * @method string getResourceOwnerAccount()
  * @method string getMinorversion()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
- * @method string getEffectTime()
+ * @method string getInstanceId()
  */
 class ModifyInstanceMinorVersionRequest extends \RpcAcsRequest
 {
@@ -51,14 +51,14 @@ class ModifyInstanceMinorVersionRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
+     * @param string $effectTime
      *
      * @return $this
      */
-    public function setInstanceId($instanceId)
+    public function setEffectTime($effectTime)
     {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
+        $this->requestParameters['EffectTime'] = $effectTime;
+        $this->queryParameters['EffectTime'] = $effectTime;
 
         return $this;
     }
@@ -129,14 +129,14 @@ class ModifyInstanceMinorVersionRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $effectTime
+     * @param string $instanceId
      *
      * @return $this
      */
-    public function setEffectTime($effectTime)
+    public function setInstanceId($instanceId)
     {
-        $this->requestParameters['EffectTime'] = $effectTime;
-        $this->queryParameters['EffectTime'] = $effectTime;
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

@@ -7,14 +7,14 @@ namespace R_kvstore\Request\V20150101;
  *
  * Request of UntagResources
  *
- * @method string getAll()
  * @method string getResourceOwnerId()
+ * @method string getAll()
  * @method array getResourceIds()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
- * @method array getTagKeys()
  * @method string getResourceType()
+ * @method array getTagKeys()
  */
 class UntagResourcesRequest extends \RpcAcsRequest
 {
@@ -38,19 +38,6 @@ class UntagResourcesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $all
-     *
-     * @return $this
-     */
-    public function setAll($all)
-    {
-        $this->requestParameters['All'] = $all;
-        $this->queryParameters['All'] = $all;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerId
      *
      * @return $this
@@ -64,18 +51,31 @@ class UntagResourcesRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $all
+     *
+     * @return $this
+     */
+    public function setAll($all)
+    {
+        $this->requestParameters['All'] = $all;
+        $this->queryParameters['All'] = $all;
+
+        return $this;
+    }
+
+    /**
      * @param array $resourceId
      *
      * @return $this
      */
-    public function setResourceIds(array $resourceId)
-    {
-        $this->requestParameters['ResourceIds'] = $resourceId;
-        foreach ($resourceId as $i => $iValue) {
-            $this->queryParameters['ResourceId.' . ($i + 1)] = $iValue;
-        }
+	public function setResourceIds(array $resourceId)
+	{
+	    $this->requestParameters['ResourceIds'] = $resourceId;
+		foreach ($resourceId as $i => $iValue) {
+			$this->queryParameters['ResourceId.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 
     /**
@@ -118,21 +118,6 @@ class UntagResourcesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $tagKey
-     *
-     * @return $this
-     */
-    public function setTagKeys(array $tagKey)
-    {
-        $this->requestParameters['TagKeys'] = $tagKey;
-        foreach ($tagKey as $i => $iValue) {
-            $this->queryParameters['TagKey.' . ($i + 1)] = $iValue;
-        }
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceType
      *
      * @return $this
@@ -143,5 +128,20 @@ class UntagResourcesRequest extends \RpcAcsRequest
         $this->queryParameters['ResourceType'] = $resourceType;
 
         return $this;
+    }
+
+    /**
+     * @param array $tagKey
+     *
+     * @return $this
+     */
+	public function setTagKeys(array $tagKey)
+	{
+	    $this->requestParameters['TagKeys'] = $tagKey;
+		foreach ($tagKey as $i => $iValue) {
+			$this->queryParameters['TagKey.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
     }
 }

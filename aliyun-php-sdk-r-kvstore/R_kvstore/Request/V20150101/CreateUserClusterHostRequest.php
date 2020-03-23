@@ -5,24 +5,27 @@ namespace R_kvstore\Request\V20150101;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of RenewInstance
+ * Request of CreateUserClusterHost
  *
  * @method string getResourceOwnerId()
  * @method string getCouponNo()
- * @method string getInstanceClass()
- * @method string getCapacity()
  * @method string getSecurityToken()
+ * @method string getEngine()
+ * @method string getOrderPeriod()
  * @method string getBusinessInfo()
- * @method string getPeriod()
+ * @method string getAgentId()
+ * @method string getHostClass()
  * @method string getAutoPay()
- * @method string getFromApp()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
+ * @method string getOrderNum()
+ * @method string getClusterId()
  * @method string getOwnerId()
- * @method string getInstanceId()
- * @method string getForceUpgrade()
+ * @method string getAutoRenew()
+ * @method string getZoneId()
+ * @method string getChargeType()
  */
-class RenewInstanceRequest extends \RpcAcsRequest
+class CreateUserClusterHostRequest extends \RpcAcsRequest
 {
 
     /**
@@ -38,7 +41,7 @@ class RenewInstanceRequest extends \RpcAcsRequest
         parent::__construct(
             'R-kvstore',
             '2015-01-01',
-            'RenewInstance',
+            'CreateUserClusterHost',
             'redisa'
         );
     }
@@ -70,32 +73,6 @@ class RenewInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceClass
-     *
-     * @return $this
-     */
-    public function setInstanceClass($instanceClass)
-    {
-        $this->requestParameters['InstanceClass'] = $instanceClass;
-        $this->queryParameters['InstanceClass'] = $instanceClass;
-
-        return $this;
-    }
-
-    /**
-     * @param string $capacity
-     *
-     * @return $this
-     */
-    public function setCapacity($capacity)
-    {
-        $this->requestParameters['Capacity'] = $capacity;
-        $this->queryParameters['Capacity'] = $capacity;
-
-        return $this;
-    }
-
-    /**
      * @param string $securityToken
      *
      * @return $this
@@ -104,6 +81,32 @@ class RenewInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $engine
+     *
+     * @return $this
+     */
+    public function setEngine($engine)
+    {
+        $this->requestParameters['Engine'] = $engine;
+        $this->queryParameters['Engine'] = $engine;
+
+        return $this;
+    }
+
+    /**
+     * @param string $orderPeriod
+     *
+     * @return $this
+     */
+    public function setOrderPeriod($orderPeriod)
+    {
+        $this->requestParameters['OrderPeriod'] = $orderPeriod;
+        $this->queryParameters['OrderPeriod'] = $orderPeriod;
 
         return $this;
     }
@@ -122,14 +125,27 @@ class RenewInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $period
+     * @param string $agentId
      *
      * @return $this
      */
-    public function setPeriod($period)
+    public function setAgentId($agentId)
     {
-        $this->requestParameters['Period'] = $period;
-        $this->queryParameters['Period'] = $period;
+        $this->requestParameters['AgentId'] = $agentId;
+        $this->queryParameters['AgentId'] = $agentId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $hostClass
+     *
+     * @return $this
+     */
+    public function setHostClass($hostClass)
+    {
+        $this->requestParameters['HostClass'] = $hostClass;
+        $this->queryParameters['HostClass'] = $hostClass;
 
         return $this;
     }
@@ -143,19 +159,6 @@ class RenewInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AutoPay'] = $autoPay;
         $this->queryParameters['AutoPay'] = $autoPay;
-
-        return $this;
-    }
-
-    /**
-     * @param string $fromApp
-     *
-     * @return $this
-     */
-    public function setFromApp($fromApp)
-    {
-        $this->requestParameters['FromApp'] = $fromApp;
-        $this->queryParameters['FromApp'] = $fromApp;
 
         return $this;
     }
@@ -187,6 +190,32 @@ class RenewInstanceRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $orderNum
+     *
+     * @return $this
+     */
+    public function setOrderNum($orderNum)
+    {
+        $this->requestParameters['OrderNum'] = $orderNum;
+        $this->queryParameters['OrderNum'] = $orderNum;
+
+        return $this;
+    }
+
+    /**
+     * @param string $clusterId
+     *
+     * @return $this
+     */
+    public function setClusterId($clusterId)
+    {
+        $this->requestParameters['ClusterId'] = $clusterId;
+        $this->queryParameters['ClusterId'] = $clusterId;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -200,27 +229,40 @@ class RenewInstanceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
+     * @param string $autoRenew
      *
      * @return $this
      */
-    public function setInstanceId($instanceId)
+    public function setAutoRenew($autoRenew)
     {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
+        $this->requestParameters['AutoRenew'] = $autoRenew;
+        $this->queryParameters['AutoRenew'] = $autoRenew;
 
         return $this;
     }
 
     /**
-     * @param string $forceUpgrade
+     * @param string $zoneId
      *
      * @return $this
      */
-    public function setForceUpgrade($forceUpgrade)
+    public function setZoneId($zoneId)
     {
-        $this->requestParameters['ForceUpgrade'] = $forceUpgrade;
-        $this->queryParameters['ForceUpgrade'] = $forceUpgrade;
+        $this->requestParameters['ZoneId'] = $zoneId;
+        $this->queryParameters['ZoneId'] = $zoneId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $chargeType
+     *
+     * @return $this
+     */
+    public function setChargeType($chargeType)
+    {
+        $this->requestParameters['ChargeType'] = $chargeType;
+        $this->queryParameters['ChargeType'] = $chargeType;
 
         return $this;
     }

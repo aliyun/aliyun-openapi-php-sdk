@@ -8,13 +8,13 @@ namespace R_kvstore\Request\V20150101;
  * Request of ModifyInstanceMajorVersion
  *
  * @method string getResourceOwnerId()
- * @method string getInstanceId()
- * @method string getMajorVersion()
+ * @method string getEffectTime()
  * @method string getSecurityToken()
+ * @method string getMajorVersion()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
- * @method string getEffectTime()
+ * @method string getInstanceId()
  */
 class ModifyInstanceMajorVersionRequest extends \RpcAcsRequest
 {
@@ -51,27 +51,14 @@ class ModifyInstanceMajorVersionRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
+     * @param string $effectTime
      *
      * @return $this
      */
-    public function setInstanceId($instanceId)
+    public function setEffectTime($effectTime)
     {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $majorVersion
-     *
-     * @return $this
-     */
-    public function setMajorVersion($majorVersion)
-    {
-        $this->requestParameters['MajorVersion'] = $majorVersion;
-        $this->queryParameters['MajorVersion'] = $majorVersion;
+        $this->requestParameters['EffectTime'] = $effectTime;
+        $this->queryParameters['EffectTime'] = $effectTime;
 
         return $this;
     }
@@ -85,6 +72,19 @@ class ModifyInstanceMajorVersionRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $majorVersion
+     *
+     * @return $this
+     */
+    public function setMajorVersion($majorVersion)
+    {
+        $this->requestParameters['MajorVersion'] = $majorVersion;
+        $this->queryParameters['MajorVersion'] = $majorVersion;
 
         return $this;
     }
@@ -129,14 +129,14 @@ class ModifyInstanceMajorVersionRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $effectTime
+     * @param string $instanceId
      *
      * @return $this
      */
-    public function setEffectTime($effectTime)
+    public function setInstanceId($instanceId)
     {
-        $this->requestParameters['EffectTime'] = $effectTime;
-        $this->queryParameters['EffectTime'] = $effectTime;
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

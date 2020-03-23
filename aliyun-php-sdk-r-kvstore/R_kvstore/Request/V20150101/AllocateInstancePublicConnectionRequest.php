@@ -9,12 +9,12 @@ namespace R_kvstore\Request\V20150101;
  *
  * @method string getResourceOwnerId()
  * @method string getConnectionStringPrefix()
- * @method string getInstanceId()
  * @method string getSecurityToken()
  * @method string getResourceOwnerAccount()
- * @method string getPort()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getInstanceId()
+ * @method string getPort()
  */
 class AllocateInstancePublicConnectionRequest extends \RpcAcsRequest
 {
@@ -64,19 +64,6 @@ class AllocateInstancePublicConnectionRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $securityToken
      *
      * @return $this
@@ -103,19 +90,6 @@ class AllocateInstancePublicConnectionRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $port
-     *
-     * @return $this
-     */
-    public function setPort($port)
-    {
-        $this->requestParameters['Port'] = $port;
-        $this->queryParameters['Port'] = $port;
-
-        return $this;
-    }
-
-    /**
      * @param string $ownerAccount
      *
      * @return $this
@@ -137,6 +111,32 @@ class AllocateInstancePublicConnectionRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $port
+     *
+     * @return $this
+     */
+    public function setPort($port)
+    {
+        $this->requestParameters['Port'] = $port;
+        $this->queryParameters['Port'] = $port;
 
         return $this;
     }
