@@ -11,6 +11,7 @@ namespace Ecs\Request\V20140526;
  * @method string getAutoSnapshotPolicyId()
  * @method string getPageNumber()
  * @method string getPageSize()
+ * @method array getTags()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
@@ -86,6 +87,22 @@ class DescribeAutoSnapshotPolicyExRequest extends \RpcAcsRequest
         $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
+    }
+
+    /**
+     * @param array $tag
+     *
+     * @return $this
+     */
+	public function setTags(array $tag)
+	{
+	    $this->requestParameters['Tags'] = $tag;
+		foreach ($tag as $depth1 => $depth1Value) {
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+		}
+
+		return $this;
     }
 
     /**

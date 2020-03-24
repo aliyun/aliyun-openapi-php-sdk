@@ -11,6 +11,7 @@ namespace Ecs\Request\V20140526;
  * @method string getResourceOwnerId()
  * @method string getPrivateIpAddresses()
  * @method string getHpcClusterId()
+ * @method string getHttpPutResponseHopLimit()
  * @method string getFilter2Value()
  * @method string getKeyPairName()
  * @method string getResourceGroupId()
@@ -24,6 +25,7 @@ namespace Ecs\Request\V20140526;
  * @method string getNeedSaleCycle()
  * @method string getOwnerId()
  * @method string getVSwitchId()
+ * @method array getAdditionalAttributess()
  * @method string getInstanceName()
  * @method string getInstanceIds()
  * @method string getInternetChargeType()
@@ -37,6 +39,7 @@ namespace Ecs\Request\V20140526;
  * @method string getFilter4Key()
  * @method string getPageNumber()
  * @method string getRdmaIpAddresses()
+ * @method string getHttpEndpoint()
  * @method string getPageSize()
  * @method string getPublicIpAddresses()
  * @method string getInstanceType()
@@ -47,6 +50,7 @@ namespace Ecs\Request\V20140526;
  * @method string getFilter2Key()
  * @method string getEipAddresses()
  * @method string getVpcId()
+ * @method string getHttpTokens()
  * @method string getFilter3Key()
  */
 class DescribeInstancesRequest extends \RpcAcsRequest
@@ -118,6 +122,19 @@ class DescribeInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['HpcClusterId'] = $hpcClusterId;
         $this->queryParameters['HpcClusterId'] = $hpcClusterId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $httpPutResponseHopLimit
+     *
+     * @return $this
+     */
+    public function setHttpPutResponseHopLimit($httpPutResponseHopLimit)
+    {
+        $this->requestParameters['HttpPutResponseHopLimit'] = $httpPutResponseHopLimit;
+        $this->queryParameters['HttpPutResponseHopLimit'] = $httpPutResponseHopLimit;
 
         return $this;
     }
@@ -295,6 +312,21 @@ class DescribeInstancesRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param array $additionalAttributes
+     *
+     * @return $this
+     */
+	public function setAdditionalAttributess(array $additionalAttributes)
+	{
+	    $this->requestParameters['AdditionalAttributess'] = $additionalAttributes;
+		foreach ($additionalAttributes as $i => $iValue) {
+			$this->queryParameters['AdditionalAttributes.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
+    }
+
+    /**
      * @param string $instanceName
      *
      * @return $this
@@ -464,6 +496,19 @@ class DescribeInstancesRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $httpEndpoint
+     *
+     * @return $this
+     */
+    public function setHttpEndpoint($httpEndpoint)
+    {
+        $this->requestParameters['HttpEndpoint'] = $httpEndpoint;
+        $this->queryParameters['HttpEndpoint'] = $httpEndpoint;
+
+        return $this;
+    }
+
+    /**
      * @param string $pageSize
      *
      * @return $this
@@ -589,6 +634,19 @@ class DescribeInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['VpcId'] = $vpcId;
         $this->queryParameters['VpcId'] = $vpcId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $httpTokens
+     *
+     * @return $this
+     */
+    public function setHttpTokens($httpTokens)
+    {
+        $this->requestParameters['HttpTokens'] = $httpTokens;
+        $this->queryParameters['HttpTokens'] = $httpTokens;
 
         return $this;
     }

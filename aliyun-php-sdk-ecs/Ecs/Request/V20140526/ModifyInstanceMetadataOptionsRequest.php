@@ -5,18 +5,17 @@ namespace Ecs\Request\V20140526;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of CreateAutoSnapshotPolicy
+ * Request of ModifyInstanceMetadataOptions
  *
  * @method string getResourceOwnerId()
- * @method string gettimePoints()
- * @method string getrepeatWeekdays()
- * @method array getTags()
+ * @method string getHttpPutResponseHopLimit()
+ * @method string getHttpEndpoint()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerId()
- * @method string getautoSnapshotPolicyName()
- * @method string getretentionDays()
+ * @method string getInstanceId()
+ * @method string getHttpTokens()
  */
-class CreateAutoSnapshotPolicyRequest extends \RpcAcsRequest
+class ModifyInstanceMetadataOptionsRequest extends \RpcAcsRequest
 {
 
     /**
@@ -32,7 +31,7 @@ class CreateAutoSnapshotPolicyRequest extends \RpcAcsRequest
         parent::__construct(
             'Ecs',
             '2014-05-26',
-            'CreateAutoSnapshotPolicy',
+            'ModifyInstanceMetadataOptions',
             'ecs'
         );
     }
@@ -51,45 +50,29 @@ class CreateAutoSnapshotPolicyRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $timePoints
+     * @param string $httpPutResponseHopLimit
      *
      * @return $this
      */
-    public function settimePoints($timePoints)
+    public function setHttpPutResponseHopLimit($httpPutResponseHopLimit)
     {
-        $this->requestParameters['timePoints'] = $timePoints;
-        $this->queryParameters['timePoints'] = $timePoints;
+        $this->requestParameters['HttpPutResponseHopLimit'] = $httpPutResponseHopLimit;
+        $this->queryParameters['HttpPutResponseHopLimit'] = $httpPutResponseHopLimit;
 
         return $this;
     }
 
     /**
-     * @param string $repeatWeekdays
+     * @param string $httpEndpoint
      *
      * @return $this
      */
-    public function setrepeatWeekdays($repeatWeekdays)
+    public function setHttpEndpoint($httpEndpoint)
     {
-        $this->requestParameters['repeatWeekdays'] = $repeatWeekdays;
-        $this->queryParameters['repeatWeekdays'] = $repeatWeekdays;
+        $this->requestParameters['HttpEndpoint'] = $httpEndpoint;
+        $this->queryParameters['HttpEndpoint'] = $httpEndpoint;
 
         return $this;
-    }
-
-    /**
-     * @param array $tag
-     *
-     * @return $this
-     */
-	public function setTags(array $tag)
-	{
-	    $this->requestParameters['Tags'] = $tag;
-		foreach ($tag as $depth1 => $depth1Value) {
-			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
-			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
-		}
-
-		return $this;
     }
 
     /**
@@ -119,27 +102,27 @@ class CreateAutoSnapshotPolicyRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $autoSnapshotPolicyName
+     * @param string $instanceId
      *
      * @return $this
      */
-    public function setautoSnapshotPolicyName($autoSnapshotPolicyName)
+    public function setInstanceId($instanceId)
     {
-        $this->requestParameters['autoSnapshotPolicyName'] = $autoSnapshotPolicyName;
-        $this->queryParameters['autoSnapshotPolicyName'] = $autoSnapshotPolicyName;
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }
 
     /**
-     * @param string $retentionDays
+     * @param string $httpTokens
      *
      * @return $this
      */
-    public function setretentionDays($retentionDays)
+    public function setHttpTokens($httpTokens)
     {
-        $this->requestParameters['retentionDays'] = $retentionDays;
-        $this->queryParameters['retentionDays'] = $retentionDays;
+        $this->requestParameters['HttpTokens'] = $httpTokens;
+        $this->queryParameters['HttpTokens'] = $httpTokens;
 
         return $this;
     }

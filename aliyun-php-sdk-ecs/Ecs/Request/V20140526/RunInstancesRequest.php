@@ -11,6 +11,7 @@ namespace Ecs\Request\V20140526;
  * @method string getResourceOwnerId()
  * @method string getUniqueSuffix()
  * @method string getHpcClusterId()
+ * @method string getHttpPutResponseHopLimit()
  * @method string getSecurityEnhancementStrategy()
  * @method string getKeyPairName()
  * @method string getMinAmount()
@@ -55,6 +56,7 @@ namespace Ecs\Request\V20140526;
  * @method string getSystemDiskPerformanceLevel()
  * @method string getUserData()
  * @method string getPasswordInherit()
+ * @method string getHttpEndpoint()
  * @method string getInstanceType()
  * @method string getHibernationConfigured()
  * @method string getInstanceChargeType()
@@ -76,6 +78,7 @@ namespace Ecs\Request\V20140526;
  * @method string getStorageSetId()
  * @method string getSystemDiskSize()
  * @method string getImageFamily()
+ * @method string getHttpTokens()
  * @method string getSystemDiskDescription()
  */
 class RunInstancesRequest extends \RpcAcsRequest
@@ -147,6 +150,19 @@ class RunInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['HpcClusterId'] = $hpcClusterId;
         $this->queryParameters['HpcClusterId'] = $hpcClusterId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $httpPutResponseHopLimit
+     *
+     * @return $this
+     */
+    public function setHttpPutResponseHopLimit($httpPutResponseHopLimit)
+    {
+        $this->requestParameters['HttpPutResponseHopLimit'] = $httpPutResponseHopLimit;
+        $this->queryParameters['HttpPutResponseHopLimit'] = $httpPutResponseHopLimit;
 
         return $this;
     }
@@ -729,6 +745,19 @@ class RunInstancesRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $httpEndpoint
+     *
+     * @return $this
+     */
+    public function setHttpEndpoint($httpEndpoint)
+    {
+        $this->requestParameters['HttpEndpoint'] = $httpEndpoint;
+        $this->queryParameters['HttpEndpoint'] = $httpEndpoint;
+
+        return $this;
+    }
+
+    /**
      * @param string $instanceType
      *
      * @return $this
@@ -1021,6 +1050,19 @@ class RunInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ImageFamily'] = $imageFamily;
         $this->queryParameters['ImageFamily'] = $imageFamily;
+
+        return $this;
+    }
+
+    /**
+     * @param string $httpTokens
+     *
+     * @return $this
+     */
+    public function setHttpTokens($httpTokens)
+    {
+        $this->requestParameters['HttpTokens'] = $httpTokens;
+        $this->queryParameters['HttpTokens'] = $httpTokens;
 
         return $this;
     }

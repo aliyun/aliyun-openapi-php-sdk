@@ -27,6 +27,7 @@ namespace Ecs\Request\V20140526;
  * @method string getPrimaryIpAddress()
  * @method string getMaxResults()
  * @method array getNetworkInterfaceIds()
+ * @method string getStatus()
  */
 class DescribeNetworkInterfacesRequest extends \RpcAcsRequest
 {
@@ -314,5 +315,18 @@ class DescribeNetworkInterfacesRequest extends \RpcAcsRequest
 		}
 
 		return $this;
+    }
+
+    /**
+     * @param string $status
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->requestParameters['Status'] = $status;
+        $this->queryParameters['Status'] = $status;
+
+        return $this;
     }
 }
