@@ -5,12 +5,17 @@ namespace retailcloud\Request\V20180313;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeDatabases
+ * Request of DescribeSlbAPDetail
  *
- * @method string getInstanceId()
+ * @method string getSlbAPId()
  */
-class DescribeDatabasesRequest extends \RpcAcsRequest
+class DescribeSlbAPDetailRequest extends \RpcAcsRequest
 {
+
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
     /**
      * Class constructor.
@@ -20,20 +25,20 @@ class DescribeDatabasesRequest extends \RpcAcsRequest
         parent::__construct(
             'retailcloud',
             '2018-03-13',
-            'DescribeDatabases',
+            'DescribeSlbAPDetail',
             'retailcloud'
         );
     }
 
     /**
-     * @param string $instanceId
+     * @param string $slbAPId
      *
      * @return $this
      */
-    public function setInstanceId($instanceId)
+    public function setSlbAPId($slbAPId)
     {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
+        $this->requestParameters['SlbAPId'] = $slbAPId;
+        $this->queryParameters['SlbAPId'] = $slbAPId;
 
         return $this;
     }

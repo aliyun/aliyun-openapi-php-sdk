@@ -5,11 +5,11 @@ namespace retailcloud\Request\V20180313;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeDatabases
+ * Request of QueryClusterDetail
  *
- * @method string getInstanceId()
+ * @method string getClusterInstanceId()
  */
-class DescribeDatabasesRequest extends \RpcAcsRequest
+class QueryClusterDetailRequest extends \RpcAcsRequest
 {
 
     /**
@@ -20,20 +20,20 @@ class DescribeDatabasesRequest extends \RpcAcsRequest
         parent::__construct(
             'retailcloud',
             '2018-03-13',
-            'DescribeDatabases',
+            'QueryClusterDetail',
             'retailcloud'
         );
     }
 
     /**
-     * @param string $instanceId
+     * @param string $clusterInstanceId
      *
      * @return $this
      */
-    public function setInstanceId($instanceId)
+    public function setClusterInstanceId($clusterInstanceId)
     {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
+        $this->requestParameters['ClusterInstanceId'] = $clusterInstanceId;
+        $this->queryParameters['ClusterInstanceId'] = $clusterInstanceId;
 
         return $this;
     }

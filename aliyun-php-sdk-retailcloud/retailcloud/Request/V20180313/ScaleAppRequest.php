@@ -5,12 +5,12 @@ namespace retailcloud\Request\V20180313;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DeleteDatabase
+ * Request of ScaleApp
  *
- * @method string getDBName()
- * @method string getDBInstanceId()
+ * @method string getReplicas()
+ * @method string getEnvId()
  */
-class DeleteDatabaseRequest extends \RpcAcsRequest
+class ScaleAppRequest extends \RpcAcsRequest
 {
 
     /**
@@ -26,33 +26,33 @@ class DeleteDatabaseRequest extends \RpcAcsRequest
         parent::__construct(
             'retailcloud',
             '2018-03-13',
-            'DeleteDatabase',
+            'ScaleApp',
             'retailcloud'
         );
     }
 
     /**
-     * @param string $dBName
+     * @param string $replicas
      *
      * @return $this
      */
-    public function setDBName($dBName)
+    public function setReplicas($replicas)
     {
-        $this->requestParameters['DBName'] = $dBName;
-        $this->queryParameters['DBName'] = $dBName;
+        $this->requestParameters['Replicas'] = $replicas;
+        $this->queryParameters['Replicas'] = $replicas;
 
         return $this;
     }
 
     /**
-     * @param string $dBInstanceId
+     * @param string $envId
      *
      * @return $this
      */
-    public function setDBInstanceId($dBInstanceId)
+    public function setEnvId($envId)
     {
-        $this->requestParameters['DBInstanceId'] = $dBInstanceId;
-        $this->queryParameters['DBInstanceId'] = $dBInstanceId;
+        $this->requestParameters['EnvId'] = $envId;
+        $this->queryParameters['EnvId'] = $envId;
 
         return $this;
     }

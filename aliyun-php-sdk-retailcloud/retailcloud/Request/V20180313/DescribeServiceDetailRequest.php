@@ -5,11 +5,11 @@ namespace retailcloud\Request\V20180313;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ResourceStatusNotify
+ * Request of DescribeServiceDetail
  *
- * @method string getdata()
+ * @method string getServiceId()
  */
-class ResourceStatusNotifyRequest extends \RpcAcsRequest
+class DescribeServiceDetailRequest extends \RpcAcsRequest
 {
 
     /**
@@ -25,20 +25,20 @@ class ResourceStatusNotifyRequest extends \RpcAcsRequest
         parent::__construct(
             'retailcloud',
             '2018-03-13',
-            'ResourceStatusNotify',
+            'DescribeServiceDetail',
             'retailcloud'
         );
     }
 
     /**
-     * @param string $data
+     * @param string $serviceId
      *
      * @return $this
      */
-    public function setdata($data)
+    public function setServiceId($serviceId)
     {
-        $this->requestParameters['data'] = $data;
-        $this->queryParameters['data'] = $data;
+        $this->requestParameters['ServiceId'] = $serviceId;
+        $this->queryParameters['ServiceId'] = $serviceId;
 
         return $this;
     }

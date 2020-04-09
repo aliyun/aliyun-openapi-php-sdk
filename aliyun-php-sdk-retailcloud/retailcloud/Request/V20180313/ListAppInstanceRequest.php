@@ -5,15 +5,14 @@ namespace retailcloud\Request\V20180313;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of GetRdsBackUp
+ * Request of ListAppInstance
  *
- * @method string getBackupId()
+ * @method string getAppId()
  * @method string getPageSize()
- * @method string getDbInstanceId()
- * @method string getBackupType()
+ * @method string getEnvId()
  * @method string getPageNumber()
  */
-class GetRdsBackUpRequest extends \RpcAcsRequest
+class ListAppInstanceRequest extends \RpcAcsRequest
 {
 
     /**
@@ -29,20 +28,20 @@ class GetRdsBackUpRequest extends \RpcAcsRequest
         parent::__construct(
             'retailcloud',
             '2018-03-13',
-            'GetRdsBackUp',
+            'ListAppInstance',
             'retailcloud'
         );
     }
 
     /**
-     * @param string $backupId
+     * @param string $appId
      *
      * @return $this
      */
-    public function setBackupId($backupId)
+    public function setAppId($appId)
     {
-        $this->requestParameters['BackupId'] = $backupId;
-        $this->queryParameters['BackupId'] = $backupId;
+        $this->requestParameters['AppId'] = $appId;
+        $this->queryParameters['AppId'] = $appId;
 
         return $this;
     }
@@ -61,27 +60,14 @@ class GetRdsBackUpRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dbInstanceId
+     * @param string $envId
      *
      * @return $this
      */
-    public function setDbInstanceId($dbInstanceId)
+    public function setEnvId($envId)
     {
-        $this->requestParameters['DbInstanceId'] = $dbInstanceId;
-        $this->queryParameters['DbInstanceId'] = $dbInstanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $backupType
-     *
-     * @return $this
-     */
-    public function setBackupType($backupType)
-    {
-        $this->requestParameters['BackupType'] = $backupType;
-        $this->queryParameters['BackupType'] = $backupType;
+        $this->requestParameters['EnvId'] = $envId;
+        $this->queryParameters['EnvId'] = $envId;
 
         return $this;
     }

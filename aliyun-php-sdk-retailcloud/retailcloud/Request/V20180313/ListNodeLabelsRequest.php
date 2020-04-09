@@ -5,15 +5,14 @@ namespace retailcloud\Request\V20180313;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of GetRdsBackUp
+ * Request of ListNodeLabels
  *
- * @method string getBackupId()
+ * @method string getLabelKey()
  * @method string getPageSize()
- * @method string getDbInstanceId()
- * @method string getBackupType()
+ * @method string getClusterId()
  * @method string getPageNumber()
  */
-class GetRdsBackUpRequest extends \RpcAcsRequest
+class ListNodeLabelsRequest extends \RpcAcsRequest
 {
 
     /**
@@ -29,20 +28,20 @@ class GetRdsBackUpRequest extends \RpcAcsRequest
         parent::__construct(
             'retailcloud',
             '2018-03-13',
-            'GetRdsBackUp',
+            'ListNodeLabels',
             'retailcloud'
         );
     }
 
     /**
-     * @param string $backupId
+     * @param string $labelKey
      *
      * @return $this
      */
-    public function setBackupId($backupId)
+    public function setLabelKey($labelKey)
     {
-        $this->requestParameters['BackupId'] = $backupId;
-        $this->queryParameters['BackupId'] = $backupId;
+        $this->requestParameters['LabelKey'] = $labelKey;
+        $this->queryParameters['LabelKey'] = $labelKey;
 
         return $this;
     }
@@ -61,27 +60,14 @@ class GetRdsBackUpRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dbInstanceId
+     * @param string $clusterId
      *
      * @return $this
      */
-    public function setDbInstanceId($dbInstanceId)
+    public function setClusterId($clusterId)
     {
-        $this->requestParameters['DbInstanceId'] = $dbInstanceId;
-        $this->queryParameters['DbInstanceId'] = $dbInstanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $backupType
-     *
-     * @return $this
-     */
-    public function setBackupType($backupType)
-    {
-        $this->requestParameters['BackupType'] = $backupType;
-        $this->queryParameters['BackupType'] = $backupType;
+        $this->requestParameters['ClusterId'] = $clusterId;
+        $this->queryParameters['ClusterId'] = $clusterId;
 
         return $this;
     }

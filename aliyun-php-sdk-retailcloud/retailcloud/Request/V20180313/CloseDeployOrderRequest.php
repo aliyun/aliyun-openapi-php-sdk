@@ -5,11 +5,11 @@ namespace retailcloud\Request\V20180313;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ResourceStatusNotify
+ * Request of CloseDeployOrder
  *
- * @method string getdata()
+ * @method string getDeployOrderId()
  */
-class ResourceStatusNotifyRequest extends \RpcAcsRequest
+class CloseDeployOrderRequest extends \RpcAcsRequest
 {
 
     /**
@@ -25,20 +25,20 @@ class ResourceStatusNotifyRequest extends \RpcAcsRequest
         parent::__construct(
             'retailcloud',
             '2018-03-13',
-            'ResourceStatusNotify',
+            'CloseDeployOrder',
             'retailcloud'
         );
     }
 
     /**
-     * @param string $data
+     * @param string $deployOrderId
      *
      * @return $this
      */
-    public function setdata($data)
+    public function setDeployOrderId($deployOrderId)
     {
-        $this->requestParameters['data'] = $data;
-        $this->queryParameters['data'] = $data;
+        $this->requestParameters['DeployOrderId'] = $deployOrderId;
+        $this->queryParameters['DeployOrderId'] = $deployOrderId;
 
         return $this;
     }

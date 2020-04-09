@@ -5,12 +5,17 @@ namespace retailcloud\Request\V20180313;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeDatabases
+ * Request of DeleteService
  *
- * @method string getInstanceId()
+ * @method string getServiceId()
  */
-class DescribeDatabasesRequest extends \RpcAcsRequest
+class DeleteServiceRequest extends \RpcAcsRequest
 {
+
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
 
     /**
      * Class constructor.
@@ -20,20 +25,20 @@ class DescribeDatabasesRequest extends \RpcAcsRequest
         parent::__construct(
             'retailcloud',
             '2018-03-13',
-            'DescribeDatabases',
+            'DeleteService',
             'retailcloud'
         );
     }
 
     /**
-     * @param string $instanceId
+     * @param string $serviceId
      *
      * @return $this
      */
-    public function setInstanceId($instanceId)
+    public function setServiceId($serviceId)
     {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
+        $this->requestParameters['ServiceId'] = $serviceId;
+        $this->queryParameters['ServiceId'] = $serviceId;
 
         return $this;
     }
