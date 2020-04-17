@@ -8,6 +8,7 @@ namespace Ecs\Request\V20140526;
  * Request of RebootInstances
  *
  * @method string getResourceOwnerId()
+ * @method string getBatchOptimization()
  * @method string getDryRun()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
@@ -45,6 +46,19 @@ class RebootInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $batchOptimization
+     *
+     * @return $this
+     */
+    public function setBatchOptimization($batchOptimization)
+    {
+        $this->requestParameters['BatchOptimization'] = $batchOptimization;
+        $this->queryParameters['BatchOptimization'] = $batchOptimization;
 
         return $this;
     }

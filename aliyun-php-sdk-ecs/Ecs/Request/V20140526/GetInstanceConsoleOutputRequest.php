@@ -8,6 +8,7 @@ namespace Ecs\Request\V20140526;
  * Request of GetInstanceConsoleOutput
  *
  * @method string getResourceOwnerId()
+ * @method string getRemoveSymbols()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
@@ -43,6 +44,19 @@ class GetInstanceConsoleOutputRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $removeSymbols
+     *
+     * @return $this
+     */
+    public function setRemoveSymbols($removeSymbols)
+    {
+        $this->requestParameters['RemoveSymbols'] = $removeSymbols;
+        $this->queryParameters['RemoveSymbols'] = $removeSymbols;
 
         return $this;
     }

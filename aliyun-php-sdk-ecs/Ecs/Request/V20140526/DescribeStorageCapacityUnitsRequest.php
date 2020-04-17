@@ -5,17 +5,20 @@ namespace Ecs\Request\V20140526;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of StartInstances
+ * Request of DescribeStorageCapacityUnits
  *
  * @method string getResourceOwnerId()
- * @method string getBatchOptimization()
- * @method string getDryRun()
+ * @method string getPageNumber()
+ * @method string getCapacity()
+ * @method array getStorageCapacityUnitIds()
+ * @method string getPageSize()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
- * @method array getInstanceIds()
+ * @method string getName()
+ * @method array getStatuss()
  */
-class StartInstancesRequest extends \RpcAcsRequest
+class DescribeStorageCapacityUnitsRequest extends \RpcAcsRequest
 {
 
     /**
@@ -31,7 +34,7 @@ class StartInstancesRequest extends \RpcAcsRequest
         parent::__construct(
             'Ecs',
             '2014-05-26',
-            'StartInstances',
+            'DescribeStorageCapacityUnits',
             'ecs'
         );
     }
@@ -50,27 +53,55 @@ class StartInstancesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $batchOptimization
+     * @param string $pageNumber
      *
      * @return $this
      */
-    public function setBatchOptimization($batchOptimization)
+    public function setPageNumber($pageNumber)
     {
-        $this->requestParameters['BatchOptimization'] = $batchOptimization;
-        $this->queryParameters['BatchOptimization'] = $batchOptimization;
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }
 
     /**
-     * @param string $dryRun
+     * @param string $capacity
      *
      * @return $this
      */
-    public function setDryRun($dryRun)
+    public function setCapacity($capacity)
     {
-        $this->requestParameters['DryRun'] = $dryRun;
-        $this->queryParameters['DryRun'] = $dryRun;
+        $this->requestParameters['Capacity'] = $capacity;
+        $this->queryParameters['Capacity'] = $capacity;
+
+        return $this;
+    }
+
+    /**
+     * @param array $storageCapacityUnitId
+     *
+     * @return $this
+     */
+	public function setStorageCapacityUnitIds(array $storageCapacityUnitId)
+	{
+	    $this->requestParameters['StorageCapacityUnitIds'] = $storageCapacityUnitId;
+		foreach ($storageCapacityUnitId as $i => $iValue) {
+			$this->queryParameters['StorageCapacityUnitId.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }
@@ -115,15 +146,28 @@ class StartInstancesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $instanceId
+     * @param string $name
      *
      * @return $this
      */
-	public function setInstanceIds(array $instanceId)
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * @param array $status
+     *
+     * @return $this
+     */
+	public function setStatuss(array $status)
 	{
-	    $this->requestParameters['InstanceIds'] = $instanceId;
-		foreach ($instanceId as $i => $iValue) {
-			$this->queryParameters['InstanceId.' . ($i + 1)] = $iValue;
+	    $this->requestParameters['Statuss'] = $status;
+		foreach ($status as $i => $iValue) {
+			$this->queryParameters['Status.' . ($i + 1)] = $iValue;
 		}
 
 		return $this;

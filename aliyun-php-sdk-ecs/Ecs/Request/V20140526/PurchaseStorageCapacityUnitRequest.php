@@ -5,19 +5,23 @@ namespace Ecs\Request\V20140526;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ModifyImageAttribute
+ * Request of PurchaseStorageCapacityUnit
  *
  * @method string getResourceOwnerId()
- * @method string getImageId()
+ * @method string getClientToken()
  * @method string getDescription()
- * @method string getImageName()
+ * @method string getStartTime()
+ * @method string getCapacity()
+ * @method string getPeriod()
+ * @method string getAmount()
+ * @method string getFromApp()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
- * @method string getImageFamily()
- * @method string getStatus()
+ * @method string getPeriodUnit()
+ * @method string getName()
  */
-class ModifyImageAttributeRequest extends \RpcAcsRequest
+class PurchaseStorageCapacityUnitRequest extends \RpcAcsRequest
 {
 
     /**
@@ -33,7 +37,7 @@ class ModifyImageAttributeRequest extends \RpcAcsRequest
         parent::__construct(
             'Ecs',
             '2014-05-26',
-            'ModifyImageAttribute',
+            'PurchaseStorageCapacityUnit',
             'ecs'
         );
     }
@@ -52,14 +56,14 @@ class ModifyImageAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $imageId
+     * @param string $clientToken
      *
      * @return $this
      */
-    public function setImageId($imageId)
+    public function setClientToken($clientToken)
     {
-        $this->requestParameters['ImageId'] = $imageId;
-        $this->queryParameters['ImageId'] = $imageId;
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
 
         return $this;
     }
@@ -78,14 +82,66 @@ class ModifyImageAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $imageName
+     * @param string $startTime
      *
      * @return $this
      */
-    public function setImageName($imageName)
+    public function setStartTime($startTime)
     {
-        $this->requestParameters['ImageName'] = $imageName;
-        $this->queryParameters['ImageName'] = $imageName;
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $capacity
+     *
+     * @return $this
+     */
+    public function setCapacity($capacity)
+    {
+        $this->requestParameters['Capacity'] = $capacity;
+        $this->queryParameters['Capacity'] = $capacity;
+
+        return $this;
+    }
+
+    /**
+     * @param string $period
+     *
+     * @return $this
+     */
+    public function setPeriod($period)
+    {
+        $this->requestParameters['Period'] = $period;
+        $this->queryParameters['Period'] = $period;
+
+        return $this;
+    }
+
+    /**
+     * @param string $amount
+     *
+     * @return $this
+     */
+    public function setAmount($amount)
+    {
+        $this->requestParameters['Amount'] = $amount;
+        $this->queryParameters['Amount'] = $amount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $fromApp
+     *
+     * @return $this
+     */
+    public function setFromApp($fromApp)
+    {
+        $this->requestParameters['FromApp'] = $fromApp;
+        $this->queryParameters['FromApp'] = $fromApp;
 
         return $this;
     }
@@ -130,27 +186,27 @@ class ModifyImageAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $imageFamily
+     * @param string $periodUnit
      *
      * @return $this
      */
-    public function setImageFamily($imageFamily)
+    public function setPeriodUnit($periodUnit)
     {
-        $this->requestParameters['ImageFamily'] = $imageFamily;
-        $this->queryParameters['ImageFamily'] = $imageFamily;
+        $this->requestParameters['PeriodUnit'] = $periodUnit;
+        $this->queryParameters['PeriodUnit'] = $periodUnit;
 
         return $this;
     }
 
     /**
-     * @param string $status
+     * @param string $name
      *
      * @return $this
      */
-    public function setStatus($status)
+    public function setName($name)
     {
-        $this->requestParameters['Status'] = $status;
-        $this->queryParameters['Status'] = $status;
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
         return $this;
     }

@@ -11,7 +11,9 @@ namespace Ecs\Request\V20140526;
  * @method string getResourceOwnerId()
  * @method string getDescription()
  * @method string getPlatform()
+ * @method string getResourceGroupId()
  * @method string getImageName()
+ * @method array getTags()
  * @method string getArchitecture()
  * @method string getLicenseType()
  * @method string getResourceOwnerAccount()
@@ -100,6 +102,19 @@ class ImportImageRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $resourceGroupId
+     *
+     * @return $this
+     */
+    public function setResourceGroupId($resourceGroupId)
+    {
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
+
+        return $this;
+    }
+
+    /**
      * @param string $imageName
      *
      * @return $this
@@ -110,6 +125,22 @@ class ImportImageRequest extends \RpcAcsRequest
         $this->queryParameters['ImageName'] = $imageName;
 
         return $this;
+    }
+
+    /**
+     * @param array $tag
+     *
+     * @return $this
+     */
+	public function setTags(array $tag)
+	{
+	    $this->requestParameters['Tags'] = $tag;
+		foreach ($tag as $depth1 => $depth1Value) {
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+		}
+
+		return $this;
     }
 
     /**

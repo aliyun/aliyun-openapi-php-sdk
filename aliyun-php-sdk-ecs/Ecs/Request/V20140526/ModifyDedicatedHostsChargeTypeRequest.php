@@ -5,19 +5,22 @@ namespace Ecs\Request\V20140526;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of StopInstances
+ * Request of ModifyDedicatedHostsChargeType
  *
+ * @method string getDedicatedHostIds()
  * @method string getResourceOwnerId()
- * @method string getStoppedMode()
- * @method string getForceStop()
- * @method string getBatchOptimization()
+ * @method string getClientToken()
+ * @method string getDedicatedHostChargeType()
+ * @method string getPeriod()
  * @method string getDryRun()
+ * @method string getAutoPay()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
- * @method array getInstanceIds()
+ * @method string getDetailFee()
+ * @method string getPeriodUnit()
  */
-class StopInstancesRequest extends \RpcAcsRequest
+class ModifyDedicatedHostsChargeTypeRequest extends \RpcAcsRequest
 {
 
     /**
@@ -33,9 +36,22 @@ class StopInstancesRequest extends \RpcAcsRequest
         parent::__construct(
             'Ecs',
             '2014-05-26',
-            'StopInstances',
+            'ModifyDedicatedHostsChargeType',
             'ecs'
         );
+    }
+
+    /**
+     * @param string $dedicatedHostIds
+     *
+     * @return $this
+     */
+    public function setDedicatedHostIds($dedicatedHostIds)
+    {
+        $this->requestParameters['DedicatedHostIds'] = $dedicatedHostIds;
+        $this->queryParameters['DedicatedHostIds'] = $dedicatedHostIds;
+
+        return $this;
     }
 
     /**
@@ -52,40 +68,40 @@ class StopInstancesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $stoppedMode
+     * @param string $clientToken
      *
      * @return $this
      */
-    public function setStoppedMode($stoppedMode)
+    public function setClientToken($clientToken)
     {
-        $this->requestParameters['StoppedMode'] = $stoppedMode;
-        $this->queryParameters['StoppedMode'] = $stoppedMode;
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
 
         return $this;
     }
 
     /**
-     * @param string $forceStop
+     * @param string $dedicatedHostChargeType
      *
      * @return $this
      */
-    public function setForceStop($forceStop)
+    public function setDedicatedHostChargeType($dedicatedHostChargeType)
     {
-        $this->requestParameters['ForceStop'] = $forceStop;
-        $this->queryParameters['ForceStop'] = $forceStop;
+        $this->requestParameters['DedicatedHostChargeType'] = $dedicatedHostChargeType;
+        $this->queryParameters['DedicatedHostChargeType'] = $dedicatedHostChargeType;
 
         return $this;
     }
 
     /**
-     * @param string $batchOptimization
+     * @param string $period
      *
      * @return $this
      */
-    public function setBatchOptimization($batchOptimization)
+    public function setPeriod($period)
     {
-        $this->requestParameters['BatchOptimization'] = $batchOptimization;
-        $this->queryParameters['BatchOptimization'] = $batchOptimization;
+        $this->requestParameters['Period'] = $period;
+        $this->queryParameters['Period'] = $period;
 
         return $this;
     }
@@ -99,6 +115,19 @@ class StopInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DryRun'] = $dryRun;
         $this->queryParameters['DryRun'] = $dryRun;
+
+        return $this;
+    }
+
+    /**
+     * @param string $autoPay
+     *
+     * @return $this
+     */
+    public function setAutoPay($autoPay)
+    {
+        $this->requestParameters['AutoPay'] = $autoPay;
+        $this->queryParameters['AutoPay'] = $autoPay;
 
         return $this;
     }
@@ -143,17 +172,28 @@ class StopInstancesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $instanceId
+     * @param string $detailFee
      *
      * @return $this
      */
-	public function setInstanceIds(array $instanceId)
-	{
-	    $this->requestParameters['InstanceIds'] = $instanceId;
-		foreach ($instanceId as $i => $iValue) {
-			$this->queryParameters['InstanceId.' . ($i + 1)] = $iValue;
-		}
+    public function setDetailFee($detailFee)
+    {
+        $this->requestParameters['DetailFee'] = $detailFee;
+        $this->queryParameters['DetailFee'] = $detailFee;
 
-		return $this;
+        return $this;
+    }
+
+    /**
+     * @param string $periodUnit
+     *
+     * @return $this
+     */
+    public function setPeriodUnit($periodUnit)
+    {
+        $this->requestParameters['PeriodUnit'] = $periodUnit;
+        $this->queryParameters['PeriodUnit'] = $periodUnit;
+
+        return $this;
     }
 }
