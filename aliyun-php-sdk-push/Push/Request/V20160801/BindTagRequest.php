@@ -28,8 +28,7 @@ class BindTagRequest extends \RpcAcsRequest
         parent::__construct(
             'Push',
             '2016-08-01',
-            'BindTag',
-            'cps'
+            'BindTag'
         );
     }
 

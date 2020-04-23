@@ -26,8 +26,7 @@ class UnbindPhoneRequest extends \RpcAcsRequest
         parent::__construct(
             'Push',
             '2016-08-01',
-            'UnbindPhone',
-            'cps'
+            'UnbindPhone'
         );
     }
 
