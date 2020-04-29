@@ -7,12 +7,12 @@ namespace dcdn\Request\V20180115;
  *
  * Request of UpdateDcdnDomain
  *
- * @method string getTopLevelDomain()
  * @method string getSources()
- * @method string getDomainName()
- * @method string getOwnerId()
  * @method string getResourceGroupId()
  * @method string getSecurityToken()
+ * @method string getTopLevelDomain()
+ * @method string getDomainName()
+ * @method string getOwnerId()
  */
 class UpdateDcdnDomainRequest extends \RpcAcsRequest
 {
@@ -35,19 +35,6 @@ class UpdateDcdnDomainRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $topLevelDomain
-     *
-     * @return $this
-     */
-    public function setTopLevelDomain($topLevelDomain)
-    {
-        $this->requestParameters['TopLevelDomain'] = $topLevelDomain;
-        $this->queryParameters['TopLevelDomain'] = $topLevelDomain;
-
-        return $this;
-    }
-
-    /**
      * @param string $sources
      *
      * @return $this
@@ -56,32 +43,6 @@ class UpdateDcdnDomainRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Sources'] = $sources;
         $this->queryParameters['Sources'] = $sources;
-
-        return $this;
-    }
-
-    /**
-     * @param string $domainName
-     *
-     * @return $this
-     */
-    public function setDomainName($domainName)
-    {
-        $this->requestParameters['DomainName'] = $domainName;
-        $this->queryParameters['DomainName'] = $domainName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }
@@ -108,6 +69,45 @@ class UpdateDcdnDomainRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityToken'] = $securityToken;
         $this->queryParameters['SecurityToken'] = $securityToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $topLevelDomain
+     *
+     * @return $this
+     */
+    public function setTopLevelDomain($topLevelDomain)
+    {
+        $this->requestParameters['TopLevelDomain'] = $topLevelDomain;
+        $this->queryParameters['TopLevelDomain'] = $topLevelDomain;
+
+        return $this;
+    }
+
+    /**
+     * @param string $domainName
+     *
+     * @return $this
+     */
+    public function setDomainName($domainName)
+    {
+        $this->requestParameters['DomainName'] = $domainName;
+        $this->queryParameters['DomainName'] = $domainName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
 
         return $this;
     }
