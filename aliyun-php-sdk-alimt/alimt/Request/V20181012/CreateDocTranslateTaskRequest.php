@@ -5,15 +5,16 @@ namespace alimt\Request\V20181012;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of TranslateGeneral
+ * Request of CreateDocTranslateTask
  *
  * @method string getSourceLanguage()
- * @method string getSourceText()
- * @method string getFormatType()
+ * @method string getClientToken()
  * @method string getScene()
+ * @method string getFileUrl()
  * @method string getTargetLanguage()
+ * @method string getCallbackUrl()
  */
-class TranslateGeneralRequest extends \RpcAcsRequest
+class CreateDocTranslateTaskRequest extends \RpcAcsRequest
 {
 
     /**
@@ -29,7 +30,7 @@ class TranslateGeneralRequest extends \RpcAcsRequest
         parent::__construct(
             'alimt',
             '2018-10-12',
-            'TranslateGeneral',
+            'CreateDocTranslateTask',
             'alimt'
         );
     }
@@ -48,27 +49,14 @@ class TranslateGeneralRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $sourceText
+     * @param string $clientToken
      *
      * @return $this
      */
-    public function setSourceText($sourceText)
+    public function setClientToken($clientToken)
     {
-        $this->requestParameters['SourceText'] = $sourceText;
-        $this->queryParameters['SourceText'] = $sourceText;
-
-        return $this;
-    }
-
-    /**
-     * @param string $formatType
-     *
-     * @return $this
-     */
-    public function setFormatType($formatType)
-    {
-        $this->requestParameters['FormatType'] = $formatType;
-        $this->queryParameters['FormatType'] = $formatType;
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
 
         return $this;
     }
@@ -87,6 +75,19 @@ class TranslateGeneralRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $fileUrl
+     *
+     * @return $this
+     */
+    public function setFileUrl($fileUrl)
+    {
+        $this->requestParameters['FileUrl'] = $fileUrl;
+        $this->queryParameters['FileUrl'] = $fileUrl;
+
+        return $this;
+    }
+
+    /**
      * @param string $targetLanguage
      *
      * @return $this
@@ -95,6 +96,19 @@ class TranslateGeneralRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TargetLanguage'] = $targetLanguage;
         $this->queryParameters['TargetLanguage'] = $targetLanguage;
+
+        return $this;
+    }
+
+    /**
+     * @param string $callbackUrl
+     *
+     * @return $this
+     */
+    public function setCallbackUrl($callbackUrl)
+    {
+        $this->requestParameters['CallbackUrl'] = $callbackUrl;
+        $this->queryParameters['CallbackUrl'] = $callbackUrl;
 
         return $this;
     }

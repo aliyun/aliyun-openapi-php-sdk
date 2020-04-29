@@ -5,15 +5,15 @@ namespace alimt\Request\V20181012;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of TranslateGeneral
+ * Request of TranslateCertificate
  *
  * @method string getSourceLanguage()
- * @method string getSourceText()
- * @method string getFormatType()
- * @method string getScene()
+ * @method string getCertificateType()
+ * @method string getResultType()
+ * @method string getImageUrl()
  * @method string getTargetLanguage()
  */
-class TranslateGeneralRequest extends \RpcAcsRequest
+class TranslateCertificateRequest extends \RpcAcsRequest
 {
 
     /**
@@ -29,7 +29,7 @@ class TranslateGeneralRequest extends \RpcAcsRequest
         parent::__construct(
             'alimt',
             '2018-10-12',
-            'TranslateGeneral',
+            'TranslateCertificate',
             'alimt'
         );
     }
@@ -48,40 +48,40 @@ class TranslateGeneralRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $sourceText
+     * @param string $certificateType
      *
      * @return $this
      */
-    public function setSourceText($sourceText)
+    public function setCertificateType($certificateType)
     {
-        $this->requestParameters['SourceText'] = $sourceText;
-        $this->queryParameters['SourceText'] = $sourceText;
+        $this->requestParameters['CertificateType'] = $certificateType;
+        $this->queryParameters['CertificateType'] = $certificateType;
 
         return $this;
     }
 
     /**
-     * @param string $formatType
+     * @param string $resultType
      *
      * @return $this
      */
-    public function setFormatType($formatType)
+    public function setResultType($resultType)
     {
-        $this->requestParameters['FormatType'] = $formatType;
-        $this->queryParameters['FormatType'] = $formatType;
+        $this->requestParameters['ResultType'] = $resultType;
+        $this->queryParameters['ResultType'] = $resultType;
 
         return $this;
     }
 
     /**
-     * @param string $scene
+     * @param string $imageUrl
      *
      * @return $this
      */
-    public function setScene($scene)
+    public function setImageUrl($imageUrl)
     {
-        $this->requestParameters['Scene'] = $scene;
-        $this->queryParameters['Scene'] = $scene;
+        $this->requestParameters['ImageUrl'] = $imageUrl;
+        $this->queryParameters['ImageUrl'] = $imageUrl;
 
         return $this;
     }

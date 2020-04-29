@@ -1,85 +1,101 @@
 <?php
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 namespace alimt\Request\V20181012;
 
+/**
+ * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
+ *
+ * Request of TranslateECommerce
+ *
+ * @method string getSourceLanguage()
+ * @method string getSourceText()
+ * @method string getFormatType()
+ * @method string getScene()
+ * @method string getTargetLanguage()
+ */
 class TranslateECommerceRequest extends \RpcAcsRequest
 {
-    public function  __construct()
+
+    /**
+     * @var string
+     */
+    protected $method = 'POST';
+
+    /**
+     * Class constructor.
+     */
+    public function __construct()
     {
-        parent::__construct("alimt", "2018-10-12", "TranslateECommerce", "alimt", "openAPI");
-		$this->setMethod("POST");
+        parent::__construct(
+            'alimt',
+            '2018-10-12',
+            'TranslateECommerce',
+            'alimt'
+        );
     }
 
-	private  $sourceLanguage;
+    /**
+     * @param string $sourceLanguage
+     *
+     * @return $this
+     */
+    public function setSourceLanguage($sourceLanguage)
+    {
+        $this->requestParameters['SourceLanguage'] = $sourceLanguage;
+        $this->queryParameters['SourceLanguage'] = $sourceLanguage;
 
-	private  $sourceText;
-
-	private  $formatType;
-
-	private  $targetLanguage;
-
-	private  $scene;
-
-    public function getSourceLanguage() {
-	    return $this->sourceLanguage;
+        return $this;
     }
 
-    public function setSourceLanguage($sourceLanguage) {
-    	$this->sourceLanguage = $sourceLanguage;
-    	$this->queryParameters['SourceLanguage'] = $sourceLanguage;
-	}
+    /**
+     * @param string $sourceText
+     *
+     * @return $this
+     */
+    public function setSourceText($sourceText)
+    {
+        $this->requestParameters['SourceText'] = $sourceText;
+        $this->queryParameters['SourceText'] = $sourceText;
 
-    public function getSourceText() {
-	    return $this->sourceText;
+        return $this;
     }
 
-    public function setSourceText($sourceText) {
-    	$this->sourceText = $sourceText;
-    	$this->queryParameters['SourceText'] = $sourceText;
-	}
+    /**
+     * @param string $formatType
+     *
+     * @return $this
+     */
+    public function setFormatType($formatType)
+    {
+        $this->requestParameters['FormatType'] = $formatType;
+        $this->queryParameters['FormatType'] = $formatType;
 
-    public function getFormatType() {
-	    return $this->formatType;
+        return $this;
     }
 
-    public function setFormatType($formatType) {
-    	$this->formatType = $formatType;
-    	$this->queryParameters['FormatType'] = $formatType;
-	}
+    /**
+     * @param string $scene
+     *
+     * @return $this
+     */
+    public function setScene($scene)
+    {
+        $this->requestParameters['Scene'] = $scene;
+        $this->queryParameters['Scene'] = $scene;
 
-    public function getTargetLanguage() {
-	    return $this->targetLanguage;
+        return $this;
     }
 
-    public function setTargetLanguage($targetLanguage) {
-    	$this->targetLanguage = $targetLanguage;
-    	$this->queryParameters['TargetLanguage'] = $targetLanguage;
-	}
+    /**
+     * @param string $targetLanguage
+     *
+     * @return $this
+     */
+    public function setTargetLanguage($targetLanguage)
+    {
+        $this->requestParameters['TargetLanguage'] = $targetLanguage;
+        $this->queryParameters['TargetLanguage'] = $targetLanguage;
 
-    public function getScene() {
-	    return $this->scene;
+        return $this;
     }
-
-    public function setScene($scene) {
-    	$this->scene = $scene;
-    	$this->queryParameters['Scene'] = $scene;
-	}
-
 }

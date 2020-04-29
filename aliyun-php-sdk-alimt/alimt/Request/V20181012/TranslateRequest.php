@@ -5,7 +5,7 @@ namespace alimt\Request\V20181012;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of TranslateGeneral
+ * Request of Translate
  *
  * @method string getSourceLanguage()
  * @method string getSourceText()
@@ -13,7 +13,7 @@ namespace alimt\Request\V20181012;
  * @method string getScene()
  * @method string getTargetLanguage()
  */
-class TranslateGeneralRequest extends \RpcAcsRequest
+class TranslateRequest extends \RpcAcsRequest
 {
 
     /**
@@ -29,7 +29,7 @@ class TranslateGeneralRequest extends \RpcAcsRequest
         parent::__construct(
             'alimt',
             '2018-10-12',
-            'TranslateGeneral',
+            'Translate',
             'alimt'
         );
     }
