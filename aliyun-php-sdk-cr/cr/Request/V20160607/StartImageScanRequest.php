@@ -33,7 +33,7 @@ class StartImageScanRequest extends \RoaAcsRequest
             'cr',
             '2016-06-07',
             'StartImageScan',
-            'cr'
+            'acr'
         );
     }
 

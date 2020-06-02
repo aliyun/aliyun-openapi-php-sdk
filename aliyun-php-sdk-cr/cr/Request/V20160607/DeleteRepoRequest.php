@@ -32,7 +32,7 @@ class DeleteRepoRequest extends \RoaAcsRequest
             'cr',
             '2016-06-07',
             'DeleteRepo',
-            'cr'
+            'acr'
         );
     }
 

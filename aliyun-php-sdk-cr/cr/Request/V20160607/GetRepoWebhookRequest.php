@@ -27,7 +27,7 @@ class GetRepoWebhookRequest extends \RoaAcsRequest
             'cr',
             '2016-06-07',
             'GetRepoWebhook',
-            'cr'
+            'acr'
         );
     }
 

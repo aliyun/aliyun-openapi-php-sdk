@@ -27,7 +27,7 @@ class GetRepoBuildRuleListRequest extends \RoaAcsRequest
             'cr',
             '2016-06-07',
             'GetRepoBuildRuleList',
-            'cr'
+            'acr'
         );
     }
 

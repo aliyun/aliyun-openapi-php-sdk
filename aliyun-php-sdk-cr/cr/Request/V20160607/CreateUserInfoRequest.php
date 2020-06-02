@@ -30,7 +30,7 @@ class CreateUserInfoRequest extends \RoaAcsRequest
             'cr',
             '2016-06-07',
             'CreateUserInfo',
-            'cr'
+            'acr'
         );
     }
 }

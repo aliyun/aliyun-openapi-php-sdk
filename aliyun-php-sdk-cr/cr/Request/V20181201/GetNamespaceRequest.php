@@ -9,6 +9,7 @@ namespace cr\Request\V20181201;
  *
  * @method string getNamespaceName()
  * @method string getInstanceId()
+ * @method string getNamespaceId()
  */
 class GetNamespaceRequest extends \RpcAcsRequest
 {
@@ -27,7 +28,7 @@ class GetNamespaceRequest extends \RpcAcsRequest
             'cr',
             '2018-12-01',
             'GetNamespace',
-            'cr'
+            'acr'
         );
     }
 
@@ -53,6 +54,19 @@ class GetNamespaceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['InstanceId'] = $instanceId;
         $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $namespaceId
+     *
+     * @return $this
+     */
+    public function setNamespaceId($namespaceId)
+    {
+        $this->requestParameters['NamespaceId'] = $namespaceId;
+        $this->queryParameters['NamespaceId'] = $namespaceId;
 
         return $this;
     }

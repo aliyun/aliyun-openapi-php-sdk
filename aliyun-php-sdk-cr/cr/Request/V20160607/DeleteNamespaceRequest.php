@@ -31,7 +31,7 @@ class DeleteNamespaceRequest extends \RoaAcsRequest
             'cr',
             '2016-06-07',
             'DeleteNamespace',
-            'cr'
+            'acr'
         );
     }
 

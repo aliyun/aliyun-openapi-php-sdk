@@ -33,7 +33,7 @@ class DeleteRepoWebhookRequest extends \RoaAcsRequest
             'cr',
             '2016-06-07',
             'DeleteRepoWebhook',
-            'cr'
+            'acr'
         );
     }
 

@@ -33,7 +33,7 @@ class DeleteRepoBuildRuleRequest extends \RoaAcsRequest
             'cr',
             '2016-06-07',
             'DeleteRepoBuildRule',
-            'cr'
+            'acr'
         );
     }
 

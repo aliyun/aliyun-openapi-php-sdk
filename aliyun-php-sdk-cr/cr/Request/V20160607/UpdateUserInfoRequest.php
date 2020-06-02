@@ -30,7 +30,7 @@ class UpdateUserInfoRequest extends \RoaAcsRequest
             'cr',
             '2016-06-07',
             'UpdateUserInfo',
-            'cr'
+            'acr'
         );
     }
 }

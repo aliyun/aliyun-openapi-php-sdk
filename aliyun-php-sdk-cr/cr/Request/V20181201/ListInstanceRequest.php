@@ -29,7 +29,7 @@ class ListInstanceRequest extends \RpcAcsRequest
             'cr',
             '2018-12-01',
             'ListInstance',
-            'cr'
+            'acr'
         );
     }
 

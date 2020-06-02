@@ -28,7 +28,7 @@ class GetRepoListRequest extends \RoaAcsRequest
             'cr',
             '2016-06-07',
             'GetRepoList',
-            'cr'
+            'acr'
         );
     }
 

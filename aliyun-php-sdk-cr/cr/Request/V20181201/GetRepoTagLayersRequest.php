@@ -28,7 +28,7 @@ class GetRepoTagLayersRequest extends \RpcAcsRequest
             'cr',
             '2018-12-01',
             'GetRepoTagLayers',
-            'cr'
+            'acr'
         );
     }
 

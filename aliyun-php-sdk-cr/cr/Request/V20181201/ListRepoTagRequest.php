@@ -29,7 +29,7 @@ class ListRepoTagRequest extends \RpcAcsRequest
             'cr',
             '2018-12-01',
             'ListRepoTag',
-            'cr'
+            'acr'
         );
     }
 

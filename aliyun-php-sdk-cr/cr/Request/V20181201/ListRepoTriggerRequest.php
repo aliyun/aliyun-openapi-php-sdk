@@ -27,7 +27,7 @@ class ListRepoTriggerRequest extends \RpcAcsRequest
             'cr',
             '2018-12-01',
             'ListRepoTrigger',
-            'cr'
+            'acr'
         );
     }
 

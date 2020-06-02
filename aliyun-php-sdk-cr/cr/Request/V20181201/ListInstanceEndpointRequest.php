@@ -8,6 +8,7 @@ namespace cr\Request\V20181201;
  * Request of ListInstanceEndpoint
  *
  * @method string getInstanceId()
+ * @method string getModuleName()
  */
 class ListInstanceEndpointRequest extends \RpcAcsRequest
 {
@@ -26,7 +27,7 @@ class ListInstanceEndpointRequest extends \RpcAcsRequest
             'cr',
             '2018-12-01',
             'ListInstanceEndpoint',
-            'cr'
+            'acr'
         );
     }
 
@@ -39,6 +40,19 @@ class ListInstanceEndpointRequest extends \RpcAcsRequest
     {
         $this->requestParameters['InstanceId'] = $instanceId;
         $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $moduleName
+     *
+     * @return $this
+     */
+    public function setModuleName($moduleName)
+    {
+        $this->requestParameters['ModuleName'] = $moduleName;
+        $this->queryParameters['ModuleName'] = $moduleName;
 
         return $this;
     }

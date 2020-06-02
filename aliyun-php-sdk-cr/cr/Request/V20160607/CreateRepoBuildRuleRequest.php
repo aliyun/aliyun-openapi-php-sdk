@@ -32,7 +32,7 @@ class CreateRepoBuildRuleRequest extends \RoaAcsRequest
             'cr',
             '2016-06-07',
             'CreateRepoBuildRule',
-            'cr'
+            'acr'
         );
     }
 

@@ -29,7 +29,7 @@ class GetRepoBuildListRequest extends \RoaAcsRequest
             'cr',
             '2016-06-07',
             'GetRepoBuildList',
-            'cr'
+            'acr'
         );
     }
 

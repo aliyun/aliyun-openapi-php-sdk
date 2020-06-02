@@ -31,7 +31,7 @@ class CreateRepositoryRequest extends \RpcAcsRequest
             'cr',
             '2018-12-01',
             'CreateRepository',
-            'cr'
+            'acr'
         );
     }
 

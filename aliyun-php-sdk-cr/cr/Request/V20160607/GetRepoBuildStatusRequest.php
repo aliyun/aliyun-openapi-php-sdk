@@ -28,7 +28,7 @@ class GetRepoBuildStatusRequest extends \RoaAcsRequest
             'cr',
             '2016-06-07',
             'GetRepoBuildStatus',
-            'cr'
+            'acr'
         );
     }
 

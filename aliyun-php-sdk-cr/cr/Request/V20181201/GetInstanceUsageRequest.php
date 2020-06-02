@@ -26,7 +26,7 @@ class GetInstanceUsageRequest extends \RpcAcsRequest
             'cr',
             '2018-12-01',
             'GetInstanceUsage',
-            'cr'
+            'acr'
         );
     }
 

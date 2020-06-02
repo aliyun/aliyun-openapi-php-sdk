@@ -28,7 +28,7 @@ class GetImageLayerRequest extends \RoaAcsRequest
             'cr',
             '2016-06-07',
             'GetImageLayer',
-            'cr'
+            'acr'
         );
     }
 

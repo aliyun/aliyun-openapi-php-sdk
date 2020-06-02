@@ -27,7 +27,7 @@ class DeleteNamespaceRequest extends \RpcAcsRequest
             'cr',
             '2018-12-01',
             'DeleteNamespace',
-            'cr'
+            'acr'
         );
     }
 

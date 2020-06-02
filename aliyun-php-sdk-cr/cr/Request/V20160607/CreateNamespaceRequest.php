@@ -30,7 +30,7 @@ class CreateNamespaceRequest extends \RoaAcsRequest
             'cr',
             '2016-06-07',
             'CreateNamespace',
-            'cr'
+            'acr'
         );
     }
 }

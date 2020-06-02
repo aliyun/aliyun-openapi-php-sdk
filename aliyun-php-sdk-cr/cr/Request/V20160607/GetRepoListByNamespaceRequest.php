@@ -29,7 +29,7 @@ class GetRepoListByNamespaceRequest extends \RoaAcsRequest
             'cr',
             '2016-06-07',
             'GetRepoListByNamespace',
-            'cr'
+            'acr'
         );
     }
 

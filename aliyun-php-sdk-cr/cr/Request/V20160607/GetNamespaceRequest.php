@@ -26,7 +26,7 @@ class GetNamespaceRequest extends \RoaAcsRequest
             'cr',
             '2016-06-07',
             'GetNamespace',
-            'cr'
+            'acr'
         );
     }
 

@@ -10,6 +10,7 @@ namespace cr\Request\V20181201;
  * @method string getVswitchId()
  * @method string getInstanceId()
  * @method string getVpcId()
+ * @method string getModuleName()
  */
 class DeleteInstanceVpcEndpointLinkedVpcRequest extends \RpcAcsRequest
 {
@@ -28,7 +29,7 @@ class DeleteInstanceVpcEndpointLinkedVpcRequest extends \RpcAcsRequest
             'cr',
             '2018-12-01',
             'DeleteInstanceVpcEndpointLinkedVpc',
-            'cr'
+            'acr'
         );
     }
 
@@ -67,6 +68,19 @@ class DeleteInstanceVpcEndpointLinkedVpcRequest extends \RpcAcsRequest
     {
         $this->requestParameters['VpcId'] = $vpcId;
         $this->queryParameters['VpcId'] = $vpcId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $moduleName
+     *
+     * @return $this
+     */
+    public function setModuleName($moduleName)
+    {
+        $this->requestParameters['ModuleName'] = $moduleName;
+        $this->queryParameters['ModuleName'] = $moduleName;
 
         return $this;
     }

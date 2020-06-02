@@ -26,7 +26,7 @@ class GetAuthorizationTokenRequest extends \RpcAcsRequest
             'cr',
             '2018-12-01',
             'GetAuthorizationToken',
-            'cr'
+            'acr'
         );
     }
 

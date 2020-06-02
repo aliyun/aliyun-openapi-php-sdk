@@ -29,7 +29,7 @@ class GetRepoTagsRequest extends \RoaAcsRequest
             'cr',
             '2016-06-07',
             'GetRepoTags',
-            'cr'
+            'acr'
         );
     }
 

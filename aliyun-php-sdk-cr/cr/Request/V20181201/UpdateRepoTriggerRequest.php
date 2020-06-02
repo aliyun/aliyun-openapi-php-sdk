@@ -32,7 +32,7 @@ class UpdateRepoTriggerRequest extends \RpcAcsRequest
             'cr',
             '2018-12-01',
             'UpdateRepoTrigger',
-            'cr'
+            'acr'
         );
     }
 

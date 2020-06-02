@@ -28,7 +28,7 @@ class CancelRepoBuildRecordRequest extends \RpcAcsRequest
             'cr',
             '2018-12-01',
             'CancelRepoBuildRecord',
-            'cr'
+            'acr'
         );
     }
 

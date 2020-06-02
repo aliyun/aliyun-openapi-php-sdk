@@ -26,7 +26,7 @@ class GetRegionRequest extends \RoaAcsRequest
             'cr',
             '2016-06-07',
             'GetRegion',
-            'cr'
+            'acr'
         );
     }
 

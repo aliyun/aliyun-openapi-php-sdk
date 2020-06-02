@@ -33,7 +33,7 @@ class CancelRepoBuildRequest extends \RoaAcsRequest
             'cr',
             '2016-06-07',
             'CancelRepoBuild',
-            'cr'
+            'acr'
         );
     }
 

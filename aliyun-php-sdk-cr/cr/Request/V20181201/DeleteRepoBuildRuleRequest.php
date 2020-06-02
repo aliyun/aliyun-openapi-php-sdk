@@ -28,7 +28,7 @@ class DeleteRepoBuildRuleRequest extends \RpcAcsRequest
             'cr',
             '2018-12-01',
             'DeleteRepoBuildRule',
-            'cr'
+            'acr'
         );
     }
 

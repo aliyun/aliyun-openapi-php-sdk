@@ -9,6 +9,7 @@ namespace cr\Request\V20181201;
  *
  * @method string getInstanceId()
  * @method string getEndpointType()
+ * @method string getModuleName()
  */
 class GetInstanceEndpointRequest extends \RpcAcsRequest
 {
@@ -27,7 +28,7 @@ class GetInstanceEndpointRequest extends \RpcAcsRequest
             'cr',
             '2018-12-01',
             'GetInstanceEndpoint',
-            'cr'
+            'acr'
         );
     }
 
@@ -53,6 +54,19 @@ class GetInstanceEndpointRequest extends \RpcAcsRequest
     {
         $this->requestParameters['EndpointType'] = $endpointType;
         $this->queryParameters['EndpointType'] = $endpointType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $moduleName
+     *
+     * @return $this
+     */
+    public function setModuleName($moduleName)
+    {
+        $this->requestParameters['ModuleName'] = $moduleName;
+        $this->queryParameters['ModuleName'] = $moduleName;
 
         return $this;
     }

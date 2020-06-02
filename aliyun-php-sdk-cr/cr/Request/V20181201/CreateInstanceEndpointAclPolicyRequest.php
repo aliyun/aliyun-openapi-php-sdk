@@ -10,6 +10,7 @@ namespace cr\Request\V20181201;
  * @method string getEntry()
  * @method string getInstanceId()
  * @method string getEndpointType()
+ * @method string getModuleName()
  * @method string getComment()
  */
 class CreateInstanceEndpointAclPolicyRequest extends \RpcAcsRequest
@@ -29,7 +30,7 @@ class CreateInstanceEndpointAclPolicyRequest extends \RpcAcsRequest
             'cr',
             '2018-12-01',
             'CreateInstanceEndpointAclPolicy',
-            'cr'
+            'acr'
         );
     }
 
@@ -68,6 +69,19 @@ class CreateInstanceEndpointAclPolicyRequest extends \RpcAcsRequest
     {
         $this->requestParameters['EndpointType'] = $endpointType;
         $this->queryParameters['EndpointType'] = $endpointType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $moduleName
+     *
+     * @return $this
+     */
+    public function setModuleName($moduleName)
+    {
+        $this->requestParameters['ModuleName'] = $moduleName;
+        $this->queryParameters['ModuleName'] = $moduleName;
 
         return $this;
     }

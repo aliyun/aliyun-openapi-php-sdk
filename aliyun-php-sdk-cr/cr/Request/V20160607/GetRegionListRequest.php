@@ -25,7 +25,7 @@ class GetRegionListRequest extends \RoaAcsRequest
             'cr',
             '2016-06-07',
             'GetRegionList',
-            'cr'
+            'acr'
         );
     }
 }

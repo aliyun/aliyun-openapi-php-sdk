@@ -33,7 +33,7 @@ class DeleteImageRequest extends \RoaAcsRequest
             'cr',
             '2016-06-07',
             'DeleteImage',
-            'cr'
+            'acr'
         );
     }
 

@@ -10,6 +10,7 @@ namespace cr\Request\V20181201;
  * @method string getEntry()
  * @method string getInstanceId()
  * @method string getEndpointType()
+ * @method string getModuleName()
  */
 class DeleteInstanceEndpointAclPolicyRequest extends \RpcAcsRequest
 {
@@ -28,7 +29,7 @@ class DeleteInstanceEndpointAclPolicyRequest extends \RpcAcsRequest
             'cr',
             '2018-12-01',
             'DeleteInstanceEndpointAclPolicy',
-            'cr'
+            'acr'
         );
     }
 
@@ -67,6 +68,19 @@ class DeleteInstanceEndpointAclPolicyRequest extends \RpcAcsRequest
     {
         $this->requestParameters['EndpointType'] = $endpointType;
         $this->queryParameters['EndpointType'] = $endpointType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $moduleName
+     *
+     * @return $this
+     */
+    public function setModuleName($moduleName)
+    {
+        $this->requestParameters['ModuleName'] = $moduleName;
+        $this->queryParameters['ModuleName'] = $moduleName;
 
         return $this;
     }

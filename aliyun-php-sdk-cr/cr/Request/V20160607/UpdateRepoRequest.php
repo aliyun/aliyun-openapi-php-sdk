@@ -32,7 +32,7 @@ class UpdateRepoRequest extends \RoaAcsRequest
             'cr',
             '2016-06-07',
             'UpdateRepo',
-            'cr'
+            'acr'
         );
     }
 

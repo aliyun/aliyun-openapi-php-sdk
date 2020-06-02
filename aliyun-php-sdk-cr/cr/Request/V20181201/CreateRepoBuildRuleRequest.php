@@ -32,7 +32,7 @@ class CreateRepoBuildRuleRequest extends \RpcAcsRequest
             'cr',
             '2018-12-01',
             'CreateRepoBuildRule',
-            'cr'
+            'acr'
         );
     }
 

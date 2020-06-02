@@ -26,7 +26,7 @@ class ListInstanceRegionRequest extends \RpcAcsRequest
             'cr',
             '2018-12-01',
             'ListInstanceRegion',
-            'cr'
+            'acr'
         );
     }
 

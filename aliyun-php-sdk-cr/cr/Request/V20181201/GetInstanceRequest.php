@@ -26,7 +26,7 @@ class GetInstanceRequest extends \RpcAcsRequest
             'cr',
             '2018-12-01',
             'GetInstance',
-            'cr'
+            'acr'
         );
     }
 
