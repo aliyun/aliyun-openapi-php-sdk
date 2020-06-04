@@ -12,6 +12,7 @@ namespace vod\Request\V20170321;
  * @method string getStorageType()
  * @method string getEndTime()
  * @method string getOwnerId()
+ * @method string getInterval()
  * @method string getRegion()
  */
 class DescribeVodStorageDataRequest extends \RpcAcsRequest
@@ -96,6 +97,19 @@ class DescribeVodStorageDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $interval
+     *
+     * @return $this
+     */
+    public function setInterval($interval)
+    {
+        $this->requestParameters['Interval'] = $interval;
+        $this->queryParameters['Interval'] = $interval;
 
         return $this;
     }

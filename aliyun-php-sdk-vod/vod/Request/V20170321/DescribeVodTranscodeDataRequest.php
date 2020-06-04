@@ -12,6 +12,7 @@ namespace vod\Request\V20170321;
  * @method string getEndTime()
  * @method string getSpecification()
  * @method string getOwnerId()
+ * @method string getInterval()
  * @method string getRegion()
  */
 class DescribeVodTranscodeDataRequest extends \RpcAcsRequest
@@ -96,6 +97,19 @@ class DescribeVodTranscodeDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $interval
+     *
+     * @return $this
+     */
+    public function setInterval($interval)
+    {
+        $this->requestParameters['Interval'] = $interval;
+        $this->queryParameters['Interval'] = $interval;
 
         return $this;
     }
