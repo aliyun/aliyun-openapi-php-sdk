@@ -59,8 +59,10 @@ class MassPushRequest extends \RpcAcsRequest
 			$this->queryParameters['PushTask.' . ($depth1 + 1) . '.iOSMutableContent'] = $depth1Value['IOSMutableContent'];
 			$this->queryParameters['PushTask.' . ($depth1 + 1) . '.AndroidNotificationBarPriority'] = $depth1Value['AndroidNotificationBarPriority'];
 			$this->queryParameters['PushTask.' . ($depth1 + 1) . '.ExpireTime'] = $depth1Value['ExpireTime'];
+			$this->queryParameters['PushTask.' . ($depth1 + 1) . '.AndroidNotificationVivoChannel'] = $depth1Value['AndroidNotificationVivoChannel'];
 			$this->queryParameters['PushTask.' . ($depth1 + 1) . '.AndroidPopupBody'] = $depth1Value['AndroidPopupBody'];
 			$this->queryParameters['PushTask.' . ($depth1 + 1) . '.iOSNotificationCategory'] = $depth1Value['IOSNotificationCategory'];
+			$this->queryParameters['PushTask.' . ($depth1 + 1) . '.AndroidNotificationXiaomiChannel'] = $depth1Value['AndroidNotificationXiaomiChannel'];
 			$this->queryParameters['PushTask.' . ($depth1 + 1) . '.StoreOffline'] = $depth1Value['StoreOffline'];
 			$this->queryParameters['PushTask.' . ($depth1 + 1) . '.iOSSilentNotification'] = $depth1Value['IOSSilentNotification'];
 			$this->queryParameters['PushTask.' . ($depth1 + 1) . '.JobKey'] = $depth1Value['JobKey'];

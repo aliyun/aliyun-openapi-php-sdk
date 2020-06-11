@@ -22,7 +22,9 @@ namespace Push\Request\V20160801;
  * @method string getiOSMutableContent()
  * @method string getAndroidNotificationBarPriority()
  * @method string getExpireTime()
+ * @method string getAndroidNotificationVivoChannel()
  * @method string getiOSNotificationCategory()
+ * @method string getAndroidNotificationXiaomiChannel()
  * @method string getStoreOffline()
  * @method string getSmsParams()
  * @method string getJobKey()
@@ -268,6 +270,19 @@ class PushRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $androidNotificationVivoChannel
+     *
+     * @return $this
+     */
+    public function setAndroidNotificationVivoChannel($androidNotificationVivoChannel)
+    {
+        $this->requestParameters['AndroidNotificationVivoChannel'] = $androidNotificationVivoChannel;
+        $this->queryParameters['AndroidNotificationVivoChannel'] = $androidNotificationVivoChannel;
+
+        return $this;
+    }
+
+    /**
      * @param string $iOSNotificationCategory
      *
      * @return $this
@@ -276,6 +291,19 @@ class PushRequest extends \RpcAcsRequest
     {
         $this->requestParameters['iOSNotificationCategory'] = $iOSNotificationCategory;
         $this->queryParameters['iOSNotificationCategory'] = $iOSNotificationCategory;
+
+        return $this;
+    }
+
+    /**
+     * @param string $androidNotificationXiaomiChannel
+     *
+     * @return $this
+     */
+    public function setAndroidNotificationXiaomiChannel($androidNotificationXiaomiChannel)
+    {
+        $this->requestParameters['AndroidNotificationXiaomiChannel'] = $androidNotificationXiaomiChannel;
+        $this->queryParameters['AndroidNotificationXiaomiChannel'] = $androidNotificationXiaomiChannel;
 
         return $this;
     }
