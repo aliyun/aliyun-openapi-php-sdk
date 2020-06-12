@@ -7,10 +7,11 @@ namespace Iot\Request\V20180120;
  *
  * Request of GetDeviceShadow
  *
- * @method string getShadowMessage()
  * @method string getIotInstanceId()
- * @method string getDeviceName()
  * @method string getProductKey()
+ * @method string getApiProduct()
+ * @method string getApiRevision()
+ * @method string getDeviceName()
  */
 class GetDeviceShadowRequest extends \RpcAcsRequest
 {
@@ -34,19 +35,6 @@ class GetDeviceShadowRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $shadowMessage
-     *
-     * @return $this
-     */
-    public function setShadowMessage($shadowMessage)
-    {
-        $this->requestParameters['ShadowMessage'] = $shadowMessage;
-        $this->queryParameters['ShadowMessage'] = $shadowMessage;
-
-        return $this;
-    }
-
-    /**
      * @param string $iotInstanceId
      *
      * @return $this
@@ -60,19 +48,6 @@ class GetDeviceShadowRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $deviceName
-     *
-     * @return $this
-     */
-    public function setDeviceName($deviceName)
-    {
-        $this->requestParameters['DeviceName'] = $deviceName;
-        $this->queryParameters['DeviceName'] = $deviceName;
-
-        return $this;
-    }
-
-    /**
      * @param string $productKey
      *
      * @return $this
@@ -81,6 +56,45 @@ class GetDeviceShadowRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ProductKey'] = $productKey;
         $this->queryParameters['ProductKey'] = $productKey;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiProduct
+     *
+     * @return $this
+     */
+    public function setApiProduct($apiProduct)
+    {
+        $this->requestParameters['ApiProduct'] = $apiProduct;
+        $this->queryParameters['ApiProduct'] = $apiProduct;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiRevision
+     *
+     * @return $this
+     */
+    public function setApiRevision($apiRevision)
+    {
+        $this->requestParameters['ApiRevision'] = $apiRevision;
+        $this->queryParameters['ApiRevision'] = $apiRevision;
+
+        return $this;
+    }
+
+    /**
+     * @param string $deviceName
+     *
+     * @return $this
+     */
+    public function setDeviceName($deviceName)
+    {
+        $this->requestParameters['DeviceName'] = $deviceName;
+        $this->queryParameters['DeviceName'] = $deviceName;
 
         return $this;
     }

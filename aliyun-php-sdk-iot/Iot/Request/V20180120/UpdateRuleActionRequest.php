@@ -8,9 +8,11 @@ namespace Iot\Request\V20180120;
  * Request of UpdateRuleAction
  *
  * @method string getConfiguration()
+ * @method string getType()
  * @method string getIotInstanceId()
  * @method string getActionId()
- * @method string getType()
+ * @method string getApiProduct()
+ * @method string getApiRevision()
  */
 class UpdateRuleActionRequest extends \RpcAcsRequest
 {
@@ -47,6 +49,19 @@ class UpdateRuleActionRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $type
+     *
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->requestParameters['Type'] = $type;
+        $this->queryParameters['Type'] = $type;
+
+        return $this;
+    }
+
+    /**
      * @param string $iotInstanceId
      *
      * @return $this
@@ -73,14 +88,27 @@ class UpdateRuleActionRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $type
+     * @param string $apiProduct
      *
      * @return $this
      */
-    public function setType($type)
+    public function setApiProduct($apiProduct)
     {
-        $this->requestParameters['Type'] = $type;
-        $this->queryParameters['Type'] = $type;
+        $this->requestParameters['ApiProduct'] = $apiProduct;
+        $this->queryParameters['ApiProduct'] = $apiProduct;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiRevision
+     *
+     * @return $this
+     */
+    public function setApiRevision($apiRevision)
+    {
+        $this->requestParameters['ApiRevision'] = $apiRevision;
+        $this->queryParameters['ApiRevision'] = $apiRevision;
 
         return $this;
     }

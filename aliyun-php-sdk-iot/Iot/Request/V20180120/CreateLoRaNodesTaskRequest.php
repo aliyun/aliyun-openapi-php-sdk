@@ -8,8 +8,10 @@ namespace Iot\Request\V20180120;
  * Request of CreateLoRaNodesTask
  *
  * @method string getIotInstanceId()
- * @method string getProductKey()
  * @method array getDeviceInfos()
+ * @method string getProductKey()
+ * @method string getApiProduct()
+ * @method string getApiRevision()
  */
 class CreateLoRaNodesTaskRequest extends \RpcAcsRequest
 {
@@ -46,6 +48,22 @@ class CreateLoRaNodesTaskRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param array $deviceInfo
+     *
+     * @return $this
+     */
+	public function setDeviceInfos(array $deviceInfo)
+	{
+	    $this->requestParameters['DeviceInfos'] = $deviceInfo;
+		foreach ($deviceInfo as $depth1 => $depth1Value) {
+			$this->queryParameters['DeviceInfo.' . ($depth1 + 1) . '.PinCode'] = $depth1Value['PinCode'];
+			$this->queryParameters['DeviceInfo.' . ($depth1 + 1) . '.DevEui'] = $depth1Value['DevEui'];
+		}
+
+		return $this;
+    }
+
+    /**
      * @param string $productKey
      *
      * @return $this
@@ -59,17 +77,27 @@ class CreateLoRaNodesTaskRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $deviceInfo
+     * @param string $apiProduct
      *
      * @return $this
      */
-    public function setDeviceInfos(array $deviceInfo)
+    public function setApiProduct($apiProduct)
     {
-        $this->requestParameters['DeviceInfos'] = $deviceInfo;
-        foreach ($deviceInfo as $depth1 => $depth1Value) {
-            $this->queryParameters['DeviceInfo.' . ($depth1 + 1) . '.PinCode'] = $depth1Value['PinCode'];
-            $this->queryParameters['DeviceInfo.' . ($depth1 + 1) . '.DevEui'] = $depth1Value['DevEui'];
-        }
+        $this->requestParameters['ApiProduct'] = $apiProduct;
+        $this->queryParameters['ApiProduct'] = $apiProduct;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiRevision
+     *
+     * @return $this
+     */
+    public function setApiRevision($apiRevision)
+    {
+        $this->requestParameters['ApiRevision'] = $apiRevision;
+        $this->queryParameters['ApiRevision'] = $apiRevision;
 
         return $this;
     }

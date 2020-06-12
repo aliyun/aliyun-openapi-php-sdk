@@ -9,13 +9,16 @@ namespace Iot\Request\V20180120;
  *
  * @method string getSelect()
  * @method string getRuleDesc()
+ * @method string getShortTopic()
+ * @method string getResourceGroupId()
  * @method string getDataType()
  * @method string getIotInstanceId()
- * @method string getName()
  * @method string getWhere()
- * @method string getProductKey()
  * @method string getTopicType()
- * @method string getShortTopic()
+ * @method string getProductKey()
+ * @method string getApiProduct()
+ * @method string getName()
+ * @method string getApiRevision()
  */
 class CreateRuleRequest extends \RpcAcsRequest
 {
@@ -65,6 +68,32 @@ class CreateRuleRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $shortTopic
+     *
+     * @return $this
+     */
+    public function setShortTopic($shortTopic)
+    {
+        $this->requestParameters['ShortTopic'] = $shortTopic;
+        $this->queryParameters['ShortTopic'] = $shortTopic;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceGroupId
+     *
+     * @return $this
+     */
+    public function setResourceGroupId($resourceGroupId)
+    {
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
+
+        return $this;
+    }
+
+    /**
      * @param string $dataType
      *
      * @return $this
@@ -91,19 +120,6 @@ class CreateRuleRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $name
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->requestParameters['Name'] = $name;
-        $this->queryParameters['Name'] = $name;
-
-        return $this;
-    }
-
-    /**
      * @param string $where
      *
      * @return $this
@@ -112,19 +128,6 @@ class CreateRuleRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Where'] = $where;
         $this->queryParameters['Where'] = $where;
-
-        return $this;
-    }
-
-    /**
-     * @param string $productKey
-     *
-     * @return $this
-     */
-    public function setProductKey($productKey)
-    {
-        $this->requestParameters['ProductKey'] = $productKey;
-        $this->queryParameters['ProductKey'] = $productKey;
 
         return $this;
     }
@@ -143,14 +146,53 @@ class CreateRuleRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $shortTopic
+     * @param string $productKey
      *
      * @return $this
      */
-    public function setShortTopic($shortTopic)
+    public function setProductKey($productKey)
     {
-        $this->requestParameters['ShortTopic'] = $shortTopic;
-        $this->queryParameters['ShortTopic'] = $shortTopic;
+        $this->requestParameters['ProductKey'] = $productKey;
+        $this->queryParameters['ProductKey'] = $productKey;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiProduct
+     *
+     * @return $this
+     */
+    public function setApiProduct($apiProduct)
+    {
+        $this->requestParameters['ApiProduct'] = $apiProduct;
+        $this->queryParameters['ApiProduct'] = $apiProduct;
+
+        return $this;
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiRevision
+     *
+     * @return $this
+     */
+    public function setApiRevision($apiRevision)
+    {
+        $this->requestParameters['ApiRevision'] = $apiRevision;
+        $this->queryParameters['ApiRevision'] = $apiRevision;
 
         return $this;
     }

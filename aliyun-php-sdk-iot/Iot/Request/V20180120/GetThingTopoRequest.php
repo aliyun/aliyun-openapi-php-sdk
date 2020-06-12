@@ -8,11 +8,13 @@ namespace Iot\Request\V20180120;
  * Request of GetThingTopo
  *
  * @method string getIotId()
- * @method string getPageNo()
  * @method string getIotInstanceId()
  * @method string getPageSize()
- * @method string getDeviceName()
  * @method string getProductKey()
+ * @method string getPageNo()
+ * @method string getApiProduct()
+ * @method string getApiRevision()
+ * @method string getDeviceName()
  */
 class GetThingTopoRequest extends \RpcAcsRequest
 {
@@ -49,19 +51,6 @@ class GetThingTopoRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $pageNo
-     *
-     * @return $this
-     */
-    public function setPageNo($pageNo)
-    {
-        $this->requestParameters['PageNo'] = $pageNo;
-        $this->queryParameters['PageNo'] = $pageNo;
-
-        return $this;
-    }
-
-    /**
      * @param string $iotInstanceId
      *
      * @return $this
@@ -88,19 +77,6 @@ class GetThingTopoRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $deviceName
-     *
-     * @return $this
-     */
-    public function setDeviceName($deviceName)
-    {
-        $this->requestParameters['DeviceName'] = $deviceName;
-        $this->queryParameters['DeviceName'] = $deviceName;
-
-        return $this;
-    }
-
-    /**
      * @param string $productKey
      *
      * @return $this
@@ -109,6 +85,58 @@ class GetThingTopoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ProductKey'] = $productKey;
         $this->queryParameters['ProductKey'] = $productKey;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNo
+     *
+     * @return $this
+     */
+    public function setPageNo($pageNo)
+    {
+        $this->requestParameters['PageNo'] = $pageNo;
+        $this->queryParameters['PageNo'] = $pageNo;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiProduct
+     *
+     * @return $this
+     */
+    public function setApiProduct($apiProduct)
+    {
+        $this->requestParameters['ApiProduct'] = $apiProduct;
+        $this->queryParameters['ApiProduct'] = $apiProduct;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiRevision
+     *
+     * @return $this
+     */
+    public function setApiRevision($apiRevision)
+    {
+        $this->requestParameters['ApiRevision'] = $apiRevision;
+        $this->queryParameters['ApiRevision'] = $apiRevision;
+
+        return $this;
+    }
+
+    /**
+     * @param string $deviceName
+     *
+     * @return $this
+     */
+    public function setDeviceName($deviceName)
+    {
+        $this->requestParameters['DeviceName'] = $deviceName;
+        $this->queryParameters['DeviceName'] = $deviceName;
 
         return $this;
     }

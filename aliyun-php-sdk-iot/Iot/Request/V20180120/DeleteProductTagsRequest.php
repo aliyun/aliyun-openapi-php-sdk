@@ -10,6 +10,8 @@ namespace Iot\Request\V20180120;
  * @method string getIotInstanceId()
  * @method array getProductTagKeys()
  * @method string getProductKey()
+ * @method string getApiProduct()
+ * @method string getApiRevision()
  */
 class DeleteProductTagsRequest extends \RpcAcsRequest
 {
@@ -50,14 +52,14 @@ class DeleteProductTagsRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setProductTagKeys(array $productTagKey)
-    {
-        $this->requestParameters['ProductTagKeys'] = $productTagKey;
-        foreach ($productTagKey as $i => $iValue) {
-            $this->queryParameters['ProductTagKey.' . ($i + 1)] = $iValue;
-        }
+	public function setProductTagKeys(array $productTagKey)
+	{
+	    $this->requestParameters['ProductTagKeys'] = $productTagKey;
+		foreach ($productTagKey as $i => $iValue) {
+			$this->queryParameters['ProductTagKey.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 
     /**
@@ -69,6 +71,32 @@ class DeleteProductTagsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ProductKey'] = $productKey;
         $this->queryParameters['ProductKey'] = $productKey;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiProduct
+     *
+     * @return $this
+     */
+    public function setApiProduct($apiProduct)
+    {
+        $this->requestParameters['ApiProduct'] = $apiProduct;
+        $this->queryParameters['ApiProduct'] = $apiProduct;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiRevision
+     *
+     * @return $this
+     */
+    public function setApiRevision($apiRevision)
+    {
+        $this->requestParameters['ApiRevision'] = $apiRevision;
+        $this->queryParameters['ApiRevision'] = $apiRevision;
 
         return $this;
     }

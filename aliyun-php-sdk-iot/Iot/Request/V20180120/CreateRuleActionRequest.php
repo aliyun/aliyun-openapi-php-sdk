@@ -8,10 +8,12 @@ namespace Iot\Request\V20180120;
  * Request of CreateRuleAction
  *
  * @method string getConfiguration()
- * @method string getIotInstanceId()
- * @method string getRuleId()
  * @method string getType()
+ * @method string getIotInstanceId()
  * @method string getErrorActionFlag()
+ * @method string getApiProduct()
+ * @method string getApiRevision()
+ * @method string getRuleId()
  */
 class CreateRuleActionRequest extends \RpcAcsRequest
 {
@@ -48,32 +50,6 @@ class CreateRuleActionRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $iotInstanceId
-     *
-     * @return $this
-     */
-    public function setIotInstanceId($iotInstanceId)
-    {
-        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
-        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ruleId
-     *
-     * @return $this
-     */
-    public function setRuleId($ruleId)
-    {
-        $this->requestParameters['RuleId'] = $ruleId;
-        $this->queryParameters['RuleId'] = $ruleId;
-
-        return $this;
-    }
-
-    /**
      * @param string $type
      *
      * @return $this
@@ -87,6 +63,19 @@ class CreateRuleActionRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
+
+        return $this;
+    }
+
+    /**
      * @param string $errorActionFlag
      *
      * @return $this
@@ -95,6 +84,45 @@ class CreateRuleActionRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ErrorActionFlag'] = $errorActionFlag;
         $this->queryParameters['ErrorActionFlag'] = $errorActionFlag;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiProduct
+     *
+     * @return $this
+     */
+    public function setApiProduct($apiProduct)
+    {
+        $this->requestParameters['ApiProduct'] = $apiProduct;
+        $this->queryParameters['ApiProduct'] = $apiProduct;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiRevision
+     *
+     * @return $this
+     */
+    public function setApiRevision($apiRevision)
+    {
+        $this->requestParameters['ApiRevision'] = $apiRevision;
+        $this->queryParameters['ApiRevision'] = $apiRevision;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ruleId
+     *
+     * @return $this
+     */
+    public function setRuleId($ruleId)
+    {
+        $this->requestParameters['RuleId'] = $ruleId;
+        $this->queryParameters['RuleId'] = $ruleId;
 
         return $this;
     }

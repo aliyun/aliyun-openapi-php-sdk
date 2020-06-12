@@ -7,11 +7,13 @@ namespace Iot\Request\V20180120;
  *
  * Request of QueryDeviceDesiredProperty
  *
- * @method array getIdentifiers()
  * @method string getIotId()
  * @method string getIotInstanceId()
- * @method string getDeviceName()
+ * @method array getIdentifiers()
  * @method string getProductKey()
+ * @method string getApiProduct()
+ * @method string getApiRevision()
+ * @method string getDeviceName()
  */
 class QueryDeviceDesiredPropertyRequest extends \RpcAcsRequest
 {
@@ -32,21 +34,6 @@ class QueryDeviceDesiredPropertyRequest extends \RpcAcsRequest
             'QueryDeviceDesiredProperty',
             'iot'
         );
-    }
-
-    /**
-     * @param array $identifier
-     *
-     * @return $this
-     */
-    public function setIdentifiers(array $identifier)
-    {
-        $this->requestParameters['Identifiers'] = $identifier;
-        foreach ($identifier as $i => $iValue) {
-            $this->queryParameters['Identifier.' . ($i + 1)] = $iValue;
-        }
-
-        return $this;
     }
 
     /**
@@ -76,16 +63,18 @@ class QueryDeviceDesiredPropertyRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $deviceName
+     * @param array $identifier
      *
      * @return $this
      */
-    public function setDeviceName($deviceName)
-    {
-        $this->requestParameters['DeviceName'] = $deviceName;
-        $this->queryParameters['DeviceName'] = $deviceName;
+	public function setIdentifiers(array $identifier)
+	{
+	    $this->requestParameters['Identifiers'] = $identifier;
+		foreach ($identifier as $i => $iValue) {
+			$this->queryParameters['Identifier.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 
     /**
@@ -97,6 +86,45 @@ class QueryDeviceDesiredPropertyRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ProductKey'] = $productKey;
         $this->queryParameters['ProductKey'] = $productKey;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiProduct
+     *
+     * @return $this
+     */
+    public function setApiProduct($apiProduct)
+    {
+        $this->requestParameters['ApiProduct'] = $apiProduct;
+        $this->queryParameters['ApiProduct'] = $apiProduct;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiRevision
+     *
+     * @return $this
+     */
+    public function setApiRevision($apiRevision)
+    {
+        $this->requestParameters['ApiRevision'] = $apiRevision;
+        $this->queryParameters['ApiRevision'] = $apiRevision;
+
+        return $this;
+    }
+
+    /**
+     * @param string $deviceName
+     *
+     * @return $this
+     */
+    public function setDeviceName($deviceName)
+    {
+        $this->requestParameters['DeviceName'] = $deviceName;
+        $this->queryParameters['DeviceName'] = $deviceName;
 
         return $this;
     }

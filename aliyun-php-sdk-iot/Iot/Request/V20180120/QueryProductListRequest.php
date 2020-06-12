@@ -7,10 +7,13 @@ namespace Iot\Request\V20180120;
  *
  * Request of QueryProductList
  *
+ * @method string getResourceGroupId()
  * @method string getIotInstanceId()
  * @method string getPageSize()
- * @method string getCurrentPage()
  * @method string getAliyunCommodityCode()
+ * @method string getCurrentPage()
+ * @method string getApiProduct()
+ * @method string getApiRevision()
  */
 class QueryProductListRequest extends \RpcAcsRequest
 {
@@ -31,6 +34,19 @@ class QueryProductListRequest extends \RpcAcsRequest
             'QueryProductList',
             'iot'
         );
+    }
+
+    /**
+     * @param string $resourceGroupId
+     *
+     * @return $this
+     */
+    public function setResourceGroupId($resourceGroupId)
+    {
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
+
+        return $this;
     }
 
     /**
@@ -60,6 +76,19 @@ class QueryProductListRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $aliyunCommodityCode
+     *
+     * @return $this
+     */
+    public function setAliyunCommodityCode($aliyunCommodityCode)
+    {
+        $this->requestParameters['AliyunCommodityCode'] = $aliyunCommodityCode;
+        $this->queryParameters['AliyunCommodityCode'] = $aliyunCommodityCode;
+
+        return $this;
+    }
+
+    /**
      * @param string $currentPage
      *
      * @return $this
@@ -73,14 +102,27 @@ class QueryProductListRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $aliyunCommodityCode
+     * @param string $apiProduct
      *
      * @return $this
      */
-    public function setAliyunCommodityCode($aliyunCommodityCode)
+    public function setApiProduct($apiProduct)
     {
-        $this->requestParameters['AliyunCommodityCode'] = $aliyunCommodityCode;
-        $this->queryParameters['AliyunCommodityCode'] = $aliyunCommodityCode;
+        $this->requestParameters['ApiProduct'] = $apiProduct;
+        $this->queryParameters['ApiProduct'] = $apiProduct;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiRevision
+     *
+     * @return $this
+     */
+    public function setApiRevision($apiRevision)
+    {
+        $this->requestParameters['ApiRevision'] = $apiRevision;
+        $this->queryParameters['ApiRevision'] = $apiRevision;
 
         return $this;
     }

@@ -7,11 +7,13 @@ namespace Iot\Request\V20180120;
  *
  * Request of InvokeThingsService
  *
- * @method string getArgs()
- * @method string getIdentifier()
  * @method string getIotInstanceId()
- * @method array getDeviceNames()
+ * @method string getIdentifier()
  * @method string getProductKey()
+ * @method string getArgs()
+ * @method string getApiProduct()
+ * @method string getApiRevision()
+ * @method array getDeviceNames()
  */
 class InvokeThingsServiceRequest extends \RpcAcsRequest
 {
@@ -35,14 +37,14 @@ class InvokeThingsServiceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $args
+     * @param string $iotInstanceId
      *
      * @return $this
      */
-    public function setArgs($args)
+    public function setIotInstanceId($iotInstanceId)
     {
-        $this->requestParameters['Args'] = $args;
-        $this->queryParameters['Args'] = $args;
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
 
         return $this;
     }
@@ -61,34 +63,6 @@ class InvokeThingsServiceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $iotInstanceId
-     *
-     * @return $this
-     */
-    public function setIotInstanceId($iotInstanceId)
-    {
-        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
-        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param array $deviceName
-     *
-     * @return $this
-     */
-    public function setDeviceNames(array $deviceName)
-    {
-        $this->requestParameters['DeviceNames'] = $deviceName;
-        foreach ($deviceName as $i => $iValue) {
-            $this->queryParameters['DeviceName.' . ($i + 1)] = $iValue;
-        }
-
-        return $this;
-    }
-
-    /**
      * @param string $productKey
      *
      * @return $this
@@ -99,5 +73,59 @@ class InvokeThingsServiceRequest extends \RpcAcsRequest
         $this->queryParameters['ProductKey'] = $productKey;
 
         return $this;
+    }
+
+    /**
+     * @param string $args
+     *
+     * @return $this
+     */
+    public function setArgs($args)
+    {
+        $this->requestParameters['Args'] = $args;
+        $this->queryParameters['Args'] = $args;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiProduct
+     *
+     * @return $this
+     */
+    public function setApiProduct($apiProduct)
+    {
+        $this->requestParameters['ApiProduct'] = $apiProduct;
+        $this->queryParameters['ApiProduct'] = $apiProduct;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiRevision
+     *
+     * @return $this
+     */
+    public function setApiRevision($apiRevision)
+    {
+        $this->requestParameters['ApiRevision'] = $apiRevision;
+        $this->queryParameters['ApiRevision'] = $apiRevision;
+
+        return $this;
+    }
+
+    /**
+     * @param array $deviceName
+     *
+     * @return $this
+     */
+	public function setDeviceNames(array $deviceName)
+	{
+	    $this->requestParameters['DeviceNames'] = $deviceName;
+		foreach ($deviceName as $i => $iValue) {
+			$this->queryParameters['DeviceName.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
     }
 }

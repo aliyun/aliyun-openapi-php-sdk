@@ -8,7 +8,9 @@ namespace Iot\Request\V20180120;
  * Request of QueryTopicReverseRouteTable
  *
  * @method string getIotInstanceId()
+ * @method string getApiProduct()
  * @method string getTopic()
+ * @method string getApiRevision()
  */
 class QueryTopicReverseRouteTableRequest extends \RpcAcsRequest
 {
@@ -45,6 +47,19 @@ class QueryTopicReverseRouteTableRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $apiProduct
+     *
+     * @return $this
+     */
+    public function setApiProduct($apiProduct)
+    {
+        $this->requestParameters['ApiProduct'] = $apiProduct;
+        $this->queryParameters['ApiProduct'] = $apiProduct;
+
+        return $this;
+    }
+
+    /**
      * @param string $topic
      *
      * @return $this
@@ -53,6 +68,19 @@ class QueryTopicReverseRouteTableRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Topic'] = $topic;
         $this->queryParameters['Topic'] = $topic;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiRevision
+     *
+     * @return $this
+     */
+    public function setApiRevision($apiRevision)
+    {
+        $this->requestParameters['ApiRevision'] = $apiRevision;
+        $this->queryParameters['ApiRevision'] = $apiRevision;
 
         return $this;
     }

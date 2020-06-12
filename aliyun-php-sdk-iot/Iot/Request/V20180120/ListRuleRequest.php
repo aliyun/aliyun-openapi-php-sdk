@@ -8,9 +8,12 @@ namespace Iot\Request\V20180120;
  * Request of ListRule
  *
  * @method string getSearchName()
+ * @method string getResourceGroupId()
  * @method string getIotInstanceId()
  * @method string getPageSize()
  * @method string getCurrentPage()
+ * @method string getApiProduct()
+ * @method string getApiRevision()
  */
 class ListRuleRequest extends \RpcAcsRequest
 {
@@ -42,6 +45,19 @@ class ListRuleRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SearchName'] = $searchName;
         $this->queryParameters['SearchName'] = $searchName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceGroupId
+     *
+     * @return $this
+     */
+    public function setResourceGroupId($resourceGroupId)
+    {
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
 
         return $this;
     }
@@ -81,6 +97,32 @@ class ListRuleRequest extends \RpcAcsRequest
     {
         $this->requestParameters['CurrentPage'] = $currentPage;
         $this->queryParameters['CurrentPage'] = $currentPage;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiProduct
+     *
+     * @return $this
+     */
+    public function setApiProduct($apiProduct)
+    {
+        $this->requestParameters['ApiProduct'] = $apiProduct;
+        $this->queryParameters['ApiProduct'] = $apiProduct;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiRevision
+     *
+     * @return $this
+     */
+    public function setApiRevision($apiRevision)
+    {
+        $this->requestParameters['ApiRevision'] = $apiRevision;
+        $this->queryParameters['ApiRevision'] = $apiRevision;
 
         return $this;
     }

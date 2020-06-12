@@ -8,8 +8,10 @@ namespace Iot\Request\V20180120;
  * Request of CreateProductTopic
  *
  * @method string getIotInstanceId()
- * @method string getProductKey()
  * @method string getTopicShortName()
+ * @method string getProductKey()
+ * @method string getApiProduct()
+ * @method string getApiRevision()
  * @method string getOperation()
  * @method string getDesc()
  */
@@ -48,6 +50,19 @@ class CreateProductTopicRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $topicShortName
+     *
+     * @return $this
+     */
+    public function setTopicShortName($topicShortName)
+    {
+        $this->requestParameters['TopicShortName'] = $topicShortName;
+        $this->queryParameters['TopicShortName'] = $topicShortName;
+
+        return $this;
+    }
+
+    /**
      * @param string $productKey
      *
      * @return $this
@@ -61,14 +76,27 @@ class CreateProductTopicRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $topicShortName
+     * @param string $apiProduct
      *
      * @return $this
      */
-    public function setTopicShortName($topicShortName)
+    public function setApiProduct($apiProduct)
     {
-        $this->requestParameters['TopicShortName'] = $topicShortName;
-        $this->queryParameters['TopicShortName'] = $topicShortName;
+        $this->requestParameters['ApiProduct'] = $apiProduct;
+        $this->queryParameters['ApiProduct'] = $apiProduct;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiRevision
+     *
+     * @return $this
+     */
+    public function setApiRevision($apiRevision)
+    {
+        $this->requestParameters['ApiRevision'] = $apiRevision;
+        $this->queryParameters['ApiRevision'] = $apiRevision;
 
         return $this;
     }

@@ -7,17 +7,23 @@ namespace Iot\Request\V20180120;
  *
  * Request of CreateProduct
  *
- * @method string getDataFormat()
  * @method string getNodeType()
- * @method string getId2()
- * @method string getIotInstanceId()
- * @method string getNetType()
- * @method string getProductName()
  * @method string getDescription()
- * @method string getProtocolType()
- * @method string getAliyunCommodityCode()
+ * @method string getCategoryKey()
  * @method string getJoinPermissionId()
+ * @method string getAuthType()
+ * @method string getResourceGroupId()
+ * @method string getIotInstanceId()
+ * @method string getProductName()
+ * @method string getAliyunCommodityCode()
+ * @method string getPublishAuto()
  * @method string getCategoryId()
+ * @method string getDataFormat()
+ * @method string getId2()
+ * @method string getNetType()
+ * @method string getApiProduct()
+ * @method string getApiRevision()
+ * @method string getProtocolType()
  */
 class CreateProductRequest extends \RpcAcsRequest
 {
@@ -41,19 +47,6 @@ class CreateProductRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dataFormat
-     *
-     * @return $this
-     */
-    public function setDataFormat($dataFormat)
-    {
-        $this->requestParameters['DataFormat'] = $dataFormat;
-        $this->queryParameters['DataFormat'] = $dataFormat;
-
-        return $this;
-    }
-
-    /**
      * @param string $nodeType
      *
      * @return $this
@@ -62,58 +55,6 @@ class CreateProductRequest extends \RpcAcsRequest
     {
         $this->requestParameters['NodeType'] = $nodeType;
         $this->queryParameters['NodeType'] = $nodeType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $id2
-     *
-     * @return $this
-     */
-    public function setId2($id2)
-    {
-        $this->requestParameters['Id2'] = $id2;
-        $this->queryParameters['Id2'] = $id2;
-
-        return $this;
-    }
-
-    /**
-     * @param string $iotInstanceId
-     *
-     * @return $this
-     */
-    public function setIotInstanceId($iotInstanceId)
-    {
-        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
-        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $netType
-     *
-     * @return $this
-     */
-    public function setNetType($netType)
-    {
-        $this->requestParameters['NetType'] = $netType;
-        $this->queryParameters['NetType'] = $netType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $productName
-     *
-     * @return $this
-     */
-    public function setProductName($productName)
-    {
-        $this->requestParameters['ProductName'] = $productName;
-        $this->queryParameters['ProductName'] = $productName;
 
         return $this;
     }
@@ -132,27 +73,14 @@ class CreateProductRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $protocolType
+     * @param string $categoryKey
      *
      * @return $this
      */
-    public function setProtocolType($protocolType)
+    public function setCategoryKey($categoryKey)
     {
-        $this->requestParameters['ProtocolType'] = $protocolType;
-        $this->queryParameters['ProtocolType'] = $protocolType;
-
-        return $this;
-    }
-
-    /**
-     * @param string $aliyunCommodityCode
-     *
-     * @return $this
-     */
-    public function setAliyunCommodityCode($aliyunCommodityCode)
-    {
-        $this->requestParameters['AliyunCommodityCode'] = $aliyunCommodityCode;
-        $this->queryParameters['AliyunCommodityCode'] = $aliyunCommodityCode;
+        $this->requestParameters['CategoryKey'] = $categoryKey;
+        $this->queryParameters['CategoryKey'] = $categoryKey;
 
         return $this;
     }
@@ -171,6 +99,84 @@ class CreateProductRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $authType
+     *
+     * @return $this
+     */
+    public function setAuthType($authType)
+    {
+        $this->requestParameters['AuthType'] = $authType;
+        $this->queryParameters['AuthType'] = $authType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceGroupId
+     *
+     * @return $this
+     */
+    public function setResourceGroupId($resourceGroupId)
+    {
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $productName
+     *
+     * @return $this
+     */
+    public function setProductName($productName)
+    {
+        $this->requestParameters['ProductName'] = $productName;
+        $this->queryParameters['ProductName'] = $productName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $aliyunCommodityCode
+     *
+     * @return $this
+     */
+    public function setAliyunCommodityCode($aliyunCommodityCode)
+    {
+        $this->requestParameters['AliyunCommodityCode'] = $aliyunCommodityCode;
+        $this->queryParameters['AliyunCommodityCode'] = $aliyunCommodityCode;
+
+        return $this;
+    }
+
+    /**
+     * @param string $publishAuto
+     *
+     * @return $this
+     */
+    public function setPublishAuto($publishAuto)
+    {
+        $this->requestParameters['PublishAuto'] = $publishAuto;
+        $this->queryParameters['PublishAuto'] = $publishAuto;
+
+        return $this;
+    }
+
+    /**
      * @param string $categoryId
      *
      * @return $this
@@ -179,6 +185,84 @@ class CreateProductRequest extends \RpcAcsRequest
     {
         $this->requestParameters['CategoryId'] = $categoryId;
         $this->queryParameters['CategoryId'] = $categoryId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dataFormat
+     *
+     * @return $this
+     */
+    public function setDataFormat($dataFormat)
+    {
+        $this->requestParameters['DataFormat'] = $dataFormat;
+        $this->queryParameters['DataFormat'] = $dataFormat;
+
+        return $this;
+    }
+
+    /**
+     * @param string $id2
+     *
+     * @return $this
+     */
+    public function setId2($id2)
+    {
+        $this->requestParameters['Id2'] = $id2;
+        $this->queryParameters['Id2'] = $id2;
+
+        return $this;
+    }
+
+    /**
+     * @param string $netType
+     *
+     * @return $this
+     */
+    public function setNetType($netType)
+    {
+        $this->requestParameters['NetType'] = $netType;
+        $this->queryParameters['NetType'] = $netType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiProduct
+     *
+     * @return $this
+     */
+    public function setApiProduct($apiProduct)
+    {
+        $this->requestParameters['ApiProduct'] = $apiProduct;
+        $this->queryParameters['ApiProduct'] = $apiProduct;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiRevision
+     *
+     * @return $this
+     */
+    public function setApiRevision($apiRevision)
+    {
+        $this->requestParameters['ApiRevision'] = $apiRevision;
+        $this->queryParameters['ApiRevision'] = $apiRevision;
+
+        return $this;
+    }
+
+    /**
+     * @param string $protocolType
+     *
+     * @return $this
+     */
+    public function setProtocolType($protocolType)
+    {
+        $this->requestParameters['ProtocolType'] = $protocolType;
+        $this->queryParameters['ProtocolType'] = $protocolType;
 
         return $this;
     }

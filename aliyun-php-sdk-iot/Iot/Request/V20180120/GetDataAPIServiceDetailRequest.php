@@ -7,7 +7,10 @@ namespace Iot\Request\V20180120;
  *
  * Request of GetDataAPIServiceDetail
  *
+ * @method string getIotInstanceId()
  * @method string getApiSrn()
+ * @method string getApiProduct()
+ * @method string getApiRevision()
  */
 class GetDataAPIServiceDetailRequest extends \RpcAcsRequest
 {
@@ -31,6 +34,19 @@ class GetDataAPIServiceDetailRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
+
+        return $this;
+    }
+
+    /**
      * @param string $apiSrn
      *
      * @return $this
@@ -39,6 +55,32 @@ class GetDataAPIServiceDetailRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ApiSrn'] = $apiSrn;
         $this->queryParameters['ApiSrn'] = $apiSrn;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiProduct
+     *
+     * @return $this
+     */
+    public function setApiProduct($apiProduct)
+    {
+        $this->requestParameters['ApiProduct'] = $apiProduct;
+        $this->queryParameters['ApiProduct'] = $apiProduct;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiRevision
+     *
+     * @return $this
+     */
+    public function setApiRevision($apiRevision)
+    {
+        $this->requestParameters['ApiRevision'] = $apiRevision;
+        $this->queryParameters['ApiRevision'] = $apiRevision;
 
         return $this;
     }

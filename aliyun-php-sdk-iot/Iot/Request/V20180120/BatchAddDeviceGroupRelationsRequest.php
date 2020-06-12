@@ -9,6 +9,8 @@ namespace Iot\Request\V20180120;
  *
  * @method string getIotInstanceId()
  * @method string getGroupId()
+ * @method string getApiProduct()
+ * @method string getApiRevision()
  * @method array getDevices()
  */
 class BatchAddDeviceGroupRelationsRequest extends \RpcAcsRequest
@@ -59,18 +61,44 @@ class BatchAddDeviceGroupRelationsRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $apiProduct
+     *
+     * @return $this
+     */
+    public function setApiProduct($apiProduct)
+    {
+        $this->requestParameters['ApiProduct'] = $apiProduct;
+        $this->queryParameters['ApiProduct'] = $apiProduct;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiRevision
+     *
+     * @return $this
+     */
+    public function setApiRevision($apiRevision)
+    {
+        $this->requestParameters['ApiRevision'] = $apiRevision;
+        $this->queryParameters['ApiRevision'] = $apiRevision;
+
+        return $this;
+    }
+
+    /**
      * @param array $device
      *
      * @return $this
      */
-    public function setDevices(array $device)
-    {
-        $this->requestParameters['Devices'] = $device;
-        foreach ($device as $depth1 => $depth1Value) {
-            $this->queryParameters['Device.' . ($depth1 + 1) . '.DeviceName'] = $depth1Value['DeviceName'];
-            $this->queryParameters['Device.' . ($depth1 + 1) . '.ProductKey'] = $depth1Value['ProductKey'];
-        }
+	public function setDevices(array $device)
+	{
+	    $this->requestParameters['Devices'] = $device;
+		foreach ($device as $depth1 => $depth1Value) {
+			$this->queryParameters['Device.' . ($depth1 + 1) . '.DeviceName'] = $depth1Value['DeviceName'];
+			$this->queryParameters['Device.' . ($depth1 + 1) . '.ProductKey'] = $depth1Value['ProductKey'];
+		}
 
-        return $this;
+		return $this;
     }
 }

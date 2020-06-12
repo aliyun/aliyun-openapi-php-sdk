@@ -8,8 +8,10 @@ namespace Iot\Request\V20180120;
  * Request of BatchCheckDeviceNames
  *
  * @method string getIotInstanceId()
- * @method array getDeviceNames()
  * @method string getProductKey()
+ * @method string getApiProduct()
+ * @method string getApiRevision()
+ * @method array getDeviceNames()
  */
 class BatchCheckDeviceNamesRequest extends \RpcAcsRequest
 {
@@ -46,21 +48,6 @@ class BatchCheckDeviceNamesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $deviceName
-     *
-     * @return $this
-     */
-    public function setDeviceNames(array $deviceName)
-    {
-        $this->requestParameters['DeviceNames'] = $deviceName;
-        foreach ($deviceName as $i => $iValue) {
-            $this->queryParameters['DeviceName.' . ($i + 1)] = $iValue;
-        }
-
-        return $this;
-    }
-
-    /**
      * @param string $productKey
      *
      * @return $this
@@ -71,5 +58,46 @@ class BatchCheckDeviceNamesRequest extends \RpcAcsRequest
         $this->queryParameters['ProductKey'] = $productKey;
 
         return $this;
+    }
+
+    /**
+     * @param string $apiProduct
+     *
+     * @return $this
+     */
+    public function setApiProduct($apiProduct)
+    {
+        $this->requestParameters['ApiProduct'] = $apiProduct;
+        $this->queryParameters['ApiProduct'] = $apiProduct;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiRevision
+     *
+     * @return $this
+     */
+    public function setApiRevision($apiRevision)
+    {
+        $this->requestParameters['ApiRevision'] = $apiRevision;
+        $this->queryParameters['ApiRevision'] = $apiRevision;
+
+        return $this;
+    }
+
+    /**
+     * @param array $deviceName
+     *
+     * @return $this
+     */
+	public function setDeviceNames(array $deviceName)
+	{
+	    $this->requestParameters['DeviceNames'] = $deviceName;
+		foreach ($deviceName as $i => $iValue) {
+			$this->queryParameters['DeviceName.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
     }
 }

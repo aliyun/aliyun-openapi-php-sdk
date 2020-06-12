@@ -10,9 +10,11 @@ namespace Iot\Request\V20180120;
  * @method string getIotId()
  * @method string getIotInstanceId()
  * @method string getPageSize()
- * @method string getDeviceName()
  * @method string getCurrentPage()
  * @method string getProductKey()
+ * @method string getApiProduct()
+ * @method string getApiRevision()
+ * @method string getDeviceName()
  */
 class QueryDeviceFileListRequest extends \RpcAcsRequest
 {
@@ -75,19 +77,6 @@ class QueryDeviceFileListRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $deviceName
-     *
-     * @return $this
-     */
-    public function setDeviceName($deviceName)
-    {
-        $this->requestParameters['DeviceName'] = $deviceName;
-        $this->queryParameters['DeviceName'] = $deviceName;
-
-        return $this;
-    }
-
-    /**
      * @param string $currentPage
      *
      * @return $this
@@ -109,6 +98,45 @@ class QueryDeviceFileListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ProductKey'] = $productKey;
         $this->queryParameters['ProductKey'] = $productKey;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiProduct
+     *
+     * @return $this
+     */
+    public function setApiProduct($apiProduct)
+    {
+        $this->requestParameters['ApiProduct'] = $apiProduct;
+        $this->queryParameters['ApiProduct'] = $apiProduct;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiRevision
+     *
+     * @return $this
+     */
+    public function setApiRevision($apiRevision)
+    {
+        $this->requestParameters['ApiRevision'] = $apiRevision;
+        $this->queryParameters['ApiRevision'] = $apiRevision;
+
+        return $this;
+    }
+
+    /**
+     * @param string $deviceName
+     *
+     * @return $this
+     */
+    public function setDeviceName($deviceName)
+    {
+        $this->requestParameters['DeviceName'] = $deviceName;
+        $this->queryParameters['DeviceName'] = $deviceName;
 
         return $this;
     }

@@ -8,6 +8,8 @@ namespace Iot\Request\V20180120;
  * Request of QueryLoRaJoinPermissions
  *
  * @method string getIotInstanceId()
+ * @method string getApiProduct()
+ * @method string getApiRevision()
  */
 class QueryLoRaJoinPermissionsRequest extends \RpcAcsRequest
 {
@@ -39,6 +41,32 @@ class QueryLoRaJoinPermissionsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['IotInstanceId'] = $iotInstanceId;
         $this->queryParameters['IotInstanceId'] = $iotInstanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiProduct
+     *
+     * @return $this
+     */
+    public function setApiProduct($apiProduct)
+    {
+        $this->requestParameters['ApiProduct'] = $apiProduct;
+        $this->queryParameters['ApiProduct'] = $apiProduct;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiRevision
+     *
+     * @return $this
+     */
+    public function setApiRevision($apiRevision)
+    {
+        $this->requestParameters['ApiRevision'] = $apiRevision;
+        $this->queryParameters['ApiRevision'] = $apiRevision;
 
         return $this;
     }

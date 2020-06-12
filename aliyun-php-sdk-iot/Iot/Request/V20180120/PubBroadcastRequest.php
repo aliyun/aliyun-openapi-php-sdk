@@ -7,10 +7,12 @@ namespace Iot\Request\V20180120;
  *
  * Request of PubBroadcast
  *
- * @method string getTopicFullName()
  * @method string getMessageContent()
  * @method string getIotInstanceId()
+ * @method string getTopicFullName()
  * @method string getProductKey()
+ * @method string getApiProduct()
+ * @method string getApiRevision()
  */
 class PubBroadcastRequest extends \RpcAcsRequest
 {
@@ -31,19 +33,6 @@ class PubBroadcastRequest extends \RpcAcsRequest
             'PubBroadcast',
             'iot'
         );
-    }
-
-    /**
-     * @param string $topicFullName
-     *
-     * @return $this
-     */
-    public function setTopicFullName($topicFullName)
-    {
-        $this->requestParameters['TopicFullName'] = $topicFullName;
-        $this->queryParameters['TopicFullName'] = $topicFullName;
-
-        return $this;
     }
 
     /**
@@ -73,6 +62,19 @@ class PubBroadcastRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $topicFullName
+     *
+     * @return $this
+     */
+    public function setTopicFullName($topicFullName)
+    {
+        $this->requestParameters['TopicFullName'] = $topicFullName;
+        $this->queryParameters['TopicFullName'] = $topicFullName;
+
+        return $this;
+    }
+
+    /**
      * @param string $productKey
      *
      * @return $this
@@ -81,6 +83,32 @@ class PubBroadcastRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ProductKey'] = $productKey;
         $this->queryParameters['ProductKey'] = $productKey;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiProduct
+     *
+     * @return $this
+     */
+    public function setApiProduct($apiProduct)
+    {
+        $this->requestParameters['ApiProduct'] = $apiProduct;
+        $this->queryParameters['ApiProduct'] = $apiProduct;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiRevision
+     *
+     * @return $this
+     */
+    public function setApiRevision($apiRevision)
+    {
+        $this->requestParameters['ApiRevision'] = $apiRevision;
+        $this->queryParameters['ApiRevision'] = $apiRevision;
 
         return $this;
     }

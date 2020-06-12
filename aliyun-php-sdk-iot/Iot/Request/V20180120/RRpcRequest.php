@@ -7,12 +7,14 @@ namespace Iot\Request\V20180120;
  *
  * Request of RRpc
  *
+ * @method string getTimeout()
  * @method string getIotInstanceId()
  * @method string getRequestBase64Byte()
- * @method string getTopic()
- * @method string getDeviceName()
  * @method string getProductKey()
- * @method string getTimeout()
+ * @method string getApiProduct()
+ * @method string getTopic()
+ * @method string getApiRevision()
+ * @method string getDeviceName()
  */
 class RRpcRequest extends \RpcAcsRequest
 {
@@ -33,6 +35,19 @@ class RRpcRequest extends \RpcAcsRequest
             'RRpc',
             'iot'
         );
+    }
+
+    /**
+     * @param string $timeout
+     *
+     * @return $this
+     */
+    public function setTimeout($timeout)
+    {
+        $this->requestParameters['Timeout'] = $timeout;
+        $this->queryParameters['Timeout'] = $timeout;
+
+        return $this;
     }
 
     /**
@@ -62,32 +77,6 @@ class RRpcRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $topic
-     *
-     * @return $this
-     */
-    public function setTopic($topic)
-    {
-        $this->requestParameters['Topic'] = $topic;
-        $this->queryParameters['Topic'] = $topic;
-
-        return $this;
-    }
-
-    /**
-     * @param string $deviceName
-     *
-     * @return $this
-     */
-    public function setDeviceName($deviceName)
-    {
-        $this->requestParameters['DeviceName'] = $deviceName;
-        $this->queryParameters['DeviceName'] = $deviceName;
-
-        return $this;
-    }
-
-    /**
      * @param string $productKey
      *
      * @return $this
@@ -101,14 +90,53 @@ class RRpcRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $timeout
+     * @param string $apiProduct
      *
      * @return $this
      */
-    public function setTimeout($timeout)
+    public function setApiProduct($apiProduct)
     {
-        $this->requestParameters['Timeout'] = $timeout;
-        $this->queryParameters['Timeout'] = $timeout;
+        $this->requestParameters['ApiProduct'] = $apiProduct;
+        $this->queryParameters['ApiProduct'] = $apiProduct;
+
+        return $this;
+    }
+
+    /**
+     * @param string $topic
+     *
+     * @return $this
+     */
+    public function setTopic($topic)
+    {
+        $this->requestParameters['Topic'] = $topic;
+        $this->queryParameters['Topic'] = $topic;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiRevision
+     *
+     * @return $this
+     */
+    public function setApiRevision($apiRevision)
+    {
+        $this->requestParameters['ApiRevision'] = $apiRevision;
+        $this->queryParameters['ApiRevision'] = $apiRevision;
+
+        return $this;
+    }
+
+    /**
+     * @param string $deviceName
+     *
+     * @return $this
+     */
+    public function setDeviceName($deviceName)
+    {
+        $this->requestParameters['DeviceName'] = $deviceName;
+        $this->queryParameters['DeviceName'] = $deviceName;
 
         return $this;
     }

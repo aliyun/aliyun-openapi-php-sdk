@@ -7,8 +7,10 @@ namespace Iot\Request\V20180120;
  *
  * Request of DeleteTopicRouteTable
  *
- * @method array getDstTopics()
  * @method string getIotInstanceId()
+ * @method array getDstTopics()
+ * @method string getApiProduct()
+ * @method string getApiRevision()
  * @method string getSrcTopic()
  */
 class DeleteTopicRouteTableRequest extends \RpcAcsRequest
@@ -33,21 +35,6 @@ class DeleteTopicRouteTableRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $dstTopic
-     *
-     * @return $this
-     */
-    public function setDstTopics(array $dstTopic)
-    {
-        $this->requestParameters['DstTopics'] = $dstTopic;
-        foreach ($dstTopic as $i => $iValue) {
-            $this->queryParameters['DstTopic.' . ($i + 1)] = $iValue;
-        }
-
-        return $this;
-    }
-
-    /**
      * @param string $iotInstanceId
      *
      * @return $this
@@ -56,6 +43,47 @@ class DeleteTopicRouteTableRequest extends \RpcAcsRequest
     {
         $this->requestParameters['IotInstanceId'] = $iotInstanceId;
         $this->queryParameters['IotInstanceId'] = $iotInstanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param array $dstTopic
+     *
+     * @return $this
+     */
+	public function setDstTopics(array $dstTopic)
+	{
+	    $this->requestParameters['DstTopics'] = $dstTopic;
+		foreach ($dstTopic as $i => $iValue) {
+			$this->queryParameters['DstTopic.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
+    }
+
+    /**
+     * @param string $apiProduct
+     *
+     * @return $this
+     */
+    public function setApiProduct($apiProduct)
+    {
+        $this->requestParameters['ApiProduct'] = $apiProduct;
+        $this->queryParameters['ApiProduct'] = $apiProduct;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiRevision
+     *
+     * @return $this
+     */
+    public function setApiRevision($apiRevision)
+    {
+        $this->requestParameters['ApiRevision'] = $apiRevision;
+        $this->queryParameters['ApiRevision'] = $apiRevision;
 
         return $this;
     }

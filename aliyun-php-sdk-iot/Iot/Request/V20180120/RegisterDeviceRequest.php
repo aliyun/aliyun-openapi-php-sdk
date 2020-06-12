@@ -7,12 +7,14 @@ namespace Iot\Request\V20180120;
  *
  * Request of RegisterDevice
  *
- * @method string getPinCode()
  * @method string getIotInstanceId()
  * @method string getNickname()
- * @method string getDeviceName()
+ * @method string getPinCode()
  * @method string getProductKey()
  * @method string getDevEui()
+ * @method string getApiProduct()
+ * @method string getApiRevision()
+ * @method string getDeviceName()
  */
 class RegisterDeviceRequest extends \RpcAcsRequest
 {
@@ -33,19 +35,6 @@ class RegisterDeviceRequest extends \RpcAcsRequest
             'RegisterDevice',
             'iot'
         );
-    }
-
-    /**
-     * @param string $pinCode
-     *
-     * @return $this
-     */
-    public function setPinCode($pinCode)
-    {
-        $this->requestParameters['PinCode'] = $pinCode;
-        $this->queryParameters['PinCode'] = $pinCode;
-
-        return $this;
     }
 
     /**
@@ -75,14 +64,14 @@ class RegisterDeviceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $deviceName
+     * @param string $pinCode
      *
      * @return $this
      */
-    public function setDeviceName($deviceName)
+    public function setPinCode($pinCode)
     {
-        $this->requestParameters['DeviceName'] = $deviceName;
-        $this->queryParameters['DeviceName'] = $deviceName;
+        $this->requestParameters['PinCode'] = $pinCode;
+        $this->queryParameters['PinCode'] = $pinCode;
 
         return $this;
     }
@@ -109,6 +98,45 @@ class RegisterDeviceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DevEui'] = $devEui;
         $this->queryParameters['DevEui'] = $devEui;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiProduct
+     *
+     * @return $this
+     */
+    public function setApiProduct($apiProduct)
+    {
+        $this->requestParameters['ApiProduct'] = $apiProduct;
+        $this->queryParameters['ApiProduct'] = $apiProduct;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiRevision
+     *
+     * @return $this
+     */
+    public function setApiRevision($apiRevision)
+    {
+        $this->requestParameters['ApiRevision'] = $apiRevision;
+        $this->queryParameters['ApiRevision'] = $apiRevision;
+
+        return $this;
+    }
+
+    /**
+     * @param string $deviceName
+     *
+     * @return $this
+     */
+    public function setDeviceName($deviceName)
+    {
+        $this->requestParameters['DeviceName'] = $deviceName;
+        $this->queryParameters['DeviceName'] = $deviceName;
 
         return $this;
     }

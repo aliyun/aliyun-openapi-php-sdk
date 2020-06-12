@@ -8,7 +8,9 @@ namespace Iot\Request\V20180120;
  * Request of QueryTopicRouteTable
  *
  * @method string getIotInstanceId()
+ * @method string getApiProduct()
  * @method string getTopic()
+ * @method string getApiRevision()
  */
 class QueryTopicRouteTableRequest extends \RpcAcsRequest
 {
@@ -45,6 +47,19 @@ class QueryTopicRouteTableRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $apiProduct
+     *
+     * @return $this
+     */
+    public function setApiProduct($apiProduct)
+    {
+        $this->requestParameters['ApiProduct'] = $apiProduct;
+        $this->queryParameters['ApiProduct'] = $apiProduct;
+
+        return $this;
+    }
+
+    /**
      * @param string $topic
      *
      * @return $this
@@ -53,6 +68,19 @@ class QueryTopicRouteTableRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Topic'] = $topic;
         $this->queryParameters['Topic'] = $topic;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiRevision
+     *
+     * @return $this
+     */
+    public function setApiRevision($apiRevision)
+    {
+        $this->requestParameters['ApiRevision'] = $apiRevision;
+        $this->queryParameters['ApiRevision'] = $apiRevision;
 
         return $this;
     }

@@ -7,13 +7,13 @@ namespace Iot\Request\V20180120;
  *
  * Request of QueryAppDeviceList
  *
+ * @method string getCurrentPage()
+ * @method array getTagLists()
  * @method array getProductKeyLists()
  * @method array getCategoryKeyLists()
  * @method string getIotInstanceId()
  * @method string getPageSize()
- * @method string getCurrentPage()
  * @method string getAppKey()
- * @method array getTagLists()
  */
 class QueryAppDeviceListRequest extends \RpcAcsRequest
 {
@@ -37,18 +37,47 @@ class QueryAppDeviceListRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $currentPage
+     *
+     * @return $this
+     */
+    public function setCurrentPage($currentPage)
+    {
+        $this->requestParameters['CurrentPage'] = $currentPage;
+        $this->queryParameters['CurrentPage'] = $currentPage;
+
+        return $this;
+    }
+
+    /**
+     * @param array $tagList
+     *
+     * @return $this
+     */
+	public function setTagLists(array $tagList)
+	{
+	    $this->requestParameters['TagLists'] = $tagList;
+		foreach ($tagList as $depth1 => $depth1Value) {
+			$this->queryParameters['TagList.' . ($depth1 + 1) . '.TagName'] = $depth1Value['TagName'];
+			$this->queryParameters['TagList.' . ($depth1 + 1) . '.TagValue'] = $depth1Value['TagValue'];
+		}
+
+		return $this;
+    }
+
+    /**
      * @param array $productKeyList
      *
      * @return $this
      */
-    public function setProductKeyLists(array $productKeyList)
-    {
-        $this->requestParameters['ProductKeyLists'] = $productKeyList;
-        foreach ($productKeyList as $i => $iValue) {
-            $this->queryParameters['ProductKeyList.' . ($i + 1)] = $iValue;
-        }
+	public function setProductKeyLists(array $productKeyList)
+	{
+	    $this->requestParameters['ProductKeyLists'] = $productKeyList;
+		foreach ($productKeyList as $i => $iValue) {
+			$this->queryParameters['ProductKeyList.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 
     /**
@@ -56,14 +85,14 @@ class QueryAppDeviceListRequest extends \RpcAcsRequest
      *
      * @return $this
      */
-    public function setCategoryKeyLists(array $categoryKeyList)
-    {
-        $this->requestParameters['CategoryKeyLists'] = $categoryKeyList;
-        foreach ($categoryKeyList as $i => $iValue) {
-            $this->queryParameters['CategoryKeyList.' . ($i + 1)] = $iValue;
-        }
+	public function setCategoryKeyLists(array $categoryKeyList)
+	{
+	    $this->requestParameters['CategoryKeyLists'] = $categoryKeyList;
+		foreach ($categoryKeyList as $i => $iValue) {
+			$this->queryParameters['CategoryKeyList.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 
     /**
@@ -93,19 +122,6 @@ class QueryAppDeviceListRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $currentPage
-     *
-     * @return $this
-     */
-    public function setCurrentPage($currentPage)
-    {
-        $this->requestParameters['CurrentPage'] = $currentPage;
-        $this->queryParameters['CurrentPage'] = $currentPage;
-
-        return $this;
-    }
-
-    /**
      * @param string $appKey
      *
      * @return $this
@@ -114,22 +130,6 @@ class QueryAppDeviceListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['AppKey'] = $appKey;
         $this->queryParameters['AppKey'] = $appKey;
-
-        return $this;
-    }
-
-    /**
-     * @param array $tagList
-     *
-     * @return $this
-     */
-    public function setTagLists(array $tagList)
-    {
-        $this->requestParameters['TagLists'] = $tagList;
-        foreach ($tagList as $depth1 => $depth1Value) {
-            $this->queryParameters['TagList.' . ($depth1 + 1) . '.TagName'] = $depth1Value['TagName'];
-            $this->queryParameters['TagList.' . ($depth1 + 1) . '.TagValue'] = $depth1Value['TagValue'];
-        }
 
         return $this;
     }

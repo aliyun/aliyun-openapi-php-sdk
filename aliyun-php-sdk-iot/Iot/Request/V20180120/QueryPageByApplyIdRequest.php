@@ -7,10 +7,12 @@ namespace Iot\Request\V20180120;
  *
  * Request of QueryPageByApplyId
  *
- * @method string getApplyId()
  * @method string getIotInstanceId()
  * @method string getPageSize()
  * @method string getCurrentPage()
+ * @method string getApplyId()
+ * @method string getApiProduct()
+ * @method string getApiRevision()
  */
 class QueryPageByApplyIdRequest extends \RpcAcsRequest
 {
@@ -31,19 +33,6 @@ class QueryPageByApplyIdRequest extends \RpcAcsRequest
             'QueryPageByApplyId',
             'iot'
         );
-    }
-
-    /**
-     * @param string $applyId
-     *
-     * @return $this
-     */
-    public function setApplyId($applyId)
-    {
-        $this->requestParameters['ApplyId'] = $applyId;
-        $this->queryParameters['ApplyId'] = $applyId;
-
-        return $this;
     }
 
     /**
@@ -81,6 +70,45 @@ class QueryPageByApplyIdRequest extends \RpcAcsRequest
     {
         $this->requestParameters['CurrentPage'] = $currentPage;
         $this->queryParameters['CurrentPage'] = $currentPage;
+
+        return $this;
+    }
+
+    /**
+     * @param string $applyId
+     *
+     * @return $this
+     */
+    public function setApplyId($applyId)
+    {
+        $this->requestParameters['ApplyId'] = $applyId;
+        $this->queryParameters['ApplyId'] = $applyId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiProduct
+     *
+     * @return $this
+     */
+    public function setApiProduct($apiProduct)
+    {
+        $this->requestParameters['ApiProduct'] = $apiProduct;
+        $this->queryParameters['ApiProduct'] = $apiProduct;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiRevision
+     *
+     * @return $this
+     */
+    public function setApiRevision($apiRevision)
+    {
+        $this->requestParameters['ApiRevision'] = $apiRevision;
+        $this->queryParameters['ApiRevision'] = $apiRevision;
 
         return $this;
     }

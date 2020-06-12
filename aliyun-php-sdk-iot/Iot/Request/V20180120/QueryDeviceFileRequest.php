@@ -9,9 +9,11 @@ namespace Iot\Request\V20180120;
  *
  * @method string getIotId()
  * @method string getIotInstanceId()
- * @method string getDeviceName()
- * @method string getProductKey()
  * @method string getFileId()
+ * @method string getProductKey()
+ * @method string getApiProduct()
+ * @method string getApiRevision()
+ * @method string getDeviceName()
  */
 class QueryDeviceFileRequest extends \RpcAcsRequest
 {
@@ -61,14 +63,14 @@ class QueryDeviceFileRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $deviceName
+     * @param string $fileId
      *
      * @return $this
      */
-    public function setDeviceName($deviceName)
+    public function setFileId($fileId)
     {
-        $this->requestParameters['DeviceName'] = $deviceName;
-        $this->queryParameters['DeviceName'] = $deviceName;
+        $this->requestParameters['FileId'] = $fileId;
+        $this->queryParameters['FileId'] = $fileId;
 
         return $this;
     }
@@ -87,14 +89,40 @@ class QueryDeviceFileRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $fileId
+     * @param string $apiProduct
      *
      * @return $this
      */
-    public function setFileId($fileId)
+    public function setApiProduct($apiProduct)
     {
-        $this->requestParameters['FileId'] = $fileId;
-        $this->queryParameters['FileId'] = $fileId;
+        $this->requestParameters['ApiProduct'] = $apiProduct;
+        $this->queryParameters['ApiProduct'] = $apiProduct;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiRevision
+     *
+     * @return $this
+     */
+    public function setApiRevision($apiRevision)
+    {
+        $this->requestParameters['ApiRevision'] = $apiRevision;
+        $this->queryParameters['ApiRevision'] = $apiRevision;
+
+        return $this;
+    }
+
+    /**
+     * @param string $deviceName
+     *
+     * @return $this
+     */
+    public function setDeviceName($deviceName)
+    {
+        $this->requestParameters['DeviceName'] = $deviceName;
+        $this->queryParameters['DeviceName'] = $deviceName;
 
         return $this;
     }

@@ -8,6 +8,8 @@ namespace Iot\Request\V20180120;
  * Request of StartRule
  *
  * @method string getIotInstanceId()
+ * @method string getApiProduct()
+ * @method string getApiRevision()
  * @method string getRuleId()
  */
 class StartRuleRequest extends \RpcAcsRequest
@@ -40,6 +42,32 @@ class StartRuleRequest extends \RpcAcsRequest
     {
         $this->requestParameters['IotInstanceId'] = $iotInstanceId;
         $this->queryParameters['IotInstanceId'] = $iotInstanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiProduct
+     *
+     * @return $this
+     */
+    public function setApiProduct($apiProduct)
+    {
+        $this->requestParameters['ApiProduct'] = $apiProduct;
+        $this->queryParameters['ApiProduct'] = $apiProduct;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiRevision
+     *
+     * @return $this
+     */
+    public function setApiRevision($apiRevision)
+    {
+        $this->requestParameters['ApiRevision'] = $apiRevision;
+        $this->queryParameters['ApiRevision'] = $apiRevision;
 
         return $this;
     }

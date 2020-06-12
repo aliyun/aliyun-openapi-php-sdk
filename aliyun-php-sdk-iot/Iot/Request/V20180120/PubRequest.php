@@ -7,11 +7,13 @@ namespace Iot\Request\V20180120;
  *
  * Request of Pub
  *
- * @method string getTopicFullName()
- * @method string getQos()
  * @method string getMessageContent()
+ * @method string getQos()
  * @method string getIotInstanceId()
+ * @method string getTopicFullName()
  * @method string getProductKey()
+ * @method string getApiProduct()
+ * @method string getApiRevision()
  */
 class PubRequest extends \RpcAcsRequest
 {
@@ -35,14 +37,14 @@ class PubRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $topicFullName
+     * @param string $messageContent
      *
      * @return $this
      */
-    public function setTopicFullName($topicFullName)
+    public function setMessageContent($messageContent)
     {
-        $this->requestParameters['TopicFullName'] = $topicFullName;
-        $this->queryParameters['TopicFullName'] = $topicFullName;
+        $this->requestParameters['MessageContent'] = $messageContent;
+        $this->queryParameters['MessageContent'] = $messageContent;
 
         return $this;
     }
@@ -61,19 +63,6 @@ class PubRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $messageContent
-     *
-     * @return $this
-     */
-    public function setMessageContent($messageContent)
-    {
-        $this->requestParameters['MessageContent'] = $messageContent;
-        $this->queryParameters['MessageContent'] = $messageContent;
-
-        return $this;
-    }
-
-    /**
      * @param string $iotInstanceId
      *
      * @return $this
@@ -87,6 +76,19 @@ class PubRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $topicFullName
+     *
+     * @return $this
+     */
+    public function setTopicFullName($topicFullName)
+    {
+        $this->requestParameters['TopicFullName'] = $topicFullName;
+        $this->queryParameters['TopicFullName'] = $topicFullName;
+
+        return $this;
+    }
+
+    /**
      * @param string $productKey
      *
      * @return $this
@@ -95,6 +97,32 @@ class PubRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ProductKey'] = $productKey;
         $this->queryParameters['ProductKey'] = $productKey;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiProduct
+     *
+     * @return $this
+     */
+    public function setApiProduct($apiProduct)
+    {
+        $this->requestParameters['ApiProduct'] = $apiProduct;
+        $this->queryParameters['ApiProduct'] = $apiProduct;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiRevision
+     *
+     * @return $this
+     */
+    public function setApiRevision($apiRevision)
+    {
+        $this->requestParameters['ApiRevision'] = $apiRevision;
+        $this->queryParameters['ApiRevision'] = $apiRevision;
 
         return $this;
     }

@@ -9,13 +9,15 @@ namespace Iot\Request\V20180120;
  *
  * @method string getSelect()
  * @method string getRuleDesc()
- * @method string getIotInstanceId()
- * @method string getName()
- * @method string getWhere()
- * @method string getRuleId()
- * @method string getProductKey()
- * @method string getTopicType()
  * @method string getShortTopic()
+ * @method string getIotInstanceId()
+ * @method string getWhere()
+ * @method string getTopicType()
+ * @method string getProductKey()
+ * @method string getApiProduct()
+ * @method string getName()
+ * @method string getApiRevision()
+ * @method string getRuleId()
  */
 class UpdateRuleRequest extends \RpcAcsRequest
 {
@@ -65,6 +67,19 @@ class UpdateRuleRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $shortTopic
+     *
+     * @return $this
+     */
+    public function setShortTopic($shortTopic)
+    {
+        $this->requestParameters['ShortTopic'] = $shortTopic;
+        $this->queryParameters['ShortTopic'] = $shortTopic;
+
+        return $this;
+    }
+
+    /**
      * @param string $iotInstanceId
      *
      * @return $this
@@ -73,19 +88,6 @@ class UpdateRuleRequest extends \RpcAcsRequest
     {
         $this->requestParameters['IotInstanceId'] = $iotInstanceId;
         $this->queryParameters['IotInstanceId'] = $iotInstanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $name
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->requestParameters['Name'] = $name;
-        $this->queryParameters['Name'] = $name;
 
         return $this;
     }
@@ -104,14 +106,14 @@ class UpdateRuleRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ruleId
+     * @param string $topicType
      *
      * @return $this
      */
-    public function setRuleId($ruleId)
+    public function setTopicType($topicType)
     {
-        $this->requestParameters['RuleId'] = $ruleId;
-        $this->queryParameters['RuleId'] = $ruleId;
+        $this->requestParameters['TopicType'] = $topicType;
+        $this->queryParameters['TopicType'] = $topicType;
 
         return $this;
     }
@@ -130,27 +132,53 @@ class UpdateRuleRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $topicType
+     * @param string $apiProduct
      *
      * @return $this
      */
-    public function setTopicType($topicType)
+    public function setApiProduct($apiProduct)
     {
-        $this->requestParameters['TopicType'] = $topicType;
-        $this->queryParameters['TopicType'] = $topicType;
+        $this->requestParameters['ApiProduct'] = $apiProduct;
+        $this->queryParameters['ApiProduct'] = $apiProduct;
 
         return $this;
     }
 
     /**
-     * @param string $shortTopic
+     * @param string $name
      *
      * @return $this
      */
-    public function setShortTopic($shortTopic)
+    public function setName($name)
     {
-        $this->requestParameters['ShortTopic'] = $shortTopic;
-        $this->queryParameters['ShortTopic'] = $shortTopic;
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiRevision
+     *
+     * @return $this
+     */
+    public function setApiRevision($apiRevision)
+    {
+        $this->requestParameters['ApiRevision'] = $apiRevision;
+        $this->queryParameters['ApiRevision'] = $apiRevision;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ruleId
+     *
+     * @return $this
+     */
+    public function setRuleId($ruleId)
+    {
+        $this->requestParameters['RuleId'] = $ruleId;
+        $this->queryParameters['RuleId'] = $ruleId;
 
         return $this;
     }

@@ -9,8 +9,10 @@ namespace Iot\Request\V20180120;
  *
  * @method string getIotInstanceId()
  * @method string getPageSize()
- * @method string getCurrentPage()
  * @method array getTags()
+ * @method string getCurrentPage()
+ * @method string getApiProduct()
+ * @method string getApiRevision()
  */
 class QueryDeviceGroupByTagsRequest extends \RpcAcsRequest
 {
@@ -60,6 +62,22 @@ class QueryDeviceGroupByTagsRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param array $tag
+     *
+     * @return $this
+     */
+	public function setTags(array $tag)
+	{
+	    $this->requestParameters['Tags'] = $tag;
+		foreach ($tag as $depth1 => $depth1Value) {
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.TagValue'] = $depth1Value['TagValue'];
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.TagKey'] = $depth1Value['TagKey'];
+		}
+
+		return $this;
+    }
+
+    /**
      * @param string $currentPage
      *
      * @return $this
@@ -73,17 +91,27 @@ class QueryDeviceGroupByTagsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $tag
+     * @param string $apiProduct
      *
      * @return $this
      */
-    public function setTags(array $tag)
+    public function setApiProduct($apiProduct)
     {
-        $this->requestParameters['Tags'] = $tag;
-        foreach ($tag as $depth1 => $depth1Value) {
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.TagValue'] = $depth1Value['TagValue'];
-            $this->queryParameters['Tag.' . ($depth1 + 1) . '.TagKey'] = $depth1Value['TagKey'];
-        }
+        $this->requestParameters['ApiProduct'] = $apiProduct;
+        $this->queryParameters['ApiProduct'] = $apiProduct;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiRevision
+     *
+     * @return $this
+     */
+    public function setApiRevision($apiRevision)
+    {
+        $this->requestParameters['ApiRevision'] = $apiRevision;
+        $this->queryParameters['ApiRevision'] = $apiRevision;
 
         return $this;
     }

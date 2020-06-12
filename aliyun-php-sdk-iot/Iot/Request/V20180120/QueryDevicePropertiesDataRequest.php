@@ -7,15 +7,17 @@ namespace Iot\Request\V20180120;
  *
  * Request of QueryDevicePropertiesData
  *
- * @method string getAsc()
- * @method array getIdentifiers()
+ * @method string getStartTime()
  * @method string getIotId()
  * @method string getIotInstanceId()
  * @method string getPageSize()
+ * @method array getIdentifiers()
  * @method string getEndTime()
- * @method string getDeviceName()
- * @method string getStartTime()
  * @method string getProductKey()
+ * @method string getAsc()
+ * @method string getApiProduct()
+ * @method string getApiRevision()
+ * @method string getDeviceName()
  */
 class QueryDevicePropertiesDataRequest extends \RpcAcsRequest
 {
@@ -39,29 +41,14 @@ class QueryDevicePropertiesDataRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $asc
+     * @param string $startTime
      *
      * @return $this
      */
-    public function setAsc($asc)
+    public function setStartTime($startTime)
     {
-        $this->requestParameters['Asc'] = $asc;
-        $this->queryParameters['Asc'] = $asc;
-
-        return $this;
-    }
-
-    /**
-     * @param array $identifier
-     *
-     * @return $this
-     */
-    public function setIdentifiers(array $identifier)
-    {
-        $this->requestParameters['Identifiers'] = $identifier;
-        foreach ($identifier as $i => $iValue) {
-            $this->queryParameters['Identifier.' . ($i + 1)] = $iValue;
-        }
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
 
         return $this;
     }
@@ -106,6 +93,21 @@ class QueryDevicePropertiesDataRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param array $identifier
+     *
+     * @return $this
+     */
+	public function setIdentifiers(array $identifier)
+	{
+	    $this->requestParameters['Identifiers'] = $identifier;
+		foreach ($identifier as $i => $iValue) {
+			$this->queryParameters['Identifier.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
+    }
+
+    /**
      * @param string $endTime
      *
      * @return $this
@@ -119,32 +121,6 @@ class QueryDevicePropertiesDataRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $deviceName
-     *
-     * @return $this
-     */
-    public function setDeviceName($deviceName)
-    {
-        $this->requestParameters['DeviceName'] = $deviceName;
-        $this->queryParameters['DeviceName'] = $deviceName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $startTime
-     *
-     * @return $this
-     */
-    public function setStartTime($startTime)
-    {
-        $this->requestParameters['StartTime'] = $startTime;
-        $this->queryParameters['StartTime'] = $startTime;
-
-        return $this;
-    }
-
-    /**
      * @param string $productKey
      *
      * @return $this
@@ -153,6 +129,58 @@ class QueryDevicePropertiesDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ProductKey'] = $productKey;
         $this->queryParameters['ProductKey'] = $productKey;
+
+        return $this;
+    }
+
+    /**
+     * @param string $asc
+     *
+     * @return $this
+     */
+    public function setAsc($asc)
+    {
+        $this->requestParameters['Asc'] = $asc;
+        $this->queryParameters['Asc'] = $asc;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiProduct
+     *
+     * @return $this
+     */
+    public function setApiProduct($apiProduct)
+    {
+        $this->requestParameters['ApiProduct'] = $apiProduct;
+        $this->queryParameters['ApiProduct'] = $apiProduct;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiRevision
+     *
+     * @return $this
+     */
+    public function setApiRevision($apiRevision)
+    {
+        $this->requestParameters['ApiRevision'] = $apiRevision;
+        $this->queryParameters['ApiRevision'] = $apiRevision;
+
+        return $this;
+    }
+
+    /**
+     * @param string $deviceName
+     *
+     * @return $this
+     */
+    public function setDeviceName($deviceName)
+    {
+        $this->requestParameters['DeviceName'] = $deviceName;
+        $this->queryParameters['DeviceName'] = $deviceName;
 
         return $this;
     }

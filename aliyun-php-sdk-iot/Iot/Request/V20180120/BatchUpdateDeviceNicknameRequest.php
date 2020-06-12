@@ -7,8 +7,10 @@ namespace Iot\Request\V20180120;
  *
  * Request of BatchUpdateDeviceNickname
  *
- * @method array getDeviceNicknameInfos()
  * @method string getIotInstanceId()
+ * @method array getDeviceNicknameInfos()
+ * @method string getApiProduct()
+ * @method string getApiRevision()
  */
 class BatchUpdateDeviceNicknameRequest extends \RpcAcsRequest
 {
@@ -32,24 +34,6 @@ class BatchUpdateDeviceNicknameRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $deviceNicknameInfo
-     *
-     * @return $this
-     */
-    public function setDeviceNicknameInfos(array $deviceNicknameInfo)
-    {
-        $this->requestParameters['DeviceNicknameInfos'] = $deviceNicknameInfo;
-        foreach ($deviceNicknameInfo as $depth1 => $depth1Value) {
-            $this->queryParameters['DeviceNicknameInfo.' . ($depth1 + 1) . '.IotId'] = $depth1Value['IotId'];
-            $this->queryParameters['DeviceNicknameInfo.' . ($depth1 + 1) . '.Nickname'] = $depth1Value['Nickname'];
-            $this->queryParameters['DeviceNicknameInfo.' . ($depth1 + 1) . '.DeviceName'] = $depth1Value['DeviceName'];
-            $this->queryParameters['DeviceNicknameInfo.' . ($depth1 + 1) . '.ProductKey'] = $depth1Value['ProductKey'];
-        }
-
-        return $this;
-    }
-
-    /**
      * @param string $iotInstanceId
      *
      * @return $this
@@ -58,6 +42,50 @@ class BatchUpdateDeviceNicknameRequest extends \RpcAcsRequest
     {
         $this->requestParameters['IotInstanceId'] = $iotInstanceId;
         $this->queryParameters['IotInstanceId'] = $iotInstanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param array $deviceNicknameInfo
+     *
+     * @return $this
+     */
+	public function setDeviceNicknameInfos(array $deviceNicknameInfo)
+	{
+	    $this->requestParameters['DeviceNicknameInfos'] = $deviceNicknameInfo;
+		foreach ($deviceNicknameInfo as $depth1 => $depth1Value) {
+			$this->queryParameters['DeviceNicknameInfo.' . ($depth1 + 1) . '.IotId'] = $depth1Value['IotId'];
+			$this->queryParameters['DeviceNicknameInfo.' . ($depth1 + 1) . '.Nickname'] = $depth1Value['Nickname'];
+			$this->queryParameters['DeviceNicknameInfo.' . ($depth1 + 1) . '.DeviceName'] = $depth1Value['DeviceName'];
+			$this->queryParameters['DeviceNicknameInfo.' . ($depth1 + 1) . '.ProductKey'] = $depth1Value['ProductKey'];
+		}
+
+		return $this;
+    }
+
+    /**
+     * @param string $apiProduct
+     *
+     * @return $this
+     */
+    public function setApiProduct($apiProduct)
+    {
+        $this->requestParameters['ApiProduct'] = $apiProduct;
+        $this->queryParameters['ApiProduct'] = $apiProduct;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiRevision
+     *
+     * @return $this
+     */
+    public function setApiRevision($apiRevision)
+    {
+        $this->requestParameters['ApiRevision'] = $apiRevision;
+        $this->queryParameters['ApiRevision'] = $apiRevision;
 
         return $this;
     }

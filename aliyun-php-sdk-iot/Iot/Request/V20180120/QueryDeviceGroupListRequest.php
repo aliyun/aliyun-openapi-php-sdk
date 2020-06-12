@@ -7,11 +7,13 @@ namespace Iot\Request\V20180120;
  *
  * Request of QueryDeviceGroupList
  *
- * @method string getIotInstanceId()
  * @method string getSuperGroupId()
+ * @method string getIotInstanceId()
  * @method string getPageSize()
  * @method string getCurrentPage()
  * @method string getGroupName()
+ * @method string getApiProduct()
+ * @method string getApiRevision()
  */
 class QueryDeviceGroupListRequest extends \RpcAcsRequest
 {
@@ -35,19 +37,6 @@ class QueryDeviceGroupListRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $iotInstanceId
-     *
-     * @return $this
-     */
-    public function setIotInstanceId($iotInstanceId)
-    {
-        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
-        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
-
-        return $this;
-    }
-
-    /**
      * @param string $superGroupId
      *
      * @return $this
@@ -56,6 +45,19 @@ class QueryDeviceGroupListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SuperGroupId'] = $superGroupId;
         $this->queryParameters['SuperGroupId'] = $superGroupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
 
         return $this;
     }
@@ -95,6 +97,32 @@ class QueryDeviceGroupListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['GroupName'] = $groupName;
         $this->queryParameters['GroupName'] = $groupName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiProduct
+     *
+     * @return $this
+     */
+    public function setApiProduct($apiProduct)
+    {
+        $this->requestParameters['ApiProduct'] = $apiProduct;
+        $this->queryParameters['ApiProduct'] = $apiProduct;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiRevision
+     *
+     * @return $this
+     */
+    public function setApiRevision($apiRevision)
+    {
+        $this->requestParameters['ApiRevision'] = $apiRevision;
+        $this->queryParameters['ApiRevision'] = $apiRevision;
 
         return $this;
     }

@@ -7,10 +7,12 @@ namespace Iot\Request\V20180120;
  *
  * Request of UpdateProduct
  *
+ * @method string getDescription()
  * @method string getIotInstanceId()
  * @method string getProductName()
- * @method string getDescription()
  * @method string getProductKey()
+ * @method string getApiProduct()
+ * @method string getApiRevision()
  */
 class UpdateProductRequest extends \RpcAcsRequest
 {
@@ -31,6 +33,19 @@ class UpdateProductRequest extends \RpcAcsRequest
             'UpdateProduct',
             'iot'
         );
+    }
+
+    /**
+     * @param string $description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
+
+        return $this;
     }
 
     /**
@@ -60,19 +75,6 @@ class UpdateProductRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $description
-     *
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->requestParameters['Description'] = $description;
-        $this->queryParameters['Description'] = $description;
-
-        return $this;
-    }
-
-    /**
      * @param string $productKey
      *
      * @return $this
@@ -81,6 +83,32 @@ class UpdateProductRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ProductKey'] = $productKey;
         $this->queryParameters['ProductKey'] = $productKey;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiProduct
+     *
+     * @return $this
+     */
+    public function setApiProduct($apiProduct)
+    {
+        $this->requestParameters['ApiProduct'] = $apiProduct;
+        $this->queryParameters['ApiProduct'] = $apiProduct;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiRevision
+     *
+     * @return $this
+     */
+    public function setApiRevision($apiRevision)
+    {
+        $this->requestParameters['ApiRevision'] = $apiRevision;
+        $this->queryParameters['ApiRevision'] = $apiRevision;
 
         return $this;
     }

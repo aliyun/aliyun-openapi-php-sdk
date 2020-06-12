@@ -9,6 +9,8 @@ namespace Iot\Request\V20180120;
  *
  * @method string getIotInstanceId()
  * @method string getGroupId()
+ * @method string getApiProduct()
+ * @method string getApiRevision()
  */
 class QueryDeviceGroupInfoRequest extends \RpcAcsRequest
 {
@@ -53,6 +55,32 @@ class QueryDeviceGroupInfoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['GroupId'] = $groupId;
         $this->queryParameters['GroupId'] = $groupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiProduct
+     *
+     * @return $this
+     */
+    public function setApiProduct($apiProduct)
+    {
+        $this->requestParameters['ApiProduct'] = $apiProduct;
+        $this->queryParameters['ApiProduct'] = $apiProduct;
+
+        return $this;
+    }
+
+    /**
+     * @param string $apiRevision
+     *
+     * @return $this
+     */
+    public function setApiRevision($apiRevision)
+    {
+        $this->requestParameters['ApiRevision'] = $apiRevision;
+        $this->queryParameters['ApiRevision'] = $apiRevision;
 
         return $this;
     }
