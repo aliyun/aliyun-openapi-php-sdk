@@ -5,23 +5,19 @@ namespace Airec\Request\V20181012;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of PushDocument
+ * Request of QuerySyncReportAggregation
  *
  * @method string getInstanceId()
- * @method string getTableName()
+ * @method string getEndTime()
+ * @method string getStartTime()
  */
-class PushDocumentRequest extends \RoaAcsRequest
+class QuerySyncReportAggregationRequest extends \RoaAcsRequest
 {
 
     /**
      * @var string
      */
-    protected $uriPattern = '/openapi/instances/[InstanceId]/tables/[TableName]/actions/bulk';
-
-    /**
-     * @var string
-     */
-    protected $method = 'POST';
+    protected $uriPattern = '/openapi/instances/[InstanceId]/sync-reports/aggregation';
 
     /**
      * Class constructor.
@@ -31,7 +27,7 @@ class PushDocumentRequest extends \RoaAcsRequest
         parent::__construct(
             'Airec',
             '2018-10-12',
-            'PushDocument',
+            'QuerySyncReportAggregation',
             'airec'
         );
     }
@@ -50,14 +46,27 @@ class PushDocumentRequest extends \RoaAcsRequest
     }
 
     /**
-     * @param string $tableName
+     * @param string $endTime
      *
      * @return $this
      */
-    public function setTableName($tableName)
+    public function setEndTime($endTime)
     {
-        $this->requestParameters['TableName'] = $tableName;
-        $this->pathParameters['TableName'] = $tableName;
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
 
         return $this;
     }

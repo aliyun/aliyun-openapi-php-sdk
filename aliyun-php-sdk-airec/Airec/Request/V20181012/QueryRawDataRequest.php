@@ -5,23 +5,22 @@ namespace Airec\Request\V20181012;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of Recommend
+ * Request of QueryRawData
  *
- * @method string getReturnCount()
+ * @method string getItemId()
  * @method string getInstanceId()
- * @method string getIp()
- * @method string getSceneId()
- * @method string getImei()
+ * @method string getItemType()
+ * @method string getUserType()
  * @method string getUserId()
- * @method string getItems()
+ * @method string getTable()
  */
-class RecommendRequest extends \RoaAcsRequest
+class QueryRawDataRequest extends \RoaAcsRequest
 {
 
     /**
      * @var string
      */
-    protected $uriPattern = '/openapi/instances/[InstanceId]/actions/recommend';
+    protected $uriPattern = '/openapi/instances/[InstanceId]/tables/[Table]/raw-data';
 
     /**
      * Class constructor.
@@ -31,20 +30,20 @@ class RecommendRequest extends \RoaAcsRequest
         parent::__construct(
             'Airec',
             '2018-10-12',
-            'Recommend',
+            'QueryRawData',
             'airec'
         );
     }
 
     /**
-     * @param string $returnCount
+     * @param string $itemId
      *
      * @return $this
      */
-    public function setReturnCount($returnCount)
+    public function setItemId($itemId)
     {
-        $this->requestParameters['ReturnCount'] = $returnCount;
-        $this->queryParameters['ReturnCount'] = $returnCount;
+        $this->requestParameters['ItemId'] = $itemId;
+        $this->queryParameters['ItemId'] = $itemId;
 
         return $this;
     }
@@ -63,40 +62,27 @@ class RecommendRequest extends \RoaAcsRequest
     }
 
     /**
-     * @param string $ip
+     * @param string $itemType
      *
      * @return $this
      */
-    public function setIp($ip)
+    public function setItemType($itemType)
     {
-        $this->requestParameters['Ip'] = $ip;
-        $this->queryParameters['Ip'] = $ip;
+        $this->requestParameters['ItemType'] = $itemType;
+        $this->queryParameters['ItemType'] = $itemType;
 
         return $this;
     }
 
     /**
-     * @param string $sceneId
+     * @param string $userType
      *
      * @return $this
      */
-    public function setSceneId($sceneId)
+    public function setUserType($userType)
     {
-        $this->requestParameters['SceneId'] = $sceneId;
-        $this->queryParameters['SceneId'] = $sceneId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $imei
-     *
-     * @return $this
-     */
-    public function setImei($imei)
-    {
-        $this->requestParameters['Imei'] = $imei;
-        $this->queryParameters['Imei'] = $imei;
+        $this->requestParameters['UserType'] = $userType;
+        $this->queryParameters['UserType'] = $userType;
 
         return $this;
     }
@@ -115,14 +101,14 @@ class RecommendRequest extends \RoaAcsRequest
     }
 
     /**
-     * @param string $items
+     * @param string $table
      *
      * @return $this
      */
-    public function setItems($items)
+    public function setTable($table)
     {
-        $this->requestParameters['Items'] = $items;
-        $this->queryParameters['Items'] = $items;
+        $this->requestParameters['Table'] = $table;
+        $this->pathParameters['Table'] = $table;
 
         return $this;
     }

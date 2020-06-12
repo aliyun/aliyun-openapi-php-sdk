@@ -5,18 +5,17 @@ namespace Airec\Request\V20181012;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DescribeDataSetMessage
+ * Request of DescribeExposureSettings
  *
- * @method string getVersionId()
  * @method string getInstanceId()
  */
-class DescribeDataSetMessageRequest extends \RoaAcsRequest
+class DescribeExposureSettingsRequest extends \RoaAcsRequest
 {
 
     /**
      * @var string
      */
-    protected $uriPattern = '/openapi/instances/[InstanceId]/dataSets/[VersionId]/messages';
+    protected $uriPattern = '/openapi/instances/[InstanceId]/exposure-settings';
 
     /**
      * Class constructor.
@@ -26,22 +25,9 @@ class DescribeDataSetMessageRequest extends \RoaAcsRequest
         parent::__construct(
             'Airec',
             '2018-10-12',
-            'DescribeDataSetMessage',
+            'DescribeExposureSettings',
             'airec'
         );
-    }
-
-    /**
-     * @param string $versionId
-     *
-     * @return $this
-     */
-    public function setVersionId($versionId)
-    {
-        $this->requestParameters['VersionId'] = $versionId;
-        $this->pathParameters['VersionId'] = $versionId;
-
-        return $this;
     }
 
     /**

@@ -5,23 +5,18 @@ namespace Airec\Request\V20181012;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of PushDocument
+ * Request of QuerySingleReport
  *
  * @method string getInstanceId()
- * @method string getTableName()
+ * @method string getReportType()
  */
-class PushDocumentRequest extends \RoaAcsRequest
+class QuerySingleReportRequest extends \RoaAcsRequest
 {
 
     /**
      * @var string
      */
-    protected $uriPattern = '/openapi/instances/[InstanceId]/tables/[TableName]/actions/bulk';
-
-    /**
-     * @var string
-     */
-    protected $method = 'POST';
+    protected $uriPattern = '/openapi/instances/[InstanceId]/sync-reports/single-report';
 
     /**
      * Class constructor.
@@ -31,7 +26,7 @@ class PushDocumentRequest extends \RoaAcsRequest
         parent::__construct(
             'Airec',
             '2018-10-12',
-            'PushDocument',
+            'QuerySingleReport',
             'airec'
         );
     }
@@ -50,14 +45,14 @@ class PushDocumentRequest extends \RoaAcsRequest
     }
 
     /**
-     * @param string $tableName
+     * @param string $reportType
      *
      * @return $this
      */
-    public function setTableName($tableName)
+    public function setReportType($reportType)
     {
-        $this->requestParameters['TableName'] = $tableName;
-        $this->pathParameters['TableName'] = $tableName;
+        $this->requestParameters['ReportType'] = $reportType;
+        $this->queryParameters['ReportType'] = $reportType;
 
         return $this;
     }

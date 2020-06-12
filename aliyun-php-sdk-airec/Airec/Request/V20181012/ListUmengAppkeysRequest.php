@@ -5,21 +5,16 @@ namespace Airec\Request\V20181012;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of CreateInstance
+ * Request of ListUmengAppkeys
  *
  */
-class CreateInstanceRequest extends \RoaAcsRequest
+class ListUmengAppkeysRequest extends \RoaAcsRequest
 {
 
     /**
      * @var string
      */
-    protected $uriPattern = '/openapi/instances';
-
-    /**
-     * @var string
-     */
-    protected $method = 'POST';
+    protected $uriPattern = '/openapi/umeng/appkeys';
 
     /**
      * Class constructor.
@@ -29,7 +24,7 @@ class CreateInstanceRequest extends \RoaAcsRequest
         parent::__construct(
             'Airec',
             '2018-10-12',
-            'CreateInstance',
+            'ListUmengAppkeys',
             'airec'
         );
     }
