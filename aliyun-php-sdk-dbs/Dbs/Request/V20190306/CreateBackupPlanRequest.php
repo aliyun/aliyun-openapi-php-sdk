@@ -14,6 +14,7 @@ namespace Dbs\Request\V20190306;
  * @method string getDatabaseRegion()
  * @method string getInstanceType()
  * @method string getPeriod()
+ * @method string getFromApp()
  * @method string getOwnerId()
  * @method string getUsedTime()
  * @method string getBackupMethod()
@@ -129,6 +130,19 @@ class CreateBackupPlanRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Period'] = $period;
         $this->queryParameters['Period'] = $period;
+
+        return $this;
+    }
+
+    /**
+     * @param string $fromApp
+     *
+     * @return $this
+     */
+    public function setFromApp($fromApp)
+    {
+        $this->requestParameters['FromApp'] = $fromApp;
+        $this->queryParameters['FromApp'] = $fromApp;
 
         return $this;
     }

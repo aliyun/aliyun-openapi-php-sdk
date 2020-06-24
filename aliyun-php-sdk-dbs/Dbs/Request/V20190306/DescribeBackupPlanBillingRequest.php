@@ -5,16 +5,14 @@ namespace Dbs\Request\V20190306;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ModifyBackupStrategy
+ * Request of DescribeBackupPlanBilling
  *
  * @method string getClientToken()
  * @method string getBackupPlanId()
  * @method string getOwnerId()
- * @method string getBackupPeriod()
- * @method string getBackupStartTime()
- * @method string getBackupStrategyType()
+ * @method string getShowStorageType()
  */
-class ModifyBackupStrategyRequest extends \RpcAcsRequest
+class DescribeBackupPlanBillingRequest extends \RpcAcsRequest
 {
 
     /**
@@ -30,7 +28,7 @@ class ModifyBackupStrategyRequest extends \RpcAcsRequest
         parent::__construct(
             'Dbs',
             '2019-03-06',
-            'ModifyBackupStrategy',
+            'DescribeBackupPlanBilling',
             'cbs'
         );
     }
@@ -75,40 +73,14 @@ class ModifyBackupStrategyRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $backupPeriod
+     * @param string $showStorageType
      *
      * @return $this
      */
-    public function setBackupPeriod($backupPeriod)
+    public function setShowStorageType($showStorageType)
     {
-        $this->requestParameters['BackupPeriod'] = $backupPeriod;
-        $this->queryParameters['BackupPeriod'] = $backupPeriod;
-
-        return $this;
-    }
-
-    /**
-     * @param string $backupStartTime
-     *
-     * @return $this
-     */
-    public function setBackupStartTime($backupStartTime)
-    {
-        $this->requestParameters['BackupStartTime'] = $backupStartTime;
-        $this->queryParameters['BackupStartTime'] = $backupStartTime;
-
-        return $this;
-    }
-
-    /**
-     * @param string $backupStrategyType
-     *
-     * @return $this
-     */
-    public function setBackupStrategyType($backupStrategyType)
-    {
-        $this->requestParameters['BackupStrategyType'] = $backupStrategyType;
-        $this->queryParameters['BackupStrategyType'] = $backupStrategyType;
+        $this->requestParameters['ShowStorageType'] = $showStorageType;
+        $this->queryParameters['ShowStorageType'] = $showStorageType;
 
         return $this;
     }

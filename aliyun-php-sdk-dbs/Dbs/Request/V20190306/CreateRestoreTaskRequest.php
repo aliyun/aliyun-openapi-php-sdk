@@ -12,12 +12,14 @@ namespace Dbs\Request\V20190306;
  * @method string getClientToken()
  * @method string getBackupPlanId()
  * @method string getDestinationEndpointRegion()
+ * @method string getCrossRoleName()
  * @method string getDestinationEndpointUserName()
  * @method string getRestoreObjects()
  * @method string getRestoreTaskName()
  * @method string getRestoreHome()
  * @method string getDestinationEndpointOracleSID()
  * @method string getRestoreTime()
+ * @method string getCrossAliyunId()
  * @method string getDestinationEndpointInstanceID()
  * @method string getDestinationEndpointPort()
  * @method string getBackupSetId()
@@ -115,6 +117,19 @@ class CreateRestoreTaskRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $crossRoleName
+     *
+     * @return $this
+     */
+    public function setCrossRoleName($crossRoleName)
+    {
+        $this->requestParameters['CrossRoleName'] = $crossRoleName;
+        $this->queryParameters['CrossRoleName'] = $crossRoleName;
+
+        return $this;
+    }
+
+    /**
      * @param string $destinationEndpointUserName
      *
      * @return $this
@@ -188,6 +203,19 @@ class CreateRestoreTaskRequest extends \RpcAcsRequest
     {
         $this->requestParameters['RestoreTime'] = $restoreTime;
         $this->queryParameters['RestoreTime'] = $restoreTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $crossAliyunId
+     *
+     * @return $this
+     */
+    public function setCrossAliyunId($crossAliyunId)
+    {
+        $this->requestParameters['CrossAliyunId'] = $crossAliyunId;
+        $this->queryParameters['CrossAliyunId'] = $crossAliyunId;
 
         return $this;
     }

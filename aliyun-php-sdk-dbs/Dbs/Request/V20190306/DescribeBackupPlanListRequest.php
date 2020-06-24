@@ -11,6 +11,8 @@ namespace Dbs\Request\V20190306;
  * @method string getBackupPlanId()
  * @method string getPageNum()
  * @method string getOwnerId()
+ * @method string getBackupPlanStatus()
+ * @method string getBackupPlanName()
  * @method string getPageSize()
  * @method string getRegion()
  */
@@ -83,6 +85,32 @@ class DescribeBackupPlanListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $backupPlanStatus
+     *
+     * @return $this
+     */
+    public function setBackupPlanStatus($backupPlanStatus)
+    {
+        $this->requestParameters['BackupPlanStatus'] = $backupPlanStatus;
+        $this->queryParameters['BackupPlanStatus'] = $backupPlanStatus;
+
+        return $this;
+    }
+
+    /**
+     * @param string $backupPlanName
+     *
+     * @return $this
+     */
+    public function setBackupPlanName($backupPlanName)
+    {
+        $this->requestParameters['BackupPlanName'] = $backupPlanName;
+        $this->queryParameters['BackupPlanName'] = $backupPlanName;
 
         return $this;
     }

@@ -17,19 +17,23 @@ namespace Dbs\Request\V20190306;
  * @method string getDuplicationInfrequentAccessPeriod()
  * @method string getBackupStartTime()
  * @method string getSourceEndpointIP()
+ * @method string getCrossRoleName()
  * @method string getEnableBackupLog()
  * @method string getBackupStorageType()
  * @method string getDuplicationArchivePeriod()
+ * @method string getCrossAliyunId()
  * @method string getSourceEndpointPassword()
  * @method string getBackupObjects()
  * @method string getOwnerId()
  * @method string getSourceEndpointPort()
  * @method string getBackupRetentionPeriod()
  * @method string getBackupPeriod()
+ * @method string getBackupSpeedLimit()
  * @method string getSourceEndpointInstanceType()
  * @method string getBackupPlanName()
  * @method string getSourceEndpointOracleSID()
  * @method string getOSSBucketName()
+ * @method string getBackupStrategyType()
  */
 class ConfigureBackupPlanRequest extends \RpcAcsRequest
 {
@@ -183,6 +187,19 @@ class ConfigureBackupPlanRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $crossRoleName
+     *
+     * @return $this
+     */
+    public function setCrossRoleName($crossRoleName)
+    {
+        $this->requestParameters['CrossRoleName'] = $crossRoleName;
+        $this->queryParameters['CrossRoleName'] = $crossRoleName;
+
+        return $this;
+    }
+
+    /**
      * @param string $enableBackupLog
      *
      * @return $this
@@ -217,6 +234,19 @@ class ConfigureBackupPlanRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DuplicationArchivePeriod'] = $duplicationArchivePeriod;
         $this->queryParameters['DuplicationArchivePeriod'] = $duplicationArchivePeriod;
+
+        return $this;
+    }
+
+    /**
+     * @param string $crossAliyunId
+     *
+     * @return $this
+     */
+    public function setCrossAliyunId($crossAliyunId)
+    {
+        $this->requestParameters['CrossAliyunId'] = $crossAliyunId;
+        $this->queryParameters['CrossAliyunId'] = $crossAliyunId;
 
         return $this;
     }
@@ -300,6 +330,19 @@ class ConfigureBackupPlanRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $backupSpeedLimit
+     *
+     * @return $this
+     */
+    public function setBackupSpeedLimit($backupSpeedLimit)
+    {
+        $this->requestParameters['BackupSpeedLimit'] = $backupSpeedLimit;
+        $this->queryParameters['BackupSpeedLimit'] = $backupSpeedLimit;
+
+        return $this;
+    }
+
+    /**
      * @param string $sourceEndpointInstanceType
      *
      * @return $this
@@ -347,6 +390,19 @@ class ConfigureBackupPlanRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OSSBucketName'] = $oSSBucketName;
         $this->queryParameters['OSSBucketName'] = $oSSBucketName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $backupStrategyType
+     *
+     * @return $this
+     */
+    public function setBackupStrategyType($backupStrategyType)
+    {
+        $this->requestParameters['BackupStrategyType'] = $backupStrategyType;
+        $this->queryParameters['BackupStrategyType'] = $backupStrategyType;
 
         return $this;
     }

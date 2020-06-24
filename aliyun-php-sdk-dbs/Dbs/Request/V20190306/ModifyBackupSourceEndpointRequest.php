@@ -15,6 +15,8 @@ namespace Dbs\Request\V20190306;
  * @method string getBackupPlanId()
  * @method string getSourceEndpointDatabaseName()
  * @method string getSourceEndpointIP()
+ * @method string getCrossRoleName()
+ * @method string getCrossAliyunId()
  * @method string getSourceEndpointPassword()
  * @method string getBackupObjects()
  * @method string getOwnerId()
@@ -143,6 +145,32 @@ class ModifyBackupSourceEndpointRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SourceEndpointIP'] = $sourceEndpointIP;
         $this->queryParameters['SourceEndpointIP'] = $sourceEndpointIP;
+
+        return $this;
+    }
+
+    /**
+     * @param string $crossRoleName
+     *
+     * @return $this
+     */
+    public function setCrossRoleName($crossRoleName)
+    {
+        $this->requestParameters['CrossRoleName'] = $crossRoleName;
+        $this->queryParameters['CrossRoleName'] = $crossRoleName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $crossAliyunId
+     *
+     * @return $this
+     */
+    public function setCrossAliyunId($crossAliyunId)
+    {
+        $this->requestParameters['CrossAliyunId'] = $crossAliyunId;
+        $this->queryParameters['CrossAliyunId'] = $crossAliyunId;
 
         return $this;
     }
