@@ -30,7 +30,8 @@ class GetInstanceSummaryReportByIntervalRequest extends \RpcAcsRequest
         parent::__construct(
             'CCC',
             '2017-07-05',
-            'GetInstanceSummaryReportByInterval'
+            'GetInstanceSummaryReportByInterval',
+            'CCC'
         );
     }
 

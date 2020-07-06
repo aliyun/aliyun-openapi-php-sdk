@@ -8,6 +8,7 @@ namespace CCC\Request\V20170705;
  * Request of ResetUserStatus
  *
  * @method string getInstanceId()
+ * @method array getRamIdLists()
  */
 class ResetUserStatusRequest extends \RpcAcsRequest
 {
@@ -25,7 +26,8 @@ class ResetUserStatusRequest extends \RpcAcsRequest
         parent::__construct(
             'CCC',
             '2017-07-05',
-            'ResetUserStatus'
+            'ResetUserStatus',
+            'CCC'
         );
     }
 
@@ -40,5 +42,20 @@ class ResetUserStatusRequest extends \RpcAcsRequest
         $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
+    }
+
+    /**
+     * @param array $ramIdList
+     *
+     * @return $this
+     */
+	public function setRamIdLists(array $ramIdList)
+	{
+	    $this->requestParameters['RamIdLists'] = $ramIdList;
+		foreach ($ramIdList as $i => $iValue) {
+			$this->queryParameters['RamIdList.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
     }
 }

@@ -27,7 +27,8 @@ class PublishSurveyRequest extends \RpcAcsRequest
         parent::__construct(
             'CCC',
             '2017-07-05',
-            'PublishSurvey'
+            'PublishSurvey',
+            'CCC'
         );
     }
 

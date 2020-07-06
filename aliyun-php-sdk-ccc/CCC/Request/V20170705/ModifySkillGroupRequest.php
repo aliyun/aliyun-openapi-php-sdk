@@ -33,7 +33,8 @@ class ModifySkillGroupRequest extends \RpcAcsRequest
         parent::__construct(
             'CCC',
             '2017-07-05',
-            'ModifySkillGroup'
+            'ModifySkillGroup',
+            'CCC'
         );
     }
 

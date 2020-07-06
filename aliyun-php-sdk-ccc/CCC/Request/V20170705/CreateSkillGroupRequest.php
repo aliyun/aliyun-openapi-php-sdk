@@ -32,7 +32,8 @@ class CreateSkillGroupRequest extends \RpcAcsRequest
         parent::__construct(
             'CCC',
             '2017-07-05',
-            'CreateSkillGroup'
+            'CreateSkillGroup',
+            'CCC'
         );
     }
 

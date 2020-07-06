@@ -8,16 +8,16 @@ namespace CCC\Request\V20170705;
  * Request of Dialogue
  *
  * @method string getCallId()
- * @method string getActionParams()
- * @method string getCallingNumber()
- * @method string getInstanceId()
  * @method string getCalledNumber()
  * @method string getInstanceOwnerId()
- * @method string getActionKey()
  * @method string getCallType()
  * @method string getScenarioId()
  * @method string getTaskId()
  * @method string getUtterance()
+ * @method string getActionParams()
+ * @method string getCallingNumber()
+ * @method string getInstanceId()
+ * @method string getActionKey()
  */
 class DialogueRequest extends \RpcAcsRequest
 {
@@ -35,7 +35,8 @@ class DialogueRequest extends \RpcAcsRequest
         parent::__construct(
             'CCC',
             '2017-07-05',
-            'Dialogue'
+            'Dialogue',
+            'CCC'
         );
     }
 
@@ -48,45 +49,6 @@ class DialogueRequest extends \RpcAcsRequest
     {
         $this->requestParameters['CallId'] = $callId;
         $this->queryParameters['CallId'] = $callId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $actionParams
-     *
-     * @return $this
-     */
-    public function setActionParams($actionParams)
-    {
-        $this->requestParameters['ActionParams'] = $actionParams;
-        $this->queryParameters['ActionParams'] = $actionParams;
-
-        return $this;
-    }
-
-    /**
-     * @param string $callingNumber
-     *
-     * @return $this
-     */
-    public function setCallingNumber($callingNumber)
-    {
-        $this->requestParameters['CallingNumber'] = $callingNumber;
-        $this->queryParameters['CallingNumber'] = $callingNumber;
-
-        return $this;
-    }
-
-    /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }
@@ -113,19 +75,6 @@ class DialogueRequest extends \RpcAcsRequest
     {
         $this->requestParameters['InstanceOwnerId'] = $instanceOwnerId;
         $this->queryParameters['InstanceOwnerId'] = $instanceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $actionKey
-     *
-     * @return $this
-     */
-    public function setActionKey($actionKey)
-    {
-        $this->requestParameters['ActionKey'] = $actionKey;
-        $this->queryParameters['ActionKey'] = $actionKey;
 
         return $this;
     }
@@ -178,6 +127,58 @@ class DialogueRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Utterance'] = $utterance;
         $this->queryParameters['Utterance'] = $utterance;
+
+        return $this;
+    }
+
+    /**
+     * @param string $actionParams
+     *
+     * @return $this
+     */
+    public function setActionParams($actionParams)
+    {
+        $this->requestParameters['ActionParams'] = $actionParams;
+        $this->queryParameters['ActionParams'] = $actionParams;
+
+        return $this;
+    }
+
+    /**
+     * @param string $callingNumber
+     *
+     * @return $this
+     */
+    public function setCallingNumber($callingNumber)
+    {
+        $this->requestParameters['CallingNumber'] = $callingNumber;
+        $this->queryParameters['CallingNumber'] = $callingNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $actionKey
+     *
+     * @return $this
+     */
+    public function setActionKey($actionKey)
+    {
+        $this->requestParameters['ActionKey'] = $actionKey;
+        $this->queryParameters['ActionKey'] = $actionKey;
 
         return $this;
     }

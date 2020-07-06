@@ -33,7 +33,8 @@ class CreateUserRequest extends \RpcAcsRequest
         parent::__construct(
             'CCC',
             '2017-07-05',
-            'CreateUser'
+            'CreateUser',
+            'CCC'
         );
     }
 

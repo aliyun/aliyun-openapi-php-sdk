@@ -29,7 +29,8 @@ class StartBack2BackCallRequest extends \RpcAcsRequest
         parent::__construct(
             'CCC',
             '2017-07-05',
-            'StartBack2BackCall'
+            'StartBack2BackCall',
+            'CCC'
         );
     }
 

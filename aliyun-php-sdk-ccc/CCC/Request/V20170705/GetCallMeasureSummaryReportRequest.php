@@ -30,7 +30,8 @@ class GetCallMeasureSummaryReportRequest extends \RpcAcsRequest
         parent::__construct(
             'CCC',
             '2017-07-05',
-            'GetCallMeasureSummaryReport'
+            'GetCallMeasureSummaryReport',
+            'CCC'
         );
     }
 

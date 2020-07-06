@@ -28,7 +28,8 @@ class ModifySkillGroupOutboundNumbersRequest extends \RpcAcsRequest
         parent::__construct(
             'CCC',
             '2017-07-05',
-            'ModifySkillGroupOutboundNumbers'
+            'ModifySkillGroupOutboundNumbers',
+            'CCC'
         );
     }
 

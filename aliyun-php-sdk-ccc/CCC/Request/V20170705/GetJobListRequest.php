@@ -30,7 +30,8 @@ class GetJobListRequest extends \RpcAcsRequest
         parent::__construct(
             'CCC',
             '2017-07-05',
-            'GetJobList'
+            'GetJobList',
+            'CCC'
         );
     }
 

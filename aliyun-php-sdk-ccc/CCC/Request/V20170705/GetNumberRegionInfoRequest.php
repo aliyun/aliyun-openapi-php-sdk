@@ -26,7 +26,8 @@ class GetNumberRegionInfoRequest extends \RpcAcsRequest
         parent::__construct(
             'CCC',
             '2017-07-05',
-            'GetNumberRegionInfo'
+            'GetNumberRegionInfo',
+            'CCC'
         );
     }
 

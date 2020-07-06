@@ -27,7 +27,8 @@ class RemoveUsersFromSkillGroupRequest extends \RpcAcsRequest
         parent::__construct(
             'CCC',
             '2017-07-05',
-            'RemoveUsersFromSkillGroup'
+            'RemoveUsersFromSkillGroup',
+            'CCC'
         );
     }
 

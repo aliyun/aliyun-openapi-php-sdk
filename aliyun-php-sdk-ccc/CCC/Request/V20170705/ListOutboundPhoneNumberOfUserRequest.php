@@ -7,8 +7,10 @@ namespace CCC\Request\V20170705;
  *
  * Request of ListOutboundPhoneNumberOfUser
  *
- * @method string getInstanceId()
  * @method string getUserId()
+ * @method string getPageNumber()
+ * @method string getInstanceId()
+ * @method string getPageSize()
  */
 class ListOutboundPhoneNumberOfUserRequest extends \RpcAcsRequest
 {
@@ -26,8 +28,35 @@ class ListOutboundPhoneNumberOfUserRequest extends \RpcAcsRequest
         parent::__construct(
             'CCC',
             '2017-07-05',
-            'ListOutboundPhoneNumberOfUser'
+            'ListOutboundPhoneNumberOfUser',
+            'CCC'
         );
+    }
+
+    /**
+     * @param string $userId
+     *
+     * @return $this
+     */
+    public function setUserId($userId)
+    {
+        $this->requestParameters['UserId'] = $userId;
+        $this->queryParameters['UserId'] = $userId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
     }
 
     /**
@@ -44,14 +73,14 @@ class ListOutboundPhoneNumberOfUserRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $userId
+     * @param string $pageSize
      *
      * @return $this
      */
-    public function setUserId($userId)
+    public function setPageSize($pageSize)
     {
-        $this->requestParameters['UserId'] = $userId;
-        $this->queryParameters['UserId'] = $userId;
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }
