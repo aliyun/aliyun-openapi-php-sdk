@@ -22,6 +22,7 @@ namespace Dbs\Request\V20190306;
  * @method string getBackupStorageType()
  * @method string getDuplicationArchivePeriod()
  * @method string getCrossAliyunId()
+ * @method string getAutoStartBackup()
  * @method string getSourceEndpointPassword()
  * @method string getBackupObjects()
  * @method string getOwnerId()
@@ -247,6 +248,19 @@ class ConfigureBackupPlanRequest extends \RpcAcsRequest
     {
         $this->requestParameters['CrossAliyunId'] = $crossAliyunId;
         $this->queryParameters['CrossAliyunId'] = $crossAliyunId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $autoStartBackup
+     *
+     * @return $this
+     */
+    public function setAutoStartBackup($autoStartBackup)
+    {
+        $this->requestParameters['AutoStartBackup'] = $autoStartBackup;
+        $this->queryParameters['AutoStartBackup'] = $autoStartBackup;
 
         return $this;
     }

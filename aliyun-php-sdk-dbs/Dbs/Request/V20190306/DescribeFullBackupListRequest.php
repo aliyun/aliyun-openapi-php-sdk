@@ -9,6 +9,7 @@ namespace Dbs\Request\V20190306;
  *
  * @method string getClientToken()
  * @method string getBackupPlanId()
+ * @method string getBackupSetId()
  * @method string getPageNum()
  * @method string getOwnerId()
  * @method string getShowStorageType()
@@ -57,6 +58,19 @@ class DescribeFullBackupListRequest extends \RpcAcsRequest
     {
         $this->requestParameters['BackupPlanId'] = $backupPlanId;
         $this->queryParameters['BackupPlanId'] = $backupPlanId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $backupSetId
+     *
+     * @return $this
+     */
+    public function setBackupSetId($backupSetId)
+    {
+        $this->requestParameters['BackupSetId'] = $backupSetId;
+        $this->queryParameters['BackupSetId'] = $backupSetId;
 
         return $this;
     }

@@ -12,6 +12,7 @@ namespace Dbs\Request\V20190306;
  * @method string getClientToken()
  * @method string getBackupPlanId()
  * @method string getOwnerId()
+ * @method string getRecentlyRestore()
  */
 class DescribeRestoreRangeInfoRequest extends \RpcAcsRequest
 {
@@ -95,6 +96,19 @@ class DescribeRestoreRangeInfoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $recentlyRestore
+     *
+     * @return $this
+     */
+    public function setRecentlyRestore($recentlyRestore)
+    {
+        $this->requestParameters['RecentlyRestore'] = $recentlyRestore;
+        $this->queryParameters['RecentlyRestore'] = $recentlyRestore;
 
         return $this;
     }
