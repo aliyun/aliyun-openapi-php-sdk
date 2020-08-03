@@ -5,15 +5,14 @@ namespace Green\Request\V20170823;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of CreateBizType
+ * Request of DescribeBizTypeImageLib
  *
- * @method string getBizTypeImport()
- * @method string getCiteTemplate()
+ * @method string getResourceType()
+ * @method string getScene()
  * @method string getSourceIp()
- * @method string getIndustryInfo()
  * @method string getBizTypeName()
  */
-class CreateBizTypeRequest extends \RpcAcsRequest
+class DescribeBizTypeImageLibRequest extends \RpcAcsRequest
 {
 
     /**
@@ -29,33 +28,33 @@ class CreateBizTypeRequest extends \RpcAcsRequest
         parent::__construct(
             'Green',
             '2017-08-23',
-            'CreateBizType',
+            'DescribeBizTypeImageLib',
             'green'
         );
     }
 
     /**
-     * @param string $bizTypeImport
+     * @param string $resourceType
      *
      * @return $this
      */
-    public function setBizTypeImport($bizTypeImport)
+    public function setResourceType($resourceType)
     {
-        $this->requestParameters['BizTypeImport'] = $bizTypeImport;
-        $this->queryParameters['BizTypeImport'] = $bizTypeImport;
+        $this->requestParameters['ResourceType'] = $resourceType;
+        $this->queryParameters['ResourceType'] = $resourceType;
 
         return $this;
     }
 
     /**
-     * @param string $citeTemplate
+     * @param string $scene
      *
      * @return $this
      */
-    public function setCiteTemplate($citeTemplate)
+    public function setScene($scene)
     {
-        $this->requestParameters['CiteTemplate'] = $citeTemplate;
-        $this->queryParameters['CiteTemplate'] = $citeTemplate;
+        $this->requestParameters['Scene'] = $scene;
+        $this->queryParameters['Scene'] = $scene;
 
         return $this;
     }
@@ -69,19 +68,6 @@ class CreateBizTypeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SourceIp'] = $sourceIp;
         $this->queryParameters['SourceIp'] = $sourceIp;
-
-        return $this;
-    }
-
-    /**
-     * @param string $industryInfo
-     *
-     * @return $this
-     */
-    public function setIndustryInfo($industryInfo)
-    {
-        $this->requestParameters['IndustryInfo'] = $industryInfo;
-        $this->queryParameters['IndustryInfo'] = $industryInfo;
 
         return $this;
     }
