@@ -5,12 +5,12 @@ namespace CCC\Request\V20170705;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of RequestLoginInfo
+ * Request of GetUserByExtension
  *
+ * @method string getExtension()
  * @method string getInstanceId()
- * @method string getUserId()
  */
-class RequestLoginInfoRequest extends \RpcAcsRequest
+class GetUserByExtensionRequest extends \RpcAcsRequest
 {
 
     /**
@@ -26,9 +26,22 @@ class RequestLoginInfoRequest extends \RpcAcsRequest
         parent::__construct(
             'CCC',
             '2017-07-05',
-            'RequestLoginInfo',
+            'GetUserByExtension',
             'CCC'
         );
+    }
+
+    /**
+     * @param string $extension
+     *
+     * @return $this
+     */
+    public function setExtension($extension)
+    {
+        $this->requestParameters['Extension'] = $extension;
+        $this->queryParameters['Extension'] = $extension;
+
+        return $this;
     }
 
     /**
@@ -40,19 +53,6 @@ class RequestLoginInfoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['InstanceId'] = $instanceId;
         $this->queryParameters['InstanceId'] = $instanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $userId
-     *
-     * @return $this
-     */
-    public function setUserId($userId)
-    {
-        $this->requestParameters['UserId'] = $userId;
-        $this->queryParameters['UserId'] = $userId;
 
         return $this;
     }

@@ -5,12 +5,12 @@ namespace CCC\Request\V20170705;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of RequestLoginInfo
+ * Request of ListTrunksOfSkillGroup
  *
  * @method string getInstanceId()
- * @method string getUserId()
+ * @method string getSkillGroupId()
  */
-class RequestLoginInfoRequest extends \RpcAcsRequest
+class ListTrunksOfSkillGroupRequest extends \RpcAcsRequest
 {
 
     /**
@@ -26,7 +26,7 @@ class RequestLoginInfoRequest extends \RpcAcsRequest
         parent::__construct(
             'CCC',
             '2017-07-05',
-            'RequestLoginInfo',
+            'ListTrunksOfSkillGroup',
             'CCC'
         );
     }
@@ -45,14 +45,14 @@ class RequestLoginInfoRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $userId
+     * @param string $skillGroupId
      *
      * @return $this
      */
-    public function setUserId($userId)
+    public function setSkillGroupId($skillGroupId)
     {
-        $this->requestParameters['UserId'] = $userId;
-        $this->queryParameters['UserId'] = $userId;
+        $this->requestParameters['SkillGroupId'] = $skillGroupId;
+        $this->queryParameters['SkillGroupId'] = $skillGroupId;
 
         return $this;
     }
