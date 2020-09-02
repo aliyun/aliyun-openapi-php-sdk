@@ -13,6 +13,7 @@ namespace Push\Request\V20160801;
  * @method string getDeviceType()
  * @method string getPushTime()
  * @method string getSendSpeed()
+ * @method string getAndroidNotificationHuaweiChannel()
  * @method string getAndroidPopupActivity()
  * @method string getiOSRemindBody()
  * @method string getAndroidNotifyType()
@@ -148,6 +149,19 @@ class PushRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SendSpeed'] = $sendSpeed;
         $this->queryParameters['SendSpeed'] = $sendSpeed;
+
+        return $this;
+    }
+
+    /**
+     * @param string $androidNotificationHuaweiChannel
+     *
+     * @return $this
+     */
+    public function setAndroidNotificationHuaweiChannel($androidNotificationHuaweiChannel)
+    {
+        $this->requestParameters['AndroidNotificationHuaweiChannel'] = $androidNotificationHuaweiChannel;
+        $this->queryParameters['AndroidNotificationHuaweiChannel'] = $androidNotificationHuaweiChannel;
 
         return $this;
     }

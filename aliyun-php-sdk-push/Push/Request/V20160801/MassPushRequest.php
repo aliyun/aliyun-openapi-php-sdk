@@ -49,6 +49,7 @@ class MassPushRequest extends \RpcAcsRequest
 			$this->queryParameters['PushTask.' . ($depth1 + 1) . '.DeviceType'] = $depth1Value['DeviceType'];
 			$this->queryParameters['PushTask.' . ($depth1 + 1) . '.PushTime'] = $depth1Value['PushTime'];
 			$this->queryParameters['PushTask.' . ($depth1 + 1) . '.SendSpeed'] = $depth1Value['SendSpeed'];
+			$this->queryParameters['PushTask.' . ($depth1 + 1) . '.AndroidNotificationHuaweiChannel'] = $depth1Value['AndroidNotificationHuaweiChannel'];
 			$this->queryParameters['PushTask.' . ($depth1 + 1) . '.AndroidPopupActivity'] = $depth1Value['AndroidPopupActivity'];
 			$this->queryParameters['PushTask.' . ($depth1 + 1) . '.iOSRemindBody'] = $depth1Value['IOSRemindBody'];
 			$this->queryParameters['PushTask.' . ($depth1 + 1) . '.iOSExtParameters'] = $depth1Value['IOSExtParameters'];
