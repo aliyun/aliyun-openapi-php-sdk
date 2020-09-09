@@ -13,6 +13,7 @@ namespace vod\Request\V20170321;
  * @method string getOwnerId()
  * @method string getMediaId()
  * @method string getTemplateId()
+ * @method string getMediaAuditConfiguration()
  * @method string getMediaType()
  */
 class SubmitAIMediaAuditJobRequest extends \RpcAcsRequest
@@ -110,6 +111,19 @@ class SubmitAIMediaAuditJobRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TemplateId'] = $templateId;
         $this->queryParameters['TemplateId'] = $templateId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $mediaAuditConfiguration
+     *
+     * @return $this
+     */
+    public function setMediaAuditConfiguration($mediaAuditConfiguration)
+    {
+        $this->requestParameters['MediaAuditConfiguration'] = $mediaAuditConfiguration;
+        $this->queryParameters['MediaAuditConfiguration'] = $mediaAuditConfiguration;
 
         return $this;
     }

@@ -12,6 +12,7 @@ namespace vod\Request\V20170321;
  * @method string getSecurityToken()
  * @method string getCdnType()
  * @method string getPageSize()
+ * @method array getTags()
  * @method string getFuncFilter()
  * @method string getDomainName()
  * @method string getOwnerId()
@@ -103,6 +104,22 @@ class DescribeVodUserDomainsRequest extends \RpcAcsRequest
         $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
+    }
+
+    /**
+     * @param array $tag
+     *
+     * @return $this
+     */
+	public function setTags(array $tag)
+	{
+	    $this->requestParameters['Tags'] = $tag;
+		foreach ($tag as $depth1 => $depth1Value) {
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+		}
+
+		return $this;
     }
 
     /**
