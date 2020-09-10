@@ -5,17 +5,16 @@ namespace Dbs\Request\V20190306;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ModifyBackupStrategy
+ * Request of ModifyStorageStrategy
  *
- * @method string getBackupLogIntervalSeconds()
+ * @method string getDuplicationArchivePeriod()
  * @method string getClientToken()
  * @method string getBackupPlanId()
  * @method string getOwnerId()
- * @method string getBackupPeriod()
- * @method string getBackupStartTime()
- * @method string getBackupStrategyType()
+ * @method string getBackupRetentionPeriod()
+ * @method string getDuplicationInfrequentAccessPeriod()
  */
-class ModifyBackupStrategyRequest extends \RpcAcsRequest
+class ModifyStorageStrategyRequest extends \RpcAcsRequest
 {
 
     /**
@@ -31,20 +30,20 @@ class ModifyBackupStrategyRequest extends \RpcAcsRequest
         parent::__construct(
             'Dbs',
             '2019-03-06',
-            'ModifyBackupStrategy',
+            'ModifyStorageStrategy',
             'cbs'
         );
     }
 
     /**
-     * @param string $backupLogIntervalSeconds
+     * @param string $duplicationArchivePeriod
      *
      * @return $this
      */
-    public function setBackupLogIntervalSeconds($backupLogIntervalSeconds)
+    public function setDuplicationArchivePeriod($duplicationArchivePeriod)
     {
-        $this->requestParameters['BackupLogIntervalSeconds'] = $backupLogIntervalSeconds;
-        $this->queryParameters['BackupLogIntervalSeconds'] = $backupLogIntervalSeconds;
+        $this->requestParameters['DuplicationArchivePeriod'] = $duplicationArchivePeriod;
+        $this->queryParameters['DuplicationArchivePeriod'] = $duplicationArchivePeriod;
 
         return $this;
     }
@@ -89,40 +88,27 @@ class ModifyBackupStrategyRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $backupPeriod
+     * @param string $backupRetentionPeriod
      *
      * @return $this
      */
-    public function setBackupPeriod($backupPeriod)
+    public function setBackupRetentionPeriod($backupRetentionPeriod)
     {
-        $this->requestParameters['BackupPeriod'] = $backupPeriod;
-        $this->queryParameters['BackupPeriod'] = $backupPeriod;
+        $this->requestParameters['BackupRetentionPeriod'] = $backupRetentionPeriod;
+        $this->queryParameters['BackupRetentionPeriod'] = $backupRetentionPeriod;
 
         return $this;
     }
 
     /**
-     * @param string $backupStartTime
+     * @param string $duplicationInfrequentAccessPeriod
      *
      * @return $this
      */
-    public function setBackupStartTime($backupStartTime)
+    public function setDuplicationInfrequentAccessPeriod($duplicationInfrequentAccessPeriod)
     {
-        $this->requestParameters['BackupStartTime'] = $backupStartTime;
-        $this->queryParameters['BackupStartTime'] = $backupStartTime;
-
-        return $this;
-    }
-
-    /**
-     * @param string $backupStrategyType
-     *
-     * @return $this
-     */
-    public function setBackupStrategyType($backupStrategyType)
-    {
-        $this->requestParameters['BackupStrategyType'] = $backupStrategyType;
-        $this->queryParameters['BackupStrategyType'] = $backupStrategyType;
+        $this->requestParameters['DuplicationInfrequentAccessPeriod'] = $duplicationInfrequentAccessPeriod;
+        $this->queryParameters['DuplicationInfrequentAccessPeriod'] = $duplicationInfrequentAccessPeriod;
 
         return $this;
     }

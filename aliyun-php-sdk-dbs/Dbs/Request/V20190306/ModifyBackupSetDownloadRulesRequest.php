@@ -15,6 +15,7 @@ namespace Dbs\Request\V20190306;
  * @method string getOwnerId()
  * @method string getOpenAutoDownload()
  * @method string getIncrementDataFormat()
+ * @method string getBackupSetDownloadTargetTypeLocation()
  * @method string getBackupSetDownloadDir()
  */
 class ModifyBackupSetDownloadRulesRequest extends \RpcAcsRequest
@@ -138,6 +139,19 @@ class ModifyBackupSetDownloadRulesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['IncrementDataFormat'] = $incrementDataFormat;
         $this->queryParameters['IncrementDataFormat'] = $incrementDataFormat;
+
+        return $this;
+    }
+
+    /**
+     * @param string $backupSetDownloadTargetTypeLocation
+     *
+     * @return $this
+     */
+    public function setBackupSetDownloadTargetTypeLocation($backupSetDownloadTargetTypeLocation)
+    {
+        $this->requestParameters['BackupSetDownloadTargetTypeLocation'] = $backupSetDownloadTargetTypeLocation;
+        $this->queryParameters['BackupSetDownloadTargetTypeLocation'] = $backupSetDownloadTargetTypeLocation;
 
         return $this;
     }
