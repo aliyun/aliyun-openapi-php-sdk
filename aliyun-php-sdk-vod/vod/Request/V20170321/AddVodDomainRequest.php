@@ -10,6 +10,7 @@ namespace vod\Request\V20170321;
  * @method string getSources()
  * @method string getSecurityToken()
  * @method string getScope()
+ * @method string getTopLevelDomain()
  * @method string getOwnerAccount()
  * @method string getDomainName()
  * @method string getOwnerId()
@@ -71,6 +72,19 @@ class AddVodDomainRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Scope'] = $scope;
         $this->queryParameters['Scope'] = $scope;
+
+        return $this;
+    }
+
+    /**
+     * @param string $topLevelDomain
+     *
+     * @return $this
+     */
+    public function setTopLevelDomain($topLevelDomain)
+    {
+        $this->requestParameters['TopLevelDomain'] = $topLevelDomain;
+        $this->queryParameters['TopLevelDomain'] = $topLevelDomain;
 
         return $this;
     }
