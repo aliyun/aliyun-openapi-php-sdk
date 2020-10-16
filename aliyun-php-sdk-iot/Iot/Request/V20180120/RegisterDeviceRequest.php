@@ -7,14 +7,17 @@ namespace Iot\Request\V20180120;
  *
  * Request of RegisterDevice
  *
+ * @method string getLoraNodeType()
  * @method string getIotInstanceId()
  * @method string getNickname()
  * @method string getPinCode()
  * @method string getProductKey()
  * @method string getDevEui()
+ * @method string getJoinEui()
  * @method string getApiProduct()
  * @method string getApiRevision()
  * @method string getDeviceName()
+ * @method string getAppKey()
  */
 class RegisterDeviceRequest extends \RpcAcsRequest
 {
@@ -35,6 +38,19 @@ class RegisterDeviceRequest extends \RpcAcsRequest
             'RegisterDevice',
             'iot'
         );
+    }
+
+    /**
+     * @param string $loraNodeType
+     *
+     * @return $this
+     */
+    public function setLoraNodeType($loraNodeType)
+    {
+        $this->requestParameters['LoraNodeType'] = $loraNodeType;
+        $this->queryParameters['LoraNodeType'] = $loraNodeType;
+
+        return $this;
     }
 
     /**
@@ -103,6 +119,19 @@ class RegisterDeviceRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $joinEui
+     *
+     * @return $this
+     */
+    public function setJoinEui($joinEui)
+    {
+        $this->requestParameters['JoinEui'] = $joinEui;
+        $this->queryParameters['JoinEui'] = $joinEui;
+
+        return $this;
+    }
+
+    /**
      * @param string $apiProduct
      *
      * @return $this
@@ -137,6 +166,19 @@ class RegisterDeviceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DeviceName'] = $deviceName;
         $this->queryParameters['DeviceName'] = $deviceName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $appKey
+     *
+     * @return $this
+     */
+    public function setAppKey($appKey)
+    {
+        $this->requestParameters['AppKey'] = $appKey;
+        $this->queryParameters['AppKey'] = $appKey;
 
         return $this;
     }

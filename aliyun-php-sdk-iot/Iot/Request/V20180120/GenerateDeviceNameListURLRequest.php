@@ -5,14 +5,13 @@ namespace Iot\Request\V20180120;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of GenerateOTAUploadURL
+ * Request of GenerateDeviceNameListURL
  *
- * @method string getFileSuffix()
  * @method string getIotInstanceId()
  * @method string getApiProduct()
  * @method string getApiRevision()
  */
-class GenerateOTAUploadURLRequest extends \RpcAcsRequest
+class GenerateDeviceNameListURLRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,22 +27,9 @@ class GenerateOTAUploadURLRequest extends \RpcAcsRequest
         parent::__construct(
             'Iot',
             '2018-01-20',
-            'GenerateOTAUploadURL',
+            'GenerateDeviceNameListURL',
             'iot'
         );
-    }
-
-    /**
-     * @param string $fileSuffix
-     *
-     * @return $this
-     */
-    public function setFileSuffix($fileSuffix)
-    {
-        $this->requestParameters['FileSuffix'] = $fileSuffix;
-        $this->queryParameters['FileSuffix'] = $fileSuffix;
-
-        return $this;
     }
 
     /**

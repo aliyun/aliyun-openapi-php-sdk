@@ -13,10 +13,13 @@ namespace Iot\Request\V20180120;
  * @method string getType()
  * @method string getIotInstanceId()
  * @method string getDeviceStatusChangeFlag()
+ * @method string getOtaVersionFlag()
+ * @method string getDeviceTagFlag()
  * @method array getConsumerGroupIdss()
  * @method string getProductKey()
  * @method string getThingHistoryFlag()
  * @method string getFoundDeviceListFlag()
+ * @method string getOtaJobFlag()
  * @method string getApiProduct()
  * @method string getDeviceDataFlag()
  * @method string getApiRevision()
@@ -122,6 +125,32 @@ class CreateSubscribeRelationRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $otaVersionFlag
+     *
+     * @return $this
+     */
+    public function setOtaVersionFlag($otaVersionFlag)
+    {
+        $this->requestParameters['OtaVersionFlag'] = $otaVersionFlag;
+        $this->queryParameters['OtaVersionFlag'] = $otaVersionFlag;
+
+        return $this;
+    }
+
+    /**
+     * @param string $deviceTagFlag
+     *
+     * @return $this
+     */
+    public function setDeviceTagFlag($deviceTagFlag)
+    {
+        $this->requestParameters['DeviceTagFlag'] = $deviceTagFlag;
+        $this->queryParameters['DeviceTagFlag'] = $deviceTagFlag;
+
+        return $this;
+    }
+
+    /**
      * @param array $consumerGroupIds
      *
      * @return $this
@@ -171,6 +200,19 @@ class CreateSubscribeRelationRequest extends \RpcAcsRequest
     {
         $this->requestParameters['FoundDeviceListFlag'] = $foundDeviceListFlag;
         $this->queryParameters['FoundDeviceListFlag'] = $foundDeviceListFlag;
+
+        return $this;
+    }
+
+    /**
+     * @param string $otaJobFlag
+     *
+     * @return $this
+     */
+    public function setOtaJobFlag($otaJobFlag)
+    {
+        $this->requestParameters['OtaJobFlag'] = $otaJobFlag;
+        $this->queryParameters['OtaJobFlag'] = $otaJobFlag;
 
         return $this;
     }

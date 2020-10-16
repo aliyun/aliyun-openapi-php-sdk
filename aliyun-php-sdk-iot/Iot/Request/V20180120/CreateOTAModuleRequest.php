@@ -5,17 +5,17 @@ namespace Iot\Request\V20180120;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of UpdateDeviceShadow
+ * Request of CreateOTAModule
  *
- * @method string getShadowMessage()
  * @method string getIotInstanceId()
+ * @method string getModuleName()
  * @method string getProductKey()
- * @method string getDeltaUpdate()
+ * @method string getAliasName()
  * @method string getApiProduct()
  * @method string getApiRevision()
- * @method string getDeviceName()
+ * @method string getDesc()
  */
-class UpdateDeviceShadowRequest extends \RpcAcsRequest
+class CreateOTAModuleRequest extends \RpcAcsRequest
 {
 
     /**
@@ -31,22 +31,9 @@ class UpdateDeviceShadowRequest extends \RpcAcsRequest
         parent::__construct(
             'Iot',
             '2018-01-20',
-            'UpdateDeviceShadow',
+            'CreateOTAModule',
             'iot'
         );
-    }
-
-    /**
-     * @param string $shadowMessage
-     *
-     * @return $this
-     */
-    public function setShadowMessage($shadowMessage)
-    {
-        $this->requestParameters['ShadowMessage'] = $shadowMessage;
-        $this->queryParameters['ShadowMessage'] = $shadowMessage;
-
-        return $this;
     }
 
     /**
@@ -58,6 +45,19 @@ class UpdateDeviceShadowRequest extends \RpcAcsRequest
     {
         $this->requestParameters['IotInstanceId'] = $iotInstanceId;
         $this->queryParameters['IotInstanceId'] = $iotInstanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $moduleName
+     *
+     * @return $this
+     */
+    public function setModuleName($moduleName)
+    {
+        $this->requestParameters['ModuleName'] = $moduleName;
+        $this->queryParameters['ModuleName'] = $moduleName;
 
         return $this;
     }
@@ -76,14 +76,14 @@ class UpdateDeviceShadowRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $deltaUpdate
+     * @param string $aliasName
      *
      * @return $this
      */
-    public function setDeltaUpdate($deltaUpdate)
+    public function setAliasName($aliasName)
     {
-        $this->requestParameters['DeltaUpdate'] = $deltaUpdate;
-        $this->queryParameters['DeltaUpdate'] = $deltaUpdate;
+        $this->requestParameters['AliasName'] = $aliasName;
+        $this->queryParameters['AliasName'] = $aliasName;
 
         return $this;
     }
@@ -115,14 +115,14 @@ class UpdateDeviceShadowRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $deviceName
+     * @param string $desc
      *
      * @return $this
      */
-    public function setDeviceName($deviceName)
+    public function setDesc($desc)
     {
-        $this->requestParameters['DeviceName'] = $deviceName;
-        $this->queryParameters['DeviceName'] = $deviceName;
+        $this->requestParameters['Desc'] = $desc;
+        $this->queryParameters['Desc'] = $desc;
 
         return $this;
     }

@@ -8,6 +8,7 @@ namespace Iot\Request\V20180120;
  * Request of CreateOTAFirmware
  *
  * @method string getSignMethod()
+ * @method string getNeedToVerify()
  * @method string getType()
  * @method string getFirmwareUrl()
  * @method string getIotInstanceId()
@@ -52,6 +53,19 @@ class CreateOTAFirmwareRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SignMethod'] = $signMethod;
         $this->queryParameters['SignMethod'] = $signMethod;
+
+        return $this;
+    }
+
+    /**
+     * @param string $needToVerify
+     *
+     * @return $this
+     */
+    public function setNeedToVerify($needToVerify)
+    {
+        $this->requestParameters['NeedToVerify'] = $needToVerify;
+        $this->queryParameters['NeedToVerify'] = $needToVerify;
 
         return $this;
     }

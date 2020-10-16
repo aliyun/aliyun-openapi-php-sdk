@@ -1,3 +1,6 @@
+2020-10-16 Version: 7.15.0
+- Update OTA API, including ListOTAModuleByProduct, DeleteOTAModule.
+
 2020-06-12 Version: 7.9.0
 - Add CreateProduct API ProductSecret in Response.
 - Add AMQP APIs, including CreateSubscribeRelation, CreateConsumerGroup, etc.

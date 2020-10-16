@@ -11,12 +11,16 @@ namespace Iot\Request\V20180120;
  * @method string getTimeoutInMinutes()
  * @method string getIotInstanceId()
  * @method string getTargetSelection()
+ * @method string getScheduleFinishTime()
+ * @method array getTags()
  * @method string getGrayPercent()
+ * @method string getDnListFileUrl()
  * @method string getFirmwareId()
  * @method string getProductKey()
  * @method string getRetryInterval()
  * @method array getSrcVersions()
  * @method string getScheduleTime()
+ * @method string getOverwriteMode()
  * @method string getApiProduct()
  * @method string getApiRevision()
  * @method string getMaximumPerMinute()
@@ -96,6 +100,35 @@ class CreateOTAStaticUpgradeJobRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $scheduleFinishTime
+     *
+     * @return $this
+     */
+    public function setScheduleFinishTime($scheduleFinishTime)
+    {
+        $this->requestParameters['ScheduleFinishTime'] = $scheduleFinishTime;
+        $this->queryParameters['ScheduleFinishTime'] = $scheduleFinishTime;
+
+        return $this;
+    }
+
+    /**
+     * @param array $tag
+     *
+     * @return $this
+     */
+	public function setTags(array $tag)
+	{
+	    $this->requestParameters['Tags'] = $tag;
+		foreach ($tag as $depth1 => $depth1Value) {
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+		}
+
+		return $this;
+    }
+
+    /**
      * @param string $grayPercent
      *
      * @return $this
@@ -104,6 +137,19 @@ class CreateOTAStaticUpgradeJobRequest extends \RpcAcsRequest
     {
         $this->requestParameters['GrayPercent'] = $grayPercent;
         $this->queryParameters['GrayPercent'] = $grayPercent;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dnListFileUrl
+     *
+     * @return $this
+     */
+    public function setDnListFileUrl($dnListFileUrl)
+    {
+        $this->requestParameters['DnListFileUrl'] = $dnListFileUrl;
+        $this->queryParameters['DnListFileUrl'] = $dnListFileUrl;
 
         return $this;
     }
@@ -171,6 +217,19 @@ class CreateOTAStaticUpgradeJobRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ScheduleTime'] = $scheduleTime;
         $this->queryParameters['ScheduleTime'] = $scheduleTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $overwriteMode
+     *
+     * @return $this
+     */
+    public function setOverwriteMode($overwriteMode)
+    {
+        $this->requestParameters['OverwriteMode'] = $overwriteMode;
+        $this->queryParameters['OverwriteMode'] = $overwriteMode;
 
         return $this;
     }

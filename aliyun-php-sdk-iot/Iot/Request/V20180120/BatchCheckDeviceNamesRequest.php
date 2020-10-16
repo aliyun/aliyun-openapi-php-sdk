@@ -7,6 +7,7 @@ namespace Iot\Request\V20180120;
  *
  * Request of BatchCheckDeviceNames
  *
+ * @method array getDeviceNameLists()
  * @method string getIotInstanceId()
  * @method string getProductKey()
  * @method string getApiProduct()
@@ -32,6 +33,22 @@ class BatchCheckDeviceNamesRequest extends \RpcAcsRequest
             'BatchCheckDeviceNames',
             'iot'
         );
+    }
+
+    /**
+     * @param array $deviceNameList
+     *
+     * @return $this
+     */
+	public function setDeviceNameLists(array $deviceNameList)
+	{
+	    $this->requestParameters['DeviceNameLists'] = $deviceNameList;
+		foreach ($deviceNameList as $depth1 => $depth1Value) {
+			$this->queryParameters['DeviceNameList.' . ($depth1 + 1) . '.DeviceNickname'] = $depth1Value['DeviceNickname'];
+			$this->queryParameters['DeviceNameList.' . ($depth1 + 1) . '.DeviceName'] = $depth1Value['DeviceName'];
+		}
+
+		return $this;
     }
 
     /**

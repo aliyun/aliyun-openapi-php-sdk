@@ -7,13 +7,16 @@ namespace Iot\Request\V20180120;
  *
  * Request of CreateOTADynamicUpgradeJob
  *
+ * @method string getDynamicMode()
  * @method string getRetryCount()
  * @method string getTimeoutInMinutes()
  * @method string getIotInstanceId()
+ * @method array getTags()
  * @method string getFirmwareId()
  * @method string getProductKey()
  * @method string getRetryInterval()
  * @method array getSrcVersions()
+ * @method string getOverwriteMode()
  * @method string getApiProduct()
  * @method string getApiRevision()
  * @method string getMaximumPerMinute()
@@ -37,6 +40,19 @@ class CreateOTADynamicUpgradeJobRequest extends \RpcAcsRequest
             'CreateOTADynamicUpgradeJob',
             'iot'
         );
+    }
+
+    /**
+     * @param string $dynamicMode
+     *
+     * @return $this
+     */
+    public function setDynamicMode($dynamicMode)
+    {
+        $this->requestParameters['DynamicMode'] = $dynamicMode;
+        $this->queryParameters['DynamicMode'] = $dynamicMode;
+
+        return $this;
     }
 
     /**
@@ -76,6 +92,22 @@ class CreateOTADynamicUpgradeJobRequest extends \RpcAcsRequest
         $this->queryParameters['IotInstanceId'] = $iotInstanceId;
 
         return $this;
+    }
+
+    /**
+     * @param array $tag
+     *
+     * @return $this
+     */
+	public function setTags(array $tag)
+	{
+	    $this->requestParameters['Tags'] = $tag;
+		foreach ($tag as $depth1 => $depth1Value) {
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+		}
+
+		return $this;
     }
 
     /**
@@ -130,6 +162,19 @@ class CreateOTADynamicUpgradeJobRequest extends \RpcAcsRequest
 		}
 
 		return $this;
+    }
+
+    /**
+     * @param string $overwriteMode
+     *
+     * @return $this
+     */
+    public function setOverwriteMode($overwriteMode)
+    {
+        $this->requestParameters['OverwriteMode'] = $overwriteMode;
+        $this->queryParameters['OverwriteMode'] = $overwriteMode;
+
+        return $this;
     }
 
     /**

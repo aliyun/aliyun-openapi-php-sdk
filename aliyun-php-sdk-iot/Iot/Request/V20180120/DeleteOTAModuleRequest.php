@@ -5,14 +5,16 @@ namespace Iot\Request\V20180120;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of GenerateOTAUploadURL
+ * Request of DeleteOTAModule
  *
- * @method string getFileSuffix()
+ * @method string getAuthConfig()
  * @method string getIotInstanceId()
+ * @method string getModuleName()
+ * @method string getProductKey()
  * @method string getApiProduct()
  * @method string getApiRevision()
  */
-class GenerateOTAUploadURLRequest extends \RpcAcsRequest
+class DeleteOTAModuleRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,20 +30,20 @@ class GenerateOTAUploadURLRequest extends \RpcAcsRequest
         parent::__construct(
             'Iot',
             '2018-01-20',
-            'GenerateOTAUploadURL',
+            'DeleteOTAModule',
             'iot'
         );
     }
 
     /**
-     * @param string $fileSuffix
+     * @param string $authConfig
      *
      * @return $this
      */
-    public function setFileSuffix($fileSuffix)
+    public function setAuthConfig($authConfig)
     {
-        $this->requestParameters['FileSuffix'] = $fileSuffix;
-        $this->queryParameters['FileSuffix'] = $fileSuffix;
+        $this->requestParameters['AuthConfig'] = $authConfig;
+        $this->queryParameters['AuthConfig'] = $authConfig;
 
         return $this;
     }
@@ -55,6 +57,32 @@ class GenerateOTAUploadURLRequest extends \RpcAcsRequest
     {
         $this->requestParameters['IotInstanceId'] = $iotInstanceId;
         $this->queryParameters['IotInstanceId'] = $iotInstanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $moduleName
+     *
+     * @return $this
+     */
+    public function setModuleName($moduleName)
+    {
+        $this->requestParameters['ModuleName'] = $moduleName;
+        $this->queryParameters['ModuleName'] = $moduleName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $productKey
+     *
+     * @return $this
+     */
+    public function setProductKey($productKey)
+    {
+        $this->requestParameters['ProductKey'] = $productKey;
+        $this->queryParameters['ProductKey'] = $productKey;
 
         return $this;
     }

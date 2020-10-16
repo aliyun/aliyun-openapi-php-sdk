@@ -5,14 +5,15 @@ namespace Iot\Request\V20180120;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of GenerateOTAUploadURL
+ * Request of QueryClientIds
  *
- * @method string getFileSuffix()
+ * @method string getAuthConfig()
+ * @method string getIotId()
  * @method string getIotInstanceId()
  * @method string getApiProduct()
  * @method string getApiRevision()
  */
-class GenerateOTAUploadURLRequest extends \RpcAcsRequest
+class QueryClientIdsRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,20 +29,33 @@ class GenerateOTAUploadURLRequest extends \RpcAcsRequest
         parent::__construct(
             'Iot',
             '2018-01-20',
-            'GenerateOTAUploadURL',
+            'QueryClientIds',
             'iot'
         );
     }
 
     /**
-     * @param string $fileSuffix
+     * @param string $authConfig
      *
      * @return $this
      */
-    public function setFileSuffix($fileSuffix)
+    public function setAuthConfig($authConfig)
     {
-        $this->requestParameters['FileSuffix'] = $fileSuffix;
-        $this->queryParameters['FileSuffix'] = $fileSuffix;
+        $this->requestParameters['AuthConfig'] = $authConfig;
+        $this->queryParameters['AuthConfig'] = $authConfig;
+
+        return $this;
+    }
+
+    /**
+     * @param string $iotId
+     *
+     * @return $this
+     */
+    public function setIotId($iotId)
+    {
+        $this->requestParameters['IotId'] = $iotId;
+        $this->queryParameters['IotId'] = $iotId;
 
         return $this;
     }

@@ -5,14 +5,14 @@ namespace Iot\Request\V20180120;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of GenerateOTAUploadURL
+ * Request of UnbindRoleFromEdgeInstance
  *
- * @method string getFileSuffix()
  * @method string getIotInstanceId()
+ * @method string getInstanceId()
  * @method string getApiProduct()
  * @method string getApiRevision()
  */
-class GenerateOTAUploadURLRequest extends \RpcAcsRequest
+class UnbindRoleFromEdgeInstanceRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,22 +28,9 @@ class GenerateOTAUploadURLRequest extends \RpcAcsRequest
         parent::__construct(
             'Iot',
             '2018-01-20',
-            'GenerateOTAUploadURL',
+            'UnbindRoleFromEdgeInstance',
             'iot'
         );
-    }
-
-    /**
-     * @param string $fileSuffix
-     *
-     * @return $this
-     */
-    public function setFileSuffix($fileSuffix)
-    {
-        $this->requestParameters['FileSuffix'] = $fileSuffix;
-        $this->queryParameters['FileSuffix'] = $fileSuffix;
-
-        return $this;
     }
 
     /**
@@ -55,6 +42,19 @@ class GenerateOTAUploadURLRequest extends \RpcAcsRequest
     {
         $this->requestParameters['IotInstanceId'] = $iotInstanceId;
         $this->queryParameters['IotInstanceId'] = $iotInstanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }

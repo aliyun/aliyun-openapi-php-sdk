@@ -5,14 +5,14 @@ namespace Iot\Request\V20180120;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of GenerateOTAUploadURL
+ * Request of QueryDeviceBySQL
  *
- * @method string getFileSuffix()
+ * @method string getSQL()
  * @method string getIotInstanceId()
  * @method string getApiProduct()
  * @method string getApiRevision()
  */
-class GenerateOTAUploadURLRequest extends \RpcAcsRequest
+class QueryDeviceBySQLRequest extends \RpcAcsRequest
 {
 
     /**
@@ -28,20 +28,20 @@ class GenerateOTAUploadURLRequest extends \RpcAcsRequest
         parent::__construct(
             'Iot',
             '2018-01-20',
-            'GenerateOTAUploadURL',
+            'QueryDeviceBySQL',
             'iot'
         );
     }
 
     /**
-     * @param string $fileSuffix
+     * @param string $sQL
      *
      * @return $this
      */
-    public function setFileSuffix($fileSuffix)
+    public function setSQL($sQL)
     {
-        $this->requestParameters['FileSuffix'] = $fileSuffix;
-        $this->queryParameters['FileSuffix'] = $fileSuffix;
+        $this->requestParameters['SQL'] = $sQL;
+        $this->queryParameters['SQL'] = $sQL;
 
         return $this;
     }
