@@ -7,6 +7,7 @@ namespace imm\Request\V20170906;
  *
  * Request of FindImages
  *
+ * @method string getRemarksArrayBIn()
  * @method string getProject()
  * @method string getExternalId()
  * @method string getFacesModifyTimeRange()
@@ -23,6 +24,7 @@ namespace imm\Request\V20170906;
  * @method string getModifyTimeRange()
  * @method string getAddressLineContentsMatch()
  * @method string getGender()
+ * @method string getRemarksArrayAIn()
  * @method string getImageSizeRange()
  * @method string getRemarksBPrefix()
  * @method string getLocationBoundary()
@@ -54,6 +56,19 @@ class FindImagesRequest extends \RpcAcsRequest
             'FindImages',
             'imm'
         );
+    }
+
+    /**
+     * @param string $remarksArrayBIn
+     *
+     * @return $this
+     */
+    public function setRemarksArrayBIn($remarksArrayBIn)
+    {
+        $this->requestParameters['RemarksArrayBIn'] = $remarksArrayBIn;
+        $this->queryParameters['RemarksArrayBIn'] = $remarksArrayBIn;
+
+        return $this;
     }
 
     /**
@@ -260,6 +275,19 @@ class FindImagesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Gender'] = $gender;
         $this->queryParameters['Gender'] = $gender;
+
+        return $this;
+    }
+
+    /**
+     * @param string $remarksArrayAIn
+     *
+     * @return $this
+     */
+    public function setRemarksArrayAIn($remarksArrayAIn)
+    {
+        $this->requestParameters['RemarksArrayAIn'] = $remarksArrayAIn;
+        $this->queryParameters['RemarksArrayAIn'] = $remarksArrayAIn;
 
         return $this;
     }

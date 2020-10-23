@@ -8,8 +8,15 @@ namespace imm\Request\V20170906;
  * Request of UpdateFaceGroup
  *
  * @method string getProject()
+ * @method string getExternalId()
  * @method string getGroupId()
+ * @method string getRemarksB()
+ * @method string getRemarksA()
  * @method string getGroupName()
+ * @method string getRemarksArrayA()
+ * @method string getRemarksArrayB()
+ * @method string getRemarksD()
+ * @method string getRemarksC()
  * @method string getSetId()
  * @method string getGroupCoverFaceId()
  */
@@ -48,6 +55,19 @@ class UpdateFaceGroupRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $externalId
+     *
+     * @return $this
+     */
+    public function setExternalId($externalId)
+    {
+        $this->requestParameters['ExternalId'] = $externalId;
+        $this->queryParameters['ExternalId'] = $externalId;
+
+        return $this;
+    }
+
+    /**
      * @param string $groupId
      *
      * @return $this
@@ -61,6 +81,32 @@ class UpdateFaceGroupRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $remarksB
+     *
+     * @return $this
+     */
+    public function setRemarksB($remarksB)
+    {
+        $this->requestParameters['RemarksB'] = $remarksB;
+        $this->queryParameters['RemarksB'] = $remarksB;
+
+        return $this;
+    }
+
+    /**
+     * @param string $remarksA
+     *
+     * @return $this
+     */
+    public function setRemarksA($remarksA)
+    {
+        $this->requestParameters['RemarksA'] = $remarksA;
+        $this->queryParameters['RemarksA'] = $remarksA;
+
+        return $this;
+    }
+
+    /**
      * @param string $groupName
      *
      * @return $this
@@ -69,6 +115,58 @@ class UpdateFaceGroupRequest extends \RpcAcsRequest
     {
         $this->requestParameters['GroupName'] = $groupName;
         $this->queryParameters['GroupName'] = $groupName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $remarksArrayA
+     *
+     * @return $this
+     */
+    public function setRemarksArrayA($remarksArrayA)
+    {
+        $this->requestParameters['RemarksArrayA'] = $remarksArrayA;
+        $this->queryParameters['RemarksArrayA'] = $remarksArrayA;
+
+        return $this;
+    }
+
+    /**
+     * @param string $remarksArrayB
+     *
+     * @return $this
+     */
+    public function setRemarksArrayB($remarksArrayB)
+    {
+        $this->requestParameters['RemarksArrayB'] = $remarksArrayB;
+        $this->queryParameters['RemarksArrayB'] = $remarksArrayB;
+
+        return $this;
+    }
+
+    /**
+     * @param string $remarksD
+     *
+     * @return $this
+     */
+    public function setRemarksD($remarksD)
+    {
+        $this->requestParameters['RemarksD'] = $remarksD;
+        $this->queryParameters['RemarksD'] = $remarksD;
+
+        return $this;
+    }
+
+    /**
+     * @param string $remarksC
+     *
+     * @return $this
+     */
+    public function setRemarksC($remarksC)
+    {
+        $this->requestParameters['RemarksC'] = $remarksC;
+        $this->queryParameters['RemarksC'] = $remarksC;
 
         return $this;
     }

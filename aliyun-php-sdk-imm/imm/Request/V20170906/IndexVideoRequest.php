@@ -11,6 +11,8 @@ namespace imm\Request\V20170906;
  * @method string getProject()
  * @method string getExternalId()
  * @method string getStartTime()
+ * @method string getNotifyEndpoint()
+ * @method string getNotifyTopicName()
  * @method string getRemarksB()
  * @method string getRemarksA()
  * @method string getEndTime()
@@ -91,6 +93,32 @@ class IndexVideoRequest extends \RpcAcsRequest
     {
         $this->requestParameters['StartTime'] = $startTime;
         $this->queryParameters['StartTime'] = $startTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $notifyEndpoint
+     *
+     * @return $this
+     */
+    public function setNotifyEndpoint($notifyEndpoint)
+    {
+        $this->requestParameters['NotifyEndpoint'] = $notifyEndpoint;
+        $this->queryParameters['NotifyEndpoint'] = $notifyEndpoint;
+
+        return $this;
+    }
+
+    /**
+     * @param string $notifyTopicName
+     *
+     * @return $this
+     */
+    public function setNotifyTopicName($notifyTopicName)
+    {
+        $this->requestParameters['NotifyTopicName'] = $notifyTopicName;
+        $this->queryParameters['NotifyTopicName'] = $notifyTopicName;
 
         return $this;
     }

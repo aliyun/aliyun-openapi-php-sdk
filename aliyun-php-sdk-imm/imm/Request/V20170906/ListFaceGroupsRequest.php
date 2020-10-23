@@ -8,11 +8,18 @@ namespace imm\Request\V20170906;
  * Request of ListFaceGroups
  *
  * @method string getProject()
+ * @method string getRemarksBQuery()
+ * @method string getExternalId()
  * @method string getLimit()
+ * @method string getRemarksArrayBQuery()
  * @method string getOrder()
+ * @method string getRemarksAQuery()
  * @method string getOrderBy()
+ * @method string getRemarksDQuery()
+ * @method string getRemarksArrayAQuery()
  * @method string getMarker()
  * @method string getSetId()
+ * @method string getRemarksCQuery()
  */
 class ListFaceGroupsRequest extends \RpcAcsRequest
 {
@@ -49,6 +56,32 @@ class ListFaceGroupsRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $remarksBQuery
+     *
+     * @return $this
+     */
+    public function setRemarksBQuery($remarksBQuery)
+    {
+        $this->requestParameters['RemarksBQuery'] = $remarksBQuery;
+        $this->queryParameters['RemarksBQuery'] = $remarksBQuery;
+
+        return $this;
+    }
+
+    /**
+     * @param string $externalId
+     *
+     * @return $this
+     */
+    public function setExternalId($externalId)
+    {
+        $this->requestParameters['ExternalId'] = $externalId;
+        $this->queryParameters['ExternalId'] = $externalId;
+
+        return $this;
+    }
+
+    /**
      * @param string $limit
      *
      * @return $this
@@ -57,6 +90,19 @@ class ListFaceGroupsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Limit'] = $limit;
         $this->queryParameters['Limit'] = $limit;
+
+        return $this;
+    }
+
+    /**
+     * @param string $remarksArrayBQuery
+     *
+     * @return $this
+     */
+    public function setRemarksArrayBQuery($remarksArrayBQuery)
+    {
+        $this->requestParameters['RemarksArrayBQuery'] = $remarksArrayBQuery;
+        $this->queryParameters['RemarksArrayBQuery'] = $remarksArrayBQuery;
 
         return $this;
     }
@@ -75,6 +121,19 @@ class ListFaceGroupsRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $remarksAQuery
+     *
+     * @return $this
+     */
+    public function setRemarksAQuery($remarksAQuery)
+    {
+        $this->requestParameters['RemarksAQuery'] = $remarksAQuery;
+        $this->queryParameters['RemarksAQuery'] = $remarksAQuery;
+
+        return $this;
+    }
+
+    /**
      * @param string $orderBy
      *
      * @return $this
@@ -83,6 +142,32 @@ class ListFaceGroupsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OrderBy'] = $orderBy;
         $this->queryParameters['OrderBy'] = $orderBy;
+
+        return $this;
+    }
+
+    /**
+     * @param string $remarksDQuery
+     *
+     * @return $this
+     */
+    public function setRemarksDQuery($remarksDQuery)
+    {
+        $this->requestParameters['RemarksDQuery'] = $remarksDQuery;
+        $this->queryParameters['RemarksDQuery'] = $remarksDQuery;
+
+        return $this;
+    }
+
+    /**
+     * @param string $remarksArrayAQuery
+     *
+     * @return $this
+     */
+    public function setRemarksArrayAQuery($remarksArrayAQuery)
+    {
+        $this->requestParameters['RemarksArrayAQuery'] = $remarksArrayAQuery;
+        $this->queryParameters['RemarksArrayAQuery'] = $remarksArrayAQuery;
 
         return $this;
     }
@@ -109,6 +194,19 @@ class ListFaceGroupsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SetId'] = $setId;
         $this->queryParameters['SetId'] = $setId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $remarksCQuery
+     *
+     * @return $this
+     */
+    public function setRemarksCQuery($remarksCQuery)
+    {
+        $this->requestParameters['RemarksCQuery'] = $remarksCQuery;
+        $this->queryParameters['RemarksCQuery'] = $remarksCQuery;
 
         return $this;
     }

@@ -11,6 +11,7 @@ namespace imm\Request\V20170906;
  * @method string getProject()
  * @method string getWatermarkType()
  * @method string getTargetUri()
+ * @method string getModel()
  * @method string getImageUri()
  * @method string getOriginalImageUri()
  */
@@ -83,6 +84,19 @@ class DecodeBlindWatermarkRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TargetUri'] = $targetUri;
         $this->queryParameters['TargetUri'] = $targetUri;
+
+        return $this;
+    }
+
+    /**
+     * @param string $model
+     *
+     * @return $this
+     */
+    public function setModel($model)
+    {
+        $this->requestParameters['Model'] = $model;
+        $this->queryParameters['Model'] = $model;
 
         return $this;
     }

@@ -16,6 +16,8 @@ namespace imm\Request\V20170906;
  * @method string getRemarksB()
  * @method string getRemarksA()
  * @method string getImageUri()
+ * @method string getRemarksArrayA()
+ * @method string getRemarksArrayB()
  * @method string getSourceUri()
  * @method string getSourcePosition()
  * @method string getRemarksD()
@@ -156,6 +158,32 @@ class IndexImageRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ImageUri'] = $imageUri;
         $this->queryParameters['ImageUri'] = $imageUri;
+
+        return $this;
+    }
+
+    /**
+     * @param string $remarksArrayA
+     *
+     * @return $this
+     */
+    public function setRemarksArrayA($remarksArrayA)
+    {
+        $this->requestParameters['RemarksArrayA'] = $remarksArrayA;
+        $this->queryParameters['RemarksArrayA'] = $remarksArrayA;
+
+        return $this;
+    }
+
+    /**
+     * @param string $remarksArrayB
+     *
+     * @return $this
+     */
+    public function setRemarksArrayB($remarksArrayB)
+    {
+        $this->requestParameters['RemarksArrayB'] = $remarksArrayB;
+        $this->queryParameters['RemarksArrayB'] = $remarksArrayB;
 
         return $this;
     }
