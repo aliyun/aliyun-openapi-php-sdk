@@ -14,6 +14,7 @@ namespace Green\Request\V20170823;
  * @method string getLibType()
  * @method string getAuditResult()
  * @method string getPageSize()
+ * @method string getKeyword()
  * @method string getTaskId()
  * @method string getTotalCount()
  * @method string getKeywordId()
@@ -133,6 +134,19 @@ class DescribeViewContentRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageSize'] = $pageSize;
         $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $keyword
+     *
+     * @return $this
+     */
+    public function setKeyword($keyword)
+    {
+        $this->requestParameters['Keyword'] = $keyword;
+        $this->queryParameters['Keyword'] = $keyword;
 
         return $this;
     }

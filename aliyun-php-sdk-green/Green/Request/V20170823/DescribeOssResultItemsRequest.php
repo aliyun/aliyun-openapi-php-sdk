@@ -9,6 +9,7 @@ namespace Green\Request\V20170823;
  *
  * @method string getMinScore()
  * @method string getMaxScore()
+ * @method string getStockTaskId()
  * @method string getStartDate()
  * @method string getScene()
  * @method string getSourceIp()
@@ -67,6 +68,19 @@ class DescribeOssResultItemsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['MaxScore'] = $maxScore;
         $this->queryParameters['MaxScore'] = $maxScore;
+
+        return $this;
+    }
+
+    /**
+     * @param string $stockTaskId
+     *
+     * @return $this
+     */
+    public function setStockTaskId($stockTaskId)
+    {
+        $this->requestParameters['StockTaskId'] = $stockTaskId;
+        $this->queryParameters['StockTaskId'] = $stockTaskId;
 
         return $this;
     }

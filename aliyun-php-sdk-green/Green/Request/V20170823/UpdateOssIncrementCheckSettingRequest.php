@@ -11,6 +11,7 @@ namespace Green\Request\V20170823;
  * @method string getImageSceneList()
  * @method string getVideoFrameInterval()
  * @method string getSourceIp()
+ * @method string getCallbackId()
  * @method string getImageScanLimit()
  * @method string getVideoAutoFreezeSceneList()
  * @method string getLang()
@@ -89,6 +90,19 @@ class UpdateOssIncrementCheckSettingRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SourceIp'] = $sourceIp;
         $this->queryParameters['SourceIp'] = $sourceIp;
+
+        return $this;
+    }
+
+    /**
+     * @param string $callbackId
+     *
+     * @return $this
+     */
+    public function setCallbackId($callbackId)
+    {
+        $this->requestParameters['CallbackId'] = $callbackId;
+        $this->queryParameters['CallbackId'] = $callbackId;
 
         return $this;
     }
