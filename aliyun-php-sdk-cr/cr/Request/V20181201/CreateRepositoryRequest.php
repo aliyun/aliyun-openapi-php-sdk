@@ -9,6 +9,7 @@ namespace cr\Request\V20181201;
  *
  * @method string getRepoType()
  * @method string getSummary()
+ * @method string getTagImmutability()
  * @method string getInstanceId()
  * @method string getRepoName()
  * @method string getRepoNamespaceName()
@@ -57,6 +58,19 @@ class CreateRepositoryRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Summary'] = $summary;
         $this->queryParameters['Summary'] = $summary;
+
+        return $this;
+    }
+
+    /**
+     * @param string $tagImmutability
+     *
+     * @return $this
+     */
+    public function setTagImmutability($tagImmutability)
+    {
+        $this->requestParameters['TagImmutability'] = $tagImmutability;
+        $this->queryParameters['TagImmutability'] = $tagImmutability;
 
         return $this;
     }
