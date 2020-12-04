@@ -12,8 +12,10 @@ namespace Green\Request\V20170823;
  * @method string getStartDate()
  * @method string getSourceIp()
  * @method string getVideoAutoFreezeSceneList()
+ * @method string getAudioMaxSize()
  * @method string getLang()
  * @method string getImageAutoFreeze()
+ * @method string getAudioAutoFreezeSceneList()
  * @method string getVideoMaxSize()
  * @method string getAutoFreezeType()
  * @method string getEndDate()
@@ -109,6 +111,19 @@ class UpdateOssStockStatusRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $audioMaxSize
+     *
+     * @return $this
+     */
+    public function setAudioMaxSize($audioMaxSize)
+    {
+        $this->requestParameters['AudioMaxSize'] = $audioMaxSize;
+        $this->queryParameters['AudioMaxSize'] = $audioMaxSize;
+
+        return $this;
+    }
+
+    /**
      * @param string $lang
      *
      * @return $this
@@ -130,6 +145,19 @@ class UpdateOssStockStatusRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ImageAutoFreeze'] = $imageAutoFreeze;
         $this->queryParameters['ImageAutoFreeze'] = $imageAutoFreeze;
+
+        return $this;
+    }
+
+    /**
+     * @param string $audioAutoFreezeSceneList
+     *
+     * @return $this
+     */
+    public function setAudioAutoFreezeSceneList($audioAutoFreezeSceneList)
+    {
+        $this->requestParameters['AudioAutoFreezeSceneList'] = $audioAutoFreezeSceneList;
+        $this->queryParameters['AudioAutoFreezeSceneList'] = $audioAutoFreezeSceneList;
 
         return $this;
     }

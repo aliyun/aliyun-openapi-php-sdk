@@ -7,6 +7,7 @@ namespace Green\Request\V20170823;
  *
  * Request of DescribeOssStockStatus
  *
+ * @method string getStockTaskId()
  * @method string getSourceIp()
  * @method string getLang()
  */
@@ -29,6 +30,19 @@ class DescribeOssStockStatusRequest extends \RpcAcsRequest
             'DescribeOssStockStatus',
             'green'
         );
+    }
+
+    /**
+     * @param string $stockTaskId
+     *
+     * @return $this
+     */
+    public function setStockTaskId($stockTaskId)
+    {
+        $this->requestParameters['StockTaskId'] = $stockTaskId;
+        $this->queryParameters['StockTaskId'] = $stockTaskId;
+
+        return $this;
     }
 
     /**

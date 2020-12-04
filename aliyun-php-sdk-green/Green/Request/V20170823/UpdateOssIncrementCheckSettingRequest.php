@@ -9,13 +9,17 @@ namespace Green\Request\V20170823;
  *
  * @method string getVideoSceneList()
  * @method string getImageSceneList()
+ * @method string getAudioSceneList()
  * @method string getVideoFrameInterval()
+ * @method string getAudioAutoFreezeOpened()
  * @method string getSourceIp()
  * @method string getCallbackId()
  * @method string getImageScanLimit()
  * @method string getVideoAutoFreezeSceneList()
+ * @method string getAudioMaxSize()
  * @method string getLang()
  * @method string getImageAutoFreeze()
+ * @method string getAudioAntispamFreezeConfig()
  * @method string getVideoMaxSize()
  * @method string getAutoFreezeType()
  * @method string getBucketConfigList()
@@ -69,6 +73,19 @@ class UpdateOssIncrementCheckSettingRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $audioSceneList
+     *
+     * @return $this
+     */
+    public function setAudioSceneList($audioSceneList)
+    {
+        $this->requestParameters['AudioSceneList'] = $audioSceneList;
+        $this->queryParameters['AudioSceneList'] = $audioSceneList;
+
+        return $this;
+    }
+
+    /**
      * @param string $videoFrameInterval
      *
      * @return $this
@@ -77,6 +94,19 @@ class UpdateOssIncrementCheckSettingRequest extends \RpcAcsRequest
     {
         $this->requestParameters['VideoFrameInterval'] = $videoFrameInterval;
         $this->queryParameters['VideoFrameInterval'] = $videoFrameInterval;
+
+        return $this;
+    }
+
+    /**
+     * @param string $audioAutoFreezeOpened
+     *
+     * @return $this
+     */
+    public function setAudioAutoFreezeOpened($audioAutoFreezeOpened)
+    {
+        $this->requestParameters['AudioAutoFreezeOpened'] = $audioAutoFreezeOpened;
+        $this->queryParameters['AudioAutoFreezeOpened'] = $audioAutoFreezeOpened;
 
         return $this;
     }
@@ -134,6 +164,19 @@ class UpdateOssIncrementCheckSettingRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $audioMaxSize
+     *
+     * @return $this
+     */
+    public function setAudioMaxSize($audioMaxSize)
+    {
+        $this->requestParameters['AudioMaxSize'] = $audioMaxSize;
+        $this->queryParameters['AudioMaxSize'] = $audioMaxSize;
+
+        return $this;
+    }
+
+    /**
      * @param string $lang
      *
      * @return $this
@@ -155,6 +198,19 @@ class UpdateOssIncrementCheckSettingRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ImageAutoFreeze'] = $imageAutoFreeze;
         $this->queryParameters['ImageAutoFreeze'] = $imageAutoFreeze;
+
+        return $this;
+    }
+
+    /**
+     * @param string $audioAntispamFreezeConfig
+     *
+     * @return $this
+     */
+    public function setAudioAntispamFreezeConfig($audioAntispamFreezeConfig)
+    {
+        $this->requestParameters['AudioAntispamFreezeConfig'] = $audioAntispamFreezeConfig;
+        $this->queryParameters['AudioAntispamFreezeConfig'] = $audioAntispamFreezeConfig;
 
         return $this;
     }
