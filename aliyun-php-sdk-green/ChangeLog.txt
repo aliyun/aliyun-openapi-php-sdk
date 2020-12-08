@@ -1,6 +1,9 @@
 2020-12-08 Version: 3.6.2
 - Supported webpage scan.
 
+2020-12-08 Version: 3.6.2
+- Supported webpage scan.
+
 2020-12-04 Version: 3.6.3
 - Support manual scan interface.
 
