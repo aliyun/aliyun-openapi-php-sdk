@@ -4,6 +4,12 @@
 - Add dynamic image query interface.
 - Update SubmitMediaAuditJob support MediaAuditConfiguration to set ResourceType.
 
+2020-12-17 Version: 2.15.11
+- Add support cn-beijing service region.
+- Add ai video cover interface,include submit and query.
+- Add dynamic image query interface.
+- Update SubmitMediaAuditJob support MediaAuditConfiguration to set ResourceType.
+
 2020-12-08 Version: 2.15.12
 - Add a new api named SubmitAIImageAuditJob to submit image ai detection job.
 - Add a new api named CreateDNADB to create a DNA analysis library.
