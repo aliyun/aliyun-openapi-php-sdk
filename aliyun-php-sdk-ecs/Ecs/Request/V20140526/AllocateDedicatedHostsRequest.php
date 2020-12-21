@@ -10,8 +10,10 @@ namespace Ecs\Request\V20140526;
  * @method string getResourceOwnerId()
  * @method string getClientToken()
  * @method string getDescription()
+ * @method string getCpuOverCommitRatio()
  * @method string getResourceGroupId()
  * @method string getActionOnMaintenance()
+ * @method string getDedicatedHostClusterId()
  * @method array getTags()
  * @method string getDedicatedHostType()
  * @method string getAutoRenewPeriod()
@@ -91,6 +93,19 @@ class AllocateDedicatedHostsRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $cpuOverCommitRatio
+     *
+     * @return $this
+     */
+    public function setCpuOverCommitRatio($cpuOverCommitRatio)
+    {
+        $this->requestParameters['CpuOverCommitRatio'] = $cpuOverCommitRatio;
+        $this->queryParameters['CpuOverCommitRatio'] = $cpuOverCommitRatio;
+
+        return $this;
+    }
+
+    /**
      * @param string $resourceGroupId
      *
      * @return $this
@@ -112,6 +127,19 @@ class AllocateDedicatedHostsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ActionOnMaintenance'] = $actionOnMaintenance;
         $this->queryParameters['ActionOnMaintenance'] = $actionOnMaintenance;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dedicatedHostClusterId
+     *
+     * @return $this
+     */
+    public function setDedicatedHostClusterId($dedicatedHostClusterId)
+    {
+        $this->requestParameters['DedicatedHostClusterId'] = $dedicatedHostClusterId;
+        $this->queryParameters['DedicatedHostClusterId'] = $dedicatedHostClusterId;
 
         return $this;
     }

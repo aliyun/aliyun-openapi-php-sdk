@@ -5,27 +5,33 @@ namespace Ecs\Request\V20140526;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of PurchaseReservedInstancesOffering
+ * Request of CreateCapacityReservation
  *
  * @method string getResourceOwnerId()
  * @method string getClientToken()
  * @method string getDescription()
+ * @method string getStartTime()
  * @method string getPlatform()
- * @method string getResourceGroupId()
- * @method string getScope()
+ * @method string getPrivatePoolOptionsMatchCriteria()
  * @method string getInstanceType()
- * @method array getTags()
+ * @method string getInstanceChargeType()
+ * @method string getEfficientStatus()
  * @method string getPeriod()
+ * @method string getEndTimeType()
  * @method string getResourceOwnerAccount()
+ * @method string getPrivatePoolOptionsName()
  * @method string getOwnerAccount()
+ * @method string getEndTime()
  * @method string getOwnerId()
+ * @method string getResourceType()
  * @method string getPeriodUnit()
- * @method string getOfferingType()
- * @method string getZoneId()
- * @method string getReservedInstanceName()
+ * @method string getTimeSlot()
+ * @method array getZoneIds()
+ * @method string getChargeType()
+ * @method string getPackageType()
  * @method string getInstanceAmount()
  */
-class PurchaseReservedInstancesOfferingRequest extends \RpcAcsRequest
+class CreateCapacityReservationRequest extends \RpcAcsRequest
 {
 
     /**
@@ -41,7 +47,7 @@ class PurchaseReservedInstancesOfferingRequest extends \RpcAcsRequest
         parent::__construct(
             'Ecs',
             '2014-05-26',
-            'PurchaseReservedInstancesOffering',
+            'CreateCapacityReservation',
             'ecs'
         );
     }
@@ -86,6 +92,19 @@ class PurchaseReservedInstancesOfferingRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $startTime
+     *
+     * @return $this
+     */
+    public function setStartTime($startTime)
+    {
+        $this->requestParameters['StartTime'] = $startTime;
+        $this->queryParameters['StartTime'] = $startTime;
+
+        return $this;
+    }
+
+    /**
      * @param string $platform
      *
      * @return $this
@@ -99,27 +118,14 @@ class PurchaseReservedInstancesOfferingRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceGroupId
+     * @param string $privatePoolOptionsMatchCriteria
      *
      * @return $this
      */
-    public function setResourceGroupId($resourceGroupId)
+    public function setPrivatePoolOptionsMatchCriteria($privatePoolOptionsMatchCriteria)
     {
-        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
-        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $scope
-     *
-     * @return $this
-     */
-    public function setScope($scope)
-    {
-        $this->requestParameters['Scope'] = $scope;
-        $this->queryParameters['Scope'] = $scope;
+        $this->requestParameters['PrivatePoolOptionsMatchCriteria'] = $privatePoolOptionsMatchCriteria;
+        $this->queryParameters['PrivatePoolOptions.MatchCriteria'] = $privatePoolOptionsMatchCriteria;
 
         return $this;
     }
@@ -138,19 +144,29 @@ class PurchaseReservedInstancesOfferingRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $tag
+     * @param string $instanceChargeType
      *
      * @return $this
      */
-	public function setTags(array $tag)
-	{
-	    $this->requestParameters['Tags'] = $tag;
-		foreach ($tag as $depth1 => $depth1Value) {
-			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
-			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
-		}
+    public function setInstanceChargeType($instanceChargeType)
+    {
+        $this->requestParameters['InstanceChargeType'] = $instanceChargeType;
+        $this->queryParameters['InstanceChargeType'] = $instanceChargeType;
 
-		return $this;
+        return $this;
+    }
+
+    /**
+     * @param string $efficientStatus
+     *
+     * @return $this
+     */
+    public function setEfficientStatus($efficientStatus)
+    {
+        $this->requestParameters['EfficientStatus'] = $efficientStatus;
+        $this->queryParameters['EfficientStatus'] = $efficientStatus;
+
+        return $this;
     }
 
     /**
@@ -162,6 +178,19 @@ class PurchaseReservedInstancesOfferingRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Period'] = $period;
         $this->queryParameters['Period'] = $period;
+
+        return $this;
+    }
+
+    /**
+     * @param string $endTimeType
+     *
+     * @return $this
+     */
+    public function setEndTimeType($endTimeType)
+    {
+        $this->requestParameters['EndTimeType'] = $endTimeType;
+        $this->queryParameters['EndTimeType'] = $endTimeType;
 
         return $this;
     }
@@ -180,6 +209,19 @@ class PurchaseReservedInstancesOfferingRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $privatePoolOptionsName
+     *
+     * @return $this
+     */
+    public function setPrivatePoolOptionsName($privatePoolOptionsName)
+    {
+        $this->requestParameters['PrivatePoolOptionsName'] = $privatePoolOptionsName;
+        $this->queryParameters['PrivatePoolOptions.Name'] = $privatePoolOptionsName;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerAccount
      *
      * @return $this
@@ -188,6 +230,19 @@ class PurchaseReservedInstancesOfferingRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $endTime
+     *
+     * @return $this
+     */
+    public function setEndTime($endTime)
+    {
+        $this->requestParameters['EndTime'] = $endTime;
+        $this->queryParameters['EndTime'] = $endTime;
 
         return $this;
     }
@@ -206,6 +261,19 @@ class PurchaseReservedInstancesOfferingRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $resourceType
+     *
+     * @return $this
+     */
+    public function setResourceType($resourceType)
+    {
+        $this->requestParameters['ResourceType'] = $resourceType;
+        $this->queryParameters['ResourceType'] = $resourceType;
+
+        return $this;
+    }
+
+    /**
      * @param string $periodUnit
      *
      * @return $this
@@ -219,40 +287,55 @@ class PurchaseReservedInstancesOfferingRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $offeringType
+     * @param string $timeSlot
      *
      * @return $this
      */
-    public function setOfferingType($offeringType)
+    public function setTimeSlot($timeSlot)
     {
-        $this->requestParameters['OfferingType'] = $offeringType;
-        $this->queryParameters['OfferingType'] = $offeringType;
+        $this->requestParameters['TimeSlot'] = $timeSlot;
+        $this->queryParameters['TimeSlot'] = $timeSlot;
 
         return $this;
     }
 
     /**
-     * @param string $zoneId
+     * @param array $zoneId
      *
      * @return $this
      */
-    public function setZoneId($zoneId)
+	public function setZoneIds(array $zoneId)
+	{
+	    $this->requestParameters['ZoneIds'] = $zoneId;
+		foreach ($zoneId as $i => $iValue) {
+			$this->queryParameters['ZoneId.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
+    }
+
+    /**
+     * @param string $chargeType
+     *
+     * @return $this
+     */
+    public function setChargeType($chargeType)
     {
-        $this->requestParameters['ZoneId'] = $zoneId;
-        $this->queryParameters['ZoneId'] = $zoneId;
+        $this->requestParameters['ChargeType'] = $chargeType;
+        $this->queryParameters['ChargeType'] = $chargeType;
 
         return $this;
     }
 
     /**
-     * @param string $reservedInstanceName
+     * @param string $packageType
      *
      * @return $this
      */
-    public function setReservedInstanceName($reservedInstanceName)
+    public function setPackageType($packageType)
     {
-        $this->requestParameters['ReservedInstanceName'] = $reservedInstanceName;
-        $this->queryParameters['ReservedInstanceName'] = $reservedInstanceName;
+        $this->requestParameters['PackageType'] = $packageType;
+        $this->queryParameters['PackageType'] = $packageType;
 
         return $this;
     }

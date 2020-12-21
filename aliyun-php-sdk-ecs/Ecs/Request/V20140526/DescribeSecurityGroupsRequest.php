@@ -22,6 +22,7 @@ namespace Ecs\Request\V20140526;
  * @method string getOwnerAccount()
  * @method string getOwnerId()
  * @method string getSecurityGroupIds()
+ * @method string getSecurityGroupType()
  * @method string getVpcId()
  */
 class DescribeSecurityGroupsRequest extends \RpcAcsRequest
@@ -239,6 +240,19 @@ class DescribeSecurityGroupsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SecurityGroupIds'] = $securityGroupIds;
         $this->queryParameters['SecurityGroupIds'] = $securityGroupIds;
+
+        return $this;
+    }
+
+    /**
+     * @param string $securityGroupType
+     *
+     * @return $this
+     */
+    public function setSecurityGroupType($securityGroupType)
+    {
+        $this->requestParameters['SecurityGroupType'] = $securityGroupType;
+        $this->queryParameters['SecurityGroupType'] = $securityGroupType;
 
         return $this;
     }

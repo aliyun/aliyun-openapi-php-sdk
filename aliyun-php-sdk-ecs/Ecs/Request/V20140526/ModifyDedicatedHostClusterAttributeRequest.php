@@ -5,18 +5,17 @@ namespace Ecs\Request\V20140526;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ModifyDiskSpec
+ * Request of ModifyDedicatedHostClusterAttribute
  *
+ * @method string getDedicatedHostClusterName()
  * @method string getResourceOwnerId()
- * @method string getDiskCategory()
- * @method string getDiskId()
- * @method string getDryRun()
+ * @method string getDescription()
+ * @method string getDedicatedHostClusterId()
  * @method string getResourceOwnerAccount()
- * @method string getPerformanceLevel()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
  */
-class ModifyDiskSpecRequest extends \RpcAcsRequest
+class ModifyDedicatedHostClusterAttributeRequest extends \RpcAcsRequest
 {
 
     /**
@@ -32,9 +31,22 @@ class ModifyDiskSpecRequest extends \RpcAcsRequest
         parent::__construct(
             'Ecs',
             '2014-05-26',
-            'ModifyDiskSpec',
+            'ModifyDedicatedHostClusterAttribute',
             'ecs'
         );
+    }
+
+    /**
+     * @param string $dedicatedHostClusterName
+     *
+     * @return $this
+     */
+    public function setDedicatedHostClusterName($dedicatedHostClusterName)
+    {
+        $this->requestParameters['DedicatedHostClusterName'] = $dedicatedHostClusterName;
+        $this->queryParameters['DedicatedHostClusterName'] = $dedicatedHostClusterName;
+
+        return $this;
     }
 
     /**
@@ -51,40 +63,27 @@ class ModifyDiskSpecRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $diskCategory
+     * @param string $description
      *
      * @return $this
      */
-    public function setDiskCategory($diskCategory)
+    public function setDescription($description)
     {
-        $this->requestParameters['DiskCategory'] = $diskCategory;
-        $this->queryParameters['DiskCategory'] = $diskCategory;
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
 
         return $this;
     }
 
     /**
-     * @param string $diskId
+     * @param string $dedicatedHostClusterId
      *
      * @return $this
      */
-    public function setDiskId($diskId)
+    public function setDedicatedHostClusterId($dedicatedHostClusterId)
     {
-        $this->requestParameters['DiskId'] = $diskId;
-        $this->queryParameters['DiskId'] = $diskId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dryRun
-     *
-     * @return $this
-     */
-    public function setDryRun($dryRun)
-    {
-        $this->requestParameters['DryRun'] = $dryRun;
-        $this->queryParameters['DryRun'] = $dryRun;
+        $this->requestParameters['DedicatedHostClusterId'] = $dedicatedHostClusterId;
+        $this->queryParameters['DedicatedHostClusterId'] = $dedicatedHostClusterId;
 
         return $this;
     }
@@ -98,19 +97,6 @@ class ModifyDiskSpecRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $performanceLevel
-     *
-     * @return $this
-     */
-    public function setPerformanceLevel($performanceLevel)
-    {
-        $this->requestParameters['PerformanceLevel'] = $performanceLevel;
-        $this->queryParameters['PerformanceLevel'] = $performanceLevel;
 
         return $this;
     }

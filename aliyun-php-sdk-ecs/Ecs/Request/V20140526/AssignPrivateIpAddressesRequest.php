@@ -8,6 +8,7 @@ namespace Ecs\Request\V20140526;
  * Request of AssignPrivateIpAddresses
  *
  * @method string getResourceOwnerId()
+ * @method string getClientToken()
  * @method string getSecondaryPrivateIpAddressCount()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
@@ -45,6 +46,19 @@ class AssignPrivateIpAddressesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
 
         return $this;
     }

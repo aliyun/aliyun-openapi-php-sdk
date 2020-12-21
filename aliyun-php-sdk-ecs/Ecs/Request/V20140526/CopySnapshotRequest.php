@@ -10,6 +10,7 @@ namespace Ecs\Request\V20140526;
  * @method string getResourceOwnerId()
  * @method string getSnapshotId()
  * @method string getDestinationRegionId()
+ * @method string getResourceGroupId()
  * @method array getTags()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerId()
@@ -73,6 +74,19 @@ class CopySnapshotRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DestinationRegionId'] = $destinationRegionId;
         $this->queryParameters['DestinationRegionId'] = $destinationRegionId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceGroupId
+     *
+     * @return $this
+     */
+    public function setResourceGroupId($resourceGroupId)
+    {
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
 
         return $this;
     }

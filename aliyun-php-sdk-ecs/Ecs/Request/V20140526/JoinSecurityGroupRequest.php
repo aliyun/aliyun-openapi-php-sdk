@@ -13,6 +13,7 @@ namespace Ecs\Request\V20140526;
  * @method string getOwnerAccount()
  * @method string getOwnerId()
  * @method string getInstanceId()
+ * @method string getNetworkInterfaceId()
  */
 class JoinSecurityGroupRequest extends \RpcAcsRequest
 {
@@ -109,6 +110,19 @@ class JoinSecurityGroupRequest extends \RpcAcsRequest
     {
         $this->requestParameters['InstanceId'] = $instanceId;
         $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $networkInterfaceId
+     *
+     * @return $this
+     */
+    public function setNetworkInterfaceId($networkInterfaceId)
+    {
+        $this->requestParameters['NetworkInterfaceId'] = $networkInterfaceId;
+        $this->queryParameters['NetworkInterfaceId'] = $networkInterfaceId;
 
         return $this;
     }

@@ -9,12 +9,15 @@ namespace Ecs\Request\V20140526;
  *
  * @method string getResourceOwnerId()
  * @method string getautoSnapshotPolicyId()
+ * @method string getCopiedSnapshotsRetentionDays()
  * @method string gettimePoints()
  * @method string getrepeatWeekdays()
+ * @method string getEnableCrossRegionCopy()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerId()
  * @method string getautoSnapshotPolicyName()
  * @method string getretentionDays()
+ * @method string getTargetCopyRegions()
  */
 class ModifyAutoSnapshotPolicyExRequest extends \RpcAcsRequest
 {
@@ -64,6 +67,19 @@ class ModifyAutoSnapshotPolicyExRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $copiedSnapshotsRetentionDays
+     *
+     * @return $this
+     */
+    public function setCopiedSnapshotsRetentionDays($copiedSnapshotsRetentionDays)
+    {
+        $this->requestParameters['CopiedSnapshotsRetentionDays'] = $copiedSnapshotsRetentionDays;
+        $this->queryParameters['CopiedSnapshotsRetentionDays'] = $copiedSnapshotsRetentionDays;
+
+        return $this;
+    }
+
+    /**
      * @param string $timePoints
      *
      * @return $this
@@ -85,6 +101,19 @@ class ModifyAutoSnapshotPolicyExRequest extends \RpcAcsRequest
     {
         $this->requestParameters['repeatWeekdays'] = $repeatWeekdays;
         $this->queryParameters['repeatWeekdays'] = $repeatWeekdays;
+
+        return $this;
+    }
+
+    /**
+     * @param string $enableCrossRegionCopy
+     *
+     * @return $this
+     */
+    public function setEnableCrossRegionCopy($enableCrossRegionCopy)
+    {
+        $this->requestParameters['EnableCrossRegionCopy'] = $enableCrossRegionCopy;
+        $this->queryParameters['EnableCrossRegionCopy'] = $enableCrossRegionCopy;
 
         return $this;
     }
@@ -137,6 +166,19 @@ class ModifyAutoSnapshotPolicyExRequest extends \RpcAcsRequest
     {
         $this->requestParameters['retentionDays'] = $retentionDays;
         $this->queryParameters['retentionDays'] = $retentionDays;
+
+        return $this;
+    }
+
+    /**
+     * @param string $targetCopyRegions
+     *
+     * @return $this
+     */
+    public function setTargetCopyRegions($targetCopyRegions)
+    {
+        $this->requestParameters['TargetCopyRegions'] = $targetCopyRegions;
+        $this->queryParameters['TargetCopyRegions'] = $targetCopyRegions;
 
         return $this;
     }

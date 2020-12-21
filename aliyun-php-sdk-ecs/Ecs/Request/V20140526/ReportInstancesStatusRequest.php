@@ -11,6 +11,7 @@ namespace Ecs\Request\V20140526;
  * @method string getResourceOwnerId()
  * @method string getDescription()
  * @method string getStartTime()
+ * @method string getIssueCategory()
  * @method array getDiskIds()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
@@ -88,6 +89,19 @@ class ReportInstancesStatusRequest extends \RpcAcsRequest
     {
         $this->requestParameters['StartTime'] = $startTime;
         $this->queryParameters['StartTime'] = $startTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $issueCategory
+     *
+     * @return $this
+     */
+    public function setIssueCategory($issueCategory)
+    {
+        $this->requestParameters['IssueCategory'] = $issueCategory;
+        $this->queryParameters['IssueCategory'] = $issueCategory;
 
         return $this;
     }

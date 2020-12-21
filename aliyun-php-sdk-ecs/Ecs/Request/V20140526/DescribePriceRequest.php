@@ -10,14 +10,18 @@ namespace Ecs\Request\V20140526;
  * @method string getDataDisk3Size()
  * @method string getResourceOwnerId()
  * @method string getDataDisk3Category()
+ * @method string getIsp()
  * @method string getDataDisk4Size()
  * @method string getPriceUnit()
  * @method string getPeriod()
  * @method string getDataDisk1PerformanceLevel()
+ * @method string getAssuranceTimes()
  * @method string getOwnerId()
+ * @method string getInstanceCpuCoreCount()
  * @method string getInternetChargeType()
  * @method string getInstanceNetworkType()
  * @method string getInstanceAmount()
+ * @method array getInstanceTypeLists()
  * @method string getDataDisk3PerformanceLevel()
  * @method string getImageId()
  * @method string getIoOptimized()
@@ -103,6 +107,19 @@ class DescribePriceRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $isp
+     *
+     * @return $this
+     */
+    public function setIsp($isp)
+    {
+        $this->requestParameters['Isp'] = $isp;
+        $this->queryParameters['Isp'] = $isp;
+
+        return $this;
+    }
+
+    /**
      * @param string $dataDisk4Size
      *
      * @return $this
@@ -155,6 +172,19 @@ class DescribePriceRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $assuranceTimes
+     *
+     * @return $this
+     */
+    public function setAssuranceTimes($assuranceTimes)
+    {
+        $this->requestParameters['AssuranceTimes'] = $assuranceTimes;
+        $this->queryParameters['AssuranceTimes'] = $assuranceTimes;
+
+        return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -163,6 +193,19 @@ class DescribePriceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceCpuCoreCount
+     *
+     * @return $this
+     */
+    public function setInstanceCpuCoreCount($instanceCpuCoreCount)
+    {
+        $this->requestParameters['InstanceCpuCoreCount'] = $instanceCpuCoreCount;
+        $this->queryParameters['InstanceCpuCoreCount'] = $instanceCpuCoreCount;
 
         return $this;
     }
@@ -204,6 +247,21 @@ class DescribePriceRequest extends \RpcAcsRequest
         $this->queryParameters['InstanceAmount'] = $instanceAmount;
 
         return $this;
+    }
+
+    /**
+     * @param array $instanceTypeList
+     *
+     * @return $this
+     */
+	public function setInstanceTypeLists(array $instanceTypeList)
+	{
+	    $this->requestParameters['InstanceTypeLists'] = $instanceTypeList;
+		foreach ($instanceTypeList as $i => $iValue) {
+			$this->queryParameters['InstanceTypeList.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
     }
 
     /**

@@ -8,8 +8,10 @@ namespace Ecs\Request\V20140526;
  * Request of AttachNetworkInterface
  *
  * @method string getResourceOwnerId()
+ * @method string getTrunkNetworkInstanceId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
+ * @method string getWaitForNetworkConfigurationReady()
  * @method string getOwnerId()
  * @method string getInstanceId()
  * @method string getNetworkInterfaceId()
@@ -49,6 +51,19 @@ class AttachNetworkInterfaceRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $trunkNetworkInstanceId
+     *
+     * @return $this
+     */
+    public function setTrunkNetworkInstanceId($trunkNetworkInstanceId)
+    {
+        $this->requestParameters['TrunkNetworkInstanceId'] = $trunkNetworkInstanceId;
+        $this->queryParameters['TrunkNetworkInstanceId'] = $trunkNetworkInstanceId;
+
+        return $this;
+    }
+
+    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -70,6 +85,19 @@ class AttachNetworkInterfaceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerAccount'] = $ownerAccount;
         $this->queryParameters['OwnerAccount'] = $ownerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $waitForNetworkConfigurationReady
+     *
+     * @return $this
+     */
+    public function setWaitForNetworkConfigurationReady($waitForNetworkConfigurationReady)
+    {
+        $this->requestParameters['WaitForNetworkConfigurationReady'] = $waitForNetworkConfigurationReady;
+        $this->queryParameters['WaitForNetworkConfigurationReady'] = $waitForNetworkConfigurationReady;
 
         return $this;
     }

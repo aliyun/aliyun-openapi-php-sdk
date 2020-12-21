@@ -8,12 +8,14 @@ namespace Ecs\Request\V20140526;
  * Request of ModifyInstanceVpcAttribute
  *
  * @method string getResourceOwnerId()
+ * @method array getSecurityGroupIds()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
  * @method string getVSwitchId()
  * @method string getPrivateIpAddress()
  * @method string getInstanceId()
+ * @method string getVpcId()
  */
 class ModifyInstanceVpcAttributeRequest extends \RpcAcsRequest
 {
@@ -47,6 +49,21 @@ class ModifyInstanceVpcAttributeRequest extends \RpcAcsRequest
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
         return $this;
+    }
+
+    /**
+     * @param array $securityGroupId
+     *
+     * @return $this
+     */
+	public function setSecurityGroupIds(array $securityGroupId)
+	{
+	    $this->requestParameters['SecurityGroupIds'] = $securityGroupId;
+		foreach ($securityGroupId as $i => $iValue) {
+			$this->queryParameters['SecurityGroupId.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
     }
 
     /**
@@ -123,6 +140,19 @@ class ModifyInstanceVpcAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['InstanceId'] = $instanceId;
         $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $vpcId
+     *
+     * @return $this
+     */
+    public function setVpcId($vpcId)
+    {
+        $this->requestParameters['VpcId'] = $vpcId;
+        $this->queryParameters['VpcId'] = $vpcId;
 
         return $this;
     }

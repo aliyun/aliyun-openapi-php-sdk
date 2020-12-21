@@ -9,6 +9,7 @@ namespace Ecs\Request\V20140526;
  *
  * @method string getResourceOwnerId()
  * @method string getImageId()
+ * @method string getLaunchPermission()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
@@ -58,6 +59,19 @@ class ModifyImageSharePermissionRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ImageId'] = $imageId;
         $this->queryParameters['ImageId'] = $imageId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $launchPermission
+     *
+     * @return $this
+     */
+    public function setLaunchPermission($launchPermission)
+    {
+        $this->requestParameters['LaunchPermission'] = $launchPermission;
+        $this->queryParameters['LaunchPermission'] = $launchPermission;
 
         return $this;
     }

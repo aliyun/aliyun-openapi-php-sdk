@@ -8,6 +8,7 @@ namespace Ecs\Request\V20140526;
  * Request of DescribeInstanceTypes
  *
  * @method string getResourceOwnerId()
+ * @method array getInstanceTypess()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getInstanceTypeFamily()
@@ -45,6 +46,21 @@ class DescribeInstanceTypesRequest extends \RpcAcsRequest
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
 
         return $this;
+    }
+
+    /**
+     * @param array $instanceTypes
+     *
+     * @return $this
+     */
+	public function setInstanceTypess(array $instanceTypes)
+	{
+	    $this->requestParameters['InstanceTypess'] = $instanceTypes;
+		foreach ($instanceTypes as $i => $iValue) {
+			$this->queryParameters['InstanceTypes.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
     }
 
     /**

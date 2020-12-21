@@ -9,6 +9,7 @@ namespace Ecs\Request\V20140526;
  *
  * @method string getResourceOwnerId()
  * @method string getClientToken()
+ * @method string getISP()
  * @method string getInternetMaxBandwidthOut()
  * @method string getStartTime()
  * @method string getAutoPay()
@@ -64,6 +65,19 @@ class ModifyInstanceNetworkSpecRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ClientToken'] = $clientToken;
         $this->queryParameters['ClientToken'] = $clientToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $iSP
+     *
+     * @return $this
+     */
+    public function setISP($iSP)
+    {
+        $this->requestParameters['ISP'] = $iSP;
+        $this->queryParameters['ISP'] = $iSP;
 
         return $this;
     }

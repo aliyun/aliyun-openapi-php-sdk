@@ -13,6 +13,7 @@ namespace Ecs\Request\V20140526;
  * @method string getScope()
  * @method string getPageSize()
  * @method string getInstanceType()
+ * @method array getTags()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getInstanceTypeFamily()
@@ -121,6 +122,22 @@ class DescribeReservedInstancesRequest extends \RpcAcsRequest
         $this->queryParameters['InstanceType'] = $instanceType;
 
         return $this;
+    }
+
+    /**
+     * @param array $tag
+     *
+     * @return $this
+     */
+	public function setTags(array $tag)
+	{
+	    $this->requestParameters['Tags'] = $tag;
+		foreach ($tag as $depth1 => $depth1Value) {
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+		}
+
+		return $this;
     }
 
     /**

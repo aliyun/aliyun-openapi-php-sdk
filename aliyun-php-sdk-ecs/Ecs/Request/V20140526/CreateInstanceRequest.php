@@ -15,10 +15,13 @@ namespace Ecs\Request\V20140526;
  * @method string getSpotPriceLimit()
  * @method string getDeletionProtection()
  * @method string getResourceGroupId()
+ * @method string getPrivatePoolOptionsMatchCriteria()
  * @method string getHostName()
  * @method string getPassword()
+ * @method string getDeploymentSetGroupNo()
  * @method string getStorageSetPartitionNumber()
  * @method array getTags()
+ * @method string getPrivatePoolOptionsId()
  * @method string getAutoRenewPeriod()
  * @method string getNodeControllerId()
  * @method string getPeriod()
@@ -197,6 +200,19 @@ class CreateInstanceRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $privatePoolOptionsMatchCriteria
+     *
+     * @return $this
+     */
+    public function setPrivatePoolOptionsMatchCriteria($privatePoolOptionsMatchCriteria)
+    {
+        $this->requestParameters['PrivatePoolOptionsMatchCriteria'] = $privatePoolOptionsMatchCriteria;
+        $this->queryParameters['PrivatePoolOptions.MatchCriteria'] = $privatePoolOptionsMatchCriteria;
+
+        return $this;
+    }
+
+    /**
      * @param string $hostName
      *
      * @return $this
@@ -218,6 +234,19 @@ class CreateInstanceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Password'] = $password;
         $this->queryParameters['Password'] = $password;
+
+        return $this;
+    }
+
+    /**
+     * @param string $deploymentSetGroupNo
+     *
+     * @return $this
+     */
+    public function setDeploymentSetGroupNo($deploymentSetGroupNo)
+    {
+        $this->requestParameters['DeploymentSetGroupNo'] = $deploymentSetGroupNo;
+        $this->queryParameters['DeploymentSetGroupNo'] = $deploymentSetGroupNo;
 
         return $this;
     }
@@ -249,6 +278,19 @@ class CreateInstanceRequest extends \RpcAcsRequest
 		}
 
 		return $this;
+    }
+
+    /**
+     * @param string $privatePoolOptionsId
+     *
+     * @return $this
+     */
+    public function setPrivatePoolOptionsId($privatePoolOptionsId)
+    {
+        $this->requestParameters['PrivatePoolOptionsId'] = $privatePoolOptionsId;
+        $this->queryParameters['PrivatePoolOptions.Id'] = $privatePoolOptionsId;
+
+        return $this;
     }
 
     /**

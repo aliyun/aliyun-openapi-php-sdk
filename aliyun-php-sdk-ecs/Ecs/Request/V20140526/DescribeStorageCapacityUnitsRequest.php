@@ -17,6 +17,7 @@ namespace Ecs\Request\V20140526;
  * @method string getOwnerId()
  * @method string getName()
  * @method array getStatuss()
+ * @method string getAllocationType()
  */
 class DescribeStorageCapacityUnitsRequest extends \RpcAcsRequest
 {
@@ -171,5 +172,18 @@ class DescribeStorageCapacityUnitsRequest extends \RpcAcsRequest
 		}
 
 		return $this;
+    }
+
+    /**
+     * @param string $allocationType
+     *
+     * @return $this
+     */
+    public function setAllocationType($allocationType)
+    {
+        $this->requestParameters['AllocationType'] = $allocationType;
+        $this->queryParameters['AllocationType'] = $allocationType;
+
+        return $this;
     }
 }

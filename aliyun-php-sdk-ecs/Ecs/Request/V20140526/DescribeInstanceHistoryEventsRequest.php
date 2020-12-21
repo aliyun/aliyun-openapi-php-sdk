@@ -11,6 +11,7 @@ namespace Ecs\Request\V20140526;
  * @method string getResourceOwnerId()
  * @method string getEventCycleStatus()
  * @method string getPageNumber()
+ * @method string getImpactLevel()
  * @method string getPageSize()
  * @method array getInstanceEventCycleStatuss()
  * @method string getEventPublishTimeEnd()
@@ -95,6 +96,19 @@ class DescribeInstanceHistoryEventsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageNumber'] = $pageNumber;
         $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $impactLevel
+     *
+     * @return $this
+     */
+    public function setImpactLevel($impactLevel)
+    {
+        $this->requestParameters['ImpactLevel'] = $impactLevel;
+        $this->queryParameters['ImpactLevel'] = $impactLevel;
 
         return $this;
     }

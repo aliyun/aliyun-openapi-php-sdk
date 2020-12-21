@@ -5,23 +5,25 @@ namespace Ecs\Request\V20140526;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ModifyDedicatedHostAttribute
+ * Request of SendFile
  *
  * @method string getResourceOwnerId()
  * @method string getDescription()
- * @method string getCpuOverCommitRatio()
- * @method string getActionOnMaintenance()
- * @method string getDedicatedHostClusterId()
- * @method string getDedicatedHostName()
+ * @method string getTimeout()
+ * @method string getContent()
+ * @method string getFileOwner()
+ * @method string getOverwrite()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
- * @method string getDedicatedHostId()
+ * @method string getFileMode()
  * @method string getOwnerId()
- * @method string getNetworkAttributesSlbUdpTimeout()
- * @method string getAutoPlacement()
- * @method string getNetworkAttributesUdpTimeout()
+ * @method string getContentType()
+ * @method array getInstanceIds()
+ * @method string getName()
+ * @method string getFileGroup()
+ * @method string getTargetDir()
  */
-class ModifyDedicatedHostAttributeRequest extends \RpcAcsRequest
+class SendFileRequest extends \RpcAcsRequest
 {
 
     /**
@@ -37,7 +39,7 @@ class ModifyDedicatedHostAttributeRequest extends \RpcAcsRequest
         parent::__construct(
             'Ecs',
             '2014-05-26',
-            'ModifyDedicatedHostAttribute',
+            'SendFile',
             'ecs'
         );
     }
@@ -69,53 +71,53 @@ class ModifyDedicatedHostAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $cpuOverCommitRatio
+     * @param string $timeout
      *
      * @return $this
      */
-    public function setCpuOverCommitRatio($cpuOverCommitRatio)
+    public function setTimeout($timeout)
     {
-        $this->requestParameters['CpuOverCommitRatio'] = $cpuOverCommitRatio;
-        $this->queryParameters['CpuOverCommitRatio'] = $cpuOverCommitRatio;
+        $this->requestParameters['Timeout'] = $timeout;
+        $this->queryParameters['Timeout'] = $timeout;
 
         return $this;
     }
 
     /**
-     * @param string $actionOnMaintenance
+     * @param string $content
      *
      * @return $this
      */
-    public function setActionOnMaintenance($actionOnMaintenance)
+    public function setContent($content)
     {
-        $this->requestParameters['ActionOnMaintenance'] = $actionOnMaintenance;
-        $this->queryParameters['ActionOnMaintenance'] = $actionOnMaintenance;
+        $this->requestParameters['Content'] = $content;
+        $this->queryParameters['Content'] = $content;
 
         return $this;
     }
 
     /**
-     * @param string $dedicatedHostClusterId
+     * @param string $fileOwner
      *
      * @return $this
      */
-    public function setDedicatedHostClusterId($dedicatedHostClusterId)
+    public function setFileOwner($fileOwner)
     {
-        $this->requestParameters['DedicatedHostClusterId'] = $dedicatedHostClusterId;
-        $this->queryParameters['DedicatedHostClusterId'] = $dedicatedHostClusterId;
+        $this->requestParameters['FileOwner'] = $fileOwner;
+        $this->queryParameters['FileOwner'] = $fileOwner;
 
         return $this;
     }
 
     /**
-     * @param string $dedicatedHostName
+     * @param string $overwrite
      *
      * @return $this
      */
-    public function setDedicatedHostName($dedicatedHostName)
+    public function setOverwrite($overwrite)
     {
-        $this->requestParameters['DedicatedHostName'] = $dedicatedHostName;
-        $this->queryParameters['DedicatedHostName'] = $dedicatedHostName;
+        $this->requestParameters['Overwrite'] = $overwrite;
+        $this->queryParameters['Overwrite'] = $overwrite;
 
         return $this;
     }
@@ -147,14 +149,14 @@ class ModifyDedicatedHostAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $dedicatedHostId
+     * @param string $fileMode
      *
      * @return $this
      */
-    public function setDedicatedHostId($dedicatedHostId)
+    public function setFileMode($fileMode)
     {
-        $this->requestParameters['DedicatedHostId'] = $dedicatedHostId;
-        $this->queryParameters['DedicatedHostId'] = $dedicatedHostId;
+        $this->requestParameters['FileMode'] = $fileMode;
+        $this->queryParameters['FileMode'] = $fileMode;
 
         return $this;
     }
@@ -173,40 +175,68 @@ class ModifyDedicatedHostAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $networkAttributesSlbUdpTimeout
+     * @param string $contentType
      *
      * @return $this
      */
-    public function setNetworkAttributesSlbUdpTimeout($networkAttributesSlbUdpTimeout)
+    public function setContentType($contentType)
     {
-        $this->requestParameters['NetworkAttributesSlbUdpTimeout'] = $networkAttributesSlbUdpTimeout;
-        $this->queryParameters['NetworkAttributes.SlbUdpTimeout'] = $networkAttributesSlbUdpTimeout;
+        $this->requestParameters['ContentType'] = $contentType;
+        $this->queryParameters['ContentType'] = $contentType;
 
         return $this;
     }
 
     /**
-     * @param string $autoPlacement
+     * @param array $instanceId
      *
      * @return $this
      */
-    public function setAutoPlacement($autoPlacement)
+	public function setInstanceIds(array $instanceId)
+	{
+	    $this->requestParameters['InstanceIds'] = $instanceId;
+		foreach ($instanceId as $i => $iValue) {
+			$this->queryParameters['InstanceId.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return $this
+     */
+    public function setName($name)
     {
-        $this->requestParameters['AutoPlacement'] = $autoPlacement;
-        $this->queryParameters['AutoPlacement'] = $autoPlacement;
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
         return $this;
     }
 
     /**
-     * @param string $networkAttributesUdpTimeout
+     * @param string $fileGroup
      *
      * @return $this
      */
-    public function setNetworkAttributesUdpTimeout($networkAttributesUdpTimeout)
+    public function setFileGroup($fileGroup)
     {
-        $this->requestParameters['NetworkAttributesUdpTimeout'] = $networkAttributesUdpTimeout;
-        $this->queryParameters['NetworkAttributes.UdpTimeout'] = $networkAttributesUdpTimeout;
+        $this->requestParameters['FileGroup'] = $fileGroup;
+        $this->queryParameters['FileGroup'] = $fileGroup;
+
+        return $this;
+    }
+
+    /**
+     * @param string $targetDir
+     *
+     * @return $this
+     */
+    public function setTargetDir($targetDir)
+    {
+        $this->requestParameters['TargetDir'] = $targetDir;
+        $this->queryParameters['TargetDir'] = $targetDir;
 
         return $this;
     }

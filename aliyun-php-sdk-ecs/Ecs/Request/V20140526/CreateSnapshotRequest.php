@@ -9,8 +9,11 @@ namespace Ecs\Request\V20140526;
  *
  * @method string getResourceOwnerId()
  * @method string getClientToken()
+ * @method string getInstantAccess()
  * @method string getDescription()
  * @method string getSnapshotName()
+ * @method string getResourceGroupId()
+ * @method string getInstantAccessRetentionDays()
  * @method string getDiskId()
  * @method array getTags()
  * @method string getResourceOwnerAccount()
@@ -67,6 +70,19 @@ class CreateSnapshotRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $instantAccess
+     *
+     * @return $this
+     */
+    public function setInstantAccess($instantAccess)
+    {
+        $this->requestParameters['InstantAccess'] = $instantAccess;
+        $this->queryParameters['InstantAccess'] = $instantAccess;
+
+        return $this;
+    }
+
+    /**
      * @param string $description
      *
      * @return $this
@@ -88,6 +104,32 @@ class CreateSnapshotRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SnapshotName'] = $snapshotName;
         $this->queryParameters['SnapshotName'] = $snapshotName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $resourceGroupId
+     *
+     * @return $this
+     */
+    public function setResourceGroupId($resourceGroupId)
+    {
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instantAccessRetentionDays
+     *
+     * @return $this
+     */
+    public function setInstantAccessRetentionDays($instantAccessRetentionDays)
+    {
+        $this->requestParameters['InstantAccessRetentionDays'] = $instantAccessRetentionDays;
+        $this->queryParameters['InstantAccessRetentionDays'] = $instantAccessRetentionDays;
 
         return $this;
     }

@@ -5,18 +5,17 @@ namespace Ecs\Request\V20140526;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ModifyDiskSpec
+ * Request of DescribeNetworkInterfaceAttribute
  *
  * @method string getResourceOwnerId()
- * @method string getDiskCategory()
- * @method string getDiskId()
- * @method string getDryRun()
+ * @method array getTags()
+ * @method string getAttribute()
  * @method string getResourceOwnerAccount()
- * @method string getPerformanceLevel()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getNetworkInterfaceId()
  */
-class ModifyDiskSpecRequest extends \RpcAcsRequest
+class DescribeNetworkInterfaceAttributeRequest extends \RpcAcsRequest
 {
 
     /**
@@ -32,7 +31,7 @@ class ModifyDiskSpecRequest extends \RpcAcsRequest
         parent::__construct(
             'Ecs',
             '2014-05-26',
-            'ModifyDiskSpec',
+            'DescribeNetworkInterfaceAttribute',
             'ecs'
         );
     }
@@ -51,40 +50,30 @@ class ModifyDiskSpecRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $diskCategory
+     * @param array $tag
      *
      * @return $this
      */
-    public function setDiskCategory($diskCategory)
-    {
-        $this->requestParameters['DiskCategory'] = $diskCategory;
-        $this->queryParameters['DiskCategory'] = $diskCategory;
+	public function setTags(array $tag)
+	{
+	    $this->requestParameters['Tags'] = $tag;
+		foreach ($tag as $depth1 => $depth1Value) {
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+		}
 
-        return $this;
+		return $this;
     }
 
     /**
-     * @param string $diskId
+     * @param string $attribute
      *
      * @return $this
      */
-    public function setDiskId($diskId)
+    public function setAttribute($attribute)
     {
-        $this->requestParameters['DiskId'] = $diskId;
-        $this->queryParameters['DiskId'] = $diskId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dryRun
-     *
-     * @return $this
-     */
-    public function setDryRun($dryRun)
-    {
-        $this->requestParameters['DryRun'] = $dryRun;
-        $this->queryParameters['DryRun'] = $dryRun;
+        $this->requestParameters['Attribute'] = $attribute;
+        $this->queryParameters['Attribute'] = $attribute;
 
         return $this;
     }
@@ -98,19 +87,6 @@ class ModifyDiskSpecRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $performanceLevel
-     *
-     * @return $this
-     */
-    public function setPerformanceLevel($performanceLevel)
-    {
-        $this->requestParameters['PerformanceLevel'] = $performanceLevel;
-        $this->queryParameters['PerformanceLevel'] = $performanceLevel;
 
         return $this;
     }
@@ -137,6 +113,19 @@ class ModifyDiskSpecRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $networkInterfaceId
+     *
+     * @return $this
+     */
+    public function setNetworkInterfaceId($networkInterfaceId)
+    {
+        $this->requestParameters['NetworkInterfaceId'] = $networkInterfaceId;
+        $this->queryParameters['NetworkInterfaceId'] = $networkInterfaceId;
 
         return $this;
     }

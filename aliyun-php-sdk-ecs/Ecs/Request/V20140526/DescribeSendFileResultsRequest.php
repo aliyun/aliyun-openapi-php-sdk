@@ -5,17 +5,19 @@ namespace Ecs\Request\V20140526;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DetachNetworkInterface
+ * Request of DescribeSendFileResults
  *
  * @method string getResourceOwnerId()
- * @method string getTrunkNetworkInstanceId()
+ * @method string getPageNumber()
+ * @method string getPageSize()
+ * @method string getInvokeId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
  * @method string getInstanceId()
- * @method string getNetworkInterfaceId()
+ * @method string getName()
  */
-class DetachNetworkInterfaceRequest extends \RpcAcsRequest
+class DescribeSendFileResultsRequest extends \RpcAcsRequest
 {
 
     /**
@@ -31,7 +33,7 @@ class DetachNetworkInterfaceRequest extends \RpcAcsRequest
         parent::__construct(
             'Ecs',
             '2014-05-26',
-            'DetachNetworkInterface',
+            'DescribeSendFileResults',
             'ecs'
         );
     }
@@ -50,14 +52,40 @@ class DetachNetworkInterfaceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $trunkNetworkInstanceId
+     * @param string $pageNumber
      *
      * @return $this
      */
-    public function setTrunkNetworkInstanceId($trunkNetworkInstanceId)
+    public function setPageNumber($pageNumber)
     {
-        $this->requestParameters['TrunkNetworkInstanceId'] = $trunkNetworkInstanceId;
-        $this->queryParameters['TrunkNetworkInstanceId'] = $trunkNetworkInstanceId;
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $invokeId
+     *
+     * @return $this
+     */
+    public function setInvokeId($invokeId)
+    {
+        $this->requestParameters['InvokeId'] = $invokeId;
+        $this->queryParameters['InvokeId'] = $invokeId;
 
         return $this;
     }
@@ -115,14 +143,14 @@ class DetachNetworkInterfaceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $networkInterfaceId
+     * @param string $name
      *
      * @return $this
      */
-    public function setNetworkInterfaceId($networkInterfaceId)
+    public function setName($name)
     {
-        $this->requestParameters['NetworkInterfaceId'] = $networkInterfaceId;
-        $this->queryParameters['NetworkInterfaceId'] = $networkInterfaceId;
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
         return $this;
     }

@@ -14,6 +14,7 @@ namespace Ecs\Request\V20140526;
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getDisableInstantAccess()
  */
 class ModifySnapshotAttributeRequest extends \RpcAcsRequest
 {
@@ -123,6 +124,19 @@ class ModifySnapshotAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $disableInstantAccess
+     *
+     * @return $this
+     */
+    public function setDisableInstantAccess($disableInstantAccess)
+    {
+        $this->requestParameters['DisableInstantAccess'] = $disableInstantAccess;
+        $this->queryParameters['DisableInstantAccess'] = $disableInstantAccess;
 
         return $this;
     }

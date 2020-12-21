@@ -7,6 +7,7 @@ namespace Ecs\Request\V20140526;
  *
  * Request of CreateNetworkInterface
  *
+ * @method string getQueueNumber()
  * @method string getResourceOwnerId()
  * @method string getClientToken()
  * @method string getSecurityGroupId()
@@ -14,6 +15,7 @@ namespace Ecs\Request\V20140526;
  * @method string getSecondaryPrivateIpAddressCount()
  * @method string getBusinessType()
  * @method string getResourceGroupId()
+ * @method string getInstanceType()
  * @method array getTags()
  * @method string getNetworkInterfaceName()
  * @method string getVisible()
@@ -44,6 +46,19 @@ class CreateNetworkInterfaceRequest extends \RpcAcsRequest
             'CreateNetworkInterface',
             'ecs'
         );
+    }
+
+    /**
+     * @param string $queueNumber
+     *
+     * @return $this
+     */
+    public function setQueueNumber($queueNumber)
+    {
+        $this->requestParameters['QueueNumber'] = $queueNumber;
+        $this->queryParameters['QueueNumber'] = $queueNumber;
+
+        return $this;
     }
 
     /**
@@ -133,6 +148,19 @@ class CreateNetworkInterfaceRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
         $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceType
+     *
+     * @return $this
+     */
+    public function setInstanceType($instanceType)
+    {
+        $this->requestParameters['InstanceType'] = $instanceType;
+        $this->queryParameters['InstanceType'] = $instanceType;
 
         return $this;
     }

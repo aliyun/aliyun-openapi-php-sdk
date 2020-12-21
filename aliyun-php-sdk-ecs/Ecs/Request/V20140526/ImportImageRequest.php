@@ -12,6 +12,7 @@ namespace Ecs\Request\V20140526;
  * @method string getDescription()
  * @method string getPlatform()
  * @method string getResourceGroupId()
+ * @method string getBootMode()
  * @method string getImageName()
  * @method array getTags()
  * @method string getArchitecture()
@@ -110,6 +111,19 @@ class ImportImageRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
         $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $bootMode
+     *
+     * @return $this
+     */
+    public function setBootMode($bootMode)
+    {
+        $this->requestParameters['BootMode'] = $bootMode;
+        $this->queryParameters['BootMode'] = $bootMode;
 
         return $this;
     }

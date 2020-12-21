@@ -10,6 +10,7 @@ namespace Ecs\Request\V20140526;
  * @method string getResourceOwnerId()
  * @method string getClientToken()
  * @method string getDescription()
+ * @method string getGroupCount()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getDeploymentSetName()
@@ -75,6 +76,19 @@ class CreateDeploymentSetRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Description'] = $description;
         $this->queryParameters['Description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * @param string $groupCount
+     *
+     * @return $this
+     */
+    public function setGroupCount($groupCount)
+    {
+        $this->requestParameters['GroupCount'] = $groupCount;
+        $this->queryParameters['GroupCount'] = $groupCount;
 
         return $this;
     }

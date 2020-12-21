@@ -24,6 +24,7 @@ namespace Ecs\Request\V20140526;
  * @method string getName()
  * @method string getParameters()
  * @method string getEnableParameter()
+ * @method string getUsername()
  */
 class RunCommandRequest extends \RpcAcsRequest
 {
@@ -265,6 +266,19 @@ class RunCommandRequest extends \RpcAcsRequest
     {
         $this->requestParameters['EnableParameter'] = $enableParameter;
         $this->queryParameters['EnableParameter'] = $enableParameter;
+
+        return $this;
+    }
+
+    /**
+     * @param string $username
+     *
+     * @return $this
+     */
+    public function setUsername($username)
+    {
+        $this->requestParameters['Username'] = $username;
+        $this->queryParameters['Username'] = $username;
 
         return $this;
     }

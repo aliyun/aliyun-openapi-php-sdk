@@ -5,18 +5,14 @@ namespace Ecs\Request\V20140526;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ModifyDiskSpec
+ * Request of DescribeDeploymentSetSupportedInstanceTypeFamily
  *
  * @method string getResourceOwnerId()
- * @method string getDiskCategory()
- * @method string getDiskId()
- * @method string getDryRun()
  * @method string getResourceOwnerAccount()
- * @method string getPerformanceLevel()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
  */
-class ModifyDiskSpecRequest extends \RpcAcsRequest
+class DescribeDeploymentSetSupportedInstanceTypeFamilyRequest extends \RpcAcsRequest
 {
 
     /**
@@ -32,7 +28,7 @@ class ModifyDiskSpecRequest extends \RpcAcsRequest
         parent::__construct(
             'Ecs',
             '2014-05-26',
-            'ModifyDiskSpec',
+            'DescribeDeploymentSetSupportedInstanceTypeFamily',
             'ecs'
         );
     }
@@ -51,45 +47,6 @@ class ModifyDiskSpecRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $diskCategory
-     *
-     * @return $this
-     */
-    public function setDiskCategory($diskCategory)
-    {
-        $this->requestParameters['DiskCategory'] = $diskCategory;
-        $this->queryParameters['DiskCategory'] = $diskCategory;
-
-        return $this;
-    }
-
-    /**
-     * @param string $diskId
-     *
-     * @return $this
-     */
-    public function setDiskId($diskId)
-    {
-        $this->requestParameters['DiskId'] = $diskId;
-        $this->queryParameters['DiskId'] = $diskId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dryRun
-     *
-     * @return $this
-     */
-    public function setDryRun($dryRun)
-    {
-        $this->requestParameters['DryRun'] = $dryRun;
-        $this->queryParameters['DryRun'] = $dryRun;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -98,19 +55,6 @@ class ModifyDiskSpecRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $performanceLevel
-     *
-     * @return $this
-     */
-    public function setPerformanceLevel($performanceLevel)
-    {
-        $this->requestParameters['PerformanceLevel'] = $performanceLevel;
-        $this->queryParameters['PerformanceLevel'] = $performanceLevel;
 
         return $this;
     }

@@ -16,6 +16,7 @@ namespace Ecs\Request\V20140526;
  * @method string getOwnerId()
  * @method array getInstanceIds()
  * @method string getParameters()
+ * @method string getUsername()
  */
 class InvokeCommandRequest extends \RpcAcsRequest
 {
@@ -153,6 +154,19 @@ class InvokeCommandRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Parameters'] = $parameters;
         $this->queryParameters['Parameters'] = $parameters;
+
+        return $this;
+    }
+
+    /**
+     * @param string $username
+     *
+     * @return $this
+     */
+    public function setUsername($username)
+    {
+        $this->requestParameters['Username'] = $username;
+        $this->queryParameters['Username'] = $username;
 
         return $this;
     }

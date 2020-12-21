@@ -5,17 +5,18 @@ namespace Ecs\Request\V20140526;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of DetachNetworkInterface
+ * Request of DescribeCapacityReservationInstances
  *
  * @method string getResourceOwnerId()
- * @method string getTrunkNetworkInstanceId()
+ * @method string getNextToken()
+ * @method string getPrivatePoolOptionsId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
- * @method string getInstanceId()
- * @method string getNetworkInterfaceId()
+ * @method string getMaxResults()
+ * @method string getPackageType()
  */
-class DetachNetworkInterfaceRequest extends \RpcAcsRequest
+class DescribeCapacityReservationInstancesRequest extends \RpcAcsRequest
 {
 
     /**
@@ -31,7 +32,7 @@ class DetachNetworkInterfaceRequest extends \RpcAcsRequest
         parent::__construct(
             'Ecs',
             '2014-05-26',
-            'DetachNetworkInterface',
+            'DescribeCapacityReservationInstances',
             'ecs'
         );
     }
@@ -50,14 +51,27 @@ class DetachNetworkInterfaceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $trunkNetworkInstanceId
+     * @param string $nextToken
      *
      * @return $this
      */
-    public function setTrunkNetworkInstanceId($trunkNetworkInstanceId)
+    public function setNextToken($nextToken)
     {
-        $this->requestParameters['TrunkNetworkInstanceId'] = $trunkNetworkInstanceId;
-        $this->queryParameters['TrunkNetworkInstanceId'] = $trunkNetworkInstanceId;
+        $this->requestParameters['NextToken'] = $nextToken;
+        $this->queryParameters['NextToken'] = $nextToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $privatePoolOptionsId
+     *
+     * @return $this
+     */
+    public function setPrivatePoolOptionsId($privatePoolOptionsId)
+    {
+        $this->requestParameters['PrivatePoolOptionsId'] = $privatePoolOptionsId;
+        $this->queryParameters['PrivatePoolOptions.Id'] = $privatePoolOptionsId;
 
         return $this;
     }
@@ -102,27 +116,27 @@ class DetachNetworkInterfaceRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceId
+     * @param string $maxResults
      *
      * @return $this
      */
-    public function setInstanceId($instanceId)
+    public function setMaxResults($maxResults)
     {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
+        $this->requestParameters['MaxResults'] = $maxResults;
+        $this->queryParameters['MaxResults'] = $maxResults;
 
         return $this;
     }
 
     /**
-     * @param string $networkInterfaceId
+     * @param string $packageType
      *
      * @return $this
      */
-    public function setNetworkInterfaceId($networkInterfaceId)
+    public function setPackageType($packageType)
     {
-        $this->requestParameters['NetworkInterfaceId'] = $networkInterfaceId;
-        $this->queryParameters['NetworkInterfaceId'] = $networkInterfaceId;
+        $this->requestParameters['PackageType'] = $packageType;
+        $this->queryParameters['PackageType'] = $packageType;
 
         return $this;
     }

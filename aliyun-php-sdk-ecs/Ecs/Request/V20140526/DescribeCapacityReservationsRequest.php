@@ -5,27 +5,23 @@ namespace Ecs\Request\V20140526;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of PurchaseReservedInstancesOffering
+ * Request of DescribeCapacityReservations
  *
  * @method string getResourceOwnerId()
- * @method string getClientToken()
- * @method string getDescription()
  * @method string getPlatform()
- * @method string getResourceGroupId()
- * @method string getScope()
+ * @method string getNextToken()
  * @method string getInstanceType()
- * @method array getTags()
- * @method string getPeriod()
+ * @method string getInstanceChargeType()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
- * @method string getPeriodUnit()
- * @method string getOfferingType()
+ * @method string getPrivatePoolOptionsIds()
+ * @method string getMaxResults()
  * @method string getZoneId()
- * @method string getReservedInstanceName()
- * @method string getInstanceAmount()
+ * @method string getPackageType()
+ * @method string getStatus()
  */
-class PurchaseReservedInstancesOfferingRequest extends \RpcAcsRequest
+class DescribeCapacityReservationsRequest extends \RpcAcsRequest
 {
 
     /**
@@ -41,7 +37,7 @@ class PurchaseReservedInstancesOfferingRequest extends \RpcAcsRequest
         parent::__construct(
             'Ecs',
             '2014-05-26',
-            'PurchaseReservedInstancesOffering',
+            'DescribeCapacityReservations',
             'ecs'
         );
     }
@@ -60,32 +56,6 @@ class PurchaseReservedInstancesOfferingRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $clientToken
-     *
-     * @return $this
-     */
-    public function setClientToken($clientToken)
-    {
-        $this->requestParameters['ClientToken'] = $clientToken;
-        $this->queryParameters['ClientToken'] = $clientToken;
-
-        return $this;
-    }
-
-    /**
-     * @param string $description
-     *
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->requestParameters['Description'] = $description;
-        $this->queryParameters['Description'] = $description;
-
-        return $this;
-    }
-
-    /**
      * @param string $platform
      *
      * @return $this
@@ -99,27 +69,14 @@ class PurchaseReservedInstancesOfferingRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $resourceGroupId
+     * @param string $nextToken
      *
      * @return $this
      */
-    public function setResourceGroupId($resourceGroupId)
+    public function setNextToken($nextToken)
     {
-        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
-        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $scope
-     *
-     * @return $this
-     */
-    public function setScope($scope)
-    {
-        $this->requestParameters['Scope'] = $scope;
-        $this->queryParameters['Scope'] = $scope;
+        $this->requestParameters['NextToken'] = $nextToken;
+        $this->queryParameters['NextToken'] = $nextToken;
 
         return $this;
     }
@@ -138,30 +95,14 @@ class PurchaseReservedInstancesOfferingRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $tag
+     * @param string $instanceChargeType
      *
      * @return $this
      */
-	public function setTags(array $tag)
-	{
-	    $this->requestParameters['Tags'] = $tag;
-		foreach ($tag as $depth1 => $depth1Value) {
-			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
-			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
-		}
-
-		return $this;
-    }
-
-    /**
-     * @param string $period
-     *
-     * @return $this
-     */
-    public function setPeriod($period)
+    public function setInstanceChargeType($instanceChargeType)
     {
-        $this->requestParameters['Period'] = $period;
-        $this->queryParameters['Period'] = $period;
+        $this->requestParameters['InstanceChargeType'] = $instanceChargeType;
+        $this->queryParameters['InstanceChargeType'] = $instanceChargeType;
 
         return $this;
     }
@@ -206,27 +147,27 @@ class PurchaseReservedInstancesOfferingRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $periodUnit
+     * @param string $privatePoolOptionsIds
      *
      * @return $this
      */
-    public function setPeriodUnit($periodUnit)
+    public function setPrivatePoolOptionsIds($privatePoolOptionsIds)
     {
-        $this->requestParameters['PeriodUnit'] = $periodUnit;
-        $this->queryParameters['PeriodUnit'] = $periodUnit;
+        $this->requestParameters['PrivatePoolOptionsIds'] = $privatePoolOptionsIds;
+        $this->queryParameters['PrivatePoolOptions.Ids'] = $privatePoolOptionsIds;
 
         return $this;
     }
 
     /**
-     * @param string $offeringType
+     * @param string $maxResults
      *
      * @return $this
      */
-    public function setOfferingType($offeringType)
+    public function setMaxResults($maxResults)
     {
-        $this->requestParameters['OfferingType'] = $offeringType;
-        $this->queryParameters['OfferingType'] = $offeringType;
+        $this->requestParameters['MaxResults'] = $maxResults;
+        $this->queryParameters['MaxResults'] = $maxResults;
 
         return $this;
     }
@@ -245,27 +186,27 @@ class PurchaseReservedInstancesOfferingRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $reservedInstanceName
+     * @param string $packageType
      *
      * @return $this
      */
-    public function setReservedInstanceName($reservedInstanceName)
+    public function setPackageType($packageType)
     {
-        $this->requestParameters['ReservedInstanceName'] = $reservedInstanceName;
-        $this->queryParameters['ReservedInstanceName'] = $reservedInstanceName;
+        $this->requestParameters['PackageType'] = $packageType;
+        $this->queryParameters['PackageType'] = $packageType;
 
         return $this;
     }
 
     /**
-     * @param string $instanceAmount
+     * @param string $status
      *
      * @return $this
      */
-    public function setInstanceAmount($instanceAmount)
+    public function setStatus($status)
     {
-        $this->requestParameters['InstanceAmount'] = $instanceAmount;
-        $this->queryParameters['InstanceAmount'] = $instanceAmount;
+        $this->requestParameters['Status'] = $status;
+        $this->queryParameters['Status'] = $status;
 
         return $this;
     }

@@ -1,3 +1,6 @@
+2020-12-21 Version: 4.23.2
+- Support Device of LaunchConfiguration_DataDisk.
+
 2020-04-17 Version: 4.19.4
 - DescribeInstanceTypes support TotalEniQueueQuantity.
 

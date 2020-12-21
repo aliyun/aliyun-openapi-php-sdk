@@ -25,9 +25,11 @@ namespace Ecs\Request\V20140526;
  * @method array getAdditionalAttributess()
  * @method string getInstanceId()
  * @method string getZoneId()
+ * @method string getMaxResults()
  * @method string getStatus()
  * @method string getSnapshotId()
  * @method string getPageNumber()
+ * @method string getNextToken()
  * @method string getPageSize()
  * @method string getDiskIds()
  * @method string getDeleteWithInstance()
@@ -302,6 +304,19 @@ class DescribeDisksRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $maxResults
+     *
+     * @return $this
+     */
+    public function setMaxResults($maxResults)
+    {
+        $this->requestParameters['MaxResults'] = $maxResults;
+        $this->queryParameters['MaxResults'] = $maxResults;
+
+        return $this;
+    }
+
+    /**
      * @param string $status
      *
      * @return $this
@@ -336,6 +351,19 @@ class DescribeDisksRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageNumber'] = $pageNumber;
         $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $nextToken
+     *
+     * @return $this
+     */
+    public function setNextToken($nextToken)
+    {
+        $this->requestParameters['NextToken'] = $nextToken;
+        $this->queryParameters['NextToken'] = $nextToken;
 
         return $this;
     }

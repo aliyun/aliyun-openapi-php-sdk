@@ -9,6 +9,7 @@ namespace Ecs\Request\V20140526;
  *
  * @method string getResourceOwnerId()
  * @method string getRecyclable()
+ * @method string getNetworkInterfaceQueueNumber()
  * @method string getDescription()
  * @method string getDeletionProtection()
  * @method string getUserData()
@@ -65,6 +66,19 @@ class ModifyInstanceAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Recyclable'] = $recyclable;
         $this->queryParameters['Recyclable'] = $recyclable;
+
+        return $this;
+    }
+
+    /**
+     * @param string $networkInterfaceQueueNumber
+     *
+     * @return $this
+     */
+    public function setNetworkInterfaceQueueNumber($networkInterfaceQueueNumber)
+    {
+        $this->requestParameters['NetworkInterfaceQueueNumber'] = $networkInterfaceQueueNumber;
+        $this->queryParameters['NetworkInterfaceQueueNumber'] = $networkInterfaceQueueNumber;
 
         return $this;
     }

@@ -9,6 +9,7 @@ namespace Ecs\Request\V20140526;
  *
  * @method string getResourceOwnerId()
  * @method string getClientToken()
+ * @method string getServiceManaged()
  * @method string getDescription()
  * @method string getSecurityGroupName()
  * @method string getResourceGroupId()
@@ -62,6 +63,19 @@ class CreateSecurityGroupRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ClientToken'] = $clientToken;
         $this->queryParameters['ClientToken'] = $clientToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $serviceManaged
+     *
+     * @return $this
+     */
+    public function setServiceManaged($serviceManaged)
+    {
+        $this->requestParameters['ServiceManaged'] = $serviceManaged;
+        $this->queryParameters['ServiceManaged'] = $serviceManaged;
 
         return $this;
     }

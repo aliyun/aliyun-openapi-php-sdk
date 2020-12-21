@@ -8,6 +8,8 @@ namespace Ecs\Request\V20140526;
  * Request of ModifyInstanceDeployment
  *
  * @method string getResourceOwnerId()
+ * @method string getDeploymentSetGroupNo()
+ * @method string getDedicatedHostClusterId()
  * @method string getInstanceType()
  * @method string getDeploymentSetId()
  * @method string getResourceOwnerAccount()
@@ -50,6 +52,32 @@ class ModifyInstanceDeploymentRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $deploymentSetGroupNo
+     *
+     * @return $this
+     */
+    public function setDeploymentSetGroupNo($deploymentSetGroupNo)
+    {
+        $this->requestParameters['DeploymentSetGroupNo'] = $deploymentSetGroupNo;
+        $this->queryParameters['DeploymentSetGroupNo'] = $deploymentSetGroupNo;
+
+        return $this;
+    }
+
+    /**
+     * @param string $dedicatedHostClusterId
+     *
+     * @return $this
+     */
+    public function setDedicatedHostClusterId($dedicatedHostClusterId)
+    {
+        $this->requestParameters['DedicatedHostClusterId'] = $dedicatedHostClusterId;
+        $this->queryParameters['DedicatedHostClusterId'] = $dedicatedHostClusterId;
 
         return $this;
     }

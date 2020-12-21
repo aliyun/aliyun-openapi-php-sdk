@@ -5,21 +5,20 @@ namespace Ecs\Request\V20140526;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ModifyImageAttribute
+ * Request of CreateDedicatedHostCluster
  *
+ * @method string getDedicatedHostClusterName()
  * @method string getResourceOwnerId()
- * @method string getImageId()
  * @method string getDescription()
- * @method string getBootMode()
- * @method string getImageName()
- * @method string getLicenseType()
+ * @method string getResourceGroupId()
+ * @method array getTags()
+ * @method string getDryRun()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
- * @method string getImageFamily()
- * @method string getStatus()
+ * @method string getZoneId()
  */
-class ModifyImageAttributeRequest extends \RpcAcsRequest
+class CreateDedicatedHostClusterRequest extends \RpcAcsRequest
 {
 
     /**
@@ -35,9 +34,22 @@ class ModifyImageAttributeRequest extends \RpcAcsRequest
         parent::__construct(
             'Ecs',
             '2014-05-26',
-            'ModifyImageAttribute',
+            'CreateDedicatedHostCluster',
             'ecs'
         );
+    }
+
+    /**
+     * @param string $dedicatedHostClusterName
+     *
+     * @return $this
+     */
+    public function setDedicatedHostClusterName($dedicatedHostClusterName)
+    {
+        $this->requestParameters['DedicatedHostClusterName'] = $dedicatedHostClusterName;
+        $this->queryParameters['DedicatedHostClusterName'] = $dedicatedHostClusterName;
+
+        return $this;
     }
 
     /**
@@ -49,19 +61,6 @@ class ModifyImageAttributeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerId'] = $resourceOwnerId;
         $this->queryParameters['ResourceOwnerId'] = $resourceOwnerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $imageId
-     *
-     * @return $this
-     */
-    public function setImageId($imageId)
-    {
-        $this->requestParameters['ImageId'] = $imageId;
-        $this->queryParameters['ImageId'] = $imageId;
 
         return $this;
     }
@@ -80,40 +79,43 @@ class ModifyImageAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $bootMode
+     * @param string $resourceGroupId
      *
      * @return $this
      */
-    public function setBootMode($bootMode)
+    public function setResourceGroupId($resourceGroupId)
     {
-        $this->requestParameters['BootMode'] = $bootMode;
-        $this->queryParameters['BootMode'] = $bootMode;
+        $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
+        $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
 
         return $this;
     }
 
     /**
-     * @param string $imageName
+     * @param array $tag
      *
      * @return $this
      */
-    public function setImageName($imageName)
-    {
-        $this->requestParameters['ImageName'] = $imageName;
-        $this->queryParameters['ImageName'] = $imageName;
+	public function setTags(array $tag)
+	{
+	    $this->requestParameters['Tags'] = $tag;
+		foreach ($tag as $depth1 => $depth1Value) {
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+			$this->queryParameters['Tag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+		}
 
-        return $this;
+		return $this;
     }
 
     /**
-     * @param string $licenseType
+     * @param string $dryRun
      *
      * @return $this
      */
-    public function setLicenseType($licenseType)
+    public function setDryRun($dryRun)
     {
-        $this->requestParameters['LicenseType'] = $licenseType;
-        $this->queryParameters['LicenseType'] = $licenseType;
+        $this->requestParameters['DryRun'] = $dryRun;
+        $this->queryParameters['DryRun'] = $dryRun;
 
         return $this;
     }
@@ -158,27 +160,14 @@ class ModifyImageAttributeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $imageFamily
+     * @param string $zoneId
      *
      * @return $this
      */
-    public function setImageFamily($imageFamily)
+    public function setZoneId($zoneId)
     {
-        $this->requestParameters['ImageFamily'] = $imageFamily;
-        $this->queryParameters['ImageFamily'] = $imageFamily;
-
-        return $this;
-    }
-
-    /**
-     * @param string $status
-     *
-     * @return $this
-     */
-    public function setStatus($status)
-    {
-        $this->requestParameters['Status'] = $status;
-        $this->queryParameters['Status'] = $status;
+        $this->requestParameters['ZoneId'] = $zoneId;
+        $this->queryParameters['ZoneId'] = $zoneId;
 
         return $this;
     }

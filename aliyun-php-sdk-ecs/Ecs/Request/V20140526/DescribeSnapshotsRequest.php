@@ -12,25 +12,28 @@ namespace Ecs\Request\V20140526;
  * @method string getSnapshotIds()
  * @method string getUsage()
  * @method string getSnapshotLinkId()
- * @method string getSnapshotName()
- * @method string getPageNumber()
  * @method string getResourceGroupId()
  * @method string getFilter1Key()
- * @method string getPageSize()
- * @method string getDiskId()
  * @method array getTags()
  * @method string getDryRun()
+ * @method string getFilter1Value()
+ * @method string getOwnerId()
+ * @method string getInstanceId()
+ * @method string getMaxResults()
+ * @method string getStatus()
+ * @method string getSnapshotName()
+ * @method string getPageNumber()
+ * @method string getNextToken()
+ * @method string getPageSize()
+ * @method string getDiskId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getSourceDiskType()
- * @method string getFilter1Value()
  * @method string getFilter2Key()
- * @method string getOwnerId()
- * @method string getInstanceId()
  * @method string getEncrypted()
  * @method string getSnapshotType()
  * @method string getKMSKeyId()
- * @method string getStatus()
+ * @method string getCategory()
  */
 class DescribeSnapshotsRequest extends \RpcAcsRequest
 {
@@ -119,32 +122,6 @@ class DescribeSnapshotsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $snapshotName
-     *
-     * @return $this
-     */
-    public function setSnapshotName($snapshotName)
-    {
-        $this->requestParameters['SnapshotName'] = $snapshotName;
-        $this->queryParameters['SnapshotName'] = $snapshotName;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageNumber
-     *
-     * @return $this
-     */
-    public function setPageNumber($pageNumber)
-    {
-        $this->requestParameters['PageNumber'] = $pageNumber;
-        $this->queryParameters['PageNumber'] = $pageNumber;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceGroupId
      *
      * @return $this
@@ -166,32 +143,6 @@ class DescribeSnapshotsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Filter1Key'] = $filter1Key;
         $this->queryParameters['Filter.1.Key'] = $filter1Key;
-
-        return $this;
-    }
-
-    /**
-     * @param string $pageSize
-     *
-     * @return $this
-     */
-    public function setPageSize($pageSize)
-    {
-        $this->requestParameters['PageSize'] = $pageSize;
-        $this->queryParameters['PageSize'] = $pageSize;
-
-        return $this;
-    }
-
-    /**
-     * @param string $diskId
-     *
-     * @return $this
-     */
-    public function setDiskId($diskId)
-    {
-        $this->requestParameters['DiskId'] = $diskId;
-        $this->queryParameters['DiskId'] = $diskId;
 
         return $this;
     }
@@ -221,6 +172,136 @@ class DescribeSnapshotsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DryRun'] = $dryRun;
         $this->queryParameters['DryRun'] = $dryRun;
+
+        return $this;
+    }
+
+    /**
+     * @param string $filter1Value
+     *
+     * @return $this
+     */
+    public function setFilter1Value($filter1Value)
+    {
+        $this->requestParameters['Filter1Value'] = $filter1Value;
+        $this->queryParameters['Filter.1.Value'] = $filter1Value;
+
+        return $this;
+    }
+
+    /**
+     * @param string $ownerId
+     *
+     * @return $this
+     */
+    public function setOwnerId($ownerId)
+    {
+        $this->requestParameters['OwnerId'] = $ownerId;
+        $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceId
+     *
+     * @return $this
+     */
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $maxResults
+     *
+     * @return $this
+     */
+    public function setMaxResults($maxResults)
+    {
+        $this->requestParameters['MaxResults'] = $maxResults;
+        $this->queryParameters['MaxResults'] = $maxResults;
+
+        return $this;
+    }
+
+    /**
+     * @param string $status
+     *
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->requestParameters['Status'] = $status;
+        $this->queryParameters['Status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * @param string $snapshotName
+     *
+     * @return $this
+     */
+    public function setSnapshotName($snapshotName)
+    {
+        $this->requestParameters['SnapshotName'] = $snapshotName;
+        $this->queryParameters['SnapshotName'] = $snapshotName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageNumber
+     *
+     * @return $this
+     */
+    public function setPageNumber($pageNumber)
+    {
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $nextToken
+     *
+     * @return $this
+     */
+    public function setNextToken($nextToken)
+    {
+        $this->requestParameters['NextToken'] = $nextToken;
+        $this->queryParameters['NextToken'] = $nextToken;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * @param string $diskId
+     *
+     * @return $this
+     */
+    public function setDiskId($diskId)
+    {
+        $this->requestParameters['DiskId'] = $diskId;
+        $this->queryParameters['DiskId'] = $diskId;
 
         return $this;
     }
@@ -265,19 +346,6 @@ class DescribeSnapshotsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $filter1Value
-     *
-     * @return $this
-     */
-    public function setFilter1Value($filter1Value)
-    {
-        $this->requestParameters['Filter1Value'] = $filter1Value;
-        $this->queryParameters['Filter.1.Value'] = $filter1Value;
-
-        return $this;
-    }
-
-    /**
      * @param string $filter2Key
      *
      * @return $this
@@ -286,32 +354,6 @@ class DescribeSnapshotsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Filter2Key'] = $filter2Key;
         $this->queryParameters['Filter.2.Key'] = $filter2Key;
-
-        return $this;
-    }
-
-    /**
-     * @param string $ownerId
-     *
-     * @return $this
-     */
-    public function setOwnerId($ownerId)
-    {
-        $this->requestParameters['OwnerId'] = $ownerId;
-        $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $instanceId
-     *
-     * @return $this
-     */
-    public function setInstanceId($instanceId)
-    {
-        $this->requestParameters['InstanceId'] = $instanceId;
-        $this->queryParameters['InstanceId'] = $instanceId;
 
         return $this;
     }
@@ -356,14 +398,14 @@ class DescribeSnapshotsRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $status
+     * @param string $category
      *
      * @return $this
      */
-    public function setStatus($status)
+    public function setCategory($category)
     {
-        $this->requestParameters['Status'] = $status;
-        $this->queryParameters['Status'] = $status;
+        $this->requestParameters['Category'] = $category;
+        $this->queryParameters['Category'] = $category;
 
         return $this;
     }

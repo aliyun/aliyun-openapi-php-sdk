@@ -5,18 +5,17 @@ namespace Ecs\Request\V20140526;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ModifyDiskSpec
+ * Request of DescribeInstanceAttachmentAttributes
  *
  * @method string getResourceOwnerId()
- * @method string getDiskCategory()
- * @method string getDiskId()
- * @method string getDryRun()
+ * @method string getPageNumber()
+ * @method string getPageSize()
  * @method string getResourceOwnerAccount()
- * @method string getPerformanceLevel()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
+ * @method string getInstanceIds()
  */
-class ModifyDiskSpecRequest extends \RpcAcsRequest
+class DescribeInstanceAttachmentAttributesRequest extends \RpcAcsRequest
 {
 
     /**
@@ -32,7 +31,7 @@ class ModifyDiskSpecRequest extends \RpcAcsRequest
         parent::__construct(
             'Ecs',
             '2014-05-26',
-            'ModifyDiskSpec',
+            'DescribeInstanceAttachmentAttributes',
             'ecs'
         );
     }
@@ -51,40 +50,27 @@ class ModifyDiskSpecRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $diskCategory
+     * @param string $pageNumber
      *
      * @return $this
      */
-    public function setDiskCategory($diskCategory)
+    public function setPageNumber($pageNumber)
     {
-        $this->requestParameters['DiskCategory'] = $diskCategory;
-        $this->queryParameters['DiskCategory'] = $diskCategory;
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
 
         return $this;
     }
 
     /**
-     * @param string $diskId
+     * @param string $pageSize
      *
      * @return $this
      */
-    public function setDiskId($diskId)
+    public function setPageSize($pageSize)
     {
-        $this->requestParameters['DiskId'] = $diskId;
-        $this->queryParameters['DiskId'] = $diskId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $dryRun
-     *
-     * @return $this
-     */
-    public function setDryRun($dryRun)
-    {
-        $this->requestParameters['DryRun'] = $dryRun;
-        $this->queryParameters['DryRun'] = $dryRun;
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }
@@ -98,19 +84,6 @@ class ModifyDiskSpecRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
-
-        return $this;
-    }
-
-    /**
-     * @param string $performanceLevel
-     *
-     * @return $this
-     */
-    public function setPerformanceLevel($performanceLevel)
-    {
-        $this->requestParameters['PerformanceLevel'] = $performanceLevel;
-        $this->queryParameters['PerformanceLevel'] = $performanceLevel;
 
         return $this;
     }
@@ -137,6 +110,19 @@ class ModifyDiskSpecRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instanceIds
+     *
+     * @return $this
+     */
+    public function setInstanceIds($instanceIds)
+    {
+        $this->requestParameters['InstanceIds'] = $instanceIds;
+        $this->queryParameters['InstanceIds'] = $instanceIds;
 
         return $this;
     }
