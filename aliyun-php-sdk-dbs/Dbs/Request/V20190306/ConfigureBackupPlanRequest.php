@@ -21,10 +21,12 @@ namespace Dbs\Request\V20190306;
  * @method string getEnableBackupLog()
  * @method string getBackupStorageType()
  * @method string getDuplicationArchivePeriod()
+ * @method string getBackupLogIntervalSeconds()
  * @method string getCrossAliyunId()
  * @method string getAutoStartBackup()
  * @method string getSourceEndpointPassword()
  * @method string getBackupObjects()
+ * @method string getBackupRateLimit()
  * @method string getOwnerId()
  * @method string getSourceEndpointPort()
  * @method string getBackupRetentionPeriod()
@@ -240,6 +242,19 @@ class ConfigureBackupPlanRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $backupLogIntervalSeconds
+     *
+     * @return $this
+     */
+    public function setBackupLogIntervalSeconds($backupLogIntervalSeconds)
+    {
+        $this->requestParameters['BackupLogIntervalSeconds'] = $backupLogIntervalSeconds;
+        $this->queryParameters['BackupLogIntervalSeconds'] = $backupLogIntervalSeconds;
+
+        return $this;
+    }
+
+    /**
      * @param string $crossAliyunId
      *
      * @return $this
@@ -287,6 +302,19 @@ class ConfigureBackupPlanRequest extends \RpcAcsRequest
     {
         $this->requestParameters['BackupObjects'] = $backupObjects;
         $this->queryParameters['BackupObjects'] = $backupObjects;
+
+        return $this;
+    }
+
+    /**
+     * @param string $backupRateLimit
+     *
+     * @return $this
+     */
+    public function setBackupRateLimit($backupRateLimit)
+    {
+        $this->requestParameters['BackupRateLimit'] = $backupRateLimit;
+        $this->queryParameters['BackupRateLimit'] = $backupRateLimit;
 
         return $this;
     }
