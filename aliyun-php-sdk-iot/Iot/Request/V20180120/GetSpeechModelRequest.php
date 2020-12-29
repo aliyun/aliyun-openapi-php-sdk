@@ -5,15 +5,13 @@ namespace Iot\Request\V20180120;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of QueryThingModelExtendConfigPublished
+ * Request of GetSpeechModel
  *
- * @method string getIotInstanceId()
- * @method string getProductKey()
+ * @method string getCode()
  * @method string getApiProduct()
  * @method string getApiRevision()
- * @method string getModelVersion()
  */
-class QueryThingModelExtendConfigPublishedRequest extends \RpcAcsRequest
+class GetSpeechModelRequest extends \RpcAcsRequest
 {
 
     /**
@@ -29,33 +27,20 @@ class QueryThingModelExtendConfigPublishedRequest extends \RpcAcsRequest
         parent::__construct(
             'Iot',
             '2018-01-20',
-            'QueryThingModelExtendConfigPublished',
+            'GetSpeechModel',
             'iot'
         );
     }
 
     /**
-     * @param string $iotInstanceId
+     * @param string $code
      *
      * @return $this
      */
-    public function setIotInstanceId($iotInstanceId)
+    public function setCode($code)
     {
-        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
-        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $productKey
-     *
-     * @return $this
-     */
-    public function setProductKey($productKey)
-    {
-        $this->requestParameters['ProductKey'] = $productKey;
-        $this->queryParameters['ProductKey'] = $productKey;
+        $this->requestParameters['Code'] = $code;
+        $this->queryParameters['Code'] = $code;
 
         return $this;
     }
@@ -82,19 +67,6 @@ class QueryThingModelExtendConfigPublishedRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ApiRevision'] = $apiRevision;
         $this->queryParameters['ApiRevision'] = $apiRevision;
-
-        return $this;
-    }
-
-    /**
-     * @param string $modelVersion
-     *
-     * @return $this
-     */
-    public function setModelVersion($modelVersion)
-    {
-        $this->requestParameters['ModelVersion'] = $modelVersion;
-        $this->queryParameters['ModelVersion'] = $modelVersion;
 
         return $this;
     }

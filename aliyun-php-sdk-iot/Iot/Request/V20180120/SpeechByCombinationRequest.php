@@ -5,15 +5,16 @@ namespace Iot\Request\V20180120;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of QueryThingModelExtendConfigPublished
+ * Request of SpeechByCombination
  *
- * @method string getIotInstanceId()
+ * @method string getIotId()
+ * @method array getCombinationLists()
  * @method string getProductKey()
  * @method string getApiProduct()
  * @method string getApiRevision()
- * @method string getModelVersion()
+ * @method string getDeviceName()
  */
-class QueryThingModelExtendConfigPublishedRequest extends \RpcAcsRequest
+class SpeechByCombinationRequest extends \RpcAcsRequest
 {
 
     /**
@@ -29,22 +30,37 @@ class QueryThingModelExtendConfigPublishedRequest extends \RpcAcsRequest
         parent::__construct(
             'Iot',
             '2018-01-20',
-            'QueryThingModelExtendConfigPublished',
+            'SpeechByCombination',
             'iot'
         );
     }
 
     /**
-     * @param string $iotInstanceId
+     * @param string $iotId
      *
      * @return $this
      */
-    public function setIotInstanceId($iotInstanceId)
+    public function setIotId($iotId)
     {
-        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
-        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
+        $this->requestParameters['IotId'] = $iotId;
+        $this->queryParameters['IotId'] = $iotId;
 
         return $this;
+    }
+
+    /**
+     * @param array $combinationList
+     *
+     * @return $this
+     */
+	public function setCombinationLists(array $combinationList)
+	{
+	    $this->requestParameters['CombinationLists'] = $combinationList;
+		foreach ($combinationList as $i => $iValue) {
+			$this->queryParameters['CombinationList.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
     }
 
     /**
@@ -87,14 +103,14 @@ class QueryThingModelExtendConfigPublishedRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $modelVersion
+     * @param string $deviceName
      *
      * @return $this
      */
-    public function setModelVersion($modelVersion)
+    public function setDeviceName($deviceName)
     {
-        $this->requestParameters['ModelVersion'] = $modelVersion;
-        $this->queryParameters['ModelVersion'] = $modelVersion;
+        $this->requestParameters['DeviceName'] = $deviceName;
+        $this->queryParameters['DeviceName'] = $deviceName;
 
         return $this;
     }

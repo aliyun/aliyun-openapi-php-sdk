@@ -5,15 +5,14 @@ namespace Iot\Request\V20180120;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of QueryThingModelExtendConfigPublished
+ * Request of PackageAndGetSpeechModelAudio
  *
- * @method string getIotInstanceId()
- * @method string getProductKey()
+ * @method string getProjectCode()
  * @method string getApiProduct()
  * @method string getApiRevision()
- * @method string getModelVersion()
+ * @method array getSpeechModelCodeLists()
  */
-class QueryThingModelExtendConfigPublishedRequest extends \RpcAcsRequest
+class PackageAndGetSpeechModelAudioRequest extends \RpcAcsRequest
 {
 
     /**
@@ -29,33 +28,20 @@ class QueryThingModelExtendConfigPublishedRequest extends \RpcAcsRequest
         parent::__construct(
             'Iot',
             '2018-01-20',
-            'QueryThingModelExtendConfigPublished',
+            'PackageAndGetSpeechModelAudio',
             'iot'
         );
     }
 
     /**
-     * @param string $iotInstanceId
+     * @param string $projectCode
      *
      * @return $this
      */
-    public function setIotInstanceId($iotInstanceId)
+    public function setProjectCode($projectCode)
     {
-        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
-        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $productKey
-     *
-     * @return $this
-     */
-    public function setProductKey($productKey)
-    {
-        $this->requestParameters['ProductKey'] = $productKey;
-        $this->queryParameters['ProductKey'] = $productKey;
+        $this->requestParameters['ProjectCode'] = $projectCode;
+        $this->queryParameters['ProjectCode'] = $projectCode;
 
         return $this;
     }
@@ -87,15 +73,17 @@ class QueryThingModelExtendConfigPublishedRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $modelVersion
+     * @param array $speechModelCodeList
      *
      * @return $this
      */
-    public function setModelVersion($modelVersion)
-    {
-        $this->requestParameters['ModelVersion'] = $modelVersion;
-        $this->queryParameters['ModelVersion'] = $modelVersion;
+	public function setSpeechModelCodeLists(array $speechModelCodeList)
+	{
+	    $this->requestParameters['SpeechModelCodeLists'] = $speechModelCodeList;
+		foreach ($speechModelCodeList as $i => $iValue) {
+			$this->queryParameters['SpeechModelCodeList.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 }

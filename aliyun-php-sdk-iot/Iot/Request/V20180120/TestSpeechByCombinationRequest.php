@@ -5,15 +5,14 @@ namespace Iot\Request\V20180120;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of QueryThingModelExtendConfigPublished
+ * Request of TestSpeechByCombination
  *
- * @method string getIotInstanceId()
- * @method string getProductKey()
+ * @method string getProjectCode()
+ * @method array getCombinationLists()
  * @method string getApiProduct()
  * @method string getApiRevision()
- * @method string getModelVersion()
  */
-class QueryThingModelExtendConfigPublishedRequest extends \RpcAcsRequest
+class TestSpeechByCombinationRequest extends \RpcAcsRequest
 {
 
     /**
@@ -29,35 +28,37 @@ class QueryThingModelExtendConfigPublishedRequest extends \RpcAcsRequest
         parent::__construct(
             'Iot',
             '2018-01-20',
-            'QueryThingModelExtendConfigPublished',
+            'TestSpeechByCombination',
             'iot'
         );
     }
 
     /**
-     * @param string $iotInstanceId
+     * @param string $projectCode
      *
      * @return $this
      */
-    public function setIotInstanceId($iotInstanceId)
+    public function setProjectCode($projectCode)
     {
-        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
-        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
+        $this->requestParameters['ProjectCode'] = $projectCode;
+        $this->queryParameters['ProjectCode'] = $projectCode;
 
         return $this;
     }
 
     /**
-     * @param string $productKey
+     * @param array $combinationList
      *
      * @return $this
      */
-    public function setProductKey($productKey)
-    {
-        $this->requestParameters['ProductKey'] = $productKey;
-        $this->queryParameters['ProductKey'] = $productKey;
+	public function setCombinationLists(array $combinationList)
+	{
+	    $this->requestParameters['CombinationLists'] = $combinationList;
+		foreach ($combinationList as $i => $iValue) {
+			$this->queryParameters['CombinationList.' . ($i + 1)] = $iValue;
+		}
 
-        return $this;
+		return $this;
     }
 
     /**
@@ -82,19 +83,6 @@ class QueryThingModelExtendConfigPublishedRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ApiRevision'] = $apiRevision;
         $this->queryParameters['ApiRevision'] = $apiRevision;
-
-        return $this;
-    }
-
-    /**
-     * @param string $modelVersion
-     *
-     * @return $this
-     */
-    public function setModelVersion($modelVersion)
-    {
-        $this->requestParameters['ModelVersion'] = $modelVersion;
-        $this->queryParameters['ModelVersion'] = $modelVersion;
 
         return $this;
     }

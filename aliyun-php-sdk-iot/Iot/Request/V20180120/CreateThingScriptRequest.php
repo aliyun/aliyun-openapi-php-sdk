@@ -5,15 +5,16 @@ namespace Iot\Request\V20180120;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of QueryThingModelExtendConfigPublished
+ * Request of CreateThingScript
  *
  * @method string getIotInstanceId()
+ * @method string getScriptType()
  * @method string getProductKey()
  * @method string getApiProduct()
  * @method string getApiRevision()
- * @method string getModelVersion()
+ * @method string getScriptContent()
  */
-class QueryThingModelExtendConfigPublishedRequest extends \RpcAcsRequest
+class CreateThingScriptRequest extends \RpcAcsRequest
 {
 
     /**
@@ -29,7 +30,7 @@ class QueryThingModelExtendConfigPublishedRequest extends \RpcAcsRequest
         parent::__construct(
             'Iot',
             '2018-01-20',
-            'QueryThingModelExtendConfigPublished',
+            'CreateThingScript',
             'iot'
         );
     }
@@ -43,6 +44,19 @@ class QueryThingModelExtendConfigPublishedRequest extends \RpcAcsRequest
     {
         $this->requestParameters['IotInstanceId'] = $iotInstanceId;
         $this->queryParameters['IotInstanceId'] = $iotInstanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $scriptType
+     *
+     * @return $this
+     */
+    public function setScriptType($scriptType)
+    {
+        $this->requestParameters['ScriptType'] = $scriptType;
+        $this->queryParameters['ScriptType'] = $scriptType;
 
         return $this;
     }
@@ -87,14 +101,14 @@ class QueryThingModelExtendConfigPublishedRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $modelVersion
+     * @param string $scriptContent
      *
      * @return $this
      */
-    public function setModelVersion($modelVersion)
+    public function setScriptContent($scriptContent)
     {
-        $this->requestParameters['ModelVersion'] = $modelVersion;
-        $this->queryParameters['ModelVersion'] = $modelVersion;
+        $this->requestParameters['ScriptContent'] = $scriptContent;
+        $this->queryParameters['ScriptContent'] = $scriptContent;
 
         return $this;
     }

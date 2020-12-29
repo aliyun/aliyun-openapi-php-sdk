@@ -5,18 +5,18 @@ namespace Iot\Request\V20180120;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ListOTATaskByJob
+ * Request of ListOTAModuleVersionsByDevice
  *
- * @method string getJobId()
- * @method string getTaskStatus()
+ * @method string getIotId()
  * @method string getIotInstanceId()
  * @method string getPageSize()
- * @method array getDeviceNamess()
  * @method string getCurrentPage()
+ * @method string getProductKey()
  * @method string getApiProduct()
  * @method string getApiRevision()
+ * @method string getDeviceName()
  */
-class ListOTATaskByJobRequest extends \RpcAcsRequest
+class ListOTAModuleVersionsByDeviceRequest extends \RpcAcsRequest
 {
 
     /**
@@ -32,33 +32,20 @@ class ListOTATaskByJobRequest extends \RpcAcsRequest
         parent::__construct(
             'Iot',
             '2018-01-20',
-            'ListOTATaskByJob',
+            'ListOTAModuleVersionsByDevice',
             'iot'
         );
     }
 
     /**
-     * @param string $jobId
+     * @param string $iotId
      *
      * @return $this
      */
-    public function setJobId($jobId)
+    public function setIotId($iotId)
     {
-        $this->requestParameters['JobId'] = $jobId;
-        $this->queryParameters['JobId'] = $jobId;
-
-        return $this;
-    }
-
-    /**
-     * @param string $taskStatus
-     *
-     * @return $this
-     */
-    public function setTaskStatus($taskStatus)
-    {
-        $this->requestParameters['TaskStatus'] = $taskStatus;
-        $this->queryParameters['TaskStatus'] = $taskStatus;
+        $this->requestParameters['IotId'] = $iotId;
+        $this->queryParameters['IotId'] = $iotId;
 
         return $this;
     }
@@ -90,21 +77,6 @@ class ListOTATaskByJobRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $deviceNames
-     *
-     * @return $this
-     */
-	public function setDeviceNamess(array $deviceNames)
-	{
-	    $this->requestParameters['DeviceNamess'] = $deviceNames;
-		foreach ($deviceNames as $i => $iValue) {
-			$this->queryParameters['DeviceNames.' . ($i + 1)] = $iValue;
-		}
-
-		return $this;
-    }
-
-    /**
      * @param string $currentPage
      *
      * @return $this
@@ -113,6 +85,19 @@ class ListOTATaskByJobRequest extends \RpcAcsRequest
     {
         $this->requestParameters['CurrentPage'] = $currentPage;
         $this->queryParameters['CurrentPage'] = $currentPage;
+
+        return $this;
+    }
+
+    /**
+     * @param string $productKey
+     *
+     * @return $this
+     */
+    public function setProductKey($productKey)
+    {
+        $this->requestParameters['ProductKey'] = $productKey;
+        $this->queryParameters['ProductKey'] = $productKey;
 
         return $this;
     }
@@ -139,6 +124,19 @@ class ListOTATaskByJobRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ApiRevision'] = $apiRevision;
         $this->queryParameters['ApiRevision'] = $apiRevision;
+
+        return $this;
+    }
+
+    /**
+     * @param string $deviceName
+     *
+     * @return $this
+     */
+    public function setDeviceName($deviceName)
+    {
+        $this->requestParameters['DeviceName'] = $deviceName;
+        $this->queryParameters['DeviceName'] = $deviceName;
 
         return $this;
     }

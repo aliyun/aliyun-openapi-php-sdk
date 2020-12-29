@@ -5,15 +5,14 @@ namespace Iot\Request\V20180120;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of QueryThingModelExtendConfigPublished
+ * Request of GetThingScript
  *
- * @method string getIotInstanceId()
  * @method string getProductKey()
+ * @method string getIotInstanceId()
  * @method string getApiProduct()
  * @method string getApiRevision()
- * @method string getModelVersion()
  */
-class QueryThingModelExtendConfigPublishedRequest extends \RpcAcsRequest
+class GetThingScriptRequest extends \RpcAcsRequest
 {
 
     /**
@@ -29,22 +28,9 @@ class QueryThingModelExtendConfigPublishedRequest extends \RpcAcsRequest
         parent::__construct(
             'Iot',
             '2018-01-20',
-            'QueryThingModelExtendConfigPublished',
+            'GetThingScript',
             'iot'
         );
-    }
-
-    /**
-     * @param string $iotInstanceId
-     *
-     * @return $this
-     */
-    public function setIotInstanceId($iotInstanceId)
-    {
-        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
-        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
-
-        return $this;
     }
 
     /**
@@ -56,6 +42,19 @@ class QueryThingModelExtendConfigPublishedRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ProductKey'] = $productKey;
         $this->queryParameters['ProductKey'] = $productKey;
+
+        return $this;
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
 
         return $this;
     }
@@ -82,19 +81,6 @@ class QueryThingModelExtendConfigPublishedRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ApiRevision'] = $apiRevision;
         $this->queryParameters['ApiRevision'] = $apiRevision;
-
-        return $this;
-    }
-
-    /**
-     * @param string $modelVersion
-     *
-     * @return $this
-     */
-    public function setModelVersion($modelVersion)
-    {
-        $this->requestParameters['ModelVersion'] = $modelVersion;
-        $this->queryParameters['ModelVersion'] = $modelVersion;
 
         return $this;
     }
