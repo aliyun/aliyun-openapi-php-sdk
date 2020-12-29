@@ -1,3 +1,6 @@
+2020-12-29 Version: 1.19.2
+- Support drm.
+
 2020-12-22 Version: 1.21.0
 - Minor chagnes.
 
