@@ -23,17 +23,20 @@ namespace Ecs\Request\V20140526;
  * @method string getOwnerId()
  * @method string getVSwitchId()
  * @method string getSpotStrategy()
+ * @method string getPrivateIpAddress()
  * @method string getInstanceName()
  * @method string getInternetChargeType()
  * @method string getZoneId()
  * @method string getInternetMaxBandwidthIn()
  * @method string getVersionDescription()
+ * @method string getSystemDiskDeleteWithInstance()
  * @method string getImageId()
  * @method string getIoOptimized()
  * @method string getSecurityGroupId()
  * @method string getInternetMaxBandwidthOut()
  * @method string getDescription()
  * @method string getSystemDiskCategory()
+ * @method string getSystemDiskPerformanceLevel()
  * @method string getUserData()
  * @method string getPasswordInherit()
  * @method string getInstanceType()
@@ -46,6 +49,7 @@ namespace Ecs\Request\V20140526;
  * @method string getRamRoleName()
  * @method string getAutoReleaseTime()
  * @method string getSpotDuration()
+ * @method array getSecurityGroupIdss()
  * @method array getDataDisks()
  * @method string getSystemDiskSize()
  * @method string getVpcId()
@@ -284,6 +288,19 @@ class CreateLaunchTemplateVersionRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $privateIpAddress
+     *
+     * @return $this
+     */
+    public function setPrivateIpAddress($privateIpAddress)
+    {
+        $this->requestParameters['PrivateIpAddress'] = $privateIpAddress;
+        $this->queryParameters['PrivateIpAddress'] = $privateIpAddress;
+
+        return $this;
+    }
+
+    /**
      * @param string $instanceName
      *
      * @return $this
@@ -344,6 +361,19 @@ class CreateLaunchTemplateVersionRequest extends \RpcAcsRequest
     {
         $this->requestParameters['VersionDescription'] = $versionDescription;
         $this->queryParameters['VersionDescription'] = $versionDescription;
+
+        return $this;
+    }
+
+    /**
+     * @param string $systemDiskDeleteWithInstance
+     *
+     * @return $this
+     */
+    public function setSystemDiskDeleteWithInstance($systemDiskDeleteWithInstance)
+    {
+        $this->requestParameters['SystemDiskDeleteWithInstance'] = $systemDiskDeleteWithInstance;
+        $this->queryParameters['SystemDisk.DeleteWithInstance'] = $systemDiskDeleteWithInstance;
 
         return $this;
     }
@@ -427,6 +457,19 @@ class CreateLaunchTemplateVersionRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $systemDiskPerformanceLevel
+     *
+     * @return $this
+     */
+    public function setSystemDiskPerformanceLevel($systemDiskPerformanceLevel)
+    {
+        $this->requestParameters['SystemDiskPerformanceLevel'] = $systemDiskPerformanceLevel;
+        $this->queryParameters['SystemDisk.PerformanceLevel'] = $systemDiskPerformanceLevel;
+
+        return $this;
+    }
+
+    /**
      * @param string $userData
      *
      * @return $this
@@ -505,6 +548,9 @@ class CreateLaunchTemplateVersionRequest extends \RpcAcsRequest
 			$this->queryParameters['NetworkInterface.' . ($depth1 + 1) . '.SecurityGroupId'] = $depth1Value['SecurityGroupId'];
 			$this->queryParameters['NetworkInterface.' . ($depth1 + 1) . '.NetworkInterfaceName'] = $depth1Value['NetworkInterfaceName'];
 			$this->queryParameters['NetworkInterface.' . ($depth1 + 1) . '.Description'] = $depth1Value['Description'];
+			foreach ($depth1Value['SecurityGroupIds'] as $i => $iValue) {
+				$this->queryParameters['NetworkInterface.' . ($depth1 + 1) . '.SecurityGroupIds.' . ($i + 1)] = $iValue;
+			}
 		}
 
 		return $this;
@@ -589,6 +635,21 @@ class CreateLaunchTemplateVersionRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param array $securityGroupIds
+     *
+     * @return $this
+     */
+	public function setSecurityGroupIdss(array $securityGroupIds)
+	{
+	    $this->requestParameters['SecurityGroupIdss'] = $securityGroupIds;
+		foreach ($securityGroupIds as $i => $iValue) {
+			$this->queryParameters['SecurityGroupIds.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
+    }
+
+    /**
      * @param array $dataDisk
      *
      * @return $this
@@ -605,6 +666,7 @@ class CreateLaunchTemplateVersionRequest extends \RpcAcsRequest
 			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Description'] = $depth1Value['Description'];
 			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.DeleteWithInstance'] = $depth1Value['DeleteWithInstance'];
 			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.Device'] = $depth1Value['Device'];
+			$this->queryParameters['DataDisk.' . ($depth1 + 1) . '.PerformanceLevel'] = $depth1Value['PerformanceLevel'];
 		}
 
 		return $this;

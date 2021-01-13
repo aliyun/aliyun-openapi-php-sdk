@@ -12,6 +12,7 @@ namespace Ecs\Request\V20140526;
  * @method string getType()
  * @method string getCommandId()
  * @method string getPageNumber()
+ * @method string getProvider()
  * @method string getContentEncoding()
  * @method string getPageSize()
  * @method string getResourceOwnerAccount()
@@ -101,6 +102,19 @@ class DescribeCommandsRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageNumber'] = $pageNumber;
         $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $provider
+     *
+     * @return $this
+     */
+    public function setProvider($provider)
+    {
+        $this->requestParameters['Provider'] = $provider;
+        $this->queryParameters['Provider'] = $provider;
 
         return $this;
     }

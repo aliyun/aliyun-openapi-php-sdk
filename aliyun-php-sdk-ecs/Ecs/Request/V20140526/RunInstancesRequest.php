@@ -41,6 +41,7 @@ namespace Ecs\Request\V20140526;
  * @method array getArns()
  * @method string getSchedulerOptions()
  * @method string getResourceOwnerAccount()
+ * @method string getSchedulerOptionsDedicatedHostClusterId()
  * @method string getSystemDiskDiskName()
  * @method string getDedicatedHostId()
  * @method array getSecurityGroupIdss()
@@ -552,6 +553,19 @@ class RunInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $schedulerOptionsDedicatedHostClusterId
+     *
+     * @return $this
+     */
+    public function setSchedulerOptionsDedicatedHostClusterId($schedulerOptionsDedicatedHostClusterId)
+    {
+        $this->requestParameters['SchedulerOptionsDedicatedHostClusterId'] = $schedulerOptionsDedicatedHostClusterId;
+        $this->queryParameters['SchedulerOptions.DedicatedHostClusterId'] = $schedulerOptionsDedicatedHostClusterId;
 
         return $this;
     }

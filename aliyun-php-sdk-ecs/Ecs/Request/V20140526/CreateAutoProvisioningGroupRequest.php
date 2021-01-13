@@ -28,6 +28,7 @@ namespace Ecs\Request\V20140526;
  * @method string getLaunchConfigurationHostName()
  * @method string getMaxSpotPrice()
  * @method string getLaunchConfigurationPasswordInherit()
+ * @method string getClientToken()
  * @method string getLaunchConfigurationSecurityGroupId()
  * @method string getDescription()
  * @method string getTerminateInstancesWithExpiration()
@@ -363,6 +364,19 @@ class CreateAutoProvisioningGroupRequest extends \RpcAcsRequest
     {
         $this->requestParameters['LaunchConfigurationPasswordInherit'] = $launchConfigurationPasswordInherit;
         $this->queryParameters['LaunchConfiguration.PasswordInherit'] = $launchConfigurationPasswordInherit;
+
+        return $this;
+    }
+
+    /**
+     * @param string $clientToken
+     *
+     * @return $this
+     */
+    public function setClientToken($clientToken)
+    {
+        $this->requestParameters['ClientToken'] = $clientToken;
+        $this->queryParameters['ClientToken'] = $clientToken;
 
         return $this;
     }

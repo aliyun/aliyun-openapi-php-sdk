@@ -5,16 +5,15 @@ namespace Ecs\Request\V20140526;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of AttachInstanceRamRole
+ * Request of DeleteActivation
  *
  * @method string getResourceOwnerId()
- * @method string getPolicy()
  * @method string getResourceOwnerAccount()
- * @method string getRamRoleName()
+ * @method string getOwnerAccount()
  * @method string getOwnerId()
- * @method string getInstanceIds()
+ * @method string getActivationId()
  */
-class AttachInstanceRamRoleRequest extends \RpcAcsRequest
+class DeleteActivationRequest extends \RpcAcsRequest
 {
 
     /**
@@ -30,7 +29,7 @@ class AttachInstanceRamRoleRequest extends \RpcAcsRequest
         parent::__construct(
             'Ecs',
             '2014-05-26',
-            'AttachInstanceRamRole',
+            'DeleteActivation',
             'ecs'
         );
     }
@@ -49,19 +48,6 @@ class AttachInstanceRamRoleRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $policy
-     *
-     * @return $this
-     */
-    public function setPolicy($policy)
-    {
-        $this->requestParameters['Policy'] = $policy;
-        $this->queryParameters['Policy'] = $policy;
-
-        return $this;
-    }
-
-    /**
      * @param string $resourceOwnerAccount
      *
      * @return $this
@@ -75,14 +61,14 @@ class AttachInstanceRamRoleRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ramRoleName
+     * @param string $ownerAccount
      *
      * @return $this
      */
-    public function setRamRoleName($ramRoleName)
+    public function setOwnerAccount($ownerAccount)
     {
-        $this->requestParameters['RamRoleName'] = $ramRoleName;
-        $this->queryParameters['RamRoleName'] = $ramRoleName;
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
         return $this;
     }
@@ -101,14 +87,14 @@ class AttachInstanceRamRoleRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceIds
+     * @param string $activationId
      *
      * @return $this
      */
-    public function setInstanceIds($instanceIds)
+    public function setActivationId($activationId)
     {
-        $this->requestParameters['InstanceIds'] = $instanceIds;
-        $this->queryParameters['InstanceIds'] = $instanceIds;
+        $this->requestParameters['ActivationId'] = $activationId;
+        $this->queryParameters['ActivationId'] = $activationId;
 
         return $this;
     }

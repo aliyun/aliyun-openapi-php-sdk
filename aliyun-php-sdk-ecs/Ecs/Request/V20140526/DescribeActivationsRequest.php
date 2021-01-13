@@ -5,16 +5,18 @@ namespace Ecs\Request\V20140526;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of AttachInstanceRamRole
+ * Request of DescribeActivations
  *
  * @method string getResourceOwnerId()
- * @method string getPolicy()
+ * @method string getPageNumber()
+ * @method string getPageSize()
  * @method string getResourceOwnerAccount()
- * @method string getRamRoleName()
+ * @method string getOwnerAccount()
  * @method string getOwnerId()
- * @method string getInstanceIds()
+ * @method string getInstanceName()
+ * @method string getActivationId()
  */
-class AttachInstanceRamRoleRequest extends \RpcAcsRequest
+class DescribeActivationsRequest extends \RpcAcsRequest
 {
 
     /**
@@ -30,7 +32,7 @@ class AttachInstanceRamRoleRequest extends \RpcAcsRequest
         parent::__construct(
             'Ecs',
             '2014-05-26',
-            'AttachInstanceRamRole',
+            'DescribeActivations',
             'ecs'
         );
     }
@@ -49,14 +51,27 @@ class AttachInstanceRamRoleRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $policy
+     * @param string $pageNumber
      *
      * @return $this
      */
-    public function setPolicy($policy)
+    public function setPageNumber($pageNumber)
     {
-        $this->requestParameters['Policy'] = $policy;
-        $this->queryParameters['Policy'] = $policy;
+        $this->requestParameters['PageNumber'] = $pageNumber;
+        $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $pageSize
+     *
+     * @return $this
+     */
+    public function setPageSize($pageSize)
+    {
+        $this->requestParameters['PageSize'] = $pageSize;
+        $this->queryParameters['PageSize'] = $pageSize;
 
         return $this;
     }
@@ -75,14 +90,14 @@ class AttachInstanceRamRoleRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $ramRoleName
+     * @param string $ownerAccount
      *
      * @return $this
      */
-    public function setRamRoleName($ramRoleName)
+    public function setOwnerAccount($ownerAccount)
     {
-        $this->requestParameters['RamRoleName'] = $ramRoleName;
-        $this->queryParameters['RamRoleName'] = $ramRoleName;
+        $this->requestParameters['OwnerAccount'] = $ownerAccount;
+        $this->queryParameters['OwnerAccount'] = $ownerAccount;
 
         return $this;
     }
@@ -101,14 +116,27 @@ class AttachInstanceRamRoleRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceIds
+     * @param string $instanceName
      *
      * @return $this
      */
-    public function setInstanceIds($instanceIds)
+    public function setInstanceName($instanceName)
     {
-        $this->requestParameters['InstanceIds'] = $instanceIds;
-        $this->queryParameters['InstanceIds'] = $instanceIds;
+        $this->requestParameters['InstanceName'] = $instanceName;
+        $this->queryParameters['InstanceName'] = $instanceName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $activationId
+     *
+     * @return $this
+     */
+    public function setActivationId($activationId)
+    {
+        $this->requestParameters['ActivationId'] = $activationId;
+        $this->queryParameters['ActivationId'] = $activationId;
 
         return $this;
     }
