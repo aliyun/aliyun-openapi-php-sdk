@@ -7,6 +7,8 @@ namespace Iot\Request\V20180120;
  *
  * Request of BatchRegisterDevice
  *
+ * @method string getRealTenantId()
+ * @method string getRealTripartiteKey()
  * @method string getIotInstanceId()
  * @method string getCount()
  * @method string getProductKey()
@@ -32,6 +34,32 @@ class BatchRegisterDeviceRequest extends \RpcAcsRequest
             'BatchRegisterDevice',
             'iot'
         );
+    }
+
+    /**
+     * @param string $realTenantId
+     *
+     * @return $this
+     */
+    public function setRealTenantId($realTenantId)
+    {
+        $this->requestParameters['RealTenantId'] = $realTenantId;
+        $this->queryParameters['RealTenantId'] = $realTenantId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $realTripartiteKey
+     *
+     * @return $this
+     */
+    public function setRealTripartiteKey($realTripartiteKey)
+    {
+        $this->requestParameters['RealTripartiteKey'] = $realTripartiteKey;
+        $this->queryParameters['RealTripartiteKey'] = $realTripartiteKey;
+
+        return $this;
     }
 
     /**

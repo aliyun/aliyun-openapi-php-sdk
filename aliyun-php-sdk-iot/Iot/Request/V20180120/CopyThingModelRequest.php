@@ -7,7 +7,9 @@ namespace Iot\Request\V20180120;
  *
  * Request of CopyThingModel
  *
+ * @method string getRealTenantId()
  * @method string getTargetProductKey()
+ * @method string getRealTripartiteKey()
  * @method string getResourceGroupId()
  * @method string getIotInstanceId()
  * @method string getSourceModelVersion()
@@ -37,6 +39,19 @@ class CopyThingModelRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $realTenantId
+     *
+     * @return $this
+     */
+    public function setRealTenantId($realTenantId)
+    {
+        $this->requestParameters['RealTenantId'] = $realTenantId;
+        $this->queryParameters['RealTenantId'] = $realTenantId;
+
+        return $this;
+    }
+
+    /**
      * @param string $targetProductKey
      *
      * @return $this
@@ -45,6 +60,19 @@ class CopyThingModelRequest extends \RpcAcsRequest
     {
         $this->requestParameters['TargetProductKey'] = $targetProductKey;
         $this->queryParameters['TargetProductKey'] = $targetProductKey;
+
+        return $this;
+    }
+
+    /**
+     * @param string $realTripartiteKey
+     *
+     * @return $this
+     */
+    public function setRealTripartiteKey($realTripartiteKey)
+    {
+        $this->requestParameters['RealTripartiteKey'] = $realTripartiteKey;
+        $this->queryParameters['RealTripartiteKey'] = $realTripartiteKey;
 
         return $this;
     }

@@ -7,6 +7,8 @@ namespace Iot\Request\V20180120;
  *
  * Request of BatchDeleteDeviceGroupRelations
  *
+ * @method string getRealTenantId()
+ * @method string getRealTripartiteKey()
  * @method string getIotInstanceId()
  * @method string getGroupId()
  * @method string getApiProduct()
@@ -32,6 +34,32 @@ class BatchDeleteDeviceGroupRelationsRequest extends \RpcAcsRequest
             'BatchDeleteDeviceGroupRelations',
             'iot'
         );
+    }
+
+    /**
+     * @param string $realTenantId
+     *
+     * @return $this
+     */
+    public function setRealTenantId($realTenantId)
+    {
+        $this->requestParameters['RealTenantId'] = $realTenantId;
+        $this->queryParameters['RealTenantId'] = $realTenantId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $realTripartiteKey
+     *
+     * @return $this
+     */
+    public function setRealTripartiteKey($realTripartiteKey)
+    {
+        $this->requestParameters['RealTripartiteKey'] = $realTripartiteKey;
+        $this->queryParameters['RealTripartiteKey'] = $realTripartiteKey;
+
+        return $this;
     }
 
     /**

@@ -7,12 +7,15 @@ namespace Iot\Request\V20180120;
  *
  * Request of QueryThingModelPublished
  *
+ * @method string getRealTenantId()
+ * @method string getRealTripartiteKey()
  * @method string getResourceGroupId()
  * @method string getIotInstanceId()
  * @method string getProductKey()
  * @method string getApiProduct()
  * @method string getApiRevision()
  * @method string getModelVersion()
+ * @method string getFunctionBlockId()
  */
 class QueryThingModelPublishedRequest extends \RpcAcsRequest
 {
@@ -33,6 +36,32 @@ class QueryThingModelPublishedRequest extends \RpcAcsRequest
             'QueryThingModelPublished',
             'iot'
         );
+    }
+
+    /**
+     * @param string $realTenantId
+     *
+     * @return $this
+     */
+    public function setRealTenantId($realTenantId)
+    {
+        $this->requestParameters['RealTenantId'] = $realTenantId;
+        $this->queryParameters['RealTenantId'] = $realTenantId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $realTripartiteKey
+     *
+     * @return $this
+     */
+    public function setRealTripartiteKey($realTripartiteKey)
+    {
+        $this->requestParameters['RealTripartiteKey'] = $realTripartiteKey;
+        $this->queryParameters['RealTripartiteKey'] = $realTripartiteKey;
+
+        return $this;
     }
 
     /**
@@ -109,6 +138,19 @@ class QueryThingModelPublishedRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ModelVersion'] = $modelVersion;
         $this->queryParameters['ModelVersion'] = $modelVersion;
+
+        return $this;
+    }
+
+    /**
+     * @param string $functionBlockId
+     *
+     * @return $this
+     */
+    public function setFunctionBlockId($functionBlockId)
+    {
+        $this->requestParameters['FunctionBlockId'] = $functionBlockId;
+        $this->queryParameters['FunctionBlockId'] = $functionBlockId;
 
         return $this;
     }

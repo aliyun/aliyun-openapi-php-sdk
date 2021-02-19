@@ -7,7 +7,9 @@ namespace Iot\Request\V20180120;
  *
  * Request of QueryDeviceEventData
  *
+ * @method string getRealTenantId()
  * @method string getStartTime()
+ * @method string getRealTripartiteKey()
  * @method string getIotId()
  * @method string getIotInstanceId()
  * @method string getPageSize()
@@ -42,6 +44,19 @@ class QueryDeviceEventDataRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $realTenantId
+     *
+     * @return $this
+     */
+    public function setRealTenantId($realTenantId)
+    {
+        $this->requestParameters['RealTenantId'] = $realTenantId;
+        $this->queryParameters['RealTenantId'] = $realTenantId;
+
+        return $this;
+    }
+
+    /**
      * @param string $startTime
      *
      * @return $this
@@ -50,6 +65,19 @@ class QueryDeviceEventDataRequest extends \RpcAcsRequest
     {
         $this->requestParameters['StartTime'] = $startTime;
         $this->queryParameters['StartTime'] = $startTime;
+
+        return $this;
+    }
+
+    /**
+     * @param string $realTripartiteKey
+     *
+     * @return $this
+     */
+    public function setRealTripartiteKey($realTripartiteKey)
+    {
+        $this->requestParameters['RealTripartiteKey'] = $realTripartiteKey;
+        $this->queryParameters['RealTripartiteKey'] = $realTripartiteKey;
 
         return $this;
     }

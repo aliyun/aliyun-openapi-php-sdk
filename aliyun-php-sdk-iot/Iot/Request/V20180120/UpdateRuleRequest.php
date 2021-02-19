@@ -16,6 +16,7 @@ namespace Iot\Request\V20180120;
  * @method string getProductKey()
  * @method string getApiProduct()
  * @method string getName()
+ * @method string getTopic()
  * @method string getApiRevision()
  * @method string getRuleId()
  */
@@ -153,6 +154,19 @@ class UpdateRuleRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Name'] = $name;
         $this->queryParameters['Name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * @param string $topic
+     *
+     * @return $this
+     */
+    public function setTopic($topic)
+    {
+        $this->requestParameters['Topic'] = $topic;
+        $this->queryParameters['Topic'] = $topic;
 
         return $this;
     }

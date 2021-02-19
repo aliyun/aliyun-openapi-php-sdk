@@ -7,12 +7,16 @@ namespace Iot\Request\V20180120;
  *
  * Request of UpdateThingModel
  *
+ * @method string getRealTenantId()
+ * @method string getRealTripartiteKey()
  * @method string getIotInstanceId()
  * @method string getIdentifier()
+ * @method string getFunctionBlockName()
  * @method string getProductKey()
  * @method string getApiProduct()
  * @method string getThingModelJson()
  * @method string getApiRevision()
+ * @method string getFunctionBlockId()
  */
 class UpdateThingModelRequest extends \RpcAcsRequest
 {
@@ -33,6 +37,32 @@ class UpdateThingModelRequest extends \RpcAcsRequest
             'UpdateThingModel',
             'iot'
         );
+    }
+
+    /**
+     * @param string $realTenantId
+     *
+     * @return $this
+     */
+    public function setRealTenantId($realTenantId)
+    {
+        $this->requestParameters['RealTenantId'] = $realTenantId;
+        $this->queryParameters['RealTenantId'] = $realTenantId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $realTripartiteKey
+     *
+     * @return $this
+     */
+    public function setRealTripartiteKey($realTripartiteKey)
+    {
+        $this->requestParameters['RealTripartiteKey'] = $realTripartiteKey;
+        $this->queryParameters['RealTripartiteKey'] = $realTripartiteKey;
+
+        return $this;
     }
 
     /**
@@ -57,6 +87,19 @@ class UpdateThingModelRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Identifier'] = $identifier;
         $this->queryParameters['Identifier'] = $identifier;
+
+        return $this;
+    }
+
+    /**
+     * @param string $functionBlockName
+     *
+     * @return $this
+     */
+    public function setFunctionBlockName($functionBlockName)
+    {
+        $this->requestParameters['FunctionBlockName'] = $functionBlockName;
+        $this->queryParameters['FunctionBlockName'] = $functionBlockName;
 
         return $this;
     }
@@ -109,6 +152,19 @@ class UpdateThingModelRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ApiRevision'] = $apiRevision;
         $this->queryParameters['ApiRevision'] = $apiRevision;
+
+        return $this;
+    }
+
+    /**
+     * @param string $functionBlockId
+     *
+     * @return $this
+     */
+    public function setFunctionBlockId($functionBlockId)
+    {
+        $this->requestParameters['FunctionBlockId'] = $functionBlockId;
+        $this->queryParameters['FunctionBlockId'] = $functionBlockId;
 
         return $this;
     }

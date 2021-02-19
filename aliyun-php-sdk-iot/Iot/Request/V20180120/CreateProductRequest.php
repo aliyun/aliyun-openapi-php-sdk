@@ -8,11 +8,14 @@ namespace Iot\Request\V20180120;
  * Request of CreateProduct
  *
  * @method string getNodeType()
+ * @method string getRealTenantId()
  * @method string getDescription()
  * @method string getCategoryKey()
  * @method string getJoinPermissionId()
  * @method string getAuthType()
+ * @method string getRealTripartiteKey()
  * @method string getResourceGroupId()
+ * @method string getValidateType()
  * @method string getIotInstanceId()
  * @method string getProductName()
  * @method string getAliyunCommodityCode()
@@ -55,6 +58,19 @@ class CreateProductRequest extends \RpcAcsRequest
     {
         $this->requestParameters['NodeType'] = $nodeType;
         $this->queryParameters['NodeType'] = $nodeType;
+
+        return $this;
+    }
+
+    /**
+     * @param string $realTenantId
+     *
+     * @return $this
+     */
+    public function setRealTenantId($realTenantId)
+    {
+        $this->requestParameters['RealTenantId'] = $realTenantId;
+        $this->queryParameters['RealTenantId'] = $realTenantId;
 
         return $this;
     }
@@ -112,6 +128,19 @@ class CreateProductRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $realTripartiteKey
+     *
+     * @return $this
+     */
+    public function setRealTripartiteKey($realTripartiteKey)
+    {
+        $this->requestParameters['RealTripartiteKey'] = $realTripartiteKey;
+        $this->queryParameters['RealTripartiteKey'] = $realTripartiteKey;
+
+        return $this;
+    }
+
+    /**
      * @param string $resourceGroupId
      *
      * @return $this
@@ -120,6 +149,19 @@ class CreateProductRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceGroupId'] = $resourceGroupId;
         $this->queryParameters['ResourceGroupId'] = $resourceGroupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $validateType
+     *
+     * @return $this
+     */
+    public function setValidateType($validateType)
+    {
+        $this->requestParameters['ValidateType'] = $validateType;
+        $this->queryParameters['ValidateType'] = $validateType;
 
         return $this;
     }

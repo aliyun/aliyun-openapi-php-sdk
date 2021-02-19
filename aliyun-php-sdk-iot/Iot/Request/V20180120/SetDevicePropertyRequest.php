@@ -7,6 +7,8 @@ namespace Iot\Request\V20180120;
  *
  * Request of SetDeviceProperty
  *
+ * @method string getRealTenantId()
+ * @method string getRealTripartiteKey()
  * @method string getIotId()
  * @method string getIotInstanceId()
  * @method string getProductKey()
@@ -34,6 +36,32 @@ class SetDevicePropertyRequest extends \RpcAcsRequest
             'SetDeviceProperty',
             'iot'
         );
+    }
+
+    /**
+     * @param string $realTenantId
+     *
+     * @return $this
+     */
+    public function setRealTenantId($realTenantId)
+    {
+        $this->requestParameters['RealTenantId'] = $realTenantId;
+        $this->queryParameters['RealTenantId'] = $realTenantId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $realTripartiteKey
+     *
+     * @return $this
+     */
+    public function setRealTripartiteKey($realTripartiteKey)
+    {
+        $this->requestParameters['RealTripartiteKey'] = $realTripartiteKey;
+        $this->queryParameters['RealTripartiteKey'] = $realTripartiteKey;
+
+        return $this;
     }
 
     /**

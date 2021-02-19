@@ -9,6 +9,7 @@ namespace Iot\Request\V20180120;
  *
  * @method string getIotId()
  * @method array getCombinationLists()
+ * @method string getIotInstanceId()
  * @method string getProductKey()
  * @method string getApiProduct()
  * @method string getApiRevision()
@@ -61,6 +62,19 @@ class SpeechByCombinationRequest extends \RpcAcsRequest
 		}
 
 		return $this;
+    }
+
+    /**
+     * @param string $iotInstanceId
+     *
+     * @return $this
+     */
+    public function setIotInstanceId($iotInstanceId)
+    {
+        $this->requestParameters['IotInstanceId'] = $iotInstanceId;
+        $this->queryParameters['IotInstanceId'] = $iotInstanceId;
+
+        return $this;
     }
 
     /**

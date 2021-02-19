@@ -7,6 +7,9 @@ namespace Iot\Request\V20180120;
  *
  * Request of DeleteThingModel
  *
+ * @method string getRealTenantId()
+ * @method string getIsClearAllFunction()
+ * @method string getRealTripartiteKey()
  * @method string getResourceGroupId()
  * @method array getPropertyIdentifiers()
  * @method string getIotInstanceId()
@@ -15,6 +18,7 @@ namespace Iot\Request\V20180120;
  * @method string getApiProduct()
  * @method string getApiRevision()
  * @method array getEventIdentifiers()
+ * @method string getFunctionBlockId()
  */
 class DeleteThingModelRequest extends \RpcAcsRequest
 {
@@ -35,6 +39,45 @@ class DeleteThingModelRequest extends \RpcAcsRequest
             'DeleteThingModel',
             'iot'
         );
+    }
+
+    /**
+     * @param string $realTenantId
+     *
+     * @return $this
+     */
+    public function setRealTenantId($realTenantId)
+    {
+        $this->requestParameters['RealTenantId'] = $realTenantId;
+        $this->queryParameters['RealTenantId'] = $realTenantId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $isClearAllFunction
+     *
+     * @return $this
+     */
+    public function setIsClearAllFunction($isClearAllFunction)
+    {
+        $this->requestParameters['IsClearAllFunction'] = $isClearAllFunction;
+        $this->queryParameters['IsClearAllFunction'] = $isClearAllFunction;
+
+        return $this;
+    }
+
+    /**
+     * @param string $realTripartiteKey
+     *
+     * @return $this
+     */
+    public function setRealTripartiteKey($realTripartiteKey)
+    {
+        $this->requestParameters['RealTripartiteKey'] = $realTripartiteKey;
+        $this->queryParameters['RealTripartiteKey'] = $realTripartiteKey;
+
+        return $this;
     }
 
     /**
@@ -145,5 +188,18 @@ class DeleteThingModelRequest extends \RpcAcsRequest
 		}
 
 		return $this;
+    }
+
+    /**
+     * @param string $functionBlockId
+     *
+     * @return $this
+     */
+    public function setFunctionBlockId($functionBlockId)
+    {
+        $this->requestParameters['FunctionBlockId'] = $functionBlockId;
+        $this->queryParameters['FunctionBlockId'] = $functionBlockId;
+
+        return $this;
     }
 }

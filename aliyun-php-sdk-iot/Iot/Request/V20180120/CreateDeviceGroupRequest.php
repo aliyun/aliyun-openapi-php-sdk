@@ -7,7 +7,9 @@ namespace Iot\Request\V20180120;
  *
  * Request of CreateDeviceGroup
  *
+ * @method string getRealTenantId()
  * @method string getSuperGroupId()
+ * @method string getRealTripartiteKey()
  * @method string getIotInstanceId()
  * @method string getGroupName()
  * @method string getGroupDesc()
@@ -36,6 +38,19 @@ class CreateDeviceGroupRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $realTenantId
+     *
+     * @return $this
+     */
+    public function setRealTenantId($realTenantId)
+    {
+        $this->requestParameters['RealTenantId'] = $realTenantId;
+        $this->queryParameters['RealTenantId'] = $realTenantId;
+
+        return $this;
+    }
+
+    /**
      * @param string $superGroupId
      *
      * @return $this
@@ -44,6 +59,19 @@ class CreateDeviceGroupRequest extends \RpcAcsRequest
     {
         $this->requestParameters['SuperGroupId'] = $superGroupId;
         $this->queryParameters['SuperGroupId'] = $superGroupId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $realTripartiteKey
+     *
+     * @return $this
+     */
+    public function setRealTripartiteKey($realTripartiteKey)
+    {
+        $this->requestParameters['RealTripartiteKey'] = $realTripartiteKey;
+        $this->queryParameters['RealTripartiteKey'] = $realTripartiteKey;
 
         return $this;
     }

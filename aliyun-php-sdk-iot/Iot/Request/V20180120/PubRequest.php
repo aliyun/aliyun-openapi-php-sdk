@@ -7,9 +7,12 @@ namespace Iot\Request\V20180120;
  *
  * Request of Pub
  *
+ * @method array getUserProps()
  * @method string getMessageContent()
  * @method string getQos()
+ * @method string getCorrelationData()
  * @method string getIotInstanceId()
+ * @method string getResponseTopic()
  * @method string getTopicFullName()
  * @method string getProductKey()
  * @method string getApiProduct()
@@ -34,6 +37,22 @@ class PubRequest extends \RpcAcsRequest
             'Pub',
             'iot'
         );
+    }
+
+    /**
+     * @param array $userProp
+     *
+     * @return $this
+     */
+	public function setUserProps(array $userProp)
+	{
+	    $this->requestParameters['UserProps'] = $userProp;
+		foreach ($userProp as $depth1 => $depth1Value) {
+			$this->queryParameters['UserProp.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+			$this->queryParameters['UserProp.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+		}
+
+		return $this;
     }
 
     /**
@@ -63,6 +82,19 @@ class PubRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $correlationData
+     *
+     * @return $this
+     */
+    public function setCorrelationData($correlationData)
+    {
+        $this->requestParameters['CorrelationData'] = $correlationData;
+        $this->queryParameters['CorrelationData'] = $correlationData;
+
+        return $this;
+    }
+
+    /**
      * @param string $iotInstanceId
      *
      * @return $this
@@ -71,6 +103,19 @@ class PubRequest extends \RpcAcsRequest
     {
         $this->requestParameters['IotInstanceId'] = $iotInstanceId;
         $this->queryParameters['IotInstanceId'] = $iotInstanceId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $responseTopic
+     *
+     * @return $this
+     */
+    public function setResponseTopic($responseTopic)
+    {
+        $this->requestParameters['ResponseTopic'] = $responseTopic;
+        $this->queryParameters['ResponseTopic'] = $responseTopic;
 
         return $this;
     }

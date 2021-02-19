@@ -7,6 +7,8 @@ namespace Iot\Request\V20180120;
  *
  * Request of QueryDeviceDesiredProperty
  *
+ * @method string getRealTenantId()
+ * @method string getRealTripartiteKey()
  * @method string getIotId()
  * @method string getIotInstanceId()
  * @method array getIdentifiers()
@@ -14,6 +16,7 @@ namespace Iot\Request\V20180120;
  * @method string getApiProduct()
  * @method string getApiRevision()
  * @method string getDeviceName()
+ * @method string getFunctionBlockId()
  */
 class QueryDeviceDesiredPropertyRequest extends \RpcAcsRequest
 {
@@ -34,6 +37,32 @@ class QueryDeviceDesiredPropertyRequest extends \RpcAcsRequest
             'QueryDeviceDesiredProperty',
             'iot'
         );
+    }
+
+    /**
+     * @param string $realTenantId
+     *
+     * @return $this
+     */
+    public function setRealTenantId($realTenantId)
+    {
+        $this->requestParameters['RealTenantId'] = $realTenantId;
+        $this->queryParameters['RealTenantId'] = $realTenantId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $realTripartiteKey
+     *
+     * @return $this
+     */
+    public function setRealTripartiteKey($realTripartiteKey)
+    {
+        $this->requestParameters['RealTripartiteKey'] = $realTripartiteKey;
+        $this->queryParameters['RealTripartiteKey'] = $realTripartiteKey;
+
+        return $this;
     }
 
     /**
@@ -125,6 +154,19 @@ class QueryDeviceDesiredPropertyRequest extends \RpcAcsRequest
     {
         $this->requestParameters['DeviceName'] = $deviceName;
         $this->queryParameters['DeviceName'] = $deviceName;
+
+        return $this;
+    }
+
+    /**
+     * @param string $functionBlockId
+     *
+     * @return $this
+     */
+    public function setFunctionBlockId($functionBlockId)
+    {
+        $this->requestParameters['FunctionBlockId'] = $functionBlockId;
+        $this->queryParameters['FunctionBlockId'] = $functionBlockId;
 
         return $this;
     }
