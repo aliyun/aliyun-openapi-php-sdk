@@ -10,6 +10,7 @@ namespace Ecs\Request\V20140526;
  * @method string getResourceOwnerId()
  * @method string getCommandId()
  * @method string getFrequency()
+ * @method string getWindowsPasswordName()
  * @method string getTimed()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
@@ -74,6 +75,19 @@ class InvokeCommandRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Frequency'] = $frequency;
         $this->queryParameters['Frequency'] = $frequency;
+
+        return $this;
+    }
+
+    /**
+     * @param string $windowsPasswordName
+     *
+     * @return $this
+     */
+    public function setWindowsPasswordName($windowsPasswordName)
+    {
+        $this->requestParameters['WindowsPasswordName'] = $windowsPasswordName;
+        $this->queryParameters['WindowsPasswordName'] = $windowsPasswordName;
 
         return $this;
     }

@@ -5,18 +5,20 @@ namespace Ecs\Request\V20140526;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ModifyInstanceMaintenanceAttributes
+ * Request of CreateSnapshotGroup
  *
  * @method string getResourceOwnerId()
- * @method array getMaintenanceWindows()
- * @method string getActionOnMaintenance()
+ * @method array getExcludeDiskIds()
+ * @method string getInstantAccess()
+ * @method string getDescription()
+ * @method string getInstantAccessRetentionDays()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
- * @method array getInstanceIds()
- * @method string getNotifyOnMaintenance()
+ * @method string getInstanceId()
+ * @method string getName()
  */
-class ModifyInstanceMaintenanceAttributesRequest extends \RpcAcsRequest
+class CreateSnapshotGroupRequest extends \RpcAcsRequest
 {
 
     /**
@@ -32,7 +34,7 @@ class ModifyInstanceMaintenanceAttributesRequest extends \RpcAcsRequest
         parent::__construct(
             'Ecs',
             '2014-05-26',
-            'ModifyInstanceMaintenanceAttributes',
+            'CreateSnapshotGroup',
             'ecs'
         );
     }
@@ -51,30 +53,55 @@ class ModifyInstanceMaintenanceAttributesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $maintenanceWindow
+     * @param array $excludeDiskId
      *
      * @return $this
      */
-	public function setMaintenanceWindows(array $maintenanceWindow)
+	public function setExcludeDiskIds(array $excludeDiskId)
 	{
-	    $this->requestParameters['MaintenanceWindows'] = $maintenanceWindow;
-		foreach ($maintenanceWindow as $depth1 => $depth1Value) {
-			$this->queryParameters['MaintenanceWindow.' . ($depth1 + 1) . '.StartTime'] = $depth1Value['StartTime'];
-			$this->queryParameters['MaintenanceWindow.' . ($depth1 + 1) . '.EndTime'] = $depth1Value['EndTime'];
+	    $this->requestParameters['ExcludeDiskIds'] = $excludeDiskId;
+		foreach ($excludeDiskId as $i => $iValue) {
+			$this->queryParameters['ExcludeDiskId.' . ($i + 1)] = $iValue;
 		}
 
 		return $this;
     }
 
     /**
-     * @param string $actionOnMaintenance
+     * @param string $instantAccess
      *
      * @return $this
      */
-    public function setActionOnMaintenance($actionOnMaintenance)
+    public function setInstantAccess($instantAccess)
     {
-        $this->requestParameters['ActionOnMaintenance'] = $actionOnMaintenance;
-        $this->queryParameters['ActionOnMaintenance'] = $actionOnMaintenance;
+        $this->requestParameters['InstantAccess'] = $instantAccess;
+        $this->queryParameters['InstantAccess'] = $instantAccess;
+
+        return $this;
+    }
+
+    /**
+     * @param string $description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->requestParameters['Description'] = $description;
+        $this->queryParameters['Description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * @param string $instantAccessRetentionDays
+     *
+     * @return $this
+     */
+    public function setInstantAccessRetentionDays($instantAccessRetentionDays)
+    {
+        $this->requestParameters['InstantAccessRetentionDays'] = $instantAccessRetentionDays;
+        $this->queryParameters['InstantAccessRetentionDays'] = $instantAccessRetentionDays;
 
         return $this;
     }
@@ -119,29 +146,27 @@ class ModifyInstanceMaintenanceAttributesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $instanceId
+     * @param string $instanceId
      *
      * @return $this
      */
-	public function setInstanceIds(array $instanceId)
-	{
-	    $this->requestParameters['InstanceIds'] = $instanceId;
-		foreach ($instanceId as $i => $iValue) {
-			$this->queryParameters['InstanceId.' . ($i + 1)] = $iValue;
-		}
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
-		return $this;
+        return $this;
     }
 
     /**
-     * @param string $notifyOnMaintenance
+     * @param string $name
      *
      * @return $this
      */
-    public function setNotifyOnMaintenance($notifyOnMaintenance)
+    public function setName($name)
     {
-        $this->requestParameters['NotifyOnMaintenance'] = $notifyOnMaintenance;
-        $this->queryParameters['NotifyOnMaintenance'] = $notifyOnMaintenance;
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
         return $this;
     }

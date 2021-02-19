@@ -30,6 +30,7 @@ namespace Ecs\Request\V20140526;
  * @method string getInstanceIds()
  * @method string getInternetChargeType()
  * @method string getZoneId()
+ * @method string getMaxResults()
  * @method string getInstanceNetworkType()
  * @method string getStatus()
  * @method string getImageId()
@@ -38,6 +39,7 @@ namespace Ecs\Request\V20140526;
  * @method string getSecurityGroupId()
  * @method string getFilter4Key()
  * @method string getPageNumber()
+ * @method string getNextToken()
  * @method string getRdmaIpAddresses()
  * @method string getHttpEndpoint()
  * @method string getPageSize()
@@ -379,6 +381,19 @@ class DescribeInstancesRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param string $maxResults
+     *
+     * @return $this
+     */
+    public function setMaxResults($maxResults)
+    {
+        $this->requestParameters['MaxResults'] = $maxResults;
+        $this->queryParameters['MaxResults'] = $maxResults;
+
+        return $this;
+    }
+
+    /**
      * @param string $instanceNetworkType
      *
      * @return $this
@@ -478,6 +493,19 @@ class DescribeInstancesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['PageNumber'] = $pageNumber;
         $this->queryParameters['PageNumber'] = $pageNumber;
+
+        return $this;
+    }
+
+    /**
+     * @param string $nextToken
+     *
+     * @return $this
+     */
+    public function setNextToken($nextToken)
+    {
+        $this->requestParameters['NextToken'] = $nextToken;
+        $this->queryParameters['NextToken'] = $nextToken;
 
         return $this;
     }

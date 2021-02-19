@@ -8,20 +8,17 @@ namespace Ecs\Request\V20140526;
  * Request of DescribeRecommendInstanceType
  *
  * @method string getResourceOwnerId()
- * @method string getInstancePpsRx()
  * @method string getMemory()
- * @method string getInstancePpsTx()
  * @method string getIoOptimized()
  * @method string getNetworkType()
  * @method string getScene()
- * @method string getInstanceBandwidthTx()
  * @method string getCores()
- * @method string getInstanceBandwidthRx()
  * @method string getSystemDiskCategory()
  * @method string getInstanceType()
  * @method string getInstanceChargeType()
  * @method string getMaxPrice()
  * @method string getResourceOwnerAccount()
+ * @method string getZoneMatchMode()
  * @method string getOwnerAccount()
  * @method array getInstanceTypeFamilys()
  * @method string getOwnerId()
@@ -65,19 +62,6 @@ class DescribeRecommendInstanceTypeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instancePpsRx
-     *
-     * @return $this
-     */
-    public function setInstancePpsRx($instancePpsRx)
-    {
-        $this->requestParameters['InstancePpsRx'] = $instancePpsRx;
-        $this->queryParameters['InstancePpsRx'] = $instancePpsRx;
-
-        return $this;
-    }
-
-    /**
      * @param string $memory
      *
      * @return $this
@@ -86,19 +70,6 @@ class DescribeRecommendInstanceTypeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Memory'] = $memory;
         $this->queryParameters['Memory'] = $memory;
-
-        return $this;
-    }
-
-    /**
-     * @param string $instancePpsTx
-     *
-     * @return $this
-     */
-    public function setInstancePpsTx($instancePpsTx)
-    {
-        $this->requestParameters['InstancePpsTx'] = $instancePpsTx;
-        $this->queryParameters['InstancePpsTx'] = $instancePpsTx;
 
         return $this;
     }
@@ -143,19 +114,6 @@ class DescribeRecommendInstanceTypeRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param string $instanceBandwidthTx
-     *
-     * @return $this
-     */
-    public function setInstanceBandwidthTx($instanceBandwidthTx)
-    {
-        $this->requestParameters['InstanceBandwidthTx'] = $instanceBandwidthTx;
-        $this->queryParameters['InstanceBandwidthTx'] = $instanceBandwidthTx;
-
-        return $this;
-    }
-
-    /**
      * @param string $cores
      *
      * @return $this
@@ -164,19 +122,6 @@ class DescribeRecommendInstanceTypeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['Cores'] = $cores;
         $this->queryParameters['Cores'] = $cores;
-
-        return $this;
-    }
-
-    /**
-     * @param string $instanceBandwidthRx
-     *
-     * @return $this
-     */
-    public function setInstanceBandwidthRx($instanceBandwidthRx)
-    {
-        $this->requestParameters['InstanceBandwidthRx'] = $instanceBandwidthRx;
-        $this->queryParameters['InstanceBandwidthRx'] = $instanceBandwidthRx;
 
         return $this;
     }
@@ -242,6 +187,19 @@ class DescribeRecommendInstanceTypeRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
         $this->queryParameters['ResourceOwnerAccount'] = $resourceOwnerAccount;
+
+        return $this;
+    }
+
+    /**
+     * @param string $zoneMatchMode
+     *
+     * @return $this
+     */
+    public function setZoneMatchMode($zoneMatchMode)
+    {
+        $this->requestParameters['ZoneMatchMode'] = $zoneMatchMode;
+        $this->queryParameters['ZoneMatchMode'] = $zoneMatchMode;
 
         return $this;
     }

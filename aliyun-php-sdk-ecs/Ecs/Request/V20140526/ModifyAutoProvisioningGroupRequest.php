@@ -11,6 +11,7 @@ namespace Ecs\Request\V20140526;
  * @method string getTerminateInstancesWithExpiration()
  * @method string getDefaultTargetCapacityType()
  * @method string getExcessCapacityTerminationPolicy()
+ * @method array getLaunchTemplateConfigs()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
@@ -92,6 +93,25 @@ class ModifyAutoProvisioningGroupRequest extends \RpcAcsRequest
         $this->queryParameters['ExcessCapacityTerminationPolicy'] = $excessCapacityTerminationPolicy;
 
         return $this;
+    }
+
+    /**
+     * @param array $launchTemplateConfig
+     *
+     * @return $this
+     */
+	public function setLaunchTemplateConfigs(array $launchTemplateConfig)
+	{
+	    $this->requestParameters['LaunchTemplateConfigs'] = $launchTemplateConfig;
+		foreach ($launchTemplateConfig as $depth1 => $depth1Value) {
+			$this->queryParameters['LaunchTemplateConfig.' . ($depth1 + 1) . '.InstanceType'] = $depth1Value['InstanceType'];
+			$this->queryParameters['LaunchTemplateConfig.' . ($depth1 + 1) . '.MaxPrice'] = $depth1Value['MaxPrice'];
+			$this->queryParameters['LaunchTemplateConfig.' . ($depth1 + 1) . '.VSwitchId'] = $depth1Value['VSwitchId'];
+			$this->queryParameters['LaunchTemplateConfig.' . ($depth1 + 1) . '.WeightedCapacity'] = $depth1Value['WeightedCapacity'];
+			$this->queryParameters['LaunchTemplateConfig.' . ($depth1 + 1) . '.Priority'] = $depth1Value['Priority'];
+		}
+
+		return $this;
     }
 
     /**

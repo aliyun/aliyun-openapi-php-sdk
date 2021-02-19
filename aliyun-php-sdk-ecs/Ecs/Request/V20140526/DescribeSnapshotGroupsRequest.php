@@ -5,18 +5,20 @@ namespace Ecs\Request\V20140526;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ModifyInstanceMaintenanceAttributes
+ * Request of DescribeSnapshotGroups
  *
  * @method string getResourceOwnerId()
- * @method array getMaintenanceWindows()
- * @method string getActionOnMaintenance()
+ * @method string getNextToken()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
+ * @method array getSnapshotGroupIds()
  * @method string getOwnerId()
- * @method array getInstanceIds()
- * @method string getNotifyOnMaintenance()
+ * @method string getInstanceId()
+ * @method string getName()
+ * @method string getMaxResults()
+ * @method array getStatuss()
  */
-class ModifyInstanceMaintenanceAttributesRequest extends \RpcAcsRequest
+class DescribeSnapshotGroupsRequest extends \RpcAcsRequest
 {
 
     /**
@@ -32,7 +34,7 @@ class ModifyInstanceMaintenanceAttributesRequest extends \RpcAcsRequest
         parent::__construct(
             'Ecs',
             '2014-05-26',
-            'ModifyInstanceMaintenanceAttributes',
+            'DescribeSnapshotGroups',
             'ecs'
         );
     }
@@ -51,30 +53,14 @@ class ModifyInstanceMaintenanceAttributesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $maintenanceWindow
+     * @param string $nextToken
      *
      * @return $this
      */
-	public function setMaintenanceWindows(array $maintenanceWindow)
-	{
-	    $this->requestParameters['MaintenanceWindows'] = $maintenanceWindow;
-		foreach ($maintenanceWindow as $depth1 => $depth1Value) {
-			$this->queryParameters['MaintenanceWindow.' . ($depth1 + 1) . '.StartTime'] = $depth1Value['StartTime'];
-			$this->queryParameters['MaintenanceWindow.' . ($depth1 + 1) . '.EndTime'] = $depth1Value['EndTime'];
-		}
-
-		return $this;
-    }
-
-    /**
-     * @param string $actionOnMaintenance
-     *
-     * @return $this
-     */
-    public function setActionOnMaintenance($actionOnMaintenance)
+    public function setNextToken($nextToken)
     {
-        $this->requestParameters['ActionOnMaintenance'] = $actionOnMaintenance;
-        $this->queryParameters['ActionOnMaintenance'] = $actionOnMaintenance;
+        $this->requestParameters['NextToken'] = $nextToken;
+        $this->queryParameters['NextToken'] = $nextToken;
 
         return $this;
     }
@@ -106,6 +92,21 @@ class ModifyInstanceMaintenanceAttributesRequest extends \RpcAcsRequest
     }
 
     /**
+     * @param array $snapshotGroupId
+     *
+     * @return $this
+     */
+	public function setSnapshotGroupIds(array $snapshotGroupId)
+	{
+	    $this->requestParameters['SnapshotGroupIds'] = $snapshotGroupId;
+		foreach ($snapshotGroupId as $i => $iValue) {
+			$this->queryParameters['SnapshotGroupId.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
+    }
+
+    /**
      * @param string $ownerId
      *
      * @return $this
@@ -119,30 +120,56 @@ class ModifyInstanceMaintenanceAttributesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $instanceId
+     * @param string $instanceId
      *
      * @return $this
      */
-	public function setInstanceIds(array $instanceId)
-	{
-	    $this->requestParameters['InstanceIds'] = $instanceId;
-		foreach ($instanceId as $i => $iValue) {
-			$this->queryParameters['InstanceId.' . ($i + 1)] = $iValue;
-		}
+    public function setInstanceId($instanceId)
+    {
+        $this->requestParameters['InstanceId'] = $instanceId;
+        $this->queryParameters['InstanceId'] = $instanceId;
 
-		return $this;
+        return $this;
     }
 
     /**
-     * @param string $notifyOnMaintenance
+     * @param string $name
      *
      * @return $this
      */
-    public function setNotifyOnMaintenance($notifyOnMaintenance)
+    public function setName($name)
     {
-        $this->requestParameters['NotifyOnMaintenance'] = $notifyOnMaintenance;
-        $this->queryParameters['NotifyOnMaintenance'] = $notifyOnMaintenance;
+        $this->requestParameters['Name'] = $name;
+        $this->queryParameters['Name'] = $name;
 
         return $this;
+    }
+
+    /**
+     * @param string $maxResults
+     *
+     * @return $this
+     */
+    public function setMaxResults($maxResults)
+    {
+        $this->requestParameters['MaxResults'] = $maxResults;
+        $this->queryParameters['MaxResults'] = $maxResults;
+
+        return $this;
+    }
+
+    /**
+     * @param array $status
+     *
+     * @return $this
+     */
+	public function setStatuss(array $status)
+	{
+	    $this->requestParameters['Statuss'] = $status;
+		foreach ($status as $i => $iValue) {
+			$this->queryParameters['Status.' . ($i + 1)] = $iValue;
+		}
+
+		return $this;
     }
 }

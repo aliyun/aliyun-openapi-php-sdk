@@ -44,6 +44,7 @@ namespace Ecs\Request\V20140526;
  * @method string getInstanceChargeType()
  * @method string getEnableVmOsConfig()
  * @method array getNetworkInterfaces()
+ * @method string getDeploymentSetId()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getSystemDiskDiskName()
@@ -571,6 +572,19 @@ class CreateLaunchTemplateRequest extends \RpcAcsRequest
 		}
 
 		return $this;
+    }
+
+    /**
+     * @param string $deploymentSetId
+     *
+     * @return $this
+     */
+    public function setDeploymentSetId($deploymentSetId)
+    {
+        $this->requestParameters['DeploymentSetId'] = $deploymentSetId;
+        $this->queryParameters['DeploymentSetId'] = $deploymentSetId;
+
+        return $this;
     }
 
     /**

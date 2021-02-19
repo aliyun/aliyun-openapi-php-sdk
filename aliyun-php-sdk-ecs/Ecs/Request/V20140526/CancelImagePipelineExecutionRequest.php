@@ -5,18 +5,16 @@ namespace Ecs\Request\V20140526;
 /**
  * @deprecated Please use https://github.com/aliyun/openapi-sdk-php
  *
- * Request of ModifyInstanceMaintenanceAttributes
+ * Request of CancelImagePipelineExecution
  *
  * @method string getResourceOwnerId()
- * @method array getMaintenanceWindows()
- * @method string getActionOnMaintenance()
+ * @method string getExecutionId()
+ * @method array getTemplateTags()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
  * @method string getOwnerId()
- * @method array getInstanceIds()
- * @method string getNotifyOnMaintenance()
  */
-class ModifyInstanceMaintenanceAttributesRequest extends \RpcAcsRequest
+class CancelImagePipelineExecutionRequest extends \RpcAcsRequest
 {
 
     /**
@@ -32,7 +30,7 @@ class ModifyInstanceMaintenanceAttributesRequest extends \RpcAcsRequest
         parent::__construct(
             'Ecs',
             '2014-05-26',
-            'ModifyInstanceMaintenanceAttributes',
+            'CancelImagePipelineExecution',
             'ecs'
         );
     }
@@ -51,32 +49,32 @@ class ModifyInstanceMaintenanceAttributesRequest extends \RpcAcsRequest
     }
 
     /**
-     * @param array $maintenanceWindow
+     * @param string $executionId
      *
      * @return $this
      */
-	public function setMaintenanceWindows(array $maintenanceWindow)
-	{
-	    $this->requestParameters['MaintenanceWindows'] = $maintenanceWindow;
-		foreach ($maintenanceWindow as $depth1 => $depth1Value) {
-			$this->queryParameters['MaintenanceWindow.' . ($depth1 + 1) . '.StartTime'] = $depth1Value['StartTime'];
-			$this->queryParameters['MaintenanceWindow.' . ($depth1 + 1) . '.EndTime'] = $depth1Value['EndTime'];
-		}
+    public function setExecutionId($executionId)
+    {
+        $this->requestParameters['ExecutionId'] = $executionId;
+        $this->queryParameters['ExecutionId'] = $executionId;
 
-		return $this;
+        return $this;
     }
 
     /**
-     * @param string $actionOnMaintenance
+     * @param array $templateTag
      *
      * @return $this
      */
-    public function setActionOnMaintenance($actionOnMaintenance)
-    {
-        $this->requestParameters['ActionOnMaintenance'] = $actionOnMaintenance;
-        $this->queryParameters['ActionOnMaintenance'] = $actionOnMaintenance;
+	public function setTemplateTags(array $templateTag)
+	{
+	    $this->requestParameters['TemplateTags'] = $templateTag;
+		foreach ($templateTag as $depth1 => $depth1Value) {
+			$this->queryParameters['TemplateTag.' . ($depth1 + 1) . '.Key'] = $depth1Value['Key'];
+			$this->queryParameters['TemplateTag.' . ($depth1 + 1) . '.Value'] = $depth1Value['Value'];
+		}
 
-        return $this;
+		return $this;
     }
 
     /**
@@ -114,34 +112,6 @@ class ModifyInstanceMaintenanceAttributesRequest extends \RpcAcsRequest
     {
         $this->requestParameters['OwnerId'] = $ownerId;
         $this->queryParameters['OwnerId'] = $ownerId;
-
-        return $this;
-    }
-
-    /**
-     * @param array $instanceId
-     *
-     * @return $this
-     */
-	public function setInstanceIds(array $instanceId)
-	{
-	    $this->requestParameters['InstanceIds'] = $instanceId;
-		foreach ($instanceId as $i => $iValue) {
-			$this->queryParameters['InstanceId.' . ($i + 1)] = $iValue;
-		}
-
-		return $this;
-    }
-
-    /**
-     * @param string $notifyOnMaintenance
-     *
-     * @return $this
-     */
-    public function setNotifyOnMaintenance($notifyOnMaintenance)
-    {
-        $this->requestParameters['NotifyOnMaintenance'] = $notifyOnMaintenance;
-        $this->queryParameters['NotifyOnMaintenance'] = $notifyOnMaintenance;
 
         return $this;
     }

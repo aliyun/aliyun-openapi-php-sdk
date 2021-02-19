@@ -15,6 +15,7 @@ namespace Ecs\Request\V20140526;
  * @method string getPageSize()
  * @method string getDedicatedHostType()
  * @method array getTags()
+ * @method string getNeedHostDetail()
  * @method string getDedicatedHostName()
  * @method string getResourceOwnerAccount()
  * @method string getOwnerAccount()
@@ -148,6 +149,19 @@ class DescribeDedicatedHostsRequest extends \RpcAcsRequest
 		}
 
 		return $this;
+    }
+
+    /**
+     * @param string $needHostDetail
+     *
+     * @return $this
+     */
+    public function setNeedHostDetail($needHostDetail)
+    {
+        $this->requestParameters['NeedHostDetail'] = $needHostDetail;
+        $this->queryParameters['NeedHostDetail'] = $needHostDetail;
+
+        return $this;
     }
 
     /**

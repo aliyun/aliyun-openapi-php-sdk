@@ -15,6 +15,7 @@ namespace Ecs\Request\V20140526;
  * @method string getTimeout()
  * @method string getFrequency()
  * @method string getContentEncoding()
+ * @method string getWindowsPasswordName()
  * @method string getKeepCommand()
  * @method string getTimed()
  * @method string getResourceOwnerAccount()
@@ -147,6 +148,19 @@ class RunCommandRequest extends \RpcAcsRequest
     {
         $this->requestParameters['ContentEncoding'] = $contentEncoding;
         $this->queryParameters['ContentEncoding'] = $contentEncoding;
+
+        return $this;
+    }
+
+    /**
+     * @param string $windowsPasswordName
+     *
+     * @return $this
+     */
+    public function setWindowsPasswordName($windowsPasswordName)
+    {
+        $this->requestParameters['WindowsPasswordName'] = $windowsPasswordName;
+        $this->queryParameters['WindowsPasswordName'] = $windowsPasswordName;
 
         return $this;
     }
