@@ -1,6 +1,9 @@
 2021-02-19 Version: 4.23.2
 - Support Device of LaunchConfiguration_DataDisk.
 
+2021-02-19 Version: 4.23.2
+- Support Device of LaunchConfiguration_DataDisk.
+
 2021-01-13 Version: 4.23.2
 - Support Device of LaunchConfiguration_DataDisk.
 
